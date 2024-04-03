@@ -258,7 +258,7 @@ To integrate Firebase into the mobile application, you'll need to complete the *
 
 Upload **APNs authentication key** to Firebase.
 
-- First, create APNs authentication key in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"};
+- First, create APNs authentication key in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"} using [Apple's official documentation](https://developer.apple.com/help/account/manage-keys/create-a-private-key/){:target="_blank"};
 - Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
 - In "APNs authentication key" click the "Upload" button;
 - Add APNs authentication key and enter "Key ID" and "Team ID" in the corresponding fields;
@@ -273,7 +273,7 @@ Upload **APNs authentication key** to Firebase.
         title: In "APNs authentication key" section, click the "Upload" button;
     ===
         image: /images/mobile/apple-app-configuration-3.png,
-        title: Create "APNs authentication key" in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"}. Now add this key and enter "Key ID" and "Team ID" in the corresponding fields. Then click "Upload" button;
+        title: Create "APNs authentication key" in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"} using [Apple&#39;s official documentation](https://developer.apple.com/help/account/manage-keys/create-a-private-key/){:target="_blank"}. Now add this key and enter "Key ID" and "Team ID" in the corresponding fields. Then click "Upload" button;
     ===
         image: /images/mobile/apple-app-configuration-4.png,
         title: APNs authentication key is uploaded.
