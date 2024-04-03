@@ -1153,7 +1153,7 @@ In this example, we'll add an "HTML Card" widget to our dashboard. Clicking anyw
 - After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
 - Now navigate to the "Appearance" tab of the widget. There you should see two fields: CSS and HTML;
-- In the HTML field enter an ID of the action which is its name in a format:
+- In the HTML section enter an ID of the action which is its name in a format:
 
 ```text
 <div id='map' class='card'>Devices location</div>
@@ -1182,7 +1182,7 @@ In this example, we'll add an "HTML Value Card" widget to our dashboard. When cl
 - After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
 - Now move to the Appearance cell of the widget;
-- In the HTML field enter an ID of the action which is its name in a format:
+- In the HTML section enter an ID of the action which is its name in a format:
 
 ```text
 <h1 id='map'>Devices location</h1>

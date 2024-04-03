@@ -380,7 +380,7 @@ on-html-element-click-1:
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Now navigate to the "Appearance" tab;'
     6:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-7-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML field enter an ID of the action which is its name. After, click "Add";'
+        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. After, click "Add";'
     7:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-8-pe.png
         title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
@@ -414,7 +414,7 @@ on-html-element-click-3:
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Now navigate to the "Appearance" tab;'
     6:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-17-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML field enter an ID of the action which is its name. After, click "Add";'
+        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. After, click "Add";'
     7:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-18-pe.png
         title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'  
