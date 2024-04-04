@@ -70,10 +70,9 @@
 	background: #1C1C1C;
 }
 
-.dark_styles .google-icon{
-
+.dark_styles .instagram-icon svg path{
+	fill: #FFFFFF;
 }
-
 
 .dark_styles .burger{
 	filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%);
@@ -139,6 +138,10 @@
     color: #FFFFFF !important;
 }
 
+.dark_styles .google-icon svg path{
+	fill: #FFFFFF;
+	opacity: 1;
+}
 
 .dark_styles .license{
 	color: #FFFFFF;
@@ -213,11 +216,13 @@
 }
 
 .dark_styles header .head-menu ul span.main-menu-link:hover{
-	color: #2a7dec !important;
+	color: #FFFFFF !important;
+	opacity: 0.5;
 }
 
 .dark_styles header .head-menu ul a:hover{
-	color: #2a7dec !important;
+	color: #FFFFFF !important;
+	opacity: 0.5;
 }
 
 .dark_styles .n-button.try{
@@ -304,6 +309,11 @@
 .dark_styles .primary:hover{
 	color: rgba(0, 0, 0, 0.54) !important;
 	background: #FFFFFF !important;
+}
+
+.dark_styles #home header .n-button.price:hover, #thingsboard-paas header .n-button.price:hover, #thingsboard-pe header .n-button.price:hover, #thingsboard-edge header .n-button.price:hover{
+	color: #2a7dec;
+	 background-color: #fff;
 }
 
 .cs-header{
@@ -558,7 +568,7 @@ dl {
     background-color: #fff
 }
 
-#home header .n-button.price:hover,#thingsboard-paas header .n-button.price:hover,#thingsboard-pe header .n-button.price:hover,#thingsboard-edge header .n-button.price:hover {
+.dark_styles #home header .n-button.price:hover,#thingsboard-paas header .n-button.price:hover,#thingsboard-pe header .n-button.price:hover,#thingsboard-edge header .n-button.price:hover {
     color: #2a7dec;
     box-shadow: unset;
     background-color: #fff
@@ -578,16 +588,16 @@ dl {
 
 
 
-#home header .n-button.try:hover,#thingsboard-paas header .n-button.try:hover,#thingsboard-pe header .n-button.try:hover,#thingsboard-edge header .n-button.try:hover {
+/* #home header .n-button.try:hover,#thingsboard-paas header .n-button.try:hover,#thingsboard-pe header .n-button.try:hover,#thingsboard-edge header .n-button.try:hover {
     text-decoration: none;
-    color: #212529;
-    background-color: #fff
-}
+    background-color: #2a7dec;
+	box-shadow: 0 18px 16px -10px rgba(42,125,236,.25);
+} */
 
 #home header .n-button.price:hover,#thingsboard-paas header .n-button.price:hover,#thingsboard-pe header .n-button.price:hover,#thingsboard-edge header .n-button.price:hover {
-    color: #2a7dec;
-    box-shadow: unset;
-    background-color: #fff
+	text-decoration: none;
+	background-color: #2a7dec;
+	box-shadow: 0 18px 16px -10px rgba(42,125,236,.25);
 }
 
 header {
@@ -980,12 +990,11 @@ ul .indicator .line {
     padding: 11px 14px
 }
 
-.n-button.price:hover {
+.dark_styles .n-button.price:hover {
     transition-duration: .3s;
-    color: #fff;
-    background-color: #2a7dec;
-    box-shadow: 0 18px 16px -10px rgba(42,125,236,.25);
-    text-decoration: none
+    color: #2a7dec !important;
+    background-color: #fff !important;
+    text-decoration: none;
 }
 
 .n-button.price:active {
@@ -1275,7 +1284,7 @@ ul .indicator .line {
 @media screen and (max-width: 1280px) {
 	header.opened-burger .header-right-side{
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: flex-end;
 	}
 	
     header.opened-burger .head-menu {
@@ -4024,6 +4033,11 @@ blockquote p{
 	padding: 80px 0px;
 }
 
+.post-template-default .footer-content{
+	max-width: 1648px;
+	margin: 0px auto;
+}
+
 .footer-top {
 	display: flex;
 	justify-content: space-between;
@@ -4172,14 +4186,23 @@ blockquote p{
 	fill-opacity: 0.76;
 }
 
-.instagram-icon:hover svg path:first-child{
-	fill:url(#XMLID_2_);
+.instagram-icon:hover .instagram-default{
+	opacity: 0;
 }
 
-.instagram-icon:hover svg circle{
+.instagram-default{
+	transition: ease-in-out 0.2s;
 }
 
+.instagram-hover{
+	transition: ease-in-out 0.2s;
+	position: absolute;
+	opacity: 0;
+}
 
+.instagram-icon:hover .instagram-hover{
+	opacity: 1;
+}
 
 .twitter-icon:hover{
 	background: #000000;

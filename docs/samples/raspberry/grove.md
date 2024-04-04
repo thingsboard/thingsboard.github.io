@@ -120,7 +120,7 @@ sudo python3 ./Seeed_Python_DHT/setup.py install
 
 ## Application source code
 
-Our application consists of a single python script that is well documented. You will need to modify THINGSBOARD_HOST constant to match your ThingsBoard server installation IP address or hostname.
+Our application consists of a [single python script](/docs/samples/raspberry/resources/tb_grove.py) that is well documented. You will need to modify THINGSBOARD_HOST constant to match your ThingsBoard server installation IP address or hostname.
 
 Also we need say to ThingsBoard that we want to connect this device and get the device ACCESS_TOKEN, which will be used in the script.
 <b>Log in to your environment</b> — <b>Device groups</b> — <b>Add device group</b>  — <b>Add new device</b> (e.g. Device 1 with type grove) — <b>Open device details</b> — <b>Copy access token</b>.
@@ -138,6 +138,22 @@ Also we need say to ThingsBoard that we want to connect this device and get the 
 After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. In case you use Live demo, populate <b>thingsboard.cloud</b> as THINGSBOARD_HOST
 
 ```python
+#
+# Copyright © 2019-2024 The Thingsboard Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 import logging
 import time
 from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
@@ -157,8 +173,8 @@ logging.basicConfig(level=logging.INFO,
 
 log = logging.getLogger(__name__)
 
-thingsboard_server = 'THINGSBOARD_HOST'
-access_token = 'ACCESS_TOKEN'
+THINGSBOARD_SERVER = 'THINGSBOARD_HOST'
+ACCESS_TOKEN = 'ACCESS_TOKEN'
 
 
 def main():
@@ -201,7 +217,7 @@ def main():
             client.send_rpc_reply(request_id, servo_angle)
 
     # Connecting to ThingsBoard
-    client = TBDeviceMqttClient(thingsboard_server, access_token)
+    client = TBDeviceMqttClient(THINGSBOARD_SERVER, username=ACCESS_TOKEN)
     client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
     client.connect()
 
@@ -272,7 +288,7 @@ if __name__ == '__main__':
     main()
 
 ```
-{: .copy-code}
+{:.copy-code.expandable-20}
 
 
 ## Data Visualization and Control

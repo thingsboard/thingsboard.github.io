@@ -48,7 +48,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":".//wp-admin/admin-ajax.php",
-                "nonce": "f0d366ff31",
+                "nonce": "c5638de2c2",
                 "home_url": ".//",
                 "settings_icon": './/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": './/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -519,12 +519,6 @@ height: 61vh !important;
 				<div class="cs-offcanvas__bottombar">
 							<div class="cs-social">
 														</div>
-					<span class="cs-site-scheme-toggle cs-offcanvas__scheme-toggle" role="button" aria-label="Scheme Toggle">
-				<span class="cs-header__scheme-toggle-icons">
-					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-light-mode"></i>
-					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-dark-mode"></i>
-				</span>
-			</span>
 						</div>
 			</div>
 		</aside>
@@ -1020,14 +1014,8 @@ height: 61vh !important;
 		</a> -->
 <!-- 		<span class="theme-button">
 		</span> -->
-		<div class="theme_toggle">
-						<span class="cs-site-scheme-toggle cs-header__scheme-toggle" role="button" aria-label="Dark mode toggle button">
-				<span class="cs-header__scheme-toggle-icons">
-					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-light-mode"></i>
-					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-dark-mode"></i>
-				</span>
-			</span>
-				</div>
+<!-- 		<div class="theme_toggle">
+					</div> -->
 		<div class="header-buttons">
 			<a href="https://thingsboard.io/installations/" class="n-button try">Try it now</a>
 			<a href="https://thingsboard.io/pricing/" class="n-button price">Pricing</a>
@@ -1212,8 +1200,7 @@ height: 61vh !important;
         }
 	</script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<script>
-		let vh = window.innerHeight * 0.01;
+	<script>let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 		window.addEventListener('resize', () => {
 			vh = window.innerHeight * 0.01;
@@ -1293,26 +1280,40 @@ height: 61vh !important;
 		document.querySelector('.theme_toggle').addEventListener('click', function(){
 			if(document.body.getAttribute('data-scheme') === 'dark'){
 				document.body.classList.add('dark_styles');
-			} else {
+				document.getElementById('XMLID_17_').style.fill = 'white';
+				document.getElementById('XMLID_81_').style.fill = 'white';
+				document.getElementById('XMLID_83_').style.fill = 'white';
+			} else if(document.body.getAttribute('data-scheme') === 'light'){
+				document.getElementById('XMLID_17_').style.fill = 'black';
+				document.getElementById('XMLID_81_').style.fill = 'black';
+				document.getElementById('XMLID_83_').style.fill = 'black';
 				document.body.classList.remove('dark_styles');
 			}
 		})
 		if(document.body.getAttribute('data-scheme') === 'dark'){
 			document.body.classList.add('dark_styles');
-		} else {
+// 			document.getElementById('XMLID_17_').style.fill = 'white';
+// 			document.getElementById('XMLID_81_').style.fill = 'white';
+// 			document.getElementById('XMLID_83_').style.fill = 'white';
+		} else if(document.body.getAttribute('data-scheme') === 'light'){
+// 			document.getElementById('XMLID_17_').style.fill = 'black';
+// 			document.getElementById('XMLID_81_').style.fill = 'black';
+// 			document.getElementById('XMLID_83_').style.fill = 'black';
 			document.body.classList.remove('dark_styles');
 		}
-// 		window.onload = function() {
-// 			if(window.innerWidth <= 543){
-// 				document.querySelectorAll('.search-form *').forEach(function(child) {
-// 					child.addEventListener('click', function(event) {
-// 						document.getElementById('main').style.opacity = '0';
-// 						document.getElementById('main').style.pointerEvents = 'none'; 
-// 						document.body.style.overflow = 'hidden'; 
-// 					});
-// 				});
-// 			};	
-// 		};
+		window.onload = function() {
+			if(document.body.getAttribute('data-scheme') === 'dark'){
+				document.body.classList.add('dark_styles');
+				document.getElementById('XMLID_17_').style.fill = 'white';
+				document.getElementById('XMLID_81_').style.fill = 'white';
+				document.getElementById('XMLID_83_').style.fill = 'white';
+			} else if(document.body.getAttribute('data-scheme') === 'light') {
+				document.getElementById('XMLID_17_').style.fill = 'black';
+				document.getElementById('XMLID_81_').style.fill = 'black';
+				document.getElementById('XMLID_83_').style.fill = 'black';
+				document.body.classList.remove('dark_styles');
+			}	
+		};
 		if(document.querySelector('.burger')){
 			document.querySelector('.burger').addEventListener('click', function(){
 				if(document.querySelector('.opened-burger')){
@@ -1321,9 +1322,7 @@ height: 61vh !important;
 					document.body.classList.remove('body_when_burger');
 				}
 			});	
-		} 
-
-</script>
+		}</script>
 </header>
 
 		
@@ -1530,7 +1529,7 @@ height: 61vh !important;
 										<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
 
 						<div class="cs-overlay-background">
-							<img width="512" height="288" src="./../wp-content/uploads/2024/03/Top-supplier-retail-2024-with-icons-512x288.webp" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="./../wp-content/uploads/2024/03/Top-supplier-retail-2024-with-icons-512x288.webp 512w, ./../wp-content/uploads/2024/03/Top-supplier-retail-2024-with-icons-1024x576.webp 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
+							<img width="512" height="288" src="./../wp-content/uploads/2024/03/Top-supplier-retail-2024_Schwards_ThingsBoard-512x288.webp" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="./../wp-content/uploads/2024/03/Top-supplier-retail-2024_Schwards_ThingsBoard-512x288.webp 512w, ./../wp-content/uploads/2024/03/Top-supplier-retail-2024_Schwards_ThingsBoard-1024x576.webp 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
 
 						
 						<a class="cs-overlay-link" href="./../top-supplier-retail-2024-2/index.html" title="TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership"></a>
@@ -1737,23 +1736,6 @@ var disqus_config = function () {
 			element.insertAdjacentHTML('beforeend', '<div class="quote_after"><svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" transform="translate(0.5)" fill="#F0F7FB"/><path d="M30.9043 20.2907C34.6424 20.2907 37.1615 22.938 37.1615 26.8604C37.1615 30.3901 34.2662 33.3307 30.3448 33.3307C26.0496 33.3307 22.8757 29.801 22.8757 24.4095C22.8757 12.155 31.6519 7.25315 37.1615 6.66406V12.0556C33.4257 12.7416 29.2257 16.5647 29.0377 20.7829C29.2257 20.6859 29.971 20.2907 30.9043 20.2907ZM11.8591 20.2907C15.5924 20.2907 18.1138 22.938 18.1138 26.8604C18.1138 30.3901 15.2186 33.3307 11.2972 33.3307C7.00194 33.3307 3.82812 29.801 3.82812 24.4095C3.82812 12.155 12.6043 7.25315 18.1138 6.66406V12.0556C14.3781 12.7416 10.1781 16.5647 9.99003 20.7829C10.1781 20.6859 10.9234 20.2907 11.8591 20.2907Z" fill="black" fill-opacity="0.87"/><\/svg><\/div>');			
 		});
 	};
-// 	window.onload = function(){;
-// 		var post_id = (document.body.className.match(/postid-(\d+)/) || {'1':0} )[1];
-// 		let newID = `${post_id} http://wp.thingsboard.io/?p=${post_id}`;
-// 		embedVars.disqusIdentifier = newID;
-// 		disqus_identifier = newID;		
-// 		var scripts = document.getElementsByTagName("script");
-// 		for (var i = 0; i < scripts.length; i++) {
-// 			if (scripts[i].textContent.indexOf("embedVars") !== -1) {
-// 				var embedVarsContent = scripts[i].textContent.match(/var embedVars = ({.*});/)[1];
-// 				var embedVarsObj = JSON.parse(embedVarsContent);
-// 				embedVarsObj.disqusIdentifier = newID;
-// 				var updatedScriptContent = scripts[i].textContent.replace(embedVarsContent, JSON.stringify(embedVarsObj));
-// 				scripts[i].textContent = updatedScriptContent;
-// 				break; 
-// 			}
-// 		}
-// 	}
 </script>
 </div>
 
@@ -1765,8 +1747,8 @@ var disqus_config = function () {
 					
 				</h3>
 				<ul class="categories">
-<!-- 					<li><a href="https://thingsboard.io/blog/category/events/" class="category-link category-link-domain-url">Events</a></li>
-					<li><a href="https://thingsboard.io/blog/category/guides/" class="category-link category-link-domain-url">Guides</a></li> -->
+<!-- 					<li><a href="https://thingsboard.io/blog/category/events/" class="category-link">Events</a></li> -->
+					<li><a href="https://thingsboard.io/blog/category/company/" class="category-link">Company</a></li> 
 					<li><a href="https://thingsboard.io/blog/category/business/" class="category-link">Business</a></li>
 					<li><a href="https://thingsboard.io/blog/category/tech/" class="category-link">Tech</a></li>
 					<li><a href="https://thingsboard.io/blog/category/solutions/" class="category-link">Solutions</a></li>
@@ -1958,7 +1940,7 @@ var disqus_config = function () {
 					</li>
 					<li class="social-network">
 						<a class="social-network-link instagram-icon" href="https://www.instagram.com/thingsboard_iot/?hl=am-et">
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="22px" width="22px" version="1.1" id="Layer_1" viewbox="0 0 551.034 551.034" xml:space="preserve">
+							<svg class="instagram-default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="22px" width="22px" version="1.1" id="Layer_1" viewbox="0 0 551.034 551.034" xml:space="preserve">
 								<g id="XMLID_13_">
 									<lineargradient id="XMLID_2_" gradientunits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
 										<stop offset="0" style="stop-color:#E09B3D"></stop>
@@ -1966,21 +1948,46 @@ var disqus_config = function () {
 										<stop offset="0.6" style="stop-color:#C21975"></stop>
 										<stop offset="1" style="stop-color:#7024C4"></stop>
 									</lineargradient>
-									<path id="XMLID_17_" style="fill: black" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"></path>
+									<path id="XMLID_17_" style="fill" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"></path>
 									<lineargradient id="XMLID_3_" gradientunits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
 										<stop offset="0" style="stop-color:#E09B3D"></stop>
 										<stop offset="0.3" style="stop-color:#C74C4D"></stop>
 										<stop offset="0.6" style="stop-color:#C21975"></stop>
 										<stop offset="1" style="stop-color:#7024C4"></stop>
 									</lineargradient>
-									<path id="XMLID_81_" style="fill: black" d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"></path>
+									<path id="XMLID_81_" style="fill" d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"></path>
 									<lineargradient id="XMLID_4_" gradientunits="userSpaceOnUse" x1="418.306" y1="4.5714" x2="418.306" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
 										<stop offset="0" style="stop-color:#E09B3D"></stop>
 										<stop offset="0.3" style="stop-color:#C74C4D"></stop>
 										<stop offset="0.6" style="stop-color:#C21975"></stop>
 										<stop offset="1" style="stop-color:#7024C4"></stop>
 									</lineargradient>
-									<circle id="XMLID_83_" style="fill: black;" cx="418.306" cy="134.072" r="34.149"></circle>
+									<circle id="XMLID_83_" style="fill" cx="418.306" cy="134.072" r="34.149"></circle>
+								</g>
+							</svg>
+							<svg class="instagram-hover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="22px" width="22px" version="1.1" id="Layer_1" viewbox="0 0 551.034 551.034" xml:space="preserve">
+								<g id="XMLID_13_">
+									<lineargradient id="XMLID_2_" gradientunits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
+										<stop offset="0" style="stop-color:#E09B3D"></stop>
+										<stop offset="0.3" style="stop-color:#C74C4D"></stop>
+										<stop offset="0.6" style="stop-color:#C21975"></stop>
+										<stop offset="1" style="stop-color:#7024C4"></stop>
+									</lineargradient>
+									<path id="XMLID_17_" style="fill: url(#XMLID_2_);" d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"></path>
+									<lineargradient id="XMLID_3_" gradientunits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
+										<stop offset="0" style="stop-color:#E09B3D"></stop>
+										<stop offset="0.3" style="stop-color:#C74C4D"></stop>
+										<stop offset="0.6" style="stop-color:#C21975"></stop>
+										<stop offset="1" style="stop-color:#7024C4"></stop>
+									</lineargradient>
+									<path id="XMLID_81_" style="fill: url(#XMLID_3_);" d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"></path>
+									<lineargradient id="XMLID_4_" gradientunits="userSpaceOnUse" x1="418.306" y1="4.5714" x2="418.306" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
+										<stop offset="0" style="stop-color:#E09B3D"></stop>
+										<stop offset="0.3" style="stop-color:#C74C4D"></stop>
+										<stop offset="0.6" style="stop-color:#C21975"></stop>
+										<stop offset="1" style="stop-color:#7024C4"></stop>
+									</lineargradient>
+									<circle id="XMLID_83_" style="fill: url(#XMLID_4_);" cx="418.306" cy="134.072" r="34.149"></circle>
 								</g>
 							</svg>
 						</a>
@@ -2003,22 +2010,7 @@ var disqus_config = function () {
 			</div>
 		</div>
 	</div>
-	<script>document.querySelector('.instagram-icon').addEventListener('mouseover', function(){
-			document.getElementById('XMLID_17_').style.fill = 'url(#XMLID_2_)';
-			document.getElementById('XMLID_81_').style.fill = 'url(#XMLID_3_)';
-			document.getElementById('XMLID_83_').style.fill = 'url(#XMLID_4_)';
-			document.getElementById('XMLID_17_').style.transition = 'fill 0.3s ease';
-			document.getElementById('XMLID_81_').style.transition = 'fill 0.3s ease';
-			document.getElementById('XMLID_83_').style.transition = 'fill 0.3s ease';
-		});
-		document.querySelector('.instagram-icon').addEventListener('mouseout', function(){
-			document.getElementById('XMLID_17_').style.fill = 'black';
-			document.getElementById('XMLID_81_').style.fill = 'black';
-			document.getElementById('XMLID_83_').style.fill = 'black';
-			document.getElementById('XMLID_17_').style.transition = 'fill 0.3s ease';
-			document.getElementById('XMLID_81_').style.transition = 'fill 0.3s ease';
-			document.getElementById('XMLID_83_').style.transition = 'fill 0.3s ease';
-		})</script>
+	<script></script>
 </footer>
 
 			<button class="cs-scroll-top" role="button" aria-label="Scroll to top button">
@@ -2050,7 +2042,7 @@ var disqus_config = function () {
 <script src="./../wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-results-vertical.js?ver=4761" id="wd-asl-ajaxsearchlite-vertical-js"></script>
 <script src="./../wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-load.js?ver=4761" id="wd-asl-ajaxsearchlite-load-js"></script>
 <script src="./../wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-wrapper.js?ver=4761" id="wd-asl-ajaxsearchlite-wrapper-js"></script>
-<script id="csco-scripts-js-extra">var csLocalize = {"siteSchemeMode":"light","siteSchemeToogle":"1"};</script>
+<script id="csco-scripts-js-extra">var csLocalize = {"siteSchemeMode":"light","siteSchemeToogle":""};</script>
 <script src="./../wp-content/themes/swyft/assets/js/scripts.js?ver=1.0.2" id="csco-scripts-js"></script>
 <script src="./../wp-content/themes/swyft/assets/static/js/comment-reply.js?ver=1.0.2" id="csco-comment-reply-js"></script>
 
