@@ -46,4 +46,6 @@ echo "$(date +"%H:%M") Uploading static to s3.. done."
 #echo "$(date +"%H:%M") Update configuration pages for PE:"
 #  python3 generate_config_pages.py pe ../pe3
 
-echo "$(date +"%H:%M") Please review changes and commit. "
+git commit -m "Release script"
+
+echo "$(date +"%H:%M") Please review changes and push."
