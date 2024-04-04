@@ -28,6 +28,7 @@ done
 
 cd -
 
+git restore blog
 git restore --staged images/reference/architecture-in-brief.svg
 git restore images/reference/architecture-in-brief.svg
 
