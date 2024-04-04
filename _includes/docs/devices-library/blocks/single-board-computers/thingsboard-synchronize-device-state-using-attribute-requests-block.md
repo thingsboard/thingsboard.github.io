@@ -15,15 +15,17 @@ def sync_state(result, exception=None):
     else:
         period = result.get('shared', {'blinkingPeriod': 1.0})['blinkingPeriod']
 ```
+{:.copy-code}
 
 Attribute request:
 ```python
 def main():
-    client = TBDeviceMqttClient("thingsboard.cloud", 1883, "ACCESS_TOKEN")
+    client = TBDeviceMqttClient("thingsboard.cloud", username="ACCESS_TOKEN")
     client.connect()
     client.request_attributes(shared_keys=['blinkingPeriod'], callback=sync_state)
     ...
 ```
+{:.copy-code}
 
 In order to give ability to our callbacks to receive the data we have to send a request to ThingsBoard. This 
 functionality allows us to keep the actual state after rebooting.
