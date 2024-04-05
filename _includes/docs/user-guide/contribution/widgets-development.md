@@ -530,8 +530,8 @@ self.onInit = function() {
     let $scope = self.ctx.$scope;
     $scope.widgetText = 'Ready to get data';
     self.ctx.broadcastService = $scope.$injector.get(self.ctx.servicesMap.get('broadcastService'));
-    self.ctx.broadcastService.on('ID', (data) => {
-        $scope.widgetText = data[0];
+    self.ctx.broadcastService.on('ID', (event, args) => {
+        $scope.widgetText = args[0];
         self.ctx.detectChanges();
     });
     ...
@@ -1612,7 +1612,7 @@ self.onInit = function() {
         }
     ];
 
-    const options = {
+    const subscriptionOptions = {
         type: 'latest', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
         callbacks: //Sets callbacks for subscription
@@ -1692,7 +1692,7 @@ self.onInit = function() {
         }
     ];
 
-    const options = {
+    const subscriptionOptions = {
         type: 'latest', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
         callbacks: //Sets callbacks for subscription
@@ -1703,7 +1703,7 @@ self.onInit = function() {
         }
     };
 
-    self.ctx.subscriptionApi.createSubscription(options, true).subscribe(
+    self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
             self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
             self.ctx.data = subscription.data; //Saving data into widget context
@@ -1769,7 +1769,7 @@ self.onInit = function() {
         }
     ];
 
-    const options = { 
+    const subscriptionOptions = { 
         type: 'latest', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
         hasDataPageLink: true, //Sets subscription into pageLink mode
@@ -1853,7 +1853,7 @@ self.onInit = function() {
         pageSize: 2  //Number of entities per page
     };
 
-    const options = { 
+    const subscriptionOptions = { 
         type: 'timeseries', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
         hasDataPageLink: true, //Sets subscription into pageLink mode

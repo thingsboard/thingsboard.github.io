@@ -10,15 +10,15 @@ C:\Program Files (x86)\thingsboard\thingsboard.xml
 Locate the following lines to the configuration file. 
 
 ```xml
-    <startargument>-Xms512m</startargument>
-    <startargument>-Xmx1024m</startargument>
+<startargument>-Xms512m</startargument>
+<startargument>-Xmx1024m</startargument>
 ```
 {: .copy-code}
 
 and change them to 
 
 ```xml
-    <startargument>-Xms256m</startargument>
-    <startargument>-Xmx256m</startargument>
+<startargument>-Xms256m</startargument>
+<startargument>-Xmx256m</startargument>
 ```
 {: .copy-code}

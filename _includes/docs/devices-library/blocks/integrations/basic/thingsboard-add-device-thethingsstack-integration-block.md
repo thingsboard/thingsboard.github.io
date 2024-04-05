@@ -1,6 +1,7 @@
 ### Add a device on The Things Stack Community Edition
 
-We need to add a device on [The Things Stack Community Edition](https://console.cloud.thethings.network){:target="_blank"}.  
+We need to add a device on [The Things Stack Community Edition](https://console.cloud.thethings.network){:target="_blank"}.
+
 To add a device, you can follow next steps:  
 
 {% assign addGatewaySteps = '
@@ -15,7 +16,7 @@ To add a device, you can follow next steps:
         title: Click on the **Register end device** button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-3.png,
-        title: Put the **Join EUI** value to the field. You can use **Application EUI** and press the **Confirm** button.
+        title: Put the **APP EUI** value to the **JoinEUI** field. Press the **Confirm** button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-4.png,
         title: Fill the rest parameters and press **Register end device** button.

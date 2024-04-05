@@ -76,7 +76,7 @@ license:
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
 Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
 ### Step 5. Choose ThingsBoard queue service
 
@@ -91,7 +91,7 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+{% include content-toggle.liquid content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 ### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
@@ -143,9 +143,9 @@ Execute **install.bat** script to install ThingsBoard Web Report Server as a Win
   The output should be like:
 
   ```text
-    C:\Program Files (x86)\tb-web-report>install.bat
-    Installing tb-web-report ...
-    tb-web-report installed successfully!  
+C:\Program Files (x86)\tb-web-report>install.bat
+Installing tb-web-report ...
+tb-web-report installed successfully!
   ```
 
 Now let's start the ThingsBoard service!
@@ -172,7 +172,6 @@ The **thingsboard.log** file should contain following line:
 
 ```text
 YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Started ThingsboardServerApplication in x.xxx seconds (JVM running for x.xxx)
-
 ```
 
 In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).

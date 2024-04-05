@@ -18,7 +18,6 @@ message from the broker, following the rules described in this subsection:
 |---
 
 {% capture difference %}
-<br>
 **Parameters in attributes and telemetry section may differ from those presented above, but will have the same structure.**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
@@ -28,7 +27,7 @@ message from the broker, following the rules described in this subsection:
 Mapping subsection will look like:
 ```json
     {
-      "topicFilter": "/sensor/raw_data",
+      "topicFilter": "sensor/raw_data",
       "converter": {
         "type": "bytes",
         "deviceNameExpression": "[0:4]",

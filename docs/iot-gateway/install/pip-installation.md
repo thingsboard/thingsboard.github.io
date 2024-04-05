@@ -24,51 +24,51 @@ sudo pip3 install thingsboard-gateway
 
 **3. Download example of configs, create log folder:**  
 
- - Downloading configs example:  
+- Downloading configs example:  
 
-```bash
-wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/configs.tar.gz
-```
-{: .copy-code}
+  ```bash
+  wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/configs.tar.gz
+  ```
+  {: .copy-code}
 
- - Make directory for configs:  
-```bash
-sudo mkdir /etc/thingsboard-gateway
-```
-{: .copy-code}
+- Make directory for configs:  
+  ```bash
+  sudo mkdir /etc/thingsboard-gateway
+  ```
+  {: .copy-code}
 
- - Make directory for logs:  
-```bash
-sudo mkdir /var/log/thingsboard-gateway
-```
-{: .copy-code}
+- Make directory for logs:  
+  ```bash
+  sudo mkdir /var/log/thingsboard-gateway
+  ```
+  {: .copy-code}
 
- - Unpack configs:
-```bash
-sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
-```
-{: .copy-code}
+- Unpack configs:
+  ```bash
+  sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
+  ```
+  {: .copy-code}
 
 
 **4. Set permission to the folders:**
 
 - For logs folder:
-```bash
-sudo chown YOUR_USER:YOUR_USER -R /var/log/thingsboard-gateway
-```
-{: .copy-code}
+  ```bash
+  sudo chown YOUR_USER:YOUR_USER -R /var/log/thingsboard-gateway
+  ```
+  {: .copy-code}
 
 - For configs folder:
-```bash
-sudo chown YOUR_USER:YOUR_USER -R /etc/thingsboard-gateway
-```
-{: .copy-code}
+  ```bash
+  sudo chown YOUR_USER:YOUR_USER -R /etc/thingsboard-gateway
+  ```
+  {: .copy-code}
 
 - For tmp folder:
-```bash
-sudo chown YOUR_USER:YOUR_USER /tmp
-```
-{: .copy-code}
+  ```bash
+  sudo chown YOUR_USER:YOUR_USER /tmp
+  ```
+  {: .copy-code}
 
 Where `YOUR_USER` is a user who will run the gateway.
 

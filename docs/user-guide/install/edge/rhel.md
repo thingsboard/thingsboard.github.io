@@ -28,6 +28,7 @@ Before continue to installation execute the following commands in order to insta
 sudo yum install -y nano wget
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
+{: .copy-code}
 
 ### Step 1. Install Java 11 (OpenJDK) 
 
@@ -67,6 +68,7 @@ sudo rpm -Uvh tb-edge-{{ site.release.edge_ver }}.rpm
 ```bash
 sudo service tb-edge restart
 ```
+{: .copy-code}
 
 ### Step 7. Open ThingsBoard Edge UI
 

@@ -66,14 +66,14 @@ Go to the **Integrations center** section -> **Data converters** page and create
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/opc-ua/opc-ua-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="opcuauplinkconverterconfig" toggle-spec=opcuauplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="opcuauplinkconverterconfig" toggle-spec=opcuauplinkconverterconfig %}
 
 ### Downlink Data Converter
 
 For sending Downlink messages from the Thingsboard to the OPC UA node, we need to define a
 downlink Converter.
 
- In general, the output from a Downlink converter should have the following structure:
+In general, the output from a Downlink converter should have the following structure:
 
 {% highlight json %}
 [{
@@ -103,7 +103,7 @@ Go to the **Integrations center** section -> **Data converters** page and create
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/opc-ua/opc-ua-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="opcuadownlinkconverterconfig" toggle-spec=opcuadownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="opcuadownlinkconverterconfig" toggle-spec=opcuadownlinkconverterconfig %}
 
 This converter will process the RPC command to the device using the method *setState*
 and a boolean *params* value to call the 'Start' or 'Stop' method of the airconditioner.
@@ -112,8 +112,8 @@ Destination node is detected using the *deviceName* field of the incoming messag
 
 ### OPC-UA Integration
 
- - Open the **Integrations center** section -> **Integrations** page and click 'plus' button to create new integration. 
-Name it **OPC-UA Integration**, select type **OPC-UA**. Click 'Next';
+ - Open the "**Integrations center**" section -> "**Integrations**" page and click `+` icon to create new integration. 
+Name it **OPC-UA Integration**, select type "**OPC-UA**". Click "**Next**";
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-1.png)
 
@@ -123,56 +123,59 @@ Name it **OPC-UA Integration**, select type **OPC-UA**. Click 'Next';
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-3.png)
 
-- Specify host: **Endpoint Host** (see [Prerequisites](#prerequisites));
-- Specify port: **Endpoint Port** (see [Prerequisites](#prerequisites));
+- Specify host: **hostname/IP** (see [Prerequisites](#prerequisites));
+- Specify port: **port** (see [Prerequisites](#prerequisites));
 - Security: **None** (can be *Basic128Rsa15* / *Basic256* / *Basic256Sha256* / *None*);
 - Identity: **Anonymous** (can be *Anonymous* / *Username*).
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-4.png)
 
 - Mapping:
-     - MappingType: **Fully Qualified Name** (can be *Fully Qualified Name* / *ID*)
-     - Device Node Pattern: **Objects\.BuildingAutomation\.AirConditioner_\d+$** (regular expression used to match scanned OPC UA Node FQNs/IDs to device name. 
-  In this sample, path on OPC UA Explorer is `Objects/BuildingAutomation/AirConditioner_X`, where X is a number from 1 to N. 
-  That's why we use `Objects\.BuildingAutomation\.AirConditioner_\d+$` as regular expression, because `\d+` means any number from 1 to *N*, and `$` means the end of the string)
+     - MappingType: **Fully Qualified Name** (can be *Fully Qualified Name* / *ID*);
+     - Specify Device Node Pattern: **Objects\\.BuildingAutomation\\.AirConditioner_\d+$** 
+  
+  (regular expression used to match scanned OPC UA Node FQNs/IDs to device name. 
+  In this sample, path on OPC UA Explorer is `Objects\.BuildingAutomation\.AirConditioner_X`, where X is a number from 1 to N. 
+  That's why we use `Objects\.BuildingAutomation\.AirConditioner_\d+$` as regular expression, because `\d+` means any number from 1 to *N*, and `$` means the end of the string);
      - Subscription tags (list of node tags (**Path**) to subscribe with mappings to keys (**Key**) used in the output message):
         - *state* - State;
         - *temperature* - Temperature;
         - *humidity* - Humidity;
         - *powerConsumption* - PowerConsumption.
 
+- Click "**Add**".
+
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-5.png)
 
-### Devices
+The OPC-UA integration has been added. 
 
-After created OPC-UA integration, go to the **Entities** section -> **Devices** page. You will see 10 devices created by the integration.
+The [OPC-UA server](#prerequisites) simulates sending telemetry from devices to ThingsBoard. If you have done everything correctly, 10 new devices should appear on the "**Devices**" page as a result of the integration. Please make sure of this.
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-devices-1.png)
 
-Open the details of any Airconditioner and navigate to the **Latest Telemetry** tab.
+Open the details of any airconditioner and navigate to the "**Latest telemetry**" tab.
 You will see that telemetry values are frequently updated.
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-devices-2.png)
 
 ### Airconditioners Rule Chain
 
-To demonstrate OPC-UA Integration and Rule Engine capabilities, we will create a separate Rule Chain
-to process the uplink and downlink messages related to the OPC-UA Integration.
+To demonstrate OPC-UA integration and Rule Engine capabilities, we will create a separate rule chain to process the uplink and downlink messages related to the OPC-UA integration.
 
-Let's create the **Airconditioners** Rule Chain.
+Let's create the **Airconditioners** rule chain.
 
  - Download the [**airconditioners.json**](/docs/user-guide/resources/airconditioners.json) file;
- - Go to the **Rule Chain** page. To import this JSON file, click the `+` button at the top right corner of the **Rule chains** page and click '**Import rule chain**';
- - Drag and drop downloaded JSON file to the **Import rule chain** window. Click 'Import';
- - The **Airconditioners** rule chain will open. Double-click on the **integration downlink** node and specify **OPC-UA Integration** in the integration field;
- - Save all changes.
+ - Go to the "**Rule Chains**" page. To import this JSON file, click the `+` icon in the upper right corner of the screen and select "**Import rule chain**";
+ - Drag and drop downloaded JSON file to the **Import rule chain** window. Click "**Import**";
+ - The "**Airconditioners**" rule chain will open. Double-click on the "**integration downlink**" node and specify **OPC-UA Integration** in the integration field;
+ - Apply all changes.
 
 {% include images-gallery.html imageCollection="create_rule_chain" %}
 
  - Open and edit the **Root Rule Chain**;
- - Find a **rule chain** node, drag and drop it to the rule chain. Name it Airconditioners, specify **Airconditioners** rule chain and click 'Add';
- - Tap on a right grey circle of **message type switch** node and drag this circle to left side of **rule chain** node, here lets choose **Attributes Updated**, **Post telemetry** and **RPC Request to Device**;
- - Tap 'Add' and save rule chain.
+ - Find a **rule chain** node, drag and drop it to the rule chain. Name it Airconditioners, specify **Airconditioners** rule chain and click "**Add**";
+ - Tap on a right grey circle of "**message type switch**" node and drag this circle to left side of "**rule chain**" node. Here, select "**Attributes Updated**", "**Post telemetry**", and "**RPC Request to Device**";
+ - Click "**Add**" and save rule chain.
 
 {% include images-gallery.html imageCollection="create_rule_chain_2" %}
 
@@ -181,9 +184,9 @@ Let's create the **Airconditioners** Rule Chain.
 To visualize the Airconditioners data and test RPC commands, we will create the **Airconditioners** dashboard.
 
 - Download the [**airconditioners_dashboard.json**](/docs/user-guide/resources/airconditioners_dashboard.json) file;
-- Go to the **Dashboards** page;
-- To import this JSON file, click the `+` button at the top right corner of the **Dashboards** page and select '**Import dashboard**'.
-- Drag and drop downloaded JSON file to the **Import dashboard** window. Click 'Import'.
+- Go to the "**Dashboards**" page;
+- To import this JSON file, click the `+` icon in the upper right corner of the screen and select "**Import dashboard**";
+- Drag and drop downloaded JSON file to the **Import dashboard** window. Click "Import".
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-1.png)
 

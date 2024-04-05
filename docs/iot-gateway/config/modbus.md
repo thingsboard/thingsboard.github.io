@@ -9,7 +9,6 @@ description: Modbus protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 {% capture difference %}
-<br>
 **Note that the configuration of the Modbus connector has changed since Gateway 3.0. The new configuration will be 
 generated after installing the new version and running Gateway in the new_modbus.json file.**  
 {% endcapture %}
@@ -293,7 +292,7 @@ Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gatewa
 
 There are 2 variants of server section:
 
-{% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+{% include content-toggle.liquid content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
 The next part of slave section contains common connection parameters and settings for data processing. 
 Available parameters are as follows:
@@ -534,14 +533,13 @@ specify the "slave" section in the configuration file.
 
 There are 2 variants of Gateway slave section:
 
-{% capture modbusConnectionType %}
+{% capture modbusConnectionType2 %}
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/gateway-as-modbus-slave-tcpudp-connection.md%br%
 Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gateway/gateway-as-modbus-slave-serial-connection.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+{% include content-toggle.liquid content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType2 %}
 
 {% capture difference %}
-<br>
 **Don't use "Gateway" as the value of "deviceName" parameter!**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
@@ -653,7 +651,6 @@ Depending on which value the register belongs to, you must add it to the appropr
 ```
 
 {% capture difference %}
-<br>
 **In this section of the configuration, the only difference is the placement of values to a certain type of 
 register, but the configuration of telemetry, attributes, rps, etc. is the same as the "master" section.**  
 {% endcapture %}

@@ -8,6 +8,101 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.6.3 (Mar 18, 2024) {#v363}
+
+For an overview of the main improvements, check out the [**ThingsBoard 3.6.3 release**](https://thingsboard.io/blog/thingsboard-release-3-6-3-announcement/) blog post.
+
+**Major Improvements**
+
+* Core & Rule Engine
+  * [#8522.](https://github.com/thingsboard/thingsboard/pull/8522.) Push notifications to the mobile apps by @ViacheslavKlimov
+  * [#9990](https://github.com/thingsboard/thingsboard/pull/9990) New types of the groupingtervals: WEEK, WEEK_ISO, MONTH, QUARTER by @ashvayka
+  * [#9980](https://github.com/thingsboard/thingsboard/pull/9980) Configurable granularity and strategies for device connectivity status calculation by @dskarzh
+* UI 
+  * [#10315](https://github.com/thingsboard/thingsboard/pull/10315) Time series chart widgets by @ikulikov
+  * [#9960](https://github.com/thingsboard/thingsboard/pull/9960) Bar chart with labels widget by @ikulikov
+  * [#10212](https://github.com/thingsboard/thingsboard/pull/10212) Toggle button widget by @ikulikov
+  * [#10132](https://github.com/thingsboard/thingsboard/pull/10132) Action button widget by @ikulikov
+  * [#10134](https://github.com/thingsboard/thingsboard/pull/10134) Command button widget by @ikulikov
+  * [#10162](https://github.com/thingsboard/thingsboard/pull/10162) Power button widget by @ikulikov
+  * [#10053](https://github.com/thingsboard/thingsboard/pull/10053) Single Switch control widget by @ikulikov
+  * [#10195](https://github.com/thingsboard/thingsboard/pull/10195) Slider widget by @ikulikov
+  * [#10153](https://github.com/thingsboard/thingsboard/pull/10153) New widget action type: Open URL by @Dmitriymus
+* Transport
+  * [#10137](https://github.com/thingsboard/thingsboard/pull/10137) SNMP: delay between sending request chunks; traps processing fixes by @ViacheslavKlimov
+  * [#10063](https://github.com/thingsboard/thingsboard/pull/10063) Support DTLS Connection ID with configuration by @Rhyaldir
+* Edge
+  * [#9968](https://github.com/thingsboard/thingsboard/pull/9968) Alarm comment support by @AndriiLandiak
+  * [#10021](https://github.com/thingsboard/thingsboard/pull/10021) Notification rules for connection status and errors. Rate limits for Edge events. by @AndriiLandiak
+
+**Minor Improvements**
+
+* Core & Rule Engine
+  * [#9030](https://github.com/thingsboard/thingsboard/pull/9030) Device state rule node; device state service improvements by @dskarzh
+  * [#10083](https://github.com/thingsboard/thingsboard/pull/10083) Performance improvements for entities saving by @ViacheslavKlimov
+  * [#9937](https://github.com/thingsboard/thingsboard/pull/9937) Added Event and Audit Logs services to TbContext. by @devaskim
+  * [#10185](https://github.com/thingsboard/thingsboard/pull/10185) Added global queue prefix to js-executor, rule-node and tb-rule-engine-notifications-node- consumer group id by @dashevchenko
+  * [#10175](https://github.com/thingsboard/thingsboard/pull/10175) Added support for IN, NOT_IN types of operations alarm rules by @dashevchenko
+  * [#9957](https://github.com/thingsboard/thingsboard/pull/9957) Set default device connectivity params from the thingsboard.yml duringstall by @YevhenBondarenko
+  * [#10085](https://github.com/thingsboard/thingsboard/pull/10085) Removed support for upgrades from versions prior to 3.5.0 by @dashevchenko
+  * [#10152](https://github.com/thingsboard/thingsboard/pull/10152) CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED=true by default by @dashevchenko
+
+* UI
+  * [#10147](https://github.com/thingsboard/thingsboard/pull/10147) Optimized image requests the map widgets and async rendering by @Dmitriymush
+  * [#10215](https://github.com/thingsboard/thingsboard/pull/10215) Optimized image updates the Image Gallery by @vvlladd28
+  * [#9947](https://github.com/thingsboard/thingsboard/pull/9947) Added queue selection for rule nodes by @ArtemDzhereleiko
+  * [#9880](https://github.com/thingsboard/thingsboard/pull/9880) Added search to rule chain selector by @rusikv
+  * [#9904](https://github.com/thingsboard/thingsboard/pull/9904) Improved Ukrainian translation by @xalt7x
+  * [#9914](https://github.com/thingsboard/thingsboard/pull/9914) Refactoring of the translation for the tenant profile dialog by @ArtemDzhereleiko
+  * [#9935](https://github.com/thingsboard/thingsboard/pull/9935) Improved components by changing API usage from getDeviceType/getAssetЕype to getDeviceProfileName/getAssetProfileName  by @rusikv
+  * [#10268](https://github.com/thingsboard/thingsboard/pull/10268) Added new services to Services Map Widget Context by @ChantsovaEkaterina
+  * [#9991](https://github.com/thingsboard/thingsboard/pull/9991) Added a check if an entity supports a detail page the entity table by @rusikv
+  * [#10022](https://github.com/thingsboard/thingsboard/pull/10022) Added support for HTML tags rule node description (Help tabs) by @iraznatovskyi
+  * [#9798](https://github.com/thingsboard/thingsboard/pull/9798) Update locale.constant-de_DE.json by @Backdraft007
+  * [#9927](https://github.com/thingsboard/thingsboard/pull/9927) Update locale.constant-zh_CN.json by @Fliner
+  * [#10156](https://github.com/thingsboard/thingsboard/pull/10156) Added Polish locale by @ArtemDzhereleiko
+  * [#9956](https://github.com/thingsboard/thingsboard/pull/9956) Shared some models and components to use thingsboard-extension by @kalutkaz
+  * [#10062](https://github.com/thingsboard/thingsboard/pull/10062) improvement to SNMP transport config by @Dmitriymush
+  * [#10064](https://github.com/thingsboard/thingsboard/pull/10064) Improvements for styles and time-window scss by @Dmitriymush
+  * [#10066](https://github.com/thingsboard/thingsboard/pull/10066) Increased "maxRows" limit from "100" to "3000" for Angular Gridster by @xalt7x
+  * [#10139](https://github.com/thingsboard/thingsboard/pull/10139) New toast notification design by @ArtemDzhereleiko
+  * [#10226](https://github.com/thingsboard/thingsboard/pull/10226) Added the possibility of setting the value range manually the Signal Strength widget configuration by @jktu2870
+
+**Bug Fixes**
+
+* Core & Rule Engine
+  * [#9963](https://github.com/thingsboard/thingsboard/pull/9963) Fixed asset relations deletion by @ViacheslavKlimov
+  * [#10205](https://github.com/thingsboard/thingsboard/pull/10205) Fixed delete alarm events (device profile node) by @YevhenBondarenko
+  * [#10111](https://github.com/thingsboard/thingsboard/pull/10111) Fixed infinite 'Failure' some corner cases by @YevhenBondarenko
+  * [#10202](https://github.com/thingsboard/thingsboard/pull/10202) Mapping of command id to unique sequence number per subscription id by @ashvayka
+* UI
+  * [#9941](https://github.com/thingsboard/thingsboard/pull/9941) Fixed validation JSON form custom widgets by @vvlladd28
+  * [#10016](https://github.com/thingsboard/thingsboard/pull/10016) Fixed not updated image preview when updated image by @vvlladd28
+  * [#9869](https://github.com/thingsboard/thingsboard/pull/9869) Fixed 'stateId' autocomplete and added improvements for widget action dialog by @Dmitriymush
+  * [#9923](https://github.com/thingsboard/thingsboard/pull/9923) Fixed ota-package-autocomplete override of 'formValue' on newputs value by @Dmitriymush
+  * [#9936](https://github.com/thingsboard/thingsboard/pull/9936) Fixed sysadmin general settings for Firefox by @ArtemDzhereleiko
+  * [#9948](https://github.com/thingsboard/thingsboard/pull/9948) Fixed not properly displaying of copy-code button by @iraznatovskyi
+  * [#10012](https://github.com/thingsboard/thingsboard/pull/10012) Fixed default column visibility for time-series table widget by @ArtemDzhereleiko
+  * [#10014](https://github.com/thingsboard/thingsboard/pull/10014) Fixed error on deleting data key basic config widgets by @ArtemDzhereleiko
+  * [#10036](https://github.com/thingsboard/thingsboard/pull/10036) Fixed progress bar by @ArtemDzhereleiko
+  * [#10052](https://github.com/thingsboard/thingsboard/pull/10052) Fixed IoT Gateway dashboard validator gateway configuration by @iraznatovskyi
+  * [#10060](https://github.com/thingsboard/thingsboard/pull/10060) Fixed IoT Gateway dashboard toast position after saving connector by @iraznatovskyi
+  * [#10065](https://github.com/thingsboard/thingsboard/pull/10065) Fixed 'singletonMode'fo on copy of rule-node by @Dmitriymush
+  * [#10084](https://github.com/thingsboard/thingsboard/pull/10084) Fixed dynamic links creation for gateway devices details by @iraznatovskyi
+  * [#10108](https://github.com/thingsboard/thingsboard/pull/10108) Fixed chart card value color differs from other widgets with the same values and range colors configs by @rusikv
+  * [#10117](https://github.com/thingsboard/thingsboard/pull/10117) Fixed RPC connectors table collapsing also fixed JSON field height when this widget looks as a column by @iraznatovskyi
+  * [#10122](https://github.com/thingsboard/thingsboard/pull/10122) Fixed dashboard entity filter remembers userput on close and cancel by @rusikv
+  * [#10130](https://github.com/thingsboard/thingsboard/pull/10130) Fixed Gridster options update for mobile mode by @Dmitriymush
+  * [#10189](https://github.com/thingsboard/thingsboard/pull/10189) Fixed the link to the documentation for time-series charts by @jktu2870
+  * [#10177](https://github.com/thingsboard/thingsboard/pull/10177) Fixed dashboard state autocomplete widget action component by @Dmitriymush
+  * [#10183](https://github.com/thingsboard/thingsboard/pull/10183) Fixed the caption to "Relation types to propagate by @jktu2870
+  * [#10206](https://github.com/thingsboard/thingsboard/pull/10206) Fixed 'typeList' URL query and alarm filter config translation by @Dmitriymush
+  * [#10225](https://github.com/thingsboard/thingsboard/pull/10225) Fixed background settings panel jump when editing content by @vvlladd28
+  * [#10247](https://github.com/thingsboard/thingsboard/pull/10247) Fixed hint the notification rule dialog by @vvlladd28
+  * [#10088](https://github.com/thingsboard/thingsboard/pull/10088) Replaced hard-coded document link paths with site-base-url by @iraznatovskyi
+  * [#10050](https://github.com/thingsboard/thingsboard/pull/10050) Added dynamic volumeputs and minor improvements for the liquid level widget. by @Dmitriymush
+  * [#10173](https://github.com/thingsboard/thingsboard/pull/10173) Added workaround for matChipInputAddOnBlur selection bug tb-entity-subtype-listput by @Dmitriymush
+
 
 ## v3.6.2 (Dec 28, 2023) {#v362}
 
@@ -205,7 +300,7 @@ Minor release with the following improvements and bug fixes:
 
 Major release with the following features and bug fixes:
 
-**Major Improvements:**
+**Major Improvements**
 
 * Core & Rule Engine 
 
@@ -400,7 +495,7 @@ Major release with the following features and bug fixes:
 
 Major release with the following features and bug fixes:
 
-**Major Improvements:**
+**Major Improvements**
 
 * Core & Rule Engine
   
@@ -416,7 +511,7 @@ Major release with the following features and bug fixes:
   * Improved entity pages by @ikulikov  
   * [#8169](https://github.com/thingsboard/thingsboard/pull/8169) Migrate to Angular 15 by @ikulikov
 
-**Minor Improvements:**
+**Minor Improvements**
 
 * Core & Rule Engine
   
@@ -578,7 +673,7 @@ Major release with the following features and bug fixes:
 
 Minor release with the following features and bug fixes:
 
-**Major Improvements:**
+**Major Improvements**
 
 * Core & Rule Engine:
 
@@ -598,7 +693,7 @@ Minor release with the following features and bug fixes:
   * [#7592](https://github.com/thingsboard/thingsboard/pull/7592) Support of Device to Cloud RPC Requests;
   
 
-**Minor Improvements:**
+**Minor Improvements**
 
 * Core & Rule Engine:
 
@@ -784,7 +879,7 @@ Minor release with the following features and bug fixes:
 
 Major release with the following features and bug fixes:
 
-**Major Improvements:**
+**Major Improvements**
 
 * Core & Rule Engine:
   * [#6534](https://github.com/thingsboard/thingsboard/pull/6534) Configuration of Rule Engine queues via Tenant Profiles. See documentation [here](/docs/user-guide/rule-engine-2-5/queues/);
@@ -798,7 +893,7 @@ Major release with the following features and bug fixes:
   * [#6781](https://github.com/thingsboard/thingsboard/pull/6781) Edge OTA support;
   * [#6852](https://github.com/thingsboard/thingsboard/pull/6852) Queue API support.
   
-**Minor Improvements:**
+**Minor Improvements**
 
 * Core & Rule Engine:
   * [#6483](https://github.com/thingsboard/thingsboard/pull/6483) Refactoring of some REST controllers code to Entity Services; 
@@ -920,7 +1015,7 @@ Major release with the following features and bug fixes:
 
 Minor release with the following improvements and bug fixes:
 
-**Improvements:**
+**Improvements**
 
 * Core:
   * [#6024](https://github.com/thingsboard/thingsboard/issues/6034) ThingsBoard Edge Community Edition support;
@@ -975,7 +1070,7 @@ Minor release with the following improvements and bug fixes:
 
 Minor release with the following improvements and bug fixes:
 
-**Improvements:**
+**Improvements**
 
 * Core:
   * Alarm Query performance improvements;
@@ -1049,7 +1144,7 @@ Minor release with the following improvements and bug fixes:
   * SQL tests are now running on real PostgreSQL instead of HSQL;
   * Update grpc and netty versions to proper handle native windows ssl libraries;
 
-**Bug fixes:**
+**Bug fixes**
 
 * Core & Rule Engine:
   * Upgrade of device profiles from 3.2.2;
@@ -1117,7 +1212,7 @@ Minor release with the following improvements and bug fixes:
 
 Minor release with the following improvements and bug fixes:
 
-**Improvements:**
+**Improvements**
 
 * Core:
   * REST API documentation:
@@ -1170,7 +1265,7 @@ Minor release with the following improvements and bug fixes:
   * Cache cleanup added to the upgrade scripts;
   * Logging of the progress during upgrade;
 
-**Bug fixes:**
+**Bug fixes**
 
 * Core:
   * Fixed security check in the 'getPersistedRpcByDevice' api call;
@@ -1215,7 +1310,7 @@ Minor release with the following improvements and bug fixes:
 
 Minor release with the following improvements and bug fixes:
 
-**Improvements:**
+**Improvements**
 
 * Core:
   * Added sequential RPC calls support;
@@ -1240,7 +1335,7 @@ Minor release with the following improvements and bug fixes:
 * Build scripts:
   * Improved maven artifacts dependency management
 
-**Bug fixes:**
+**Bug fixes**
 
 * Core:
   * Added validation and replacement of Queue names in the Device profile;
@@ -1262,7 +1357,7 @@ Minor release with the following improvements and bug fixes:
 
 Major release which contains 2126 commits and 1668 changed files.
 
-**Major Improvements:**
+**Major Improvements**
 
 * Core:
   * Interface to provision and communicate with ThingsBoard Edge;
@@ -1309,7 +1404,7 @@ Major release which contains 2126 commits and 1668 changed files.
   * Ability to control visibility and order of dashboards in the mobile application.
   * Ability to hide widgets in the mobile mode.
 
-**Minor Improvements:**
+**Minor Improvements**
 
 * Core:
 
@@ -1376,7 +1471,7 @@ Major release which contains 2126 commits and 1668 changed files.
   * Ability to toggle show password in the input field of login form;
   * focus for entity-key-list component after blur this component;
 
-**Bug Fixes:**
+**Bug Fixes**
 
 * Core:
 
@@ -1479,7 +1574,7 @@ Major release which contains 2126 commits and 1668 changed files.
 
 Minor release with the following improvements and bug fixes:
 
-**Major Improvements:**
+**Major Improvements**
 
 * Migration to JDK 11;
 * Rule Engine:
@@ -1499,7 +1594,7 @@ Minor release with the following improvements and bug fixes:
     * Support of [Protobuf](/docs/user-guide/device-profiles/#coap-device-type-default) for CoAP transport;
     * Support of [Efento](/docs/user-guide/device-profiles/#coap-device-type-efento-nb-iot) devices for CoAP transport;
 
-**Improvements:**
+**Improvements**
 
 * Core:
     * Added usage statistics configuration to yml file;
@@ -1537,7 +1632,7 @@ Minor release with the following improvements and bug fixes:
     * Added subject alternative names into key generation tool;
     * Refactoring of migration tool for new Thingsboard DB structure;
 
-**Bug fixes:**
+**Bug fixes**
 
 * Core:
     * Fixed race condition in the partition change events;
@@ -1616,7 +1711,7 @@ Bug Fixes:
 
 Minor release with the following improvements and bug fixes:
 
-**Improvements:**
+**Improvements**
 
 * UI: Improve UI load speed using lazy loading modules technique;
 * UI: Optimize UI - switch to AOT compiler. Use JIT compiler for dynamic components (widgets + rule nodes configuration);
@@ -1642,7 +1737,7 @@ Minor release with the following improvements and bug fixes:
 * Introduce configurable maximum length of debug event symbols;
 * Improve audit log service - use JacksonUtil instead of ObjectMapper;
 
-**Bug fixes:**
+**Bug fixes**
 
 * UI: Improve load performance of device profile details;
 * UI: Fixed update of device profile after devices bulk import;
@@ -1694,12 +1789,12 @@ Bug Fixes:
 
 ### ThingsBoard CE
 
-**Improvements:**
+**Improvements**
 
 * Added Cassandra timeseries partitions cache;
 * Improve audit log service - use JacksonUtil instead of ObjectMapper;
 
-**Bug fixes:**
+**Bug fixes**
 
 * MQTT transport: fix handling of cleanSession flag;
 * Kafka queue: removed ServiceId from kafka consumer groupId;
@@ -1723,7 +1818,7 @@ Bug fixes:
 The goal of this release is to simplify provisioning and connecting the devices and configuration of the alarms. 
 We have also added features to track tenant API usage.  
 
-**Major Improvements:**
+**Major Improvements**
 
  * [Tenant Profiles](/docs/user-guide/tenant-profiles/) to manage API and Rate Limits;
  * [Device Profiles](/docs/user-guide/device-profiles/) to configure default rule chain and queue, set transport configuration and define [Alarm Rules](/docs/user-guide/device-profiles/#alarm-rules);
@@ -1733,7 +1828,7 @@ We have also added features to track tenant API usage.
  * [SMS Provider](/docs/user-guide/ui/sms-provider-settings) and [Send SMS](/docs/user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule node;
  * UI for [OAuth2](/docs/user-guide/oauth-2-support/) settings.
  
-**Minor Improvements:**
+**Minor Improvements**
 
  * Added [Api Usage](/docs/user-guide/tenant-profiles/#api-usage-dashboard) dashboard;
  * Added "orderBy" request parameter for telemetry controller;
@@ -1744,7 +1839,7 @@ We have also added features to track tenant API usage.
  * Added support of min/max values in multiple attributes input widget;
  * UI performance improvements;
 
- **Bug fixes:**
+ **Bug fixes**
 
  * Cover all markers to fit bounds by default even when fit bounds marker is disabled in the map widget;
 
@@ -1769,7 +1864,7 @@ Bug Fixes:
 
 ### ThingsBoard CE
 
-**Improvements:**
+**Improvements**
 
  * Added partition property for kafka settings;
  * Changed default QoS for default SubAck message from AT_LEAST_ONCE to AT_MOST_ONCE
@@ -1780,7 +1875,7 @@ Bug Fixes:
  * Updated dependency versions to fix some vulnerabilities;
  * Added handler for too long payload exception in MQTT transport
 
- **Bug fixes:**
+ **Bug fixes**
 
  * Fixed telemetry cleanup procedure for telemetry stored in PostgreSQL;
  * Added ability to use exp-pause-between-retries for message processing strategies;
@@ -1812,7 +1907,7 @@ Bug fixes:
 
 Minor bug fix release:
 
-**Improvements:**
+**Improvements**
 
  * Performance improvement for Alarm related SQL queries;
  * UI: Upgrade Angular framework version to 10;
@@ -1821,7 +1916,7 @@ Minor bug fix release:
  * UI: Improved modules loading;
  * UI: Introduced common modules map;
 
- **Bug fixes:**
+ **Bug fixes**
 
  * UI: Fixed error tslint for map widget;
  * UI: Fixed update position new marker/polygon on resize in image-map;
@@ -1853,12 +1948,12 @@ Bug Fixes:
 
 ### ThingsBoard CE
 
-**Improvements:**
+**Improvements**
 
  * Password from SMTP settings is no longer shared to UI;
  * Added logs for in memory queue
 
- **Bug fixes:**
+ **Bug fixes**
 
  * Fixed SQL scripts for Unit tests
 
@@ -1882,14 +1977,14 @@ Bug fixes:
 
 Minor release with the following improvements and bug fixes.
 
-**Main features:**
+**Main features**
 
  * Filters over entity fields, attributes and latest telemetry; 
  * Alarm widget improvements;
  * Performance improvements to insets in PostgreSQL;
  * Ability to store the latest values in SQL instead of NoSQL;
 
-**Additional features:**
+**Additional features**
 
  * UI: 
    * External angular modules for widget development;
@@ -1910,7 +2005,7 @@ Minor release with the following improvements and bug fixes.
  * Added logging of MQTT payload errors;
  * Added support of Confluent cloud;
 
-**Bug fixes:**
+**Bug fixes**
 
  * UI: 
    * Fixed show polygon on image map widget;
@@ -1932,7 +2027,7 @@ Main features:
 
 ### ThingsBoard CE
 
-**Improvements:**
+**Improvements**
 
  * Performance improvements to inserts in PostgreSQL;
  * Prometheus Metrics;
@@ -1940,7 +2035,7 @@ Main features:
  * REST API: Ability to move device to another tenant;
  * Added proxy configs to rest api call rule node (#2943);
 
-**Bug fixes:**
+**Bug fixes**
 
  * refactored DataValidator email pattern
 
@@ -1954,14 +2049,14 @@ Everything from [TB CE v2.5.3](https://github.com/thingsboard/thingsboard/releas
 
 Minor release with everything from 3.0/2.5.2 plus the following improvements.
 
-**Improvements:**
+**Improvements**
 
  * Improved database migration - create indexes after inserts;
  * Improved rpc error handling;
  * Moved component tb-contact to shared module;
  * Updated Czech translation;
 
-**Bug fixes:**
+**Bug fixes**
 
  * UI: Dashboard page fixes and improvements;
  * UI: Fix map tooltip actions;
@@ -1974,7 +2069,7 @@ Minor release with everything from 3.0/2.5.2 plus the following improvements.
 
 Everything from [TB CE v3.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.0.1) with the following improvements.
 
-**Bug fixes:**
+**Bug fixes**
 
  * UI: Fix null value during export into csv.
 
@@ -1984,7 +2079,7 @@ Everything from [TB CE v3.0.1](https://github.com/thingsboard/thingsboard/releas
 
 Minor bug-fix release with few improvements.
 
-**Improvements:**
+**Improvements**
 
  * Replaced Akka with pure java implementation of Actor System;
  * Using external executor in Kafka Node;
@@ -1992,7 +2087,7 @@ Minor bug-fix release with few improvements.
  * Improved handling of peak connect attempts;
  * RPC Request Node improvement to avoid blocking;
 
-**Bug fixes:**
+**Bug fixes**
 
  * UI: Fixed the activation of on-row event on details click;
  * UI: Fixed problem widget-editor in Safari #2900;
@@ -2003,7 +2098,7 @@ Minor bug-fix release with few improvements.
 
 Everything from [TB CE v2.5.2](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.2) with the following improvements.
 
-**Bug fixes:**
+**Bug fixes**
 
  * UI: Fix null value during export into csv;
 
@@ -2013,12 +2108,12 @@ Everything from [TB CE v2.5.2](https://github.com/thingsboard/thingsboard/releas
 
 Major release with everything from 2.5 plus the following improvements.
 
-**Main features:**
+**Main features**
 
  * AngularJS 1.5.8 -> Angular 9 migration for entire UI;
  * Force SQL DB usage to store entities;
 
-**Additional features:**
+**Additional features**
 
  * Improved pagination and filtering;
  * Improved and refactored Map widgets;
@@ -2032,11 +2127,11 @@ Major release with everything from 2.5 plus the following improvements.
 
 Everything from [TB CE v3.0](https://github.com/thingsboard/thingsboard/releases/tag/v3.0) with the following improvements.
 
-**Main features:**
+**Main features**
 
  * Advanced CSS for White-labeling;
 
-**Additional features:**
+**Additional features**
 
  * No more "Fetch more" button;
  * SQL native filtering and pagination in entity groups;
@@ -2047,7 +2142,7 @@ Everything from [TB CE v3.0](https://github.com/thingsboard/thingsboard/releases
 
 Minor bug-fix release with few improvements.
 
-**Improvements:**
+**Improvements**
 
  * UI: Batch support for fetching entities from relations 
  * Improved K8S deployment scripts;
@@ -2060,7 +2155,7 @@ Minor bug-fix release with few improvements.
  * Added timestamp to TbMsg;
  * Added minimum RPC timeout value setting;
 
-**Bug fixes:**
+**Bug fixes**
 
  * Fixed claim devices API;
  * Fixed shared/client attribute updates over WS;
@@ -2072,12 +2167,12 @@ Minor bug-fix release with few improvements.
 
 Everything from [TB CE v2.5.1](https://github.com/thingsboard/thingsboard/releases/tag/v2.5.1) with the following improvements.
 
-**Improvements:**
+**Improvements**
 
  * Performance improvement for RBAC functionality;
  * Added maxRecords and requestTimeout to AWS Kinesis integration;
 
-**Bug fixes:**
+**Bug fixes**
 
  * Start scheduled events correctly if startTime is set earlier than repeat config start date
 
@@ -2087,7 +2182,7 @@ Everything from [TB CE v2.5.1](https://github.com/thingsboard/thingsboard/releas
 
 Major release with the following improvements.
 
-**Main features:**
+**Main features**
 
 * Support of new Queue implementations: AWS SQS, Google Pub/Sub, Azure Service Bus and RabbitMQ;
 * Rule Engine:
@@ -2111,7 +2206,7 @@ Major release with the following improvements.
 * UI: Added Widgets and Dashboard for Managing Gateway;
     
 
-**Additional features:**
+**Additional features**
 
 * Service Discovery improvements;
 * Introduced SMTP TLS version to default mail service and send email node;
@@ -2130,7 +2225,7 @@ Major release with the following improvements.
 * UI: Added ability to use apostrophe in custom translations in tables;
 * Demo Data: Added "Thermostats" Dashboard as an example of custom actions;
 
-**Bug fixes:**
+**Bug fixes**
 
 * Fixed MQTT inactivity disconnects;
 * Fixed concurrent processing of new device connections for gateway MQTT session;
@@ -2155,19 +2250,19 @@ Major release with the following improvements.
 
 Everything from [TB CE v2.5](https://github.com/thingsboard/thingsboard/releases/tag/v2.5) with the following improvements.
 
-**Main features:**
+**Main features**
 
  * Rule Engine improvements similar to Community Edition;
  * OAuth improvements similar to Community Edition;
  * Improved performance;
 
-**Additional features:**
+**Additional features**
 
  * Added Entity Name column for multiple entities to export functionality;
  * Avoid entity count check for unlimited subscriptions;
  * Persistent volumes for k8s deployments to store license data;
  
-**Bug fixes:**
+**Bug fixes**
 
  * UI: Fix XLSX export to use local time;
  * UI: Add CSV string-delimiter for export;

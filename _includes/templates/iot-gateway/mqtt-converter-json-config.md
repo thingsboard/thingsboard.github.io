@@ -15,17 +15,16 @@ Json converter is the default converter, it looks for '**deviceName**', '**devic
 | ... key                     | **${sensorModel}**        | Simple JSON expression, is used for looking up value in the incoming message, to be used as attribute name.                                     |
 | ... value                   | **on**                    | Attribute value, to be sent to ThingsBoard instance.                                                                                            |
 | timeseries:                 |                           | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.                                     |
-| ... type                    | **double**                | Type of incoming data for a current telemetry.                                                                                                  |
+| ... type                    | **integer**                | Type of incoming data for a current telemetry.                                                                                                  |
 | ... key                     | **temperature**           | Telemetry name, to be sent to ThingsBoard instance.                                                                                             |
 | ... value                   | **${temp}**               | Simple JSON expression, is used for looking up value in the incoming message, to be sent to ThingsBoard instance as the value of key parameter. |
 |                             |                           |                                                                                                                                                 |
-| ... type                    | **double**                | Type of incoming data for a current telemetry.                                                                                                  |
+| ... type                    | **integer**                | Type of incoming data for a current telemetry.                                                                                                  |
 | ... key                     | **humidity**              | Telemetry name, to be sent to ThingsBoard instance.                                                                                             |
 | ... value                   | **${hum}**                | Simple JSON expression, is used for looking up value in the incoming message, to be sent to ThingsBoard instance as the value of key parameter. |
 |--- 
 
 {% capture difference %}
-<br>
 **Parameters in attributes and telemetry section may differ from those presented above, but will follow the same structure.**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
@@ -37,7 +36,7 @@ Mapping subsection for Example 1 will look like:
 
 ```json
     {
-      "topicFilter": "/sensor/data",
+      "topicFilter": "sensor/data",
       "converter": {
         "type": "json",
         "deviceNameJsonExpression": "${serialNumber}",
@@ -57,12 +56,12 @@ Mapping subsection for Example 1 will look like:
         ],
         "timeseries": [
           {
-            "type": "double",
+            "type": "integer",
             "key": "temperature",
             "value": "${temp}"
           },
           {
-            "type": "double",
+            "type": "integer",
             "key": "humidity",
             "value": "${hum}"
           }
@@ -75,7 +74,7 @@ Mapping for Example 2 will look like:
 
 ```json
     {
-      "topicFilter": "/sensor/+/data",
+      "topicFilter": "sensor/+/data",
       "converter": {
         "type": "json",
         "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
@@ -90,12 +89,12 @@ Mapping for Example 2 will look like:
         ],
         "timeseries": [
           {
-            "type": "double",
+            "type": "integer",
             "key": "temperature",
             "value": "${temp}"
           },
           {
-            "type": "double",
+            "type": "integer",
             "key": "humidity",
             "value": "${hum}"
           }

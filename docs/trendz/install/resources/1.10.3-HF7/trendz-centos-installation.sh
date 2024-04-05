@@ -1,0 +1,1 @@
+sudo rpm -Uvh trendz-1.10.3-HF7.rpm

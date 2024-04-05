@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip
+https://dist.thingsboard.io/trendz-windows-{{ site.release.trendz_ver }}.zip
 ```
 {: .copy-code}
 
@@ -185,7 +185,6 @@ The **trendz.log** file should contain following line:
 
 ```text
 YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.t.TrendzApplication - Started TrendzApplication in x.xxx seconds (JVM running for x.xxx)
-
 ```
 
 In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).

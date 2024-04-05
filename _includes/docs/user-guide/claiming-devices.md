@@ -23,8 +23,9 @@ See below for more details.
 {% capture claimingscenariotogglespec %}
 Claiming using <b>device-side</b> key scenario%,%deviceside%,%templates/claiming/device-key-scenario.md%br%
 Claiming using <b>server-side</b> key scenario%,%serverside%,%templates/claiming/server-key-scenario.md%br%{%endcapture%}
-{% include content-toggle.html content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
+{% include content-toggle.liquid content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
 
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 
 ## Device Claiming Permissions in PE
 
@@ -38,6 +39,8 @@ Let's add the above permission for a custom claiming user group.
 
 {% include images-gallery.html imageCollection="device-claiming-permissions-in-pe-carousel" showListImageTitles="true" %} 
 
+{% endif %}
+
 ## Device Claiming Widget
 
 {% include images-gallery.html imageCollection="device-claiming-widget-carousel" showListImageTitles="true" %} 
@@ -49,6 +52,7 @@ The Claiming Request is sent as a POST request to the following URL:
 ```shell
 http(s)://host:port/api/customer/device/$DEVICE_NAME/claim
 ```
+{: .copy-code}
 
 The supported data format is:
 
@@ -57,6 +61,7 @@ The supported data format is:
   "secretKey":"value"
 }
 ```
+{: .copy-code}
 
 **Note:** the message does not contain **durationMs** parameter and the **secretKey** parameter is optional.
 
@@ -83,6 +88,7 @@ You will receive the response like the following one:
   "setOrExpired": true
 }
 ```
+{: .copy-code}
 
 ## Python example scripts
 
@@ -104,12 +110,11 @@ Case description:
 We have a device on ThingsBord with a name **Test claiming device**.  
 The device has access token credentials - **Eypdinl1gUF5fSerOPJF**.  
 
-We should [download the script](/docs/{{docsPrefix}}user-guide/resources/claiming-device/basic_claiming_example.py) above and run it to send claiming request to the server.  
+We should [download the script](/docs/user-guide/resources/claiming-device/basic_claiming_example.py) below and run it to send claiming request to the server.  
 
 ```python
-
 #
-# Copyright © 2016-2020 The Thingsboard Authors
+# Copyright © 2016-2024 The Thingsboard Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -131,7 +136,7 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*20, "ThingsBoard basic device claiming example script.", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard host or leave it blank to use default (thingsboard.cloud): ")
+    host = input("Please write your ThingsBoard server hostname or leave it blank to use default (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
     token = ""
     while not token:
@@ -141,7 +146,7 @@ def collect_required_data():
     config["token"] = token
     config["secret_key"] = input("Please write secret key for claiming request: ")
     if not config["secret_key"]:
-        print("Please make sure that you have claimData in server attributes for device to use this feature without device secret in the claiming request.")
+        print("Please make sure that you have claimingData in server attributes for device to use this feature without device secret in the claiming request.")
     duration_ms = input("Please write duration in milliseconds for claiming request or leave it blank to use default (30000): ")
     config["duration_ms"] = int(duration_ms) if duration_ms else 30000
     print("\n", "="*80, "\n", sep="")
@@ -150,13 +155,14 @@ def collect_required_data():
 
 if __name__ == '__main__':
     config = collect_required_data()
-    client = TBDeviceMqttClient(host=config["host"], token=config["token"])
+    client = TBDeviceMqttClient(config["host"], username=config["token"])
     client.connect()
-    client.claim(secret_key=config["secret_key"], duration=config["duration_ms"]).get()
-    print("Claiming request was sent, now you should use claiming device widget to finish the claiming process.")
+    rc = client.claim(secret_key=config["secret_key"], duration=config["duration_ms"]).get()
+    if rc == 0:
+        print("Claiming request was sent, now you should use claiming device widget to finish the claiming process.")
 
 ```
-{: .copy-code}
+{:.copy-code.expandable-20}
 
 Then we are able to use [Device Claiming Widget](#device-claiming-widget).
 

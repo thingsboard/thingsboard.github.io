@@ -8,24 +8,24 @@ description: Getting started with ThingsBoard open-source IoT platform and simul
 step1:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
-        title: 'Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;'
+        title: 'Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png 
-        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device";'
+        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
-        title: 'Enter the device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device;'
+        title: 'Enter the device name. For example, "My New Device". No other changes required at this time. Click "Add";'
     3:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-1-ce.png
-        title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
+        title: 'A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png 
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default.'
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
+        title: 'Congratulations on adding your first device! As you add more devices, the will be added at the top of the table, since the table automatically sorts devices by their creation time, with the newest ones first.'
 
 step11:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
-        title: 'You can view notification by clicking on the "bell" icon in the top right corner.'
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png 
+        title: 'You can view notification about adding a new device by clicking on the "bell" icon in the top right corner.'
 
 step2:
     0:
@@ -48,16 +48,16 @@ step21:
 
 step31:
     0:
-        image: /images/user-guide/dashboards/overview/create-dashboard-1-ce.png
-        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
+        image: /images/helloworld/getting-started-ce/create-dashboard-1-ce.png
+        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     1:
-        image: /images/user-guide/dashboards/overview/create-dashboard-2-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-2-ce.png
         title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
     2:
-        image: /images/user-guide/dashboards/overview/create-dashboard-3-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-3-ce.png
         title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
     3:
-        image: /images/user-guide/dashboards/overview/create-dashboard-4-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-4-ce.png
         title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
 
 step32:
@@ -69,13 +69,13 @@ step32:
         title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-2-ce.png
-        title: 'Select the "Tables" widget bundle;'
+        title: 'Find the "Tables" widget bundle and click on it;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-3-ce.png
         title: 'Select the "Entities table" widget;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-4-ce.png
-        title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" in the "Device" field. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
+        title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" as the data source in the "Device" field. The "name" key has already been added to the "Columns" section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
         title: 'Click on the newly appeared data key input field. A list of available data keys will open. Select "temperature" data key;'
@@ -84,7 +84,7 @@ step32:
         title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
     7:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-7-ce.png
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Click "Save" to apply changes.'
+        title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.'
 
 step33:
     0:
@@ -92,19 +92,21 @@ step33:
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-2-ce.png
-        title: 'Select the "Charts" widget bundle;'
+        title: 'Find the "Charts" widget bundle and click on it;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-3-ce.png
-        title: 'Select the "Timeseries Line Chart" widget;'
+        title: 'Select the "Time series сhart" widget;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-4-ce.png
-        title: 'Specify the previously created device "My New Device" in the "Device" field and specify the "temperature" data key in the "Series" section. Click "Add";'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. In the "Series" section, specify the data key "temperature" to start monitoring the temperature values of the device. Then, click "Add";'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-5-ce.png
         title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default. Click "Save" to apply changes;'
-    5:
+
+step33_2:
+    0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-6-ce.png
-        title: 'Now open the time selection window. Change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
+        title: 'You can open the time selection window and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
 
 step34:
     0:
@@ -112,27 +114,27 @@ step34:
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-2-ce.png
-        title: 'Select "Alarm widgets" bundle;'
+        title: 'Find the "Alarm widgets" bundle and click on it;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-3-ce.png
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
-        title: 'Specify the previously created device "My New Device" in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
-        title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'   
+        title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'   
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-6-ce.png
-        title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop Alarm widget to the free space and resize it. Click "Save" to apply changes.'
+        title: 'Scroll down to find the "Alarms table" widget. Once you find it, click and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
 
 step4:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'Go to the "Profiles" section, and click on the "Device profiles" page. Then click on the default device profile row to open its details;'
+        title: 'Go to the "Device profiles" page of the "Profiles" section. Then click on the default device profile row to open its details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Select the "Alarm rules" tab and click "pencil" button to enter edit mode;'
+        title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
         title: 'Click "Add alarm rule" button;' 
@@ -161,18 +163,21 @@ step5:
         title: 'Notice that the new temperature telemetry causes a new active alarm;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-2-ce.png
-        title: 'You may acknowledge and clear the alarms;'
+        title: 'You may acknowledge and clear alarms using the "Alarms table" widget;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
         title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'   
 
 step71:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-1-ce.png
         title: 'Navigate to the Customers page. Click the "+" sign to add a customer;'
     1:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-2-ce.png
         title: 'Input customer title and click "Add".'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
+        title: 'The new customer has been created.'
 
 step72:
     0:
@@ -199,12 +204,15 @@ step72_1:
 step72_2:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
-        title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Customer" tab;'
+        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-9-ce.png
-        title: 'Select the customer to whom you want to assign the new device. Then click "Add";'
+        title: 'Input device name (for example, "Thermostat") and select the customer in the "Assign to customer" field to whom you want to assign the new device. Then, click "Add";'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
+        title: 'Close check connectivity window;'
+    3:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-11-ce.png
         title: 'The device has been created, and it immediately belongs to the selected customer.'
 
 step73:
@@ -239,7 +247,7 @@ step74:
         title: 'Click on the created user to open details. Click "pencil" icon to enter edit mode;'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-7-ce.png
-        title: 'Select default dashboard and check "Always fullscreen". Apply changes.'
+        title: 'Select your "My New Dashboard" as default dashboard and check "Always fullscreen". Apply changes.'
 
 step75:
     0:
@@ -373,6 +381,10 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart.
 
+Also, you can open the timewindow and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
+
+{% include images-gallery.html imageCollection="step33_2" %}
+
 ### Step 3.4 Add an Alarms table widget
 
 The alarms table widget displays alarms related to the specified entity in the certain time window.
@@ -380,7 +392,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms.
+Now it's time to configure alarm rules and raise some alarms.
 
 **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
@@ -404,13 +416,16 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-## Step 6. Alarm notifications
-
-It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
-
 We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
+
+## Step 6. Alarm notifications
+
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/) allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+
+Additionally, the [ThingsBoard Mobile Application](/docs/mobile/) allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
+Follow [this guide](/docs/mobile/getting-started/) to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
 
 ## Step 7. Assign device and dashboard to customer
 

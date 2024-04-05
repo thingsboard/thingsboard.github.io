@@ -1,25 +1,11 @@
 $main-max-width: 1200px
 
-$nav-buttons-margin-left: 24px
-
 @media screen and (min-width: 1025px)
 
 	header
 		.logo
 			width: 180px
 			height: 60px
-
-	.nav-buttons
-		.nav-items, .nav-item-container
-			display: inline-block
-
-	.nav-buttons
-		.button + *
-			margin-left: $nav-buttons-margin-left
-
-	//.open-nav, .y-enough
-		//#gettingStarted, #liveDemo
-			margin-left: $nav-buttons-margin-left
 
 	#mainNav
 		.nav-box
@@ -30,143 +16,9 @@ $nav-buttons-margin-left: 24px
 					font-size: 28px
 					line-height: 36px
 
-	#common
-		.logo
-			width: 180px
-			height: 60px
-
-	#encyclopedia
-		clear: both
-		#docsToc
-			position: fixed
-			top: 150px
-			height: calc(100vh - 150px)
-			overflow: auto
-			padding: 24px 20px
-			left: 0
-			width: 292px
-			z-index: auto
-			+tiny-scrollbar
-			@media screen and (min-width: 1600px)
-				width: 358px
-			&.horizontal
-				.yah
-					& > .title
-						margin-left: 0px
-				width: 100%
-				margin-top: -50px
-				margin-bottom: 50px
-				padding: 0 50px
-				.pi-accordion
-					& > .container:first-child > .item.yah:first-child > .title:first-child
-						margin-left: 0px !important
-					.item
-						display: inline-block
-		#device-filters
-			display: none
-			position: relative
-			margin-top: 124px
-			flex-direction: row
-			justify-content: space-between
-			width: 100%
-			z-index: 1
-			+tiny-scrollbar
-			@media screen and (min-width: 1281px)
-				margin-top: 0
-				position: fixed
-				top: 150px
-				display: block
-				height: calc(100vh - 150px)
-				overflow: auto
-				padding: 24px 20px
-				left: 0
-				width: 292px
-				background-color: #F9F9F9
-				z-index: auto
-				+tiny-scrollbar
-				.header
-					display: block
-					position: relative
-			@media screen and (min-width: 1600px)
-				width: 358px
-		#docsContent
-			width: 100%
-			@media screen and (min-width: 1281px)
-				&.hasTocContent
-					margin-right: 280px
-					width: calc(100% - 574px)
-				#table-of-contents
-					position: fixed
-					padding: 56px 20px
-					top: 154px
-					overflow: auto
-					height: calc(100vh - 154px)
-					right: 0
-					width: 260px
-					+tiny-scrollbar
-					h4
-						font-size: 16px
-						color: #212529
-						opacity: 0.6
-						margin-bottom: 0
-						&:before
-							content: none
-					ul#markdown-toc
-						margin-top: 10px
-						padding-left: 16px
-						li
-							color: #212529
-							&::marker
-								font-size: 10px
-							&:hover
-								&::marker
-									color: #2a7dec
-							a
-								color: #212529
-								font-weight: normal
-								&:hover
-									text-decoration: none
-									color: #2a7dec
-							&.active
-								&::marker
-									color: #2a7dec
-								& > a
-									color: #2a7dec
-									font-weight: 500
-						li.hide
-							display: none
-			@media screen and (min-width: 1600px)
-				&.hasTocContent
-					margin-right: 390px
-					width: calc(100% - 750px)
-				#table-of-contents
-					width: 370px
-
-			#editPageButton
-				right: -25px
-
-			// Video
-			#video
-				width: 50%
-
-		#docsContent
-			.supportPlans
-				.supportPlan
-					.pricingTable
-						li
-							font-size: 18px
-			.company-logo
-				img
-					max-width: 400px
-
 	section, header, footer
 		main, div.main-div
 			max-width: $main-max-width
-
-	.oceanNodes
-		main
-			position: relative
-			max-width: 830px
 
 	#video
 		width: $main-max-width
@@ -179,34 +31,6 @@ $nav-buttons-margin-left: 24px
 		padding-right: 30px
 		nav
 			overflow: hidden
-
-		.newsletterSubsContainer
-			form#newsletter-form
-				fieldset
-					.newsletterInputs
-						flex-direction: row
-						align-items: baseline
-				.subsTitle
-					font-size: 24px
-					white-space: nowrap
-					margin: auto
-					margin-right: 10px
-				#subsEmail
-					margin-right: 10px
-					margin-bottom: 0px
-
-	#wishField
-		background-color: transparent
-		padding: 10px
-		font-size: 16px
-		font-weight: 100
-		color: white
-		border: 1px solid white
-		transition: 0.3s
-
-		&:focus
-			background-color: $light-grey
-			color: $dark-grey
 
 	.social a
 		span
@@ -221,21 +45,3 @@ $nav-buttons-margin-left: 24px
 		padding-right: 100px
 		main, div.main-div
 			max-width: 1400px!important
-	#docs, #common
-		footer main, footer div.main-div
-			max-width: 100%!important
-#common
-	@media screen and (min-width: 1025px)
-		#encyclopedia
-			padding-left: 30px
-			padding-right: 30px
-			#content
-				max-width: 1200px
-				margin: auto
-	@media screen and (min-width: 1500px)
-		#encyclopedia
-			#content
-				max-width: 100%
-		#encyclopedia, footer
-			padding-left: 260px
-			padding-right: 260px

@@ -76,7 +76,7 @@ humidity: stringToInt(payloadJson.data.substring(2,4))
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-uplink-converter-config-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="loriotuplinkconverterconfig" toggle-spec=loriotuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="loriotuplinkconverterconfig" toggle-spec=loriotuplinkconverterconfig %}
 
 ## Create Integration
 
@@ -95,7 +95,7 @@ We can create Output with LORIOT or in integration by enabling the **Create Lori
 LORIOT Account<br><small>Recommended</small>%,%loriot-account%,%templates/integration/loriot/loriot-account-authorization-type.md%br%
 Basic Credential<br>%,%basic-credential%,%templates/integration/loriot/thingsboard-basic-credentials.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="loriotAuthorizationTypes" toggle-spec=authorizationTypes %}
+{% include content-toggle.liquid content-toggle-id="loriotAuthorizationTypes" toggle-spec=authorizationTypes %}
 
 <div style="font-size: 20px; margin-bottom: 8px; font-weight: bold;">Enable security option</div>
 
@@ -116,7 +116,7 @@ Once the Headers filter has been configured, it will also need to be specified i
 
 {% include images-gallery.html imageCollection="uplink-message" %}
 
-## Send test Uplink message
+## Send Uplink message
 
 It may be useful to "emulate" the message from device using console instead of the LORIOT server. To send an uplink message, you need a **HTTP endpoint URL** from the integration, **port** and **EUI** from LORIOT. 
 
@@ -170,7 +170,7 @@ Create Downlink in **Data converters.** To see events - enable **Debug.**
 {% capture loriotdownlinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-downlink-converter-config-java.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="loriotdownlinkconverterconfig" toggle-spec=loriotdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="loriotdownlinkconverterconfig" toggle-spec=loriotdownlinkconverterconfig %}
 
 Get EUI in LORIOT in the Devices section, where the devices have already been created:
 

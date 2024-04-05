@@ -31,8 +31,6 @@ toc:
     path: /docs/user-guide/install/gcp/
   - title: Azure
     path: /docs/user-guide/install/azure/
-- title: Upgrade instructions
-  path: /docs/user-guide/install/upgrade-instructions/
 - title: Configuration
   section:
   - title: How to change configuration parameters?
@@ -51,3 +49,5 @@ toc:
     path: /docs/user-guide/install/snmp-transport-config/
   - title: Version control executor parameters
     path: /docs/user-guide/install/vc-executor-config/
+- title: Upgrade instructions
+  path: /docs/user-guide/install/upgrade-instructions/

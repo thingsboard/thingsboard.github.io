@@ -184,7 +184,7 @@ description: Comprehensive software solutions for edge computing, providing data
                 <tr>
                     <th>Offline Operation on edge</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"> (Limited to Data Collection)</td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Limited to Data Collection)</td>
                 </tr>
                 <tr>
                     <th>Traffic Filtering on edge</th>

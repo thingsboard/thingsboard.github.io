@@ -114,7 +114,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-text-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-text-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpuplinktext" toggle-spec=udpuplinktext %}
+{% include content-toggle.liquid content-toggle-id="udpuplinktext" toggle-spec=udpuplinktext %}
 
 - **JSON payload**
 
@@ -122,7 +122,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-tex
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-json-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-json-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpuplinkjson" toggle-spec=udpuplinkjson %}
+{% include content-toggle.liquid content-toggle-id="udpuplinkjson" toggle-spec=udpuplinkjson %}
 
 - **Binary payload**
 
@@ -130,7 +130,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-jso
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-binary-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-binary-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpuplinkbinary" toggle-spec=udpuplinkbinary %}
+{% include content-toggle.liquid content-toggle-id="udpuplinkbinary" toggle-spec=udpuplinkbinary %}
 
 - **Hex payload**
 
@@ -138,7 +138,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-bin
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-hex-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-hex-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpuplinkhex" toggle-spec=udpuplinkhex %}
+{% include content-toggle.liquid content-toggle-id="udpuplinkhex" toggle-spec=udpuplinkhex %}
 
 ### UDP Integration Setup
 
@@ -187,7 +187,7 @@ JSON payload<br>%,%json%,%templates/integration/udp/udp-handler-configuration-js
 Binary payload<br>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
 Hex payload<br>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
+{% include content-toggle.liquid content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
 Click **Add** to save the Integration.
 
@@ -216,7 +216,7 @@ JSON payload<br>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
 Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 
 Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
 Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.
@@ -236,7 +236,7 @@ Create Downlink Converter in **Data converters**. To see events - enable Debug.
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-downlink-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-downlink-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpdownlink" toggle-spec=udpdownlink %}
+{% include content-toggle.liquid content-toggle-id="udpdownlink" toggle-spec=udpdownlink %}
 
 Now you have to add a converter to the integration, optionally
 configure Cache Size and Cache time to live in minutes (able just for UDP Downlink).

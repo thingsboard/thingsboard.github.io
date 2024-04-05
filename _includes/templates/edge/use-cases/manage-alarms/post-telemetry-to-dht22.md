@@ -13,16 +13,16 @@ HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/edge/getting-start
 MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/edge/getting-started/mqtt-linux.md%br%
 MQTT<small>Windows</small>%,%mqtt-windows%,%templates/edge/getting-started/mqtt-windows.md%br%
 CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/getting-started/coap.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+{% include content-toggle.liquid content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
 
 Once you have successfully published the "temperature" readings with value **51**:
 
-{% capture connectdevicetogglespec %}
+{% capture connectdevicetogglespec2 %}
 HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/edge/use-cases/manage-alarms/http-above-threshold.md%br%
 MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/edge/use-cases/manage-alarms/mqtt-linux-above-threshold.md%br%
 MQTT<small>Windows</small>%,%mqtt-windows%,%templates/edge/use-cases/manage-alarms/mqtt-windows-above-threshold.md%br%
 CoAP<small>Linux or macOS</small>%,%coap%,%templates/edge/use-cases/manage-alarms/coap-above-threshold.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+{% include content-toggle.liquid content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec2 %}
 
 You should immediately see alarm in the Device Alarm Tab:
 

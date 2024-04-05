@@ -6,6 +6,18 @@ $step3: 999px
 $step4: 1279px
 $step5: 1439px
 $step6: 1919px
+$verticalStep1: 450px
+$modal-z-index: 13000
+$modal-background-color: rgba(0, 0, 0, 0.4)
+$modal-content-background-color: #fefefe
+$modal-content-border: 1px solid #888
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
+$form-element-label-color: rgba(0, 0, 0, 0.54)
+$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
+$button-background-color: #2A7DEC
+$font-style-normal: normal
 
 #development-services-reviews
     .development-services-reviews-content
@@ -21,7 +33,6 @@ $step6: 1919px
         display: flex
         justify-content: center
 
-
     #encyclopedia
         padding: 20px 0
         position: relative
@@ -33,7 +44,6 @@ $step6: 1919px
     .back-link
         display: flex
         color: #727381
-        font-family: Poppins
         font-size: 24px
         font-style: normal
         font-weight: 500
@@ -55,7 +65,6 @@ $step6: 1919px
 
         .title
             color: #333
-            font-family: Poppins
             font-size: 48px
             font-style: normal
             font-weight: 600
@@ -72,7 +81,6 @@ $step6: 1919px
             padding: 7px 0px
             color: #3622A4
             text-align: center
-            font-family: Poppins
             font-size: 26px
             font-style: normal
             font-weight: 700
@@ -112,11 +120,11 @@ $step6: 1919px
         position: relative
         display: flex
         background-color: white
-        padding: 100px 130px 100px 130px
+        padding: 100px
 
         .content-get-in-touch
             display: flex
-            justify-content: center
+            justify-content: space-between
             width: 100%
 
         .section-title
@@ -135,7 +143,6 @@ $step6: 1919px
             line-height: 68px
             margin-right: 40px
             color: #333
-            font-family: Poppins
             font-size: 48px
             font-style: normal
             font-weight: 600
@@ -145,7 +152,6 @@ $step6: 1919px
 
         .section-text
             color: #5E5F62
-            font-family: Poppins
             font-size: 16px
             font-style: normal
             font-weight: 400
@@ -155,6 +161,7 @@ $step6: 1919px
 
         .contact-form
             padding-top: 30px
+            width: 100%
             z-index: 2
             .form-element
                 margin-bottom: 28px
@@ -191,7 +198,7 @@ $step6: 1919px
             padding: 15px
             border-radius: 6px
             color: white
-            background-color: #3622A4
+            background-color: #2A7DEC
             width: 100%
 
     .review
@@ -213,7 +220,6 @@ $step6: 1919px
 
         .review-header
             color: #2E2F3B
-            font-family: Poppins
             font-size: 28px
             font-style: normal
             font-weight: 500
@@ -225,7 +231,6 @@ $step6: 1919px
             max-width: 900px
             h6, h5
                 color: #5E5F62
-                font-family: Poppins
                 font-size: 22px
                 font-style: normal
                 font-weight: 400
@@ -264,9 +269,141 @@ $step6: 1919px
         top: 45%
         left: -10%
 
+    .modal 
+        display: none
+        position: fixed
+        align-items: center
+        justify-content: center
+        z-index: $modal-z-index
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: $modal-background-color
+    
+        .modal-content 
+            animation-name: animatetop
+            animation-duration: 0.4s
+            background-color: $modal-content-background-color
+            padding: 20px 20px 30px
+            border: $modal-content-border
+            width: 950px
+
+            .sub-content
+                overflow: auto
+                height: 95%
+
+            .close-button
+                display: flex
+                justify-content: end
+                
+            .close
+                width: 28px
+                height: 28px
+                cursor: pointer
+
+            .title, .sub-title, .sub-sub-title 
+                letter-spacing: 0.01em
+                text-align: center
+                display: flex
+                justify-content: center 
+                font-style: $font-style-normal
+
+            .title
+                font: $title-font
+                color: #3622A4
+
+            .sub-title
+                font: $sub-title-font
+                color: #333333
+
+            .sub-sub-title
+                font: $sub-sub-title-font
+                color: #5E5F62
+                letter-spacing: .001em
+                margin-top: 15px
+                span
+                    width: 556px
+                    height: 56px
+
+            .form-section
+                padding: 30px 40px 0px 40px
+                display: flex
+                justify-content: space-around
+                .form-element
+                    margin-bottom: 15px
+                    width: 48%
+                    label
+                        position: relative
+                        width: 100%
+                        p
+                            color: $form-element-label-color
+                            font-size: 12px
+                            line-height: 16px 
+                            font-style: $font-style-normal 
+                            font-weight: 400
+                            letter-spacing: 0.4px
+                            position: absolute
+                            top: -8px
+                            left: 10px
+                            z-index: 2
+                            padding: 0px 5px
+                            background: white
+
+                        .cdu-form-control, .cdu-text-area
+                            width: 100%
+                            color: #898B8F
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 24px
+                            letter-spacing: 0.15px
+                            border-radius: 4px
+                            border: $form-control-border
+                            padding: 16px 18px
+
+                        .cdu-text-area
+                            height: 170px
+
+                    .label-select
+                        select 
+                            width: 100%
+                            appearance: none
+                            -webkit-appearance: none
+                            -moz-appearance: none
+                            &::-ms-expand 
+                                display: none
+
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 40%
+                            right: 10px
+                            width: 16px
+                            height: 16px
+                            background-image: url(/images/pe/read-more-arrow.svg) no-repeat center
+                            transform: rotate(90deg)
+                            transform-origin: center center
+
+                .next
+                    width: 98%
+
+            .secondary
+                padding-top: 0px
+
+            .submit-button-container
+                display: flex
+                justify-content: center
+                .cdu-button
+                    padding: 15px
+                    border-radius: 6px
+                    color: white
+                    background-color: $button-background-color
+                    width: 400px
+
     @media screen and (max-width: $step6)
         .review
-                padding: 0 100px
+            padding: 0 100px
 
         .header
             .title
@@ -328,6 +465,39 @@ $step6: 1919px
 
                 .contact-form
                     grid-area: contact-form
+                    display: flex
+                    align-items: center
+                    width: 100%
+                    padding-top: 0px
+                    fieldset
+                        width: 100%
+
+        .modal 
+            .modal-content 
+                width: 800px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 130px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px      
 
     @media screen and (max-width: $step4) and (min-width: $step3)
         #review-kalitec
@@ -352,16 +522,17 @@ $step6: 1919px
                 .info
                     grid-area: info
                     margin-right: 0px
+                    max-width: 50%
 
                     .section-title
                         height: auto
                         line-height: 40px
-                        min-width: 341px
+                        width: 100% 
                         margin: 0px
                         font-size: 30px
 
                     .section-text
-                        max-width: 327px
+                        max-width: 100%
 
                 .side-title
                     grid-area: side-title
@@ -369,10 +540,11 @@ $step6: 1919px
                         text-wrap: nowrap
                         width: 210px
                         height: 44px
+                        text-align: start
 
                 .contact-form
                     grid-area: contact-form
-                    padding-right: 30px
+                    width: 100%
 
             .info
                 grid-area: info
@@ -385,6 +557,36 @@ $step6: 1919px
 
                 .section-text
                     max-width: 327px
+
+            .cdu-button
+                width: 100%
+
+        .modal 
+            .modal-content 
+                width: 693px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 80px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
 
     @media screen and (max-width: $step3)
         .back-link
@@ -438,6 +640,8 @@ $step6: 1919px
             .side-title
                 margin-top: 15px
                 margin-right: 94px
+                span
+                    text-align: start
 
             .section-title
                 font-size: 25px
@@ -454,7 +658,7 @@ $step6: 1919px
 
             .contact-form
                 padding-top: 30px
-                max-width: 400px
+                max-width: 100%
                 z-index: 2
                 .form-element
                     margin-bottom: 28px
@@ -481,6 +685,33 @@ $step6: 1919px
         .side-title
             margin-right: 0
             margin-bottom: 10px
+
+        .modal 
+            .modal-content 
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
 
     @media screen and (max-width: $step2)
         .back-link
@@ -547,7 +778,7 @@ $step6: 1919px
             .contact-form
                 padding-top: 30px
                 z-index: 2
-                max-width: fit-content
+                width: 100%
                 .form-element
                     margin-bottom: 28px
                     width: 100%
@@ -556,6 +787,12 @@ $step6: 1919px
                         p
                             font-size: 12px
                             line-height: 16px
+
+            fieldset
+                width: 100%
+
+            .cdu-button
+                width: 100%
 
         #review-asg
             padding: 50px 20px 40px 20px
@@ -573,6 +810,160 @@ $step6: 1919px
         .side-title
             margin-right: 0
             margin-bottom: 10px
+
+        .modal 
+            .modal-content 
+                width: 331px
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span    
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding-top: 40px 15px 0
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+    @media screen and (max-width: $step3) and (max-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+                    margin-top: 0px
+                    span
+                        width: auto
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step2) and (max-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step3) and (min-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step2) and (min-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span    
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding: 40px 15px 0
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+                .secondary
+                    padding-top: 0px
 
 #development-services
     .noToc
@@ -607,6 +998,7 @@ $step6: 1919px
             display: flex
             flex-direction: row
             align-items: unset
+            justify-content: space-between
             padding: 0 130px
             max-width: 1920px
 
@@ -672,7 +1064,6 @@ $step6: 1919px
                 .cdu-title
                     color: #313251
                     text-align: center
-                    font-family: Poppins
                     font-size: 64px
                     font-style: normal
                     font-weight: 500
@@ -682,7 +1073,6 @@ $step6: 1919px
                 .cdu-sub-title
                     color: #4F5662
                     text-align: center
-                    font-family: Poppins
                     font-size: 24px
                     font-style: normal
                     font-weight: 400
@@ -793,7 +1183,6 @@ $step6: 1919px
     .absolute-image
         position: absolute
 
-
     .our-customers
         width: 100%
         display: flex
@@ -808,7 +1197,6 @@ $step6: 1919px
         .title
             color: #3D3E40
             text-align: center
-            font-family: Poppins
             font-size: 20px
             font-style: normal
             font-weight: 400
@@ -968,7 +1356,6 @@ $step6: 1919px
                         background: #F7F9FC
                         color: #3622A4
                         text-align: center
-                        font-family: Poppins
                         font-size: 20px
                         font-style: normal
                         font-weight: 500
@@ -1095,7 +1482,6 @@ $step6: 1919px
 
                 .review-header
                     color: #2E2F3B
-                    font-family: Poppins
                     font-size: 28px
                     font-style: normal
                     font-weight: 500
@@ -1107,7 +1493,6 @@ $step6: 1919px
                     width: fit-content
                     h6, h5
                         color: #5E5F62
-                        font-family: Poppins
                         font-size: 22px
                         font-style: normal
                         font-weight: 400
@@ -1121,7 +1506,6 @@ $step6: 1919px
 
                 .full-review-link
                     color: #3622A4
-                    font-family: Poppins
                     font-size: 22px
                     font-style: normal
                     font-weight: 600
@@ -1167,6 +1551,7 @@ $step6: 1919px
         .contact-form
             padding-top: 30px
             z-index: 2
+            width: 400px
             .form-element
                 margin-bottom: 28px
                 label
@@ -1199,11 +1584,15 @@ $step6: 1919px
             padding: 16px 18px
 
         .cdu-button
-            padding: 15px
-            border-radius: 6px
+            padding: 11px 14px
             color: white
             background-color: #2A7DEC
             width: 100%
+            font-size: 18px
+            font-weight: 500
+            text-align: center
+            text-decoration: none
+            border-radius: 4px
 
     .side-title
         z-index: 2
@@ -1216,7 +1605,6 @@ $step6: 1919px
             padding: 7px 0px
             color: #3622A4
             text-align: center
-            font-family: Poppins
             font-size: 26px
             font-style: normal
             font-weight: 700
@@ -1228,7 +1616,6 @@ $step6: 1919px
 
     .section-title
         color: #333
-        font-family: Poppins
         font-size: 48px
         font-style: normal
         font-weight: 600
@@ -1238,20 +1625,17 @@ $step6: 1919px
 
     .section-text
         color: #5E5F62
-        font-family: Poppins
         font-size: 16px
         font-style: normal
         font-weight: 400
         line-height: 28px
         letter-spacing: 0.016px
 
-
     .section-list
         li
             list-style-type: disc
             margin-left: 30px
             color: #5E5F62
-            font-family: Poppins
             font-size: 22px
             font-style: normal
             font-weight: 400
@@ -1357,6 +1741,138 @@ $step6: 1919px
 
     .flyout-button
         display: none
+
+    .modal 
+        display: none
+        position: fixed
+        align-items: center
+        justify-content: center
+        z-index: $modal-z-index
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: $modal-background-color
+    
+        .modal-content 
+            animation-name: animatetop
+            animation-duration: 0.4s
+            background-color: $modal-content-background-color
+            padding: 20px 20px 30px
+            border: $modal-content-border
+            width: 950px
+
+            .sub-content
+                overflow: auto
+                height: 95%
+
+            .close-button
+                display: flex
+                justify-content: end
+                
+            .close
+                width: 28px
+                height: 28px
+                cursor: pointer
+
+            .title, .sub-title, .sub-sub-title 
+                letter-spacing: 0.01em
+                text-align: center
+                display: flex
+                justify-content: center 
+                font-style: $font-style-normal
+
+            .title
+                font: $title-font
+                color: #3622A4
+
+            .sub-title
+                font: $sub-title-font
+                color: #333333
+
+            .sub-sub-title
+                font: $sub-sub-title-font
+                color: #5E5F62
+                letter-spacing: .001em
+                margin-top: 15px
+                span    
+                    width: 556px
+                    height: 56px
+
+            .form-section
+                padding: 30px 40px 0px 40px
+                display: flex
+                justify-content: space-around
+                .form-element
+                    margin-bottom: 15px
+                    width: 48%
+                    label
+                        position: relative
+                        width: 100%
+                        p
+                            color: $form-element-label-color
+                            font-size: 12px
+                            line-height: 16px 
+                            font-style: $font-style-normal 
+                            font-weight: 400
+                            letter-spacing: 0.4px
+                            position: absolute
+                            top: -8px
+                            left: 10px
+                            z-index: 2
+                            padding: 0px 5px
+                            background: white
+
+                        .cdu-form-control, .cdu-text-area
+                            width: 100%
+                            color: #898B8F
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 24px
+                            letter-spacing: 0.15px
+                            border-radius: 4px
+                            border: $form-control-border
+                            padding: 16px 18px
+
+                        .cdu-text-area
+                            height: 170px
+
+                    .label-select
+                        select 
+                            width: 100%
+                            appearance: none
+                            -webkit-appearance: none
+                            -moz-appearance: none
+                            &::-ms-expand 
+                                display: none
+
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 40%
+                            right: 10px
+                            width: 16px
+                            height: 16px
+                            background: url(/images/pe/read-more-arrow.svg) no-repeat center
+                            transform: rotate(90deg)
+                            transform-origin: center center
+
+                .next
+                    width: 98%
+
+            .secondary
+                padding-top: 0px
+
+            .submit-button-container
+                display: flex
+                justify-content: center
+                .cdu-button
+                    padding: 15px
+                    border-radius: 6px
+                    color: white
+                    background-color: $button-background-color
+                    width: 400px
 
     @media screen and (max-width: $step6)
         .noToc
@@ -1495,6 +2011,9 @@ $step6: 1919px
             .section-title
                 width: 610px
                 height: 136px
+
+            .cdu-button
+                width: 300px
 
         #number-one
             top: 20%
@@ -1680,7 +2199,15 @@ $step6: 1919px
                 height: 136px
 
             .contact-form
+                display: flex
+                justify-content: center
+                align-items: center
                 grid-area: contact-form
+                width: 100%
+                padding-top: 0px
+
+            .cdu-button
+                width: 400px
 
         #number-one
             top: 15%
@@ -1702,6 +2229,33 @@ $step6: 1919px
         #rectangle3
             top: 92%
             left: -28%
+
+        .modal 
+            .modal-content 
+                width: 800px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 130px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
 
     @media screen and (max-width: $step4)
         .noToc
@@ -1900,6 +2454,7 @@ $step6: 1919px
                     text-wrap: nowrap
                     width: 210px
                     height: 44px
+                    text-align: start
 
             .section-title
                 max-width: 341px
@@ -1911,7 +2466,6 @@ $step6: 1919px
 
             .contact-form
                 grid-area: contact-form
-                padding-right: 30px
 
         #number-one
             top: 15%
@@ -1943,7 +2497,97 @@ $step6: 1919px
             top: 92%
             left: -28%
 
-    @media screen and (max-width: $step3)
+        .modal 
+            .modal-content 
+                width: 693px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 80px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step3) and (max-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+                                        
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step2) and (max-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step3) and (min-height: $verticalStep1)
         .noToc
             .content-wrapper
                 > *
@@ -2116,7 +2760,7 @@ $step6: 1919px
                     width: fit-content
 
             .contact-form
-                max-width: 400px
+                width: 100%
 
         .noToc
             position: relative
@@ -2188,7 +2832,6 @@ $step6: 1919px
             line-height: 28px
             padding-bottom: 10px
 
-
         .section-list
             li
                 font-size: 14px
@@ -2217,12 +2860,10 @@ $step6: 1919px
             left: 65%
             transform: scale(0.55)
 
-
         #number-three
             top: -1%
             left: 61%
             transform: scale(0.55)
-
 
         .header
             margin: 0 0 20px
@@ -2235,7 +2876,34 @@ $step6: 1919px
             font-size: 14px
             line-height: 1.5
 
-    @media screen and (max-width: $step2)
+        .modal 
+            .modal-content 
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step2) and (min-height: $verticalStep1)
         .noToc
             #content-get-in-touch
                 display: flex
@@ -2380,6 +3048,15 @@ $step6: 1919px
                     height: fit-content
                     width: fit-content
 
+            .contact-form
+                width: 100%
+
+            fieldset
+                width: 100%
+
+            .cdu-button
+                width: 100%
+
         .noToc
             position: relative
 
@@ -2448,7 +3125,6 @@ $step6: 1919px
             line-height: 28px
             padding-bottom: 10px
 
-
         .section-list
             li
                 font-size: 14px
@@ -2477,12 +3153,10 @@ $step6: 1919px
             left: 55%
             transform: scale(0.35)
 
-
         #number-three
             top: 12%
             left: 54%
             transform: scale(0.35)
-
 
         .header
             margin: 0 0 20px
@@ -2494,6 +3168,35 @@ $step6: 1919px
         .accent-text
             font-size: 14px
             line-height: 1.5
+
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span    
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding-left: 15px
+                    padding-right: 15px
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
 
 @keyframes slideup-in
     from
@@ -2558,3 +3261,11 @@ $step6: 1919px
     to
         opacity: 1
         transform: scale(1)
+
+@keyframes animatetop
+    from 
+        top: -300px 
+        opacity: 0
+    to 
+        top: 0 
+        opacity: 1
