@@ -12,7 +12,7 @@
 	<atom:link href="/blog/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Mon, 08 Apr 2024 10:21:52 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 05 Apr 2024 14:23:36 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,250 +20,6 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.4.3</generator>
 	<item>
-		<title>Building a Smart Parking Mobile App with ThingsBoard and Stripe Integration</title>
-		<link>/blog/building-a-smart-parking-mobile-app-with-thingsboard-and-stripe-integration/</link>
-					<comments>/blog/building-a-smart-parking-mobile-app-with-thingsboard-and-stripe-integration/#respond</comments>
-		
-		<dc:creator><![CDATA[Valeriia Koriavikova]]></dc:creator>
-		<pubDate>Mon, 08 Apr 2024 10:12:45 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">https://wp.thingsboard.io/?p=4069</guid>
-
-					<description><![CDATA[In today&#8217;s fast-paced world, the convenience of smart parking solutions can&#8217;t be overstated. In this article, we’ll explore&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">In today&#8217;s fast-paced world, the convenience of smart parking solutions can&#8217;t be overstated. In this article, we’ll explore how to build a user-friendly Mobile Parking application using ThingsBoard, an IoT platform, and integrate it with Stripe for seamless online payments.</p>
-
-
-
-<h4 class="wp-block-heading">1. Concept Overview:</h4>
-
-
-
-<p style="font-size:16px">The mobile app aims to simplify the parking experience. It allows users to find available parking spots, start and end parking sessions, and handle payments &#8211; all without leaving their cars. Key features include real-time parking availability, cost information, parking history, and the ability to delay payment with a reminder system.</p>
-
-
-
-<h4 class="wp-block-heading">2. Stripe Integration:</h4>
-
-
-
-<p style="font-size:16px">We chose Stripe as our payment system because of its robust features and ease of integration. While Stripe serves as an example, the principles outlined can apply to other payment systems, depending on your specific needs.</p>
-
-
-
-<p style="font-size:16px">Firstly, you need to create an account on Stripe. Then, on the Thingsboard side, implement a custom endpoint to generate payment links. Once the price for parking is calculated, use specific methods of the Stripe extension in Java to create a payment on Stripe. Then, get a link from the created payment to forward the end user to the payment page.</p>
-
-
-
-<p style="font-size:16px">After that, create another custom endpoint for payment confirmation on the Thingsboard side and add this endpoint to the Stripe as a webhook. Once the end user enters payment details and clicks the pay button, Stripe will trigger Thingsboard to update the payment status as confirmed or failed.</p>
-
-
-
-<h4 class="wp-block-heading">3. User Capabilities:</h4>
-
-
-
-<p style="font-size:16px">With this app, users can:</p>
-
-
-
-<ul>
-<li style="font-size:16px">Locate their position and nearby available parking spots</li>
-
-
-
-<li style="font-size:16px">Start and end parking sessions</li>
-
-
-
-<li style="font-size:16px">View and pay parking charges, either immediately or later</li>
-
-
-
-<li style="font-size:16px">Receive notifications for unpaid parking charges</li>
-
-
-
-<li style="font-size:16px">Track and analyze their parking history and expenses</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">4. System Hierarchy:</h4>
-
-
-
-<p style="font-size:16px">In our solution, the hierarchy is very basic: we have Assets as Parking spots and self-registered Users who will use our application for parking.&nbsp;</p>
-
-
-
-<p style="font-size:16px">Parking spots have geofencing zones and colored markers on a map that identify their occupancy.&nbsp;</p>
-
-
-
-<p style="font-size:16px">Users will be able to see their location on the map with a car marker, so each user corresponds to one car on the map.</p>
-
-
-
-<p style="font-size:16px">Payment information will be saved as JSON telemetry on both parking spot and user entities and will include information about the start and end of the parking period, total cost, link for payment, and payment status.</p>
-
-
-
-<p style="font-size:16px">During the parking period, an additional custom relation should be created between the parking spot and the user. This relation should be removed after successful payment for parking services.</p>
-
-
-
-<h4 class="wp-block-heading">5. Front-End (FE) Development:</h4>
-
-
-
-<ul>
-<li style="font-size:16px">Dashboard: Create a map showing parking spots and a telemetry table for parking history.
-<ul>
-<li>Parking spots are assets with the Asset Profile “Parking Spot”. The geofence attribute is “perimeter”, and coordinates have standard “longitude” and “latitude” names. Occupancy of the spot will be displayed as a zone and marker color: red &#8211; occupied, green &#8211; free spot</li>
-
-
-
-<li>User’s parking history will be saved as telemetry data, so users will be able to trace their previous parking periods</li>
-</ul>
-</li>
-
-
-
-<li style="font-size:16px">Widgets: Configure <a href="https://thingsboard.io/docs/mobile/mobile-actions/">mobile actions</a> for map interactions and historical data review.
-<ul>
-<li>Mobile actions to get the phone’s location that allows the user to set their current coordinates on a map, start/finish parking period by clicking on a parking spot on the map</li>
-
-
-
-<li>Action for checking data from the parking record</li>
-</ul>
-</li>
-
-
-
-<li style="font-size:16px">Geofences: Set up perimeters for parking lots and mark them on the map.
-<ul>
-<li>Parking spot perimeter set as geofencing polygon on a map</li>
-
-
-
-<li>Perimeter color is based on spot occupancy</li>
-</ul>
-</li>
-
-
-
-<li style="font-size:16px">User Interactions: Enable the tooltip for checking parking information.
-<ul>
-<li>Markers tooltips have additional information about parking spots, like occupancy, price, name, etc.</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">6. Mobile Application Development:</h4>
-
-
-
-<ul>
-<li style="font-size:16px">User Authentication: Allow users to sign in or <a href="https://thingsboard.io/docs/pe/user-guide/self-registration/">sign up</a>.</li>
-
-
-
-<li style="font-size:16px">Dashboards: <a href="https://thingsboard.io/docs/pe/mobile/customize-dashboards/">Customize mobile application</a> &#8211; set to a home page created dashboard</li>
-
-
-
-<li style="font-size:16px">User Features:
-<ul>
-<li>Set the current location on a map to see the car marker</li>
-
-
-
-<li>Check the history of parking periods on the telemetry table</li>
-
-
-
-<li>Download the report of parking from the parking history table</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">7. Back-End (BE) Development:</h4>
-
-
-
-<ul>
-<li style="font-size:16px">User Registration: Configure <a href="https://thingsboard.io/docs/paas/user-guide/self-registration/">self-registration</a> for new users. 
-<ul>
-<li>Assign the DNS record to your ThingsBoard IP address&nbsp;</li>
-
-
-
-<li>Set up a mail server</li>
-
-
-
-<li>Configure signup form</li>
-</ul>
-</li>
-
-
-
-<li style="font-size:16px">Stripe Integration: Create a <a href="https://dashboard.stripe.com/">Stripe</a> account to integrate with Thingsboard. Verification of account is not required for this use case, and test mode can be used instead</li>
-
-
-
-<li style="font-size:16px">Create a custom endpoint to save start parking time as a JSON telemetry on both parking spot and user entities</li>
-
-
-
-<li style="font-size:16px">Create a custom endpoint to end parking, generate a link for payment using Stripe and update parking information in the Thingsboard</li>
-
-
-
-<li style="font-size:16px">Create a custom endpoint for payment confirmation on the Thingsboard side, configure it, and add it as a webhook to Stripe</li>
-
-
-
-<li style="font-size:16px">Notifications: Establish alarm logic and notification channels for reminders and confirmations:
-<ul>
-<li>Create a new rule chain with a Generator rule node, which will propagate messages to all parking lots every 5 minutes</li>
-
-
-
-<li>Check parking spots using default Enrichment and Filter rule nodes. Create an alarm if a user has not finished paying for more than an hour</li>
-
-
-
-<li>Notify users if needed via email, SMS, etc. You can use the Thingsboard <a href="https://thingsboard.io/docs/paas/user-guide/notifications/">notification center</a> or directly in the rule chain using default External rule nodes</li>
-</ul>
-</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">Conclusion:</h4>
-
-
-
-<p style="font-size:16px">This smart parking solution demonstrates the versatility of ThingsBoard in IoT application development and showcases how integrating a payment system like Stripe can create a seamless and user-friendly experience. While this guide provides an overview, developers can adapt and expand upon these ideas to build more complex and tailored IoT solutions.</p>
-
-
-
-<p style="font-size:16px">Remember, this is just a starting point. The IoT world is vast, and with ThingsBoard, your options are virtually limitless.&nbsp;</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>/blog/building-a-smart-parking-mobile-app-with-thingsboard-and-stripe-integration/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
 		<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</title>
 		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/</link>
 					<comments>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/#respond</comments>
@@ -1656,6 +1412,164 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 ]]></content:encoded>
 					
 					<wfw:commentRss>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Optimizing dashboard performance with enhanced image management</title>
+		<link>/blog/optimizing-dashboard-performance-with-enhanced-image-management/</link>
+					<comments>/blog/optimizing-dashboard-performance-with-enhanced-image-management/#respond</comments>
+		
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Thu, 29 Feb 2024 11:52:07 +0000</pubDate>
+				<category><![CDATA[Tech]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2971</guid>
+
+					<description><![CDATA[At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version 3.6.2,&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p style="font-size:16px">At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version <a href="https://thingsboard.io/docs/reference/releases/#v362">3.6.2</a>, introduces significant improvements in how images are managed within dashboards, widgets, and more. This update is a key enhancement designed to tackle inefficiencies identified as our user base expanded.</p>
+
+
+
+<h4 class="wp-block-heading">The challenge with large images</h4>
+
+
+
+<p style="font-size:16px">Since the earliest releases, our platform has permitted the embedding of images in dashboards and widgets via external links or Base64 encoded data URLs. While flexible, this approach presented a significant challenge. Users occasionally embedded images up to 50MB in size directly into dashboards. Editing or exporting these dashboards meant transferring massive JSON files to and from the server, a highly inefficient process. This not only affected loading times but also the responsiveness of the dashboard editing experience.</p>
+
+
+
+<h4 class="wp-block-heading">The solution</h4>
+
+
+
+<p style="font-size:16px">To address this issue, we&#8217;ve introduced a major update in how images are handled within the platform. A central aspect of this update is the introduction of the <a href="https://thingsboard.io/docs/user-guide/image-gallery/">Image Gallery</a>. By moving dashboards to a separate entity and utilizing our internal, relative links for storing image references, we&#8217;ve significantly improved efficiency. This change minimizes the size of dashboard JSON files, streamlining both loading and editing processes. The Image Gallery simplifies the process of uploading, organizing, and selecting images.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/9.webp" alt="Thingsboard image gallery with created time and resolution information" class="wp-image-3704" srcset="/blog/wp-content/uploads/2024/03/9.webp 1604w, /blog/wp-content/uploads/2024/03/9-300x169.webp 300w, /blog/wp-content/uploads/2024/03/9-1024x576.webp 1024w, /blog/wp-content/uploads/2024/03/9-768x432.webp 768w, /blog/wp-content/uploads/2024/03/9-1536x864.webp 1536w, /blog/wp-content/uploads/2024/03/9-512x288.webp 512w, /blog/wp-content/uploads/2024/03/9-920x517.webp 920w, /blog/wp-content/uploads/2024/03/9-1600x900.webp 1600w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+
+
+
+<h4 class="wp-block-heading">Backward compatibility</h4>
+
+
+
+<p style="font-size:16px">The platform&#8217;s upgrade script automatically converts all existing dashboards to the new format. Users can still upload dashboards in the old format to a new platform instance. These dashboards will automatically be converted to the new format during the upload process.</p>
+
+
+
+<p style="font-size:16px">For example, consider a “Sensors” dashboard with its background image stored in the old format:</p>
+
+
+
+<pre class="wp-block-code has-black-color has-text-color has-link-color wp-elements-240688aa6d231c0cb4116ec18afee3f6"><code lang="" class="">{
+...
+"backgroundImageUrl": "data:image/webp;base64,iVBORw...JRU5ErkJggg=="
+...
+}</code></pre>
+
+
+
+<p style="font-size:16px">After the upgrade, a new image will be created in the image gallery:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.webp" alt="Thingsboard edit image form with option to change name and loaded photo" class="wp-image-3708" srcset="/blog/wp-content/uploads/2024/03/Edit-image.webp 2406w, /blog/wp-content/uploads/2024/03/Edit-image-300x169.webp 300w, /blog/wp-content/uploads/2024/03/Edit-image-1024x576.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-image-768x432.webp 768w, /blog/wp-content/uploads/2024/03/Edit-image-1536x864.webp 1536w, /blog/wp-content/uploads/2024/03/Edit-image-2048x1152.webp 2048w, /blog/wp-content/uploads/2024/03/Edit-image-512x288.webp 512w, /blog/wp-content/uploads/2024/03/Edit-image-920x517.webp 920w, /blog/wp-content/uploads/2024/03/Edit-image-1600x900.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-image-1920x1080.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p style="font-size:16px">The image name is auto-generated based on the dashboard name and the dashboard element where the image is used. This same behavior applies to images used in widget configuration: markers, backgrounds, etc. The dashboard now references the image using the following link:</p>
+
+
+
+<pre class="wp-block-code"><code lang="json" class="language-json">{
+...
+"backgroundImageUrl": "/api/images/tenant/sensors_dashboard_default_background.webp"
+...
+}</code></pre>
+
+
+
+<h4 class="wp-block-heading">Private and public image links</h4>
+
+
+
+<p style="font-size:16px">Images can be provisioned at the system and tenant levels. System-level widgets are accessible to all platform users, while tenant images are available to authorized users of specific tenants.</p>
+
+
+
+<p style="font-size:16px">To embed an image into an Angular HTML template, such as the Markdown widget, HTML section in the widget editor, custom actions, etc., use the following code snippet:</p>
+
+
+
+<pre class="wp-block-code"><code class="">&lt;img [src]="'/api/images/tenant/sensors_dashboard_default_background.webp' | image | async" /&gt;</code></pre>
+
+
+
+<p style="font-size:16px">The <code>image</code> pipe automatically adds the necessary authentication headers to the image request, allowing the same relative image URL to return different content for users from different tenants.</p>
+
+
+
+<p style="font-size:16px">However, custom widgets or static HTML blocks that do not support Angular HTML syntax cannot add authentication headers to requests. Therefore, every platform image also has a unique URL for downloading the image without authentication. Using the following code snippet, you may embed an image into the components based on the plain HTML. Such components include HTML card widgets, cell content functions, etc.</p>
+
+
+
+<pre class="wp-block-code"><code class="">&lt;img src="/api/images/public/ZA4biARtpnl970l0j8MMolRKM56fbpK1" alt="&amp;quot;Sensors&amp;quot; dashboard default background" /&gt;</code></pre>
+
+
+
+<p style="font-size:16px">Each code snippet is unique to its image, and you can find the corresponding snippets in the Embed image window.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1446" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Embed-image-1.webp" alt="Two blocks with text and code blocks with capabilities to copy code" class="wp-image-3886" srcset="/blog/wp-content/uploads/2024/03/Embed-image-1.webp 2406w, /blog/wp-content/uploads/2024/03/Embed-image-1-300x180.webp 300w, /blog/wp-content/uploads/2024/03/Embed-image-1-1024x615.webp 1024w, /blog/wp-content/uploads/2024/03/Embed-image-1-768x462.webp 768w, /blog/wp-content/uploads/2024/03/Embed-image-1-1536x923.webp 1536w, /blog/wp-content/uploads/2024/03/Embed-image-1-2048x1231.webp 2048w, /blog/wp-content/uploads/2024/03/Embed-image-1-512x308.webp 512w, /blog/wp-content/uploads/2024/03/Embed-image-1-920x553.webp 920w, /blog/wp-content/uploads/2024/03/Embed-image-1-1600x962.webp 1600w, /blog/wp-content/uploads/2024/03/Embed-image-1-1920x1154.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<h4 class="wp-block-heading">Caching</h4>
+
+
+
+<p style="font-size:16px">Our image API now utilizes ETags to optimize caching, ensuring that images are only re-downloaded when they have changed. This approach significantly saves bandwidth and improves load times. While we don&#8217;t apply Cache-Control headers by default, users have the flexibility to customize caching behavior through environment variables, including settings for image ETags cache TTL, maximum cache size, and browser cache TTL for both system and tenant images. These settings are crucial for balancing between reducing server load and ensuring content freshness.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/ThingsBoard.webp" alt="Demonstration photo of relations between Client and Server" class="wp-image-3713" srcset="/blog/wp-content/uploads/2024/03/ThingsBoard.webp 2406w, /blog/wp-content/uploads/2024/03/ThingsBoard-300x169.webp 300w, /blog/wp-content/uploads/2024/03/ThingsBoard-1024x576.webp 1024w, /blog/wp-content/uploads/2024/03/ThingsBoard-768x432.webp 768w, /blog/wp-content/uploads/2024/03/ThingsBoard-1536x864.webp 1536w, /blog/wp-content/uploads/2024/03/ThingsBoard-2048x1152.webp 2048w, /blog/wp-content/uploads/2024/03/ThingsBoard-512x288.webp 512w, /blog/wp-content/uploads/2024/03/ThingsBoard-920x517.webp 920w, /blog/wp-content/uploads/2024/03/ThingsBoard-1600x900.webp 1600w, /blog/wp-content/uploads/2024/03/ThingsBoard-1920x1080.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p style="font-size:16px">The platform offers environment variables to control caching behavior:</p>
+
+
+
+<ul>
+<li style="font-size:16px">CACHE_SPECS_IMAGE_ETAGS_TTL<strong>:</strong> Controls the cache TTL for image ETags. The default is set to 44640 minutes (31 days), after which the cache is cleared.<br></li>
+
+
+
+<li style="font-size:16px">CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE<strong>:</strong> Determines the maximum ETags cache size on the server. The default is 10000. Setting this to 0 disables the cache. <br></li>
+
+
+
+<li style="font-size:16px">CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL and CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL<strong>:</strong> These settings manage the browser cache TTL for system and tenant images, respectively, with a default of 0 minutes, meaning caching is disabled by default.</li>
+</ul>
+
+
+
+<p style="font-size:16px">These settings allow administrators to adjust the balance between performance and content freshness as needed.</p>
+
+
+
+<h4 class="wp-block-heading">Improvement Summary</h4>
+
+
+
+<p style="font-size:16px">By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/optimizing-dashboard-performance-with-enhanced-image-management/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
