@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
-
 #main{
 	opacity: 1;
 	transition: ease-in-out 0.2s;
@@ -301,7 +299,7 @@
 }
 
 .dark_styles .thingsboard-media-banner-logo{
-	background: url('./../../uploads/2024/03/thingsboard_white.svg');
+	background: url('/blog/wp-content/uploads/2024/03/thingsboard_white.svg');
 	background-size: contain;
     background-repeat: no-repeat;
 }
@@ -976,7 +974,7 @@ ul .indicator .line {
     color: #212529;
     transition-duration: 0s;
     background-color: unset;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 
 .n-button.try:hover {
@@ -1456,6 +1454,7 @@ ul .indicator .line {
 }
 
 #githubButtonContainer {
+	width: 110px;
     display: none;
     position: relative;
     padding-left: 14px;
@@ -4019,7 +4018,7 @@ blockquote p{
 	margin-bottom: 20px;
 	width: 258px;
 	height: 48px;
-	background: url('./../../uploads/2024/03/thingsboard_logo_blue.svg');
+	background: url('/blog/wp-content/uploads/2024/03/thingsboard_logo_blue.svg');
 	background-size: contain;
     background-repeat: no-repeat;
 }
@@ -4528,6 +4527,9 @@ blockquote p{
 	}
 }
 @media(max-width: 543px){
+	.cs-home-hero{
+		display: none;
+	}
 	.support-ukraine{
 		display: none !important;
 	}

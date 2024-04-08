@@ -8,10 +8,10 @@
 <channel>
 	<title>
 	Comments on: Enhancing IoT data visualization: Introducing new time series charts	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/</link>
 	<description></description>
-	<lastBuildDate>Thu, 28 Mar 2024 15:05:51 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 05 Apr 2024 12:22:04 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>

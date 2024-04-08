@@ -9,10 +9,10 @@
 
 <channel>
 	<title>Solutions &#8211; ThingsBoard&#039;s blog</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../../index.html</link>
+	<atom:link href="/blog/category/solutions/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Thu, 04 Apr 2024 09:38:37 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 05 Apr 2024 12:56:51 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -21,15 +21,15 @@
 	<generator>https://wordpress.org/?v=6.4.3</generator>
 	<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
-		<link>./../../../top-supplier-retail-2024-2/index.html</link>
-					<comments>./../../../top-supplier-retail-2024-2/index.html#respond</comments>
+		<link>/blog/top-supplier-retail-2024-2/</link>
+					<comments>/blog/top-supplier-retail-2024-2/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 26 Mar 2024 10:35:32 +0000</pubDate>
 				<category><![CDATA[Company]]></category>
 		<category><![CDATA[Solutions]]></category>
 		<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=3972</guid>
+		<guid isPermaLink="false">/blog/?p=3972</guid>
 
 					<description><![CDATA[A new achievement and what does it mean to all ]]></description>
 										<content:encoded><![CDATA[
@@ -88,15 +88,15 @@
 <p>We invite you to explore the potential of ThingsBoard in revolutionizing your retail operations. Our award-winning IoT solutions are designed to empower businesses like yours to navigate digital transformation with confidence. Discover how we can help transform your business by visiting our <a href="https://thingsboard.io/">website</a> or <a href="https://thingsboard.io/docs/contact-us/">contacting</a> our sales team. Let&#8217;s innovate together and lead the way in retail technology.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../../../top-supplier-retail-2024-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/blog/top-supplier-retail-2024-2/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Warehouse monitoring with ThingsBoard</title>
-		<link>./../../../warehouse-monitoring-with-thingsboard/index.html</link>
-					<comments>./../../../warehouse-monitoring-with-thingsboard/index.html#respond</comments>
+		<link>/blog/warehouse-monitoring-with-thingsboard/</link>
+					<comments>/blog/warehouse-monitoring-with-thingsboard/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 12 Mar 2024 12:48:44 +0000</pubDate>
@@ -113,7 +113,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="803" height="451" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/5.webp" alt="Working conditions on the left side and device on the right side" class="wp-image-3797" srcset="./../../../wp-content/uploads/2024/03/5.webp 803w, ./../../../wp-content/uploads/2024/03/5-300x168.webp 300w, ./../../../wp-content/uploads/2024/03/5-768x431.webp 768w, ./../../../wp-content/uploads/2024/03/5-512x288.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="803" height="451" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/5.webp" alt="Working conditions on the left side and device on the right side" class="wp-image-3797" srcset="/blog/wp-content/uploads/2024/03/5.webp 803w, /blog/wp-content/uploads/2024/03/5-300x168.webp 300w, /blog/wp-content/uploads/2024/03/5-768x431.webp 768w, /blog/wp-content/uploads/2024/03/5-512x288.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -147,7 +147,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="893" height="407" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp" alt="Screen with opened dashboard and devices in front" class="wp-image-3800" srcset="./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923.webp 893w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-300x137.webp 300w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-768x350.webp 768w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-512x233.webp 512w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="893" height="407" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp" alt="Screen with opened dashboard and devices in front" class="wp-image-3800" srcset="/blog/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp 893w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-300x137.webp 300w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-768x350.webp 768w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-512x233.webp 512w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
 
 
 
@@ -155,7 +155,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="803" height="460" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/6.webp" alt="Two windows with alarms information  and dashboard" class="wp-image-3799" srcset="./../../../wp-content/uploads/2024/03/6.webp 803w, ./../../../wp-content/uploads/2024/03/6-300x172.webp 300w, ./../../../wp-content/uploads/2024/03/6-768x440.webp 768w, ./../../../wp-content/uploads/2024/03/6-512x293.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="803" height="460" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/6.webp" alt="Two windows with alarms information  and dashboard" class="wp-image-3799" srcset="/blog/wp-content/uploads/2024/03/6.webp 803w, /blog/wp-content/uploads/2024/03/6-300x172.webp 300w, /blog/wp-content/uploads/2024/03/6-768x440.webp 768w, /blog/wp-content/uploads/2024/03/6-512x293.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -178,7 +178,7 @@
 <p style="font-size:16px">This case study exemplifies the power of IoT in enhancing regulatory compliance and operational efficiency in critical industries such as pharmaceuticals. The Vypin-WhereView solution, backed by ThingsBoard, demonstrates our commitment to delivering innovative and reliable monitoring solutions.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../../../warehouse-monitoring-with-thingsboard/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>/blog/warehouse-monitoring-with-thingsboard/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

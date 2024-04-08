@@ -8,10 +8,10 @@
 <channel>
 	<title>
 	Comments for ThingsBoard&#039;s blog	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../../index.html</link>
+	<atom:link href="/blog/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Thu, 04 Apr 2024 09:58:08 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 08 Apr 2024 10:21:52 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
