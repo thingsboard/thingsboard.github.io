@@ -8,10 +8,10 @@
 <channel>
 	<title>
 	Comments on: Push notifications to ThingsBoard mobile apps	</title>
-	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
-	<link>./../index.html</link>
+	<atom:link href="/blog/push-notifications-to-thingsboard-mobile-apps/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/push-notifications-to-thingsboard-mobile-apps/</link>
 	<description></description>
-	<lastBuildDate>Thu, 28 Mar 2024 14:09:53 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 05 Apr 2024 14:23:36 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
