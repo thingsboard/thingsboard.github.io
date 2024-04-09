@@ -1,0 +1,1613 @@
+$step1: 360px
+$step2: 671px
+$step3: 999px
+$step4: 1279px
+$step5: 1439px
+$step6: 1919px
+$verticalStep1: 600px
+
+$modal-z-index: 13000
+$modal-background-color: rgba(0, 0, 0, 0.4)
+$modal-content-background-color: #fefefe
+$modal-content-border: 1px solid #888
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
+$form-element-label-color: rgba(0, 0, 0, 0.54)
+$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
+$button-background-color: #2A7DEC
+$font-style-normal: normal
+
+#tank-level-monitoring
+    .noToc
+        position: relative
+        overflow: hidden
+
+        .content-wrapper
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            position: relative
+            > *
+                width: 100%
+                max-width: 1440px
+                position: relative
+                z-index: 3
+    
+        #content-get-in-touch
+            display: flex
+            flex-direction: row
+            align-items: unset
+            justify-content: space-between
+            padding: 0 50px
+            max-width: 1440px
+            margin-top: 180px
+
+    footer
+        position: relative
+
+    #first-screen
+        min-height: 525px
+        width: 100%
+        overflow: hidden
+    
+        .hero-container 
+            height: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: relative
+            margin: 0 20px
+
+            #hero-content
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: center
+                text-align: initial
+                z-index: 1
+                padding-top: 20px
+
+                .hero-title
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 24px
+                    text-align: center
+                    color: #2A7DEC
+
+                .title
+                    font-size: 60px
+                    font-weight: 500
+                    line-height: 66px
+                    text-align: center
+                    color: #212529
+                    margin-top: 30px
+                    max-width: 608px
+
+                .sub-title
+                    font-family: Poppins
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: center
+                    color: #495057
+                    margin-top: 40px
+                    max-width: 608px
+
+                .info-block
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    margin-top: 40px
+                    min-width: 436px
+
+                    .filled-button
+                        background-color: #2A7DEC
+                        border-radius: 8px
+                        font-size: 16px
+                        font-weight: 600
+                        line-height: 20.8px
+                        color: #FFFFFF
+                        width: 208px
+                        height: 48px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        text-decoration: none
+
+                    .outline-button
+                        background-color: white 
+                        border-radius: 8px
+                        border: 1px solid #2A7DEC
+                        font-size: 16px
+                        font-weight: 600
+                        line-height: 20.8px
+                        color: #2A7DEC
+                        width: 208px
+                        height: 48px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        text-decoration: none
+
+    #second-screen
+        height: 600px 
+        width: 100%
+        display: flex
+        justify-content: center
+        margin-top: 70px
+        .container
+            display: flex
+            justify-content: center
+            height: 100%
+            #icon-laptop
+                width: 1032px
+                position: absolute
+                z-index: 1
+                box-shadow: 0px 4px 25px 5px #21252917
+                border-radius: 12px
+
+            #icon-mobile
+                position: absolute
+                right: 7%
+                top: 35%
+                width: 195px
+                z-index: 2
+                box-shadow: 0px 4px 25px 5px #21252917
+                border-radius: 12px
+
+            #left-line
+                position: absolute
+                z-index: 0
+                width: 1442px
+                right: -25%
+                bottom: -13%
+
+            #right-line
+                position: absolute
+                z-index: 0
+                top: -2%
+                left: -12%
+                width: 1189px
+
+    #third-screen
+        margin-top: 150px
+        .container
+            width: 100%
+            display: flex
+            min-height: 600px
+            .left-side
+                width: 45%
+                display: flex
+                flex-direction: column
+                .side-title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    color: #212529
+                .side-text
+                    margin-top: 20px
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: left
+                    color: #495057
+                .outline-button
+                    background-color: white 
+                    border-radius: 8px
+                    border: 1px solid #2A7DEC
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 20.8px
+                    color: #2A7DEC
+                    width: 208px
+                    height: 48px
+                    margin-top: 50px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    text-decoration: none
+
+            .right-side
+                width: 50%
+                #tank-info-1
+                    width: 374px
+                    height: 322px
+                    position: absolute
+                    z-index: 2
+                    right: 11%
+                    top: 17%
+
+                #tank-info-2
+                    width: 295px
+                    height: 256px
+                    position: absolute
+                    z-index: 1
+                    right: 2%
+                    top: -6%
+
+                #rectangle
+                    width: 427.3px
+                    height: 406.92px
+                    position: absolute
+                    z-index: 0
+                    bottom: 40%
+                    right: 0%
+
+    #benefits-screen
+        display: flex
+        flex-direction: column
+        align-items: center
+        
+        .blue-text
+            color: #2A7DEC
+        
+        .benefits-title
+            font-size: 48px
+            font-weight: 600
+            line-height: 62.4px
+            text-align: center
+            color: #212529
+            width: 680px
+
+        .benefits-sub-title
+            font-size: 18px
+            font-weight: 400
+            line-height: 27.9px
+            text-align: center
+            width: 608px
+            margin-top: 30px
+
+        .outline-button
+            background-color: white 
+            border-radius: 8px
+            border: 1px solid #2A7DEC
+            font-size: 16px
+            font-weight: 600
+            line-height: 20.8px
+            color: #2A7DEC
+            width: 208px
+            height: 48px
+            margin-top: 40px
+            display: flex
+            justify-content: center
+            align-items: center
+            text-decoration: none
+
+        .cards
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+            margin-top: 50px
+        
+        .card
+            box-shadow: 0px 5px 15px 0px #21252940 
+            width: 32%
+            padding: 20px
+            border-radius: 12px
+            margin-top: 10px
+            margin-bottom: 10px
+            height: 260px
+            display: flex
+            flex-direction: column
+            justify-content: space-evenly
+
+            img
+                width: 50px
+                height: 50px
+
+            .title
+                font-size: 24px
+                font-weight: 600
+                line-height: 31.2px
+                text-align: left
+                color: #212529                
+                margin-top: 20px
+
+            .text
+                font-size: 16px
+                font-weight: 400
+                line-height: 24.8px
+                text-align: left
+                color: #495057
+                margin-top: 16px
+
+    #dark-section
+        height: 1414px
+        background: url("/images/usecases/fuel-level-monitoring/dark-background.png")
+        background-repeat: no-repeat
+        background-position: center top
+        background-size: 100% auto
+        margin-top: 150px
+
+        .header
+            .title 
+                font-size: 68px
+                font-weight: 600
+                line-height: 104px
+                text-align: left
+                color: #FFFFFF
+
+            .second
+                padding-left: 140px
+
+            .third
+                padding-left: 50px
+
+        .info-block
+            display: flex
+            margin-top: 100px
+            .menu
+                width: 45%
+                margin-top: 80px
+                
+                .try-demo-button
+                    margin-top: 40px
+                    background-color: white 
+                    border-radius: 8px
+                    border: 1px solid #192234
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 20.8px
+                    color: #192234
+                    width: 250px
+                    height: 48px 
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    text-decoration: none
+                
+                .expansion-panel
+                    margin-bottom: 10px
+                    overflow: hidden
+                    border-bottom: 1px solid #495057
+                    padding: 10px
+                    width: 90%
+
+                    .expansion-header
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        padding: 10px
+                        cursor: pointer
+
+                    .header-icon
+                        margin-right: 20px
+
+                    .arrow-icon
+                        transition: max-height 1s cubic-bezier(0.5, 0.1, 0.3, 1.1)
+
+                    &.expanded
+                        .arrow-icon
+                            transform: rotate(180deg)
+
+                    .expansion-title
+                        margin: 0
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 31.2px
+                        color: #FFFFFF
+                        text-align: left
+                        display: flex
+
+                    .expansion-content
+                        padding: 0 10px
+                        display: none
+                        max-height: 0
+                        overflow: hidden
+                        color: #CED4DA
+                        font-size: 16px
+                        font-weight: 400
+                        line-height: 24px
+                        text-align: left
+                        margin-top: 10px
+                        margin-bottom: 10px
+                        margin-left: 35px
+                        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+
+                    &.expanded
+                        .expansion-content
+                            display: block
+                            max-height: 1000px
+
+            .images
+                width: 55%
+                .dark-card-image
+                    position: absolute
+                    z-index: 2
+                    top: 40%
+                    right: 28%
+                    width: 339px
+                .dark-map-image 
+                    position: absolute
+                    z-index: 1
+                    right: 1%
+                    bottom: 15%
+                    width: 642px
+
+                .dark-card1-image
+                    position: absolute
+                    z-index: 2
+                    top: 40%
+                    right: 28%
+                    width: 339px 
+                .dark-map1-image 
+                    position: absolute
+                    z-index: 1
+                    right: 0%
+                    bottom: 35% 
+                    width: 642px
+
+                .dark-card2-image
+                    position: absolute
+                    z-index: 2
+                    top: 50%
+                    right: 20%
+                    width: 419px
+                .dark-map2-image 
+                    position: absolute
+                    z-index: 1
+                    right: 1%
+                    bottom: 21%
+                    width: 591px
+                
+                .dark-card3-image
+                    position: absolute
+                    z-index: 2
+                    top: 40%
+                    right: 28%
+                    width: 339px
+                .dark-map3-image 
+                    position: absolute
+                    z-index: 1
+                    right: -5%
+                    bottom: 40%
+                    width: 679px
+
+                .dark-card4-image
+                    position: absolute
+                    z-index: 2
+                    top: 45%
+                    right: 30%
+                    width: 268px
+                .dark-map4-image 
+                    position: absolute
+                    z-index: 1
+                    right: -8%
+                    bottom: 35%
+                    width: 705px
+
+                .dark-background-image
+                    position: absolute
+                    z-index: 0
+                    right: -11%
+                    bottom: 10%
+
+    #connectivity
+        margin-top: 150px
+        .container
+            min-height: 650px
+            display: flex
+
+            .left
+                width: 50%
+
+                .rectangle
+                    position: absolute
+                    z-index: 0
+                    left: -15%
+                    bottom: -18%
+
+                .connectivity-image
+                    position: absolute
+                    z-index: 1
+
+            .right
+                width: 50%
+                display: flex
+                align-items: flex-start
+                flex-direction: column
+                justify-content: center
+                
+                .title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    color: #212529
+                    margin-bottom: 20px 
+
+                .text
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: left
+                    color: #495057
+                    margin-top: 20px
+                    padding-right: 20px
+
+    #partners
+        min-height: 450px
+        display: flex
+        margin-top: 180px
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        
+        .title
+            font-size: 48px
+            font-weight: 600
+            line-height: 62.4px
+            text-align: center
+            color: #212529
+            padding-bottom: 10px
+        
+        .logos
+            width: 100%
+            margin-top: 60px
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+            .logo
+                width: 25%
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-top: 20px
+
+        .outline-button
+            margin-top: 80px
+            background-color: white 
+            border-radius: 8px
+            border: 1px solid #2A7DEC
+            font-size: 16px
+            font-weight: 600
+            line-height: 20.8px
+            color: #2A7DEC
+            width: 208px
+            height: 48px 
+            display: flex
+            justify-content: center
+            align-items: center
+            text-decoration: none
+
+    .modal 
+        display: none
+        position: fixed
+        align-items: center
+        justify-content: center
+        z-index: $modal-z-index
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: $modal-background-color
+    
+        .modal-content 
+            animation-name: animatetop
+            animation-duration: 0.4s
+            background-color: $modal-content-background-color
+            padding: 20px 20px 30px
+            border: $modal-content-border
+            width: 950px
+
+            .sub-content
+                overflow: auto
+                height: 95%
+
+            .close-button
+                display: flex
+                justify-content: end
+                
+            .close
+                width: 28px
+                height: 28px
+                cursor: pointer
+
+            .title, .sub-title, .sub-sub-title 
+                letter-spacing: 0.01em
+                text-align: center
+                display: flex
+                justify-content: center 
+                font-style: $font-style-normal
+
+            .title
+                font: $title-font
+                color: #3622A4
+
+            .sub-title
+                font: $sub-title-font
+                color: #333333
+
+            .sub-sub-title
+                font: $sub-sub-title-font
+                color: #5E5F62
+                letter-spacing: .001em
+                margin-top: 15px
+                span    
+                    width: 556px
+                    height: 56px
+
+            .form-section
+                padding: 30px 40px 0px 40px
+                display: flex
+                justify-content: space-around
+                .form-element
+                    margin-bottom: 15px
+                    width: 48%
+                    label
+                        position: relative
+                        width: 100%
+                        p
+                            color: $form-element-label-color
+                            font-size: 12px
+                            line-height: 16px 
+                            font-style: $font-style-normal 
+                            font-weight: 400
+                            letter-spacing: 0.4px
+                            position: absolute
+                            top: -8px
+                            left: 10px
+                            z-index: 2
+                            padding: 0px 5px
+                            background: white
+
+                        .cdu-form-control, .cdu-text-area
+                            width: 100%
+                            color: #898B8F
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 24px
+                            letter-spacing: 0.15px
+                            border-radius: 4px
+                            border: $form-control-border
+                            padding: 16px 18px
+
+                        .cdu-text-area
+                            height: 170px
+
+                    .label-select
+                        select 
+                            width: 100%
+                            appearance: none
+                            -webkit-appearance: none
+                            -moz-appearance: none
+                            &::-ms-expand 
+                                display: none
+
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 40%
+                            right: 10px
+                            width: 16px
+                            height: 16px
+                            background: url(/images/pe/read-more-arrow.svg) no-repeat center
+                            transform: rotate(90deg)
+                            transform-origin: center center
+
+                .next
+                    width: 98%
+
+            .secondary
+                padding-top: 0px
+
+            .submit-button-container
+                display: flex
+                justify-content: center
+                .cdu-button
+                    padding: 15px
+                    border-radius: 6px
+                    color: white
+                    background-color: $button-background-color
+                    width: 400px
+
+    #get-in-touch
+        position: relative
+        display: flex
+        justify-content: center
+        background-color: white
+        padding: 50px 0 100px 0
+
+        .info
+            margin-right: 70px
+            z-index: 2
+
+        .side-title
+            margin-top: 15px
+            margin-right: 94px
+            max-width: 200px
+
+        .section-title
+            max-width: 610px
+            line-height: 68px
+
+        .section-text
+            max-width: 470px
+
+        .contact-form
+            padding-top: 30px
+            z-index: 2
+            width: 400px
+            .form-element
+                margin-bottom: 28px
+                label
+                    position: relative
+                    width: 100%
+                    p
+                        color: rgba(0, 0, 0, 0.54)
+                        font-size: 12px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 16px
+                        letter-spacing: 0.4px
+                        position: absolute
+                        top: -8px
+                        left: 10px
+                        z-index: 2
+                        padding: 0px 5px
+                        background: white
+
+        .cdu-form-control
+            width: 100%
+            color: #898B8F
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 24px
+            letter-spacing: 0.15px
+            border-radius: 4px
+            border: 1px solid rgba(0, 0, 0, 0.12)
+            padding: 16px 18px
+
+        .cdu-button
+            padding: 11px 14px
+            color: white
+            background-color: #2A7DEC
+            width: 100%
+            font-size: 18px
+            font-weight: 500
+            text-align: center
+            text-decoration: none
+            border-radius: 4px
+    
+    .side-title
+        z-index: 2
+        span
+            display: inline-block
+            flex-direction: column
+            align-items: flex-start
+            gap: 4px
+            border-radius: 6px
+            padding: 7px 0px
+            color: #2A7DEC
+            text-align: center
+            font-size: 26px
+            font-style: normal
+            font-weight: 700
+            line-height: 30px
+            letter-spacing: 0.26px
+            text-transform: uppercase
+            text-wrap: nowrap
+            width: max-content
+
+    .section-title
+        color: #333
+        font-size: 48px
+        font-style: normal
+        font-weight: 600
+        line-height: 76px
+        letter-spacing: 0.48px
+        padding-bottom: 30px
+
+    .section-text
+        color: #5E5F62
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 28px
+        letter-spacing: 0.016px
+
+    @media screen and (max-width: $step6) and (max-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step6)
+        #second-screen
+            #icon-mobile
+                right: 8%
+            
+            #left-line
+                right: -15%
+                bottom: -20%
+
+            #right-line
+                top: 0%
+                left: -13%
+
+        #dark-section
+            background-size: auto
+            .info-block
+                .images
+                    .dark-background-image
+                        right: -14%
+
+        #third-screen
+            .container
+                .left-side
+                    width: 50%
+
+        #connectivity
+            .container
+                .left
+                    .rectangle
+                        left: -18%
+
+    @media screen and (max-width: $step5)
+        #second-screen
+            .container
+                #icon-laptop
+                    width: 919px
+
+                #icon-mobile
+                    width: 173px 
+                    right: 5%
+                    top: 30%
+            
+                #left-line
+                    right: -30%
+                    bottom: 21%
+                    width: 637.82px
+
+                #right-line
+                    width: 637.82px
+                    top: -9%
+                    left: -7%
+
+        #third-screen
+            .container
+                .left-side
+                    width: 55%
+
+                .right-side
+                    #tank-info-1
+                        width: 334.11px
+                        right: 11%
+                        top: 25%
+
+                    #tank-info-2
+                        width: 263.53px
+                        right: 2%
+                        top: 0%
+
+                    #rectangle
+                        width: 381.71px
+                        bottom: 35%
+                        right: 0%
+
+        #dark-section
+            background-size: auto
+            .header
+                .title 
+                    font-size: 60px
+            
+            .info-block
+                margin-top: 60px
+                .menu
+                    .expansion-panel
+                        .expansion-title
+                            font-size: 20px
+                
+                .images
+                    .dark-background-image
+                        right: -30% 
+                        width: 1017px
+                        top: 10%
+
+                    .dark-map-image
+                        width: 522px
+
+                    .dark-card-image
+                        width: 276px
+                        top: 42%
+                        right: 27%
+
+                    .dark-card1-image
+                        top: 50%
+                        right: 33%
+                        width: 191px
+
+                    .dark-map1-image 
+                        right: 0%
+                        bottom: 30%
+                        width: 548px
+                    
+                    .dark-card2-image
+                        right: 23%
+                        width: 315px
+
+                    .dark-map2-image 
+                        right: 1%
+                        bottom: 21%
+                        width: 440px
+                    
+                    .dark-card3-image
+                        top: 45%
+                        right: 34%
+                        width: 191px
+
+                    .dark-map3-image 
+                        right: 0%
+                        bottom: 40%
+                        width: 547px
+
+                    .dark-card4-image
+                        top: 48%
+                        right: 35%
+                        width: 191px
+
+                    .dark-map4-image 
+                        right: 2%
+                        bottom: 35%
+                        width: 547px
+
+        #connectivity
+            .container
+                .left
+                    .rectangle
+                        left: -25%
+
+                    .connectivity-image
+                        width: 544px
+
+        #partners
+            .logos
+                .logo
+                    display: flex
+                    justify-content: center
+                    align-items: center
+
+        #get-in-touch
+            .contact-form
+                width: 300px
+
+        .modal 
+            .modal-content 
+                width: 800px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 130px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step4)
+        .noToc
+            #content-get-in-touch
+                padding: 0 50px
+                max-width: 1000px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 3fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+                align-items: center
+
+        #first-screen
+            .hero-container 
+                #hero-content
+                    .title
+                        font-size: 50px
+
+        #second-screen
+            .container
+                #icon-laptop
+                    width: 718px
+
+                #icon-mobile
+                    width: 135px 
+                    right: 5%
+                    top: 30%
+            
+                #left-line
+                    right: -30%
+                    bottom: 34%
+                    width: 498.3px
+
+                #right-line
+                    width: 498.3px
+                    top: -9%
+                    left: -7%
+
+        #third-screen
+            margin-top: 0px
+            .container
+                .left-side
+                    width: 55%
+                    display: flex
+                    flex-direction: column
+                    .side-title
+                        font-size: 40px 
+
+                .right-side
+                    #tank-info-1
+                        width: 307px
+                        right: 11%
+                        top: 25%
+
+                    #tank-info-2
+                        width: 242px
+                        right: 2%
+                        top: 0%
+
+                    #rectangle
+                        width: 350.28px
+                        bottom: 35%
+                        right: 0%
+
+        #benefits-screen
+            margin-top: 100px
+            .benefits-title
+                font-size: 40px
+
+            .card
+                width: 47%
+
+        #dark-section 
+            background-size: auto
+            .header
+                .title 
+                    font-size: 50px
+            
+            .info-block
+                margin-top: 60px
+                .menu
+                    .expansion-panel
+                        .expansion-title
+                            font-size: 20px
+                
+                .images
+                    .dark-background-image
+                        right: -53%
+                        top: 21%
+
+                    .dark-map-image
+                        width: 427px
+
+                    .dark-card-image
+                        width: 187px
+                        top: 58%
+                        right: 32%
+
+                    .dark-card1-image
+                        top: 55%
+                        right: 33%
+                        width: 139px
+                        
+                    .dark-map1-image 
+                        right: 0%
+                        bottom: 30%
+                        width: 416px
+                        
+                    .dark-card2-image
+                        top: 67%
+                        right: 27%
+                        width: 193px
+                        
+                    .dark-map2-image 
+                        right: 1%
+                        bottom: 21%
+                        width: 322px
+                    
+                    .dark-card3-image
+                        top: 50%
+                        right: 35%
+                        width: 139px
+                        
+                    .dark-map3-image 
+                        right: 0%
+                        bottom: 40%
+                        width: 409px
+
+                    .dark-card4-image
+                        top: 55%
+                        right: 35%
+                        width: 139px
+                        
+                    .dark-map4-image 
+                        right: 2%
+                        bottom: 35%
+                        width: 409px
+
+        #connectivity
+            .container
+                min-height: 450px
+                .left
+                    .rectangle
+                        width: 392.27px
+                        left: -9%
+                        top: -10%
+
+                    .connectivity-image
+                        width: 369px
+
+                .right
+                    justify-content: flex-start
+                    .title
+                        font-size: 40px
+                        margin-bottom: 10px
+
+                    .text
+                        margin-top: 10px
+
+        #partners
+            .logos
+                .logo
+                    width: 33% 
+
+        #get-in-touch
+            padding: 0px 0 100px 0
+
+            .info
+                grid-area: info
+                margin-right: 0px
+
+            .side-title
+                grid-area: side-title
+                span
+                    text-wrap: nowrap
+                    width: 210px
+                    height: 44px
+                    text-align: start
+
+            .section-title
+                height: auto
+                line-height: 40px
+
+            .section-text
+                max-width: 100%
+
+            .contact-form
+                grid-area: contact-form
+            
+        .modal 
+            .modal-content 
+                width: 693px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 80px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step3)
+        .noToc
+            #content-get-in-touch
+                padding: 0 50px
+                max-width: 672px
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+
+        #first-screen
+            .hero-container 
+                #hero-content
+                    .title
+                        font-size: 50px
+
+        #second-screen 
+            height: 500px
+            margin-top: 0px
+            .container
+                #icon-laptop
+                    width: 600px
+
+                #icon-mobile
+                    width: 118px 
+                    right: 2%
+                    top: 28%
+            
+                #left-line
+                    display: none
+
+                #right-line
+                    display: none
+
+        #third-screen
+            margin-top: 0px
+            .container
+                min-height: 1000px
+                flex-direction: column
+                .left-side
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    .side-title
+                        font-size: 40px 
+
+                .right-side
+                    min-height: 450px
+                    width: 100%
+                    #tank-info-1
+                        width: 379.38px
+                        top: 69%
+                        right: 35%
+
+                    #tank-info-2
+                        width: 299.06px
+                        top: 54%
+                        right: 14%
+
+                    #rectangle
+                        width: 432.8px
+                        top: 50%
+                        right: 10%
+
+        #benefits-screen
+            margin-top: 100px
+            .benefits-title
+                font-size: 40px
+
+            .card
+                width: 80%
+
+        #dark-section 
+            background-size: auto
+            .header
+                .title 
+                    font-size: 34px
+            
+            .info-block
+                margin-top: 60px
+                .menu
+                    width: 100%
+                    .expansion-panel
+                        width: 100%
+                        .expansion-title
+                            font-size: 20px
+                
+                .images
+                    display: none
+        
+        #connectivity
+            .container
+                min-height: 900px
+                display: flex
+                flex-direction: column-reverse
+                .left
+                    width: 100%
+                    height: 500px
+                    display: flex
+                    justify-content: center
+                    .rectangle
+                        width: 442.43px
+                        left: -2%
+                        top: 39%
+
+                    .connectivity-image
+                        width: 416.24px
+
+                .right
+                    width: 100%
+                    height: 400px
+                    justify-content: flex-start
+                    .title
+                        font-size: 40px
+                        margin-bottom: 10px
+
+                    .text
+                        margin-top: 10px
+
+        #partners
+            .logos
+                .logo
+                    width: 50% 
+
+        #get-in-touch
+            padding: 0px 0 100px 0
+
+            .info
+                margin-right: 0px
+
+                .section-title
+                    height: auto
+                    line-height: 40px
+
+            .section-text
+                margin-top: 10px
+
+            .contact-form
+                width: 344px
+                fieldset
+                    padding: 0px
+            
+        .side-title
+            span
+                padding: 0px
+
+        .modal 
+            .modal-content 
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step2)
+        .noToc
+            #content-get-in-touch
+                display: flex
+                padding: 0 12px
+                margin-top: 70px
+
+        #first-screen
+            .hero-container 
+                #hero-content
+                    padding-top: 40px
+                    .title
+                        font-size: 40px
+                        line-height: 44px
+
+                    .info-block
+                        min-width: 100%
+                        display: flex
+                        flex-direction: column
+
+                        .filled-button
+                            width: 100%
+
+                        .outline-button
+                            width: 100%
+                            margin-top: 10px
+
+        #second-screen
+            margin-top: 30px
+            height: 220px
+            .container
+                display: flex
+                justify-content: center
+                height: 100%
+                #icon-laptop
+                    width: 296px
+
+                #icon-mobile
+                    width: 58px
+                    right: 4%
+                    top: 32%
+    
+        #third-screen
+            .container
+                .left-side
+                    .side-title
+                        font-size: 32px
+                        line-height: 41.6px
+
+                    .side-text
+                        margin-top: 30px
+
+                .right-side
+                    min-height: 250px
+                    #tank-info-1
+                        width: 184.7px
+                        height: auto
+                        top: 85%
+
+                    #tank-info-2
+                        width: 145.59px
+                        height: auto
+                        top: 77%
+                        right: 14%
+
+                    #rectangle
+                        width: 210.9px
+                        height: auto
+                        right: 10%
+                        top: 76%
+
+        #benefits-screen
+            .benefits-title
+                font-size: 32px
+                line-height: 41.6px
+                width: 100%
+
+            .benefits-sub-title
+                width: 100%
+
+            .card
+                width: 100%
+                height: 310px
+
+        #dark-section
+            height: 950px
+            background-size: 1337px
+            margin-top: 0px
+            .header
+                .title 
+                    font-size: 20px
+                    height: 26px
+                
+                .second
+                    padding-left: 22px
+
+                .third
+                    padding-left: 0px
+
+            .info-block
+                margin-top: 0px
+
+        #connectivity
+            margin-top: 50px
+            .container
+                min-height: 650px
+                display: flex
+
+                .left
+                    height: 440px
+                    .rectangle
+                        width: 277.82px
+                        top: 75%
+
+                    .connectivity-image
+                        width: 261.45px
+                        top: 80%
+                        
+                .right
+                    .title
+                        font-size: 32px
+                        line-height: 41.6px
+
+                    .text
+                        margin-top: 20px
+
+        #partners
+            .title
+                font-size: 32px
+                line-height: 41.6px
+            
+            .logos
+                .logo
+                    width: 50%
+                    margin-top: 30px
+                    img
+                        max-width: 127px
+
+            .outline-button
+                width: 100%
+        
+        #get-in-touch
+            padding: 40px 0
+            .section-title
+                font-size: 32px
+                line-height: 41.6px
+                margin-top: 30px
+
+            .contact-form
+                width: 100%
+
+            fieldset
+                width: 100%
+
+            .cdu-button
+                width: 100%
+
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span    
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding-left: 15px
+                    padding-right: 15px
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+@keyframes animatetop
+    from
+        top: -300px 
+        opacity: 0
+    to
+        top: 0
+        opacity: 1
