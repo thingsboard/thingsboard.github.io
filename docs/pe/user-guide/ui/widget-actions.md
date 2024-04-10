@@ -17,7 +17,7 @@ add-new-action-1:
         title: 'The "Actions" window will open. Right now, it&#39;s empty, but later it will display all created actions. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window.'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-5-pe.png
-        title: 'Click the `+` icon in the top right corner of the screen to open a new "Add action" window. In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add";'
+        title: 'Click the `+` icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-6-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -37,7 +37,7 @@ add-new-action-2:
         title: 'Go to the "Actions" tab. Right now, this tab is empty, but later it will display all created actions. Click "plus" icon to open an "Add action" window;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-10-pe.png
-        title: 'In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add";'
+        title: 'Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-11-pe.png
         title: 'Click "Apply" to save the widget settings;'
@@ -48,7 +48,7 @@ add-new-action-2:
 navigate-to-new-dashboard-state-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/types/navigate-to-new-dashboard-state-1-pe.png
-        title: 'As an example for this manual, select "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'As an example for this manual, select "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/types/navigate-to-new-dashboard-state-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -129,7 +129,7 @@ update-current-dashboard-state-3:
 navigate-to-other-dashboard:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/types/navigate-to-other-dashboard-1-pe.png
-        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to other dashboard" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard" appears. Select a dashboard you&#39;d like to be transitioned to. Note that you can also navigate to an existing state of the selected dashboard. When the desired dashboard has been selected, click the "Add" button;'
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to other dashboard" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a dashboard you&#39;d like to be transitioned to. Note that you can also navigate to an existing state of the selected dashboard. When the desired dashboard has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/types/navigate-to-other-dashboard-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -255,7 +255,7 @@ open-url-2:
 action-cell-button-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/action-cell-button-1-pe.png
-        title: 'Select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/action-cell-button-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -277,7 +277,7 @@ action-cell-button-2:
 widget-header-button-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/widget-header-button-1-pe.png
-        title: 'Select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/widget-header-button-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -299,7 +299,7 @@ widget-header-button-2:
 on-row-click-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-row-click-1-pe.png
-        title: 'Select "On row click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On row click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-row-click-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -321,7 +321,7 @@ on-row-click-2:
 on-row-double-click-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-row-double-click-1-pe.png
-        title: 'Select "On row double click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On row double click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-row-double-click-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -355,7 +355,7 @@ on-node-selected-1:
         title: 'Specify the data source for the widget and navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-node-selected-5-pe.png
-        title: 'Select "On node selected" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On node selected" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     5:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-node-selected-6-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Apply" to save the widget settings;'
@@ -386,13 +386,13 @@ on-html-element-click-1:
         title: 'Navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-5-pe.png
-        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     5:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-6-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Now navigate to the "Appearance" tab;'
     6:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-7-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. After, click "Add";'
+        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. Afterwards, click the "Add" button;'
     7:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-8-pe.png
         title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
@@ -420,13 +420,13 @@ on-html-element-click-3:
         title: 'Specify the data source for the widget and navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-15-pe.png
-        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     5:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-16-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Now navigate to the "Appearance" tab;'
     6:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-17-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. After, click "Add";'
+        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. Afterwards, click the "Add" button;'
     7:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-18-pe.png
         title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'  
@@ -447,7 +447,7 @@ on-circle-click-1:
 on-circle-click-2:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/on-circle-click-2-pe.png
-        title: 'Select "On circle click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On circle click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/on-circle-click-3-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Apply" to save the widget settings;'
@@ -466,7 +466,7 @@ on-circle-click-3:
 on-marker-click-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/on-marker-click-1-pe.png
-        title: 'Select "On marker click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On marker click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/on-marker-click-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Apply" to save the widget settings;'
@@ -490,7 +490,7 @@ on-polygon-click-1:
 on-polygon-click-2:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/on-polygon-click-2-pe.png
-        title: 'Select "On polygon click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "On polygon click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/on-polygon-click-3-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
@@ -509,7 +509,7 @@ on-polygon-click-3:
 tooltip-tag-action-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/tooltip-tag-action-1-pe.png
-        title: 'Select "Tooltip tag action" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Select "Tooltip tag action" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/tooltip-tag-action-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Now navigate to the "Appearance" tab;'
