@@ -231,7 +231,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.11.0-RC6.zip](https://dist.thingsboard.io/trendz-windows-1.11.0-RC6.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.11.0-RC7.zip](https://dist.thingsboard.io/trendz-windows-1.11.0-RC7.zip).
 
 #### Trendz Analytics service upgrade
 

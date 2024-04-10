@@ -1,1 +1,1 @@
-sudo rpm -Uvh trendz-1.11.0-RC6.rpm
+sudo rpm -Uvh trendz-1.11.0-RC7.rpm

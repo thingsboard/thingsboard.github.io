@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/trendz-1.11.0-RC6.deb
+wget https://dist.thingsboard.io/trendz-1.11.0-RC7.deb

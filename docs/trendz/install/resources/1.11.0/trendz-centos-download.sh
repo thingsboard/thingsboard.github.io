@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/trendz-1.11.0-RC6.rpm
+wget https://dist.thingsboard.io/trendz-1.11.0-RC7.rpm
