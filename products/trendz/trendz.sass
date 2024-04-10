@@ -367,26 +367,23 @@ $step4: 1500px
         color: #5555FF
         position: relative
         transition: 0.6s
+        padding-right: 25px
         &::after
             content: ''
             display: block
             height: 16px
             width: 16px
-            mask: url('https://img.thingsboard.io/trendz/arrow-right.svg') no-repeat 50% 50%
-            -webkit-mask: url('https://img.thingsboard.io/trendz/arrow-right.svg') no-repeat 50% 50%
-            mask-size: cover
-            -webkit-mask-size: cover
-            background-color: #5555FF
+            background-image: url('/images/trendz/arrow-right.svg')
             position: absolute
             top: 50%
             transform: translateY(-50%)
             transition: 0.3s
-            right: -25px
+            right: 0
         &:hover
             color: #452CDC
             &:after
-                right: -35px
-                background-color: #452CDC
+                right: -10px
+                filter: brightness(90%)
 
     .try-button-block
         padding: 0 0 64px
