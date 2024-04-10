@@ -98,14 +98,15 @@
 
     function reportSearchInput(searchText) {
 
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true) {
-            return;
-        }
-
-        ga(
-            "send", "event", "Guides", "search",
-            searchText, searchPageCount
-        );
+        // TODO-VP-gtm: move to GTM
+        // if (!ga.hasOwnProperty("loaded") || ga.loaded !== true) {
+        //     return;
+        // }
+        //
+        // ga(
+        //     "send", "event", "Guides", "search",
+        //     searchText, searchPageCount
+        // );
     }
     
 </script>

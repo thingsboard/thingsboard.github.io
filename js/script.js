@@ -205,10 +205,11 @@ var tb = (function () {
     }
 
     function reportFaqNode(nodeId) {
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !nodeId) {
-            return;
-        }
-        ga("send", "event", "FaqNode", nodeId);
+		// TODO-VP-gtm: move to GTM
+        // if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !nodeId) {
+        //     return;
+        // }
+        // ga("send", "event", "FaqNode", nodeId);
     }
 
 	function CollapseBox(container, index){
