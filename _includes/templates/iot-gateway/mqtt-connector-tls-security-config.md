@@ -10,9 +10,10 @@ The table below describes the parameters required to configure authorization on 
 Security subsection in configuration file will look like this: 
 
 ```json
-  "security":{
+"security":{
+    "type": "certificates",
     "caCert": "/etc/thingsboard-gateway/ca.pem",
     "privateKey": "/etc/thingsboard-gateway/privateKey.pem",
     "cert": "/etc/thingsboard-gateway/certificate.pem"
-  }
+}
 ```
