@@ -8,6 +8,13 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.6.4 (Apr 11, 2024) {#v364}
+
+Everything from [TB CE v3.6.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.4) with the following improvements and bug fixes.
+
+* Web Report
+  * Improved web report functionality and logging;
+
 ## v3.6.3 (Mar 18, 2024) {#v363}
 
 Everything from [TB CE v3.6.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.3) with the following improvements and bug fixes.
