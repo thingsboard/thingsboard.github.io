@@ -67,10 +67,10 @@ customWidgetTitleAndWidgetLabel:
         title: 'Step 4. Check translated titles.'
     5:
         image: /images/user-guide/custom-translation/ct_telemetry_label.png
-        title: 'Step 3. Apply translation to the widget title - {i18n:custom.my-widget.name}, and entity label column title - {i18n:custom.my-widget.label-text}.'
+        title: 'Step 5. Apply translation to the data key configuration as a label - {i18n:custom.my-widget.temperature}.'
     6:
         image: /images/user-guide/custom-translation/ct_translated_label.png
-        title: 'Step 4. Check translated titles.'
+        title: 'Step 6. Check translated label.'
 
 tooltips:
     0:
