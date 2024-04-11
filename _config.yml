@@ -76,13 +76,13 @@ collections:
 release:
   branch: release-3.6
   branch_major_next: develop/3.7
-  ver: 3.6.3
-  ce_ver: 3.6.3
-  ce_tag: v3.6.3
-  ce_full_ver: 3.6.3
-  pe_ver: 3.6.3pe
-  pe_full_ver: 3.6.3PE
-  wd_examples_commit: v3.6.3
+  ver: 3.6.4
+  ce_ver: 3.6.4
+  ce_tag: v3.6.4
+  ce_full_ver: 3.6.4
+  pe_ver: 3.6.4pe
+  pe_full_ver: 3.6.4PE
+  wd_examples_commit: v3.6.4
   # >>> EDGE
   edge_ver: 3.6.3 # use X.X.X to be in sync with demo/cloud
   edge_tag: v3.6.3 # use vX.X.X to be in sync with demo/cloud
