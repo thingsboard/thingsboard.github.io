@@ -43,13 +43,13 @@ This Tutorial is to show you how to send an email message with HTML page or imag
 * [Send email](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) node.
 
 
-### Message flow
+## Message flow
 - Like a start point we will use [Generator](/docs/user-guide/rule-engine-2-0/action-nodes/#generator-node) that will imitate regular rule chain messages flow: prepared message and metadata
   where we can contain some dynamic field for **to email** node.
 - The [To email node](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) prepares data, destination email, and other for email message.
 - The [Send email node](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) sends a message.
 
-### Configuring Rule Nodes
+## Configuring Rule Nodes
 
 #### Configuring "to email" node
 
@@ -80,7 +80,7 @@ At the second stage, let's configure the "generator" node:
 JS code for HTML page%,%html-page%,%templates/rule-nodes/to-email-node/generator-code-for-html.md%br%
 JS code for image%,%image%,%templates/rule-nodes/to-email-node/generator-code-for-image.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="generatorCode" toggle-spec=generatorCode %}
+{% include content-toggle.liquid content-toggle-id="generatorCode" toggle-spec=generatorCode %}
 
 #### Send email and finishing
 Find and configure new **send email** node and connect all nodes between themselves, like on the screen shoot.
@@ -88,16 +88,16 @@ Save rule chain.
 
 {% include images-gallery.html imageCollection="rule_chain" %}
 
-### Result
+## Result
 Check destination email to see the result of the “to email” node work. 
 We got the next message:
 
 {% include images-gallery.html imageCollection="results" %}
 
-### See Also
+## See Also
 
 - [Send email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

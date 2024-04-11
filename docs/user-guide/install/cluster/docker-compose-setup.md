@@ -21,7 +21,7 @@ Before starting please make sure Docker Engine and Docker Compose are installed 
 
 {% include templates/install/docker-install-note.md %}
 
-### Step 1. Pull ThingsBoard CE Images
+## Step 1. Pull ThingsBoard CE Images
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
@@ -36,12 +36,12 @@ docker pull thingsboard/tb-lwm2m-transport:{{ site.release.ce_full_ver }}
 docker pull thingsboard/tb-snmp-transport:{{ site.release.ce_full_ver }}
 ```
 
-### Step 2. Review the architecture page
+## Step 2. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-### Step 3. Clone ThingsBoard CE repository
+## Step 3. Clone ThingsBoard CE repository
 
 ```bash
 git clone -b {{ site.release.branch }} https://github.com/thingsboard/thingsboard.git --depth 1
@@ -49,11 +49,11 @@ cd thingsboard/docker
 ```
 {: .copy-code}
 
-### Step 4. Configure ThingsBoard database
+## Step 4. Configure ThingsBoard database
 
 {% include templates/install/configure-db-docker-compose.md %}
 
-### Step 5. Choose ThingsBoard queue service 
+## Step 5. Choose ThingsBoard queue service 
 
 {% include templates/install/install-queue-docker-compose.md %}
 
@@ -65,17 +65,17 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/cluster-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/cluster-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. Enable monitoring (optional)
+## Step 6. Enable monitoring (optional)
 
 {% include templates/install/configure-monitoring-docker-compose.md %}
 
-### Step 7. Running
+## Step 7. Running
 
 {% assign dockerComposeFileLocation = "" %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

@@ -1,6 +1,18 @@
 [
   {
     "type": ["Asia"],
+    "country": ["India"],
+    "name": "Absolute Motion",
+    "contact": {
+      "href": "info@absolutemotion.in"
+    },
+    "site": {
+      "href": "absolutemotion.in",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
     "country": ["Vietnam", "China", "Laos", "Thailand", "Cambodia", "Malaysia", "Singapore", "Brunei", "Philippines", "Taiwan"],
     "name": "ACTE Technology",
     "contact": {
@@ -104,6 +116,18 @@
     },
     "site": {
       "href": "arxit.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Sweden"],
+    "name": "Atea Sverige AB",
+    "contact": {
+      "href": "info@atea.se"
+    },
+    "site": {
+      "href": "atea.com",
       "target": "_blank"
     }
   },
@@ -424,7 +448,7 @@
     "country": ["South Africa"],
     "name": "Fourier",
     "contact": {
-      "href": "vrensburge@fourier.co.za"
+      "href": "vdbergc@fourier.co.za"
     },
     "site": {
       "href": "fourierit.co.za",
@@ -552,6 +576,18 @@
     }
   },
   {
+    "type": ["Europe", "North America"],
+    "country": ["Åland Islands", "Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Faroe Islands", "Finland", "France", "Germany", "Gibraltar", "Greece", "Hungary", "Iceland", "Ireland", "Isle of Man", "Italy", "Jersey", "Kingdom of the Netherlands", "Kosovo", "Latvia", "Liechtenstein", "Lietuvos Respublika", "Lithuania", "Luxembourg", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City", "Anguilla", "Antigua and Barbuda", "Barbados", "Belize", "British Virgin Islands", "Canada", "Cayman Islands", "Costa Rica", "Cuba", "Dominica", "Dominican Republic", "El Salvador", "Greenland", "Grenada", "Guadeloupe", "Guatemala", "Haiti", "Honduras", "Jamaica", "Martinique", "Mexico", "Montserrat", "Nicaragua", "Panama", "Puerto Rico", "Saint Barthélemy", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Sint Maarten", "The Bahamas", "Turks and Caicos Islands", "U.S. Virgin Islands", "United States of America", "United States Minor Outlying Islands"],
+    "name": "IoT Squad P.S.A.",
+    "contact": {
+      "href": "info@iotsquad.tech"
+    },
+    "site": {
+      "href": "iotsquad.tech",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Germany", "Austria", "Switzerland"],
     "name": "it-novum GmbH",
@@ -632,6 +668,18 @@
     },
     "site": {
       "href": "masterchips.be",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "McRegem Srl",
+    "contact": {
+      "href": "info@mcregem.com"
+    },
+    "site": {
+      "href": "mcregem.com",
       "target": "_blank"
     }
   },
@@ -872,6 +920,18 @@
     },
     "site": {
       "href": "sawtraxltd.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Greece"],
+    "name": "Scientific Enterprises Ltd",
+    "contact": {
+      "href": "george@scienter.gr"
+    },
+    "site": {
+      "href": "scienter.gr",
       "target": "_blank"
     }
   },
@@ -1163,7 +1223,7 @@
       "target": "_blank"
     }
   },
-   {
+  {
     "type": ["North America", "South America"],
     "country": ["United States of America", "Canada", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Ingram Micro Canada",
@@ -1174,8 +1234,8 @@
       "href": "https://ca.ingrammicro.com/",
       "target": "_blank"
     }
-   },
-    {
+  },
+  {
     "type": ["Asia"],
     "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Belarus"],
     "name": "Vehi.kz LLP",
@@ -1186,8 +1246,8 @@
       "href": "vehi.kz",
       "target": "_blank"
     }
-   },
-   {
+  },
+  {
     "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "CodeExit, Inc.",
@@ -1210,7 +1270,7 @@
       "href": "",
       "target": "_blank"
     }
-   },
+  },
   {
     "type": ["Asia"],
     "country": ["Malaysia"],
@@ -1222,8 +1282,8 @@
       "href": "rodatech.com.my",
       "target": "_blank"
     }
-   },
-   {
+  },
+  {
     "type": ["Asia"],
     "country": ["India"],
     "name": "Ariprus Digicon Pvt Ltd",
@@ -1234,8 +1294,8 @@
       "href": "ariprus.com",
       "target": "_blank"
     }
-   },
-    {
+  },
+  {
     "type": ["South America"],
     "country": ["Chile"],
     "name": "MindLabs, SpA",
@@ -1246,8 +1306,8 @@
       "href": "mindlabs.cl",
       "target": "_blank"
     }
-   },
-     {
+  },
+  {
     "type": ["Asia"],
     "country": ["Turkey"],
     "name": "Dvm Technology Inc.",
@@ -1258,5 +1318,17 @@
       "href": "dvm.com.tr",
       "target": "_blank"
     }
-   }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Kazakhstan"],
+    "name": "3D Alem",
+    "contact": {
+      "href": "d.tovma@3dalem.kz"
+    },
+    "site": {
+      "href": "vehi.kz",
+      "target": "_blank"
+    }
+  }
 ]

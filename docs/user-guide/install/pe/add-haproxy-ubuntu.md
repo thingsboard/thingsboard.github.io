@@ -185,7 +185,11 @@ EOT
 ```
 {: .copy-code}
 
-### Step 6. Configure Certbot with Let’s Encrypt
+### Step 6. Configure Edge TLS communication (Optional)
+
+{% include docs/user-guide/install/configure-edge-haproxy-tls.md %}
+
+### Step 7. Configure Certbot with Let’s Encrypt
 
 Execute the following commands to create Certbot with Let’s Encrypt configuration and helper files: 
                                                                                                   
@@ -253,7 +257,7 @@ sudo chmod +x /usr/bin/haproxy-refresh /usr/bin/certbot-certonly /usr/bin/certbo
 ```
 {: .copy-code}
 
-### Step 7. Install certificates auto renewal cron job
+### Step 8. Install certificates auto renewal cron job
 
 Execute the following command to create certificates auto renewal cron job: 
 
@@ -276,7 +280,7 @@ EOT
 ```
 {: .copy-code}
 
-### Step 8. Restart HAProxy Load Balancer
+### Step 9. Restart HAProxy Load Balancer
 
 Finally restart HAProxy Load Balancer service in order changes take effect:
 
@@ -285,7 +289,7 @@ sudo service haproxy restart
 ```
 {: .copy-code}
 
-### Step 9. Execute command to get generate certificate using Let's Encrypt
+### Step 10. Execute command to get generate certificate using Let's Encrypt
 
 Don't forget to replace **your_domain** and **your_email** before executing the command below: 
 
@@ -293,7 +297,7 @@ Don't forget to replace **your_domain** and **your_email** before executing the 
 sudo certbot-certonly --domain your_domain --email your_email
 ```
 
-### Step 10. Refresh HAProxy configuration
+### Step 11. Refresh HAProxy configuration
 
 Finally restart HAProxy:
 

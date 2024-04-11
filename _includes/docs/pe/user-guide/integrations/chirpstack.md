@@ -8,7 +8,7 @@
 The ChirpStack open-source LoRaWAN Network Server stack provides open-source components for LoRaWAN networks.  
 After integrating ChirpStack with ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
 
-### ChirpStack configuration
+## ChirpStack configuration
 
 In order to get data you should have configured instance of ChirpStack Network server stack.  
 In this guide we will use the ***configured local instance***, installed by docker compose.
@@ -16,7 +16,7 @@ In this guide we will use the ***configured local instance***, installed by dock
 Also, we have connected device, how to connect it you can find in [**Connection guide from the official site**](https://www.chirpstack.io/project/guides/connect-device/).  
 When device connected and the data appears in the **DEVICE DATA** tab - we can start to configure the integration to the ThingsBoard.  
 
-### Create Uplink Converter
+## Create Uplink Converter
 
 Before creating the integration, you need to create an **Uplink converter** in **Data converters.**
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard.
@@ -156,7 +156,7 @@ You can change the decoder function while creating the converter or after creati
 Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the "checkmark" icon.
 
 
-### Create Integration
+## Create Integration
 
 To create integration on ThingsBoard we need the following parts:
 - **Uplink converter**
@@ -184,7 +184,7 @@ To create integration on ChirpStack Network server stack, we need to do the foll
 {% include images-gallery.html imageCollection="chirpstack_integration" %}
 
 
-### Processing Uplink message
+## Processing Uplink message
 
 When device sends uplink message, you will receive an uplink event on integration and data from the device.  
 
@@ -208,7 +208,7 @@ How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboard
 
 
 
-### Advanced Usage: Create Downlink Converter
+## Advanced Usage: Create Downlink Converter
 
 Create Downlink in **Data converters.** To see events - enable **Debug.**
 
@@ -295,7 +295,7 @@ Received data and data that was sent can be viewed in the downlink converter. In
 {% include images-gallery.html imageCollection="downlink_events" %}
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
 

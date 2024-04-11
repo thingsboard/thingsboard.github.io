@@ -1,10 +1,3 @@
----
-layout: docwithnav
-assignees:
-- ikulikov
-title: Widgets Development Guide Before 3.0
-
----
 
 * TOC
 {:toc}
@@ -890,7 +883,7 @@ export default angular.module('thingsboard.api.widget', ['oc.lazyLoad', thingsbo
 
 ```
 
-### Widget code debugging tips
+## Widget code debugging tips
 
 The most simple method of debugging is Web console output.
 Just place [**console.log(...)**](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) function inside any part of widget JavaScript code.
@@ -900,6 +893,6 @@ Another and most effective method of debugging is to invoke browser debugger.
 Put [**debugger;**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statement into the place of widget code you are interested in and then click **Run** button to restart widget code.
 Browser debugger (if enabled) will automatically pause code execution at the debugger statement and you will be able to analyze script execution using browser debugging tools.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "Contribution" %}{% include templates/multi-project-guides-banner.md %}

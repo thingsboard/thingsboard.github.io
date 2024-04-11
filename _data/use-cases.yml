@@ -10,6 +10,10 @@
   title: Fleet Tracking
   link: /fleet-tracking/
   icon: /images/case-trk-icon.svg
+- id: tank-level-monitoring
+  title: Tank Level Monitoring
+  link: /use-cases/tank-level-monitoring/
+  icon: /images/case-level-icon.svg
 - id: smart-metering
   title: Smart Metering
   link: /smart-metering/

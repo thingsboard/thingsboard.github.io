@@ -10,6 +10,7 @@ do
   echo "Replacing the image url in $ext files"
   find . -type f -iname "$ext" -exec sed -i -e '/https/! s/\/images\//https:\/\/img.thingsboard.io\//g' {} \;
   find . -type f -iname "$ext" -exec sed -i -e 's/https:\/\/thingsboard.io\/images\//https:\/\/img.thingsboard.io\//g' {} \;
+  find . -type f -iname "$ext" -exec sed -i -e '/https:\/\/img.thingsboard.io\/partners\/map-of-distributors\.svg/ s/https:\/\/img.thingsboard.io\/partners\/map-of-distributors\.svg/\/images\/partners\/map-of-distributors.svg/g' {} \;
 done
 
 echo "$(date +"%H:%M") Replacing image urls.. done."

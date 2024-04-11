@@ -31,7 +31,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 {% capture restConf %}
 {
   "host": "127.0.0.1",
-  "port": "5000",
+  "port": 5000,
   "SSL": false,
   "security": {
     "cert": "~/ssl/cert.pem",
@@ -40,7 +40,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
   "mapping":[
     {
       "endpoint": "/test_device",
-      "HTTPMethod": [
+      "HTTPMethods": [
         "POST"
       ],
       "security":
@@ -77,7 +77,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
     },
     {
       "endpoint": "/test",
-      "HTTPMethod": [
+      "HTTPMethods": [
         "GET",
         "POST"
       ],
@@ -123,7 +123,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 With SSL<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/rest-connector-ssl-security-config.md%br%
 Without SSL<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-no-ssl-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}  
+{% include content-toggle.liquid content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}  
 
 ### Mapping section
 
@@ -134,21 +134,21 @@ By default, the gateway uses Json converter, but it is possible to provide custo
 
 **Note**: You can specify multiple mapping objects inside the array.
 
-| **Parameter**     | **Default value**                     | **Description**                                               |
-|:-|:-|-
-| endpoint          | **/test_device**                      | Url address of the endpoint.                                  |
-| HTTPMethod        | **GET**                               | HTTP method allowed for endpoint (**GET**, **POST** etc.).    |
-|---
+| **Parameter** | **Default value**                     | **Description**                                             |
+|:--------------|:-|-------------------------------------------------------------
+| endpoint      | **/test_device**                      | Url address of the endpoint.                                |
+| HTTPMethods   | **GET**                               | HTTP methods allowed for endpoint (**GET**, **POST** etc.). |
+| ---           
 
 #### Security section
 
 This section provides configuration for client authorization at the gateway for every endpoint.
  
-{% capture restconnectorsecuritytogglespec %}
+{% capture restconnectorsecuritytogglespec2 %}
 Basic<small>Recommended</small>%,%username%,%templates/iot-gateway/rest-connector-basic-security-config.md%br%
 Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-anonymous-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}
+{% include content-toggle.liquid content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec2 %}
 
 
 #### Converter subsection
@@ -160,7 +160,6 @@ Types of request converters:
 2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data.)  
 
 {% capture difference %}
-<br>
 **Connector won't pass the None value from the converter**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
@@ -169,10 +168,9 @@ Types of request converters:
 json<small>Recommended if json will be received in the request</small>%,%json%,%templates/iot-gateway/rest-converter-json-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in the request</small>%,%custom%,%templates/iot-gateway/rest-converter-custom-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
+{% include content-toggle.liquid content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
 
 {% capture difference %}
-<br>
 **It is also may to parse query parameters from the URL if you are using a GET request.**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
@@ -391,7 +389,7 @@ it manually. To use them, make sure you set all required parameters (in the case
 **requestUrlExpression**, **responseTimeout**, **HTTPMethod**, **valueExpression**). 
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

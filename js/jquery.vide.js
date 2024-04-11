@@ -483,7 +483,7 @@
     });
 
     // https://github.com/VodkaBears/Vide/issues/68
-    $window.on('unload.' + PLUGIN_NAME, function() {
+    $window.on('pagehide.' + PLUGIN_NAME, function() {
       return false;
     });
 

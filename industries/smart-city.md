@@ -36,6 +36,28 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
+        <img class="customer-logo" src="/images/customers/iotsquad-tech-logo.png" alt="IoT Squad">
+        <a class="outlink" href="https://iotsquad.tech/"> IoT Squad </a>
+    </div>
+    <div class="customer-content">
+        <div class="person-container">
+            <img class="person-logo" src="/images/customers/iotsquad-tech-person.jpeg" alt="Eric Bourbeau">
+            <div class="person-title">
+                <p class="person-name"> Pawel Ostropolski </p>
+                <p class="person-position"> Founder & Managing Director </p>
+            </div>
+        </div>
+        <h2>
+            Systems Integrator for Smart City and Industry 4.0. Offering complete End to End IoT Solutions and R&D services for Cities, Campuses, Industrial Sites and Critical Infrastructure.
+        </h2>
+        <p>
+            ThingsBoard platform enables us to deliver on our promise of "Rapid Prototyping and Development" of IoT solutions for our clients. Its versatile deployment and integration capabilities make it well fit for most of the use case scenarios we find in IoT markets nowadays.
+        </p>
+    </div>
+</div>
+
+<div class="customer-block">
+    <div class="customer-company">
         <img class="customer-logo" src="/images/customers/x-telia.png" alt="X-TELIA">
         <a class="outlink" href="https://en.x-telia.com/"> X-TELIA </a>
     </div>

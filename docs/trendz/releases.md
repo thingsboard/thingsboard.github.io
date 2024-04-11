@@ -8,6 +8,52 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.11.0 (March, 2024)
+
+**Improvements:**
+
+* Persisted calculation fields management
+* Improve calculation fields debug and monitoring instruments
+* Implement scheduled tasks
+* Implement reprocessing tasks
+* Task executions management
+* Add search for filter options
+* Trendz configuration import/export - add anomaly models, tasks, calculations
+* Subscribe to filter updates for Trendz views on the dashboard
+* Update Trendz settings page layout
+
+**Bug fixes:**
+
+* Fix search speed in big topology graph
+* Fix OOM in python engine
+
+## v1.10.3-HF7 (January, 2024)
+
+**Improvements:**
+
+* Improve query planner based on relation graph
+* Add transactional topology refresh
+* Add load balancing option for data queries
+* Improve calculated scripts error logging
+* Re-use time zone from browser time window
+* Optional multi-root items loading
+* Apply selected sorting for exported data
+* Add trend line for line charts
+* Add pre-aggregation configuration for prediction models
+* Add row click event for pie charts
+
+**Bug fixes:**
+
+* Fix tooltips and units in views
+* Fix field load ordering process
+* Fix heatmap export for multiple fields
+* Fix time synchronization between ThingsBoard dashboard and Trendz view
+* Fix Business Entities sorting after topology discovery
+* Fix chart background color when exporting as image
+* Fix view update in safari
+* Fix trendz bundle update in widget library
+* Fix duplicated bars on chart for predicted timeseries
+
 ## v1.10.3 (September, 2023)
 
 **Improvements:**

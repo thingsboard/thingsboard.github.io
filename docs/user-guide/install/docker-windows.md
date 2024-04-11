@@ -19,7 +19,7 @@ This guide will help you to install and start ThingsBoard using Docker on Window
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-### Running
+## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
 
@@ -44,7 +44,7 @@ docker volume create mytb-data
 docker volume create mytb-logs
 ```
 
-### Choose ThingsBoard queue service
+## Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -57,7 +57,7 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-docker-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-docker-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 Where: 
 
@@ -104,12 +104,12 @@ Use the following default credentials:
     
 You can always change passwords for each account in account profile page.
 
-### Detaching, stop and start commands
+## Detaching, stop and start commands
 
 {% assign serviceFullName = "ThingsBoard" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Upgrading
+## Upgrading
 
 In order to update to the latest image, open "Docker Quickstart Terminal" and execute the following commands:
 
@@ -142,6 +142,6 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

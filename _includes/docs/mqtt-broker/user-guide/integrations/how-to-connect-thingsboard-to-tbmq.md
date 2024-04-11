@@ -14,7 +14,7 @@ Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-b
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
 In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
 Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
-ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network.
+ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network with no internet connection.
 
 ### Prerequisites
 
@@ -62,7 +62,7 @@ In our example, use the following script for the decoder function section:
 TBEL<small>Recommended</small>%,%accessToken%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
 
 #### MQTT Integration Setup
 
@@ -74,7 +74,7 @@ Now go to the "Sessions" page in the TBMQ UI. Upon successful establishment of t
 
 {% include images-gallery.html imageCollection="successful-connection-tbmq-to-thingsboard" %}
 
-And on the "Home" page, in the "Kafka Topics" window, you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
+And on the "Topics" page of the "Kafka Management" menu section you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
 
 {% include images-gallery.html imageCollection="tbmq-home-page" %}
 

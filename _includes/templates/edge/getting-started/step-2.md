@@ -1,6 +1,6 @@
-Provision device from the edge to the cloud done automatically, so no additional actions required. 
-Once device has been created on the edge, it's going to be automatically created on the cloud.
+Device provisioning from the Edge to the Server is automatic, requiring no additional actions. 
+Once a device is created on the Edge, it will be automatically published to the ThingsBoard server.
 
-To see provisioned device please open **{{currentThingsBoardVersion}}** using the URL **http://SERVER_URL**.
+To view the provisioned device, please open **{{currentThingsBoardVersion}}** by visiting **SERVER_URL**. 
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}

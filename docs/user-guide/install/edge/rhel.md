@@ -15,7 +15,11 @@ This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
 
 {% include templates/edge/install/prerequisites.md %}
 
-{% include templates/edge/install/hardware-requirements.md %}
+## Guided Installation Using ThingsBoard Server Pre-configured Instructions
+
+{% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
+
+{% include templates/edge/install/manual-install-instructions-intro.md %}
 
 #### Pre-installation step 
 Before continue to installation execute the following commands in order to install necessary tools:
@@ -24,6 +28,7 @@ Before continue to installation execute the following commands in order to insta
 sudo yum install -y nano wget
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
+{: .copy-code}
 
 ### Step 1. Install Java 11 (OpenJDK) 
 
@@ -52,7 +57,7 @@ sudo rpm -Uvh tb-edge-{{ site.release.edge_ver }}.rpm
 
 ### Step 4. Configure ThingsBoard Edge
 
-{% include templates/edge/install/ubuntu-configure-edge.md %}
+{% include templates/edge/install/linux-configure-edge.md %}
 
 ### Step 5. Run installation script
 
@@ -63,12 +68,13 @@ sudo rpm -Uvh tb-edge-{{ site.release.edge_ver }}.rpm
 ```bash
 sudo service tb-edge restart
 ```
+{: .copy-code}
 
 ### Step 7. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-### Troubleshooting
+## Troubleshooting
 
 ThingsBoard Edge logs are stored in the following directory:
  

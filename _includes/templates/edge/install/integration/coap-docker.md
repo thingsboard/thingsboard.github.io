@@ -24,8 +24,8 @@ docker run -it -p 5683:5683/udp -v ~/.tb-pe-coap-integration-logs:/var/log/tb-co
 
 Where: 
     
-- `EDGE_IP_OR_HOST_ADDRESS` - is the host name or IP address of your ThingsBoard PE Edge;
-- `9090` - is the integrations port of your ThingsBoard PE Edge. It is configured in tb-edge.yml using INTEGRATIONS_RPC_PORT env variable;    
+- `EDGE_IP_OR_HOST_ADDRESS` - is the host name or IP address of your ThingsBoard Edge;
+- `9090` - is the integrations port of your ThingsBoard Edge. It is configured in tb-edge.yml using INTEGRATIONS_RPC_PORT env variable;    
 - `YOUR_ROUTING_KEY` - placeholder for your integration routing key obtained on [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `docker run`              - run this container;

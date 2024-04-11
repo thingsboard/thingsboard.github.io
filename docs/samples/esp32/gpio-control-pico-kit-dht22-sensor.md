@@ -24,7 +24,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  ![image](/images/samples/esp32/gpio-temperature/dashboard.png)
 
-### List of hardware
+## List of hardware
 
  - [ESP32 Pico Kit board](https://www.espressif.com/en/products/hardware/development-boards).
 
@@ -39,7 +39,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
  - Breadboard
  - Micro-USB cable
 
-### Wiring
+## Wiring
 
 ### DHT22 connection
 
@@ -66,7 +66,7 @@ The following picture summarizes the connections for this project:
 
 ![image](/images/samples/esp32/gpio-temperature/wiring.png)
 
-### Device provisioning
+## Device provisioning
 
 This step contains instructions that are necessary to connect your device to ThingsBoard.
 
@@ -86,12 +86,12 @@ Copy auto-generated access token from the "Access token" field. Please save this
 
 ![image](/images/samples/esp32/gpio-temperature/credentials.png)
 
-### Provision your dashboard
+## Provision your dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/esp32/resources/esp32-dht22-temp-and-gpio-dashboard.json).
 Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
-### Creating ESP32 firmware
+## Creating ESP32 firmware
 
 Easiest way to program ESP32 Pico Kit is to use Arduino IDE. Following sections are describing that approach.
 
@@ -170,11 +170,11 @@ Download and open **esp32-dht-gpio.ino** sketch.
 esp32-dht-gpio,esp32-dht-gpio.ino,c,resources/esp32-dht-gpio.ino,/docs/samples/esp32/resources/esp32-dht-gpio.ino{% endcapture %}
 {% include tabs.html %}
 
-### Troubleshooting
+## Troubleshooting
 
 In order to to perform troubleshooting, you must check ESP32 Pico logs. For that, simply open **Serial Monitor** in the Arduino IDE.
 
-### Data visualization and GPIO control
+## Data visualization and GPIO control
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
@@ -202,7 +202,7 @@ You should also observe a GPIO control for your device. It consists of two widge
 
 You can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device. To control LED blink speed, simply turn a knob and observe a speed change.
 
-### See also
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -216,6 +216,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

@@ -105,7 +105,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-text-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-text-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpuplinktext" toggle-spec=tcpuplinktext %}
+{% include content-toggle.liquid content-toggle-id="tcpuplinktext" toggle-spec=tcpuplinktext %}
 
 - **JSON payload**
 
@@ -113,7 +113,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-tex
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-json-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-json-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpuplinkjson" toggle-spec=tcpuplinkjson %}
+{% include content-toggle.liquid content-toggle-id="tcpuplinkjson" toggle-spec=tcpuplinkjson %}
 
 - **Binary payload**
 
@@ -121,7 +121,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-jso
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-binary-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-binary-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpuplinkbinary" toggle-spec=tcpuplinkbinary %}
+{% include content-toggle.liquid content-toggle-id="tcpuplinkbinary" toggle-spec=tcpuplinkbinary %}
 
 ### TCP Integration Setup
 
@@ -134,7 +134,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-bin
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-paas.png)
 {% endif %}
 
-- Add recently created UDP Uplink Converter;
+- Add recently created TCP Uplink Converter;
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-2-pe.png)
@@ -172,7 +172,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-te
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
+{% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
 Click **Add** to save the Integration.
 
@@ -200,7 +200,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 
 Once you go to **Device Groups -> All** you should find a **SN-002** device provisioned by the Integration.
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
@@ -214,7 +214,7 @@ Click on the device, go to **Latest Telemetry** tab to see "temperature" key and
 
 If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
 
-### Advanced usage: Downlink Converter
+## Advanced usage: Downlink Converter
 
 In **Data converters** create **Downlink converter** with default script. To see events - enable **Debug.**
 
@@ -241,12 +241,12 @@ where ***msg*** is the message that we receive and send back to the device.
 {% endif %}
 
 Now you have to add a converter to the integration. 
-Optionally configure Cache Size and Cache time to live in minutes (able just for UDP Downlink).
+Optionally configure Cache Size and Cache time to live in minutes (able just for TCP Downlink).
 
 {% capture difference %}
 Cache size and Time to live - features, that helps to avoid memory leak when we are storing connections.<br>
 Cache time to live - time to storage messages.<br>
-Cache size - maximum size of messages for UDP client.
+Cache size - maximum size of messages for TCP client.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -316,6 +316,6 @@ To learn how to send Uplink message, please [read here](/docs/{{peDocsPrefix}}us
 
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

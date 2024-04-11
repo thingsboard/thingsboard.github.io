@@ -21,8 +21,8 @@ Where:
     
 - `thingsboard.cloud` - is the host name of your ThingsBoard PE instance;
 - `9090` - is the port of your ThingsBoard PE instance. It is configured in thingsboard.yml using INTEGRATIONS_RPC_PORT env variable;    
-- `YOUR_ROUTING_KEY` - placeholder for your integration routing key obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
-- `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
+- `YOUR_ROUTING_KEY` - placeholder for your **integration key** obtained on [create remote integration in ThingsBoard](#create-remote-integration-in-thingsboard);
+- `YOUR_SECRET` - placeholder for your **integration secret** obtained on [create remote integration in ThingsBoard](#create-remote-integration-in-thingsboard);
 - `docker run`              - run this container;
 - `-it`                     - attach a terminal session with current ThingsBoard process output;
 - `-p 10560:10560` - connect local port 10560 to exposed internal 10560 port for the integration
@@ -34,11 +34,10 @@ Where:
 After executing this command you can open logs which are located here `~/.tb-pe-tcp-udp-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.
 
-<br>
-
+{% capture difference %}
 You can detach from session terminal with **`Ctrl-p`**+**`Ctrl-q`** - the container will keep running in the background.
-
-<br>
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 - **Reattaching, stop and start commands**
 

@@ -21,7 +21,7 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 
 {% include templates/install/docker-install-note.md %}
 
-### Running
+## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
 
@@ -37,7 +37,7 @@ Depending on the database used there are three type of ThingsBoard single instan
 
 In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
 
-### Choose ThingsBoard queue service
+## Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -50,7 +50,7 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/docker-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/docker-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 Where: 
 
@@ -77,12 +77,12 @@ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 {% assign serviceName = "tb" %}
 {% include templates/install/docker/docker-compose-up-and-ui-credentials.md %}
 
-### Detaching, stop and start commands
+## Detaching, stop and start commands
 
 {% assign serviceFullName = "ThingsBoard" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Upgrading
+## Upgrading
 
 In order to update to the latest image, execute the following commands:
 
@@ -117,6 +117,6 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

@@ -5,17 +5,11 @@
 - [Installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE server.
 {% endif %}
 - Edge Rule Engine:
-{% if currentGuide != "EdgeRuleEngineOverview" %}
-  - [Overview](/docs/{{docsPrefix}}rule-engine/general/) - Learn about ThingsBoard Edge Rule Engine.
-{% endif %}
 {% if currentGuide != "RuleChainTemplates" %}
   - [Rule Chain Templates](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) - Learn how to use ThingsBoard Edge Rule Chain Templates.
 {% endif %}
 {% if currentGuide != "ProvisionRuleChainFromCloudToEdge" %}
   - [Provision Rule Chains from cloud to edge](/docs/{{docsPrefix}}rule-engine/provision-rule-chains/) - Learn how to provision edge rule chains from cloud to edge.
-{% endif %}
-{% if currentGuide != "PushDataFromEdgeToCloudAndViseVersa" %}
-  - [Push data from edge to cloud and vice versa](/docs/{{docsPrefix}}rule-engine/push-data/) - Learn how to push data from edge to cloud and vice versa.
 {% endif %}
 {% if currentGuide != "GrpcOverSsl" %}
 - Security:
@@ -37,6 +31,4 @@
 {% endif %}
 {% if currentGuide != "EdgeRoadmap" %}
 - [Roadmap](/docs/{{docsPrefix}}roadmap) - ThingsBoard Edge roadmap. 
-{% endif %}    
-<br>
-
+{% endif %}

@@ -16,3 +16,4 @@ For example:
  }
 }
 ```
+{: .copy-code}

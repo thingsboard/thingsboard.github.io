@@ -1,4 +1,4 @@
-In table below described parameters to configure authorization on mqtt broker .  
+The table below describes the parameters required to configure authorization on MQTT broker.
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
@@ -10,9 +10,10 @@ In table below described parameters to configure authorization on mqtt broker .
 Security subsection in configuration file will look like this: 
 
 ```json
-  "security":{
+"security":{
+    "type": "certificates",
     "caCert": "/etc/thingsboard-gateway/ca.pem",
     "privateKey": "/etc/thingsboard-gateway/privateKey.pem",
     "cert": "/etc/thingsboard-gateway/certificate.pem"
-  }
+}
 ```

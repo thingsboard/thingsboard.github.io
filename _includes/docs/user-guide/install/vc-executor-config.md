@@ -1,4 +1,5 @@
-
+* TOC
+{:toc}
 
 ####  Spring common parameters
 
@@ -127,6 +128,12 @@
 			<td>TB_QUEUE_TYPE</td>
 			<td>kafka</td>
 			<td> in-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+		</tr>
+		<tr>
+			<td>queue.prefix</td>
+			<td>TB_QUEUE_PREFIX</td>
+			<td></td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
 		</tr>
 		<tr>
 			<td>queue.in_memory.stats.print-interval-ms</td>
@@ -346,7 +353,7 @@
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
-			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
+			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
 			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
@@ -399,6 +406,12 @@
 			<td> Number of threads per each AWS SQS queue in consumer</td>
 		</tr>
 		<tr>
+			<td>queue.aws_sqs.producer_thread_pool_size</td>
+			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
+		</tr>
+		<tr>
 			<td>queue.aws_sqs.queue-properties.core</td>
 			<td>TB_QUEUE_AWS_SQS_CORE_QUEUE_PROPERTIES</td>
 			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
@@ -439,6 +452,12 @@
 			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
 			<td>1000</td>
 			<td> Number of messages per consumer</td>
+		</tr>
+		<tr>
+			<td>queue.pubsub.executor_thread_pool_size</td>
+			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>0</td>
+			<td> Thread pool size for pubsub queue executor provider. If not set - default pubsub executor provider value will be used (5 * number of available processors)</td>
 		</tr>
 		<tr>
 			<td>queue.pubsub.queue-properties.core</td>
@@ -684,7 +703,7 @@
 		<tr>
 			<td>vc.thread_pool_size</td>
 			<td>TB_VC_POOL_SIZE</td>
-			<td>2</td>
+			<td>6</td>
 			<td> Pool size for handling export tasks</td>
 		</tr>
 		<tr>

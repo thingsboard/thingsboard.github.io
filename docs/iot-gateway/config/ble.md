@@ -18,7 +18,7 @@ We will describe connector configuration file below.
 APT-GET<br>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
 YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
+{% include content-toggle.liquid content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
 
 <b> Example of BLE Connector config file.</b>
 
@@ -363,7 +363,7 @@ This part of configuration will look like:
 ```
 
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

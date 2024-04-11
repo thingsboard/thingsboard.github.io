@@ -6,7 +6,7 @@
         function WebSocketAPIExample() {
             var token = "YOUR_JWT_TOKEN";
             var entityId = "YOUR_DEVICE_ID";
-            var webSocket = new WebSocket("ws(s)://host:port/api/ws/plugins/telemetry?token=" + token);
+            var webSocket = new WebSocket("ws(s)://host:port/api/ws");
 
             if (entityId === "YOUR_DEVICE_ID") {
                 alert("Invalid device id!");
@@ -20,16 +20,19 @@
 
             webSocket.onopen = function () {
                 var object = {
-                    tsSubCmds: [
+                    authCmd: {
+                        cmdId: 0,
+                        token: token
+                    },
+                    cmds: [
                         {
                             entityType: "DEVICE",
                             entityId: entityId,
                             scope: "LATEST_TELEMETRY",
-                            cmdId: 10
+                            cmdId: 10,
+                            type: "TIMESERIES"
                         }
-                    ],
-                    historyCmds: [],
-                    attrSubCmds: []
+                    ]
                 };
                 var data = JSON.stringify(object);
                 webSocket.send(data);

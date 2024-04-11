@@ -13,9 +13,9 @@
 '
  %}
 
-### Introduction
+## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px; margin-right: 2em;"}
 [UG65 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a robust 8-channel indoor LoRaWAN® gateway. Adopting SX1302 LoRa chip and high-performance quad-core CPU, UG65 supports connection with more than 2000 nodes.  
 
 Key features:  
@@ -37,13 +37,13 @@ Key features:
 
 After doing steps described in this guide you will have a connected and configured gateway on a network server and integration on ThingsBoard, it will allow you to add devices, receive data from them and process a data.
 
-### Prerequisites
+## Prerequisites
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-### Gateway connection
+## Gateway connection
 
 According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug65-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
 
@@ -80,7 +80,7 @@ By default, Gateway EUI and Gateway ID are the same.
 
 Next steps will describe how to connect the gateway to network server.  
 
-### Configuration
+## Configuration
 
 To create an integration with a network server please choose first one of the supported network servers:  
 
@@ -96,6 +96,6 @@ Loriot
 {% include /docs/devices-library/blocks/basic/thingsboard-check-integration-connection.md %}
 
 
-### Conclusion
+## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}

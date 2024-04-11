@@ -35,14 +35,15 @@
                 style="max-width: min({{ include.max-width | default: '225px' }}, 100%);
                         max-height: min({{ include.max-height | default: '225px' }}, 100%);"
         {% if images.size > 1 %} class="list-item"{% endif %}>
+            {% assign modifiedString = imageTitles[forloop.index0] | replace: "'", "&#39;" %}
             <a href="{{ image }}" itemprop="contentUrl">
                 {% if include.preview == "false" %}
-                <img src="{{ image }}" itemprop="thumbnail" alt='{{ imageTitles[forloop.index0] | remove: "*" | replace: "\\\"", "" | replace: "'", "\"" }}'>
+                <img src="{{ image }}" itemprop="thumbnail" alt='{{ modifiedString | remove: "*" }}'>
                 {% else %}
-                <img src="{{ image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: "" }}" itemprop="thumbnail" alt='{{imageTitles[forloop.index0] | remove: "*" | replace: "\\\"", "" | replace: "'", "\""}}'>
+                <img src="{{ image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: "" }}" itemprop="thumbnail" alt='{{modifiedString | remove: "*"}}'>
                 {% endif %}
             </a>
-            <figcaption itemprop="caption description">{{ imageTitles[forloop.index0] | markdownify }}</figcaption>
+            <figcaption itemprop="caption description">{{ modifiedString | markdownify }}</figcaption>
         </figure>
     {% endfor %}
 </div>

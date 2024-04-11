@@ -1,5 +1,5 @@
 #
-# Copyright © 2016-2020 The Thingsboard Authors
+# Copyright © 2016-2024 The Thingsboard Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*20, "ThingsBoard basic device claiming example script.", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard host or leave it blank to use default (thingsboard.cloud): ")
+    host = input("Please write your ThingsBoard server hostname or leave it blank to use default (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
     token = ""
     while not token:
@@ -31,7 +31,7 @@ def collect_required_data():
     config["token"] = token
     config["secret_key"] = input("Please write secret key for claiming request: ")
     if not config["secret_key"]:
-        print("Please make sure that you have claimData in server attributes for device to use this feature without device secret in the claiming request.")
+        print("Please make sure that you have claimingData in server attributes for device to use this feature without device secret in the claiming request.")
     duration_ms = input("Please write duration in milliseconds for claiming request or leave it blank to use default (30000): ")
     config["duration_ms"] = int(duration_ms) if duration_ms else 30000
     print("\n", "="*80, "\n", sep="")
@@ -40,7 +40,8 @@ def collect_required_data():
 
 if __name__ == '__main__':
     config = collect_required_data()
-    client = TBDeviceMqttClient(host=config["host"], token=config["token"])
+    client = TBDeviceMqttClient(config["host"], username=config["token"])
     client.connect()
-    client.claim(secret_key=config["secret_key"], duration=config["duration_ms"]).get()
-    print("Claiming request was sent, now you should use claiming device widget to finish the claiming process.")
+    rc = client.claim(secret_key=config["secret_key"], duration=config["duration_ms"]).get()
+    if rc == 0:
+        print("Claiming request was sent, now you should use claiming device widget to finish the claiming process.")

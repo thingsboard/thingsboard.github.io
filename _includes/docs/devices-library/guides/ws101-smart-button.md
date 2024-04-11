@@ -11,13 +11,13 @@
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [WS101 Smart Button user manual](' | append: officialManualLink | append: '){: target="_blank"}
 - Smartphone with NFC-enabled and Milesight ToolBox application ([Android](https://play.google.com/store/apps/details?id=com.ursalinknfc){: target="_blank"}/[iOS](https://itunes.apple.com/app/id1518748039){: target="_blank"})
-- LoRaWAN® gateway
+- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/devices-library/ug56-lorawan-gateway/){:target="_blank"})
 - Configured integration on networks server and ThingsBoard
 - [Network Server account](#device-connection)
 '
  %}
 
-### Introduction
+## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [WS101 Smart Button]({{deviceVendorLink}}){: target="_blank"} is a LoRaWAN®-based smart button for wireless controls, triggers and alarms.  
@@ -29,14 +29,14 @@ LoRaWAN® enables encrypted radio transmissions over long distances while consum
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 <br>
 
-### Prerequisites
+## Prerequisites
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
 
-### Device connection
+## Device connection
 
 According to the [official user manual]({{officialManualLink}}){: target="_blank"}, we need a smartphone with NFC enabled and the ToolBox application to connect the sensor.  
 Since this device can only be operated using a LoRaWAN® gateway, we must first connect it to a network server that has an integration configured with ThingsBoard.  
@@ -64,6 +64,6 @@ Loriot
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/ws101-smart-button-check-data-block.md %}
 
-### Conclusion
+## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

@@ -8,6 +8,121 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v1.3.0 (April 3, 2024)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#94](https://github.com/thingsboard/tbmq/pull/94) MQTT 5: Request-Response Pattern;
+* [#98](https://github.com/thingsboard/tbmq/pull/98) MQTT 5: Flow Control;
+* [#101](https://github.com/thingsboard/tbmq/pull/101) UI: WebSocket client page; WebSocket connections and subscriptions entities support in Postgres.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#104](https://github.com/thingsboard/tbmq/pull/104) TLS Cipher suites control - allows to set desired cipher suites usage;
+  * [#109](https://github.com/thingsboard/tbmq/pull/109) Backpressure improvements;
+  * [#110](https://github.com/thingsboard/tbmq/pull/110) Disconnect client command now includes Reason Codes to correctly specify the reason of the disconnection;
+  * [#111](https://github.com/thingsboard/tbmq/pull/111) MQTT over WebSockets installation scripts update for correct WebSocket client usage;
+  * Added system WebSocket MQTT client credentials;
+  * Application persistent and Application Shared Subscriptions clients workflow improvement by leveraging cached thread pool;
+  * Non-blocking deletion of old Kafka consumer groups on broker startup;
+  * Memory usage and performance improvements.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#106](https://github.com/thingsboard/tbmq/pull/106) Fix for direct memory leak;
+  * [#107](https://github.com/thingsboard/tbmq/pull/107) Fix for unauthorized delivery of Last Will message;
+  * [#94](https://github.com/thingsboard/tbmq/pull/94) Fixed Maximum Packet Size response to MQTT 5 client depending on the listener chosen;
+  * Fixed NPE that can happen on broker startup during historical statistics calculation;
+  * Disabled Redis autoconfiguration in case of Caffeine cache usage to prevent trying to connect to Redis instance on broker startup;
+  * Dependency vulnerabilities;
+  * User password containing only whitespaces bugfix.
+
+* UI:
+
+  * [#108](https://github.com/thingsboard/tbmq/pull/108) Fix for issue during Retained message deletion that contains special characters;
+  * Resolved an issue with hidden fields in edit mode for MQTT client credentials details of the type "X.509 Certificate Chain".
+
+**Obsolete environment variables:**
+
+* TB_APP_PERSISTED_MSG_THREADS_COUNT;
+* TB_APP_PERSISTED_MSG_SHARED_SUBS_THREADS_COUNT.
+
+These environment variables can be safely removed due to automatic scaling of threads based on the number of Application clients being added or removed.
+
+## v1.2.1 (December 13, 2023)
+
+Minor release with the following features and improvements.
+
+**Main features:**
+
+* [#84](https://github.com/thingsboard/tbmq/pull/84) MQTT 5: Payload format and Content types;
+* [#86](https://github.com/thingsboard/tbmq/pull/86) Client sessions limits.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#87](https://github.com/thingsboard/tbmq/pull/87) Installation scripts enhancements.
+
+## v1.2.0 (November 21, 2023)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#73](https://github.com/thingsboard/tbmq/pull/73) Redis cache support;
+* [#76](https://github.com/thingsboard/tbmq/pull/76) Client sessions advanced filtering;
+* [#12aac735e7](https://github.com/thingsboard/tbmq/commit/12aac735e7) MQTT client credentials advanced filtering;
+* [#80](https://github.com/thingsboard/tbmq/pull/80) Shared subscriptions management.
+
+**Improvements:**
+
+* Core:
+
+  * [Performance improvements](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) for message processing. See:
+  [#e0c66d3052](https://github.com/thingsboard/tbmq/commit/e0c66d3052), [#03409f7f18](https://github.com/thingsboard/tbmq/commit/03409f7f18), [#a1dd722deb](https://github.com/thingsboard/tbmq/commit/a1dd722deb), 
+  [#3af40bb504](https://github.com/thingsboard/tbmq/commit/3af40bb504), [#55ff71bea8](https://github.com/thingsboard/tbmq/commit/55ff71bea8), 
+  [#5f11148025](https://github.com/thingsboard/tbmq/commit/5f11148025), [#79db26751c](https://github.com/thingsboard/tbmq/commit/79db26751c) commits;
+  * [#d437200ba1](https://github.com/thingsboard/tbmq/commit/d437200ba1) Added possibility to buffer messages before sending to subscribers;
+  * [#a091e31963](https://github.com/thingsboard/tbmq/commit/a091e31963) Delete Kafka consumer group API.
+
+* UI:
+
+  * [#78](https://github.com/thingsboard/tbmq/pull/78) Migrate to Angular 15;
+  * [#9231eaafc9](https://github.com/thingsboard/tbmq/commit/9231eaafc9) Added Kafka management pages;
+  * [#25289016b5](https://github.com/thingsboard/tbmq/commit/25289016b5) Sidebar menu optimization;
+  * [#7a685d5e00](https://github.com/thingsboard/tbmq/commit/7a685d5e00) Added option to disconnect/remove several client sessions;
+  * [#ed1f9ffd39](https://github.com/thingsboard/tbmq/commit/ed1f9ffd39) Management of shared subscriptions;
+  * [#06b881694f](https://github.com/thingsboard/tbmq/commit/06b881694f) Shared subscriptions advanced filtering;
+  * [#6b1ee03d8d](https://github.com/thingsboard/tbmq/commit/6b1ee03d8d), [#7a685d5e00](https://github.com/thingsboard/tbmq/commit/7a685d5e00) Client sessions advanced filtering;
+  * [#f229a35c5d](https://github.com/thingsboard/tbmq/commit/f229a35c5d), [#38532959f5](https://github.com/thingsboard/tbmq/commit/38532959f5) MQTT client credentials advanced filtering;
+  * [#3334cb4666](https://github.com/thingsboard/tbmq/commit/3334cb4666), [#c42b8f3b63](https://github.com/thingsboard/tbmq/commit/c42b8f3b63) New form for client credentials creation;
+  * [#7ba4996cbe](https://github.com/thingsboard/tbmq/commit/7ba4996cbe) Added filter buttons from Home page for sessions and client credentials;
+  * [#971cdb8b27](https://github.com/thingsboard/tbmq/commit/971cdb8b27), [#9ff6a349d6](https://github.com/thingsboard/tbmq/commit/9ff6a349d6) Added check connectivity window after creation of client credentials;
+  * [#702e98b673](https://github.com/thingsboard/tbmq/commit/702e98b673), [#f7efffbe42](https://github.com/thingsboard/tbmq/commit/f7efffbe42) Getting started guide on Home page updates;
+  * [#7019da05ff](https://github.com/thingsboard/tbmq/commit/7019da05ff), [#340853add6](https://github.com/thingsboard/tbmq/commit/340853add6) Monitoring charts minor updates.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#70](https://github.com/thingsboard/tbmq/pull/70) Fixed shared subscriptions processing with QoS 0 ("AT_MOST_ONCE");
+  * [#eae45b9781](https://github.com/thingsboard/tbmq/commit/eae45b9781) Start processing shared subscriptions for persistent clients without additional subscribe message;
+  * [#0303a0e3f6](https://github.com/thingsboard/tbmq/commit/0303a0e3f6) Fixed issue for persistent clients and shared subscriptions: 
+  Application - corrected qos change for existing subscription, Device - stop receiving stored messages twice on client connect if it sends subscribe.
+
+* UI:
+
+  * [#77](https://github.com/thingsboard/tbmq/pull/77) Fix user logout when changing password on Profile page on "Skip" button hit;
+  * [#25108bf9db](https://github.com/thingsboard/tbmq/commit/25108bf9db) Fixed loading animation in Home page for inactive browser tab;
+  * [#7901fedae9](https://github.com/thingsboard/tbmq/commit/7901fedae9), [#fe01288420](https://github.com/thingsboard/tbmq/commit/fe01288420) MQTT client credentials authorization topic rules bug fixes.
+
 ## v1.1.0 (September 12, 2023)
 
 Minor release with the following features, improvements, and bug fixes.

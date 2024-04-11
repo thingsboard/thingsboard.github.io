@@ -67,7 +67,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     3:
         image: /images/pe/edge/integrations/opc-ua/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 device:
     0:
@@ -290,7 +290,7 @@ return result;
 ```
 {: .copy-code}
 
-### Create Integration template
+## Create Integration template
 
 Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
 Go to **Integration templates** section and click **Add new integration** button. Name it **OPC-UA Airconditioners**, select type **OPC-UA**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
@@ -319,7 +319,7 @@ Click **Add** to save the Integration.
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
-### Modify Edge Root Rule chain for Downlinks
+## Modify Edge Root Rule chain for Downlinks
 
 We can send a downlink message to the device from Rule chain using the rule node.
 To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
@@ -375,7 +375,7 @@ Let's verify that integration was successfully started on Edge and connection to
 
 {% include images-gallery.html imageCollection="rpcDownlink" %}
 
-### Next steps
+## Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

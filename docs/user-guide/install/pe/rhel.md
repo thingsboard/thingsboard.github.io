@@ -12,7 +12,7 @@ description: Installing ThingsBoard PE on CentOS/RHEL
 * TOC
 {:toc}
 
-## Prerequisites
+### Prerequisites
 
 This guide describes how to install ThingsBoard on RHEL/CentOS 7/8. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
@@ -103,7 +103,7 @@ Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>
 Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/rhel-db-hybrid-timescale.md{% endcapture %}
 
 
-{% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
+{% include content-toggle.liquid content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
 ### Step 5. Choose ThingsBoard queue service
 
@@ -118,7 +118,7 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/rhel-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 ### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
 
@@ -201,7 +201,7 @@ sudo service tb-web-report start
 
 {% include templates/install/troubleshooting.md %}
 
-### Next steps
+## Next steps
 
 
 

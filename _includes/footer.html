@@ -1,5 +1,5 @@
 <footer>
-	<main class="light-text">
+	<div class="light-text main-div">
 		<div class="newsletterSubsContainer">
             <script>
                 function subscribeForNewsletter(event) {
@@ -13,7 +13,7 @@
                 }
             </script>
             <button class="n-button price subscribe" onClick="subscribeForNewsletter(event)">Sign up for ThingsBoard news</button>
-            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none;">
+            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none; max-width: 100%;">
 <!--            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: block;">-->
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display: none;">
@@ -34,7 +34,7 @@
                                     Subscribe
                                 </button>
                                 <button disabled="disabled" style="display: none;" type="button" class="n-button loading">
-                                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="Loading in progress">
+                                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="Loading in progress" loading="lazy">
                                 </button>
                             </div>
                             <p>By subscribing you agree to receive newsletters from ThingsBoard, Inc.</p>
@@ -47,12 +47,12 @@
         <hr>
 
         <div class="deeper">
-            <a href="/" class="footer-logo"></a>
+            <a href="/" class="footer-logo" aria-label="Link to homepage"></a>
             <nav>
                 <a href="/docs/getting-started-guides/helloworld/">Get Started</a>
                 <a href="/docs/">Documentation</a>
                 <a href="/iot-use-cases/">Use cases</a>
-                <a href="https://blog.thingsboard.io/">Blog</a>
+                <a href="/blog/">Blog</a>
                 <a href="/docs/services/">Services</a>
                 <a href="/docs/contact-us/">Contact us</a>
             </nav>
@@ -61,14 +61,28 @@
         <div class="deepmost">
             <div class="copyright">&copy; {{ 'now' | date: "%Y" }} The ThingsBoard Authors</div>
             <div class="social">
-                <a href="https://github.com/thingsboard/thingsboard" class="github"></a>
-                <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im" class="gitter"></a>
-                <a href="https://www.youtube.com/thingsboard" class="youtube"></a>
-                <a href="https://stackoverflow.com/questions/tagged/thingsboard" class="stack-overflow"></a>
-                <a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list"></a>
-                <a href="https://www.facebook.com/thingsboard" class="facebook"></a>
-                <a href="https://twitter.com/thingsboard" class="twitter"></a>
+                <a href="https://github.com/thingsboard/thingsboard">
+                    <img src="/images/social-git-icon.svg" alt="Link to our Github" width="20" height="20" loading="lazy">
+                </a>
+                <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
+                    <img src="/images/social-gitter-icon.svg" alt="Link to our Gitter" width="20" height="20" loading="lazy">
+                </a>
+                <a href="https://www.youtube.com/thingsboard">
+                    <img src="/images/social-youtube-icon.svg" alt="Link to our Youtube channel" width="20" height="20" loading="lazy">
+                </a>
+                <a href="https://stackoverflow.com/questions/tagged/thingsboard">
+                    <img src="/images/social-stack-icon.svg" alt="Link to our Stack Overflow page" width="20" height="20" loading="lazy">
+                </a>
+                <a href="https://groups.google.com/forum/#!forum/thingsboard">
+                    <img src="/images/social-google-icon.svg" alt="Link to our Google Group" width="20" height="20" loading="lazy">
+                </a>
+                <a href="https://www.facebook.com/thingsboard">
+                    <img src="/images/social-face-icon.svg" alt="Link to our Facebook" width="20" height="20" loading="lazy">
+                </a>
+                <a href="https://twitter.com/thingsboard">
+                    <img src="/images/social-twitt-icon.svg" alt="Link to our Twitter" width="20" height="20" loading="lazy">
+                </a>
             </div>
         </div>
-	</main>
+	</div>
 </footer>

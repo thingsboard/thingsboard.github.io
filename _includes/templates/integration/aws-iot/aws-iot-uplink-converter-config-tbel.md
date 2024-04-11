@@ -4,8 +4,8 @@
 // decode payload to JSON
 var data = decodeToJson(payload);
 var topicParts = metadata.topic.split("/");
-var deviceType = topicParts[3];
-var deviceName = topicParts[4];
+var deviceType = topicParts[0];
+var deviceName = topicParts[1];
 // Result object with device attributes/telemetry data
 var result = {
    deviceName: deviceName,
@@ -19,8 +19,6 @@ var result = {
        fan_out: data.val3,
    }
 };
-
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ```

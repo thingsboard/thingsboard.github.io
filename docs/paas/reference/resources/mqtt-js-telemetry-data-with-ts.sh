@@ -1,0 +1,1 @@
+cat telemetry-data-with-ts.json | mqtt pub -v -h "mqtt.thingsboard.cloud" -t "v1/devices/me/telemetry" -u '$ACCESS_TOKEN' -s -m ""

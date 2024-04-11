@@ -5,7 +5,7 @@ ThingsBoard Rule Engine is a highly customizable and configurable system for com
 With rule engine you are able to filter, enrich and transform incoming messages originated by IoT devices and related assets. 
 You are also able to trigger various actions, for example, notifications or communication with external systems.
   
-### Key Concepts
+## Key Concepts
 
 #### Rule Engine Message 
 
@@ -106,7 +106,7 @@ See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#q
 
 See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues)
 
-### Predefined Message Types
+## Predefined Message Types
 
 List of the predefined Message Types is presented in the following table:
 
@@ -349,7 +349,7 @@ List of the predefined Message Types is presented in the following table:
    </tbody>
 </table>
  
-### Rule Node Types
+## Rule Node Types
 
 All available rule nodes are grouped in correspondence with their nature:
 
@@ -359,7 +359,7 @@ All available rule nodes are grouped in correspondence with their nature:
   * [**Action Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/) execute various actions based on incoming Message;
   * [**External Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) are used to interact with external systems.
 
-### Configuration
+## Configuration
 
 Each Rule Node may have specific configuration parameters that depend on the Rule Node Implementation. 
 For example, "Filter - script" rule node is configurable via custom JS function that process incoming data. 
@@ -385,7 +385,7 @@ You can define:
 
 After pressing **Test** output will be returned in right **Output** section.
 
-### Rule Engine Statistics
+## Rule Engine Statistics
 
 ThingsBoard Team have prepared the "default" dashboard for Rule Engine statistics. 
 This dashboard is automatically loaded for each tenant. 
@@ -399,7 +399,7 @@ You may notice insights about errors in processing and what causes them on the d
 
 {% include images-gallery.html imageCollection="view-statistics"  %}
 
-### Debugging
+## Debugging
 
 ThingsBoard provides ability to review incoming and outgoing messages for each Rule Node.
 To enable debug, user need to ensure that "Debug mode" checkbox is selected in the main configuration window 
@@ -410,7 +410,7 @@ See image below for a sample debug messages view:
   
 ![image](/images/user-guide/rule-engine-2-0/rule-node-debug.png)  
 
-### Import/Export
+## Import/Export
 
 You are able to export your rule chain to JSON format and import it to the same or another ThingsBoard instance.
 
@@ -421,12 +421,12 @@ In order to export rule chain, you should navigate to the **Rule Chains** page a
 Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
 
 {% if docsPrefix != "paas/" %}
-### Architecture
+## Architecture
 
 To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
 
 {% endif %}
-### Custom REST API calls to Rule Engine
+## Custom REST API calls to Rule Engine
 
 {% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}
 
@@ -443,7 +443,7 @@ To execute the REST API call, you may use rule-engine-controller [REST APIs](/do
 
 Note: the entity id you have specified in the call will be the originator of Rule Engine message. If you do not specify the entity id parameters, your user entity will become an originator of the message.
 
-### Tutorials
+## Tutorials
 
 ThingsBoard authors have prepared several tutorials to help you get started with designing rule chains by example:
 
@@ -457,7 +457,7 @@ See more tutorials [here](/docs/{{docsPrefix}}guides/).
 
 {% unless docsPrefix == "paas/" %}
 
-### Troubleshooting
+## Troubleshooting
 
 If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
 To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings))

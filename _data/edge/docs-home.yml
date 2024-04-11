@@ -31,17 +31,13 @@ toc:
 #      path: /docs/edge/config/provision-customer/
 - title: Rule Engine
   section:
+    - title: Rule Chain Templates
+      path: /docs/edge/rule-engine/rule-chain-templates/
     - title: Queues
       path: /docs/edge/rule-engine/queues/
-#    - title: Rule Chain Templates
-#      path: /docs/edge/rule-engine/rule-chain-templates/
-#    - title: Provision Rule Chains from cloud to edge
-#      path: /docs/edge/rule-engine/provision-rule-chains/
-#    - title: Push data from edge to cloud and vice versa
-#      path: /docs/edge/rule-engine/push-data/
 - title: Security
   section:
-    - title: Enable gRPC over SSL/TLS for edge communication
+    - title: Edge over TLS/SSL 
       path: /docs/edge/user-guide/grpc-over-ssl/
 #- title: Features
 #  section:

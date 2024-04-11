@@ -9,14 +9,14 @@ Azure Service Bus Integration allows to stream data from Azure Service bus to Th
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-overview.png)
 
-### Configure Azure Service Bus
+## Configure Azure Service Bus
 
 To create ThingsBoard Service Bus integration you will need two things created in Azure portal: **topic** and **subscription** to the topic. 
 You will also need to find and save **connection string** for your Servise Bus namespace, you will need it later.
 - [Create Topic and subscription to the topic](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)
 - [Find connection string for the service bus namespace](https://azurelessons.com/azure-service-bus-connection-string/)
 
-### Create Uplink Converter
+## Create Uplink Converter
 
 You can сreate an **Uplink converter** in the **Data converters** section or directly in the integration. Uplink is necessary in order to convert the incoming 
 data from the device into the required format for displaying them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
@@ -48,9 +48,9 @@ Let’s review sample uplink message from Service Bus topic:
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/service-bus/service-bus-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/service-bus/service-bus-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="servicebusuplinkconverterconfig" toggle-spec=servicebusuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="servicebusuplinkconverterconfig" toggle-spec=servicebusuplinkconverterconfig %}
 
-### Create Integration in Thingsboard
+## Create Integration in Thingsboard
 
 Now that we have a topic created in Azure Portal and an Uplink converter created, it is possible to create an integration.
 
@@ -74,7 +74,7 @@ Now that we have a topic created in Azure Portal and an Uplink converter created
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-integration-5-pe.png)
 
-### Test it up!
+## Test it up!
 
 To send a test message, use the additional functionality of Azure Service bus, Service Bus Explorer.
 
@@ -116,7 +116,7 @@ Here you will see information about the new device. As well as the telemetry whi
 
 Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
 
-### Advanced usage: Downlink Messaging
+## Advanced usage: Downlink Messaging
 
 To send messages to device you need to configure downlink settings, such as downlink converter and information about Service Bus topic that will receive mesages.
 [Create topic](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal#create-a-topic-using-the-azure-portal) for downlink messaging in Azure portal.
@@ -128,7 +128,7 @@ Now, create **downlink converter** (You need to do same steps like when was crea
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/service-bus/service-bus-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/service-bus/service-bus-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="servicebusdownlinkconverterconfig" toggle-spec=servicebusdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="servicebusdownlinkconverterconfig" toggle-spec=servicebusdownlinkconverterconfig %}
 
 {% capture difference %}
 **NOTE**
@@ -183,10 +183,10 @@ Select **Receive mode**, then click on **Receive messages**. In pop-up click '**
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-send-uplink-message-3-pe.png)
 
-### Conclusion
+## Conclusion
 
 That's it! Good luck in configuring of you IoT devices and dashboards!
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

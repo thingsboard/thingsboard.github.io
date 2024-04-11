@@ -14,7 +14,7 @@ Supported use cases:
  - Allow particular Customer users to see collected data (e.g. sensor readings), but **hide debug info** like battery level, system errors, etc.
  - Device-as-a-Service (**DaaS**) model where data collected by the device at different periods of time belongs to different Customers.
 
-### Architecture
+## Architecture
 
 Entity View contains the following information:
 
@@ -49,13 +49,13 @@ messages to the new rule node.
 
 ![image](/images/user-guide/entity-views/rule-chain.png)
 
-### Future improvements
+## Future improvements
 
 There are the following features in ThingsBoard Road Map:
 
  - Add the ability to enable/disable RPC requests to the device view;
  - Add the ability to configure a list of alarms that are accessible(propagated) for a particular view.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

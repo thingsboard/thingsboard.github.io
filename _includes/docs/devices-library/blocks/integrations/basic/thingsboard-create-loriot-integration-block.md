@@ -1,24 +1,25 @@
 ### Add a gateway on the Loriot
 
 We need to add a gateway on the [Loriot](https://loriot.io){: target="_blank"}.   
+
 To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/loriot/main-page.png,
-        title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
+        image: /images/devices-library/basic/integrations/loriot/main-page-network.png,
+        title: Login to Loriot server. Open the "**Sample network**" or create a new one in the "**Networks**" section
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-network.png,
-        title: Go to **Networks** and open **Sample network** or create a new one.
+        title: Click on the "**Add Gateway**" button.
     ===
         image: /images/devices-library/basic/integrations/loriot/register-gateway.png,
-        title: Scroll down and choose **Packet Forwarder Semtech** option.
+        title: Scroll down and select "**Packet Forwarder Semtech**".
     ===
         image: /images/devices-library/basic/integrations/loriot/add-gateway.png,
         title: Scroll up and put information about the gateway **MAC Address** (Just remove **FFFF** or **FFFE** in the middle of ***gateway EUI***) into **eth0 MAC address** and gateway EUI to **Custom EUI** field.
     ===
         image: /images/devices-library/basic/integrations/loriot/gateway-added-disconnected.png,
-        title: The gateway is added. 
+        title: The gateway is added. You can see its status - disconnected.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
@@ -31,9 +32,31 @@ To add a gateway, you can follow next steps:
 
 {% endif %}
 
-### Create uplink converter
+### Configure application on the Loriot
 
-At first, copy the code for uplink converter, we will need it for integration:
+Now we need to copy the "**Application ID**" in the Loriot. It is required for configuring the integration in ThingsBoard. 
+
+To do this please follow next steps:
+
+{% assign copyLoriotApplicationId = '
+    ===
+        image: /images/devices-library/basic/integrations/loriot/main-page-application.png,
+        title: Go to te "**Applications**" in the left menu and choose "**SampleApp**" or create a new one.
+    ===
+        image: /images/devices-library/basic/integrations/loriot/sample-application.png,
+        title: Copy "**Application ID**" value and save it.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=copyLoriotApplicationId %}
+
+Now we can move to ThingsBoard to configure integration.
+
+### Create integration in ThingsBoard
+
+Next we will create an integration with Loriot inside the ThingsBoard.  
+
+At first, copy the code, we will need it to create the uplink converter:
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
@@ -41,8 +64,8 @@ var deviceName = data.EUI;
 var deviceType = "LoraDevices";
 
 // If you want to parse incoming data somehow, you can add your code to this function.
-// input: bytes 
-// expected output: 
+// input: bytes
+// expected output:
 //  {
 //    "attributes": {"attributeKey": "attributeValue"},
 //    "telemetry": {"telemetryKey": "telemetryValue"}
@@ -52,7 +75,7 @@ var deviceType = "LoraDevices";
 function decodePayload(input) {
     var output = { attributes:{}, telemetry: {} };
     // --- Decoding code --- //
-    
+
     output.telemetry.HEX_bytes = bytesToHex(input);
     
     // --- Decoding code --- //
@@ -101,13 +124,13 @@ telemetry.putAll(telemetryData);
 attributes.putAll(attributesData);
 
 var deviceInfo = {
-    deviceName: deviceName,
-    deviceType: deviceType,
-    telemetry: {
-        ts: timestamp, 
-        values: telemetry
-    },
-    attributes: attributes
+deviceName: deviceName,
+deviceType: deviceType,
+telemetry: {
+ts: timestamp,
+values: telemetry
+},
+attributes: attributes
 };
 
 uplinkDataList.add(deviceInfo);
@@ -130,31 +153,67 @@ if (data.cmd == "gw") {
 return uplinkDataList;
 {% endcapture %}
 
-{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
-
-### Create integration
-
-Next we will create an integration with Loriot inside the ThingsBoard.  
-
+{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-15" %}
 
 {% assign createLoriotIntegration = '
     ===
         image: /images/devices-library/basic/integrations/loriot/1-create-integration-name-type.png,
-        title: Go to **Integrations**, press **plus** button and choose **Loriot** as a type, put some name.
+        title: Click "**plus**" button to add new integration. Select type "**Loriot**". Then, click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/loriot/2-create-integration-uplink.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
+        title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/loriot/sample-application.png,
-        title: Go to **Applications** in the left menu and choose **SampleApp** or create a new one. Copy **Application ID**.
+        image: /images/devices-library/basic/integrations/loriot/3-create-integration-downlink.png,
+        title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
         image: /images/devices-library/basic/integrations/loriot/4-create-integration-configuration.png,
-        title: Fill the field with your parameters, 
+        title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}
 
-To add integration click on '**+**' button and follow the next steps:  
+<br>
+Now, open the "**Integration center**" section -> "**Integrations**" page and follow this steps:  
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %} 
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %}
 
-Press **Add** button and integration will be added.  
+Integration is created.
+
+<br>
+To check integration connection you can do the following:
+
+- Click on integration row in the list;
+- Go to the "**Events**" tab;
+- Select "**Lifecycle events**" from **Event type** dropdown list.
+
+If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
+
+![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)
+
+### Troubleshooting
+
+If you see the next error message, that means the output was not created automatically.
+
+![Check integration connection](/images/devices-library/basic/integrations/loriot/loriot-integration-error-pe.png)
+
+You can configure it manually:
+
+{% assign loriotTroubleshooting = '
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-1-pe.png,
+        title: Go to edit mode ThingsBoard Loriot integration, switch off **"Create Loriot Application output"** slider and copy **"HTTP endpoint URL"**. Then, apply changes;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-2-pe.png,
+        title: Now, go to **eu2.loriot.io** than navigate to the **"Output"** page in left panel. Click on **"Add new output"** button;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-3-pe.png,
+        title: Select **"HTTP Push"**. Paste **"HTTP endpoint URL"** in **"Target URL for POSTs"** field. Press **"Add Output"** button;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-4-pe.png,
+        title: Delete default output;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-5-pe.png,
+        title: Go to the cloud and check the connection.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=loriotTroubleshooting %}

@@ -10,17 +10,17 @@ This guide covers basic operations with solution templates.
 
 {% include templates/solution-templates.md %}
 
-### Browse solution templates
+## Browse solution templates
 
 As a tenant administrator, you may perform the following actions over solution templates
 
 {% include images-gallery.html imageCollection="browse-solution-templates" showListImageTitles="true" %}
 
-### Install solution template
+## Install solution template
 
 {% include images-gallery.html imageCollection="install-solution-template" showListImageTitles="true" %}
 
-### Remove solution template
+## Remove solution template
 
 Navigate to the "Solution templates" menu item. Locate the template and use "Delete" button. 
 This will delete all [entities](/docs/paas/user-guide/entities-and-relations/) that were created during the installation. 
@@ -28,7 +28,7 @@ Please note that entities that you might have created through the solution dashb
 
 {% include images-gallery.html imageCollection="remove-solution-template" %}
 
-### Connect real devices
+## Connect real devices
 
 The template instruction includes information about the payload that solution expects to receive from device to function properly. 
 The instruction also contains sample commands to push the data. Those commands use valid credentials of the auto-generated devices.

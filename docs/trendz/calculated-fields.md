@@ -15,7 +15,7 @@ As Trendz Analytics processes the calculations on the fly, no data from ThingsBo
  And no additional load will be applied.
 
 
-### Simple calculation
+## Simple calculation
 
 Let's assume that sensor submit boiler temperature in Celsius and we want convert it to Fahrenheit:
 
@@ -30,7 +30,7 @@ Let's assume that sensor submit boiler temperature in Celsius and we want conver
 
 ![image](/images/trendz/calculated-simple.png)
 
-### Multiple fields for calculation
+## Multiple fields for calculation
 
 In this example we have Apartment asset that has 2 sensors installed - HeatMeter and EnergyMeter. Both sensors submit how much energy was consumed.
 Also Apartment has area attribute that contains apartment size. We want calculate total energy consumed by HeatMeter and EnergyMeter 
@@ -58,7 +58,7 @@ For implementing this we need to:
 
 ![image](/images/trendz/calculated-complex-result.png)
 
-### Get original field value
+## Get original field value
 
 Before applying transformation you need to get a reference to the original field value. Here is an example how to do this:
 
@@ -74,7 +74,7 @@ var temp = avg(Machine.temperature);
 
 If original field value is an attribute, entity name or owner name - you should use **uniq()** aggregation function.
 
-### Supported Aggregation Functions
+## Supported Aggregation Functions
 
 JSEditor for calculated fields supports following aggregation functions:
 
@@ -94,7 +94,7 @@ sum(Machine.temperature)
 
 Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
 
-### Save and reuse calculated fields
+## Save and reuse calculated fields
 
 Once the calculated field is created you can save it for future reuse by pressing **Save Field** button under function editor. 
 Current field label would be used as a field name. If a field with such name already exists - the system will overwrite it.
@@ -104,13 +104,13 @@ calculated field created and this field would not be connected with the original
 It means that if you will update field configuration in the future, it will only update a template, 
 but real calculated fields that are added to View configuration are not affected.
 
-### Language and script engine
+## Language and script engine
 
 You can write calculated fields using Javascript or Python. By default, Javascript engine is selected.
 
 * **Javascript** - Calculated Fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
 * **Python** - Python script engine support python 3.8 and provide full access to python standard libraries. Additionally, you can use following libraries: flask, numpy, statsmodels, pandas, scikit-learn, prophet, seaborn, pmdarima.
 
-### Next Steps
+## Next Steps
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

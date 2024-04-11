@@ -11,7 +11,7 @@ Please review the integration diagram to learn more.
 
 ![image](/images/user-guide/integrations/coap-integration.svg)
 
-### Prerequisites
+## Prerequisites
 
 In this tutorial, we will show you how CoAP integration works as part of **tb-core** service with **NO SECURE** security mode selected. In order to do this we will use: 
 
@@ -63,7 +63,7 @@ Here is the description of the bytes in this payload:
 
 You can use payload type based on your device capabilities and business cases.
 
-### Uplink Converter
+## Uplink Converter
 
 Before setting up an **CoAP integration**, you need to create an **Uplink Converter** that is a script for parsing and transforming the data received by CoAP integration to format that ThingsBoard uses. **deviceName** and **deviceType** are required, while attributes and telemetry are optional. attributes and telemetry are flat key-value objects. Nested objects are not supported.
 
@@ -87,7 +87,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/coap/coap-uplink-text-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-text-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapuplinktext" toggle-spec=coapuplinktext %}
+{% include content-toggle.liquid content-toggle-id="coapuplinktext" toggle-spec=coapuplinktext %}
 
 - **JSON payload**
 
@@ -97,7 +97,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-t
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/coap/coap-uplink-json-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-json-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapuplinkjson" toggle-spec=coapuplinkjson %}
+{% include content-toggle.liquid content-toggle-id="coapuplinkjson" toggle-spec=coapuplinkjson %}
 
 
 - **Binary payload**
@@ -106,9 +106,9 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-j
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/coap/coap-uplink-binary-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-binary-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapuplinkbinary" toggle-spec=coapuplinkbinary %}
+{% include content-toggle.liquid content-toggle-id="coapuplinkbinary" toggle-spec=coapuplinkbinary %}
 
-### CoAP Integration Setup
+## CoAP Integration Setup
 
 {% include images-gallery.html imageCollection="coap-integration-setup" showListImageTitles="true" %}
 
@@ -164,7 +164,7 @@ Each of the additional path prefixes will be added to the CoAP server as CoAP re
 
 {% endif %}
 
-### Send Uplink message
+## Send Uplink message
 
 Once CoAP Integration has been created, the CoAP server register appropriate resources, and then it waits for data from the devices.
 
@@ -175,7 +175,7 @@ Text payload<br>%,%text%,%templates/integration/coap/coap-send-uplink-text.md%br
 JSON payload<br>%,%json%,%templates/integration/coap/coap-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/coap/coap-send-uplink-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
 
 Once the command will send you can go to **Device groups** -> **All** you should find an **SN-001** device provisioned by the Integration. 
 Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.
@@ -187,6 +187,6 @@ Click on the device, go to the **Latest Telemetry** tab to see the “temperatur
 ![image](/images/user-guide/integrations/coap/coap-integration-test-uplink-paas.png)
 {% endif %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

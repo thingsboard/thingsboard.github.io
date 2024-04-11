@@ -1,0 +1,889 @@
+@keyframes aslAnFadeInDrop {
+    0% {
+        opacity: 0;
+        transform: translate(0, -50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@-webkit-keyframes aslAnFadeInDrop {
+    0% {
+        opacity: 0;
+        transform: translate(0, -50px);
+        -webkit-transform: translate(0, -50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+@keyframes aslAnFadeOutDrop {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, -50px);
+        -webkit-transform: translate(0, -50px);
+    }
+}
+
+@-webkit-keyframes aslAnFadeOutDrop {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, -50px);
+        -webkit-transform: translate(0, -50px);
+    }
+}
+
+.hiddend {
+    display: none !important;
+}
+
+div.asl_w.asl_an_fadeInDrop,
+div.asl_w.asl_an_fadeOutDrop {
+    -webkit-animation-duration: 100ms;
+    animation-duration: 100ms;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+div.asl_w.asl_an_fadeInDrop {
+    animation-name: aslAnFadeInDrop;
+    -webkit-animation-name: aslAnFadeInDrop;
+}
+
+div.asl_w.asl_an_fadeOutDrop {
+    animation-name: aslAnFadeOutDrop;
+    -webkit-animation-name: aslAnFadeOutDrop;
+}
+
+div.asl_w.asl_main_container {
+    transition: width 130ms linear;
+    -webkit-transition: width 130ms linear;
+}
+
+div.asl_w,
+div.asl_w *,
+div.asl_r,
+div.asl_r *,
+div.asl_s,
+div.asl_s * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -o-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    text-transform: none;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+    text-align: left;
+    letter-spacing: normal;
+}
+
+div.asl_r,
+div.asl_r * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.asl_r {
+    box-sizing: border-box;
+    margin: 12px 0 0 0;
+}
+
+div.asl_m .proinput input::-ms-clear {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+div.asl_m .proinput input::-ms-reveal {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+div.asl_m input[type="search"]::-webkit-search-decoration,
+div.asl_m input[type="search"]::-webkit-search-cancel-button,
+div.asl_m input[type="search"]::-webkit-search-results-button,
+div.asl_m input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+div.asl_m input[type="search"] {
+    appearance: auto !important;
+    -webkit-appearance: none !important;
+}
+
+.clear {
+    clear: both;
+}
+
+.hiddend {
+    display: none;
+}
+
+div.asl_m textarea:focus,
+div.asl_m input:focus {
+    outline: none;
+}
+
+div.asl_m {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    position: relative;
+    z-index: 200;
+}
+
+div.asl_m .probox {
+    width: auto;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    border: 1px solid #fff;
+    box-shadow: 1px 0 3px #ccc inset;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+div.asl_m .probox .proinput {
+    width: 1px;
+    height: 100%;
+    margin: 0 0 0 10px;
+    padding: 0 5px;
+    float: left;
+    box-shadow: none;
+    position: relative;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    order: 5;
+    -webkit-order: 5;
+}
+
+div.asl_m .probox .proinput input:before,
+div.asl_m .probox .proinput input:after,
+div.asl_m .probox .proinput form:before,
+div.asl_m .probox .proinput form:after {
+    display: none;
+}
+
+div.asl_m .probox .proinput input {
+    height: 28px;
+    border: 0;
+    background: transparent;
+    width: 100%;
+    box-shadow: none;
+    margin: -1px;
+    padding: 0;
+    left: 0;
+    line-height: normal !important;
+    display: block;
+    min-height: unset;
+    max-height: unset;
+}
+
+div.asl_m .probox .proinput input::-webkit-input-placeholder {
+    opacity: .85;
+}
+
+div.asl_m .probox .proinput input::-moz-placeholder {
+    opacity: .85;
+}
+
+div.asl_m .probox .proinput input:-ms-input-placeholder {
+    opacity: .85;
+}
+
+div.asl_m .probox .proinput input:-moz-placeholder {
+    opacity: .85;
+}
+
+div.asl_m .proinput input.orig {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    z-index: 10;
+    position: relative;
+}
+
+div.asl_m .proinput input.autocomplete {
+    padding: 0 !important;
+    margin: 0;
+    background: transparent !important;
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    opacity: .2;
+}
+
+div.asl_m .probox .proinput input.autocomplete {
+    border: 0;
+    background: transparent;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+    margin-top: -28px !important;
+    padding: 0;
+    left: 0;
+    position: relative;
+    z-index: 9;
+}
+
+div.asl_m .probox .proinput.iepaddingfix {
+    padding-top: 0;
+}
+
+div.asl_m .probox .proinput .loading {
+    width: 32px;
+    background: #000;
+    height: 100%;
+    box-shadow: none;
+}
+
+div.asl_m .probox .proloading,
+div.asl_m .probox .proclose,
+div.asl_m .probox .promagnifier,
+div.asl_m .probox .prosettings {
+    width: 20px;
+    height: 20px;
+    background: none;
+    background-size: 20px 20px;
+    float: right;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    z-index: 100;
+}
+
+div.asl_m .probox .promagnifier {
+    order: 10;
+    -webkit-order: 10;
+}
+
+div.asl_m .probox .prosettings {
+    order: 1;
+    -webkit-order: 1;
+}
+
+div.asl_m .probox .proloading,
+div.asl_m .probox .proclose {
+    background-position: center center;
+    display: none;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    order: 6;
+    -webkit-order: 6;
+}
+
+div.asl_m .probox .proclose {
+    position: relative;
+    cursor: pointer;
+}
+
+div.asl_m .probox .promagnifier .innericon,
+div.asl_m .probox .prosettings .innericon,
+div.asl_m .probox .proclose .innericon {
+    background-size: 20px 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    line-height: initial;
+    display: block;
+}
+
+div.asl_m .probox .promagnifier .innericon svg,
+div.asl_m .probox .prosettings .innericon svg,
+div.asl_m .probox .proloading svg {
+    height: 100%;
+    width: 22px;
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+div.asl_m .probox .proloading {
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+div.asl_m .probox div.asl_loader,
+div.asl_m .probox div.asl_loader * {
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+div.asl_m .probox div.asl_loader {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 28px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+div.asl_m .probox div.asl_loader-inner {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+}
+
+@-webkit-keyframes rotate-simple {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-simple {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+div.asl_m .probox div.asl_simple-circle {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    animation: rotate-simple .8s infinite linear;
+    -webkit-animation: rotate-simple .8s infinite linear;
+    border: 4px solid #fff;
+    border-right-color: transparent !important;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+div.asl_m .probox .proclose svg {
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    fill: #fefefe;
+    padding: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .9);
+}
+
+div.asl_r * {
+    text-decoration: none;
+    text-shadow: none;
+}
+
+div.asl_r .results .asl_nores {
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+    line-height: initial;
+    text-align: center;
+    margin: 0;
+    background: #fff;
+    padding: 10px 3px;
+    color: #222;
+}
+
+div.asl_r.horizontal {
+    padding: 2px 0 10px;
+}
+
+div.asl_r.horizontal .results .nores {
+    background: transparent;
+}
+
+div.asl_r .results {
+    overflow: hidden;
+    width: auto;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+div.asl_r.horizontal .results {
+    height: auto;
+    width: auto;
+}
+
+div.asl_r .results .item {
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    padding: 3px;
+    position: relative;
+    background: #f4f4f4;
+    border-left: 1px solid rgba(255, 255, 255, .6);
+    border-right: 1px solid rgba(255, 255, 255, .4);
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
+    backface-visibility: hidden;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-timing-function: ease;
+    -webkit-backface-visibility: hidden;
+}
+
+div.asl_r.vertical .results .item:last-child {
+    margin-bottom: 0;
+}
+
+div.asl_r.vertical .results .item:last-child:after {
+    height: 0;
+    margin: 0;
+    width: 0;
+}
+
+div.asl_r .results .item .asl_image {
+    overflow: hidden;
+    background: transparent;
+    margin: 2px 8px 0 0;
+    padding: 0;
+    float: left;
+    background-position: center;
+    background-size: cover;
+}
+
+div.asl_r .results .item .asl_image img {
+    width: 100%;
+    height: 100%;
+}
+
+div.asl_r .results .item .asl_content {
+    overflow: hidden;
+    height: auto;
+    background: transparent;
+    margin: 0;
+    padding: 3px 3px 5px 3px;
+}
+
+div.asl_r .results .item .asl_content h3 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    line-height: inherit;
+}
+
+div.asl_r .results .item .asl_content .asl_desc {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+div.asl_r .results .item div.etc {
+    margin-top: 4px;
+}
+
+div.asl_r .results a span.overlap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+div.asl_r p.showmore {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    font-family: Open Sans;
+    color: #055e94;
+    font-size: 12px;
+    line-height: 30px;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    background-color: #fff;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+div.asl_r p.showmore span {
+    font-weight: normal;
+    font-family: Open Sans;
+    color: #055e94;
+    font-size: 12px;
+    line-height: 30px;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.results .asl_nores .asl_keyword {
+    padding: 0 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Open Sans;
+}
+
+div.asl_r .resdrg {
+    height: auto;
+}
+
+
+
+div.asl_w .group:first-of-type {
+    margin: 0 0 -3px;
+}
+
+div.asl_s.searchsettings {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    display: none;
+    z-index: 1101;
+    border-radius: 0 0 3px 3px;
+    visibility: hidden;
+    padding: 0;
+}
+
+div.asl_s.searchsettings form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+}
+
+div.asl_s.searchsettings .asl_option_inner {
+    margin: 2px 10px 0 10px;
+    *padding-bottom: 10px;
+}
+
+div.asl_s.searchsettings.ie78 .asl_option_inner {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+div.asl_s.searchsettings .asl_option_label {
+    font-size: 14px;
+    line-height: 20px !important;
+    margin: 0;
+    width: 150px;
+    text-shadow: none;
+    padding: 0;
+    min-height: 20px;
+    border: none;
+    background: transparent;
+    float: none;
+}
+
+div.asl_s.searchsettings .asl_option_inner input[type=checkbox] {
+    display: none !important;
+}
+
+div.asl_s.searchsettings.ie78 .asl_option_inner input[type=checkbox] {
+    display: block;
+}
+
+div.asl_s.searchsettings.ie78 .asl_option_label {
+    float: right !important;
+}
+
+div.asl_s.searchsettings .asl_option {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    align-items: flex-start;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+}
+
+div.asl_s.searchsettings .asl_option.asl-o-last,
+div.asl_s.searchsettings .asl_option:last-child {
+    margin-bottom: 0;
+}
+
+div.asl_s.searchsettings .asl_option_inner {
+    width: 17px;
+    height: 17px;
+    position: relative;
+    flex-grow: 0;
+    -webkit-flex-grow: 0;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+}
+
+div.asl_s.searchsettings .asl_option_inner .asl_option_checkbox {
+    cursor: pointer;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 0;
+    padding: 0;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .2);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .2);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .2);
+    overflow: hidden;
+    font-size: 0 !important;
+    color: rgba(0, 0, 0, 0);
+}
+
+/* MODERN BROWSER SCROLL START */
+div.asl_r.vertical .results,
+div.asl_s.searchsettings .asl_sett_scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+div.asl_r.vertical .results::-webkit-scrollbar {
+    width: 10px;
+}
+div.asl_s.searchsettings .asl_sett_scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+div.asl_s.searchsettings .asl_sett_scroll::-webkit-scrollbar-track {
+    background: transparent;
+    box-shadow: inset 0 0 12px 12px transparent;
+    border: none;
+}
+
+div.asl_r.vertical .results::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+    box-shadow: inset 0 0 12px 12px transparent;
+    border: solid 2px transparent;
+}
+
+div.asl_r.vertical .results::-webkit-scrollbar-thumb,
+div.asl_s.searchsettings .asl_sett_scroll::-webkit-scrollbar-thumb {
+    background: transparent;
+    box-shadow: inset 0 0 12px 12px rgba(0, 0, 0, 0);
+    border: solid 2px transparent;
+    border-radius: 12px;
+}
+div.asl_s.searchsettings .asl_sett_scroll::-webkit-scrollbar-thumb {
+    border: none;
+}
+
+div.asl_r.vertical:hover .results::-webkit-scrollbar-thumb,
+div.asl_s.searchsettings:hover .asl_sett_scroll::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 12px 12px rgba(0, 0, 0, 0.5);
+}
+@media (hover: none), (max-width: 500px) {
+    div.asl_r.vertical .results::-webkit-scrollbar-thumb,
+    div.asl_s.searchsettings .asl_sett_scroll::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 12px 12px rgba(0, 0, 0, 0.5);
+    }
+}
+/* MODERN BROWSER SCROLL END */
+
+div.asl_s.searchsettings .asl_option_inner .asl_option_checkbox:after {
+    opacity: 0;
+    font-family: 'aslsicons2';
+    content: "\e800";
+    font-weight: normal !important;
+    background: transparent;
+    border: none !important;
+    box-sizing: content-box;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 0 !important;
+    margin: 1px 0 0 0 !important;
+    line-height: 17px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    display: block;
+    font-size: 11px !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+div.asl_s.searchsettings.ie78 .asl_option_inner .asl_option_checkbox:after {
+    display: none;
+}
+
+div.asl_s.searchsettings .asl_option_inner .asl_option_checkbox:hover::after {
+    opacity: .3;
+}
+
+div.asl_s.searchsettings .asl_option_inner input[type=checkbox]:checked+.asl_option_checkbox:after {
+    opacity: 1;
+}
+
+div.asl_s.searchsettings fieldset {
+    position: relative;
+    float: left;
+}
+
+div.asl_s.searchsettings fieldset {
+    background: transparent;
+    font-size: .9em;
+    margin: 12px 0 0 !important;
+    padding: 0;
+    width: 192px;
+}
+
+div.asl_s.searchsettings fieldset .asl_option_label {
+    width: 130px;
+    display: block;
+}
+
+div.asl_s.searchsettings form fieldset legend {
+    padding: 5px 0 8px 10px;
+}
+
+#asl_hidden_data {
+    display: none !important;
+}
+
+.rtl .asl_content,
+.rtl .asl_nores,
+.rtl .asl_content *,
+.rtl .asl_nores *,
+.rtl .searchsettings form {
+    text-align: right !important;
+    direction: rtl !important;
+}
+
+.rtl .asl_nores>* {
+    display: inline-block;
+}
+
+.rtl div.asl_r .results .item .asl_image {
+    float: right;
+    margin: 2px 0 0 8px;
+}
+
+.rtl .searchsettings .asl_option {
+    flex-direction: row-reverse !important;
+    -webkit-flex-direction: row-reverse !important;
+}
+
+.rtl .asl_option {
+    direction: ltr;
+}
+
+.rtl .asl_label,
+.rtl .asl_option div.asl_option_label {
+    text-align: right !important;
+}
+
+.rtl .asl_label {
+    max-width: 1000px !important;
+    width: 100%;
+    direction: rtl !important;
+}
+
+.rtl .asl_label input[type=radio] {
+    margin: 0 0 0 6px !important;
+}
+
+.rtl .asl_option_cat_level-0 div.asl_option_label {
+    font-weight: bold !important;
+}
+
+.rtl fieldset .asl_option_cat_level-1 {
+    margin-right: 12px !important;
+    margin-left: 0;
+}
+
+.rtl fieldset .asl_option_cat_level-2 {
+    margin-right: 24px !important;
+    margin-left: 0;
+}
+
+.rtl fieldset .asl_option_cat_level-3 {
+    margin-right: 36px !important;
+    margin-left: 0;
+}
+
+.rtl .searchsettings legend {
+    text-align: right !important;
+    display: block;
+    width: 100%;
+}
+
+.rtl .searchsettings input[type=text],
+.rtl .searchsettings select {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.rtl div.asl_w.asl_s.searchsettings form,
+.rtl div.asl_w.asl_sb.searchsettings form {
+    flex-direction: row-reverse !important;
+}
+
+.rtl div.horizontal.asl_r div.item {
+    float: right !important;
+}
+
+.rtl p.asl-try {
+    direction: rtl;
+    text-align: right;
+    margin-right: 10px;
+    width: auto !important;
+}

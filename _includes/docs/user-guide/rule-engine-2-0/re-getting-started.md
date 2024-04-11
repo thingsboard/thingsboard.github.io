@@ -9,7 +9,7 @@ Rule Engine is an easy to use framework for building event-based workflows. Ther
 - **Rule Chain** - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
 
 
-### Typical Use Cases 
+## Typical Use Cases 
 ThingsBoard Rule Engine is a highly customizable framework for complex event processing. Here are some common use cases that one can configure via ThingsBoard Rule Chains:
 
 - Data validation and modification for incoming telemetry or attributes before saving to the database.
@@ -24,7 +24,7 @@ in related Asset.
 - Make RPC calls based on defined condition.
 - Integrate with external pipelines like Kafka, Spark, AWS services, etc.
 
-### Hello-World Example
+## Hello-World Example
 Let’s assume your device is using DHT22 sensor to collect and push temperature to the ThingsBoard.
 DHT22 sensor can measure temperature from -40°C to +80°C.
 
@@ -48,7 +48,7 @@ Drag and Drop **Script Filter** rule node to the chain. Node configuration windo
 TBEL<small>Recommended</small>%,%accessToken%,%templates/rule-engine/getting-started/script-function-filter-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/rule-engine/getting-started/script-function-filter-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="scriptfunctionfilterconfig" toggle-spec=scriptfunctionfilterconfig %}
+{% include content-toggle.liquid content-toggle-id="scriptfunctionfilterconfig" toggle-spec=scriptfunctionfilterconfig %}
 
 If temperature property not defined or temperature is valid - script will return **True**, otherwise it will return **False**.
 If script returns **True** incoming message will be routed to the next nodes that are connected with **True** relation.
@@ -196,7 +196,7 @@ We will see that telemetry was saved successfully.
 {% endif %}
 
 
-### See Also
+## See Also
 
 You can use the next links for learning more about Thingsboard Rule Engine:
 
@@ -216,6 +216,6 @@ You can use the next links for learning more about Thingsboard Rule Engine:
 <br>
 <br>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}

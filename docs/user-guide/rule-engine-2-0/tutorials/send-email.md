@@ -4,7 +4,7 @@ title: Send email on alarm
 description: Send Email Workflow
 ---
 
-This Tutorial is to show you how to send an Email to the user using the Rule Engine. 
+This tutorial is to show you how to send an email to the user using the Rule Engine. 
 
 * TOC
 {:toc}
@@ -23,7 +23,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to:
 - Add current temperature to the email body using Script Transform node for saving current temperature in the Message Metadata.
 
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -31,7 +31,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
   * [Create & Clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial:
 
@@ -44,7 +44,7 @@ In this section, we explain the purpose of each node in this tutorial:
 
 <br>
 
-### Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms) tutorial.
 We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#message-flow)<br>
@@ -93,7 +93,7 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
 
 - Fill in the fields with the input data shown in the following table:
 
-  <table style="width: 25%">
+  <table>
     <thead>
         <tr>
             <td><b>Field</b></td><td><b>Input Data</b></td>
@@ -178,7 +178,7 @@ If you can't access to the account of the System administrator you could configu
 
 <br>
 
-### Post telemetry and verify
+## Post telemetry and verify
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from then device **Thermostat Home**.
 
@@ -212,7 +212,7 @@ Please refer to the first link under the **See Also** section to see how to do t
 <br>
 <br>
 
-### See Also
+## See Also
 
 - [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/) guide.
 
@@ -220,7 +220,7 @@ Please refer to the first link under the **See Also** section to see how to do t
 
 - [Create alarm with details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/) guide.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

@@ -8,7 +8,7 @@
 LORIOT is LoRaWAN network designed for connecting your devices using LoRaWAN stack. After integrating LORIOT with the
 ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
 
-### Create LORIOT account
+## Create LORIOT account
 
 Choosing a package of services and server location. Then we register an account with LORIOT. For example, select the
 community public network server.
@@ -20,7 +20,7 @@ community public network server.
 Fill in the registration fields. The registration confirmation letter will be sent to the specified email. Follow the
 specified link. 
 
-### Create Uplink Converter
+## Create Uplink Converter
 
 Before creating the integration, you need to create an **Uplink converter** in **Data converters.**
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard.
@@ -76,9 +76,9 @@ humidity: stringToInt(payloadJson.data.substring(2,4))
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-uplink-converter-config-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="loriotuplinkconverterconfig" toggle-spec=loriotuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="loriotuplinkconverterconfig" toggle-spec=loriotuplinkconverterconfig %}
 
-### Create Integration
+## Create Integration
 
 Now that the Uplink converter has been created, it is possible to create an integration.
 
@@ -95,7 +95,7 @@ We can create Output with LORIOT or in integration by enabling the **Create Lori
 LORIOT Account<br><small>Recommended</small>%,%loriot-account%,%templates/integration/loriot/loriot-account-authorization-type.md%br%
 Basic Credential<br>%,%basic-credential%,%templates/integration/loriot/thingsboard-basic-credentials.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="loriotAuthorizationTypes" toggle-spec=authorizationTypes %}
+{% include content-toggle.liquid content-toggle-id="loriotAuthorizationTypes" toggle-spec=authorizationTypes %}
 
 <div style="font-size: 20px; margin-bottom: 8px; font-weight: bold;">Enable security option</div>
 
@@ -116,7 +116,7 @@ Once the Headers filter has been configured, it will also need to be specified i
 
 {% include images-gallery.html imageCollection="uplink-message" %}
 
-### Send test Uplink message
+## Send Uplink message
 
 It may be useful to "emulate" the message from device using console instead of the LORIOT server. To send an uplink message, you need a **HTTP endpoint URL** from the integration, **port** and **EUI** from LORIOT. 
 
@@ -161,7 +161,7 @@ ThingsBoard has examples of several types of dashboards that you can use. You ca
 How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/)
 
 
-### Advanced Usage: Create Downlink Converter
+## Advanced Usage: Create Downlink Converter
 
 Create Downlink in **Data converters.** To see events - enable **Debug.**
 
@@ -170,7 +170,7 @@ Create Downlink in **Data converters.** To see events - enable **Debug.**
 {% capture loriotdownlinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-downlink-converter-config-java.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="loriotdownlinkconverterconfig" toggle-spec=loriotdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="loriotdownlinkconverterconfig" toggle-spec=loriotdownlinkconverterconfig %}
 
 Get EUI in LORIOT in the Devices section, where the devices have already been created:
 
@@ -219,7 +219,7 @@ It is possible to check that messages have reached LORIOT on the **Devices -> Lo
 {% include images-gallery.html imageCollection="parameters" %}
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
 

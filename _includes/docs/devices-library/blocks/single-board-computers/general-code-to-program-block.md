@@ -12,7 +12,7 @@ Let’s setup our project:
 2. Install packages:
 
    ```bash
-   pip install tb-mqtt-client
+   pip3 install tb-mqtt-client
    ```
    {:.copy-code}
 
@@ -34,7 +34,6 @@ Let’s setup our project:
    
    ACCESS_TOKEN = "TEST_TOKEN"
    THINGSBOARD_SERVER = '{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}'
-   THINGSBOARD_PORT = 1883
 
    logging.basicConfig(level=logging.DEBUG)
    
@@ -101,7 +100,7 @@ Let’s setup our project:
 
    def main():
         global client
-        client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
+        client = TBDeviceMqttClient(THINGSBOARD_SERVER, username=ACCESS_TOKEN)
         client.connect()
         client.request_attributes(shared_keys=['blinkingPeriod'], callback=sync_state)
         
@@ -134,9 +133,8 @@ Let’s setup our project:
    |-|-|
    | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
    | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
-   | THINGSBOARD_PORT | **1883** | ThingsBoard server MQTT port. Can be default for this guide. |
 
-5. Click **Ctrl+X** and **Ctrl+O** keys to save the file.
+5. Click **Ctrl+O** and **Ctrl+X** keys to save the file.
 6. And finally, let’s start our script:
 
    ```bash

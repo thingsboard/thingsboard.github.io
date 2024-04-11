@@ -12,7 +12,7 @@ subscribers, in our case of integration.
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/aws-iot-integration.svg"></object>
 
-### AWS IOT
+## AWS IOT
 
 You should already have an [AWS account](https://aws.amazon.com/iot/) prepared, on which 
 perform a few settings. To establish a correct and secure connection between the service and ThingsBoard, you need to create Policies, devices, and certificates for them.
@@ -151,7 +151,7 @@ can significantly increase the disk space used by the database since all the deb
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="awsiotuplinkconverterconfig" toggle-spec=awsiotuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="awsiotuplinkconverterconfig" toggle-spec=awsiotuplinkconverterconfig %}
 
 You can change the decoder function while creating the converter or after creating it. If the converter
 has already been created, then click on the “pencil” icon to edit it.
@@ -230,7 +230,7 @@ Data converter. Then set the converter and topic in the AWS IoT integration.
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
 Next, configure the conditions under which a message will be sent through the AWS IoT Downlink integration.
 To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
@@ -261,6 +261,6 @@ See video tutorial below for step-by-step instruction how to setup AWS IoT Integ
  </div>
 </div>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

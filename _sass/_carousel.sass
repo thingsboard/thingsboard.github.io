@@ -1,0 +1,77 @@
+.owl-carousel.owl-theme.usecase-carousel
+  margin: 64px 0 24px
+  position: relative
+  visibility: hidden
+  display: block
+  min-height: 500px
+  max-height: 500px
+  &.owl-loaded
+    visibility: visible
+    min-height: unset
+    max-height: unset
+    .owl-stage-outer
+      .owl-stage
+        .owl-item
+          transition: unset
+  &.support-ukraine
+    img
+      max-height: 600px
+      width: auto
+      margin: auto
+  .owl-stage-outer
+    overflow: visible
+    position: relative
+    .owl-stage
+      .owl-item
+        transition: none
+        filter: blur(8px)
+        transition-duration: 0.5s
+        transform: scale(0.9)
+        .item-image
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+        &.active
+          filter: blur(0)
+          transition-duration: 0.5s
+          transform: scale(1)
+  .owl-nav
+    button.owl-prev, button.owl-next
+      position: absolute
+      filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
+      outline: none
+      background-image: url(/images/slider-arrow.svg)
+      background-color: transparent
+      width: 17px
+      height: 50px
+      top: calc(50% - 25px)
+      &:hover
+        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+      span
+        display: none
+    button.owl-prev
+      left: 0
+      transform: scale(-1, 1)
+    button.owl-next
+      right: 0
+  .owl-nav.disabled+.owl-dots
+    margin-top: 32px
+  .owl-dots
+    margin-top: 32px
+    button.owl-dot
+      outline: none
+      margin: 0 12px
+      &:hover, &.active
+        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+      span
+        margin: 8px 0
+        width: 10px
+        height: 10px
+        background: #E0E1E2
+        border-radius: 4px
+
+@media screen and (min-width: 750px)
+  .owl-carousel.owl-theme.usecase-carousel
+    .owl-dots
+      button.owl-dot
+        span
+          width: 72px
+          height: 4px
