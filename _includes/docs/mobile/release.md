@@ -9,7 +9,7 @@ Therefore, we recommend setting a unique label name, package name, and app launc
 Here are the simple steps to change the label name of your Android app:
 1. Open your **AndroidManifest.xml** file located in the *android/app/src/main* directory
 
-   ![image](/images/mobile/flutter_ce_package_name.png)
+   ![image](https://img.thingsboard.io/mobile/flutter_ce_package_name.png)
 
 2. Find the `<application>` tag
 3. Change the `android:label` attribute to the desired name for your app:
@@ -74,10 +74,10 @@ The Flutter app comes with a launcher icon. To change it with your custom one, p
       android: "launcher_icon"
       ios: true
       remove_alpha_ios: true
-      image_path: "assets/images/yourIcon.png"
+      image_path: "assetshttps://img.thingsboard.io/yourIcon.png"
     ```
    
-   ![image](/images/mobile/flutter_launch_icon.png)
+   ![image](https://img.thingsboard.io/mobile/flutter_launch_icon.png)
    
 3. In the terminal, execute the following commands:
 
@@ -116,7 +116,7 @@ follow the ["Build and release an Android app"](https://docs.flutter.dev/deploym
 To change the bundle name and identifier for iOS, follow these steps:
 1. Open **Info-Release.plist** located in *ios/Runner* directory. Note: there is also **Info-Debug.plist** which is used for debugging purposes only
 
-   ![image](/images/mobile/flutter_ce_package_name_ios.png)
+   ![image](https://img.thingsboard.io/mobile/flutter_ce_package_name_ios.png)
 
 3. Update `CFBundleName` key to the desired name for your app
 
