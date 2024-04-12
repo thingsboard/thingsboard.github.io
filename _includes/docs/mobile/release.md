@@ -33,7 +33,7 @@ Simple steps to change the label name of your Android app:
 
    ```
     defaultConfig {
-      applicationId "org.yourappname.app" 
+      applicationId "org.yourappname.app" // usually reversed company domain
       minSdkVersion 21
       targetSdkVersion 33
       versionCode flutterVersionCode.toInteger()
