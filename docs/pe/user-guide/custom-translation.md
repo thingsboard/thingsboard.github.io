@@ -19,7 +19,7 @@ usingLocaleFiles:
         title: 'Step 4. The locale file presents all possible translations for the chosen language.'
     4:
         image: /images/user-guide/custom-translation/ct_lang_in_profile.png
-        title: 'Step 5. Change language in the User Profile for applying settings.'
+        title: 'Step 5. Change language in the User Profile to apply settings.'
 
 
 customMenuItems:
@@ -67,10 +67,10 @@ customWidgetTitleAndWidgetLabel:
         title: 'Step 4. Check translated titles.'
     5:
         image: /images/user-guide/custom-translation/ct_telemetry_label.png
-        title: 'Step 3. Apply translation to the widget title - {i18n:custom.my-widget.name}, and entity label column title - {i18n:custom.my-widget.label-text}.'
+        title: 'Step 5. Apply translation to the data key configuration as a label - {i18n:custom.my-widget.temperature}.'
     6:
         image: /images/user-guide/custom-translation/ct_translated_label.png
-        title: 'Step 4. Check translated titles.'
+        title: 'Step 6. Check translated label.'
     
 tooltips:
     0:
@@ -78,7 +78,7 @@ tooltips:
         title: 'Step 1. Open an edit mode.'
     1:
         image: /images/user-guide/custom-translation/ct_tooltip_title.png
-        title: 'Step 2. In Settings tab write the newt structure for tooltip title - {i18n:custom.my-widget.name}. Save it.'
+        title: 'Step 2. In the Settings tab, write the new structure for the tooltip title as follows: - {i18n:custom.my-widget.name}. Then, save it.'
     2:
         image: /images/user-guide/custom-translation/ct_tooltip_title_result.png
         title: 'Step 3. Hover on widget title and check applied translation.'
@@ -119,7 +119,7 @@ usageInHTMLValueCard:
         title: 'Step 2. Choose some telemetry data.'
     2:
         image: /images/user-guide/custom-translation/ct_html_value_logic.png
-        title: 'Step 3. Write some logic with custom translation. See example below.'
+        title: 'Step 3. Write some logic with custom translation. See the example below.'
     3:
         image: /images/user-guide/custom-translation/ct_html_value_result.png
         title: 'Step 4. Check the result in the HTML Value Card.'

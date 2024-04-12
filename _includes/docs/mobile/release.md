@@ -1,12 +1,12 @@
 * TOC
 {:toc}
 
-Before publishing your app, you might need to polish it off. Each app should have its own identification, 
-so we recommend setting a unique label name, package name, and app launch icon before the release into the world.
+Before publishing your app, you may want to polish it. Each app should have its own identification. 
+Therefore, we recommend setting a unique label name, package name, and app launch icon before releasing it to the world.
 
 ## Change App Name
 
-Simple steps to change the label name of your Android app:
+Here are the simple steps to change the label name of your Android app:
 1. Open your **AndroidManifest.xml** file located in the *android/app/src/main* directory
 
    ![image](/images/mobile/flutter_ce_package_name.png)
@@ -29,7 +29,7 @@ Simple steps to change the label name of your Android app:
 ## Change Package Name
 
 1. Open **build.gradle** located in *android/app* directory
-2. Under the `defaultConfig`, change the `applicationId` to your desired package name:
+2. Change the `applicationId` under the `defaultConfig` to your desired package name:
 
    ```
     defaultConfig {
@@ -43,7 +43,7 @@ Simple steps to change the label name of your Android app:
 
 {% capture android_rename_notice %}
 **Please note:**
-You also can modify BundleId and AppName using [rename](https://pub.dev/packages/rename) package and following the provided documentation.
+You can also modify BundleId and AppName using the [rename](https://pub.dev/packages/rename){:target="_blank"} package and following the provided documentation.
 {% endcapture %}
 {% include templates/info-banner.md content=android_rename_notice %}
 
@@ -53,14 +53,14 @@ You also can modify BundleId and AppName using [rename](https://pub.dev/packages
 
 The Flutter app comes with a launcher icon. To change it with your custom one, please follow the instructions:
 
-1. Add [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) plugin to your project via command line
+1. Add [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons){:target="_blank"} plugin to your project via command line
 
     ```bash
     flutter pub add dev:flutter_launcher_icons 
     ```
     {: .copy-code}
     
-    Or directly to your **pubspec.yaml** (don't forget to check the latest available version)
+    Or by adding it directly to your **pubspec.yaml** (don't forget to check for the latest available version)
     
     ```yaml
     dev_dependencies:
@@ -94,11 +94,11 @@ Commands will fetch the dependencies and then run the flutter_launcher_icons scr
 
 ## Build and release an Android version
 
-Follow [Build and release an Android app](https://docs.flutter.dev/deployment/android){:target="_blank"} article when you’re ready to prepare a release version of your app,
-for example to [publish to the Google Play](https://support.google.com/googleplay/android-developer/answer/9859152?hl=en){:target="_blank"}.
+When preparing a release version of your app, for example, for [publishing it on the Google Play](https://support.google.com/googleplay/android-developer/answer/9859152?hl=en){:target="_blank"}, 
+follow the ["Build and release an Android app"](https://docs.flutter.dev/deployment/android){:target="_blank"} article.
 
 {% capture android_build_notice %}
-**Improtant notice:** When building app for release, for example build app bundle you must provide **----no-tree-shake-icons** flag to your build command:
+**Improtant notice:** While preparing the app for release, for example, when building an app bundle, you must provide **----no-tree-shake-icons** flag to your build command:
 {% endcapture %}
 {% include templates/info-banner.md content=android_build_notice %}
 
@@ -113,8 +113,8 @@ for example to [publish to the Google Play](https://support.google.com/googlepla
 
 ## Change iOS Bundle Name and Identifier
 
-To change the bundle name and identifier for iOS:
-1. Open **Info-Release.plist** located in *ios/Runner* directory. Note: there are **Info-Debug.plist** which is used for debug only
+To change the bundle name and identifier for iOS, follow these steps:
+1. Open **Info-Release.plist** located in *ios/Runner* directory. Note: there is also **Info-Debug.plist** which is used for debugging purposes only
 
    ![image](/images/mobile/flutter_ce_package_name_ios.png)
 
@@ -135,11 +135,12 @@ To change the bundle name and identifier for iOS:
 
 ## Build and release an iOS version
 
-Follow [Build and release an iOS app](https://docs.flutter.dev/deployment/ios){:target="_blank"} article when you’re ready to release your app to the
-[App Store](https://developer.apple.com/app-store/submissions/){:target="_blank"} and [TestFlight](https://developer.apple.com/testflight/){:target="_blank"}.
+When preparing a release version of your app for publishing it on the
+[App Store](https://developer.apple.com/app-store/submissions/){:target="_blank"} and [TestFlight](https://developer.apple.com/testflight/){:target="_blank"}, 
+follow the ["Build and release an iOS app"](https://docs.flutter.dev/deployment/ios){:target="_blank"} article.
 
 {% capture ios_build_notice %}
-**Improtant notice:** When building app for release, for example producing a build archive you must provide **----no-tree-shake-icons** flag to your build command:
+**Improtant notice:** While preparing the app for release, for example, when producing a build archive, you must provide **----no-tree-shake-icons** flag to your build command:
 {% endcapture %}
 {% include templates/info-banner.md content=ios_build_notice %}
 
