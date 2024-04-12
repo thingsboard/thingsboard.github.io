@@ -1,8 +1,8 @@
 * TOC
 {:toc}
 
-Before publishing your app, you may want to polish it off. Each app should have its own identification. 
-Therefor, we recommend setting a unique label name, package name, and app launch icon before releasing it to the world.
+Before publishing your app, you may want to polish it. Each app should have its own identification. 
+Therefore, we recommend setting a unique label name, package name, and app launch icon before releasing it to the world.
 
 ## Change App Name
 
