@@ -11,13 +11,13 @@ add-new-action-1:
         title: 'Enter dashboard edit mode and click "Edit widget" icon to enter the editing mode of the widget;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-3-pe.png
-        title: 'Scroll down and find the "Actions" menu item. Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon);'
+        title: 'Scroll down and find the "Actions" menu item. Click the "Add action" button (once you have created one or more actions, the "Add actions" button will change to the "plus" icon);'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-4-pe.png
         title: 'The "Actions" window will open. Right now, it&#39;s empty, but later it will display all created actions. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window.'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-5-pe.png
-        title: 'Click the `+` icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;'
+        title: 'Click the &#39;plus&#39; icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-6-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -34,7 +34,7 @@ add-new-action-2:
         title: 'Enter dashboard edit mode and click "Edit widget" icon to enter the editing mode of the widget;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-9-pe.png
-        title: 'Go to the "Actions" tab. Right now, this tab is empty, but later it will display all created actions. Click "plus" icon to open an "Add action" window;'
+        title: 'Navigate to the "Actions" tab. Currently, it is empty, but later all created actions will be displayed here. Click "plus" icon to open an "Add action" window;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-10-pe.png
         title: 'Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;'
@@ -65,7 +65,7 @@ navigate-to-new-dashboard-state-2:
         title: 'After saving your changes, you&#39;ll see an action icon next to each entity. Click on any of them;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/types/navigate-to-new-dashboard-state-6-pe.png
-        title: 'You will go to the state specified in the action.'
+        title: 'You will be transferred to the state specified in the action.'
 
 navigate-to-new-dashboard-state-3:
     0:
@@ -93,7 +93,7 @@ update-current-dashboard-state-1:
         title: 'Select the "Time series chart" widget;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/types/update-current-dashboard-state-4-pe.png
-        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
+        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the desirable alias name in the "Entity alias" field and click the "Create a new one!" button;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/types/update-current-dashboard-state-5-pe.png
         title: 'Select the "Entity from dashboard state" from the "Filter type" field and click "Add";'
@@ -144,7 +144,7 @@ navigate-to-other-dashboard:
         title: 'After saving the changes, you can see an icon in the upper right part of the widget. Click this icon;'
     5:
         image: /images/user-guide/ui/widgets/actions/guide/types/navigate-to-other-dashboard-6-pe.png
-        title: 'You will transfer to the previously selected dashboard (or chosen state in that dashboard).'
+        title: 'You will be transferred to the previously selected dashboard (or chosen state in that dashboard).'
 
 custom-action-1:
     0:
@@ -169,7 +169,7 @@ custom-action-2:
         title: 'Confirm deleting the device in the dialog box;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/types/custom-action-7-pe.png
-        title: 'The device has been removed.'
+        title: 'Confirm the deletion of the device in the dialog box.'
 
 custom-action-html-1:
     0:
@@ -545,7 +545,7 @@ mob-layout-1:
         title: 'In the opened "Manage layouts" window, turn on the "Divider" option;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/mob-layout-6-pe.png
-        title: 'Now we have two layouts. Optionally you can change the size of the windows in a certain percentage ratio to each other. Click "Save";'
+        title: 'Now we have two layouts. Optionally, you can adjust the size of the windows in a certain percentage ratio relative to each other. Click "Save";'
 
 mob-layout-2:
     0:
@@ -559,7 +559,7 @@ mob-layout-2:
         title: 'Select the "Time series chart" widget;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/mob-layout-10-pe.png
-        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
+        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the desirable alias name in the "Entity alias" field and click the "Create a new one!" button;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/mob-layout-11-pe.png
         title: 'Select the "Entity from dashboard state" from the "Filter type" field and click "Add";'

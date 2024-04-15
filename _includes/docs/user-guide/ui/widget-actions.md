@@ -29,7 +29,7 @@ If you're using the *basic* widget configuration:
 - Enter the editing mode of the widget to which you want to add an action, scroll down and find the "Actions" menu item;
 - Click the "Add action" button (once you have created one or more actions, the "Add actions" button will change to the `+` icon).
   The "Actions" window will open. Right now, it's empty, but later it will display all created actions;
-- Click the `+` icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
+- Click the 'plus' icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
 - Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
 - Click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
@@ -39,7 +39,7 @@ If you're using the *basic* widget configuration:
 If you're using the *advanced* widget settings:
 
 - Enter the widget editing mode, and navigate to the "Actions" tab. Currently, it is empty, but later all created actions will be displayed here;
-- Click the `+` icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
+- Click the 'plus' icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
 - Now, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
 - Click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
@@ -1143,7 +1143,7 @@ In this example, we'll add an "HTML Card" widget to our dashboard. Clicking anyw
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
 - Now navigate to the "Appearance" tab of the widget. There you should see two fields: CSS and HTML;
-- In the HTML section enter an ID of the action which is its name in a format:
+- In the HTML section, enter the action's ID which should be its name in a specific format:
 
 ```text
 <div id='map' class='card'>Devices location</div>
@@ -1157,7 +1157,7 @@ where "_map_" is the name of the action and "_Devices location_" is the text whi
 
 {% include images-gallery.html imageCollection="on-html-element-click-1" %}
 
-To execute an action click anywhere on the widget. You will navigate to a state where details of all devices are displayed.
+To execute an action click anywhere on the widget. This will navigate you to a state where details of all devices are displayed.
 
 {% include images-gallery.html imageCollection="on-html-element-click-2" %}
 
@@ -1181,12 +1181,12 @@ In this example, we'll add an "HTML Value Card" widget to our dashboard. When cl
 
 where _map_ is the name of the action and _Devices location_ is the text that will be shown in the widget's header.
 
-- After, click "Apply" to save the widget settings;
+- Afterwards, click the "Apply" button to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-html-element-click-3" %}
 
-To execute an action click on the widget title. You will navigate to a state where details of all devices are displayed.
+To execute an action, click on the widget title. This will navigate you to a state where details of all devices are displayed.
 
 {% include images-gallery.html imageCollection="on-html-element-click-4" %}
 
@@ -1204,12 +1204,12 @@ Let's start by adding a map widget, namely OpenStreetMap widget. We have a separ
 {% endif %}
 
 Now it's time to add an action.
-All further actions explanations assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+All further explanations concerning actions assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 ##### On circle click
 
 Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. We use circle which is based on coordinates that are specified within the device we use.
-How to add a circle on the Map widget, [read here](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#circle-settings).
+Learn how to add a circle on the Map widget, by reading [here](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#circle-settings).
 
 {% include images-gallery.html imageCollection="on-circle-click-1" %}
 
@@ -1224,7 +1224,7 @@ How to add a circle on the Map widget, [read here](/docs/{{docsPrefix}}user-guid
 
 {% include images-gallery.html imageCollection="on-circle-click-2" %}
 
-After you click on the circle on the map, action will be performed, namely, the transition to the specified state.
+After clicking on the circle on the map, action will be performed, namely, the transition to the specified state.
 
 {% include images-gallery.html imageCollection="on-circle-click-3" %}
 
@@ -1249,9 +1249,9 @@ Clicking on the marker on the map will take you to the specified state.
 
 ##### On polygon click
 
-Polygon is a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity.
-You may mark your assets and any other entities with a polygon option. 
-How to add a polygon on the Map widget, [read here](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#polygon-settings).
+Polygon is a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates specified within the device we use, but you can use any other entity.
+You may mark your assets and any other entities with a polygon option.
+Learn how to add a polygon on the Map widget, by reading [here](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#polygon-settings).
 
 {% include images-gallery.html imageCollection="on-polygon-click-1" %}
 
@@ -1273,8 +1273,8 @@ To execute an action click anywhere inside the polygon.
 ##### Tooltip tag action
 
 You can configure the map widget settings so that when you click on a marker, a tooltip appears. The tooltip can contain a link that will execute the configured action.
-Please note, in this manual explained a basic way to use the tooltip tag action source. It is possible to configure several links for various devices/assets that return different values. 
-Do it with [the tooltip function](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#tooltip-function) in the advanced mode of the map widget.
+Please note, in this manual explains only the basic usage of the tooltip tag action source. It is possible to configure several links for various devices/assets that return different values.
+Use [the tooltip function](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#tooltip-function) in the advanced mode of the map widget to accomplish this.
 
 - Enter edit widget mode and open "Add action" window;
 - Select "Tooltip tag action" action source;
@@ -1314,7 +1314,7 @@ These settings will be useful to you if you are using the [{{mobilePrefix}}](/do
 
 Often, users need to see updated information about an entity from one widget on another widget next to it. For example, we have a list of assets in the "Entity table" widget, and we want to see their details in the "Time series chart" widget next to it. 
 On the desktop, this is easy to set up by placing the two widgets side by side and selecting the action type "[Update current dashboard state](#update-current-dashboard-state)". 
-However, the responsive screen of the [{{mobilePrefix}}](/docs/{{mobileDocsPrefix}}mobile/) automatically stacks the widgets one below the other, so you need to scroll down to view the relevant information on the second widget.
+However, on the responsive screen of the [{{mobilePrefix}}](/docs/{{mobileDocsPrefix}}mobile/) the widgets are automatically stacked one below the other. This means that you'll need to scroll down to view the relevant information on the second widget.
 
 {% include images-gallery.html imageCollection="mob" %}
 
@@ -1326,7 +1326,7 @@ Now we need to add the "Time series chart" widget to the right layout:
 
 {% include images-gallery.html imageCollection="mob-layout-2" showListImageTitles="true" %}
 
-Now let's add an action button with the type "Update current dashboard state" for each entity of the "Entities table" widget.
+Now let's add an action button with the "Update current dashboard state" type for each entity of the "Entities table" widget.
 We assume that you are already familiar with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
 
 - Enter the editing mode of the "Time series chart" widget and open the "Add action" window;
@@ -1350,7 +1350,7 @@ Now open this dashboard in your [{{mobilePrefix}}](/docs/{{mobileDocsPrefix}}mob
 
 #### Set entity from widget
 
-_Set entity from widget_ checkbox is responsible for adding specific entity from the widget to the state. This allows you to use the entity in the target dashboard state by creating the "[Entity from dashboard state](/docs/{{docsPrefix}}user-guide/ui/aliases/#entity-from-dashboard-state)" or other aliases. For example, if you have a list of devices in the table widget and would like to show specific device details when you click on the table row.
+_Set entity from widget_ checkbox is responsible for adding specific entity from the widget to the state. This allows you to use the entity in the target dashboard state by creating the "[Entity from dashboard state](/docs/{{docsPrefix}}user-guide/ui/aliases/#entity-from-dashboard-state)" or other aliases. For example, if you have a list of devices in the table widget and would like to display specific device details when you click on the table row.
 
 Sometimes you need to store more then one entity in the state. For example, you would like to navigate to customer list, then to devices of the customer and finally to specific device details. In such case, you may have three states: "Main", "Customer Devices" and "Device Details".
 You may use two different state entity parameters to reference current customer (e.g. "currentCustomer") and current device (e.g. "currentDevice") on the "Device Details" state.
