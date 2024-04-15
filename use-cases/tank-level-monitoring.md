@@ -27,8 +27,20 @@ notitle: "true"
     <div class="container">
         <img id="left-line" src="/images/usecases/fuel-level-monitoring/left-main-line.png" alt="Left line"/>
         <img id="right-line" src="/images/usecases/fuel-level-monitoring/right-main-line.png" alt="Right line"/>
-        <img id="icon-laptop" src="/images/usecases/fuel-level-monitoring/header-img1.png" alt="Laptop with a dashboard"/>
-        <img id="icon-mobile" src="/images/usecases/fuel-level-monitoring/header-img1-mobile.png" alt="Phone with a dashboard"/>
+        <img id="icon-laptop" 
+            src="/images/usecases/fuel-level-monitoring/header-img1.png" 
+            alt="Laptop with a dashboard"
+            srcset="/images/usecases/fuel-level-monitoring/laptop-icon-mobile-v.png 360w, 
+                    /images/usecases/fuel-level-monitoring/header-img1.png 560w"
+            sizes="(max-width: 671px) 360px, 
+                    (min-width: 672px) 560px"/>
+        <img id="icon-mobile" 
+            src="/images/usecases/fuel-level-monitoring/header-img1-mobile.png" 
+            srcset="/images/usecases/fuel-level-monitoring/mobile-icon-mobile-v.png 360w, 
+                    /images/usecases/fuel-level-monitoring/header-img1-mobile.png 560w"
+            sizes="(max-width: 671px) 360px, 
+                    (min-width: 672px) 560px"
+            alt="Phone with a dashboard"/>
     </div>
 </section>
 
@@ -41,9 +53,19 @@ notitle: "true"
             <a class="outline-button" href="/installations/">Try a demo</a>
         </div>
         <div class="right-side">
-            <img id="tank-info-1" src="/images/usecases/fuel-level-monitoring/tank-info1.png" alt="Tank info 1"/>
-            <img id="tank-info-2" src="/images/usecases/fuel-level-monitoring/tank-info2.png" alt="Tank info 2"/>
-            <img id="rectangle" src="/images/usecases/fuel-level-monitoring/rectangle.png" alt="Tank info 3"/>
+            <img id="tank-info-1" src="/images/usecases/fuel-level-monitoring/tank-info1.png" 
+                alt="Tank info 1"
+                srcset="/images/usecases/fuel-level-monitoring/tank-info1-mobile-v.png 360w, 
+                    /images/usecases/fuel-level-monitoring/tank-info1.png 560w"
+                sizes="(max-width: 671px) 360px, 
+                    (min-width: 672px) 560px"/>
+            <img id="tank-info-2" src="/images/usecases/fuel-level-monitoring/tank-info2.png" 
+                srcset="/images/usecases/fuel-level-monitoring/tank-info2-mobile-v.png 360w, 
+                        /images/usecases/fuel-level-monitoring/tank-info2.png 560w"
+                sizes="(max-width: 671px) 360px, 
+                        (min-width: 672px) 560px"
+                alt="Tank info 2"/>
+            <img id="rectangle" src="/images/usecases/fuel-level-monitoring/rectangle.png" alt="rectangle"/>
         </div>
     </div>
 </section>
@@ -151,7 +173,12 @@ notitle: "true"
     <div class="container">
         <div class="left">
             <img class="rectangle" src="/images/usecases/fuel-level-monitoring/rectangle2.png"/>
-            <img class="connectivity-image" src="/images/usecases/fuel-level-monitoring/connectivity.png"/>
+            <img class="connectivity-image" 
+                src="/images/usecases/fuel-level-monitoring/connectivity.png"
+                srcset="/images/usecases/fuel-level-monitoring/connectivity-mobile-v.png 360w, 
+                    /images/usecases/fuel-level-monitoring/connectivity.png 560w"
+                sizes="(max-width: 671px) 360px, 
+                    (min-width: 672px) 560px"/>
         </div>
         <div class="right">
             <h2 class="title">Device connectivity</h2>
@@ -337,11 +364,15 @@ notitle: "true"
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();
         var email = $('input[name=email]', form).val();
+        var message = $('textarea[name=message]', form).val();
 
         if (!validateValue('Name', name)) {
             return false;
         }
         if (!validateValue('Email Address', email)) {
+            return false;
+        }
+        if (!validateValue('Message', message)) {
             return false;
         }
 
