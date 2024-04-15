@@ -8,10 +8,9 @@ adding-device:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-device-1-pe.png
         title: 'For this guide, we will create a new device called Tracker1, which receives longitude, latitude, speed, circle radius, status, and polygon coordinates as telemetry using an emulator written in JavaScript.'
-
-access-token:
-  0:
-    image: /images/user-guide/ui/widgets/trip-animation-widget/access-token-1-pe.png
+    1:
+        image: /images/user-guide/ui/widgets/trip-animation-widget/access-token-1-pe.png
+        title: 'To copy the access token, click the corresponding button in the device details.'
 
 create-dashboard-1:
     0:
@@ -94,8 +93,10 @@ advanced-settings-additional-rotation-angle-for-marker:
 advanced-settings-label:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-1-pe.png
+        title: 'Show or hide the entity&#39;s label. You can also change the label text.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-2-pe.png
+        title: 'Utilize a label function for more dynamic information.'
     2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-3-pe.png
     3:
@@ -104,14 +105,18 @@ advanced-settings-label:
 advanced-settings-marker-image:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-marker-image-1-pe.png
+        title: 'To select a custom marker, click on the "Browse from gallery" field in the "Custom marker image" section;'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-marker-image-2-pe.png
+        title: 'Select a new image from the Image gallery;'
     2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-marker-image-3-pe.png
-      
+        title: 'Optionally, resize the custom marker image and then apply the changes.'
+
 advanced-settings-marker-image-function:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-marker-image-4-pe.png
+        title: 'Use marker image function.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-marker-image-5-pe.png
     2:
@@ -120,6 +125,7 @@ advanced-settings-marker-image-function:
 advanced-settings-path-color-function:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-color-function-1-pe.png
+        title: 'Choose the path color.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-color-function-2-pe.png
     2:
@@ -145,6 +151,7 @@ advanced-settings-point-color-function:
 advanced-settings-anchor-function:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-anchor-function-1-pe.png
+        title: 'The "Point as an anchor" feature allows you to navigate through data points based on a condition specified in the function. This makes it easier to sift through information according to specific criteria.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-anchor-function-2-pe.png
     2:

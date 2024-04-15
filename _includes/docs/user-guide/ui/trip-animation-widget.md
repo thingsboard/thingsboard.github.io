@@ -32,19 +32,16 @@ For this guide, we will {{NEW_DEVICE}}{:target="_blank"} called **Tracker1**, wh
 
 {% include images-gallery.html imageCollection="adding-device" %}
 
-To receive telemetry and further visualize it on the dashboard {{YOUR_HOST}}{:target="_blank"} and execute it in a command line:
+To receive telemetry and further visualize it on the dashboard {{YOUR_HOST}}{:target="_blank"} and execute it using the following command:
 
 ```bash
 node {{TERMINAL}} $ACCESSTOKEN
 ```
 {: .copy-code}
-Where **$ACCESSTOKEN** is your device access token.
+
+Where **$ACCESSTOKEN** is your device access token located in the device details.
 
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/{{EMULATOR}})
-
-**$ACCESSTOKEN** is located in a device details.
-
-{% include images-gallery.html imageCollection="access-token" %}
 
 Emulator is capable with Node.js version 12 or higher.
 
@@ -323,14 +320,3 @@ The following settings are available for the circle:
 * Customize the appearance of your circle by changing the stroke color, adjusting its opacity, and modifying the weight to better suit your visual needs. You can also set up a circle stroke color function. This allows the stroke color to change automatically based on certain conditions or data, adding interactivity to your visualization.
 
 {% include images-gallery.html imageCollection="advanced-settings-circle-settings-6" %}
-
-## Video tutorial 
- 
-We also recommend you to review this video tutorial.
-  
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/qWCmDjca-T8" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
