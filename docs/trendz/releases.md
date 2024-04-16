@@ -8,6 +8,25 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.11.0 (March, 2024)
+
+**Improvements:**
+
+* Persisted calculation fields management
+* Improve calculation fields debug and monitoring instruments
+* Implement scheduled tasks
+* Implement reprocessing tasks
+* Task executions management
+* Add search for filter options
+* Trendz configuration import/export - add anomaly models, tasks, calculations
+* Subscribe to filter updates for Trendz views on the dashboard
+* Update Trendz settings page layout
+
+**Bug fixes:**
+
+* Fix search speed in big topology graph
+* Fix OOM in python engine
+
 ## v1.10.3-HF7 (January, 2024)
 
 **Improvements:**
