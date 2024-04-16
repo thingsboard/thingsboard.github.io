@@ -14,7 +14,7 @@ notitle: "true"
         <div id="hero-content">
             <h3 class="hero-title">ThingsBoard IoT platform</h3>
             <h1 class="title">Tank Level Monitoring System with ThingsBoard IoT platform</h1>
-            <h2 class="sub-title">One Tank Level Monitoring Solution to manage and monitor all your tank's system - cloud based tank level monitoring lets you check fluid levels in multiple tanks, across multiple sites, with real time access to data you can use to reduce your costs, improve your efficiency and expand your customer base.</h2>
+            <h3 class="sub-title">One Tank Level Monitoring Solution to manage and monitor all your tank's system - cloud based tank level monitoring lets you check fluid levels in multiple tanks, across multiple sites, with real time access to data you can use to reduce your costs, improve your efficiency and expand your customer base.</h3>
             <div class="info-block">
                 <a class="filled-button" href="/installations/">Try a demo</a>
                 <input class="outline-button anchor-button" type="button" value="Contact us"/>
@@ -71,8 +71,7 @@ notitle: "true"
 </section>
 
 <section id="benefits-screen" class="content-wrapper">
-    <h2 class="benefits-title">The <span class="blue-text">benefits</span> of using a Tank 
-    Level Monitoring System</h2>
+    <h2 class="benefits-title">The benefits of using a Tank Level Monitoring System</h2>
     <div class="benefits-sub-title">Save up to <span class="blue-text">90%</span> of development time for your fuel level monitoring solution by utilizing the following platform benefits</div>
     <div class="cards">
         <div class="card">
@@ -110,9 +109,11 @@ notitle: "true"
 
 <section id="dark-section" class="content-wrapper">
     <div class="header">
-        <h2 class="title first">One tank monitoring solution</h2>
-        <h2 class="title second">to manage and monitor all</h2>
-        <h2 class="title third">your tank's system</h2>
+        <h2 class="title">
+            One tank monitoring solution
+            <span class="second">to manage and monitor all</span>
+            <span class="third">your tank's system</span>
+        </h2>
     </div>
     <div class="info-block">
         <div class="menu">

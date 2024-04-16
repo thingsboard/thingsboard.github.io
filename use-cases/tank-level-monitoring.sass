@@ -45,6 +45,21 @@ $font-style-normal: normal
             max-width: 1440px
             margin-top: 180px
 
+    .outline-button
+        background-color: white 
+        border-radius: 8px
+        border: 1px solid #2A7DEC
+        font-size: 16px
+        font-weight: 600
+        line-height: 20.8px
+        color: #2A7DEC
+        width: 208px
+        height: 48px 
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+
     footer
         position: relative
 
@@ -118,21 +133,6 @@ $font-style-normal: normal
                         align-items: center
                         text-decoration: none
 
-                    .outline-button
-                        background-color: white 
-                        border-radius: 8px
-                        border: 1px solid #2A7DEC
-                        font-size: 16px
-                        font-weight: 600
-                        line-height: 20.8px
-                        color: #2A7DEC
-                        width: 208px
-                        height: 48px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        text-decoration: none
-
     #second-screen
         height: 600px 
         width: 100%
@@ -197,20 +197,7 @@ $font-style-normal: normal
                     text-align: left
                     color: #495057
                 .outline-button
-                    background-color: white 
-                    border-radius: 8px
-                    border: 1px solid #2A7DEC
-                    font-size: 16px
-                    font-weight: 600
-                    line-height: 20.8px
-                    color: #2A7DEC
-                    width: 208px
-                    height: 48px
                     margin-top: 50px
-                    display: flex
-                    justify-content: center
-                    align-items: center
-                    text-decoration: none
 
             .right-side
                 width: 50%
@@ -263,20 +250,7 @@ $font-style-normal: normal
             margin-top: 30px
 
         .outline-button
-            background-color: white 
-            border-radius: 8px
-            border: 1px solid #2A7DEC
-            font-size: 16px
-            font-weight: 600
-            line-height: 20.8px
-            color: #2A7DEC
-            width: 208px
-            height: 48px
             margin-top: 40px
-            display: flex
-            justify-content: center
-            align-items: center
-            text-decoration: none
 
         .cards
             display: flex
@@ -331,6 +305,8 @@ $font-style-normal: normal
                 line-height: 104px
                 text-align: left
                 color: #FFFFFF
+                span
+                    display: block
 
             .second
                 padding-left: 140px
@@ -561,19 +537,7 @@ $font-style-normal: normal
 
         .outline-button
             margin-top: 80px
-            background-color: white 
-            border-radius: 8px
-            border: 1px solid #2A7DEC
-            font-size: 16px
-            font-weight: 600
-            line-height: 20.8px
-            color: #2A7DEC
             width: 208px
-            height: 48px 
-            display: flex
-            justify-content: center
-            align-items: center
-            text-decoration: none
 
     .modal 
         display: none
@@ -1425,6 +1389,9 @@ $font-style-normal: normal
                 padding: 0 12px
                 margin-top: 70px
 
+        .outline-button
+            width: 100%
+
         #first-screen
             .hero-container 
                 #hero-content
@@ -1507,9 +1474,15 @@ $font-style-normal: normal
             background-size: 1337px
             margin-top: 0px
             .header
+                height: 80px
+                margin-top: 20px
                 .title 
                     font-size: 20px
-                    height: 26px
+                    height: 100%
+                    display: flex
+                    justify-content: space-between
+                    flex-direction: column
+                    line-height: 40px
                 
                 .second
                     padding-left: 22px
@@ -1519,6 +1492,9 @@ $font-style-normal: normal
 
             .info-block
                 margin-top: 0px
+                .menu
+                    .try-demo-button
+                        width: 100%
 
         #connectivity
             margin-top: 50px
