@@ -132,7 +132,7 @@ The following interactive dashboard hosted on live demo server represents vehicl
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
+    <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
 </div>
 
 The live Fleet Tracking dashboard displays real-time data from several tracking sensors collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
@@ -284,7 +284,7 @@ Experience the power of transformative IoT fleet management with ThingsBoard's I
                 <div class="title">Ready to launch your unique product?</div>
                 <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
-            <form id="contact-form" class="contact-form1" method="post" onsubmit="return validateContactForm(this)">
+            <form id="UseCases_FleetTracking_ReadyToLaunch" class="contact-form1" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
                     <div class="form-section">
                         <div class="form-element">

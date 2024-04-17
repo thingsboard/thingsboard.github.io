@@ -96,7 +96,7 @@ The following interactive dashboard represents smart-energy IoT data visualizati
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
+    <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
 </div>
 
 The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. 
@@ -214,7 +214,7 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
                 <div class="title">Ready to launch your unique product?</div>
                 <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
-            <form id="contact-form" class="contact-form1" method="post" onsubmit="return validateContactForm(this)">
+            <form id="UseCases_SmartEnergy_ReadyToLaunch" class="contact-form1" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
                     <div class="form-section">
                         <div class="form-element">

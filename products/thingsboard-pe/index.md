@@ -254,7 +254,7 @@ description:
     </section>
     <section id="bottom">
         <div class="main-div">
-            <a href="/pricing/" class="try-pe">Get it now</a>
+            <a id="Products_PE_GetItNow" href="/pricing/" class="try-pe">Get it now</a>
         </div>
     </section>
 </main>
