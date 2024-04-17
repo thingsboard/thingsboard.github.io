@@ -8,26 +8,739 @@
 	>
 
 <channel>
-	<title>ThingsBoard&#039;s blog</title>
+	<title></title>
 	<atom:link href="/blog/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Fri, 05 Apr 2024 14:23:36 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 17 Apr 2024 15:12:00 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.4.4</generator>
 	<item>
+		<title>How implementing of the propane tank level monitoring improve operational efficiency?</title>
+		<link>/blog/how-implementing-of-the-propane-tank-level-monitoring-improve-operational-efficiency/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=how-implementing-of-the-propane-tank-level-monitoring-improve-operational-efficiency</link>
+		
+		<dc:creator><![CDATA[Andrii Zaiko]]></dc:creator>
+		<pubDate>Wed, 17 Apr 2024 15:11:59 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Community]]></category>
+		<category><![CDATA[Guides]]></category>
+		<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Use cases]]></category>
+		<category><![CDATA[Tank level monitoring]]></category>
+		<guid isPermaLink="false">/blog/?p=4210</guid>
+
+					<description><![CDATA[Detailed explanation about propane tank level monitoring system. ThingsBoard - modern IoT visualization platform.]]></description>
+										<content:encoded><![CDATA[<h1 class="&lt;h2 id=&quot;”unique-id”&quot;&gt; Section Name &lt;/h2&gt; wp-block-post-title">How implementing of the propane tank level monitoring improve operational efficiency?</h1>
+
+
+<div class="toc">
+<p></p>
+<ol>
+<li><a href="#anchor-1">What is propane tank monitoring ?</a></li>
+<li><a href="#anchor-2">How oil tank level monitoring system works?</a></li>
+<li><a href="#anchor-3">Wireless devices for propane tank monitoring</a></li>
+<li><a href="#anchor-4">Residential propane tank monitoring &amp; Commercial propane tank monitoring</a></li>
+<li><a href="#anchor-5">ThingsBoard Tank Level Monitoring template</a></li>
+</ol>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
+<h1 id="anchor-1">What is propane tank monitoring ?</h1>
+</div>
+</div>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-mbKOmkraSXfhJ8MQtWwylDWd?se=2024-04-16T07%3A57%3A51Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3Dadd5e4a0-4740-4c23-89ba-8c1334c0b9b0.webp&amp;sig=/zk9kACJWzsYExYUVjslavopyhAL%2BRGOC33G3A2jywk%3D" alt="" /></figure>
+
+
+
+<p>Propane tank level monitoring system is a specialized tool used to monitor and control the amount of propane in one or more tanks. This software can be used in both domestic and commercial applications, such as by propane providers where propane storage is a critical component of the operational process.</p>
+
+
+
+<p>ThingsBoard platform allows remotely monitor tank levels 24/7 using tank telemetry and see in real time how much propane is in the tank, helping better manage propane and keep business running smoothly. Propane tank monitoring is accomplished through the use of smart technology, such as a wireless propane tank level monitor, float gauge as well as reliable communication methods to accurately monitor propane levels. With the easy-to-use dashboard, user can quickly get all the information about propane tank or check levels via smartphone or PC. Efficiently managing propane inventory and being notified about any sensor alerts, helps avoid interruptions and ensure having propane when needing it, and even improve business sustainability and environmental compliance by detecting leaks in the tanks, making operations more efficient and customers happier.</p>
+
+
+
+<p>In addition, the tank level monitoring system can be adapted to the needs of the business, for example, in sales, manufacturing or any other industry where propane levels need to be closely monitored. The tank level monitoring system helps to make business more efficient by using resources more accurately and carefully.</p>
+
+
+
+<h2 id="anchor-2">How propane tank level monitoring system works?</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-SYb7M0uAODlyy9ia8o80XPMz?se=2024-04-16T08%3A01%3A25Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3Dccd152bd-86fa-4c89-a00f-6f1a6d72b2e2.webp&amp;sig=ZHzdt5bjwh3TqwFo0cfG7SdsaZ/V0qUPHImO%2BGLwXls%3D" alt="" /></figure>
+
+
+
+<p>There are a large number of propane level sensors &#8211; an external magnetic sensor, float gauge, remote gauges for Vertical propane tank or Horizontal propane tank, It can be installed indoors or outdoors, they all perform the same function &#8211; read the remaining contents of propane tank. The sensor is mounted on the lid of a closed tank or suspended by a rod or rope in the tank, or a float gauge is used. Once installed, the sensor can check the amount of liquid in the tank. To do this, it sends a wave through the liquid and measures the time it takes for the wave to reflect off the surface of the liquid. The device collects this information from the sensor and sends it to our IoT visualization platform for tracking real-time tank level. This gives the ability to monitor propane levels remotely from anywhere in the world via a web or smartphone app, making it easy to keep track of the amount of liquid in any tank.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://thingsboard.io/installations/"><img decoding="async" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEcpxjw3T4SZ8TnGmyPlofvEkHM-aLSs1SBQ&amp;s" alt="" /></a></figure>
+
+
+
+<h3 id="anchor-3">Wireless devices for propane tank monitoring</h3>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-wggEHhSU49qXQtqIqQFKdaxU?se=2024-04-16T08%3A19%3A14Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3De0903dcb-463c-4783-b3d9-b9d07d954c4d.webp&amp;sig=agEZaleiGe1vt0nVGPuzLOPikPwnCaJCU2bzgKOhIwc%3D" alt="" /></figure>
+
+
+
+<p>The use of wireless devices for remote propane tank monitoring has many advantages over standard tank level measurement devices. They can be used to remotely control and monitor the level of propane in tanks. These devices use a variety of sensors and communication technologies to transmit data on propane level, temperature, and sometimes even propane quality to a central system or directly to users via an our platform in real time. Here are some of the benefits and specifications of IoT devices used for wireless propane tank monitoring:</p>
+
+
+
+<ol start="1">
+<li><strong>Level sensors:</strong> These sensors measure the amount of propane in the tank for the accurate and repeatable tank level readings. The technologies used include ultrasonic, radar, and float sensors, each with its own advantages and suitable for different tank conditions &#8211; vertical propane tank or horizontal propane tank, It can be installed indoors or outdoors.</li>
+
+
+
+<li><strong>Temperature sensors:</strong> Remote reading of propane tank contents helps to measure temperature, it is vital for business and farming, as changes in temperature can affect volume and quality of propane.</li>
+
+
+
+<li><strong>Connectivity:</strong> These devices often use ethernet wireless technology such as Wi-Fi, LoRaWAN, NB-IoT or cellular networks to transmit data to a central system or cloud platform. This allows for remote monitoring and alerting.</li>
+
+
+
+<li><strong>Power supply: </strong>Many IoT devices for propane tank monitoring are designed with energy efficiency in mind. They can use batteries, solar power, or energy harvesting technologies to operate in remote or hard-to-reach locations without requiring frequent maintenance, what is very important for tanks in the field, tanks below ground, and other tanks located in the hard-to-reach places.</li>
+
+
+
+<li><strong>Integration with software:</strong> The data collected by these devices is accessible through our platform. The platform provides tank monitoring dashboard with real-time data visualization, trend analysis, track usage history, and automated alerts for low levels or rapid changes that may indicate leakage or theft.</li>
+
+
+
+<li><strong>Critical Warnings and Alerts:</strong> Users can set thresholds for level alarms, receiving notifications via SMS, email or app when propane levels fall below a certain point or when unusual patterns are detected, allowing for timely oil refills or maintenance.</li>
+
+
+
+<li><strong>Compatibility and integration</strong>: These devices are often designed to be compatible with existing tanks, tanks of different sizes &#8211; vertical or horizontal propane tanks &#8211; and different manufactories infrastructure, making them suitable for retrofitting older systems. Additionally, they supporting web portal integration and can often integrate with other IoT solutions or industrial control systems for domestic and commercial applications.</li>
+</ol>
+
+
+
+<h3 id="anchor-4">Residential propane tank monitoring &amp; Commercial propane tank monitoring</h3>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-wj71NBgQb2TR5kexOaeE05Qe?se=2024-04-16T08%3A20%3A24Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3De535289c-e38e-4aa5-9872-4ecb2301d6d3.webp&amp;sig=wp2y/sCQ8pJKF7Wtsid8Db5z5mWIO1MEg0f2R8LO%2By0%3D" alt="" /></figure>
+
+
+
+<ol start="1">
+<li><strong>Commercial propane tank monitoring: </strong>Tank monitoring in the oil, gas and energy<strong> </strong>for business and farming, encompasses a wide range of technologies aimed at optimizing the storage, use and distribution of various propane and bulk storage. This sector requires accurate and reliable monitoring solutions due to the high volumes, potential environmental and safety risks, and economic implications of storage and distribution. Benefits of tank monitoring in the oil and energy industry:<br>&#8211; <strong>Operational Efficiency:</strong> Real-time monitoring allows for just-in-time delivery and distribution, reducing holding costs and optimizing supply chains.<br>&#8211; <strong>Safety and Environmental Protection:</strong> Early detection of leaks and potential hazards minimises the risk of accidents and environmental damage.<br>&#8211; <strong>Cost Savings: </strong>By optimising inventory management and reducing the risk of spillage or contamination, companies can achieve significant cost savings.<br>&#8211; <strong>Data-Driven Decisions</strong>: Access to detailed analytics and trends enables better strategic planning and investment decisions</li>
+
+
+
+<li><strong>Residential propane tank monitoring: </strong>involves keeping track of the propane level in home heating propane tanks to ensure a continuous heating propane supplies prevent runouts, and manage propane heating and energy needs expenses more effectively. Benefits of residential propane tank monitoring:<br> &#8211; <strong>Convenience: </strong>Eliminates the need to manually check the propane tank level gauge, especially in adverse weather conditions or for tanks located in hard-to-reach areas.<br>&#8211; <strong>Cost savings:</strong> By understanding consumption patterns and ordering propane only when needed, homeowners can avoid unnecessary deliveries and take advantage of lower prices during off-peak periods.<br>&#8211; <strong>Peace of mind: </strong>Automatic alerts prevent supply disruptions by ensuring a continuous supply of propane.<br>&#8211; <strong>Environmental impact: </strong>Effective monitoring and tracking of consumption can lead to reduced energy consumption and carbon dioxide emissions by avoiding overfilling of tanks and optimizing heating efficiency.</li>
+</ol>
+
+
+
+<h3 id="anchor-5">ThingsBoard Tank Level Monitoring template</h3>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="454" src="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x454.webp" alt="" class="wp-image-4063" srcset="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x454.webp 1024w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-300x133.webp 300w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-768x341.webp 768w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1536x681.webp 1536w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-2048x908.webp 2048w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-512x227.webp 512w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-920x408.webp 920w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1600x709.webp 1600w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1920x851.webp 1920w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1.webp 2560w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ol start="1">
+<li><strong><a href="https://thingsboard.io/use-cases/tank-level-monitoring/" data-type="link" data-id="https://thingsboard.io/use-cases/tank-level-monitoring/">ThingsBoard Tank Level Monitoring template</a> </strong>allows for instantaneous monitoring of propane levels, through a user-friendly dashboard that can be easily configured and allows users to monitor tank status, configure measurement parameters, set personalised alerts and monitor propane usage. Efficiently managing propane operations with this system minimises disruptions and ensures a steady supply of propane, resulting in increased operational efficiency and customer satisfaction.</li>
+</ol>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How an IoT-based liquid tank level monitoring system works?</title>
+		<link>/blog/how-an-iot-based-liquid-tank-level-monitoring-system-works/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=how-an-iot-based-liquid-tank-level-monitoring-system-works</link>
+		
+		<dc:creator><![CDATA[Andrii Zaiko]]></dc:creator>
+		<pubDate>Wed, 17 Apr 2024 15:11:53 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Community]]></category>
+		<category><![CDATA[Guides]]></category>
+		<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Use cases]]></category>
+		<category><![CDATA[Tank level monitoring]]></category>
+		<guid isPermaLink="false">/blog/?p=4223</guid>
+
+					<description><![CDATA[Understanding liquid level monitoring system The Explanation how Liquid level monitoring system works IoT-based devises for liquid level&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p></p>
+
+
+<h1 class="&lt;h2 id=&quot;”unique-id”&quot;&gt; Section Name &lt;/h2&gt; wp-block-post-title">How an IoT-based liquid tank level monitoring system works?</h1>
+
+
+<div class="toc">
+<p></p>
+<ol>
+<li><a href="#anchor-1">Understanding liquid level monitoring system</a></li>
+<li><a href="#anchor-2">The Explanation how Liquid level monitoring system works</a></li>
+<li><a href="#anchor-3">IoT-based devises for liquid level monitoring</a></li>
+<li><a href="#anchor-4">Practical Uses of liquid level monitoring system </a></li>
+<li><a href="#anchor-5">ThingsBoard Tank Level Monitoring template</a></li>
+</ol>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
+<h1 id="anchor-1">Understanding liquid level monitoring system</h1>
+</div>
+</div>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-kaWAJ1K9ek1508ojoHd963dP?se=2024-04-16T08%3A22%3A16Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3Da5960467-1050-4bb2-8b46-91542f8e9655.webp&amp;sig=Sgx/q8/uRfvTwFgiyQw9ua2dqa7iNM2377CojcUiF3o%3D" alt="" /></figure>
+
+
+
+<p>Liquid level monitoring system is a process that involves the use of various technologies to accurately detect the liquid level in a tank. This method is critical to a wide range of industries, including water treatment, chemical manufacturing, food and beverage, oil and gas, and many others that require precise control of liquid volumes for operational efficiency, safety, and regulatory compliance.</p>
+
+
+
+<p>The purpose of Monitor level in a tank is to provide real-time data on the amount of liquid stored, enabling efficient management of liquid resources. It helps prevent overfilling or depletion of critical stocks by creating automatic alerts when liquid levels are too high or too low. As well as ensuring operational continuity and safety, tank fluid levels monitoring systems can also provide information on fluid temperature to optimize resource use, improve environmental sustainability and reduce costs associated with storage and supply chain management</p>
+
+
+
+<h2 id="anchor-2">The Explanation how Liquid level monitoring system works</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-zebYbEY3inkJLr57Pqv1i4nT?se=2024-04-16T08%3A23%3A41Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3D7ac8d8fb-bd2c-404c-b581-ef800a305434.webp&amp;sig=P47sLG/llFL87I4400EzzURQROvmT43qYyFNkKrLQgs%3D" alt="" /></figure>
+
+
+
+<p>This monitoring can be carried out using a variety of sensors such as ultrasonic sensors, radar level sensors, float switches and pressure sensors, which can measure liquid levels without direct contact with the liquid or by direct immersion in the tank or reservoir. The sensor is mounted on the lid of a closed tank or suspended by a rod or rope over an open tank. Once installed, the sensor can check the amount of liquid in the tank. These sensors typically work by sending signals (sound waves in the case of ultrasonic sensors or electromagnetic waves for radar sensors) to the surface of the liquid and measuring the time it takes for the reflected signal to return. The distance calculated from this time allows the system to determine the liquid level in the tank.<br>This gives the ability to remotely monitor the liquid level from anywhere in the world using a web application or smartphone, making it easy to track of the liquid levels in real-time.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://thingsboard.io/installations/"><img decoding="async" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEcpxjw3T4SZ8TnGmyPlofvEkHM-aLSs1SBQ&amp;s" alt="" /></a></figure>
+
+
+
+<h3 id="anchor-3">IoT-based devises for liquid level monitoring</h3>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-00bdOhV9GuOILK7UgLifPXDF?se=2024-04-16T08%3A24%3A57Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3D4e2c484f-391d-441a-9845-c959b4b51c1a.webp&amp;sig=nbF0Mp5qDNOi7FX4Mg0o7laOYiU7ZAEaUfpnElZxfG4%3D" alt="" /></figure>
+
+
+
+<p>Using IoT-powered liquid level monitoring sensors to remotely monitor tanks has many advantages over standard level sensors in industrial and commercial processes for measuring levels in tanks. They can be used to remotely control and monitor liquid levels in tanks. These devices use a variety of sensors and communication technologies to transmit liquid level, temperature, and sometimes even liquid quality data to a central system or directly to users via our platform in real time. Here are some of the benefits and specifications of IoT-powered liquid level monitoring devices used to wirelessly monitor liquid tanks:<br><strong>Level sensors: </strong>These sensors measure the amount of liquid in the tank to provide accurate and repeatable tank level readings. The technologies used include ultrasonic, radar and float sensors, each of which has its own advantages and is suitable for different tanks, regardless of the geometry of the storage tank or the construction material of the tank enabling remotely monitoring the level of liquid indoors and outdoors.<br><strong>Temperature sensors</strong>: Remote reading of liquid contents helps to measure temperature, this is vital for temperature-sensitive liquids as changes in temperature can affect the volume and properties of the liquid.<br><strong>Connectivity</strong>: These devices often use wireless Ethernet technologies such as Wi-Fi, LoRaWAN, NB-IoT, or cellular networks to transmit data to a central system or cloud platform. This allows for remote monitoring and alerting.<br><strong>Power supply</strong>: Many IoT devices for liquid tank monitoring are designed with energy efficiency in mind. They can use batteries, solar power, or energy harvesting technologies to operate in remote or hard-to-reach locations without requiring frequent maintenance, which is very important for tanks in the field, underground, and other tanks located in hard-to-reach areas.<br><strong>Integration with software:</strong> The data collected by these devices is accessible through our platform. The platform provides a tank monitoring dashboard with real-time data visualisation, trend analysis, usage history, and automatic alerts for low levels or rapid changes that may indicate leakage or theft.<br><strong>Critical alerts and notification</strong>s: Users can set thresholds (e.g. Temperature range of the liquid to be monitored, Pressure to be maintained in the storage tank ) for level alarms, receiving alerts via SMS, email or app when the fluid level falls below a certain point or when unusual patterns are detected &#8211; allowing for timely oil topping up or maintenance or even<strong> </strong>control any thefts.<br><strong>Compatibility and integration</strong>: These devices are often designed to be compatible with existing tanks, tanks of different sizes, as well as infrastructure, making them suitable for retrofitting to older systems. Additionally, they support web portal integration and can often integrate with other IoT solutions or industrial control systems for domestic and commercial applications.</p>
+
+
+
+<h3 id="anchor-4">Practical Uses of liquid level monitoring system</h3>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-YVde3PFrnz6psT3DH5BZW86Z?se=2024-04-16T08%3A26%3A10Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3Dda19d292-c00c-49fb-ba32-2f848a9d8181.webp&amp;sig=SI7pwO0jyXH0pVZdak/2qXuStlzeXpPTr/oPXtcCn3A%3D" alt="" /></figure>
+
+
+
+<p><strong>Oil &amp; Energy Industry</strong><br>Crude oil and its derivatives are the lifeblood of the oil, petrol and energy industry (H/T to natural gas, but crude oil takes the cake here). We need tanks to store these liquid substances and everything they help produce.</p>
+
+
+
+<p>For example, oil, petrol and energy companies use tanks upstream for production storage, production chemicals, and fracking water management. Midstream, tanks serve as temporary storage for crude products and distributed inventory for specialty chemicals and other liquids needed for industrial processes. We also see tanks used downstream in terminal storage, tank farms, and hydrocarbon processing. On the distribution side, tanks hold fuel, lube oil, and various petrol’s products, such as liquid propane and heating oil.</p>
+
+
+
+<p>As Four you can see, tanks are important up and down the oil and energy production line. With tank level monitoring, we can efficiently track liquid hydrocarbons every step of the way.</p>
+
+
+
+<p>Here are a few examples of remote tank monitoring for Oil &amp; Energy in action:</p>
+
+
+
+<ul>
+<li>Hauling companies use smart tank sensors during custody transfers to track how much oil or water they pull from central tank batteries</li>
+
+
+
+<li>Oil and gas operators use tank level monitors to monitor chemical inventory and usage related to promoting asset integrity or maintaining flow assurance</li>
+
+
+
+<li>Commercial businesses use tank level monitors to measure diesel consumption rates for backup generators or automate stock-out notifications for underground gasoline storage tanks</li>
+</ul>
+
+
+
+<p><strong>Water &amp; Wastewater Industry</strong> <br>Water impacts every aspect of our lives, making water security a TOP priority for leaders and organizations in numerous fields. For example, we use water for fracking in large oil and gas projects. We need water to irrigate our crops, produce our food, and manufacture our favorite beverages. And the only way to ensure we have the water we need is through effective wastewater treatment!</p>
+
+
+
+<p>The wastewater treatment industry is a huge stakeholder in promoting water security, which is where remote tank monitoring comes into play. With remote tank sensors, we can monitor distributed water resources that are vital for maintaining water security.</p>
+
+
+
+<p>Here are a few examples of remote tank monitoring for wastewater treatment in action:</p>
+
+
+
+<ul>
+<li>Treatment plant operators use tank level sensors to monitor separation in quiescent basins and track disinfecting chemical supply</li>
+
+
+
+<li>Saltwater disposal facilities use tank monitoring to track liquid volumes for disposed and injected wastewater and prevent overflows in storage tanks</li>
+
+
+
+<li>Waste management companies rely on smart tank sensors to collect data around methanol usage rates for leachate treatments and prevent leaks or spills in clarifier tanks</li>
+</ul>
+
+
+
+<p><strong>Agriculture Industry</strong><br>If crude oil is the lifeblood of the energy industry, then water is the lifeblood of the agriculture industry. Obviously, plants and crops can’t grow without water.</p>
+
+
+
+<p>If we don’t keep a close eye on water storage, we run the risk of depleting our water before it’s too late to restock. Similarly, we have to stay on top of liquid fertilizer to maintain production quality and regulatory compliance. Enter remote tank level monitoring.</p>
+
+
+
+<p>Here are a few examples of remote tank monitoring for agriculture in action:</p>
+
+
+
+<ul>
+<li>Agriculture companies use tank monitors to track treatment rates for chemigation</li>
+
+
+
+<li>Operators depend on smart tank level sensors to monitor fertilizer and additives inventory for irrigation processes</li>
+
+
+
+<li>Sustainable agriculture farmers use tank monitoring to track rainwater collection and ensure livestock have enough to drink</li>
+</ul>
+
+
+
+<p><strong>Food &amp; Beverage Industry</strong> <br>Few recipes work without some type of liquid. In food and beverage production, we use liquids like water, milk, oil, dyes, and other substances that humans consume on a regular basis. And wherever we need liquids, we need tanks that we can monitor!</p>
+
+
+
+<p>With remote monitoring, we can track our liquids usage to ensure we produce high-quality food and beverages</p>
+
+
+
+<p>Here are a few examples of remote tank monitoring for Food &amp; Beverage Industry in action:</p>
+
+
+
+<ul>
+<li>Food and beverage producers use tank level monitors to monitor market-ready output of beverages</li>
+
+
+
+<li>Manufacturers use tank sensors to track the usage of additives, like dyes and emulsifiers, that are used in many food production processes</li>
+</ul>
+
+
+
+<p><strong>Chemicals Industry</strong><br>Specialty chemicals are used in countless applications and sectors. For instance, we use industrial chemicals to support production, transportation, and refinement in the oil and gas industries. Chemicals are also used in the fertilizers that we apply to crops and the additives we put in food and beverages. Chemicals, like water, are everywhere.</p>
+
+
+
+<p>As a result, tank level monitoring is an important capability for chemical businesses to have.</p>
+
+
+
+<p>Here are a few examples of remote tank monitoring for Chemicals Industry in action:</p>
+
+
+
+<ul>
+<li>Chemical manufacturers use tank level monitors to track distributed chemical inventories across large geographic footprints</li>
+
+
+
+<li>Operators use smart tank sensors to identify where their chemicals are and when stock-outs are pending</li>
+
+
+
+<li>Chemical companies use tank level monitoring to streamline inventory and supply chain management</li>
+</ul>
+
+
+
+<h3 id="anchor-5">ThingsBoard Tank Level Monitoring template</h3>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="454" src="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x454.webp" alt="" class="wp-image-4063" srcset="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x454.webp 1024w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-300x133.webp 300w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-768x341.webp 768w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1536x681.webp 1536w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-2048x908.webp 2048w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-512x227.webp 512w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-920x408.webp 920w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1600x709.webp 1600w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1920x851.webp 1920w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1.webp 2560w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong><a href="https://thingsboard.io/use-cases/tank-level-monitoring/" data-type="link" data-id="https://thingsboard.io/use-cases/tank-level-monitoring/">ThingsBoard Tank Level Monitoring template</a></strong> offers real-time insight into liquid levels, facilitating proactive management of liquid stocks and refining operational workflows. The solution provides advanced technology, including adaptable sensors and robust communication protocols, to accurately track tank liquid levels. With intuitive dashboard, users can effortlessly monitor tank state, configure measurement details and custom alerts, and track liquid consumption. Mastering liquid management processes can diminish operational disruptions and ensure continuous fuel availability, leading to streamlined operations and enhanced customer satisfaction.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>What is the Principle of Oil tank level monitoring system?</title>
+		<link>/blog/what-is-the-principle-of-oil-tank-level-monitoring-system/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=what-is-the-principle-of-oil-tank-level-monitoring-system</link>
+		
+		<dc:creator><![CDATA[Andrii Zaiko]]></dc:creator>
+		<pubDate>Wed, 17 Apr 2024 15:11:43 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Community]]></category>
+		<category><![CDATA[Guides]]></category>
+		<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Use cases]]></category>
+		<category><![CDATA[Tank level monitoring]]></category>
+		<guid isPermaLink="false">/blog/?p=4091</guid>
+
+					<description><![CDATA[Detailed explanation about oil tank level monitoring system. ThingsBoard - modern IoT visualization platform.
+]]></description>
+										<content:encoded><![CDATA[<h1 class="&lt;h2 id=&quot;”unique-id”&quot;&gt; Section Name &lt;/h2&gt; wp-block-post-title">What is the Principle of Oil tank level monitoring system?</h1>
+
+
+<div class="toc">
+<p></p>
+<ol>
+<li><a href="#anchor-1">What is oil tank level monitoring?</a></li>
+<li><a href="#anchor-2">How oil tank level monitoring system works?</a></li>
+<li><a href="#anchor-3">IoT devices for wireless oil tank monitoring</a></li>
+<li><a href="#anchor-4">Domestic oil tank monitoring &amp; Industry oil tank monitoring </a></li>
+<li><a href="#anchor-5">ThingsBoard &#8211; modern IoT visualization platform</a></li>
+</ol>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-3 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
+<h1 id="anchor-1">What is oil tank level monitoring?</h1>
+</div>
+</div>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="1024" height="1024" src="/blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3.png" alt="" class="wp-image-4134" srcset="/blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3.png 1024w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-300x300.png 300w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-150x150.png 150w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-768x768.png 768w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-148x148.png 148w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-296x296.png 296w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-512x512.png 512w, /blog/wp-content/uploads/2024/04/Oil-tank-level-monitoring-system-ThingsBoard-3-920x920.png 920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Oil tank level monitoring system is a specialized tool used to monitor and manage the amount of oil in one or more tanks. This software is important in a variety of industries, including petrochemical, heating and ventilation (HVAC), and other sectors where oil storage is a critical component of the operational process.</p>
+
+
+
+<p>Accurate tank level and volume measurement is important for businesses, especially for petrol stations that need to have the right amount of fuel on hand to avoid the risk of running out of oil or overstocking. Insufficient control of oil levels can lead to operational issues, financial losses, and pollution in cases of oil spill.</p>
+
+
+
+<p>ThingsBoard platform provides 24/7 remote oil tank level monitoring solution by collecting and pocessing tank telemetry data from variouse sensors. Dashboard shows in real time how much oil tank has right now, historical changes and predicted usage that enables efficient oil management and seamless operations. Oil tank monitoring is done through the use of smart technology, which includes flexible oil tank sensors and oil tank monitors, along with reliable communication methods to accurately monitor oil levels. With the easy-to-use dashboard, user can quickly get all the tank information: Side height, Diameter, Maximum capacity, Tank level when the sensor is installed, check the oil level, set up measurement and notification methods, and see how much oil are using. Effective oil management and alerts of predicted run-out dates will help to avoid interruptions, ensure oil availability when it is needed, improve business sustainability and ensure environmental guidelines by detecting leaks in tanks, making operations more efficient and customers happier.</p>
+
+
+
+<p>In addition, tank management system can be tailored to suit the needs of various industries and departments, inlcuding sales, manufacturing, or any other industry where need to keep a close eye on oil levels. An oil tank level monitoring system, helps in staying ahead of the competition and enhancing business efficiency by elevating to a higher level of operational effectiveness.</p>
+
+
+
+<h2 id="anchor-2">How oil tank level monitoring system works?</h2>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="1024" height="1024" src="/blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works.png" alt="" class="wp-image-4118" srcset="/blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works.png 1024w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-300x300.png 300w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-150x150.png 150w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-768x768.png 768w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-148x148.png 148w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-296x296.png 296w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-512x512.png 512w, /blog/wp-content/uploads/2024/04/How-oil-tank-level-monitoring-system-works-920x920.png 920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>There are a large number of oil level sensors available &#8211; smart Wi-Fi tank level monitoring systems, tank content gauges, visual oil level gauges, clock oil level gauges, electronic oil tank monitors, all of which perform the same function &#8211; read the contents remaining in an oil tank. The sensor is mounted on the lid of a closed tank or suspended by a rod or rope over an open tank. Once installed, the sensor is able to check the amount of liquid in the tank and related telemetry. To do this, it sends a wave through the liquid and measures the time it takes for the wave to reflect off the liquid surface. The device collects this information from the sensor and sends it to our IoT visualization platform.</p>
+
+
+
+<p>This gives the ability to monitor oil levels remotely from anywhere in the world via a web or smartphone app, making it easy to keep track of the amount of liquid in any tank.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://thingsboard.io/installations/"><img decoding="async" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEcpxjw3T4SZ8TnGmyPlofvEkHM-aLSs1SBQ&amp;s" alt="" /></a></figure>
+
+
+
+<h3 id="anchor-3">IoT devices for wireless oil tank monitoring </h3>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1024" height="1024" src="/blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring.png" alt="" class="wp-image-4120" srcset="/blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring.png 1024w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-300x300.png 300w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-150x150.png 150w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-768x768.png 768w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-148x148.png 148w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-296x296.png 296w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-512x512.png 512w, /blog/wp-content/uploads/2024/04/IoT-devices-for-wireless-oil-tank-monitoring-920x920.png 920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The use of IoT devices for wireless oil tank monitoring has many advantages over standard tank level measurement devices. They can be used to remotely control and monitor the level of oil in tanks. These devices use a variety of sensors and communication technologies to transmit data on oil level, temperature, and sometimes even oil quality to a central system or directly to users via monitoring platform in real time. Here are some of the benefits and specifications of IoT devices used for wireless oil tank monitoring:</p>
+
+
+
+<p><strong>Level sensors:</strong> These sensors measure the amount of oil in the tank for the accurate and repeatable tank level readings. The technologies used include ultrasonic, radar, and float sensors, each with its own advantages and suitable for different types of tank and oil.</p>
+
+
+
+<p><strong>Temperature sensors:</strong> Remote reading of oil tank contents helps to measure temperature, it is vital for certain types of oil, as changes in temperature can affect volume and viscosity.</p>
+
+
+
+<p><strong>Connectivity: </strong>These devices often use ethernet wireless technology such as Wi-Fi, LoRaWAN, NB-IoT or cellular networks to transmit data to a central system or cloud platform. This allows for remote monitoring and alerting.</p>
+
+
+
+<p><strong>Power supply:</strong> Many IoT devices for oil tank monitoring are designed with energy efficiency in mind. They can use batteries, solar power, or energy harvesting technologies to operate in remote or hard-to-reach locations without requiring frequent maintenance, what is very important for tanks in the field, tanks below ground, and other tanks located in the hard-to-reach places.</p>
+
+
+
+<p><strong>Integration with software: </strong>The data collected by these devices is accessible through our platform. The platform provides tank monitoring dashboard with real-time data visualization, historical trend analysis, and automated alerts for low levels or rapid changes that may indicate leakage or theft.</p>
+
+
+
+<p><strong>Critical Warnings and Alerts:</strong> Users can set thresholds for level alarms, receiving notifications via SMS, email or app when oil levels fall below a certain point or when unusual patterns are detected, allowing for timely oil refills or maintenance.</p>
+
+
+
+<p><strong>Compatibility and integration:</strong> These devices are often designed to be compatible with existing tanks, different sized tanks and manufactories infrastructure, making them suitable for retrofitting into older systems. Additionally, they supporting web portal integration and can often integrate with other IoT solutions or industrial control systems for domestic and commercial applications.</p>
+
+
+
+<h3 id="anchor-4">Domestic oil tank monitoring &amp; Industry oil tank monitoring </h3>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="493" src="/blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-1024x493.png" alt="" class="wp-image-4127" srcset="/blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-1024x493.png 1024w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-300x144.png 300w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-768x369.png 768w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-1536x739.png 1536w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-512x246.png 512w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-920x443.png 920w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-1600x770.png 1600w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1-1920x924.png 1920w, /blog/wp-content/uploads/2024/04/Domestic-oil-tank-monitoring-Industry-oil-tank-monitoring-1.png 2027w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>Industry oil tank monitoring: </strong>Tank monitoring in the oil, gas and energy industry encompasses a wide range of technologies aimed at optimizing the bulk storage, use and distribution of various oil and bulk materials. This sector requires accurate and reliable monitoring solutions due to the high volumes, potential environmental and safety risks, and economic implications of storage and distribution. Benefits of tank monitoring in the oil and energy industry:<br>&#8211; Operational Efficiency: Real-time monitoring allows for just-in-time delivery and distribution, reducing holding costs and optimising supply chains.<br>&#8211; Safety and Environmental Protection: Early detection of leaks and potential hazards minimises the risk of accidents and environmental damage.<br>&#8211; Cost Savings: By optimising inventory management and reducing the risk of spillage or contamination, companies can achieve significant cost savings.<br>&#8211; Data-Driven Decisions: Access to detailed analytics and trends enables better strategic planning and investment decisions</p>
+
+
+
+<p><strong>Domestic oil tank monitoring:</strong> involves keeping track of the oil level in home heating oil tanks to ensure a continuous heating oil supplies prevent runouts, and manage oil heating and energy needs expenses more effectively. Benefits of domestic oil tank monitoring:<br>&#8211; Convenience: Eliminates the need to manually check the oil tank level gauge, especially in adverse weather conditions or for tanks located in hard-to-reach areas.<br>&#8211; Cost savings: By understanding consumption patterns and ordering oil only when needed, homeowners can avoid unnecessary deliveries and take advantage of lower prices during off-peak periods.<br>&#8211; Peace of mind: Automatic alerts prevent supply disruptions by ensuring a continuous supply of fuel oil.<br>&#8211; Environmental impact: Effective monitoring and tracking of consumption can lead to reduced energy consumption and carbon dioxide emissions by avoiding overfilling of tanks and optimizing heating efficiency.</p>
+
+
+
+<h3 id="anchor-5">ThingsBoard &#8211; modern IoT visualisation platform</h3>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="454" src="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x454.webp" alt="" class="wp-image-4063" srcset="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x454.webp 1024w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-300x133.webp 300w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-768x341.webp 768w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1536x681.webp 1536w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-2048x908.webp 2048w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-512x227.webp 512w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-920x408.webp 920w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1600x709.webp 1600w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1920x851.webp 1920w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1.webp 2560w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><a href="https://thingsboard.io/use-cases/tank-level-monitoring/" data-type="link" data-id="thingsboard.io/use-cases/tank-level-monitoring/">Thingsboard Tank Level Monitoring solution</a> template offers real-time insight into fuel levels, facilitating proactive management of fuel stocks and refining operational workflows. The solution using advanced technology, including adaptable sensors and robust communication protocols, to accurately track tank fuel levels. With intuitive dashboard, users can effortlessly monitor tank state, configure measurement details and custom alerts, and track fuel consumption. Mastering fuel management processes can diminish operational disruptions and ensure continuous fuel availability, leading to streamlined operations and enhanced customer satisfaction.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>What is water tank level monitoring system?</title>
+		<link>/blog/what-is-water-tank-level-monitoring-system/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=what-is-water-tank-level-monitoring-system</link>
+		
+		<dc:creator><![CDATA[Andrii Zaiko]]></dc:creator>
+		<pubDate>Wed, 17 Apr 2024 12:50:47 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Community]]></category>
+		<category><![CDATA[Guides]]></category>
+		<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Use cases]]></category>
+		<category><![CDATA[Tank level monitoring]]></category>
+		<guid isPermaLink="false">/blog/?p=4230</guid>
+
+					<description><![CDATA[What is Water tank level monitoring system? Smart water tank level monitoring system Remote water level monitoring What&#8230;]]></description>
+										<content:encoded><![CDATA[<h1 class="&lt;h2 id=&quot;”unique-id”&quot;&gt; Section Name &lt;/h2&gt; wp-block-post-title">What is water tank level monitoring system?</h1>
+
+
+<div class="toc">
+<p></p>
+<ol>
+<li><a href="#anchor-1">What is Water tank level monitoring system?</a></li>
+<li><a href="#anchor-2">Smart water tank level monitoring system</a></li>
+<li><a href="#anchor-3">Remote water level monitoring</a></li>
+</ol>
+</div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-4 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
+<h1 id="anchor-1">What is Water tank level monitoring system?</h1>
+</div>
+</div>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-4QX3j0cbycThQYLzu7rqyKos?se=2024-04-16T08%3A27%3A59Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3D7cf434e8-cde8-41dd-8d9d-27f5dfe9fe5c.webp&amp;sig=eAdGB0B3GjU2WyIFNZEIXwPAxNrv5paqaxzRUyCm1FI%3D" alt="" /></figure>
+
+
+
+<p><strong><a href="https://TLM/ Generic">Water tank level monitoring system</a> </strong>is holistic solution which consist of software and hardware implementation for receiving telemetry data from overhead, open top-tanks and underground water tanks. Water tank monitoring system<strong> </strong>assume IoT devices usage and different types of connectivity such as wireless Ethernet technologies &#8211; Wi-Fi, LoRaWAN, NB-IoT, or cellular and radio networks to transmit data to a central system or cloud-based platform. IoT sensors can be placed inside or outside the water tank. The pre-established range of low/high thresholds allows the system create alerts and quickly send notifications via SMS, email or push-notification to mobile phone, tablet or PC. The main goal of water tank monitoring system is effective real-time resource management.</p>
+
+
+
+<p>Every business wants to avoid risks of water spills and leaks, water turbidity, control necessary water pH level, temperature, TDS and conductivity. Such system become more and more popular in industrial, commercial and residential usage. TLM system helps monitor tank content and check if tank is overfilled<strong> </strong>or otherwise &#8211;<strong> </strong>underutilized<strong>, </strong>this information allow business maximise effectiveness of tank usage and save money.<br>Water tank level control system covers different areas of usage:</p>
+
+
+
+<ul>
+<li>Water &amp; Wastewater industry. The main objective of wastewater management is to achieve water purity through methods such as settling, filtration and screening. IoT indicators in this case control all the important information about the quality of the water.</li>
+
+
+
+<li>Agriculture. Farmers use TLM system to control water tanks in field which is important water source for their irrigation system<strong> </strong>where natural water sources and rainfall is not enough.</li>
+
+
+
+<li>Food &amp; Beverage. Food and beverage production require tanks to store consumers products like drinking water, milk, cooking oil, different dyes. IoT monitors in this case help manufacturers track volume and quality of <a href="https://TLM/ liquids">liquids</a> in tanks.</li>
+</ul>
+
+
+
+<h2 id="anchor-2">Smart water tank level monitoring system</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-YKL7OQvtQspvAS1GT2fXrQul?se=2024-04-16T08%3A28%3A28Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3De643dc0e-9df6-4fec-80da-4a68a4033f65.webp&amp;sig=6BQ/a7fuNX8AJMWxJjXwcWQn9ufSWGa4lTZOnNM4AVM%3D" alt="" /></figure>
+
+
+
+<p>Let&#8217;s take a closer look at a smart tank level monitoring system. Smart TLM allows track not only water tank but also a pump. Today most of IoT sensors developed to track water tank data in almost any weather conditions. All types of IoT devices resolve the one main thing &#8211; read content in water tank.</p>
+
+
+
+<p>There are a few widely used types of IoT sensors:</p>
+
+
+
+<ul>
+<li>hydrostatic sensors</li>
+
+
+
+<li>ultrasonic sensors</li>
+
+
+
+<li>radar sensors</li>
+
+
+
+<li>float sensors</li>
+
+
+
+<li>capacitive sensors</li>
+</ul>
+
+
+
+<p>IoT sensors can be used for simple<strong> </strong>water tank monitoring, multiple water tanks with mesh network of sensors,<strong> </strong>frac tanks monitoring,<strong> </strong>as well as<strong> </strong>water capacity monitoring in a dam.</p>
+
+
+
+<p>The use of various IoT indicators in the tank water level control system helps to monitor:</p>
+
+
+
+<ul>
+<li>Water Temperature</li>
+
+
+
+<li>Water Pressure</li>
+
+
+
+<li>Water pH level</li>
+
+
+
+<li>Water salinity</li>
+
+
+
+<li>Oxidation-reduction potential (ORP)</li>
+
+
+
+<li>Total dissolved solids (TDS)</li>
+
+
+
+<li>Conductivity</li>
+
+
+
+<li>Water turbidity (water clarity)</li>
+</ul>
+
+
+
+<p>There is a possibility to track not only water tanks but also pressure of water pump<strong> </strong>and use<strong> </strong>smart switch which operates in automatic mode &#8211; when the water level is low, the switch automatically turns on the pump, and when the water level in the tank is full, the switch turns off the water supply.</p>
+
+
+
+<p>Besides IoT monitors smart water wireless monitoring system include next necessary components:</p>
+
+
+
+<p><strong>Power supply</strong>: In most cases IoT devices are energy efficient and do not require a lot of power. The are two popular types of power supply &#8211; batteries with high energy density and high voltage (lithium batteries) and energy harvesting technologies for extracting power from the surrounding environment such as solar energy, thermal energy, mechanical energy, environmental energy.</p>
+
+
+
+<p><strong>Connectivity</strong>: There are two popular types of wireless IoT device connection to IoT visualization software. The first one is Local area networks (LAN) using Wi-Fi for short-range communications . The second is wide area networks (WAN) using cellular (NB-IoT), satellite communication and radio network (LoRaWAN, Sigfox) for wide-range communications.<br>Integration with<strong> </strong>IoT Visualization software.<strong> </strong>Once IoT devices are connected and powered up, the last step is to integrate them with IoT visualisation software to get a picture of the water tank&#8217;s content. <strong><a href="https://TLM/ Generic">ThingsBoard</a></strong> is IoT visualisation platform which provides a tank monitoring dashboards with real-time data visualisation, trend analysis, usage history. Ready to use Water Level Monitoring template allows easily monitor the status of the tank, set up measurement details and custom automatic alerts like low water levels, opening and closing pumps and valves to detect leaks or theft, also track water consumption.</p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://thingsboard.io/installations/"><img decoding="async" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEcpxjw3T4SZ8TnGmyPlofvEkHM-aLSs1SBQ&amp;s" alt="" /></a></figure>
+
+
+
+<h3 id="anchor-3">Remote water level monitoring</h3>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" src="https://files.oaiusercontent.com/file-9vam4ou7N6XUyWYTE9pHdp9h?se=2024-04-16T08%3A29%3A41Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscc=max-age%3D31536000%2C%20immutable&amp;rscd=attachment%3B%20filename%3D8525890e-fc99-4635-86af-de1c5342a1ec.webp&amp;sig=oRuvoE/qGeNxl%2BymeJgl/Bbn/NgYI%2BvR1bkp%2Bzw01Wo%3D" alt="" /></figure>
+
+
+
+<p>A remote water level monitoring system collects data on the status of water tanks 24/7. The type of TLM vary depending on the industrial, commercial or domestic use.<br><br>There are different types of domestic water tanks: overhead water tanks that install on the rooftop, open top-tanks installed on ground and underground water tanks. All this water tanks accomplish one main goal &#8211; supply house with necessary amount of water.<br>In domestic usage IoT device connectivity via Wi-Fi connection will be good choice for short-range communications within a specific location. TLM system provide convenient possibility to monitor water tank via Mobile App, tablet or Web Interface using PC.</p>
+
+
+
+<p>In commercial usage water tanks are commonly used by water delivery companies to track the quality of the water delivered, as well as by health resorts to store sufficient amount of drinking water. In this case, IoT sensors that support wireless radio communication may be more appropriate, as companies often need to continuously monitor water condition even in rural areas where cellular coverage is limited.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</title>
-		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/</link>
+		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more</link>
 					<comments>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/#respond</comments>
 		
 		<dc:creator><![CDATA[Dima Landiak]]></dc:creator>
 		<pubDate>Tue, 02 Apr 2024 08:48:23 +0000</pubDate>
 				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3965</guid>
+		<guid isPermaLink="false">/blog/?p=3965</guid>
 
 					<description><![CDATA[We&#8217;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -35,11 +748,11 @@
 
 
 
-<h4 class="wp-block-heading">WebSocket Client</h4>
+<h1 class="wp-block-heading">WebSocket Client</h1>
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="713" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/table-1024x713.webp" alt="" class="wp-image-4030" srcset="/blog/wp-content/uploads/2024/04/table-1024x713.webp 1024w, /blog/wp-content/uploads/2024/04/table-300x209.webp 300w, /blog/wp-content/uploads/2024/04/table-768x535.webp 768w, /blog/wp-content/uploads/2024/04/table-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/04/table-512x356.webp 512w, /blog/wp-content/uploads/2024/04/table-920x640.webp 920w, /blog/wp-content/uploads/2024/04/table-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/04/table.webp 1606w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="713" src="/blog/wp-content/uploads/2024/04/table-1024x713.webp" alt="" class="wp-image-4030" srcset="/blog/wp-content/uploads/2024/04/table-1024x713.webp 1024w, /blog/wp-content/uploads/2024/04/table-300x209.webp 300w, /blog/wp-content/uploads/2024/04/table-768x535.webp 768w, /blog/wp-content/uploads/2024/04/table-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/04/table-512x356.webp 512w, /blog/wp-content/uploads/2024/04/table-920x640.webp 920w, /blog/wp-content/uploads/2024/04/table-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/04/table.webp 1606w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -73,7 +786,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="365" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/flow-control2-2-1024x365.png" alt="" class="wp-image-4028" srcset="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png 1024w, /blog/wp-content/uploads/2024/04/flow-control2-2-300x107.png 300w, /blog/wp-content/uploads/2024/04/flow-control2-2-768x274.png 768w, /blog/wp-content/uploads/2024/04/flow-control2-2-1536x547.png 1536w, /blog/wp-content/uploads/2024/04/flow-control2-2-2048x729.png 2048w, /blog/wp-content/uploads/2024/04/flow-control2-2-512x182.png 512w, /blog/wp-content/uploads/2024/04/flow-control2-2-920x328.png 920w, /blog/wp-content/uploads/2024/04/flow-control2-2-1600x570.png 1600w, /blog/wp-content/uploads/2024/04/flow-control2-2-3200x1140.png 3200w, /blog/wp-content/uploads/2024/04/flow-control2-2-1920x684.png 1920w, /blog/wp-content/uploads/2024/04/flow-control2-2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="365" src="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png" alt="" class="wp-image-4028" srcset="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png 1024w, /blog/wp-content/uploads/2024/04/flow-control2-2-300x107.png 300w, /blog/wp-content/uploads/2024/04/flow-control2-2-768x274.png 768w, /blog/wp-content/uploads/2024/04/flow-control2-2-1536x547.png 1536w, /blog/wp-content/uploads/2024/04/flow-control2-2-2048x729.png 2048w, /blog/wp-content/uploads/2024/04/flow-control2-2-512x182.png 512w, /blog/wp-content/uploads/2024/04/flow-control2-2-920x328.png 920w, /blog/wp-content/uploads/2024/04/flow-control2-2-1600x570.png 1600w, /blog/wp-content/uploads/2024/04/flow-control2-2-3200x1140.png 3200w, /blog/wp-content/uploads/2024/04/flow-control2-2-1920x684.png 1920w, /blog/wp-content/uploads/2024/04/flow-control2-2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -111,7 +824,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="428" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/request-response2-1024x428.png" alt="" class="wp-image-4029" srcset="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png 1024w, /blog/wp-content/uploads/2024/04/request-response2-300x126.png 300w, /blog/wp-content/uploads/2024/04/request-response2-768x321.png 768w, /blog/wp-content/uploads/2024/04/request-response2-1536x643.png 1536w, /blog/wp-content/uploads/2024/04/request-response2-2048x857.png 2048w, /blog/wp-content/uploads/2024/04/request-response2-512x214.png 512w, /blog/wp-content/uploads/2024/04/request-response2-920x385.png 920w, /blog/wp-content/uploads/2024/04/request-response2-1600x669.png 1600w, /blog/wp-content/uploads/2024/04/request-response2-3200x1339.png 3200w, /blog/wp-content/uploads/2024/04/request-response2-1920x803.png 1920w, /blog/wp-content/uploads/2024/04/request-response2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="428" src="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png" alt="" class="wp-image-4029" srcset="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png 1024w, /blog/wp-content/uploads/2024/04/request-response2-300x126.png 300w, /blog/wp-content/uploads/2024/04/request-response2-768x321.png 768w, /blog/wp-content/uploads/2024/04/request-response2-1536x643.png 1536w, /blog/wp-content/uploads/2024/04/request-response2-2048x857.png 2048w, /blog/wp-content/uploads/2024/04/request-response2-512x214.png 512w, /blog/wp-content/uploads/2024/04/request-response2-920x385.png 920w, /blog/wp-content/uploads/2024/04/request-response2-1600x669.png 1600w, /blog/wp-content/uploads/2024/04/request-response2-3200x1339.png 3200w, /blog/wp-content/uploads/2024/04/request-response2-1920x803.png 1920w, /blog/wp-content/uploads/2024/04/request-response2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -157,7 +870,7 @@
 			</item>
 		<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
-		<link>/blog/top-supplier-retail-2024-2/</link>
+		<link>/blog/top-supplier-retail-2024-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=top-supplier-retail-2024-2</link>
 					<comments>/blog/top-supplier-retail-2024-2/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
@@ -165,7 +878,7 @@
 				<category><![CDATA[Company]]></category>
 		<category><![CDATA[Solutions]]></category>
 		<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">/blog/?p=3972</guid>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=3972</guid>
 
 					<description><![CDATA[A new achievement and what does it mean to all ]]></description>
 										<content:encoded><![CDATA[
@@ -231,13 +944,13 @@
 			</item>
 		<item>
 		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
-		<link>/blog/thingsboard-release-3-6-3-announcement/</link>
+		<link>/blog/thingsboard-release-3-6-3-announcement/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=thingsboard-release-3-6-3-announcement</link>
 					<comments>/blog/thingsboard-release-3-6-3-announcement/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 18 Mar 2024 15:00:40 +0000</pubDate>
 				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">/blog/?p=3625</guid>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=3625</guid>
 
 					<description><![CDATA[We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -251,7 +964,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app_.webp" alt="" class="wp-image-3928" srcset="/blog/wp-content/uploads/2024/03/Notifications-to-app_.webp 2409w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-300x116.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1024x397.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-768x297.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1536x595.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-2048x793.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-512x198.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-920x356.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1600x620.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1920x744.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="933" src="/blog/wp-content/uploads/2024/03/Notifications-to-app_.webp" alt="" class="wp-image-3928" srcset="/blog/wp-content/uploads/2024/03/Notifications-to-app_.webp 2409w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-300x116.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1024x397.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-768x297.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1536x595.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-2048x793.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-512x198.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-920x356.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1600x620.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1920x744.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -263,7 +976,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1290" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets_.webp" alt="" class="wp-image-3931" srcset="/blog/wp-content/uploads/2024/03/Chart-widgets_.webp 2406w, /blog/wp-content/uploads/2024/03/Chart-widgets_-300x161.webp 300w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1024x549.webp 1024w, /blog/wp-content/uploads/2024/03/Chart-widgets_-768x412.webp 768w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1536x824.webp 1536w, /blog/wp-content/uploads/2024/03/Chart-widgets_-2048x1098.webp 2048w, /blog/wp-content/uploads/2024/03/Chart-widgets_-512x275.webp 512w, /blog/wp-content/uploads/2024/03/Chart-widgets_-920x493.webp 920w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1600x858.webp 1600w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1920x1029.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1290" src="/blog/wp-content/uploads/2024/03/Chart-widgets_.webp" alt="" class="wp-image-3931" srcset="/blog/wp-content/uploads/2024/03/Chart-widgets_.webp 2406w, /blog/wp-content/uploads/2024/03/Chart-widgets_-300x161.webp 300w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1024x549.webp 1024w, /blog/wp-content/uploads/2024/03/Chart-widgets_-768x412.webp 768w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1536x824.webp 1536w, /blog/wp-content/uploads/2024/03/Chart-widgets_-2048x1098.webp 2048w, /blog/wp-content/uploads/2024/03/Chart-widgets_-512x275.webp 512w, /blog/wp-content/uploads/2024/03/Chart-widgets_-920x493.webp 920w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1600x858.webp 1600w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1920x1029.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -275,7 +988,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1773" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp" alt="Form with seven options which configure grouping intervals for dashboard time window " class="wp-image-3793" srcset="/blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp 2406w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-300x221.webp 300w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1024x755.webp 1024w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-768x566.webp 768w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1536x1132.webp 1536w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-2048x1509.webp 2048w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-512x377.webp 512w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-920x678.webp 920w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1600x1179.webp 1600w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1920x1415.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1773" src="/blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp" alt="Form with seven options which configure grouping intervals for dashboard time window " class="wp-image-3793" srcset="/blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp 2406w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-300x221.webp 300w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1024x755.webp 1024w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-768x566.webp 768w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1536x1132.webp 1536w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-2048x1509.webp 2048w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-512x377.webp 512w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-920x678.webp 920w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1600x1179.webp 1600w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1920x1415.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -287,11 +1000,11 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="263" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.webp" alt="Five blocks with icons and text" class="wp-image-3794" srcset="/blog/wp-content/uploads/2024/03/Button-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Button-widgets-300x98.webp 300w, /blog/wp-content/uploads/2024/03/Button-widgets-768x252.webp 768w, /blog/wp-content/uploads/2024/03/Button-widgets-512x168.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="263" src="/blog/wp-content/uploads/2024/03/Button-widgets.webp" alt="Five blocks with icons and text" class="wp-image-3794" srcset="/blog/wp-content/uploads/2024/03/Button-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Button-widgets-300x98.webp 300w, /blog/wp-content/uploads/2024/03/Button-widgets-768x252.webp 768w, /blog/wp-content/uploads/2024/03/Button-widgets-512x168.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
 
 
 
-<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://thingsboard.io/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://thingsboard.io/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
 
 
 
@@ -299,7 +1012,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="305" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.webp" alt="Three blocks with toggle button and one with slider" class="wp-image-3795" srcset="/blog/wp-content/uploads/2024/03/Control-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Control-widgets-300x114.webp 300w, /blog/wp-content/uploads/2024/03/Control-widgets-768x292.webp 768w, /blog/wp-content/uploads/2024/03/Control-widgets-512x195.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="305" src="/blog/wp-content/uploads/2024/03/Control-widgets.webp" alt="Three blocks with toggle button and one with slider" class="wp-image-3795" srcset="/blog/wp-content/uploads/2024/03/Control-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Control-widgets-300x114.webp 300w, /blog/wp-content/uploads/2024/03/Control-widgets-768x292.webp 768w, /blog/wp-content/uploads/2024/03/Control-widgets-512x195.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
 
 
 
@@ -325,13 +1038,13 @@
 			</item>
 		<item>
 		<title>Push notifications to ThingsBoard mobile apps</title>
-		<link>/blog/push-notifications-to-thingsboard-mobile-apps/</link>
+		<link>/blog/push-notifications-to-thingsboard-mobile-apps/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=push-notifications-to-thingsboard-mobile-apps</link>
 					<comments>/blog/push-notifications-to-thingsboard-mobile-apps/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Thu, 14 Mar 2024 15:17:58 +0000</pubDate>
 				<category><![CDATA[Tech]]></category>
-		<guid isPermaLink="false">/blog/?p=3706</guid>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=3706</guid>
 
 					<description><![CDATA[Now, you can receive instant alerts and updates directly on your smartphone, making it easier than ever to&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -363,7 +1076,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1920" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Sending-Notifications-Manually-1.webp" alt="Thingsboard edit rule settings form with eight fields" class="wp-image-3870" srcset="/blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1.webp 2409w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-300x239.webp 300w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1024x816.webp 1024w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-768x612.webp 768w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1536x1224.webp 1536w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-2048x1632.webp 2048w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-512x408.webp 512w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-920x733.webp 920w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1600x1275.webp 1600w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1920x1530.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1920" src="/blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1.webp" alt="Thingsboard edit rule settings form with eight fields" class="wp-image-3870" srcset="/blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1.webp 2409w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-300x239.webp 300w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1024x816.webp 1024w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-768x612.webp 768w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1536x1224.webp 1536w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-2048x1632.webp 2048w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-512x408.webp 512w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-920x733.webp 920w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1600x1275.webp 1600w, /blog/wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1920x1530.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -371,7 +1084,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2070" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/new-notification-1.webp" alt="Thingsboard new notification settings form with four fields" class="wp-image-3871" srcset="/blog/wp-content/uploads/2024/03/new-notification-1.webp 2409w, /blog/wp-content/uploads/2024/03/new-notification-1-300x258.webp 300w, /blog/wp-content/uploads/2024/03/new-notification-1-1024x880.webp 1024w, /blog/wp-content/uploads/2024/03/new-notification-1-768x660.webp 768w, /blog/wp-content/uploads/2024/03/new-notification-1-1536x1320.webp 1536w, /blog/wp-content/uploads/2024/03/new-notification-1-2048x1760.webp 2048w, /blog/wp-content/uploads/2024/03/new-notification-1-512x440.webp 512w, /blog/wp-content/uploads/2024/03/new-notification-1-920x791.webp 920w, /blog/wp-content/uploads/2024/03/new-notification-1-1600x1375.webp 1600w, /blog/wp-content/uploads/2024/03/new-notification-1-1920x1650.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2070" src="/blog/wp-content/uploads/2024/03/new-notification-1.webp" alt="Thingsboard new notification settings form with four fields" class="wp-image-3871" srcset="/blog/wp-content/uploads/2024/03/new-notification-1.webp 2409w, /blog/wp-content/uploads/2024/03/new-notification-1-300x258.webp 300w, /blog/wp-content/uploads/2024/03/new-notification-1-1024x880.webp 1024w, /blog/wp-content/uploads/2024/03/new-notification-1-768x660.webp 768w, /blog/wp-content/uploads/2024/03/new-notification-1-1536x1320.webp 1536w, /blog/wp-content/uploads/2024/03/new-notification-1-2048x1760.webp 2048w, /blog/wp-content/uploads/2024/03/new-notification-1-512x440.webp 512w, /blog/wp-content/uploads/2024/03/new-notification-1-920x791.webp 920w, /blog/wp-content/uploads/2024/03/new-notification-1-1600x1375.webp 1600w, /blog/wp-content/uploads/2024/03/new-notification-1-1920x1650.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -393,7 +1106,7 @@
 
 
 
-<figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="880" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/notification-mobile-2-1024x880.webp" alt="Smartphone with thingsboard notifications on the screen" class="wp-image-3872" style="width:801px;height:auto" srcset="/blog/wp-content/uploads/2024/03/notification-mobile-2-1024x880.webp 1024w, /blog/wp-content/uploads/2024/03/notification-mobile-2-300x258.webp 300w, /blog/wp-content/uploads/2024/03/notification-mobile-2-768x660.webp 768w, /blog/wp-content/uploads/2024/03/notification-mobile-2-1536x1320.webp 1536w, /blog/wp-content/uploads/2024/03/notification-mobile-2-2048x1760.webp 2048w, /blog/wp-content/uploads/2024/03/notification-mobile-2-512x440.webp 512w, /blog/wp-content/uploads/2024/03/notification-mobile-2-920x791.webp 920w, /blog/wp-content/uploads/2024/03/notification-mobile-2-1600x1375.webp 1600w, /blog/wp-content/uploads/2024/03/notification-mobile-2-1920x1650.webp 1920w, /blog/wp-content/uploads/2024/03/notification-mobile-2.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="880" src="/blog/wp-content/uploads/2024/03/notification-mobile-2-1024x880.webp" alt="Smartphone with thingsboard notifications on the screen" class="wp-image-3872" style="width:801px;height:auto" srcset="/blog/wp-content/uploads/2024/03/notification-mobile-2-1024x880.webp 1024w, /blog/wp-content/uploads/2024/03/notification-mobile-2-300x258.webp 300w, /blog/wp-content/uploads/2024/03/notification-mobile-2-768x660.webp 768w, /blog/wp-content/uploads/2024/03/notification-mobile-2-1536x1320.webp 1536w, /blog/wp-content/uploads/2024/03/notification-mobile-2-2048x1760.webp 2048w, /blog/wp-content/uploads/2024/03/notification-mobile-2-512x440.webp 512w, /blog/wp-content/uploads/2024/03/notification-mobile-2-920x791.webp 920w, /blog/wp-content/uploads/2024/03/notification-mobile-2-1600x1375.webp 1600w, /blog/wp-content/uploads/2024/03/notification-mobile-2-1920x1650.webp 1920w, /blog/wp-content/uploads/2024/03/notification-mobile-2.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -405,7 +1118,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2466" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-rule-1.webp" alt="Thingsboard edit rule settings form with six fields" class="wp-image-3873" srcset="/blog/wp-content/uploads/2024/03/Edit-rule-1.webp 2409w, /blog/wp-content/uploads/2024/03/Edit-rule-1-293x300.webp 293w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1000x1024.webp 1000w, /blog/wp-content/uploads/2024/03/Edit-rule-1-768x786.webp 768w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1500x1536.webp 1500w, /blog/wp-content/uploads/2024/03/Edit-rule-1-2001x2048.webp 2001w, /blog/wp-content/uploads/2024/03/Edit-rule-1-512x524.webp 512w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1024x1048.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-rule-1-920x942.webp 920w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1600x1638.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1920x1965.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2466" src="/blog/wp-content/uploads/2024/03/Edit-rule-1.webp" alt="Thingsboard edit rule settings form with six fields" class="wp-image-3873" srcset="/blog/wp-content/uploads/2024/03/Edit-rule-1.webp 2409w, /blog/wp-content/uploads/2024/03/Edit-rule-1-293x300.webp 293w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1000x1024.webp 1000w, /blog/wp-content/uploads/2024/03/Edit-rule-1-768x786.webp 768w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1500x1536.webp 1500w, /blog/wp-content/uploads/2024/03/Edit-rule-1-2001x2048.webp 2001w, /blog/wp-content/uploads/2024/03/Edit-rule-1-512x524.webp 512w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1024x1048.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-rule-1-920x942.webp 920w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1600x1638.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-rule-1-1920x1965.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -413,7 +1126,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1977" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-notification-template-01-1.webp" alt="Thingsboard edit notification template settings form with eight fields" class="wp-image-3874" srcset="/blog/wp-content/uploads/2024/03/Edit-notification-template-01-1.webp 2409w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-300x246.webp 300w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1024x840.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-768x630.webp 768w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1536x1261.webp 1536w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-2048x1681.webp 2048w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-512x420.webp 512w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-920x755.webp 920w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1600x1313.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1920x1576.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1977" src="/blog/wp-content/uploads/2024/03/Edit-notification-template-01-1.webp" alt="Thingsboard edit notification template settings form with eight fields" class="wp-image-3874" srcset="/blog/wp-content/uploads/2024/03/Edit-notification-template-01-1.webp 2409w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-300x246.webp 300w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1024x840.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-768x630.webp 768w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1536x1261.webp 1536w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-2048x1681.webp 2048w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-512x420.webp 512w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-920x755.webp 920w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1600x1313.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-notification-template-01-1-1920x1576.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -421,7 +1134,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2040" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-notification-template-02-1.webp" alt="Thingsboard edit notification template settings form with four fields" class="wp-image-3875" srcset="/blog/wp-content/uploads/2024/03/Edit-notification-template-02-1.webp 2409w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-300x254.webp 300w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1024x867.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-768x650.webp 768w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1536x1301.webp 1536w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-2048x1734.webp 2048w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-512x434.webp 512w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-920x779.webp 920w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1600x1355.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1920x1626.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2040" src="/blog/wp-content/uploads/2024/03/Edit-notification-template-02-1.webp" alt="Thingsboard edit notification template settings form with four fields" class="wp-image-3875" srcset="/blog/wp-content/uploads/2024/03/Edit-notification-template-02-1.webp 2409w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-300x254.webp 300w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1024x867.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-768x650.webp 768w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1536x1301.webp 1536w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-2048x1734.webp 2048w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-512x434.webp 512w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-920x779.webp 920w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1600x1355.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-notification-template-02-1-1920x1626.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -429,7 +1142,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="880" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-03-1-1024x880.webp" alt="Smartphone with thingsboard alarm notifications on the screen" class="wp-image-3876" srcset="/blog/wp-content/uploads/2024/03/Notifications-03-1-1024x880.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-03-1-300x258.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-03-1-768x660.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-03-1-1536x1320.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-03-1-2048x1760.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-03-1-512x440.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-03-1-920x791.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-03-1-1600x1375.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-03-1-1920x1650.webp 1920w, /blog/wp-content/uploads/2024/03/Notifications-03-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="880" src="/blog/wp-content/uploads/2024/03/Notifications-03-1-1024x880.webp" alt="Smartphone with thingsboard alarm notifications on the screen" class="wp-image-3876" srcset="/blog/wp-content/uploads/2024/03/Notifications-03-1-1024x880.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-03-1-300x258.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-03-1-768x660.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-03-1-1536x1320.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-03-1-2048x1760.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-03-1-512x440.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-03-1-920x791.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-03-1-1600x1375.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-03-1-1920x1650.webp 1920w, /blog/wp-content/uploads/2024/03/Notifications-03-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -457,7 +1170,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-04-1-1024x902.webp" alt="Two smartphones with thingsboard alarm notifications on the screens" class="wp-image-3877" srcset="/blog/wp-content/uploads/2024/03/Notifications-04-1-1024x902.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-04-1-300x264.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-04-1-768x676.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-04-1-1536x1352.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-04-1-2048x1803.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-04-1-512x451.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-04-1-920x810.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-04-1-1600x1409.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-04-1-1920x1690.webp 1920w, /blog/wp-content/uploads/2024/03/Notifications-04-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="902" src="/blog/wp-content/uploads/2024/03/Notifications-04-1-1024x902.webp" alt="Two smartphones with thingsboard alarm notifications on the screens" class="wp-image-3877" srcset="/blog/wp-content/uploads/2024/03/Notifications-04-1-1024x902.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-04-1-300x264.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-04-1-768x676.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-04-1-1536x1352.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-04-1-2048x1803.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-04-1-512x451.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-04-1-920x810.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-04-1-1600x1409.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-04-1-1920x1690.webp 1920w, /blog/wp-content/uploads/2024/03/Notifications-04-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -479,13 +1192,13 @@
 			</item>
 		<item>
 		<title>Enhancing IoT data visualization: Introducing new time series charts</title>
-		<link>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/</link>
+		<link>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=enhancing-iot-data-visualization-introducing-new-time-series-charts</link>
 					<comments>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Tue, 12 Mar 2024 16:38:09 +0000</pubDate>
 				<category><![CDATA[Tech]]></category>
-		<guid isPermaLink="false">/blog/?p=3649</guid>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=3649</guid>
 
 					<description><![CDATA[Since launching, our time-series charts have grown a lot but have become harder to configure due to many&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -501,7 +1214,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="766" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Time-series-chart-family-5-1024x766.webp" alt="Four charts with statistics and legend" class="wp-image-3725" srcset="/blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1024x766.webp 1024w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-300x225.webp 300w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-768x575.webp 768w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1536x1150.webp 1536w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-2048x1533.webp 2048w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-512x383.webp 512w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-920x689.webp 920w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1600x1198.webp 1600w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1920x1437.webp 1920w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="766" src="/blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1024x766.webp" alt="Four charts with statistics and legend" class="wp-image-3725" srcset="/blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1024x766.webp 1024w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-300x225.webp 300w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-768x575.webp 768w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1536x1150.webp 1536w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-2048x1533.webp 2048w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-512x383.webp 512w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-920x689.webp 920w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1600x1198.webp 1600w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5-1920x1437.webp 1920w, /blog/wp-content/uploads/2024/03/Time-series-chart-family-5.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -513,7 +1226,7 @@
 
 
 
-<figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="412" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Time-window-and-data-source-2-1024x412.webp" alt="Thingsboard time window and data source configurations" class="wp-image-3749" style="width:798px;height:auto" srcset="/blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1024x412.webp 1024w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-300x121.webp 300w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-768x309.webp 768w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1536x618.webp 1536w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-2048x824.webp 2048w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-512x206.webp 512w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-920x370.webp 920w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1600x644.webp 1600w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1920x772.webp 1920w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="412" src="/blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1024x412.webp" alt="Thingsboard time window and data source configurations" class="wp-image-3749" style="width:798px;height:auto" srcset="/blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1024x412.webp 1024w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-300x121.webp 300w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-768x309.webp 768w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1536x618.webp 1536w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-2048x824.webp 2048w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-512x206.webp 512w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-920x370.webp 920w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1600x644.webp 1600w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2-1920x772.webp 1920w, /blog/wp-content/uploads/2024/03/Time-window-and-data-source-2.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -525,7 +1238,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="404" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Y-axes_1-1024x404.webp" alt="Thingsboard Y-axes setup with default configuration" class="wp-image-3728" srcset="/blog/wp-content/uploads/2024/03/Y-axes_1-1024x404.webp 1024w, /blog/wp-content/uploads/2024/03/Y-axes_1-300x118.webp 300w, /blog/wp-content/uploads/2024/03/Y-axes_1-768x303.webp 768w, /blog/wp-content/uploads/2024/03/Y-axes_1-1536x606.webp 1536w, /blog/wp-content/uploads/2024/03/Y-axes_1-2048x808.webp 2048w, /blog/wp-content/uploads/2024/03/Y-axes_1-512x202.webp 512w, /blog/wp-content/uploads/2024/03/Y-axes_1-920x363.webp 920w, /blog/wp-content/uploads/2024/03/Y-axes_1-1600x632.webp 1600w, /blog/wp-content/uploads/2024/03/Y-axes_1-1920x758.webp 1920w, /blog/wp-content/uploads/2024/03/Y-axes_1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="404" src="/blog/wp-content/uploads/2024/03/Y-axes_1-1024x404.webp" alt="Thingsboard Y-axes setup with default configuration" class="wp-image-3728" srcset="/blog/wp-content/uploads/2024/03/Y-axes_1-1024x404.webp 1024w, /blog/wp-content/uploads/2024/03/Y-axes_1-300x118.webp 300w, /blog/wp-content/uploads/2024/03/Y-axes_1-768x303.webp 768w, /blog/wp-content/uploads/2024/03/Y-axes_1-1536x606.webp 1536w, /blog/wp-content/uploads/2024/03/Y-axes_1-2048x808.webp 2048w, /blog/wp-content/uploads/2024/03/Y-axes_1-512x202.webp 512w, /blog/wp-content/uploads/2024/03/Y-axes_1-920x363.webp 920w, /blog/wp-content/uploads/2024/03/Y-axes_1-1600x632.webp 1600w, /blog/wp-content/uploads/2024/03/Y-axes_1-1920x758.webp 1920w, /blog/wp-content/uploads/2024/03/Y-axes_1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -575,7 +1288,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="409" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Series-1024x409.webp" alt="Thingsboard series table with default config" class="wp-image-3729" srcset="/blog/wp-content/uploads/2024/03/Series-1024x409.webp 1024w, /blog/wp-content/uploads/2024/03/Series-300x120.webp 300w, /blog/wp-content/uploads/2024/03/Series-768x307.webp 768w, /blog/wp-content/uploads/2024/03/Series-1536x614.webp 1536w, /blog/wp-content/uploads/2024/03/Series-2048x819.webp 2048w, /blog/wp-content/uploads/2024/03/Series-512x205.webp 512w, /blog/wp-content/uploads/2024/03/Series-920x368.webp 920w, /blog/wp-content/uploads/2024/03/Series-1600x640.webp 1600w, /blog/wp-content/uploads/2024/03/Series-1920x768.webp 1920w, /blog/wp-content/uploads/2024/03/Series.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="409" src="/blog/wp-content/uploads/2024/03/Series-1024x409.webp" alt="Thingsboard series table with default config" class="wp-image-3729" srcset="/blog/wp-content/uploads/2024/03/Series-1024x409.webp 1024w, /blog/wp-content/uploads/2024/03/Series-300x120.webp 300w, /blog/wp-content/uploads/2024/03/Series-768x307.webp 768w, /blog/wp-content/uploads/2024/03/Series-1536x614.webp 1536w, /blog/wp-content/uploads/2024/03/Series-2048x819.webp 2048w, /blog/wp-content/uploads/2024/03/Series-512x205.webp 512w, /blog/wp-content/uploads/2024/03/Series-920x368.webp 920w, /blog/wp-content/uploads/2024/03/Series-1600x640.webp 1600w, /blog/wp-content/uploads/2024/03/Series-1920x768.webp 1920w, /blog/wp-content/uploads/2024/03/Series.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -635,7 +1348,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="437" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Thresholds-1-1024x437.webp" alt="Thingsboard thresholds default settings with three options to configure" class="wp-image-3731" srcset="/blog/wp-content/uploads/2024/03/Thresholds-1-1024x437.webp 1024w, /blog/wp-content/uploads/2024/03/Thresholds-1-300x128.webp 300w, /blog/wp-content/uploads/2024/03/Thresholds-1-768x328.webp 768w, /blog/wp-content/uploads/2024/03/Thresholds-1-1536x656.webp 1536w, /blog/wp-content/uploads/2024/03/Thresholds-1-2048x875.webp 2048w, /blog/wp-content/uploads/2024/03/Thresholds-1-512x219.webp 512w, /blog/wp-content/uploads/2024/03/Thresholds-1-920x393.webp 920w, /blog/wp-content/uploads/2024/03/Thresholds-1-1600x683.webp 1600w, /blog/wp-content/uploads/2024/03/Thresholds-1-1920x820.webp 1920w, /blog/wp-content/uploads/2024/03/Thresholds-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="437" src="/blog/wp-content/uploads/2024/03/Thresholds-1-1024x437.webp" alt="Thingsboard thresholds default settings with three options to configure" class="wp-image-3731" srcset="/blog/wp-content/uploads/2024/03/Thresholds-1-1024x437.webp 1024w, /blog/wp-content/uploads/2024/03/Thresholds-1-300x128.webp 300w, /blog/wp-content/uploads/2024/03/Thresholds-1-768x328.webp 768w, /blog/wp-content/uploads/2024/03/Thresholds-1-1536x656.webp 1536w, /blog/wp-content/uploads/2024/03/Thresholds-1-2048x875.webp 2048w, /blog/wp-content/uploads/2024/03/Thresholds-1-512x219.webp 512w, /blog/wp-content/uploads/2024/03/Thresholds-1-920x393.webp 920w, /blog/wp-content/uploads/2024/03/Thresholds-1-1600x683.webp 1600w, /blog/wp-content/uploads/2024/03/Thresholds-1-1920x820.webp 1920w, /blog/wp-content/uploads/2024/03/Thresholds-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -647,7 +1360,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="418" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/data-zoom-1-1024x418.webp" alt="Long chart with three lines and data zoom option" class="wp-image-3824" srcset="/blog/wp-content/uploads/2024/03/data-zoom-1-1024x418.webp 1024w, /blog/wp-content/uploads/2024/03/data-zoom-1-300x123.webp 300w, /blog/wp-content/uploads/2024/03/data-zoom-1-768x314.webp 768w, /blog/wp-content/uploads/2024/03/data-zoom-1-1536x627.webp 1536w, /blog/wp-content/uploads/2024/03/data-zoom-1-2048x837.webp 2048w, /blog/wp-content/uploads/2024/03/data-zoom-1-512x209.webp 512w, /blog/wp-content/uploads/2024/03/data-zoom-1-920x376.webp 920w, /blog/wp-content/uploads/2024/03/data-zoom-1-1600x654.webp 1600w, /blog/wp-content/uploads/2024/03/data-zoom-1-1920x784.webp 1920w, /blog/wp-content/uploads/2024/03/data-zoom-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="418" src="/blog/wp-content/uploads/2024/03/data-zoom-1-1024x418.webp" alt="Long chart with three lines and data zoom option" class="wp-image-3824" srcset="/blog/wp-content/uploads/2024/03/data-zoom-1-1024x418.webp 1024w, /blog/wp-content/uploads/2024/03/data-zoom-1-300x123.webp 300w, /blog/wp-content/uploads/2024/03/data-zoom-1-768x314.webp 768w, /blog/wp-content/uploads/2024/03/data-zoom-1-1536x627.webp 1536w, /blog/wp-content/uploads/2024/03/data-zoom-1-2048x837.webp 2048w, /blog/wp-content/uploads/2024/03/data-zoom-1-512x209.webp 512w, /blog/wp-content/uploads/2024/03/data-zoom-1-920x376.webp 920w, /blog/wp-content/uploads/2024/03/data-zoom-1-1600x654.webp 1600w, /blog/wp-content/uploads/2024/03/data-zoom-1-1920x784.webp 1920w, /blog/wp-content/uploads/2024/03/data-zoom-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -659,7 +1372,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="634" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Tooltip-improvement_1-1024x634.webp" alt="Chart which is showing bars and lines 
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="634" src="/blog/wp-content/uploads/2024/03/Tooltip-improvement_1-1024x634.webp" alt="Chart which is showing bars and lines 
 at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03/Tooltip-improvement_1-1024x634.webp 1024w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-300x186.webp 300w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-768x475.webp 768w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-1536x951.webp 1536w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-2048x1268.webp 2048w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-512x317.webp 512w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-920x569.webp 920w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-1600x990.webp 1600w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1-1920x1188.webp 1920w, /blog/wp-content/uploads/2024/03/Tooltip-improvement_1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
@@ -680,7 +1393,7 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1812" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Bar-chart-with-labels.webp" alt="Thingsboard bar chart with labels" class="wp-image-3734" srcset="/blog/wp-content/uploads/2024/03/Bar-chart-with-labels.webp 2409w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-300x226.webp 300w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1024x770.webp 1024w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-768x578.webp 768w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1536x1155.webp 1536w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-2048x1540.webp 2048w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-512x385.webp 512w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-920x692.webp 920w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1600x1203.webp 1600w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1920x1444.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1812" src="/blog/wp-content/uploads/2024/03/Bar-chart-with-labels.webp" alt="Thingsboard bar chart with labels" class="wp-image-3734" srcset="/blog/wp-content/uploads/2024/03/Bar-chart-with-labels.webp 2409w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-300x226.webp 300w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1024x770.webp 1024w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-768x578.webp 768w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1536x1155.webp 1536w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-2048x1540.webp 2048w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-512x385.webp 512w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-920x692.webp 920w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1600x1203.webp 1600w, /blog/wp-content/uploads/2024/03/Bar-chart-with-labels-1920x1444.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -692,7 +1405,7 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="770" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Range-chart-1024x770.webp" alt="Thingsboard range chart which is showing temperature on a time period " class="wp-image-3735" srcset="/blog/wp-content/uploads/2024/03/Range-chart-1024x770.webp 1024w, /blog/wp-content/uploads/2024/03/Range-chart-300x226.webp 300w, /blog/wp-content/uploads/2024/03/Range-chart-768x578.webp 768w, /blog/wp-content/uploads/2024/03/Range-chart-1536x1155.webp 1536w, /blog/wp-content/uploads/2024/03/Range-chart-2048x1540.webp 2048w, /blog/wp-content/uploads/2024/03/Range-chart-512x385.webp 512w, /blog/wp-content/uploads/2024/03/Range-chart-920x692.webp 920w, /blog/wp-content/uploads/2024/03/Range-chart-1600x1203.webp 1600w, /blog/wp-content/uploads/2024/03/Range-chart-1920x1444.webp 1920w, /blog/wp-content/uploads/2024/03/Range-chart.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="770" src="/blog/wp-content/uploads/2024/03/Range-chart-1024x770.webp" alt="Thingsboard range chart which is showing temperature on a time period " class="wp-image-3735" srcset="/blog/wp-content/uploads/2024/03/Range-chart-1024x770.webp 1024w, /blog/wp-content/uploads/2024/03/Range-chart-300x226.webp 300w, /blog/wp-content/uploads/2024/03/Range-chart-768x578.webp 768w, /blog/wp-content/uploads/2024/03/Range-chart-1536x1155.webp 1536w, /blog/wp-content/uploads/2024/03/Range-chart-2048x1540.webp 2048w, /blog/wp-content/uploads/2024/03/Range-chart-512x385.webp 512w, /blog/wp-content/uploads/2024/03/Range-chart-920x692.webp 920w, /blog/wp-content/uploads/2024/03/Range-chart-1600x1203.webp 1600w, /blog/wp-content/uploads/2024/03/Range-chart-1920x1444.webp 1920w, /blog/wp-content/uploads/2024/03/Range-chart.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -714,13 +1427,13 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 			</item>
 		<item>
 		<title>Warehouse monitoring with ThingsBoard</title>
-		<link>/blog/warehouse-monitoring-with-thingsboard/</link>
+		<link>/blog/warehouse-monitoring-with-thingsboard/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=warehouse-monitoring-with-thingsboard</link>
 					<comments>/blog/warehouse-monitoring-with-thingsboard/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 12 Mar 2024 12:48:44 +0000</pubDate>
 				<category><![CDATA[Solutions]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3188</guid>
+		<guid isPermaLink="false">/blog/?p=3188</guid>
 
 					<description><![CDATA[Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — Vypin together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.]]></description>
 										<content:encoded><![CDATA[
@@ -732,7 +1445,7 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="451" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/5.webp" alt="Working conditions on the left side and device on the right side" class="wp-image-3797" srcset="/blog/wp-content/uploads/2024/03/5.webp 803w, /blog/wp-content/uploads/2024/03/5-300x168.webp 300w, /blog/wp-content/uploads/2024/03/5-768x431.webp 768w, /blog/wp-content/uploads/2024/03/5-512x288.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="451" src="/blog/wp-content/uploads/2024/03/5.webp" alt="Working conditions on the left side and device on the right side" class="wp-image-3797" srcset="/blog/wp-content/uploads/2024/03/5.webp 803w, /blog/wp-content/uploads/2024/03/5-300x168.webp 300w, /blog/wp-content/uploads/2024/03/5-768x431.webp 768w, /blog/wp-content/uploads/2024/03/5-512x288.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -766,7 +1479,7 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="893" height="407" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp" alt="Screen with opened dashboard and devices in front" class="wp-image-3800" srcset="/blog/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp 893w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-300x137.webp 300w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-768x350.webp 768w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-512x233.webp 512w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="893" height="407" src="/blog/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp" alt="Screen with opened dashboard and devices in front" class="wp-image-3800" srcset="/blog/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp 893w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-300x137.webp 300w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-768x350.webp 768w, /blog/wp-content/uploads/2024/03/temp_hum_dashboard210923-512x233.webp 512w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
 
 
 
@@ -774,7 +1487,7 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="460" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/6.webp" alt="Two windows with alarms information  and dashboard" class="wp-image-3799" srcset="/blog/wp-content/uploads/2024/03/6.webp 803w, /blog/wp-content/uploads/2024/03/6-300x172.webp 300w, /blog/wp-content/uploads/2024/03/6-768x440.webp 768w, /blog/wp-content/uploads/2024/03/6-512x293.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="460" src="/blog/wp-content/uploads/2024/03/6.webp" alt="Two windows with alarms information  and dashboard" class="wp-image-3799" srcset="/blog/wp-content/uploads/2024/03/6.webp 803w, /blog/wp-content/uploads/2024/03/6-300x172.webp 300w, /blog/wp-content/uploads/2024/03/6-768x440.webp 768w, /blog/wp-content/uploads/2024/03/6-512x293.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -798,778 +1511,6 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 ]]></content:encoded>
 					
 					<wfw:commentRss>/blog/warehouse-monitoring-with-thingsboard/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>IoT Widgets for enhanced dashboards: introducing the  action, command, toggle, and power buttons</title>
-		<link>/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/</link>
-					<comments>/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Tue, 05 Mar 2024 11:54:34 +0000</pubDate>
-				<category><![CDATA[Tech]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2970</guid>
-
-					<description><![CDATA[Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and user experience brings us to the introduction of four innovative IoT widgets: the &#8220;Action button,&#8221; &#8220;Command button,&#8221; &#8220;Toggle button,&#8221; and &#8220;Power button.&#8221; Designed with a focus on usability, these new buttons are tailored for the most common IoT use cases, offering users enhanced control and flexibility in managing their IoT devices and dashboards. Let&#8217;s dive into their capabilities.</p>
-
-
-
-<h4 class="wp-block-heading">Action button widget</h4>
-
-
-
-<p style="font-size:16px">This button facilitates single-click navigation to other dashboards, states, or custom actions. You may choose one of the common <a href="https://thingsboard.io/docs/user-guide/ui/widget-actions">widget actions</a> to be triggered when the user clicks the button. You may also choose whether the button is in default, activated, or disabled state. </p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="441" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Buttons.webp" alt="Tree buttons with different clicking states " class="wp-image-3716" srcset="/blog/wp-content/uploads/2024/03/Buttons.webp 2406w, /blog/wp-content/uploads/2024/03/Buttons-300x55.webp 300w, /blog/wp-content/uploads/2024/03/Buttons-1024x188.webp 1024w, /blog/wp-content/uploads/2024/03/Buttons-768x141.webp 768w, /blog/wp-content/uploads/2024/03/Buttons-1536x282.webp 1536w, /blog/wp-content/uploads/2024/03/Buttons-2048x375.webp 2048w, /blog/wp-content/uploads/2024/03/Buttons-512x94.webp 512w, /blog/wp-content/uploads/2024/03/Buttons-920x169.webp 920w, /blog/wp-content/uploads/2024/03/Buttons-1600x293.webp 1600w, /blog/wp-content/uploads/2024/03/Buttons-1920x352.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
-
-
-
-<p style="font-size:16px">More importantly, the button may dynamically change its state based on the value of the attribute or time-series subscription. You may find an example of the button that changes its state when the user attribute is updated below: </p>
-
-
-
-<div class="wp-block-file">
-<a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="https://thingsboard.io/blog/wp-content/uploads/2024/03/tb_dynamic_button_states.json">tb_dynamic_button_states</a><a href="https://thingsboard.io/blog/wp-content/uploads/2024/03/tb_dynamic_button_states.json" class="wp-block-file__button wp-element-button" download="" aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">tb_dynamic_button_states.json</a>
-</div>
-
-
-
-<p style="font-size:16px">The behavior configuration is available in the basic widget settings:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Add-widget-2.webp" alt="Thingsboard basic widget settings" class="wp-image-3718" srcset="/blog/wp-content/uploads/2024/03/Add-widget-2.webp 2409w, /blog/wp-content/uploads/2024/03/Add-widget-2-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Add-widget-2-1024x575.webp 1024w, /blog/wp-content/uploads/2024/03/Add-widget-2-768x431.webp 768w, /blog/wp-content/uploads/2024/03/Add-widget-2-1536x863.webp 1536w, /blog/wp-content/uploads/2024/03/Add-widget-2-2048x1150.webp 2048w, /blog/wp-content/uploads/2024/03/Add-widget-2-512x288.webp 512w, /blog/wp-content/uploads/2024/03/Add-widget-2-920x517.webp 920w, /blog/wp-content/uploads/2024/03/Add-widget-2-1600x899.webp 1600w, /blog/wp-content/uploads/2024/03/Add-widget-2-1920x1078.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p style="font-size:16px">The button appearance is highly customizable. You may choose one of four available layouts, configure icons, and label appearance. The colors of the buttons are configured via main and background color palettes. By default, the button uses a palette configured in the <a href="https://thingsboard.io/docs/pe/user-guide/white-labeling/">white-labeling settings</a>.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1626" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Appearance-3-1.webp" alt="" class="wp-image-3899" srcset="/blog/wp-content/uploads/2024/03/Appearance-3-1.webp 2409w, /blog/wp-content/uploads/2024/03/Appearance-3-1-300x202.webp 300w, /blog/wp-content/uploads/2024/03/Appearance-3-1-1024x691.webp 1024w, /blog/wp-content/uploads/2024/03/Appearance-3-1-768x518.webp 768w, /blog/wp-content/uploads/2024/03/Appearance-3-1-1536x1037.webp 1536w, /blog/wp-content/uploads/2024/03/Appearance-3-1-2048x1382.webp 2048w, /blog/wp-content/uploads/2024/03/Appearance-3-1-512x346.webp 512w, /blog/wp-content/uploads/2024/03/Appearance-3-1-920x621.webp 920w, /blog/wp-content/uploads/2024/03/Appearance-3-1-1600x1080.webp 1600w, /blog/wp-content/uploads/2024/03/Appearance-3-1-1920x1296.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p style="font-size:16px">Although the button supports all common <a href="https://thingsboard.io/docs/user-guide/ui/widget-actions">widget actions</a>, we will highlight only the most popular in this article. To demonstrate them, we have prepared the dashboard that you may <a href="https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard">import</a> to your platform instance.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-use-cases.webp" alt="Thingsboard dashboard with five blocks which are demonstrating widget actions capabilities " class="wp-image-3722" srcset="/blog/wp-content/uploads/2024/03/Button-use-cases.webp 2409w, /blog/wp-content/uploads/2024/03/Button-use-cases-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Button-use-cases-1024x575.webp 1024w, /blog/wp-content/uploads/2024/03/Button-use-cases-768x431.webp 768w, /blog/wp-content/uploads/2024/03/Button-use-cases-1536x863.webp 1536w, /blog/wp-content/uploads/2024/03/Button-use-cases-2048x1150.webp 2048w, /blog/wp-content/uploads/2024/03/Button-use-cases-512x288.webp 512w, /blog/wp-content/uploads/2024/03/Button-use-cases-920x517.webp 920w, /blog/wp-content/uploads/2024/03/Button-use-cases-1600x899.webp 1600w, /blog/wp-content/uploads/2024/03/Button-use-cases-1920x1078.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p style="font-size:16px">You may find the sample dashboard JSON below: </p>
-
-
-
-<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="https://thingsboard.io/blog/wp-content/uploads/2024/03/button_use_cases.json">button_use_cases</a><a href="https://thingsboard.io/blog/wp-content/uploads/2024/03/button_use_cases.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991"></a></div>
-
-
-
-<p style="font-size:16px">The dashboard has two states: &#8220;default&#8221; and &#8220;other&#8221;. The default state contains 5 showcase buttons. The &#8220;other&#8221; state contains a line chart widget with random data. Let&#8217;s review each button below:</p>
-
-
-
-<p style="font-size:16px"><strong>•</strong> <strong>Open dialog</strong> button uses &#8220;Navigate to new dashboard state&#8221; with the &#8220;Open in separate dialog&#8221; display option. So, the user will see the line chart opened in a modal window.</p>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" data-id="3566" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_dialog-2.gif" alt="Opening dialog which shows chart" class="wp-image-3566"/></figure>
-</figure>
-
-
-
-<p style="font-size:16px"><strong>•</strong> <strong>Open popup</strong> button is similar, but the &#8220;Open in popover&#8221; display option is used. You may also explore various options for the &#8220;Preferred popover placement&#8221; option. </p>
-
-
-
-<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="720" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_pop-up-1.gif" alt="Opening popup which shows chart" class="wp-image-3567" style="width:802px;height:auto"/></figure>
-
-
-
-<p style="font-size:16px"><strong>•</strong> <strong>Change state</strong> button simply update the current dashboard state to the new one. </p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Change_state.gif" alt="Opening another dashboard state after clicking on the button" class="wp-image-3570"/></figure>
-
-
-
-<p style="font-size:16px"><strong>•</strong> <strong>Drill down</strong> button is similar, but instead of changing the dashboard state, it leaves the old one in the stack. </p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Drill_down.gif" alt="Opening another dashboard state with leaving the old one in the stack after clicking on the button " class="wp-image-3571"/></figure>
-
-
-
-<p style="font-size:16px"><strong>•</strong> <strong>Open URL</strong> provides the ability to open external or relative URLs in the same or separate browser tab. </p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_url.gif" alt="Opening google after clicking on the button" class="wp-image-3572"/></figure>
-
-
-
-<h4 class="wp-block-heading">Command button widget</h4>
-
-
-
-<p style="font-size:16px">The Command button widget is designed to perform three key actions: sending <a href="https://thingsboard.io/docs/user-guide/rpc/">commands</a> to devices, updating <a href="https://thingsboard.io/docs/user-guide/attributes/">attributes</a>, or appending <a href="https://thingsboard.io/docs/user-guide/telemetry/">time-series</a> data. </p>
-
-
-
-<p style="font-size:16px">You can specify a single device to carry out your chosen action, such as receiving a command. For those familiar with the platform, there&#8217;s an option to use <a href="https://thingsboard.io/docs/user-guide/ui/aliases/">entity aliases</a> for targeting. This means you&#8217;re not limited to devices; you can target assets, users, or other entities capable of supporting attribute updates or time-series data additions. </p>
-
-
-
-<p style="font-size:16px">Behavior settings enable the definition of the on-click action and condition when the button is disabled. More importantly, the button may dynamically become enabled or disabled based on attribute or time-series subscription. </p>
-
-
-
-<p style="font-size:16px"><strong>Execute RPC action</strong> allows you to send the command to the device. You may configure the command (method) name and parameters of the command. The parameter value may be configured as a constant or result of function execution. You may send the command without parameters by choosing the &#8220;None&#8221; option.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="2409" height="1542" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Execute-RPC-action-7.webp" alt="Form with three fields and apply button" class="wp-image-3736" srcset="/blog/wp-content/uploads/2024/03/Execute-RPC-action-7.webp 2409w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-300x192.webp 300w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-1024x655.webp 1024w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-768x492.webp 768w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-1536x983.webp 1536w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-2048x1311.webp 2048w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-512x328.webp 512w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-920x589.webp 920w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-1600x1024.webp 1600w, /blog/wp-content/uploads/2024/03/Execute-RPC-action-7-1920x1229.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure></div>
-
-
-<p style="font-size:16px">By default, we use an un-persisted command with 5 seconds timeout. You may change the command parameters in the advanced settings of the action.</p>
-
-
-
-<p style="font-size:16px"><strong>Set attribute action</strong> allows you to set or update the value of the particular entity attribute. The action configuration form allows you to configure the scope, key, and value of the attribute. The attribute value may be configured as a constant or result of function execution. Please note that only devices support &#8220;shared&#8221; attribute scope. You must choose the &#8220;server&#8221; scope for all other entities. </p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="2409" height="1638" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Set-attribute-action-8.webp" alt="Form with four fields and apply button" class="wp-image-3738" srcset="/blog/wp-content/uploads/2024/03/Set-attribute-action-8.webp 2409w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-300x204.webp 300w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-1024x696.webp 1024w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-768x522.webp 768w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-1536x1044.webp 1536w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-2048x1393.webp 2048w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-512x348.webp 512w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-920x626.webp 920w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-1600x1088.webp 1600w, /blog/wp-content/uploads/2024/03/Set-attribute-action-8-1920x1306.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure></div>
-
-
-<p style="font-size:16px"><strong>Add time-series action</strong> allows you to add the new time-series value for the particular entity. The action configuration form allows you to configure the time-series data key and value. The value may be configured as a constant or result of function execution. </p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="2409" height="1434" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Add-time-series-action-9.webp" alt="Form with three fields and apply button" class="wp-image-3741" srcset="/blog/wp-content/uploads/2024/03/Add-time-series-action-9.webp 2409w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-300x179.webp 300w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-1024x610.webp 1024w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-768x457.webp 768w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-1536x914.webp 1536w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-2048x1219.webp 2048w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-512x305.webp 512w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-920x548.webp 920w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-1600x952.webp 1600w, /blog/wp-content/uploads/2024/03/Add-time-series-action-9-1920x1143.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure></div>
-
-
-<p style="font-size:16px">You may dynamically disable the button based on certain values of the attribute or time-series key. For example, the dashboard attached below contains two buttons that switch the state of the user&#8217;s attribute &#8220;state&#8221;. When the user presses button A, it becomes disabled, and vice versa.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" width="2409" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Disabled-state-10.webp" alt="Thingsboard dashboard with two buttons which are change dashboard states" class="wp-image-3744" style="width:822px;height:auto" srcset="/blog/wp-content/uploads/2024/03/Disabled-state-10.webp 2409w, /blog/wp-content/uploads/2024/03/Disabled-state-10-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Disabled-state-10-1024x575.webp 1024w, /blog/wp-content/uploads/2024/03/Disabled-state-10-768x431.webp 768w, /blog/wp-content/uploads/2024/03/Disabled-state-10-1536x863.webp 1536w, /blog/wp-content/uploads/2024/03/Disabled-state-10-2048x1150.webp 2048w, /blog/wp-content/uploads/2024/03/Disabled-state-10-512x288.webp 512w, /blog/wp-content/uploads/2024/03/Disabled-state-10-920x517.webp 920w, /blog/wp-content/uploads/2024/03/Disabled-state-10-1600x899.webp 1600w, /blog/wp-content/uploads/2024/03/Disabled-state-10-1920x1078.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure></div>
-
-
-<p style="font-size:16px">You may find the sample dashboard JSON below: </p>
-
-
-
-<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="https://thingsboard.io/blog/wp-content/uploads/2024/03/command_buttons.json">command_buttons</a><a href="https://thingsboard.io/blog/wp-content/uploads/2024/03/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
-
-
-
-<p style="font-size:16px">Alternatively, you may disable the button that sends the command to the device, if the device is offline. For this purpose, you may just use the value of the &#8220;active&#8221; attribute or time-series key. </p>
-
-
-
-<p style="font-size:16px">The appearance settings for the Command button are identical to those of the Action button. The primary applications of the Command button are straightforward, focusing on managing devices and assets. This involves either issuing commands or updating attributes to control their operation.</p>
-
-
-
-<h4 class="wp-block-heading">Toggle button widget</h4>
-
-
-
-<p style="font-size:16px">The Toggle button widget shares many similarities with the Command button widget, but with a crucial distinction: it features two distinct states, &#8220;checked&#8221; and &#8220;unchecked&#8221;. This design allows it to perform two specific actions, &#8220;Check&#8221; and &#8220;Uncheck&#8221;, depending on its state. Users have the flexibility to fully customize the appearance of the button for both states, enhancing its visual and functional integration into their dashboards.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="744" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Toggle-button-widget.webp" alt="Two blocks with opened and locked locks icons" class="wp-image-3752" srcset="/blog/wp-content/uploads/2024/03/Toggle-button-widget.webp 2406w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-300x93.webp 300w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-1024x317.webp 1024w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-768x237.webp 768w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-1536x475.webp 1536w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-2048x633.webp 2048w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-512x158.webp 512w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-920x284.webp 920w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-1600x495.webp 1600w, /blog/wp-content/uploads/2024/03/Toggle-button-widget-1920x594.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
-
-
-
-<p style="font-size:16px">The default behavior will change the state of the device using the &#8220;setState&#8221; command:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1236" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Behavior.webp" alt="Thingsboard form with four fields" class="wp-image-3754" srcset="/blog/wp-content/uploads/2024/03/Behavior.webp 2409w, /blog/wp-content/uploads/2024/03/Behavior-300x154.webp 300w, /blog/wp-content/uploads/2024/03/Behavior-1024x525.webp 1024w, /blog/wp-content/uploads/2024/03/Behavior-768x394.webp 768w, /blog/wp-content/uploads/2024/03/Behavior-1536x788.webp 1536w, /blog/wp-content/uploads/2024/03/Behavior-2048x1051.webp 2048w, /blog/wp-content/uploads/2024/03/Behavior-512x263.webp 512w, /blog/wp-content/uploads/2024/03/Behavior-920x472.webp 920w, /blog/wp-content/uploads/2024/03/Behavior-1600x821.webp 1600w, /blog/wp-content/uploads/2024/03/Behavior-1920x985.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p style="font-size:16px">You may easily change this button to operate with the &#8220;state&#8221; attribute instead of sending commands to devices:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1236" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Behavior2.webp" alt="Thingsboard form with four fields" class="wp-image-3756" srcset="/blog/wp-content/uploads/2024/03/Behavior2.webp 2409w, /blog/wp-content/uploads/2024/03/Behavior2-300x154.webp 300w, /blog/wp-content/uploads/2024/03/Behavior2-1024x525.webp 1024w, /blog/wp-content/uploads/2024/03/Behavior2-768x394.webp 768w, /blog/wp-content/uploads/2024/03/Behavior2-1536x788.webp 1536w, /blog/wp-content/uploads/2024/03/Behavior2-2048x1051.webp 2048w, /blog/wp-content/uploads/2024/03/Behavior2-512x263.webp 512w, /blog/wp-content/uploads/2024/03/Behavior2-920x472.webp 920w, /blog/wp-content/uploads/2024/03/Behavior2-1600x821.webp 1600w, /blog/wp-content/uploads/2024/03/Behavior2-1920x985.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p style="font-size:16px">The Toggle button shares appearance settings with the Command button but allows separate configurations for its &#8220;Checked&#8221; and &#8220;Unchecked&#8221; states:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1668" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-appearance.webp" alt="Thingsboard form with six fields" class="wp-image-3762" srcset="/blog/wp-content/uploads/2024/03/Button-appearance.webp 2409w, /blog/wp-content/uploads/2024/03/Button-appearance-300x208.webp 300w, /blog/wp-content/uploads/2024/03/Button-appearance-1024x709.webp 1024w, /blog/wp-content/uploads/2024/03/Button-appearance-768x532.webp 768w, /blog/wp-content/uploads/2024/03/Button-appearance-1536x1064.webp 1536w, /blog/wp-content/uploads/2024/03/Button-appearance-2048x1418.webp 2048w, /blog/wp-content/uploads/2024/03/Button-appearance-512x355.webp 512w, /blog/wp-content/uploads/2024/03/Button-appearance-920x637.webp 920w, /blog/wp-content/uploads/2024/03/Button-appearance-1600x1108.webp 1600w, /blog/wp-content/uploads/2024/03/Button-appearance-1920x1329.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p style="font-size:16px">Adjusting the border radius, background colors, and other appearance settings can significantly alter the button&#8217;s style:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="416" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Buttons2.webp" alt="Opened and locked locks icons" class="wp-image-3764" srcset="/blog/wp-content/uploads/2024/03/Buttons2.webp 1604w, /blog/wp-content/uploads/2024/03/Buttons2-300x78.webp 300w, /blog/wp-content/uploads/2024/03/Buttons2-1024x266.webp 1024w, /blog/wp-content/uploads/2024/03/Buttons2-768x199.webp 768w, /blog/wp-content/uploads/2024/03/Buttons2-1536x398.webp 1536w, /blog/wp-content/uploads/2024/03/Buttons2-512x133.webp 512w, /blog/wp-content/uploads/2024/03/Buttons2-920x239.webp 920w, /blog/wp-content/uploads/2024/03/Buttons2-1600x415.webp 1600w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Power button widget</h4>
-
-
-
-<p style="font-size:16px">The Power button widget, similar to the Toggle button, differs in appearance and has three states: &#8216;On&#8217;, &#8216;Off&#8217; and disabled, with six customizable layouts:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1606" height="608" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Power-button-widget.webp" alt="Grid with power buttons in on or off state" class="wp-image-3770" srcset="/blog/wp-content/uploads/2024/03/Power-button-widget.webp 1606w, /blog/wp-content/uploads/2024/03/Power-button-widget-300x114.webp 300w, /blog/wp-content/uploads/2024/03/Power-button-widget-1024x388.webp 1024w, /blog/wp-content/uploads/2024/03/Power-button-widget-768x291.webp 768w, /blog/wp-content/uploads/2024/03/Power-button-widget-1536x581.webp 1536w, /blog/wp-content/uploads/2024/03/Power-button-widget-512x194.webp 512w, /blog/wp-content/uploads/2024/03/Power-button-widget-920x348.webp 920w, /blog/wp-content/uploads/2024/03/Power-button-widget-1600x606.webp 1600w" sizes="(max-width: 1606px) 100vw, 1606px" /></figure>
-
-
-
-<p style="font-size:16px">The appearance settings are simplified compared to the Command button. Basically, you are able to configure main and background colors for every state.</p>
-
-
-<div class="wp-block-image">
-<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="1606" height="1096" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-appearance2.webp" alt="Thingsboard form with six fields" class="wp-image-3771" srcset="/blog/wp-content/uploads/2024/03/Button-appearance2.webp 1606w, /blog/wp-content/uploads/2024/03/Button-appearance2-300x205.webp 300w, /blog/wp-content/uploads/2024/03/Button-appearance2-1024x699.webp 1024w, /blog/wp-content/uploads/2024/03/Button-appearance2-768x524.webp 768w, /blog/wp-content/uploads/2024/03/Button-appearance2-1536x1048.webp 1536w, /blog/wp-content/uploads/2024/03/Button-appearance2-512x349.webp 512w, /blog/wp-content/uploads/2024/03/Button-appearance2-920x628.webp 920w, /blog/wp-content/uploads/2024/03/Button-appearance2-1600x1092.webp 1600w" sizes="(max-width: 1606px) 100vw, 1606px" /></figure></div>
-
-
-<p style="font-size:16px">The Power button widget enables remote control of devices across sectors: turning smart home appliances on/off, managing industrial equipment, controlling servers, adjusting energy sources, operating irrigation systems, managing healthcare devices, retail displays, and public lighting, showcasing its versatility in simplifying power management in IoT applications.</p>
-
-
-
-<h4 class="wp-block-heading">Summary</h4>
-
-
-
-<p style="font-size:16px">In our overview of the newest widgets for the ThingsBoard IoT Platform—Action button, Command button, Toggle button, and Power button—we&#8217;ve highlighted how these tools enhance IoT dashboard interaction and device management. Each widget offers specific functionalities to improve the user experience, from executing commands to providing clear status indicators.</p>
-
-
-
-<p style="font-size:16px">We encourage you to explore these widgets&#8217; capabilities within your projects. If you have ideas for improvements or additional features, we welcome you to submit feature requests on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>. For any other feedback, please leave your comments below. Your feedback is essential for us to keep improving and growing the platform.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Increasing equipment utilization KPIs with the help of advanced analytics</title>
-		<link>/blog/increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics/</link>
-		
-		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
-		<pubDate>Mon, 04 Mar 2024 11:02:41 +0000</pubDate>
-				<category><![CDATA[Tech]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3147</guid>
-
-					<description><![CDATA[Introduction&#160; Equipment in production plays an important role in achieving maximum efficiency, quality, and payback. The issues that&#8230;]]></description>
-										<content:encoded><![CDATA[
-<h4 class="wp-block-heading">Introduction&nbsp;</h4>
-
-
-
-<p style="font-size:16px">Equipment in production plays an important role in achieving maximum efficiency, quality, and payback. The issues that are key to optimizing the use of equipment are:</p>
-
-
-
-<ul>
-<li style="font-size:16px">Underutilization of Equipment</li>
-
-
-
-<li style="font-size:16px">Ineffective Production Scheduling</li>
-
-
-
-<li style="font-size:16px">Excessive Wear and Tear on Machinery</li>
-
-
-
-<li style="font-size:16px">Operational Bottlenecks</li>
-
-
-
-<li style="font-size:16px">Suboptimal Maintenance Scheduling</li>
-
-
-
-<li style="font-size:16px">Misaligned Capacity Planning</li>
-</ul>
-
-
-
-<p style="font-size:16px">Solving these problems requires constant monitoring of equipment utilization and performance metrics. As production output increases, manufacturers may need to partially or completely change their equipment maintenance strategies and schedules to maintain efficiency. Unfortunately, these problems cannot be solved once and for all. But it also means that we can endlessly improve the optimization process.&nbsp;</p>
-
-
-
-<p style="font-size:16px">That is why having the most up-to-date data is important when choosing an optimization strategy. Previously, with the help of logging, you could see how the equipment worked at the end of the day or week. With the growth of technology and the help of IoT devices, we can receive raw data in real-time. With advanced analytics, you can turn raw data into meaningful reports and predict future equipment behavior using machine learning models.</p>
-
-
-
-<h4 class="wp-block-heading">Equipment Utilization</h4>
-
-
-
-<p style="font-size:16px">To understand the overall condition of the equipment, you need to operate with a significant number of KPIs. We have divided KPIs by the problems they solve:</p>
-
-
-
-<p style="font-size:16px"><em>Underutilization of Equipment and Operational Bottlenecks</em></p>
-
-
-
-<ul>
-<li style="font-size:16px">Production Output &#8211; A numerical or quality indicator of the useful action performed by the equipment. The information is collected using counters, scales, or quality sensors transmitted via the network to the ThingsBoard. The data does not require any additional processing.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1515" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-production-output.webp" alt="Chrat which shows Production Output" class="wp-image-3773" srcset="/blog/wp-content/uploads/2024/03/Eu-production-output.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-production-output-300x189.webp 300w, /blog/wp-content/uploads/2024/03/Eu-production-output-1024x644.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-production-output-768x483.webp 768w, /blog/wp-content/uploads/2024/03/Eu-production-output-1536x966.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-production-output-2048x1288.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-production-output-512x322.webp 512w, /blog/wp-content/uploads/2024/03/Eu-production-output-920x579.webp 920w, /blog/wp-content/uploads/2024/03/Eu-production-output-1600x1006.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-production-output-1920x1207.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<ul>
-<li style="font-size:16px">Equipment Utilization Rate &#8211; measures the degree to which equipment is utilized over a period compared to its full potential or capacity. Production Output is taken as the current capacity indicator. The maximum capacity is set according to the technical documentation. The indicator is calculated by an analytics system that finds the ratio of Production Output to Maximum Capacity in real-time.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1485" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate.webp" alt="Block with percentage statistics and small chart" class="wp-image-3776" srcset="/blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-300x185.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1024x631.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-768x473.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1536x947.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-2048x1262.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-512x316.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-920x567.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1600x986.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1920x1184.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<ul>
-<li style="font-size:16px">Percentage of defects &#8211; The number of defects concerning the Production Output. Defective products are automatically detected using computer vision, ultrasonic or X-ray inspection, or by using manual inspection. The advanced analytics system calculates it in real-time by comparing the number of defective products to the manufactured product.&nbsp;</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="638" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1024x638.webp" alt="Grid which shows percentage of defects " class="wp-image-3777" srcset="/blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1024x638.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-300x187.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-768x478.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1536x956.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-2048x1275.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-512x319.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-920x573.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1600x996.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1920x1196.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p style="font-size:16px"><em>Ineffective Production Scheduling</em></p>
-
-
-
-<ul>
-<li style="font-size:16px">Throughput &#8211; Measuring the rate at which products are produced on a machine, line, plant, or across the entire company. Throughput is calculated from meters installed at the inlet and outlet of each production line. After that, the advanced analytics system converts the raw data of time indicators into a ready-made report of the time it took the equipment to perform a certain action.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1791" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Throughput.webp" alt="Statistics with date and execution time about production lines" class="wp-image-3778" srcset="/blog/wp-content/uploads/2024/03/Eu-Throughput.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-Throughput-300x223.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1024x761.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Throughput-768x571.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1536x1142.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Throughput-2048x1523.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Throughput-512x381.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Throughput-920x684.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1600x1190.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1920x1427.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<ul>
-<li style="font-size:16px">Time-Based Measurement &#8211; tracks how long the equipment is actively used during a defined period, such as a shift or a day. This measurement is crucial as it reveals the actual usage versus the potential capacity, highlighting whether the equipment is being underutilized or overused. Information is collected using IoT devices or functions built into the equipment. After that, raw time data is translated into a ready-made KPI indicator using advanced analytics.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="641" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1024x641.webp" alt="Grid which shows how long the equipment is actively used during a defined period" class="wp-image-3779" srcset="/blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1024x641.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-768x481.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1536x962.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-2048x1283.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-920x576.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1600x1002.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1920x1203.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p style="font-size:16px"><em>Excessive Wear and Tear on Machinery and Suboptimal Maintenance Scheduling</em></p>
-
-
-
-<ul>
-<li style="font-size:16px"><strong>Downtime and Uptime </strong>&#8211;&nbsp; Uptime refers to the duration when the equipment is running and available for use, directly contributing to productivity. Downtime, on the other hand, represents periods when the equipment is non-operational due to maintenance, breakdowns, or other issues. These metrics are crucial for understanding the reliability and efficiency of equipment. Information is collected using IoT devices or functions built into the equipment. The data does not require any additional processing.</li>
-
-
-
-<li style="font-size:16px"><strong>Mean Time To Repair (MTTR)</strong> &#8211; This measures the average time it takes to repair equipment after a failure. A lower MTTR helps in reducing downtime and maintaining productivity.&nbsp; This indicator uses the same metrics for calculation as the Downtime and Uptime KPIs. After collecting the data, the advanced analytics system calculates the average value among the time indicators and provides a ready-made report.&nbsp;</li>
-</ul>
-
-
-
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
-<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="639" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-MTTR-1-1024x639.webp" alt="Block with percentage statistics and small chart" class="wp-image-3780" srcset="/blog/wp-content/uploads/2024/03/Eu-MTTR-1-1024x639.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-300x187.webp 300w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-768x479.webp 768w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1536x958.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-2048x1278.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-512x319.webp 512w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-920x574.webp 920w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1600x998.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1920x1198.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-</div>
-</div>
-
-
-
-<ul>
-<li style="font-size:16px">Mean Time Between Failures (MTBF) &#8211; This KPI measures the average time between equipment failures. A higher MTBF indicates more reliable equipment. This indicator uses the same metrics for calculation as the Downtime and Uptime KPIs. After collecting the data, the advanced analytics system calculates the average value among the time indicators and provides a ready-made report.&nbsp;</li>
-</ul>
-
-
-
-<p style="font-size:16px">Based on the indicators, this method helps to track production and has more opportunities to react proactively or to problems. Thus, the use of advanced analytics gives us access to:</p>
-
-
-
-<ul>
-<li style="font-size:16px"><strong>Maximizing Efficiency:</strong> Companies can identify underused resources by measuring how much equipment is used compared to its full potential. This helps make adjustments to increase efficiency, ensuring that the equipment is not just sitting idle when it could contribute to production.</li>
-
-
-
-<li style="font-size:16px"><strong>Cost Optimization:</strong> Equipment represents a significant investment for any business. Measuring its utilization helps understand whether the company is getting the most out of this investment. If equipment isn&#8217;t used effectively, it could lead to unnecessary expenses like paying for machines that aren&#8217;t contributing to revenue generation.</li>
-
-
-
-<li style="font-size:16px"><strong>Improving Production Planning:</strong> Equipment utilization data is crucial for effective production scheduling. It helps align the use of machinery with production demands, ensuring that the right equipment is available and operational when needed.</li>
-
-
-
-<li style="font-size:16px"><strong>Reducing Wear and Tear:</strong> Overuse of equipment can lead to increased maintenance needs and shorter lifespans for machinery. By monitoring utilization, companies can balance the workload on equipment to prevent excessive wear and tear.</li>
-
-
-
-<li style="font-size:16px"><strong>Identifying Bottlenecks:</strong> Low utilization rates can signal bottlenecks where equipment is not used effectively in production. This can lead to insights about process inefficiencies or the need to reallocate resources.</li>
-
-
-
-<li style="font-size:16px"><strong>Maintenance Scheduling:</strong> Knowing how frequently and intensely equipment is used informs maintenance schedules. Instead of following a rigid maintenance calendar, companies can plan maintenance based on actual usage, reducing downtime and maintenance costs.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">Conclusion</h4>
-
-
-
-<p style="font-size:16px">The exploration of advanced analytics in equipment utilization underscores a transformative shift in optimizing manufacturing processes. By integrating real-time data collection through IoT devices with the analytical power of advanced analytics and machine learning, production facilities are equipped to make more informed, proactive decisions. This approach revolutionizes equipment management by providing a deeper and more accurate understanding of various key performance indicators (KPIs) like Equipment Utilization Rate, Throughput, Downtime and Uptime, MTTR, and MTBF.</p>
-
-
-
-<p style="font-size:16px">The implications of this evolution are far-reaching. Advanced analytics enables a more dynamic approach to addressing challenges like underutilization, inefficient production scheduling, and excessive wear and tear on machinery. It allows for real-time identification of operational bottlenecks and facilitates more strategic maintenance scheduling, thereby extending the lifespan of equipment and optimizing investment returns.</p>
-
-
-
-<p style="font-size:16px">Furthermore, the capacity to predict and preempt equipment failures through these sophisticated analytical tools enhances operational efficiency and significantly reduces costs. This proactive equipment maintenance and optimization approach ensures that resources are utilized effectively, reducing wastage and downtime.</p>
-
-
-
-<p style="font-size:16px">In conclusion, integrating advanced analytics into equipment utilization is not just an enhancement of existing processes; it&#8217;s a fundamental shift towards a more data-driven, efficient, and productive manufacturing environment. Adopting these technologies will become a cornerstone for competitive advantage as industries evolve, driving innovation and excellence in manufacturing processes. The future of industrial efficiency and productivity lies in harnessing the power of advanced analytics, and the journey has just begun.</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-		<item>
-		<title>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</title>
-		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/</link>
-					<comments>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/#respond</comments>
-		
-		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
-		<pubDate>Fri, 01 Mar 2024 15:57:16 +0000</pubDate>
-				<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3316</guid>
-
-					<description><![CDATA[Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential major breakdowns if not addressed quickly. The challenge is that monitoring tools like drones, digital multimeters, and infrared cameras are costly, making regular checks infrequent, which does not allow quick responses to problems. This means that if a problem arises after a maintenance check, electricity production efficiency will fall, leading to significant losses.</p>
-
-
-
-<p style="font-size:16px"><strong>The ability to quickly respond to problems</strong>&nbsp;is what plants with constant energy production need.</p>
-
-
-
-<p style="font-size:16px">One of the ways to achieve a quick response to problems is through the use of anomaly detection. Using this method provides an opportunity to respond to problems quickly and significantly reduces the spending on third-party equipment.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p style="font-size:16px">Anomaly detection is a technique to identify patterns or events deviating from the norm. In the context of a solar farm, this can involve monitoring various factors, such as Real-time Energy Output, Power Generation Trends, Solar Irradiance, and Temperature for Solar Panels. Also Output Voltage and Current, Frequency, Efficiency, Temperature for Inverter. By analyzing this data, anomaly detection algorithms can identify unusual patterns or events that may indicate problems before they can do any damage to the solar panel or inverter. In other words, we look for a problem not when we see that energy is produced less than expected for the second day in a row but right at the moment when the problem appeared.</p>
-
-
-
-<p style="font-size:16px">But, unusual patterns are not just deviations of parameters from the norm.</p>
-
-
-
-<p style="font-size:16px">Unusual patterns are combinations of parameters that are not expected but which identify potential problems. They are discovered by analyzing historical data collected from solar panels and inverters. During this analysis, we focus not only on individual parameter values but on a combination of values because it potentially gives more insights into system behavior. Based on this, it is possible to find current problems and predict future ones.</p>
-
-
-
-<p style="font-size:16px">A person cannot cope with the calculations of such data arrays. That is why we need advanced analytics with machine learning capabilities to analyze historical data and find unusual patterns in real-time.</p>
-
-
-
-<p style="font-size:16px">Now, we will show how to configure Trends Analytics for correct anomaly detection. However, before that, let’s consider what types of anomalies occur in Solar Farms.</p>
-
-
-
-<h4 class="wp-block-heading" id="overview-of-common-anomalies-in-equipment-of-solar-power-plants">Overview of common anomalies in the equipment of solar power plants</h4>
-
-
-
-<p style="font-size:16px">The most widespread and important problems for us are those with solar panels and inverters since these are the first frontier of obtaining energy. Therefore, we will look for anomalies in these parts of the power plant.</p>
-
-
-
-<h4 class="wp-block-heading" id="anomalies-in-photovoltaic-modules">Anomalies in photovoltaic modules</h4>
-
-
-
-<p style="font-size:16px">Below, the most common breakdowns in PV modules and solar panels, which can be quickly and economically solved if they are dealt with immediately, will be described.<br><br>Most of them are formed on separate panels, so a drop in the indicators of one panel in contrast to another will indicate a breakdown. You can find each of them by finding anomalies in the Output Electricity (voltage and current) and Power Production indicators from the solar panel.</p>
-
-
-
-<ul>
-<li style="font-size:16px"><strong>Soiling:</strong> Soiling refers to the accumulation of dirt, dust, bird droppings, or other materials on the surface of solar panels. This layer of grime can significantly reduce the panels’ ability to absorb sunlight, leading to decreased electricity production.</li>
-
-
-
-<li style="font-size:16px"><strong>Shading:</strong>&nbsp;Shading occurs when an object, such as a tree, building, or another solar panel, casts a shadow on a solar panel. This can lead to a reduction in the panel’s electricity production. Prolonged shadowing can lead to an imbalance in the solar panel system and may cause hot spots or reduce the overall lifespan of the panel.</li>
-
-
-
-<li style="font-size:16px"><strong>Delamination and Internal Corrosion:</strong>&nbsp;Moisture can find its way into the panel, causing internal corrosion, if the panels are not keeping out air and water and all the solar panel components are not laminated correctly.</li>
-
-
-
-<li style="font-size:16px">Identifying and Addressing Solar Panel Anomalies Faulty wiring, loose connections, corrosion, and oxidation can interfere with electricity production.</li>
-
-
-
-<li style="font-size:16px"><strong>Hot Spots:</strong>&nbsp;Badly-soldered connections can cause low resistance in the part of the panel that receives the power generated by the cell, leading to a hotspot in the soldered points and/or a cell. This phenomenon can ultimately lead to a short circuit, reducing the performance and lifespan of the PV panel.</li>
-
-
-
-<li style="font-size:16px"><strong>PID Effect:</strong>&nbsp;Potential-induced degradation (PID) can cause an ongoing reduction in performance and accelerated aging of the PV panel. PID occurs when the voltage potential between the solar cells and the grounded frame of the panel causes a leakage current that can damage the cells.</li>
-
-
-
-<li style="font-size:16px"><strong>Snail Trail Contamination:</strong>&nbsp;Snail trail contamination is a phenomenon where a white or grayish residue appears on the surface of the solar panel. This residue can reduce the performance of the panel and is caused by the release of silicone from the panel’s encapsulant material.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="803" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp" alt="Field with solar panels and demonstration icons of IOT notifications on them" class="wp-image-3766" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp 803w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
-
-
-
-<h4 class="wp-block-heading" id="tackling-anomalies-in-inverters">Tackling Anomalies in Inverters</h4>
-
-
-
-<p style="font-size:16px">Inverters are a very important link of a solar power plant, a breakdown of which can lead to the shutdown of the entire power plant. This can have a critical impact on the total efficiency and profitability of the power plant.</p>
-
-
-
-<p style="font-size:16px">You can observe the operation of the inverter by following the indicators Output Voltage and Current, Frequency, Efficiency, and Temperature.</p>
-
-
-
-<ul>
-<li style="font-size:16px"><strong>Overheating:</strong>&nbsp;Inverters are sensitive to temperature, and high temperatures can reduce production and potentially a stoppage altogether if overheating occurs as the maximum operating temperature is reached. To prevent overheating, it is important to keep the switch cabinet and the area where the inverter is located well-ventilated, along with the inclusion of cleaning dust filters that can prevent any issues impeding airflow. You can monitor this problem with the help of indicators Temperature, Output Voltage, and Current.</li>
-
-
-
-<li style="font-size:16px"><strong>Isolation Short-Circuit Fault:</strong>&nbsp;If there is too much moisture or damage to the cabling sleeves, then an isolation short-circuit fault can occur, whereby the inverter will report an “isolation alarm”. In this scenario, the solar inverter will either work at the minimum “required” isolation level or stop working altogether. You can monitor this problem with the help of indicators Efficiency, Output Voltage, and Current.</li>
-
-
-
-<li style="font-size:16px"><strong>Inverter Does Not Restart:</strong>&nbsp;Inverters sometimes fail to restart after a power outage. Various factors, including a faulty inverter, a tripped circuit breaker, or a blown fuse, can cause this. You can monitor this problem with the help of indicators Frequency, and Efficiency.</li>
-
-
-
-<li style="font-size:16px"><strong>Maximum Power Point Tracking (MPPT) Module:</strong>&nbsp;The MPPT module is responsible for tracking the maximum power point of the solar panel array. If the MPPT module fails, the inverter cannot convert the DC electricity generated by the solar panels into AC electricity. You can monitor this problem with the help of indicators Temperature, Output Voltage, and Current.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading" id="summary">Summary</h4>
-
-
-
-<p style="font-size:16px">Efficiency challenges in solar farm operations demand a proactive approach to problem-solving, particularly in the context of scheduled diagnostics and high equipment maintenance costs. Anomaly detection emerges as a cost-effective solution, leveraging historical data to identify deviations in parameters like Real-time Energy Output, Power Generation Trends, and Temperature for Solar Panels, along with Output Voltage, Current, Frequency, and Efficiency for Inverters. This approach helps quickly find current problems and predict future issues, which is important for keeping the energy production going without any interruptions.</p>
-
-
-
-<p style="font-size:16px">To implement this approach, an efficient strategy involves creating anomaly detection models based on historical telemetry data, configuring real-time anomaly detection, and providing a comprehensive dashboard for the maintenance team. This ensures a streamlined process from anomaly identification to resolution, utilizing Trendz Analytics to enhance solar farm efficiency by minimizing downtime, reducing operational costs, and optimizing long-term performance.</p>
-
-
-
-<p style="font-size:16px">And this is only part of how advanced analytics and machine learning can improve the efficiency of solar farms. With help, you can find solutions to your solar farm problems, including Soiling, Battery Health Diagnostics, and more.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Optimizing dashboard performance with enhanced image management</title>
-		<link>/blog/optimizing-dashboard-performance-with-enhanced-image-management/</link>
-					<comments>/blog/optimizing-dashboard-performance-with-enhanced-image-management/#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Thu, 29 Feb 2024 11:52:07 +0000</pubDate>
-				<category><![CDATA[Tech]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2971</guid>
-
-					<description><![CDATA[At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version 3.6.2,&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version <a href="https://thingsboard.io/docs/reference/releases/#v362">3.6.2</a>, introduces significant improvements in how images are managed within dashboards, widgets, and more. This update is a key enhancement designed to tackle inefficiencies identified as our user base expanded.</p>
-
-
-
-<h4 class="wp-block-heading">The challenge with large images</h4>
-
-
-
-<p style="font-size:16px">Since the earliest releases, our platform has permitted the embedding of images in dashboards and widgets via external links or Base64 encoded data URLs. While flexible, this approach presented a significant challenge. Users occasionally embedded images up to 50MB in size directly into dashboards. Editing or exporting these dashboards meant transferring massive JSON files to and from the server, a highly inefficient process. This not only affected loading times but also the responsiveness of the dashboard editing experience.</p>
-
-
-
-<h4 class="wp-block-heading">The solution</h4>
-
-
-
-<p style="font-size:16px">To address this issue, we&#8217;ve introduced a major update in how images are handled within the platform. A central aspect of this update is the introduction of the <a href="https://thingsboard.io/docs/user-guide/image-gallery/">Image Gallery</a>. By moving dashboards to a separate entity and utilizing our internal, relative links for storing image references, we&#8217;ve significantly improved efficiency. This change minimizes the size of dashboard JSON files, streamlining both loading and editing processes. The Image Gallery simplifies the process of uploading, organizing, and selecting images.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/9.webp" alt="Thingsboard image gallery with created time and resolution information" class="wp-image-3704" srcset="/blog/wp-content/uploads/2024/03/9.webp 1604w, /blog/wp-content/uploads/2024/03/9-300x169.webp 300w, /blog/wp-content/uploads/2024/03/9-1024x576.webp 1024w, /blog/wp-content/uploads/2024/03/9-768x432.webp 768w, /blog/wp-content/uploads/2024/03/9-1536x864.webp 1536w, /blog/wp-content/uploads/2024/03/9-512x288.webp 512w, /blog/wp-content/uploads/2024/03/9-920x517.webp 920w, /blog/wp-content/uploads/2024/03/9-1600x900.webp 1600w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Backward compatibility</h4>
-
-
-
-<p style="font-size:16px">The platform&#8217;s upgrade script automatically converts all existing dashboards to the new format. Users can still upload dashboards in the old format to a new platform instance. These dashboards will automatically be converted to the new format during the upload process.</p>
-
-
-
-<p style="font-size:16px">For example, consider a “Sensors” dashboard with its background image stored in the old format:</p>
-
-
-
-<pre class="wp-block-code has-black-color has-text-color has-link-color wp-elements-240688aa6d231c0cb4116ec18afee3f6"><code lang="" class="">{
-...
-"backgroundImageUrl": "data:image/webp;base64,iVBORw...JRU5ErkJggg=="
-...
-}</code></pre>
-
-
-
-<p style="font-size:16px">After the upgrade, a new image will be created in the image gallery:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.webp" alt="Thingsboard edit image form with option to change name and loaded photo" class="wp-image-3708" srcset="/blog/wp-content/uploads/2024/03/Edit-image.webp 2406w, /blog/wp-content/uploads/2024/03/Edit-image-300x169.webp 300w, /blog/wp-content/uploads/2024/03/Edit-image-1024x576.webp 1024w, /blog/wp-content/uploads/2024/03/Edit-image-768x432.webp 768w, /blog/wp-content/uploads/2024/03/Edit-image-1536x864.webp 1536w, /blog/wp-content/uploads/2024/03/Edit-image-2048x1152.webp 2048w, /blog/wp-content/uploads/2024/03/Edit-image-512x288.webp 512w, /blog/wp-content/uploads/2024/03/Edit-image-920x517.webp 920w, /blog/wp-content/uploads/2024/03/Edit-image-1600x900.webp 1600w, /blog/wp-content/uploads/2024/03/Edit-image-1920x1080.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
-
-
-
-<p style="font-size:16px">The image name is auto-generated based on the dashboard name and the dashboard element where the image is used. This same behavior applies to images used in widget configuration: markers, backgrounds, etc. The dashboard now references the image using the following link:</p>
-
-
-
-<pre class="wp-block-code"><code lang="json" class="language-json">{
-...
-"backgroundImageUrl": "/api/images/tenant/sensors_dashboard_default_background.webp"
-...
-}</code></pre>
-
-
-
-<h4 class="wp-block-heading">Private and public image links</h4>
-
-
-
-<p style="font-size:16px">Images can be provisioned at the system and tenant levels. System-level widgets are accessible to all platform users, while tenant images are available to authorized users of specific tenants.</p>
-
-
-
-<p style="font-size:16px">To embed an image into an Angular HTML template, such as the Markdown widget, HTML section in the widget editor, custom actions, etc., use the following code snippet:</p>
-
-
-
-<pre class="wp-block-code"><code class="">&lt;img [src]="'/api/images/tenant/sensors_dashboard_default_background.webp' | image | async" /&gt;</code></pre>
-
-
-
-<p style="font-size:16px">The <code>image</code> pipe automatically adds the necessary authentication headers to the image request, allowing the same relative image URL to return different content for users from different tenants.</p>
-
-
-
-<p style="font-size:16px">However, custom widgets or static HTML blocks that do not support Angular HTML syntax cannot add authentication headers to requests. Therefore, every platform image also has a unique URL for downloading the image without authentication. Using the following code snippet, you may embed an image into the components based on the plain HTML. Such components include HTML card widgets, cell content functions, etc.</p>
-
-
-
-<pre class="wp-block-code"><code class="">&lt;img src="/api/images/public/ZA4biARtpnl970l0j8MMolRKM56fbpK1" alt="&amp;quot;Sensors&amp;quot; dashboard default background" /&gt;</code></pre>
-
-
-
-<p style="font-size:16px">Each code snippet is unique to its image, and you can find the corresponding snippets in the Embed image window.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1446" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Embed-image-1.webp" alt="Two blocks with text and code blocks with capabilities to copy code" class="wp-image-3886" srcset="/blog/wp-content/uploads/2024/03/Embed-image-1.webp 2406w, /blog/wp-content/uploads/2024/03/Embed-image-1-300x180.webp 300w, /blog/wp-content/uploads/2024/03/Embed-image-1-1024x615.webp 1024w, /blog/wp-content/uploads/2024/03/Embed-image-1-768x462.webp 768w, /blog/wp-content/uploads/2024/03/Embed-image-1-1536x923.webp 1536w, /blog/wp-content/uploads/2024/03/Embed-image-1-2048x1231.webp 2048w, /blog/wp-content/uploads/2024/03/Embed-image-1-512x308.webp 512w, /blog/wp-content/uploads/2024/03/Embed-image-1-920x553.webp 920w, /blog/wp-content/uploads/2024/03/Embed-image-1-1600x962.webp 1600w, /blog/wp-content/uploads/2024/03/Embed-image-1-1920x1154.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Caching</h4>
-
-
-
-<p style="font-size:16px">Our image API now utilizes ETags to optimize caching, ensuring that images are only re-downloaded when they have changed. This approach significantly saves bandwidth and improves load times. While we don&#8217;t apply Cache-Control headers by default, users have the flexibility to customize caching behavior through environment variables, including settings for image ETags cache TTL, maximum cache size, and browser cache TTL for both system and tenant images. These settings are crucial for balancing between reducing server load and ensuring content freshness.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/ThingsBoard.webp" alt="Demonstration photo of relations between Client and Server" class="wp-image-3713" srcset="/blog/wp-content/uploads/2024/03/ThingsBoard.webp 2406w, /blog/wp-content/uploads/2024/03/ThingsBoard-300x169.webp 300w, /blog/wp-content/uploads/2024/03/ThingsBoard-1024x576.webp 1024w, /blog/wp-content/uploads/2024/03/ThingsBoard-768x432.webp 768w, /blog/wp-content/uploads/2024/03/ThingsBoard-1536x864.webp 1536w, /blog/wp-content/uploads/2024/03/ThingsBoard-2048x1152.webp 2048w, /blog/wp-content/uploads/2024/03/ThingsBoard-512x288.webp 512w, /blog/wp-content/uploads/2024/03/ThingsBoard-920x517.webp 920w, /blog/wp-content/uploads/2024/03/ThingsBoard-1600x900.webp 1600w, /blog/wp-content/uploads/2024/03/ThingsBoard-1920x1080.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
-
-
-
-<p style="font-size:16px">The platform offers environment variables to control caching behavior:</p>
-
-
-
-<ul>
-<li style="font-size:16px">CACHE_SPECS_IMAGE_ETAGS_TTL<strong>:</strong> Controls the cache TTL for image ETags. The default is set to 44640 minutes (31 days), after which the cache is cleared.<br></li>
-
-
-
-<li style="font-size:16px">CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE<strong>:</strong> Determines the maximum ETags cache size on the server. The default is 10000. Setting this to 0 disables the cache. <br></li>
-
-
-
-<li style="font-size:16px">CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL and CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL<strong>:</strong> These settings manage the browser cache TTL for system and tenant images, respectively, with a default of 0 minutes, meaning caching is disabled by default.</li>
-</ul>
-
-
-
-<p style="font-size:16px">These settings allow administrators to adjust the balance between performance and content freshness as needed.</p>
-
-
-
-<h4 class="wp-block-heading">Improvement Summary</h4>
-
-
-
-<p style="font-size:16px">By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>/blog/optimizing-dashboard-performance-with-enhanced-image-management/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

@@ -4527,11 +4527,11 @@ blockquote p{
 	}
 }
 @media(max-width: 543px){
+	.cs-read-next .heading1 {
+    	font-size: 38px;
+	}
 	.cs-home-hero{
 		display: none;
-	}
-	.support-ukraine{
-		display: none !important;
 	}
 	.cs-hero-type-1 .cs-entry__outer{
 		height: 100%;

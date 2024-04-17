@@ -20,47 +20,50 @@
         function _gaLt(event) {
             // TODO-VP-gtm: move to GTM
             /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
-            // if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
-            //     return;
-            // }
-            // var el = event.srcElement || event.target;
-            //
-            // while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
-            //     el = el.parentNode;
-            // }
-            // if (el && el.href && el.getAttribute('itemprop') !== 'contentUrl') {
-            //     var link = el.href;
-            //     if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
-            //         var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
-            //         if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
-            //             target = "_blank";
-            //         }
-            //
-            //         var hbrun = false; // tracker has not yet run
-            //         var hitBack = function() {
-            //             if (hbrun) return;
-            //             hbrun = true;
-            //             window.location.href = link;
-            //         };
-            //
-            //         if (target) {
-            //             ga(
-            //                     "send", "event", "Outgoing Links", link,
-            //                     document.location.pathname + document.location.search
-            //             );
-            //         } else {
-            //             event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-            //             ga(
-            //                     "send", "event", "Outgoing Links", link,
-            //                     document.location.pathname + document.location.search, {
-            //                         "hitCallback": hitBack
-            //                     }
-            //             );
-            //
-            //             setTimeout(hitBack, 1000);
-            //         }
-            //     }
-            // }
+            if (typeof window.dataLayer === 'undefined' || !window.dataLayer.push) {
+                return;
+            }
+            var el = event.srcElement || event.target;
+
+            while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
+                el = el.parentNode;
+            }
+            if (el && el.href && el.getAttribute('itemprop') !== 'contentUrl') {
+                var link = el.href;
+                if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
+                    var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
+                    if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
+                        target = "_blank";
+                    }
+
+                    var hbrun = false; // tracker has not yet run
+                    var hitBack = function() {
+                        if (hbrun) return;
+                        hbrun = true;
+                        window.location.href = link;
+                    };
+
+                    if (target) {
+                        gtag('event', 'outgoing_links', {
+                            'event_category': 'Outgoing Links',
+                            'event_label': link,
+                            'event_action': document.location.pathname + document.location.search
+                        });
+
+                    } else {
+                        event.preventDefault ? event.preventDefault() : event.returnValue = !1;
+
+                        gtag('event', 'outgoing_link', {
+                            'event_category': 'Outgoing Links',
+                            'event_label': link,
+                            'value': document.location.pathname + document.location.search,
+                            'event_callback': hitBack
+                        });
+
+                        setTimeout(hitBack, 1000);
+                    }
+                }
+            }
         }
 
         var _w = window;
@@ -73,7 +76,9 @@
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WCG5PVJC');</script>
+    })(window,document,'script','dataLayer','GTM-WCG5PVJC');
+    function gtag(){dataLayer.push(arguments)};
+    </script>
     <!-- End Google Tag Manager -->
 </head>
 {{ content }}

@@ -162,9 +162,19 @@
 
   function reportTrendzWizrdAction(link, product) {
     // TODO-VP-gtm: move to GTM
-    // if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
-    //   return;
-    // }
-    // ga("send", "event", "TrendzWizrdAction", product, link);
+    if (typeof window.dataLayer === 'undefined' || !window.dataLayer.push) {
+      return;
+    }
+
+    gtag('event', 'TrendzWizrdAction', {
+      'event_category': product,
+      'event_label': link
+    });
+
+    gtag('event', 'TrendzWizrdAction', {
+      'search_term': searchText,
+      'event_label': 'Guides',
+      'searchPageCount': searchPageCount
+    });
   }
 </script>
