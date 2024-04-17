@@ -97,16 +97,17 @@
     }
 
     function reportSearchInput(searchText) {
-
         // TODO-VP-gtm: move to GTM
-        // if (!ga.hasOwnProperty("loaded") || ga.loaded !== true) {
-        //     return;
-        // }
-        //
-        // ga(
-        //     "send", "event", "Guides", "search",
-        //     searchText, searchPageCount
-        // );
+        if (typeof window.dataLayer === 'undefined' || !window.dataLayer.push) {
+                return;
+        }
+
+        gtag('event', 'search', {
+                'search_term': searchText,
+                'event_label': 'DeviceLibraryGuides', 
+                'searchPageCount': searchPageCount  
+        });
+
     }
     
 </script>

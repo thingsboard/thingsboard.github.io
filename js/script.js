@@ -206,10 +206,12 @@ var tb = (function () {
 
     function reportFaqNode(nodeId) {
 		// TODO-VP-gtm: move to GTM
-        // if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !nodeId) {
-        //     return;
-        // }
-        // ga("send", "event", "FaqNode", nodeId);
+		if (typeof window.dataLayer === 'undefined' || !window.dataLayer.push) {
+			return;
+		}
+		gtag('event', 'FaqNode', {
+			'event_category': nodeId
+		});
     }
 
 	function CollapseBox(container, index){

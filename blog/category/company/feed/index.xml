@@ -8,7 +8,7 @@
 	>
 
 <channel>
-	<title>Company &#8211; ThingsBoard&#039;s blog</title>
+	<title>Company</title>
 	<atom:link href="/blog/category/company/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
@@ -18,10 +18,10 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.4.4</generator>
 	<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
-		<link>/blog/top-supplier-retail-2024-2/</link>
+		<link>/blog/top-supplier-retail-2024-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=top-supplier-retail-2024-2</link>
 					<comments>/blog/top-supplier-retail-2024-2/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
@@ -29,7 +29,7 @@
 				<category><![CDATA[Company]]></category>
 		<category><![CDATA[Solutions]]></category>
 		<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">/blog/?p=3972</guid>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=3972</guid>
 
 					<description><![CDATA[A new achievement and what does it mean to all ]]></description>
 										<content:encoded><![CDATA[

@@ -5,23 +5,22 @@
 {% assign githubLink = "https://github.com/thingsboard/thingsboard" %}
 {% assign githubLabel = "Star thingsboard/thingsboard on GitHub" %}
 {% if docsTag %}
-    {% if docsTag == "mqtt-broker" %}
-        {% assign githubLink = "https://github.com/thingsboard/tbmq" %}
-        {% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
-    {% elsif docsTag == "gw" %}
-        {% assign githubLink = "https://github.com/thingsboard/thingsboard-gateway" %}
-        {% assign githubLabel = "Star thingsboard/thingsboard-gateway on GitHub" %}
-    {% endif %}
-    {% assign foundProduct = site.data.products | where: "tag", docsTag %}
-    {% assign productInfo = foundProduct[0] %}
-    {% unless page.customTitle == "true" %}
-        {% assign customTitle = title | append: " | " %}
-        {% assign customTitle = customTitle | append: productInfo.fulltitle %}
-    {% endunless %}
-{% elsif page.customTitle == "true" %}
-    {% assign customTitle = title %}
+{% if docsTag == "mqtt-broker" %}
+{% assign githubLink = "https://github.com/thingsboard/tbmq" %}
+{% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
+{% elsif docsTag == "gw" %}
+{% assign githubLink = "https://github.com/thingsboard/thingsboard-gateway" %}
+{% assign githubLabel = "Star thingsboard/thingsboard-gateway on GitHub" %}
 {% endif %}
-
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
+{% unless page.customTitle == "true" %}
+{% assign customTitle = title | append: " | " %}
+{% assign customTitle = customTitle | append: productInfo.fulltitle %}
+{% endunless %}
+{% elsif page.customTitle == "true" %}
+{% assign customTitle = title %}
+{% endif %}
 <head>
     <meta charset="utf-8">
     <meta name="cf-2fa-verify" content="a08672380de15e9">
@@ -82,11 +81,9 @@
                         e(a)
                     })
                 }
-
                 function f() {
                     i.addEventListener && i.removeEventListener("load", f), i.media = d || "all"
                 }
-
                 var g, h = a.document, i = h.createElement("link");
                 if (c) g = c; else {
                     var j = (h.body || h.getElementsByTagName("head")[0]).childNodes;
@@ -106,19 +103,16 @@
             };
             "undefined" != typeof exports ? exports.loadCSS = b : a.loadCSS = b
         }("undefined" != typeof global ? global : this);
-
         /*! onloadCSS. (onload callback for loadCSS) [c]2017 Filament Group, Inc. MIT License */
         function onloadCSS(a, b) {
             function c() {
                 !d && b && (d = !0, b.call(a))
             }
-
             var d;
             a.addEventListener && a.addEventListener("load", c), a.attachEvent && a.attachEvent("onload", c), "isApplicationInstalled" in navigator && "onloadcssdefined" in a && a.onloadcssdefined(c)
         }
     </script>
     <script>
-
         function jqueryDefer(method) {
             if (window.jQuery) {
                 method();
@@ -128,7 +122,6 @@
                 }, 50);
             }
         }
-
         function jqueryUiDefer(method) {
             if (window.jQuery && window.jQuery.ui) {
                 method();
@@ -138,7 +131,6 @@
                 }, 50);
             }
         }
-
         window.vis = (function () {
             var stateKey,
                 eventKey,
@@ -159,7 +151,6 @@
                 return !document[stateKey];
             }
         })();
-
         function loadScript(src, callback) {
             var s, r, t;
             r = false;
@@ -177,14 +168,12 @@
             t = document.getElementsByTagName('script')[0];
             t.parentNode.insertBefore(s, t);
         }
-
         function loadCssAsync(src, callback) {
             var stylesheet = loadCSS(src);
             if (callback) {
                 onloadCSS(stylesheet, callback);
             }
         }
-
         function loadNextScript(index, scriptsList, completeCallback) {
             if (index < scriptsList.length) {
                 var script = scriptsList[index];
@@ -206,7 +195,6 @@
                 completeCallback();
             }
         }
-
         var initialScriptsList = [
             {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
             {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
@@ -221,9 +209,7 @@
             {src: '/js/photoswipe.min.js', type: 'script'},
             {src: '/js/photoswipe-ui-default.min.js', type: 'script'}
         ];
-
         loadNextScript(0, initialScriptsList);
-
         jqueryDefer(function () {
             (function ($, win) {
                 $.fn.inViewport = function (cb) {
@@ -236,14 +222,12 @@
                                 $(win).off("resize scroll", visPx);
                             }
                         }
-
                         visPx();
                         $(win).on("resize scroll", visPx);
                     });
                 };
             }(jQuery, window));
         });
-
         function inViewportDefer(method) {
             if (window.jQuery && $.fn.inViewport) {
                 method();
@@ -253,54 +237,56 @@
                 }, 50);
             }
         }
-
     </script>
     <script async defer>
         function _gaLt(event) {
             /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
             // TODO-VP-gtm: move to GTM
-            // if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
-            //     return;
-            // }
-            // var el = event.srcElement || event.target;
-            //
-            // while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
-            //     el = el.parentNode;
-            // }
-            // if (el && el.href && el.getAttribute('itemprop') !== 'contentUrl') {
-            //     var link = el.href;
-            //     if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
-            //         var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
-            //         if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
-            //             target = "_blank";
-            //         }
-            //
-            //         var hbrun = false; // tracker has not yet run
-            //         var hitBack = function () {
-            //             if (hbrun) return;
-            //             hbrun = true;
-            //             window.location.href = link;
-            //         };
-            //
-            //         if (target) {
-            //             ga(
-            //                 "send", "event", "Outgoing Links", link,
-            //                 document.location.pathname + document.location.search
-            //             );
-            //         } else {
-            //             event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-            //             ga(
-            //                 "send", "event", "Outgoing Links", link,
-            //                 document.location.pathname + document.location.search, {
-            //                     "hitCallback": hitBack
-            //                 }
-            //             );
-            //
-            //             setTimeout(hitBack, 1000);
-            //         }
-            //     }
-            // }
-        }
+            if (typeof window.dataLayer === 'undefined' || !window.dataLayer.push || (event.which != 1 && event.which != 2)) {
+                return;
+            }
+            var el = event.srcElement || event.target;
+
+            while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
+                el = el.parentNode;
+            }
+            if (el && el.href && el.getAttribute('itemprop') !== 'contentUrl') {
+                var link = el.href;
+                if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
+                    var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;
+                    if (event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2) {
+                        target = "_blank";
+                    }
+
+                    var hbrun = false; // tracker has not yet run
+                    var hitBack = function () {
+                        if (hbrun) return;
+                        hbrun = true;
+                        window.location.href = link;
+                    };
+
+                    if (target) {
+                        gtag('event', 'outgoing_links', {
+                            'event_category': 'Outgoing Links',
+                            'event_label': link,
+                            'event_action': document.location.pathname + document.location.search
+                        });
+
+                    } else {
+                        event.preventDefault ? event.preventDefault() : event.returnValue = !1;
+
+                        gtag('event', 'outgoing_link', {
+                            'event_category': 'Outgoing Links',
+                            'event_label': link,
+                            'value': document.location.pathname + document.location.search,
+                            'event_callback': hitBack
+                        });
+
+                        setTimeout(hitBack, 1000);
+                    }
+                }
+            }
+                            }
 
         var _w = window;
         var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
@@ -316,7 +302,9 @@
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WCG5PVJC');</script>
+    })(window,document,'script','dataLayer','GTM-WCG5PVJC');
+        function gtag(){dataLayer.push(arguments)};
+    </script>
     <!-- End Google Tag Manager -->
     <script async defer>
         function Burger() {
@@ -334,7 +322,6 @@
         }
     </script>
     <script async defer>
-
         jqueryDefer(function () {
             let menuElement = $('nav.head-menu > ul');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
@@ -406,12 +393,10 @@
                     }, 100)
                 });
             });
-
             let isMobile = $('button.burger').css('display') === 'block';
             if (isMobile) {
                 initMobileSubmenu();
             }
-
             $(window).resize(function(){
                 let newIsMobile = $('button.burger').css('display') === 'block';
                 if (isMobile !== newIsMobile) {
@@ -423,7 +408,6 @@
                     }
                 }
             });
-
             $( document ).ready(function() {
                 // Rogue line numbers fix (don't show line numbers for 1 row)
                 $('.rouge-gutter.gl').each(function() {
@@ -442,21 +426,17 @@
                 });
             });
         });
-
         function initMobileSubmenu() {
-
             var header = $('header');
             if (header.hasClass('opened-burger')) {
                 var body = $('body');
                 body.css('overflow', 'hidden');
             }
-
             let targetSubMenus = $('nav.head-menu > div.sub-menu-container > div');
             targetSubMenus.css('display', 'block');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             submenuContainer.removeClass('active');
             submenuContainer.css('display', 'none');
-
             targetSubMenus.each(function() {
                 let subMenu = $( this );
                 let subMenuId = subMenu.attr('id');
@@ -464,7 +444,6 @@
                 parent.append(subMenu);
             });
         }
-
         function restoreDesktopSubmenu() {
             var body = $('body');
             body.css('overflow', '');
@@ -479,7 +458,6 @@
                 submenuContainer.append(subMenu);
             });
         }
-
         function listburg(subMenuId) {
             let isMobile = $('button.burger').css('display') === 'block';
             if (isMobile) {
@@ -971,8 +949,8 @@
             </div>
         </div>
     </nav>
-    <div>
-        <a href="/installations/" class="n-button try">Try it now</a>
-        <a href="/pricing/" class="n-button price">Pricing</a>
+    <div class="head-buttons">
+        <a id="Menu_TryItNow" href="/installations/" class="n-button try">Try it now</a>
+        <a id="Menu_Pricing" href="/pricing/" class="n-button price">Pricing</a>
     </div>
 </header>

@@ -8,25 +8,25 @@
 	>
 
 <channel>
-	<title>Iryna Kheroim &#8211; ThingsBoard&#039;s blog</title>
+	<title>Iryna Kheroim</title>
 	<atom:link href="/blog/author/iryna-kheroim/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Fri, 05 Apr 2024 12:29:36 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 16 Apr 2024 14:57:37 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.4.4</generator>
 	<item>
 		<title>Increasing equipment utilization KPIs with the help of advanced analytics</title>
-		<link>/blog/increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics/</link>
+		<link>/blog/increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics</link>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 04 Mar 2024 11:02:41 +0000</pubDate>
 				<category><![CDATA[Tech]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3147</guid>
+		<guid isPermaLink="false">/blog/?p=3147</guid>
 
 					<description><![CDATA[Introduction&#160; Equipment in production plays an important role in achieving maximum efficiency, quality, and payback. The issues that&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -90,7 +90,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1515" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-production-output.webp" alt="Chrat which shows Production Output" class="wp-image-3773" srcset="/blog/wp-content/uploads/2024/03/Eu-production-output.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-production-output-300x189.webp 300w, /blog/wp-content/uploads/2024/03/Eu-production-output-1024x644.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-production-output-768x483.webp 768w, /blog/wp-content/uploads/2024/03/Eu-production-output-1536x966.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-production-output-2048x1288.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-production-output-512x322.webp 512w, /blog/wp-content/uploads/2024/03/Eu-production-output-920x579.webp 920w, /blog/wp-content/uploads/2024/03/Eu-production-output-1600x1006.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-production-output-1920x1207.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1515" src="/blog/wp-content/uploads/2024/03/Eu-production-output.webp" alt="Chrat which shows Production Output" class="wp-image-3773" srcset="/blog/wp-content/uploads/2024/03/Eu-production-output.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-production-output-300x189.webp 300w, /blog/wp-content/uploads/2024/03/Eu-production-output-1024x644.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-production-output-768x483.webp 768w, /blog/wp-content/uploads/2024/03/Eu-production-output-1536x966.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-production-output-2048x1288.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-production-output-512x322.webp 512w, /blog/wp-content/uploads/2024/03/Eu-production-output-920x579.webp 920w, /blog/wp-content/uploads/2024/03/Eu-production-output-1600x1006.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-production-output-1920x1207.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -100,7 +100,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="2409" height="1485" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate.webp" alt="Block with percentage statistics and small chart" class="wp-image-3776" srcset="/blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-300x185.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1024x631.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-768x473.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1536x947.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-2048x1262.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-512x316.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-920x567.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1600x986.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1920x1184.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="2409" height="1485" src="/blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate.webp" alt="Block with percentage statistics and small chart" class="wp-image-3776" srcset="/blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-300x185.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1024x631.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-768x473.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1536x947.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-2048x1262.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-512x316.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-920x567.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1600x986.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Equipment-Utilization-Rate-1920x1184.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -110,7 +110,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="638" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1024x638.webp" alt="Grid which shows percentage of defects " class="wp-image-3777" srcset="/blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1024x638.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-300x187.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-768x478.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1536x956.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-2048x1275.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-512x319.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-920x573.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1600x996.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1920x1196.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="638" src="/blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1024x638.webp" alt="Grid which shows percentage of defects " class="wp-image-3777" srcset="/blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1024x638.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-300x187.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-768x478.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1536x956.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-2048x1275.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-512x319.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-920x573.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1600x996.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects-1920x1196.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-Precentage-of-Defects.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1791" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Throughput.webp" alt="Statistics with date and execution time about production lines" class="wp-image-3778" srcset="/blog/wp-content/uploads/2024/03/Eu-Throughput.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-Throughput-300x223.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1024x761.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Throughput-768x571.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1536x1142.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Throughput-2048x1523.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Throughput-512x381.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Throughput-920x684.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1600x1190.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1920x1427.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1791" src="/blog/wp-content/uploads/2024/03/Eu-Throughput.webp" alt="Statistics with date and execution time about production lines" class="wp-image-3778" srcset="/blog/wp-content/uploads/2024/03/Eu-Throughput.webp 2409w, /blog/wp-content/uploads/2024/03/Eu-Throughput-300x223.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1024x761.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Throughput-768x571.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1536x1142.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Throughput-2048x1523.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Throughput-512x381.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Throughput-920x684.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1600x1190.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Throughput-1920x1427.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="641" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1024x641.webp" alt="Grid which shows how long the equipment is actively used during a defined period" class="wp-image-3779" srcset="/blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1024x641.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-768x481.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1536x962.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-2048x1283.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-920x576.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1600x1002.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1920x1203.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="641" src="/blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1024x641.webp" alt="Grid which shows how long the equipment is actively used during a defined period" class="wp-image-3779" srcset="/blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1024x641.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-768x481.webp 768w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1536x962.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-2048x1283.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-920x576.webp 920w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1600x1002.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement-1920x1203.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-Time-Based-Measurement.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -154,7 +154,7 @@
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="639" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Eu-MTTR-1-1024x639.webp" alt="Block with percentage statistics and small chart" class="wp-image-3780" srcset="/blog/wp-content/uploads/2024/03/Eu-MTTR-1-1024x639.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-300x187.webp 300w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-768x479.webp 768w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1536x958.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-2048x1278.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-512x319.webp 512w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-920x574.webp 920w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1600x998.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1920x1198.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="639" src="/blog/wp-content/uploads/2024/03/Eu-MTTR-1-1024x639.webp" alt="Block with percentage statistics and small chart" class="wp-image-3780" srcset="/blog/wp-content/uploads/2024/03/Eu-MTTR-1-1024x639.webp 1024w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-300x187.webp 300w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-768x479.webp 768w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1536x958.webp 1536w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-2048x1278.webp 2048w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-512x319.webp 512w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-920x574.webp 920w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1600x998.webp 1600w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1-1920x1198.webp 1920w, /blog/wp-content/uploads/2024/03/Eu-MTTR-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 </div>
 </div>
 
@@ -220,13 +220,13 @@
 			</item>
 		<item>
 		<title>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</title>
-		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/</link>
+		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions</link>
 					<comments>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Fri, 01 Mar 2024 15:57:16 +0000</pubDate>
 				<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3316</guid>
+		<guid isPermaLink="false">/blog/?p=3316</guid>
 
 					<description><![CDATA[Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -242,7 +242,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -312,7 +312,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="803" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp" alt="Field with solar panels and demonstration icons of IOT notifications on them" class="wp-image-3766" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp 803w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="803" src="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp" alt="Field with solar panels and demonstration icons of IOT notifications on them" class="wp-image-3766" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp 803w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -346,7 +346,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -372,13 +372,13 @@
 			</item>
 		<item>
 		<title>Reducing costs of solar farms by optimizing the cleaning process</title>
-		<link>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/</link>
+		<link>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process</link>
 					<comments>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 15:09:55 +0000</pubDate>
 				<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2957</guid>
+		<guid isPermaLink="false">/blog/?p=2957</guid>
 
 					<description><![CDATA[Introduction For solar farms, dirty panels can mean thousands of dollars of lost revenue annually. Panels washed too&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -394,7 +394,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp" alt="Thingsboard dashboard with charts and lists solar panels statistics " class="wp-image-3758" srcset="/blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-300x168.webp 300w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-768x430.webp 768w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-512x287.webp 512w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-920x516.webp 920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="/blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp" alt="Thingsboard dashboard with charts and lists solar panels statistics " class="wp-image-3758" srcset="/blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-300x168.webp 300w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-768x430.webp 768w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-512x287.webp 512w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-920x516.webp 920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -467,7 +467,7 @@
 
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="669" data-id="3759" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp" alt="Grid with solar panel cleaning schedule" class="wp-image-3759" srcset="/blog/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp 1024w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-300x196.webp 300w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-768x502.webp 768w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1536x1004.webp 1536w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-2048x1339.webp 2048w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-512x335.webp 512w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-920x601.webp 920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1600x1046.webp 1600w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1920x1255.webp 1920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="669" data-id="3759" src="/blog/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp" alt="Grid with solar panel cleaning schedule" class="wp-image-3759" srcset="/blog/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp 1024w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-300x196.webp 300w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-768x502.webp 768w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1536x1004.webp 1536w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-2048x1339.webp 2048w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-512x335.webp 512w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-920x601.webp 920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1600x1046.webp 1600w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1920x1255.webp 1920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 </figure>
 
 
@@ -494,13 +494,13 @@
 			</item>
 		<item>
 		<title>Solving solar power plant problems using advanced analytics</title>
-		<link>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/</link>
+		<link>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=solving-solar-power-plant-problems-using-advanced-analytics-2</link>
 					<comments>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 10:33:41 +0000</pubDate>
 				<category><![CDATA[Use cases]]></category>
-		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3387</guid>
+		<guid isPermaLink="false">/blog/?p=3387</guid>
 
 					<description><![CDATA[Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -528,7 +528,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp" alt="Solar farm field with solar panels and different buildings" class="wp-image-3826" srcset="/blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-768x430.webp 768w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-512x287.webp 512w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-920x516.webp 920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="/blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp" alt="Solar farm field with solar panels and different buildings" class="wp-image-3826" srcset="/blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-768x430.webp 768w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-512x287.webp 512w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-920x516.webp 920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -560,7 +560,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Scheme-1024x561.webp" alt="Circulation of solar farm building challenges" class="wp-image-3828" srcset="/blog/wp-content/uploads/2024/03/Scheme-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Scheme-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Scheme-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Scheme-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Scheme-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Scheme-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Scheme-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Scheme-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Scheme-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Scheme.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="/blog/wp-content/uploads/2024/03/Scheme-1024x561.webp" alt="Circulation of solar farm building challenges" class="wp-image-3828" srcset="/blog/wp-content/uploads/2024/03/Scheme-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Scheme-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Scheme-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Scheme-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Scheme-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Scheme-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Scheme-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Scheme-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Scheme-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Scheme.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -610,7 +610,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="https://wp.thingsboard.io/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">guide here</a>.</p>
+<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">guide here</a>.</p>
 
 
 
@@ -642,7 +642,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="573" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3853" srcset="/blog/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp 1024w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-768x429.webp 768w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1536x859.webp 1536w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-2048x1145.webp 2048w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-512x286.webp 512w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-920x514.webp 920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1600x895.webp 1600w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1920x1074.webp 1920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="573" src="/blog/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3853" srcset="/blog/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp 1024w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-768x429.webp 768w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1536x859.webp 1536w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-2048x1145.webp 2048w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-512x286.webp 512w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-920x514.webp 920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1600x895.webp 1600w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1920x1074.webp 1920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -650,7 +650,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="https://wp.thingsboard.io/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">click here</a>.</p>
 
 
 
@@ -670,7 +670,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="643" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Heat-map-1024x643.webp" alt="Grid with solar farm statistics" class="wp-image-3852" srcset="/blog/wp-content/uploads/2024/03/Heat-map-1024x643.webp 1024w, /blog/wp-content/uploads/2024/03/Heat-map-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Heat-map-768x482.webp 768w, /blog/wp-content/uploads/2024/03/Heat-map-1536x964.webp 1536w, /blog/wp-content/uploads/2024/03/Heat-map-2048x1285.webp 2048w, /blog/wp-content/uploads/2024/03/Heat-map-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Heat-map-920x577.webp 920w, /blog/wp-content/uploads/2024/03/Heat-map-1600x1004.webp 1600w, /blog/wp-content/uploads/2024/03/Heat-map-1920x1205.webp 1920w, /blog/wp-content/uploads/2024/03/Heat-map.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="643" src="/blog/wp-content/uploads/2024/03/Heat-map-1024x643.webp" alt="Grid with solar farm statistics" class="wp-image-3852" srcset="/blog/wp-content/uploads/2024/03/Heat-map-1024x643.webp 1024w, /blog/wp-content/uploads/2024/03/Heat-map-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Heat-map-768x482.webp 768w, /blog/wp-content/uploads/2024/03/Heat-map-1536x964.webp 1536w, /blog/wp-content/uploads/2024/03/Heat-map-2048x1285.webp 2048w, /blog/wp-content/uploads/2024/03/Heat-map-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Heat-map-920x577.webp 920w, /blog/wp-content/uploads/2024/03/Heat-map-1600x1004.webp 1600w, /blog/wp-content/uploads/2024/03/Heat-map-1920x1205.webp 1920w, /blog/wp-content/uploads/2024/03/Heat-map.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -726,7 +726,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="640" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp" alt="Chart with consumption forecast" class="wp-image-3854" srcset="/blog/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp 1024w, /blog/wp-content/uploads/2024/03/Consumption-forecast-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Consumption-forecast-768x480.webp 768w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1536x960.webp 1536w, /blog/wp-content/uploads/2024/03/Consumption-forecast-2048x1280.webp 2048w, /blog/wp-content/uploads/2024/03/Consumption-forecast-512x320.webp 512w, /blog/wp-content/uploads/2024/03/Consumption-forecast-920x575.webp 920w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1600x1000.webp 1600w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1920x1200.webp 1920w, /blog/wp-content/uploads/2024/03/Consumption-forecast.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="640" src="/blog/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp" alt="Chart with consumption forecast" class="wp-image-3854" srcset="/blog/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp 1024w, /blog/wp-content/uploads/2024/03/Consumption-forecast-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Consumption-forecast-768x480.webp 768w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1536x960.webp 1536w, /blog/wp-content/uploads/2024/03/Consumption-forecast-2048x1280.webp 2048w, /blog/wp-content/uploads/2024/03/Consumption-forecast-512x320.webp 512w, /blog/wp-content/uploads/2024/03/Consumption-forecast-920x575.webp 920w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1600x1000.webp 1600w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1920x1200.webp 1920w, /blog/wp-content/uploads/2024/03/Consumption-forecast.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -734,7 +734,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about how to solve non-standard tasks and complex calculations using advanced analytics,&nbsp;<a href="https://wp.thingsboard.io/solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about how to solve non-standard tasks and complex calculations using advanced analytics,&nbsp;<a href="/blog/solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/">click here</a>.</p>
 
 
 
@@ -764,7 +764,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1704" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp" alt="Three images which are showing the models of solar panel work" class="wp-image-3850" srcset="/blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp 2409w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-300x212.webp 300w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1024x724.webp 1024w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-768x543.webp 768w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1536x1086.webp 1536w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-2048x1449.webp 2048w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-512x362.webp 512w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-920x651.webp 920w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1600x1132.webp 1600w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1920x1358.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1704" src="/blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp" alt="Three images which are showing the models of solar panel work" class="wp-image-3850" srcset="/blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp 2409w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-300x212.webp 300w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1024x724.webp 1024w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-768x543.webp 768w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1536x1086.webp 1536w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-2048x1449.webp 2048w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-512x362.webp 512w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-920x651.webp 920w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1600x1132.webp 1600w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1920x1358.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
