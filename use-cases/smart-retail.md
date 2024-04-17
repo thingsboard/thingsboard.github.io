@@ -42,7 +42,7 @@ browse current and historical state of their supermarkets.
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
+    <a id="UseCases_SmartRetail_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
 </div>
 
 The live dashboard is part of the [solution template](/docs/paas/solution-templates/smart-retail) and 
@@ -194,9 +194,9 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_SmartRetail_GetStart" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+    <a id="UseCases_SmartRetail_CustomersFb" href="/industries/smart-energy/" class="button">Customers feedback</a>
+    <a id="UseCases_SmartRetail_PlatformFeatures" href="/docs/#platform-features" class="button">Platform features</a>
+    <a id="UseCases_SmartRetail_Architecture" href="/docs/reference/" class="button">Architecture</a>
+    <a id="UseCases_SmartRetail_ContactUs" href="/docs/contact-us/" class="button">Contact us</a>
 </div>

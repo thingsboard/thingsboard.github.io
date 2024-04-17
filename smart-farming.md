@@ -43,7 +43,7 @@ You may quickly adapt it to other farm assets tracking or remote control scenari
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
+    <a id="UseCases_SmartFarming_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
 </div>
 
 The live dashboard displays real-time data from temperature, moisture, and ultrasonic sensor collected using ThingsBoard MQTT API.
@@ -154,11 +154,11 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_SmartFarming_GetStart" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+    <a id="UseCases_SmartFarming_CustomersFb" href="/industries/smart-energy/" class="button">Customers feedback</a>
+    <a id="UseCases_SmartFarming_PlatformFeatures" href="/docs/#platform-features" class="button">Platform features</a>
+    <a id="UseCases_SmartFarming_Architecture" href="/docs/reference/" class="button">Architecture</a>
+    <a id="UseCases_SmartFarming_ContactUs" href="/docs/contact-us/" class="button">Contact us</a>
 </div>
 
 

@@ -179,6 +179,6 @@ description:
 
 <section id="bottom">
     <main>
-        <a href="/docs/pe/mobile/getting-started/" class="getting-started">Getting started</a>
+        <a id="Products_MobAppPE_GetStart" href="/docs/pe/mobile/getting-started/" class="getting-started">Getting started</a>
     </main>
 </section>

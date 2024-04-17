@@ -158,8 +158,8 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+<a id="UseCases_TLM_GetStart" style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+<a id="UseCases_TLM_CustomersFb" style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
+<a id="UseCases_TLM_PlatformFeatures" style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
+<a id="UseCases_TLM_Architecture" style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
+<a id="UseCases_TLM_ContactUs" style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>

@@ -151,9 +151,9 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_WasteManage_GetStart" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+    <a id="UseCases_WasteManage_CustomersFb" href="/industries/smart-energy/" class="button">Customers feedback</a>
+    <a id="UseCases_WasteManage_PlatformFeatures" href="/docs/#platform-features" class="button">Platform features</a>
+    <a id="UseCases_WasteManage_Architecture" href="/docs/reference/" class="button">Architecture</a>
+    <a id="UseCases_WasteManage_ContactUs" href="/docs/contact-us/" class="button">Contact us</a>
 </div>
