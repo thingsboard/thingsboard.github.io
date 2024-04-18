@@ -66,7 +66,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 5. Memory update for slow machines (1GB of RAM) 
+### Step 5. Memory update for slow machines (4GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
@@ -79,7 +79,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 {% include templates/start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 240 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
 ### Troubleshooting
