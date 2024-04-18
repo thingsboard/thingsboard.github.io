@@ -38,3 +38,30 @@ hidetoc: "true"
     
         var ml_account = ml('accounts', '1017142', 'w0j5m5g7f5', 'load');
 </script>
+<script async>
+    waitForJQuery(function(){
+        setAttrsToDynamicFormForGTMPurposes();
+    });
+
+    function setAttrsToDynamicFormForGTMPurposes() {
+        let $formElement = jQuery('[data-account="1017142:w0j5m5g7f5"] form');
+        if ($formElement.length) {
+            $formElement.attr('id', 'Products_TA_GetADemo');
+            $formElement.addClass('gtm_form');
+        } else {
+            setTimeout(setAttrsToDynamicFormForGTMPurposes, 500);
+        }
+    }
+
+    function waitForJQuery(callback) {
+        if (window.jQuery) {
+            callback();
+        } else {
+            setTimeout(function(){    
+                waitForJQuery(function(){
+                    setAttrsToDynamicFormForGTMPurposes();
+                }
+            )}, 500);
+        }
+    }
+</script>

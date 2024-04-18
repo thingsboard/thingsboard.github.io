@@ -50,7 +50,8 @@ You may quickly adapt it to Air quality or other sensors and add remote control 
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
+    <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.
+cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
 </div>
 
 The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/temperature-humidity-sensors/) and displays real-time data from temperature and humidity sensor collected using ThingsBoard MQTT API.
@@ -165,9 +166,9 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a id="UseCases_EnvMon_GetStart" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a id="UseCases_EnvMon_CustomersFb" href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a id="UseCases_EnvMon_PlatformFeatures" href="/docs/#platform-features" class="button">Platform features</a>
-    <a id="UseCases_EnvMon_Architecture" href="/docs/reference/" class="button">Architecture</a>
-    <a id="UseCases_EnvMon_ContactUs" href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_EnvMon_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
+    <a id="UseCases_EnvMon_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
+    <a id="UseCases_EnvMon_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
+    <a id="UseCases_EnvMon_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
+    <a id="UseCases_EnvMon_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>

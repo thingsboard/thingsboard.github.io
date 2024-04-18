@@ -226,6 +226,6 @@ ThingsBoard training sessions are on-demand online events for up to 8 people. On
 </div>
 
 <div class="bottom">
-    <a id="Serv_Trainings_ContactUs" href="/docs/contact-us/" class="contact-button">Contact Us</a>
+    <a id="Serv_Trainings_ContactUs" href="/docs/contact-us/" class="contact-button gtm_button">Contact Us</a>
     <p>Contact us to join the ThingsBoard training courses</p>
 </div>

@@ -39,15 +39,16 @@ hidetoc: "true"
 </script>
 <script async>
     waitForJQuery(function(){
-        setIdToDynamicForm();
+        setAttrsToDynamicFormForGTMPurposes();
     });
 
-    function setIdToDynamicForm() {
+    function setAttrsToDynamicFormForGTMPurposes() {
         let $formElement = jQuery('[data-account="1017142:w0j5m5g7f5"] form');
         if ($formElement.length) {
             $formElement.attr('id', 'Products_Edge_DemoRequest');
+            $formElement.addClass('gtm_form');
         } else {
-            setTimeout(setIdToDynamicForm, 500);
+            setTimeout(setAttrsToDynamicFormForGTMPurposes, 500);
         }
     }
 
@@ -57,7 +58,7 @@ hidetoc: "true"
         } else {
             setTimeout(function(){    
                 waitForJQuery(function(){
-                    setIdToDynamicForm();
+                    setAttrsToDynamicFormForGTMPurposes();
                 }
             )}, 500);
         }

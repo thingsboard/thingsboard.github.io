@@ -62,7 +62,8 @@ The following interactive dashboard hosted on live demo server represents smart 
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_SmartMetering_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">View live demo</a>
+    <a id="UseCases_SmartMetering_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.
+io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button gtm_button">View live demo</a>
 </div>
 
 The live dashboard displays real-time data from several smart meters and thermostats collected using ThingsBoard MQTT API. 
@@ -164,9 +165,11 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a id="UseCases_SmartMetering_GetStart" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a id="UseCases_SmartMetering_CustomersFb" href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a id="UseCases_SmartMetering_PlatformFeatures" href="/docs/#platform-features" class="button">Platform features</a>
-    <a id="UseCases_SmartMetering_Architecture" href="/docs/reference/" class="button">Architecture</a>
-    <a id="UseCases_SmartMetering_ContactUs" href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_SmartMetering_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting 
+started</a>
+    <a id="UseCases_SmartMetering_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
+    <a id="UseCases_SmartMetering_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform 
+features</a>
+    <a id="UseCases_SmartMetering_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
+    <a id="UseCases_SmartMetering_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>

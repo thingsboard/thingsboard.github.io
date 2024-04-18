@@ -16,10 +16,12 @@ defaultActivePricingSection: thingsboard-pe
        <nav id="inner-navigation" class="inner-navigation">
          <ul id="menu-pricing-navigation-1" class="menu">
             <li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
-                <a id="Serv_Support_CS" href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community support</a>
+                <a id="Serv_Support_CS" class="gtm_button" href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')
+">Community support</a>
             </li>
             <li id="menu-item-thingsboard-pe" class="menu-item tb-logo active">
-                <a id="Serv_Support_PS" href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional support</a>
+                <a id="Serv_Support_PS" class="gtm_button" href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')
+">Professional support</a>
             </li>
          </ul>
        </nav> 
@@ -47,7 +49,8 @@ defaultActivePricingSection: thingsboard-pe
                                 <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="https://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.
                                 </p>  
                                 <div class="row justify-content-center">
-                                    <a id="Serv_Support_CS_HelpMe" class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                    <a id="Serv_Support_CS_HelpMe" class="btn-blue btn-pricing gtm_button" 
+href="/docs/contact-us/">
                                         Help me!
                                     </a>
                                 </div>
@@ -101,7 +104,8 @@ defaultActivePricingSection: thingsboard-pe
                                 <span>/ month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Serv_Support_PS_Essential" class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                <a id="Serv_Support_PS_Essential" class="btn-blue btn-pricing gtm_button" 
+href="/docs/contact-us/">
                                     Order
                                 </a>
                             </div>
@@ -134,7 +138,7 @@ defaultActivePricingSection: thingsboard-pe
                                 <span>/ month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Serv_Support_PS_Premium" class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                <a id="Serv_Support_PS_Premium" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
                                     Order
                                 </a>
                             </div>
@@ -167,7 +171,7 @@ defaultActivePricingSection: thingsboard-pe
                                 <span>/ month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Serv_Support_PS_Ultimate" class="btn-blue btn-pricing" href="/docs/contact-us/">
+                                <a id="Serv_Support_PS_Ultimate" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
                                     Order
                                 </a>
                             </div>

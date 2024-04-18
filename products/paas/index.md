@@ -172,7 +172,7 @@ description:
 
 <section id="bottom">
 <main>
-<a id="Products_Cloud_GetItNow" href="/pricing/" class="try-paas">Get it now</a><br><br><br><br>
+<a id="Products_Cloud_GetItNow" href="/pricing/" class="try-paas gtm_button">Get it now</a><br><br><br><br>
 <a href="/products/paas/privacy-policy/" >ThingsBoard Cloud Privacy policy</a>
 </main>
 </section>

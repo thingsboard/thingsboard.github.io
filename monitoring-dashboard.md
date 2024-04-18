@@ -138,7 +138,8 @@ redirect_from: "/docs/services/monitoring-dashboard/"
                 <div class="title">Ready to launch your unique product?</div>
                 <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
-            <form id="Serv_MonitDash_ReadyToLaunch" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
+            <form id="Serv_MonitDash_ReadyToLaunch" class="contact-form gtm_form" method="post" onsubmit="return 
+validateContactForm(this)">
                 <fieldset>
                     <div class="form-section">
                         <div class="form-element">

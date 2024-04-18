@@ -52,7 +52,8 @@ Save up to 90% of development time for your air monitoring solution by utilizing
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_AirQM_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
+    <a id="UseCases_AirQM_ViewLiveDemo" target="_blank" href="https://thingsboard.
+cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
 </div>
 
 The **Administration Dashboard** dashboard is designed for tenant administrators to perform basic device management tasks, and has multiple states:
@@ -161,9 +162,9 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a id="UseCases_AirQM_GetStart" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a id="UseCases_AirQM_CustomersFb" href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a id="UseCases_AirQM_PlatformFeatures" href="/docs/#platform-features" class="button">Platform features</a>
-    <a id="UseCases_AirQM_Architecture" href="/docs/reference/" class="button">Architecture</a>
-    <a id="UseCases_AirQM_ContactUs" href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_AirQM_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
+    <a id="UseCases_AirQM_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
+    <a id="UseCases_AirQM_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
+    <a id="UseCases_AirQM_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
+    <a id="UseCases_AirQM_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>

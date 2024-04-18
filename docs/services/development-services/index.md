@@ -37,7 +37,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
-                <button id="Serv_DevServ_ContactUs1" class="button anchor-button">Contact Us</button>
+                <button id="Serv_DevServ_ContactUs1" class="button anchor-button gtm_button">Contact Us</button>
             </div>
         </div>
     </div>
@@ -188,7 +188,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     </div>
                 </div>
                 <div class="right-block">
-                    <button id="Serv_DevServ_ContactUs2" class="anchor-button">Contact Us</button>
+                    <button id="Serv_DevServ_ContactUs2" class="anchor-button gtm_button">Contact Us</button>
                 </div>
             </div>
             <span id="additionally-bg1"></span>
@@ -268,7 +268,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <form class="contact-form">
                 <fieldset>
                     <div class="submit-button-container">
-                        <input id="Serv_DevServ_GetInTouch" class="cdu-button anchor-button" value="Get in touch" type="button" id="myBtn">
+                        <input id="Serv_DevServ_GetInTouch" class="cdu-button anchor-button gtm_button" value="Get in touch" 
+type="button" id="myBtn">
                     </div>
                 </fieldset>
             </form>
