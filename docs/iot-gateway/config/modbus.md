@@ -299,7 +299,7 @@ The next part of the slave section contains common connection parameters and set
 |:-|:-|---------------------------------------------------------------------------------------------------
 | retries                       | **true**                      | Retrying sending data to the master. The values can be either: true or false                      |
 | retryOnEmpty                  | **true**                      | Retrying sending data to the master if it is empty                                                |
-| retryOnInvalid                | **true**                      | Retrying sending data to the master if it is fails                                                |
+| retryOnInvalid                | **true**                      | Retrying sending data to the master if it is failed                                                |
 | pollPeriod                    | **5000**                      | Period in milliseconds to check the attributes and the telemetry on the slave                     |
 | unitId                        | **1**                         | Id of current slave on Modbus.                                                                    |
 | deviceName                    | **Temperature_Sensor_1**      | Name of the current slave                                                                         |
@@ -357,7 +357,7 @@ The configuration in this unit provides settings for processing data on Modbus s
 
 Optional parameters:  
 **multiplier** - the result of reading will be multiplied by the value of this parameter.  
-**divider** - result of reading will be divided by value of this parameter.  
+**divider** - result of reading will be divided by the value of this parameter.  
 
 <br>
 **Example**:
@@ -396,7 +396,7 @@ The configuration in this unit provides settings for processing data on Modbus s
 | objectsCount  | **1**           | Count of objects to read.                                                                           |
 | address       | **1**           | Object address to check.                                                                            |
 |               |                 |                                                                                                     |
-| tag           | **telemetry_2** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| tag           | **telemetry_2** | Tag, which will be used as attribute key for ThingsBoard platform instance.                             |
 | type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
 | functionCode  | **4**           | The function to use in data processing, specifically [Modbus functions](#modbus-functions)                           |
 | objectsCount  | **1**           | Count of objects to read.                                                                           |
