@@ -179,7 +179,7 @@ Then, connector will subscribe to a list of topics using topic filters from the 
     {
       "retain": false,
       "deviceNameFilter": ".*",
-      "attributeFilter": "uploadFrequency",
+      "attributeFilter": "firmwareVersion",
       "topicExpression": "sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
@@ -559,7 +559,7 @@ ThingsBoard allows to provision device attributes and fetch some of them from th
 You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
-The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
+The "**attributeUpdates**" configuration allows configuring the format of the corresponding attribute request and response messages. 
 
 | **Parameter**                 | **Default value**                                   | **Description**                                                                                  |
 |:-|:----------------------------------------------------|--------------------------------------------------------------------------------------------------
@@ -578,7 +578,7 @@ This section in configuration file looks like:
     {
       "retain": false,
       "deviceNameFilter": ".*",
-      "attributeFilter": "uploadFrequency",
+      "attributeFilter": "firmwareVersion",
       "topicExpression": "sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
@@ -590,7 +590,7 @@ This section in configuration file looks like:
 Run the command below to start the *mosquitto_sub* client, subscribing to the topic "sensor/SN-001/firmwareVersion" of the local broker. Start waiting for new messages from ThingsBoard server to broker.
 
 ```bash
-mosquitto_sub -t sensor/SN-001/firmwareVersion
+mosquitto_sub -h 127.0.0.1 -p 1883 -t sensor/SN-001/firmwareVersion
 ```
 {: .copy-code}
 
