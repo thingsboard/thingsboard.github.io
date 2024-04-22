@@ -7,7 +7,6 @@
 
         i += 2;
 
-
         // PROTOCOL VERSION
         if (channel_id == -1 && channel_type == 1) {
             decoded.protocol_version = input[i];
