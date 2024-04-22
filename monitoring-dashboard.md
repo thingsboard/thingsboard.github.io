@@ -15,7 +15,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
             <div class="text-content medium-margin">In the dynamic landscape of digitization and the Internet of Things (IoT), the importance of data management and monitoring is quite reasonable. In this regard, the IoT monitoring dashboard is a tool that not only simplifies the visualization of large amounts of data but also makes it more efficient and informative.</div>
             <div class="text-content"><span class="bold">In the ThingsBoard platform the dashboards</span> are an integral part of the user interface for IoT apps, offering solutions for the rapid development, management, and scaling of IoT projects.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_1_1090x742.png 1090w, /images/iot-articles/monitoring_dashboard_1_2180x1484.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_1_1090x742.png" alt="IoT energy management office monitoring"/>
+        <img class="image" src="/images/iot-articles/monitoring_dashboard_1_2180x1484.webp" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
             <h2>Basics of an IoT Device Management Dashboard</h2>
             <div class="text-content small-margin">An Internet of Things dashboard as the command center for your connected devices, providing a visual representation of data and facilitating seamless control. It is also known as an IoT control panel.</div>
@@ -78,17 +78,17 @@ redirect_from: "/docs/services/monitoring-dashboard/"
             <h3 class="small-padding">Equipment Monitoring Dashboard:</h3>
             <div class="text-content medium-margin">This type of dashboard visualizes sensor data, allowing the manufacturing and facility management department to grasp the operation status of the entire plant, the equipment of each production line, and faulty equipment in real-time.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_2_1090x681.png 1090w, /images/iot-articles/monitoring_dashboard_2_2180x1362.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_2_1090x681.png" alt="IoT energy management office monitoring"/>
+        <img class="image" src="/images/iot-articles/monitoring_dashboard_2_2180x1362.webp" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
             <h3 class="small-padding">Power Consumption Dashboard:</h3>
             <div class="text-content">In buildings such as factories and warehouses, a power consumption dashboard can be used to monitor energy usage. It can issue a warning message when consumption is close to a preset value, enabling appropriate and effective power-saving measures.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_3_1090x658.png 1090w, /images/iot-articles/monitoring_dashboard_3_2180x1316.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_3_1090x658.png" alt="IoT energy management office monitoring"/>
+        <img class="image" src="/images/iot-articles/monitoring_dashboard_3_2180x1316.webp" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
             <h3 class="small-padding">Predictive Management Dashboard:</h3>
             <div class="text-content">This dashboard monitors whether the actual production results of each production line align with the original plan. It thoroughly analyzes the reasons for any gaps and uses them for improvement in all aspects of the next production stage.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_4_1090x672.png 1090w, /images/iot-articles/monitoring_dashboard_4_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_4_1090x672.png" alt="IoT energy management office monitoring"/>
+        <img class="image" src="/images/iot-articles/monitoring_dashboard_4_2180x1344.webp" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
             <h2>How to Use the ThingsBoard Dashboard</h2>
             <div class="sub-title">To use the ThingsBoard IoT dashboard open source, you can follow these steps:</div>
