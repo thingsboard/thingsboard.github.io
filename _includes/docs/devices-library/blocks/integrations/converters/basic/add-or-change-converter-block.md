@@ -1,18 +1,5 @@
 {% assign integrationType = include.integration-type %}
-{% assign articleFilename = page.name |  replace: ".md", "" %}
-
-{% if (articleFilename == "am308-sensor") or (articleFilename == "vs-121") %}
-{% assign deviceNameSuffix =  "-" | append: articleFilename %}
-{% else %}  
-{% assign deviceNameSuffix = "" %}
-{% endif %}
-
-{% if (articleFilename == "am308-sensor") or (articleFilename == "vs-121") %}
-{% assign converterFilePath = "/docs/devices-library/blocks/integrations/converters/basic/other/" | append: integrationType | append: deviceNameSuffix | append: "-uplink-converter.js" %}
-{% else %}
-{% assign deviceNameSuffix = "" %}
-{% assign converterFilePath = "/docs/devices-library/blocks/integrations/converters/basic/" | append: integrationType | append: deviceNameSuffix | append: "-uplink-converter.js" %}
-{% endif %}
+{% assign converterFilePath = "/docs/devices-library/blocks/integrations/converters/basic/" | append: integrationType | append: "-uplink-converter.js" %}
 
 {% capture converterCode %}
 {% include {{ converterFilePath }} %}
