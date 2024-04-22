@@ -1,11 +1,11 @@
 ---
 layout: devices-library-article
-title: How to connect AM308-868M Lorawan 9-IN-1 lAQ Sensor
+title: How to connect AM308 Lorawan 9-IN-1 lAQ Sensor
 category: Other devices
 connectivity: LoRaWAN®
 vendor: Milesight
 hasIntegrationDeviceConfiguration: true
-deviceImageFileName: am308-868m.jpg
+deviceImageFileName: am308.jpg
 docsPrefix: pe/
 ---
 
