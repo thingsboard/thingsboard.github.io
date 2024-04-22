@@ -53,7 +53,7 @@ notitle: "true"
             <a class="outline-button" href="/installations/">Try a demo</a>
         </div>
         <div class="right-side">
-            <img id="rectangle" src="/images/usecases/fuel-level-monitoring/second-screen.webp" alt="tank level info" loading="lazy"/>
+            <img id="rectangle" src="/images/usecases/fuel-level-monitoring/second-screen.webp" alt="Tank level info" loading="lazy"/>
         </div>
     </div>
 </section>
@@ -63,32 +63,32 @@ notitle: "true"
     <div class="benefits-sub-title">Save up to <span class="blue-text">90%</span> of development time for your fuel level monitoring solution by utilizing the following platform benefits</div>
     <div class="cards">
         <div class="card">
-            <img src="/images/usecases/fuel-level-monitoring/accurate-level.svg" alt="accurate level svg"/>
+            <img src="/images/usecases/fuel-level-monitoring/accurate-level.webp" alt="Accurate level icon" loading="lazy"/>
             <h3 class="title">Accurate level measurement</h3>
             <div class="text">Tank Level Monitoring System provides precise measurements of the levels in tanks, ensuring efficient monitoring and management of contents..</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/fuel-level-monitoring/realtime-monitoring.svg" alt="realtime monitoring svg"/>
+            <img src="/images/usecases/fuel-level-monitoring/realtime-monitoring.webp" alt="Realtime monitoring icon" loading="lazy"/>
             <h3 class="title">Real-time monitoring</h3>
             <div class="text">Tank Level Monitoring System works with real-time data, so you can immediately respond to changes in tank levels.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/fuel-level-monitoring/safety.svg" alt="safety svg"/>
+            <img src="/images/usecases/fuel-level-monitoring/safety.webp" alt="Safety icon" loading="lazy"/>
             <h3 class="title">Safety improvements</h3>
             <div class="text">Tank Level Monitoring System helps prevent spills, overflows, and other hazardous situations.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/fuel-level-monitoring/inventory.svg" alt="inventory svg"/>
+            <img src="/images/usecases/fuel-level-monitoring/inventory.webp" alt="Inventory icon" loading="lazy"/>
             <h3 class="title">Customization and Scalability</h3>
             <div class="text">Tank Level Monitoring System can be tailored to meet the specific needs of the different types of tanks and they can be scaled up as the business grows or needs change.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/fuel-level-monitoring/cost.svg" alt="cost svg"/>
+            <img src="/images/usecases/fuel-level-monitoring/cost.webp" alt="Cost icon" loading="lazy"/>
             <h3 class="title">Cost savings</h3>
             <div class="text">Efficient Tank Level Monitoring System helps in reducing waste, optimizing usage, and planning logistics.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/fuel-level-monitoring/data-logging.svg" alt="data logging svg"/>
+            <img src="/images/usecases/fuel-level-monitoring/data-logging.webp" alt="Data logging icon" loading="lazy"/>
             <h3 class="title">Data logging and analysis</h3>
             <div class="text">Tank Level Monitoring System have data logging capabilities, allowing for historical analysis of tank levels.</div>
         </div>
@@ -107,8 +107,8 @@ notitle: "true"
         <div class="menu">
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/real-time.svg" alt="real time svg"/>Real-time monitoring</h3>
-                    <img class="arrow-icon" alt="arrow icon" src="/images/usecases/fuel-level-monitoring/arrow-down.svg"/>
+                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/real-time.webp" alt="Real time icon" loading="lazy"/>Real-time monitoring</h3>
+                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>An interactive map with current status of the sensor and detailed view.</p>
@@ -116,8 +116,8 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/dashboard.svg" alt="dashboard svg"/>Customizable dashboard</h3>
-                    <img class="arrow-icon" alt="arrow icon" src="/images/usecases/fuel-level-monitoring/arrow-down.svg"/>
+                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/dashboard.webp" alt="Dashboard icon" loading="lazy"/>Customizable dashboard</h3>
+                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Conveniently manage and configure parameters for your tanks.</p>
@@ -125,8 +125,8 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/tank-settings.svg" alt="tank settings svg"/>Advance tank settings</h3>
-                    <img class="arrow-icon" alt="arrow icon" src="/images/usecases/fuel-level-monitoring/arrow-down.svg"/>
+                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/tank-settings.webp" alt="Tank settings icon" loading="lazy"/>Advance tank settings</h3>
+                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Specially developed logic will help to take into account all the parameters for the most detailed and correct monitoring.</p>
@@ -134,8 +134,8 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/data-analysis.svg" alt="data analysis svg"/>Data analysis and visualization</h3>
-                    <img class="arrow-icon" alt="arrow icon" src="/images/usecases/fuel-level-monitoring/arrow-down.svg"/>
+                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/data-analysis.webp" alt="Data analysis icon" loading="lazy"/>Data analysis and visualization</h3>
+                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Using data storage, you can always check historical data, make reports even <a href="/products/trendz/" class="blue-text">forecasts</a>. The platform supports flexible customization of the required data visualization.</p>
@@ -143,8 +143,8 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/alert.svg" alt="alert svg"/>Alert management</h3>
-                    <img class="arrow-icon" alt="arrow icon" src="/images/usecases/fuel-level-monitoring/arrow-down.svg"/>
+                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/alert.webp" alt="Alert icon" loading="lazy"/>Alert management</h3>
+                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Receive alerts based on customized rules. Get an email or sms, set details for the notifications.</p>
@@ -160,12 +160,12 @@ notitle: "true"
     <div class="container">
         <div class="left">
             <img class="connectivity-image" loading="lazy"
-                src="/images/usecases/fuel-level-monitoring/connectivity.png"
+                src="/images/usecases/fuel-level-monitoring/connectivity.webp"
                 srcset="/images/usecases/fuel-level-monitoring/connectivity-mobile-v.webp 671w, 
                     /images/usecases/fuel-level-monitoring/connectivity.webp 672w"
                 sizes="(max-width: 671px) 360px, 
                     (min-width: 672px) 560px"
-                alt="connectivity image"/>
+                alt="Connectivity card"/>
         </div>
         <div class="right">
             <h2 class="title">Device connectivity</h2>
@@ -178,14 +178,14 @@ notitle: "true"
 <section id="partners" class="content-wrapper">
     <div class="title">Looking for hardware? Our hardware partners.</div>
     <div class="logos">
-        <div class="logo"><img alt="efento logo" src="/images/usecases/fuel-level-monitoring/efento-logo.png"/></div>
-        <div class="logo"><img alt="seeed logo" src="/images/usecases/fuel-level-monitoring/seeed-logo.png"/></div>
-        <div class="logo"><img alt="milesight logo" src="/images/usecases/fuel-level-monitoring/milesight-logo.png"/></div>
-        <div class="logo"><img alt="nettra logo" src="/images/usecases/fuel-level-monitoring/nettra-logo.png"/></div>
-        <div class="logo"><img alt="actility logo" src="/images/usecases/fuel-level-monitoring/actility-logo.png"/></div>
-        <div class="logo"><img alt="sodaq logo" src="/images/usecases/fuel-level-monitoring/sodaq-logo.png"/></div>
-        <div class="logo"><img alt="decode logo" src="/images/usecases/fuel-level-monitoring/decode-logo.png"/></div>
-        <div class="logo"><img alt="monoz logo" src="/images/usecases/fuel-level-monitoring/monoz-logo.png"/></div>
+        <div class="logo"><img loading="lazy" alt="Efento logo" src="/images/usecases/fuel-level-monitoring/efento-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Seeed logo" src="/images/usecases/fuel-level-monitoring/seeed-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Milesight logo" src="/images/usecases/fuel-level-monitoring/milesight-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Nettra logo" src="/images/usecases/fuel-level-monitoring/nettra-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Actility logo" src="/images/usecases/fuel-level-monitoring/actility-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Sodaq logo" src="/images/usecases/fuel-level-monitoring/sodaq-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Decode logo" src="/images/usecases/fuel-level-monitoring/decode-logo.webp"/></div>
+        <div class="logo"><img loading="lazy" alt="Monoz logo" src="/images/usecases/fuel-level-monitoring/monoz-logo.webp"/></div>
     </div>
     <a class="outline-button" href="/partners/hardware/" type="button" value="All partners">All partners</a>
 </section>
@@ -305,11 +305,11 @@ notitle: "true"
 
         function updateImages(index) {
             const darkMapImages = [
-                "<img loading='lazy' class='dark-map-image' alt='map' src='/images/usecases/fuel-level-monitoring/features1.webp'/>",
-                "<img loading='lazy' class='dark-map1-image' alt='map' src='/images/usecases/fuel-level-monitoring/features2.webp'/>",
-                "<img loading='lazy' class='dark-map2-image' alt='map' src='/images/usecases/fuel-level-monitoring/features3.webp'/>",
-                "<img loading='lazy' class='dark-map3-image' alt='map' src='/images/usecases/fuel-level-monitoring/features4.webp'/>",
-                "<img loading='lazy' class='dark-map4-image' alt='map' src='/images/usecases/fuel-level-monitoring/features5.webp'/>"
+                "<img loading='lazy' class='dark-map-image' alt='Map' src='/images/usecases/fuel-level-monitoring/features1.webp'/>",
+                "<img loading='lazy' class='dark-map1-image' alt='Map' src='/images/usecases/fuel-level-monitoring/features2.webp'/>",
+                "<img loading='lazy' class='dark-map2-image' alt='Map' src='/images/usecases/fuel-level-monitoring/features3.webp'/>",
+                "<img loading='lazy' class='dark-map3-image' alt='Map' src='/images/usecases/fuel-level-monitoring/features4.webp'/>",
+                "<img loading='lazy' class='dark-map4-image' alt='Map' src='/images/usecases/fuel-level-monitoring/features5.webp'/>"
             ];
 
             images.innerHTML = `
