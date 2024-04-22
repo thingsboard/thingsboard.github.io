@@ -72,7 +72,7 @@ Copy the following connector configuration (we will use it later):
   "connectRequests": [
     {
       "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${SerialNumber}"
+      "deviceNameJsonExpression": "${serialNumber}"
     },
     {
       "topicFilter": "sensor/+/connect",
@@ -82,7 +82,7 @@ Copy the following connector configuration (we will use it later):
   "disconnectRequests": [
     {
       "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${SerialNumber}"
+      "deviceNameJsonExpression": "${serialNumber}"
     },
     {
       "topicFilter": "sensor/+/disconnect",
