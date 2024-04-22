@@ -60,7 +60,7 @@ TheThingsIndustries,
 Loriot
 '%}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-integration-types=targetIntegrationTypes %}
+{% include /docs/devices-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-device-name="" target-integration-types=targetIntegrationTypes %}
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/ws101-smart-button-check-data-block.md %}
 
