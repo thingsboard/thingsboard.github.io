@@ -2,6 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
+.cs-navbar-smart-enabled .cs-header{
+	top: 0px !important;
+	position: fixed;
+	margin: 0 auto;
+}
+
+/* support ukraine */
+.logo{
+	margin-left: 20px;
+}
+header .header-buttons .n-button {
+    width: 110px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .header-buttons{
+	display: flex;
+    flex-direction: row;
+}
+
+
 #main{
 	opacity: 1;
 	transition: ease-in-out 0.2s;
@@ -469,9 +494,6 @@ header{
 	height: 80px;
 }
 
-#home.flip-nav header .support-ukraine p,#thingsboard-paas.flip-nav header .support-ukraine p,#thingsboard-pe.flip-nav header .support-ukraine p,#trendz.flip-nav header .support-ukraine p,#partners.flip-nav header .support-ukraine p,#thingsboard-edge.flip-nav header .support-ukraine p {
-    color: #000
-}
 
 #home.flip-nav header .logo,#home.flip-nav header .burger,#thingsboard-paas.flip-nav header .logo,#thingsboard-paas.flip-nav header .burger,#thingsboard-pe.flip-nav header .logo,#thingsboard-pe.flip-nav header .burger,#trendz.flip-nav header .logo,#trendz.flip-nav header .burger,#partners.flip-nav header .logo,#partners.flip-nav header .burger,#thingsboard-edge.flip-nav header .logo,#thingsboard-edge.flip-nav header .burger {
     filter: unset
@@ -513,10 +535,6 @@ header{
     opacity: 0
 }
 
-#home header .support-ukraine p,#thingsboard-paas header .support-ukraine p,#thingsboard-pe header .support-ukraine p,#thingsboard-edge header .support-ukraine p {
-    color: #000000;
-}
-
 
 ul li.active~.indicator {
     transition-delay: 0s;
@@ -537,9 +555,6 @@ ul li.active~.indicator .head-arrow {
     opacity: 1
 }
 
-header .support-ukraine p{
-	line-height: 24px;
-}
 
 ol,
 ul,
@@ -876,23 +891,6 @@ header .head-menu ul a:not([href]):hover,header .head-menu ul span.main-menu-lin
     color: #2a7dec
 }
 
-header .support-ukraine {
-    position: relative;
-    display: block;
-    height: 80px;
-    padding-right: 20px
-}
-
-header .support-ukraine img {
-    height: 32px
-}
-
-header .support-ukraine p {
-    color: #000;
-    font-size: 12px;
-	line-height: 24px;
-}
-
 header .logo {
     position: relative;
     float: left;
@@ -1219,7 +1217,8 @@ ul .indicator .line {
     }
 
     #home .opened-burger .n-button,#docs .opened-burger .n-button,#common .opened-burger .n-button,#thingsboard-paas .opened-burger .n-button,#thingsboard-pe .opened-burger .n-button,#trendz .opened-burger .n-button,#thingsboard-edge .opened-burger .n-button {
-        display: inline-block
+        display: flex;
+		width: 100%;
     }
 
     #home .opened-burger .n-button.try,#docs .opened-burger .n-button.try,#common .opened-burger .n-button.try,#thingsboard-paas .opened-burger .n-button.try,#thingsboard-pe .opened-burger .n-button.try,#trendz .opened-burger .n-button.try,#thingsboard-edge .opened-burger .n-button.try {
@@ -1264,7 +1263,7 @@ ul .indicator .line {
         position: fixed;
         z-index: 2;
         width: 100%;
-        margin: -9px 0 0 -30px;
+        margin: -9px 0 0;
         padding: 9px 30px
     }
 
@@ -1442,7 +1441,6 @@ ul .indicator .line {
 
 @media screen and (max-width: 1024px) {
     .burger {
-        top:21px;
         height: 37px;
         width: 37px;
         background-image: url(https://img.thingsboard.io/s-burger-icon.svg)
@@ -4527,11 +4525,11 @@ blockquote p{
 	}
 }
 @media(max-width: 543px){
+	.cs-read-next .heading1 {
+    	font-size: 38px;
+	}
 	.cs-home-hero{
 		display: none;
-	}
-	.support-ukraine{
-		display: none !important;
 	}
 	.cs-hero-type-1 .cs-entry__outer{
 		height: 100%;
@@ -4632,9 +4630,9 @@ blockquote p{
 	header {
 		height: none;
 	}
-/* 	.cs-header-before + .cs-header{
-		margin-top: 0px;
-	} */
+	.cs-header-before + .cs-header{
+		margin-top: 0px !important;
+	} 
 	.primary{
 		font-size: 16px !important;
 	}

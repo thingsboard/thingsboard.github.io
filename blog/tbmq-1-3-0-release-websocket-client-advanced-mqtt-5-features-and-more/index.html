@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html id="home" lang="en-US">
+<html id="home" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
 	<link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more &#8211; ThingsBoard&#039;s blog</title>
-<meta name="robots" content="max-image-preview:large">
-<link rel="dns-prefetch" href="//www.googletagmanager.com">
+	<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</title>
+
+		<!-- All in One SEO 4.6.0 - aioseo.com -->
+		<meta name="description" content="We&#039;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new WebSocket client. It also broadens the scope of supported MQTT 5 features. Here&#039;s an overview of the features and updates included in this release. WebSocket Client We have added the new WebSocket client - a browser-accessible tool">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.6.0">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Thingsboard&#039;s blog -">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more">
+		<meta property="og:description" content="We&#039;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new WebSocket client. It also broadens the scope of supported MQTT 5 features. Here&#039;s an overview of the features and updates included in this release. WebSocket Client We have added the new WebSocket client - a browser-accessible tool">
+		<meta property="og:url" content="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">
+		<meta property="article:published_time" content="2024-04-02T08:48:23+00:00">
+		<meta property="article:modified_time" content="2024-04-17T15:42:55+00:00">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more">
+		<meta name="twitter:description" content="We&#039;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new WebSocket client. It also broadens the scope of supported MQTT 5 features. Here&#039;s an overview of the features and updates included in this release. WebSocket Client We have added the new WebSocket client - a browser-accessible tool">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"BlogPosting","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#blogposting","name":"TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more","headline":"TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more","author":{"@id":"\/blog\/author\/dlandiak\/#author"},"publisher":{"@id":"\/blog\/#organization"},"image":{"@type":"ImageObject","url":"\/blog\/wp-content\/uploads\/2024\/04\/WebSocket-client-advanced-MQTT-5-features-and-more-1-scaled-1.webp","width":2560,"height":1135},"datePublished":"2024-04-02T08:48:23+00:00","dateModified":"2024-04-17T15:42:55+00:00","inLanguage":"en-US","mainEntityOfPage":{"@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#webpage"},"isPartOf":{"@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#webpage"},"articleSection":"Updates"},{"@type":"BreadcrumbList","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/blog\/#listItem","position":1,"name":"Home","item":"\/blog\/","nextItem":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#listItem"},{"@type":"ListItem","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#listItem","position":2,"name":"TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more","previousItem":"\/blog\/#listItem"}]},{"@type":"Organization","@id":"\/blog\/#organization","name":"ThingsBoard","url":"\/blog\/","logo":{"@type":"ImageObject","url":"\/blog\/wp-content\/uploads\/2024\/03\/thingsboard_logo_blue.svg","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#organizationLogo"},"image":{"@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#organizationLogo"}},{"@type":"Person","@id":"\/blog\/author\/dlandiak\/#author","url":"\/blog\/author\/dlandiak\/","name":"Dima Landiak","image":{"@type":"ImageObject","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/b79cef1565d16ade3779b0cf9495e7ec?s=96&d=mm&r=g","width":96,"height":96,"caption":"Dima Landiak"}},{"@type":"WebPage","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#webpage","url":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/","name":"TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more","description":"We're delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new WebSocket client. It also broadens the scope of supported MQTT 5 features. Here's an overview of the features and updates included in this release. WebSocket Client We have added the new WebSocket client - a browser-accessible tool","inLanguage":"en-US","isPartOf":{"@id":"\/blog\/#website"},"breadcrumb":{"@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#breadcrumblist"},"author":{"@id":"\/blog\/author\/dlandiak\/#author"},"creator":{"@id":"\/blog\/author\/dlandiak\/#author"},"image":{"@type":"ImageObject","url":"\/blog\/wp-content\/uploads\/2024\/04\/WebSocket-client-advanced-MQTT-5-features-and-more-1-scaled-1.webp","@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#mainImage","width":2560,"height":1135},"primaryImageOfPage":{"@id":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/#mainImage"},"datePublished":"2024-04-02T08:48:23+00:00","dateModified":"2024-04-17T15:42:55+00:00"},{"@type":"WebSite","@id":"\/blog\/#website","url":"\/blog\/","name":"ThingsBoard's blog","inLanguage":"en-US","publisher":{"@id":"\/blog\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
 <link href="https://fonts.gstatic.com/" crossorigin rel="preconnect">
-<link rel="alternate" type="application/rss+xml" title="ThingsBoard&#039;s blog &raquo; Feed" href="/blog/feed/">
-<link rel="alternate" type="application/rss+xml" title="ThingsBoard&#039;s blog &raquo; Comments Feed" href="/blog/comments/feed/">
-<link rel="alternate" type="application/rss+xml" title="ThingsBoard&#039;s blog &raquo; TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more Comments Feed" href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/feed/">
-<script>
-window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.3"}};
+<link rel="alternate" type="application/rss+xml" title="Thingsboard&#039;s blog &raquo; Feed" href="/blog/feed/">
+<link rel="alternate" type="application/rss+xml" title="Thingsboard&#039;s blog &raquo; Comments Feed" href="/blog/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Thingsboard&#039;s blog &raquo; TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more Comments Feed" href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/feed/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.26.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+		<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by MonsterInsights -->
+		<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.4"}};
 /*! This file is auto-generated */
 !function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
 </script>
@@ -30,7 +53,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 		background: none !important;
 		padding: 0 !important;
 	}</style>
-<link rel="stylesheet" id="wp-block-library-css" href="/blog/wp-includes/css/dist/block-library/style.min.css?ver=6.4.3" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/blog/wp-includes/css/dist/block-library/style.min.css?ver=6.4.4" media="all">
 <style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
 .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
 <style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #59BACC;--wp--preset--color--green: #58AD69;--wp--preset--color--orange: #FFBC49;--wp--preset--color--red: #e32c26;--wp--preset--color--gray-50: #f8f9fa;--wp--preset--color--gray-100: #f8f9fb;--wp--preset--color--gray-200: #E0E0E0;--wp--preset--color--primary: #1D1D1F;--wp--preset--color--secondary: #616162;--wp--preset--color--layout: #f1f1f2;--wp--preset--color--border: #E4E4E4;--wp--preset--color--divider: #1D1D1F;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
@@ -38,38 +61,25 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 :where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
-<link rel="stylesheet" id="wpdreams-asl-basic-css" href="/blog/wp-content/plugins/ajax-search-lite/css/style.basic.css?ver=4.11.5" media="all">
-<link rel="stylesheet" id="wpdreams-ajaxsearchlite-css" href="/blog/wp-content/plugins/ajax-search-lite/css/style-curvy-black.css?ver=4.11.5" media="all">
 <link rel="stylesheet" id="csco-styles-css" href="/blog/wp-content/themes/swyft/style.css?ver=1.0.2" media="all">
-<link rel="stylesheet" id="chld_thm_cfg_child-css" href="/blog/wp-content/themes/swyft-child/style.css?ver=6.4.3" media="all">
+<link rel="stylesheet" id="chld_thm_cfg_child-css" href="/blog/wp-content/themes/swyft-child/style.css?ver=6.4.4" media="all">
 <link rel="stylesheet" id="9f9acad298c4b47002b81b4dd6912635-css" href="https://fonts.googleapis.com/css?family=Poppins%3A400%2C400i%2C500i%2C500%2C700%2C700i&#038;subset=latin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cvietnamese&#038;display=swap&#038;ver=1.0.2" media="all">
 <style id="cs-customizer-output-styles-inline-css">:root{--cs-light-site-background:#FFFFFF;--cs-dark-site-background:#1c1c1c;--cs-light-layout-background:#f1f1f2;--cs-dark-layout-background:#232323;--cs-light-primary-color:#1D1D1F;--cs-dark-primary-color:#FFFFFF;--cs-light-secondary-color:#616162;--cs-dark-secondary-color:#CDCBCA;--cs-light-accent-color:#305680;--cs-dark-accent-color:#634ffb;--cs-light-button-hover-background:#305680;--cs-dark-button-hover-background:#634ffb;--cs-light-button-hover-color:#FFFFFF;--cs-dark-button-hover-color:#FFFFFF;--cs-light-button-background:#1D1D1F;--cs-dark-button-background:#3e3e3e;--cs-light-button-color:#FFFFFF;--cs-dark-button-color:#FFFFFF;--cs-light-secondary-button-background:#EDEDED;--cs-dark-secondary-button-background:#3e3e3e;--cs-light-secondary-button-color:#1D1D1F;--cs-dark-secondary-button-color:#FFFFFF;--cs-light-border-color:#E4E4E4;--cs-dark-border-color:#343434;--cs-light-divider-color:#1D1D1F;--cs-dark-divider-color:#494949;--cs-layout-elements-border-radius:0px;--cs-thumbnail-border-radius:0px;--cs-button-border-radius:0px;--cs-heading-1-font-size:3.5rem;--cs-heading-2-font-size:3rem;--cs-heading-3-font-size:2.5rem;--cs-heading-4-font-size:2rem;--cs-heading-5-font-size:1.625rem;--cs-heading-6-font-size:1.5rem;--cs-header-initial-height:80px;--cs-header-height:80px;--cs-header-border-width:1px;}:root, [data-scheme="light"]{--cs-light-overlay-background-rgb:0,0,0;}:root, [data-scheme="dark"]{--cs-dark-overlay-background-rgb:0,0,0;}.cs-posts-area__home{--cs-posts-area-grid-row-gap:96px;--cs-entry-title-font-size:1.625rem;}.cs-posts-area__archive{--cs-posts-area-grid-row-gap:96px;--cs-entry-title-font-size:1.625rem;}.cs-read-next .cs-posts-area__read-next{--cs-posts-area-grid-row-gap:96px;}.cs-posts-area__read-next{--cs-entry-title-font-size:1.625rem;}@media (max-width: 1199.98px){.cs-posts-area__home{--cs-posts-area-grid-row-gap:48px;--cs-entry-title-font-size:1.625rem;}.cs-posts-area__archive{--cs-posts-area-grid-row-gap:48px;--cs-entry-title-font-size:1.625rem;}.cs-read-next .cs-posts-area__read-next{--cs-posts-area-grid-row-gap:48px;}.cs-posts-area__read-next{--cs-entry-title-font-size:1.625rem;}}@media (max-width: 991.98px){.cs-posts-area__home{--cs-posts-area-grid-row-gap:40px;--cs-entry-title-font-size:1.5rem;}.cs-posts-area__archive{--cs-posts-area-grid-row-gap:40px;--cs-entry-title-font-size:1.5rem;}.cs-posts-area__read-next{--cs-entry-title-font-size:1.5rem;}}@media (max-width: 575.98px){.cs-posts-area__home{--cs-posts-area-grid-row-gap:40px;--cs-entry-title-font-size:1.5rem;}.cs-posts-area__archive{--cs-posts-area-grid-row-gap:40px;--cs-entry-title-font-size:1.5rem;}.cs-read-next .cs-posts-area__read-next{--cs-posts-area-grid-row-gap:40px;}.cs-posts-area__read-next{--cs-entry-title-font-size:1.5rem;}}</style>
         <script>
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"/blog/wp-admin/admin-ajax.php",
-                "nonce": "4776dc4f19",
+                "nonce": "94d0221303",
                 "home_url": "/blog/",
                 "settings_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
             };
             /* ]]\> */
         </script>
-        
-<!-- Google Analytics snippet added by Site Kit -->
-<script src="https://www.googletagmanager.com/gtag/js?id=GT-NCN52JP" id="google_gtagjs-js" async></script>
-<script id="google_gtagjs-js-after">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-gtag('set', 'linker', {"domains":["tbblog.xyz"]} );
-gtag("js", new Date());
-gtag("set", "developer_id.dZTNiMT", true);
-gtag("config", "GT-NCN52JP");</script>
-
-<!-- End Google Analytics snippet added by Site Kit -->
-<link rel="https://api.w.org/" href="/blog/wp-json/">
+        <link rel="https://api.w.org/" href="/blog/wp-json/">
 <link rel="alternate" type="application/json" href="/blog/wp-json/wp/v2/posts/3965">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd">
-<meta name="generator" content="WordPress 6.4.3">
-<link rel="canonical" href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">
+<meta name="generator" content="WordPress 6.4.4">
 <link rel="shortlink" href="/blog/?p=3965">
 <link rel="alternate" type="application/json+oembed" href="/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Ftbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more%2F">
 <link rel="alternate" type="text/xml+oembed" href="/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Ftbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more%2F#038;format=xml">
@@ -231,152 +241,21 @@ gtag("config", "GT-NCN52JP");</script>
 		--cs-font-footer-submenu-text-transform: none;
 		--cs-font-footer-submenu-line-height: 1.2;
 	}</style>
-				<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-				<link rel="preload" as="style" href="//fonts.googleapis.com/css?family=Open+Sans&display=swap">
-				<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans&display=swap" media="all">
-				<meta name="generator" content="Elementor 3.19.2; features: e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
-                <style>div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label {
-						font-size: 0px !important;
-						color: rgba(0, 0, 0, 0);
-					}
-					div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label:after {
-						font-size: 11px !important;
-						position: absolute;
-						top: 0;
-						left: 0;
-						z-index: 1;
-					}
-					.asl_w_container {
-						width: 100%;
-						margin: 0px 0px 0px 0px;
-						min-width: 200px;
-					}
-					div[id*='ajaxsearchlite'].asl_m {
-						width: 100%;
-					}
-					div[id*='ajaxsearchliteres'].wpdreams_asl_results div.resdrg span.highlighted {
-						font-weight: bold;
-						color: rgba(217, 49, 43, 1);
-						background-color: rgba(238, 238, 238, 1);
-					}
-					div[id*='ajaxsearchliteres'].wpdreams_asl_results .results img.asl_image {
-						width: 70px;
-						height: 70px;
-						object-fit: cover;
-					}
-					div.asl_r .results {
-						max-height: none;
-					}
-				
-							.asl_w, .asl_w * {font-family:"Poppins" !important;}
-							.asl_m input[type=search]::placeholder{font-family:"Poppins" !important;}
-							.asl_m input[type=search]::-webkit-input-placeholder{font-family:"Poppins" !important;}
-							.asl_m input[type=search]::-moz-placeholder{font-family:"Poppins" !important;}
-							.asl_m input[type=search]:-ms-input-placeholder{font-family:"Poppins" !important;}
-						
-						div.asl_r.asl_w.vertical .results .item::after {
-							display: block;
-							position: absolute;
-							bottom: 0;
-							content: '';
-							height: 1px;
-							width: 100%;
-							background: #D8D8D8;
-						}
-						div.asl_r.asl_w.vertical .results .item.asl_last_item::after {
-							display: none;
-						}
-					 div.asl_r.vertical{
- padding: 0px;
-}
-div.asl_r.asl_w.vertical .results .item::after{
-left: 0;
-}
-div.asl_r.vertical .results{
-height: 100% !important;
-}
-#ajaxsearchliteres1{
-height:  660px !important;
-border-radius: 6px;
-margin: 0;
-}
-#ajaxsearchlite1 .probox, div.asl_w .probox{
-border-radius: 4px;
-border: 1px solid rgba(0, 0, 0, 0.16);
-}
-.innericon svg{
-fill: black;
-fill-opacity: 0.54;
-}
-.resdrg .item{
-transition: ease-in-out 0.2s;
-}
-.resdrg .item:hover{
-background: #F1F1F1 !important;
-}
-div.asl_r .results .item .asl_content h3 a:hover{
-line-height: 22px;
-}
-#ajaxsearchlite1 .probox .proinput input, div.asl_w .probox .proinput input{
-font-size: 18px;
-color: rgba(0, 0, 0, 0.38);
-}
-div.asl_m .probox .proinput{
-margin: 0;
-padding 0;
-}
-.asl_w_container{
-min-width: 0px;
-}
-#ajaxsearchliteres1 h3{
-gap: 5px;
-	display: flex;
-	justify-content: space-between;
-align-items: center;
-}
-div[id*='ajaxsearchliteres'].wpdreams_asl_results .results img.asl_image{
-width: 158px;
-height: 92px;
-border-radius: 6px; 
-}
-.asl_res_url{
-font-size: 18px !important;
-color: rgba(0, 0, 0, 0.76) !important;
-font-weight: 400 !important;
-}
-.asl_desc{
-font-size: 16px !important;
-color: rgba(0, 0, 0, 0.54);
-}
-div.asl_r .results .item .asl_content{
-padding: 0px;
-}
-div.asl_r .results .item{
-padding:  16px;
-}
-div.asl_m .probox{
-flex-direction: row-reverse;
-}
-div.asl_m .probox .proclose{
-order: 1;
-}
-@media(max-width: 543px){
-div[id*='ajaxsearchliteres'].wpdreams_asl_results .results img.asl_image{
-display: none;
-}
-div.asl_r .results .item .asl_content .asl_desc{
-display: none;
-}
-#ajaxsearchliteres1 h3{
-flex-direction: column-reverse;
-align-items: flex-start;
-gap: 4px;
-}
-#ajaxsearchliteres1 {
-height: 61vh !important;
-}
-}</style>
-                		<style id="wp-custom-css">.is-style-cs-tiles > li > a {
+<meta name="generator" content="Elementor 3.19.2; features: e_optimized_assets_loading, e_optimized_css_loading, e_font_icon_svg, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
+
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script>( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-TGBNQXN' );</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+		<style id="wp-custom-css">.is-style-cs-tiles > li > a {
   background: #F0F7FB;
 	border-radius: 6px;
 	color: #1F2020;
@@ -460,7 +339,12 @@ height: 61vh !important;
 }</style>
 		</head>
 <body class="post-template-default single single-post postid-3965 single-format-standard wp-embed-responsive cs-page-layout-right cs-navbar-smart-enabled cs-sticky-sidebar-enabled cs-stick-last elementor-default elementor-kit-2732" data-scheme="light">
-
+		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGBNQXN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+		
 
 	<div class="cs-site-overlay"></div>
 
@@ -469,7 +353,7 @@ height: 61vh !important;
 			
 					<div class="cs-logo">
 			<a class="cs-header__logo cs-logo-once " href="/blog/">
-				ThingsBoard&#039;s blog			</a>
+				Thingsboard&#039;s blog			</a>
 
 					</div>
 		
@@ -486,39 +370,16 @@ height: 61vh !important;
 					Try it now				</a>
 			</div>
 			
-				<div class="widget block-5 widget_block"><div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="wp-block-group__inner-container">
-<h2 class="wp-block-heading">Archives</h2>
-<ul class="wp-block-archives-list wp-block-archives">	<li><a href="/blog/2024/04/">April 2024</a></li>
-	<li><a href="/blog/2024/03/">March 2024</a></li>
-	<li><a href="/blog/2024/02/">February 2024</a></li>
-	<li><a href="/blog/2023/12/">December 2023</a></li>
-</ul>
-</div></div></div>
-<div class="widget block-6 widget_block"><div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="wp-block-group__inner-container">
-<h2 class="wp-block-heading">Categories</h2>
-<ul class="wp-block-categories-list wp-block-categories">	<li class="cat-item cat-item-157">
-<a href="/blog/category/business/">Business</a>
-</li>
-	<li class="cat-item cat-item-141">
-<a href="/blog/category/company/">Company</a>
-</li>
-	<li class="cat-item cat-item-134">
-<a href="/blog/category/solutions/">Solutions</a>
-</li>
-	<li class="cat-item cat-item-140">
-<a href="/blog/category/tech/">Tech</a>
-</li>
-	<li class="cat-item cat-item-143">
-<a href="/blog/category/updates/">Updates</a>
-</li>
-	<li class="cat-item cat-item-154">
-<a href="/blog/category/use-cases/">Use cases</a>
-</li>
-</ul>
-</div></div></div>
+				
 				<div class="cs-offcanvas__bottombar">
 							<div class="cs-social">
 														</div>
+					<span class="cs-site-scheme-toggle cs-offcanvas__scheme-toggle" role="button" aria-label="Scheme Toggle">
+				<span class="cs-header__scheme-toggle-icons">
+					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-light-mode"></i>
+					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-dark-mode"></i>
+				</span>
+			</span>
 						</div>
 			</div>
 		</aside>
@@ -533,10 +394,8 @@ height: 61vh !important;
 		<div class="cs-header-before"></div>
 <header class="cs-header cs-header-stretch">
     <div class="logo-burger">
-        <a href="/blog/support-ukraine/" class="support-ukraine">
-            <p class="stop-war"><svg class="ban" contentscripttype="text/ecmascript" contentstyletype="text/css" enable-background="new 0 0 2048 2048" height="12px" id="Layer_1" preserveaspectratio="xMidYMid meet" version="1.1" viewbox="0.0 0 1536.0 2048" width="10.39px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" zoomandpan="magnify"><path d="M1312,1021c0-107.333-29-205.667-87-295l-754,753c91.333,59.333,190.333,89,297,89c74,0,144.5-14.5,211.5-43.5  s124.833-67.833,173.5-116.5s87.333-106.833,116-174.5S1312,1095,1312,1021z M313,1320l755-754c-90-60.667-190-91-300-91  c-98.667,0-189.667,24.333-273,73S345.667,663,297,747s-73,175.333-73,274C224,1129,253.667,1228.667,313,1320z M1536,1021  c0,104.667-20.333,204.667-61,300s-95.167,177.333-163.5,246s-150,123.333-245,164S872,1792,768,1792s-203.5-20.333-298.5-61  s-176.667-95.333-245-164S101.667,1416.333,61,1321S0,1125.667,0,1021s20.333-204.5,61-299.5S156.167,544.667,224.5,476  s150-123.333,245-164S664,251,768,251s203.5,20.333,298.5,61s176.667,95.333,245,164s122.833,150.5,163.5,245.5  S1536,916.333,1536,1021z"></path></svg>Stop the war</p>
-            <img src="https://img.thingsboard.io/animated-ukraine-flag.gif" class="ukraine" alt="Stand with Ukraine flag" width="44" height="32">
-            <p>Support Ukraine</p>
+        <a href="https://u24.gov.ua/" target="_blank" class="support-ukraine">
+			<img src="https://img.thingsboard.io/support-ukraine-banner.webp" alt="Stand with Ukraine flag" width="48" height="31">
         </a>
         <a href="https://thingsboard.io/" class="logo" aria-label="Link to homepage"></a>
         <button onclick="Burger()" class="burger" aria-label="Burger menu"></button>
@@ -582,7 +441,7 @@ height: 61vh !important;
                     <li class="sub-groups">
                         <div class="group">
                             <p class="group-name">IoT platforms</p>
-                            <a class="com-lnk" href="/blog/">
+                            <a class="com-lnk" href="https://thingsboard.io/">
                                 <img loading="lazy" src="https://img.thingsboard.io/thingsboard-cm-icon.svg" alt="Community Edition icon" width="54" height="54">
                                 <div class="sub-text">
                                     <span class="item-heading">Community Edition</span>
@@ -1015,7 +874,13 @@ height: 61vh !important;
 <!-- 		<span class="theme-button">
 		</span> -->
 <!-- 		<div class="theme_toggle">
-					</div> -->
+						<span class="cs-site-scheme-toggle cs-header__scheme-toggle" role="button" aria-label="Dark mode toggle button">
+				<span class="cs-header__scheme-toggle-icons">
+					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-light-mode"></i>
+					<i class="cs-header__scheme-toggle-icon cs-icon cs-icon-dark-mode"></i>
+				</span>
+			</span>
+				</div> -->
 		<div class="header-buttons">
 			<a href="https://thingsboard.io/installations/" class="n-button try">Try it now</a>
 			<a href="https://thingsboard.io/pricing/" class="n-button price">Pricing</a>
@@ -1262,55 +1127,30 @@ height: 61vh !important;
 		});
 		const config = { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] };
 		observer.observe(document.body, config);
-		
-
-// 		document.querySelector('.custom-search').addEventListener('click', function(){
-// 			document.querySelector('.cs-header').classList.add('activeForm');
-// 			document.querySelector('.search-form input').focus();	
-// 		});
-//  		document.addEventListener('click', function(event) {
-//  			if (!document.querySelector('.search-form').contains(event.target) && !document.querySelector('.custom-search').contains(event.target) )  {
-//  				document.querySelector('.cs-header').classList.remove('activeForm');
-//  				document.querySelector('.search-form input').blur();
-// 				document.querySelector('.search-form input').value = '';	
-// 				hideAllResults();
-//  			};
-//  		});
-		
+// 		const theme = window.localStorage.getItem('theme');
 // 		document.querySelector('.theme_toggle').addEventListener('click', function(){
 // 			if(document.body.getAttribute('data-scheme') === 'dark'){
 // 				document.body.classList.add('dark_styles');
-// 				document.getElementById('XMLID_17_').style.fill = 'white';
-// 				document.getElementById('XMLID_81_').style.fill = 'white';
-// 				document.getElementById('XMLID_83_').style.fill = 'white';
+// 				window.localStorage.setItem('theme', 'dark');
 // 			} else if(document.body.getAttribute('data-scheme') === 'light'){
-// 				document.getElementById('XMLID_17_').style.fill = 'black';
-// 				document.getElementById('XMLID_81_').style.fill = 'black';
-// 				document.getElementById('XMLID_83_').style.fill = 'black';
 // 				document.body.classList.remove('dark_styles');
+// 				window.localStorage.setItem('theme', 'light')
 // 			}
-// 		})
+// 		})	
 // 		if(document.body.getAttribute('data-scheme') === 'dark'){
 // 			document.body.classList.add('dark_styles');
-// // 			document.getElementById('XMLID_17_').style.fill = 'white';
-// // 			document.getElementById('XMLID_81_').style.fill = 'white';
-// // 			document.getElementById('XMLID_83_').style.fill = 'white';
 // 		} else if(document.body.getAttribute('data-scheme') === 'light'){
-// // 			document.getElementById('XMLID_17_').style.fill = 'black';
-// // 			document.getElementById('XMLID_81_').style.fill = 'black';
-// // 			document.getElementById('XMLID_83_').style.fill = 'black';
+// 			document.body.classList.remove('dark_styles');
+// 		}
+// 		if(theme === 'dark'){
+// 			document.body.classList.add('dark_styles');
+// 		} else if(theme === 'light'){
 // 			document.body.classList.remove('dark_styles');
 // 		}
 // 		window.onload = function() {
 // 			if(document.body.getAttribute('data-scheme') === 'dark'){
 // 				document.body.classList.add('dark_styles');
-// 				document.getElementById('XMLID_17_').style.fill = 'white';
-// 				document.getElementById('XMLID_81_').style.fill = 'white';
-// 				document.getElementById('XMLID_83_').style.fill = 'white';
 // 			} else if(document.body.getAttribute('data-scheme') === 'light') {
-// 				document.getElementById('XMLID_17_').style.fill = 'black';
-// 				document.getElementById('XMLID_81_').style.fill = 'black';
-// 				document.getElementById('XMLID_83_').style.fill = 'black';
 // 				document.body.classList.remove('dark_styles');
 // 			}	
 // 		};
@@ -1360,7 +1200,6 @@ height: 61vh !important;
 						<div id="primary" class="cs-content-area">
 	
 	
-	
 					
 <div class="cs-entry__wrap">
 
@@ -1376,11 +1215,11 @@ height: 61vh !important;
 
 
 
-<h4 class="wp-block-heading">WebSocket Client</h4>
+<h1 class="wp-block-heading">WebSocket Client</h1>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="713" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/table-1024x713.webp" alt="" class="wp-image-4030" srcset="/blog/wp-content/uploads/2024/04/table-1024x713.webp 1024w, /blog/wp-content/uploads/2024/04/table-300x209.webp 300w, /blog/wp-content/uploads/2024/04/table-768x535.webp 768w, /blog/wp-content/uploads/2024/04/table-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/04/table-512x356.webp 512w, /blog/wp-content/uploads/2024/04/table-920x640.webp 920w, /blog/wp-content/uploads/2024/04/table-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/04/table.webp 1606w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="713" src="/blog/wp-content/uploads/2024/04/table-1024x713.webp" alt="" class="wp-image-4030" srcset="/blog/wp-content/uploads/2024/04/table-1024x713.webp 1024w, /blog/wp-content/uploads/2024/04/table-300x209.webp 300w, /blog/wp-content/uploads/2024/04/table-768x535.webp 768w, /blog/wp-content/uploads/2024/04/table-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/04/table-512x356.webp 512w, /blog/wp-content/uploads/2024/04/table-920x640.webp 920w, /blog/wp-content/uploads/2024/04/table-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/04/table.webp 1606w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
 
 
 
@@ -1419,7 +1258,7 @@ height: 61vh !important;
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="365" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/flow-control2-2-1024x365.png" alt="" class="wp-image-4028" srcset="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png 1024w, /blog/wp-content/uploads/2024/04/flow-control2-2-300x107.png 300w, /blog/wp-content/uploads/2024/04/flow-control2-2-768x274.png 768w, /blog/wp-content/uploads/2024/04/flow-control2-2-1536x547.png 1536w, /blog/wp-content/uploads/2024/04/flow-control2-2-2048x729.png 2048w, /blog/wp-content/uploads/2024/04/flow-control2-2-512x182.png 512w, /blog/wp-content/uploads/2024/04/flow-control2-2-920x328.png 920w, /blog/wp-content/uploads/2024/04/flow-control2-2-1600x570.png 1600w, /blog/wp-content/uploads/2024/04/flow-control2-2-3200x1140.png 3200w, /blog/wp-content/uploads/2024/04/flow-control2-2-1920x684.png 1920w, /blog/wp-content/uploads/2024/04/flow-control2-2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="365" src="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png" alt="" class="wp-image-4028" srcset="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png 1024w, /blog/wp-content/uploads/2024/04/flow-control2-2-300x107.png 300w, /blog/wp-content/uploads/2024/04/flow-control2-2-768x274.png 768w, /blog/wp-content/uploads/2024/04/flow-control2-2-1536x547.png 1536w, /blog/wp-content/uploads/2024/04/flow-control2-2-2048x729.png 2048w, /blog/wp-content/uploads/2024/04/flow-control2-2-512x182.png 512w, /blog/wp-content/uploads/2024/04/flow-control2-2-920x328.png 920w, /blog/wp-content/uploads/2024/04/flow-control2-2-1600x570.png 1600w, /blog/wp-content/uploads/2024/04/flow-control2-2-3200x1140.png 3200w, /blog/wp-content/uploads/2024/04/flow-control2-2-1920x684.png 1920w, /blog/wp-content/uploads/2024/04/flow-control2-2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
 
 
 
@@ -1460,7 +1299,7 @@ height: 61vh !important;
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="428" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/request-response2-1024x428.png" alt="" class="wp-image-4029" srcset="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png 1024w, /blog/wp-content/uploads/2024/04/request-response2-300x126.png 300w, /blog/wp-content/uploads/2024/04/request-response2-768x321.png 768w, /blog/wp-content/uploads/2024/04/request-response2-1536x643.png 1536w, /blog/wp-content/uploads/2024/04/request-response2-2048x857.png 2048w, /blog/wp-content/uploads/2024/04/request-response2-512x214.png 512w, /blog/wp-content/uploads/2024/04/request-response2-920x385.png 920w, /blog/wp-content/uploads/2024/04/request-response2-1600x669.png 1600w, /blog/wp-content/uploads/2024/04/request-response2-3200x1339.png 3200w, /blog/wp-content/uploads/2024/04/request-response2-1920x803.png 1920w, /blog/wp-content/uploads/2024/04/request-response2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="428" src="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png" alt="" class="wp-image-4029" srcset="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png 1024w, /blog/wp-content/uploads/2024/04/request-response2-300x126.png 300w, /blog/wp-content/uploads/2024/04/request-response2-768x321.png 768w, /blog/wp-content/uploads/2024/04/request-response2-1536x643.png 1536w, /blog/wp-content/uploads/2024/04/request-response2-2048x857.png 2048w, /blog/wp-content/uploads/2024/04/request-response2-512x214.png 512w, /blog/wp-content/uploads/2024/04/request-response2-920x385.png 920w, /blog/wp-content/uploads/2024/04/request-response2-1600x669.png 1600w, /blog/wp-content/uploads/2024/04/request-response2-3200x1339.png 3200w, /blog/wp-content/uploads/2024/04/request-response2-1920x803.png 1920w, /blog/wp-content/uploads/2024/04/request-response2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
 
 
 
@@ -1513,7 +1352,7 @@ height: 61vh !important;
 </div></div>			<div class="cs-entry__footer-date">
 				<div class="cs-entry__footer-date-inner">
 					<span class="cs-entry__footer-title">Updated on</span>
-					<time class="cs-entry__footer-value">April 05, 2024</time>
+					<time class="cs-entry__footer-value">April 17, 2024</time>
 				</div>
 			</div>
 		</div>
@@ -1535,7 +1374,7 @@ height: 61vh !important;
 				<div class="subscribe-form horizontal">
 					<div class="form-section mb10">
 						<p class="heading1"><span>Join ThingsBoard community</span></p>
-						<p class="paragraph1"><span>Subscribe to our blogs to stay updated with the latest news and trends. Get exclusive content delivered straight to your inbox!</span></p>
+						<p class="paragraph1"><span>Stay tuned and get first-hand updates and access to insights.</span></p>
 					</div>
 					<div class="form_input_button">
 						<div class="form-section horizontal">
@@ -1568,8 +1407,8 @@ height: 61vh !important;
 <section class="cs-read-next">
 	<div class="cs-read-next-wrapper">
 		<div class="cs-read-next__heading">
-			<h2>
-				Read next			</h2>
+			<p class="heading1">
+				Read next			</p>
 		</div>
 
 		<div class="cs-posts-area__read-next cs-posts-area__list">
@@ -1676,7 +1515,7 @@ height: 61vh !important;
 </section>
 		
 <div id="disqus_thread"></div>
-<script>var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.24.1"},"disqusIdentifier":"3965 https:\/\/wp.thingsboard.io\/?p=3965","disqusShortname":"thingsboard","disqusTitle":"TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more","disqusUrl":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/","postId":3965};
+<script>var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.24.1"},"disqusIdentifier":"3965 \/blog\/?p=3965","disqusShortname":"thingsboard","disqusTitle":"TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more","disqusUrl":"\/blog\/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more\/","postId":3965};
     var disqus_url = embedVars.disqusUrl;
 var disqus_identifier = embedVars.disqusIdentifier;
 var disqus_container_id = 'disqus_thread';
@@ -1751,9 +1590,9 @@ var disqus_config = function () {
 		element.textContent = filename;
 	});
 // adding the styles to each title in the publication	
-	document.querySelectorAll('.wp-block-heading').forEach(function(element){
-		element.classList.add('heading2');
-	})
+// 	document.querySelectorAll('.wp-block-heading').forEach(function(element){
+// 		element.classList.add('heading2');
+// 	})
 // adding the styles to each title in the publication	
 	document.querySelectorAll('img[src$=".gif"]').forEach(function(element){
 		if(element.classList.contains('wp-image-3268') === false){
@@ -1790,133 +1629,7 @@ var disqus_config = function () {
 </script>
 </div>
 
-	<aside id="secondary" class="cs-widget-area cs-sidebar__area">
-		<div class="cs-sidebar__inner">
-			<div class="blog-categories border-bottom-solid">
-				<h3 class="heading3">
-					Explore categories
-					
-				</h3>
-				<ul class="categories">
-<!-- 					<li><a href="https://thingsboard.io/blog/category/events/" class="category-link">Events</a></li> -->
-					<li><a href="https://thingsboard.io/blog/category/company/" class="category-link">Company</a></li> 
-					<li><a href="https://thingsboard.io/blog/category/business/" class="category-link">Business</a></li>
-					<li><a href="https://thingsboard.io/blog/category/tech/" class="category-link">Tech</a></li>
-					<li><a href="https://thingsboard.io/blog/category/solutions/" class="category-link">Solutions</a></li>
-					<li><a href="https://thingsboard.io/blog/category/updates/" class="category-link">Updates</a></li>
-					<li><a href="https://thingsboard.io/blog/category/use-cases/" class="category-link">Use cases</a></li>
-				</ul>
-			</div>
-			<div class="thingsboard-media-banner-wrapper">
-			<div class="thingsboard-media-banner">
-				<div class="thingsboard-media-banner-logo"></div>
-				<p class="thingsboard-media-banner-text paragraph1">
-					ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management.<br>ThingsBoard combines scalability, 						fault-tolerance and performance so you will never lose your data.
-				</p>
-				<ul class="social-networks-sidebar">
-               		<li class="social-network">
-                  		<a class="github-icon social-network-link" href="https://github.com/thingsboard">
-                     		<svg width="22" height="22" viewbox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        		<path class="svg-icon-color" fill-rule="evenodd" clip-rule="evenodd" d="M13.996 0.945312C6.319 0.945312 0.09375 7.16925 0.09375 14.8475C0.09375 20.9898 4.0772 26.201 9.60096 28.0393C10.2957 28.1679 10.5508 27.7376 10.5508 27.3705C10.5508 27.0391 10.5381 25.9438 10.532 24.7821C6.66441 25.6232 5.84829 23.1418 5.84829 23.1418C5.21583 21.535 4.30475 21.1076 4.30475 21.1076C3.04328 20.2448 4.39984 20.2626 4.39984 20.2626C5.79571 20.3606 6.5309 21.6954 6.5309 21.6954C7.77081 23.8206 9.7831 23.2061 10.5765 22.8509C10.7013 21.9525 11.0615 21.339 11.4592 20.9919C8.37127 20.6405 5.1251 19.4483 5.1251 14.1213C5.1251 12.6037 5.66824 11.3634 6.55763 10.3898C6.41331 10.0395 5.93739 8.62565 6.69234 6.7106C6.69234 6.7106 7.85981 6.33718 10.5163 8.13584C11.6253 7.82776 12.8146 7.67329 13.9961 7.66792C15.1774 7.67329 16.3676 7.82776 17.4786 8.13584C20.1322 6.33718 21.298 6.7106 21.298 6.7106C22.0547 8.62565 21.5788 10.0395 21.4344 10.3898C22.3259 11.3634 22.8652 12.6036 22.8652 14.1213C22.8652 19.4611 19.6129 20.6366 16.5171 20.9809C17.0157 21.4123 17.46 22.2583 17.46 23.5553C17.46 25.4154 17.4441 26.9125 17.4441 27.3705C17.4441 27.7405 17.6942 28.1741 18.3988 28.0376C23.9198 26.1972 27.8982 20.9878 27.8982 14.8475C27.8982 7.16925 21.6738 0.945312 13.996 0.945312Z" fill="black"></path>
-                     		</svg>
-                  		</a>
-               		</li>
-					<li class="social-network">
-						<a class="social-network-link gitter-icon" href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
-							<svg width="22" height="22" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M8.15 20.156H5V0H8.15V20.156ZM14.431 4.756H11.281V32H14.431V4.756ZM20.719 4.756H17.569V32H20.719V4.756ZM27 4.75H23.85V20.188H27V4.75Z" fill="black" fill-opacity="0.76"></path>
-							</svg>
-						</a>
-                    </li>
-               		<li class="social-network">
-                  		<a class="social-network-link youtube-icon" href="https://www.youtube.com/@ThingsBoard">
-                     		<svg width="21" height="14" viewbox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        		<path class="svg-icon-color" d="M27.7471 3.58086C27.4251 2.43346 26.4764 1.52997 25.2717 1.22331C23.0879 0.666015 14.3321 0.666016 14.3321 0.666016C14.3321 0.666016 5.57619 0.666015 3.3924 1.22331C2.18786 1.52997 1.23897 2.43346 0.917025 3.58086C0.332031 5.66044 0.332031 9.9995 0.332031 9.9995C0.332031 9.9995 0.332031 14.3385 0.917025 16.4178C1.23897 17.5652 2.18786 18.469 3.3924 18.7756C5.57619 19.3327 14.3321 19.3327 14.3321 19.3327C14.3321 19.3327 23.0879 19.3327 25.2717 18.7756C26.4764 18.469 27.4251 17.5652 27.7471 16.4178C28.332 14.3385 28.332 9.9995 28.332 9.9995C28.332 9.9995 28.332 5.66044 27.7471 3.58086ZM11.5319 13.9996V5.9994L18.8064 9.9995L11.5319 13.9996Z" fill="black"></path>
-                     		</svg>
-                  		</a>
-               		</li>
-				   <li class="social-network">
-					  <a class="social-network-link stackoverflow-icon" href="https://stackoverflow.com/questions/tagged/thingsboard">
-						  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32" width="25" height="25"><path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" fill="black"></path><path d="M8.477 19.8l13.993 2.923.585-2.806-13.993-2.923zm1.832-6.704l12.94 6.04 1.208-2.572-12.94-6.08zm3.586-6.353l10.99 9.12 1.832-2.183-10.99-9.12zM20.99 0l-2.3 1.715 8.536 11.46 2.3-1.715zM8.166 26.27H22.43v-2.845H8.166v2.845z" fill="black"></path></svg>
-					  </a>
-				   </li>		
-				   <li class="social-network">
-					  <a class="google-icon" href="https://groups.google.com/g/thingsboard">
-						  <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewbox="-3 0 262 262" preserveaspectratio="xMidYMid"><path d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027" fill="#4285F4"></path><path d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1" fill="#34A853"></path><path d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782" fill="#FBBC05"></path><path d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" fill="#EB4335"></path></svg>
-					  </a>
-				    </li>					
-               		<li class="social-network">
-                  		<a class="social-network-link facebook-icon" href="https://www.facebook.com/thingsboard/">
-                     		<svg width="22" height="22" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        		<path class="svg-icon-color" d="M27.3346 14.0808C27.3346 6.67203 21.3651 0.666016 14.0013 0.666016C6.6375 0.666016 0.667969 6.67203 0.667969 14.0808C0.667969 20.7766 5.5438 26.3263 11.918 27.3327V17.9586H8.53255V14.0808H11.918V11.1254C11.918 7.76329 13.9085 5.90618 16.9542 5.90618C18.413 5.90618 19.9388 6.16819 19.9388 6.16819V9.46949H18.2575C16.6012 9.46949 16.0846 10.5035 16.0846 11.5644V14.0808H19.7826L19.1914 17.9586H16.0846V27.3327C22.4589 26.3263 27.3346 20.7766 27.3346 14.0808Z" fill="black"></path>
-                     		</svg>
-                  		</a>
-               		</li>
-				   <li class="social-network">
-					  <a class="social-network-link twitter-icon" href="https://twitter.com/thingsboard">
-						 <svg class="twitter-hover-bg" width="20" height="20" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M16.5445 11.9575L26.4768 0.666016H24.1232L15.4989 10.4703L8.61072 0.666016H0.666016L11.0823 15.4918L0.666016 27.3327H3.0198L12.1273 16.979L19.4017 27.3327H27.3464L16.5439 11.9575H16.5445ZM13.3206 15.6224L12.2652 14.1461L3.8679 2.39892H7.48318L14.2599 11.8793L15.3153 13.3556L24.1243 25.6786H20.509L13.3206 15.623V15.6224Z" fill="black"></path>
-						 </svg>
-					  </a>
-				   </li>
-            	</ul>
-			</div>
-			</div>
-			<div id="mlb2-16607922" class="ml-subscribe-form ml-subscribe-form-16607922">
-				<div class="ml-vertical-align-center">
-					<div class="subscribe-form ml-block-success" style="display:none">
-						<div class="form-section heading2">
-							<p>Thanks for subscribing!</p>
-						</div>
-					</div>
-					<form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/z9h4b4" data-id="6028548" data-code="z9h4b4" method="POST" target="_blank">
-						<div class="subscribe-form horizontal">
-							<div class="form-section mb10">
-								<p class="heading2"><span>Join ThingsBoard community</span></p>
-								<p class="paragraph1"><span>Stay tuned and get first-hand updates and access to insights.</span></p>
-							</div>
-							<div class="form_input_button">
-								<div class="form-section horizontal">
-									<div class="form-group ml-field-email ml-validate-required ml-validate-email">
-										<input type="email" name="fields[email]" class="form-control" placeholder="Your email address*" value="" autocomplete="off" x-autocompletetype="off" spellcheck="false" autocapitalize="off" autocorrect="off" readonly onfocus="this.removeAttribute('readonly')" style="background: #FFFFFF;">
-									</div>
-								</div>
-								<div class="form-section horizontal ml-button-position">
-									<button type="submit" class="primary">
-										Subscribe
-									</button>
-									<button disabled style="display: none;" type="button" class="loading">
-										<img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
-									</button>
-								</div>
-							</div>
-							<div class="clearfix" style="clear: both;"></div>
-							<input type="hidden" name="ml-submit" value="1">
-						</div>
-					</form>
-					<script>function ml_webform_success_16607922() {
-							var $ = ml_jQuery || jQuery;
-							$('.ml-subscribe-form-16607922 .ml-block-success').show();
-							$('.ml-subscribe-form-16607922 .ml-block-form').hide();
-						};</script>
-				</div>
-			</div>
-		<script async defer type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?vd4de52e171e8eb9c47c0c20caf367ddf"></script>
-		</div>
-		<script async>//adding the styles to the category links on the whole page
-			document.querySelectorAll('.post-categories a').forEach(function(element) {
-				element.classList.add('category-link');
-			});
-			
-			//removing the styles from the category links on the slider, according to the figma model
-			document.querySelectorAll('.cs-overlay-content .post-categories a').forEach(function(element) {
-				element.classList.remove('category-link');
-			});
-// 			document.querySelectorAll('.category-link-domain-url').forEach(function(element){
-// 				element.href = element.href.replace('wp.thingsboard.io', window.location.hostname)
-// 			})</script>
-	</aside>
-	
+
 							
 						</div>
 					</div>
@@ -1935,7 +1648,7 @@ var disqus_config = function () {
 	<div class="cs-container">
 		<div class="footer-content">
 			<div class="footer-top">
-				<a href="https://thingsboard.io/" class="footer-logo-side"></a>
+				<a href="https://thingsboard.io/" class="footer-logo-side" aria-label="Link to homepage"></a>
 				<ul class="footer_nav_list fs18">
 					<li><a href="https://thingsboard.io/products/">Products</a></li>
 					<li><a href="https://thingsboard.io/docs/services/">Services</a></li>
@@ -1952,45 +1665,45 @@ var disqus_config = function () {
 				</p>
 				<ul class="social-networks-sidebar social-networks-footer">
 					<li class="social-network">
-						<a class="github-icon social-network-link" href="https://github.com/thingsboard">
+						<a class="github-icon social-network-link" href="https://github.com/thingsboard" aria-label="Link to our Github">
 							<svg width="22" height="22" viewbox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path class="svg-icon-color" fill-rule="evenodd" clip-rule="evenodd" d="M13.996 0.945312C6.319 0.945312 0.09375 7.16925 0.09375 14.8475C0.09375 20.9898 4.0772 26.201 9.60096 28.0393C10.2957 28.1679 10.5508 27.7376 10.5508 27.3705C10.5508 27.0391 10.5381 25.9438 10.532 24.7821C6.66441 25.6232 5.84829 23.1418 5.84829 23.1418C5.21583 21.535 4.30475 21.1076 4.30475 21.1076C3.04328 20.2448 4.39984 20.2626 4.39984 20.2626C5.79571 20.3606 6.5309 21.6954 6.5309 21.6954C7.77081 23.8206 9.7831 23.2061 10.5765 22.8509C10.7013 21.9525 11.0615 21.339 11.4592 20.9919C8.37127 20.6405 5.1251 19.4483 5.1251 14.1213C5.1251 12.6037 5.66824 11.3634 6.55763 10.3898C6.41331 10.0395 5.93739 8.62565 6.69234 6.7106C6.69234 6.7106 7.85981 6.33718 10.5163 8.13584C11.6253 7.82776 12.8146 7.67329 13.9961 7.66792C15.1774 7.67329 16.3676 7.82776 17.4786 8.13584C20.1322 6.33718 21.298 6.7106 21.298 6.7106C22.0547 8.62565 21.5788 10.0395 21.4344 10.3898C22.3259 11.3634 22.8652 12.6036 22.8652 14.1213C22.8652 19.4611 19.6129 20.6366 16.5171 20.9809C17.0157 21.4123 17.46 22.2583 17.46 23.5553C17.46 25.4154 17.4441 26.9125 17.4441 27.3705C17.4441 27.7405 17.6942 28.1741 18.3988 28.0376C23.9198 26.1972 27.8982 20.9878 27.8982 14.8475C27.8982 7.16925 21.6738 0.945312 13.996 0.945312Z" fill="black"></path>
 							</svg>
 						</a>
 					</li>
 					<li class="social-network">
-						<a class="social-network-link gitter-icon" href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
+						<a class="social-network-link gitter-icon" href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im" aria-label="Link to our Gitter">
 							<svg width="22" height="22" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M8.15 20.156H5V0H8.15V20.156ZM14.431 4.756H11.281V32H14.431V4.756ZM20.719 4.756H17.569V32H20.719V4.756ZM27 4.75H23.85V20.188H27V4.75Z" fill="black" fill-opacity="0.76"></path>
 							</svg>
 						</a>
 					</li>
 					<li class="social-network">
-						<a class="social-network-link youtube-icon" href="https://www.youtube.com/@ThingsBoard">
+						<a class="social-network-link youtube-icon" href="https://www.youtube.com/@ThingsBoard" aria-label="Link to our YouTube">
 							<svg width="21" height="14" viewbox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path class="svg-icon-color" d="M27.7471 3.58086C27.4251 2.43346 26.4764 1.52997 25.2717 1.22331C23.0879 0.666015 14.3321 0.666016 14.3321 0.666016C14.3321 0.666016 5.57619 0.666015 3.3924 1.22331C2.18786 1.52997 1.23897 2.43346 0.917025 3.58086C0.332031 5.66044 0.332031 9.9995 0.332031 9.9995C0.332031 9.9995 0.332031 14.3385 0.917025 16.4178C1.23897 17.5652 2.18786 18.469 3.3924 18.7756C5.57619 19.3327 14.3321 19.3327 14.3321 19.3327C14.3321 19.3327 23.0879 19.3327 25.2717 18.7756C26.4764 18.469 27.4251 17.5652 27.7471 16.4178C28.332 14.3385 28.332 9.9995 28.332 9.9995C28.332 9.9995 28.332 5.66044 27.7471 3.58086ZM11.5319 13.9996V5.9994L18.8064 9.9995L11.5319 13.9996Z" fill="black"></path>
 							</svg>
 						</a>
 					</li>
 					<li class="social-network">
-						<a class="social-network-link stackoverflow-icon" href="https://stackoverflow.com/questions/tagged/thingsboard">
+						<a class="social-network-link stackoverflow-icon" href="https://stackoverflow.com/questions/tagged/thingsboard" aria-label="Link to our Stack Overflow page">
 							<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32" width="25" height="25"><path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" fill="black"></path><path d="M8.477 19.8l13.993 2.923.585-2.806-13.993-2.923zm1.832-6.704l12.94 6.04 1.208-2.572-12.94-6.08zm3.586-6.353l10.99 9.12 1.832-2.183-10.99-9.12zM20.99 0l-2.3 1.715 8.536 11.46 2.3-1.715zM8.166 26.27H22.43v-2.845H8.166v2.845z" fill="black"></path></svg>
 						</a>
 					</li>		
 					<li class="social-network">
-						<a class="google-icon" href="https://groups.google.com/g/thingsboard">
+						<a class="google-icon" href="https://groups.google.com/g/thingsboard" aria-label="Link to our Google Group">
 							<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewbox="-3 0 262 262" preserveaspectratio="xMidYMid"><path d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027" fill="#4285F4"></path><path d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1" fill="#34A853"></path><path d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782" fill="#FBBC05"></path><path d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" fill="#EB4335"></path></svg>
 						</a>
 				    </li>	
 					<li class="social-network">
-						<a class="social-network-link facebook-icon" href="https://www.facebook.com/thingsboard/">
+						<a class="social-network-link facebook-icon" href="https://www.facebook.com/thingsboard/" aria-label="Link to our Facebook">
 							<svg width="22" height="22" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path class="svg-icon-color" d="M27.3346 14.0808C27.3346 6.67203 21.3651 0.666016 14.0013 0.666016C6.6375 0.666016 0.667969 6.67203 0.667969 14.0808C0.667969 20.7766 5.5438 26.3263 11.918 27.3327V17.9586H8.53255V14.0808H11.918V11.1254C11.918 7.76329 13.9085 5.90618 16.9542 5.90618C18.413 5.90618 19.9388 6.16819 19.9388 6.16819V9.46949H18.2575C16.6012 9.46949 16.0846 10.5035 16.0846 11.5644V14.0808H19.7826L19.1914 17.9586H16.0846V27.3327C22.4589 26.3263 27.3346 20.7766 27.3346 14.0808Z" fill="black"></path>
 							</svg>
 						</a>
 					</li>
 					<li class="social-network">
-						<a class="social-network-link instagram-icon" href="https://www.instagram.com/thingsboard_iot/?hl=am-et">
+						<a class="social-network-link instagram-icon" href="https://www.instagram.com/thingsboard_iot/?hl=am-et" aria-label="Link to our Instagram">
 							<svg class="instagram-default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="22px" width="22px" version="1.1" id="Layer_1" viewbox="0 0 551.034 551.034" xml:space="preserve">
 								<g id="XMLID_13_">
 									<lineargradient id="XMLID_2_" gradientunits="userSpaceOnUse" x1="275.517" y1="4.5714" x2="275.517" y2="549.7202" gradienttransform="matrix(1 0 0 -1 0 554)">
@@ -2044,14 +1757,14 @@ var disqus_config = function () {
 						</a>
 					</li>
 					<li class="social-network">
-						<a class="social-network-link linkedin-icon" href="https://www.linkedin.com/company/thingsboard">
+						<a class="social-network-link linkedin-icon" href="https://www.linkedin.com/company/thingsboard" aria-label="Link to our Linkedin">
 							<svg width="19" height="19" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M44.4469 0H3.54375C1.58437 0 0 1.54688 0 3.45938V44.5312C0 46.4437 1.58437 48 3.54375 48H44.4469C46.4062 48 48 46.4438 48 44.5406V3.45938C48 1.54688 46.4062 0 44.4469 0ZM14.2406 40.9031H7.11563V17.9906H14.2406V40.9031ZM10.6781 14.8688C8.39062 14.8688 6.54375 13.0219 6.54375 10.7437C6.54375 8.46562 8.39062 6.61875 10.6781 6.61875C12.9563 6.61875 14.8031 8.46562 14.8031 10.7437C14.8031 13.0125 12.9563 14.8688 10.6781 14.8688ZM40.9031 40.9031H33.7875V29.7656C33.7875 27.1125 33.7406 23.6906 30.0844 23.6906C26.3812 23.6906 25.8187 26.5875 25.8187 29.5781V40.9031H18.7125V17.9906H25.5375V21.1219H25.6312C26.5781 19.3219 28.9031 17.4188 32.3625 17.4188C39.5719 17.4188 40.9031 22.1625 40.9031 28.3313V40.9031Z" fill="black"></path>
 							</svg>
 						</a>
 					</li>
 					<li class="social-network">
-						<a class="social-network-link twitter-icon" href="https://twitter.com/thingsboard">
+						<a class="social-network-link twitter-icon" href="https://twitter.com/thingsboard" aria-label="Link to our Twitter">
 							<svg class="twitter-hover-bg" width="20" height="20" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M16.5445 11.9575L26.4768 0.666016H24.1232L15.4989 10.4703L8.61072 0.666016H0.666016L11.0823 15.4918L0.666016 27.3327H3.0198L12.1273 16.979L19.4017 27.3327H27.3464L16.5439 11.9575H16.5445ZM13.3206 15.6224L12.2652 14.1461L3.8679 2.39892H7.48318L14.2599 11.8793L15.3153 13.3556L24.1243 25.6786H20.509L13.3206 15.623V15.6224Z" fill="black"></path>
 							</svg>
@@ -2087,13 +1800,7 @@ var disqus_config = function () {
 
 <script id="disqus_count-js-extra">var countVars = {"disqusShortname":"thingsboard"};</script>
 <script src="/blog/wp-content/plugins/disqus-comment-system/public/js/comment_count.js?ver=3.0.24.1" id="disqus_count-js"></script>
-<script id="wd-asl-ajaxsearchlite-js-before">window.ASL = typeof window.ASL !== 'undefined' ? window.ASL : {}; window.ASL.wp_rocket_exception = "DOMContentLoaded"; window.ASL.ajaxurl = "\/blog\/wp-admin\/admin-ajax.php"; window.ASL.backend_ajaxurl = "\/blog\/wp-admin\/admin-ajax.php"; window.ASL.js_scope = "jQuery"; window.ASL.asl_url = "\/blog\/wp-content\/plugins\/ajax-search-lite\/"; window.ASL.detect_ajax = 1; window.ASL.media_query = 4761; window.ASL.version = 4761; window.ASL.pageHTML = ""; window.ASL.additional_scripts = [{"handle":"wd-asl-ajaxsearchlite","src":"\/blog\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-prereq.js","prereq":[]},{"handle":"wd-asl-ajaxsearchlite-core","src":"\/blog\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-core.js","prereq":[]},{"handle":"wd-asl-ajaxsearchlite-vertical","src":"\/blog\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-results-vertical.js","prereq":["wd-asl-ajaxsearchlite"]},{"handle":"wd-asl-ajaxsearchlite-load","src":"\/blog\/wp-content\/plugins\/ajax-search-lite\/js\/min\/plugin\/optimized\/asl-load.js","prereq":["wd-asl-ajaxsearchlite-vertical"]}]; window.ASL.script_async_load = false; window.ASL.init_only_in_viewport = true; window.ASL.font_url = "\/blog\/wp-content\/plugins\/ajax-search-lite\/css\/fonts\/icons2.woff2"; window.ASL.css_async = false; window.ASL.highlight = {"enabled":false,"data":[]}; window.ASL.analytics = {"method":0,"tracking_id":"","string":"?ajax_search={asl_term}","event":{"focus":{"active":1,"action":"focus","category":"ASL","label":"Input focus","value":"1"},"search_start":{"active":0,"action":"search_start","category":"ASL","label":"Phrase: {phrase}","value":"1"},"search_end":{"active":1,"action":"search_end","category":"ASL","label":"{phrase} | {results_count}","value":"1"},"magnifier":{"active":1,"action":"magnifier","category":"ASL","label":"Magnifier clicked","value":"1"},"return":{"active":1,"action":"return","category":"ASL","label":"Return button pressed","value":"1"},"facet_change":{"active":0,"action":"facet_change","category":"ASL","label":"{option_label} | {option_value}","value":"1"},"result_click":{"active":1,"action":"result_click","category":"ASL","label":"{result_title} | {result_url}","value":"1"}}};</script>
-<script src="/blog/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-prereq.js?ver=4761" id="wd-asl-ajaxsearchlite-js"></script>
-<script src="/blog/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-core.js?ver=4761" id="wd-asl-ajaxsearchlite-core-js"></script>
-<script src="/blog/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-results-vertical.js?ver=4761" id="wd-asl-ajaxsearchlite-vertical-js"></script>
-<script src="/blog/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-load.js?ver=4761" id="wd-asl-ajaxsearchlite-load-js"></script>
-<script src="/blog/wp-content/plugins/ajax-search-lite/js/min/plugin/optimized/asl-wrapper.js?ver=4761" id="wd-asl-ajaxsearchlite-wrapper-js"></script>
-<script id="csco-scripts-js-extra">var csLocalize = {"siteSchemeMode":"light","siteSchemeToogle":""};</script>
+<script id="csco-scripts-js-extra">var csLocalize = {"siteSchemeMode":"light","siteSchemeToogle":"1"};</script>
 <script src="/blog/wp-content/themes/swyft/assets/js/scripts.js?ver=1.0.2" id="csco-scripts-js"></script>
 <script src="/blog/wp-content/themes/swyft/assets/static/js/comment-reply.js?ver=1.0.2" id="csco-comment-reply-js"></script>
 
