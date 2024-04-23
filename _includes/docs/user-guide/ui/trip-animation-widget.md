@@ -1,236 +1,102 @@
-
-{% assign feature = "Platform Integrations" %}
+{% if docsPrefix == null %}
+{% assign NEW_DEVICE = "[create a new device](/docs/getting-started-guides/helloworld/#step-1-provision-device)" %}
+{% assign YOUR_HOST = "[download the script](/docs/user-guide/resources/timeseries-map-bus-ce.js)" %}
+{% assign EMULATOR = "device-emulator-ce.png" %}
+{% assign TERMINAL = "timeseries-map-bus-ce.js" %}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+{% assign NEW_DEVICE = "[create a new device](/docs/getting-started-guides/helloworld-pe/#step-1-provision-device)" %}
+{% assign YOUR_HOST = "[download the script](/docs/user-guide/resources/timeseries-map-bus-pe.js)" %}
+{% assign EMULATOR = "device-emulator-pe.png" %}
+{% assign TERMINAL = "timeseries-map-bus-pe.js" %}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+{% assign NEW_DEVICE = "[create a new device](/docs/paas/getting-started-guides/helloworld/#step-1-provision-device)" %}
+{% assign YOUR_HOST = "[download the script](/docs/user-guide/resources/timeseries-map-bus-cloud.js)" %}
+{% assign EMULATOR = "device-emulator-paas.png" %}
+{% assign TERMINAL = "timeseries-map-bus-cloud.js" %}
+{% endif %}
 
 * TOC
 {:toc}
 
-## Overview
+In this guide, we will explore the functionalities of the Trip animation widget.
+This widget can be useful for various use cases, but primarily it can be used for tracking, analyzing, and visualizing the movement of different entities in realtime.
 
-In this example, we'll study trip animation widget functionality. 
+## Prerequisites
 
-This widget might be useful for different use cases, but mainly it might be used for a Tracking in a realtime, researching movement of the entities and visualizing it.
-{% if docsPrefix == null %}
-{% else %}
-This guide was written for [cloud](https://thingsboard.cloud), so some steps will be a little different from Community Edition.
-{% endif %}
-
-It's capable of all further versions.
-
-## Create device emulator
-
-Firstly you need to create a device from which will collect telemetry.
-
-Also, you may use any device you have with a coordinates telemetry (longitude and latitude).
-
-This can be any device which receives its coordinates in a realtime.
-
+Firstly, you need a device from which telemetry will be collected. You can use any device you have that provides coordinates (longitude and latitude) as telemetry in realtime.
 Longitude and latitude are the key data for map visualization so that you'll see it on a widget at the dashboard which you chose.
 
+For this guide, we will {{NEW_DEVICE}}{:target="_blank"} called **Tracker1**, which receives longitude, latitude, speed, circle radius, status, and polygon coordinates as telemetry using an emulator written in JavaScript.
 
+{% include images-gallery.html imageCollection="adding-device" %}
 
-Create a new device **Tracker1**.
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-device-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-device-1-pe.png)
-{% endif %}
-
-{% if docsPrefix == null %}
-{% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-ce.js)" %}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-{% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-pe.js)" %}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-{% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-cloud.js)" %}
-{% endif %}
-In our example, the device receives its longitude, latitude, speed, radius of circle, status, and coordinates of polygon use an {{YOUR_HOST}} written in javascript.
-
-For receive telemetry and further visualize it on the dashboard execute script in a command line:
+To receive telemetry and further visualize it on the dashboard {{YOUR_HOST}}{:target="_blank"} and execute it using the following command:
 
 ```bash
-node timeseries-map-bus.js $ACCESSTOKEN
+node {{TERMINAL}} $ACCESSTOKEN
 ```
 {: .copy-code}
-Where **$ACCESSTOKEN** is your device access token.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/device-emulator-ce.png)
-{% endif %}
-{% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/device-emulator-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/device-emulator-paas.png)
-{% endif %}
+Where **$ACCESSTOKEN** is your device access token located in the device details.
 
-**$ACCESSTOKEN** is located in a device details.
+![image](/images/user-guide/ui/widgets/trip-animation-widget/{{EMULATOR}})
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/access-token-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/access-token-1-pe.png)
-{% endif %}
+Emulator is capable with Node.js version 12 or higher.
 
-Emulator is capable with Node.js v8.10.0
+## Setting up Trip Animation widget
 
-## Setting up Trip Animation Widget
+Since our goal is to track how our entity (Tracker1) moved over a certain period, we need to create a dashboard where the telemetry from this device will be visualized.
+We can use an existing one or create a new dashboard. In our example, we create a new dashboard called "My New Dashboard".
 
-### Creating a dashboard
+{% include images-gallery.html imageCollection="create-dashboard-1" showListImageTitles="true" %}
 
-We need to create a dashboard where our telemetry will be visualized. It might be useful if your goal is to track how your entity moved in a specific period. 
+Now let's add the "Trip Animation" widget to the dashboard:
 
-We can use an existing one or create a new dashboard for our new use case. 
+{% include images-gallery.html imageCollection="create-dashboard-2" showListImageTitles="true" %}
 
-In our example, we create a new dashboard called “Dashboard1” for our guide reasons. 
+Now we can see how our device moved over the last minute. Press the "Start" button.
+We can also speed up the movement of our cursor by 5, 10, or 25 times so that we can check its route much faster.
 
-### Adding widget
-
-Create and open an empty dashboard. And let’s fill it with some content. Click pencil button "Enter edit mode".
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-pe.png)
-{% endif %}
-
-Firstly we need to create an **alias** to specify entity from which we’ll receive telemetry data. 
-
-Our entity in this guide will be **“Tracker1”** device which we created previously. We’ll give **“GeoData1”** name to our alias. 
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-pe.png)
-{% endif %}
-
-Now we go for adding a widget!
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-pe.png)
-{% endif %}
-
-Trip animation widget is located in Maps bundle 
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-pe.png)
-{% endif %}
-
-In our widget we add **coordinates**, **latitude**, **longitude**, **radius**, **speed** and **status** from our alias **“GeoData1”** as our parameters.
-
-They have the same labels as their keys are. Secondly, we create a widget on which we will visualize our telemetry.
-
-We use **Trip Animation** widget in our guide. It’s located in Maps Bundle, Time series tab.
-
-Also, we’ll go for “Use dashboard timewindow” so that we’ll make it easier to synchronise our data.
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-pe.png)
-{% endif %}
-
-In addition to this, we’ll use last minute received data to visualize and change aggregation function to None, because we don’t need to guess possible data value for the next time period, we receive data in realtime without any errors.
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-pe.png)
-{% endif %}
-
-Now we can take a look at how our device is being moving for the last minute in a realtime. Press the “Start” button.
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-pe.png)
-{% endif %}
-
-We also can speed up our timeline cursor up to 1,5,10,25 times so that we can make a check on its routing much faster.
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="create-dashboard-3" %}
 
 ## Customization
 
-### Settings tab
+Now that we've added the Trip Animation widget to our dashboard and configured its data source, let's move on to adjusting the settings to explore its key features.
+All further actions will be performed in the widget settings window on the "Appearance" tab. To do this, enter widget editing mode and navigate to the "Appearance" tab.
 
-Now, when we got the basics of what our widget can provide, let us go for editing its settings to make it more functional and eye-catching. Firstly we go to settings, there we can specify:
+{% include images-gallery.html imageCollection="appearance-tab" %}
 
-* Title of widget, its style
+Now let's proceed directly to reviewing each item on the "Appearance" tab in the Trip Animation widget settings.
 
-* Title tooltip
+#### Data settings
 
-* Title icon, icon colour, icon size in a px
+In the "Data settings" section you can add a special symbol that will be displayed next to the entity values. Additionally, you can set the number of digits to be displayed after the floating point number, and an alternative message when there is no data to display.
 
-* Change widget style
+{% include images-gallery.html imageCollection="data-settings" %}
 
-* Background color, text color, padding, margin
+#### Map provider settings
 
-* Enable/disable drop shadow
+Choose a map provider from the list or use custom provider.
 
-* Enable/disable fullscreen mode for widget
+{% include images-gallery.html imageCollection="map-provider" %}
 
-* Enable/disable legend display
+#### Trip animation settings
 
-* Specify mobile settings
+Here, you specify the names of the data keys containing the coordinates of your entity. By default, these are "latitude" and "longitude".
+You also specify the normalization data step in milliseconds. By default, this value is set to 1000.
 
+{% include images-gallery.html imageCollection="latitude-longitude-key-name" %}
 
-Let's see how it works.
+##### Tooltip
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-pe.png)
-{% endif %}
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-pe.png)
-{% endif %}
-
-### Advanced tab
-
-In a settings tab, we can specify unique parametres for Trip animation widget for functionality that only it can provide. We have:
-
-#### Map Provider Settings
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-pe.png)
-{% endif %}
-
-#### Trip Animation Settings
-
-##### Normalization data step (ms) 
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-pe.png)
-{% endif %}
-
-##### Latitude & Longitude key names
-You can specify name based on which widget will be updated. It uses data based on the label of the data. So that you may specify label “data-1” for the longitude key value and get longitude from the alias after we edit longitude key name as “data-1”. 
-
-{% include images-gallery.html imageCollection="advanced-settings-key-name" %}
-
-##### Tooltip function
-You can show/hide Tooltip, its color, its font color, the opacity of tooltip and tooltip text or use tooltip function (you may change data contained in a tooltip based on *data, dsData, dsIndex*)
+Make use of this feature to display a tooltip. You can also customize the tooltip to better match your style by changing the background and font colors, as well as adjusting its opacity.
+Alternatively, take advantage of the tooltip function to provide more dynamic content. In our example, the tooltip displays the entity's speed, offering a quick and informative glance at its current pace.
 
 {% include images-gallery.html imageCollection="advanced-settings-tooltip" %}
 
-Tooltip function:
+The tooltip function used in the example:
 ```javascript
 var speed = data['speed'];
 var res;
@@ -245,46 +111,43 @@ return res;
 
 #### Markers settings
 
-##### Label function
-
-* Set additional rotation angle for marker
+Set the initial rotation angle of the marker (in degrees).
 
 {% include images-gallery.html imageCollection="advanced-settings-additional-rotation-angle-for-marker" %}
 
-* Widget label, or specify label function (you may change data contained in a widget label based on *data, dsData, dsIndex*)
+##### Label function
+
+Show or hide the entity's label. You can also change the label text or utilize a label function for more dynamic information. 
+For example, the label could display the movement status of the entity, providing a quick and clear understanding of its current state.
 
 {% include images-gallery.html imageCollection="advanced-settings-label" %}
- 
-Label function:
+
+The label function used in the example:
 ```javascript
 var speed = data['speed'];
 var res;
 if (speed > 55) {
-    res = "Too Fast"
+    res = "${entityName}</br>Status: Too Fast"
 } else {
-    res = "Everything is OK"
+    res = "${entityName}</br>Status: Everything is OK"
 }
 return res;
 ```
 {: .copy-code}
 
-##### Marker function:
+##### Marker function
 
-In addition to all of this, there are some settings for the marker and you can specify next settings for it:
+You can specify the following parameters to configure the marker:
 
-* Custom marker image
-
-* Custom marker image size px
+* Add custom marker image and set its size;
 
 {% include images-gallery.html imageCollection="advanced-settings-marker-image" %}
 
-* Marker image function (you may change marker image, marker image color based on *data, dsData, dsIndex*)
-
-* Specify other possible marker images, which can be used in a marker image function
+* Use marker image function. For example, you can visually represent the speed of your vehicles in real-time by uploading several marker images, and they will change depending on the speed of the bus.
 
 {% include images-gallery.html imageCollection="advanced-settings-marker-image-function" %}
 
-Marker image function:
+The marker image function used in the example:
 ```javascript
 var speed = data['speed'];
 var res = {
@@ -300,13 +163,13 @@ return res;
 ```
 {: .copy-code}
 
-#### Path Settings
+#### Path settings
 
-You can specify path color or specify path color function (you may change data based on *data, dsData, dsIndex*) - the color of the marker moves 
+You have the option to choose the path color or use the path color function. For example, the path color can change with increasing or decreasing speed, providing an intuitive visual cue about the pace at which the object is moving.
 
 {% include images-gallery.html imageCollection="advanced-settings-path-color-function" %}
 
-Path color function:
+The path color function used in the example:
 ```javascript
 var speed = data['speed'];
 var res;
@@ -321,39 +184,22 @@ return res;
 
 ##### Path decorator
 
-* Path decorator, its size in px, end/beginning offset, decorator repeater, stroke weight and stroke opacity
+Set the path decorator symbol, its color, end/start offset, repeatability, and size in pixels.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-path-decorator" %}
 
-#### Points Settings
+#### Points settings
 
-The next option is a show points option. Points are a telemetry data updates so that you can check each. For the points next options are available.
+The points represent telemetry data updates, allowing you to check each one individually. 
 
-* Show/Hide points
+{% include images-gallery.html imageCollection="advanced-settings-points-settings" %}
 
-* Point color
+You have the option to specify the color and size (in pixels) of the points to match your preferences or use a color point function.
+This function allows you to visually track changes in data based on incoming telemetry from your entity.
 
-* Point size px
+{% include images-gallery.html imageCollection="advanced-settings-point-color-function" %}
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-pe.png)
-{% endif %}
-
-* Use color point function
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-pe.png)
-{% endif %}
-
-Points color function:
+The points color function used in the example:
 ```javascript
 var speed = data['speed'];
 var res;
@@ -366,11 +212,11 @@ return res;
 ```
 {: .copy-code}
 
-* Use point as an anchor (you may change data based on *data, dsData, dsIndex*)
+The "Point as an anchor" feature allows you to navigate through data points based on a condition specified in the function. This makes it easier to sift through information according to specific criteria.
 
 {% include images-gallery.html imageCollection="advanced-settings-anchor-function" %}
 
-Point as anchor function:
+The point as anchor function used in the example:
 ```javascript
 var speed = data['speed'];
 if (speed > 55) {
@@ -381,146 +227,96 @@ if (speed > 55) {
 ```
 {: .copy-code}
 
-* **Independent point tooltip**
+#### Polygon settings
 
+What’s a polygon? It’s a plane figure that’s described by a finite number of dots. You may mark your assets and any other entities with a polygon option.
+We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity.
 
-#### Polygon Settings
-
-What’s a polygon? It’s a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity. 
-
-You may mark your assets and any other entities with a polygon option.
-
-Polygon coordinates are being received in a format:
+To add a polygon to the Trip Animation map widget, you need to: 
+- Have a device that transmits the coordinates of the polygon as telemetry data. Polygon coordinates are being received in a format:
 
 ```
-[[1CoordinateLatitude,1CoordinateLatitude],[2CoordinateLatitude,2CoordinateLatitude]...[nCoordinateLatitude,nCoordinateLatitude]]
+[[1CoordinateLatitude,1Coordinatelongitude],[2CoordinateLatitude,2Coordinatelongitude]...[nCoordinateLatitude,nCoordinatelongitude]]
 ``` 
 
 where **n** - number of coordinates which polygon is described by.
 
+Polygon coordinates in our example:
+
+```
+[[37.770835,-122.510163],[37.771586,-122.495633],[37.772773,-122.471776],[37.773354,-122.461562],[37.774558,-122.454910],[37.767407,-122.454612],[37.766195,-122.466924],[37.765866,-122.477787],[37.764699,-122.509657]]
+``` 
+
+- Add a polygon data key to the "Timeseries data keys" field of the "Trip Animation" widget;
+- Turn on "Show polygon" option and add polygon key to the "Polygon key name" field of the "Polygon settings" section.
+
+{% include images-gallery.html imageCollection="advanced-settings-polygon-settings-1" %}
+
 <br>
-For the polygon, we can specify the next settings:
+The following settings are available for the polygon:
 
-* Show/Hide polygon
+* Check the "Enable polygon edit" checkbox to add a polygon editing menu to the map. With these tools, you can add a new polygon, move points of an existing polygon, move the entire polygon, cut the polygon area, or delete the polygon directly on the map widget.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-polygon-settings-2" %}
 
-* Enable/disable polygon edit
+* Show or hide the label on the polygon. Change the text of the label or specify a function for the label to dynamically display data based on conditions you specify.
+ 
+{% include images-gallery.html imageCollection="advanced-settings-polygon-settings-3" %}
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-pe.png)
-{% endif %}
+* Show/hide the polygon tooltip. You have the option to change the text within the tooltip or specify a function for the tooltip. Its allows you to dynamically change specific information based on conditions you specify, making your tooltip more informative.
 
-* Polygon label text or polygon label function (you may change data contained in a polygon label based on *data, dsData, dsIndex*)
+{% include images-gallery.html imageCollection="advanced-settings-polygon-settings-4" %}
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-pe.png)
-{% endif %}
+* Change the color of the polygon or adjust the opacity of the polygon to suit your specific needs. Additionally, you have the option to specify a polygon color function, allowing the color to dynamically change the color based on conditions you specify.
 
-* Polygon tooltip text or polygon tooltip function (you may change data contained in a polygon tooltip based on *data, dsData, dsIndex*) 
+{% include images-gallery.html imageCollection="advanced-settings-polygon-settings-5" %}
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-pe.png)
-{% endif %}
+* Customize the appearance of your polygon by changing the stroke color, adjusting its opacity, and modifying the weight to better suit your visual needs. You can also set up a polygon stroke color function. This allows the stroke color to change automatically based on certain conditions or data, adding interactivity to your visualization.
 
-* Polygon color, polygon opacity, or polygon color function (you may change polygon color based on *data, dsData, dsIndex*)
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-pe.png)
-{% endif %}
-
-* Polygon stroke color, polygon opacity, polygon weight or polygon stroke color function (you may change polygon color based on *data, dsData, dsIndex*)
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-polygon-settings-6" %}
 
 #### Circle settings
 
-Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. We use circle which is based on coordinates that are specified within the device we use, but you can use any other entity.
+Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. You may mark your assets and any other entities with a circle option.
+We use circle which is based on coordinates that are specified within the device we use, but you can use any other entity.
 
-You may mark your assets and any other entities with a circle option. 
-
-Circle coordinates are being received in a format:
+To add a circle to the Trip Animation map widget, you need to:
+- Have a device that transmits the coordinates of the circle as telemetry data. Circle coordinates are being received in a format:
 
 ```
-{"latitude": 37.770460000, "longitude":-122.510870000, "radius":700}
+{"latitude":Coordinatelatitude, "longitude":Coordinatelongitude, "radius":radius}
 ``` 
 
+Circle coordinates in our example:
+
+```
+{"latitude":37.770460000, "longitude":-122.510870000, "radius":700}
+``` 
+
+- Add a circle data key to the "Timeseries data keys" field of the "Trip Animation" widget;
+- Turn on "Show circle" option and specify circle key to the "Circle key name" field of the "Circle settings" section.
+
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-1" %}
+
 <br>
-For the circle, we can specify the next settings:
+The following settings are available for the circle:
 
-* Show/Hide circle
+* Check the "Enable circle edit" checkbox to add a circle editing menu to the map. With these tools, you can add a new circle, modify the radius, move, or delete the circle directly on the map widget.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-2" %}
 
-* Enable/disable circle edit
+* Show or hide the label on the circle. Change the text of the label or specify a function for the label to dynamically display data based on specific conditions.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-3" %}
 
-* Circle label text or circle label function (you may change data contained in a circle label based on *data, dsData, dsIndex*)
+* Show/hide the circle tooltip. You have the option to change the text within the tooltip or specify a function for the tooltip. Its allows you to dynamically change specific information based on the circle's incoming data, making your tooltip more informative.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-4" %}
 
-* Circle tooltip text or circle tooltip function (you may change data contained in a circle tooltip based on *data, dsData, dsIndex*)
+* Change the color of the circle or adjust the opacity of the circle to suit your specific needs. Additionally, you have the option to specify a circle color function, allowing the color to dynamically change the color based on certain conditions.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-5" %}
 
-* Circle fill color, circle fill color opacity, or circle fill color function (you may change circle color based on *data, dsData, dsIndex*)
+* Customize the appearance of your circle by changing the stroke color, adjusting its opacity, and modifying the weight to better suit your visual needs. You can also set up a circle stroke color function. This allows the stroke color to change automatically based on certain conditions or data, adding interactivity to your visualization.
 
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-pe.png)
-{% endif %}
-
-* Circle stroke color, stroke opacity, stroke weight or circle stroke color function (you may change circle color based on *data, dsData, dsIndex*)
-
-{% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-ce.png)
-{% else %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-pe.png)
-{% endif %}
-
-
-## Video tutorial 
- 
-We also recommend you to review this video tutorial.
-
-  
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/qWCmDjca-T8" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-6" %}

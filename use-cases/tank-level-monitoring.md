@@ -157,9 +157,10 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 
 ## Learn more
-
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+<div class="usecases-bottom-nav">
+  <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+  <a href="/industries/smart-energy/" class="button">Customers feedback</a>
+  <a href="/docs/#platform-features" class="button">Platform features</a>
+  <a href="/docs/reference/" class="button">Architecture</a>
+  <a href="/docs/contact-us/" class="button">Contact us</a>
+</div>
