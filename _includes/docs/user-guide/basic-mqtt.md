@@ -17,17 +17,17 @@
 * TOC 
 {:toc}
 
-MQTT Based Authentication is available for devices that connect using MQTT. You may change the device credential type from 'Access token' to 'MQTT Basic'.
-Basic MQTT credentials consist of the optional client id, username and password. 
+MQTT Based Authentication is available for devices that connect using MQTT. To do this, you need to change the device credential type from "Access token" to "MQTT Basic"'.
+Basic MQTT credentials consist of the optional client id, username and password. See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details.
 
-There are three options available:
+Next, we will explore how to change the device credentials and how clients can connect to the device using these credentials.
+Several options are available:
 
 #### Authentication based on Client ID only. 
 
-For this purpose, you should populate only client ID in the device credentials form below.
-MQTT clients will be able to connect with any username or password if they specify correct client ID. See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details.
+For this purpose, you should populate only client ID in the device credentials. MQTT clients will be able to connect if they specify correct client ID.
 
-Let's review a simple command to publish telemetry readings using MQTT client ID to the ThingsBoard{{CLOUD}}.
+Let's review a simple command to publish telemetry readings using only MQTT client ID to the ThingsBoard{{CLOUD}}.
 The command is using plain MQTT without TLS:
 
 {% if (docsPrefix == "pe/") or (docsPrefix == null) %}
@@ -43,24 +43,33 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 {: .copy-code}
 {% endif %}
 
-Don't forget to replace:
+where:
 
 {{YOUR_TB_HOST}}
 * **YOUR_CLIENT_ID** with your client id.
 
-The above command requires mosquitto clients library that you can install using the following command:
+<br>
+In ThingsBoard, there's a convenient feature called "Check Connectivity" that automatically generates a command based on your host and the device credentials you provided. All you have to do is copy and run it.
 
-```bash
-sudo apt-get install curl mosquitto-clients
-```
-{: .copy-code}
+Let's publish telemetry readings using only MQTT client ID. First, change the credential type for your device from "Access token" to "MQTT Basic":
 
-{% include images-gallery.html imageCollection="client-id-only" %}
+{% include images-gallery.html showListImageTitles="true" imageCollection="client-id-only-1" %}
+
+After changing device credentials, use the "Check connectivity" feature to post telemetry:
+
+- Click "Check connectivity" button to open the corresponding window;
+- In the opened window select your operating system;
+- Install the necessary client tools using the command from the guide;
+- Copy and run command to publish telemetry;
+
+Once you have successfully executed the command, you should see the published "temperature" readings.
+
+{% include images-gallery.html imageCollection="client-id-only-2" %}
 
 #### Authentication based on Username and Password. 
 
-For this purpose, you should populate only username and password in the credentials form below.
-MQTT Clients will be able to connect with any client ID if they specify correct username and password. Password is optional. See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details.
+For this purpose, you should populate only username and password in the credentials form.
+MQTT Clients will be able to connect if they specify correct username and password. Password is optional.
 
 Let's review a simple command to publish telemetry readings using MQTT client username and password to the ThingsBoard{{CLOUD}}. The command is using plain MQTT without TLS:
 
@@ -77,24 +86,32 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 {: .copy-code}
 {% endif %}
 
-Don't forget to replace:
+where:
 
 {{YOUR_TB_HOST}}
  * **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password.
 
-The above command requires mosquitto clients library that you can install using the following command:
+<br>
+In the "Check Connectivity", you'll find an auto-generated command based on your host and device credentials that you've provided. All you have to do is copy and run it.
 
-```bash
-sudo apt-get install curl mosquitto-clients
-```
-{: .copy-code}
+Let's publish telemetry readings using the MQTT client username and password. First, change the credential type for your device from "Access token" to "MQTT Basic":
 
-{% include images-gallery.html imageCollection="username-and-password" %}
+{% include images-gallery.html showListImageTitles="true" imageCollection="username-and-password-1" %}
+
+After changing device credentials, use the "Check connectivity" feature to post telemetry:
+
+- Click "Check connectivity" button to open the corresponding window;
+- In the opened window select your operating system;
+- Install the necessary client tools using the command from the guide;
+- Copy and run command to publish telemetry;
+
+Once you have successfully executed the command, you should see the published "temperature" readings.
+
+{% include images-gallery.html imageCollection="username-and-password-2" %}
 
 #### Authentication based on Client ID, Username and Password. 
 
-For this option, you should populate Client ID, Username and Password.
-MQTT Clients will be able to connect if they specify correct combination of client ID, username and password. See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details.
+For this option, you should populate Client ID, Username and Password. MQTT Clients will be able to connect if they specify correct combination of client ID, username and password.
 
 Let's review a simple command to publish telemetry readings using MQTT client ID, username and password to the ThingsBoard{{CLOUD}}. The command is using plain MQTT without TLS:
 
@@ -111,52 +128,65 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 {: .copy-code}
 {% endif %}
 
-Don't forget to replace:
+where:
 
 {{YOUR_TB_HOST}}
 * **YOUR_CLIENT_ID** with your client id;
 * **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password.
 
-The above command requires mosquitto clients library that you can install using the following command:
+<br>
+In the "Check Connectivity", you'll find an auto-generated command based on your host and device credentials that you've provided. All you have to do is copy and run it.
 
-```bash
-sudo apt-get install curl mosquitto-clients
-```
-{: .copy-code}
+Let's publish telemetry readings using the MQTT client ID, username and password. First, change the credential type for your device from "Access token" to "MQTT Basic":
 
-{% include images-gallery.html imageCollection="client-id-username-and-password" %}
+{% include images-gallery.html showListImageTitles="true" imageCollection="client-id-username-and-password-1" %}
+
+After changing device credentials, use the "Check connectivity" feature to post telemetry:
+
+- Click "Check connectivity" button to open the corresponding window;
+- In the opened window select your operating system;
+- Install the necessary client tools using the command from the guide;
+- Copy and run command to publish telemetry;
+ 
+Once you have successfully executed the command, you should see the published "temperature" readings.
+
+{% include images-gallery.html imageCollection="client-id-username-and-password-2" %}
 
 #### MQTTS (MQTT over TLS)
 
-One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
+One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate. {% unless (docsPrefix == "pe/") or (docsPrefix == null) %}This certificate will be used by MQTT client to validate the server certificate.{% endunless %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == null) %}
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate for your own ThingsBoard instance. This certificate will be used by MQTT client to validate the server certificate.
 
-Once provisioned, use "Check connectivity" feature to download the CA root certificate to your working directory and publish telemetry:
+Once provisioned, use "Check connectivity" feature to download the CA root certificate to your working directory and publish telemetry. But first, change the credential type for your device from "Access token" to "MQTT Basic":
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Use "Check connectivity" feature to download the CA root certificate and publish telemetry:
+Use "Check connectivity" feature to download the CA root certificate and publish telemetry. But first, change the credential type for your device from "Access token" to "MQTT Basic":
 {% endif %}
 
 {% include images-gallery.html showListImageTitles="true" imageCollection="mqtts-options-1" %}
 
-- The second command is automatically generated by ThingsBoard. Execute this command publishes telemetry using the *{{PEM_CERTIFICATE}}* certificate to establish a secure connection with the ThingsBoard{{CLOUD}} and the device credentials you specified for its authentication.
-Just copy and run this command in the Terminal from your working directory (where you saved the certificate).
+- Now, click "Check connectivity" button. In the opened window select your operating system and install the necessary client tools using the command from the guide;
+- Switch to the "MQTTs" protocol. Copy and run the first command to download the valid CA certificate;
+- Copy and run the second command from your working directory (where you saved the certificate) to publish telemetry. This command uses the *{{PEM_CERTIFICATE}}* certificate to establish a secure connection with the ThingsBoard{{CLOUD}} and the device credentials you specified for its authentication.;
+
+Once you have successfully executed the command, you should see the published "temperature" readings.
 
 {% include images-gallery.html imageCollection="mqtts-options-2" %}
 
 <br>
-Example of a generated command to publish telemetry using the *{{PEM_CERTIFICATE}}* certificate and the access token (DEVICE_ACCESS_TOKEN) of the selected device:
+Example of a generated command to publish telemetry using the *{{PEM_CERTIFICATE}}* certificate, {% unless docsPrefix == 'paas/' %}host of your ThingsBoard instance (YOUR_TB_HOST),{% endunless %} client id (YOUR_CLIENT_ID), and client username and password (YOUR_CLIENT_USERNAME / YOUR_CLIENT_PASSWORD) of the selected device:
 
+{% if (docsPrefix == "pe/") or (docsPrefix == null) %}
 ```bash
-mosquitto_pub -d -q 1 --cafile {{PEM_CERTIFICATE}} -h {{TB_HOST}} -p 8883 -t v1/devices/me/telemetry -u "DEVICE_ACCESS_TOKEN" -m "{temperature:25}"
+mosquitto_pub -d -q 1 --cafile {{PEM_CERTIFICATE}} -h YOUR_TB_HOST -p 8883 -t v1/devices/me/telemetry -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}
-
-The above command requires mosquitto clients library that you can install using the following command:
-
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ```bash
-sudo apt-get install curl mosquitto-clients
+mosquitto_pub -d -q 1 --cafile {{PEM_CERTIFICATE}} -h mqtt.thingsboard.cloud -p 8883 -t v1/devices/me/telemetry -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}
+{% endif %}
