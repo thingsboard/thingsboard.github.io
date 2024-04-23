@@ -8,38 +8,38 @@
 	>
 
 <channel>
-	<title>Updates &#8211; ThingsBoard&#039;s blog</title>
+	<title>Updates - Thingsboard's blog</title>
 	<atom:link href="/blog/category/updates/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Fri, 05 Apr 2024 12:16:20 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 17 Apr 2024 15:42:55 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.4.4</generator>
 	<item>
 		<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</title>
-		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/</link>
+		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more</link>
 					<comments>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/#respond</comments>
 		
 		<dc:creator><![CDATA[Dima Landiak]]></dc:creator>
 		<pubDate>Tue, 02 Apr 2024 08:48:23 +0000</pubDate>
 				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3965</guid>
+		<guid isPermaLink="false">/blog/?p=3965</guid>
 
-					<description><![CDATA[We&#8217;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">We&#8217;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new WebSocket client. It also broadens the scope of supported MQTT 5 features. Here&#8217;s an overview of the features and updates included in this release.</p>
-
-
-
-<h4 class="wp-block-heading">WebSocket Client</h4>
+					<description><![CDATA[<p>We&#8217;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new&#8230;</p>
+<p>The post <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p style="font-size:16px">We&#8217;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new WebSocket client. It also broadens the scope of supported MQTT 5 features. Here&#8217;s an overview of the features and updates included in this release.</p>
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="713" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/table-1024x713.webp" alt="" class="wp-image-4030" srcset="/blog/wp-content/uploads/2024/04/table-1024x713.webp 1024w, /blog/wp-content/uploads/2024/04/table-300x209.webp 300w, /blog/wp-content/uploads/2024/04/table-768x535.webp 768w, /blog/wp-content/uploads/2024/04/table-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/04/table-512x356.webp 512w, /blog/wp-content/uploads/2024/04/table-920x640.webp 920w, /blog/wp-content/uploads/2024/04/table-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/04/table.webp 1606w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<h1 class="wp-block-heading">WebSocket Client</h1>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="713" src="/blog/wp-content/uploads/2024/04/table-1024x713.webp" alt="" class="wp-image-4030" srcset="/blog/wp-content/uploads/2024/04/table-1024x713.webp 1024w, /blog/wp-content/uploads/2024/04/table-300x209.webp 300w, /blog/wp-content/uploads/2024/04/table-768x535.webp 768w, /blog/wp-content/uploads/2024/04/table-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/04/table-512x356.webp 512w, /blog/wp-content/uploads/2024/04/table-920x640.webp 920w, /blog/wp-content/uploads/2024/04/table-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/04/table.webp 1606w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -73,7 +73,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="365" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/flow-control2-2-1024x365.png" alt="" class="wp-image-4028" srcset="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png 1024w, /blog/wp-content/uploads/2024/04/flow-control2-2-300x107.png 300w, /blog/wp-content/uploads/2024/04/flow-control2-2-768x274.png 768w, /blog/wp-content/uploads/2024/04/flow-control2-2-1536x547.png 1536w, /blog/wp-content/uploads/2024/04/flow-control2-2-2048x729.png 2048w, /blog/wp-content/uploads/2024/04/flow-control2-2-512x182.png 512w, /blog/wp-content/uploads/2024/04/flow-control2-2-920x328.png 920w, /blog/wp-content/uploads/2024/04/flow-control2-2-1600x570.png 1600w, /blog/wp-content/uploads/2024/04/flow-control2-2-3200x1140.png 3200w, /blog/wp-content/uploads/2024/04/flow-control2-2-1920x684.png 1920w, /blog/wp-content/uploads/2024/04/flow-control2-2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="365" src="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png" alt="" class="wp-image-4028" srcset="/blog/wp-content/uploads/2024/04/flow-control2-2-1024x365.png 1024w, /blog/wp-content/uploads/2024/04/flow-control2-2-300x107.png 300w, /blog/wp-content/uploads/2024/04/flow-control2-2-768x274.png 768w, /blog/wp-content/uploads/2024/04/flow-control2-2-1536x547.png 1536w, /blog/wp-content/uploads/2024/04/flow-control2-2-2048x729.png 2048w, /blog/wp-content/uploads/2024/04/flow-control2-2-512x182.png 512w, /blog/wp-content/uploads/2024/04/flow-control2-2-920x328.png 920w, /blog/wp-content/uploads/2024/04/flow-control2-2-1600x570.png 1600w, /blog/wp-content/uploads/2024/04/flow-control2-2-3200x1140.png 3200w, /blog/wp-content/uploads/2024/04/flow-control2-2-1920x684.png 1920w, /blog/wp-content/uploads/2024/04/flow-control2-2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -111,7 +111,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="428" src="https://wp.thingsboard.io/wp-content/uploads/2024/04/request-response2-1024x428.png" alt="" class="wp-image-4029" srcset="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png 1024w, /blog/wp-content/uploads/2024/04/request-response2-300x126.png 300w, /blog/wp-content/uploads/2024/04/request-response2-768x321.png 768w, /blog/wp-content/uploads/2024/04/request-response2-1536x643.png 1536w, /blog/wp-content/uploads/2024/04/request-response2-2048x857.png 2048w, /blog/wp-content/uploads/2024/04/request-response2-512x214.png 512w, /blog/wp-content/uploads/2024/04/request-response2-920x385.png 920w, /blog/wp-content/uploads/2024/04/request-response2-1600x669.png 1600w, /blog/wp-content/uploads/2024/04/request-response2-3200x1339.png 3200w, /blog/wp-content/uploads/2024/04/request-response2-1920x803.png 1920w, /blog/wp-content/uploads/2024/04/request-response2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="428" src="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png" alt="" class="wp-image-4029" srcset="/blog/wp-content/uploads/2024/04/request-response2-1024x428.png 1024w, /blog/wp-content/uploads/2024/04/request-response2-300x126.png 300w, /blog/wp-content/uploads/2024/04/request-response2-768x321.png 768w, /blog/wp-content/uploads/2024/04/request-response2-1536x643.png 1536w, /blog/wp-content/uploads/2024/04/request-response2-2048x857.png 2048w, /blog/wp-content/uploads/2024/04/request-response2-512x214.png 512w, /blog/wp-content/uploads/2024/04/request-response2-920x385.png 920w, /blog/wp-content/uploads/2024/04/request-response2-1600x669.png 1600w, /blog/wp-content/uploads/2024/04/request-response2-3200x1339.png 3200w, /blog/wp-content/uploads/2024/04/request-response2-1920x803.png 1920w, /blog/wp-content/uploads/2024/04/request-response2.png 3212w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -147,8 +147,7 @@
 
 
 
-<p style="font-size:16px">This version brings improvements in memory usage and overall performance. An important resolution of a direct memory leak issue leads to an optimized operational environment. This results in reduced latency and higher throughput, significantly boosting the system&#8217;s performance and robustness.</p>
-]]></content:encoded>
+<p style="font-size:16px">This version brings improvements in memory usage and overall performance. An important resolution of a direct memory leak issue leads to an optimized operational environment. This results in reduced latency and higher throughput, significantly boosting the system&#8217;s performance and robustness.</p><p>The post <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
 					<wfw:commentRss>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
@@ -157,17 +156,17 @@
 			</item>
 		<item>
 		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
-		<link>/blog/thingsboard-release-3-6-3-announcement/</link>
+		<link>/blog/thingsboard-release-3-6-3-announcement/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=thingsboard-release-3-6-3-announcement</link>
 					<comments>/blog/thingsboard-release-3-6-3-announcement/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 18 Mar 2024 15:00:40 +0000</pubDate>
 				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">/blog/?p=3625</guid>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=3625</guid>
 
-					<description><![CDATA[We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p>We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system. Here’s a look at what’s new.</p>
+					<description><![CDATA[<p>We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&#8230;</p>
+<p>The post <a href="/blog/thingsboard-release-3-6-3-announcement/">ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system. Here’s a look at what’s new.</p>
 
 
 
@@ -177,7 +176,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app_.webp" alt="" class="wp-image-3928" srcset="/blog/wp-content/uploads/2024/03/Notifications-to-app_.webp 2409w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-300x116.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1024x397.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-768x297.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1536x595.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-2048x793.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-512x198.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-920x356.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1600x620.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1920x744.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="933" src="/blog/wp-content/uploads/2024/03/Notifications-to-app_.webp" alt="" class="wp-image-3928" srcset="/blog/wp-content/uploads/2024/03/Notifications-to-app_.webp 2409w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-300x116.webp 300w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1024x397.webp 1024w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-768x297.webp 768w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1536x595.webp 1536w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-2048x793.webp 2048w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-512x198.webp 512w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-920x356.webp 920w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1600x620.webp 1600w, /blog/wp-content/uploads/2024/03/Notifications-to-app_-1920x744.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -189,7 +188,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1290" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets_.webp" alt="" class="wp-image-3931" srcset="/blog/wp-content/uploads/2024/03/Chart-widgets_.webp 2406w, /blog/wp-content/uploads/2024/03/Chart-widgets_-300x161.webp 300w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1024x549.webp 1024w, /blog/wp-content/uploads/2024/03/Chart-widgets_-768x412.webp 768w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1536x824.webp 1536w, /blog/wp-content/uploads/2024/03/Chart-widgets_-2048x1098.webp 2048w, /blog/wp-content/uploads/2024/03/Chart-widgets_-512x275.webp 512w, /blog/wp-content/uploads/2024/03/Chart-widgets_-920x493.webp 920w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1600x858.webp 1600w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1920x1029.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1290" src="/blog/wp-content/uploads/2024/03/Chart-widgets_.webp" alt="" class="wp-image-3931" srcset="/blog/wp-content/uploads/2024/03/Chart-widgets_.webp 2406w, /blog/wp-content/uploads/2024/03/Chart-widgets_-300x161.webp 300w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1024x549.webp 1024w, /blog/wp-content/uploads/2024/03/Chart-widgets_-768x412.webp 768w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1536x824.webp 1536w, /blog/wp-content/uploads/2024/03/Chart-widgets_-2048x1098.webp 2048w, /blog/wp-content/uploads/2024/03/Chart-widgets_-512x275.webp 512w, /blog/wp-content/uploads/2024/03/Chart-widgets_-920x493.webp 920w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1600x858.webp 1600w, /blog/wp-content/uploads/2024/03/Chart-widgets_-1920x1029.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -201,7 +200,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1773" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp" alt="Form with seven options which configure grouping intervals for dashboard time window " class="wp-image-3793" srcset="/blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp 2406w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-300x221.webp 300w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1024x755.webp 1024w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-768x566.webp 768w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1536x1132.webp 1536w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-2048x1509.webp 2048w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-512x377.webp 512w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-920x678.webp 920w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1600x1179.webp 1600w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1920x1415.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1773" src="/blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp" alt="Form with seven options which configure grouping intervals for dashboard time window " class="wp-image-3793" srcset="/blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp 2406w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-300x221.webp 300w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1024x755.webp 1024w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-768x566.webp 768w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1536x1132.webp 1536w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-2048x1509.webp 2048w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-512x377.webp 512w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-920x678.webp 920w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1600x1179.webp 1600w, /blog/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1920x1415.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -213,11 +212,11 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="263" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.webp" alt="Five blocks with icons and text" class="wp-image-3794" srcset="/blog/wp-content/uploads/2024/03/Button-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Button-widgets-300x98.webp 300w, /blog/wp-content/uploads/2024/03/Button-widgets-768x252.webp 768w, /blog/wp-content/uploads/2024/03/Button-widgets-512x168.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="263" src="/blog/wp-content/uploads/2024/03/Button-widgets.webp" alt="Five blocks with icons and text" class="wp-image-3794" srcset="/blog/wp-content/uploads/2024/03/Button-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Button-widgets-300x98.webp 300w, /blog/wp-content/uploads/2024/03/Button-widgets-768x252.webp 768w, /blog/wp-content/uploads/2024/03/Button-widgets-512x168.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
 
 
 
-<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://thingsboard.io/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://thingsboard.io/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
 
 
 
@@ -225,7 +224,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="305" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.webp" alt="Three blocks with toggle button and one with slider" class="wp-image-3795" srcset="/blog/wp-content/uploads/2024/03/Control-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Control-widgets-300x114.webp 300w, /blog/wp-content/uploads/2024/03/Control-widgets-768x292.webp 768w, /blog/wp-content/uploads/2024/03/Control-widgets-512x195.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="305" src="/blog/wp-content/uploads/2024/03/Control-widgets.webp" alt="Three blocks with toggle button and one with slider" class="wp-image-3795" srcset="/blog/wp-content/uploads/2024/03/Control-widgets.webp 802w, /blog/wp-content/uploads/2024/03/Control-widgets-300x114.webp 300w, /blog/wp-content/uploads/2024/03/Control-widgets-768x292.webp 768w, /blog/wp-content/uploads/2024/03/Control-widgets-512x195.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
 
 
 
@@ -241,8 +240,7 @@
 
 
 
-<p></p>
-]]></content:encoded>
+<p></p><p>The post <a href="/blog/thingsboard-release-3-6-3-announcement/">ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
 					<wfw:commentRss>/blog/thingsboard-release-3-6-3-announcement/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
