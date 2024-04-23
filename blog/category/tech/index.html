@@ -59,7 +59,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"/blog/wp-admin/admin-ajax.php",
-                "nonce": "91b26fc52f",
+                "nonce": "94d0221303",
                 "home_url": "/blog/",
                 "settings_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -1114,33 +1114,33 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 		});
 		const config = { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] };
 		observer.observe(document.body, config);
-		const theme = window.localStorage.getItem('theme');
-		document.querySelector('.theme_toggle').addEventListener('click', function(){
-			if(document.body.getAttribute('data-scheme') === 'dark'){
-				document.body.classList.add('dark_styles');
-				window.localStorage.setItem('theme', 'dark');
-			} else if(document.body.getAttribute('data-scheme') === 'light'){
-				document.body.classList.remove('dark_styles');
-				window.localStorage.setItem('theme', 'light')
-			}
-		})	
-		if(document.body.getAttribute('data-scheme') === 'dark'){
-			document.body.classList.add('dark_styles');
-		} else if(document.body.getAttribute('data-scheme') === 'light'){
-			document.body.classList.remove('dark_styles');
-		}
-		if(theme === 'dark'){
-			document.body.classList.add('dark_styles');
-		} else if(theme === 'light'){
-			document.body.classList.remove('dark_styles');
-		}
-		window.onload = function() {
-			if(document.body.getAttribute('data-scheme') === 'dark'){
-				document.body.classList.add('dark_styles');
-			} else if(document.body.getAttribute('data-scheme') === 'light') {
-				document.body.classList.remove('dark_styles');
-			}	
-		};
+// 		const theme = window.localStorage.getItem('theme');
+// 		document.querySelector('.theme_toggle').addEventListener('click', function(){
+// 			if(document.body.getAttribute('data-scheme') === 'dark'){
+// 				document.body.classList.add('dark_styles');
+// 				window.localStorage.setItem('theme', 'dark');
+// 			} else if(document.body.getAttribute('data-scheme') === 'light'){
+// 				document.body.classList.remove('dark_styles');
+// 				window.localStorage.setItem('theme', 'light')
+// 			}
+// 		})	
+// 		if(document.body.getAttribute('data-scheme') === 'dark'){
+// 			document.body.classList.add('dark_styles');
+// 		} else if(document.body.getAttribute('data-scheme') === 'light'){
+// 			document.body.classList.remove('dark_styles');
+// 		}
+// 		if(theme === 'dark'){
+// 			document.body.classList.add('dark_styles');
+// 		} else if(theme === 'light'){
+// 			document.body.classList.remove('dark_styles');
+// 		}
+// 		window.onload = function() {
+// 			if(document.body.getAttribute('data-scheme') === 'dark'){
+// 				document.body.classList.add('dark_styles');
+// 			} else if(document.body.getAttribute('data-scheme') === 'light') {
+// 				document.body.classList.remove('dark_styles');
+// 			}	
+// 		};
 		if(document.querySelector('.burger')){
 			document.querySelector('.burger').addEventListener('click', function(){
 				if(document.querySelector('.opened-burger')){
