@@ -181,6 +181,19 @@ a
         box-shadow: unset
         background-color: #fff
 
+#home, #thingsboard-paas, #thingsboard-pe
+  #hero
+    .achievement
+      position: absolute
+      top: 90px
+      right: 20px
+      z-index: 100
+      .achieve
+        width: 100%
+        height: auto
+        @media (max-width: 768px)
+          width: 60px
+
 header
   position: fixed
   top: 0
@@ -208,6 +221,16 @@ header
     display: flex
     height: 100%
     align-items: center
+
+  .head-buttons
+    display: flex
+    flex-direction: row
+    .n-button
+      width: 110px
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
 
   .head-menu
     height: inherit
@@ -393,15 +416,9 @@ header
           color: #2A7DEC
 
   .support-ukraine
-    position: relative
-    display: block
-    height: 80px
     padding-right: 20px
     img
-      height: 32px
-    p
-      color: #000
-      font-size: 12px
+      height: 31px
   .logo
     position: relative
     float: left
@@ -489,7 +506,6 @@ ul
 
     &:hover
       border: solid 2px #212529
-      padding: 9px 10px
       text-decoration: none
 
   &.price
@@ -510,7 +526,8 @@ ul
 
 .burger
   position: absolute
-  top: 16px
+  top: 50%
+  transform: translateY(-50%)
   right: 22px
   display: none
   filter: unset
@@ -519,7 +536,6 @@ ul
   width: 47px
   background-size: cover
   @media screen and (max-width: 1024px)
-    top: 21px
     height: 37px
     width: 37px
     background-image: url(/images/s-burger-icon.svg)
@@ -894,6 +910,9 @@ dd
       .logo, .burger
         filter: unset
 
+      .head-buttons
+        display: flex
+
       .head-menu
         display: block
         margin: 70px -30px 0
@@ -921,8 +940,6 @@ dd
                 width: calc(100% + 94px)
 
       .n-button
-        display: inline-block
-
         &.try
           border: solid 1px #EBEBEB
           color: #212529
@@ -947,7 +964,7 @@ dd
       height: 100%!important
       z-index: 10000
       .logo-burger
-        height: 78px
+        height: 98px
         position: fixed
         z-index: 2
         background-color: #fff
@@ -959,6 +976,9 @@ dd
         background-image: url(/images/close-icon.svg)
         @media screen and (max-width: 1024px)
           background-image: url(/images/s-close-icon.svg)
+
+      .head-buttons
+        display: flex
 
       .head-menu
         display: block
@@ -974,11 +994,11 @@ dd
             display: none
             top: unset
 
-      .n-button
-        display: inline-block
-
     .burger
       display: block
+
+    .head-buttons
+      display: none
 
     .head-menu
       display: none

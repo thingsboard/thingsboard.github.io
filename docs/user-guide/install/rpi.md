@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard on Raspberry Pi 3 Model B
-description: Installing ThingsBoard IoT Platform on Raspberry Pi 3 Model B
+title: Installing ThingsBoard on Raspberry Pi
+description: Installing ThingsBoard IoT Platform on Raspberry Pi
 
 ---
 
@@ -12,13 +12,26 @@ description: Installing ThingsBoard IoT Platform on Raspberry Pi 3 Model B
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Raspbian Buster.
+This guide describes how to install ThingsBoard on a Raspberry Pi running Raspbian Buster.
 
 ### Third-party components installation
 
 ### Step 1. Install Java 11 (OpenJDK) 
 
-{% include templates/install/ubuntu-java-install.md %}
+```bash
+# Add repository.
+echo "deb http://deb.debian.org/debian unstable main non-free contrib" | sudo tee /etc/apt/sources.list
+
+# Run system update.
+sudo apt update
+
+# Install JAVA
+sudo apt install openjdk-11-jdk
+
+#Check installation
+java -version
+```
+{: .copy-code}
 
 ### Step 2. ThingsBoard service installation
 

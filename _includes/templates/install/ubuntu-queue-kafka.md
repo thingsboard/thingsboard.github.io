@@ -48,11 +48,11 @@ sudo systemctl enable --now zookeeper
 ##### Install Kafka
 
 ```text
-wget https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+wget https://downloads.apache.org/kafka/3.6.2/kafka_2.13-3.6.2.tgz
 
-tar xzf kafka_2.13-3.6.1.tgz
+tar xzf kafka_2.13-3.6.2.tgz
 
-sudo mv kafka_2.13-3.6.1.tgz /usr/local/kafka
+sudo mv kafka_2.13-3.6.2 /usr/local/kafka
 ```
 {: .copy-code}
 

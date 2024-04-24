@@ -452,7 +452,7 @@ You can see the real life example, where this node is used, in the next tutorial
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-send-notification.png)
 
 The node can send notification to recipients group using the template.
-The template needs to be of a 'Rule node' type. You can use incoming message data and metadata in your template (see [templatization help page](/docs/{{docsPrefix}}user-guide/notifications/#templates) for this notification type).
+The template needs to be of a 'Rule node' type. You can use incoming message data and metadata in your template (see [templatization help page](/docs/{{docsPrefix}}user-guide/notifications/#rule-node) for this notification type).
 
 Configuration:
 

@@ -65,7 +65,7 @@ services:
     restart: always
     image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
-      - "8080"
+      - "8181:8181"
     environment:
       SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
       EXECUTOR_MANAGER: 1

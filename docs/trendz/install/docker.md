@@ -57,7 +57,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
-      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8080
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8181
       SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
       - ~/.mytrendz-data:/data
@@ -66,7 +66,7 @@ services:
     restart: always
     image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
-      - "8080"
+      - "8181:8181"
     environment:
       MAX_HEAP_SIZE: 750M
       SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
@@ -138,7 +138,7 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.10.2 to {{ site.release.trendz_ver }}
+Below is example on how to upgrade from 1.10.3 to {{ site.release.trendz_ver }}
 
 **Note:** starting from version 1.10.2 we add support of Python script execution. During an upgrade you need to add Python executor image into your docker compose file. 
 Full content of docker compose file you can find at the beginning of this article. Here is an example of the python executor service
@@ -147,7 +147,7 @@ Full content of docker compose file you can find at the beginning of this articl
     restart: always
     image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
-      - "8080"
+      - "8181:8181"
     environment:
       MAX_HEAP_SIZE: 750M
       SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
@@ -175,17 +175,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.10.3' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.10.3' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.10.2:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.10.3:
 
 * Restart Trendz container
 
@@ -225,7 +225,7 @@ services:
     restart: always
     image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
-      - "8080"
+      - "8181:8181"
     environment:
       SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
       EXECUTOR_MANAGER: 1
