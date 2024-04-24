@@ -113,13 +113,11 @@
                     padding-top: 32px
 
                 .button-container
-                    margin-top: 32px
-                    margin-bottom: 16px
+                    margin: 32px 0 16px 0
+                    padding: 0
                     justify-content: center
-                    align-items: start
-                    & > .btn-blue
-                        margin-right: 1.5rem
-                        margin-bottom: 1rem
+                    align-items: center
+                    gap: 25px
                     @media (min-width: 992px)
                         margin-bottom: 90px
                         justify-content: start
@@ -186,6 +184,7 @@
     .feature
         display: flex
         flex-direction: column
+        gap: 28px
         margin-bottom: 68px
         @media (min-width: 992px)
             flex-direction: row
