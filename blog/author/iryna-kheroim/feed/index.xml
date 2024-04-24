@@ -12,7 +12,7 @@
 	<atom:link href="/blog/author/iryna-kheroim/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Wed, 24 Apr 2024 14:49:57 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 24 Apr 2024 15:36:40 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -607,7 +607,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">guide here</a>.</p>
+<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="https://thingsboard.io/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/" title="">guide here</a>.</p>
 
 
 
@@ -647,7 +647,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="https://thingsboard.io/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/" title="">click here</a>.</p>
 
 
 
@@ -728,10 +728,6 @@
 
 
 <p style="font-size:16px">Advanced analytics allows you to detect generation problems by detecting anomalies or forecast problems by predicting them and triggering preventive, corrective actions to eliminate them. The analytical system can also analyze on a minute-by-minute basis whether it is better to take energy from batteries, solar panels, or the system, thus optimizing electricity bills. Such an automated system can significantly reduce electricity bills for households/factories and maximize profits for solar farms.</p>
-
-
-
-<p style="font-size:16px">If you want to learn more about how to solve non-standard tasks and complex calculations using advanced analytics,&nbsp;<a href="/blog/solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/">click here</a>.</p>
 
 
 
@@ -818,7 +814,7 @@
 
 
 
-<li style="font-size:16px"><a href="https://thingsboard.io/docs/trendz/calculated-fields/">Configure computation of </a><a href="https://10.7.3.196:4000/docs/trendz/calculated-fields/">system-level metrics / KPIs</a>&nbsp;that would describe overall system behavior.</li>
+<li style="font-size:16px"><a href="https://thingsboard.io/docs/trendz/calculated-fields/">Configure computation of </a><a href="https://thingsboard.io/docs/trendz/calculated-fields/" title="">system-level metrics / KPIs</a> that would describe overall system behavior.</li>
 
 
 
