@@ -267,12 +267,6 @@
       display: flex
       height: 100%
       width: 100%
-      ul
-        .indicator
-          .head-arrow
-            border-bottom-color: var(--tb-main-color)
-          .line
-            background-color: var(--tb-main-color)
       #docsBreadcrumbs
         position: relative
         display: none
@@ -318,23 +312,25 @@
           &.divider
             padding-left: 6px
             padding-right: 6px
+      .indicator
+        width: 100%
+        transition: none
+        padding: 0
+        div
+          transition: none
+        .head-arrow
+          border-bottom-color: var(--tb-main-color)
+          opacity: 1
+        .line
+          background-color: var(--tb-main-color)
+          opacity: 1
+          width: 100%
+          left: 0
       ul
         display: inline-block
         height: 100%
         @media screen and (max-width: 1280px)
           display: none
-        .indicator
-          width: 100%
-          transition: none
-          padding: 0
-          div
-            transition: none
-          .head-arrow
-            opacity: 1
-          .line
-            opacity: 1
-            width: 100%
-            left: 0
         li
           position: relative
           display: flex
