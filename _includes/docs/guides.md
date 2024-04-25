@@ -110,8 +110,6 @@
     
 </script>
 
-{% assign guides = site.data.guides-data %}
-
 <ul id="markdown-toc">
     {% for item in guides %}
     {% if guidesVersion == 'paas' and item.paaspage == 'false' %}
