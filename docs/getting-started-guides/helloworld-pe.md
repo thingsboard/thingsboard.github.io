@@ -41,16 +41,16 @@ step2:
 
 step31:
     0:
-        image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
+        image: /images/helloworld/getting-started-pe/create-dashboard-1-pe.png
         title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
     1:
-        image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
+        image: /images/helloworld/getting-started-pe/create-dashboard-2-pe.png
         title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     2:
         image: /images/helloworld/getting-started-pe/create-dashboard-3-pe.png
         title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
     3:
-        image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
+        image: /images/helloworld/getting-started-pe/create-dashboard-4-pe.png
         title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
     4:
         image: /images/helloworld/getting-started-pe/create-dashboard-5-pe.png
