@@ -4,5 +4,5 @@ title: Guides
 notitle: "true"
 ---
 
-{% assign guidesVersion = "ce" %}
+{% assign guides = site.data.guides-data %}
 {% include docs/guides.md %}
