@@ -150,7 +150,7 @@ This configuration section contains an array of nodes that the gateway will subs
 | deviceNamePattern             | **Device ${Root\\.Objects\\.Device1\\.serialNumber}** | Path to a variable with device name, is used for looking the device name in some variable. |
 |---
 
-This part of configuration will look like:  
+This part of the configuration will look like this:  
 
 ```json
         "deviceNodePattern": "Root\\.Objects\\.Device1",
@@ -160,9 +160,9 @@ This part of configuration will look like:
 ***Optionally, in this section, you can add the "converter" parameter to use a custom converter.***
 <br>
 <br><br>
-**Let's look an example.**
+**Let's look at an example.**
 
-Specify **deviceNodePattern** as on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
+Specify **deviceNodePattern** as it is on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
 
 **deviceNamePattern** should be specified as **"Device OPC-UA"**.
 
@@ -202,13 +202,13 @@ This subsection contains configurations for variables of the object, that will b
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-** \* ** You can put here some expressions for search here, like:
+** \* ** You can input some expressions for search here, like:
 1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
 2. Relative path from device object - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
 3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
 4. Namespace identifier and node identifier - **${ns=2;i=5}**
 
-This part of configuration will look like:  
+This part of the configuration will look like this:  
 
 ```json
         "attributes": [
@@ -220,7 +220,7 @@ This part of configuration will look like:
 ```
 
 <br>
-**Let's look an example.**
+**Let's look at an example.**
 <br>
 In the "path" line set the NodeId value taken from our test server.
 <br>
@@ -248,7 +248,7 @@ In this example, the **attributes** section would look like this:
 ![image](https://img.thingsboard.io/gateway/opc-ua-configuration-3.png)
 {: refdef}
 
-You must see the attributes you sent to ThingsBoard in the **Attributes** section of your device.:
+You should be able to see the attributes you have sent to ThingsBoard in the **Attributes** section of your device:
 
 {:refdef: style="text-align: left;"}
 ![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-2.png)
@@ -257,19 +257,19 @@ You must see the attributes you sent to ThingsBoard in the **Attributes** sectio
 ### Subsection "timeseries"
 This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
 
-| **Parameter**   | **Default value**           | **Description**                                                                   |
-|:-|:-|-
-| key             | **temperature °C**                                                             | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
-| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**   | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* ** |
+| **Parameter**   | **Default value**                                                            | **Description**                                                                                                 |
+|:-|:-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------
+| key             | **temperature °C**                                                           | Tag, that will be interpreted as telemetry for ThingsBoard platform instance.                                   |
+| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}** | Name of the variable in the OPC-UA object is used for looking up the value within a specific variable. ** \* ** |
 |---
 
-** \* ** You can put here some expression for search like:
+** \* ** You can input some expressions for search here, like:
 1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**
 2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Temperature}** 
 3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Temperature}**
 4. Namespace identifier and node identifier - **${ns=2;i=5}**
 
-This part of configuration will look like:  
+This part of the configuration will look like this:  
 
 ```json
         "timeseries": [
@@ -281,9 +281,9 @@ This part of configuration will look like:
 ```
 
 <br>
-**Let's look an example.**
+**Let's look at an example.**
 
-Replace "path" value with the "NodeId" value, relative path from device object or Display Name identifier, taken from our test server.
+Replace the "path" value with the "NodeId" value. This is a relative path from device object or Display Name identifier taken from our test server.
 <br>
 
 {:refdef: style="text-align: left;"}
@@ -328,7 +328,7 @@ This subsection contains configuration for RPC request from ThingsBoard platform
 | arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will be taken from RPC request). |
 |---
 
-This part of configuration will look like:  
+This part of configuration will look like this:  
 
 ```json
         "rpc_methods": [
@@ -354,7 +354,7 @@ This subsection contains configuration for attribute updates request from Things
 | attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                 | Name of a variable that will change its own value with a value from attribute update request. |
 |---
 
-This part of configuration will look like:  
+This part of configuration will look like this:  
 
 ```json
         "attributes_updates": [
@@ -365,7 +365,7 @@ This part of configuration will look like:
         ]
 ```
 
-**Let’s look an example.**
+**Let’s look at an example.**
 
 Suppose you want to set the value of the **"deviceName"** attribute. Currently, the attribute doesn't have any value.
 
