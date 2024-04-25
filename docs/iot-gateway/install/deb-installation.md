@@ -5,10 +5,12 @@ redirect_from:
  - "/docs/iot-gateway/install/rpi/"
 ---
 
+This guide will help you to install ThingsBoard IoT Gateway on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+
 ### Prerequisites
 
-This guide describes how to install ThingsBoard IoT Gateway on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
-The minimum system requirements match official [minimum requirements](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) for the OS.
+- The minimum system requirements match official [minimum requirements](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) for the OS; 
+- Install [Python](https://www.python.org){:target="_blank"} version 3.7 or higher.
 
 ### Step 1. Download the deb file
 
@@ -51,6 +53,9 @@ You may notice some errors in the output. However, it is expected, since gateway
 
 ### Step 4. Configure the gateway 
 
-Now you can go to [**configuration guide**](/docs/iot-gateway/configuration/) to configure the gateway.
+Now you can go to [**configuration guide**](/docs/iot-gateway/configuration/) to configure the gateway. In order for the changes to be saved, we need to restart the gateway.
 
-
+```bash
+systemctl restart thingsboard-gateway
+```
+{: .copy-code}

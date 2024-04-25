@@ -96,10 +96,12 @@ And update TB_API_URL and :
 
 ```bash
 kubectl apply -f trendz-namespace.yml
-kubectl apply -f trendz-config.yml
-kubectl apply -f trendz-db-config.yml
-kubectl apply -f trendz-pvc.yml
-kubectl apply -f trendz-deployment.yml
+kubectl apply -f trendz-app-config.yml
+kubectl apply -f trendz-app-db-config.yml
+kubectl apply -f trendz-app-pvc.yml
+kubectl apply -f trendz-app-deployment.yml
+kubectl apply -f trendz-python-executor-config.yml
+kubectl apply -f trendz-python-executor-deployment.yml
 
 ```
 {: .copy-code}

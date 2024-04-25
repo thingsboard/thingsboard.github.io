@@ -1,19 +1,25 @@
 bigheader: "Installation"
 abstract: "Guides for installing and configuring ThingsBoard PE Edge."
 toc:
-- title: Installation Options
-  path: /docs/user-guide/install/pe/edge/installation-options/
-- title: Installing Edge on Ubuntu (DEB)
-  path: /docs/user-guide/install/pe/edge/deb-installation/
-- title: Installing Edge on CentOS/RHEL (RPM)
-  path: /docs/user-guide/install/pe/edge/rhel/
-- title: Installing Edge with Docker (Linux or Mac OS)
-  path: /docs/user-guide/install/pe/edge/docker/
-- title: Installing Edge with Docker (Windows)
-  path: /docs/user-guide/install/pe/edge/docker-windows/
-- title: Installing Edge on Windows
-  path: /docs/user-guide/install/pe/edge/windows/
-- title: Upgrade Instructions
-  path: /docs/user-guide/install/pe/edge/upgrade-instructions/
-- title: Configuration
-  path: /docs/pe/edge/user-guide/install/config/
+  - title: Installation options
+    path: /docs/user-guide/install/pe/edge/installation-options/
+  - title: On premise
+    section:
+    - title: Ubuntu Server
+      path: /docs/user-guide/install/pe/edge/deb-installation/
+    - title: CentOS/RHEL Server
+      path: /docs/user-guide/install/pe/edge/rhel/
+    - title: Windows
+      path: /docs/user-guide/install/pe/edge/windows/
+    - title: Docker (Windows)
+      path: /docs/user-guide/install/pe/edge/docker-windows/
+    - title: Docker (Linux or Mac OS)
+      path: /docs/user-guide/install/pe/edge/docker/
+  - title: Configuration
+    section:
+    - title: How to change configuration parameters?
+      path: /docs/pe/edge/user-guide/install/how-to-change-config/
+    - title: Edge Core/Rule engine deployment parameters
+      path: /docs/pe/edge/user-guide/install/config/
+  - title: Upgrade instructions
+    path: /docs/user-guide/install/pe/edge/upgrade-instructions/
