@@ -6,7 +6,7 @@ The device should be in devices list. You can check the data by clicking the dev
 
 {% assign checkTelemetryOnDevice = '
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/check-telemetry-on-device.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/check-telemetry-on-device.png,
         title: Open "Devices" page in "Entities" section. The device should be in devices list. You can check the data by clicking the device and navigate to the "Attributes" or "Latest telemetry" tab.
 '
 %}
@@ -25,7 +25,7 @@ Example of the dashboard with data:
 
 {% assign dashboard = '
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/vs121-example-of-the-dashboard-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/vs121-example-of-the-dashboard-pe.png,
         title: Example of the dashboard with data.
 '
 %}
