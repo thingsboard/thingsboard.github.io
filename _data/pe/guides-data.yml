@@ -3,19 +3,19 @@
   subtitle: These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
   id: GettingStartedGuides
   section:
-    - path: /docs/getting-started-guides/helloworld/
+    - path: /docs/getting-started-guides/helloworld-pe/
       title: Hello world
       subtitle: Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard. Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
       keywords: mqtt http coap visualization helloworld
       video: false
       pe: false
-    - path: /docs/user-guide/dashboards/
+    - path: /docs/pe/user-guide/dashboards/
       title: Working with IoT dashboards
       subtitle: Learn how to perform basic operations over Dashboards.
       keywords: dashboards
       video: false
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/re-getting-started/
+    - path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
       title: Getting started with Rule Engine
       subtitle: Learn about ThingsBoard rule engine and typical use cases you can implement. Review Hello World example and learn how-to enable filtering of incoming telemetry messages.
       keywords: device management attributes
