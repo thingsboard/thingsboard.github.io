@@ -58,6 +58,9 @@ $button-width: 208px
         justify-content: center
         align-items: center
         text-decoration: none
+        &:hover
+            background-color: $button-background-color
+            color: #fff
 
     footer
         position: relative
@@ -131,6 +134,10 @@ $button-width: 208px
                         justify-content: center
                         align-items: center
                         text-decoration: none
+                        &:hover
+                            background-color: #fff
+                            border: 1px solid $button-background-color
+                            color: $button-background-color
 
     #second-screen
         height: 600px 
@@ -197,6 +204,9 @@ $button-width: 208px
                     color: #495057
                 .outline-button
                     margin-top: 50px
+                    &:hover
+                        background-color: $button-background-color
+                        color: #fff
 
             .right-side
                 width: 50%
@@ -233,6 +243,9 @@ $button-width: 208px
 
         .outline-button
             margin-top: 40px
+            &:hover
+                background-color: $button-background-color
+                color: #fff
 
         .cards
             display: flex
@@ -317,6 +330,10 @@ $button-width: 208px
                     justify-content: center
                     align-items: center
                     text-decoration: none
+                    &:hover
+                        border: 1px solid #fff
+                        color: #fff
+                        background-color: transparent
                 
                 .expansion-panel
                     margin-bottom: 10px
@@ -334,6 +351,8 @@ $button-width: 208px
 
                     .header-icon
                         margin-right: 20px
+                        height: 20px
+                        width: 20px
 
                     .arrow-icon
                         transition: max-height 1s cubic-bezier(0.5, 0.1, 0.3, 1.1)
@@ -350,6 +369,7 @@ $button-width: 208px
                         color: #fff
                         text-align: left
                         display: flex
+                        align-items: center
 
                     .expansion-content
                         padding: 0 10px
@@ -475,6 +495,9 @@ $button-width: 208px
         .outline-button
             margin-top: 80px
             width: $button-width
+            &:hover
+                background-color: $button-background-color
+                color: #fff
 
     .modal 
         display: none
@@ -606,7 +629,12 @@ $button-width: 208px
                     border-radius: 6px
                     color: white
                     background-color: $button-background-color
+                    border: 1px solid $button-background-color
                     width: 400px
+                    font-weight: 600
+                    &:hover
+                        background-color: #fff
+                        color: $button-background-color
 
     #get-in-touch
         position: relative
@@ -669,12 +697,16 @@ $button-width: 208px
             padding: 11px 14px
             color: white
             background-color: $button-background-color
+            border: 1px solid $button-background-color
             width: 100%
             font-size: 18px
-            font-weight: 500
+            font-weight: 600
             text-align: center
             text-decoration: none
             border-radius: 4px
+            &:hover
+                background-color: #fff
+                color: $button-background-color
     
     .side-title
         z-index: 2
