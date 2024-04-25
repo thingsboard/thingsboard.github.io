@@ -16,7 +16,7 @@ generated after installing the new version and running Gateway in the new_modbus
 
 This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
-We will describe connector configuration file below.  
+The connector configuration file will be described below.
 
 <b>Example of Modbus Connector config file.</b>
 
@@ -275,11 +275,10 @@ We will describe connector configuration file below.
 {% include code-toggle.liquid code=modbusConf params="conf|.copy-code.expandable-20" %}
 
 ## Section "master": description and configuration parameters
-A Modbus Master is used to query data from devices. In order to configure slaves which the master must be queried, it 
-must be specified "master" section that includes the "slaves" list.
+A Modbus Master is used to query data from devices. In order to configure the slaves that the master must query, you need to specify the "master" section which includes the "slaves" list.
 
 ### Subsection "slaves"
-This subsection provides array of configurations for slaves.
+This subsection provides an array of configurations for slaves.
 
 #### Slave object settings
 This configuration contains common connection parameters and settings for data processing.
@@ -294,22 +293,21 @@ There are 2 variants of server section:
 
 {% include content-toggle.liquid content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
-The next part of slave section contains common connection parameters and settings for data processing. 
-Available parameters are as follows:
+The next part of the slave section contains common connection parameters and settings for data processing. The available parameters are as follows:
 
-| **Parameter**                 | **Default value**             | **Description**                                                                            |
-|:-|:-|-
-| retries                       | **true**                      | Retrying sending data to the master. The values: true or false                             |
-| retryOnEmpty                  | **true**                      | Retrying sending data to the master if it is empty                                         |
-| retryOnInvalid                | **true**                      | Retrying sending data to the master if it is failed                                        |
-| pollPeriod                    | **5000**                      | Period in milliseconds for check the attributes and the telemetry on slave.                |
-| unitId                        | **1**                         | Id of current slave on Modbus.                                                             |
-| deviceName                    | **Temperature_Sensor_1**      | Name of the current slave                                                                  |
-| deviceType                    | **sensors**                   | Type of the current slave                                                                  |
-| sendDataOnlyOnChange          | **false**                     | Sending only if data changed from last check, if no -- data will send after every check    |
-| connectAttemptTimeMs          | **5000**                      | A period in milliseconds for waiting to connect to the master                              |
-| connectAttemptCount           | **5**                         | The number of connection attempts made through the ThingsBoard gateway                     |
-| waitAfterFailedAttemptsMs     | **300000**                    | A period in milliseconds for a wait before trying to send data to the master               |
+| **Parameter**                 | **Default value**             | **Description**                                                                                   |
+|:-|:-|---------------------------------------------------------------------------------------------------
+| retries                       | **true**                      | Retrying sending data to the master. The values can be either: true or false                      |
+| retryOnEmpty                  | **true**                      | Retrying sending data to the master if it is empty                                                |
+| retryOnInvalid                | **true**                      | Retrying sending data to the master if it is failed                                                |
+| pollPeriod                    | **5000**                      | Period in milliseconds to check the attributes and the telemetry on the slave                     |
+| unitId                        | **1**                         | Id of current slave on Modbus.                                                                    |
+| deviceName                    | **Temperature_Sensor_1**      | Name of the current slave                                                                         |
+| deviceType                    | **sensors**                   | Type of the current slave                                                                         |
+| sendDataOnlyOnChange          | **false**                     | Sending only if data has changed since the last check. If not, data will be sent after every check|
+| connectAttemptTimeMs          | **5000**                      | A waiting period in milliseconds before connecting to the master                                  |
+| connectAttemptCount           | **5**                         | The number of connection attempts made through the ThingsBoard gateway                            |
+| waitAfterFailedAttemptsMs     | **300000**                    | A waiting period in milliseconds before trying to send data to the master                         |
 |---
 
 <br>
@@ -345,20 +343,21 @@ Available parameters are as follows:
 ```
 
 ##### Key settings for "attributes"
-Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
 
-| **Parameter** | **Default value**   | **Description**                                                          |
-|:-|:-|-
-| tag           | **certificateNumber** | Tag, which will use as attribute key for ThingsBoard platform instance.        |
-| type          | **32int**             | Type of value. [Available data types](#data-types)                             |
-| functionCode  | **4**                 | Function to use in processing data. [Modbus functions](#modbus-functions)      |
-| objectsCount  | **2**                 | Count of objects to read.                                                      |
-| address       | **0**                 | Object address to check.                                                       |
+The configuration in this unit provides settings for processing data on Modbus server. These settings will be interpreted in ThingsBoard platform instance as attributes of the device.
+
+| **Parameter** | **Default value**   | **Description**                                                                            |
+|:-|:-|--------------------------------------------------------------------------------------------
+| tag           | **certificateNumber** | Tag, which will be used as attribute key for ThingsBoard platform instance                 |
+| type          | **32int**             | Type of value. [Available data types](#data-types)                                         |
+| functionCode  | **4**                 | The function to use in data processing, specifically [Modbus functions](#modbus-functions) |
+| objectsCount  | **2**                 | Count of objects to read.                                                                  |
+| address       | **0**                 | Object address to check.                                                                   |
 |---
 
 Optional parameters:  
-**multiplier** - result of reading will be multiplied by value of this parameter.  
-**divider** - result of reading will be divided by value of this parameter.  
+**multiplier** - the result of reading will be multiplied by the value of this parameter.  
+**divider** - result of reading will be divided by the value of this parameter.  
 
 <br>
 **Example**:
@@ -386,19 +385,20 @@ Optional parameters:
 {: refdef}
 
 ##### Key settings for "timeseries"
-Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
+
+The configuration in this unit provides settings for processing data on Modbus server. These settings will be interpreted in ThingsBoard platform instance as telemetry of the device.
 
 | **Parameter** | **Default value**   | **Description**                                                                              |
 |:-|:-|-
-| tag           | **telemetry_1** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| tag           | **telemetry_1** | Tag, which will be used as attribute key for ThingsBoard platform instance.                             |
 | type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
-| functionCode  | **4**           | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
+| functionCode  | **4**           | The function to use in data processing, specifically [Modbus functions](#modbus-functions)                           |
 | objectsCount  | **1**           | Count of objects to read.                                                                           |
 | address       | **1**           | Object address to check.                                                                            |
 |               |                 |                                                                                                     |
-| tag           | **telemetry_2** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| tag           | **telemetry_2** | Tag, which will be used as attribute key for ThingsBoard platform instance.                             |
 | type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
-| functionCode  | **4**           | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
+| functionCode  | **4**           | The function to use in data processing, specifically [Modbus functions](#modbus-functions)                           |
 | objectsCount  | **1**           | Count of objects to read.                                                                           |
 | address       | **3**           | Object address to check.                                                                            |
 |---
@@ -436,13 +436,14 @@ Configuration in this unit provides settings for processing data on Modbus serve
 {: refdef}
 
 ##### Key settings for "attributeUpdates"
-Configuration in this unit provides settings for Attribute update requests from ThingsBoard platform instance.
+
+The configuration in this unit provides settings for Attribute update requests from ThingsBoard platform instance.
 
 | **Parameter** | **Default value**          | **Description**                                                             |
 |:-|:-|-
 | tag           | **maxTemperature**         | Shared attribute name.                                                      |
 | type          | **16int**                  | Type of value. [Available data types](#data-types)                          |
-| functionCode  | **16**                     | Function to use in processing data. [Modbus functions](#modbus-functions)   |
+| functionCode  | **16**                     | The function to use in data processing, specifically [Modbus functions](#modbus-functions)   |
 | objectsCount  | **1**                      | Count of objects to write.                                                  |
 | address       | **29**                     | Object address.                                                             |
 |---
@@ -478,14 +479,15 @@ For example, create a new attribute “maxTemperature” and give it a value “
 ![image](/images/gateway/gateway-modbus-attributeUpdates-3.png)
 {: refdef}
 
-##### Key settings for "rpc"
-Configuration in this unit provides settings for RPC requests from ThingsBoard platform instance to device.
+##### Key settings for "RPC"
+
+The configuration in this unit provides settings for RPC requests from ThingsBoard platform instance to the device.
 
 | **Parameter** | **Default value**       | **Description**                                                             |
 |:-|:-|-
 | tag           | **maxTemperature_read** | RPC method name.                                                                     |
 | type          | **16int**               | Type of value. [Available data types](#data-types)                                   |
-| functionCode  | **3**                   | Function to use in processing data. [Modbus functions](#modbus-functions)            |
+| functionCode  | **3**                   | The function to use in data processing, specifically [Modbus functions](#modbus-functions)            |
 | objectsCount  | **1**                   | Count of objects to write.                                                           |
 | address       | **29**                  | Object address.                                                                      |
 |---
@@ -511,7 +513,7 @@ Configuration in this unit provides settings for RPC requests from ThingsBoard p
 ![image](/images/gateway/gateway-modbus-rpc-1.png)
 {: refdef}
 
-To send RPC requests to the gateway the one should use RPC Debug Terminal from Control widgets bundle.
+To send RPC requests to the gateway, use the RPC Debug Terminal from the Control widgets bundle.
 
 Execute "maxTemperature_read" RPC request from the ThingsBoard instance to the device.
 
@@ -651,14 +653,13 @@ Depending on which value the register belongs to, you must add it to the appropr
 ```
 
 {% capture difference %}
-**In this section of the configuration, the only difference is the placement of values to a certain type of 
-register, but the configuration of telemetry, attributes, rps, etc. is the same as the "master" section.**  
+**In this section of the configuration, the only difference is in the placement of values to a certain type of register. However, the configuration of telemetry, attributes, RPCs, etc., remains the same as in the "master" section.**
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 ## Additional information
 
-Additional information about Modbus functions and supported data types.
+Here's more details regarding Modbus functions and the supported data types.
 
 ### Modbus functions
 
@@ -681,20 +682,20 @@ The Modbus connector supports the following Modbus functions:
 
 A list and description of the supported data types for reading/writing data.
 
-| **Type**    | **Function code** | **Objects count** | **Note**                                                                                                            |
+| **Type**    | **Function code** | **Objects count** | **Note**                                                                                                                        |
 |-|-|-|
-| **string**  | 3-4               | 1-...             | Read bytes from registers and decode it ('UTF-8' coding).                                                           |
-| **bytes**   | 3-4               | 1-...             | Read bytes from registers.                                                                                          |
-| **bits**    | 1-4               | 1-...             | Read coils. If objects count 1 - result will be interpret as a boolean, else the result will be an array with bits. |
-| **16int**   | 3-4               | 1                 | Integer 16 bit.                                                                                                     |
-| **16uint**  | 3-4               | 1                 | Unsigned integer 16 bit.                                                                                            |
-| **16float** | 3-4               | 1                 | Float 16 bit.                                                                                                       |
-| **32int**   | 3-4               | 2                 | Integer 32 bit.                                                                                                     |
-| **32uint**  | 3-4               | 2                 | Unsigned integer 32 bit.                                                                                            |
-| **32float** | 3-4               | 2                 | Float 32 bit.                                                                                                       |
-| **64int**   | 3-4               | 4                 | Integer 64 bit.                                                                                                     |
-| **64uint**  | 3-4               | 4                 | Unsigned integer 64 bit.                                                                                            |
-| **64float** | 3-4               | 4                 | Float 64 bit.                                                                                                       |
+| **string**  | 3-4               | 1-...             | Read bytes from registers and decode it ('UTF-8' coding).                                                                       |
+| **bytes**   | 3-4               | 1-...             | Read bytes from registers.                                                                                                      |
+| **bits**    | 1-4               | 1-...             | Read coils. If the objects count is 1, result will be interpreted as a boolean. Otherwise the result will be an array with bits.|
+| **16int**   | 3-4               | 1                 | Integer 16 bit.                                                                                                                 |
+| **16uint**  | 3-4               | 1                 | Unsigned integer 16 bit.                                                                                                        |
+| **16float** | 3-4               | 1                 | Float 16 bit.                                                                                                                   |
+| **32int**   | 3-4               | 2                 | Integer 32 bit.                                                                                                                 |
+| **32uint**  | 3-4               | 2                 | Unsigned integer 32 bit.                                                                                                        |
+| **32float** | 3-4               | 2                 | Float 32 bit.                                                                                                                   |
+| **64int**   | 3-4               | 4                 | Integer 64 bit.                                                                                                                 |
+| **64uint**  | 3-4               | 4                 | Unsigned integer 64 bit.                                                                                                        |
+| **64float** | 3-4               | 4                 | Float 64 bit.                                                                                                                   |
 
 
 
