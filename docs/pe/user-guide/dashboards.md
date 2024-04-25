@@ -45,13 +45,13 @@ import-dashboard:
         title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and select "Import dashboard" from the drop-down menu;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
-        title: 'In the dashboard import window, upload the JSON file and click "Import";'
+        title: 'In the import dashboard window, upload the dashboard configuration JSON file and click "Import";'
     2:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
         title: 'You have imported a dashboard. Open it;'
     3:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-4-pe.png
-        title: 'Your dashboard has been imported along with all of its widgets.'
+        title: 'As you can see, your dashboard has been imported along with all of its widgets.'
 
 export-dashboard:
     0:
