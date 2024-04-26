@@ -89,7 +89,7 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 where:
 
 {{YOUR_TB_HOST}}
- * **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password.
+ * **YOUR_CLIENT_USERNAME**, **YOUR_CLIENT_PASSWORD** with your client username and password.
 
 <br>
 In the "Check Connectivity", you'll find an auto-generated command based on your host and device credentials that you've provided. All you have to do is copy and run it.
