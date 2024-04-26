@@ -17,11 +17,11 @@
 * TOC 
 {:toc}
 
-MQTT Based Authentication is available for devices that connect using MQTT. To do this, you need to change the device credential type from "Access token" to "MQTT Basic"'.
+MQTT Based Authentication is available for devices that connect using MQTT. To do this, you need to change the device credential type from "Access token" to "MQTT Basic".
 Basic MQTT credentials consist of the optional client id, username and password. See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details.
 
 Next, we will explore how to change the device credentials and how clients can connect to the device using these credentials.
-Several options are available:
+Let's consider several options:
 
 #### Authentication based on Client ID only. 
 
@@ -58,7 +58,7 @@ Let's publish telemetry readings using only MQTT client ID. First, change the cr
 After changing device credentials, use the "Check connectivity" feature to post telemetry:
 
 - Click "Check connectivity" button to open the corresponding window;
-- In the opened window select your operating system;
+- In the opened window, select your operating system;
 - Install the necessary client tools using the command from the guide;
 - Copy and run command to publish telemetry;
 
@@ -69,7 +69,7 @@ Once you have successfully executed the command, you should see the published "t
 #### Authentication based on Username and Password. 
 
 For this purpose, you should populate only username and password in the credentials form.
-MQTT Clients will be able to connect if they specify correct username and password. Password is optional.
+MQTT Clients will be able to connect if they specify correct username and password.
 
 Let's review a simple command to publish telemetry readings using MQTT client username and password to the ThingsBoard{{CLOUD}}. The command is using plain MQTT without TLS:
 
@@ -101,7 +101,7 @@ Let's publish telemetry readings using the MQTT client username and password. Fi
 After changing device credentials, use the "Check connectivity" feature to post telemetry:
 
 - Click "Check connectivity" button to open the corresponding window;
-- In the opened window select your operating system;
+- In the opened window, select your operating system;
 - Install the necessary client tools using the command from the guide;
 - Copy and run command to publish telemetry;
 
@@ -132,7 +132,7 @@ where:
 
 {{YOUR_TB_HOST}}
 * **YOUR_CLIENT_ID** with your client id;
-* **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password.
+* **YOUR_CLIENT_USERNAME**, **YOUR_CLIENT_PASSWORD** with your client username and password.
 
 <br>
 In the "Check Connectivity", you'll find an auto-generated command based on your host and device credentials that you've provided. All you have to do is copy and run it.
@@ -144,7 +144,7 @@ Let's publish telemetry readings using the MQTT client ID, username and password
 After changing device credentials, use the "Check connectivity" feature to post telemetry:
 
 - Click "Check connectivity" button to open the corresponding window;
-- In the opened window select your operating system;
+- In the opened window, select your operating system;
 - Install the necessary client tools using the command from the guide;
 - Copy and run command to publish telemetry;
  
@@ -167,9 +167,9 @@ Use "Check connectivity" feature to download the CA root certificate and publish
 
 {% include images-gallery.html showListImageTitles="true" imageCollection="mqtts-options-1" %}
 
-- Now, click "Check connectivity" button. In the opened window select your operating system and install the necessary client tools using the command from the guide;
+- Now, click "Check connectivity" button. In the opened window, select your operating system and install the necessary client tools using the command from the guide;
 - Switch to the "MQTTs" protocol. Copy and run the first command to download the valid CA certificate;
-- Copy and run the second command from your working directory (where you saved the certificate) to publish telemetry. This command uses the *{{PEM_CERTIFICATE}}* certificate to establish a secure connection with the ThingsBoard{{CLOUD}} and the device credentials you specified for its authentication.;
+- Copy and run the second command from your working directory (where you saved the certificate) to publish telemetry. This command uses the *{{PEM_CERTIFICATE}}* certificate to establish a secure connection with the ThingsBoard{{CLOUD}} and the device credentials you specified for its authentication.
 
 Once you have successfully executed the command, you should see the published "temperature" readings.
 
