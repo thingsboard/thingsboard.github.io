@@ -25,31 +25,31 @@
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
   section:
-    - path: /docs/reference/http-api/
+    - path: /docs/paas/reference/http-api/
       title: Connect devices using ThingsBoard HTTP API
       subtitle: Learn how to connect your devices using HTTP protocol and ThingsBoard built-in payload format.
       keywords: http connect
       pe: false
       video: false
-    - path: /docs/reference/mqtt-api/
+    - path: /docs/paas/reference/mqtt-api/
       title: Connect devices using ThingsBoard MQTT API
       subtitle: Learn how to connect your devices using MQTT protocol and ThingsBoard built-in payload format.
       keywords: mqtt connect
       pe: false
       video: false
-    - path: /docs/reference/mqtt-sparkplug-api/
+    - path: /docs/paas/reference/mqtt-sparkplug-api/
       title: Connect devices using  ThingsBoard MQTT Sparkplug API
       subtitle: Learn how to connect your devices using MQTT Sparkplug protocol and ThingsBoard built-in payload format.
       keywords: sparkplug connect
       pe: false
       video: false
-    - path: /docs/reference/lwm2m-api/
+    - path: /docs/paas/reference/lwm2m-api/
       title: Connect devices using ThingsBoard LwM2M API
       subtitle: Learn how to connect your devices using LwM2M protocol and ThingsBoard built-in payload format.
       keywords: lwm2m connect
       pe: false
       video: false
-    - path: /docs/reference/coap-api/
+    - path: /docs/paas/reference/coap-api/
       title: Connect devices using ThingsBoard CoAP API
       subtitle: Learn how to connect your devices using CoAP protocol and ThingsBoard built-in payload format.
       keywords: coap connect
@@ -61,97 +61,97 @@
       keywords: gateway connect
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/
+    - path: /docs/paas/user-guide/integrations/
       title: ThingsBoard Integrations basics
       subtitle: Learn about ThingsBoard Integrations feature and how you can use it to connect devices and apps that use custom payload formats.
       keywords:
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/#platform-integrations-vs-iot-gateway
+    - path: /docs/paas/user-guide/integrations/#platform-integrations-vs-iot-gateway
       title: ThingsBoard Integrations vs IoT Gateway
       subtitle: Learn the differences between the Platform Integrations and IoT Gateway.
       keywords:
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/http/
+    - path: /docs/paas/user-guide/integrations/http/
       title: Connect devices with custom payload using ThingsBoard HTTP Integration
       subtitle: Convert existing protocols and payload formats to ThingsBoard message format.
       keywords: http connect
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/mqtt/
+    - path: /docs/paas/user-guide/integrations/mqtt/
       title: Connect devices with custom payload using ThingsBoard MQTT Integration.
       subtitle: Connect to external brokers and consume MQTT data stream
       keywords: mqtt connect
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/kafka/
+    - path: /docs/paas/user-guide/integrations/kafka/
       title: Connect devices with custom payload using ThingsBoard Kafka Integration.
       subtitle: Connect to external brokers and consume Kafka data stream
       keywords: kafka connect
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/sigfox/
+    - path: /docs/paas/user-guide/integrations/sigfox/
       title: Connect SigFox devices using TB PE Integration
       subtitle: Learn how to route messages from Sigfox backend to ThingsBoard and decode binary device payloads.
       keywords: sigfox connect
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/ttn/
+    - path: /docs/paas/user-guide/integrations/ttn/
       title: Connect LoRaWAN devices using TheThingsStack
       subtitle: Learn how to route messages from TheThingsStack backend to ThingsBoard and vise-versa.
       keywords: ttn connect
       pe: true
       video: false
-    - path: /docs/user-guide/integrations/opc-ua/
+    - path: /docs/paas/user-guide/integrations/opc-ua/
       title: Connect OPC-UA servers to ThingsBoard
       subtitle: Learn how to connect OPC-UA devices to ThingsBoard.
       keywords: opcua connect
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/thingpark/
+    - path: /docs/paas/user-guide/integrations/thingpark/
       title: Connect LoRaWAN devices using Actility ThingPark
       subtitle: Learn how to route messages from ThingPark to ThingsBoard and vise-versa.
       keywords:
       pe: true
       video: false
-    - path: /docs/user-guide/integrations/aws-iot/
+    - path: /docs/paas/user-guide/integrations/aws-iot/
       title: Connect devices through AWS IoT
       subtitle: Learn how to connect to AWS IoT broker, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords:
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/aws-kinesis/
+    - path: /docs/paas/user-guide/integrations/aws-kinesis/
       title: Connect devices through AWS Kinesis
       subtitle: Learn how to connect to AWS Kinesis stream, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords:
       pe: true
       video: false
-    - path: /docs/user-guide/integrations/ibm-watson-iot/
+    - path: /docs/paas/user-guide/integrations/ibm-watson-iot/
       title: Connect devices through IBM Watson IoT
       subtitle: Learn how to connect to IBM Watson IoT broker, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords:
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/azure-event-hub/
+    - path: /docs/paas/user-guide/integrations/azure-event-hub/
       title: Connect devices through Azure Event Hub
       subtitle: Learn how to connect to Azure Event Hub, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords:
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/azure-iot-hub/
+    - path: /docs/paas/user-guide/integrations/azure-iot-hub/
       title: Connect devices through Azure IoT Hub
       subtitle: Learn how to connect to Azure IoT Hub and transform the incoming messages using ThingsBoard.
       keywords:
       pe: true
       video: false
-    - path: /docs/user-guide/integrations/tcp/
+    - path: /docs/paas/user-guide/integrations/tcp/
       title: Devices uses TCP protocol
       subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords: Connect TCP devices
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/udp/
+    - path: /docs/paas/user-guide/integrations/udp/
       title: Devices uses UDP protocol
       subtitle: How to connect to ThingsBoard UDP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords: Connect UDP devices
@@ -163,7 +163,7 @@
       keywords: Tektelic connect
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/tuya/
+    - path: /docs/paas/user-guide/integrations/tuya/
       title: Connect smart devices through Tuya Smart
       subtitle: Learn how to connect smart devices using Tuya Smart to ThingsBoard.
       keywords:
@@ -209,12 +209,12 @@
       keywords:
       pe: false
       video: true
-    - path: /docs/user-guide/ui/trip-animation-widget
+    - path: /docs/paas/user-guide/ui/trip-animation-widget
       title: Trip Animation widget
       subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
       keywords: 
       pe: false
-      video: true
+      video: false
 - title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
   id: DataProcessing
@@ -255,7 +255,7 @@
       title: Send email to customer
       subtitle: Learn how to configure Rule Engine to send email to the customer of the assigned device.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+    - path: /docs/paas/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
       title: Notifications and Alarms on your smartphone using Telegram Bot
       subtitle: Learn how to configure Rule Engine to send notification using Telegram Bot when new alarm is created.
       pe: false
@@ -406,37 +406,37 @@
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures
   section:
-    - path: /docs/user-guide/device-connectivity-status/
+    - path: /docs/paas/user-guide/device-connectivity-status/
       title: Connectivity status
       subtitle: "Learn how to track connectivity status of the devices: connected, disconnected, active, inactive"
       pe: false
       video: false
-    - path: /docs/user-guide/audit-log/
+    - path: /docs/paas/user-guide/audit-log/
       title: Audit log
       subtitle: Learn how to track user actions in order to keep audit log.
       pe: false
       video: false
-    - path: /docs/user-guide/api-limits/
+    - path: /docs/paas/user-guide/api-limits/
       title: API limits
       subtitle: Learn how to control API usage, by limiting number of requests from single host during single time unit (Minutes, Hours, etc.)
       pe: false
       video: false
-    - path: /docs/user-guide/white-labeling/
+    - path: /docs/paas/user-guide/white-labeling/
       title: White-labeling
       subtitle: Learn how to configure your company or product logo and color scheme in 2 minutes with zero coding efforts.
       pe: true
       video: true
-    - path: /docs/user-guide/groups/
+    - path: /docs/paas/user-guide/groups/
       title: Device and Asset groups
       subtitle: Learn how to work with entity groups and perform bulk operations
       pe: true
       video: true
-    - path: /docs/user-guide/scheduler/
+    - path: /docs/paas/user-guide/scheduler/
       title: Scheduler
       subtitle: Learn how to schedule various types of events and trigger actions.
       pe: true
       video: true
-    - path: /docs/user-guide/reporting/
+    - path: /docs/paas/user-guide/reporting/
       title: Reporting
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
@@ -447,16 +447,16 @@
   id: OAuth
   paaspage: "false"
   section:
-  - path: /docs/user-guide/oauth-2-support/#login-with-google
+  - path: /docs/paas/user-guide/oauth-2-support/#login-with-google
     title: Google OAuth example
     subtitle: Learn how to step-by-step setup OAuth with Google.
-  - path: /docs/user-guide/oauth-2-support/#login-with-auth0
+  - path: /docs/paas/user-guide/oauth-2-support/#login-with-auth0
     title: OAuth0 OAuth example
     subtitle: Learn how to step-by-step setup OAuth with OAuth0.
-  - path: /docs/user-guide/oauth-2-support
+  - path: /docs/paas/user-guide/oauth-2-support
     title: OAuth0 Okta example
     subtitle: Learn how to step-by-step setup OAuth with Okta.
-  - path: /docs/user-guide/oauth-2-support
+  - path: /docs/paas/user-guide/oauth-2-support
     title: OAuth0 Azure Active Directory example
     subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
 
@@ -479,7 +479,7 @@
       subtitle: "Learn how to customize and create custom rule nodes"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/widgets-development/
+    - path: /docs/paas/user-guide/contribution/widgets-development/
       title: Widgets Development Guide
       subtitle: "Learn how to customize and create custom widgets"
       pe: false
