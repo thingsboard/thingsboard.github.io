@@ -257,8 +257,8 @@
     </script>
     <script async defer>
         function _gaLt(event) {
-            /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
-            if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
+            /* If GTM is blocked or not loaded, or not main|middle|touch click then don't track */
+            if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || (event.which != 1 && event.which != 2)) {
                 return;
             }
             var el = event.srcElement || event.target;
@@ -282,18 +282,19 @@
                     };
 
                     if (target) {
-                        ga(
-                            "send", "event", "Outgoing Links", link,
-                            document.location.pathname + document.location.search
-                        );
+                        gtag("event", "outgoing_links", {
+                            "event_category": "Outgoing Links",
+                            "event_label": link,
+                            "value": document.location.pathname + document.location.search
+                        });
                     } else {
                         event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-                        ga(
-                            "send", "event", "Outgoing Links", link,
-                            document.location.pathname + document.location.search, {
-                                "hitCallback": hitBack
-                            }
-                        );
+                        gtag("event", "outgoing_link", {
+                            "event_category": "Outgoing Links",
+                            "event_label": link,
+                            "value": document.location.pathname + document.location.search,
+                            "event_callback": hitBack
+                        });
 
                         setTimeout(hitBack, 1000);
                     }
@@ -310,21 +311,12 @@
             document.body.attachEvent("on" + _gaLtEvt, _gaLt)
         });
     </script>
-    <script async defer>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-88383331-1', 'auto');
-        ga('send', 'pageview');
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TGBNQXN');
+    function gtag(){dataLayer.push(arguments)};
     </script>
     <script async defer>
         function Burger() {
@@ -504,6 +496,8 @@
     </script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGBNQXN"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
     <div class="logo-burger">
         <a href="https://u24.gov.ua/" target="_blank" class="support-ukraine">
