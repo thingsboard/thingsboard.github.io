@@ -206,5 +206,5 @@ description: Comprehensive software solutions for edge computing, providing data
 </section>
 
 <section id="bottom">
-    <a href="/docs/edge/getting-started/" class="bottom-button">Try Edge now</a>
+    <a id="Products_Edge_TryEdgeNow" href="/docs/edge/getting-started/" class="bottom-button gtm_button">Try Edge now</a>
 </section>
