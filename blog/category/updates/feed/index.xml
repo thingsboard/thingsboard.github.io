@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/updates/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Wed, 24 Apr 2024 14:44:59 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 30 Apr 2024 14:25:15 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</title>
 		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more</link>
-					<comments>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/#respond</comments>
 		
 		<dc:creator><![CDATA[Dima Landiak]]></dc:creator>
 		<pubDate>Tue, 02 Apr 2024 08:48:23 +0000</pubDate>
@@ -149,15 +148,12 @@
 
 <p style="font-size:16px">This version brings improvements in memory usage and overall performance. An important resolution of a direct memory leak issue leads to an optimized operational environment. This results in reduced latency and higher throughput, significantly boosting the system&#8217;s performance and robustness.</p><p>The post <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
 		<link>/blog/thingsboard-release-3-6-3-announcement/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=thingsboard-release-3-6-3-announcement</link>
-					<comments>/blog/thingsboard-release-3-6-3-announcement/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 18 Mar 2024 15:00:40 +0000</pubDate>
@@ -242,8 +238,6 @@
 
 <p></p><p>The post <a href="/blog/thingsboard-release-3-6-3-announcement/">ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/thingsboard-release-3-6-3-announcement/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
