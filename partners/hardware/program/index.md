@@ -146,7 +146,7 @@ description:
 
 <div class="container faq-content">
   <h2 id="faq" class="text-center">Frequently asked questions</h2>
-  <div class="pi-accordion">
+  <div id="FAQ" class="pi-accordion">
     <h3>Business</h3>
     <div class="item" data-tag="h4" data-title="Who is eligible to become a Hardware Partner?">
       <div class="container">

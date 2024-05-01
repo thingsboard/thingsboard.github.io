@@ -52,7 +52,7 @@ You may easily integrate with external billing systems to produce and distribute
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
+    <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
 </div>
 
 The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/smart-office/) and allows you to:
@@ -184,9 +184,9 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_WaterMeter_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
+    <a id="UseCases_WaterMeter_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
+    <a id="UseCases_WaterMeter_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
+    <a id="UseCases_WaterMeter_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
+    <a id="UseCases_WaterMeter_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>

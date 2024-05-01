@@ -59,7 +59,7 @@ selfManagedPlan:
                 </div>
                 <p class="text">For better decision making, resource planning and reducing cost business requires answers to 3 main questions: What will happen, When, and Why?</p>
                 <p class="accent-text">Trendz provides an answer</p>
-                <a href="/docs/trendz/prediction/" class="button try-pe">Start Analysis</a>
+                <a id="Products_TA_StartAnalysis1" href="/docs/trendz/prediction/" class="button try-pe gtm_button">Start Analysis</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="prediction">
@@ -73,7 +73,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Define KPI using calculated fields</h3>
                 <p class="text">Calculated fields are one of the most powerful features for KPI monitoring and prediction. Based on the input data, calculated fields allow you to run statistical functions and create new data items by applying calculations.</p>
-                <a href="/docs/trendz/calculated-fields/" class="button try-pe">Learn More</a>
+                <a id="Products_TA_LearnMore1" href="/docs/trendz/calculated-fields/" class="button try-pe gtm_button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper chart-wrapper pie-chart">
@@ -92,7 +92,7 @@ selfManagedPlan:
                     <img src="https://img.thingsboard.io/trendz/anomalies-screen.png" alt="anomalies screen">
                 </div>
                 <p class="text">Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.</p>
-                <a href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe">Start Analysis</a>
+                <a id="Products_TA_StartAnalysis2" href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe gtm_button">Start Analysis</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="anomalies">
@@ -107,7 +107,7 @@ selfManagedPlan:
                 <h3 class="header">Connect Data</h3>
                 <p class="text">Connect Trendz to the ThingsBoard in few clicks with automatic Topology Discovery.</p>
                 <p class="text">Trendz works with all ThingsBoard products, including Open Source ThingsBoard Community Edition and ThingsBoard Professional Edition.</p>
-                <a href="/docs/trendz/connect-thingsboard/" class="button try-pe">Learn More</a>
+                <a id="Products_TA_LearnMore2" href="/docs/trendz/connect-thingsboard/" class="button try-pe gtm_button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper chart-wrapper multiple-chart">
@@ -134,7 +134,7 @@ selfManagedPlan:
                     </ul>
                 </div>
                 <p class="text">All with respect to ThingsBoard user permissions.</p>
-                <a href="/docs/trendz/embed-visuals/" class="button try-pe">Learn More</a>
+                <a id="Products_TA_LearnMore3" href="/docs/trendz/embed-visuals/" class="button try-pe gtm_button">Learn More</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="dashboard">
@@ -148,7 +148,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Plot and aggregate your data with any granularity</h3>
                 <p class="text">See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level. Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.</p>
-                <a href="/docs/trendz/data-grouping-aggregation/" class="button try-pe">Start Analysis</a>
+                <a id="Products_TA_StartAnalysis3" href="/docs/trendz/data-grouping-aggregation/" class="button try-pe gtm_button">Start Analysis</a>
             </div>
             <div class="image-block accent-circle accent-circle-center">
                 <div class="image-wrapper chart-wrapper line-chart">
@@ -166,7 +166,7 @@ selfManagedPlan:
             <p class="accent-text">Get it and learn easy</p>
             <h2 class="title">Learn fast</h2>
             <div class="btn-container">
-                <a target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe">Watch Tutorials<span class="triangle-right"></span></a>
+                <a id="Products_TA_WatchTutorials" target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe gtm_button">Watch Tutorials<span class="triangle-right"></span></a>
             </div>
         </div>
         <div class="get-started">
@@ -188,8 +188,8 @@ selfManagedPlan:
         <h1 class="main-title">Trendz analytics</h1>
         <p class="text">Our analysis and prediction is your financial result and advance growth</p>
         <div class="btn-block">
-            <a href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go" class="button accent-btn btn-open">Start Free</a>
-            <a href="/products/trendz/trndz-request-demo/" class="button try-pe">Get a demo</a>
+            <a id="Products_TA_StartFree" href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go" class="button accent-btn btn-open gtm_button">Start Free</a>
+            <a id="Products_TA_GetADemo2" href="/products/trendz/trndz-request-demo/" class="button try-pe gtm_button">Get a demo</a>
         </div>
     </div>
 </div>

@@ -161,9 +161,13 @@
   }
 
   function reportTrendzWizrdAction(link, product) {
-    if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+    if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !link || !product) {
       return;
     }
-    ga("send", "event", "TrendzWizrdAction", product, link);
+
+    gtag("event", "TrendzWizrdAction", {
+      "event_category": product,
+      "event_label": link
+    });
   }
 </script>

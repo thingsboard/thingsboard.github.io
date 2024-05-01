@@ -21,4 +21,6 @@ and change them to
 <startargument>-Xms256m</startargument>
 <startargument>-Xmx256m</startargument>
 ```
+
+change "256m" to approximately 1/3rd of your total RAM (in MB)
 {: .copy-code}

@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/business/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Wed, 24 Apr 2024 14:50:25 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 30 Apr 2024 14:27:44 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>Milesight and ThingsBoard announced a technical partnership to provide more integrated IoT solutions</title>
 		<link>/blog/milesight-and-thingsboard-inc-announced-a-technical-partnership-to-provide-more-integrated-iot-solutions/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=milesight-and-thingsboard-inc-announced-a-technical-partnership-to-provide-more-integrated-iot-solutions</link>
-					<comments>/blog/milesight-and-thingsboard-inc-announced-a-technical-partnership-to-provide-more-integrated-iot-solutions/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Thu, 21 Dec 2023 16:28:54 +0000</pubDate>
@@ -85,8 +84,6 @@
 
 <p>If you found this article interesting, please leave your feedback in the comments section, post questions or feature requests on the&nbsp;<strong><a href="https://groups.google.com/forum/#!forum/thingsboard">forum</a></strong>&nbsp;and “star” our project on the&nbsp;<strong><a href="https://github.com/thingsboard/thingsboard">github</a></strong>&nbsp;in order to stay tuned for new releases and tutorials.</p><p>The post <a href="/blog/milesight-and-thingsboard-inc-announced-a-technical-partnership-to-provide-more-integrated-iot-solutions/">Milesight and ThingsBoard announced a technical partnership to provide more integrated IoT solutions</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/milesight-and-thingsboard-inc-announced-a-technical-partnership-to-provide-more-integrated-iot-solutions/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

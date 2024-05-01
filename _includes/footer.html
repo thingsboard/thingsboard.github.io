@@ -1,6 +1,6 @@
 <footer>
-	<div class="light-text main-div">
-		<div class="newsletterSubsContainer">
+    <div class="light-text main-div">
+        <div class="newsletterSubsContainer">
             <script>
                 function subscribeForNewsletter(event) {
                     event.stopPropagation();
@@ -12,9 +12,10 @@
                     $('#mlb2-7341216').css('display', 'block');
                 }
             </script>
-            <button class="n-button price subscribe" onClick="subscribeForNewsletter(event)">Sign up for ThingsBoard news</button>
+            <button id="Footer_SignUpForNews" class="n-button price subscribe gtm_button "
+                    onClick="subscribeForNewsletter(event)">Sign up for ThingsBoard news</button>
             <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none; max-width: 100%;">
-<!--            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: block;">-->
+                <!--            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: block;">-->
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display: none;">
                         <div class="form-section">
@@ -30,7 +31,8 @@
                             </div>
                             <input type="hidden" name="ml-submit" value="1">
                             <div class="form-section horizontal ml-button-position">
-                                <button class="primary n-button price subscribe" type="submit">
+                                <button id="Footer_SignUpForNews_Subscribe" class="primary n-button price subscribe gtm_button"
+                                        type="submit">
                                     Subscribe
                                 </button>
                                 <button disabled="disabled" style="display: none;" type="button" class="n-button loading">
@@ -42,10 +44,8 @@
                     </form>
                 </div>
             </div>
-		</div>
-
+        </div>
         <hr>
-
         <div class="deeper">
             <a href="/" class="footer-logo" aria-label="Link to homepage"></a>
             <nav>
@@ -57,7 +57,6 @@
                 <a href="/docs/contact-us/">Contact us</a>
             </nav>
         </div>
-
         <div class="deepmost">
             <div class="copyright">&copy; {{ 'now' | date: "%Y" }} The ThingsBoard Authors</div>
             <div class="social">
@@ -84,5 +83,5 @@
                 </a>
             </div>
         </div>
-	</div>
+    </div>
 </footer>

@@ -12,7 +12,7 @@
 	<atom:link href="/blog/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Wed, 24 Apr 2024 14:48:23 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 30 Apr 2024 14:28:03 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</title>
 		<link>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more</link>
-					<comments>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/#respond</comments>
 		
 		<dc:creator><![CDATA[Dima Landiak]]></dc:creator>
 		<pubDate>Tue, 02 Apr 2024 08:48:23 +0000</pubDate>
@@ -149,15 +148,12 @@
 
 <p style="font-size:16px">This version brings improvements in memory usage and overall performance. An important resolution of a direct memory leak issue leads to an optimized operational environment. This results in reduced latency and higher throughput, significantly boosting the system&#8217;s performance and robustness.</p><p>The post <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
 		<link>/blog/top-supplier-retail-2024-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=top-supplier-retail-2024-2</link>
-					<comments>/blog/top-supplier-retail-2024-2/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 26 Mar 2024 10:35:32 +0000</pubDate>
@@ -222,15 +218,12 @@
 
 <p>We invite you to explore the potential of ThingsBoard in revolutionizing your retail operations. Our award-winning IoT solutions are designed to empower businesses like yours to navigate digital transformation with confidence. Discover how we can help transform your business by visiting our <a href="https://thingsboard.io/">website</a> or <a href="https://thingsboard.io/docs/contact-us/">contacting</a> our sales team. Let&#8217;s innovate together and lead the way in retail technology.</p><p>The post <a href="/blog/top-supplier-retail-2024-2/">TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group’s Award-Winning Partnership</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/top-supplier-retail-2024-2/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
 		<link>/blog/thingsboard-release-3-6-3-announcement/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=thingsboard-release-3-6-3-announcement</link>
-					<comments>/blog/thingsboard-release-3-6-3-announcement/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 18 Mar 2024 15:00:40 +0000</pubDate>
@@ -315,15 +308,12 @@
 
 <p></p><p>The post <a href="/blog/thingsboard-release-3-6-3-announcement/">ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/thingsboard-release-3-6-3-announcement/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Push notifications to ThingsBoard mobile apps</title>
 		<link>/blog/push-notifications-to-thingsboard-mobile-apps/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=push-notifications-to-thingsboard-mobile-apps</link>
-					<comments>/blog/push-notifications-to-thingsboard-mobile-apps/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Thu, 14 Mar 2024 15:17:58 +0000</pubDate>
@@ -468,15 +458,12 @@
 
 <p>In summary, ThingsBoard&#8217;s push notification feature offers a versatile and user-friendly way to stay updated on important events and alerts, enhancing the overall experience of managing IoT devices and data. With manual and automated notification options, plus the ability to personalize and test notifications easily, staying informed and responsive has never been simpler.</p><p>The post <a href="/blog/push-notifications-to-thingsboard-mobile-apps/">Push notifications to ThingsBoard mobile apps</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/push-notifications-to-thingsboard-mobile-apps/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Enhancing IoT data visualization: Introducing new time series charts</title>
 		<link>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=enhancing-iot-data-visualization-introducing-new-time-series-charts</link>
-					<comments>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Tue, 12 Mar 2024 16:38:09 +0000</pubDate>
@@ -702,15 +689,12 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 <p>We hope you find these new data visualization capabilities both enriching and beneficial to your analysis and presentation tasks. As always, we welcome your feedback and suggestions through feature requests on GitHub or comments below. Your input is invaluable as we strive to meet your evolving needs and further enhance the ThingsBoard experience.</p><p>The post <a href="/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/">Enhancing IoT data visualization: Introducing new time series charts</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Warehouse monitoring with ThingsBoard</title>
 		<link>/blog/warehouse-monitoring-with-thingsboard/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=warehouse-monitoring-with-thingsboard</link>
-					<comments>/blog/warehouse-monitoring-with-thingsboard/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 12 Mar 2024 12:48:44 +0000</pubDate>
@@ -791,15 +775,12 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 <p style="font-size:16px">This case study exemplifies the power of IoT in enhancing regulatory compliance and operational efficiency in critical industries such as pharmaceuticals. The Vypin-WhereView solution, backed by ThingsBoard, demonstrates our commitment to delivering innovative and reliable monitoring solutions.</p><p>The post <a href="/blog/warehouse-monitoring-with-thingsboard/">Warehouse monitoring with ThingsBoard</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/warehouse-monitoring-with-thingsboard/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>IoT Widgets for enhanced dashboards: introducing the  action, command, toggle, and power buttons</title>
 		<link>/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons</link>
-					<comments>/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Tue, 05 Mar 2024 11:54:34 +0000</pubDate>
@@ -1053,8 +1034,6 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 <p style="font-size:16px">We encourage you to explore these widgets&#8217; capabilities within your projects. If you have ideas for improvements or additional features, we welcome you to submit feature requests on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>. For any other feedback, please leave your comments below. Your feedback is essential for us to keep improving and growing the platform.</p><p>The post <a href="/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/">IoT Widgets for enhanced dashboards: introducing the  action, command, toggle, and power buttons</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
@@ -1259,7 +1238,6 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 		<item>
 		<title>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</title>
 		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions</link>
-					<comments>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Fri, 01 Mar 2024 15:57:16 +0000</pubDate>
@@ -1402,15 +1380,12 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 <p style="font-size:16px">And this is only part of how advanced analytics and machine learning can improve the efficiency of solar farms. With help, you can find solutions to your solar farm problems, including Soiling, Battery Health Diagnostics, and more.</p><p>The post <a href="/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">Optimizing solar parks efficiency – advanced anomaly detection solutions</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Optimizing dashboard performance with enhanced image management</title>
 		<link>/blog/optimizing-dashboard-performance-with-enhanced-image-management/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=optimizing-dashboard-performance-with-enhanced-image-management</link>
-					<comments>/blog/optimizing-dashboard-performance-with-enhanced-image-management/#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Thu, 29 Feb 2024 11:52:07 +0000</pubDate>
@@ -1559,8 +1534,6 @@ at the same time" class="wp-image-3733" srcset="/blog/wp-content/uploads/2024/03
 
 <p style="font-size:16px">By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p><p>The post <a href="/blog/optimizing-dashboard-performance-with-enhanced-image-management/">Optimizing dashboard performance with enhanced image management</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/optimizing-dashboard-performance-with-enhanced-image-management/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/use-cases/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Wed, 24 Apr 2024 15:36:40 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 30 Apr 2024 14:28:03 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
 		<link>/blog/top-supplier-retail-2024-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=top-supplier-retail-2024-2</link>
-					<comments>/blog/top-supplier-retail-2024-2/#respond</comments>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 26 Mar 2024 10:35:32 +0000</pubDate>
@@ -87,15 +86,12 @@
 
 <p>We invite you to explore the potential of ThingsBoard in revolutionizing your retail operations. Our award-winning IoT solutions are designed to empower businesses like yours to navigate digital transformation with confidence. Discover how we can help transform your business by visiting our <a href="https://thingsboard.io/">website</a> or <a href="https://thingsboard.io/docs/contact-us/">contacting</a> our sales team. Let&#8217;s innovate together and lead the way in retail technology.</p><p>The post <a href="/blog/top-supplier-retail-2024-2/">TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group’s Award-Winning Partnership</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/top-supplier-retail-2024-2/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</title>
 		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions</link>
-					<comments>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Fri, 01 Mar 2024 15:57:16 +0000</pubDate>
@@ -238,15 +234,12 @@
 
 <p style="font-size:16px">And this is only part of how advanced analytics and machine learning can improve the efficiency of solar farms. With help, you can find solutions to your solar farm problems, including Soiling, Battery Health Diagnostics, and more.</p><p>The post <a href="/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">Optimizing solar parks efficiency – advanced anomaly detection solutions</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Reducing costs of solar farms by optimizing the cleaning process</title>
 		<link>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process</link>
-					<comments>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 15:09:55 +0000</pubDate>
@@ -359,15 +352,12 @@
 
 <p style="font-size:16px">Analytics, IoT, and machine learning provide insights, risk forecasts, and data-driven decisions for better business performance. Embracing these ensures competitiveness and risk mitigation. Also, in the future, we plan to tell you how to improve the efficiency of the power plant by finding anomalies in the solar panels and parts of the power plant, such as the inverter or the battery. In our digital age, advanced analytics are the way to simplify and boost complex problem-solving!</p><p>The post <a href="/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">Reducing costs of solar farms by optimizing the cleaning process</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Solving solar power plant problems using advanced analytics</title>
 		<link>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=solving-solar-power-plant-problems-using-advanced-analytics-2</link>
-					<comments>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 10:33:41 +0000</pubDate>
@@ -482,7 +472,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="https://thingsboard.io/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">guide here</a>.</p>
+<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="https://thingsboard.io/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/" title="">guide here</a>.</p>
 
 
 
@@ -522,7 +512,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="https://thingsboard.io/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="https://thingsboard.io/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/" title="">click here</a>.</p>
 
 
 
@@ -689,7 +679,7 @@
 
 
 
-<li style="font-size:16px"><a href="https://thingsboard.io/docs/trendz/calculated-fields/">Configure computation of </a><a href="https://thingsboard.io/docs/trendz/calculated-fields/">system-level metrics / KPIs</a> that would describe overall system behavior.</li>
+<li style="font-size:16px"><a href="https://thingsboard.io/docs/trendz/calculated-fields/">Configure computation of </a><a href="https://thingsboard.io/docs/trendz/calculated-fields/" title="">system-level metrics / KPIs</a> that would describe overall system behavior.</li>
 
 
 
@@ -720,8 +710,6 @@
 
 <p style="font-size:16px">However, manual reading of indicators or setting thresholds is not enough for power plants with unstable energy production. Using advanced analytics will open up new horizons of efficiency and reliability for your solar farm. The future looks bright for the partnership between solar and advanced analytics!</p><p>The post <a href="/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/">Solving solar power plant problems using advanced analytics</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

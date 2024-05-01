@@ -66,7 +66,7 @@ notitle: "true"
 <div class="background">
     <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
 </div>
-<form id="contact-form" method="post" class="contact-form" onsubmit="return validateContactForm(this)">
+<form id="contact-form" method="post" class="contact-form gtm_form" onsubmit="return validateContactForm(this)">
     <fieldset>
         <div class="form-section">
             <div class="form-element first half">

@@ -25,31 +25,31 @@
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
   section:
-    - path: /docs/reference/http-api/
+    - path: /docs/pe/reference/http-api/
       title: Connect devices using ThingsBoard HTTP API
       subtitle: Learn how to connect your devices using HTTP protocol and ThingsBoard built-in payload format.
       keywords: http connect
       pe: false
       video: false
-    - path: /docs/reference/mqtt-api/
+    - path: /docs/pe/reference/mqtt-api/
       title: Connect devices using ThingsBoard MQTT API
       subtitle: Learn how to connect your devices using MQTT protocol and ThingsBoard built-in payload format.
       keywords: mqtt connect
       pe: false
       video: false
-    - path: /docs/reference/mqtt-sparkplug-api/
+    - path: /docs/pe/reference/mqtt-sparkplug-api/
       title: Connect devices using  ThingsBoard MQTT Sparkplug API
       subtitle: Learn how to connect your devices using MQTT Sparkplug protocol and ThingsBoard built-in payload format.
       keywords: sparkplug connect
       pe: false
       video: false
-    - path: /docs/reference/lwm2m-api/
+    - path: /docs/pe/reference/lwm2m-api/
       title: Connect devices using ThingsBoard LwM2M API
       subtitle: Learn how to connect your devices using LwM2M protocol and ThingsBoard built-in payload format.
       keywords: lwm2m connect
       pe: false
       video: false
-    - path: /docs/reference/coap-api/
+    - path: /docs/pe/reference/coap-api/
       title: Connect devices using ThingsBoard CoAP API
       subtitle: Learn how to connect your devices using CoAP protocol and ThingsBoard built-in payload format.
       keywords: coap connect
@@ -209,12 +209,12 @@
       keywords:
       pe: false
       video: true
-    - path: /docs/user-guide/ui/trip-animation-widget
+    - path: /docs/pe/user-guide/ui/trip-animation-widget
       title: Trip Animation widget
       subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
       keywords: 
       pe: false
-      video: true
+      video: false
 - title: Data processing & actions
   subtitle: Learn how to use ThingsBoard Rule Engine.
   id: DataProcessing
@@ -255,7 +255,7 @@
       title: Send email to customer
       subtitle: Learn how to configure Rule Engine to send email to the customer of the assigned device.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+    - path: /docs/pe/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
       title: Notifications and Alarms on your smartphone using Telegram Bot
       subtitle: Learn how to configure Rule Engine to send notification using Telegram Bot when new alarm is created.
       pe: false
@@ -288,11 +288,11 @@
       subtitle: Connect to external brokers and send MQTT data stream
       keys: mqtt connect
       pe: true
-    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+    - path: /docs/pe/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
       title: Using queues for synchronization
       subtitle: Learn how to use Rule Engine 2.5 queues for message processing synchronization.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
+    - path: /docs/pe/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
       title: Using queues for message reprocessing
       subtitle: Learn how to use Rule Engine 2.5 queues for message reprocessing in case of failure or timeout.
       pe: false
@@ -406,37 +406,37 @@
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures
   section:
-    - path: /docs/user-guide/device-connectivity-status/
+    - path: /docs/pe/user-guide/device-connectivity-status/
       title: Connectivity status
       subtitle: "Learn how to track connectivity status of the devices: connected, disconnected, active, inactive"
       pe: false
       video: false
-    - path: /docs/user-guide/audit-log/
+    - path: /docs/pe/user-guide/audit-log/
       title: Audit log
       subtitle: Learn how to track user actions in order to keep audit log.
       pe: false
       video: false
-    - path: /docs/user-guide/api-limits/
+    - path: /docs/pe/user-guide/api-limits/
       title: API limits
       subtitle: Learn how to control API usage, by limiting number of requests from single host during single time unit (Minutes, Hours, etc.)
       pe: false
       video: false
-    - path: /docs/user-guide/white-labeling/
+    - path: /docs/pe/user-guide/white-labeling/
       title: White-labeling
       subtitle: Learn how to configure your company or product logo and color scheme in 2 minutes with zero coding efforts.
       pe: true
       video: true
-    - path: /docs/user-guide/groups/
+    - path: /docs/pe/user-guide/groups/
       title: Device and Asset groups
       subtitle: Learn how to work with entity groups and perform bulk operations
       pe: true
       video: true
-    - path: /docs/user-guide/scheduler/
+    - path: /docs/pe/user-guide/scheduler/
       title: Scheduler
       subtitle: Learn how to schedule various types of events and trigger actions.
       pe: true
       video: true
-    - path: /docs/user-guide/reporting/
+    - path: /docs/pe/user-guide/reporting/
       title: Reporting
       subtitle: Learn how to schedule and generate reports based on existing dashboards.
       pe: true
@@ -447,16 +447,16 @@
   id: OAuth
   paaspage: "false"
   section:
-  - path: /docs/user-guide/oauth-2-support/#login-with-google
+  - path: /docs/pe/user-guide/oauth-2-support/#login-with-google
     title: Google OAuth example
     subtitle: Learn how to step-by-step setup OAuth with Google.
-  - path: /docs/user-guide/oauth-2-support/#login-with-auth0
+  - path: /docs/pe/user-guide/oauth-2-support/#login-with-auth0
     title: OAuth0 OAuth example
     subtitle: Learn how to step-by-step setup OAuth with OAuth0.
-  - path: /docs/user-guide/oauth-2-support
+  - path: /docs/pe/user-guide/oauth-2-support
     title: OAuth0 Okta example
     subtitle: Learn how to step-by-step setup OAuth with Okta.
-  - path: /docs/user-guide/oauth-2-support
+  - path: /docs/pe/user-guide/oauth-2-support
     title: OAuth0 Azure Active Directory example
     subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
 
@@ -469,17 +469,17 @@
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
+    - path: /docs/pe/user-guide/contribution/how-to-contribute-your-device-integration-guide/
       title: How to contribute your device integration guide
       subtitle: "Learn how to contribute to Thingsboard"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/rule-node-development/
+    - path: /docs/pe/user-guide/contribution/rule-node-development/
       title: Rule Node Development Guide
       subtitle: "Learn how to customize and create custom rule nodes"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/widgets-development/
+    - path: /docs/pe/user-guide/contribution/widgets-development/
       title: Widgets Development Guide
       subtitle: "Learn how to customize and create custom widgets"
       pe: false
