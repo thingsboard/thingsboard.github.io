@@ -197,17 +197,22 @@
     }
 
     function reportPriceLink(link, product) {
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+        if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !link || !product) {
             return;
         }
-        ga("send", "event", "PriceLink", product, link);
+        gtag("event", "PriceLink", {
+            "event_category": product,
+            "event_label": link
+        });
     }
 
     function reportPriceOpen(solutionId) {
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !solutionId) {
+        if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !solutionId) {
             return;
         }
-        ga("send", "event", "PriceOpen", solutionId);
+        gtag("event", "PriceOpen", {
+            "event_category": solutionId
+        });
     }
 </script>
 
