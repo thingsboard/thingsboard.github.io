@@ -17,9 +17,9 @@ description: Installing ThingsBoard on Windows
 ### Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
-Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
+Instructions below are provided for Windows 11/10. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
-To run ThingsBoard and PostgreSQL on a single machine you will need at least 2Gb of RAM.
+To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
 ### Step 1. Install Java 11 (OpenJDK) 
@@ -93,7 +93,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.liquid content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 6. [Optional] Memory update for slow machines 
 
 {% include templates/install/windows-memory-on-slow-machines.md %} 
 
@@ -121,7 +121,7 @@ ThingsBoard installed successfully!
 {% include templates/windows-start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
 ### Step 9. Install ThingsBoard Web Report Server component
