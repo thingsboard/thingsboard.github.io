@@ -83,7 +83,7 @@
 	display: none;
 	align-items: center;
 	justify-content: flex-end;
-	margin-right: 50px;
+	margin-right: 45px;
 }
 
 .closed-search-animation .search-box{
@@ -224,12 +224,12 @@ form.gsc-search-box{
 }
 
 .gsc-search-button svg{
-	width: 16px;
-	height: 16px;
+	width: 20px;
+	height: 20px;
 }
 
 .gsc-search-button-v2 svg{
-	height: 16px !important;
+	height: 20px !important;
 }
 
 .gsc-search-button-v2{
@@ -1385,7 +1385,7 @@ header .logo {
     color: #212529;
     transition-duration: 0s;
     background-color: unset;
-	margin-left: 10px;
+	margin-left: 0px;
 }
 
 .n-button.try:hover {
