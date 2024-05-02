@@ -3864,6 +3864,10 @@ body{
 }
 
 /* location of readnext and comments */
+.comments-area{
+	order: 3;
+}
+
 #disqus_thread{
 	order: 3;
 	width: 800px !important;
@@ -4081,9 +4085,9 @@ code{
 /* 	--cs-heading-2-font-size: 48px !important;	 */
 	
 	/* 	paragraph1 */
-	--cs-font-post-content-size: 16px !important;
+	--cs-font-post-content-size: 18px !important;
 	--cs-font-post-content-weight: 400 !important;
-	--cs-font-post-content-line-height: 24px !important;
+	--cs-font-post-content-line-height: 30px !important;
 }
 .cs-entry__subtitle{
 	font-weight: 400 !important;
