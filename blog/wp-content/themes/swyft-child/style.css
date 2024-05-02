@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
 /* 	google-search */
 .opened-search header{
 	gap: 50px;
@@ -20,6 +21,7 @@
 }
 
 .search-icon{
+	margin-right: 20px;
 	width: 20px;
     height: 20px;
     display: flex;
@@ -81,7 +83,7 @@
 	display: none;
 	align-items: center;
 	justify-content: flex-end;
-	margin-right: 30px;
+	margin-right: 50px;
 }
 
 .closed-search-animation .search-box{
@@ -221,6 +223,15 @@ form.gsc-search-box{
 	background-color: unset !important;
 }
 
+.gsc-search-button svg{
+	width: 16px;
+	height: 16px;
+}
+
+.gsc-search-button-v2 svg{
+	height: 16px !important;
+}
+
 .gsc-search-button-v2{
 	background-color: unset !important;
 	position: relative;
@@ -351,7 +362,7 @@ header .header-buttons{
 }
 
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons .cs-header__scheme-toggle-icon{
-	font-size: 1.65rem;
+	font-size: 1.45rem;
 }
 
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons{
@@ -390,11 +401,12 @@ header .header-buttons{
 
 /* darktheme */
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons .cs-header__scheme-toggle-icon{
-	font-size: 1.20rem;
+	font-size: 1.45rem;
 }
 
 .theme_toggle{
-	margin-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .opened-search .theme_toggle {
@@ -1517,6 +1529,9 @@ header .logo {
 }
 
 @media screen and (max-width: 1280px) {
+	.search-box{
+		margin-right: 30px;
+	}
 	.theme_toggle{
 		margin-right: 0px;
 	}
