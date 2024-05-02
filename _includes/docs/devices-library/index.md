@@ -97,7 +97,7 @@
     }
 
     function reportSearchInput(searchText) {
-        if (checkDataLayer()) {
+        if (checkGTagDataLayer()) {
             return;
         }
 

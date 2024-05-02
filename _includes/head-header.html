@@ -258,7 +258,7 @@
     <script async defer>
         function _gaLt(event) {
             /* If GTM is blocked or not loaded, or not main|middle|touch click then don't track */
-            if (checkDataLayer() || (event.which != 1 && event.which != 2)) {
+            if (checkGTagDataLayer() || (event.which != 1 && event.which != 2)) {
                 return;
             }
             var el = event.srcElement || event.target;

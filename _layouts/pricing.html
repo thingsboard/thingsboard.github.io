@@ -197,7 +197,7 @@
     }
 
     function reportPriceLink(link, product) {
-        if (checkDataLayer() || !link || !product) {
+        if (checkGTagDataLayer() || !link || !product) {
             return;
         }
         gtag("event", "PriceLink", {
@@ -207,7 +207,7 @@
     }
 
     function reportPriceOpen(solutionId) {
-        if (checkDataLayer() || !solutionId) {
+        if (checkGTagDataLayer() || !solutionId) {
             return;
         }
         gtag("event", "PriceOpen", {
