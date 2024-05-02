@@ -1234,7 +1234,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			document.getElementById('___gcse_1').style.display = 'none';
 		}
 		function MobileOpenSearch(){
-			CloseToEnableBugsConfig()
+			document.querySelector('.gsc-search-button svg').innerHTML = '<path d="M18,10a8,8,0,1,0-3.1,6.31l6.4,6.4,1.41-1.41-6.4-6.4A8,8,0,0,0,18,10Zm-8,6a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z"/><\/g><\/svg>'
+			document.querySelector('.gsc-search-button svg').setAttribute('viewBox', '0 0 24 24');
+			CloseToEnableBugsConfig();
 			document.querySelector('#gsc-i-id1').addEventListener('input', function(){
 				document.getElementsByTagName('body')[0].classList.remove('close-search-box-mobile');
 				if(document.querySelector('#gsc-i-id1').value.length > 0){
