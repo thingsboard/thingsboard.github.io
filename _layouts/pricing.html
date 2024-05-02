@@ -197,7 +197,7 @@
     }
 
     function reportPriceLink(link, product) {
-        if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !link || !product) {
+        if (checkDataLayer() || !link || !product) {
             return;
         }
         gtag("event", "PriceLink", {
@@ -207,7 +207,7 @@
     }
 
     function reportPriceOpen(solutionId) {
-        if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !solutionId) {
+        if (checkDataLayer() || !solutionId) {
             return;
         }
         gtag("event", "PriceOpen", {

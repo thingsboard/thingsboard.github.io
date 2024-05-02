@@ -97,7 +97,7 @@
     }
 
     function reportSearchInput(searchText) {
-        if (typeof window.dataLayer === "undefined" || !window.dataLayer.push) {
+        if (checkDataLayer()) {
                 return;
         }
 

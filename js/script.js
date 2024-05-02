@@ -17,6 +17,10 @@ function newDOMElement(tag, className, id){
 	return el;
 }
 
+function checkDataLayer() {
+	return typeof window.dataLayer === "undefined" || !window.dataLayer.push;
+}
+
 function px(n){
 	return n + 'px';
 }
@@ -205,9 +209,10 @@ var tb = (function () {
     }
 
     function reportFaqNode(nodeId) {
-		if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !nodeId) {
+		if (checkDataLayer() || !nodeId) {
 			return;
 		}
+
 		gtag("event", "FaqNode", {
 			"event_category": nodeId
 		});

@@ -161,7 +161,7 @@
   }
 
   function reportTrendzWizrdAction(link, product) {
-    if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !link || !product) {
+    if (checkDataLayer() || !link || !product) {
       return;
     }
 
