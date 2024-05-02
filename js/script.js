@@ -209,7 +209,7 @@ var tb = (function () {
     }
 
     function reportFaqNode(nodeId) {
-		if (checkDataLayer() || !nodeId) {
+		if (checkGTagDataLayer() || !nodeId) {
 			return;
 		}
 
