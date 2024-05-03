@@ -97,14 +97,14 @@
     }
 
     function reportSearchInput(searchText) {
-        if (typeof window.dataLayer === "undefined" || !window.dataLayer.push) {
-                return;
+        if (checkGTagDataLayer()) {
+            return;
         }
 
         gtag("event", "search", {
-                "search_term": searchText,
-                "event_label": "DeviceLibraryGuides", 
-                "searchPageCount": searchPageCount  
+            "search_term": searchText,
+            "event_label": "DeviceLibraryGuides", 
+            "searchPageCount": searchPageCount  
         });
     }
     
