@@ -1,0 +1,73 @@
+<!Doctype html>
+<html id="mqtt-broker">
+
+{% include head-header.html productTag="tbmq" %}
+<!--  HERO  -->
+<section id="hero" class="light-text">
+    <div id="hero-content">
+        <span class="header-animation tbmq-title">TBMQ<br>Open-source MQTT Broker</span>
+        <h2 class="header-animation tbmq-description">Empower your IoT solution with a scalable and fault-tolerant messaging broker designed to efficiently handle and persist millions of messages per second in real time</h2>
+        <div class="header-animation">
+            <a href="#encyclopedia" class="button action" id="learn-more">Learn More</a>
+            <a href="/docs/mqtt-broker/getting-started/" class="button action">Get started</a>
+        </div>
+        <div class="paas-arrow">
+            <a href="#encyclopedia"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="encyclopedia">
+    <div id="tbmqContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script type="text/javascript">
+    jqueryDefer(function () {
+        vis(function() {
+            if (vis()) {
+                slideUp();
+            }
+        });
+        $('#hero-content > .paas-arrow > a, #learn-more').click(function(event) {
+            event.preventDefault();
+            var target = $('#encyclopedia');
+            $('html, body').animate({
+                scrollTop: target.offset().top - 60 //header height
+            }, 1000, "easeOutCirc");
+        });
+
+    });
+
+    inViewportDefer(function() {
+        $("#hero-content").inViewport(function(px){
+            if($(this).height()-px >= 60) {
+                $(this).addClass("arrow-hidden");
+            } else {
+                $(this).removeClass("arrow-hidden");
+            }
+        });
+    });
+
+    function slideUp() {
+        var headAnimations = $('#hero-content').find('.header-animation');
+        for (var i=0;i<headAnimations.length;i++) {
+            reinsert($(headAnimations[i]));
+        }
+    }
+
+    function reinsert(el) {
+        var newone = el.clone(true);
+        el.before(newone);
+        el.remove();
+    }
+
+</script>
+
+{% include cookie-consent.html %}
+
+</body>
+</html>

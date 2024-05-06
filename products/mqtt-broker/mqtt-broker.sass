@@ -1,0 +1,507 @@
+#mqtt-broker
+  section
+    background: none
+  &:not(.open-nav):not(.flip-nav)
+    header
+      &::after
+        opacity: 0
+  #hero
+    height: 100vh
+    padding-top: 0
+    position: relative
+    overflow: hidden
+    background-image: url("/images/mqtt-broker/product/tbmq-main.png")
+    #hero-content
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-content: center
+      background-color: rgba(0,0,0,0.72)
+      flex-wrap: wrap
+      .tbmq-title
+        margin-bottom: 20px
+        font-size: 52px
+        font-weight: 400
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+        line-height: 85px
+        letter-spacing: 0.15px
+      .tbmq-description
+        margin-bottom: 40px
+        font-size: 20px
+        line-height: 32px
+        letter-spacing: 0.15px
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+        width: 100%
+        padding: 0 25% 0 25%
+      .action
+        line-height: 24px
+        font-size: 18px
+        padding: 8px 20px 8px 20px
+        border: 2px solid white
+        background-color: transparent
+        transition: 0.6s
+        &:hover
+          background-color: white
+          color: #1F8B4D
+      .paas-arrow
+        position: fixed
+        bottom: 40px
+        left: 0
+        right: 0
+        margin: auto
+        width: 40px
+        height: 40px
+        opacity: 1
+        z-index: 24
+        color: #fff
+        a
+          color: #fff
+      &.arrow-hidden
+        .paas-arrow
+          display: none
+
+  #tbmqContent
+    width: 100%
+    color: #212924
+
+    h1
+      font-weight: 600
+      text-align: center
+      font-size: 32px
+      line-height: 52px
+      a
+        font-weight: 600
+        font-size: 32px
+    h2, h3.item-heading
+      font-weight: 500
+      line-height: 54px
+      font-size: 36px
+    h3:not(.item-heading)
+      font-size: 32px
+      font-weight: 600
+      text-align: center
+    h4
+      font-size: 24px
+      font-weight: 500
+    p
+      color: #757C76
+      font-size: 18px
+      font-weight: normal
+      line-height: 27px
+      margin: 4px 0 18px
+    a
+      color: #1F8B4D
+      font-weight: 500
+      font-size: 18px
+
+    #top-features
+      margin-bottom: 24px
+      #cards
+        display: flex
+        flex-wrap: wrap
+        background-color: #FFFFFF
+        padding: 72px 40% 0 40%
+        justify-content: center
+        margin-right: -50%
+        margin-left: -50%
+        &>div
+          margin-bottom: 36px
+          &.col-lg-6
+            padding: 0 18px
+            max-width: 33%
+          .block
+            padding: 50px
+            float: left
+            width: 100%
+            height: 100%
+            background: white
+            border-radius: 6px
+            display: unset
+            div
+              width: 100%
+              .title
+                margin-bottom: 6px
+                line-height: 33px
+              p
+                margin-top: 10px
+                text-align: justify
+            img
+              height: fit-content
+              margin: 0 0 18px
+
+    #scenarios
+      margin-bottom: 240px
+      .block
+        display: flex
+        gap: 100px
+        justify-content: center
+        align-items: center
+        .feature-des
+          flex: 1 0 50%
+          width: 100%
+          h3
+            font-size: 48px
+            color: #FFFFFF
+        .feature-details
+          width: 100%
+          flex: 1 0 50%
+          p
+            font-size: 20px
+            color: rgba(255, 255, 255, 0.8)
+        .image-container
+          flex: 1 0 50%
+          padding: 24px
+          img
+            width: 100%
+        .description
+          flex: 1 0 45%
+          padding: 24px
+          border-radius: 12px
+          background: #FFFFFF
+          span
+            font-size: 20px
+            line-height: 32px
+            color: rgba(0, 0, 0, 0.54)
+            font-weight: 400
+        .fan-title
+          display: flex
+          justify-content: space-between
+          margin-bottom: 12px
+          a
+            font-size: 24px
+            font-weight: 500
+            color: rgba(0, 0, 0, 0.87)
+            &:hover
+              color: #1F8B4D
+
+    #middle-features
+      margin-bottom: 24px
+      main
+        padding-top: 175px
+        display: flex
+        flex-direction: column
+        gap: 100px
+        .row
+          display: flex
+          align-items: center
+          justify-content: space-between
+          gap: 24px
+          .col-lg-6
+            max-width: calc(50% - 12px)
+            .block
+              h4
+                font-size: 42px
+                padding-bottom: 60px
+                line-height: 60px
+              p
+                font-size: 20px
+                text-align: justify
+              img
+                width: 100%
+
+    #installation-options
+      margin-bottom: 24px
+      main
+        .row
+          display: flex
+          align-items: center
+          justify-content: space-between
+          //background: #F2F8F5FF
+          .col-lg-6
+            max-width: 50%
+            .block
+              display: flex
+              flex-direction: column
+              gap: 24px
+              h4
+                line-height: 60px
+                font-size: 42px
+              p
+                margin-top: 10px
+                font-size: 20px
+                text-align: justify
+              .arrow-top-right
+                color: #FFFFFF
+                position: relative
+                &::after
+                  content: ''
+                  display: block
+                  height: 24px
+                  width: 24px
+                  mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+                  -webkit-mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+                  mask-size: cover
+                  -webkit-mask-size: cover
+                  background-color: #FFFFFF
+                  position: absolute
+                  top: 50%
+                  transform: translateY(-50%)
+                  transition: 0.3s
+                  right: 16px
+              .install-tbmq
+                width: 190px
+                line-height: 40px
+                font-size: 18px
+                padding: 8px 24px 8px 24px
+                border: 1px solid white
+                border-radius: 8px
+                background-color: #1F8B4D !important
+                color: #FFFFFF
+                transition: 0.6s
+                &:hover
+                  background-color: rgba(0,0,0,.12)
+                .button
+                  background: #1F8B4D !important
+            .options
+              display: flex
+              justify-content: space-between
+              gap: 24px
+
+    #bottom-features
+      margin-bottom: 24px
+      h3
+        font-size: 48px
+        padding-top: 200px
+      #cards
+        display: flex
+        flex-wrap: wrap
+        padding: 72px 50% 28px
+        justify-content: center
+        margin-right: -50%
+        margin-left: -50%
+        &>div
+          margin-bottom: 36px
+          &.col-lg-6
+            padding: 0 18px
+            max-width: 50%
+          .block
+            padding: 48px
+            float: left
+            width: 100%
+            height: 100%
+            background: white
+            border-radius: 6px
+            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
+            display: unset
+            div
+              width: 100%
+              .title
+                color: rgba(0, 0, 0, 0.87)
+                margin-bottom: 6px
+                line-height: 33px
+                &:hover
+                  color: #1F8B4D
+              p
+                margin-top: 10px
+            img
+              height: fit-content
+              margin: 0 0 18px
+
+    #get-started
+      padding-bottom: 235px
+      main
+        .row
+          padding-top: 150px
+          .container
+            padding: 24px 100px 24px 100px
+            text-align: center
+            .block
+              h4
+                margin-bottom: 48px
+                font-size: 48px
+                color: #FFFFFF
+              p
+                margin-bottom: 24px
+                color: rgba(255, 255, 255, 0.8)
+              .arrow-top-right
+                color: #1F8B4D
+                position: relative
+                &::after
+                  content: ''
+                  display: block
+                  height: 24px
+                  width: 24px
+                  mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+                  -webkit-mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+                  mask-size: cover
+                  -webkit-mask-size: cover
+                  background-color: #1F8B4D
+                  position: absolute
+                  top: 50%
+                  transform: translateY(-50%)
+                  transition: 0.3s
+                  right: 16px
+              .action
+                width: 180px
+                line-height: 40px
+                font-size: 18px
+                text-align: left
+                font-weight: 500
+                padding: 6px 24px 6px 24px
+                border: 1px solid white
+                border-radius: 8px
+                background-color: #FFFFFF !important
+                color: #1F8B4D
+                transition: 0.6s
+
+    #latest-news
+      main
+        max-width: 1500px
+        margin-bottom: 24px
+        h3
+          font-size: 48px
+          padding: 60px
+        #cards
+          display: flex
+          justify-content: center
+          gap: 36px
+          &>div
+            margin-bottom: 36px
+            &.col-lg-6
+              max-width: calc(50% - 24px)
+            .block
+              width: 100%
+              height: 100%
+              background: white
+              border-radius: 6px
+              box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
+              display: flex
+              flex-direction: column
+              gap: 24px
+              justify-content: flex-start
+              .content
+                display: flex
+                flex-direction: column
+                gap: 24px
+                padding: 0 24px 0 24px
+                .tags
+                  display: flex
+                  flex-direction: row
+                  gap: 10px
+                  justify-content: flex-start
+                  a
+                    width: fit-content
+                    background: #1F8B4D0F
+                    padding: 5px 16px 6px 16px
+                    border-radius: 6px
+                    font-size: 16px
+                    cursor: pointer
+                    color: rgba(0, 0, 0, 0.87)
+                .title
+                  font-size: 24px
+                  line-height: 32px
+                  color: rgba(0, 0, 0, 0.87)
+                  &:hover
+                    color: #1F8B4D
+                p
+                  margin-top: 10px
+              .image-container
+                a
+                  width: 100%
+                  height: 100%
+                img
+                  height: fit-content
+                  width: 100%
+                  &:hover
+                    background: rgba(0, 0, 0, 0.38)
+
+    #background
+      z-index: -1
+      position: absolute
+      left: 50%
+      div
+        position: absolute
+        -ms-transform: skewY(-6deg) skewX(6deg)
+        transform: skewY(-6deg) skewX(6deg)
+        width: 436px
+        height: 90px
+        &.main1
+          top: 200px
+          width: 2560px
+          height: 1400px
+          left: -1280px
+          background-color: #00240F
+        &.small1
+          top: 90px
+          right: -1000px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small2
+          right: -1200px
+          top: -7px
+          background-color: #1F8B4D
+        &.main2
+          top: -129px
+          width: 2560px
+          height: 500px
+          left: -1280px
+          background-color: #f2f8f5
+        &.small3
+          top: 250px
+          right: -1020px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small4
+          top: 286px
+          right: -1200px
+          background-color: #1F8B4D
+        &.main3
+          top: 60px
+          width: 2560px
+          height: 1235px
+          left: -1280px
+          background-color: #1F8B4D0F
+        &.small5
+          top: 150px
+          left: -1200px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small6
+          top: 90px
+          left: -1050px
+          background-color: #1F8B4D
+        &.main4
+          top: 60px
+          width: 2560px
+          height: 500px
+          left: -1280px
+          background-color: #00240F
+        &.small7
+          top: 450px
+          right: -1000px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small8
+          top: 485px
+          right: -1200px
+          background-color: #1F8B4D
+
+
+  .header-animation
+    max-width: 100%
+    opacity: 0
+    transform: translate3d(0, 45px, 0)
+    animation-name: slideup-in
+    animation-duration: 600ms
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    animation-fill-mode: forwards
+
+  .header-animation:nth-child(1)
+    animation-delay: 0ms
+  .header-animation:nth-child(2)
+    animation-delay: 300ms
+  .header-animation:nth-child(3)
+    animation-delay: 600ms
+  .header-animation:nth-child(4)
+    animation-delay: 900ms
+  .header-animation:nth-child(5)
+    animation-delay: 1200ms
+
+  @keyframes slideup-in
+    from
+      opacity: 0
+      transform: translate3d(0, 45px, 0)
+    to
+      opacity: 1
+      transform: translate3d(0, 0, 0)
