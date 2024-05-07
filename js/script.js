@@ -17,10 +17,6 @@ function newDOMElement(tag, className, id){
 	return el;
 }
 
-function checkGTagDataLayer() {
-	return typeof window.dataLayer === "undefined" || !window.dataLayer.push;
-}
-
 function px(n){
 	return n + 'px';
 }
