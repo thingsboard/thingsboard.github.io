@@ -181,6 +181,19 @@ a
         box-shadow: unset
         background-color: #fff
 
+#home, #thingsboard-paas, #thingsboard-pe
+  #hero
+    .achievement
+      position: absolute
+      top: 90px
+      right: 20px
+      z-index: 100
+      .achieve
+        width: 100%
+        height: auto
+        @media (max-width: 768px)
+          width: 60px
+
 header
   position: fixed
   top: 0
@@ -208,6 +221,16 @@ header
     display: flex
     height: 100%
     align-items: center
+
+  .head-buttons
+    display: flex
+    flex-direction: row
+    .n-button
+      width: 110px
+      padding: 0
+      display: flex
+      align-items: center
+      justify-content: center
 
   .head-menu
     height: inherit
@@ -393,15 +416,9 @@ header
           color: #2A7DEC
 
   .support-ukraine
-    position: relative
-    display: block
-    height: 80px
     padding-right: 20px
     img
-      height: 32px
-    p
-      color: #000
-      font-size: 12px
+      height: 31px
   .logo
     position: relative
     float: left
@@ -417,57 +434,55 @@ header
     background-repeat: no-repeat
     filter: unset
 
-ul
-  li
-    &.active~.indicator
-      transition-delay: 0s
-      transition-duration: 0.3s
-      .line
-        transition-delay: 0s
-        transition-duration: 0.3s
-        width: 100%
-        left: 0
-        opacity: 1
-      .head-arrow
-        transition-delay: 0.1s
-        transition-duration: 0s
-        opacity: 1
-  .indicator
-    width: 0
-    left: 0
-    border-radius: 2px
-    position: absolute
-    height: 4px
-    bottom: -4px
+.indicator.active
+  transition-delay: 0s
+  transition-duration: 0.3s
+  .line
     transition-delay: 0s
     transition-duration: 0.3s
-    z-index: -1
-    padding: 0 14px
-    transition-property: none
-    &.left-transition
-      transition-property: left
+    width: 100%
+    left: 0
+    opacity: 1
+  .head-arrow
+    transition-delay: 0.1s
+    transition-duration: 0.3s
+    opacity: 1
+.indicator
+  width: 0
+  left: 0
+  border-radius: 2px
+  position: absolute
+  height: 4px
+  bottom: -4px
+  transition-delay: 0s
+  transition-duration: 0.3s
+  z-index: -1
+  padding: 0 14px
+  transition-property: none
+  &.left-transition
+    transition-property: left
 
-    .head-arrow
-      position: absolute
-      border-left: 4px solid transparent
-      border-right: 4px solid transparent
-      border-bottom: 4px solid #2A7DEC
-      width: 8px
-      height: 100%
-      left: calc(50% - 4px)
-      bottom: 4px
-      opacity: 0
-      transition-delay: 0s
-      transition-duration: 0.3s
+  .head-arrow
+    position: absolute
+    border-left: 4px solid transparent
+    border-right: 4px solid transparent
+    border-bottom: 4px solid #2A7DEC
+    width: 8px
+    height: 100%
+    left: calc(50% - 4px)
+    bottom: 4px
+    opacity: 0
+    transition-delay: 0s
+    transition-duration: 0.3s
 
-    .line
-      position: relative
-      background-color: #2A7DEC
-      width: 0
-      height: 100%
-      left: 50%
-      opacity: 0
-      transition-duration: 0.3s
+  .line
+    position: relative
+    background-color: #2A7DEC
+    width: 0
+    height: 100%
+    left: 50%
+    opacity: 0
+    transition-duration: 0.3s
 
 .n-button
   font-size: 18px
@@ -489,7 +504,6 @@ ul
 
     &:hover
       border: solid 2px #212529
-      padding: 9px 10px
       text-decoration: none
 
   &.price
@@ -510,7 +524,8 @@ ul
 
 .burger
   position: absolute
-  top: 16px
+  top: 50%
+  transform: translateY(-50%)
   right: 22px
   display: none
   filter: unset
@@ -519,7 +534,6 @@ ul
   width: 47px
   background-size: cover
   @media screen and (max-width: 1024px)
-    top: 21px
     height: 37px
     width: 37px
     background-image: url(/images/s-burger-icon.svg)
@@ -894,6 +908,9 @@ dd
       .logo, .burger
         filter: unset
 
+      .head-buttons
+        display: flex
+
       .head-menu
         display: block
         margin: 70px -30px 0
@@ -921,8 +938,6 @@ dd
                 width: calc(100% + 94px)
 
       .n-button
-        display: inline-block
-
         &.try
           border: solid 1px #EBEBEB
           color: #212529
@@ -947,7 +962,7 @@ dd
       height: 100%!important
       z-index: 10000
       .logo-burger
-        height: 78px
+        height: 98px
         position: fixed
         z-index: 2
         background-color: #fff
@@ -959,6 +974,9 @@ dd
         background-image: url(/images/close-icon.svg)
         @media screen and (max-width: 1024px)
           background-image: url(/images/s-close-icon.svg)
+
+      .head-buttons
+        display: flex
 
       .head-menu
         display: block
@@ -974,11 +992,11 @@ dd
             display: none
             top: unset
 
-      .n-button
-        display: inline-block
-
     .burger
       display: block
+
+    .head-buttons
+      display: none
 
     .head-menu
       display: none
@@ -1026,8 +1044,8 @@ dd
                 &.small-link
                   margin-bottom: 15px
 
-        .indicator
-          display: none
+      .indicator
+        display: none
 
     .n-button
       display: none

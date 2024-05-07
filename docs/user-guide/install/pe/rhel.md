@@ -14,23 +14,12 @@ description: Installing ThingsBoard PE on CentOS/RHEL
 
 ### Prerequisites
 
-This guide describes how to install ThingsBoard on RHEL/CentOS 7/8. 
+This guide describes how to install ThingsBoard on RHEL 8/9, CentOS 8/9, or their derivatives (Alma, Rocky, Oracle, etc). 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
-To run ThingsBoard and PostgreSQL on a single machine you will need at least 1Gb of RAM.
+To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
 Before continue to installation execute the following commands in order to install necessary tools:
-
-**For CentOS 7:**
-
-```bash
-# Install wget
-sudo yum install -y nano wget
-# Add latest EPEL release for CentOS 7
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-
-```
-{: .copy-code}
 
 **For CentOS 8:**
 
@@ -39,7 +28,16 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 sudo yum install -y nano wget
 # Add latest EPEL release for CentOS 8
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+```
+{: .copy-code}
 
+**For CentOS 9:**
+
+```bash
+# Install wget
+sudo yum install -y nano wget
+# Add latest EPEL release for CentOS 9
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 ```
 {: .copy-code}
 
@@ -120,7 +118,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 6. [Optional] Memory update for slow machines (4GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
@@ -142,7 +140,7 @@ sudo firewall-cmd --reload
 {% include templates/start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
 ### Step 9. Install ThingsBoard WebReport component

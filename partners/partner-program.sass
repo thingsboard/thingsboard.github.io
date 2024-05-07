@@ -42,21 +42,20 @@ section
             font-size: 22px
             line-height: 40px
         #backg-partners-matrix
-            position: relative
-            //margin-left: -20px
-            //margin-right: -20px
-            //width: calc(100% + 40px)
+            z-index: -1
+            position: absolute
             width: 100%
+            height: 100%
             .platinum, .gold, .silver
                 padding: 0 2px
                 width: 20%
+                height: 100%
                 position: absolute
                 z-index: -1
-                top: 127px
+                top: 0
             .coln
-                height: 1264px
+                height: 100%
                 border-radius: 6px
-                //background: white
             .platinum
                 right: 0%
                 .coln
@@ -109,14 +108,13 @@ section
                 line-height: 30px
                 background-color: unset
                 tr
-                    height: 150px
+                    height: 110px
                     th
                         width: 20%
                         text-align: center
                         vertical-align: center
                         font-weight: 600
                         font-size: 11px
-                        padding: 0 0 40px
                         &:nth-child(4n)
                             color: white
                             img
@@ -127,7 +125,7 @@ section
                     tr th img
                         filter: unset
                         //filter: saturate(0) brightness(3)
-                        width: 100%
+                        width: 80%
                         max-width: 100px
             tbody
                 tr
@@ -146,14 +144,16 @@ section
                         font-weight: 600
                         font-size: 11px
                         .button
-                            width: 60%
+                            width: 90%
+                            height: 44px
+                            padding: 10px 0
                         img
                             width: 32px
                     &.table-price td
-                        font-size: 22px
+                        font-size: 15px
                         font-weight: 800
                         .period
-                            font-size: 18px
+                            font-size: 11px
                             font-weight: normal
                             display: unset
                     &.title th
@@ -254,13 +254,13 @@ section
 
     #background
         position: absolute
-        top: 570px
+        top: 300px
         left: 50%
         z-index: -1
         .main
             position: absolute
             width: 2560px
-            height: 1075px
+            height: 1550px
             top: 32px
             //top: -289px
             left: -1280px
@@ -333,9 +333,11 @@ section
                     thead
                         font-size: 20px
                         tr
+                            height: 110px
                             th
                                 width: 20%
                                 font-size: 20px
+                                padding: 0 0 10px
                             td
                                 width: 40%
                     tbody
@@ -347,6 +349,12 @@ section
                                 font-size: 20px
                                 img
                                     width: unset
+                                .button
+                                    width: 75%
+                            &.table-price td
+                                font-size: 20px
+                                .period
+                                    font-size: 16px
 
 @media screen and (min-width: 1025px)
     #partner-program
@@ -364,11 +372,15 @@ section
                 table
                     td, th
                         margin: 0 14px
-
-
-@media screen and (min-width: 1250px)
-    //#partner-program
-    //    #partnerProgramContent
+                    tbody
+                        tr
+                            td
+                                .button
+                                    width: 60%
+                            &.table-price td
+                                font-size: 22px
+                                .period
+                                    font-size: 18px
 
 @media screen and (min-width: 1500px)
     #partner-program

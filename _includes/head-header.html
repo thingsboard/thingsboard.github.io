@@ -257,8 +257,8 @@
     </script>
     <script async defer>
         function _gaLt(event) {
-            /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
-            if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
+            /* If GTM is blocked or not loaded, or not main|middle|touch click then don't track */
+            if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || (event.which != 1 && event.which != 2)) {
                 return;
             }
             var el = event.srcElement || event.target;
@@ -282,18 +282,19 @@
                     };
 
                     if (target) {
-                        ga(
-                            "send", "event", "Outgoing Links", link,
-                            document.location.pathname + document.location.search
-                        );
+                        gtag("event", "outgoing_links", {
+                            "event_category": "Outgoing Links",
+                            "event_label": link,
+                            "value": document.location.pathname + document.location.search
+                        });
                     } else {
                         event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-                        ga(
-                            "send", "event", "Outgoing Links", link,
-                            document.location.pathname + document.location.search, {
-                                "hitCallback": hitBack
-                            }
-                        );
+                        gtag("event", "outgoing_link", {
+                            "event_category": "Outgoing Links",
+                            "event_label": link,
+                            "value": document.location.pathname + document.location.search,
+                            "event_callback": hitBack
+                        });
 
                         setTimeout(hitBack, 1000);
                     }
@@ -310,21 +311,12 @@
             document.body.attachEvent("on" + _gaLtEvt, _gaLt)
         });
     </script>
-    <script async defer>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-88383331-1', 'auto');
-        ga('send', 'pageview');
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TGBNQXN');
+    function gtag(){dataLayer.push(arguments)};
     </script>
     <script async defer>
         function Burger() {
@@ -347,7 +339,7 @@
             let menuElement = $('nav.head-menu > ul');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             let menuItems = $('nav.head-menu > ul > li');
-            let indicator = $('nav.head-menu > ul > div.indicator');
+            let indicator = $('nav.head-menu > ul + div.indicator');
             let subMenuActive = false;
             menuElement.on('mouseleave', function (event) {
                 if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
@@ -356,7 +348,7 @@
                             subMenuActive = false;
                             submenuContainer.removeClass('active bounds-transition');
                             menuItems.removeClass('active');
-                            indicator.removeClass('left-transition');
+                            indicator.removeClass('left-transition active');
                         }
                     }, 200)
                 }
@@ -366,7 +358,7 @@
                     subMenuActive = false;
                     submenuContainer.removeClass('active bounds-transition');
                     menuItems.removeClass('active');
-                    indicator.removeClass('left-transition');
+                    indicator.removeClass('left-transition active');
                 }
             });
             menuItems.each(function() {
@@ -379,28 +371,38 @@
                             submenus.css('display', 'none');
                             menuItems.removeClass('active');
                             item.addClass('active');
-                            let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
-                            targetSubMenu.css('display', 'block');
-                            submenuContainer.css('overflow', 'visible');
-                            let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
-                            let left = item.position().left + offset;
-                            let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
-                            if (windowOverflow < 0) {
-                                left += windowOverflow;
-                            }
-                            submenuContainer.css('left', left + 'px');
-                            if (!subMenuActive) {
-                                submenuContainer.addClass('active');
-                                subMenuActive = true;
+                            if (subMenuId) {
+                                let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
+                                targetSubMenu.css('display', 'block');
+                                submenuContainer.css('overflow', 'visible');
+                                let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                                let left = item.position().left + offset;
+                                let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
+                                indicator.css('opacity', 1);
+                                if (windowOverflow < 0) {
+                                    left += windowOverflow;
+                                }
+                                submenuContainer.css('left', left + 'px');
+                                if (!subMenuActive) {
+                                    submenuContainer.addClass('active');
+                                    indicator.addClass('active');
+                                    subMenuActive = true;
+                                } else {
+                                    submenuContainer.addClass('bounds-transition');
+                                    indicator.addClass('left-transition active');
+                                }
+                                indicator.css('left', item.position().left);
+                                indicator.css('width', item.outerWidth());
+                                submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
+                                submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
+                                submenuContainer.css('overflow', 'hidden');
                             } else {
-                                submenuContainer.addClass('bounds-transition');
-                                indicator.addClass('left-transition');
+                                if (subMenuActive) {
+                                    submenuContainer.removeClass('active');
+                                    subMenuActive = false;
+                                }
+                                indicator.css('opacity', 0);
                             }
-                            indicator.css('left', item.position().left);
-                            indicator.css('width', item.outerWidth());
-                            submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
-                            submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
-                            submenuContainer.css('overflow', 'hidden');
                         }
                     }, 100)
                 });
@@ -494,12 +496,12 @@
     </script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGBNQXN"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
     <div class="logo-burger">
-        <a href="/support-ukraine/" class="support-ukraine">
-            <p><i class="fa fa-ban"></i>Stop the war</p>
-            <img src="/images/animated-ukraine-flag.gif" alt="Stand with Ukraine flag" width="44" height="32">
-            <p>Support Ukraine</p>
+        <a href="https://u24.gov.ua/" target="_blank" class="support-ukraine">
+            <img src="/images/support-ukraine-banner.webp" alt="Stand with Ukraine flag" width="48" height="31">
         </a>
         <a href="/" class="logo" aria-label="Link to homepage"></a>
         <button onclick="Burger()" class="burger"  aria-label="Burger menu"></button>
@@ -531,8 +533,12 @@
             <li class="nav-docs" data-submenu-id="nav-docs">
                 <span class="main-menu-link" onclick="listburg('nav-docs')">Docs</span>
             </li>
-            <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
+            <li class="nav-blog">
+                <a class="main-menu-link" id="blog-link" href="/blog/" style="cursor: pointer;">Blog</a>
+            </li>
         </ul>
+        <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
+
         <div class="sub-menu-container">
             <div id="nav-products" class="centered-sub">
                 <ul class="sub-menu products">
@@ -925,7 +931,7 @@
                                     <span class="item-heading">Media Kit</span>
                                 </div>
                             </a>
-                            <a class="small-link" href="https://blog.thingsboard.io/">
+                            <a class="small-link" href="/blog/">
                                 <img src="/images/blog-s-icon.svg" alt="Blog icon" width="24" height="24" loading="lazy">
                                 <div class="sub-text">
                                     <span class="item-heading">Blog</span>
@@ -963,8 +969,8 @@
             </div>
         </div>
     </nav>
-    <div>
-        <a href="/installations/" class="n-button try">Try it now</a>
-        <a href="/pricing/" class="n-button price">Pricing</a>
+    <div class="head-buttons">
+        <a id="Menu_TryItNow" href="/installations/" class="n-button try gtm_button">Try it now</a>
+        <a id="Menu_Pricing" href="/pricing/" class="n-button price gtm_button">Pricing</a>
     </div>
 </header>

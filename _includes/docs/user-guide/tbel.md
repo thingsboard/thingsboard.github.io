@@ -1457,7 +1457,6 @@ a Date object as a string, using locale settings and Id time zone.
 **Examples:**
 
 ```java
-```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");         //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin"
 var iso = d.toISOString()                                       //  return "2023-08-06T02:04:05Z"
 var local1 = d.toLocaleString("UTC");                           //  return "2023-08-06 05:04:05" (Locale: "UTC",   ZoneId Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00";
@@ -1527,3 +1526,66 @@ var local2 =d.toLocaleString("en-US", optionsStr);                              
 var local3 =d.toLocaleString("de", optionsStr);                                         // return  "Sonntag, 6. August 2023 um 00:04:05 Nordamerikanische Ostküsten-Sommerzeit"
 ```
 {: .copy-code}
+
+
+####  encodeURI: 
+
+The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format ***%XX***, left-padded with 0 if necessary. Because lone surrogates in UTF-16 do not encode any valid Unicode character.
+
+The Tbel library uses most of the standard JavaScript methods from the [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
+
+*encodeURI()* escapes all characters except:
+
+```java
+A–Z a–z 0–9 - _ . ! ~ * ' ( ) ; / ? : @ & = + $ , #
+```
+
+**Syntax:**
+
+*String encodeURI(String uri)*
+
+**Parameters:**
+
+<ul>
+  <li><b>uri:</b> <code>string</code> - A string to be encoded as a URI.</li>
+</ul>
+
+**Return value:**
+
+A new string representing the provided string encoded as a URI.
+
+**Examples:**
+
+```java
+var uri = "https://mozilla.org/path with spaces/?param1=Київ 1&param2=Україна2";
+var encodedData = encodeURI(uri); // return "https://mozilla.org/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02"
+```
+{: .copy-code}
+
+####  decodeURI:
+
+The decodeURI() function decodes a Uniform Resource Identifier (URI) previously created by encodeURI() or a similar routine.
+
+The Tbel library uses most of the standard JavaScript methods from the [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
+
+**Syntax:**
+
+*String decodeURI(String uri)*
+
+**Parameters:**
+
+<ul>
+  <li><b>uri:</b> <code>string</code> - A complete, encoded Uniform Resource Identifier.</li>
+</ul>
+
+**Return value:**
+
+A new string representing the unencoded version of the given encoded Uniform Resource Identifier (URI).
+
+**Examples:**
+
+```java
+var uri = "https://mozilla.org/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02";
+var decodedData = encodeURI(uri); // return "https://mozilla.org/path with spaces/?param1=Київ 1&param2=Україна2"
+```
+{: .copy-code} 

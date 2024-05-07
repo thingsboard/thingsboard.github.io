@@ -382,7 +382,7 @@ client.on('message', function (topic, message) {
 });
 
 function publishTelemetry() {
-    client.publish('v1/devices/me/telemetry', JSON.stringify({'latitude': gpsData[index], 'longitude': gpsData[index+1], 'coordinates': polygon,"speed": speed, "status": status, "radius": circle}));
+    client.publish('v1/devices/me/telemetry', JSON.stringify({'latitude': gpsData[index], 'longitude': gpsData[index+1], 'polygonCoordinates': polygon,"speed": speed, "status": status, "circleRadius": circle}));
     stopTime++;
     runTime++;
 

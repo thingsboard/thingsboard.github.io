@@ -18,6 +18,7 @@ To install using pip:
 ```bash
 pip3 install tb-mqtt-client
 ```
+{:.copy-code}
 
 ## Getting Started
 
@@ -28,7 +29,7 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 
 telemetry = {"temperature": 41.9, "enabled": False, "currentFirmwareVersion": "v1.2.2"}
-client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 # Connect to ThingsBoard
 client.connect()
 # Sending telemetry without checking the delivery status
@@ -41,6 +42,7 @@ success = result.get() == TBPublishInfo.TB_ERR_SUCCESS
 client.disconnect()
 
 ```
+{:.copy-code}
 
 ### Connection using TLS
 
@@ -59,6 +61,7 @@ client.connect(tls=True,
 client.disconnect()
 
 ```
+{:.copy-code}
 
 ## Using Device APIs
 
@@ -77,7 +80,7 @@ from tb_device_mqtt import TBDeviceMqttClient
 def callback(result):
     print(result)
 
-client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.connect()
 client.subscribe_to_attribute("uploadFrequency", callback)
 client.subscribe_to_all_attributes(callback)
@@ -85,6 +88,7 @@ while True:
     sleep(1)
 
 ```
+{:.copy-code}
 
 #### Telemetry pack sending
 
@@ -96,7 +100,7 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 
 telemetry_with_ts = {"ts": int(round(time() * 1000)), "values": {"temperature": 42.1, "humidity": 70}}
-client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 # we set maximum amount of messages sent to send them at the same time. it may stress memory but increases performance
 client.max_inflight_messages_set(100)
 client.connect()
@@ -110,6 +114,7 @@ print("Result", str(result))
 client.disconnect()
 
 ```
+{:.copy-code}
 
 #### Request attributes from server
 
@@ -126,7 +131,7 @@ def on_attributes_change(result, exception):
     else:
         print(result)
 
-client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.connect()
 client.request_attributes(["configuration","targetFirmwareVersion"], callback=on_attributes_change)
 
@@ -135,6 +140,8 @@ while True:
     sleep(1)
 
 ```
+{:.copy-code}
+
 #### Respond to server RPC call
 
 If you want to send a response for some RPC request, you can use the logic like in the code below.  
@@ -155,7 +162,7 @@ def on_server_side_rpc_request(client, request_id, request_body):
     elif request_body["method"] == "getMemoryUsage":
         client.send_rpc_reply(request_id, {"Memory": virtual_memory().percent})
 
-client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
 client.connect()
 
@@ -164,6 +171,8 @@ while True:
     sleep(1)
 
 ```
+{:.copy-code}
+
 ## Using Gateway APIs
 
 **TBGatewayMqttClient** extends **TBDeviceMqttClient**, thus has access to all its APIs as a regular device.   
@@ -178,7 +187,7 @@ from time import time
 from tb_gateway_mqtt import TBGatewayMqttClient
 
 
-gateway = TBGatewayMqttClient("127.0.0.1", "GATEWAY_TEST_TOKEN")
+gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
 gateway.gw_connect_device("Test Device A1")
 
@@ -189,7 +198,7 @@ gateway.gw_disconnect_device("Test Device A1")
 gateway.disconnect()
 
 ```
-
+{:.copy-code}
 
 ####  Request attributes from server
 
@@ -206,7 +215,7 @@ def callback(result, exception):
     else:
         print(result)
 
-gateway = TBGatewayMqttClient("127.0.0.1", "TEST_GATEWAY_TOKEN")
+gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
 gateway.gw_request_shared_attributes("Test Device A1", ["temperature"], callback)
 
@@ -214,6 +223,7 @@ while True:
     sleep(1)
 
 ```
+{:.copy-code}
 
 #### Respond to server RPC call
 
@@ -222,7 +232,6 @@ The following example will connect to the ThingsBoard local instance and wait fo
 When RPC request will be received, client will send response to ThingsBoard with data for device with name **Test Device A1**.  
 
 ```python
-
 from time import sleep
 from psutil import cpu_percent, virtual_memory
 from tb_gateway_mqtt import TBGatewayMqttClient
@@ -242,7 +251,7 @@ def rpc_request_response(client, request_id, request_body):
     else:
         print('Unknown method: ' + method)
 
-gateway = TBGatewayMqttClient("127.0.0.1", "TEST_GATEWAY_TOKEN")
+gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
 # now rpc_request_response will process rpc requests from servers
 gateway.gw_set_server_side_rpc_request_handler(rpc_request_response)
@@ -253,7 +262,7 @@ while True:
     sleep(1)
 
 ```
-
+{:.copy-code}
 
 ## Other Examples
 

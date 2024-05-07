@@ -171,87 +171,60 @@ Then, connector will subscribe to a list of topics using topic filters from the 
             }
          }
       }
-   ],
-   "requestsMapping":{
-      "connectRequests":[
-         {
-            "topicFilter":"sensor/connect",
-            "deviceInfo":{
-               "deviceNameExpressionSource":"message",
-               "deviceNameExpression":"${serialNumber}",
-               "deviceProfileExpressionSource":"constant",
-               "deviceProfileExpression":"Thermometer"
-            }
-         },
-         {
-            "topicFilter":"sensor/+/connect",
-            "deviceInfo":{
-               "deviceNameExpressionSource":"topic",
-               "deviceNameExpression":"(?<=sensor/)(.*?)(?=/connect)",
-               "deviceProfileExpressionSource":"constant",
-               "deviceProfileExpression":"Thermometer"
-            }
-         }
-      ],
-      "disconnectRequests":[
-         {
-            "topicFilter":"sensor/disconnect",
-            "deviceInfo":{
-               "deviceNameExpressionSource":"message",
-               "deviceNameExpression":"${serialNumber}"
-            }
-         },
-         {
-            "topicFilter":"sensor/+/disconnect",
-            "deviceInfo":{
-               "deviceNameExpressionSource":"topic",
-               "deviceNameExpression":"(?<=sensor/)(.*?)(?=/connect)"
-            }
-         }
-      ],
-      "attributeRequests":[
-         {
-            "retain":false,
-            "topicFilter":"v1/devices/me/attributes/request",
-            "deviceInfo":{
-               "deviceNameExpressionSource":"message",
-               "deviceNameExpression":"${serialNumber}"
-            },
-            "attributeNameExpressionSource":"message",
-            "attributeNameExpression":"${versionAttribute}, ${pduAttribute}",
-            "topicExpression":"devices/${deviceName}/attrs",
-            "valueExpression":"${attributeKey}: ${attributeValue}"
-         }
-      ],
-      "attributeUpdates":[
-         {
-            "retain":true,
-            "deviceNameFilter":".*",
-            "attributeFilter":"firmwareVersion",
-            "topicExpression":"sensor/${deviceName}/${attributeKey}",
-            "valueExpression":"{\"${attributeKey}\":\"${attributeValue}\"}"
-         }
-      ],
-      "serverSideRpc":[
-         {
-            "type":"twoWay",
-            "deviceNameFilter":".*",
-            "methodFilter":"echo",
-            "requestTopicExpression":"sensor/${deviceName}/request/${methodName}/${requestId}",
-            "responseTopicExpression":"sensor/${deviceName}/response/${methodName}/${requestId}",
-            "responseTopicQoS":1,
-            "responseTimeout":10000,
-            "valueExpression":"${params}"
-         },
-         {
-            "type":"oneWay",
-            "deviceNameFilter":".*",
-            "methodFilter":"no-reply",
-            "requestTopicExpression":"sensor/${deviceName}/request/${methodName}/${requestId}",
-            "valueExpression":"${params}"
-         }
-      ]
-   }
+  ],
+  "connectRequests": [
+    {
+      "topicFilter": "sensor/connect",
+      "deviceNameJsonExpression": "${serialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/connect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
+    }
+  ],
+  "disconnectRequests": [
+    {
+      "topicFilter": "sensor/disconnect",
+      "deviceNameJsonExpression": "${serialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/disconnect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
+    }
+  ],
+  "attributeRequests": [
+    {
+      "retain": false,
+      "topicFilter": "v1/devices/me/attributes/request",
+      "topicExpression": "${serialNumber}",
+      "valueExpression": "${sensorModel}"
+    }
+  ],
+  "attributeUpdates": [
+    {
+      "retain": false,
+      "deviceNameFilter": ".*",
+      "attributeFilter": "firmwareVersion",
+      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+    }
+  ],
+  "serverSideRpc": [
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "echo",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "responseTimeout": 10000,
+      "valueExpression": "${params}"
+    },
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "no-reply",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "valueExpression": "${params.hum}::${params.temp}"
+    }
+  ]
 }
 {% endcapture %}
 {% include code-toggle.liquid code=mqttConf params="conf|.copy-code.expandable-20" %}
@@ -660,7 +633,7 @@ ThingsBoard allows to provision device attributes and fetch some of them from th
 You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
-The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
+The "**attributeUpdates**" configuration allows configuring the format of the corresponding attribute request and response messages. 
 
 | **Parameter**    | **Default value**                                   | **Description**                                                                                  |
 |:-----------------|:----------------------------------------------------|--------------------------------------------------------------------------------------------------|
@@ -678,7 +651,7 @@ This section in configuration file looks like:
     {
       "retain": false,
       "deviceNameFilter": ".*",
-      "attributeFilter": "uploadFrequency",
+      "attributeFilter": "firmwareVersion",
       "topicExpression": "sensor/${deviceName}/${attributeKey}",
       "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
     }
@@ -690,7 +663,7 @@ This section in configuration file looks like:
 Run the command below to start the *mosquitto_sub* client, subscribing to the topic "sensor/SN-001/firmwareVersion" of the local broker. Start waiting for new messages from ThingsBoard server to broker.
 
 ```bash
-mosquitto_sub -t sensor/SN-001/firmwareVersion
+mosquitto_sub -h 127.0.0.1 -p 1883 -t sensor/SN-001/firmwareVersion
 ```
 {: .copy-code}
 

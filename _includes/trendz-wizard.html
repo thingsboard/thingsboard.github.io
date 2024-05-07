@@ -31,7 +31,7 @@
           <p class="step__content">Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu</p>
         </div>
       </div>
-      {% include images-gallery.html imageCollection="cloudPlan" max-width="100%" align="space-between" %}
+      {% include images-gallery.html imageCollection="cloudPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
       <div class="modal-wizard__button">
         <a href="https://thingsboard.cloud/billing" target="_blank" onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
       </div>
@@ -55,7 +55,7 @@
             </p>
           </div>
         </div>
-        {% include images-gallery.html imageCollection="selfManagedPlan" max-width="100%" align="space-between" %}
+        {% include images-gallery.html imageCollection="selfManagedPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
         <div class="modal-wizard__button">
           <a href="https://license.thingsboard.io" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">Go to License Portal</a>
         </div>
@@ -133,13 +133,13 @@
     reportTrendzWizrdAction('wizard', plan);
 
     if(plan === 'maker') {
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '10ba4770-e4f4-11ed-aaaa-83bc8f41f932', 'Trendz Analytics Maker', 'OK1GGQ4XLQ')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '10ba4770-e4f4-11ed-aaaa-83bc8f41f932', 'Trendz Analytics Maker', 'R9G5JCVJZG')
     } else if(plan === 'prototype') {
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '2985f1a0-7afd-11ea-951e-b77b877a367b', 'Trendz Analytics Prototype', 'OK1GGQ4XLQ')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '2985f1a0-7afd-11ea-951e-b77b877a367b', 'Trendz Analytics Prototype', 'R9G5JCVJZG')
     } else if(plan === 'startup'){
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '018b7520-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'OK1GGQ4XLQ')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '018b7520-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'R9G5JCVJZG')
     } else if(plan === 'business') {
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '6e3bb4f0-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'OK1GGQ4XLQ')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '6e3bb4f0-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'R9G5JCVJZG')
     }
   }
 
@@ -161,9 +161,13 @@
   }
 
   function reportTrendzWizrdAction(link, product) {
-    if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+    if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !link || !product) {
       return;
     }
-    ga("send", "event", "TrendzWizrdAction", product, link);
+
+    gtag("event", "TrendzWizrdAction", {
+      "event_category": product,
+      "event_label": link
+    });
   }
 </script>

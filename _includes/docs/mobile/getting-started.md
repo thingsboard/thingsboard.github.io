@@ -170,7 +170,7 @@ Next, we will walk through step-by-step how to create a Firebase project, and wi
 
 {% capture difference %}
 **Please note:**
-for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system's mobile settings or specify their own.
+for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system administrator's configuration or specify their own.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -206,7 +206,7 @@ So let's get started:
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
         image: /images/mobile/pe/firebase-new-project-10-ce.png,
-        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box. Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+        title: Sign in to ThingsBoard as a system administrator, open the "Settings" page and navigate to the "Notifications" tab. In the "Mobile settings" section, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
@@ -240,7 +240,7 @@ So let's get started:
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
         image: /images/mobile/pe/firebase-new-project-10-pe.png,
-        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the “Notifications” tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box (if you log in as a tenant). Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and uncheck the "Use system mobile settings" box (if you log in as a tenant) in the "Mobile settings" section. Here, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
@@ -253,6 +253,38 @@ So let's get started:
 ### Step 4.2 Add Firebase to your mobile application
 
 To integrate Firebase into the mobile application, you'll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
+
+#### [Only for IOS] Apple app configuration
+
+Upload **APNs authentication key** to Firebase.
+
+- First, create APNs authentication key in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"} using [Apple's official documentation](https://developer.apple.com/help/account/manage-keys/create-a-private-key/){:target="_blank"};
+- Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
+- In "APNs authentication key" click the "Upload" button;
+- Add APNs authentication key and enter "Key ID" and "Team ID" in the corresponding fields;
+- Then click "Upload" button.
+
+{% assign APNsAuthenticationKey = '
+    ===
+        image: /images/mobile/apple-app-configuration-1.png,
+        title: Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
+    ===
+        image: /images/mobile/apple-app-configuration-2.png,
+        title: In "APNs authentication key" section, click the "Upload" button;
+    ===
+        image: /images/mobile/apple-app-configuration-3.png,
+        title: Create "APNs authentication key" in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"} using [Apple&#39;s official documentation](https://developer.apple.com/help/account/manage-keys/create-a-private-key/){:target="_blank"}. Now add this key and enter "Key ID" and "Team ID" in the corresponding fields. Then click "Upload" button;
+    ===
+        image: /images/mobile/apple-app-configuration-4.png,
+        title: APNs authentication key is uploaded.
+'
+%}
+
+The APNs authentication key is uploaded.
+
+{% include images-gallery.liquid imageCollection=APNsAuthenticationKey %}
+
+### Step 4.3 Check project configuration
 
 After successfully completing these steps, make sure that your project contains the following file:
 
@@ -342,10 +374,12 @@ To be familiar with common app features try out our ThingsBoard Live mobile appl
 <br>
 
 <div class="mobile-market-badges">
-    <a href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
+    <a id="Products_MobApp_GetStart_GooglePlay" href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.
+app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
         <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
     </a>
-    <a href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" target="_blank">
+    <a id="Products_MobApp_GetStart_AppStore" href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" 
+target="_blank">
         <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
     </a>
 </div>

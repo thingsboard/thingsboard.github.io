@@ -125,6 +125,6 @@ description:
 
 <section id="bottom">
     <main>
-        <a href="/docs/mobile/getting-started/" class="getting-started">Getting started</a>
+        <a id="Products_MobApp_GetStart" href="/docs/mobile/getting-started/" class="getting-started gtm_button">Getting started</a>
     </main>
 </section>
