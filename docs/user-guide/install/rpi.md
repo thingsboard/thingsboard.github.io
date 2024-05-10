@@ -26,7 +26,7 @@ echo "deb http://deb.debian.org/debian unstable main non-free contrib" | sudo te
 sudo apt update
 
 # Install JAVA
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-17-jdk
 
 #Check installation
 java -version

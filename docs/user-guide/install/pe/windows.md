@@ -109,8 +109,8 @@ The output should be similar to this one:
   ```text
 C:\Program Files (x86)\thingsboard>install.bat --loadDemo
 Detecting Java version installed.
-CurrentVersion 18
-Java 1.8 found!
+CurrentVersion 170
+Java 17 found!
 Installing thingsboard ...
 ...
 ThingsBoard installed successfully!

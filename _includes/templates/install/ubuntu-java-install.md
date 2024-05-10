@@ -2,7 +2,7 @@ ThingsBoard service is running on Java 11. Follow this instructions to install O
 
 ```bash
 sudo apt update
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-17-jdk
 ```
 {: .copy-code}
 
@@ -24,7 +24,7 @@ java -version
 Expected command output is:
 
 ```text
-openjdk version "11.0.xx"
+openjdk version "17.x.xx" 
 OpenJDK Runtime Environment (...)
-OpenJDK 64-Bit Server VM (build ...)
+OpenJDK 64-Bit Server VM (...)
 ```

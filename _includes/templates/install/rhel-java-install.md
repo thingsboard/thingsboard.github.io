@@ -1,7 +1,7 @@
 ThingsBoard service is running on Java 11. Follow this instructions to install OpenJDK 11:
 
 ```bash
-sudo yum install java-11-openjdk
+sudo dnf install java-17-openjdk
 ```
 {: .copy-code}
 
@@ -23,7 +23,7 @@ java -version
 Expected command output is:
 
 ```text
-openjdk version "11.0.xx"
+openjdk version "17.x.xx"
 OpenJDK Runtime Environment (...)
 OpenJDK 64-Bit Server VM (build ...)
 ```
