@@ -1,4 +1,4 @@
-ThingsBoard service is running on Java 11. Follow this instructions to install OpenJDK 11:
+ThingsBoard service is running on Java 17. Follow this instructions to install OpenJDK 17:
 
 ```bash
 sudo apt update
@@ -6,7 +6,7 @@ sudo apt install openjdk-17-jdk
 ```
 {: .copy-code}
 
-Please don't forget to configure your operating system to use OpenJDK 11 by default. 
+Please don't forget to configure your operating system to use OpenJDK 17 by default. 
 You can configure which version is the default using the following command:
 
 ```bash

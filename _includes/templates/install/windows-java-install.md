@@ -1,4 +1,4 @@
-ThingsBoard service is running on Java 11. Follow this instructions to install OpenJDK 11.
+ThingsBoard service is running on Java 17. Follow this instructions to install OpenJDK 17.
 
  * Visit [Open JDK Download Page](https://adoptium.net). Go to "Other platforms and versions", select "Operating System" as "Windows" and "Architecture" as "x64" and download latest **JDK .msi** package. 
  * Run the downloaded MSI package and follow the instructions. 
