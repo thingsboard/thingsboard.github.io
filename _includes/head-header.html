@@ -42,7 +42,7 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
-    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' %}
+    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' or page.url == '/products/thingsboard-pe/install/' %}
     <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/products/' %}
     <link href="/css/products.css" rel="stylesheet">
@@ -208,7 +208,7 @@
         }
 
         var initialScriptsList = [
-            {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
+            {src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css', type: 'css'},
             {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
             {src: 'https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js', type: 'script'},
             {src: '/js/jquery-2.2.0.min.js', type: 'script'},

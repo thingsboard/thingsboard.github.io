@@ -247,6 +247,8 @@ $feature-box-div-margin-bottom: 40px
                                 color: white
                                 img
                                     filter: invert(98%) sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
+                                i
+                                    filter: sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
                     &.micro
                         margin: 100px 0
                         img
@@ -422,6 +424,7 @@ $feature-box-div-margin-bottom: 40px
                 .arrow
                     right: -20px
             .arrow
+                font-size: 13px
                 transform: translate(0px)
                 transition-duration: 0.3s
                 filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
@@ -469,7 +472,8 @@ $feature-box-div-margin-bottom: 40px
                     // left: calc(50% - 60px)
                     left: 33%
                     display: flex
-                    img
+                    img, i
+                        font-size: 24px
                         margin-right: 10px
                         width: unset !important
 
