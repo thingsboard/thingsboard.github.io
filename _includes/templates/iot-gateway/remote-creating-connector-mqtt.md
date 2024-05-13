@@ -38,8 +38,12 @@ Copy the following connector configuration (we will use it later):
       "topicFilter": "data/",
       "converter": {
         "type": "json",
-        "deviceNameJsonExpression": "Demo Device",
-        "deviceTypeJsonExpression": "default",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "constant",
+          "deviceNameExpression": "Demo Device",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
@@ -72,21 +76,37 @@ Copy the following connector configuration (we will use it later):
   "connectRequests": [
     {
       "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${serialNumber}"
+      "deviceInfo": {
+        "deviceNameExpressionSource": "message",
+        "deviceNameExpression": "${serialNumber}",
+        "deviceProfileExpressionSource": "constant",
+        "deviceProfileExpression": "Thermometer"
+      }
     },
     {
       "topicFilter": "sensor/+/connect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
+      "deviceInfo": {
+        "deviceNameExpressionSource": "topic",
+        "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)",
+        "deviceProfileExpressionSource": "constant",
+        "deviceProfileExpression": "Thermometer"
+      }
     }
   ],
   "disconnectRequests": [
     {
       "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${serialNumber}"
+      "deviceInfo": {
+        "deviceNameExpressionSource": "message",
+        "deviceNameExpression": "${serialNumber}"
+      }
     },
     {
       "topicFilter": "sensor/+/disconnect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
+      "deviceInfo": {
+        "deviceNameExpressionSource": "topic",
+        "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+      }
     }
   ],
   "attributeRequests": [],
@@ -109,13 +129,16 @@ To create a connector, follow these steps:
         title: Click "**Connectors configuration**" button on the right panel.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-8-ce.png,
-        title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button.
+        title: Click the "**Add connector**" button.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
-        title: Connector has been successfully added.
+        title: Fill in "**Type**", "**Name**", and "**Logging level**" fields and click on "**Add**" button.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
-        title: Toggle the switch to enable the connector.
+        title: Select created connector, navigate to the "**Advanced**" tab, switch to the "**Configuration**" tab, paste your connector configuration and click on "**Save**" button.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
+        title: Connector has been successfully updated.
 '
 %}
 
@@ -129,10 +152,10 @@ the remote settings.
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-mqtt-12-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-mqtt-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}
