@@ -37,4 +37,22 @@ hidetoc: "true"
             _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
     
         var ml_account = ml('accounts', '1017142', 'w0j5m5g7f5', 'load');
+
+
+    jqueryDefer(()=>{
+        waitForForm()
+    });
+
+    function waitForForm() {
+        let $form = jQuery('[action$="e2f1u0"]');
+        if ($form.length) {
+            $form
+                .attr('id', 'Products_TA_GetADemoForm')
+                .addClass('gtm_form');
+        } else {
+            setTimeout(function(){
+                waitForForm();
+            }, 150);
+        }
+    }
 </script>
