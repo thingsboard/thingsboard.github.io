@@ -205,9 +205,10 @@ var tb = (function () {
     }
 
     function reportFaqNode(nodeId) {
-		if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || !nodeId) {
+		if (checkGTagDataLayer() || !nodeId) {
 			return;
 		}
+
 		gtag("event", "FaqNode", {
 			"event_category": nodeId
 		});

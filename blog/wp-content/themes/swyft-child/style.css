@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
 /* 	google-search */
 .opened-search header{
 	gap: 50px;
@@ -20,6 +21,7 @@
 }
 
 .search-icon{
+	margin-right: 20px;
 	width: 20px;
     height: 20px;
     display: flex;
@@ -81,7 +83,7 @@
 	display: none;
 	align-items: center;
 	justify-content: flex-end;
-	margin-right: 30px;
+	margin-right: 45px;
 }
 
 .closed-search-animation .search-box{
@@ -221,6 +223,15 @@ form.gsc-search-box{
 	background-color: unset !important;
 }
 
+.gsc-search-button svg{
+	width: 20px;
+	height: 20px;
+}
+
+.gsc-search-button-v2 svg{
+	height: 20px !important;
+}
+
 .gsc-search-button-v2{
 	background-color: unset !important;
 	position: relative;
@@ -351,7 +362,7 @@ header .header-buttons{
 }
 
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons .cs-header__scheme-toggle-icon{
-	font-size: 1.65rem;
+	font-size: 1.45rem;
 }
 
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons{
@@ -390,11 +401,12 @@ header .header-buttons{
 
 /* darktheme */
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons .cs-header__scheme-toggle-icon{
-	font-size: 1.20rem;
+	font-size: 1.45rem;
 }
 
 .theme_toggle{
-	margin-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .opened-search .theme_toggle {
@@ -1373,7 +1385,7 @@ header .logo {
     color: #212529;
     transition-duration: 0s;
     background-color: unset;
-	margin-left: 10px;
+	margin-left: 0px;
 }
 
 .n-button.try:hover {
@@ -1517,6 +1529,9 @@ header .logo {
 }
 
 @media screen and (max-width: 1280px) {
+	.search-box{
+		margin-right: 30px;
+	}
 	.theme_toggle{
 		margin-right: 0px;
 	}
@@ -3864,6 +3879,10 @@ body{
 }
 
 /* location of readnext and comments */
+.comments-area{
+	order: 3;
+}
+
 #disqus_thread{
 	order: 3;
 	width: 800px !important;
@@ -4081,9 +4100,9 @@ code{
 /* 	--cs-heading-2-font-size: 48px !important;	 */
 	
 	/* 	paragraph1 */
-	--cs-font-post-content-size: 16px !important;
+	--cs-font-post-content-size: 18px !important;
 	--cs-font-post-content-weight: 400 !important;
-	--cs-font-post-content-line-height: 24px !important;
+	--cs-font-post-content-line-height: 30px !important;
 }
 .cs-entry__subtitle{
 	font-weight: 400 !important;

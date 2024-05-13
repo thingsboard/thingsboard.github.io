@@ -256,9 +256,13 @@
 
     </script>
     <script async defer>
+
+        function checkGTagDataLayer() {
+            return typeof window.dataLayer === "undefined" || !window.dataLayer.push;
+        }
         function _gaLt(event) {
             /* If GTM is blocked or not loaded, or not main|middle|touch click then don't track */
-            if (typeof window.dataLayer === "undefined" || !window.dataLayer.push || (event.which != 1 && event.which != 2)) {
+            if (checkGTagDataLayer() || (event.which != 1 && event.which != 2)) {
                 return;
             }
             var el = event.srcElement || event.target;
