@@ -1,6 +1,6 @@
 ThingsBoard service is running on Java 17. Follow this instructions to install OpenJDK 17.
 
- * Visit [Open JDK Download Page](https://adoptium.net). Go to "Other platforms and versions", select "Operating System" as "Windows" and "Architecture" as "x64" and download latest **JDK .msi** package. 
+ * Visit [Open JDK Download Page](https://adoptium.net). Go to "Other platforms and versions", select "Operating System" as "Windows", "Architecture" as "x64", "Version" as "17 - LTS" and download **JDK .msi** package. 
  * Run the downloaded MSI package and follow the instructions. 
  Make sure you have selected "**Add to PATH**" and "**Set JAVA_HOME variable**" options to "Will be installed on local hard drive" state.
  * Visit [PostgreSQL JDBC Download Page](https://jdbc.postgresql.org/download/) to download PostgreSQL JDBC Driver. Choose the latest available option.
@@ -22,7 +22,7 @@ Expected command output is:
 
 ```text
 C:\Users\User>java -version
-openjdk version "17.x.xx"
-OpenJDK Runtime Environment (AdoptOpenJDK)(...)
-OpenJDK 64-Bit Server VM (AdoptOpenJDK)(...)
+openjdk version "17.x.xx" 
+OpenJDK Runtime Environment Temurin-17.x.xx (...)
+OpenJDK 64-Bit Server VM Temurin-17.x.xx (...)
 ```

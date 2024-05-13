@@ -38,6 +38,15 @@ And replace it as follows:
 # JAVA_HOME can optionally be set here
 JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ```
+Then, restart Cassandra.
+```bash
+sudo service cassandra stop
+```
+{: .copy-code}
+```bash
+sudo service cassandra start
+```
+{: .copy-code}
 
 You can use Astra DB cloud instead installing your own Cassandra.
 See how to [connect ThingsBoard to Astra DB](/docs/user-guide/install/pe/cassandra-cloud-astra-db/)
