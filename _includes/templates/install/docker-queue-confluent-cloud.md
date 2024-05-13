@@ -25,7 +25,7 @@ services:
       TB_KAFKA_SERVERS: localhost:9092
       TB_QUEUE_KAFKA_REPLICATION_FACTOR: 3
       TB_QUEUE_KAFKA_USE_CONFLUENT_CLOUD: true
-      TB_QUEUE_KAFKA_CONFLUENT_SASL_JAAS_CONFIG: org.apache.kafka.common.security.plain.PlainLoginModule required username="CLUSTER_API_KEY" password="CLUSTER_API_SECRET";}
+      TB_QUEUE_KAFKA_CONFLUENT_SASL_JAAS_CONFIG: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="CLUSTER_API_KEY" password="CLUSTER_API_SECRET";'
 
       # These params affect the number of requests per second from each partitions per each queue.
       # Number of requests to particular Message Queue is calculated based on the formula:
