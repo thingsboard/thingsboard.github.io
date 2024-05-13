@@ -66,7 +66,7 @@ notitle: "true"
 <div class="background">
     <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
 </div>
-<form id="contact-form" method="post" class="contact-form gtm_form" onsubmit="return validateContactForm(this)">
+<form id="ContactUs" method="post" class="contact-form gtm_form" onsubmit="return validateContactForm(this)">
     <fieldset>
         <div class="form-section">
             <div class="form-element first half">
@@ -127,17 +127,18 @@ notitle: "true"
 
 <script type="text/javascript">
 
-    var contactform =  document.getElementById('contact-form');
-    contactform.setAttribute('action', 'https://formspree.io/f/xbjvbeln');
+
 
     jqueryDefer(
         function () {
             $( document ).ready(function() {
+                var $contactForm =  jQuery('.deviceManagementReadyToLaunch');
+                $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
                           }, 0);*/
-                 $('#contact-form .form-element .form-control').addClass("input--empty");
-                 $('#contact-form .form-element .form-control').on('input', function() {
+                 $contactForm.find('.form-element .form-control').addClass("input--empty");
+                 $contactForm.find('.form-element .form-control').on('input', function() {
                       if( !$(this).val() ) {
                          $(this).addClass("input--empty");
                       } else {
@@ -151,10 +152,26 @@ notitle: "true"
                  };
                  var subjectValue = $.urlParam('subject');
                  if (subjectValue != undefined && subjectValue.trim().length > 0) {                    
-                    $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
-                    $('#contact-form select[name=subject]').removeClass("input--empty");
+                    $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
+                    $contactForm.find('select[name=subject]').removeClass("input--empty");
                  }
             });
+
+            waitForForm();
         }
     );
+
+    function waitForForm() {
+        console.log('hop');
+        let $form = jQuery('[action$="xbjvbeln"]');
+        if ($form.length) {
+            $form
+                .attr('id', 'Products_Edge_DemoRequestForm')
+                .addClass('gtm_form');
+        } else {
+            setTimeout(function(){
+                waitForForm();
+            }, 150);
+        }
+    }
 </script>
