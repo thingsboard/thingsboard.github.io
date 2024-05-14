@@ -12,31 +12,35 @@ docker-compose.yml
 Add the following line to the yml file.
 
 ```yml
-version: '3.0'
+version: '3.2'
 services:
-  zookeeper:
-    restart: always
-    image: "zookeeper:3.5"
-    ports:
-      - "2181:2181"
-    environment:
-      ZOO_MY_ID: 1
-      ZOO_SERVERS: server.1=zookeeper:2888:3888;zookeeper:2181
   kafka:
     restart: always
-    image: wurstmeister/kafka
-    depends_on:
-      - zookeeper
+    image: bitnami/kafka:3.5.2
     ports:
-      - "9092:9092"
+      - 9092:9092 #to localhost:9092 from host machine
+      - 9093 #for Kraft
+      - 9094 #to kafka:9094 from within Docker network
     environment:
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_LISTENERS: INSIDE://:9093,OUTSIDE://:9092
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://:9093,OUTSIDE://kafka:9092
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
-      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+      KAFKA_CFG_LISTENERS: "OUTSIDE://:9092,CONTROLLER://:9093,INSIDE://:9094"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "OUTSIDE://localhost:9092,INSIDE://kafka:9094"
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "INSIDE"
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_CFG_LOG_RETENTION_BYTES: "1073741824"
+      KAFKA_CFG_SEGMENT_BYTES: "268435456"
+      KAFKA_CFG_LOG_RETENTION_MS: "300000"
+      KAFKA_CFG_LOG_CLEANUP_POLICY: "delete"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: "1"
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: "1"
+      KAFKA_CFG_PROCESS_ROLES: "controller,broker" #KRaft
+      KAFKA_CFG_NODE_ID: "0" #KRaft
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER" #KRaft
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "0@kafka:9093" #KRaft
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - kafka-data:/bitnami
   mytb:
     restart: always
     image: "thingsboard/tb-postgres"
@@ -49,7 +53,7 @@ services:
       - "5683-5688:5683-5688/udp"
     environment:
       TB_QUEUE_TYPE: kafka
-      TB_KAFKA_SERVERS: kafka:9092
+      TB_KAFKA_SERVERS: kafka:9094
     volumes:
       - mytb-data:/data
       - mytb-logs:/var/log/thingsboard
@@ -58,5 +62,7 @@ volumes:
     external: true
   mytb-logs:
     external: true
+  kafka-data:
+    driver: local
 ```
 {: .copy-code}
