@@ -3,14 +3,13 @@
 * TOC
 {:toc}
 
-ThingsBoard Custom translation feature allows you to upload alternatives to existing language translations and extend the translation to specific GUI elements on the dashboards.
+The Custom translation feature of the ThingsBoard allows you to add new languages not currently listed, enhance the translation of existing ones, and perform translation for specific GUI elements on dashboards.
 
 Go to the "Custom translation" tab of the "White labeling" page. On this page, you will find the current list of available languages and their translation progress indicated in percentages. While not all translations are complete to 100%, our team is constantly working on improving and expanding the list.
 
 ![image](/images/user-guide/custom-translation/main-page-1-pe.png)
 
-If you cannot find the language you need in the list, you have the option to add it and download a custom translation.
-You can customize each language according to your needs, download the existing translation language file in JSON format, or delete the language using the corresponding buttons.
+On the custom translation page, you can customize any language according to your needs, download an existing language translation file in JSON format, or delete a language using the respective buttons.
 
 {% capture difference %}
 **Please note:**
@@ -19,9 +18,7 @@ The initial list of custom translations is created by the system administrator. 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-In this guide, we'll look at how to add a new language and how to set up a translation map for it. Next in the guide, we'll look at how to add a custom translation.
-
-## Add new language
+## Adding new language
 
 To add new language, follow these steps:
 
@@ -43,10 +40,9 @@ To add new language, follow these steps:
 
 {% include images-gallery.liquid imageCollection=addNewLanguagePE %}
 
-You've successfully added a new language. Since translations for term keys have not yet been added, the translation progress is at 0%. Let's add them.
-But first, let's consider how to change the ThingsBoard's interface language.
+You've successfully added a new language. Since translations for term keys have not yet been added, the translation progress is at 0%. As you add translations, the translation progress bar will increase.
 
-### Change platform language
+## Change platform language
 
 To change the ThingsBoard's interface language, follow these steps:
 
@@ -69,14 +65,12 @@ To change the ThingsBoard's interface language, follow these steps:
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeLanguagePE %}
 
 After completing these steps, ThingsBoard's interface language will be changed to the language of your choice.
-In this guide, we have chosen Italian as the system language for demonstration purposes. Next, we will set up a translation map for it.
+In this guide, we have chosen Italian as the system language for demonstration purposes. Next, we will set up a translation for it.
 
-### Translation map
+## Set up translation
 
-The translation map consists of three columns: the term key, its default value (in English), and a field for entering the translation.
-If you do not enter a translation for the term key, its value will be displayed in English, as English is the default language.
+The translation is configured in the Translation map.
 To open the translation map, click on the language row or the pencil icon for the selected language.
-Within the "Basic" tab, you can [manually add new term keys](#manual-addition-of-translation) or edit (add) translations for existing ones. In the "Advanced" tab, you can [upload a translation language file in JSON format](#adding-a-translation-using-a-language-translation-file).
 
 {% assign changeLanguagePE = '
     ===
@@ -90,9 +84,21 @@ Within the "Basic" tab, you can [manually add new term keys](#manual-addition-of
 
 {% include images-gallery.liquid imageCollection=changeLanguagePE %}
 
-#### Manual addition of translation
+Translation can be configured in two ways: basic and advanced:
+- Within the "Basic" tab, you can [manually add new term keys](#editing-translation-using-basic-mode) or edit translations for existing ones;
+- In the "Advanced" tab, you can [upload a translation language file in JSON format](#editing-translation-using-advanced-mode).
 
-First, let's consider manually adding (editing) translations for term keys:
+### Editing translation using basic mode
+
+In the "Basic" settings mode, the translation map consists of three columns: the term key, its default value (in English), and a field for entering the translation.
+The basic translating mode is convenient because you can apply different types of filtering:
+
+- Translated - are those keys, that have a translation for the current language;
+- Untranslated - are those keys, that have not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
+- Customized - are those keys for which the translation has been overridden. E. g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
+- Added key - is a key added at the current level. When adding new keys, it's necessary to provide an English translation (second column), as this key will also be added for all other languages.
+
+Let's consider manually adding translations for term keys:
 
 {% assign manualAdditionOfTranslationPE = '
     ===
@@ -126,9 +132,9 @@ To clear a custom translation or reset its value to the one specified by the sys
 
 {% include images-gallery.liquid imageCollection=clearCustomTranslationPE %}
 
-#### Adding a translation using a language translation file
+### Editing translation using advanced mode
 
-You can add custom translation in JSON. This JSON will overwrite default translation. To do this, follow these steps:
+You can add/update custom translations using JSON format. For this use advanced editing mode. This JSON will overwrite the default translation. Let's see how it works:
 
 {% assign customTranslationInJsonPE = '
     ===
@@ -139,7 +145,7 @@ You can add custom translation in JSON. This JSON will overwrite default transla
         title: Navigate to the "Advanced" tab and paste custom translation in JSON. In this tutorial, we will use the custom translation map from the example below. After, click "Save";
     ===
         image: /images/user-guide/custom-translation/custom-translation-in-json-2-pe.png,
-        title: Check the translation, specifically the "Home" menu item.
+        title: The translation is complete. Check the translation, specifically the "Home" menu item.
 '
 %}
 
