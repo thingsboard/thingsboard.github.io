@@ -66,6 +66,32 @@
             }
         );
     }
+    jqueryDefer(
+        function () {
+            $(document).ready(function () {
+                var $contactForm = jQuery('.readyToLaunchForm');
+                $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+                $contactForm.find('.form-element .form-control').addClass("input--empty");
+                $contactForm.find('.form-element .form-control').on('input', function () {
+                    if (!$(this).val()) {
+                        $(this).addClass("input--empty");
+                    } else {
+                        $(this).removeClass("input--empty");
+                    }
+                });
+
+                $.urlParam = function (name) {
+                    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                    return results ? results[1] : null;
+                };
+                var subjectValue = $.urlParam('subject');
+                if (subjectValue != undefined && subjectValue.trim().length > 0) {
+                    $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
+                    $contactForm.find('select[name=subject]').removeClass("input--empty");
+                }
+            });
+        }
+    );
 </script>
 
 {% include cookie-consent.html %}
