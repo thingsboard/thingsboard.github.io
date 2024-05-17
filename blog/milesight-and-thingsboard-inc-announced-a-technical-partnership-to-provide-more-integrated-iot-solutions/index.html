@@ -69,7 +69,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"/blog/wp-admin/admin-ajax.php",
-                "nonce": "471cbe3bb4",
+                "nonce": "fa0fece32a",
                 "home_url": "/blog/",
                 "settings_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -875,7 +875,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 				</span>
 			</span>
 				</div>
-		<script async src="https://cse.google.com/cse.js?cx=b57eff91f8f0d45fa"></script>
+		<script async src="https://cse.google.com/cse.js?cx=e627343a447b042e1"></script>
 		<div class="search-box">
 			<div class="gcse-searchbox"></div>
 			<div class="gcse-searchresults"></div>
@@ -1163,10 +1163,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 							});
 						}
 					});
-					if(document.getElementById('gsc-i-id1')){
-						document.getElementById('gsc-i-id1').setAttribute('placeholder', 'Search...');
-						observer.disconnect();
-					}
 				} 
 			});
 		});
@@ -1185,6 +1181,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 		resultsBlock.innerHTML = '<p>Press Enter or <i><svg width="13" height="13" viewBox="0 0 13 13"><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"><\/path><\/svg><\/i><\/p>'; 
 		resultsBlock.classList.add('search-preview');
 		function OpenSearch(){
+			document.getElementById('gsc-i-id1').setAttribute('placeholder', 'Search...');
 			document.querySelector('.gsc-search-button svg').innerHTML = '<path d="M18,10a8,8,0,1,0-3.1,6.31l6.4,6.4,1.41-1.41-6.4-6.4A8,8,0,0,0,18,10Zm-8,6a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z"/><\/g><\/svg>'
 			document.querySelector('.gsc-search-button svg').setAttribute('viewBox', '0 0 24 24');
 			//Opening input box
@@ -1194,27 +1191,29 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 				if(document.querySelector('#gsc-i-id1').value.length > 0){
 					document.getElementsByTagName('body')[0].classList.add('opened-search-results');
 					setTimeout(function(){
-						document.getElementById('___gcse_1').style.display = 'block'
+						document.getElementById('___gcse_1').style.display = 'block';
 					}, 20);
 				} else {
 					document.getElementsByTagName('body')[0].classList.remove('opened-search-results');
 					document.getElementById('___gcse_1').style.display = 'none';
-					document.querySelector('.gsst_a').click();
 				}
 			})
 		}
 		function CloseSearch(){
-			//Closing input box if user clicked on the document, but not on the input and results boxes
-			if (!event.target.closest('.search-icon') && !event.target.closest('.gsc-input') && !event.target.closest('.gsc-search-button') && !event.target.closest('#___gcse_1')) {
-				document.getElementsByTagName('body')[0].classList.add('closed-search-animation');
-				setTimeout(function(){
-					document.getElementById('___gcse_1').style.display = 'none';
-					document.getElementsByTagName('body')[0].classList.remove('opened-search-results');
-					document.getElementsByTagName('body')[0].classList.remove('opened-search');
-					document.getElementsByTagName('body')[0].classList.remove('closed-search-animation');
-				}, 500)
-				document.querySelector('.gsst_a').click();
-			};
+			function clickHandler(event){
+				if (!event.target.closest('.search-icon') && !event.target.closest('.gsc-input') && !event.target.closest('.gsc-search-button') && !event.target.closest('#___gcse_1')) {
+					document.getElementsByTagName('body')[0].classList.add('closed-search-animation');
+					setTimeout(function(){
+						document.getElementById('___gcse_1').style.display = 'none';
+						document.getElementsByTagName('body')[0].classList.remove('opened-search-results');
+						document.getElementsByTagName('body')[0].classList.remove('opened-search');
+						document.getElementsByTagName('body')[0].classList.remove('closed-search-animation');
+					}, 500)
+					document.querySelector('.gsst_a').click();
+					document.removeEventListener('click', clickHandler);
+				};
+			}
+			document.addEventListener('click', clickHandler);
 		};
 		function SearchResults(){
 			//Configuration of the results-preview(Press Enter or search-icon) behavior
@@ -1236,9 +1235,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			document.querySelector('.search-icon').addEventListener('click', function(){
 				OpenSearch();
 				SearchResults();
-				document.addEventListener('click', function(){
-					CloseSearch();
-				});
+				CloseSearch();
 			});
 		};
 		function CloseToEnableBugsConfig(){
@@ -1247,10 +1244,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			document.getElementById('___gcse_1').style.display = 'none';
 		}
 		function MobileOpenSearch(){
+			document.getElementById('gsc-i-id1').setAttribute('placeholder', 'Search...');
 			document.querySelector('.gsc-search-button svg').innerHTML = '<path d="M18,10a8,8,0,1,0-3.1,6.31l6.4,6.4,1.41-1.41-6.4-6.4A8,8,0,0,0,18,10Zm-8,6a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z"/><\/g><\/svg>'
 			document.querySelector('.gsc-search-button svg').setAttribute('viewBox', '0 0 24 24');
 			CloseToEnableBugsConfig();
 			document.querySelector('#gsc-i-id1').addEventListener('input', function(){
+				MobileCloseSearch();
 				document.getElementsByTagName('body')[0].classList.remove('close-search-box-mobile');
 				if(document.querySelector('#gsc-i-id1').value.length > 0){
 					document.getElementById('___gcse_1').style.display = 'block'
@@ -1261,18 +1260,19 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 		};
 		function MobileCloseSearch(){
 			//Closing input box if user clicked on the document, but not on the input and results boxes
-			if (!event.target.closest('.search-icon') && !event.target.closest('.gsc-input') && !event.target.closest('.gsc-search-button') && !event.target.closest('#___gcse_1')) {
-				document.getElementsByTagName('body')[0].classList.remove('closed-search-animation');
-				document.getElementsByTagName('body')[0].classList.add('close-search-box-mobile');
-				document.querySelector('.gsst_a').click();
+			function clickHandler(event){
+				if (!event.target.closest('.search-icon') && !event.target.closest('.gsc-input') && !event.target.closest('.gsc-search-button') && !event.target.closest('#___gcse_1')) {
+					document.getElementsByTagName('body')[0].classList.remove('closed-search-animation');
+					document.getElementsByTagName('body')[0].classList.add('close-search-box-mobile');
+					document.querySelector('.gsst_a').click();
+				};
+				document.removeEventListener('click', clickHandler);
 			};
+			document.addEventListener('click', clickHandler);
 		};
 		function MobileConfig(){
 			MobileOpenSearch();
 			SearchResults();
-			document.addEventListener('click', function(){
-				MobileCloseSearch();
-			});
 		};
 		function differentSizesConfig(){
 			if(window.innerWidth > 1280){
@@ -1318,7 +1318,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 	
 					<div id="content" class="cs-main-content">
 
-						<div id="primary" class="cs-content-area">
+						<div class="overlay"></div>
+<div id="primary" class="cs-content-area">
 	
 	
 					
@@ -1396,7 +1397,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 		
 	</div>
 
-	
+	<p class="cloud-link">
+	Sign up today and discover what <a href="https://thingsboard.cloud/signup" target="_blank">ThingsBoard Cloud</a> can do for you!
+</p>
 <div class="cs-entry__footer">
 	<div class="cs-entry__footer-top">
 		<div class="cs-entry__footer-top-left">
@@ -1413,6 +1416,35 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			<div class="cs-entry__post-meta"><div class="cs-meta-category"><ul class="post-categories">
 	<li><a href="/blog/category/business/" rel="category tag">Business</a></li>
 </ul></div></div>		</div>
+	</div>
+</div>
+<div class="share-container">
+	<p>
+		Share:
+	</p>
+	<div class="share-social-networks">
+		<a class="share-facebook share-icon" href="https://www.facebook.com/sharer/sharer.php?u=*" target="_blank" aria-label="Share in Facebook">
+			<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="32" height="32" fill="white"></rect>
+				<path d="M30 16.0856C30 8.30631 23.732 2 16 2C8.26801 2 2 8.30631 2 16.0856C2 23.1161 7.11963 28.9433 13.8125 30V20.1572H10.2578V16.0856H13.8125V12.9823C13.8125 9.45214 15.9026 7.50217 19.1005 7.50217C20.6322 7.50217 22.2344 7.77728 22.2344 7.77728V11.2436H20.469C18.7299 11.2436 18.1875 12.3294 18.1875 13.4433V16.0856H22.0703L21.4496 20.1572H18.1875V30C24.8804 28.9433 30 23.1161 30 16.0856Z" fill="black" fill-opacity="0.76"></path>
+			</svg>
+		</a>
+		<a class="share-telegram share-icon" href="https://t.me/share/url?url=*&text=#" target="_blank" aria-label="Share in Telegram">
+			<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C23.732 2 30 8.26798 30 16C30 23.732 23.732 30 16 30C8.26798 30 2 23.732 2 16C2 8.26798 8.26798 2 16 2ZM22.7384 9.6612L20.2406 22.2544C20.2406 22.2544 19.8914 23.1276 18.9308 22.7083L13.1843 18.1846C13.1843 18.1846 19.577 12.4382 19.839 12.1937C20.101 11.9492 20.0136 11.8969 20.0136 11.8969C20.031 11.5999 19.542 11.8969 19.542 11.8969L11.071 17.2765L7.54281 16.0887C7.54281 16.0887 7.00135 15.8965 6.94902 15.4774C6.8966 15.0581 7.56029 14.8311 7.56029 14.8311L21.5857 9.32932C21.5857 9.32932 22.7384 8.8228 22.7384 9.6612ZM15.3769 19.9839L13.097 22.0624C13.097 22.0624 12.9188 22.1976 12.7238 22.1129L13.1604 18.2519L15.3769 19.9839Z" fill="black" fill-opacity="0.76"></path>
+			</svg>
+		</a>
+		<a class="share-linkedIn share-icon" href="https://www.linkedin.com/shareArticle?mini=true&url=*" target="_blank" aria-label="Share in Linkedin">
+			<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M16 2C8.26792 2 2 8.26792 2 16C2 23.7321 8.26792 30 16 30C23.7321 30 30 23.7321 30 16C30 8.26792 23.7321 2 16 2ZM12.5729 21.8027H9.73792V12.6794H12.5729V21.8027ZM11.1379 11.5594C10.2425 11.5594 9.66354 10.925 9.66354 10.1404C9.66354 9.33979 10.26 8.72437 11.1744 8.72437C12.0887 8.72437 12.6487 9.33979 12.6662 10.1404C12.6662 10.925 12.0887 11.5594 11.1379 11.5594ZM22.9271 21.8027H20.0921V16.7467C20.0921 15.5698 19.6808 14.7706 18.6556 14.7706C17.8725 14.7706 17.4073 15.3117 17.2017 15.8323C17.1258 16.0175 17.1069 16.28 17.1069 16.541V21.8012H14.2704V15.5888C14.2704 14.4498 14.234 13.4975 14.196 12.6779H16.6592L16.789 13.9452H16.8458C17.2192 13.3502 18.1335 12.4723 19.6633 12.4723C21.5285 12.4723 22.9271 13.7221 22.9271 16.4083V21.8027Z" fill="black" fill-opacity="0.76"></path>
+			</svg>
+		</a>
+		<a class="share-twitter share-icon" href="https://twitter.com/share?url=* via @thingsboard" target="_blank" aria-label="Share in Twitter">
+			<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M2 16C2 8.26801 8.26801 2 16 2C23.732 2 30 8.26801 30 16C30 23.732 23.732 30 16 30C8.26801 30 2 23.732 2 16Z" fill="black" fill-opacity="0.76"></path>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13.3572 8H8L14.3517 16.701L8.40633 24H11.1533L15.65 18.4795L19.6428 23.9492H25L18.4637 14.9954L18.4753 15.0108L24.1031 8.10161H21.3562L17.1769 13.2325L13.3572 8ZM10.9571 9.52382H12.6248L22.0429 22.4254H20.3752L10.9571 9.52382Z" fill="white"></path>
+			</svg>
+		</a>
 	</div>
 </div>
 <div style="order: 4" class="post_page_form">
@@ -1471,6 +1503,68 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 										<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
 
 						<div class="cs-overlay-background">
+							<img width="512" height="288" src="/blog/wp-content/uploads/2024/04/x-telia-512x288.jpg" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="X-Telia success story with ThingsBoard" decoding="async" srcset="/blog/wp-content/uploads/2024/04/x-telia-512x288.jpg 512w, /blog/wp-content/uploads/2024/04/x-telia-1024x576.jpg 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
+
+						
+						<a class="cs-overlay-link" href="/blog/empowering-iot-solutions-x-telias-success-story-with-thingsboard/" title="Empowering IoT Solutions: X-TELIA&#8217;s Success Story with ThingsBoard"></a>
+					</div>
+					
+					<div class="cs-entry__inner cs-entry__content">
+						<div class="cs-entry__post-meta">
+<div class="cs-meta-category"><ul class="post-categories">
+	<li><a href="/blog/category/business/" rel="category tag">Business</a></li>
+	<li><a href="/blog/category/solutions/" rel="category tag">Solutions</a></li>
+</ul></div>
+<div class="cs-meta-author">
+<span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="/blog/author/alex-doan/"><span class="cs-meta-author-name">PR team</span></a>
+</div>
+<div class="cs-meta-date">May 17, 2024</div>
+</div>						
+						<h3 class="cs-entry__title heading3"><a href="/blog/empowering-iot-solutions-x-telias-success-story-with-thingsboard/"><span>Empowering IoT Solutions: X-TELIA&#8217;s Success Story with ThingsBoard</span></a></h3>
+												<div class="cs-entry__excerpt">
+							X-TELIA, a leading innovator in IoT solutions based in Montreal, Canada, has found its winning formula with ThingsBoard.						</div>
+						
+
+					</div>
+				</div>
+			</article>
+			
+			<article class="cs-entry">
+				<div class="cs-entry__outer">
+										<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
+
+						<div class="cs-overlay-background">
+							<img width="512" height="288" src="/blog/wp-content/uploads/2024/04/Keeping-the-Beer-Flowing_-Beverage-Distribution-Solution-with-ThingsBoard-IoT-platform2-1-512x288.webp" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="/blog/wp-content/uploads/2024/04/Keeping-the-Beer-Flowing_-Beverage-Distribution-Solution-with-ThingsBoard-IoT-platform2-1-512x288.webp 512w, /blog/wp-content/uploads/2024/04/Keeping-the-Beer-Flowing_-Beverage-Distribution-Solution-with-ThingsBoard-IoT-platform2-1-1024x576.webp 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
+
+						
+						<a class="cs-overlay-link" href="/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/" title="Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform"></a>
+					</div>
+					
+					<div class="cs-entry__inner cs-entry__content">
+						<div class="cs-entry__post-meta">
+<div class="cs-meta-category"><ul class="post-categories">
+	<li><a href="/blog/category/solutions/" rel="category tag">Solutions</a></li>
+	<li><a href="/blog/category/use-cases/" rel="category tag">Use cases</a></li>
+</ul></div>
+<div class="cs-meta-author">
+<span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="/blog/author/anastasia-antoniuk/"><span class="cs-meta-author-name">Anastasia Antoniuk</span></a>
+</div>
+<div class="cs-meta-date">May 17, 2024</div>
+</div>						
+						<h3 class="cs-entry__title heading3"><a href="/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/"><span>Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</span></a></h3>
+												<div class="cs-entry__excerpt">
+							This case study highlights how innovative IoT solutions revolutionize beverage distribution, offering a roadmap for others in the&hellip;						</div>
+						
+
+					</div>
+				</div>
+			</article>
+			
+			<article class="cs-entry">
+				<div class="cs-entry__outer">
+										<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
+
+						<div class="cs-overlay-background">
 							<img width="512" height="288" src="/blog/wp-content/uploads/2024/04/WebSocket-client-advanced-MQTT-5-features-and-more-1-scaled-1-512x288.webp" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="/blog/wp-content/uploads/2024/04/WebSocket-client-advanced-MQTT-5-features-and-more-1-scaled-1-512x288.webp 512w, /blog/wp-content/uploads/2024/04/WebSocket-client-advanced-MQTT-5-features-and-more-1-scaled-1-1024x576.webp 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
 
 						
@@ -1495,68 +1589,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 					</div>
 				</div>
 			</article>
-			
-			<article class="cs-entry">
-				<div class="cs-entry__outer">
-										<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
-
-						<div class="cs-overlay-background">
-							<img width="512" height="288" src="/blog/wp-content/uploads/2024/04/Top-supplier-retail-2024_Schwards_ThingsBoard-scaled-1-512x288.webp" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="/blog/wp-content/uploads/2024/04/Top-supplier-retail-2024_Schwards_ThingsBoard-scaled-1-512x288.webp 512w, /blog/wp-content/uploads/2024/04/Top-supplier-retail-2024_Schwards_ThingsBoard-scaled-1-1024x576.webp 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
-
-						
-						<a class="cs-overlay-link" href="/blog/top-supplier-retail-2024-2/" title="TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership"></a>
-					</div>
-					
-					<div class="cs-entry__inner cs-entry__content">
-						<div class="cs-entry__post-meta">
-<div class="cs-meta-category"><ul class="post-categories">
-	<li><a href="/blog/category/company/" rel="category tag">Company</a></li>
-	<li><a href="/blog/category/solutions/" rel="category tag">Solutions</a></li>
-	<li><a href="/blog/category/use-cases/" rel="category tag">Use cases</a></li>
-</ul></div>
-<div class="cs-meta-author">
-<span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="/blog/author/alex-doan/"><span class="cs-meta-author-name">PR team</span></a>
-</div>
-<div class="cs-meta-date">March 26, 2024</div>
-</div>						
-						<h3 class="cs-entry__title heading3"><a href="/blog/top-supplier-retail-2024-2/"><span>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</span></a></h3>
-												<div class="cs-entry__excerpt">
-							A new achievement and what does it mean to all 						</div>
-						
-
-					</div>
-				</div>
-			</article>
-			
-			<article class="cs-entry">
-				<div class="cs-entry__outer">
-										<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
-
-						<div class="cs-overlay-background">
-							<img width="512" height="288" src="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-512x288.webp" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="/blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-512x288.webp 512w, /blog/wp-content/uploads/2024/03/New-Release-3.6.3-Announcement-1-scaled-1-1024x576.webp 1024w" sizes="(max-width: 512px) 100vw, 512px">						</div>
-
-						
-						<a class="cs-overlay-link" href="/blog/thingsboard-release-3-6-3-announcement/" title="ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more"></a>
-					</div>
-					
-					<div class="cs-entry__inner cs-entry__content">
-						<div class="cs-entry__post-meta">
-<div class="cs-meta-category"><ul class="post-categories">
-	<li><a href="/blog/category/updates/" rel="category tag">Updates</a></li>
-</ul></div>
-<div class="cs-meta-author">
-<span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="/blog/author/andrew-shvaika/"><span class="cs-meta-author-name">Andrew Shvaika</span></a>
-</div>
-<div class="cs-meta-date">March 18, 2024</div>
-</div>						
-						<h3 class="cs-entry__title heading3"><a href="/blog/thingsboard-release-3-6-3-announcement/"><span>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</span></a></h3>
-												<div class="cs-entry__excerpt">
-							We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&hellip;						</div>
-						
-
-					</div>
-				</div>
-			</article>
 					</div>
 	</div>
 	<script>document.querySelectorAll('.cs-entry__excerpt').forEach(function(element){
@@ -1564,6 +1596,13 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			if(element.textContent.split(" ").length > 18){
 				element.textContent = element.textContent.split(' ').slice(0, 18).join(' ').concat("...");
 			}
+		});
+		var currentUrl = window.location.href;
+		var currentTitle = document.querySelector('.cs-entry__title').textContent;
+		var findSharelink = document.querySelectorAll('.share-icon');
+		findSharelink.forEach(function(element) {
+			element.href = element.href.replace('*', encodeURIComponent(currentUrl));
+			element.href = element.href.replace('#', encodeURIComponent(currentTitle));
 		});</script>
 </section>
 		</div>
@@ -1648,6 +1687,67 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			element.classList.add('category-link');
 		});
 	};
+// 	const content = document.getElementById('content');
+// 	const images = content.querySelectorAll('img');
+// 	const closeIcon = document.createElement('div');
+// 	closeIcon.innerHTML = '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"/><\/svg>';
+// 	closeIcon.classList.add('closeIcon');
+// function popUp() {
+// 		images.forEach(function (image) {
+// 			const originalWidth = image.offsetWidth;
+// 			const originalHeight = image.offsetHeight;
+// 			let widthRatio, heightRatio, minRatio;
+// 				image.style.width = width * minRatio + 'px';
+// 				image.style.height = height * minRatio + 'px';
+// 				image.style.height = 'auto';
+// 				image.parentNode.insertBefore(closeIcon, image.nextSibling);
+// 			}
+// 			function imageClick() {
+// 				if (image.naturalWidth <= window.innerWidth && image.naturalHeight <= window.innerHeight) {
+// 					widthRatio = image.naturalWidth / originalWidth;
+// 					heightRatio = image.naturalHeight / originalHeight;
+// 					minRatio = Math.min(widthRatio, heightRatio);
+// 					document.documentElement.style.setProperty('--scaleSetup', '1');
+// 					setDimensions(originalWidth, originalHeight);
+// 				} else if (image.naturalWidth >= window.innerWidth || image.naturalHeight >= window.innerHeight) {
+// 					widthRatio = window.innerWidth / image.naturalWidth;
+// 					heightRatio = window.innerHeight / image.naturalHeight;
+// 					minRatio = Math.min(widthRatio, heightRatio);
+// 					document.documentElement.style.setProperty('--scaleSetup', '0.4');
+// 					setDimensions(image.naturalWidth, image.naturalHeight);
+// 				}
+// 				document.body.classList.add('overlay-active');
+// 				image.classList.add('image-popup');
+// 				function closePopup(event) {
+// 					if ((event.type === 'click' && event.target !== image || event.target === closeIcon) ||
+// 						(event.type === 'keydown' && event.key === 'Escape')) {
+// 						image.style.width = originalWidth + 'px';
+// 						image.style.height = originalHeight + 'px';
+// 						image.classList.remove('image-popup');
+// 						document.body.classList.remove('overlay-active');
+// 						closeIcon.remove();
+// 						document.removeEventListener('click', closePopup);
+// 					}
+// 				}
+// 				document.addEventListener('click', closePopup);
+// 				document.addEventListener('keydown', closePopup);
+// 			}
+// 			const mq = window.matchMedia('(min-width: 1000px)');
+// 			if (mq.matches) {
+// 				image.addEventListener('click', imageClick);
+// 			} else {
+// 				image.removeEventListener('click', imageClick);
+// 			}
+// 			mq.addListener((event) => {
+// 				if (event.matches) {
+// 					image.addEventListener('click', imageClick);
+// 				} else {
+// 					image.removeEventListener('click', imageClick);
+// 				}
+// 			});
+// 		});
+// 	}
+// 	window.addEventListener('load', popUp);
 
 </script>
 </div>

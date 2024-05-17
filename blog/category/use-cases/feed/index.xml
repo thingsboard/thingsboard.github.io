@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/use-cases/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Thu, 02 May 2024 12:04:15 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 17 May 2024 14:45:40 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,6 +20,83 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.4.4</generator>
 	<item>
+		<title>Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</title>
+		<link>/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform</link>
+		
+		<dc:creator><![CDATA[Anastasia Antoniuk]]></dc:creator>
+		<pubDate>Fri, 17 May 2024 12:12:37 +0000</pubDate>
+				<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Use cases]]></category>
+		<guid isPermaLink="false">https://tbblog.xyz/?p=4288</guid>
+
+					<description><![CDATA[<p>This case study highlights how innovative IoT solutions revolutionize beverage distribution, offering a roadmap for others in the&#8230;</p>
+<p>The post <a href="/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/">Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This case study highlights how innovative IoT solutions revolutionize beverage distribution, offering a roadmap for others in the industry.</p>
+
+
+
+<p><strong>Client:</strong> <a href="https://superbockgroup.com/">Super Bock Group</a>, the largest Portuguese beverage company<br><strong>Main request:</strong> Monitoring the beer tank levels in restaurants, predictive maintenance, and anomalies detection.</p>
+
+
+
+<p>Staying stocked is as crucial as the quality of the goods served. That&#8217;s where the Super Bock Group stepped up its game. Along with ThingsBoard, they started a tech journey to keep their golden brews flowing seamlessly in restaurants, ensuring every glass raised was a toast to efficiency and innovation.</p>
+
+
+
+<h4 class="wp-block-heading">The challenge</h4>
+
+
+
+<p>The journey of a single beer from the brewery to the bar is far more complex than one might imagine. For Super Bock Group, managing this journey meant overcoming a series of challenges that, if not addressed, could lead to inefficiencies, unnecessary costs, and, most critically, an interrupted supply of their beloved beverages.</p>
+
+
+
+<p><strong>The mission was clear – streamline operations to keep costs down and glasses up</strong>.<br>Super Bock Group wanted a smart way to monitor beer levels in tanks across restaurants, predict refill times, and swiftly address any issues. They went even further, tracking their delivery trucks in real-time, keeping tabs on volumes, temperature, and journey details from start to finish.</p>
+
+
+
+<h4 class="wp-block-heading">The Solution: Smart, Intuitive, and Always On</h4>
+
+
+
+<p>At various points of sale, like restaurants, beer tanks equipped with controller sensors monitor the beer levels, ensuring that they never dip below the threshold. Should the beer level approach this critical point, the system is designed to trigger an alert, safeguarding against unexpected shortages. Additionally, these sensors keep an eye on the tank pressure, maintaining the perfect conditions for beer storage. The information gathered by these sensors is seamlessly transmitted to ThingsBoard through a Wi-Fi connection via the MQTT protocol, ensuring real-time data flow and responsiveness.</p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="584" src="/blog/wp-content/uploads/2024/05/Tracking-superbock-1-1024x584.webp" alt="" class="wp-image-4454" srcset="/blog/wp-content/uploads/2024/05/Tracking-superbock-1-1024x584.webp 1024w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-300x171.webp 300w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-768x438.webp 768w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1536x876.webp 1536w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-2048x1168.webp 2048w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-512x292.webp 512w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-920x525.webp 920w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1600x913.webp 1600w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1920x1095.webp 1920w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The trucks transporting the beer are also under the watch. Similar to the tanks, trucks are equipped with devices that send data to ThingsBoard, facilitating detailed tracking of each truck&#8217;s journey, including roadmap, current location, and beer condition. This level of fleet monitoring enhances logistical efficiency, ensures timely deliveries and optimal routing, reinforcing the seamless operation of Super Bock Group&#8217;s distribution network.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="573" src="/blog/wp-content/uploads/2024/04/Tracking-superbock-1024x573.webp" alt="" class="wp-image-4334" srcset="/blog/wp-content/uploads/2024/04/Tracking-superbock-1024x573.webp 1024w, /blog/wp-content/uploads/2024/04/Tracking-superbock-300x168.webp 300w, /blog/wp-content/uploads/2024/04/Tracking-superbock-768x429.webp 768w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1536x859.webp 1536w, /blog/wp-content/uploads/2024/04/Tracking-superbock-2048x1145.webp 2048w, /blog/wp-content/uploads/2024/04/Tracking-superbock-512x286.webp 512w, /blog/wp-content/uploads/2024/04/Tracking-superbock-920x514.webp 920w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1600x895.webp 1600w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1920x1074.webp 1920w, /blog/wp-content/uploads/2024/04/Tracking-superbock.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Through this IoT solution, complete with flexible alarms and notifications, ThingsBoard has equipped Super Bock Group with a highly tailored and efficient system. The ability to customize alerts for specific thresholds, such as low beer levels or temperature deviations, ensures that Super Bock can proactively manage their inventory and maintain product quality. This project not only showcases the adaptability and power of ThingsBoard&#8217;s platform but also highlights how it can be configured to meet the unique needs of any business, leading to smarter operations and improved service delivery.</p>
+
+
+
+<h4 class="wp-block-heading">The Outcome</h4>
+
+
+
+<p>Real-time beer tank monitoring and predictive analytics ensured Super Bock beverages were always available, elevating the customer experience. Improved sensor reliability, thanks to proactive system health checks; guaranteed accurate data, and minimized downtime. Additionally, in-depth journey data analysis streamlined the delivery process, cutting costs and ensuring timely arrivals.<br>As glasses clink in restaurants served by Super Bock, behind the scenes, a sophisticated combination of data and technology ensures that the next round is always ready.</p>
+
+
+
+<h4 class="wp-block-heading">Conclusion: To Innovation and Beyond</h4>
+
+
+
+<p>The success of the Super Bock Group project highlights how effectively configuring ThingsBoard&#8217;s existing features can lead to significant operational improvements. It&#8217;s a clear example of how, with the right setup, ThingsBoard users can unlock tailored solutions that drive efficiency and innovation within their operations.<br>Start your own successful IoT story along with ThingsBoard. Cheers to that!</p><p>The post <a href="/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/">Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
 		<link>/blog/top-supplier-retail-2024-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=top-supplier-retail-2024-2</link>
 		
@@ -112,7 +189,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="574" src="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="574" src="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -182,7 +259,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="803" height="803" src="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp" alt="Field with solar panels and demonstration icons of IOT notifications on them" class="wp-image-3766" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp 803w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="803" src="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp" alt="Field with solar panels and demonstration icons of IOT notifications on them" class="wp-image-3766" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp 803w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -216,7 +293,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="561" src="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 

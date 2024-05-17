@@ -2,6 +2,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/* share */
+.cloud-link{
+	order: 2;
+	max-width: 840px;
+	margin: 20px auto 0px; 
+	width: 100%;
+	padding: 0px 20px;
+	font-size: 16px;
+}
+
+.cloud-link a{
+	color: #0D6EFF;
+}
+
+.share-container p{
+	margin: 0;
+}
+
+.share-container{
+	justify-content: flex-end;
+	gap: 32px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 800px;
+	margin: 32px auto 32px;
+	padding: 20px;
+	order: 3;
+}
+
+.share-social-networks{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.share-facebook:hover svg path{
+	fill: #0266FF !important;
+}
+
+.share-telegram:hover svg path{
+	fill: #28A4E4 !important;
+}
+
+.share-linkedIn:hover svg path{
+	fill: #007AB5C2 !important;
+}
+
+.share-icon:hover svg path{
+	transition: ease-in-out 0.2s;
+	fill-opacity: 1;
+}
+
+/* image popup */
+/* .image-popup{
+	cursor: default !important;
+	border: 8px #FFF solid;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border-radius: 35px !important;
+	z-index: 1000000000000;
+	transform: translate(-50%, -50%);
+}
+
+/* @keyframes popup {
+    from {
+        width: var(--defaultWidth);
+		height: var(--defaultHeight);
+    }
+    to {
+		width: var(--popUpWidth);
+		height: var(--popUpHeight);
+    }
+} */
+
+
+/* @keyframes popup {
+    from {
+        transform: translate(-50%, -50%) scale(var(--scaleSetup));
+    }
+    to {
+        transform: translate(-50%, -50%) scale(var(--scale));
+    }
+}
+ */
+.closeIcon{
+	background: rgba(0, 0, 0, 0.75);
+	cursor: pointer;
+	position: fixed;
+    z-index: 99999999999999999999;
+    right: 24px;
+    top: 24px;
+	border-radius: 8px;
+	padding: 16px;
+}
+
+.closeIcon svg{
+/* 	vertical-align: unset !important; */
+}
+
+.closeIcon svg{
+	fill: #FFF;
+}
+
+.overlay{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.overlay-active .overlay{
+	display: block;
+} */
 
 /* 	google-search */
 .opened-search header{
@@ -402,6 +521,74 @@ header .header-buttons{
 /* darktheme */
 .cs-site-scheme-toggle .cs-header__scheme-toggle-icons .cs-header__scheme-toggle-icon{
 	font-size: 1.45rem;
+}
+
+.dark_styles .cs-entry__footer{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.dark_styles .share-facebook svg rect{
+	fill: #1C1C1C;
+}
+
+.dark_styles .share-facebook svg rect{
+	fill: #1C1C1C;
+}
+
+.dark_styles .share-twitter svg path:nth-child(2){
+	fill: #1C1C1C;
+}
+
+.dark_styles .share-icon svg path{
+	fill: #FFF;
+}
+
+.dark_styles .closeIcon svg{
+	fill: #000;
+}
+
+.dark_styles .closeIcon{
+	background: rgba(255, 255, 255, 0.75);
+}
+
+.dark_styles .telegram-icon svg path:nth-child(1){
+	transition: ease-in-out 0.25s;
+	fill: #FFF;
+    fill-opacity: 1;
+}
+
+.dark_styles .telegram-icon svg path:nth-child(2){
+	transition: ease-in-out 0.25s;
+	fill: #000;
+    fill-opacity: 1;
+}
+
+.dark_styles .telegram-icon svg path:nth-child(3){
+	transition: ease-in-out 0.25s;
+	fill: #3d3d3d;
+    fill-opacity: 1;
+}
+
+.dark_styles .telegram-icon svg path:nth-child(4){
+	transition: ease-in-out 0.25s;
+	fill: #3d3d3d;
+    fill-opacity: 1;
+}
+
+.dark_styles .telegram-icon:hover svg path:nth-child(1){
+	fill: #29b6f6;
+}
+
+.dark_styles .telegram-icon:hover svg path:nth-child(2){
+	fill: #fff;
+}
+
+.dark_styles .telegram-icon:hover svg path:nth-child(3){
+	fill: #b0bec5;
+}
+
+.dark_styles .telegram-icon:hover svg path:nth-child(4){
+	fill: #cfd8dc;
 }
 
 .theme_toggle{
@@ -3676,7 +3863,9 @@ body{
 
 .cs-entry__footer{
 	max-width: 800px;
-	margin: 60px auto;
+	margin: 0px auto;
+	padding: 42px 20px 32px !important;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /* quote */
@@ -4859,7 +5048,15 @@ blockquote p{
 	.ml-button-position{
 		width: 100%;
 	}
-
+/* 	.cloud-link{
+		max-width: 960px;
+	}
+	.cs-entry__footer{
+		max-width: 960px;
+	}
+	.share-container{
+		max-width: 
+	} */
 }	
 @media(max-width: 1485px){
 	.mailpoet_form_columns{
