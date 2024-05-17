@@ -33,7 +33,10 @@
       </div>
       {% include images-gallery.html imageCollection="cloudPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
       <div class="modal-wizard__button">
-        <a href="https://thingsboard.cloud/billing" target="_blank" onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
+        <a href="https://thingsboard.cloud/billing"
+           target="_blank"
+           class="gtm_button goToTBCloud"
+           onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
       </div>
     </div>
     <div id="self-managed-content" class="tab-content">
@@ -57,7 +60,10 @@
         </div>
         {% include images-gallery.html imageCollection="selfManagedPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
         <div class="modal-wizard__button">
-          <a href="https://license.thingsboard.io" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">Go to License Portal</a>
+          <a href="https://license.thingsboard.io"
+             target="_blank"
+             class="gtm_button goToLicensePortal"
+             onClick="goToPurchase(event, '{{ include.defaultPlan }}')">Go to License Portal</a>
         </div>
     </div>
   </div>
@@ -87,6 +93,7 @@
 
 <script>
   let chosenPlan;
+
   function openTrendzWizard(e, id, plan){
     e.preventDefault();
     $('.modal-wizard').removeClass('hidden');
@@ -100,6 +107,8 @@
       chosenPlan = plan;
       console.log(plan)
     }
+
+    changePurchaseButtonId(id, plan);
   }
 
   function openChosenPlan(id){
@@ -169,5 +178,24 @@
       "event_category": product,
       "event_label": link
     });
+  }
+
+  let gtmIdsMap = {
+    'self-managed-content maker': ["Pricing_TA_SM_GoToLicPortal", "Pricing_TA_SM_GoToTBCloud"],
+    'self-managed-content prototype': ["Pricing_TA_Prototype_GoToLicPortal", "Pricing_TA_Prototype_GoToTBCloud"],
+    'self-managed-content startup': ["Pricing_TA_SM_Startup_GoToLicPortal", "Pricing_TA_SM_Startup_GoToTBCloud"],
+    'self-managed-content business': ["Pricing_TA_SM_Business_GoToLicPortal", "Pricing_TA_SM_Business_GoToTBCloud"],
+    'cloud-content maker': ["Pricing_TA_Cloud_GoToLicPortal", "Pricing_TA_Cloud_GoToTBCloud"],
+    'cloud-content prototype': ["Pricing_TA_SM_Prototype_GoToLicPortal", "Pricing_TA_SM_Prototype_GoToTBCloud"],
+    'cloud-content startup': ["Pricing_TA_Cloud_Startup_GoToLicPortal", "Pricing_TA_Cloud_Startup_GoToTBCloud"],
+    'cloud-content business': ["Pricing_TA_Cloud_Business_GoToLicPortal", "Pricing_TA_Cloud_Business_GoToTBCloud"],
+  }
+
+  function changePurchaseButtonId(id, plan) {
+    let buttonsIds = gtmIdsMap[`${id} ${plan}`];
+    if (buttonsIds) {
+      jQuery('.goToLicensePortal').attr('id', buttonsIds[0]);
+      jQuery('.goToTBCloud').attr('id', buttonsIds[1]);
+    }
   }
 </script>
