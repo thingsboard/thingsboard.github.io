@@ -59,7 +59,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":"/blog/wp-admin/admin-ajax.php",
-                "nonce": "0268338a2d",
+                "nonce": "fa0fece32a",
                 "home_url": "/blog/",
                 "settings_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": '/blog/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -885,13 +885,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 				localStorage.setItem('theme', 'light');
 			}
 		});
-		if(document.body.getAttribute('data-scheme') === 'dark'){
-			document.body.classList.add('dark_styles');
-			localStorage.setItem('theme', 'dark');
-		} else if(document.body.getAttribute('data-scheme') === 'light'){
-			document.body.classList.remove('dark_styles');
-			localStorage.setItem('theme', 'light');
-		}
 		function setThemeFromLocalStorage() {
 			if (localStorage.getItem('theme') === 'dark') {
 				document.body.classList.add('dark_styles');
