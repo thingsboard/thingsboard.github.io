@@ -3,9 +3,9 @@
 * TOC
 {:toc}
 
-The Custom translation feature of the ThingsBoard allows you to add new languages not currently listed, enhance the translation of existing ones, and perform translation for specific GUI elements on dashboards.
+The Custom translation feature allows you to add new languages not currently supported by ThingsBoard, edit the existing locale translations, and gives opportunity to customize specific dashboard GUI elements.
 
-Go to the "Custom translation" tab of the "White labeling" page. On this page, you will find the current list of available languages and their translation progress indicated in percentages. While not all translations are complete to 100%, our team is constantly working on improving and expanding the list.
+Go to the "Custom translation" tab of the "White labeling" page. On this page, you will find the current list of available languages and their translation progress indicated in percentages. While not all translations are complete, our team is constantly working on improving and expanding the list.
 
 ![image](/images/user-guide/custom-translation/main-page-1-pe.png)
 
@@ -67,46 +67,23 @@ To change the ThingsBoard's interface language, follow these steps:
 After completing these steps, ThingsBoard's interface language will be changed to the language of your choice.
 In this guide, we have chosen Italian as the system language for demonstration purposes. Next, we will set up a translation for it.
 
-## Set up translation
-
-The translation is configured in the Translation map.
-To open the translation map, click on the language row or the pencil icon for the selected language.
-
-{% assign changeLanguagePE = '
-    ===
-        image: /images/user-guide/custom-translation/translation-map-1-pe.png,
-        title: To open the translation map, click on the language row or its pencil icon for the selected language;
-    ===
-        image: /images/user-guide/custom-translation/translation-map-2-pe.png,
-        title: You will see a table with three columns: term key, its default value (in English), and a field for entering the key value in the language of your choice;
-'
-%}
-
-{% include images-gallery.liquid imageCollection=changeLanguagePE %}
+## Translation editing
 
 Translation can be configured in two ways: basic and advanced:
 - Within the "Basic" tab, you can [manually add new term keys](#editing-translation-using-basic-mode) or edit translations for existing ones;
 - In the "Advanced" tab, you can [upload a translation language file in JSON format](#editing-translation-using-advanced-mode).
 
-### Editing translation using basic mode
-
-In the "Basic" settings mode, the translation map consists of three columns: the term key, its default value (in English), and a field for entering the translation.
-The basic translating mode is convenient because you can apply different types of filtering:
-
-- Translated - are those keys, that have a translation for the current language;
-- Untranslated - are those keys, that have not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
-- Customized - are those keys for which the translation has been overridden. E. g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
-- Added key - is a key added at the current level. When adding new keys, it's necessary to provide an English translation (second column), as this key will also be added for all other languages.
+### Translation editing using basic mode
 
 Let's consider manually adding translations for term keys:
 
 {% assign manualAdditionOfTranslationPE = '
     ===
         image: /images/user-guide/custom-translation/manual-addition-of-translation-1-pe.png,
-        title: Click on the row of the language you need to open its translation map;
+        title: Click on the "pencil" icon of the language you want to edit;
     ===
         image: /images/user-guide/custom-translation/manual-addition-of-translation-2-pe.png,
-        title: You will see a table with three columns: term key, its default value (in English), and a field for entering the key value in the language of your choice;
+        title: You will see a table with three columns: the term key, its default value (in English), and a field for entering the translation;
     ===
         image: /images/user-guide/custom-translation/manual-addition-of-translation-3-pe.png,
         title: As you can see, not all translation fields are filled. Let&#39;s fill in the translation field for the "Home" menu item. Use the search to find the term key responsible for this menu item and enter its translation;
@@ -117,6 +94,16 @@ Let's consider manually adding translations for term keys:
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=manualAdditionOfTranslationPE %}
+
+The basic translating mode is convenient because you can apply different types of filtering:
+
+**Translated** is key, that has a translation for the current language;
+
+**Untranslated** is key, that has not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
+
+**Customized** is key for which the translation has been overridden from parent level. E.g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
+
+**Added key** is a key added on the current level for current language or default one (English). When adding new keys, it's necessary to provide an English translation (second column), as this key will also be added for all other languages.
 
 To clear a custom translation or reset its value to the one specified by the system administrator, click the broom icon in the term key row.
 
@@ -132,9 +119,11 @@ To clear a custom translation or reset its value to the one specified by the sys
 
 {% include images-gallery.liquid imageCollection=clearCustomTranslationPE %}
 
-### Editing translation using advanced mode
+### Translation editing using advanced mode
 
-You can add/update custom translations using JSON format. For this use advanced editing mode. This JSON will overwrite the default translation. Let's see how it works:
+Advanced mode implies direct editing of JSON file that represents custom translation. 
+You can download any system locale translation, make all changes you need and insert prepared JSON translation map edit field.
+Let's see how it works:
 
 {% assign customTranslationInJsonPE = '
     ===
@@ -142,10 +131,10 @@ You can add/update custom translations using JSON format. For this use advanced 
         title: Click on the language to open its translation map;
     ===
         image: /images/user-guide/custom-translation/custom-translation-in-json-1-pe.png,
-        title: Navigate to the "Advanced" tab and paste custom translation in JSON. In this tutorial, we will use the custom translation map from the example below. After, click "Save";
+        title: Navigate to the "Advanced" tab, and then insert JSON from example below. After, click "Save";
     ===
         image: /images/user-guide/custom-translation/custom-translation-in-json-2-pe.png,
-        title: The translation is complete. Check the translation, specifically the "Home" menu item.
+        title: Check the translation is applied ("Home" menu item should be translated to "Pagina principale di un sito web").
 '
 %}
 
@@ -179,11 +168,10 @@ You can add/update custom translations using JSON format. For this use advanced 
 
 ## Platform's internalization
 
-Imagine you manage a dashboard that is accessed by customers from various countries. To ensure everyone can understand the dashboard easily, you'll want the names of the dashboard, widgets, devices, and data keys to appear in customer's preferred language. 
+Imagine you manage a dashboard that is accessed by customers from various countries. To ensure everyone can understand the dashboard easily, you may want the names of the dashboard, widgets, devices, data keys, and any other dashboard components to appear in customer's specific language. 
 This is where ThingsBoard's internationalization feature comes into play.
 
-Each customer must have a unique translation map. This map contains custom translations for the names of items like devices, assets, and any other components on the dashboard. 
-When setting up these elements, instead of entering a fixed name, you use a structure in the format **{i18n}**. 
+To make translation of mentioned elements dynamic use structure in the format **{i18n}**.
 This structure ensures that the name of each element is pulled from the customer's individual translation map.
 
 {% capture difference %}
@@ -194,9 +182,10 @@ If the {i18n} structure is used but a translation isn't provided in the translat
 
 Let's see how it works.
 
-#### Translation of the dashboard's name
+#### Custom translation for the dashboard title
 
-- First, define a [custom translation](#adding-a-translation-using-a-language-translation-file) for your dashboard title within a translation map, using JSON format. Here's an example entry:
+- First, set a [custom translation](#adding-a-translation-using-a-language-translation-file) for your dashboard title within a translation map, using JSON format.
+Here is an example of an entry for translating the dashboard title into Italian:
 
 ```text
 ...
@@ -230,24 +219,15 @@ Let's see how it works.
         title: Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}: <b>{i18n:custom.my-dashboard.title}</b>. Apply changes;
     ===
         image: /images/user-guide/custom-translation/dashboard-internalization-4-pe.png,
-        title: Make sure the dashboard title is correctly translated according to the translation map. Then, open the dashboard;
-    ===
-        image: /images/user-guide/custom-translation/dashboard-internalization-5-pe.png,
-        title: While in edit mode, click the "Manage dashboard states" menu item. Find the default dashboard state and enter its edit mode;
-    ===
-        image: /images/user-guide/custom-translation/dashboard-internalization-6-pe.png,
-        title: Change the default dashboard state name to <b>{i18n:custom.my-dashboard.title}</b> and apply all changes;
-    ===
-        image: /images/user-guide/custom-translation/dashboard-internalization-7-pe.png,
-        title: Finally, check that the dashboard state title is correctly translated as well.
+        title: Make sure the dashboard title is correctly translated according to the translation map.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=translationOfDashboardNamePE %}
 
-#### Translation of the widget's title
+#### Custom translation for the widget title
 
-- Define [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget's name, the temperature column title, and the entity label column title in the translation map, using JSON format.
+- Set [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget's name, the temperature column title, and the entity label column title in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -261,6 +241,7 @@ Here's an example entry:
   }
 ...
 ```
+
 - Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
 - In the widget settings, set the custom translations for:
   - Widget title - <b>{i18n:custom.my-widget.name}</b>;
@@ -290,10 +271,9 @@ Here's an example entry:
 
 {% include images-gallery.liquid imageCollection=widgetInternalizationPE %}
 
-<br>
-<b>Translation of the widget's tooltip:</b>
+#### Custom translation for the widget tooltip
 
-- Define [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget tooltip title in the translation map, using JSON format.
+- Set [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget tooltip title in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -335,7 +315,7 @@ Here's an example entry:
 
 Custom translation can be used in the cell content function in widgets like Entity Table, Timeseries table and Alarms table. JavaScript code requires quotes for the i18n.
 
-- Define [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using JSON format.
+- Set [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -399,8 +379,8 @@ if(value>70){
 
 #### Using custom translation in HTML Value Card widget
 
-- Define [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using JSON format.
-  Here's an example entry:
+- Set [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using advanced mode.
+Here's an example entry:
 
 ```text
 ...
