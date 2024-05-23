@@ -97,13 +97,13 @@ Let's consider manually adding translations for term keys:
 
 The basic translating mode is convenient because you can apply different types of filtering:
 
-**Translated** is key, that has a translation for the current language;
+ㅤ\- **Translated** is key, that has a translation for the current language;
 
-**Untranslated** is key, that has not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
+ㅤ\- **Untranslated** is key, that has not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
 
-**Customized** is key for which the translation has been overridden from parent level. E.g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
+ㅤ\- **Customized** is key for which the translation has been overridden from parent level. E.g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
 
-**Added key** is a key added on the current level for current language or default one (English). When adding new keys, it's necessary to provide an English translation (second column), as this key will also be added for all other languages.
+ㅤ\- **Added key** is a key added on the current level for current language or default one (English). When adding new keys, it's necessary to provide an English translation (second column), as this key will also be added for all other languages.
 
 To clear a custom translation or reset its value to the one specified by the system administrator, click the broom icon in the term key row.
 
