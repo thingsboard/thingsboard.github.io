@@ -132,7 +132,7 @@ notitle: "true"
     jqueryDefer(
         function () {
             $( document ).ready(function() {
-                var $contactForm =  jQuery('.ContactUs');
+                var $contactForm =  $('#ContactUs');
                 $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
