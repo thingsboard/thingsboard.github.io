@@ -132,7 +132,7 @@ notitle: "true"
     jqueryDefer(
         function () {
             $( document ).ready(function() {
-                var $contactForm =  jQuery('.deviceManagementReadyToLaunch');
+                var $contactForm =  jQuery('.ContactUs');
                 $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
@@ -156,21 +156,7 @@ notitle: "true"
                     $contactForm.find('select[name=subject]').removeClass("input--empty");
                  }
             });
-
-            waitForForm();
         }
     );
 
-    function waitForForm() {
-        let $form = jQuery('[action$="xbjvbeln"]');
-        if ($form.length) {
-            $form
-                .attr('id', 'Products_Edge_DemoRequestForm')
-                .addClass('gtm_form');
-        } else {
-            setTimeout(function(){
-                waitForForm();
-            }, 150);
-        }
-    }
 </script>
