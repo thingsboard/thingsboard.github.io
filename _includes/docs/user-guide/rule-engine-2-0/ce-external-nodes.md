@@ -3,6 +3,72 @@ External Nodes used are used to interact with external systems.
 * TOC
 {:toc}
 
+## AWS Lambda Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.7.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-aws-lambda.png)
+
+Node publish messages to AWS Lambda (Amazon Lambda).
+
+**Configuration**
+
+// todo: add config image
+
+Function configuration
+
+- **Function name** is required to specify which AWS Lambda function will be invoked and executed.
+- **Qualifier** is used to specify a version or alias of the Lambda function to invoke. By default, Lambda invokes the **$LATEST** version, which is the latest version of the function.
+- **Invocation type** specifies how the Lambda function is invoked. You can choose from the following options: RequestResponse, Event and DryRun. More information on invocation types can be found [here](https://docs.aws.amazon.com/lambda/latest/api/API_Invoke.html#API_Invoke_RequestSyntax).
+
+AWS Credentials
+
+- **AWS Access Key ID** and **AWS Secret Access Key** are the credentials of an AWS IAM User with programmatic access.
+  More information on AWS access keys can be found [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+- **AWS Region** must correspond to the one in which the Lambda function is created. Current list of AWS Regions can be found [here](https://docs.aws.amazon.com/general/latest/gr/rande.html).
+
+Advanced settings
+
+- **Connection timeout**: amount of time to wait (in milliseconds) when initially establishing a connection before giving up and timing out.
+  A value of 0 means infinity, and is not recommended.
+- **Request timeout**: amount of time to wait (in milliseconds) for the request to complete before giving up and timing out.
+
+- **Tell Failure if AWS Lambda function execution raises exception**: if enabled, forces failure of message processing if AWS Lambda function execution raises exception. If disabled, the error information is added to the response payload, and the message continues via the success route.
+
+> **Note**: **Function name** and **Qualifier** fields supports templatization.
+
+**Output**
+- **Success**: If message was processed successfully.
+- **Failure**: If error happened during message processing or Lambda function execution raises exception, if **Tell Failure if AWS Lambda function execution raises exception** is enabled.
+
+**Usage example: monitoring and processing water meter data with AWS Lambda**
+
+Consider the following scenario: we have a water meter IoT device that sends periodic updates about water usage to our system.
+We need to process these updates to check for anomalies and perform specific actions based on the water usage patterns.
+
+Solution with AWS Lambda node:
+1. **Receive water meter data**: Our rule chain starts with an MQTT node that receives water meter updates. Each update contains the water usage data.
+2. **Preprocess the data**: The message passes through a Transformation Node to format the data appropriately for AWS Lambda.
+3. **Invoke AWS Lambda function**: The formatted message is then sent to the AWS Lambda Node. This node is configured with the necessary AWS credentials and function details.
+4. **Process data with Lambda**: The AWS Lambda function is invoked, processing the water usage data. It checks for anomalies, such as unusually high water usage, and logs the results or triggers further actions.
+5. **Handle Lambda response**: Upon successful execution, the Lambda function returns a response. The AWS Lambda Node captures this response, including the requestId in the message metadata.
+6. **Route based on Lambda response**: Based on the response from AWS Lambda, the message is routed through either the Success or Failure path. The Success path can continue to further processing, while the Failure path handles any errors or issues encountered.
+
+By utilizing the AWS Lambda Node in this manner, we can efficiently process and respond to real-time water meter data, leveraging AWS Lambda's capabilities for data processing and anomaly detection.
+
+**Published payload** - node will publish message payload to the AWS Lambda. If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload to the AWS Lambda.
+
+**Outbound message** from this node will contain response **requestId** in message metadata.
+Message payload will contain result of the function execution.
+
+<br>
+
 
 ## AWS SNS Node
 
