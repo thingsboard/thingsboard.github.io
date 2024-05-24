@@ -45,8 +45,6 @@ A value of 0 means infinity, and is not recommended.
 - **Tell Failure if AWS Lambda function execution raises exception**: if enabled, forces failure of message processing if AWS Lambda function execution raises exception. 
 If disabled, the error information is added to the response payload, and the message will be routed via success chain.
 
-> **Note**: This node uses **RequestResponse** invocation type. More information on invocation types can be found [here](https://docs.aws.amazon.com/lambda/latest/api/API_Invoke.html#API_Invoke_RequestSyntax).
-
 **Output**
 - **Success**: If message was processed successfully.
 - **Failure**: If an error occurs during message processing or if the AWS Lambda function execution raises an exception, and the option **Tell Failure if AWS Lambda function execution raises exception** is enabled.
