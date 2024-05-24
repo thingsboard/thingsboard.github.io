@@ -70,7 +70,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
         <div id="background">
             <div class="main1"></div><div class="small1"></div><div class="small2"></div>
         </div>
-        <div class="block" style="padding-top: 300px">
+        <div class="block first-scenario">
             <div class="feature-des">
                 <h3 class="item-heading">MQTT broker for real-life IoT scenarios</h3>
             </div>
@@ -92,7 +92,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             </div>
         </div>
         <div class="block">
-            <div class="image-container">
+            <div class="image-container fan-out-img">
                 <img src="/images/mqtt-broker/product/fan-out.gif" alt="Fan out">
             </div>            
             <div class="description">
@@ -120,7 +120,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     <a href="/docs/mqtt-broker/install/installation-options/" class="button install-tbmq arrow-top-right">Install TBMQ</a>
                 </div>
             </div>
-            <div class="col-lg-6" style="max-width: 45%">
+            <div class="col-lg-6 installation-options-img">
                 <div class="options">
                     <img src="/images/mqtt-broker/product/docker.png" alt="Docker">
                     <img src="/images/mqtt-broker/product/aws.png" alt="Aws">
@@ -141,7 +141,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     <p>Gain full visibility over your IoT ecosystem with the user-friendly session management dashboard, enabling you to monitor vital session attributes. Seamlessly administer your device subscriptions for efficient data communication.</p>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 image-container">
                 <div class="block">
                     <img src="/images/mqtt-broker/product/administer-client-session.png" alt="Administer client sessions">
                 </div>
@@ -150,13 +150,13 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
         <div class="row">
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/credentials-management.png" alt="MQTT client credentials management">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="block">
                     <h4 class="title">MQTT client credentials management</h4>
                     <p>Strengthen your IoT security using the MQTT client credentials management system, crafted to handle both Basic and X.509 Certificate Chain authentication options effortlessly.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 image-container">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/credentials-management.png" alt="MQTT client credentials management">
                 </div>
             </div>
         </div>
@@ -167,7 +167,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     <p>Interact with your IoT devices in real-time through the WebSocket client, offering a streamlined and responsive interface for device messaging and monitoring.</p>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 image-container">
                 <div class="block">
                     <img src="/images/mqtt-broker/product/websocket-client-connectivity.png" alt="WebSocket client connectivity">
                 </div>
@@ -176,13 +176,13 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
         <div class="row">
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/monitor-key-metrics.png" alt="Monitor key metrics">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="block">
                     <h4 class="title">Monitor key metrics</h4>
                     <p>Keep a pulse on your IoT environment by tracking key metrics in real-time, ensuring your network's health and performance are always at their peak.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 image-container">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/monitor-key-metrics.png" alt="Monitor key metrics">
                 </div>
             </div>
         </div>
