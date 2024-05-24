@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-In this comprehensive guide, we will walk you through the process of connecting an OPC-UA device via SIA Connector to the ThingsBoard platform. 
+In this comprehensive guide, we will walk you through the process of connecting an OPC-UA device to the ThingsBoard platform via SIA Connector. 
 
 The [SIA Connect](https://sia-connect.com/){:target="_blank"} is a tool that enables this process. 
 By connecting your OPC-UA device to the ThingsBoard platform, you can monitor, control, and automate your devices in a highly scalable and flexible way. Stay tuned as we guide you step by step through this process.
@@ -19,14 +19,14 @@ For simplicity, we will provide the device manually using the UI:
 
 ## Launching demo OPC-UA server
 
-As a demo OPC-UA server, we will use docker image, that can be installed and run using the following command:
+We will use docker image as a demo OPC-UA server, which can be installed and run using the following command:
 
 ```text
 docker run -it -p 4840:4840 thingsboard/tb-gw-opcua-server:latest
 ```
 {: .copy-code}
 
-After running docker image, you can see the following logs in your terminal:
+After running the docker image, you will see the following logs in your terminal:
 
 ![image](/images/user-guide/integrations/sia-connect/terminal-opc-ua.png)
 
@@ -35,15 +35,15 @@ After running docker image, you can see the following logs in your terminal:
 #### Installing SIA Connect
 
 In our case, we installed SIA Connect as a <b>.deb</b> package. You can find the official installation guide [here](https://help.sia-connect.com/en_US/linux-installation/install-sia-connect-on-linux){:target="_blank"}. Additionally, you can install SIA Connect as a Docker image [here](https://help.sia-connect.com/en_US/docker/install-sia-connect-using-docker){:target="_blank"}.
-After successful installation, go to the default host <b>127.0.0.1:80</b> where the Web UI is running (or another host, depending on your settings).
+After successful installation, navigate to the default host <b>127.0.0.1:80</b> where the Web UI is running (host might differ, depending on your settings).
 
 {% include images-gallery.liquid imageCollection="installing-sia-connect" %}
 
-You need to log in and provide your LICENSE key, or you can use the demo version, which has a 30-minute session limit.
+You need to log in and provide your LICENSE key. Alternatively, you can use the demo version, which has a 30-minute session limit.
 
 #### Installing OPC-UA connector
 
-Now, we have to download <b>OPC-UA</b> connector. For this purpose, use the following steps:
+Now, we have to download <b>OPC-UA</b> connector. For this purpose, follow these steps:
 
 - Navigate to "<b>Connectors</b>" page in the side menu;
 - Click on "<b>Search for Connector to download & install</b>" input field, and start typing the connector name - "<b>OPC-UA</b>";
@@ -55,7 +55,7 @@ Now, we have to download <b>OPC-UA</b> connector. For this purpose, use the foll
 
 #### Installing MQTT connector
 
-Also, we need to download <b>MQTT</b> connector for making connection with ThingsBoard. The steps are as for downloading MQTT connector:
+Also, we need to download <b>MQTT</b> connector to establish connection with ThingsBoard. The steps are as for downloading MQTT connector:
 
 - Go to "<b>Connectors</b>" page in the side menu;
 - Click on "<b>Search for Connector to download & install</b>" input field and type "<b>MQTT</b>";
@@ -74,7 +74,7 @@ To connect our test device, we need to create two instances:
 
 #### Adding OPC-UA Device instance
 
-First of all, we need to create OPC-UA Device instance, for this purpose, use the following steps below:
+First of all, we need to create OPC-UA Device instance, for this purpose, follow the steps below:
 
 - Go to "<b>Instance</b>" tab in the side menu and click "<b>+ Add new instance</b>" button;
 - Fill in the input fields:
@@ -87,7 +87,7 @@ OPC-UA Device instance added.
 
 {% include images-gallery.liquid imageCollection="adding-opc-ua-device-instance-1" %}
 
-Also, we need to create an item. Item is a data point inside the instance e.g. a tag in a PLC, topic on MQTT broker, endpoint on REST API, query in database. Use the steps below for adding new item to OPC-UA Device instance:
+Also, we need to create an item. An item represents a data point inside the instance. E.g a tag in a PLC, a topic on MQTT broker, an endpoint on REST API, or a query in database. Follow the steps below to add a new item to OPC-UA Device instance:
 
 - Click on "<b>+ New item</b>" in the "<b>Items</b>" section;'
 - Fill in the input fields:
@@ -96,7 +96,7 @@ Also, we need to create an item. Item is a data point inside the instance e.g. a
   - "<b>Identifier</b>" - "<b>ns=2;i=13</b>"; 
 - Click the "<b>Save item</b>" button.
 
-"<b>Temperature</b>" item added.
+You will now see the "<b>Temperature</b>" item added.
 
 {% include images-gallery.liquid imageCollection="adding-opc-ua-device-instance-2" %}
 
@@ -113,21 +113,21 @@ So, in the final result, you will have the following list of items:
 
 #### Adding ThingsBoard instance
 
-This instance will map data from the device instance, convert it to a suitable format, and send data to ThingsBoard. For adding new instance, use the following steps:
+This instance will map data from the device instance, convert it to a suitable format, and send data to ThingsBoard. To add a new instance, use follow these steps:
 
 - Go to the <b>"Instance"</b> tab in the side menu and click <b>"+ Add new instance"</b> button;
 - Fill in the input fields:
   - "<b>Name</b>" - "<b>ThingsBoard</b>";
   - "<b>Address</b>" - "<b>your ThingsBoard host</b>". In our case - <b>thingsboard.cloud</b>;
   - <b>"Port"</b> - "<b>1883</b>";
-  - <b>"Username"</b>, <b>"Device id"</b>, and <b>"Password"</b> fields fill in the values specified in [your device credentials](#creating-device-on-thingsboard);
+  - Fill in the values specified in [your device credentials](#creating-device-on-thingsboard) for the <b>"Username"</b>, <b>"Device id"</b>, and <b>"Password"</b> fields]
 -  Click <b>"Save instance"</b> button.
 
-ThingsBoard instance added.
+ThingsBoard instance has been added.
 
 {% include images-gallery.liquid imageCollection="adding-thingsboard-instance-1" %}
 
-Now, we have to add new item. For this purpose, use the following steps:
+Now, we have to add new item. For this purpose, follow these steps:
 
 - Click on the <b>"+ New item"</b> in the "<b>Items</b>" section;
 - Fill in the input fields:
@@ -137,36 +137,36 @@ Now, we have to add new item. For this purpose, use the following steps:
   - "<b>Input template</b>" - "<b>{&#37;ITEM.NAME&#37;: &#37;VALUE&#37;}</b>"; 
 - Click on <b>"Save item"</b> button.
 
-<b>Publish data</b> item added.
+<b>Publish data</b> item has been added.
 
 {% include images-gallery.liquid imageCollection="adding-thingsboard-instance-2" %}
 
-And finally, we have to add mapping. A mapping is a virtual connection between two items which will handle data transmission between the two e.g. a mapping from a PLC item to a MQTT item. For this purpose, use the following steps:
+And finally, we have to add mapping. A mapping is a virtual connection between two items which will handle data transmission between the two  (e.g. a mapping from a PLC item to a MQTT item). For this purpose, follow these steps:
 
 - Click on the <b>"+ New mapping"</b> in the "<b>Mappings on ThingsBoard</b>" section;
 - For "<b>Sender Item</b>" select "<b>OPC-UA Device</b>" as instance and "<b>Temperature</b>" as "<b>Item</b>"; 
 - For "<b>Receiver item</b>" select "<b>ThingsBoard</b>" as "<b>Instance</b>" and "<b>Publish data</b>" as "<b>Item</b>"; 
 - Click on "<b>Save mapping</b>" button.
  
-Mapping added.
+Mapping has been added.
 
 {% include images-gallery.liquid imageCollection="adding-thingsboard-instance-3" %}
 
 Add other mappings, such as "<b>Power</b>" and "<b>Humidity</b>", by following the steps described above.
 
-So, in the final result, you will have the following list of mappings:
+After completing these steps, you will have the following list of mappings:
 
 {% include images-gallery.liquid imageCollection="adding-thingsboard-instance-4" %}
 
 ## Check data on ThingsBoard
 
-Once you have successfully done all the steps above and SIA Connect sent data, you can see it in the device "Latest telemetry" tab of your ThingsBoard instance:
+Once you have successfully done all the steps above and SIA Connect has sent data, you can view it in the "Latest telemetry" tab of the device in your ThingsBoard instance:
 
 - Navigate to the "<b>Devices</b>" page of the "<b>Entities</b>" section of your <b>ThingsBoard</b> instance;
 - Click on the OPC-UA Device row in the table to open device details;
 - Navigate to the "<b>Latest telemetry</b>" tab.
 
-You must see incoming data.
+You should see incoming data displayed.
 
 {% include images-gallery.liquid imageCollection="check-data-on-thingsboard" %}
 
@@ -174,7 +174,7 @@ You must see incoming data.
 
 In this section, we will configure SIA Connect to modify the value of an OPC-UA node. Specifically, we will be changing the device status node.
 
-For this purpose we need to create one more item in <b>ThingsBoard</b> instance of the <b>SIA Connect</b>, like following:
+For this purpose we need to create one more item in <b>ThingsBoard</b> instance of the <b>SIA Connect</b>, like the following:
 
 - Go to the "<b>Instance</b>" tab in the side menu and select "<b>ThingsBoard</b>";
 - Click on the "<b>+ New item</b>" in the "<b>Items</b>" section;
@@ -183,12 +183,12 @@ For this purpose we need to create one more item in <b>ThingsBoard</b> instance 
   - Set "<b>Read write</b>" select field to "<b>Read only</b>" option;
   - "<b>Topic</b>" - "<b>v1/devices/me/attributes</b>";
 - Click on "<b>Save item</b>" button. 
- 
-Item added.
+
+Item has been added.
 
 {% include images-gallery.liquid imageCollection="shared-attributes" %}
 
-Also, we need to create item on **OPC-UA Device** instance, for this purpose, use the following steps:
+Also, we need to create item on **OPC-UA Device** instance, for this purpose, follow these steps:
 
 - Go to the "<b>Instance</b>" tab in the side menu and select <b>OPC-UA Device</b>;
 - Click on the "<b>+ New item</b>" in the "<b>Items</b>" section;
@@ -203,7 +203,7 @@ Item added.
 
 {% include images-gallery.liquid imageCollection="status-attributes" %}
 
-The next step is to create another mapping for data transmission between the ThingsBoard instance and the OPC-UA Device. For this purpose, use the following steps below:
+The next step is to create another mapping for data transmission between the ThingsBoard instance and the OPC-UA Device. For this purpose, follow the steps below:
 
 - On the <b>ThingsBoard</b> instance, scroll down to "<b>Mappings</b>" section and click on "<b>+ New Mapping</b>" button;
 - For "<b>Sender Item</b>" select "<b>ThingsBoard</b>" as instance and "<b>Shared attribute update</b>" as "<b>Item</b>"; 
@@ -213,15 +213,15 @@ The next step is to create another mapping for data transmission between the Thi
 
 {% include images-gallery.liquid imageCollection="create-another-mapping" %}
 
-And finally we need to create shared attribute on device on ThingsBoard platform. For this purpose, use the following steps:
+Finally, we need to create shared attribute on the device on ThingsBoard platform. For this purpose, follow these steps:
 
 - Go to the "<b>Devices</b>" page of the "<b>Entities</b>" section of your <b>ThingsBoard</b> instance;
 - Click on "<b>OPC-UA Device</b>", and navigate to the "<b>Attributes</b>" tab;
-- Select "<b>Shared attributes</b>" from dropdown field and click on "<b>plus</b>" button for create new one;
-- Fill in "<b>Key</b>" field by "<b>status</b>" value and select "<b>Boolean</b>" data type from dropdown field;
+- Select "<b>Shared attributes</b>" from dropdown field and click on "<b>plus</b>" button to create a new one;
+- Fill in "<b>Key</b>" field with "<b>status</b>" value and select "<b>Boolean</b>" data type from dropdown field;
 - Click on "<b>Add</b>" button.
 
-Shared attribute added.
+Shared attribute has been added.
 
 {% include images-gallery.liquid imageCollection="shared-attribute-on-device" %}
 
@@ -233,11 +233,11 @@ To visualize data from Sia Connect, we will create [the dashboard](/docs/{{docsP
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection="import-dashboard" %}
 
-After importing the dashboard, for the data to be displayed correctly, you need to specify your <b>OPC-UA Device</b> in the [entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
+After importing the dashboard, verify that your OPC-UA Device is specified in the [entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}. This ensures that the data will be displayed correctly.
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection="change-entity-alias-1" %}
 
-If you followed these steps correctly, you should now see the following dashboard with data from the OPC-UA Device.
+If you have followed these steps correctly, you should now see this dashboard populated with data from the OPC-UA Device.
 
 {% include images-gallery.liquid imageCollection="visualize-data-on-thingsboard" %}
 
