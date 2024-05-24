@@ -225,7 +225,16 @@
           justify-content: space-between
           .installation-options-img
             margin-top: 40px
+            flex: 1
+            .options
+              display: flex
+              flex-direction: row
+              flex-wrap: nowrap
+              justify-content: center
+              gap: 10px
           .col-lg-6
+            &:first-child
+              flex: 2 !important
             .block
               display: flex
               flex-direction: column
@@ -269,18 +278,13 @@
                   background-color: rgba(0,0,0,.12)
                 .button
                   background: #1F8B4D !important
-            .options
-              display: flex
-              flex-wrap: wrap
-              justify-content: space-between
-              gap: 20px
 
     #bottom-features
       margin-bottom: 24px
       h3
         font-size: 42px
         padding-top: 120px
-        margin-bottom: 20px
+        margin-bottom: 40px
       #cards
         display: flex
         flex-direction: column
@@ -289,7 +293,7 @@
         &>div
           margin-bottom: 36px
           .block
-            padding: 12px
+            padding: 40px
             float: left
             text-align: center
             width: 100%
@@ -533,6 +537,14 @@
             height: 600px
           &.main4
             height: 500px
+  @media screen and (max-width: 500px)
+    #tbmqContent
+      #installation-options
+        main
+          .row
+            .installation-options-img
+              .options
+                flex-wrap: wrap
   @media screen and (min-width: 960px)
     #hero
       #hero-content
@@ -592,12 +604,6 @@
           padding-top: 190px
       #get-started
         padding-bottom: 230px
-      #installation-options
-        main
-          .row
-            .col-lg-6
-              .options
-                justify-content: center
       #background
         div
           &.main1
@@ -673,7 +679,7 @@
           flex-direction: row
           &>div
             .block
-              padding: 20px
+              padding: 40px
               display: flex
               flex-direction: row
               gap: 40px
