@@ -223,6 +223,7 @@
           display: flex
           align-items: center
           justify-content: space-between
+          gap: 10px
           .installation-options-img
             margin-top: 40px
             flex: 1
@@ -455,9 +456,9 @@
           background-color: #1F8B4D
         &.main2
           top: -70px
-          width: 2560px
+          width: 3000px
           height: 900px
-          left: -1280px
+          left: -1300px
           background-color: #f2f8f5
         &.small3
           top: 250px
@@ -533,8 +534,10 @@
       #background
         div
           &.main2
-            top: -90px
-            height: 600px
+            top: -140px
+            height: 690px
+          &.main3
+            height: 2000px
           &.main4
             height: 500px
   @media screen and (max-width: 500px)
@@ -595,13 +598,17 @@
                 margin: 0 0 18px
       #scenarios
         .first-scenario
-          padding-top: 270px
+          padding-top: 300px
+      #installation-options
+        main
+          .row
+            flex-direction: column
       #middle-features
         main
-          padding-top: 200px
+          padding-top: 230px
       #bottom-features
         h3
-          padding-top: 190px
+          padding-top: 250px
       #get-started
         padding-bottom: 230px
       #background
@@ -618,29 +625,33 @@
           &.main2
             height: 600px
           &.small3
-            top: 430px
+            top: 400px
             right: -700px
           &.small4
-            top: 470px
+            top: 445px
             right: -800px
           &.main3
             top: 90px
             height: 1750px
           &.small5
             top: 145px
-            left: -68vw
+            left: -700px
           &.small6
             top: 80px
-            left: -65vw
+            left: -600px
           &.small7
-            top: 440px
+            top: 477px
             right: -700px
           &.small8
-            top: 495px
-            right: -800px
+            top: 530px
+            right: -770px
   @media screen and (min-width: 992px)
     .col-lg-6
       max-width: 100% !important
+  @media screen and (min-width: 1025px)
+    section
+      main
+        max-width: 1400px !important
   @media screen and (min-width: 1280px)
     #hero
       #hero-content
@@ -668,6 +679,7 @@
             order: unset
       #middle-features
         main
+          padding-top: 270px
           .row
             flex-direction: row
             flex-wrap: nowrap
@@ -687,32 +699,43 @@
               div
                 .title
                   text-align: unset
+      #installation-options
+        main
+          .row
+            flex-direction: row
+            gap: 100px
       #background
         div
           &.main1
-            height: 1500px
+            height: 1650px
           &.small1
-            right: -55vw
-            top: 50px
+            right: -900px
+            top: 75px
           &.small2
-            right: -62vw
-            top: 0
+            right: -1020px
+            top: -15px
           &.main2
-            height: 500px
+            height: 579px
           &.small3
-            top: 325px
-            right: -55vw
+            top: 370px
+            right: -765px
           &.small4
-            top: 375px
-            right: -60vw
+            top: 407px
+            right: -885px
+          &.small5
+            top: 110px
+            left: -940px
+          &.small6
+            top: 45px
+            left: -840px
           &.main3
-            height: 1050px
+            height: 1150px
           &.small7
             top: 435px
-            right: -55vw
+            right: -900px
           &.small8
-            top: 485px
-            right: -60vw
+            top: 495px
+            right: -1000px
   @media screen and (min-width: 1920px)
     #hero
       #hero-content
@@ -769,19 +792,19 @@
       #background
         div
           &.main1
-            width: 2700px
-            left: -1350px
+            width: 3000px
+            left: -1440px
           &.small1
-            right: -1060px
-            top: 50px
+            right: -1110px
+            top: 60px
           &.small2
             right: -1250px
-            top: -40px
+            top: -30px
           &.small3
-            top: 280px
+            top: 300px
             right: -1300px
           &.small4
-            top: 335px
+            top: 350px
             right: -1400px
           &.small5
             top: 135px
@@ -790,8 +813,8 @@
             top: 80px
             left: -1320px
           &.small7
-            top: 375px
+            top: 410px
             right: -1300px
           &.small8
-            top: 430px
+            top: 460px
             right: -1400px
