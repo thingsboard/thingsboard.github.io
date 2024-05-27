@@ -13,7 +13,7 @@ hidetoc: "true"
         </div>
         <ul>
             <li class="pricing-square-item">Operate with local devices without connection to cloud</li>
-            <li class="pricing-square-item">Monitor local events/timeseries data with real-time dashboard</li>
+            <li class="pricing-square-item">Monitor local events/time series data with real-time dashboard</li>
             <li class="pricing-square-item">Push to cloud only subset of filtered data from edge devices</li>
             <li class="pricing-square-item">React to critical local situations on site without connection to cloud</li>
             <li class="pricing-square-item">Update thousands of edge configurations in a single click</li>

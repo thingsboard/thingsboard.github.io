@@ -460,7 +460,7 @@ void main() async {
       EntityKey(type: EntityKeyType.ENTITY_FIELD, key: 'createdTime')
     ];
 
-    // Prepare list of queried device timeseries
+    // Prepare list of queried device time series
     var deviceTelemetry = <EntityKey>[
       EntityKey(type: EntityKeyType.TIME_SERIES, key: 'temperature'),
       EntityKey(type: EntityKeyType.TIME_SERIES, key: 'humidity')
@@ -478,7 +478,7 @@ void main() async {
                     type: EntityKeyType.ENTITY_FIELD, key: 'createdTime'),
                 direction: EntityDataSortOrderDirection.DESC)));
 
-    // Create timeseries subscription command to get data for 'temperature' and 'humidity' keys for last hour with realtime updates
+    // Create time series subscription command to get data for 'temperature' and 'humidity' keys for last hour with realtime updates
     var currentTime = DateTime.now().millisecondsSinceEpoch;
     var timeWindow = Duration(hours: 1).inMilliseconds;
 
@@ -487,7 +487,7 @@ void main() async {
         startTs: currentTime - timeWindow,
         timeWindow: timeWindow);
 
-    // Create subscription command with entities query and timeseries subscription
+    // Create subscription command with entities query and time series subscription
     var cmd = EntityDataCmd(query: devicesQuery, tsCmd: tsCmd);
 
     // Create subscription with provided subscription command

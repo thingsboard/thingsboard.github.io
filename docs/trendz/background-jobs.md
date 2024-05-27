@@ -38,7 +38,7 @@ This proactive approach speeds up data retrieval from ThingsBoard, enabling prea
 By refreshing the cache periodically, the data required for visualization is readily available when requested by the user, ensuring faster and more efficient data presentation. 
 
 ## Save telemetry job
-Trendz gives instruments to transform raw telemetry, calculate new metrics, forecast timeseries behavior, and detect anomalies. 
+Trendz gives instruments to transform raw telemetry, calculate new metrics, forecast time series behavior, and detect anomalies. 
 These computed results can be saved as new telemetry for the device or asset in ThingsBoard. This functionality enables the creation of 
 complex data processing pipelines and triggering actions based on predefined conditions. To automate this process, 
 the Save Telemetry job in Trendz allows you to schedule periodic execution, ensuring that new incoming telemetry is processed and the results are saved back into ThingsBoard. 

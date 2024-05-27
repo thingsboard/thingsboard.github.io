@@ -140,7 +140,7 @@ Minor release with the following features, improvements, and bug fixes.
   
   * [#57](https://github.com/thingsboard/tbmq/pull/57) Additional validation for entities to protect from XSS;
   * Introduced a dedicated thread pool for Application shared subscriptions processing, corrected stats for the number of active shared subscriptions processors;
-  * Time-series controller API calls improved validation;
+  * Time series controller API calls improved validation;
   * MQTT client credentials and Application shared subscription entities search by 'contains'.
 
 * UI:
