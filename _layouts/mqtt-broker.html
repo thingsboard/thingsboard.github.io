@@ -3,10 +3,7 @@
 
 {% include head-header.html productTag="mqtt-broker" %}
 <!--  HERO  -->
-<section id="hero" class="light-text"
-         data-vide-bg="mp4: tbmq_final.mp4,
-                       poster: /images/thingsboard-edge/preview.png"
-         data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg">
+<section id="hero" class="light-text">
     <div class="video-cover"></div>
     <div id="hero-content">
         <span class="header-animation tbmq-title">TBMQ</span>
@@ -29,6 +26,21 @@
 </section>
 
 {% include footer.html %}
+
+<script>
+    var isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var videoSection = document.querySelector('#hero.light-text');
+
+    if (isMobile) {
+        videoSection.setAttribute('style', 'background: center no-repeat url(/images/mqtt-broker/product/tbmq-cover.png)');
+    } else {
+        videoSection.setAttribute('data-vide-bg', `mp4: https://tbmq-test.s3.eu-west-1.amazonaws.com/intro_tbmq2.mp4,
+                                                    webm: https://video.thingsboard.io/tbmq-cover.webm,
+                                                    ogv: https://video.thingsboard.io/tbmq-cover.ogv,
+                                                    poster: /images/mqtt-broker/product/tbmq-cover.png`);
+        videoSection.setAttribute('data-vide-options', 'bgColor: #000000, loop: true, muted: true, posterType: webp');
+    }
+</script>
 
 <script type="text/javascript">
     jqueryDefer(function () {
