@@ -973,7 +973,7 @@ Minimal outside time defines whenever message originator is considered as out of
           {% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
             <em>Since TB Version 2.1</em>
           {% else %}
-            <em>Since TB Version 3.7</em>
+            <em>Since TB Version 3.7.1</em>
           {% endif %}
         </strong>
       </td>
