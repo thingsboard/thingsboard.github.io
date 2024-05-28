@@ -32,12 +32,12 @@
     var videoSection = document.querySelector('#hero.light-text');
 
     if (isMobile) {
-        videoSection.setAttribute('style', 'background: center no-repeat url(/images/mqtt-broker/product/tbmq-cover.png)');
+        videoSection.setAttribute('style', 'background: center no-repeat url(https://img.thingsboard.io/tbmq-cover.webp)');
     } else {
-        videoSection.setAttribute('data-vide-bg', `mp4: https://tbmq-test.s3.eu-west-1.amazonaws.com/intro_tbmq2_compressed.mp4,
+        videoSection.setAttribute('data-vide-bg', `mp4: https://video.thingsboard.io/tbmq-cover.mp4,
                                                     webm: https://video.thingsboard.io/tbmq-cover.webm,
                                                     ogv: https://video.thingsboard.io/tbmq-cover.ogv,
-                                                    poster: /images/mqtt-broker/product/tbmq-cover.png`);
+                                                    poster: https://img.thingsboard.io/tbmq-cover.webp`);
         videoSection.setAttribute('data-vide-options', 'bgColor: #000000, loop: true, muted: true, posterType: webp');
     }
 </script>
