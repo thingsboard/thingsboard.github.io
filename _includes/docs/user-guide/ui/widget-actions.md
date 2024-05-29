@@ -1024,7 +1024,7 @@ If you're unfamiliar with adding an Entity table widget to your dashboard, you c
 
 #### Action cell button
 
-The "Action cell button" action source adds an action button to each individual entity in the widget, such as deleting devices/assets or editing them.
+The "Action cell button" action adds an action button to each individual entity in the widget, such as deleting devices/assets or editing them.
 This action button is often used in the "Entity table" widget. In the example of this widget, let's consider the use of "Action cell button".
 Clicking on the action icon of a selected entity will transfer us to another state with detailed information about that entity.
 
@@ -1045,9 +1045,33 @@ As you can see, there is an action cell button next to each entity name. By clic
 
 {% include images-gallery.html imageCollection="action-cell-button-2" %}
 
+#### On cell click 
+
+<i>* only in Entities table, Alarms table, Device admin table, and Asset admin table widgets.</i>
+
+The "On cell click" action adds a function for each cell in the specified table column. Let's explore how this action works using the "Entities table" widget as an example. 
+We'll configure this widget so that clicking on a cell in the selected column takes us to another state with detailed telemetry information about the selected device.
+
+We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+
+- Select "On cell click " action source;
+- After selecting an action source, the "Column index*" drop-down menu appears. Select the widget column to which this action will be applied;
+- Input a name for the action. Optionally, select an icon;
+- Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
+- After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to;
+- Then, click the "Add" button;
+- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
+- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
+
+{% include images-gallery.html imageCollection="on-cell-click-1" %}
+
+Click on a cell in the "temperature" column for selected entity to perform an action, namely to navigate to a specified state where detailed telemetry information about the chosen device is displayed.
+
+{% include images-gallery.html imageCollection="on-cell-click-2" %}
+
 #### Widget header button
 
-The "Widget header button" action source adds an action button in the header of the widget. Clicking this button executes an action. This button is responsible for the whole widget, not for separate entities. 
+The "Widget header button" action adds an action button in the header of the widget. Clicking this button executes an action. This button is responsible for the whole widget, not for separate entities. 
 The widget header button is the most commonly used action source, and it can be found in all widgets. To configure the _Widget header button_ action source, you should follow these steps:
 
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
@@ -1069,7 +1093,7 @@ As you see now, an action button has appeared in the header of the widget. After
 
 #### On row click
 
-The "On row click" action source triggers an action when a row in the widget is clicked. This action button is often used in the "Entity table" widget. Let's illustrate the use of the "On row click" action with the aforementioned widget as an example. Clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
+The "On row click" action triggers an action when a row in the widget is clicked. This action button is often used in the "Entity table" widget. Let's illustrate the use of the "On row click" action with the aforementioned widget as an example. Clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
 
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
 
@@ -1090,7 +1114,7 @@ Click on any entity row to perform an action, namely, to navigate to the selecte
 
 #### On row double click
 
-The "On row double click" action source triggers an action when a row in the widget is double-clicked. Let's explore its use with the "Entities table" widget, where this action is often used.
+The "On row double click" action triggers an action when a row in the widget is double-clicked. Let's explore its use with the "Entities table" widget, where this action is often used.
 Double-clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
 
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
@@ -1110,7 +1134,9 @@ Double-click on an entity row to perform an action, namely, navigate to the sele
 
 {% include images-gallery.html imageCollection="on-row-double-click-2" %}
 
-#### On node selected (only in Entities Hierarchy widget)
+#### On node selected
+
+<i>* only in Entities Hierarchy widget.</i>
 
 In this example, we'll add an "Entity hierarchy" widget to our dashboard. Entities Hierarchy widget displays the hierarchy of entities based on their relations.
 For more information about entities and relations, you can [read here](/docs/{{docsPrefix}}user-guide/entities-and-relations/#step-1-provision-entities-and-relations). Clicking on any entity (node) in the Entities hierarchy will perform the configured action.
@@ -1123,7 +1149,9 @@ To perform an action you should click any of the nodes in the Entities hierarchy
 
 {% include images-gallery.html imageCollection="on-node-selected-2" %}
 
-#### On HTML element click (only in HTML widgets)
+#### On HTML element click
+
+<i>* only in HTML widgets.</i>
 
 ThingsBoard offers HTML widgets that allow full configuration by customizing an HTML code in their settings.
 To add an action to these widgets, you need to add an action identifier to the written code. Clicking on an item in the widget will then execute the configured action.

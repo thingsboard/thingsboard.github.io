@@ -274,6 +274,31 @@ action-cell-button-2:
         image: /images/user-guide/ui/widgets/actions/guide/sources/action-cell-button-6-pe.png
         title: 'You will be transferred to the state specified in the action.'
 
+on-cell-click-1:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-1-pe.png
+        title: 'Select "On cell click " action source. After selecting an action source, the "Column index*" drop-down menu appears. Select the widget column to which this action will be applied;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-2-pe.png
+        title: 'Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. Then, click the "Add" button;'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-3-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action. Click "Save";'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-4-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    4:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-5-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.' 
+
+on-cell-click-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-6-pe.png
+        title: 'Click on a cell in the “temperature” column for selected entity to perform an action;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-7-pe.png
+        title: 'You will be transferred to the state specified in the action.'
+
 widget-header-button-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/widget-header-button-1-pe.png
