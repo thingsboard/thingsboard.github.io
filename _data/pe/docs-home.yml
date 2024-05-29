@@ -324,7 +324,7 @@ toc:
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Mobile app
+  - title: Mobile application QR code
     path: /docs/pe/user-guide/ui/mobile-qr-code/
     new: true
   - title: JWT Security Settings
