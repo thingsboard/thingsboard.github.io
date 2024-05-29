@@ -117,7 +117,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 <div class="block">
                     <h4>Diverse installation options</h4>
                     <p>Select the perfect fit for your infrastructure with our Docker-based or K8s-based deployments, crafted for seamless integration in both on-premise and cloud environments.</p>
-                    <a href="/docs/mqtt-broker/install/installation-options/" class="button install-tbmq arrow-top-right">Install TBMQ</a>
+                    <a href="/docs/mqtt-broker/install/installation-options/" class="button arrow-top-right">Install TBMQ</a>
                 </div>
             </div>
             <div class="col-lg-6 installation-options-img">
@@ -243,7 +243,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 <div class="block">
                     <h4>Get started with TBMQ</h4>
                     <p>Get started with TBMQ today and unlock the full potential of your IoT solutions! With support for millions of concurrent connections, robust message handling, and reliable data persistence, TBMQ empowers you to build, scale, and secure your IoT applications like never before.</p>
-                    <a href="/docs/mqtt-broker/getting-started/" class="button action arrow-top-right">Get started</a>
+                    <a href="/docs/mqtt-broker/getting-started/" class="button arrow-top-right">Get started</a>
                 </div>
             </div>
         </div>

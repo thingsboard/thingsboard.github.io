@@ -48,15 +48,16 @@
       .action
         line-height: 24px
         font-size: 18px
-        padding: 8px 20px 8px 20px
-        border: 2px solid white
+        font-weight: 500
+        padding: 10px 20px 10px 20px
+        border: 2px solid #fff
         background-color: transparent
         transition: 0.6s
         &:hover
-          background-color: white
+          background-color: #fff
           color: #1F8B4D
         &:first-child
-          margin-right: 4px
+          margin-right: 8px
       .paas-arrow
         position: fixed
         bottom: 40px
@@ -108,6 +109,25 @@
       font-weight: 500
       font-size: 18px
 
+    .arrow-top-right
+      color: #fff
+      position: relative
+      &::after
+        content: ''
+        display: block
+        height: 24px
+        width: 24px
+        mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+        -webkit-mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+        mask-size: cover
+        -webkit-mask-size: cover
+        background-color: #fff
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        transition: 0.3s
+        right: 22px
+
     #top-features
       margin-bottom: 24px
       #cards
@@ -119,13 +139,14 @@
           margin-bottom: 36px
           &.col-lg-6
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08)
+            border-radius: 12px
           .block
             padding: 12px
             text-align: center
             float: left
             width: 100%
             height: 100%
-            background: white
+            background: #fff
             border-radius: 12px
             display: unset
             div
@@ -156,7 +177,7 @@
           width: 100%
           h3
             font-size: 42px
-            color: #FFFFFF
+            color: #fff
         .feature-details
           width: 100%
           flex: 1 0 50%
@@ -172,7 +193,7 @@
           flex: 1 0 45%
           padding: 24px
           border-radius: 12px
-          background: #FFFFFF
+          background: #fff
           text-align: justify
           span
             font-size: 18px
@@ -247,33 +268,14 @@
                 margin-top: 10px
                 font-size: 18px
                 text-align: justify
-              .arrow-top-right
-                color: #FFFFFF
-                position: relative
-                &::after
-                  content: ''
-                  display: block
-                  height: 24px
-                  width: 24px
-                  mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
-                  -webkit-mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
-                  mask-size: cover
-                  -webkit-mask-size: cover
-                  background-color: #FFFFFF
-                  position: absolute
-                  top: 50%
-                  transform: translateY(-50%)
-                  transition: 0.3s
-                  right: 16px
-              .install-tbmq
-                width: 190px
+              a
+                width: 189px
                 line-height: 40px
-                font-size: 18px
-                padding: 8px 24px 8px 24px
-                border: 1px solid white
+                padding: 3px 24px 3px 24px
                 border-radius: 8px
+                border: 1px solid rgba(0, 0, 0, 0.12)
                 background-color: #1F8B4D !important
-                color: #FFFFFF
+                color: #fff
                 transition: 0.6s
                 &:hover
                   background-color: rgba(0,0,0,.12)
@@ -299,7 +301,7 @@
             text-align: center
             width: 100%
             height: 100%
-            background: white
+            background: #fff
             border-radius: 12px
             box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
             display: unset
@@ -330,38 +332,23 @@
                 margin-bottom: 48px
                 line-height: 50px
                 font-size: 42px
-                color: #FFFFFF
+                color: #fff
               p
                 margin-bottom: 24px
                 color: rgba(255, 255, 255, 0.8)
               .arrow-top-right
                 color: #1F8B4D
-                position: relative
                 &::after
-                  content: ''
-                  display: block
-                  height: 24px
-                  width: 24px
-                  mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
-                  -webkit-mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
-                  mask-size: cover
-                  -webkit-mask-size: cover
                   background-color: #1F8B4D
-                  position: absolute
-                  top: 50%
-                  transform: translateY(-50%)
-                  transition: 0.3s
-                  right: 26px
-              .action
+                  right: 24px
+              a
                 width: 188px
-                height: 48px
-                line-height: 24px
-                font-size: 18px
+                padding: 4px 24px 4px 24px
+                line-height: 40px
                 text-align: left
                 font-weight: 500
-                border: 1px solid white
                 border-radius: 8px
-                background-color: #FFFFFF !important
+                background-color: #fff !important
                 color: #1F8B4D
                 transition: 0.6s
 
@@ -381,7 +368,7 @@
             .block
               width: 100%
               height: 100%
-              background: white
+              background: #fff
               border-radius: 12px
               box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
               display: flex
@@ -583,7 +570,7 @@
               float: left
               width: 100%
               height: 100%
-              background: white
+              background: #fff
               border-radius: 12px
               display: unset
               div
@@ -751,13 +738,6 @@
           margin-bottom: 40px
           line-height: 40px
           width: 65%
-        .action
-          font-size: 18px
-          font-weight: 500
-          line-height: 24px
-          padding: 8px 20px 8px 20px
-        .action:first-child
-          margin-right: 8px
       #background
         div
           &.small1
