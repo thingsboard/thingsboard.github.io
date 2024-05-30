@@ -8,13 +8,13 @@ description: Mobile app QR code guide
 authorize-with-qr-code:
     0:
         image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-1-ce.png
-        title: 'Log in to your ThingsBoard platform instance. Navigate to the "Home" page to locate the QR code;'
+        title: 'Log in to your ThingsBoard instance. Navigate to the "Home" page and in the bottom right corner, you will find the QR code for connecting the mobile app;'
     1:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-login-with-qr-1-ce.png
-        title: 'Launch the ThingsBoard mobile app on your device. Make sure you have the latest version installed to use this feature;'
+        title: 'Launch the ThingsBoard mobile application on your device, and use the QR code scanning feature. Make sure you have the latest version of the app installed to use this feature;'
     2:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
-        title: 'Simply scan the QR code using the mobile app;'
+        title: 'Scan the QR code using the mobile app;'
     3:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-dashboard-1-ce.png
         title: 'You have successfully authorized in to the ThingsBoard mobile app into your account.'
@@ -22,7 +22,7 @@ authorize-with-qr-code:
 download-app-with-qr-code:
     0:
         image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-1-ce.png
-        title: 'Log into your ThingsBoard platform instance. Navigate to the "Home" page to locate the QR code;'
+        title: 'Log in to your ThingsBoard instance. Navigate to the "Home" page and in the bottom right corner, you will find the QR code for connecting the mobile app;'
     1:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-install-app-ce.png
         title: 'Open the built-in camera app on your phone or tablet and point it at the QR code. The phone will automatically scan the code and show the link button. Click this button to open the link to the ThingsBoard mobile app (Google Play or App Store);'
