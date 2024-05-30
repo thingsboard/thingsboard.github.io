@@ -277,7 +277,7 @@ action-cell-button-2:
 on-cell-click-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-1-pe.png
-        title: 'Select "On cell click " action source. After selecting an action source, the "Column index*" drop-down menu appears. Select the widget column to which this action will be applied;'
+        title: 'Select "On cell click " action source. After selecting an action source, the "Column index*" drop-down menu will appear. Select the widget column to which this action will be applied;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-2-pe.png
         title: 'Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. Then, click the "Add" button;'

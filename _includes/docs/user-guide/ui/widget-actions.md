@@ -30,7 +30,7 @@ If you're using the *basic* widget configuration:
 - Click the "Add action" button (once you have created one or more actions, the "Add actions" button will change to the `+` icon).
   The "Actions" window will open. Right now, it's empty, but later it will display all created actions;
 - Click the 'plus' icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save";
 - Click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
@@ -75,7 +75,7 @@ We assume that you have already added [a new state](/docs/{{docsPrefix}}user-gui
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings. 
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings. 
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="navigate-to-new-dashboard-state-1" %}
@@ -113,14 +113,14 @@ For this example, in addition to the "Entities table" widget, you need to add an
 {% include images-gallery.html imageCollection="update-current-dashboard-state-1" showListImageTitles="true" %}
 
 Now let's add an action with the type "Update current dashboard state" for the "Entities table" widget.
-We assume that you are already familiar with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you are already familiar with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - As an example for this manual, select "[Action cell button](#action-cell-button)" action source;
 - Input a name for the action and select an icon that will represent a button. With this icon, action will be performed;
 - Select an "Update current dashboard state" action type from the "Action" drop-down menu;
 - Click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="update-current-dashboard-state-2" %}
@@ -133,7 +133,7 @@ After saving changes, you will see icons opposite the entity names in the "Entit
 
 This type of action transfers you to a previously created dashboard of your choice.
 
-We assume that you are already familiar with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you are already familiar with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - As an example for this manual, select "[Widget header button](#widget-header-button)" action source;
@@ -141,7 +141,7 @@ We assume that you are already familiar with the "[Add action](#add-action)" ste
 - Select a "Navigate to other dashboard" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a dashboard you'd like to be transitioned to. Note that you can also navigate to an existing state of the selected dashboard;
 - When the desired dashboard has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 After saving the changes, you can see an icon in the upper right part of the widget. Click this icon. You will be transferred to the previously selected dashboard (or chosen state in that dashboard).
@@ -153,7 +153,7 @@ After saving the changes, you can see an icon in the upper right part of the wid
 A Custom action allows manually configuring a function that can be used to add an individual action to your widget (for example deleting listed devices/assets).
 To configure a custom action with a function (with an example of a device deletion):
 
-We assume that you are already familiar with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you are already familiar with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - As an example for this manual, select "[Action cell button](#action-cell-button)" action source;
@@ -198,7 +198,7 @@ function deleteDevice() {
 </details>
 
 - After input function, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="custom-action-1" %}
@@ -223,7 +223,7 @@ After choosing a Custom action type (with HTML template), four tabs appear for s
 
 In this example, we will add two action buttons. In the upper right corner of the widget there will be located action button for adding new entities. The second action will be responsible for the buttons next to the entity names for editing these entities.
 
-Let's start with the action button for adding new entities. We assume that you have already completed the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+Let's start with the action button for adding new entities. We assume that you have already completed the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - As an example for this manual, select "[Widget header button](#widget-header-button)" action source;
@@ -974,7 +974,7 @@ let vm = instance;
 </details>
 
 - After input functions, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured actions, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
+- Now in the "Actions" window, you can see the configured actions, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="custom-action-html-2" %}
@@ -996,7 +996,7 @@ Mobile action is explained in mobile application configuration. See [Mobile acti
 
 This type of action will transfer you to the resource represented by the URL. This resource can be an HTML page, a document, an image, internal ThingsBoard page (for example, Alarms), etc.
 
-We assume that you are already familiar with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you are already familiar with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - As an example for this manual, select "[Widget header button](#widget-header-button)" action source;
@@ -1005,7 +1005,7 @@ We assume that you are already familiar with the "[Add action](#add-action)" ste
 - After selecting an action type, "URL" menu appears. Insert the URL link to the page you want to navigate to when the action button is clicked;
 - Optionally, enable the option to open the URL page in a new browser tab;
 - Click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="open-url-1" %}
@@ -1028,7 +1028,7 @@ The "Action cell button" action adds an action button to each individual entity 
 This action button is often used in the "Entity table" widget. In the example of this widget, let's consider the use of "Action cell button".
 Clicking on the action icon of a selected entity will transfer us to another state with detailed information about that entity.
 
-We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - Select "Action cell button" action source;
@@ -1036,7 +1036,7 @@ We assume that you have already added [a new state](/docs/{{docsPrefix}}user-gui
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="action-cell-button-1" %}
@@ -1050,17 +1050,17 @@ As you can see, there is an action cell button next to each entity name. By clic
 <i>* only in Entities table, Alarms table, Device admin table, and Asset admin table widgets.</i>
 
 The "On cell click" action adds a function for each cell in the specified table column. Let's explore how this action works using the "Entities table" widget as an example. 
-We'll configure this widget so that clicking on a cell in the selected column takes us to another state with detailed telemetry information about the selected device.
+We'll configure this widget so that clicking on a cell in the selected column redirects us to another state with detailed telemetry information about the selected device.
 
-We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Select "On cell click " action source;
-- After selecting an action source, the "Column index*" drop-down menu appears. Select the widget column to which this action will be applied;
+- After selecting an action source, the "Column index*" drop-down menu will appear. Select the widget column to which this action will be applied;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to;
 - Then, click the "Add" button;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-cell-click-1" %}
@@ -1074,7 +1074,7 @@ Click on a cell in the "temperature" column for selected entity to perform an ac
 The "Widget header button" action adds an action button in the header of the widget. Clicking this button executes an action. This button is responsible for the whole widget, not for separate entities. 
 The widget header button is the most commonly used action source, and it can be found in all widgets. To configure the _Widget header button_ action source, you should follow these steps:
 
-We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - Select "Widget header button" action source;
@@ -1082,7 +1082,7 @@ We assume that you have already added [a new state](/docs/{{docsPrefix}}user-gui
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="widget-header-button-1" %}
@@ -1095,7 +1095,7 @@ As you see now, an action button has appeared in the header of the widget. After
 
 The "On row click" action triggers an action when a row in the widget is clicked. This action button is often used in the "Entity table" widget. Let's illustrate the use of the "On row click" action with the aforementioned widget as an example. Clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
 
-We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - Select "On row click" action source;
@@ -1103,7 +1103,7 @@ We assume that you have already added [a new state](/docs/{{docsPrefix}}user-gui
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-row-click-1" %}
@@ -1117,7 +1117,7 @@ Click on any entity row to perform an action, namely, to navigate to the selecte
 The "On row double click" action triggers an action when a row in the widget is double-clicked. Let's explore its use with the "Entities table" widget, where this action is often used.
 Double-clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
 
-We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
 - Select "On row double click" action source;
@@ -1125,7 +1125,7 @@ We assume that you have already added [a new state](/docs/{{docsPrefix}}user-gui
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-row-double-click-1" %}
@@ -1247,7 +1247,7 @@ Learn how to add a circle on the Map widget, by reading [here](/docs/{{docsPrefi
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-circle-click-2" %}
@@ -1266,7 +1266,7 @@ The action will be executed by clicking on the red entity marker on the map.
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-marker-click-1" %}
@@ -1289,7 +1289,7 @@ Learn how to add a polygon on the Map widget, by reading [here](/docs/{{docsPref
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-polygon-click-2" %}
@@ -1310,7 +1310,7 @@ Use [the tooltip function](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widg
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type.
 - Now navigate to the "Appearance" tab of the widget;
 - Scroll down to the Tooltip configuration and toggle the "Show tooltip" checkbox;
 - In the Tooltip line find link-act name and input an ID of the action which is its name in a format:
@@ -1355,7 +1355,7 @@ Now we need to add the "Time series chart" widget to the right layout:
 {% include images-gallery.html imageCollection="mob-layout-2" showListImageTitles="true" %}
 
 Now let's add an action button with the "Update current dashboard state" type for each entity of the "Entities table" widget.
-We assume that you are already familiar with the "[Add action](#add-action)" step and know how to do it. Therefore, we will proceed directly to the action configuration step.
+We assume that you are already familiar with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter the editing mode of the "Time series chart" widget and open the "Add action" window;
 - As an example for this manual, select "[On row click](#on-row-click)" action source;
@@ -1363,7 +1363,7 @@ We assume that you are already familiar with the "[Add action](#add-action)" ste
 - Select an "Update current dashboard state" action type from the "Action" drop-down menu;
 - Turn on the "Open right dashboard layout (mobile view)" option;
 - Click the "Add" button at the bottom of the "Add action" window;
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
+- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings.
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="mob-layout-3" %}
