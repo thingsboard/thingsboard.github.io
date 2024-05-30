@@ -34,7 +34,7 @@ To add new language, follow these steps:
         title: In the new window, click on the "Language" field and select the desired language from the drop-down menu. The list is sorted by localization code. Then, click "Add";
     ===
         image: /images/user-guide/custom-translation/add-new-language-3-pe.png,
-        title: You've successfully added a new language. Since translations for term keys have not yet been added, the translation progress is at 0%. By default, languages are sorted in alphabetical order by their localization code.
+        title: You&#39;ve successfully added a new language. Since translations for term keys have not yet been added, the translation progress is at 0%. By default, languages are sorted in alphabetical order by their localization code.
 '
 %}
 
@@ -52,7 +52,7 @@ To change the ThingsBoard's interface language, follow these steps:
         title: Navigate to your profile by clicking on the three dots in the top right corner of the screen and select "Account" tab;
     ===
         image: /images/user-guide/custom-translation/change-language-2-pe.png,
-        title: Click on the "Language" field and choose desired system language from the dropdown list. For example, Italian;
+        title: Click on the "Language" field and choose desired system language from the drop-down list. For example, Italian;
     ===
         image: /images/user-guide/custom-translation/change-language-3-pe.png,
         title: Click the "Save" button to apply the changes;
@@ -69,9 +69,9 @@ In this guide, we have chosen Italian as the system language for demonstration p
 
 ## Translation editing
 
-Translation can be configured in two ways: basic and advanced:
-- Within the "Basic" tab, you can [manually add new term keys](#editing-translation-using-basic-mode) or edit translations for existing ones;
-- In the "Advanced" tab, you can [upload a translation language file in JSON format](#editing-translation-using-advanced-mode).
+Translation can be configured using either basic or advanced approach:
+- Within the "Basic" tab, you can [manually add new term keys](#translation-editing-using-basic-mode) or edit translations for existing ones;
+- In the "Advanced" tab, you can [upload a translation language file in JSON format](#translation-editing-using-advanced-mode).
 
 ### Translation editing using basic mode
 
@@ -97,11 +97,11 @@ Let's consider manually adding translations for term keys:
 
 The basic translating mode is convenient because you can apply different types of filtering:
 
-ㅤ\- **Translated** is key, that has a translation for the current language;
+ㅤ\- **Translated** is a key that has a translation for the current language;
 
-ㅤ\- **Untranslated** is key, that has not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
+ㅤ\- **Untranslated** is a key that has not been translated into the current language. This means that if you do not enter a translation for a key, its value will be displayed in English, as English is the default language;
 
-ㅤ\- **Customized** is key for which the translation has been overridden from parent level. E.g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
+ㅤ\- **Customized** is a key for which the translation has been overridden from the parent level. E.g. if you have changed the translation of the key "home" to "my system's home page", this key is marked as customized;
 
 ㅤ\- **Added key** is a key added on the current level for current language or default one (English). When adding new keys, it's necessary to provide an English translation (second column), as this key will also be added for all other languages.
 
@@ -113,7 +113,7 @@ To clear a custom translation or reset its value to the one specified by the sys
         title: To clear a custom translation or reset its value to the one specified by the system administrator, click the broom icon in the term key row;
     ===
         image: /images/user-guide/custom-translation/clear-custom-translation-2-pe.png,
-        title: The value has been reset to the default value.
+        title: The value has been reset to its default setting.
 '
 %}
 
@@ -121,8 +121,8 @@ To clear a custom translation or reset its value to the one specified by the sys
 
 ### Translation editing using advanced mode
 
-Advanced mode implies direct editing of JSON file that represents custom translation. 
-You can download any system locale translation, make all changes you need and insert prepared JSON translation map edit field.
+Advanced mode implies direct editing of JSON file that represents a custom translation. 
+You can download any system locale translation, make all necessary changes you need and insert the prepared JSON translation map edit field.
 Let's see how it works:
 
 {% assign customTranslationInJsonPE = '
@@ -134,7 +134,7 @@ Let's see how it works:
         title: Navigate to the "Advanced" tab, and then insert JSON from example below. After, click "Save";
     ===
         image: /images/user-guide/custom-translation/custom-translation-in-json-2-pe.png,
-        title: Check the translation is applied ("Home" menu item should be translated to "Pagina principale di un sito web").
+        title: Check that the translation is applied ("Home" menu item should be translated to "Pagina principale di un sito web").
 '
 %}
 
@@ -184,7 +184,7 @@ Let's see how it works.
 
 #### Custom translation for the dashboard title
 
-- First, set a [custom translation](#adding-a-translation-using-a-language-translation-file) for your dashboard title within a translation map, using JSON format.
+- First, set a [custom translation](#translation-editing-using-advanced-mode) for your dashboard title within a translation map, using JSON format.
 Here is an example of an entry for translating the dashboard title into Italian:
 
 ```text
@@ -196,7 +196,7 @@ Here is an example of an entry for translating the dashboard title into Italian:
   }
 ...
 ```
-- Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard) or select an existing one. Open the dashboard details;
+- Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
 - Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}:
 ```text
 {i18n:custom.my-dashboard.title}
@@ -210,10 +210,10 @@ Here is an example of an entry for translating the dashboard title into Italian:
 {% assign translationOfDashboardNamePE = '
     ===
         image: /images/user-guide/custom-translation/dashboard-internalization-1-pe.png,
-        title: Specify [custom translation](#translation-map) for the dashboard name in the translation map. In this example, we will use a translation map in JSON format;
+        title: Specify [custom translation](#translation-editing-using-advanced-mode) for the dashboard name in the translation map. In this example, we will use a translation map in JSON format;
     ===
         image: /images/user-guide/custom-translation/dashboard-internalization-2-pe.png,
-        title: Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard) or select an existing one. Open the dashboard details;
+        title: Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
     ===
         image: /images/user-guide/custom-translation/dashboard-internalization-3-pe.png,
         title: Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}: <b>{i18n:custom.my-dashboard.title}</b>. Apply changes;
@@ -227,7 +227,7 @@ Here is an example of an entry for translating the dashboard title into Italian:
 
 #### Custom translation for the widget title
 
-- Set [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget's name, the temperature column title, and the entity label column title in the translation map, using advanced mode.
+- Set [custom translation](#translation-editing-using-advanced-mode) for the widget's name, the temperature column title, and the entity label column title in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -242,7 +242,7 @@ Here's an example entry:
 ...
 ```
 
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget){:target="_blank"} or use an existing one and enter its editing mode;
 - In the widget settings, set the custom translations for:
   - Widget title - <b>{i18n:custom.my-widget.name}</b>;
   - Entity label column title - <b>{i18n:custom.my-widget.label-text}</b>;
@@ -253,7 +253,7 @@ Here's an example entry:
 {% assign widgetInternalizationPE = '
     ===
         image: /images/user-guide/custom-translation/widget-internalization-1-pe.png,
-        title: Specify [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget&#39;s name, the temperature column title, and the entity label column title in the translation map;
+        title: Specify [custom translation](#translation-editing-using-advanced-mode) for the widget&#39;s name, the temperature column title, and the entity label column title in the translation map;
     ===
         image: /images/user-guide/custom-translation/widget-internalization-2-pe.png,
         title: [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
@@ -273,7 +273,7 @@ Here's an example entry:
 
 #### Custom translation for the widget tooltip
 
-- Set [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget tooltip title in the translation map, using advanced mode.
+- Set [custom translation](#translation-editing-using-advanced-mode) for the widget tooltip title in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -293,7 +293,7 @@ Here's an example entry:
 {% assign widgetTooltipInternalizationPE = '
     ===
         image: /images/user-guide/custom-translation/widget-tooltip-internalization-1-pe.png,
-        title: Specify [custom translation](#adding-a-translation-using-a-language-translation-file) for the widget tooltip title in the translation map, using JSON format;
+        title: Specify [custom translation](#translation-editing-using-advanced-mode) for the widget tooltip title in the translation map, using JSON format;
     ===
         image: /images/user-guide/custom-translation/widget-tooltip-internalization-2-pe.png,
         title: Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
@@ -315,7 +315,7 @@ Here's an example entry:
 
 Custom translation can be used in the cell content function in widgets like Entity Table, Timeseries table and Alarms table. JavaScript code requires quotes for the i18n.
 
-- Set [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using advanced mode.
+- Set [custom translation](#translation-editing-using-advanced-mode) for each cell content function value in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -338,7 +338,7 @@ Here's an example entry:
 {% assign widgetCellContentFunctionInternalizationPE = '
     ===
         image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-1-pe.png,
-        title: Define [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using JSON format;
+        title: Define [custom translation](#translation-editing-using-advanced-mode) for each cell content function value in the translation map, using JSON format;
     ===
         image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-2-pe.png,
         title: Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
@@ -379,7 +379,7 @@ if(value>70){
 
 #### Using custom translation in HTML Value Card widget
 
-- Set [custom translation](#adding-a-translation-using-a-language-translation-file)  for each cell content function value in the translation map, using advanced mode.
+- Set [custom translation](#translation-editing-using-advanced-mode) for each cell content function value in the translation map, using advanced mode.
 Here's an example entry:
 
 ```text
@@ -402,7 +402,7 @@ Specify the device that transmits temperature readings as the data source;
 {% assign widgetInternalizationUsageInHtmlValueCardPE = '
     ===
         image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-1-pe.png,
-        title: Specify [custom translation](#adding-a-translation-using-a-language-translation-file) for the telemetry data;
+        title: Specify [custom translation](#translation-editing-using-advanced-mode) for the telemetry data;
     ===
         image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-2-pe.png,
         title: Open your dashboard on the "Dashboards" page. [Add a new widget](/docs/pe/user-guide/widgets/#adding-a-widget-to-the-dashboard) - "HTML Value Card" from the "Cards" widgets bundle;
