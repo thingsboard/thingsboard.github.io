@@ -1,14 +1,18 @@
 {% if docsPrefix == null %}
 {% assign THINGSBOARD_MOBILE_APP = "[Thingsboard mobile application ](/docs/mobile/)" %}
-{% assign custom_application = "[custom application](/docs/mobile/)" %}
+{% assign CUSTOM_APPLICATION = "[custom application](/docs/mobile/)" %}
+{% assign OFFICIALLY_PUBLISHED_APPLICATION = "**ThingsBoard Live** mobile application ([Android](https://play.google.com/store/apps/details?id=org.thingsboard.demo.app) and [iOS](https://apps.apple.com/us/app/thingsboard-live/id1594355695))" %}
+{% assign OFFICIALLY_PUBLISHED_APPLICATION_2 = "**ThingsBoard Live**" %}
 {% endif %}
 {% if docsPrefix == "pe/" %}
 {% assign THINGSBOARD_MOBILE_APP = "[Thingsboard PE mobile application ](/docs/pe/mobile/)" %}
-{% assign custom_application = "[custom application](/docs/pe/mobile/)" %}
+{% assign CUSTOM_APPLICATION = "[custom application](/docs/pe/mobile/)" %}
 {% endif %}
 {% if docsPrefix == "paas/" %}
 {% assign THINGSBOARD_MOBILE_APP = "Thingsboard mobile application " %}
-{% assign custom_application = "custom application" %}
+{% assign CUSTOM_APPLICATION = "[custom application](/docs/pe/mobile/)" %}
+{% assign OFFICIALLY_PUBLISHED_APPLICATION = "[ThingsBoard Cloud mobile application](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395)" %}
+{% assign OFFICIALLY_PUBLISHED_APPLICATION_2 = "ThingsBoard Cloud" %}
 {% endif %}
 
 * TOC
@@ -36,38 +40,50 @@ Just follow these simple steps to get started:
 
 ## Configuring QR code on Home page
 
-QR code widget settings are inherited from the system level by default and link to the officially published Thingsboard Cloud application. 
-If someone wants to use a {{custom_application}}, tenant admins could configure it on the tenant level.
+QR code widget settings are inherited from the system level by default{% unless docsPrefix == 'pe/' %} and link to the officially published {{OFFICIALLY_PUBLISHED_APPLICATION}} {% endunless %}.
+{% unless docsPrefix == null %}If someone wants to use a {{CUSTOM_APPLICATION}}, tenant admins could configure it on the tenant level.{% endunless %}
 
-Let's customize the QR code widget behavior on the "Home" page. For this, disable the "Use system settings" toggle on the "Mobile app" tab of the "Settings" page.
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+Let's customize the QR code widget behavior on the "Home" page. To do this, disable the "Use system settings" toggle on the "Mobile app" tab of the "Settings" page.
+
+{% endif %}
+{% if docsPrefix == null %}
+Let's customize the QR code widget behavior on the "Home" page. To do this, log in as the system administrator and navigate to the "Mobile app" tab of the "Settings" page.
+{% endif %}
 
 {% include images-gallery.html imageCollection="mobile-app-qr-code-widget-settings" %}
 
-Here you will see two settings blocks: Applications and Appearance on Home page.
+Here you will see two settings blocks: "Applications" and "Appearance on Home page".
 
-<br>
-**Application settings**
+* **Applications:**
 
-If you are using an application configured at the system level, leave the default settings. 
+{% if docsPrefix == null %}
+If you are using officially published {{OFFICIALLY_PUBLISHED_APPLICATION_2}} mobile application, leave the default settings.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+If you are using an application configured at the system level, leave the default settings.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+If you are using officially published **{{OFFICIALLY_PUBLISHED_APPLICATION_2}}** mobile application, leave the default settings.
+{% endif %}
 
 {% include images-gallery.html imageCollection="application-settings-default" %}
 
-If you want to use your custom application, switch to custom settings. Here, you should fill in the required application credentials for Android and iOS apps. 
+If you want to use your {{CUSTOM_APPLICATION}}, switch to the custom settings. Here, you should fill in the required application credentials for your Android and iOS apps. 
 
 {% include images-gallery.html imageCollection="application-settings-custom" %}
 
-If necessary, you can disable platforms.
+Click "Save" and check the QR code appearance on the "Home" page. Scan QR code with your mobile and check you are redirected to the specified application.
+
+If necessary, you can disable unused platforms.
 
 {% include images-gallery.html imageCollection="disable-platforms" %}
 
-<br>
-**Appearance on Home page**
+* **Appearance on Home page:**
 
 You can disable the widget on the "Home" page, configure badges (or turn them off altogether), and update the QR code label.
 
 {% include images-gallery.html imageCollection="appearance-on-home-page" %}
-
-Click save and check the QR code appearance on the Home page. Scan QR code with your mobile and check you are redirected to the specified application.
 
 ## Mobile app QR code widget
 
