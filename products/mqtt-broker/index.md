@@ -88,12 +88,12 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 </div>
             </div>            
             <div class="image-container">
-                <img src="/images/mqtt-broker/product/fan-in.gif" alt="Fan in">
+                <img src="/images/mqtt-broker/product/fan-in.gif" alt="Fan in" loading="lazy">
             </div>
         </div>
         <div class="block">
             <div class="image-container fan-out-img">
-                <img src="/images/mqtt-broker/product/fan-out.gif" alt="Fan out">
+                <img src="/images/mqtt-broker/product/fan-out.gif" alt="Fan out" loading="lazy">
             </div>            
             <div class="description">
                 <div class="fan-title">
@@ -122,10 +122,10 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             </div>
             <div class="col-lg-6 installation-options-img">
                 <div class="options">
-                    <img src="/images/mqtt-broker/product/docker.png" alt="Docker">
-                    <img src="/images/mqtt-broker/product/aws.png" alt="Aws">
-                    <img src="/images/mqtt-broker/product/azure.png" alt="Azure">
-                    <img src="/images/mqtt-broker/product/google-cloud.png" alt="Google Cloud">
+                    <img src="/images/mqtt-broker/product/docker.webp" alt="Docker">
+                    <img src="/images/mqtt-broker/product/aws.webp" alt="Aws">
+                    <img src="/images/mqtt-broker/product/azure.webp" alt="Azure">
+                    <img src="/images/mqtt-broker/product/google-cloud.webp" alt="Google Cloud">
                 </div>
             </div>
         </div>
@@ -143,7 +143,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             </div>
             <div class="col-lg-6 image-container">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/administer-client-session.png" alt="Administer client sessions">
+                    <img src="/images/mqtt-broker/product/administer-client-session.webp" alt="Administer client sessions" loading="lazy">
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             </div>
             <div class="col-lg-6 image-container">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/credentials-management.png" alt="MQTT client credentials management">
+                    <img src="/images/mqtt-broker/product/credentials-management.webp" alt="MQTT client credentials management" loading="lazy">
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             </div>
             <div class="col-lg-6 image-container">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/websocket-client-connectivity.png" alt="WebSocket client connectivity">
+                    <img src="/images/mqtt-broker/product/websocket-client-connectivity.webp" alt="WebSocket client connectivity" loading="lazy">
                 </div>
             </div>
         </div>
@@ -182,7 +182,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             </div>
             <div class="col-lg-6 image-container">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/monitor-key-metrics.png" alt="Monitor key metrics">
+                    <img src="/images/mqtt-broker/product/monitor-key-metrics.webp" alt="Monitor key metrics" loading="lazy">
                 </div>
             </div>
         </div>
@@ -198,7 +198,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/mqtt-broker/product/logo-main.svg" alt="MQTT client type">
+                    <img src="/images/thingsboard-logo.svg" alt="MQTT client type">
                     <div>
                         <a href="/docs/mqtt-broker/user-guide/mqtt-client-type/"><h4 class="title">MQTT client type</h4></a>
                         <p>Supports two distinct client types to provide customized messaging solutions for diverse IoT scenarios. One type efficiently handles frequent data transmissions and effectively manages incoming moderate message volumes (fan-out). The other specializes in high-rate topic subscriptions, perfect for data analytics and processing (fan-in).</p>
@@ -258,7 +258,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 <div class="block">
                     <div class="image-container">
                         <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">
-                            <img src="/images/mqtt-broker/product/latest-news-1.png" alt="TBMQ 1.3.0 release">
+                            <img src="/images/mqtt-broker/product/latest-news-1.webp" alt="TBMQ 1.3.0 release" loading="lazy">
                         </a>
                     </div>
                     <div class="content">

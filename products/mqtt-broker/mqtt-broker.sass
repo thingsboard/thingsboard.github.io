@@ -115,18 +115,19 @@
       &::after
         content: ''
         display: block
-        height: 24px
-        width: 24px
-        mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
-        -webkit-mask: url('/images/mqtt-broker/product/arrow-top-right.svg') no-repeat 50% 50%
+        height: 18px
+        width: 18px
+        mask: url('/images/trendz/arrow-right.svg') no-repeat 50% 50%
+        -webkit-mask: url('/images/trendz/arrow-right.svg') no-repeat 50% 50%
         mask-size: cover
         -webkit-mask-size: cover
         background-color: #fff
         position: absolute
         top: 50%
-        transform: translateY(-50%)
+        transform: translateY(-50%) rotate(-45deg)
         transition: 0.3s
         right: 22px
+        filter: invert(0)
 
     #top-features
       margin-bottom: 24px
@@ -319,6 +320,11 @@
             img
               height: fit-content
               margin: 0 0 18px
+        .col-lg-6:first-child
+          .block
+            img
+              width: 48px
+              filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(382%) hue-rotate(93deg) brightness(96%) contrast(103%)
 
     #get-started
       padding-bottom: 160px
@@ -340,7 +346,7 @@
                 color: #1F8B4D
                 &::after
                   background-color: #1F8B4D
-                  right: 24px
+                  right: 28px
               a
                 width: 188px
                 padding: 4px 24px 4px 24px
