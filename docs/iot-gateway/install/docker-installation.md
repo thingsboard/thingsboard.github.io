@@ -1,110 +1,69 @@
 ---
 layout: docwithnav-gw
-title: Install ThingsBoard IoT Gateway using Docker.
+title: Install ThingsBoard IoT Gateway using Docker
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard Gateway using Docker on Linux or Mac OS.
-
+This guide will help you to install and start ThingsBoard Gateway using Docker Compose on Linux or Mac OS.
 
 ## Prerequisites
 
-- [Install Docker CE](https://docs.docker.com/engine/installation/)
+- [Install Docker Engine](https://docs.docker.com/engine/installation/){:target="_blank"};
+- [ThingsBoard account](https://demo.thingsboard.io/){:target="_blank"} or your [local instance](https://thingsboard.io/docs/user-guide/install/installation-options/){:target="_blank"}.
+
+## Download configuration file
+
+{% assign downloadConfigurationFile = '
+   ===
+      image: /images/gateway/install/gateway-download-configuration-file-1-ce.png,
+      title: Go to the "**Dashboards**" page and open the "**ThingsBoard IoT Gateways**" dashboard;
+   ===
+      image: /images/gateway/install/gateway-download-configuration-file-2-ce.png,
+      title: Click the "**plus**" icon in the upper right corner to add a new gateway. Input the gateway name, specify the "default" device profile, and click "**Create**";
+   ===
+      image: /images/gateway/install/gateway-download-configuration-file-3-ce.png,
+      title: The "**Docker commands**" window will open. Click the "**Download**" button to download the configuration file for your gateway.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadConfigurationFile %}
 
 ## Running
 
-**Execute the following command to run this docker directly:**
+Click the **Docker QuickStart** icon to launch a pre-configured **Docker Toolbox** terminal.
+
+Execute the following command from the folder containing the **docker-compose.yaml** file to start the Gateway:
 
 ```
-docker run -it -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 --restart always thingsboard/tb-gateway
-```
-{: .copy-code}
-
-Where: 
-    
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current Gateway process output
-- `-v ~/.tb-gateway/config:/thingsboard_gateway/config`   - mounts the host's dir `~/.tb-gateway/config` to Gateway config  directory
-- `-v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `~/.tb-gateway/extensions` to Gateway extensions  directory
-- `-v ~/.tb-gateway/logs:/thingsboard_gateway/logs`   - mounts the host's dir `~/.tb-gateway/logs` to Gateway logs  directory
-- `--name tb-gateway`             - friendly local name of this machine
-- `-p 60000-61000:60000-61000` - publish range of ports from 60000 to 61000
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `thingsboard/tb-gateway`          - docker image
-
-## Running (with environmental variables)
-
-**Execute the following command to run docker container with environmental variables:**
-
-```
-docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 --restart always thingsboard/tb-gateway
+docker compose up
 ```
 {: .copy-code}
 
-{% capture info %}
-<div>
-  <p>
-    <span style="color:black">Environmental variables will override configuration parameters.</span>
-  </p>
-</div>
-{% endcapture %}
-{% include templates/info-banner.md content=info %}
+{% assign startGateway = '
+    ===
+        image: /images/gateway/install/start-gateway-1-ce.png,
+        title: Click on Download button to download configuration file.
+'
+%}
 
-Available environmental variables:
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=startGateway %}
 
-| **ENV**     | **Description**                |
-|:-|-
-| host        | ThingsBoard instance host.     |
-| port        | ThingsBoard instance port.     |
-| accessToken | Gateway access token.          |
-| caCert      | Path to CA file.               |
-| privateKey  | Path to private key file.      |
-| cert        | Path to certificate file.      |
-|--
+## Detaching commands
 
-## Detaching, stop and start commands
+To detach from session (the container will keep running in the background) execute the following command:
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
+```
+docker compose up -d
+```
+{: .copy-code}
 
-To reattach to the terminal (to see Gateway logs) run:
+To reattach to the terminal (to look at Gateway logs) execute the following command:
 
 ```
 docker attach tb-gateway
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker stop tb-gateway
-```
-{: .copy-code}
-
-To start the container:
-
-```
-docker start tb-gateway
-```
-{: .copy-code}
-
-## Gateway configuration
-
-Stop the container:
-
-```
-docker stop tb-gateway
-```
-{: .copy-code}
-
-**Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/configuration/):**
-
-Start the container after made changes:
-
-```
-docker start tb-gateway
 ```
 {: .copy-code}
 
@@ -113,24 +72,8 @@ docker start tb-gateway
 In order to update to the latest image, execute the following commands:
 
 ```
+docker compose down
 docker pull thingsboard/tb-gateway
-docker stop tb-gateway
-docker rm tb-gateway
-docker run -it -v ~/.tb-gateway/logs:/var/log/thingsboard-gateway -v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+docker compose up
 ```
 {: .copy-code}
-
-## Build local docker image
-
-In order to build local docker image, follow the next steps:
-
-1. Copy **Dockerfile** to **root** folder, using the following command:
-    ```bash
-    cp docker/Dockerfile .
-    ```
-   {: .copy-code}
-2. From project root folder execute the following command:
-    ```bash
-    docker build -t local-gateway .
-    ```
-    {: .copy-code}
