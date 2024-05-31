@@ -1,5 +1,5 @@
 {% if docsPrefix == null %}
-{% assign THINGSBOARD_MOBILE_APP = "[Thingsboard mobile application ](/docs/mobile/)" %}
+{% assign THINGSBOARD_MOBILE_APP = "[ThingsBoard mobile application ](/docs/mobile/)" %}
 {% assign CUSTOM_APPLICATION = "[custom application](/docs/mobile/)" %}
 {% assign OFFICIALLY_PUBLISHED_APPLICATION = "**ThingsBoard Live** mobile application ([Android](https://play.google.com/store/apps/details?id=org.thingsboard.demo.app) and [iOS](https://apps.apple.com/us/app/thingsboard-live/id1594355695))" %}
 {% assign OFFICIALLY_PUBLISHED_APPLICATION_2 = "**ThingsBoard Live**" %}
@@ -32,7 +32,7 @@ This process is quite simple:
 
 ## Scan to connect or download mobile app
 
-If the mobile application is not yet installed, scanning the QR code redirects the user to the app store (Google Play and App Store are supported). 
+If the mobile application is not yet installed, scanning the QR code redirects the user to the app store (Google Play and Application marketplace are supported). 
 
 Just follow these simple steps to get started:
 
@@ -40,7 +40,7 @@ Just follow these simple steps to get started:
 
 ## Configuring QR code on Home page
 
-QR code widget settings are inherited from the system level by default{% unless docsPrefix == 'pe/' %} and link to the officially published {{OFFICIALLY_PUBLISHED_APPLICATION}} {% endunless %}.
+QR code widget settings are inherited from the *system level* by default{% unless docsPrefix == 'pe/' %} and link to the officially published {{OFFICIALLY_PUBLISHED_APPLICATION}}{% endunless %}.
 {% unless docsPrefix == null %}If someone wants to use a {{CUSTOM_APPLICATION}}, tenant admins could configure it on the tenant level.{% endunless %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
