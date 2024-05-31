@@ -45,7 +45,6 @@ docker compose up
 {% assign startGateway = '
     ===
         image: /images/gateway/install/start-gateway-1-ce.png,
-        title: Click on Download button to download configuration file.
 '
 %}
 
