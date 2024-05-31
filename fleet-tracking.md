@@ -284,7 +284,7 @@ Experience the power of transformative IoT fleet management with ThingsBoard's I
                 <div class="title">Ready to launch your unique product?</div>
                 <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
-            <form id="contact-form" class="contact-form1 gtm_form" method="post" onsubmit="return validateContactForm(this)">
+            <form id="UseCases_FleetTracking_ReadyToLaunch" class="contact-form1 gtm_form readyToLaunchForm" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
                     <div class="form-section">
                         <div class="form-element">
