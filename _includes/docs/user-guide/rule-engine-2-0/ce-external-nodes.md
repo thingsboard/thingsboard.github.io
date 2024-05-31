@@ -20,8 +20,7 @@ It sends messages using a RequestResponse invocation type. The node uses a pre-c
 
 **Configuration**
 
-// todo: add config image
-![Configuration example image]()
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/external-aws-lambda-config.png)
 
 Function configuration
 
