@@ -61,7 +61,7 @@ nano trendz-app-deployment.yml
 ``` 
 and change the image version:
 
-![image](/images/trendz/image-version-kuber.png)
+![image](https://img.thingsboard.io/trendz/image-version-kuber.png)
 
 #### Apply the deployment file
 
