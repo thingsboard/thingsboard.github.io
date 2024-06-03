@@ -127,18 +127,19 @@ toc:
     - title: Templatization
       path: /docs/user-guide/templatization/
       new: true
-- title: White Labeling
+- title: White labeling
   pe: true
   section:
     - title: Overview
       path: /docs/pe/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/pe/user-guide/self-registration/
-    - title: Mail Templates
+    - title: Mail templates
       path: /docs/pe/user-guide/mail-templates/
-    - title: Custom Translations
+    - title: Custom translation
       path: /docs/pe/user-guide/custom-translation/
-    - title: Custom Menu
+      new: true
+    - title: Custom menu
       path: /docs/pe/user-guide/custom-menu/
 - title: Integrations
   pe: true
