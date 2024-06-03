@@ -21,7 +21,12 @@
 {% elsif page.customTitle == "true" %}
     {% assign customTitle = title %}
 {% endif %}
-
+{% if productTag %}
+    {% if productTag == "mqtt-broker" %}
+        {% assign githubLink = "https://github.com/thingsboard/tbmq" %}
+        {% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
+    {% endif %}
+{% endif %}
 <head>
     <meta charset="utf-8">
     <meta name="cf-2fa-verify" content="a08672380de15e9">
@@ -587,7 +592,7 @@
                                     <p>Connect legacy protocols</p>
                                 </div>
                             </a>
-                            <a class="mqtt-broker-lnk" href="/docs/mqtt-broker/">
+                            <a class="mqtt-broker-lnk" href="/products/mqtt-broker/">
                                 <img src="/images/tbmq-icon.svg" alt="MQTT Broker icon" width="54" height="54" loading="lazy">
                                 <div class="sub-text">
                                     <span class="item-heading">MQTT Broker</span>
