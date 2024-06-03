@@ -83,8 +83,8 @@ toc:
       path: /docs/trendz/widget-filter-by-alias/
     - title: Widget actions
       path: /docs/trendz/widget-actions/
-    - title: Widget autorefresh
-      path: /docs/trendz/widget-autorefresh/
+    - title: Widget settings
+      path: /docs/trendz/widget-settings/
 - title: External datasources
   path: /docs/trendz/mix-sql-datasource/
 - title: Sync to ThingsBoard

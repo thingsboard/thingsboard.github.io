@@ -115,13 +115,13 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
-        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severity and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
     4:
         image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
         title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'
     5:
         image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-6-pe.png
-        title: 'Scroll down to find the "Alarms table" widget. Once you find it, click and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
+        title: 'Scroll down, find the "Alarms table" widget, and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
 
 step4:
     0:
