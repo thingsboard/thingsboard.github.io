@@ -17,8 +17,14 @@ toc:
     path: /docs/trendz/install/docker-windows/
   - title: Docker (Linux or Mac OS)
     path: /docs/trendz/install/docker/
+  - title: Kubernetes
+    path: /docs/trendz/install/kubernetes/
 - title: Upgrade instructions
-  path: /docs/trendz/install/trndz-upgrade-instructions/
+  section:
+  - title: Ubuntu/CentOS/Windows
+    path: /docs/trendz/install/trndz-upgrade-instructions/
+  - title: Kubernetes
+    path: /docs/trendz/install/trndz-upgrade-instructions-kubernetes/
 - title: Connect Trendz to Thingsboard
   path: /docs/trendz/connect-thingsboard/
 - title: Configuration properties
