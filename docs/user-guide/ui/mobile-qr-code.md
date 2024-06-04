@@ -42,12 +42,12 @@ download-app-with-qr-code:
 mobile-app-qr-code-widget-settings:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-1-ce.png
-        title: 'Go to the "Settings" menu item, navigate to the "Mobile app" tab and disable "Use system settings" toggle;'
+        title: 'Log in as the <b>system administrator</b> and navigate to the "Mobile app" tab on the "Settings" page. Here you will see two settings blocks: "Applications" and "Appearance on Home page";'
 
 application-settings-default:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-2-ce.png
-        title: 'If you are using an application configured at the system level, leave the default settings.'
+        title: 'Leave "Default" applications settings to use the <b>ThingsBoard Live</b> mobile application.'
 
 application-settings-custom:
     0:

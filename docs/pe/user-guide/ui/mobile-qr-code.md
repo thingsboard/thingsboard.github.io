@@ -42,12 +42,12 @@ download-app-with-qr-code:
 mobile-app-qr-code-widget-settings:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-1-pe.png
-        title: 'Go to the "Settings" menu item, navigate to the "Mobile app" tab and disable "Use system settings" toggle;'
+        title: 'Navigate to the "Mobile app" tab on the "Settings" page and disable "Use system settings" toggle;'
 
 application-settings-default:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-2-pe.png
-        title: 'If you are using an application configured at the system level, leave the default settings.'
+        title: 'Leave "Default" applications settings to use the <b>ThingsBoard Cloud</b> mobile application.'
 
 application-settings-custom:
     0:
@@ -76,7 +76,7 @@ add-qr-code-widget:
         title: 'Select the "Mobile app QR code" widget;'
     3:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-4-pe.png
-        title: 'You can use system settings or use your own. If desired, you can disable unnecessary platforms, configure badges (or turn them off altogether), and update the QR code label. Click "Add".'
+        title: 'Use system settings or use your own. If desired, you can configure badges (or turn them off altogether), and update the QR code label. Click "Add".'
     4:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-5-pe.png
         title: 'Adjust widget size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard;'
