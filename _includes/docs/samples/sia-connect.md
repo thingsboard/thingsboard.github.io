@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-In this comprehensive guide, we will walk you through the process of connecting an OPC-UA device to the ThingsBoard platform via SIA Connector. 
+In this comprehensive guide, we will walk you through the process of connecting an OPC-UA device to the ThingsBoard platform via SIA Connect. 
 
 The [SIA Connect](https://sia-connect.com/){:target="_blank"} is a tool that enables this process. 
 By connecting your OPC-UA device to the ThingsBoard platform, you can monitor, control, and automate your devices in a highly scalable and flexible way. Stay tuned as we guide you step by step through this process.

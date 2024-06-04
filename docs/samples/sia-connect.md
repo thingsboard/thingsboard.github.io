@@ -1,15 +1,15 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-pe
 title: SIA Connect
 description: SIA Connect Guide
 
 creating-device-on-thingsboard:
     0:
         image: /images/user-guide/integrations/sia-connect/creating-opc-ua-device-1-paas.png
-        title: 'Login to your ThingsBoard instance, and navigate to the "<b>Devices</b>" page of the "<b>Entities</b>" section. By default, you navigate to the device group "<b>All</b>". Click on the "<b>plus</b>" icon in the top right corner of the table and then select "<b>Add new device</b>" from drop-down menu;'
+        title: 'Login to your ThingsBoard instance, and navigate to the "<b>Devices</b>" page of the "<b>Entities</b>" section. By default, will be redirected to the "<b>All</b>" device group. Click on the "<b>plus</b>" icon in the top right corner of the table and then select "<b>Add new device</b>" from drop-down menu;'
     1:
         image: /images/user-guide/integrations/sia-connect/creating-opc-ua-device-2-paas.png
-        title: 'Input device name. For example,"<b>OPC-UA Device</b>". Stay default device profile. Now, click the "<b>Credentials</b>" button;'
+        title: 'Input device name. For example,"<b>OPC-UA Device</b>". Use the default device profile. Now, click the "<b>Credentials</b>" button;'
     2:
         image: /images/user-guide/integrations/sia-connect/creating-opc-ua-device-3-paas.png
         title: 'Select "<b>MQTT Basic</b>" credentials type. Set "<b>opcua_device</b>" as a client ID, "<b>sia_connect</b>" as a user name and use your own password. Click "<b>Add</b>";'
@@ -90,7 +90,7 @@ adding-thingsboard-instance-4:
     0:
         image: /images/user-guide/integrations/sia-connect/adding-thingsboard-instance-7-paas.png
         title: 'Add other mappings, such as "<b>Power</b>" and "<b>Humidity</b>".'
-
+  
 check-data-on-thingsboard:
     0:
         image: /images/user-guide/integrations/sia-connect/check-data-on-thingsboard-1-paas.png
@@ -140,7 +140,7 @@ shared-attribute-on-device:
 import-dashboard:
     0:
         image: /images/user-guide/integrations/sia-connect/import-dashboard-1-paas.png
-        title: 'Go to the "<b>Dashboard</b>" page of your "<b>ThingsBoard</b>" instance. will be redirected to the "<b>All</b>" device group. Click on the "<b>plus</b>" icon in the top right corner of the table and then select "<b>Import dashboard</b>" from drop-down menu;'
+        title: 'Go to the "<b>Dashboard</b>" page of your "<b>ThingsBoard</b>" instance. By default, you will be redirected to the "<b>All</b>" device group. Click on the "<b>plus</b>" icon in the top right corner of the table and then select "<b>Import dashboard</b>" from drop-down menu;'
     1:
         image: /images/user-guide/integrations/sia-connect/import-dashboard-2-paas.png
         title: 'In the import dashboard window, upload the previously downloaded dashboard configuration JSON file, and click "<b>Import</b>";'
@@ -174,5 +174,5 @@ visualize-data-on-thingsboard:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
-{% include docs/pe/user-guide/integrations/sia-connect.md %}
+{% assign docsPrefix = "pe/" %}
+{% include docs/samples/sia-connect.md %}

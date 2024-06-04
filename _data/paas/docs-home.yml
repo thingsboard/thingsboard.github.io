@@ -196,9 +196,6 @@ toc:
       path: /docs/paas/user-guide/integrations/azure-service-bus/
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
-    - title: SIA Connect
-      path: /docs/paas/user-guide/integrations/sia-connect/
-      new: true
     - title: TCP
       path: /docs/paas/user-guide/integrations/tcp/
     - title: UDP
