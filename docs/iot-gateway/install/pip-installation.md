@@ -93,7 +93,7 @@ Now, we have to configure gateway using right host, port and credentials, for th
 - Click the "**General configuration**" button, and copy **Access token** on the "**General**" tab;
 - Open Terminal and execute the following command:
 
-```
+```text
 nano /etc/thingsboard-gateway/config/tb_gateway.json
 ```
 {: .copy-code}
@@ -101,36 +101,45 @@ nano /etc/thingsboard-gateway/config/tb_gateway.json
 - Paste copied access token and replace platform's host and port with yours;
 - Save changes and exit from nano.
 
-{% assign configureGateway1 = '
-  ===
-    image: /images/gateway/install/configure-gateway-1-ce.png,
-    title: Click the "**General configuration**" button;
-  ===
-    image: /images/gateway/install/configure-gateway-2-ce.png,
-    title: Copy **Access token** on the "**General**" tab;
-  ===
-    image: /images/gateway/install/configure-gateway-3-ce.png,
-    title: Open Terminal and execute the following command: `nano /etc/thingsboard-gateway/config/tb_gateway.json`. Paste copied access token and replace platform's host and port with yours. Save changes and exit from nano.
+{% assign configureGateway = '
+    ===
+        image: /images/gateway/install/configure-gateway-1-ce.png,
+        title: Click the "**General configuration**" button;
+    ===
+        image: /images/gateway/install/configure-gateway-2-ce.png,
+        title: Copy **Access token** on the "**General**" tab;
+    ===
+        image: /images/gateway/install/configure-gateway-3-ce.png,
+        title: Open Terminal and execute the following command: `nano /etc/thingsboard-gateway/config/tb_gateway.json`. Paste copied access token and replace platform&#39;s host and port with yours. Save changes and exit from nano.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=configureGateway1 %}
+{% include images-gallery.liquid imageCollection=configureGateway %}
 
 **6. Configure logging:**
 
-Click the "**General configuration**" button. Navigate to the "**Logs**" tab and replace "**File path**" field to `/var/log/thingsboard-gateway` in all tabs. Then, click "**Save**".
+- Click the "**General configuration**" button;
+- Navigate to the "**Logs**" tab and replace the "**File path**" field value to:
 
-{% assign configureGateway2 = '
-  ===
-    image: /images/gateway/install/configure-gateway-1-ce.png,
-    title: Click the "**General configuration**" button;
-  ===
-    image: /images/gateway/install/configure-gateway-4-ce.png,
-    title: Navigate to the "**Logs**" tab and replace "**File path**" field to `/var/log/thingsboard-gateway` in all tabs. Then, click "**Save**".
+```text
+/var/log/thingsboard-gateway 
+```
+{: .copy-code}
+
+- Repeat the previous step for all tabs in the "**Local logging**" section;
+- Click "**Save**".
+
+{% assign configureGatewayLogs = '
+    ===
+        image: /images/gateway/install/configure-gateway-1-ce.png,
+        title: Click the "**General configuration**" button;
+    ===
+        image: /images/gateway/install/configure-gateway-4-ce.png,
+        title: Navigate to the "**Logs**" tab and replace the "**File path**" field value to `/var/log/thingsboard-gateway` in all tabs. Then, click "**Save**".
 '
 %}
 
-{% include images-gallery.liquid imageCollection=configureGateway2 %}
+{% include images-gallery.liquid imageCollection=configureGatewayLogs %}
 
 **7. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
 
