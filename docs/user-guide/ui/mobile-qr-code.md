@@ -14,10 +14,10 @@ authorize-with-qr-code:
         title: 'Launch the ThingsBoard mobile application on your device, and use the QR code scanning feature. Make sure you have the latest version of the app installed to use this feature;'
     2:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
-        title: 'Scan the QR code using the mobile app;'
+        title: 'Scan the QR code using the ThingsBoard mobile app;'
     3:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-dashboard-1-ce.png
-        title: 'You have successfully authorized in to the ThingsBoard mobile app into your account.'
+        title: 'You have successfully logged into the ThingsBoard mobile app with your account.'
 
 download-app-with-qr-code:
     0:
@@ -34,10 +34,10 @@ download-app-with-qr-code:
         title: 'Open the installed application;'
     4:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
-        title: 'Simply scan the QR code using the mobile app. You will automatically authorize into the app, without the need to manually enter your login details;'
+        title: 'Simply scan the QR code using the ThingsBoard mobile app. You will automatically authorize into the app, without the need to manually enter your credentials;'
     5:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-dashboard-1-ce.png
-        title: 'You have successfully authorized in to the ThingsBoard mobile app into your account.'
+        title: 'You have successfully logged into the ThingsBoard mobile app with your account.'
 
 mobile-app-qr-code-widget-settings:
     0:

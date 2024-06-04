@@ -22,18 +22,18 @@
 {% assign sinceVersion = "3.7" %}
 {% include templates/since.md %}
 
-With the latest update of ThingsBoard 3.7, authorization process in the {{THINGSBOARD_MOBILE_APP}} has become much easier with the new QR code feature.
+In ThingsBoard version 3.7, the authorization process in the {{THINGSBOARD_MOBILE_APP}} has been simplified by introducing a new QR code feature.
 
 ## Login with QR code
 
-Scanning the QR code automatically authorizes the user in the application (if the application is already installed), without the need to manually enter your login details.
+Scanning the QR code automatically authorizes the user to the application (if the application is already installed) without the need to manually enter your credentials.
 This process is quite simple:
 
 {% include images-gallery.html imageCollection="authorize-with-qr-code" showListImageTitles="true" %}
 
 ## Scan to connect or download mobile app
 
-If the mobile application is not yet installed, scanning the QR code redirects the user to the app store (Google Play and Application marketplace are supported). 
+If the mobile application is not yet installed, scanning the QR code redirects the user to the application marketplace (Google Play and App Store are supported)
 
 Just follow these simple steps to get started:
 
@@ -48,11 +48,11 @@ If you want to customize the behavior of the Mobile App QR Code widget or use yo
 {% endif %}
 {% if docsPrefix == "pe/" %}
 By default, the mobile application QR code widget settings are inherited from the **system level**, and the QR code links to the officially published **ThingsBoard Cloud** mobile application ([Android](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [iOS](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
-If a tenant administrator wants to use a [custom application](/docs/pe/mobile/){:target="_blank"}, they can configure it at their level.
+If a **tenant administrator** wants to use a [custom application](/docs/pe/mobile/){:target="_blank"}, they can configure it at their level.
 {% endif %}
 {% if docsPrefix == "paas/" %}
 By default, the mobile application QR code widget links to the officially published **ThingsBoard Cloud** mobile application ([Android](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [iOS](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
-If a tenant administrator wants to use a [custom application](/docs/pe/mobile/){:target="_blank"}, they can configure it at their level.
+If a **tenant administrator** wants to use a [custom application](/docs/pe/mobile/){:target="_blank"}, they can configure it at their level.
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
