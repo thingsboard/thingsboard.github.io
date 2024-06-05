@@ -117,17 +117,14 @@
         display: block
         height: 18px
         width: 18px
-        mask: url('/images/trendz/arrow-right.svg') no-repeat 50% 50%
-        -webkit-mask: url('/images/trendz/arrow-right.svg') no-repeat 50% 50%
-        mask-size: cover
-        -webkit-mask-size: cover
-        background-color: #fff
+        background-image: url('/images/trendz/arrow-right.svg')
+        background-repeat: no-repeat
         position: absolute
         top: 50%
         transform: translateY(-50%) rotate(-45deg)
         transition: 0.3s
         right: 22px
-        filter: invert(0)
+        filter: brightness(0) saturate(100%) invert(97%) sepia(63%) saturate(13%) hue-rotate(226deg) brightness(102%) contrast(100%)
 
     #top-features
       margin-bottom: 24px
@@ -222,6 +219,7 @@
           align-items: center
           justify-content: space-between
           gap: 24px
+          padding-top: 20px
           .image-container
             flex: 2 !important
           .col-lg-6
@@ -246,6 +244,7 @@
           align-items: center
           justify-content: space-between
           gap: 10px
+          padding-top: 40px
           .installation-options-img
             margin-top: 40px
             flex: 1
@@ -345,7 +344,7 @@
               .arrow-top-right
                 color: #1F8B4D
                 &::after
-                  background-color: #1F8B4D
+                  filter: brightness(0) saturate(100%) invert(39%) sepia(49%) saturate(630%) hue-rotate(93deg) brightness(99%) contrast(92%)
                   right: 28px
               a
                 width: 188px
@@ -465,7 +464,7 @@
         &.main3
           top: 60px
           width: 2560px
-          height: 2600px
+          height: 3600px
           left: -1280px
           background-color: #1F8B4D0F
         &.small5
@@ -522,8 +521,18 @@
       opacity: 1
       transform: translate3d(0, 0, 0)
 
+  @media screen and (min-width: 400px)
+    #tbmqContent
+      #background
+        div
+          &.main3
+            height: 3200px
   @media screen and (min-width: 600px)
     #tbmqContent
+      #installation-options
+        main
+          .row
+            padding-top: 0
       #background
         div
           &.main2
@@ -596,10 +605,11 @@
       #installation-options
         main
           .row
+            padding-top: 40px
             flex-direction: column
       #middle-features
         main
-          padding-top: 230px
+          padding-top: 190px
       #bottom-features
         h3
           padding-top: 250px
@@ -617,7 +627,7 @@
             top: 15px
             right: -690px
           &.main2
-            height: 600px
+            height: 640px
           &.small3
             top: 400px
             right: -700px
@@ -673,7 +683,7 @@
             order: unset
       #middle-features
         main
-          padding-top: 270px
+          padding-top: 230px
           .row
             flex-direction: row
             flex-wrap: nowrap
@@ -723,7 +733,7 @@
             top: 45px
             left: -840px
           &.main3
-            height: 1150px
+            height: 1250px
           &.small7
             top: 435px
             right: -900px
