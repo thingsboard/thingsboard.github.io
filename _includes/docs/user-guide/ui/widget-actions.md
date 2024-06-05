@@ -1031,7 +1031,7 @@ Clicking on the action icon of a selected entity will transfer us to another sta
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
-- Select "Action cell button" action source;
+- Select "Action cell button" as the action source;
 - Input a name for the action and select an icon that will represent a button. With this icon, action will be performed;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1049,25 +1049,45 @@ As you can see, there is an action cell button next to each entity name. By clic
 
 <i>* only in Entities table, Alarms table, Device admin table, and Asset admin table widgets.</i>
 
-The "On cell click" action adds a function for each cell in the specified table column. Let's explore how this action works using the "Entities table" widget as an example. 
-We'll configure this widget so that clicking on a cell in the selected column redirects us to another state with detailed telemetry information about the selected device.
+The "On cell click" action adds a function for each cell in the specified table column. 
 
-We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
+Let's explore how this action works using the "Entities table" widget as an example. It displays a list of devices and their latest temperature and humidity readings.
+We'll configure this widget so that clicking a cell in a specific column will redirect the user to a new dashboard state with detailed telemetry information about the selected device.
+For this, we will need to add an action for each column of the table.
 
-- Select "On cell click " action source;
-- After selecting an action source, the "Column index*" drop-down menu will appear. Select the widget column to which this action will be applied;
-- Input a name for the action. Optionally, select an icon;
-- Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
-- After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to;
-- Then, click the "Add" button;
-- Now in the "Actions" window, you can see the configured action, allowing you to double-check the action source, icon, and action type. Click "Save", and then click "Apply" to save the widget settings;
-- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
+We assume that you have already added two new [states](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
+
+Let's add the first action for the "temperature" column:
+
+- Select the "On cell click " as the action source;
+- From the "Column index" drop-down menu, select the "temperature" column to which this action will be applied;
+- Enter a name for the action, and optionally, choose an icon;
+- For the action type, select "Navigate to new dashboard state" from the drop-down menu;
+- Specify the "Target dashboard state" which will display detailed temperature data for the selected device;
+- Click "Add" to add the action.
+
+We have configured an action for the "temperature" column.
 
 {% include images-gallery.html imageCollection="on-cell-click-1" %}
 
-Click on a cell in the "temperature" column for selected entity to perform an action, namely to navigate to a specified state where detailed telemetry information about the chosen device is displayed.
+Now, we need to add another action for the "humidity" column:
+
+- Click the "plus" icon in the top right corner of the "Actions" window to start adding a new action;
+- Repeat the steps as above but select the "humidity" column this time from the "Column index" drop-down menu;
+- Specify the "Target dashboard state" which will display detailed humidity data for the selected device;
+- Click "Add" to add the action;
+- After configuring the actions, click "Save" and then "Apply" to save the widget settings;
+- Save your entire dashboard configuration by clicking "Save" located in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="on-cell-click-2" %}
+
+Now, when you click on a cell in the "temperature" column for any device, an action will be performed and take you to a state displaying detailed information about the temperature selected device.
+
+{% include images-gallery.html imageCollection="on-cell-click-3" %}
+
+Similarly, clicking on a cell in the "humidity" column will redirect you to detailed data about the humidity selected device.
+
+{% include images-gallery.html imageCollection="on-cell-click-4" %}
 
 #### Widget header button
 
@@ -1077,7 +1097,7 @@ The widget header button is the most commonly used action source, and it can be 
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
-- Select "Widget header button" action source;
+- Select "Widget header button" as the action source;
 - Input a name for the action and select an icon that will represent a button. With this icon, action will be performed;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1098,7 +1118,7 @@ The "On row click" action triggers an action when a row in the widget is clicked
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
-- Select "On row click" action source;
+- Select "On row click" as the action source;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1120,7 +1140,7 @@ Double-clicking on a row of the selected entity in the widget will navigate us t
 We assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 - Enter edit widget mode and open "Add action" window;
-- Select "On row double click" action source;
+- Select "On row double click" as the action source;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1166,7 +1186,7 @@ In this example, we'll add an "HTML Card" widget to our dashboard. Clicking anyw
 - Select the "HTML Card" widget;
 - Navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window; 
 - Input a name for the action;
-- Select "On HTML element click" action source; 
+- Select "On HTML element click" as the action source; 
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu; 
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
 - When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
@@ -1242,7 +1262,7 @@ Learn how to add a circle on the Map widget, by reading [here](/docs/{{docsPrefi
 {% include images-gallery.html imageCollection="on-circle-click-1" %}
 
 - Enter edit widget mode and open "Add action" window;
-- Select "On circle click" action source;
+- Select "On circle click" as the action source;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1261,7 +1281,7 @@ After clicking on the circle on the map, action will be performed, namely, the t
 The action will be executed by clicking on the red entity marker on the map.
 
 - Enter edit widget mode and open "Add action" window;
-- Select "On marker click" action source;
+- Select "On marker click" as the action source;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1284,7 +1304,7 @@ Learn how to add a polygon on the Map widget, by reading [here](/docs/{{docsPref
 {% include images-gallery.html imageCollection="on-polygon-click-1" %}
 
 - Enter edit widget mode and open "Add action" window;
-- Select "On polygon click" action source;
+- Select "On polygon click" as the action source;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
@@ -1305,7 +1325,7 @@ Please note, in this manual explains only the basic usage of the tooltip tag act
 Use [the tooltip function](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#tooltip-function) in the advanced mode of the map widget to accomplish this.
 
 - Enter edit widget mode and open "Add action" window;
-- Select "Tooltip tag action" action source;
+- Select "Tooltip tag action" as the action source;
 - Input a name for the action. Optionally, select an icon;
 - Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
 - After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states) you'd like to be transitioned to;
