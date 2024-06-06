@@ -93,11 +93,11 @@ There, you'll find two settings blocks: "Applications" and "Appearance on Home p
 {% include templates/info-banner.md content=difference %}
 {% endunless %}
 
-* If you want to use your {{CUSTOM_APPLICATION}}, switch to the custom settings. Here, you should fill in the required application credentials for your Android and iOS apps. 
+* If you prefer to use your {{CUSTOM_APPLICATION}}, switch to the custom settings and input the necessary application credentials for your Android and iOS apps.
 
 {% include images-gallery.html imageCollection="application-settings-custom" %}
 
-Click "Save" and check the QR code's appearance on the "Home" page. Scan QR code with your mobile device and confirm that you are redirected to the specified application.
+After making your settings adjustments, click "Save". Then, scan the QR code on the "Home" page with your mobile device to ensure it redirects to the specified application.
 
 * If necessary, you can disable unused platforms.
 
@@ -105,7 +105,7 @@ Click "Save" and check the QR code's appearance on the "Home" page. Scan QR code
 <br>
 **Appearance on Home page:**
 
-You can disable the widget on the "Home" page, configure badges (or turn them off altogether), and update the QR code label.
+Optionally, you can disable the QR code widget on the "Home" page, configure badges, turn them off entirely, or update the QR code label to better fit your needs.
 
 {% include images-gallery.html imageCollection="appearance-on-home-page" %}
 

@@ -52,7 +52,7 @@ application-settings-default:
 application-settings-custom:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-3-pe.png
-        title: 'If you want to use your custom application, switch to custom settings. Here, you should fill in the required application credentials for Android and iOS apps.'
+        title: 'If you prefer to use your custom application, switch to the custom settings and input the necessary application credentials for your Android and iOS apps.'
 
 disable-platforms:
     0:
@@ -67,10 +67,10 @@ appearance-on-home-page:
 add-qr-code-widget:
     0:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-1-pe.png
-        title: 'Open your dashboard, enter edit mode and click the "+ Add widget" icon at the top of the screen;'
+        title: 'Open your dashboard and switch to edit mode. Click the "+ Add widget" icon at the top of the screen;'
     1:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-2-pe.png
-        title: 'Find the "Cards" widget bundle and click on it;'
+        title: 'Navigate to the "Cards" widget bundle;'
     2:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-3-pe.png
         title: 'Select the "Mobile app QR code" widget;'
