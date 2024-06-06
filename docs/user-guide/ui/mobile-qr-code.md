@@ -8,10 +8,10 @@ description: Mobile app QR code guide
 authorize-with-qr-code:
     0:
         image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-1-ce.png
-        title: 'Log in to your ThingsBoard instance. Navigate to the "Home" page and in the bottom right corner, you will find the QR code for connecting the mobile app;'
+        title: 'Log into your ThingsBoard account and navigate to the "Home" page. You will find the QR code for connecting the mobile app in the bottom right corner;'
     1:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-login-with-qr-1-ce.png
-        title: 'Launch the ThingsBoard mobile application on your device, and use the QR code scanning feature. Make sure you have the latest version of the app installed to use this feature;'
+        title: 'Launch the ThingsBoard mobile app on your device and use the QR code scanning feature. Make sure you have the latest version of the app installed;'
     2:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
         title: 'Scan the QR code using the ThingsBoard mobile app;'
@@ -22,19 +22,19 @@ authorize-with-qr-code:
 download-app-with-qr-code:
     0:
         image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-1-ce.png
-        title: 'Log in to your ThingsBoard instance. Navigate to the "Home" page and in the bottom right corner, you will find the QR code for connecting the mobile app;'
+        title: 'Log into your ThingsBoard account and navigate to the "Home" page. You will find the QR code for connecting the mobile app in the bottom right corner;'
     1:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-install-app-ce.png
-        title: 'Open the built-in camera app on your phone or tablet and point it at the QR code. The phone will automatically scan the code and show the link button. Click this button to open the link to the ThingsBoard mobile app (Google Play or App Store);'
+        title: 'Open the camera app on your phone or tablet and point it at the QR code. The phone will automatically scan the code and show the link button. Click this button to open the link to download the ThingsBoard mobile app;'
     2:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-install-app-ce.png
-        title: 'Install ThingsBoard mobile app;'
+        title: 'Install ThingsBoard mobile application;'
     3:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-open-app-1-ce.png
         title: 'Open the installed application;'
     4:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
-        title: 'Simply scan the QR code using the ThingsBoard mobile app. You will automatically authorize into the app, without the need to manually enter your credentials;'
+        title: 'Scan the QR code again using the ThingsBoard mobile app. You will automatically authorize into the app, without the need to manually enter your credentials;'
     5:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-dashboard-1-ce.png
         title: 'You have successfully logged into the ThingsBoard mobile app with your account.'
@@ -42,7 +42,7 @@ download-app-with-qr-code:
 mobile-app-qr-code-widget-settings:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-1-ce.png
-        title: 'Log in as the <b>system administrator</b> and navigate to the "Mobile app" tab on the "Settings" page. Here you will see two settings blocks: "Applications" and "Appearance on Home page";'
+        title: 'Log in as the <b>system administrator</b> and navigate to the "Mobile app" tab on the "Settings" page. Here, you&#39;ll find two settings blocks: "Applications" and "Appearance on Home page";'
 
 application-settings-default:
     0:
@@ -76,7 +76,7 @@ add-qr-code-widget:
         title: 'Select the "Mobile app QR code" widget;'
     3:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-4-ce.png
-        title: 'You can use system settings or use your own. If desired, you can disable unnecessary platforms, configure badges (or turn them off altogether), and update the QR code label. Click "Add".'
+        title: 'You can use either the system settings or customize your own. If desired, you can disable unnecessary platforms, configure badges (or turn them off altogether), and update the QR code label. Click "Add".'
     4:
         image: /images/user-guide/ui/qr-code/add-qr-code-widget-5-ce.png
         title: 'Adjust widget size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard;'
