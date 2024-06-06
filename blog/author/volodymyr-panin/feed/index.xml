@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Volodymyr Panin - Thingsboard's blog</title>
+	<atom:link href="/blog/author/volodymyr-panin/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
+	<description></description>
+	<lastBuildDate>Thu, 06 Jun 2024 16:05:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.4</generator>
+	<item>
+		<title>Optimizing Functionality in ThingsBoard 3.7.0: JDK 17 Migration, Enhanced Localization, QR Code Authorization, and more</title>
+		<link>/blog/optimizing-functionality-in-thingsboard-3-7-0-jdk-17-migration-enhanced-localization-qr-code-authorization-and-more/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=optimizing-functionality-in-thingsboard-3-7-0-jdk-17-migration-enhanced-localization-qr-code-authorization-and-more</link>
+		
+		<dc:creator><![CDATA[Volodymyr Panin]]></dc:creator>
+		<pubDate>Thu, 06 Jun 2024 15:57:48 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/blog/?p=4590</guid>
+
+					<description><![CDATA[<p>We are thrilled to announce the release of ThingsBoard version 3.7.0! This update brings numerous features designed to&#8230;</p>
+<p>The post <a href="/blog/optimizing-functionality-in-thingsboard-3-7-0-jdk-17-migration-enhanced-localization-qr-code-authorization-and-more/">Optimizing Functionality in ThingsBoard 3.7.0: JDK 17 Migration, Enhanced Localization, QR Code Authorization, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We are thrilled to announce the release of ThingsBoard version 3.7.0! This update brings numerous features designed to enhance user workflows and boost performance. Highlights include the Migration to JDK 17, enriched localization support, upgraded data visualization capabilities, enhancements to existing widgets, and the addition of several new ones.</p>
+
+
+
+<h4 class="wp-block-heading">Higher performance and better overall user experience</h4>
+
+
+
+<p>In this release, our main aim is to make your experience smoother and safer. We&#8217;ve worked on a bunch of behind-the-scenes improvements to make the software run faster, keep your data more secure, and ensure it&#8217;s more reliable than ever. Here&#8217;s a look at what&#8217;s changed:</p>
+
+
+
+<ol>
+<li>Migration to the Latest Java: We&#8217;ve upgraded from JDK 11 to JDK 17, bringing in new features and improvements that help the software run more efficiently and securely.</li>
+
+
+
+<li>Spring Framework Update: We&#8217;ve updated from Spring version 5.3.26 to 6.1.8. This update introduces new features and enhancements, enhancing your experience while using the software.</li>
+
+
+
+<li>Docker Image Update: Our Docker images have been updated from bullseye-slim to bookworm-slim. This update includes bug fixes and new features, ensuring a smoother and more secure deployment environment.</li>
+
+
+
+<li>Faster Data Access: We&#8217;ve tweaked how the software talks to the database, so retrieving information happens in a flash, giving you the answers you need in record time.</li>
+
+
+
+<li>Smoother Operations: We&#8217;ve added a new Housekeeping service to take care of those long, complicated tasks in the background, so you can focus on what matters most.</li>
+
+
+
+<li>Improved Security: Your safety online is crucial, so we&#8217;ve strengthened the software&#8217;s defenses to keep your data even more secure.</li>
+
+
+
+<li>Reduced Memory Footprint: By optimizing how the software uses memory, it now runs more efficiently, even on devices with limited resources.</li>
+
+
+
+<li>Increased Database Throughput: We&#8217;ve improved how the software handles lots of people using it at once, so it stays fast and responsive no matter how busy things get.</li>
+</ol>
+
+
+
+<h4 class="wp-block-heading">Enhanced&nbsp; Localization Support</h4>
+
+
+
+<p>Before release, to make changes to an existing language, you had to download a file with the current set of terms in the chosen language, make your modifications, and then send the updated file to our support for them to implement the changes. Adding a new language was not supported directly on the platform and required similar intervention from support.</p>
+
+
+
+<p>With the new update, localization support has been significantly enhanced. You can now easily add languages that were not originally available on the platform. The improved localization support feature allows you to search by languages and term keys, filter by unfilled, modified, or new keys, and track translation progress more effectively. We&#8217;ve introduced a new, simpler format called Basic, making the translation process more user-friendly. The ability to edit translations in the Advanced tab for a specific language, using the JSON format, remains available for those who prefer this method.</p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="2400" height="2154" src="/blog/wp-content/uploads/2024/06/custom-translation-2.webp" alt="Lists of languages, and their settings" class="wp-image-4618" srcset="/blog/wp-content/uploads/2024/06/custom-translation-2.webp 2400w, /blog/wp-content/uploads/2024/06/custom-translation-2-300x269.webp 300w, /blog/wp-content/uploads/2024/06/custom-translation-2-1024x919.webp 1024w, /blog/wp-content/uploads/2024/06/custom-translation-2-768x689.webp 768w, /blog/wp-content/uploads/2024/06/custom-translation-2-1536x1379.webp 1536w, /blog/wp-content/uploads/2024/06/custom-translation-2-2048x1838.webp 2048w, /blog/wp-content/uploads/2024/06/custom-translation-2-512x460.webp 512w, /blog/wp-content/uploads/2024/06/custom-translation-2-920x826.webp 920w, /blog/wp-content/uploads/2024/06/custom-translation-2-1600x1436.webp 1600w, /blog/wp-content/uploads/2024/06/custom-translation-2-1920x1723.webp 1920w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<p>With these enhancements, you can manage translations more efficiently and ensure your platform is accessible to a global audience. The new search and filter options simplify tracking translation tasks and progress. The Basic format makes handling translations more straightforward and user-friendly. Just try it yourself on Professional Edition!</p>
+
+
+
+<h4 class="wp-block-heading">QR Code Authorization</h4>
+
+
+
+<p>ThingsBoard has two separate platforms: the web version and the mobile app. Previously, to switch from one to another, you needed to search for ThingsBoard manually on the Google Play or App Store. Then you Downloaded, installed and logged into the app. This process seemed inconvenient and required extra effort and time.</p>
+
+
+
+<p>Now with the new QR code feature, authorization in the ThingsBoard mobile app has become significantly simpler. When you’re logged in the web version, you only need to scan the QR code on the homepage using your mobile phone&#8217;s camera. If ThingsBoard is already installed, the system will automatically log you in. If the app is not installed, the system will redirect you to the Google Play Store or Apple App Store to download and install the appropriate version. Additionally, the QR code can be placed on any control panel for easy access.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="2400" height="1563" src="/blog/wp-content/uploads/2024/06/Qr-homepage.webp" alt="Mobile phone with login in front of the control panel" class="wp-image-4600" srcset="/blog/wp-content/uploads/2024/06/Qr-homepage.webp 2400w, /blog/wp-content/uploads/2024/06/Qr-homepage-300x195.webp 300w, /blog/wp-content/uploads/2024/06/Qr-homepage-1024x667.webp 1024w, /blog/wp-content/uploads/2024/06/Qr-homepage-768x500.webp 768w, /blog/wp-content/uploads/2024/06/Qr-homepage-1536x1000.webp 1536w, /blog/wp-content/uploads/2024/06/Qr-homepage-2048x1334.webp 2048w, /blog/wp-content/uploads/2024/06/Qr-homepage-512x333.webp 512w, /blog/wp-content/uploads/2024/06/Qr-homepage-920x599.webp 920w, /blog/wp-content/uploads/2024/06/Qr-homepage-1600x1042.webp 1600w, /blog/wp-content/uploads/2024/06/Qr-homepage-1920x1250.webp 1920w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<p>That gives you next benefits:</p>
+
+
+
+<ol>
+<li>Faster and Easier Authorization: The QR code saves time and eliminates the need to enter a login credential.</li>
+
+
+
+<li>Convenient Access: The QR code makes access to your account more convenient. By default it is already added to the Home page.</li>
+</ol>
+
+
+
+<p>The QR code is a quick, simple, and convenient way to authorize in the <a href="https://thingsboard.io/products/mobile/">ThingsBoard mobile app</a>. Try it today!</p>
+
+
+
+<h4 class="wp-block-heading">Charts Library Upgrade</h4>
+
+
+
+<p>We have upgraded our charting library from FlotCharts to Apache ECharts, bringing new capabilities and features while retaining old versions for a smooth transition. This upgrade specifically applies to the following widgets: State chart, Pie chart, Radar chart, Bars widget, and Polar area widget.</p>
+
+
+
+<p>So now users can expect the following benefits:</p>
+
+
+
+<ul>
+<li><strong>Expanded Capabilities: </strong>Previously limited to basic chart types, users can now leverage a wider range of visualizations, including 3D graphics and map-based charts, enabling deeper data analysis.</li>
+
+
+
+<li><strong>Interactivity:</strong> With Apache ECharts, users gain access to enhanced interactive features such as zooming, panning, and highlighting, facilitating easier and more precise data exploration.</li>
+
+
+
+<li><strong>Flexibility:</strong> Apache ECharts offers greater flexibility in customization, allowing users to tailor visualizations to their specific needs and preferences.</li>
+
+
+
+<li><strong>Legacy Versions:</strong> Furthermore, we have maintained legacy versions of the widgets with Apache ECharts, ensuring a seamless transition for users while they explore the enhanced features of the new library. This provides continuity for existing workflows and familiarity for users.</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="2400" height="2007" src="/blog/wp-content/uploads/2024/06/widgets2-1.webp" alt="Different types of charts and diagrams" class="wp-image-4624" srcset="/blog/wp-content/uploads/2024/06/widgets2-1.webp 2400w, /blog/wp-content/uploads/2024/06/widgets2-1-300x251.webp 300w, /blog/wp-content/uploads/2024/06/widgets2-1-1024x856.webp 1024w, /blog/wp-content/uploads/2024/06/widgets2-1-768x642.webp 768w, /blog/wp-content/uploads/2024/06/widgets2-1-1536x1284.webp 1536w, /blog/wp-content/uploads/2024/06/widgets2-1-2048x1713.webp 2048w, /blog/wp-content/uploads/2024/06/widgets2-1-512x428.webp 512w, /blog/wp-content/uploads/2024/06/widgets2-1-920x769.webp 920w, /blog/wp-content/uploads/2024/06/widgets2-1-1600x1338.webp 1600w, /blog/wp-content/uploads/2024/06/widgets2-1-1920x1606.webp 1920w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<p>Old library charts are still available. To use them just follow to Choose all widgets &#8211; Deprecated, when editing your dashboard.</p>
+
+
+
+<p>Also we optimized the “Comparison” feature setting, which was complicated and required several steps. Now this setting is put in one place without difference, which widget you are setting up. And now it is also available for the Time Series chart.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2400" height="2025" src="/blog/wp-content/uploads/2024/06/comtarison-1.webp" alt="Settings in the adding of time series chart" class="wp-image-4622" srcset="/blog/wp-content/uploads/2024/06/comtarison-1.webp 2400w, /blog/wp-content/uploads/2024/06/comtarison-1-300x253.webp 300w, /blog/wp-content/uploads/2024/06/comtarison-1-1024x864.webp 1024w, /blog/wp-content/uploads/2024/06/comtarison-1-768x648.webp 768w, /blog/wp-content/uploads/2024/06/comtarison-1-1536x1296.webp 1536w, /blog/wp-content/uploads/2024/06/comtarison-1-2048x1728.webp 2048w, /blog/wp-content/uploads/2024/06/comtarison-1-512x432.webp 512w, /blog/wp-content/uploads/2024/06/comtarison-1-920x776.webp 920w, /blog/wp-content/uploads/2024/06/comtarison-1-1600x1350.webp 1600w, /blog/wp-content/uploads/2024/06/comtarison-1-1920x1620.webp 1920w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<h4 class="wp-block-heading">Redesign of the Digital Gauge for Simplified Configuration</h4>
+
+
+
+<p>Until recently, you faced limited customization options for digital gauges in our service. The color configuration was quite basic, making it difficult to adapt the interface to your specific needs. Additionally, setting threshold values for various widgets, such as the battery level indicator or the time series line chart, was less convenient and flexible.</p>
+
+
+
+<p>With the 3.7 release digital gauges have got significant improvements. Advanced color settings, including gradients and ranges, have been added, allowing you to fine-tune the interface to your needs more precisely. The battery level widget now also supports gradient color settings. The threshold data key configuration for the time series line chart widget has been updated, enhancing its functionality and usability.</p>
+
+
+
+<p>From now on you get new customization options for digital gauges, enabling you to create more intuitive and informative interfaces. The enhanced color settings allow for better data visualization and quicker response to changes. The updated threshold configuration makes working with widgets more flexible, increasing the overall efficiency of using our service.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2400" height="1770" src="/blog/wp-content/uploads/2024/06/color-settings.webp" alt="Color settings with the gradient feature" class="wp-image-4604" srcset="/blog/wp-content/uploads/2024/06/color-settings.webp 2400w, /blog/wp-content/uploads/2024/06/color-settings-300x221.webp 300w, /blog/wp-content/uploads/2024/06/color-settings-1024x755.webp 1024w, /blog/wp-content/uploads/2024/06/color-settings-768x566.webp 768w, /blog/wp-content/uploads/2024/06/color-settings-1536x1133.webp 1536w, /blog/wp-content/uploads/2024/06/color-settings-2048x1510.webp 2048w, /blog/wp-content/uploads/2024/06/color-settings-512x378.webp 512w, /blog/wp-content/uploads/2024/06/color-settings-920x679.webp 920w, /blog/wp-content/uploads/2024/06/color-settings-1600x1180.webp 1600w, /blog/wp-content/uploads/2024/06/color-settings-1920x1416.webp 1920w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<h4 class="wp-block-heading">And a few more widgets!</h4>
+
+
+
+<p>In addition to the already impressive lineup of widgets, ThingsBoard version 3.7.0 introduces two new widgets: the Mobile QR Code widget and the Status Widget.</p>
+
+
+
+<p>The Mobile QR Code widget simplifies user authentication by generating a QR code that users can scan with their mobile devices to quickly access their accounts. This feature enhances convenience and security, making it easier than ever to log in.</p>
+
+
+
+<p>The Status Widget provides users with real-time updates on the status of their devices or systems. Whether it&#8217;s monitoring equipment health, tracking performance metrics, or displaying system alerts, the Status Widget offers a customizable solution to keep users informed at a glance.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2400" height="2181" src="/blog/wp-content/uploads/2024/06/widgets-1.webp" alt="Status of the window, door and other" class="wp-image-4616" srcset="/blog/wp-content/uploads/2024/06/widgets-1.webp 2400w, /blog/wp-content/uploads/2024/06/widgets-1-300x273.webp 300w, /blog/wp-content/uploads/2024/06/widgets-1-1024x931.webp 1024w, /blog/wp-content/uploads/2024/06/widgets-1-768x698.webp 768w, /blog/wp-content/uploads/2024/06/widgets-1-1536x1396.webp 1536w, /blog/wp-content/uploads/2024/06/widgets-1-2048x1861.webp 2048w, /blog/wp-content/uploads/2024/06/widgets-1-512x465.webp 512w, /blog/wp-content/uploads/2024/06/widgets-1-920x836.webp 920w, /blog/wp-content/uploads/2024/06/widgets-1-1600x1454.webp 1600w, /blog/wp-content/uploads/2024/06/widgets-1-1920x1745.webp 1920w" sizes="(max-width: 2400px) 100vw, 2400px" /></figure>
+
+
+
+<p>With these latest additions, ThingsBoard continues to expand its toolkit, offering users even more flexibility and functionality to meet their diverse needs.</p><p>The post <a href="/blog/optimizing-functionality-in-thingsboard-3-7-0-jdk-17-migration-enhanced-localization-qr-code-authorization-and-more/">Optimizing Functionality in ThingsBoard 3.7.0: JDK 17 Migration, Enhanced Localization, QR Code Authorization, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
