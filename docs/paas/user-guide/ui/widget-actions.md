@@ -279,9 +279,12 @@ on-cell-click-1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-1-pe.png
         title: 'Select the "On cell click" as the action source. From the "Column index" drop-down menu, select the "temperature" column to which this action will be applied;'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-2-pe.png
-        title: 'Enter a name for the action, and optionally, choose an icon. For the action type, select "Navigate to new dashboard state" from the drop-down menu. Specify the "Target dashboard state" which will display detailed temperature data for the selected device. Click "Add" to add the action;'
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-2-1-pe.png
+        title: 'Enter a name for the action, and optionally, choose an icon. For the action type, select "Navigate to new dashboard state" from the drop-down menu. Specify the "Target dashboard state" which will display detailed temperature data for the selected device;'
     2:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-2-2-pe.png
+        title: 'Select the "Open in popover" option in the "Dashboard state display options" field, and specify the placement of the popover. Optionally, specify the width and height of the popover. Click "Add" to add the action;'
+    3:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-3-pe.png
         title: 'We have configured an action for the "temperature" column.'
 
@@ -293,15 +296,18 @@ on-cell-click-2:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-5-pe.png
         title: 'Select the "On cell click" as the action source. From the "Column index" drop-down menu, select the "humidity" column to which this action will be applied;'
     2:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-6-pe.png
-        title: 'Enter a name for the action, and optionally, choose an icon. For the action type, select "Navigate to new dashboard state" from the drop-down menu. Specify the "Target dashboard state" which will display detailed humidity data for the selected device. Click "Add";'
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-6-1-pe.png
+        title: 'Enter a name for the action, and optionally, choose an icon. For the action type, select "Navigate to new dashboard state" from the drop-down menu. Specify the "Target dashboard state" which will display detailed humidity data for the selected device;'
     3:
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-6-2-pe.png
+        title: 'Select the "Open in popover" option in the "Dashboard state display options" field, and specify the placement of the popover. Optionally, specify the width and height of the popover. Click "Add" to add the action;'
+    4:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-7-pe.png
         title: 'After configuring the actions, click "Save";'
-    4:
+    5:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-8-pe.png
         title: 'Click "Apply" to save the widget settings;'
-    5:
+    6:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-9-pe.png
         title: 'Save your entire dashboard configuration by clicking "Save" located in the upper right corner of the dashboard page.'
 
@@ -311,7 +317,7 @@ on-cell-click-3:
         title: 'Click on a cell in the "temperature" column for any device to perform an action;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-11-pe.png
-        title: 'You are navigated to a state where the temperature value of the selected device is displayed;'
+        title: 'A popup window will appear with detailed information about the temperature of the selected device.'
 
 on-cell-click-4:
     0:
@@ -319,7 +325,7 @@ on-cell-click-4:
         title: 'Click on a cell in the "humidity" column for any device to perform an action;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-cell-click-13-pe.png
-        title: 'You are navigated to a state where the humidity value of the selected device is displayed.'
+        title: 'A popup window will appear with detailed information about the humidity of the selected device.'
 
 widget-header-button-1:
     0:
