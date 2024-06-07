@@ -11,7 +11,7 @@
 {% assign PREFIX = "PE" %}
 {% endif %}
 {% if docsPrefix == "paas/" %}
-{% assign THINGSBOARD_MOBILE_APP = "ThingsBoard mobile application " %}
+{% assign THINGSBOARD_MOBILE_APP = "[Thingsboard PE mobile application ](/docs/pe/mobile/)" %}
 {% assign CUSTOM_APPLICATION = "[custom application](/docs/pe/mobile/)" %}
 {% assign OFFICIALLY_PUBLISHED_APPLICATION = "**ThingsBoard Cloud**" %}
 {% endif %}
@@ -22,86 +22,81 @@
 {% assign sinceVersion = "3.7" %}
 {% include templates/since.md %}
 
-We are excited to introduce a new QR code scanning feature in the {{THINGSBOARD_MOBILE_APP}}, designed to streamline the authorization process in the ThingsBoard system on your mobile device. 
-This enhancement makes logging in faster and more secure, offering a user-friendly alternative to traditional username and password entry. Just scan the QR code with your device, and you're ready to access your account instantly.
-
-## Login with QR code
-
-This process is quite simple:
-
-{% include images-gallery.html imageCollection="authorize-with-qr-code" showListImageTitles="true" %}
+We are excited to introduce a new QR code feature, designed to streamline the authorization process in the ThingsBoard mobile application. 
+This enhancement makes logging in faster and more secure, offering a user-friendly alternative to traditional username and password entry.
 
 ## Scan to download the mobile app
 
 {% if docsPrefix == null %}
-If the ThingsBoard mobile application has not been installed yet, scanning the QR code will redirect the user to the application marketplace (both [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.demo.app){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-live/id1594355695){:target="_blank"} are supported).
+If the {{THINGSBOARD_MOBILE_APP}} has not been installed yet, scanning the QR code will redirect the user to the application marketplace (available on [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.demo.app){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-live/id1594355695){:target="_blank"}).
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-If the ThingsBoard mobile application has not been installed yet, scanning the QR code will redirect the user to the application marketplace (both [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"} are supported).
+If the {{THINGSBOARD_MOBILE_APP}} has not been installed yet, scanning the QR code will redirect the user to the application marketplace (available on [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
 {% endif %}
 
 Just follow these simple steps to get started:
 
 {% include images-gallery.html imageCollection="download-app-with-qr-code" showListImageTitles="true" %}
 
-## Configuring QR code on Home page
+## Login with QR code
+
+Scan the QR code with the ThingsBoard mobile app, and you will instantly gain access to your account, without the need to manually enter your credentials.
+
+The login process is simple and convenient:
+
+{% include images-gallery.html imageCollection="authorize-with-qr-code" showListImageTitles="true" %}
+
+## Configuring QR code widget on Home page
 
 {% if docsPrefix == null %}
-The mobile application's QR code widget settings are inherited from the **system level** by default. The QR code links to the officially published **ThingsBoard Live** mobile application (available on [Android](https://play.google.com/store/apps/details?id=org.thingsboard.demo.app){:target="_blank"} and [iOS](https://apps.apple.com/us/app/thingsboard-live/id1594355695){:target="_blank"}).
-
-If you want to customize the behavior of the Mobile App QR Code widget or use your own [custom application](/docs/mobile/){:target="_blank"}, log in as the **system administrator** and navigate to the "Mobile app" tab on the "Settings" page. There, you'll find two settings blocks: "Applications" and "Appearance on Home page".
+The mobile application QR code widget settings configuration is available only on the **system level**.
+For this, log in as the **system administrator** and navigate to the "Mobile app" tab on the "Settings" page, and disable "Use system settings" toggle.
 {% endif %}
-{% if docsPrefix == "pe/" %}
-The mobile application's QR code widget settings are inherited from the **system level** by default. The QR code links to the officially published **ThingsBoard Cloud** mobile application (available on [Android](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [iOS](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
-
-If a **tenant administrator** wants to use a [custom application](/docs/pe/mobile/){:target="_blank"}, they can configure it at their respective level.
-{% endif %}
-{% if docsPrefix == "paas/" %}
-By default, the mobile application QR code widget links to the officially published **ThingsBoard Cloud** mobile application (available on [Android](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [iOS](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
-
-If a **tenant administrator** wants to use a [custom application](/docs/pe/mobile/){:target="_blank"}, they can configure it at their respective level.
-{% endif %}
-
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-To customize the QR code widget behavior on the "Home" page, navigate to the "Mobile app" tab on the "Settings" page and toggle off the "Use system settings" option.
+The mobile application QR code widget settings are inherited from the **system level** by default. [Tenant administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} are authorized to override system settings. For this, navigate to the "Mobile app" tab on the "Settings" page, and disable "Use system settings" toggle.
 {% endif %}
 
 {% include images-gallery.html imageCollection="mobile-app-qr-code-widget-settings" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 There, you'll find two settings blocks: "Applications" and "Appearance on Home page".
-{% endif %}
 
 **Applications:**
 
+Two types of application are available for tenant: default and custom. 
+
 {% if docsPrefix == null %}
-* Leave "Default" applications settings to use the {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application.
+* Using the default one means using officially published {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application (available on [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.demo.app){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-live/id1594355695){:target="_blank"}).
 {% endif %}
 {% if docsPrefix == "pe/" %}
-* Leave "Default" applications settings to use the {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application.
+* Using the default one means using officially published {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application (available on [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
 {% endif %}
 {% if docsPrefix == "paas/" %}
-* If you are using officially published {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application, leave the default settings.
+* Using the default one means using officially published {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application (available on [Google Play](https://play.google.com/store/apps/details?id=org.thingsboard.cloud){:target="_blank"} and [App Store](https://apps.apple.com/us/app/thingsboard-cloud/id6499209395){:target="_blank"}).
 {% endif %}
 
 {% include images-gallery.html imageCollection="application-settings-default" %}
 
 {% unless docsPrefix == 'paas/' %}
 {% capture difference %}
-**Note:** Using the default application implies the {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application will work with your {{PREFIX}} instance. To do so, just use the "Login with the scan QR code" option on the mobile application's login page, and the application will change its server host to your ThingsBoard {{PREFIX}} platform host.
+**Note:** The latest release of the {{OFFICIALLY_PUBLISHED_APPLICATION}} mobile application (version 1.2.0) includes the capability to switch its server host, allowing it to work with your ThingsBoard {{PREFIX}} instance. Simply select the "Login with scan QR code" option on the mobile application's login page, and the application will automatically switch its server host to your ThingsBoard {{PREFIX}} platform host.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 {% endunless %}
 
-* If you prefer to use your {{CUSTOM_APPLICATION}}, switch to the custom settings and input the necessary application credentials for your Android and iOS apps.
+* The custom one means using your {{CUSTOM_APPLICATION}}.
 
 {% include images-gallery.html imageCollection="application-settings-custom" %}
 
+{% unless docsPrefix == null %}
+{% capture difference %}
+**Note:** To use custom mobile application tenant should have domain name configured in [Login White labeling settings](/products/paas/domains/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+{% endunless %}
+
 After making your settings adjustments, click "Save". Then, scan the QR code on the "Home" page with your mobile device to ensure it redirects to the specified application.
 
-* If necessary, you can disable unused platforms.
-
-{% include images-gallery.html imageCollection="disable-platforms" %}
+{% include images-gallery.html showListImageTitles="true" imageCollection="disable-platforms" %}
 <br>
 **Appearance on Home page:**
 

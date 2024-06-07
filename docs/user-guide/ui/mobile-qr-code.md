@@ -5,39 +5,30 @@ assignees:
 title: Mobile application QR code
 description: Mobile app QR code guide
 
-authorize-with-qr-code:
-    0:
-        image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-1-ce.png
-        title: 'Log into your ThingsBoard account and navigate to the "Home" page. You will find the QR code for connecting the mobile app in the bottom right corner;'
-    1:
-        image: /images/user-guide/ui/qr-code/qr-code-mobile-login-with-qr-1-ce.png
-        title: 'Launch the ThingsBoard mobile app on your device and use the QR code scanning feature. Make sure you have the latest version of the app installed;'
-    2:
-        image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
-        title: 'Scan the QR code using the ThingsBoard mobile app;'
-    3:
-        image: /images/user-guide/ui/qr-code/qr-code-mobile-dashboard-1-ce.png
-        title: 'You have successfully logged into the ThingsBoard mobile app with your account.'
-
 download-app-with-qr-code:
     0:
         image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-1-ce.png
         title: 'Log into your ThingsBoard account and navigate to the "Home" page. You will find the QR code for connecting the mobile app in the bottom right corner;'
     1:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-install-app-ce.png
-        title: 'Open the camera app on your phone or tablet and point it at the QR code. The phone will automatically scan the code and show the link button. Click this button to open the link to download the ThingsBoard mobile app;'
+        title: 'Open the camera app on your phone or tablet and point it at the QR code. The phone will automatically scan the code and show the link button. Click this button to open the link to download the <b>ThingsBoard Live mobile app</b>;'
     2:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-install-app-ce.png
-        title: 'Install ThingsBoard mobile application;'
+        title: 'Install ThingsBoard Live mobile application;'
     3:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-open-app-1-ce.png
-        title: 'Open the installed application;'
-    4:
+        title: 'Launch the ThingsBoard mobile app to start using it.'
+
+authorize-with-qr-code:
+    0:
+        image: /images/user-guide/ui/qr-code/qr-code-mobile-login-with-qr-1-ce.png
+        title: 'Launch the <b>ThingsBoard Live</b> mobile app on your device and use the QR code scanning feature. Make sure you have the latest version of the app installed;'
+    2:
         image: /images/user-guide/ui/qr-code/qr-code-scan-and-open-app-ce.png
-        title: 'Scan the QR code again using the ThingsBoard mobile app. You will automatically authorize into the app, without the need to manually enter your credentials;'
-    5:
+        title: 'Scan the QR code on the "Home" page of your ThingsBoard instance using the mobile app. You will find the QR code for connecting the mobile app in the bottom right corner;'
+    3:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-dashboard-1-ce.png
-        title: 'You have successfully logged into the ThingsBoard mobile app with your account.'
+        title: 'You have successfully logged into the ThingsBoard Live mobile app with your account.'
 
 mobile-app-qr-code-widget-settings:
     0:
@@ -57,7 +48,7 @@ application-settings-custom:
 disable-platforms:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-4-ce.png
-        title: 'If necessary, you can disable platforms.'
+        title: 'If necessary, you can disable unused platforms.'
 
 appearance-on-home-page:
     0:
