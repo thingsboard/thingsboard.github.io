@@ -446,5 +446,5 @@ Rule node configuration is fairly simple. Please note that perimeter key name is
 ![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) and import the rule chain. 
-Note that the [rule chain nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) will point to not existing device in the "Sheep Tracker Generator" node. 
+Note that the "Sheep Tracker Generator" [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) will point to not existing device. 
 You will need to provision device and asset to replicate the example.
