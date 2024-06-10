@@ -19,6 +19,17 @@ download-app-with-qr-code:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-open-app-1-paas.png
         title: 'Launch the ThingsBoard mobile app to start using it.'
 
+clicking-button:
+    0:
+        image: /images/user-guide/ui/qr-code/qr-code-thingsboard-home-page-2-paas.png
+        title: 'Clicking the "App Store" or "Google Play" button in the "Connect mobile app" widget, you will be redirected to the ThingsBoard app page in the respective app store for further downloading to your device.'
+    1:
+        image: /images/user-guide/ui/qr-code/qr-code-button-2-pe.png
+        title: 'App Store.'
+    2:
+        image: /images/user-guide/ui/qr-code/qr-code-button-1-pe.png
+        title: 'Google Play.'
+
 authorize-with-qr-code:
     0:
         image: /images/user-guide/ui/qr-code/qr-code-mobile-login-with-qr-1-paas.png

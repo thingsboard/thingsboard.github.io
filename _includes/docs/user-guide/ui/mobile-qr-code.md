@@ -38,6 +38,10 @@ Just follow these simple steps to get started:
 
 {% include images-gallery.html imageCollection="download-app-with-qr-code" showListImageTitles="true" %}
 
+Additionally, by clicking the "App Store" or "Google Play" button in the "Connect mobile app" widget, you will be redirected to the ThingsBoard app page in the respective app store for further downloading to your device.
+
+{% include images-gallery.html imageCollection="clicking-button" %}
+
 ## Login with QR code
 
 Scan the QR code with the ThingsBoard mobile app, and you will instantly gain access to your account, without the need to manually enter your credentials.
