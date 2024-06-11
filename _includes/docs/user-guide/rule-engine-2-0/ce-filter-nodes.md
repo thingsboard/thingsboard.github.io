@@ -107,7 +107,7 @@ User specifies message and/or metadata field names in the configuration.
  * **False**: If any of the specified fields are missing when the **Check that all specified fields are present** toggle is enabled, 
     or if none of the specified fields are present when the toggle is disabled.
 
-**Example**
+**Usage example**
 
 See configuration screenshot. 
 
@@ -135,7 +135,7 @@ Otherwise, the rule node checks the presence of a relation to any entity that ma
  * **False**: If the specified relation to the specific entity is not present when the **Check relation to specific entity** toggle is enabled, 
    or if the specified relation to any entity is not present when the toggle is disabled.
 
-**Example**
+**Usage example**
 
 Let's assume you have temperature sensor inside the office and also inside the warehouses. 
 During the data processing, you may want to know either the sensor is located in the office or in the warehouse.
@@ -160,7 +160,7 @@ Checks that the entity type of the incoming message originator matches one of th
  * **True**: If the message originator type matches one of the selected entity types.
  * **False**: If the message originator type does not match any of the selected entity types.
 
-**Example**
+**Usage example**
 
 See configuration screenshot.
 
@@ -174,7 +174,7 @@ Switch incoming messages by the type of message originator entity.
 
 The output connection of the rule node corresponds to the entity type of the message originator. For example: "Device", "Asset", "User", etc.
 
-**Example**
+**Usage example**
 
 Let's assume you have messages from different entities processed in one rule chain. 
 You may want to split the message flow based on entity type.
@@ -201,7 +201,7 @@ Checks that the message type of the incoming message matches one of the values s
 * **True**: If the incoming message type matches one of the selected message types.
 * **False**: If the incoming message type does not match any of the selected message types.
 
-**Example**
+**Usage example**
 
 See configuration screenshot.
 
@@ -220,7 +220,7 @@ to the [**message type**](#message-type) configured with required routing logic.
 
 The output connection of the rule node corresponds to the type of the message. For example: "Device", "Asset", "User", etc.
 
-**Example**
+**Usage example**
 
 Let's assume you have messages with different types processed in one rule chain. 
 You may want to split the message flow based on message type.
@@ -251,7 +251,7 @@ TBEL/JavaScript function receive 3 input parameters:
  * False: If the script evaluation returns <code>false</code>.
  * Failure: If the script evaluation fails.
 
-**Examples**
+**Usage example**
  
 Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
 Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.deviceType === 'DHT11';</code><br> 
@@ -304,7 +304,7 @@ If returned array is empty - message will not be routed to any node and discarde
 The output connection of the rule node corresponds to the result of the script execution. For example: "Low Temperature Telemetry", "Normal Temperature Telemetry", "Idle State", etc.
 See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
 
-**Examples**
+**Usage example**
 
 Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
 Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br> 
@@ -390,7 +390,12 @@ Available radius units: METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE;
 **Usage example: static circle perimeter**
 
 Let's assume you would like to check that the location of the device is within 100 meters from the Ukraine's Independence Monument, located in the center of Kyiv.
-The coordinates of the monument are the following: <code>latitude = 50.4515652</code>, <code>longitude = 0.5236963</code>. The configuration of the rule node is quite simple:
+The coordinates of the monument are the following: 
+
+ * latitude: <code>50.4515652</code>; 
+ * longitude: <code>0.5236963</code>.
+
+The configuration of the rule node is quite simple:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
 
