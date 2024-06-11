@@ -1,5 +1,5 @@
 
-Filter Nodes are used for Message filtering and routing. You may find list of available nodes below.
+Filter Nodes are used for message filtering and routing. You may find list of available nodes below.
 
 * TOC
 {:toc}
