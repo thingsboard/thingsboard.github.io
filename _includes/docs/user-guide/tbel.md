@@ -1310,14 +1310,6 @@ var dIso = d.toISOString();                             //  return "2008-06-03T0
 ```
 {: .copy-code}
 
-```java
-var d = new Date("Tue, 3 Jun 2008 11:05:30");           //  TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
-                                                        //  return "вівторок, 3 червня 2008 р. о 11:05:30 за східноєвропейським літнім часом"
-var dIso = d.toISOString();                             //  return "2008-06-03T08:05:30Z"   ZoneId  "Europe/Kiev" = "+03:00"
-var dLocal = d.toLocaleString();                        //  return "2008-06-03 11:05:30"   
-```
-{: .copy-code}
-
 - Input data format: String + Pattern:
 
 ```java
