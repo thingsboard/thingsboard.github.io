@@ -305,9 +305,11 @@ toc:
       path: /docs/paas/user-guide/ui/slack-settings/
     - title: Microsoft Teams Settings
       path: /docs/paas/user-guide/ui/microsoft-teams-settings/
-      new: true
     - title: Mail Settings
       path: /docs/paas/user-guide/ui/mail-settings/
+    - title: Mobile application QR code
+      path: /docs/paas/user-guide/ui/mobile-qr-code/
+      new: true
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing

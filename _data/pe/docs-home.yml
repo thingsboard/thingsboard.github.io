@@ -323,9 +323,11 @@ toc:
     path: /docs/pe/user-guide/ui/slack-settings/
   - title: Microsoft Teams Settings
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
-    new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
+  - title: Mobile application QR code
+    path: /docs/pe/user-guide/ui/mobile-qr-code/
+    new: true
   - title: JWT Security Settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide
