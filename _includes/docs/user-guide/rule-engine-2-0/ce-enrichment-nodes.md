@@ -62,51 +62,88 @@ msg: {"temperature": 22}, metadata: {"ts": "1616510486000"}, relation: Other
 msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
 ```
 
+## customer attributes
 
+Identifies the message originator's customer and enriches the outbound message with the customer's attributes or latest telemetry. 
+Available since **v2.0**.
 
-##### Customer attributes
+**Configuration**
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes.png)
+Mapping of customer's
+* **Attributes/Latest telemetry** - slide toggle to select whether to add attributes or the latest telemetry data to the message.
 
-Node finds Customer of the Message Originator entity and adds Customers Attributes or Latest Telemetry value into Message Metadata. 
+    * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the customer.
+    * **Target key** - key that will store the retrieved value in the outbound message.
 
-Administrator can configure the mapping between original attribute name and Metadata attribute name.
+    > **Note**: All input fields support templatization.
+      
+* **Add mapped attributes to** - selection form to specify where the mapped attributes should be added. 
+Available options: **Message** and **Metadata**.
 
-There is **Latest Telemetry** checkbox in the Node configuration. 
-If this checkbox selected, Node will fetch Latest telemetry for configured keys. Otherwise, Node will fetch server scope attributes.
+Following message originator types are allowed: **Customer**, **User**, **Asset**, **Device**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
+**Output**
 
-Outbound Message Metadata will contain configured attributes if they exist.
-To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
+* **Success**: if message was enriched successfully.
+* **Failure**: connection will be used if:
+  * unsupported originator type found;
+  * originator does not have assigned customer.
 
-Following Message Originator types are allowed: **Customer**, **User**, **Asset**, **Device**.
- 
-If unsupported Originator type found, an error is thrown.
+**Usage examples**
 
-If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.
+* **First scenario**:
 
-**Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
+Consider a smart subway management system where each train sends telemetry data, and the customer is the subway operator that manages the train. Subway operator has unique configurations for monitoring train operations. 
+These configurations are stored as customer attributes.
 
-**Example:**  You have the following metadata `{"country": "England"}`.
-In addition, you have an attribute, which key is country name and value is capital city (`{"England": "London"}`).
+For this case, we will use the configuration provided earlier.
 
-The aim is to get capital city from attribute for the country from metadata and add result to metadata with the key **"city"**.
-To achieve this you can use `${country}` as a **Source attribute** and the "city" as a **Target attribute**.
+We have a device "TrainA" that belongs to a customer "SubwayOperator".
 
-Result would be `{"city": "London"}`.
+"SubwayOperator" has the following attribute:
 
-You can see the real life example, where this node is used, in the next tutorial:
+![SubwayOperator attributes](/images/user-guide/rule-engine-2-0/nodes/customer-attributes-example.png)
 
-- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
+The incoming message from "TrainA" will be as follows:
+
+```bash
+msg: {"station": "Station X"}, metadata: {"ts": "1616510425200"}
+```
+
+The outbound message will be routed via **Success** chain and will include the following attribute in the message metadata: 
+
+```bash
+msg: {"station": "Station X"}, metadata: {"ts": "1616510425200", "speedThreshold": 60}
+```
+
+* **Second scenario**
+
+Consider a smart traffic management system where intersection reports telemetry data for traffic light durations and traffic density.
+
+This scenario will have the following configuration:
+
+![Configuration usage example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config-example.png)
+
+We have a device "TrafficLight" that belongs to a customer "Intersection".
+
+"Intersection" has the following latest telemetry:
+![Intersection latest telemetry](/images/user-guide/rule-engine-2-0/nodes/customer-latest-telemetry-example.png)
+
+The incoming message from "TrafficLight" will be as follows:
+
+```bash
+msg: {"lightStatus": "green"}, metadata: {"ts": "1616510426300"}
+```
+
+The outbound message will be routed via **Success** chain and will include the following telemetry in the message body:
+
+```bash
+msg: {"lightStatus": "green", "greenLightDuration": 45, "density": 75}, metadata: {"ts": "1616510426300"}
+```
+
+You can see the real life example, where this node is used, in the tutorial [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/).
 
 ##### Device attributes
 
