@@ -1,11 +1,29 @@
-* TOC
-{:toc}
+
+{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceVendorLink = "https://www.dusuniot.com/product/dsgw-210-rk3328-iot-gateway-hub-controller-bridge-hardware/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+{% assign thingsboardHost = 'https://thingsboard.cloud' %}
+{% else %}
+{% assign thingsboardHost = 'https://demo.thingsboard.io' %}
+{% endif %}
+{% assign officialManualLink = "https://manuals.plus/dusun/dsgw-210-home-assistant-gateway-manual/" %}
+{% assign prerequisites = '
+- <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
+- [DUSUN DSGW-210 Home Assistant Gateway Instruction Manual](' | append: officialManualLink | append: '){: target="_blank"}
+  '
+  %}
 
 ## Introduction
 
-This article contains instructions on how to configure ThingsBoard IoT platform and connect DSGW-210 Gateways. [ThingsBoard](https://thingsboard.io/){:target="_blank"} is an IoT platform for data collection, processing, visualization, and device management. It supports cloud and on-premises deployments, and it combines scalability, fault-tolerance and performances to nullify the chances of getting your IoT data lost.
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+[DSGW-210 Smart Gateway Hub]({{deviceVendorLink}}){: target="_blank"} is IoT gateway with multiple protocol and edge computing function. It provides reliable connectivity for a wide range of wireless IoT devices. The gateway’s modular architecture provides the ability to customize many gateway features including Cellular, Bluetooth, Wi-Fi, Ethernet, USB, ZigBee, Z-wave and Li battery backup.
+<br><br><br>
 
-DSGW-210 is IoT gateway with multiple protocol and edge computing function. It provides reliable connectivity for a wide range of wireless IoT devices. The gateway’s modular architecture provides the ability to customize many gateway features including Cellular, Bluetooth, Wi-Fi, Ethernet, USB, ZigBee, Z-wave and Li battery backup.
+## Prerequisites
+
+To continue with this guide we will need the following:  
+{{ prerequisites }}
+- [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
 ## Product Summary
 
@@ -31,9 +49,9 @@ DSGW-210 is IoT gateway with multiple protocol and edge computing function. It p
 
 <img src="/images/samples/dusun/1.png" alt="Block-diagram for Cortex">
 
-## Integration method
+## Integration with ThingsBoard
 
-### Block 1. ThingsBoard configuration
+### ThingsBoard configuration
 
 The configuration steps in ThingsBoard are shown below, we will demonstrate on the ThingsBoard.cloud server.
 You can use [ThingsBoard Cloud](https://thingsboard.cloud/signup){:target="_blank"} or [install](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} your own platform instance.
@@ -53,8 +71,8 @@ You can use [ThingsBoard Cloud](https://thingsboard.cloud/signup){:target="_blan
 * [Step 1.4] Copy the access token, record it for gateway to connect to the ThingsBoard Cloud.
 
 <img src="/images/samples/dusun/dsgw-210-gateways-4.png" alt="Press plus sign to add new device">
- 
-### Block 2. Device configuration
+
+### Device configuration
 
 * [Step 2.1] Log in to the gateway with the following credentials:
   * username: **root**
@@ -66,14 +84,14 @@ You can use [ThingsBoard Cloud](https://thingsboard.cloud/signup){:target="_blan
 
 <img src="/images/samples/dusun/8.png" alt="Choosing cloud config item from IoT Servicees menu item">
 
-* [Step 2.3] Fill in the credentials from the ThingsBoard Cloud: 
+* [Step 2.3] Fill in the credentials from the ThingsBoard Cloud:
   * ThingsBoard Server: **thingsboard.cloud**
   * Server Port: **1883**
   * Insert the access token obtained in step 1.4
 
 <img src="/images/samples/dusun/9.png" alt="Filling credentials in Cloud Config">
 
-### Block 3. Additional information
+### Additional information
 
 * [Step 3.1] Check connection in the ThingsBoard Cloud;
 * [Step 3.1.1] seen from the latest telemetry of the gateway, the information of connection is received correctly in the server;
@@ -108,7 +126,5 @@ Error indicator
 |  Yellow led on | Gateway is in low battery, user need to charge the gateway  |
 
 ## Contact Us
-
-[Gateway Specification](https://www.dusuniot.com/iot-progammable-gateway/iot-edge-computer-gateway){:target="_blank"}
 
 For other concerns about the integration, please consult *sales@dusunremotes.com*
