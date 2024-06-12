@@ -180,7 +180,6 @@ toc:
       path: /docs/paas/user-guide/integrations/tti/
     - title: KPN Things
       path: /docs/paas/user-guide/integrations/kpn-things/
-      new: true
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
     - title: ChirpStack
