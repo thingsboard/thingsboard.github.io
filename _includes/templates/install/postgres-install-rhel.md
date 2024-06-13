@@ -2,7 +2,7 @@ Instructions listed below will help you to install PostgreSQL.
 
 ```bash
 # Update your system
-sudo yum update
+sudo dnf update
 ```
 {: .copy-code}
 
@@ -12,7 +12,7 @@ Install the repository.
 
 ```bash
 # Install the repository RPM:
-sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```
 {: .copy-code}
 
@@ -20,7 +20,7 @@ sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-
 
 ```bash
 # Install the repository RPM:
-sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```
 {: .copy-code}
 

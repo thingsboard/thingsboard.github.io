@@ -14,12 +14,12 @@ description: Installing ThingsBoard on Ubuntu
 
 ### Prerequisites
 
-This guide describes how to install ThingsBoard on Ubuntu 20.04 LTS / 22.04 LTS.
+This guide describes how to install ThingsBoard on Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS.
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 

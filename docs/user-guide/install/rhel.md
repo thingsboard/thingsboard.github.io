@@ -23,9 +23,9 @@ Before continue to installation execute the following commands in order to insta
 
 ```bash
 # Install wget
-sudo yum install -y nano wget
+sudo dnf install -y nano wget
 # Add latest EPEL release for CentOS 8
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 ```
 {: .copy-code}
 
@@ -33,13 +33,13 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 
 ```bash
 # Install wget
-sudo yum install -y nano wget
+sudo dnf install -y nano wget
 # Add latest EPEL release for CentOS 9
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 ```
 {: .copy-code}
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %} 
 
