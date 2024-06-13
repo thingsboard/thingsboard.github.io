@@ -87,9 +87,8 @@ This ID combines the organization ID and the app name that you enter in reverse-
 For example, if you enter "Runner" as the app name for your organization, the bundle identifier will be `com.mycompany.app.Runner`.
 
 To find the bundle ID (**App ID**), you need to:
-
-1. Choose the target;
-2. Click the "Signing & Capabilities" pane;
-3. Find the bundle identifier (App ID) in the "Signing" section.
+- Choose the target;
+- Click the "Signing & Capabilities" pane;
+- Find the bundle identifier (App ID) in the "Signing" section.
 
 ![image](/images/mobile/qr-code-app-id.png)
