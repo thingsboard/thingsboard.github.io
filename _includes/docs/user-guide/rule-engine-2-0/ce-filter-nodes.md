@@ -64,7 +64,7 @@ Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/a
 
 **Configuration**
 
- * **Alarm status** - selection form with the statuses you want to filter by. Available statuses: "Active Acknowledged", "Active Unacknowledged", "Cleared Acknowledged", "Cleared Unacknowledged".
+ * **Alarm status** - selection form with the statuses you want to filter by. Available statuses: **Active Acknowledged**, **Active Unacknowledged**, **Cleared Acknowledged**, **Cleared Unacknowledged"**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
 
@@ -76,7 +76,7 @@ Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/a
 **Usage example**
 
 Consider a scenario where you want to process alarms that are currently active. 
-You can configure the rule node to filter for "Active Unacknowledged" and "Active Acknowledged" statuses. 
+You can configure the rule node to filter for **Active Unacknowledged** and **Active Acknowledged** statuses. 
 This setup ensures that only alarms which are currently active, whether they have been acknowledged or not, are processed further.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
@@ -121,8 +121,9 @@ Otherwise, the rule node checks the presence of a relation to any entity that ma
 
 **Configuration**
 
- * **Check relation to specific entity** - slide toggle that enables the configuration for specifying a particular entity used to check the relation. This configuration is required when the toggle is enabled.
- * **Direction** - configures the direction of the relation. It is either "From originator" or "To originator". 
+ * **Check relation to specific entity** - slide toggle that enables the configuration for specifying a particular entity used to check the relation. 
+   This configuration is required when the toggle is enabled.
+ * **Direction** - configures the direction of the relation. It is either **From originator** or **To originator**. 
  > **Note:** The value corresponds to the direction of the relation from the originator to the specific/any entity or from the specific/any entity to the originator.
  * **Relation type** - arbitrary relation type. Default relation types are "Contains" and "Manages", but you may create relation of any type. 
 
@@ -247,9 +248,9 @@ TBEL/JavaScript function receive 3 input parameters:
 
 **Output**
 
- * True: If the script evaluation returns <code>true</code>.
- * False: If the script evaluation returns <code>false</code>.
- * Failure: If the script evaluation fails.
+ * **True**: If the script evaluation returns <code>true</code>.
+ * **False**: If the script evaluation returns <code>false</code>.
+ * **Failure**: If the script evaluation fails.
 
 **Usage example**
  
@@ -355,13 +356,13 @@ Since rule node have multiple configuration sections. We decided to separate con
 > **Note:** Rule node tries to retrieve the specified fields from the message. If they are not present, it will look them up in the message metadata.
 
 **Configuration: Geofence configuration**
- * **Perimeter type** - "Polygon" or "Circle".
+ * **Perimeter type** - **Polygon** or **Circle**.
  * **Fetch perimeter information from metadata** - slide toggle to enable/disable loading perimeter from message metadata. 
    Enable if your perimeter is specific to the entity(device/asset/etc) and you store it as [entity attribute](/docs/{{docsPrefix}}user-guide/attributes).
  * **Perimeter key name** - name of the metadata key that stores perimeter information.
- * For Polygon perimeter type:  
+ * For **Polygon** perimeter type:  
     * **Polygon definition** - string that contains array of coordinates in the following format: <code>[[lat1, lon1],[lat2, lon2],[lat3, lon3], ... , [latN, lonN]]</code>.
- * For Circle perimeter type:      
+ * For **Circle** perimeter type:      
     * **Center latitude** - latitude of the circle perimeter center;
     * **Center longitude** - longitude of the circle perimeter center;
     * **Range** - value of the circle perimeter range, double-precision floating-point value;
