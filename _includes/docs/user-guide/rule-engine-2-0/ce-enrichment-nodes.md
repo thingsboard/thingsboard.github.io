@@ -410,12 +410,12 @@ To access fetched details in other nodes you can use one of the following templa
 
 ## customer details
 
-Adds fields from Customer details to the message body or metadata. Available since **v2.3.1**.
+Adds fields from Customer to the message body or metadata. Available since **v2.3.1**.
 
 **Configuration**
 
 * **Select details** - list of the details that need to be added to the message.
-* **Add selected details to** - selection form to specify where the details should be added. Available options: **Message** and **Metadata**.
+* **Add selected details to** - an option selector that allows the user to choose whether the fetched details should be added to the **Message** or **Metadata**.
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
 
@@ -442,7 +442,7 @@ Here is information about customer:
 
 ![Customer details image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-example.png)
 
-The incoming message from "TrainA" will be as follows:
+The incoming message from "Greenhouse Sensor 01" will be as follows:
 
 ```bash
 msg: {"temperature": 25.0, "humidity": 70}, metadata: {"ts": "1616510425200"}
