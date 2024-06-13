@@ -69,18 +69,17 @@ Available since **v2.0**.
 
 **Configuration**
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
-
-Mapping of customer's
 * **Attributes/Latest telemetry** - slide toggle to select whether to add attributes or the latest telemetry data to the message.
 
-    * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the customer.
-    * **Target key** - key that will store the retrieved value in the outbound message.
+  * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the customer.
+  * **Target key** - key that will store the retrieved value in the outbound message.
 
-    > **Note**: All input fields support templatization.
-      
-* **Add mapped attributes to** - selection form to specify where the mapped attributes should be added. 
-Available options: **Message** and **Metadata**.
+  > **Note**: All input fields support templatization.
+
+* **Add mapped attributes to** - selection form to specify where the mapped attributes should be added.
+  Available options: **Message** and **Metadata**.
+
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
 
 Following message originator types are allowed: **Customer**, **User**, **Asset**, **Device**.
 
@@ -91,9 +90,7 @@ Following message originator types are allowed: **Customer**, **User**, **Asset*
   * unsupported originator type found;
   * originator does not have assigned customer.
 
-**Usage examples**
-
-* **First scenario**:
+**Usage example: smart subway management system**
 
 Consider a smart subway management system where each train sends telemetry data, and the customer is the subway operator that manages the train. Subway operator has unique configurations for monitoring train operations. 
 These configurations are stored as customer attributes.
@@ -102,7 +99,7 @@ For this case, we will use the configuration provided earlier.
 
 We have a device "TrainA" that belongs to a customer "SubwayOperator".
 
-"SubwayOperator" has the following attribute:
+"SubwayOperator" has the following attributes:
 
 ![SubwayOperator attributes](/images/user-guide/rule-engine-2-0/nodes/customer-attributes-example.png)
 
@@ -118,7 +115,7 @@ The outbound message will be routed via **Success** chain and will include the f
 msg: {"station": "Station X"}, metadata: {"ts": "1616510425200", "speedThreshold": 60}
 ```
 
-* **Second scenario**
+**Usage example: smart traffic management system**
 
 Consider a smart traffic management system where intersection reports telemetry data for traffic light durations and traffic density.
 
@@ -129,6 +126,7 @@ This scenario will have the following configuration:
 We have a device "TrafficLight" that belongs to a customer "Intersection".
 
 "Intersection" has the following latest telemetry:
+
 ![Intersection latest telemetry](/images/user-guide/rule-engine-2-0/nodes/customer-latest-telemetry-example.png)
 
 The incoming message from "TrafficLight" will be as follows:
