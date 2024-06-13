@@ -408,34 +408,48 @@ To access fetched details in other nodes you can use one of the following templa
 
 **Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
 
-##### Customer details
+## customer details
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Adds fields from Customer details to the message body or metadata. Available since **v2.3.1**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details.png)
+**Configuration**
 
-Rule Node Adds fields from Customer details to the message body or metadata.
+* **Select details** - list of the details that need to be added to the message.
+* **Add selected details to** - selection form to specify where the details should be added. Available options: **Message** and **Metadata**.
 
-There is **Add selected details to the message metadata** checkbox in the Node configuration. If this checkbox selected, existing fields will be added to the message metadata instead of message data.
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
-
-Selected details are added into metadata with prefix: **customer_**. Outbound Message will contain configured details if they exist.
-
-To access fetched details in other nodes you can use one of the following template: 
-
-- <code>metadata.customer_email</code>
-
-- <code>msg.customer_email</code>
+Selected details are added into message or message metadata with prefix: **customer_**.
 
 Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**.
-  
-If unsupported Originator type found, an error is thrown.
  
-If Originator does not have assigned Customer Entity **Failure** chain is used, otherwise **Success** chain.
+**Output**
+* **Success**: if no error occurred during the details retrieval.
+* **Failure**: connection will be used if:
+    * unsupported originator type found;
+    * originator does not have assigned customer.
+
+**Usage example**
+
+Consider a scenario where a greenhouse monitoring system sends data to the rule chain. The goal is to enrich the telemetry data with customer details for further processing. 
+For this purpose we can use **customer details** node.
+
+For this case, we will use the configuration provided earlier.
+
+We have a device "Greenhouse Sensor 01" that belongs to a customer "Warehouse Manager".
+
+Here is information about customer:
+
+![Customer details image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-example.png)
+
+The incoming message from "TrainA" will be as follows:
+
+```bash
+msg: {"temperature": 25.0, "humidity": 70}, metadata: {"ts": "1616510425200"}
+```
+
+The outbound message will be routed via **Success** chain and will include the following details in the message body:
+
+```bash
+msg: {"temperature": 25.0, "humidity": 70,"customer_title": "Warehouse manager", "customer_country": "United States", "customer_phone": "+12124567890"}, metadata: {"ts": "1616510425200", "speedThreshold": 60}
+```
