@@ -260,37 +260,35 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-related-attributes-node)
 
-##### Tenant attributes
+## tenant attributes
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Identifies the message originator's tenant and enriches the outbound message with the tenant's attributes or latest telemetry.
+Available since **v2.0**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes.png)
+**Configuration**
 
-Node finds Tenant of the Message Originator entity and adds Tenant Attributes or Latest Telemetry value into Message Metadata. 
+* **Attributes/Latest telemetry** - slide toggle to select whether to add attributes or the latest telemetry data to the message.
 
-Administrator can configure the mapping between original attribute name and Metadata attribute name.
+    * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the tenant.
+    * **Target key** - key that will store the retrieved value in the outbound message.
 
-There is **Latest Telemetry** checkbox in the Node configuration. If this checkbox selected, Node will fetch Latest telemetry for configured keys. Otherwise, Node will fetch server scope attributes.
+  > **Note:** All input fields support templatization.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
+* **Add mapped attributes/latest telemetry to** - an option selector that allows the user to choose whether the mapped attributes or latest telemetry should be added to the **Message** or **Metadata**.
 
-Outbound Message Metadata will contain configured attributes if they exist. To access fetched attributes in other nodes you can use this template '<code>metadata.tempo</code>'
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
 
 Following Message Originator types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule Chain**.
 
-If unsupported Originator type found, an error is thrown.
+**Output**
 
-**Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
+* **Success**: if no error occurred during the attributes or latest telemetry retrieval.
+* **Failure**: connection will be used if:
+  * unsupported originator type found;
+  * originator does not have assigned tenant.
 
-**Note:** Since TB Version 3.3.3 you can use `${metadataKey}` for value from metadata, `$[messageKey]` for value from the message body.
-
-An example of this feature you can see in the description for the **Customer attributes node**.
+This node functions similarly to the Customer attributes node. The key difference is that this node retrieves attributes or latest telemetry from the Tenant, 
+while the Customer attributes node retrieves them from the Customer. For a usage example, please refer to the [Customer attributes node](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-attributes).
 
 ##### Originator telemetry
 
