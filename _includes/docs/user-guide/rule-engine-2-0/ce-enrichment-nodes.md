@@ -262,7 +262,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ## tenant attributes
 
-Identifies the message originator's tenant and enriches the outbound message with the tenant's attributes or latest telemetry.
+Identifies the message originator's tenant and enriches the outbound message with the tenant's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/).
 Available since **v2.0**.
 
 **Configuration**
