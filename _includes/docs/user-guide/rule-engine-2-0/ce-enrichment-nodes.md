@@ -64,7 +64,7 @@ msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
 
 ## customer attributes
 
-Identifies the message originator's customer and enriches the outbound message with the customer's attributes or latest telemetry. 
+Identifies the message originator's customer and enriches the outbound message with the customer's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/). 
 Available since **v2.0**.
 
 **Configuration**
@@ -74,10 +74,9 @@ Available since **v2.0**.
   * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the customer.
   * **Target key** - key that will store the retrieved value in the outbound message.
 
-  > **Note**: All input fields support templatization.
+  > **Note:** All input fields support templatization.
 
-* **Add mapped attributes to** - selection form to specify where the mapped attributes should be added.
-  Available options: **Message** and **Metadata**.
+* **Add mapped attributes to** - an option selector that allows the user to choose whether the mapped attributes or latest telemetry should be added to the **Message** or **Metadata**.
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
 
@@ -85,7 +84,7 @@ Following message originator types are allowed: **Customer**, **User**, **Asset*
 
 **Output**
 
-* **Success**: if message was enriched successfully.
+* **Success**: if no error occurred during the attributes or latest telemetry retrieval.
 * **Failure**: connection will be used if:
   * unsupported originator type found;
   * originator does not have assigned customer.
