@@ -380,33 +380,24 @@ You can see the real-life example, where this node is used, in the following tut
 
 - [Telemetry delta calculation](/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/)
 
-##### Tenant details
+## tenant details
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Adds fields from Tenant to the message body or metadata. Available since **v2.3.1**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details.png)
+* **Select details** - list of the details that need to be added to the message.
+* **Add selected details to** - an option selector that allows the user to choose whether the fetched details should be added to the **Message** or **Metadata**.
 
-Rule Node Adds fields from Tenant details to the message body or metadata.
-
-There is **Add selected details to the message metadata** checkbox in the Node configuration. If this checkbox selected, existing fields will be added to the message metadata instead of message data.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
 
-Selected details are added into metadata with prefix: **tenant_**. Outbound Message will contain configured details if they exist.
+Selected details are added into message or message metadata with prefix: **tenant_**.
 
-To access fetched details in other nodes you can use one of the following template: 
+**Output**
+* **Success**: if no error occurred during the details retrieval.
+* **Failure**: if originator does not have assigned tenant.
 
-- <code>metadata.tenant_address</code>
-
-- <code>msg.tenant_address</code>
-
-**Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
+This node functions similarly to the Customer details node. The key difference is that this node retrieves details from the Tenant,
+while the Customer details node retrieves them from the Customer. For a usage example, please refer to the [Customer details node](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-details).
 
 ##### Customer details
 
