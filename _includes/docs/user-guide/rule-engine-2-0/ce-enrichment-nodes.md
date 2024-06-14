@@ -272,7 +272,7 @@ Available since **v2.0**.
     * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the tenant.
     * **Target key** - key that will store the retrieved value in the outbound message.
 
-  > **Note:** All input fields support templatization.
+  > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 
 * **Add mapped attributes/latest telemetry to** - an option selector that allows the user to choose whether the mapped attributes or latest telemetry should be added to the **Message** or **Metadata**.
 
