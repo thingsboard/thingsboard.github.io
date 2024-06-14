@@ -152,44 +152,33 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
 
-##### Originator attributes
+## originator attributes
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Adds message originator [attributes](/docs/user-guide/attributes/) and/or [latest telemetry](/docs/user-guide/telemetry/) values into the message or the message metadata. Available since **v2.0**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes.png)
+**Configuration**
+* **Client/Shared/Server attributes** - list of the keys that will be used to search for and retrieve the originator`s attribute values with corresponding scopes(client/shared/server).
+* **Latest telemetry** - list of the keys that will be used to search for and retrieve the originator`s latest telemetry.
+    * **Fetch latest telemetry with timestamp** - slide toggle that ensures that the latest telemetry will be added to the message with timestamp(if enabled).
+    It only appears if the configuration has at least one latest telemetry key set.
+* **Add originator attributes to** -  an option selector that allows the user to choose whether the mapped attributes should be added to the **Message** or **Metadata**.
+* **Tell failure if any of the attributes are missing** - slide toggle that forces Failure if at least one selected key does not exist(if enabled).
 
-Add Message Originator Attributes (client\shared\server scope) and Latest Telemetry value into Message Metadata. 
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
 
-Attributes are added into metadata with scope prefix:
+Attributes are added into message with scope prefix:
 
-- shared attribute -> <code>shared_</code>
-- client attribute -> <code>cs_</code>
-- server attribute -> <code>ss_</code>
-- telemetry -> no prefix used 
+* [client attribute](/docs/user-guide/attributes/#client-side-attributes) -> **cs_**
+* [shared attribute](/docs/user-guide/attributes/#shared-attributes) -> **shared_**
+* [server attribute](/docs/user-guide/attributes/#server-side-attributes) -> **ss_**
+* latest telemetry -> no prefix used
 
-For example, shared attribute 'version' will be added into Metadata with the name 'shared_version'. Client attributes will use 'cs_' prefix. 
-Server attributes use 'ss_' prefix. Latest telemetry value added into Message Metadata as is, without prefix.
-
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
-
-Outbound Message Metadata will contain configured attributes if they exist.
-
-To access fetched attributes in other nodes you can use this template '<code>metadata.cs_temperature</code>'
-
-**Note:** Since TB Version 2.3.1 the rule node has the ability to enable/disable reporting **Failure** if at least one selected key doesn't exist in the outbound message.
-
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
+**Usage example**
 
 You can see the real life example, where this node is used, in the following tutorials:
 
-- [Transform telemetry using previous record](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/)
-- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
+* [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/)
+* [Using queues for synchronization](/docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/)
 
 ##### Originator fields
 
