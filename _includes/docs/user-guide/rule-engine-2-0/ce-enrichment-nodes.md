@@ -161,6 +161,7 @@ Adds message originator [attributes](/docs/user-guide/attributes/) and/or [lates
 * **Latest telemetry** - list of the keys that will be used to search for and retrieve the originator`s latest telemetry.
     * **Fetch latest telemetry with timestamp** - slide toggle that ensures that the latest telemetry will be added to the message with timestamp(if enabled).
     It only appears if the configuration has at least one latest telemetry key set.
+> **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 * **Add originator attributes to** -  an option selector that allows the user to choose whether the mapped attributes should be added to the **Message** or **Metadata**.
 * **Tell failure if any of the attributes are missing** - slide toggle that forces Failure if at least one selected key does not exist(if enabled).
 
