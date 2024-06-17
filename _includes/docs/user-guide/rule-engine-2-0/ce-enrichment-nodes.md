@@ -87,7 +87,8 @@ Following message originator types are allowed: **Customer**, **User**, **Asset*
 * **Success**: if no error occurred during the attributes or latest telemetry retrieval.
 * **Failure**: connection will be used if:
   * unsupported originator type found;
-  * originator does not have assigned customer.
+  * originator does not have assigned customer;
+  * an unexpected error occurs during the attributes or latest telemetry retrieval.
 
 **Usage example: smart subway management system**
 
