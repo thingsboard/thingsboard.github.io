@@ -74,15 +74,15 @@ collections:
     output: true
 
 release:
-  branch: release-3.6
-  branch_major_next: develop/3.7
-  ver: 3.6.4
-  ce_ver: 3.6.4
-  ce_tag: v3.6.4
-  ce_full_ver: 3.6.4
-  pe_ver: 3.6.4pe
-  pe_full_ver: 3.6.4PE
-  wd_examples_commit: v3.6.4
+  branch: release-3.7
+  branch_major_next: develop/3.8
+  ver: 3.7
+  ce_ver: 3.7
+  ce_tag: v3.7
+  ce_full_ver: 3.7.0
+  pe_ver: 3.7pe
+  pe_full_ver: 3.7.0PE
+  wd_examples_commit: v3.7
   # >>> EDGE
   edge_ver: 3.6.4 # use X.X.X to be in sync with demo/cloud
   edge_tag: v3.6.4 # use vX.X.X to be in sync with demo/cloud

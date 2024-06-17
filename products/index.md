@@ -53,4 +53,9 @@ notitle: "true"
         <h5 class="title">ThingsBoard PE Mobile Application</h5>
         <p>Advanced IoT mobile product</p>
     </a>
+    <a href="/products/mqtt-broker/" class="card card-middle mqtt-broker">
+        <img src="/images/tbmq-icon.svg" alt="MQTT Broker">
+        <h5 class="title">ThingsBoard MQTT Broker</h5>
+        <p>Connect MQTT clients</p>
+    </a>
 </div>

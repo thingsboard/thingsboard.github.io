@@ -11,5 +11,42 @@ sudo apt-get install cassandra
 sudo apt-get install cassandra-tools
 ```
 
+In order to run Cassandra, you will need to install Java 11.
+
+Install the package.
+```bash
+sudo apt install openjdk-11-jdk
+```
+{: .copy-code}
+Set Java 17 as the default version (required for ThingsBoard).
+```bash
+sudo update-alternatives --config java
+```
+{: .copy-code}
+Edit Cassandra config.
+```bash
+sudo nano /usr/share/cassandra/cassandra.in.sh
+```
+{: .copy-code}
+Find the following line.
+```bash
+# JAVA_HOME can optionally be set here
+#JAVA_HOME=/usr/local/jdk6
+```
+And replace it as follows:
+```bash
+# JAVA_HOME can optionally be set here
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+```
+Then, restart Cassandra.
+```bash
+sudo service cassandra stop
+```
+{: .copy-code}
+```bash
+sudo service cassandra start
+```
+{: .copy-code}
+
 You can use Astra DB cloud instead installing your own Cassandra.
 See how to [connect ThingsBoard to Astra DB](/docs/user-guide/install/pe/cassandra-cloud-astra-db/)

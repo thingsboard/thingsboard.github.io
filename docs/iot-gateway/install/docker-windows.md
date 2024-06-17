@@ -16,18 +16,18 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 - You will need to have access to ThingsBoard. The easiest way is to use the [ThingsBoard Demo](https://demo.thingsboard.io/){:target="_blank"} server. 
 The alternative option is to install the ThingsBoard locally using the [installation guide](https://thingsboard.io/docs/user-guide/install/installation-options/){:target="_blank"}.
 
-## Download configuration file
+## Download docker-compose file
 
 {% assign downloadGatewayConfigurationFile = '
    ===
-      image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-1-ce.png,
+      image: /images/gateway/install/gateway-download-configuration-file-1-ce.png,
       title: Go to the "**Dashboards**" page and open the "**ThingsBoard IoT Gateways**" dashboard;
    ===
-      image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-2-ce.png,
+      image: /images/gateway/install/gateway-download-configuration-file-2-ce.png,
       title: Click the "**plus**" icon in the upper right corner to add a new gateway. Input the gateway name, specify the "default" device profile, and click "**Create**";
    ===
-      image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-3-ce.png,
-      title: The "**Docker commands**" window will open. Click the "**Download**" button to download the configuration file for your gateway.
+      image: /images/gateway/install/gateway-download-configuration-file-3-ce.png,
+      title: The "**Docker commands**" window will open. Click the "**Download**" button to download docker-compose file for your gateway.
 '
 %}
 
@@ -38,7 +38,7 @@ The alternative option is to install the ThingsBoard locally using the [installa
 Click the **Docker QuickStart** icon to launch a pre-configured **Docker Toolbox** terminal.
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/){:target="_blank"} to docker hub.
-Start the Gateway by executing the following command from the folder containing the **docker-compose.yaml** file in the command line as administrator:
+Start the Gateway by executing the following command from the folder containing the **docker-compose.yml** file in the command line as administrator:
 
 ```
 docker compose up
@@ -47,7 +47,7 @@ docker compose up
 
 {% assign startGatewayWindows = '
     ===
-        image: https://img.thingsboard.io/gateway/install/start-gateway-windows-1-ce.png,
+        image: /images/gateway/install/start-gateway-windows-1-ce.png,
 '
 %}
 

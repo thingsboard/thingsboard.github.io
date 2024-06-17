@@ -26,7 +26,7 @@ This widget can be useful for various use cases, but primarily it can be used fo
 ## Prerequisites
 
 Firstly, you need a device from which telemetry will be collected. You can use any device you have that provides coordinates (longitude and latitude) as telemetry in realtime.
-Longitude and latitude are the key data for map visualization so that you'll see it on a widget at the dashboard which you chose.
+Longitude and latitude are the key data for map visualization, allowing you to view the data on a widget in the dashboard you selected.
 
 For this guide, we will {{NEW_DEVICE}}{:target="_blank"} called **Tracker1**, which receives longitude, latitude, speed, circle radius, status, and polygon coordinates as telemetry using an emulator written in JavaScript.
 
@@ -39,15 +39,15 @@ node {{TERMINAL}} $ACCESSTOKEN
 ```
 {: .copy-code}
 
-Where **$ACCESSTOKEN** is your device access token located in the device details.
+Where **$ACCESSTOKEN** is the access token for your device, which is located in the device details.
 
 ![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/{{EMULATOR}})
 
-Emulator is capable with Node.js version 12 or higher.
+Emulator is compatible with Node.js version 12 or higher.
 
 ## Setting up Trip Animation widget
 
-Since our goal is to track how our entity (Tracker1) moved over a certain period, we need to create a dashboard where the telemetry from this device will be visualized.
+Since our goal is to track the movement of our entity (Tracker1) moved over a certain period, we need to create a dashboard where the telemetry from this device will be visualized.
 We can use an existing one or create a new dashboard. In our example, we create a new dashboard called "My New Dashboard".
 
 {% include images-gallery.html imageCollection="create-dashboard-1" showListImageTitles="true" %}
@@ -56,7 +56,7 @@ Now let's add the "Trip Animation" widget to the dashboard:
 
 {% include images-gallery.html imageCollection="create-dashboard-2" showListImageTitles="true" %}
 
-Now we can see how our device moved over the last minute. Press the "Start" button.
+Now, we can observe the movement of our device over the last minute. Press the "Start" button.
 We can also speed up the movement of our cursor by 5, 10, or 25 times so that we can check its route much faster.
 
 {% include images-gallery.html imageCollection="create-dashboard-3" %}
@@ -259,15 +259,15 @@ The following settings are available for the polygon:
 
 {% include images-gallery.html imageCollection="advanced-settings-polygon-settings-2" %}
 
-* Show or hide the label on the polygon. Change the text of the label or specify a function for the label to dynamically display data based on conditions you specify.
+* Show or hide the label on the polygon. Change the text of the label or specify a function for the label to dynamically display data based on conditions you determined.
  
 {% include images-gallery.html imageCollection="advanced-settings-polygon-settings-3" %}
 
-* Show/hide the polygon tooltip. You have the option to change the text within the tooltip or specify a function for the tooltip. Its allows you to dynamically change specific information based on conditions you specify, making your tooltip more informative.
+* Show/hide the polygon tooltip. You have the option to change the text within the tooltip or specify a function for the tooltip. It allows you to dynamically change specific information based on conditions you specify, making your tooltip more informative.
 
 {% include images-gallery.html imageCollection="advanced-settings-polygon-settings-4" %}
 
-* Change the color of the polygon or adjust the opacity of the polygon to suit your specific needs. Additionally, you have the option to specify a polygon color function, allowing the color to dynamically change the color based on conditions you specify.
+* Change the color of the polygon or adjust the opacity of the polygon to suit your specific needs. Additionally, you have the option to specify a polygon color function, allowing the color to dynamically change based on conditions you specify.
 
 {% include images-gallery.html imageCollection="advanced-settings-polygon-settings-5" %}
 
@@ -309,11 +309,11 @@ The following settings are available for the circle:
 
 {% include images-gallery.html imageCollection="advanced-settings-circle-settings-3" %}
 
-* Show/hide the circle tooltip. You have the option to change the text within the tooltip or specify a function for the tooltip. Its allows you to dynamically change specific information based on the circle's incoming data, making your tooltip more informative.
+* Show/hide the circle tooltip. You have the option to change the text within the tooltip or specify a function for the tooltip. It allows you to dynamically change specific information based on the circle's incoming data, making your tooltip more informative.
 
 {% include images-gallery.html imageCollection="advanced-settings-circle-settings-4" %}
 
-* Change the color of the circle or adjust the opacity of the circle to suit your specific needs. Additionally, you have the option to specify a circle color function, allowing the color to dynamically change the color based on certain conditions.
+* Change the color of the circle or adjust the opacity of the circle to suit your specific needs. Additionally, you have the option to specify a circle color function, allowing the color to dynamically change based on certain conditions.
 
 {% include images-gallery.html imageCollection="advanced-settings-circle-settings-5" %}
 
