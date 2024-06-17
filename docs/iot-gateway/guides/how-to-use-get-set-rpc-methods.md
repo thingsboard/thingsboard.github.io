@@ -42,7 +42,7 @@ set ns=3;i=1001; 23
 {: .copy-code}
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-rpc-1.png)
 {: refdef}
 <br>
 To set new value (T3000) for **"model"** attribute, run the query:
@@ -58,5 +58,5 @@ Response:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-rpc-2.png)
 {: refdef}

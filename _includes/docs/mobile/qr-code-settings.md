@@ -46,7 +46,7 @@ Find the app package name **applicationId** in **build.gradle** file located at 
 
 If your app distributed via Google Play you need to use SHA-256 certificate fingerprint located in your developer account under **Release> Setup > App Integrity> App Signing tab:**
 
-![image](/images/mobile/sha256-fingerprint.png)
+![image](https://img.thingsboard.io/mobile/sha256-fingerprint.png)
 
 If you app distributed locally you need to use the sha256 key your apk signed with
 
@@ -91,4 +91,4 @@ To find the bundle ID (**App ID**), you need to:
 - Click the "Signing & Capabilities" pane;
 - Find the bundle identifier (App ID) in the "Signing" section.
 
-![image](/images/mobile/qr-code-app-id.png)
+![image](https://img.thingsboard.io/mobile/qr-code-app-id.png)
