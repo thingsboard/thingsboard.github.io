@@ -285,7 +285,8 @@ Following Message Originator types are allowed: **Tenant**, **Customer**, **User
 * **Success**: if no error occurred during the attributes or latest telemetry retrieval.
 * **Failure**: connection will be used if:
   * unsupported originator type found;
-  * originator does not have assigned tenant.
+  * originator does not have assigned tenant;
+  * an unexpected error occurs during the attributes or latest telemetry retrieval.
 
 This node functions similarly to the Customer attributes node. The key difference is that this node retrieves attributes or latest telemetry from the Tenant, 
 while the Customer attributes node retrieves them from the Customer. For a usage example, please refer to the [Customer attributes node](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-attributes).
