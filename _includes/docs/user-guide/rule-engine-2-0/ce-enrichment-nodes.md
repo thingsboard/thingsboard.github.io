@@ -100,49 +100,80 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
-##### Device attributes
+## related device attributes {#device-attributes}
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Finds related device of the message originator entity using configured [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query and adds [attributes](/docs/user-guide/attributes/) 
+or [latest telemetry](/docs/user-guide/telemetry/) values into the message or the message metadata. Available from **v2.0**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes.png)
+**Configuration**
 
-Node finds Related Device of the Message Originator entity using configured query and adds Attributes (client\shared\server scope) 
-and Latest Telemetry value into Message Metadata.
+Since rule node have multiple configuration sections. We decided to separate configuration fields into the same sections here.
+
+**Configuration: Device relations query**
+
+* **Direction** - configures the direction of the relation query. It is either **From originator** or **To originator**.
+* **Max relation level** - specifies the maximum depth for the relation search. Optional. No value set means **Unlimited level**.
+  > **Note:** Search query result returns only first entity even if multiple entities were found.
+    * **Fetch last level relation only** - a toggle that forces the rule node to search for related entities only at the level set in the **Max relation level**.
+      > **Note:** Available only when **Max relation level** is greater than one.
+* **Relation type** - configures the relation between entities. It is either **Contains** or **Manages**.
+* **Device profiles** - allows configuring filters to refine the relation query based on device profile.
+
+**Configuration: Related device attributes**
+
+* **Client/Shared/Server attributes/Latest telemetry** - list of the keys that will be used to search for and retrieve the client/shared/server attribute or latest telemetry value from the related device.
+  > **Note:** All input fields in this section support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
+    * **Fetch latest telemetry with timestamp** - slide toggle that ensures that the latest telemetry will be added to the message with timestamp(if enabled).
+      > **Note:** Available only when the configuration has at least one latest telemetry key set.
+* **Add selected attributes to** -  an option selector that allows the user to choose whether the mapped attributes should be added to the **Message** or **Metadata**.
+
+* **Tell failure if any of the attributes are missing** - slide toggle that forces Failure if at least one selected key does not exist(if enabled).
+
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
 
 Attributes are added into metadata with scope prefix:
 
-- shared attribute -> <code>shared_</code>
-- client attribute -> <code>cs_</code>
-- server attribute -> <code>ss_</code>
-- telemetry -> no prefix used 
+* [client attribute](/docs/user-guide/attributes/#client-side-attributes) -> **cs_**
+* [shared attribute](/docs/user-guide/attributes/#shared-attributes) -> **shared_**
+* [server attribute](/docs/user-guide/attributes/#server-side-attributes) -> **ss_**
+* latest telemetry -> no prefix used
 
-For example, shared attribute 'version' will be added into Metadata with the name 'shared_version'. Client attributes will use 'cs_' prefix. 
-Server attributes use 'ss_' prefix. Latest telemetry value added into Message Metadata as is, without prefix.
+**Output**
 
-In 'Device relations query' configuration Administrator can select required **Direction** and **relation depth level**.
-Also **Relation type** can be configured with required set of **Device types**.
+* **Success** - if no error occurred during the device attributes retrieval.
+* **Failure** - connection will be used if:
+  * related entity wasn't found;
+  * any of attributes are missing if toggle **Tell failure if any of the attributes are missing** is enabled;
+  * an unexpected error occurs during data retrieval.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
+**Usage example**
 
-If multiple Related Entities were found, **_only the first Entity is used_** for attributes enrichment, other entities will be discarded.
+Consider a water pressure monitoring system where a water pressure sensor device reports telemetry data for water pressure levels, temperature, and humidity. 
+This system also includes a control unit device that manages the water pressure sensor and logs its data.
 
-**Failure** chain is used if no Related Entity was found, otherwise - **Success** chain.
+For this case, we will use the configuration provided earlier.
 
-If attribute or telemetry was not found, it is not added into Message Metadata and still routed via **Success** chain.
+We have a device "ControlUnitDevice" that manages a device "WaterPressureSensor".
 
-Outbound Message Metadata will contain configured attributes only if they exist.
+![ControlUnitDevice relations](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-example-device-relations.png)
 
-To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
+ControlUnitDevice has the following attributes and latest telemetry:
 
-**Note:** Since TB Version 2.3.1 the rule node has the ability to enable/disable reporting **Failure** if at least one selected key doesn't exist in the outbound message.
+![ControlUnitDevice attributes](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-example-device-attributes.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
+![ControlUnitDevice latest telemetry](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-device-telemetry.png)
+
+The incoming message from "WaterPressureSensor" will be as follows:
+
+```bash
+msg: {"pressure": 75.5}, metadata: {"ts": "1616510425200"}
+```
+
+The outbound message will be routed via **Success** chain and will include the following attribute and latest telemetry in the message:
+
+```bash
+msg: {"pressure": 75.5, "ss_pressureThreshold": "80", "temperature": "{"ts":1718611002573, "value":23}"}, metadata: {"ts": "1616510425200"}
+```
 
 ##### Originator attributes
 
