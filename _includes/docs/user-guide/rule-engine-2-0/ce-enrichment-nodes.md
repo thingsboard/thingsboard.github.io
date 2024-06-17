@@ -394,7 +394,9 @@ Selected details are added into message or message metadata with prefix: **tenan
 
 **Output**
 * **Success**: if no error occurred during the details retrieval.
-* **Failure**: if originator does not have assigned tenant.
+* **Failure**: connection will be used if:
+    * originator does not have assigned tenant;
+    * an unexpected error occurs during the details retrieval.
 
 This node functions similarly to the Customer details node. The key difference is that this node retrieves details from the Tenant,
 while the Customer details node retrieves them from the Customer. For a usage example, please refer to the [Customer details node](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-details).
