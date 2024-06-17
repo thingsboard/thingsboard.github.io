@@ -174,6 +174,10 @@ Attributes are added into message with scope prefix:
 * [server attribute](/docs/user-guide/attributes/#server-side-attributes) -> **ss_**
 * latest telemetry -> no prefix used
 
+**Output**
+* **Success**: if no error occurred during the attributes or latest telemetry retrieval.
+* **Failure**: if an unexpected error occurs during the attributes or latest telemetry retrieval.
+
 **Usage example**
 
 You can see the real life example, where this node is used, in the following tutorials:
