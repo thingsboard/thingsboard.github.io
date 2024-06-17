@@ -79,8 +79,6 @@ As example: \
 docker run --rm -d -p 4000:4000 --name thingsboard_website -e PAGES_REPO_NWO="thingsboard/thingsboard.github.io" --volume="THINGSBOARD_WEBSITE_DIR:/website" thingsboard/website
 ```
 
-
-
 ### Deploy the site using the docker-compose file
 
 Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository.
