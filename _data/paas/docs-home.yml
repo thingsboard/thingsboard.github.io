@@ -144,17 +144,18 @@ toc:
     - title: Templatization
       path: /docs/paas/user-guide/templatization/
       new: true
-- title: White Labeling
+- title: White labeling
   section:
     - title: Overview
       path: /docs/paas/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/paas/user-guide/self-registration/
-    - title: Mail Templates
+    - title: Mail templates
       path: /docs/paas/user-guide/mail-templates/
-    - title: Custom Translations
+    - title: Custom translation
       path: /docs/paas/user-guide/custom-translation/
-    - title: Custom Menu
+      new: true
+    - title: Custom menu
       path: /docs/paas/user-guide/custom-menu/
 - title: Integrations
   section:
@@ -303,9 +304,11 @@ toc:
       path: /docs/paas/user-guide/ui/slack-settings/
     - title: Microsoft Teams Settings
       path: /docs/paas/user-guide/ui/microsoft-teams-settings/
-      new: true
     - title: Mail Settings
       path: /docs/paas/user-guide/ui/mail-settings/
+    - title: Mobile application QR code
+      path: /docs/paas/user-guide/ui/mobile-qr-code/
+      new: true
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing
