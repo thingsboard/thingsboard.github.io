@@ -427,7 +427,8 @@ Following Message Originator types are allowed: **Asset**, **Device**, **Entity 
 * **Success**: if no error occurred during the details retrieval.
 * **Failure**: connection will be used if:
     * unsupported originator type found;
-    * originator does not have assigned customer.
+    * originator does not have assigned customer;
+    * an unexpected error occurs during the details retrieval.
 
 **Usage example**
 
