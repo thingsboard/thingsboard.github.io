@@ -6,14 +6,14 @@ hidetoc: "true"
 ---
 
 This guide describes how to install HAProxy with Let's Encrypt
-as ubuntu service. This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
+as a service. This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
 
 * TOC
 {:toc}
 
 ### Prerequisites
 
-Ubuntu 18.04 / Ubuntu 20.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
+Ubuntu 20.04 / 22.04 / 24.04 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
 
 ### Step 1. Connect to your ThingsBoard instance over SSH
 
@@ -31,10 +31,11 @@ Execute the following commands to install HAProxy package:
 
 ```bash
 sudo apt install --no-install-recommends software-properties-common
-sudo add-apt-repository ppa:vbernat/haproxy-2.4 -y
+sudo add-apt-repository ppa:vbernat/haproxy-2.9 -y
 sudo apt-get update
-sudo apt-get install haproxy=2.4.\* openssl
+sudo apt-get install haproxy=2.9.\* openssl
 ```
+{: .copy-code}
 
 ### Step 3. Install Certbot package
 

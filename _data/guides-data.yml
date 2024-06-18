@@ -169,6 +169,12 @@
       keywords:
       pe: true
       video: false
+    - path: /docs/samples/sia-connect/
+      title: Connect OPC-UA devices through SIA Connect
+      subtitle: Learn how to connect OPC-UA devices using the SIA Connect to the ThingsBoard.
+      keywords:
+      pe: true
+      video: false
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   id: DataVisualization

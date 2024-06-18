@@ -13,7 +13,7 @@ as a service. This is possible in case you are hosting ThingsBoard in the cloud 
 
 ### Prerequisites
 
-RHEL/CentOS 7/8 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
+RHEL/CentOS 8/9 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
 
 In order to open 80 and 443 ports execute the following command:
 
@@ -21,122 +21,41 @@ In order to open 80 and 443 ports execute the following command:
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
 sudo firewall-cmd --zone=public --add-port=443/tcp --permanent
 sudo firewall-cmd --reload
-
 ``` 
+{: .copy-code}
 
 ### Step 1. Connect to your ThingsBoard instance over SSH
 
 Below is example command for AWS as a reference:
 
 ```bash
-$ ssh -i <PRIVATE-KEY> ubuntu@<PUBLIC_DNS_NAME>
+$ ssh -i <PRIVATE-KEY> ec2-user@<PUBLIC_DNS_NAME>
 ```
 
 or consult your cloud vendor for different options.
 
 ### Step 2. Install HAProxy Load Balancer package
 
-- For **RHEL/CentOS 7** the following command will ensure the Cheese repo is enabled:
+Execute the following command to install HAProxy package:
 
 ```bash
-sudo yum -y install http://www.nosuchhost.net/~cheese/fedora/packages/epel-7/x86_64/cheese-release-7-1.noarch.rpm
-sudo yum-config-manager --enable cheese
-
+sudo dnf -y install haproxy 
 ```
 {: .copy-code}
 
-- For **RHEL/CentOS 8** the following command will ensure the PowerTools repo is enabled:
+Execute the following command to enable service auto startup:
 
 ```bash
-sudo dnf config-manager --enable powertools
-
-```
-{: .copy-code}
-
-Execute the following commands to install HAProxy package:
-
-```bash
-sudo yum install gcc pcre-devel openssl-devel readline-devel systemd-devel tar lua lua-devel make -y
-wget http://www.haproxy.org/download/2.4/src/haproxy-2.4.3.tar.gz -O ~/haproxy.tar.gz
-mkdir -p ~/haproxy-src
-tar xzvf ~/haproxy.tar.gz -C ~/haproxy-src --strip-components=1
-rm haproxy.tar.gz
-make -C ~/haproxy-src USE_NS=1 USE_TFO=1 USE_OPENSSL=1 USE_ZLIB=1 USE_LUA=1 USE_PCRE=1 USE_SYSTEMD=1 USE_LIBCRYPT=1 USE_THREAD=1 TARGET=linux-glibc
-sudo make -C ~/haproxy-src TARGET=linux-glibc install-bin install-man
-sudo ln -sf /usr/local/sbin/haproxy /usr/sbin/haproxy
-sudo groupadd -g 992 haproxy
-sudo useradd -g 992 -u 995 -m -d /var/lib/haproxy -s /sbin/nologin -c haproxy haproxy
-sudo mkdir -p /etc/haproxy
-rm -rf ~/haproxy-src
-
-```
-{: .copy-code}
-
-Execute the following commands to create haproxy SystemD Unit File:
-
-(copy-paste full text of the command as-is)
-
-```bash
-cat <<'EOT' | sudo tee /etc/systemd/system/haproxy.service
-[Unit]
-Description=HAProxy 2.4.3
-After=syslog.target network.target
-
-[Service]
-Type=notify
-EnvironmentFile=/etc/sysconfig/haproxy
-ExecStart=/usr/local/sbin/haproxy -f $CONFIG_FILE -p $PID_FILE $CLI_OPTIONS
-ExecReload=/bin/kill -USR2 $MAINPID
-ExecStop=/bin/kill -USR1 $MAINPID
-
-[Install]
-WantedBy=multi-user.target
-EOT
-```
-{: .copy-code}
-
-Execute the following commands to create haproxy SystemD Environment File:
-
-(copy-paste full text of the command as-is)
-
-```bash
-cat <<EOT | sudo tee /etc/sysconfig/haproxy
-# Command line options to pass to HAProxy at startup
-# The default is:
-CLI_OPTIONS="-Ws"
-
-# Specify an alternate configuration file. The default is:
-CONFIG_FILE=/etc/haproxy/haproxy.cfg
-
-# File used to track process IDs. The default is:
-PID_FILE=/var/run/haproxy.pid
-EOT
-```
-{: .copy-code}
-
-Execute the following commands to configure haproxy service:
-
-```bash
-sudo systemctl daemon-reload
 sudo systemctl enable haproxy
-
 ```
 {: .copy-code}
 
 ### Step 3. Install Certbot package
 
-**RHEL 7 ONLY** - Enable the optional channel:
+Execute the following command to install Certbot package:
 
 ```bash
-sudo yum -y install yum-utils
-sudo yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
-```
-{: .copy-code}
-
-Execute the following commands to install Certbot package:
-
-```bash
-sudo yum -y install ca-certificates certbot
+sudo dnf -y install ca-certificates certbot
 ```
 {: .copy-code}
 

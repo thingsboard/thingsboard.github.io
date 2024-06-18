@@ -1,0 +1,817 @@
+#mqtt-broker
+  section
+    background: none
+  &:not(.open-nav):not(.flip-nav)
+    header
+      &::after
+        opacity: 0
+  #hero
+    height: 100vh
+    padding-top: 0
+    position: relative
+    overflow: hidden
+    background: none
+    div:nth-child(1)
+      background-image: url(https://img.thingsboard.io/tbmq-cover.webp) !important
+    .video-cover
+      position: absolute
+      z-index: -2
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      overflow: hidden
+      background-size: cover
+      background-color: #000
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-image: url(https://img.thingsboard.io/tbmq-cover.webp)
+    #hero-content
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-content: center
+      background-color: rgba(0,0,0,0.72)
+      flex-wrap: wrap
+      .tbmq-title
+        font-size: 22px
+        line-height: 40px
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+      .tbmq-description
+        margin-bottom: 32px
+        margin-top: 32px
+        font-size: 14px
+        line-height: 24px
+        text-shadow: 0 0 18px rgba(0,0,0,.66)
+        max-width: 80%
+      .action
+        line-height: 24px
+        font-size: 18px
+        font-weight: 500
+        padding: 10px 20px 10px 20px
+        border: 2px solid #fff
+        background-color: transparent
+        transition: 0.6s
+        &:hover
+          background-color: #fff
+          color: #1F8B4D
+        &:first-child
+          margin-right: 8px
+      .paas-arrow
+        position: fixed
+        bottom: 40px
+        left: 0
+        right: 0
+        margin: auto
+        width: 40px
+        height: 40px
+        opacity: 1
+        z-index: 24
+        color: #fff
+        a
+          color: #fff
+      &.arrow-hidden
+        .paas-arrow
+          display: none
+
+  #tbmqContent
+    width: 100%
+    color: #212924
+
+    h1
+      font-weight: 600
+      text-align: center
+      font-size: 32px
+      line-height: 52px
+      a
+        font-weight: 600
+        font-size: 32px
+    h2, h3.item-heading
+      font-weight: 500
+      line-height: 54px
+      font-size: 36px
+    h3:not(.item-heading)
+      font-size: 32px
+      font-weight: 600
+      text-align: center
+    h4
+      font-size: 24px
+      font-weight: 500
+    p
+      color: #757C76
+      font-size: 18px
+      font-weight: normal
+      line-height: 27px
+      margin: 4px 0 18px
+    a
+      color: #1F8B4D
+      font-weight: 500
+      font-size: 18px
+
+    .arrow-top-right
+      color: #fff
+      position: relative
+      &::after
+        content: ''
+        display: block
+        height: 18px
+        width: 18px
+        background-image: url('/images/mqtt-broker/product/arrow-right.svg')
+        background-repeat: no-repeat
+        position: absolute
+        top: 50%
+        transform: translateY(-50%) rotate(-45deg)
+        transition: 0.3s
+        right: 22px
+        filter: brightness(0) saturate(100%) invert(97%) sepia(63%) saturate(13%) hue-rotate(226deg) brightness(102%) contrast(100%)
+
+    #top-features
+      margin-bottom: 24px
+      #cards
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        &>div
+          margin-bottom: 36px
+          &.col-lg-6
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08)
+            border-radius: 12px
+          .block
+            padding: 12px
+            text-align: center
+            float: left
+            width: 100%
+            height: 100%
+            background: #fff
+            border-radius: 12px
+            display: unset
+            div
+              width: 100%
+              .title
+                margin-bottom: 6px
+                line-height: 33px
+              p
+                margin-top: 10px
+                text-align: justify
+            img
+              height: fit-content
+              margin: 0 0 18px
+
+    #scenarios
+      margin-bottom: 140px
+      .first-scenario
+        padding-top: 50px
+      .block
+        display: flex
+        flex-direction: column
+        gap: 20px
+        justify-content: center
+        align-items: center
+        margin-bottom: 40px
+        .feature-des
+          flex: 1 0 50%
+          width: 100%
+          h3
+            font-size: 42px
+            color: #fff
+        .feature-details
+          width: 100%
+          flex: 1 0 50%
+          p
+            font-size: 18px
+            color: rgba(255, 255, 255, 0.8)
+        .fan-out-img
+          order: 1
+        .image-container
+          img
+            width: 100%
+        .description
+          flex: 1 0 45%
+          padding: 24px
+          border-radius: 12px
+          background: #fff
+          text-align: justify
+          span
+            font-size: 18px
+            line-height: 32px
+            color: rgba(0, 0, 0, 0.54)
+            font-weight: 400
+        .fan-title
+          text-align: center
+          margin-bottom: 12px
+          a
+            font-size: 24px
+            font-weight: 500
+            color: #1F8B4D
+
+    #middle-features
+      margin-bottom: 24px
+      main
+        padding-top: 100px
+        display: flex
+        flex-direction: column
+        gap: 40px
+        .row
+          display: flex
+          flex-direction: column
+          align-items: center
+          justify-content: space-between
+          gap: 24px
+          padding-top: 20px
+          .image-container
+            flex: 2 !important
+          .col-lg-6
+            flex: 1
+            order: 2
+            .block
+              h4
+                font-size: 42px
+                padding-bottom: 20px
+                line-height: 60px
+              p
+                font-size: 18px
+                text-align: justify
+              img
+                width: 100%
+
+    #installation-options
+      margin-bottom: 24px
+      main
+        .row
+          display: flex
+          align-items: center
+          justify-content: space-between
+          gap: 10px
+          padding-top: 40px
+          .installation-options-img
+            margin-top: 40px
+            flex: 1
+            .options
+              display: flex
+              flex-direction: row
+              flex-wrap: nowrap
+              justify-content: center
+              gap: 40px
+          .col-lg-6
+            &:first-child
+              flex: 2 !important
+            .block
+              display: flex
+              flex-direction: column
+              gap: 24px
+              h4
+                line-height: 60px
+                font-size: 42px
+              p
+                margin-top: 10px
+                font-size: 18px
+                text-align: justify
+              a
+                width: 189px
+                line-height: 40px
+                padding: 3px 24px 3px 24px
+                border-radius: 8px
+                border: 1px solid rgba(0, 0, 0, 0.12)
+                background-color: #1F8B4D !important
+                color: #fff
+                transition: 0.6s
+                &:hover
+                  background-color: rgba(0,0,0,.12)
+                .button
+                  background: #1F8B4D !important
+
+    #bottom-features
+      margin-bottom: 24px
+      h3
+        font-size: 42px
+        padding-top: 120px
+        margin-bottom: 40px
+      #cards
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        &>div
+          margin-bottom: 36px
+          .block
+            padding: 40px
+            float: left
+            text-align: center
+            width: 100%
+            height: 100%
+            background: #fff
+            border-radius: 12px
+            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
+            display: unset
+            div
+              width: 100%
+              .title
+                text-align: center
+                color: #1F8B4D
+                margin-bottom: 6px
+                line-height: 33px
+              p
+                text-align: left
+                margin-top: 10px
+                line-height: 32px
+            img
+              height: fit-content
+              margin: 0 0 18px
+        .col-lg-6:first-child
+          .block
+            img
+              width: 48px
+              filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(382%) hue-rotate(93deg) brightness(96%) contrast(103%)
+
+    #get-started
+      padding-bottom: 160px
+      main
+        .row
+          padding-top: 150px
+          .container
+            text-align: center
+            .block
+              h4
+                margin-bottom: 48px
+                line-height: 50px
+                font-size: 42px
+                color: #fff
+              p
+                margin-bottom: 24px
+                color: rgba(255, 255, 255, 0.8)
+              .arrow-top-right
+                color: #1F8B4D
+                &::after
+                  filter: brightness(0) saturate(100%) invert(39%) sepia(49%) saturate(630%) hue-rotate(93deg) brightness(99%) contrast(92%)
+                  right: 28px
+              a
+                width: 188px
+                padding: 4px 24px 4px 24px
+                line-height: 40px
+                text-align: left
+                font-weight: 500
+                border-radius: 8px
+                background-color: #fff !important
+                color: #1F8B4D
+                transition: 0.6s
+
+    #latest-news
+      main
+        max-width: 1500px
+        margin-bottom: 24px
+        h3
+          font-size: 42px
+          padding-bottom: 20px
+        #cards
+          display: flex
+          justify-content: center
+          gap: 36px
+          &>div
+            margin-bottom: 36px
+            .block
+              width: 100%
+              height: 100%
+              background: #fff
+              border-radius: 12px
+              box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
+              display: flex
+              flex-direction: column
+              gap: 24px
+              justify-content: flex-start
+              .content
+                display: flex
+                flex-direction: column
+                gap: 24px
+                padding: 0 24px 0 24px
+                .tags
+                  display: flex
+                  flex-direction: row
+                  gap: 10px
+                  justify-content: flex-start
+                  a
+                    width: fit-content
+                    background: #1F8B4D0F
+                    padding: 5px 16px 6px 16px
+                    border-radius: 6px
+                    font-size: 16px
+                    cursor: pointer
+                    color: rgba(0, 0, 0, 0.87)
+                .title
+                  font-size: 24px
+                  line-height: 32px
+                  color: rgba(0, 0, 0, 0.87)
+                  &:hover
+                    color: #1F8B4D
+                p
+                  margin-top: 10px
+                  display: -webkit-box
+                  -webkit-line-clamp: 2
+                  -webkit-box-orient: vertical
+                  overflow: hidden
+                  text-overflow: ellipsis
+              .image-container
+                a
+                  width: 100%
+                  height: 100%
+                img
+                  height: fit-content
+                  width: 100%
+                  &:hover
+                    background: rgba(0, 0, 0, 0.38)
+
+    #background
+      z-index: -1
+      position: absolute
+      left: 50%
+      div
+        position: absolute
+        -ms-transform: skewY(-6deg) skewX(6deg)
+        transform: skewY(-6deg) skewX(6deg)
+        width: 436px
+        height: 90px
+        &.main1
+          top: 0
+          width: 2560px
+          height: 2280px
+          left: -1280px
+          background-color: #00240F
+        &.small1
+          top: 90px
+          right: -1000px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small2
+          right: -1200px
+          top: -7px
+          background-color: #1F8B4D
+        &.main2
+          top: -70px
+          width: 3000px
+          height: 900px
+          left: -1300px
+          background-color: #f2f8f5
+        &.small3
+          top: 250px
+          right: -1020px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small4
+          top: 286px
+          right: -1200px
+          background-color: #1F8B4D
+        &.main3
+          top: 60px
+          width: 2560px
+          height: 3600px
+          left: -1280px
+          background-color: #1F8B4D0F
+        &.small5
+          top: 150px
+          left: -1200px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small6
+          top: 90px
+          left: -1050px
+          background-color: #1F8B4D
+        &.main4
+          top: 60px
+          width: 2560px
+          height: 650px
+          left: -1280px
+          background-color: #00240F
+        &.small7
+          top: 450px
+          right: -1000px
+          border: 2px solid #1F8B4D
+          mix-blend-mode: luminosity
+        &.small8
+          top: 485px
+          right: -1200px
+          background-color: #1F8B4D
+
+
+  .header-animation
+    max-width: 100%
+    opacity: 0
+    transform: translate3d(0, 45px, 0)
+    animation-name: slideup-in
+    animation-duration: 600ms
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    animation-fill-mode: forwards
+
+  .header-animation:nth-child(1)
+    animation-delay: 0ms
+  .header-animation:nth-child(2)
+    animation-delay: 300ms
+  .header-animation:nth-child(3)
+    animation-delay: 600ms
+  .header-animation:nth-child(4)
+    animation-delay: 900ms
+  .header-animation:nth-child(5)
+    animation-delay: 1200ms
+
+  @keyframes slideup-in
+    from
+      opacity: 0
+      transform: translate3d(0, 45px, 0)
+    to
+      opacity: 1
+      transform: translate3d(0, 0, 0)
+
+  @media screen and (min-width: 400px)
+    #tbmqContent
+      #background
+        div
+          &.main3
+            height: 3200px
+  @media screen and (min-width: 600px)
+    #tbmqContent
+      #installation-options
+        main
+          .row
+            padding-top: 0
+      #background
+        div
+          &.main2
+            top: -140px
+            height: 690px
+          &.main3
+            height: 2000px
+          &.main4
+            height: 500px
+  @media screen and (max-width: 500px)
+    #tbmqContent
+      #installation-options
+        main
+          .row
+            .installation-options-img
+              .options
+                flex-wrap: wrap
+  @media screen and (min-width: 960px)
+    #hero
+      #hero-content
+        .tbmq-title
+          font-size: 36px
+          font-weight: 500
+          line-height: 70px
+        .tbmq-description
+          font-weight: 500
+          margin-top: 40px
+          font-size: 20px
+          line-height: 32px
+          max-width: 80%
+    #tbmqContent
+      #top-features
+        margin-bottom: 24px
+        #cards
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          padding: 0 40% 0 40%
+          justify-content: center
+          margin-right: -50%
+          margin-left: -50%
+          &>div
+            margin-bottom: 36px
+            &.col-lg-6
+              padding: 0 18px
+              margin: 18px
+              max-width: 40% !important
+            .block
+              padding: 24px
+              float: left
+              width: 100%
+              height: 100%
+              background: #fff
+              border-radius: 12px
+              display: unset
+              div
+                width: 100%
+                .title
+                  margin-bottom: 6px
+                  line-height: 33px
+                p
+                  margin-top: 10px
+                  text-align: justify
+              img
+                height: fit-content
+                margin: 0 0 18px
+      #scenarios
+        .first-scenario
+          padding-top: 300px
+      #installation-options
+        main
+          .row
+            padding-top: 40px
+            flex-direction: column
+      #middle-features
+        main
+          padding-top: 190px
+      #bottom-features
+        h3
+          padding-top: 250px
+      #get-started
+        padding-bottom: 230px
+      #background
+        div
+          &.main1
+            top: 170px
+            height: 2900px
+          &.small1
+            right: -620px
+            top: 95px
+          &.small2
+            top: 15px
+            right: -690px
+          &.main2
+            height: 640px
+          &.small3
+            top: 400px
+            right: -700px
+          &.small4
+            top: 445px
+            right: -800px
+          &.main3
+            top: 90px
+            height: 1750px
+          &.small5
+            top: 145px
+            left: -700px
+          &.small6
+            top: 80px
+            left: -600px
+          &.small7
+            top: 477px
+            right: -700px
+          &.small8
+            top: 530px
+            right: -770px
+  @media screen and (min-width: 992px)
+    .col-lg-6
+      max-width: 100% !important
+  @media screen and (min-width: 1025px)
+    section
+      main
+        max-width: 1400px !important
+  @media screen and (min-width: 1280px)
+    #hero
+      #hero-content
+        .tbmq-title
+          font-size: 64px
+          font-weight: 500
+          line-height: 70px
+        .tbmq-description
+          font-weight: 500
+          font-size: 28px
+          line-height: 32px
+          max-width: 80%
+    #tbmqContent
+      #top-features
+        #cards
+          padding: 0 50% 0 50%
+          &>div
+            &.col-lg-6
+              padding: 0
+              max-width: 30% !important
+      #scenarios
+        .block
+          flex-direction: row
+          .fan-out-img
+            order: unset
+      #middle-features
+        main
+          padding-top: 230px
+          .row
+            flex-direction: row
+            flex-wrap: nowrap
+            &:nth-child(2n)
+              .image-container
+                order: 1 !important
+      #bottom-features
+        #cards
+          flex-direction: row
+          &>div
+            .block
+              padding: 40px
+              display: flex
+              flex-direction: row
+              gap: 40px
+              text-align: unset
+              div
+                .title
+                  text-align: unset
+      #installation-options
+        main
+          .row
+            flex-direction: row
+            gap: 160px
+      #background
+        div
+          &.main1
+            height: 1650px
+          &.small1
+            right: -900px
+            top: 75px
+          &.small2
+            right: -1020px
+            top: -15px
+          &.main2
+            height: 579px
+          &.small3
+            top: 370px
+            right: -765px
+          &.small4
+            top: 407px
+            right: -885px
+          &.small5
+            top: 110px
+            left: -940px
+          &.small6
+            top: 45px
+            left: -840px
+          &.main3
+            height: 1250px
+          &.small7
+            top: 435px
+            right: -900px
+          &.small8
+            top: 495px
+            right: -1000px
+  @media screen and (min-width: 1920px)
+    #hero
+      #hero-content
+        .tbmq-title
+          line-height: 70px
+          font-size: 64px
+        .tbmq-title:first-child
+          margin-bottom: 20px
+        .tbmq-description
+          font-size: 28px
+          margin-top: 40px
+          margin-bottom: 40px
+          line-height: 40px
+          width: 65%
+      #background
+        div
+          &.small1
+            right: -880px
+            top: 50px
+          &.small2
+            right: -1020px
+            top: -20px
+          &.small3
+            top: 290px
+            right: -1000px
+          &.small4
+            top: 335px
+            right: -1200px
+          &.small5
+            top: 120px
+            left: -1130px
+          &.small6
+            top: 60px
+            left: -1060px
+          &.small7
+            top: 400px
+            right: -1110px
+          &.small8
+            top: 455px
+            right: -1200px
+  @media screen and (min-width: 2480px)
+    #hero
+      #hero-content
+        .tbmq-description
+          width: 55%
+    #tbmqContent
+      #background
+        div
+          &.main1
+            width: 3000px
+            left: -1440px
+          &.small1
+            right: -1110px
+            top: 60px
+          &.small2
+            right: -1250px
+            top: -30px
+          &.small3
+            top: 300px
+            right: -1300px
+          &.small4
+            top: 350px
+            right: -1400px
+          &.small5
+            top: 135px
+            left: -1450px
+          &.small6
+            top: 80px
+            left: -1320px
+          &.small7
+            top: 410px
+            right: -1300px
+          &.small8
+            top: 460px
+            right: -1400px
