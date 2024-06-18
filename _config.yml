@@ -84,11 +84,11 @@ release:
   pe_full_ver: 3.7.0PE
   wd_examples_commit: v3.7
   # >>> EDGE
-  edge_ver: 3.6.4 # use X.X.X to be in sync with demo/cloud
-  edge_tag: v3.6.4 # use vX.X.X to be in sync with demo/cloud
-  edge_full_ver: 3.6.4EDGE
-  pe_edge_ver: 3.6.4pe # use X.X.Xpe to be in sync with demo/cloud
-  pe_edge_full_ver: 3.6.4EDGEPE
+  edge_ver: 3.7.0 # use X.X.X to be in sync with demo/cloud
+  edge_tag: v3.7.0 # use vX.X.X to be in sync with demo/cloud
+  edge_full_ver: 3.7.0EDGE
+  pe_edge_ver: 3.7.0pe # use X.X.Xpe to be in sync with demo/cloud
+  pe_edge_full_ver: 3.7.0EDGEPE
   # <<< EDGE
   ce_flutter_app_ver: 1.1.0
   pe_flutter_app_ver: 1.1.0
