@@ -9,25 +9,27 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.7
+### v3.7.1
 
-* Migration to JDK 17;
-* Redesign the Custom translation;
-* Redesign the Digital gauge to simplify configuration;
-* Housekeeping service to improve handling of long-running maintenance and administration tasks;
-* Optimization of the attributes table;
-* Separate entity to store queue statistics;
+* Mobile application configuration via Web UI;
+* Dashboard layout improvements;
+* Time window improvements;
+* Interactive SCADA widgets based on SVG;
+* New label and notification widgets;
+* Adding version to entities;
+* Improvements to caching of attributes and time series data;
+
+### v3.7.2
+
+* Basic settings for Map widgets;
+* Rule chain UI/UX improvements;
 
 ### v3.8
 
-* Mobile application configuration;
-* Redesign Rule nodes:
-  * Add visualization if Node has error;
-  * Add new navigation on Rule node;
-  * Add new grid type;
-  * Add new option to export rule chain;
+* Migration to Angular 18;
+* Attributes and time series writes scalability improvement;
+* Advanced data query service;
 * Global entities Search;
-* Notification widget;
 * Alarm rules:
   * refactoring to separate entity;
   * simplified configuration;
