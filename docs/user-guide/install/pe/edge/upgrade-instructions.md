@@ -22,16 +22,16 @@ description: ThingsBoard PE Edge upgrade instructions
         </ul>
     </li>
     <li>
-        <a href="#upgrading-to-370" id="markdown-toc-upgrading-to-370">Upgrading to 3.7.0EDGEPE</a>
+        <a href="#upgrading-to-37" id="markdown-toc-upgrading-to-37">Upgrading to 3.7EDGEPE</a>
         <ul>
             <li>
-                <a href="#ubuntucentos-370" id="markdown-toc-ubuntucentos-370">Ubuntu/CentOS</a>
+                <a href="#ubuntucentos-37" id="markdown-toc-ubuntucentos-37">Ubuntu/CentOS</a>
             </li>
             <li>
-                <a href="#docker-linux-mac-370" id="markdown-toc-docker-linux-mac-370">Docker (Linux or Mac OS)</a>
+                <a href="#docker-linux-mac-37" id="markdown-toc-docker-linux-mac-37">Docker (Linux or Mac OS)</a>
             </li>            
             <li>
-                <a href="#windows-370" id="markdown-toc-windows-370">Windows</a>
+                <a href="#windows-37" id="markdown-toc-windows-37">Windows</a>
             </li> 
         </ul>
     </li>
@@ -239,13 +239,13 @@ net stop tb-edge
 Launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
 
-## Upgrading to 3.7.0EDGEPE {#upgrading-to-370}
+## Upgrading to 3.7EDGEPE {#upgrading-to-37}
 
-{% assign serverVersion = "3.7.0PE" %}
-{% assign updateServerLink = "#upgrading-to-370pe" %}
+{% assign serverVersion = "3.7PE" %}
+{% assign updateServerLink = "#upgrading-to-37pe" %}
 {% include templates/edge/install/compatibility-warning-version.md %}
 
-### Ubuntu/CentOS {#ubuntucentos-370}
+### Ubuntu/CentOS {#ubuntucentos-37}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.6.4EDGEPE version.
 
@@ -254,8 +254,8 @@ Open your server and create backup of database **tb_edge** using 'Backup Dialog'
 #### ThingsBoard Edge package download
 
 {% capture tabspec %}tb-edge-pe-download-3-7-0
-tb-edge-pe-download-3-7-0-ubuntu,Ubuntu,shell,resources/3.7.0/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.7.0/tb-edge-ubuntu-download.sh
-tb-edge-pe-download-3-7-0-centos,CentOS,shell,resources/3.7.0/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.7.0/tb-edge-centos-download.sh{% endcapture %}
+tb-edge-pe-download-3-7-0-ubuntu,Ubuntu,shell,resources/3.7/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.7/tb-edge-ubuntu-download.sh
+tb-edge-pe-download-3-7-0-centos,CentOS,shell,resources/3.7/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.7/tb-edge-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard Edge service upgrade
@@ -268,8 +268,8 @@ sudo service tb-edge stop
 {: .copy-code}
 
 {% capture tabspec %}tb-edge-pe-installation-3-7-0
-tb-edge-pe-installation-3-7-0-ubuntu,Ubuntu,shell,resources/3.7.0/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.7.0/tb-edge-ubuntu-installation.sh
-tb-edge-pe-installation-3-7-0-centos,CentOS,shell,resources/3.7.0/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.7.0/tb-edge-centos-installation.sh{% endcapture %}
+tb-edge-pe-installation-3-7-0-ubuntu,Ubuntu,shell,resources/3.7/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.7/tb-edge-ubuntu-installation.sh
+tb-edge-pe-installation-3-7-0-centos,CentOS,shell,resources/3.7/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.7/tb-edge-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
@@ -288,7 +288,7 @@ sudo service tb-edge start
 ```
 {: .copy-code}
 
-### Docker (Linux or Mac OS) {#docker-linux-mac-370}
+### Docker (Linux or Mac OS) {#docker-linux-mac-37}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.6.4EDGEPE version.
 
@@ -392,7 +392,7 @@ docker compose logs -f mytbedge
 {: .copy-code}
 
 
-### Windows {#windows-370}
+### Windows {#windows-37}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.6.4EDGEPE version.
 
@@ -400,7 +400,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.7.0pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.7.0pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.7pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.7pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
