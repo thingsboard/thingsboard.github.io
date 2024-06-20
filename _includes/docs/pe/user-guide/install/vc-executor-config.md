@@ -342,20 +342,26 @@
 		<tr>
 			<td>queue.kafka.topic-properties.core</td>
 			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.notifications</td>
 			<td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Notifications topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
 			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.housekeeper</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td> Kafka properties for Housekeeper tasks topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -656,6 +662,12 @@
 			<td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
 			<td>60000</td>
 			<td> Statistics printing interval for Core microservices</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.topic</td>
+			<td>TB_HOUSEKEEPER_TOPIC</td>
+			<td>tb_housekeeper</td>
+			<td> Topic name for Housekeeper tasks</td>
 		</tr>
 		<tr>
 			<td>queue.vc.topic</td>
