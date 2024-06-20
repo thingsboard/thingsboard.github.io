@@ -12,7 +12,7 @@
 	<atom:link href="/blog/author/dlandiak/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Fri, 31 May 2024 10:57:59 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 20 Jun 2024 13:52:54 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -26,7 +26,7 @@
 		<dc:creator><![CDATA[Dima Landiak]]></dc:creator>
 		<pubDate>Tue, 02 Apr 2024 08:48:23 +0000</pubDate>
 				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">/blog/?p=3965</guid>
+		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3965</guid>
 
 					<description><![CDATA[<p>We&#8217;re delighted to introduce TBMQ version 1.3.0! This update improves MQTT over WebSocket functionality by introducing a new&#8230;</p>
 <p>The post <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">TBMQ 1.3.0 release: WebSocket client, advanced MQTT 5 features, and more</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
@@ -38,7 +38,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="2409" height="1677" src="/blog/wp-content/uploads/2024/05/1921-3.webp" alt="" class="wp-image-4534" srcset="/blog/wp-content/uploads/2024/05/1921-3.webp 2409w, /blog/wp-content/uploads/2024/05/1921-3-300x209.webp 300w, /blog/wp-content/uploads/2024/05/1921-3-1024x713.webp 1024w, /blog/wp-content/uploads/2024/05/1921-3-768x535.webp 768w, /blog/wp-content/uploads/2024/05/1921-3-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/05/1921-3-2048x1426.webp 2048w, /blog/wp-content/uploads/2024/05/1921-3-512x356.webp 512w, /blog/wp-content/uploads/2024/05/1921-3-920x640.webp 920w, /blog/wp-content/uploads/2024/05/1921-3-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/05/1921-3-1920x1337.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="2409" height="1677" data-id="4534" src="/blog/wp-content/uploads/2024/05/1921-3.webp" alt="" class="wp-image-4534" srcset="/blog/wp-content/uploads/2024/05/1921-3.webp 2409w, /blog/wp-content/uploads/2024/05/1921-3-300x209.webp 300w, /blog/wp-content/uploads/2024/05/1921-3-1024x713.webp 1024w, /blog/wp-content/uploads/2024/05/1921-3-768x535.webp 768w, /blog/wp-content/uploads/2024/05/1921-3-1536x1069.webp 1536w, /blog/wp-content/uploads/2024/05/1921-3-2048x1426.webp 2048w, /blog/wp-content/uploads/2024/05/1921-3-512x356.webp 512w, /blog/wp-content/uploads/2024/05/1921-3-920x640.webp 920w, /blog/wp-content/uploads/2024/05/1921-3-1600x1114.webp 1600w, /blog/wp-content/uploads/2024/05/1921-3-1920x1337.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -72,7 +74,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="2409" height="858" src="/blog/wp-content/uploads/2024/05/tbmq1.webp" alt="" class="wp-image-4487" srcset="/blog/wp-content/uploads/2024/05/tbmq1.webp 2409w, /blog/wp-content/uploads/2024/05/tbmq1-300x107.webp 300w, /blog/wp-content/uploads/2024/05/tbmq1-1024x365.webp 1024w, /blog/wp-content/uploads/2024/05/tbmq1-768x274.webp 768w, /blog/wp-content/uploads/2024/05/tbmq1-1536x547.webp 1536w, /blog/wp-content/uploads/2024/05/tbmq1-2048x729.webp 2048w, /blog/wp-content/uploads/2024/05/tbmq1-512x182.webp 512w, /blog/wp-content/uploads/2024/05/tbmq1-920x328.webp 920w, /blog/wp-content/uploads/2024/05/tbmq1-1600x570.webp 1600w, /blog/wp-content/uploads/2024/05/tbmq1-1920x684.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" width="2409" height="858" data-id="4487" src="/blog/wp-content/uploads/2024/05/tbmq1.webp" alt="" class="wp-image-4487" srcset="/blog/wp-content/uploads/2024/05/tbmq1.webp 2409w, /blog/wp-content/uploads/2024/05/tbmq1-300x107.webp 300w, /blog/wp-content/uploads/2024/05/tbmq1-1024x365.webp 1024w, /blog/wp-content/uploads/2024/05/tbmq1-768x274.webp 768w, /blog/wp-content/uploads/2024/05/tbmq1-1536x547.webp 1536w, /blog/wp-content/uploads/2024/05/tbmq1-2048x729.webp 2048w, /blog/wp-content/uploads/2024/05/tbmq1-512x182.webp 512w, /blog/wp-content/uploads/2024/05/tbmq1-920x328.webp 920w, /blog/wp-content/uploads/2024/05/tbmq1-1600x570.webp 1600w, /blog/wp-content/uploads/2024/05/tbmq1-1920x684.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -110,7 +114,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="2409" height="1008" src="/blog/wp-content/uploads/2024/05/tbmq-2.webp" alt="" class="wp-image-4489" srcset="/blog/wp-content/uploads/2024/05/tbmq-2.webp 2409w, /blog/wp-content/uploads/2024/05/tbmq-2-300x126.webp 300w, /blog/wp-content/uploads/2024/05/tbmq-2-1024x428.webp 1024w, /blog/wp-content/uploads/2024/05/tbmq-2-768x321.webp 768w, /blog/wp-content/uploads/2024/05/tbmq-2-1536x643.webp 1536w, /blog/wp-content/uploads/2024/05/tbmq-2-2048x857.webp 2048w, /blog/wp-content/uploads/2024/05/tbmq-2-512x214.webp 512w, /blog/wp-content/uploads/2024/05/tbmq-2-920x385.webp 920w, /blog/wp-content/uploads/2024/05/tbmq-2-1600x669.webp 1600w, /blog/wp-content/uploads/2024/05/tbmq-2-1920x803.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-8 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" width="2409" height="1008" data-id="4489" src="/blog/wp-content/uploads/2024/05/tbmq-2.webp" alt="" class="wp-image-4489" srcset="/blog/wp-content/uploads/2024/05/tbmq-2.webp 2409w, /blog/wp-content/uploads/2024/05/tbmq-2-300x126.webp 300w, /blog/wp-content/uploads/2024/05/tbmq-2-1024x428.webp 1024w, /blog/wp-content/uploads/2024/05/tbmq-2-768x321.webp 768w, /blog/wp-content/uploads/2024/05/tbmq-2-1536x643.webp 1536w, /blog/wp-content/uploads/2024/05/tbmq-2-2048x857.webp 2048w, /blog/wp-content/uploads/2024/05/tbmq-2-512x214.webp 512w, /blog/wp-content/uploads/2024/05/tbmq-2-920x385.webp 920w, /blog/wp-content/uploads/2024/05/tbmq-2-1600x669.webp 1600w, /blog/wp-content/uploads/2024/05/tbmq-2-1920x803.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
