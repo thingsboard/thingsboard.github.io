@@ -8,7 +8,7 @@ Assuming you have completed the following guides and reviewed the articles liste
 * [ThingsBoard Edge Getting Started](/docs/{{docsPrefix}}getting-started/) article.
 * [Edge Rule Chain Templates](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) guide.
 
-**Important:** Please ensure that your **{{appPrefix}}** **Server** is up and running. Additionally, verify that **{{appPrefix}}** **Edge** is up, running, and connected to the **Edge** cloud.
+Important: Before proceeding, make sure that your **{{appPrefix}}}** (Server) is running. Also, verify that **{{appPrefix}}** (Edge) is active, operational, and connected to the **Edge** cloud
 
 If you have these prerequisites in place, let's proceed to the next steps.
 

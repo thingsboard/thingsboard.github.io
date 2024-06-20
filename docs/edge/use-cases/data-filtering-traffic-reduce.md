@@ -142,16 +142,16 @@ createDashboard:
         title: 'Click the "Edit Widget" icon in the upper right corner of the widget to add style.'
     12:
         image: /images/edge/use-cases/data-filtering/configure-dashboards-item-13.png
-        title: 'Select the "Appearance" tab.'
+        title: 'Select the "Appearance" tab to customize your dashboard widget.'
     13:
         image: /images/edge/use-cases/data-filtering/configure-dashboards-item-14.png
-        title: 'Input the maximum value as "10000".'
+        title: 'Enter "10000" as the maximum value'
     14:
         image: /images/edge/use-cases/data-filtering/configure-dashboards-item-15.png
         title: 'Input the unit title as "MLS". Click the "Add" button to apply changes.'
     15:
         image: /images/edge/use-cases/data-filtering/configure-dashboards-item-16.png
-        title: 'Input the unit title as "MLS". Click the "Add" button to apply changes.'
+        title: 'Dashboard widget successfully created.'
 
 
 ---
