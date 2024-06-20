@@ -1450,8 +1450,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
         }
 	</script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<script async>
-		let vh = window.innerHeight * 0.01;
+	<script async>let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 		window.addEventListener('resize', () => {
 			vh = window.innerHeight * 0.01;
@@ -1521,114 +1520,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 					document.body.classList.remove('body_when_burger');
 				}
 			});	
-		} 
-// 		let resultsBlock = document.createElement('div');
-// 		resultsBlock.innerHTML = '<p>Press Enter or <i><svg width="13" height="13" viewBox="0 0 13 13"><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"><\/path><\/svg><\/i><\/p>'; 
-// 		resultsBlock.classList.add('search-preview');
-// 		function OpenSearch(){
-// 			document.getElementById('gsc-i-id1').setAttribute('placeholder', 'Search...');
-// 			document.querySelector('.gsc-search-button svg').innerHTML = '<path d="M18,10a8,8,0,1,0-3.1,6.31l6.4,6.4,1.41-1.41-6.4-6.4A8,8,0,0,0,18,10Zm-8,6a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z"/><\/g><\/svg>'
-// 			document.querySelector('.gsc-search-button svg').setAttribute('viewBox', '0 0 24 24');
-// 			//Opening input box
-// 			document.getElementsByTagName('body')[0].classList.add('opened-search');
-// 			//Opening box with results-preview(Press Enter or search-icon), after typing in the input box
-// 			document.querySelector('#gsc-i-id1').addEventListener('input', function(){
-// 				if(document.querySelector('#gsc-i-id1').value.length > 0){
-// 					document.getElementsByTagName('body')[0].classList.add('opened-search-results');
-// 					setTimeout(function(){
-// 						document.getElementById('___gcse_1').style.display = 'block';
-// 					}, 20);
-// 				} else {
-// 					document.getElementsByTagName('body')[0].classList.remove('opened-search-results');
-// 					document.getElementById('___gcse_1').style.display = 'none';
-// 				}
-// 			})
-// 		}
-// 		function CloseSearch(){
-// 			function clickHandler(event){
-// 				if (!event.target.closest('.search-icon') && !event.target.closest('.gsc-input') && !event.target.closest('.gsc-search-button') && !event.target.closest('#___gcse_1')) {
-// 					document.getElementsByTagName('body')[0].classList.add('closed-search-animation');
-// 					setTimeout(function(){
-// 						document.getElementById('___gcse_1').style.display = 'none';
-// 						document.getElementsByTagName('body')[0].classList.remove('opened-search-results');
-// 						document.getElementsByTagName('body')[0].classList.remove('opened-search');
-// 						document.getElementsByTagName('body')[0].classList.remove('closed-search-animation');
-// 					}, 500)
-// 					document.querySelector('.gsst_a').click();
-// 					document.removeEventListener('click', clickHandler);
-// 				};
-// 			}
-// 			document.addEventListener('click', clickHandler);
-// 		};
-// 		function SearchResults(){
-// 			//Configuration of the results-preview(Press Enter or search-icon) behavior
-// 			document.getElementById('___gcse_1').appendChild(resultsBlock);
-// 			document.addEventListener( 'keyup', event => {
-// 				if(event.code === 'Enter' && document.querySelector('#gsc-i-id1').value.length > 0 && document.querySelector('.search-preview')){
-// 					document.querySelector('.search-preview').style.display = 'none';
-// 				};
-// 				if(event.code === 'Enter' && document.querySelector('#gsc-i-id1').value.length > 0 && document.getElementById('___gcse_1').style.display === 'none'){
-// 					document.getElementById('___gcse_1').style.display = 'block';
-// 					document.getElementsByTagName('body')[0].classList.add('opened-search-results');
-// 				};
-// 			});
-// 			document.querySelector('.gsst_a').addEventListener('click', function(){
-// 				document.querySelector('.search-preview').style.display = 'block';
-// 			});
-// 		};
-// 		function DesktopConfig(){
-// 			document.querySelector('.search-icon').addEventListener('click', function(){
-// 				OpenSearch();
-// 				SearchResults();
-// 				CloseSearch();
-// 			});
-// 		};
-// 		function CloseToEnableBugsConfig(){
-// 			document.getElementsByTagName('body')[0].classList.remove('opened-search-results');
-// 			document.getElementsByTagName('body')[0].classList.remove('opened-search');
-// 			document.getElementById('___gcse_1').style.display = 'none';
-// 		}
-// 		function MobileOpenSearch(){
-// 			document.getElementById('gsc-i-id1').setAttribute('placeholder', 'Search...');
-// 			document.querySelector('.gsc-search-button svg').innerHTML = '<path d="M18,10a8,8,0,1,0-3.1,6.31l6.4,6.4,1.41-1.41-6.4-6.4A8,8,0,0,0,18,10Zm-8,6a6,6,0,1,1,6-6A6,6,0,0,1,10,16Z"/><\/g><\/svg>'
-// 			document.querySelector('.gsc-search-button svg').setAttribute('viewBox', '0 0 24 24');
-// 			CloseToEnableBugsConfig();
-// 			document.querySelector('#gsc-i-id1').addEventListener('input', function(){
-// 				MobileCloseSearch();
-// 				document.getElementsByTagName('body')[0].classList.remove('close-search-box-mobile');
-// 				if(document.querySelector('#gsc-i-id1').value.length > 0){
-// 					document.getElementById('___gcse_1').style.display = 'block'
-// 					document.getElementsByTagName('body')[0].classList.add('search-box-mobile');
-// 					document.getElementById('___gcse_1').appendChild(resultsBlock);
-// 				}
-// 			});			
-// 		};
-// 		function MobileCloseSearch(){
-// 			//Closing input box if user clicked on the document, but not on the input and results boxes
-// 			function clickHandler(event){
-// 				if (!event.target.closest('.search-icon') && !event.target.closest('.gsc-input') && !event.target.closest('.gsc-search-button') && !event.target.closest('#___gcse_1')) {
-// 					document.getElementsByTagName('body')[0].classList.remove('closed-search-animation');
-// 					document.getElementsByTagName('body')[0].classList.add('close-search-box-mobile');
-// 					document.querySelector('.gsst_a').click();
-// 				};
-// 				document.removeEventListener('click', clickHandler);
-// 			};
-// 			document.addEventListener('click', clickHandler);
-// 		};
-// 		function MobileConfig(){
-// 			MobileOpenSearch();
-// 			SearchResults();
-// 		};
-// 		function differentSizesConfig(){
-// 			if(window.innerWidth > 1280){
-// 				DesktopConfig();
-// 			} else if(window.innerWidth < 1281){
-// 				MobileConfig();					
-// 			}
-// 		}
-// 		window.addEventListener('resize', differentSizesConfig);
-// 		window.addEventListener('load', differentSizesConfig);
-</script>
+		}</script>
 </header>
 
 		
