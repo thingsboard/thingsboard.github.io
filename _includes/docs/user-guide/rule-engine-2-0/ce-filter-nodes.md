@@ -1,5 +1,5 @@
 
-Filter Nodes are used for Message filtering and routing. You may find list of available nodes below.
+Filter Nodes are used for message filtering and routing. You may find list of available nodes below.
 
 * TOC
 {:toc}
@@ -16,15 +16,16 @@ See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overv
 **Usage example**
 
 Experienced platform users utilize [Asset Profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/) and configure specific rule chains per Asset Profile. 
-This is useful to automatically route messages the platform generates: Asset Created, Deleted, Attribute Updated, etc.
+This is useful to automatically route messages the platform generates: Entity Created, Entity Deleted, Attributes Updated, etc.
 But most of the messages are derived from the sensor data.
-Let's assume we have temperature sensors in the room assets with profiles: "Freezer Room" and "Boiler Room". We also take that there is a relation between room asset and temperature device of type "Contains". 
-The below rule chain will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler Room" rule chains.  
- 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
+Let's assume we have temperature sensors in the room assets with profiles: "Freezer Room" and "Boiler Room". 
+We also take that there is a relation between room asset and temperature device of type "Contains". 
+The below rule chain will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler Room" rule chains.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain. 
-Note that the "rule chain" nodes will point to not existing rule chains in your environment.
+Note that the [rule chain nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) will point to not existing rule chains in your environment.
 
 <br>
 
@@ -47,38 +48,40 @@ For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payloa
 {"mac": "7085C2F13DCD", "rssi": -25, "payload": "AABBCC"}
 ```
 
-Let's assume you have different beacon profiles - indoor air quality ("IAQ sensor") and leak sensors ("Leak sensor"). 
+Let's assume you have different beacon profiles - indoor air quality "IAQ sensor" Device Profile and leak sensors "Leak sensor" Device Profile. 
 The below rule chain will change the originator of the message from gateway to device and forward the message to the corresponding rule chain:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain. 
-Note that the "rule chain" nodes will point to not existing rule chains in your environment.
+Note that the [rule chain nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) will point to not existing rule chains in your environment.
 
 <br>
 
-## check alarm status
+## alarm status filter {#check-alarm-status}
 
-Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one of the specified statuses.
+Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/alarms/) statuses.
 
 **Configuration**
 
- * Alarm status filter - Contains list of alarms statuses. 
-  Available statuses: "Active Acknowledged", "Active Unacknowledged", "Cleared Acknowledged", "Cleared Unacknowledged".
+ * **Alarm status** - selection form with the statuses you want to filter by. Available statuses: **Active Acknowledged**, **Active Unacknowledged**, **Cleared Acknowledged**, **Cleared Unacknowledged"**.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
 
 **Output**
 
-Output connection types: "True" or "False".
+ * **True**: if the message matches any of the selected alarm statuses.
+ * **False**: if the message does not match any of the selected alarm statuses.
 
-**Example**
+**Usage example**
 
-The rule chain below will check that the acknowledged alarm is still active or already cleared.
+Consider a scenario where you want to process alarms that are currently active. 
+You can configure the rule node to filter for **Active Unacknowledged** and **Active Acknowledged** statuses. 
+This setup ensures that only alarms which are currently active, whether they have been acknowledged or not, are processed further.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
 
-You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) and import the rule chain.
+You may [download](https://gist.github.com/ShvaykaD/dce641880a78013a273f8f8c82fa7f1e#file-alarm-status-filter-example-json) and import the rule chain.
 
 <br>
 
@@ -91,41 +94,49 @@ User specifies message and/or metadata field names in the configuration.
 
 **Configuration**
 
- * Message field names - list of field names that should be present in the message;
- * Metadata field names - list of field names that should be present in the metadata;
- * 'Check that all specified fields are present' checkbox - check the presence of all (if checked) or of at least one field (if unchecked). 
+ * **Message field names** - list of field names that should be present in the message.
+ * **Metadata field names** - list of field names that should be present in the metadata.
+ * **Check that all specified fields are present** - slide toggle that enables checking the presence of all (if enabled) or of at least one field (if disabled). 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-fields-presence-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/check-fields-presence-configuration.png)
 
 **Output**
 
-Output connection types: "True" or "False".
+ * **True**: If all specified fields are present when **Check that all specified fields are present** toggle is enabled, 
+    or if at least one specified field is present when the toggle is disabled.
+ * **False**: If any of the specified fields are missing when the **Check that all specified fields are present** toggle is enabled, 
+    or if none of the specified fields are present when the toggle is disabled.
 
-**Example**
+**Usage example**
 
 See configuration screenshot. 
 
 <br>
 
-## check relation {#check-relation-filter-node}
+## check relation presence {#check-relation-filter-node}
 
 Checks the presence of the [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the originator of the message and other entities.
-If 'check relation to specific entity' is selected, one must specify a related entity. Otherwise, the rule node checks the presence of a relation to any entity that matches the direction and relation type criteria.
+If **Check relation to specific entity** is enabled, one must specify a related entity. 
+Otherwise, the rule node checks the presence of a relation to any entity that matches the direction and relation type criteria.
 
 **Configuration**
 
- * 'check relation to specific entity' checkbox enables configuration of specific entity used to check the relation.
- * Direction - configures direction of the relation. It is either 'From' or 'To'. The value corresponds to direction of the relation from the specific/any entity to the originator.
-   See example.
- * Relation type - arbitrary relation type. Default relation types are 'Contains' and 'Manages', but you may create relation of any type. 
+ * **Check relation to specific entity** - slide toggle that enables the configuration for specifying a particular entity used to check the relation. 
+   This configuration is required when the toggle is enabled.
+ * **Direction** - configures the direction of the relation. It is either **From originator** or **To originator**. 
+ > **Note:** The value corresponds to the direction of the relation from the originator to the specific/any entity or from the specific/any entity to the originator.
+ * **Relation type** - arbitrary relation type. Default relation types are "Contains" and "Manages", but you may create relation of any type. 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
 
 **Output**
 
-Output connection types: "True" or "False".
+ * **True**: If the specified relation to the specific entity is present when the **Check relation to specific entity** toggle is enabled, 
+   or if the specified relation to any entity is present when the toggle is disabled.
+ * **False**: If the specified relation to the specific entity is not present when the **Check relation to specific entity** toggle is enabled, 
+   or if the specified relation to any entity is not present when the toggle is disabled.
 
-**Example**
+**Usage example**
 
 Let's assume you have temperature sensor inside the office and also inside the warehouses. 
 During the data processing, you may want to know either the sensor is located in the office or in the warehouse.
@@ -134,22 +145,23 @@ See configuration screenshot to learn how to configure the rule node for this sp
 
 <br>
 
-## entity type {#originator-type-filter-node}
+## entity type filter {#originator-type-filter-node}
 
-Filter incoming messages by the type of message originator entity. 
+Filter incoming messages by type of message originator entity. 
 Checks that the entity type of the incoming message originator matches one of the values specified in the filter.
 
 **Configuration**
 
- * Originator types filter - list of entity types: Device, Asset, User, etc.
+ * **Select entity types** - list of entity types to filter messages: "Device", "Asset", "User", etc.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/entity-type-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-configuration.png)
 
 **Output**
 
-Output connection types: "True" or "False".
+ * **True**: If the message originator type matches one of the selected entity types.
+ * **False**: If the message originator type does not match any of the selected entity types.
 
-**Example**
+**Usage example**
 
 See configuration screenshot.
 
@@ -163,33 +175,34 @@ Switch incoming messages by the type of message originator entity.
 
 The output connection of the rule node corresponds to the entity type of the message originator. For example: "Device", "Asset", "User", etc.
 
-**Example**
+**Usage example**
 
 Let's assume you have messages from different entities processed in one rule chain. 
 You may want to split the message flow based on entity type.
 See below:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
 <br>
 
-## message type {#message-type-filter-node}
+## message type filter {#message-type-filter-node}
 
 Filter incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types. 
-Checks that the message type of the incoming message matches one of the values specified in the filter.
+Checks that the message type of the incoming message matches one of the values specified in the configuration.
 
 **Configuration**
 
- * Message types filter - list of [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) message types. 
+ * **Select message types** - list of [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) message types. 
    Custom message types are supported as well.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-type-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/message-type-configuration.png)
 
 **Output**
 
-Output connection types: "True" or "False".
+* **True**: If the incoming message type matches one of the selected message types.
+* **False**: If the incoming message type does not match any of the selected message types.
 
-**Example**
+**Usage example**
 
 See configuration screenshot.
 
@@ -208,13 +221,13 @@ to the [**message type**](#message-type) configured with required routing logic.
 
 The output connection of the rule node corresponds to the type of the message. For example: "Device", "Asset", "User", etc.
 
-**Example**
+**Usage example**
 
 Let's assume you have messages with different types processed in one rule chain. 
 You may want to split the message flow based on message type.
 See below:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
 
 <br>
 
@@ -231,13 +244,15 @@ TBEL/JavaScript function receive 3 input parameters:
 - <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
 - <code>msgType</code> - is a message type, string.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/script-filter-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/script-filter-node-configuration.png)
 
 **Output**
 
-Output connection types: "True" or "False".
+ * **True**: If the script evaluation returns <code>true</code>.
+ * **False**: If the script evaluation returns <code>false</code>.
+ * **Failure**: If the script evaluation fails.
 
-**Examples**
+**Usage example**
  
 Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
 Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.deviceType === 'DHT11';</code><br> 
@@ -269,7 +284,7 @@ You can see the real life examples, where this node is used, in the next tutoria
 
 ## switch {#switch-node}
 
-Routes incoming message to one OR multiple output connections. 
+Routes incoming message to one or multiple output connections. 
 Node executes configured [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or JavaScript function that returns array of strings (connection names).
 
 **Configuration**
@@ -280,17 +295,17 @@ TBEL/JavaScript function receive 3 input parameters:
 - <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
 - <code>msgType</code> - is a message type, string.
 
-The script should return **_an array of next Relation names_** where Message should be routed.
-If returned array is empty - message will not be routed to any Node and discarded.
+The script should return an array of node connection names where incoming message should be routed.
+If returned array is empty - message will not be routed to any node and discarded.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-switch-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-configuration.png)
 
 **Output**
 
 The output connection of the rule node corresponds to the result of the script execution. For example: "Low Temperature Telemetry", "Normal Temperature Telemetry", "Idle State", etc.
 See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
 
-**Examples**
+**Usage example**
 
 Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
 Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br> 
@@ -318,7 +333,7 @@ return [];
 ```
 {: .copy-code}
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-switch.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 
 TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
@@ -331,46 +346,64 @@ Extracts latitude and longitude parameters from the incoming message and checks 
 
 **Configuration**
 
- * Latitude key name - name of the message field that contains location latitude;
- * Longitude key name - name of the message field that contains location longitude;
- * Perimeter type - Polygon or Circle;
- * Fetch perimeter from message metadata - checkbox to load perimeter from message metadata; 
-   Enable if your perimeter is specific to device/asset and you store it as device/asset attribute;
- * Perimeter key name - name of the metadata key that stores perimeter information;
- * For Polygon perimeter type:  
-    * Polygon definition - string that contains array of coordinates in the following format: [[lat1, lon1],[lat2, lon2],[lat3, lon3], ... , [latN, lonN]]
- * For Circle perimeter type:      
-    * Center latitude - latitude of the circle perimeter center;
-    * Center longitude - longitude of the circle perimeter center;
-    * Range - value of the circle perimeter range, double-precision floating-point value;
-    * Range units - one of: Meter, Kilometer, Foot, Mile, Nautical Mile;
+Since rule node have multiple configuration sections. We decided to separate configuration fields into the same sections here
+
+**Configuration: Coordinate field names**
+
+ * **Latitude field name** - name of the message field that contains location latitude.
+ * **Longitude field name** - name of the message field that contains location longitude.
+
+> **Note:** Rule node tries to retrieve the specified fields from the message. If they are not present, it will look them up in the message metadata.
+
+**Configuration: Geofence configuration**
+ * **Perimeter type** - **Polygon** or **Circle**.
+ * **Fetch perimeter information from metadata** - slide toggle to enable/disable loading perimeter from message metadata. 
+   Enable if your perimeter is specific to the entity(device/asset/etc) and you store it as [entity attribute](/docs/{{docsPrefix}}user-guide/attributes).
+ * **Perimeter key name** - name of the metadata key that stores perimeter information.
+ * For **Polygon** perimeter type:  
+    * **Polygon definition** - string that contains array of coordinates in the following format: <code>[[lat1, lon1],[lat2, lon2],[lat3, lon3], ... , [latN, lonN]]</code>.
+ * For **Circle** perimeter type:      
+    * **Center latitude** - latitude of the circle perimeter center;
+    * **Center longitude** - longitude of the circle perimeter center;
+    * **Range** - value of the circle perimeter range, double-precision floating-point value;
+    * **Range units** - one of: Meter, Kilometer, Foot, Mile, Nautical Mile.
     
-Rule node will use default metadata key names, if the "Fetch perimeter from message metadata" is enabled and "Perimeter key name" is not configured.
+> **Note:** Rule node will use default metadata key names, if the **Fetch perimeter from message metadata** is enabled and **Perimeter key name** is not configured.
 Default metadata key names for polygon perimeter type is "perimeter". Default metadata key names for circle perimeter are: "centerLatitude", "centerLongitude", "range", "rangeUnit".
 
 Structure of the circle perimeter definition (stored in server-side attribute, for example):
 
 ```json
-{"latitude":  48.198618758582384, "longitude": 24.65322245153503, "radius":  100.0, "radiusUnit": "METER" }
+{"latitude": 48.198618758582384, "longitude": 24.65322245153503, "radius": 100.0, "radiusUnit": "METER"}
 ```
 
 Available radius units: METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE;
     
 **Output**
 
-Output connection types: "True" or "False". 
-The "Failure" connection will to be used when: a) incoming message has no configured latitude or longitude key in data or metadata or b) missing perimeter definition;     
+ * **True** - if coordinate from message inside the configured geofence.
+ * **False** - if coordinate from message outside the configured geofence. 
+ * **Failure** - connection will be used if: 
+   * incoming message has no configured latitude or longitude key in message or message metadata;
+   * missing perimeter definition.     
 
-**Examples**
+<br>
 
-*Static circle perimeter*
+**Usage example: static circle perimeter**
 
 Let's assume you would like to check that the location of the device is within 100 meters from the Ukraine's Independence Monument, located in the center of Kyiv.
-The coordinates of the monument are the following: latitude = 50.4515652, longitude = 0.5236963. The configuration of the rule node is quite simple:
+The coordinates of the monument are the following: 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
+ * latitude: <code>50.4515652</code>; 
+ * longitude: <code>0.5236963</code>.
 
-*Static polygon perimeter*
+The configuration of the rule node is quite simple:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
+
+<br>
+
+**Usage example: static polygon perimeter**
 
 Let's assume a simple livestock location monitoring use case. Let's configure the rule node to monitor that the sheep is within area perimeter:
 
@@ -380,35 +413,45 @@ We will use static polygon coordinates of the farm field:
 [[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]
 ```  
 
-You may test that rule node returns 'True' if you submit the following coordinates in the message: 
+You may test that rule node returns **True** if you submit the following coordinates in the message: 
 
 ```json
-{ latitude: 48.198618758582384, longitude: 24.65322245153503 }
+{"latitude": 48.198618758582384, "longitude": 24.65322245153503}
 ```
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
 
-*Dynamic circle/polygon perimeter*
+<br>
+
+**Usage example: dynamic circle/polygon perimeter**
 
 Let's review more complex livestock location monitoring case, where you may have sheeps located in different farms.
-Let's assume we have created two farms: Farm A and Farm B. Each livestock tracker device is related either to Farm A or Farm B asset.
+Let's assume we have created two farms: "Farm A" and "Farm B". Each livestock tracker device is related either to "Farm A" or "Farm B" asset.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
 
-We will configure server-side attribute called "perimeter" with the JSON value: "[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]";
+<br>
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
+We will configure server-side attribute called "perimeter" with the JSON value: 
 
-The below rule chain will fetch the attribute from the related asset (Farm A) and use it in the geofencing node:
+```json
+[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]
+```
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
+
+<br>
+
+The below rule chain will fetch the attribute from the related asset "Farm A" and use it in the geofencing node:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
+
+<br>
 
 Rule node configuration is fairly simple. Please note that perimeter key name is without any prefix:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) and import the rule chain. 
-Note that the "rule chain" nodes will point to not existing device in the "Sheep Tracker Generator" node. 
+Note that the "Sheep Tracker Generator" [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) will point to not existing device. 
 You will need to provision device and asset to replicate the example.
-
-<br>

@@ -1,4 +1,4 @@
-* TOC 
+* TOC
 {:toc}
 
 ####  Server common parameters
@@ -19,7 +19,7 @@
 		<tr>
 			<td>server.port</td>
 			<td>HTTP_BIND_PORT</td>
-			<td>8083</td>
+			<td>8080</td>
 			<td> Server bind port</td>
 		</tr>
 		<tr>
@@ -518,6 +518,12 @@
 			<td>86400</td>
 			<td> Interval for checking refresh token expiration in seconds(by default, 1 day).</td>
 		</tr>
+		<tr>
+			<td>mail.per_tenant_rate_limits</td>
+			<td>MAIL_PER_TENANT_RATE_LIMITS</td>
+			<td></td>
+			<td> Rate limits for sending mails per tenant. As example for 1000 per minute and 10000 per hour is "1000:60,10000:3600"</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -589,7 +595,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.6.3</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.7</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
@@ -1331,6 +1337,30 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.customers.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CUSTOMERS_TTL</td>
+			<td>1440</td>
+			<td> Customer cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.customers.maxSize</td>
+			<td>CACHE_SPECS_CUSTOMERS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.users.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_USERS_TTL</td>
+			<td>1440</td>
+			<td> User cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.users.maxSize</td>
+			<td>CACHE_SPECS_USERS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.specs.entityViews.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_ENTITY_VIEWS_TTL</td>
 			<td>1440</td>
@@ -1615,6 +1645,30 @@
 		<tr>
 			<td>cache.specs.alarmTypes.maxSize</td>
 			<td>CACHE_SPECS_ALARM_TYPES_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.mobileAppSettings.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_TTL</td>
+			<td>1440</td>
+			<td> Mobile application cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.mobileAppSettings.maxSize</td>
+			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.mobileSecretKey.timeToLiveInMinutes</td>
+			<td>CACHE_MOBILE_SECRET_KEY_TTL</td>
+			<td>2</td>
+			<td> QR secret key cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.mobileSecretKey.maxSize</td>
+			<td>CACHE_MOBILE_SECRET_KEY_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
@@ -2621,7 +2675,7 @@
 			<td>transport.api_enabled</td>
 			<td>TB_TRANSPORT_API_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable http/mqtt/coap transport protocols (has higher priority than certain protocol's 'enabled' property)</td>
+			<td> Enable/disable http/mqtt/coap/lwm2m transport protocols (has higher priority than certain protocol's 'enabled' property)</td>
 		</tr>
 		<tr>
 			<td>transport.log.enabled</td>
@@ -2701,6 +2755,12 @@
 			<td>MQTT_TIMEOUT</td>
 			<td>10000</td>
 			<td> MQTT processing timeout in milliseconds</td>
+		</tr>
+		<tr>
+			<td>transport.mqtt.disconnect_timeout</td>
+			<td>MQTT_DISCONNECT_TIMEOUT</td>
+			<td>1000</td>
+			<td> MQTT disconnect timeout in milliseconds. The time to wait for the client to disconnect after the server sends a disconnect message.</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.msg_queue_size_per_device_limit</td>
@@ -2829,18 +2889,6 @@
 			<td> Enable/disable CoAP transport protocol.</td>
 		</tr>
 		<tr>
-			<td>transport.coap.bind_address</td>
-			<td>COAP_BIND_ADDRESS</td>
-			<td>0.0.0.0</td>
-			<td> CoAP bind-address</td>
-		</tr>
-		<tr>
-			<td>transport.coap.bind_port</td>
-			<td>COAP_BIND_PORT</td>
-			<td>5683</td>
-			<td> CoAP bind port</td>
-		</tr>
-		<tr>
 			<td>transport.coap.timeout</td>
 			<td>COAP_TIMEOUT</td>
 			<td>10000</td>
@@ -2863,117 +2911,6 @@
 			<td>COAP_PAGING_TRANSMISSION_WINDOW</td>
 			<td>10000</td>
 			<td> Default PSM Activity Timer if not specified in device profile</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.enabled</td>
-			<td>COAP_DTLS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/disable DTLS 1.2 support</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.retransmission_timeout</td>
-			<td>COAP_DTLS_RETRANSMISSION_TIMEOUT_MS</td>
-			<td>9000</td>
-			<td> RFC7925_RETRANSMISSION_TIMEOUT_IN_MILLISECONDS = 9000</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.bind_address</td>
-			<td>COAP_DTLS_BIND_ADDRESS</td>
-			<td>0.0.0.0</td>
-			<td> CoAP DTLS bind-address</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.bind_port</td>
-			<td>COAP_DTLS_BIND_PORT</td>
-			<td>5684</td>
-			<td> CoAP DTLS bind port</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.connection_id_length</td>
-			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
-			<td></td>
-			<td> Server DTLS credentials
- CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2
- Default: off
- Control usage of DTLS connection ID length (CID).
- - 'off' to deactivate it.
- - 'on' to activate Connection ID support (same as CID 0 or more 0).
- - A positive value defines generated CID size in bytes.
- - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
- - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
- - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.type</td>
-			<td>COAP_DTLS_CREDENTIALS_TYPE</td>
-			<td>PEM</td>
-			<td> Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.pem.cert_file</td>
-			<td>COAP_DTLS_PEM_CERT</td>
-			<td>coapserver.pem</td>
-			<td> Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.pem.key_file</td>
-			<td>COAP_DTLS_PEM_KEY</td>
-			<td>coapserver_key.pem</td>
-			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in the server certificate file;</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.pem.key_password</td>
-			<td>COAP_DTLS_PEM_KEY_PASSWORD</td>
-			<td>server_key_password</td>
-			<td> Server certificate private key password (optional)</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.keystore.type</td>
-			<td>COAP_DTLS_KEY_STORE_TYPE</td>
-			<td>JKS</td>
-			<td> Type of the key store (JKS or PKCS12)</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.keystore.store_file</td>
-			<td>COAP_DTLS_KEY_STORE</td>
-			<td>coapserver.jks</td>
-			<td> Path to the key store that holds the SSL certificate</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.keystore.store_password</td>
-			<td>COAP_DTLS_KEY_STORE_PASSWORD</td>
-			<td>server_ks_password</td>
-			<td> Password used to access the key store</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.keystore.key_alias</td>
-			<td>COAP_DTLS_KEY_ALIAS</td>
-			<td>serveralias</td>
-			<td> Key alias</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.credentials.keystore.key_password</td>
-			<td>COAP_DTLS_KEY_PASSWORD</td>
-			<td>server_key_password</td>
-			<td> Password used to access the key</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.x509.skip_validity_check_for_client_cert</td>
-			<td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
-			<td>false</td>
-			<td> Skip certificate validity check for client certificates.</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.x509.dtls_session_inactivity_timeout</td>
-			<td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
-			<td>86400000</td>
-			<td> Inactivity timeout of DTLS session. Used to clean cache</td>
-		</tr>
-		<tr>
-			<td>transport.coap.dtls.x509.dtls_session_report_timeout</td>
-			<td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
-			<td>1800000</td>
-			<td> Interval of periodic eviction of the timed-out DTLS sessions</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.enabled</td>
@@ -3348,6 +3285,147 @@
 			<td>TB_TRANSPORT_STATS_PRINT_INTERVAL_MS</td>
 			<td>60000</td>
 			<td> Interval of transport statistics logging</td>
+		</tr>
+	</tbody>
+</table>
+
+
+####  CoAP server parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>coap.enabled</td>
+			<td>COAP_SERVER_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable coap server.</td>
+		</tr>
+		<tr>
+			<td>coap.bind_address</td>
+			<td>COAP_BIND_ADDRESS</td>
+			<td>0.0.0.0</td>
+			<td> CoAP bind address</td>
+		</tr>
+		<tr>
+			<td>coap.bind_port</td>
+			<td>COAP_BIND_PORT</td>
+			<td>5683</td>
+			<td> CoAP bind port</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.enabled</td>
+			<td>COAP_DTLS_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable DTLS 1.2 support</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.retransmission_timeout</td>
+			<td>COAP_DTLS_RETRANSMISSION_TIMEOUT_MS</td>
+			<td>9000</td>
+			<td> RFC7925_RETRANSMISSION_TIMEOUT_IN_MILLISECONDS = 9000</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.bind_address</td>
+			<td>COAP_DTLS_BIND_ADDRESS</td>
+			<td>0.0.0.0</td>
+			<td> CoAP DTLS bind address</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.bind_port</td>
+			<td>COAP_DTLS_BIND_PORT</td>
+			<td>5684</td>
+			<td> CoAP DTLS bind port</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.connection_id_length</td>
+			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
+			<td></td>
+			<td> CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2
+ Default: off
+ Control usage of DTLS connection ID length (CID).
+ - 'off' to deactivate it.
+ - 'on' to activate Connection ID support (same as CID 0 or more 0).
+ - A positive value defines generated CID size in bytes.
+ - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
+ - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
+ - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.type</td>
+			<td>COAP_DTLS_CREDENTIALS_TYPE</td>
+			<td>PEM</td>
+			<td> Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.pem.cert_file</td>
+			<td>COAP_DTLS_PEM_CERT</td>
+			<td>coapserver.pem</td>
+			<td> Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.pem.key_file</td>
+			<td>COAP_DTLS_PEM_KEY</td>
+			<td>coapserver_key.pem</td>
+			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in the server certificate file;</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.pem.key_password</td>
+			<td>COAP_DTLS_PEM_KEY_PASSWORD</td>
+			<td>server_key_password</td>
+			<td> Server certificate private key password (optional)</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.keystore.type</td>
+			<td>COAP_DTLS_KEY_STORE_TYPE</td>
+			<td>JKS</td>
+			<td> Type of the key store (JKS or PKCS12)</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.keystore.store_file</td>
+			<td>COAP_DTLS_KEY_STORE</td>
+			<td>coapserver.jks</td>
+			<td> Path to the key store that holds the SSL certificate</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.keystore.store_password</td>
+			<td>COAP_DTLS_KEY_STORE_PASSWORD</td>
+			<td>server_ks_password</td>
+			<td> Password used to access the key store</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.keystore.key_alias</td>
+			<td>COAP_DTLS_KEY_ALIAS</td>
+			<td>serveralias</td>
+			<td> Key alias</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.credentials.keystore.key_password</td>
+			<td>COAP_DTLS_KEY_PASSWORD</td>
+			<td>server_key_password</td>
+			<td> Password used to access the key</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.x509.skip_validity_check_for_client_cert</td>
+			<td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+			<td>false</td>
+			<td> Skip certificate validity check for client certificates.</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.x509.dtls_session_inactivity_timeout</td>
+			<td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
+			<td>86400000</td>
+			<td> Inactivity timeout of DTLS session. Used to cleanup cache</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.x509.dtls_session_report_timeout</td>
+			<td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
+			<td>1800000</td>
+			<td> Interval of periodic eviction of the timed-out DTLS sessions</td>
 		</tr>
 	</tbody>
 </table>
@@ -3925,6 +4003,30 @@
 			<td> Example of specific consumer properties value per topic for VC</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Consumer properties for Housekeeper tasks topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key.value</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_MAX_POLL_RECORDS</td>
+			<td>1</td>
+			<td> Amount of records to be returned in a single poll. For Housekeeper tasks topic, we should consume messages (tasks) one by one</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.reprocessing.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Consumer properties for Housekeeper reprocessing topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.reprocessing.key.value</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_REPROCESSING_MAX_POLL_RECORDS</td>
+			<td>1</td>
+			<td> Amount of records to be returned in a single poll. For Housekeeper reprocessing topic, we should consume messages (tasks) one by one</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.other-inline</td>
 			<td>TB_QUEUE_KAFKA_OTHER_PROPERTIES</td>
 			<td></td>
@@ -3933,44 +4035,56 @@
 		<tr>
 			<td>queue.kafka.topic-properties.rule-engine</td>
 			<td>TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Rule Engine</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.core</td>
 			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.transport-api</td>
 			<td>TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for Transport Api topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.notifications</td>
 			<td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Notifications topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.js-executor</td>
 			<td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
 			<td> Kafka properties for JS Executor topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.ota-updates</td>
 			<td>TB_QUEUE_KAFKA_OTA_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for OTA updates topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
 			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Version Control topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.housekeeper</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td> Kafka properties for Housekeeper tasks topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.housekeeper-reprocessing</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_REPROCESSING_TOPIC_PROPERTIES</td>
+			<td>retention.ms:7776000000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Housekeeper reprocessing topic; retention.ms is set to 90 days; partitions is set to 1 since only one reprocessing service is running at a time</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -4363,6 +4477,12 @@
 			<td> Timeout for processing a message pack by Core microservices</td>
 		</tr>
 		<tr>
+			<td>queue.core.consumer-per-partition</td>
+			<td>TB_QUEUE_CORE_CONSUMER_PER_PARTITION</td>
+			<td>true</td>
+			<td> Enable/disable a separate consumer per partition for Core queue</td>
+		</tr>
+		<tr>
 			<td>queue.core.ota.topic</td>
 			<td>TB_QUEUE_CORE_OTA_TOPIC</td>
 			<td>tb_ota_package</td>
@@ -4397,6 +4517,62 @@
 			<td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
 			<td>60000</td>
 			<td> Statistics printing interval for Core microservices</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.topic</td>
+			<td>TB_HOUSEKEEPER_TOPIC</td>
+			<td>tb_housekeeper</td>
+			<td> Topic name for Housekeeper tasks</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.reprocessing-topic</td>
+			<td>TB_HOUSEKEEPER_REPROCESSING_TOPIC</td>
+			<td>tb_housekeeper.reprocessing</td>
+			<td> Topic name for Housekeeper tasks to be reprocessed</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.poll-interval-ms</td>
+			<td>TB_HOUSEKEEPER_POLL_INTERVAL_MS</td>
+			<td>500</td>
+			<td> Poll interval for topics related to Housekeeper</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.task-processing-timeout-ms</td>
+			<td>TB_HOUSEKEEPER_TASK_PROCESSING_TIMEOUT_MS</td>
+			<td>120000</td>
+			<td> Timeout in milliseconds for task processing. Tasks that fail to finish on time will be submitted for reprocessing</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.disabled-task-types</td>
+			<td>TB_HOUSEKEEPER_DISABLED_TASK_TYPES</td>
+			<td></td>
+			<td> Comma-separated list of task types that shouldn't be processed. Available task types:
+ DELETE_ATTRIBUTES, DELETE_TELEMETRY (both DELETE_LATEST_TS and DELETE_TS_HISTORY will be disabled),
+ DELETE_LATEST_TS, DELETE_TS_HISTORY, DELETE_EVENTS, DELETE_ALARMS, UNASSIGN_ALARMS</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.task-reprocessing-delay-ms</td>
+			<td>TB_HOUSEKEEPER_TASK_REPROCESSING_DELAY_MS</td>
+			<td>3000</td>
+			<td> Delay in milliseconds between tasks reprocessing</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.max-reprocessing-attempts</td>
+			<td>TB_HOUSEKEEPER_MAX_REPROCESSING_ATTEMPTS</td>
+			<td>10</td>
+			<td> Maximum amount of task reprocessing attempts. After exceeding, the task will be dropped</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.stats.enabled</td>
+			<td>TB_HOUSEKEEPER_STATS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable statistics for Housekeeper</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.stats.print-interval-ms</td>
+			<td>TB_HOUSEKEEPER_STATS_PRINT_INTERVAL_MS</td>
+			<td>60000</td>
+			<td> Statistics printing interval for Housekeeper</td>
 		</tr>
 		<tr>
 			<td>queue.vc.topic</td>
@@ -4704,6 +4880,43 @@
 			<td></td>
 			<td>'${METRICS_ENDPOINTS_EXPOSE:info}'</td>
 			<td> Expose metrics endpoint (use value 'prometheus' to enable prometheus metrics).</td>
+		</tr>
+		<tr>
+			<td>management.health.elasticsearch.enabled</td>
+			<td></td>
+			<td>"false"</td>
+			<td> Enable the org.springframework.boot.actuate.elasticsearch.ElasticsearchRestClientHealthIndicator.doHealthCheck</td>
+		</tr>
+	</tbody>
+</table>
+
+
+####  Mobile application settings for Thingsboard mobile application
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>mobileApp.domain</td>
+			<td>TB_MOBILE_APP_DOMAIN</td>
+			<td>demo.thingsboard.io</td>
+			<td> Server domain name for Thingsboard Live mobile application</td>
+		</tr>
+		<tr>
+			<td>mobileApp.googlePlayLink</td>
+			<td>TB_MOBILE_APP_GOOGLE_PLAY_LINK</td>
+			<td>https://play.google.com/store/apps/details?id=org.thingsboard.demo.app</td>
+			<td> Link to Google Play store for Thingsboard Live mobile application</td>
+		</tr>
+		<tr>
+			<td>mobileApp.appStoreLink</td>
+			<td>TB_MOBILE_APP_APP_STORE_LINK</td>
+			<td>https://apps.apple.com/us/app/thingsboard-live/id1594355695</td>
+			<td> Link to App Store for Thingsboard Live mobile application</td>
 		</tr>
 	</tbody>
 </table>
