@@ -6,7 +6,7 @@
 
 ### MQTT basics
 
-[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol,probably making it the most suitable for various IoT devices. 
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol, probably making it the most suitable for various IoT devices. 
 You can find more information about MQTT [here](https://mqtt.org/).
 
 ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of [configurable](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) topics.

@@ -1,5 +1,5 @@
-To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
-ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
+To connect "In-vehicle monitoring system" to the **{{appPrefix}}** **Edge** you need to get device credentials first.
+**{{appPrefix}}** supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
 Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL**.
 
@@ -14,9 +14,9 @@ Before running the scripts, please modify **mqtt-generator.py** accordingly:
 
 - Replace **YOUR_ACCESS_TOKEN** with **In-vehicle monitoring system** device access token copied from the steps above. 
 
-- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
+- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard **Edge** host. For example, **localhost**.
 
-- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard Edge MQTT port. For example, **11883** or **1883**.
+- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard **Edge** MQTT port. For example, **11883** or **1883**.
 
 Open the terminal and install MQTT Python library:
 ```bash
@@ -29,7 +29,7 @@ Go to the folder that contains Python script and launch an application by this c
 python mqtt-generator.py
 ```
 
-Open ThingsBoard **Edge** UI and verify that device successfully receives telemetry:
+Open **{{appPrefix}}** **Edge** UI and verify that device successfully receives telemetry:
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetryEdge" showListImageTitles="true" %}
 

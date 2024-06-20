@@ -1,4 +1,4 @@
-First we will create a new device "In-vehicle monitoring system" on the edge.
+To begin, let's create a new device named 'In-vehicle monitoring system' on the **Edge**.
 
 Please open ThingsBoard **Edge** UI using the URL **EDGE_URL**.
 
