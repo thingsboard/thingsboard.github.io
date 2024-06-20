@@ -8,6 +8,14 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.7.0 (Jun 18, 2024) {#v37}
+
+**Major** release with everything from [TB CE v3.7](/docs/reference/releases/#v37):
+
+* [#10548](https://github.com/thingsboard/thingsboard/pull/10548) Add support for notification center by @AndriiLandiak;
+* [#10239](https://github.com/thingsboard/thingsboard/pull/10239) Sync up OAuth2 configuration by @AndriiLandiak;
+* [#10471](https://github.com/thingsboard/thingsboard/pull/10471) YAML configuration for telemetry message size limit with Edge Notification by @AndriiLandiak;
+
 ## v3.6.4 (Apr 11, 2024) {#v364}
 
 **Minor** release with everything from [TB CE v3.6.4](/docs/reference/releases/#v364).
