@@ -245,34 +245,36 @@ You can see the real life example, where this node is used, in the following tut
 * [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/)
 * [Using queues for synchronization](/docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/)
 
-##### Originator fields
+## originator fields {#originator-fields}
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Adds fields from message originator to the message or its metadata. Available since **v2.0.1**.
 
+**Configuration**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields.png)
+ - **Originator fields mapping** - list of mappings between **Source field** and **Target key**.
+    - **Source field** - field that should be fetched.
+    - **Target key** - key that will store fetched value in the outgoing message or its metadata.
 
-Node fetches fields values of the Message Originator entity and adds them into Message Metadata. 
-Administrator can configure the mapping between field name and Metadata attribute name.
-If specified field is not part of Message Originator entity fields it will be ignored.
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-mapping.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-config.png)
+> **Note:** if configured mapping contains fields that are not available for originator's entity type (for example, `phone` when originator is a device), then such mapping will be ignored.
 
-Following Message Originator types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule Chain**.
+- **Add mapped originator fields to** - controls whether the mapped fields should be added to the message or its metadata.
 
-**Failure** chain is used If unsupported Originator type found, otherwise - **Success** chain.
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-fetch-to.png)
 
-If field value was not found, it is not added into Message Metadata and still routed via **Success** chain.
+- **Skip empty fields** - if enabled, fields with no value or an empty string will not be added in the outgoing message or its metadata. Supports [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 
-Outbound Message Metadata will contain configured attributes only if they exist.
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-skip-empty-fields.png)
 
-To access fetched attributes in other nodes you can use this template '<code>metadata.devType</code>'
+> **Note:** following message originator entity types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule chain**, **Entity view** and **Edge**.
+
+**Output**
+ - **Success** 
+   - if message originator's fields were successfully fetched and added into a message or its metadata.
+ - **Failure** 
+   - if message originator's entity type is not allowed.
+   - if unexpected error occurred during message processing.
 
 ## related entity data {#related-attributes}
 
