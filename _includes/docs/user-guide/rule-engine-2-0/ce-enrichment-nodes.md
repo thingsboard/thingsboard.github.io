@@ -12,12 +12,13 @@ Delta calculation is done in scope of the message originator, e.g. device, asset
 
 **Configuration**
 
-* **Input value key** - specifies the key that will be used to calculate the delta.
-* **Output value key** - specifies the key that will store the delta value in the enriched message.
-* **Number of digits after floating point** - precision of the delta calculation. Optional.
+* **Input value key** - key that will be used to calculate the delta.
+* **Output value key** - key that will store the delta value in the enriched message.
+* **Number of digits after floating point** - precision of the delta calculation. Optional, if provided rounds calculated delta to specified number of digits.
 * **Tell Failure if delta is negative** - if enabled, fails message processing if delta value is negative.
 * **Add the time difference between "Input value key" readings** - if enabled, rule node will compute the time difference between the current and previous telemetry reading timestamps.
-  * **Period value key** - specifies the key that will store the timestamp delta value in the enriched message. Required only if **Add the time difference between "Input value key" readings** is enabled.
+  * **Period value key** - key that will store the time difference in the enriched message. 
+    Required only if **Add the time difference between "Input value key" readings** is enabled.
 * **Exclude zero deltas from outbound message** - if enabled, the **Output value key** will be included in the outgoing message only when its value is non-zero.
 * **Use caching** - if enabled, **Input value key** value will be cached in memory to improve performance. 
     > **Note:** The cache will not be updated if the **Input value key** value is modified elsewhere in the system or by other rule nodes.
@@ -63,18 +64,18 @@ Identifies the message originator's customer and enriches the outbound message w
 
 **Configuration**
 
-* **Attributes/Latest telemetry** - slide toggle to select whether to add attributes or the latest telemetry data to the message.
+* **Customer's attributes/latest telemetry mapping** - controls whether to add attributes or the latest telemetry data to the message.
 
-  * **Source attribute/telemetry key** - key that will be used to search for and retrieve the attribute/latest telemetry value from the customer.
-  * **Target key** - key that will store the retrieved value in the outbound message.
+  * **Source attribute/telemetry key** - key that will be used to retrieve the attribute/latest telemetry value from the customer.
+  * **Target key** - key that will store the retrieved value in the outgoing message.
 
   > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 
-* **Add mapped attributes to** - an option selector that allows the user to choose whether the mapped attributes or latest telemetry should be added to the **Message** or **Metadata**.
+* **Add mapped attributes to** - controls whether the mapped **_Attributes/Latest telemetry_** should be added to the **_Message_** or **_Metadata_**.
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
 
-Following message originator types are allowed: **Customer**, **User**, **Asset**, **Device**.
+> **Note:** Following message originator types are allowed: **Customer**, **User**, **Asset**, **Device**.
 
 **Output connections**
 
@@ -140,21 +141,22 @@ You can see the real life example, where this node is used, in the tutorial [Sen
 ## related device attributes {#device-attributes}
 
 Finds related device of the message originator entity using configured [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query and adds [attributes](/docs/user-guide/attributes/) 
-or [latest telemetry](/docs/user-guide/telemetry/) values into the message or the message metadata. Available from **v2.0**.
+or [latest telemetry](/docs/user-guide/telemetry/) values into the message or the message metadata.
 
 **Configuration**
 
-Since rule node have multiple configuration sections. We decided to separate configuration fields into the same sections here.
+Since rule node has multiple configuration sections. We decided to separate configuration fields into the same sections here.
 
 **Configuration: Device relations query**
 
-* **Direction** - configures the direction of the relation query. It is either **From originator** or **To originator**.
-* **Max relation level** - specifies the maximum depth for the relation search. Optional. No value set means **Unlimited level**.
-  > **Note:** Search query result returns only first entity even if multiple entities were found.
+* **Direction** - direction of the relation query. Either **_From originator_** or **_To originator_**.
+* **Max relation level** - maximum depth for the relation search. Optional, if value is not set the depth is unlimited.
+  > **Note:** Search query result returns only one entity even if multiple entities were found.
     * **Fetch last level relation only** - if enabled, forces the rule node to search for related entities only at the level set in the **Max relation level**.
       > **Note:** Available only when **Max relation level** is greater than one.
-* **Relation type** - configures the relation between entities. It is either **Contains** or **Manages**.
-* **Device profiles** - allows configuring filters to refine the relation query based on device profile.
+* **Relation type** - type of the relation. Optional. If value is not set the relation query will search for relations with any type. 
+> **Note:** By default set to **_Contains_**. However, you can specify your own relation type.
+* **Device profiles** - device profile filter. Only devices with specified profiles will be found.
 
 **Configuration: Related device attributes**
 
@@ -291,7 +293,7 @@ Since rule node have multiple configuration sections. We decided to separate con
 
  * **Direction** - configures the direction of the relation query. It is either **From originator** or **To originator**.
  * **Max relation level** - specifies the maximum depth for the relation search. Optional. No value set means **Unlimited level**.
-   > **Note:** Search query result returns only first entity even if multiple entities were found.
+   > **Note:** Search query result returns only one entity even if multiple entities were found.
    * **Fetch last level relation only** - if enabled, forces the rule node to search for related entities only at the level set in the **Max relation level**.
      > **Note:** Available only when **Max relation level** is greater than one.
  * **Relation filters** - allows configuring filters to refine the relation query based on relation type and entity type.
