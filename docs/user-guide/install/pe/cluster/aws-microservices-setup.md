@@ -120,7 +120,7 @@ cd thingsboard-pe-k8s/aws/microservices
 
 {% include templates/install/aws/msk-setup.md %}
 
-## Step 6. Amazon ElactiCache (Redis) Configuration
+## Step 6. Amazon ElastiCache (Redis) Configuration
 
 {% include templates/install/aws/redis-setup.md %}
 
