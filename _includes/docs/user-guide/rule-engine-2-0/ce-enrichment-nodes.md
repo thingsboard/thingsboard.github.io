@@ -30,9 +30,11 @@ Delta calculation is done in scope of the message originator, e.g. device, asset
 * **Success:**
   * If key configured via **Input value key** parameter is present in the incoming message.
 * **Other:**
+  * If incoming message type is not a **POST_TELEMETRY_REQUEST**. 
   * If key configured via **Input value key** parameter is not present in the incoming message.
 * **Failure:**
   * If **Tell Failure if delta is negative** is enabled and the delta calculation returns negative value.
+  * If unexpected error occurs during message processing.
 
 **Usage example: smart-metering use case**
 
@@ -68,7 +70,7 @@ Identifies the message originator's customer and enriches the outbound message w
 
 * **Customer's attributes/latest telemetry mapping** - controls whether to add attributes or the latest telemetry data to the message.
 
-  * **Source attribute/telemetry key** - key that will be used to retrieve the attribute/latest telemetry value from the customer.
+  * **Source attribute/telemetry key** - key that will be used to retrieve the attribute or latest telemetry value from the customer.
   * **Target key** - key that will store the retrieved value in the outgoing message.
 
   > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
@@ -77,15 +79,16 @@ Identifies the message originator's customer and enriches the outbound message w
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
 
-> **Note:** Following message originator types are allowed: **Customer**, **User**, **Asset**, **Device**.
+> **Note:** Following message originator's entity types are supported: **Customer**, **User**, **Asset**, **Device**.
 
 **Output connections**
 * **Success:**
-  * If no error occurred during fetching of customer's attributes or latest telemetry.
+  * If customer's attributes or latest telemetry were found and successfully fetched.
+  * If customer's attributes or latest telemetry were not found.
 * **Failure:**
-  * If unsupported originator type found.
-  * If originator does not have assigned customer.
-  * If unexpected error occurs during fetching of customer's attributes or latest telemetry.
+  * If message originator's entity type is unsupported.
+  * If message originator is not assigned to customer.
+  * If unexpected error occurs during message processing.
 
 **Usage example: smart subway management system**
 
@@ -182,11 +185,12 @@ Attributes are added into metadata with scope prefix:
 
 **Output connections**
 * **Success:** 
-  * If no error occurred during fetching of device's attributes.
+  * If related device's attributes or latest telemetry were found and successfully fetched.
+  * If **Tell failure if any of the attributes are missing** is disabled, and related device's attributes or latest telemetry were not found.
 * **Failure:**
-  * If related entity wasn't found.
-  * If any of attributes are missing if **Tell failure if any of the attributes are missing** is enabled.
-  * If unexpected error occurs during fetching of device's attributes.
+  * If related device was not found.
+  * If **Tell failure if any of the attributes are missing** is enabled, and at least one selected key does not exist.
+  * If unexpected error occurs during message processing.
 
 **Usage example**
 
@@ -242,9 +246,11 @@ Attributes are added into message with scope prefix:
 
 **Output connections**
 * **Success:** 
-  * If no error occurred during fetching of originator's attributes or latest telemetry.
+  * If message originator's attributes or latest telemetry were found and successfully fetched.
+  * If **Tell failure if any of the attributes are missing** is disabled, and message originator's attributes or latest telemetry were not found.
 * **Failure:** 
-  * If unexpected error occurs during fetching of originator's attributes or latest telemetry.
+  * If **Tell failure if any of the attributes are missing** is enabled, and at least one selected key does not exist.
+  * If unexpected error occurs during message processing.
 
 **Usage example**
 
@@ -253,35 +259,35 @@ You can see the real life example, where this node is used, in the following tut
 * [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/)
 * [Using queues for synchronization](/docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/)
 
-## originator fields {#originator-fields}
+## originator fields
 
 Adds fields from message originator to the message or its metadata.
 
 **Configuration**
 
- - **Originator fields mapping** - list of mappings between **Source field** and **Target key**.
-    - **Source field** - field that should be fetched.
-    - **Target key** - key that will store fetched value in the outgoing message or its metadata. Supports [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
+* **Originator fields mapping** - list of mappings between **Source field** and **Target key**.
+  * **Source field** - field that should be fetched.
+  * **Target key** - key that will store fetched value in the outgoing message or its metadata. Supports [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-mapping.png)
 
-> **Note:** if configured mapping contains fields that are not available for originator's entity type (for example, `phone` when originator is a device), then such mapping will be ignored.
+> **Note:** If configured mapping contains fields that are not available for originator's entity type (for example, `phone` when originator is a device), then such mapping will be ignored.
 
-- **Add mapped originator fields to** - controls whether the mapped fields should be added to the message or its metadata.
+* **Add mapped originator fields to** - controls whether the mapped fields should be added to the message or its metadata.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-fetch-to.png)
 
-- **Skip empty fields** - if enabled, fields with no value or an empty string will not be added in the outgoing message or its metadata.
+* **Skip empty fields** - if enabled, fields with no value or an empty string will not be added in the outgoing message or its metadata.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-skip-empty-fields.png)
 
-> **Note:** following message originator entity types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule chain**, **Entity view** and **Edge**.
+> **Note:** Following message originator's entity types are supported: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule chain**, **Entity view** and **Edge**.
 
 **Output connections**
 * **Success:**
   * If message originator's fields were successfully fetched and added into message or its metadata.
 * **Failure:**
-  * If message originator's entity type is not allowed. 
+  * If message originator's entity type is not supported. 
   * If unexpected error occurred during message processing.
 
 ## related entity data {#related-attributes}
@@ -317,10 +323,10 @@ Since rule node have multiple configuration sections. We decided to separate con
 
 **Output connections**
 * **Success:**
-  * If related entity was found, even if the specified **Data to fetch** doesn't exist for the related entity.
+  * If related entity was found, even if the specified **Data to fetch** does not exist for the related entity.
 * **Failure:**
-  * If related entity wasn't found.
-  * If unexpected error occurs during fetching of entity's data.
+  * If related entity was not found.
+  * If unexpected error occurs during message processing.
 
 **Usage example**
 
@@ -343,15 +349,12 @@ Identifies the message originator's tenant and enriches the outbound message wit
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
 
-Following Message Originator types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule Chain**.
-
 **Output connections**
-* **Success:** 
-  * If no error occurred during fetching of tenant's attributes or latest telemetry.
+* **Success:**
+  * If tenant's attributes or latest telemetry were found and successfully fetched.
+  * If tenant's attributes or latest telemetry were not found.
 * **Failure:**
-  * If unsupported originator type found.
-  * If originator does not have assigned tenant.
-  * If unexpected error occurs during fetching of tenant's attributes or latest telemetry.
+  * If unexpected error occurs during message processing.
 
 This node functions similarly to the Customer attributes node. The key difference is that this node retrieves attributes or latest telemetry from the Tenant, 
 while the Customer attributes node retrieves them from the Customer. For a usage example, please refer to the [Customer attributes node](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-attributes).
@@ -420,11 +423,12 @@ Aggregated data will be placed in outgoing message's metadata as a simple key-va
 
 **Output connections**
 * **Success:**
-  * If time series data is found, and is placed in the outgoing message's metadata. 
-  * If no time series data is found, nothing is placed in the outgoing message's metadata.
+  * If time series data is found and added to the outgoing message's metadata. 
+  * If time series data is not found.
 * **Failure:**
-  * If **Use dynamic interval** is enabled and one or both templates are not found in the incoming message.
-  * If **Use dynamic interval** is enabled and value extracted using one or both templates cannot be parsed into a number.
+  * If **Use dynamic interval** is enabled, and one or both templates are not found in the incoming message.
+  * If **Use dynamic interval** is enabled, and value extracted using one or both templates cannot be parsed into a number.
+  * If unexpected error occurs during message processing.
 
 > **Note:** Outgoing message is not a new message, it is an incoming message with modified metadata.
 
@@ -450,17 +454,16 @@ Selected details are added into message or message metadata with prefix: **tenan
 
 **Output connections**
 * **Success:**
-  * If no error occurred during fetching of tenant's details.
+  * If tenant's details were successfully fetched.
 * **Failure:**
-  * If originator does not have assigned tenant.
-  * If unexpected error occurs during fetching of tenant's details.
+  * If unexpected error occurs during message processing.
 
 This node functions similarly to the Customer details node. The key difference is that this node retrieves details from the Tenant,
 while the Customer details node retrieves them from the Customer. For a usage example, please refer to the [Customer details node](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-details).
 
 ## customer details
 
-Adds fields from Customer to the message body or metadata.
+Adds fields from customer to the message or metadata.
 
 **Configuration**
 
@@ -471,15 +474,16 @@ Adds fields from Customer to the message body or metadata.
 
 Selected details are added into message or message metadata with prefix: **customer_**.
 
-Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**.
- 
+> **Note:** Following message originator's entity types are supported: **Asset**, **Device**, **Entity View**.
+
 **Output connections**
 * **Success:**
-  * If no error occurred during fetching of customer's details.
+  * If customer's details were found and successfully fetched.
+  * If customer's details were not found.
 * **Failure:**
-  * If unsupported originator type found.
-  * If originator does not have assigned customer.
-  * If unexpected error occurs during fetching of customer's details.
+  * If message originator's entity type is unsupported.
+  * If message originator is not assigned to customer.
+  * If unexpected error occurs during message processing.
 
 **Usage example**
 
@@ -518,10 +522,10 @@ Adds device credentials fields to the message or message metadata.
 
 **Output connections**
 * **Success:**
-  * If credentials successfully fetched and added to the configured **Fetch credentials to** option.
+  * If credentials were successfully fetched.
 * **Failure:**
-  * If the incoming message originator is not a device entity.
-  * If unexpected error occurs.
+  * If incoming message originator entity type is not a **_DEVICE_**.
+  * If unexpected error occurs during message processing.
 
 **Usage example**
 
