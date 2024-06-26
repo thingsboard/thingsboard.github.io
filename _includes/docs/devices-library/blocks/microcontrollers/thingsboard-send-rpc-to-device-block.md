@@ -23,7 +23,7 @@ To get ability to control the device we have used the following parts of the cod
 ```cpp
 ...
 
-RPC_Response processSetLedMode(const RPC_Data &data) {
+void processSetLedMode(const JsonVariantConst &data, JsonDocument &response) {
   Serial.println("Received the set led state RPC method");
 
   // Process data
@@ -31,17 +31,22 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
 
   Serial.print("Mode to change: ");
   Serial.println(new_mode);
+  StaticJsonDocument<1> response_doc;
 
   if (new_mode != 0 && new_mode != 1) {
-    return RPC_Response("error", "Unknown mode!");
+    response_doc["error"] = "Unknown mode!";
+    response.set(response_doc);
+    return;
   }
 
   ledMode = new_mode;
 
   attributesChanged = true;
 
+
+  response_doc["newMode"] = (int)ledMode;
   // Returning current mode
-  return RPC_Response("newMode", (int)ledMode);
+  response.set(response_doc);
 }
 
 ...

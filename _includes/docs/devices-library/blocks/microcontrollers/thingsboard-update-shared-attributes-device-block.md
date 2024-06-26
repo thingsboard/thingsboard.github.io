@@ -37,7 +37,7 @@ To reach this, we have a variable "blinkingInterval" used in the following parts
 ```cpp
 ...
 
-void processSharedAttributes(const Shared_Attribute_Data &data) {
+void processSharedAttributes(const JsonObjectConst &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
     if (strcmp(it->key().c_str(), BLINKING_INTERVAL_ATTR) == 0) {
       const uint16_t new_interval = it->value().as<uint16_t>();
@@ -57,7 +57,7 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
 }
 
 ...
-const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
+const Shared_Attribute_Callback<MAX_ATTRIBUTES> attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
 ...
 ```
 

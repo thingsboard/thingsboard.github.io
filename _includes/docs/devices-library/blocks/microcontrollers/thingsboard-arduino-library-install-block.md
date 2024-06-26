@@ -14,7 +14,7 @@ To install ThingsBoard Arduino SDK - we will need to do the following steps:
 
 {% capture libraryVersion %}
 
-All provided code examples require ThingsBoard Library version {% if wifininaInstallationRequired == "true" %}**0.10.2**{% else %}**0.11.1** or above{% endif %}.  
+All provided code examples require ThingsBoard Library version {% if wifininaInstallationRequired == "true" %}**0.10.2**{% else %}**0.13.0** or above{% endif %}.  
 
 {% endcapture %}
 

@@ -6,7 +6,7 @@ Below are the relevant parts of the code example:
     
 ```cpp
 ...
-void processSharedAttributes(const Shared_Attribute_Data &data) {
+void processSharedAttributes(const JsonObjectConst &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
     if (strcmp(it->key().c_str(), BLINKING_INTERVAL_ATTR) == 0) {
       const uint16_t new_interval = it->value().as<uint16_t>();
@@ -25,7 +25,7 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
   attributesChanged = true;
 }
 
-void processClientAttributes(const Shared_Attribute_Data &data) {
+void processClientAttributes(const JsonObjectConst &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
     if (strcmp(it->key().c_str(), LED_MODE_ATTR) == 0) {
       const uint16_t new_mode = it->value().as<uint16_t>();
@@ -34,8 +34,8 @@ void processClientAttributes(const Shared_Attribute_Data &data) {
   }
 }
 ...
-const Attribute_Request_Callback attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
 ...
 ```
 
