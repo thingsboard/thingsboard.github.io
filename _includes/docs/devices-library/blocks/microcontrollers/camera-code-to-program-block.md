@@ -24,7 +24,7 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 
-#define DEMO_MODE 0
+#define DEMO_MODE "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}0{% else %}1{% endif %}"
 
 #include <ThingsBoard.h>
 #include <esp_heap_caps.h>
