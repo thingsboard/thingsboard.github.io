@@ -24,7 +24,7 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 
-#define DEMO_MODE "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}0{% else %}1{% endif %}"
+#define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}0{% else %}1{% endif %}
 
 #include <ThingsBoard.h>
 #include <esp_heap_caps.h>
@@ -486,15 +486,16 @@ Don’t forget to replace placeholders with your real WiFi network SSID, passwor
 
 Necessary variables for connection:    
 
-| Variable name | Default value                                                                                                                | Description                                                                             | 
-|-|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| WIFI_SSID | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                 | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                             |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                    |
-| THINGSBOARD_PORT | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                            |
-| MAX_MESSAGE_SIZE | **100U*1024**                                                                                                                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.        |
-| SERIAL_DEBUG_BAUD | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                               |  
+| Variable name | Default value                                                                                                                | Description                                                                                                                                  | 
+|-|------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| WIFI_SSID | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                                                                      | 
+| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                                                                                  |
+| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard                                                      | 
+| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                                                                         |
+| THINGSBOARD_PORT | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                                                                                 |
+| MAX_MESSAGE_SIZE | **100U*1024**                                                                                                                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.                                                             |
+| SERIAL_DEBUG_BAUD | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                                                                                    |
+| DEMO_MODE | **1**                                                                                                                       | If you want to use **demo.thingsboard.io** set this value to **1**. This reduces the resolution, quality and cut the encoded photo to avoid size limit. |
 
 ```cpp
 ...
