@@ -1,5 +1,4 @@
-You can use our example of Downlink Converter,
-or write your own according to your configuration:
+You can use our example of downlink converter, or write your own according to your configuration:
 
 ```javascript
 // Result object with encoded downlink payload
@@ -19,10 +18,3 @@ var result = {
 return result;
 ``` 
 {: .copy-code}
-
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-create-downlink-converter-java-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-create-downlink-converter-java-paas.png)
-{% endif %}
