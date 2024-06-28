@@ -175,7 +175,7 @@ Optionally, configure **Cache Size** and **Cache time to live in minutes** - fea
 
 ### Modify Root Rule Chain
 
-When integration configured and ready to use, we need to go to "Rule Chains" page and configure the "**Root Rule Chain**" so that messages like "**Attributes updated**" and "**Post attributes**" are forwarded to the downlink data converter. 
+When integration configured and ready to use, we need to go to "Rule Chains" page and configure the "**Root Rule Chain**" so that messages like "**Attributes updated**" and "**Post attributes**" are forwarded to the downlink data converter:
 
 {% assign ruleChainDownlink = '
   ===
