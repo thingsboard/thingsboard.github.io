@@ -1,21 +1,24 @@
 Bytes converter is the default converter, it looks for '**deviceName**', '**deviceType**', attributes and telemetry in the incoming 
 message from the broker, following the rules described in this subsection:
 
-|**Parameter**|**Default value**| **Description**                                                                                                  |
-|:-|:-|------------------------------------------------------------------------------------------------------------------
-| type                 | **bytes**   | Provides information to connector that default converter is to be used for converting data from topic.           |
-| deviceNameExpression | **[0:4]**   | The expression that is used to find device name in the incoming message.                                         |
-| deviceTypeExpression | **[1:3]**   | The expression that is used to find device type in the incoming message.                                         |
-| timeout              | **60000**   | Timeout for triggering "Device Disconnected" event.                                                              |
-| attributes:          |             | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.     |
-| ... type             | **raw**     | Type of incoming data for a current attribute.                                                                   |
-| ... key              | **temp**    | Attribute name, to be sent to ThingsBoard instance.                                                              |
-| ... value            | **[:]**     | Final view of data that will be sent to ThingsBoard, [:] - will replace to device data using python slice rules. |
-| timeseries:          |             | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.      |
-| ... type             | **raw**     | Type of incoming data for a current telemetry.                                                                   |
-| ... key              | **rawData** | Telemetry name, to be sent to ThingsBoard instance.                                                              |
-| ... value            | **[4:]**    | Final view of data that will be sent to ThingsBoard, [:] - will replace to device data using python slice rules. |
-|---
+| **Parameter**                     | **Default value** | **Description**                                                                                                  |
+|:----------------------------------|:------------------|------------------------------------------------------------------------------------------------------------------|
+| type                              | **bytes**         | Provides information to connector that default converter is to be used for converting data from topic.           |
+| deviceInfo                        |                   | JSON object that describe how to parce device name and device profile.                                           |
+| ... deviceNameExpressionSource    | **message**       | Specifies the source from which the device name will be extracted ("message", "topic", "constant").              |
+| ... deviceNameExpression          | **[0:4]**         | Contains the expression used to extract the device name from the specified source.                               |
+| ... deviceProfileExpressionSource | **constant**      | Specifies the source from which the device profile will be extracted ("message", "topic", "constant").           |
+| ... deviceProfileExpression       | **default**       | Contains the expression used to extract the device profile from the specified source.                            |
+| timeout                           | **60000**         | Timeout for triggering "Device Disconnected" event.                                                              |
+| attributes:                       |                   | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.     |
+| ... type                          | **raw**           | Type of incoming data for a current attribute.                                                                   |
+| ... key                           | **temp**          | Attribute name, to be sent to ThingsBoard instance.                                                              |
+| ... value                         | **[:]**           | Final view of data that will be sent to ThingsBoard, [:] - will replace to device data using python slice rules. |
+| timeseries:                       |                   | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.      |
+| ... type                          | **raw**           | Type of incoming data for a current telemetry.                                                                   |
+| ... key                           | **rawData**       | Telemetry name, to be sent to ThingsBoard instance.                                                              |
+| ... value                         | **[4:]**          | Final view of data that will be sent to ThingsBoard, [:] - will replace to device data using python slice rules. |
+| ---                               |                   |                                                                                                                  |
 
 {% capture difference %}
 **Parameters in attributes and telemetry section may differ from those presented above, but will have the same structure.**  
@@ -30,8 +33,12 @@ Mapping subsection will look like:
       "topicFilter": "sensor/raw_data",
       "converter": {
         "type": "bytes",
-        "deviceNameExpression": "[0:4]",
-        "deviceTypeExpression": "default",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "[0:4]",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
         "timeout": 60000,
         "attributes": [
           {
