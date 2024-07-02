@@ -1,4 +1,4 @@
-Assuming you have completed the following guides and reviewed the articles listed below:
+Before proceeding, ensure you have completed the following guides and reviewed the articles listed below:
 
 {% if docsPrefix == 'pe/edge/' %}
 * [Getting Started](/docs/getting-started-guides/helloworld-pe/) guide.{% endif %}
@@ -8,10 +8,8 @@ Assuming you have completed the following guides and reviewed the articles liste
 * [ThingsBoard Edge Getting Started](/docs/{{docsPrefix}}getting-started/) article.
 * [Edge Rule Chain Templates](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) guide.
 
-Important: Before proceeding, make sure that your **{{appPrefix}}}** (Server) is running. Also, verify that **{{appPrefix}}** (Edge) is active, operational, and connected to the **Edge** cloud
+Important: Before you begin, please make ensure that your ThingsBoard **Edge** service is up and running and connected to the cloud.
 
-If you have these prerequisites in place, let's proceed to the next steps.
+If you've got these requirements ready, let's move on to the next steps. In other case please visit this [link](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"} to provision, install and connect **Edge** to server.
 
-In other case please visit this link to provision, install and connect **Edge** to **Server** [guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
-
-{% include templates/edge/ui-url-aliases-banner.md %} 
+{% include templates/edge/ui-url-aliases-banner.md %}

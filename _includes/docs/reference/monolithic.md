@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This article describes monolithic architecture and consist of high level diagram, 
+This article describes monolithic architecture and consist of high-level diagram, 
 description of data flow between various components and some architecture choices made.
 
 Please note that ThingsBoard v2.2, the platform supports [**microservices**](/docs/{{docsPrefix}}reference/msa/) deployment mode.
@@ -30,7 +30,7 @@ ThingsBoard provides MQTT, HTTP and CoAP based APIs that are available for your 
 Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer".
 The full list of components and corresponding documentation pages are listed below:
 
-* HTTP Transport component provides device APIs described [here](/docs/{{docsPrefix}}reference/http-api/)
+* HTTP Transport component provides device APIs described [here](/docs/{{docsPrefix}}reference/http-api/);
 * MQTT Transport component provides device APIs described [here](/docs/{{docsPrefix}}reference/mqtt-api/)
 and also enables gateway APIs described [here](/docs/{{docsPrefix}}reference/gateway-mqtt-api/);
 * CoAP Transport component provides device APIs described [here](/docs/{{docsPrefix}}reference/coap-api/);
