@@ -15,7 +15,7 @@ python-prediction-basic-example:
     title: 'Enable prediction and select Custom model'
   2:
     image: /images/trendz/python-predict-univariable-sources.png
-    title: 'Write python code for timeseries forecasting'
+    title: 'Write python code for time series forecasting'
   3:
     image: /images/trendz/python-predict-univariable-result.png
     title: 'Bar chart with historical data and forecast for the next 14 days'

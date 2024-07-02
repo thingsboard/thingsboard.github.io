@@ -22,8 +22,8 @@ List of possible cloud actions:
 * Updated
 * Attributes Updated
 * Attributes Deleted
-* Timeseries Deleted
-* Timeseries Updated
+* Time series Deleted
+* Time series Updated
 * RPC Call
 * Credentials Updated
 * Relation Add or Update

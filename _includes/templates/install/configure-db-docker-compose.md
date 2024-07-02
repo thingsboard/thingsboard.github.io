@@ -9,6 +9,6 @@ nano .env
 to one of the following:
 
 - `postgres` - use PostgreSQL database;
-- `hybrid` - use PostgreSQL for entities database and Cassandra for timeseries database;
+- `hybrid` - use PostgreSQL for entities database and Cassandra for time series database;
 
 **NOTE**: According to the database type corresponding docker service will be deployed (see `docker-compose.postgres.yml`, `docker-compose.hybrid.yml` for details).

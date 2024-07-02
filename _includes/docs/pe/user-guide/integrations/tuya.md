@@ -190,7 +190,7 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 {% capture difference %}
 **NOTE:**
 <br>
-timeseries data keys of your device may differ from those presented. If necessary, you will need to replace them, according to the documentation for your device (for each widget).
+time series data keys of your device may differ from those presented. If necessary, you will need to replace them, according to the documentation for your device (for each widget).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

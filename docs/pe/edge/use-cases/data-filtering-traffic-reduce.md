@@ -47,10 +47,10 @@ updateRootRuleChain:
         title: 'Input node name, e.g. "Transform incoming message" and add <b>JavaScript</b> code (you can copy and paste it from the snippet above) to send further only "distance" readings. Click "Add" to proceed.'
     4:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-5.png
-        title: 'Remove connection between nodes "Save Timeseries" and newly added script node.'
+        title: 'Remove connection between nodes "Save Time series" and newly added script node.'
     5:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-6.png
-        title: 'Drag connection from "Save Timeseries" to the transformation script node.'
+        title: 'Drag connection from "Save Time series" to the transformation script node.'
     6:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-7.png
         title: 'Select "Success" from the list and click "Add" button.'
@@ -162,7 +162,7 @@ createDashboard:
         title: 'Click "+ Add" button to add a new datasource.'
     14:
         image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-15.png
-        title: 'Select Entity alias "edge device" and click on choose "distance" as device timeseries.'
+        title: 'Select Entity alias "edge device" and click on choose "distance" as device time series.'
     15:
         image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-16.png
         title: 'Click "Edit widget" icon in the upper right corner of the widget to add style.'

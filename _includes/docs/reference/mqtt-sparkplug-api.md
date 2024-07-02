@@ -23,7 +23,7 @@ The protocol [specification](https://sparkplug.eclipse.org/specification/version
 defines both MQTT topic and message structure for the EoN Nodes to communicate with the MQTT Server.
 Single EoN Node may represent multiple physical devices and sensors and upload device metrics for each of those devices.
 ThingsBoard decodes the device metrics from the Sparkplug payload and stores it as a corresponding device 
-[attributes](/docs/{{docsPrefix}}user-guide/attributes/) or [time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data. 
+[attributes](/docs/{{docsPrefix}}user-guide/attributes/) or [time series](/docs/{{docsPrefix}}user-guide/telemetry/) data. 
 You may also issue an update to the Sparkplug device using 
 [shared attributes update](#update-metrics-from-shared-attributes-to-mqtt-eondevice) or 
 [rpc command](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice).
@@ -38,7 +38,7 @@ ThingsBoard supports **Sparkplug™ B** payloads only.
 ## Getting started
 
 This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard,
-collect device metrics and store them as ThingsBoard time-series data,
+collect device metrics and store them as ThingsBoard time series data,
 and push commands back to devices.
 
 ### Step 1. Create device profile
@@ -49,7 +49,7 @@ First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/de
 2. Use *MQTT EoN Node* as profile name or any other meaningful value;
 3. Navigate to *Transport configuration* tab and select the *MQTT* transport type;
 4. Make sure you have selected the "MQTT Sparkplug B Edge of Network (EoN) node" checkbox;
-5. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. 
+5. Input the names of Sparkplug metrics you would like to store as attributes instead of time series data. 
    This list should also include metrics you may want to update from the server side and push to the device.
    Simple asterisk suffix is supported as a wildcard. For example: "Node Control/\*\", "Device Control/\*\", "Properties/\*\".
 

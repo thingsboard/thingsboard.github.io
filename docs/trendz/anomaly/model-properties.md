@@ -26,8 +26,8 @@ This property defines time interval duration for each segment.
 ## Comparison type
 This property affects feature extraction process and identifies how features are computed based on fields in the incoming data. Currently supported comparison types are:
 
-* `Behaviour based` - capture the overall patterns, dynamics, and trends exhibited by the timeseries data. They provide insights into the holistic behavior of the data over time, allowing for the identification of recurring patterns, anomalies, or deviations. These features analyze the data as a whole and focus on capturing the underlying behavior or patterns present in the timeseries.
-* `Feature based` - focus on specific measurements or attributes derived from the raw timeseries data. These features extract relevant information or characteristics from the data, such as statistical properties (e.g., mean, standard deviation) or domain-specific measurements. Feature-based features provide a more detailed and specific analysis by considering individual aspects or properties of the timeseries data.
+* `Behaviour based` - capture the overall patterns, dynamics, and trends exhibited by the time series data. They provide insights into the holistic behavior of the data over time, allowing for the identification of recurring patterns, anomalies, or deviations. These features analyze the data as a whole and focus on capturing the underlying behavior or patterns present in the time series.
+* `Feature based` - focus on specific measurements or attributes derived from the raw time series data. These features extract relevant information or characteristics from the data, such as statistical properties (e.g., mean, standard deviation) or domain-specific measurements. Feature-based features provide a more detailed and specific analysis by considering individual aspects or properties of the time series data.
 
 ## Distance function
 You configure how distance between two points in feature space is computed. Currently supported distance functions are:

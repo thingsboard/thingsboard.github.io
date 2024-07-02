@@ -35,7 +35,7 @@ In the described scenario, TBMQ cluster consistently sustains 100,000,500 connec
 of 3M messages per second, resulting in a total of 10,800M messages over the course of 1-hour test run.
 
 The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their count.
-These clients operate persistently, continuously publishing time-series data over MQTT to designated topics.
+These clients operate persistently, continuously publishing time series data over MQTT to designated topics.
 Furthermore, the agent facilitates the provisioning of MQTT clients that subscribe by topic filters to receive the messages published by the aforementioned clients.
 
 In contemplation of the warm-up phase for the clients, it is noteworthy to acknowledge that 6 iterations of publishers transmitting a single message each took place. 

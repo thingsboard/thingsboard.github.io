@@ -11,7 +11,7 @@ sparkplug-create-device-profile:
         title: 'Navigate to the Device profiles page and click on the "+" icon in the device profile table header to open the Add device profile dialog. Use MQTT EoN Node as profile name or any other meaningful value;'
     1:
         image: /images/reference/sparkplug/sparkplug-create-device-profile-2-ce.png
-        title: 'Navigate to Transport configuration tab and select the MQTT transport type. Make sure you have selected the “MQTT Sparkplug B Edge of Network (EoN) node” checkbox. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. This list should also include metrics you may want to update from the server side and push to the device;'
+        title: 'Navigate to Transport configuration tab and select the MQTT transport type. Make sure you have selected the “MQTT Sparkplug B Edge of Network (EoN) node” checkbox. Input the names of Sparkplug metrics you would like to store as attributes instead of time series data. This list should also include metrics you may want to update from the server side and push to the device;'
     2:
         image: /images/reference/sparkplug/sparkplug-create-device-profile-3-ce.png
         title: 'MQTT EoN Node have been created.'

@@ -125,7 +125,7 @@ groupTelemetryByTime = function (telemetry, groupedTelemetry, keyName) {
  
 #### Fill gaps in telemetry stream
 
-In this example we demonstrate how to detect gaps im timeseries stream and fill it with `0` values:
+In this example we demonstrate how to detect gaps im time series stream and fill it with `0` values:
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
