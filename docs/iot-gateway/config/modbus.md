@@ -116,7 +116,7 @@ The connector configuration file will be described below.
             "tag": "32uint_read",
             "type": "32uint",
             "functionCode": 4,
-            "objectsCount": 4,
+            "objectsCount": 2,
             "address": 20
           },
           {
