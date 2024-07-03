@@ -13,4 +13,3 @@ Before proceeding, ensure you have completed the following guides and reviewed t
 If you've got these requirements ready, let's move on to the next steps. In other case please visit this [guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"} to provision, install and connect Edge to Server.
 
 {% include templates/edge/ui-url-aliases-banner.md %}
-
