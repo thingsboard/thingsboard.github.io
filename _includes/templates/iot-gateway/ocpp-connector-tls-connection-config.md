@@ -1,4 +1,4 @@
-In table below described parameters to configure TLS connection.
+The table below describes the parameters to configure TLS connection.
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
