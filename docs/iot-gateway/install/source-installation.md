@@ -65,6 +65,24 @@ python3 ./thingsboard_gateway/tb_gateway.py
 ```
 {: .copy-code}
 
+### Build local docker image
+
+In order to build local docker image, follow the next steps:
+
+**1.** Copy **Dockerfile** to **root** folder, using the following command:
+
+```bash
+cp docker/Dockerfile .
+```
+{: .copy-code}
+
+**2.** From project root folder execute the following command:
+
+```bash
+docker build -t local-gateway . 
+```
+{: .copy-code}
+
 ### Hot Reloader
 
 If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any project file.

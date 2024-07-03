@@ -20,7 +20,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 ## Installation and Configuration
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 

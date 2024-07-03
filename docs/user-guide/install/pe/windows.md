@@ -22,7 +22,7 @@ Hardware requirements depend on chosen database and amount of devices connected 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 
@@ -100,16 +100,16 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
 
-Execute **install.bat** script to install ThingsBoard as a Windows service (or run **"install.bat --loadDemo"** to install and add demo data).
+Execute **install.bat** script to install ThingsBoard as a Windows service (or run **".\install.bat --loadDemo"** to install and add demo data).
 This means it will be automatically started on system startup. 
 Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
 The output should be similar to this one:
   
   ```text
-C:\Program Files (x86)\thingsboard>install.bat --loadDemo
+C:\Program Files (x86)\thingsboard>.\install.bat --loadDemo
 Detecting Java version installed.
-CurrentVersion 18
-Java 1.8 found!
+CurrentVersion 170
+Java 17 found!
 Installing thingsboard ...
 ...
 ThingsBoard installed successfully!
