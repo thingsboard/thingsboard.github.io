@@ -124,17 +124,17 @@ send the data. It means that the connector rejects all device connections not in
 
 This object configuration section includes the parameters for processing incoming data.
 
-| **Parameter**        | **Default value**             | **Description**                                                                                                                                                  |
-|:---------------------|:------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| jid                  | **device@localhost/TMP_1101** | The JID of the XMPP user account.                                                                                                                                |
-| deviceNameExpression | **${serialNumber}**           | JSON-path expression, is used for looking the device name.                                                                                                       |
-| deviceTypeExpression | **${sensorType}**             | JSON-path expression, is used for looking the device type.                                                                                                       |
-| attributes           |                               | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device.                                             |
-| ... key              | **temperature**               | Name for attribute in ThingsBoard.                                                                                                                               |
-| ... value            | **${temp}**                   | Simple JSON expression, is used for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter.                         |
-| timeseries           |                               | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                                               |
-| ... key              | **humidity**                  | Name for telemetry in ThingsBoard.                                                                                                                               |
-| ... value            | **${hum}**                    | Simple JSON expression, is used for looking value in the incoming message, which will then to be sent to ThingsBoard instance as the value of the key parameter. |
+| **Parameter**        | **Default value**             | **Description**                                                                                                                                               |
+|:---------------------|:------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------
+| jid                  | **device@localhost/TMP_1101** | The JID of the XMPP user account.                                                                                                                             |
+| deviceNameExpression | **${serialNumber}**           | JSON-path expression, is used for looking the device name.                                                                                                    |
+| deviceTypeExpression | **${sensorType}**             | JSON-path expression, is used for looking the device type.                                                                                                    |
+| attributes           |                               | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device.                                          |
+| ... key              | **temperature**               | Name for attribute in ThingsBoard.                                                                                                                            |
+| ... value            | **${temp}**                   | Simple JSON expression, is used for looking up value in the incoming message, which will then be sent to ThingsBoard instance as value of key parameter.      |
+| timeseries           |                               | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                                            |
+| ... key              | **humidity**                  | Name for telemetry in ThingsBoard.                                                                                                                            |
+| ... value            | **${hum}**                    | Simple JSON expression, is used for looking value in the incoming message, which will then be sent to ThingsBoard instance as the value of the key parameter. |
 | ---                  
 
 Example:

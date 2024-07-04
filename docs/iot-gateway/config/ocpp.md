@@ -104,7 +104,7 @@ This configuration section is used to configure Gateway as a Central System.
 
 #### Connection subsection
 
-This configuration subsection is used to configuring connection type between Central System and Charge Point.
+This configuration subsection is used for configuring connection type between Central System and Charge Point.
 You can choose the next connection type:
 
 {% capture ocppconnectorconnectiontogglespec %}
