@@ -90,7 +90,7 @@ Let's assume you have local MQTT broker or OPC-UA server deployed on-premises.
 Those brokers and/or servers don't have dedicated external IP address, so ThingsBoard Edge can't connect to them directly.
 However, you can install remote integration close to this edge, in the same local network.
 This integration will connect to the broker/edge, pull the data and store it in the local file system.
-Remote integration will stream the data to the ThingsBoard Edge deployed in the network once the network connection is available.
+Remote integration will stream the data to the ThingsBoard **Edge** deployed in the network once the network connection is available.
 
 Pros:
 * enables integration with servers deployed in the local network;

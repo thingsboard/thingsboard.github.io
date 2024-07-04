@@ -191,5 +191,4 @@ createDashboard:
 ## Next Steps
 
 {% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
-
 {% include templates/edge/guides-banner-edge.md %}

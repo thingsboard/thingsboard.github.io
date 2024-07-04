@@ -3,7 +3,7 @@
 {% assign platformName = 'ThingsBoard PE' %}
 {% assign firstRowItemClasses = 'col-12 col-sm-6 col-lg col-xxl-6 col-4xl' %}
 {% assign faqItemClasses = 'col-12 col-sm-6 col-lg col-xxl-6 col-4xl' %}
-<p>The ThingsBoard Professional Edition(PE) documentation can help you set up ThingsBoard PE, learn about the platform and get your IoT projects running on ThingsBoard PE.</p>
+<p>The ThingsBoard Professional Edition (PE) documentation provides comprehensive guidance to help you set up ThingsBoard PE, understand the platform, and successfully launch your IoT projects on ThingsBoard PE</p>
 {% elsif docsPrefix == 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% assign platformName = 'ThingsBoard Cloud' %}
