@@ -1,0 +1,1 @@
+![image](/images/gateway/mqtt-connector/attribute-update-1-ce.png)
