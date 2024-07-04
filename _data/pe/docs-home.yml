@@ -8,7 +8,7 @@ toc:
 - title: How to connect your device?
   path: /docs/pe/getting-started-guides/connectivity/
 - title: Solution Templates
-  new: true
+  new: false
   section:
   - title: Overview
     path: /docs/pe/solution-templates/overview/
