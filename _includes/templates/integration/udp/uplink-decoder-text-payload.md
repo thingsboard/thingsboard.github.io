@@ -68,7 +68,7 @@ return result;
 <br>
 Paste the copied script to the decoder function section. Then, click "**Next**";
 
-![image](/images/user-guide/integrations/udp/udp-integration-setup-2-text-tbel-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-2-text-tbel-pe.png)
 
 {% capture difference %}
 **NOTE**

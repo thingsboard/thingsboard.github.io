@@ -7,4 +7,4 @@ To parse the payload properly, please make sure that next values are set:
 
 Click "**Add**" to finish adding integration.
 
-![image](/images/user-guide/integrations/udp/udp-integration-setup-4-text-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-4-text-pe.png)
