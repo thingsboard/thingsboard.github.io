@@ -157,9 +157,8 @@ createDashboard:
 * TOC
 {:toc}
 
-{% assign cloudDocsPrefix = "pe/" %}
-{% assign docsPrefix = "pe/edge/" %}
-{% assign appPrefix = "ThingsBoard PE" %}
+{% assign docsPrefix = "edge/" %}
+{% assign appPrefix = "ThingsBoard" %}
 
 ## Use case
 
