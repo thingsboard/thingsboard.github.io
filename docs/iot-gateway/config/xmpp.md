@@ -81,18 +81,18 @@ the data, and other service features. Let’s review the format of the configura
 
 This configuration section is used to configure Gateway XMPP device and connection to XMPP server. 
 
-| **Parameter**     | **Default value**                    | **Description**                                                                                     |
-|:-|:-|-
+| **Parameter**   | **Default value**                      | **Description**                                                                                     |
+|:----------------|:---------------------------------------|-----------------------------------------------------------------------------------------------------|
 | jid             | **gateway@localhost**                  | The JID of the XMPP user account.                                                                   |
 | password        | **password**                           | The password for the XMPP user account.                                                             |
-| host            |  **localhost**                         | The host of XMPP server.                                                                            |
+| host            | **localhost**                          | The host of XMPP server.                                                                            |
 | port            | **5222**                               | The port of XMPP server.                                                                            |
 | use_ssl         | **false**                              | Indicates if the older SSL connection method should be used.                                        |
 | disableStarttls | **false**                              | Disables TLS for the connection.                                                                    |
 | forceStarttls   | **true**                               | Indicates that negotiation should be aborted if the server does not advertise support for STARTTLS. |
-| timeout         | **10000**                              |  |
-| plugins         | **["xep_0030","xep_0323","xep_0325"]** | List of plugins that will be registered by client. |
-|---
+| timeout         | **10000**                              |                                                                                                     |
+| plugins         | **["xep_0030","xep_0323","xep_0325"]** | List of plugins that will be registered by client.                                                  |
+| ---             |                                        |                                                                                                     |
 
 Configuration section will look like this:
 ```json
@@ -124,18 +124,18 @@ send the data. It means that the connector rejects all device connections not in
 
 This object configuration section includes the parameters for processing incoming data.
 
-| **Parameter**        | **Default value**             | **Description**                                                                                                                                               |
-|:---------------------|:------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------
-| jid                  | **device@localhost/TMP_1101** | The JID of the XMPP user account.                                                                                                                             |
-| deviceNameExpression | **${serialNumber}**           | JSON-path expression, is used for looking the device name.                                                                                                    |
-| deviceTypeExpression | **${sensorType}**             | JSON-path expression, is used for looking the device type.                                                                                                    |
-| attributes           |                               | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device.                                          |
-| ... key              | **temperature**               | Name for attribute in ThingsBoard.                                                                                                                            |
-| ... value            | **${temp}**                   | Simple JSON expression, is used for looking up value in the incoming message, which will then be sent to ThingsBoard instance as value of key parameter.      |
-| timeseries           |                               | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                                            |
-| ... key              | **humidity**                  | Name for telemetry in ThingsBoard.                                                                                                                            |
-| ... value            | **${hum}**                    | Simple JSON expression, is used for looking value in the incoming message, which will then be sent to ThingsBoard instance as the value of the key parameter. |
-| ---                  
+| **Parameter**        | **Default value**             | **Description**                                                                                                                                                  |
+|:---------------------|:------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| jid                  | **device@localhost/TMP_1101** | The JID of the XMPP user account.                                                                                                                                |
+| deviceNameExpression | **${serialNumber}**           | JSON-path expression, is used for looking the device name.                                                                                                       |
+| deviceTypeExpression | **${sensorType}**             | JSON-path expression, is used for looking the device type.                                                                                                       |
+| attributes           |                               | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device.                                             |
+| ... key              | **temperature**               | Name for attribute in ThingsBoard.                                                                                                                               |
+| ... value            | **${temp}**                   | Simple JSON expression, is used for looking up value in the incoming message, which will then be sent to ThingsBoard instance as the value of the key parameter. |
+| timeseries           |                               | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                                               |
+| ... key              | **humidity**                  | Name for telemetry in ThingsBoard.                                                                                                                               |
+| ... value            | **${hum}**                    | Simple JSON expression, is used for looking up value in the incoming message, which will then be sent to ThingsBoard instance as the value of the key parameter. |
+| ---                  |                               |                                                                                                                                                                  |
 
 Example:
 ```json
@@ -171,11 +171,11 @@ shared attributes from ThingsBoard. See [user guide](/docs/reference/mqtt-api/#a
 The “attributeUpdates” configuration allows you to configure the format of the corresponding attribute data that will be 
 sent to the XMPP device.
 
-| **Parameter**           | **Default value**                               | **Description**                                                                         |
-|:-|:-|-----------------------------------------------------------------------------------------
-| attributeOnThingsBoard  | **sharedName**                                  | Shared attribute name.                                                                  |
-| valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | JSON-path expression is used for creating the message data that will be sent to device. |
-|---
+| **Parameter**          | **Default value**                               | **Description**                                                                         |
+|:-----------------------|:------------------------------------------------|-----------------------------------------------------------------------------------------|
+| attributeOnThingsBoard | **sharedName**                                  | Shared attribute name.                                                                  |
+| valueExpression        | **{\"${attributeKey}\":\"${attributeValue}\"}** | JSON-path expression is used for creating the message data that will be sent to device. |
+| ---                    |                                                 |                                                                                         |
 
 This section in configuration file looks like: 
 ```json
@@ -193,12 +193,12 @@ ThingsBoard allows sending RPC commands to the device connected to ThingsBoard d
 
 Configuration, provided in this section is used for sending RPC requests from ThingsBoard to the device.
 
-| **Parameter**           | **Default value**    | **Description**                                                                   |
-|:-|:-|-
-| methodRPC               | **rpcMethod1**       | RPC method name.                                                                  |
-| withResponse            | **true**             | Boolean value that determines whether to send response back to ThingsBoard.             |
-| valueExpression         | **${params}**        | JSON-path expression uses for creating the message data that will send to device. |
-|---
+| **Parameter**   | **Default value** | **Description**                                                                   |
+|:----------------|:------------------|-----------------------------------------------------------------------------------|
+| methodRPC       | **rpcMethod1**    | RPC method name.                                                                  |
+| withResponse    | **true**          | Boolean value that determines whether to send response back to ThingsBoard.       |
+| valueExpression | **${params}**     | JSON-path expression uses for creating the message data that will send to device. |
+| ---             |                   |                                                                                   |
 
 This subsection in configuration file looks like:
 
