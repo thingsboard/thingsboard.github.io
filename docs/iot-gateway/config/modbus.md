@@ -357,7 +357,7 @@ The configuration in this unit provides settings for processing data on Modbus s
 
 Optional parameters:  
 **multiplier** - the result of reading will be multiplied by the value of this parameter.  
-**divider** - result of reading will be divided by the value of this parameter.  
+**divider** - the result of reading will be divided by the value of this parameter.  
 
 <br>
 **Example**:
