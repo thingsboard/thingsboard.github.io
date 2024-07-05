@@ -8,79 +8,45 @@
 * TOC
 {:toc}
 
-## Overview
-
 UDP Integration allows to stream data from devices which use a UDP protocol to ThingsBoard and converts payloads of these devices into the ThingsBoard format.
 
-**Please note** UDP Integration can be started only as [Remote Integration](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations). It could be started on the same machine, where TB instance is running, or you can start in on another machine, that has access over the network to the TB instance.
+{% capture difference %}
+**Please note** UDP Integration can be started only as [remote integration](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations){:target="_blank"}. It could be started on the same machine, where TB instance is running, or you can start in on another machine, that has access over the network to the TB instance.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Please review the integration diagram to learn more.
 
 ![image](/images/user-guide/integrations/udp-integration.svg)
 
-## UDP Integration Configuration
-
-### Prerequisites
+## Prerequisites
 
 In this tutorial, we will use:
 
 {% if docsPrefix == "pe/" %}
-- The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
-  {% endif %}
-  {% if docsPrefix == "paas/" %}
-- ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
-  {% endif %}
-- UDP Integration, running externally and connected to the cloud ThingsBoard PE instance;
+- The instance of the [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} installed locally;
+- UDP integration, running externally and connected to the ThingsBoard PE instance;
+{% endif %}
+{% if docsPrefix == "paas/" %}
+- ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud){:target="_blank"};
+- UDP integration, running externally and connected to the ThingsBoard Cloud;
+{% endif %}
 - **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
 - **netcat** (**nc**) utility to establish UDP connections, receive data from there and transfer them;
 
-Let's assume that we have a sensor which is sending current temperature and humidity readings.
-Our sensor device **SN-001** publishes it's temperature and humidity readings to UDP Integration on **11560** port to the machine where UDP Integration is running.
+Suppose we have a sensor sending current temperature and humidity readings. 
+Sensor **SN-001** sends data to UDP integration on port **11560** of the machine where the UDP integration is running.
 
-For demo purposes we assume that our device is smart enough to send data in 4 different payload types:
-- **Text** - in this case payload is:
+For demo purposes we assume that our device is smart enough to send data in 4 different payload types. 
+You can select payload type based on your device capabilities and business cases:
+ 
+{% capture fourpayloadtypes %}
+Text payload<br>%,%text%,%templates/integration/udp/text-payload-type.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/json-payload-type.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/binary-payload-type.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/hex-payload-type.md{% endcapture %}
 
-```text
-SN-001,default,temperature,25.7,humidity,69
-```
-
-- **JSON** - in this case payload is:
-
-```json
-{
-  "deviceName": "SN-001",
-  "deviceType": "default",
-  "temperature": 25.7,
-  "humidity": 69
-}
-
-```
-
-- **Binary** - in this case, the payload looks like this (in HEX string):
-
-```text
-\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x36\x39
-``` 
-
-Here is the description of the bytes in this payload:
-- **0-5** bytes - **\x53\x4e\x2d\x30\x30\x31** - device name. If we convert it to text - **SN-001**;
-- **6-12** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
-- **13-16** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
-- **17-18** bytes - **\x36\x39** - humidity telemetry. If we convert it to text - **69**.
-<br>
-- **Hex** - in this case payload is hexadecimal string:
-
-```text
-534e2d30303164656661756c7432352e373639
-``` 
-
-Here is the description of the bytes in this payload:
-  - **0-5** bytes - **534e2d303031** - device name. If we convert it to text - **SN-001**;
-  - **6-12** byte - **64656661756c74** - device type. If we convert it to text - **default**;
-  - **13-16** byte - **32352e37** - temperature telemetry. If we convert it to text: - **25.7**;
-  - **17-18** byte - **3639** - humidity telemetry. If we convert it to text: - **69**.
-
-You can select payload type based on your device capabilities and business cases.
+{% include content-toggle.liquid content-toggle-id="fourpayloadtypes" toggle-spec=fourpayloadtypes %}
 
 {% capture difference %}
 **Please note**
@@ -89,97 +55,49 @@ On the machine, where UDP Integration is running, port **11560** must be opened 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Uplink Converter
+## Add UDP integration
 
-Before setting up an **UDP integration**, you need to create an **Uplink Converter** that is a script for parsing and transforming the data received by UDP integration to format that ThingsBoard uses.
-**deviceName** and **deviceType** are required, while attributes and telemetry are optional. attributes and telemetry are flat key-value objects. Nested objects are not supported.
+**1. Basic settings**.
 
-To create an **Uplink Converter** go to **Data Converters** section and Click **Add new data converter —> Create new converter**.
-Name it **"UDP Uplink Converter"** and select type **Uplink**. Use debug mode for now.
+Go to the "**Integrations**" page of the "**Integrations center**" section. Click "plus" button to start adding new integration. Select type "**UDP**" integration and click "**Next**";
 
-{% capture difference %}
-**NOTE**
+![image](/images/user-guide/integrations/udp/udp-integration-setup-1-pe.png)
+
 <br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+**2. Uplink data converter**. 
+
+An uplink converter that is a script for parsing and transforming the data received by UDP integration to format that ThingsBoard uses. 
+**deviceName** and **deviceType** are required, while attributes and telemetry are optional. attributes and telemetry are flat key-value objects. Nested objects are not supported.
 
 **Choose device payload type to for decoder configuration:**
 
-- **Text payload**
+{% capture uplinkdecoderconfiguration %}
+Text payload<br>%,%text%,%templates/integration/udp/uplink-decoder-text-payload.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/uplink-decoder-json-payload.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/uplink-decoder-binary-payload.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/uplink-decoder-hex-payload.md{% endcapture %}
 
-{% include templates/tbel-vs-js.md %}
+{% include content-toggle.liquid content-toggle-id="uplinkdecoderconfiguration" toggle-spec=uplinkdecoderconfiguration %}
 
-{% capture udpuplinktext %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-text-tbel.md%br%
-JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-text-java.md{% endcapture %}
+**3. Downlink data converter**.
 
-{% include content-toggle.liquid content-toggle-id="udpuplinktext" toggle-spec=udpuplinktext %}
+At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty. Click "**Skip**";
 
-- **JSON payload**
-
-{% capture udpuplinkjson %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-json-tbel.md%br%
-JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-json-java.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="udpuplinkjson" toggle-spec=udpuplinkjson %}
-
-- **Binary payload**
-
-{% capture udpuplinkbinary %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-binary-tbel.md%br%
-JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-binary-java.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="udpuplinkbinary" toggle-spec=udpuplinkbinary %}
-
-- **Hex payload**
-
-{% capture udpuplinkhex %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-uplink-hex-tbel.md%br%
-JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-hex-java.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="udpuplinkhex" toggle-spec=udpuplinkhex %}
-
-### UDP Integration Setup
-
-- Go to **Integrations** section and click **Add new integration** button. Name it **UDP Integration**, select type **UDP**;
-
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-1-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-1-paas.png)
-{% endif %}
-
-- Add recently created UDP Uplink Converter;
-
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-2-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-2-paas.png)
-{% endif %}
-
-- For now, leave the "Downlink Data Converter" field blank.
-
-{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/udp/udp-integration-setup-3-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-3-paas.png)
-{% endif %}
 
-As you mentioned **Execute remotely** is checked and can not be modified - UDP Integration can be only **remote** type.
+<br>
+**4. Connection**.
 
-By default UDP Integration will use **11560** port, but you can change this to any available port in your case.
+As we mentioned earlier, "**Execute remotely**" option is checked and can not be modified - UDP Integration can be only remote type.
+
+By default, UDP Integration will use **11560** port, but you can change this to any available port in your case.
 
 Please note down **Integration key** and **Integration secret** - we will use these values later in the configuration on the remote UDP Integration itself.
 
-We leave other options by default, but there is brief description of them:
-- **Enable broadcast - integration will accepts broadcast address packets** - a flag indicating that integration will accept UDP packets that were sent to broadcast address;
-- **Size of the buffer for inbound socket** - the size in KBytes of the socket data receive buffer;
+We leave the **Enable broadcast - integration will accepts broadcast address packets** options by default. This flag indicates that integration will accept UDP packets sent to the broadcast address.
 
-Choose device payload type for **Handler Configuration**
+<br>
+Choose device payload type for **Handler Configuration**:
 
 {% capture handlerconfiguration %}
 Text payload<br>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
@@ -189,26 +107,17 @@ Hex payload<br>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.
 
 {% include content-toggle.liquid content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
-Click **Add** to save the Integration.
+## Installing and running external UDP integration
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-4-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-4-paas.png)
-{% endif %}
+Please refer to the [remote integration guide](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations){:target="_blank"} and install UDP integration service locally or on separate machine.
 
-#### Installing and running external UDP Integration
+Use **Integration key** and **Integration secret** from the above section for your UDP integration configuration.
 
-Please refer to the [Remote Integration guide](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations) and install UDP Integration service locally or on separate machine.
+## Send uplink message
 
-Please use **Integration key** and **Integration secret** from the above section for your UDP Integration configuration.
+Once ThingsBoard UDP integration has been created, the UDP server starts, and then it waits for data from the devices.
 
-### Send Uplink message
-
-Once ThingsBoard UDP Integration has been created, the UDP server starts, and then it waits for data from the devices.
-
-Choose device payload type to send uplink message
+Choose device payload type to send uplink message:
 
 {% capture senduplink %}
 Text payload<br>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
@@ -218,19 +127,18 @@ Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endca
 
 {% include content-toggle.liquid content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 
-Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
-Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.
+Once you go to "**Devices**" page you should find a **SN-001** device provisioned by the UDP integration.
+Click the device, navigate to the "**Latest telemetry**" tab to see the "temperature" key and its value (25.7) there and also the "humidity" key and its value (69) there as well.
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-create-device-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-create-device-paas.png)
-{% endif %}
+![image](/images/user-guide/integrations/udp/udp-integration-add-device-pe.png)
 
-## Advanced usage: Downlink
+## Advanced usage: downlink
 
-Create Downlink Converter in **Data converters**. To see events - enable Debug.
+For sending Downlink messages from Thingsboard to the device, we need to define a downlink converter. 
+
+### Add downlink converter
+
+{% include templates/tbel-vs-js.md %}
 
 {% capture udpdownlink %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/udp/udp-downlink-tbel.md%br%
@@ -238,68 +146,80 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-downlink-j
 
 {% include content-toggle.liquid content-toggle-id="udpdownlink" toggle-spec=udpdownlink %}
 
-Now you have to add a converter to the integration, optionally
-configure Cache Size and Cache time to live in minutes (able just for UDP Downlink).
+To add a downlink data converter to the UDP integration, follow these steps:
+
+{% assign udpAddDownlinkConverter = '
+  ===
+    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-1-pe.png,
+    title: Go to the "**Integrations**" page, click UDP integration to open its details, and enter integration editing mode by clicking the "pencil" icon;
+  ===
+    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-2-pe.png,
+    title: Enter a name for the downlink data converter and click "**Create new converter**";
+  ===
+    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-3-pe.png,
+    title: Paste the script to the encoder function section, and click "Add";
+  ===
+    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-4-pe.png,
+    title: Apply changes.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=udpAddDownlinkConverter %}
 
 {% capture difference %}
-Cache size and Time to live - features, that helps to avoid memory leak when we are storing connections.<br>
-Cache time to live - time to storage messages.<br>
-Cache size - maximum size of messages for UDP client.
+Optionally, configure **Cache Size** and **Cache time to live in minutes** - features, that helps to avoid memory leak when we are storing connections (able just for UDP Downlink).<br>
+**Cache Size** - maximum size of messages for UDP client.<br>
+**Cache time to live in minutes** - time to storage messages.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-add-downlink-converter-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-add-downlink-converter-paas.png)
-{% endif %}
+### Modify Root Rule Chain
 
-<br>
-When integration configured and ready to use, we need to go to Rule Chains, choose 'Root Rule Chain' and here create rule node
-**Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
+When integration configured and ready to use, we need to go to "Rule Chains" page and configure the "**Root Rule Chain**" so that messages like "**Attributes updated**" and "**Post attributes**" are forwarded to the downlink data converter:
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-downlink-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-downlink-paas.png)
-{% endif %}
+{% assign ruleChainDownlink = '
+  ===
+    image: /images/user-guide/integrations/udp/rule-chain-downlink-1-pe.png,
+    title: In the Root Rule Chain editor, find the "**integration downlink**" node and drag it to the rule chain;
+  ===
+    image: /images/user-guide/integrations/udp/rule-chain-downlink-2-pe.png,
+    title: Name it "**UDP Downlink**", specify our "**UDP integration**", and click "Add";
+  ===
+    image: /images/user-guide/integrations/udp/rule-chain-downlink-3-pe.png,
+    title: Drag the connection from the "message type switch" node to the "UDP integration" node with "**Attributes updated**" and "**Post attributes**" labels. Save all changes;
+'
+%}
 
-After this steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of 'Integration Downlink',
-here lets choose **Attribute Update**, tap 'Add' and save Rule node. That's it!
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=ruleChainDownlink %}
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-and-attributes-updated-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-and-attributes-updated-paas.png)
-{% endif %}
+### Test downlink
 
-### Test Downlink
+To test downlink, create some **shared attribute** on your device:
 
-To test downlink, create some **shared attribute** on your device and send some Uplink message on this device. And you will see Downlink message.
+{% assign ruleChainDownlink = '
+    ===
+        image: /images/user-guide/integrations/udp/udp-add-shared-attribute-1-pe.png,
+        title: Go to the "**Devices**" page. Click your device and navigate to the "**Attributes**" tab. Select the "**Shared attributes**" option, and click the "**plus**" icon;
+    ===
+        image: /images/user-guide/integrations/udp/udp-add-shared-attribute-2-pe.png,
+        title: Enter the attribute name, and its value (for example, the key name is "**firmware**", value: "**v1.1**") and click "Save";
+    ===
+        image: /images/user-guide/integrations/udp/udp-add-shared-attribute-3-pe.png,
+'
+%}
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-add-shared-add-attribute-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-add-shared-add-attribute-paas.png)
-{% endif %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=ruleChainDownlink %}
+
+To receive a downlink message you need to set the timeout for responses `-w10` (this option determines how long you will wait for a response) and send the uplink message again:
+
+```shell
+echo -e 'SN-001,default,temperature,25.7,humidity,69' | nc -w10 -u 127.0.0.1 11560
+```
+{: .copy-code}
+
+You should get the following response from the ThingsBoard in the terminal:
 
 ![image](/images/user-guide/integrations/udp/terminal-add-attribute.png)
-
-Also, you can set for Uplink command option `-q`, for example 120 seconds. This option setting how long you will wait for a response.
-If time of connection is over - you will receive this message on next Uplink. See next example:
-
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-update-shared-attributes-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-update-shared-attributes-paas.png)
-{% endif %}
-
-![image](/images/user-guide/integrations/udp/terminal-update-attribute.png)
 
 {% capture difference %}
 **Note**
@@ -307,7 +227,6 @@ If time of connection is over - you will receive this message on next Uplink. Se
 When you use UDP integration, and your connection established for a long time, you will receive just one Downlink message. All other will be saved on server side and will be sent on next Uplink.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
-
 
 ## Next steps
 
