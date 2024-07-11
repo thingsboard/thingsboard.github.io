@@ -10,13 +10,13 @@ uplink:
 
 api-keys:
     0:
-        image: /images/chirpstack/chirpstack-api-keys.png
+        image: /images/chirpstack/chirpstack-api-key-1.png
         title: Open API keys
     1:
-        image: /images/chirpstack/chirpstack-api-keys-2.png
+        image: /images/chirpstack/chirpstack-api-key-2.png
         title: Create API key
     2:
-        image: /images/chirpstack/chirpstack-api-keys-3.png
+        image: /images/chirpstack/chirpstack-api-key-3.png
         title: Copy created API key
 
 integration:
@@ -26,11 +26,11 @@ integration:
 
 chirpstack_integration:
     0:
-        image: /images/chirpstack/chirpstack-create-integration.png
+        image: /images/chirpstack/chirpstack-configure-integration-1.png
         title: Create integration
 
     1:
-        image: /images/chirpstack/chirpstack-integration-created.png
+        image: /images/chirpstack/chirpstack-configure-integration-2.png
         title: Set integration name and endpoint url
 
 uplink_message:

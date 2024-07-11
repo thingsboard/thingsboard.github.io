@@ -3,35 +3,36 @@ layout: docwithnav-pe
 title: ChirpStack Integration 
 description: ChirpStack Integration Guide 
 
-uplink:
-    0:
-        image: /images/chirpstack/create-uplink.png
-        title: Create uplink converter
-
 api-keys:
     0:
-        image: /images/chirpstack/chirpstack-api-keys.png
+        image: /images/user-guide/integrations/chirpstack/chirpstack-api-key-1.png
         title: Open API keys
     1:
-        image: /images/chirpstack/chirpstack-api-keys-2.png
+        image: /images/user-guide/integrations/chirpstack/chirpstack-api-key-2.png
         title: Create API key
     2:
-        image: /images/chirpstack/chirpstack-api-keys-3.png
+        image: /images/user-guide/integrations/chirpstack/chirpstack-api-key-3.png
         title: Copy created API key
 
-integration:
+configure-chirpstack-integration:
     0:
-        image: /images/chirpstack/create-integration.png
-        title: Create integration
-
-chirpstack_integration:
-    0:
-        image: /images/chirpstack/chirpstack-create-integration.png
-        title: Create integration
-
+        image: /images/user-guide/integrations/chirpstack/chirpstack-configure-integration-1.png
+        title: Go to the <b>Applications</b> page in the left menu of the ChirpStack Network server user interface, and click "<b>Add application</b>" button;
     1:
-        image: /images/chirpstack/chirpstack-integration-created.png
-        title: Set integration name and endpoint url
+        image: /images/user-guide/integrations/chirpstack/chirpstack-configure-integration-2.png
+        title: Named it and click "<b>Submit</b>" button;
+    2:
+        image: /images/user-guide/integrations/chirpstack/chirpstack-configure-integration-3.png
+        title: Application created. Now, navigate to the "<b>Integrations</b>" tab;
+    3:
+        image: /images/user-guide/integrations/chirpstack/chirpstack-configure-integration-4.png
+        title: Find and add a <b>HTTP</b> integration by clicking "<b>+</b>" icon;
+    4:
+        image: /images/user-guide/integrations/chirpstack/chirpstack-configure-integration-5.png
+        title: Fill in the field with the "<b>HTTP endpoint URL</b>" previously copied from the ChirpStack integration in the ThingsBoard;
+    5:
+        image: /images/user-guide/integrations/chirpstack/chirpstack-configure-integration-6.png
+        title: HTTP integration created.
 
 uplink_message:
     0:
