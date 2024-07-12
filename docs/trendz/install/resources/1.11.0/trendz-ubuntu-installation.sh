@@ -1,1 +1,1 @@
-sudo dpkg -i trendz-1.11.0-RC7.deb
+sudo dpkg -i trendz-1.11.0.deb

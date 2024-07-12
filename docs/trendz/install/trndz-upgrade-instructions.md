@@ -187,6 +187,21 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 These steps are applicable for 1.10.3 Trendz Analytics version.
 
+{% capture tb_3_7_0_upgrade_note %}
+**Important note before upgrading to Trendz 1.11.0**
+
+Trendz backend was migrated to Java 17. Install JDK 17 and ensure that system's default Java version is set to 17.
+
+Please refer to Step 1 of the corresponding installation guide for detailed instructions:
+
+[**Ubuntu**](/docs/trendz/install/ubuntu/#step-1-install-java-17-openjdk)
+
+[**CentOS/RHEL**](/docs/trendz/install/rhel/#step-1-install-java-17-openjdk)
+
+{% endcapture %}
+{% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
+
+
 ### Ubuntu/CentOS {#ubuntucentos-1110}
 
 #### Trendz Analytics package download
@@ -229,9 +244,19 @@ sudo service trendz start
 
 ### Windows {#windows-1110}
 
+{% capture tb_3_7_0_upgrade_note %}
+**Important note before upgrading to Trendz 1.11.0**
+
+Trendz backend was migrated to Java 17. Install JDK 17 and ensure that system's default Java version is set to 17.
+
+Please refer to [**Step 1 of the installation guide**](/docs/trendz/install/windows/#step-1-install-java-17-openjdk) for detailed instructions.
+
+{% endcapture %}
+{% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
+
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.11.0-RC7.zip](https://dist.thingsboard.io/trendz-windows-1.11.0-RC7.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.11.0.zip](https://dist.thingsboard.io/trendz-windows-1.11.0.zip).
 
 #### Trendz Analytics service upgrade
 

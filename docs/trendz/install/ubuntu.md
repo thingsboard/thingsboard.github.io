@@ -19,7 +19,7 @@ To run Trendz Analytics on a single machine you will need at least 1Gb of free R
 
 In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
