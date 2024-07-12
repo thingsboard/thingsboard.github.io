@@ -50,6 +50,9 @@ selfManagedPlan:
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a id="Pricing_Edge" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
+            <li id="menu-item-mqtt-broker-options" class="menu-item tb-logo">
+                <a id="Pricing_TBMQ" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('mqtt-broker-options')">TBMQ</a>
+            </li>
          </ul>
        </nav>
     </div>
@@ -82,6 +85,25 @@ selfManagedPlan:
                  data-product-id="trendz-self-managed"
                  onClick="activateProductSection('trendz-self-managed')">
                 <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
+            </div>
+        </div>
+    </div>
+    <div id="mqtt-broker-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
+        <div class="product-selector">
+            <div id="Pricing_TBMQ_dedicated"
+                 data-solutionId="mqtt-broker-dedicated"
+                 class="solution mqtt-broker-dedicated active defaultselection gtm_button" 
+                 data-product-id="mqtt-broker-dedicated" 
+                 onClick="activateProductSection('mqtt-broker-dedicated')">
+                <h3 data-faq-id="what-is-dedicated" 
+                    data-faq-link-size="70%">Dedicated</h3>
+            </div>
+            <div id="Pricing_TBMQ_byoc"
+                 data-solutionId="mqtt-broker-byoc"
+                 class="solution mqtt-broker-byoc gtm_button" 
+                 data-product-id="mqtt-broker-byoc" 
+                 onClick="activateProductSection('mqtt-broker-byoc')">
+                <h3 data-faq-id="what-is-byoc" data-faq-link-size="70%">BYOC</h3>
             </div>
         </div>
     </div>
@@ -1101,6 +1123,173 @@ selfManagedPlan:
         </div>
     </div>
  </div>  
+</div>
+
+<div id="mqtt-broker-dedicated" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description pricing-cloud active col-lg">
+                <h2>Subscription plans</h2>
+                <div class="pricing-content-details">
+                    The Dedicated plan features a dedicated MQTT cluster hosted within an independent Virtual Private Cloud (VPC). This ensures a unique and reliable environment. This plan is ideal for meeting the high-performance demands and superior support required for scenarios with high throughput and concurrency. 
+                </div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-cloud active">
+               <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Maker</h2>
+                            <div class="pricing-square-description">
+                                <p>Tier 1</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $10
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $0.36 
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Maker" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 1000 Sessions</div>
+                            <div class="pricing-square-item">Up to 1000 TPS</div>
+                            <div class="pricing-square-item">Up to 5 persistent Applications </div>
+                            <div class="pricing-square-item">Up to 100 Device persistent messages per second</div>
+                            <div class="pricing-square-item">100GB Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <div class="pricing-square-description">
+                                <p>Tier 2</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $149
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $0.64
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Prototype" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 3000 Sessions</div>
+                            <div class="pricing-square-item">Up to 3000 TPS</div>
+                            <div class="pricing-square-item">Up to 10 persistent Applications</div>
+                            <div class="pricing-square-item">Up to 200 Device persistent messages per second</div>
+                            <div class="pricing-square-item">100GB Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>
+                            <div class="pricing-square-description">
+                                <p>Tier 3</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $399
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $0.99
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Startup" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 5000 Sessions</div>
+                            <div class="pricing-square-item">Up to 10000 TPS</div>
+                            <div class="pricing-square-item">Up to 20 persistent Applications</div>
+                            <div class="pricing-square-item">Up to 400 Device persistent messages per second</div>
+                            <div class="pricing-square-item">100GB Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <div class="pricing-square-description">
+                                <p>Tier 4</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $749
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $1.49
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Business" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 10000 Sessions</div>
+                            <div class="pricing-square-item">Up to 20000 TPS</div>
+                            <div class="pricing-square-item">Up to 40 persistent Applications</div>
+                            <div class="pricing-square-item">Up to 800 Device persistent messages per second</div>
+                            <div class="pricing-square-item">100GB Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mqtt-broker-byoc" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description pricing-cloud active col-lg">
+                <!-- <h2>Subscription plans</h2> -->
+                <div class="pricing-content-details">
+                    The BYOC (Bring Your Own Cloud) plan allows customers to deploy the TBMQ Enterprise cluster on their cloud infrastructure while benefiting from management and technical support by the TBMQ team. This plan is tailored to meet specific security and compliance requirements, allowing for the selection of preferred cloud providers and infrastructure. 
+                </div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-community active" id="byoc">
+               <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                        <div class="pricing-square">
+                            <h2>BYOC</h2>
+                            <div class="pricing-square-description">
+                                <p>Ensures that your business needs are met while retaining full control within your organization</p>
+                            </div>
+                            <h4 class="pricing-square-price no-sign mb-0">
+                                Custom Pricing
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_byoc_custom" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Tailor-made solutions to fit your needs</div>
+                            <div class="pricing-square-item">Ensures your data remains secure within your own environment</div>
+                            <div class="pricing-square-item">Offers flexible deployment options to suit various needs</div>
+                            <div class="pricing-square-item">Provides out-of-box integration with over 40 cloud services</div>
+                            <div class="pricing-square-item">Comes with round-the-clock global technical support</div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container faq-content">

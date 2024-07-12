@@ -66,6 +66,19 @@ html#pricing
                     font-size: 14px
                     line-height: 18px
 
+    #mqtt-broker-dedicated
+      h5
+        width: 100%
+        font-size: 18px
+        font-weight: 600
+        letter-spacing: -0.32px
+        text-align: center
+        line-height: 24px
+        color: rgba(0,0,0,0.54)
+        span
+          font-size: 14px
+          font-weight: 400
+
     .faq-content
       padding: 60px 30px 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
@@ -351,7 +364,7 @@ html#pricing
             height: 28px
             margin-right: 5px
             margin-top: 5px
-        &.thingsboard-cloud, &.trendz-cloud
+        &.thingsboard-cloud, &.trendz-cloud, &.mqtt-broker-dedicated
           &:before
             content: ""
             display: inline-block
@@ -362,7 +375,7 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-        &.thingsboard-pe, &.trendz-self-managed
+        &.thingsboard-pe, &.trendz-self-managed, &.mqtt-broker-byoc
           &:before
             content: ""
             display: inline-block
@@ -577,7 +590,7 @@ html#pricing
               font-size: 14px
             @media (min-width: 1200px)
               font-size: 18px
-              padding: 14px 32px 14px 24px
+              padding: 14px 22px 14px 18px
               &:before
                 margin-right: 12px
                 width: 38px
