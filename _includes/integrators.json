@@ -841,6 +841,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Netherlands", "Belgium", "Luxembourg", "Germany"],
+    "name": "REMATE",
+    "contact": {
+      "href": "thingsboard@remate.nl"
+    },
+    "site": {
+      "href": "remate.nl",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Spain"],
     "name": "Risk Factor",
     "contact": {
