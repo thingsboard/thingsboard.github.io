@@ -22,6 +22,9 @@ toc:
       path: /docs/mqtt-broker/user-guide/shared-subscriptions/
     - title: Retained Messages
       path: /docs/mqtt-broker/user-guide/retained-messages/
+    - title: Quality of Service (QoS)
+      path: /docs/mqtt-broker/user-guide/qos/
+      new: true
 - title: Administration UI
   section:
     - title: Monitoring
