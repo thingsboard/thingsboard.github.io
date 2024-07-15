@@ -8,14 +8,15 @@ The ChirpStack open-source LoRaWAN Network Server stack provides open-source com
 ## Prerequisites
 
 In order to get data you should have configured instance of ChirpStack Network server stack. In this guide we will use the **configured local instance**, installed by docker compose.
-[Click to learn, how to install ChirpStack Network server stack using docker compose](https://www.chirpstack.io/project/guides/docker-compose/){:target="_blank"}.  
-Also, we have connected device. How to connect it you can find in [Connection guide from the official site](https://www.chirpstack.io/project/guides/connect-device/){:target="_blank"}. When device connected and the data appears in the **DEVICE DATA** tab - we can start to configure the integration to the ThingsBoard.  
+[Click to learn, how to install ChirpStack Network server stack using docker compose](https://www.chirpstack.io/project/guides/docker-compose/){:target="_blank"}.
+
+Also, you must connect the device. How to connect it you can find in [connection guide from the official site](https://www.chirpstack.io/project/guides/connect-device/){:target="_blank"}.
 
 ## Add ChirpStack integration
 
 **1. Basic settings**.
 
-Go to the "**Integrations**" page of the "**Integrations center**" section. Click "plus" button to start adding new integration. Select type "**ChirpStack**" integration and click "**Next**";
+Go to the "Integrations" page of the "Integrations center" section. Click "plus" button to start adding new integration. Select type "ChirpStack" integration and click "Next";
 
 {% capture kafka_please_note %}
 **Note:** While debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all debug data is stored there. After debugging is complete, it is highly recommended turning off debug mode.
@@ -28,9 +29,9 @@ Go to the "**Integrations**" page of the "**Integrations center**" section. Clic
 **2. Uplink data converter**. 
 
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in the ThingsBoard.
-Click on the **"plus"** and on "**Create new converter**". To view the events, use **Debug mode**. 
+Click on the "plus" and on "Create new converter". To view the events, use "Debug mode".
 
-In the function decoder field, specify a script to parse and transform data. For our example, use the default decoder function (or use your own configuration) when adding the integration. Then, click "**Next**";
+In the function decoder field, specify a script to parse and transform data. For our example, use the default decoder function (or use your own configuration) when adding the integration. Then, click "Next";
 
 {% include templates/tbel-vs-js.md %}
 
@@ -45,7 +46,7 @@ You can always change the decoder function after creating it.
 <br>
 **3. Downlink data converter**.
 
-At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty. Click "**Skip**";
+At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "Skip";
 
 ![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-3-pe.png)
 
@@ -54,10 +55,10 @@ At the step of adding a downlink converter, you can also select a previously cre
 
 To complete adding integration, you need to:
 
-- Specify your "**Base URL**";
-- Note down "**HTTP endpoint URL**" we will use this value later;
-- Specify "**Application server URL**" - address of application server or REST API service;
-- Specify "**Application server API Token**" - taken from the application server. To get its we need to open ChirpStack application server UI, navigate to the **API keys** page from the left top menu and create new an API key.  
+- Specify your "Base URL";
+- Note down "HTTP endpoint URL" we will use this value later;
+- Specify "Application server URL" - address of application server or REST API service. Usually, with a standard installation, only the port is changed to 8090;
+- Specify "Application server API Token" - taken from the application server. To get its we need to open ChirpStack application server UI, navigate to the "API keys" page from the left top menu and create new an API key.  
 
 {% include images-gallery.html imageCollection="api-keys" %}
 
@@ -71,37 +72,35 @@ In order for data to be transferred from ChirpStack to ThingsBoard, you need to 
 
 To create integration on ChirpStack Network server stack, we need to do the following steps:
 
-- Go to the **Applications** page in the left menu of the ChirpStack Network server user interface, and click "**Add application**" button;
-- Named it and click "**Submit**" button;
-- Application created. Now, navigate to the "**Integrations**" tab;
-- Find and add a **HTTP** integration by clicking "**+**" icon;
-- Fill in the field with the "**HTTP endpoint URL**" previously copied from the ChirpStack integration in the ThingsBoard.
+- Go to the "Applications" page in the left menu of the ChirpStack Network server user interface, and click "Add application" button;
+- Named it and click "Submit" button;
+- Application created. Now, navigate to the "Integrations" tab;
+- Find and add a HTTP integration by clicking "+" icon;
+- Fill in the field with the "HTTP endpoint URL" previously copied from the ChirpStack integration in the ThingsBoard. Then, click "Submit" button.
 
 HTTP integration created.
 
 {% include images-gallery.html imageCollection="configure-chirpstack-integration" %}
 
-## Processing Uplink message
+## Processing uplink message
 
-When device sends uplink message, you will receive an uplink event on integration and data from the device.  
+When your device sends an uplink message, a new device will appear in the ThingsBoard user interface.
 
-{% include images-gallery.html imageCollection="uplink_message" %}
+{% include images-gallery.html imageCollection="device" %}
 
-The created device with data can be seen in the section **Device groups -> All**
+You will receive an uplink event in the ChirpStack integration.
 
-{% include images-gallery.html imageCollection="device_groups" %}
+{% include images-gallery.html imageCollection="uplink-message-in-integration" %}
 
-Received data can be viewed in the Uplink converter. In the **“In”** and **"Out"** blocks of the **Events** tab:
+Received data can be viewed in the uplink converter. In the "In" and "Out" blocks of the "Events" tab:
 
-{% include images-gallery.html imageCollection="uplink_events" %}
+{% include images-gallery.html imageCollection="uplink-converter-events" %}
 
-Use the Dashboards to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets. 
+<br>
+Use the [Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.  
+ThingsBoard has examples of several types of dashboards that you can use. Learn more about **Solution templates** [here](/docs/{{docsPrefix}}solution-templates/overview/).
 
-ThingsBoard has examples of several types of dashboards that you can use. You can find them in **Solution templates** tab.
-
-{% include images-gallery.html imageCollection="solution_templates" %}
-
-How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/)
+{% include images-gallery.html imageCollection="solution-templates" %}
 
 ## Advanced usage: downlink
 
@@ -109,92 +108,47 @@ For sending downlink messages from the Thingsboard to the device, we need to def
 
 ### Add downlink converter
 
-Let's consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line //downlink data input.
+Let's consider an example where we send an attribute update message. 
 
-```
-data: msg.downlink
-```
+{% include templates/tbel-vs-js.md %}
 
-Also, indicate the required parameters in the metadata:  
+{% capture chirpstackdownlinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/chirpstack/chirpstack-downlink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/chirpstack/chirpstack-downlink-converter-config-javascript.md{% endcapture %}
 
-```
-metadata: {
-  "EUI": "$Device_EUI",
-  "port": 1
-}
-```
-Example for downlink converter:  
+{% include content-toggle.liquid content-toggle-id="chirpstackdownlinkconverterconfig" toggle-spec=chirpstackdownlinkconverterconfig %}
 
-```javascript
-// Encode downlink data from incoming Rule Engine message
-
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
-
-/** Encoder **/
-
-// Result object with encoded downlink payload
-var result = {
-
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
-    contentType: "TEXT",
-
-    // downlink data
-    data: btoa(msg.downlink),
-
-    // Optional metadata object presented in key/value format
-    metadata: {
-            DevEUI: metadata.cs_DevEUI,
-            fPort: metadata.cs_fPort
-    }
-
-};
-
-return result;
-
-``` 
-{: .copy-code}
-
-Where **DevEUI** is device EUI, it will be taken from the device uplink message.  
-A **fPort** can be from 1 to 223, it will be taken from the device uplink message.  
-
-{% include images-gallery.html imageCollection="downlink" %}
-
-You need customize the downlink according to your configuration. To add the downlink converter to the integration, follow this steps:  
-
-{% include images-gallery.html imageCollection="add-downlink-converter" %}
-
-You can do this at the stage of creating an integration or editing it.  
+You can add a downlink converter when creating or editing an integration.
 
 ### Modify Root Rule Chain
 
-In order to send Downlink, we use the rule chain to process shared attribute update.  
-To get **fPort** and **DevEUI** from device we have to import rule-chain.  
-You can find it [**here**](/docs/user-guide/integrations/resources/downlink_to_chirpstack.json).  
+In order to send downlink, we'll use the rule chain to process shared attribute update. Let's import this rule chain:
 
-{% include images-gallery.html imageCollection="downlink_rule_chain" %}
+- Download the [downlink_to_chirpstack.json](/docs/user-guide/integrations/resources/downlink_to_chirpstack.json){:target="_blank"} file;
+- Go to the "Rule Chains" page. To import this JSON file, click the "+" icon in the upper right corner of the screen and select "Import rule chain";
+- Drag the downloaded JSON file into the import rule chain window. Click "Import";
+- The "Downlink to Chirpstack" rule chain will open. Double-click on the "integration downlink" node, specify ChirpStack integration in the "Integration" field and save changes;
+- Save rule chain by pressing on checkmark.
 
-Also, we have to configure the root rule-chain:
+{% include images-gallery.html imageCollection="downlink-rule-chain" %}
 
-{% include images-gallery.html imageCollection="root_rule_chain" %}
+Now you need to configure the **Root Rule Chain**:
 
-We go to the **Device group** section in the **All** folder, to see this with an example.  
-We have indicated the downlink of the device in the **Shared attributes.**  
-Now we edit it by clicking on the “pencil” icon.  
-Then we make changes to the attribute (change the **downlink** to 01040206) and save the data.
+{% include images-gallery.html imageCollection="root-rule-chain" showListImageTitles="true" %}
 
-{% include images-gallery.html imageCollection="shared_attributes" %}
+### Test downlink
 
-Received data and data that was sent can be viewed in the downlink converter. In the **“In”** block of the **Events** tab, we see what data entered and the **“Out”** field displays messages to device:
+A downlink message will be sent to the integration when an attribute is added or modified.
 
-{% include images-gallery.html imageCollection="downlink_events" %}
+To see this with an example, we go to the "Devices" page. Select your device and navigate to the "Attributes" tab. 
+Select "Shared attributes" and click on the "plus" icon to add new attribute. Then enter the attribute name and its value (for example, the key name is 'downlink', value: '01040203') and click "Add".
 
+{% include images-gallery.html imageCollection="add-shared-attribute" %}
+
+Received data and data that was sent can be viewed in the downlink converter. In the "In" block of the "Events" tab, we see what data entered and the "Out" field displays messages to device:
+
+{% include images-gallery.html imageCollection="downlink-events" %}
 
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
-
-
-
