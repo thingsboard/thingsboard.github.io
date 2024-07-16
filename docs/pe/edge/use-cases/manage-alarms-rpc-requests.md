@@ -108,7 +108,7 @@ updateRootRuleChain:
         title: 'Filter node by "script" word and drag script node (Transformation) to rule chain.'
     3:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-4.png
-        title: 'Input node name and add <b>JavaScript</b> code (you can copy and paste it from the snippet above) to create proper <b>enable</b> command for Air Conditioner device. Click "Add" to proceed.'
+        title: 'Input node name and add <b>TBEL</b> script language code (you can copy and paste it from the snippet above) to create proper <b>enable</b> command for Air Conditioner device. Click "Add" to proceed.'
     4:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-5.png
         title: 'Drag connection from "Device Profile Node" to newly added <b>enabled</b> script node.'
