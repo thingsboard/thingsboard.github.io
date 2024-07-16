@@ -1131,12 +1131,11 @@ selfManagedPlan:
             <div class="pricing-content-description pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    Explore our diverse range of subscription options, each perfectly suited to your needs. 
                     Every plan features the deployment of a dedicated MQTT broker cluster on the ThingsBoard cloud, expertly managed by the TBMQ team. 
                     This guarantees a secure, dependable, and high-performance setup. 
                     The cluster comprises several TBMQ nodes, ensuring high availability and uninterrupted service. 
                     A dedicated load balancer is included to seamlessly distribute your incoming traffic across multiple targets. 
-                    Additionally, each plan includes persistence limits to store essential data during offline periods.
+                    Additionally, each plan includes sessions and message limits, as well as persistence limits to store essential data during offline periods.
                     Focus on your solution while we manage the servers for you on our cloud.
                 </div>
             </div>
@@ -1148,7 +1147,7 @@ selfManagedPlan:
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
-                                <p>Become familiar with TBMQ</p>
+                                <p>For PoCs and MVPs</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $189
@@ -1175,7 +1174,7 @@ selfManagedPlan:
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
-                                <p>For PoCs and MVPs</p>
+                                <p>For innovative ventures</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $289
@@ -1229,7 +1228,7 @@ selfManagedPlan:
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
+                                <p>For the fast-grown, defined long-term projects</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $999
@@ -1264,7 +1263,7 @@ selfManagedPlan:
             <div class="pricing-content-description pricing-cloud active col-lg">
                 <!-- <h2>Subscription plans</h2> -->
                 <div class="pricing-content-details">
-                    BYOC (Bring Your Own Cloud) deployment option allows you to leverage your existing cloud infrastructure while integrating our powerful MQTT broker clusters. 
+                    BYOC (Bring Your Own Cloud) deployment option allows you to leverage your existing cloud infrastructure while integrating our powerful MQTT broker cluster. 
                     This flexibility ensures that you can maintain control over your cloud environment, optimize costs, and meet specific regulatory or compliance requirements.
                     The TBMQ team is responsible for managing the cluster and providing technical support. 
                 </div>
@@ -1556,7 +1555,7 @@ selfManagedPlan:
                 Dedicated plan features the deployment of a dedicated MQTT broker cluster on the ThingsBoard cloud, expertly managed by the TBMQ team.
                 The cluster comprises several TBMQ nodes, ensuring high availability and uninterrupted service. 
                 A dedicated load balancer is included to seamlessly distribute your incoming traffic across multiple targets. 
-                Additionally, each plan includes persistence limits to store essential data during offline periods. 
+                Additionally, each plan includes sessions and message limits, as well as persistence limits to store essential data during offline periods. 
                 It provides a 99.99% uptime SLA. Focus on your solution while we manage the servers for you on our cloud.
                 </p>
             </div>
@@ -1564,7 +1563,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="what-is-byoc" data-title="What is BYOC plan?">
             <div class="container">
                 <p>
-                BYOC (Bring Your Own Cloud) deployment option allows you to leverage your existing cloud infrastructure while integrating our powerful MQTT broker clusters. 
+                BYOC (Bring Your Own Cloud) deployment option allows you to leverage your existing cloud infrastructure while integrating our powerful MQTT broker cluster. 
                 This flexibility ensures that you can maintain control over your cloud environment, optimize costs, and meet specific regulatory or compliance requirements. 
                 The TBMQ team is responsible for managing the cluster and providing technical support.
                 </p>
@@ -1574,7 +1573,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                 <b>TMPS</b> refers to the total number of messages processed per second by the TBMQ cluster. 
-                This metric includes both incoming and outgoing messages. 
+                This metric includes both incoming and outgoing messages but counts only 'MQTT PUBLISH' packets.
                 For instance, if you have 100 devices each sending 10 messages per second, the incoming volume would be 1,000 messages per second. 
                 If there are 2 subscribers consuming these messages, resulting in 2,000 outgoing messages per second, the TMPS would be 3,000. 
                 TMPS provides a comprehensive measure of the messaging throughput handled by the TBMQ cluster, ensuring efficient and reliable communication for your IoT applications.
