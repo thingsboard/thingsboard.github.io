@@ -1584,8 +1584,8 @@ selfManagedPlan:
             <div class="container">
                 <p>
                 <a href="/docs/mqtt-broker/architecture/#application-client">Application client</a> is a specialized type of client designed for scenarios with high message subscription volumes. 
-                It utilizes a dedicated Kafka topic and Kafka consumer to ensure high performance and enables message persistence when the subscriber is offline. 
-                This makes it ideal for use cases where reliable message delivery and offline storage are critical.
+                It uses a dedicated message queue and consumer to ensure high performance and enables message persistence when the subscriber is offline. 
+                This makes it well-suited for scenarios where reliable message delivery is necessary, and message loss is unacceptable.
                 </p>
             </div>
         </div>
@@ -1593,7 +1593,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                 <a href="/docs/mqtt-broker/architecture/#device-client">Device client</a> is a standard type of client that can be configured to be persistent or non-persistent based on the connection settings.
-                Persistent device messages are stored in PostgreSQL while their corresponding device subscribers are offline. 
+                Persistent device messages are stored in a database while their corresponding device subscribers are offline. 
                 The limit for device persistent messages is configured per TBMQ cluster, rather than per individual client, ensuring efficient resource management.
                 </p>
             </div>    
