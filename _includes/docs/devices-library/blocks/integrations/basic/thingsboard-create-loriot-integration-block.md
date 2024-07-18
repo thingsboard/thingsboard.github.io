@@ -41,7 +41,7 @@ To do this please follow next steps:
 {% assign copyLoriotApplicationId = '
     ===
         image: /images/devices-library/basic/integrations/loriot/main-page-application.png,
-        title: Go to te "**Applications**" in the left menu and choose "**SampleApp**" or create a new one.
+        title: Go to the "**Applications**" in the left menu and choose "**SampleApp**" or create a new one.
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-application.png,
         title: Copy "**Application ID**" value and save it.
