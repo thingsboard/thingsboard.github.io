@@ -27,11 +27,11 @@ To create a connector, follow these steps:
         image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-8-ce.png,
-        title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button;
+        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        title: Click the "**+ Add connector**" button;
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
-        title: Click the "**+ Add connector**" button, choose "**MQTT**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to INFO, disable "**Fill configuration with default values**" field and click on "**Add**" button;
+        title: Choose "**MQTT**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to INFO, disable "**Fill configuration with default values**" field and click on "**Add**" button;
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
         title: Connector created.
