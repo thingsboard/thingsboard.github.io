@@ -50,3 +50,5 @@ Mapping subsection will look like:
       }
     }
 ```
+
+![image](/images/gateway/mqtt-connector/data-conversion-advanced-bytes-1-ce.png)

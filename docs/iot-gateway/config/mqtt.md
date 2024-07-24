@@ -16,7 +16,7 @@ Use [general configuration](/docs/iot-gateway/configuration/) to enable this Con
 The purpose of this Connector is to connect to an external MQTT broker and subscribe to data feed from devices. 
 The connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 
 
-This connector is useful when you have local MQTT broker in your facility or corporate network and you would like to push data from this broker to ThingsBoard.
+This connector is useful when you have local MQTT broker in your facility or corporate network, and you would like to push data from this broker to ThingsBoard.
 
 We will describe connector configuration file below.
 
@@ -42,13 +42,12 @@ This configuration section contains general connector settings, such as:
   - Logging level - logging level for local and remote logs: INFO, DEBUG, …;
 - Send data only on change - sending only if data changed from last check, if not – data will be sent after every check.
 
-Select basic or advanced MQTT configuration:
+![image](/images/gateway/mqtt-connector/general-basic-section-1-ce.png)
 
-{% capture mqttgeneralsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/general-basic-section.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/general-advanced-section.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="mqttgeneralsection" toggle-spec=mqttgeneralsection %}
+{% capture difference %}
+The settings are the same for both the basic and advanced configurations.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Section "Connection to broker"
 
@@ -149,6 +148,29 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/data-c
 
 {% include content-toggle.liquid content-toggle-id="mqttdataconversionsubsection" toggle-spec=mqttdataconversionsubsection %}
 
+**Now let's review an example of sending data from "SN-001" thermometer device.**
+
+Let’s assume MQTT broker is installed locally on your server.
+
+Use terminal to simulate sending message from the device to the MQTT broker:
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-1.png)
+{: refdef}
+
+The device will be created and displayed in ThingsBoard based on the passed parameters.
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-created-device-1.png)
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-created-device-2.png)
+{: refdef}
+
 ## Requests mapping
 
 This section of the configuration outlines an array that includes all the supported requests for both the gateway and ThingsBoard:
@@ -159,13 +181,15 @@ This section of the configuration outlines an array that includes all the suppor
 - attribute updates;
 - RPC commands.
 
-For adding new data mapping, click "plus" icon:
+Firstly, select basic or advanced MQTT configuration:
 
-![image](/images/gateway/mqtt-connector/requests-mapping-1-ce.png)
+{% capture mqttrequestsmappingsection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/requests-mapping-section-basic.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/requests-mapping-section-advanced.md{% endcapture %}
 
-Modal window will open:
+{% include content-toggle.liquid content-toggle-id="mqttrequestsmappingsection" toggle-spec=mqttrequestsmappingsection %}
 
-![image](/images/gateway/mqtt-connector/requests-mapping-2-ce.png)
+Below we go through all the supported requests for both Gateway and ThingsBoard.
 
 ### Subsection "Connect request"
 
@@ -173,11 +197,34 @@ ThingsBoard allows sending RPC commands and notifications about device attribute
 But in order to send them, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment. If your device is constantly sending telemetry data - ThingsBoard already knows how to push notifications. 
 If your device just connects to MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform that device is connected to the broker.
 
+Also, it is possible to configure where to get the device name: from the topic or from the message body.
+
+Select basic or advanced MQTT configuration:
+
 {% capture mqttconnectrequestsubsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/connect-request-subsection-basic.md%br%
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/connect-request-subsection-advanced.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="mqttconnectrequestsubsection" toggle-spec=mqttconnectrequestsubsection %}
+
+**Now let's review an example.**
+
+Use a terminal to simulate sending a message from the device to the MQTT broker:
+
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/connect" -m '{"serialNumber": "SN-001"}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-connect.png)
+{: refdef}
+
+Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information under the "Server attributes" scope in the "Attributes" tab.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-connect-device.png)
+{: refdef}
 
 ### Subsection "Disconnect request"
 
@@ -185,11 +232,32 @@ This configuration section is optional.
 Configuration, provided in this section will be used to get information from the broker about disconnecting device.
 If your device just disconnects from MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform it that device is disconnected from the broker.
 
+Select basic or advanced MQTT configuration:
+
 {% capture mqttdisconnectrequestsubsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/disconnect-request-subsection-basic.md%br%
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/disconnect-request-subsection-advanced.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="mqttdisconnectrequestsubsection" toggle-spec=mqttdisconnectrequestsubsection %}
+
+**Now let's review an example.**
+
+Use a terminal to simulate sending a message from the device to MQTT broker:
+
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/disconnect" -m '{"serialNumber": "SN-001"}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-disconnect.png)
+{: refdef}
+
+Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information under the "Server attributes" scope in the "Attributes" tab.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-disconnect-device.png)
+{: refdef}
 
 ### Subsection "Attribute requests"
 
@@ -197,6 +265,8 @@ This configuration section is optional.
 
 In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending
 attribute requests.
+
+Select basic or advanced MQTT configuration:
 
 {% capture mqttattributerequestsubsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/attribute-request-subsection-basic.md%br%
@@ -213,17 +283,60 @@ See [user guide](/docs/user-guide/attributes/) for more details.
 
 The "**attributeUpdates**" configuration allows configuring the format of the corresponding attribute request and response messages.
 
+Select basic or advanced MQTT configuration:
+
 {% capture mqttattributerequestsubsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/attribute-updates-subsection-basic.md%br%
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/attribute-updates-subsection-advanced.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
 
+**Let's look at an example.**
+
+Run the command below to start the *mosquitto_sub* client, subscribing to the topic "sensor/SN-001/firmwareVersion" of the local broker. Start waiting for new messages from ThingsBoard server to broker.
+
+```bash
+mosquitto_sub -h 127.0.0.1 -p 1883 -t sensor/SN-001/firmwareVersion
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-mosquitto-sub-wait-1.png)
+{: refdef}
+
+Update device attribute value on the ThingsBoard server following these steps:
+- Open the "Devices" page;
+- Click on your device and navigate to the "Attributes" tab;
+- Choose "Shared attributes" scope and click on the "pencil" icon next to *"firmwareVersion"* attribute.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-update-attribute-1.png)
+{: refdef}
+
+- Change firmware version value from "1.1" to "1.2". Then click "Update" button.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-update-attribute-2.png)
+{: refdef}
+
+The firmware version has been updated to "1.2".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-update-attribute-3.png)
+{: refdef}
+
+Broker received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
+{: refdef}
+
 ### Server side RPC commands
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
-
 Configuration, provided in this section is used for sending RPC requests from ThingsBoard to device.
+
+Select basic or advanced MQTT configuration:
 
 {% capture mqttattributerequestsubsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/server-side-rpc-commands-subsection-basic.md%br%
@@ -235,9 +348,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/server
 
 This configuration settings provides fields for configuring connector performance and message reading/formatting speed:
 
-**Max number of workers** is a maximal number of workers thread for converters (amount of workers changes dynamically, depending on load). Recommended amount 50-100.
-
-**Max messages queue per worker** is a maximal messages count that will be in queue for each converter worker.
+Select basic or advanced MQTT configuration:
 
 {% capture mqttattributerequestsubsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/workers-settings-section-basic.md%br%

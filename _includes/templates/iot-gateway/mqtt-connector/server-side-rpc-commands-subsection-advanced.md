@@ -1,19 +1,3 @@
-| **Parameter**           | **Default value**                                            | **Description**                                                                                                                                |
-|:------------------------|:-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------
-| deviceNameFilter        | **.\***                                                      | Regular expression device name filter, is used to determine, which function to execute.                                                        |
-| methodFilter            | **echo**                                                     | Regular expression method name filter, is used to determine, which function to execute.                                                        |
-| requestTopicExpression  | **sensor/${deviceName}/request/${methodName}/${requestId}**  | JSON-path expression, is used for creating topic address to send RPC request.                                                                  |
-| responseTopicExpression | **sensor/${deviceName}/response/${methodName}/${requestId}** | JSON-path expression, is used for creating topic address to subscribe for response message.                                                    |
-| responseTimeout         | **10000**                                                    | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic. |
-| valueExpression         | **${params}**                                                | JSON-path expression, is used for creating data for sending to broker.                                                                         |
-| ---                     
-
-{% capture methodFilterOptions %}
-There are 2 options for RPC request:
-1. **With a response** -- If the configuration includes a responseTopicExpression, the gateway will attempt to subscribe to it and wait for a response.
-2. **Without a response** -- If the configuration does not include a responseTopicExpression, the gateway will simply send the message without waiting for a response.
-   {% endcapture %}
-   {% include templates/info-banner.md content=methodFilterOptions %}
 
 This section in configuration file looks like:
 
@@ -35,6 +19,25 @@ This section in configuration file looks like:
     }
   ]
 ```
+
+![image](/images/gateway/mqtt-connector/server-side-rpc-commands-advanced-1-ce.png)
+
+| **Parameter**           | **Default value**                                            | **Description**                                                                                                                                |
+|:------------------------|:-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------
+| deviceNameFilter        | **.\***                                                      | Regular expression device name filter, is used to determine, which function to execute.                                                        |
+| methodFilter            | **echo**                                                     | Regular expression method name filter, is used to determine, which function to execute.                                                        |
+| requestTopicExpression  | **sensor/${deviceName}/request/${methodName}/${requestId}**  | JSON-path expression, is used for creating topic address to send RPC request.                                                                  |
+| responseTopicExpression | **sensor/${deviceName}/response/${methodName}/${requestId}** | JSON-path expression, is used for creating topic address to subscribe for response message.                                                    |
+| responseTimeout         | **10000**                                                    | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic. |
+| valueExpression         | **${params}**                                                | JSON-path expression, is used for creating data for sending to broker.                                                                         |
+| ---
+
+{% capture methodFilterOptions %}
+There are 2 options for RPC request:
+1. **With a response** -- If the configuration includes a responseTopicExpression, the gateway will attempt to subscribe to it and wait for a response.
+2. **Without a response** -- If the configuration does not include a responseTopicExpression, the gateway will simply send the message without waiting for a response.
+   {% endcapture %}
+   {% include templates/info-banner.md content=methodFilterOptions %}
 
 You can use **deviceNameFilter** and **methodFilter** to apply different mapping rules for various devices/methods.
 Once Gateway receives RPC request from the server to the device, it will publish the corresponding message based on **requestTopicExpression** and **valueExpression**.

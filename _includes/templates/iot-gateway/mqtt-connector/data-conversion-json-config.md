@@ -72,6 +72,8 @@ Mapping subsection for Example 1 will look like:
     }
 ```
 
+![image](/images/gateway/mqtt-connector/data-conversion-advanced-json-1-ce.png)
+
 Mapping for Example 2 will look like:
 
 ```json
@@ -104,3 +106,5 @@ Mapping for Example 2 will look like:
       }
     }
 ```
+
+![image](/images/gateway/mqtt-connector/data-conversion-advanced-json-2-ce.png)

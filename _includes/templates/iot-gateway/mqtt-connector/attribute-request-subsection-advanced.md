@@ -1,15 +1,3 @@
-
-
-| **Parameter**                 | **Default value**                                     | **Description**                                                       |
-|:-|:-|-
-| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic.    |
-| topicFilter                   | **v1/devices/me/attributes/request**                  | Topic for attribute request |
-| deviceNameJsonExpression      | **${serialNumber}**                                   | JSON-path expression, for looking the device name in topicFilter message |
-| attributeNameJsonExpression   | **${versionAttribute}**                               | JSON-path expression, for looking the attribute name in topicFilter message |
-| topicExpression               | **devices/${deviceName}/attrs**                       | JSON-path expression, for formatting reply topic |
-| valueExpression               | **${attributeKey}: ${attributeValue}**                | Message that will be sent to topic from topicExpression |
-|---
-
 This section in configuration file looks like:
 ```json
 "attributeRequests": [
@@ -39,3 +27,16 @@ will look like:
   }
 ]
 ```
+
+![image](/images/gateway/mqtt-connector/attribute-requests-example-advanced-1-ce.png)
+
+| **Parameter**                 | **Default value**                                     | **Description**                                                       |
+|:-|:-|-
+| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic.    |
+| topicFilter                   | **v1/devices/me/attributes/request**                  | Topic for attribute request |
+| deviceNameJsonExpression      | **${serialNumber}**                                   | JSON-path expression, for looking the device name in topicFilter message |
+| attributeNameJsonExpression   | **${versionAttribute}**                               | JSON-path expression, for looking the attribute name in topicFilter message |
+| topicExpression               | **devices/${deviceName}/attrs**                       | JSON-path expression, for formatting reply topic |
+| valueExpression               | **${attributeKey}: ${attributeValue}**                | Message that will be sent to topic from topicExpression |
+|---
+

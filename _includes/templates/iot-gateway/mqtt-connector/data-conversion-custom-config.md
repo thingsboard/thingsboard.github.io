@@ -28,3 +28,5 @@ Converter subsection in the configuration will look like:
         }
       }
 ```
+
+![image](/images/gateway/mqtt-connector/data-conversion-advanced-custom-1-ce.png)

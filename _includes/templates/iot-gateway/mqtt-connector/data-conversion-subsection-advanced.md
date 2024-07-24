@@ -53,25 +53,3 @@ By default, gateway uses Json converter, but it is possible to provide custom co
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**Now let’s review an example of sending data from "SN-001" thermometer device.**
-
-Let’s assume MQTT broker is installed locally on your server.
-
-Use terminal to simulate sending message from the device to the MQTT broker:
-```bash
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
-```
-{: .copy-code}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-1.png)
-{: refdef}
-
-The device will be created and displayed in ThingsBoard based on the passed parameters.
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-created-device-1.png)
-{: refdef}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-created-device-2.png)
-{: refdef}
