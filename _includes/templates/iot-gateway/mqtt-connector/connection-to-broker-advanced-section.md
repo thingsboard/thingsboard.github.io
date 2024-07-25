@@ -12,7 +12,7 @@ This configuration section contains settings of the connection to broker, such a
 
 Example:
 
-```text
+```json
 "broker": {
     "name": "Default Local Broker",
     "host": "127.0.0.1",

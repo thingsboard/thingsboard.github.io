@@ -39,7 +39,7 @@ This configuration section contains general connector settings, such as:
 - Name - connector name for logs and saving to persistent devices;
 - Logs configuration:
   - Enable remote logging - enabling remote logging for connector;
-  - Logging level - logging level for local and remote logs: INFO, DEBUG, …;
+  - Logging level - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
 - Send data only on change - sending only if data changed from last check, if not – data will be sent after every check.
 
 ![image](/images/gateway/mqtt-connector/general-basic-section-1-ce.png)
