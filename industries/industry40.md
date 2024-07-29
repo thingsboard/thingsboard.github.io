@@ -37,7 +37,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/utvyakta-logo.png" alt="utvyakta">
-        <a class="outlink" href="https://utvyakta.com/" alt="Utvyakta"> Utvyakta </a>
+        <a class="outlink" href="https://www.utvyakta.com/" alt="Utvyakta"> Utvyakta </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
