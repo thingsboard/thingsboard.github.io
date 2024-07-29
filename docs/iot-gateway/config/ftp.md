@@ -101,12 +101,12 @@ Then, connector will subscribe to a list of paths from the mapping section. See 
 
 ### General section
 
-| **Parameter** | **Default value**                    | **Description**                                        |
-|:-|:-|--------------------------------------------------------
-| host          | **localhost**                        | Domain address or ip of the server.                    |
-| port          | **21**                               | Port of the server.                                    |
-| TLSSupport    | **true**                             | Verify whether TLS support is available on the server. |
-|---
+| **Parameter** | **Default value** | **Description**                                        |
+|:--------------|:------------------|--------------------------------------------------------|
+| host          | **localhost**     | Domain address or ip of the server.                    |
+| port          | **21**            | Port of the server.                                    |
+| TLSSupport    | **true**          | Verify whether TLS support is available on the server. |
+| ---           |                   |                                                        |
 
 #### Subsection "security"
 
@@ -123,10 +123,10 @@ Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ftp-conn
 This configuration section contains an array of objects with paths that the gateway will try to read after connecting to the server.  
 Also, this section contains settings for processing incoming messages (converter).  
 
-|**Parameter**|**Default value**|**Description**|
-|:-|:-|-
-| path | **data/log.txt** | Path to file for reading data. |
-|---
+| **Parameter** | **Default value** | **Description**                |
+|:--------------|:------------------|--------------------------------|
+| path          | **data/log.txt**  | Path to file for reading data. |
+| ---           |                   |                                |
 
 **Note** Make sure that your file extension is one of the supported extensions by FTP connector (.txt, .json, .csv)
 
@@ -320,13 +320,13 @@ ThingsBoard allows the provisioning of device attributes and fetches some of the
 
 The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be written to the specific files.
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                                                                                        |
-|:-|:-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| path                          | **fol/${attributeKey}/${attributeValue}.txt**         | JSON-path expression that is used for finding specific files                                                                                                           |
-| deviceNameFilter              | **.\***                                               | Regular expression device name filter, used to determine, which function to execute.                                                                                   |
-| writingMode                   | **OVERRIDE/WRITE**                                    | If writingMode is equal to OVERRIDE, the found files will be overwritten. If writingMode is equal to WRITE, new data will be appended at the end of the found files.   |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression is used for creating the message data that will be sent to FTP server. In this case, ',' serves as the delimiter and you can insert your data before it. |
-|---
+| **Parameter**    | **Default value**                             | **Description**                                                                                                                                                      |
+|:-----------------|:----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| path             | **fol/${attributeKey}/${attributeValue}.txt** | JSON-path expression that is used for finding specific files                                                                                                         |
+| deviceNameFilter | **.\***                                       | Regular expression device name filter, used to determine, which function to execute.                                                                                 |
+| writingMode      | **OVERRIDE/WRITE**                            | If writingMode is equal to OVERRIDE, the found files will be overwritten. If writingMode is equal to WRITE, new data will be appended at the end of the found files. |
+| valueExpression  | **,,,,${attributeKey},,,${attributeValue}**   | Expression is used for creating the message data that will be sent to FTP server. In this case, ',' serves as the delimiter and you can insert your data before it.  |
+| ---              |                                               |                                                                                                                                                                      |
 
 This section in configuration file looks like this:
 
@@ -347,12 +347,12 @@ ThingsBoard allows for sending RPC commands to devices connected directly to Thi
 
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                                                                                          |
-|:-|:-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| deviceNameFilter              | **.\***                                               | Regular expression device name filter, used to determine, which function to execute.                                                                                     |
-| methodFilter                  | **read/write**                                        | Mode for opening file                                                                                                                                                    |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | JSON-path expression, is used to create data for sending to FTP server, if methodFilter is equal to write. If methodFilter is equal to read, this field will be passing. |
-|---
+| **Parameter**    | **Default value**                           | **Description**                                                                                                                                                          |
+|:-----------------|:--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| deviceNameFilter | **.\***                                     | Regular expression device name filter, used to determine, which function to execute.                                                                                     |
+| methodFilter     | **read/write**                              | Mode for opening file                                                                                                                                                    |
+| valueExpression  | **,,,,${attributeKey},,,${attributeValue}** | JSON-path expression, is used to create data for sending to FTP server, if methodFilter is equal to write. If methodFilter is equal to read, this field will be passing. |
+| ---              |                                             |                                                                                                                                                                          |
 
 This section in configuration file looks like this:
 
@@ -370,6 +370,57 @@ This section in configuration file looks like this:
   }
 ]
 ```
+
+**Let’s look at an examples.**
+
+**Read data example**
+
+Suppose you want to read data from the file on connected FTP server. Go to enabled FTP connector RPC page and fill in 
+fields with the following configuration and click on "**Send**" button:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/ftp-rpc-request-read-1.png)
+{: refdef}
+
+After that, response will be shown in the "**Response**" field:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/ftp-rpc-response-read-1.png)
+{: refdef}
+
+**Write data example**
+
+{% capture difference %}
+**Make sure the file you want to write data to has the appropriate permissions. 
+Otherwise, you will get a 550 Permission denied error.**
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Suppose you want to write some data to the file on connected FTP server. Go to enabled FTP connector RPC page and fill in 
+fields with the following configuration and click on "**Send**" button:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/ftp-rpc-request-write-1.png)
+{: refdef}
+
+After that, response will be shown in the "**Response**" field:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/ftp-rpc-response-write-1.png)
+{: refdef}
+
+Let's check if the data was written to the file on the FTP server, for this purpose use the previously described 
+"**Read data**" example:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/ftp-rpc-request-read-2.png)
+{: refdef}
+
+Your response should contain the data you wrote to the file as in the image below:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/ftp-rpc-response-read-2.png)
+{: refdef}
 
 ## Next steps
 

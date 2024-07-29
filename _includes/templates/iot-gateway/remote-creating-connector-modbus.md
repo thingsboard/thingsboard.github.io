@@ -91,7 +91,7 @@ Default Modbus connector configuration:
             "tag": "power",
             "type": "16float",
             "functionCode": 4,
-            "objectsCount": 2,
+            "objectsCount": 1,
             "address": 8
           }
         ],
@@ -107,7 +107,7 @@ Default Modbus connector configuration:
             "tag": "temperature",
             "type": "16uint",
             "functionCode": 4,
-            "objectsCount": 2,
+            "objectsCount": 1,
             "address": 4
           }
         ],
