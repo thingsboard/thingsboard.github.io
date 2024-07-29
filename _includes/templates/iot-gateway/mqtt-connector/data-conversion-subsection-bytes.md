@@ -2,19 +2,19 @@ Converter for this payload type designed for binary MQTT payloads, this converte
 
 {% assign dataConversionBasicBytesSubsection = '
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-1-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-1-ce.png,
         title: Select "Bytes" payload type, and fill in the fields in the "Device" section. Then click "pencil" icon of the "Attributes" section to add new attribute key;
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-2-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-2-ce.png,
         title: In the opened window click "Add attribute". Enter the key name, select the type and enter the value of the key. Click "Apply";
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-3-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-3-ce.png,
         title: Now click on the "pencil" icon of the "Time series" section to add new time series key;
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-4-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-4-ce.png,
         title: In the opened window click "Add time series". Enter the key name, select the type and enter the value of the key. Click "Apply";
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-5-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-bytes-subsection-5-ce.png,
         title: Click "Add".
 '
 %}

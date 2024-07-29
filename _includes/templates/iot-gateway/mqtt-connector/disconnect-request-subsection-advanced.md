@@ -13,7 +13,7 @@ This section in configuration file looks like:
   ]
 ```
 
-![image](/images/gateway/mqtt-connector/disconnect-request-example-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/disconnect-request-example-1-ce.png)
 
 **Name in a message from broker:**
 

@@ -379,13 +379,13 @@ Suppose you want to read data from the file on connected FTP server. Go to enabl
 fields with the following configuration and click on "**Send**" button:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/ftp-rpc-request-read-1.png)
+![image](https://img.thingsboard.io/gateway/ftp-rpc-request-read-1.png)
 {: refdef}
 
 After that, response will be shown in the "**Response**" field:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/ftp-rpc-response-read-1.png)
+![image](https://img.thingsboard.io/gateway/ftp-rpc-response-read-1.png)
 {: refdef}
 
 **Write data example**
@@ -400,26 +400,26 @@ Suppose you want to write some data to the file on connected FTP server. Go to e
 fields with the following configuration and click on "**Send**" button:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/ftp-rpc-request-write-1.png)
+![image](https://img.thingsboard.io/gateway/ftp-rpc-request-write-1.png)
 {: refdef}
 
 After that, response will be shown in the "**Response**" field:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/ftp-rpc-response-write-1.png)
+![image](https://img.thingsboard.io/gateway/ftp-rpc-response-write-1.png)
 {: refdef}
 
 Let's check if the data was written to the file on the FTP server, for this purpose use the previously described 
 "**Read data**" example:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/ftp-rpc-request-read-2.png)
+![image](https://img.thingsboard.io/gateway/ftp-rpc-request-read-2.png)
 {: refdef}
 
 Your response should contain the data you wrote to the file as in the image below:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/ftp-rpc-response-read-2.png)
+![image](https://img.thingsboard.io/gateway/ftp-rpc-response-read-2.png)
 {: refdef}
 
 ## Next steps

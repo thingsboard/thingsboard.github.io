@@ -8,4 +8,4 @@ The table below describes the parameters required to configure authorization on 
 | pathToClientCert  | **/etc/thingsboard-gateway/certificate.pem** | Path to certificate file.  |
 | ---               
 
-![image](/images/gateway/mqtt-connector/security-basic-certificates-subsection-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/security-basic-certificates-subsection-1-ce.png)

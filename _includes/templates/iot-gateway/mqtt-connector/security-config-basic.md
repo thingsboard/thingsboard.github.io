@@ -19,4 +19,4 @@ Security subsection in configuration file will look like this:
     }
 ```
 
-![image](/images/gateway/mqtt-connector/security-advanced-basic-subsection-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/security-advanced-basic-subsection-1-ce.png)

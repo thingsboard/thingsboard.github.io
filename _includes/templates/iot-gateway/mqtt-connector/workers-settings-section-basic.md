@@ -1,4 +1,4 @@
-![image](/images/gateway/mqtt-connector/workers-settings-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/workers-settings-1-ce.png)
 
 **Max number of workers** is a maximal number of workers thread for converters (amount of workers changes dynamically, depending on load). Recommended amount 50-100.
 

@@ -4,19 +4,19 @@ And regular expressions to get device details from topics.
 
 {% assign dataConversionBasicJsonSubsection = '
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-json-subsection-1-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-json-subsection-1-ce.png,
         title: Select "JSON" payload type, and fill in the fields in the "Device" section. Then click "pencil" icon of the "Attributes" section to add new attribute key;
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-json-subsection-2-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-json-subsection-2-ce.png,
         title: In the opened window click "Add attribute". Enter the key name, select the type and enter the value of the key. Click "Apply";
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-json-subsection-3-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-json-subsection-3-ce.png,
         title: Now click on the "pencil" icon of the "Time series" section to add new time series key;
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-json-subsection-4-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-json-subsection-4-ce.png,
         title: In the opened window click "Add time series". Enter the key name, select the type and enter the value of the key. Click "Apply";
     ===
-        image: /images/gateway/mqtt-connector/data-conversion-basic-json-subsection-5-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-basic-json-subsection-5-ce.png,
         title: Click "Add".
 '
 %}

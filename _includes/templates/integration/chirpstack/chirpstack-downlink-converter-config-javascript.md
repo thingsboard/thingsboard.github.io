@@ -35,16 +35,16 @@ To add the downlink converter to the integration, follow this steps:
 
 {% assign addDownlinkConverter = '
     ===
-        image: /images/user-guide/integrations/chirpstack/add-downlink-converter-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/chirpstack/add-downlink-converter-1-pe.png,
         title: Go to the "Integrations" page, click ChirpStack integration to open its details, and enter integration editing mode by clicking the "pencil" icon;
     ===
-        image: /images/user-guide/integrations/chirpstack/add-downlink-converter-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/chirpstack/add-downlink-converter-2-pe.png,
         title: Enter a name for the downlink data converter and click "Create new converter";
     ===
-        image: /images/user-guide/integrations/chirpstack/add-downlink-converter-java-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/chirpstack/add-downlink-converter-java-3-pe.png,
         title: Paste the script to the encoder function section, and click "Add";
     ===
-        image: /images/user-guide/integrations/chirpstack/add-downlink-converter-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/chirpstack/add-downlink-converter-4-pe.png,
         title: Apply changes.
 '
 %}

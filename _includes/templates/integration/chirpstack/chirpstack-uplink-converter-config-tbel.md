@@ -1,4 +1,4 @@
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-tbel-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/chirpstack/chirpstack-integration-setup-tbel-2-pe.png)
 
 The script used in the example:
 

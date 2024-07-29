@@ -26,4 +26,4 @@ Example:
 ```
 {: .copy-code}
 
-![image](/images/gateway/mqtt-connector/connection-to-broker-advanced-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/connection-to-broker-advanced-section-1-ce.png)

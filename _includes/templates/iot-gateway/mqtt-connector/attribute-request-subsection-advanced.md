@@ -28,7 +28,7 @@ will look like:
 ]
 ```
 
-![image](/images/gateway/mqtt-connector/attribute-requests-example-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/attribute-requests-example-advanced-1-ce.png)
 
 | **Parameter**                 | **Default value**                                     | **Description**                                                       |
 |:-|:-|-

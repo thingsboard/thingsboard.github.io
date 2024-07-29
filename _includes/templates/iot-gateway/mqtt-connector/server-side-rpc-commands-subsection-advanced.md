@@ -20,7 +20,7 @@ This section in configuration file looks like:
   ]
 ```
 
-![image](/images/gateway/mqtt-connector/server-side-rpc-commands-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/server-side-rpc-commands-advanced-1-ce.png)
 
 | **Parameter**           | **Default value**                                            | **Description**                                                                                                                                |
 |:------------------------|:-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------

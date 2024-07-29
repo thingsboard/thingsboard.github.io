@@ -4,14 +4,14 @@ There are 2 options for RPC request:
 To adding new requests mapping, navigate to the "Requests mapping" tab and click the "plus" icon.
 In the open modal window, select the "RPC command" request type, and set a device name filter, method filter, request topic expression, value expression, response topic expression, response topic QoS and response timeout. Then, click "Add".
 
-![image](/images/gateway/mqtt-connector/server-side-rpc-commands-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/server-side-rpc-commands-basic-1-ce.png)
 
 **Without a response** -- If the configuration does not include a responseTopicExpression, the gateway will simply send the message without waiting for a response.
 
 To adding new requests mapping, navigate to the "Requests mapping" tab and click the "plus" icon.
 In the open modal window, select the "RPC command" request type, toggle "Without response" option, and set a device name filter, method filter, and value expression. Then, click "Add".
 
-![image](/images/gateway/mqtt-connector/server-side-rpc-commands-basic-2-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/server-side-rpc-commands-basic-2-ce.png)
 
 | **Parameter**           | **Default value**                                            | **Description**                                                                                                                                |
 |:------------------------|:-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------

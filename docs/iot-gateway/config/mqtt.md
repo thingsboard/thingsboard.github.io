@@ -42,7 +42,7 @@ This configuration section contains general connector settings, such as:
   - Logging level - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
 - Send data only on change - sending only if data changed from last check, if not – data will be sent after every check.
 
-![image](/images/gateway/mqtt-connector/general-basic-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/general-basic-section-1-ce.png)
 
 {% capture difference %}
 The settings are the same for both the basic and advanced configurations.
