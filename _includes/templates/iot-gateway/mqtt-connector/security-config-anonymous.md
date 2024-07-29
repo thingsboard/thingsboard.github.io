@@ -1,5 +1,3 @@
-
- 
 Anonymous auth is the most simple option. It is useful for testing on public MQTT brokers, like test.mosquitto.org.  
 
 
@@ -10,8 +8,10 @@ Anonymous auth is the most simple option. It is useful for testing on public MQT
 
 Security subsection in configuration file will look like this: 
 
-```yaml
+```json
     "security": {
       "type": "anonymous"
     }
 ```
+
+![image](/images/gateway/mqtt-connector/security-advanced-anonymous-subsection-1-ce.png)
