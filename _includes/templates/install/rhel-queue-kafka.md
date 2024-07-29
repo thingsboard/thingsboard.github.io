@@ -1,10 +1,4 @@
-#### Kafka Installation
-
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
-
-##### Install Kafka
-
-We recommend to use Kafka in Docker container, use this [instruction](https://github.com/wurstmeister/kafka-docker) for installing.
+{% include templates/install/queue-kafka-in-docker.md %}
 
 ##### ThingsBoard Configuration
 

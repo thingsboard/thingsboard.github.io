@@ -19,5 +19,7 @@ toc:
         path: /docs/mobile/mobile-actions/
       - title: OAuth 2.0
         path: /docs/mobile/oauth2/
+      - title: QR code settings
+        path: /docs/mobile/qr-code-settings/
   - title: Publish your app
     path: /docs/mobile/release/

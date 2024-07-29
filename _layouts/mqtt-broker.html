@@ -1,0 +1,90 @@
+<!Doctype html>
+<html id="mqtt-broker">
+
+{% include head-header.html productTag="mqtt-broker" %}
+<!--  HERO  -->
+<section id="hero" class="light-text">
+    <div class="video-cover"></div>
+    <div id="hero-content">
+        <span class="header-animation tbmq-title">TBMQ</span>
+        <span class="header-animation tbmq-title">Open-source MQTT Broker</span>
+        <h2 class="header-animation tbmq-description">Scalable, fault-tolerant, and durable messaging for millions of IoT devices</h2>
+        <div class="header-animation">
+            <a href="#encyclopedia" class="button action" id="learn-more">Learn More</a>
+            <a href="/docs/mqtt-broker/getting-started/" class="button action">Get started</a>
+        </div>
+        <div class="paas-arrow">
+            <a href="#encyclopedia"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="encyclopedia">
+    <div id="tbmqContent" class="noToc">
+        {{ content }}
+    </div>
+</section>
+
+{% include footer.html %}
+
+<script>
+    var isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var videoSection = document.querySelector('#hero.light-text');
+
+    if (isMobile) {
+        videoSection.setAttribute('style', 'background: center no-repeat url(https://img.thingsboard.io/tbmq-cover.webp)');
+    } else {
+        videoSection.setAttribute('data-vide-bg', `mp4: https://video.thingsboard.io/tbmq-cover.mp4,
+                                                    webm: https://video.thingsboard.io/tbmq-cover.webm,
+                                                    ogv: https://video.thingsboard.io/tbmq-cover.ogv,
+                                                    poster: https://img.thingsboard.io/tbmq-cover.webp`);
+        videoSection.setAttribute('data-vide-options', 'bgColor: #000000, loop: true, muted: true, posterType: webp');
+    }
+</script>
+
+<script type="text/javascript">
+    jqueryDefer(function () {
+        vis(function() {
+            if (vis()) {
+                slideUp();
+            }
+        });
+        $('#hero-content > .paas-arrow > a, #learn-more').click(function(event) {
+            event.preventDefault();
+            var target = $('#encyclopedia');
+            $('html, body').animate({
+                scrollTop: target.offset().top - 60 //header height
+            }, 1000, "easeOutCirc");
+        });
+
+    });
+
+    inViewportDefer(function() {
+        $("#hero-content").inViewport(function(px){
+            if($(this).height()-px >= 60) {
+                $(this).addClass("arrow-hidden");
+            } else {
+                $(this).removeClass("arrow-hidden");
+            }
+        });
+    });
+
+    function slideUp() {
+        var headAnimations = $('#hero-content').find('.header-animation');
+        for (var i=0;i<headAnimations.length;i++) {
+            reinsert($(headAnimations[i]));
+        }
+    }
+
+    function reinsert(el) {
+        var newone = el.clone(true);
+        el.before(newone);
+        el.remove();
+    }
+
+</script>
+
+{% include cookie-consent.html %}
+
+</body>
+</html>

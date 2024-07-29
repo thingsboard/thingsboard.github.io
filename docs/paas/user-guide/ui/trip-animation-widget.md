@@ -15,7 +15,7 @@ adding-device:
 create-dashboard-1:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
-        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
+        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you will be redirected to the "All" device group;'
     1:
         image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
         title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
@@ -35,18 +35,18 @@ create-dashboard-2:
         title: 'Select the "Trip Animation" widget;'
     3:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-pe.png
-        title: 'In the "Datasources" section, select the type "Device" and specify the previously created device "Tracker1" as the data source. Add "latitude", "longitude", "speed", "status", "circleRadius", and "polygonCoordinates" as timeseries data keys. Click the "Add" button in the bottom right corner of the widget to complete adding the widget;'
+        title: 'In the "Datasources" section, select the "Device" type and specify the previously created device "Tracker1" as the data source. Add "latitude", "longitude", "speed", "status", "circleRadius", and "polygonCoordinates" as timeseries data keys. Click the "Add" button in the bottom right corner of the widget to finish adding the widget;'
     4:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-pe.png
         title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Click "Save" button in the upper right corner to save the dashboard;'
     5:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-9-pe.png
-        title: 'We will use data received at the last minute. Click "Edit timewindow", switch to "History" mode, and change the aggregation function to "None", because we don&#39;t need to guess the possible data value for the next time period, we receive the data in realtime;'
+        title: 'We will use data received at the last minute. Click "Edit timewindow", switch to "History" mode, and change the aggregation function to "None", because we don&#39;t need to estimate the possible data value for the next time period since we receive the data in real-time;'
 
 create-dashboard-3:
     0:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-10-pe.png
-        title: 'Press the "Start" button to see how our device moved over the last minute.'
+        title: 'Press the "Start" button to see the movement of our device over the last minute;'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-11-pe.png
         title: 'We can also speed up the movement of our cursor by 5, 10, or 25 times so that we can check its route much faster.'
@@ -96,7 +96,7 @@ advanced-settings-label:
         title: 'Show or hide the entity&#39;s label. You can also change the label text.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-2-pe.png
-        title: 'Utilize a label function for more dynamic information.'
+        title: 'Utilize the label function for more dynamic information.'
     2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-3-pe.png
     3:

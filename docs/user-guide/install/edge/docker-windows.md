@@ -88,15 +88,6 @@ volumes:
 {% assign serviceName = "tbedge" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
-``` 
-set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
-VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"  
-VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
-VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
-```
-{: .copy-code}
-
 Where:
 - `C:\Program Files\Oracle\VirtualBox` - path to your VirtualBox installation directory
 

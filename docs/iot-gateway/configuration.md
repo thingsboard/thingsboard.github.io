@@ -43,7 +43,57 @@ Please see default directory structure below for daemon installation.
     storage.log                                   - Storage logs.
     tb_connection.log                             - Logs for connection to the ThingsBoard instance.
 ```
-        
+
+## Environmental variables
+
+{% capture difference %}
+**Values of environment variables have a higher priority than values of parameters from the configuration file.
+This means that the gateway will use the values of the environment variables (if they are set) 
+and not the values from the configuration file.**
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+The gateway provides the capability to configure essential connection parameters using environment variables. 
+For example, let's illustrate how you can configure basic parameters such as the host, port, and access token by using 
+environment variables within a Docker Compose file. Here’s how you can achieve this:
+
+```yaml
+version: '3.4'
+services:
+  # ThingsBoard IoT Gateway Service Configuration
+  tb-gateway:
+    image: thingsboard/tb-gateway
+    container_name: tb-gateway
+    ...
+    # Environment variables
+    environment:
+      - TB_GW_HOST=host.docker.internal
+      - TB_GW_PORT=1883
+      - TB_GW_ACCESS_TOKEN=YOUR_ACCESS_TOKEN
+    ...
+```
+
+In the example above, we set the "**host.docker.internal**" as a host, **1883** as a port and "**YOUR_ACCESS_TOKEN**" 
+as an access token for the gateway using the "**TB_GW_HOST**", "**TB_GW_PORT**" and "**TB_GW_ACCESS_TOKEN**" 
+environment variables, respectively.
+
+The following environmental variables can be used to configure the ThingsBoard IoT Gateway:
+
+| **ENV variable**     | **Default value**             | **Description**                                                                   |
+|----------------------|-------------------------------|-----------------------------------------------------------------------------------|
+| TB_GW_HOST           | **host.docker.internal**      | Hostname or IP address of ThingsBoard server.                                     |
+| TB_GW_PORT           | **1883**                      | Port of MQTT service on ThingsBoard server.                                       |
+| TB_GW_ACCESS_TOKEN   | **YOUR_ACCESS_TOKEN**         | Access token for the gateway from ThingsBoard server.                             |
+| TB_GW_CA_CERT        |                               | Path to CA certificate file.                                                      |
+| TB_GW_PRIVATE_KEY    |                               | Path to private key file.                                                         |
+| TB_GW_CERT           |                               | Path to certificate file.                                                         |
+| TB_GW_CLIENT_ID      |                               | MQTT client id for the gateway form ThingsBoard server.                           |
+| TB_GW_USERNAME       |                               | MQTT username for the gateway form ThingsBoard server.                            |
+| TB_GW_PASSWORD       |                               | MQTT password for the gateway form ThingsBoard server.                            |
+| TB_GW_RATE_LIMITS    | **15:1,300:60,**              | Messages rate limit to ThingsBoard server in `MESSSAGE_COUNT:TIME,` format.       |
+| TB_GW_DP_RATE_LIMITS | **15:1,300:60,**              | Data points rate limit to ThingsBoard server in `DATA_POINTS_COUNT:TIME,` format. |
+| TB_GW_LOGS_PATH      | **/thingsboard_gateway/logs** | Path to the logs folder.                                                          |
+
 ## General configuration file
 
 The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors. 
@@ -143,7 +193,7 @@ different connectors active. If you prefer to use only one, simply remove the ot
 |---                       |---                                           |-----------------------------------------------------------------------------------------|
 | ***thingsboard***        |                                              | Configuration for connection to server.                                                 |
 | host                     | **thingsboard.cloud**                        | Hostname or IP address of ThingsBoard server.                                           |
-| port                     | **1883**                                     | Port of MQTT service on ThingsBoard server.                                                |
+| port                     | **1883**                                     | Port of MQTT service on ThingsBoard server.                                             |
 | qos                      | **1**                                        | QoS levels 0 (at most once) and 1 (at least once).                                      |
 | minPackSendDelayMS       | **200**                                      | Delay between sending packets (Decreasing this setting results in increased CPU usage). |
 | minPackSizeToSend        | **500**                                      | Minimum size of packs to send.                                                          |

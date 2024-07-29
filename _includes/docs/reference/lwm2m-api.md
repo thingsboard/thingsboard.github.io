@@ -37,6 +37,7 @@ This part of documentation covers provisioning of your first LwM2M device in Thi
 {% unless docsPrefix == 'paas/' %}
 System administrator is able to upload LwM2M models using "Resource library" UI located in the "System settings" menu.
 One may upload multiple files at once. We recommend you to download list of available models from official [github](https://github.com/OpenMobileAlliance/lwm2m-registry) repo and import all of them.
+Note that LwM2M models are versioned, and make sure to upload those that match the LwM2M object versions provided by your devices.
 
 {% include images-gallery.html imageCollection="upload-models" showListImageTitles="true" %}
 

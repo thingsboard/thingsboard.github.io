@@ -379,38 +379,44 @@
 		<tr>
 			<td>queue.kafka.topic-properties.rule-engine</td>
 			<td>TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Rule Engine</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.core</td>
 			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.transport-api</td>
 			<td>TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for Transport Api topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.notifications</td>
 			<td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Notifications topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.js-executor</td>
 			<td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
 			<td> Kafka properties for JS Executor topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.integration-api</td>
 			<td>TB_QUEUE_KAFKA_INTEGRATION_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for Integration Api topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.housekeeper</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td> Kafka properties for Housekeeper tasks topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -825,6 +831,12 @@
 			<td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
 			<td>60000</td>
 			<td> Statistics printing interval for Core microservices</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.topic</td>
+			<td>TB_HOUSEKEEPER_TOPIC</td>
+			<td>tb_housekeeper</td>
+			<td> Topic name for Housekeeper tasks</td>
 		</tr>
 		<tr>
 			<td>queue.js.request_topic</td>
@@ -1307,7 +1319,7 @@
 </table>
 
 
-####  Redis parameters
+####  Redis configuration parameters
 
 <table>
 	<thead>
@@ -1320,7 +1332,7 @@
 			<td>redis.connection.type</td>
 			<td>REDIS_CONNECTION_TYPE</td>
 			<td>standalone</td>
-			<td> standalone or cluster</td>
+			<td> Redis deployment type: Standalone (single Redis node deployment) OR Cluster</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.host</td>
@@ -1344,25 +1356,25 @@
 			<td>redis.standalone.clientName</td>
 			<td>REDIS_CLIENT_NAME</td>
 			<td>standalone</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.connectTimeout</td>
 			<td>REDIS_CLIENT_CONNECT_TIMEOUT</td>
 			<td>30000</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.readTimeout</td>
 			<td>REDIS_CLIENT_READ_TIMEOUT</td>
 			<td>60000</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.usePoolConfig</td>
 			<td>REDIS_CLIENT_USE_POOL_CONFIG</td>
 			<td>false</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.cluster.nodes</td>
@@ -1383,6 +1395,30 @@
 			<td> if set false will be used pool config build from values of the pool config section</td>
 		</tr>
 		<tr>
+			<td>redis.sentinel.master</td>
+			<td>REDIS_MASTER</td>
+			<td></td>
+			<td> name of the master node</td>
+		</tr>
+		<tr>
+			<td>redis.sentinel.sentinels</td>
+			<td>REDIS_SENTINELS</td>
+			<td></td>
+			<td> comma-separated list of "host:port" pairs of sentinels</td>
+		</tr>
+		<tr>
+			<td>redis.sentinel.password</td>
+			<td>REDIS_SENTINEL_PASSWORD</td>
+			<td></td>
+			<td> password to authenticate with sentinel</td>
+		</tr>
+		<tr>
+			<td>redis.sentinel.useDefaultPoolConfig</td>
+			<td>REDIS_USE_DEFAULT_POOL_CONFIG</td>
+			<td>true</td>
+			<td> if set false will be used pool config build from values of the pool config section</td>
+		</tr>
+		<tr>
 			<td>redis.db</td>
 			<td>REDIS_DB</td>
 			<td>0</td>
@@ -1393,6 +1429,30 @@
 			<td>REDIS_PASSWORD</td>
 			<td></td>
 			<td> db password</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.enabled</td>
+			<td>TB_REDIS_SSL_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable secure connection</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.credentials.cert_file</td>
+			<td>TB_REDIS_SSL_PEM_CERT</td>
+			<td></td>
+			<td> Path redis server (CA) certificate</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.credentials.user_cert_file</td>
+			<td>TB_REDIS_SSL_PEM_KEY</td>
+			<td></td>
+			<td> Path to user certificate file. This is optional for the client and can be used for two-way authentication for the client</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.credentials.user_key_file</td>
+			<td>TB_REDIS_SSL_PEM_KEY_PASSWORD</td>
+			<td></td>
+			<td> Path to user private key file. This is optional for the client and only needed if ‘user_cert_file’ is configured.</td>
 		</tr>
 		<tr>
 			<td>redis.pool_config.maxTotal</td>
@@ -1514,6 +1574,12 @@
 			<td>COAP_DTLS_BIND_PORT</td>
 			<td>5684</td>
 			<td> CoAP DTLS bind port</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.connection_id_length</td>
+			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
+			<td></td>
+			<td> CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2</td>
 		</tr>
 		<tr>
 			<td>coap.dtls.credentials.type</td>

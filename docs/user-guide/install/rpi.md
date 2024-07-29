@@ -16,7 +16,7 @@ This guide describes how to install ThingsBoard on a Raspberry Pi running Raspbi
 
 ### Third-party components installation
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 ```bash
 # Add repository.
@@ -26,7 +26,7 @@ echo "deb http://deb.debian.org/debian unstable main non-free contrib" | sudo te
 sudo apt update
 
 # Install JAVA
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-17-jdk
 
 #Check installation
 java -version
