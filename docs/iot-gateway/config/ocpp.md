@@ -214,9 +214,9 @@ This subsection in configuration file looks like:
       ]
 ```
 
-#### Subsection timeseries
+#### Subsection time series
 
-This subsection contains general settings for processing data interpreted as timeseries.
+This subsection contains general settings for processing data interpreted as time series.
 
 | **Parameter**         | **Default value**                            | **Description**                                                                                                                                                  |
 |:----------------------|:---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|

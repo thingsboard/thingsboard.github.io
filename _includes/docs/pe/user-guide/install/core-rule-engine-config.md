@@ -889,7 +889,7 @@
 			<td>sql.ts.batch_max_delay</td>
 			<td>SQL_TS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td> Max timeout for time-series entries queue polling. The value set in milliseconds</td>
+			<td> Max timeout for time series entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.ts.stats_print_interval_ms</td>

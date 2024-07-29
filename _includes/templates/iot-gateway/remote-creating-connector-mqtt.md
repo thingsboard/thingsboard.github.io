@@ -17,7 +17,7 @@ After running docker image, you can see the following logs in your terminal:
 ### Setup connector
 
 MQTT connector will establish a connection to a broker named **“Demo Broker”** at **“host.docker.internal”** on port **1884**, using an anonymous security type. 
-It will include a data mapping for the **“data/”** topic, specifying a JSON converter and defining attribute and timeseries mappings for device data. 
+It will include a data mapping for the **“data/”** topic, specifying a JSON converter and defining attribute and time series mappings for device data. 
 Additionally, it will handle connect and disconnect requests for sensors with expressions to extract device names from topic filters.
 
 To create a connector, follow these steps:

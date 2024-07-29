@@ -20,9 +20,9 @@ This OPC-UA connector configuration establishes a connection to a server named *
 **"opc.tcp://host.docker.internal:4840/freeopcua/server/"**. The configuration specifies various settings, including 
 timeouts, scan periods, and security mechanisms such as **"Basic128Rsa15"** with anonymous identity.
 
-The mapping section defines how OPC-UA nodes are mapped to devices and their attributes and timeseries. In this case, 
+The mapping section defines how OPC-UA nodes are mapped to devices and their attributes and time series. In this case, 
 a device with the name **"Demo Device"** and type **"default"** is mapped to nodes under **"Root.Objects.MyObject"**. 
-Attributes such as **frequency** and **power**, as well as timeseries like **temperature** and **humidity**, 
+Attributes such as **frequency** and **power**, as well as time series like **temperature** and **humidity**, 
 are mapped to specific paths in the OPC-UA server. Additionally, the configuration supports RPC methods and 
 attribute updates.
 

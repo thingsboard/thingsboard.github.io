@@ -19,7 +19,7 @@ After running docker image, you can see the following logs in your terminal:
 This Modbus connector configuration sets up a master to communicate with a slave device located at 
 **"host.docker.internal"** on port 5021 using TCP. The configuration includes specifications for data retrieval such as 
 byte and word order, timeout, and polling period. The slave device, named **"Demo Device"** is configured to handle 
-Modbus function code 4 requests. Attribute and timeseries mappings are defined for parameters like **frequency**, **power**, 
+Modbus function code 4 requests. Attribute and time series mappings are defined for parameters like **frequency**, **power**, 
 **humidity**, and **temperature**. Additionally, settings for connection attempts, retries, and wait times after failed 
 attempts are provided.
 
