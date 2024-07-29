@@ -8,15 +8,15 @@ description: OCPP protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
+This guide will help you get familiar with OCPP Connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector.
 The purpose of this connector is to communicate between Charge Point and Central System using OCPP protocol.
 
-We will describe connector configuration file below.
+We will describe the connector configuration file below.
 
 ## Connector configuration: ocpp.json
-Connector configuration is a JSON file that contains information about how to connect to Charge Points, how to process
-the data and other service features. Let’s review the format of the configuration file using example below.
+Connector configuration is a JSON file that contains information about how to connect to Charge Points, process
+the data, and other service features. Let’s review the format of the configuration file using the example below.
 
 
 <b>Example of OCPP Connector config file.</b>
@@ -93,18 +93,18 @@ the data and other service features. Let’s review the format of the configurat
 
 ### Section "centralSystem"
 
-This configuration section using for configure Gateway as a Central System.
+This configuration section is used to configure Gateway as a Central System.
 
-| **Parameter**     | **Default value**      | **Description**                                     |
-|:-|:-|-
-| name              | **Central System**     | Central System name. |
-| host              | **127.0.0.1**          | Central System hostname or ip address. |
-| port              | **9000**               | Central System port. |
-|---
+| **Parameter** | **Default value**  | **Description**                        |
+|:--------------|:-------------------|----------------------------------------|
+| name          | **Central System** | Central System name.                   |
+| host          | **127.0.0.1**      | Central System hostname or ip address. |
+| port          | **9000**           | Central System port.                   |
+| ---           |                    |                                        |
 
 #### Connection subsection
 
-This configuration subsection using for configure connection type between Central System and Charge Point.
+This configuration subsection is used for configuring connection type between Central System and Charge Point.
 You can choose the next connection type:
 
 {% capture ocppconnectorconnectiontogglespec %}
@@ -115,7 +115,7 @@ TLS<small>Recommended</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-c
 #### Security subsection
 
 Security subsection provides configuration for Charge Point authorization at Central System.
-You can choose the next security type:
+You can choose the desired security type:
 
 {% capture ocppconnectorsecuritytogglespec %}
 Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ocpp-connector-anonymous-security-config.md%br%
@@ -150,18 +150,18 @@ Token<small>Recommended</small>%,%token%,%templates/iot-gateway/ocpp-connector-t
 
 This subsection contains general settings for the Charge Points and subsections for processing data.
 
-| **Parameter**        | **Default value**      | **Description**                                                                                                                        |
-|:-|:-|-
-| idRegexpPattern      | **charge_points/CP_1** | Regular expression, uses for looking the Charge Point for a current device.                                                            |
-| deviceNameExpression | **${Vendor} ${Model}** | Simple JSON expression, uses for looking device name in the incoming message (parameter “Vendor + Model” will be used as device name). |
-| deviceTypeExpression | **${Model}**           | Simple JSON expression, uses for looking device type in the incoming message (parameter “Model” will be used as device type).          |
-| attributes           |                        | Array of objects for processing device attributes.                                                                                     |
-| timeseries           |                        | Array of objects for processing device telemetry.                                                                                      |
-| attributeUpdates     |                        | Array of objects for processing attributeUpdate requests from ThingsBoard.                                                             |
-| serverSideRpc        |                        | Array of objects for processing RPC requests from ThingsBoard.                                                                         |
-|---
+| **Parameter**        | **Default value**      | **Description**                                                                                                                                  |
+|:---------------------|:-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| idRegexpPattern      | **charge_points/CP_1** | Regular expression, is used for looking the Charge Point for a current device.                                                                   |
+| deviceNameExpression | **${Vendor} ${Model}** | Simple JSON expression, is used for looking up device name in the incoming message (parameter “Vendor + Model” will be used as the device name). |
+| deviceTypeExpression | **${Model}**           | Simple JSON expression, is used for looking up device type in the incoming message (parameter “Model” will be used as the device type).          |
+| attributes           |                        | Array of objects for processing device attributes.                                                                                               |
+| timeseries           |                        | Array of objects for processing device telemetry.                                                                                                |
+| attributeUpdates     |                        | Array of objects for processing attributeUpdate requests from ThingsBoard.                                                                       |
+| serverSideRpc        |                        | Array of objects for processing RPC requests from ThingsBoard.                                                                                   |
+| ---                  |                        |                                                                                                                                                  |
 
-This part of configuration will look like:
+This part of configuration will look like this:
 
 ```json
   "chargePoints": [
@@ -187,15 +187,15 @@ This part of configuration will look like:
 
 #### Subsection attributes
 
-This subsection contains general settings for the processing data interpreted as attributes.
+This subsection contains general settings for processing data interpreted as attributes.
 
-| **Parameter**           | **Default value**                            | **Description**                                                                                                                       |
-|:-|:-|-
-| attributes              |                                              | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.                          |
-| ... messageTypeFilter   | **MeterValues,**                             | List of allowed message types divided by comma.                                                                                       |
-| ... key                 | **temp**                                     | Attribute name, to be sent to ThingsBoard instance.                                                                                   |
-| ... value               | **${meter_value[:].sampled_value[:].value}** | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter. |
-|---
+| **Parameter**         | **Default value**                            | **Description**                                                                                                                                                  |
+|:----------------------|:---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| attributes            |                                              | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.                                                     |
+| ... messageTypeFilter | **MeterValues,**                             | List of allowed message types divided by comma.                                                                                                                  |
+| ... key               | **temp**                                     | Attribute name, to be sent to ThingsBoard instance.                                                                                                              |
+| ... value             | **${meter_value[:].sampled_value[:].value}** | Simple JSON expression, is used for looking up value in the incoming message, which will then be sent to ThingsBoard instance as the value of the key parameter. |
+| ---                   |                                              |                                                                                                                                                                  |
 
 This subsection in configuration file looks like:
 
@@ -216,15 +216,15 @@ This subsection in configuration file looks like:
 
 #### Subsection timeseries
 
-This subsection contains general settings for the processing data interpreted as timeseries.
+This subsection contains general settings for processing data interpreted as timeseries.
 
-| **Parameter**           | **Default value**                            | **Description**                                                                                                                       |
-|:-|:-|-
-| timeseries              |                                              | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.                           |
-| ... messageTypeFilter   | **MeterValues,**                             | List of allowed message types divided by comma.                                                                                       |
-| ... key                 | **temp**                                     | Telemetry name, to be sent to ThingsBoard instance.                                                                                   |
-| ... value               | **${meter_value[:].sampled_value[:].value}** | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter. |
-|---
+| **Parameter**         | **Default value**                            | **Description**                                                                                                                                                  |
+|:----------------------|:---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| timeseries            |                                              | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.                                                      |
+| ... messageTypeFilter | **MeterValues,**                             | List of allowed message types divided by comma.                                                                                                                  |
+| ... key               | **temp**                                     | Telemetry name, to be sent to ThingsBoard instance.                                                                                                              |
+| ... value             | **${meter_value[:].sampled_value[:].value}** | Simple JSON expression, is used for looking up value in the incoming message, which will then be sent to ThingsBoard instance as the value of the key parameter. |
+| ---                   |                                              |                                                                                                                                                                  |
 
 This subsection in configuration file looks like:
 
@@ -240,18 +240,18 @@ This subsection in configuration file looks like:
 
 #### Attribute updates subsection
 
-This configuration section is optional. ThingsBoard allows provisioning device attributes and fetch some of them from 
-the device application. You can treat this as a remote configuration for devices. Your devices are able to request 
-shared attributes from ThingsBoard. See user guide for more details.
+This configuration section is optional. ThingsBoard allows the provisioning of device attributes and fetches some of them from 
+the device application. You can treat this as a remote configuration for devices, enabling them to request 
+shared attributes from ThingsBoard. See [user guide](/docs/reference/mqtt-api/#attributes-api) for more details.
 
-The “attributeUpdates” configuration allows configuring the format of the corresponding attribute data that will be 
-sending to the Charge Point.
+The “attributeUpdates” configuration allows you to configure the format of the corresponding attribute data that will be 
+sent to the Charge Point.
 
-| **Parameter**           | **Default value**                               | **Description**                                                                         |
-|:-|:-|-
-| attributeOnThingsBoard  | **sharedName**                                  | Shared attribute name.                                                                  |
-| valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | JSON-path expression uses for creating the message data that will send to Charge Point. |
-|---
+| **Parameter**          | **Default value**                               | **Description**                                                                               |
+|:-----------------------|:------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| attributeOnThingsBoard | **sharedName**                                  | Shared attribute name.                                                                        |
+| valueExpression        | **{\"${attributeKey}\":\"${attributeValue}\"}** | JSON-path expression is used for creating the message data that will be sent to Charge Point. |
+| ---                    |                                                 |                                                                                               |
 
 This section in configuration file looks like: 
 ```json
@@ -265,16 +265,16 @@ This section in configuration file looks like:
 
 #### Server side RPC subsection
 
-ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard allows sending RPC commands to the device connected to ThingsBoard directly or via Gateway.
 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to Charge Point.
+Configuration, provided in this section is used for sending RPC requests from ThingsBoard to Charge Point.
 
-| **Parameter**           | **Default value**    | **Description**                                                                         |
-|:-|:-|-
-| methodRPC               | **rpcMethod1**       | RPC method name.                                                                        |
-| withResponse            | **true**             | Boolean value that means as send or not response back to ThingsBoard.                   |
-| valueExpression         | **${params}**        | JSON-path expression uses for creating the message data that will send to Charge Point. |
-|---
+| **Parameter**   | **Default value** | **Description**                                                                         |
+|:----------------|:------------------|-----------------------------------------------------------------------------------------|
+| methodRPC       | **rpcMethod1**    | RPC method name.                                                                        |
+| withResponse    | **true**          | Boolean value that determines whether to send response back to ThingsBoard.             |
+| valueExpression | **${params}**     | JSON-path expression uses for creating the message data that will send to Charge Point. |
+| ---             |                   |                                                                                         |
 
 This subsection in configuration file looks like:
 
