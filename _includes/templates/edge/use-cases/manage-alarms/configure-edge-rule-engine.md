@@ -4,7 +4,7 @@ Here is the final configuration of edge root rule chain:
 {% include images-gallery.html imageCollection="rootRuleChainPreview" %}
 
 In the next steps we are going to create **TBEL** script language node to create appropriate RPC commands to the **Air Conditioner** device.
-JavaScript for script node that will emulate enabling of Air Conditioner:
+TBEL script language node will emulate enabling of Air Conditioner:
 
 {% highlight javascript %}
 var newMsg = {};
