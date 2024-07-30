@@ -40,6 +40,6 @@ CPU is about 60%, so bottleneck happens.
 
 ![](https://img.thingsboard.io/reference/performance-aws-instances/method/experiments/img_7.png)
 
-Let's try to write timeseries without persisting latest values to the PostgreSQL - no effect
+Let's try to write time series without persisting latest values to the PostgreSQL - no effect
 
 ![](https://img.thingsboard.io/reference/performance-aws-instances/method/experiments/img_9.png)

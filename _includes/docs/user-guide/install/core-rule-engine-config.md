@@ -768,7 +768,7 @@
 			<td>cassandra.query.ts_key_value_ttl</td>
 			<td>TS_KV_TTL</td>
 			<td>0</td>
-			<td> Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record has never expired</td>
+			<td> Time series Time To Live (in seconds) for Cassandra Record. 0 - record has never expired</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.buffer_size</td>
@@ -883,19 +883,19 @@
 			<td>sql.ts.batch_size</td>
 			<td>SQL_TS_BATCH_SIZE</td>
 			<td>10000</td>
-			<td> Batch size for persisting timeseries inserts</td>
+			<td> Batch size for persisting time series inserts</td>
 		</tr>
 		<tr>
 			<td>sql.ts.batch_max_delay</td>
 			<td>SQL_TS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td> Max timeout for time-series entries queue polling. The value set in milliseconds</td>
+			<td> Max timeout for time series entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.ts.stats_print_interval_ms</td>
 			<td>SQL_TS_BATCH_STATS_PRINT_MS</td>
 			<td>10000</td>
-			<td> Interval in milliseconds for printing timeseries insert statistic</td>
+			<td> Interval in milliseconds for printing time series insert statistic</td>
 		</tr>
 		<tr>
 			<td>sql.ts.batch_threads</td>
@@ -1027,7 +1027,7 @@
 			<td>sql.remove_null_chars</td>
 			<td>SQL_REMOVE_NULL_CHARS</td>
 			<td>true</td>
-			<td> Specify whether to remove null characters from strValue of attributes and timeseries before insert</td>
+			<td> Specify whether to remove null characters from strValue of attributes and time series before insert</td>
 		</tr>
 		<tr>
 			<td>sql.log_queries</td>
@@ -1075,7 +1075,7 @@
 			<td>sql.ttl.ts.enabled</td>
 			<td>SQL_TTL_TS_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable TTL (Time To Live) for timeseries records</td>
+			<td> Enable/disable TTL (Time To Live) for time series records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.ts.execution_interval_ms</td>
@@ -1087,7 +1087,7 @@
 			<td>sql.ttl.ts.ts_key_value_ttl</td>
 			<td>SQL_TTL_TS_TS_KEY_VALUE_TTL</td>
 			<td>0</td>
-			<td> The parameter to specify system TTL(Time To Live) value for timeseries records. Value set in seconds.
+			<td> The parameter to specify system TTL(Time To Live) value for time series records. Value set in seconds.
  0 - records are never expired.</td>
 		</tr>
 		<tr>
@@ -2552,7 +2552,7 @@
 			<td>STATE_TELEMETRY_TTL</td>
 			<td>0</td>
 			<td> Millisecond value defining time-to-live for device state telemetry data (e.g. 'active', 'lastActivityTime').
- Used only when state.persistToTelemetry is set to 'true' and Cassandra is used for timeseries data.
+ Used only when state.persistToTelemetry is set to 'true' and Cassandra is used for time series data.
  0 means time-to-live mechanism is disabled.</td>
 		</tr>
 		<tr>
@@ -3838,7 +3838,7 @@
 			<td>edges.state.persistToTelemetry</td>
 			<td>EDGES_PERSIST_STATE_TO_TELEMETRY</td>
 			<td>false</td>
-			<td> Persist state of edge (active, last connect, last disconnect) into timeseries or attributes tables. 'false' means to store edge state into attributes table</td>
+			<td> Persist state of edge (active, last connect, last disconnect) into time series or attributes tables. 'false' means to store edge state into attributes table</td>
 		</tr>
 	</tbody>
 </table>
@@ -4969,7 +4969,7 @@
 			<td>metrics.system_info.ttl</td>
 			<td>METRICS_SYSTEM_INFO_TTL_DAYS</td>
 			<td>7</td>
-			<td> TTL in days for system info timeseries</td>
+			<td> TTL in days for system info time series</td>
 		</tr>
 	</tbody>
 </table>

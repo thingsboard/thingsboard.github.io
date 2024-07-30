@@ -73,7 +73,7 @@ With **ThingsBoard Edge**, you get:
 
 ![image](https://img.thingsboard.io/edge/overview/alarm.svg)
 
-- **Real-time dashboards**: Monitor local events and timeseries data.
+- **Real-time dashboards**: Monitor local events and time series data.
 - **Local storage**: Store data from edge devices on the edge if the cloud connection is inactive and push updates to the cloud once the connection is restored.
 - **Batch Update**: Update thousands of edge configurations with a single click.
 
@@ -83,7 +83,7 @@ ThingsBoard Edge inherits features from {{appPrefix}}, providing the same experi
 
 It supports the following **ThingsBoard** features:
 * [**Attributes**](/docs/{{cloudDocsPrefix}}user-guide/attributes/) - Assign and manage custom attributes to your entities.
-* [**Telemetry**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - API for collecting time-series data from your devices.
+* [**Telemetry**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - API for collecting time series data from your devices.
 * [**Entities and relations**](/docs/{{cloudDocsPrefix}}user-guide/entities-and-relations/) - Model physical world objects (e.g., devices and assets) and the relationships between them.
 * [**Data visualization**](/docs/{{cloudDocsPrefix}}guides/#AnchorIDDataVisualization) - Develop custom dashboards and widgets.
 * [**Rule engine**](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) - Manage data processing & actions on incoming telemetry and events.

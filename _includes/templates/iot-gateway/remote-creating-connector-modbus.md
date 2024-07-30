@@ -12,11 +12,49 @@ docker run -it -p 5021:5021 thingsboard/tb-gw-modbus-server:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](https://img.thingsboard.io/gateway/dashboard/run-demo-modbus-server.png)
+![](/images/gateway/dashboard/run-demo-modbus-server.png)
 
 ### Setup connector
 
-Copy the following connector configuration (we will use it later):  
+This Modbus connector configuration sets up a master to communicate with a slave device located at 
+**"host.docker.internal"** on port 5021 using TCP. The configuration includes specifications for data retrieval such as 
+byte and word order, timeout, and polling period. The slave device, named **"Demo Device"** is configured to handle 
+Modbus function code 4 requests. Attribute and time series mappings are defined for parameters like **frequency**, **power**, 
+**humidity**, and **temperature**. Additionally, settings for connection attempts, retries, and wait times after failed 
+attempts are provided.
+
+To create a connector, follow these steps:
+
+{% assign addNewConnector = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        title: Click on "**Connectors configuration**" button on the right panel;
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        title: Click the "**+ Add connector**" button;
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
+        title: Choose "**MODBUS**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to INFO, disable "**Fill configuration with default values**" field and click on "**Add**" button;
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
+        title: Connector created.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewConnector %} 
+
+To go to the Modbus connector configuration, navigate to the "Configuration" tab.
+
+{% assign configurationTab = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-11-ce.png,
+        title: To go to the Modbus connector configuration, navigate to the "Configuration" tab.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=configurationTab %}
+
+Default Modbus connector configuration:
 
 ```json
 {
@@ -53,7 +91,7 @@ Copy the following connector configuration (we will use it later):
             "tag": "power",
             "type": "16float",
             "functionCode": 4,
-            "objectsCount": 2,
+            "objectsCount": 1,
             "address": 8
           }
         ],
@@ -69,7 +107,7 @@ Copy the following connector configuration (we will use it later):
             "tag": "temperature",
             "type": "16uint",
             "functionCode": 4,
-            "objectsCount": 2,
+            "objectsCount": 1,
             "address": 4
           }
         ],
@@ -82,33 +120,6 @@ Copy the following connector configuration (we will use it later):
 ```
 {:.copy-code.expandable-20}
 
-This Modbus connector configuration sets up a master to communicate with a slave device located at 
-**"host.docker.internal"** on port 5021 using TCP. The configuration includes specifications for data retrieval such as 
-byte and word order, timeout, and polling period. The slave device, named **"Demo Device"** is configured to handle 
-Modbus function code 4 requests. Attribute and timeseries mappings are defined for parameters like **frequency**, **power**, 
-**humidity**, and **temperature**. Additionally, settings for connection attempts, retries, and wait times after failed 
-attempts are provided.
-
-To create a connector, follow these steps:
-
-{% assign addNewConnector = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
-        title: Click "**Connectors configuration**" button on the right panel.
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-8-ce.png,
-        title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button.
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
-        title: Connector has been successfully added.
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
-        title: Toggle the switch to enable the connector.
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewConnector %} 
-
 Following the steps outlined, your gateway will receive and apply the new configuration. It will then synchronize 
 its state with the remote server. You can view the synchronization status of the connector configuration 
 in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with 
@@ -117,10 +128,10 @@ the remote settings.
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-11-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-12-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-logs-12-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}

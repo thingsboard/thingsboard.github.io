@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Anomaly Detection System — Concept and Examples
-description: What is anomaly detection system?✔ Anomaly detection examples ⚫ ThingsBoard ➤ Complete guide for anomaly detection in timeseries data
+description: What is anomaly detection system?✔ Anomaly detection examples ⚫ ThingsBoard ➤ Complete guide for anomaly detection in time series data
 
 scoreVsIndexExample:
     0:
@@ -141,7 +141,7 @@ distance measurement function - Euclidean distance. But you can also use other f
 Canberra, Manhattan, etc. 
 
 Dynamic Time Warping (DTW) distance.
-In case when we want to compare the behavior of the time-series and Euclidian distance does not show good 
+In case when we want to compare the behavior of the time series and Euclidian distance does not show good 
 results, we recommend trying Dynamic Time Warping as a distance measurement function. Dynamic Time Warping
 shows good results when you compare distorted intervals or intervals with a phase shift. More details here
 

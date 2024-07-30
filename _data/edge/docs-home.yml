@@ -35,6 +35,25 @@ toc:
       path: /docs/edge/rule-engine/rule-chain-templates/
     - title: Queues
       path: /docs/edge/rule-engine/queues/
+- title: Integrations
+  pe: true
+  section:
+  - title: Overview
+    path: /docs/pe/edge/user-guide/integrations/
+  - title: Remote Integrations
+    path: /docs/pe/edge/user-guide/integrations/remote-integrations/
+  - title: HTTP
+    path: /docs/pe/edge/user-guide/integrations/http/
+  - title: MQTT
+    path: /docs/pe/edge/user-guide/integrations/mqtt/
+  - title: CoAP
+    path: /docs/pe/edge/user-guide/integrations/coap/
+  - title: OPC-UA
+    path: /docs/pe/edge/user-guide/integrations/opc-ua/
+  - title: TCP
+    path: /docs/pe/edge/user-guide/integrations/tcp/
+  - title: UDP
+    path: /docs/pe/edge/user-guide/integrations/udp/
 - title: Security
   section:
     - title: Edge over TLS/SSL 

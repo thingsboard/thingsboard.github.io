@@ -5,179 +5,156 @@ description: ThingsBoard Edge use case #2
 
 provisionDevicesEdge:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-1.png
-        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
+        image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-1.png
+        title: 'Log in to your ThingsBoard <b>Edge</b> instance using your credentials. Navigate to the "Devices" page.'
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-2.png
-        title: 'Open "All" device group.'
+        image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-2.png
+        title: 'Click on the "Add device" ("+") icon in the top right corner of the table to create a device. Then click "Add new device".'
     2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-3.png
-        title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
+        image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-3.png
+        title: 'Input the device Name, e.g., <b>"In-vehicle monitoring system"</b>. Then click the "Add" button.'
     3:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-4.png
-        title: 'Input device name. For example, "In-vehicle monitoring system". Click "Add" to add the device.'
-    4:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-5.png
-        title: 'Now your "In-vehicle monitoring system" device should be in the devices table.'
-
+        image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-4.png
+        title: 'Verify that your <b>"In-vehicle monitoring system"</b> device is listed in the devices table.'
 provisionDevices:    
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-6.png
-        title: 'Login to your <b>ThingsBoard PE</b> instance. Open the group <b>All</b> of the <b>Device groups</b> page.'
+        image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-6.png
+        title: 'Log in to your <b>ThingsBoard PE</b> instance. Navigate to the "Devices" page.'
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/provision-devices-item-7.png
-        title: 'Make sure that "In-vehicle monitoring system" device is in the devices list.'
+        image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-7.png
+        title: 'Verify that the <b>"In-vehicle monitoring system"</b> device is listed in the devices list.'
         
 rootRuleChainPreview:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/root-rule-chain.png
+        image: /images/pe/edge/use-cases/data-filtering/root-rule-chain.png
+        title: ''
 
 updateRootRuleChain:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-1.png
-        title: 'Login to your <b>ThingsBoard PE</b> instance and open Rule chain templates page.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-1.png
+        title: 'Log in to your <b>ThingsBoard PE</b> instance and navigate to the "Rule chains" page.'
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-2.png
-        title: 'Click "Open rule chain" icon to start editing "Edge Root Rule Chain".'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-2.png
+        title: 'Click on the "Edge Root Rule Chain" to enter edit mode.'
     2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-3.png
-        title: 'Filter node by "script" word and drag script node (Transformation) to rule chain.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-3.png
+        title: 'Search for the "script" node using the query "script". Drag the "Transformation" node into the rule chain.'
     3:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-4.png
-        title: 'Input node name, e.g. "Transform incoming message" and add <b>JavaScript</b> code (you can copy and paste it from the snippet above) to send further only "distance" readings. Click "Add" to proceed.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-4.png
+        title: 'Enter a Name, e.g., "Transform incoming message", and paste the <b>JavaScript code</b> (from the snippet above) to process only the "distance" readings parameter. Click "Add" to proceed.'
     4:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-5.png
-        title: 'Remove connection between nodes "Save Timeseries" and newly added script node.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-5.png
+        title: 'Disconnect the "save time series" node from the "push to cloud" node.'
     5:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-6.png
-        title: 'Drag connection from "Save Timeseries" to the transformation script node.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-6.png
+        title: 'Connect "save time series" node to the "Transform incoming message" node.'
     6:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-7.png
-        title: 'Select "Success" from the list and click "Add" button.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-7.png
+        title: 'Choose "Success" from the dropdown list, and click the "Add" button.'
     7:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-8.png
-        title: 'Drag connection from "Transform incoming message" to the "Push to cloud" node  the list and click "Add" button.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-8.png
+        title: 'Connect "Transform incoming message" to the "Push to cloud" node.'
     8:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-9.png
-        title: 'Select "Success" from the list and click "Add" button.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-9.png
+        title: 'Choose "Success" from the dropdown list, then click the "Add" button to establish the connection.'
     9:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-10.png
-        title: 'Click "Apply changes" to save current progress.'
-        
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-10.png
+        title: 'Click on the "Apply changes" icon to save your current progress.'
+         
 updateRootRuleChainEdge:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-11.png
-        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Rule chains page.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-11.png
+        title: 'Log in to your ThingsBoard <b>Edge</b> instance and navigate to the "Devices" page.'
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-12.png
-        title: 'Open "Edge root rule chain" to verify changes.'
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-12.png
+        title: 'Open the "Edge Root Rule Chain" to verify changes.'
     2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/update-root-item-13.png
+        image: /images/pe/edge/use-cases/data-filtering/update-root-item-13.png
         title: 'You should see the same rule chain nodes configuration as on the cloud.'
 
 copyAccessTokenDevice:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/copy-access-token-item-1.png
-        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+        image: /images/pe/edge/use-cases/data-filtering/copy-access-token-item-1.png
+        title: 'Open the "Devices" page.'
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/copy-access-token-item-2.png
-        title: 'Open "All" device group.'
+        image: /images/pe/edge/use-cases/data-filtering/copy-access-token-item-2.png
+        title: 'Select the "All" tab, then click on the row that represents the <b>"In-vehicle monitoring system"</b> device in the table to open its details.'
     2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/copy-access-token-item-3.png
-        title: 'Click on the <b>In-vehicle monitoring system</b> device row in the table to open device details.'
-    3:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/copy-access-token-item-4.png  
-        title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
-
+        image: /images/pe/edge/use-cases/data-filtering/copy-access-token-item-3.png
+        title: 'Click on the "Copy access token" (token will be copied to your clipboard).'
+    
 verifyDeviceTelemetryEdge:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-1.png
-        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+        image: /images/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-1.png
+        title: 'Open the "Devices" page in your ThingsBoard <b>Edge</b> instance.'
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-2.png
-        title: 'Open "All" device group.'
+        image: /images/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-2.png
+        title: 'Click on the row corresponding to the <b>"In-vehicle monitoring system"</b> device in the table to view its details.'
     2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-3.png
-        title: 'Click on the <b>In-vehicle monitoring system</b> device row in the table to open device details.'
-    3:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-4.png
-        title: 'Click on the tab <b>Latest telemetry</b>. You should see the telemetry constantly generated by the Python script.'
+        image: /images/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-3.png
+        title: 'Switch to the <b>"Latest telemetry"</b> tab to monitor the telemetry data generated by the Python script in real-time'
+    
 
 verifyDeviceTelemetry:
     0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-5.png
-        title: 'Login to your <b>ThingsBoard PE</b> instance and open Device groups page.'
+        image: /images/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-5.png
+        title: 'Log in to your <b>ThingsBoard PE</b> instance. Then navigate to the "Devices" page.' 
     1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-6.png
-        title: 'Open <b>All</b> device group.'
+        image: /images/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-6.png
+        title: 'Click on the <b>"In-vehicle monitoring system"</b> row to open the device details.'
     2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-7.png
-        title: 'Click on the row <b>In-vehicle monitoring system</b> to open device details.'
-    3:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-8.png
-        title: 'Click on the tab <b>Latest telemetry</b> to verify that distance readings are pushed successfully from the edge to the cloud.'
-
+        image: /images/pe/edge/use-cases/data-filtering/verify-device-telemetry-item-7.png
+        title: 'Click on the "Latest telemetry" tab, to verify that "distance readings" are pushed successfully from the edge to the cloud.'
+    
 createDashboard:
-    0:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-1.png
-        title: 'Login to your <b>ThingsBoard PE</b> instance and open "Dashboard groups" page.'
-    1:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-2.png
-        title: 'Click on the "Add entity group" ("+") icon in the upper right corner. Input name "Edge dashboards" and click "Add".'
-    2:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-3.png
-        title: 'Open "Edge dashboards" group by clicking on the "Open" icon.'
-    3:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-4.png
-        title: 'Click on the "Add" ("+") icon. Input title for the new dashboard, e.g. "Edge Vehicle" and click "Add".'
-    4:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-5.png
-        title: 'Click on the icon "Open dashboard" of the newly created dashboard.'
-    5:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-6.png
-        title: 'To start editing dashboard click on the "Edit" icon in the lower right corner.'
-    6:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-7.png
-        title: 'Click "Entity aliases" icon to add a new <a href="/docs/user-guide/ui/aliases/" target="_blank">alias</a> in order to visualize data on the dashboard.'
-    7:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-8.png
-        title: 'Click "Add alias" button.'
-    8:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-9.png
-        title: 'Input alias name "edge device". Select Filter type - "Single entity", Type - "Device", Device - "In-vehicle monitoring system". Then click "Add" button.'
-    9:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-10.png
-        title: 'Click "Save" button to save new alias.'
-    10:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-11.png
-        title: 'Click "Add new widget" in the middle of the dashboard page.'
-    11:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-12.png
-        title: 'Click "Select widgets bundle" and find "Digital gauges".'
-    12:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-13.png
-        title: 'In the list of available widgets select the one you see on the image. Click "+ Add" button to add a datasource for the widget.'
-    13:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-14.png
-        title: 'Click "+ Add" button to add a new datasource.'
-    14:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-15.png
-        title: 'Select Entity alias "edge device" and click on choose "distance" as device timeseries.'
-    15:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-16.png
-        title: 'Click "Edit widget" icon in the upper right corner of the widget to add style.'
-    16:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-17.png
-        title: 'Click "Setting" tab and add you can optionally add some title, icon and display configurations as show on the image.'
-    17:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-18.png
-        title: 'Click "Advanced" tab, input Maximum value as "1000" and Unit title as "MLS". Then click "Apply changes" and close the card.'
-    18:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-19.png
-        title: 'Optionally you can also resize widget by dragging the left bottom corner of the widget. Do not forget to click "Apply changes" icon to save current progress.'
-    19:
-        image: https://img.thingsboard.io/pe/edge/use-cases/data-filtering/configure-dashboards-item-20.png
-        title: 'Your dashboard should be similar to the one you see on the image.'
+  0:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-1.png
+        title: 'Log in to your <b>ThingsBoard PE</b> instance. Navigate to "Dashboards" page.'
+  1:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-2.png
+        title: 'Click on the ("+") icon, then select "Create new dashboard"'
+  2:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-3.png
+        title: 'Input the Name for the new dashboard, e.g., "Edge dashboards", then click the "Add" button.'
+  3:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-4.png
+        title: 'Click on the "Add alias" icon.'
+  4:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-5.png
+        title: 'Click on the "Add alias" button.'
+  5:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-6.png
+        title: 'Input Alias name "edge device". Select Filter type "Single entity", type "Device", and Device <b>"In-vehicle monitoring system"</b>. Then click on the "Add" button.'
+  6:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-7.png
+        title: 'Click on the "Save" button.'
+  7:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-8.png
+        title: 'Click on the "Add new widget".'
+  8:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-9.png
+        title: 'Enter the search query "Digital gauges", then click to select the widget from the search results.'
+  9:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-10.png
+        title: 'Click on the widget shown in the screenshot, or choose another one according to your preference.'
+  10:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-11.png
+        title: 'Click on the "Save button".'
+  11:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-12.png
+        title: 'Click on the "Edit mode" button.'
+  12:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-13.png
+        title: 'Click on the "Edit widget" icon.'
+  13:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-14.png
+        title: 'Set max value to "10000".'
+  14:
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-15.png
+        title: 'Switch to the "Advanced" tab, set the units to "mil", and click the "Apply" button.'
+  15:  
+        image: /images/pe/edge/use-cases/data-filtering/configure-dashboards-item-16.png
+        title: 'You have successfully created and configured the dashboard.'
 
 ---
 * TOC
