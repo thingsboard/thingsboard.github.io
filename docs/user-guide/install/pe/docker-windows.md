@@ -97,19 +97,53 @@ You can always change passwords for each account in account profile page.
 
 ## Upgrading
 
-In case when database upgrade is needed, execute the following commands:
+In case when database upgrade is needed:
+
+* Stop `mytbpe` container
 
 ```bash
-$ docker compose stop tb-node
-$ docker compose run mytbpe upgrade-tb.sh
-$ docker compose start mytbpe
+docker compose stop mytbpe
 ```
+ {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
-<br>**docker-compose stop tb-node**
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose stop mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Update docker-compose.yml - TB image should be the latest version (see [Step 3](#step-3-choose-thingsboard-queue-service))
+
+* Change upgradeversion variable to your **current** ThingsBoard version. For ex., if you are upgrading from 3.6.4:
+
+ ```bash
+echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
+```
+{: .copy-code}
+
+* Execute the following commands:
+
+```bash
+docker compose run mytbpe upgrade-tb.sh
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
 <br>**docker-compose run mytbpe upgrade-tb.sh**
-<br>**docker-compose start mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Start ThingsBoard:
+
+```bash
+docker compose up -d
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose up -d**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
