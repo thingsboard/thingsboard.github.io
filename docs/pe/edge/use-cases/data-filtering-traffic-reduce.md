@@ -44,10 +44,10 @@ updateRootRuleChain:
         title: 'Enter a Name, e.g., "Transform incoming message", and paste the <b>JavaScript code</b> (from the snippet above) to process only the "distance" readings parameter. Click "Add" to proceed.'
     4:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-5.png
-        title: 'Disconnect the "save timeseries" node from the "push to cloud" node.'
+        title: 'Disconnect the "save time series" node from the "push to cloud" node.'
     5:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-6.png
-        title: 'Connect "save timeseries" node to the "Transform incoming message" node.'
+        title: 'Connect "save time series" node to the "Transform incoming message" node.'
     6:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-7.png
         title: 'Choose "Success" from the dropdown list, and click the "Add" button.'

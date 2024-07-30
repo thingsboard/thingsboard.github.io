@@ -39,9 +39,4 @@ return result;
 ```
 {: .copy-code}
 
-{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-paas.png)
-{% endif %}
