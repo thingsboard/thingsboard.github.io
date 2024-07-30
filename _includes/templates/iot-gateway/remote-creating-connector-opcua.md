@@ -12,7 +12,7 @@ docker run -it -p 4840:4840 thingsboard/tb-gw-opcua-server:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/run-demo-opcua-server.png)
+![](https://img.thingsboard.io/gateway/dashboard/run-demo-opcua-server.png)
 
 ### Setup connector
 
@@ -30,16 +30,16 @@ To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
         title: Choose "**OPCUA**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to INFO, disable "**Fill configuration with default values**" field and click on "**Add**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
         title: Connector created.
 '
 %}
@@ -50,7 +50,7 @@ To go to the Modbus connector configuration, navigate to the "Configuration" tab
 
 {% assign configurationTab = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-11-ce.png,
         title: To go to the Modbus connector configuration, navigate to the "Configuration" tab.
 '
 %}
@@ -115,10 +115,10 @@ the remote settings.
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-12-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-logs-13-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-logs-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}

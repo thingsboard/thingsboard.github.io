@@ -12,7 +12,7 @@ docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/run-demo-mqtt-broker-image.png)
+![](https://img.thingsboard.io/gateway/dashboard/run-demo-mqtt-broker-image.png)
 
 ### Setup connector
 
@@ -24,16 +24,16 @@ To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
         title: Choose "**MQTT**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to INFO, disable "**Fill configuration with default values**" field and click on "**Add**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
         title: Connector created.
 '
 %}
@@ -57,7 +57,7 @@ Fill in the following fields with values:
 
 {% assign connectionToBroker = '
     ===
-        image: /images/gateway/dashboard/connection-to-broker-section-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/connection-to-broker-section-1-ce.png,
         title: First, we need to configure the connection to the demo broker. Let’s start from the "**Connection to broker**" section. This section offers detailed connection configuration options and contains several important fields, including host, port, MQTT version, client ID, and security settings. The **host** field specifies the address of the broker, while the **port** field indicates the communication port. The **MQTT version** field ensures compatibility with the protocol version being used. The **client ID** uniquely identifies the client, and the **security** settings provides configuration for client authorization at MQTT Broker. Then, click "Save".
 '
 %}
@@ -73,10 +73,10 @@ Let's configure data map using the following steps:
 
 {% assign dataMapping1 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-0-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-0-ce.png,
         title: Click "**Connectors configuration**" button on the right panel.
     ===
-        image: /images/gateway/dashboard/data-mapping-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-1-ce.png,
         title: In the opened window, fill in the "**Topic filter**" field with "**data/**", select the "**QoS**" field to "**0 - At most once**", and select the "**Payload type**" to **JSON**.
 '
 %}
@@ -90,7 +90,7 @@ Let's configure data map using the following steps:
 
 {% assign dataMapping2 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-2-ce.png,
         title: Scroll down to "**Data conversion**" section. For "**Device**" subsection use the following options/values: In the **Name** row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**Device Demo**" value. In the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value.
 '
 %}
@@ -104,16 +104,16 @@ Let's configure data map using the following steps:
 
 {% assign dataMapping3 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-3-ce.png,
         title: Click on pencil icon opposite to "**Attributes**" subsection;
     ===
-        image: /images/gateway/dashboard/data-mapping-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-4-ce.png,
         title: Click on "**Add attribute**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-5-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-5-ce.png,
         title: Fill in "**Key**" field with "**frequency**" value, select "**Integer**" option in "**Type**" field and fill in "**Value**" field with "**${frequency}**" value. Click on "**Add attribute**" button again;
     ===
-        image: /images/gateway/dashboard/data-mapping-6-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-6-ce.png,
         title: Fill in "**Key**" field with "**power**" value, select "**Integer**" option in "**Type**" field and fill in "**Value**" field with "**${power}**" value. Click on "**Apply**" button.
 '
 %}
@@ -128,22 +128,22 @@ Let's configure data map using the following steps:
 
 {% assign dataMapping4 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-7-ce.png,
         title: Click on pencil icon opposite to "**Time series**" subsection;
     ===
-        image: /images/gateway/dashboard/data-mapping-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-8-ce.png,
         title: Click on "**Add time series**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-9-ce.png,
         title: Fill in "**Key**" field with "**temperature**" value, select "**Integer**" option in "**Type**" field and fill in "**Value**" field with "**${temperature}**" value. Click on "**Add time series**" button again;
     ===
-        image: /images/gateway/dashboard/data-mapping-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-10-ce.png,
         title: Fill in "**Key**" field with "**humidity**" value, select "**Integer**" option in "**Type**" field and fill in "**Value**" field with "**${humidity}**" value. Click "**Apply**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-11-ce.png,
         title: Click "**Add**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-12-ce.png,
         title: Data mapping added.
 '
 %}
@@ -167,13 +167,13 @@ But for now, we need only connect and disconnect requests. Let's configure reque
 
 {% assign requestsMapping = '
     ===
-        image: /images/gateway/dashboard/requests-mapping-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-1-ce.png,
         title: Click on "**Add mapping**" button;
     ===
-        image: /images/gateway/dashboard/requests-mapping-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-2-ce.png,
         title: In the opened window, select "**Connect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/connect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from message**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**${SerialNumber}**" value; in the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value. Click on "**Add**" button;
   ===
-        image: /images/gateway/dashboard/requests-mapping-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-3-ce.png,
         title: Mapping added.
 '
 %}
@@ -190,13 +190,13 @@ Now, let's add another connect request using the following steps:
 
 {% assign requestsMapping2 = '
     ===
-        image: /images/gateway/dashboard/requests-mapping-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-4-ce.png,
         title: Click on "**+**" button;
     ===
-        image: /images/gateway/dashboard/requests-mapping-5-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-5-ce.png,
         title: select "**Connect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/+/connect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from topic**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**(?<=sensor\/)(.*?)(?=\/connect)**" value; in the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value. Click on "**Add**" button.;
     ===
-        image: /images/gateway/dashboard/requests-mapping-6-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-6-ce.png,
         title: Mapping added.
 '
 %}
@@ -212,13 +212,13 @@ And finally, let's add disconnect requests. For this purpose, follow the steps b
 
 {% assign requestsMapping3 = '
     ===
-        image: /images/gateway/dashboard/requests-mapping-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-7-ce.png,
         title: Click on "**+**" button;
     ===
-        image: /images/gateway/dashboard/requests-mapping-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-8-ce.png,
         title: In the opened window, select "**Disconnect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/disconnect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from message**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**${SerialNumber}**" value. Click on "**Add**" button;
     ===
-        image: /images/gateway/dashboard/requests-mapping-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-9-ce.png,
         title: Mapping added.
 '
 %}
@@ -234,13 +234,13 @@ Now, let's add another disconnect request using the following steps:
 
 {% assign requestsMapping4 = '
     ===
-        image: /images/gateway/dashboard/requests-mapping-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-10-ce.png,
         title: Click on "**+**" button;
     ===
-        image: /images/gateway/dashboard/requests-mapping-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-11-ce.png,
         title: In the opened window, select "**Disconnect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/+/disconnect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from topic**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**(?<=sensor\/)(.*?)(?=\/disconnect)**" value. Click on "**Add**" button;
     ===
-        image: /images/gateway/dashboard/requests-mapping-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-12-ce.png,
         title: Mapping added. Click "**Save**" button.
 '
 %}
@@ -255,10 +255,10 @@ It will then synchronize its state with the remote server. You can view the sync
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
         title: Click on logs icon to open connector logs page;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}
