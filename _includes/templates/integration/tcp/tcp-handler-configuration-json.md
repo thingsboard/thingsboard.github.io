@@ -1,1 +1,1 @@
-![image](/images/user-guide/integrations/tcp/tcp-handler-configuration-json.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-handler-configuration-json.png)

@@ -1,4 +1,4 @@
-![image](/images/user-guide/integrations/tcp/tcp-handler-configuration-binary.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-handler-configuration-binary.png)
 
 To parse payload properly, please make sure that next values are set:
 - **Max Frame Length** - the maximum length of the decoded frame. An exception will be thrown if the length of the frame exceeds this value; Leave it by default for this demo - **128**; 
