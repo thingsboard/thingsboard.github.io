@@ -24,7 +24,7 @@ configureAlarmRules:
         title: '1. Specify alarm type. For e.g., <b>High temperature</b>. 2. Click on <b>("+")</b> icon to add new alarm condition.'
     6:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-7.png
-        title: 'Click on </b>Add key filter</b> button.'
+        title: 'Click on <b>Add key filter</b> button.'
     7:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-8.png
         title: '1. Select key type. 2. Input key name 3. Select value type. 4. Click on <b>Add</b> button.'
