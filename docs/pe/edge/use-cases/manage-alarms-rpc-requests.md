@@ -9,34 +9,34 @@ configureAlarmRules:
         title: 'Login to your <b>ThingsBoard PE</b> instance and open <b>Device profiles</b> menu page.'
     1:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-2.png
-        title: 'Click on <b>("+")</b> to add new device profile.'
+        title: 'Click on the <b>("+")</b> to add new device profile.'
     2:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-3.png
-        title: '1. Input device profile name. For e.g., type <b>edge thermostat</b>. 2. Click on <b>Transport configuration</b> to proceed.'
+        title: '1. Input device profile name. For e.g., type <b>edge thermostat</b>. 2. Click on the <b>Transport configuration</b> to proceed.'
     3:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-4.png
-        title: 'For this example we will use default transport configuration. Click on <b>Alarm rules</b> to proceed.'
+        title: 'For this example we will use default transport configuration. Click on the <b>Alarm rules</b> to proceed.'
     4:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-5.png
-        title: 'Click on <b>Add alarm rule</b> button.'
+        title: 'Click on the <b>Add alarm rule</b> button.'
     5:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-6.png
-        title: '1. Specify alarm type. For e.g., <b>High temperature</b>. 2. Click on <b>("+")</b> icon to add new alarm condition.'
+        title: '1. Specify alarm type. For e.g., <b>High temperature</b>. 2. Click on the <b>("+")</b> icon to add new alarm condition.'
     6:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-7.png
-        title: 'Click on <b>Add key filter</b> button.'
+        title: 'Click on the <b>Add key filter</b> button.'
     7:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-8.png
         title: '1. Select key type. 2. Input key name 3. Select value type. 4. Click on <b>Add</b> button.'
     8:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-9.png
-        title: '1. Select operation, <b>greater than</b>. 2.  Input threshold value, <b>50</b>. Click on <b>Add</b> button.'
+        title: '1. Select operation, <b>greater than</b>. 2.  Input threshold value, <b>50</b>. Click on the <b>Add</b> button.'
     9:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-10.png
-        title: 'Click on <b>Save</b> button.'
+        title: 'Click on the <b>Save</b> button.'
     10:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-11.png
-        title: 'Click on <b>Add" button</b>.'
+        title: 'Click on the <b>Add" button</b>.'
     11:
         image: /images/pe/edge/use-cases/manage-alarms/configure-rules-item-12.png
         title: 'Newly create device profile will be show first in the list, because default sort order is by created time.'
@@ -58,25 +58,25 @@ provisionDevicesEdge:
         title: 'Open <b>All</b> device group.'
     2:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-3.png
-        title: 'Click on <b>("+")</b> icon in the top right corner of the table.'
+        title: 'Click on the <b>("+")</b> icon in the top right corner of the table.'
     3:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-4.png
         title: '1. Input device name. For e.g., <b>DHT22</b>. 2. Select <b>edge thermostat</b> from device profiles list. No other changes required at this time. 3. Click <b>Add</b> to add the device.'
     4:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-5.png
-        title: 'Now your <b>DHT22</b> device should be listed first, since table sort devices using created time by default. Click on <b>Add</b> to add one more device.'
+        title: 'Now your <b>DHT22</b> device should be listed first, since table sort devices using created time by default. Click on the <b>Add</b> to add one more device.'
     5:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-6.png
-        title: 'Input device name. For e.g., <b>Air Conditioner</b>. No other changes required at this time. Click on <b>Add</b> button to add the device.'
+        title: 'Input device name. For e.g., <b>Air Conditioner</b>. No other changes required at this time. Click on the <b>Add</b> button to add the device.'
     6:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-7.png
         title: 'Now your <b>Air Conditioner</b> device should be listed first, since table sort devices using created time by default.'
     7:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-8.png
-        title: 'Click on <b>DHT22</b> device row to open device details and navigate to <b>Relations</b> tab. Click on <b>("+")</b> icon to add new relation.'
+        title: 'Click on the <b>DHT22</b> device row to open device details and navigate to <b>Relations</b> tab. Click on the <b>("+")</b> icon to add new relation.'
     8:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-9.png
-        title: 'Specify relation type <b>Manages</b> and select <b>Air Conditioner</b> device from the list. Click on <b>Add</b> to add this relation. Now we verify that devices were provisioned to cloud.'
+        title: 'Specify relation type <b>Manages</b> and select <b>Air Conditioner</b> device from the list. Click on the <b>Add</b> to add this relation. Now we verify that devices were provisioned to cloud.'
 
 provisionDevices:
     0:
@@ -84,7 +84,7 @@ provisionDevices:
         title: 'Login to your <b>ThingsBoard PE</b> instance and open "Device groups" menu page.'
     1:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-11.png
-        title: 'Click on the group <b>All</b> in the menu or in the device groups list.'
+        title: 'Click on the the group <b>All</b> in the menu or in the device groups list.'
     2:
         image: /images/pe/edge/use-cases/manage-alarms/provision-devices-item-12.png
         title: 'Make sure that <b>DHT22</b> and </b>Air Conditioner</b> devices are in the devices list.'
@@ -102,7 +102,7 @@ updateRootRuleChain:
         title: 'Login to your <b>ThingsBoard PE</b> instance and open <b>Rule chain</b> templates menu page.'
     1:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-2.png
-        title: 'Click on <b>Open rule chain</b> icon to start editing <b>Edge Root Rule Chain</b>.'
+        title: 'Click on the <b>Open rule chain</b> icon to start editing <b>Edge Root Rule Chain</b>.'
     2:
         image: /images/pe/edge/use-cases/data-filtering/update-root-item-3.png
         title: 'Filter node by <b>script</b> word and drag script node (Transformation) to rule chain.'
@@ -114,16 +114,16 @@ updateRootRuleChain:
         title: 'Drag connection from <b>Device Profile Node</b> to newly added <b>enabled</b> script node.'
     5:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-6.png
-        title: 'Select <b>Alarm Created</b> from the list and click on <b>Add</b> button.'
+        title: 'Select <b>Alarm Created</b> from the list and click on the <b>Add</b> button.'
     6:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-7.png
-        title: 'Click on <b>Apply changes</b> to save current progress.'
+        title: 'Click on the <b>Apply changes</b> button to save current progress.'
     7:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-8.png
         title: 'Filter rule nodes by <b>change</b> word and add <b>change originator</b> node to rule chain.'
     8:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-9.png
-        title: 'Select <b>Related</b> source. Select <b>Manages</b> filter. Select <b>Device</b> type. Click on <b>Add</b> button.'
+        title: 'Select <b>Related</b> source. Select <b>Manages</b> filter. Select <b>Device</b> type. Click on the <b>Add</b> button.'
     9:
         image: /images/pe/edge/use-cases/manage-alarms/update-root-item-10.png
         title: 'Add <b>Success</b> relations from script node to change originator. Add <b>Success</b> relation from change originator to RPC Call Request node. Save changes.'
@@ -148,10 +148,10 @@ copyAccessTokenAirConditioner:
         title: 'Open <b>All</b> device group.'
     2:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-3.png
-        title: 'Click on the <b>Air Conditioner</b> device row in the table to open device details.'
+        title: 'Click on the the <b>Air Conditioner</b> device row in the table to open device details.'
     3:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-4.png
-        title: 'Click on <b>Copy access token</b>. Token will be copied to your clipboard. Save it to a safe place.'
+        title: 'Click on the <b>Copy access token</b>. Token will be copied to your clipboard. Save it to a safe place.'
 
 copyAccessTokenDht22:
     0:
@@ -165,7 +165,7 @@ copyAccessTokenDht22:
         title: 'Click on the <b>DHT22</b> device row in the table to open device details.'
     3:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-6.png
-        title: 'Click on <b>Copy access token</b>. Token will be copied to your clipboard. Save it to a safe place.'
+        title: 'Click on the <b>Copy access token</b>. Token will be copied to your clipboard. Save it to a safe place.'
 
 deviceAlarmTab:
     0:
@@ -181,7 +181,7 @@ mqttWindows:
         title: 'Create new MQTT Client with the properties listed in screenshots below.'
     1:
         image: /images/edge/getting-started/mqtt-windows-item-2.png
-        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click on <b>Publish</b> button.'
+        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click on the <b>Publish</b> button.'
 
 ---
 * TOC
