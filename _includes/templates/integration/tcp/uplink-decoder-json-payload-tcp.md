@@ -73,4 +73,4 @@ return result;
 <br>
 Paste the copied script to the decoder function section. Then, click "**Next**";
 
-![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
+![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
