@@ -125,18 +125,6 @@ docker volume create mytrendz-logs
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
-
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
-
-```yml
-set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
-VBoxManage controlvm "default" natpf1 "tcp-port8888,tcp,,8888,,8888"  
-```
-{: .copy-code}    
-
-Where 
-
-- `C:\Program Files\Oracle\VirtualBox`          - path to your VirtualBox installation directory
     
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). You should see Trendz login page.
    

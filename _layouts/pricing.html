@@ -99,7 +99,7 @@
         var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options';
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
-        $("div.pricing-content").css("display", "none");
+        hidePricingContent();
         $("div.select-product-content").css("display", "none");
         if (activateSelectProduct) {
             $("div.select-product-content#" + sectionId).css("display", "flex");
@@ -111,27 +111,34 @@
         } else {
             $('div.pricing-header-divider').removeClass("no-margin");
             $("div.pricing-content#" + sectionId).css("display", "block");
-            var solutionId = $('#' + sectionId + ' .solution-selector .solution.defaultselection').attr('id');
+            var solutionId = getDefaultSolutionIdBySectionId(sectionId);
             if (solutionId) {
                 setActiveSolutionSection(solutionId);
             }
         }
 
-        if(sectionId) {
+        if (sectionId) {
             reportPriceOpen(sectionId);
         }
     }
 
     function setActiveProductSection(sectionId) {
-        $('.product-selector .solution').removeClass("active");
-        $("div.pricing-content").css("display", "none");
+        deHighlightProductServiceTypeButtons();
+        hidePricingContent();
         if (sectionId) {
-            $('.product-selector .solution.' + sectionId).addClass("active");
+            highlightProductServiceTypesButtonBySectionId(sectionId);
             $("div.pricing-content#" + sectionId).css("display", "block");
-            var solutionId = $('#' + sectionId + ' .solution-selector .solution.defaultselection').attr('id');
+            var solutionId = getDefaultSolutionIdBySectionId(sectionId);
             setActiveSolutionSection(solutionId);
             reportPriceOpen(sectionId);
         }
+    }
+
+    function highlightProductServiceTypesButtonBySectionId(sectionId) {
+        $('.product-selector .solution.' + sectionId).addClass("active");
+    }
+    function deHighlightProductServiceTypeButtons() {
+        $('.product-selector .solution').removeClass("active");
     }
 
     function setActiveSolutionSection(sectionId) {
@@ -139,13 +146,22 @@
         $('.pricing-div .pricing-section:not(.pricing-community):not(.pricing-cloud)').removeClass("active");
         $('.pricing-content-header .pricing-content-description:not(.pricing-cloud)').removeClass("active");
         if (sectionId) {
-            var solution = $('.solution-selector .solution#' + sectionId);
-            solution.addClass("active");
-            var id = solution.attr("data-toggle");
-            var headerId = solution.attr("data-description-toggle");
+            var $solutionButtonElement = $('.solution-selector .solution'+`[data-solutionid=${sectionId}]`);
+            $solutionButtonElement.addClass("active");
+            var id = $solutionButtonElement.attr("data-toggle");
+            var headerId = $solutionButtonElement.attr("data-description-toggle");
             $('.pricing-div .pricing-section'+id).addClass("active");
             $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
         }
+    }
+
+    function getDefaultSolutionIdBySectionId(sectionId) {
+        let $defaultSolutionButtonElement = $('#' + sectionId + ' .solution-selector .solution.defaultselection');
+        return $defaultSolutionButtonElement.attr('data-solutionid');
+    }
+
+    function hidePricingContent() {
+        $("div.pricing-content").css("display", "none");
     }
 
     function getLicense(event, isPerpetual, productId, planId, productName, coupon, showConfirmDialog) {
@@ -197,17 +213,22 @@
     }
 
     function reportPriceLink(link, product) {
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+        if (checkGTagDataLayer() || !link || !product) {
             return;
         }
-        ga("send", "event", "PriceLink", product, link);
+        gtag("event", "PriceLink", {
+            "event_category": product,
+            "event_label": link
+        });
     }
 
     function reportPriceOpen(solutionId) {
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !solutionId) {
+        if (checkGTagDataLayer() || !solutionId) {
             return;
         }
-        ga("send", "event", "PriceOpen", solutionId);
+        gtag("event", "PriceOpen", {
+            "event_category": solutionId
+        });
     }
 </script>
 

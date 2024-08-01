@@ -1,13 +1,13 @@
-| **Parameter**                 | **Default value**                       | **Description**                                                                       |
-|:-|:-|-
-| name                          | **Modbus Default Server**               | Name of connector to server.                                                          |
-| host                          | **127.0.0.1**                           | Hostname or ip address of Modbus server.                                              |
-| port                          | **5021**                                | Port of Modbus server for connect.                                                    |
-| type                          | **tcp**                                 | Type of connection may be **tcp**, **udp** or **serial**.                             |
-| method                        | **socket**                              | Type of a framer **socket** or **rtu**, if needed.                                    |
-| timeout                       | **35**                                  | Timeout in seconds for connecting to Modbus server.                                   |
-| byteOrder                     | **LITTLE**                              | Order of bytes to read.                                                               |
-| wordOrder                     | **LITTLE**                              | Order of words in case of reading several registers.                                  |
+| **Parameter**                 | **Default value**         | **Description**                                           |
+|:-|:--------------------------|-----------------------------------------------------------
+| name                          | **Modbus Default Server** | Name of connector to server.                              |
+| host                          | **host.docker.internal**  | Hostname or ip address of Modbus server.                  |
+| port                          | **5021**                  | Port of Modbus server for connection.                     |
+| type                          | **tcp**                   | Type of connection may be **TCP**, **UDP** or **Serial**. |
+| method                        | **socket**                | Type of a framer **Socket** or **RTU**, if needed.        |
+| timeout                       | **35**                    | Timeout in seconds for connecting to Modbus server.       |
+| byteOrder                     | **LITTLE**                | Order of bytes to read.                                   |
+| wordOrder                     | **LITTLE**                | The order of words when reading several registers.        |
 |---
 
 Also, you can configure TLS connection using the following configuration:
@@ -26,7 +26,7 @@ Configuration example:
   "master": {
     "slaves": [
       {
-        "host": "127.0.0.1",
+        "host": "host.docker.internal",
         "port": 5021,
         "type": "tcp",
         "method": "socket",

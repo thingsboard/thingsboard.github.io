@@ -16,7 +16,7 @@ We assume you have completed the following guides and   reviewed the articles li
 
 We also assume you have the following third-party installed:
 
-  * [OpenJDK 11](https://openjdk.java.net/install/)
+  * [OpenJDK 17](/docs/{{doscPrefix}}user-guide/install/ubuntu/#step-1-install-java-17-openjdk)
   * [Maven 3.6.0+](https://maven.apache.org/install.html)
   * Any modern Java IDE, although we recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/download)
   * [Optional] Install [Lombok](https://projectlombok.org/) plugin to your favorite IDE.

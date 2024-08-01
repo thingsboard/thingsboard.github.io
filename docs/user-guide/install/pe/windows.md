@@ -17,12 +17,12 @@ description: Installing ThingsBoard on Windows
 ### Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
-Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
+Instructions below are provided for Windows 11/10. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
-To run ThingsBoard and PostgreSQL on a single machine you will need at least 2Gb of RAM.
+To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 
@@ -73,8 +73,7 @@ license:
 {% include templates/install/install-db.md %}
 
 {% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
-Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
@@ -93,7 +92,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.liquid content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+### Step 6. [Optional] Memory update for slow machines 
 
 {% include templates/install/windows-memory-on-slow-machines.md %} 
 
@@ -101,16 +100,16 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
 
-Execute **install.bat** script to install ThingsBoard as a Windows service (or run **"install.bat --loadDemo"** to install and add demo data).
+Execute **install.bat** script to install ThingsBoard as a Windows service (or run **".\install.bat --loadDemo"** to install and add demo data).
 This means it will be automatically started on system startup. 
 Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
 The output should be similar to this one:
   
   ```text
-C:\Program Files (x86)\thingsboard>install.bat --loadDemo
+C:\Program Files (x86)\thingsboard>.\install.bat --loadDemo
 Detecting Java version installed.
-CurrentVersion 18
-Java 1.8 found!
+CurrentVersion 170
+Java 17 found!
 Installing thingsboard ...
 ...
 ThingsBoard installed successfully!
@@ -121,7 +120,7 @@ ThingsBoard installed successfully!
 {% include templates/windows-start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
 ### Step 9. Install ThingsBoard Web Report Server component

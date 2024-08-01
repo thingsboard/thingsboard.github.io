@@ -56,141 +56,6 @@ To view only your dashboards, disable the "Include customer entities" option.
 {% include images-gallery.html imageCollection="creating-dashboard-3" %}
 {% endif %}
 
-### Import dashboard
-
-You can import a dashboard from a JSON file.
-
-To import a dashboard, follow these steps:
-
-{% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
-
-## Managing dashboard
-
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [share dashboard group](#share-dashboard-group), [make dashboard group public](#make-dashboard-group-public), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
-{% endif %}
-
-{% if docsPrefix == null %}
-With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [make dashboard public](#make-dashboard-public), [manage assigned customers](#manage-assigned-customers), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
-{% endif %}
-
-Let's look at each operation.
-
-### Export dashboard
-
-In the ThingsBoard you can export a dashboard as a configuration file in JSON format.
-You can use this file to transfer your Dashboard or widget configuration to another instance.
-
-To export a dashboard, go to the “Dashboards” page. Find the dashboard you want to export in the list and click on the "Export dashboard" button located next to the dashboard's name. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
-
-{% include images-gallery.html imageCollection="export-dashboard" %}
-
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".
-The dashboard is exported to the configuration file in JSON format.
-
-{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
-
-Dashboard export is also possible in several additional formats: PDF, PNG or JPEG.
-This is useful when you need to send the data displayed in your dashboard by email or print.
-
-{% include images-gallery.html imageCollection="pro-export" %}
-
-{% endif %}
-{% if docsPrefix == null %}
-To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.
-Dashboard is exported to the configuration file in JSON format.
-
-{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
-
-In **ThingsBoard Professional Edition**, in addition to exporting the dashboard in JSON format, dashboard export is possible in several additional formats: PDF, PNG & JPEG. This is useful when you need to send the data displayed in your dashboard by email or print.
-
-{% include images-gallery.html imageCollection="pro-export" %}
-
-{% endif %}
-
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-### Share dashboard group
-
-You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role. 
-Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
-
-To share a dashboard group, follow these steps:
-
-{% include images-gallery.html imageCollection="share-dashboard-group" showListImageTitles="true" %}
-
-{% endif %}
-
-{% if docsPrefix == null %}
-### Make dashboard public
-
-You can make the dashboard public and share a link to it with other users.
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-### Make dashboard group public
-
-You can make the dashboard group and all its dashboards public and then share links to those dashboards with other users.
-{% endif %}
-
-For this you should:
-
-{% include images-gallery.html imageCollection="make-public" showListImageTitles="true" %}
-
-To make a dashboard private again, follow these steps:
-
-{% include images-gallery.html imageCollection="make-private" showListImageTitles="true" %}
-
-{% capture difference %}
-**Please note:**
-<br>
-that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
-{% if docsPrefix == null %}
-### Manage assigned customers
-
-You can assign a dashboard to your client. The customer will only have the ability to view the dashboard and won't be able to perform any other operations on the dashboard.
-
-To assign a dashboard to a customer you should:
-
-{% include images-gallery.html imageCollection="manage-assigned-customers" showListImageTitles="true" %}
-
-You can unassign a dashboard from a customer. For this:
-
-{% include images-gallery.html imageCollection="manage-unassigned-customers" showListImageTitles="true" %}
-
-To assign/unassign multiple dashboards to a customer(s) simultaneously, select the desired dashboards and use the "Assign Dashboards" and "Unassign Dashboards" buttons.
-
-{% include images-gallery.html imageCollection="assigned-multiple-dashboards" showListImageTitles="true" %}
-
-{% endif %}
-
-### Edit dashboard
-
-Edit the fields you need, such as the title or description of the dashboard. After making the edits, remember to save all changes.
-With these steps, you will have successfully updated the dashboard information.
-
-Let’s see how to do this:
-
-{% include images-gallery.html imageCollection="dashboard-details" showListImageTitles="true" %}
-
-### Delete dashboard
-
-You can delete a dashboard using one of the following ways:
-
-First way:
-
-{% include images-gallery.html imageCollection="delete-dashboard-1" showListImageTitles="true" %}
-
-Second way:
-
-{% include images-gallery.html imageCollection="delete-dashboard-2" showListImageTitles="true" %}
-
-You can also delete multiple dashboards at once.
-
-{% include images-gallery.html imageCollection="delete-dashboard-3" showListImageTitles="true" %}
-
 ## Dashboard toolbar
 
 Before starting working with a dashboard, get familiar with its interface to understand which features are responsible for what actions.
@@ -493,6 +358,141 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 For the state to be named after the entity, use **${entityName}** as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
 
 {% include images-gallery.html imageCollection="states-entity-name" %}
+
+## Managing dashboard
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [share dashboard group](#share-dashboard-group), [make dashboard group public](#make-dashboard-group-public), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
+{% endif %}
+
+{% if docsPrefix == null %}
+With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [make dashboard public](#make-dashboard-public), [manage assigned customers](#manage-assigned-customers), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
+{% endif %}
+
+Let's look at each operation.
+
+### Export dashboard
+
+In the ThingsBoard you can export a dashboard as a configuration file in JSON format.
+You can use this file to transfer your Dashboard or widget configuration to another instance.
+
+To export a dashboard, go to the “Dashboards” page. Find the dashboard you want to export in the list and click on the "Export dashboard" button located next to the dashboard's name. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
+
+{% include images-gallery.html imageCollection="export-dashboard" %}
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".
+The dashboard is exported to the configuration file in JSON format.
+
+{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
+
+Dashboard export is also possible in several additional formats: PDF, PNG or JPEG.
+This is useful when you need to send the data displayed in your dashboard by email or print.
+
+{% include images-gallery.html imageCollection="pro-export" %}
+
+{% endif %}
+{% if docsPrefix == null %}
+To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.
+Dashboard is exported to the configuration file in JSON format.
+
+{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
+
+In **ThingsBoard Professional Edition**, in addition to exporting the dashboard in JSON format, dashboard export is possible in several additional formats: PDF, PNG & JPEG. This is useful when you need to send the data displayed in your dashboard by email or print.
+
+{% include images-gallery.html imageCollection="pro-export" %}
+
+{% endif %}
+
+### Import dashboard
+
+You can import a dashboard from a JSON configuration file. This can be useful when you are migrating your dashboard configuration from another instance.
+
+To import a dashboard, follow these steps:
+
+{% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+### Share dashboard group
+
+You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role.
+Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
+
+To share a dashboard group, follow these steps:
+
+{% include images-gallery.html imageCollection="share-dashboard-group" showListImageTitles="true" %}
+
+{% endif %}
+
+{% if docsPrefix == null %}
+### Make dashboard public
+
+You can make the dashboard public and share a link to it with other users.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+### Make dashboard group public
+
+You can make the dashboard group and all its dashboards public and then share links to those dashboards with other users.
+{% endif %}
+
+For this you should:
+
+{% include images-gallery.html imageCollection="make-public" showListImageTitles="true" %}
+
+To make a dashboard private again, follow these steps:
+
+{% include images-gallery.html imageCollection="make-private" showListImageTitles="true" %}
+
+{% capture difference %}
+**Please note:**
+<br>
+that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% if docsPrefix == null %}
+### Manage assigned customers
+
+You can assign a dashboard to your client. The customer will only have the ability to view the dashboard and won't be able to perform any other operations on the dashboard.
+
+To assign a dashboard to a customer you should:
+
+{% include images-gallery.html imageCollection="manage-assigned-customers" showListImageTitles="true" %}
+
+You can unassign a dashboard from a customer. For this:
+
+{% include images-gallery.html imageCollection="manage-unassigned-customers" showListImageTitles="true" %}
+
+To assign/unassign multiple dashboards to a customer(s) simultaneously, select the desired dashboards and use the "Assign Dashboards" and "Unassign Dashboards" buttons.
+
+{% include images-gallery.html imageCollection="assigned-multiple-dashboards" showListImageTitles="true" %}
+
+{% endif %}
+
+### Edit dashboard
+
+Edit the fields you need, such as the title or description of the dashboard. After making the edits, remember to save all changes.
+With these steps, you will have successfully updated the dashboard information.
+
+Let’s see how to do this:
+
+{% include images-gallery.html imageCollection="dashboard-details" showListImageTitles="true" %}
+
+### Delete dashboard
+
+You can delete a dashboard using one of the following ways:
+
+First way:
+
+{% include images-gallery.html imageCollection="delete-dashboard-1" showListImageTitles="true" %}
+
+Second way:
+
+{% include images-gallery.html imageCollection="delete-dashboard-2" showListImageTitles="true" %}
+
+You can also delete multiple dashboards at once.
+
+{% include images-gallery.html imageCollection="delete-dashboard-3" showListImageTitles="true" %}
 
 ## Next steps
 

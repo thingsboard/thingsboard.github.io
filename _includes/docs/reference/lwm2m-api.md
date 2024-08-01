@@ -37,6 +37,7 @@ This part of documentation covers provisioning of your first LwM2M device in Thi
 {% unless docsPrefix == 'paas/' %}
 System administrator is able to upload LwM2M models using "Resource library" UI located in the "System settings" menu.
 One may upload multiple files at once. We recommend you to download list of available models from official [github](https://github.com/OpenMobileAlliance/lwm2m-registry) repo and import all of them.
+Note that LwM2M models are versioned, and make sure to upload those that match the LwM2M object versions provided by your devices.
 
 {% include images-gallery.html imageCollection="upload-models" showListImageTitles="true" %}
 
@@ -121,7 +122,7 @@ The LwM2M transport implementation also stores the logs of communication with th
 ## ThingsBoard LwM2M support
 
 ThingsBoard implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
-As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
+As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time series data](/docs/{{docsPrefix}}user-guide/telemetry/).
 The mapping is configured in the corresponding device profile. We will use some screenshots of the LwM2M device profile below to explain the basics. 
 See the [Getting Started](#getting-started) guide for a step-by-step instruction to create the device profile.
 
@@ -154,12 +155,12 @@ If the resource is marked as an attribute, platform will send the LwM2M Write op
 
 See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-thingsboard-attributes)
 
-#### Read LwM2M resources to time-series data
+#### Read LwM2M resources to time series data
 
-You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
+You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time series data](/docs/{{docsPrefix}}user-guide/telemetry/).
 To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in ThingsBoard.
 For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
-and to store them as time-series data in ThingsBoard:
+and to store them as time series data in ThingsBoard:
 
 ![image](/images/lwm2m/time-series-ce.png)
 

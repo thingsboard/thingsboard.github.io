@@ -69,7 +69,7 @@ description: Comprehensive software solutions for edge computing, providing data
                 <img src="/images/edge/batch-update.svg" alt="batch update">
             </div>
             <div class="feature-des"><h3 class="item-heading">Batch Update and Visualization</h3>
-                <p>Update thousands of edge configurations with a single click. Monitor local events and timeseries data using a real-time dashboard.</p>
+                <p>Update thousands of edge configurations with a single click. Monitor local events and time series data using a real-time dashboard.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
@@ -206,5 +206,5 @@ description: Comprehensive software solutions for edge computing, providing data
 </section>
 
 <section id="bottom">
-    <a href="/docs/edge/getting-started/" class="bottom-button">Try Edge now</a>
+    <a id="Products_Edge_TryEdgeNow" href="/docs/edge/getting-started/" class="bottom-button gtm_button">Try Edge now</a>
 </section>

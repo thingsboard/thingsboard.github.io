@@ -1,5 +1,5 @@
 One type of security configuration is basic. 
-For authorization will be used combination of username/password, provided in this section in config.
+For authorization, a combination of username/password provided in this section of the config will be used.
 
 
 |**Parameter**|**Default value**|**Description**|

@@ -8,21 +8,101 @@
 	>
 
 <channel>
-	<title>Use cases &#8211; ThingsBoard&#039;s blog</title>
+	<title>Use cases - Thingsboard's blog</title>
 	<atom:link href="/blog/category/use-cases/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description></description>
-	<lastBuildDate>Fri, 05 Apr 2024 12:56:51 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 20 Jun 2024 13:56:52 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.3</generator>
+	<generator>https://wordpress.org/?v=6.4.5</generator>
 	<item>
+		<title>Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</title>
+		<link>/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform</link>
+		
+		<dc:creator><![CDATA[Anastasia Antoniuk]]></dc:creator>
+		<pubDate>Fri, 17 May 2024 12:12:37 +0000</pubDate>
+				<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Use cases]]></category>
+		<guid isPermaLink="false">/blog/?p=4288</guid>
+
+					<description><![CDATA[<p>This case study highlights how innovative IoT solutions revolutionize beverage distribution, offering a roadmap for others in the&#8230;</p>
+<p>The post <a href="/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/">Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This case study highlights how innovative IoT solutions revolutionize beverage distribution, offering a roadmap for others in the industry.</p>
+
+
+
+<p><strong>Client:</strong> <a href="https://superbockgroup.com/">Super Bock Group</a>, the largest Portuguese beverage company<br><strong>Main request:</strong> Monitoring the beer tank levels in restaurants, predictive maintenance, and anomalies detection.</p>
+
+
+
+<p>Staying stocked is as crucial as the quality of the goods served. That&#8217;s where the Super Bock Group stepped up its game. Along with ThingsBoard, they started a tech journey to keep their golden brews flowing seamlessly in restaurants, ensuring every glass raised was a toast to efficiency and innovation.</p>
+
+
+
+<h4 class="wp-block-heading">The challenge</h4>
+
+
+
+<p>The journey of a single beer from the brewery to the bar is far more complex than one might imagine. For Super Bock Group, managing this journey meant overcoming a series of challenges that, if not addressed, could lead to inefficiencies, unnecessary costs, and, most critically, an interrupted supply of their beloved beverages.</p>
+
+
+
+<p><strong>The mission was clear – streamline operations to keep costs down and glasses up</strong>.<br>Super Bock Group wanted a smart way to monitor beer levels in tanks across restaurants, predict refill times, and swiftly address any issues. They went even further, tracking their delivery trucks in real-time, keeping tabs on volumes, temperature, and journey details from start to finish.</p>
+
+
+
+<h4 class="wp-block-heading">The Solution: Smart, Intuitive, and Always On</h4>
+
+
+
+<p>At various points of sale, like restaurants, beer tanks equipped with controller sensors monitor the beer levels, ensuring that they never dip below the threshold. Should the beer level approach this critical point, the system is designed to trigger an alert, safeguarding against unexpected shortages. Additionally, these sensors keep an eye on the tank pressure, maintaining the perfect conditions for beer storage. The information gathered by these sensors is seamlessly transmitted to ThingsBoard through a Wi-Fi connection via the MQTT protocol, ensuring real-time data flow and responsiveness.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="2409" height="1374" data-id="4454" src="/blog/wp-content/uploads/2024/05/Tracking-superbock-1.webp" alt="dashboard with statitics and graphs" class="wp-image-4454" srcset="/blog/wp-content/uploads/2024/05/Tracking-superbock-1.webp 2409w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-300x171.webp 300w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1024x584.webp 1024w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-768x438.webp 768w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1536x876.webp 1536w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-2048x1168.webp 2048w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-512x292.webp 512w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-920x525.webp 920w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1600x913.webp 1600w, /blog/wp-content/uploads/2024/05/Tracking-superbock-1-1920x1095.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
+
+
+
+<p>The trucks transporting the beer are also under the watch. Similar to the tanks, trucks are equipped with devices that send data to ThingsBoard, facilitating detailed tracking of each truck&#8217;s journey, including roadmap, current location, and beer condition. This level of fleet monitoring enhances logistical efficiency, ensures timely deliveries and optimal routing, reinforcing the seamless operation of Super Bock Group&#8217;s distribution network.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" width="2409" height="1347" data-id="4334" src="/blog/wp-content/uploads/2024/04/Tracking-superbock.webp" alt="dashboard with map and graphs" class="wp-image-4334" srcset="/blog/wp-content/uploads/2024/04/Tracking-superbock.webp 2409w, /blog/wp-content/uploads/2024/04/Tracking-superbock-300x168.webp 300w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1024x573.webp 1024w, /blog/wp-content/uploads/2024/04/Tracking-superbock-768x429.webp 768w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1536x859.webp 1536w, /blog/wp-content/uploads/2024/04/Tracking-superbock-2048x1145.webp 2048w, /blog/wp-content/uploads/2024/04/Tracking-superbock-512x286.webp 512w, /blog/wp-content/uploads/2024/04/Tracking-superbock-920x514.webp 920w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1600x895.webp 1600w, /blog/wp-content/uploads/2024/04/Tracking-superbock-1920x1074.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
+
+
+
+<p>Through this IoT solution, complete with flexible alarms and notifications, ThingsBoard has equipped Super Bock Group with a highly tailored and efficient system. The ability to customize alerts for specific thresholds, such as low beer levels or temperature deviations, ensures that Super Bock can proactively manage their inventory and maintain product quality. This project not only showcases the adaptability and power of ThingsBoard&#8217;s platform but also highlights how it can be configured to meet the unique needs of any business, leading to smarter operations and improved service delivery.</p>
+
+
+
+<h4 class="wp-block-heading">The Outcome</h4>
+
+
+
+<p>Real-time beer tank monitoring and predictive analytics ensured Super Bock beverages were always available, elevating the customer experience. Improved sensor reliability, thanks to proactive system health checks; guaranteed accurate data, and minimized downtime. Additionally, in-depth journey data analysis streamlined the delivery process, cutting costs and ensuring timely arrivals.<br>As glasses clink in restaurants served by Super Bock, behind the scenes, a sophisticated combination of data and technology ensures that the next round is always ready.</p>
+
+
+
+<h4 class="wp-block-heading">Conclusion: To Innovation and Beyond</h4>
+
+
+
+<p>The success of the Super Bock Group project highlights how effectively configuring ThingsBoard&#8217;s existing features can lead to significant operational improvements. It&#8217;s a clear example of how, with the right setup, ThingsBoard users can unlock tailored solutions that drive efficiency and innovation within their operations.<br>Start your own successful IoT story along with ThingsBoard. Cheers to that!</p><p>The post <a href="/blog/keeping-the-beer-flowing-beverage-distribution-solution-with-thingsboard-iot-platform/">Keeping the Beer Flowing: Beverage Distribution Solution with ThingsBoard IoT platform</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
 		<title>TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group&#8217;s Award-Winning Partnership</title>
-		<link>/blog/top-supplier-retail-2024-2/</link>
-					<comments>/blog/top-supplier-retail-2024-2/#respond</comments>
+		<link>/blog/top-supplier-retail-2024-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=top-supplier-retail-2024-2</link>
 		
 		<dc:creator><![CDATA[PR team]]></dc:creator>
 		<pubDate>Tue, 26 Mar 2024 10:35:32 +0000</pubDate>
@@ -31,9 +111,9 @@
 		<category><![CDATA[Use cases]]></category>
 		<guid isPermaLink="false">/blog/?p=3972</guid>
 
-					<description><![CDATA[A new achievement and what does it mean to all ]]></description>
-										<content:encoded><![CDATA[
-<p>The retail technology landscape is evolving rapidly, driven by the transformative power of the Internet of Things (IoT). In this innovative arena, the partnership between ThingsBoard and Schwarz IT shines brightly. This collaboration has secured ThingsBoard the prestigious &#8220;TOP SUPPLIER RETAIL 2024&#8221; award from the EHI Retail Institute, confirming our leadership in IoT solutions for retail.</p>
+					<description><![CDATA[<p>A new achievement and what does it mean to all</p>
+<p>The post <a href="/blog/top-supplier-retail-2024-2/">TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group’s Award-Winning Partnership</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The retail technology landscape is evolving rapidly, driven by the transformative power of the Internet of Things (IoT). In this innovative arena, the partnership between ThingsBoard and Schwarz IT shines brightly. This collaboration has secured ThingsBoard the prestigious &#8220;TOP SUPPLIER RETAIL 2024&#8221; award from the EHI Retail Institute, confirming our leadership in IoT solutions for retail.</p>
 
 
 
@@ -85,27 +165,23 @@
 
 
 
-<p>We invite you to explore the potential of ThingsBoard in revolutionizing your retail operations. Our award-winning IoT solutions are designed to empower businesses like yours to navigate digital transformation with confidence. Discover how we can help transform your business by visiting our <a href="https://thingsboard.io/">website</a> or <a href="https://thingsboard.io/docs/contact-us/">contacting</a> our sales team. Let&#8217;s innovate together and lead the way in retail technology.</p>
-]]></content:encoded>
+<p>We invite you to explore the potential of ThingsBoard in revolutionizing your retail operations. Our award-winning IoT solutions are designed to empower businesses like yours to navigate digital transformation with confidence. Discover how we can help transform your business by visiting our <a href="https://thingsboard.io/">website</a> or <a href="https://thingsboard.io/docs/contact-us/">contacting</a> our sales team. Let&#8217;s innovate together and lead the way in retail technology.</p><p>The post <a href="/blog/top-supplier-retail-2024-2/">TOP SUPPLIER RETAIL 2024: ThingsBoard and Schwarz Group’s Award-Winning Partnership</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/top-supplier-retail-2024-2/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</title>
-		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/</link>
-					<comments>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/#respond</comments>
+		<link>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions</link>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Fri, 01 Mar 2024 15:57:16 +0000</pubDate>
 				<category><![CDATA[Use cases]]></category>
 		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3316</guid>
 
-					<description><![CDATA[Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential major breakdowns if not addressed quickly. The challenge is that monitoring tools like drones, digital multimeters, and infrared cameras are costly, making regular checks infrequent, which does not allow quick responses to problems. This means that if a problem arises after a maintenance check, electricity production efficiency will fall, leading to significant losses.</p>
+					<description><![CDATA[<p>Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential&#8230;</p>
+<p>The post <a href="/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">Optimizing solar parks efficiency – advanced anomaly detection solutions</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p style="font-size:16px">Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential major breakdowns if not addressed quickly. The challenge is that monitoring tools like drones, digital multimeters, and infrared cameras are costly, making regular checks infrequent, which does not allow quick responses to problems. This means that if a problem arises after a maintenance check, electricity production efficiency will fall, leading to significant losses.</p>
 
 
 
@@ -117,7 +193,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-8 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img decoding="async" width="2409" height="1350" data-id="3765" src="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp" alt="Thingsboard dashboard with chart and two tables with lists of alarms and annomaly situations" class="wp-image-3765" srcset="/blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.webp 2409w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.webp 300w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.webp 768w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.webp 512w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.webp 920w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -187,7 +265,9 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="803" height="803" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp" alt="Field with solar panels and demonstration icons of IOT notifications on them" class="wp-image-3766" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.webp 803w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-9 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2409" data-id="4513" src="/blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules.webp" alt="" class="wp-image-4513" srcset="/blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules.webp 2409w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-300x300.webp 300w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-1024x1024.webp 1024w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-150x150.webp 150w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-768x768.webp 768w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-1536x1536.webp 1536w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-2048x2048.webp 2048w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-148x148.webp 148w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-296x296.webp 296w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-512x512.webp 512w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-920x920.webp 920w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-1600x1600.webp 1600w, /blog/wp-content/uploads/2024/05/Anomalies-in-photovoltaic-modules-1920x1920.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -221,7 +301,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="561" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-10 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1320" data-id="3768" src="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3768" srcset="/blog/wp-content/uploads/2024/03/Anomalies-in-Inverters.webp 2409w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Anomalies-in-Inverters-1920x1052.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -237,27 +319,23 @@
 
 
 
-<p style="font-size:16px">And this is only part of how advanced analytics and machine learning can improve the efficiency of solar farms. With help, you can find solutions to your solar farm problems, including Soiling, Battery Health Diagnostics, and more.</p>
-]]></content:encoded>
+<p style="font-size:16px">And this is only part of how advanced analytics and machine learning can improve the efficiency of solar farms. With help, you can find solutions to your solar farm problems, including Soiling, Battery Health Diagnostics, and more.</p><p>The post <a href="/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">Optimizing solar parks efficiency – advanced anomaly detection solutions</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Reducing costs of solar farms by optimizing the cleaning process</title>
-		<link>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/</link>
-					<comments>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/#respond</comments>
+		<link>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process</link>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 15:09:55 +0000</pubDate>
 				<category><![CDATA[Use cases]]></category>
 		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2957</guid>
 
-					<description><![CDATA[Introduction For solar farms, dirty panels can mean thousands of dollars of lost revenue annually. Panels washed too&#8230;]]></description>
-										<content:encoded><![CDATA[
-<h4 class="wp-block-heading" id="introduction">Introduction</h4>
+					<description><![CDATA[<p>Introduction For solar farms, dirty panels can mean thousands of dollars of lost revenue annually. Panels washed too&#8230;</p>
+<p>The post <a href="/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">Reducing costs of solar farms by optimizing the cleaning process</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h4 class="wp-block-heading" id="introduction">Introduction</h4>
 
 
 
@@ -269,7 +347,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp" alt="Thingsboard dashboard with charts and lists solar panels statistics " class="wp-image-3758" srcset="/blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-300x168.webp 300w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-768x430.webp 768w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-512x287.webp 512w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-920x516.webp 920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-11 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1350" data-id="3758" src="/blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms.webp" alt="Thingsboard dashboard with charts and lists solar panels statistics " class="wp-image-3758" srcset="/blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms.webp 2409w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-300x168.webp 300w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-768x430.webp 768w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-512x287.webp 512w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-920x516.webp 920w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/reducing-costs-of-solar-farms-1920x1076.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -341,8 +421,8 @@
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="669" data-id="3759" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp" alt="Grid with solar panel cleaning schedule" class="wp-image-3759" srcset="/blog/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp 1024w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-300x196.webp 300w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-768x502.webp 768w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1536x1004.webp 1536w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-2048x1339.webp 2048w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-512x335.webp 512w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-920x601.webp 920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1600x1046.webp 1600w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1920x1255.webp 1920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-12 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1575" data-id="3759" src="/blog/wp-content/uploads/2024/03/soiling-cost-calculation.webp" alt="Grid with solar panel cleaning schedule" class="wp-image-3759" srcset="/blog/wp-content/uploads/2024/03/soiling-cost-calculation.webp 2409w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-300x196.webp 300w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1024x669.webp 1024w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-768x502.webp 768w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1536x1004.webp 1536w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-2048x1339.webp 2048w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-512x335.webp 512w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-920x601.webp 920w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1600x1046.webp 1600w, /blog/wp-content/uploads/2024/03/soiling-cost-calculation-1920x1255.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 </figure>
 
 
@@ -359,27 +439,23 @@
 
 
 
-<p style="font-size:16px">Analytics, IoT, and machine learning provide insights, risk forecasts, and data-driven decisions for better business performance. Embracing these ensures competitiveness and risk mitigation. Also, in the future, we plan to tell you how to improve the efficiency of the power plant by finding anomalies in the solar panels and parts of the power plant, such as the inverter or the battery. In our digital age, advanced analytics are the way to simplify and boost complex problem-solving!</p>
-]]></content:encoded>
+<p style="font-size:16px">Analytics, IoT, and machine learning provide insights, risk forecasts, and data-driven decisions for better business performance. Embracing these ensures competitiveness and risk mitigation. Also, in the future, we plan to tell you how to improve the efficiency of the power plant by finding anomalies in the solar panels and parts of the power plant, such as the inverter or the battery. In our digital age, advanced analytics are the way to simplify and boost complex problem-solving!</p><p>The post <a href="/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">Reducing costs of solar farms by optimizing the cleaning process</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Solving solar power plant problems using advanced analytics</title>
-		<link>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/</link>
-					<comments>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/#respond</comments>
+		<link>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/?utm_source=rss#038;utm_medium=rss&#038;utm_campaign=solving-solar-power-plant-problems-using-advanced-analytics-2</link>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 10:33:41 +0000</pubDate>
 				<category><![CDATA[Use cases]]></category>
 		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3387</guid>
 
-					<description><![CDATA[Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p style="font-size:16px">Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward a greener future. However, solar farms face several energy-generating challenges, including operating and maintenance costs, soiling, performance degradation over time, security and intrusion detection, optimizing energy output, and grid integration challenges.</p>
+					<description><![CDATA[<p>Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward&#8230;</p>
+<p>The post <a href="/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/">Solving solar power plant problems using advanced analytics</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p style="font-size:16px">Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward a greener future. However, solar farms face several energy-generating challenges, including operating and maintenance costs, soiling, performance degradation over time, security and intrusion detection, optimizing energy output, and grid integration challenges.</p>
 
 
 
@@ -403,7 +479,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp" alt="Solar farm field with solar panels and different buildings" class="wp-image-3826" srcset="/blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-768x430.webp 768w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-512x287.webp 512w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-920x516.webp 920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1920x1076.webp 1920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-13 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1350" data-id="3826" src="/blog/wp-content/uploads/2024/03/Solar-Farm-Structure.webp" alt="Solar farm field with solar panels and different buildings" class="wp-image-3826" srcset="/blog/wp-content/uploads/2024/03/Solar-Farm-Structure.webp 2409w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1024x574.webp 1024w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-768x430.webp 768w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1536x861.webp 1536w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-2048x1148.webp 2048w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-512x287.webp 512w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-920x516.webp 920w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1600x897.webp 1600w, /blog/wp-content/uploads/2024/03/Solar-Farm-Structure-1920x1076.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -435,7 +513,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Scheme-1024x561.webp" alt="Circulation of solar farm building challenges" class="wp-image-3828" srcset="/blog/wp-content/uploads/2024/03/Scheme-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Scheme-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Scheme-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Scheme-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Scheme-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Scheme-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Scheme-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Scheme-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Scheme-1920x1052.webp 1920w, /blog/wp-content/uploads/2024/03/Scheme.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-14 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1320" data-id="3828" src="/blog/wp-content/uploads/2024/03/Scheme.webp" alt="Circulation of solar farm building challenges" class="wp-image-3828" srcset="/blog/wp-content/uploads/2024/03/Scheme.webp 2409w, /blog/wp-content/uploads/2024/03/Scheme-300x164.webp 300w, /blog/wp-content/uploads/2024/03/Scheme-1024x561.webp 1024w, /blog/wp-content/uploads/2024/03/Scheme-768x421.webp 768w, /blog/wp-content/uploads/2024/03/Scheme-1536x842.webp 1536w, /blog/wp-content/uploads/2024/03/Scheme-2048x1122.webp 2048w, /blog/wp-content/uploads/2024/03/Scheme-512x281.webp 512w, /blog/wp-content/uploads/2024/03/Scheme-920x504.webp 920w, /blog/wp-content/uploads/2024/03/Scheme-1600x877.webp 1600w, /blog/wp-content/uploads/2024/03/Scheme-1920x1052.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -485,7 +565,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="https://wp.thingsboard.io/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">guide here</a>.</p>
+<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="https://thingsboard.io/blog/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/" title="">guide here</a>.</p>
 
 
 
@@ -517,7 +597,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="573" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3853" srcset="/blog/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp 1024w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-768x429.webp 768w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1536x859.webp 1536w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-2048x1145.webp 2048w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-512x286.webp 512w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-920x514.webp 920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1600x895.webp 1600w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1920x1074.webp 1920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-15 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1347" data-id="3853" src="/blog/wp-content/uploads/2024/03/Anomaly-tasks.webp" alt="Dashboard with chart and list of statistics " class="wp-image-3853" srcset="/blog/wp-content/uploads/2024/03/Anomaly-tasks.webp 2409w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-300x168.webp 300w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.webp 1024w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-768x429.webp 768w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1536x859.webp 1536w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-2048x1145.webp 2048w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-512x286.webp 512w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-920x514.webp 920w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1600x895.webp 1600w, /blog/wp-content/uploads/2024/03/Anomaly-tasks-1920x1074.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -525,7 +607,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="https://wp.thingsboard.io/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="https://thingsboard.io/blog/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/" title="">click here</a>.</p>
 
 
 
@@ -545,7 +627,9 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="643" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Heat-map-1024x643.webp" alt="Grid with solar farm statistics" class="wp-image-3852" srcset="/blog/wp-content/uploads/2024/03/Heat-map-1024x643.webp 1024w, /blog/wp-content/uploads/2024/03/Heat-map-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Heat-map-768x482.webp 768w, /blog/wp-content/uploads/2024/03/Heat-map-1536x964.webp 1536w, /blog/wp-content/uploads/2024/03/Heat-map-2048x1285.webp 2048w, /blog/wp-content/uploads/2024/03/Heat-map-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Heat-map-920x577.webp 920w, /blog/wp-content/uploads/2024/03/Heat-map-1600x1004.webp 1600w, /blog/wp-content/uploads/2024/03/Heat-map-1920x1205.webp 1920w, /blog/wp-content/uploads/2024/03/Heat-map.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-16 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1512" data-id="3852" src="/blog/wp-content/uploads/2024/03/Heat-map.webp" alt="Grid with solar farm statistics" class="wp-image-3852" srcset="/blog/wp-content/uploads/2024/03/Heat-map.webp 2409w, /blog/wp-content/uploads/2024/03/Heat-map-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Heat-map-1024x643.webp 1024w, /blog/wp-content/uploads/2024/03/Heat-map-768x482.webp 768w, /blog/wp-content/uploads/2024/03/Heat-map-1536x964.webp 1536w, /blog/wp-content/uploads/2024/03/Heat-map-2048x1285.webp 2048w, /blog/wp-content/uploads/2024/03/Heat-map-512x321.webp 512w, /blog/wp-content/uploads/2024/03/Heat-map-920x577.webp 920w, /blog/wp-content/uploads/2024/03/Heat-map-1600x1004.webp 1600w, /blog/wp-content/uploads/2024/03/Heat-map-1920x1205.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -601,15 +685,13 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="640" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp" alt="Chart with consumption forecast" class="wp-image-3854" srcset="/blog/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp 1024w, /blog/wp-content/uploads/2024/03/Consumption-forecast-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Consumption-forecast-768x480.webp 768w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1536x960.webp 1536w, /blog/wp-content/uploads/2024/03/Consumption-forecast-2048x1280.webp 2048w, /blog/wp-content/uploads/2024/03/Consumption-forecast-512x320.webp 512w, /blog/wp-content/uploads/2024/03/Consumption-forecast-920x575.webp 920w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1600x1000.webp 1600w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1920x1200.webp 1920w, /blog/wp-content/uploads/2024/03/Consumption-forecast.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-17 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2409" height="1506" data-id="3854" src="/blog/wp-content/uploads/2024/03/Consumption-forecast.webp" alt="Chart with consumption forecast" class="wp-image-3854" srcset="/blog/wp-content/uploads/2024/03/Consumption-forecast.webp 2409w, /blog/wp-content/uploads/2024/03/Consumption-forecast-300x188.webp 300w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1024x640.webp 1024w, /blog/wp-content/uploads/2024/03/Consumption-forecast-768x480.webp 768w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1536x960.webp 1536w, /blog/wp-content/uploads/2024/03/Consumption-forecast-2048x1280.webp 2048w, /blog/wp-content/uploads/2024/03/Consumption-forecast-512x320.webp 512w, /blog/wp-content/uploads/2024/03/Consumption-forecast-920x575.webp 920w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1600x1000.webp 1600w, /blog/wp-content/uploads/2024/03/Consumption-forecast-1920x1200.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
 <p style="font-size:16px">Advanced analytics allows you to detect generation problems by detecting anomalies or forecast problems by predicting them and triggering preventive, corrective actions to eliminate them. The analytical system can also analyze on a minute-by-minute basis whether it is better to take energy from batteries, solar panels, or the system, thus optimizing electricity bills. Such an automated system can significantly reduce electricity bills for households/factories and maximize profits for solar farms.</p>
-
-
-
-<p style="font-size:16px">If you want to learn more about how to solve non-standard tasks and complex calculations using advanced analytics,&nbsp;<a href="https://wp.thingsboard.io/solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/">click here</a>.</p>
 
 
 
@@ -639,7 +721,9 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1704" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp" alt="Three images which are showing the models of solar panel work" class="wp-image-3850" srcset="/blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp 2409w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-300x212.webp 300w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1024x724.webp 1024w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-768x543.webp 768w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1536x1086.webp 1536w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-2048x1449.webp 2048w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-512x362.webp 512w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-920x651.webp 920w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1600x1132.webp 1600w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1920x1358.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-18 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1704" data-id="3850" src="/blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp" alt="Three images which are showing the models of solar panel work" class="wp-image-3850" srcset="/blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.webp 2409w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-300x212.webp 300w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1024x724.webp 1024w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-768x543.webp 768w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1536x1086.webp 1536w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-2048x1449.webp 2048w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-512x362.webp 512w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-920x651.webp 920w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1600x1132.webp 1600w, /blog/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1920x1358.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+</figure>
 
 
 
@@ -696,7 +780,7 @@
 
 
 
-<li style="font-size:16px"><a href="https://thingsboard.io/docs/trendz/calculated-fields/">Configure computation of </a><a href="https://10.7.3.196:4000/docs/trendz/calculated-fields/">system-level metrics / KPIs</a>&nbsp;that would describe overall system behavior.</li>
+<li style="font-size:16px"><a href="https://thingsboard.io/docs/trendz/calculated-fields/">Configure computation of </a><a href="https://thingsboard.io/docs/trendz/calculated-fields/" title="">system-level metrics / KPIs</a>&nbsp;that would describe overall system behavior.</li>
 
 
 
@@ -725,15 +809,8 @@
 
 
 
-<p style="font-size:16px">However, manual reading of indicators or setting thresholds is not enough for power plants with unstable energy production. Using advanced analytics will open up new horizons of efficiency and reliability for your solar farm. The future looks bright for the partnership between solar and advanced analytics!</p>
-
-
-
-
-]]></content:encoded>
+<p style="font-size:16px">However, manual reading of indicators or setting thresholds is not enough for power plants with unstable energy production. Using advanced analytics will open up new horizons of efficiency and reliability for your solar farm. The future looks bright for the partnership between solar and advanced analytics!</p><p>The post <a href="/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/">Solving solar power plant problems using advanced analytics</a> first appeared on <a href="/blog/">Thingsboard's blog</a>.</p>]]></content:encoded>
 					
-					<wfw:commentRss>/blog/solving-solar-power-plant-problems-using-advanced-analytics-2/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

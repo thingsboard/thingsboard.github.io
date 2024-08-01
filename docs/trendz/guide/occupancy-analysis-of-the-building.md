@@ -176,7 +176,7 @@ return peopleCnt / maxCapacity * 100;
 * Add Area, Floor and Building fields into `filter` section so user can focus on specific area of the hotel.
 * Set default time range to **Last 7 days**
 
-Finally, we have to predict calculated **Occupancy rate** field for the next 7 days. To do that we will use **Fourier transformation** prediction method that shows good results for seasonal time-series data.
+Finally, we have to predict calculated **Occupancy rate** field for the next 7 days. To do that we will use **Fourier transformation** prediction method that shows good results for seasonal time series data.
 
 * Click on  **Occupancy rate** field in the `Y-axis` section
 * Enable checkbox `Prediction`

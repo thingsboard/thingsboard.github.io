@@ -28,9 +28,4 @@ return result;
 ```
 {: .copy-code}
 
-{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-text-tbel-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-text-tbel-paas.png)
-{% endif %}

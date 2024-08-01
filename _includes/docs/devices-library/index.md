@@ -97,15 +97,15 @@
     }
 
     function reportSearchInput(searchText) {
-
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true) {
+        if (checkGTagDataLayer()) {
             return;
         }
 
-        ga(
-            "send", "event", "Guides", "search",
-            searchText, searchPageCount
-        );
+        gtag("event", "search", {
+            "search_term": searchText,
+            "event_label": "DeviceLibraryGuides", 
+            "searchPageCount": searchPageCount  
+        });
     }
     
 </script>

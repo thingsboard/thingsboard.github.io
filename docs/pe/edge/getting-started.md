@@ -34,7 +34,7 @@ step3:
         title: 'Navigate to the "Rule Chains" page within your ThingsBoard <b>Edge</b> instance and open the "Edge Root Rule Chain".'
     1:
         image: /images/pe/edge/getting-started/step-3-item-2-pe.png
-        title: 'The <b>Push to Cloud</b> rule node will transmit temperature timeseries data to the cloud once it has been stored in the local database.'
+        title: 'The <b>Push to Cloud</b> rule node will transmit temperature time series data to the cloud once it has been stored in the local database.'
 
 step4:
     0:
@@ -69,19 +69,19 @@ step4:
         title: 'Find "Charts" in the list of widgets bundles and click on this menu item;'
     10:
         image: /images/pe/edge/getting-started/step-4-item-11-pe.png
-        title: 'Locate and click on the "Timeseries Line Chart" widget;'
+        title: 'Locate and click on the "Time series Line Chart" widget;'
     11:
         image: /images/pe/edge/getting-started/step-4-item-12-pe.png
         title: 'From the devices list, select "My New Device" and click "Add" button;'
     12:
         image: /images/pe/edge/getting-started/step-4-item-13-pe.png
-        title: 'The "Timeseries Line Chart" widget has been added to the dashboard. Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard;'
+        title: 'The "Time series Line Chart" widget has been added to the dashboard. Drag and Drop the "Time series Line Chart" widget to the top right corner of the dashboard;'
     13:
         image: /images/pe/edge/getting-started/step-4-item-14-pe.png
-        title: 'Resize the "Timeseries Line Chart" widget. Just drag the bottom right corner of the widget;'
+        title: 'Resize the "Time series Line Chart" widget. Just drag the bottom right corner of the widget;'
     14:
         image: /images/pe/edge/getting-started/step-4-item-15-pe.png
-        title: 'Click the "Edit timewindow" icon. Specify "1 hour" as the time period and "None" as the "Data aggregation function". Click "Update" button. Apply all changes by clicking "Save" button in the upper right corner of the screen.'
+        title: 'Click the "Edit time window" icon. Specify "1 hour" as the time period and "None" as the "Data aggregation function". Click "Update" button. Apply all changes by clicking "Save" button in the upper right corner of the screen.'
     15:
         image: /images/pe/edge/getting-started/step-4-item-16-pe.png
         title: 'Congratulations! You have successfully configured the dashboard. Now, when you send a new telemetry reading, it will immediately appear in the table.'

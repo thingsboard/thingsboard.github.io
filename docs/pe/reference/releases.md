@@ -8,6 +8,39 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.7.0 (Jun 17, 2024) {#v37}
+
+Everything from [TB CE v3.7](https://github.com/thingsboard/thingsboard/releases/tag/v3.7) with the following improvements and bug fixes.
+
+**Improvements**
+
+  * Advanced Localization support;
+  * Added validation on tenant admin deletion from user group;
+  * Added check on last admin deletion while owner change;
+  * Added new env variable USE_NEW_PAGE_FOR_REPORT;
+  * "Duplicate to group" node: added the ability to pass entity group name using patterns;
+  * "Change originator" node and "Customer attributes" node: added logic to support returning parent customer id if the originator is a customer;
+
+**Bug fixes**
+
+  * Fixed entities count calculation on customer level;
+  * Fixed permissions cache updating when group permission's user group changed;
+  * Fixed Redis config for Integration Executor;
+  * Fixed 'Too many updates!' error while the Smart irrigation template installation;
+  * Fixed system mail templates usage;
+  * Fixed the scroll issue on the sysadmin page;
+  * Fixed XLSX export for value cards;
+  * Fixed layout with long file name for White labeling page;
+  * Disabled 'Login as' button for the current user;
+  * Resolved invalid data issue in Entity table widget export due to Date() in Cell Content Function;
+
+## v3.6.4 (Apr 11, 2024) {#v364}
+
+Everything from [TB CE v3.6.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.4) with the following improvements and bug fixes.
+
+* Web Report
+  * Improved web report functionality and logging;
+
 ## v3.6.3 (Mar 18, 2024) {#v363}
 
 Everything from [TB CE v3.6.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.3) with the following improvements and bug fixes.

@@ -169,7 +169,6 @@ Then, connector will try to read the data from objects using configuration from 
 {% endcapture %}
 {% include code-toggle.liquid code=snmpConf params="conf|.copy-code.expandable-20" %}
 
-
 ### General section
 
 The general section of the configuration contains *"devices"* list. Every item will be processed as a separate device.
@@ -237,7 +236,6 @@ Configuration section item example:
     }
 ```
 
-
 #### Attribute update requests section
 
 Configurations in this section are optional.  
@@ -279,7 +277,6 @@ The **attributeUpdates** section will look like:
 
 #### Server side RPC section
 
-
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device connected to ThingsBoard directly or via Gateway.
  
 Configuration, provided in this section is used for sending RPC requests from ThingsBoard to the device through the gateway.
@@ -295,34 +292,55 @@ Examples for both methods are provided below.
 {% include templates/info-banner.md content=rpc_variants %}
 
 ```json
-  "serverSideRpc": [
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "echo",
-      "requestUrlExpression": "http://127.0.0.1:5001/${deviceName}",
-      "responseTimeout": 1,
-      "HTTPMethod": "GET",
-      "valueExpression": "${params}",
-      "timeout": 0.5,
-      "tries": 3,
-      "httpHeaders": {
-        "Content-Type": "application/json"
-      },
-      "security": {
-        "type": "anonymous"
-      }
+  "serverSideRpcRequests": [
+        {
+          "requestFilter": "setData",
+          "method": "set",
+          "oid": "1.3.6.1.2.1.1.1.0"
+        },
+        {
+          "requestFilter": "multiSetData",
+          "method": "multiset"
+        },
+        {
+          "requestFilter": "getData",
+          "method": "get",
+          "oid": "1.3.6.1.2.1.1.1.0"
+        },
+        {
+          "requestFilter": "runBulkWalk",
+          "method": "bulkwalk",
+          "oid": [
+            "1.3.6.1.2.1.1.1.0",
+            "1.3.6.1.2.1.1.2.0"
+          ]
+        }
+      ]
     },
     {
-      "deviceNameFilter": ".*",
-      "methodFilter": "no-reply",
-      "requestUrlExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "HTTPMethod": "POST",
-      "valueExpression": "${params}",
-      "httpHeaders": {
-        "Content-Type": "application/json"
-      }
+      "deviceName": "SNMP router",
+      "deviceType": "snmp",
+      "ip": "127.0.0.1",
+      "pollPeriod": 5000,
+      "community": "public",
+      "converter": "CustomSNMPConverter",
+      "attributes": [
+        {
+          "key": "ReceivedFromGetWithCustomConverter",
+          "method": "get",
+          "oid": "1.3.6.1.2.1.1.1.0"
+        }
+      ],
+      "telemetry": [
+        {
+          "key": "ReceivedFromTableWithCustomConverter",
+          "method": "table",
+          "oid": "1.3.6.1.2.1.1.1.0"
+        }
+      ]
     }
   ]
+}
 ```
 
 

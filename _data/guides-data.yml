@@ -7,19 +7,13 @@
       title: Hello world
       subtitle: Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard. Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
       keywords: mqtt http coap visualization helloworld
-      video: true
+      video: false
       pe: false
-    - path: /docs/iot-video-tutorials/#working-with-users-devices-and-dashboards
-      title: End user IoT dashboards
-      subtitle: Learn how to perform basic operations over Devices, Customers, and Dashboards.
-      keywords: devices customers dashboards
-      video: true
-      pe: false
-    - path: /docs/iot-video-tutorials/#device-data-management-using-thingsboard
-      title: Device data management
-      subtitle: Learn how to perform basic operations over device attributes to implement practical device management use cases.
-      keywords: device management attributes
-      video: true
+    - path: /docs/user-guide/dashboards/
+      title: Working with IoT dashboards
+      subtitle: Learn how to perform basic operations over Dashboards.
+      keywords: dashboards
+      video: false
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/re-getting-started/
       title: Getting started with Rule Engine
@@ -172,6 +166,12 @@
     - path: /docs/user-guide/integrations/tuya/
       title: Connect smart devices through Tuya Smart
       subtitle: Learn how to connect smart devices using Tuya Smart to ThingsBoard.
+      keywords:
+      pe: true
+      video: false
+    - path: /docs/samples/sia-connect/
+      title: Connect OPC-UA devices through SIA Connect
+      subtitle: Learn how to connect OPC-UA devices using the SIA Connect to the ThingsBoard.
       keywords:
       pe: true
       video: false

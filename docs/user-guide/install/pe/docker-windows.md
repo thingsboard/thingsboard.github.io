@@ -80,27 +80,6 @@ docker volume create mytbpe-logs
 {% assign serviceName = "tbpe" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
-
-``` 
-set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
-VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"  
-VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
-VBoxManage controlvm "default" natpf1 "tcp-port7070,tcp,,7070,,7070"
-VBoxManage controlvm "default" natpf1 "udp-port5683,udp,,5683,,5683"
-VBoxManage controlvm "default" natpf1 "udp-port5684,udp,,5684,,5684"
-VBoxManage controlvm "default" natpf1 "udp-port5685,udp,,5685,,5685"
-VBoxManage controlvm "default" natpf1 "udp-port5686,udp,,5686,,5686"
-VBoxManage controlvm "default" natpf1 "udp-port5687,udp,,5687,,5687"
-VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
-```
-{: .copy-code}
-    
-Where: 
-    
-- `C:\Program Files\Oracle\VirtualBox`            - path to your VirtualBox installation directory
-
-
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
@@ -118,19 +97,53 @@ You can always change passwords for each account in account profile page.
 
 ## Upgrading
 
-In case when database upgrade is needed, execute the following commands:
+In case when database upgrade is needed:
+
+* Stop `mytbpe` container
 
 ```bash
-$ docker compose stop tb-node
-$ docker compose run mytbpe upgrade-tb.sh
-$ docker compose start mytbpe
+docker compose stop mytbpe
 ```
+ {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
-<br>**docker-compose stop tb-node**
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose stop mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Update docker-compose.yml - TB image should be the latest version (see [Step 3](#step-3-choose-thingsboard-queue-service))
+
+* Change upgradeversion variable to your **current** ThingsBoard version. For ex., if you are upgrading from 3.6.4:
+
+ ```bash
+echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
+```
+{: .copy-code}
+
+* Execute the following commands:
+
+```bash
+docker compose run mytbpe upgrade-tb.sh
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
 <br>**docker-compose run mytbpe upgrade-tb.sh**
-<br>**docker-compose start mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Start ThingsBoard:
+
+```bash
+docker compose up -d
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose up -d**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
