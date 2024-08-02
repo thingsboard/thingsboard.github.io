@@ -6,7 +6,7 @@ description: Remote Integrations Documentation
 addConverter:
     0:   
         image: /images/pe/edge/integrations/remote/add-converter-step-1.png
-        title: '1. Open the <b>Converter templates</b> menu page. 2. Click the <b>("+")</b> add icon and select <b>Create new converter</b>.'
+        title: '1. Open the <b>Convfgfhfghfgerter templates</b> menu page. 2. Click the <b>("+")</b> add icon and select <b>Create new converter</b>.'
     1:
         image: /images/pe/edge/integrations/remote/add-converter-step-2.png
         title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
