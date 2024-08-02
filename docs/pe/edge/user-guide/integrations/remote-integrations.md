@@ -6,35 +6,38 @@ description: Remote Integrations Documentation
 addConverter:
     0:
         image: /images/pe/edge/integrations/remote/add-converter-step-1.png
-        title: '1. Open <b>Converter templates</b> menu page. 2. Click the <b>"+"</b> add icon and select <b>Create new converter</b>.'
+        title: '1. Open the <b>Converter templates</b> menu page. 2. Click the <b>("+")</b> add icon and select <b>Create new converter</b>.'
     1:
         image: /images/pe/edge/integrations/remote/add-converter-step-2.png
-        title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the "Add" button.'
+        title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
 
 addIntegration:
     0:
         image: /images/pe/edge/integrations/remote/add-integration-template-step-1.png
-        title: '1. Open <b>Integration templates</b> menu page. 2. Click the <b>"+"</b> add icon to add a new integration.'
+        title: '1. Open the <b>Integration templates</b> menu page. 2. Click the <b>("+")</b> icon to add a new integration.'
     1:
         image: /images/pe/edge/integrations/remote/add-integration-template-step-2.png
-        title: '1. Select integration type: <b>HTTP</b>. 2. Enter integration name, e.g., <b>HTTP Demo Remote</b>. 3. Click the <b>Next</b> button.'
+        title: '1. Select integration type: <b>HTTP</b>. 2. Input integration name, e.g., <b>HTTP Demo Remote</b>. 3. Click the <b>Next</b> button.'
     2:
         image: /images/pe/edge/integrations/remote/add-integration-template-step-3.png
-        title: '1. Click the <b>Skip</b> button.'
+        title: '1. Click the <b>Select existing</b> button. 2. Select uplink data converter: <b>Temperature Converter</b>. 3. Click the <b>Next</b> button.'
     3:
         image: /images/pe/edge/integrations/remote/add-integration-template-step-4.png
-        title: '1. Turn on the <b>Execute remotely</b> option. 2. Click the <b>"Add"</b> button.'
+        title: 'Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
+    4:
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-5.png
+        title: 'Verify that our <b>HTTP Demo Remote</b> integration template was created successfully.'
 
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/remote/assign-integration-step-1.png
-        title: 'Open <b>Instances</b> menu page.'
+        title: 'Open the <b>Instances</b> menu page.'
     1:
         image: /images/pe/edge/integrations/remote/assign-integration-step-2.png
         title: 'Click the <b>Manage edge integrations</b> icon.'
     2:
         image: /images/pe/edge/integrations/remote/assign-integration-step-3.png
-        title: 'Click the <b>"+"</b> icon.'
+        title: 'Click the <b>("+")</b> icon.'
     3:
         image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
         title: '1. Select <b>HTTP Demo Remote</b> 2. Click the <b>Assign</b> button.'
@@ -43,12 +46,12 @@ assignIntegration:
         title: 'Verify that <b>HTTP Demo Remote</b> integration was created successfully.'
     5:
         image: /images/pe/edge/integrations/remote/assign-integration-step-6.png
-        title: 'Open Edge instance. 1. Open <b>Integrations</b> menu page 2. Verify that <b>HTTP Demo Remote</b> integration was successfully added on the Edge side.'
+        title: 'Open the <b>Edge</b> instance. 1. Open the <b>Integrations</b> menu page 2. Verify that the <b>HTTP Demo Remote</b> integration was successfully added on the Edge side.'
 
 copyCredentials:
     0:
         image: /images/pe/edge/integrations/remote/copy-credentials.png
-        title: '1. Open <b>Integration templates</b> menu page. 2. Click on integration templates row 3. Click to copy <b>"Integration key"</b> 4. Click to copy <b>integration secret</b>.'
+        title: '1. Open the <b>Integration templates</b> menu page. 2. Click the row of the integration template. 3. Click to copy <b>Integration key</b>. 4. Click to copy <b>integration secret</b>.'
 
 sendUplink:
     0:
@@ -93,7 +96,7 @@ In the function decoder field, specify a script to parse and transform data.
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-**Example for the Uplink converter:**
+**Example for the Uplink convert
 
 ```ruby
 // Decode an uplink message from a buffer
