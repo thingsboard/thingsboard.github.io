@@ -4,7 +4,7 @@ title: Remote Integrations
 description: Remote Integrations Documentation
 
 addConverter:
-    0:
+    0:   
         image: /images/pe/edge/integrations/remote/add-converter-step-1.png
         title: '1. Open the <b>Converter templates</b> menu page. 2. Click the <b>("+")</b> add icon and select <b>Create new converter</b>.'
     1:
