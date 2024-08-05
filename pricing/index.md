@@ -1150,11 +1150,11 @@ selfManagedPlan:
                                 <p>For PoCs and MVPs</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $189
+                                $199
                                 <span>/month</span>
                             </h4>
                             <h5>
-                                $0.26 
+                                $0.27
                                 <span>/hour</span>
                             </h5>
                             <div class="row justify-content-center">
@@ -1177,11 +1177,11 @@ selfManagedPlan:
                                 <p>For innovative ventures</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $289
+                                $349
                                 <span>/month</span>
                             </h4>
                             <h5>
-                                $0.39
+                                $0.48
                                 <span>/hour</span>
                             </h5>
                             <div class="row justify-content-center">
@@ -1204,11 +1204,11 @@ selfManagedPlan:
                                 <p>For upcoming IoT Unicorns</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $649
+                                $699
                                 <span>/month</span>
                             </h4>
                             <h5>
-                                $0.89
+                                $0.96
                                 <span>/hour</span>
                             </h5>
                             <div class="row justify-content-center">
