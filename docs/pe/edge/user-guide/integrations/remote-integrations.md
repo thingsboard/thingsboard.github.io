@@ -31,13 +31,13 @@ addIntegration:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/remote/assign-integration-step-1.png
-        title: '1. Open <b>Instances</b> menu page. 2. Click <b>My New Edge</b>.'
+        title: '1. Open <b>Instances</b> menu page. 2. Click on <b>My New Edge</b>.'
     1:
         image: /images/pe/edge/integrations/remote/assign-integration-step-2.png
-        title: '1. Click <b>Attributes</b> tab. 2. Click <b>("+")</b> icon.'
+        title: '1. Click <b>Attributes</b> tab. 2. Click <b>("+")</b> icon to add new attribute.'
     2:
         image: /images/pe/edge/integrations/remote/assign-integration-step-3.png
-        title: '1. Enter <b>remoteHttpIntegrationUrl</b> attribute. 2. Set remote value as your HTTP integration <b>http://IP:port</b>. 3 Click <b>Add</b> button.'
+        title: '1. Enter <b>remoteHttpIntegrationUrl</b> attribute. 2. Set the remote value for your HTTP integration <b>http://IP:port</b>. 3. Click <b>Add</b> button.'
     3:
         image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
         title: 'Open <b>Instances</b> menu page.'
@@ -46,13 +46,13 @@ assignIntegration:
         title: 'Click <b>Manage edge integrations</b>.'
     5:
         image: /images/pe/edge/integrations/remote/assign-integration-step-6.png
-        title: 'Click <b>("+") icon</b>.'
+        title: 'Click <b>("+")</b> icon.'
     6:
         image: /images/pe/edge/integrations/remote/assign-integration-step-7.png
         title: '1. Select the target integration. 2. Click <b>Assign</b> button.'
     7:
         image: /images/pe/edge/integrations/remote/assign-integration-step-8.png
-        title: 'Open <b>Edge</b> instance. 1. Open the <b>Integrations</b> menu page 2. Verify that the <b>HTTP Demo Remote</b> integration was successfully added on the Edge side.'
+        title: 'Open <b>Edge</b> instance. 1. Open the <b>Integrations</b> menu page 2. Click on <b>HTTP Demo Remote</b>. 3. Check that placeholder is substituted with the value of the attribute.'
 
 copyCredentials:
     0:
@@ -102,7 +102,7 @@ In the function decoder field, specify a script to parse and transform data.
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-**Example for the Uplink convert
+**Example for the Uplink converter:**
 
 ```ruby
 // Decode an uplink message from a buffer
