@@ -237,7 +237,7 @@ toc:
       path: /docs/paas/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/paas/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/paas/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
