@@ -265,6 +265,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "Corsinvest srl",
+    "contact": {
+      "href": "corsinvest@corsinvest.it"
+    },
+    "site": {
+      "href": "corsinvest.it",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Norway"],
     "name": "Cypod Solutions AS",
     "contact": {
