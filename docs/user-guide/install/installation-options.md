@@ -84,7 +84,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/rpi/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
+                                                    <img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi" alt="Raspberry Pi">
                                                  </div>
                                             </span>
                                         </a>
