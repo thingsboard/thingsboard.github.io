@@ -4,9 +4,7 @@
 {% assign sinceVersion = "3.4" %}
 {% include templates/since.md %}
 
-## Feature Overview
-
-ThingsBoard Version Control service provides the ability to export and restore ThingsBoard Entities using Git.
+ThingsBoard Version control service provides the ability to export and restore ThingsBoard Entities using Git.
 As a Tenant administrator, you can configure access to the Git repository using UI or REST API.
 As a platform user, you can export single or multiple ThingsBoard Entities, browse version history and restore entities to the specific version.
 
@@ -81,7 +79,7 @@ The system will cancel the "commit" API call if it is in progress and the new "c
 
 #### Git Settings configuration
 
-As a Tenant administrator, you can navigate to the "**Version control**" page of the "**Advanced features**" section. The page allows you to provision Git repository URL, default branch name and authentication settings.
+As a Tenant administrator, you can navigate to the "Version control" page of the "Advanced features" section. The page allows you to provision Git repository URL, default branch name and authentication settings.
 We expect you to provide URL to the empty Git repository.
 
 {% include images-gallery.html imageCollection="gitConfiguration" %}

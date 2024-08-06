@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: Version Control
-description: Version Control
+title: Version control
+description: Version control
 gitConfiguration:
     0:
         image: /images/user-guide/version-control/version-control-1-pe.png 
