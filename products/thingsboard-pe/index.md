@@ -37,7 +37,7 @@ description:
               <i class="fas fa-chevron-right arrow third"></i>
             </a>
           </div>
-          <img class="preview" src="/images/pe/white-labeling.webp" alt="white labeling" width="1956" height="1766">
+          <img class="preview" src="https://img.thingsboard.io/pe/white-labeling.webp" alt="white labeling" width="1956" height="1766">
         </div>
         <div class="block">
           <div id="diagram" class="feature-des preview">
@@ -49,12 +49,12 @@ description:
                 <button onClick="activatePricingSection('hierarchy')">Customer hierarchy</button>
               </li>
             </ul>
-            <img class="diagram-border" src="/images/pe/diagram-border.svg" alt="diagram border" width="620" height="368">
+            <img class="diagram-border" src="https://img.thingsboard.io/pe/diagram-border.svg" alt="diagram border" width="620" height="368">
             <div id="hierarchy" class="diagram-content">
-              <img src="/images/pe/hierarchy.svg" alt="hierarchy" loading="lazy" width="500" height="238">
+              <img src="https://img.thingsboard.io/pe/hierarchy.svg" alt="hierarchy" loading="lazy" width="500" height="238">
             </div>
             <div id="roles" class="diagram-content">
-              <img src="/images/pe/roles.svg" alt="roles" loading="lazy" width="500" height="238">
+              <img src="https://img.thingsboard.io/pe/roles.svg" alt="roles" loading="lazy" width="500" height="238">
             </div>
           </div>
           <div class="feature-des"><h3 class="item-heading">Advanced RBAC for IoT</h3>
@@ -73,7 +73,7 @@ description:
     <div class="main-div">
       <div id="features-top-2">
         <div id="lists-first" >
-          <img class="integrations-list" src="/images/pe/integrations-list.svg" alt="integrations list" loading="lazy"  width="282" height="225">
+          <img class="integrations-list" src="https://img.thingsboard.io/pe/integrations-list.svg" alt="integrations list" loading="lazy"  width="282" height="225">
         </div>
         <div id="background-platform-integrations" >
           <div class="main2"></div><div class="small4"></div><div class="small5"></div>
@@ -87,10 +87,10 @@ description:
               <i class="fas fa-chevron-right arrow third"></i>
             </a>
           </div>
-          <img class="preview" src="/images/pe/integrations.svg" alt="integrations" loading="lazy"  width="626" height="605">
+          <img class="preview" src="https://img.thingsboard.io/pe/integrations.svg" alt="integrations" loading="lazy"  width="626" height="605">
         </div>
         <div class="block">
-          <img class="preview" src="/images/pe/entity-groups.svg" alt="entity groups" loading="lazy" width="626" height="390">
+          <img class="preview" src="https://img.thingsboard.io/pe/entity-groups.svg" alt="entity groups" loading="lazy" width="626" height="390">
           <div class="feature-des"><h3 class="item-heading">Entity Groups</h3>
             <p>Group your entities (device, assets, etc.) to simplify administration tasks. Customize set of columns for each group and trigger actions on entities directly from administration interface.</p>
             <a class="read-more-button" href="/docs/user-guide/groups/" aria-label="Read more about entity group">Read more
@@ -119,7 +119,7 @@ description:
               <i class="fas fa-chevron-right arrow third"></i>
             </a>
           </div>
-          <img class="preview" src="/images/pe/scheduler.svg" alt="scheduler" loading="lazy" width="532" height="565">
+          <img class="preview" src="https://img.thingsboard.io/pe/scheduler.svg" alt="scheduler" loading="lazy" width="532" height="565">
           <div class="right-textblock feature-des"><h3 class="item-heading">Reporting</h3>
             <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
             <a class="read-more-button" href="/docs/user-guide/reporting/" aria-label="Read more about reporting">Read more
@@ -136,13 +136,13 @@ description:
     <div class="main-div">
       <div id="features-top-4">
         <div id="lists-second" >
-          <img class="export-list" src="/images/pe/export-list.svg" alt="export list" loading="lazy" width="215" height="160">
+          <img class="export-list" src="https://img.thingsboard.io/pe/export-list.svg" alt="export list" loading="lazy" width="215" height="160">
         </div>
         <div id="background-data-export" >
           <div class="bottom"></div><div class="small9"></div>
         </div>
         <div class="block end">
-          <img class="preview" src="/images/pe/data-export.svg" alt="data export" loading="lazy" width="626" height="530">
+          <img class="preview" src="https://img.thingsboard.io/pe/data-export.svg" alt="data export" loading="lazy" width="626" height="530">
           <div class="feature-des"><h3 class="item-heading">CSV/XLS data export</h3>
             <p>Export any dashboard widget data to CSV or XLS format. Allow your customers to download valuable insights from their device's data and review them in offline mode.</p>
             <a class="read-more-button" href="/docs/user-guide/csv-xls-data-export/" aria-label="Read more about CSV/XLS data export">Read more
@@ -270,13 +270,13 @@ description:
   <section id="features">
     <div class="main-div">
       <div class="item">
-        <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options" loading="lazy" width="284" height="151">
+        <img src="https://img.thingsboard.io/pe/cloud-premises.svg" alt="Flexible deployment options" loading="lazy" width="284" height="151">
         <h3 class="item-heading">Flexible deployment options</h3>
         <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
       </div>
       <div class="divider"></div>
       <div class="item">
-        <img src="/images/pe/pricing-models.svg" alt="Simple and predictable pricing models" loading="lazy" width="254" height="151">
+        <img src="https://img.thingsboard.io/pe/pricing-models.svg" alt="Simple and predictable pricing models" loading="lazy" width="254" height="151">
         <h3 class="item-heading">Simple and predictable pricing models</h3>
         <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system. ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
       </div>
