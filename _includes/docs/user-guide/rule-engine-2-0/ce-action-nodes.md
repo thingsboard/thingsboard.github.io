@@ -372,13 +372,13 @@ Delays incoming messages for a configurable period. In other words, node receive
 - **Period time unit**: time unit you're using for the delaying period. Available values are: seconds, minutes, hours. So, when paired with the **Period value**, if you chose 5 for **Period Value** and seconds for **Period time unit**, the node would wait for 5 seconds.
 - **Maximum pending messages**: limit on how many messages the node can delay at once. For example, If you set a number like 1000, it means the node can delay up to 1000 messages at a time. Once this limit is reached, any new incoming messages will be routed via **Failure** connection type until there's space available.
 
-> **Note**: **Period value** and **Period time unit** fields support templatization.
+> **Note:** **Period value** and **Period time unit** fields support templatization.
 
 **Output**
 - **Success**: If message was delayed successfully.
 - **Failure**: If maximum pending messages is reached or unexpected error happened during messages processing.
 
-> **Note**: Incoming messages are not modified during processing.
+> **Note:** Incoming messages are not modified during processing.
 
 **Usage example: waiting for external long-running tasks**
 
