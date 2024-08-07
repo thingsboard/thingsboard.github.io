@@ -15,7 +15,8 @@ description:
       <a href="https://www.engie.sk/en/kontakt"><object data="https://img.thingsboard.io/customers/clear/engie.svg" aria-label="Engie logo"></object></a>
       <a href="/industries/smart-energy/#circutor"><object data="https://img.thingsboard.io/customers/clear/circutor.svg" aria-label="Circutor logo"></object></a>
       <a href="/industries/telecom/#tektelic"><object data="https://img.thingsboard.io/customers/clear/tektelic.svg" aria-label="Tektelic logo"></object></a>
-	</main>
+	  <a href="https://www.intel.com/"><object data="https://img.thingsboard.io/customers/clear/intel.svg" aria-label="Intel logo"></object></a>	
+    </main>
 </section>
 <section id="intro">
 	<main>
