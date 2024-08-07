@@ -1,5 +1,5 @@
 
-Enrichment Nodes are used to include additional information about the message originator, entities related to originator, and other contextual data into the message or its metadata for further processing steps within the rule chain. 
+Enrichment Nodes are used to include additional information about the message originator, entities related to originator, and other contextual data into the outgoing message for further processing steps within the rule chain. 
 You may find list of available nodes below.
 
 * TOC
@@ -13,11 +13,11 @@ Delta calculation is done in scope of the message originator, e.g. device, asset
 **Configuration**
 
 * **Input value key** - key that will be used to calculate the delta.
-* **Output value key** - key that will store the delta value in the enriched message.
-* **Number of digits after floating point** - precision of the delta calculation. Optional, if provided rounds calculated delta to specified number of digits.
+* **Output value key** - key that will store the delta value in the outgoing message.
+* **Number of digits after floating point** - precision of the delta calculation. Optional. If provided rounds calculated delta to specified number of digits.
 * **Tell Failure if delta is negative** - if enabled, fails message processing if delta value is negative.
 * **Add the time difference between "Input value key" readings** - if enabled, rule node will compute the time difference between the current and previous telemetry reading timestamps.
-  * **Period value key** - key that will store the time difference in the enriched message. 
+  * **Period value key** - key that will store the time difference in the outgoing message. 
     Required only if **Add the time difference between "Input value key" readings** is enabled.
 * **Exclude zero deltas from outbound message** - if enabled, the **Output value key** will be included in the outgoing message only when its value is non-zero.
 * **Use caching** - if enabled, **Input value key** value will be cached in memory to improve performance. 
@@ -64,14 +64,14 @@ msg: {"pulseCounter": 53.1245}, metadata: {"ts": "1718117634000"}, "output conne
 
 ## customer attributes
 
-Identifies the message originator's customer and enriches the outbound message with the customer's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/). 
+Identifies the message originator's customer and enriches the outgoing message with the customer's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/). 
 
 **Configuration**
 
 * **Customer's attributes/latest telemetry mapping** - controls whether to add attributes or the latest telemetry data to the message.
 
-  * **Source attribute/telemetry key** - key that will be used to retrieve the attribute or latest telemetry value from the customer.
-  * **Target key** - key that will store the retrieved value in the outgoing message.
+  * **Source attribute/telemetry key** - key that will be used to fetch the attribute or latest telemetry value from the customer.
+  * **Target key** - key that will store the fetched value in the outgoing message.
 
   > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 
@@ -148,14 +148,10 @@ You can see the real life example, where this node is used, in the tutorial [Sen
 Finds related device of the message originator entity using configured [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query and adds [attributes](/docs/user-guide/attributes/) 
 or [latest telemetry](/docs/user-guide/telemetry/) values into the message or the message metadata.
 
-**Configuration**
-
-Since rule node has multiple configuration sections. We decided to separate configuration fields into the same sections here.
-
 **Configuration: Device relations query**
 
 * **Direction** - direction of the relation query. Either **_From originator_** or **_To originator_**.
-* **Max relation level** - maximum depth for the relation search. Optional, if value is not set the depth is unlimited.
+* **Max relation level** - maximum depth for the relation search. Optional. If value is not set the depth is unlimited.
   > **Note:** Search query result returns only one entity even if multiple entities were found.
     * **Fetch last level relation only** - if enabled, forces the rule node to search for related entities only at the level set in the **Max relation level**.
       > **Note:** Available only when **Max relation level** is greater than one.
@@ -165,23 +161,26 @@ Since rule node has multiple configuration sections. We decided to separate conf
 
 **Configuration: Related device attributes**
 
-* **Client/Shared/Server attributes/Latest telemetry** - list of the keys that will be used to search for and retrieve the client/shared/server attribute or latest telemetry value from the related device.
+* **Client/Shared/Server attributes** and **Latest telemetry** - list of the keys that will be used to fetch attributes or latest telemetry from the related device.
   > **Note:** All input fields in this section support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
-    * **Fetch latest telemetry with timestamp** - if enabled, ensures that the latest telemetry will be added to the message with timestamp.
+    * **Fetch latest telemetry with timestamp** - if enabled, fetched latest telemetry values will be added to the message with timestamp.
       > **Note:** Available only when the configuration has at least one latest telemetry key set.
-* **Add selected attributes to** - an option selector that allows the user to choose whether the mapped attributes should be added to the **Message** or **Metadata**.
+* **Add selected attributes to** - controls whether the mapped attributes should be added to the **_Message_** or **_Metadata_**.
+
+**Configuration: other**
 
 * **Tell failure if any of the attributes are missing** - if enabled, fails message processing if at least one selected key does not exist.
-    > **Note:** Even in case of failure, outgoing message metadata will contain telemetry keys that were successfully fetched.
+    > **Note:** Even in case of failure, outgoing message will contain telemetry keys that were successfully fetched.
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
 
-Attributes are added into metadata with scope prefix:
+Attributes are added into outgoing message with scope prefix:
 
-* [client attribute](/docs/user-guide/attributes/#client-side-attributes) -> **cs_**
-* [shared attribute](/docs/user-guide/attributes/#shared-attributes) -> **shared_**
-* [server attribute](/docs/user-guide/attributes/#server-side-attributes) -> **ss_**
-* latest telemetry -> no prefix used
+*  <code>cs_</code> - [client-side attributes](/docs/user-guide/attributes/#client-side-attributes)
+*  <code>ss_</code> - [server-side attributes](/docs/user-guide/attributes/#server-side-attributes)
+*  <code>shared_</code> - [shared attributes](/docs/user-guide/attributes/#shared-attributes)
+
+> **Note:** Latest telemetry is added to the outgoing message without any prefix.
 
 **Output connections**
 * **Success:** 
@@ -226,23 +225,24 @@ msg: {"pressure": 75.5, "ss_pressureThreshold": "80", "temperature": "{"ts":1718
 Adds message originator [attributes](/docs/user-guide/attributes/) and/or [latest telemetry](/docs/user-guide/telemetry/) values into the message or the message metadata.
 
 **Configuration**
-* **Client/Shared/Server attributes** - list of the keys that will be used to search for and retrieve the originator's attribute values with corresponding scopes (client/shared/server).
-* **Latest telemetry** - list of the keys that will be used to search for and retrieve the originator's latest telemetry.
-    * **Fetch latest telemetry with timestamp** - if enabled, ensures that the latest telemetry will be added to the message with timestamp.
-    It only appears if the configuration has at least one latest telemetry key set.
-> **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
-* **Add originator attributes to** - an option selector that allows the user to choose whether the mapped attributes should be added to the **Message** or **Metadata**.
+* **Client/Shared/Server attributes** and **Latest telemetry** - list of the keys that will be used to fetch originator's attributes or latest telemetry.
+  > **Note:** All input fields in this section support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
+  * **Fetch latest telemetry with timestamp** - if enabled, fetched latest telemetry values will be added to the message with timestamp.
+    > **Note:** Available only when the configuration has at least one latest telemetry key set.
+* **Add originator attributes to** - controls whether the mapped attributes should be added to the **_Message_** or **_Metadata_**.
+
 * **Tell failure if any of the attributes are missing** - if enabled, fails message processing if at least one selected key does not exist.
-    > **Note:** Even in case of failure, outgoing message metadata will contain telemetry keys that were successfully fetched.
+  > **Note:** Even in case of failure, outgoing message will contain telemetry keys that were successfully fetched.
 
 ![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
 
-Attributes are added into message with scope prefix:
+Attributes are added into outgoing message with scope prefix:
 
-* [client attribute](/docs/user-guide/attributes/#client-side-attributes) -> **cs_**
-* [shared attribute](/docs/user-guide/attributes/#shared-attributes) -> **shared_**
-* [server attribute](/docs/user-guide/attributes/#server-side-attributes) -> **ss_**
-* latest telemetry -> no prefix used
+*  <code>cs_</code> - [client-side attributes](/docs/user-guide/attributes/#client-side-attributes)
+*  <code>ss_</code> - [server-side attributes](/docs/user-guide/attributes/#server-side-attributes)
+*  <code>shared_</code> - [shared attributes](/docs/user-guide/attributes/#shared-attributes)
+
+> **Note:** Latest telemetry is added to the outgoing message without any prefix.
 
 **Output connections**
 * **Success:** 
@@ -261,23 +261,24 @@ You can see the real life example, where this node is used, in the following tut
 
 ## originator fields
 
-Adds fields from message originator to the message or its metadata.
+Adds fields from message originator to the outgoing message.
 
 **Configuration**
 
 * **Originator fields mapping** - list of mappings between **Source field** and **Target key**.
   * **Source field** - field that should be fetched.
-  * **Target key** - key that will store fetched value in the outgoing message or its metadata. Supports [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
+  * **Target key** - key that will store fetched value in the outgoing message. 
+    > **Note:** Target key fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/). 
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-mapping.png)
 
 > **Note:** If configured mapping contains fields that are not available for originator's entity type (for example, `phone` when originator is a device), then such mapping will be ignored.
 
-* **Add mapped originator fields to** - controls whether the mapped fields should be added to the message or its metadata.
+* **Add mapped originator fields to** - controls whether the mapped fields should be added to the **_Message_** or **_Metadata_**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-fetch-to.png)
 
-* **Skip empty fields** - if enabled, fields with no value or an empty string will not be added in the outgoing message or its metadata.
+* **Skip empty fields** - if enabled, fields with no value or an empty string will not be added in the outgoing message.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-skip-empty-fields.png)
 
@@ -285,39 +286,33 @@ Adds fields from message originator to the message or its metadata.
 
 **Output connections**
 * **Success:**
-  * If message originator's fields were successfully fetched and added into message or its metadata.
+  * If message originator's fields were successfully fetched and added to the outgoing message.
 * **Failure:**
   * If message originator's entity type is not supported. 
   * If unexpected error occurred during message processing.
 
 ## related entity data {#related-attributes}
 
-Finds related entity to the message originator entity using configured [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query
-and adds related entity attributes or latest telemetry or fields into message or message metadata
-
-**Configuration**
-
-Since rule node have multiple configuration sections. We decided to separate configuration fields into the same sections here.
+Finds entity related to the message originator using configured [relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query
+and adds related entity attributes, latest telemetry or fields to the outgoing message.
 
 **Configuration: Relations query**
 
- * **Direction** - configures the direction of the relation query. It is either **From originator** or **To originator**.
- * **Max relation level** - specifies the maximum depth for the relation search. Optional. No value set means **Unlimited level**.
+ * **Direction** - direction of the relation query. Either **_From originator_** or **_To originator_**.
+ * **Max relation level** - maximum depth for the relation search. Optional. If value is not set the depth is unlimited.
    > **Note:** Search query result returns only one entity even if multiple entities were found.
    * **Fetch last level relation only** - if enabled, forces the rule node to search for related entities only at the level set in the **Max relation level**.
      > **Note:** Available only when **Max relation level** is greater than one.
- * **Relation filters** - allows configuring filters to refine the relation query based on relation type and entity type.
+ * **Relation filters** - query filters based on relation type and entity type. Optional. If filters are not set the relation query will search for relations with any type.
 
 **Configuration: Data to fetch**
 
- * **Attributes/Latest telemetry/Fields** - slide toggle to select whether to fetch attributes or the latest telemetry or related entity fields.
-   * **Source attribute key/telemetry key/field** - key that will be used to search for and retrieve the attribute/latest telemetry/entity field value from the related entity.
-   * **Target key** - key that will store the retrieved value in the outbound message.
+ * **Attributes/Latest telemetry/Fields** - controls whether to fetch attributes, latest telemetry or fields.
+   * **Source attribute/telemetry key** or **field** - key that will be used to fetch the attribute, latest telemetry or entity field value from the related entity.
+   * **Target key** - key that will store fetched value in the outgoing message.
 
-   > **Note:** For cases when **Attributes** or **Latest telemetry** is selected - all input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/). 
-     For **Fields** only target keys support templatization, since **Source field** has a predefined values set.
-
-* **Add mapped attributes/latest telemetry/fields to** - an option selector that allows the user to choose whether the specified **Data to fetch** should be added to the **Message** or **Metadata**.
+   > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/). 
+ * **Add mapped attributes/latest telemetry/fields to** - controls whether fetched data should be added to the **_Message_** or **_Metadata_**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config.png)
 
@@ -516,7 +511,7 @@ Adds device credentials fields to the message or message metadata.
 
 **Configuration**
 
- * **Fetch credentials to** - an option selector that allows the user to choose whether the fetched credentials should be added to the **Message** or **Metadata**.
+ * **Fetch credentials to** - controls whether the fetched credentials should be added to the **_Message_** or **_Metadata_**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-fetch-device-credentials-config.png)
 
