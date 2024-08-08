@@ -222,7 +222,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker
 
 ### Ubuntu Server
 
-- **Install Java 11 (OpenJDK)** 
+- **Install Java 17 (OpenJDK)** 
 
 {% include templates/install/ubuntu-java-install.md %}
 
