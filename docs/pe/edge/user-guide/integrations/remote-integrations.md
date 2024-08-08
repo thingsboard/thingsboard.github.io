@@ -239,7 +239,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu
 
 ### CentOS/RHEL Server
 
-- Install Java 11 (OpenJDK) 
+- **Install Java 11 (OpenJDK)** 
 
 {% include templates/install/rhel-java-install.md %}
 
