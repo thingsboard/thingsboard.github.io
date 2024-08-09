@@ -1607,5 +1607,12 @@ selfManagedPlan:
                 </p>
             </div>    
         </div>
+        <div class="item" data-tag="h4" data-item-id="byoc-custom-price" data-title="Is there any limits?">
+            <div class="container">
+                <p>
+                Yes, TBMQ subscriptions have sessions, messages, and storage limits. See subscription <a href="/docs/mqtt-broker/subscription/" target="blank">documentation</a> for more details.
+                </p>
+            </div>    
+        </div>
     </div>
 </div>

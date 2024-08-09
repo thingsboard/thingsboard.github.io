@@ -39,6 +39,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: Mail Server
       path: /docs/mqtt-broker/user-guide/ui/mail-server/
+- title: Subscriptions
+  path: /docs/mqtt-broker/subscription/
 - title: Troubleshooting
   path: /docs/mqtt-broker/troubleshooting/
 - title: Release Notes
