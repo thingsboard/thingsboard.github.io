@@ -56,7 +56,7 @@ and have a high-level report of key metrics necessary for effective and proactiv
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
+    <a id="UseCases_SmartOffice_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
 </div>
 
 The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/smart-office/) 
@@ -174,9 +174,9 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
 
 ## Learn more
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a id="UseCases_SmartOffice_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
+    <a id="UseCases_SmartOffice_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
+    <a id="UseCases_SmartOffice_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
+    <a id="UseCases_SmartOffice_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
+    <a id="UseCases_SmartOffice_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>

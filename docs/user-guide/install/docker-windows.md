@@ -21,21 +21,11 @@ This guide will help you to install and start ThingsBoard using Docker on Window
 
 ## Running
 
-Depending on the database used there are three type of ThingsBoard single instance docker images:
+In this instruction [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) image will be used. It contains a single instance of ThingsBoard with PostgreSQL database.
 
-* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - single instance of ThingsBoard with PostgreSQL database.
+Running this image requires a server with at least 4GB of RAM (8GB is recommended) and minimum load (few messages per second).
 
-    Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
-* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
-
-    The most performant and recommended option but requires at least 6GB of RAM. 8GB is recommended.  
-* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
-
-    **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
-
-In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
-
-Windows users should use docker managed volume for ThingsBoard DataBase. 
+Windows users should use docker managed volume for ThingsBoard Database. 
 Create docker volume (for ex. `mytb-data`) before executing docker run command:
 Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
 
@@ -73,27 +63,6 @@ Where:
 
 {% assign serviceName = "tb" %}
 {% include templates/install/docker/docker-compose-up.md %}
-
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
-
-``` 
-set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
-VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,9090"  
-VBoxManage controlvm "default" natpf1 "tcp-port1883,tcp,,1883,,1883"
-VBoxManage controlvm "default" natpf1 "tcp-port7070,tcp,,7070,,7070"
-VBoxManage controlvm "default" natpf1 "udp-port5683,udp,,5683,,5683"
-VBoxManage controlvm "default" natpf1 "udp-port5684,udp,,5684,,5684"
-VBoxManage controlvm "default" natpf1 "udp-port5685,udp,,5685,,5685"
-VBoxManage controlvm "default" natpf1 "udp-port5686,udp,,5686,,5686"
-VBoxManage controlvm "default" natpf1 "udp-port5687,udp,,5687,,5687"
-VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
-```
-{: .copy-code}
-
-Where: 
-
-- `C:\Program Files\Oracle\VirtualBox`            - path to your VirtualBox installation directory
-
 
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:

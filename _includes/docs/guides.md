@@ -97,20 +97,18 @@
     }
 
     function reportSearchInput(searchText) {
-
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true) {
-            return;
+        if (checkGTagDataLayer()) {
+                return;
         }
 
-        ga(
-            "send", "event", "Guides", "search",
-            searchText, searchPageCount
-        );
+        gtag("event", "search", {
+                "search_term": searchText,
+                "event_label": "Guides", 
+                "searchPageCount": searchPageCount  
+        });
     }
     
 </script>
-
-{% assign guides = site.data.guides-data %}
 
 <ul id="markdown-toc">
     {% for item in guides %}

@@ -205,10 +205,13 @@ var tb = (function () {
     }
 
     function reportFaqNode(nodeId) {
-        if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !nodeId) {
-            return;
-        }
-        ga("send", "event", "FaqNode", nodeId);
+		if (checkGTagDataLayer() || !nodeId) {
+			return;
+		}
+
+		gtag("event", "FaqNode", {
+			"event_category": nodeId
+		});
     }
 
 	function CollapseBox(container, index){

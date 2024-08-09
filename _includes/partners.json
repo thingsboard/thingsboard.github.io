@@ -356,7 +356,7 @@
         "target": "_blank"
       },
       "Integration guide": {
-        "href": "/docs/samples/dusun/DSGW-210_Edge_computing_gateway"
+        "href": "/docs/pe/devices-library/dsgw-210-iot-gateway-hub/"
       }
     },
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"

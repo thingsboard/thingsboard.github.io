@@ -1,5 +1,5 @@
 One type of security configuration is token.
-For authorization will be used token, , provided in this section in config.
+For authorization, token provided in this section of the config will be used.
 
 
 |**Parameter**|**Default value**|**Description**|

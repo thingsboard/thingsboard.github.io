@@ -21,7 +21,12 @@
 {% elsif page.customTitle == "true" %}
     {% assign customTitle = title %}
 {% endif %}
-
+{% if productTag %}
+    {% if productTag == "mqtt-broker" %}
+        {% assign githubLink = "https://github.com/thingsboard/tbmq" %}
+        {% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
+    {% endif %}
+{% endif %}
 <head>
     <meta charset="utf-8">
     <meta name="cf-2fa-verify" content="a08672380de15e9">
@@ -42,7 +47,7 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
-    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' %}
+    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' or page.url == '/products/thingsboard-pe/install/' %}
     <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/products/' %}
     <link href="/css/products.css" rel="stylesheet">
@@ -208,7 +213,7 @@
         }
 
         var initialScriptsList = [
-            {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
+            {src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css', type: 'css'},
             {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
             {src: 'https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js', type: 'script'},
             {src: '/js/jquery-2.2.0.min.js', type: 'script'},
@@ -256,9 +261,13 @@
 
     </script>
     <script async defer>
+
+        function checkGTagDataLayer() {
+            return typeof window.dataLayer === "undefined" || !window.dataLayer.push;
+        }
         function _gaLt(event) {
-            /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
-            if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
+            /* If GTM is blocked or not loaded, or not main|middle|touch click then don't track */
+            if (checkGTagDataLayer() || (event.which != 1 && event.which != 2)) {
                 return;
             }
             var el = event.srcElement || event.target;
@@ -282,18 +291,19 @@
                     };
 
                     if (target) {
-                        ga(
-                            "send", "event", "Outgoing Links", link,
-                            document.location.pathname + document.location.search
-                        );
+                        gtag("event", "outgoing_links", {
+                            "event_category": "Outgoing Links",
+                            "event_label": link,
+                            "value": document.location.pathname + document.location.search
+                        });
                     } else {
                         event.preventDefault ? event.preventDefault() : event.returnValue = !1;
-                        ga(
-                            "send", "event", "Outgoing Links", link,
-                            document.location.pathname + document.location.search, {
-                                "hitCallback": hitBack
-                            }
-                        );
+                        gtag("event", "outgoing_link", {
+                            "event_category": "Outgoing Links",
+                            "event_label": link,
+                            "value": document.location.pathname + document.location.search,
+                            "event_callback": hitBack
+                        });
 
                         setTimeout(hitBack, 1000);
                     }
@@ -310,21 +320,12 @@
             document.body.attachEvent("on" + _gaLtEvt, _gaLt)
         });
     </script>
-    <script async defer>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-88383331-1', 'auto');
-        ga('send', 'pageview');
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TGBNQXN');
+    function gtag(){dataLayer.push(arguments)};
     </script>
     <script async defer>
         function Burger() {
@@ -347,7 +348,7 @@
             let menuElement = $('nav.head-menu > ul');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             let menuItems = $('nav.head-menu > ul > li');
-            let indicator = $('nav.head-menu > ul > div.indicator');
+            let indicator = $('nav.head-menu > ul + div.indicator');
             let subMenuActive = false;
             menuElement.on('mouseleave', function (event) {
                 if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
@@ -356,7 +357,7 @@
                             subMenuActive = false;
                             submenuContainer.removeClass('active bounds-transition');
                             menuItems.removeClass('active');
-                            indicator.removeClass('left-transition');
+                            indicator.removeClass('left-transition active');
                         }
                     }, 200)
                 }
@@ -366,7 +367,7 @@
                     subMenuActive = false;
                     submenuContainer.removeClass('active bounds-transition');
                     menuItems.removeClass('active');
-                    indicator.removeClass('left-transition');
+                    indicator.removeClass('left-transition active');
                 }
             });
             menuItems.each(function() {
@@ -393,10 +394,11 @@
                                 submenuContainer.css('left', left + 'px');
                                 if (!subMenuActive) {
                                     submenuContainer.addClass('active');
+                                    indicator.addClass('active');
                                     subMenuActive = true;
                                 } else {
                                     submenuContainer.addClass('bounds-transition');
-                                    indicator.addClass('left-transition');
+                                    indicator.addClass('left-transition active');
                                 }
                                 indicator.css('left', item.position().left);
                                 indicator.css('width', item.outerWidth());
@@ -503,6 +505,8 @@
     </script>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGBNQXN"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
     <div class="logo-burger">
         <a href="https://u24.gov.ua/" target="_blank" class="support-ukraine">
@@ -541,8 +545,9 @@
             <li class="nav-blog">
                 <a class="main-menu-link" id="blog-link" href="/blog/" style="cursor: pointer;">Blog</a>
             </li>
-            <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         </ul>
+        <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
+
         <div class="sub-menu-container">
             <div id="nav-products" class="centered-sub">
                 <ul class="sub-menu products">
@@ -587,7 +592,7 @@
                                     <p>Connect legacy protocols</p>
                                 </div>
                             </a>
-                            <a class="mqtt-broker-lnk" href="/docs/mqtt-broker/">
+                            <a class="mqtt-broker-lnk" href="/products/mqtt-broker/">
                                 <img src="/images/tbmq-icon.svg" alt="MQTT Broker icon" width="54" height="54" loading="lazy">
                                 <div class="sub-text">
                                     <span class="item-heading">MQTT Broker</span>
@@ -974,7 +979,7 @@
         </div>
     </nav>
     <div class="head-buttons">
-        <a href="/installations/" class="n-button try">Try it now</a>
-        <a href="/pricing/" class="n-button price">Pricing</a>
+        <a id="Menu_TryItNow" href="/installations/" class="n-button try gtm_button">Try it now</a>
+        <a id="Menu_Pricing" href="/pricing/" class="n-button price gtm_button">Pricing</a>
     </div>
 </header>

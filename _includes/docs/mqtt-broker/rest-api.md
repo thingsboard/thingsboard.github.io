@@ -66,4 +66,4 @@ B,response.json,json,reference/resources/get-token-response.json,/docs/mqtt-brok
 - **MQTT Client Credentials Controller**: can be used to view, create or delete MQTT Client Credentials.
 - **Retained Msg Controller**: can be used to view information about Retain Messages for topics and force clean-up the data structure that stores retain messages.
 - **Subscription Controller**: can be used to view information about Client Subscriptions and force clean-up the data structure that stores subscriptions.
-- **Timeseries Controller**: can be used to get and delete historical stats data.
+- **Time series Controller**: can be used to get and delete historical stats data.

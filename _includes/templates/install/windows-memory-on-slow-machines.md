@@ -18,7 +18,9 @@ Locate the following lines to the configuration file.
 and change them to 
 
 ```xml
-<startargument>-Xms256m</startargument>
-<startargument>-Xmx256m</startargument>
+<startargument>-Xms2048m</startargument>
+<startargument>-Xmx2048m</startargument>
 ```
+
+change "2048m" to approximately 1/3rd of your total RAM (in MB)
 {: .copy-code}

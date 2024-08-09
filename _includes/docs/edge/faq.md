@@ -63,7 +63,7 @@ This setup offers the following benefits:
 - **Local Alarms**<br>
 *Respond immediately to critical situations on-site without relying on server connectivity.*
 - **Batch Update and Visualization**<br>
-*Update thousands of edge configurations in a single click. Monitor local events and time-series data with a real-time dashboard.*
+*Update thousands of edge configurations in a single click. Monitor local events and time series data with a real-time dashboard.*
 
 ## How can I connect my device?
 
@@ -110,7 +110,7 @@ Since ThingsBoard Edge is designed with remote locations with potentially low ba
   
 ## Where does ThingsBoard Edge store data?
 
-Data is stored in the [PostgreSQL](https://www.postgresql.org/) database, which is well-suited for storing and querying entities and local time-series data.
+Data is stored in the [PostgreSQL](https://www.postgresql.org/) database, which is well-suited for storing and querying entities and local time series data.
 
 ## How can I get support?
 

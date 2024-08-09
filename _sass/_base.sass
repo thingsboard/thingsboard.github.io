@@ -128,7 +128,7 @@ a
       background-color: $orange-02
 
 // HEADER
-#home, #thingsboard-paas, #thingsboard-pe, #thingsboard-edge
+#home, #thingsboard-paas, #thingsboard-pe, #thingsboard-edge, #mqtt-broker
   header
     background-color: unset
     box-shadow: unset
@@ -321,7 +321,7 @@ header
               color: #009688
 
             &.gateway-lnk:hover .sub-text h1, &.gateway-lnk:hover .sub-text span.item-heading
-              color: #EB5757
+              color: #7A4DC3
 
             &.trendz-lnk:hover .sub-text h1, &.trendz-lnk:hover .sub-text span.item-heading
               color: #2696F3
@@ -434,57 +434,55 @@ header
     background-repeat: no-repeat
     filter: unset
 
-ul
-  li
-    &.active~.indicator
-      transition-delay: 0s
-      transition-duration: 0.3s
-      .line
-        transition-delay: 0s
-        transition-duration: 0.3s
-        width: 100%
-        left: 0
-        opacity: 1
-      .head-arrow
-        transition-delay: 0.1s
-        transition-duration: 0s
-        opacity: 1
-  .indicator
-    width: 0
-    left: 0
-    border-radius: 2px
-    position: absolute
-    height: 4px
-    bottom: -4px
+.indicator.active
+  transition-delay: 0s
+  transition-duration: 0.3s
+  .line
     transition-delay: 0s
     transition-duration: 0.3s
-    z-index: -1
-    padding: 0 14px
-    transition-property: none
-    &.left-transition
-      transition-property: left
+    width: 100%
+    left: 0
+    opacity: 1
+  .head-arrow
+    transition-delay: 0.1s
+    transition-duration: 0.3s
+    opacity: 1
+.indicator
+  width: 0
+  left: 0
+  border-radius: 2px
+  position: absolute
+  height: 4px
+  bottom: -4px
+  transition-delay: 0s
+  transition-duration: 0.3s
+  z-index: -1
+  padding: 0 14px
+  transition-property: none
+  &.left-transition
+    transition-property: left
 
-    .head-arrow
-      position: absolute
-      border-left: 4px solid transparent
-      border-right: 4px solid transparent
-      border-bottom: 4px solid #2A7DEC
-      width: 8px
-      height: 100%
-      left: calc(50% - 4px)
-      bottom: 4px
-      opacity: 0
-      transition-delay: 0s
-      transition-duration: 0.3s
+  .head-arrow
+    position: absolute
+    border-left: 4px solid transparent
+    border-right: 4px solid transparent
+    border-bottom: 4px solid #2A7DEC
+    width: 8px
+    height: 100%
+    left: calc(50% - 4px)
+    bottom: 4px
+    opacity: 0
+    transition-delay: 0s
+    transition-duration: 0.3s
 
-    .line
-      position: relative
-      background-color: #2A7DEC
-      width: 0
-      height: 100%
-      left: 50%
-      opacity: 0
-      transition-duration: 0.3s
+  .line
+    position: relative
+    background-color: #2A7DEC
+    width: 0
+    height: 100%
+    left: 50%
+    opacity: 0
+    transition-duration: 0.3s
 
 .n-button
   font-size: 18px
@@ -555,7 +553,7 @@ ul
     height: 20px
 
 // FLIP NAV
-#home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners, #thingsboard-edge
+#home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners, #thingsboard-edge, #mqtt-broker
   &.flip-nav
     header
       transition-duration: 0.3s
@@ -594,7 +592,6 @@ ul
 
           &:hover
             border: solid 2px #212529
-            padding: 9px 10px
 
         &.price:hover
           color: #fff
@@ -892,7 +889,7 @@ dd
             font-size: 15px
 
 @media screen and (max-width: 1280px)
-  #home, #docs, #common, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
+  #home, #docs, #common, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge, #mqtt-broker
     .opened-burger
       height: 100%!important
       .burger
@@ -947,7 +944,6 @@ dd
 
           &:hover
             border: solid 2px #212529
-            padding: 9px 10px
 
         &.price:hover
           color: #fff
@@ -1046,8 +1042,8 @@ dd
                 &.small-link
                   margin-bottom: 15px
 
-        .indicator
-          display: none
+      .indicator
+        display: none
 
     .n-button
       display: none

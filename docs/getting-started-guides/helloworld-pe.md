@@ -41,16 +41,16 @@ step2:
 
 step31:
     0:
-        image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
+        image: /images/helloworld/getting-started-pe/create-dashboard-1-pe.png
         title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
     1:
-        image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
+        image: /images/helloworld/getting-started-pe/create-dashboard-2-pe.png
         title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     2:
         image: /images/helloworld/getting-started-pe/create-dashboard-3-pe.png
         title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
     3:
-        image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
+        image: /images/helloworld/getting-started-pe/create-dashboard-4-pe.png
         title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
     4:
         image: /images/helloworld/getting-started-pe/create-dashboard-5-pe.png
@@ -116,13 +116,13 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
-        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severity and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
         title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-6-pe.png
-        title: 'Scroll down to find the "Alarms table" widget. Once you find it, click and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
+        title: 'Scroll down, find the "Alarms table" widget, and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
 
 step4:
     0:

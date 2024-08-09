@@ -21,7 +21,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
                     src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
-                <button class="button schedule anchor-button">Contact Us</button>
+                <button class="button schedule anchor-button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img
@@ -37,7 +37,9 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
-                <button class="button anchor-button">Contact Us</button>
+                <button id="Serv_DevServ_ContactUs1" 
+                        class="button anchor-button gtm_button"
+                        onclick="onContactUsClick(0)">Contact Us</button>
             </div>
         </div>
     </div>
@@ -188,7 +190,9 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     </div>
                 </div>
                 <div class="right-block">
-                    <button class="anchor-button">Contact Us</button>
+                    <button id="Serv_DevServ_ContactUs2" 
+                            class="anchor-button gtm_button" 
+                            onclick="onContactUsClick(1)">Contact Us</button>
                 </div>
             </div>
             <span id="additionally-bg1"></span>
@@ -265,13 +269,15 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 <div class="section-title">Ready to launch your unique product?</div>
                 <div class="section-text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
-            <form class="contact-form">
+            <div>
                 <fieldset>
                     <div class="submit-button-container">
-                        <input class="cdu-button anchor-button" value="Get in touch" type="button" id="myBtn">
+                        <button id="Serv_DevServ_GetInTouch" 
+                                onclick="onContactUsClick(2)" 
+                                class="cdu-button anchor-button gtm_button">Get in touch</button>
                     </div>
                 </fieldset>
-            </form>
+            </div>
         </div>
     </div>
 </section>
@@ -292,17 +298,20 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <span>Please fill out the form below and we will get back to you within 1-2 business days. 
             We are looking forward to hearing from you!</span>
         </div>
-        <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
+        <!-- Id in the form below is dynamically changing for purposes of GTM -->
+        <form method="post"
+              onsubmit="return validateContactForm(this)"
+              class="gtm_form developmentServicesContactUsForm">
             <div class="form-section">
                 <div class="form-element">
                     <label for="first-name">
-                        <input id="first-name" class="cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                        <input id="first-name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
                         <p>Name*</p>
                     </label>
                 </div>
                 <div class="form-element">
                     <label for="email">
-                        <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                        <input id="email" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
                         <p>Email Address*</p>
                     </label>
                 </div>
@@ -310,7 +319,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="form-section secondary">
                 <div class="form-element next">
                     <label for="subject" class="label-select">
-                        <select class="cdu-form-control" name="subject">
+                        <select class="form-control cdu-form-control" name="subject">
                             <option value="Custom Development" selected>Custom Development</option>
                             <option value="Technical Support">Technical Support</option>
                             <option value="ThingsBoard Products">ThingsBoard Products</option>
@@ -329,7 +338,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="form-section secondary">
                 <div class="form-element next">
                     <label for="msg">
-                        <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                        <textarea id="msg" class="form-control cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
                         <p>Your message*</p>
                     </label>
                 </div>
@@ -349,19 +358,25 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    };
 
     var span = document.getElementsByClassName("close")[0];
 
     span.onclick = function() {
         modal.style.display = "none";
+    };
+
+    function onContactUsClick(index) {
+        handleGTMFormID(index);
+        modal.style.display = "flex";
     }
 
-    document.querySelectorAll('.anchor-button').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            modal.style.display = "flex";
-        });
-    });
+    function handleGTMFormID(index) {
+        let formId = ["Serv_DevServ_ContactUs1Form", "Serv_DevServ_ContactUs2Form", "Serv_DevServ_GetInTouchForm"][index];
+        if (formId) {
+            jQuery('.developmentServicesContactUsForm').attr('id', formId);
+        }
+    }
 
     let cduHeader = document.querySelector(".cdu-services .header");
 
@@ -496,18 +511,16 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         return val === undefined || val === null || val.trim().length == 0;
     }
 
-    var contactform =  document.getElementById('contact-form');
-
-    contactform.setAttribute('action', 'https://formspree.io/f/xbjvbeln');
-
     jqueryDefer(
         function () {
+            var $contactForm =  jQuery('.developmentServicesContactUsForm');
+            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
                           }, 0);*/
-                 $('#contact-form .form-element .form-control').addClass("input--empty");
-                 $('#contact-form .form-element .form-control').on('input', function() {
+                 $contactForm.find('.form-element .form-control').addClass("input--empty");
+                 $contactForm.find('.form-element .form-control').on('input', function() {
                       if( !$(this).val() ) {
                          $(this).addClass("input--empty");
                       } else {
@@ -521,10 +534,24 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                  };
                  var subjectValue = $.urlParam('subject');
                  if (subjectValue != undefined && subjectValue.trim().length > 0) {
-                    $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
-                    $('#contact-form select[name=subject]').removeClass("input--empty");
+                    $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
+                    $contactForm.find('select[name=subject]').removeClass("input--empty");
                  }
             });
+            waitForForm();
         }
     );
+
+    function waitForForm() {
+        let $form = jQuery('.developmentServicesContactUsForm');
+        if ($form.length) {
+            $form
+                .attr('id', 'Serv_DevServ_ContactUs1Form')
+                .addClass('gtm_form');
+        } else {
+            setTimeout(function(){
+                waitForForm();
+            }, 150);
+        }
+    }
 </script>

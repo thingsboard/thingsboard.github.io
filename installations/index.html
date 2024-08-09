@@ -16,19 +16,24 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		<nav id="inner-navigation" class="inner-navigation">
 			<ul id="menu-install-navigation-1" class="menu">
 				<li id="menu-item-thingsboard-cloud" class="menu-item active tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-cloud')">Cloud</a>
+					<a id="TryItNow_Cloud" class="gtm_button" href="javascript:void(0);"
+					   onClick="activatePricingSection('thingsboard-cloud')">Cloud</a>
 				</li>
 				<li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community <span class="hidden-title">Edition</span></a>
+					<a id="TryItNow_CE" class="gtm_button" href="javascript:void(0);"
+					   onClick="activatePricingSection('thingsboard-ce')">Community <span class="hidden-title">Edition</span></a>
 				</li>
 				<li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional <span class="hidden-title">Edition</span></a>
+					<a id="TryItNow_PE" class="gtm_button" href="javascript:void(0);"
+					   onClick="activatePricingSection('thingsboard-pe')">Professional <span class="hidden-title">Edition</span></a>
 				</li>
 				<li id="menu-item-thingsboard-edge" class="menu-item tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
+					<a id="TryItNow_Edge" class="gtm_button" href="javascript:void(0);"
+					   onClick="activatePricingSection('thingsboard-edge')">Edge</a>
 				</li>
 				<li id="menu-item-thingsboard-trendz" class="menu-item tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-trendz')">Trendz</a>
+					<a id="TryItNow_TA" class="gtm_button" href="javascript:void(0);"
+					   onClick="activatePricingSection('thingsboard-trendz')">Trendz</a>
 				</li>
 			</ul>
 		</nav>
@@ -48,10 +53,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					</p>
 				</div>
 				<div class="row container button-container">
-					<a class="btn-blue" href="https://thingsboard.cloud/signup">
+					<a id="TryItNow_Cloud_StartFree" class="btn-blue gtm_button" href="https://thingsboard.cloud/signup">
 						Start Free
 					</a>
-					<a class="btn-blue" href="/pricing/">
+					<a id="TryItNow_Cloud_Pricing" class="btn-blue gtm_button" href="/pricing/">
 						Pricing
 					</a>
 				</div>
@@ -121,10 +126,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<p>Open-source IoT platform for device management, data collection, processing and visualization. <a href="/docs/">Read More</a>.</p>
 				</div>
 				<div class="row container button-container">
-                    <a class="btn-blue" href="/docs/user-guide/install/installation-options/">
-                        Install
-                    </a>
-					<a class="btn-blue" href="https://demo.thingsboard.io/signup">
+					<a id="TryItNow_CE_Install" class="btn-blue gtm_button" href="/docs/user-guide/install/installation-options/">
+						Install
+					</a>
+					<a id="TryItNow_CE_LiveDemo" class="btn-blue gtm_button" href="https://demo.thingsboard.io/signup">
 						Live Demo
 					</a>
 				</div>
@@ -197,7 +202,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 						</div>
 						<div class="deployment-card-block">
 							<a href="/docs/user-guide/install/rpi/" class="deployment-logo">
-								<img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
+								<img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi" alt="Raspberry Pi">
 							</a>
 						</div>
 						<div class="deployment-card-block">
@@ -257,13 +262,13 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<p>Advanced IoT Platform distribution based on latest stable open-source version with value added features. <a href="/products/thingsboard-pe/">Read More</a>.</p>
 				</div>
 				<div class="row container button-container">
-                    <a class="btn-blue" href="/docs/user-guide/install/pe/installation-options/">
-                        Install
-                    </a>
-					<a class="btn-blue" href="https://thingsboard.cloud/signup">
+					<a id="TryItNow_PE_Install" class="btn-blue gtm_button" href="/docs/user-guide/install/pe/installation-options/">
+						Install
+					</a>
+					<a id="TryItNow_PE_StartFree" class="btn-blue gtm_button" href="https://thingsboard.cloud/signup">
 						Start Free
 					</a>
-					<a class="btn-blue" href="/pricing/">
+					<a id="TryItNow_PE_Pricing" class="btn-blue gtm_button" href="/pricing/">
 						Pricing
 					</a>
 				</div>
@@ -400,7 +405,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		</div>
 	</div>
 </div>
-
 <div id="thingsboard-edge" class="install-content" style="display: none">
 	<div class="container">
 		<div class="install-content-header row">
@@ -410,13 +414,13 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<p>It allows bringing data analysis and management to the edge, where the data is created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs. <a href="/products/thingsboard-edge/">Read More</a>.</p>
 				</div>
 				<div class="row container button-container">
-					<a class="btn-blue" href="/docs/user-guide/install/edge/installation-options/">
+					<a id="TryItNow_Edge_Install_Edge_CE" class="btn-blue gtm_button" href="/docs/user-guide/install/edge/installation-options/">
 						Install Edge CE
 					</a>
-					<a class="btn-blue" href="/docs/user-guide/install/pe/edge/installation-options/">
+					<a id="TryItNow_Edge_Install_Edge_PE" class="btn-blue gtm_button" href="/docs/user-guide/install/pe/edge/installation-options/">
 						Install Edge PE
 					</a>
-					<a class="btn-blue" href="/pricing/?active=thingsboard-edge">
+					<a id="TryItNow_Edge_Pricing" class="btn-blue gtm_button" href="/pricing/?active=thingsboard-edge">
 						Pricing
 					</a>
 				</div>
@@ -502,7 +506,6 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		</div>
 	</div>
 </div>
-
 <div id="thingsboard-trendz" class="install-content" style="display: none">
 	<div class="container">
 		<div class="install-content-header row">
@@ -512,10 +515,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<p>The ThingsBoard Trendz is an Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process. <a href="/products/trendz/">Read More</a>.</p>
 				</div>
 				<div class="row container button-container">
-					<a class="btn-blue" href="/docs/trendz/">
+					<a id="TryItNow_Trendz_Documentation" class="btn-blue gtm_button" href="/docs/trendz/">
 						Documentation
 					</a>
-					<a class="btn-blue" href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go">
+					<a id="TryItNow_Trendz_Pricing" class="btn-blue gtm_button" href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go">
 						Pricing
 					</a>
 				</div>

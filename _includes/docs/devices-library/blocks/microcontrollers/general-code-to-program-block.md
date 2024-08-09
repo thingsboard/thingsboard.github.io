@@ -38,13 +38,16 @@ constexpr uint32_t MAX_MESSAGE_SIZE = 1024U;
 // If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
 constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
+// Maximum amount of attributs we can request or subscribe, has to be set both in the ThingsBoard template list and Attribute_Request_Callback template list
+// and should be the same as the amount of variables in the passed array. If it is less not all variables will be requested or subscribed
+constexpr size_t MAX_ATTRIBUTES = 2U;
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
 // Initalize the Mqtt client instance
 Arduino_MQTT_Client mqttClient(wifiClient);
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoard tb(mqttClient, MAX_MESSAGE_SIZE);
+ThingsBoardSized<Default_Fields_Amount, Default_Subscriptions_Amount, MAX_ATTRIBUTES> tb(mqttClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
 
@@ -116,8 +119,7 @@ const bool reconnect() {
 /// RPC_Data is a JSON variant, that can be queried using operator[]
 /// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
 /// @param data Data containing the rpc data that was called and its current value
-/// @return Response that should be sent to the cloud. Useful for getMethods
-RPC_Response processSetLedMode(const RPC_Data &data) {
+void processSetLedMode(const JsonVariantConst &data, JsonDocument &response) {
   Serial.println("Received the set led state RPC method");
 
   // Process data
@@ -125,9 +127,12 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
 
   Serial.print("Mode to change: ");
   Serial.println(new_mode);
+  StaticJsonDocument<1> response_doc;
 
   if (new_mode != 0 && new_mode != 1) {
-    return RPC_Response("error", "Unknown mode!");
+    response_doc["error"] = "Unknown mode!";
+    response.set(response_doc);
+    return;
   }
 
   ledMode = new_mode;
@@ -135,7 +140,8 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
   attributesChanged = true;
 
   // Returning current mode
-  return RPC_Response("newMode", (int)ledMode);
+  response_doc["newMode"] = (int)ledMode;
+  response.set(response_doc);
 }
 
 
@@ -150,7 +156,7 @@ const std::array<RPC_Callback, 1U> callbacks = {
 /// @brief Update callback that will be called as soon as one of the provided shared attributes changes value,
 /// if none are provided we subscribe to any shared attribute change instead
 /// @param data Data containing the shared attributes that were changed and their current value
-void processSharedAttributes(const Shared_Attribute_Data &data) {
+void processSharedAttributes(const JsonObjectConst &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
     if (strcmp(it->key().c_str(), BLINKING_INTERVAL_ATTR) == 0) {
       const uint16_t new_interval = it->value().as<uint16_t>();
@@ -171,7 +177,7 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
   attributesChanged = true;
 }
 
-void processClientAttributes(const Shared_Attribute_Data &data) {
+void processClientAttributes(const JsonObjectConst &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
     if (strcmp(it->key().c_str(), LED_MODE_ATTR) == 0) {
       const uint16_t new_mode = it->value().as<uint16_t>();
@@ -180,12 +186,12 @@ void processClientAttributes(const Shared_Attribute_Data &data) {
   }
 }
 
-const Shared_Attribute_Callback attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
-const Attribute_Request_Callback attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
-const Attribute_Request_Callback attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
+const Shared_Attribute_Callback<MAX_ATTRIBUTES> attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
 
 void setup() {
-  // Initalize serial connection for debugging
+  // Initialize serial connection for debugging
   Serial.begin(SERIAL_DEBUG_BAUD);
   if (LED_BUILTIN != 99) {
     pinMode(LED_BUILTIN, OUTPUT);
