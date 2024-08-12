@@ -9,7 +9,7 @@ TBMQ provides dedicated subscription plans based on the **pay-as-you-go** model.
 
 ### Limits
 
-Please see table below to compare the limits of the subscription plans.
+Please see table below to compare the limits of the subscription plans. The values are monthly limits, unless stated otherwise.
 
 <table>
   <thead>
@@ -29,7 +29,7 @@ Please see table below to compare the limits of the subscription plans.
           <td>2K</td>
           <td>5K</td>
           <td>10K</td>
-          <td>Maximum number of client sessions (connected + persistent disconnected)</td>
+          <td>Maximum number of client sessions managed by the broker, including both connected sessions and persistent sessions that are temporarily disconnected but still maintained by the broker for quick reconnection</td>
       </tr>
       <tr>
           <td>TMPS</td>
@@ -37,7 +37,7 @@ Please see table below to compare the limits of the subscription plans.
           <td>2K</td>
           <td>5K</td>
           <td>10K</td>
-          <td>Total number of messages processed per second (incoming + outgoing _MQTT_PUBLISH_ packets)</td>
+          <td>Total throughput of messages processed per second, including both incoming and outgoing MQTT_PUBLISH packets. The acknowledgment packets to the MQTT_PUBLISH packets for QoS 1 and 2 levels are not included</td>
       </tr>
       <tr>
           <td>Application clients</td>
@@ -45,15 +45,15 @@ Please see table below to compare the limits of the subscription plans.
           <td>10</td>
           <td>25</td>
           <td>50</td>
-          <td>Maximum number of [persistent](/docs/mqtt-broker/architecture/#persistent-client) Application clients</td>
+          <td>Maximum number of <a href="/docs/mqtt-broker/architecture/#persistent-client">persistent</a> Application clients managed by the broker, including both connected and temporarily disconnected ones</td>
       </tr>
       <tr>
-          <td>Device persistent messages</td>
+          <td>Device persistent messages rate limits</td>
           <td>50</td>
           <td>100</td>
           <td>250</td>
           <td>500</td>
-          <td>Maximum number of messages for Device persistent clients</td>
+          <td>Total number of messages processed per second for all Device persistent clients</td>
       </tr>
       <tr>
           <td>Application topic size</td>
@@ -69,14 +69,14 @@ Please see table below to compare the limits of the subscription plans.
           <td>1 day</td>
           <td>1 day</td>
           <td>1 day</td>
-          <td>"Time to live" parameter for data stored in Application topics</td>
+          <td>"Time to live" parameter for messages stored in Application topics</td>
       </tr>
       <tr>
-          <td>Number of Device persisted messages per client</td>
+          <td>Device persisted messages storage</td>
+          <td>50</td>
           <td>100</td>
-          <td>200</td>
-          <td>5000</td>
-          <td>1000</td>
+          <td>250</td>
+          <td>500</td>
           <td>Maximum number of persisted messages per Device client</td>
       </tr>
       <tr>
@@ -85,23 +85,7 @@ Please see table below to compare the limits of the subscription plans.
           <td>1 day</td>
           <td>1 day</td>
           <td>1 day</td>
-          <td>"Time to live" parameter for data stored for Device persisted clients</td>
-      </tr>
-      <tr>
-          <td>Session TTL</td>
-          <td>1 day</td>
-          <td>1 day</td>
-          <td>1 day</td>
-          <td>1 day</td>
-          <td>"Time to live" parameter for persistent offline session</td>
-      </tr>
-      <tr>
-          <td>Max in-flight messages</td>
-          <td>100</td>
-          <td>100</td>
-          <td>100</td>
-          <td>100</td>
-          <td>Max in-flight (unacknowledged) messages per client</td>
+          <td>"Time to live" parameter for messages stored for Device persisted clients</td>
       </tr>
       <tr>
           <td>Stats TTL</td>
@@ -109,15 +93,55 @@ Please see table below to compare the limits of the subscription plans.
           <td>1 month</td>
           <td>1 month</td>
           <td>1 month</td>
-          <td>"Time to live" parameter for statistics persistence</td>
+          <td>"Time to live" parameter for statistics persistence. This includes metrics visible on the UI: sessions, subscriptions, incoming messages, outgoing messages, etc.</td>
       </tr>
       <tr>
-          <td>Max message size</td>
+          <td>Session TTL</td>
+          <td>1 day</td>
+          <td>1 day</td>
+          <td>1 day</td>
+          <td>1 day</td>
+          <td>"Time to live" parameter for persistent offline session. After this time the disconnected sessions will be deleted from the broker</td>
+      </tr>
+      <tr>
+          <td>Client incoming messages rate limit</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Total number of incoming messages per client</td>
+      </tr>
+      <tr>
+          <td>Client outgoing messages rate limit</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Up to 10 per second, not exceeding 300 per minute</td>
+          <td>Total number of outgoing messages per non-persistent subscriber client with QoS = 0 ("AT_MOST_ONCE")</td>
+      </tr>
+      <tr>
+          <td>In-flight messages</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>Maximum number of in-flight (pending acknowledgment) messages allowed per client</td>
+      </tr>
+      <tr>
+          <td>Client pre-connect messages</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>Maximum queue size for messages received per client during the client's active connection period</td>
+      </tr>
+      <tr>
+          <td>Message size</td>
           <td>1 MB</td>
           <td>1 MB</td>
           <td>1 MB</td>
           <td>1 MB</td>
-          <td>Maximum payload size of _MQTT_PUBLISH_ message</td>
+          <td>Maximum payload size of MQTT_PUBLISH packet</td>
       </tr>
       <tr>
           <td>Uptime SLA</td>
@@ -125,7 +149,7 @@ Please see table below to compare the limits of the subscription plans.
           <td>99.99%</td>
           <td>99.99%</td>
           <td>99.99%</td>
-          <td>An Uptime SLA represents the percentage of time a service is expected to be fully operational and accessible</td>
+          <td>Represents the percentage of time a broker is expected to be fully operational and accessible</td>
       </tr>
   </tbody>
 </table>
