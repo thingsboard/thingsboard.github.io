@@ -138,10 +138,12 @@ $feature-box-div-margin-bottom: 40px
                 padding: 0 50px
                 a
                     display: block
-                    padding: 10px
+                    padding: 20px
                     object
                         pointer-events: none
                         filter: invert(86%) sepia(5%) saturate(530%) hue-rotate(171deg) brightness(237%) contrast(86%)
+            main, div.main-div-customers
+                flex-wrap: nowrap
 
         #intro
             margin-bottom: 178px
@@ -674,6 +676,8 @@ $feature-box-div-margin-bottom: 40px
         section, header
             main, div.main-div
                 max-width: 1400px
+            main, div.main-div-customers
+                max-width: 1800px
         footer
             main, div.main-div
                 max-width: 1400px
@@ -742,3 +746,10 @@ $feature-box-div-margin-bottom: 40px
     .read-more-button
         .arrow
             display: none
+
+@media (max-width: 1500px)
+    #home
+        #overflow
+            #tb-customers
+                div.main-div-customers
+                    flex-wrap: wrap

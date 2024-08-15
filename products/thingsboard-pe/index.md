@@ -5,17 +5,6 @@ description:
 ---
 
 <main>
-  <section id="tb-customers">
-    <div class="main-div">
-      <a href="/industries/telecom/#tmobile"><object data="https://img.thingsboard.io/customers/clear/t-mobile.svg" aria-label="T-mobile logo"></object></a>
-      <a href="https://www.bosch.com/"><object data="https://img.thingsboard.io/customers/clear/bosch.svg" aria-label="Bosch logo"></object></a>
-      <a href="https://www.prosegur.com/"><object data="https://img.thingsboard.io/customers/clear/prosegur.svg" aria-label="Prosegur logo"></object></a>
-      <a href="https://www.engie.sk/en/kontakt"><object data="https://img.thingsboard.io/customers/clear/engie.svg" aria-label="Engie logo"></object></a>
-      <a href="/industries/smart-energy/#circutor"><object data="https://img.thingsboard.io/customers/clear/circutor.svg" aria-label="Circutor logo"></object></a>
-      <a href="/industries/telecom/#tektelic"><object data="https://img.thingsboard.io/customers/clear/tektelic.svg" aria-label="Tektelic logo"></object></a>
-      <a href="https://www.intel.com/"><object data="https://img.thingsboard.io/customers/clear/intel.svg" aria-label="Intel logo"></object></a>
-    </div>
-  </section>
   <section id="intro">
     <div class="main-div">
       <h1>Advanced ThingsBoard IoT Platform distribution</h1>
