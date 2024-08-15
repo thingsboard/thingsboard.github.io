@@ -164,7 +164,7 @@ To make it easier to end users to understand the report lets sort it descending 
 * Add `energyMeter.sourceType` into filters section
 * Add `energyMeter.area` into filters section
 * Add `building` into filters section
-* Open view settings, `General` section and configure default soring
+* Open view settings, `General` section and configure default sorting
   * Click on `Sort order`
   * Enable descending sorting
   * Sort column - `usageKWH`
@@ -189,7 +189,7 @@ Tables created in previous steps are usefull to get exact numbers about energy u
 * Add `energyMeter.usageKWH` into Y-axis section
 * Add `building` into filters section
 * Set default time range - this month
-* Open view settings, `General` section and configure default soring
+* Open view settings, `General` section and configure default sorting
   * Click on `Sort order`
   * Enable descending sorting
   * Sort column - `usageKWH`
