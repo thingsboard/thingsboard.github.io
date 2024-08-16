@@ -410,7 +410,7 @@ selfManagedPlan:
         </div>
         <div class="pricing-section pricing-perpetual" id="perpetual">
            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Perpetual</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
@@ -440,7 +440,7 @@ selfManagedPlan:
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Perpetual Kit</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
@@ -476,7 +476,7 @@ selfManagedPlan:
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Enterprise Bundle</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
@@ -539,7 +539,7 @@ selfManagedPlan:
         <div class="pricing-div">
             <div class="pricing-section pricing-pay-as-you-go active" id="trendzPayAsYouGo">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -568,7 +568,7 @@ selfManagedPlan:
                             </div>                            
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -597,7 +597,7 @@ selfManagedPlan:
                             </div>                            
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Startup</h2>                            
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -628,7 +628,7 @@ selfManagedPlan:
                             </div>   
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -714,7 +714,7 @@ selfManagedPlan:
         <div class="pricing-div">
             <div class="pricing-section pricing-cloud active">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -743,7 +743,7 @@ selfManagedPlan:
                             </div>                            
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -772,7 +772,7 @@ selfManagedPlan:
                             </div>                            
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Startup</h2>                            
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -801,7 +801,7 @@ selfManagedPlan:
                             </div>   
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
@@ -830,7 +830,7 @@ selfManagedPlan:
                             </div>   
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
                             <h2>Enterprise</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">

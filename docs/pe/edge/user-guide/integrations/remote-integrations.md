@@ -5,45 +5,69 @@ description: Remote Integrations Documentation
 
 addConverter:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-1.png
+        image: /images/pe/edge/integrations/remote/add-converter-step-1.png
+        title: '1. Open <b>Converter templates</b> menu page. 2. Click <b>("+")</b> icon and select <b>Create new converter</b>.'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-2.png
+        image: /images/pe/edge/integrations/remote/add-converter-step-2.png
+        title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
 
 addIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-1.png
+        title: '1. Open <b>Integration templates</b> menu page. 2. Click the <b>("+")</b> icon to add a new integration.'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-2.png
+        title: '1. Select integration type: <b>HTTP</b>. 2. Input integration name, e.g., <b>HTTP Demo Remote</b>. 3. Click <b>Next</b> button.'
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-3.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-3.png
+        title: '1. Click <b>Select existing</b> button. 2. Select uplink data converter: <b>Temperature Converter</b>. 3. Click <b>Next</b> button.'
+    3:
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-4.png
+        title: 'Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
+    4:
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-5.png
+        title: 'Verify that our <b>HTTP Demo Remote</b> integration template was created successfully.'
 
 assignIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-1.png
-        title: 'Add <b>remoteHttpIntegrationUrl</b> attribute to Edge and set value as your remote HTTP integration <b>http://IP:port</b>'
+        image: /images/pe/edge/integrations/remote/assign-integration-step-1.png
+        title: '1. Open <b>Instances</b> menu page. 2. Click on <b>My New Edge</b>.'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-2.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+        image: /images/pe/edge/integrations/remote/assign-integration-step-2.png
+        title: '1. Click <b>Attributes</b> tab. 2. Click <b>("+")</b> icon to add new attribute.'
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-3.png
-        title: 'Assign Integration to the Edge'
+        image: /images/pe/edge/integrations/remote/assign-integration-step-3.png
+        title: '1. Enter <b>remoteHttpIntegrationUrl</b> attribute. 2. Set the remote value for your HTTP integration <b>http://IP:port</b>. 3. Click <b>Add</b> button.'
     3:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-4.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
+        title: 'Open <b>Instances</b> menu page.'
+    4:
+        image: /images/pe/edge/integrations/remote/assign-integration-step-5.png
+        title: 'Click <b>Manage edge integrations</b>.'
+    5:
+        image: /images/pe/edge/integrations/remote/assign-integration-step-6.png
+        title: 'Click <b>("+")</b> icon.'
+    6:
+        image: /images/pe/edge/integrations/remote/assign-integration-step-7.png
+        title: '1. Select the target integration. 2. Click <b>Assign</b> button.'
+    7:
+        image: /images/pe/edge/integrations/remote/assign-integration-step-8.png
+        title: 'Open <b>Edge</b> instance. 1. Open the <b>Integrations</b> menu page 2. Click on <b>HTTP Demo Remote</b>. 3. Check that placeholder is substituted with the value of the attribute.'
 
 copyCredentials:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/copy-credentials.png
+        image: /images/pe/edge/integrations/remote/copy-credentials.png
+        title: '1. Open the <b>Integration templates</b> menu page. 2. Click the integration template row. 3. Click to copy <b>Integration key</b>. 4. Click to copy <b>integration secret</b>.'
 
 sendUplink:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-1.png
+        image: /images/pe/edge/integrations/remote/send-uplink-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-2.png
+        image: /images/pe/edge/integrations/remote/send-uplink-step-2.png
 
 device:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/device-1-edge.png
+        image: /images/pe/edge/integrations/http/device-1-edge.png
         title: 'Go to the "<b>Entities</b>" section -> "<b>Devices</b>" page on the Edge to see the created device with data.'
 
 ---
@@ -198,7 +222,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker
 
 ### Ubuntu Server
 
-- Install Java 11 (OpenJDK) 
+- **Install Java 17 (OpenJDK)** 
 
 {% include templates/install/ubuntu-java-install.md %}
 
@@ -215,7 +239,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu
 
 ### CentOS/RHEL Server
 
-- Install Java 11 (OpenJDK) 
+- **Install Java 17 (OpenJDK)** 
 
 {% include templates/install/rhel-java-install.md %}
 
