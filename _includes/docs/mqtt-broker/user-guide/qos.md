@@ -23,7 +23,7 @@ MQTT defines three levels of Quality of Service:
 In this default method the message can be delivered either one time or not delivered. The duplicate messages are impossible.
 
 **Requires one message**: 
-1. Sender sends **PUBLISH (1)** packet
+1. Sender sends **PUBLISH (1)** packet.
 
 After the message is sent the sender removes it from the message queue. That’s why this mode is sometimes called **"fire and forget"**. 
 The sender does not expect an acknowledgment (confirmation), like in the QoS 1, from the receiver that the message has been delivered.
@@ -36,8 +36,8 @@ At the same time QoS 0 has the **lowest reliability** as there is no guarantee o
 The messages are delivered at least once, ensuring that the receiver gets the message, but it does not guarantee that it will be delivered only once.
 
 **Requires two messages**:
-1. The sender sends **PUBLISH (1)** packet
-2. The receiver responds with **PUBACK (2)** packet
+1. The sender sends **PUBLISH (1)** packet.
+2. The receiver responds with **PUBACK (2)** packet.
 
 The duplicate messages are possible due to scenarios with unstable connection, for example:
 1. The sender sends a PUBLISH packet, but the receiver does not get it. So the sender will try to send duplicates of PUBLISH packets again and again. When the sender gets confirmation from the receiver (PUBACK packet), the message will be removed from the queue.
@@ -49,10 +49,10 @@ The use of QoS 1 ensures that important data is not lost due to transmission iss
 The messages are delivered exactly once, ensuring that neither duplication nor loss occurs.
 
 **Requires 4 messages**:
-1. The sender sends **PUBLISH (1)** packet
-2. The receiver responds with **PUBREC (2)** packet
+1. The sender sends **PUBLISH (1)** packet.
+2. The receiver responds with **PUBREC (2)** packet.
 3. The sender gets a PUBREC packet and sends **PUBREL (3)** packet with important details as packet ID that is a key for guaranteeing that a message is sent exactly once.
-4. The receiver gets PUBREL packet and responds with **PUBCOMP (4)** packet
+4. The receiver gets PUBREL packet and responds with **PUBCOMP (4)** packet.
 
 Only after the sender gets PUBCOMP packet, it will be allowed to retransmit the PUBLISH packet or send a new message with the same Packet ID.
 
@@ -152,4 +152,3 @@ The client needs to handle these duplicates appropriately.
 
 Please note, for **QoS 0** the broker does not queue messages.
 
-ADD INFO ABOUT TBMQ APPLICATION
