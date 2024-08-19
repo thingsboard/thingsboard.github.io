@@ -169,21 +169,6 @@ var sortByValue = map.sortByValue();                   // return nothing => map 
 ```
 {: .copy-code}
 
-In development: in our own Maps implementation, the *Tbel* library is planned to use additional methods:
-
-```java
-- slice()
-- slice(int start)
-- slice(int start, int end)
-- toSortedByValue()
-- toSortedByValue(asc)
-- toSortedByKey()
-- toSortedByKey(asc)
-- invert()
-- toInverted()
-- reverse()
-```
-
 #### Lists
 
 TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script.
@@ -201,7 +186,7 @@ foreach (item : list) {
     var smth = item;
 }
 // For loop 
-for (int i =0; i < list.size; i++) { 
+for (var i =0; i < list.size; i++) { 
     var smth = list[i];
 }
 ```
@@ -280,7 +265,7 @@ TBEL allows you to create Arrays. To control the memory usage, we permit only ar
 
 ```java
 // Create new array
-int[] array = new int[3];
+var[] array = new int[3];
 array[0] = 1;
 array[1] = 2;
 array[2] = 3;
@@ -289,7 +274,7 @@ str = "My String";
 str[0]; // returns 'M';
 
 function sum(list){
-    int result = 0;
+    var result = 0;
     for(var i = 0; i < list.length; i++){
         result += list[i];
     }
@@ -499,7 +484,7 @@ foreach (c : str) {
 
 ```java
 var sum = 0;
-for (int i =0; i < 100; i++) { 
+for (var i =0; i < 100; i++) { 
    sum += i;
 }
 ```
