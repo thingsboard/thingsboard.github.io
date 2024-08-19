@@ -250,6 +250,8 @@ toc:
       new: true
 - title: Security
   section:
+    - title: Security settings
+      path: /docs/user-guide/ui/security-settings/
     - title: Enable HTTPS
       path: /docs/user-guide/ssl/http-over-ssl/
     - title: Audit Log

@@ -18,18 +18,18 @@ To configure device via NFC, you will need to hold your smartphone like on the p
 
 To read and write configuration on the device you may follow next steps on your smartphone:  
 {% assign readWriteConfiguration = '
-===
-image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-application.png,
-title: Open **ToolBox** application.
-===
-image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-read-success.png,
-title: Click on **NFC Read** button and hold your smartphone near the device.
-===
-image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-configuration.png,
-title: Go to tab **Setting**, set and save required fields and any other configuration that you need.
-===
-image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-write-success.png,
-title: Press **Write** button and hold your smartphone near the device.
+    ===
+        image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-application.png,
+        title: Open **ToolBox** application.
+    ===
+        image: /images/devices-library/ready-to-go-devices/am308/toolbox-read-success.png,
+        title: Click on **NFC Read** button and hold your smartphone near the device.
+    ===
+        image: /images/devices-library/ready-to-go-devices/am308/toolbox-configuration.png,
+        title: Go to tab **Setting**, set and save required fields and any other configuration that you need.
+    ===
+        image: /images/devices-library/ready-to-go-devices/am308/toolbox-write-success.png,
+        title: Press **Write** button and hold your smartphone near the device.
 '
 %}
 
