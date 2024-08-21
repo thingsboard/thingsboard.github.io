@@ -1,9 +1,10 @@
 * TOC
 {:toc}
 
+
 #### Overview
 
-Edge Over-the-air updates are designed in the same way, as [Platform (Cloud) OTA Updates](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/).
+Edge Over-The-Air updates are designed in the same way, as [Platform (Cloud) OTA Updates](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/).
 Please read *Platform* OTA Updates documentation to get knowledge on OTA Updates functionality in general.
 
 #### Propagation OTA Packages to Edge

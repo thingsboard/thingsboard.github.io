@@ -33,7 +33,6 @@ description:
     </div>
 </div>
 <div class="our-goal">
-    <span class="heading">Our goal</span>
     <p>Reduce time-to-market for IoT solutions that change the world.</p>
 </div>
 <div class="center" style="margin-top: 48px;">

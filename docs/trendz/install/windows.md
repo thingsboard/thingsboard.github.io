@@ -41,7 +41,7 @@ We assume you have already chosen subscription plan for Trendz and have license 
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
+Open the Notepad or other editor as administrator user (right-click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
 
 ```text 
@@ -60,7 +60,7 @@ license:
 
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
+Open the Notepad or other editor as administrator user (right-click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
 
 ```text
@@ -77,7 +77,7 @@ tb.api.url: "${TB_API_URL:http://localhost:8080}"
 {: .copy-code}
 
 ### Step 5. Configure Trendz database
-Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
+Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same server for Trendz or use managed PostgreSQL 
 service from your cloud vendor.
 
 #### PostgreSQL Installation
@@ -95,7 +95,7 @@ Open your server and create database "trendz" with owner "postgres".
 
 #### Configure database connection for Trendz
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
+Open the Notepad or other editor as administrator user (right-click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
 
 ```text 
@@ -119,7 +119,7 @@ datasource:
 
 ### Step 6. Run installation script
 
-Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
+Launch Windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
 Execute **install.bat** script to install Trendz as a Windows service.
 This means it will be automatically started on system startup. 
@@ -129,8 +129,8 @@ The output should be similar to this one:
   ```text
 C:\Program Files (x86)\trendz>install.bat
 Detecting Java version installed.
-CurrentVersion 11
-Java 11 found!
+CurrentVersion 17
+Java 17 found!
 Installing Trendz Analytics...
 ...
 Trendz Analytics installed successfully!

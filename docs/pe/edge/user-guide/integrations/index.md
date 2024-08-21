@@ -59,10 +59,10 @@ To reuse same Integration between multiple Edges, **Integration templates** and 
 Integration templates are created on the Cloud, but these templates are not regular Platform Integrations and *not started* on the cloud. 
 They are assigned to the Edge and *started* once they are provisioned to the Edge.
 
-At the moment Integrations and Converters can not be modified on the Edge - they are modified on the Cloud and all the modifications automatically propagated to the Edge from the Cloud.
+At the moment, Integrations and Converters cannot be modified on the Edge - they are modified on the Cloud, and all the modifications automatically propagated to the Edge from the Cloud.
 
-Integration configurations fields (URIs, passwords, etc.) could be replaced by Edge attribute value with a help of placeholders. 
-In this way, single Integration template could be used by multiple Edges, and any specific configuration field of the Integration could be replaced by Edge attribute value.
+Integration configurations fields (URIs, passwords, etc.) could be replaced by Edge attribute value with the help of placeholders. 
+In this way, a single Integration template could be used by multiple Edges, and any specific configuration field of the Integration could be replaced by Edge attribute value.
 
 ### Deployment options
 
@@ -73,11 +73,11 @@ ThingsBoard Integration has two deployment options: embedded and remote. See det
 Embedded integration is running in the main ThingsBoard Edge process. 
 
 Pros:
-* simplifies deployment of new integration (just few clicks on ThingsBoard UI);
+* simplifies deployment of new integration (just a few clicks on ThingsBoard UI);
 * minimize latency for message delivery;
 
 Cons:
-* consume resources allocated to main ThingsBoard Edge process: network connections, OS threads and CPU cycles;
+* consume resources allocated to the main ThingsBoard Edge process: network connections, OS threads, and CPU cycles;
 * low level of isolation;
 
 <object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object>
@@ -87,14 +87,14 @@ Cons:
 One can install remote integration in the local network and stream data to the edge over network.
 
 Let's assume you have local MQTT broker or OPC-UA server deployed on-premises.
-Those brokers and/or servers don't have dedicated external IP address, so ThingsBoard Edge can't connect to them directly.
+Those brokers and/or servers don't have a dedicated external IP address, so ThingsBoard Edge can't connect to them directly.
 However, you can install remote integration close to this edge, in the same local network.
 This integration will connect to the broker/edge, pull the data and store it in the local file system.
 Remote integration will stream the data to the ThingsBoard Edge deployed in the network once the network connection is available.
 
 Pros:
 * enables integration with servers deployed in the local network;
-* isolates the integration process from main ThingsBoard Edgeprocess;
+* isolates the integration process from the main ThingsBoard Edge process;
 
 Cons:
 * requires installation of a separate package;
@@ -115,8 +115,8 @@ You do not need to assign Converter templates to the Edge - once Integration tem
 
 ### Integration templates
 
-Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create Integration.
-This page allows you to create Integration template. These Integration templates are going to be assigned to the Edge.
+Once the Converter template was created, you can navigate to **Edge management -> Integration templates** page to create Integration.
+This page allows you to create an Integration template. These Integration templates are going to be assigned to the Edge.
 
 {% include images-gallery.html imageCollection="integrationTemplateCreation" %}
 
@@ -131,9 +131,9 @@ Let's see on example how HTTP Integration could be configured with unique IP Add
 
 {% include images-gallery.html imageCollection="placeholderFeature" showListImageTitles="true" %}
 
-You can assign this Integration template to other Edge entities, and every Integration on the Edge is going to have it's unique **'Base URL'** value, that is replaced by attribute value.
+You can assign this Integration template to other Edge entities, and every Integration on the Edge is going to have its unique **'Base URL'** value, that is replaced by attribute value.
 
-If specific Edge is missing placeholder attribute key, Platform will notify regarding it during the assignment to Edge or Integration configuration update:
+If a specific Edge is a missing placeholder attribute key, the Platform will notify regarding it during the assignment to Edge or Integration configuration update:
 
 {% include images-gallery.html imageCollection="missingPlaceholder" %}
 
@@ -143,7 +143,7 @@ In the current version, Edge is not able to create customers, device profiles an
 These limitations affect Uplink Data converter functionality:
 
 * If non-existent device type used in the Converter, **'default'** device type will be used.
-* Same applies to the customer - if customer is not available on the Edge, device will be assigned to Tenant.
+* Same applies to the customer - if customer is not available on the Edge, the device will be assigned to Tenant.
 * If entity group non-exists on the edge - 'All' group is going to be used.
 
 ### See Also

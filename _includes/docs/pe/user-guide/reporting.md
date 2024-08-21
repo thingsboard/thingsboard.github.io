@@ -27,7 +27,7 @@ See video tutorial below for step-by-step instruction how to use this feature.
 
 The Reports Server is a standalone service used to generate reports by rendering dashboards in a headless browser.
 
-On each generate report request, ThingsBoard node sends a request to the Reports Server using the configured endpoint URL.
+On each generated report request, ThingsBoard node sends a request to the Reports Server using the configured endpoint URL.
 
 The Reports Server opens a web page with the target dashboard URL in the headless browser and waits until the page renders,
 then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
@@ -49,7 +49,7 @@ reports:
 
 The Tenant Administrator or Customer User can generate a report from the currently opened dashboard.
 
-- Click the **Export Dashboard** button located at the right side of the dashboard toolbar
+- Click the **Export Dashboard** button located on the right side of the dashboard toolbar
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-button.png)
 

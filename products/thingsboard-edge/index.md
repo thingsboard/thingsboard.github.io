@@ -89,7 +89,7 @@ description: Comprehensive software solutions for edge computing, providing data
                     <img src="/images/edge/robust-icon.svg" alt="Robust and Efficient">
                     <div>
                         <h4 class="title">Robust and Efficient</h4>
-                        <p>A single Edge instance is capable of handling up to 1,000 devices, depending on the use-case and the capabilities of the deployed hardware.</p>
+                        <p>A single Edge instance is capable of handling up to 1,000 devices, depending on the use case and the capabilities of the deployed hardware.</p>
                     </div>
                 </div>
             </div>

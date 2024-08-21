@@ -11,11 +11,11 @@ sudo apt-get install cassandra
 sudo apt-get install cassandra-tools
 ```
 
-In order to run Cassandra, you will need to install Java 11.
+In order to run Cassandra, you will need to install Java 17.
 
 Install the package.
 ```bash
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-17-jdk
 ```
 {: .copy-code}
 Set Java 17 as the default version (required for ThingsBoard).

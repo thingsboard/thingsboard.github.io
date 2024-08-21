@@ -1,4 +1,4 @@
-ThingsBoard service is running on Java 17. Follow this instructions to install OpenJDK 17:
+ThingsBoard service is running on Java 17. Follow these instructions to install OpenJDK 17:
 
 ```bash
 sudo apt update

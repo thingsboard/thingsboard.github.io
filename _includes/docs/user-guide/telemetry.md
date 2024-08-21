@@ -46,7 +46,7 @@ The following JSON contains 5 data points: temperature (double), humidity (integ
 {: .copy-code}
 
 You may notice that the JSON listed above does not have a timestamp information. In such case, ThingsBoard uses current server timestamp. 
-However, you may include timestamp information into the message. See example below:
+However, you may include timestamp information into the message. See the example below:
 
 ```json
 {
@@ -77,7 +77,7 @@ We assume you have already pushed time-series data to ThingsBoard. Now you may u
 We recommend [dashboards overview](/docs/{{docsPrefix}}user-guide/dashboards/) to get started.
 Once you are familiar how to create dashboards and configure data sources,
 you may use widgets to visualize either latest values or real-time changes and historical values.
-Good examples of widgets that visualize latest values are [digital](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) and [analog](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) gauges, or [cards](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards).
+Good examples of widgets that visualize the latest values are [digital](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) and [analog](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) gauges, or [cards](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards).
 [Charts](/docs/{{docsPrefix}}user-guide/ui/widget-library/#charts) are used to visualize historical and real-time values and [maps](/docs/{{docsPrefix}}user-guide/ui/widget-library/#maps-widgets) to visualize movement of devices and assets.
 
 You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) to allow dashboard users to input new time-series values using the dashboards.
@@ -86,8 +86,8 @@ You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-librar
 
 {% if docsPrefix == "paas/" %}
 
-ThingsBoard Cloud stores time-series data in the Cassandra database with replication factor of 3. 
-The on-prem installation of ThingsBoard support storage of time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
+ThingsBoard Cloud stores time-series data in the Cassandra database with a replication factor of 3. 
+The on-prem installation of ThingsBoard supports storage of time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
 
 {% else %}
 
@@ -111,7 +111,7 @@ For example, you may store "raw" data for 3 month and aggregated data for 3 year
 
 {% else %}
 
-Data retention policy and configuration depends on the chosen [storage](#data-storage).
+Data retention policy and configuration depend on the chosen [storage](#data-storage).
 
 Cassandra supports time-to-live(TTL) parameter for each inserted row.
 That is why, you may [configure](/docs/user-guide/install/{{docsPrefix}}config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
@@ -134,7 +134,7 @@ This allows granular control on the level of durability for the time-series data
 
 ## Rule engine
 
-The [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) is responsible for processing all sorts of incoming data and event.
+The [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) is responsible for processing all sorts of incoming data and events.
 You may find most popular scenarios of using attributes within rule engine below:
 
 **Generate alarms based on the logical expressions against time-series values**
@@ -158,7 +158,7 @@ Use [originator telemetry](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrich
 **Fetch attribute values to analyze incoming telemetry from device**
 
 Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
-This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes.
+This is an extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes.
 
 **Use analytics rule nodes to aggregate data for related assets**
 
@@ -172,7 +172,7 @@ Useful to calculate total water consumption for the building/district based on d
 
 ## Data Query REST API
 
-ThingsBoard provides following REST API to fetch entity data:
+ThingsBoard provides the following REST API to fetch entity data:
 
 {% capture api_note %}
 **NOTE:** The API is available via Swagger UI. Please review the general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
@@ -228,7 +228,7 @@ The supported parameters are described below:
  - **endTs** - Unix timestamp that identifies the end of the interval in milliseconds.
  - **interval** - the aggregation interval, in milliseconds.
  - **agg** - the aggregation function. One of MIN, MAX, AVG, SUM, COUNT, NONE.
- - **limit** - the max amount of data points to return or intervals to process.
+ - **limit** - the max number of data points to return or intervals to process.
 
 ThingsBoard will use *startTs*, *endTs*, and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to DB that leverage built-in aggregation functions.
 
@@ -241,7 +241,7 @@ Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, AL
 
 ## WebSocket API
 
-WebSockets are actively used by Thingsboard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
+WebSockets are actively used by ThingsBoard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
 You can open a WebSocket connection to a telemetry service using the following URL
 
 ```shell
@@ -270,7 +270,7 @@ where
  - **entityType** - unique entity type. Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
  - **entityId** - unique entity identifier
  - **keys** - a comma-separated list of data keys
- - **timeWindow** - fetch interval for time series subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**
+ - **timeWindow** - fetch interval for time series subscriptions, in milliseconds. Data will be fetched within the following interval **[now()-timeWindow, now()]**
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  

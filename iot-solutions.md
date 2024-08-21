@@ -48,7 +48,7 @@ redirect_from: "/docs/services/iot-solutions/"
                 </tr>
                 <tr>
                     <td></td>
-                    <td>Customer role based information access</td>
+                    <td>Customer role-based information access</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -142,7 +142,7 @@ redirect_from: "/docs/services/iot-solutions/"
         </div>
         <img class="image" srcset="/images/iot-articles/iot-solutions-2_1090x686.png 1090w, /images/iot-articles/iot-solutions-2_2180x1372.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/iot-solutions-2_1090x686.png" alt="IoT solutions dashboard with widgets"/>
         <div class="text-wrapper">
-            <span id="sub-title-iot-solutions-2" class="sub-title">IoT technology solutions are the tool that will help you achieve these results and strengthen your business workflow.</span>
+            <span id="sub-title-iot-solutions-2" class="sub-title">IoT technology solutions are the tools that will help you achieve these results and strengthen your business workflow.</span>
             <h2>Advantages of IoT as a service for business:</h2>
             <ul class="list">
                 <li>Improved productivity and reduced human labor</li>
@@ -151,7 +151,7 @@ redirect_from: "/docs/services/iot-solutions/"
                 <li>Cost-effective operation</li>
                 <li>Improved work safety</li>
             </ul>
-            <div class="text-content">Building an IoT ecosystem can be difficult. We have the expertise to provide you with a comprehensive set of Internet of Things services for developing and managing IoT technology solutions. Our IoT services are built-in into ThingsBoard products and can be customized to fit your specific needs.</div>
+            <div class="text-content">Building an IoT ecosystem can be challenging. We have the expertise to provide you with a comprehensive set of Internet of Things services for developing and managing IoT technology solutions. Our IoT services are built-in into ThingsBoard products and can be customized to fit your specific needs.</div>
         </div>
         <div class="definitions-block">
             <h2 class="center-text">ThingsBoard IoT Services:</h2>
@@ -240,7 +240,7 @@ redirect_from: "/docs/services/iot-solutions/"
         </div>
         <div class="detail">
             <div class="detail-name">Assisted Living</div>
-            <div class="detail-description">Improve the quality of life and safety of elderly or disabled people who live independently or in care facilities</div>
+            <div class="detail-description">Enhance the quality of life and safety for elderly or disabled individuals living independently or in care facilities</div>
         </div>
     </div>
 </div>
@@ -260,7 +260,7 @@ redirect_from: "/docs/services/iot-solutions/"
         <div class="contact-us-content">
             <div class="info">
                 <div class="title">Ready to launch your unique product?</div>
-                <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
+                <div class="text">Leave us your name and email, and we will get back to you within 2 business days</div>
             </div>
             <form id="Serv_IoTSol_ReadyToLaunch" class="contact-form gtm_form readyToLaunchForm" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
@@ -285,5 +285,4 @@ redirect_from: "/docs/services/iot-solutions/"
             </form>
         </div>
     </div>
-
 </div>

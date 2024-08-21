@@ -6,7 +6,7 @@
 ### Message Pack Processing Log
 
 You can enable logging of the slowest and most frequently called rule-nodes.
-To do this you need to [update your logging configuration](#enable-certain-logs) with the following <i>logger</i>:
+To do this, you need to [update your logging configuration](#enable-certain-logs) with the following <i>logger</i>:
 
 ```bash
 <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
@@ -91,7 +91,7 @@ They allow you to enable/disable logging for the certain class or group of class
 In the example above the default logging level is <b>INFO</b> (it means that logs will contain only general information, warnings and errors), but for the package <code>org.thingsboard.js.api</code> we enabled the most detailed level of logging.
 There's also a possibility to completely disable logs for some part of the system, in the example above we did it to <code>com.microsoft.azure.servicebus.primitives.CoreMessageReceiver</code> class using <b>OFF</b> log-level.
 
-To enable/disable logging for some part of the system you need to add proper <code></logger></code> configuration and wait up to 10 seconds.
+To enable/disable logging for some part of the system, you need to add proper <code></logger></code> configuration and wait up to 10 seconds.
 
 Different deployment tools provide different ways to update logs:
 
@@ -175,4 +175,4 @@ Here's the list of metrics ThingsBoard pushes to Prometheus.
 
 If your problem isn't answered by any of the guides above, feel free to contact ThingsBoard team.
 
-<a class="button" href="/docs/contact-us/">Contact us</a>
+<a class="button" href="/docs/contact-us/">Contact Us</a>

@@ -8,7 +8,7 @@ Nevertheless, we have decided to provide an alternative to JavaScript. You may f
 
 ## Motivation
 
-ThingsBoard is written in Java and currently uses Java 11. There are two ways to execute the JS function in ThingsBoard:  
+ThingsBoard is written in Java and currently uses Java 17. There are two ways to execute the JS function in ThingsBoard:  
 
 A) use remote JS Executor microservice written in Node.js. It is the default way for ThingsBoard to run in a cluster/microservices mode;
 
@@ -95,7 +95,7 @@ return a + b
 ```
 {: .copy-code}
 
-Note the lack of a semi-colon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
+Note the lack of a semicolon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
 
 #### Value Coercion
 
