@@ -3,7 +3,6 @@ layout: thingsboard-pe
 title: ThingsBoard Professional Edition
 description: 
 ---
-
 <main>
   <section id="intro">
     <div class="main-div">

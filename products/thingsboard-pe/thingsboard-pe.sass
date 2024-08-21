@@ -353,32 +353,9 @@
                             width: inherit
 
     #tb-customers
-        margin: -50px -100% 0
-        padding: 50px 100%
-        text-align: justify
-        -moz-text-align-last: justify
-        text-align-last: justify
-        display: none
-        @media(min-width: 992px)
-            display: block
-        img
-            height: 60px
-            margin-bottom: 20px
-        main, div.main-div
-            display: flex
-            flex-wrap: wrap
-            flex-direction: row
-            justify-content: space-around
-            align-items: center
-            padding: 0 50px
-            a
-                display: block
-                padding: 20px
+        a
                 object
-                    pointer-events: none
                     filter: invert(79%) sepia(25%) saturate(246%) hue-rotate(93deg) brightness(185%) contrast(82%)
-        div.main-div-customers
-            flex-wrap: nowrap
 
     #lists-first, #lists-second
         position: absolute
@@ -576,8 +553,6 @@
         section, header
             main, div.main-div
                 max-width: 100%
-            div.main-div-customers
-                max-width: 1800px
         footer
             main, div.main-div
                 max-width: 100%
@@ -672,10 +647,3 @@
     #thingsboard-pe
         #peContent
             max-width: 1400px
-
-@media (max-width: 1500px)
-    #thingsboard-pe
-        #encyclopedia
-            #tb-customers
-                div.main-div-customers
-                    flex-wrap: wrap
