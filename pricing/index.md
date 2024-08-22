@@ -113,7 +113,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
                                     Start Free
                                 </a>
                             </div>
@@ -136,7 +136,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
                                     Get Started
                                 </a>
                             </div>
@@ -160,7 +160,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
                                     Get Started
                                 </a>
                             </div>
@@ -184,7 +184,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
                                     Get Started
                                 </a>
                             </div>
