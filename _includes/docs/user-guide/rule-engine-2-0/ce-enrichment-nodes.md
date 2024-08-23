@@ -159,6 +159,8 @@ with the device's [attributes](/docs/user-guide/attributes/) or [latest telemetr
 > **Note:** By default set to **_Contains_**. However, you can specify your own relation type.
 * **Device profiles** - device profile filter. Only devices with specified profiles will be found.
 
+![Configuration: Device relations query example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-device-relations-query.png)
+
 **Configuration: Related device attributes**
 
 * **Client/Shared/Server attributes** and **Latest telemetry** - list of the keys that will be used to fetch attributes or latest telemetry from the related device.
@@ -167,12 +169,14 @@ with the device's [attributes](/docs/user-guide/attributes/) or [latest telemetr
       > **Note:** Available only when the configuration has at least one latest telemetry key set.
 * **Add selected attributes to** - controls whether the mapped attributes should be added to the **_Message_** or **_Metadata_**.
 
+![Configuration: Related device attributes example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-related-device-attributes.png)
+
 **Configuration: other**
 
 * **Tell failure if any of the attributes are missing** - if enabled, fails message processing if at least one selected key does not exist.
     > **Note:** Even in case of failure, outgoing message will contain telemetry keys that were successfully fetched.
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
+![Configuration: other example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-other.png)
 
 Attributes are added into outgoing message with scope prefix:
 
@@ -305,6 +309,8 @@ and adds related entity attributes, latest telemetry or fields to the outgoing m
      > **Note:** Available only when **Max relation level** is greater than one.
  * **Relation filters** - query filters based on relation type and entity type. Optional. If filters are not set the relation query will search for relations with any type.
 
+![Configuration: Relations query example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
+
 **Configuration: Data to fetch**
 
  * **Attributes/Latest telemetry/Fields** - controls whether to fetch attributes, latest telemetry or fields.
@@ -314,7 +320,7 @@ and adds related entity attributes, latest telemetry or fields to the outgoing m
    > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/). 
  * **Add mapped attributes/latest telemetry/fields to** - controls whether fetched data should be added to the **_Message_** or **_Metadata_**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config.png)
+![Configuration: Data to fetch example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
 
 **Output connections**
 * **Success:**
@@ -447,7 +453,7 @@ Enriches the outgoing message with the tenant's details.
 * **Add selected details to** - controls whether the fetched details should be added to the **_Message_** or **_Metadata_**.
 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
 
 Selected details are added into the outgoing message with prefix: <code>tenant_</code>.
 
@@ -506,7 +512,7 @@ msg: {"temperature": 25.0, "humidity": 70}, metadata: {"ts": "1616510425200"}
 The outgoing message will be routed via **Success** chain and will include the following details in the message:
 
 ```bash
-msg: {"temperature": 25.0, "humidity": 70,"customer_title": "Warehouse manager", "customer_country": "United States", "customer_phone": "+12124567890"}, metadata: {"ts": "1616510425200", "speedThreshold": 60}
+msg: {"temperature": 25.0, "humidity": 70, "customer_title": "Warehouse manager", "customer_country": "United States", "customer_phone": "+12124567890"}, metadata: {"ts": "1616510425200", "speedThreshold": 60}
 ```
 
 ## fetch device credentials
