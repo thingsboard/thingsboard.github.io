@@ -222,7 +222,7 @@ msg: {"pressure": 75.5, "ss_pressureThreshold": "80", "temperature": "{"ts":1718
 
 ## originator attributes
 
-Enriches the outgoing message with the message originator's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/).
+Enriches the outgoing message with the message originator's [attributes](/docs/user-guide/attributes/) and/or [latest telemetry](/docs/user-guide/telemetry/).
 
 **Configuration**
 * **Client/Shared/Server attributes** and **Latest telemetry** - list of the keys that will be used to fetch originator's attributes or latest telemetry.
