@@ -613,6 +613,85 @@ return bytesToString(bytes); // Returns "HELLO"
 ```
 {: .copy-code}
 
+#### numberToString
+
+Converts input number (int, long, float, double) to hexString.
+
+**Syntax:**
+
+*String intToHex(Integer i[, boolean bigEndian, boolean pref, int len])*
+*String longToHex(Long l[, boolean bigEndian, boolean pref, int len])*
+*String floatToHex(Float f[, boolean bigEndian])*
+*String doubleToHex(Double d[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+    <li><b>i, l, f, d:</b> <code>Number</code> - Format: Integer, Long, Float, Double.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+    <li><b>len:</b> <code>int</code> - optional the number of bytes of the number to convert to text.</li>
+</ul>
+
+**Return value:**
+
+A string in HexDecimal format.
+
+**Examples:**
+
+```java
+var i = 0xFFD8FFA6 (4 292 411 302);
+intToHex(i, true, true);                        // Returns "0xFFD8FFA6"
+intToHex(171, true, false))                     // Returns "AB"
+intToHex(0xABCDEF, false, true, 4));            // Returns "0xCDAB"
+intToHex(0xABCD, false, false, 2)               // Returns "AB"
+
+longToHex(0xFFCEFFA6FFD8FFA6l, false, true));   // Returns "0xA6FFD8FFA6FFCEFF"
+longToHex(0xFFD8FFA6FFD8FFA6l, true, true, 4))  // Returns "0xFFA6"
+longToHex(0xFFD8FFA6FFD8FFA6l, false, false, 4))// Returns "0D8FF"
+
+floatToHex(123456789.00f)                       // Returns "0x4CEB79A3"
+floatToHex(123456789.00f, false)                // Returns "0xA379EB4C"
+
+doubleToHex(1729.1729d)                         // Returns "0x409B04B10CB295EA"
+doubleToHex(1729.1729d, false)                  // Returns "0xEA95B20CB1049B40"
+```
+{: .copy-code}
+
+#### intLongToString
+
+Converts input number (int, long) to hexString.
+
+**Syntax:**
+
+*String intLongToString(Long number[, int radix, boolean bigEndian, boolean pref])*
+
+**Parameters:**
+
+<ul>
+    <li><b>number:</b> <code>Number</code> - Format: Long.</li>
+    <li><b>radix:</b> <code>int</code> - optional radix to use when parsing to string format(BinaryString, OctalString, DecimalString, HexDecimalString). Default: DecimalString.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+</ul>
+
+**Return value:**
+
+A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
+
+**Examples:**
+
+```java
+intLongToString(58l, 2)                         // Returns "00111010"
+intLongToString(13158L, 8)                      // Returns "31546"
+intLongToString(-13158L, 8)                     // Returns "1777777777777777746232"
+intLongToString(-13158L, 10)                    // Returns ":"-13158"
+intLongToString(13158L, 16)                     // Returns "3366"
+intLongToString(-13158L, 16)                    // Returns"FFCC9A"
+intLongToString(-13158L, 16, true, true));      // Returns"0xFFCC9A"  
+```
+{: .copy-code}
+
 #### decodeToString
 
 Alias for the [bytesToString](#bytestostring)
