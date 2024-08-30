@@ -1856,7 +1856,8 @@ self.onInit = function() {
     const subscriptionOptions = { 
         type: 'timeseries', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
-        hasDataPageLink: true, //Sets subscription into pageLink mode
+        hasDataPageLink: true, //Sets subscription into pageLink mode,
+        ignoreDataUpdateOnIntervalTick: true, //if true will be triggering onDataUpdated only when new data appears otherwise onDataUpdate will be triggered each second
         useDashboardTimewindow: true,
         callbacks: //Sets callbacks for subscription
         {
@@ -1973,6 +1974,150 @@ self.onInit = function() {
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
 
 ![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
+
+##### Subscription with post-processing
+
+Custom subscription support ability to post-process incoming data. Next example will base on [Subscription for attributes/telemetry](#subscription-for-attributestelemetry)
+
+Sometimes there is a need to provide the user with the ability to modify the incoming data. Imagine the situation: a device sends weight telemetry in kilograms. But we also want to provide for user ability to converting this value. For this we could use post-processing feature.
+
+First of all, we need to create a custom setting schema that will contain a user's function that will convert weight telemetry. We will use simple schema that contain java-script field:
+```
+{
+    "schema":{
+       "type": "object",
+       "properties": {
+           "weightPostProcessingFunction": {
+               "title": "Weight post-processing: f(time, value, prevValue, timePrev, prevOrigValue)",
+               "type": "string",
+               "default": "return value;"
+           }
+       }
+    },
+    "form": [
+       {
+           "key": "weightPostProcessingFunction",
+           "type": "javascript"
+       }
+   ]
+ }
+```
+![image](/images/user-guide/contribution/widgets/post-processing-function.png)
+
+Now let's create a custom subscription. For clarity we will add two fields: one contains the original value and the second one contains the processed value:
+```javascript
+   const datasources = [
+        {
+            type: "entity", //Sets that there is a subscription to entity data
+            dataKeys: //Describes keys
+            [
+                 {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Weight telemetry", //Key label
+                    name: "weight", //Key name
+                    settings: {},
+                    type: "timeseries" //Key type
+                },
+                {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Post processing weight", //Key label
+                    name: "weight", //Key name
+                    settings: {},
+                    usePostProcessing: true, //Enable post-processing
+                    postFuncBody: self.ctx.settings.postProcessingFunction, //Set post-processing function from widget settings
+                    type: "timeseries" //Key type
+                },
+                {
+                    decimals: 0,
+                    label: "Active",
+                    name: "active",
+                    settings: {},
+                    type: "attribute"
+                 }
+            ],
+            entityFilter: //Describes entities (See Entity Filters topic)
+            {
+                type: "entityType", //Entity filter type
+                entityType: "DEVICE" //Entity type
+            },
+            keyFilters: //Filtering entity by keys (See Key Filters topic)
+            [
+                {
+                    key: {
+                        key: "active", //Key name
+                        type: "ATTRIBUTE" //Key type
+                    },
+                    predicate: {
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
+                        type: "BOOLEAN", //Sorting value type
+                        value: {
+                            defaultValue: true //Sorting value
+                        }
+                    },
+                    valueType: "BOOLEAN" //Value type
+                }
+            ]
+        }
+    ];
+
+    const subscriptionOptions = {
+        type: 'latest', //Subscription type
+        datasources: datasources, //Describes what data you want to subscribe
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+                self.onDataUpdated();
+            }
+        }
+   };
+
+    self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
+        (subscription) => {
+            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.data = subscription.data; //Saving data into widget context
+            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            ...
+        }
+    );
+```
+The subscription is ready now let's convert weight telemetry from kilograms into grams:
+![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
+![image](/images/user-guide/contribution/widgets/post-processing-subscription.png)
+
+As you can see despite the fact that we are subscribe to the same key two times at the output we have different values because one of them was additionally transformed using the post-processing function.
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+## Troubleshooting
+  
+### Empty web report
+Sometimes during work with reports you may encounter the following problem:
+Heavy widgets do not have time to load before the web report begins to be generated. As a result report will be empty(because at a creating moment, data is not present on the dashboard):
+![image](/images/user-guide/contribution/widgets/web-report-error.png)
+
+To resolve this problem report service contains a special feature that allow us to inform it that the widget
+
+First of all, we need to inform the reporting service that we have a widget to wait on. We will do it on widget ```self.onInit```:
+```javascript
+self.onInit = function () {
+   ...
+   if (self.ctx.reportService.reportView) {
+     self.ctx.$scope.widgetUuid = self.ctx.reportService.onWaitForWidget();
+   }
+};
+```
+
+Now report service will wait until widget send information about it's loading or waiting timeout will expire. We will inform the report service about the successful loading of widget inside ```self.onDataUpdated```:
+```javascript
+self.onDataUpdated = function () {
+    ...data is ready
+    if (self.ctx.reportService.reportView) {
+        self.ctx.reportService.onWidgetLoaded(self.ctx.$scope.widgetUuid);
+    }
+};
+```
+
+Service will start generating a report only when all widgets on a dashboard that are marked as ```onWaitForWidget()``` will send ```onWidgetLoaded(${widgetUuid})``` or when the timeout for widgets waiting will expire.
+{% endif %}
 
 ## Integrating existing code to create widget definition
 
