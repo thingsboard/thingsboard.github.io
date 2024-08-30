@@ -247,6 +247,7 @@ var length = list.length()                  // return  7
 var memorySize = list.memorySize()          // return 42 
 var indOf1 = list.indexOf("B", 1);          // return 1  
 var indOf2 = list.indexOf("B", 2);          // return 3  
+var list.validateClazzInArrayIsOnlyString() // return false
 ```
 {: .copy-code}
 
@@ -943,6 +944,67 @@ Alias for [parseHexToInt(hex, true)](#parsehextoint)
 
 *int parseBigEndianHexToInt(String hex)*
 
+#### parseHexToFloat
+
+Converts the hex string to float from HexString.
+
+**Syntax:**
+
+*Float parseHexToFloat(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+return parseHexToInt("BBAA"); // returns 48042
+return parseHexToInt("BBAA", true); // returns 48042
+return parseHexToInt("AABB", false); // returns 48042
+return parseHexToInt("BBAA", false); // returns 43707
+```
+{: .copy-code}
+
+#### parseHexIntLongToFloat
+
+
+#### parseHexToDouble
+
+Converts the hex string to float from HexInteger, HexLong or Bytes.
+
+**Syntax:**
+
+*int parseHexToInt(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+return parseHexToInt("BBAA"); // returns 48042
+return parseHexToInt("BBAA", true); // returns 48042
+return parseHexToInt("AABB", false); // returns 48042
+return parseHexToInt("BBAA", false); // returns 43707
+```
+{: .copy-code}
+
 #### toFixed
 
 Rounds the double value towards "nearest neighbor". 
@@ -1019,6 +1081,11 @@ Hex string.
 return bytesToHex([-69, -86]); // returns "BBAA"
 ```
 {: .copy-code}
+
+
+#### parseBytesToFloat
+
+#### parseBytesIntToFloat
 
 #### bytesToBase64
 
