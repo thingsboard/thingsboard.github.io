@@ -7,25 +7,26 @@ Since ThingsBoard 3.3, ThingsBoard allows you to upload and distribute over-the-
 As a tenant administrator, you may upload firmware or software packages to the OTA repository. 
 Once uploaded, you may assign them to [Device Profile](/docs/{{docsPrefix}}user-guide/device-profiles/) or [Device](/docs/{{docsPrefix}}user-guide/ui/devices/). 
 ThingsBoard will notify devices about the available update and provide a protocol-specific API to download the firmware. 
-The platform tracks status of the update and stores history of the updates. 
+The platform tracks the status of the update and stores history of the updates. 
 As a platform user, you may monitor the update process using the dashboard.
+<br>
 <br>
 <object data="/images/user-guide/firmware/firmware-anim3.svg"></object>
 <br>
 
 ## Provision OTA package to ThingsBoard repository
 
-Navigate to the "OTA Updates" menu item to list and upload OTA update packages. Each package consist of:
+Navigate to the "OTA Updates" menu item to list and upload OTA update packages. Each package consists of:
 
-* Title - the name of your package. You can use different names for production and debug firmware/software. 
-* Version - the version of your package. Combination of the title and version must be unique in scope of a tenant.
-* Device Profile - each package is compatible with one device profile. We track compatibility to prevent accidental updates of devices with incompatible firmware/software. 
+* **Title** - the name of your package. You can use different names for production and debug firmware/software. 
+* **Version** - the version of your package. Combination of the title and version must be unique in scope of a tenant.
+* **Device Profile** - each package is compatible with one device profile. We track compatibility to prevent accidental updates of devices with incompatible firmware/software. 
   Link to a device profile means that device that use this profile *may* be updated to the current package. 
   However, the update is not triggered, until the user or script [assigns](#assign-ota-package-to-device-profile) the package to the device profile or device.
-* Type - can be either *Firmware* or *Software*.    
-* Checksum algorithm - optional parameter, it is a short name of the checksum algorithm to use. 
-* Checksum - optional parameter, it's a value of the file checksum. If no checksum provided by the user, server will use SHA-256 algorithm automatically.
-* Description - optional text description of the firmware. 
+* **Type** - can be either *Firmware* or *Software*.    
+* **Checksum algorithm** - optional parameter, it is a short name of the checksum algorithm to use. 
+* **Checksum** - optional parameter, it's a value of the file checksum. If no checksum provided by the user, server will use SHA-256 algorithm automatically.
+* **Description** - optional text description of the firmware. 
 
 {% include images-gallery.html imageCollection="createFirmware" %}
 
@@ -94,11 +95,11 @@ By default, it is configured to notify up to 100 device per minute. See [configu
 Means that the notification about firmware/software is fetched from queue and pushed to device.
 Under the hood, ThingsBoard converts notification to the update of the following [shared attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes):
 
-- fw(sf)_title - name of the firmware (software).
-- fw(sf)_version - version of the firmware (software).
-- fw(sf)_size - size of the firmware (software) file in bytes.
-- fw(sf)_checksum - attribute that is used to verify integrity of the received file.
-- fw(sf)_checksum_algorithm - the algorithm used to calculate file checksum.
+- **fw(sf)_title** - name of the firmware (software).
+- **fw(sf)_version** - version of the firmware (software).
+- **fw(sf)_size** - size of the firmware (software) file in bytes.
+- **fw(sf)_checksum** - attribute that is used to verify integrity of the received file.
+- **fw(sf)_checksum_algorithm** - the algorithm used to calculate file checksum.
 
 {% include images-gallery.html imageCollection="fw-attributes" %}
 
@@ -111,12 +112,12 @@ The remaining states are reported by the device firmware/software that is curren
 We have prepared description of those states and sample applications for the most popular protocols written in python. 
 Sample applications simulate behavior of the device firmware/software and may used as a reference for the implementation.  
 
- * DOWNLOADING - notification about new firmware/software update was received and device started downloading the update package.
- * DOWNLOADED - device completed downloading of the update package.
- * VERIFIED - device verified the checksum of the downloaded package.
- * UPDATING - device started the firmware/software update. Typically is sent before reboot of the device or restart of the service. 
- * UPDATED - the firmware was successfully updated to the next version.
- * FAILED - checksum wasn't verified, or the device failed to update. See "Device failed" tab on the Firmware dashboard for more details.
+ * **DOWNLOADING** - notification about new firmware/software update was received and device started downloading the update package.
+ * **DOWNLOADED** - device completed downloading of the update package.
+ * **VERIFIED** - device verified the checksum of the downloaded package.
+ * **UPDATING** - device started the firmware/software update. Typically is sent before reboot of the device or restart of the service. 
+ * **UPDATED** - the firmware was successfully updated to the next version.
+ * **FAILED** - checksum wasn't verified, or the device failed to update. See "Device failed" tab on the Firmware dashboard for more details.
 
 
 Once the firmware/software is updated, ThingsBoard expect the device to send the following telemetry:
