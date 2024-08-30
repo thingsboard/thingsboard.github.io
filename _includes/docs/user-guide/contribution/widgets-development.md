@@ -1614,7 +1614,7 @@ self.onInit = function() {
 
     const subscriptionOptions = {
         type: 'latest', //Subscription type
-        datasources: datasources, //Describes what data you want to subscribe
+        datasources: datasources, //Describes what data you want to subscribe to
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
@@ -1625,9 +1625,9 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
             ...
         }
     );
@@ -1649,7 +1649,7 @@ self.onInit = function() {
     ...
     const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
             [
                 {
@@ -1694,7 +1694,7 @@ self.onInit = function() {
 
     const subscriptionOptions = {
         type: 'latest', //Subscription type
-        datasources: datasources, //Describes what data you want to subscribe
+        datasources: datasources, //Describes what data you want to subscribe to
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
@@ -1705,9 +1705,9 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
             ...
         }
     );
@@ -1728,7 +1728,7 @@ self.onInit = function() {
     ...
     const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
             [
                 {
@@ -1771,7 +1771,7 @@ self.onInit = function() {
 
     const subscriptionOptions = { 
         type: 'latest', //Subscription type
-        datasources: datasources, //Describes what data you want to subscribe
+        datasources: datasources, //Describes what data you want to subscribe to
         hasDataPageLink: true, //Sets subscription into pageLink mode
         callbacks: //Sets callbacks for subscription
         {
@@ -1789,12 +1789,12 @@ self.onInit = function() {
 
      self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             subscribeForPaginatedData(self.ctx.$scope.pageLink);
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
-            self.ctx.dataPages = subscription.dataPages; //Saving dataPages into widget context
-            self.ctx.datasourcePages = subscription.datasourcePages; //Saving datasourcePages into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
+            self.ctx.dataPages = subscription.dataPages; //Saves dataPages into widget context
+            self.ctx.datasourcePages = subscription.datasourcePages; //Saves datasourcePages into widget context
             ...
         }
      );
@@ -1820,7 +1820,7 @@ self.onInit = function() {
     ...
     const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes time-series keys
             [
                 {
@@ -1855,9 +1855,9 @@ self.onInit = function() {
 
     const subscriptionOptions = { 
         type: 'timeseries', //Subscription type
-        datasources: datasources, //Describes what data you want to subscribe
+        datasources: datasources, //Describes what data you want to subscribe to
         hasDataPageLink: true, //Sets subscription into pageLink mode,
-        ignoreDataUpdateOnIntervalTick: true, //if true will be triggering onDataUpdated only when new data appears otherwise onDataUpdate will be triggered each second
+        ignoreDataUpdateOnIntervalTick: true, //if true onDataUpdated will be triggered only when new data appears otherwise onDataUpdate will be triggered every second
         useDashboardTimewindow: true,
         callbacks: //Sets callbacks for subscription
         {
@@ -1870,12 +1870,12 @@ self.onInit = function() {
 
      self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             subscribeForPaginatedData(self.ctx.$scope.pageLink);
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
-            self.ctx.dataPages = subscription.dataPages; //Saving dataPages into widget context
-            self.ctx.datasourcePages = subscription.datasourcePages; //Saving datasourcePages into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
+            self.ctx.dataPages = subscription.dataPages; //Saves dataPages into widget context
+            self.ctx.datasourcePages = subscription.datasourcePages; //Saves datasourcePages into widget context
             ...
         }
      );
@@ -1901,7 +1901,7 @@ Let’s create a custom subscription to the alarms from **thermostat** type devi
 self.onInit = function() {
     ...
     const alarmSource = {
-        type: 'entity', //Sets that there is a subscription to entity data
+        type: 'entity', //Indicates that there is a subscription to entity data
         dataKeys: //Describes keys
         [
           {
@@ -1962,7 +1962,7 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.alarmsSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.alarmsSubscription = subscription; //Saves subscription information into widget context
             self.ctx.alarmsSubscription.subscribeForAlarms(alarmDataPageLink, null); //Get information by pageLink params
             ...
         }
@@ -1977,11 +1977,11 @@ As a result, a subscription to the thermostat's alarms will be created (**the wi
 
 ##### Subscription with post-processing
 
-Custom subscription support ability to post-process incoming data. Next example will base on [Subscription for attributes/telemetry](#subscription-for-attributestelemetry)
+Custom subscription supports the ability to post-process incoming data. Next example will be based on [Subscription for attributes/telemetry](#subscription-for-attributestelemetry)
 
-Sometimes there is a need to provide the user with the ability to modify the incoming data. Imagine the situation: a device sends weight telemetry in kilograms. But we also want to provide for user ability to converting this value. For this we could use post-processing feature.
+Sometimes there is a need to provide the user with the ability to modify the incoming data. Imagine the following situation: a device sends weight telemetry in kilograms, but we also want to give the user the ability to convert this value. In this case, we could use the post-processing feature.
 
-First of all, we need to create a custom setting schema that will contain a user's function that will convert weight telemetry. We will use simple schema that contain java-script field:
+First of all, we need to create a custom setting schema that will contain user's function that will convert weight telemetry. We will use a simple schema that contains JavaScript field:
 ```
 {
     "schema":{
@@ -2004,11 +2004,11 @@ First of all, we need to create a custom setting schema that will contain a user
 ```
 ![image](/images/user-guide/contribution/widgets/post-processing-function.png)
 
-Now let's create a custom subscription. For clarity we will add two fields: one contains the original value and the second one contains the processed value:
+Now let's create a custom subscription. For clarity, we will add two fields: one contains the original value and the second one contains the processed value:
 ```javascript
    const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
             [
                  {
@@ -2062,7 +2062,7 @@ Now let's create a custom subscription. For clarity we will add two fields: one 
 
     const subscriptionOptions = {
         type: 'latest', //Subscription type
-        datasources: datasources, //Describes what data you want to subscribe
+        datasources: datasources, //Describes what data you want to subscribe to
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
@@ -2073,9 +2073,9 @@ Now let's create a custom subscription. For clarity we will add two fields: one 
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
             ...
         }
     );
@@ -2084,19 +2084,19 @@ The subscription is ready now let's convert weight telemetry from kilograms into
 ![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
 ![image](/images/user-guide/contribution/widgets/post-processing-subscription.png)
 
-As you can see despite the fact that we are subscribe to the same key two times at the output we have different values because one of them was additionally transformed using the post-processing function.
+As you can see, despite subscribing to the same key twice, the output shows different values because one of them was additionally transformed using the post-processing function.
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ## Troubleshooting
   
 ### Empty web report
-Sometimes during work with reports you may encounter the following problem:
-Heavy widgets do not have time to load before the web report begins to be generated. As a result report will be empty(because at a creating moment, data is not present on the dashboard):
+Sometimes, while working with reports, you may encounter the following problem:
+Heavy widgets may not load in time before the web report begins to be generated. As a result, the report will be empty(because, at the time of creation, data is not present on the dashboard):
 ![image](/images/user-guide/contribution/widgets/web-report-error.png)
 
-To resolve this problem report service contains a special feature that allow us to inform it that the widget
+To resolve this problem report service contains a special feature that allows us to inform it that the widget was loaded.
 
-First of all, we need to inform the reporting service that we have a widget to wait on. We will do it on widget ```self.onInit```:
+First of all, we need to inform the reporting service that we have a widget to wait for. We will do this via widget's ```self.onInit```:
 ```javascript
 self.onInit = function () {
    ...
@@ -2106,7 +2106,7 @@ self.onInit = function () {
 };
 ```
 
-Now report service will wait until widget send information about it's loading or waiting timeout will expire. We will inform the report service about the successful loading of widget inside ```self.onDataUpdated```:
+Now, the report service will wait until widget sends information about its loading status or the waiting timeout will expires. We will inform the report service about the successful loading of widget inside ```self.onDataUpdated```:
 ```javascript
 self.onDataUpdated = function () {
     ...data is ready
