@@ -169,21 +169,6 @@ var sortByValue = map.sortByValue();                   // return nothing => map 
 ```
 {: .copy-code}
 
-In development: in our own Maps implementation, the *Tbel* library is planned to use additional methods:
-
-```java
-- slice()
-- slice(int start)
-- slice(int start, int end)
-- toSortedByValue()
-- toSortedByValue(asc)
-- toSortedByKey()
-- toSortedByKey(asc)
-- invert()
-- toInverted()
-- reverse()
-```
-
 #### Lists
 
 TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script.
@@ -201,7 +186,7 @@ foreach (item : list) {
     var smth = item;
 }
 // For loop 
-for (int i =0; i < list.size; i++) { 
+for (var i =0; i < list.size; i++) { 
     var smth = list[i];
 }
 ```
@@ -262,6 +247,7 @@ var length = list.length()                  // return  7
 var memorySize = list.memorySize()          // return 42 
 var indOf1 = list.indexOf("B", 1);          // return 1  
 var indOf2 = list.indexOf("B", 2);          // return 3  
+var list.validateClazzInArrayIsOnlyString() // return false
 ```
 {: .copy-code}
 
@@ -280,7 +266,7 @@ TBEL allows you to create Arrays. To control the memory usage, we permit only ar
 
 ```java
 // Create new array
-int[] array = new int[3];
+var[] array = new int[3];
 array[0] = 1;
 array[1] = 2;
 array[2] = 3;
@@ -289,7 +275,7 @@ str = "My String";
 str[0]; // returns 'M';
 
 function sum(list){
-    int result = 0;
+    var result = 0;
     for(var i = 0; i < list.length; i++){
         result += list[i];
     }
@@ -499,7 +485,7 @@ foreach (c : str) {
 
 ```java
 var sum = 0;
-for (int i =0; i < 100; i++) { 
+for (var i =0; i < 100; i++) { 
    sum += i;
 }
 ```
@@ -625,6 +611,85 @@ A string constructed from the specified byte list.
 ```java
 var bytes = [0x48,0x45,0x4C,0x4C,0x4F];
 return bytesToString(bytes); // Returns "HELLO"
+```
+{: .copy-code}
+
+#### numberToString
+
+Converts input number (int, long, float, double) to hexString.
+
+**Syntax:**
+
+*String intToHex(Integer i[, boolean bigEndian, boolean pref, int len])*
+*String longToHex(Long l[, boolean bigEndian, boolean pref, int len])*
+*String floatToHex(Float f[, boolean bigEndian])*
+*String doubleToHex(Double d[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+    <li><b>i, l, f, d:</b> <code>Number</code> - Format: Integer, Long, Float, Double.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+    <li><b>len:</b> <code>int</code> - optional the number of bytes of the number to convert to text.</li>
+</ul>
+
+**Return value:**
+
+A string in HexDecimal format.
+
+**Examples:**
+
+```java
+var i = 0xFFD8FFA6 (4 292 411 302);
+intToHex(i, true, true);                        // Returns "0xFFD8FFA6"
+intToHex(171, true, false))                     // Returns "AB"
+intToHex(0xABCDEF, false, true, 4));            // Returns "0xCDAB"
+intToHex(0xABCD, false, false, 2)               // Returns "AB"
+
+longToHex(0xFFCEFFA6FFD8FFA6l, false, true));   // Returns "0xA6FFD8FFA6FFCEFF"
+longToHex(0xFFD8FFA6FFD8FFA6l, true, true, 4))  // Returns "0xFFA6"
+longToHex(0xFFD8FFA6FFD8FFA6l, false, false, 4))// Returns "0D8FF"
+
+floatToHex(123456789.00f)                       // Returns "0x4CEB79A3"
+floatToHex(123456789.00f, false)                // Returns "0xA379EB4C"
+
+doubleToHex(1729.1729d)                         // Returns "0x409B04B10CB295EA"
+doubleToHex(1729.1729d, false)                  // Returns "0xEA95B20CB1049B40"
+```
+{: .copy-code}
+
+#### intLongToString
+
+Converts input number (int, long) to hexString.
+
+**Syntax:**
+
+*String intLongToString(Long number[, int radix, boolean bigEndian, boolean pref])*
+
+**Parameters:**
+
+<ul>
+    <li><b>number:</b> <code>Number</code> - Format: Long.</li>
+    <li><b>radix:</b> <code>int</code> - optional radix to use when parsing to string format(BinaryString, OctalString, DecimalString, HexDecimalString). Default: DecimalString.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+</ul>
+
+**Return value:**
+
+A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
+
+**Examples:**
+
+```java
+intLongToString(58l, 2)                         // Returns "00111010"
+intLongToString(13158L, 8)                      // Returns "31546"
+intLongToString(-13158L, 8)                     // Returns "1777777777777777746232"
+intLongToString(-13158L, 10)                    // Returns ":"-13158"
+intLongToString(13158L, 16)                     // Returns "3366"
+intLongToString(-13158L, 16)                    // Returns"FFCC9A"
+intLongToString(-13158L, 16, true, true));      // Returns"0xFFCC9A"  
 ```
 {: .copy-code}
 
@@ -879,6 +944,67 @@ Alias for [parseHexToInt(hex, true)](#parsehextoint)
 
 *int parseBigEndianHexToInt(String hex)*
 
+#### parseHexToFloat
+
+Converts the hex string to float from HexString.
+
+**Syntax:**
+
+*Float parseHexToFloat(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+return parseHexToInt("BBAA"); // returns 48042
+return parseHexToInt("BBAA", true); // returns 48042
+return parseHexToInt("AABB", false); // returns 48042
+return parseHexToInt("BBAA", false); // returns 43707
+```
+{: .copy-code}
+
+#### parseHexIntLongToFloat
+
+
+#### parseHexToDouble
+
+Converts the hex string to float from HexInteger, HexLong or Bytes.
+
+**Syntax:**
+
+*int parseHexToInt(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+return parseHexToInt("BBAA"); // returns 48042
+return parseHexToInt("BBAA", true); // returns 48042
+return parseHexToInt("AABB", false); // returns 48042
+return parseHexToInt("BBAA", false); // returns 43707
+```
+{: .copy-code}
+
 #### toFixed
 
 Rounds the double value towards "nearest neighbor". 
@@ -955,6 +1081,11 @@ Hex string.
 return bytesToHex([-69, -86]); // returns "BBAA"
 ```
 {: .copy-code}
+
+
+#### parseBytesToFloat
+
+#### parseBytesIntToFloat
 
 #### bytesToBase64
 
