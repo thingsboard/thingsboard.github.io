@@ -8,6 +8,63 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v1.4.0 (August 19, 2024)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#118](https://github.com/thingsboard/tbmq/pull/118) Extended X.509 Certificate Chain authentication based on CN regex;
+* [#121](https://github.com/thingsboard/tbmq/pull/121) Added feature to limit the count of Application clients;
+* [#128](https://github.com/thingsboard/tbmq/pull/128) Added Device persisted messages rate limits;
+* [#132](https://github.com/thingsboard/tbmq/pull/132) Added rate limits for total incoming and outgoing messages per broker cluster;
+* [#144](https://github.com/thingsboard/tbmq/pull/144) New historical data for network traffic metric.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#119](https://github.com/thingsboard/tbmq/pull/119) Client sessions limit by using cache;
+  * [#125](https://github.com/thingsboard/tbmq/pull/125) Major versions update and vulnerabilities fixes;
+  * [#134](https://github.com/thingsboard/tbmq/pull/134) Added possibility to set Kafka prefix for all topics, producers, consumers, and consumer groups;
+  * [#135](https://github.com/thingsboard/tbmq/pull/135) Added possibility to set cache prefix for all keys;
+  * [#143](https://github.com/thingsboard/tbmq/pull/143) Improvements to the upgrade script logic.
+
+* UI:
+  * [#130](https://github.com/thingsboard/tbmq/pull/130) Update UI dependencies versions;
+  * [#146](https://github.com/thingsboard/tbmq/pull/146) Monitoring: added network traffic chart;
+  * [#137](https://github.com/thingsboard/tbmq/pull/137) Updates:
+    * Settings: added Connectivity, Security and General settings;
+    * Profile page: renamed to Account, added Security page with password configuration;
+    * Websocket client: added control over client activity logging in browser console;
+    * Websocket client: added Reset button in Publish properties dialog;
+    * Websocket connection: in add/edit dialogs added https/ws incompatibility warning;
+    * Home: updated Version card when no updates are available;
+    * Corrected browser tab titles;
+    * Basic client credentials: moved Change Password button to the top of details panel.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#123](https://github.com/thingsboard/tbmq/pull/123) NPE fix for get all shared subscriptions;
+  * [#124](https://github.com/thingsboard/tbmq/pull/124) Fix for subscription matching and message forwarding to subscribers;
+  * [#131](https://github.com/thingsboard/tbmq/pull/131) Fix for packet id sequence for publish messages.
+
+* UI:
+
+  * [#137](https://github.com/thingsboard/tbmq/pull/137) Fixes:
+    * Client credentials: fixed issue with non-clickable button in disabled mode;
+    * Websocket Client: fixed broken help link.
+
+**Important notice:**
+
+If you have previously overridden the default value of `JWT_TOKEN_SIGNING_KEY` in your configuration, 
+please be advised that you must now update your custom JWT token signing key to ensure it is at least 512 bits in length.
+Failure to comply with this update may result in authentication issues.
+
+Example of the value: _Qk1xUnloZ0VQTlF1VlNJQXZ4cWhiNWt1cVd1ZzQ5cWpENUhMSHlaYmZIM0JrZ2pPTVlhQ3N1Z0ZMUnd0SDBieg==_.
+
 ## v1.3.0 (April 3, 2024)
 
 Minor release with the following features, improvements, and bug fixes.

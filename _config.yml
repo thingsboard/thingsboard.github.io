@@ -92,6 +92,6 @@ release:
   # <<< EDGE
   ce_flutter_app_ver: 1.1.0
   pe_flutter_app_ver: 1.1.0
-  broker_full_ver: 1.3.0
-  broker_branch: release-1.3.0
+  broker_full_ver: 1.4.0
+  broker_branch: release-1.4.0
   trendz_ver: 1.11.0
