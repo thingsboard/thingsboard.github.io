@@ -132,9 +132,13 @@ if(map.?nonExistingKey.smth > 10){
 // Iterate through the map
 foreach(element : map.entrySet()){
     // Get the key
-    element.key
+        element.getKey();
+    //or 
+        element.key; 
     // Get the value
-    element.value;
+        element.getValue();
+    //or 
+        element.value;
 }
 
 // get Info
@@ -425,8 +429,20 @@ list = new java.util.ArrayList(); // Not allowed
 ```
 {: .copy-code}
 
-To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similarly to JS. For example:
-For the same purpose, we have added `Date` class that you are able to use without the package name.
+To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similarly to JS. 
+
+For example:
+
+```java
+var metadataStr = JSON.stringify(metadata);
+var metadata = JSON.parse(metadataStr);
+```
+{: .copy-code}
+
+For the same purpose:
+- Added [decodeToJson](#decodetojson)decodeToJson method.
+- Added [Date](#tbdate) class that can be used without a package name.
+- In the `tbel` library, the  [map](#maps) and [list](#lists) classes have extended the use of the main methods of these classes, as in java.
  
 #### Flow Control
 
@@ -587,143 +603,33 @@ var decodedData = atob(encodedData); // decode the string
 ```
 {: .copy-code}
 
-#### bytesToString
+#### toFixed
 
-Creates a string from the list of bytes
+Rounds the double value towards "nearest neighbor".
 
 **Syntax:**
 
-*String bytesToString(List<Byte> bytesList[, String charsetName])*
+*double toFixed(double value, int precision)*
 
 **Parameters:**
 
 <ul>
-  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
-  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF-8 by default.</li>
+  <li><b>value:</b> <code>double</code> - the double value.</li>
+  <li><b>precision:</b> <code>int</code> - the precision.</li>
 </ul>
 
 **Return value:**
 
-A string constructed from the specified byte list.
+Rounded double
 
 **Examples:**
 
 ```java
-var bytes = [0x48,0x45,0x4C,0x4C,0x4F];
-return bytesToString(bytes); // Returns "HELLO"
+return toFixed(0.345, 1); // returns 0.3
+return toFixed(0.345, 2); // returns 0.35
 ```
 {: .copy-code}
 
-#### numberToString
-
-Converts input number (int, long, float, double) to hexString.
-
-**Syntax:**
-
-*String intToHex(Integer i[, boolean bigEndian, boolean pref, int len])*
-*String longToHex(Long l[, boolean bigEndian, boolean pref, int len])*
-*String floatToHex(Float f[, boolean bigEndian])*
-*String doubleToHex(Double d[, boolean bigEndian])*
-
-**Parameters:**
-
-<ul>
-    <li><b>i, l, f, d:</b> <code>Number</code> - Format: Integer, Long, Float, Double.</li>
-    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
-    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
-    <li><b>len:</b> <code>int</code> - optional the number of bytes of the number to convert to text.</li>
-</ul>
-
-**Return value:**
-
-A string in HexDecimal format.
-
-**Examples:**
-
-```java
-var i = 0xFFD8FFA6 (4 292 411 302);
-intToHex(i, true, true);                        // Returns "0xFFD8FFA6"
-intToHex(171, true, false))                     // Returns "AB"
-intToHex(0xABCDEF, false, true, 4));            // Returns "0xCDAB"
-intToHex(0xABCD, false, false, 2)               // Returns "AB"
-
-longToHex(0xFFCEFFA6FFD8FFA6l, false, true));   // Returns "0xA6FFD8FFA6FFCEFF"
-longToHex(0xFFD8FFA6FFD8FFA6l, true, true, 4))  // Returns "0xFFA6"
-longToHex(0xFFD8FFA6FFD8FFA6l, false, false, 4))// Returns "0D8FF"
-
-floatToHex(123456789.00f)                       // Returns "0x4CEB79A3"
-floatToHex(123456789.00f, false)                // Returns "0xA379EB4C"
-
-doubleToHex(1729.1729d)                         // Returns "0x409B04B10CB295EA"
-doubleToHex(1729.1729d, false)                  // Returns "0xEA95B20CB1049B40"
-```
-{: .copy-code}
-
-#### intLongToString
-
-Converts input number (int, long) to hexString.
-
-**Syntax:**
-
-*String intLongToString(Long number[, int radix, boolean bigEndian, boolean pref])*
-
-**Parameters:**
-
-<ul>
-    <li><b>number:</b> <code>Number</code> - Format: Long.</li>
-    <li><b>radix:</b> <code>int</code> - optional radix to use when parsing to string format(BinaryString, OctalString, DecimalString, HexDecimalString). Default: DecimalString.</li>
-    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
-    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
-</ul>
-
-**Return value:**
-
-A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
-
-**Examples:**
-
-```java
-intLongToString(58l, 2)                         // Returns "00111010"
-intLongToString(13158L, 8)                      // Returns "31546"
-intLongToString(-13158L, 8)                     // Returns "1777777777777777746232"
-intLongToString(-13158L, 10)                    // Returns ":"-13158"
-intLongToString(13158L, 16)                     // Returns "3366"
-intLongToString(-13158L, 16)                    // Returns"FFCC9A"
-intLongToString(-13158L, 16, true, true));      // Returns"0xFFCC9A"  
-```
-{: .copy-code}
-
-#### decodeToString
-
-Alias for the [bytesToString](#bytestostring)
-
-#### decodeToJson
-
-Decodes a list of bytes to the JSON document.
-
-**Syntax:**
-
-*String decodeToJson(List<Byte> bytesList)*
-
-**Parameters:**
-
-<ul>
-  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
-</ul>
-
-**Return value:**
-
-A JSON object or primitive.
-
-**Examples:**
-
-```java
-var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}'
-var bytesStr = atob(base64Str);
-var bytes = stringToBytes(bytesStr);
-return decodeToJson(bytes); // Returns '{"hello": "world"}'
-```
-{: .copy-code}
 
 #### stringToBytes
 
@@ -769,7 +675,752 @@ return stringToBytes(dataJson.inputStr); // Returns  [104, 101, 108, 108, 111, 3
 ```
 {: .copy-code}
 
-#### parseInt
+#### bytesToString
+
+Creates a string from the list of bytes
+
+**Syntax:**
+
+*String bytesToString(List<Byte> bytesList[, String charsetName])*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF-8 by default.</li>
+</ul>
+
+**Return value:**
+
+A string constructed from the specified byte list.
+
+**Examples:**
+
+```java
+var bytes = [0x48,0x45,0x4C,0x4C,0x4F];
+return bytesToString(bytes); // Returns "HELLO"
+```
+{: .copy-code}
+
+#### decodeToString
+
+Alias for the [bytesToString](#bytestostring)
+
+#### decodeToJson
+
+Decodes a list of bytes to the JSON document.
+
+**Syntax:**
+
+*String decodeToJson(List<Byte> bytesList)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+</ul>
+
+**Return value:**
+
+A JSON object or primitive.
+
+**Examples:**
+
+```java
+var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}'
+var bytesStr = atob(base64Str);
+var bytes = stringToBytes(bytesStr);
+return decodeToJson(bytes); // Returns '{"hello": "world"}'
+```
+{: .copy-code}
+
+#### isTypeInValue
+##### isBinary
+
+##### isOctal
+
+##### isDecimal
+
+##### isHexadecimal
+
+#### encodeUri
+
+#### decodeUri
+
+#### raiseError
+
+#### printUnsignedBytes
+
+#### pad
+##### padStart
+
+##### padEnd
+
+#### numberToRadixString
+##### intToHex
+##### longToHex
+##### floatToHex
+##### doubleToHex
+
+Converts input number (int, long, float, double) to hexString.
+
+**Syntax:**
+
+*String intToHex(Integer i[, boolean bigEndian, boolean pref, int len])*
+*String longToHex(Long l[, boolean bigEndian, boolean pref, int len])*
+*String floatToHex(Float f[, boolean bigEndian])*
+*String doubleToHex(Double d[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+    <li><b>i, l, f, d:</b> <code>Number</code> - Format: Integer, Long, Float, Double.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+    <li><b>len:</b> <code>int</code> - optional the number of bytes of the number to convert to text.</li>
+</ul>
+
+**Return value:**
+
+A string in HexDecimal format.
+
+**Examples:**
+
+```java
+var i = 0xFFD8FFA6 (4 292 411 302);
+intToHex(i, true, true);                        // Returns "0xFFD8FFA6"
+intToHex(171, true, false))                     // Returns "AB"
+intToHex(0xABCDEF, false, true, 4));            // Returns "0xCDAB"
+intToHex(0xABCD, false, false, 2)               // Returns "AB"
+
+longToHex(0xFFCEFFA6FFD8FFA6l, false, true));   // Returns "0xA6FFD8FFA6FFCEFF"
+longToHex(0xFFD8FFA6FFD8FFA6l, true, true, 4))  // Returns "0xFFA6"
+longToHex(0xFFD8FFA6FFD8FFA6l, false, false, 4))// Returns "0D8FF"
+
+floatToHex(123456789.00f)                       // Returns "0x4CEB79A3"
+floatToHex(123456789.00f, false)                // Returns "0xA379EB4C"
+
+doubleToHex(1729.1729d)                         // Returns "0x409B04B10CB295EA"
+doubleToHex(1729.1729d, false)                  // Returns "0xEA95B20CB1049B40"
+```
+{: .copy-code}
+
+##### intLongToRadixString
+
+Converts input number (int, long) to radix String (default Dec).
+
+**Syntax:**
+
+*String intLongToRadixString(Long number[, int radix, boolean bigEndian, boolean pref])*
+
+**Parameters:**
+
+<ul>
+    <li><b>number:</b> <code>Number</code> - Format: Long.</li>
+    <li><b>radix:</b> <code>int</code> - optional radix to use when parsing to string format(BinaryString, OctalString, DecimalString, HexDecimalString). Default: DecimalString.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+</ul>
+
+**Return value:**
+
+A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
+
+**Examples:**
+
+```java
+intLongToRadixString(58l, 2)                         // Returns "00111010"
+intLongToRadixString(13158L, 8)                      // Returns "31546"
+intLongToRadixString(-13158L, 8)                     // Returns "1777777777777777746232"
+intLongToRadixString(-13158L, 10)                    // Returns ":"-13158"
+intLongToRadixString(13158L, 16)                     // Returns "3366"
+intLongToRadixString(-13158L, 16)                    // Returns"FFCC9A"
+intLongToRadixString(-13158L, 16, true, true));      // Returns"0xFFCC9A"  
+```
+{: .copy-code}
+
+#### parseHex
+##### parseHexToInt
+
+Converts the hex string to integer.
+
+**Syntax:**
+
+*int parseHexToInt(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> -  optional the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+return parseHexToInt("BBAA");        // returns 48042
+return parseHexToInt("BBAA", true);  // returns 48042
+return parseHexToInt("AABB", false); // returns 48042
+return parseHexToInt("BBAA", false); // returns 43707
+```
+{: .copy-code}
+
+###### parseLittleEndianHexToInt
+
+Alias for [parseHexToInt(hex, false)](#parsehextoint)
+
+**Syntax:**
+
+*int parseLittleEndianHexToInt(String hex)*
+
+###### parseBigEndianHexToInt
+
+Alias for [parseHexToInt(hex, true)](#parsehextoint)
+
+**Syntax:**
+
+*int parseBigEndianHexToInt(String hex)*
+
+##### parseHexToFloat
+
+Converts the hex string to float from HexString.
+
+**Syntax:**
+
+*Float parseHexToFloat(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> -  optional the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed float value.
+
+**Examples:**
+
+```java
+return parseHexToFloat("41EA62CC");         // returns 29.29824f
+return parseHexToFloat("41EA62CC", true);   // returns 29.29824f
+return parseHexToFloat("41EA62CC", false);  // returns -5.948442E7f
+return parseHexToFloat("CC62EA41", false);  // returns 29.29824f
+```
+{: .copy-code}
+
+###### parseLittleEndianHexToFloat
+
+Alias for [parseHexToFloat(hex, false)](#parsehextofloat)
+
+**Syntax:**
+
+*float parseLittleEndianHexToFloat(String hex)*
+
+###### parseBigEndianHexToFloat
+
+Alias for [parseBigEndianHexToFloat(hex, true)](#parsehextofloat)
+
+**Syntax:**
+
+*float parseBigEndianHexToFloat(String hex)*
+
+##### parseHexIntLongToFloat
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *10.0f*:
+- In this method, we process it as an integer.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts the hex string to float from HexString.
+
+**Syntax:**
+
+*Float parseHexIntLongToFloat(String hex, boolean bigEndian)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed float value.
+
+**Examples:**
+
+```java
+return parseHexIntLongToFloat("0x0A", true);         // returns 10.0f
+return parseHexIntLongToFloat("0x0A", false);        // returns 10.0f
+return parseHexIntLongToFloat"0x00000A", true);      // returns 10.0f
+return parseHexIntLongToFloat("0x0A0000", false);    // returns 10.0f
+return parseHexIntLongToFloat("0x000A0A", true);     // returns 12570.0f
+return parseHexIntLongToFloat("0x0A0A00", false);    // returns 2570.0f
+```
+{: .copy-code}
+
+##### parseHexToDouble
+
+Converts the hex string to Double.
+
+**Syntax:**
+
+*int parseHexToDouble(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed double value.
+
+**Examples:**
+
+```java
+return parseHexToDouble("409B04B10CB295EA");            // returns 1729.1729
+return parseHexToDouble("409B04B10CB295EA" false);      // returns -2.7208640774822924E205
+return parseHexToDouble("409B04B10CB295EA" true);       // returns 1729.1729
+return parseHexToDouble("EA95B20CB1049B40" false);      // returns 1729.1729
+```
+{: .copy-code}
+
+###### parseLittleEndianHexToDouble
+
+Alias for [parseHexToDouble(hex, false)](#parsehextodouble)
+
+**Syntax:**
+
+*double parseLittleEndianHexToDouble(String hex)*
+
+###### parseBigEndianHexToDouble
+
+Alias for [parseBigEndianHexToDouble(hex, true)](#parsehextodouble)
+
+**Syntax:**
+
+*double parseBigEndianHexToDouble(String hex)*
+
+##### hexToBytes
+
+Converts the hex string to list of integer values, where each integer represents single byte.
+
+**Syntax:**
+
+*List<Integer> hexToBytes(String hex)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+</ul>
+
+**Return value:**
+
+Parsed list of integer values.
+
+**Examples:**
+
+```java
+return hexToBytes("BBAA"); // returns [-69, -86]
+```
+{: .copy-code}
+
+#### parseBytes
+##### bytesToHex
+
+Converts the list of integer values, where each integer represents a single byte, to the hex string.
+
+**Syntax:**
+
+*String bytesToHex(List<Integer> bytes)*
+*String bytesToHex(byte[] bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>byte[]</code> or <code>List of integer</code> - the byte array or the list of integer values, where each integer represents a single byte</li>
+</ul>
+
+**Return value:**
+
+Hex string.
+
+**Examples:**
+
+```java
+var bytes = [0xBB, 0xAA];
+return bytesToHex( bytes); // returns "BBAA"
+var list = [-69, 83];
+return bytesToHex(list);   // returns "BB53"
+```
+{: .copy-code}
+
+##### parseBytesToInt
+
+Parses int from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*int parseBytesToInt([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+integer value.
+
+**Examples:**
+
+```java
+var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
+return parseBytesToInt(bytes, 0, 3); // returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(bytes, 0, 3, true); // returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(bytes, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
+```
+{: .copy-code}
+
+##### parseBytesToFloat
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *1.4E-44f*:
+- In this method, we process it as an float.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+
+Parses float from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*int parseBytesToFloat([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+float value.
+
+**Examples:**
+
+```java
+var bytes = [0x0A];
+return parseBytesToFloat(bytes);                       // returns 1.4E-44f  
+var floatValByte = [0x41, 0xEA, 0x62, 0xCC];
+return parseBytesToFloat(floatValByte, 0);             // returns 29.29824f  
+return parseBytesToFloat(floatValByte, 0, 2, false);   // returns 8.4034E-41f 
+return parseBytesToFloat(floatValByte, 0, 2, true);    // returns 2.3646E-41f 
+return parseBytesToFloat(floatValByte, 0, 3, false);   // returns 9.083913E-39f  
+return parseBytesToFloat(floatValByte, 0, 3, true);    // returns 6.053388E-39f  
+return parseBytesToFloat(floatValByte, 0, 4, false);   // returns -5.948442E7f  
+var floatValList = [65, -22, 98, -52];
+return parseBytesToFloat(floatValList, 0);             // returns 29.29824f  
+return parseBytesToFloat(floatValList, 0, 4, false);   // returns -5.948442E7f 
+
+```
+{: .copy-code}
+
+##### parseBytesIntToFloat
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *10.0f*, *"0x0A00"* for *2560.0f*:
+- In this method, we process it as an integer.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts the hex string to float from HexString.
+
+Parses float from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*int parseBytesToFloat([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+float value.
+
+**Examples:**
+
+```java
+var intValByte = [0x00, 0x00, 0x00, 0x0A];
+return parseBytesIntToFloat(intValByte, 3, 1, true);     // returns 10.0f
+return parseBytesIntToFloat(intValByte, 3, 1, false);    // returns 10.0f
+return parseBytesIntToFloat(intValByte, 2, 2, true);     // returns 10.0f
+return parseBytesIntToFloat(intValByte, 2, 2, false);    // returns 2560.0f
+return parseBytesIntToFloat(intValByte, 0, 4, true);     // returns 10.0f 
+return parseBytesIntToFloat(intValByte, 0, 4, false);    // returns 1.6777216E8f
+```
+
+**Examples (latitude, longitude):**
+
+```java
+var dataAT101 = "0x01756403671B01048836BF7701F000090722050000";
+var byteAT101 = hexToBytes(dataAT101);
+var offset = 9;
+return parseBytesIntToFloat(byteAT101, offset, 4, false) / 1000000;     // returns 24.62495f
+return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // returns 118.030576f
+
+```
+
+##### parseBytesLongToDouble
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *10.0f*, *"0x0A00"* for *2'560.0f*, *"0x0A0A0A0A"* for *168'430'090.0f*:
+- In this method, we process it as an long.
+- Using double has enough precision for accurate lat/lon down to inches for 6-7 decimal places.
+- The 6th decimal place  for lat/lon is for sub-foot accuracy.
+  {% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts the hex string to double from HexString.
+
+Parses double from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*int parseBytesToDouble([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+double value.
+
+{% capture difference %}
+**Note**:
+<br>
+Using double has enough precision for accurate lat/lon down to inches for 6-7 decimal places.
+The 6th decimal place  for lat/lon is for sub-foot accuracy.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+**Examples (latitude, longitude):**
+
+```java
+var dataPalacKiyv = "0x32D009423F23B300B0106E08D96B6C00";
+var bytePalacKiyv = hexToBytes(dataPalacKiyv);
+var offset = 0;
+var factor = 1e15;
+return parseBytesLongToDouble(bytePalacKiyv, offset, 8, false) / factor;     // returns 50.422775429058610d, latitude
+return parseBytesLongToDouble(bytePalacKiyv, offset + 8, 8, false) / factor; // returns 30.517877378257072d, longitude
+
+```
+
+##### bytesToExecutionArrayList
+
+Convert byte Array to Execution Arra yList. from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*ExecutionArrayList<Byte> bytesToExecutionArrayList([byte[] bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>byte[]</code> - the byte array.</li>
+</ul>
+
+**Return value:**
+
+ExecutionArrayList<Byte> value.
+
+**Examples:**
+
+```java
+var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
+return bytesToExecutionArrayList(bytes); // returns ExecutionArrayList<Byte> value with size = 4,  includes: [-86, -69, -52, -35]
+```
+{: .copy-code}
+
+
+#### parseBinaryArray
+##### parseByteToBinaryArray
+
+Converts the byte to binary array.
+
+Parses  one byte to binary array from the byte given the optional binLength and endianness.
+
+**Syntax:**
+
+*byte[] parseByteToBinaryArray(byte byteValue[, int binLength, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>byteValue:</b> <code>byte</code>  - the byte value.</li>
+  <li><b>binLength:</b> <code>int</code> - the length of the output binary array.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+byte[] value.
+
+**Examples:**
+
+```java
+var byteVal = 0x39;
+return parseByteToBinaryArray(byteVal);               // returns byte[8] value => [0, 0, 1, 1, 1, 0, 0, 1]
+return parseByteToBinaryArray(byteVal, 3);            // returns byte[3] value => [0, 0, 1]
+return parseByteToBinaryArray(byteVal, 8, false);     // returns byte[8] value => [1, 0, 0, 1, 1, 1, 0, 0]
+return parseByteToBinaryArray(byteVal, 5, false);     // returns byte[5] value => [1, 0, 0, 1, 1]
+return parseByteToBinaryArray(byteVal, 4, false);     // returns byte[4] value => [1, 0, 0, 1]        
+return parseByteToBinaryArray(byteVal, 3, false);     // returns byte[3] value => [1, 0, 0]
+
+var value = parseByteToBinaryArray(byteVal, 6, false);     // returns byte[6] value => [1, 0, 0, 1, 1, 1]
+var actualLowCurrent1Alarm = value[0];
+var actualHighCurrent1Alarm = value[1];
+var actualLowCurrent2Alarm = value[2];
+var actualHighCurrent2Alarm = value[3];
+var actualLowCurrent3Alarm = value[4];
+var actualHighCurrent3Alarm = value[5];
+
+```
+
+##### parseBytesToBinaryArray
+
+Converts the byte Array to binary array.
+
+Parses  the byte Array to binary Array from the byte Array/List given the  binLength.
+
+**Syntax:**
+
+*byte[] parseBytesToBinaryArray(byte byteValue, int binLength)*
+*byte[] parseBytesToBinaryArray(List listValue, int binLength)*
+
+**Parameters:**
+
+<ul>
+  <li><b>byteValue:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>binLength:</b> <code>int</code> - the length of the output binary array.</li>
+</ul>
+
+**Return value:**
+
+byte[] value.
+
+**Examples:**
+
+```java
+var bytesVal = [0xCE, 0xB2];
+return parseByteToBinaryArray(bytesVal);              // returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(bytesVal, 15);          // returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(bytesVal, 14);          // returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(bytesVal, 2);           // returns byte[2]  value =>                                           [1, 0]
+
+```
+
+##### parseLongToBinaryArray
+
+Converts the long value to binary array.
+
+Parses the long value to binary Array from the long value given the binLength.
+
+**Syntax:**
+
+*byte[] parseLongToBinaryArray(long longValue, int binLength)*
+
+**Parameters:**
+
+<ul>
+   <li><b>longValue:</b> <code>long</code> - the long value.</li>
+  <li><b> binLength:</b> <code>int</code> - the length of the output binary array.</li>
+</ul>
+
+**Return value:**
+
+byte[] value.
+
+**Examples:**
+
+```java
+var longValue = 52914L;
+return parseByteToBinaryArray(longValue);        // returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(longValue, 16);    // returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+
+```
+
+##### parseBinaryArrayToInt
+
+Converts the binary array to int value from the binary array.
+
+Parses the binary array to int value from the binary array given optional the offset, length and endianness.
+
+**Syntax:**
+
+*int parseBinaryArrayToInt([byte[] or List<Byte>] data[, int offset, int length])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - the length in bytes.</li>
+</ul>
+
+**Return value:**
+
+int value.
+
+**Examples:**
+
+```java
+return parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1]);                   // returns -97
+var actualVolt =  parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // returns 31
+```
+
+#### parseNumber
+##### parseInt
 
 Converts input string to integer.
 
@@ -807,7 +1458,7 @@ return parseInt("Kona", 27) // returns 411787
 ```
 {: .copy-code}
 
-#### parseLong
+##### parseLong
 
 Converts input string to long.
 
@@ -849,7 +1500,7 @@ return parseLong("KonaLong", 16) throws a NumberFormatException
 ```
 {: .copy-code}
 
-#### parseFloat
+##### parseFloat
 
 Converts input string to float.
 
@@ -874,7 +1525,7 @@ return parseFloat("4.2"); // returns 4.2
 ```
 {: .copy-code}
 
-#### parseDouble
+##### parseDouble
 
 Converts input string to double.
 
@@ -899,220 +1550,8 @@ return parseDouble("4.2"); // returns 4.2
 ```
 {: .copy-code}
 
-#### parseHexToInt
-
-Converts the hex string to integer.
-
-**Syntax:**
-
-*int parseHexToInt(String hex[, boolean bigEndian])*
-
-**Parameters:**
-
-<ul>
-  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
-  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
-</ul>
-
-**Return value:**
-
-Parsed integer value.
-
-**Examples:**
-
-```java
-return parseHexToInt("BBAA"); // returns 48042
-return parseHexToInt("BBAA", true); // returns 48042
-return parseHexToInt("AABB", false); // returns 48042
-return parseHexToInt("BBAA", false); // returns 43707
-```
-{: .copy-code}
-
-#### parseLittleEndianHexToInt
-
-Alias for [parseHexToInt(hex, false)](#parsehextoint)
-
-**Syntax:**
-
-*int parseLittleEndianHexToInt(String hex)*
-
-#### parseBigEndianHexToInt
-
-Alias for [parseHexToInt(hex, true)](#parsehextoint)
-
-**Syntax:**
-
-*int parseBigEndianHexToInt(String hex)*
-
-#### parseHexToFloat
-
-Converts the hex string to float from HexString.
-
-**Syntax:**
-
-*Float parseHexToFloat(String hex[, boolean bigEndian])*
-
-**Parameters:**
-
-<ul>
-  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
-  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
-</ul>
-
-**Return value:**
-
-Parsed integer value.
-
-**Examples:**
-
-```java
-return parseHexToInt("BBAA"); // returns 48042
-return parseHexToInt("BBAA", true); // returns 48042
-return parseHexToInt("AABB", false); // returns 48042
-return parseHexToInt("BBAA", false); // returns 43707
-```
-{: .copy-code}
-
-#### parseHexIntLongToFloat
-
-
-#### parseHexToDouble
-
-Converts the hex string to float from HexInteger, HexLong or Bytes.
-
-**Syntax:**
-
-*int parseHexToInt(String hex[, boolean bigEndian])*
-
-**Parameters:**
-
-<ul>
-  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
-  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
-</ul>
-
-**Return value:**
-
-Parsed integer value.
-
-**Examples:**
-
-```java
-return parseHexToInt("BBAA"); // returns 48042
-return parseHexToInt("BBAA", true); // returns 48042
-return parseHexToInt("AABB", false); // returns 48042
-return parseHexToInt("BBAA", false); // returns 43707
-```
-{: .copy-code}
-
-#### toFixed
-
-Rounds the double value towards "nearest neighbor". 
-
-**Syntax:**
-
-*double toFixed(double value, int precision)*
-
-**Parameters:**
-
-<ul>
-  <li><b>value:</b> <code>double</code> - the double value.</li>
-  <li><b>precision:</b> <code>int</code> - the precision.</li>
-</ul>
-
-**Return value:**
-
-Rounded double
-
-**Examples:**
-
-```java
-return toFixed(0.345, 1); // returns 0.3
-return toFixed(0.345, 2); // returns 0.35
-```
-{: .copy-code}
-
-#### hexToBytes
-
-Converts the hex string to list of integer values, where each integer represents single byte.
-
-**Syntax:**
-
-*List<Integer> hexToBytes(String hex)*
-
-**Parameters:**
-
-<ul>
-  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
-</ul>
-
-**Return value:**
-
-Parsed list of integer values.
-
-**Examples:**
-
-```java
-return hexToBytes("BBAA"); // returns [-69, -86]
-```
-{: .copy-code}
-
-#### bytesToHex
-
-Converts the list of integer values, where each integer represents a single byte, to the hex string.
-
-**Syntax:**
-
-*String bytesToHex(List<Integer> bytes)*
-
-**Parameters:**
-
-<ul>
-  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
-</ul>
-
-**Return value:**
-
-Hex string.
-
-**Examples:**
-
-```java
-return bytesToHex([-69, -86]); // returns "BBAA"
-```
-{: .copy-code}
-
-
-#### parseBytesToFloat
-
-#### parseBytesIntToFloat
-
-#### bytesToBase64
-
-Converts the byte array, to Base64 string.
-
-**Syntax:**
-
-*String bytesToBase64(byte[] bytes)*
-
-**Parameters:**
-
-<ul>
-  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
-</ul>
-
-**Return value:**
-
-Base64 string.
-
-**Examples:**
-
-```java
-return bytesToBase64([42, 73]); // returns "Kkk="
-```
-{: .copy-code}
-
-#### base64ToHex
+#### base64
+##### base64ToHex
 
 Decodes the Base64 string, to hex string.
 
@@ -1137,7 +1576,32 @@ return base64ToHex("Kkk="); // returns "2A49"
 ```
 {: .copy-code}
 
-#### base64ToBytes
+##### bytesToBase64
+
+Converts the byte array, to Base64 string.
+
+**Syntax:**
+
+*String bytesToBase64(byte[] bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
+</ul>
+
+**Return value:**
+
+Base64 string.
+
+**Examples:**
+
+```java
+return bytesToBase64([42, 73]); // returns "Kkk="
+```
+{: .copy-code}
+
+##### base64ToBytes
 
 Decodes the Base64 string, to byte array.
 
@@ -1159,35 +1623,6 @@ Byte array.
 
 ```java
 return base64ToBytes("Kkk="); // returns [42, 73]
-```
-{: .copy-code}
-
-#### parseBytesToInt
-
-Parses int from the byte array given the offset, length and optional endianness.
-
-**Syntax:**
-
-*int parseBytesToInt([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
-
-**Parameters:**
-
-<ul>
-  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
-  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
-</ul>
-
-**Return value:**
-
-integer value.
-
-**Examples:**
-
-```java
-return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, true); // returns 11189196 in Decimal or 0xAABBCC  
-return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
 ```
 {: .copy-code}
 
