@@ -842,16 +842,21 @@ return isHexadecimal("K100110"); // Returns -1
 {: .copy-code}
 
 #### encodeDecodeUri
+##### encodeURI
 {% capture difference %}
 **Note**:
 <br>
 The encodeURI() function:
-- The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format %XX, left-padded with 0 if necessary.
-- Because lone surrogates in UTF-16 do not encode any valid Unicode character, they cause encodeURI() to throw a [URIError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError).
+- The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format ***%XX***, left-padded with 0 if necessary. Because lone surrogates in UTF-16 do not encode any valid Unicode character.
+- The Tbel library uses most of the standard JavaScript methods from the [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
- 
-##### encodeURI
+
+- *encodeURI()* escapes all characters except:
+
+```java
+A–Z a–z 0–9 - _ . ! ~ * ' ( ) ; / ? : @ & = + $ , #
+```
 
 **Syntax:**
 
@@ -860,12 +865,12 @@ The encodeURI() function:
 **Parameters:**
 
 <ul>
-  <li><b>uri:</b> <code>String</code> - Charset name. UTF-8 by default.</li>
+  <li><b>uri:</b> <code>String</code> - A string to be encoded as a URI.</li>
 </ul>
 
 **Return value:**
 
-String value 
+A new string representing the provided string encoded as a URI.
 
 **Examples:**
 
@@ -876,6 +881,14 @@ return encodeURI(uriOriginal); // Returns "-_.!~*'();/?:@&=+$,#ht://example.%D0%
 {: .copy-code}
 
 ##### decodeURI
+{% capture difference %}
+**Note**:
+<br>
+The decodeURI() function:
+- The decodeURI() function decodes a Uniform Resource Identifier (URI) previously created by encodeURI() or a similar routine.
+- The Tbel library uses most of the standard JavaScript methods from the [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 **Syntax:**
 
@@ -884,12 +897,12 @@ return encodeURI(uriOriginal); // Returns "-_.!~*'();/?:@&=+$,#ht://example.%D0%
 **Parameters:**
 
 <ul>
-  <li><b>uri:</b> <code>String</code> - Charset name. UTF-8 by default.</li>
+  <li><b>uri:</b> <code>String</code> - A complete, encoded Uniform Resource Identifier.</li>
 </ul>
 
 **Return value:**
 
-String value
+A new string representing the unencoded version of the given encoded Uniform Resource Identifier (URI).
 
 **Examples:**
 
