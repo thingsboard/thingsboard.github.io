@@ -737,24 +737,291 @@ return decodeToJson(bytes); // Returns '{"hello": "world"}'
 #### isTypeInValue
 ##### isBinary
 
+Validates a String value to be a binary radix.
+
+**Syntax:**
+
+*int isBinary(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a binary number. UTF-8 is the default character set.</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '2' if the string is binary.
+- '-1' if the string is not binary.
+
+**Examples:**
+
+```java
+return isBinary("1100110"); // Returns 2
+return isBinary("2100110"); // Returns -1
+```
+{: .copy-code}
+
 ##### isOctal
+
+**Syntax:**
+
+*int isOctal(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a octal number. UTF-8 is the default character set.</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '8' if the string is octal.
+- '-1' if the string is not octal.
+
+**Examples:**
+
+```java
+return isOctal("4567734"); // Returns 8
+return isOctal("8100110"); // Returns -1
+```
+{: .copy-code}
 
 ##### isDecimal
 
+**Syntax:**
+
+*int isDecimal(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a decimal number. UTF-8 is the default character set..</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '10' if the string is decimal.
+- '-1' if the string is not decimal.
+
+**Examples:**
+
+```java
+return isDecimal("4567039"); // Returns 10
+return isDecimal("C100110"); // Returns -1
+```
+{: .copy-code}
+
 ##### isHexadecimal
 
-#### encodeUri
+**Syntax:**
 
-#### decodeUri
+*int isHexadecimal(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a hexadecimal number. UTF-8 is the default character set.</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '16' if the string is hexadecimal.
+- '-1' if the string is not hexadecimal.
+
+**Examples:**
+
+```java
+return isHexadecimal("F5D7039"); // Returns 16
+return isHexadecimal("K100110"); // Returns -1
+```
+{: .copy-code}
+
+#### encodeDecodeUri
+{% capture difference %}
+**Note**:
+<br>
+The encodeURI() function:
+- The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format %XX, left-padded with 0 if necessary.
+- Because lone surrogates in UTF-16 do not encode any valid Unicode character, they cause encodeURI() to throw a [URIError](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+ 
+##### encodeURI
+
+**Syntax:**
+
+*String encodeURI(String uri)*
+
+**Parameters:**
+
+<ul>
+  <li><b>uri:</b> <code>String</code> - Charset name. UTF-8 by default.</li>
+</ul>
+
+**Return value:**
+
+String value 
+
+**Examples:**
+
+```java
+var uriOriginal = "-_.!~*'();/?:@&=+$,#ht://example.ж д a/path with spaces/?param1=Київ 1&param2=Україна2";
+return encodeURI(uriOriginal); // Returns "-_.!~*'();/?:@&=+$,#ht://example.%D0%B6%20%D0%B4%20a/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02"
+```
+{: .copy-code}
+
+##### decodeURI
+
+**Syntax:**
+
+*String decodeURI(String uri)*
+
+**Parameters:**
+
+<ul>
+  <li><b>uri:</b> <code>String</code> - Charset name. UTF-8 by default.</li>
+</ul>
+
+**Return value:**
+
+String value
+
+**Examples:**
+
+```java
+var uriEncode = "-_.!~*'();/?:@&=+$,#ht://example.%D0%B6%20%D0%B4%20a/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02";
+return decodeURI(uriEncode); // Returns "-_.!~*'();/?:@&=+$,#ht://example.ж д a/path with spaces/?param1=Київ 1&param2=Україна2"
+```
+{: .copy-code}
 
 #### raiseError
 
+**Syntax:**
+
+*void raiseError(String message[, Object value])*
+
+**Parameters:**
+
+<ul>
+  <li><b>message:</b> <code>String</code> - Info about Exception message.</li>
+  <li><b>value:</b> <code>Object</code> -  optional, the value that causes the error.</li>
+</ul>
+
+**Return value:**
+
+new RuntimeException with msg = message + [" A value of " + value + " is invalid."]
+
+**Examples:**
+
+```java
+var message = "frequency_weighting_type must be 0, 1 or 2";
+return raiseError(message);        // Returns "frequency_weighting_type must be 0, 1 or 2."
+var value = 4;        
+return raiseError(message, value); // Returns "frequency_weighting_type must be 0, 1 or 2. A value of 4 is invalid."
+```
+{: .copy-code}
+
 #### printUnsignedBytes
+
+Convert List<Signed byte> to List<Unsigned integer>
+
+**Syntax:**
+
+*List<Integer> printUnsignedBytes(List<Byte> byteArray)*
+
+**Parameters:**
+
+<ul>
+  <li><b>byteArray:</b> <code>List of byte</code> - the  list of byte values, where each integer represents a single byte</li>
+</ul>
+
+**Return value:**
+
+List<Integer>
+
+**Examples:**
+
+```java
+var listBe = [-40, -1];
+var listLe = [-1, -40];
+return printUnsignedBytes(listBe);        // Returns [255, 216]
+return printUnsignedBytes(listBe);        // Returns [216, 255]
+```
+{: .copy-code}
 
 #### pad
 ##### padStart
+- Pads this string with another string (multiple times, if needed) until the resulting string reaches the given length. 
+- The padding is applied from the start of this string.
+
+**Syntax:**
+
+*String padEnd(String str, int targetLength, char padString)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - String values pads this string with a given string (repeated, if needed)</li>
+  <li><b>targetLength:</b> <code>List of byte</code> - The length of the resulting string once the current str has been padded. If the value is less than or equal to str.length, then str is returned as-is.</li>
+  <li><b>padString:</b> <code>List of byte</code> - The string to pad the current str with. If padString is too long to stay within the targetLength, it will be truncated from the end.</li>
+</ul>
+
+**Return value:**
+
+String
+
+**Examples:**
+
+```java
+var str = "010011";
+return padStart(str, 8, '0');                           // Returns  "00010011"
+var str ="1001010011";        
+return padStart(str, 8, '0');                           // Returns  "1001010011"
+return padStart(str, 16, '*');                          // Returns  "******1001010011"
+var fullNumber = "203439900FFCD5581";
+var last4Digits = fullNumber.substring(11);
+return padStart(last4Digits, fullNumber.length(), '*'); // Returns "***********CD5581"
+```
+{: .copy-code}
 
 ##### padEnd
+- Pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length. 
+- The padding is applied from the end of this string.
+
+**Syntax:**
+
+*String padEnd(String str, int targetLength, char padString)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - String values pads this string with a given string (repeated, if needed)</li>
+  <li><b>targetLength:</b> <code>List of byte</code> - The length of the resulting string once the current str has been padded. If the value is less than or equal to str.length, the current string will be returned as-is.</li>
+  <li><b>padString:</b> <code>List of byte</code> - The string to pad the current str with. If padString is too long to stay within targetLength, it will be truncated: for left-to-right languages the left-most part and for right-to-left languages the right-most will be applied.</li>
+</ul>
+
+**Return value:**
+
+String
+
+**Examples:**
+
+```java
+var str = "010011";
+return padEnd(str, 8, '0');                           // Returns  "01001100"
+var str ="1001010011";        
+return padEnd(str, 8, '0');                           // Returns  "1001010011"
+return padEnd(str, 16, '*');                          // Returns  "1001010011******"
+var fullNumber = "203439900FFCD5581";
+var last4Digits = fullNumber.substring(11);
+return padEnd(last4Digits, fullNumber.length(), '*'); // Returns "203439900FF******"
+```
+{: .copy-code}
 
 #### numberToRadixString
 ##### intToHex
@@ -775,9 +1042,9 @@ Converts input number (int, long, float, double) to hexString.
 
 <ul>
     <li><b>i, l, f, d:</b> <code>Number</code> - Format: Integer, Long, Float, Double.</li>
-    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
-    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
-    <li><b>len:</b> <code>int</code> - optional the number of bytes of the number to convert to text.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional, the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional, the format output with "0x". Default: false</li>
+    <li><b>len:</b> <code>int</code> - optional, the number of bytes of the number to convert to text.</li>
 </ul>
 
 **Return value:**
@@ -1075,14 +1342,14 @@ Parses int from the byte array given the offset, length and optional endianness.
 
 **Syntax:**
 
-*int parseBytesToInt([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+*int parseBytesToInt([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
 
 **Parameters:**
 
 <ul>
   <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
   <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
 </ul>
 
@@ -1097,6 +1364,37 @@ var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
 return parseBytesToInt(bytes, 0, 3); // returns 11189196 in Decimal or 0xAABBCC  
 return parseBytesToInt(bytes, 0, 3, true); // returns 11189196 in Decimal or 0xAABBCC  
 return parseBytesToInt(bytes, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
+```
+{: .copy-code}
+
+##### parseBytesToLong
+
+Parses long from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*int parseBytesToInt([byte[] or List<Byte>] data[,int offset, int length, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+long value.
+
+**Examples:**
+
+```java
+var longValByte = [64, -101, 4, -79, 12, -78, -107, -22];
+return parseBytesToLong(longValByte, 0, 8);         // returns 4655319798286292458L  == 0x409B04B10CB295EAL  
+return parseBytesToLong(longValByte, 0, 8, false);  // returns -1543131529725306048L == 0xEA95B20CB1049B40L  
+
 ```
 {: .copy-code}
 
@@ -1115,14 +1413,14 @@ Parses float from the byte array given the offset, length and optional endiannes
 
 **Syntax:**
 
-*int parseBytesToFloat([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+*int parseBytesToFloat([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
 
 **Parameters:**
 
 <ul>
   <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
   <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
 </ul>
 
@@ -1165,14 +1463,14 @@ Parses float from the byte array given the offset, length and optional endiannes
 
 **Syntax:**
 
-*int parseBytesToFloat([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+*int parseBytesToFloat([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
 
 **Parameters:**
 
 <ul>
   <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
   <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
 </ul>
 
@@ -1191,6 +1489,7 @@ return parseBytesIntToFloat(intValByte, 2, 2, false);    // returns 2560.0f
 return parseBytesIntToFloat(intValByte, 0, 4, true);     // returns 10.0f 
 return parseBytesIntToFloat(intValByte, 0, 4, false);    // returns 1.6777216E8f
 ```
+{: .copy-code}
 
 **Examples (latitude, longitude):**
 
@@ -1202,6 +1501,7 @@ return parseBytesIntToFloat(byteAT101, offset, 4, false) / 1000000;     // retur
 return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // returns 118.030576f
 
 ```
+{: .copy-code}
 
 ##### parseBytesLongToDouble
 
@@ -1221,14 +1521,14 @@ Parses double from the byte array given the offset, length and optional endianne
 
 **Syntax:**
 
-*int parseBytesToDouble([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+*int parseBytesToDouble([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
 
 **Parameters:**
 
 <ul>
   <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>offset:</b> <code>int</code> -optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
   <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
 </ul>
 
@@ -1255,6 +1555,7 @@ return parseBytesLongToDouble(bytePalacKiyv, offset, 8, false) / factor;     // 
 return parseBytesLongToDouble(bytePalacKiyv, offset + 8, 8, false) / factor; // returns 30.517877378257072d, longitude
 
 ```
+{: .copy-code}
 
 ##### bytesToExecutionArrayList
 
@@ -1298,7 +1599,7 @@ Parses  one byte to binary array from the byte given the optional binLength and 
 
 <ul>
   <li><b>byteValue:</b> <code>byte</code>  - the byte value.</li>
-  <li><b>binLength:</b> <code>int</code> - the length of the output binary array.</li>
+  <li><b>binLength:</b> <code>int</code> - optional, the length of the output binary array.</li>
   <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
 </ul>
 
@@ -1324,8 +1625,8 @@ var actualLowCurrent2Alarm = value[2];
 var actualHighCurrent2Alarm = value[3];
 var actualLowCurrent3Alarm = value[4];
 var actualHighCurrent3Alarm = value[5];
-
 ```
+{: .copy-code}
 
 ##### parseBytesToBinaryArray
 
@@ -1335,14 +1636,13 @@ Parses  the byte Array to binary Array from the byte Array/List given the  binLe
 
 **Syntax:**
 
-*byte[] parseBytesToBinaryArray(byte byteValue, int binLength)*
-*byte[] parseBytesToBinaryArray(List listValue, int binLength)*
+*byte[] parseBytesToBinaryArray([byte[] or List<Byte>] byteValue[, int binLength])*
 
 **Parameters:**
 
 <ul>
   <li><b>byteValue:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>binLength:</b> <code>int</code> - the length of the output binary array.</li>
+  <li><b>binLength:</b> <code>int</code> - optional, the length of the output binary array.</li>
 </ul>
 
 **Return value:**
@@ -1357,8 +1657,8 @@ return parseByteToBinaryArray(bytesVal);              // returns byte[16] value 
 return parseByteToBinaryArray(bytesVal, 15);          // returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
 return parseByteToBinaryArray(bytesVal, 14);          // returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
 return parseByteToBinaryArray(bytesVal, 2);           // returns byte[2]  value =>                                           [1, 0]
-
 ```
+{: .copy-code}
 
 ##### parseLongToBinaryArray
 
@@ -1368,13 +1668,13 @@ Parses the long value to binary Array from the long value given the binLength.
 
 **Syntax:**
 
-*byte[] parseLongToBinaryArray(long longValue, int binLength)*
+*byte[] parseLongToBinaryArray(long longValue[, int binLength])*
 
 **Parameters:**
 
 <ul>
    <li><b>longValue:</b> <code>long</code> - the long value.</li>
-  <li><b> binLength:</b> <code>int</code> - the length of the output binary array.</li>
+  <li><b> binLength:</b> <code>int</code> - optional, the length of the output binary array.</li>
 </ul>
 
 **Return value:**
@@ -1387,8 +1687,8 @@ byte[] value.
 var longValue = 52914L;
 return parseByteToBinaryArray(longValue);        // returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
 return parseByteToBinaryArray(longValue, 16);    // returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-
 ```
+{: .copy-code}
 
 ##### parseBinaryArrayToInt
 
@@ -1404,8 +1704,8 @@ Parses the binary array to int value from the binary array given optional the of
 
 <ul>
   <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes.</li>
 </ul>
 
 **Return value:**
@@ -1418,6 +1718,7 @@ int value.
 return parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1]);                   // returns -97
 var actualVolt =  parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // returns 31
 ```
+{: .copy-code}
 
 #### parseNumber
 ##### parseInt
@@ -1639,6 +1940,7 @@ Map<String, Object> toFlatMap(Map<String, Object> json, boolean pathInKey)
 Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList)
 Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList, boolean pathInKey)
 ```
+{: .copy-code}
 
 **Parameters:**
 
@@ -1715,6 +2017,7 @@ return toFlatMap(json);
     "key11.key_to_overwrite": "second_level_value"
 }
 ```
+{: .copy-code}
 
 ##### toFlatMap(json, pathInKey)
 
@@ -1744,6 +2047,7 @@ return toFlatMap(json, false);
     "key_to_overwrite": "second_level_value"
 }
 ```
+{: .copy-code}
 
 As you can see, **key_to_overwrite** is **second_level_value** instead of **root_value**.  
   
@@ -2086,65 +2390,3 @@ var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. Aug
 ```
 {: .copy-code}
 
-
-####  encodeURI: 
-
-The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format ***%XX***, left-padded with 0 if necessary. Because lone surrogates in UTF-16 do not encode any valid Unicode character.
-
-The Tbel library uses most of the standard JavaScript methods from the [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
-
-*encodeURI()* escapes all characters except:
-
-```java
-A–Z a–z 0–9 - _ . ! ~ * ' ( ) ; / ? : @ & = + $ , #
-```
-
-**Syntax:**
-
-*String encodeURI(String uri)*
-
-**Parameters:**
-
-<ul>
-  <li><b>uri:</b> <code>string</code> - A string to be encoded as a URI.</li>
-</ul>
-
-**Return value:**
-
-A new string representing the provided string encoded as a URI.
-
-**Examples:**
-
-```java
-var uri = "https://mozilla.org/path with spaces/?param1=Київ 1&param2=Україна2";
-var encodedData = encodeURI(uri); // return "https://mozilla.org/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02"
-```
-{: .copy-code}
-
-####  decodeURI:
-
-The decodeURI() function decodes a Uniform Resource Identifier (URI) previously created by encodeURI() or a similar routine.
-
-The Tbel library uses most of the standard JavaScript methods from the [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
-
-**Syntax:**
-
-*String decodeURI(String uri)*
-
-**Parameters:**
-
-<ul>
-  <li><b>uri:</b> <code>string</code> - A complete, encoded Uniform Resource Identifier.</li>
-</ul>
-
-**Return value:**
-
-A new string representing the unencoded version of the given encoded Uniform Resource Identifier (URI).
-
-**Examples:**
-
-```java
-var uri = "https://mozilla.org/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02";
-var decodedData = encodeURI(uri); // return "https://mozilla.org/path with spaces/?param1=Київ 1&param2=Україна2"
-```
-{: .copy-code} 
