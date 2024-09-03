@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: SCADA dashboards
-description: SCADA IoT dashboards using ThingsBoard
+title: SCADA symbols development guide
+description: SCADA symbols development guide
 
 --- 
 
