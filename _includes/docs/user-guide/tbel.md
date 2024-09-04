@@ -204,56 +204,60 @@ In our own list implementation The *Tbel* library uses most of the standard Java
 
 ```java
 var list = ["A", "B", "C", "B", "C", "hello", 34567];
-var listAdd = [ "thigsboard", 4, 67];
+var listAdd = ["thigsboard", 4, 67];
 
     // add/push
 var addAll = list.addAll(listAdd);         // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
-var addAllI = list.addAll(2, listAdd);     // return true    => list = ["A", "B", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567]
-var add = list.add(3, "thigsboard");       // return true    => list = ["A", "B", "C", "thigsboard", "B", "C", "hello", 34567]
-var push = list.push("thigsboard");        // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard"]
-var unshift = list.unshift("Q", 4);        // return nothing => list = ["Q" "4", "A", "B", "C", "B", "C", "hello", 34567]
-
+var addAllI = list.addAll(2, listAdd);     // return true    => list = ["A", "B", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var add = list.add(3, "thigsboard");       // return true    => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var push = list.push("thigsboard");        // return true    => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var unshift = list.unshift("r");           // return nothing => list = ["r", "A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var unshift = ["Q", 4];
+list.unshift(unshift); // return nothing => list = [[["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
     // delete  
-var removeI = list.remove(2);              // return "C"                           => list = ["A", "B", "B", "C", "hello", 34567]    
-var removeO = list.remove("C");            // return true                          => list = ["A", "B", "B", "C", "hello", 34567] 
-var shift = list.shift();                  // return "A"                           => list = ["B", "C", "B", "C", "hello", 34567]
-var pop = list.pop();                      // return "34567"                       => list = ["A", "B", "C", "B", "C", "hello"]
-var splice1 = list.splice(3)               // return ["B", "C", "hello", 34567]    => list = ["A", "B", "C"]
-var splice2 = list.splice(2, 2)            // return ["C", "B"]                    => list = ["A", "B", "C", "hello", 34567]
-var splice3 = list.splice(1, 4, "start", 5, "end"); // return ["B", "C", "B", "C"]  => list = ["A", "start", 5, "end", "hello", 34567]
-        
+var removeI = list.remove(2);              // return "A" => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]    
+var removeC = list.remove("C");            // return true => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"] 
+var shift = list.shift();                  // return ["Q", 4] => list = ["r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var pop = list.pop();                      // return "thigsboard" => list =  ["r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var splice3 = list.splice(3);              // return ["thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67] => list = ["r", "B", "thigsboard"]
+var splice2 = list.splice(2, 2);           // return ["thigsboard"] => list = ["r", "B"]
+var splice1_4 = list.splice(1, 4, "start", 5, "end"); // return ["B"]  => list =  ["r", "start", 5, "end"]
+
     // change
-var set = list.set(5, "thigs");            // return "hello" => list = ["A", "B", "C", "B", "C", "thigs", 34567]
-list[5] = "thigs";                         // return nothing => list = ["A", "B", "C", "B", "C", "thigs", 34567]          
-list.sort();                               // return nothing => list = [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)
-list.sort(true);                           // return nothing => list = [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)
-list.sort(false);                          // return nothing => list = ["hello", "C", "C", "B", "B", "A", 34567] (sort Desc)
-list.reverse();                            // return nothing => list = [34567, "hello", "C", "B", "C", "B", "A"]
-var fill = list.fill(67);                  // return new List [67, 67, 67, 67, 67, 67, 67] => list = [67, 67, 67, 67, 67, 67, 67]
-var fill = list.fill(67, 4);               // return new List ["A", "B", "C", "B", 67, 67, 67] => list = ["A", "B", "C", "B", 67, 67, 67]
-var fill = list.fill(67, 4, 6);            // return new List ["A", "B", "C", "B", 67, 67, 34567] => list = ["A", "B", "C", "B", 67, 67, 34567]
-        
+var set = list.set(3, "65");                 // return "end"" => list =  ["r", "start", 5, "65"]
+list[1] = "98";                              // return nothing => list = ["r", "98", 5, "65"] 
+list[0] = 2096;                              // return nothing => list = [2096, "98", 5, "65"]
+
+list.sort();                                 // return nothing => list = [5, "65", "98", 2096] (sort Asc)
+list.sort(true);                             // return nothing => list = [5, "65", "98", 2096] (sort Asc)
+list.sort(false);                            // return nothing => list = [2096, "98", "65", 5] (sort Desc)
+list.reverse();                              // return nothing => list = [5, "65", "98", 2096]
+var fill = list.fill(67);                    // return new List [67, 67, 67, 67] => list = [67, 67, 67, 67]
+var fill4 = list.fill(4, 1);                 // return new List [67, 4, 4, 4] => list = [67, 4, 4, 4]
+var fill4_6 = list.fill(2, 1, 4);            // return new List [67, 2, 2, 2] => list = [67, 2, 2, 2]
+
     // return new List/new String 
-var toSorted = list.toSorted();            // return new List [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc) 
-var toSorted_true = list.toSorted(true);   // return new List [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)  
-var toSorted_false = list.toSorted(false); // return new List ["hello", "C", "C", "B", "B", "A", 34567] (sort Desc)
-var toReversed = list.toReversed();        // return new List [34567, "hello", "C", "B", "C", "B", "A"] 
-var slice = list.slice();                  // return new List ["A", "B", "C", "B", "C", "hello", 34567]  
-var slice4 = list.slice(4);                // return new List ["C", "hello", 34567]    
-var slice1_5 = list.slice(1,5);            // return new List ["B", "C", "B", "C"]   
-var with = list.with(1, 67);               // return new List ["A", 67, "B", "C", "B", "C", "hello", 34567] 
-var concat = list.concat(listAdd);         // return new List ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67] 
-var join = list.join() ;                   // return new String "A,B,C,B,C,hello,34567"        
-var toSpliced1 = list.toSpliced(2)                       // return new List ["A", "B",]  
-var toSpliced2 = list.toSpliced(2, 4)                    // return new List ["A", "B", 34567]  
-var toSpliced3 = list.toSpliced(2, 4, "start", 5, "end"); // return new List ["A", "B", "start", 5, "end", 34567] 
+var toSorted = list.toSorted();            // return new List [2, 2, 2, 67] (sort Asc) 
+var toSorted_true = list.toSorted(true);   // return new List [2, 2, 2, 67] (sort Asc)  
+var toSorted_false = list.toSorted(false); // return new List [67, 2, 2, 2] (sort Desc)
+var toReversed = list.toReversed();        // return new List [2, 2, 2, 67] 
+var slice = list.slice();                  // return new List [67, 2, 2, 2]  
+var slice4 = list.slice(3);                // return new List [2]   
+var slice1_5 = list.slice(0,2);            // return new List [67, 2]  
+var with1 = list.with(1, 67);               // return new List [67, 67, 2, 2, 2] => list = [67, 2, 2, 2]
+var concat = list.concat(listAdd);         // return new List [67, 2, 2, 2, "thigsboard", 4, 67] => list = [67, 2, 2, 2]
+var join = list.join();                    // return new String "67,2,2,2" => list = [67, 2, 2, 2]        
+var toSpliced2 = list.toSpliced(1, 0, "Feb"); // return new List [67, "Feb", 2, 2, 2] => list = [67, 2, 2, 2] 
+var toSpliced0_2 = list.toSpliced(0, 2);     // return new List [2, 2] => list = [67, 2, 2, 2] 
+var toSpliced2_2 = list.toSpliced(2, 2);     // return new List [67, 2] => list = [67, 2, 2, 2] 
+var toSpliced4_5 = list.toSpliced(2, 4, "start", 5, "end"); // return new List[67, 2, "start", 5, "end"] => list = [67, 2, 2, 2] 
 
     // get Info        
-var length = list.length()                  // return  7 
-var memorySize = list.memorySize()          // return 42 
-var indOf1 = list.indexOf("B", 1);          // return 1  
-var indOf2 = list.indexOf("B", 2);          // return 3  
-var list.validateClazzInArrayIsOnlyString() // return false
+var length = list.length();                 // return  4 
+var memorySize = list.memorySize();         // return 28 
+var indOf1 = list.indexOf("B", 1);          // return -1  
+var indOf2 = list.indexOf(2, 2);            // return 2  
+var sStr =  list.validateClazzInArrayIsOnlyString(); // return false
 ```
 {: .copy-code}
 
