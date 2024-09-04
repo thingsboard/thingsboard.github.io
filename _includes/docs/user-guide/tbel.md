@@ -117,59 +117,61 @@ That is why TBEL allows only inline creation of maps. Most common operation with
 
 ```java
 // Create new map
-var map = {"temperature": 42, "nested" : {"rssi": 130}};
+var map = {"temperature": 42, "nested" : "508"};
 // Change value of the key
 map.temperature = 0;
 
 // Check existance of the key
 if(map.temperature != null){
-    // <you code>
+// <you code>
 }
 // Null-Safe expressions using ?
 if(map.?nonExistingKey.smth > 10){
-        // <you code>
+// <you code>
 }
 // Iterate through the map
 foreach(element : map.entrySet()){
     // Get the key
-        element.getKey();
+    element.getKey();
     //or 
-        element.key; 
+    element.key;
+    
     // Get the value
-        element.getValue();
+    element.getValue();
     //or 
-        element.value;
+    element.value;
 }
 
 // get Info
-var size = map.size()                           // return  2 
-var memorySize = map.memorySize()               // return 29 
+var size = map.size();                           // return  2 
+var memorySize = map.memorySize();               // return 24 
+
+map.humidity = 73;                              // return nothing => map = {"temperature": 0, "nested": "508", "humidity": 73}
+map.put("humidity", 73);                        // return nothing => map ={"temperature": 0, "nested": "508", "humidity": 73}
+map.putIfAbsent("temperature1", 73);            // return nothing => map = {"temperature": 0, "nested": "508", "humidity": 73, "temperature1": 73}
+
+//change Value   
+map.temperature = 73;                           // return nothing => map = {"temperature": 73, "nested": "508", "humidity": 73, "temperature1": 73}        
+var put1 = map.put("temperature", 73);          // return put1 = 73 => map = {"temperature": 73, "nested": "508", "humidity": 73, "temperature1": 73}
+var putIfAbsent1 = map.putIfAbsent("temperature", 73); // return putIfAbsent1 = 73 => map = {"temperature": 73, "nested": "508", "humidity": 73, "temperature1": 73}       
+var replace = map.replace("temperature", 56);          // return 73 => map = {"temperature": 56, "nested": "508", "humidity": 73, "temperature1": 73}       
+var replace1 = map.replace("temperature", 56, 42);     // return true => map = {"temperature": 42, "nested": "508", "humidity": 73, "temperature1": 73}       
+var replace3 = map.replace("temperature", 48, 56);     // return false => map = {"temperature": 42, "nested": "508", "humidity": 73, "temperature1": 73}       
+
+// remove Entry from the map by key
+map.remove("temperature");                             // return nothing => map = {"nested": "508", "humidity": 73, "temperature1": 73}
+
+// get Keys/Values  
+var keys = map.keys();                                 // return ["nested", "humidity", "temperature1"]      
+var values = map.values();                             // return ["508", 73, 73]      
+
+// sort
+map.sortByKey();                                       // return nothing => map = {"humidity": 73, "nested": "508", "temperature1": 73}                                      
+var sortByValue = map.sortByValue();                   // return nothing => map = {"humidity": 73, "temperature1": 73, "nested": "508"}
 
 // add new Entry/(new key/new value)
-var mapAdd = {"test": 12, "input" : {"http": 130}};       
-map.humidity = 73;                              // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
-map.put("humidity", 73);                        // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
-map.putIfAbsent("temperature1", 73);            // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "temperature1": 73}
-map.putAll(mapAdd);                             // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, {"test": 12, "input" : {"http": 130}}}
-
-// change Value   
-map.temperature = 73;                                  // return nothing => map = {"temperature": 73, "nested" : {"rssi": 130}}        
-var put1 = map.put("temperature", 73)                  // return 42      => map = {"temperature": 73, "nested" : {"rssi": 130}}         
-var putIfAbsent1 = map.putIfAbsent("temperature", 73); // return 42      => map = {"temperature": 42, "nested" : {"rssi": 130}}       
-var replace = map.replace("temperature", 56);          // return 42      => map = {"temperature": 56, "nested" : {"rssi": 130}}       
-var replace1 = map.replace("temperature", 42, 56);     // return true    => map = {"temperature": 56, "nested" : {"rssi": 130}}       
-var replace3 = map.replace("temperature", 48, 56);     // return false   => map = {"temperature": 42, "nested" : {"rssi": 130}}       
-        
-// remove Entry from the map by key
-map.remove("temperature");                             // return nothing => map = {"nested" : {"rssi": 130}}
-        
-// get Keys/Values  
-var keys = map.keys();                                 // return ["temperature", "nested"]       
-var values = map.values();                             // return [42, {"rssi": 130}]       
-        
-// sort
-var sortByKey = map.sortByKey();                       // return nothing => map = {"nested": {"rssi": 130}, "temperature": 42}                                       
-var sortByValue = map.sortByValue();                   // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}}
+var mapAdd = {"test": 12, "input" : {"http": 130}};
+map.putAll(mapAdd);
 ```
 {: .copy-code}
 
