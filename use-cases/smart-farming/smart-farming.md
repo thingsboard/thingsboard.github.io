@@ -5,7 +5,7 @@ description: Internet of things farming ✔ Smart agriculture ✔ IoT sensors in
 notitle: "true"
 
 ---
-<section id="hero" class="light-text">
+<section id="hero">
 <section class="smart-farm-banner">
     <div class="smart-farm-banner-container">
         <h1>Smart farming</h1>
@@ -31,7 +31,7 @@ notitle: "true"
                 <h4>Content</h4>
                 <nav>
                     <ul>
-                        <li><a href="#">What is smart farming? </a></li>
+                        <li><a href="#smart-farm-management-software">What is smart farming? </a></li>
                         <li><a href="#">The farming and agricultural practices (traditional vs smart farming) </a></li>
                         <li><a href="#">Key differences between traditional and smart farming </a></li>
                         <li><a href="#">Smart farming technologies </a></li>
@@ -101,7 +101,7 @@ notitle: "true"
                     <p>Smart farming sensors are integral components of modern agricultural practices, providing real-time data and insights that help optimize farming operations. These sensors are part of the broader Internet of Things (IoT) ecosystem, enabling the collection, analysis, and utilization of data to improve productivity, efficiency, and sustainability in agriculture. </p>
                 </div>
                 <div class="smart-farm-tech-img">
-                    <img src="/images/usecases/smart-farming/Smart farming sensors.webp">
+                    <img class="img-sensors"  src="/images/usecases/smart-farming/Smart farming sensors.webp" alt="Smart farming sensors">
                 </div>              
             </div>
             <div class="smart-farm-tech-wrapper">
@@ -111,7 +111,7 @@ notitle: "true"
                     <p>IoT in smart farming involves deploying various sensors and devices across the farm, which continuously gather data on different aspects of the environment and crop health. This data is transmitted to a IoT platform where it is analyzed and processed to provide actionable insights. Farmers can access this information through computers or smartphones, allowing them to make informed decisions and automate certain tasks.</p>
                 </div>
                 <div class="smart-farm-tech-img">
-                    <img src="/images/usecases/smart-farming/Internet of Things (IoT).webp">
+                    <img class="img-iot" src="/images/usecases/smart-farming/Internet of Things (IoT).webp" alt="Internet of Things (IoT)">
                 </div>              
             </div>
             <div class="smart-farm-tech-wrapper">
@@ -120,7 +120,7 @@ notitle: "true"
                     <p>Artificial Intelligence (AI) and Machine Learning (ML) are tools for analysing large, complex data sets (Big Data) provided by IoT systems. AI involves the creation of systems that can perform tasks that typically require human intelligence, such as decision-making, problem solving, and pattern recognition. As a part of AI, ML involves training algorithms that learn from data and make predictions or decisions based on the data. In smart agriculture, AI and ML involve collecting data from a variety of sources, such as sensors, drones, satellite imagery, and weather forecasts, which are used to analyse huge amounts of data to identify patterns, make predictions, and generate recommendations. Farmers can use this information to make informed decisions, optimise resource use and automate certain tasks.</p>
                 </div>
                 <div class="smart-farm-tech-img">
-                    <img src="/images/usecases/smart-farming/Artificial Intelligence (AI) and Machine Learning (ML).webp">
+                    <img class="img-ai-ml" src="/images/usecases/smart-farming/Artificial Intelligence (AI) and Machine Learning (ML).webp" alt="Artificial Intelligence (AI) and Machine Learning (ML)">
                 </div>              
             </div>
             <div class="smart-farm-tech-wrapper">
@@ -130,116 +130,117 @@ notitle: "true"
                     <p> Automation and robotics are playing a crucial role in the modernization of agriculture, addressing challenges such as labor shortages, rising operating costs, and the need for sustainable agriculture.</p>
                 </div>
                 <div class="smart-farm-tech-img">
-                    <img src="/images/usecases/smart-farming/Automation and Robotics.webp">
+                    <img class="img-auto-rob" src="/images/usecases/smart-farming/Automation and Robotics.webp" alt="Automation and Robotics">
                 </div>              
             </div>
         </div>
     </section>
-  <div class="smart-farm-cycle">
-    <div class="smart-farm-cycle-container">
-        <div class="smart-farm-cycle-text">
-            <h2>The IoT-Based Smart Farming Cycle</h2>
-            <p>The Internet of Things (IoT) plays a general role in modernizing agriculture by providing real-time data and insights that enable farmers to optimize their farming processes. The core of IoT in smart farming are continuous collection and transmission of data over the network. This data driven agriculture approach helps farmers react quickly to emerging issues and changing conditions, ensuring efficient and sustainable farming practices. The IoT-based smart farming cycle involves four main stages: observation, diagnostics, decision, and action.</p>
+    <section class="smart-farm-cycle">
+        <div class="smart-farm-cycle-container">
+            <div class="smart-farm-cycle-text">
+                <h2>The IoT-Based Smart Farming Cycle</h2>
+                <p>The Internet of Things (IoT) plays a general role in modernizing agriculture by providing real-time data and insights that enable farmers to optimize their farming processes. The core of IoT in smart farming are continuous collection and transmission of data over the network. This data driven agriculture approach helps farmers react quickly to emerging issues and changing conditions, ensuring efficient and sustainable farming practices. The IoT-based smart farming cycle involves four main stages: observation, diagnostics, decision, and action.</p>
+            </div>
+            <div class="smart-farm-cycle-img">
+                <img src="/images/usecases/smart-farming/The IoT-Based Smart Farming Cycle.webp">
+            </div>
         </div>
-        <div class="smart-farm-cycle-img">
-            <img src="/images/usecases/smart-farming/The IoT-Based Smart Farming Cycle.webp">
+        <div class="smart-farm-cycle-wrapper">
+            <div class="smart-farm-cycle-text">
+                <h4>Observation</h4>
+                <p>The cycle begins with sensors and other IoT devices installed on the farm. These sensors are designed to record various observational data from crops, livestock, soil, and the atmosphere. Key parameters monitored include soil moisture, temperature, humidity, light levels, and nutrient content. For example, soil moisture sensors can continuously measure the water content in the soil, while weather sensors track temperature, humidity, and rainfall.</p>
+            </div>
+            <div class="smart-farm-cycle-num">01</div>
         </div>
-    </div>
-    <div class="smart-farm-cycle-wrapper">
-        <div class="smart-farm-cycle-text">
-            <h4>Observation</h4>
-            <p>The cycle begins with sensors and other IoT devices installed on the farm. These sensors are designed to record various observational data from crops, livestock, soil, and the atmosphere. Key parameters monitored include soil moisture, temperature, humidity, light levels, and nutrient content. For example, soil moisture sensors can continuously measure the water content in the soil, while weather sensors track temperature, humidity, and rainfall.</p>
+        <div class="smart-farm-cycle-wrapper">
+            <div class="smart-farm-cycle-text">
+                <h4>Diagnostics</h4>
+                <p>Once the observational data is collected, it is transmitted to a IoT platform. This platform uses predefined decision rules and models, also known as "business logic," to process the data. Advanced algorithms and machine learning components analyze the sensor values to ascertain the condition of the monitored objects and identify any deficiencies or needs.</p>
+            </div>
+            <div class="smart-farm-cycle-num">02</div>
         </div>
-        <div class="smart-farm-cycle-num">01</div>
-    </div>
-    <div class="smart-farm-cycle-wrapper">
-        <div class="smart-farm-cycle-text">
-            <h4>Diagnostics</h4>
-            <p>Once the observational data is collected, it is transmitted to a IoT platform. This platform uses predefined decision rules and models, also known as "business logic," to process the data. Advanced algorithms and machine learning components analyze the sensor values to ascertain the condition of the monitored objects and identify any deficiencies or needs.</p>
+        <div class="smart-farm-cycle-wrapper">
+            <div class="smart-farm-cycle-text">
+                <h4>Decision</h4>
+                <p>The next stage includes the assessment of diagnosed problems to decide what actions should be taken and where. This decision-making process can be performed by the farmer or by machine learning-driven IoT platform components. The goal is to make informed decisions based on real-time data and predictive analytics.</p>
+            </div>
+            <div class="smart-farm-cycle-num">03</div>
         </div>
-        <div class="smart-farm-cycle-num">02</div>
-    </div>
-    <div class="smart-farm-cycle-wrapper">
-        <div class="smart-farm-cycle-text">
-            <h4>Decision</h4>
-            <p>The next stage includes the assessment of diagnosed problems to decide what actions should be taken and where. This decision-making process can be performed by the farmer or by machine learning-driven IoT platform components. The goal is to make informed decisions based on real-time data and predictive analytics.</p>
+        <div class="smart-farm-cycle-wrapper">
+            <div class="smart-farm-cycle-text">
+                <h4>Action</h4>
+                <p>After the decision is made, the required actions are executed. These actions can be performed by a robots, autonomous machines, humans, or a combination of all three. The actions taken might include adjusting irrigation levels, applying fertilizers or pesticides, or deploying robotic harvesters.</p>
+            </div>
+            <div class="smart-farm-cycle-num">04</div>
         </div>
-        <div class="smart-farm-cycle-num">03</div>
-    </div>
-    <div class="smart-farm-cycle-wrapper">
-        <div class="smart-farm-cycle-text">
-            <h4>Action</h4>
-            <p>After the decision is made, the required actions are executed. These actions can be performed by a robots, autonomous machines, humans, or a combination of all three. The actions taken might include adjusting irrigation levels, applying fertilizers or pesticides, or deploying robotic harvesters.</p>
+        <div class="smart-farm-cycle-wrapper">
+            <div class="smart-farm-cycle-text">
+                <h4>The Repetitive Cycle</h4>
+                <p>The IoT-based smart farming cycle is continuous and repetitive. After each action is taken, the sensors resume their observation phase, recording new data and starting the cycle anew. This ongoing process ensures that any issues or problems are caught and addressed immediately, providing farmers with a clear and timely window to act on emerging problems.</p>
+            </div>
+            <div class="smart-farm-cycle-num"><img src="/images/usecases/smart-farming/Infinity.webp"></div>
         </div>
-        <div class="smart-farm-cycle-num">04</div>
-    </div>
-    <div class="smart-farm-cycle-wrapper">
-        <div class="smart-farm-cycle-text">
-            <h4>The Repetitive Cycle</h4>
-            <p>The IoT-based smart farming cycle is continuous and repetitive. After each action is taken, the sensors resume their observation phase, recording new data and starting the cycle anew. This ongoing process ensures that any issues or problems are caught and addressed immediately, providing farmers with a clear and timely window to act on emerging problems.</p>
+    </section>
+    <section class="smart-farm-pros">
+        <div class="smart-farm-pros-container">
+            <h2>Advantages of Smart farming</h2>
+            <p>Smart agriculture, which uses advanced technologies such as IoT, AI, ML and automation, offers many benefits that improve agricultural practices. These benefits increase productivity, efficiency and sustainability, solving many of the challenges faced by traditional farming methods. Here are some key benefits of smart farming:</p>
         </div>
-        <div class="smart-farm-cycle-num">05</div>
-    </div>
-  </div>
-  <div class="smart-farm-pros">
-    <div class="smart-farm-pros-container">
-        <h2>Advantages of Smart farming</h2>
-         <p>Smart agriculture, which uses advanced technologies such as IoT, AI, ML and automation, offers many benefits that improve agricultural practices. These benefits increase productivity, efficiency and sustainability, solving many of the challenges faced by traditional farming methods. Here are some key benefits of smart farming:</p>
-    </div>
-    <div class="smart-farm-pros-wrapper">
-        <div class="smart-farm-pros-item">
-            <span>01</span>
-            <h4>Increased efficiency</h4>
-            <p>Smart farming technologies automate many labor-intensive tasks, reducing the need for manual labor and increasing operational efficiency. Automated systems can perform tasks such as planting, irrigating and harvesting faster and more accurately than humans, leading to higher productivity.</p>
+        <div class="smart-farm-pros-wrapper">
+            <div class="smart-farm-pros-item">
+                <span>01</span>
+                <h4>Increased efficiency</h4>
+                <p>Smart farming technologies automate many labor-intensive tasks, reducing the need for manual labor and increasing operational efficiency. Automated systems can perform tasks such as planting, irrigating and harvesting faster and more accurately than humans, leading to higher productivity.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>02</span>
+                <h4>Increased productivity</h4>
+                <p>Using real-time data and predictive analytics, smart agriculture enables farmers to optimize the use of resources, resulting in higher yields and better quality products. Precision farming technologies ensure that crops receive the right amount of water, nutrients and pesticides at the right time, maximizing growth and productivity.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>03</span>
+                <h4>Sustainability</h4>
+                <p>Smart farming promotes sustainable farming practices by minimizing resource loss and reducing environmental impact. Technologies such as precision irrigation and targeted pesticide using help conserve water and reduce chemical use, protecting the environment and contributing to the long-term sustainability of agriculture.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>04</span>
+                <h4>Cost savings</h4>
+                <p>Automation and precise resource management lead to significant cost savings for farmers. Lower labor costs, lower water, fertilizer and pesticide costs, and higher yields all contribute to increased profitability.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>05</span>
+                <h4>Improved crop quality and yield</h4>
+                <p>Precision farming technologies provide optimal care for crops, which leads to higher product quality and higher yields. By providing crops with the nutrients they need and protecting them from pests and diseases, smart farming improves the overall health and productivity of crops.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>06</span>
+                <h4>Enhanced livestock management</h4>
+                <p>Smart agriculture also extends to livestock management, where IoT devices and sensors track animal health, behavior and location. This data helps farmers identify health problems early, optimize feeding schedules and improve overall animal welfare.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>07</span>
+                <h4>Reduced human resources</h4>
+                <p>Automation reduces reliance on manual labor, allowing farmers to allocate their labor more efficiently and focus on more complex tasks that require human intervention. This is especially useful in regions experiencing labor shortages.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>08</span>
+                <h4>Enhanced data collection and analysis</h4>
+                <p>Smart farming technologies enable the collection of vast amounts of data, which can be analyzed to gain valuable insights into farm operations. This data-driven approach allows for continuous improvement and optimization of farming practices.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>09</span>
+                <h4>Real-Time monitoring and alerts</h4>
+                <p>IoT devices continuously monitor various farm conditions and provide real-time alerts to farmers, enabling quick responses to emerging issues. This proactive approach helps prevent problems from escalating and ensures timely interventions.</p>
+            </div>
+            <div class="smart-farm-pros-item">
+                <span>10</span>
+                <h4>Increased security</h4>
+                <p>IoT sensors can detect unwanted activities on the farm, such as gates opening, assets being tampered with, or livestock crossing geofenced locations. This enhances farm security and protects valuable resources.</p>
+            </div>
         </div>
-        <div class="smart-farm-pros-item">
-            <span>02</span>
-            <h4>Increased productivity</h4>
-            <p>Using real-time data and predictive analytics, smart agriculture enables farmers to optimize the use of resources, resulting in higher yields and better quality products. Precision farming technologies ensure that crops receive the right amount of water, nutrients and pesticides at the right time, maximizing growth and productivity.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>03</span>
-            <h4>Sustainability</h4>
-            <p>Smart farming promotes sustainable farming practices by minimizing resource loss and reducing environmental impact. Technologies such as precision irrigation and targeted pesticide using help conserve water and reduce chemical use, protecting the environment and contributing to the long-term sustainability of agriculture.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>04</span>
-            <h4>Cost savings</h4>
-            <p>Automation and precise resource management lead to significant cost savings for farmers. Lower labor costs, lower water, fertilizer and pesticide costs, and higher yields all contribute to increased profitability.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>05</span>
-            <h4>Improved crop quality and yield</h4>
-            <p>Precision farming technologies provide optimal care for crops, which leads to higher product quality and higher yields. By providing crops with the nutrients they need and protecting them from pests and diseases, smart farming improves the overall health and productivity of crops.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>06</span>
-            <h4>Enhanced livestock management</h4>
-            <p>Smart agriculture also extends to livestock management, where IoT devices and sensors track animal health, behavior and location. This data helps farmers identify health problems early, optimize feeding schedules and improve overall animal welfare.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>07</span>
-            <h4>Reduced human resources</h4>
-            <p>Automation reduces reliance on manual labor, allowing farmers to allocate their labor more efficiently and focus on more complex tasks that require human intervention. This is especially useful in regions experiencing labor shortages.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>08</span>
-            <h4>Enhanced data collection and analysis</h4>
-            <p>Smart farming technologies enable the collection of vast amounts of data, which can be analyzed to gain valuable insights into farm operations. This data-driven approach allows for continuous improvement and optimization of farming practices.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>09</span>
-            <h4>Real-Time monitoring and alerts</h4>
-            <p>IoT devices continuously monitor various farm conditions and provide real-time alerts to farmers, enabling quick responses to emerging issues. This proactive approach helps prevent problems from escalating and ensures timely interventions.</p>
-        </div>
-        <div class="smart-farm-pros-item">
-            <span>10</span>
-            <h4>Increased security</h4>
-            <p>IoT sensors can detect unwanted activities on the farm, such as gates opening, assets being tampered with, or livestock crossing geofenced locations. This enhances farm security and protects valuable resources.</p>
-        </div>
-    </div>
-  </div>
-  <div class="smart-farm-contact-us">
+    </section>
+    <section class="smart-farm-contact-us">
+        <img class="rec55" src="/images/usecases//smart-farming/Rectangle 55.webp">
         <div class="smart-farm-contact-us-text">
             <h2>Enhance your farm with Smart Technology</h2>
             <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
@@ -247,8 +248,9 @@ notitle: "true"
         <div class="smart-farm-contact-us-btn">
             <button>Contact Us</button>
         </div>
-    </div>
-     <div class="smart-farm-solutions">
+        <img class="rec56" src="/images/usecases//smart-farming/Rectangle 56.webp">
+    </section>
+    <section class="smart-farm-solutions">
         <div class="smart-farm-solutions-container">
             <h2>Smart farming solutions</h2>
             <p>Smart agriculture solutions encompass a range of technologies and practices aimed at improving the productivity, efficiency and sustainability of agriculture. Here are some of the key smart farming solutions that are transforming agriculture:</p>
@@ -354,22 +356,22 @@ notitle: "true"
                 </div>
             </div> 
         </div>
-     </div>
-     <div class="smart-farm-demo">
-         <div class="smart-farm-demo-container">
+    </section>
+    <section class="smart-farm-demo">
+        <div class="smart-farm-demo-container">
             <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
             <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
             <div class="smart-farm-demo-btn">
-                <button>Try demo</button>
-                <button>Contact Us</button>
+                <button class="try-demo">Try demo</button>
+                <button class="contact-us">Contact Us</button>
             </div>
-         </div>
-         <div class="smart-farm-demo-img">
+        </div>
+        <div class="smart-farm-demo-img">
             <img src="/images/usecases/smart-farming/ThingsBoard IoT platform for Smart farming solutions.webp">
-         </div>
-     </div>
-     <div class="smart-farm-key-features">
-        <h2></h2>
+        </div>
+    </section>
+    <section class="smart-farm-key-features">
+        <h2>Key features of ThingsBoard Smart farming solution</h2>
         <div class="smart-farm-key-features-cards">
             <div class="smart-farm-key-features-card">
                 <img src="/images/usecases/smart-farming/Data collection and integration.webp">
@@ -402,19 +404,19 @@ notitle: "true"
                 <p>The platform is highly scalable, meeting the needs of small farms to large agricultural enterprises. It supports different data sources and can be customized according to specific requirements.</p>
             </div>
         </div>
-     </div>
-     <div class="smart-farm-management-software">
-         <div class="smart-farm-management-software-wrapper">
+    </section>
+    <section id="smart-farm-management-software" class="smart-farm-management-software">
+        <div class="smart-farm-management-software-wrapper">
             <div class="smart-farm-management-software-text">
                 <h2>Agriculture & Farm management Software</h2>
                 <p>By leveraging the ThingsBoard IoT platform, farmers can enhance productivity, reduce resource wastage, and ensure sustainable agricultural practices. This ultimately leads to improved farm management and increased profitability, making ThingsBoard a valuable tool for modern smart farming.</p>
-                <button>Try demo</button>
+                <button class="try-demo">Try demo</button>
             </div>
             <div class="smart-farm-management-software-img">
-                <img src="/images/usecases/smart-farming/ThingsBoard IoT platform for Smart farming solutions.webp">
+                <img src="/images/usecases/smart-farming/Agriculture & Farm management Software.webp">
             </div>
-         </div>
-     </div>
+        </div>
+    </section>
 </section>
 
 
