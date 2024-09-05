@@ -922,25 +922,25 @@ return decodeURI(uriEncode); // Returns "-_.!~*'();/?:@&=+$,#ht://example.ж д 
 
 **Syntax:**
 
-*void raiseError(String message[, Object value])*
+*void raiseError(String message)*
 
 **Parameters:**
 
 <ul>
   <li><b>message:</b> <code>String</code> - Info about Exception message.</li>
-  <li><b>value:</b> <code>Object</code> -  optional, the value that causes the error.</li>
 </ul>
 
 **Return value:**
 
-new RuntimeException with msg = message + [" A value of " + value + " is invalid."]
+new RuntimeException with msg = message;
 
 **Examples:**
 
 ```java
-var message = "frequency_weighting_type must be 0, 1 or 2";
+var message = "frequency_weighting_type must be 0, 1 or 2.";
 return raiseError(message);        // Returns "frequency_weighting_type must be 0, 1 or 2."
-var value = 4;        
+var value = 4;
+message = "frequency_weighting_type must be 0, 1 or 2. A value of " + value + " is invalid.";
 return raiseError(message, value); // Returns "frequency_weighting_type must be 0, 1 or 2. A value of 4 is invalid."
 ```
 {: .copy-code}
