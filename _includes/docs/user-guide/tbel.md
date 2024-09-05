@@ -1815,8 +1815,8 @@ return parseLong("9223372036854775808", 10);    //throws a NumberFormatException
 return parseLong("0xFGFFFFFF", 16);             // throws a NumberFormatException
 return parseLong("FFFFFFFF", 16);               // throws a NumberFormatException
 return parseLong("1787", 8);                    // throws a NumberFormatException
-return parseLong("KonaLong", 10)                // throws a NumberFormatException
-return parseLong("KonaLong", 16)                // throws a NumberFormatException
+return parseLong("KonaLong", 10);               // throws a NumberFormatException
+return parseLong("KonaLong", 16);               // throws a NumberFormatException
 ```
 {: .copy-code}
 
