@@ -494,6 +494,73 @@ node mqtt-js-rpc-from-client.js
 
 {% include images-gallery.html imageCollection="client-side-rpc" %}
 
+### Get session limits RPC
+
+The **getSessionLimits** RPC method is designed to help device manufacturers and developers understand the limits that used by the MQTT transport.
+Understanding these limits ensures that devices operate within the defined parameters, preventing issues like message rejection or connection loss.
+
+A typical RPC to retrieve session limits from the ThingsBoard server looks like this:
+```json
+{
+  "method": "getSessionLimits",
+  "params": {}
+}
+```
+
+Once RPC is processed server can send session limits back to the response topic using following format:
+
+```json
+{
+  "maxPayloadSize": 65536,
+  "maxInflightMessages": 100,
+  "rateLimits": {
+    "messages": "20:600",
+    "telemetryMessages": "10:600",
+    "telemetryDataPoints": "40:600"
+  }
+}
+```
+
+Where
+
+**maxPayloadSize** - the maximum allowable size for an MQTT message payload, expressed in bytes.
+
+**maxInflightMessages** -  the maximum number of MQTT messages that can be sent but remain unacknowledged (in-flight) at any given time.
+
+
+**rateLimits** - a nested object that specifies the rate limits for different types.
+
+**messages** - the overall message rate limit.
+
+**telemetryMessages** - the maximum number of telemetry messages that can be sent.
+
+**telemetryDataPoints** - the number of telemetry data points a device can send.
+
+
+If the device is a gateway, the response includes additional rate limits for devices that are connected through the gateway. 
+The response structure for gateways looks like this:
+
+```json
+{
+  "maxPayloadSize": 65536,
+  "maxInflightMessages": 100,
+  "rateLimits": {
+    "messages": "20:600",
+    "telemetryMessages": "10:600",
+    "telemetryDataPoints": "40:600"
+  },
+  "gatewayRateLimits": {
+    "messages": "100:600",
+    "telemetryMessages": "50:600",
+    "telemetryDataPoints": "200:600"
+  }
+}
+```
+
+**rateLimits** - a nested object that specifies rate limits for the gateway.
+
+**gatewayRateLimits** - a nested object that specifies rate limits for devices connected to the gateway.
+
 ## Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
