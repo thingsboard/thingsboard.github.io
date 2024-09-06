@@ -514,28 +514,27 @@ Once RPC is processed server can send session limits back to the response topic 
   "maxPayloadSize": 65536,
   "maxInflightMessages": 100,
   "rateLimits": {
-    "messages": "20:600",
-    "telemetryMessages": "10:600",
-    "telemetryDataPoints": "40:600"
+    "messages": "200:1,6000:60,14000:3600",
+    "telemetryMessages": "100:1,3000:60,7000:3600",
+    "telemetryDataPoints": "200:1,6000:60,14000:3600"
   }
 }
 ```
 
 Where
 
-**maxPayloadSize** - the maximum allowable size for an MQTT message payload, expressed in bytes.
+**maxPayloadSize** - the maximum allowable size for an MQTT message payload, expressed in bytes.  
+**maxInflightMessages** -  the maximum number of MQTT messages that can be sent but remain unacknowledged (in-flight) at any given time.  
+**rateLimits** - a nested object that specifies the rate limits for different types.  
+**messages** - the overall message rate limit.  
+**telemetryMessages** - the maximum number of telemetry messages that can be sent.  
+**telemetryDataPoints** - the number of telemetry data points a device can send.  
 
-**maxInflightMessages** -  the maximum number of MQTT messages that can be sent but remain unacknowledged (in-flight) at any given time.
+Below is an interpretation of the rate limit value **"200:1,6000:60,14000:3600"**:
 
-
-**rateLimits** - a nested object that specifies the rate limits for different types.
-
-**messages** - the overall message rate limit.
-
-**telemetryMessages** - the maximum number of telemetry messages that can be sent.
-
-**telemetryDataPoints** - the number of telemetry data points a device can send.
-
+**"200:1"** - 200 messages can be sent per second.  
+**"6000:60"** - 6000 messages can be sent per 60 seconds (1 minute).  
+**"14000:3600"** - 14000 messages can be sent over a period of 3600 seconds (1 hour).  
 
 If the device is a gateway, the response includes additional rate limits for devices that are connected through the gateway. 
 The response structure for gateways looks like this:
@@ -545,14 +544,14 @@ The response structure for gateways looks like this:
   "maxPayloadSize": 65536,
   "maxInflightMessages": 100,
   "rateLimits": {
-    "messages": "20:600",
-    "telemetryMessages": "10:600",
-    "telemetryDataPoints": "40:600"
+    "messages": "200:1,6000:60,14000:3600",
+    "telemetryMessages": "100:1,3000:60,7000:3600",
+    "telemetryDataPoints": "200:1,6000:60,14000:3600"
   },
   "gatewayRateLimits": {
-    "messages": "100:600",
-    "telemetryMessages": "50:600",
-    "telemetryDataPoints": "200:600"
+    "messages": "200:1,6000:60,14000:3600",
+    "telemetryMessages": "100:1,3000:60,7000:3600",
+    "telemetryDataPoints": "200:1,6000:60,14000:3600"
   }
 }
 ```
