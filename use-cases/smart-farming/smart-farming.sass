@@ -276,7 +276,7 @@
             justify-content: space-between
             box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
             .smart-farm-solutions-text
-                width: 720px
+                max-width: 720px
             .smart-farm-solutions-img
                 display: flex
                 align-items: center
@@ -295,10 +295,12 @@
         width: 892px
         p
             text-align: center
-        h4
+        h2
             text-align: center
     .smart-farm-demo-btn
         margin-top: 60px
+        display: flex
+        justify-content: center
         .try-demo
             background-color: #2A7DEC
             color: #fff
@@ -459,6 +461,10 @@
         padding: 145px 50px 0px 50px
     .smart-farm-solutions
         padding: 185px 50px 0px 50px
+        .smart-farm-solutions-wrapper 
+            .smart-farm-solutions-item 
+                .smart-farm-solutions-text
+                    max-width: 582px
     .smart-farm-demo
         padding: 120px 50px 0px 50px
     .smart-farm-key-features
@@ -504,17 +510,19 @@
                 margin-right: 0px
             .block-img
                 margin-top: 60px
+                display: flex
+                justify-content: center
                 img
                     width: 632px
                     height: 363px
     .smart-farm-contact-us
         margin: 127px 30px 0px 30px
     .smart-farm-key-difference
-        padding: 145px 0px 0px 30px
+        padding: 145px 30px 0px 30px
         flex-direction: column
         align-items: flex-start
         .smart-farm-key-difference-img 
-            margin-left: 0px
+            margin-left: unset
             margin-top: 50px
             img 
                 width: 620px
@@ -536,10 +544,11 @@
                     width: 281px
                     height: 175px
     .smart-farm-cycle
-        padding: 60px 30px 0px 60px
+        padding: 60px 30px 0px 30px
         .smart-farm-cycle-container
             flex-direction: column
             .smart-farm-cycle-img
+                margin-top: 40px
                 img
                     width: 542px
                     height: 364px
@@ -607,14 +616,27 @@
                 .img-iot, .img-ai-ml, .img-auto-rob, .img-sensors 
                     margin-left: 0px
     .smart-farm-cycle 
+        padding: 60px 15px 0px 15px
+        .smart-farm-cycle-container
+            .smart-farm-cycle-img
+                display: flex
+                justify-content: center
         .smart-farm-cycle-wrapper
             flex-direction: column-reverse
+            align-items: center
             .smart-farm-cycle-text
                 width: 100%
+                margin-top: 24px
+                p
+                    margin-top: 6px
+
     .smart-farm-pros
         padding: 100px 15px 0px 15px
         .smart-farm-pros-container
             width: 100%
+        .smart-farm-pros-wrapper
+            .smart-farm-pros-item
+                flex: 1 calc(100% - 1em)
     .smart-farm-solutions
         padding: 100px 15px 0px 15px
         .smart-farm-solutions-container
@@ -625,6 +647,10 @@
                 .smart-farm-solutions-text
                     width: 100%
                     margin-top: 40px
+                .smart-farm-solutions-img
+                    img
+                        width: 120px
+                        height: 120px
     .smart-farm-demo
         padding: 60px 15px 0px 15px
         .smart-farm-demo-container
@@ -709,13 +735,29 @@
         .smart-farm-pros-wrapper 
             .smart-farm-pros-item
                 padding: 20px
+                h4
+                    top: 80px
     .smart-farm-solutions
         padding: 75px 15px 0px 15px
         .smart-farm-solutions-wrapper 
             .smart-farm-solutions-item
-                padding: 20px       
+                padding: 20px
+                .smart-farm-solutions-img
+                    img
+                        width: 80px
+                        height: 80px
     .smart-farm-demo
         padding: 50px 15px 0px 15px
+        .smart-farm-demo-container
+            p
+                text-align: left
+            h2
+                text-align: left
+            .smart-farm-demo-btn
+                flex-direction: column
+                .contact-us
+                    margin-left: 0px
+                    margin-top: 16px
         .smart-farm-demo-img
             display: none
     .smart-farm-key-features
