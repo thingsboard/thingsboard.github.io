@@ -5,7 +5,7 @@ description: Internet of things farming ✔ Smart agriculture ✔ IoT sensors in
 notitle: "true"
 
 ---
-<section id="hero">
+<section id="hero"></section>
 <section class="smart-farm-banner">
     <div class="smart-farm-banner-container">
         <h1>Smart farming</h1>
@@ -13,7 +13,7 @@ notitle: "true"
     </div>
     <img src="/images/usecases/smart-farming/Hero photo.webp" alt="farm">
 </section>
-<section class="smart-farm-about">
+<section id="smart-farm-about" class="smart-farm-about">
     <section class="smart-farm-about-container">
         <div class="smart-farm-content">
             <div class="smart-farm-content-wrapper">
@@ -21,7 +21,7 @@ notitle: "true"
                 <p>Smart farming, also known as "smart agriculture", is a concept that focused on implementing advanced technologies and providing the agricultural industry with the infrastructure to use smart farming technologies, including smart sensors, cloud services, artificial intelligence (AI), Machine Learning (ML) and the Internet of Things (IoT), Data analytics, Software (IoT platforms) to track, monitor, automate and analyze data to  increase the sustainability of agricultural production. These technologies enable farmers to monitor and control various aspects of their farm operations in real-time, thereby increasing productivity and reducing environmental impact.</p>
                 <p>The main goal of smart farming is to improve the quality and quantity of agricultural products while optimizing human labour to ensure the best results.</p>
             </div>
-            <div class="smart-farm-content-wrapper">
+            <div id="smart-farm-content-wrapper" class="smart-farm-content-wrapper">
                 <h2>The farming and agricultural practices (traditional vs smart farming)</h2>
                 <p>Traditional agriculture and smart agriculture are two different approaches to farming, each with unique methodologies and outcomes. Traditional agriculture relies on age-old practices and manual labour, while smart agriculture uses advanced technology to increase productivity and efficiency. Technological advances have revolutionized agriculture, increasing crop production and improving farmers' livelihoods.</p>
             </div>
@@ -31,22 +31,22 @@ notitle: "true"
                 <h4>Content</h4>
                 <nav>
                     <ul>
-                        <li><a href="#smart-farm-management-software">What is smart farming? </a></li>
-                        <li><a href="#">The farming and agricultural practices (traditional vs smart farming) </a></li>
-                        <li><a href="#">Key differences between traditional and smart farming </a></li>
-                        <li><a href="#">Smart farming technologies </a></li>
-                        <li><a href="#">The IoT-Based Smart Farming Cycle </a></li>
-                        <li><a href="#">Advantages of Smart farming </a></li>
-                        <li><a href="#">Smart farming solutions </a></li>
-                        <li><a href="#">ThingsBoard IoT platform for Smart farming solutions </a></li>
-                        <li><a href="#">Key features of ThingsBoard IoT Platform </a></li>
-                        <li><a href="#">Benefits of using ThingsBoard IoT Platform </a></li>
+                        <li><a href="#smart-farm-about">What is smart farming? </a></li>
+                        <li><a href="#smart-farm-content-wrapper">The farming and agricultural practices (traditional vs smart farming) </a></li>
+                        <li><a href="#smart-farm-key-difference">Key differences between traditional and smart farming </a></li>
+                        <li><a href="#smart-farm-tech">Smart farming technologies </a></li>
+                        <li><a href="#smart-farm-cycle">The IoT-Based Smart Farming Cycle </a></li>
+                        <li><a href="#smart-farm-pros">Advantages of Smart farming </a></li>
+                        <li><a href="#smart-farm-solutions">Smart farming solutions </a></li>
+                        <li><a href="#smart-farm-demo">ThingsBoard IoT platform for Smart farming solutions </a></li>
+                        <li><a href="#smart-farm-key-features">Key features of ThingsBoard IoT Platform </a></li>
+                        <li><a href="#smart-farm-management-software">Benefits of using ThingsBoard IoT Platform </a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </section>
-    <section class="smart-farm-about-blocks">
+    <section id="smart-farm-about-blocks" class="smart-farm-about-blocks">
         <div class="smart-farm-about-block">
             <div class="block-text">
                 <h4>What is traditional farming?</h4>
@@ -68,7 +68,7 @@ notitle: "true"
             </div>
         </div>
     </section>
-    <section class="smart-farm-contact-us">
+    <section id="smart-farm-contact-us" class="smart-farm-contact-us">
         <img class="rec55" src="/images/usecases//smart-farming/Rectangle 55.webp">
         <div class="smart-farm-contact-us-text">
             <h2>Enhance your farm with Smart Technology</h2>
@@ -79,7 +79,7 @@ notitle: "true"
         </div>
         <img class="rec56" src="/images/usecases//smart-farming/Rectangle 56.webp">
     </section>
-    <section class="smart-farm-key-difference">
+    <section id="smart-farm-key-difference" class="smart-farm-key-difference">
         <div class="smart-farm-key-difference-text">
             <h2>Key differences between traditional and smart farming</h2>
             <p>The differences between traditional and smart farming are increasingly evident as agriculture evolves. Traditional farming relies heavily on manual labor, with tasks such as planting, monitoring, irrigation, and harvesting performed by hand, requiring a significant workforce and long hours of work. In contrast, smart farming reduces the need for manual labor by incorporating automated equipment and smart farming system. For example, automatic irrigation systems and drones can monitor and water crops, improving efficiency and reducing labor requirements.</p>
@@ -89,7 +89,7 @@ notitle: "true"
             <img src="/images/usecases/smart-farming/KeyDifferencesBetweenTraditionalAndSmartFarming.webp">
         </div>
     </section>
-    <section class="smart-farm-tech">
+    <section id="smart-farm-tech" class="smart-farm-tech">
         <div class="smart-farm-tech-container">
             <div class="smart-farm-tech-main">
                 <h2>Smart farming technologies</h2>
@@ -135,7 +135,7 @@ notitle: "true"
             </div>
         </div>
     </section>
-    <section class="smart-farm-cycle">
+    <section id="smart-farm-cycle" class="smart-farm-cycle">
         <div class="smart-farm-cycle-container">
             <div class="smart-farm-cycle-text">
                 <h2>The IoT-Based Smart Farming Cycle</h2>
@@ -181,7 +181,7 @@ notitle: "true"
             <div class="smart-farm-cycle-num"><img src="/images/usecases/smart-farming/Infinity.webp"></div>
         </div>
     </section>
-    <section class="smart-farm-pros">
+    <section id="smart-farm-pros" class="smart-farm-pros">
         <div class="smart-farm-pros-container">
             <h2>Advantages of Smart farming</h2>
             <p>Smart agriculture, which uses advanced technologies such as IoT, AI, ML and automation, offers many benefits that improve agricultural practices. These benefits increase productivity, efficiency and sustainability, solving many of the challenges faced by traditional farming methods. Here are some key benefits of smart farming:</p>
@@ -239,7 +239,7 @@ notitle: "true"
             </div>
         </div>
     </section>
-    <section class="smart-farm-contact-us">
+    <section id="smart-farm-contact-us" class="smart-farm-contact-us">
         <img class="rec55" src="/images/usecases//smart-farming/Rectangle 55.webp">
         <div class="smart-farm-contact-us-text">
             <h2>Enhance your farm with Smart Technology</h2>
@@ -250,7 +250,7 @@ notitle: "true"
         </div>
         <img class="rec56" src="/images/usecases//smart-farming/Rectangle 56.webp">
     </section>
-    <section class="smart-farm-solutions">
+    <section id="smart-farm-solutions" class="smart-farm-solutions">
         <div class="smart-farm-solutions-container">
             <h2>Smart farming solutions</h2>
             <p>Smart agriculture solutions encompass a range of technologies and practices aimed at improving the productivity, efficiency and sustainability of agriculture. Here are some of the key smart farming solutions that are transforming agriculture:</p>
@@ -357,7 +357,7 @@ notitle: "true"
             </div> 
         </div>
     </section>
-    <section class="smart-farm-demo">
+    <section id="smart-farm-demo" class="smart-farm-demo">
         <div class="smart-farm-demo-container">
             <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
             <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
@@ -370,7 +370,7 @@ notitle: "true"
             <img src="/images/usecases/smart-farming/ThingsBoard IoT platform for Smart farming solutions.webp">
         </div>
     </section>
-    <section class="smart-farm-key-features">
+    <section id="smart-farm-key-features" class="smart-farm-key-features">
         <h2>Key features of ThingsBoard Smart farming solution</h2>
         <div class="smart-farm-key-features-cards">
             <div class="smart-farm-key-features-card">
