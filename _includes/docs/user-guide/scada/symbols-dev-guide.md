@@ -1,144 +1,393 @@
 * TOC
 {:toc}
 
-ThingsBoard SCADA symbols are based on [SVG](https://en.wikipedia.org/wiki/SVG) (Scalable Vector Graphics) files.
-The use of vector graphics ensures that SCADA symbols scale seamlessly to any screen size.
-ThingsBoard's engineers have extended the SVG format to make these symbols interactive.
-This guide will explain how to create your own interactive SCADA symbol based on a sample SVG file.
+## Introduction
+
+In ThingsBoard, SCADA symbols are crafted using [SVG](https://en.wikipedia.org/wiki/SVG) (Scalable Vector Graphics), 
+which enables seamless scaling across different screen sizes due to their vector nature. 
+Our engineers have enhanced the SVG format to support interactivity in these symbols. 
+This guide will walk you through the steps to create your own interactive SCADA symbol using a sample SVG file.
 
 ## Prerequisites
 
-Before you proceed, please make sure you have:
+To effectively follow this guide, ensure you have:
 
-* completed the [getting started](/docs/getting-started-guides/helloworld/) guide;
-* familiarized with the [SCADA dashboards](/docs/user-guide/scada/) documentation;
-* understand the basics of an [SVG](https://www.w3schools.com/graphics/svg_intro.asp);
+* Completed the [Getting Started](/docs/getting-started-guides/helloworld/) guide.
+* Reviewed the [SCADA Dashboards](/docs/user-guide/scada/) documentation.
+* Acquired a basic understanding of [SVG](https://www.w3schools.com/graphics/svg_intro.asp).
 
-An experience with the [SVG.js](https://svgjs.dev/) is a great plus for advanced use cases.
+Having experience with [SVG.js](https://svgjs.dev/) will be beneficial for tackling advanced scenarios.
 
-## Sample SVG file 
+## Key Concepts
 
-Let's assume we would like to turn an SVG file listed below to the SCADA symbol:
+We will often use the following definitions:
+
+- **Developer**: A person responsible for defining the SCADA symbol.
+- **End User**: A person who integrates the SCADA symbol into the dashboard.
+
+Creating a SCADA symbol in ThingsBoard involves an SVG file along with several concepts:
+
+- **Tags**: These are custom labels assigned to shapes within the SVG file. Tags are utilized to specify render functions and `onClick` actions for SVG elements;
+
+- **Behavior**: this concept outlines how a SCADA symbol receives data from the platform and what actions it triggers on devices or dashboards;
+
+- **Properties**: These are configuration elements designed for end users. These properties allow for customization of the widget's appearance;
+
+- **State Render Function**: A JavaScript function responsible for rendering the SVG element.
+
+- **On Click Action**: A JavaScript function that defines the logic of the onClick handler.
+
+- **[ScadaSymbolContext](#scadasymbolcontext)**: A specialized JavaScript object that contains references to tags, behavior items, properties, and helper API functions.
+
+## Sample SVG File
+
+Assume we want to transform the SVG file shown below into an interactive SCADA symbol:
 
 <img src="/images/user-guide/scada/fan.svg" alt="FAN SVG" width="300" height="300">
 
-This SVG image is pretty static and contains **fan**, **text label** and two **buttons**.
+*Figure: Static SVG image including a fan, text label, and two buttons.*
 
-Let's convert it to an interactive widget which will display the state of our fan and update in real time. 
+This SVG image is static, containing a **fan**, **text label**, and two **buttons**. 
+Our goal is to convert it into an interactive widget that reflects the state of our fan and updates in real time.
 
-Let's formalize our task below:
+##### Task Formalization
 
-* the buttons must update the state of a target device engine, via a command to device or change of the device attribute; 
-* the fan must rotate and have a green color if the engine is 'On';
-* the fan must stop rotation and have a red color if the engine is 'Off';
-* the fan must stop rotation and have a grey color if the target device is not available;
-* the 'N/A' text must show the rotation speed of the fan. Let's hide the label if the engine is 'Off';
+- **Buttons**: 
+  - These should issue commands to the target device, updating the state of the fan engine.
+  - Button labels and colors must be configurable by end users.
+- **Fan Appearance**:
+  - The fan should rotate when the engine is 'On' and stop when the engine is 'Off'.
+  - Colors for both 'On' and 'Off' states should be configurable separately.
+- **Text Label**: 
+  - Display the fan's rotation speed. Hide this label when the engine is 'Off'.
+  - The label should be customizable by end users, including options to show/hide, set font, color, and display units.
 
-Now let's review the steps to complete this task below.
+Next, we will outline the steps to achieve this functionality.
 
-## Step 1. Upload the SVG file
+## Step 1: Upload the SVG File
 
-* Download the [fan.svg](/images/user-guide/scada/fan.svg) file;
-* Navigate to 'Resources'->'SCADA symbols' and click 'Upload SCADA symbol' button;
-* Select the fan.svg file from the downloads, change the name to 'Fan' and click 'Upload'.
+1. Download the [fan.svg](/images/user-guide/scada/fan.svg) file.
+2. Navigate to `Resources` -> `SCADA symbols` and click the **Upload SCADA symbol** button.
+3. Select the `fan.svg` file from your downloads, rename it to 'Fan', and click **Upload**.
 
-## Step 2. Explore the SCADA editor
+## Step 2: Explore the SCADA Editor
 
-Once completed, you will arrive to an SCADA symbol editor.
-The left panel will display your SVG file.
-The right panel will contain multiple tabs: General, Tags, Behavior and Properties.
+Once you upload your SCADA symbol, you'll be directed to the SCADA symbol editor. The editor is split into two panels:
+- **Left Panel**: Displays your uploaded SVG file.
+- **Right Panel**: Contains multiple tabs such as General, Tags, Behavior, and Properties.
 
-Let's review the buttons available in the right panel:
+##### SCADA Editor actions
 
-* 'Create widget' allows you to quickly create a widget based on your SCADA symbol. You may do this immediately. 
-  All major changes to the SCADA symbol will be automatically reflected in the widget library. 
-  The exception is information fields like title, description and search tags - since they are copied on the moment you create a widget.
-* 'Apply' and 'Decline' are regular buttons that allows you to save or decline the changes to the symbol.
-* 'Preview' button allows you to check widget behavior from the end-user point of view.
-  The left panel will render an SVG while the right panel will contain the configuration page of the widget.  
-  Use 'Back' button to exit the preview mode.
+- **Create Widget**: This button allows you to quickly create a widget based on your SCADA symbol. Any major changes to the SCADA symbol will automatically reflect in the widget library, except for fields like title, description, and search tags, which are copied at the moment you create the widget.
 
-As a simple exercise, let's populate the description and search tags and click 'Apply'.
-TODO: screen
+- **Apply** and **Decline**: These buttons allow you to save or discard changes to the symbol.
 
-You may also notice the widget size in columns and rows. This is the hint for SCADA layout about how to place the widget. 
-It impacts the default aspect ratio of the widget, so it is recommended that this settings match the aspect ratio of the SVG. 
-We do not recommend to use SVGs with complex aspect ratios, like 17:42 or etc. An example of good aspect ratio is 1:1, 1:2, 2:1, etc.
+- **Preview**: Enables you to check the widget's behavior from the end-user's perspective. The left panel will render the SVG, while the right panel shows the configuration page of the widget. Use the **Back** button to exit preview mode.
 
-## Step 3. Tags
+As a simple exercise, populate the description and search tags, then click **Apply**.
 
-Tags are custom labels for the shapes inside the SVG file.
+[//]: # (TODO: screenshot)
 
-We use them to define the specific state render function and/or on click action. 
+##### Widget Size and Aspect Ratio
+
+Notice the widget size in columns and rows, which hints at how the SCADA layout should place the widget. 
+This setting impacts the default aspect ratio of the widget and should ideally match the aspect ratio of your SVG. 
+Complex aspect ratios like 17:43 are not recommended. Good examples include 1:1, 1:2, 2:1, etc.
+
+## Step 3: Tags
+
+Tags are custom labels assigned to shapes within the SVG file. 
+They are used to specify render functions and `onClick` actions for SVG elements.
+You can assign the same tag to multiple SVG elements to streamline interaction and functionality across similar components.
+
+##### Tags Definition via Editor
+
+To define a tag, select the corresponding SVG element in the left panel of the editor and click the **+Add tag** button. It is recommended to name tags in `camelCase` to facilitate their reference in render functions.
+
+For our use case, it's necessary to tag almost every element within the SVG to ensure full interactivity. Below is a list of the tags to be defined:
+
+- **onButton**: Tag for the *group* element to define the `onClick` action for the 'On' button.
+- **onButtonBackground**: Tag for the *rect* element to control the background color of the 'On' button.
+- **onButtonText**: Tag for the *text* element to define the text display of the 'On' button.
+- **offButton**: Tag for the *group* element to define the `onClick` action for the 'Off' button.
+- **offButtonBackground**: Tag for the *rect* element to control the background color of the 'Off' button.
+- **offButtonText**: Tag for the *text* element to define the text display of the 'Off' button.
+- **rotationSpeedText**: Tag for the *text* element to display the rotation speed value.
+- **fan**: Tag for the *path* element to animate the fan rotation.
+
+[//]: # (TODO: Insert a table or gallery of images demonstrating how to define each tag.)
+
+#### Tags definition via XML
+
+While the UI editor suffices for simple SCADA symbols, complex SVG file structures might require a different approach. 
+For elements obscured by gradients or complex shapes, it's useful to switch to XML editor mode. 
+You can find this option in the top right corner of the left panel in the editor. 
+Here, you can define tags using the `tb:tag` syntax directly within the XML structure.
+
+Let's add Tags to the 'On' Button Elements:
+
+**Before** Adding Tags:
+
+```xml
+<g transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
+  <rect x="54.702" y="60.372" width="14.263" height="7.426" rx="1.5" fill="#12ed19" stroke="#000"/>
+  <text x="61.856" y="64.491" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.446" stroke-width=".741" text-anchor="middle" xml:space="preserve">
+    <tspan stroke-width=".741">On</tspan>
+  </text>
+</g>
+```
+
+**After** Adding Tags:
+
+```xml
+<g tb:tag="onButton" transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
+  <rect tb:tag="onButtonBackground" x="54.702" y="60.372" width="14.263" height="7.426" rx="1.5" fill="#12ed19" stroke="#000"/>
+  <text tb:tag="onButtonText" x="61.856" y="64.491" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.446" stroke-width=".741" text-anchor="middle" xml:space="preserve">
+    <tspan stroke-width=".741">On</tspan>
+  </text>
+</g>
+```
+
+#### Tags Table
+
+Once all tags are defined, they will appear in the 'Tags' tab.
+
+[//]: # (TODO: Include screenshot here.)
+
+The table in this tab allows you to quickly access each tag and define both the state render function and the `onClick` action. Before we proceed to writing these functions, let's explore a few additional concepts.
+
+## Step 4: Behavior items
+
+Behavior items enable the end-user to configure interactions between the widget and the platform. 
+Once defined, these items are available in the widget's end-user configuration settings.
+For instance, you can set up the source that determines the fan's state ('On'/'Off') and specify the actions that occur when the 'On' and 'Off' buttons are clicked.
+
+Below is a gallery containing two images: one showing the list of behavior items configured by the SCADA developer, and the other displaying the corresponding elements in the end-user configuration of the widget.
+
+[//]: # (TODO: Include two screenshots here.)
+
+Now let's learn how to configure behavior items. Each item includes the following common fields:
+
+- **id**: An identifier used to reference an item in the [ScadaSymbolContext](#scadasymbolcontext).
+- **Name**: A label that generates an element for end-user configuration.
+- **Hint**: A hint provided within the end-user configuration element to assist with usage.
+- **Group Title**: A method to organize configuration elements within the 'Behavior' configuration panel.
+- **Type**: The field can be of type 'value', 'action', or 'widget action'. We will explore each type in detail below.
+- **Default Settings**: The preset configurations available to the end-user.
+
+Fields like Name, Hint, and Group Title support internationalization using the 'i18n' tag. For instance: `{i18n:scada.fan.turn-on}`. For more details on setting up custom translations, see [Localization](/docs/pe/user-guide/custom-translation/).
+
+#### Value
+
+**Value** behavior items fetch data from the platform into the [ScadaSymbolContext](#ScadaSymbolContext), acting like variables. 
+These variables typically change based on target device attributes or time series data and are used in defining the 'State render function' for your tags.
+
+There are five types of actions to retrieve value:
+
+- **Do nothing**: Utilizes a constant value defined by the user. *TODO: Add screen*
+- **Execute RPC**: Sends a command to the target device to retrieve the value. The value is resolved once at the widget's creation. *TODO: Add screen*
+- **Get attribute**: Subscribes to a target entity's attribute value, updating the widget when this attribute changes. *TODO: Add screen*
+- **Get time series**: Subscribes to a target entity's time series field, updating the widget with new data arrivals. *TODO: Add screen*
+- **Get dashboard state**: Uses the current dashboard state's name, beneficial in specific scenarios unrelated to the device's state. *TODO: Add screen*
+
+**Value Types**: 'Value' behavior items come in various types including string, integer, double, boolean, and JSON. Each type has its own specific configuration parameters.
+
+Let's create new value behavior Items for our SCADA symbol:
+
+1. **fanOn**:
+  - Type: Boolean ('true' means the fan is on, 'false' means it is off).
+  - Default Configuration: Uses the device attribute 'fanOn'.
+
+   *TODO: Add screenshot of the configuration.*
+
+2. **fanRotationSpeed**:
+  - Type: Double (value in RPMs).
+  - Default Configuration: Subscribes to the time-series key 'rotationSpeed' of the target device by default.
+
+   *TODO: Add screenshot of the configuration.*
+
+#### Action
+
+**Action** behavior items specify the actions taken against the target device when specific events occur, typically triggered using the [ScadaSymbolContext](#ScadaSymbolContext) when defining the 'On click action' for your tags.
+
+The platform supports three types of actions for interacting with the target entity:
+
+- **Execute RPC**: Sends a command to the target device. You can specify the method and parameters for the command. *TODO: Add screenshot*
+- **Set attribute**: Issues a command to set an attribute on the target device, allowing you to define the scope, key, and value. *TODO: Add screenshot*
+- **Add time series**: Adds a new time series value to the target device. Here, you can define the key and value for the new time series data. *TODO: Add screenshot*
+
+Let's set up new action behavior items for the user interactions with the 'On' and 'Off' buttons:
+
+1. **onBtnClick**:
+  - Configures actions when the 'On' button is clicked. 
+  - Type: Boolean
+  - Default Configuration: Set shared scope attribute `fanOn` to `True`; 
+
+    *TODO: Add screenshot of the configuration.*
+  
+2. **offBtnClick**: 
+  - Configures actions when the 'Off' button is clicked.
+  - Type: Boolean
+  - Default Configuration: Set shared scope attribute `fanOn` to `False`;
+
+    *TODO: Add screenshot of the configuration.*
+
+#### Widget Action
+
+**Widget Action** behavior items function similarly to [Action](#action) behavior items but are designed to trigger actions related to the current dashboard widget rather than the target device. 
+Possible widget actions are detailed in the [Widget Actions Documentation](/docs/user-guide/ui/widget-actions/#action-types).
+
+In our example, we will configure the 'onFanClick' click action to, by default, open the platform's website page in a separate browser tab.
+
+    *TODO: Add screenshot of the configuration.*
+
+## Step 5. Properties
+
+
+
+## Step 6. Define tag functions
+
+In this step, we will define the [state render functions](#state-render-function) and [on click action](#on-click-action) for our tags.
+
+**Rotation Speed state render function**
+
+Let's start with defining the simple state render function for our 'rotationSpeedText' tag:
+
+```javascript
+var on = ctx.values.fanOn;
+
+if (on) {
+   element.show(); 
+   ctx.api.text(element, ctx.values.fanSpeed + " RPM");
+} else {
+   element.hide();
+}
+```
+
+Few things to note here:
+
+  * Line 1: we use `ctx.values` map to extract the `fanOn` *boolean* value;
+  * Line 2: we show an element if the fan is on;
+  * Line 5: we use special 'ctx.api' call to update the text of an element with the value of 'fanSpeed';
+  * Line 6: we hide an element if the fan is off;
+
+**Fan state render function**
+
+Now let's proceed with a bit more complex function to rotate a 'fan' tag:
+
+```javascript
+var on = ctx.values.fanOn;
+var hasAnimation = element.remember('hasAnimation');
+
+if (on) {
+    if (!hasAnimation) {
+        element.remember('hasAnimation', true);
+        element.animate(1000).ease('-').rotate(360).loop();
+    } else {
+        element.timeline().play();
+    }
+    element.timeline().speed(ctx.values.fanSpeed / 60);
+} else {
+    if (hasAnimation) {
+      element.timeline().pause();
+    }
+}
+```
+
+Although the function is quite simple, it requires basic knowledge of [SVG.js](https://svgjs.dev/). Few things to note here:
+
+ * Line 2: we use `element.remember` from [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#remember-as-getter) to remember the state of the animation;  
+ * Line 7: we use `element.animate` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to define our animation;
+ * Line 11: we use `element.timeline.speed` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to define the speed of our animation that we convert from RPM to RPS;
+ * Line 14: we use `element.timeline.pause` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to dstop the animation if the fan is turned off;
+
+**General state render function**
+
+As an alternative to configuring each tag rendering functions, we might configure everything in one place. 
+See global state render function alternative that one may define in a general tab below:
+
+```javascript
+var on = ctx.values.fanOn;
+var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;
+
+var fanElement = ctx.tags.fan[0];
+var textElement = ctx.tags.rotationSpeedText[0];
+
+var hasAnimation = fanElement.remember('hasAnimation');
+
+if (on) {
+    textElement.show();
+    ctx.api.text(textElement, speed + " RPM");
+    if (!hasAnimation) {
+        fanElement.remember('hasAnimation', true);
+        fanElement.animate(1000).ease('-').rotate(360).loop();
+    } else {
+        fanElement.timeline().play();
+    }
+    fanElement.timeline().speed(speed / 60);
+} else {
+    textElement.hide();
+    if (hasAnimation) {
+      fanElement.timeline().pause();
+    }
+}
+```
+
+please note lines 4 and 5 where we use `ctx.tags.fan` and `ctx.tags.rotationSpeedText` to get the array of SVG elements for each tag. 
+Usually this array contain only one element, but in general case, your SVG file may have multiple elements that share the same tag id.
+We have listed general value function for your reference, but will continue using individual tag state render functions in this tutorial.
+
+**Button click actions**
+
+Now let's define the 'On click' action for our 'On' button:
+
+```javascript
+ctx.api.callAction(event, 'onBtnClick', undefined, {
+  next: () => {
+     ctx.api.setValue('fanOn', true);
+  }
+});
+```
+
+Few things to note here:
+
+* Line 1: we use `ctx.api.callAction` to call the `onBtnClick` action that we have defined in our behavior settings;
+* Line 2: the `ctx.api.callAction` accepts the Observer callback that we may use to manually set the value into context. 
+  Setting values manually is not the best practise. Typically, you should trigger the attribute update or RPC command to device. 
+  Then device will change it state and report it back to the platform. 
+  So, the fan rotation should start when the device reports that it has started and not when the command is sent.
+  We are manually setting the value here to be able to use the SCADA symbol in preview mode. 
+  Since in the preview mode the symbol is not contected to the device and it can't send the real command until you place the widget on dashboard that is targeting the particular device.  
+
+Similar, let's define the 'Off' button click function:
+
+```javascript
+ctx.api.callAction(event, 'offBtnClick', undefined, {
+  next: () => {
+     ctx.api.setValue('fanOn', false);
+  }
+});
+```
+
+## Step 6. Preview mode
 
 #### State render function
 
 This JS function is responsible for changing the SVG element via [SVG.js](https://svgjs.dev/) API and accepts two parameters:
 
-  * *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
-  * *element* is an [SVG.js](https://svgjs.dev/) element;
+* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
+* *element* is an [SVG.js](https://svgjs.dev/) element;
 
-You may also notice the global state render function that is available in the general tab. 
+You may also notice the global state render function that is available in the general tab.
 This function is optional and is useful when you would like to define logic of the rendering for all tags in one place.
 
 #### On click action
 
 This JS function defines a logic of on click handler. and accepts three parameters:
 
-  * *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
-  * *element* is an [SVG.js](https://svgjs.dev/) element;
-  * *event* is an on click event that may be extended to other events in the future releases;
-
-#### Tags definition via editor
-
-To define a tag, one should select a corresponding SVG element in the left panel of an editor and click '+Add tag' button.
-We suggest to define tag names in a camel case. This will help to address them in the corresponding render functions.
-
-Based on our use case, we need to define multiple tags. Basically, we must tag almost every element in our SVG.
-The screenshot gallery below will demonstrate how to define 6 tags:
-
-  * *onButtonBackground* - *rect* element tag to control the background color of the 'On' button;
-  * *onButton* - *group* element tag to define the on click action of the 'On' button;
-  * *offButtonBackground* - *rect* element tag to control the background color of the 'Off' button;
-  * *offButton* - *group* element tag to define the on click action of the 'Off' button;
-  * *rotationSpeedText* - *text* element tag to display the rotation speed;
-  * *fan* - *path* element tag to animate the fan rotation;
- 
-TODO: table with images;
-
-#### Tags definition via XML
-
-The UI editor is completely sufficient for our sample SCADA symbol. 
-However, some SVG files may be quite complex, where the element that we would like to tag is 'hidden' below the other elements, typically gradients or complex shapes.
-In such a case, you may edit the SVG file manually and define the tags using the *tb:tag* syntax. 
-
-For example, the 'On' button elements **before** adding tags:
-
-```xml
-<g transform="translate(-29.202 20.128)">
-  <rect x="54.702" y="60.372" width="14.263" height="7.4261" rx="1.5" fill="#12ed19" stroke="#000"/>
-  <text x="61.855518" y="64.49128" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.4461px" stroke-width=".74101" text-anchor="middle" xml:space="preserve"><tspan stroke-width=".74101">On</tspan></text>
-</g>
-```
-
-The 'On' button elements **after** adding tags:
-
-```xml
-<g transform="translate(-29.202 20.128)" tb:tag="onButton">
-  <rect x="54.702" y="60.372" width="14.263" height="7.4261" rx="1.5" fill="#12ed19" stroke="#000" tb:tag="onButtonBackground"/>
-  <text x="61.855518" y="64.49128" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.4461px" stroke-width=".74101" text-anchor="middle" xml:space="preserve"><tspan stroke-width=".74101">On</tspan></text>
-</g>
-```
-
-#### Tags table
-
-Once you define all the tags, you will see them available in the 'Tags' tab. 
-The corresponding table allows you to quickly access each tag and define both 'state render function' and 'on click action'.
-Before we jump to writing those functions, we must learn few more concepts.
-
-## Step 4. Behavior
-
-
+* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
+* *element* is an [SVG.js](https://svgjs.dev/) element;
+* *event* is an on click event that may be extended to other events in the future releases;
 
 ## Reference
 
