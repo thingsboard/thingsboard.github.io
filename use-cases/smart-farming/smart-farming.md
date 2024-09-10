@@ -68,14 +68,14 @@ notitle: "true"
             </div>
         </div>
     </section>
-    <section id="smart-farm-contact-us" class="smart-farm-contact-us">
+    <section class="smart-farm-contact-us">
         <img class="rec55" src="/images/usecases//smart-farming/Rectangle 55.webp">
         <div class="smart-farm-contact-us-text">
             <h2>Enhance your farm with Smart Technology</h2>
             <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
         </div>
-        <div class="smart-farm-contact-us-btn">
-            <button>Contact Us</button>
+        <div class="smart-farm-contact-us-btn" id="Serv_DevServ_ContactUs1">
+            <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
         </div>
         <img class="rec56" src="/images/usecases//smart-farming/Rectangle 56.webp">
     </section>
@@ -188,53 +188,73 @@ notitle: "true"
         </div>
         <div class="smart-farm-pros-wrapper">
             <div class="smart-farm-pros-item">
-                <span>01</span>
-                <h4>Increased efficiency</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>01</span>
+                    <h4>Increased efficiency</h4>
+                </div>
                 <p>Smart farming technologies automate many labor-intensive tasks, reducing the need for manual labor and increasing operational efficiency. Automated systems can perform tasks such as planting, irrigating and harvesting faster and more accurately than humans, leading to higher productivity.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>02</span>
-                <h4>Increased productivity</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>02</span>
+                    <h4>Increased productivity</h4>
+                </div>
                 <p>Using real-time data and predictive analytics, smart agriculture enables farmers to optimize the use of resources, resulting in higher yields and better quality products. Precision farming technologies ensure that crops receive the right amount of water, nutrients and pesticides at the right time, maximizing growth and productivity.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>03</span>
-                <h4>Sustainability</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>03</span>
+                    <h4>Sustainability</h4>
+                </div>
                 <p>Smart farming promotes sustainable farming practices by minimizing resource loss and reducing environmental impact. Technologies such as precision irrigation and targeted pesticide using help conserve water and reduce chemical use, protecting the environment and contributing to the long-term sustainability of agriculture.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>04</span>
-                <h4>Cost savings</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>04</span>
+                    <h4>Cost savings</h4>
+                </div>
                 <p>Automation and precise resource management lead to significant cost savings for farmers. Lower labor costs, lower water, fertilizer and pesticide costs, and higher yields all contribute to increased profitability.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>05</span>
-                <h4>Improved crop quality and yield</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>05</span>
+                    <h4>Improved crop quality and yield</h4>
+                </div>
                 <p>Precision farming technologies provide optimal care for crops, which leads to higher product quality and higher yields. By providing crops with the nutrients they need and protecting them from pests and diseases, smart farming improves the overall health and productivity of crops.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>06</span>
-                <h4>Enhanced livestock management</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>06</span>
+                    <h4>Enhanced livestock management</h4>
+                </div>
                 <p>Smart agriculture also extends to livestock management, where IoT devices and sensors track animal health, behavior and location. This data helps farmers identify health problems early, optimize feeding schedules and improve overall animal welfare.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>07</span>
-                <h4>Reduced human resources</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>07</span>
+                    <h4>Reduced human resources</h4>
+                </div>
                 <p>Automation reduces reliance on manual labor, allowing farmers to allocate their labor more efficiently and focus on more complex tasks that require human intervention. This is especially useful in regions experiencing labor shortages.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>08</span>
-                <h4>Enhanced data collection and analysis</h4>
+                <div class="smart-farm-pros-item-container">
+                   <span>08</span>
+                    <h4>Enhanced data collection and analysis</h4>
+                </div>
                 <p>Smart farming technologies enable the collection of vast amounts of data, which can be analyzed to gain valuable insights into farm operations. This data-driven approach allows for continuous improvement and optimization of farming practices.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>09</span>
-                <h4>Real-Time monitoring and alerts</h4>
+                <div class="smart-farm-pros-item-container">
+                   <span>09</span>
+                    <h4>Real-Time monitoring and alerts</h4>
+                </div>
                 <p>IoT devices continuously monitor various farm conditions and provide real-time alerts to farmers, enabling quick responses to emerging issues. This proactive approach helps prevent problems from escalating and ensures timely interventions.</p>
             </div>
             <div class="smart-farm-pros-item">
-                <span>10</span>
-                <h4>Increased security</h4>
+                <div class="smart-farm-pros-item-container">
+                    <span>10</span>
+                    <h4>Increased security</h4>
+                </div>
                 <p>IoT sensors can detect unwanted activities on the farm, such as gates opening, assets being tampered with, or livestock crossing geofenced locations. This enhances farm security and protects valuable resources.</p>
             </div>
         </div>
@@ -246,7 +266,7 @@ notitle: "true"
             <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
         </div>
         <div class="smart-farm-contact-us-btn">
-            <button>Contact Us</button>
+            <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
         </div>
         <img class="rec56" src="/images/usecases//smart-farming/Rectangle 56.webp">
     </section>
@@ -363,7 +383,7 @@ notitle: "true"
             <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
             <div class="smart-farm-demo-btn">
                 <button class="try-demo">Try demo</button>
-                <button class="contact-us">Contact Us</button>
+                <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Contact Us</button>
             </div>
         </div>
         <div class="smart-farm-demo-img">
@@ -418,6 +438,276 @@ notitle: "true"
         </div>
     </section>
 </section>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="close-button">
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
+    </div>
+    <div class="sub-content">
+        <div class="title">
+            <span>CONTACT US TODAY</span>
+        </div> 
+        <div class="sub-title">
+            <span>We are ready to develop your ideas</span>
+        </div>
+        <div class="sub-sub-title">
+            <span>Please fill out the form below and we will get back to you within 1-2 business days. 
+            We are looking forward to hearing from you!</span>
+        </div>
+        <!-- Id in the form below is dynamically changing for purposes of GTM -->
+        <form method="post"
+              onsubmit="return validateContactForm(this)"
+              class="gtm_form developmentServicesContactUsForm">
+            <div class="form-section">
+                <div class="form-element">
+                    <label for="first-name">
+                        <input id="first-name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                        <p>Name*</p>
+                    </label>
+                </div>
+                <div class="form-element">
+                    <label for="email">
+                        <input id="email" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                        <p>Email Address*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section secondary">
+                <div class="form-element next">
+                    <label for="subject" class="label-select">
+                        <select class="form-control cdu-form-control" name="subject">
+                            <option value="Custom Development" selected>Custom Development</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="ThingsBoard Products">ThingsBoard Products</option>
+                            <option value="Deployment Options">Deployment Options</option>
+                            <option value="Training">Training</option>
+                            <option value="Professional Services">Professional Services</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
+                            <option value="General Feedback">General Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p>Subject*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section secondary">
+                <div class="form-element next">
+                    <label for="msg">
+                        <textarea id="msg" class="form-control cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                        <p>Your message*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="submit-button-container">
+                <input class="cdu-button" value="Submit message" type="submit"/>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    var modal = document.getElementById("myModal");
+
+    modal.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    function onContactUsClick(index) {
+        handleGTMFormID(index);
+        modal.style.display = "flex";
+    }
+
+    function handleGTMFormID(index) {
+        let formId = ["Serv_DevServ_ContactUs1Form", "Serv_DevServ_ContactUs2Form", "Serv_DevServ_GetInTouchForm"][index];
+        if (formId) {
+            jQuery('.developmentServicesContactUsForm').attr('id', formId);
+        }
+    }
+
+    let cduHeader = document.querySelector(".cdu-services .header");
+
+    const headerObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("header-animation");
+                headerObserver.unobserve(entry.target);
+            }
+        })
+    }, {
+        threshold: 0.5
+    });
+
+    headerObserver.observe(cduHeader);
+
+    const sectionLists = document.querySelectorAll(".section-list");
+
+    const sectionListObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("section-list-animation");
+                sectionListObserver.unobserve(entry.target);
+            }
+        })
+    }, {
+        threshold: 0.2
+    });
+
+    sectionLists.forEach(sectionList => {
+        sectionListObserver.observe(sectionList)
+    });
+
+    const baseImages = document.querySelectorAll(".base-image");
+
+    const baseImagesObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("base-image-animation");
+                baseImagesObserver.unobserve(entry.target);
+            }
+        })
+    }, {
+        threshold: 0.3
+    });
+
+    baseImages.forEach(element => {
+        baseImagesObserver.observe(element)
+    });
+
+    const secondaryImages = document.querySelectorAll(".secondary-image");
+
+    const secondaryImagesObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("secondary-image-animation");
+                secondaryImagesObserver.unobserve(entry.target);
+            }
+        })
+    }, {
+        threshold: 0.2
+    });
+
+    secondaryImages.forEach(element => {
+        secondaryImagesObserver.observe(element)
+    });
+
+    jqueryDefer(Owl);
+
+    function Owl() {
+        var scriptsList = [
+            {src: '/css/owl.carousel.min.css', type: 'css'},
+            {src: '/css/owl.theme.default.min.css', type: 'css'},
+            {src: '/js/owl.carousel.min.js', type: 'script'}
+        ];
+        loadNextScript(0, scriptsList,
+            function() {
+                $(document).ready(function(){
+                    $('.owl-carousel').owlCarousel({
+                        items:1,
+                        margin:50,
+                        stagePadding: 0,
+                        autoHeight:false,
+                        loop:true,
+                        autoplay:true,
+                        autoplayTimeout:5000,
+                        autoplayHoverPause:true,
+                        nav:true,
+                        responsive: {
+                            1000: {
+                                margin:100,
+                                stagePadding: 50,
+                            }
+                        }
+                    });
+                });
+            }
+        );
+    }
+
+    function validateContactForm(form) {
+        var name = $('input[name=first-name]', form).val();
+        var email = $('input[name=email]', form).val();
+
+        if (!validateValue('Name', name)) {
+            return false;
+        }
+        if (!validateValue('Email Address', email)) {
+            return false;
+        }
+
+        var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if(email.match(emailExp)==null) {
+            window.alert("Entered Email Address is not valid.");
+            return false;
+        }
+    }
+
+    function validateValue(name, val) {
+        if (isEmpty(val)) {
+            window.alert("Please fill '" + name + "' field.");
+            return false;
+        }
+        return true;
+    }
+
+    function isEmpty(val) {
+        return val === undefined || val === null || val.trim().length == 0;
+    }
+
+    jqueryDefer(
+        function () {
+            var $contactForm =  jQuery('.developmentServicesContactUsForm');
+            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+            $( document ).ready(function() {
+               /*  $('html, body').animate({
+                            scrollTop: $('#contact-form').offset().top - 200
+                          }, 0);*/
+                 $contactForm.find('.form-element .form-control').addClass("input--empty");
+                 $contactForm.find('.form-element .form-control').on('input', function() {
+                      if( !$(this).val() ) {
+                         $(this).addClass("input--empty");
+                      } else {
+                         $(this).removeClass("input--empty");
+                      }
+                 });
+
+                 $.urlParam = function (name) {
+                     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                     return results ? results[1] : null;
+                 };
+                 var subjectValue = $.urlParam('subject');
+                 if (subjectValue != undefined && subjectValue.trim().length > 0) {
+                    $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
+                    $contactForm.find('select[name=subject]').removeClass("input--empty");
+                 }
+            });
+            waitForForm();
+        }
+    );
+
+    function waitForForm() {
+        let $form = jQuery('.developmentServicesContactUsForm');
+        if ($form.length) {
+            $form
+                .attr('id', 'Serv_DevServ_ContactUs1Form')
+                .addClass('gtm_form');
+        } else {
+            setTimeout(function(){
+                waitForForm();
+            }, 150);
+        }
+    }
+</script>
 
 
 
