@@ -126,7 +126,7 @@ Here, you can define tags using the `tb:tag` syntax directly within the XML stru
 
 Let's add Tags to the 'On' Button Elements:
 
-**Before** Adding Tags:
+Before adding tags:
 
 ```xml
 <g transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
@@ -137,7 +137,7 @@ Let's add Tags to the 'On' Button Elements:
 </g>
 ```
 
-**After** Adding Tags:
+After adding tags:
 
 ```xml
 <g tb:tag="onButton" transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
@@ -159,12 +159,12 @@ The table in this tab allows you to quickly access each tag and define both the 
 ## Step 4: Behavior items
 
 Behavior items enable the end-user to configure interactions between the widget and the platform. 
-Once defined, these items are available in the widget's end-user configuration settings.
+Once defined, these items are available in the widget's end-user configuration settings as a Behavior panel.
 For instance, you can set up the source that determines the fan's state ('On'/'Off') and specify the actions that occur when the 'On' and 'Off' buttons are clicked.
 
 Below is a gallery containing two images: one showing the list of behavior items configured by the SCADA developer, and the other displaying the corresponding elements in the end-user configuration of the widget.
 
-[//]: # (TODO: Include two screenshots here.)
+[//]: # (TODO: Include one screenshots with two panels and a -> between them.)
 
 Now let's learn how to configure behavior items. Each item includes the following common fields:
 
@@ -179,7 +179,7 @@ Fields like Name, Hint, and Group Title support internationalization using the '
 
 #### Value
 
-**Value** behavior items fetch data from the platform into the [ScadaSymbolContext](#ScadaSymbolContext), acting like variables. 
+Value behavior items fetch data from the platform into the [ScadaSymbolContext](#ScadaSymbolContext), acting like variables. 
 These variables typically change based on target device attributes or time series data and are used in defining the 'State render function' for your tags.
 
 There are five types of actions to retrieve value:
@@ -192,23 +192,23 @@ There are five types of actions to retrieve value:
 
 **Value Types**: 'Value' behavior items come in various types including string, integer, double, boolean, and JSON. Each type has its own specific configuration parameters.
 
-Let's create new value behavior Items for our SCADA symbol:
+Let's create new value behavior items for our SCADA symbol:
 
-1. **fanOn**:
+**fanOn**:
   - Type: Boolean ('true' means the fan is on, 'false' means it is off).
   - Default Configuration: Uses the device attribute 'fanOn'.
 
    *TODO: Add screenshot of the configuration.*
 
-2. **fanRotationSpeed**:
+**fanRotationSpeed**:
   - Type: Double (value in RPMs).
   - Default Configuration: Subscribes to the time-series key 'rotationSpeed' of the target device by default.
 
    *TODO: Add screenshot of the configuration.*
-
+ 
 #### Action
 
-**Action** behavior items specify the actions taken against the target device when specific events occur, typically triggered using the [ScadaSymbolContext](#ScadaSymbolContext) when defining the 'On click action' for your tags.
+Action behavior items specify the actions taken against the target device when specific events occur, typically triggered using the [ScadaSymbolContext](#ScadaSymbolContext) when defining the 'On click action' for your tags.
 
 The platform supports three types of actions for interacting with the target entity:
 
@@ -218,14 +218,14 @@ The platform supports three types of actions for interacting with the target ent
 
 Let's set up new action behavior items for the user interactions with the 'On' and 'Off' buttons:
 
-1. **onBtnClick**:
+**onBtnClick**:
   - Configures actions when the 'On' button is clicked. 
   - Type: Boolean
   - Default Configuration: Set shared scope attribute `fanOn` to `True`; 
 
     *TODO: Add screenshot of the configuration.*
   
-2. **offBtnClick**: 
+**offBtnClick**: 
   - Configures actions when the 'Off' button is clicked.
   - Type: Boolean
   - Default Configuration: Set shared scope attribute `fanOn` to `False`;
@@ -234,7 +234,7 @@ Let's set up new action behavior items for the user interactions with the 'On' a
 
 #### Widget Action
 
-**Widget Action** behavior items function similarly to [Action](#action) behavior items but are designed to trigger actions related to the current dashboard widget rather than the target device. 
+Widget Action behavior items function similarly to [Action](#action) behavior items but are designed to trigger actions related to the current dashboard widget rather than the target device. 
 Possible widget actions are detailed in the [Widget Actions Documentation](/docs/user-guide/ui/widget-actions/#action-types).
 
 In our example, we will configure the 'onFanClick' click action to, by default, open the platform's website page in a separate browser tab.
@@ -243,11 +243,167 @@ In our example, we will configure the 'onFanClick' click action to, by default, 
 
 ## Step 5. Properties
 
+Properties are configuration parameters that allow end-users to customize the appearance of widgets. 
+These include settings for labels, fonts, colors, and units. 
+Once defined, these properties are accessible in the widget's end-user configuration under the Appearance panel.
+
+Below is a gallery containing two images: one displaying the list of properties configured by the SCADA developer, and the other showing the corresponding elements in the end-user configuration of the widget.
+
+[//]: # (TODO: Include one screenshots with two panels and a -> between them.)
+
+Let's learn how to configure properties. Each property includes the following common fields:
+
+- **id**: An identifier used to reference the property in the [ScadaSymbolContext](#scadasymbolcontext).
+- **Name**: A label used to generate an element for end-user configuration. Use the same name to group multiple configuration properties into the same row.
+- **Type**: Properties can be of type `text`, `number`, `switch`, `color`, `color settings`, `font`, and `units`. Will be explored in detail below.
+- **Default Value**: The preset configuration available to the end-user.
+- **Value Required**: A switcher that mandates user input for the property value.
+- **Advanced UI Settings**: These include multiple configuration items that help developers fine-tune the parameter configuration form.
+
+This structure outlines the process of defining and managing properties, ensuring clarity and accessibility for end-users and developers alike.
+
+Let's set up configuration properties for the 'On' button:
+
+**onBtnLabel**:
+  - Description: Label of the 'On' button; 
+  - Name: On button. Used to group all properties related to the 'On' button in one row; 
+  - Type: Text;
+  - Default value: 'On';
+
+  *TODO: Add screenshot of the configuration.*
+
+**onBtnColor**:
+  - Description: Color of the 'On' button in enabled state;
+  - Name: On button;
+  - Type: Color;
+  - Default value: #1C943E (green);
+
+*TODO: Add screenshot of the configuration.*
+
+**onBtnDisabledColor**:
+  - Color of the 'On' button in disabled state;
+  - Name: On button;
+  - Type: Color;
+  - Default value: #696969 (gray);
+
+Let's set up configuration properties for the 'Off' button:
+
+**offBtnLabel**:
+  - Description: Label of the 'Off' button;
+  - Name: Off button;
+  - Type: Text;
+  - Default value: 'Off';
+
+*TODO: Add screenshot of the configuration.*
+
+**offBtnColor**:
+  - Description: Color of the 'Off' button in enabled state;
+  - Name: Off button;
+  - Type: Color;
+  - Default value: #D12730 (red);
+
+*TODO: Add screenshot of the configuration.*
+
+**offBtnDisabledColor**:
+  - Color of the 'On' button in disabled state;
+  - Name: Off button;
+  - Type: Color;
+  - Default value: #696969 (gray);
+
+Let's set up configuration properties for the Fan appearance:
+
+**fanOnColor**:
+  - Color of the Fan in 'On' state;
+  - Name: Fan colors. Used to group all properties related to the Fan in one row;
+  - Type: Color;
+  - Default value: #1C943E (green);
+
+**fanOffColor**:
+  - Color of the Fan in 'Off' state;
+  - Name: Fan colors. Used to group all properties related to the Fan in one row;
+  - Type: Color;
+  - Default value: #D12730  (red);
+
+Let's set up configuration properties for the rotation speed value appearance:
+
+**showRotationSpeed**:
+  - Switcher to show/hide the value;
+  - Name: Rotation speed;
+  - Type: Switch
+  - Default value: True;
+
+**rotationSpeedUnit**:
+  - Units selector;
+  - Name: Rotation speed;
+  - Type: Units
+  - Default value: RPM;
+  
+**rotationSpeedFont**:
+  - Font selector;
+  - Name: Rotation speed;
+  - Type: Font
+  - Default value: Roboto Normal 12px;
+
+**rotationSpeedColor**:
+  - label color;
+  - Name: Rotation speed;
+  - Type: Color
+  - Default value: #000000 (black);
+
+## Step 6. State render functions
+
+This JS function is responsible for changing the SVG element via [SVG.js](https://svgjs.dev/) API and accepts two parameters:
+
+* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
+* *element* is an [SVG.js](https://svgjs.dev/) element;
+
+You may also notice the global state render function that is available in the general tab.
+This function is optional and is useful when you would like to define logic of the rendering for all tags in one place.
+
+Let's define the state render functions for each tag. We will move from more simple functions and progress to more complex ones.
+
+#### onButtonText
+
+Let’s start with defining the simple state render function for our ‘On’ button text. 
+The only thing we need to do is to replace the hard-coded text from original SVG with the text configured by end-user via the `onBtnLabel` property:
+
+```javascript
+ctx.api.text(element, ctx.properties.onBtnLabel);
+```
+
+Few things to note here:
+
+  * `ctx.api` is used to access the 'text' function and update the text of the element;
+  * `ctx.properties` is used to access the value of the `onBtnLabel` property;
+
+Now you may click 'Preview' button and change the corresponding property. Click 'Apply' to see that the label of the 'On' button has changed. 
+
+TODO: screens;
+
+#### onButtonBackground
+
+Let’s change the background of the 'On' button based on the value of the 'fanOn' behavior item:
+
+```javascript
+if(!ctx.values.fanOn){
+  element.attr({fill: ctx.properties.onBtnColor});
+} else {
+  element.attr({fill: ctx.properties.onBtnDisabledColor});
+}
+```
+
+Few things to note here:
+
+ * `ctx.values` is used to access the value of the `fanOn` behavior item;
+ * `element.attr({fill: color})` is used to update 'fill' attribute of the element;
+ * `ctx.properties` is used to access the value of the `onBtnColor` and `onBtnDisabledColor` color properties;
+
+Now you may click 'Preview' button and change the corresponding color properties. Click 'Apply' to see that the background  of the 'On' button has changed.
+
+TODO: screens;
 
 
-## Step 6. Define tag functions
 
-In this step, we will define the [state render functions](#state-render-function) and [on click action](#on-click-action) for our tags.
 
 **Rotation Speed state render function**
 
@@ -370,16 +526,6 @@ ctx.api.callAction(event, 'offBtnClick', undefined, {
 ```
 
 ## Step 6. Preview mode
-
-#### State render function
-
-This JS function is responsible for changing the SVG element via [SVG.js](https://svgjs.dev/) API and accepts two parameters:
-
-* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
-* *element* is an [SVG.js](https://svgjs.dev/) element;
-
-You may also notice the global state render function that is available in the general tab.
-This function is optional and is useful when you would like to define logic of the rendering for all tags in one place.
 
 #### On click action
 
