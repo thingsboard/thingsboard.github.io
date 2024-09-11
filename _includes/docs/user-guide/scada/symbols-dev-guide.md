@@ -50,7 +50,7 @@ Assume we want to transform the SVG file shown below into an interactive SCADA s
 This SVG image is static, containing a **fan**, **text label**, and two **buttons**. 
 Our goal is to convert it into an interactive widget that reflects the state of our fan and updates in real time.
 
-##### Task Formalization
+**Task Formalization:**
 
 - **Buttons**: 
   - These should issue commands to the target device, updating the state of the fan engine.
@@ -350,7 +350,13 @@ Let's set up configuration properties for the rotation speed value appearance:
   - Type: Color
   - Default value: #000000 (black);
 
-## Step 6. State render functions
+## Step 6. Tag functions
+
+There are two types of functions you may assign to each tag: state render functions and on click actions.
+Let's review the signature of each function and define the tag functions for each tag. 
+We will move from more simple functions and progress to more complex ones.
+
+#### State render function
 
 This JS function is responsible for changing the SVG element via [SVG.js](https://svgjs.dev/) API and accepts two parameters:
 
@@ -360,9 +366,15 @@ This JS function is responsible for changing the SVG element via [SVG.js](https:
 You may also notice the global state render function that is available in the general tab.
 This function is optional and is useful when you would like to define logic of the rendering for all tags in one place.
 
-Let's define the state render functions for each tag. We will move from more simple functions and progress to more complex ones.
+#### On click action
 
-#### onButtonText
+This JS function defines a logic of on click handler. and accepts three parameters:
+
+* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
+* *element* is an [SVG.js](https://svgjs.dev/) element;
+* *event* is an on click event that may be extended to other events in the future releases;
+
+#### onButtonText tag
 
 Let’s start with defining the simple state render function for our ‘On’ button text. 
 The only thing we need to do is to replace the hard-coded text from original SVG with the text configured by end-user via the `onBtnLabel` property:
@@ -371,7 +383,7 @@ The only thing we need to do is to replace the hard-coded text from original SVG
 ctx.api.text(element, ctx.properties.onBtnLabel);
 ```
 
-Few things to note here:
+Key points:
 
   * `ctx.api` is used to access the 'text' function and update the text of the element;
   * `ctx.properties` is used to access the value of the `onBtnLabel` property;
@@ -380,19 +392,27 @@ Now you may click 'Preview' button and change the corresponding property. Click 
 
 TODO: screens;
 
-#### onButtonBackground
+#### offButtonText tag
+
+Similar to [onButtonText](#onbutton-tag):
+
+```javascript
+ctx.api.text(element, ctx.properties.offBtnLabel);
+```
+
+#### onButtonBackground tag
 
 Let’s change the background of the 'On' button based on the value of the 'fanOn' behavior item:
 
 ```javascript
-if(!ctx.values.fanOn){
-  element.attr({fill: ctx.properties.onBtnColor});
-} else {
+if(ctx.values.fanOn){
   element.attr({fill: ctx.properties.onBtnDisabledColor});
+} else {
+  element.attr({fill: ctx.properties.onBtnColor});
 }
 ```
 
-Few things to note here:
+Key points:
 
  * `ctx.values` is used to access the value of the `fanOn` behavior item;
  * `element.attr({fill: color})` is used to update 'fill' attribute of the element;
@@ -402,30 +422,110 @@ Now you may click 'Preview' button and change the corresponding color properties
 
 TODO: screens;
 
+#### offButtonBackground tag
 
-
-
-**Rotation Speed state render function**
-
-Let's start with defining the simple state render function for our 'rotationSpeedText' tag:
+Similar to [offButtonBackground](#offbuttonbackground-tag):
 
 ```javascript
-var on = ctx.values.fanOn;
-
-if (on) {
-   element.show(); 
-   ctx.api.text(element, ctx.values.fanSpeed + " RPM");
+if(ctx.values.fanOn){
+  element.attr({fill: ctx.properties.offBtnColor});
 } else {
-   element.hide();
+  element.attr({fill: ctx.properties.offBtnDisabledColor});
 }
 ```
 
-Few things to note here:
+#### onButton tag
 
-  * Line 1: we use `ctx.values` map to extract the `fanOn` *boolean* value;
-  * Line 2: we show an element if the fan is on;
-  * Line 5: we use special 'ctx.api' call to update the text of an element with the value of 'fanSpeed';
-  * Line 6: we hide an element if the fan is off;
+Let's enable and disable the 'On' button based on the state of the fan using the following state render function:
+
+```javascript
+if (ctx.values.fanOn) {
+  ctx.api.disable(element);
+} else {
+  ctx.api.enable(element);    
+}
+```
+
+Key points:
+
+ * `ctx.values` accesses the value of the `fanOn` behavior item;
+ * `ctx.api.disable` disables user interaction, including the onClick handler if the fan is already on.
+ * `ctx.api.enable` enables user interaction, including the onClick handler if the fan is off.
+
+Now let's define the on click action for the button:
+
+```
+ctx.api.disable(element);
+ctx.api.callAction(event, 'onBtnClick', undefined, {
+  next: () => {
+     ctx.api.setValue('fanOn', true);
+  },
+  error: () => {
+     ctx.api.enable(element);
+  }  
+});
+```
+
+Key points:
+
+* `ctx.api.disable` is used to disable the button immediately after receiving the onClick event to prevent spamming.
+* `ctx.api.callAction` triggers the action defined by the `onBtnClick` behavior item.
+* `callAction` accepts an event, actionId, optional parameters, and an Observer instance to handle the result.
+* On successful action execution, the `next` function sets the `fanOn` value to true.
+* If the action encounters an error, `ctx.api.enable` re-enables the button.
+
+#### offButton tag
+
+Similar to [offButton](#offbutton-tag), the state render function:
+
+```javascript
+if(ctx.values.fanOn){
+  ctx.api.enable(element);
+} else {
+  ctx.api.disable(element);
+}
+```
+
+The on click action for the button:
+
+```javascript
+ctx.api.disable(element);
+ctx.api.callAction(event, 'offBtnClick', undefined, {
+  next: () => {
+     ctx.api.setValue('fanOn', false);
+  },
+  error: () => {
+     ctx.api.enable(element);
+  }  
+});
+```
+
+#### rotationSpeedText tag
+
+Let's use the `showRotationSpeed`, `rotationSpeedFont`, `rotationSpeedColor`, and `rotationSpeedUnit` properties to prettify our text label:
+
+```javascript
+var show = ctx.properties.showRotationSpeed && ctx.values.fanOn;
+if (show) {
+  var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;
+  var font = ctx.properties.rotationSpeedFont;
+  var color = ctx.properties.rotationSpeedColor;
+  var text = ctx.api.formatValue(speed, 0, ctx.properties.rotationSpeedUnit);
+  ctx.api.text(element, text);
+  ctx.api.font(element, font, color);
+  element.show();
+} else {
+  element.hide();
+}
+```
+
+Key points:
+
+* Line 1: The `show` variable is determined by both the `showRotationSpeed` property and the `fanOn` behavior item;
+* Line 3: The `speed` variable either uses the `fanSpeed` behavior item or defaults to `60`, primarily for the preview mode. 
+* Line 6: The text value is formatted using the `speed` variable and specified `rotationSpeedUnit` property. 
+* Line 7,8: Text content and its styling (font and color) are set.
+* Line 9,11: Conditional display of the text element based on the `show` variable.
 
 **Fan state render function**
 
@@ -433,109 +533,77 @@ Now let's proceed with a bit more complex function to rotate a 'fan' tag:
 
 ```javascript
 var on = ctx.values.fanOn;
+var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;
 var hasAnimation = element.remember('hasAnimation');
 
 if (on) {
-    if (!hasAnimation) {
-        element.remember('hasAnimation', true);
-        element.animate(1000).ease('-').rotate(360).loop();
-    } else {
-        element.timeline().play();
-    }
-    element.timeline().speed(ctx.values.fanSpeed / 60);
+  element.attr({fill: ctx.properties.fanOnColor});
+  if (!hasAnimation) {
+    element.remember('hasAnimation', true);
+    element.animate(1000).ease('-').rotate(360).loop();
+  } else {
+    element.timeline().play();
+  }
+  element.timeline().speed(speed / 60);
 } else {
-    if (hasAnimation) {
-      element.timeline().pause();
-    }
+  element.attr({fill: ctx.properties.fanOffColor});
+  if (hasAnimation) {
+    element.timeline().pause();
+  }
 }
+
 ```
 
-Although the function is quite simple, it requires basic knowledge of [SVG.js](https://svgjs.dev/). Few things to note here:
+Although the function is quite simple, it requires basic knowledge of [SVG.js](https://svgjs.dev/). Key points:
 
- * Line 2: we use `element.remember` from [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#remember-as-getter) to remember the state of the animation;  
- * Line 7: we use `element.animate` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to define our animation;
- * Line 11: we use `element.timeline.speed` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to define the speed of our animation that we convert from RPM to RPS;
- * Line 14: we use `element.timeline.pause` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to dstop the animation if the fan is turned off;
+* Line 3: we use `element.remember` getter from [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#remember-as-getter) to get the state of the animation;
+* Line 9: we use `element.remember` setter from [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#remember-as-setter) to set the state of the animation. It is important to avoid initialization of the animation on each call of the render function;
+* Line 11: we use `element.timeline.speed` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to define the speed of our animation that we convert from RPM to RPS;
+* Line 14: we use `element.timeline.pause` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to stop the animation if the fan is turned off;
 
-**General state render function**
+#### Best Practices
+
+Avoid manually setting behavior values, as shown in the `ctx.api.setValue('fanOn', true)` example. This is included to simplify debugging in preview mode but may not reflect the actual device status due to potential issues with command delivery or handling.
+
+**Recommended Pattern for Device Interaction:**
+
+1. **RPC to Device**: Utilize Remote Procedure Calls (RPC) like `setFanState` for short-lived commands when immediate application is expected and the device is known to be online.
+2. **Shared Attribute**: Set a shared attribute, such as `targetFanState`, to define the desired state of devices that may be offline. This ensures that the device eventually receives and applies updates once it is online.
+3. **Client Attributes or Time-Series Data**: Use data delivered from the device, such as `fanState`, as values in behavior items. This strategy ensures that the SCADA symbol's behavior reflects actual device responses rather than merely the issuance of commands.
+
+
+#### General state render function
 
 As an alternative to configuring each tag rendering functions, we might configure everything in one place. 
-See global state render function alternative that one may define in a general tab below:
-
-```javascript
-var on = ctx.values.fanOn;
-var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;
-
-var fanElement = ctx.tags.fan[0];
-var textElement = ctx.tags.rotationSpeedText[0];
-
-var hasAnimation = fanElement.remember('hasAnimation');
-
-if (on) {
-    textElement.show();
-    ctx.api.text(textElement, speed + " RPM");
-    if (!hasAnimation) {
-        fanElement.remember('hasAnimation', true);
-        fanElement.animate(1000).ease('-').rotate(360).loop();
-    } else {
-        fanElement.timeline().play();
-    }
-    fanElement.timeline().speed(speed / 60);
-} else {
-    textElement.hide();
-    if (hasAnimation) {
-      fanElement.timeline().pause();
-    }
-}
-```
-
-please note lines 4 and 5 where we use `ctx.tags.fan` and `ctx.tags.rotationSpeedText` to get the array of SVG elements for each tag. 
+However, in case of global function you are working with the `svg` instead of a single tag `element`.
+Use `ctx.tags.[tagId]`, e.g. `ctx.tags.rotationSpeedText` to get the array of SVG elements for each tag.
 Usually this array contain only one element, but in general case, your SVG file may have multiple elements that share the same tag id.
-We have listed general value function for your reference, but will continue using individual tag state render functions in this tutorial.
-
-**Button click actions**
-
-Now let's define the 'On click' action for our 'On' button:
-
-```javascript
-ctx.api.callAction(event, 'onBtnClick', undefined, {
-  next: () => {
-     ctx.api.setValue('fanOn', true);
-  }
-});
-```
-
-Few things to note here:
-
-* Line 1: we use `ctx.api.callAction` to call the `onBtnClick` action that we have defined in our behavior settings;
-* Line 2: the `ctx.api.callAction` accepts the Observer callback that we may use to manually set the value into context. 
-  Setting values manually is not the best practise. Typically, you should trigger the attribute update or RPC command to device. 
-  Then device will change it state and report it back to the platform. 
-  So, the fan rotation should start when the device reports that it has started and not when the command is sent.
-  We are manually setting the value here to be able to use the SCADA symbol in preview mode. 
-  Since in the preview mode the symbol is not contected to the device and it can't send the real command until you place the widget on dashboard that is targeting the particular device.  
-
-Similar, let's define the 'Off' button click function:
-
-```javascript
-ctx.api.callAction(event, 'offBtnClick', undefined, {
-  next: () => {
-     ctx.api.setValue('fanOn', false);
-  }
-});
-```
 
 ## Step 6. Preview mode
 
-#### On click action
-
-This JS function defines a logic of on click handler. and accepts three parameters:
-
-* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
-* *element* is an [SVG.js](https://svgjs.dev/) element;
-* *event* is an on click event that may be extended to other events in the future releases;
+TODO: Serhii Titenko
 
 ## Reference
 
 ### ScadaSymbolContext
+
+The `ScadaSymbolContext` (represented as `ctx` in functions code) is a JavaScript object integral to interacting with SCADA symbols in ThingsBoard. It contains the following fields:
+
+1. `ctx.svg`: This field accesses the root SVG node, acting as the primary entry point to the SVG's DOM structure.
+
+2. `ctx.tags`: An object that categorizes all tagged SVG elements. These are grouped by their respective tag IDs (the object keys), such as `ctx.tags.myTagId`. Each tag ID points to an array containing one or more SVG elements.
+
+3. `ctx.values`: Holds all values derived from behavior items of the type 'value'. This field is crucial for dynamically updating the symbol according to data from the device or other sources.
+
+4. `ctx.properties`: Contains all properties defined for the SCADA symbol, allowing customization and configuration adjustments based on end-user requirements.
+
+5. `ctx.api`: Provides a reference to the [SCADA symbol API](#scadasymbolapi), which includes methods for interacting with, modifying, and managing SVG elements and their associated actions.
+
+This object is essential for developers to effectively create and manage interactive elements within SCADA symbols, providing a robust framework for customization and functionality enhancement.
+
+### ScadaSymbolApi
+
+The JS object contains the following methods:
+
+TODO: Artem Dzhereleiko
 
