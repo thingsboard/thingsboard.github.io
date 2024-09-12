@@ -1,0 +1,204 @@
+{% assign carouselCollection = include.carouselCollection %}
+{% assign collectionMap = include.collectionMap %}
+{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
+{% assign overlay = include.overlay %}
+{% assign dotButtonMode = include.dotButtonMode %}
+{% assign navMode = include.navMode %}
+{% assign enableLinkArrow = include.enableLinkArrow %}
+{% assign contentDirection = include.contentDirection %}
+{% assign titleSize = include.titleSize %}
+{% assign descriptionSize = include.descriptionSize %}
+{% assign linkSize = include.linkSize %}
+{% assign titleLineHeight = include.titleLineHeight %}
+{% assign descriptionLineHeight = include.descriptionLineHeight %}
+{% assign linkLineHeight = include.linkLineHeight %}
+{% assign titleColor = include.titleColor %}
+{% assign descriptionColor = include.descriptionColor %}
+{% assign linkColor = include.linkColor %}
+{% assign start = include.start %}
+{% assign range = include.range %}
+{% assign autoHeight = include.autoHeight %}
+
+{% if collectionMap %}
+    {% assign collectionKey = include.collectionKey %}
+    {% assign carouselCollection = site.data.carousel-collection[collectionMap][collectionKey] %}
+{% endif %}
+
+{% if nonActiveItemsVisibility == false %}
+    {% assign nonActiveItemsVisibility = "nonActiveItemsVisibilityFalse" %}
+{% else %}
+    {% assign nonActiveItemsVisibility = "nonActiveItemsVisibilityTrue" %}
+{% endif %}
+
+{% if dotButtonMode == "circle" %}
+    {% assign dotButtonMode = dotButtonMode %}
+{% else %}
+    {% assign dotButtonMode = "line" %}
+{% endif %}
+
+{% if navMode == "fatArrow" %}
+    {% assign navMode = navMode %}
+{% else %}
+    {% assign navMode = "thinArrow" %}
+{% endif %}
+
+{% if titleSize %}
+    {% assign titleSize = titleSize %}
+{% else %}
+    {% assign titleSize = '36px' %}
+{% endif %}
+
+{% if descriptionSize %}
+    {% assign descriptionSize = descriptionSize %}
+{% else %}
+    {% assign descriptionSize = '18px' %}
+{% endif %}
+
+{% if linkSize %}
+    {% assign linkSize = linkSize %}
+{% else %}
+    {% assign linkSize = '18px' %}
+{% endif %}
+
+{% if titleLineHeight %}
+    {% assign titleLineHeight = titleLineHeight %}
+{% else %}
+    {% assign titleLineHeight = '54px' %}
+{% endif %}
+
+{% if descriptionLineHeight %}
+    {% assign descriptionLineHeight = descriptionLineHeight %}
+{% else %}
+    {% assign descriptionLineHeight = '27px' %}
+{% endif %}
+
+{% if linkLineHeight %}
+    {% assign linkLineHeight = linkLineHeight %}
+{% else %}
+    {% assign linkLineHeight = '24px' %}
+{% endif %}
+
+{% if titleColor %}
+    {% assign titleColor = titleColor %}
+{% else %}
+    {% assign titleColor = "#212529" %}
+{% endif %}
+
+{% if descriptionColor %}
+    {% assign descriptionColor = descriptionColor %}
+{% else %}
+    {% assign descriptionColor = "#75767c" %}
+{% endif %}
+
+{% if linkColor %}
+    {% assign linkColor = linkColor %}
+{% else %}
+    {% assign linkColor = "#2a7dec" %}
+{% endif %}
+
+{% if enableLinkArrow == false %}
+    {% assign enableLinkArrow = enableLinkArrow %}
+{% else %}
+    {% assign enableLinkArrow = true %}
+{% endif %}
+
+{% if start and range %}
+    {% assign carouselCollection = carouselCollection | slice: start, range %}
+{% endif %}
+
+{% if autoHeight == false %}
+    {% assign autoHeight = autoHeight %}
+{% else %}
+    {% assign autoHeight = true %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibility }} {{ dotButtonMode }} {{ navMode }}">
+    {% for carouselItem in carouselCollection %}
+        {% if carouselItem.title or carouselItem.description or carouselItem.linkLabel and carouselItem.src %}
+            {% if contentDirection == 'column' %}
+                {% assign carousel-item = 'carousel-item-flex-column' %}
+            {% else %}
+                {% assign carousel-item = 'carousel-item-flex-row' %}
+            {% endif %}
+        {% else %}
+            {% assign carousel-item = 'carousel-item' %}
+        {% endif %}
+        <div class="carousel-item-default {{ carousel-item }}">
+            {% if carouselItem.title or carouselItem.description or carouselItem.linkLabel %}
+                <div class="carousel-text">
+                    {% if carouselItem.title %}
+                        <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem.title}}</h2>
+                    {% endif %}
+                    {% if carouselItem.description %}
+                        <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem.description}}</p>
+                    {% endif %}
+                    {% if carouselItem.linkLabel %}
+                        <a href="{{carouselItem.href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
+                            {{carouselItem.linkLabel}}
+                            {% if enableLinkArrow == true %}
+                                <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
+                                <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
+                                <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% if carouselItem.src %}
+                <div class="carousel-image">
+                    {% if carouselItem.href %}
+                        <a href="{{carouselItem.href}}">
+                            <img src="{{carouselItem.src}}" alt="{{carouselItem.alt}}">
+                            {% if overlay == true %}
+                                <div class="overlay">
+                                    <div class="eye">
+                                        <i class="far fa-eye"></i>
+                                        See more about {{carouselItem.title}}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </a>
+                    {% else %}
+                        <img src="{{carouselItem.src}}" alt="{{carouselItem.alt}}">
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    jqueryDefer(Owl);
+
+    function Owl() {
+        var scriptsList = [
+            {src: '/css/owl.carousel.min.css', type: 'css'},
+            {src: '/css/owl.theme.default.min.css', type: 'css'},
+            {src: '/js/owl.carousel.min.js', type: 'script'}
+        ];
+        loadNextScript(0, scriptsList,
+            function() {
+                $(document).ready(function(){
+                    $('.owl-carousel').owlCarousel({
+                        items:1,
+                        margin:50,
+                        stagePadding: 0,
+                        autoHeight: false,
+                        loop:true,
+                        autoplay:false,
+                        autoplayTimeout:5000,
+                        autoplayHoverPause:true,
+                        nav:false,
+                        responsive: {
+                            1025: {
+                                nav:true,
+                                margin:100,
+                                stagePadding: 50,
+                            }
+                        }
+                    });
+                });
+            }
+        );
+    }
+</script>
