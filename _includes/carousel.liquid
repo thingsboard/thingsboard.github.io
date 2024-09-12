@@ -17,7 +17,6 @@
 {% assign linkColor = include.linkColor %}
 {% assign start = include.start %}
 {% assign range = include.range %}
-{% assign autoHeight = include.autoHeight %}
 
 {% if collectionMap %}
     {% assign collectionKey = include.collectionKey %}
@@ -104,12 +103,6 @@
 
 {% if start and range %}
     {% assign carouselCollection = carouselCollection | slice: start, range %}
-{% endif %}
-
-{% if autoHeight == false %}
-    {% assign autoHeight = autoHeight %}
-{% else %}
-    {% assign autoHeight = true %}
 {% endif %}
 
 <div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibility }} {{ dotButtonMode }} {{ navMode }}">

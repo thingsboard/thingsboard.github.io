@@ -216,7 +216,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
         </div>
         <div id="carousel-wrapper">
-            {% include carousel.liquid carouselCollection = carouselCollection nonActiveItemsVisibility = false overlay = false dotButtonMode = 'circle' navMode = 'fatArrow' contentDirection = 'column' enableLinkArrow = false titleSize = '28px' descriptionSize = '22px' linkSize = '22px' titleLineHeight = '40px' descriptionLineHeight = '40px' descriptionColor = '#5e5f62' linkColor = '#3622a4' autoHeight = false %}
+            {% include carousel.liquid carouselCollection = carouselCollection nonActiveItemsVisibility = false overlay = false dotButtonMode = 'circle' navMode = 'fatArrow' contentDirection = 'column' enableLinkArrow = false titleSize = '28px' descriptionSize = '22px' linkSize = '22px' titleLineHeight = '40px' descriptionLineHeight = '40px' descriptionColor = '#5e5f62' linkColor = '#3622a4' %}
         </div>
     </div>
 </section>
