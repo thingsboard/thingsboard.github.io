@@ -33,6 +33,8 @@ toc:
   section:
   - title: Overview
     path: /docs/user-guide/dashboards/
+  - title: Layouts
+    path: /docs/user-guide/ui/layouts/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
   - title: Widgets
