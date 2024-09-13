@@ -7,7 +7,7 @@ sudo su - postgres
 ```
 {: .copy-code}
 
-To be able to interact with the PosrgreSQL database, enter:
+To be able to interact with the PostgreSQL database, enter:
 ```bash
 psql
 ```
