@@ -1,6 +1,5 @@
-Then, press "Ctrl+D" to return to main user console.
 
-After configuring the password, edit the pg_hba.conf to use MD5 authentication with the postgres user.
+After configuring the password, edit the **pg_hba.conf** to use MD5 authentication with the postgres user.
 
 Edit pg_hba.conf file: 
 
