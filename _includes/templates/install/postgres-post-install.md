@@ -13,7 +13,7 @@ psql
 ```
 {: .copy-code}
 
-You will connect to the database as the main PostgreSQL user. To set the password, enter the following command after **postgres=#**
+You will connect to the database as the main PostgreSQL user. To set the password, enter the following command after **postgres=#** :
 ```bash
 \password
 ```
