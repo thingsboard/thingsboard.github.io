@@ -265,6 +265,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "Corsinvest srl",
+    "contact": {
+      "href": "corsinvest@corsinvest.it"
+    },
+    "site": {
+      "href": "corsinvest.it",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Norway"],
     "name": "Cypod Solutions AS",
     "contact": {
@@ -380,6 +392,18 @@
     },
     "site": {
       "href": "ecbm.me",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["North America", "South America"],
+    "country": ["Argentina", "Aruba", "Bolivia", "Brazil", "Caribbean Netherlands", "Chile", "Colombia", "Curaçao", "Ecuador", "Falkland Islands (Islas Malvinas)", "French Guiana", "Guyana", "Paraguay", "Peru", "Suriname", "Trinidad and Tobago", "Uruguay", "Venezuela", "Anguilla", "Antigua and Barbuda", "Barbados", "Belize", "British Virgin Islands", "Canada", "Cayman Islands", "Costa Rica", "Cuba", "Dominica", "Dominican Republic", "El Salvador", "Greenland", "Grenada", "Guadeloupe", "Guatemala", "Haiti", "Honduras", "Jamaica", "Martinique", "Mexico", "Montserrat", "Nicaragua", "Panama", "Puerto Rico", "Saint Barthélemy", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Sint Maarten", "The Bahamas", "Turks and Caicos Islands", "U.S. Virgin Islands", "United States of America", "United States Minor Outlying Islands"],
+    "name": "Edgeware Technology Co Limited",
+    "contact": {
+      "href": "richard.wang@edgewaregroup.com"
+    },
+    "site": {
+      "href": "www.edgewaretech.com",
       "target": "_blank"
     }
   },
@@ -824,6 +848,18 @@
     },
     "site": {
       "href": "rfid-solutions.no",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Netherlands", "Belgium", "Luxembourg", "Germany"],
+    "name": "REMATE",
+    "contact": {
+      "href": "thingsboard@remate.nl"
+    },
+    "site": {
+      "href": "remate.nl",
       "target": "_blank"
     }
   },

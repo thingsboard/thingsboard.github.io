@@ -85,17 +85,11 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 {% assign serviceFullName = "ThingsBoard PE" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Troubleshooting
+## Upgrading
 
-### DNS issues
+In case when database upgrade is needed:
 
-{% include templates/troubleshooting/dns-issues.md %}
-
-### Upgrade from 3.1.0PE
-
-Below is example on how to upgrade from 3.1.0 to 3.1.1
-
-* Stop mytbpe container
+* Stop `mytbpe` container
 
 ```bash
 docker compose stop mytbpe
@@ -108,29 +102,16 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* Create a dump of your database:
+* Update docker-compose.yml - TB image should be the latest version (see [Step 3](#step-3-choose-thingsboard-queue-service))
 
-```bash
-docker compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/postgresql/data/thingsboard_dump"
-```
-{: .copy-code}
-
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/postgresql/data/thingsboard_dump"**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
-
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
-
-* Change upgradeversion variable to your **current** ThingsBoard version.
+* Change upgradeversion variable to your **current** ThingsBoard version. For ex., if you are upgrading from 3.6.4:
 
  ```bash
-echo '3.1.0' | sudo tee ~/.mytbpe-data/.upgradeversion
+echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
 ```
 {: .copy-code}
 
-* Then execute the following commands:
+* Execute the following commands:
 
 ```bash
 docker compose run mytbpe upgrade-tb.sh
@@ -156,68 +137,11 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-To upgrade ThingsBoard to the latest version those steps should be done **for each intermediate version**.
+## Troubleshooting
 
-Please note that upgrades are not cumulative.
-Refer to [upgrade instruction](/docs/user-guide/install/pe/upgrade-instructions/) to know the right order of upgrades (e.g. if you are upgrading from 3.1.0 to 3.2.1, you need to do that in the following order: 3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1, e.g. current version -> next release version -> etc)
+### DNS issues
 
-
-In case you need to **restore from the backup**:
-
-* Stop mytbpe container
-
-```bash
-docker compose stop mytbpe
-```
-{: .copy-code}
-
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose stop mytbpe**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
-
-* Update docker-compose.yml to the initial version.
-
-* Execute
-
-```bash
-docker compose exec postgres sh -c "psql -U postgres -c 'drop database thingsboard'"
-docker compose exec postgres sh -c "psql -U postgres -c 'create database thingsboard'"
-docker compose exec postgres sh -c "psql -U postgres thingsboard < /var/lib/postgresql/data/thingsboard_dump"
-```
-{: .copy-code}
-
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
-<br>**docker-compose exec postgres sh -c "psql -U postgres -c 'drop database thingsboard'"**
-<br>**docker-compose exec postgres sh -c "psql -U postgres -c 'create database thingsboard'"**
-<br>**docker-compose exec postgres sh -c "psql -U postgres thingsboard < /var/lib/postgresql/data/thingsboard_dump"**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
-
-* Start ThingsBoard:
-
-```bash
-docker compose up -d
-```
-{: .copy-code}
-
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose up -d**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
-
-If you need to **copy backup to local directory** in case restoring it on another server:
-
-```
-docker cp tb-docker_postgres_1:/var/lib/postgresql/data/thingsboard_dump .
-```
-{: .copy-code}
-
-
-Note: You should paste the name for your postgres container.
+{% include templates/troubleshooting/dns-issues.md %}
 
 ## Next steps
 

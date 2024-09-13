@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: How to connect AM308 Lorawan 9-IN-1 lAQ Sensor
+title: How to connect AM308 Lorawan 9-IN-1 IAQ Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN®
 vendor: Milesight

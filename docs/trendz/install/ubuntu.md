@@ -19,7 +19,7 @@ To run Trendz Analytics on a single machine you will need at least 1Gb of free R
 
 In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
@@ -88,13 +88,20 @@ service from your cloud vendor.
 
 #### Create Database for Trendz
 
-Then, press "Ctrl+D" to return to main user console and connect to the database to create trendz DB:
+Connect to the database to create trendz DB:
 
-```text
+```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-CREATE DATABASE trendz;
-\q
 ```
+{: .copy-code}
+
+Create database named "trendz":
+```bash
+CREATE DATABASE trendz;
+```
+{: .copy-code}
+
+Press “Ctrl+D” twice to logout.
 
 #### Configure database connection for Trendz
 

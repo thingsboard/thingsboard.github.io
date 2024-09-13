@@ -25,7 +25,7 @@ Let's consider several options:
 
 #### Authentication based on Client ID only. 
 
-For this purpose, you should populate only client ID in the device credentials. MQTT clients will be able to connect if they specify correct client ID.
+To enable this, only the client ID needs to be populated in the device credentials. MQTT clients will be able to connect if they specify correct client ID.
 
 Let's review a simple command to publish telemetry readings using only MQTT client ID to the ThingsBoard{{CLOUD}}.
 The command is using plain MQTT without TLS:
@@ -49,7 +49,7 @@ where:
 * **YOUR_CLIENT_ID** with your client id.
 
 <br>
-In ThingsBoard, there's a convenient feature called "Check Connectivity" that automatically generates a command based on your host and the device credentials you provided. All you have to do is copy and run it.
+ThingsBoard offers a convenient "Check Connectivity" feature that automatically generates a command based on your host and the device credentials you provide. All you have to do is copy and run it.
 
 Let's publish telemetry readings using only MQTT client ID. First, change the credential type for your device from "Access token" to "MQTT Basic":
 
@@ -68,7 +68,7 @@ Once you have successfully executed the command, you should see the published "t
 
 #### Authentication based on Username and Password. 
 
-For this purpose, you should populate only username and password in the credentials form.
+For this purpose, only the username and password need to be populated in the credentials form.
 MQTT Clients will be able to connect if they specify correct username and password.
 
 Let's review a simple command to publish telemetry readings using MQTT client username and password to the ThingsBoard{{CLOUD}}. The command is using plain MQTT without TLS:

@@ -36,6 +36,7 @@ toc:
     - title: Queues
       path: /docs/pe/edge/rule-engine/queues/
 - title: Integrations
+  pe: true
   section:
   - title: Overview
     path: /docs/pe/edge/user-guide/integrations/

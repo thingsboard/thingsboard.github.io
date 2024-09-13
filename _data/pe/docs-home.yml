@@ -144,17 +144,18 @@ toc:
   - title: Templatization
     path: /docs/pe/user-guide/templatization/
     new: true
-- title: White Labeling
+- title: White labeling
   section:
     - title: Overview
       path: /docs/pe/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/pe/user-guide/self-registration/
-    - title: Mail Templates
+    - title: Mail templates
       path: /docs/pe/user-guide/mail-templates/
-    - title: Custom Translations
+    - title: Custom translation
       path: /docs/pe/user-guide/custom-translation/
-    - title: Custom Menu
+      new: true
+    - title: Custom menu
       path: /docs/pe/user-guide/custom-menu/
 - title: Integrations
   section:
@@ -180,7 +181,6 @@ toc:
     path: /docs/user-guide/integrations/tti/
   - title: KPN Things
     path: /docs/user-guide/integrations/kpn-things/
-    new: true
   - title: LORIOT
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
@@ -239,7 +239,7 @@ toc:
       path: /docs/pe/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/pe/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/pe/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
@@ -258,6 +258,8 @@ toc:
       new: true
 - title: Security
   section:
+  - title: Security settings
+    path: /docs/pe/user-guide/ui/security-settings/
   - title: Enable HTTPS
     path: /docs/pe/user-guide/ssl/http-over-ssl/
   - title: Audit Log
@@ -322,9 +324,11 @@ toc:
     path: /docs/pe/user-guide/ui/slack-settings/
   - title: Microsoft Teams Settings
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
-    new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
+  - title: Mobile application QR code
+    path: /docs/pe/user-guide/ui/mobile-qr-code/
+    new: true
   - title: JWT Security Settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide

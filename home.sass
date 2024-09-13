@@ -117,32 +117,6 @@ $feature-box-div-margin-bottom: 40px
             img
                 height: auto
 
-        #tb-customers
-            width: 100%
-            padding: 50px 0
-            text-align: justify
-            -moz-text-align-last: justify
-            text-align-last: justify
-            display: none
-            @media(min-width: 992px)
-                display: block
-            img
-                height: 60px
-                margin-bottom: 20px
-            main, div.main-div
-                display: flex
-                flex-wrap: wrap
-                flex-direction: row
-                justify-content: space-around
-                align-items: center
-                padding: 0 50px
-                a
-                    display: block
-                    padding: 10px
-                    object
-                        pointer-events: none
-                        filter: invert(86%) sepia(5%) saturate(530%) hue-rotate(171deg) brightness(237%) contrast(86%)
-
         #intro
             margin-bottom: 178px
             @media (max-width: 768px)
@@ -247,6 +221,8 @@ $feature-box-div-margin-bottom: 40px
                                 color: white
                                 img
                                     filter: invert(98%) sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
+                                i
+                                    filter: sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
                     &.micro
                         margin: 100px 0
                         img
@@ -422,6 +398,7 @@ $feature-box-div-margin-bottom: 40px
                 .arrow
                     right: -20px
             .arrow
+                font-size: 13px
                 transform: translate(0px)
                 transition-duration: 0.3s
                 filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
@@ -469,7 +446,8 @@ $feature-box-div-margin-bottom: 40px
                     // left: calc(50% - 60px)
                     left: 33%
                     display: flex
-                    img
+                    img, i
+                        font-size: 24px
                         margin-right: 10px
                         width: unset !important
 

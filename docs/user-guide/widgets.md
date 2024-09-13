@@ -16,7 +16,7 @@ add-widget:
         title: 'Select a widget bundle, such as "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
-        title: 'Choose a widget, for instance, "Timeseries Line Chart" and click on it to open the "Add Widget" dialog window;'
+        title: 'Choose a widget, for instance, "Time series Line Chart" and click on it to open the "Add Widget" dialog window;'
     4:
         image: /images/user-guide/widgets/overview/add-new-dashboard-5-ce.png
         title: 'Specify the data source, add the data key, and click the "Add" button. Finally, apply your changes;'

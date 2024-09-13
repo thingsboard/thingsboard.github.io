@@ -23,19 +23,9 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 
 ## Running
 
-Depending on the database used there are three type of ThingsBoard single instance docker images:
+In this instruction [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) image will be used. It contains a single instance of ThingsBoard with PostgreSQL database.
 
-* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - single instance of ThingsBoard with PostgreSQL database.
-
-    Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
-* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
-
-    The most performant and recommended option but requires at least 4GB of RAM. 8GB is recommended.  
-* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
-
-    **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
-
-In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
+Running this image requires a server with at least 4GB of RAM (8GB is recommended) and minimum load (few messages per second).
 
 ## Choose ThingsBoard queue service
 

@@ -32,21 +32,21 @@ create-dashboard-2:
         title: 'Select the "Trip Animation" widget;'
     3:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-ce.png
-        title: 'In the "Datasources" section, select the type "Device" and specify the previously created device "Tracker1" as the data source. Add "latitude", "longitude", "speed", "status", "circleRadius", and "polygonCoordinates" as timeseries data keys;'
+        title: 'In the "Datasources" section, select the "Device" type and specify the previously created device "Tracker1" as the data source. Add "latitude", "longitude", "speed", "status", "circleRadius", and "polygonCoordinates" as timeseries data keys. Click the "Add" button in the bottom right corner of the widget to finish adding the widget;'
     4:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-ce.png
         title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Click "Save" button in the upper right corner to save the dashboard;'
     5:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-9-ce.png
-        title: 'We&#39;ll use last minute received data to visualize and change the aggregation function to "None" because we don’t need to guess possible data value for the next time period, we receive data in realtime without any errors;'
+        title: 'We will use data received at the last minute. Click "Edit timewindow", switch to "History" mode, and change the aggregation function to "None", because we don&#39;t need to estimate the possible data value for the next time period since we receive the data in real-time;'
 
 create-dashboard-3:
     1:
-      image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-10-ce.png
-      title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
+        image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-10-ce.png
+        title: 'Press the "Start" button to see the movement of our device over the last minute;'
     2:
-      image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-11-ce.png
-      title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
+        image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-11-ce.png
+        title: 'We can also speed up the movement of our cursor by 5, 10, or 25 times so that we can check its route much faster.'
 
 appearance-tab:
     0:
@@ -93,7 +93,7 @@ advanced-settings-label:
         title: 'Show or hide the entity&#39;s label. You can also change the label text.'
     1:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-2-ce.png
-        title: 'Utilize a label function for more dynamic information.'
+        title: 'Utilize the label function for more dynamic information.'
     2:
         image: /images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-label-3-ce.png
     3:

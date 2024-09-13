@@ -26,7 +26,7 @@ The connector configuration file will be described below.
   "master": {
     "slaves": [
       {
-        "host": "127.0.0.1",
+        "host": "host.docker.internal",
         "port": 5021,
         "type": "tcp",
         "method": "socket",
@@ -38,8 +38,8 @@ The connector configuration file will be described below.
         "retryOnInvalid": true,
         "pollPeriod": 5000,
         "unitId": 1,
-        "deviceName": "Temperature_Sensor_1",
-        "deviceType": "sensors",
+        "deviceName": "Demo Device",
+        "deviceType": "default",
         "sendDataOnlyOnChange": false,
         "connectAttemptTimeMs": 5000,
         "connectAttemptCount": 5,
@@ -109,14 +109,14 @@ The connector configuration file will be described below.
             "tag": "16uint_read",
             "type": "16uint",
             "functionCode": 4,
-            "objectsCount": 2,
+            "objectsCount": 1,
             "address": 18
           },
           {
             "tag": "32uint_read",
             "type": "32uint",
             "functionCode": 4,
-            "objectsCount": 4,
+            "objectsCount": 2,
             "address": 20
           },
           {
@@ -295,19 +295,19 @@ There are 2 variants of server section:
 
 The next part of the slave section contains common connection parameters and settings for data processing. The available parameters are as follows:
 
-| **Parameter**                 | **Default value**             | **Description**                                                                                   |
-|:-|:-|---------------------------------------------------------------------------------------------------
-| retries                       | **true**                      | Retrying sending data to the master. The values can be either: true or false                      |
-| retryOnEmpty                  | **true**                      | Retrying sending data to the master if it is empty                                                |
-| retryOnInvalid                | **true**                      | Retrying sending data to the master if it is failed                                                |
-| pollPeriod                    | **5000**                      | Period in milliseconds to check the attributes and the telemetry on the slave                     |
-| unitId                        | **1**                         | Id of current slave on Modbus.                                                                    |
-| deviceName                    | **Temperature_Sensor_1**      | Name of the current slave                                                                         |
-| deviceType                    | **sensors**                   | Type of the current slave                                                                         |
-| sendDataOnlyOnChange          | **false**                     | Sending only if data has changed since the last check. If not, data will be sent after every check|
-| connectAttemptTimeMs          | **5000**                      | A waiting period in milliseconds before connecting to the master                                  |
-| connectAttemptCount           | **5**                         | The number of connection attempts made through the ThingsBoard gateway                            |
-| waitAfterFailedAttemptsMs     | **300000**                    | A waiting period in milliseconds before trying to send data to the master                         |
+| **Parameter**                 | **Default value** | **Description**                                                                                   |
+|:-|:------------------|---------------------------------------------------------------------------------------------------
+| retries                       | **true**          | Retrying sending data to the master. The values can be either: true or false                      |
+| retryOnEmpty                  | **true**          | Retrying sending data to the master if it is empty                                                |
+| retryOnInvalid                | **true**          | Retrying sending data to the master if it is failed                                                |
+| pollPeriod                    | **5000**          | Period in milliseconds to check the attributes and the telemetry on the slave                     |
+| unitId                        | **1**             | Id of current slave on Modbus.                                                                    |
+| deviceName                    | **Demo Device**   | Name of the current slave                                                                         |
+| deviceType                    | **default**       | Type of the current slave                                                                         |
+| sendDataOnlyOnChange          | **false**         | Sending only if data has changed since the last check. If not, data will be sent after every check|
+| connectAttemptTimeMs          | **5000**          | A waiting period in milliseconds before connecting to the master                                  |
+| connectAttemptCount           | **5**             | The number of connection attempts made through the ThingsBoard gateway                            |
+| waitAfterFailedAttemptsMs     | **300000**        | A waiting period in milliseconds before trying to send data to the master                         |
 |---
 
 <br>
@@ -318,7 +318,7 @@ The next part of the slave section contains common connection parameters and set
   "master": {
     "slaves": [
       {
-        "host": "10.7.1.106",
+        "host": "host.docker.internal",
         "port": 5021,
         "type": "tcp",
         "method": "socket",
@@ -330,8 +330,8 @@ The next part of the slave section contains common connection parameters and set
         "retryOnInvalid": true,
         "pollPeriod": 5000,
         "unitId": 1,
-        "deviceName": "Temperature_Sensor_1",
-        "deviceType": "sensors",
+        "deviceName": "Demo Device",
+        "deviceType": "default",
         "sendDataOnlyOnChange": false,
         "connectAttemptTimeMs": 5000,
         "connectAttemptCount": 5,
@@ -357,7 +357,7 @@ The configuration in this unit provides settings for processing data on Modbus s
 
 Optional parameters:  
 **multiplier** - the result of reading will be multiplied by the value of this parameter.  
-**divider** - result of reading will be divided by the value of this parameter.  
+**divider** - the result of reading will be divided by the value of this parameter.  
 
 <br>
 **Example**:

@@ -257,6 +257,30 @@
 			<td> db password</td>
 		</tr>
 		<tr>
+			<td>redis.ssl.enabled</td>
+			<td>TB_REDIS_SSL_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable secure connection</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.credentials.cert_file</td>
+			<td>TB_REDIS_SSL_PEM_CERT</td>
+			<td></td>
+			<td> Path redis server (CA) certificate</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.credentials.user_cert_file</td>
+			<td>TB_REDIS_SSL_PEM_KEY</td>
+			<td></td>
+			<td> Path to user certificate file. This is optional for the client and can be used for two-way authentication for the client</td>
+		</tr>
+		<tr>
+			<td>redis.ssl.credentials.user_key_file</td>
+			<td>TB_REDIS_SSL_PEM_KEY_PASSWORD</td>
+			<td></td>
+			<td> Path to user private key file. This is optional for the client and only needed if ‘user_cert_file’ is configured.</td>
+		</tr>
+		<tr>
 			<td>redis.pool_config.maxTotal</td>
 			<td>REDIS_POOL_CONFIG_MAX_TOTAL</td>
 			<td>128</td>
@@ -359,6 +383,12 @@
 			<td>MQTT_TIMEOUT</td>
 			<td>10000</td>
 			<td> MQTT processing timeout in milliseconds</td>
+		</tr>
+		<tr>
+			<td>transport.mqtt.disconnect_timeout</td>
+			<td>MQTT_DISCONNECT_TIMEOUT</td>
+			<td>1000</td>
+			<td> MQTT disconnect timeout in milliseconds. The time to wait for the client to disconnect after the server sends a disconnect message.</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.msg_queue_size_per_device_limit</td>
@@ -761,26 +791,32 @@
 		<tr>
 			<td>queue.kafka.topic-properties.rule-engine</td>
 			<td>TB_QUEUE_KAFKA_RE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Rule Engine</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.core</td>
 			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.transport-api</td>
 			<td>TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for Transport Api topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.notifications</td>
 			<td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Notifications topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.housekeeper</td>
+			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td> Kafka properties for Housekeeper tasks topic</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.use_default_credential_provider_chain</td>
@@ -1111,6 +1147,12 @@
 			<td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
 			<td>10000</td>
 			<td> Statistics printing interval for Core microservices</td>
+		</tr>
+		<tr>
+			<td>queue.core.housekeeper.topic</td>
+			<td>TB_HOUSEKEEPER_TOPIC</td>
+			<td>tb_housekeeper</td>
+			<td> Topic name for Housekeeper tasks</td>
 		</tr>
 		<tr>
 			<td>queue.js.request_topic</td>

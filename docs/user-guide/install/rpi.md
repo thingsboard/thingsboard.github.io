@@ -12,25 +12,18 @@ description: Installing ThingsBoard IoT Platform on Raspberry Pi
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard on a Raspberry Pi running Raspbian Buster.
 
-### Third-party components installation
 
-### Step 1. Install Java 11 (OpenJDK) 
+### Prerequisites
 
-```bash
-# Add repository.
-echo "deb http://deb.debian.org/debian unstable main non-free contrib" | sudo tee /etc/apt/sources.list
+This guide describes how to install ThingsBoard on a Raspberry Pi.
+Hardware requirements depend on chosen database and amount of devices connected to the system. 
+To run ThingsBoard and PostgreSQL you will need at least 4Gb of RAM.
+To run ThingsBoard and Cassandra you will need at least 8Gb of RAM.
 
-# Run system update.
-sudo apt update
 
-# Install JAVA
-sudo apt install openjdk-11-jdk
-
-#Check installation
-java -version
-```
+### Step 1. Install Java 17 (OpenJDK) 
+{% include templates/install/ubuntu-java-install.md %}
 {: .copy-code}
 
 ### Step 2. ThingsBoard service installation
