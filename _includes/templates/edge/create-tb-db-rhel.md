@@ -35,10 +35,11 @@ psql -U postgres -d postgres -h 127.0.0.1 -W
 ```
 {: .copy-code}
 
-Execute create database statement
+Execute create database statement:
 
 ```bash
 CREATE DATABASE tb_edge;
-\q
 ```
 {: .copy-code}
+
+Press “Ctrl+D” twice to exit PostgreSQL.
