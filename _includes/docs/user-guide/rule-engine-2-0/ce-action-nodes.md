@@ -361,8 +361,6 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay.png)
-
 Delays incoming messages for configurable period.
 
 Configuration:
