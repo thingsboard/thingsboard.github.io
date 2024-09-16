@@ -435,7 +435,7 @@ list = new java.util.ArrayList(); // Not allowed
 ```
 {: .copy-code}
 
-To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similarly to JS. 
+To simplify migration from JavaScript, we introduced a JSON class with static methods JSON.stringify and JSON.parse, which function similarly to their JavaScript counterparts. 
 
 For example:
 
@@ -446,9 +446,9 @@ var metadata = JSON.parse(metadataStr);
 {: .copy-code}
 
 For the same purpose:
-- Added [decodeToJson](#decodetojson)decodeToJson method.
-- Added [Date](#tbdate) class that can be used without a package name.
-- In the `tbel` library, the  [map](#maps) and [list](#lists) classes have extended the use of the main methods of these classes, as in java.
+- Added [decodeToJson](#decodetojson) method.
+- Added [Date](#tbdate)class, which can be used without specifying a package name.
+- In the `tbel` library, the  [map](#maps) and [list](#lists) classes have extended support for their primary methods, similar to Java.
  
 #### Flow Control
 
@@ -573,7 +573,7 @@ Creates a Base64-encoded ASCII string from a binary string (i.e., a string in wh
 
 **Return value:**
 
-An ASCII string containing the Base64 representation of the input.
+Returns an ASCII string that represents the Base64 encoding of the input.
 
 **Examples:**
 
@@ -743,7 +743,7 @@ return decodeToJson(bytes); // Returns '{"hello": "world"}'
 #### isTypeInValue
 ##### isBinary
 
-Validates a String value to be a binary radix.
+Validates whether a string represents a binary (base-2) value.
 
 **Syntax:**
 
@@ -771,6 +771,8 @@ return isBinary("2100110"); // Returns -1
 
 ##### isOctal
 
+Validates whether a string represents an octal (base-8) value.
+
 **Syntax:**
 
 *int isOctal(String str)*
@@ -797,6 +799,8 @@ return isOctal("8100110"); // Returns -1
 
 ##### isDecimal
 
+Validates whether a string represents a decimal (base-10) value.
+
 **Syntax:**
 
 *int isDecimal(String str)*
@@ -822,6 +826,8 @@ return isDecimal("C100110"); // Returns -1
 {: .copy-code}
 
 ##### isHexadecimal
+
+Validates whether a string represents a hexadecimal (base-16) value.
 
 **Syntax:**
 
@@ -853,8 +859,8 @@ return isHexadecimal("K100110"); // Returns -1
 **Note**:
 <br>
 The encodeURI() function:
-- The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format ***%XX***, left-padded with 0 if necessary. Because lone surrogates in UTF-16 do not encode any valid Unicode character.
-- The Tbel library uses most of the standard JavaScript methods from the [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
+- The encodeURI() function escapes characters as UTF-8 code units, with each octet encoded in the format %XX, left-padded with 0 if necessary. Lone surrogates in UTF-16 do not represent valid Unicode characters.
+- The Tbel library includes most standard JavaScript methods, such as [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -891,8 +897,8 @@ return encodeURI(uriOriginal); // Returns "-_.!~*'();/?:@&=+$,#ht://example.%D0%
 **Note**:
 <br>
 The decodeURI() function:
-- The decodeURI() function decodes a Uniform Resource Identifier (URI) previously created by encodeURI() or a similar routine.
-- The Tbel library uses most of the standard JavaScript methods from the [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
+- The decodeURI() function decodes a Uniform Resource Identifier (URI) that was previously encoded using encodeURI() or a similar method.
+- The Tbel library incorporates most standard JavaScript methods, including [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -908,7 +914,7 @@ The decodeURI() function:
 
 **Return value:**
 
-A new string representing the unencoded version of the given encoded Uniform Resource Identifier (URI).
+A new string that represents the unencoded version of the specified encoded Uniform Resource Identifier (URI).
 
 **Examples:**
 
@@ -947,7 +953,7 @@ return raiseError(message, value); // Returns "frequency_weighting_type must be 
 
 #### printUnsignedBytes
 
-Convert List<Signed byte> to List<Unsigned integer>
+Converts List<Signed byte> to List<Unsigned integer>
 
 **Syntax:**
 
@@ -1343,7 +1349,7 @@ Converts the list of integer values, where each integer represents a single byte
 
 **Return value:**
 
-Hex string.
+Returns a hexadecimal string.
 
 **Examples:**
 
@@ -1357,7 +1363,7 @@ return bytesToHex(list);   // returns "BB53"
 
 ##### parseBytesToInt
 
-Parses int from the byte array given the offset, length and optional endianness.
+Converts a byte array with the given offset to an int, length, and optional byte order.
 
 **Syntax:**
 
@@ -1388,7 +1394,7 @@ return parseBytesToInt(bytes, 0, 3, false); // returns 13417386 in Decimal or 0x
 
 ##### parseBytesToLong
 
-Parses long from the byte array given the offset, length and optional endianness.
+Converts a byte array with the given offset to a long, length, and optional byte order.
 
 **Syntax:**
 
@@ -1427,8 +1433,7 @@ eg *"0x0A"* for *1.4E-44f*:
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-
-Parses float from the byte array given the offset, length and optional endianness.
+Converts a byte array with the given offset to a floating-point number, length, and optional byte order.
 
 **Syntax:**
 
@@ -1473,12 +1478,11 @@ return parseBytesToFloat(floatValList, 0, 4, false);   // returns -5.948442E7f
 <br>
 eg *"0x0A"* for *10.0f*, *"0x0A00"* for *2560.0f*:
 - In this method, we process it as an integer.
+- Converts a byte array to a floating-point number equal to the value that would be found if the hexadecimal string were converted to an Integer number.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Converts the hex string to float from HexString.
-
-Parses float from the byte array given the offset, length and optional endianness.
+Converts a byte array with the given offset to a floating-point number, length, and optional byte order.
 
 **Syntax:**
 
@@ -1527,16 +1531,15 @@ return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // retur
 {% capture difference %}
 **Note**:
 <br>
-eg *"0x0A"* for *10.0f*, *"0x0A00"* for *2'560.0f*, *"0x0A0A0A0A"* for *168'430'090.0f*:
+eg *"0x0A"* for *10.0d*, *"0x0A00"* for *2'560.0d*, *"0x0A0A0A0A"* for *168'430'090.0d*:
 - In this method, we process it as an long.
+- Converts a byte array to a floating-point number equal to the value that would be found if the hexadecimal string were converted to an Long number.
 - Using double has enough precision for accurate lat/lon down to inches for 6-7 decimal places.
 - The 6th decimal place  for lat/lon is for sub-foot accuracy.
-  {% endcapture %}
+{% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Converts the hex string to double from HexString.
-
-Parses double from the byte array given the offset, length and optional endianness.
+Converts a byte array with the given offset to a double, length, and optional byte order.
 
 **Syntax:**
 
@@ -1555,30 +1558,22 @@ Parses double from the byte array given the offset, length and optional endianne
 
 double value.
 
-{% capture difference %}
-**Note**:
-<br>
-Using double has enough precision for accurate lat/lon down to inches for 6-7 decimal places.
-The 6th decimal place  for lat/lon is for sub-foot accuracy.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
 **Examples (latitude, longitude):**
 
 ```java
-var dataPalacKiyv = "0x32D009423F23B300B0106E08D96B6C00";
-var bytePalacKiyv = hexToBytes(dataPalacKiyv);
+var coordinatesAsHex = "0x32D009423F23B300B0106E08D96B6C00";
+var coordinatesasBytes = hexToBytes(coordinatesAsHex);
 var offset = 0;
 var factor = 1e15;
-return parseBytesLongToDouble(bytePalacKiyv, offset, 8, false) / factor;     // returns 50.422775429058610d, latitude
-return parseBytesLongToDouble(bytePalacKiyv, offset + 8, 8, false) / factor; // returns 30.517877378257072d, longitude
+return parseBytesLongToDouble(coordinatesasBytes, offset, 8, false) / factor;     // returns 50.422775429058610d, latitude
+return parseBytesLongToDouble(coordinatesasBytes, offset + 8, 8, false) / factor; // returns 30.517877378257072d, longitude
 
 ```
 {: .copy-code}
 
 ##### bytesToExecutionArrayList
 
-Convert byte Array to Execution Arra yList. from the byte array given the offset, length and optional endianness.
+Converts a byte array to an Array List implementation of a byte array with the given offset, length, and optional byte order.
 
 **Syntax:**
 
@@ -1606,7 +1601,7 @@ return bytesToExecutionArrayList(bytes); // returns ExecutionArrayList<Byte> val
 #### parseBinaryArray
 ##### parseByteToBinaryArray
 
-Converts the byte to binary array.
+Converts a byte to binary array.
 
 Parses  one byte to binary array from the byte given the optional binLength and endianness.
 
@@ -1649,9 +1644,7 @@ var actualHighCurrent3Alarm = value[5];
 
 ##### parseBytesToBinaryArray
 
-Converts the byte Array to binary array.
-
-Parses  the byte Array to binary Array from the byte Array/List given the  binLength.
+Converts a byte Array to binary Array from the byte Array/List with the given length.
 
 **Syntax:**
 
@@ -1681,9 +1674,7 @@ return parseByteToBinaryArray(bytesVal, 2);           // returns byte[2]  value 
 
 ##### parseLongToBinaryArray
 
-Converts the long value to binary array.
-
-Parses the long value to binary Array from the long value given the binLength.
+Converts a long value to binary Array from the long value with the given length.
 
 **Syntax:**
 
@@ -1711,9 +1702,7 @@ return parseByteToBinaryArray(longValue, 16);    // returns byte[16] value => [1
 
 ##### parseBinaryArrayToInt
 
-Converts the binary array to int value from the binary array.
-
-Parses the binary array to int value from the binary array given optional the offset, length and endianness.
+Converts a binary array to an int value from a binary array, optionally specifying an integer offset, length, and byte order.
 
 **Syntax:**
 
@@ -1898,7 +1887,7 @@ return base64ToHex("Kkk="); // returns "2A49"
 
 ##### bytesToBase64
 
-Converts the byte array, to Base64 string.
+Encodes a byte array into a Base64 string.
 
 **Syntax:**
 
@@ -1923,7 +1912,7 @@ return bytesToBase64([42, 73]); // returns "Kkk="
 
 ##### base64ToBytes
 
-Decodes the Base64 string, to byte array.
+Decodes a Base64 string into a byte array.
 
 **Syntax:**
 
