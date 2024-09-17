@@ -8,7 +8,6 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 <html id="home" lang="en">
 
 {% include head-header.html productTag="ce" %}
-{% assign carouselCollection = site.data.carousel-collection.home-page-carousel %}
 
 <!--  HERO  -->
 <main>
@@ -160,7 +159,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 				</div>
 				<h3>Real-Time IoT Dashboards</h3>
 				<p>ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time. More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
-				{% include carousel.liquid carouselCollection = carouselCollection nonActiveItemsVisibility = false overlay = true %}
+				{% include carousel.liquid collectionMap = 'home-page-carousel' nonActiveItemsVisibility = false overlay = true %}
 			</div>
 			<div class="row justify-content-center">
 				<a href="products/">View all products</a>

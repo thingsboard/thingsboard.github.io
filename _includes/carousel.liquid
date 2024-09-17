@@ -1,5 +1,6 @@
-{% assign carouselCollection = include.carouselCollection %}
 {% assign collectionMap = include.collectionMap %}
+{% assign collectionKey = include.collectionKey %}
+{% assign autoplay = include.autoplay %}
 {% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
 {% assign overlay = include.overlay %}
 {% assign dotButtonMode = include.dotButtonMode %}
@@ -15,12 +16,21 @@
 {% assign titleColor = include.titleColor %}
 {% assign descriptionColor = include.descriptionColor %}
 {% assign linkColor = include.linkColor %}
-{% assign start = include.start %}
-{% assign range = include.range %}
 
-{% if collectionMap %}
-    {% assign collectionKey = include.collectionKey %}
-    {% assign carouselCollection = site.data.carousel-collection[collectionMap][collectionKey] %}
+{% if site.data.carousel-collection[collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[collectionMap] %}
+{% endif %}
+
+{% if collectionKey %}
+    {% assign carouselCollection = carouselCollection[collectionKey] %}
+{% endif %}
+
+{% if autoplay == false %}
+    {% assign autoplay = "no-autoplay" %}
+{% else %}
+    {% assign autoplay = "autoplay" %}
 {% endif %}
 
 {% if nonActiveItemsVisibility == false %}
@@ -101,13 +111,9 @@
     {% assign enableLinkArrow = true %}
 {% endif %}
 
-{% if start and range %}
-    {% assign carouselCollection = carouselCollection | slice: start, range %}
-{% endif %}
-
-<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibility }} {{ dotButtonMode }} {{ navMode }}">
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibility }} {{ dotButtonMode }} {{ navMode }} {{ autoplay }}">
     {% for carouselItem in carouselCollection %}
-        {% if carouselItem.title or carouselItem.description or carouselItem.linkLabel and carouselItem.src %}
+        {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
             {% if contentDirection == 'column' %}
                 {% assign carousel-item = 'carousel-item-flex-column' %}
             {% else %}
@@ -117,17 +123,17 @@
             {% assign carousel-item = 'carousel-item' %}
         {% endif %}
         <div class="carousel-item-default {{ carousel-item }}">
-            {% if carouselItem.title or carouselItem.description or carouselItem.linkLabel %}
+            {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
                 <div class="carousel-text">
-                    {% if carouselItem.title %}
-                        <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem.title}}</h2>
+                    {% if carouselItem[1].title %}
+                        <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem[1].title}}</h2>
                     {% endif %}
-                    {% if carouselItem.description %}
-                        <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem.description}}</p>
+                    {% if carouselItem[1].description %}
+                        <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem[1].description}}</p>
                     {% endif %}
-                    {% if carouselItem.linkLabel %}
-                        <a href="{{carouselItem.href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
-                            {{carouselItem.linkLabel}}
+                    {% if carouselItem[1].linkLabel %}
+                        <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
+                            {{carouselItem[1].linkLabel}}
                             {% if enableLinkArrow == true %}
                                 <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
                                 <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
@@ -137,61 +143,25 @@
                     {% endif %}
                 </div>
             {% endif %}
-            {% if carouselItem.src %}
+            {% if carouselItem[1].src %}
                 <div class="carousel-image">
-                    {% if carouselItem.href %}
-                        <a href="{{carouselItem.href}}">
-                            <img src="{{carouselItem.src}}" alt="{{carouselItem.alt}}">
+                    {% if carouselItem[1].href %}
+                        <a href="{{carouselItem[1].href}}">
+                            <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
                             {% if overlay == true %}
                                 <div class="overlay">
                                     <div class="eye">
                                         <i class="far fa-eye"></i>
-                                        See more about {{carouselItem.title}}
+                                        See more about {{carouselItem[1].title}}
                                     </div>
                                 </div>
                             {% endif %}
                         </a>
                     {% else %}
-                        <img src="{{carouselItem.src}}" alt="{{carouselItem.alt}}">
+                        <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
                     {% endif %}
                 </div>
             {% endif %}
         </div>
     {% endfor %}
 </div>
-
-<script>
-    jqueryDefer(Owl);
-
-    function Owl() {
-        var scriptsList = [
-            {src: '/css/owl.carousel.min.css', type: 'css'},
-            {src: '/css/owl.theme.default.min.css', type: 'css'},
-            {src: '/js/owl.carousel.min.js', type: 'script'}
-        ];
-        loadNextScript(0, scriptsList,
-            function() {
-                $(document).ready(function(){
-                    $('.owl-carousel').owlCarousel({
-                        items:1,
-                        margin:50,
-                        stagePadding: 0,
-                        autoHeight: false,
-                        loop:true,
-                        autoplay:true,
-                        autoplayTimeout:5000,
-                        autoplayHoverPause:true,
-                        nav:false,
-                        responsive: {
-                            1025: {
-                                nav:true,
-                                margin:100,
-                                stagePadding: 50,
-                            }
-                        }
-                    });
-                });
-            }
-        );
-    }
-</script>

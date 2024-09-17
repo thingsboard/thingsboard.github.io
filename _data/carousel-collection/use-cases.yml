@@ -1,118 +1,181 @@
 smart-energy:
-  - src: "/images/usecases/smart-energy/se1.png"
+  0:
+    src: "/images/usecases/smart-energy/se1.png"
     alt: "Smart energy monitoring light theme example with the pie chart"
-  - src: "/images/usecases/smart-energy/se2.png"
+  1:
+    src: "/images/usecases/smart-energy/se2.png"
     alt: "Smart energy monitoring dark theme example without the pie chart"
-  - src: "/images/usecases/smart-energy/se3.png"
+  2:
+    src: "/images/usecases/smart-energy/se3.png"
     alt: "Smart energy monitoring dark theme example"
+
 smart-farming:
-  - src: "/images/usecases/smart-farming/sf1.png"
+  0:
+    src: "/images/usecases/smart-farming/sf1.png"
     alt: "Smart farming dashboard with location"
-  - src: "/images/usecases/smart-farming/sf2.png"
+  1:
+    src: "/images/usecases/smart-farming/sf2.png"
     alt: "Smart farming dashboard with big linear chart"
-  - src: "/images/usecases/smart-farming/sf3.png"
+  2:
+    src: "/images/usecases/smart-farming/sf3.png"
     alt: "Smart farming dashboard dark theme"
+
 fleet-tracking:
-  - src: "/images/usecases/fleet-tracking/ft1.png"
+  0:
+    src: "/images/usecases/fleet-tracking/ft1.png"
     alt: "Bus locations example"
-  - src: "/images/usecases/fleet-tracking/ft2.png"
+  1:
+    src: "/images/usecases/fleet-tracking/ft2.png"
     alt: "Route history example"
-  - src: "/images/usecases/fleet-tracking/ft3.png"
+  2:
+    src: "/images/usecases/fleet-tracking/ft3.png"
     alt: "Route area example"
+
 tank-level-monitoring:
-  - src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png"
+  0:
+    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png"
     alt: "Fuel level monitoring dashboard example"
-  - src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png"
+  1:
+    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png"
     alt: "Alarm rules settings example"
-  - src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png"
+  2:
+    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png"
     alt: "Specific tank fuel level monitoring dashboard example"
-  - src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png"
+  3:
+    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png"
     alt: "Edit sensor settings example"
+
 smart-metering:
-  - src: "/images/usecases/smart-metering/sm1.png"
+  0:
+    src: "/images/usecases/smart-metering/sm1.png"
     alt: "Smart metering dashboard with a map"
-  - src: "/images/usecases/smart-metering/sm2.png"
+  1:
+    src: "/images/usecases/smart-metering/sm2.png"
     alt: "Smart metering dashboard with a location"
-  - src: "/images/usecases/smart-metering/sm3.png"
+  2:
+    src: "/images/usecases/smart-metering/sm3.png"
     alt: "Smart metering dashboard with a building plan"
-  - src: "/images/usecases/smart-metering/sm4.png"
+  3:
+    src: "/images/usecases/smart-metering/sm4.png"
     alt: "Smart metering dashbord with a thermostat controller"
+
 environment-monitoring:
-  - src: "/images/usecases/environment-monitoring/em1.png"
+  0:
+    src: "/images/usecases/environment-monitoring/em1.png"
     alt: "environment monitoring 1"
-  - src: "/images/usecases/environment-monitoring/em2.png"
+  1:
+    src: "/images/usecases/environment-monitoring/em2.png"
     alt: "environment monitoring 2"
-  - src: "/images/usecases/environment-monitoring/em3.png"
+  2:
+    src: "/images/usecases/environment-monitoring/em3.png"
     alt: "environment monitoring 3"
+
 smart-office:
-  - src: "/images/usecases/smart-office/so1.png"
+  0:
+    src: "/images/usecases/smart-office/so1.png"
     alt: "smart office 1"
-  - src: "/images/usecases/smart-office/so2.png"
+  1:
+    src: "/images/usecases/smart-office/so2.png"
     alt: "smart office 2"
-  - src: "/images/usecases/smart-office/so3.png"
+  2:
+    src: "/images/usecases/smart-office/so3.png"
     alt: "smart office 3"
-  - src: "/images/usecases/smart-office/so4.png"
+  3:
+    src: "/images/usecases/smart-office/so4.png"
     alt: "smart office 4"
-  - src: "/images/usecases/smart-office/so5.png"
+  4:
+    src: "/images/usecases/smart-office/so5.png"
     alt: "smart office 5"
-  - src: "/images/usecases/smart-office/so5.png"
-    alt: "smart office 5"
+
 water-metering:
-  - src: "/images/usecases/water-metering/wm1.png"
+  0:
+    src: "/images/usecases/water-metering/wm1.png"
     alt: "water metering 1"
-  - src: "/images/usecases/water-metering/wm2.png"
+  1:
+    src: "/images/usecases/water-metering/wm2.png"
     alt: "water metering 2"
-  - src: "/images/usecases/water-metering/wm3.png"
+  2:
+    src: "/images/usecases/water-metering/wm3.png"
     alt: "water metering 3"
-  - src: "/images/usecases/water-metering/wm4.png"
+  3:
+    src: "/images/usecases/water-metering/wm4.png"
     alt: "water metering 4"
-  - src: "/images/usecases/water-metering/wm5.png"
+  4:
+    src: "/images/usecases/water-metering/wm5.png"
     alt: "water metering 5"
-  - src: "/images/usecases/water-metering/wm6.png"
+  5:
+    src: "/images/usecases/water-metering/wm6.png"
     alt: "water metering 6"
+
 smart-retail:
-  - src: "/images/usecases/smart-retail/sr1.png"
+  0:
+    src: "/images/usecases/smart-retail/sr1.png"
     alt: "smart retail 1"
-  - src: "/images/usecases/smart-retail/sr2.png"
+  1:
+    src: "/images/usecases/smart-retail/sr2.png"
     alt: "smart retail 2"
-  - src: "/images/usecases/smart-retail/sr3.png"
+  2:
+    src: "/images/usecases/smart-retail/sr3.png"
     alt: "smart retail 3"
-  - src: "/images/usecases/smart-retail/sr4.png"
+  3:
+    src: "/images/usecases/smart-retail/sr4.png"
     alt: "smart retail 4"
-  - src: "/images/usecases/smart-retail/sr5.png"
+  4:
+    src: "/images/usecases/smart-retail/sr5.png"
     alt: "smart retail 5"
-air-quality-monitoring:
-  - src: "/images/usecases/air-quality/aq1.png"
+
+air-quality-monitoring-1:
+  0:
+    src: "/images/usecases/air-quality/aq1.png"
     alt: "air quality 1"
-  - src: "/images/usecases/air-quality/aq2.png"
+  1:
+    src: "/images/usecases/air-quality/aq2.png"
     alt: "air quality 2"
-  - src: "/images/usecases/air-quality/aq3.png"
+  2:
+    src: "/images/usecases/air-quality/aq3.png"
     alt: "air quality 3"
-  - src: "/images/usecases/air-quality/aq4.png"
+
+air-quality-monitoring-2:
+  0:
+    src: "/images/usecases/air-quality/aq4.png"
     alt: "air quality 4"
-  - src: "/images/usecases/air-quality/aq5.png"
+  1:
+    src: "/images/usecases/air-quality/aq5.png"
     alt: "air quality 5"
+
 smart-irrigation:
-  - src: "/images/solutions/smart_irrigation/smart-irrigation-1.png"
+  0:
+    src: "/images/solutions/smart_irrigation/smart-irrigation-1.png"
     alt: "smart irrigation 1"
-  - src: "/images/solutions/smart_irrigation/smart-irrigation-2.png"
+  1:
+    src: "/images/solutions/smart_irrigation/smart-irrigation-2.png"
     alt: "smart irrigation 2"
-  - src: "/images/solutions/smart_irrigation/smart-irrigation-3.png"
+  2:
+    src: "/images/solutions/smart_irrigation/smart-irrigation-3.png"
     alt: "smart irrigation 3"
-  - src: "/images/solutions/smart_irrigation/smart-irrigation-4.png"
+  3:
+    src: "/images/solutions/smart_irrigation/smart-irrigation-4.png"
     alt: "smart irrigation 4"
-  - src: "/images/solutions/smart_irrigation/smart-irrigation-5.png"
+  4:
+    src: "/images/solutions/smart_irrigation/smart-irrigation-5.png"
     alt: "smart irrigation 5"
+
 waste-management:
-  - src: "/images/solutions/waste_monitoring/waste-monitoring-1.png"
+  0:
+    src: "/images/solutions/waste_monitoring/waste-monitoring-1.png"
     alt: "waste monitoring 1"
-  - src: "/images/solutions/waste_monitoring/waste-monitoring-2.png"
+  1:
+    src: "/images/solutions/waste_monitoring/waste-monitoring-2.png"
     alt: "waste monitoring 2"
-  - src: "/images/solutions/waste_monitoring/waste-monitoring-3.png"
+  2:
+    src: "/images/solutions/waste_monitoring/waste-monitoring-3.png"
     alt: "waste monitoring 3"
-  - src: "/images/solutions/waste_monitoring/waste-monitoring-4.png"
+  3:
+    src: "/images/solutions/waste_monitoring/waste-monitoring-4.png"
     alt: "waste monitoring 4"
-  - src: "/images/solutions/waste_monitoring/waste-monitoring-5.png"
+  4:
+    src: "/images/solutions/waste_monitoring/waste-monitoring-5.png"
     alt: "waste monitoring 5"
-  - src: "/images/solutions/waste_monitoring/waste-monitoring-6.png"
+  5:
+    src: "/images/solutions/waste_monitoring/waste-monitoring-6.png"
     alt: "waste monitoring 6"
