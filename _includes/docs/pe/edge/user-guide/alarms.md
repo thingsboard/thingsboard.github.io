@@ -4,7 +4,7 @@
 
 ## Overview
 
-This manual provides an overview of the alarm notification system functionalities available on the ThingsBoard **PE Edge** *Platform*. It includes detailed instructions on the fundamental concepts of configuring and utilizing alarms within ThingsBoard **Edge PE**. Key topics covered are the creation of processing rules, configuration of notifications, and event response mechanisms.
+This manual provides an overview of the alarm notification system functionalities available on the ThingsBoard **PE Edge** *Platform*. It includes detailed instructions on the fundamental concepts of configuring and utilizing alarms within ThingsBoard **PE Edge**. Key topics covered are the creation of processing rules, configuration of notifications, and event response mechanisms.
 
 For more information, please refer to [working with alarms](/docs/pe/user-guide/alarms/#main-concepts) documentation.
 
