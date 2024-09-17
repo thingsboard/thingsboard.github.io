@@ -17,7 +17,7 @@ If you have these prerequisites in place, let's go to the next steps.
 
 ## Step 1. Create Device
 
-{% include images-gallery.html imageCollection="createDevice" %}
+{% include images-gallery.html imageCollection="createDevice" showListImageTitles="true" %}
 
 ## Step 2. Create Device Profile
 
@@ -25,7 +25,7 @@ In this step, we will create a device profile and add rules (conditions) that wi
 
 Configuring the device profile allows you to set the device's parameters and behavior within the system, while creating processing rules defines the conditions under which the corresponding notifications will be generated. These settings will help you effectively monitor the device's status and automatically respond to specific events.
 
-{% include images-gallery.html imageCollection="createDeviceProfile" %}
+{% include images-gallery.html imageCollection="createDeviceProfile" showListImageTitles="true" %}
 
 ## Step 3. Send Telemetry Message
 
@@ -41,7 +41,7 @@ curl -v -X POST http://$THINGSBOARD_HOST_NAME:8080/api/v1/$ACCESS_TOKEN/telemetr
 
 ## Step 4. Confirm Alarm
 
-{% include images-gallery.html imageCollection="verifyAlarm" %}
+{% include images-gallery.html imageCollection="verifyAlarm" showListImageTitles="true" %}
 
 ## Troubleshooting
 
