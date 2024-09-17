@@ -36,7 +36,7 @@ createDeviceProfile:
   
     7:
       image: /images/pe/edge/user-guide/alarms/create-device-profile-8.png
-      title: '  1. Select <b>"Key type"</b>. 2. Input <b>"Key name"</b>. 3. Select <b>"Value type"</b>. 4. Click <b>"Add"</b> button.'
+      title: '1. Select <b>"Key type"</b>. 2. Input <b>"Key name"</b>. 3. Select <b>"Value type"</b>. 4. Click <b>"Add"</b> button.'
       
     8:
       image: /images/pe/edge/user-guide/alarms/create-device-profile-9.png
@@ -48,7 +48,7 @@ createDeviceProfile:
       
     10:
       image: /images/pe/edge/user-guide/alarms/create-device-profile-11.png
-      title: 'Click <b>"Add" button</b>.'
+      title: 'Click <b>"Add"</b> button.'
     
     11:
       image: /images/pe/edge/user-guide/alarms/create-device-profile-12.png
@@ -71,5 +71,4 @@ verifyAlarm:
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
-{% assign cloudDocsPrefix = "pe/" %}
 {% include docs/pe/edge/user-guide/alarms.md %}
