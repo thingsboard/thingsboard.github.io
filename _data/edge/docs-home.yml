@@ -7,6 +7,8 @@ toc:
   path: /docs/edge/getting-started-guides/what-is-edge/
 - title: Key concepts
   section:
+    - title: Alarms
+      path: /docs/edge/user-guide/alarms/
     - title: OTA updates
       path: /docs/edge/user-guide/ota-updates/
 #- title: Configuration guides
@@ -56,7 +58,7 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/udp/
 - title: Security
   section:
-    - title: Edge over TLS/SSL 
+    - title: Edge over TLS/SSL
       path: /docs/edge/user-guide/grpc-over-ssl/
 #- title: Features
 #  section:
