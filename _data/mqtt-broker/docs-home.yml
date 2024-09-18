@@ -25,6 +25,12 @@ toc:
     - title: Quality of Service (QoS)
       path: /docs/mqtt-broker/user-guide/qos/
       new: true
+    - title: Last Will
+      path: /docs/mqtt-broker/user-guide/last-will/
+      new: true
+    - title: Keep Alive
+      path: /docs/mqtt-broker/user-guide/keep-alive/
+      new: true
 - title: Administration UI
   section:
     - title: Monitoring
