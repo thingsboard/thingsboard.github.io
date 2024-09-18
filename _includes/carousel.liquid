@@ -44,60 +44,60 @@
 {% endif %}
 
 {% if carouselCollection %}
-    <div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }}">
-        {% for carouselItem in carouselCollection %}
-            {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
-                {% assign contentDirectionClass = "carousel-item-flex-row" %}
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }}">
+    {% for carouselItem in carouselCollection %}
+        {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
+            {% assign contentDirectionClass = "carousel-item-flex-row" %}
 
-                {% if contentDirection == "column" %}
-                    {% assign contentDirectionClass = "carousel-item-flex-column" %}
-                {% endif %}
-            {% else %}
-                {% assign contentDirectionClass = 'carousel-item' %}
+            {% if contentDirection == "column" %}
+                {% assign contentDirectionClass = "carousel-item-flex-column" %}
             {% endif %}
-            <div class="carousel-item-default {{ contentDirectionClass }}">
-                {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
-                    <div class="carousel-text">
-                        {% if carouselItem[1].title %}
-                            <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem[1].title}}</h2>
-                        {% endif %}
-                        {% if carouselItem[1].description %}
-                            <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem[1].description}}</p>
-                        {% endif %}
-                        {% if carouselItem[1].linkLabel %}
-                            <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
-                                {{carouselItem[1].linkLabel}}
-                                {% if enableLinkArrow == true %}
-                                    <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
-                                    <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
-                                    <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
-                                {% endif %}
-                            </a>
-                        {% endif %}
-                    </div>
-                {% endif %}
-                {% if carouselItem[1].src %}
-                    <div class="carousel-image">
-                        {% if carouselItem[1].href %}
-                            <a href="{{carouselItem[1].href}}">
-                                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
-                                {% if overlay == true %}
-                                    <div class="overlay">
-                                        <div class="eye">
-                                            <i class="far fa-eye"></i>
-                                            See more about {{carouselItem[1].title}}
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            </a>
-                        {% else %}
+        {% else %}
+            {% assign contentDirectionClass = 'carousel-item' %}
+        {% endif %}
+        <div class="carousel-item-default {{ contentDirectionClass }}">
+            {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
+                <div class="carousel-text">
+                    {% if carouselItem[1].title %}
+                        <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem[1].title}}</h2>
+                    {% endif %}
+                    {% if carouselItem[1].description %}
+                        <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem[1].description}}</p>
+                    {% endif %}
+                    {% if carouselItem[1].linkLabel %}
+                        <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
+                            {{carouselItem[1].linkLabel}}
+                            {% if enableLinkArrow == true %}
+                                <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
+                                <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
+                                <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
+                            {% endif %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
+            {% if carouselItem[1].src %}
+                <div class="carousel-image">
+                    {% if carouselItem[1].href %}
+                        <a href="{{carouselItem[1].href}}">
                             <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
-                        {% endif %}
-                    </div>
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
+                            {% if overlay == true %}
+                                <div class="overlay">
+                                    <div class="eye">
+                                        <i class="far fa-eye"></i>
+                                        See more about {{carouselItem[1].title}}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </a>
+                    {% else %}
+                        <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
 {% else %}
     <span class="not-found-message">Collection not found</span>
 {% endif %}
