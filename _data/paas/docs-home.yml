@@ -61,6 +61,13 @@ toc:
       path: /docs/paas/user-guide/dashboards/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
+    - title: SCADA
+      new: true
+      section:
+        - title: Overview
+          path: /docs/paas/user-guide/scada/
+        - title: SCADA symbols development guide
+          path: /docs/paas/user-guide/scada/symbols-dev-guide/
     - title: Widgets
       section:
         - title: Overview
