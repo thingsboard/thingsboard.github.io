@@ -2,20 +2,20 @@
 {% assign collectionKey = include.collectionKey %}
 {% assign autoplay = include.autoplay %}
 {% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
-{% assign overlay = include.overlay %}
-{% assign dotButtonMode = include.dotButtonMode %}
-{% assign navMode = include.navMode %}
+{% assign overlay = include.overlay | default: false %}
+{% assign dotButtonMode = include.dotButtonMode | default: "line" %}
+{% assign navMode = include.navMode | default: "thinArrow" %}
 {% assign enableLinkArrow = include.enableLinkArrow %}
 {% assign contentDirection = include.contentDirection %}
-{% assign titleSize = include.titleSize %}
-{% assign descriptionSize = include.descriptionSize %}
-{% assign linkSize = include.linkSize %}
-{% assign titleLineHeight = include.titleLineHeight %}
-{% assign descriptionLineHeight = include.descriptionLineHeight %}
-{% assign linkLineHeight = include.linkLineHeight %}
-{% assign titleColor = include.titleColor %}
-{% assign descriptionColor = include.descriptionColor %}
-{% assign linkColor = include.linkColor %}
+{% assign titleSize = include.titleSize | default: "36px" %}
+{% assign descriptionSize = include.descriptionSize | default: "18px" %}
+{% assign linkSize = include.linkSize | default: "18px"  %}
+{% assign titleLineHeight = include.titleLineHeight | default: "54px" %}
+{% assign descriptionLineHeight = include.descriptionLineHeight | default: "27px" %}
+{% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
+{% assign titleColor = include.titleColor | default: "#212529" %}
+{% assign descriptionColor = include.descriptionColor | default: "#75767c" %}
+{% assign linkColor = include.linkColor | default: "#2a7dec" %}
 
 {% if site.data.carousel-collection[collectionMap] %}
     {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
@@ -27,102 +27,34 @@
     {% assign carouselCollection = carouselCollection[collectionKey] %}
 {% endif %}
 
+{% assign autoplayClass = "autoplay" %}
+
 {% if autoplay == false %}
-    {% assign autoplay = "no-autoplay" %}
-{% else %}
-    {% assign autoplay = "autoplay" %}
+    {% assign autoplayClass = "no-autoplay" %}
 {% endif %}
+
+{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
 
 {% if nonActiveItemsVisibility == false %}
-    {% assign nonActiveItemsVisibility = "nonActiveItemsVisibilityFalse" %}
-{% else %}
-    {% assign nonActiveItemsVisibility = "nonActiveItemsVisibilityTrue" %}
+    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
 {% endif %}
 
-{% if dotButtonMode == "circle" %}
-    {% assign dotButtonMode = dotButtonMode %}
-{% else %}
-    {% assign dotButtonMode = "line" %}
-{% endif %}
-
-{% if navMode == "fatArrow" %}
-    {% assign navMode = navMode %}
-{% else %}
-    {% assign navMode = "thinArrow" %}
-{% endif %}
-
-{% if titleSize %}
-    {% assign titleSize = titleSize %}
-{% else %}
-    {% assign titleSize = '36px' %}
-{% endif %}
-
-{% if descriptionSize %}
-    {% assign descriptionSize = descriptionSize %}
-{% else %}
-    {% assign descriptionSize = '18px' %}
-{% endif %}
-
-{% if linkSize %}
-    {% assign linkSize = linkSize %}
-{% else %}
-    {% assign linkSize = '18px' %}
-{% endif %}
-
-{% if titleLineHeight %}
-    {% assign titleLineHeight = titleLineHeight %}
-{% else %}
-    {% assign titleLineHeight = '54px' %}
-{% endif %}
-
-{% if descriptionLineHeight %}
-    {% assign descriptionLineHeight = descriptionLineHeight %}
-{% else %}
-    {% assign descriptionLineHeight = '27px' %}
-{% endif %}
-
-{% if linkLineHeight %}
-    {% assign linkLineHeight = linkLineHeight %}
-{% else %}
-    {% assign linkLineHeight = '24px' %}
-{% endif %}
-
-{% if titleColor %}
-    {% assign titleColor = titleColor %}
-{% else %}
-    {% assign titleColor = "#212529" %}
-{% endif %}
-
-{% if descriptionColor %}
-    {% assign descriptionColor = descriptionColor %}
-{% else %}
-    {% assign descriptionColor = "#75767c" %}
-{% endif %}
-
-{% if linkColor %}
-    {% assign linkColor = linkColor %}
-{% else %}
-    {% assign linkColor = "#2a7dec" %}
-{% endif %}
-
-{% if enableLinkArrow == false %}
-    {% assign enableLinkArrow = enableLinkArrow %}
-{% else %}
+{% if enableLinkArrow == nil %}
     {% assign enableLinkArrow = true %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibility }} {{ dotButtonMode }} {{ navMode }} {{ autoplay }}">
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }}">
     {% for carouselItem in carouselCollection %}
         {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
-            {% if contentDirection == 'column' %}
-                {% assign carousel-item = 'carousel-item-flex-column' %}
-            {% else %}
-                {% assign carousel-item = 'carousel-item-flex-row' %}
+            {% assign contentDirectionClass = "carousel-item-flex-row" %}
+
+            {% if contentDirection == "column" %}
+                {% assign contentDirectionClass = "carousel-item-flex-column" %}
             {% endif %}
         {% else %}
-            {% assign carousel-item = 'carousel-item' %}
+            {% assign contentDirectionClass = 'carousel-item' %}
         {% endif %}
-        <div class="carousel-item-default {{ carousel-item }}">
+        <div class="carousel-item-default {{ contentDirectionClass }}">
             {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
                 <div class="carousel-text">
                     {% if carouselItem[1].title %}
