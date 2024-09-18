@@ -1,0 +1,103 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign collectionKey = include.collectionKey %}
+{% assign autoplay = include.autoplay %}
+{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
+{% assign overlay = include.overlay | default: false %}
+{% assign dotButtonMode = include.dotButtonMode | default: "line" %}
+{% assign navMode = include.navMode | default: "thinArrow" %}
+{% assign enableLinkArrow = include.enableLinkArrow %}
+{% assign contentDirection = include.contentDirection %}
+{% assign titleSize = include.titleSize | default: "36px" %}
+{% assign descriptionSize = include.descriptionSize | default: "18px" %}
+{% assign linkSize = include.linkSize | default: "18px"  %}
+{% assign titleLineHeight = include.titleLineHeight | default: "54px" %}
+{% assign descriptionLineHeight = include.descriptionLineHeight | default: "27px" %}
+{% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
+{% assign titleColor = include.titleColor | default: "#212529" %}
+{% assign descriptionColor = include.descriptionColor | default: "#75767c" %}
+{% assign linkColor = include.linkColor | default: "#2a7dec" %}
+
+{% if site.data.carousel-collection[collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[collectionMap] %}
+{% endif %}
+
+{% if collectionKey %}
+    {% assign carouselCollection = carouselCollection[collectionKey] %}
+{% endif %}
+
+{% assign autoplayClass = "autoplay" %}
+
+{% if autoplay == false %}
+    {% assign autoplayClass = "no-autoplay" %}
+{% endif %}
+
+{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
+
+{% if nonActiveItemsVisibility == false %}
+    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
+{% endif %}
+
+{% if enableLinkArrow == nil %}
+    {% assign enableLinkArrow = true %}
+{% endif %}
+
+{% if carouselCollection %}
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }}">
+    {% for carouselItem in carouselCollection %}
+        {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
+            {% assign contentDirectionClass = "carousel-item-flex-row" %}
+
+            {% if contentDirection == "column" %}
+                {% assign contentDirectionClass = "carousel-item-flex-column" %}
+            {% endif %}
+        {% else %}
+            {% assign contentDirectionClass = 'carousel-item' %}
+        {% endif %}
+        <div class="carousel-item-default {{ contentDirectionClass }}">
+            {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
+            <div class="carousel-text">
+                {% if carouselItem[1].title %}
+                <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem[1].title}}</h2>
+                {% endif %}
+                {% if carouselItem[1].description %}
+                <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem[1].description}}</p>
+                {% endif %}
+                {% if carouselItem[1].linkLabel %}
+                <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
+                {{carouselItem[1].linkLabel}}
+                {% if enableLinkArrow == true %}
+                <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
+                <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
+                <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
+                {% endif %}
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% if carouselItem[1].src %}
+            <div class="carousel-image">
+                {% if carouselItem[1].href %}
+                <a href="{{carouselItem[1].href}}">
+                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+                {% if overlay == true %}
+                <div class="overlay">
+                    <div class="eye">
+                        <i class="far fa-eye"></i>
+                        See more about {{carouselItem[1].title}}
+                    </div>
+                </div>
+                {% endif %}
+                </a>
+                {% else %}
+                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+    <span class="not-found-message">Collection not found</span>
+{% endif %}

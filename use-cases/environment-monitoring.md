@@ -37,17 +37,7 @@ The following interactive dashboard represents an environment monitoring compone
 This particular dashboard allows users to monitor temperature and humidity sensors. 
 You may quickly adapt it to Air quality or other sensors and add remote control scenarios.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/usecases/environment-monitoring/em1.png" alt="environment monitoring 1">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/environment-monitoring/em2.png" alt="environment monitoring 2">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/environment-monitoring/em3.png" alt="environment monitoring 3">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
