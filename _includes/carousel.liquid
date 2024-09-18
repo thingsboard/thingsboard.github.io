@@ -57,24 +57,24 @@
         {% endif %}
         <div class="carousel-item-default {{ contentDirectionClass }}">
             {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
-                <div class="carousel-text">
-                    {% if carouselItem[1].title %}
-                        <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem[1].title}}</h2>
-                    {% endif %}
-                    {% if carouselItem[1].description %}
-                        <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem[1].description}}</p>
-                    {% endif %}
-                    {% if carouselItem[1].linkLabel %}
-                        <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
-                            {{carouselItem[1].linkLabel}}
-                            {% if enableLinkArrow == true %}
-                                <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
-                                <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
-                                <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
-                            {% endif %}
-                        </a>
-                    {% endif %}
-                </div>
+            <div class="carousel-text">
+                {% if carouselItem[1].title %}
+                <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}">{{carouselItem[1].title}}</h2>
+                {% endif %}
+                {% if carouselItem[1].description %}
+                <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}">{{carouselItem[1].description}}</p>
+                {% endif %}
+                {% if carouselItem[1].linkLabel %}
+                <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}">
+                {{carouselItem[1].linkLabel}}
+                {% if enableLinkArrow == true %}
+                <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
+                <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
+                <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
+                {% endif %}
+                </a>
+                {% endif %}
+            </div>
             {% endif %}
             {% if carouselItem[1].src %}
                 <div class="carousel-image">
@@ -99,5 +99,5 @@
     {% endfor %}
 </div>
 {% else %}
-    <span class="not-found-message">Collection not found</span>
+<span class="not-found-message">Collection not found</span>
 {% endif %}
