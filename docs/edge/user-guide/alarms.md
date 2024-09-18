@@ -8,7 +8,7 @@ description: Alarms
 createDeviceProfile:
     0:
       image: /images/edge/user-guide/alarms/create-device-profile-1.png
-      title: 'Log in to ThingsBoard <b>PE</b> instance. Open <b>"Device profiles"</b> menu page.'
+      title: 'Log in to ThingsBoard <b>Edge</b> instance. Open <b>"Device profiles"</b> menu page.'
       
     1:
       image: /images/edge/user-guide/alarms/create-device-profile-2.png
@@ -48,7 +48,7 @@ createDeviceProfile:
       
     10:
       image: /images/edge/user-guide/alarms/create-device-profile-11.png
-      title: 'Click <b>"Add" button"</b>.'
+      title: 'Click <b>"Add" button</b>.'
     
     11:
       image: /images/edge/user-guide/alarms/create-device-profile-12.png
@@ -58,7 +58,7 @@ createDeviceProfile:
 createDevice:
     0:
       image: /images/edge/user-guide/alarms/create-device-1.png
-      title: 'Log in to ThingsBoard <b>PE</b> instance. Open <b>"Devices"</b> menu page. Click <b>"+"</b>, then click <b>Add new device</b>.'
+      title: 'Log in to ThingsBoard <b>Edge</b> instance. Open <b>"Devices"</b> menu page. Click <b>"+"</b>, then click <b>"Add new device"</b>.'
     1:
       image: /images/edge/user-guide/alarms/create-device-2.png
       title: '1. Enter device name (e.g., IoT Device). 2. Select device profile (e.g., edge thermostat). 3. Click <b>"Add"</b> button.'

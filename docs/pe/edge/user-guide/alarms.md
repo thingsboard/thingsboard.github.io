@@ -58,7 +58,7 @@ createDeviceProfile:
 createDevice:
     0:
       image: /images/pe/edge/user-guide/alarms/create-device-1.png
-      title: 'Log in to ThingsBoard <b>PE</b> instance. Open <b>"Devices"</b> menu page. Click <b>"+"</b>, then click <b>Add new device</b>.'
+      title: 'Log in to ThingsBoard <b>PE</b> instance. Open <b>"Devices"</b> menu page. Click <b>"+"</b>, then click <b>"Add new device"</b>.'
     1:
       image: /images/pe/edge/user-guide/alarms/create-device-2.png
       title: '1. Enter device name (e.g., IoT Device). 2. Select device profile (e.g., edge thermostat). 3. Click <b>"Add"</b> button.'
