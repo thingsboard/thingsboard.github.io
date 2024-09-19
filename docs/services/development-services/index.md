@@ -5,6 +5,7 @@ notitle: "true"
 description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to complex systems, ✔ including dashboards, ✔ device connections, and tailored ✔ system integration."
 
 ---
+
 <section class="hero light-text">
 </section>
 <section id="first-screen">
@@ -17,23 +18,23 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="image-wrapper-icon-laptop">
                 <img
                     id="icon-laptop"
-                    srcset="https://img.thingsboard.io/development-services/laptop-with-dashboard_360x230_1x.png 360w, https://img.thingsboard.io/development-services/laptop-with-dashboard_560x358_1x.png 560w, https://img.thingsboard.io/development-services/laptop-with-dashboard_1127x720_1x.png 1127w, https://img.thingsboard.io/development-services/laptop-with-dashboard_2254x1440_2x.png 2254w"
+                    srcset="/images/development-services/laptop-with-dashboard_360x230_1x.png 360w, /images/development-services/laptop-with-dashboard_560x358_1x.png 560w, /images/development-services/laptop-with-dashboard_1127x720_1x.png 1127w, /images/development-services/laptop-with-dashboard_2254x1440_2x.png 2254w"
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
-                    src="https://img.thingsboard.io/development-services/laptop-with-dashboard_1127x720_1x.png"
+                    src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
                 <button class="button schedule anchor-button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img
                     id="icon-phone"
-                    srcset="https://img.thingsboard.io/development-services/phone-with-dashboard_459x552_1x.png 1x, https://img.thingsboard.io/development-services/phone-with-dashboard_918x1104_2x.png 2x"
-                    src="https://img.thingsboard.io/development-services/phone-with-dashboard_459x552_1x.png"
+                    srcset="/images/development-services/phone-with-dashboard_459x552_1x.png 1x, /images/development-services/phone-with-dashboard_918x1104_2x.png 2x"
+                    src="/images/development-services/phone-with-dashboard_459x552_1x.png"
                     alt="Phone with a dashboard"/>
             </div>
             <div class="schedule-block">
                 <img
                     id="progress"
-                    src="https://img.thingsboard.io/development-services/half-circle-progress.svg"
+                    src="/images/development-services/half-circle-progress.svg"
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
@@ -49,19 +50,19 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <span class="title">We created solutions for:</span>
     <div class="customer-logos">
         <div class="logo">
-            <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+            <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
         </div>
         <div class="logo">
-            <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+            <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
         </div>
         <div class="logo">
-            <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+            <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
         </div>
         <div class="logo">
-            <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
+            <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
         </div>
         <div class="logo">
-            <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+            <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
         </div>
     </div>
 </section>
@@ -80,23 +81,23 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="left-block">
                 <img
                     id="solution-poc"
-                    srcset="https://img.thingsboard.io/development-services/solution-coinify_mobile.png 360w, https://img.thingsboard.io/development-services/solution-coinify.png 1900w"
+                    srcset="/images/development-services/solution-coinify_mobile.png 360w, /images/development-services/solution-coinify.png 1900w"
                     sizes="(max-width: 672px) 360px, 1900px"
-                    src="https://img.thingsboard.io/development-services/solution-coinify.png"
+                    src="/images/development-services/solution-coinify.png"
                     alt="Custom solution">
                 <img
                     id="solution-widget-1"
                     class="absolute-image secondary-image"
-                    srcset="https://img.thingsboard.io/development-services/solution-widget-1_mobile.png 360w, https://img.thingsboard.io/development-services/solution-widget-1.png 1920w"
+                    srcset="/images/development-services/solution-widget-1_mobile.png 360w, /images/development-services/solution-widget-1.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="https://img.thingsboard.io/development-services/solution-widget-1.png"
+                    src="/images/development-services/solution-widget-1.png"
                     alt="Custom solution widget pie chart">
                 <img
                     id="solution-widget-2"
-                    srcset="https://img.thingsboard.io/development-services/solution-widget-2_mobile.png 360w, https://img.thingsboard.io/development-services/solution-widget-2.png 1920w"
+                    srcset="/images/development-services/solution-widget-2_mobile.png 360w, /images/development-services/solution-widget-2.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
                     class="absolute-image secondary-image"
-                    src="https://img.thingsboard.io/development-services/solution-widget-2.png"
+                    src="/images/development-services/solution-widget-2.png"
                     alt="Custom solution widet value card with graph">
             </div>
             <div class="right-block">
@@ -110,7 +111,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <li>1 type of user role</li>
                 </ul>
             </div>
-            <img id="number-one" class="absolute-image" src="https://img.thingsboard.io/development-services/number-1.svg" alt="background number one">
+            <img id="number-one" class="absolute-image" src="/images/development-services/number-1.svg" alt="background number one">
         </div>
     </div>
     <div id="content-mvp" class="content-wrapper">
@@ -129,19 +130,19 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="right-block">
                 <img
                     id="solution-mvp1"
-                    srcset="https://img.thingsboard.io/development-services/solution-mvp_mobile.png 360w, https://img.thingsboard.io/development-services/solution-mvp.png 1920w"
+                    srcset="/images/development-services/solution-mvp_mobile.png 360w, /images/development-services/solution-mvp.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="https://img.thingsboard.io/development-services/solution-mvp.png"
+                    src="/images/development-services/solution-mvp.png"
                     alt="Custom solution mvp">
                 <img
                     id="solution-widget-3"
-                    srcset="https://img.thingsboard.io/development-services/solution-widget-3_mobile.png 360w, https://img.thingsboard.io/development-services/solution-widget-3.svg 1920w"
+                    srcset="/images/development-services/solution-widget-3_mobile.png 360w, /images/development-services/solution-widget-3.svg 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
                     class="absolute-image secondary-image"
-                    src="https://img.thingsboard.io/development-services/solution-widget-3.svg"
+                    src="/images/development-services/solution-widget-3.svg"
                     alt="Custom solution widget dark card with pie chart">
             </div>
-            <img id="number-two" class="absolute-image" src="https://img.thingsboard.io/development-services/number-2.svg" alt="Background number two">
+            <img id="number-two" class="absolute-image" src="/images/development-services/number-2.svg" alt="Background number two">
         </div>
     </div>
     <div id="content-market-solution" class="content-wrapper">
@@ -149,16 +150,16 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="left-block">
                 <img
                     id="solution-market-solution1"
-                    srcset="https://img.thingsboard.io/development-services/solution-market-solution_mobile.png 360w, https://img.thingsboard.io/development-services/solution-market-solution.png 1920w"
+                    srcset="/images/development-services/solution-market-solution_mobile.png 360w, /images/development-services/solution-market-solution.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="https://img.thingsboard.io/development-services/solution-market-solution.png"
+                    src="/images/development-services/solution-market-solution.png"
                     alt="Custom solution market solution">
                 <img
                     id="solution-market-solution2"
                     class="absolute-image base-image"
-                    srcset="https://img.thingsboard.io/development-services/solution-market-solution2_mobile.png 360w, https://img.thingsboard.io/development-services/solution-market-solution2.png 1920w"
+                    srcset="/images/development-services/solution-market-solution2_mobile.png 360w, /images/development-services/solution-market-solution2.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="https://img.thingsboard.io/development-services/solution-market-solution2.png"
+                    src="/images/development-services/solution-market-solution2.png"
                     alt="Custom solution market solution: dashboard with trucks">
             </div>
             <div class="right-block">
@@ -172,7 +173,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <li>External system integrations (e.g. Billing system, analytic system, etc.)</li>
                 </ul>
             </div>
-            <img id="number-three" class="absolute-image" src="https://img.thingsboard.io/development-services/number-3.svg" alt="Background number three">
+            <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
         </div>
     </div>
     <div class="content-wrapper">
@@ -213,48 +214,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
         </div>
         <div id="carousel-wrapper">
-            <div class="reviews-carousel owl-carousel owl-theme">
-                <div class="review">
-                    <div class="logo">
-                        <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-                    </div>
-                    <div class="review-header">Exceptional experience working with ThingsBoard's unit</div>
-                    <div class="review-body">
-                        <h6>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.</h6>
-                    </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">Read full feedback</a>
-                </div>
-                <div class="review">
-                    <div class="logo">
-                        <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-                    </div>
-                    <div class="review-header">Very professional in its approach to projects</div>
-                    <div class="review-body">
-                        <h6>The Thingsboard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.</h6>
-                    </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-kalitec" class="full-review-link">Read full feedback</a>
-                </div>
-                <div class="review">
-                    <div class="logo">
-                        <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-                    </div>
-                    <div class="review-header">Impressed by professionalism, knowledge, and commitment</div>
-                    <div class="review-body">
-                        <h6>At Super Bock Bebidas, S.A. we pride ourselves on our ability to adapt, innovate, and stay ahead of the curve. We have been using in-house beer drive tanks and tracking systems for many years. It served us well, but as the times evolved, we realized our system had become outdated, lacking the efficiency we desired. That's when we discovered ThingsBoard.</h6>
-                    </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-superbockgroup" class="full-review-link">Read full feedback</a>
-                </div>
-                <div class="review">
-                    <div class="logo">
-                        <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-                    </div>
-                    <div class="review-header">Expertise, attention to detail, and client satisfaction</div>
-                    <div class="review-body">
-                        <h6>We have found the Thingsboard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running.</h6>
-                    </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-ionatech" class="full-review-link">Read full feedback</a>
-                </div>
-            </div>
+            {% include carousel.liquid collectionMap = 'development-services-testimonials-carousel' nonActiveItemsVisibility = false overlay = false dotButtonMode = 'circle' navMode = 'fatArrow' contentDirection = 'column' enableLinkArrow = false titleSize = '28px' descriptionSize = '22px' linkSize = '22px' titleLineHeight = '40px' descriptionLineHeight = '40px' descriptionColor = '#5e5f62' linkColor = '#3622a4' %}
         </div>
     </div>
 </section>
@@ -285,7 +245,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">
@@ -443,39 +403,6 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     secondaryImages.forEach(element => {
         secondaryImagesObserver.observe(element)
     });
-
-    jqueryDefer(Owl);
-
-    function Owl() {
-        var scriptsList = [
-            {src: '/css/owl.carousel.min.css', type: 'css'},
-            {src: '/css/owl.theme.default.min.css', type: 'css'},
-            {src: 'https://static.thingsboard.io/js/owl.carousel.min.js', type: 'script'}
-        ];
-        loadNextScript(0, scriptsList,
-            function() {
-                $(document).ready(function(){
-                    $('.owl-carousel').owlCarousel({
-                        items:1,
-                        margin:50,
-                        stagePadding: 0,
-                        autoHeight:false,
-                        loop:true,
-                        autoplay:true,
-                        autoplayTimeout:5000,
-                        autoplayHoverPause:true,
-                        nav:true,
-                        responsive: {
-                            1000: {
-                                margin:100,
-                                stagePadding: 50,
-                            }
-                        }
-                    });
-                });
-            }
-        );
-    }
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();

@@ -1,0 +1,206 @@
+.owl-carousel.owl-theme.usecase-carousel
+  margin: 64px 0 24px
+  position: relative
+  visibility: hidden
+  display: block
+  min-height: 500px
+  max-height: 500px
+  &.owl-loaded
+    visibility: visible
+    min-height: unset
+    max-height: unset
+    .owl-stage-outer
+      .owl-stage
+        .owl-item
+          transition: unset
+  &.support-ukraine
+    img
+      max-height: 600px
+      width: auto
+      margin: auto
+  .carousel-item-default
+    h2
+      font-weight: 500
+      line-height: 54px
+    p
+      font-weight: 400
+      line-height: 27px
+    a
+      position: relative
+      font-weight: 500
+      .arrow
+        font-size: 13px
+        transform: translate(0px)
+        transition-duration: 0.3s
+        box-shadow: none !important
+        width: 12px !important
+        margin-left: 12px
+        position: absolute
+        top: 7px
+        &.first
+          opacity: 0.2
+        &.second
+          opacity: 0.5
+      &:hover
+        transition-duration: 0.3s
+        .first
+          transform: translate(10px)
+        .second
+          transform: translate(20px)
+        .third
+          transform: translate(30px)
+    .carousel-text
+      display: flex
+      flex-direction: column
+    .carousel-image
+      position: relative
+      img
+        border-radius: 6px
+      .overlay
+        top: 0
+        position: absolute
+        opacity: 0
+        color: #fff
+        z-index: 1000
+        display: block
+        width: 100%
+        font-weight: 400
+        height: 100%
+        background: linear-gradient(0deg,rgba(37,38,40,0.8) 0%,rgba(37,38,40,0.6) 100%)
+        transition-duration: .3s
+        border-radius: 6px
+        &:hover
+          opacity: 1
+          .eye
+            bottom: 14%
+        .eye
+          transition-duration: 0.3s
+          position: absolute
+          bottom: 0
+          left: 33%
+          display: flex
+          img, i
+            font-size: 24px
+            margin-right: 10px
+            width: unset !important
+      &:hover
+        .overlay
+          opacity: 1
+  .carousel-item
+    display: block
+    .carousel-text
+      width: 100%
+      margin: 0 auto
+      text-align: center
+  .carousel-item-flex-row
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    .carousel-text
+      width: 30%
+    .carousel-image
+      width: 66%
+    @media screen and (max-width: 1024px)
+      flex-direction: column
+      gap: 32px
+      .carousel-text
+        width: 100%
+      .carousel-image
+        width: 100%
+  .carousel-item-flex-column
+    display: flex
+    flex-direction: column-reverse
+    justify-content: space-between
+    align-items: flex-start
+    gap: 35px
+    .carousel-text
+      gap: 25px
+  .owl-stage-outer
+    position: relative
+    .owl-stage
+      .owl-item
+        transition: none
+        filter: blur(8px)
+        transition-duration: 0.5s
+        transform: scale(0.9)
+        .item-image
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+        &.active
+          filter: blur(0)
+          transition-duration: 0.5s
+          transform: scale(1)
+  .owl-nav
+    button.owl-prev, button.owl-next
+      position: absolute
+      filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
+      outline: none
+      background-color: transparent
+      width: 17px
+      height: 50px
+      top: calc(50% - 25px)
+      &:hover
+        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+      span
+        display: none
+    button.owl-prev
+      left: 0
+      transform: scale(-1, 1)
+    button.owl-next
+      right: 0
+  .owl-nav.disabled+.owl-dots
+    margin-top: 32px
+  .owl-dots
+    margin-top: 32px
+    button.owl-dot
+      outline: none
+      margin: 0 12px
+      &:hover, &.active
+        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+      span
+        margin: 8px 0
+        background: #E0E1E2
+        border-radius: 4px
+.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityTrue
+  .owl-stage-outer
+    overflow: visible
+.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityFalse
+  .owl-stage-outer
+    overflow: hidden
+.circle
+  .owl-dots
+    button.owl-dot
+      width: 10px
+      height: 10px
+.line
+  .owl-dots
+    button.owl-dot
+      span
+        width: 72px
+        height: 4px
+
+@media screen and (max-width: 750px)
+  .line
+    .owl-dots
+      button.owl-dot
+        span
+          width: 10px
+          height: 10px
+.owl-carousel.owl-theme.usecase-carousel.thinArrow
+  .owl-nav
+    button.owl-prev, button.owl-next
+      background-image: url(/images/slider-arrow.svg)
+.owl-carousel.owl-theme.usecase-carousel.fatArrow
+  .carousel-item-default
+    padding: 0 30px
+  .owl-nav
+    button.owl-prev, button.owl-next
+      filter: unset
+      width: 26px
+      height: 40px
+      background-image: url(/images/slider-forward.svg)
+.not-found-message
+  display: block
+  font-size: 36px
+  text-align: center
+

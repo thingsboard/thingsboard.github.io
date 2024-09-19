@@ -23,23 +23,7 @@ All the logic to raise the alarms is already pre-configured in the corresponding
 With this template you get interactive dashboards that allow you and your customers to 
 browse current and historical state of their supermarkets.  
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-retail/sr1.png" alt="smart retail 1">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-retail/sr2.png" alt="smart retail 2">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-retail/sr3.png" alt="smart retail 3">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-retail/sr4.png" alt="smart retail 4">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-retail/sr5.png" alt="smart retail 5">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-retail' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartRetail_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
@@ -106,7 +90,7 @@ The platform provides production-ready server infrastructure to connect your IoT
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/microservices-icon.svg" alt="Microservice icon">
+                <img src="/images/microservices-icon.svg" alt="Microservice icon">
                 <div>
                     <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
                     <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
@@ -116,7 +100,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/telemetry-icon.svg" alt="Telemetry icon">
+                <img src="/images/telemetry-icon.svg" alt="Telemetry icon">
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
                     <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
@@ -126,7 +110,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/integration-icon.svg" alt="Integration icon">
+                <img src="/images/integration-icon.svg" alt="Integration icon">
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
@@ -135,7 +119,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/security-icon.svg" alt="Security icon">
+                <img src="/images/security-icon.svg" alt="Security icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
                     <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
@@ -144,7 +128,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/engine-icon.svg" alt="Gear icon">
+                <img src="/images/engine-icon.svg" alt="Gear icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
                     <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
@@ -153,7 +137,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/visualization-icon.svg" alt="Data visualization icon">
+                <img src="/images/visualization-icon.svg" alt="Data visualization icon">
                 <div>
                     <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
                     <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
@@ -162,7 +146,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/device-icon.svg" alt="Device icon">
+                <img src="/images/device-icon.svg" alt="Device icon">
                 <div>
                     <a class="title" href="/docs/mobile/">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
@@ -171,7 +155,7 @@ The platform provides production-ready server infrastructure to connect your IoT
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/tenancy-icon.svg" alt="Tenancy icon">
+                <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
                     <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
@@ -185,7 +169,7 @@ The platform provides production-ready server infrastructure to connect your IoT
 
 The diagram below identifies data flow and integration points for a typical supermarket monitoring solution that uses the ThingsBoard platform to collect and analyze data from multiple sources.
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="https://img.thingsboard.io/iot-use-cases/common-edge.svg"></object>
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
 
 You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge. 
 

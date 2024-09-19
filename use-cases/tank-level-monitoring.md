@@ -31,20 +31,7 @@ Additionally, the dashboard is equipped with multiple states, allowing for a div
 
 The Fuel Level Monitoring interactive dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-1.png" />
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-2.png" />
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-3.png" />
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-4.png" />
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'tank-level-monitoring' %}
 
 The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 
@@ -67,7 +54,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/microservices-icon.svg">
+                <img src="/images/microservices-icon.svg">
                 <div>
                     <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
                     <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
@@ -77,7 +64,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/telemetry-icon.svg">
+                <img src="/images/telemetry-icon.svg">
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
                     <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
@@ -87,7 +74,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/integration-icon.svg">
+                <img src="/images/integration-icon.svg">
                 <div>
                     <a class="title" href="/docs/user-guide/integrations">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
@@ -96,7 +83,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/security-icon.svg">
+                <img src="/images/security-icon.svg">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
                     <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
@@ -105,7 +92,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/engine-icon.svg">
+                <img src="/images/engine-icon.svg">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
                     <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
@@ -114,7 +101,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/visualization-icon.svg">
+                <img src="/images/visualization-icon.svg">
                 <div>
                     <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
                     <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
@@ -123,7 +110,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/device-icon.svg">
+                <img src="/images/device-icon.svg">
                 <div>
                     <a class="title" href="/docs/mobile">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
@@ -132,7 +119,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/tenancy-icon.svg">
+                <img src="/images/tenancy-icon.svg">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
                     <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
@@ -146,7 +133,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
 
 The diagram below identifies data flow and integration points for a typical fuel level monitoring solution that uses the ThingsBoard platform to collect and analyze data from fuel tanks.
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="https://img.thingsboard.io/iot-use-cases/smart-energy-diagram.svg"></object>
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the fuel tanks devices: direct connection to the cloud, through the IoT Gateway or integration with a third-party system.
 Most of a fuel level monitoring projects today use direct connection to the cloud using MQTT or CoAP in case of NB IoT. 
