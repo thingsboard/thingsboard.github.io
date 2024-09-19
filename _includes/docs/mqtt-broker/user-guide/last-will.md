@@ -68,7 +68,7 @@ Here are a few combinations of using those params:
 * **Clean Start = 0**, **Session Expiry Interval > 0**. 
   * The session state is preserved, and the Last Will remains valid until the session expiry interval elapses.
 
-### Why to publish with delay
+### Last Will with delay
 The **Will Delay Interval** specifies how long the broker needs to wait before publishing the Last Will message after an ungraceful disconnection. 
 This feature allows clients to reconnect within the delay interval without triggering the Last Will message, which **can be useful in situations where brief network interruptions occur**.
 
@@ -86,8 +86,42 @@ In this case:
 * If the client reconnects after 2 minutes but within 1 hour, the session will resume, but the Last Will message may have already been sent.
 * If the client does not reconnect within the session expiry time (1 hour), the session will be discarded, along with any pending Last Will message.
 
-### Why to publish as retained
-The **Retain Flag** is used to keep the Last Will message on the broker, so that new subscribers can receive it immediately upon subscribing to the relevant topic, even if the message was published before they subscribed. 
+### Last Will as retained message
+The **Retain Flag** is used to keep the Last Will message on the broker, so that new subscribers can receive it immediately upon subscribing to the relevant topic, even if the message was published before they subscribed.
 
 If a client disconnects unexpectedly, its Last Will message indicates an important state change. By using the **Retain Flag = true**, this message will be **stored** by the broker and **sent to any future subscribers** of the topic. 
 For example, if a new device joins a network after a client disconnects, it will still receive the "offline" or "disconnected" Last Will message.
+
+### Last Will guide with TBMQ WebSocket Client
+In this guide, we will demonstrate how the Last Will feature works in the ThingsBoard MQTT broker using a WebSocket client. 
+By simulating an ungraceful disconnection, you'll see how the broker publishes the Last Will message to inform other connected clients.
+
+#### Step 1. Add client "Security Camera"
+To add a new client **Security Camera**, which will publish a Last Will message, follow these steps:
+
+1. Navigate to the _WebSocket Client_ page and click on _Select Connection_ icon.
+2. Click the _Add new connection_ button. 
+3. Set the connection name as _Security Camera_, then configure the Last Will topic and payload.
+4. Click _Connect_ to establish the client connection.
+
+{% include images-gallery.html imageCollection="ws-connection-add-camera" %}
+
+#### Step 2. Add client "Security Hub"
+Now let's add another connection, **Security Hub**, which will receive the Last Will message from the **Security Camera**:
+
+1. Once again, click on the _Add new connection_ button.
+2. Set the connection name as _Security Hub_.
+3. Click _Connect_.
+4. Add subscription with the default topic filter `sensors/#` to receive Last Will message.
+
+{% include images-gallery.html imageCollection="ws-connection-add-hub" %}
+
+#### Step 3. Trigger an ungraceful disconnection
+To publish the Last Will message, the connection between the client and the broker must be terminated ungracefully. To do this in TBMQ, follow these steps:
+
+1. Open a new browser tab and navigate to the _Sessions_ page.
+2. Find the session corresponding to the client ID of the WebSocket connection named _Security Camera_.
+3. Click _Disconnect client_ to forcefully terminate the connection.
+4. Check the _Messages_ table of _Security Hub_. You should see the received Last Will message.
+
+{% include images-gallery.html imageCollection="ws-connection-ungraceful-disconnect" %}
