@@ -38,7 +38,7 @@ scada-columns-count-1:
 scada-minimum-layout-width-1:
       0:
         image: /images/user-guide/scada/scada-dashboards/ce/scada-minimum-layout-width-1-ce.png
-        title: 'By default, the minimum number of columns is 24. You can increase or decrease this number. The minimum number of columns is 10.'
+        title: 'By default, the minimum number of columns is 24. You can increase or decrease this number. The minimum number of columns is 10. We recommend the value of this setting to be equal or more then columns count value;'
       1:
         image: /images/user-guide/scada/scada-dashboards/ce/scada-minimum-layout-width-2-ce.png
         title: 'The count of minimum columns is set to 24.'

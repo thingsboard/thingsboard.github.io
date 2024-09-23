@@ -67,7 +67,7 @@ toc:
         - title: Overview
           path: /docs/paas/user-guide/scada/
         - title: SCADA symbols development guide
-          path: /docs/paas/user-guide/scada/symbols-dev-guide/
+          path: /docs/paas/user-guide/scada/scada-symbols-dev-guide/
     - title: Widgets
       section:
         - title: Overview
