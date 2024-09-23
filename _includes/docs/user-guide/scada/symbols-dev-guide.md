@@ -527,13 +527,13 @@ Key points:
 * Line 7,8: Text content and its styling (font and color) are set.
 * Line 9,11: Conditional display of the text element based on the `show` variable.
 
-**Fan state render function**
+#### fan tag
 
 Now let's proceed with a bit more complex function to rotate a 'fan' tag:
 
 ```javascript
 var on = ctx.values.fanOn;
-var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;
+var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed /60 : 1;
 var hasAnimation = element.remember('hasAnimation');
 
 if (on) {
@@ -544,7 +544,7 @@ if (on) {
   } else {
     element.timeline().play();
   }
-  element.timeline().speed(speed / 60);
+  element.timeline().speed(speed);
 } else {
   element.attr({fill: ctx.properties.fanOffColor});
   if (hasAnimation) {
@@ -587,8 +587,8 @@ if (on) {
 Key points:
 
 * CSS animation is smoother and less resource consuming in most of the use cases;
-* Line 3: we use `ctx.api.cssAnimation` to get the current instance of the ScadaSymbolAnimation object;
-* Line 8: we use `ctx.api.cssAnimate` to create a new instance of ScadaSymbolAnimation object that providing controls similar to SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner);
+* Line 3: we use `ctx.api.cssAnimation` to get the current instance of the [ScadaSymbolAnimation](#scadasymbolanimation) object;
+* Line 8: we use `ctx.api.cssAnimate` to create a new instance of [ScadaSymbolAnimation](#scadasymbolanimation) object that providing controls similar to SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner);
 * Line 11: we use `animation.speed(speed).play()` to define the speed of the animation and start it;
 * Line 16: we use `animation.pause()` to stop the animation;
 
@@ -699,55 +699,6 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **center** (optional): Whether to center the icon inside the group element.
 <br/><br/>
 
-* **animate**: Initiates a new animation on an SVG element, finishing any prior animations first.
-
-   ```javascript
-
-   animate: (element: Element, duration: number) => Runner
-
-   ```
-
-
-    **Parameters**:
-
-    - **element**: SVG element.
-
-    - **duration**: Animation duration in milliseconds.
-
-   
-   **Returns**: An instance of [SVG.Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner) which controls the animation.
-
-<br/><br/>
-
-* **resetAnimation**: Stops any ongoing animation and returns the element to its initial state.
-
-   ```javascript
-
-   resetAnimation: (element: Element) => void
-
-   ```
-
-
-    **Parameters**:
-
-    - **element**: SVG element.
-
-<br/><br/>
-
-* **finishAnimation**: Completes any running animation immediately, updating the element's state to the end values of the animation.
-
-   ```javascript
-
-   finishAnimation: (element: Element) => void
-
-   ```
-
-
-    **Parameters**:
-
-    - **element**: SVG element.
-
-<br/><br/>
 * **cssAnimate**: Starts a CSS-based animation, providing controls similar to those available in SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner). Finishes any previous CSS animation.
    ```javascript
    cssAnimate: (element: Element, duration: number) => ScadaSymbolAnimation
@@ -839,26 +790,22 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
    ```javascript
    play: () => void
    ```
-<br/><br/>
 
 * **pause**: Pauses the animation.
    ```javascript
    pause: () => void
    ```
 
-<br/><br/> 
 * **stop**: Stops the animation and resets its progress.
    ```javascript
    stop: () => void
    ```
 
-<br/><br/>
 * **finish**: Completes the animation and jumps to the end state.
    ```javascript
    finish: () => void
    ```
 
-<br/><br/>
 * **speed**: Sets the speed of the animation.
    ```javascript
    speed: (speed: number) => ScadaSymbolAnimation
@@ -867,9 +814,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
   **Parameters**:
     - **speed**: The speed factor (e.g., 2 for twice as fast).
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **ease**: Sets the easing function for the animation.
    ```javascript
    ease: (easing: string) => ScadaSymbolAnimation
@@ -878,9 +825,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
   **Parameters**:
     - **easing**: The easing type (e.g., 'linear', 'ease-in', 'ease-out').
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **loop**: Causes the animation to repeat a specified number of times.
    ```javascript
    loop: (times?: number, swing?: boolean) => ScadaSymbolAnimation
@@ -890,21 +837,32 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **times** (optional): The number of times to repeat the animation.
     - **swing** (optional): If `true`, the animation direction alternates.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **transform**: Applies a matrix transform to the animated element.
    ```javascript
    transform: (transform: MatrixTransformParam, relative?: boolean) => ScadaSymbolAnimation
    ```
 
   **Parameters**:
-    - **transform**: The transformation parameters.
+    - **transform**: The transformation object similar to [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#transform-as-setter) but with the following supported properties: 
+```javascript
+  rotate?: number
+  scaleX?: number
+  scaleY?: number
+  ox?: number
+  originX?: number
+  oy?: number
+  originY?: number
+  translateX?: number
+  translateY?: number
+```
     - **relative** (optional): If `true`, the transformation is relative to the current state.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **rotate**: Rotates the element around a point.
     ```javascript
     rotate: (r: number, cx?: number, cy?: number) => ScadaSymbolAnimation
@@ -914,9 +872,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **r**: Rotation angle in degrees.
     - **cx**, **cy** (optional): The center of rotation.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **x**: Moves the element along the x-axis.
     ```javascript
     x: (x: number) => ScadaSymbolAnimation
@@ -925,9 +883,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
   **Parameters**:
     - **x**: New x position.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **y**: Moves the element along the y-axis.
     ```javascript
     y: (y: number) => ScadaSymbolAnimation
@@ -936,9 +894,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
   **Parameters**:
     - **y**: New y position.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **size**: Sets the size of the element.
     ```javascript
     size: (width: number, height: number) => ScadaSymbolAnimation
@@ -948,9 +906,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **width**: New width.
     - **height**: New height.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **width**: Sets the width of the element.
     ```javascript
     width: (width: number) => ScadaSymbolAnimation
@@ -959,9 +917,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
   **Parameters**:
     - **width**: New width.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **height**: Sets the height of the element.
     ```javascript
     height: (height: number) => ScadaSymbolAnimation
@@ -970,9 +928,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
   **Parameters**:
     - **height**: New height.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **move**: Moves the element to a new position.
     ```javascript
     move: (x: number, y: number) => ScadaSymbolAnimation
@@ -982,9 +940,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **x**: New x position.
     - **y**: New y position.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **dmove**: Moves the element by the specified delta values.
     ```javascript
     dmove: (dx: number, dy: number) => ScadaSymbolAnimation
@@ -994,9 +952,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **dx**: Change in x position.
     - **dy**: Change in y position.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **relative**: Moves the element relative to its current position.
     ```javascript
     relative: (x: number, y: number) => ScadaSymbolAnimation
@@ -1006,9 +964,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **x**: x increment.
     - **y**: y increment.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **scale**: Scales the element from a center point.
     ```javascript
     scale: (x: number, y?: number, cx?: number, cy?: number) => ScadaSymbolAnimation
@@ -1019,9 +977,9 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **y** (optional): Scale factor for y-axis.
     - **cx**, **cy** (optional): Center point for scaling.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
 
-<br/><br/>
+
 * **attr**: Sets the attributes of the element.
     ```javascript
     attr: (attr: string | object, value?: any) => ScadaSymbolAnimation
@@ -1031,4 +989,4 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **attr**: Attribute name or an object with attribute-value pairs.
     - **value** (optional): Value of the attribute if a single attribute name is provided.
 
-  **Returns**: An updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
