@@ -869,6 +869,7 @@ Although the function is quite simple, it requires basic knowledge of [SVG.js](h
 
 \- Line 14: we use `element.timeline.pause` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to stop the animation if the fan is turned off;
 
+<br>
 The [SVG.js](https://svgjs.dev/) animation is feature rich but has some performance impact on the main browser thread. We propose an alternative approach that utilizes CSS animation:
 
 ```javascript
