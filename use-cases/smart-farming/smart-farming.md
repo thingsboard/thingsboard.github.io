@@ -15,7 +15,7 @@ notitle: "true"
 </section>
 <section id="smart-farm-about" class="smart-farm-about">
     <section class="smart-farm-about-container">
-        <div class="smart-farm-content">
+        <div class="smart-farm-content" >
             <div class="smart-farm-content-wrapper">
                 <h2>What is smart farming?</h2>
                 <p>Smart farming, also known as "smart agriculture", is a concept that focused on implementing advanced technologies and providing the agricultural industry with the infrastructure to use smart farming technologies, including smart sensors, cloud services, artificial intelligence (AI), Machine Learning (ML) and the Internet of Things (IoT), Data analytics, Software (IoT platforms) to track, monitor, automate and analyze data to  increase the sustainability of agricultural production. These technologies enable farmers to monitor and control various aspects of their farm operations in real-time, thereby increasing productivity and reducing environmental impact.</p>
@@ -707,6 +707,24 @@ notitle: "true"
             }, 150);
         }
     }
+</script>
+<script type="text/javascript">
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            const yOffset = -80; 
+            const yPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({
+                top: yPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
 </script>
 
 
