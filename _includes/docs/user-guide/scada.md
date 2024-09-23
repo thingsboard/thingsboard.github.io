@@ -49,7 +49,7 @@ You can configure different layout settings for each layout breakpoint: xl, lg, 
 
 {% include images-gallery.html imageCollection="scada-columns-count-1" %}
 
-- **Minimum layout width**. By default, the minimum number of columns is 24. You can increase or decrease this number. The minimum number of columns is 10.
+- **Minimum layout width**. By default, the minimum number of columns is 24. You can increase or decrease this number. The minimum number of columns is 10. We recommend the value of this setting to be equal or more then *columns count* value.
 
 {% include images-gallery.html imageCollection="scada-minimum-layout-width-1" %}
 
@@ -127,9 +127,13 @@ The list of behavior parameters is specific to the chosen SCADA symbol and is en
 {% include images-gallery.html imageCollection="scada-behavior-settings-1" %}
 
 <br>
-**Getting the parameter**. This parameter primarily determines the state of the SCADA symbol based on the value of an attribute or time series data received from the device.
+There are three types of behavior parameters: "Value", "Action", and "Widget action".
 
-There are five possible actions that the dashboard can perform to get the value:
+- "**Value**" parameters usually control the visual representation of the symbol and may change over time based on the received value;
+- "**Action**" parameters define the actions performed against the target entity when a specific event occurs;
+- "**Widget action**" parameters define the actions triggered when the user clicks on the component of the SCADA symbol.
+
+Action types to retrieve **value**:
 
 - "**Do nothing**" action will just take the constant defined by the user.
 
@@ -152,8 +156,6 @@ There are five possible actions that the dashboard can perform to get the value:
 {% include images-gallery.html imageCollection="scada-action-get-dashboard-state-1" %}
 
 <br>
-**Action parameters** define the actions performed against the target device when a specific event occurs.
-
 The platform supports three types of actions regarding the target entity:
 
 - "**Execute RPC**" will send a command to the target device. You can define the method and parameters of the command.
