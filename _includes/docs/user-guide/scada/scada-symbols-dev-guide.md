@@ -825,8 +825,7 @@ Key points:
 
 {% include images-gallery.html imageCollection="rotation-speed-text-tag-configuration-1" %}
 
-<br>
-**Fan state render function**
+#### fan tag
 
 Now let's proceed with a bit more complex function to rotate a "fan" tag:
 
@@ -835,24 +834,24 @@ Now let's proceed with a bit more complex function to rotate a "fan" tag:
 
 ```javascript
 var on = ctx.values.fanOn;
-var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;
-var animation = ctx.api.cssAnimation(element);
+var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed /60 : 1;
+var hasAnimation = element.remember('hasAnimation');
 
 if (on) {
     element.attr({fill: ctx.properties.fanOnColor});
-    if (!animation) {
-        animation = ctx.api.cssAnimate(element, 2000)
-            .rotate(360).loop().speed(speed / 60);
+    if (!hasAnimation) {
+        element.remember('hasAnimation', true);
+        element.animate(1000).ease('-').rotate(360).loop();
     } else {
-        animation.speed(speed / 60).play();
+        element.timeline().play();
     }
+    element.timeline().speed(speed);
 } else {
     element.attr({fill: ctx.properties.fanOffColor});
-    if (animation) {
-        animation.pause();
+    if (hasAnimation) {
+        element.timeline().pause();
     }
 }
-
 ```
 {: .copy-code}
 
@@ -869,6 +868,37 @@ Although the function is quite simple, it requires basic knowledge of [SVG.js](h
 \- Line 11: we use `element.timeline.speed` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to define the speed of our animation that we convert from RPM to RPS;
 
 \- Line 14: we use `element.timeline.pause` from [SVG.js](https://svgjs.dev/docs/3.2/animating/) to stop the animation if the fan is turned off;
+
+The [SVG.js](https://svgjs.dev/) animation is feature rich but has some performance impact on the main browser thread. We propose an alternative approach that utilizes CSS animation:
+
+```javascript
+var on = ctx.values.fanOn;
+var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed / 60 : 1;
+var animation = ctx.api.cssAnimation(element);
+
+if (on) {
+    element.attr({fill: ctx.properties.fanOnColor});
+    if (!animation) {
+        animation = ctx.api.cssAnimate(element, 2000)
+                                      .rotate(360).loop().speed(speed);
+    } else {
+        animation.speed(speed).play();
+    }
+} else {
+    element.attr({fill: ctx.properties.fanOffColor});
+    if (animation) {
+        animation.pause();
+    }
+}
+```
+
+Key points:
+
+* CSS animation is smoother and less resource consuming in most of the use cases;
+* Line 3: we use `ctx.api.cssAnimation` to get the current instance of the [ScadaSymbolAnimation](#scadasymbolanimation) object;
+* Line 8: we use `ctx.api.cssAnimate` to create a new instance of [ScadaSymbolAnimation](#scadasymbolanimation) object that providing controls similar to SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner);
+* Line 11: we use `animation.speed(speed).play()` to define the speed of the animation and start it;
+* Line 16: we use `animation.pause()` to stop the animation;
 
 <br>
 Now let's define the on click action for the button:
@@ -957,16 +987,369 @@ The `ScadaSymbolContext` (represented as `ctx` in functions code) is a JavaScrip
 
 2. `ctx.tags`: An object that categorizes all tagged SVG elements. These are grouped by their respective tag IDs (the object keys), such as `ctx.tags.myTagId`. Each tag ID points to an array containing one or more SVG elements.
 
-3. `ctx.values`: Holds all values derived from behavior items of the type "value". This field is crucial for dynamically updating the symbol according to data from the device or other sources.
+3. `ctx.values`: Holds all values derived from behavior items of the type 'value'. This field is crucial for dynamically updating the symbol according to data from the device or other sources.
 
 4. `ctx.properties`: Contains all properties defined for the SCADA symbol, allowing customization and configuration adjustments based on end-user requirements.
 
 5. `ctx.api`: Provides a reference to the [SCADA symbol API](#scadasymbolapi), which includes methods for interacting with, modifying, and managing SVG elements and their associated actions.
 
-This object is essential for developers to effectively create and manage interactive elements within SCADA symbols, providing a robust framework for customization and functionality enhancement.
+This object is essential for developers to effectively create and manage interactive elements within SCADA symbols. See the definition of the interface below:
+
+```javascript
+export interface ScadaSymbolContext {
+    api: ScadaSymbolApi;
+    tags: {[id: string]: Element[]};
+    values: {[id: string]: any};
+    properties: {[id: string]: any};
+    svg: Svg;
+}
+```
+
 
 ### ScadaSymbolApi
 
-The JS object contains the following methods:
+The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext`) is a comprehensive JavaScript interface designed for manipulating SCADA symbol elements in ThingsBoard. It encapsulates a variety of methods for creating, modifying, and managing interactions with SVG elements. Here are the primary functionalities provided by this API:
 
-TODO: Artem Dzhereleiko
+* **generateElementId**: Generates a unique identifier for an element. Useful if you want to create new elements.
+   ```javascript
+   generateElementId: () => string
+   ```
+
+  **Returns**: Newly generated element ID as a string.
+  <br/><br/>
+* **formatValue**: Formats numeric values according to specified precision and units.
+   ```javascript
+   formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined
+   ```
+
+  **Parameters**:
+    - **value**: Numeric value to be formatted.
+    - **dec** (optional): Number of decimal digits. Typically obtained from `ctx.properties`.
+    - **units** (optional): Units to append to the formatted value. Typically obtained from `ctx.properties`.
+    - **showZeroDecimals** (optional): Whether to keep zero decimal digits. Typically obtained from `ctx.properties`.
+
+  **Returns**: Formatted value as a string or undefined if formatting fails.
+  <br/><br/>
+* **text**: Sets or updates the text content of one or more SVG elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text) and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan).
+   ```javascript
+   text: (element: Element | Element[], text: string) => void
+   ```
+
+  **Parameters**:
+    - **element**: SVG element or an array of SVG elements.
+    - **text**: Text to be set.
+      <br/><br/>
+* **font**: Applies font styling and color to text elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text) and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan).
+   ```javascript
+   font: (element: Element | Element[], font: Font, color: string) => void
+   ```
+
+  **Parameters**:
+    - **element**: SVG element or an array of SVG elements.
+    - **font**: Font settings object used to apply text element font. Typically obtained from `ctx.properties`.
+    - **color**: Color string used to apply text color of the element. Typically obtained from `ctx.properties`.
+      <br/><br/>
+* **icon**: Embeds an icon within SVG elements, with optional parameters for size, color, and center alignment. Only applicable for elements of type [SVG.G](https://svgjs.dev/docs/3.2/container-elements/#svg-g)
+   ```javascript
+   icon: (element: Element | Element[], icon: string, size?: number, color?: string, center?: boolean) => void
+   ```
+
+  **Parameters**:
+    - **element**: SVG element or an array of SVG elements.
+    - **icon**: Icon to draw. [MDI](https://mdisearch.com/) icons supported. Typically obtained from `ctx.properties`.
+    - **size** (optional): Icon size in pixels. Typically obtained from `ctx.properties`.
+    - **color** (optional): Icon color. Typically obtained from `ctx.properties`.
+    - **center** (optional): Whether to center the icon inside the group element.
+      <br/><br/>
+
+* **cssAnimate**: Starts a CSS-based animation, providing controls similar to those available in SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner). Finishes any previous CSS animation.
+   ```javascript
+   cssAnimate: (element: Element, duration: number) => ScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+    - **element**: SVG element.
+    - **duration**: Animation duration in milliseconds.
+
+  **Returns**: Instance of [ScadaSymbolAnimation](#ScadaSymbolAnimation) to control the animation.
+  <br/><br/>
+* **cssAnimation**: Retrieves the current CSS animation applied to an element.
+    ```javascript
+    cssAnimation: (element: Element) => ScadaSymbolAnimation | undefined
+    ```
+
+  **Parameters**:
+    - **element**: SVG element.
+
+  **Returns**: Current CSS animation instance or undefined if no animation is applied.
+  <br/><br/>
+* **resetCssAnimation**: Stops and clears any CSS animations on an element, resetting it to its original state. Removes CSS animation instance.
+    ```javascript
+    resetCssAnimation: (element: Element) => void
+    ```
+
+  **Parameters**:
+    - **element**: SVG element.
+      <br/><br/>
+* **finishCssAnimation**: Immediately concludes any CSS animations, applying the final animation states to the element. Removes CSS animation instance.
+    ```javascript
+    finishCssAnimation: (element: Element) => void
+    ```
+
+  **Parameters**:
+    - **element**: SVG element.
+      <br/><br/>
+* **disable**: Disables interaction with one or more elements. For ex. no click action will be performed on user click.
+    ```javascript
+    disable: (element: Element | Element[]) => void
+    ```
+
+  **Parameters**:
+    - **element**: SVG element or an array of SVG elements.
+      <br/><br/>
+* **enable**: Re-enables interaction with elements previously disabled. Fox ex. click action will be performed on user click.
+    ```javascript
+    enable: (element: Element | Element[]) => void
+    ```
+
+  **Parameters**:
+    - **element**: SVG element or an array of SVG elements.
+      <br/><br/>
+* **callAction**: Triggers a specific behavior action by its ID, optionally passing values and observer callbacks.
+    ```javascript
+    callAction: (event: Event, behaviorId: string, value?: any, observer?: Partial<Observer<void>>) => void
+    ```
+
+  **Parameters**:
+    - **event**: SVG element.
+    - **behaviorId**: ID of the behavior item with type 'Action'.
+    - **value** (optional): argument passed to the action.
+    - **observer** (optional): the result callback.
+      <br/><br/>
+* **setValue**: Updates a value within the `ctx.values` object and triggers all rendering functions.
+    ```javascript
+    setValue: (valueId: string, value: any) => void
+    ```
+
+  **Parameters**:
+    - **valueId**: ID of the behavior item with type 'Value'.
+    - **value**: New value to set.
+      <br/><br/>
+
+### ScadaSymbolAnimation
+
+The `ScadaSymbolAnimation` interface in ThingsBoard is designed to facilitate complex animations within SCADA symbols using CSS animation.
+This interface allows developers to control animation aspects dynamically, offering a variety of methods to manipulate the animation's behavior and properties.
+Below are the key methods provided by the `ScadaSymbolAnimation` interface:
+
+* **running**: Checks if the animation is currently running.
+   ```javascript
+   running: () => boolean
+   ```
+  **Returns**: `true` if the animation is running, otherwise `false`.
+  <br/><br/>
+
+* **play**: Starts or resumes the animation.
+   ```javascript
+   play: () => void
+   ```
+
+* **pause**: Pauses the animation.
+   ```javascript
+   pause: () => void
+   ```
+
+* **stop**: Stops the animation and resets its progress.
+   ```javascript
+   stop: () => void
+   ```
+
+* **finish**: Completes the animation and jumps to the end state.
+   ```javascript
+   finish: () => void
+   ```
+
+* **speed**: Sets the speed of the animation.
+   ```javascript
+   speed: (speed: number) => ScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+    - **speed**: The speed factor (e.g., 2 for twice as fast).
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **ease**: Sets the easing function for the animation.
+   ```javascript
+   ease: (easing: string) => ScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+    - **easing**: The easing type (e.g., 'linear', 'ease-in', 'ease-out').
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **loop**: Causes the animation to repeat a specified number of times.
+   ```javascript
+   loop: (times?: number, swing?: boolean) => ScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+    - **times** (optional): The number of times to repeat the animation.
+    - **swing** (optional): If `true`, the animation direction alternates.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **transform**: Applies a matrix transform to the animated element.
+   ```javascript
+   transform: (transform: MatrixTransformParam, relative?: boolean) => ScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+    - **transform**: The transformation object similar to [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#transform-as-setter) but with the following supported properties:
+```javascript
+  rotate?: number
+  scaleX?: number
+  scaleY?: number
+  ox?: number
+  originX?: number
+  oy?: number
+  originY?: number
+  translateX?: number
+  translateY?: number
+```
+    - **relative** (optional): If `true`, the transformation is relative to the current state.
+
+**Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **rotate**: Rotates the element around a point.
+    ```javascript
+    rotate: (r: number, cx?: number, cy?: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **r**: Rotation angle in degrees.
+    - **cx**, **cy** (optional): The center of rotation.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **x**: Moves the element along the x-axis.
+    ```javascript
+    x: (x: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **x**: New x position.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **y**: Moves the element along the y-axis.
+    ```javascript
+    y: (y: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **y**: New y position.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **size**: Sets the size of the element.
+    ```javascript
+    size: (width: number, height: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **width**: New width.
+    - **height**: New height.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **width**: Sets the width of the element.
+    ```javascript
+    width: (width: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **width**: New width.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **height**: Sets the height of the element.
+    ```javascript
+    height: (height: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **height**: New height.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **move**: Moves the element to a new position.
+    ```javascript
+    move: (x: number, y: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **x**: New x position.
+    - **y**: New y position.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **dmove**: Moves the element by the specified delta values.
+    ```javascript
+    dmove: (dx: number, dy: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **dx**: Change in x position.
+    - **dy**: Change in y position.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **relative**: Moves the element relative to its current position.
+    ```javascript
+    relative: (x: number, y: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **x**: x increment.
+    - **y**: y increment.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **scale**: Scales the element from a center point.
+    ```javascript
+    scale: (x: number, y?: number, cx?: number, cy?: number) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **x**: Scale factor for x-axis.
+    - **y** (optional): Scale factor for y-axis.
+    - **cx**, **cy** (optional): Center point for scaling.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+
+* **attr**: Sets the attributes of the element.
+    ```javascript
+    attr: (attr: string | object, value?: any) => ScadaSymbolAnimation
+    ```
+
+  **Parameters**:
+    - **attr**: Attribute name or an object with attribute-value pairs.
+    - **value** (optional): Value of the attribute if a single attribute name is provided.
+
+  **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
