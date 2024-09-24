@@ -67,7 +67,10 @@ Next, we will outline the steps to achieve this functionality.
 
 ## Step 1: Upload the SVG file
 
-- Download the [fan.svg](/images/user-guide/scada/fan.svg){:target="_blank"} file;
+- Right-click on the SVG file shown below and select "Save image as" to save the file to your PC:
+
+<img src="/images/user-guide/scada/fan.svg" alt="FAN SVG" width="300" height="300">
+
 - Navigate to the "Resources" page of the "SCADA symbols" section and click the "Upload SCADA symbol" button;
 - Drop the `fan.svg` file in the appropriate field, or upload it from a folder on your computer, rename it to "Fan", and click "Upload".
 
@@ -83,11 +86,11 @@ Once you upload your SCADA symbol, you'll be directed to the SCADA symbol editor
 
 ##### SCADA editor actions
 
-- **Create Widget**: This button allows you to quickly create a widget based on your SCADA symbol. Any major changes to the SCADA symbol will automatically reflect in the widget library, except for fields like title, description, and search tags, which are copied at the moment you create the widget.
+- **Create Widget** - this button allows you to quickly create a widget based on your SCADA symbol. Any major changes to the SCADA symbol will automatically reflect in the widget library, except for fields like title, description, and search tags, which are copied at the moment you create the widget.
 
-- **Apply** and **Decline**: These buttons allow you to save or discard changes to the symbol.
+- **Apply** and **Decline** - these buttons allow you to save or discard changes to the symbol.
 
-- **Preview**: Enables you to check the widget's behavior from the end-user's perspective. The left panel will render the SVG, while the right panel shows the configuration page of the widget. Use the **Back** button to exit preview mode.
+- **Preview** - enables you to check the widget's behavior from the end-user's perspective. The left panel will render the SVG, while the right panel shows the configuration page of the widget. Use the **Back** button to exit preview mode.
 
 {% include images-gallery.html imageCollection="scada-editor-actions-1" %}
 
@@ -135,11 +138,9 @@ For elements obscured by gradients or complex shapes, it's useful to switch to X
 You can find this option in the top right corner of the left panel in the editor.
 Here, you can define tags using the `tb:tag` syntax directly within the XML structure.
 
-{% include images-gallery.html imageCollection="tags-definition-via-xml-1" showListImageTitles="true" %}
+Let's add tags to the "On" button elements:
 
-Let's add tag to the "On" button elements:
-
-Before adding tags:
+- Navigate to the "XML" editor mode and replace this XML code:
 
 ```xml
 <g transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
@@ -150,7 +151,7 @@ Before adding tags:
 </g>
 ```
 
-After adding tags:
+on this one:
 
 ```xml
 <g tb:tag="onButton" transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
@@ -160,8 +161,39 @@ After adding tags:
   </text>
 </g>
 ```
+{: .copy-code}
 
-### Operations with tag
+- Return to the "SVG" editor mode. You will see the tags added to the "On" button element.
+
+{% include images-gallery.html imageCollection="add-tags-to-on-button-1" %}
+
+<br>
+Below is the XML code that will add all the necessary tags for this example.
+
+- Copy this XML code:
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:tb="https://thingsboard.io/svg" width="100" height="100" version="1.1" viewBox="0 0 100 100">
+<rect width="100" height="100" rx="0" fill="none" stroke="#ccc" stroke-width="2"></rect><path tb:tag="fan" d="M66.868 25.074a1.752 1.752 0 0 0-.645-1.072c-2.852-2.356-6.806-2.198-11.864.476-.33-.33-.688-.61-1.088-.85 3.486-3.127 6.663-4.44 9.533-3.939.846.148 1.431-.821.907-1.502a16.52 16.52 0 0 0-4.079-3.787 1.753 1.753 0 0 0-1.213-.302c-3.683.35-6.368 3.258-8.054 8.725-.467 0-.917.056-1.37.169.254-4.677 1.573-7.852 3.956-9.526.703-.494.431-1.593-.42-1.704a16.519 16.519 0 0 0-5.563.206 1.752 1.752 0 0 0-1.071.645c-2.357 2.852-2.199 6.806.475 11.864-.33.33-.61.688-.85 1.088-3.127-3.486-4.44-6.664-3.939-9.533.148-.846-.821-1.432-1.501-.907a16.517 16.517 0 0 0-3.788 4.079 1.753 1.753 0 0 0-.302 1.213c.35 3.683 3.259 6.368 8.726 8.054 0 .467.055.916.168 1.37-4.676-.254-7.851-1.573-9.526-3.956-.493-.703-1.593-.431-1.704.42a16.519 16.519 0 0 0 .207 5.563c.093.453.288.777.644 1.071 2.852 2.357 6.807 2.199 11.865-.475.33.33.687.61 1.087.85-3.486 3.127-6.663 4.44-9.532 3.939-.846-.148-1.432.821-.908 1.501a16.52 16.52 0 0 0 4.08 3.788c.386.255.752.346 1.213.302 3.683-.35 6.367-3.259 8.053-8.725a5.58 5.58 0 0 0 1.37-.17c-.254 4.677-1.572 7.853-3.956 9.527-.702.494-.431 1.593.42 1.704 1.89.245 3.696.178 5.563-.207a1.752 1.752 0 0 0 1.072-.644c2.356-2.852 2.198-6.806-.476-11.865.33-.33.61-.687.85-1.087 3.127 3.486 4.44 6.663 3.939 9.533-.148.845.821 1.431 1.501.907a16.518 16.518 0 0 0 3.788-4.08c.255-.386.346-.752.302-1.213-.35-3.683-3.259-6.367-8.725-8.053 0-.467-.056-.917-.169-1.37 4.676.254 7.852 1.572 9.526 3.956.494.702 1.593.431 1.704-.42.245-1.89.178-3.696-.206-5.563zm-16.503 8.103a4.706 4.706 0 1 1 0-9.412 4.706 4.706 0 0 1 0 9.412z" fill="#7d081e"></path><text tb:tag="rotationSpeedText" x="49.434" y="59.465" dominant-baseline="middle" fill="#000000" text-anchor="middle" xml:space="preserve"><tspan>30 RPM</tspan></text><g tb:tag="onButton" transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
+    <rect tb:tag="onButtonBackground" x="54.702" y="60.372" width="14.263" height="7.426" rx="1.5" fill="#12ed19" stroke="#000"></rect>
+    <text tb:tag="onButtonText" x="61.856" y="64.491" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.446" stroke-width=".741" text-anchor="middle" xml:space="preserve"><tspan stroke-width=".741">On</tspan></text>
+  </g><g tb:tag="offButton" transform="matrix(1.61253 0 0 1.61566 -58.441 -20.942)">
+    <rect tb:tag="offButtonBackground" x="74.367" y="60.311" width="14.263" height="7.426" rx="1.5" fill="#ed121f" stroke="#000"></rect>
+    <text tb:tag="offButtonText" x="81.366" y="64.518" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.446" stroke-width=".741" text-anchor="middle" xml:space="preserve"><tspan stroke-width=".741">Off</tspan></text>
+  </g>
+</svg>
+```
+{: .copy-code}
+
+- Navigate to the "XML" editor mode; 
+- Paste copied code inthe corresponding window;
+- Return to the "SVG" editor mode. You can see the defined tags. After, apply changes.
+
+{% include images-gallery.html imageCollection="tags-definition-via-xml-1" %}
+
+
+
+### Operations with tags
 
 You can update the tag, add a state rendering function and on click action, and delete the tag using the appropriate tag icon.
 
@@ -668,10 +700,10 @@ Let's enable and disable the "On" button based on the state of the fan using the
 - Copy the function:
 
 ```javascript
-if (ctx.values.fanOn) {
-  ctx.api.disable(element);
+if(!ctx.values.fanOn){
+    ctx.api.enable(element);
 } else {
-  ctx.api.enable(element);    
+    ctx.api.disable(element);
 }
 ```
 {: .copy-code}
@@ -811,6 +843,8 @@ if (show) {
 
 - Paste copied function into the appropriate window. Click "Apply".
 
+{% include images-gallery.html imageCollection="rotation-speed-text-tag-configuration-1" %}
+
 Key points:
 
 \- Line 1: The `show` variable is determined by both the `showRotationSpeed` property and the `fanOn` behavior item;
@@ -823,14 +857,9 @@ Key points:
 
 \- Line 9,11: Conditional display of the text element based on the `show` variable.
 
-{% include images-gallery.html imageCollection="rotation-speed-text-tag-configuration-1" %}
-
 #### fan tag
 
 Now let's proceed with a bit more complex function to rotate a "fan" tag:
-
-- Go to the "Tag settings" of the "`fan`" tag and click "+ Add" button of a "State rendering function";
-- Copy the function:
 
 ```javascript
 var on = ctx.values.fanOn;
@@ -855,10 +884,6 @@ if (on) {
 ```
 {: .copy-code}
 
-- Paste copied function into the appropriate window. Click "Apply".
-
-{% include images-gallery.html imageCollection="fan-tag-configuration-1" %}
-
 Although the function is quite simple, it requires basic knowledge of [SVG.js](https://svgjs.dev/){:target="_blank"}. Key points:
 
 \- Line 3: we use `element.remember` getter from [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#remember-as-getter) to get the state of the animation;
@@ -871,6 +896,9 @@ Although the function is quite simple, it requires basic knowledge of [SVG.js](h
 
 <br>
 The [SVG.js](https://svgjs.dev/) animation is feature rich but has some performance impact on the main browser thread. We propose an alternative approach that utilizes CSS animation:
+
+- Go to the "Tag settings" of the "`fan`" tag and click "+ Add" button of a "State rendering function";
+- Copy the function:
 
 ```javascript
 var on = ctx.values.fanOn;
@@ -892,6 +920,11 @@ if (on) {
     }
 }
 ```
+{: .copy-code}
+
+- Paste copied function into the appropriate window. Click "Apply".
+
+{% include images-gallery.html imageCollection="fan-tag-configuration-1" %}
 
 Key points:
 
@@ -965,6 +998,19 @@ Now that we have finished configuring the widget, we need to create it. To do th
 
 {% include images-gallery.html imageCollection="create-widget-1" %}
 
+### Download SCADA symbol
+
+You can download the SCADA symbol with all settings. To do this, click the "Download SCADA symbol" button on the left panel of the SCADA symbol editor. The SVG file will be saved to your PC.
+
+{% include images-gallery.html imageCollection="download-scada-symbol-1" %}
+
+<br>
+Here is an example of a configured SCADA symbol:
+
+<img src="/images/user-guide/scada/configured_fan.svg" alt="FAN SVG" width="300" height="300">
+
+### Widget's test
+
 Now let's test our widget on the dashboard:
 
 - Create a new dashboard or open existing one. Navigate to the "Layouts" settings, and change the layout from "Default" to "SCADA". Click "Save";
@@ -1005,7 +1051,6 @@ export interface ScadaSymbolContext {
     svg: Svg;
 }
 ```
-
 
 ### ScadaSymbolApi
 

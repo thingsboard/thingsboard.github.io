@@ -49,7 +49,7 @@ You can configure different layout settings for each layout breakpoint: xl, lg, 
 
 {% include images-gallery.html imageCollection="scada-columns-count-1" %}
 
-- **Minimum layout width**. By default, the minimum number of columns is 24. You can increase or decrease this number. The minimum number of columns is 10. We recommend the value of this setting to be equal or more then *columns count* value.
+**Minimum layout width**. By default, the minimum number of columns is 24. You can increase or decrease this number. The minimum number of columns is 10. We recommend the value of this setting to be equal or more then *columns count* value.
 
 {% include images-gallery.html imageCollection="scada-minimum-layout-width-1" %}
 
@@ -61,7 +61,7 @@ In the popup window, select the desired color and transparency. Then click "Sele
 {% include images-gallery.html imageCollection="scada-background-color-1" %}
 
 <br>
-**Background image** and **Background size mode**. This option allows you to set an image as the background of the monitoring panel. You can choose an image from the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/){:target="_blank"} or set a direct link.
+**Background image** and **Background size mode**. This option allows you to set an image as the background of the dashboard. You can choose an image from the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/){:target="_blank"} or set a direct link.
 
 To select an image from the gallery, click "Browse from gallery". Choose an already uploaded image or add a new one.
 **Background size mode**. To more precisely adjust the position of the image, click the dropdown menu of the "Background size mode" section and select how exactly the image will fill the background space. 
@@ -156,7 +156,7 @@ Action types to retrieve **value**:
 {% include images-gallery.html imageCollection="scada-action-get-dashboard-state-1" %}
 
 <br>
-The platform supports three types of actions regarding the target entity:
+The platform supports three types of **actions** regarding the target entity:
 
 - "**Execute RPC**" will send a command to the target device. You can define the method and parameters of the command.
   {% include images-gallery.html imageCollection="scada-action-execute-rpc-to-target-device-1" %}
@@ -168,9 +168,10 @@ The platform supports three types of actions regarding the target entity:
   {% include images-gallery.html imageCollection="scada-action-add-time-series-1" %}
 
 <br>
-**"On click" parameter** define the actions triggered when the user clicks on the component. 
-  In our example, the valve symbol does not have any widget action parameters, but you may explore other symbols like 'Left motor pump' for such actions. 
-  Possible action types are documented [here](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types){:target="_blank"}.
+
+**Widget action** parameter "On click" define the actions triggered when the user clicks on the component. 
+In our example, the valve symbol does not have any widget action parameters, but you may explore other symbols like 'Left motor pump' for such actions. 
+Possible action types are documented [here](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="scada-action-left-motor-pump-1" %}
 
