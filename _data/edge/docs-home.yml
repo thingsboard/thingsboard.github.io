@@ -9,6 +9,10 @@ toc:
   section:
     - title: OTA updates
       path: /docs/edge/user-guide/ota-updates/
+- title: Dashboards
+  section:
+    - title: Overview
+      path: /docs/edge/user-guide/db-overview/
 #- title: Configuration guides
 #  section:
 #    - title: Edges
