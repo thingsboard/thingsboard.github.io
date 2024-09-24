@@ -21,7 +21,7 @@ In the "Manage layouts" window, you can select the layout type suitable for your
 {% include images-gallery.html imageCollection="select-layout-type-1" %}
 
 <br>
-Breakpoints allow you to create responsive layouts that adapt to different screen sizes. 
+Breakpoints allow you to create responsive layouts that adapt to different screen sizes.
 You can add and configure breakpoints to ensure your dashboard looks perfect on any device.
 Further details on setting up each layout type and configuring breakpoints will be discussed below.
 
