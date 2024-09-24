@@ -35,6 +35,13 @@ toc:
     path: /docs/user-guide/dashboards/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
+  - title: SCADA
+    new: true
+    section:
+      - title: Overview
+        path: /docs/user-guide/scada/
+      - title: SCADA symbols development guide
+        path: /docs/user-guide/scada/scada-symbols-dev-guide/
   - title: Widgets
     section:
       - title: Overview
@@ -224,7 +231,7 @@ toc:
       path: /docs/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/

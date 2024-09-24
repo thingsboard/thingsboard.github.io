@@ -61,6 +61,13 @@ toc:
       path: /docs/paas/user-guide/dashboards/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
+    - title: SCADA
+      new: true
+      section:
+        - title: Overview
+          path: /docs/paas/user-guide/scada/
+        - title: SCADA symbols development guide
+          path: /docs/paas/user-guide/scada/scada-symbols-dev-guide/
     - title: Widgets
       section:
         - title: Overview
@@ -237,7 +244,7 @@ toc:
       path: /docs/paas/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/paas/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/paas/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
