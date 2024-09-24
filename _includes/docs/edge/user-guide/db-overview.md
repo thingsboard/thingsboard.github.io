@@ -28,7 +28,7 @@ Read more about the **Dashboard toolbar** [here](/docs/{{cloudDocsPrefix}}user-g
 
 To verify that the changes are successfully propagated: 
 
-{% include images-gallery.html imageCollection="changes-from-edge-to-server showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="changes-from-edge-to-server" showListImageTitles="true" %}
 
 If you have multiple instances of **ThingsBoard Edge**, you can delete the Dashboard on one of them *without affecting* it on the other instances. To delete the **Dashboard** from all **ThingsBoard Edge** instances *at once*, delete it from your ThingsBoard platform.
 
