@@ -3,10 +3,100 @@
 * TOC
 {:toc}
 
-## Introduction
-
 The ThingsBoard Custom Menu feature allows you to extend ThingsBoard UI.
 You can add new and show/hide existing menu items.
+
+## Add custom menu
+
+To add custom menu, click the "plus" icon. Enter name, select scope, and choose assignee type.
+
+{% assign addCustomMenu = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-1-pe.png,
+        title: Go to the "Custom menu" tab of the "White labeling" page, and click the "plus" icon;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-2-pe.png,
+        title: In new window, enter custom menu name, select scope, and choose assignee type;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-3-pe.png,
+        title: After all settings, click "Add";
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-4-pe.png,
+        title: Custom menu added.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=addCustomMenu %}
+
+### Edit name
+
+{% assign editName = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-edit-name-1-pe.png,
+        title: To edit the custom menu name, click the "pencil" icon in the row of this custom menu;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-edit-name-2-pe.png,
+        title: Change the name and click "Save".
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=editName %}
+
+## Manage custom menu assignees
+
+{% assign manageCustomMenuAssignees = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-manage-custom-menu-assignees-1-pe.png,
+        title: To manage the users assigned to this custom menu, click the corresponding icon in the row of this user menu;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-manage-custom-menu-assignees-2-pe.png,
+        title: From the dropdown menu, select the assignee type: "Not assigned", "All users", or "Users list"'
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-manage-custom-menu-assignees-3-pe.png,
+        title: Selected menu items are now hidden.
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-manage-custom-menu-assignees-4-pe.png,
+        title: Selected menu items are now hidden.
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-manage-custom-menu-assignees-5-pe.png,
+        title: Selected menu items are now hidden.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=manageCustomMenuAssignees %}
+
+## Delete custom menu
+
+{% assign deleteCustomMenu = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-delete-1-pe.png,
+        title: To delete custom menu, click the corresponding icon in the row of this user menu;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/custom-menu-delete-2-pe.png,
+        title: Confirm deleting.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=deleteCustomMenu %}
+
+## Manage custom menu config
+
+{% assign deleteCustomMenu = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/manage-custom-menu-config-1-pe.png,
+        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/manage-custom-menu-config-2-pe.png,
+        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=deleteCustomMenu %}
+
+### Operation with menu item
+
+
+<br><br><br><br><br><br><br><br>
 
 ## Hide existing menu items
 
