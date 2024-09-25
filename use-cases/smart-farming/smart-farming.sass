@@ -68,6 +68,8 @@
             font-weight: 600
             line-height: 155%
             text-align: left
+        button
+            font-weight: 600
         .smart-farm-about-container
             display: flex
             justify-content: space-between
@@ -328,6 +330,7 @@
                 display: flex
                 justify-content: center
                 .try-demo
+                    font-weight: 600
                     background-color: #2A7DEC
                     color: #fff
                 .contact-us
@@ -394,6 +397,7 @@
                     .try-demo
                         background-color: #2A7DEC
                         color: #fff
+                        font-weight: 600
                         padding: 10px 60px
                         border-radius: 12px
                         margin-top: 60px
@@ -570,7 +574,7 @@
             .smart-farm-contact-us
                 margin-top: 127px
             .smart-farm-key-difference
-                padding: 145px 30px 0px 30px
+                padding-top: 145px 
                 flex-direction: column
                 align-items: flex-start
                 .smart-farm-key-difference-img 
@@ -851,13 +855,19 @@
 @media screen and (max-width: 430px)
     .smart-farm-about-section
         .smart-farm-about
-            max-width: 320px
+            max-width: 96%
             .smart-farm-tech
                 &::before
-                    left: calc(160px - 50vw - 15px)
+                    left: calc(50% - 50vw)
+            .smart-farm-pros
+                padding-top: 50px
+                .smart-farm-pros-wrapper 
+                    p.smart-farm-pros-text
+                        margin-top: 35px 
             .smart-farm-management-software
                 &::before
-                    left: calc(160px - 50vw - 15px)
+                    left: calc(50% - 50vw)
+                    height: 1000px
                 .smart-farm-management-software-img
                     img
                         height: auto

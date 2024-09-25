@@ -244,7 +244,7 @@ notitle: "true"
                     <span>08</span>
                         <h4>Enhanced data collection and analysis</h4>
                     </div>
-                    <p>Smart farming technologies enable the collection of vast amounts of data, which can be analyzed to gain valuable insights into farm operations. This data-driven approach allows for continuous improvement and optimization of farming practices.</p>
+                    <p class="smart-farm-pros-text">Smart farming technologies enable the collection of vast amounts of data, which can be analyzed to gain valuable insights into farm operations. This data-driven approach allows for continuous improvement and optimization of farming practices.</p>
                 </div>
                 <div class="smart-farm-pros-item">
                     <div class="smart-farm-pros-item-container">
@@ -385,7 +385,7 @@ notitle: "true"
                 <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
                 <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
                 <div class="smart-farm-demo-btn">
-                    <button class="try-demo">Try demo</button>
+                    <button class="try-demo">Learn more </button>
                     <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Contact Us</button>
                 </div>
             </div>
@@ -433,7 +433,7 @@ notitle: "true"
                 <div class="smart-farm-management-software-text">
                     <h2>Agriculture & Farm management Software</h2>
                     <p>By leveraging the ThingsBoard IoT platform, farmers can enhance productivity, reduce resource wastage, and ensure sustainable agricultural practices. This ultimately leads to improved farm management and increased profitability, making ThingsBoard a valuable tool for modern smart farming.</p>
-                    <button class="try-demo">Try demo</button>
+                    <a href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0"><button class="try-demo">Try demo </button></a>
                 </div>
                 <div class="smart-farm-management-software-img">
                     <img src="/images/usecases/smart-farming/Agriculture & Farm management Software.webp">
