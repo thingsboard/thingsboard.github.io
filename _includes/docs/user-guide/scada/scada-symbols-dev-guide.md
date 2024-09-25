@@ -204,7 +204,7 @@ You can update the tag, add a state rendering function and on click action, and 
 **Tag settings**
 
 - Hover over the tag and click the "Tag settings" icon;
-- In the pop-up menu, there are two types of functions you may assign to each tag: "State render function" and "On click action". We will discuss these in more detail in the "[Tag configuration](/docs/{{docsPrefix}}user-guide/scada/symbols-dev-guide/#step-6-tag-functions)" section.
+- In the pop-up menu, there are two types of functions you may assign to each tag: "State render function" and "On click action". We will discuss these in more detail in the "[Tag configurations](#step-6-tag-functions)" section.
 
 {% include images-gallery.html imageCollection="operations-with-tag-2" %}
 
@@ -251,7 +251,7 @@ The list of behavior parameters is specific to the chosen SCADA symbol and is en
 
 #### Value
 
-Value behavior items fetch data from the platform into the [ScadaSymbolContext](#ScadaSymbolContext), acting like variables. 
+Value behavior items fetch data from the platform into the [ScadaSymbolContext](#scadasymbolcontext), acting like variables. 
 These variables typically change based on target device attributes or time series data and are used in defining the 'State render function' for your tags.
 
 There are five types of actions to retrieve value:
@@ -278,7 +278,7 @@ There are five types of actions to retrieve value:
 
 #### Action
 
-Action behavior items specify the actions taken against the target device when specific events occur, typically triggered using the [ScadaSymbolContext](#ScadaSymbolContext) when defining the 'On click action' for your tags.
+Action behavior items specify the actions taken against the target device when specific events occur, typically triggered using the [ScadaSymbolContext](#scadasymbolcontext) when defining the 'On click action' for your tags.
 
 The platform supports three types of actions for interacting with the target entity:
 
@@ -567,7 +567,7 @@ Let's review the signature of each function and define the tag functions for eac
 
 This JS function is responsible for changing the SVG element via [SVG.js](https://svgjs.dev/){:target="_blank"} API and accepts two parameters:
 
-* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
+* *ctx* is an instance of [ScadaSymbolContext](#scadasymbolcontext);
 * *element* is an [SVG.js](https://svgjs.dev/){:target="_blank"} element;
 
 You may also notice the global state render function that is available in the general tab.
@@ -579,7 +579,7 @@ This function is optional and is useful when you would like to define logic of t
 
 This JS function defines a logic of on click handler. and accepts three parameters:
 
-* *ctx* is an instance of [ScadaSymbolContext](#ScadaSymbolContext);
+* *ctx* is an instance of [ScadaSymbolContext](#scadasymbolcontext);
 * *element* is an [SVG.js](https://svgjs.dev/){:target="_blank"} element;
 * *event* is an on click event that may be extended to other events in the future releases;
 
@@ -930,7 +930,7 @@ Key points:
 
 * CSS animation is smoother and less resource consuming in most of the use cases;
 * Line 3: we use `ctx.api.cssAnimation` to get the current instance of the [ScadaSymbolAnimation](#scadasymbolanimation) object;
-* Line 8: we use `ctx.api.cssAnimate` to create a new instance of [ScadaSymbolAnimation](#scadasymbolanimation) object that providing controls similar to SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner);
+* Line 8: we use `ctx.api.cssAnimate` to create a new instance of [ScadaSymbolAnimation](#scadasymbolanimation) object that providing controls similar to SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner){:target="_blank"};
 * Line 11: we use `animation.speed(speed).play()` to define the speed of the animation and start it;
 * Line 16: we use `animation.pause()` to stop the animation;
 
@@ -1076,7 +1076,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
 
   **Returns**: Formatted value as a string or undefined if formatting fails.
   <br/><br/>
-* **text**: Sets or updates the text content of one or more SVG elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text) and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan).
+* **text**: Sets or updates the text content of one or more SVG elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text){:target="_blank"} and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan){:target="_blank"}.
    ```javascript
    text: (element: Element | Element[], text: string) => void
    ```
@@ -1085,7 +1085,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **element**: SVG element or an array of SVG elements.
     - **text**: Text to be set.
       <br/><br/>
-* **font**: Applies font styling and color to text elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text) and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan).
+* **font**: Applies font styling and color to text elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text){:target="_blank"} and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan){:target="_blank"}.
    ```javascript
    font: (element: Element | Element[], font: Font, color: string) => void
    ```
@@ -1095,20 +1095,20 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **font**: Font settings object used to apply text element font. Typically obtained from `ctx.properties`.
     - **color**: Color string used to apply text color of the element. Typically obtained from `ctx.properties`.
       <br/><br/>
-* **icon**: Embeds an icon within SVG elements, with optional parameters for size, color, and center alignment. Only applicable for elements of type [SVG.G](https://svgjs.dev/docs/3.2/container-elements/#svg-g)
+* **icon**: Embeds an icon within SVG elements, with optional parameters for size, color, and center alignment. Only applicable for elements of type [SVG.G](https://svgjs.dev/docs/3.2/container-elements/#svg-g){:target="_blank"}
    ```javascript
    icon: (element: Element | Element[], icon: string, size?: number, color?: string, center?: boolean) => void
    ```
 
   **Parameters**:
     - **element**: SVG element or an array of SVG elements.
-    - **icon**: Icon to draw. [MDI](https://mdisearch.com/) icons supported. Typically obtained from `ctx.properties`.
+    - **icon**: Icon to draw. [MDI](https://mdisearch.com/){:target="_blank"} icons supported. Typically obtained from `ctx.properties`.
     - **size** (optional): Icon size in pixels. Typically obtained from `ctx.properties`.
     - **color** (optional): Icon color. Typically obtained from `ctx.properties`.
     - **center** (optional): Whether to center the icon inside the group element.
       <br/><br/>
 
-* **cssAnimate**: Starts a CSS-based animation, providing controls similar to those available in SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner). Finishes any previous CSS animation.
+* **cssAnimate**: Starts a CSS-based animation, providing controls similar to those available in SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner){:target="_blank"}. Finishes any previous CSS animation.
    ```javascript
    cssAnimate: (element: Element, duration: number) => ScadaSymbolAnimation
    ```
@@ -1117,7 +1117,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **element**: SVG element.
     - **duration**: Animation duration in milliseconds.
 
-  **Returns**: Instance of [ScadaSymbolAnimation](#ScadaSymbolAnimation) to control the animation.
+  **Returns**: Instance of [ScadaSymbolAnimation](#scadasymbolanimation) to control the animation.
   <br/><br/>
 * **cssAnimation**: Retrieves the current CSS animation applied to an element.
     ```javascript
@@ -1255,7 +1255,7 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
    ```
 
   **Parameters**:
-    - **transform**: The transformation object similar to [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#transform-as-setter) but with the following supported properties:
+    - **transform**: The transformation object similar to [SVG.js](https://svgjs.dev/docs/3.2/manipulating/#transform-as-setter){:target="_blank"} but with the following supported properties:
 ```javascript
   rotate?: number
   scaleX?: number
