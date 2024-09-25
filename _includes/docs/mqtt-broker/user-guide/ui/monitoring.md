@@ -13,6 +13,7 @@ At the top of the **Home** page, you will find a set of five charts that display
   - **Dropped messages.** This chart indicates messages that either lack subscribers or couldn't be delivered to subscribers due to network issues, client disconnections, or resource limitations.
   - **Sessions.** The number of current MQTT sessions is represented in this chart.
   - **Subscriptions.** This chart displays the number of current subscriptions.
+  - **Network traffic.** This chart demonstrates the size of processed data, sent or received by the MQTT clients.
 
 Please note that on the Monitoring page, users have the ability to delve deeper into the chart data. 
 They can zoom in on specific sections, set custom date ranges to display data, or open the charts in full-screen mode.
