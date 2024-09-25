@@ -117,6 +117,11 @@ identify-referenced-widget-1:
         image: /images/user-guide/dashboards/layouts/ce/identify-referenced-widget-1-ce.png
         title: 'In edit mode, you can identify a referenced widget by the presence of a "Reference" button in the widget&#39;s edit panel.'
 
+replace-reference-with-widget-copy-1:
+    0:
+        image: /images/user-guide/dashboards/layouts/ce/replace-reference-with-widget-copy-1-ce.png
+        title: 'To replace the reference with the widget copy, click the "Reference" button on the widget editing panel, or right-click on the widget and select "Replace reference with widget copy".'
+
 copy-widget-1:
     0:
         image: /images/user-guide/dashboards/layouts/ce/copy-widget-1-ce.png

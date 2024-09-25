@@ -128,8 +128,12 @@ In edit mode, you can identify a referenced widget by the presence of a "Referen
 
 {% include images-gallery.html imageCollection="identify-referenced-widget-1" %}
 
+To replace the reference with the widget copy, click the "Reference" button on the widget editing panel, or right-click on the widget and select "Replace reference with widget copy".
+
+{% include images-gallery.html imageCollection="replace-reference-with-widget-copy-1" %}
+
 <br>
-**Widget Copies**
+**Widget copies**
 
 A widget copy is a complete and independent copy of the widget configuration. Changes made to the copied widget will not affect the original widget.
 
