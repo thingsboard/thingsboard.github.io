@@ -30,15 +30,15 @@ changes-from-edge-to-server:
         image: /images/pe/edge/user-guide/dashboards/6-dashboards-from-edge-to-cloud.png
         title: 'Log in to your Edge Professional Edition instance and go to the Dashboards section. Here you can create, configure, or make any changes to your Dashboards.'
     1:
-        image: /images/edge/user-guide/dashboards/7-dashboards-from-edge-to-cloud.png
+        image: /images/pe/edge/user-guide/dashboards/7-dashboards-from-edge-to-cloud.png
         title: 'Log in to your ThingsBoard server and go to the “Dashboards” section to see that the changes have been applied to the ThingsBoard server. Make sure you are connected to the internet.'
 
 assign-customer:
     0:
-        image: /images/images/pe/edge/user-guide/dashboards/11-edge-dashboards.png
+        image: /images/pe/edge/user-guide/dashboards/11-edge-dashboards.png
         title: 'Log in to your ThingsBoard Edge instance and go to the “Dashboards” section. Then, click the "Dashboard details" button.'
     1:
-        image: /images/images/pe/edge/user-guide/dashboards/12-manage-owner-groups.png
+        image: /images/pe/edge/user-guide/dashboards/12-manage-owner-groups.png
         title: 'Click the "Manage owner and groups" button on the Dashboard details page'
     2:
         image: /images/pe/edge/user-guide/dashboards/13-update-customer-or-group.png
