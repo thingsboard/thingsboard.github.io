@@ -76,16 +76,27 @@ operations-with-tag-3:
         image: /images/user-guide/scada/symbols-dev-guide/operations-with-tag-6-pe.png
         title: 'Confirm deleting the tag in the dialog box.'
 
+add-tags-to-on-button-1:
+    0:
+        image: /images/user-guide/scada/symbols-dev-guide/add-tags-to-on-button-1-pe.png
+        title: 'Switch to "XML" editor mode and highlight the XML code as shown in the screenshot;'
+    1:
+        image: /images/user-guide/scada/symbols-dev-guide/add-tags-to-on-button-2-pe.png
+        title: 'Paste the XML code copied from the documentation;'
+    2:
+        image: /images/user-guide/scada/symbols-dev-guide/add-tags-to-on-button-3-pe.png
+        title: 'Return to the "SVG" editor mode. You will see the tags added to the "On" button element.'
+    
 tags-definition-via-xml-1:
     0:
         image: /images/user-guide/scada/symbols-dev-guide/tags-definition-via-xml-1-pe.png
-        title: 'Navigate to the XML editor mode;'
+        title: 'Navigate to the "XML" editor mode;'
     1:
         image: /images/user-guide/scada/symbols-dev-guide/tags-definition-via-xml-2-pe.png
         title: 'Add the XML code in the corresponding window;'
     2:
         image: /images/user-guide/scada/symbols-dev-guide/tags-definition-via-xml-3-pe.png
-        title: 'Return to the SVG editor mode. You can see the defined tags. After, apply changes.'
+        title: 'Return to the "SVG" editor mode. You can see the defined tags. After, apply changes.'
 
 behavior-scada-developer-end-user-configuration-1:
     0:
@@ -449,6 +460,11 @@ test-widget-on-dashboard-1:
     7:
         image: /images/user-guide/scada/symbols-dev-guide/test-widget-on-dashboard-8-pe.png
         title: 'Meanwhile, the "Off" button will become active and change its color from gray to red. Press it. The fan should stop, the “Off” button will become unclickable, and its color will turn gray again.'
+
+download-scada-symbol-1:
+    0:
+        image: /images/user-guide/scada/symbols-dev-guide/download-scada-symbol-1-pe.png
+        title: 'You can download the SCADA symbol with all settings. To do this, click the "Download SCADA symbol" button on the left panel of the SCADA symbol editor. The SVG file will be saved to your PC.'
 
 ---
 
