@@ -1,0 +1,30 @@
+0:
+  src: "/images/aboutUsImages/values_image1.png"
+  alt: ""
+  title: "Results-driven"
+  description: "We are committed to delivering measurable improvements for our clients through focused and objective-driven IoT solutions."
+1:
+  src: "/images/aboutUsImages/values_image2.png"
+  alt: ""
+  title: "Customer focus"
+  description: "Our customers are at the core of our business; we tailor our IoT solutions to meet their unique needs and exceed expectations."
+2:
+  src: "/images/aboutUsImages/values_image3.png"
+  alt: ""
+  title: "Growth and Self-improvement"
+  description: "Continuous learning and staying ahead of industry trends enable us to offer cutting-edge IoT solutions."
+3:
+  src: "/images/aboutUsImages/values_image4.png"
+  alt: ""
+  title: "Expertise"
+  description: "We uphold the highest standards of conduct and integrity, ensuring reliable and high-quality IoT solutions."
+4:
+  src: "/images/aboutUsImages/values_image5.png"
+  alt: ""
+  title: "Team work"
+  description: "At ThingsBoard, we thrive on collaboration, leveraging each team member's strengths to deliver innovative IoT solutions."
+5:
+  src: "/images/aboutUsImages/values_image6.png"
+  alt: ""
+  title: "Volunteering"
+  description: "We give back to the community through various initiatives, reinforcing our commitment to making a positive impact."
