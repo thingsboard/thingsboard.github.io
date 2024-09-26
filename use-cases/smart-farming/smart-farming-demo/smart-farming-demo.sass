@@ -1,0 +1,1438 @@
+$step2: 671px
+$step3: 999px
+$step4: 1279px
+$step5: 1439px
+$step6: 1919px
+$verticalStep1: 600px
+$modal-z-index: 13000
+$modal-background-color: rgba(0, 0, 0, 0.4)
+$modal-content-background-color: #fefefe
+$modal-content-border: 1px solid #888
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
+$form-element-label-color: rgba(0, 0, 0, 0.54)
+$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
+$button-background-color: #2A7DEC
+$font-style-normal: normal
+$button-width: 208px
+
+#smart-farming-demo
+    .noToc
+        position: relative
+        overflow: hidden
+
+        .center
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: relative
+            > *
+                width: 100%
+                position: relative
+                z-index: 3
+        
+        .content-wrapper
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            position: relative
+            > *
+                width: 100%
+                max-width: 1440px
+                position: relative
+                z-index: 3
+    
+        #content-get-in-touch
+            display: flex
+            flex-direction: row
+            align-items: unset
+            justify-content: space-between
+            padding: 0 50px
+            max-width: 1440px
+            margin-top: 180px
+
+    .outline-button
+        background-color: white 
+        border-radius: 8px
+        border: 1px solid $button-background-color
+        font-size: 16px
+        font-weight: 600
+        line-height: 20.8px
+        color: $button-background-color
+        width: $button-width
+        height: 48px 
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+        &:hover
+            background-color: $button-background-color
+            color: #fff
+
+    footer
+        position: relative
+
+    #first-screen
+        min-height: 1200px
+        width: 100%
+        overflow: hidden
+        padding: 0px
+
+        #background
+            position: absolute
+            z-index: 0
+            bottom: 5%
+
+        .hero-container 
+            height: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: relative
+            margin: 0 20px
+
+            #hero-content
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: center
+                text-align: initial
+                z-index: 1
+                padding-top: 20px
+
+                .hero-title
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 24px
+                    text-align: center
+                    color: $button-background-color
+
+                .title
+                    font-size: 60px
+                    font-weight: 500
+                    line-height: 66px
+                    text-align: center
+                    color: #212529
+                    margin-top: 30px
+                    max-width: 710px
+
+                .sub-title
+                    font-family: Poppins
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: center
+                    color: #495057
+                    margin-top: 40px
+                    max-width: 608px
+
+                .info-block
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    margin-top: 40px
+                    min-width: 436px
+
+                    .filled-button
+                        background-color: $button-background-color
+                        border-radius: 8px
+                        font-size: 16px
+                        font-weight: 600
+                        line-height: 20.8px
+                        color: #fff
+                        width: $button-width
+                        height: 48px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        text-decoration: none
+                        &:hover
+                            background-color: #fff
+                            border: 1px solid $button-background-color
+                            color: $button-background-color
+        
+        .container
+            display: flex
+            justify-content: center
+            height: 100%
+            min-height: 700px
+            #header-img1
+                position: absolute
+                width: 880px
+                z-index: 2
+                top: 45%
+                left: 15%
+                box-shadow: 0px 4px 25px 5px #21252917
+                border-radius: 12px
+
+            #header-img2
+                position: absolute
+                width: 880px
+                z-index: 1
+                right: 15%
+                top: 60%
+                box-shadow: 0px 4px 25px 5px #21252917
+                border-radius: 12px
+
+    #third-screen
+        margin-top: 250px
+        .container
+            width: 100%
+            display: flex
+            min-height: 600px
+            .left-side
+                width: 45%
+                display: flex
+                flex-direction: column
+                .side-title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    color: #212529
+                .side-text
+                    margin-top: 20px
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: left
+                    color: #495057
+                .outline-button
+                    margin-top: 50px
+                    &:hover
+                        background-color: $button-background-color
+                        color: #fff
+
+            .right-side
+                width: 50%
+                #rectangle
+                    width: 625px
+                    position: absolute
+                    z-index: 0
+                    bottom: 5%
+                    right: 0%
+
+    #benefits-screen
+        display: flex
+        flex-direction: column
+        align-items: center
+        
+        .benefits-title
+            font-size: 48px
+            font-weight: 600
+            line-height: 62.4px
+            text-align: center
+            color: #212529
+            width: 740px
+
+        .benefits-sub-title
+            font-size: 18px
+            font-weight: 400
+            line-height: 27.9px
+            text-align: center
+            width: 608px
+            margin-top: 30px
+
+        .outline-button
+            margin-top: 40px
+            &:hover
+                background-color: $button-background-color
+                color: #fff
+
+        .cards
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+            margin-top: 50px
+        
+        .card
+            box-shadow: 0px 5px 15px 0px #21252940 
+            width: 32%
+            padding: 20px
+            border-radius: 12px
+            margin: 10px 0
+            height: 260px
+            display: flex
+            flex-direction: column
+            justify-content: space-evenly
+
+            img
+                width: 50px
+                height: 50px
+
+            .title
+                font-size: 24px
+                font-weight: 600
+                line-height: 31.2px
+                text-align: left
+                color: #212529                
+                margin-top: 20px
+
+            .text
+                font-size: 16px
+                font-weight: 400
+                line-height: 24.8px
+                text-align: left
+                color: #495057
+                margin-top: 16px
+
+    #dark-section
+        height: 1583px
+        background: url("/images/usecases/smart-farming/second-background.webp")
+        background-repeat: no-repeat
+        background-position: center top
+        background-size: 100% auto
+        margin-top: 150px
+
+        .header
+            .title 
+                font-size: 64px
+                font-weight: 600
+                line-height: 76.8px
+                text-align: left
+                color: #fff 
+                margin-left: 40px
+                span
+                    display: block
+
+            .sub-title
+                font-size: 20px
+                font-weight: 400
+                line-height: 28px
+                text-align: left
+                color: #FFFFFF
+                margin-left: 250px
+
+            .second
+                padding-left: 140px
+
+            .third
+                padding-left: 50px
+
+        .info-block
+            display: flex
+            margin-top: 100px
+            .menu
+                width: 45%
+                margin-top: 130px
+                
+                .panel-title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    width: 540px
+                    color: #FFFFFF
+
+                .try-demo-button
+                    margin-top: 40px
+                    background-color: white 
+                    border-radius: 8px
+                    border: 1px solid #192234
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 20.8px
+                    color: #192234
+                    width: 250px
+                    height: 48px 
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    text-decoration: none
+                    &:hover
+                        border: 1px solid #fff
+                        color: #fff
+                        background-color: transparent
+                
+                .expansion-panel
+                    margin-bottom: 10px
+                    overflow: hidden
+                    border-bottom: 1px solid #495057
+                    padding: 10px
+                    width: 90%
+
+                    .expansion-header
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        padding: 10px
+                        cursor: pointer
+
+                    .header-icon
+                        margin-right: 20px
+                        height: 20px
+                        width: 20px
+
+                    .arrow-icon
+                        transition: max-height 1s cubic-bezier(0.5, 0.1, 0.3, 1.1)
+
+                    &.expanded
+                        .arrow-icon
+                            transform: rotate(180deg)
+
+                    .expansion-title
+                        margin: 0
+                        font-size: 28px
+                        font-weight: 600
+                        line-height: 36.4px
+                        color: #fff
+                        text-align: left
+                        display: flex
+                        align-items: center
+
+                    .expansion-content
+                        padding: 0 10px
+                        display: none
+                        max-height: 0
+                        overflow: hidden
+                        color: #D0D9E1
+                        font-size: 16px
+                        font-weight: 400
+                        line-height: 24px
+                        text-align: left
+                        margin: 10px 0 10px 35px
+                        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+
+                    &.expanded
+                        .expansion-content
+                            display: block
+                            max-height: 1000px
+
+                .first
+                    margin-top: 40px
+
+            .images
+                width: 55%
+                .dark-map-image,
+                .dark-map1-image,
+                .dark-map2-image,
+                .dark-map3-image,
+                .dark-map4-image
+                    position: absolute
+                    right: 0%
+                    width: 850px
+                    z-index: 1
+                    &.dark-map-image
+                        bottom: 0%
+                    &.dark-map1-image
+                        bottom: -5%
+                    &.dark-map2-image
+                        bottom: -5%
+                    &.dark-map3-image
+                        bottom: 10%
+                    &.dark-map4-image
+                        bottom: -5%
+
+    #connectivity
+        margin-top: 150px
+        .container
+            min-height: 650px
+            display: flex
+
+            .left
+                width: 50%
+                .connectivity-image
+                    position: absolute
+                    z-index: 1
+                    left: -17%
+                    top: -16%
+                    width: 900px
+
+            .right
+                width: 50%
+                display: flex
+                align-items: flex-start
+                flex-direction: column
+                justify-content: center
+                
+                .title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    color: #212529
+                    margin-bottom: 20px 
+
+                .text
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: left
+                    color: #495057
+                    margin-top: 20px
+                    padding-right: 20px
+
+    #partners
+        min-height: 450px
+        display: flex
+        margin-top: 180px
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        
+        .title
+            font-size: 48px
+            font-weight: 600
+            line-height: 62.4px
+            text-align: center
+            color: #212529
+            padding-bottom: 10px
+        
+        .logos
+            width: 100%
+            margin-top: 60px
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+            .logo
+                width: 25%
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-top: 20px
+                img
+                    width: 250px
+
+        .outline-button
+            margin-top: 80px
+            width: $button-width
+            &:hover
+                background-color: $button-background-color
+                color: #fff
+
+    .modal 
+        display: none
+        position: fixed
+        align-items: center
+        justify-content: center
+        z-index: $modal-z-index
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: $modal-background-color
+    
+        .modal-content 
+            animation-name: animatetop
+            animation-duration: 0.4s
+            background-color: $modal-content-background-color
+            padding: 20px 20px 30px
+            border: $modal-content-border
+            width: 950px
+
+            .sub-content
+                overflow: auto
+                height: 95%
+
+            .close-button
+                display: flex
+                justify-content: end
+                
+            .close
+                width: 28px
+                height: 28px
+                cursor: pointer
+
+            .title, .sub-title, .sub-sub-title 
+                letter-spacing: 0.01em
+                text-align: center
+                display: flex
+                justify-content: center 
+                font-style: $font-style-normal
+
+            .title
+                font: $title-font
+                color: #3622A4
+
+            .sub-title
+                font: $sub-title-font
+                color: #333333
+
+            .sub-sub-title
+                font: $sub-sub-title-font
+                color: #5E5F62
+                letter-spacing: .001em
+                margin-top: 15px
+                span    
+                    width: 556px
+                    height: 56px
+
+            .form-section
+                padding: 30px 40px 0px 40px
+                display: flex
+                justify-content: space-around
+                .form-element
+                    margin-bottom: 15px
+                    width: 48%
+                    label
+                        position: relative
+                        width: 100%
+                        p
+                            color: $form-element-label-color
+                            font-size: 12px
+                            line-height: 16px 
+                            font-style: $font-style-normal 
+                            font-weight: 400
+                            letter-spacing: 0.4px
+                            position: absolute
+                            top: -8px
+                            left: 10px
+                            z-index: 2
+                            padding: 0px 5px
+                            background: white
+
+                        .cdu-form-control, .cdu-text-area
+                            width: 100%
+                            color: #898B8F
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 24px
+                            letter-spacing: 0.15px
+                            border-radius: 4px
+                            border: $form-control-border
+                            padding: 16px 18px
+
+                        .cdu-text-area
+                            height: 170px
+
+                    .label-select
+                        select 
+                            width: 100%
+                            appearance: none
+                            -webkit-appearance: none
+                            -moz-appearance: none
+                            &::-ms-expand 
+                                display: none
+
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 40%
+                            right: 10px
+                            width: 16px
+                            height: 16px
+                            background: url(/images/pe/read-more-arrow.svg) no-repeat center
+                            transform: rotate(90deg)
+                            transform-origin: center center
+
+                .next
+                    width: 98%
+
+            .secondary
+                padding-top: 0px
+
+            .submit-button-container
+                display: flex
+                justify-content: center
+                .cdu-button
+                    padding: 15px
+                    border-radius: 6px
+                    color: white
+                    background-color: $button-background-color
+                    border: 1px solid $button-background-color
+                    width: 400px
+                    font-weight: 600
+                    &:hover
+                        background-color: #fff
+                        color: $button-background-color
+
+    #get-in-touch
+        position: relative
+        display: flex
+        justify-content: center
+        background-color: white
+        padding: 50px 0 100px 0
+
+        .info
+            margin-right: 70px
+            z-index: 2
+
+        .side-title
+            margin: 15px 94px 0 0
+            max-width: 200px
+
+        .section-title
+            max-width: 610px
+            line-height: 68px
+
+        .section-text
+            max-width: 470px
+
+        .contact-form
+            padding-top: 30px
+            z-index: 2
+            width: 400px
+            .form-element
+                margin-bottom: 28px
+                label
+                    position: relative
+                    width: 100%
+                    p
+                        color: rgba(0, 0, 0, 0.54)
+                        font-size: 12px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 16px
+                        letter-spacing: 0.4px
+                        position: absolute
+                        top: -8px
+                        left: 10px
+                        z-index: 2
+                        padding: 0px 5px
+                        background: white
+
+        .cdu-form-control
+            width: 100%
+            color: #898B8F
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 24px
+            letter-spacing: 0.15px
+            border-radius: 4px
+            border: 1px solid rgba(0, 0, 0, 0.12)
+            padding: 16px 18px
+
+        .cdu-button
+            padding: 11px 14px
+            color: white
+            background-color: $button-background-color
+            border: 1px solid $button-background-color
+            width: 100%
+            font-size: 18px
+            font-weight: 600
+            text-align: center
+            text-decoration: none
+            border-radius: 4px
+            &:hover
+                background-color: #fff
+                color: $button-background-color
+    
+    .side-title
+        z-index: 2
+        span
+            display: inline-block
+            flex-direction: column
+            align-items: flex-start
+            gap: 4px
+            border-radius: 6px
+            padding: 7px 0px
+            color: $button-background-color
+            text-align: center
+            font-size: 26px
+            font-style: normal
+            font-weight: 700
+            line-height: 30px
+            letter-spacing: 0.26px
+            text-transform: uppercase
+            text-wrap: nowrap
+            width: max-content
+
+    .section-title
+        color: #333
+        font-size: 48px
+        font-style: normal
+        font-weight: 600
+        line-height: 76px
+        letter-spacing: 0.48px
+        padding-bottom: 30px
+
+    .section-text
+        color: #5E5F62
+        font-size: 16px
+        font-style: normal
+        font-weight: 400
+        line-height: 28px
+        letter-spacing: 0.016px
+
+    .link-text 
+        font-weight: 500
+        color: #fff
+        text-decoration: underline
+
+    .blue-text
+        color: $button-background-color
+
+    @media screen and (max-width: $step6) and (max-height: $verticalStep1)
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step6)
+        #first-screen
+            #background
+                height: 1200px
+
+            .container
+                #header-img1
+                    left: 5%
+
+                #header-img2
+                    right: 5%
+
+        #dark-section
+            background-size: 1920px
+            .info-block
+                .images
+                    .dark-map-image,
+                    .dark-map1-image,
+                    .dark-map2-image,
+                    .dark-map3-image,
+                    .dark-map4-image
+                        right: -5% 
+
+        #third-screen
+            .container
+                .left-side
+                    width: 50%
+
+        #connectivity
+            .container
+                .left
+                    .connectivity-image
+                        left: -11%
+                        top: -11%
+                        width: 830px
+
+    @media screen and (max-width: $step5)
+        #first-screen
+            #background
+                height: 1200px
+
+            .container
+                #header-img1
+                    width: 741px
+                    left: 5%
+
+                #header-img2
+                    right: 5%
+                    width: 741px
+
+        #third-screen
+            margin-top: 150px
+            .container
+                .left-side
+                    width: 55%
+
+                .right-side
+                    #rectangle
+                        width: 570px
+                        bottom: 10%
+
+        #benefits-screen
+            .card
+                height: 300px
+
+        #dark-section
+            .info-block
+                margin-top: 30px
+                .images
+                    .dark-map-image,
+                    .dark-map1-image,
+                    .dark-map2-image,
+                    .dark-map3-image,
+                    .dark-map4-image
+                        right: -5%
+                        width: 760px
+                        bottom: 5%
+                        &.dark-map3-image 
+                            bottom: 10%
+
+        #connectivity
+            .container
+                .left
+                    .connectivity-image
+                        width: 674px
+                        top: 0%
+                        left: -10%
+
+        #partners
+            .logos
+                .logo
+                    display: flex
+                    justify-content: center
+                    align-items: center
+
+        #get-in-touch
+            .contact-form
+                width: 300px
+
+        .modal 
+            .modal-content 
+                width: 800px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 130px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step4)
+        .noToc
+            #content-get-in-touch
+                padding: 0 50px
+                max-width: 1000px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 3fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+                align-items: center
+
+        #first-screen
+            .container
+                #header-img1
+                    width: 694px
+
+                #header-img2
+                    width: 694px
+
+            .hero-container 
+                #hero-content
+                    .title
+                        font-size: 48px
+
+        #third-screen
+            margin-top: 0px
+            min-height: 550px
+            .container
+                .left-side
+                    width: 55%
+                    display: flex
+                    flex-direction: column
+                    .side-title
+                        font-size: 40px 
+
+                .right-side
+                    #rectangle
+                        width: 430px
+                        bottom: 15%
+                        right: 0%
+
+        #benefits-screen
+            margin-top: 100px
+            .benefits-title
+                font-size: 40px
+
+            .card
+                width: 47%
+
+        #dark-section 
+            .header
+                .title 
+                    font-size: 48px
+            
+            .info-block
+                margin-top: 0px
+                .menu
+                    width: 50%
+                .images
+                    width: 50%
+                    .dark-map-image,
+                    .dark-map1-image,
+                    .dark-map2-image,
+                    .dark-map3-image,
+                    .dark-map4-image
+                        width: 550px !important
+                        bottom: 10% !important
+                        &.dark-map3-image 
+                            bottom: 15% !important
+
+        #connectivity
+            .container
+                min-height: 450px
+                .left
+                    .connectivity-image
+                        width: 549px
+                        left: -10%
+                        top: -16%
+
+                .right
+                    justify-content: flex-start
+                    .title
+                        font-size: 40px
+                        margin-bottom: 10px
+
+                    .text
+                        margin-top: 10px
+
+        #partners
+            .logos
+                .logo
+                    width: 33% 
+
+        #get-in-touch
+            padding: 0px 0 100px 0
+
+            .info
+                grid-area: info
+                margin-right: 0px
+
+            .side-title
+                grid-area: side-title
+                span
+                    text-wrap: nowrap
+                    width: 210px
+                    height: 44px
+                    text-align: start
+
+            .section-title
+                height: auto
+                line-height: 40px
+
+            .section-text
+                max-width: 100%
+
+            .contact-form
+                grid-area: contact-form
+            
+        .modal 
+            .modal-content 
+                width: 693px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 80px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step3)
+        .noToc
+            #content-get-in-touch
+                padding: 0 50px
+                max-width: 672px
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+
+        #first-screen
+            min-height: 900px
+            #background
+                bottom: 7%
+                height: 850px
+
+            .hero-container 
+                #hero-content
+                    .title
+                        font-size: 48px
+                        line-height: 52.8px
+
+                    .sub-title
+                        max-width: 462px
+
+            .container
+                min-height: 500px
+                #header-img1
+                    width: 451px
+                    top: 50%
+
+                #header-img2
+                    width: 451px
+                    top: 60%
+       
+        #third-screen
+            margin-top: 0px
+            .container
+                min-height: 900px
+                flex-direction: column
+                .left-side
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    .side-title
+                        font-size: 40px 
+
+                .right-side
+                    min-height: 480px
+                    width: 100%
+                    #rectangle
+                        width: 500px
+                        top: 50%
+                        right: 9%
+
+        #benefits-screen
+            margin-top: 100px
+            .benefits-title
+                font-size: 40px
+                width: 550px
+
+            .card
+                width: 90%
+
+        #dark-section
+            height: 1350px
+            margin-top: 110px 
+            .header
+                .title 
+                    font-size: 32px
+                    line-height: 38.4px
+                
+                .sub-title
+                    margin-left: 100px
+            
+            .info-block
+                margin-top: 0px
+                .menu
+                    width: 100%
+                    .expansion-panel
+                        width: 100%
+                
+                .images
+                    display: none
+        
+        #connectivity
+            margin-top: 100px
+            .container
+                min-height: 900px
+                display: flex
+                flex-direction: column-reverse
+                .left
+                    width: 100%
+                    height: 500px
+                    display: flex
+                    justify-content: center
+                    .connectivity-image
+                        width: 620px
+                        top: 45%
+                        left: -5%
+
+                .right
+                    width: 100%
+                    height: 400px
+                    justify-content: flex-start
+                    .title
+                        font-size: 40px
+                        margin-bottom: 10px
+
+                    .text
+                        margin-top: 10px
+
+        #partners
+            .logos
+                .logo
+                    width: 50% 
+
+        #get-in-touch
+            padding: 0px 0 100px 0
+
+            .info
+                margin-right: 0px
+
+                .section-title
+                    height: auto
+                    line-height: 40px
+
+            .section-text
+                margin-top: 10px
+
+            .contact-form
+                width: 344px
+                fieldset
+                    padding: 0px
+            
+        .side-title
+            span
+                padding: 0px
+
+        .modal 
+            .modal-content 
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step2)
+        .noToc
+            #content-get-in-touch
+                display: flex
+                padding: 0 12px
+                margin-top: 70px
+
+        .outline-button
+            width: 90%
+
+        #first-screen
+            #background
+                bottom: 4%
+                height: 900px
+
+            .hero-container 
+                #hero-content
+                    padding-top: 40px
+                    .title
+                        font-size: 40px
+                        line-height: 44px
+
+                    .sub-title
+                        max-width: 288px
+
+                    .info-block
+                        min-width: 100%
+                        display: flex
+                        flex-direction: column
+
+                        .filled-button
+                            width: 90%
+
+                        .outline-button
+                            width: 90%
+                            margin-top: 10px
+
+                .container
+                    min-height: 270px
+                    #header-img1
+                        width: 214px
+                        top: 75%
+
+                    #header-img2
+                        width: 214px
+                        top: 80%
+
+        #third-screen
+            .container
+                padding: 0px
+                margin: 0px
+                justify-content: space-between
+
+                .left-side
+                    .side-title
+                        font-size: 32px
+                        line-height: 41.6px
+
+                    .side-text
+                        margin-top: 30px
+
+                    .outline-button
+                        width: 100% !important
+
+                .right-side
+                    min-height: 250px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    #rectangle
+                        position: static
+                        width: 95%
+
+        #benefits-screen
+            margin-top: 50px
+            .benefits-title
+                font-size: 32px
+                line-height: 41.6px
+                width: 100%
+
+            .benefits-sub-title
+                width: 100%
+
+            .card
+                width: 100%
+                height: 310px
+
+        #dark-section
+            background-size: 1920px
+            margin-top: 30px
+            .header
+                height: 180px
+                margin-top: 20px
+                .title 
+                    font-size: 20px
+                    line-height: 24px
+                    margin-left: 0px
+                
+                .sub-title
+                    margin-left: 0px
+
+            .info-block
+                margin-top: 0px
+                .menu
+                    .expansion-panel
+                        .expansion-header
+                            .expansion-title
+                                font-size: 24px
+                                line-height: 31.2px
+
+                    .panel-title
+                        font-size: 32px
+                        line-height: 41.6px
+                        width: 287px
+                        margin-top: 35px
+
+                    .try-demo-button
+                        width: 100%
+
+        #connectivity
+            margin-top: 50px
+            .container
+                max-height: 800px
+                display: flex
+
+                .left
+                    height: 440px
+                    .connectivity-image
+                        position: static
+                        width: 100%
+                        
+                .right
+                    height: 1050px
+                    .title
+                        font-size: 32px
+                        line-height: 41.6px
+                        min-width: 288px
+
+                    .text
+                        margin-top: 20px
+
+        #partners
+            margin-top: 70px
+            .title
+                font-size: 32px
+                line-height: 41.6px
+            
+            .logos
+                .logo
+                    width: 50%
+                    margin-top: 30px
+                    img
+                        max-width: 127px
+
+            .outline-button
+                width: 100%
+        
+        #get-in-touch
+            padding: 40px 0
+            .section-title
+                font-size: 32px
+                line-height: 41.6px
+                margin-top: 30px
+
+            .contact-form
+                width: 100%
+
+            fieldset
+                width: 100%
+
+            .cdu-button
+                width: 100%
+
+        .modal 
+            .modal-content 
+                width: 90%
+                height: 90%
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span    
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding-left: 15px
+                    padding-right: 15px
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+@keyframes animatetop
+    from
+        top: -300px 
+        opacity: 0
+    to
+        top: 0
+        opacity: 1
