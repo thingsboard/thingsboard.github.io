@@ -83,17 +83,7 @@ Here are some key features of the smart energy dashboards:
 
 The following interactive dashboard represents smart-energy IoT data visualization that you may easily embed into your IoT solution. See dashboard description below.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se1.png" alt="Smart energy monitoring light theme exmple with the pie chart">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se2.png" alt="Smart energy monitoring dark theme exmple without the pie chart">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se3.png" alt="Smart energy monitoring dark theme exmple">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-energy' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>

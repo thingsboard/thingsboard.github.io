@@ -34,17 +34,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 	</section>
 
 	<section id="overflow">
-		<section id="tb-customers">
-			<div class="main-div">
-				<a href="/industries/telecom/#tmobile"><object data="https://img.thingsboard.io/customers/clear/t-mobile.svg" aria-label="T-mobile logo"></object></a>
-				<a href="https://www.bosch.com/"><object data="https://img.thingsboard.io/customers/clear/bosch.svg" aria-label="Bosch logo"></object></a>
-				<a href="https://www.prosegur.com/"><object data="https://img.thingsboard.io/customers/clear/prosegur.svg" aria-label="Prosegur logo"></object></a>
-				<a href="https://www.engie.sk/en/kontakt"><object data="https://img.thingsboard.io/customers/clear/engie.svg" aria-label="Engie logo"></object></a>
-				<a href="/industries/smart-energy/#circutor"><object data="https://img.thingsboard.io/customers/clear/circutor.svg" aria-label="Circutor logo"></object></a>
-				<a href="/industries/telecom/#tektelic"><object data="https://img.thingsboard.io/customers/clear/tektelic.svg" aria-label="Tektelic logo"></object></a>
-			</div>
-		</section>
-
+		{% include customers-logo-section.liquid productTag="ce" %}
 		<section id="intro">
 			<div class="main-div">
 				<h1><a href="docs/getting-started-guides/what-is-thingsboard/">ThingsBoard</a> is an open-source IoT platform for data collection, processing, visualization, and device management</h1>
@@ -169,120 +159,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 				</div>
 				<h3>Real-Time IoT Dashboards</h3>
 				<p>ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time. More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
-				<div class="usecase-carousel owl-carousel owl-theme">
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart energy</h2>
-							<p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-							<a class="read-more-button dash" href="/smart-energy/">Smart energy use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/smart-energy/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Smart energy</div></div><img class="item-image" src="/images/usecases/smart-energy/se4.png" alt="Smart energy dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart farming</h2>
-							<p>Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
-							<a class="read-more-button dash" href="/smart-farming/">Smart farming use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/smart-farming/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Smart farming</div></div><img class="item-image" src="/images/usecases/smart-farming/sf1.png" alt="Smart farming dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Fleet tracking</h2>
-							<p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
-							<a class="read-more-button dash" href="/fleet-tracking/">Fleet tracking use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/fleet-tracking/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Fleet tracking</div></div><img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" alt="Fleet tracking dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart metering</h2>
-							<p>Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users.</p>
-							<a class="read-more-button dash" href="/smart-metering/">Smart metering use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Smart metering</div></div><img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="Smart metering dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Environment Monitoring</h2>
-							<p>Monitor and analyze indoor and outdoor environments using a wide range of sensors. ThingsBoard supports data acquisition using modern connectivity technologies and protocols: NB IoT, LoRaWAN, SigFox, MQTT, CoAP, HTTP, LwM2M, and others.</p>
-							<a class="read-more-button dash" href="/use-cases/environment-monitoring/">Environment Monitoring use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/environment-monitoring/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Environment Monitoring</div></div><img class="item-image" src="/images/usecases/environment-monitoring/em1.png" alt="Environment monitoring dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart Office</h2>
-							<p>Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities.</p>
-							<a class="read-more-button dash" href="/use-cases/smart-office/">Smart Office use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/smart-office/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Smart Office</div></div><img class="item-image" src="/images/usecases/smart-office/so1.png" alt="Smart office dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Water Metering</h2>
-							<p>Enable water consumption data collection, analysis and fraud detection using ThingsBoard. Use interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. Enable alarms over SMS and email and integrate with external billing systems.</p>
-							<a class="read-more-button dash" href="/use-cases/water-metering/">Water Metering use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/water-metering/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Water Metering</div></div><img class="item-image" src="/images/usecases/water-metering/wm4.png" alt="Water metering dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart Retail</h2>
-							<p>Control quality of food storage by monitoring chillers and freezers. Ensure availability of the goods using smart shelves. Ensure safety using motion detection and fire alarms. ThingsBoard provides a solution template to monitor supermarket assets, browse historical data and generate alarms based on user-defined thresholds.</p>
-							<a class="read-more-button dash" href="/use-cases/smart-retail/">Smart Retail use case
-								<i class="fas fa-chevron-right arrow first"></i>
-								<i class="fas fa-chevron-right arrow second"></i>
-								<i class="fas fa-chevron-right arrow third"></i>
-							</a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/smart-retail/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about Smart Retail</div></div><img class="item-image" src="/images/usecases/smart-retail/sr3.png" alt="Smart retail dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-				</div>
+				{% include carousel.liquid collectionMap = 'home-page-carousel' nonActiveItemsVisibility = false overlay = true %}
 			</div>
 			<div class="row justify-content-center">
 				<a href="products/">View all products</a>
@@ -463,8 +340,6 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 
 <script>
 
-	jqueryDefer(initOwl);
-
 	jqueryDefer(function () {
 		vis(function() {
 			if (vis()) {
@@ -554,36 +429,6 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 		var newone = el.clone(true);
 		el.before(newone);
 		el.remove();
-	}
-
-	function initOwl() {
-		var scriptsList = [
-            {src: '/css/owl.carousel.min.css', type: 'css'},
-            {src: '/css/owl.theme.default.min.css', type: 'css'},
-            {src: '/js/owl.carousel.min.js', type: 'script'}
-		];
-		loadNextScript(0, scriptsList,
-				function() {
-					$(document).ready(function(){
-                        $('.owl-carousel').owlCarousel({
-                            items:1,
-                            margin:50,
-                            stagePadding: 0,
-                            autoHeight:true,
-                            loop:true,
-                            autoplay:true,
-                            autoplayTimeout:5000,
-                            autoplayHoverPause:true,
-                            nav:false,
-                            responsive: {
-                                1025: {
-                                    nav:true,
-                                }
-                            }
-						});
-					});
-				}
-		);
 	}
 
 </script>

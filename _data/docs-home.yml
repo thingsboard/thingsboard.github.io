@@ -224,7 +224,7 @@ toc:
       path: /docs/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/

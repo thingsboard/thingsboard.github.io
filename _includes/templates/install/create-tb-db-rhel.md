@@ -1,5 +1,3 @@
-Then, press "Ctrl+D" to return to main user console.
-
 After configuring the password, connect to the database to create thingsboard DB:
 
 ```bash
@@ -11,6 +9,7 @@ Execute create database statement
 
 ```bash
 CREATE DATABASE thingsboard;
-\q
 ```
 {: .copy-code}
+
+Then, press "Ctrl+D" twice to exit PostgreSQL.

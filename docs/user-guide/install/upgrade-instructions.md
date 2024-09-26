@@ -154,6 +154,13 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.6.4
 
 #### Start the service
 
+{% capture cassandra-370 %}
+**In case Cassandra is installed**, ensure that a proper **JAVA_HOME** parameter is set for *cassandra.in.sh* include file. As of 3.7.0 release, latest stable Cassandra version does not support Java 17 yet.
+
+In case action is required, you can refer to *"you will need to install Java..."* section of [**Cassandra installation guide**](/docs/user-guide/install/ubuntu/?ubuntuThingsboardDatabase=hybrid#cassandra-installation). 
+{% endcapture %}
+{% include templates/info-banner.md content=cassandra-370 %}
+
 ```bash
 sudo service thingsboard start
 ```

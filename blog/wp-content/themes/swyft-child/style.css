@@ -4535,6 +4535,10 @@ blockquote p{
 	text-align: center;
 }
 
+.no-popup {
+	cursor: unset;
+}
+
 .gif-parent{
 	cursor: unset;
 }
