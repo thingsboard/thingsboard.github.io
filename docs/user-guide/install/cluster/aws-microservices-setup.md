@@ -33,7 +33,7 @@ rdsEndpointUrl:
 mskSetup:
     0:
         image: /images/install/cloud/aws/msk-1.png
-        title: 'Make sure your Apache Kafka version is 2.6.x.'
+        title: 'Make sure your Apache Kafka version is 3.7.x.'
     1:
         image: /images/install/cloud/aws/msk-2.png
         title: 'Make sure your MSK instance is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the MSK instance in the same VPC. We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet.'
