@@ -36,6 +36,14 @@ delete-client-credentials:
     image: /images/mqtt-broker/user-guide/ui/delete-credentials-2.png
     title: 'Delete mulptiple. Click on the checkboxes and confirm action by clicking on the button "Delete" in the top right corner.'
 
+check-connectivity:
+  0:
+    image: /images/mqtt-broker/user-guide/ui/check-connectivity-1.png
+    title: 'Click on the button "Check connectivity" of the Basic client credentials.'
+  1:
+    image: /images/mqtt-broker/user-guide/ui/check-connectivity-2.png
+    title: 'Select your operating system, install required tools, and copy commands.'
+
 ---
 
 {% include docs/mqtt-broker/user-guide/ui/mqtt-client-credentials.md %}

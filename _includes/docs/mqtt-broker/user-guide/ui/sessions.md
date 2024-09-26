@@ -7,31 +7,31 @@ This encompasses both the existing online sessions, representing clients current
 By accessing this page, users can gain a comprehensive overview of all stored sessions, enabling them to monitor and 
 manage both the active and historical records of client interactions with the broker.
 
-### Session Details
-
 To access the detailed information of the current TBMQ sessions, please follow these steps:
 
 1. Open the 'Sessions' page in the left-hand menu.
-2. Click on the Session table row will open the window that provides the basic information about the session details.
+2. Click on the Session table row to open a window with session details.
+
+In the "Session Details" users can disconnect or remove client session:
+* To **disconnect** a client, click on the "Disconnect client" button. Please note that only `Connected` clients can be disconnected.
+* To **remove** a client session, click on the "Remove session" button. Keep in mind that only `Disconnected` clients can be removed.
+
+{% include images-gallery.html imageCollection="sessions-details" %}
+
+### Session Details
 
 The **Details** tab contains the next information: 
    * **Connected Status** (Connected/Disconnected).
    * **Connected At** time. 
    * **Disconnected At** time.
-   * **Keep Alive** (seconds) - indicates the duration for which the Broker and Client can remain without communication before the session is closed.
+   * **Keep Alive** (seconds) - indicates the duration for which the broker and client can remain without communication before the session is closed.
    * **Node ID**.
-   * **Clean Start**. If the checkbox is set to true, it means that the session is non-persistent. In other words, all information and messages from the previous persistent session will be lost upon disconnection.
+   * **Clean Start** (clean/persistent session) - if true, the broker will discard any available previous session info and messages, and start a new one.
    * **Client ID**.
-   * **Client IP** address.
-   * **Client type** (Device/Application).
-   * **Client Credentials** (TBMQ) that authenticated the session.
-   * **MQTT version**.
-
-Users can control the MQTT session by disconnecting connected clients or by removing disconnected client sessions:
-* To **disconnect** a client, click on the "Disconnect client" button. Please note that only `Connected` clients can be disconnected.
-* To **remove** a client session, click on the "Remove session" button. Keep in mind that only `Disconnected` clients can be removed.
-
-{% include images-gallery.html imageCollection="sessions-details" %}
+   * **Client IP**.
+   * [**Client type**](docs/mqtt-broker/user-guide/mqtt-client-type) (Device/Application).
+   * [**Client Credentials**](docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) that authenticated current session.
+   * **MQTT version** - determines which version of MQTT protocol to be used - MQTT 3.1 (3), MQTT 3.1.1 (4), or MQTT 5.0 (5).
 
 ### Subscriptions
 
