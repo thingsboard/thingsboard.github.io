@@ -8,7 +8,7 @@
 {% endif %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- [UG65 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug65-user-guide-en.pdf){: target="_blank"}
+- [UG65 gateway user manual](https://resource.milesight.com/milesight/iot/document/ug65-user-guide-en.pdf){: target="_blank"}
 - [Network Server account](#configuration)
 '
  %}
