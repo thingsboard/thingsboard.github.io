@@ -91,7 +91,16 @@
         {% else %}
             {% assign contentDirectionClass = 'carousel-item' %}
         {% endif %}
-        <div class="carousel-item-default {{ contentDirectionClass }}">
+
+        {% assign backgroundImage = "unset" %}
+        {% assign backgroundImageClass = "unset" %}
+
+        {% if backgroundImageMode == true %}
+            {% assign backgroundImage = carouselItem[1].src %}
+            {% assign backgroundImageClass = "backgroundImageClass" %}
+        {% endif %}
+
+        <div class="carousel-item-default {{ contentDirectionClass }} {{ backgroundImageClass }}" style="background-image: url({{ backgroundImage }})">
             {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
             <div class="carousel-text">
                 {% if carouselItem[1].title %}
@@ -112,7 +121,7 @@
                 {% endif %}
             </div>
             {% endif %}
-            {% if carouselItem[1].src and backgroundImageMode == nil %}
+            {% if carouselItem[1].src and backgroundImageMode == nil%}
             <div class="carousel-image">
                 {% if carouselItem[1].href %}
                 <a href="{{carouselItem[1].href}}">

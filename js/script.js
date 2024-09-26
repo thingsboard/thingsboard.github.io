@@ -865,10 +865,15 @@ var tb = (function () {
 			loadNextScript(0, scriptsList, function() {
 				$(document).ready(function(){
 
-					function itemsNumberToShow () {
-						const timelineItems = document.querySelectorAll('.timeline-item');
-						const timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
-						return timelineItemsToShow ? timelineItemsToShow : 1
+					function itemsNumberToShow (carousel) {
+						let timelineItemsToShow = 1
+
+						if (carousel.hasClass('timeline')) {
+							const timelineItems = document.querySelectorAll('.timeline-item');
+							timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
+						}
+
+						return timelineItemsToShow
 					}
 
 					if ($('.owl-carousel').hasClass('timeline')) {
@@ -912,59 +917,58 @@ var tb = (function () {
 								}
 							})
 						})
-
 					}
 
-					$('.owl-carousel').owlCarousel({
-						items: itemsNumberToShow(),
-						margin: $('.owl-carousel').hasClass('timeline') ? 0 : 50,
-						stagePadding: 0,
-						autoHeight: false,
-						loop: !$('.owl-carousel').hasClass('timeline'),
-						autoplay: false,
-						autoplayTimeout: 5000,
-						autoplayHoverPause: true,
-						nav: false,
-						responsive: {
-							1025: {
-								nav: true,
-								margin: 100,
-								stagePadding: 50
+					function itemsNumberToShow($carousel) {
+						const timelineItems = $carousel.find('.timeline-item');
+						const timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
+						return timelineItemsToShow ? timelineItemsToShow : 1;
+					}
+					function carouselSettingsConfigure(carousel) {
+
+						var $carousel = $(carousel);
+
+						return {
+							items: itemsNumberToShow($carousel),
+							margin: $carousel.hasClass('timeline') ? 0 : 50,
+							stagePadding: 0,
+							autoHeight: false,
+							loop: !$carousel.hasClass('timeline'),
+							autoplay: false,
+							autoplayTimeout: 5000,
+							autoplayHoverPause: true,
+							nav: false,
+							responsive: {
+								1025: {
+									nav: true,
+									margin: 100,
+									stagePadding: 50
+								}
 							}
 						}
-					});
+					}
+
+					let numberOfCarousels = $('.owl-carousel').length;
+
+					if (numberOfCarousels > 1) {
+						let carouselIdArray = [];
+
+						$('.owl-carousel').each(function (index) {
+							var carouselId = 'carousel-' + (index + 1);
+							carouselIdArray.push(carouselId);
+							$(this).addClass(carouselId);
+						});
+
+						carouselIdArray.forEach(carousel => {
+							$(`.${carousel}`).owlCarousel(carouselSettingsConfigure(`.${carousel}`));
+						});
+					} else {
+						$('.owl-carousel').owlCarousel(carouselSettingsConfigure('.owl-carousel'))
+					}
+
 
 				});
 			});
 		}
 	}
 })();
-
-// $('.owl-carousel').owlCarousel({
-// 	loop:false,
-// 	nav:true,
-// 	items: timelineItemsToShow,
-// 	dots: true
-// })
-// $('.owl-carousel').hasClass('no-autoplay')
-// 	? autoplayEnabled = false
-// 	: autoplayEnabled = true;
-//
-// $('.owl-carousel').owlCarousel({
-// 	items: 1,
-// 	margin: 50,
-// 	stagePadding: 0,
-// 	autoHeight: false,
-// 	loop: true,
-// 	autoplay: autoplayEnabled,
-// 	autoplayTimeout: 5000,
-// 	autoplayHoverPause: true,
-// 	nav: false,
-// 	responsive: {
-// 		1025: {
-// 			nav: true,
-// 			margin: 100,
-// 			stagePadding: 50
-// 		}
-// 	}
-// });

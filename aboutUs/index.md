@@ -41,10 +41,8 @@ notitle: "true"
             {% include carousel.liquid collectionMap = "company-timeline-carousel" timeline = true autoplay = false dotButtonMode = 'disableDots' navMode = "smallArrow" titleHoverScale = "1.6" titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
         </div>
     </div>
-    <div class="company-timeline">
-        <div class="company-wrapper">
-            {% include carousel.liquid collectionMap = "company-values-carousel" titleSize = "96px" descriptionSize = "36px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardBackground = true dotButtonMode = "cube" dotButtonColor = "#FFF" %}
-        </div>
+    <div class="company-values">
+        {% include carousel.liquid collectionMap = "company-values-carousel" titleSize = "96px" descriptionSize = "36px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardBackground = true dotButtonMode = "cube" dotButtonColor = "#FFF" %}
     </div>
 </div>
 
