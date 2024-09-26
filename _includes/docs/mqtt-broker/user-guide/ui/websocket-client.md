@@ -160,8 +160,9 @@ If false, messages have the RETAIN flag set to 0.
   * 2 - do not send retained messages at subscription time.
 * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
 * **Color**. Color is used for easier differentiation of the messages in the messages table. Can be changed.
+* **Subscription Identifier**. A unique identifier (numeric value greater than 0) assigned to a subscription. It is used to track, manage, and reference a specific subscription, ensuring that each subscription can be uniquely distinguished from others.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-subscription-overview.png)
+{% include images-gallery.html imageCollection="ws-subscription-overview" %}
 
 ### Messages
 

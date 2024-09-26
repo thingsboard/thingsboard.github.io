@@ -89,6 +89,11 @@ ws-table-msg:
     image: /images/mqtt-broker/user-guide/ui/ws-table-msg-3.png
     title: 'Properties of the message.'
 
+ws-subscription-overview:
+  0:
+    image: /images/mqtt-broker/user-guide/ui/ws-subscription-overview-1.png
+    title: 'Subscription settings with MQTT 5 options.'
+
 ---
 
 {% include docs/mqtt-broker/user-guide/ui/websocket-client.md %}

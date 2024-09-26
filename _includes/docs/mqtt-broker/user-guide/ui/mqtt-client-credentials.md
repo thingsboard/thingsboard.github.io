@@ -11,6 +11,9 @@ TBMQ supports the following types of client credentials to authenticate client c
   - **Advantages:** Enhanced security compared to the basic client credentials type. With SSL client credentials, both the client and TBMQ can authenticate each other. 
   The SSL client credentials type provides more flexibility in terms of access control, as it allows for more granular access control policies based on the certificate subject name and other attributes.
   - **Disadvantages:** Complexity and increased cost. Setting up and managing SSL client credentials can be more complex and requires more expertise. SSL encryption and decryption require more computing resources.
+- **SCRAM** - advanced security measure using Salted Challenge Response Authentication Mechanism (SCRAM) that provides secure, password-based authentication.
+  - **Advantages:** Higher security level compared to basic authentication. It uses a challenge-response process to exchange hashed credentials, ensuring the password is never sent in plain text.
+  - **Disadvantages:** Requires additional computational resources to generate and validate the salted password hashes.
 
 Before using any of the client credential types mentioned above, please ensure that they are enabled in TBMQ [configuration file](/docs/mqtt-broker/install/config/).
 - **Basic Auth.** To enable MQTT Basic Credentials, set `SECURITY_MQTT_BASIC_ENABLED` to `true`.
@@ -95,6 +98,23 @@ Please consider the following examples:
 
 ![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-2.png)
 
+#### SCRAM
+
+**SCRAM** (Salted Challenge Response Authentication Mechanism) is an enhanced authentication method for MQTT 5 clients, based on **username and password**.
+
+##### Authentication
+
+* **Username** - a unique identifier for the client, used in conjunction with the password in authentication.
+* **Password** - a secret string known only to the user and the server. Password is salted and hashed before being stored and used in authentication.
+
+##### Authorization Rules
+
+Authorization rule patterns allow controlling what topics clients can publish/subscribe to based on **regular expression syntax**:
+
+* **Allowing particular topic(s)** - the rule `country/.*` will allow clients to publish/subscribe messages only to topics that start with `country/`.
+* **Allowing any topic** - the rule `.*` (default) will allow clients to publish/subscribe messages to any topic.
+* **Forbidding all topics** - if the rule is `empty`, the client is forbidden to publish/subscribe to any topic.
+
 ### Delete Client Credentials
 
 Broker administrators can remove client credentials from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
@@ -107,3 +127,26 @@ There are a few ways of deleting client credentials:
    * By clicking on the checkbox you can select multiple items. Then click the _Delete_ icon in the top right corner and cofirm action.
 
 {% include images-gallery.html imageCollection="delete-client-credentials" %}
+
+### Check connectivity
+
+“Check Connectivity” is a useful feature that automatically generates commands to **subscribe to a topic** and **publish a message**.
+This feature utilizes the user's host, port, and client credentials to generate the necessary commands. 
+
+It is available only for [Basic Credentials](docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#mqtt-basic-credentials).
+
+To open a window with commands, please follow the next steps:
+1. Click “Check connectivity” button to open the corresponding window.
+2. In the opened window, select your operating system.
+3. Install the necessary client tools using the command from the guide.
+4. Copy and run commands.
+
+{% include images-gallery.html imageCollection="check-connectivity" %}
+
+If the client credentials include a password, please ensure you replace "$YOUR_PASSWORD" with the actual password. 
+Below are examples of the generated commands for the credentials with password:
+
+```bash
+mosquitto_sub -d -q 1 -h localhost -p 1883 -t tbmq/demo/+ -i "tbmq_eJzCIh6r" -u "tbmq_un_VxUVPaF8" -P "$YOUR_PASSWORD" -v
+mosquitto_pub -d -q 1 -h localhost -p 1883 -t tbmq/demo/topic -i "tbmq_eJzCIh6r" -u "tbmq_un_VxUVPaF8" -P "$YOUR_PASSWORD" -m 'Hello World'
+```
