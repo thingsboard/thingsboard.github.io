@@ -58,7 +58,7 @@ mskConnectionParams:
 redisSetup:
     0:
         image: /images/install/cloud/aws/redis-single-1.png
-        title: 'Specify Redis Engine version 6.x and node type with at least 1 GB of RAM.'
+        title: 'Specify Redis Engine version 7.x and node type with at least 1 GB of RAM.'
     1:
         image: /images/install/cloud/aws/redis-single-2.png
         title: 'Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
