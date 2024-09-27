@@ -61,7 +61,9 @@ Configuration:
 - Source attribute key: **temperature**
 - Target key: **roomTemperature**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
+
+![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
 
 ##### Add transformation node: script 
 Add transformation **script** node and connect it to the **related entity data** node.
