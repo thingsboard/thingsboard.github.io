@@ -924,6 +924,15 @@ var tb = (function () {
 						const timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
 						return timelineItemsToShow ? timelineItemsToShow : 1;
 					}
+
+					function calculateCarouselHeight(carousel) {
+
+						const $image = $(carousel).closest('.carousel-item-default').find('img');
+						const imageHeight = $image[0].naturalHeight;
+
+						$(carousel).closest('.carousel-item-default').css('height', imageHeight + 'px');
+
+					}
 					function carouselSettingsConfigure(carousel) {
 
 						var $carousel = $(carousel);
@@ -948,24 +957,13 @@ var tb = (function () {
 						}
 					}
 
-					let numberOfCarousels = $('.owl-carousel').length;
+					const numberOfCarousels = $('.owl-carousel').length;
 
-					if (numberOfCarousels > 1) {
-						let carouselIdArray = [];
-
-						$('.owl-carousel').each(function (index) {
-							var carouselId = 'carousel-' + (index + 1);
-							carouselIdArray.push(carouselId);
-							$(this).addClass(carouselId);
-						});
-
-						carouselIdArray.forEach(carousel => {
-							$(`.${carousel}`).owlCarousel(carouselSettingsConfigure(`.${carousel}`));
-						});
-					} else {
-						$('.owl-carousel').owlCarousel(carouselSettingsConfigure('.owl-carousel'))
-					}
-
+					$('.owl-carousel').each(function (index) {
+						var carouselClass = numberOfCarousels > 1 ? 'carousel-' + (index + 1) : 'owl-carousel';
+						$(this).addClass(carouselClass);
+						$(this).owlCarousel(carouselSettingsConfigure(`.${carouselClass}`));
+					});
 
 				});
 			});

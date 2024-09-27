@@ -42,7 +42,7 @@ notitle: "true"
         </div>
     </div>
     <div class="company-values">
-        {% include carousel.liquid collectionMap = "company-values-carousel" titleSize = "96px" descriptionSize = "36px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardBackground = true dotButtonMode = "cube" dotButtonColor = "#FFF" %}
+        {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" titleSize = "96px" descriptionSize = "36px" titleColor = "red" descriptionColor = "red" backgroundImageMode = true thingsboardBackground = true dotButtonMode = "cube" dotButtonColor = "#FFF" %}
     </div>
 </div>
 

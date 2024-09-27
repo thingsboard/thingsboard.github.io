@@ -79,8 +79,6 @@
       &:hover
         .overlay
           opacity: 1
-    backgroundImageClass
-      background-size: cover
   .carousel-item
     display: block
     .carousel-text
@@ -111,6 +109,11 @@
     gap: 35px
     .carousel-text
       gap: 25px
+  .carousel-item-image-background
+    .carousel-image
+      position: absolute
+      top: 0
+      z-index: -1
   .owl-stage-outer
     position: relative
     .owl-stage
