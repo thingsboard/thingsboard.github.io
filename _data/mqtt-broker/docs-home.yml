@@ -17,7 +17,6 @@ toc:
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
     - title: MQTT over WebSocket
       path: /docs/mqtt-broker/user-guide/mqtt-over-ws/
-      new: true
     - title: Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/shared-subscriptions/
     - title: Retained Messages
@@ -37,15 +36,23 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/monitoring/
     - title: Sessions
       path: /docs/mqtt-broker/user-guide/ui/sessions/
+    - title: Subscriptions
+      path: /docs/mqtt-broker/user-guide/ui/subscriptions/
+      new: true
+    - title: Unauthorized Clients
+      path: /docs/mqtt-broker/user-guide/ui/unauthorized-clients/
+      new: true
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
     - title: WebSocket Client
       path: /docs/mqtt-broker/user-guide/ui/websocket-client/
-      new: true
     - title: Application Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/ui/shared-subscriptions/
     - title: Users
       path: /docs/mqtt-broker/user-guide/ui/users/
+    - title: Settings
+      path: /docs/mqtt-broker/user-guide/ui/settings/
+      new: true
     - title: Mail Server
       path: /docs/mqtt-broker/user-guide/ui/mail-server/
 - title: Troubleshooting

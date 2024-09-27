@@ -53,13 +53,7 @@ MQTT Basic authentication is based on different combinations of the client ID, u
 - **Client ID and password** - verifies if the connecting client has both specified clientId and password.
 - **Client ID, username and password** - verifies if the connecting client has specified clientId, username, and password.
 
-##### Authorization Rules
-
-Authorization rule patterns allow controlling what topics clients can publish/subscribe to based on **regular expression syntax**:
-
-* **Allowing particular topic(s)** - the rule `country/.*` will allow clients to publish/subscribe messages only to topics that start with `country/`.
-* **Allowing any topic** - the rule `.*` (default) will allow clients to publish/subscribe messages to any topic.
-* **Forbidding all topics** - if the rule is `empty`, the client is forbidden to publish/subscribe to any topic.
+{% include templates/mqtt-broker/authorization-rules.md %}
 
 ##### Changing Password for MQTT Basic Credentials
 
@@ -107,13 +101,7 @@ Please consider the following examples:
 * **Username** - a unique identifier for the client, used in conjunction with the password in authentication.
 * **Password** - a secret string known only to the user and the server. Password is salted and hashed before being stored and used in authentication.
 
-##### Authorization Rules
-
-Authorization rule patterns allow controlling what topics clients can publish/subscribe to based on **regular expression syntax**:
-
-* **Allowing particular topic(s)** - the rule `country/.*` will allow clients to publish/subscribe messages only to topics that start with `country/`.
-* **Allowing any topic** - the rule `.*` (default) will allow clients to publish/subscribe messages to any topic.
-* **Forbidding all topics** - if the rule is `empty`, the client is forbidden to publish/subscribe to any topic.
+{% include templates/mqtt-broker/authorization-rules.md %}
 
 ### Delete Client Credentials
 
@@ -133,7 +121,7 @@ There are a few ways of deleting client credentials:
 “Check Connectivity” is a useful feature that automatically generates commands to **subscribe to a topic** and **publish a message**.
 This feature utilizes the user's host, port, and client credentials to generate the necessary commands. 
 
-It is available only for [Basic Credentials](docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#mqtt-basic-credentials).
+It is available only for [Basic](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#mqtt-basic-credentials) credentials.
 
 To open a window with commands, please follow the next steps:
 1. Click “Check connectivity” button to open the corresponding window.

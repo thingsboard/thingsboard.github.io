@@ -36,16 +36,7 @@ The **Details** tab contains the next information:
 ### Subscriptions
 
 On the **Subscriptions** tab users can view various details about the subscriptions associated with a session, such as:
-* **Topic filter**. The MQTT topic filter.
-* **QoS**. Quality of Service of the subscription.
-* Subscription options (for MQTT 5.0 only)
-  * **Retain as Published**. When true, messages forwarded using this subscription keep the RETAIN flag they were published with.
-  * **Retain Handling** This option determines how the broker should handle retained messages when the client subscribes to a topic.
-    * 0 - send retained messages at subscription time;
-    * 1 - send retained messages at subscription time if the subscription does not already exist;
-    * 2 - do not send retained messages at subscription time.
-  * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
-  * **Subscription Identifier**. It is a unique numerical value that assigned to subscription, allowing the client to distinguish messages from different subscriptions.
+{% include templates/mqtt-broker/subscription-options.md %}
 
 While session details are generally read-only, users can effectively manage their subscriptions within the session, making additions, removals, and edits as needed. 
 Here are the available actions for managing subscriptions:

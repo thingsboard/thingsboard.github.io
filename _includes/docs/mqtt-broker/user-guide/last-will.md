@@ -119,9 +119,8 @@ Now let's add another connection, **Security Hub**, which will receive the Last 
 #### Step 3. Trigger an ungraceful disconnection
 To publish the Last Will message, the connection between the client and the broker must be terminated ungracefully. To do this in TBMQ, follow these steps:
 
-1. Open a new browser tab and navigate to the _Sessions_ page.
-2. Find the session corresponding to the client ID of the WebSocket connection named _Security Camera_.
-3. Click _Disconnect client_ to forcefully terminate the connection.
-4. Check the _Messages_ table of _Security Hub_. You should see the received Last Will message.
+1. Click on _Select Connection_ icon and open the _Security Camera_ session details window.
+2. Click _Disconnect client_ to forcefully terminate the connection.
+3. In the _Messages_ table of the WebSocket client _Security Hub_ you should see the received Last Will message.
 
 {% include images-gallery.html imageCollection="ws-connection-ungraceful-disconnect" %}
