@@ -13,12 +13,10 @@ description: TBMQ architecture
 This article explains the architectural structure of TBMQ, breaking down how data moves between different components and outlining the core architectural choices.
 TBMQ is designed with great care to implement the following attributes:
 
-* **scalability**: it is a horizontally scalable platform constructed using cutting-edge open-source technologies;
-* **fault tolerance**: no single point of failure, each broker (node) within the cluster is identical in terms of functionality;
-* **robustness and efficiency**: a single server node can manage millions of clients and process hundreds of thousands of messages per second.
-  Remarkably, the TBMQ cluster can handle a huge volume of at least [100M clients and 3M incoming messages per second](/docs/mqtt-broker/reference/100m-connections-performance-test/);
-* **durability**: making sure data remains accurate and consistent is extremely important.
-  TBMQ relies on Kafka queue implementation to provide exceptionally high message durability, ensuring that data is never lost.
+* **Scalability**: it is a horizontally scalable platform constructed using cutting-edge open-source technologies;
+* **Fault tolerance**: no single point of failure; each broker (node) within the cluster is identical in terms of functionality;
+* **Robustness and efficiency**: can manage millions of clients and process millions of messages per second;
+* **Durability**: provides high message durability, ensuring that data is never lost.
 
 #### Architecture diagram
 
@@ -28,51 +26,48 @@ The following diagram shows the pivotal parts of the broker and the route of mes
 
 ### Motivation
 
-Within the ThingsBoard company, our extensive expertise and clear understanding of diverse IoT requirements and use cases have 
-helped us to identify two main scenarios in which our clients develop their solutions. 
-In the first scenario, numerous devices are generating a substantial volume of messages that are consumed by specific applications, resulting in a fan-in pattern. 
-On the other hand, the second scenario involves numerous devices subscribing to specific updates or notifications.
-This leads to a few incoming requests that cause a high volume of outgoing data. This case is known as a fan-out pattern. 
+At ThingsBoard, we've gained a lot of experience in building scalable IoT applications, which has helped us identify two main scenarios for MQTT-based solutions. 
+In the first scenario, numerous devices generate a large volume of messages that are consumed by specific applications, resulting in a fan-in pattern. 
+Normally, a few applications are set up to handle these lots of incoming data. 
+They must be persistent clients with a Quality of Service (QoS) level set to 1 or 2, capable of retaining all the data even when they're temporarily offline due to restarts or upgrades. 
+This ensures applications don't miss any single message. On the other hand, the second scenario involves numerous devices subscribing to specific updates or notifications that must be delivered. 
+This leads to a few incoming requests that cause a high volume of outgoing data. 
+This case is known as a fan-out pattern. 
 Acknowledging these scenarios, we intentionally designed TBMQ to be exceptionally well-suited for both.
 
-Our design principles focused on ensuring the broker's fault tolerance and high availability.
-We wanted to implement a reliable mechanism for message processing, capable of handling any potential failures that may arise among the participants in the data flow.
-Additionally, we prioritized supporting distributed and partitioned processing, allowing for effortless horizontal scalability as our operations grow.
+Our design principles focused on ensuring the broker’s fault tolerance and high availability. 
+Thus, we deliberately avoided reliance on master or coordinated processes. 
+We ensured the same functionality across all nodes within the cluster.
 
-We wanted our broker to support high-throughput processing, guaranteeing low-latency delivery of messages to clients,
-and providing the ability to withstand peak loads from publishing clients while ensuring backup storage for offline clients.
+We prioritized supporting distributed processing, allowing for effortless horizontal scalability as our operations grow. 
+We wanted our broker to support high-throughput and guarantee low-latency delivery of messages to clients. 
+Ensuring data durability and replication was crucial in our design. 
+We aimed for a system where once the broker acknowledges receiving a message, it remains safe and won’t be lost.
 
-Ensuring data durability and replication was crucial in our design. We aimed for a system where once the broker acknowledges receiving a message, it remains safe and won't be lost.
-Even if a QoS 0 message is delivered to the broker but hasn't yet reached the subscriber and the broker restarts, 
-that message is already saved and will be delivered to the subscriber once the broker is operational again.
-
-We did not want to reinvent the wheel to fulfill all of our requirements for the persistence and processing layer.
-Instead, we wanted to achieve all of those by choosing the world's leading platform.
-Considering these factors, we made a strategic decision regarding the choice of the underlying system
-that could seamlessly integrate within the MQTT layer.
-
-### How does TBMQ work in a nutshell
-
-To ensure the fulfillment of the above requirements and prevent message loss in the case of client or broker failures,
+To ensure the fulfillment of the above requirements and prevent message loss in the case of clients or some of the broker instances failures, 
 TBMQ uses the powerful capabilities of [Kafka](https://kafka.apache.org/) as its underlying infrastructure.
 
-Kafka plays a crucial role in various stages of the MQTT workflow. Notably, client sessions and subscriptions are stored within dedicated [Kafka topics](#kafka-topics). 
-By utilizing these Kafka topics, all broker nodes can readily access the most up-to-date states of client sessions and subscriptions, 
-allowing them to maintain local copies for efficient message processing and delivery. 
-In the case of a client losing connection to a specific broker node, other nodes seamlessly continue operations based on the latest state. 
+### How does TBMQ work in a nutshell?
+
+Kafka plays a crucial role in various stages of the MQTT message processing. 
+All unprocessed published messages, client sessions, and subscriptions are stored within dedicated Kafka topics. 
+A comprehensive list of Kafka topics used within TBMQ is available [here](#kafka-topics). 
+All broker nodes can readily access the most up-to-date status of client sessions and subscriptions by utilizing these topics. 
+They maintain local copies of sessions and subscriptions for efficient message processing and delivery. 
+When a client loses connection to a specific broker node, other nodes can seamlessly continue operations based on the latest state. 
 Additionally, newly added broker nodes to the cluster get this vital information upon their activation.
 
 Client subscriptions hold significant importance within the MQTT publish/subscribe pattern. 
-To optimize performance, TBMQ employs the [Trie](#subscriptions-trie) data structure, 
+TBMQ employs the [Trie](#subscriptions-trie) data structure to optimize performance, 
 enabling efficient persistence of client subscriptions in memory and facilitating swift access to relevant topic patterns.
 
-Upon a publisher client sending a _PUBLISH_ message, it is stored in the initial Kafka topic called **tbmq.msg.all**. 
-Once Kafka acknowledges the message's persistence, the broker promptly responds to the publisher with either a _PUBACK_/_PUBREC_ message or no response at all, 
-depending on the chosen Quality of Service (QoS) level.
+Upon a publisher client sending a _PUBLISH_ message, it is stored in the initial Kafka topic, **tbmq.msg.all**. 
+Once Kafka acknowledges the message’s persistence, 
+the broker promptly responds to the publisher with either a _PUBACK/PUBREC_ message or no response at all, depending on the chosen QoS level.
 
-Subsequently, separate threads, functioning as Kafka consumers, retrieve messages from the mentioned Kafka topic and utilize the 
-Subscription Trie data structure to identify the intended recipients. 
-Depending on the [client type](/docs/mqtt-broker/user-guide/mqtt-client-type/) (**DEVICE** or **APPLICATION**) and persistence options described below, 
+Subsequently, separate threads, functioning as Kafka consumers, retrieve messages from the mentioned Kafka topic and 
+utilize the Subscription Trie data structure to identify the intended recipients. 
+Depending on the client type (**DEVICE** or **APPLICATION**) and the persistence options described below, 
 the broker either redirects the message to another specific Kafka topic or directly delivers it to the recipient.
 
 #### Non-persistent client
@@ -102,40 +97,42 @@ For **MQTT v5 clients**:
 * `sessionExpiryInterval` is greater than _0_ (regardless of the `clean_start` flag).
 * `clean_start` flag is set to _false_ and `sessionExpiryInterval` is set to _0_ or not specified.
 
-#### Client type
+Building on our knowledge within the IoT ecosystem and the successful implementation of numerous IoT use cases, we have classified MQTT clients into two distinct categories:
 
-Building on our vast knowledge and expertise within the IoT ecosystem and the successful implementation of numerous IoT use cases, we have classified MQTT clients into two distinct categories:
+* The _DEVICE_ clients primarily engaged in publishing a significant volume of messages while subscribing to a limited number of topics with relatively low message rates. 
+  These clients are typically associated with IoT devices or sensors that frequently transmit data to the broker.
 
-* The **DEVICE** clients primarily engaged in publishing a significant volume of messages while subscribing to a limited number of topics with relatively low message rates.
-  These clients are typically associated with IoT devices or sensors that frequently transmit data to TBMQ.
-
-* The **APPLICATION** clients specialize in subscribing to topics with high message rates.
-  They often require messages to be persisted when the client is offline with later delivery, ensuring the availability of crucial data.
-  APPLICATION clients are commonly utilized for real-time analytics, data processing, or other application-level functionalities.
+* The _APPLICATION_ clients specialize in subscribing to topics with high message rates. 
+  They often require messages to be persisted when the client is offline with later delivery, ensuring the availability of crucial data. 
+  These clients are commonly used for real-time analytics, data processing, or other application-level functionalities.
 
 Consequently, we made a strategic decision to optimize performance by separating the processing flow for these two types of clients.
 
-##### DEVICE client
+##### Persistent Device client
 
 ![image](/images/mqtt-broker/architecture/tbmq-persistent-dev.png)
 
-For **DEVICE** persistent clients, we use the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
+For Device persistent clients, we use the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
 Dedicated threads, functioning as Kafka consumers, retrieve these messages and store them in a [PostgreSQL](#postgresql-database) database utilized for persistence storage. 
-This approach is particularly suitable for DEVICE clients, as they typically do not require extensive message reception and may not be concerned about message loss during offline periods. 
-Using this approach helps us smoothly recover stored messages when a DEVICE client reconnects. 
-At the same time, it ensures good performance for scenarios involving a low incoming message rate.
+This approach is particularly suitable for Device clients, as they typically do not require extensive message reception. 
+This approach helps us recover stored messages smoothly when a client reconnects. At the same time, it ensures good performance for scenarios involving a low incoming message rate.
 
-##### APPLICATION client
+We expect persistent Device clients to receive no more than 5K messages/second overall due to PostgreSQL limitations. We plan to add support for Redis to optimize persistent storage for Device clients.
+
+##### Persistent Application client
 
 ![image](/images/mqtt-broker/architecture/tbmq-app.png)
 
-For **APPLICATION** persistent clients, we choose a distinct approach. 
-A dedicated Kafka topic is created for each client and every message that is extracted from the **tbmq.msg.all** topic and is intended for a specific APPLICATION is stored in the corresponding Kafka topic. 
-Subsequently, a separate thread (Kafka consumer) is assigned to each APPLICATION. These threads retrieve messages from the corresponding Kafka topics and deliver them to the respective clients. 
-This approach significantly improves performance by ensuring efficient message delivery.
+The number of Application clients corresponds to the number of Kafka topics used. 
+The latest version of Kafka can handle millions of topics, making this design suitable even for the largest enterprise use cases.
 
-By utilizing this method, we can provide a guarantee that no messages are lost, even if a client experiences temporary issues. 
-Messages stored within Kafka topics inherently stay available all the time due to their persistence.
+Any message read from the **tbmq.msg.all** topic meant for a specific Application client is then stored in the corresponding Kafka topic. 
+A separate thread (Kafka consumer) is assigned to each Application. 
+These threads retrieve messages from the corresponding Kafka topics and deliver them to the respective clients. 
+This approach significantly improves performance by ensuring efficient message delivery.
+Additionally, the nature of the Kafka consumer group makes the [MQTT 5 shared subscription](/docs/mqtt-broker/user-guide/shared-subscriptions/#application-client-type) feature extremely efficient for Application clients.
+
+Application clients can handle a large volume of received messages, reaching millions per second.
 
 It is important to note that APPLICATION clients can only be classified as [persistent](#persistent-client).
 
@@ -147,7 +144,7 @@ You can refer to the following environment variables to adjust these settings:
 
 For more detailed information, please refer to the configurations provided in the following [documentation](/docs/mqtt-broker/install/config/).
 
-#### Kafka Topics
+#### Kafka topics
 
 Below is a comprehensive list of Kafka topics used within TBMQ, along with their respective descriptions.
 
@@ -166,9 +163,15 @@ Below is a comprehensive list of Kafka topics used within TBMQ, along with their
 * **tbmq.sys.app.removed** - topic for events to process removal of APPLICATION client topic. Used when the client changes its type from APPLICATION to DEVICE.
 * **tbmq.sys.historical.data** - topic for historical data statistics (e.g., number of incoming messages, outgoing messages, etc.) published from each broker node in the cluster to calculate the total values per cluster.
 
+#### Redis
+
+Prior to TBMQ v2.0 Redis was mainly used as cache for cluster mode deployment to speed up certain queries like 
+getting MQTT client credentials from PostgreSQL DB to authenticate the connecting clients.
+
 #### PostgreSQL database
 
-TBMQ uses a [PostgreSQL](https://www.postgresql.org/) database to store different entities such as users, user credentials, MQTT client credentials, and published messages for DEVICES, among others.
+TBMQ uses a [PostgreSQL](https://www.postgresql.org/) database to store different entities such as users, user credentials, MQTT client credentials, statistics, 
+WebSocket connections and WebSocket subscriptions entities used in WebSocket client, and others.
 
 It is important to acknowledge that Postgres, being an SQL database, has certain limitations regarding the speed of message persistence, 
 particularly in terms of the number of writes per second it can handle. It should be noted that Postgres cannot match the performance capabilities of Kafka in this regard. 
@@ -193,12 +196,22 @@ This GUI provides several key features to facilitate broker management:
 * Shared Subscription Management: the GUI includes tools for managing shared subscriptions. 
   Administrators can create and manage Application shared subscription entities, facilitating efficient message distribution to multiple subscribed clients of type APPLICATION.
 * Retained Message Management: the GUI allows administrators to manage retained messages, which are messages that are saved by the broker and delivered to new subscribers.
+* WebSocket Client: The GUI provides support for WebSocket client, allowing administrators to establish, monitor, and manage WebSocket connections.
+  This feature allows users to interact with TBMQ via MQTT over WebSocket, enabling them to efficiently debug and test their connections and message flows in real-time.
 
 In addition to these administrative features, the GUI provides monitoring dashboards that offer comprehensive statistics and insights into the broker's performance. 
 These dashboards provide key metrics and visualizations to facilitate real-time monitoring of essential broker statistics, 
 enabling administrators to gain a better understanding of the system's health and performance.
 
 The combination of these features makes the GUI an invaluable tool for managing, configuring, and monitoring TBMQ in a user-friendly and efficient manner.
+
+#### Netty
+
+Add info about the Netty here.
+
+#### Message dispatcher service
+
+...
 
 #### Subscriptions Trie
 
