@@ -1,3 +1,24 @@
+$modal-z-index: 13000
+$step1: 360px
+$step2: 671px
+$step3: 999px
+$step4: 1279px
+$step5: 1439px
+$step6: 1919px
+$verticalStep1: 450px
+$modal-background-color: rgba(0, 0, 0, 0.4)
+$modal-content-background-color: #fefefe
+$modal-content-border: 1px solid #888
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
+$form-element-label-color: rgba(0, 0, 0, 0.54)
+$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
+$button-background-color: #2A7DEC
+$font-style-normal: normal
+@mixin box-shadow 
+    box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+
 #smart-farming
     position: relative
     .smart-farming-content
@@ -111,7 +132,7 @@
                 margin-top: 20px
                 border-radius: 20px
                 background: #FFF
-                box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+                @include box-shadow
                 .block-text
                     color: black
                     width: 660px
@@ -128,7 +149,7 @@
             display: flex
             border-radius: 20px
             background: #FFF
-            box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+            @include box-shadow
             .rec55
                 position: absolute
                 top: -10%
@@ -245,7 +266,7 @@
                 justify-content: space-between
                 border-radius: 20px
                 background: #FFF
-                box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+                @include box-shadow
                 .smart-farm-cycle-text
                     width: 720px
                 .smart-farm-cycle-num 
@@ -275,7 +296,7 @@
                     background: #FFF
                     text-align: left
                     position: relative
-                    box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+                    @include box-shadow
                     p 
                         margin-top: 0px
                     .smart-farm-pros-item-container
@@ -302,7 +323,7 @@
                     margin-top: 20px
                     display: flex
                     justify-content: space-between
-                    box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+                    @include box-shadow
                     .smart-farm-solutions-text
                         max-width: 720px
                     .smart-farm-solutions-img
@@ -367,7 +388,7 @@
                     padding: 40px
                     border-radius: 20px
                     background: #FFF
-                    box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+                    @include box-shadow
                     img 
                         width: 60px
                         height: 60px
@@ -873,24 +894,6 @@
                         height: auto
                         max-width:  320px
                 
-$modal-z-index: 13000
-$step1: 360px
-$step2: 671px
-$step3: 999px
-$step4: 1279px
-$step5: 1439px
-$step6: 1919px
-$verticalStep1: 450px
-$modal-background-color: rgba(0, 0, 0, 0.4)
-$modal-content-background-color: #fefefe
-$modal-content-border: 1px solid #888
-$title-font: 600 16px/30px Popins
-$sub-title-font: 600 30px/44px Popins
-$sub-sub-title-font: 400 16px/28px Popins
-$form-element-label-color: rgba(0, 0, 0, 0.54)
-$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
-$button-background-color: #2A7DEC
-$font-style-normal: normal
 .modal 
     display: none
     position: fixed
