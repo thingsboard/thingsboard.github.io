@@ -53,7 +53,7 @@ The following picture summarizes the connection of ESP32 and HTU21D:
 
 ### Raspberry Pi
 
-In this setup we use Raspberry Pi 2 Model B V1.1 with [Raspbian GNU/Linux 9.8 (stretch)](https://www.raspberrypi.com/downloads/raspbian/) installed on it. Raspbian is a free operating system based on Debian optimized for the Raspberry Pi hardware. This model does't support Bluetooth, so it needs a usb dongle. We use Grand-X BT40G.
+In this setup we use Raspberry Pi 2 Model B V1.1 with [Raspbian GNU/Linux 9.8 (stretch)](https://www.raspberrypi.com/software/) installed on it. Raspbian is a free operating system based on Debian optimized for the Raspberry Pi hardware. This model does't support Bluetooth, so it needs a usb dongle. We use Grand-X BT40G.
 Make sure your dongle is recognized by system. You can check it with the following command:
 ```
 $> lsusb

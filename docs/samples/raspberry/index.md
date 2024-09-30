@@ -24,5 +24,4 @@ However, you are able to use other programming languages and OS.
 
  - [Official website](https://www.raspberrypi.org)
  - [GPIO mapping](https://en.wikipedia.org/wiki/Raspberry_Pi#General_purpose_input-output_.28GPIO.29_connector)
- - [GPIO guide for beginners](https://www.raspberrypi.com/documentation/usage/gpio/)
  - [GPIO guide for beginners](https://www.raspberrypi.com/documentation/computers/os.html)
