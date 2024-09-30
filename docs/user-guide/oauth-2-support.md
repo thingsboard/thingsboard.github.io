@@ -3,6 +3,25 @@ layout: docwithnav
 title: OAuth 2.0 Support
 description: OAuth 2.0 Support
 
+create-credentials-for-oauth-1:
+    0:
+        image: /images/user-guide/oauth-2-support/create-credentials-for-oauth-1
+        title: ''
+    1:
+        image: /images/user-guide/oauth-2-support/create-credentials-for-oauth-1
+        title: ''
+    2:
+        image: /images/user-guide/oauth-2-support/create-credentials-for-oauth-1
+        title: ''
+    3:
+        image: /images/user-guide/oauth-2-support/create-credentials-for-oauth-1
+        title: ''
+    4:
+        image: /images/user-guide/oauth-2-support/create-credentials-for-oauth-1
+        title: ''
+
+
+
 step1:
     0:
         image: /images/user-guide/oauth-2-support/1-create-credentials.png
