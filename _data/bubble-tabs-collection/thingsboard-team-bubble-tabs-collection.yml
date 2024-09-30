@@ -1,0 +1,112 @@
+Leadership:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/leadership/andrii-shvaika.png"
+    alt: ""
+    title: "Andrii Shvaika"
+    description: "CEO, Co-founder"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/leadership/igor-kulikov.png"
+    alt: ""
+    title: "Igor Kulikov"
+    description: "CTO, Co-founder"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/leadership/alex-doan.png"
+    alt: ""
+    title: "Alex Doan"
+    description: "VP Sales Marketing"
+  3:
+    src: "/images/aboutUsImages/thingsboard-team-photos/leadership/volodymyr-babak.png"
+    alt: ""
+    title: "Volodymyr Babak"
+    description: "VP EDGE"
+  4:
+    src: "/images/aboutUsImages/thingsboard-team-photos/leadership/vitaliy-paromskiy.png"
+    alt: ""
+    title: "Vitaliy Paromskiy"
+    description: "Chief solutions officer (CSO)"
+  5:
+    src: "/images/aboutUsImages/thingsboard-team-photos/leadership/artur-ishkhanishvili.png"
+    alt: ""
+    title: "Artur Ishkhanishvili"
+    description: "Business Development Executive"
+Product team:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/serhii-matviienko.png"
+    alt: ""
+    title: "Serhii Matviienko"
+    description: "Site Reliability Engineer"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/yevheniia-havrysh.png"
+    alt: ""
+    title: "Yevheniia Havrysh"
+    description: "QA Team Lead & Art Director"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/viacheslav-klimov.png"
+    alt: ""
+    title: "Viacheslav Klimov"
+    description: "Java Team Lead"
+  3:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/vlad-prykhodko.png"
+    alt: ""
+    title: "Vlad Prykhodko"
+    description: "Frontend Team Lead"
+  4:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/yevhen-bondarenko.png"
+    alt: ""
+    title: "Yevhen Bondarenko"
+    description: "Java Engineer"
+  5:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/daria-shevchenko.png"
+    alt: ""
+    title: "Daria Shevchenko"
+    description: "Java Engineer"
+  6:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/dmytro-skarzhynets.png"
+    alt: ""
+    title: "Dmytro Skarzhynets"
+    description: "Java Engineer"
+  7:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/artem-dzhereleiko.png"
+    alt: ""
+    title: "Artem Dzhereleiko"
+    description: "Frontend Engineer"
+  8:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/ruslan-vasylkiv.png"
+    alt: ""
+    title: "Ruslan Vasylkiv"
+    description: "Frontend Engineer"
+  9:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/sergii-tarnavskiy.png"
+    alt: ""
+    title: "Sergii Tarnavskiy"
+    description: "Frontend Engineer"
+  10:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/kateryna-chantsova.png"
+    alt: ""
+    title: "Kateryna Chantsova"
+    description: "Frontend Engineer"
+  11:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/oleg-khalkov.png"
+    alt: ""
+    title: "Oleg Khalkov"
+    description: "QA Engineer"
+  12:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/maryna-shulzhenko.png"
+    alt: ""
+    title: "Maryna Shulzhenko"
+    description: "QA Engineer"
+  13:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/glib-petrukh.png"
+    alt: ""
+    title: "Glib Petrukh"
+    description: "QA Engineer"
+  14:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/kateryna-chantsova.png"
+    alt: ""
+    title: "Kateryna Chantsova"
+    description: "Frontend Engineer"
+  15:
+    src: "/images/aboutUsImages/thingsboard-team-photos/product-team/kateryna-chantsova.png"
+    alt: ""
+    title: "Kateryna Chantsova"
+    description: "Frontend Engineer"

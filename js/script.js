@@ -926,8 +926,15 @@ var tb = (function () {
 					}
 
 					function carouselMargin($carousel) {
-						const carouselMargin = Number(getComputedStyle($carousel[0]).getPropertyValue('--carousel-margin'));
-						return carouselMargin;
+						return Number(getComputedStyle($carousel[0]).getPropertyValue('--carousel-margin'));
+					}
+
+					function navStatus($carousel) {
+						return !$carousel[0].classList.contains("disableNav");
+					}
+
+					function autoPlayStatus($carousel) {
+						return !$carousel[0].classList.contains("no-autoplay");
 					}
 					function carouselSettingsConfigure(carousel) {
 
@@ -939,13 +946,13 @@ var tb = (function () {
 							stagePadding: 0,
 							autoHeight: false,
 							loop: !$carousel.hasClass('timeline'),
-							autoplay: false,
+							autoplay: autoPlayStatus($carousel),
 							autoplayTimeout: 5000,
 							autoplayHoverPause: true,
 							nav: false,
 							responsive: {
 								1025: {
-									nav: true,
+									nav: navStatus($carousel),
 									margin: carouselMargin($carousel),
 									stagePadding: 0
 								}

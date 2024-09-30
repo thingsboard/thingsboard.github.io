@@ -6,6 +6,7 @@
 {% assign thingsboardStyledBackground = include.thingsboardStyledBackground | default: false %}
 {% assign navMode = include.navMode | default: "thinArrow" %}
 {% assign dotButtonMode = include.dotButtonMode | default: "line" %}
+{% assign dotButtonInCarouselContainer = include.dotButtonInCarouselContainer | default: false %}
 {% assign titleSize = include.titleSize | default: "36px" %}
 {% assign descriptionSize = include.descriptionSize | default: "18px" %}
 {% assign titleColor = include.titleColor | default: "#212529" %}
@@ -39,6 +40,11 @@
     {% assign thingsboardStyledBackgroundClass = "thingsboardStyledBackgroundEnabled" %}
 {% endif %}
 
+{% assign dotButtonInCarouselContainerClass = "dotButtonInCarouselContainerDisabled" %}
+
+{% if dotButtonInCarouselContainer == true %}
+    {% assign dotButtonInCarouselContainerClass = "dotButtonInCarouselContainerEnabled" %}
+{% endif %}
 
 {% if timeline %}
 
@@ -71,6 +77,7 @@
 
 {% assign collectionKey = include.collectionKey %}
 {% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
+{% assign darkenedImage = include.darkenedImage | default: false %}
 {% assign overlay = include.overlay | default: false %}
 {% assign enableLinkArrow = include.enableLinkArrow %}
 {% assign contentDirection = include.contentDirection %}
@@ -89,12 +96,18 @@
     {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
 {% endif %}
 
+{% assign darkenedImageClass = "darkenedImageDisabled" %}
+
+{% if darkenedImage == true %}
+    {% assign darkenedImageClass = "darkenedImageEnabled" %}
+{% endif %}
+
 {% if enableLinkArrow == nil %}
     {% assign enableLinkArrow = true %}
 {% endif %}
 
 {% if carouselCollection %}
-<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }}" style="--carousel-margin: {{ carouselMargin }}">
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--carousel-margin: {{ carouselMargin }}">
     {% for carouselItem in carouselCollection %}
         {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
             {% assign contentDirectionClass = "carousel-item-flex-row" %}

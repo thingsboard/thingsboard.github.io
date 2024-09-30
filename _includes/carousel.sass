@@ -116,7 +116,7 @@
       left: 50%
       transform: translate(-50%, -50%)
       gap: 30px
-      z-index: 1
+      z-index: 3
   .owl-nav
     button.owl-prev, button.owl-next
       position: absolute
@@ -154,18 +154,33 @@
 .owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityFalse
   .owl-stage-outer
     overflow: hidden
-.circle
+.owl-carousel.owl-theme.usecase-carousel.circle
   .owl-dots
     button.owl-dot
       width: 10px
       height: 10px
-.line
+.owl-carousel.owl-theme.usecase-carousel.line
   .owl-dots
     button.owl-dot
       span
         width: 72px
         height: 4px
-.disableDots
+.owl-carousel.owl-theme.usecase-carousel.square
+  .owl-dots
+    button.owl-dot
+      span
+        border-radius: 0
+        width: 12px
+        height: 12px
+
+.owl-carousel.owl-theme.usecase-carousel.dotButtonInCarouselContainerEnabled
+  .owl-dots
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translate(-50%, -50%)
+
+.owl-carousel.owl-theme.usecase-carousel.disableDots
   .owl-dots
     display: none
 
@@ -187,6 +202,18 @@
       left: 0
       background-image: url(/images/tbstyled-bg.svg)
       background-repeat: no-repeat
+      z-index: 1
+.owl-carousel.owl-theme.usecase-carousel.darkenedImageEnabled
+  .carousel-image
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      background-color: #3F474F99
+      z-index: 2
 .owl-carousel.owl-theme.usecase-carousel.transitionAnimationEnabled
   .owl-stage-outer
     .owl-stage
