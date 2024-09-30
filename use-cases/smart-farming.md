@@ -17,6 +17,18 @@ notitle: "true"
 </section>
 <section class="smart-farm-about-section">
     <div id="smart-farm-about" class="smart-farm-about">
+        <section id="smart-farm-demo" class="smart-farm-demo">
+            <div class="smart-farm-demo-container">
+                <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
+                <div class="smart-farm-demo-btn">
+                    <a target="_blank" href="/use-cases/smart-farming-demo"><button class="try-demo">Learn more </button></a>
+                    <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Contact Us</button>
+                </div>
+            </div>
+            <div class="smart-farm-demo-img">
+                <img loading="lazy" src="/images/usecases/smart-farming/farming_solutions.webp">
+            </div>
+        </section>
         <section class="smart-farm-about-container">
             <div class="smart-farm-content" >
                 <div class="smart-farm-content-wrapper">
@@ -385,12 +397,9 @@ notitle: "true"
                 <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
                 <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
                 <div class="smart-farm-demo-btn">
-                    <a href="/use-cases/smart-farming-demo"><button class="try-demo">Learn more </button></a>
+                    <a target="_blank" href="/use-cases/smart-farming-demo"><button class="try-demo">Learn more </button></a>
                     <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Contact Us</button>
                 </div>
-            </div>
-            <div class="smart-farm-demo-img">
-                <img loading="lazy" src="/images/usecases/smart-farming/farming_solutions.webp">
             </div>
         </section>
         <section id="smart-farm-key-features" class="smart-farm-key-features">

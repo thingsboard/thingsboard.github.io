@@ -18,6 +18,12 @@ $button-background-color: #2A7DEC
 $font-style-normal: normal
 @mixin box-shadow 
     box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+@mixin big-margin
+    margin-bottom: 185px
+@mixin middle-margin
+    margin-bottom: 100px
+@mixin small-margin
+    margin-bottom: 60px
 
 #smart-farming
     position: relative
@@ -29,6 +35,7 @@ $font-style-normal: normal
     display: flex
     justify-content: flex-end
     padding: 0px
+    @include middle-margin
     .smart-farm-banner
         max-width: 1786px
         img 
@@ -94,7 +101,7 @@ $font-style-normal: normal
         .smart-farm-about-container
             display: flex
             justify-content: space-between
-            padding-top: 100px
+            @include middle-margin
             .smart-farm-content-wrapper
                 color: black
                 width: 100%
@@ -124,7 +131,7 @@ $font-style-normal: normal
                                 color: #212529 
                                 text-decoration: none 
         .smart-farm-about-blocks
-            padding-top: 100px
+            @include big-margin
             .smart-farm-about-block
                 display: flex
                 justify-content: space-between
@@ -144,7 +151,7 @@ $font-style-normal: normal
 
         .smart-farm-contact-us
             position: relative
-            margin-top: 177px
+            @include big-margin
             padding: 40px 60px
             display: flex
             border-radius: 20px
@@ -187,7 +194,7 @@ $font-style-normal: normal
                     align-items: center
 
         .smart-farm-key-difference
-            padding-top: 185px 
+            @include small-margin
             display: flex
             .smart-farm-key-difference-text
                 width: 720px
@@ -203,7 +210,8 @@ $font-style-normal: normal
 
         .smart-farm-tech
             padding: 0px
-            margin-top: 60px
+            //margin-top: 60px
+            @include small-margin
             &::before 
                 background: #F4F8FE
                 content: ''
@@ -252,7 +260,7 @@ $font-style-normal: normal
                     border: none
 
         .smart-farm-cycle
-            padding-top: 60px
+            @include big-margin
             .smart-farm-cycle-container
                 display: flex
             .smart-farm-cycle-img
@@ -278,7 +286,7 @@ $font-style-normal: normal
                         width: 220px
                         height: 220px
         .smart-farm-pros
-            padding-top: 185px
+            @include big-margin
             .smart-farm-pros-container
                 width: 720px
             .smart-farm-pros-wrapper
@@ -311,7 +319,8 @@ $font-style-normal: normal
                             top: 95px
 
         .smart-farm-solutions
-            padding-top: 180px
+            //padding-top: 180px
+            @include middle-margin
             .smart-farm-solutions-container
                 width: 720px
                 margin-bottom: 50px
@@ -334,7 +343,8 @@ $font-style-normal: normal
                             height: 140px
 
         .smart-farm-demo
-            padding-top: 120px
+            //padding-top: 120px
+            @include middle-margin
             display: flex
             flex-direction: column
             justify-content: center
@@ -369,12 +379,12 @@ $font-style-normal: normal
                     height: auto
 
         .smart-farm-key-features
-            padding-top: 120px
+            @include middle-margin
             h2
                 width: 720px
             .smart-farm-key-features-cards
-                margin-top: 50px
                 display: flex
+                margin-top: 50px
                 justify-content: center
                 gap: 20px
                 flex-wrap: wrap
@@ -395,7 +405,7 @@ $font-style-normal: normal
                         margin-bottom: 31px
 
         .smart-farm-management-software
-            margin-top: 120px
+            @include middle-margin
             margin-bottom: 120px
             height: 810px
             &::before 
@@ -449,10 +459,7 @@ $font-style-normal: normal
                 .smart-farm-about-block
                     .block-img
                         margin-top: 30px
-            .smart-farm-contact-us
-                margin-top: 177px
             .smart-farm-key-difference
-                padding-top: 185px
                 .smart-farm-key-difference-text
                     width: 632px
                 .smart-farm-key-difference-img 
@@ -465,18 +472,7 @@ $font-style-normal: normal
                     left: calc(720px - 50vw - 80px)
                 .smart-farm-tech-container
                     padding-top: 60px
-            .smart-farm-cycle
-                padding-top: 60px
-            .smart-farm-pros
-                padding-top: 185px 
-            .smart-farm-solutions
-                padding-top: 185px
-            .smart-farm-demo
-                padding-top: 120px
-            .smart-farm-key-features
-                padding-top: 120px
             .smart-farm-management-software
-                padding-top: 103px
                 &::before 
                     left: calc(720px - 50vw - 80px)
 
@@ -512,10 +508,7 @@ $font-style-normal: normal
                         img
                             width: 534px
                             height: 307px
-            .smart-farm-contact-us
-                margin-top: 137px
             .smart-farm-key-difference
-                padding-top: 145px
                 .smart-farm-key-difference-text
                     width: 582px
                 .smart-farm-key-difference-img
@@ -528,22 +521,12 @@ $font-style-normal: normal
                     left: calc(640px - 50vw - 50px)
                 .smart-farm-tech-container
                     padding: 60px 50px
-            .smart-farm-cycle
-                padding-top: 60px
-            .smart-farm-pros
-                padding-top: 145px
             .smart-farm-solutions
-                padding-top: 185px
                 .smart-farm-solutions-wrapper 
                     .smart-farm-solutions-item 
                         .smart-farm-solutions-text
                             max-width: 582px
-            .smart-farm-demo
-                padding-top: 120px
-            .smart-farm-key-features
-                padding-top: 120px
             .smart-farm-management-software
-                padding-top: 164px
                 &::before
                     left: calc(640px - 50vw - 50px)
                 .smart-farm-management-software-img
@@ -606,6 +589,7 @@ $font-style-normal: normal
                         max-width: 620px
                         height: auto
             .smart-farm-tech
+                @include small-margin
                 &::before
                     left: calc(500px - 50vw - 30px)
                 .smart-farm-tech-container
@@ -624,7 +608,7 @@ $font-style-normal: normal
                             width: 281px
                             height: 175px
             .smart-farm-cycle
-                padding-top: 60px 
+                @include middle-margin
                 .smart-farm-cycle-container
                     flex-direction: column
                     .smart-farm-cycle-img
@@ -633,13 +617,13 @@ $font-style-normal: normal
                             width: 542px
                             height: 364px
             .smart-farm-pros
-                padding-top: 100px
+                @include middle-margin
             .smart-farm-solutions
-                padding-top: 100px
+                @include small-margin
             .smart-farm-demo
-                padding-top: 70px
+                @include small-margin   
             .smart-farm-key-features
-                padding-top: 70px
+                @include small-margin
             .smart-farm-management-software
                 padding-top: 80px
                 border-radius: 80px
@@ -656,11 +640,12 @@ $font-style-normal: normal
             .smart-farm-banner-container
                 padding: 15px 15px
     .smart-farm-about-section
+        @include small-margin
         .smart-farm-about 
             max-width: 672px
             padding: 0px 15px
             .smart-farm-about-container
-                padding-top: 60px
+                @include small-margin
                 .smart-farm-side-content
                     .smart-farm-side-content-container
                         display: none
@@ -668,7 +653,7 @@ $font-style-normal: normal
                     .smart-farm-content-wrapper:last-child
                         margin-top: 60px
             .smart-farm-about-blocks
-                padding-top: 40px
+                @include middle-margin
                 .smart-farm-about-block
                     .block-img
                         margin-top: 40px
@@ -676,7 +661,7 @@ $font-style-normal: normal
                             width: 562px
                             height: 323px
             .smart-farm-contact-us
-                    margin-top: 117px
+                    @include middle-margin
                     flex-direction: column
                     .smart-farm-contact-us-btn
                         flex-direction: column
@@ -690,6 +675,7 @@ $font-style-normal: normal
                 .smart-farm-key-difference-text 
                     width: 100%
             .smart-farm-tech
+                @include small-margin
                 &::before
                     left: calc(336px - 50vw - 15px)
                 .smart-farm-tech-container
@@ -702,7 +688,7 @@ $font-style-normal: normal
                         .img-iot, .img-ai-ml, .img-auto-rob, .img-sensors 
                             margin-left: 0px
             .smart-farm-cycle 
-                padding-top: 60px
+                @include middle-margin
                 .smart-farm-cycle-container
                     .smart-farm-cycle-img
                         display: flex
@@ -717,14 +703,14 @@ $font-style-normal: normal
                             margin-top: 6px
 
             .smart-farm-pros
-                padding-top: 100px
+                @include middle-margin
                 .smart-farm-pros-container
                     width: 100%
                 .smart-farm-pros-wrapper
                     .smart-farm-pros-item
                         flex: 1 calc(100% - 1em)
             .smart-farm-solutions
-                padding-top: 100px
+                @include small-margin
                 .smart-farm-solutions-container
                     width: 100%
                 .smart-farm-solutions-wrapper 
@@ -738,11 +724,11 @@ $font-style-normal: normal
                                 width: 120px
                                 height: 120px
             .smart-farm-demo
-                padding-top: 60px
+                @include small-margin
                 .smart-farm-demo-container
                     width: 100%
             .smart-farm-key-features
-                padding-top: 60px
+                @include small-margin
                 h2
                     width: 100%
             .smart-farm-management-software
@@ -779,7 +765,6 @@ $font-style-normal: normal
                 font-size: 24px
                 line-height: 31px
             .smart-farm-about-container
-                padding-top: 40px
                 .smart-farm-content
                     .smart-farm-content-wrapper:last-child
                         margin-top: 50px
@@ -794,7 +779,6 @@ $font-style-normal: normal
                             width: 290px
                             height: 166px
             .smart-farm-contact-us
-                margin-top: 107px
                 padding: 20px
                 .smart-farm-contact-us-btn
                     button
@@ -812,7 +796,6 @@ $font-style-normal: normal
                 .smart-farm-tech-container
                     padding: 25px 15px
             .smart-farm-cycle
-                padding-top: 60px
                 .smart-farm-cycle 
                     .smart-farm-cycle-wrapper
                         padding: 20px
@@ -829,14 +812,12 @@ $font-style-normal: normal
                             width: 120px 
                             height: 120px
             .smart-farm-pros
-                padding-top: 50px
                 .smart-farm-pros-wrapper 
                     .smart-farm-pros-item
                         padding: 20px
                         h4
                             top: 80px
             .smart-farm-solutions
-                padding-top: 75px
                 .smart-farm-solutions-wrapper 
                     .smart-farm-solutions-item
                         padding: 20px
@@ -845,7 +826,6 @@ $font-style-normal: normal
                                 width: 80px
                                 height: 80px
             .smart-farm-demo
-                padding-top: 50px
                 .smart-farm-demo-container
                     p
                         text-align: left
@@ -853,15 +833,14 @@ $font-style-normal: normal
                         text-align: left
                     .smart-farm-demo-btn
                         flex-direction: column
+                        .try-demo
+                            width: 100%
                         .contact-us
                             margin-left: 0px
                             margin-top: 16px
                 .smart-farm-demo-img
                     display: none
-            .smart-farm-key-features
-                padding-top: 50px
             .smart-farm-management-software
-                padding-top: 55px
                 border-radius: 40px
                 &::before
                     left: calc(210px - 50vw - 15px)
@@ -881,7 +860,6 @@ $font-style-normal: normal
                 &::before
                     left: calc(50% - 50vw)
             .smart-farm-pros
-                padding-top: 50px
                 .smart-farm-pros-wrapper 
                     p.smart-farm-pros-text
                         margin-top: 35px 
