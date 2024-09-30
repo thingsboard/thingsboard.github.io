@@ -1,6 +1,9 @@
 {% assign timeline = include.timeline %}
 {% assign collectionMap = include.collectionMap %}
 {% assign autoplay = include.autoplay %}
+{% assign carouselMargin = include.carouselMargin | default: 100 %}
+{% assign transitionAnimation = include.transitionAnimation %}
+{% assign thingsboardStyledBackground = include.thingsboardStyledBackground | default: false %}
 {% assign navMode = include.navMode | default: "thinArrow" %}
 {% assign dotButtonMode = include.dotButtonMode | default: "line" %}
 {% assign titleSize = include.titleSize | default: "36px" %}
@@ -24,23 +27,35 @@
     {% assign autoplayClass = "no-autoplay" %}
 {% endif %}
 
+{% assign transitionAnimationClass = "transitionAnimationEnabled" %}
+
+{% if transitionAnimation == false %}
+    {% assign transitionAnimationClass = "transitionAnimationDisabled" %}
+{% endif %}
+
+{% assign thingsboardStyledBackgroundClass = "thingsboardStyledBackgroundDisabled" %}
+
+{% if thingsboardStyledBackground == true %}
+    {% assign thingsboardStyledBackgroundClass = "thingsboardStyledBackgroundEnabled" %}
+{% endif %}
+
+
 {% if timeline %}
 
 {% assign carouselCollection = carouselCollection | values %}
-{% assign titleHover = include.titleHover %}
-    {% assign titleHoverScale = include.titleHoverScale | default: "1" %}
 
-{% assign titleHoverClass = "titleHoverEnabled" %}
+{% assign titleHoverScale = include.titleHoverScale | default: 0 %}
+{% assign titleHoverScaleClass = "titleHoverDisabled" %}
 
 {% if titleHover == false %}
-    {% assign titleHoverClass = "titleHoverDisabled" %}
+    {% assign titleHoverScaleClass = "titleHoverEnabled" %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }}">
+<div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ transitionAnimationClass }}" style="--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}">
     {% for key in carouselCollection %}
         <div class="timeline-item">
             <div class="timeline-label">
-                <span class="timeline-title {{ titleHoverClass }}" style="font-size: {{ titleSize }}; color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}">{{ key[0] }}</span>
+                <span class="timeline-title {{ titleHoverScaleClass }}" style="font-size: {{ titleSize }}; color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}; --title-hover-scale: {{ titleHoverScale }}">{{ key[0] }}</span>
                 <span class="timeline-circle"></span>
             </div>
             <ul class="timeline-text">
@@ -79,7 +94,7 @@
 {% endif %}
 
 {% if carouselCollection %}
-<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }}">
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ navMode }} {{ autoplayClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }}" style="--carousel-margin: {{ carouselMargin }}">
     {% for carouselItem in carouselCollection %}
         {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
             {% assign contentDirectionClass = "carousel-item-flex-row" %}
@@ -98,7 +113,7 @@
             {% assign backgroundImage = carouselItem[1].src %}
         {% endif %}
 
-        <div class="carousel-item-default {{ contentDirectionClass }}" style="height: 600px">
+        <div class="carousel-item-default {{ contentDirectionClass }}">
             {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
             <div class="carousel-text">
                 {% if carouselItem[1].title %}
@@ -146,9 +161,3 @@
 {% endif %}
 
 {% endif %}
-
-<style>
-    :root {
-        --title-hover-scale: {{ titleHoverScale }}
-    }
-</style>

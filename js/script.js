@@ -925,13 +925,9 @@ var tb = (function () {
 						return timelineItemsToShow ? timelineItemsToShow : 1;
 					}
 
-					function calculateCarouselHeight(carousel) {
-
-						const $image = $(carousel).closest('.carousel-item-default').find('img');
-						const imageHeight = $image[0].naturalHeight;
-
-						$(carousel).closest('.carousel-item-default').css('height', imageHeight + 'px');
-
+					function carouselMargin($carousel) {
+						const carouselMargin = Number(getComputedStyle($carousel[0]).getPropertyValue('--carousel-margin'));
+						return carouselMargin;
 					}
 					function carouselSettingsConfigure(carousel) {
 
@@ -939,7 +935,7 @@ var tb = (function () {
 
 						return {
 							items: itemsNumberToShow($carousel),
-							margin: $carousel.hasClass('timeline') ? 0 : 50,
+							margin: carouselMargin($carousel),
 							stagePadding: 0,
 							autoHeight: false,
 							loop: !$carousel.hasClass('timeline'),
@@ -950,8 +946,8 @@ var tb = (function () {
 							responsive: {
 								1025: {
 									nav: true,
-									margin: 100,
-									stagePadding: 50
+									margin: carouselMargin($carousel),
+									stagePadding: 0
 								}
 							}
 						}
