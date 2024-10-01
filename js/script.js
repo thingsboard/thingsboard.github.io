@@ -849,3 +849,48 @@ var tb = (function () {
 		});
 	}
 })();
+
+//carousel
+
+(function () {
+	jqueryDefer(Owl);
+
+	function Owl() {
+		if ($('.owl-carousel').length > 0) {
+			var scriptsList = [
+				{src: '/css/owl.carousel.min.css', type: 'css'},
+				{src: '/css/owl.theme.default.min.css', type: 'css'},
+				{src: '/js/owl.carousel.min.js', type: 'script'}
+			];
+			loadNextScript(0, scriptsList, function() {
+				$(document).ready(function(){
+
+					let autoplayEnabled;
+
+					$('.owl-carousel').hasClass('no-autoplay')
+					? autoplayEnabled = false
+					: autoplayEnabled = true;
+
+					$('.owl-carousel').owlCarousel({
+						items: 1,
+						margin: 50,
+						stagePadding: 0,
+						autoHeight: false,
+						loop: true,
+						autoplay: autoplayEnabled,
+						autoplayTimeout: 5000,
+						autoplayHoverPause: true,
+						nav: false,
+						responsive: {
+							1025: {
+								nav: true,
+								margin: 100,
+								stagePadding: 50
+							}
+						}
+					});
+				});
+			});
+		}
+	}
+})();

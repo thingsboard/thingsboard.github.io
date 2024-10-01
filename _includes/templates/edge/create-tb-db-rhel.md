@@ -1,6 +1,5 @@
-Then, press "Ctrl+D" to return to main user console.
 
-After configuring the password, edit the pg_hba.conf to use MD5 authentication with the postgres user.
+After configuring the password, edit the **pg_hba.conf** to use MD5 authentication with the postgres user.
 
 Edit pg_hba.conf file: 
 
@@ -36,10 +35,11 @@ psql -U postgres -d postgres -h 127.0.0.1 -W
 ```
 {: .copy-code}
 
-Execute create database statement
+Execute create database statement:
 
 ```bash
 CREATE DATABASE tb_edge;
-\q
 ```
 {: .copy-code}
+
+Press “Ctrl+D” twice to exit PostgreSQL.

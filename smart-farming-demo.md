@@ -85,17 +85,16 @@ notitle: "true"
             <span class="second-text">software to manage and</span>
             <span class="second-text">monitor your agricultural projects</span>
         </h2>
-        <div class="sub-title" style="margin-top: 40px">The following The Silos Monitoring template</div> 
+        <div class="sub-title">The following The Silos Monitoring template</div> 
         <div class="sub-title">is a part of smart-farming component that may</div> 
-        <div class="sub-title">quickly adapt to your farming needs.</div>
+        <div class="sub-title last">quickly adapt to your farming needs.</div>
     </div>
     <div class="info-block">
         <div class="menu">
             <div class="panel-title">Silos monitoring template features</div>
-            <div class="expansion-panel first">
+            <div class="expansion-panel">
                 <div class="expansion-header">
                     <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/real-time.webp" alt="Real time icon" loading="lazy"/>Real-time monitoring</h3>
-                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>An interactive map with current status of the sensor and detailed view.</p>
@@ -104,7 +103,6 @@ notitle: "true"
             <div class="expansion-panel">
                 <div class="expansion-header">
                     <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/dashboard.webp" alt="Dashboard icon" loading="lazy"/>Customizable dashboard</h3>
-                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Specially developed logic will help to take into account all the parameters for the most detailed and correct monitoring</p>
@@ -113,7 +111,6 @@ notitle: "true"
             <div class="expansion-panel">
                 <div class="expansion-header">
                     <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/tank-settings.webp" alt="Tank settings icon" loading="lazy"/>Smart valve</h3>
-                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Conveniently manage and configure parameters for your Silo</p>
@@ -122,22 +119,20 @@ notitle: "true"
             <div class="expansion-panel">
                 <div class="expansion-header">
                     <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/data-analysis.webp" alt="Data analysis icon" loading="lazy"/>Data analysis and visualization</h3>
-                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Using data storage, you can always check historical data, make reports even <a href="/products/trendz/" class="link-text">forecasts</a>. The platform supports flexible customization of the required data visualization.</p>
                 </div>
             </div>
-            <div class="expansion-panel">
+            <div class="expansion-panel last">
                 <div class="expansion-header">
                     <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/alert.webp" alt="Alert icon" loading="lazy"/>Alert management</h3>
-                    <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
                 </div>
                 <div class="expansion-content">
                     <p>Receive alerts based on customized rules. Get an email or sms, set details for the notifications.</p>
                 </div>
             </div>
-            <a class="try-demo-button" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">Try a demo</a>
+            <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">Try a demo</a>
         </div>
         <div class="images"></div>
     </div>
@@ -146,13 +141,7 @@ notitle: "true"
 <section id="connectivity" class="content-wrapper">
     <div class="container">
         <div class="left">
-            <img class="connectivity-image" loading="lazy"
-                src="/images/usecases/smart-farming/connectivity.webp"
-                srcset="/images/usecases/smart-farming/connectivity-mobile-v.webp 671w, 
-                    /images/usecases/smart-farming/connectivity.webp 672w"
-                sizes="(max-width: 671px) 360px, 
-                    (min-width: 672px) 560px"
-                alt="Connectivity card"/>
+            <img class="connectivity-image" loading="lazy" src="/images/usecases/smart-farming/connectivity.webp" alt="Connectivity card"/>
         </div>
         <div class="right">
             <h2 class="title">ThingsBoard platform device supports</h2>
@@ -162,20 +151,7 @@ notitle: "true"
     </div>
 </section>
 
-<section id="partners" class="content-wrapper">
-    <h2 class="title">Our hardware partners</h2>
-    <div class="logos">
-        <div class="logo"><img loading="lazy" alt="Efento logo" src="/images/usecases/smart-farming/efento-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Seeed logo" src="/images/usecases/smart-farming/seeed-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Milesight logo" src="/images/usecases/smart-farming/milesight-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Nettra logo" src="/images/usecases/smart-farming/nettra-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Actility logo" src="/images/usecases/smart-farming/actility-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Sodaq logo" src="/images/usecases/smart-farming/sodaq-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Decode logo" src="/images/usecases/smart-farming/decode-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Monoz logo" src="/images/usecases/smart-farming/monoz-logo.webp"/></div>
-    </div>
-    <a class="outline-button" href="/partners/hardware/" type="button" value="All partners">All partners</a>
-</section>
+{% include use-cases-partners.html %}
 
 <section id="get-in-touch" class="get-in-touch">
     <div class="content-wrapper">

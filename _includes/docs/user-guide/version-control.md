@@ -4,9 +4,7 @@
 {% assign sinceVersion = "3.4" %}
 {% include templates/since.md %}
 
-## Feature Overview
-
-ThingsBoard Version Control service provides the ability to export and restore ThingsBoard Entities using Git.
+ThingsBoard Version control service provides the ability to export and restore ThingsBoard Entities using Git.
 As a Tenant administrator, you can configure access to the Git repository using UI or REST API.
 As a platform user, you can export single or multiple ThingsBoard Entities, browse version history and restore entities to the specific version.
 
@@ -63,14 +61,12 @@ Reserved group 'All' does not contain the 'id_entities.json' file because group 
 
 {% include images-gallery.html imageCollection="gitRepoStructure" %}
 
-
 #### Sync strategy
 
 Platform supports two sync strategies for export to Git: Merge and Overwrite. 
 "Merge" is the default sync strategy which simply appends the selected entities to the repository. This strategy is useful when you want to save one or multiple files without deleting all other files from the repository.
 "Overwrite" strategy completely rewrite the corresponding repository files. This strategy is useful when you want to completely synchronize the list of entities (e.g. Dashboards) in your instance and your Git repository. 
 All entities that were previously save to the Git but are not present in your platform instance will be deleted from the Git repository in the corresponding commit.
-
 
 #### Scalability
 
@@ -83,7 +79,7 @@ The system will cancel the "commit" API call if it is in progress and the new "c
 
 #### Git Settings configuration
 
-As a Tenant administrator, you can navigate to **System Settings -> Git settings** page. The page allows you to provision Git repository URL, default branch name and authentication settings.
+As a Tenant administrator, you can navigate to the "Version control" page of the "Advanced features" section. The page allows you to provision Git repository URL, default branch name and authentication settings.
 We expect you to provide URL to the empty Git repository.
 
 {% include images-gallery.html imageCollection="gitConfiguration" %}
@@ -92,11 +88,21 @@ We expect you to provide URL to the empty Git repository.
 
 ##### Single Entity Export
 
-Navigate to entity details and open the 'Version Control' tab. 
+Navigate to entity details and open the "Version control" tab. 
 Rule Chains and Dashboards have built-in version control button and popup widget to the corresponding editors.
 See screenshots below.
 
-{% include images-gallery.html imageCollection="singleEntityExport" %}
+**Device:**
+
+{% include images-gallery.html imageCollection="singleEntityExportDevice" %}
+
+**Rule Chain:**
+
+{% include images-gallery.html imageCollection="singleEntityExportRuleChain" %}
+
+**Dashboard:**
+
+{% include images-gallery.html imageCollection="singleEntityExportDashboard" %}
 
 ##### Multiple Entity Export
 

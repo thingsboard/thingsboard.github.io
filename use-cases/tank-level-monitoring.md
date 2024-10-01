@@ -31,20 +31,7 @@ Additionally, the dashboard is equipped with multiple states, allowing for a div
 
 The Fuel Level Monitoring interactive dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png" />
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png" />
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png" />
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png" />
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'tank-level-monitoring' %}
 
 The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 

@@ -30,26 +30,7 @@ With this template, you get interactive dashboards that allow administrators and
 Users are able to define thresholds and enable alarms and notifications over SMS or email. 
 You may easily integrate with external billing systems to produce and distribute invoices based on the aggregated consumption data from ThingsBoard. 
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm1.png" alt="water metering 1">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm2.png" alt="water metering 2">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm3.png" alt="water metering 3">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm4.png" alt="water metering 4">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm5.png" alt="water metering 5">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm6.png" alt="water metering 6">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'water-metering' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
