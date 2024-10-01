@@ -59,6 +59,8 @@ toc:
   section:
     - title: Overview
       path: /docs/paas/user-guide/dashboards/
+    - title: Layouts
+      path: /docs/paas/user-guide/ui/layouts/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
     - title: SCADA
