@@ -86,7 +86,7 @@ notitle: "true"
         <section class="smart-farm-contact-us">
             <img loading="lazy" class="rec55" src="/images/usecases//smart-farming/rectangle_55.webp" alt="rectangle">
             <div class="smart-farm-contact-us-text">
-                <h3>Enhance your farm with Smart Technology</h3>
+                <h4>Enhance your farm with Smart Technology</h4>
                 <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
             </div>
             <div class="smart-farm-contact-us-btn" id="Serv_DevServ_ContactUs1">
@@ -277,7 +277,7 @@ notitle: "true"
         <section id="smart-farm-contact-us" class="smart-farm-contact-us">
             <img loading="lazy" class="rec55" src="/images/usecases//smart-farming/rectangle_55.webp">
             <div class="smart-farm-contact-us-text">
-                <h3>Enhance your farm with Smart Technology</h3>
+                <h4>Enhance your farm with Smart Technology</h4>
                 <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
             </div>
             <div class="smart-farm-contact-us-btn">
