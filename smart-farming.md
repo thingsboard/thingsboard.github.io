@@ -21,7 +21,7 @@ notitle: "true"
             <div class="smart-farm-demo-container">
                 <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
                 <div class="smart-farm-demo-btn">
-                    <a target="_blank" href="/smart-farming-demo"><button class="try-demo">Learn more </button></a>
+                    <a href="/smart-farming-demo"><button class="try-demo">Learn more </button></a>
                     <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Contact Us</button>
                 </div>
             </div>

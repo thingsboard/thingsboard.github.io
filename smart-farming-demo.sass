@@ -53,7 +53,6 @@ $button-width: 208px
             justify-content: space-between
             padding: 0 50px
             max-width: 1440px
-            margin-top: 180px
 
     .outline-button
         background-color: white 
@@ -81,7 +80,7 @@ $button-width: 208px
         width: 100%
         overflow: hidden
         padding: 0px
-
+        margin-bottom: 250px
         #background
             position: absolute
             z-index: 0
@@ -111,15 +110,16 @@ $button-width: 208px
                     line-height: 24px
                     text-align: center
                     color: $button-background-color
-
+                    margin-bottom: 30px
+                
                 .title
                     font-size: 60px
                     font-weight: 500
                     line-height: 66px
                     text-align: center
                     color: #212529
-                    margin-top: 30px
                     max-width: 710px
+                    margin-bottom: 40px
 
                 .sub-title
                     font-family: Poppins
@@ -128,16 +128,14 @@ $button-width: 208px
                     line-height: 24.8px
                     text-align: center
                     color: #495057
-                    margin-top: 40px
                     max-width: 608px
+                    margin-bottom: 40px
 
                 .info-block
                     display: flex
                     justify-content: space-around
                     align-items: center
-                    margin-top: 40px
                     min-width: 436px
-
                     .filled-button
                         background-color: $button-background-color
                         border-radius: 8px
@@ -180,7 +178,6 @@ $button-width: 208px
                 border-radius: 12px
 
     #third-screen
-        margin-top: 250px
         .container
             width: 100%
             display: flex
@@ -195,15 +192,15 @@ $button-width: 208px
                     line-height: 62.4px
                     text-align: left
                     color: #212529
+                    margin-bottom: 20px
                 .side-text
-                    margin-top: 20px
                     font-size: 16px
                     font-weight: 400
                     line-height: 24.8px
                     text-align: left
                     color: #495057
+                    margin-bottom: 50px
                 .outline-button
-                    margin-top: 50px
                     &:hover
                         background-color: $button-background-color
                         color: #fff
@@ -221,7 +218,7 @@ $button-width: 208px
         display: flex
         flex-direction: column
         align-items: center
-        
+        margin-bottom: 150px
         .benefits-title
             font-size: 48px
             font-weight: 600
@@ -229,6 +226,7 @@ $button-width: 208px
             text-align: center
             color: #212529
             width: 740px
+            margin-bottom: 30px
 
         .benefits-sub-title
             font-size: 18px
@@ -236,10 +234,9 @@ $button-width: 208px
             line-height: 27.9px
             text-align: center
             width: 608px
-            margin-top: 30px
+            margin-bottom: 40px
 
         .outline-button
-            margin-top: 40px
             &:hover
                 background-color: $button-background-color
                 color: #fff
@@ -248,14 +245,13 @@ $button-width: 208px
             display: flex
             justify-content: space-around
             flex-wrap: wrap
-            margin-top: 50px
         
         .card
             box-shadow: 0px 5px 15px 0px #21252940 
             width: 32%
             padding: 20px
             border-radius: 12px
-            margin: 10px 0
+            margin: 0px 0px 10px
             height: 260px
             display: flex
             flex-direction: column
@@ -264,6 +260,7 @@ $button-width: 208px
             img
                 width: 50px
                 height: 50px
+                margin-bottom: 20px
 
             .title
                 font-size: 24px
@@ -271,7 +268,7 @@ $button-width: 208px
                 line-height: 31.2px
                 text-align: left
                 color: #212529                
-                margin-top: 20px
+                margin-bottom: 16px
 
             .text
                 font-size: 16px
@@ -279,7 +276,6 @@ $button-width: 208px
                 line-height: 24.8px
                 text-align: left
                 color: #495057
-                margin-top: 16px
 
     #dark-section
         height: 1583px
@@ -287,9 +283,9 @@ $button-width: 208px
         background-repeat: no-repeat
         background-position: center top
         background-size: 100% auto
-        margin-top: 150px
-
+        margin-bottom: 150px
         .header
+            margin-bottom: 100px
             .title 
                 font-size: 64px
                 font-weight: 600
@@ -297,6 +293,7 @@ $button-width: 208px
                 text-align: left
                 color: #fff 
                 margin-left: 40px
+                margin-bottom: 40px
                 span
                     display: block
 
@@ -316,11 +313,9 @@ $button-width: 208px
 
         .info-block
             display: flex
-            margin-top: 100px
+            margin-bottom: 130px
             .menu
                 width: 45%
-                margin-top: 130px
-                
                 .panel-title
                     font-size: 48px
                     font-weight: 600
@@ -328,9 +323,12 @@ $button-width: 208px
                     text-align: left
                     width: 540px
                     color: #FFFFFF
+                    margin-bottom: 40px
+
+                .last
+                    margin-bottom: 40px !important
 
                 .try-demo-button
-                    margin-top: 40px
                     background-color: white 
                     border-radius: 8px
                     border: 1px solid #192234
@@ -360,20 +358,33 @@ $button-width: 208px
                         display: flex
                         justify-content: space-between
                         align-items: center
+                        position: relative
                         padding: 10px
                         cursor: pointer
+                        &::after
+                            content: "\f078"
+                            color: white
+                            font-family: 'Font Awesome 5 Free'
+                            font-size: 14px
+                            font-weight: 900
+                            line-height: 1
+                            display: block
+                            position: absolute
+                            top: 20px
+                            right: 10px
+                            transform: rotate(0deg)
+                            transition: transform .3s
+                            border: none
 
                     .header-icon
                         margin-right: 20px
                         height: 20px
                         width: 20px
 
-                    .arrow-icon
-                        transition: max-height 1s cubic-bezier(0.5, 0.1, 0.3, 1.1)
-
                     &.expanded
-                        .arrow-icon
-                            transform: rotate(180deg)
+                        .expansion-header
+                            &::after
+                                transform: rotate(180deg)
 
                     .expansion-title
                         margin: 0
@@ -403,9 +414,6 @@ $button-width: 208px
                             display: block
                             max-height: 1000px
 
-                .first
-                    margin-top: 40px
-
             .images
                 width: 55%
                 .dark-map-image,
@@ -429,7 +437,7 @@ $button-width: 208px
                         bottom: -5%
 
     #connectivity
-        margin-top: 150px
+        margin-bottom: 150px
         .container
             min-height: 650px
             display: flex
@@ -456,7 +464,7 @@ $button-width: 208px
                     line-height: 62.4px
                     text-align: left
                     color: #212529
-                    margin-bottom: 20px 
+                    margin-bottom: 30px 
 
                 .text
                     font-size: 16px
@@ -464,47 +472,9 @@ $button-width: 208px
                     line-height: 24.8px
                     text-align: left
                     color: #495057
-                    margin-top: 20px
+                    margin-bottom: 20px
                     padding-right: 20px
-
-    #partners
-        min-height: 450px
-        display: flex
-        margin-top: 180px
-        flex-direction: column
-        align-items: center
-        justify-content: space-around
-        
-        .title
-            font-size: 48px
-            font-weight: 600
-            line-height: 62.4px
-            text-align: center
-            color: #212529
-            padding-bottom: 10px
-        
-        .logos
-            width: 100%
-            margin-top: 60px
-            display: flex
-            justify-content: space-around
-            flex-wrap: wrap
-            .logo
-                width: 25%
-                display: flex
-                justify-content: center
-                align-items: center
-                margin-top: 20px
-                img
-                    width: 250px
-
-        .outline-button
-            margin-top: 80px
-            width: $button-width
-            &:hover
-                background-color: $button-background-color
-                color: #fff
-
+   
     .modal 
         display: none
         position: fixed
@@ -552,12 +522,12 @@ $button-width: 208px
             .sub-title
                 font: $sub-title-font
                 color: #333333
+                margin-bottom: 15px
 
             .sub-sub-title
                 font: $sub-sub-title-font
                 color: #5E5F62
                 letter-spacing: .001em
-                margin-top: 15px
                 span    
                     width: 556px
                     height: 56px
@@ -828,6 +798,7 @@ $button-width: 208px
 
     @media screen and (max-width: $step5)
         #first-screen
+            margin-bottom: 150px
             #background
                 height: 1200px
 
@@ -841,7 +812,6 @@ $button-width: 208px
                     width: 741px
 
         #third-screen
-            margin-top: 150px
             .container
                 .left-side
                     width: 55%
@@ -856,8 +826,9 @@ $button-width: 208px
                 height: 300px
 
         #dark-section
+            .header
+                margin-bottom: 30px
             .info-block
-                margin-top: 30px
                 .images
                     .dark-map-image,
                     .dark-map1-image,
@@ -877,13 +848,6 @@ $button-width: 208px
                         width: 674px
                         top: 0%
                         left: -10%
-
-        #partners
-            .logos
-                .logo
-                    display: flex
-                    justify-content: center
-                    align-items: center
 
         #get-in-touch
             .contact-form
@@ -929,6 +893,7 @@ $button-width: 208px
                 align-items: center
 
         #first-screen
+            margin-bottom: 0px
             .container
                 #header-img1
                     width: 694px
@@ -942,8 +907,8 @@ $button-width: 208px
                         font-size: 48px
 
         #third-screen
-            margin-top: 0px
             min-height: 550px
+            margin-bottom: 100px
             .container
                 .left-side
                     width: 55%
@@ -959,7 +924,6 @@ $button-width: 208px
                         right: 0%
 
         #benefits-screen
-            margin-top: 100px
             .benefits-title
                 font-size: 40px
 
@@ -968,11 +932,14 @@ $button-width: 208px
 
         #dark-section 
             .header
+                margin-bottom: 0px
                 .title 
                     font-size: 48px
+
+                .last
+                    margin-bottom: 30px
             
             .info-block
-                margin-top: 0px
                 .menu
                     width: 50%
                 .images
@@ -1003,12 +970,7 @@ $button-width: 208px
                         margin-bottom: 10px
 
                     .text
-                        margin-top: 10px
-
-        #partners
-            .logos
-                .logo
-                    width: 33% 
+                        margin-bottom: 10px
 
         #get-in-touch
             padding: 0px 0 100px 0
@@ -1073,6 +1035,7 @@ $button-width: 208px
 
         #first-screen
             min-height: 900px
+            margin-bottom: 0px
             #background
                 bottom: 7%
                 height: 850px
@@ -1097,7 +1060,7 @@ $button-width: 208px
                     top: 60%
        
         #third-screen
-            margin-top: 0px
+            margin-bottom: 100px
             .container
                 min-height: 900px
                 flex-direction: column
@@ -1117,7 +1080,7 @@ $button-width: 208px
                         right: 9%
 
         #benefits-screen
-            margin-top: 100px
+            margin-bottom: 110px 
             .benefits-title
                 font-size: 40px
                 width: 550px
@@ -1126,9 +1089,10 @@ $button-width: 208px
                 width: 90%
 
         #dark-section
+            margin-bottom: 100px
             height: 1350px
-            margin-top: 110px 
             .header
+                margin-bottom: 0px
                 .title 
                     font-size: 32px
                     line-height: 38.4px
@@ -1137,7 +1101,6 @@ $button-width: 208px
                     margin-left: 100px
             
             .info-block
-                margin-top: 0px
                 .menu
                     width: 100%
                     .expansion-panel
@@ -1147,7 +1110,6 @@ $button-width: 208px
                     display: none
         
         #connectivity
-            margin-top: 100px
             .container
                 min-height: 900px
                 display: flex
@@ -1171,25 +1133,17 @@ $button-width: 208px
                         margin-bottom: 10px
 
                     .text
-                        margin-top: 10px
-
-        #partners
-            .logos
-                .logo
-                    width: 50% 
+                        margin-bottom: 10px
 
         #get-in-touch
             padding: 0px 0 100px 0
 
             .info
                 margin-right: 0px
-
                 .section-title
                     height: auto
                     line-height: 40px
-
-            .section-text
-                margin-top: 10px
+                    margin-bottom: 10px
 
             .contact-form
                 width: 344px
@@ -1232,7 +1186,6 @@ $button-width: 208px
             #content-get-in-touch
                 display: flex
                 padding: 0 12px
-                margin-top: 70px
 
         .outline-button
             width: 90%
@@ -1259,10 +1212,10 @@ $button-width: 208px
 
                         .filled-button
                             width: 90%
+                            margin-bottom: 10px
 
                         .outline-button
                             width: 90%
-                            margin-top: 10px
 
                 .container
                     min-height: 270px
@@ -1275,6 +1228,7 @@ $button-width: 208px
                         top: 80%
 
         #third-screen
+            margin-bottom: 50px
             .container
                 padding: 0px
                 margin: 0px
@@ -1284,9 +1238,6 @@ $button-width: 208px
                     .side-title
                         font-size: 32px
                         line-height: 41.6px
-
-                    .side-text
-                        margin-top: 30px
 
                     .outline-button
                         width: 100% !important
@@ -1301,7 +1252,7 @@ $button-width: 208px
                         width: 95%
 
         #benefits-screen
-            margin-top: 50px
+            margin-bottom: 30px
             .benefits-title
                 font-size: 32px
                 line-height: 41.6px
@@ -1315,11 +1266,10 @@ $button-width: 208px
                 height: 310px
 
         #dark-section
+            margin-bottom: 50px
             background-size: 1920px
-            margin-top: 30px
             .header
-                height: 180px
-                margin-top: 20px
+                height: 300px
                 .title 
                     font-size: 20px
                     line-height: 24px
@@ -1329,7 +1279,6 @@ $button-width: 208px
                     margin-left: 0px
 
             .info-block
-                margin-top: 0px
                 .menu
                     .expansion-panel
                         .expansion-header
@@ -1341,13 +1290,11 @@ $button-width: 208px
                         font-size: 32px
                         line-height: 41.6px
                         width: 287px
-                        margin-top: 35px
 
                     .try-demo-button
                         width: 100%
 
         #connectivity
-            margin-top: 50px
             .container
                 max-height: 800px
                 display: flex
@@ -1364,32 +1311,13 @@ $button-width: 208px
                         font-size: 32px
                         line-height: 41.6px
                         min-width: 288px
+                        margin-bottom: 20px
 
-                    .text
-                        margin-top: 20px
-
-        #partners
-            margin-top: 70px
-            .title
-                font-size: 32px
-                line-height: 41.6px
-            
-            .logos
-                .logo
-                    width: 50%
-                    margin-top: 30px
-                    img
-                        max-width: 127px
-
-            .outline-button
-                width: 100%
-        
         #get-in-touch
             padding: 40px 0
             .section-title
                 font-size: 32px
                 line-height: 41.6px
-                margin-top: 30px
 
             .contact-form
                 width: 100%
