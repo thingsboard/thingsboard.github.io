@@ -88,13 +88,20 @@ service from your cloud vendor.
 
 #### Create Database for Trendz
 
-Then, press "Ctrl+D" to return to main user console and connect to the database to create trendz DB:
+Connect to the database to create trendz DB:
 
-```text
+```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-CREATE DATABASE trendz;
-\q
 ```
+{: .copy-code}
+
+Create database named "trendz":
+```bash
+CREATE DATABASE trendz;
+```
+{: .copy-code}
+
+Press “Ctrl+D” twice to logout.
 
 #### Configure database connection for Trendz
 

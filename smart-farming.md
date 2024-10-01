@@ -708,6 +708,3 @@ notitle: "true"
         });
     });
 </script>
-
-
-

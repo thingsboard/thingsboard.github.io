@@ -296,36 +296,9 @@
             line-height: 1.5em
             font-weight: normal
 
-
-    #tb-customers
-        margin: -50px -100% 0
-        padding: 50px 100%
-        text-align: justify
-        -moz-text-align-last: justify
-        text-align-last: justify
-        display: none
-        @media(min-width: 992px)
-            display: block
-        img
-            height: 60px
-            margin-bottom: 20px
-        main, div.main-div
-            display: flex
-            flex-wrap: wrap
-            flex-direction: row
-            justify-content: space-around
-            align-items: center
-            padding: 0 50px
-            a
-                display: block
-                padding: 10px
-                object
-                    pointer-events: none
-                    filter: invert(87%) sepia(3%) saturate(664%) hue-rotate(176deg) brightness(237%) contrast(82%)
-
     #background
         position: absolute
-        top: 570px
+        top: 405px
         left: 50%
         .main
             position: absolute
@@ -526,3 +499,8 @@
             max-width: 1400px
             #intro
                 margin-bottom: 160px
+
+@media (max-width: 992px)
+    #thingsboard-paas
+        #background
+            top: 570px
