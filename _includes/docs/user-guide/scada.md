@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-{% assign sinceVersion = "3.7.1" %}
+{% assign sinceVersion = "3.8.0" %}
 {% include templates/since.md %}
 
 [SCADA](https://en.wikipedia.org/wiki/SCADA) (Supervisory Control and Data Acquisition) refers to an architecture used to monitor and control various machines and manufacturing processes. 
@@ -9,7 +9,7 @@ In this system, ThingsBoard serves as the supervisory computer element, gatherin
 often with the assistance of the [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/){:target="_blank"} software or physical gateway devices. 
 Additionally, ThingsBoard offers robust [alarm](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} and [notification](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} systems, which are essential components of any IoT system.
 
-Starting from release 3.7.1, ThingsBoard introduces support for SCADA-like HMI dashboards, which we will cover in this documentation.
+Starting from release 3.8.0, ThingsBoard introduces support for SCADA-like HMI dashboards, which we will cover in this documentation.
 
 ## SCADA dashboard layout
 
