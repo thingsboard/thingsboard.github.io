@@ -276,3 +276,200 @@ Solutions team:
     alt: ""
     title: "Tetiana Yankiv"
     description: "Frontend Engineer"
+Support team:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/artem-murenko.png"
+    alt: ""
+    title: "Artem Murenko"
+    description: "Frontend Engineer"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/anna-shaforost.png"
+    alt: ""
+    title: "Anna Shaforost"
+    description: "Cloud Solutions Engineer"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/mykhailo-bondar.png"
+    alt: ""
+    title: "Mykhailo Bondar"
+    description: "Cloud Solutions Engineer"
+  3:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/andrii-ponomariov.png"
+    alt: ""
+    title: "Andrii Ponomariov"
+    description: "Cloud Solutions Engineer"
+  4:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/sofiia-sakharova.png"
+    alt: ""
+    title: "Sofiia Sakharova"
+    description: "Technical Support Engineer"
+  5:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/eugen-palchenko.png"
+    alt: ""
+    title: "Eugen Palchenko"
+    description: "Technical Support Engineer"
+  6:
+    src: "/images/aboutUsImages/thingsboard-team-photos/support-team/tymur-chubarov.png"
+    alt: ""
+    title: "Tymur Chubarov"
+    description: "Support Engineer"
+  7:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Mykhailo Kornieiev"
+    description: "Technical Support Engineer"
+  8:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Denys Sumin"
+    description: "Technical Support Engineer"
+  9:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Oleksii Kuripko"
+    description: "Technical Support Engineer"
+  10:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Yaroslav Chynkyn"
+    description: "Technical Support Engineer (night shifts)"
+  11:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Dmytro Shyshka"
+    description: "Technical Support Engineer (night shifts)"
+  12:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Illia Tsybulenko-Sihov"
+    description: "Technical Support Engineer (night shifts)"
+Gateway:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/illia-barkov.png"
+    alt: ""
+    title: "Illia Barkov"
+    description: "Product Owner"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/vitalii-bidochka.png"
+    alt: ""
+    title: "Vitalii Bidochka"
+    description: "Python Engineer"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/vadym-yakymuk.png"
+    alt: ""
+    title: "Vadym Yakymuk"
+    description: "QA Engineer"
+Trendz:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/trendz/iryna-kheroim.png"
+    alt: ""
+    title: "Iryna Kheroim"
+    description: "Project Manager"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/anatolii-davydko.png"
+    alt: ""
+    title: "Anatolii Davydko"
+    description: "Java Engineer"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/andrii-koveziuk.png"
+    alt: ""
+    title: "Andrii Koveziuk"
+    description: "Java Engineer"
+  3:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/yuliia-klochai.png"
+    alt: ""
+    title: "Yuliia Klochai"
+    description: "Java Engineer"
+  4:
+    src: "/images/aboutUsImages/thingsboard-team-photos/gateway/yevhenii-samoilov.png"
+    alt: ""
+    title: "Yevhenii Samoilov"
+    description: "Account/Sales Manager"
+EDGE:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/edge/andrii-landiak.png"
+    alt: ""
+    title: "Andrii Landiak"
+    description: "Java Engineer"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Yevhenii Zahrebelnyi"
+    description: "Java Engineer"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Yevheniia Mala"
+    description: "Technical Writer"
+  3:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Oleksandr Sapeha"
+    description: "Technical Writer"
+TBMQ:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/edge/dmytro-landiak.png"
+    alt: ""
+    title: "Dmytro Landiak"
+    description: "Java Engineer"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Artem Babak"
+    description: "Frontend Engineer"
+Sales/Marketing:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/sales-marketing/alla-sidnenko.png"
+    alt: ""
+    title: "Alla Sidnenko"
+    description: "CSM"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/sales-marketing/anastasiia-antoniuk.png"
+    alt: ""
+    title: "Anastasiia Antoniuk"
+    description: "Sales"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/sales-marketing/michael-shapovalov.png"
+    alt: ""
+    title: "Michael Shapovalov"
+    description: "Product/Marketing"
+Operation team:
+  0:
+    src: "/images/aboutUsImages/thingsboard-team-photos/operation-team/oksana-kovalska.png"
+    alt: ""
+    title: "Oksana Kovalska"
+    description: "HRD"
+  1:
+    src: "/images/aboutUsImages/thingsboard-team-photos/operation-team/mariia-kalitka.png"
+    alt: ""
+    title: "Mariia Kalitka"
+    description: "HRD"
+  2:
+    src: "/images/aboutUsImages/thingsboard-team-photos/operation-team/valeria-shovkun.png"
+    alt: ""
+    title: "Valeria Shovkun"
+    description: "Sourcer/HR Manager"
+  3:
+    src: "/images/aboutUsImages/thingsboard-team-photos/operation-team/nataliia-avramenko.png"
+    alt: ""
+    title: "Nataliia Avramenko"
+    description: "Sr Accountant"
+  4:
+    src: "/images/aboutUsImages/thingsboard-team-photos/operation-team/albina-kukharchuk.png"
+    alt: ""
+    title: "Albina Kukharchuk"
+    description: "Accountant"
+  5:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Katia Goldin"
+    description: "CFO"
+  6:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Anastasiia Orlata"
+    description: "Office-manager"
+  7:
+    src: "/images/aboutUsImages/thingsboard-team-photos/kasharix.png"
+    alt: ""
+    title: "Andrii Doan"
+    description: "Lawyer"
