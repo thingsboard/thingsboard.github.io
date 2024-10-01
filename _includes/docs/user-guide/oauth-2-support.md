@@ -4,7 +4,7 @@
 ## Overview
 
 ThingsBoard allows you to provide Single Sign-On functionality for your customers and automatically create tenants, customers, or sub customers using external user management platforms, that supports the OAuth 2.0 protocol.  
-A list of platforms that supports the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Okta](https://www.okta.com/){:target="_blank"}, etc.   
+A list of platforms that supports the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Okta](/docs/user-guide/oauth/okta/){:target="_blank"}, [Azure](/docs/user-guide/oauth/azure/){:target="_blank"}, etc.   
 
 ## OAuth 2.0 authentication flow
 
@@ -87,8 +87,6 @@ Remove clients that are no longer needed or are obsolete:
 
 ## Login with Google
 
-### Scenario description
-
 In this sample, we will be using authentication via [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"}.
 The user is going to be logged into the Tenant, and the Tenant name is going to be equal to the user's email.
 If the Tenant does not exist in the system, the new Tenant will be created.
@@ -140,13 +138,13 @@ Now, navigate to the Login screen. We will see an additional "Login with Google"
 
 {% include images-gallery.html imageCollection="login-with-google-1" %}
 
+{% if docsPrefix == "pe/" %}
 If you log in as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
 
 {% include images-gallery.html imageCollection="login-with-google-2" %}
+{% endif %}
 
 ## Login with Auth0
-
-### Scenario description
 
 In this guide we will configure the **OAuth** with the [OAuth0](https://auth0.auth0.com/){:target="_blank"} for the authentication.
 In this case User is going to be logged into the Tenant which name is going to be equal to user’s email domain name.  
@@ -172,7 +170,6 @@ To apply the configurations properly, we first need to obtain OAuth 2.0 credenti
 ```
 http://domain:port/login/oauth2/code/
 ```
-
  
 \* where under the domain, please, specify the current domain of yours and for the port please specify the port to have an HTTP access to the ThingsBoard instance of yours.
 For the example reasons, my domain is the *localhost*, and the port is being the default ThingsBoard installation port *8080*.
@@ -226,164 +223,95 @@ Navigate to the login screen. You will find two available login methods: Google 
 
 ## Mapping of the external user into ThingsBoard internal user structure
 
-Mapping of the external user info object into ThingsBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
-The main functionality of the mapper is to map key-value attributes from the external user info object into the expected structure of the ThingsBoard OAuth 2.0 User:
-
-```java
-public class OAuth2User {
-    private String tenantName;
-    private TenantId tenantId;
-    private String customerName;
-    private CustomerId customerId;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private boolean alwaysFullScreen;
-    private String defaultDashboardName;
-    
-    // NOTE: Next configurations available only in Professional Edition
-
-    private List<String> userGroups;
-    private String parentCustomerName;
-    private CustomerId parentCustomerId;
-}
-```
+Mapping of the external user info object into ThingsBoard user can be achieved using the **[Basic](#basic-mapper)**, **[Custom](#custom-mapper)**, **GitHub**, and **Apple** mappers. 
 
 ### Basic mapper
 
 A basic mapper is able to merge an external OAuth 2.0 user info object into the ThingsBoard OAuth 2.0 user with a predefined set of rules.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png&#41;)
-{% include images-gallery.html imageCollection="step27" preview="false" max-width="100%" %}
+To use a basic mapper, set mapper type "Basic".
 
-To use a basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
+{% include images-gallery.html imageCollection="mapper-basic-1" %}
 
 Here are the details of other properties:
 
-- **allowUserCreation** -
-  if this option is set to **true**, then in case, the user account does not exist in the ThingsBoard yet, it will be created.
-  If this option is set to **false**, the user will get access denied error, in case, he tries to log in with an external OAuth 2.0 provider, but there is no user on ThingsBoard with those credentials.   
+- **Allow user creation**. If this option is **enable**, then in case, the user account does not exist in the ThingsBoard yet, it will be created.
+If this option is **disable**, the user will get access denied error, in case, he tries to log in with an external OAuth 2.0 provider, but there is no user on ThingsBoard with those credentials.
  
-- **emailAttributeKey** -
-  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
+- **Email attribute key**. This is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
   
-- **firstNameAttributeKey** -
-  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user first name property.
+- **First name attribute key**. - This is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user first name property.
     
-- **lastNameAttributeKey** -
-  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user surname property.
+- **Last name attribute key**. - This is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user surname property.
 
-- **tenantNameStrategy** -
-  this option specifies which tenant is going to be chosen for creating the user.
-  A basic mapper provides three possible options strategy for a generating Tenant name from an external user info object - *domain*, *email*, or *custom*:
-     - **domain** - the name of the Tenant will be extracted as the domain from the email of the user;
-     - **email** - the name of the Tenant will be the user's email;
-     - **custom** - a custom pattern can be set for the Tenant name. Please see *tenantNamePattern*.
+- **Tenant name strategy**. - this option specifies which tenant is going to be chosen for creating the user. A basic mapper provides three possible options strategy for a generating Tenant name from an external user info object - *domain*, *email*, or *custom*:
+     - **DOMAIN** - the name of the Tenant will be extracted as the domain from the email of the user;
+     - **EMAIL** - the name of the Tenant will be the user's email;
+     - **CUSTOM** - a custom pattern can be set for the Tenant name. Please see *Tenant name pattern*.
 
-- **tenantNamePattern** -
-  In case, the *tenantNameStrategy* is **custom** you can specify the name of the Tenant, where the user is going to be created with a help of a custom pattern.
+- **Tenant name pattern**. In case, the *Tenant name strategy* is **Custom** you can specify the name of the Tenant, where the user is going to be created with a help of a custom pattern.
   You can use attributes from the external user info object to put them into the Tenant's name. Please use %{attribute_key} as placeholder for the attribute value.
   
   Tenant pattern examples:
-     - **Demo Tenant**           # Hard coded Tenant name;
-     - **Demo Tenant %{email}**  # if the user's email is *test@demo.com*, the Tenant's name will be the *'Demo Tenant test@demo.com'*;
-     - **%{givenName}**          # if the user's givenName attribute is *Demo User*, the Tenant name will be *'Demo User'*.
+     - **Demo Tenant**           *# Hard coded Tenant name*;
+     - **Demo Tenant %{email}**  *# if the user's email is "test@demo.com", the Tenant's name will be the "Demo Tenant test@demo.com"*;
+     - **%{givenName}**          *# if the user's givenName attribute is "Demo User", the Tenant name will be "Demo User"*.
         
-- **customerNamePattern**
-  User can be created under specific Customer, and not under the Tenant if this pattern field is not empty.
+- **Customer name pattern**. User can be created under specific Customer, and not under the Tenant if this pattern field is not empty.
   You can use attributes from the external user info object to put them into the Customer name. Please use %{attribute_key} as placeholder for the attribute value.
   
   Customer pattern examples:
-     - **Demo Customer**             # Hard coded Customer name;
-     - **Demo Customer %{email}**    # If the user's *email* attribute is *test@demo.com*, the Customer name will be *'Demo Customer test@demo.com'*;
-     - **%{city}**                   # If the user's *city* attribute is *New York*, the Customer name will be *'New York'*. 
+     - **Demo Customer**             *# Hard coded Customer name*;
+     - **Demo Customer %{email}**    *# If the user's "email" attribute is "test@demo.com", the Customer name will be "Demo Customer test@demo.com"*;
+     - **%{city}**                   *# If the user's "city" attribute is "New York", the Customer name will be "New York"*. 
 
-- **defaultDashboardName**
-  A user will be redirected to a specific Dashboard if this field is not empty.
+- **Default dashboard name**. A user will be redirected to a specific Dashboard if this field is not empty.
   
-- **alwaysFullScreen**
-  If this field is **true** and **defaultDashboardName** is not empty, the User will be redirected to a specific Dashboard in a fullscreen mode.
+- **Always full screen**. If this option is **enable** and **Default dashboard name** is not empty, the User will be redirected to a specific dashboard in a fullscreen mode.
 
-- **parentCustomerNamePattern**
+{% if docsPrefix == "pe/" %}
 
-  **NOTE: This configuration available only in Professional Edition.**
-
-  The Customer of the user can be created in the hierarchy under this parent Customer if this pattern field is not empty.
-  You can use attributes from the external user info object to put them into the Parent Customer name. Please use %{attribute_key} as a placeholder for the attribute value.
+- **Parent customer name pattern** The Customer of the user can be created in the hierarchy under this parent Customer if this pattern field is not empty. You can use attributes from the external user info object to put them into the Parent Customer name. Please use %{attribute_key} as a placeholder for the attribute value.
   
   Parent Customer pattern examples:
-     - **Demo Parent Customer**           # Hard coded Parent Customer name;
-     - **Demo Parent Customer %{email}**  # If user's *email* attribute is *test@demo.com*, Parent Customer name is going to be *'Demo Parent Customer test@demo.com'*;
-     - **%{country}**                     # If user's *country* attribute is *Top Customer*, Parent Customer name is going to be *'Parent Customer'*. 
+     - **Demo Parent Customer**           *# Hard coded Parent Customer name*;
+     - **Demo Parent Customer %{email}**  *# If user's "email" attribute is "test@demo.com", Parent Customer name is going to be "Demo Parent Customer test@demo.com"*;
+     - **%{country}**                     *# If user's "country" attribute is "Top Customer", Parent Customer name is going to be "Parent Customer"*. 
 
-- **userGroupsNamePattern**
-
-  **NOTE: This configuration available only in Professional Edition.**
-
-  By default, the newly created user is assigned only to the **All** user's group. 
-  You can customize this behavior by specifying a list of groups, where a user has to be assigned to as well. 
-  You can use attributes from the external user info object to put them into user group names. Please use %{attribute_key} as placeholder for attribute value.
-  If groups don't exist, this group will be created automatically.
+- **User groups name pattern**. By default, the newly created user is assigned only to the **All** user's group. You can customize this behavior by specifying a list of groups, where a user has to be assigned to as well. 
+You can use attributes from the external user info object to put them into user group names. Please use %{attribute_key} as placeholder for attribute value.
+If groups don't exist, this group will be created automatically.
   
   User groups pattern examples:
-     - **Tenant Administrators, Managers**   # Hard coded user groups;
-     - **%{job_title}**                    # If user's *job_title* attribute is *Manager*, user is going to be assigned into *Manager* user group.
+     - **Tenant Administrators, Customer Users, Managers..** *# Hard coded user groups*
+     - **%{job_title}** *# If user's "job_title" attribute is "Manager", user is going to be assigned into "Manager" user group*
+
+{% capture difference %}
+**Please note:**
+The **Parent customer name pattern** and **User groups name pattern** configurations available only in [ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% endif %}
 
 ### Custom mapper
 
 If the basic mapper functionality doesn't cover your business needs, with the help of the custom mapper you are able to add an implementation that fits your specific goals.
 
 A custom mapper designed as a separate microservice that is running nearby the ThingsBoard core microservice.
-ThingsBoard forwards all mapping requests to this microservice and expects as a response ThingsBoard OAuth 2.0 user object:
+ThingsBoard forwards all mapping requests to this microservice and expects as a response ThingsBoard OAuth 2.0 user object.
 
-```java
-public class OAuth2User {
-    private String tenantName;
-    private TenantId tenantId;
-    private String customerName;
-    private CustomerId customerId;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private boolean alwaysFullScreen;
-    private String defaultDashboardName;
-    
-    // NOTE: Next configurations available only in Professional Edition
-    private List<String> userGroups;
-    private String parentCustomerName;
-    private CustomerId parentCustomerId;
-}
-```
+Please refer to this [base implementation](https://github.com/thingsboard/custom-oauth2-mapper){:target="_blank"} as a starting point for your custom mapper.
 
-Please refer to this [base implementation](https://github.com/thingsboard/custom-oauth2-mapper) as a starting point for your custom mapper.
+To use the custom mapper, set mapper type "Custom".
 
-To use the custom mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **custom**. 
+{% include images-gallery.html imageCollection="mapper-custom-1" %}
 
 Here are the details of other properties:
 
-- **URL**
-
-  URL of the custom mapper endpoint.
-
-- **username**
-
-  If the custom mapper endpoint configured with basic authorization, specify the *username* in this property.
- 
-- **password**
-
-  If the custom mapper endpoint configured with basic authorization, specify the *password* in this property.
-  
-Here is an example of demo configuration:
-
-```bash
-  custom:
-    url: http://localhost:10010/oauth2/mapper
-    username: admin
-    password: pa$$word
-```
-
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/28-oauth2-google-general-mapper-custom.png&#41;)
-{% include images-gallery.html imageCollection="step28" preview="false" max-width="100%" %} 
+- **URL**. URL of the custom mapper endpoint;
+- **username**. If the custom mapper endpoint configured with basic authorization, specify the *username* in this property;
+- **password**. If the custom mapper endpoint configured with basic authorization, specify the *password* in this property.
 
 ## HaProxy configuration
 

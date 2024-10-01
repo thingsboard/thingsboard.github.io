@@ -129,7 +129,7 @@ oauth0-configuration-of-thingsboard-1:
         title: 'Access your ThingsBoard instance using your System Administrator credentials. Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
     1:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-2-pe.png
-        title: 'Enter a descriptive title for the client, and select "Custom" as the provider from the dropdown. If necessary, specify the allowed platforms, or leave all. Now enter the *Client ID* and *Client secret* obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";'
+        title: 'Enter a descriptive title for the client, and select "Custom" as the provider from the dropdown. If necessary, specify the allowed platforms, or leave all. Now enter the Client ID and Client secret obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";'
     2:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-3-pe.png
         title: 'Proceed to the "Mapper" block, and select the "Basic" type. Fill in the other fields as needed (details on these are provided below in this article under the "Basic mapper" section). Some mapper configurations may only be available in the ThingsBoard Professional Edition. Click Add to confirm and finalize the addition of your new OAuth 2.0 client;'
@@ -159,16 +159,15 @@ oauth0-configuration-of-thingsboard-3:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-10-pe.png
         title: 'You have logged into ThingsBoard as a Customer User.'
 
+mapper-basic-1:
+    0:
+        image: /images/user-guide/oauth-2-support/mapper-basic-1-pe.png
+        title: 'To use a basic mapper, set mapper type "Basic".'
 
-
-
-step27:
-   0:
-       image: /images/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png
-
-step28:
-   0:
-       image: /images/user-guide/oauth-2-support/28-oauth2-google-general-mapper-custom.png
+mapper-custom-1:
+    0:
+        image: /images/user-guide/oauth-2-support/mapper-custom-1-pe.png
+        title: 'To use the custom mapper, set mapper type "Custom".'
 
 ---
 
