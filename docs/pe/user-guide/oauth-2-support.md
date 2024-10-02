@@ -9,7 +9,7 @@ adding-domain-1:
         title: 'On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to begin adding a new domain. Provide your domain name and OAuth 2.0 client. Then, click "Add".'
     1:
         image: /images/user-guide/oauth-2-support/adding-domain-2-pe.png
-        title: ''
+        title: 'Domain added.'
     
 managing-domain-1:
     0:
@@ -17,7 +17,7 @@ managing-domain-1:
         title: 'Click on the domain to view its details. Switch to editing mode by clicking the large orange button;'
     1:
         image: /images/user-guide/oauth-2-support/managing-domain-2-pe.png
-        title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply Changes" button.'
+        title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply changes" button.'
     
 deleting-domain-1:
     0:
@@ -36,7 +36,7 @@ adding-oauth2-client-1:
         title: 'Enter a descriptive title for the client, and select the authentication provider from the dropdown menu. Provide the Client ID and Client Secret obtained from your authentication provider. Configure advanced settings as necessary. Then, click "Add".'
     2:
         image: /images/user-guide/oauth-2-support/adding-oauth2-client-3-pe.png
-        title: ''
+        title: 'New OAuth 2.0 client added.'
 
 managing-oauth2-client-1:
     0:
@@ -80,7 +80,7 @@ google-configuration-of-thingsboard-google-1:
         title: 'Let&#39;s make the settings for the "General" block. Select "POST" in the "Client authentication method" field. Then check the "Allow user creation" checkbox. Add to the scope field: "email", "openid", and "profile";'
     4:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-5-pe.png
-        title: 'Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify %{email} as "Tenant name pattern" (more details about these properties are described below in the "Basic mapper" part), fill in the other fields, if necessary, and click "Add" to confirm adding the OAuth 2 client;'
+        title: 'Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify %{email} as "Tenant name pattern" (more details about these properties are described below in the "Basic mapper" part). Specify "Tenant Administrators" as the user group name pattern to add a new user to the specified tenant group. Click "Add" to confirm adding the OAuth 2 client;'
     5:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-6-pe.png
         title: 'OAuth client is added. Click "Add" to confirm adding domain.'
@@ -106,7 +106,7 @@ login-with-google-2:
 auth0-credentials-1:
     0:
         image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-1.png
-        title: 'To apply the configurations properly, we first need to obtain OAuth 2.0 credentials. Therefore, we first go to the OAuth0 Management Console and create a new application "Java Spring Boot" of the "Regular Web App" type;'
+        title: 'To apply the configurations properly, we first need to obtain OAuth 2.0 credentials. Therefore, we first go to the OAuth0 Management Console. Open the "Applications" page, and click "+ Create Application" button;'
     1:
         image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-2.png
         title: 'Name your application "ThingBoard", and choose the application type - "Regular Web Applications";'
@@ -132,7 +132,7 @@ oauth0-configuration-of-thingsboard-1:
         title: 'Enter a descriptive title for the client, and select "Custom" as the provider. Now enter the "Client ID" and "Client secret" obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";'
     2:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-3-pe.png
-        title: 'Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify %{email} as "Customer name pattern" (more details about these properties are described below in the "Basic mapper" part), fill in the other fields, if necessary, and click "Add" to confirm adding the OAuth 2 client;'
+        title: 'Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify %{email} as "Customer name pattern" (more details about these properties are described below in the "Basic mapper" part). Specify "Customer Users" as the user group name pattern to add a new user to the specified customer group. Click "Add" to confirm adding the OAuth 2 client;'
     3:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-4-pe.png
         title: 'One more OAuth client added.'

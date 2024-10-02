@@ -127,9 +127,18 @@ To add new OAuth 2.0 client follow the steps below:
 - Login to your ThingsBoard instance as System Administrator;
 - Navigate to the "Domains" tab, and click "plus" icon;
 - Your domain name and redirect URI template are already specified here. Now we need to add an OAuth 2.0 client. Click "Create" to begin;
-- Enter the title and select "Google" as the provider. If necessary, specify the allowed platforms, or leave all. Now, enter the *Client ID* and *Client secret* from the [Google API Console](https://console.developers.google.com/){:target="_blank"}. Then, expand the "Advanced settings" menu;
+- Enter the title and select "Google" as the provider. If necessary, specify the allowed platforms, or leave all;
+- Now, enter the *Client ID* and *Client secret* from the [Google API Console](https://console.developers.google.com/){:target="_blank"}. Then, expand the "Advanced settings" menu;
 - Let's make the settings for the "General" block. Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery){:target="_blank"} to see the list of up-to-date URLs like "Access Token URI", "Authorization URI", etc. Select "POST" in the "Client authentication method" field. Then check the "Allow user creation" checkbox. Add to the scope field: "email", "openid", and "profile";
-- Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify %{email} as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part), fill in the other fields, if necessary, and click "Add" to confirm adding the OAuth 2 client;
+
+{% if docsPrefix == null %}
+- Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify **%{email}** as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
+{% endif %}
+{% if docsPrefix == "pe/" %}
+- Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify **%{email}** as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part). Specify "Tenant Administrators" as the user group name pattern to add a new user to the specified tenant group;
+{% endif %}
+
+- Click "Add" to confirm adding the OAuth 2 client;
 - OAuth client is added. Click "Add" to confirm adding domain.
 
 {% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-1" %}
@@ -161,7 +170,7 @@ This time we are going to create customers for our users inside a single domain 
 
 To apply the configurations properly, we first need to obtain OAuth 2.0 credentials: 
 
-- Go to the [OAuth0 Management Console](https://manage.auth0.com/){:target="_blank"} and create a new application "Java Spring Boot" of the "Regular Web Application" type;
+- First, we go to the [OAuth0 Management Console](https://manage.auth0.com/){:target="_blank"}. Open the "Applications" page, and click "+ Create Application" button;
 - Name your application "ThingBoard", and choose the application type - "Regular Web Applications";
 - Afters, you need to choose the technology being used. Please, choose the "Java Spring Boot" technology;
 - Once your application is created, you are redirected to the application details page. Navigate to the "Settings" tab to find the *Client ID* and *Client Secret*;
@@ -196,9 +205,16 @@ Now let's add Auth0 as an OAuth 2.0 client of ThingsBoard:
 - Access your ThingsBoard instance using your System Administrator credentials;
 - Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;
 - Enter a descriptive title for the client, and select "Custom" as the provider from the dropdown;
-- If necessary, specify the allowed platforms, or leave all. Now enter the *Client ID* and *Client secret* obtained from the OAuth0 Management Console;
+- If necessary, specify the allowed platforms, or leave all;
+- Now enter the *Client ID* and *Client secret* obtained from the [OAuth0 Management Console](https://manage.auth0.com/){:target="_blank"};
 - In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";
-- Proceed to the "Mapper" block, and select the "Basic" mapper type. Fill in the other fields as needed (details on these are provided below in this article under the "[Basic mapper](#basic-mapper)" section). Some mapper configurations may only be available in the ThingsBoard Professional Edition;
+{% if docsPrefix == null %}
+- Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify **%{email}** as "Customer name pattern" (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
+{% endif %}
+{% if docsPrefix == "pe/" %}
+- Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify **%{email}** as "Customer name pattern" (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part). Specify "Customer Users" as the user group name pattern to add a new user to the specified customer group;
+{% endif %} 
+
 - Click Add to confirm and finalize the addition of your new OAuth 2.0 client.
 
 One more OAuth client added.
@@ -223,7 +239,7 @@ Navigate to the login screen. You will find two available login methods: Google 
 
 ## Mapping of the external user into ThingsBoard internal user structure
 
-Mapping of the external user info object into ThingsBoard user can be achieved using the **[Basic](#basic-mapper)**, **[Custom](#custom-mapper)**, **GitHub**, and **Apple** mappers. 
+Mapping of the external user info object into ThingsBoard user can be achieved using the [Basic](#basic-mapper), [Custom](#custom-mapper), GitHub, and Apple mappers. 
 
 ### Basic mapper
 
