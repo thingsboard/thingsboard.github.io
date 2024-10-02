@@ -3,7 +3,13 @@
 {% assign docsTag = include.docsTag %}
 {% if docsTag %}
    {% assign siteData = site.data[docsTag] %}
-   {% assign searchPath = "/docs/" | append: docsTag %}
+        {% if docsTag == "edge-pe" %}
+            {% assign searchPath = "/docs/" | append: "pe/edge" %}
+        {% elsif docsTag == "mobile-pe" %}
+            {% assign searchPath = "/docs/" | append: "pe/mobile" %}
+        {% else %}
+            {% assign searchPath = "/docs/" | append: docsTag %}
+        {% endif %}
    {% assign searchPath = searchPath | append: "/search/?q=" %}
 {% else %}
    {% assign docsTag = "ce" %}
