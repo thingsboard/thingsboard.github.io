@@ -109,6 +109,23 @@ mosquitto_pub -d -h localhost -p 1883 -t sensors/temperature -m 32 -q 1 -u usern
 ```
 {: .copy-code}
 
+#### Autogenerate subscribe and publish commands
+
+You may also find the TBMQ browser tool "Check Connectivity" useful for **automatically generating commands** to **subscribe to a topic** and **publish a message**.
+This tool uses your host, port, and client credentials data to construct `mosquitto_sub` and `mosquitto_pub` commands. It is available only for the _Basic_ client credentials type.
+
+Please follow these steps to generate commands for "Getting Started Credentials":
+
+1. Open the 'Client Credentials' page from the left-hand menu.
+2. Click on row with client credentials "Getting Started Credentials" to open the details.
+3. Click on the "Check connectivity" button.
+4. In the opened window, select your operating system and install the necessary client tools.
+5. You can copy and run the commands, but do not forget to replace "$YOUR_PASSWORD" with the real password.
+
+You can read more about [Check Connectivity](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#check-connectivity) here.
+
+{% include images-gallery.html imageCollection="check-connectivity" %}
+
 #### Result
 
 You should receive and observe the published message for the subscribed client.

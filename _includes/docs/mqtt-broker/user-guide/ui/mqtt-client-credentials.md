@@ -118,7 +118,7 @@ There are a few ways of deleting client credentials:
 
 ### Check connectivity
 
-“Check Connectivity” is a useful feature that automatically generates commands to **subscribe to a topic** and **publish a message**.
+“Check Connectivity” is a useful tool that automatically generates commands to **subscribe to a topic** and **publish a message**.
 This feature utilizes the user's host, port, and client credentials to generate the necessary commands. 
 
 It is available only for [Basic](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#mqtt-basic-credentials) credentials.
