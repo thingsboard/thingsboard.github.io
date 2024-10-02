@@ -80,7 +80,7 @@ google-configuration-of-thingsboard-google-1:
         title: 'Let&#39;s make the settings for the "General" block. Select "POST" in the "Client authentication method" field. Then check the "Allow user creation" checkbox. Add to the scope field: "email", "openid", and "profile";'
     4:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-5-ce.png
-        title: 'Go to the "Mapper" block. Select the "Basic" type and fill in the fields, if necessary (described in more detail below in this article in the "Basic" mapper part). Some configurations are available only in ThingsBoard Professional Edition. Then, click "Add" to confirm adding OAuth 2 client.'
+        title: 'Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify %{email} as "Tenant name pattern" (more details about these properties are described below in the "Basic mapper" part), fill in the other fields, if necessary, and click "Add" to confirm adding the OAuth 2 client;'
     5:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-6-ce.png
         title: 'OAuth client is added. Click "Add" to confirm adding domain.'
@@ -122,10 +122,10 @@ oauth0-configuration-of-thingsboard-1:
         title: 'Access your ThingsBoard instance using your System Administrator credentials. Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
     1:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-2-ce.png
-        title: 'Enter a descriptive title for the client, and select "Custom" as the provider from the dropdown. If necessary, specify the allowed platforms, or leave all. Now enter the Client ID and Client secret obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";'
+        title: 'Enter a descriptive title for the client, and select "Custom" as the provider. Now enter the "Client ID" and "Client secret" obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";'
     2:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-3-ce.png
-        title: 'Proceed to the "Mapper" block, and select the "Basic" type. Fill in the other fields as needed (details on these are provided below in this article under the "Basic mapper" section). Some mapper configurations may only be available in the ThingsBoard Professional Edition. Click Add to confirm and finalize the addition of your new OAuth 2.0 client;'
+        title: 'Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify %{email} as "Customer name pattern" (more details about these properties are described below in the "Basic mapper" part), fill in the other fields, if necessary, and click "Add" to confirm adding the OAuth 2 client;'
     3:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-4-ce.png
         title: 'One more OAuth client added.'
