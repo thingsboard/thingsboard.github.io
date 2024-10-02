@@ -17,8 +17,8 @@ notitle: "true"
             <h1 class="title">Agriculture & Farm management Software</h1>
             <h3 class="sub-title">Smart Farming and Agriculture software solution designed to manage a farm or livestock business. Organize, integrate, monitor and improve all aspects of your farm on one platform.></h3>
             <div class="info-block">
-                <input class="filled-button anchor-button" type="button" value="Contact us"/>
-                <a class="outline-button" href="/docs/paas/#features">Our features</a>
+                <a class="filled-button" target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">Live demo</a>
+                <input class="outline-button anchor-button" type="button" value="Contact us"/>
             </div>
         </div>
         <div class="container">
@@ -132,7 +132,7 @@ notitle: "true"
                     <p>Receive alerts based on customized rules. Get an email or sms, set details for the notifications.</p>
                 </div>
             </div>
-            <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">Try a demo</a>
+            <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a>
         </div>
         <div class="images"></div>
     </div>

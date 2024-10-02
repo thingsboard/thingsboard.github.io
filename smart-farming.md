@@ -22,8 +22,8 @@ notitle: "true"
                 <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
                 <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
                 <div class="smart-farm-demo-btn">
-                    <a target="_blank" href="/smart-farming-demo"><button class="try-demo">Learn more</button></a>
-                    <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Contact Us</button>
+                    <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0"><button class="try-demo">View live demo</button></a>
+                    <a target="_blank" href="/smart-farming-demo"><button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)" class="contact-us">Learn more</button></a>
                 </div>
             </div>
             <div class="smart-farm-demo-img">
@@ -54,7 +54,6 @@ notitle: "true"
                             <li><a href="#smart-farm-cycle">The IoT-Based Smart Farming Cycle </a></li>
                             <li><a href="#smart-farm-pros">Advantages of Smart farming </a></li>
                             <li><a href="#smart-farm-solutions">Smart farming solutions </a></li>
-                            <li><a href="#smart-farm-demo">ThingsBoard IoT platform for Smart farming solutions </a></li>
                             <li><a href="#smart-farm-key-features">Key features of ThingsBoard IoT Platform </a></li>
                             <li><a href="#smart-farm-management-software">Benefits of using ThingsBoard IoT Platform </a></li>
                         </ul>
