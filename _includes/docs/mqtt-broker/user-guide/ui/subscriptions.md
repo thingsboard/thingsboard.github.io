@@ -7,7 +7,7 @@ When a client subscribes to a topic, it expresses its interest in receiving all 
 
 ### All subscriptions
 
-On the Subscriptions page you may **observe, analyze or filter** by each column all subscriptions on the broker. 
+On the Subscriptions page you may **observe, analyze or filter** all subscriptions on the broker. 
 The table contains the following information about each subscription:
 * **Client ID**.
 {% include templates/mqtt-broker/subscription-options.md %}
