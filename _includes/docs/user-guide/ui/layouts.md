@@ -63,7 +63,7 @@ And we resize the window in a certain percentage ratio to each other (it is just
 
 ## Breakpoints
 
-Breakpoints were introduced in ThingsBoard 3.7.1. 
+Breakpoints were introduced in ThingsBoard 3.8.0. 
 They allow you to define different layout settings and widgets based on the screen width of the end-user.
 
 Each dashboard [state](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} has a `Default` breakpoint. 

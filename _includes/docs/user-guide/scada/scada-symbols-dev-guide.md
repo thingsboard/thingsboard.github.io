@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-{% assign sinceVersion = "3.7.1" %}
+{% assign sinceVersion = "3.8.0" %}
 {% include templates/since.md %}
 
 In ThingsBoard, SCADA symbols are crafted using [SVG](https://en.wikipedia.org/wiki/SVG){:target="_blank"} (Scalable Vector Graphics), 
