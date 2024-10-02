@@ -119,7 +119,7 @@ datasource:
 
 ### Step 6. Run installation script
 
-Launch Windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
+Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
 Execute **install.bat** script to install Trendz as a Windows service.
 This means it will be automatically started on system startup. 
@@ -129,8 +129,8 @@ The output should be similar to this one:
   ```text
 C:\Program Files (x86)\trendz>install.bat
 Detecting Java version installed.
-CurrentVersion 17
-Java 17 found!
+CurrentVersion 11
+Java 11 found!
 Installing Trendz Analytics...
 ...
 Trendz Analytics installed successfully!
