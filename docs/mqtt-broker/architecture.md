@@ -52,7 +52,7 @@ TBMQ uses the powerful capabilities of [Kafka](https://kafka.apache.org/) as its
 Kafka plays a crucial role in various stages of the MQTT message processing. 
 All unprocessed published messages, client sessions, and subscriptions are stored within dedicated Kafka topics. 
 A comprehensive list of Kafka topics used within TBMQ is available [here](#kafka-topics). 
-All broker nodes can readily access the most up-to-date status of client sessions and subscriptions by utilizing these topics. 
+All broker nodes can readily access the most up-to-date state of client sessions and subscriptions by utilizing these topics. 
 They maintain local copies of sessions and subscriptions for efficient message processing and delivery. 
 When a client loses connection to a specific broker node, other nodes can seamlessly continue operations based on the latest state. 
 Additionally, newly added broker nodes to the cluster get this vital information upon their activation.
@@ -113,11 +113,9 @@ Consequently, we made a strategic decision to optimize performance by separating
 ![image](/images/mqtt-broker/architecture/tbmq-persistent-dev.png)
 
 For Device persistent clients, we use the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
-Dedicated threads, functioning as Kafka consumers, retrieve these messages and store them in a [PostgreSQL](#postgresql-database) database utilized for persistence storage. 
+Dedicated threads, functioning as Kafka consumers, retrieve these messages and store them in a [Redis](#redis) database utilized for persistence storage. 
 This approach is particularly suitable for Device clients, as they typically do not require extensive message reception. 
-This approach helps us recover stored messages smoothly when a client reconnects. At the same time, it ensures good performance for scenarios involving a low incoming message rate.
-
-We expect persistent Device clients to receive no more than 5K messages/second overall due to PostgreSQL limitations. We plan to add support for Redis to optimize persistent storage for Device clients.
+This approach helps us recover stored messages smoothly when a client reconnects. At the same time, it ensures great performance for scenarios involving a moderate incoming message rate.
 
 ##### Persistent Application client
 
@@ -165,24 +163,30 @@ Below is a comprehensive list of Kafka topics used within TBMQ, along with their
 
 #### Redis
 
-Prior to TBMQ v2.0 Redis was mainly used as cache for cluster mode deployment to speed up certain queries like 
-getting MQTT client credentials from PostgreSQL DB to authenticate the connecting clients.
+[Redis](https://redis.io/) is a powerful, in-memory data store that excels in scenarios requiring low-latency and high-throughput data access, making it an ideal choice for storing real-time data. 
+
+In TBMQ, we utilize Redis to store messages for Device persistent clients, allowing us to achieve high performance when handling the message persistence and delivery for these clients.
+Redis's ability to manage large datasets in memory with lightning-fast read and write operations, combined with the scalability of Redis Cluster, 
+ensures that persistent messages can be retrieved and delivered efficiently, even as the volume of stored messages grows and system demands increase. 
+This scalability allows Redis to seamlessly handle larger workloads by distributing data across multiple nodes, maintaining high performance and reliability.
+
+{% capture tbmq-redis-postgresql %}
+Before TBMQ v2.0, PostgreSQL was used for saving messages for Device persistent clients.
+We migrated to Redis in v2.0 to provide a more scalable and performant solution for message persistence due to PostgreSQL limitations in terms of handling a high volume of write operations.
+This migration to Redis enables us to handle much higher throughput while ensuring fast, reliable message storage and delivery for Device persistent clients.
+{% endcapture %}
+{% include templates/info-banner.md content=tbmq-redis-postgresql %}
 
 #### PostgreSQL database
 
 TBMQ uses a [PostgreSQL](https://www.postgresql.org/) database to store different entities such as users, user credentials, MQTT client credentials, statistics, 
-WebSocket connections and WebSocket subscriptions entities used in WebSocket client, and others.
+WebSocket connections, WebSocket subscriptions, and others.
 
-It is important to acknowledge that Postgres, being an SQL database, has certain limitations regarding the speed of message persistence, 
-particularly in terms of the number of writes per second it can handle. It should be noted that Postgres cannot match the performance capabilities of Kafka in this regard. 
-Based on our experience, we have observed limits of approximately 5-6k operations per second, depending on the hardware configuration of the Postgres installation.
-
-Considering these limitations, we recommend using APPLICATION clients for use cases that surpass the aforementioned performance thresholds. 
-APPLICATION clients, with their dedicated Kafka topics and separate threads for message delivery, 
-offer higher performance and scalability for scenarios requiring robust message persistence.
-
-In future releases, we have plans to add more options for third-party persistence storage for client messages.
-Our goal is to include better, more dependable solutions that meet a wider set of needs.
+PostgreSQL, known for its reliability, robustness, and flexibility, is a powerful open-source relational database management system that ensures data integrity while supporting high transaction throughput.
+In TBMQ, PostgreSQL serves as the primary storage layer for persisting critical metadata about the system.
+Given the nature of MQTT applications, which involve high message volumes and frequent read/write operations, 
+PostgreSQL's transaction management and ACID compliance provide strong consistency guarantees, 
+ensuring that important data is safely stored and retrievable in any scenarios.
 
 #### Web UI
 
@@ -207,25 +211,17 @@ The combination of these features makes the GUI an invaluable tool for managing,
 
 #### Netty
 
-Add info about the Netty here.
+In our pursuit of leveraging cutting-edge technologies, we selected [Netty](https://netty.io/) for implementing the TCP server that facilitates the MQTT protocol, owing to its proven performance and flexibility.
 
-#### Message dispatcher service
+Netty is a high-performance, asynchronous event-driven network framework well-suited for building scalable and robust network applications, making it an excellent fit for handling MQTT traffic in TBMQ.
+One of the primary reasons for choosing Netty is its efficient handling of large numbers of simultaneous connections. 
+In IoT environments, where thousands or even millions of devices are constantly connected and exchanging data, Netty's ability to handle concurrent connections with low resource consumption is invaluable.
 
-...
+Netty uses non-blocking I/O (NIO), allowing it to efficiently manage resources without needing a dedicated thread for each connection, greatly reducing overhead. 
+This approach ensures high throughput and low-latency communication, even under heavy loads, making it ideal for the high demands of an MQTT broker like TBMQ.
 
-#### Subscriptions Trie
-
-Within TBMQ, all client subscriptions are consumed from a Kafka topic and stored in a Trie data structure in the memory. 
-The Trie organizes the topic filters hierarchically, with each node representing a level in the topic filter.
-
-When a _PUBLISH_ message is read from Kafka, the broker needs to identify all clients with relevant subscriptions for the topic name of the published message to ensure they receive the message. 
-The Trie data structure enables efficient retrieval of client subscriptions based on the topic name. 
-Once the relevant subscriptions are identified, a copy of the message is forwarded to each respective client.
-
-This approach ensures high-performance message processing as it allows for quick and precise determination of the clients that need to receive a specific message. 
-However, it is worth noting that this method requires increased memory consumption by the broker due to the storage of the Trie data structure.
-
-For more detailed information on the Trie data structure, you can refer to the provided [link](https://en.wikipedia.org/wiki/Trie).
+Moreover, Netty is highly flexible, allowing developers to customize the networking stack to meet specific protocol requirements.
+With its modular design, Netty provides the building blocks to easily implement protocol handling, message parsing, and connection management, while offering TLS encryption options, making it secure and extensible for future needs.
 
 #### Actor system
 
@@ -245,6 +241,43 @@ With the Actor System and various actor types, TBMQ efficiently processes messag
 
 For further insights into the Actor model, you can refer to the provided [link](https://en.wikipedia.org/wiki/Actor_model).
 
+#### Message dispatcher service
+
+The Message dispatcher service is another core component of TBMQ's architecture, responsible for managing the flow of messages between publisher clients and Kafka, 
+ensuring safe processing, persistence, and efficient delivery to the appropriate subscribers.
+
+The primary role of the Message dispatcher service begins once the message from the publisher is received via the Actor system. 
+The service takes this message and publishes it to Kafka, ensuring that it is durably stored for safe processing and persistence. 
+This step guarantees that messages are not lost, even in the event of node failures or temporary disconnections, making Kafka a reliable backbone for handling high volumes of MQTT traffic.
+
+Once Kafka confirms the message is stored, the Message dispatcher service retrieves the message and leverages the [Subscription Trie](#subscriptions-trie) to analyze which subscribers are eligible to receive it.
+After identifying the appropriate subscribers, the Message dispatcher service determines how to handle the message based on the type of subscriber:
+
+* [Device Non-Persistent Client](#non-persistent-client): The message can be immediately delivered to the client.
+* [Device Persistent Client](#persistent-device-client): The message is published to Device clients Kafka topic and later stored in Redis. 
+* [Application Persistent Client](#persistent-application-client): The message is published to dedicated Application Kafka topic.
+
+Once the appropriate handling route is determined and done for each subscriber, the message is passed to Netty, which manages the actual network transmission, 
+ensuring the message is delivered to the appropriate clients.
+
+#### Subscriptions Trie
+
+The Trie data structure is highly efficient for fast lookups due to its hierarchical organization and prefix-based matching.
+It allows for quick identification of matching topics by storing common prefixes only once, which minimizes search space and reduces memory usage
+Its predictable time complexity, which depends on the length of the topic rather than the number of topics, ensures consistent and fast lookups even in large-scale environments with millions of subscriptions.
+
+Within TBMQ, all client subscriptions are consumed from a Kafka topic and stored in a Trie data structure in the memory. 
+The Trie organizes the topic filters hierarchically, with each node representing a level in the topic filter.
+
+When a _PUBLISH_ message is read from Kafka, the broker needs to identify all clients with relevant subscriptions for the topic name of the published message to ensure they receive the message. 
+The Trie data structure enables efficient retrieval of client subscriptions based on the topic name. 
+Once the relevant subscriptions are identified, a copy of the message is forwarded to each respective client.
+
+This approach ensures high-performance message processing as it allows for quick and precise determination of the clients that need to receive a specific message. 
+However, it is worth noting that this method requires increased memory consumption by the broker due to the storage of the Trie data structure.
+
+For more detailed information on the Trie data structure, you can refer to the provided [link](https://en.wikipedia.org/wiki/Trie).
+
 ### Standalone vs cluster mode
 
 TBMQ is designed to be horizontally scalable, allowing for the addition of new broker nodes to the cluster automatically. 
@@ -257,7 +290,7 @@ To handle client connection requests, a load balancer of your choice can be used
 The load balancer distributes incoming client connections across all available TBMQ nodes, 
 evenly distributing the workload and maximizing resource utilization.
 
-In the event that a client loses its connection with a specific broker node (e.g., due to node shutdown, removal, or failure), 
+In the event that a client loses its connection with a specific broker node (e.g., due to node shutdown, removal, or network failure), 
 it can easily reconnect to any other healthy node within the cluster. 
 This seamless reconnection capability ensures continuous operation and uninterrupted service for connected clients, 
 as they can establish connections with any available node in the cluster.
