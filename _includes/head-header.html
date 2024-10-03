@@ -388,8 +388,11 @@
                                 let left = item.position().left + offset;
                                 let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
                                 indicator.css('opacity', 1);
+                                let windowOverflowLeft = left + windowOverflow;
                                 if (windowOverflow < 0) {
                                     left += windowOverflow;
+                                } else if (windowOverflowLeft < 0) {
+                                    left -= windowOverflowLeft;
                                 }
                                 submenuContainer.css('left', left + 'px');
                                 if (!subMenuActive) {

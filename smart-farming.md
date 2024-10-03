@@ -30,17 +30,7 @@ The following interactive dashboard represents a smart-farming component that yo
 This particular dashboard allows users to monitor and control the aeration inside silos. 
 You may quickly adapt it to other farm assets tracking or remote control scenarios.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-farming/sf1.png" alt="Smart farming dashboard with location">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-farming/sf2.png" alt="Smart farming dashboard with big linear chart">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-farming/sf3.png" alt="Smart farming dashboard dark theme">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-farming' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartFarming_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>

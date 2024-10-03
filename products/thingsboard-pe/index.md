@@ -92,7 +92,7 @@ description:
       </div>
     </div>
   </section>
-  <section id="scheduler">
+  <section id="scheduler-section">
     <div class="main-div">
       <div id="features-top-3">
         <div id="background-scheduler" >

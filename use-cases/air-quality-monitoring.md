@@ -39,17 +39,7 @@ Save up to 90% of development time for your air monitoring solution by utilizing
 - remote control and OTA updates for your smart sensors and other devices;
 - customizable mobile applications with minimum coding efforts.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/air-quality/aq1.png" alt="air quality 1">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/air-quality/aq2.png" alt="air quality 2">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/air-quality/aq3.png" alt="air quality 3">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'air-quality-monitoring-1' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_AirQM_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
@@ -59,14 +49,7 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
 -  **Main state** which is intended for monitoring sensors health: battery level, connectivity, etc. The Main state contains:
 - **Sensor state** allows you to view detailed information about the sensor: It's latest sensor readings, location, etc. 
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/air-quality/aq4.png" alt="air quality 4">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/air-quality/aq5.png" alt="air quality 5">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'air-quality-monitoring-2' %}
 
 ## ThingsBoard advantages
 <section class="usecase-advantages">

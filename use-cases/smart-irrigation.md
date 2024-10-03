@@ -35,23 +35,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 - customizable mobile applications with minimum coding efforts.
 
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-1.png" alt="smart irrigation 1">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-2.png" alt="smart irrigation 2">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-3.png" alt="smart irrigation 3">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-4.png" alt="smart irrigation 4">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-5.png" alt="smart irrigation 5">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
 
 
 ## ThingsBoard advantages

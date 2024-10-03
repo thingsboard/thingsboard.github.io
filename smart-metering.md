@@ -46,20 +46,7 @@ The ThingsBoard IoT platform provides production ready server infrastructure to 
 
 The following interactive dashboard hosted on live demo server represents smart metering IoT data visualization that may be embedded in your IoT project or solution. See the dashboard description below.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-metering/sm1.png" alt="Smart metering dashboard with a map">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-metering/sm2.png" alt="Smart metering dashboard with a location">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-metering/sm3.png" alt="Smart metering dashboard with a building plan">
-    </div>
-    <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/smart-metering/sm4.png" alt="Smart metering dashbord with a thermostat controller">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-metering' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartMetering_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button gtm_button">View live demo</a>

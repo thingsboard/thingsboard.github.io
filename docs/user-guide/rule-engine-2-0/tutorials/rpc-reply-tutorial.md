@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: RPC Reply With data from Related Device
-description: RPC Reply With data from Related Device
+title: RPC reply with data from related device
+description: RPC reply with data from related device
 
 ---
 
@@ -9,40 +9,31 @@ description: RPC Reply With data from Related Device
 {:toc}
 
 
-In this tutorial, we will explain how to work with **RPC call reply** Rule Node and also how to:
-
-- Create and connect different Rule Chains using **Rule Chain** node
-- Filter messages using **Script** node
-- Transform incoming messages with **Script** node
-- Fetch attributes of related entities with **Related Attributes** node
-- Process RPC Calls from devices with **RPC call reply** node
-- Log Message with **Log** node
+In this tutorial, we will explain how to work with [RPC call reply](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#rpc-call-reply-node) node and also how to:
+- Create and connect different rule chains using [rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
+- Filter messages using filter [script](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
+- Transform incoming messages with transformation [script](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
+- Fetch latest telemetry data of related entities with [related entity data](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#related-attributes) node.
+- Log messages with [log](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#log-node) node.
 
 
 ## Intro
-We have 2 devices - Controller and Thermostat. We want to initiate RPC call from Controller and request related Thermostat current temperature value.
+We have 2 devices - controller and thermostat. We want to initiate [client-side RPC](/docs/{{docsPrefix}}user-guide/rpc/#client-side-rpc) call from controller and request related thermostat current temperature value.
 RPC call will have 2 properties:
 
-- method: **getTemperature**
-- params: **empty array**
+- method: **getCurrentTemperature**
+- params: **empty JSON object**
 
 ## Model definition
-There is a room where 2 devices are installed: Thermostat and Controller. 
+There is a room where 2 devices are installed: thermostat and controller. 
 
-- The Thermostat is represented as Device with the name **Thermostat A** and type **Thermostat**. 
-- The Controller is represented as Device with name **Controller A** and type **Controller**. 
-- Create relation from **Controller A** to **Thermostat A** via relation **Thermostat**
-- Add the attribute, with server scope, to the device **Thermostat A**. 
-    - Attribute name: **temperature**
-    - Attribute value: **52**
-    
-We want to initiate RPC request from **Controller A** and ask the latest temperature of the Thermostat in the same room (**Thermostat A**)
-<br>
-<br>
+- The thermostat is represented as Device with the name **Thermostat A** and type **Thermostat**. 
+- The controller is represented as Device with name **Controller A** and type **Controller**. 
+- Create relation from **Controller A** to **Thermostat A** via relation type **Thermostat**.
 
-## Configure Rule Chain
+## Configure Rule Chains
 
-### Create new Rule Chain **Related thermostat temperature**
+### Create new Rule Chain: Related thermostat temperature
 
 Go to **Rule Chains** -> **Add new Rule Chain** 
 
@@ -52,47 +43,54 @@ Configuration:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
 
-New Rule Chain is created. Press **Edit** button and configure Chain.
+New Rule Chain is created. Press on the rule chain row to open it.
 
-##### Add **Related attributes** node
-Add **Related attributes** node and connect it to the **Input** node.
+##### Add node: related entity data
+Add **related entity data** node and connect it to the **input** node.
  
-This node will load **temperature** attribute of related Thermostat and save it in Message metadata with name **temp**.
+This node will fetch latest **temperature** reading of related thermostat **Thermostat A** and save it in message metadata with name **roomTemperature**.
 
 Configuration:
 
-- Name: **get related temperature**
-- Direction: **From**
+- Name: **Get temperature from related Thermostat**
+- Direction: **From originator**
 - Max relation level: **1**
 - Relation type : **Thermostat**
 - Entity type : **Device**
-- Latest telemetry : **false**
-- Source attribute : **temperature**
-- Target attribute : **temp**
+- Data to fetch: **Latest telemetry**
+- Source attribute key: **temperature**
+- Target key: **roomTemperature**
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/get-related.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
 
-##### Add **Transform Script** node 
-Add **Transform Script** node and connect it to the **Related attributes** node.
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
 
-This node will transform an original message into RPC reply message. **RPC call reply** node sends Message payload as the response 
-to the request, so we need to construct proper payload in Transformation node.
+##### Add transformation node: script 
+Add transformation **script** node and connect it to the **related entity data** node.
+
+This node will transform an original message into RPC reply message. **RPC call reply** node sends message payload as the response 
+to the request, so we need to construct proper payload in transformation node.
 
 Configuration:
 
-- Name: **build response**
-- Script: {% highlight javascript %} msg = {"temperature" : metadata.temp} return {msg: msg, msgType: msgType}; {% endhighlight %}
+- Name: **Build response**
+- ScriptLang: **TBEL**
+- Script:
+  ```javascript 
+     return {msg: {"temperature": metadata.roomTemperature}, metadata: metadata, msgType: msgType};
+  ```
+  {: .copy-code}
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
 
-##### Add **RPC call reply** node
-**RPC call reply** node takes RPC request ID from message metadata. This ID used to identify incoming RPC call. 
+##### Add action node: RPC call reply
+**RPC call reply** node takes RPC requestId from message metadata. This id used to identify incoming RPC call. 
 
-This node takes message payload and sends it as the response to the Message Originator.
+This node takes message payload and sends it as the response to the message originator.
 
 Configuration:
 
-- Name : **send response**
+- Name : **Send response**
 - Request ID : **requestId**
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
@@ -100,51 +98,63 @@ Configuration:
 <br>
 <br>
 
-This Rule chain is ready and we should save it. Here is how **Related thermostat temperature** Rule Chain should look like:
+This rule chain is ready and we should save it. Here is how **Related thermostat temperature** rule chain should look like:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
 
 
 ### Connect Rule Chains
-Now we will connect our new chain with the **Root Chain**. 
-We want to route incoming RPC requests with **method** property equals **getTemperature** to our new rule chain (**Related thermostat temperature**).
+Now we will connect our new chain with the **Root Rule Chain**. 
+We want to route incoming RPC requests with **method** property equals to **getCurrentTemperature** to our new rule chain **Related thermostat temperature**.
+Let's return to the list of rule chains and open our **Root Rule Chain** to make required changes.
 
-Let's return to the **Root Rule Chain**, press **Edit** button and make required changes.
-
-##### Add **Filter Script** node 
-Add **Filter Script** node and connect it to the **Message Type Switch** node with relation type **RPC Request**.
-
-Configuration:
-
-- Name : filter getTemperature
-- Script: {% highlight javascript %} return msg.method === 'getTemperature'; {% endhighlight %}
-
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-filter.png)
-
-After this, all incoming messages with Message Type **RPC Request** will be routed to this node. 
-Inside this node, function will filter only allowed RPC requests with **method** = **getTemperature**
-
-##### Add **Rule Chain** node
-Add **Rule Chain** node with **True** relation type to the previous *Filter Script* node (**filter getTemperature**).
+##### Add filter node: script 
+Add filter **script** node and connect it to the default **message type switch** node with relation type **RPC Request from Device**. 
+Default **Root Rule Chain** should already have such node connection from **message type switch** node to the **log** node with name "Log RPC from Device". 
+In such case we need to replace log node **Log RPC from Device** with newly created **script** node. 
+Please don't remove log node. We will reuse it for logging uknown RPC requests.
 
 Configuration:
 
+- Name: **Filter getCurrentTemperature RPC**
+- ScriptLang: **TBEL**
+- Script:
+  ```javascript 
+     return msg.method == "getCurrentTemperature";
+  ```
+  {: .copy-code}
+
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/filter-rpc-request.png)
+
+After this, all incoming messages with message type **RPC Request from Device** will be routed to this node. 
+Inside this node, function will filter only allowed RPC requests with **method** == **getCurrentTemperature**
+
+##### Add node: rule chain
+Add **rule chain** node with **True** node connection to the previous filter *script* node "Filter getCurrentTemperature RPC".
+
+Configuration:
+
+- Name: **To Related thermostat temperature**
 - Rule Chain: **Related thermostat temperature**
+- Forward message to the originator's default rule chain: **Disabled**
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/connect-Rule-Chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/add-rule-chain-node.png)
 
 Now, all messages that satisfy configured filter will be routed to **Related thermostat temperature** Rule Chain
 
 ##### Log unknown request
-We also want to log all other RPC requests if they are unknown. We need to add **Log** node with relation type **False** 
-to the **Filter Script** node (**filter getTemperature**). 
-
-All incoming RPC requests with **method** NOT EQUALS  **getTemperature** will be passed from **Filter Script** to the **Log** node.
+Reconnect the filter **script** node "Filter getCurrentTemperature RPC" with node connection **False** to the previously disconnected **log** node. 
+All incoming RPC requests with method that doesn't equal to the "getCurrentTemperature" will be passed from filter **script** to the **log** node.
 
 Configuration:
 
-- Name : log others
-- Script : {% highlight javascript %} return 'Unexpected RPC call request message:\n' + JSON.stringify(msg) + '\metadata:\n' + JSON.stringify(metadata); {% endhighlight %}
+- Name: **Log RPC from Device**
+- ScriptLang: **TBEL**
+- Script:
+  ```javascript 
+     return '\nIncoming message:\n' + JSON.stringify(msg) + '\nIncoming metadata:\n' + JSON.stringify(metadata);
+  ```
+  {: .copy-code}
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
 
@@ -157,47 +167,67 @@ Changes in the **Root Rule Chain** are finished and we should save it. Here is h
 
 
 ## Verify configuration
-Configuration is finished and we can verify that Rule Chain works as we expect. 
+Configuration is finished and we can verify that Rule Chains work as expected.
 
-We will use REST RPC API for emulating **Controller A** device.
+Let's start with publishing "temperature" telemetry for **Thermostat A** device. For sending HTTP request, we will use **curl** utility.
 
-For sending HTTP request, we will use **curl** utility.
- 
+- To trigger telemetry upload let's go to **Check connectivity** tab of the device page and copy **curl** command to publish telemetry for our thermostat device.
 
-For triggering RPC request, we need to:
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-curl-command.png)
 
-- Take **Controller A** device API token. We can copy token from Device page. In this tutorial it is **IAkHBb9N7kKD9ieLRMFN** but it is unique and you need to copy your device token.
+- Execute the copied command:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-token.png)
+```shell
+curl -v -X POST http://demo.thingsboard.io/api/v1/CF8zr16VZeCk7zRyztZB/telemetry --header Content-Type:application/json --data "{temperature:25}"
+```
+{: .copy-code}
 
-- Make **POST** request to the Thingsboard URL - http://localhost:8080/api/v1/**$ACCESS_TOKEN**/rpc 
-with content type = **application/json** and payload <code>{"method": "getTemperature", "params":{}}</code>
+We will use REST RPC API for emulating **Controller A** device RPC requests from device to server.
 
-{% highlight bash%}
-curl -X POST -d '{"method": "getTemperature", "params":{}}' http://localhost:8080/api/v1/IAkHBb9N7kKD9ieLRMFN/rpc --header "Content-Type:application/json"
-{% endhighlight %}
+For triggering RPC request, we need to do the same action for device **Controller A** as for the **Thermostat A** device, namely copy the **curl** command from the **Check connectivity** tab.
+After that let's make a few changes to the command to trigger REST RPC API:
+
+ - Change the API path by replacing **telemetry** with **rpc**
+ - Change the payload from <code>{temperature:25}</code> to <code>{method: "getCurrentTemperature", params:{}}</code>
+
+The resulted command should look like:
+
+```shell
+curl -v -X POST http://demo.thingsboard.io/api/v1/ZcHBHbptBqxgV1A6Qrtx/rpc --header Content-Type:application/json --data "{method: "getCurrentTemperature", params:{}}"
+```
+{: .copy-code}
 
 Response:
-{% highlight bash %}
-{"temperature":"52"}
-{% endhighlight %}
+```shell
+{"temperature":"25"}
+```
+{: .copy-code}
 
-It is expected result. **Controller A** sends RPC call to the Thingsboard with method **getTemperature**. 
-Message was routed via configured Rule Chain and attribute of the related thermostat were fetched and returned in the response.
+It is expected result. **Controller A** sends RPC call to the ThingsBoard with method **getCurrentTemperature**. 
+Message was routed via configured rule chain and latest telemetry of the related thermostat were fetched and returned in the response.
 
-If we try to submit request with unknown method we will see message in the Thingsboard log file:
-{% highlight bash %}
-curl -X POST -d '{"method": "UNKNOWN", "params":{}}' http://localhost:8080/api/v1/IAkHBb9N7kKD9ieLRMFN/rpc --header "Content-Type:application/json"
-{% endhighlight %}
+If we try to submit request with unknown method:
 
-<code>
-[pool-35-thread-3] INFO  o.t.rule.engine.action.TbLogNode - Unexpected RPC call request message:
-{"method":"UNKNOWN","params":{}}metadata:
-{"deviceType":"Controller","requestId":"0","deviceName":"Controller A"}
-</code>
+```shell
+curl -v -X POST http://demo.thingsboard.io/api/v1/ZcHBHbptBqxgV1A6Qrtx/rpc --header Content-Type:application/json --data "{method: "getCurrentHumidity", params:{}}"
+```
+{: .copy-code}
+
+we will see message in the ThingsBoard log file:
+
+<br>
+
+```less
+[rule-dispatcher-0-3] INFO  o.t.rule.engine.action.TbLogNode -
+Incoming message:
+{"method":"getCurrentHumidity","params":{}}
+Incoming metadata:
+{"deviceType":"Controller","requestId":"1","sessionId":"54c2abd1-6496-4ab3-9036-e044083b1823","serviceId":"tb-core-1","deviceName":"Controller A"}
+```
+{: .copy-code}
 
 <br>
 <br>
-For more details how RPC works in the Thignsboard, please read [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) Article.
+For more details how RPC works in the ThingsBoard, please read [RPC capabilities](/docs/{{docsPrefix}}user-guide/rpc/) Article.
 <br>
 <br>
