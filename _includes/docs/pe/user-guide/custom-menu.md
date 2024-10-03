@@ -8,37 +8,37 @@ You can add new and show/hide existing menu items.
 
 Menu customization options:
 
-- **Adding new menu items**: You can add new items to the menu, including links to specific dashboards, external web pages, or other features within ThingsBoard;
+- **Adding new menu items**: You can add new items to the menu, including links to specific dashboards, or external web pages;
 
 - **Changing icons and names**: You can customize the icons and names for each menu item to better reflect their functionality and value to the user;
 
 - **Reorganizing the menu**: You can drag and rearrange the order of items in the menu, optimizing the interface according to your workflows;
 
-- **Configuring access**: The menu can be configured so that certain items are available only to specific customers or users, providing an additional level of security and personalization.
+- **Personalized settings**: The menu can be customized individually for each tenant, customer, or their users, providing an additional level of personalization.
 
-## Operations with custom menu
+## Add custom menu
 
-### Add new custom menu
-
-For effective use of the custom menu in ThingsBoard, it is important to define the scope of its application, depending on who the end user is: Tenant or Customer.
+Before adding a custom menu in ThingsBoard, it is important to define the scope of its application, depending on who the end user is: Tenant or Customer.
 
 Tenant scope options:
-- Not assigned - indicates that the custom menu is not assigned to any tenant user. This option is convenient to use during the menu setup stage;
-- All tenant users - selecting this option means that the menu will be accessible to all users at the tenant level;
-- Users list - this option allows you to create a list of users who will have access to this menu.
+- *Not assigned* - indicates that the custom menu is not assigned to any tenant user. This option is convenient to use during the menu setup stage and can be assigned to the required tenant user afterward;
+- *All tenant users* - selecting this option means that the menu will be accessible to all users at the tenant level;
+- *Users list* - this option allows you to create a list of users who will have access to this menu.
 
 Customer scope options:
-- Not assigned - indicates that the custom menu is not assigned to any customer or customer user. This option is convenient to use during the menu setup stage;
-- All customer users - selecting this option applies the custom menu to all of your customers and their users;
-- Users list - this option allows you to apply the custom menu to a specific customer user or a list of customer users;
-- Customers list - this option allows you to apply the custom menu to a specific customer or a list of customers and their users.
+- *Not assigned* - indicates that the custom menu is not assigned to any customer or customer user. This option is convenient to use during the menu setup stage and can be assigned to the required customer or customer user afterward;
+- *All customer users* - selecting this option applies the custom menu to all of your customers and their users;
+- *Users list* - this option allows you to apply the custom menu to a specific customer user or a list of customer users;
+- *Customers list* - this option allows you to apply the custom menu to a specific customer or a list of customers and their users.
 
-To add custom menu, follow these steps:
+**Add new custom menu**
+
+To add new custom menu, follow these steps:
 
 - Go to the "Custom menu" tab of the "White labeling" page, and click the "plus" icon;
 - In new window, enter custom menu name;
 - Select scope: Tenant or Customer;
-- Choose assignee type;
+- Specify to whom exactly you are assigning this custom menu;
 - After all settings, click "Add";
 
 Custom menu added.
@@ -49,113 +49,18 @@ Custom menu added.
         title: Go to the "Custom menu" tab of the "White labeling" page, and click the "plus" icon;
     ===
         image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-2-pe.png,
-        title: In new window, enter custom menu name, select scope, and choose assignee type;
+        title: In new window, enter custom menu name, select scope, and Specify to whom exactly you are assigning this custom menu;
     ===
         image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-3-pe.png,
         title: After all settings, click "Add";
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=addCustomMenu %}
+{% include images-gallery.liquid imageCollection=addCustomMenu %}
 
-### Manage custom menu config
+## Manage custom menu configuration
 
-Custom menu actions:
-
-В верхней части окна ви можете cкрить/отобразить скрытые элементы, hide all menu items and reset to default menu
-
-#### Operation with item
-
-#### Hide all menu items
-
-{% assign hideAllMenuItems = '
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/hide-all-menu-items-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/hide-all-menu-items-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=hideAllMenuItems %}
-
-##### Hide existing menu items
-
-To hide menu items in the ThingsBoard user interface, specify the menu items you want to hide in JSON data format in the "Custom Menu" window.
-
-{% assign hideExistingMenuItems = '
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/hide-existing-menu-items-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/hide-existing-menu-items-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=hideExistingMenuItems %}
-
-##### Edit custom menu item
-
-{% assign editCustomMenuItem = '
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/edit-custom-menu-item-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/edit-custom-menu-item-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/edit-custom-menu-item-3-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=editCustomMenuItem %}
-
-#### Reset to default menu
-
-{% assign resetToDefaultMenu = '
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/reset-to-default-menu-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/reset-to-default-menu-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=resetToDefaultMenu %}
-
-#### Show hidden items
-
-{% assign showHiddenItems = '
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/show-hidden-items-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/show-hidden-items-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=showHiddenItems %}
-
-#### Reset menu item back to default
-
-{% assign resetMenuItemBackToDefault = '
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/reset-menu-item-back-to-default-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
-    ===
-        image: /images/user-guide/white-labeling/custom-menu/reset-menu-item-back-to-default-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=resetMenuItemBackToDefault %}
-
-#### Add new menu item
+### Add new menu item
 
 You can add a new menu item that will link to a specific dashboard or an external webpage, such as a documentation page.
 To do this, follow these steps:
@@ -198,9 +103,9 @@ Alternatively, you can add a new item between existing ones:
 - Hover your mouse pointer between two menu items and click "Add custom menu item";
 - Enter the name for your menu item. Leave the item type as "Link". Now, specify the action: open a dashboard or a URL. Click "Add";
 - A new menu item is added between existing menu items;
-- Apply changes to the menu by clicking the "Save" button;
-- Click on the new menu item;
-- 
+- Apply changes to the menu by clicking the "Save" button.
+
+Now, click on the new menu item. You will navigate to the specified dashboard.
 
 {% assign addCustomMenuItemBetweenExistingItems = '
     ===
@@ -217,59 +122,200 @@ Alternatively, you can add a new item between existing ones:
         title: Click on the new menu item;
     ===
         image: /images/user-guide/white-labeling/custom-menu/add-custom-menu-item-11-pe.png,
-        title: ;
+        title: You will navigate to the specified dashboard.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=addCustomMenuItemBetweenExistingItems %}
 
-##### Adding suitem
+#### Adding suitem
 
-Let's create three new menu items: two items will link to dashboards and will be grouped under one section.
-The third item will link to the documentation.
+You can place several menu items into one section. For example, devices, assets, and entity views are located in the "Entities" section.
 
-{% assign addSuitem = '
+As an example, let's add one section and place two subitems within it.
+
+- First, let's add a section. Start adding a new menu item. Name it "My dashboards", select the "Section" item type, and click "Add";
+- Custom item with "Section" type added. A "+ Add subitem" button appeared under the section "My dashboards". Click it to add a subitem to this section;
+- Add a new menu item. Name it "Dashboard A" and add a link to the dashboard;
+- Subitem added. As you can see, it is located in the "My dashboards" section by hierarchy;
+- Add another one menu item. Name it "Dashboard B" and add a link to your second dashboard. Save the changes;
+
+In the left menu, a section called "My dashboards" has appeared. Click on it to expand. Inside, you will find two menu subitems that link to the dashboards. Click on the "Dashboard A" menu item. The corresponding dashboard will open;
+Now click on the "Dashboard B" menu item to navigate to the second dashboard.
+
+{% assign addSubitem = '
     ===
-        image: /images/user-guide/white-labeling/custom-menu/add-suitem-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-1-pe.png,
+        title: First, let&#39;s add a section. Start adding a new menu item;
     ===
-        image: /images/user-guide/white-labeling/custom-menu/add-suitem-2-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-2-pe.png,
+        title: Name it "My dashboards", select the "Section" item type, and click "Add";
     ===
-        image: /images/user-guide/white-labeling/custom-menu/add-suitem-3-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-3-pe.png,
+        title: Custom item with "Section" type added. A "+ Add subitem" button appeared under the section "My dashboards". Click it to add a subitem to this section;
     ===
-        image: /images/user-guide/white-labeling/custom-menu/add-suitem-4-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-4-pe.png,
+        title: Add a new menu item. Name it "Dashboard A" and add a link to the dashboard. Click "Add";
     ===
-        image: /images/user-guide/white-labeling/custom-menu/add-suitem-5-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-5-pe.png,
+        title: Subitem added. As you can see, it is located in the "My dashboards" section by hierarchy;
     ===
-        image: /images/user-guide/white-labeling/custom-menu/add-suitem-6-pe.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-6-pe.png,
+        title: Add another one menu item. Name it "Dashboard B" and add a link to your second dashboard. Save the changes;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-7-pe.png,
+        title: In the left menu, a section called "My dashboards" has appeared. Click on it to expand. Inside, you will find two menu subitems that link to the dashboards. Click on the "Dashboard A" menu item. The corresponding dashboard will open;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/add-subitem-8-pe.png,
+        title: Now click on the "Dashboard B" menu item to navigate to the second dashboard.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=addSuitem %}
+{% include images-gallery.liquid imageCollection=addSubitem %}
 
+### Edit menu item
 
+To edit menu item, click the "pencil" icon in the row of the menu item you want to edit. Make the necessary changes and click "Apply". The item configuration has been changed.
 
-#### Delete menu item
+{% assign editMenuItem = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/edit-menu-item-1-pe.png,
+        title: Click the "pencil" icon in the row of the menu item you want to edit;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/edit-menu-item-2-pe.png,
+        title: Make the necessary changes and click "Apply";
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/edit-menu-item-3-pe.png,
+        title: The item configuration has been changed.
+'
+%}
 
-{% assign deleteMenuItem1 = '
+{% include images-gallery.liquid imageCollection=editMenuItem %}
+
+{% capture difference %}
+**Please note:**
+You can change the action only for custom menu item.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+### Reset to default menu
+
+You can reset all your changes to the default state by pressing the "Reset to default menu" button, and click "Save" to apply changes.
+
+{% assign resetToDefaultMenu = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/reset-to-default-menu-1-pe.png,
+        title: You can reset all your changes to the default state by pressing the "Reset to default menu" button;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/reset-to-default-menu-2-pe.png,
+        title: Apply changes;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/reset-to-default-menu-3-pe.png,
+        title: The menu has been reset to the default state.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=resetToDefaultMenu %}
+
+### Reset menu item back to default
+
+You can reset a menu item to its default state by clicking the "broom" icon in the row of the menu item, and click "Save" to apply changes.
+
+{% assign resetMenuItemBackToDefault = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/reset-menu-item-back-to-default-1-pe.png,
+        title: You can reset a menu item to its default state by clicking the "broom" icon in the row of the menu item;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/reset-menu-item-back-to-default-2-pe.png,
+        title: Apply changes;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/reset-menu-item-back-to-default-3-pe.png,
+        title: The menu item has been reset to the default state.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=resetMenuItemBackToDefault %}
+
+### Hide existing menu items
+
+To hide menu items in the ThingsBoard user interface, switch the "Hidden/Visible" toggle to "Hidden" in the row of the menu item you want to hide.
+
+{% assign hideExistingMenuItems = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/hide-existing-menu-items-1-pe.png,
+        title: To hide menu items in the ThingsBoard user interface, switch the "Hidden/Visible" toggle to "Hidden" in the row of the menu item you want to hide. For example, hide the "Plan and Billing" menu item. Then save the changes;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/hide-existing-menu-items-2-pe.png,
+        title: As you can see, the menu item we marked as "Hidden" has disappeared from the left menu.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=hideExistingMenuItems %}
+
+To display the hidden menu item again, switch the "Hidden/Visible" toggle to "Visible" and save the changes.
+
+<br>
+*Hide all menu items*
+
+If you want to start configuring the menu from scratch, you can hide all menu items by clicking the "Hide all menu items" button at the top of the window. 
+
+{% assign hideAllMenuItems = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/hide-all-menu-items-1-pe.png,
+        title: You can hide all menu items by clicking the "Hide all menu items" button at the top of the window. Apply changes;
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/hide-all-menu-items-2-pe.png,
+        title: All menu items are hidden, except for "Home".
+'
+%}
+
+{% include images-gallery.liquid imageCollection=hideAllMenuItems %}
+
+{% capture difference %}
+**Please note:**
+The only menu item you cannot hide is "Home".
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+*Show hidden items*
+
+By default, hidden menu items are displayed in the custom menu config window. To hide them, toggle the "Show hidden items" switch to "Off".
+
+{% assign showHiddenItems = '
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/show-hidden-items-1-pe.png,
+        title: By default, hidden menu items are displayed in the custom menu config window. To hide them, toggle the "Show hidden items" switch to "Off";
+    ===
+        image: /images/user-guide/white-labeling/custom-menu/show-hidden-items-2-pe.png,
+        title: A hidden menu item is concealed from the custom menu configuration window.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=showHiddenItems %}
+
+### Delete menu item
+
+To delete a menu item, click the "trash" icon in the row of the menu item you want to remove. Then save the changes.
+
+{% assign deleteMenuItem = '
     ===
         image: /images/user-guide/white-labeling/custom-menu/delete-menu-item-1-pe.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
+        title: To delete a menu item, click the "trash" icon in the row of the menu item you want to remove. Then save the changes;
     ===
         image: /images/user-guide/white-labeling/custom-menu/delete-menu-item-2-pe.png,
-    title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**".
-
+        title: Your custom menu item has been deleted.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=addSuitem1 %}
+{% include images-gallery.liquid imageCollection=deleteMenuItem %}
 
-### Edit name
+{% capture difference %}
+**Please note:**
+You can delete only custom item. Default items cannot be deleted, only [hidden](#hide-existing-menu-items).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+## Edit custom menu name
 
 To edit the custom menu name, click the "pencil" icon in the row of this custom menu. Change the name and click "Save".
 
@@ -283,9 +329,11 @@ To edit the custom menu name, click the "pencil" icon in the row of this custom 
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=editName %}
+{% include images-gallery.liquid imageCollection=editName %}
 
-### Manage custom menu assignees
+## Manage custom menu assignees
+
+To manage the users assigned to this custom menu, click the corresponding icon in the row of this user menu. From the dropdown menu, change the assignee type and save changes. Assignee type changed.
 
 {% assign manageCustomMenuAssignees = '
     ===
@@ -293,16 +341,18 @@ To edit the custom menu name, click the "pencil" icon in the row of this custom 
         title: To manage the users assigned to this custom menu, click the corresponding icon in the row of this user menu;
     ===
         image: /images/user-guide/white-labeling/custom-menu/manage-custom-menu-assignees-2-pe.png,
-        title: From the dropdown menu, select the assignee type: "Not assigned", "All users", or "Users list"'
+        title: From the dropdown menu, change the assignee type and save changes;
     ===
         image: /images/user-guide/white-labeling/custom-menu/manage-custom-menu-assignees-3-pe.png,
-        title: Selected menu items are now hidden.
+        title: Assignee type changed.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=manageCustomMenuAssignees %}
+{% include images-gallery.liquid imageCollection=manageCustomMenuAssignees %}
 
-### Delete custom menu
+## Delete custom menu
+
+To delete custom menu, click the corresponding icon in the row of this user menu, and confirm deleting. Then save the changes.
 
 {% assign deleteCustomMenu = '
     ===
@@ -310,11 +360,11 @@ To edit the custom menu name, click the "pencil" icon in the row of this custom 
         title: To delete custom menu, click the corresponding icon in the row of this user menu;
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-delete-2-pe.png,
-        title: Confirm deleting.
+        title: Confirm deleting. Then save the changes.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=deleteCustomMenu %}
+{% include images-gallery.liquid imageCollection=deleteCustomMenu %}
 
 ## Next steps
 
