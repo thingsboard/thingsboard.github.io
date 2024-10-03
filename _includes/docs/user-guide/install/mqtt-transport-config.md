@@ -397,6 +397,12 @@
 			<td> messages await in the queue before device connected state. This limit works on low level before TenantProfileLimits mechanism</td>
 		</tr>
 		<tr>
+			<td>transport.mqtt.gateway_metrics_report_interval_sec</td>
+			<td>MQTT_GATEWAY_METRICS_REPORT_INTERVAL_SEC</td>
+			<td>60</td>
+			<td> Interval of periodic report of the gateway metrics</td>
+		</tr>
+		<tr>
 			<td>transport.mqtt.netty.leak_detector_level</td>
 			<td>NETTY_LEAK_DETECTOR_LVL</td>
 			<td>DISABLED</td>
