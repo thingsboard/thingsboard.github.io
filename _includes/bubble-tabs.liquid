@@ -9,7 +9,7 @@
 {% assign descriptionColor = include.descriptionColor | default: "#00000061" %}
 {% assign descriptionWeight = include.descriptionWeight | default: "400" %}
 {% assign descriptionLineHeight = include.descriptionLineHeight | default: "28px" %}
-{% assign columnsPerRowArray = include.columnsPerRowArray | default: "4,6" %}
+{% assign columnsPerRowArray = include.columnsPerRowArray | default: "2, 4" %}
 {% assign columnsPerRowArray = columnsPerRowArray | split: "," %}
 {% assign columnsPerRowArrayLength = columnsPerRowArray | size %}
 {% assign rowsHeight = include.rowsHeight | default: "60px" %}
@@ -35,10 +35,10 @@
 </script>
 
 {% assign currentIndex = 0 %}
-{% assign extraTabsMap = {} %}
 
 <div class="bubble-tabs" id="tabs" style="--tabTitleSize: {{ tabTitleSize }}; --tabTitleWeight: {{ tabTitleSize }}">
     <ul class="tabs-nav-grid" style="--columns: {{ productOfColumns }}; --rowsHeight: {{ rowsHeight }}">
+        {% if columnsPerRowArrayLength > 1 %}
         {% for bubbleTabsItem in bubbleTabsCollection %}
             {% assign itemsPerColumn = columnsPerRowArray[currentIndex] | minus: 1 %}
             {% if itemsPerColumn < forloop.index0 %}
@@ -51,6 +51,15 @@
                 </a>
             </li>
         {% endfor %}
+        {% else %}
+        {% for bubbleTabsItem in bubbleTabsCollection %}
+            <li class="grid-tab-item">
+                <a href="#tab-{{ bubbleTabsItem[0] }}">
+                    {{ bubbleTabsItem[0] }}
+                </a>
+            </li>
+        {% endfor %}
+        {% endif %}
     </ul>
     {% for bubbleTabsItem in bubbleTabsCollection %}
         <div class="tab-content" id="tab-{{ bubbleTabsItem[0] }}">
