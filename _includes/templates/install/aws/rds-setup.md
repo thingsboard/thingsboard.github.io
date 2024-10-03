@@ -3,7 +3,7 @@ You may follow [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHA
 but take into account the following requirements:
 
 * Keep your postgresql password in a safe place. We will refer to it later in this guide using **YOUR_RDS_PASSWORD**.
-* Make sure your PostgreSQL version is latest 12.x, not 13.x yet;
+* Make sure your PostgreSQL version is latest 16.x;
 * Make sure your PostgreSQL RDS instance is accessible from the ThingsBoard cluster;
   The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC
   and use 'eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*' security group.
