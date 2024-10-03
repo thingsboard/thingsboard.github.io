@@ -75,7 +75,7 @@ collections:
 
 release:
   branch: release-3.7
-  branch_major_next: develop/3.8
+  branch_major_next: master
   ver: 3.7
   ce_ver: 3.7
   ce_tag: v3.7

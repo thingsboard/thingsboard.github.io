@@ -192,7 +192,7 @@ Converter. In general, the output from the Downlink Converter should have the fo
 {: .copy-code}
 
 - **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}
-- **data** - actual data that will be sent to the device in TTS. More details about API can be found in this [TTS API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"}
+- **data** - actual data that will be sent to the device in TTS. More details about API can be found in this [TTS API](https://www.thethingsnetwork.org/docs/applications/mqtt/api){:target="_blank"}
 - **metadata** - in this object you should place correct devId value that will be used to identify target device in TTS
 
 Go to **Data Converters** and create new **downlink** Converter with this function:
