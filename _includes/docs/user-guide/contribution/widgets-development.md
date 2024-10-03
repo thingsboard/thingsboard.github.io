@@ -2002,7 +2002,7 @@ First of all, we need to create a custom setting schema that will contain user's
    ]
  }
 ```
-![image](/images/user-guide/contribution/widgets/post-processing-function.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/post-processing-function.png)
 
 Now let's create a custom subscription. For clarity, we will add two fields: one contains the original value and the second one contains the processed value:
 ```javascript
@@ -2081,8 +2081,8 @@ Now let's create a custom subscription. For clarity, we will add two fields: one
     );
 ```
 The subscription is ready now let's convert weight telemetry from kilograms into grams:
-![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
-![image](/images/user-guide/contribution/widgets/post-processing-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/post-processing-function-example.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/post-processing-subscription.png)
 
 As you can see, despite subscribing to the same key twice, the output shows different values because one of them was additionally transformed using the post-processing function.
 
@@ -2092,7 +2092,7 @@ As you can see, despite subscribing to the same key twice, the output shows diff
 ### Empty web report
 Sometimes, while working with reports, you may encounter the following problem:
 Heavy widgets may not load in time before the web report begins to be generated. As a result, the report will be empty(because, at the time of creation, data is not present on the dashboard):
-![image](/images/user-guide/contribution/widgets/web-report-error.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/web-report-error.png)
 
 To resolve this problem report service contains a special feature that allows us to inform it that the widget was loaded.
 

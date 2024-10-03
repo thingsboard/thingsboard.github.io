@@ -953,7 +953,7 @@ Minimal outside time defines whenever message originator is considered as out of
   </thead>
 </table>
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
 
 Sends reply to REST API call that was originally sent to rule engine.
 
@@ -961,7 +961,7 @@ Expects messages with any message type. Forwards incoming message as a reply to 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
 <br>
 
