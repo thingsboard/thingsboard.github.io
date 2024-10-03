@@ -33,8 +33,17 @@ toc:
   section:
   - title: Overview
     path: /docs/user-guide/dashboards/
+  - title: Layouts
+    path: /docs/user-guide/ui/layouts/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
+  - title: SCADA
+    new: true
+    section:
+      - title: Overview
+        path: /docs/user-guide/scada/
+      - title: SCADA symbols development guide
+        path: /docs/user-guide/scada/scada-symbols-dev-guide/
   - title: Widgets
     section:
       - title: Overview
