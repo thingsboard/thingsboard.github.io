@@ -32,7 +32,7 @@ Normally, a few applications are set up to handle these lots of incoming data.
 They must be persistent clients with a Quality of Service (QoS) level set to 1 or 2, capable of retaining all the data even when they're temporarily offline due to restarts or upgrades. 
 This ensures applications don't miss any single message. On the other hand, the second scenario involves numerous devices subscribing to specific updates or notifications that must be delivered. 
 This leads to a few incoming requests that cause a high volume of outgoing data. 
-This case is known as a fan-out pattern. 
+This case is known as a fan-out (broadcast) pattern. 
 Acknowledging these scenarios, we intentionally designed TBMQ to be exceptionally well-suited for both.
 
 Our design principles focused on ensuring the broker’s fault tolerance and high availability. 
@@ -131,7 +131,6 @@ This approach significantly improves performance by ensuring efficient message d
 Additionally, the nature of the Kafka consumer group makes the [MQTT 5 shared subscription](/docs/mqtt-broker/user-guide/shared-subscriptions/#application-client-type) feature extremely efficient for Application clients.
 
 Application clients can handle a large volume of received messages, reaching millions per second.
-
 It is important to note that APPLICATION clients can only be classified as [persistent](#persistent-client).
 
 For both types of clients, we provide configurable instruments to control the persistence of messages per client and the duration for which they are stored.
@@ -220,7 +219,7 @@ In IoT environments, where thousands or even millions of devices are constantly 
 Netty uses non-blocking I/O (NIO), allowing it to efficiently manage resources without needing a dedicated thread for each connection, greatly reducing overhead. 
 This approach ensures high throughput and low-latency communication, even under heavy loads, making it ideal for the high demands of an MQTT broker like TBMQ.
 
-Moreover, Netty is highly flexible, allowing developers to customize the networking stack to meet specific protocol requirements.
+Netty is highly flexible, allowing developers to customize the networking stack to meet specific protocol requirements.
 With its modular design, Netty provides the building blocks to easily implement protocol handling, message parsing, and connection management, while offering TLS encryption options, making it secure and extensible for future needs.
 
 #### Actor system
@@ -258,12 +257,12 @@ After identifying the appropriate subscribers, the Message dispatcher service de
 * [Application Persistent Client](#persistent-application-client): The message is published to dedicated Application Kafka topic.
 
 Once the appropriate handling route is determined and done for each subscriber, the message is passed to Netty, which manages the actual network transmission, 
-ensuring the message is delivered to the appropriate clients.
+ensuring the message is delivered to the appropriate online clients.
 
 #### Subscriptions Trie
 
 The Trie data structure is highly efficient for fast lookups due to its hierarchical organization and prefix-based matching.
-It allows for quick identification of matching topics by storing common prefixes only once, which minimizes search space and reduces memory usage
+It allows for quick identification of matching topics by storing common prefixes only once, which minimizes search space and reduces memory usage.
 Its predictable time complexity, which depends on the length of the topic rather than the number of topics, ensures consistent and fast lookups even in large-scale environments with millions of subscriptions.
 
 Within TBMQ, all client subscriptions are consumed from a Kafka topic and stored in a Trie data structure in the memory. 
