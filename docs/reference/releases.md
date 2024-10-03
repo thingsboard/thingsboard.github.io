@@ -103,7 +103,7 @@ Major release with the following features and bug fixes:
 
   * [#11044](https://github.com/thingsboard/thingsboard/pull/11044) Fixed MD5 SNMP authentication protocol by @ViacheslavKlimov
   * [#11510](https://github.com/thingsboard/thingsboard/pull/11510) Fixed parsing of collected values with different timestamps for LwM2M by @nickAS21
-  * [#11515](https://github.com/thingsboard/thingsboard/pull/11515) Fixed for SNMP v3 by @ViacheslavKlimov
+  * [#11515](https://github.com/thingsboard/thingsboard/pull/11515) Fixes for SNMP v3 by @ViacheslavKlimov
   * [#11597](https://github.com/thingsboard/thingsboard/pull/11597) Fixed bug Observe Composite operation by @nickAS21
 
 * UI
