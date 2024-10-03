@@ -47,7 +47,7 @@ mvn clean install -DskipTests
 A build will generate all the *protobuf* files in the *application* module that are needed for the correct compilation in your *IDE*.
 
 Next, import the project into your favorite *IDE* as **Maven** project. 
-See separate instructions for [**IDEA**](https://www.jetbrains.com/help/idea/2016.3/importing-project-from-maven-model.html) and [**Eclipse**](http://javapapers.com/java/import-maven-project-into-eclipse/).   
+See separate instructions for [**IDEA**](https://www.jetbrains.com/help/idea/2016.3/importing-project-from-maven-model.html) and [**Eclipse**](https://www.baeldung.com/maven-import-eclipse).   
 
 **NOTE:** If you are using Eclipse, after the maven project is imported to the IDE, We recommend you to disable Maven Project builder on **ui-ngx** project. This will improve the Eclipse performance *a lot*, because it will avoid Eclipse Maven builder from digging in node_modules directory (which is unnecessary and only causes Eclipse to hang). To do this, right-click on **ui-ngx** project, go to **Properties -> Builders**, and then uncheck the **Maven Project Builder** checkbox and then click **Ok**.
 

@@ -42,7 +42,7 @@ The video below demonstrates the final result of this tutorial.
 ## Wiring schema
 
  Since our application will allow controlling the state of all available GPIO pins, we recommend attaching some LEDs to those pins for visibility.
- You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
+ You can use this [basic instruction](https://www.raspberrypi.com/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
 
 ## Programming the Raspberry Pi
 

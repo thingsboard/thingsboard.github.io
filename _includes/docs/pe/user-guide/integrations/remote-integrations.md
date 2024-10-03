@@ -96,7 +96,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker.md{%
 
 ### Docker on Windows
 
-- **[Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)**
+- **[Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)**
 
 - **Choose Integration to install**
 

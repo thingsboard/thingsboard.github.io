@@ -30,7 +30,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
 * Breadboard
 * 4 female-to-male jumper wires
-* [Raspberry Pi with Bluetooth](https://www.raspberrypi.org/products/)
+* [Raspberry Pi with Bluetooth](https://www.raspberrypi.com/products/)
 
   <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="Raspberry plate from Amzon">
 
@@ -53,7 +53,7 @@ The following picture summarizes the connection of ESP32 and HTU21D:
 
 ### Raspberry Pi
 
-In this setup we use Raspberry Pi 2 Model B V1.1 with [Raspbian GNU/Linux 9.8 (stretch)](https://www.raspberrypi.org/downloads/raspbian/) installed on it. Raspbian is a free operating system based on Debian optimized for the Raspberry Pi hardware. This model does't support Bluetooth, so it needs a usb dongle. We use Grand-X BT40G.
+In this setup we use Raspberry Pi 2 Model B V1.1 with [Raspbian GNU/Linux 9.8 (stretch)](https://www.raspberrypi.com/software/) installed on it. Raspbian is a free operating system based on Debian optimized for the Raspberry Pi hardware. This model does't support Bluetooth, so it needs a usb dongle. We use Grand-X BT40G.
 Make sure your dongle is recognized by system. You can check it with the following command:
 ```
 $> lsusb
