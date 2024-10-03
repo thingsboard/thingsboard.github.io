@@ -90,18 +90,33 @@ The data collected by the asset is later used to monitor and control various com
 
 ### Rule Chains
 
-The **Swimming Pool Device Rule Chain** is the main mechanism in the Swimming Pool SCADA system, responsible for processing incoming telemetry data, managing device interactions, and triggering automated responses. It enables efficient data flow between devices and the dashboard, ensuring real-time monitoring and control.
+The **Swimming Pool Device Rule Chain** is the core of the Swimming Pool SCADA system, processing telemetry, managing devices, and triggering automated actions. Each message flows through structured nodes that handle telemetry, generate alarms, and control devices. This ensures smooth data flow, real-time monitoring, and timely responses for all connected devices. 
+The data is then visualized on the dashboard, allowing users to interact with and control devices while monitoring system performance in real time.
 
-**Rule Chain Workflow**
+**Message Processing Flow**
 
-* **Data Processing**: Processes incoming telemetry data, filtering it based on device profiles. Each device, such as heat pumps, water pumps, and sand filters, has a unique profile that governs how its data is handled.
+* **Alarm Generation**:
+Every message first passes through the [**device profile node**](/docs/{{docsPrefix}}user-guide/device-profiles/#device-profile-rule-node). This step allows the system to generate alarms based on the conditions defined in the device profiles (such as for the heat pump, water pump, and sand filter). If the telemetry exceeds the set thresholds, alarms are triggered and displayed on the dashboard.
 
-* **RPC Requests**: Manages RPC to send commands to devices. These requests are triggered by changes in the system state, ensuring seamless operation of connected devices.
+* **Message Type Switch**:
+After the initial profile processing, the message moves to the [**message type switch node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node). This node routes messages based on their type, such as telemetry data, attribute updates, or RPC requests. It sends each message down the appropriate path for further processing.
 
-* **Automation**: Contains the logic that automatically turns the heat pump on or off based on temperature measurements.
+* **General Logic – Save Attributes, Time Series, and RPC Requests**:
+Independent of the message type, several actions occur for all devices.
 
-* **Data Storage and Propagation**: Saves key attributes and time series data for each device, allowing the system to retain information for real-time analysis and historical reporting. This is critical for devices such as heat pumps and water pumps, where data like vibration, power consumption, and flow rates are continuously monitored.
+  * [**save attributes node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node): The telemetry data from devices is saved as attributes.
+  * [**save time series node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node): Time series data is saved for historical analysis and monitoring.
+  * [**rpc call request node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node): The system can generate and send RPC requests to devices. These RPC commands may turn devices on/off, change operational modes, or control valve positions. For example, valves can be opened/closed, and pumps can be activated/deactivated based on predefined conditions or manual requests.
+  
+* **Activity/Inactivity Events**:
+This part of the rule chain is responsible for monitoring the activity and inactivity of devices. The system catches these events, propagating the device states to the asset. This data is crucial for further calculations and to ensure real-time updates about which devices are active.
 
-* **Status Calculations**: For devices like sand filters, valves, and water meters, the rule chain computes specific attributes, such as determining whether water is flowing through pipes. These calculations are critical for monitoring the system’s real-time status, and the data is saved and displayed on the dashboard.
+* **Device Profile Filtering**:
+Once the telemetry data is saved, the message is routed through the [**device profile switch node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch). This node filters the devices based on their profile, allowing for device-specific actions:
 
-The **Swimming Pool Device Rule Chain** is designed to be flexible, allowing further customization to integrate additional devices, logic flows, and automated responses that suit the pool system's operational requirements.
+  * **Heat pump**: When telemetry from the heat pump is detected, the system checks specific conditions—like target temperature, outdoor temperature, and pool temperature—through a [**switch node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#switch-node). If the telemetry conditions meet the thresholds for turning the heat pump on or off, an RPC request is sent to control the heat pump’s state.
+
+  * **Sand filter, Water pump, Water sensor, Valve**: For these devices, the message passes through a [**script node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) that adds the device name to the necessary telemetry. This step ensures that the telemetry is properly propagated as attributes on the asset for further use.
+
+* **Main Calculation Script for Flowing Pipes**:
+Once the telemetry is processed for sand filters, water pumps, and valves, the data enters the main calculation script in the [**script node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node). This script is crucial for determining which pipe segments are currently flowing. The calculation determines whether water is flowing through specific pipes, based on device activity, and saves this value. The flow status is later displayed on the dashboard, allowing operators to see, in real-time, which pipes have water flowing through them.
