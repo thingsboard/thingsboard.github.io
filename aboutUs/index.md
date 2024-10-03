@@ -42,10 +42,12 @@ notitle: "true"
         </div>
     </div>
     <div class="company-values">
-        {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" carouselMargin = 0 transitionAnimation = false darkenedImage = true navMode = "disableNav" titleSize = "96px" descriptionSize = "36px" titleLineHeight = "114px" descriptionLineHeight = "54px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
+        {% include carousel.liquid collectionMap = "company-values-carousel" nonActiveItemsVisibility = false contentDirection = "imageBackground" carouselMargin = 0 transitionAnimation = false darkenedImage = true navMode = "disableNav" titleSize = "96px" descriptionSize = "36px" titleLineHeight = "114px" descriptionLineHeight = "54px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
     </div>
     <div class="company-team">
-        {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" %}
+        <div class="company-team-wrapper">
+            {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" %}
+        </div>
     </div>
 </div>
 

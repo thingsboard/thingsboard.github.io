@@ -1,12 +1,18 @@
 {% assign collectionMap = include.collectionMap %}
+{% assign tabTitleSize = include.tabTitleSize | default: "28px" %}
+{% assign tabTitleWeight = include.tabTitleWeight | default: "500" %}
 {% assign titleSize = include.titleSize | default: "20px" %}
-{% assign descriptionSize = include.descriptionSize | default: "16px" %}
 {% assign titleColor = include.titleColor | default: "#000000de" %}
-{% assign descriptionColor = include.descriptionColor | default: "#00000061" %}
 {% assign titleWeight = include.titleWight | default: "600" %}
-{% assign descriptionWeight = include.descriptionWeight | default: "400" %}
 {% assign titleLineHeight = include.titleLineHeight | default: "28px" %}
+{% assign descriptionSize = include.descriptionSize | default: "16px" %}
+{% assign descriptionColor = include.descriptionColor | default: "#00000061" %}
+{% assign descriptionWeight = include.descriptionWeight | default: "400" %}
 {% assign descriptionLineHeight = include.descriptionLineHeight | default: "28px" %}
+{% assign columnsPerRowArray = include.columnsPerRowArray | default: "4,6" %}
+{% assign columnsPerRowArray = columnsPerRowArray | split: "," %}
+{% assign columnsPerRowArrayLength = columnsPerRowArray | size %}
+{% assign rowsHeight = include.rowsHeight | default: "60px" %}
 
 {% if site.data.bubble-tabs-collection[collectionMap] %}
     {% assign bubbleTabsCollection = site.data.bubble-tabs-collection[collectionMap] %}
@@ -14,31 +20,49 @@
     {% assign bubbleTabsCollection = page[collectionMap] %}
 {% endif %}
 
-<div class="bubble-tabs" id="tabs">
-    <div class="bubble-tabs" id="tabs">
-        <ul>
-            {% for bubbleTabsItem in bubbleTabsCollection %}
-                <li>
-                    <a href="#tab-{{ bubbleTabsItem[0] }}">
-                        {{ bubbleTabsItem[0] }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-        {% for bubbleTabsItem in bubbleTabsCollection %}
-            {% for data in bubbleTabsItem[1] %}
-                <div class="tab-item" id="tab-{{ bubbleTabsItem[0] }}">
-                    <p>{{ data.title }}</p>
-                    <p>{{ data.description }}</p>
-                    <img src="{{ data.src }}">
-                </div>
-            {% endfor %}
-        {% endfor %}
-    </div>
-</div>
+{%- assign productOfColumns = 1 -%}
+{%- for col in columnsPerRowArray -%}
+    {%- assign productOfColumns = productOfColumns | times: col -%}
+{%- endfor -%}
+
 <script>
-    $(function() {
-        $("#tabs").tabs();
-    });
+    jqueryUiDefer(initTabs);
+    function initTabs() {
+        $(function(){
+            $("#tabs").tabs();
+        });
+    }
 </script>
 
+{% assign currentIndex = 0 %}
+{% assign extraTabsMap = {} %}
+
+<div class="bubble-tabs" id="tabs" style="--tabTitleSize: {{ tabTitleSize }}; --tabTitleWeight: {{ tabTitleSize }}">
+    <ul class="tabs-nav-grid" style="--columns: {{ productOfColumns }}; --rowsHeight: {{ rowsHeight }}">
+        {% for bubbleTabsItem in bubbleTabsCollection %}
+            {% assign itemsPerColumn = columnsPerRowArray[currentIndex] | minus: 1 %}
+            {% if itemsPerColumn < forloop.index0 %}
+                {% assign currentIndex = 1 %}
+            {% endif %}
+            {% assign columnsToOccupy = productOfColumns | divided_by: columnsPerRowArray[currentIndex] %}
+            <li class="grid-tab-item" style="grid-column: span {{ columnsToOccupy }}">
+                <a href="#tab-{{ bubbleTabsItem[0] }}">
+                    {{ bubbleTabsItem[0] }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% for bubbleTabsItem in bubbleTabsCollection %}
+        <div class="tab-content" id="tab-{{ bubbleTabsItem[0] }}">
+            {% for data in bubbleTabsItem[1] %}
+                <div class="tab-item">
+                    <img src="{{ data[1].src }}">
+                    <div class="tab-item-text">
+                        <span style="font-size: {{ titleSize }}; font-weight: {{ titleWeight }}; color: {{ titleColor }}">{{ data[1].title }}</span>
+                        <span style="font-size: {{ descriptionSize }}; font-weight: {{ descriptionWeight }}; color: {{ descriptionColor }}">{{ data[1].description }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

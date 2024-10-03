@@ -1,0 +1,78 @@
+#company
+
+  .ui-widget-header
+    background: transparent
+    border: none
+
+  .ui-tabs
+    ul, ol, li
+      padding: 0
+      list-style: none
+      margin: 0
+
+  .ui-widget-content
+    padding: 0
+    border: none
+
+  .ui-tabs .ui-tabs-panel
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    gap: 48px
+    padding: 0
+    border: none
+
+  .ui-tabs-nav
+    margin-bottom: 64px
+
+  .ui-tabs-anchor
+    font-size: var(--tabTitleSize)
+    font-weight: var(--tabTitleWeight)
+    float: unset
+    padding: 0
+
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+    border: none
+    background: none
+    color: rgba(33, 37, 41, 0.6)
+    text-align: center
+
+  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+    color: #00000033
+    &:after
+      content: ""
+      background: #2a7dec
+      height: 3px
+      position: absolute
+      bottom: 0
+      left: 12px
+      right: 12px
+    a, a:link
+      color: #212529
+
+  .ui-helper-clearfix:before
+    display: none
+
+  .tabs-nav-grid
+    display: grid
+    grid-auto-flow: row
+    grid-template-columns: repeat(var(--columns), 1fr)
+    grid-auto-rows: var(--rowsHeight)
+    row-gap: 20px
+
+  .tab-item
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 24px
+    img
+      background: linear-gradient(180deg, #A7B1B8 0%, #D8D9DA 100%)
+      box-shadow: 2px 2px 4px 0px rgba(48, 86, 128, 0.20)
+      border-radius: 100%
+      width: fit-content
+    .tab-item-text
+      display: flex
+      flex-direction: column
+      text-align: center
+      span
+        display: inline-block
