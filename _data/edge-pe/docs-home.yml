@@ -11,6 +11,10 @@ toc:
       path: /docs/pe/edge/user-guide/alarms/
     - title: OTA updates
       path: /docs/pe/edge/user-guide/ota-updates/
+- title: Dashboards
+  section:
+    - title: Overview
+      path: /docs/pe/edge/user-guide/db-overview/
 #- title: Configuration guides
 #  section:
 #    - title: Edges
