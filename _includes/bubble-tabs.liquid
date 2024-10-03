@@ -9,7 +9,7 @@
 {% assign descriptionColor = include.descriptionColor | default: "#00000061" %}
 {% assign descriptionWeight = include.descriptionWeight | default: "400" %}
 {% assign descriptionLineHeight = include.descriptionLineHeight | default: "28px" %}
-{% assign columnsPerRowArray = include.columnsPerRowArray | default: "2, 4" %}
+{% assign columnsPerRowArray = include.columnsPerRowArray | default: "5" %}
 {% assign columnsPerRowArray = columnsPerRowArray | split: "," %}
 {% assign columnsPerRowArrayLength = columnsPerRowArray | size %}
 {% assign rowsHeight = include.rowsHeight | default: "60px" %}
@@ -35,22 +35,25 @@
 </script>
 
 {% assign currentIndex = 0 %}
+{% assign currentRow = 0 %}
 
 <div class="bubble-tabs" id="tabs" style="--tabTitleSize: {{ tabTitleSize }}; --tabTitleWeight: {{ tabTitleSize }}">
     <ul class="tabs-nav-grid" style="--columns: {{ productOfColumns }}; --rowsHeight: {{ rowsHeight }}">
         {% if columnsPerRowArrayLength > 1 %}
-        {% for bubbleTabsItem in bubbleTabsCollection %}
-            {% assign itemsPerColumn = columnsPerRowArray[currentIndex] | minus: 1 %}
-            {% if itemsPerColumn < forloop.index0 %}
-                {% assign currentIndex = 1 %}
-            {% endif %}
-            {% assign columnsToOccupy = productOfColumns | divided_by: columnsPerRowArray[currentIndex] %}
-            <li class="grid-tab-item" style="grid-column: span {{ columnsToOccupy }}">
-                <a href="#tab-{{ bubbleTabsItem[0] }}">
-                    {{ bubbleTabsItem[0] }}
-                </a>
-            </li>
-        {% endfor %}
+            {% for bubbleTabsItem in bubbleTabsCollection %}
+                {% assign itemsPerColumn = columnsPerRowArray[currentRow] | plus: 0 %}
+                {% assign currentIndex = currentIndex | plus: 1 %}
+                {% if currentIndex > itemsPerColumn %}
+                    {% assign currentRow = currentRow | plus: 1 %}
+                    {% assign currentIndex = 0 %}
+                {% endif %}
+                {% assign columnsToOccupy = productOfColumns | divided_by: columnsPerRowArray[currentRow] %}
+                <li class="grid-tab-item" style="grid-column: span {{ columnsToOccupy }}">
+                    <a href="#tab-{{ bubbleTabsItem[0] }}">
+                        {{ bubbleTabsItem[0] }}
+                    </a>
+                </li>
+            {% endfor %}
         {% else %}
         {% for bubbleTabsItem in bubbleTabsCollection %}
             <li class="grid-tab-item">

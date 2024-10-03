@@ -1,53 +1,91 @@
 ---
-layout: common
+layout: company
 title: Our Company
 notitle: "true"
-description: 
 
 ---
 
-<h1 class="aboutus-title">About Us</h1> 
+<div class="company-content">
+    <div class="company-hero-slider"></div>
+    <div class="company-aboutus">
+        <h2 class="company-content-title">About Us</h2>
+        <div class="company-aboutus-container">
+            <div class="company-wrapper">
+                <div class="company-flex-content-default">
+                    <img class="company-aboutus-image" src="/images/companyImages/thingsboard_logo.png" alt="Thingsboard logo">
+                    <div class="company-text-content-default">
+                        <p class="company-text">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella. Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management, data processing, security, privacy, analysis, etc.</p>
+                        <p class="company-text">ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period. Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="company-content-title">Our history</h2>
+        <div class="company-history-container">
+            <div class="company-wrapper">
+                <div class="company-flex-content-default">
+                    <div class="company-text-content-default">
+                        <p class="company-text">Our journey began with a simple idea and a strong belief in our capabilities. We knew the future lay in IoT, so we set out to create software that enables users to develop exceptional IoT solutions worldwide. With this mission, two visionary programmers started building a product that would be accessible to everyone.</p>
+                        <p class="company-text">And it succeeded.</p>
+                        <p class="company-text">As we grew, so did our product. We introduced subproducts like EDGE, Trendz, Gateway, and TBMQ, each enhancing our platform’s efficiency and user experience. These additions brought new features and functionalities, empowering our clients to harness the full potential of IoT.</p>
+                        <p class="company-text">Today, ThingsBoard Inc. is a testament to ingenuity and hard work. Our platform is used globally by businesses and developers, driving innovation across various industries. From smart cities to industrial automation, our solutions lead the IoT revolution.</p>
+                        <p class="company-text">But our journey doesn’t end here. We continue to push the boundaries of IoT with a dedicated team and a commitment to excellence. ThingsBoard Inc. is more than a company; it’s a community of innovators, dreamers, and doers building a smarter, more connected world.</p>
+                    </div>
+                    <img class="company-aboutus-image" src="/images/companyImages/history_image.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="company-timeline">
+        <div class="company-wrapper">
+            {% include carousel.liquid collectionMap = "company-timeline-carousel" timeline = true autoplay = false carouselMargin = 50 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
+        </div>
+    </div>
+    <div class="company-values">
+        {% include carousel.liquid collectionMap = "company-values-carousel" nonActiveItemsVisibility = false contentDirection = "imageBackground" carouselMargin = 0 transitionAnimation = false darkenedImage = true navMode = "disableNav" titleSize = "96px" descriptionSize = "36px" titleLineHeight = "114px" descriptionLineHeight = "54px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
+    </div>
+    <div class="company-team">
+        <div class="company-team-wrapper">
+            <h2 class="company-content-title">Meet our team</h2>
+            {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" columnsPerRowArray = "4,6" %}
+        </div>
+    </div>
+</div>
 
-<span class="who-we-are">Who we are?</span>
-<p class="company-info">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella.
-   Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT
-   enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management,
-   data processing, security, privacy, analysis, etc.<br><br>
-   ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period.
-   Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.
-</p>
-<div class="our-mission">
-    <div class="our-mission-logos">
-        <div class="spacer"></div>
-        <div class="about-mission-background"></div>
-        <img class="about-mission-index" src="/images/about-mission-index.svg" alt="Map dashboard example">
-        <img class="about-mission-left" src="/images/about-mission-left.svg" alt="Root dashboard example">
-        <img class="about-mission-right" src="/images/about-mission-right.svg" alt="Chart dashboard example">
-    </div>
-    <div class="our-mission-info">
-        <span class="our-mission">Our mission</span>
-        <p class="company-info">
-          IoT helps to reduce the negative impacts of human development on the environment and helps us to work and live better by surrounding us with smart devices.
-          We invest our time and knowledge in the future by providing IoT cloud platform and products that help companies follow their sustainability commitments.
-        </p>
-    </div>
-</div>
-<div class="our-goal">
-    <span class="heading">Our goal</span>
-    <p>Reduce time-to-market for IoT solutions that change the world.</p>
-</div>
-<div class="center" style="margin-top: 48px;">
-    <a class="button" style="padding: 10px 40px;" href="/docs/contact-us/">Contact Us</a>
-</div>
-<div class="company-contacts">
-    <div class="company-contact">
-        <div class="phone">+1 212 334 4096</div>
-    </div>
-    <div class="company-contact">
-        <div class="address">110 Duane Street, Suite 1C, New York, NY 10007, USA</div>
-    </div>
-    <div class="company-contact">
-        <div class="mail"><a href="mailto:info@thingsboard.io">info@thingsboard.io</a></div>
-    </div>
-</div>
+<script type="text/javascript">
 
+    const animatedBlocks = [
+        {
+            classToSearch: ".company-aboutus-container",
+            classToAdd: "company-aboutus-content-animation",
+            threshold: 0.4
+        },
+        {
+            classToSearch: ".company-history-container",
+            classToAdd: "company-history-content-animation",
+            threshold: 0.4
+        },
+    ];
+
+    function searchForAnimation (classToSearch, classToAdd, threshold) {
+        const searchedBlock = document.querySelector(classToSearch);
+    
+        const searchedBlockObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(classToAdd);
+                    searchedBlockObserver.unobserve(entry.target);
+                }
+            })
+        }, {
+            threshold: threshold
+        });
+    
+        searchedBlockObserver.observe(searchedBlock);
+    }
+
+    animatedBlocks.forEach(block => {
+        searchForAnimation (block.classToSearch, block.classToAdd, block.threshold);
+    })
+
+</script>
