@@ -920,9 +920,7 @@ var tb = (function () {
 					}
 
 					function itemsNumberToShow($carousel) {
-						const timelineItems = $carousel.find('.timeline-item');
-						const timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
-						return timelineItemsToShow ? timelineItemsToShow : 1;
+						return Number(getComputedStyle($carousel[0]).getPropertyValue('--items'));
 					}
 
 					function carouselMargin($carousel) {
