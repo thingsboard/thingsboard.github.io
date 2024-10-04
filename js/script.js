@@ -866,17 +866,6 @@ var tb = (function () {
 
 				window.onload = function() {
 
-					function itemsNumberToShow (carousel) {
-						let timelineItemsToShow = 1
-
-						if (carousel.hasClass('timeline')) {
-							const timelineItems = document.querySelectorAll('.timeline-item');
-							timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
-						}
-
-						return timelineItemsToShow;
-					}
-
 					if ($('.owl-carousel').hasClass('timeline')) {
 
 						const timelineLabel = document.querySelectorAll(".timeline-label");

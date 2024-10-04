@@ -351,8 +351,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 <br>
 
-## delay (deprecated)
-
+## Delay Node (deprecated)
 
 <table  style="width:250px;">
    <thead>
@@ -362,45 +361,18 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-Delays incoming messages for a configurable period. In other words, node receives a message, holds it for a set duration, and then sends it to the next rule nodes for further action.
+Delays incoming messages for configurable period.
 
-**Configuration**
+Configuration:
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
 
-- **Period value**: number that tells the node how long to delay. For example, if you put 5 here, it means you want the node to wait for 5 units of time.
-- **Period time unit**: time unit you're using for the delaying period. Available values are: seconds, minutes, hours. So, when paired with the **Period value**, if you chose 5 for **Period Value** and seconds for **Period time unit**, the node would wait for 5 seconds.
-- **Maximum pending messages**: limit on how many messages the node can delay at once. For example, If you set a number like 1000, it means the node can delay up to 1000 messages at a time. Once this limit is reached, any new incoming messages will be routed via **Failure** connection type until there's space available.
+- **Period in seconds** - specifies the value of the period during which incoming message should be suspended
+- **Maximum pending messages** - specifies the amount of maximum allowed pending messages (queue of suspended messages) 
 
-> **Note**: **Period value** and **Period time unit** fields support templatization.
-
-**Output**
-- **Success**: If message was delayed successfully.
-- **Failure**: If maximum pending messages is reached or unexpected error happened during messages processing.
-
-> **Note**: Incoming messages are not modified during processing.
-
-**Usage example: waiting for external long-running tasks**
-
-Consider the following scenario: we have an external API that initiates a long-running task. Upon the initial request, the API responds immediately, indicating that the task has started. However, we need to ensure the task is completed before we can proceed with further processing.
-
-Solution with delay node:
-1. **Initiate the task**: Our rule chain starts with the REST API call node, which makes a request to the external API to initiate the long-running task.
-2. **Receive immediate response**: The external API quickly returns a response, confirming the task has been launched.
-3. **Waiting for completion**: After receiving the initial response, instead of proceeding immediately, we introduce the delay node into our rule chain. This node is configured to introduce a 30-second wait, providing time for the external task to complete.
-4. **Continue processing**: Once the delay is over, processing resumes, possibly involving another REST API call to check the status or retrieve results of the long-running task, and then proceeding with the next steps in the rule chain based on the task's completion status.
-
-By using the delay node in this manner, we handle scenarios where immediate processing is not feasible due to external dependencies, ensuring smoother and more accurate message handling.
-
-![Rule chain example image](/images/user-guide/rule-engine-2-0/nodes/action-delay-chain.png)
-
-**Deprecation**
-
-Because this node temporarily stores delayed messages in memory (thus, while message is in processing it is not persistent), they may be lost if ThingsBoard is restarted or node configuration is changed: these actions trigger node initialization during which old node state (which holds currently delayed messages) is cleared and new empty one is created.
-
-**Notes**
-
-Usage with sequential processing strategy: please, be aware that this node acknowledges incoming message, which will trigger processing of the next message in the queue.
+When delay period for particular incoming message will be reached it will be removed from pending queue and routed to the next nodes via **Success** chain.
+  
+Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.  
 
 <br>
 
@@ -959,6 +931,38 @@ Minimal outside time defines whenever message originator is considered as out of
 **Failure** chain will to be used when:
 
    - incoming message has no configured latitude or longitude key in data or metadata. 
-   - missing perimeter definition;     
+   - missing perimeter definition;
+
+<br>
+
+## REST Call Reply Node
+
+<table  style="width:250px;">
+  <thead>
+    <tr>
+      <td style="text-align: center">
+        <strong>
+          {% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
+            <em>Since TB Version 2.1</em>
+          {% else %}
+            <em>Since TB Version 3.8.0</em>
+          {% endif %}
+        </strong>
+      </td>
+    </tr>
+  </thead>
+</table>
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
+
+Sends reply to REST API call that was originally sent to rule engine.
+
+Expects messages with any message type. Forwards incoming message as a reply to REST API call sent to rule engine.
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
+
+<br>
 
 {% include templates/edge/edge-nodes.md %}

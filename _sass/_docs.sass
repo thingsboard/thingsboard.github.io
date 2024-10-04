@@ -138,7 +138,7 @@
 
   #searchBox
     display: block
-    z-index: 9999
+    z-index: 8000
     position: fixed
     top: 89px
     right: 22px
@@ -151,6 +151,7 @@
     @media screen and (max-width: 1280px)
       top: 18px
       right: 91px
+      z-index: 9999
     @media screen and (max-width: 768px)
       top: 164px
       left: 22px
@@ -336,19 +337,23 @@
           display: flex
           align-items: center
           height: 100%
-          margin-left: 28px
+          margin-left: 17px
           float: left
-          @media screen and (max-width: 1500px)
+          @media screen and (min-width: 1500px)
             margin-left: 20px
+          @media screen and (min-width: 1700px)
+            margin-left: 28px
           a
             position: relative
             display: block
             color: #212529
             opacity: 0.6
-            font-size: 18px
+            font-size: 14px
             font-weight: normal
-            @media screen and (max-width: 1500px)
-              font-size: 17px
+            @media screen and (min-width: 1500px)
+              font-size: 16px
+            @media screen and (min-width: 1700px)
+              font-size: 18px
             &.YAH
               position: relative
               opacity: 1
@@ -657,7 +662,7 @@ a.feature-card
   display: flex
   flex-direction: row
   align-items: center
-  z-index: 10001
+  z-index: 8000
   @media screen and (min-width: 769px)
     width: 250px
   @media screen and (min-width: 870px)
@@ -667,6 +672,8 @@ a.feature-card
     top: 80px
   @media screen and (min-width: 1601px)
     width: 316px
+  @media screen and (max-width: 1280px)
+    z-index: 10001
   img
     width: 54px
     height: 54px

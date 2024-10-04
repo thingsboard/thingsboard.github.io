@@ -110,15 +110,12 @@ service from your cloud vendor.
 
 {% include templates/install/postgres-install-rhel.md %}
 
-Then, press "Ctrl+D" to return to main user console.
+After configuring the password, edit the **pg_hba.conf** to use MD5 authentication with the postgres user.
 
-After configuring the password, edit the pg_hba.conf to use MD5 authentication with the postgres user.
-
-Edit pg_hba.conf file: 
+Edit the **pg_hba.conf** file: 
 
 ```bash
 sudo nano /var/lib/pgsql/15/data/pg_hba.conf
-
 ```
 {: .copy-code}
 
@@ -139,7 +136,6 @@ Finally, you should restart the PostgreSQL service to initialize the new configu
 
 ```bash
 sudo systemctl restart postgresql-15.service
-
 ```
 {: .copy-code}
 
@@ -149,7 +145,6 @@ Connect to the database to create trendz DB:
 
 ```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-
 ```
 {: .copy-code}
 
@@ -157,10 +152,11 @@ Execute create database statement
 
 ```bash
 CREATE DATABASE trendz;
-\q
-
 ```
 {: .copy-code}
+
+Then, press “Ctrl+D” to return to main user console.
+
 
 #### Configure database connection for Trendz
 

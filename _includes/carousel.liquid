@@ -70,138 +70,138 @@
 
 {% if timeline %}
 
-{% assign carouselCollection = carouselCollection | values %}
+    {% assign carouselCollection = carouselCollection | values %}
 
-{% assign titleHoverScale = include.titleHoverScale | default: 0 %}
-{% assign titleHoverScaleClass = "titleHoverDisabled" %}
+    {% assign titleHoverScale = include.titleHoverScale | default: 0 %}
+    {% assign titleHoverScaleClass = "titleHoverDisabled" %}
 
-{% if titleHoverScale %}
-    {% assign titleHoverScaleClass = "titleHoverEnabled" %}
-{% endif %}
+    {% if titleHoverScale %}
+        {% assign titleHoverScaleClass = "titleHoverEnabled" %}
+    {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" style="--items: {{ items }} ;--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}">
-    {% for key in carouselCollection %}
-        <div class="timeline-item">
-            <div class="timeline-label">
-                <span class="timeline-title {{ titleHoverScaleClass }}" style="font-size: {{ titleSize }}; color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}; --title-hover-scale: {{ titleHoverScale }}">{{ key[0] }}</span>
-                <span class="timeline-circle"></span>
-            </div>
-            <ul class="timeline-text">
-                {% for data in key[1] %}
-                    <li style="font-size: {{ descriptionSize }}; color:{{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ data[1] }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endfor %}
-</div>
-
-{% else %}
-
-{% assign collectionKey = include.collectionKey %}
-{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
-{% assign darkenedImage = include.darkenedImage | default: false %}
-{% assign overlay = include.overlay | default: false %}
-{% assign enableLinkArrow = include.enableLinkArrow %}
-{% assign contentDirection = include.contentDirection %}
-{% assign linkSize = include.linkSize | default: "18px"  %}
-{% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
-{% assign linkColor = include.linkColor | default: "#2a7dec" %}
-{% assign linkWeight = include.linkWeight | default: "500" %}
-
-{% if collectionKey %}
-    {% assign carouselCollection = carouselCollection[collectionKey] %}
-{% endif %}
-
-{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
-
-{% if nonActiveItemsVisibility == false %}
-    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
-{% endif %}
-
-{% assign darkenedImageClass = "darkenedImageDisabled" %}
-
-{% if darkenedImage == true %}
-    {% assign darkenedImageClass = "darkenedImageEnabled" %}
-{% endif %}
-
-{% if enableLinkArrow == nil %}
-    {% assign enableLinkArrow = true %}
-{% endif %}
-
-{% if carouselCollection %}
-<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--items: {{ items }}; --carousel-margin: {{ carouselMargin }}">
-    {% for carouselItem in carouselCollection %}
-        {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
-            {% assign contentDirectionClass = "carousel-item-flex-row" %}
-
-            {% if contentDirection == "column" %}
-                {% assign contentDirectionClass = "carousel-item-flex-column" %}
-            {% endif %}
-        {% else %}
-            {% assign contentDirectionClass = 'carousel-item' %}
-        {% endif %}
-
-        {% assign backgroundImage = "unset" %}
-
-        {% if contentDirection == "imageBackground" %}
-            {% assign contentDirectionClass = "carousel-item-image-background" %}
-            {% assign backgroundImage = carouselItem[1].src %}
-        {% endif %}
-
-        <div class="carousel-item-default {{ contentDirectionClass }}" style="width: {{ carouselItem[1].width }}">
-            {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
-            <div class="carousel-text">
-                {% if carouselItem[1].title %}
-                <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}">{{carouselItem[1].title}}</h2>
-                {% endif %}
-                {% if carouselItem[1].description %}
-                <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{carouselItem[1].description}}</p>
-                {% endif %}
-                {% if carouselItem[1].linkLabel %}
-                <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}; font-weight: {{ linkWeight }}">
-                    {{carouselItem[1].linkLabel}}
-                    {% if enableLinkArrow == true %}
-                        <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
-                        <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
-                        <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
-                    {% endif %}
-                </a>
-                {% endif %}
-            </div>
-            {% endif %}
-            {% if carouselItem[1].src %}
-            <div class="carousel-image">
-                {% if carouselItem[1].href %}
-                <a href="{{carouselItem[1].href}}">
-                    <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
-                    {% if overlay == true %}
-                    <div class="overlay">
-                        <div class="eye">
-                            <i class="far fa-eye"></i>
-                            See more about {{carouselItem[1].title}}
-                        </div>
-                    </div>
-                    {% endif %}
-                </a>
-                {% else %}
-                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
-                {% endif %}
-            </div>
-            {% endif %}
-            {% if carouselItem[1].multipleImage %}
-                <div class="carousel-image">
-                    <div class="multiple-image">
-                    {% for image in carouselItem[1].multipleImage %}
-                        <img src="{{image[1].src}}" alt="{{image[1].alt}}">
-                    {% endfor %}
-                    </div>
+    <div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" style="--items: {{ items }} ;--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}">
+        {% for key in carouselCollection %}
+            <div class="timeline-item">
+                <div class="timeline-label">
+                    <span class="timeline-title {{ titleHoverScaleClass }}" style="font-size: {{ titleSize }}; color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}; --title-hover-scale: {{ titleHoverScale }}">{{ key[0] }}</span>
+                    <span class="timeline-circle"></span>
                 </div>
-            {% endif %}
-        </div>
-    {% endfor %}
-</div>
+                <ul class="timeline-text">
+                    {% for data in key[1] %}
+                        <li style="font-size: {{ descriptionSize }}; color:{{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ data[1] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+
 {% else %}
-    <span class="not-found-message">Collection not found</span>
-{% endif %}
+
+    {% assign collectionKey = include.collectionKey %}
+    {% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
+    {% assign darkenedImage = include.darkenedImage | default: false %}
+    {% assign overlay = include.overlay | default: false %}
+    {% assign enableLinkArrow = include.enableLinkArrow %}
+    {% assign contentDirection = include.contentDirection %}
+    {% assign linkSize = include.linkSize | default: "18px"  %}
+    {% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
+    {% assign linkColor = include.linkColor | default: "#2a7dec" %}
+    {% assign linkWeight = include.linkWeight | default: "500" %}
+
+    {% if collectionKey %}
+        {% assign carouselCollection = carouselCollection[collectionKey] %}
+    {% endif %}
+
+    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
+
+    {% if nonActiveItemsVisibility == false %}
+        {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
+    {% endif %}
+
+    {% assign darkenedImageClass = "darkenedImageDisabled" %}
+
+    {% if darkenedImage == true %}
+        {% assign darkenedImageClass = "darkenedImageEnabled" %}
+    {% endif %}
+
+    {% if enableLinkArrow == nil %}
+        {% assign enableLinkArrow = true %}
+    {% endif %}
+
+    {% if carouselCollection %}
+        <div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--items: {{ items }}; --carousel-margin: {{ carouselMargin }}">
+            {% for carouselItem in carouselCollection %}
+                {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
+                    {% assign contentDirectionClass = "carousel-item-flex-row" %}
+
+                    {% if contentDirection == "column" %}
+                        {% assign contentDirectionClass = "carousel-item-flex-column" %}
+                    {% endif %}
+                {% else %}
+                    {% assign contentDirectionClass = 'carousel-item' %}
+                {% endif %}
+
+                {% assign backgroundImage = "unset" %}
+
+                {% if contentDirection == "imageBackground" %}
+                    {% assign contentDirectionClass = "carousel-item-image-background" %}
+                    {% assign backgroundImage = carouselItem[1].src %}
+                {% endif %}
+
+                <div class="carousel-item-default {{ contentDirectionClass }}" style="width: {{ carouselItem[1].width }}">
+                    {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
+                        <div class="carousel-text">
+                            {% if carouselItem[1].title %}
+                                <h2 style="font-size: {{titleSize}}; color: {{titleColor}}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}">{{carouselItem[1].title}}</h2>
+                            {% endif %}
+                            {% if carouselItem[1].description %}
+                                <p style="font-size: {{descriptionSize}}; color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{carouselItem[1].description}}</p>
+                            {% endif %}
+                            {% if carouselItem[1].linkLabel %}
+                                <a href="{{carouselItem[1].href}}" style="font-size: {{linkSize}}; color: {{linkColor}}; line-height: {{linkLineHeight}}; font-weight: {{ linkWeight }}">
+                                    {{carouselItem[1].linkLabel}}
+                                    {% if enableLinkArrow == true %}
+                                        <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
+                                        <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
+                                        <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if carouselItem[1].src %}
+                        <div class="carousel-image">
+                            {% if carouselItem[1].href %}
+                                <a href="{{carouselItem[1].href}}">
+                                    <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+                                    {% if overlay == true %}
+                                        <div class="overlay">
+                                            <div class="eye">
+                                                <i class="far fa-eye"></i>
+                                                See more about {{carouselItem[1].title}}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </a>
+                            {% else %}
+                                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    {% if carouselItem[1].multipleImage %}
+                        <div class="carousel-image">
+                            <div class="multiple-image">
+                                {% for image in carouselItem[1].multipleImage %}
+                                    <img src="{{image[1].src}}" alt="{{image[1].alt}}">
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <span class="not-found-message">Collection not found</span>
+    {% endif %}
 
 {% endif %}
