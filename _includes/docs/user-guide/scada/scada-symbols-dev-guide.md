@@ -585,7 +585,7 @@ This JS function defines a logic of on click handler. and accepts three paramete
 
 {% include images-gallery.html imageCollection="on-click-action-1" %}
 
-### Teg configuration
+### Tag configuration
 
 #### onButtonText tag
 
