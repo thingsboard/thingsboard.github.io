@@ -7,7 +7,7 @@ notitle: "true"
 
 <div class="company-content">
     <div class="company-hero-carousel">
-        {% include carousel.liquid items = 1 collectionMap = "company-photos-carousel" autoplay = false nonActiveItemsVisibility = true carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "square" %}
+        {% include carousel.liquid items = 4 collectionMap = "company-photos-carousel" autoplay = true smoothAutoPlay = true autoWidth = true nonActiveItemsVisibility = false carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "disableDots" %}
     </div>
     <div class="company-aboutus">
         <h2 class="company-content-title">About Us</h2>
@@ -40,7 +40,7 @@ notitle: "true"
     </div>
     <div class="company-timeline">
         <div class="company-wrapper">
-            {% include carousel.liquid items = 5 collectionMap = "company-timeline-carousel" timeline = true autoplay = false carouselMargin = 50 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
+            {% include carousel.liquid items = 5 collectionMap = "company-timeline-carousel" timeline = true autoplay = false loop = false carouselMargin = 50 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
         </div>
     </div>
     <div class="company-values">

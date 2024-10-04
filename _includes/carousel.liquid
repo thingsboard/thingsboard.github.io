@@ -2,6 +2,9 @@
 {% assign collectionMap = include.collectionMap %}
 {% assign items = include.items | default: 1 %}
 {% assign autoplay = include.autoplay %}
+{% assign smoothAutoPlay = include.smoothAutoPlay %}
+{% assign autoWidth = include.autoWidth %}
+{% assign loop = include.loop %}
 {% assign carouselMargin = include.carouselMargin | default: 100 %}
 {% assign transitionAnimation = include.transitionAnimation %}
 {% assign thingsboardStyledBackground = include.thingsboardStyledBackground | default: false %}
@@ -27,6 +30,24 @@
 
 {% if autoplay == false %}
     {% assign autoplayClass = "no-autoplay" %}
+{% endif %}
+
+{% assign smoothAutoPlayClass = "no-smoothAutoPlay" %}
+
+{% if smoothAutoPlay == true %}
+    {% assign smoothAutoPlayClass = "smoothAutoPlay" %}
+{% endif %}
+
+{% assign autoWidthClass = "no-autoWidth" %}
+
+{% if autoWidth == true %}
+    {% assign autoWidthClass = "autoWidth" %}
+{% endif %}
+
+{% assign loopClass = "loopEnabled" %}
+
+{% if loop == false %}
+    {% assign loopClass = "loopDisabled" %}
 {% endif %}
 
 {% assign transitionAnimationClass = "transitionAnimationEnabled" %}
@@ -58,7 +79,7 @@
     {% assign titleHoverScaleClass = "titleHoverEnabled" %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ transitionAnimationClass }}" style="--items: {{ items }} ;--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}">
+<div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" style="--items: {{ items }} ;--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}">
     {% for key in carouselCollection %}
         <div class="timeline-item">
             <div class="timeline-label">
@@ -108,7 +129,7 @@
 {% endif %}
 
 {% if carouselCollection %}
-<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--items: {{ items }}; --carousel-margin: {{ carouselMargin }}">
+<div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--items: {{ items }}; --carousel-margin: {{ carouselMargin }}">
     {% for carouselItem in carouselCollection %}
         {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
             {% assign contentDirectionClass = "carousel-item-flex-row" %}

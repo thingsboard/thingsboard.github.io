@@ -863,7 +863,8 @@ var tb = (function () {
 				{src: '/js/owl.carousel.min.js', type: 'script'}
 			];
 			loadNextScript(0, scriptsList, function() {
-				$(document).ready(function(){
+
+				window.onload = function() {
 
 					function itemsNumberToShow (carousel) {
 						let timelineItemsToShow = 1
@@ -873,27 +874,25 @@ var tb = (function () {
 							timelineItemsToShow = timelineItems.length >= 5 ? 5 : timelineItems.length;
 						}
 
-						return timelineItemsToShow
+						return timelineItemsToShow;
 					}
 
 					if ($('.owl-carousel').hasClass('timeline')) {
 
 						const timelineLabel = document.querySelectorAll(".timeline-label");
 
-						window.onload = function () {
-							const timelineTitle = document.querySelectorAll(".timeline-title");
+						const timelineTitle = document.querySelectorAll(".timeline-title");
 
-							let maxTitleHeight = 0;
+						let maxTitleHeight = 0;
 
-							timelineTitle.forEach((element) => {
-								const elementHeight = element.offsetHeight;
-								if (elementHeight > maxTitleHeight) {
-									maxTitleHeight = elementHeight;
-								}
-							});
+						timelineTitle.forEach((element) => {
+							const elementHeight = element.offsetHeight;
+							if (elementHeight > maxTitleHeight) {
+								maxTitleHeight = elementHeight;
+							}
+						});
 
-							document.documentElement.style.setProperty('--maxTitleHeight', `${maxTitleHeight}px`);
-						}
+						document.documentElement.style.setProperty('--maxTitleHeight', `${maxTitleHeight}px`);
 
 						timelineLabel.forEach(label => {
 							label.addEventListener('click', function (){
@@ -934,6 +933,15 @@ var tb = (function () {
 					function autoPlayStatus($carousel) {
 						return !$carousel[0].classList.contains("no-autoplay");
 					}
+
+					function autoWidthStatus($carousel) {
+						return $carousel[0].classList.contains("autoWidth");
+					}
+
+					function loopStatus($carousel) {
+						return $carousel[0].classList.contains("loopEnabled");
+					}
+
 					function carouselSettingsConfigure(carousel) {
 
 						var $carousel = $(carousel);
@@ -943,18 +951,28 @@ var tb = (function () {
 							margin: carouselMargin($carousel),
 							stagePadding: 0,
 							autoHeight: false,
-							autoWidth: true,
-							center: true,
-							loop: true,
+							autoWidth: autoWidthStatus($carousel),
+							loop: loopStatus($carousel),
 							autoplay: autoPlayStatus($carousel),
-							autoplayTimeout: 5000,
-							autoplayHoverPause: true,
+							autoplayTimeout: $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
+							autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 2500 : false,
+							autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
+							slideTransition: 'linear',
 							nav: false,
 							responsive: {
 								1025: {
 									nav: navStatus($carousel),
 									margin: carouselMargin($carousel),
 									stagePadding: 0
+								}
+							},
+							onInitialized: function(event) {
+								if ($carousel[0].classList.contains("smoothAutoPlay")) {
+									$(event.target).trigger('play.owl.autoplay');
+									setTimeout(function() {
+										$(event.target).trigger('stop.owl.autoplay');
+										$(event.target).trigger('play.owl.autoplay', [2500]);
+									}, 10);
 								}
 							}
 						}
@@ -967,9 +985,9 @@ var tb = (function () {
 						$(this).addClass(carouselClass);
 						$(this).owlCarousel(carouselSettingsConfigure(`.${carouselClass}`));
 					});
-
-				});
+				};
 			});
 		}
 	}
 })();
+
