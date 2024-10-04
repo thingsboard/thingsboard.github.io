@@ -30,6 +30,9 @@ toc:
     - title: Keep Alive
       path: /docs/mqtt-broker/user-guide/keep-alive/
       new: true
+    - title: Topics & Wildcards
+      path: /docs/mqtt-broker/user-guide/topics/
+      new: true
 - title: Administration UI
   section:
     - title: Monitoring
