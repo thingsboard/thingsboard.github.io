@@ -36,7 +36,7 @@ In addition to setting up the tasks, you can choose specific items for which you
 * Select All: Apply the calculation to all available items.
 * Choose Items for Calculate: Manually select the items to include in the calculation.
 
-![image](/images/trendz/enable-button.png)
+![image](https://img.thingsboard.io/trendz/enable-button.png)
 
 
 #### Storing Calculations as Telemetry
@@ -46,7 +46,7 @@ When these settings are saved, your calculations are recorded in ThingsBoard as 
 The data generated appears in the construction of view fields in the list of business entities under the name assigned to the calculation at the time of creation and,
 if activated, will be updated according to the specified frequency when creating the task. The created calculation will appear in the view fields under the name given to the calculation during its creation.
 
-![image](/images/trendz/name-calculation-field.png)
+![image](https://img.thingsboard.io/trendz/name-calculation-field.png)
 
 If the calculation is not activated, it can still be used when constructing view fields, but users will receive a reminder indicating that no task has been created for this calculation.
 
