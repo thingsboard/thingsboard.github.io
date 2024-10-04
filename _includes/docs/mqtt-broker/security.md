@@ -85,6 +85,11 @@ WSS listener is set to the same negotiation subprotocols as [WS](#ws-listener) l
 
 ### Authentication
 
+TBMQ offers two authentication methods: [Basic](#basic-authentication) and [TLS](#tls-authentication). 
+If neither method is enabled, clients can connect to the broker and publish/subscribe to topics without any restrictions.
+**Note:** all the clients will be connected as [Device](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) client type.
+Creating [Application](/docs/mqtt-broker/user-guide/mqtt-client-type/#application-client) clients will not be possible.
+
 #### Basic Authentication
 
 To enable basic authentication based on a **username, password, and clientId** in your system, follow these steps:
@@ -118,7 +123,6 @@ Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers t
 
 #### TLS Authentication
 
-TBMQ supports authentication using TLS. 
 To enable TLS authentication, you must first [enable the TLS listener](/docs/mqtt-broker/security/#tls-listener) so that the client's certificate chain is involved in the authentication process.
 
 After enabling the TLS listener, you need to do the following to enable TLS authentication:
@@ -129,16 +133,25 @@ After enabling the TLS listener, you need to do the following to enable TLS auth
 
 ##### Credentials Matching
 
-When authentication is enabled, only clients connecting using certificates with common names (CN) that match the persisted common names will be authenticated. 
-This matching process is done by comparing the CN of each certificate in the chain with the common names of the persisted credentials.
+The "X.509 Certificate Chain" credentials have a **"Use certificate CN regex"** option that controls how credentials are matched.
+
+* When "Use certificate CN regex" is disabled:
+the "Certificate common name (CN)" must **exactly** match the CN of the client's certificate or, if present, one of the parent's certificates in the chain. 
+Authentication will fail if none of the certificates have an exactly matching CN.
+
+* "Use certificate CN regex" is enabled:
+the "Certificate common name (CN) matcher regex" must match the CN of the client's certificate or, if present, one of the parent's certificates in the chain. 
+Authentication will fail if no certificate in the chain matches the regex.
 
 ##### Credentials ID
 
 The generation of `credentialsId` is done as follows:
 
-- credentialsId = `ssl|$CERTIFICATE_COMMON_NAME`. 
+- credentialsId = `ssl|$CERTIFICATE_COMMON_NAME`;
+- credentialsId = `ssl|$CERTIFICATE_COMMON_NAME_REGEX`.
 
-Where `$CERTIFICATE_COMMON_NAME` is the common name of the certificate from the chain.
+Where `$CERTIFICATE_COMMON_NAME` is the common name of the certificate from the chain, `$CERTIFICATE_COMMON_NAME_REGEX` is a regex-based string
+that should be matched with the certificate's CN from the chain.
 
 {% include images-gallery.html imageCollection="security-authentication" %}
 
@@ -185,14 +198,16 @@ Here is a model of the credentials value:
 
 ```
 {
-    "certCommonName": $certCommonName,
+    "certCnPattern": $certCnPattern,
+    "certCnIsRegex": $certCnIsRegex,
     "authRulesMapping": $authRulesMapping
 }
 ```
 {: .copy-code}
 
 Where:
-- $certCommonName - the common name that should be present in the certificate chain.
+- $certCnPattern - the pattern for the common name that should be present in the certificate chain.
+- $certCnIsRegex - option to control whether the common name (CN) pattern is treated as a regular expression (regex) for matching.
 - $authRulesMapping - the mapping used to configure the access restrictions for different keywords.
   For example,
   ```
@@ -212,6 +227,6 @@ Where:
 This allows clients to connect with a certificate containing **example_1** in its CN to publish only to topics that start with **example_pub_topic/** and 
 subscribe to topics that start with **example_sub_topic/**. Clients with a certificate containing **example_2** are allowed to publish and subscribe to any topic.
 
-**Note**, if either **pubAuthRulePatterns** or **subAuthRulePatterns** is set to `null` or an empty list (`[]`), the client will not be able to publish to or subscribe to any topics.
+**Note:** if either **pubAuthRulePatterns** or **subAuthRulePatterns** is set to `null` or an empty list (`[]`), the client will not be able to publish to or subscribe to any topics.
 
 {% include images-gallery.html imageCollection="security-authorization" %}
