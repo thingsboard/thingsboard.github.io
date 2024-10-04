@@ -972,10 +972,14 @@ List<Integer>
 **Examples:**
 
 ```java
-var listBe = [-40, -1];
-var listLe = [-1, -40];
-return printUnsignedBytes(listBe);        // Returns [255, 216]
-return printUnsignedBytes(listBe);        // Returns [216, 255]
+var hexStrBe = "D8FF";                     // [-40, -1]
+var listBe = hexToBytes(hexStrBe);
+printUnsignedBytes(listBe);                // Returns [216, 255]
+
+var hexStrLe = "FFD8";                     // [-1, -40]
+var listLe = hexToBytes(hexStrLe);
+return printUnsignedBytes(listLe);        // Returns [255, 216]
+
 ```
 {: .copy-code}
 
