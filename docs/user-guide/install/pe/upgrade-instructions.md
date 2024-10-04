@@ -1220,6 +1220,8 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+* Configure Professional Edition license key as described [here](/docs/user-guide/install/pe/ubuntu/#step-3-obtain-and-configure-license-key).
+
 Execute regular upgrade script:
 
 ```bash
@@ -1259,6 +1261,7 @@ net stop thingsboard
 * Make a backup of previous ThingsBoard CE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 * Run installation package **thingsboard-windows-setup-{{ site.release.pe_ver }}.exe**.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Configure Professional Edition license key as described [here](/docs/user-guide/install/pe/windows/#step-3-obtain-and-configure-license-key).
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
 {% capture difference %}
