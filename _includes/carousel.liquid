@@ -127,7 +127,7 @@
             {% assign backgroundImage = carouselItem[1].src %}
         {% endif %}
 
-        <div class="carousel-item-default {{ contentDirectionClass }}">
+        <div class="carousel-item-default {{ contentDirectionClass }}" style="width: {{ carouselItem[1].width }}">
             {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
             <div class="carousel-text">
                 {% if carouselItem[1].title %}

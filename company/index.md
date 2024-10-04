@@ -7,7 +7,7 @@ notitle: "true"
 
 <div class="company-content">
     <div class="company-hero-carousel">
-        {% include carousel.liquid items = 3 collectionMap = "company-photos-carousel" nonActiveItemsVisibility = true carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "square" %}
+        {% include carousel.liquid items = 1 collectionMap = "company-photos-carousel" autoplay = false nonActiveItemsVisibility = true carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "square" %}
     </div>
     <div class="company-aboutus">
         <h2 class="company-content-title">About Us</h2>

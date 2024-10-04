@@ -1,7 +1,9 @@
 0:
   src: "/images/companyImages/company-photos-carousel/company-photo-carousel-1.png"
   alt: ""
+  width: 900px
 1:
+  width: 448px
   multipleImage:
     0:
       src: "/images/companyImages/company-photos-carousel/company-photo-carousel-2.png"
@@ -12,7 +14,9 @@
 2:
   src: "/images/companyImages/company-photos-carousel/company-photo-carousel-4.png"
   alt: ""
+  width: 900px
 3:
+  width: 448px
   multipleImage:
     0:
       src: "/images/companyImages/company-photos-carousel/company-photo-carousel-5.png"
