@@ -58,17 +58,26 @@ Custom menu added.
 
 {% include images-gallery.liquid imageCollection=addCustomMenu %}
 
-## Manage custom menu configuration
+## Custom menu configuration
 
 ### Add new menu item
 
 You can add a new menu item that will link to a specific dashboard or an external webpage, such as a documentation page.
-To do this, follow these steps:
+
+{% capture difference %}
+**Please note:**
+<br>
+Before using a URL in your project, ensure that the page allows embedding in an iframe.
+To do this, check the value of the [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options){:target="_blank"} HTTP header. If the header is set to DENY or SAMEORIGIN, it means the page cannot be embedded in an iframe on other domains or is restricted to the same domain. If your domain needs to be allowed for embedding, it must be explicitly listed in the header.
+It is recommended to check whether your domain is included among the allowed domains in the header or in the Content Security Policy (CSP) to avoid potential issues with displaying the page in an iframe.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+To add new menu item, follow these steps:
 
 - Click the "Add custom menu item" button at the bottom of the page;
 - Enter the name for your menu item. Leave the item type as "Link". Now, specify the action: open a dashboard or a URL. Click "Add";
-- The new menu item will be added to the bottom of the list;
-- Drag the new item up or down by holding it from the left corner;
+- The new menu item will be added to the bottom of the list. Drag the new item up or down by holding it from the left corner;
 - Apply changes to the menu by clicking the "Save" button.
 
 Clicking on the new menu item will open the specified dashboard or webpage (depending on what you have set in the settings).
@@ -135,12 +144,12 @@ You can place several menu items into one section. For example, devices, assets,
 As an example, let's add one section and place two subitems within it.
 
 - First, let's add a section. Start adding a new menu item. Name it "My dashboards", select the "Section" item type, and click "Add";
-- Custom item with "Section" type added. A "+ Add subitem" button appeared under the section "My dashboards". Click it to add a subitem to this section;
-- Add a new menu item. Name it "Dashboard A" and add a link to the dashboard;
+- Custom item with "Section" type added. The "+ Add subitem" button appeared under the section "My dashboards". Click it to add a subitem to this section;
+- Enter "Dashboard A" as menu item name, and specify the dashboard;
 - Subitem added. As you can see, it is located in the "My dashboards" section by hierarchy;
-- Add another one menu item. Name it "Dashboard B" and add a link to your second dashboard. Save the changes;
+- Add another one menu item. Name it "Dashboard B" and specify your second dashboard. Save the changes;
 
-In the left menu, a section called "My dashboards" has appeared. Click on it to expand. Inside, you will find two menu subitems that link to the dashboards. Click on the "Dashboard A" menu item. The corresponding dashboard will open;
+In the left menu, a section called "My dashboards" has appeared. Click on it to expand. Inside, you will find two menu subitems that link to your dashboards. Click on the "Dashboard A" menu item. The corresponding dashboard will open.
 Now click on the "Dashboard B" menu item to navigate to the second dashboard.
 
 {% assign addSubitem = '
@@ -152,16 +161,16 @@ Now click on the "Dashboard B" menu item to navigate to the second dashboard.
         title: Name it "My dashboards", select the "Section" item type, and click "Add";
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/add-subitem-3-pe.png,
-        title: Custom item with "Section" type added. A "+ Add subitem" button appeared under the section "My dashboards". Click it to add a subitem to this section;
+        title: Custom item with "Section" type added. The "+ Add subitem" button appeared under the section "My dashboards". Click it to add a subitem to this section;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/add-subitem-4-pe.png,
-        title: Add a new menu item. Name it "Dashboard A" and add a link to the dashboard. Click "Add";
+        title: Enter "Dashboard A" as menu item name, and specify the dashboard. Click "Add";
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/add-subitem-5-pe.png,
         title: Subitem added. As you can see, it is located in the "My dashboards" section by hierarchy;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/add-subitem-6-pe.png,
-        title: Add another one menu item. Name it "Dashboard B" and add a link to your second dashboard. Save the changes;
+        title: Add another one menu item. Name it "Dashboard B" and specify your second dashboard. Save the changes;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/add-subitem-7-pe.png,
         title: In the left menu, a section called "My dashboards" has appeared. Click on it to expand. Inside, you will find two menu subitems that link to the dashboards. Click on the "Dashboard A" menu item. The corresponding dashboard will open;
@@ -175,7 +184,7 @@ Now click on the "Dashboard B" menu item to navigate to the second dashboard.
 
 ### Edit menu item
 
-To edit menu item, click the "pencil" icon in the row of the menu item you want to edit. Make the necessary changes and click "Apply". The item configuration has been changed.
+To edit menu item, click the "pencil" icon in the row of the menu item you want to edit. Make the necessary changes, click "Apply", and then save changes. The item configuration has been changed.
 
 {% assign editMenuItem = '
     ===
@@ -183,7 +192,7 @@ To edit menu item, click the "pencil" icon in the row of the menu item you want 
         title: Click the "pencil" icon in the row of the menu item you want to edit;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/edit-menu-item-2-pe.png,
-        title: Make the necessary changes and click "Apply";
+        title: Make the necessary changes, and click "Apply". Then save changes;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/edit-menu-item-3-pe.png,
         title: The item configuration has been changed.
@@ -243,10 +252,10 @@ To hide menu items in the ThingsBoard user interface, switch the "Hidden/Visible
 {% assign hideExistingMenuItems = '
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/hide-existing-menu-items-1-pe.png,
-        title: To hide menu items in the ThingsBoard user interface, switch the "Hidden/Visible" toggle to "Hidden" in the row of the menu item you want to hide. For example, hide the "Plan and Billing" menu item. Then save the changes;
+        title: To hide menu items in the ThingsBoard user interface, switch the "Hidden/Visible" toggle to "Hidden" in the row of the menu item you want to hide. For example, hide the "Plan and Billing" and "Dashboards" menu items. Then save the changes;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/hide-existing-menu-items-2-pe.png,
-        title: As you can see, the menu item we marked as "Hidden" has disappeared from the left menu.
+        title: As you can see, the menu items we marked as "Hidden" has disappeared from the left menu.
 '
 %}
 
@@ -295,12 +304,12 @@ By default, hidden menu items are displayed in the custom menu config window. To
 
 ### Delete menu item
 
-To delete a menu item, click the "trash" icon in the row of the menu item you want to remove. Then save the changes.
+To delete the custom menu item, click the "trash" icon in the row of the menu item you want to remove. Then save the changes.
 
 {% assign deleteMenuItem = '
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/delete-menu-item-1-pe.png,
-        title: To delete a menu item, click the "trash" icon in the row of the menu item you want to remove. Then save the changes;
+        title: To delete the custom menu item, click the "trash" icon in the row of the menu item you want to remove. Then save the changes;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/delete-menu-item-2-pe.png,
         title: Your custom menu item has been deleted.
@@ -325,7 +334,10 @@ To edit the custom menu name, click the "pencil" icon in the row of this custom 
         title: To edit the custom menu name, click the "pencil" icon in the row of this custom menu;
     ===
         image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-edit-name-2-pe.png,
-        title: Change the name and click "Save".
+        title: Change the name and click "Save";
+    ===
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-edit-name-3-pe.png,
+        title: The custom menu name has been changed.
 '
 %}
 
@@ -352,15 +364,15 @@ To manage the users assigned to this custom menu, click the corresponding icon i
 
 ## Delete custom menu
 
-To delete custom menu, click the corresponding icon in the row of this user menu, and confirm deleting. Then save the changes.
+To delete custom menu, click the corresponding icon in the row of this user menu, and confirm the deletion by clicking "Yes".
 
 {% assign deleteCustomMenu = '
     ===
-        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-delete-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/delete-custom-menu-1-pe.png,
         title: To delete custom menu, click the corresponding icon in the row of this user menu;
     ===
-        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-delete-2-pe.png,
-        title: Confirm deleting. Then save the changes.
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/delete-custom-menu-2-pe.png,
+        title: Confirm the deletion by clicking "Yes".
 '
 %}
 

@@ -165,9 +165,9 @@ toc:
       path: /docs/pe/user-guide/mail-templates/
     - title: Custom translation
       path: /docs/pe/user-guide/custom-translation/
-      new: true
     - title: Custom menu
       path: /docs/pe/user-guide/custom-menu/
+      new: true
 - title: Integrations
   section:
   - title: Overview
