@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe
-title: Custom Menu
+title: Custom menu
 description:  
 redirect_from: "/docs/user-guide/custom-menu/"
 ---

@@ -6,12 +6,12 @@ description: OAuth 2.0 Support
 adding-domain-1:
     0:
         image: /images/user-guide/oauth-2-support/adding-domain-1-pe.png
-        title: 'On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to begin adding a new domain. Provide your domain name and OAuth 2.0 client. Then, click "Add".'
+        title: 'On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to add a new domain. Provide your domain name and OAuth 2.0 client. Then, click "Add".'
     1:
         image: /images/user-guide/oauth-2-support/adding-domain-2-pe.png
         title: 'Domain added.'
     
-managing-domain-1:
+editing-domain-1:
     0:
         image: /images/user-guide/oauth-2-support/managing-domain-1-pe.png
         title: 'Click on the domain to view its details. Switch to editing mode by clicking the large orange button;'
@@ -30,7 +30,7 @@ deleting-domain-1:
 adding-oauth2-client-1:
     0:
         image: /images/user-guide/oauth-2-support/adding-oauth2-client-1-pe.png
-        title: 'Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page. Click the "plus" icon to begin adding a new OAuth 2.0 client;'
+        title: 'Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page. Click the "plus" icon to add a new OAuth 2.0 client;'
     1:
         image: /images/user-guide/oauth-2-support/adding-oauth2-client-2-pe.png
         title: 'Enter a descriptive title for the client, and select the authentication provider from the dropdown menu. Provide the Client ID and Client Secret obtained from your authentication provider. Configure advanced settings as necessary. Then, click "Add".'
@@ -38,7 +38,7 @@ adding-oauth2-client-1:
         image: /images/user-guide/oauth-2-support/adding-oauth2-client-3-pe.png
         title: 'New OAuth 2.0 client added.'
 
-managing-oauth2-client-1:
+editing-oauth2-client-1:
     0:
         image: /images/user-guide/oauth-2-support/managing-oauth2-client-1-pe.png
         title: 'Click on the OAuth 2.0 client to view its details. Switch to editing mode by clicking the large orange button;'
