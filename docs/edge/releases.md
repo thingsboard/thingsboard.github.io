@@ -8,6 +8,15 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.8.0 (Oct 7, 2024) {#v38}
+
+**Major** release with everything from [TB CE v3.8](/docs/reference/releases/#v38):
+
+* [#11521](https://github.com/thingsboard/thingsboard/pull/11521) Queue to handle edge notification messages by @AndriiLandiak;
+* [#11139](https://github.com/thingsboard/thingsboard/pull/11139) Proxy for grpc client by @AndriiLandiak;
+* [#11494](https://github.com/thingsboard/thingsboard/pull/11494) Performance improvement via caching related edges for entity by @AndriiLandiak;
+* [#120](https://github.com/thingsboard/thingsboard-edge/pull/120) Introduce Timeseries Cloud events table to slowly process timeseries updates by @AndriiLandiak;
+
 ## v3.7.0 (Jun 18, 2024) {#v37}
 
 **Major** release with everything from [TB CE v3.7](/docs/reference/releases/#v37):
