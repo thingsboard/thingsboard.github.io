@@ -116,6 +116,8 @@ The `credentialsId` is generated as follows:
 
 Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers to the specified client ID from the `CONNECT` packet.
 
+{% include images-gallery.html imageCollection="security-authentication-basic" %}
+
 #### TLS Authentication
 
 TBMQ supports authentication using TLS. 
@@ -140,7 +142,7 @@ The generation of `credentialsId` is done as follows:
 
 Where `$CERTIFICATE_COMMON_NAME` is the common name of the certificate from the chain.
 
-{% include images-gallery.html imageCollection="security-authentication" %}
+{% include images-gallery.html imageCollection="security-authentication-tls" %}
 
 #### Strategies
 
@@ -178,6 +180,8 @@ The **pubAuthRulePatterns** and **subAuthRulePatterns** are based on regular exp
 {: .copy-code}
 The following configuration allows clients to publish messages to topics that start with **country/** and subscribe to topics that start with **city/**.
 
+{% include images-gallery.html imageCollection="security-authorization-basic" %}
+
 #### TLS
 
 For TLS type, authorization is configured using the **authRulesMapping** field of the corresponding MQTT Client Credentials.
@@ -214,4 +218,4 @@ subscribe to topics that start with **example_sub_topic/**. Clients with a certi
 
 **Note**, if either **pubAuthRulePatterns** or **subAuthRulePatterns** is set to `null` or an empty list (`[]`), the client will not be able to publish to or subscribe to any topics.
 
-{% include images-gallery.html imageCollection="security-authorization" %}
+{% include images-gallery.html imageCollection="security-authorization-tls" %}
