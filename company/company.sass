@@ -31,6 +31,29 @@
           animation: slideInFromBottom 0.8s ease-out forwards, opacityTransform 1s ease-out forwards
           transform: translateY(100%)
 
+      .company-timeline
+        opacity: 0
+
+      .company-timeline-content-animation
+        animation: revealFromLeftToRight 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+
+      .company-aboutus-image:first-child
+        width: 382px
+        height: 354px
+
+      .company-aboutus-image:last-child
+        width: 400px
+        height: 600px
+
+      .company-aboutus-container .company-flex-content-default
+        align-items: center
+
+      .company-history-container .company-flex-content-default
+        align-items: flex-start
+
+
+
 
   @keyframes slideInFromLeft
     0%
@@ -53,12 +76,21 @@
     100%
       transform: translateY(0)
 
+  @keyframes revealFromLeftToRight
+    0%
+      clip-path: inset(0 100% 0 0)
+
+    100%
+      clip-path: inset(0 0 0 0)
+
   @keyframes opacityTransform
     0%
       opacity: 0
 
     100%
       opacity: 1
+
+
 
   .company-wrapper
     max-width: 1390px
@@ -102,3 +134,13 @@
 
 @import "../_includes/bubble-tabs"
 @import "../_includes/carousel"
+
+@media (max-width: 959px)
+  #company
+    #companyBg
+      #companyContent
+        .company-aboutus-container .company-flex-content-default
+          flex-direction: column
+        .company-history-container .company-flex-content-default:last-child
+          flex-direction: column-reverse
+          align-items: center

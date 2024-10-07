@@ -1,6 +1,9 @@
 {% assign timeline = include.timeline %}
 {% assign collectionMap = include.collectionMap %}
 {% assign items = include.items | default: 1 %}
+{% assign itemsHigher960 = include.itemsHigher960 | default: items %}
+{% assign itemsHigher600 = include.itemsHigher600 | default: items %}
+{% assign itemsHigher0 = include.itemsHigher0 | default: items %}
 {% assign autoplay = include.autoplay %}
 {% assign smoothAutoPlay = include.smoothAutoPlay %}
 {% assign autoWidth = include.autoWidth %}
@@ -79,7 +82,7 @@
         {% assign titleHoverScaleClass = "titleHoverEnabled" %}
     {% endif %}
 
-    <div class="usecase-carousel owl-carousel owl-theme timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" style="--items: {{ items }} ;--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}">
+    <div class="usecase-carousel owl-carousel owl-theme owl-reponsive timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}" data-itemsHigher0 = "{{ itemsHigher0 }}" data-itemsHigher600 = "{{ itemsHigher600 }}" data-itemsHigher960 = "{{ itemsHigher960 }}">
         {% for key in carouselCollection %}
             <div class="timeline-item">
                 <div class="timeline-label">
@@ -129,7 +132,7 @@
     {% endif %}
 
     {% if carouselCollection %}
-        <div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--items: {{ items }}; --carousel-margin: {{ carouselMargin }}">
+        <div class="usecase-carousel owl-carousel owl-theme owl-loaded owl-drag {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--carousel-margin: {{ carouselMargin }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}'>
             {% for carouselItem in carouselCollection %}
                 {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
                     {% assign contentDirectionClass = "carousel-item-flex-row" %}

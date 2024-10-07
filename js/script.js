@@ -907,16 +907,8 @@ var tb = (function () {
 						})
 					}
 
-					function itemsNumberToShow($carousel) {
-						return Number(getComputedStyle($carousel[0]).getPropertyValue('--items'));
-					}
-
 					function carouselMargin($carousel) {
 						return Number(getComputedStyle($carousel[0]).getPropertyValue('--carousel-margin'));
-					}
-
-					function navStatus($carousel) {
-						return !$carousel[0].classList.contains("disableNav");
 					}
 
 					function autoPlayStatus($carousel) {
@@ -931,52 +923,68 @@ var tb = (function () {
 						return $carousel[0].classList.contains("loopEnabled");
 					}
 
-					function carouselSettingsConfigure(carousel) {
+					$(document).ready(function() {
+						$('.owl-carousel').each(function (index) {
+							const $carousel = $(this);
+							const carouselId = "owl-carousel-" + index;
+							$(this).attr("id", carouselId);
 
-						var $carousel = $(carousel);
+							const settings = $(this).data('setting');
+							const itemsHigher0 = settings[0] || 1;
+							const itemsHigher600 = settings[600] || 1;
+							const itemsHigher960 = settings[960] || 1;
+							const defaultItems = settings['defaultItems'] || 1;
 
-						return {
-							items: itemsNumberToShow($carousel),
-							margin: carouselMargin($carousel),
-							stagePadding: 0,
-							autoHeight: false,
-							autoWidth: autoWidthStatus($carousel),
-							loop: loopStatus($carousel),
-							autoplay: autoPlayStatus($carousel),
-							autoplayTimeout: $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
-							autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 2500 : false,
-							autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
-							slideTransition: 'linear',
-							nav: false,
-							responsive: {
-								1025: {
-									nav: navStatus($carousel),
-									margin: carouselMargin($carousel),
-									stagePadding: 0
+							const navStatus = !$(this)[0].classList.contains("disableNav");
+
+							$('#' + carouselId).owlCarousel({
+								margin: carouselMargin($carousel),
+								stagePadding: 0,
+								autoHeight: false,
+								autoWidth: autoWidthStatus($carousel),
+								loop: loopStatus($carousel),
+								autoplay: autoPlayStatus($carousel),
+								autoplayTimeout: $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
+								autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 2500 : false,
+								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
+								slideTransition: 'linear',
+								nav: false,
+								responsiveBaseElement: 'body',
+								responsiveClass: true,
+								startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
+								responsive: {
+									0: {
+										items: itemsHigher0
+									},
+									600: {
+										items: itemsHigher600
+									},
+									960: {
+										items: itemsHigher960
+									},
+									1025: {
+										nav: navStatus,
+										items: itemsHigher960,
+									},
+									1280: {
+										nav: navStatus,
+										items: defaultItems
+									}
+								},
+								onInitialized: function(event) {
+									if ($carousel[0].classList.contains("smoothAutoPlay")) {
+										$(event.target).trigger('play.owl.autoplay');
+										setTimeout(function() {
+											$(event.target).trigger('stop.owl.autoplay');
+											$(event.target).trigger('play.owl.autoplay', [2500]);
+										}, 10);
+									}
 								}
-							},
-							onInitialized: function(event) {
-								if ($carousel[0].classList.contains("smoothAutoPlay")) {
-									$(event.target).trigger('play.owl.autoplay');
-									setTimeout(function() {
-										$(event.target).trigger('stop.owl.autoplay');
-										$(event.target).trigger('play.owl.autoplay', [2500]);
-									}, 10);
-								}
-							}
-						}
-					}
-
-					const numberOfCarousels = $('.owl-carousel').length;
-
-					$('.owl-carousel').each(function (index) {
-						var carouselClass = numberOfCarousels > 1 ? 'carousel-' + (index + 1) : 'owl-carousel';
-						$(this).addClass(carouselClass);
-						$(this).owlCarousel(carouselSettingsConfigure(`.${carouselClass}`));
-					});
+							});
+						});
+					})
 				};
 			});
 		}
 	}
 })();
-

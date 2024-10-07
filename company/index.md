@@ -40,7 +40,7 @@ notitle: "true"
     </div>
     <div class="company-timeline">
         <div class="company-wrapper">
-            {% include carousel.liquid items = 5 collectionMap = "company-timeline-carousel" timeline = true autoplay = false loop = false carouselMargin = 50 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
+            {% include carousel.liquid items = 5 itemsHigher960 = 3 itemsHigher600 = 2 itemsHigher0 = 1 collectionMap = "company-timeline-carousel" timeline = true autoplay = false loop = false carouselMargin = 50 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
         </div>
     </div>
     <div class="company-values">
@@ -67,6 +67,11 @@ notitle: "true"
             classToAdd: "company-history-content-animation",
             threshold: 0.4
         },
+        {
+            classToSearch: ".company-timeline",
+            classToAdd: "company-timeline-content-animation",
+            threshold: 0.3
+        }
     ];
 
     function searchForAnimation (classToSearch, classToAdd, threshold) {
