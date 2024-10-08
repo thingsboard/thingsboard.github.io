@@ -3,8 +3,8 @@ Json converter is the default converter, it looks for '**deviceName**', '**devic
 | **Parameter**            | **Default value**   | **Description**                                                                                                                                 |
 |:-------------------------|:--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | type                     | **json**            | Provides information to connector that default converter is to be used for converting data from topic.                                          |
-| deviceNameJsonExpression | **${serialNumber}** | Simple JSON expression, is used for looking up device name in the incoming message (parameter "serialNumber" will be used as the device name).  |
-| deviceTypeJsonExpression | **${sensorType}**   | Simple JSON expression, is used for looking up device type in the incoming message (parameter "sensorType" will be used as the device type).    |
+| deviceNameExpression | **${serialNumber}** | Simple JSON expression, is used for looking up device name in the incoming message (parameter "serialNumber" will be used as the device name).  |
+| deviceProfileExpression | **${sensorType}**   | Simple JSON expression, is used for looking up device type in the incoming message (parameter "sensorType" will be used as the device type).    |
 | timeout                  | **60000**           | Timeout for triggering "Device Disconnected" event                                                                                              |
 | attributes:              |                     | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.                                    |
 | ... type                 | **string**          | Type of incoming data for a current attribute.                                                                                                  |
@@ -37,39 +37,50 @@ Json converter is the default converter, it looks for '**deviceName**', '**devic
 Mapping subsection for Example 1 will look like:
 
 ```json
-    {
-      "topicFilter": "sensor/data",
-      "converter": {
-        "type": "json",
-        "deviceNameJsonExpression": "${serialNumber}",
-        "deviceTypeJsonExpression": "${sensorType}",
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          },
-          {
-            "type": "string",
-            "key": "${sensorModel}",
-            "value": "on"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "integer",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "integer",
-            "key": "humidity",
-            "value": "${hum}"
-          }
-        ]
+{
+  "topicFilter": "sensor/data",
+  "subscriptionQos": 1,
+  "converter": {
+    "type": "json",
+    "deviceInfo": {
+      "deviceNameExpressionSource": "message",
+      "deviceNameExpression": "${serialNumber}",
+      "deviceProfileExpressionSource": "message",
+      "deviceProfileExpression": "${sensorType}"
+    },
+    "sendDataOnlyOnChange": false,
+    "timeout": 60000,
+    "attributes": [
+      {
+        "type": "string",
+        "key": "model",
+        "value": "${sensorModel}"
+      },
+      {
+        "type": "string",
+        "key": "${sensorModel}",
+        "value": "on"
       }
-    }
+    ],
+    "timeseries": [
+      {
+        "type": "string",
+        "key": "temperature",
+        "value": "${temp}"
+      },
+      {
+        "type": "double",
+        "key": "humidity",
+        "value": "${hum}"
+      },
+      {
+        "type": "string",
+        "key": "combine",
+        "value": "${hum}:${temp}"
+      }
+    ]
+  }
+}
 ```
 
 ![image](https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-advanced-json-1-ce.png)
@@ -77,34 +88,39 @@ Mapping subsection for Example 1 will look like:
 Mapping for Example 2 will look like:
 
 ```json
-    {
-      "topicFilter": "sensor/+/data",
-      "converter": {
-        "type": "json",
-        "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
-        "deviceTypeTopicExpression": "Thermometer",
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "integer",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "integer",
-            "key": "humidity",
-            "value": "${hum}"
-          }
-        ]
+"topicFilter": "sensor/+/data",
+  "subscriptionQos": 1,
+  "converter": {
+    "type": "json",
+    "deviceInfo": {
+      "deviceNameExpressionSource": "topic",
+      "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
+      "deviceProfileExpressionSource": "constant",
+      "deviceProfileExpression": "Thermometer"
+    },
+    "sendDataOnlyOnChange": false,
+    "timeout": 60000,
+    "attributes": [
+      {
+        "type": "string",
+        "key": "model",
+        "value": "${sensorModel}"
       }
-    }
+    ],
+    "timeseries": [
+      {
+        "type": "double",
+        "key": "temperature",
+        "value": "${temp}"
+      },
+      {
+        "type": "string",
+        "key": "humidity",
+        "value": "${hum}"
+      }
+    ]
+  }
+}
 ```
 
 ![image](https://img.thingsboard.io/gateway/mqtt-connector/data-conversion-advanced-json-2-ce.png)
