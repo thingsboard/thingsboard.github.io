@@ -7,29 +7,32 @@ title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table
 adding-assets-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-1-pe.png
-        title: 'While in the asset group, click the "plus" icon in the upper right corner. In the opened window, input the asset name "Building A". Now we need to create a new asset profile. In the corresponding field, enter a name for it - "building", and click "Create a new one";'
+        title: 'Go to the "Assets" page. By default, you&#39;ll be in the device group "All".Click the "plus" icon located in the top right corner of the table. From the drop-down menu, select "Add new asset" to start adding your first asset;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-2-pe.png
-        title: 'Confirm creating an asset profile by clicking "Add" button;'
+        title: ' In the opened window, input the asset name "Building A". Now we need to create a new asset profile. In the corresponding field, enter a name for it - "building", and click "Create a new one!";'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-3-pe.png
-        title: 'Now click the "Add" to confirm adding a new asset;'
+        title: 'Click the "Add" button to confirm the asset profile creation;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-4-pe.png
-        title: 'Congratulations! You&#39;ve added your first asset;'
+        title: 'Now click the "Add" to finalize adding asset;'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-5-pe.png
+        title: 'Congratulations! You&#39;ve added your first asset.'
 
 adding-assets-2:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-5-pe.png
-        title: 'Repeat these steps to add "Building B", as well as offices "Office A" and "Office B" with the asset type "office".'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-assets-6-pe.png
+        title: 'Similarly, add the asset "Building B". Also, add the assets "Office A" and "Office B" with the asset type "office".'
 
 adding-devices-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-devices-1-pe.png
-        title: 'Just like for assets, let&#39;s create a separate group for devices. Navigate to the "Devices" page of the "Entities" section on the sidebar. Then, navigate to the "Groups" tab, and click the "plus" icon in the upper right corner to add new device group. Name it "Sensors", and click "Add" to confirm adding the device group;'
+        title: 'Navigate to the "Devices" page. By default, you&#39;ll be in the device group "All". Click the "plus" icon located in the top right corner of the table. From the drop-down menu, select "Import device";'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-devices-2-pe.png
-        title: 'Open the created group, and click "Import device" icon in the upper right corner. Drag the CSV file into the import window and click "Continue";'
+        title: 'Drag the CSV file into the import window and click "Continue";'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-devices-3-pe.png
         title: 'Select CSV delimiter and click "Continue";'
@@ -63,23 +66,26 @@ relations-from-office-to-device-1:
         title: 'Select the type "Device" and specify "SD-001" (Indoor Air Quality Sensor), "EM-002" (Energy Meter), and "WM-003" (Water Flow Meter) in the list of entities. Click "Add";'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/relations-from-office-to-device-3-pe.png
-        title: 'Now your devices are "related" to Office A;'
+        title: 'Now your devices are "related" to "Office A" asset;'
 
 relations-from-office-to-device-2:
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/relations-from-office-to-device-4-pe.png
-        title: 'Similarly, "relation" the "AM-307" (IAQ Sensor) device to Office B.'
+        title: 'Similarly, "relation" the "AM-307" (IAQ Sensor) device to "Office B" asset.'
 
 adding-dashboard:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/dashboard-group-1-pe.png
         title: 'Go to the "Dashboards" page and navigate to the "Groups" tab. Click the "plus" icon to create a new dashboard group. Name it "Buildings" and click "Add";'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-dashboard-1-pe.png
-        title: 'Open the created group, and click the "plus" icon to add a new dashboard. Enter the dashboard title "Buildings" and click "Add";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/dashboard-group-2-pe.png
+        title: 'Open the created dashboard group;'
     2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-dashboard-1-pe.png
+        title: 'Click the "plus" icon to add a new dashboard. Enter the title for the dashboard - "Buildings" and click "Add";'
+    3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-dashboard-2-pe.png
-        title: 'Your first dashboard has been successfully added. It will open automatically after adding. Save the dashboard by clicking the “Save” button in the upper right corner of the page.'
+        title: 'Your first dashboard has been successfully added. It will open automatically after adding. Save the dashboard by clicking the “Save” button in the upper right corner of the screen.'
 
 adding-buildings-images:
     0:
@@ -233,7 +239,7 @@ adding-entities-table-widget-2:
 background-image-building-state:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/background-image-1-pe.png
-        title: 'Click the "Manage layouts" button located in the upper left corner of the dashboard toolbar to begin customizing the layout;'
+        title: 'To customize the layout of the dashboard, enter it edit mode and click the "Manage layouts" button located in the upper left corner of the dashboard toolbar;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/background-image-2-pe.png
         title: 'A window for layout management will appear. Here, locate and click on the "gear" icon, labeled "Layout setting". This action opens the layout settings window;'
@@ -269,7 +275,7 @@ dashboard-settings-css:
 
 dashboard-final-lesson-1:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/building-state-final-part-1-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/lesson-1-pe.png
 
 ---
 

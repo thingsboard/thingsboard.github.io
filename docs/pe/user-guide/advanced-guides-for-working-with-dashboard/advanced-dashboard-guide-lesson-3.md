@@ -4,6 +4,20 @@ assignees:
 - stitenko
 title: Lesson 3. Charts and card widgets
 
+dashboard-lesson-3:
+    0:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-1-pe.png
+    1:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-2-pe.png
+    2:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-3-pe.png
+    3:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-4-pe.png
+    4:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-5-pe.png
+    5:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-6-pe.png
+
 adding-new-rule-chain-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-1-pe.png

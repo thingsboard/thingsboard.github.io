@@ -12,26 +12,7 @@ Before proceeding, we strongly recommend that you familiarize yourself with the 
 
 In this part, we will add separate states for each device, simulate telemetry data for the devices, and display them on card widgets.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-1-pe.png" alt="Smart energy monitoring light theme exmple with the pie chart">
-    </div>
-    <div>
-        <img class="item-image" src="/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-2-pe.png" alt="Smart energy monitoring dark theme exmple without the pie chart">
-    </div>
-    <div>
-        <img class="item-image" src="/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-3-pe.png" alt="Smart energy monitoring dark theme exmple">
-    </div>
-    <div>
-        <img class="item-image" src="/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-4-pe.png" alt="Smart energy monitoring dark theme exmple">
-    </div>
-    <div>
-        <img class="item-image" src="/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-5-pe.png" alt="Smart energy monitoring dark theme exmple">
-    </div>
-    <div>
-        <img class="item-image" src="/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-6-pe.png" alt="Smart energy monitoring dark theme exmple">
-    </div>
-</div>
+{% include carousel.liquid collectionMap = 'dashboard-lesson-3' nonActiveItemsVisibility = false %}
 
 ## Simulation of the devices' telemetry data
 

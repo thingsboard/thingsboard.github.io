@@ -22,7 +22,7 @@ For simplicity, we'll concentrate on a single office in Building A, equipped wit
 Let's begin with the basics: add new entities, establishing relationships between them, and display our buildings in the OpenStreet Map and Entities table widgets.
 After completing the first guide, you will have a dashboard that looks like this:
 
-![image](/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/lesson-1-2-pe.png)
+![image](/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/lesson-1-pe.png)
 
 ## Adding entities and establishing relationships between them
 
@@ -38,16 +38,16 @@ Let's get started.
 
 - Login to your ThingsBoard instance as [Tenant Administrator](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"};
 - Go to the "Assets" page of the "Entities" section on the sidebar. By default, you&#39;ll be in the device group "All". For now, we will add new assets to this group;
-- Click the “plus” icon in the upper right corner to start adding your first asset;
-- In the asset name field, type "Building A". Type "building" in the "Asset profile" section and click on “Create a new one” to establish a new profile for this asset;
-- Click the "Add" button to confirm the creation of the asset profile;
+- Click the "plus" icon located in the top right corner of the table. From the drop-down menu, select "Add new asset" to start adding your first asset;
+- In the asset name field, type "Building A". Type "building" in the "Asset profile" section and click on "Create a new one!" to establish a new profile for this asset;
+- Click the "Add" button to confirm the asset profile creation;
 - Now click the "Add" to finalize adding asset.
 
 Congratulations! You&#39;ve added your first asset.
 
 {% include images-gallery.html imageCollection="adding-assets-1" %}
 
-Repeat these steps to add "Building B", as well as offices "Office A" and "Office B" with the asset type "office".
+Similarly, add the asset "Building B". Also, add the assets "Office A" and "Office B" with the asset type "office".
 
 {% include images-gallery.html imageCollection="adding-assets-2" %}
 
@@ -81,9 +81,8 @@ AM-307,smart-sensor,IAQ Sensor
 ```
 {: .copy-code}
 
-- Just like for assets, we create a separate group for devices. Navigate to the "Devices" page of the "Entities" section on the sidebar;
-- Navigate to the "Groups" tab, and click the "plus" icon to add new device group. Name it "Sensors", and click "Add";
-- Open the created group, and click "Import device" icon in the upper right corner;
+- Navigate to the "Devices" page of the "Entities" section on the sidebar. By default, you'll be in the device group "All";
+- Click the "plus" icon located in the top right corner of the table. From the drop-down menu, select "Import device";
 - Drag the CSV file into the import window and click "Continue";
 - Select CSV delimiter and click "Continue";
 - Map the data between the columns of the uploaded file and the data types in the ThingsBoard platform. Click "Continue" and then click "OK".
@@ -104,16 +103,16 @@ Now your Office A and Office B are linked only to Building A.
 
 {% include images-gallery.html imageCollection="relations-from-building-to-office" %}
 
-Now let's add the "relations" of "SD-001" (Indoor Air Quality Sensor), "EM-002" (Energy Meter), and "WM-003" (Water Flow Meter) devices to Office A.
+Now let's "relation" the devices "SD-001" (Indoor Air Quality Sensor), "EM-002" (Energy Meter), and "WM-003" (Water Flow Meter) with Office A:
 
 - Click on "Office A" and navigate to the "Relations" tab. Ensure the direction is "From" and click the "plus" icon;
 - Select the type "Device" and specify "SD-001", "EM-002", and "WM-003" in the list of entities. Click "Add".
 
-Now specifying devices are "related" to Office A.
+Now specifying devices are "related" to "Office A" asset.
 
 {% include images-gallery.html imageCollection="relations-from-office-to-device-1" %}
 
-Similarly, "relation" the "AM-307" (IAQ Sensor) device to Office B.
+Similarly, "relation" the "AM-307" (IAQ Sensor) device with "Office B" asset.
 
 {% include images-gallery.html imageCollection="relations-from-office-to-device-2" %}
 
@@ -122,11 +121,13 @@ Similarly, "relation" the "AM-307" (IAQ Sensor) device to Office B.
 The [dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} is not just a space where you can display your data in a convenient format.
 Creating a structured and visually appealing dashboard is key to monitoring and managing your assets and devices efficiently.
 
-Just like for assets and devices, we will create a separate group for the dashboard as well. 
+Add a dashboard to start visualizing assets and devices on it. For this dashboard, we will create a separate group:
 
 - Go to the "Dashboards" page and navigate to the "Groups" tab. Click the "plus" icon to create a new dashboard group. Name it "Buildings" and click "Add";
-- Now, open the created group, and click the "plus" icon;
-- Enter the dashboard title "Buildings" and click "Add".
+- Open the created dashboard group;
+- Click the "plus" icon in the upper right corner of the screen to add new dashboard;
+- Enter the title for the dashboard - "Buildings" and click "Add";
+- Save the dashboard by clicking the "Save" button in the upper right corner of the screen.
 
 Your first dashboard has been successfully added. It will open automatically after adding. Save the dashboard by clicking the “Save” button in the upper right corner of the page.
 
