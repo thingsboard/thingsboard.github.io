@@ -25,13 +25,13 @@ To do this, follow these steps:
 
 {% assign editAlias = '
     ===
-        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-1-pe.png,
         title: Open the dashboard and enter edit mode. Click the "Entity aliases" icon, then in the pop-up window click the "Edit alias" icon next to the alias.
     ===
-        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-2-pe.png,
         title: In edit alias window select your device from dropdown list and save entity alias.
     ===
-        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-3-pe.png,
         title: Apply all changes.
 '
 %}

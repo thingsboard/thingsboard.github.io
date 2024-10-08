@@ -4,14 +4,14 @@ If everything is set correctly, you should see the data in ThingsBoard. To do th
 
 {% assign checkEfentoSensorDataPE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-data-1-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-data-1-pe.png,
         title: Click on the device and the most recent data from the device will be visible in the "Latest telemetry" tab.
 '
 %}
 
 {% assign checkEfentoSensorDataCE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-data-1-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-data-1-ce.png,
         title: Click on the device and the most recent data from the device will be visible in the "Latest telemetry" tab.
 '
 %}
