@@ -21,6 +21,34 @@
       keywords: device management attributes
       video: false
       pe: false
+- title: Advanced guides for working with the main features of ThingsBoard
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
+  id: AdvancedGettingStartedGuides
+  section:
+    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
+      title: Visualizing assets data using OpenStreet Map and Entities table widgets
+      subtitle: "Explore this guide on how to: create assets and devices and define their relationships; add server attributes; develop a new dashboard; visualize data using the ”Entities table” and ”OpenStreet Map” widgets."
+      keywords: asset device server attribute visualization dashboard Entities table OpenStreet Map widget helloworld
+      video: false
+      pe: false
+    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/
+      title: Dashboard states, widget actions, and Image Map widget
+      subtitle: "Explore this guide on how to: add and configure new dashboard states, create various aliases for ease of use, visualize attribute data using the ”Image Map” widget, set up actions in different widgets to navigate between states, display telemetry data using both analog and digital gauges, as well as the ”Line chart” widget."
+      keywords: Line chart aliases attribute Image Map Auto fill layout height actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
+    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/
+      title: Charts and card widgets
+      subtitle: "Explore this guide on how to: add and configure new dashboard states, create various aliases for ease of use, visualize attribute data using the ”Image Map” widget, set up actions in different widgets to navigate between states, display telemetry data using both analog and digital gauges, as well as the ”Line chart” widget."
+      keywords: Line chart aliases attribute Image Map actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
+    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/
+      title: Remote control & Alarm management
+      subtitle: "Explore this guide on how to: add and configure new dashboard states, create various aliases for ease of use, visualize attribute data using the ”Image Map” widget, set up actions in different widgets to navigate between states, display telemetry data using both analog and digital gauges, as well as the ”Line chart” widget."
+      keywords: Line chart aliases attribute Image Map actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
