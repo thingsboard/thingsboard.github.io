@@ -19,7 +19,26 @@ Download a simple dashboard for this device. It is configured to display a data 
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/vs-121-sensor-dashboard.json" %}  
 
-{% include /docs/devices-library/blocks/basic/thingsboard-chenge-entity-alias-block.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/vs-121-sensor-dashboard.json" %}
+To open the imported dashboard, click on it. Then you should specify your device in entity alias of the dashboard.
+
+To do this, follow these steps:
+
+{% assign editAlias = '
+    ===
+        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-1-pe.png,
+        title: Open the dashboard and enter edit mode. Click the "Entity aliases" icon, then in the pop-up window click the "Edit alias" icon next to the alias.
+    ===
+        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-2-pe.png,
+        title: In edit alias window select your device from dropdown list and save entity alias.
+    ===
+        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-3-pe.png,
+        title: Apply all changes.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=editAlias %}
+
+Now you should be able to see the data from the device.
 
 Example of the dashboard with data:
 
