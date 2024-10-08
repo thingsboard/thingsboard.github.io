@@ -5,7 +5,7 @@
 In MQTT, a subscription is a mechanism that allows clients to receive messages directed to specific topics. 
 When a client subscribes to a topic, it expresses its interest in receiving all messages published to that topic.
 
-### All subscriptions
+### Subscriptions table
 
 On the Subscriptions page you may **observe, analyze or filter** all subscriptions on the broker. 
 The table contains the following information about each subscription:
@@ -24,3 +24,8 @@ You can easily add, remove or edit subscriptions from the 'Session details' wind
 5. Click 'Update' to save changes.
 
 {% include images-gallery.html imageCollection="subscription-session" %}
+
+{% capture monitoringSubscriptions %}
+You can track the number of current subscriptions and other broker activity on the [Monitoring](/docs/mqtt-broker/user-guide/ui/monitoring/) and Home pages.
+{% endcapture %}
+{% include templates/info-banner.md title="Subscriptions chart" content=monitoringSubscriptions %}

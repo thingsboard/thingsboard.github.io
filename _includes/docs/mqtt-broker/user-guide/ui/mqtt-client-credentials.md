@@ -138,3 +138,6 @@ Below are examples of the generated commands for the credentials with password:
 mosquitto_sub -d -q 1 -h localhost -p 1883 -t tbmq/demo/+ -i "tbmq_eJzCIh6r" -u "tbmq_un_VxUVPaF8" -P "$YOUR_PASSWORD" -v
 mosquitto_pub -d -q 1 -h localhost -p 1883 -t tbmq/demo/topic -i "tbmq_eJzCIh6r" -u "tbmq_un_VxUVPaF8" -P "$YOUR_PASSWORD" -m 'Hello World'
 ```
+
+Also, if the client has configured subscribe/publish **Authorization rule patterns** that differ from the default value `.*` (any topic allowed), it indicates that the client has specific topic restrictions for publishing or subscribing. 
+In this case, you need to replace "$YOUR_TOPIC" with one that the client is permitted to operate.
