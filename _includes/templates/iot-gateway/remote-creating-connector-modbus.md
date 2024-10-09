@@ -32,7 +32,7 @@ To create a connector, follow these steps:
         title: Click the "**+ Add connector**" button;
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
-        title: Choose "**MODBUS**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", disable "**Fill configuration with default values**" field and click on "**Add**" button;
+        title: Choose "**MODBUS**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", turn off the "**Fill configuration with default values**" option and click on "**Add**" button;
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
         title: Connector created.
@@ -44,7 +44,7 @@ To create a connector, follow these steps:
 First, we need to add new slave and configure the connection to it. Let's start from the "**Master Connections**" tab. 
 This section offers slave adding and detailed connection configuration options that contains several important fields, including connection type, host, port, unit ID, method, and other.
 
-- Go to the "**Master Connections**" tab, and click "Add Slave" button;
+- Go to the "**Master Connections**" tab, and click "**Add Slave**" button;
 - Fill in fields with the following values:
 
 | **Field name**    | **Value**            |
@@ -61,7 +61,7 @@ This section offers slave adding and detailed connection configuration options t
 {% assign addNewSlave = '
     ===
         image: /images/gateway/dashboard/add-new-slave-1-ce.png,
-        title: Go to the "**Master Connections**" tab, and click "Add Slave" button;
+        title: Go to the "**Master Connections**" tab, and click "**Add Slave**" button;
     ===
         image: /images/gateway/dashboard/add-new-slave-2-ce.png,
         title: Fill in the fields with values taken from the documentation.
@@ -72,7 +72,7 @@ This section offers slave adding and detailed connection configuration options t
 
 Now, we are ready to move to the "**Attributes**" section. The configuration in this unit provides settings for processing data on Modbus server. These settings will be interpreted in the ThingsBoard platform instance as attributes of the device.
 
-Let's configure attribute section using the following steps:
+Let&#39;s configure attribute section using the following steps:
 
 - Click on "**pencil**" icon in the "**Attributes**" section;
 - In the opened window, click on "**Add attribute**" button;
@@ -98,7 +98,7 @@ Let's configure attribute section using the following steps:
 
 {% include images-gallery.liquid imageCollection=attributeConfiguration1 %}
 
-Let's add another attribute. Collapse the recently added "frequency" attribute, click the "Add attribute" button, and fill in the fields with the following values, using the same process as before:
+Let&#39;s add another attribute. Collapse the recently added "frequency" attribute, click the "**Add attribute**" button, and fill in the fields with the following values, using the same process as before:
 
 | **Field name** | **Value**   |
 |:---------------|:------------|
@@ -109,21 +109,23 @@ Let's add another attribute. Collapse the recently added "frequency" attribute, 
 | Address        | 8           |
 | ---            
 
+Click the "**Apply**" button after you&#39;ve completed the "**Attributes**" section configuration.
+
 {% assign attributeConfiguration2 = '
     ===
         image: /images/gateway/dashboard/slave-configuration-4-ce.png,
         title: Collapse the recently added "frequency" attribute, and click "**Add attribute**" button to add another attribute;
     ===
         image: /images/gateway/dashboard/slave-configuration-5-ce.png,
-        title: Fill in the fields with values taken from the documentation. Then, click "Apply".
+        title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
 
 {% include images-gallery.liquid imageCollection=attributeConfiguration2 %}
 
-We finish with "**Attributes**" section, so let's move to "**Time series**" section. The configuration in this unit provides settings for processing data on Modbus server. These settings will be interpreted in ThingsBoard platform instance as time series of the device.
+We finish with the "**Attributes**" section, so let&#39;s move to the "**Time series**" section. The configuration in this unit provides settings for processing data on Modbus server. These settings will be interpreted in ThingsBoard platform instance as time series of the device.
 
-Let's configure time series tab using the following steps:
+Let&#39;s configure time series section using the following steps:
 
 - Click on "**pencil**" icon on "**Time series**" section.
 - In the opened window, click on "**Add time series**" button;
@@ -149,7 +151,7 @@ Let's configure time series tab using the following steps:
 
 {% include images-gallery.liquid imageCollection=timeSeriesConfiguration1 %}
 
-Let's add another time series. Collapse the recently added "humidity" time series, click the "Add time series" button, and fill in the fields with the following values, using the same process as before:
+Let&#39;s add another time series. Collapse the recently added "**humidity**" time series, click the "**Add time series**" button, and fill in the fields with the following values, using the same process as before:
 
 | **Field name** | **Value**   |
 |:---------------|:------------|
@@ -163,10 +165,10 @@ Let's add another time series. Collapse the recently added "humidity" time serie
 {% assign timeSeriesConfiguration2 = '
     ===
         image: /images/gateway/dashboard/slave-configuration-9-ce.png,
-        title: Collapse the recently added "humidity" time series, and click "**Add time series**" button to add another time series;
+        title: Collapse the recently added "**humidity**" time series, and click "**Add time series**" button to add another time series;
     ===
         image: /images/gateway/dashboard/slave-configuration-10-ce.png,
-        title: Fill in the fields with values taken from the documentation. Then, click "Apply".
+        title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
 
