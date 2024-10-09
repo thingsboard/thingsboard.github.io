@@ -2,6 +2,8 @@
 * TOC
 {:toc}
 
+This guide explains how MQTT topics work, how to use wildcards in topic strings, and provide examples to help you effectively utilize this feature in your MQTT deployments.
+
 ### Topics
 
 In MQTT, topics are fundamental to the communication model. They act as addressing mechanisms that enable publishers and subscribers to exchange messages.
@@ -27,16 +29,16 @@ MQTT supports two types of wildcards:
 1. **Multi-level wildcard (`#`)** - matches any number of levels at the end of the topic string.
 2. **Single-level wildcard (`+`)** - matches one level in the topic hierarchy.
 
-#### Multi-level Wildcard
+#### Multi-level wildcard
 
 The number sign (`#`) is a wildcard character that matches all remaining levels in the topic hierarchy. It represents the parent and any number of child levels.
 
 <table>
   <thead>
       <tr>
-          <td style="width: 30%"><b>Topic Filter with #</b></td>
-          <td style="width: 35%"><b>Match</b></td>
-          <td style="width: 35%"><b>Not Match</b></td>
+          <td style="width: 30%"><b>Subscription Topic Filter</b></td>
+          <td style="width: 35%"><b>Matching Topics</b></td>
+          <td style="width: 35%"><b>Not Matching Topics</b></td>
       </tr>
   </thead>
   <tbody>
@@ -66,16 +68,16 @@ These topic filters are **invalid** because the `#` wildcard is not correctly po
 * `sensors/#/`
 * `sensors/#/temperature`
 
-#### Single-level Wildcard
+#### Single-level wildcard
 
 The plus character (`+`) represents a single level in the topic hierarchy. It can be used to subscribe to topics with a common pattern at one specific level.
 
 <table>
   <thead>
       <tr>
-          <td style="width: 30%"><b>Topic Filter with +</b></td>
-          <td style="width: 35%"><b>Match</b></td>
-          <td style="width: 35%"><b>Not Match</b></td>
+          <td style="width: 30%"><b>Subscription Topic Filter</b></td>
+          <td style="width: 35%"><b>Matching Topics</b></td>
+          <td style="width: 35%"><b>Not Matching Topics</b></td>
       </tr>
   </thead>
   <tbody>
@@ -103,7 +105,7 @@ These topic filters are **invalid** because the `+` wildcard is not correctly po
 * `sensors/home+`
 * `sensors/+home`
 
-#### Wildcards Usage Examples
+#### Wildcards usage examples
 
 The next examples demonstrate the flexibility and depth of subscription patterns possible with different positions of single-level and multi-level wildcards in MQTT topics.
 
@@ -165,7 +167,7 @@ The next examples demonstrate the flexibility and depth of subscription patterns
   </tbody>
 </table>
 
-### Best Practices
+### Best practices
 
 When designing MQTT topics, it's important to follow best practices to ensure clarity, consistency, and manageability. 
 
@@ -175,7 +177,7 @@ When designing MQTT topics, it's important to follow best practices to ensure cl
 * Avoid subscribing to all topics. Subscribing to `#` means the client will receive every message published to any topic in the MQTT broker. This can quickly overwhelm the client with a flood of messages, leading to performance issues and potential crashes.
 * Avoid very deep hierarchies as they can become difficult to manage over time. Use clear, descriptive, and hierarchical topic names, for example `building/floor1/room1/temperature`.
 
-### Multiple Subscriptions Match
+### Multiple subscriptions match
 
 In MQTT, it's possible for a client to have multiple subscriptions where more than one subscription matches the topic of a published message.
 
@@ -187,7 +189,7 @@ If a message is published to the topic `sensors/room1/temperature`, **both subsc
 
 In this case, TBMQ will not send the message to each matching subscription. Instead, it will deliver the message to the **first subscription that matches**.
 
-### Configuring Maximum Topic Segments
+### Configuring maximum topic segments
 
 In TBMQ configuration, you can define the maximum number of forward slashes (`/`) that can be used in a topic.
 
@@ -198,11 +200,13 @@ Each additional segment increases the complexity of topic matching and routing w
 
 For example, if you set `MQTT_TOPIC_MAX_SEGMENTS_COUNT` to `2`, the broker will throw an error if a user tries to use more than two forward slashes (`/`) in the topic, such as in `sensors/floor1/room1/temperature` that contains `3` forward slashes.
 
-### Shared Subscription Topics
+### Shared subscription topics
 
-It is also worth mentioning shared subscriptions. In MQTT, shared subscription topics are used to distribute messages across multiple subscribers, allowing for load balancing and efficient use of resources.
+It is also worth mentioning feature [shared subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) that are used to distribute messages across multiple subscribers, allowing for load balancing and efficient use of resources.
 
-Shared topics have a **specific format** to differentiate them from regular topics. The general structure is:
+Shared subscription topic has a **specific format** to differentiate it from regular topic. 
+
+The general structure of shared topics is:
 ```
 $share/{ShareName}/{TopicFilter}
 ```
@@ -213,10 +217,8 @@ where:
 * {TopicFilter} - represents the topic filter used for the subscription, similar to regular subscriptions.
   It can include wildcards such as `#` and `+` to match multiple topics.
 
-For example, the following is a shared subscription:
+Example of a shared subscription topic:
 
 ```
 $share/group1/country/+/city/+/home/#
 ```
-
-Read more about Shared Subscriptions feature in [TBMQ docs](/docs/mqtt-broker/user-guide/shared-subscriptions/).
