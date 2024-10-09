@@ -26,7 +26,7 @@ Therefore, in this case, you will need to configure ThingsBoard Rule Engine to:
  - create an alarm if the device remains inactive for a certain period of time. This period of time can be defined in either of two ways:
 
     - The first way: by changing the global configuration parameter for the inactivity timeout. <br>
-      This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 10 seconds.
+      This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 600 seconds (10 minutes).
 
     - The second way: by overwriting this parameter for a particular device by setting the **“inactivityTimeout”** server-side attribute (value is set in milliseconds). <br>
       This way will be described in the following sections.
