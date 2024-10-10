@@ -173,7 +173,7 @@ Install Noto fonts (Japanese, Chinese, etc.):
 ```bash
 mkdir ~/noto
 cd ~/noto
-wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
+wget https://src.fedoraproject.org/repo/extras/chromium/NotoSansCJKjp-hinted.zip/sha512/e7bcbc53a10b8ec3679dcade5a8a94cea7e1f60875ab38f2193b4fa8e33968e1f0abc8184a3df1e5210f6f5c731f96c727c6aa8f519423a29707d2dee5ada193/NotoSansCJKjp-hinted.zip
 unzip NotoSansCJKjp-hinted.zip
 sudo mkdir -p /usr/share/fonts/noto
 sudo cp *.otf /usr/share/fonts/noto
