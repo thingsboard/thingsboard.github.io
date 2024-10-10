@@ -1,0 +1,306 @@
+$modal-z-index: 13000
+$modal-background-color: rgba(0, 0, 0, 0.4)
+$modal-content-background-color: #fefefe
+$modal-content-border: 1px solid #888
+$font-style-normal: normal
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
+$form-element-label-color: rgba(0, 0, 0, 0.54)
+$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
+$button-background-color: #2A7DEC
+$button-width: 208px
+
+.modal 
+    display: none
+    position: fixed
+    align-items: center
+    justify-content: center
+    z-index: $modal-z-index
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: $modal-background-color
+
+    .modal-content 
+        animation-name: animatetop
+        animation-duration: 0.4s
+        background-color: $modal-content-background-color
+        padding: 20px 20px 30px
+        border: $modal-content-border
+        width: 950px
+
+        .sub-content
+            overflow: auto
+            height: 95%
+
+        .close-button
+            display: flex
+            justify-content: end
+            
+        .close
+            width: 28px
+            height: 28px
+            cursor: pointer
+
+        .title, .sub-title, .sub-sub-title 
+            letter-spacing: 0.01em
+            text-align: center
+            display: flex
+            justify-content: center 
+            font-style: $font-style-normal
+
+        .title
+            font: $title-font
+            color: #3622A4
+
+        .sub-title
+            font: $sub-title-font
+            color: #333333
+            margin-bottom: 15px
+
+        .sub-sub-title
+            font: $sub-sub-title-font
+            color: #5E5F62
+            letter-spacing: .001em
+            span    
+                width: 556px
+                height: 56px
+
+        .form-section
+            padding: 30px 40px 0px 40px
+            display: flex
+            justify-content: space-around
+            .form-element
+                margin-bottom: 15px
+                width: 48%
+                label
+                    position: relative
+                    width: 100%
+                    p
+                        color: $form-element-label-color
+                        font-size: 12px
+                        line-height: 16px 
+                        font-style: $font-style-normal 
+                        font-weight: 400
+                        letter-spacing: 0.4px
+                        position: absolute
+                        top: -8px
+                        left: 10px
+                        z-index: 2
+                        padding: 0px 5px
+                        background: white
+
+                    .cdu-form-control, .cdu-text-area
+                        width: 100%
+                        color: #898B8F
+                        font-size: 16px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 24px
+                        letter-spacing: 0.15px
+                        border-radius: 4px
+                        border: $form-control-border
+                        padding: 16px 18px
+
+                    .cdu-text-area
+                        height: 170px
+
+                .label-select
+                    select 
+                        width: 100%
+                        appearance: none
+                        -webkit-appearance: none
+                        -moz-appearance: none
+                        &::-ms-expand 
+                            display: none
+
+                    &::after
+                        content: "\f078"
+                        color: black
+                        font-family: 'Font Awesome 5 Free'
+                        font-size: 14px
+                        font-weight: 900
+                        line-height: 1
+                        display: block
+                        position: absolute
+                        top: 20px
+                        right: 10px
+                        transform: rotate(0deg)
+                        transition: transform .3s
+                        border: none
+
+            .next
+                width: 98%
+
+        .secondary
+            padding-top: 0px
+
+        .submit-button-container
+            display: flex
+            justify-content: center
+            .cdu-button
+                padding: 15px
+                border-radius: 6px
+                color: white
+                background-color: $button-background-color
+                border: 1px solid $button-background-color
+                width: 400px
+                font-weight: 600
+                &:hover
+                    background-color: #fff
+                    color: $button-background-color
+
+@media screen and (max-width: $step6) and (max-height: $verticalStep1)
+    .modal 
+        .modal-content 
+            width: 90%
+            height: 90%
+            padding: 10px
+            .title
+                font-size: 12px
+            .close
+                width: 20px
+                height: 20px
+
+            .sub-title
+                font-size: 15px
+
+            .sub-sub-title
+                font-size: 12px
+
+            .form-section
+                padding-top: 10px
+                display: flex
+                flex-direction: row
+                .form-element
+                    margin-bottom: 5px
+                    width: 48%
+                    label
+                        .cdu-text-area
+                            height: 90px
+                .next
+                    width: 98%
+
+@media screen and (max-width: $step5)
+    .modal 
+        .modal-content 
+            width: 800px
+            .title
+                font-size: 15px
+
+            .sub-title
+                font-size: 27px
+
+            .sub-sub-title
+                font-size: 14px
+
+            .form-section
+                .form-element
+                    label
+                        p
+                            font-size: 11px
+                        .cdu-form-control
+                            font-size: 14px
+
+                        .cdu-text-area
+                            height: 130px
+
+            .submit-button-container
+                .cdu-button
+                    width: 250px
+
+@media screen and (max-width: $step4)
+    .modal 
+        .modal-content 
+            width: 693px
+            .title
+                font-size: 15px
+
+            .sub-title
+                font-size: 27px
+
+            .sub-sub-title
+                font-size: 14px
+
+            .form-section
+                .form-element
+                    label
+                        p
+                            font-size: 11px
+                        .cdu-form-control
+                            font-size: 14px
+
+                        .cdu-text-area
+                            height: 80px
+
+            .submit-button-container
+                .cdu-button
+                    width: 250px
+
+@media screen and (max-width: $step3)
+    .modal 
+        .modal-content 
+            width: 620px
+            .title
+                font-size: 15px
+
+            .sub-title
+                font-size: 27px
+
+            .sub-sub-title
+                font-size: 14px
+
+            .form-section
+                .form-element
+                    label
+                        p
+                            font-size: 11px
+                        .cdu-form-control
+                            font-size: 14px
+
+                        .cdu-text-area
+                            height: 110px
+
+            .submit-button-container
+                .cdu-button
+                    width: 250px
+
+@media screen and (max-width: $step2)
+    .modal 
+        .modal-content 
+            width: 90%
+            height: 90%
+            padding: 15px
+            .close
+                width: 20px
+                height: 20px
+
+            .sub-title
+                font-size: 24px
+
+            .sub-sub-title
+                font-size: 14px
+                span    
+                    width: 271px
+                    height: 84px
+
+            .form-section
+                padding-left: 15px
+                padding-right: 15px
+                flex-direction: column
+                .form-element
+                    margin-bottom: 15px
+                    width: 98%
+                    label
+                        .cdu-text-area
+                            height: 90px
+
+@keyframes animatetop
+    from
+        top: -300px 
+        opacity: 0
+    to
+        top: 0
+        opacity: 1
