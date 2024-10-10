@@ -1,7 +1,6 @@
 ## Prerequisites
 
-Install Docker:
-- [for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+{% include templates/install/docker-install.md %}
 
 {% include templates/install/docker-install-note.md %}
 

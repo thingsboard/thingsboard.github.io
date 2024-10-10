@@ -115,7 +115,7 @@ Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 
 {% capture contenttogglespecreport %}
 WebReport service <small>Run WebReport service on server</small>%,%service%,%templates/install/ubuntu-webreport-service.md%br%
-WebReport docker <small>Run WebReport service in container</small>%,%dockerized%,%templates/install/ubuntu-webreport-docker.md{% endcapture %}
+WebReport docker <small>Run WebReport service in container</small>%,%dockerized%,%templates/install/webreport-docker.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardWebreport" toggle-spec=contenttogglespecreport %} 
 
 ### Post-installation steps
