@@ -96,7 +96,7 @@
     }
 
     function setActivePricingSection(sectionId) {
-        var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options';
+        var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options' || sectionId === 'mqtt-broker-options';
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         hidePricingContent();

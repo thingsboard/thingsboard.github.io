@@ -100,6 +100,7 @@ notitle: "true"
                         <option value="Technical Support">Technical Support</option>
                         <option value="ThingsBoard Products">ThingsBoard Products</option>
                         <option value="Deployment Options">Deployment Options</option>
+                        <option value="TBMQ Pricing">TBMQ Pricing</option>
                         <option value="Training">Training</option>
                         <option value="Professional Services">Professional Services</option>
                         <option value="Partnership">Partnership</option>

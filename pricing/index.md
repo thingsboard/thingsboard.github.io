@@ -50,6 +50,9 @@ selfManagedPlan:
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a id="Pricing_Edge" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
+            <li id="menu-item-mqtt-broker-options" class="menu-item tb-logo">
+                <a id="Pricing_TBMQ" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('mqtt-broker-options')">TBMQ</a>
+            </li>
          </ul>
        </nav>
     </div>
@@ -82,6 +85,25 @@ selfManagedPlan:
                  data-product-id="trendz-self-managed"
                  onClick="activateProductSection('trendz-self-managed')">
                 <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
+            </div>
+        </div>
+    </div>
+    <div id="mqtt-broker-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
+        <div class="product-selector">
+            <div id="Pricing_TBMQ_dedicated"
+                 data-solutionId="mqtt-broker-dedicated"
+                 class="solution mqtt-broker-dedicated active defaultselection gtm_button" 
+                 data-product-id="mqtt-broker-dedicated" 
+                 onClick="activateProductSection('mqtt-broker-dedicated')">
+                <h3 data-faq-id="what-is-dedicated" 
+                    data-faq-link-size="70%">Dedicated</h3>
+            </div>
+            <div id="Pricing_TBMQ_byoc"
+                 data-solutionId="mqtt-broker-byoc"
+                 class="solution mqtt-broker-byoc gtm_button" 
+                 data-product-id="mqtt-broker-byoc" 
+                 onClick="activateProductSection('mqtt-broker-byoc')">
+                <h3 data-faq-id="what-is-byoc" data-faq-link-size="70%">BYOC</h3>
             </div>
         </div>
     </div>
@@ -1103,6 +1125,179 @@ selfManagedPlan:
  </div>  
 </div>
 
+<div id="mqtt-broker-dedicated" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description pricing-cloud active col-lg">
+                <h2>Subscription plans</h2>
+                <div class="pricing-content-details">
+                    Every plan features the deployment of a dedicated MQTT broker cluster on the ThingsBoard cloud, expertly managed by the TBMQ team. 
+                    This guarantees a secure, dependable, and high-performance setup. 
+                    The cluster comprises several TBMQ nodes, ensuring high availability and uninterrupted service. 
+                    A dedicated load balancer is included to seamlessly distribute your incoming traffic across multiple targets. 
+                    Additionally, each plan includes sessions and message limits, as well as persistence limits to store essential data during offline periods.
+                    Focus on your solution while we manage the servers for you on our cloud.
+                </div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-cloud active">
+               <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Maker</h2>
+                            <div class="pricing-square-description">
+                                <p>For PoCs and MVPs</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $199
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $0.27
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Maker" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 1000 Sessions</div>
+                            <div class="pricing-square-item">Up to 1000 <span data-faq-id="tmps-meaning">TMPS</span><br></div>
+                            <div class="pricing-square-item">Up to 5 persistent <span data-faq-id="app-clients-limit">Application clients</span><br></div>
+                            <div class="pricing-square-item">Up to 50 <span data-faq-id="device-msgs-limit">Device persistent messages per second</span><br></div>
+                            <div class="pricing-square-item">100GB of Free Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <div class="pricing-square-description">
+                                <p>For innovative ventures</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $349
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $0.48
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Prototype" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 2000 Sessions</div>
+                            <div class="pricing-square-item">Up to 2000 <span data-faq-id="tmps-meaning">TMPS</span><br></div>
+                            <div class="pricing-square-item">Up to 10 persistent <span data-faq-id="app-clients-limit">Application clients</span><br></div>
+                            <div class="pricing-square-item">Up to 100 <span data-faq-id="device-msgs-limit">Device persistent messages per second</span><br></div>
+                            <div class="pricing-square-item">100GB of Free Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>
+                            <div class="pricing-square-description">
+                                <p>For upcoming IoT Unicorns</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $699
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $0.96
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Startup" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 5000 Sessions</div>
+                            <div class="pricing-square-item">Up to 5000 <span data-faq-id="tmps-meaning">TMPS</span><br></div>
+                            <div class="pricing-square-item">Up to 25 persistent <span data-faq-id="app-clients-limit">Application clients</span><br></div>
+                            <div class="pricing-square-item">Up to 250 <span data-faq-id="device-msgs-limit">Device persistent messages per second</span><br></div>
+                            <div class="pricing-square-item">100GB of Free Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <div class="pricing-square-description">
+                                <p>For the fast-grown, defined long-term projects</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $999
+                                <span>/month</span>
+                            </h4>
+                            <h5>
+                                $1.37
+                                <span>/hour</span>
+                            </h5>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_Business" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 10,000 Sessions</div>
+                            <div class="pricing-square-item">Up to 10,000 <span data-faq-id="tmps-meaning">TMPS</span><br></div>
+                            <div class="pricing-square-item">Up to 50 persistent <span data-faq-id="app-clients-limit">Application clients</span><br></div>
+                            <div class="pricing-square-item">Up to 500 <span data-faq-id="device-msgs-limit">Device persistent messages per second</span><br></div>
+                            <div class="pricing-square-item">100GB of Free Monthly Traffic</div>
+                            <div class="pricing-square-item">$0.15/GB for Exceeding Traffic</div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mqtt-broker-byoc" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description pricing-cloud active col-lg">
+                <!-- <h2>Subscription plans</h2> -->
+                <div class="pricing-content-details">
+                    BYOC (Bring Your Own Cloud) deployment option allows you to leverage your existing cloud infrastructure while integrating our powerful MQTT broker cluster. 
+                    This flexibility ensures that you can maintain control over your cloud environment, optimize costs, and meet specific regulatory or compliance requirements.
+                    The TBMQ team is responsible for managing the cluster and providing technical support. 
+                </div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-community active" id="byoc">
+               <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                        <div class="pricing-square">
+                            <h2>BYOC</h2>
+                            <div class="pricing-square-description">
+                                <p>Ensures that your operational requirements are fulfilled while maintaining complete control within your organization</p>
+                            </div>
+                            <h4 class="pricing-square-price no-sign mb-0">
+                                Custom <span data-faq-id="byoc-custom-price" data-faq-link-size="70%"></span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TBMQ_byoc_custom" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Utilize your existing cloud investments and avoid additional expenses associated with new infrastructure</div>
+                            <div class="pricing-square-item">Easily scale the MQTT broker clusters to handle your load patterns and performance requirements</div>
+                            <div class="pricing-square-item">Maintain adherence to your organization’s compliance standards and retain full control over your data</div>
+                            <div class="pricing-square-item">Tailor the deployment to match your exact needs, ensuring compatibility with your existing systems and workflows</div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container faq-content">
     <h2 id="faq" class="text-center">Frequently asked questions</h2>
     <div id="FAQ" class="pi-accordion">
@@ -1151,7 +1346,7 @@ selfManagedPlan:
                 </p>    
             </div>    
         </div>
-         <div class="item" data-tag="h4" data-item-id="migrate-plan-to-perpetual" data-title="Is it possible to jump from subscription to perpetual?">
+        <div class="item" data-tag="h4" data-item-id="migrate-plan-to-perpetual" data-title="Is it possible to jump from subscription to perpetual?">
             <div class="container">
                 <p>
                  Customer may cancel the subscription and purchase a perpetual license. 
@@ -1168,7 +1363,7 @@ selfManagedPlan:
                 </p>    
             </div>    
         </div>
-       <div class="item" data-tag="h4" data-item-id="additional-services" data-title="How can I use my 10 hours bundle?">
+        <div class="item" data-tag="h4" data-item-id="additional-services" data-title="How can I use my 10 hours bundle?">
             <div class="container">
                 <p>
                  It can be your advantage for a quick start with the platform. These 10 hours can be used for consulting, training, or development services. Training sessions imply pre-defined topics, while Consulting may cover various technical questions, platform configurations, or your Use Case-related issues. The above services are conducted online. Alternatively, these 10 hours can be used to support you in the PoC, MVP, or ready-for-market solutions development by a dedicated development unit from ThingsBoard.        
@@ -1182,7 +1377,6 @@ selfManagedPlan:
                 </p>    
             </div>    
         </div>
-        
         <div class="item" data-tag="h4" data-item-id="thingsboard-edge-compatibility" data-title="What ThingsBoard Edge compatibility means?">
             <div class="container">
                 <p>
@@ -1352,6 +1546,72 @@ selfManagedPlan:
                 Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> if you have any questions or require support.
                 </p>
                <p></p>
+            </div>    
+        </div>
+        <h3 id="section3">TBMQ</h3>
+        <div class="item" data-tag="h4" data-item-id="what-is-dedicated" data-title="What is Dedicated plan?">
+            <div class="container">
+                <p>
+                Dedicated plan features the deployment of a dedicated MQTT broker cluster on the ThingsBoard cloud, expertly managed by the TBMQ team.
+                The cluster comprises several TBMQ nodes, ensuring high availability and uninterrupted service. 
+                A dedicated load balancer is included to seamlessly distribute your incoming traffic across multiple targets. 
+                Additionally, each plan includes sessions and message limits, as well as persistence limits to store essential data during offline periods. 
+                It provides a 99.99% uptime SLA. Focus on your solution while we manage the servers for you on our cloud.
+                </p>
+            </div>
+        </div>
+        <div class="item" data-tag="h4" data-item-id="what-is-byoc" data-title="What is BYOC plan?">
+            <div class="container">
+                <p>
+                BYOC (Bring Your Own Cloud) deployment option allows you to leverage your existing cloud infrastructure while integrating our powerful MQTT broker cluster. 
+                This flexibility ensures that you can maintain control over your cloud environment, optimize costs, and meet specific regulatory or compliance requirements. 
+                The TBMQ team is responsible for managing the cluster and providing technical support.
+                </p>
+            </div>
+        </div>
+        <div class="item" data-tag="h4" data-item-id="tmps-meaning" data-title="What does TMPS mean?">
+            <div class="container">
+                <p>
+                <b>TMPS</b> refers to the total number of messages processed per second by the TBMQ cluster. 
+                This metric includes both incoming and outgoing messages but counts only 'MQTT PUBLISH' packets.
+                For instance, if you have 100 devices each sending 10 messages per second, the incoming volume would be 1,000 messages per second. 
+                If there are 2 subscribers consuming these messages, resulting in 2,000 outgoing messages per second, the TMPS would be 3,000. 
+                TMPS provides a comprehensive measure of the messaging throughput handled by the TBMQ cluster, ensuring efficient and reliable communication for your IoT applications.
+                </p>
+            </div>
+        </div>
+        <div class="item" data-tag="h4" data-item-id="app-clients-limit" data-title="What is persistent Application client?">
+            <div class="container">
+                <p>
+                <a href="/docs/mqtt-broker/architecture/#application-client">Application client</a> is a specialized type of client designed for scenarios with high message subscription volumes. 
+                It uses a dedicated message queue and consumer to ensure high performance and enables message persistence when the subscriber is offline. 
+                This makes it well-suited for scenarios where reliable message delivery is necessary, and message loss is unacceptable.
+                </p>
+            </div>
+        </div>
+        <div class="item" data-tag="h4" data-item-id="device-msgs-limit" data-title="What is Device persistent messages?">
+            <div class="container">
+                <p>
+                <a href="/docs/mqtt-broker/architecture/#device-client">Device client</a> is a standard type of client that can be configured to be persistent or non-persistent based on the connection settings.
+                Persistent device messages are stored in a database while their corresponding device subscribers are offline. 
+                The limit for device persistent messages is configured per TBMQ cluster, rather than per individual client, ensuring efficient resource management.
+                </p>
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="byoc-custom-price" data-title="What does Custom price mean for BYOC option?">
+            <div class="container">
+                <p>
+                For BYOC (Bring Your Own Cloud) deployment, <a href="https://thingsboard.io/docs/contact-us/">contact us</a> to discuss your specific needs and preferences. 
+                We will work with you to determine the required infrastructure, load patterns, and cloud options that best suit your environment. 
+                Additionally, we will assess your cluster requirements and Service Level Agreement (SLA) needs to ensure optimal performance and reliability. 
+                </p>
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="byoc-custom-price" data-title="Is there any limits?">
+            <div class="container">
+                <p>
+                Yes, TBMQ subscriptions have sessions, messages, and storage limits. See subscription <a href="/docs/mqtt-broker/subscription/" target="blank">documentation</a> for more details.
+                </p>
             </div>    
         </div>
     </div>
