@@ -37,3 +37,7 @@ You can have more control on date intervals by selecting other available Date ag
 * QUARTER
 * YEAR
 * YEARMONTH - '2020-Feb' 
+
+## Next Steps
+
+{% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}
