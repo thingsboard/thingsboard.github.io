@@ -11,6 +11,8 @@ dashboard-lesson-2:
         src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/dashboard-final-lesson-2-2-pe.png
     2:
         src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/dashboard-final-lesson-2-3-pe.png
+    3:
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/dashboard-final-lesson-2-4-pe.png
 
 adding-building-state:
     0:
@@ -24,14 +26,16 @@ adding-building-state:
         title: 'In the dialog that opens, you&#39;ll see the default state. Click the "plus" icon to add a new state;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-4-pe.png
-        title: 'Use <b>${entityName}</b> as the name of the dashboard state. This way, during the action, you will transition to a state named after the entity involved in the action. Also change the state ID to <b>"building"</b>. Click "Add";'
-    6:
+        title: 'Use <b>${entityName}</b> as the name of the dashboard state. This way, during the action, you will transition to a state named after the entity involved in the action. Also change the state ID to "building". Click "Add".'
+
+adding-office-state:
+    0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-5-pe.png
-        title: 'Repeat the process to add an "office" state. Click the "plus" icon again;'
-    7:
+        title: 'Click the "plus" icon again;'
+    1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-6-pe.png
         title: 'Again, use ${entityName} as the name of the dashboard state. Change the state ID to "office". Click "Add";'
-    8:
+    2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-7-pe.png
         title: 'You will now see a list that includes the root state and the newly created ones. Once both states are added, click "Save" to apply your changes.'
 
@@ -44,18 +48,20 @@ map-widget-navigation-between-states-1:
         title: 'Navigate to the "Actions" tab and click the "plus" icon to add an action;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-3-pe.png
-        title: 'Select "Tooltip tag action" as action source, name it "building_details", set the action type to "Navigation to dashboard state" and specify "building" state as "Target dashboard state". Click "Add"'
+        title: 'Select "Tooltip tag action" as action source, name it "building_details", set the action type to "Navigate to new dashboard state" and specify "building" state as "Target dashboard state". Click "Add"'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-4-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Now, all that&#39;s left is to add the line "Details" to the popup menu for transitioning to the new state. Navigate to the "Appearance" tab;'
-    4:
+
+map-widget-navigation-between-states-2:
+    0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-5-pe.png
         title: 'In the "Appearance" tab, find the "Tooltip" section and add a lines taken from the documentation to the existing tooltip. Apply the widget settings;'
-    5:
+    1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-6-pe.png
         title: 'Save the dashboard.'
 
-map-widget-navigation-between-states-2:
+map-widget-navigation-between-states-3:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-7-pe.png
         title: 'Now, when you click on any building marker of the map widget, a tooltip with “Details” line will appear. Clicking on it will navigate you to the state of the selected building.'
@@ -111,7 +117,7 @@ navigation-between-states-2:
 background-image-building-state:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/background-image-building-state-1-pe.png
-        title: 'Click the "Manage layouts" button in the upper left corner of the dashboard toolbar;'
+        title: 'Enter the dashboard editing mode and click the "Manage layouts" button in the upper left corner of the dashboard toolbar;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/background-image-building-state-2-pe.png
         title: 'In the small window that opens, click the "gear" icon to open layout settings;'
@@ -132,7 +138,7 @@ background-image-building-state:
         title: 'Click "Save" in the bottom right corner of the dialog box;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/background-image-building-state-8-pe.png
-        title: 'Make sure that the background of the "building" state has been successfully updated.'
+        title: 'Make sure that the background of the "building" state has been successfully updated. Save dashboard.'
 
 adding-markdown-card-widget:
     0:
@@ -158,7 +164,7 @@ adding-markdown-card-widget:
         title: 'Add data keys like "address", "contactPerson", "email", and "phone";'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-markdown-card-widget-8-pe.png
-        title: 'Navigate to the “Appearance” tab, and fill in the "Markdown/HTML Template" and "Markdown/HTML CSS" sections using the values from the documentation;'
+        title: 'Navigate to the "Appearance" tab, and fill in the "Markdown/HTML Template" and "Markdown/HTML CSS" sections using the values from the documentation;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-markdown-card-widget-9-pe.png
         title: 'Navigate to the "Widget card" tab, disable "Enable fullscreen" and "Enable data export" options, and then click "Add" to confirm adding the widget;'
@@ -201,10 +207,10 @@ copy-paste-map-widget-3:
 adding-office-attributes-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-attributes-1-pe.png
-        title: 'Go to the "Assets" page and click on the "Building A" to open its details window. Navigate to the "Attributes" tab and click the "plus" icon to add new attribute;'
+        title: 'Go to the "Assets" page and click on the "Office A" to open its details. Navigate to the "Attributes" tab and click the "plus" icon to add a new attribute;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-attributes-2-pe.png
-        title: 'Enter "Floor" as the key name, select "String" as the value type, and input the floor number. Click "Add".'
+        title: 'Enter "floor" as the key name, select "String" as the value type, and input the floor number. Click "Add".'
 
 adding-office-attributes-2:
     0:
@@ -217,7 +223,7 @@ adding-office-attributes-2:
 offices-list-widget-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-offices-list-widget-1-pe.png
-        title: 'Return to our dashboard, and navigate to the "Office" state. Enter dashboard editing mode, and click the "+ Add widget";'
+        title: 'Return to our dashboard, and navigate to the "building" state. Enter dashboard editing mode, and click the "+ Add widget";'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-offices-list-widget-2-pe.png
         title: 'Select the "Entities table" widget from the "Tables" widgets bundle;'
@@ -226,7 +232,7 @@ offices-list-widget-1:
         title: 'Now we need to add an alias to define the entities from which the data will be extracted. In the "Alias" field, enter a name for it - "Building offices", and click "Create a new one";'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-offices-list-widget-4-pe.png
-        title: 'We will use the alias type "Asset search query", enable the option "Use dashboard state entity as root", set "Max relation level" to 1, relation type to "Contains," and specify "offices" asset type. Click "Add";'
+        title: 'We will use the alias type "Asset search query", turn on the option "Use dashboard state entity as root", set "Max relation level" to 1, relation type to "Contains," and specify "office" asset type. Click "Add";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-offices-list-widget-5-pe.png
         title: 'Add data keys "floor" and "phone";'
@@ -254,7 +260,7 @@ navigate-to-office-state-1:
         title: 'In the "Actions" window, click the "plus" icon in the upper right corner to bring up the "Add action" dialog box;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/navigate-to-office-state-4-pe.png
-        title: 'In the "Add action" dialog, select "On row click" as the action source and give the action name. Choose "Navigate to new dashboard state" as action type. A dropdown menu will appear for selecting the target dashboard state. Choose the "office" state. After, click "Add";'
+        title: 'In the "Add action" dialog, select "On row click" as the action source and enter the action name. Choose "Navigate to new dashboard state" as action type. A dropdown menu will appear for selecting the target dashboard state. Choose the "office" state. After, click "Add";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/navigate-to-office-state-5-pe.png
         title: 'Review the configured action in the "Actions" window to ensure the source and type are correct, then click "Save";'
@@ -268,10 +274,10 @@ navigate-to-office-state-1:
 navigate-to-office-state-2:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/navigate-to-office-state-8-pe.png
-        title: 'Click on the row with the office name in the "Offices list" widget;'
+        title: 'Click on the "Office A" row in the "Offices list" widget;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/navigate-to-office-state-9-pe.png
-        title: 'You have been moved to the "Office A" state.'
+        title: 'You have navigated to the "Office A" state.'
 
 background-image-office-state:
     0:
@@ -360,10 +366,10 @@ adding-image-map-widget-1:
         title: 'Select the "Image Map" widget in the "Maps" widgets bundle;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-4-pe.png
-        title: 'Now we need to add an alias to define the entities from which the data will be extracted. Here, we will use the alias type "Device search query." This alias allows displaying devices of specified profiles to a specified level that are linked to the root entity. In our case, the root entity is the selected office. In the "Alias" field, enter a name for it - "Office sensors", and click "Create a new one";'
+        title: 'Now we need to add an alias to define the entities from which the data will be extracted. Here, we will use the alias type "Device search query". This alias allows displaying devices of specified profiles to a specified level that are linked to the root entity. In our case, the root entity is the selected office. In the "Alias" field, enter a name for it - "Office sensors", and click "Create a new one";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-5-pe.png
-        title: 'Select the filter type "Device search query," enable the option "Use dashboard state entity as root," set "Max relation level" to 1, relation type to "Contains," and list the device types: smart sensor, energy sensor, and water sensor. Click "Add";'
+        title: 'Select the filter type "Device search query", enable the option "Use dashboard state entity as root", set "Max relation level" to 1, relation type to "Contains", and list the device types: "smart-sensor", "energy-sensor", and "water-sensor". Click "Add";'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-6-pe.png
         title: 'Add "xPos", "yPos", and "type" as data keys;'
@@ -371,7 +377,7 @@ adding-image-map-widget-1:
 adding-image-map-widget-2:
     0:
       image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-7-pe.png
-      title: 'Now, set the previously uploaded office plan image as the background of the widget. Navigate to the "Appearance" tab, and scroll to the "Map provider settings" section, and specify "Selected entity" as the "Image URL source entity alias" and the attribute "office-plan" as the "Image URL source entity attribute";'
+      title: 'Now, set the previously uploaded office plan image as the background of the widget. Navigate to the "Appearance" tab, and scroll to the "Map provider settings" section. Specify "Selected entity" as the image URL source entity alias, and the "office-plan" as the image URL source entity attribute;'
 
 adding-image-map-widget-label:
     0:
@@ -386,13 +392,13 @@ adding-image-map-widget-tooltip:
 adding-image-map-widget-marker-image:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-10-pe.png
-        title: 'Use marker image function. Copy marker image function from the documentation and paste it into the "Marker image function" field;'
+        title: 'Copy marker image function from the documentation and paste it into the "Marker image function" field, and remove default markers;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-11-pe.png
-        title: 'Now we need to add new marker images. Remove default markers and click "Browse from gallery";'
+        title: 'Now we need to add new marker images. Click "Browse from gallery";'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-12-pe.png
-        title: 'Upload new markers or select it from the your image gallery;'
+        title: 'Upload new markers for each device type;'
 
 adding-image-map-widget-title:
     0:
@@ -448,7 +454,7 @@ adding-office-list-widget-1:
         title: 'Change the card title to "Office sensor list", uncheck all buttons except "Search" of the "Show card buttons" section, and click "Add";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-devices-list-widget-5-pe.png
-        title: 'Position and resize the "Entities table" widget to your liking. After, save the dashboard.'
+        title: 'Position and resize the "Office sensor list" widget to your liking. After, save the dashboard.'
 
 adding-office-list-widget-2:
     0:
@@ -461,10 +467,13 @@ dashboard-final-lesson-2:
         title: 'Default state;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/dashboard-final-lesson-2-2-pe.png
-        title: 'Building&#39;s state'
+        title: 'Building state'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/dashboard-final-lesson-2-3-pe.png
-        title: 'Office&#39;s state'
+        title: 'Office A state'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/dashboard-final-lesson-2-4-pe.png
+        title: 'Office B state'
 
 ---
 

@@ -205,7 +205,7 @@ adding-maps-widget-4:
 
 adding-maps-widget-5:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-18-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-17-pe.png
         title: 'Now click on any building image to display a tooltip with information about it.'
 
 adding-entities-table-widget-1:

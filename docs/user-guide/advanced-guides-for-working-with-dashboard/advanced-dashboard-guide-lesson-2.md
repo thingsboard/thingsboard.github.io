@@ -13,17 +13,19 @@ adding-building-state:
         title: 'Click on the "Manage dashboard states" icon in the upper-left corner;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-3-pe.png
-        title: 'In the dialog that opens, you&#39;ll see the default state. Click the "plus" icon to add a new state;'
+        title: 'In the dialog box that opens, you will see one state - Building, where we are currently located. Click the "plus" icon to add a new state;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-4-pe.png
-        title: 'Use <b>${entityName}</b> as the name of the dashboard state. This way, during the action, you will transition to a state named after the entity involved in the action. Also change the state ID to <b>"building"</b>. Click "Add";'
-    6:
+        title: 'Use <b>${entityName}</b> as the name of the dashboard state. This way, during the action, you will transition to a state named after the entity involved in the action. Also change the state ID to <b>"building"</b>. Click "Add".'
+
+adding-office-state:
+    0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-5-pe.png
-        title: 'Repeat the process to add an "office" state. Click the "plus" icon again;'
-    7:
+        title: 'Click the "plus" icon again;'
+    1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-6-pe.png
         title: 'Again, use <b>${entityName}</b> as the name of the dashboard state. Change the state ID to <b>"office"</b>. Click "Add";'
-    8:
+    2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-building-and-office-states-7-pe.png
         title: 'You will now see a list that includes the root state and the newly created ones. Once both states are added, click "Save" to apply your changes.'
 
@@ -36,7 +38,7 @@ map-widget-navigation-between-states-1:
         title: 'Navigate to the "Actions" tab and click the "plus" icon;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-3-pe.png
-        title: 'Select "Tooltip tag action" as action source, name it "building_details", set the action type to "Navigation to dashboard state" and specify "building_state" as "Target dashboard state". Click "Add"'
+        title: 'Select "Tooltip tag action" as action source, name it "building_details", set the action type to "Navigation to dashboard state" and specify "building_state" as "Target dashboard state". Click "Add";'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/map-widget-navigation-between-states-4-pe.png
         title: 'Now in the "Actions" window, you can see the configured action. Now, all that’s left is to add the line "Building Details" to the popup menu for transitioning to the new state. Navigate to the "Appearance" tab;'

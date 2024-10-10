@@ -196,20 +196,34 @@ All preparatory settings are done, and now we can add **OpenStreet Map** widget:
 - Find the "OpenStreet Map" widget in the "Maps" widgets bundle and click on it;
 - Now we need to add an [alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"} to define the entities from which the data will be extracted. In the "Alias" field, enter a name for it - "Buildings", and click "Create a new one";
 - Enter the name of the alias and select a filter type - "Asset type". Then specify the "building" asset type and click the "Add" button in the lower right corner. This alias will display all assets of the type "building" in the widget;
-- Now, Add "latitude", "longitude", "address", "email" and "phone" as data keys. Then, navigate to the "Appearance" tab;
+- Now, Add "latitude", "longitude", "address", "email", "phone", and "buildingImage" as data keys;
 
 {% include images-gallery.html imageCollection="adding-maps-widget-1" %}
- 
-- Change OpenStreet map provider to "CartoDB.Positron";
-- Scroll down to the "Label" section. The label is located above the marker and can display specific information about the entity, such as its name, type, telemetry data, etc.
-Add the label to the appropriate field by taking it from the documentation. This will display the building's name and customize the appearance of the tooltip;
- 
+
+The "Appearance" tab:
+
+- Navigate to the "Appearance" tab. Change OpenStreet map provider to "CartoDB.Positron";
+
+{% include images-gallery.html imageCollection="adding-maps-widget-2" %}
+
+- Scroll to the "Label" section. The label is located above the marker and can display specific information about the entity, such as its name, type, telemetry data, etc.
+
+    Add the label to the appropriate field by taking it from the documentation. This will display the building's name and customize the appearance of the tooltip;
+
+The label used in the example:
+
 ```js
 <div style="position: relative; white-space: nowrap; text-align: center; font-size: 12px; top: -5px;"><span style="border-radius: 10px; background-color: #fff; padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px;">${entityName}</span></div>
 ```
 {: .copy-code}
 
-- A little further down, find the "Tooltip" section. Here we will configure the data that will be displayed in the tooltip when clicking on the building marker. Enable "Use tooltip function" option, and use the function provided in the documentation to display the selected building's image and its contact details;
+{% include images-gallery.html imageCollection="adding-maps-widget-3" %}
+
+- A little further down, find the "Tooltip" section. Here we will configure the data that will be displayed in the tooltip when clicking on the building marker.
+  - Turn on the option "Use tooltip function";
+  - Use the function provided in the documentation to display the selected building's image and its contact details.
+
+The tooltip function used in the example:
 
 ```js
 const address = data.address ? data.address : 'N/A';
@@ -235,41 +249,48 @@ return '<div style="display:flex;flex-direction:column;font-family:\'Roboto\';fo
 ```
 {:.copy-code.expandable-5}
 
-- In the "Marker image" section, disable the "Use marker image function" option, and set a custom marker image. Click "Browse from gallery" and upload new image marker. Use [provided custom marker image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-icon.svg){:target="_blank"} or your own. Set the marker image size to 60 pixels;
+{% include images-gallery.html imageCollection="adding-maps-widget-4" %}
 
-{% include images-gallery.html imageCollection="adding-maps-widget-2" %} 
+- In the "Marker image" section, turn off the option "Use marker image function", and add a custom marker image. Click "Browse from gallery" and upload new image marker. Use [provided custom marker image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-icon.svg){:target="_blank"} or your own. Set the marker image size to 60 pixels;
 
-- Navigate to the "Widget card" tab, disable "Display widget title" option;
+{% include images-gallery.html imageCollection="adding-maps-widget-5" %}
+
+The "Widget card" tab:
+
+- Navigate to the "Widget card" tab. Turn off the option "Display widget title";
 - Set padding value to 0;
 - Open "Advanced widget style" section. Copy the CSS from the documentation and paste it into the "Widget CSS" section. This CSS defines the styling for the tooltip;
 
 ```css
 .leaflet-popup-content {
-    margin: 8px;
+  width: auto !important;
+  margin: 8px;
 }
 a.leaflet-popup-close-button {
-    font-size: 20px;
-    color: black;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(2px);
-    border-radius: 2px;
+  font-size: 20px;
+  color: black;
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  top: 17px;
+  right: 17px;
 }
 ``` 
 {:.copy-code}
 
-- Disable "Enable data export" option;
+- Turn off the option "Enable data export";
 - Click "Add" to confirm adding the widget.
 
-{% include images-gallery.html imageCollection="adding-maps-widget-3" %}
+{% include images-gallery.html imageCollection="adding-maps-widget-6" %}
 
 Congratulations, we add your first widget, that displays our two buildings. Move the widget to the top right corner of the dashboard and resize it by grabbing any corner and dragging it. 
 After adjusting the placement and size of the widget, click the "Save" button in the top right corner to save the dashboard.
 
-{% include images-gallery.html imageCollection="adding-maps-widget-4" %}
+{% include images-gallery.html imageCollection="adding-maps-widget-7" %}
 
 Now click on any building image to display a tooltip with information about it.
 
-{% include images-gallery.html imageCollection="adding-maps-widget-5" %}
+{% include images-gallery.html imageCollection="adding-maps-widget-8" %}
 
 ## Adding Entities table widget
 

@@ -167,24 +167,30 @@ adding-maps-widget-1:
 adding-maps-widget-2:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-7-pe.png
-        title: 'Navigate to the "Appearance" tab and сhange OpenStreet map provider to "CartoDB.Positron";'
-    1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-8-pe.png
-        title: 'Scroll to the "Label" section. Add the label to the appropriate field by taking it from the documentation;'
-    2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-9-pe.png
-        title: 'A little further down, find the "Tooltip" section. Enable "Use tooltip function" option, and add tooltip function by taking it from the documentation;'
-    3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-10-pe.png
-        title: 'In the "Marker image" section, disable the "Use marker image function" option and set a custom marker image. To do this, click "Browse from gallery" and choose a new marker image (upload your own marker image or use an example image);'
-    4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-11-pe.png
-        title: 'Set the marker image size to 60 pixels. Then, navigate to the "Widget card" tab;'
+        title: 'Navigate to the "Appearance" tab and change OpenStreet map provider to "CartoDB.Positron";'
 
 adding-maps-widget-3:
     0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-8-pe.png
+        title: 'Scroll to the "Label" section. Add the label to the appropriate field by taking it from the documentation;'
+
+adding-maps-widget-4:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-9-pe.png
+        title: 'A little further down, find the "Tooltip" section. Turn on the option "Use tooltip function", and add tooltip function by taking it from the documentation;'
+
+adding-maps-widget-5:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-10-pe.png
+        title: 'In the "Marker image" section, disable the "Use marker image function" option and add a custom marker image. To do this, click "Browse from gallery" and choose a new marker image (upload your own marker image or use an example image);'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-11-pe.png
+        title: 'Set the marker image size to 60 pixels. Then, navigate to the "Widget card" tab;'
+
+adding-maps-widget-6:
+    0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-12-pe.png
-        title: 'In the "Card style" section, disable "Display widget title" option;'
+        title: 'In the "Card style" section, turn off the option "Display widget title";'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-13-pe.png
         title: 'Set the padding value to "0" and click "Advanced widget style" row to open it;'
@@ -193,19 +199,16 @@ adding-maps-widget-3:
         title: 'Copy the CSS from the documentation and paste it into the "Widget CSS" section;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-15-pe.png
-        title: 'Disable "Enable data export" option and click "Add" to confirm editing widget.'
+        title: 'Turn off the option "Enable data export" and click "Add" to confirm editing widget.'
 
-adding-maps-widget-4:
+adding-maps-widget-7:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-16-pe.png
-        title: 'Move the widget to the top right corner of the dashboard and resize it by grabbing any corner and dragging it. After adjusting the placement and size of the widget, click the "Save" button in the top right corner to save the dashboard.'
-    1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-17-pe.png
-        title: 'Congratulations, we add your first widget, that displays our two buildings.'
+        title: 'Congratulations, we add your first widget, that displays our two buildings. Move the widget to the top right corner of the dashboard and resize it by grabbing any corner and dragging it. After adjusting the placement and size of the widget, click the "Save" button in the top right corner to save the dashboard.'
 
-adding-maps-widget-5:
+adding-maps-widget-8:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-18-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-17-pe.png
         title: 'Now click on any building image to display a tooltip with information about it.'
 
 adding-entities-table-widget-1:
