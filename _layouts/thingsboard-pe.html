@@ -2,6 +2,7 @@
 <html id="thingsboard-pe" lang="en">
 
 {% include head-header.html productTag="pe" %}
+
 <!--  HERO  -->
 <section id="hero" class="light-text">
 
@@ -25,7 +26,7 @@
 </section>
 
 <section id="encyclopedia">
-    {% include customers-logo-section.liquid productTag="pe" %}
+    {% include customers-logo-section.liquid collectionMap = 'customers-logo' productTag="pe" %}
     <div id="peContent" class="noToc">
         {{ content }}
     </div>
