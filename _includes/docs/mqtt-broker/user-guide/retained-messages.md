@@ -63,8 +63,9 @@ mosquitto_pub -d -h "localhost" -p 1883 -D PUBLISH user-property hello world -q 
 To access and view the payload and user properties of the last message for a specific topic on the WEB UI Retained Messages page, please follow these steps:
 
 1. Open page Retained Messages.
-2. To view the payload of a retained message, click on the icon `{}`. 
-3. To see the User Properties of retained message click on the icon `[]`. Please note that if the button is disabled, the retained message does not have any user properties.
+2. Optionally, use the filter to find the retained message by topic, payload, or QoS.
+3. To view the payload of a retained message, click on the icon `{}`. 
+4. To view the User Properties of retained message click on the icon `[]`. Please note that if the button is disabled, the retained message does not have any user properties.
 
 {% include images-gallery.html imageCollection="details-retained-messages" %}
 

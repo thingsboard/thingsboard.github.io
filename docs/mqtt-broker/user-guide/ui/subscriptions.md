@@ -30,6 +30,14 @@ subscriptions-table:
   1:
     image: /images/mqtt-broker/user-guide/ui/subscriptions-table-2.png
     title: 'The "Filter" window allows easily filtering of the table by each column.'
+    
+clear-empty-subscription-nodes:
+  0:
+    image: /images/mqtt-broker/user-guide/ui/clear-empty-subscription-nodes-1.png
+    title: 'Click on the button "Clear empty subscription nodes" in the top right corner.'
+  1:
+    image: /images/mqtt-broker/user-guide/ui/clear-empty-subscription-nodes-2.png
+    title: 'Confirm action.'
 
 ---
 

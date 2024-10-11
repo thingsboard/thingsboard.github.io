@@ -2,6 +2,9 @@
 * TOC
 {:toc}
 
+{% assign sinceVersion = "2.0" %}
+{% include templates/mqtt-broker/since.md %}
+
 In MQTT, a subscription is a mechanism that allows clients to receive messages directed to specific topics. 
 When a client subscribes to a topic, it expresses its interest in receiving all messages published to that topic.
 
@@ -48,6 +51,8 @@ Clearing empty subscription nodes frees up memory resources and can improve the 
 as it can process subscription matching more quickly when there are fewer empty nodes to search through.
 
 To Clear empty subscription nodes click on the button 'Clear empty subscription nodes' in the top right corner (the trash button) and confirm action.
+
+{% include images-gallery.html imageCollection="clear-empty-subscription-nodes" %}
 
 Additionally, the broker is configured to clear empty subscription nodes by a scheduler. This is controlled by the following environment variables:
 `MQTT_SUB_TRIE_CLEAR_NODES_CRON` and `MQTT_SUB_TRIE_CLEAR_NODES_ZONE`.

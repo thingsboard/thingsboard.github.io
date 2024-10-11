@@ -2,6 +2,9 @@
 * TOC
 {:toc}
 
+{% assign sinceVersion = "2.0" %}
+{% include templates/mqtt-broker/since.md %}
+
 TBMQ offers users the convenience of configuring various settings directly from the user interface.
 
 ### Security settings
