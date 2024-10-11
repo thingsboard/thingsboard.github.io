@@ -7,7 +7,7 @@ TBMQ offers user-friendly tools that enable users to monitor broker activity and
 
 ### Charts
 
-At the top of the **Home** page, you will find a set of five charts that display essential information about the broker's activity over the last 10 minutes:
+At the top of the **Home** page, you will find a set of six charts that display essential information about the broker's activity over the last 10 minutes:
   - **Incoming messages.** This chart shows the number of messages published by MQTT clients to the broker.
   - **Outgoing messages.** Here, you can view the count of messages delivered by the broker to subscribing clients.
   - **Dropped messages.** This chart indicates messages that either lack subscribers or couldn't be delivered to subscribers due to network issues, client disconnections, or resource limitations.
