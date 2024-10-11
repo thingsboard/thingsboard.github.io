@@ -176,6 +176,7 @@ Here is a list of the metrics that TBMQ pushes to Prometheus:
 - <i>retainMsgTrieNodes</i>: stats about retain message nodes count in trie data structure.
 - <i>lastWillClients</i>: stats about last will clients count.
 - <i>connectedSessions</i>: stats about connected sessions count.
+- <i>connectedSslSessions</i>: stats about connected via TLS sessions count.
 - <i>allClientSessions</i>: stats about all client sessions count.
 - <i>clientSubscriptions</i>: stats about client subscriptions count in the in-memory map.
 - <i>retainedMessages</i>: stats about retain messages count in the in-memory map.
@@ -184,9 +185,10 @@ Here is a list of the metrics that TBMQ pushes to Prometheus:
 - <i>runningActors</i>: stats about running actors count.
 
 #### PostgreSQL-specific metrics:
-- <i>sqlQueue_UpdatePacketTypeQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating <b>persisted packet's type</b> to the database.
-- <i>sqlQueue_DeletePacketQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about deleting <b>persisted packets</b> from the database.
-- <i>sqlQueue_TimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about <b>historical stats persistence</b> to the database.
+- <i>sqlQueue_InsertUnauthorizedClientQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating **unauthorized clients** to the database.
+- <i>sqlQueue_DeleteUnauthorizedClientQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about removing **unauthorized clients** to the database.
+- <i>sqlQueue_LatestTimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about **latest historical stats persistence** to the database.
+- <i>sqlQueue_TimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about **historical stats persistence** to the database.
 
 Please note that in order to achieve maximum performance, **TBMQ uses several queues (threads)** per each of the specified queues above.
 
