@@ -22,15 +22,17 @@ In the "Session Details" users can disconnect or remove client session:
 
 The **Details** tab contains the next information: 
    * **Connected Status** (Connected/Disconnected).
-   * **Connected At** time. 
-   * **Disconnected At** time.
+   * **Connected At** - timestamp when the client connected.
+   * **Disconnected At** - for persistent disconnected clients, timestamp when the client disconnected.
    * **Keep Alive** (seconds) - indicates the duration for which the broker and client can remain without communication before the session is closed.
-   * **Node ID**.
+   * **Node ID** - broker node to which the client is/was connected to.
    * **Clean Start** (clean/persistent session) - if true, the broker will discard any available previous session info and messages, and start a new one.
-   * **Client ID**.
-   * **Client IP**.
-   * [**Client type**](docs/mqtt-broker/user-guide/mqtt-client-type) (Device/Application).
-   * [**Client Credentials**](docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) that authenticated current session.
+   * **Session expiry interval** - for persistent disconnected clients, for how long the client session information is stored after the connection is lost.
+   * **Session end** - for persistent disconnected clients, when the session info and messages will be removed.
+   * **Client ID** - the identifier of the client.
+   * **Client IP** - the IP address of the client.
+   * [**Client type**](/docs/mqtt-broker/user-guide/mqtt-client-type) (Device/Application).
+   * [**Client Credentials**](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) that authenticated current session.
    * **MQTT version** - determines which version of MQTT protocol to be used - MQTT 3.1 (3), MQTT 3.1.1 (4), or MQTT 5.0 (5).
 
 ### Subscriptions
@@ -50,13 +52,13 @@ Here are the available actions for managing subscriptions:
 
 The **Metrics** tab provide detailed insights into the flow of MQTT messages within the session that may be helpful in monitoring the performance and reliability of message delivery:
 * **Received PUBLISH Messages**. The total number of PUBLISH messages received by the client.
-* **Received QoS 0 Messages**. The count of received messages with Quality of Service (QoS) level 0.
-* **Received QoS 1 Messages**. The count of received messages with Quality of Service (QoS) level 1.
-* **Received QoS 2 Messages**. The count of received messages with Quality of Service (QoS) level 2.
+* **Received QoS 0 Messages**. The count of received messages with QoS level 0 ("AT_MOST_ONCE").
+* **Received QoS 1 Messages**. The count of received messages with QoS level 1 ("AT_LEAST_ONCE").
+* **Received QoS 2 Messages**. The count of received messages with QoS level 2 ("EXACTLY_ONCE").
 * **Sent PUBLISH Messages**. The total number of PUBLISH messages sent by the client.
-* **Sent QoS 0 Messages**. The count of sent messages with Quality of Service (QoS) level 0.
-* **Sent QoS 1 Messages**. The count of sent messages with Quality of Service (QoS) level 1.
-* **Sent QoS 2 Messages**. The count of sent messages with Quality of Service (QoS) level 2.
+* **Sent QoS 0 Messages**. The count of sent messages with QoS level 0 ("AT_MOST_ONCE").
+* **Sent QoS 1 Messages**. The count of sent messages with QoS level 1 ("AT_LEAST_ONCE").
+* **Sent QoS 2 Messages**. The count of sent messages with QoS level 2 ("EXACTLY_ONCE").
 
 {% include images-gallery.html imageCollection="sessions-metrics" %}
 
