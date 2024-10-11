@@ -13,7 +13,7 @@ Leadership:
     src: "/images/companyImages/thingsboard-team-photos/leadership/alex-doan.png"
     alt: ""
     title: "Alex Doan"
-    description: "VP Sales Marketing"
+    description: "VP Sales & Marketing"
   3:
     src: "/images/companyImages/thingsboard-team-photos/leadership/volodymyr-babak.png"
     alt: ""
@@ -29,7 +29,7 @@ Leadership:
     alt: ""
     title: "Artur Ishkhanishvili"
     description: "Business Development Executive"
-Product-team:
+Product team:
   0:
     src: "/images/companyImages/thingsboard-team-photos/product-team/serhii-matviienko.png"
     alt: ""
@@ -56,111 +56,121 @@ Product-team:
     title: "Yevhen Bondarenko"
     description: "Java Engineer"
   5:
+    src: "/images/companyImages/thingsboard-team-photos/product-team/dmytro-shvaika.png"
+    alt: ""
+    title: "Dmytro Shvaika"
+    description: "Java Engineer"
+  6:
     src: "/images/companyImages/thingsboard-team-photos/product-team/daria-shevchenko.png"
     alt: ""
     title: "Daria Shevchenko"
     description: "Java Engineer"
-  6:
+  7:
     src: "/images/companyImages/thingsboard-team-photos/product-team/dmytro-skarzhynets.png"
     alt: ""
     title: "Dmytro Skarzhynets"
     description: "Java Engineer"
-  7:
+  8:
     src: "/images/companyImages/thingsboard-team-photos/product-team/artem-dzhereleiko.png"
     alt: ""
     title: "Artem Dzhereleiko"
     description: "Frontend Engineer"
-  8:
+  9:
     src: "/images/companyImages/thingsboard-team-photos/product-team/ruslan-vasylkiv.png"
     alt: ""
     title: "Ruslan Vasylkiv"
     description: "Frontend Engineer"
-  9:
+  10:
     src: "/images/companyImages/thingsboard-team-photos/kasharix.png"
     alt: ""
     title: "Max Petrov"
     description: "Frontend Engineer"
-  10:
+  11:
     src: "/images/companyImages/thingsboard-team-photos/product-team/sergii-tarnavskiy.png"
     alt: ""
     title: "Sergii Tarnavskiy"
     description: "Frontend Engineer"
-  11:
+  12:
     src: "/images/companyImages/thingsboard-team-photos/product-team/kateryna-chantsova.png"
     alt: ""
     title: "Kateryna Chantsova"
     description: "Frontend Engineer"
-  12:
+  13:
+    src: "/images/companyImages/thingsboard-team-photos/product-team/yevhen-kalytka.png"
+    alt: ""
+    title: "Yevhen Kalytka"
+    description: "Frontend Engineer"
+  14:
     src: "/images/companyImages/thingsboard-team-photos/product-team/oleg-khalkov.png"
     alt: ""
     title: "Oleg Khalkov"
     description: "QA Engineer"
-  13:
+  15:
     src: "/images/companyImages/thingsboard-team-photos/product-team/maryna-shulzhenko.png"
     alt: ""
     title: "Maryna Shulzhenko"
     description: "QA Engineer"
-  14:
+  16:
     src: "/images/companyImages/thingsboard-team-photos/product-team/glib-petrukh.png"
     alt: ""
     title: "Glib Petrukh"
     description: "QA Engineer"
-  15:
+  17:
     src: "/images/companyImages/thingsboard-team-photos/product-team/yevhen-beshkarov.png"
     alt: ""
     title: "Yevhen Beshkarov"
     description: "Flutter Engineer"
-  16:
+  18:
     src: "/images/companyImages/thingsboard-team-photos/kasharix.png"
     alt: ""
     title: "Iryna Uzhvij"
     description: "Manual QA Engineer (Mobile)"
-  17:
+  19:
     src: "/images/companyImages/thingsboard-team-photos/product-team/dmytro-zolotarenko.png"
     alt: ""
     title: "Dmytro Zolotarenko"
     description: "Frontend Engineer"
-  18:
+  20:
     src: "/images/companyImages/thingsboard-team-photos/product-team/nickolay-kulikov.png"
     alt: ""
     title: "Nickolay Kulikov"
     description: "Java Engineer"
-  19:
+  21:
     src: "/images/companyImages/thingsboard-team-photos/product-team/iryna-matveieva.png"
     alt: ""
     title: "Iryna Matveieva"
     description: "Java Engineer"
-  20:
+  22:
     src: "/images/companyImages/thingsboard-team-photos/kasharix.png"
     alt: ""
     title: "Mariia Naida"
     description: "Educational Course Developer"
-  21:
+  23:
     src: "/images/companyImages/thingsboard-team-photos/product-team/serhii-titenko.png"
     alt: ""
     title: "Serhii Titenko"
     description: "Technical Writer"
-  22:
+  24:
     src: "/images/companyImages/thingsboard-team-photos/product-team/mariia-lisenaia.png"
     alt: ""
     title: "Mariia Lisenaia"
     description: "UI/UX Designer"
-  23:
+  25:
     src: "/images/companyImages/thingsboard-team-photos/product-team/maryna-zakharchenko.png"
     alt: ""
     title: "Maryna Zakharchenko"
     description: "UI/UX Designer"
-Solutions-team:
+Solutions team:
   0:
-    src: "/images/companyImages/thingsboard-team-photos/leadership/vitaliy-paromskiy.png"
-    alt: ""
-    title: "Vitaliy Paromskiy"
-    description: "Chief solutions officer (CSO)"
-  1:
     src: "/images/companyImages/thingsboard-team-photos/leadership/artur-ishkhanishvili.png"
     alt: ""
     title: "Artur Ishkhanishvili"
     description: "Business Development Executive"
+  1:
+    src: "/images/companyImages/thingsboard-team-photos/leadership/vitaliy-paromskiy.png"
+    alt: ""
+    title: "Vitaliy Paromskiy"
+    description: "Chief solutions officer (CSO)"
   2:
     src: "/images/companyImages/thingsboard-team-photos/solutions-team/nizar-ali.png"
     alt: ""
@@ -286,7 +296,7 @@ Solutions-team:
     alt: ""
     title: "Tetiana Yankiv"
     description: "Frontend Engineer"
-Support-team:
+Support team:
   0:
     src: "/images/companyImages/thingsboard-team-photos/support-team/artem-murenko.png"
     alt: ""
@@ -393,7 +403,7 @@ Trendz:
     src: "/images/companyImages/thingsboard-team-photos/trendz/yuliia-klochai.png"
     alt: ""
     title: "Yuliia Klochai"
-    description: "Java Engineer"
+    description: "Frontend Engineer"
   5:
     src: "/images/companyImages/thingsboard-team-photos/kasharix.png"
     alt: ""
@@ -436,12 +446,12 @@ TBMQ:
     alt: ""
     title: "Artem Babak"
     description: "Frontend Engineer"
-Sales-Marketing:
+Sales/Marketing:
   0:
     src: "/images/companyImages/thingsboard-team-photos/leadership/alex-doan.png"
     alt: ""
     title: "Alex Doan"
-    description: "VP Sales Marketing"
+    description: "VP Sales & Marketing"
   1:
     src: "/images/companyImages/thingsboard-team-photos/sales-marketing/alla-sidnenko.png"
     alt: ""
@@ -457,7 +467,7 @@ Sales-Marketing:
     alt: ""
     title: "Michael Shapovalov"
     description: "Product/Marketing"
-Operation-team:
+Operation team:
   0:
     src: "/images/companyImages/thingsboard-team-photos/operation-team/oksana-kovalska.png"
     alt: ""
@@ -467,7 +477,7 @@ Operation-team:
     src: "/images/companyImages/thingsboard-team-photos/operation-team/mariia-kalitka.png"
     alt: ""
     title: "Mariia Kalitka"
-    description: "HRD"
+    description: "Recruiter"
   2:
     src: "/images/companyImages/thingsboard-team-photos/kasharix.png"
     alt: ""

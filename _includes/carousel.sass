@@ -189,6 +189,10 @@
 .owl-carousel.owl-theme.usecase-carousel.square
   .owl-dots
     button.owl-dot
+      &:hover, &.active
+        filter: unset
+        span
+          background: #305680
       span
         border-radius: 0
         width: 12px
@@ -265,10 +269,13 @@
 .owl-carousel.owl-theme.usecase-carousel.smallArrow
   .owl-nav
     button.owl-prev, button.owl-next
-      width: 33px
-      height: 32px
+      filter: unset
+      width: 61px
+      height: 60px
       transform-origin: center center
-      background-image: url(/images/timeline-arrow.svg)
+      background-image: url(/images/timeline-arrow-nav.svg)
+      &:hover
+        filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
 
 .owl-carousel.owl-theme.usecase-carousel.timeline
   position: relative
@@ -413,6 +420,10 @@
         font-size: var(--titleSizeLower960)
       .timeline-text
         font-size: var(--descriptionSizeLower960)
+  .owl-carousel.owl-theme.usecase-carousel.timeline
+    &:before
+      content: ""
+      width: 80%
 
 @media screen and (max-width: 599px)
   .owl-carousel.owl-theme.usecase-carousel
@@ -428,3 +439,7 @@
         font-size: var(--titleSizeLower600)
       .timeline-text
         font-size: var(--descriptionSizeLower600)
+  .owl-carousel.owl-theme.usecase-carousel.timeline
+    &:before
+      content: ""
+      width: 70%

@@ -21,14 +21,14 @@
         <ul class="tabs-nav-content" style="">
             {% for bubbleTabsItem in bubbleTabsCollection %}
                 <li class="tabs-nav-item" style="--tabLabelWidth: {{ bubbleTabsItem[1].tabLabelWidth }}">
-                    <a href="#tab-{{ bubbleTabsItem[0] }}">
+                    <a href="#tab-{{ bubbleTabsItem[0] | replace: ' ', '-' }}">
                         {{ bubbleTabsItem[0] }}
                     </a>
                 </li>
             {% endfor %}
         </ul>
         {% for bubbleTabsItem in bubbleTabsCollection %}
-            <div class="tab-content" id="tab-{{ bubbleTabsItem[0] }}">
+            <div class="tab-content" id="tab-{{ bubbleTabsItem[0] | replace: ' ', '-' }}">
                 {% for data in bubbleTabsItem[1] %}
                     {% if data[1].src %}
                         <div class="tab-item">
@@ -78,7 +78,7 @@
         tabNavItem.forEach((navItem, index) => {
             setTimeout(() => {
                 navItem.classList.add("tabs-nav-item-animation")
-            }, index * 200)
+            }, index * 125)
         });
 
         tabContent.forEach((contentItem) => {

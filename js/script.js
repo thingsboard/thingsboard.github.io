@@ -907,8 +907,8 @@ var tb = (function () {
 						})
 					}
 
-					function carouselMargin($carousel) {
-						return Number(getComputedStyle($carousel[0]).getPropertyValue('--carousel-margin'));
+					function setupMarginPadding($carousel, properyValue) {
+						return Number(getComputedStyle($carousel[0]).getPropertyValue(properyValue));
 					}
 
 					function autoPlayStatus($carousel) {
@@ -938,8 +938,8 @@ var tb = (function () {
 							const navStatus = !$(this)[0].classList.contains("disableNav");
 
 							$('#' + carouselId).owlCarousel({
-								margin: carouselMargin($carousel),
-								stagePadding: 0,
+								margin: setupMarginPadding($carousel, '--carousel-margin'),
+								stagePadding: setupMarginPadding($carousel, '--stagePadding'),
 								autoHeight: false,
 								autoWidth: autoWidthStatus($carousel),
 								loop: loopStatus($carousel),
@@ -948,7 +948,7 @@ var tb = (function () {
 								autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
 								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
 								slideTransition: 'linear',
-								nav: false,
+								nav: $carousel[0].classList.contains("timeline"),
 								responsiveBaseElement: 'body',
 								responsiveClass: true,
 								mouseDrag: !$carousel[0].classList.contains("timeline"),

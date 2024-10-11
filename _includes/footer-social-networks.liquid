@@ -1,0 +1,7 @@
+{% assign collectionMap = site.data.footer-social-networks %}
+
+{% for socialNetwork in collectionMap %}
+    <a href={{ socialNetwork[1].href }}>
+        <img src={{ socialNetwork[1].src }} alt={{ socialNetwork[1].alt }} width="20" height="20" loading="lazy">
+    </a>
+{% endfor %}

@@ -40,12 +40,12 @@ notitle: "true"
     </div>
     <div class="company-timeline">
         <div class="company-wrapper">
-            {% include carousel.liquid items = 5 itemsHigher960 = 3 itemsHigher600 = 2 itemsHigher0 = 1 collectionMap = "company-timeline-carousel" timeline = true autoplay = false loop = false carouselMargin = 50 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
+            {% include carousel.liquid items = 5 itemsHigher960 = 3 itemsHigher600 = 2 itemsHigher0 = 1 collectionMap = "company-timeline-carousel" timeline = true autoplay = false loop = false carouselMargin = 50 stagePadding = 0 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
         </div>
     </div>
     <div class="company-values">
         <div class="company-values-wrapper">
-            {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" darkenedImage = true navMode = "disableNav" carouselMargin = 0 titleSize = "96px" titleSizeLower1280 = "64px" titleSizeLower960 = "56px" titleSizeLower600 = "40px" descriptionSize = "36px" descriptionSizeLower960 = "32px" descriptionSizeLower600 = "28px" titleLineHeight = "125%" descriptionLineHeight = "140%" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
+            {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" darkenedImage = true navMode = "disableNav" carouselMargin = 0 stagePadding = 0 titleSize = "96px" titleSizeLower1280 = "64px" titleSizeLower960 = "56px" titleSizeLower600 = "40px" descriptionSize = "36px" descriptionSizeLower960 = "32px" descriptionSizeLower600 = "28px" titleLineHeight = "125%" descriptionLineHeight = "140%" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
         </div>
     </div>
     <div class="company-team">

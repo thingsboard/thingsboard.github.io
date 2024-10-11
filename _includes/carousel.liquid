@@ -9,6 +9,7 @@
 {% assign autoWidth = include.autoWidth %}
 {% assign loop = include.loop %}
 {% assign carouselMargin = include.carouselMargin | default: 100 %}
+{% assign stagePadding = include.stagePadding | default: 50 %}
 {% assign transitionAnimation = include.transitionAnimation %}
 {% assign thingsboardStyledBackground = include.thingsboardStyledBackground | default: false %}
 {% assign navMode = include.navMode | default: "thinArrow" %}
@@ -89,7 +90,7 @@
     {% assign titleHoverScaleClass = "titleHoverEnabled" %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme hidden-carousel timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --title-hover-scale: {{ titleHoverScale }}" data-itemsHigher0 = "{{ itemsHigher0 }}" data-itemsHigher600 = "{{ itemsHigher600 }}" data-itemsHigher960 = "{{ itemsHigher960 }}">
+<div class="usecase-carousel owl-carousel owl-theme hidden-carousel timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --stagePadding: {{ stagePadding }}; --title-hover-scale: {{ titleHoverScale }}" data-itemsHigher0 = "{{ itemsHigher0 }}" data-itemsHigher600 = "{{ itemsHigher600 }}" data-itemsHigher960 = "{{ itemsHigher960 }}">
     {% for key in carouselCollection %}
         <div class="timeline-item" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
             <div class="timeline-label">
@@ -143,7 +144,7 @@
 {% endif %}
 
 {% if carouselCollection %}
-<div class="usecase-carousel owl-carousel owl-theme hidden-carousel {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--carousel-margin: {{ carouselMargin }}; --imageBorderRadius: {{ imageBorderRadius }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}'>
+<div class="usecase-carousel owl-carousel owl-theme hidden-carousel {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--carousel-margin: {{ carouselMargin }};  --stagePadding: {{ stagePadding }}; --imageBorderRadius: {{ imageBorderRadius }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}'>
     {% for carouselItem in carouselCollection %}
         {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
             {% assign contentDirectionClass = "carousel-item-flex-row" %}
