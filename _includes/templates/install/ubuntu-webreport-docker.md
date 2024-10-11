@@ -50,4 +50,4 @@ Read logs from the container
 ```bash
 docker logs -f tb-web-report
 ```
-{: .copycode} 
+{: .copy-code} 
