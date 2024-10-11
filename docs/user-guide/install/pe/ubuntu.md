@@ -113,54 +113,10 @@ Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 
 ### Step 9. Install ThingsBoard WebReport component
 
-Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
-
-```bash
-wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.deb
-```
-{: .copy-code}
-
-Install third-party libraries:
-
-```bash
-sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
-     libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
-     libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
-     libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils unzip wget libgbm-dev
-```
-{: .copy-code}
-
-Install Roboto fonts:
-
-```bash
-sudo apt install fonts-roboto
-```
-{: .copy-code}
-
-Install Noto fonts (Japanese, Chinese, etc.):
-
-```bash
-mkdir ~/noto
-cd ~/noto
-wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
-unzip NotoSansCJKjp-hinted.zip
-sudo mkdir -p /usr/share/fonts/noto
-sudo cp *.otf /usr/share/fonts/noto
-sudo chmod 655 -R /usr/share/fonts/noto/
-sudo fc-cache -fv
-cd ..
-rm -rf ~/noto
-```
-
-
-Install and start Web Report service:
-
-```bash
-sudo dpkg -i tb-web-report-{{ site.release.pe_ver }}.deb
-sudo service tb-web-report start
-```
-{: .copy-code}
+{% capture contenttogglespecreport %}
+WebReport docker <small>(Recommended and simple installtion)</small>%,%dockerized%,%templates/install/ubuntu-webreport-docker.md%br%
+WebReport service <small>(Install service and dependencies manually)</small>%,%service%,%templates/install/ubuntu-webreport-service.md%br%{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardWebreport" toggle-spec=contenttogglespecreport %} 
 
 ### Post-installation steps
 
