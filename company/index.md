@@ -7,7 +7,7 @@ notitle: "true"
 
 <div class="company-content">
     <div class="company-hero-carousel">
-        {% include carousel.liquid items = 4 collectionMap = "company-photos-carousel" autoplay = true smoothAutoPlay = true autoWidth = true nonActiveItemsVisibility = false carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "disableDots" %}
+        {% include carousel.liquid items = 4 collectionMap = "company-photos-carousel" autoplay = true smoothAutoPlay = true autoWidth = true nonActiveItemsVisibility = false carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "disableDots" imageBorderRadius = 0 %}
     </div>
     <div class="company-aboutus">
         <h2 class="company-content-title">About Us</h2>
@@ -44,12 +44,20 @@ notitle: "true"
         </div>
     </div>
     <div class="company-values">
-        {% include carousel.liquid collectionMap = "company-values-carousel" nonActiveItemsVisibility = false contentDirection = "imageBackground" carouselMargin = 0 transitionAnimation = false darkenedImage = true navMode = "disableNav" titleSize = "96px" descriptionSize = "36px" titleLineHeight = "114px" descriptionLineHeight = "54px" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
+        <div class="company-values-wrapper">
+            {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" darkenedImage = true navMode = "disableNav" carouselMargin = 0 titleSize = "96px" titleSizeLower1280 = "64px" titleSizeLower960 = "56px" titleSizeLower600 = "40px" descriptionSize = "36px" descriptionSizeLower960 = "32px" descriptionSizeLower600 = "28px" titleLineHeight = "125%" descriptionLineHeight = "140%" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
+        </div>
     </div>
     <div class="company-team">
         <div class="company-team-wrapper">
             <h2 class="company-content-title">Meet our team</h2>
             {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" columnsPerRowArray = "4,6" %}
+            <a class="join-link" href="/careers/">
+                <span>Join our team</span>
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 6V8H15.09L5.5 17.59L6.91 19L16.5 9.41V18H18.5V6H6.5Z" fill="white"/>
+                </svg>
+            </a>
         </div>
     </div>
 </div>
@@ -58,6 +66,11 @@ notitle: "true"
 
     const animatedBlocks = [
         {
+            classToSearch: ".company-hero-carousel",
+            classToAdd: "company-hero-carousel-animation",
+            threshold: 0.2
+        },
+        {
             classToSearch: ".company-aboutus-container",
             classToAdd: "company-aboutus-content-animation",
             threshold: 0.4
@@ -65,11 +78,16 @@ notitle: "true"
         {
             classToSearch: ".company-history-container",
             classToAdd: "company-history-content-animation",
-            threshold: 0.4
+            threshold: 0.2
         },
         {
             classToSearch: ".company-timeline",
             classToAdd: "company-timeline-content-animation",
+            threshold: 0.5
+        },
+        {
+            classToSearch: ".company-values",
+            classToAdd: "company-values-content-animation",
             threshold: 0.3
         }
     ];

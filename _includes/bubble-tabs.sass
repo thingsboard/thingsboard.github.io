@@ -1,82 +1,134 @@
-#company
+.bubble-tabs-content
 
-  .bubble-tabs
-    padding: 40px 0
+  #tabs
 
-  .ui-widget-header
-    background: transparent
-    border: none
+    .ui-widget-header
+      background: transparent
+      border: none
 
-  .ui-tabs
-    ul, ol, li
+    .ui-tabs .ui-tabs-nav
+      ul
+        padding: 0
+        list-style: none
+        margin-bottom: 64px
+
+    .tab-content
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      gap: 48px
       padding: 0
-      list-style: none
-      margin: 0
+      border: none
+      opacity: 0
 
-  .ui-widget-content
-    border: none
+    .ui-tabs-anchor
+      font-size: var(--tabTitleSize)
+      font-weight: var(--tabTitleWeight)
+      float: unset
+      padding: 0
+      display: block
+      height: 100%
 
-  .ui-tabs .ui-tabs-panel
-    display: flex
-    justify-content: center
-    flex-wrap: wrap
-    gap: 48px
-    padding: 0
-    border: none
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+      border: none
+      background: none
+      color: rgba(33, 37, 41, 0.6)
+      text-align: center
 
-  .ui-tabs-nav
-    margin-bottom: 64px
+    .ui-state-default a, .ui-state-default a:link
+      color: #00000033
 
-  .ui-tabs-anchor
-    font-size: var(--tabTitleSize)
-    font-weight: var(--tabTitleWeight)
-    float: unset
-    padding: 0
-    display: block
-    height: 100%
+    .ui-state-hover a
+      color: #305680 !important
 
-  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
-    border: none
-    background: none
-    color: rgba(33, 37, 41, 0.6)
-    text-align: center
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+      &:after
+        content: ""
+        background: #305680
+        height: 3px
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+      a, a:link
+        color: #305680
 
-  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
-    color: #00000033
-    &:after
-      content: ""
-      background: #2a7dec
-      height: 3px
-      position: absolute
-      bottom: 0
-      left: 12px
-      right: 12px
-    a, a:link
-      color: #212529
+    .ui-helper-clearfix:before
+      display: none
 
-  .ui-helper-clearfix:before
-    display: none
+    .tabs-nav-content
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      margin-bottom: 64px
 
-  .tabs-nav-grid
-    display: grid
-    grid-auto-flow: row
-    grid-template-columns: repeat(var(--columns), 1fr)
-    grid-auto-rows: var(--rowsHeight)
-    row-gap: 20px
-
-  .tab-item
-    display: flex
-    flex-direction: column
-    align-items: center
-    gap: 24px
-    img
-      background: linear-gradient(180deg, #A7B1B8 0%, #D8D9DA 100%)
-      box-shadow: 2px 2px 4px 0px rgba(48, 86, 128, 0.20)
-      border-radius: 100%
-      width: fit-content
-    .tab-item-text
+    .tab-item
       display: flex
       flex-direction: column
-      text-align: center
-      span
-        display: inline-block
+      align-items: center
+      gap: 24px
+      img
+        background: linear-gradient(180deg, #A7B1B8 0%, #D8D9DA 100%)
+        box-shadow: 2px 2px 4px 0px rgba(48, 86, 128, 0.20)
+        border-radius: 100%
+        width: fit-content
+      .tab-item-text
+        display: flex
+        flex-direction: column
+        text-align: center
+        span
+          display: inline-block
+
+  .ui-widget-content
+    border: none !important
+
+  .ui-tabs,.ui-tabs-nav
+    padding: 0 !important
+
+  .ui-tabs
+    .ui-tabs-nav
+      li
+        scale: 0.9
+        opacity: 0
+        margin: 0 !important
+        padding: 0 !important
+        a
+          padding: 13.5px 50px !important
+
+  .tab-content-visible-animation
+      animation: revealFromTopToBottom 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+  .tabs-nav-item-animation
+    animation: scaleTransform 0.2s ease-in-out forwards, opacityTransform 0.2s ease-out forwards
+
+  .bubble-tabs-hidden
+    display: none
+
+  @keyframes revealFromTopToBottom
+    0%
+      clip-path: inset(0 0 100% 0)
+
+    100%
+      clip-path: inset(0 0 0 0)
+
+  @keyframes scaleTransform
+    0%
+      scale: 0.9
+
+    100%
+      scale: 1
+
+  @keyframes opacityTransform
+    0%
+      opacity: 0
+
+    100%
+      opacity: 1
+
+  @media screen and (max-width: 912px)
+    #tabs
+      .tabs-nav-content
+        flex-direction: column
+        align-items: center
+        flex-wrap: unset
+

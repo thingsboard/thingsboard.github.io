@@ -1,10 +1,22 @@
 #company
+
+  .owl-carousel.owl-theme.usecase-carousel
+    margin: 40px 0 0
+
   #companyBg
     padding: 0
+    overflow: hidden
     background: #FFFFFF
 
     #companyContent
       .company-content
+
+        .company-hero-carousel
+          .owl-carousel
+            opacity: 0
+        .company-hero-carousel-animation
+          .owl-carousel.owl-loaded
+            animation: revealFromRightToLeft 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
 
         .company-aboutus-container
           background: url('/images/companyImages/aboutus_bg.png') no-repeat center center, #f7f9fc
@@ -31,20 +43,11 @@
           animation: slideInFromBottom 0.8s ease-out forwards, opacityTransform 1s ease-out forwards
           transform: translateY(100%)
 
-      .company-timeline
-        opacity: 0
-
-      .company-timeline-content-animation
-        animation: revealFromLeftToRight 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
-
-
       .company-aboutus-image:first-child
-        width: 382px
-        height: 354px
+        max-width: 382px
 
       .company-aboutus-image:last-child
-        width: 400px
-        height: 600px
+        max-width: 400px
 
       .company-aboutus-container .company-flex-content-default
         align-items: center
@@ -52,7 +55,21 @@
       .company-history-container .company-flex-content-default
         align-items: flex-start
 
+      .company-timeline
+        opacity: 0
 
+      .company-timeline-content-animation
+        animation: revealFromLeftToRight 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+      .company-values
+        opacity: 0
+
+      .company-values-content-animation
+        animation: revealFromLeftToRight 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+      .company-aboutus-image
+        width: 100%
+        height: auto
 
 
   @keyframes slideInFromLeft
@@ -83,6 +100,13 @@
     100%
       clip-path: inset(0 0 0 0)
 
+  @keyframes revealFromRightToLeft
+    0%
+      clip-path: inset(0 0 0 100%)
+
+    100%
+      clip-path: inset(0 0 0 0)
+
   @keyframes opacityTransform
     0%
       opacity: 0
@@ -90,16 +114,45 @@
     100%
       opacity: 1
 
-
-
   .company-wrapper
     max-width: 1390px
     padding: 0 20px
     margin: 0 auto
 
   .company-team-wrapper
-    max-width: 1800px
-    padding: 0 20px
+    max-width: 1775px
+    padding: 0 36px
+    margin: 0 auto
+    .join-link
+      margin: 120px auto
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 4px
+      border-radius: 6px
+      padding: 10px 0px
+      width: 200px
+      border: 2px solid #305680
+      background: #305680
+      transition: ease-in-out 0.3s
+      span
+        font-size: 18px
+        font-weight: 400
+        color: #FFF
+      &:hover
+        text-decoration: none
+        background: #FFF
+        span
+          color: #305680
+        svg
+          path
+            fill: #305680
+
+
+
+
+  .company-values-wrapper
+    max-width: 1920px
     margin: 0 auto
 
   .company-flex-content-default
@@ -111,7 +164,7 @@
   .company-text-content-default
     display: flex
     flex-direction: column
-    gap: 60px
+    gap: 30px
 
   .company-content-title
     padding: 120px 0
@@ -130,10 +183,6 @@
 
   footer
     position: static
-
-
-@import "../_includes/bubble-tabs"
-@import "../_includes/carousel"
 
 @media (max-width: 959px)
   #company

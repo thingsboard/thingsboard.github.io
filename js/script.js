@@ -864,7 +864,7 @@ var tb = (function () {
 			];
 			loadNextScript(0, scriptsList, function() {
 
-				window.onload = function() {
+				$(document).ready(function() {
 
 					if ($('.owl-carousel').hasClass('timeline')) {
 
@@ -923,8 +923,8 @@ var tb = (function () {
 						return $carousel[0].classList.contains("loopEnabled");
 					}
 
-					$(document).ready(function() {
-						$('.owl-carousel').each(function (index) {
+					function initializeCarousel() {
+						$('.owl-carousel').each(function(index) {
 							const $carousel = $(this);
 							const carouselId = "owl-carousel-" + index;
 							$(this).attr("id", carouselId);
@@ -945,12 +945,13 @@ var tb = (function () {
 								loop: loopStatus($carousel),
 								autoplay: autoPlayStatus($carousel),
 								autoplayTimeout: $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
-								autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 2500 : false,
+								autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
 								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
 								slideTransition: 'linear',
 								nav: false,
 								responsiveBaseElement: 'body',
 								responsiveClass: true,
+								mouseDrag: !$carousel[0].classList.contains("timeline"),
 								startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
 								responsive: {
 									0: {
@@ -964,7 +965,7 @@ var tb = (function () {
 									},
 									1025: {
 										nav: navStatus,
-										items: itemsHigher960,
+										items: itemsHigher960
 									},
 									1280: {
 										nav: navStatus,
@@ -976,14 +977,25 @@ var tb = (function () {
 										$(event.target).trigger('play.owl.autoplay');
 										setTimeout(function() {
 											$(event.target).trigger('stop.owl.autoplay');
-											$(event.target).trigger('play.owl.autoplay', [2500]);
+											$(event.target).trigger('play.owl.autoplay', [15000]);
 										}, 10);
 									}
 								}
 							});
 						});
-					})
-				};
+					}
+
+					$(window).on('load', function() {
+						initializeCarousel();
+					});
+
+					$(window).resize(function() {
+						$('.owl-carousel').each(function() {
+							$(this).trigger('destroy.owl.carousel');
+						});
+						initializeCarousel();
+					});
+				});
 			});
 		}
 	}
