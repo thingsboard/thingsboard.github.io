@@ -11,13 +11,14 @@ TBMQ supports the following types of client credentials to authenticate client c
   - **Advantages:** Enhanced security compared to the basic client credentials type. With SSL client credentials, both the client and TBMQ can authenticate each other. 
   The SSL client credentials type provides more flexibility in terms of access control, as it allows for more granular access control policies based on the certificate subject name and other attributes.
   - **Disadvantages:** Complexity and increased cost. Setting up and managing SSL client credentials can be more complex and requires more expertise. SSL encryption and decryption require more computing resources.
-- **SCRAM** - advanced security measure using Salted Challenge Response Authentication Mechanism (SCRAM) that provides secure, password-based authentication.
+- **SCRAM** - advanced security measure using Salted Challenge Response Authentication Mechanism (SCRAM) that provides secure, password-based authentication (MQTT 5.0 Enhanced authentication feature).
   - **Advantages:** Higher security level compared to basic authentication. It uses a challenge-response process to exchange hashed credentials, ensuring the password is never sent in plain text.
   - **Disadvantages:** Requires additional computational resources to generate and validate the salted password hashes.
 
 Before using any of the client credential types mentioned above, please ensure that they are enabled in TBMQ [configuration file](/docs/mqtt-broker/install/config/).
 - **Basic Auth.** To enable MQTT Basic Credentials, set `SECURITY_MQTT_BASIC_ENABLED` to `true`.
-- **X.509 Certificate Chain Auth.** To enable MQTT SSL Credentials set `SECURITY_MQTT_SSL_ENABLED` to `true`.
+- **X.509 Certificate Chain Auth.** To enable MQTT X.509 Certificate Chain Credentials set `SECURITY_MQTT_SSL_ENABLED` to `true`.
+- **Enhanced authentication** using **SCRAM**. It is not configurable and enabled by default.
 
 Note that on the Web UI _Home page_, you can check the current state of those parameters on the Configuration card.
 
@@ -66,14 +67,20 @@ Broker administrators can modify the password for MQTT Basic client credentials.
 
 {% include images-gallery.html imageCollection="change-password-basic-credentials" %}
 
-#### SSL Credentials
+#### X.509 Certificate Chain Credentials
 
 **X.509 Certificate chain** is a secure two-way authentication method over TLS with a chain of public-key certificates.
 
 ##### Authentication
 
-The **certificate's common name (CN)** should exactly match the client's or, if present, one of the parent's certificate CN. 
+There are two authentication options based on the "Use certificate CN regex" parameter in the credentials. 
+Depending on this parameter, TBMQ can either authenticate clients by exact match using the certificate's Common Name (CN) or apply specific regex patterns to match and authorize clients, 
+providing flexibility for client verification.
+
+* The **Certificate common name (CN)** should **exactly** match the client's or, if present, one of the parent's certificate CN. 
 Authentication will fail if none of the certificates in the chain has the same CN.
+* The **Certificate common name (CN) regex** should match with the CN of the client's certificate or, if present, one of the parent's certificate CN.
+Authentication will fail if none of the certificate CN in the chain match the regex.
 
 ![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-1.png)
 
