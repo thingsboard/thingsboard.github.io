@@ -114,8 +114,8 @@ Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 ### Step 9. Install ThingsBoard WebReport component
 
 {% capture contenttogglespecreport %}
-WebReport service <small>Run WebReport service on server</small>%,%service%,%templates/install/ubuntu-webreport-service.md%br%
-WebReport docker <small>Run WebReport service in container</small>%,%dockerized%,%templates/install/webreport-docker.md{% endcapture %}
+WebReport docker <small>(Recommended and simple installtion)</small>%,%dockerized%,%templates/install/ubuntu-webreport-docker.md%br%
+WebReport service <small>(Install service and dependencies manually)</small>%,%service%,%templates/install/ubuntu-webreport-service.md%br%{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardWebreport" toggle-spec=contenttogglespecreport %} 
 
 ### Post-installation steps

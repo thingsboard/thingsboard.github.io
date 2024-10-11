@@ -1,28 +1,29 @@
 ## Prerequisites
 
-{% include templates/install/docker-install.md %}
+Install Docker [for Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
 {% include templates/install/docker-install-note.md %}
 
 Create docker compose file
 ```bash
-cat <<EOT >> tb-web-report.compose.yml
+cat <<EOT >> tb-web-report.yml
 version: '3.0'
 services:
   tb-web-report:
+    container_name: tb-web-report
     restart: always
     image: "thingsboard/tb-pe-web-report:3.8.0PE"
     ports:
       - "8383:8383"
     env_file:
-      - ./webreport.env
+      - ./tb-web-report.env
 EOT
 ```
 {: .copy-code}
 
 Create .env file for tb-web-report container
 ```bash
-cat <<EOT >> webreport.env
+cat <<EOT >> tb-web-report.env
 HTTP_BIND_ADDRESS=0.0.0.0
 HTTP_BIND_PORT=8383
 LOGGER_LEVEL=info
@@ -38,6 +39,15 @@ EOT
 
 Start WebReport service in docker
 ```bash
-docker compose -f tb-web-report.compose.yml up -d
+docker compose -f tb-web-report.yml up -d
 ```
 {: .copy-code}
+
+## Troubleshoot container
+
+Read logs from the container
+
+```bash
+docker logs -f tb-web-report
+```
+{: .copycode} 
