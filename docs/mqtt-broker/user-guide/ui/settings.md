@@ -23,7 +23,7 @@ settings-connectivity-settings:
     title: 'The WS host is changed to custom IP address.'
   3:
     image: /images/mqtt-broker/user-guide/ui/settings-connectivity-settings-4.png
-    title: 'WebSocket Credentials widnow uses new host.'
+    title: 'WebSocket Credentials window uses new host.'
 
 ---
 

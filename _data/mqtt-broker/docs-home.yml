@@ -59,8 +59,6 @@ toc:
     - title: Settings
       path: /docs/mqtt-broker/user-guide/ui/settings/
       new: true
-    - title: Mail Server
-      path: /docs/mqtt-broker/user-guide/ui/mail-server/
 - title: Troubleshooting
   path: /docs/mqtt-broker/troubleshooting/
 - title: Release Notes

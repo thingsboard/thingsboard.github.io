@@ -20,7 +20,7 @@ The password policy sets the rules that passwords for the TBMQ users must meet. 
 - **Minimum password length** - the parameter determines the minimum number of characters in the password. Minimum password length should be in a range from 6 to 50 and is the only required field.
 - **Maximum password length** - the parameter determines the maximum number of characters in the password. Maximum password length should be greater than minimum length.
 - **Minimum number of uppercase letters** - set the minimum number of uppercase letters in the password.
-- **Minimum number of uppercase letters** - set the minimum number of lowercase letters in the password.
+- **Minimum number of lowercase letters** - set the minimum number of lowercase letters in the password.
 - **Minimum number of digits** - specify minimum number of digits in the password.
 - **Minimum number of special characters** - specify the minimum number of special characters in the password.
 - **Password expiration period in days** - force expiration of the password. After the password expires, TBMQ will require the user to change it. This ensures users regularly update their passwords.
@@ -73,7 +73,7 @@ Here are two examples of pages where the custom host and port settings are appli
 
 In this section, you can configure additional settings related to the [WebSocket Client](/docs/mqtt-broker/user-guide/ui/websocket-client/) - a browser-accessible tool that provides management of MQTT clients, subscription to topics, receiving messages, and publishing messages.
 
-**Log MQTT client activity** feature can be helpful in debugging connection issues and monitoring message flows by providing real-time client activity logs. 
+* **Log MQTT client activity** feature can be helpful in debugging connection issues and monitoring message flows by providing real-time client activity logs. 
 If set to true, you will see logs for the following [MQTT.js](https://github.com/mqttjs/MQTT.js) events in the browser developer console:
   1. **Connect**. Triggered when a client successfully connects to the broker.
   2. **Disconnect**. Triggered when a client disconnects from the broker.
@@ -86,6 +86,8 @@ If set to true, you will see logs for the following [MQTT.js](https://github.com
   9. **Packet send**. Triggered when a packet is sent to the broker.
   10. **Offline**. Triggered when the client goes offline.
   11. **Outgoing empty**. Triggered when all outgoing messages have been sent.
+
+* **Maximum messages in WebSocket Client table** setting allows you to control the limit of messages per WebSocket connection to be persisted in the browser's local storage.
 
 ### Mail server settings
 
