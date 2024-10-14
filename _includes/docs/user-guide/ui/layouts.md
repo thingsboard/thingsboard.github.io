@@ -42,7 +42,7 @@ This layout type supports screen breakpoints for responsive design.
 
 The **SCADA** layout is designed for creating SCADA HMIs (Human-Machine Interfaces). 
 SCADA HMIs typically consist of scalable widgets called SCADA symbols. 
-However, you can also combine [SCADA symbols](/docs/{{docsPrefix}}user-guide/scada.md){:target="_blank"} with over 500 existing ThingsBoard [widgets](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} on the same layout.
+However, you can also combine [SCADA symbols](/docs/{{docsPrefix}}user-guide/scada){:target="_blank"} with over 500 existing ThingsBoard [widgets](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} on the same layout.
 This layout type also supports screen breakpoints for responsive design.
 
 {% include images-gallery.html imageCollection="layout-scada-1" %}

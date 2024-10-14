@@ -193,7 +193,7 @@ Other parameters are specific to the chosen SCADA symbol and are controlled by t
 In the case of our valve, you can define the color of the valve symbol in both the opened and closed states. 
 You can also configure the animation of the wheel by setting the angle of rotation. 
 There are several types of appearance parameters, which are intuitive for the end user. 
-For more details, see the symbol development [guide](/docs/{{docsPrefix}}user-guide/scada/symbols-dev-guide/){:target="_blank"}.
+For more details, see the symbol development [guide](/docs/{{docsPrefix}}user-guide/scada/scada-symbols-dev-guide/){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="scada-appearance-1" %}
 
