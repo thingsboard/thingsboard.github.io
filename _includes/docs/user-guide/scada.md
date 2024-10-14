@@ -88,7 +88,7 @@ Specifically, we define how the SVG object changes based on the properties confi
 We also define clickable areas of the SVG object, allowing users to configure actions that can be triggered once the symbol is added to the dashboard. 
 
 We currently provide 60+ SCADA symbols available out of the box, with plans to increase this number to 500+ in upcoming releases. 
-If you need a symbol that is not available, you are encouraged to create your own using the following [guide](/docs/{{docsPrefix}}user-guide/scada/symbols-dev-guide/){:target="_blank"}.
+If you need a symbol that is not available, you are encouraged to create your own using the following [guide](/docs/{{docsPrefix}}user-guide/scada/scada-symbols-dev-guide/){:target="_blank"}.
 
 ## SCADA symbol widget
 
