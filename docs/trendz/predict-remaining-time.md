@@ -67,9 +67,8 @@ return [{ts: endTs, value: remainingHours}];
 
 In this formula we iterate over predicted vibration values and find first value that is greater or equal to threshold. Then we calculate time delta between this point and current time and return it in hours.
 
-## Next Steps
-
 We can use calculated metric on any visualization in Trendz. Alse we can save it back to ThingsBoard as a new telemetry of the `Engine` device or create an alarm based on this metric.
-You can find a step-by-step guide how to do this in this article - [Predict remaining time to next maintenance of the equipment](/docs/trendz/guide/predict-next-maintenance-date-of-equipment/).
+
+## Next Steps
 
 {% assign currentGuide = "Prediction" %}{% include templates/trndz-guides-banner.md %}

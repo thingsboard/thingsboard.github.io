@@ -6,8 +6,8 @@ description: Comprehensive software solutions for edge computing, providing data
 
 <section id="intro">
 	<main>
-		<h1 class="intro_title">Introducing ThingsBoard Edge <a href="/docs/edge/getting-started-guides/what-is-edge/">CE</a> and <a href="/docs/pe/edge/getting-started-guides/what-is-edge/">PE</a>: Our software products specifically designed for edge computing</h1>
-        <p class="labeling">With ThingsBoard Edge, data analysis and management occur directly at the edge, right where the data is generated. Additionally, it offers seamless synchronization with the ThingsBoard server, aligning perfectly with your unique business needs. You have the flexibility to connect it to public ThingsBoard servers, such as thingsboard.cloud or demo.thingsboard.io, as well as to your own Community Edition (CE) or Professional Edition (PE) on-premise installations.</p>
+		<h1 class="intro_title">Introducing ThingsBoard Edge: Our software solutions specifically designed for edge computing, delivering exceptional performance and efficiency where you need it most </h1>
+        <p class="labeling">With ThingsBoard Edge, data analysis and management happen right at the source, where your data is generated. This powerful solution ensures seamless synchronization with the ThingsBoard server, perfectly tailored to your business needs. Enjoy the flexibility to connect to public ThingsBoard servers like <a href="/docs/user-guide/install/installation-options/?ceInstallType=cloud" target="_blank">thingsboard.cloud</a> or <a href="/docs/user-guide/install/installation-options/?ceInstallType=liveDemo" target="_blank">demo.thingsboard.io</a>, or integrate it with your own <a href="/docs/user-guide/install/installation-options/?ceInstallType=onPremise" target="_blank">on-premise installations</a>, whether using <a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">Community Edition (CE)</a> or <a href="/docs/pe/edge/getting-started-guides/what-is-edge/" target="_blank">Professional Edition (PE)</a>. Experience enhanced efficiency and real-time insights like never before!</p>
 	</main>
 </section>
 
@@ -117,6 +117,60 @@ description: Comprehensive software solutions for edge computing, providing data
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/opensource-icon.svg" alt="100% Open-source">
+                    <div>
+                        <h4 class="title">100% Open-source</h4>
+                        <p>ThingsBoard is licensed under Apache License 2.0, so you can use it in your commercial products for free. You can even host it as a SaaS or PaaS solution.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/visualization-icon.svg" alt="Real-Time Insights and Local Alarms">
+                    <div>
+                        <h4 class="title">Real-Time Insights and Local Alarms</h4>
+                        <p>Gain immediate access to critical data and insights, allowing for informed decision-making and timely responses to emerging challenges. Respond instantly to critical situations on-site, even without connectivity to the server.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/offline-edge.svg" alt="Offline Capabilities">
+                    <div>
+                        <h4 class="title">Offline Capabilities </h4>
+                        <p>ThingsBoard Edge can continue to operate even when disconnected from the central server. It stores data locally and syncs with the server once connectivity is restored, ensuring no data is lost during outages.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/low-latency.svg" alt="Low Latency">
+                    <div>
+                        <h4 class="title">Low Latency</h4>
+                        <p>With local data processing capabilities, ThingsBoard Edge minimizes latency, enabling real-time data analysis and decision-making. This is particularly beneficial for applications requiring immediate response, such as industrial automation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/engine-icon.svg" alt="Rule engine">
+                    <div>
+                        <h4 class="title">Rule engine</h4>
+                        <p>Process incoming device data with flexible rule chains based on entity attributes or message content. Forward data to external systems or trigger alarms using custom logic. Configure complex notification chains on alarms. Enrich server-side functionality or manipulate your devices with highly customizable rules. Define your application logic with drag-n-drop rule chain designer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/edge/friendly-icon.svg" alt="User-Friendly">
+                    <div>
+                        <h4 class="title">User-Friendly</h4>
+                        <p>The intuitive interface and straightforward setup process make ThingsBoard Edge accessible for users with varying levels of technical expertise, enabling faster deployment and easier management. The platform supports various protocols (like MQTT, CoAP, and HTTP), making it easy to integrate with diverse devices and systems.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </section>
@@ -203,6 +257,37 @@ description: Comprehensive software solutions for edge computing, providing data
                 </tr>
             </tbody>
     </table>
+</section>
+
+<section id="minimal-requirements">
+    <main>
+        <div id="background">
+            <div class="main1"></div><div class="small3"></div><div class="small4"></div>
+        </div>
+        <h3>Minimal requirements</h3>
+        <div class="cards row">
+            <div class="col-lg-6">
+                <div class="block">
+                    <div>
+                        <h4 class="title">ThingsBoard Edge</h4>
+                        <p><b>Platform:</b> Compact server (e.g, Intel NUC, mini-PC, embedded PC)<br><b>CPU:</b> 2-core x86-64 processor<br><b>RAM:</b> 2 GB<br><b>Storage:</b> 20 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS) or Windows<br><b>Java VM:</b> JDK 8+ (JDK 17 preferred)</p>
+                        <h4 class="title">Performance Expectations</h4>
+                        <p> ThingsBoard Edge instance with the above configuration, can handle approximately 50 to 100 devices, assuming each device sends data at a low frequency (e.g., once per minute) </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                   <div> 
+                       <h4 class="title">ThingsBoard IoT Gateway</h4>
+                        <p><b>Platform:</b> Low-spec server (e.g, Raspberry Pi, Intel NUC)<br><b>CPU:</b> Single-core x86-x64 processor<br><b>RAM:</b> 1 GB<br><b>Storage:</b> 10 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS)<br><b>Java VM:</b> JDK 8+ (JDK 17 preferred)</p>
+                        <h4 class="title">Performance Expectations</h4>
+                        <p> ThingsBoard IoT Gateway instance with the above configuration can handle approximately 20-50 devices sending data at a low frequency (e.g., once per minute)</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </section>
 
 <section id="bottom">
