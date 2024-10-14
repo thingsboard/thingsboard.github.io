@@ -14,7 +14,7 @@ notitle: "true"
         <div class="company-aboutus-container">
             <div class="company-wrapper">
                 <div class="company-flex-content-default">
-                    <img class="company-aboutus-image" src="/images/companyImages/thingsboard_logo.png" alt="Thingsboard logo">
+                    <img class="company-aboutus-image" src="/images/companyImages/thingsboard_logo.svg" alt="Thingsboard logo">
                     <div class="company-text-content-default">
                         <p class="company-text">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella. Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management, data processing, security, privacy, analysis, etc.</p>
                         <p class="company-text">ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period. Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.</p>
@@ -33,7 +33,7 @@ notitle: "true"
                         <p class="company-text">Today, ThingsBoard Inc. is a testament to ingenuity and hard work. Our platform is used globally by businesses and developers, driving innovation across various industries. From smart cities to industrial automation, our solutions lead the IoT revolution.</p>
                         <p class="company-text">But our journey doesn’t end here. We continue to push the boundaries of IoT with a dedicated team and a commitment to excellence. ThingsBoard Inc. is more than a company; it’s a community of innovators, dreamers, and doers building a smarter, more connected world.</p>
                     </div>
-                    <img class="company-aboutus-image" src="/images/companyImages/history_image.png" alt="">
+                    <img class="company-aboutus-image" src="/images/companyImages/history_image.webp" alt="">
                 </div>
             </div>
         </div>

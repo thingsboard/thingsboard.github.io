@@ -19,8 +19,20 @@
             animation: revealFromRightToLeft 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
 
         .company-aboutus-container
-          background: url('/images/companyImages/aboutus_bg.png') no-repeat center center, #f7f9fc
+          position: relative
+          background: #f7f9fc
           padding: 140px 0px
+          overflow: hidden
+          &:before
+            content: ""
+            opacity: 0.25
+            position: absolute
+            transform: rotate(270deg) translate(-50%, -50%)
+            width: 1977px
+            height: 2055px
+            bottom: 50%
+            left: 50%
+            background: url(/images/tbstyled-bg.svg) center
           .company-aboutus-content
             .company-text-content-default
               max-width: 908px
