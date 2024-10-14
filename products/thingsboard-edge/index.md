@@ -119,7 +119,7 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/opensource-icon.svg" alt="100% Open-source">
+                    <img src="https://img.thingsboard.io/edge/opensource-icon.svg" alt="100% Open-source">
                     <div>
                         <h4 class="title">100% Open-source</h4>
                         <p>ThingsBoard is licensed under Apache License 2.0, so you can use it in your commercial products for free. You can even host it as a SaaS or PaaS solution.</p>
@@ -128,7 +128,7 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/visualization-icon.svg" alt="Real-Time Insights and Local Alarms">
+                    <img src="https://img.thingsboard.io/edge/visualization-icon.svg" alt="Real-Time Insights and Local Alarms">
                     <div>
                         <h4 class="title">Real-Time Insights and Local Alarms</h4>
                         <p>Gain immediate access to critical data and insights, allowing for informed decision-making and timely responses to emerging challenges. Respond instantly to critical situations on-site, even without connectivity to the server.</p>
@@ -137,7 +137,7 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/offline-edge.svg" alt="Offline Capabilities">
+                    <img src="https://img.thingsboard.io/edge/offline-edge.svg" alt="Offline Capabilities">
                     <div>
                         <h4 class="title">Offline Capabilities </h4>
                         <p>ThingsBoard Edge can continue to operate even when disconnected from the central server. It stores data locally and syncs with the server once connectivity is restored, ensuring no data is lost during outages.</p>
@@ -146,7 +146,7 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/low-latency.svg" alt="Low Latency">
+                    <img src="https://img.thingsboard.io/edge/low-latency.svg" alt="Low Latency">
                     <div>
                         <h4 class="title">Low Latency</h4>
                         <p>With local data processing capabilities, ThingsBoard Edge minimizes latency, enabling real-time data analysis and decision-making. This is particularly beneficial for applications requiring immediate response, such as industrial automation.</p>
@@ -155,7 +155,7 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/engine-icon.svg" alt="Rule engine">
+                    <img src="https://img.thingsboard.io/edge/engine-icon.svg" alt="Rule engine">
                     <div>
                         <h4 class="title">Rule engine</h4>
                         <p>Process incoming device data with flexible rule chains based on entity attributes or message content. Forward data to external systems or trigger alarms using custom logic. Configure complex notification chains on alarms. Enrich server-side functionality or manipulate your devices with highly customizable rules. Define your application logic with drag-n-drop rule chain designer.</p>
@@ -164,7 +164,7 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/friendly-icon.svg" alt="User-Friendly">
+                    <img src="https://img.thingsboard.io/edge/friendly-icon.svg" alt="User-Friendly">
                     <div>
                         <h4 class="title">User-Friendly</h4>
                         <p>The intuitive interface and straightforward setup process make ThingsBoard Edge accessible for users with varying levels of technical expertise, enabling faster deployment and easier management. The platform supports various protocols (like MQTT, CoAP, and HTTP), making it easy to integrate with diverse devices and systems.</p>

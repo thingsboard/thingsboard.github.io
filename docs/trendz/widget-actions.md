@@ -33,7 +33,7 @@ If you want to use 'onRowClick' action - you need to define what item is selecte
 If you use the Anomaly Table on your dashboard and want to create an action that not only sets the selected entity but also updates the time window, follow these straightforward steps:
 1. **Configure Row Click Entity.** Head to the chart settings in Trendz and set the "Row click entity."
 
-   ![image](/images/trendz/row-click-anomaly.png)
+   ![image](https://img.thingsboard.io/trendz/row-click-anomaly.png)
 
 2. **Create Row Click Action.** Go to the Actions tab in your Anomaly view settings on the dashboard and create a new action. Choose "On Row click" as the Action source and set the type to "Custom action."  
    Then you have to add some custom code to define the chosen entity as the selected entity on your dashboard. Begin by obtaining the state ID and parameters for the new state entity. In our example, we used "selectedDevice,"
@@ -71,12 +71,12 @@ widgetContext.dashboard.onUpdateTimewindow(additionalParams.startTs, additionalP
 To implement the selection of multiple entities via row click in a Trendz view, follow these steps. For this example, we have a table displaying a list of buildings, each with a count of energy meters and aggregated energy consumption.
 Our goal is to send a list of energy meters to an alias on the dashboard upon clicking a specific table row.
 
-![image](/images/trendz/row-click-select-entities.png)
+![image](https://img.thingsboard.io/trendz/row-click-select-entities.png)
 
 **Step 1. Set Up the Trendz View**
 1. Set the entity type of the entities that you want to send as the alias. In our case it is EM energy meter.
 
-   ![image](/images/trendz/set-up-trendz-view.png)
+   ![image](https://img.thingsboard.io/trendz/set-up-trendz-view.png)
 2. Send this view to the ThingsBoard Dashboard.
 
 **Step 2. Create New Alias on the Dashboard**
@@ -86,14 +86,14 @@ Our goal is to send a list of energy meters to an alias on the dashboard upon cl
 4. In the Entity Type field choose the type of entities selectable via row click.
 5. Select default entities to be displayed initially.
 
-![image](/images/trendz/create-new-alias.png)
+![image](https://img.thingsboard.io/trendz/create-new-alias.png)
 
 **Step 3. Configure the Action in Trendz View**
 1. Select “On Row Click” as action source.
 2. Provide a name for the action.
 3. Select "Custom action" as Action Type.
 
-   ![image](/images/trendz/configure-action.png)
+   ![image](https://img.thingsboard.io/trendz/configure-action.png)
 4. Write custom code to set ids to previously created alias:
 
 * Find the alias:

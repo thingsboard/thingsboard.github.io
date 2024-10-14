@@ -12,7 +12,7 @@ docker run -it -p 5021:5021 thingsboard/tb-gw-modbus-server:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/run-demo-modbus-server.png)
+![](https://img.thingsboard.io/gateway/dashboard/run-demo-modbus-server.png)
 
 ### Setup connector
 
@@ -25,16 +25,16 @@ To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
         title: Choose "**MODBUS**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", turn off the "**Fill configuration with default values**" option and click on "**Add**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
         title: Connector created.
 '
 %}
@@ -60,10 +60,10 @@ This section offers slave adding and detailed connection configuration options t
 
 {% assign addNewSlave = '
     ===
-        image: /images/gateway/dashboard/add-new-slave-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/add-new-slave-1-ce.png,
         title: Go to the "**Master Connections**" tab, and click "**Add Slave**" button;
     ===
-        image: /images/gateway/dashboard/add-new-slave-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/add-new-slave-2-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -85,13 +85,13 @@ Let&#39;s configure attribute section using the following steps:
 
 {% assign attributeConfiguration1 = '
     ===
-        image: /images/gateway/dashboard/slave-configuration-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-1-ce.png,
         title: Click on "**pencil**" icon in the "**Attributes**" section;
     ===
-        image: /images/gateway/dashboard/slave-configuration-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-2-ce.png,
         title: In the opened window, click on "**Add attribute**" button;
     ===
-        image: /images/gateway/dashboard/slave-configuration-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-3-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -113,10 +113,10 @@ Click the "**Apply**" button after you&#39;ve completed the "**Attributes**" sec
 
 {% assign attributeConfiguration2 = '
     ===
-        image: /images/gateway/dashboard/slave-configuration-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-4-ce.png,
         title: Collapse the recently added "frequency" attribute, and click "**Add attribute**" button to add another attribute;
     ===
-        image: /images/gateway/dashboard/slave-configuration-5-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-5-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -138,13 +138,13 @@ Let&#39;s configure time series section using the following steps:
 
 {% assign timeSeriesConfiguration1 = '
     ===
-        image: /images/gateway/dashboard/slave-configuration-6-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-6-ce.png,
         title: Click on the "**pencil**" icon in "**Time series**" section;
     ===
-        image: /images/gateway/dashboard/slave-configuration-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-7-ce.png,
         title: In the opened window, click on "**Add time series**" button;
     ===
-        image: /images/gateway/dashboard/slave-configuration-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-8-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -164,10 +164,10 @@ Let&#39;s add another time series. Collapse the recently added "**humidity**" ti
 
 {% assign timeSeriesConfiguration2 = '
     ===
-        image: /images/gateway/dashboard/slave-configuration-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-9-ce.png,
         title: Collapse the recently added "**humidity**" time series, and click "**Add time series**" button to add another time series;
     ===
-        image: /images/gateway/dashboard/slave-configuration-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-10-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -178,7 +178,7 @@ The final view of your configured connector will look like on the following imag
 
 {% assign finalSlaveConfiguration = '
     ===
-        image: /images/gateway/dashboard/final-configured-slave-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/final-configured-slave-1-ce.png,
         title: The final view of your configured connector. Click the "**Add**" button after you&#39;ve completed the configuration.
 '
 %}
@@ -189,7 +189,7 @@ Finally, save the Modbus configuration by clicking the "**Save**" button.
 
 {% assign finalSlaveConfiguration2 = '
     ===
-        image: /images/gateway/dashboard/final-configured-slave-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/final-configured-slave-2-ce.png,
         title: Finally, the save Modbus configuration by clicking the "**Save**" button.
 '
 %}
@@ -201,7 +201,7 @@ You can view the synchronization status of the connector configuration in the "*
 
 {% assign finalSlaveConfiguration3 = '
     ===
-        image: /images/gateway/dashboard/final-configured-slave-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/final-configured-slave-3-ce.png,
         title: You can view the synchronization status of the connector configuration in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with the remote settings.
 '
 %}
@@ -211,10 +211,10 @@ You can view the synchronization status of the connector configuration in the "*
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-modbus-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-12-ce.png,
         title: Click on "**logs**" icon to open connector logs page;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-13-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-logs-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}

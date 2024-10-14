@@ -12,7 +12,7 @@ docker run -it -p 4840:4840 thingsboard/tb-gw-opcua-server:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/run-demo-opcua-server.png)
+![](https://img.thingsboard.io/gateway/dashboard/run-demo-opcua-server.png)
 
 ### Setup connector
 
@@ -27,16 +27,16 @@ To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
         title: Choose "**OPCUA**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", turn off the "**Fill configuration with default values**" option and click on "**Add**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
         title: Connector created.
 '
 %}
@@ -59,7 +59,7 @@ This section offers detailed connection configuration options and contains sever
 
 {% assign serverConfiguration = '
     ===
-        image: /images/gateway/dashboard/server-configuration-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/server-configuration-1-ce.png,
         title: Go to the "**Server**" tab, and fill in the fields with the value taken from the documentation.
 '
 %}
@@ -78,10 +78,10 @@ Let&#39;s add new node using the following steps:
 
 {% assign dataMappingConfiguration1 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-1-ce.png,
         title: Go to the "**Data mapping**" tab, and click "**Add mapping**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-2-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -103,13 +103,13 @@ Let&#39;s configure attribute section using the following steps:
 
 {% assign dataMappingConfiguration2 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-3-ce.png,
         title: Click on the "**pencil**" icon in the "**Attributes**" section;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-4-ce.png,
         title: In the opened window, click on the "**Add attribute**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-5-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-5-ce.png,
         title: Fill in the "**Key**" field with the "**frequency**", select the "**Type**" field to the "**Path**", and fill in the "**Value**" with the "**${Frequency}**".
 '
 %}
@@ -129,10 +129,10 @@ Click the "**Apply**" button after you&#39;ve completed the configuration.
 
 {% assign dataMappingConfiguration3 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-6-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-6-ce.png,
         title: Collapse the recently added "frequency" attribute, and click "**Add attribute**" button to add another attribute;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-7-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -152,13 +152,13 @@ Let&#39;s configure time series section using the following steps:
 
 {% assign dataMappingConfiguration4 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-8-ce.png,
         title: Click on the "**pencil**" icon in "**Time series**" section;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-9-ce.png,
         title: In the opened window, click on "**Add time series**" button;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-10-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -176,10 +176,10 @@ Let&#39;s add another attribute. Collapse the recently added "**temperature**" t
 
 {% assign dataMappingConfiguration5 = '
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-11-ce.png,
         title: Collapse the recently added "**temperature**" time series, and click "**Add time series**" button to add another time series;
     ===
-        image: /images/gateway/dashboard/data-mapping-configuration-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-12-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -190,7 +190,7 @@ The final view of your configured connector will look like on the following imag
 
 {% assign finalDataMappingConfiguration1 = '
     ===
-        image: /images/gateway/dashboard/final-configured-data-mapping-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/final-configured-data-mapping-1-ce.png,
         title: The final view of your configured connector. Click the "**Add**" button after you&#39;ve completed the configuration.
 '
 %}
@@ -201,7 +201,7 @@ Finally, save the OPC-UA configuration by clicking the "**Save**" button.
 
 {% assign finalDataMappingConfiguration2 = '
     ===
-        image: /images/gateway/dashboard/final-configured-data-mapping-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/final-configured-data-mapping-2-ce.png,
         title: Finally, the save OPC-UA configuration by clicking the "**Save**" button.
 '
 %}
@@ -213,7 +213,7 @@ You can view the synchronization status of the connector configuration in the "*
 
 {% assign finalDataMappingConfiguration3 = '
     ===
-        image: /images/gateway/dashboard/final-configured-data-mapping-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/final-configured-data-mapping-3-ce.png,
         title: You can view the synchronization status of the connector configuration in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with the remote settings.
 '
 %}
@@ -223,10 +223,10 @@ You can view the synchronization status of the connector configuration in the "*
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-12-ce.png,
         title: Click on logs icon to open connector logs page;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-logs-13-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-logs-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}
