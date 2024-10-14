@@ -7,6 +7,7 @@ This feature is pivotal in the design of robust and reliable communication syste
 enhancing its interaction between the broker and connected clients.
 
 Here's a list of challenges that the Quality of Service feature in MQTT helps to tackle:
+
 * **Network reliability**: MQTT relies on the TCP, a data transportation protocol. TCP does not guarantee that the packets will be delivered in case of poor network conditions. QoS 1 and QoS 2 levels handle this problem by ensuring that the messages are delivered according to the requirement.
 * **System crashes**: If either the publisher or the subscriber crashes after the message is sent but before it could be processed, QoS ensures that the messages aren't lost.
 * **Preventing duplicates**: QoS 2 is designed to ensure that the message is delivered to the receiver only once.
@@ -14,12 +15,17 @@ Here's a list of challenges that the Quality of Service feature in MQTT helps to
 * **Persisting messages**: MQTT includes the ability to persist QoS 1 and QoS 2 messages for a client that is currently disconnected. The next time the client connects, these missed messages are sent out.
 
 ### QoS levels
+
 MQTT defines three levels of Quality of Service:
+
 1. **QoS 0 - At Most Once** (default). Used for non-critical data where speed is more important than reliability.
 2. **QoS 1 - Al Least Once**. Used for important data where occasional duplicates are manageable.
 3. **QoS 2 - Exactly Once**. Used for critical data where neither loss nor duplication can be tolerated.
 
 #### QoS 0 - At Most Once
+
+![image](/images/mqtt-broker/user-guide/tbmq-qos0.png)
+
 In this default method the message can be delivered either one time or not delivered. The duplicate messages are impossible.
 
 **Requires one message**: 
@@ -33,6 +39,9 @@ QoS 0 requires **minimal network usage** and subsequently has the fastest perfor
 At the same time QoS 0 has the **lowest reliability** as there is no guarantee of message delivery. So it is not suitable for critical data where every message must be received.
 
 #### QoS 1 - Al Least Once
+
+![image](/images/mqtt-broker/user-guide/tbmq-qos1.png)
+
 The messages are delivered at least once, ensuring that the receiver gets the message, but it does not guarantee that it will be delivered only once.
 
 **Requires two messages**:
@@ -46,6 +55,9 @@ The duplicate messages are possible due to scenarios with unstable connection, f
 The use of QoS 1 ensures that important data is not lost due to transmission issues, but it also means that any failure to acknowledge receipt will result in duplicate messages. 
 
 #### QoS 2 - Exactly Once
+
+![image](/images/mqtt-broker/user-guide/tbmq-qos2.png)
+
 The messages are delivered exactly once, ensuring that neither duplication nor loss occurs.
 
 **Requires 4 messages**:
@@ -59,9 +71,11 @@ Only after the sender gets PUBCOMP packet, it will be allowed to retransmit the 
 The guarantee of exactly once message delivery by using four-step handshake process between sender and receiver has its price - **slowest performance and highest network usage**.
 
 ### Which QoS to use? IoT use cases
+
 Below are some common scenarios to consider when selecting the appropriate QoS for your IoT system.
 
 #### QoS 0 - At Most Once
+
 Suitable for applications where speed is more important than reliability or occasional message loss (due to the different reasons as network Instability, unexpected client disconnection, 
 broker overload etc) is acceptable, such as non-critical sensor data.
 1. **Environmental Sensor Data**
@@ -72,6 +86,7 @@ broker overload etc) is acceptable, such as non-critical sensor data.
    * Reason to use: If a message is lost, the next update will correct the state, and immediate consistency is not crucial.
 
 #### QoS 1 - Al Least Once
+
 Suitable for applications where data loss is unacceptable, but duplicates can be managed.
 1. **Telemetry Data from Vehicles**
    * Use Case: A vehicle sends telemetry data (e.g., location, speed, fuel level) to a fleet management system.
@@ -83,6 +98,7 @@ Suitable for applications where data loss is unacceptable, but duplicates can be
    * Reason to use: Important alerts must reach the app, even if duplicates need to be handled.
 
 #### QoS 2 - Exactly Once
+
 Best for critical applications where message duplication or loss is unacceptable, such as financial transactions or critical commands.
 1. **Financial Transactions**
    * Use Case: A payment system sends transaction details between terminals and a central server.
@@ -129,6 +145,7 @@ Best for critical applications where message duplication or loss is unacceptable
 </table>
 
 ### Downgrade
+
 In MQTT communication in order to understand each other publisher and subscriber must use the same Quality of Service. 
 But QoS of the published message and QoS of the subscribing client may differ.
 
@@ -136,6 +153,7 @@ There is a simple rule for cases when QoS differs - **the lowest QoS will be use
 For example, Client A has published a message with QoS 1. Meanwhile, Client B is subscribed to the same topic with QoS 2. As a result, the message will be delivered with a QoS level of 1.
 
 ### Queuing messages and session persistence
+
 In the MQTT protocol, the message queue behavior depends on the selected Quality of Service that directly affects the delivery and storage of messages.
 
 If the **session is clean** (clean session is set to true), regardless of the selected QoS the broker will not store any information for the client and the session ends when the client disconnects.

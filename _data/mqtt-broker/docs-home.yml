@@ -14,8 +14,8 @@ toc:
 - title: Features
   section:
     - title: MQTT protocol
-      path: /docs/mqtt-broker/user-guide/mqtt-protocol
-#      new: true
+      path: /docs/mqtt-broker/user-guide/mqtt-protocol/
+      new: true
     - title: MQTT client type
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
     - title: MQTT over WebSocket
