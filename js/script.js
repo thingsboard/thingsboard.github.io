@@ -857,7 +857,7 @@ var tb = (function () {
 
 	function Owl() {
 		if ($('.owl-carousel').length > 0) {
-			var scriptsList = [
+			const scriptsList = [
 				{src: '/css/owl.carousel.min.css', type: 'css'},
 				{src: '/css/owl.theme.default.min.css', type: 'css'},
 				{src: '/js/owl.carousel.min.js', type: 'script'}
@@ -907,8 +907,8 @@ var tb = (function () {
 						})
 					}
 
-					function setupMarginPadding($carousel, properyValue) {
-						return Number(getComputedStyle($carousel[0]).getPropertyValue(properyValue));
+					function setupMarginPadding($carousel, propertyValue) {
+						return Number(getComputedStyle($carousel[0]).getPropertyValue(propertyValue));
 					}
 
 					function autoPlayStatus($carousel) {

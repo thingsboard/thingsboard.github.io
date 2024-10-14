@@ -92,25 +92,26 @@ notitle: "true"
         }
     ];
 
-    function searchForAnimation (classToSearch, classToAdd, threshold) {
-        const searchedBlock = document.querySelector(classToSearch);
+    function searchForAnimation(block) {
+        const searchedBlock = document.querySelector(block.classToSearch);
     
         const searchedBlockObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add(classToAdd);
+                    entry.target.classList.add(block.classToAdd);
                     searchedBlockObserver.unobserve(entry.target);
                 }
             })
         }, {
-            threshold: threshold
+            threshold: block.threshold
         });
-    
+
         searchedBlockObserver.observe(searchedBlock);
+
     }
 
     animatedBlocks.forEach(block => {
-        searchForAnimation (block.classToSearch, block.classToAdd, block.threshold);
+        searchForAnimation (block);
     })
 
 </script>
