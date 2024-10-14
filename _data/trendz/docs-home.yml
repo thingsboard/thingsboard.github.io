@@ -9,6 +9,8 @@ toc:
   section:
     - title: Business entities
       path: /docs/trendz/business-entities/
+    - title: Aggregate telemetry and delta
+      path: /docs/trendz/telemetry-aggregation/
     - title: Group by time
       path: /docs/trendz/group-by-time/
     - title: Group by category
