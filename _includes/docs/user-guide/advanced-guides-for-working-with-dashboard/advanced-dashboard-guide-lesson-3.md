@@ -1,9 +1,9 @@
 * TOC
 {:toc}
 
-This lesson is the third part of a series on setting up the dashboard. 
-In the first two parts, we explored assets and devices, added a control panel and states for buildings and offices, and implemented navigation between them. 
-Before proceeding, we strongly recommend that you familiarize yourself with the previous parts if you have not done so already.
+This lesson is the third installment in our series on setting up a dashboard to visualize and monitor data from devices integrated into your premises. 
+In the first two parts, we explored assets and devices, added a dashboard, created states for buildings and offices, and implemented navigation between them. 
+Before we proceed, we strongly recommend reviewing the previous lessons if you have not done so already.
 
 <br>
 <p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="n-button add-device">Lesson 2: Dashboard states, widget actions, and Image Map widget</a></p>
@@ -19,10 +19,18 @@ In this part, we will add separate states for each device, simulate telemetry da
 Since we are using virtual devices, they do not send telemetry data to the ThingsBoard. However, we can simulate the transmission of such data in real time.
 To do this, we will use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"}.
 
-We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with three [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices. Let's get started.
+We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices. Let's get started.
 
-- Go to the "Rule chains" page and click "plus" icon, then "Create new rule chain";
-- Name it "Device Telemetry Emulators", and click "Add". Open created rule chain by clicking on it;
+First, create the new rule chain:
+
+- Go to the "Rule chains" page and click "plus" icon, then select the "Create new rule chain" from drop-down menu;
+- Name it "Device Telemetry Emulators", and click "Add"; 
+- Open created rule chain by clicking on it.
+
+{% include images-gallery.html imageCollection="adding-new-rule-chain-1" %} 
+
+Now, let&#39;s add the necessary nodes:
+
 - Find the [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} and drag it to the rules chain. With its help, we will generate telemetry values for further visualization on the dashboard. Name it "Indoor air quality data emulator", and set the number of messages to send to 100 and the sending period to 600;
 - Specify the device "SD-001" (Indoor Air Quality Sensor) as originator;
 - Copy the following script from the documentation:
@@ -39,11 +47,17 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 - Paste the copied script into the generation function section to simulate temperature, humidity, and CO2 telemetry data;
 - Click "Add".
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-1" %}
+We added a "generator" node that will send telemetry to ThingsBoard on behalf of the "Indoor Air Quality Sensor" device every 10 minutes (600 seconds). There will be 100 such messages.
 
-You have added a "generator" node that will send telemetry to ThingsBoard on behalf of the "Indoor Air Quality Sensor" device every 10 minutes (600 seconds). There will be 100 such messages.
+{% include images-gallery.html imageCollection="adding-new-rule-chain-2" %}
 
-Similarly, add data emulator for "Energy Meter" device. Use the following script:
+<br>
+Similarly, add data emulator for "Energy Meter" device:
+
+- Name it "Power consumption data emulator";
+- Set the number of messages to send to 100 and the sending period to 600;
+- Specify the device "EM-002" (Energy Meter) as originator;
+- Use the following script to simulate power consumption telemetry data:
 
 ```js
 var msg = { powerConsumption: Math.random() * 4.3 };
@@ -54,10 +68,17 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-2" %}
+- Click "Add.
+
+{% include images-gallery.html imageCollection="adding-new-rule-chain-3" %}
 
 <br>
-Add data emulator for "Water Flow Meter" device. Use the following script:
+Add data emulator for "Water Flow Meter" device.
+
+- Name it "Water consumption data emulator";
+- Set the number of messages to send to 100 and the sending period to 600;
+- Specify the device "WM-003" (Water Flow Meter) as originator;
+- Use the following script to simulate water consumption telemetry data, and battery voltage data:
 
 ```js
 var msg = { waterConsumption: Math.random()*0.6 + 2, batteryLevel: Math.random()*1 + 45 };
@@ -68,10 +89,17 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-3" %}
+- Click "Add.
+
+{% include images-gallery.html imageCollection="adding-new-rule-chain-4" %}
 
 <br>
-Finally, add data emulator for "IAQ Sensor" device. Use the following script:
+Finally, add data emulator for "IAQ Sensor" device. Name it "IAQ data emulator". Set the number of messages to send to 100 and the sending period to 600.
+
+- Name it "Water consumption data emulator";
+- Set the number of messages to send to 100 and the sending period to 600;
+- Specify the device "AM-307" (IAQ Sensor) as originator;
+- Use the following script to simulate water consumption, and battery voltage telemetry data:
 
 ```js
 var msg = { temperature: Math.random()*10 + 20, humidity: Math.random()*15 + 30, co2: Math.random()*70 + 440 };
@@ -82,14 +110,24 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-4" %}
+{% include images-gallery.html imageCollection="adding-new-rule-chain-5" %}
 
-<br>
-Now we need to direct these messages to the Root Rule Chain for further processing and saving telemetry in the database.
+- Click "Add.
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-5" showListImageTitles="true" %}
+Added four generator nodes. Now we need to route messages from these nodes to the Root Rule Chain for further processing and saving telemetry in the database.
+For this purpose, there is a "[rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node){:target="_blank"}" node.
 
-After waiting for the period specified in the generator node, you can see the telemetry on your device's "Latest telemetry" tab.
+- Find the "rule chain" node and drag it to the rules chain. This node forwards all messages to the Root Rule Chain;
+- Name it "to Root Rule Chain", specify "Root Rule Chain" and click "Add".
+
+We have added all the necessary nodes. Now, we need to connect the generator nodes to the "rule chain" node for routing messages:
+
+- Tap on the right grey circle of "generator" node and drag this circle to the left side of "rule chain" node. Select the "Success" link and click "Add";
+- Repeat this for each generator node. After, save rule chain.
+
+{% include images-gallery.html imageCollection="adding-new-rule-chain-6" showListImageTitles="true" %}
+
+After waiting for the period specified in the generator nodes, you will be able to see the telemetry on the "Latest telemetry" tab of your devices.
 
 {% include images-gallery.html imageCollection="incoming-telemetry-1" %}
 
@@ -131,18 +169,24 @@ Now we need to add separate states for each of our devices and set up transition
 
 {% include images-gallery.html imageCollection="adding-devices-states-1" showListImageTitles="true" %}
 
-Similarly, add "<b>Energy Meter</b>" state with the "<b>energy_sensor</b>" state Id and "<b>Water Flow Meter</b>" state with the "<b>water_sensor</b>" state Id.
+Similarly, add "Energy Meter" state with the "energy_sensor" state Id and "Water Flow Meter" state with the "water_sensor" state Id.
 
 {% include images-gallery.html imageCollection="adding-devices-states-2" %}
 
 ### Customize Office sensors list widget
 
-Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensor-list)" widget by adding an action so that when you click on a device row, we transition to its state.
+Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensor-list){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
 
 - Go to the "office" state and enter editing mode of the "Office sensors list" widget;
 - Scroll to the "Actions" menu section and click the "Add action" button;
-- The "Actions" window will open. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;
-- In the "Add action" dialog, select "On row click" action source, and enter action name. Then, choose the "Custom action" action type. After choosing an action type, the "Custom action function" section appears. Paste the function by copying it from the documentation:
+- The "Actions" window will open. Click the "plus" icon in the top right corner of the screen. In the "Add action" dialog: 
+  - Select "On row click" action source;
+  - Enter action name;
+  - Choose the "Custom action" action type;
+  - After choosing an action type, the "Custom action function" section appears. Paste the function by copying it from the documentation.
+  This function performs a transition to the dashboard state depending on the type (device profile) of the selected device.
+
+Custom action function, using in this example:
 
 ```js
 const $injector = widgetContext.$injector;
@@ -181,7 +225,7 @@ Check how it works. Click on the row of any device to transition to its state.
 
 ### Customize Office plan widget
 
-Now, enhance the functionality of the "[Office plan](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#adding-image-map-widget)" widget by enabling tooltip that display telemetry data of the sensors and adding the ability to drill down to the details of each device. Follow these steps to customize the widget:
+Now, enhance the functionality of the "[Office plan](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#adding-image-map-widget){:target="_blank"}" widget by adding the tooltip that display telemetry data of the sensors and adding the ability to drill down to the details of each device. Follow these steps to customize the widget:
 
 - While in the "office" state, enter the dashboard edit mode;
 - Click the "pencil" icon of the "Office sensors list" widget to modify its settings;
@@ -263,10 +307,13 @@ a.leaflet-popup-close-button {
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-3" %}
 
-- Navigate to the "Actions" tab and click "plus" to add new action;
-- In the "Add action" dialog, select "On row click" as the action source. Choose "Custom action" for the action type and paste the specified function in the "Custom action function" section. After, click "Add";
+- Navigate to the "Actions" tab and click "plus" to add new action. In the "Add action" dialog:
+  - Select "On row click" as the action source;
+  - Enter "sensor_details" as action name;
+  - Choose "Custom action" for the action type;
+  - Paste the custom action function by copying it from the documentation.
 
-The function used in this example:
+The custom action function used in this example:
 
 ```js
 const $injector = widgetContext.$injector;
@@ -291,6 +338,13 @@ function openDashboardState(stateId) {
 }
 ```
 {:.copy-code.expandable-4}
+
+- After, click "Add";
+
+{% capture difference %}
+Ensure that the name of the created action matches the name specified in the tooltip function.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 - Click "Apply" to save the modifications;
 - Save your dashboard configuration by selecting "Save" in the upper-right corner of the dashboard.
@@ -335,9 +389,9 @@ Now, we will add a widget that displays temperature and humidity readings in the
 <br>
 The "Temperature and humidity history" widget is added, but there are no charts on it. We will fix it right now.
 
-To correctly display data on widgets that use the dashboard [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow), you need to adjust the time interval and aggregation function settings. To do this, open the time window, select to display data from the last 12 hours, choose the aggregation as "Average," and the grouping interval as "1 hour".
+To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow), you need to adjust the time interval and aggregation function settings. To do this, open the time window, select to display data from the last 12 hours, choose the aggregation as "Average," and the grouping interval as "1 hour".
 
-This setup ensures that all widgets using the dashboard's timewindow will now display data averaged over each of the last 12 hours, providing a clear view of the temperature and humidity trends. 
+This setup ensures that all widgets using the dashboard's time window will now display data averaged over each of the last 12 hours, providing a clear view of the temperature and humidity trends. 
 Now, you can effectively monitor the average temperature and humidity readings for each hour over the past 12 hours.
 
 {% include images-gallery.html imageCollection="temperature-and-humidity-history-2" %}
@@ -348,6 +402,7 @@ Now, add another line chart widget to display CO2 data in the office for the las
 
 {% include images-gallery.html imageCollection="air-quality-widget-1" showListImageTitles="true" %}
 
+<br>
 The configured "Indoor Air Quality Sensor" state should look like this:
 
 {% include images-gallery.html imageCollection="smart-sensor-state" %}
@@ -358,7 +413,7 @@ Let's proceed to configure the state for the "Energy Meter" device. We will add 
 
 ### Power consumption per hour
 
-To display hourly power consumption, we will use the "Power consumption card" widget from the "Industrial widgets" widget bundle:
+To display power consumption per hour, we will use the "Power consumption card" widget from the "Industrial widgets" widget bundle:
 
 {% include images-gallery.html imageCollection="power-consumption-per-hour-1" showListImageTitles="true" %}
 
@@ -375,7 +430,7 @@ Now you can monitor hourly power consumption and power consumption data for the 
 
 ## Configuring state for Water Flow Meter
 
-We still need to set up the state for the "Water Flow Meter" device. We will add a card widget to display the average water consumption per hour, a chart widget to display water consumption data over the last 12 hour, and the device's battery level widget.
+Finally, we will configure the state for the "Water Flow Meter" device. We will add a card widget to display the average water consumption per hour, a chart widget to display water consumption data over the last 12 hour, and the device's battery level widget.
 
 ### Water consumption per hour
 
@@ -395,7 +450,7 @@ And lastly in this tutorial, we will add the "Battery charge" widget. It will di
 
 {% include images-gallery.html imageCollection="battery-charge-1" showListImageTitles="true" %}
 
-Now you can track water usage per hour, over the last 12 hours, and the battery charge level in the "Water Flow Meter" device.
+Now you can track water usage per hour, over the last 12 hours, and control the battery level in the "Water Flow Meter" device.
 
 {% include images-gallery.html imageCollection="water-flow-meter-final" %}
 

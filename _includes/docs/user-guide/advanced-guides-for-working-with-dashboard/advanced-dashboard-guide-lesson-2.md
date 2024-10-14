@@ -514,7 +514,7 @@ We have added a new attribute with a link to the image of the Office A plan.
 
 {% include images-gallery.html imageCollection="add-office-plan-1" %}
 
-Similarly, upload the Office B plan image to the Image gallery, and add a link to it for "Office B" asset as a server attribute. Use the [provided Office B plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-b-plan.png){:target="_blank"}or your own.
+Similarly, upload the Office B plan image to the Image gallery, and add a link to it for "Office B" asset as a server attribute. Use the [provided Office B plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-b-plan.png){:target="_blank"} or your own.
 
 {% include images-gallery.html imageCollection="add-office-plan-2" %}
 
