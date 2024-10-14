@@ -2,6 +2,9 @@
 * TOC
 {:toc}
 
+{% assign sinceVersion = "2.0" %}
+{% include templates/mqtt-broker/since.md %}
+
 **Unauthorized clients** in MQTT are those clients that attempted but failed to establish a connection with the MQTT broker due to various reasons such as bad credentials, incorrect TLS configuration etc. 
 
 Regularly reviewing and analyzing unauthorized client attempts can help identify potential security threats and misconfigured clients.

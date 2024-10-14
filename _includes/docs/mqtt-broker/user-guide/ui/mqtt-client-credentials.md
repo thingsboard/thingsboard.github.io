@@ -82,7 +82,7 @@ Authentication will fail if none of the certificates in the chain has the same C
 * The **Certificate common name (CN) regex** should match with the CN of the client's certificate or, if present, one of the parent's certificate CN.
 Authentication will fail if none of the certificate CN in the chain match the regex.
 
-![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-1.png)
+{% include images-gallery.html imageCollection="security-authentication-tls" %}
 
 ##### Authorization Rules
 
@@ -97,7 +97,7 @@ Please consider the following examples:
 * If Subscribe authorization rule patterns is set to default value `.*` - client will be able to subscribe to any topic.
 * If Publish/Subscribe authorization rules has no rules (field is empty) - client will be forbidden to publish/subscribe to any topics.
 
-![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-2.png)
+![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
 
 #### SCRAM
 
