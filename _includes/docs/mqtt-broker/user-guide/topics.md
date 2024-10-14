@@ -7,18 +7,16 @@ This guide explains how MQTT topics work, how to use wildcards in topic strings,
 ### Topics
 
 In MQTT, topics are fundamental to the communication model. They act as addressing mechanisms that enable publishers and subscribers to exchange messages.
-
-In MQTT, there are two types of topics:
+There are two types of topics:
 * **Topic Names**. Used by publishers to send messages. **Must not contain** wildcards or start with `$` (such topic reserved for TBMQ system purposes).
 * **Topic Filters**. Used by subscribers to receive messages and **can include** wildcard characters such as `#` and `+`.
 
 Remember that the length of any MQTT topic must not exceed 65535 bytes.
+Additionally, the topic must be at least 1 character long and must not contain a null character.
 
 Topics in MQTT are hierarchical and use forward slash or delimiter character (`/`) as a topic level separator. 
 This separator divides the topic tree into "topic levels".
-
 For example, a topic may look like `sensors/livingroom/temperature`, where `sensors`, `livingroom` and `temperature` are topic levels.
-
 Such a structure facilitates effective control over message routing, especially when using wildcards in topics.
 
 ### Wildcards
@@ -176,6 +174,7 @@ When designing MQTT topics, it's important to follow best practices to ensure cl
 * Avoid starting or ending topic with forward slashes (`/`). It can be unintuitive and lead to inconsistencies. For example, the topics `sensors/home` and `/sensors/home` are considered as different topics.
 * Avoid subscribing to all topics. Subscribing to `#` means the client will receive every message published to any topic in the MQTT broker. This can quickly overwhelm the client with a flood of messages, leading to performance issues and potential crashes.
 * Avoid very deep hierarchies as they can become difficult to manage over time. Use clear, descriptive, and hierarchical topic names, for example `building/floor1/room1/temperature`.
+* Avoid non-printable characters to ensure compatibility across different systems and prevent unexpected issues. Try to use only ASCII characters instead.
 
 ### Multiple subscriptions match
 
@@ -187,7 +186,8 @@ Consider a client that subscribes to the following topics:
 
 If a message is published to the topic `sensors/room1/temperature`, **both subscriptions match** this topic. 
 
-In this case, TBMQ will not send the message to each matching subscription. Instead, it will deliver the message to the **first subscription that matches**.
+In this case, TBMQ will not send the message to each matching subscription. 
+Instead, it will deliver the message to the **subscription with the highest QoS**, or to the first matching subscription if multiple have the same QoS.
 
 ### Configuring maximum topic segments
 

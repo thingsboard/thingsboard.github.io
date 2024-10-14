@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mqtt-broker
-title: MQTT Topics & Wildcards Explained
+title: MQTT Topics & Wildcards
 description: TBMQ Topics guide
 
 ---
