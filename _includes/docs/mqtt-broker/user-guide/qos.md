@@ -2,14 +2,14 @@
 * TOC
 {:toc}
 
-Quality of Service (QoS) levels is one of the critical features of MQTT, which sets the rules for message delivery. 
-This feature is pivotal in the design of robust and reliable communication systems, particularly in the realm of Internet of Things (IoT), 
+Quality of Service (QoS) levels are one of the critical features of MQTT, which sets the rules for message delivery. 
+This feature is pivotal in the design of robust and reliable communication systems, particularly in the realm of the Internet of Things (IoT), 
 enhancing its interaction between the broker and connected clients.
 
 Here's a list of challenges that the Quality of Service feature in MQTT helps to tackle:
 
 * **Network reliability**: MQTT relies on the TCP, a data transportation protocol. TCP does not guarantee that the packets will be delivered in case of poor network conditions. QoS 1 and QoS 2 levels handle this problem by ensuring that the messages are delivered according to the requirement.
-* **System crashes**: If either the publisher or the subscriber crashes after the message is sent but before it could be processed, QoS ensures that the messages aren't lost.
+* **System crashes**: If either the publisher or the subscriber crashes after the message is sent but before it can be processed, QoS ensures that the messages aren't lost.
 * **Preventing duplicates**: QoS 2 is designed to ensure that the message is delivered to the receiver only once.
 * **Avoiding overloading the subscriber**: With QoS 1 and QoS 2, the publisher will not send further messages to a client if it is not acknowledging the receipt of previous messages.
 * **Persisting messages**: MQTT includes the ability to persist QoS 1 and QoS 2 messages for a client that is currently disconnected. The next time the client connects, these missed messages are sent out.
