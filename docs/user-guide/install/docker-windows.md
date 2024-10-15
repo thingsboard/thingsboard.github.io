@@ -17,7 +17,7 @@ This guide will help you to install and start ThingsBoard using Docker on Window
 
 ## Prerequisites
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
 
 ## Running
 

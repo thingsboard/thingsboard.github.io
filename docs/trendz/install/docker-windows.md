@@ -15,7 +15,7 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Prerequisites
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
 
 ## Step 1. Obtain the license key 
 

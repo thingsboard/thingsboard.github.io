@@ -3,7 +3,7 @@ Kafka is useful to survive peak loads and hardware failures to make sure that al
 
 Please open AWS console and navigate to MSK, press `Create cluster` button and choose `Custom create` mode.
 
-* Make sure your Apache Kafka version is 2.6.x;
+* Make sure your Apache Kafka version is 3.7.x;
 * Make sure your MSK instance is accessible from the ThingsBoard cluster.
   The easiest way to achieve this is to deploy the MSK instance in the same VPC.
   We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;

@@ -8,7 +8,7 @@ description: ThingsBoard IoT Platform hardware samples for NodeMCU devices.
 * TOC
 {:toc}
 
-[NodeMCU](https://en.wikipedia.org/wiki/NodeMCU) is an open source IoT platform. It includes both firmware which runs on the ESP8266 Wi-Fi SoC, and hardware which is based on the ESP-12 module.
+[NodeMCU](https://en.wikipedia.org/wiki/NodeMCU) is an open-source IoT platform. It includes both firmware which runs on the ESP8266 Wi-Fi SoC, and hardware which is based on the ESP-12 module.
 
 The applications in these samples that are running on NodeMCU are written using Lua scripting language which is quite simple and easy to understand.
 

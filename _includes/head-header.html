@@ -388,8 +388,11 @@
                                 let left = item.position().left + offset;
                                 let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
                                 indicator.css('opacity', 1);
+                                let windowOverflowLeft = left + windowOverflow;
                                 if (windowOverflow < 0) {
                                     left += windowOverflow;
+                                } else if (windowOverflowLeft < 0) {
+                                    left -= windowOverflowLeft;
                                 }
                                 submenuContainer.css('left', left + 'px');
                                 if (!subMenuActive) {
@@ -558,7 +561,7 @@
                                 <img src="/images/thingsboard-cm-icon.svg" alt="Community Edition icon" width="54" height="54" loading="lazy">
                                 <div class="sub-text">
                                     <span class="item-heading">Community Edition</span>
-                                    <p>Open source platform</p>
+                                    <p>Open-source platform</p>
                                 </div>
                             </a>
                             <a class="prof-lnk" href="/products/thingsboard-pe/">
@@ -695,7 +698,7 @@
                                 <img src="/images/thingsboard-cm-icon.svg" alt="Community Edition icon" width="54" height="54" loading="lazy">
                                 <div class="sub-text">
                                     <span class="item-heading">Community Edition</span>
-                                    <p>Open source platform</p>
+                                    <p>Open-source platform</p>
                                 </div>
                             </a>
                             <a class="prof-lnk" href="/docs/pe/">
