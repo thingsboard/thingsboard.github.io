@@ -21,7 +21,7 @@ notitle: "true"
     <a href="/docs/getting-started-guides/what-is-thingsboard/" class="card com">
         <img src="https://img.thingsboard.io/thingsboard-cm-icon.svg" alt="Community Edition">
         <h5 class="title">ThingsBoard Community Edition</h5>
-        <p>Open source platform</p>
+        <p>Open-source platform</p>
     </a>
     <a href="/products/thingsboard-edge/" class="card thingsboard-edge">
         <img src="https://img.thingsboard.io/thingsboard-e-icon.svg" alt="Edge">

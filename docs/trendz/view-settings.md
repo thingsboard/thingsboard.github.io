@@ -171,4 +171,4 @@ In cases when data can be grouped by fixed intervals, like Hour or Date, will be
 ## TB calculated telemetry save
 It feature provides the ability to make and save (to the same item) a new telemetry that is made by a calculation field that is derived from any telemetry field that you want. 
 It is a scheduled action that will be launched every chosen time unit to keep actual values during the present time.
-[**More details you can find here**](/docs/trendz/save-telemetry-to-thingsboard/)
+[**More details you can find here**](/docs/trendz/save-calculated-to-thingsboard/)

@@ -68,7 +68,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
 
  Smart Room Sensor sends the uplinks periodically, but you can trigger an uplink with a magnet.
  It is enough to bring closer a magnet to the sensor body.
- Network Server shows packets in encoded Base64 form. To decode a packet and see the whole LoRa packet payload, including LoRa related data and the sensor data itself, you could use a free [LoRaWAN 1.0.x packet decoder](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/).
+ Network Server shows packets in encoded Base64 form. To decode a packet and see the whole LoRa packet payload, including LoRa related data and the sensor data itself, you could use a free LoRaWAN 1.0.x packet decoder.
  The decoder requires *Application* and *Network* session keys could be found in the *ACTIVATION* tab.
 
  <img src="https://img.thingsboard.io/samples/tektelic/sensor_activation_tab.png" width="800" alt="sensor activation tab">
