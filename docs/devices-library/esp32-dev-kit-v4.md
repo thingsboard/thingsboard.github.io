@@ -11,4 +11,5 @@ deviceImageFileName: esp32-dev-kit-v4.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/esp32-dev-kit-v4.md %}

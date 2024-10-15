@@ -7,4 +7,5 @@ description: IoT data visualization for various IoT projects using iot dashboard
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/visualization.md %}

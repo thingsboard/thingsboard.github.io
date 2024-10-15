@@ -42,4 +42,5 @@ client-side-rpc:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/http-api.md %}

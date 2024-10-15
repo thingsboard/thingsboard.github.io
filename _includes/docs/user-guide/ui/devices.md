@@ -23,7 +23,7 @@ In short, devices in ThingsBoard are a central part of your IoT system, and the 
  - Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.
 {% endif %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
  - Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;
  - By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";
  - Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";
@@ -74,7 +74,7 @@ Second way:
 {% if docsPrefix == null %}
 You can perform various operations with the device, such as [make device public](#make-device-public), [assign device to customer](#assign-device-to-customer), [manage credentials](#manage-device-credentials), [check connectivity](#check-connectivity), [delete device](#deletion-device), copy [device id](#copy-device-id), and copy [access token](#copy-device-credentials).
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 You can perform various operations with the device, such as [manage credentials](#manage-device-credentials), [manage owner and groups](#manage-owner-and-groups), [check connectivity](#check-connectivity), [delete device](#deletion-device), copy [device id](#copy-device-id), and copy [access token](#copy-device-credentials).
 {% endif %}
 
@@ -105,7 +105,7 @@ By default, "access token" credentials are used. To change device credentials, f
 
 {% include images-gallery.html imageCollection="manage-device-credentials" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Manage owner and groups
 
 You can change the owner of the device or add the device to one or more device groups in the device details window.

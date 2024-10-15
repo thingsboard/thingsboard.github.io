@@ -17,7 +17,7 @@ To enter a data key configuration, click the pencil icon on the specific data ke
 {% if docsPrefix == null %}
 ![image](/images/user-guide/widgets/advanced-data-key/enter-data-key-configuration-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/widgets/advanced-data-key/enter-data-key-configuration-pe.png)
 {% endif %}
 

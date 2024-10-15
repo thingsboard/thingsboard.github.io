@@ -98,4 +98,5 @@ two-factor-authentication-backup-code:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/two-factor-authentication.md %}

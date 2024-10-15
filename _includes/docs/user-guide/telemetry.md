@@ -84,7 +84,7 @@ You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-librar
 
 ## Data storage
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ThingsBoard Cloud stores time-series data in the Cassandra database with replication factor of 3. 
 The on-prem installation of ThingsBoard support storage of time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
@@ -101,7 +101,7 @@ See [SQL vs NoSQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybr
 
 ## Data retention
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ThingsBoard Cloud stores data with configurable time-to-live (TTL) parameter. 
 The value of the parameter is part of the [Subscription](/products/paas/subscription/) plan.
@@ -162,7 +162,7 @@ This is extremely powerful technique that allows to modify processing logic and 
 
 **Use analytics rule nodes to aggregate data for related assets**
 
-{% if docsPrefix == "paas/" or docsPrefix == "pe/" %}
+{% if docsPrefix contains "paas/" or docsPrefix == "pe/" %}
 Use [analytics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
 {% else %}
 Use [analytics](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.

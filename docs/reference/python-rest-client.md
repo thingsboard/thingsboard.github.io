@@ -7,4 +7,5 @@ description: Supported REST API Reference for server-side integration of your py
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/python-rest-client.md %}

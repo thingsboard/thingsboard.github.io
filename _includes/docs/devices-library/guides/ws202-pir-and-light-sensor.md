@@ -1,11 +1,7 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/sensor/ws202/" %}
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-{% assign thingsboardHost = 'https://thingsboard.cloud' %}
-{% else %}
-{% assign thingsboardHost = 'https://demo.thingsboard.io' %}
-{% endif %}
+{% assign thingsboardHost = "https://" | append: hostName %}
 {% assign officialManualLink = "https://resource.milesight-iot.com/milesight/document/ws202-user-guide-en.pdf" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>

@@ -10,7 +10,7 @@
 {% assign EMULATOR = "device-emulator-pe.png" %}
 {% assign TERMINAL = "timeseries-map-bus-pe.js" %}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 {% assign NEW_DEVICE = "[create a new device](/docs/paas/getting-started-guides/helloworld/#step-1-provision-device)" %}
 {% assign YOUR_HOST = "[download the script](/docs/user-guide/resources/timeseries-map-bus-cloud.js)" %}
 {% assign EMULATOR = "device-emulator-paas.png" %}

@@ -485,4 +485,5 @@ export-widget:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/widgets.md %}

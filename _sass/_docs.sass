@@ -664,25 +664,17 @@ a.feature-card
   align-items: center
   z-index: 8000
   @media screen and (min-width: 769px)
-    width: 250px
+    width: 270px
   @media screen and (min-width: 870px)
     width: 348px
   @media screen and (min-width: 1281px)
-    width: 250px
+    width: 270px
     top: 80px
   @media screen and (min-width: 1601px)
-    width: 316px
+    width: 338px
   @media screen and (max-width: 1280px)
     z-index: 10001
-  img
-    width: 54px
-    height: 54px
-    margin-right: 16px
-    @media screen and (max-width: 1024px)
-      width: 46px
-      height: 46px
-      margin-right: 10px
-      margin-left: -10px
+
   .product-info
     display: flex
     flex-direction: column
@@ -693,6 +685,16 @@ a.feature-card
     justify-content: center
     border-radius: 8px
     background: var(--tb-main-background)
+    @media screen and (max-width: 769px)
+      width: 270px
+    @media screen and (min-width: 769px)
+      width: 270px
+    @media screen and (min-width: 870px)
+      width: 348px
+    @media screen and (min-width: 1281px)
+      width: 272px
+    @media screen and (min-width: 1601px)
+      width: 338px
     .product-title
       font-size: 18px
       font-weight: 500
@@ -748,16 +750,61 @@ a.feature-card
       &.active
         font-weight: 500
         background: rgba(42, 125, 236, 0.04)
-  &:hover, &.active
-    cursor: pointer
-  &.active
-    .product-title
-      &::after
-        transform: rotate(-90deg)
-    .products
-      visibility: visible
-      opacity: 1
 
+  .product-selector, .server-selector
+    &:hover, &.active
+      cursor: pointer
+    &.active
+      .product-title
+        &::after
+          transform: rotate(-90deg)
+      .products
+        visibility: visible
+        opacity: 1
+
+.products-selector-cloud
+  gap: 10px
+  .server-selector
+    min-width: 150px
+    display: flex
+    flex: 1
+    .server-option
+      display: flex
+      flex-direction: column
+      &-title
+        color: #000000
+      &-subtitle
+        font-size: 14px
+  @media screen and (max-width: 769px)
+    .product-info
+      .product-title
+        font-size: 14px
+    .product-selector
+      display: flex
+      flex: 1
+  @media screen and (min-width: 769px)
+    .product-selector
+      width: 94px
+    .product-info
+      .product-title
+        font-size: 14px
+  @media screen and (min-width: 870px)
+    .product-selector
+      width: 124px
+  @media screen and (min-width: 1281px)
+    .product-selector
+      width: 94px
+    .product-info
+      .product-title
+        font-size: 14px
+  @media screen and (min-width: 1601px)
+    .product-selector
+      width: 124px
+    .product-info
+      .product-title
+        font-size: 18px
+  .product-info
+    width: 100%
 details
   summary
     outline: none

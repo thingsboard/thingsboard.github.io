@@ -449,4 +449,5 @@ states-entity-name:
 --- 
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/dashboards.md %}

@@ -44,6 +44,6 @@ return result;
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-binary-java-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-binary-java-paas.png)
 {% endif %}

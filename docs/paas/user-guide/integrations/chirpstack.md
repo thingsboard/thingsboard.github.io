@@ -115,4 +115,5 @@ downlink-events:
 
 ---
 {% assign docsPrefix = "pass/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/integrations/chirpstack.md %}
