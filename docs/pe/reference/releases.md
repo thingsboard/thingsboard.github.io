@@ -8,6 +8,20 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.8.1 (Oct 15, 2024) {#v381}
+
+Everything from [TB CE v3.8.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.8.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Improved resource cleanup on 'check connection' in the integration center;
+
+**Bug fixes**
+
+* Fixed autoplay of the solution template video in Chrome;
+* Added support for Ubuntu 24.04 in the web report;
+* Fixed custom menu retrieval for public users;
+
 ## v3.8.0 (Oct 3, 2024) {#v38}
 
 Everything from [TB CE v3.8](https://github.com/thingsboard/thingsboard/releases/tag/v3.8) with the following improvements and bug fixes.

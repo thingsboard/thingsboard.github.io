@@ -135,7 +135,7 @@ The table in "Tags" tab allows you to quickly access each tag and define both th
 
 While the UI editor suffices for simple SCADA symbols, complex SVG file structures might require a different approach.
 For elements obscured by gradients or complex shapes, it's useful to switch to XML editor mode.
-You can find this option in the top right corner of the left panel in the editor.
+You can find this option in the top-right corner of the left panel in the editor.
 Here, you can define tags using the `tb:tag` syntax directly within the XML structure.
 
 Let's add tags to the "On" button elements:
@@ -151,7 +151,7 @@ Let's add tags to the "On" button elements:
 </g>
 ```
 
-on this one:
+to this one:
 
 ```xml
 <g tb:tag="onButton" transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
@@ -186,8 +186,8 @@ Below is the XML code that will add all the necessary tags for this example.
 {: .copy-code}
 
 - Navigate to the "XML" editor mode; 
-- Paste copied code inthe corresponding window;
-- Return to the "SVG" editor mode. You can see the defined tags. After, apply changes.
+- Paste the copied code in the corresponding window;
+- Return to the "SVG" editor mode. You can see the defined tags. Afterward, apply the changes.
 
 {% include images-gallery.html imageCollection="tags-definition-via-xml-1" %}
 
@@ -195,7 +195,7 @@ Below is the XML code that will add all the necessary tags for this example.
 
 ### Operations with tags
 
-You can update the tag, add a state rendering function and on click action, and delete the tag using the appropriate tag icon.
+You can update the tag, add a state rendering function, and assign an on click action, or delete the tag using the appropriate tag icon.
 
 **Update tag**
 
@@ -228,9 +228,9 @@ Now let's learn how to configure behavior items. Each item includes the followin
 
 - **Id** - an identifier used to reference an item in the [ScadaSymbolContext](#scadasymbolcontext);
 - **Name** - a label that generates an element for end-user configuration;
-- **Hint** - a hint provided within the end-user configuration element to assist with usage'
+- **Hint** - a hint provided within the end-user configuration element to assist with usage;
 - **Group title** - a method to organize configuration elements within the 'Behavior' configuration panel;
-- **Type** - the field can be of type "Value", "Action", or "Widget action". We will explore each type in detail below;
+- **Type** - the field can be of "Value", "Action", or "Widget action" type. We will explore each type in detail below;
 - **Default settings** - the preset configurations available to the end-user.
 
 To add new behavior item for the SCADA symbol, do the following:
@@ -399,7 +399,7 @@ Let's learn how to configure properties. Each property includes the following co
 
 - **Id** - an identifier used to reference the property in the [ScadaSymbolContext](#scadasymbolcontext);
 - **Name** - a label used to generate an element for end-user configuration. Use the same name to group multiple configuration properties into the same row;
-- **Type** - properties can be of type `Text`, `Number`, `Switch`, `Color`, `Color settings`, `Font`, and `Units`. Will be explored in detail below;
+- **Type** - properties can be of `Text`, `Number`, `Switch`, `Color`, `Color settings`, `Font`, and `Units` type. They will be explored in detail below;
 - **Default value** - the preset configuration available to the end-user;
 - **Value required** - a switcher that mandates user input for the property value;
 - **Advanced UI settings** - these include multiple configuration items that help developers fine-tune the parameter configuration form.
@@ -577,7 +577,7 @@ This function is optional and is useful when you would like to define logic of t
 
 ### On click action
 
-This JS function defines a logic of on click handler. and accepts three parameters:
+This JS function defines a logic for on click handler, and accepts three parameters:
 
 * *ctx* is an instance of [ScadaSymbolContext](#scadasymbolcontext);
 * *element* is an [SVG.js](https://svgjs.dev/){:target="_blank"} element;
@@ -585,7 +585,7 @@ This JS function defines a logic of on click handler. and accepts three paramete
 
 {% include images-gallery.html imageCollection="on-click-action-1" %}
 
-### Teg configuration
+### Tag configuration
 
 #### onButtonText tag
 
@@ -593,7 +593,7 @@ Let's start with defining the simple state render function for our "On" button t
 The only thing we need to do is to replace the hard-coded text from original SVG with the text configured by end-user via the `onBtnLabel` property:
 
 - Go to the "Tag settings" of the "`onButtonText`" tag and click "+ Add" button of a "State rendering function";
-- Copy the function;
+- Copy the function:
 
 ```javascript
 ctx.api.text(element, ctx.properties.onBtnLabel);
@@ -972,7 +972,7 @@ Avoid manually setting behavior values, as shown in the `ctx.api.setValue('fanOn
 As an alternative to configuring each tag rendering functions, we might configure everything in one place. 
 However, in case of global function you are working with the `svg` instead of a single tag `element`.
 Use `ctx.tags.[tagId]`, e.g. `ctx.tags.rotationSpeedText` to get the array of SVG elements for each tag.
-Usually this array contain only one element, but in general case, your SVG file may have multiple elements that share the same tag id.
+Usually this array contains only one element, but in general case, your SVG file may have multiple elements that share the same tag id.
 
 ## Step 7. Preview mode
 
@@ -1072,7 +1072,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **value**: Numeric value to be formatted.
     - **dec** (optional): Number of decimal digits. Typically obtained from `ctx.properties`.
     - **units** (optional): Units to append to the formatted value. Typically obtained from `ctx.properties`.
-    - **showZeroDecimals** (optional): Whether to keep zero decimal digits. Typically obtained from `ctx.properties`.
+    - **showZeroDecimals** (optional): Specifies whether to keep zero decimal digits. Typically obtained from `ctx.properties`.
 
   **Returns**: Formatted value as a string or undefined if formatting fails.
   <br/><br/>
@@ -1105,7 +1105,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **icon**: Icon to draw. [MDI](https://mdisearch.com/){:target="_blank"} icons supported. Typically obtained from `ctx.properties`.
     - **size** (optional): Icon size in pixels. Typically obtained from `ctx.properties`.
     - **color** (optional): Icon color. Typically obtained from `ctx.properties`.
-    - **center** (optional): Whether to center the icon inside the group element.
+    - **center** (optional): Specifies whether to center the icon inside the group element.
       <br/><br/>
 
 * **cssAnimate**: Starts a CSS-based animation, providing controls similar to those available in SVG.js's [Runner](https://svgjs.dev/docs/3.2/animating/#svg-runner){:target="_blank"}. Finishes any previous CSS animation.
@@ -1145,7 +1145,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
   **Parameters**:
     - **element**: SVG element.
       <br/><br/>
-* **disable**: Disables interaction with one or more elements. For ex. no click action will be performed on user click.
+* **disable**: Disables interaction with one or more elements. E.g. no click action will be performed on user click.
     ```javascript
     disable: (element: Element | Element[]) => void
     ```
@@ -1153,7 +1153,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
   **Parameters**:
     - **element**: SVG element or an array of SVG elements.
       <br/><br/>
-* **enable**: Re-enables interaction with elements previously disabled. Fox ex. click action will be performed on user click.
+* **enable**: Re-enables interaction with elements previously disabled. E.g. click action will be performed on user click.
     ```javascript
     enable: (element: Element | Element[]) => void
     ```

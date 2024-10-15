@@ -15,21 +15,22 @@ After this, the regular ThingsBoard authorization flow will happen.
 
 ## Setting Up Authentication via an external provider
 
-To use authentication through an external provider, first add a new client with all necessary credentials. 
-After that, add a new domain or use an existing one and specify the added OAuth 2.0 client in its settings.
+Since the 3.8 release, OAuth 2.0 clients are configured separately from the domain allowing to reuse of the configured client and making the settings clearer.
+To use authentication through an external provider, first configure OAuth 2.0 client with all necessary credentials. 
+After that, add a new domain or use an existing one and update OAuth 2.0 client list with new oauth 2.0 client.
 
 ### Operations with domain
 
 **Adding domain**
 
 Follow these steps to add a new domain:
-- On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to begin adding a new domain;
+- On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to add new domain;
 - Provide your domain name and OAuth 2.0 client;
 - Click "Add" to finalize adding the domain.
 
 {% include images-gallery.html imageCollection="adding-domain-1" %}
 
-**Managing domain**
+**Editing domain**
 
 To update the settings for an existing domain, follow these steps:
 
@@ -38,7 +39,7 @@ To update the settings for an existing domain, follow these steps:
 - Make the required modifications;
 - Confirm and save your changes by clicking the "Apply changes" button.
 
-{% include images-gallery.html imageCollection="managing-domain-1" %}
+{% include images-gallery.html imageCollection="editing-domain-1" %}
 
 **Deleting domain**
 
@@ -55,7 +56,7 @@ To remove domain, following the steps:
 
 Follow these steps to add a new OAuth 2.0 client to ThingsBoard:
 
-- Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page, and click the "plus" icon to begin adding a new OAuth 2.0 client;
+- Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page, and click the "plus" icon to add a new OAuth 2.0 client;
 - Enter a descriptive title for the client;
 - Select the authentication provider from the dropdown menu;
 - Specify which platforms are allowed or select all;
@@ -65,7 +66,7 @@ Follow these steps to add a new OAuth 2.0 client to ThingsBoard:
 
 {% include images-gallery.html imageCollection="adding-oauth2-client-1" %}
 
-**Managing OAuth 2.0 client**
+**Editing OAuth 2.0 client**
 
 To update the settings for an existing OAuth 2.0 client, follow these steps:
 
@@ -74,7 +75,7 @@ To update the settings for an existing OAuth 2.0 client, follow these steps:
 - Make the required modifications;
 - Confirm and save your changes by clicking the "Apply changes" button.
 
-{% include images-gallery.html imageCollection="managing-oauth2-client-1" %}
+{% include images-gallery.html imageCollection="editing-oauth2-client-1" %}
 
 **Deleting OAuth 2.0 client**
 
@@ -120,7 +121,7 @@ OAuth client created. You now have credentials consisting of a *Client ID* and a
 
 {% include images-gallery.html imageCollection="google-credentials-for-oauth-1" %}
 
-### Configuration of ThingsBoard
+### Configuring Google provider in ThingsBoard
 
 To add new OAuth 2.0 client follow the steps below:
 
@@ -198,7 +199,7 @@ Please note that it is not necessary to update the Application login URI.
 
 {% include images-gallery.html imageCollection="auth0-credentials-1" %}
 
-### Configuration of ThingsBoard
+### Configuring OAuth0 provider in ThingsBoard
 
 Now let's add Auth0 as an OAuth 2.0 client of ThingsBoard:
 
