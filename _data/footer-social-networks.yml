@@ -1,37 +1,45 @@
 0:
+  fontAwesome: true
   href: "https://github.com/thingsboard/thingsboard"
-  src: "/images/social-git-icon.svg"
-  alt: "Link to our Github"
+  icon: 'github'
+  arial-label: "Link to our Github"
 1:
+  fontAwesome: true
   href: "https://app.gitter.im/#/room/#thingsboard_chat:gitter.im"
-  src: "/images/social-gitter-icon.svg"
-  alt: "Link to our Gitter"
+  icon: 'gitter'
+  arial-label: "Link to our Gitter"
 2:
+  fontAwesome: true
   href: "https://www.youtube.com/thingsboard"
-  src: "/images/social-youtube-icon.svg"
-  alt: "Link to our Youtube channel"
+  icon: 'youtube'
+  arial-label: "Link to our Youtube channel"
 3:
+  fontAwesome: true
   href: "https://stackoverflow.com/questions/tagged/thingsboard"
-  src: "/images/social-stack-icon.svg"
-  alt: "Link to our Stack Overflow page"
+  icon: 'stack-overflow'
+  arial-label: "Link to our Stack Overflow page"
 4:
+  fontAwesome: true
   href: "https://groups.google.com/forum/#!forum/thingsboard"
-  src: "/images/social-google-icon.svg"
-  alt: "Link to our Google Group"
+  icon: 'google'
+  arial-label: "Link to our Google Group"
 5:
+  fontAwesome: true
   href: "https://www.facebook.com/thingsboard"
-  src: "/images/social-face-icon.svg"
-  alt: "Link to our Facebook"
+  icon: 'facebook'
+  arial-label: "Link to our Facebook"
 6:
+  fontAwesome: true
   href: "https://www.instagram.com/thingsboard_iot/"
-  src: "/images/social-instagram-icon.svg"
-  alt: "Link to our Instagram"
+  icon: 'instagram'
+  arial-label: "Link to our Instagram"
 7:
+  fontAwesome: true
   href: "https://www.linkedin.com/company/thingsboard/"
-  src: "/images/social-linkedin-icon.svg"
-  alt: "Link to our Linkedin"
+  icon: 'linkedin'
+  arial-label: "Link to our linkedin"
 8:
   href: "https://twitter.com/thingsboard"
   src: "/images/social-twitt-icon.svg"
-  alt: "Link to our X"
+  arial-label: "Link to our X"
 
