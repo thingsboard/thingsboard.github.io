@@ -10,8 +10,8 @@
 <section id="tb-customers" class="{{ productTag }}">
     <div class="tb-customers-content">
         {% for customerLogo in customersLogosCollection %}
-            <a href="{{ customerLogo[1].href }}">
-                <object data="{{ customerLogo[1].src }}" aria-label="{{ customerLogo[1].aria_label }}"></object>
+            <a href="{{ customerLogo[1].href }}" aria-label="{{ customerLogo[1].aria-label }}">
+                <object data="{{ customerLogo[1].src }}"></object>
             </a>
         {% endfor %}
     </div>
