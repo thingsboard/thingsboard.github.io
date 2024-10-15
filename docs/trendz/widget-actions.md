@@ -75,6 +75,7 @@ Our goal is to send a list of energy meters to an alias on the dashboard upon cl
 
 **Step 1. Set Up the Trendz View**
 1. Set the entity type of the entities that you want to send as the alias. In our case it is EM energy meter.
+
    ![image](https://img.thingsboard.io/trendz/set-up-trendz-view.png)
 2. Send this view to the ThingsBoard Dashboard.
 
