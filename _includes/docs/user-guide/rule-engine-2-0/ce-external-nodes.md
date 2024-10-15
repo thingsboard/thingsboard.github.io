@@ -3,9 +3,6 @@ External Nodes used are used to interact with external systems.
 * TOC
 {:toc}
 
-<!-- {{ page.hostName }} -->
-<!-- {{ hostName }} -->
-
 ## AWS SNS Node
 
 <table  style="width:250px;">

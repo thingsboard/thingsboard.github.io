@@ -1,5 +1,5 @@
 {% assign productUrl = product.path %}
-{% if site.skipFindProductUrl %}
+{% if site.skipFindProductUrl != true %}
     {% if product.docsPrefix and serverInfo.docsPrefix %}
         {% assign pageUrl = page.url %}
         {% include find-product-server-page.html %}

@@ -26,17 +26,3 @@
   httpsHostName: https://eu.thingsboard.cloud
   lwm2mHostName: lwm2m.eu.thingsboard.cloud
   apiHostName: eu.thingsboard.cloud
-- tag: edge
-  hostName: thingsboard.cloud
-  mqttHostName: $THINGSBOARD_EDGE_HOST_NAME
-  coapHostName: $THINGSBOARD_EDGE_HOST_NAME
-  httpsHostName: $THINGSBOARD_EDGE_HOST_NAME
-  lwm2mHostName: $THINGSBOARD_EDGE_HOST_NAME
-  apiHostName: thingsboard.cloud
-- tag: edge-pe
-  hostName: thingsboard.cloud
-  mqttHostName: $THINGSBOARD_EDGE_HOST_NAME
-  coapHostName: $THINGSBOARD_EDGE_HOST_NAME
-  httpsHostName: $THINGSBOARD_EDGE_HOST_NAME
-  lwm2mHostName: $THINGSBOARD_EDGE_HOST_NAME
-  apiHostName: thingsboard.cloud
