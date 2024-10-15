@@ -9,7 +9,7 @@ to get familiar with ThingsBoard. We also recommend to review the [Device Profil
 
 ## Sparkplug basics
 
-[Sparkplug](https://sparkplug.eclipse.org/) is an open source software specification that provides MQTT clients the framework 
+[Sparkplug](https://sparkplug.eclipse.org/) is an open-source software specification that provides MQTT clients the framework 
 to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
 
 ThingsBoard acts as an MQTT Server which support the SparkPlug payload and topic structure and allows connections from the 

@@ -58,19 +58,19 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 							</a>
 						</div>
 						<div class="manage">
-						<img class="device-list" src="/images/device-list.svg" alt="Device list with checkboxes" width="626" height="335" loading="lazy">
-						<img class="device-manage" src="/images/device-manage.svg" alt="Device managing panel" width="543" height="509" loading="lazy">
+							<img class="device-list" src="/images/device-list.svg" alt="Device list with checkboxes" width="626" height="335" loading="lazy">
+							<img class="device-manage" src="/images/device-manage.svg" alt="Device managing panel" width="543" height="509" loading="lazy">
 						</div>
 					</div>
 					<div class="block vis">
 						<div class="visualize">
-							<img class="vis1" src="/images/visualize1.svg" alt="Linear chart" width="626" height="209" loading="lazy">
-							<img class="vis2" src="/images/visualize2.svg" alt="Common chart with points" width="449" height="311" loading="lazy">
-							<img class="vis3" src="/images/visualize3.svg" alt="Digital level chart" width="161" height="311" loading="lazy">
+							<img class="vis1" src="/images/visualize1.svg" alt="Linear chart" width="668" height="263" loading="lazy">
+							<img class="vis2" src="/images/visualize2.svg" alt="Common chart with points" width="457" height="263" loading="lazy">
+							<img class="vis3" src="/images/visualize3.svg" alt="Digital level chart" width="197" height="263" loading="lazy">
 						</div>
 						<div class="feature-des"><span class="phrase-heading">Collect and visualize data</span>
 							<p>Collect and store telemetry data in scalable and fault-tolerant way. Visualize your data with built-in or custom widgets and flexible dashboards. Share dashboards with your customers.</p>
-							<a class="read-more-button" href="/docs/user-guide/visualization/">Read more about visualization
+							<a class="read-more-button" href="docs/user-guide/dashboards/">Read more about visualization
 								<i class="fas fa-chevron-right arrow first"></i>
 								<i class="fas fa-chevron-right arrow second"></i>
 								<i class="fas fa-chevron-right arrow third"></i>
@@ -81,13 +81,43 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 			</div>
 		</section>
 
+		<section id="scada">
+			<div class="main-div">
+				<div id="features-top-1">
+					<div class="background">
+						<div class="main2"></div>
+					</div>
+					<div class="block scada">
+						<div class="feature-des"><span class="phrase-heading">SCADA</span>
+							<p>Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements.</p>
+							<a class="read-more-button" href="/docs/user-guide/scada/">Read more about SCADA
+								<i class="fas fa-chevron-right arrow first"></i>
+								<i class="fas fa-chevron-right arrow second"></i>
+								<i class="fas fa-chevron-right arrow third"></i>
+							</a>
+						</div>
+						<div class="scada-svg">
+							<img class="scada-back-scheme" src="/images/scada-background.svg" alt="SCADA background block schema" width="992" height="650" loading="lazy">
+							<div class="scada-fade"></div>
+							<div class="scada-background"></div>
+							<img class="scada-front-scheme" src="/images/scada.svg" alt="SCADA block schema" width="992" height="650" loading="lazy">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section id="react">
 			<div class="main-div">
 				<div id="features-top-2">
 					<div class="background">
-						<div class="main2"></div><img src="/images/grid.svg" alt="Grid background" loading="lazy"><div class="small5"></div><div class="small6"></div>
+						<div class="main3"></div><img src="/images/grid.svg" alt="Grid background" loading="lazy"><div class="small5"></div><div class="small6"></div>
 					</div>
 					<div class="block dark">
+						<div class="process">
+							<img class="react" src="/images/react.svg" alt="Rule nodes chain" width="1031" height="230" loading="lazy">
+							<img class="add-rule" src="/images/add-rule.svg" alt="Add rule node example" width="626" height="482" loading="lazy">
+						</div>
 						<div class="feature-des"><span class="phrase-heading">Process and React</span>
 							<p>Define data processing rule chains. Transform and normalize your device data. Raise alarms on incoming telemetry events, attribute updates, device inactivity and user actions.</p>
 							<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more about rule engine
@@ -96,14 +126,8 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 								<i class="fas fa-chevron-right arrow third"></i>
 							</a>
 						</div>
-						<div class="process">
-							<img class="react" src="/images/react.svg" alt="Rule nodes chain" width="1031" height="230" loading="lazy">
-							<div></div>
-							<img class="add-rule" src="/images/add-rule.svg" alt="Add rule node example" width="626" height="482" loading="lazy">
-						</div>
 					</div>
 					<div class="block micro">
-						<img src="/images/microservices.svg" alt="Microservices block schema" width="569" height="327" loading="lazy">
 						<div class="feature-des microservices"><h2>Microservices</h2>
 							<p>Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with microservices architecture. ThingsBoard also supports both cloud and on-premises deployments.</p>
 							<a class="read-more-button" href="/docs/reference/msa/">Read more about microservices
@@ -112,6 +136,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 								<i class="fas fa-chevron-right arrow third"></i>
 							</a>
 						</div>
+						<img src="/images/microservices.svg" alt="Microservices block schema" width="569" height="327" loading="lazy">
 					</div>
 				</div>
 			</div>
@@ -146,8 +171,52 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 						<a href="/products/thingsboard-pe/">See Professional Edition documentation</a>
 					</div>
 				</div>
-				<div class="row justify-content-center">
-					<a href="products/">View all products</a>
+			</div>
+		</section>
+
+		<section id="product-ecosystem">
+			<div class="main-div">
+				<div class="background">
+					<div class="product-ecosystem"></div>
+				</div>
+				<h3 class="product-ecosystem-title">Product ecosystem</h3>
+				<div class="product-ecosystem-list">
+					<div>
+						<h2>Edge</h2>
+						<h3>Edge computing</h3>
+						<img src="/images/thingsboard-e-icon.svg" alt="Thingsboard Edge" width="100" height="100" loading="lazy">
+						<a href="/products/thingsboard-edge/">Read more</a>
+					</div>
+					<div>
+						<h2>IoT Gateway</h2>
+						<h3>Connect legacy protocols</h3>
+						<img src="/images/gateway-icon.svg" alt="IoT Gateway" width="100" height="100" loading="lazy">
+						<a href="/docs/iot-gateway/what-is-iot-gateway/">Read more</a>
+					</div>
+					<div>
+						<h2>MQTT Broker</h2>
+						<h3>Connect MQTT clients</h3>
+						<img src="/images/tbmq-icon.svg" alt="MQTT Broker" width="100" height="100" loading="lazy">
+						<a href="/products/mqtt-broker/">Read more</a>
+					</div>
+					<div>
+						<h2>Trendz Analytics</h2>
+						<h3>Data analytics and Prediction</h3>
+						<img src="/images/trendz-icon.svg" alt="Trendz Analytics" width="100" height="100" loading="lazy">
+						<a href="/products/trendz/">Read more</a>
+					</div>
+					<div>
+						<h2>Mobile Application</h2>
+						<h3>IoT mobile product</h3>
+						<img src="/images/tb-mobile-icon.svg" alt="Mobile Application" width="100" height="100" loading="lazy">
+						<a href="/products/mobile/">Read more</a>
+					</div>
+					<div>
+						<h2>PE Mobile Application</h2>
+						<h3>Advanced IoT mobile product</h3>
+						<img src="/images/tb-pe-mobile-icon.svg" alt="PE Mobile Application" width="100" height="100" loading="lazy">
+						<a href="/products/mobile-pe/">Read more</a>
+					</div>
 				</div>
 			</div>
 		</section>
