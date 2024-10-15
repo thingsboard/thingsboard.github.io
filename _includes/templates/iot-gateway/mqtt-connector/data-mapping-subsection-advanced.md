@@ -1,7 +1,7 @@
-| **Parameter**  | **Default value** | **Description**                                                                                                           |
-|:---------------|:------------------|---------------------------------------------------------------------------------------------------------------------------|
-| topicFilter    | **sensor/data**   | Topic address for subscribing.                                                                                            |
-| QoS            | **0**             | An agreement between the message sender and receiver that defines the level of delivery guarantee for a specific message. |
+| **Parameter**  | **Default value** | **Description**                                                                                                                                                              |
+|:---------------|:------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| topicFilter    | **sensor/data**   | Topic address for subscribing.                                                                                                                                               |
+| QoS            | **1**             | An agreement between the message sender and receiver that defines the level of delivery guarantee for a specific message. (0-At most once, 1-At least once, 2-Exactly once)  |
 | ---            
 
 The **topicFilter** supports special symbols: '#' and '+', allowing to subscribe to multiple topics.
