@@ -95,7 +95,9 @@
         <div class="timeline-item" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
             <div class="timeline-label">
                 <span class="timeline-title {{ titleHoverScaleClass }}" style="color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}; --title-hover-scale: {{ titleHoverScale }}">{{ key[0] }}</span>
-                <span class="timeline-circle"></span>
+                <span class="timeline-circle">
+                    <i class="fas fa-chevron-down fa-lg" style="color: #305680"></i>
+                </span>
             </div>
             <ul class="timeline-text">
                 {% for data in key[1] %}

@@ -6,6 +6,7 @@
   .thingsboard-contacts
     display: flex
     justify-content: space-between
+    align-items: center
     gap: 20px
     flex-wrap: wrap
     li
@@ -17,3 +18,10 @@
       font-weight: 400
       font-size: 18px
       color: #000000c2
+
+@media screen and (max-width: 900px)
+.thingsboard-contacts-wrapper
+  .thingsboard-contacts
+    padding: 60px 20px
+    gap: 60px
+    flex-direction: column

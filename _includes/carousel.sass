@@ -340,16 +340,12 @@
         border: 2px solid #305680
         background: #FFF
         transition: ease-in-out 0.3s
-        &:before
-          content: ""
-          transition: ease-in-out 0.3s
+        .fas
           position: absolute
           top: 50%
           left: 50%
-          transform: translate(-50%, -50%) rotate(90deg)
-          width: 33px
-          height: 32px
-          background-image: url(/images/timeline-arrow.svg)
+          transform: translate(-50%, -50%)
+          transition: ease-in-out 0.4s
 
     .timeline-text
       align-self: center
@@ -361,8 +357,8 @@
   .timeline-item.active
     .timeline-circle
       background: #E6EAEF
-      &:before
-        transform: translate(-50%, -50%) rotate(270deg)
+      .fas
+        transform: translate(-50%, -50%) rotate(180deg)
     .timeline-text
       li
         opacity: 1

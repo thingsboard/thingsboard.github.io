@@ -108,7 +108,6 @@ notitle: "true"
         });
 
         searchedBlockObserver.observe(searchedBlock);
-
     }
 
     animatedBlocks.forEach(block => {

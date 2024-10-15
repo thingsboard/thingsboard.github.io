@@ -868,11 +868,61 @@ var tb = (function () {
 
 					if ($('.owl-carousel').hasClass('timeline')) {
 
-						const timelineLabel = document.querySelectorAll(".timeline-label");
+						const timeline = document.querySelector('.timeline')
+
+						const timelineItems = document.querySelectorAll('.timeline-item')
 
 						const timelineTitle = document.querySelectorAll(".timeline-title");
 
 						let maxTitleHeight = 0;
+
+						function searchForTimelineAnimation() {
+
+							const searchedBlockObserver = new IntersectionObserver(entries => {
+								entries.forEach(entry => {
+									if (entry.isIntersecting) {
+										Array.from(timelineItems).slice().reverse().forEach((item, index) => {
+											const timelineText = item.querySelector('.timeline-text');
+											const listItems = timelineText.querySelectorAll('li');
+
+											setTimeout(() => {
+												item.classList.add('active')
+
+												listItems.forEach((li, index) => {
+													li.style.transitionDelay = `${index * 0.2}s`;
+												});
+											}, index * 300)
+										})
+										searchedBlockObserver.unobserve(entry.target);
+									}
+								})
+							}, {
+								threshold: 1
+							});
+
+							searchedBlockObserver.observe(timeline);
+						}
+
+						searchForTimelineAnimation ();
+
+						Array.from(timelineItems).slice().reverse().forEach((item, index) => {
+							const timelineText = item.querySelector('.timeline-text');
+							const listItems = timelineText.querySelectorAll('li');
+
+							item.querySelector('.timeline-label').addEventListener('click', () => {
+								item.classList.toggle('active')
+
+								if (item.classList.contains('active')) {
+									listItems.forEach((li, index) => {
+										li.style.transitionDelay = `${index * 0.2}s`;
+									});
+								} else {
+									listItems.forEach((li, index) => {
+										li.style.transitionDelay = `${(listItems.length - 1 - index) * 0.1}s`;
+									});
+								}
+							})
+						})
 
 						timelineTitle.forEach((element) => {
 							const elementHeight = element.offsetHeight;
@@ -882,29 +932,6 @@ var tb = (function () {
 						});
 
 						document.documentElement.style.setProperty('--maxTitleHeight', `${maxTitleHeight}px`);
-
-						timelineLabel.forEach(label => {
-							label.addEventListener('click', function (){
-								const timelineItem = this.closest('.timeline-item');
-								if (timelineItem) {
-
-									timelineItem.classList.toggle('active');
-
-									const timelineText = timelineItem.querySelector('.timeline-text');
-									const listItems = timelineText.querySelectorAll('li');
-
-									if (timelineItem.classList.contains('active')) {
-										listItems.forEach((li, index) => {
-											li.style.transitionDelay = `${index * 0.2}s`;
-										});
-									} else {
-										listItems.forEach((li, index) => {
-											li.style.transitionDelay = `${(listItems.length - 1 - index) * 0.1}s`;
-										});
-									}
-								}
-							})
-						})
 					}
 
 					function setupMarginPadding($carousel, propertyValue) {
