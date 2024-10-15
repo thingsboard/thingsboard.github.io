@@ -22,7 +22,9 @@ Simplified workflow for saving predicted telemetry to ThingsBoard is the followi
 * Visualize predicted data in Table view
 * Configure background job that will run prediction model for new incoming telemetry
 * Save predicted dataset as a new telemetry to ThingsBoard
- 
+
+**Detailed step-by-step tutorial how to do this you can find in this article - [Sync to ThingsBoard](/docs/trendz/save-calculated-to-thingsboard/).**
+
 ## Next Steps
 
 {% assign currentGuide = "Prediction" %}{% include templates/trndz-guides-banner.md %}
