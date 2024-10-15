@@ -257,7 +257,7 @@ selfManagedPlan:
                                 <p>Become familiar with ThingsBoard features</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                €9
+                                €10
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -280,7 +280,7 @@ selfManagedPlan:
                                 <p>For PoCs and MVPs</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                €135
+                                €145
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -304,7 +304,7 @@ selfManagedPlan:
                                 <p>For upcoming IoT Unicorns</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                €360
+                                €385
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -328,7 +328,7 @@ selfManagedPlan:
                                 <p>For the fast grown, defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                €676
+                                €725
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
