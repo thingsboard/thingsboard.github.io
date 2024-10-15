@@ -60,6 +60,7 @@ notitle: "true"
             </a>
         </div>
     </div>
+    {% include thingsboard-contacts.html %}
 </div>
 
 <script type="text/javascript">
