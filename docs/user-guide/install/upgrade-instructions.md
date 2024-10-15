@@ -126,14 +126,14 @@ description: ThingsBoard IoT platform upgrade instructions
 </ul>
 
 
-## Upgrading to 3.8 {#upgrading-to-381}
+## Upgrading to 3.8.1 {#upgrading-to-381}
 
 ### Ubuntu/CentOS {#ubuntucentos-381}
 
 {% capture difference %}
 **NOTE:**
 <br>
-These upgrade steps are applicable for ThingsBoard version 3.8. In order to upgrade to 3.8.1 you need to [**upgrade to 3.8 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-38).
+These upgrade steps are applicable for ThingsBoard version 3.8.1. In order to upgrade to 3.8.1 you need to [**upgrade to 3.8 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-38).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -225,6 +225,17 @@ net start thingsboard
 These upgrade steps are applicable for ThingsBoard version 3.7. In order to upgrade to 3.8 you need to [**upgrade to 3.7 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-37).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+
+#### Prerequisites
+
+Make sure your PostgreSQL version supports the uuid-ossp extension.
+For <b>PostgreSQL 11 and below</b> the uuid-ossp extension is not included in the default PostgreSQL installation package.
+
+```text
+sudo apt-get install postgresql-contrib
+```
+{: .copy-code}
 
 #### ThingsBoard package download
 
