@@ -438,6 +438,12 @@
 			<td> HTTP maximum request processing timeout in milliseconds</td>
 		</tr>
 		<tr>
+			<td>transport.http.max_payload_size</td>
+			<td>HTTP_TRANSPORT_MAX_PAYLOAD_SIZE_LIMIT_CONFIGURATION</td>
+			<td>/api/v1/*/rpc/**=65536;/api/v1/**=52428800</td>
+			<td> Semi-colon-separated list of urlPattern=maxPayloadSize pairs that define max http request size for specified url pattern. After first match all other will be skipped</td>
+		</tr>
+		<tr>
 			<td>transport.sessions.inactivity_timeout</td>
 			<td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
 			<td>600000</td>

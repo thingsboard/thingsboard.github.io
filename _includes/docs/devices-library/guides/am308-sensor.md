@@ -2,7 +2,7 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://www.milesight.com/iot/product/lorawan-sensor/am319" %}
 {% assign thingsboardHost = "https://" | append: {{hostName}} %}
-{% assign officialManualLink = "https://resource.milesight-iot.com/milesight/document/am300-series-user-guide-en.pdf" %}
+{% assign officialManualLink = "https://resource.milesight.com/milesight/iot/document/am300-series-user-guide-en.pdf" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [AM300-series-user-guide](' | append: officialManualLink | append: '){: target="_blank"}

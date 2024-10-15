@@ -1,0 +1,433 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:tb="https://thingsboard.io/svg" width="100" height="100" version="1.1" viewBox="0 0 100 100"><tb:metadata xmlns=""><![CDATA[{
+  "title": "Fan MAIN",
+  "description": "Animated fan with buttons to turn the fan On and Off",
+  "searchTags": [
+    "hvac",
+    "ventilation"
+  ],
+  "widgetSizeX": 3,
+  "widgetSizeY": 3,
+  "stateRenderFunction": "",
+  "tags": [
+    {
+      "tag": "fan",
+      "stateRenderFunction": "var on = ctx.values.fanOn;\nvar speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;\nvar animation = ctx.api.cssAnimation(element);\n\nif (on) {\n    element.attr({fill: ctx.properties.fanOnColor});\n    if (!animation) {\n        animation = ctx.api.cssAnimate(element, 2000)\n                                      .rotate(360).loop().speed(speed / 60);\n    } else {\n        animation.speed(speed / 60).play();\n    }\n} else {\n    element.attr({fill: ctx.properties.fanOffColor});\n    if (animation) {\n        animation.pause();\n    }\n}\n",
+      "actions": {
+        "click": {
+          "actionFunction": "ctx.api.disable(element);\nctx.api.callAction(event, 'onFanClick', undefined, {\n  next: () => {\n     ctx.api.enable(element);\n  },\n  error: () => {\n     ctx.api.enable(element);\n  }  \n});"
+        }
+      }
+    },
+    {
+      "tag": "offButton",
+      "stateRenderFunction": "if(ctx.values.fanOn){\n  ctx.api.enable(element);\n} else {\n  ctx.api.disable(element);    \n}",
+      "actions": {
+        "click": {
+          "actionFunction": "ctx.api.disable(element);\nctx.api.callAction(event, 'offBtnClick', undefined, {\n  next: () => {\n     ctx.api.setValue('fanOn', false);\n  },\n  error: () => {\n     ctx.api.enable(element);\n  }  \n});"
+        }
+      }
+    },
+    {
+      "tag": "offButtonBackground",
+      "stateRenderFunction": "if(ctx.values.fanOn){\n  element.attr({fill: ctx.properties.offBtnColor});\n} else {\n  element.attr({fill: ctx.properties.offBtnDisabledColor});\n}\n",
+      "actions": null
+    },
+    {
+      "tag": "offButtonText",
+      "stateRenderFunction": "ctx.api.text(element, ctx.properties.offBtnLabel);",
+      "actions": null
+    },
+    {
+      "tag": "onButton",
+      "stateRenderFunction": "if(!ctx.values.fanOn){\n  ctx.api.enable(element);\n} else {\n  ctx.api.disable(element);    \n}",
+      "actions": {
+        "click": {
+          "actionFunction": "ctx.api.disable(element);\nctx.api.callAction(event, 'onBtnClick', undefined, {\n  next: () => {\n     ctx.api.setValue('fanOn', true);\n  },\n  error: () => {\n     ctx.api.enable(element);\n  }  \n});"
+        }
+      }
+    },
+    {
+      "tag": "onButtonBackground",
+      "stateRenderFunction": "if(ctx.values.fanOn){\n  element.attr({fill: ctx.properties.onBtnDisabledColor});\n} else {\n  element.attr({fill: ctx.properties.onBtnColor});\n}",
+      "actions": null
+    },
+    {
+      "tag": "onButtonText",
+      "stateRenderFunction": "ctx.api.text(element, ctx.properties.onBtnLabel);",
+      "actions": null
+    },
+    {
+      "tag": "rotationSpeedText",
+      "stateRenderFunction": "var show = ctx.properties.showRotationSpeed && ctx.values.fanOn;\nif (show) {\n  var speed = ctx.values.fanSpeed ? ctx.values.fanSpeed : 60;    \n  var font = ctx.properties.rotationSpeedFont;\n  var color = ctx.properties.rotationSpeedColor;  \n  var text = ctx.api.formatValue(speed, 0, ctx.properties.rotationSpeedUnit);\n  ctx.api.text(element, text);\n  ctx.api.font(element, font, color);\n  element.show();\n} else {\n  element.hide();\n}",
+      "actions": null
+    }
+  ],
+  "behavior": [
+    {
+      "id": "fanOn",
+      "name": "On/Off state",
+      "hint": null,
+      "group": null,
+      "type": "value",
+      "valueType": "BOOLEAN",
+      "trueLabel": "On",
+      "falseLabel": "Off",
+      "stateLabel": "On",
+      "defaultGetValueSettings": {
+        "action": "GET_ATTRIBUTE",
+        "defaultValue": false,
+        "executeRpc": {
+          "method": "getState",
+          "requestTimeout": 5000,
+          "requestPersistent": false,
+          "persistentPollingInterval": 1000
+        },
+        "getAttribute": {
+          "scope": "SHARED_SCOPE",
+          "key": "fanOn"
+        },
+        "getTimeSeries": {
+          "key": "state"
+        },
+        "dataToValue": {
+          "type": "NONE",
+          "dataToValueFunction": "/* Should return boolean value */\nreturn data;",
+          "compareToValue": true
+        }
+      },
+      "defaultSetValueSettings": null,
+      "defaultWidgetActionSettings": null
+    },
+    {
+      "id": "fanSpeed",
+      "name": "Fan Rotation Speed",
+      "hint": "Value in RPM",
+      "group": null,
+      "type": "value",
+      "valueType": "DOUBLE",
+      "trueLabel": null,
+      "falseLabel": null,
+      "stateLabel": null,
+      "defaultGetValueSettings": {
+        "action": "GET_TIME_SERIES",
+        "defaultValue": 0,
+        "executeRpc": {
+          "method": "getState",
+          "requestTimeout": 5000,
+          "requestPersistent": false,
+          "persistentPollingInterval": 1000
+        },
+        "getAttribute": {
+          "scope": null,
+          "key": "state"
+        },
+        "getTimeSeries": {
+          "key": "fanSpeed"
+        },
+        "dataToValue": {
+          "type": "NONE",
+          "dataToValueFunction": "/* Should return boolean value */\nreturn data;"
+        }
+      },
+      "defaultSetValueSettings": null,
+      "defaultWidgetActionSettings": null
+    },
+    {
+      "id": "onBtnClick",
+      "name": "On button click",
+      "hint": null,
+      "group": null,
+      "type": "action",
+      "valueType": "BOOLEAN",
+      "trueLabel": null,
+      "falseLabel": null,
+      "stateLabel": null,
+      "defaultGetValueSettings": null,
+      "defaultSetValueSettings": {
+        "action": "SET_ATTRIBUTE",
+        "executeRpc": {
+          "method": "setState",
+          "requestTimeout": 5000,
+          "requestPersistent": false,
+          "persistentPollingInterval": 1000
+        },
+        "setAttribute": {
+          "scope": "SHARED_SCOPE",
+          "key": "fanOn"
+        },
+        "putTimeSeries": {
+          "key": "state"
+        },
+        "valueToData": {
+          "type": "CONSTANT",
+          "constantValue": true,
+          "valueToDataFunction": "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+        }
+      },
+      "defaultWidgetActionSettings": null
+    },
+    {
+      "id": "offBtnClick",
+      "name": "Off button click",
+      "hint": null,
+      "group": null,
+      "type": "action",
+      "valueType": "BOOLEAN",
+      "trueLabel": null,
+      "falseLabel": null,
+      "stateLabel": null,
+      "defaultGetValueSettings": null,
+      "defaultSetValueSettings": {
+        "action": "SET_ATTRIBUTE",
+        "executeRpc": {
+          "method": "fanOn",
+          "requestTimeout": 5000,
+          "requestPersistent": false,
+          "persistentPollingInterval": 1000
+        },
+        "setAttribute": {
+          "scope": "SHARED_SCOPE",
+          "key": "fanOn"
+        },
+        "putTimeSeries": {
+          "key": "state"
+        },
+        "valueToData": {
+          "type": "CONSTANT",
+          "constantValue": false,
+          "valueToDataFunction": "/* Convert input boolean value to RPC parameters or attribute/time-series value */\nreturn value;"
+        }
+      },
+      "defaultWidgetActionSettings": null
+    },
+    {
+      "id": "onFanClick",
+      "name": "On fan click",
+      "hint": null,
+      "group": null,
+      "type": "widgetAction",
+      "valueType": "BOOLEAN",
+      "trueLabel": null,
+      "falseLabel": null,
+      "stateLabel": null,
+      "defaultGetValueSettings": null,
+      "defaultSetValueSettings": null,
+      "defaultWidgetActionSettings": {
+        "type": "doNothing",
+        "targetDashboardStateId": null,
+        "openRightLayout": false,
+        "setEntityId": false,
+        "stateEntityParamName": null
+      }
+    }
+  ],
+  "properties": [
+    {
+      "id": "onBtnLabel",
+      "name": "On button",
+      "type": "text",
+      "default": "On",
+      "required": true,
+      "subLabel": "",
+      "divider": true,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "medium-width",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "onBtnColor",
+      "name": "On button",
+      "type": "color",
+      "default": "#1C943E",
+      "required": null,
+      "subLabel": "Enabled",
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "onBtnDisabledColor",
+      "name": "On button",
+      "type": "color",
+      "default": "#696969",
+      "required": null,
+      "subLabel": "Disabled",
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "offBtnLabel",
+      "name": "Off button",
+      "type": "text",
+      "default": "Off",
+      "required": null,
+      "subLabel": "",
+      "divider": true,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "medium-width",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "offBtnColor",
+      "name": "Off button",
+      "type": "color",
+      "default": "#D12730",
+      "required": null,
+      "subLabel": "Enabled",
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "offBtnDisabledColor",
+      "name": "Off button",
+      "type": "color",
+      "default": "#696969",
+      "required": null,
+      "subLabel": "Disabled",
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "fanOnColor",
+      "name": "Fan colors",
+      "type": "color",
+      "default": "#1C943E",
+      "required": null,
+      "subLabel": "On",
+      "divider": true,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "fanOffColor",
+      "name": "Fan colors",
+      "type": "color",
+      "default": "#D12730",
+      "required": null,
+      "subLabel": "Off",
+      "divider": false,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "column",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "showRotationSpeed",
+      "name": "Rotation speed",
+      "type": "switch",
+      "default": true,
+      "required": null,
+      "subLabel": null,
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": null,
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "rotationSpeedUnit",
+      "name": "Rotation speed",
+      "type": "units",
+      "default": "RPM",
+      "required": null,
+      "subLabel": "Unit",
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": "showRotationSpeed",
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "rotationSpeedFont",
+      "name": "Rotation speed",
+      "type": "font",
+      "default": {
+        "size": 12,
+        "sizeUnit": "px",
+        "family": "Roboto",
+        "weight": "normal",
+        "style": "normal",
+        "lineHeight": "1"
+      },
+      "required": null,
+      "subLabel": "",
+      "divider": false,
+      "fieldSuffix": null,
+      "disableOnProperty": "showRotationSpeed",
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    },
+    {
+      "id": "rotationSpeedColor",
+      "name": "Rotation speed",
+      "type": "color",
+      "default": "#000",
+      "required": false,
+      "subLabel": "",
+      "divider": null,
+      "fieldSuffix": null,
+      "disableOnProperty": "showRotationSpeed",
+      "rowClass": "",
+      "fieldClass": "",
+      "min": null,
+      "max": null,
+      "step": null
+    }
+  ]
+}]]></tb:metadata>
+<rect width="100" height="100" rx="0" fill="none" stroke="#ccc" stroke-width="2"/><path tb:tag="fan" d="M66.868 25.074a1.752 1.752 0 0 0-.645-1.072c-2.852-2.356-6.806-2.198-11.864.476-.33-.33-.688-.61-1.088-.85 3.486-3.127 6.663-4.44 9.533-3.939.846.148 1.431-.821.907-1.502a16.52 16.52 0 0 0-4.079-3.787 1.753 1.753 0 0 0-1.213-.302c-3.683.35-6.368 3.258-8.054 8.725-.467 0-.917.056-1.37.169.254-4.677 1.573-7.852 3.956-9.526.703-.494.431-1.593-.42-1.704a16.519 16.519 0 0 0-5.563.206 1.752 1.752 0 0 0-1.071.645c-2.357 2.852-2.199 6.806.475 11.864-.33.33-.61.688-.85 1.088-3.127-3.486-4.44-6.664-3.939-9.533.148-.846-.821-1.432-1.501-.907a16.517 16.517 0 0 0-3.788 4.079 1.753 1.753 0 0 0-.302 1.213c.35 3.683 3.259 6.368 8.726 8.054 0 .467.055.916.168 1.37-4.676-.254-7.851-1.573-9.526-3.956-.493-.703-1.593-.431-1.704.42a16.519 16.519 0 0 0 .207 5.563c.093.453.288.777.644 1.071 2.852 2.357 6.807 2.199 11.865-.475.33.33.687.61 1.087.85-3.486 3.127-6.663 4.44-9.532 3.939-.846-.148-1.432.821-.908 1.501a16.52 16.52 0 0 0 4.08 3.788c.386.255.752.346 1.213.302 3.683-.35 6.367-3.259 8.053-8.725a5.58 5.58 0 0 0 1.37-.17c-.254 4.677-1.572 7.853-3.956 9.527-.702.494-.431 1.593.42 1.704 1.89.245 3.696.178 5.563-.207a1.752 1.752 0 0 0 1.072-.644c2.356-2.852 2.198-6.806-.476-11.865.33-.33.61-.687.85-1.087 3.127 3.486 4.44 6.663 3.939 9.533-.148.845.821 1.431 1.501.907a16.518 16.518 0 0 0 3.788-4.08c.255-.386.346-.752.302-1.213-.35-3.683-3.259-6.367-8.725-8.053 0-.467-.056-.917-.169-1.37 4.676.254 7.852 1.572 9.526 3.956.494.702 1.593.431 1.704-.42.245-1.89.178-3.696-.206-5.563zm-16.503 8.103a4.706 4.706 0 1 1 0-9.412 4.706 4.706 0 0 1 0 9.412z" fill="#7d081e"/><text tb:tag="rotationSpeedText" x="49.434" y="59.465" dominant-baseline="middle" fill="#000000" text-anchor="middle" xml:space="preserve"><tspan>30 RPM</tspan></text><g tb:tag="onButton" transform="matrix(1.61104 0 0 1.60957 -72.338 -20.652)">
+    <rect tb:tag="onButtonBackground" x="54.702" y="60.372" width="14.263" height="7.426" rx="1.5" fill="#12ed19" stroke="#000"/>
+    <text tb:tag="onButtonText" x="61.856" y="64.491" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.446" stroke-width=".741" text-anchor="middle" xml:space="preserve"><tspan stroke-width=".741">On</tspan></text>
+  </g><g tb:tag="offButton" transform="matrix(1.61253 0 0 1.61566 -58.441 -20.942)">
+    <rect tb:tag="offButtonBackground" x="74.367" y="60.311" width="14.263" height="7.426" rx="1.5" fill="#ed121f" stroke="#000"/>
+    <text tb:tag="offButtonText" x="81.366" y="64.518" dominant-baseline="middle" fill="#000000" font-family="Roboto" font-size="4.446" stroke-width=".741" text-anchor="middle" xml:space="preserve"><tspan stroke-width=".741">Off</tspan></text>
+  </g>
+</svg>

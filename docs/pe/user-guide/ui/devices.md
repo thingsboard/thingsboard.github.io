@@ -16,7 +16,7 @@ add-device:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
     3:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png

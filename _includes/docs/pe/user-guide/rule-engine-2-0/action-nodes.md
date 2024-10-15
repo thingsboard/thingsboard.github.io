@@ -165,30 +165,6 @@ Configuration:
 
 <br>
 
-## REST Call Reply Node
-
-{% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
-
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
-
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
-
-Sends reply to REST API call that was originally sent to rule engine.
-
-Expects messages with any message type. Forwards incoming message as a reply to REST API call sent to rule engine.
-
-Configuration:
-
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
-
-<br>
-
 ## Change Owner Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas
-title: Custom Menu
+title: Custom menu
 description:  
 ---
 

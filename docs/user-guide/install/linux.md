@@ -25,17 +25,17 @@ To run ThingsBoard and third-party components on a single machine you will need 
 
 #### Java
 
-ThingsBoard service is running on Java 17. 
+ThingsBoard service is running on Java 11. 
 The solution is actively tested on both [OpenJDK](http://openjdk.java.net/) and [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
 
-Follow this instructions to install OpenJDK 17:
+Follow this instructions to install OpenJDK 11:
 
 {% capture tabspec %}java-installation
 A,Ubuntu,shell,resources/java-ubuntu-installation.sh,/docs/user-guide/install/resources/java-ubuntu-installation.sh
 B,CentOS,shell,resources/java-centos-installation.sh,/docs/user-guide/install/resources/java-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}   
 
-Please don't forget to configure your operating system to use OpenJDK 17 by default. 
+Please don't forget to configure your operating system to use OpenJDK 11 by default. 
 See corresponding instructions:
 
  - [Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04#managing-java)

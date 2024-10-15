@@ -53,8 +53,8 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
     <tbody>
         <tr>
             <td>3.6.3+</td>
-            <td>1.1.0</td>
-            <td>1.1.0</td>
+            <td>1.3.0</td>
+            <td>1.3.0</td>
         </tr>        
         <tr>
             <td>3.6.2+</td>
@@ -95,8 +95,8 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
     <tbody>
         <tr>
             <td>3.6.3PE+</td>
-            <td>1.1.0</td>
-            <td>1.1.0</td>
+            <td>1.3.0</td>
+            <td>1.3.0</td>
         </tr>
         <tr>
             <td>3.6.2PE+</td>

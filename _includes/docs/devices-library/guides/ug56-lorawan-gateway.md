@@ -4,7 +4,7 @@
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- [UG56 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"}
+- [UG56 gateway user manual](https://resource.milesight.com/milesight/iot/document/ug56-user-guide-en.pdf){: target="_blank"}
 - [Network Server account](#configuration)
 '
  %}
@@ -35,7 +35,7 @@ To continue with this guide we will need the following:
 
 ## Gateway connection
 
-According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
+According to the [official user manual](https://resource.milesight.com/milesight/iot/document/ug56-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
 
 - Wireless connection:
   1. Enable Wireless Network Connection on your computer and search for access point "Gateway_******" to connect it.

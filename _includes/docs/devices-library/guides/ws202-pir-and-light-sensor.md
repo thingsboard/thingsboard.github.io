@@ -2,7 +2,7 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/sensor/ws202/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
-{% assign officialManualLink = "https://resource.milesight-iot.com/milesight/document/ws202-user-guide-en.pdf" %}
+{% assign officialManualLink = "https://resource.milesight.com/milesight/iot/document/ws202-user-guide-en.pdf" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [WS202 PIR & Light Sensor user manual](' | append: officialManualLink | append: '){: target="_blank"}
