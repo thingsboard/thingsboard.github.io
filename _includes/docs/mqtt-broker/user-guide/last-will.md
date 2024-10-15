@@ -4,16 +4,18 @@
 
 The **Last Will** feature in MQTT allows clients to notify others if they disconnect unexpectedly, giving a way to trigger actions like switching to backup systems or alerting users.
 
-The term "Last Will," like a will in the real world, speaks for itself. In the real world, a last will or testament is a legal document that specifies a person's wishes after they pass away. It usually includes instructions for distributing assets, taking care of dependents, and other final wishes.
+The term "Last Will", like a will in the real world, speaks for itself. In the real world, a last will or testament is a legal document that specifies a person's wishes after they pass away. It usually includes instructions for distributing assets, taking care of dependents, and other final wishes.
 
 Here are examples from IoT. In a **smart home** setup, devices such as thermostats and security cameras communicate with a central hub. If a security camera goes offline unexpectedly, a Last Will message could trigger an alert to the homeowner or even activate a backup system, such as turning on lights or alarms. 
 Similarly, in **agriculture**, devices monitor field conditions to optimize irrigation. If a key sensor disconnects, the Last Will message can notify the farmer, allowing them to take preventive actions.
 
 ### How the Last Will works
+
 1. The Last Will message and its [parameters](/docs/mqtt-broker/user-guide/last-will/#parameters-of-the-last-will) are set when a client connects to the broker, in the `CONNECT` packet. The broker stores a Last Will message data in the session state.
 2. In case happens unexpected (ungraceful) disconnection, the Last Will message is sent to the clients that are subscribed to the Will Topic.
 
 ### Ungraceful disconnection - publish
+
 Ungraceful disconnection happens when a client disconnects unexpectedly due to reasons such as network failure, a crash, or power loss. 
 In this case, the broker does not receive the `DISCONNECT` message, and it assumes the client has disconnected abnormally.
 
@@ -24,14 +26,16 @@ Ungraceful situations, according to the official [documentation](https://docs.oa
 * The **server** closes the connection without receiving a `DISCONNECT` packet with **Reason Code 0x00** (Normal disconnection).
 
 ### Graceful disconnection - do not publish
+
 Graceful disconnection occurs when a client sends a `DISCONNECT` message before terminating the connection.
-This informs the broker that the client is intentionally disconnecting, and as a result, the Last Will message is not triggered. The client is effectively saying, "I'm leaving on purpose, and everything is fine."
+This informs the broker that the client is intentionally disconnecting, and as a result, the Last Will message is not triggered. The client is effectively saying, "I'm leaving on purpose, and everything is fine".
 
 The Last Will message will be removed from the session state when:
 * **After the Last Will message is Published**. Once the broker detects an unexpected disconnection and successfully publishes the Last Will message to the clients subscribed to the Will Topic, the Last Will message is removed from the session.
 * **Normal Disconnection**. If the broker receives a `DISCONNECT` packet with Reason Code 0x00 (Normal disconnection) from the client, the broker will not publish the Last Will message, and it will be removed from the session.
 
 ### Parameters of the Last Will
+
 The feature “Last Will and Testament” was introduced in [MQTT 3.1](https://public.dhe.ibm.com/software/dw/webservices/ws-mqtt/mqtt-v3r1.html#connect) with the following parameters:
 * **Will Topic**. The MQTT topic where the Last Will message will be published.
 * **Will Message**. The content of the Last Will. This can be an empty message.
@@ -54,21 +58,8 @@ Unsure how to set up a session with the Last Will? Check out the WebSocket Clien
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Clean session and Last Will
-A Session State in MQTT mains information about the client’s subscriptions, unacknowledged messages, and the Last Will message.
-The session's lifespan is controlled by two parameters: Clean Start and Session Expiry Interval. 
-
-Here are a few combinations of using those params:
-* **Clean Start = 1**. 
-  * The broker creates a new session and discards any previously stored session data, including any existing Last Will message. This means that if the client had set a Last Will message in a previous session, it will no longer be valid, and a new one must be defined if the client wants to have a Last Will for this new session.
-
-* **Clean Start = 0**, **Session Expiry Interval = 0**. 
-  * The session expires immediately after disconnecting, and the client must redefine the Last Will upon reconnecting.
-
-* **Clean Start = 0**, **Session Expiry Interval > 0**. 
-  * The session state is preserved, and the Last Will remains valid until the session expiry interval elapses.
-
 ### Last Will with delay
+
 The **Will Delay Interval** specifies how long the broker needs to wait before publishing the Last Will message after an ungraceful disconnection. 
 This feature allows clients to reconnect within the delay interval without triggering the Last Will message, which **can be useful in situations where brief network interruptions occur**.
 
@@ -76,27 +67,34 @@ If a client disconnects unexpectedly and doesn't reconnect before the Will Delay
 If the client reconnects within the delay, the Last Will message is discarded, as the client is considered back online.
 
 Example with Will Delay Interval:
-* **Clean Start = 0**
+
+* **Clean Start = 0 (false)**
 * **Session Expiry Interval = 1 hour**
 * **Will Delay Interval = 2 minutes**
 
 In this case:
+
 * If the client disconnects unexpectedly, the session will remain active for up to 1 hour, and the broker will wait for 2 minutes before sending the Last Will message. 
 * If the client reconnects within 2 minutes, the Last Will message will not be published, and the session will continue.
 * If the client reconnects after 2 minutes but within 1 hour, the session will resume, but the Last Will message may have already been sent.
-* If the client does not reconnect within the session expiry time (1 hour), the session will be discarded, along with any pending Last Will message.
+* If the client does not reconnect within the session expiry time (1 hour), the session will be discarded. However, the Last Will message should have already been sent after the 2-minute delay following the unexpected disconnection.
+
+**Note**: if the Session Expiry Interval is shorter than the Will Delay Interval, the Last Will message will be delivered when the session expires.
 
 ### Last Will as retained message
+
 The **Retain Flag** is used to keep the Last Will message on the broker, so that new subscribers can receive it immediately upon subscribing to the relevant topic, even if the message was published before they subscribed.
 
 If a client disconnects unexpectedly, its Last Will message indicates an important state change. By using the **Retain Flag = true**, this message will be **stored** by the broker and **sent to any future subscribers** of the topic. 
 For example, if a new device joins a network after a client disconnects, it will still receive the "offline" or "disconnected" Last Will message.
 
 ### Last Will guide with TBMQ WebSocket Client
-In this guide, we will demonstrate how the Last Will feature works in the ThingsBoard MQTT broker using a WebSocket client. 
+
+In this guide, we will demonstrate how the Last Will feature works in the TBMQ using a WebSocket client. 
 By simulating an ungraceful disconnection, you'll see how the broker publishes the Last Will message to inform other connected clients.
 
 #### Step 1. Add client "Security Camera"
+
 To add a new client **Security Camera**, which will publish a Last Will message, follow these steps:
 
 1. Navigate to the _WebSocket Client_ page and click on _Select Connection_ icon.
@@ -107,6 +105,7 @@ To add a new client **Security Camera**, which will publish a Last Will message,
 {% include images-gallery.html imageCollection="ws-connection-add-camera" %}
 
 #### Step 2. Add client "Security Hub"
+
 Now let's add another connection, **Security Hub**, which will receive the Last Will message from the **Security Camera**:
 
 1. Once again, click on the _Add new connection_ button.
@@ -117,6 +116,7 @@ Now let's add another connection, **Security Hub**, which will receive the Last 
 {% include images-gallery.html imageCollection="ws-connection-add-hub" %}
 
 #### Step 3. Trigger an ungraceful disconnection
+
 To publish the Last Will message, the connection between the client and the broker must be terminated ungracefully. To do this in TBMQ, follow these steps:
 
 1. Click on _Select Connection_ icon and open the _Security Camera_ session details window.

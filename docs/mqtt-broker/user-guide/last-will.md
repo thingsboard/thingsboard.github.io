@@ -15,7 +15,7 @@ ws-connection-add-camera:
     title: 'Set name as Security Camera. Click on the Last Will section.'
   3:
     image: /images/mqtt-broker/user-guide/ui/ws-connection-add-camera-4.png
-    title: 'Set Last Will topic (`sensors/lastwill`), payload type (`String`), payload message (`OFF`). Click "Connect".' 
+    title: 'Set Last Will topic ("sensors/lastwill"), payload type ("String"), payload message ("OFF"). Click "Connect".' 
 
 ws-connection-add-hub:
   0:
