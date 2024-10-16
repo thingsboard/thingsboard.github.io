@@ -54,9 +54,7 @@ notitle: "true"
             {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" columnsPerRowArray = "4,6" %}
             <a class="join-link" href="/careers/">
                 <span>Join our team</span>
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.5 6V8H15.09L5.5 17.59L6.91 19L16.5 9.41V18H18.5V6H6.5Z" fill="white"/>
-                </svg>
+                <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     </div>

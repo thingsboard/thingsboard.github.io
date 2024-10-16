@@ -138,10 +138,10 @@
       margin: 120px auto 0
       display: flex
       align-items: center
-      justify-content: center
+      justify-content: space-between
       gap: 4px
       border-radius: 6px
-      padding: 10px 0px
+      padding: 10px 21.5px
       width: 200px
       border: 2px solid #305680
       background: #305680
@@ -150,14 +150,15 @@
         font-size: 18px
         font-weight: 400
         color: #FFF
+      .fas
+        font-size: 20px
+        color: #FFF
+        transform: rotate(-45deg)
       &:hover
         text-decoration: none
         background: #FFF
-        span
+        span, .fas
           color: #305680
-        svg
-          path
-            fill: #305680
 
   .company-values-wrapper
     max-width: 1920px

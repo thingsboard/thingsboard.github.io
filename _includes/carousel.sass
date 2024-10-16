@@ -270,14 +270,28 @@
   .owl-nav
     button.owl-prev, button.owl-next
       filter: unset
-      width: 61px
+      width: 60px
       height: 60px
-      transform-origin: center center
-      background-image: url(/images/timeline-arrow-nav.svg)
       border-radius: 100px
       transition: ease-in-out 0.3s
+      &:before
+        content: "\f078"
+        font-family: "Font Awesome 5 Free"
+        position: absolute
+        top: 50%
+        left: 32px
+        transform: translate(-50%, -50%) rotate(-90deg)
+        font-weight: 900
+        font-size: 40px
+        color: #305680
+        transition: ease-in-out 0.3s
       &:hover
         background-color: #E6EAEF
+        &:before
+          content: "\f078"
+          color: #7093b9
+
+
 
 .owl-carousel.owl-theme.usecase-carousel.timeline
   position: relative
