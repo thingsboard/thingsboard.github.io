@@ -50,7 +50,7 @@
     function initTabs() {
         $(function(){
             $("#tabs").tabs().removeClass("bubble-tabs-hidden").addClass("bubble-tabs-loaded");
-            searchForAnimateBubbleTabs(".bubble-tabs", 0.1);
+            searchForAnimateBubbleTabs(".bubble-tabs", Number(getComputedStyle($("#tabs")[0]).getPropertyValue('--bubble-tabs-animation')));
         });
     }
     function searchForAnimateBubbleTabs (classToSearch, threshold) {

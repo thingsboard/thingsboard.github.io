@@ -74,7 +74,6 @@ notitle: "true"
         {
             classToSearch: ".company-hero-carousel",
             classToAdd: "company-hero-carousel-animation",
-            threshold: 0.1,
             carousel: true
         },
         {
@@ -103,54 +102,65 @@ notitle: "true"
 
     function searchForAnimation(block) {
         const searchedBlock = document.querySelector(block.classToSearch);
-    
-        const searchedBlockObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (block.carousel) {
-                        const mutationObserver = new MutationObserver((mutationsList, observer) => {
-                            for (let mutation of mutationsList) {
-                                if (mutation.type === 'childList') {
-                                    const carouselStatus = entry.target.querySelector('.owl-loaded');
-                                    if (carouselStatus) {
-                                        entry.target.classList.add(block.classToAdd);
-                                        observer.disconnect();
-                                        searchedBlockObserver.unobserve(entry.target);
-                                    }
-                                }
-                            }
-                        });
 
-                        mutationObserver.observe(entry.target, {
-                            childList: true,
-                            subtree: true
-                        });
-    
-                        const carouselStatus = entry.target.querySelector('.owl-loaded');
+        function showCarouselIfLoaded () {
+            const mutationObserver = new MutationObserver((mutationsList, observer) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        const carouselStatus = searchedBlock.querySelector('.owl-loaded');
                         if (carouselStatus) {
-                            entry.target.classList.add(block.classToAdd);
-                            searchedBlockObserver.unobserve(entry.target);
+                            searchedBlock.classList.add(block.classToAdd);
+                            observer.disconnect();
                         }
-    
-                    } else {
-                        entry.target.classList.add(block.classToAdd);
-                        searchedBlockObserver.unobserve(entry.target);
                     }
                 }
             });
-        }, {
-            threshold: block.threshold
-        });
-    
-        if (searchedBlock) {
-            searchedBlockObserver.observe(searchedBlock);
+
+            mutationObserver.observe(searchedBlock, {
+                childList: true,
+                subtree: true
+            });
+
+            const carouselStatus = searchedBlock.querySelector('.owl-loaded');
+
+            if (carouselStatus) {
+                searchedBlock.classList.add(block.classToAdd);
+                mutationObserver.disconnect();
+            }
         }
+
+        function showBlockByThreshold () {
+            const searchedBlockObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (block.carousel) {
+                            showCarouselIfLoaded();
+                        } else {
+                            entry.target.classList.add(block.classToAdd);
+                        }
+                        searchedBlockObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: block.threshold
+            });
+
+            searchedBlockObserver.observe(searchedBlock);
+
+        }
+         
+        if (block.threshold) {
+            showBlockByThreshold();
+        } else if (block.carousel) {
+            showCarouselIfLoaded();
+        }
+
     }
-    
-    
+
     animatedBlocks.forEach(block => {
         searchForAnimation(block);
     });
+
 
 
 </script>

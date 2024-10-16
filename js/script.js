@@ -974,7 +974,7 @@ var tb = (function () {
 								autoplay: autoPlayStatus($carousel),
 								autoplayTimeout: $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
 								autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
-								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
+								autoplayHoverPause: false,
 								slideTransition: 'linear',
 								nav: $carousel[0].classList.contains("timeline"),
 								responsiveBaseElement: 'body',
@@ -1013,9 +1013,7 @@ var tb = (function () {
 						});
 					}
 
-					$(window).on('load', function() {
-						initializeCarousel();
-					});
+					initializeCarousel();
 
 					$(window).resize(function() {
 						$('.owl-carousel').each(function() {
