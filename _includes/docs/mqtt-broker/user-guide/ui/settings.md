@@ -90,7 +90,7 @@ If set to true, you will see logs for the following [MQTT.js](https://github.com
   10. **Offline**. Triggered when the client goes offline.
   11. **Outgoing empty**. Triggered when all outgoing messages have been sent.
 
-* **Maximum messages in WebSocket Client table** setting allows you to control the limit of messages per WebSocket connection to be persisted in the browser's local storage.
+* **Maximum messages in WebSocket Client table** setting allows you to control the limit of messages per WebSocket connection to be persisted in the browser's memory.
 
 ### Mail server settings
 
