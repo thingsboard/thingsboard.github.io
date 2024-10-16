@@ -26,6 +26,9 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 
 #define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}0{% else %}1{% endif %}
 
+#include <Server_Side_RPC.h>
+#include <Attribute_Request.h>
+#include <Shared_Attribute_Update.h>
 #include <ThingsBoard.h>
 #include <esp_heap_caps.h>
 
@@ -55,7 +58,9 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Maximum amount of attributs we can request or subscribe, has to be set both in the ThingsBoard template list and Attribute_Request_Callback template list
 // and should be the same as the amount of variables in the passed array. If it is less not all variables will be requested or subscribed
-constexpr size_t MAX_ATTRIBUTES = 2U;
+constexpr size_t MAX_ATTRIBUTES = 3U;
+
+constexpr uint64_t REQUEST_TIMEOUT_MICROSECONDS = 5000U * 1000U;
 
 // Definitions for camera pins
 #define PWDN_GPIO_NUM -1
@@ -75,19 +80,32 @@ constexpr size_t MAX_ATTRIBUTES = 2U;
 #define HREF_GPIO_NUM 26
 #define PCLK_GPIO_NUM 21
 
-// Initialize underlying client, used to establish a connection
-WiFiClient wifiClient;
-// Initalize the Mqtt client instance
-Arduino_MQTT_Client mqttClient(wifiClient);
-// Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoardSized<Default_Fields_Amount, Default_Subscriptions_Amount, MAX_ATTRIBUTES> tb(mqttClient, MAX_MESSAGE_SIZE);
-
 // Attribute names for attribute request and attribute updates functionality
 
 constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
 constexpr char LED_STATE_ATTR[] = "ledState";
 constexpr char PICTURE_ATTR[] = "photo";
+
+// Initialize underlying client, used to establish a connection
+WiFiClient wifiClient;
+
+// Initalize the Mqtt client instance
+Arduino_MQTT_Client mqttClient(wifiClient);
+
+// Initialize used apis
+Server_Side_RPC<3U, 5U> rpc;
+Attribute_Request<2U, MAX_ATTRIBUTES> attr_request;
+Shared_Attribute_Update<3U, MAX_ATTRIBUTES> shared_update;
+
+const std::array<IAPI_Implementation*, 3U> apis = {
+    &rpc,
+    &attr_request,
+    &shared_update
+};
+
+// Initialize ThingsBoard instance with the maximum needed buffer size, stack size and the apis we want to use
+ThingsBoard tb(mqttClient, MAX_MESSAGE_SIZE, Default_Max_Stack_Size, apis);
 
 // handle led state and mode changes
 volatile bool attributesChanged = false;
@@ -311,9 +329,14 @@ void processClientAttributes(const JsonObjectConst &data) {
   }
 }
 
+// Attribute request did not receive a response in the expected amount of microseconds 
+void requestTimedOut() {
+  Serial.printf("Attribute request timed out did not receive a response in (%llu) microseconds. Ensure client is connected to the MQTT broker and that the keys actually exist on the target device\n", REQUEST_TIMEOUT_MICROSECONDS);
+}
+
 const Shared_Attribute_Callback<MAX_ATTRIBUTES> attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
-const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
-const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, SHARED_ATTRIBUTES_LIST);
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(&processClientAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, CLIENT_ATTRIBUTES_LIST);
 
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
@@ -332,10 +355,10 @@ void setup() {
   delay(1000);
   InitWiFi();
   tb.connect(THINGSBOARD_SERVER, TOKEN, THINGSBOARD_PORT);
-  tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend());
-  tb.Shared_Attributes_Subscribe(attributes_callback);
-  tb.Shared_Attributes_Request(attribute_shared_request_callback);
-  tb.Client_Attributes_Request(attribute_client_request_callback);
+  rpc.RPC_Subscribe(callbacks.cbegin(), callbacks.cend());
+  shared_update.Shared_Attributes_Subscribe(attributes_callback);
+  attr_request.Shared_Attributes_Request(attribute_shared_request_callback);
+  attr_request.Client_Attributes_Request(attribute_client_request_callback);
 }
 
 void loop() {
@@ -363,12 +386,12 @@ void loop() {
   // Perform a subscription. All consequent data processing will happen in
   // processSetLedState() and processSetLedMode() functions,
   // as denoted by callbacks array.
-  if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
+  if (!rpc.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
     Serial.println("Failed to subscribe for RPC");
     return;
   }
 
-  if (!tb.Shared_Attributes_Subscribe(attributes_callback)) {
+  if (!shared_update.Shared_Attributes_Subscribe(attributes_callback)) {
     Serial.println("Failed to subscribe for shared attribute updates");
     return;
   }
@@ -376,13 +399,13 @@ void loop() {
   Serial.println("Subscribe done");
 
   // Request current states of shared attributes
-  if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
+  if (!attr_request.Shared_Attributes_Request(attribute_shared_request_callback)) {
     Serial.println("Failed to request for shared attributes");
     return;
   }
 
   // Request current states of client attributes
-  if (!tb.Client_Attributes_Request(attribute_client_request_callback)) {
+  if (!attr_request.Client_Attributes_Request(attribute_client_request_callback)) {
     Serial.println("Failed to request for client attributes");
     return;
   }
@@ -428,6 +451,7 @@ void loop() {
 
   tb.loop();
 }
+
 ```
 {:.copy-code.expandable-20}
 

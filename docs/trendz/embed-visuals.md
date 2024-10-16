@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Add Trandz widgets on dashboard
-description: Add Trandz widgets on dashboard 
+title: Add Trendz widgets on dashboard
+description: Add Trendz widgets on dashboard 
 
 ---
 
