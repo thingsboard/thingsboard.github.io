@@ -12,7 +12,7 @@ services:
   tb-web-report:
     container_name: tb-web-report
     restart: always
-    image: "thingsboard/tb-pe-web-report:3.8.0PE"
+    image: "thingsboard/tb-pe-web-report:{{ site.release.pe_full_ver }}"
     ports:
       - "8383:8383"
     env_file:
@@ -36,6 +36,7 @@ DASHBOARD_LOAD_WAIT_TIME=3000
 USE_NEW_PAGE_FOR_REPORT=true
 EOT
 ```
+{: .copy-code}
 
 Start WebReport service in docker
 ```bash
