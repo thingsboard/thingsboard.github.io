@@ -29,7 +29,7 @@ Install the package.
 ```bash
 # Install packages
 sudo dnf -qy module disable postgresql
-sudo dnf -y install postgresql15 postgresql15-server
+sudo dnf -y install postgresql15 postgresql15-server postgresql15-contrib
 # Initialize your PostgreSQL DB
 sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
 sudo systemctl start postgresql-15
