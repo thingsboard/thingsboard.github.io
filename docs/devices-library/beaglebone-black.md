@@ -12,4 +12,5 @@ deviceImageFileName: beagleboneblack.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/beaglebone-black.md %}

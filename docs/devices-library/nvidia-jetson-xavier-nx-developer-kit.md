@@ -13,4 +13,5 @@ deviceImageFileName: nvidia-jetson-xavier-nx-developer-kit.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/nvidia-jetson-xavier-nx-developer-kit.md %}

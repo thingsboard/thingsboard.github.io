@@ -5,19 +5,19 @@ npm install coap-cli -g
 ```
 {: .copy-code}
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
 Replace $ACCESS_TOKEN with corresponding value.
 
 ```bash
-echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
+echo -n '{"temperature": 25}' | coap post coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
 For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/ABC123/telemetry
+echo -n '{"temperature": 25}' | coap post coap://{{coapHostName}}/api/v1/ABC123/telemetry
 ```
 {: .copy-code}
 

@@ -296,4 +296,5 @@ delete-widget-2:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library.md %}

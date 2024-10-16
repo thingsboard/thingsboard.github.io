@@ -16,7 +16,7 @@ Execute the following command to run the integration:
 
 ```bash
 docker run -it -p 5683:5683/udp -v ~/.tb-pe-coap-integration-logs:/var/log/tb-coap-integration  \
--e "RPC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
+-e "RPC_HOST={{hostName}}" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
 --name my-tb-pe-coap-integration --restart always thingsboard/tb-pe-coap-integration:{{ site.release.pe_full_ver }}
 ```
@@ -24,7 +24,7 @@ docker run -it -p 5683:5683/udp -v ~/.tb-pe-coap-integration-logs:/var/log/tb-co
 
 Where: 
     
-- `thingsboard.cloud` - is the host name of your ThingsBoard PE instance;
+- `{{hostName}}` - is the host name of your ThingsBoard PE instance;
 - `9090` - is the port of your ThingsBoard PE instance. It is configured in thingsboard.yml using INTEGRATIONS_RPC_PORT env variable;    
 - `YOUR_ROUTING_KEY` - placeholder for your **integration key** obtained on [create remote integration in ThingsBoard](#create-remote-integration-in-thingsboard);
 - `YOUR_SECRET` - placeholder for your **integration secret** obtained on [create remote integration in ThingsBoard](#create-remote-integration-in-thingsboard);

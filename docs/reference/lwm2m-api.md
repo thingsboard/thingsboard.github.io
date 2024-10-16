@@ -132,4 +132,5 @@ object-attributes:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/lwm2m-api.md %}

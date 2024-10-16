@@ -7,4 +7,5 @@ description: ThingsBoard key features and advantages for the rapid development o
 redirect_from: "/docs/user-guide/overview/"
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/getting-started-guides/what-is-thingsboard.md %}

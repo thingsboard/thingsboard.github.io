@@ -12,7 +12,11 @@
         {% assign githubLink = "https://github.com/thingsboard/thingsboard-gateway" %}
         {% assign githubLabel = "Star thingsboard/thingsboard-gateway on GitHub" %}
     {% endif %}
-    {% assign foundProduct = site.data.products | where: "tag", docsTag %}
+    {% if docsTag == "paas-eu" %}
+        {% assign foundProduct = site.data.products | where: "tag", "paas" %}
+    {% else %}
+        {% assign foundProduct = site.data.products | where: "tag", docsTag %}
+    {% endif %}
     {% assign productInfo = foundProduct[0] %}
     {% unless page.customTitle == "true" %}
         {% assign customTitle = title | append: " | " %}
@@ -47,7 +51,7 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
-    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' or page.url == '/products/thingsboard-pe/install/' %}
+    {% elsif page.url contains '/docs/' or cssTag == 'docs' %}
     <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/products/' %}
     <link href="/css/products.css" rel="stylesheet">
@@ -55,7 +59,7 @@
     <link href="/css/industries.css" rel="stylesheet">
     {% elsif page.url contains '/partners/' %}
     <link href="/css/partners.css" rel="stylesheet">
-    {% elsif page.url contains '/use-cases/' or page.url == '/smart-energy/' or page.url == '/smart-farming/' or page.url == '/fleet-tracking/' or page.url == '/smart-metering/' or page.url == '/iot-use-cases/' %}
+    {% elsif page.url contains '/use-cases/' or cssTag == 'use-case' %}
     <link href="/css/use-cases.css" rel="stylesheet">
     {% elsif page.url == '/pricing/' %}
     <link href="/css/pricing.css" rel="stylesheet">

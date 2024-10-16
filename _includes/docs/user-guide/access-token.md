@@ -22,14 +22,14 @@ Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard insta
 #### MQTTS (MQTT over SSL)
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
-{% if docsPrefix != 'paas/' %}
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud]({{httpsHostName}}/signup).
+{% unless docsPrefix contains "paas/" %}
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
-{% endif %}
+{% endunless %}
 
 Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
 Save the CA root certificate to your working directory as "**ca-root.pem**".
-An example of CA root certificate for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+An example of CA root certificate for *{{mqttHostName}}* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
 
 Now you may use the *ca-root.pem* to setup secure connection to your ThingsBoard instance (*YOUR_TB_HOST*) and Access Token (*YOUR_ACCESS_TOKEN*) to authenticate the device to upload telemetry:
 
