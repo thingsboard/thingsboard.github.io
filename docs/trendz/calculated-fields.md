@@ -42,7 +42,7 @@ The Function tab is where you configure parameters that affect data calculations
 
 ***AGGREGATION:*** Method for data aggregation, including options like AVG, SUM, LATEST, MIN, MAX, COUNT, UNIQ, etc.
 
-Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
+Aggregation function applied to a grouped dataset. Find more details about [Aggregation in this article](/docs/trendz/telemetry-aggregation/)
 
 ***Fill Gap:*** Handles missing telemetry data with different methods, which are selected in the TIME UNIT and STRATEGY settings.
 
@@ -51,7 +51,7 @@ Aggregation function applied to a grouped dataset. Find more details about [Grou
 * *Dynamic Strategy:* Loads new data since the last calculation.
 * *Fixed Strategy:* Uses a predefined time range for each execution.
 
-For details on writing functions for [Calculated Fields](/docs/trendz/calculated-fields/), refer to the corresponding documentation section.
+For details on writing functions for [Calculated Fields](/docs/trendz/calculated-fields/#examples), refer to the corresponding documentation section.
 Choose to work with aggregated or raw data by enabling [batch mode](/docs/trendz/batch-calculated-fields/)  as needed.
 
 ![image](https://img.thingsboard.io/trendz/calculated-function-tab.png)

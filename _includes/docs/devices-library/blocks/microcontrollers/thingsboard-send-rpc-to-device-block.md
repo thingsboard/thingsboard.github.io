@@ -18,6 +18,25 @@ Please note that you can change the LED state only if blinking mode is disabled.
 
 In the code example we have functionality to handle [RPC commands](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc).  
 To get ability to control the device we have used the following parts of the code:  
+
+- Connecting modules to use API functionality:  
+
+```cpp
+...
+#include <Server_Side_RPC.h>
+...
+Server_Side_RPC<..., ...> rpc;
+...
+
+const std::array<IAPI_Implementation*, ...> apis = {
+    ...
+    &rpc,
+    ...
+    }
+...
+```
+To use RPC we need to include related module and define it as a part of used API.  
+
 - Callback for RPC requests:  
     
 ```cpp
@@ -67,7 +86,7 @@ const std::array<RPC_Callback, 1U> callbacks = {
     
 ```cpp
 ...
-    if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
+    if (!rpc.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
       Serial.println("Failed to subscribe for RPC");
       return;
     }

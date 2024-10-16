@@ -137,7 +137,7 @@ Commonly, states are used for calculating how much time device/asset spent in di
 it is recommended you use **none()** aggregation - in this case system will process only raw telemetry to define is device inside 
 defined state or not.
 
-Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
+Aggregation function applied to a grouped dataset. Find more details about [Aggregation in this article](/docs/trendz/telemetry-aggregation/)
 
 ### Save and reuse state fields
 

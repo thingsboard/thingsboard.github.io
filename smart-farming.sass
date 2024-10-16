@@ -1,0 +1,851 @@
+$modal-z-index: 13000
+$step1: 360px
+$step2: 671px
+$step3: 999px
+$step4: 1279px
+$step5: 1439px
+$step6: 1919px
+$verticalStep1: 450px
+$modal-background-color: rgba(0, 0, 0, 0.4)
+$modal-content-background-color: #fefefe
+$modal-content-border: 1px solid #888
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
+$form-element-label-color: rgba(0, 0, 0, 0.54)
+$form-control-border: 1px solid rgba(0, 0, 0, 0.12)
+$button-background-color: #2A7DEC
+$font-style-normal: normal
+@mixin box-shadow 
+    box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0.00), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.10)
+@mixin big-margin
+    margin-bottom: 185px
+@mixin middle-margin
+    margin-bottom: 100px
+@mixin small-margin
+    margin-bottom: 60px
+@mixin text-style
+    font-style: normal
+    text-align: left
+
+#smart-farming
+    position: relative
+    .smart-farming-content
+        overflow-x: hidden
+    footer
+        position: relative
+.smart-farm-banner-section
+    display: flex
+    justify-content: flex-end
+    padding: 0px
+    @include middle-margin
+    .smart-farm-banner
+        max-width: 1786px
+        img 
+            width: 100%
+            height: 835px
+
+        .smart-farm-banner-container
+            position: absolute
+            padding: 85px 115px
+            color: #212529 
+
+            h1
+                font-size: 90px
+                font-weight: 600
+                line-height: 130px
+                @include text-style
+
+            p
+                font-size: 40px
+                font-weight: 400
+                line-height: 57px
+                width: 768px
+                color: #495057 
+                @include text-style
+
+.smart-farm-about-section
+    padding: 0px
+    display: flex
+    justify-content: center
+
+    .smart-farm-about
+        max-width: 1420px
+        section
+            padding-left: 0px
+            padding-right: 0px
+        p
+            color: #495057
+            font-size: 18px
+            font-weight: 400
+            line-height: 150% 
+            @include text-style
+        p:nth-child(even)
+            margin-bottom: 15px
+        h2
+            color: #212529
+            font-size: 48px
+            font-weight: 600
+            line-height: 120%
+            @include text-style
+            margin-bottom: 30px
+        h4
+            font-size: 28px
+            font-weight: 600
+            line-height: 155%
+            margin-bottom: 30px
+            @include text-style
+        button
+            font-weight: 600
+        .smart-farm-about-container
+            display: flex
+            justify-content: space-between
+            @include middle-margin
+            .smart-farm-content-wrapper
+                color: black
+                width: 100%
+            .smart-farm-content-wrapper:first-child
+                margin-bottom: 100px
+            .smart-farm-side-content
+                .smart-farm-side-content-container
+                    margin-left: 240px
+                    ul
+                        display: flex
+                        width: 460px
+                        padding: 0px 20px
+                        flex-direction: column
+                        align-items: flex-start
+                        gap: 20px
+                        border-left: 1px solid #CCD1D5
+                        li 
+                            text-align: left
+                            margin-left: 16px
+                            a 
+                                font-size: 16px
+                                width: 304px
+                                font-style: normal
+                                font-weight: 500
+                                line-height: 155%
+                                color: #212529 
+                                text-decoration: none 
+        .smart-farm-about-blocks
+            @include big-margin
+            .smart-farm-about-block
+                display: flex
+                justify-content: space-between
+                padding: 40px
+                margin-bottom: 20px
+                border-radius: 20px
+                background: #FFF
+                @include box-shadow
+                .block-text
+                    color: black
+                    width: 660px
+                    margin-right: 60px
+                .block-img
+                    img
+                        width: 620px
+                        height: 357px
+
+        .smart-farm-contact-us
+            position: relative
+            @include big-margin
+            padding: 40px 60px
+            display: flex
+            border-radius: 20px
+            background: #FFF
+            @include box-shadow
+            .rec55
+                position: absolute
+                top: -10%
+                left: 0
+                width: 81px
+                height: 85px
+            .rec56
+                position: absolute
+                width: 51px
+                height: 54px
+                left: 100%
+                transform: translateX(-60%)
+                bottom: -17%
+            .smart-farm-contact-us-text
+                width: 720px
+                margin-left: 100px
+                text-align: left
+            .smart-farm-contact-us-btn
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                margin-left: 100px
+                button
+                    border-radius: 12px
+                    background-color: $button-background-color
+                    color: #FFF
+                    box-shadow: 0px 40px 11px 0px rgba(116, 156, 220, 0.00), 0px 26px 10px 0px rgba(116, 156, 220, 0.01), 0px 15px 9px 0px rgba(116, 156, 220, 0.04), 0px 6px 6px 0px rgba(116, 156, 220, 0.06), 0px 2px 4px 0px rgba(116, 156, 220, 0.07)
+                    display: flex
+                    width: 250px
+                    height: 56px
+                    padding: 0px 11px 0px 16px
+                    justify-content: center
+                    align-items: center
+
+        .smart-farm-key-difference
+            @include small-margin
+            display: flex
+            .smart-farm-key-difference-text
+                width: 720px
+            .smart-farm-key-difference-img
+                position: absolute
+                right: -200px
+                margin-left: 60px
+                img
+                    max-width: 825px
+                    height: auto
+
+        .smart-farm-tech
+            padding: 0px
+            @include small-margin
+            &::before 
+                background: #F4F8FE
+                content: ''
+                width: 100vw
+                left: calc(893px - 50vw - 183px)
+                height: 100%
+                position: absolute
+                top: 0
+                z-index: -1
+            .smart-farm-tech-container
+                padding-top: 60px 
+                .smart-farm-tech-main
+                    text-align: left
+                    padding-bottom: 50px
+                    h2
+                        margin-bottom: 30px
+                    p
+                        width: 100%
+                .smart-farm-tech-wrapper
+                    display: flex
+                    border-bottom: 1px solid #CCD1D5
+                    margin-bottom: 35px
+                    padding-bottom: 40px
+                    h4
+                        margin-bottom: 20px
+                .smart-farm-tech-img
+                    display: flex
+                    justify-content: flex-start
+                    align-items: center
+                    .img-sensors
+                        width: 295px
+                        height: 185px
+                        margin-left: 140px
+                    .img-iot
+                        width: 295px
+                        height: 268px
+                        margin-left: 300px
+                    .img-ai-ml
+                        width: 342px
+                        height: 236px
+                        margin-left: 200px
+                    .img-auto-rob
+                        width: 395px
+                        height: 246px
+                        margin-left: 140px 
+                .smart-farm-tech-wrapper:last-child
+                    border: none
+
+        .smart-farm-cycle
+            @include big-margin
+            .smart-farm-cycle-container
+                display: flex
+                margin-bottom: 20px
+            .smart-farm-cycle-img
+                img
+                    width: 762px
+                    height: 512px
+            .smart-farm-cycle-wrapper
+                display: flex
+                justify-content: space-between
+                padding: 40px
+                margin-bottom: 20px
+                border-radius: 20px
+                background: #FFF
+                @include box-shadow
+                .smart-farm-cycle-text
+                    width: 720px
+                .smart-farm-cycle-num 
+                    color: #EAF2FE
+                    font-size: 170px
+                    font-style: normal
+                    font-weight: 600
+                    img
+                        width: 220px
+                        height: 220px
+        .smart-farm-pros
+            @include big-margin
+            .smart-farm-pros-container
+                width: 720px
+                margin-bottom: 50px
+            .smart-farm-pros-wrapper
+                display: flex
+                justify-content: flex-start
+                flex-wrap: wrap
+                gap: 20px
+                .smart-farm-pros-item
+                    flex: 1 calc(50% - 1em)
+                    width: 680px
+                    min-width: 290px
+                    padding: 40px
+                    border-radius: 20px
+                    background: #FFF
+                    text-align: left
+                    position: relative
+                    @include box-shadow
+                    .smart-farm-pros-item-container
+                        min-height: 130px
+                        span
+                            text-align: left
+                            color: #EAF2FE
+                            font-size: 80px
+                            font-weight: 600
+                        h4
+                            position: absolute
+                            top: 95px
+
+        .smart-farm-solutions
+            @include middle-margin
+            .smart-farm-solutions-container
+                width: 720px
+                margin-bottom: 50px
+            .smart-farm-solutions-wrapper
+                .smart-farm-solutions-item
+                    border-radius: 20px
+                    background: #FFF
+                    padding: 40px
+                    margin-bottom: 20px
+                    display: flex
+                    justify-content: space-between
+                    @include box-shadow
+                    .smart-farm-solutions-text
+                        max-width: 720px
+                    .smart-farm-solutions-img
+                        display: flex
+                        align-items: center
+                        img
+                            width: 140px
+                            height: 140px
+
+        .smart-farm-demo
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            @include middle-margin
+            .smart-farm-demo-container
+                width: 892px
+                p
+                    text-align: center
+                    padding-bottom: 50px
+                h2
+                    text-align: center
+                    margin-bottom: 30px   
+            .smart-farm-demo-btn
+                display: flex
+                justify-content: center
+                @include small-margin
+                .try-demo
+                    font-weight: 600
+                    background-color: #2A7DEC
+                    color: #fff
+                .contact-us
+                    border: 1px solid #2A7DEC
+                    color: #2A7DEC
+                    margin-left: 16px
+                button
+                    padding: 10px 40px
+                    border-radius: 12px
+            .smart-farm-demo-img
+                img
+                    max-width: 1420px
+                    width: 100%
+                    height: auto
+
+        .smart-farm-key-features
+            @include middle-margin
+            h2
+                width: 720px
+                margin-bottom: 50px
+            .smart-farm-key-features-cards
+                display: flex
+                justify-content: center
+                gap: 20px
+                flex-wrap: wrap
+                .smart-farm-key-features-card
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    min-width: 280px
+                    flex: 1 1 calc(33% - 1em)
+                    max-width: 460px
+                    padding: 40px
+                    border-radius: 20px
+                    background: #FFF
+                    @include box-shadow
+                    img 
+                        width: 60px
+                        height: 60px
+                        margin-bottom: 31px
+
+        .smart-farm-management-software
+            @include middle-margin
+            margin-bottom: 120px
+            height: 810px
+            &::before 
+                background: #F4F8FE
+                content: ''
+                width: 100vw
+                left: calc(893px - 50vw - 183px)
+                height: 810px
+                position: absolute
+                border-radius: 100px
+                top: 0px
+                z-index: -1
+            .smart-farm-management-software-wrapper
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 100%
+                .smart-farm-management-software-text
+                    text-align: left
+                    p 
+                        margin-bottom: 60px
+                    .try-demo
+                        background-color: #2A7DEC
+                        color: #fff
+                        font-weight: 600
+                        padding: 10px 60px
+                        border-radius: 12px
+            .smart-farm-management-software-img
+                img
+                    height: auto
+                    max-width:  767px
+                    margin-left: 132px
+
+@media screen and (max-width: 1919px)
+    .smart-farm-banner-section
+        .smart-farm-banner
+            width: 100%
+            img 
+                height: auto
+            .smart-farm-banner-container
+                padding: 40px 80px
+    .smart-farm-about-section
+        .smart-farm-about 
+            max-width: 1440px
+            padding: 0px 80px
+            .smart-farm-about-container
+                .smart-farm-side-content
+                    .smart-farm-side-content-container
+                        margin-left: 124px
+            .smart-farm-about-blocks
+                .smart-farm-about-block
+                    .block-img
+                        display: flex
+                        align-items: center
+            .smart-farm-key-difference
+                .smart-farm-key-difference-text
+                    width: 632px
+                .smart-farm-key-difference-img 
+                    right: -70px
+                    img 
+                        max-width: 639px
+                        height: auto
+            .smart-farm-tech
+                &::before 
+                    left: calc(720px - 50vw - 80px)
+            .smart-farm-management-software
+                &::before 
+                    left: calc(720px - 50vw - 80px)
+
+@media screen and (max-width: 1439px)
+    .smart-farm-banner-section
+        .smart-farm-banner
+            .smart-farm-banner-container
+                padding: 40px 80px
+                h1
+                    font-size: 70px
+                    line-height: 90px
+                p
+                    font-size: 30px
+                    width: 576px
+                    line-height: 39px
+    .smart-farm-about-section
+        .smart-farm-about 
+            max-width: 1280px
+            padding: 0px 50px
+            .smart-farm-about-container
+                .smart-farm-side-content
+                    .smart-farm-side-content-container
+                        margin-left: 115px
+                .smart-farm-content
+                    .smart-farm-content-wrapper:first-child
+                        margin-bottom: 90px
+            .smart-farm-about-blocks
+                .smart-farm-about-block
+                    .block-text
+                        margin-bottom: 30px
+                    .block-img
+                        img
+                            width: 534px
+                            height: 307px
+            .smart-farm-key-difference
+                .smart-farm-key-difference-text
+                    width: 582px
+                .smart-farm-key-difference-img
+                    right: -40px 
+                    img 
+                        max-width: 582px
+                        height: auto
+            .smart-farm-tech
+                &::before
+                    left: calc(640px - 50vw - 50px)
+                .smart-farm-tech-container
+                    padding: 60px 50px
+            .smart-farm-solutions
+                .smart-farm-solutions-wrapper 
+                    .smart-farm-solutions-item 
+                        .smart-farm-solutions-text
+                            max-width: 582px
+            .smart-farm-management-software
+                &::before
+                    left: calc(640px - 50vw - 50px)
+                .smart-farm-management-software-img
+                    img
+                        height: auto
+                        max-width:  534px
+
+@media screen and (max-width: 1279px)
+    .smart-farm-banner-section
+        .smart-farm-banner
+            .smart-farm-banner-container
+                padding: 41px 30px
+                h1
+                    font-size: 50px
+                    line-height: 70px
+                p
+                    font-size: 20px
+                    width: 400px
+                    line-height: 26px
+    .smart-farm-about-section
+        .smart-farm-about 
+            max-width: 1000px
+            padding: 0px 30px
+            h2
+                font-size: 40px
+                line-height: 48px
+            .smart-farm-about-container
+                .smart-farm-side-content
+                    .smart-farm-side-content-container
+                        margin-left: 16px
+                .smart-farm-content
+                    .smart-farm-content-wrapper:first-child
+                        margin-bottom: 70px
+            .smart-farm-about-blocks
+                .smart-farm-about-block
+                    flex-direction: column
+                    .block-text
+                        width: 100%
+                        margin-right: 0px
+                    .block-img
+                        display: flex
+                        justify-content: center
+                        img
+                            width: 632px
+                            height: 363px
+            .smart-farm-key-difference
+                flex-direction: column
+                align-items: flex-start
+                .smart-farm-key-difference-text
+                    margin-bottom: 50px
+                .smart-farm-key-difference-img 
+                    position: static
+                    margin-left: unset
+                    img 
+                        max-width: 620px
+                        height: auto
+            .smart-farm-tech
+                @include small-margin
+                &::before
+                    left: calc(500px - 50vw - 30px)
+                .smart-farm-tech-container
+                    padding: 40px 30px
+                    .smart-farm-tech-img
+                        .img-sensors
+                            width: 219px
+                            height: 137px
+                        .img-iot
+                            width: 223px
+                            height: 203px
+                        .img-ai-ml
+                            width: 281px
+                            height: 194px
+                        .img-auto-rob
+                            width: 281px
+                            height: 175px
+            .smart-farm-cycle
+                @include middle-margin
+                .smart-farm-cycle-container
+                    flex-direction: column
+                    .smart-farm-cycle-text
+                        margin-bottom: 40px
+                    .smart-farm-cycle-img
+                        img
+                            width: 542px
+                            height: 364px
+            .smart-farm-pros
+                @include middle-margin
+            .smart-farm-solutions
+                @include small-margin
+            .smart-farm-demo
+                @include small-margin   
+            .smart-farm-key-features
+                @include small-margin
+            .smart-farm-management-software
+                border-radius: 80px
+                &::before
+                    left: calc(500px - 50vw - 30px)
+                .smart-farm-management-software-img
+                    img
+                        height: auto
+                        max-width:  462px
+                   
+@media screen and (max-width: 999px)
+    .smart-farm-banner-section
+        .smart-farm-banner
+            .smart-farm-banner-container
+                padding: 15px 15px
+    .smart-farm-about-section
+        @include small-margin
+        .smart-farm-about 
+            max-width: 672px
+            padding: 0px 15px
+            .smart-farm-about-container
+                @include small-margin
+                .smart-farm-side-content
+                    .smart-farm-side-content-container
+                        display: none
+                .smart-farm-content
+                    .smart-farm-content-wrapper:first-child
+                        margin-bottom: 60px
+            .smart-farm-about-blocks
+                @include middle-margin
+                .smart-farm-about-block
+                    .block-img
+                        img
+                            width: 562px
+                            height: 323px
+            .smart-farm-contact-us
+                    @include middle-margin
+                    flex-direction: column
+                    .smart-farm-contact-us-btn
+                        flex-direction: column
+                        align-items: flex-start
+                        margin-left: 0px
+                    .smart-farm-contact-us-text
+                        width: 100%
+                        margin-left: 0px
+            .smart-farm-key-difference 
+                .smart-farm-key-difference-text 
+                    width: 100%
+            .smart-farm-tech
+                @include small-margin
+                &::before
+                    left: calc(336px - 50vw - 15px)
+                .smart-farm-tech-container
+                    padding: 41px 15px
+                    .smart-farm-tech-wrapper
+                        flex-direction: column
+                    .smart-farm-tech-img
+                        justify-content: center
+                        .img-iot, .img-ai-ml, .img-auto-rob, .img-sensors 
+                            margin-left: 0px
+            .smart-farm-cycle 
+                @include middle-margin
+                .smart-farm-cycle-container
+                    .smart-farm-cycle-img
+                        display: flex
+                        justify-content: center
+                .smart-farm-cycle-wrapper
+                    flex-direction: column-reverse
+                    align-items: center
+                    .smart-farm-cycle-text
+                        width: 100%
+
+            .smart-farm-pros
+                @include middle-margin
+                .smart-farm-pros-container
+                    width: 100%
+                .smart-farm-pros-wrapper
+                    .smart-farm-pros-item
+                        flex: 1 calc(100% - 1em)
+            .smart-farm-solutions
+                @include small-margin
+                .smart-farm-solutions-container
+                    width: 100%
+                .smart-farm-solutions-wrapper 
+                    .smart-farm-solutions-item
+                        flex-direction: column-reverse
+                        .smart-farm-solutions-text
+                            width: 100%
+                        .smart-farm-solutions-img
+                            margin-bottom: 40px
+                            img
+                                width: 120px
+                                height: 120px
+            .smart-farm-demo
+                @include small-margin
+                .smart-farm-demo-container
+                    width: 100%
+            .smart-farm-key-features
+                @include small-margin
+                h2
+                    width: 100%
+            .smart-farm-management-software
+                padding-top: 64px
+                height: auto
+                &::before
+                    left: calc(336px - 50vw - 15px)
+                .smart-farm-management-software-wrapper
+                    flex-direction: column
+                .smart-farm-management-software-img
+                    img
+                        margin-left: 0px
+
+@media screen and (max-width: 671px)
+    .smart-farm-banner-section
+        @include small-margin
+        .smart-farm-banner
+            .smart-farm-banner-container
+                position: static
+                padding: 16px 15px
+                h1
+                    font-size: 40px
+                    line-height: 60px
+                p
+                    font-size: 16px
+                    width: 290px
+                    line-height: 24px
+    .smart-farm-about-section
+        .smart-farm-about
+            max-width: 420px
+            padding: 0px 15px 
+            h2
+                font-size: 32px
+            h4
+                font-size: 24px
+                line-height: 31px
+                margin-bottom: 15px
+            .smart-farm-about-container
+                .smart-farm-content
+                    .smart-farm-content-wrapper:first-child
+                        margin-bottom: 50px
+            .smart-farm-about-blocks
+                .smart-farm-about-block
+                    box-shadow: none
+                    padding: 0px
+                    .block-img
+                        img
+                            width: 290px
+                            height: 166px
+            .smart-farm-contact-us
+                padding: 20px
+                .smart-farm-contact-us-btn
+                    button
+                        width: 100%
+                .rec55
+                    z-index: -1
+            .smart-farm-key-difference 
+                .smart-farm-key-difference-img 
+                    img
+                        width: 100%
+                        height: 175px
+            .smart-farm-tech
+                &::before
+                    left: calc(210px - 50vw - 15px)
+                .smart-farm-tech-container
+                    padding: 25px 15px
+            .smart-farm-cycle
+                .smart-farm-cycle 
+                    .smart-farm-cycle-wrapper
+                        padding: 20px
+                .smart-farm-cycle-container
+                    .smart-farm-cycle-img
+                        img
+                            width: 290px
+                            height: 194px
+                .smart-farm-cycle-wrapper 
+                    padding: 20px
+                    .smart-farm-cycle-num 
+                        font-size: 100px
+                        img 
+                            width: 120px 
+                            height: 120px
+            .smart-farm-pros
+                .smart-farm-pros-wrapper 
+                    .smart-farm-pros-item
+                        padding: 20px
+                        h4
+                            top: 80px
+            .smart-farm-solutions
+                .smart-farm-solutions-wrapper 
+                    .smart-farm-solutions-item
+                        padding: 20px
+                        .smart-farm-solutions-img
+                            img
+                                width: 80px
+                                height: 80px
+            .smart-farm-demo
+                .smart-farm-demo-container
+                    margin-bottom: 0px
+                    p
+                        text-align: left
+                    h2
+                        text-align: left
+                    .smart-farm-demo-btn
+                        flex-direction: column
+                        margin-bottom: 0px
+                        .try-demo
+                            width: 100%
+                            margin-bottom: 16px
+                        .contact-us
+                            margin-left: 0px
+                .smart-farm-demo-img
+                    display: none
+            .smart-farm-management-software
+                border-radius: 40px
+                &::before
+                    left: calc(210px - 50vw - 15px)
+                .smart-farm-management-software-wrapper
+                    .smart-farm-management-software-text
+                        .try-demo
+                            width: 100%
+                .smart-farm-management-software-img
+                    img
+                        height: auto
+                        max-width:  320px
+
+@media screen and (max-width: 430px)
+    .smart-farm-about-section
+        .smart-farm-about
+            max-width: 96%
+            .smart-farm-tech
+                &::before
+                    left: calc(50% - 50vw)
+            .smart-farm-management-software
+                &::before
+                    left: calc(50% - 50vw)
+                    height: 1000px
+                .smart-farm-management-software-img
+                    img
+                        height: auto
+                        max-width:  320px
+            

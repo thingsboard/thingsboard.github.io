@@ -168,8 +168,8 @@ All machine learning algorithms require normalized input data for training. We h
 4. Scale all raw telemetry values into [0;1]   range.
 
 Trendz does all those steps automatically. Good articles that describes why it is important and how to do this:
-[https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029](https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029){:target="_blank"}.
-[https://towardsdatascience.com/understand-data-normalization-in-machine-learning-8ff3062101f0](https://towardsdatascience.com/understand-data-normalization-in-machine-learning-8ff3062101f0){:target="_blank"}.
+* [Why Data Normalization is necessary for Machine Learning models](https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029){:target="_blank"}
+* [Understand Data Normalization in Machine Learning](https://towardsdatascience.com/understand-data-normalization-in-machine-learning-8ff3062101f0){:target="_blank"}
 
 
 ## Feature extraction
