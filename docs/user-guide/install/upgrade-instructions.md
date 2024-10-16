@@ -230,7 +230,7 @@ These upgrade steps are applicable for ThingsBoard version 3.7. In order to upgr
 #### Prerequisites
 
 Make sure your PostgreSQL version supports the uuid-ossp extension.
-For <b>PostgreSQL 11 and below</b> the uuid-ossp extension is not included in the default PostgreSQL installation package.
+For some PostgreSQL version the uuid-ossp extension is not included in the default PostgreSQL installation package.
 
 ```text
 sudo apt-get install postgresql-contrib

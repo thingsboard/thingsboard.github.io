@@ -13,6 +13,7 @@ echo "deb https://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main
 # install and launch the postgresql service:
 sudo apt update
 sudo apt -y install postgresql-15
+sudo apt-get install postgresql-contrib
 sudo service postgresql start
 ```
 {: .copy-code}
