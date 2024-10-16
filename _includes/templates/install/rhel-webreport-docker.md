@@ -12,7 +12,7 @@ services:
   tb-web-report:
     container_name: tb-web-report
     restart: always
-    image: "thingsboard/tb-pe-web-report:3.8.0PE"
+    image: "thingsboard/tb-pe-web-report:{{ site.release.pe_full_ver }}"
     ports:
       - "8383:8383"
     env_file:
