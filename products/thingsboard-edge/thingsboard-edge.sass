@@ -161,8 +161,8 @@
         padding: 0
 
     #matrix
-      margin: 60px -100% 0
-      padding: 0px 100% 48px
+      margin: 80px -100% 0
+      padding: 0px 100% 68px
       h3
         color: #212529
         font-weight: 600
@@ -174,24 +174,33 @@
         margin-left: -20px
         margin-right: -20px
         width: calc(100% + 40px)
-        .edge, .gateway
+        .edge, .cloud, .gateway
           padding: 0 20px
-          width: 30%
+          width: 20%
           position: absolute
           z-index: -1
           top: 127px
         .coln
-          height: 1006px
+          height: 1291px
           border-radius: 6px
         .gateway
           right: 0
           .coln
             border: 2px solid #7A4DC3
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
             .head
               height: 106px
-              box-shadow: 0 2px 0 0 rgba(122, 77, 195, 0.08)
+              background-color: #7A4DC3
+        .cloud
+          right: 20%
+          .coln
+            border: 2px solid #2A7DEC
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+            .head
+              height: 106px
+              background-color: #2A7DEC
         .edge
-          right: 30%
+          right: 40%
           .coln
             border: 2px solid #009688
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
@@ -203,11 +212,16 @@
         margin: 160px -20px 16px
         td, th
           margin: 0 2px
-          &:nth-child(3n-1)
+          &:nth-child(2n)
             color: #009688
             img
               filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
+          margin: 0 2px
           &:nth-child(3n)
+            color: #2A7DEC
+            img
+              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
+          &:nth-child(4n)
             color: #7A4DC3
             img
               filter: invert(43%) sepia(48%) saturate(952%) hue-rotate(223deg) brightness(78%) contrast(96%)
@@ -220,18 +234,18 @@
           line-height: 30px
           background-color: unset
           tr
-            height: 152px
+            height: 110px
             th
-              width: 30%
+              width: 25%
               text-align: center
               vertical-align: center
               font-weight: 600
               font-size: 11px
-              padding: 40px 0 40px
-              &:nth-child(2n)
+              padding: 30px 0 30px
+              &:nth-child(1n)
                 color: white
             td
-              width: 40%
+              width: 60%
         tbody
           tr
             background-color: unset
@@ -456,23 +470,23 @@
             width: 80%
       #matrix
         h3
-          font-size: 42px
+          font-size: 38px
           line-height: 63px
         table
           thead
-            font-size: 20px
+            font-size: 30px
             tr
               th
-                width: 30%
-                padding: 0 0 40px
+                width: 20%
+                padding: 0 0 10px
                 font-size: 20px
               td
                 width: 40%
           tbody
             tr
               th, a
-                padding-right: 48px
-                font-size: 18px
+                padding-right: 10px
+                font-size: 20px
               td
                 font-size: 20px
                 img

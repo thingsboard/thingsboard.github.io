@@ -178,6 +178,7 @@ description: Comprehensive software solutions for edge computing, providing data
 <section id="matrix">
     <div id="backg-matrix">
         <div class="edge"><div class="coln"><div class="head"></div></div></div>
+        <div class="cloud"><div class="coln"><div class="head"></div></div></div>
         <div class="gateway"><div class="coln"><div class="head"></div></div></div>
     </div>
     <h3>Feature Comparison Matrix</h3>
@@ -186,73 +187,111 @@ description: Comprehensive software solutions for edge computing, providing data
                 <tr>
                     <td></td>
                     <th>ThingsBoard<br>Edge</th>
+                    <th>ThingsBoard<br>Cloud</th>
                     <th>IoT<br>Gateway</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>ThingsBoard Server required (CE, PE or Cloud)</th>
+                    <th>Standalone Mode</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server Required)</td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Edge or Server<br>Required)</td>
+                </tr>
+                <tr>
+                    <th>Data Collection</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Data collection</th>
+                    <th>Data Processing</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                </tr>
-                <tr>
-                    <th>Data processing</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Asset management</th>
+                    <th>Asset Management</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>End-user real-time dashboards</th>
+                    <th>End-User Real-Time Dashboards</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <th><a href="/docs/user-guide/scada/" target="_blank">Remote Management (SCADA Dashboards)<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Real-time Analytics</th>
+                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/" target="_blank">Rule Engine<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <th>Real-Time Analytics</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Multi-tenancy Support</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <th><a href="/docs/user-guide/integrations/" target="_blank">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Offline Operation on edge</th>
+                    <th>Multi-Tenancy Support</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Micro Services Deployment</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Cassandra DB for Time-Series Data</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Offline Operation</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"><br>(Limited to Data Collection)</td>
                 </tr>
                 <tr>
-                    <th>Traffic Filtering on edge</th>
+                    <th>Traffic Filtering</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Local Alarms on edge</th>
+                    <th>Alarms on Edge</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Push Events on Demand</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th>Hardware Resources Usage</th>
                     <td>Medium to Low</td>
+                    <td>High to Medium</td>
                     <td>Low</td>
                 </tr>
             </tbody>
