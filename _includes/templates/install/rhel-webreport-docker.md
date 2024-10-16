@@ -36,6 +36,7 @@ DASHBOARD_LOAD_WAIT_TIME=3000
 USE_NEW_PAGE_FOR_REPORT=true
 EOT
 ```
+{: .copy-code}
 
 Start WebReport service in docker
 ```bash
