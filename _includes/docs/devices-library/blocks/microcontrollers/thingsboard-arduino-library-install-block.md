@@ -29,7 +29,7 @@ Also, for boards, based on ESP8266 chip we should install the "mbedtls" and "ard
         image: https://img.thingsboard.io/devices-library/basic/arduino-ide/install-mbedtls.png,
         title: Put into library search field "**mbedtls**" and install the library - "***Seeed_Arduino_mbedtls by Peter Yang***"
     ===
-        image: /images/devices-library/basic/arduino-ide/install-arduino-timer.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/install-arduino-timer.png,
         title: Put into library search field "**arduino-timer**" and install the library - "***arduino-timer by Michael Contreras***"
 '%}
 

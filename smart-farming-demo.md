@@ -10,7 +10,7 @@ notitle: "true"
 </section> 
 
 <section id="first-screen" class="center">
-    <img id="background" src="/images/usecases/smart-farming/elipse-background.png" alt="Background"/>
+    <img id="background" src="https://img.thingsboard.io/usecases/smart-farming/elipse-background.png" alt="Background"/>
     <div class="hero-container">
         <div id="hero-content">
             <h3 class="hero-title">ThingsBoard IoT platform</h3>
@@ -22,8 +22,8 @@ notitle: "true"
             </div>
         </div>
         <div class="container">
-            <img id="header-img1" src="/images/usecases/smart-farming/hero-image-1.webp" alt="Hero image 1"/>
-            <img id="header-img2" src="/images/usecases/smart-farming/hero-image-2.webp" alt="Hero image 2"/>
+            <img id="header-img1" src="https://img.thingsboard.io/usecases/smart-farming/hero-image-1.webp" alt="Hero image 1"/>
+            <img id="header-img2" src="https://img.thingsboard.io/usecases/smart-farming/hero-image-2.webp" alt="Hero image 2"/>
         </div>
     </div>
 </section>
@@ -36,7 +36,7 @@ notitle: "true"
             <a class="outline-button anchor-button">Get a demo</a>
         </div>
         <div class="right-side">
-            <img id="rectangle" src="/images/usecases/smart-farming/what-is.webp" alt="What is" loading="lazy"/>
+            <img id="rectangle" src="https://img.thingsboard.io/usecases/smart-farming/what-is.webp" alt="What is" loading="lazy"/>
         </div>
     </div>
 </section>
@@ -46,32 +46,32 @@ notitle: "true"
     <div class="benefits-sub-title">ThingsBoard software for agriculture industry help to save up to 90% of development time for your smart farming & agriculture software solutions by utilizing the following benefits:</div>
     <div class="cards">
         <div class="card">
-            <img src="/images/usecases/smart-farming/real-time-icon.webp" alt="Accurate level icon" loading="lazy"/>
+            <img src="https://img.thingsboard.io/usecases/smart-farming/real-time-icon.webp" alt="Accurate level icon" loading="lazy"/>
             <h3 class="title">Real-time monitoring</h3>
             <div class="text">Access to real-time data and analytics helps farmers make informed decisions, leading to better crop yields and livestock management.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/smart-farming/task-icon.webp" alt="Realtime monitoring icon" loading="lazy"/>
+            <img src="https://img.thingsboard.io/usecases/smart-farming/task-icon.webp" alt="Realtime monitoring icon" loading="lazy"/>
             <h3 class="title">Task automation</h3>
             <div class="text">Automates routine tasks such as irrigation scheduling, crop monitoring, and inventory management, freeing up time for farmers to focus on more strategic activities.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/smart-farming/data-sharing-icon.webp" alt="Safety icon" loading="lazy"/>
+            <img src="https://img.thingsboard.io/usecases/smart-farming/data-sharing-icon.webp" alt="Safety icon" loading="lazy"/>
             <h3 class="title">Data sharing</h3>
             <div class="text">Facilitates collaboration among different stakeholders, including agronomists, suppliers, and buyers, by providing a centralized platform for data sharing.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/smart-farming/analytics-icon.webp" alt="Inventory icon" loading="lazy"/>
+            <img src="https://img.thingsboard.io/usecases/smart-farming/analytics-icon.webp" alt="Inventory icon" loading="lazy"/>
             <h3 class="title">Farm analytics</h3>
             <div class="text">Identify shortcomings and make the right decisions to optimize costs, increase yields, and improve profitability.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/smart-farming/reduced-icon.webp" alt="Cost icon" loading="lazy"/>
+            <img src="https://img.thingsboard.io/usecases/smart-farming/reduced-icon.webp" alt="Cost icon" loading="lazy"/>
             <h3 class="title">Reduced environmental impact</h3>
             <div class="text">Precision agriculture techniques minimize the use of chemicals, reducing environmental pollution.</div>
         </div>
         <div class="card">
-            <img src="/images/usecases/smart-farming/customization-icon.webp" alt="Data logging icon" loading="lazy"/>
+            <img src="https://img.thingsboard.io/usecases/smart-farming/customization-icon.webp" alt="Data logging icon" loading="lazy"/>
             <h3 class="title">Customization and scalability</h3>
             <div class="text">Agriculture software can be tailored to meet the specific needs and can be scaled up as the business grows or needs change.</div>
         </div>
@@ -94,7 +94,7 @@ notitle: "true"
             <div class="panel-title">Silos monitoring template features</div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/real-time.webp" alt="Real time icon" loading="lazy"/>Real-time monitoring</h3>
+                    <h3 class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/usecases/smart-farming/real-time.webp" alt="Real time icon" loading="lazy"/>Real-time monitoring</h3>
                 </div>
                 <div class="expansion-content">
                     <p>An interactive map with current status of the sensor and detailed view.</p>
@@ -102,7 +102,7 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/dashboard.webp" alt="Dashboard icon" loading="lazy"/>Customizable dashboard</h3>
+                    <h3 class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/usecases/smart-farming/dashboard.webp" alt="Dashboard icon" loading="lazy"/>Customizable dashboard</h3>
                 </div>
                 <div class="expansion-content">
                     <p>Specially developed logic will help to take into account all the parameters for the most detailed and correct monitoring</p>
@@ -110,7 +110,7 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/tank-settings.webp" alt="Tank settings icon" loading="lazy"/>Smart valve</h3>
+                    <h3 class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/usecases/smart-farming/tank-settings.webp" alt="Tank settings icon" loading="lazy"/>Smart valve</h3>
                 </div>
                 <div class="expansion-content">
                     <p>Conveniently manage and configure parameters for your Silo</p>
@@ -118,7 +118,7 @@ notitle: "true"
             </div>
             <div class="expansion-panel">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/data-analysis.webp" alt="Data analysis icon" loading="lazy"/>Data analysis and visualization</h3>
+                    <h3 class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/usecases/smart-farming/data-analysis.webp" alt="Data analysis icon" loading="lazy"/>Data analysis and visualization</h3>
                 </div>
                 <div class="expansion-content">
                     <p>Using data storage, you can always check historical data, make reports even <a href="/products/trendz/" class="link-text">forecasts</a>. The platform supports flexible customization of the required data visualization.</p>
@@ -126,7 +126,7 @@ notitle: "true"
             </div>
             <div class="expansion-panel last">
                 <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/smart-farming/alert.webp" alt="Alert icon" loading="lazy"/>Alert management</h3>
+                    <h3 class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/usecases/smart-farming/alert.webp" alt="Alert icon" loading="lazy"/>Alert management</h3>
                 </div>
                 <div class="expansion-content">
                     <p>Receive alerts based on customized rules. Get an email or sms, set details for the notifications.</p>
@@ -141,7 +141,7 @@ notitle: "true"
 <section id="connectivity" class="content-wrapper">
     <div class="container">
         <div class="left">
-            <img class="connectivity-image" loading="lazy" src="/images/usecases/smart-farming/connectivity.webp" alt="Connectivity card"/>
+            <img class="connectivity-image" loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/connectivity.webp" alt="Connectivity card"/>
         </div>
         <div class="right">
             <h2 class="title">ThingsBoard platform device supports</h2>
@@ -177,7 +177,7 @@ notitle: "true"
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="/images/close-icon.svg" alt="Close"/>
+        <img class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">
@@ -268,11 +268,11 @@ notitle: "true"
 
         function updateImages(index) {
             const darkMapImages = [
-                "<img loading='lazy' class='dark-map-image' alt='Map' src='/images/usecases/smart-farming/real-time-monitoring.webp'/>",
-                "<img loading='lazy' class='dark-map1-image' alt='Map' src='/images/usecases/smart-farming/customizable-dashboard.webp'/>",
-                "<img loading='lazy' class='dark-map2-image' alt='Map' src='/images/usecases/smart-farming/smart-valve.webp'/>",
-                "<img loading='lazy' class='dark-map3-image' alt='Map' src='/images/usecases/smart-farming/data-analysis-visualization.webp'/>",
-                "<img loading='lazy' class='dark-map4-image' alt='Map' src='/images/usecases/smart-farming/alert-management.webp'/>"
+                "<img loading='lazy' class='dark-map-image' alt='Map' src='https://img.thingsboard.io/usecases/smart-farming/real-time-monitoring.webp'/>",
+                "<img loading='lazy' class='dark-map1-image' alt='Map' src='https://img.thingsboard.io/usecases/smart-farming/customizable-dashboard.webp'/>",
+                "<img loading='lazy' class='dark-map2-image' alt='Map' src='https://img.thingsboard.io/usecases/smart-farming/smart-valve.webp'/>",
+                "<img loading='lazy' class='dark-map3-image' alt='Map' src='https://img.thingsboard.io/usecases/smart-farming/data-analysis-visualization.webp'/>",
+                "<img loading='lazy' class='dark-map4-image' alt='Map' src='https://img.thingsboard.io/usecases/smart-farming/alert-management.webp'/>"
             ];
 
             images.innerHTML = `${darkMapImages[index]}`;
