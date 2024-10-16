@@ -14,7 +14,10 @@ notitle: "true"
         <div class="company-aboutus-container">
             <div class="company-wrapper">
                 <div class="company-flex-content-default">
-                    <img class="company-aboutus-image" src="/images/companyImages/thingsboard_logo.svg" alt="Thingsboard logo">
+                    <div class="company-aboutus-image-block">
+                        <img class="company-aboutus-image" src="/images/thingsboard_blue.svg" alt="Thingsboard logo">
+                        <span>ThingsBoard</span>
+                    </div>
                     <div class="company-text-content-default">
                         <p class="company-text">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella. Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management, data processing, security, privacy, analysis, etc.</p>
                         <p class="company-text">ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period. Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.</p>
@@ -63,31 +66,38 @@ notitle: "true"
 
 <script type="text/javascript">
 
+    function getThresholdValue (property) {
+        return Number(getComputedStyle(companyContent).getPropertyValue(property));
+    }
+
     const animatedBlocks = [
         {
             classToSearch: ".company-hero-carousel",
             classToAdd: "company-hero-carousel-animation",
-            threshold: 0.2
+            threshold: 0.1,
+            carousel: true
         },
         {
             classToSearch: ".company-aboutus-container",
             classToAdd: "company-aboutus-content-animation",
-            threshold: 0.4
+            threshold: getThresholdValue ('--company-aboutus-content-animation')
         },
         {
             classToSearch: ".company-history-container",
             classToAdd: "company-history-content-animation",
-            threshold: 0.2
+            threshold: getThresholdValue ('--company-history-content-animation')
         },
         {
             classToSearch: ".company-timeline",
             classToAdd: "company-timeline-content-animation",
-            threshold: 0.5
+            threshold: getThresholdValue ('--company-timeline-content-animation'),
+            carousel: true
         },
         {
             classToSearch: ".company-values",
             classToAdd: "company-values-content-animation",
-            threshold: 0.3
+            threshold: getThresholdValue ('--company-values-content-animation'),
+            carousel: true
         }
     ];
 
@@ -97,19 +107,50 @@ notitle: "true"
         const searchedBlockObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add(block.classToAdd);
-                    searchedBlockObserver.unobserve(entry.target);
+                    if (block.carousel) {
+                        const mutationObserver = new MutationObserver((mutationsList, observer) => {
+                            for (let mutation of mutationsList) {
+                                if (mutation.type === 'childList') {
+                                    const carouselStatus = entry.target.querySelector('.owl-loaded');
+                                    if (carouselStatus) {
+                                        entry.target.classList.add(block.classToAdd);
+                                        observer.disconnect();
+                                        searchedBlockObserver.unobserve(entry.target);
+                                    }
+                                }
+                            }
+                        });
+
+                        mutationObserver.observe(entry.target, {
+                            childList: true,
+                            subtree: true
+                        });
+    
+                        const carouselStatus = entry.target.querySelector('.owl-loaded');
+                        if (carouselStatus) {
+                            entry.target.classList.add(block.classToAdd);
+                            searchedBlockObserver.unobserve(entry.target);
+                        }
+    
+                    } else {
+                        entry.target.classList.add(block.classToAdd);
+                        searchedBlockObserver.unobserve(entry.target);
+                    }
                 }
-            })
+            });
         }, {
             threshold: block.threshold
         });
-
-        searchedBlockObserver.observe(searchedBlock);
+    
+        if (searchedBlock) {
+            searchedBlockObserver.observe(searchedBlock);
+        }
     }
-
+    
+    
     animatedBlocks.forEach(block => {
-        searchForAnimation (block);
-    })
+        searchForAnimation(block);
+    });
+
 
 </script>

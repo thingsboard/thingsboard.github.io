@@ -9,13 +9,17 @@
     background: #FFFFFF
 
     #companyContent
+
+      --company-aboutus-content-animation: 0.4
+      --company-history-content-animation: 0.2
+      --company-timeline-content-animation: 0.5
+      --company-values-content-animation: 0.3
+
       .company-content
 
         .company-hero-carousel
-          .owl-carousel
             opacity: 0
         .company-hero-carousel-animation
-          .owl-carousel.owl-loaded
             animation: revealFromRightToLeft 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
 
         .company-aboutus-container
@@ -33,13 +37,21 @@
             bottom: 50%
             left: 50%
             background: url(/images/tbstyled-bg.svg) center
-          .company-aboutus-content
-            .company-text-content-default
-              max-width: 908px
+          .company-aboutus-image-block
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 15px
+            .company-aboutus-image
+              max-width: 257px
+            span
+              font-size: 70px
+              font-weight: 500
+              color: #305680
         .company-aboutus-content-animation
           .company-flex-content-default
             animation: opacityTransform 0.8s ease-out forwards
-            .company-aboutus-image
+            .company-aboutus-image-block
               transform: translateX(-100%)
               animation: slideInFromLeft 0.8s ease-out forwards
             .company-text-content-default
@@ -47,19 +59,12 @@
               animation: slideInFromRight 0.8s ease-out forwards
 
       .company-history-container
-        .company-history-content
-          .company-text-content-default
-            max-width: 890px
+        .company-aboutus-image
+          max-width: 400px
       .company-history-content-animation
         .company-flex-content-default
           animation: slideInFromBottom 0.8s ease-out forwards, opacityTransform 1s ease-out forwards
           transform: translateY(100%)
-
-      .company-aboutus-image:first-child
-        max-width: 382px
-
-      .company-aboutus-image:last-child
-        max-width: 400px
 
       .company-aboutus-container .company-flex-content-default
         align-items: center
@@ -197,8 +202,33 @@
   #company
     #companyBg
       #companyContent
+
+        --company-aboutus-content-animation: 0.2
+        --company-history-content-animation: 0.1
+        --company-values-content-animation: 0.2
+
         .company-aboutus-container .company-flex-content-default
           flex-direction: column
         .company-history-container .company-flex-content-default:last-child
           flex-direction: column-reverse
           align-items: center
+
+@media (max-width: 600px)
+  #company
+    .company-content-title
+      padding: 60px 0
+    #companyBg
+      #companyContent
+        .company-content
+          .company-aboutus-container
+            padding: 70px 0
+            .company-aboutus-image-block
+              .company-aboutus-image
+                max-width: 160px
+              span
+                font-size: 40px
+          .company-flex-content-default
+            gap: 50px
+
+
+

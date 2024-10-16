@@ -934,8 +934,8 @@ var tb = (function () {
 						document.documentElement.style.setProperty('--maxTitleHeight', `${maxTitleHeight}px`);
 					}
 
-					function setupMarginPadding($carousel, propertyValue) {
-						return Number(getComputedStyle($carousel[0]).getPropertyValue(propertyValue));
+					function setupMarginPadding($carousel, property) {
+						return Number(getComputedStyle($carousel[0]).getPropertyValue(property));
 					}
 
 					function autoPlayStatus($carousel) {
@@ -952,6 +952,7 @@ var tb = (function () {
 
 					function initializeCarousel() {
 						$('.owl-carousel').each(function(index) {
+
 							const $carousel = $(this);
 							const carouselId = "owl-carousel-" + index;
 							$(this).attr("id", carouselId);

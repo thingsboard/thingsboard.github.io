@@ -49,10 +49,8 @@
     jqueryUiDefer(initTabs);
     function initTabs() {
         $(function(){
-            $("#tabs").tabs();
-            document.getElementById("tabs").classList.remove("bubble-tabs-hidden");
-            document.getElementById("tabs").classList.add("bubble-tabs-loaded");
-            searchForAnimateBubbleTabs(".bubble-tabs", 0.3);
+            $("#tabs").tabs().removeClass("bubble-tabs-hidden").addClass("bubble-tabs-loaded");
+            searchForAnimateBubbleTabs(".bubble-tabs", 0.1);
         });
     }
     function searchForAnimateBubbleTabs (classToSearch, threshold) {
