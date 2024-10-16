@@ -20,7 +20,7 @@ notitle: "true"
         <section id="smart-farm-demo" class="smart-farm-demo">
             <div class="smart-farm-demo-container">
                 <h2>ThingsBoard IoT platform for Smart farming solutions</h2>
-                <p>The ThingsBoard IoT platform is a comprehensive solution designed to facilitate the implementation of IoT technologies in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
+                <p>ThingsBoard is a comprehensive IoT platform designed to facilitate the implementation of IoT solutions in various industries, including agriculture. In the context of smart agriculture, ThingsBoard allows farmers to monitor, manage and optimise their operations by collecting, analysing and automating data in real time. This platform integrates various sensors, devices and data sources, providing a single interface for efficient management of agricultural activities.</p>
                 <div class="smart-farm-demo-btn">
                     <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0"><button class="try-demo">View live demo</button></a>
                     <a target="_blank" href="/smart-farming-demo"><button id="smart-farm-contact-us" class="button anchor-button gtm_button" class="contact-us">Learn more</button></a>
