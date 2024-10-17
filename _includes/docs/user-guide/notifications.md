@@ -17,10 +17,10 @@ Users can manually send notifications, automate them through REST API, or set tr
 The Notification center is accessible through the sidebar menu and includes options for [sending notifications](#send-notification), viewing [inbox](#inbox) and [sent](#sent) messages, [managing recipients](#recipients), [creating templates](#templates), and [setting up rules](#rules) for automated notifications.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/notification-center-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/notification-center-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/notifications/notification-center-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/notification-center-1-pe.png)
 {% endif %}
 
 Let's look at each of the key components of the notification center below.
@@ -228,10 +228,10 @@ Let's consider an example with the following event: maintenance work for the ser
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-general-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-general-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-general-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-general-ce.png)
 {% endif %}
 
 #### Alarm
@@ -253,14 +253,14 @@ Let's consider an example with the following event: A new alarm with the type 'H
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-alarms-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-alarms-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 Let's consider an example with the following event: A new alarm with the type "High Temperature" has been created for the device 'Compressor BJ-66'.
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-alarms-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-alarms-ce.png)
 {% endif %}
 
 #### Device activity
@@ -279,14 +279,14 @@ Let's consider an example with the following event: the device 'Compressor MN-56
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-device-activity-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-device-activity-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 Let's consider an example with the following event: the device 'Compressor BJ-66' became inactive.
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-device-activity-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-device-activity-ce.png)
 {% endif %}
 
 #### Entity action
@@ -308,10 +308,10 @@ Let's consider an example with the following event: user johndoe@thingsboard.io 
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-entity-action-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-entity-action-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-entity-action-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-entity-action-ce.png)
 {% endif %}
 
 #### Alarm comment
@@ -330,10 +330,10 @@ Let's consider an example with the following event: John Doe left a comment for 
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-alarm-comment-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-alarm-comment-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-alarm-comment-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-alarm-comment-ce.png)
 {% endif %}
 
 #### Alarm assignment
@@ -355,10 +355,10 @@ Let's consider an example with the following event: johndoe@thingsboard.io assig
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-alarm-assignment-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-alarm-assignment-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-alarm-assignment-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-alarm-assignment-ce.png)
 {% endif %}
 
 #### Rule engine lifecycle event
@@ -381,10 +381,10 @@ Let's consider an example with the following event: the "Kafka" rule node miscon
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-ce.png)
 {% endif %}
 
 #### Rule node
@@ -407,10 +407,10 @@ Let's consider an example with the following event: the incoming message to the 
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/tempalates-rule-node-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/tempalates-rule-node-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/tempalates-rule-node-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/tempalates-rule-node-ce.png)
 {% endif %}
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
@@ -430,7 +430,7 @@ Let's consider an example with the following event: failed to start MQTT Integra
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-integration-lifecycle-event-pe.png) 
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-integration-lifecycle-event-pe.png) 
 {% endif %}
  
 #### Edge connection
@@ -448,10 +448,10 @@ Let's consider an example with the following event: ThingsBoard connected to Edg
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-edge-connection-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-edge-connection-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-edge-connection-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-edge-connection-ce.png)
 {% endif %}
 
 #### Edge communication failure
@@ -469,10 +469,10 @@ Let's consider an example with the following event: failed to connect ThingsBoar
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/notifications/templates/templates-edge-communication-failure-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-edge-communication-failure-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-edge-communication-failure-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-edge-communication-failure-ce.png)
 {% endif %}
 
 {% unless docsPrefix contains 'paas/' %}
@@ -493,14 +493,14 @@ Let's consider an example with the following event: the tenant created 800 devic
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-entities-limit-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-entities-limit-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 Let's consider an example with the following event: the tenant created 400 devices with the max allowed number is 500.
 
 The notification in ThingsBoard may look like this:
 
-![image](/images/user-guide/notifications/templates/templates-entities-limit-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-entities-limit-ce.png)
 {% endif %}
 
 #### API usage limit
@@ -521,10 +521,10 @@ Let's consider an example with the following event: the tenant's devices have se
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/notifications/templates/templates-api-usage-limit-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-api-usage-limit-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-api-usage-limit-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-api-usage-limit-ce.png)
 {% endif %}
 
 #### New platform version
@@ -543,10 +543,10 @@ Let's consider an example with the following event: a new 3.6.3 version is relea
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/notifications/templates/templates-new-platform-version-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-new-platform-version-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-new-platform-version-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-new-platform-version-ce.png)
 {% endif %}
 
 #### Exceeded rate limits
@@ -566,10 +566,10 @@ Let's consider an example with the following event: a customer 'Jane Smith' exce
 The notification in ThingsBoard may look like this:
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/notifications/templates/templates-exceeded-rate-limits-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-exceeded-rate-limits-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/templates/templates-exceeded-rate-limits-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/templates/templates-exceeded-rate-limits-ce.png)
 {% endif %}
 
  {% endunless %}
