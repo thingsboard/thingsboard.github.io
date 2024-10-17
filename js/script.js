@@ -72,7 +72,6 @@ var tb = (function () {
             case 'pricing':
             case 'partner-program':
 			case 'installations':
-			case 'choose-region':
             case 'partners':
 				bodyHeight = windowHeight;
 				break;

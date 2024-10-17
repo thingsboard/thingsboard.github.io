@@ -108,10 +108,10 @@ selfManagedPlan:
               <div class="solution-selector solution-selector-cloud">
                   <div id="Pricing_PE_Cloud_NorthAmerica"
                        data-solutionId="cloud-north-america"
-                       class="solution north-america active defaultselection gtm_button"
+                       class="solution north-america active gtm_button"
                        data-toggle="#northAmerica"
                        data-description-toggle="#northAmericaHeader"
-                       onClick="activateSolutionSection('cloud-north-america')">
+                       onClick="activateServerSection('cloud-north-america', '/docs/paas/')">
                       <h3>North America</h3>
                   </div>
                   <div id="Pricing_PE_Cloud_Europe"
@@ -119,7 +119,7 @@ selfManagedPlan:
                        class="solution europe gtm_button"
                        data-toggle="#europe"
                        data-description-toggle="#europeHeader"
-                       onClick="activateSolutionSection('cloud-europe')">
+                       onClick="activateServerSection('cloud-europe', '/docs/paas/eu/')">
                       <h3>Europe</h3>
                   </div>
               </div>
@@ -139,7 +139,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
+                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Start Free
                                 </a>
                             </div>
@@ -162,7 +162,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
+                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -186,7 +186,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
+                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -210,7 +210,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="/installations/choose-region/">
+                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -257,7 +257,7 @@ selfManagedPlan:
                                 <p>Become familiar with ThingsBoard features</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                €10
+                                €9
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">

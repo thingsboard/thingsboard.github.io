@@ -26,6 +26,7 @@
             {% for product in site.data.products %}
             {% include find-product-url.html %}
             <a href="{{ productUrl }}"
+               {% if product.tag == 'paas' %}id="cloud-product-option"{% endif %}
                class="product{% if product.tag == docsTag %} active{% endif %}">{{ product.title }}</a>
             {% endfor %}
         </div>
@@ -40,7 +41,9 @@
         <div class="products">
             {% for product in site.data.paas-servers %}
             {% include find-product-server-url.html %}
-            <a href="{{ productUrl }}" class="server-option product{% if product.server == serverTag %} active{% endif %}">
+            <a href="{{ productUrl }}"
+               onClick="setCloudServerCookie('{{ product.path }}')"
+               class="server-option product{% if product.server == serverTag %} active{% endif %}">
                 <span class="server-option-title">{{ product.title }}</span>
                 <span class="server-option-subtitle">{{ product.description }}</span>
             </a>

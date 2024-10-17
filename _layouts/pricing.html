@@ -41,9 +41,19 @@
 
     function initPricingState() {
         $(function(){
+            setCloudServerDefault();
             window.addEventListener('popstate', onPopPricingState);
             onPopPricingState();
         });
+    }
+
+    function setCloudServerDefault() {
+        const cloudServer = getCookie('cloudServer')
+        if (cloudServer === '/docs/paas/eu/') {
+            document.getElementById('Pricing_PE_Cloud_Europe').classList.add("defaultselection");
+        } else {
+            document.getElementById('Pricing_PE_Cloud_NorthAmerica').classList.add("defaultselection");
+        }
     }
 
     function onPopPricingState() {
@@ -74,6 +84,13 @@
     }
 
     function activateSolutionSection(solutionId) {
+        updateQueryParam({solution: solutionId});
+        setActiveSolutionSection(solutionId);
+    }
+
+    function activateServerSection(solutionId, cookieValue) {
+        setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
+        setCloudServerHref();
         updateQueryParam({solution: solutionId});
         setActiveSolutionSection(solutionId);
     }
