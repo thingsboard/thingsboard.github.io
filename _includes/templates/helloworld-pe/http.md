@@ -28,14 +28,14 @@ This command works for Windows, Ubuntu and macOS, assuming the cURL tool is alre
 Replace $ACCESS_TOKEN with corresponding value.
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" {{httpsHostName}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
 For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" {{httpsHostName}}/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" {{httpsUrl}}/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

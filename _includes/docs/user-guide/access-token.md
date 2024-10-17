@@ -22,7 +22,7 @@ Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard insta
 #### MQTTS (MQTT over SSL)
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud]({{httpsHostName}}/signup).
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud]({{httpsUrl}}/signup).
 {% unless docsPrefix contains "paas/" %}
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 {% endunless %}

@@ -76,7 +76,7 @@ See the following for more details regarding the above steps.
 In order to reclaim the device, you can send DELETE request to the following URL (Don't forget to replace device name with the correct name):
 
 ```shell
-curl -X DELETE {{httpsHostName}}/api/customer/device/$DEVICE_NAME/claim
+curl -X DELETE {{httpsUrl}}/api/customer/device/$DEVICE_NAME/claim
 ```
 {: .copy-code}
 

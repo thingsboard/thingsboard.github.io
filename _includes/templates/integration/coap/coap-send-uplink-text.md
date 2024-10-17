@@ -2,7 +2,7 @@
 Use this command to send the message to the CoAP server that is hosted on **localhost**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
 {% endif %}
 {% if docsPrefix contains "paas/" %}
-Use this command to send the message to the CoAP server that is hosted on **int.thingsboard.cloud**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
+Use this command to send the message to the CoAP server that is hosted on **int.{{hostName}}**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
 {% endif %}
 
 ```shell

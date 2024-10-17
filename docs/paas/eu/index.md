@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas-eu
-title: ThingsBoard Cloud
+title: ThingsBoard EU Cloud
 description: ThingsBoard Cloud documentation - learn about the platform and get your IoT projects running on ThingsBoard
 ---
 
