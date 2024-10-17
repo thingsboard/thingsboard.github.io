@@ -18,8 +18,9 @@ and follow the [getting started guide](/docs/mqtt-broker/getting-started/).
 
 ### What can I do with TBMQ?
 
-TBMQ facilitates the establishment of connections between MQTT clients, enabling the seamless exchange of data. 
-Furthermore, it extends robust support for various MQTT features, enhancing the overall functionality and versatility of the system.
+TBMQ enables seamless communication between MQTT clients, ensuring reliable data exchange. 
+It provides robust support for MQTT versions 3.x and 5.0, ensuring compatibility with a wide range of clients. 
+TBMQ enhances both functionality and scalability, making it suitable for IoT deployments of any size.
 
 ### Where can I host TBMQ?
 
@@ -30,9 +31,10 @@ If you're interested in configuring a cluster setup, a comprehensive [guide](/do
 
 ### What about security?
 
-The utilization of MQTT with SSL encryption is supported, ensuring secure and encrypted communication. 
-In addition, it is possible to create MQTT client credentials, granting the ability to authenticate and authorize clients, 
-thereby enhancing the overall security and control of the system.
+TBMQ ensures secure communication by supporting MQTT with SSL/TLS encryption, safeguarding data transmission. 
+It also allows the creation of client credentials for authentication and authorization, bolstering system security. 
+With MQTT 5, TBMQ offers enhanced authentication features, enabling more flexible and dynamic client authentication mechanisms. 
+These measures provide robust protection against unauthorized access and strengthen overall security control in your IoT environment.
 
 ### How many clients and messages per second can TBMQ support?
 
@@ -42,10 +44,13 @@ It's worth noting that the actual performance of the system is contingent upon t
 with factors such as payload size and message rate playing crucial roles in determining the overall efficiency and throughput of the system.
 For a comprehensive understanding of the performance capabilities of TBMQ, we recommend referring to the dedicated 
 [performance test page](/docs/mqtt-broker/reference/100m-connections-performance-test/).
-  
+
 ### Where does TBMQ store data?
 
-The data is stored in [PostgreSQL](https://www.postgresql.org/) database and in [Kafka](https://kafka.apache.org/).
+TBMQ utilizes [Kafka](https://kafka.apache.org/), [Redis](https://redis.io/), and [PostgreSQL](https://www.postgresql.org/) for data storage.
+Kafka handles unprocessed PUBLISH messages, persistent messages for Application clients, and stores client sessions and subscriptions, ensuring seamless data flow across broker nodes. 
+Redis is used for Device persistent clients, providing high-performance message storage and delivery. 
+PostgreSQL stores essential metadata, including user credentials, MQTT client details, and system statistics, ensuring data reliability and integrity.
 
 ### What license type does TBMQ use?
 

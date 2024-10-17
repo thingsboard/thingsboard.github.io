@@ -12,6 +12,7 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ### Upcoming releases
 
-* MQTT 5 full support;
-* Redis support for storing messages of **DEVICE** persistent clients;
-* MQTT clients monitoring enhancements.
+* MQTT-SN support;
+* Table for tracking dropped messages;
+* Helm Chart implementation;
+* Integration with external third-party services and external MQTT brokers.
