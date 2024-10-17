@@ -182,7 +182,7 @@ http(s)://host:port/api/plugins/rpc/{callType}/{deviceId}
 
 where
 
-- **http(s)://host:port** is your ThingsBoard server base URL. For example, [https://thingsboard.cloud](https://thingsboard.cloud)
+- **http(s)://host:port** is your ThingsBoard server base URL. For example, [{{hostName}}](https://{{hostName}})
 - **callType** is either **oneway** or **twoway**;
 - **deviceId** is your target [Device ID](/docs/{{docsPrefix}}user-guide/ui/devices/#get-device-id).
 
@@ -271,7 +271,7 @@ You can review API and examples on the corresponding reference page:
 
 ThingsBoard tracks state of the persistent RPC. There are 7 available states:
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
 * **QUEUED** - RPC was created and saved to the database; 
   No attempt to send the RPC to device yet; 
@@ -377,7 +377,7 @@ See example of successful RPC message below:
 
 ##### TTL configuration
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
 The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TTL' parameter in [Subscriptions](/products/paas/subscription/) for more details.
 

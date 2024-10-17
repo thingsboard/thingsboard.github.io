@@ -254,7 +254,7 @@ So let's get started:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectPE %}
 {% else %}  
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectCE %}
@@ -329,7 +329,7 @@ To confirm that Firebase has been integrated properly, run your application ([St
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=mobileNotificationsPE %}
 {% else %}  
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=mobileNotificationsCE %}

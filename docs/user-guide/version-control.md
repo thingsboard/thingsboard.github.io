@@ -56,4 +56,5 @@ multipleEntityExport:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/version-control.md %}

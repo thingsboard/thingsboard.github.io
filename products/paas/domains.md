@@ -46,10 +46,13 @@ deleteDomain:
         title: 'In the confirmation dialog, click "Yes" if you are sure you want to delete the domain.'
 
 ---
+
+{% include get-hosts-name.html docsTag="paas" %}
+
 * TOC
 {:toc}
 
-The [ThingsBoard Cloud](https://thingsboard.cloud/signup) allows registering your custom domain to have the required host name for user’s access, links, etc. 
+The [ThingsBoard Cloud](https://{{hostName}}/signup) allows registering your custom domain to have the required host name for user’s access, links, etc. 
 When you register valid domain, the ThingsBoard Cloud automatically requests the SSL certificate from [Let's Encrypt](https://letsencrypt.org/) for the latter and manages further certificate renewals. 
 After domain registration, your tenant and application(s) will be accessible via your domain name using a secure (HTTPS) connection.
 Like Web UI all other ThingsBoard Cloud services such as MQTT/HTTP/CoAP transports or HTTP integrations will be accessible via your custom domain name.

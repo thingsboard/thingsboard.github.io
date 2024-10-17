@@ -1,4 +1,4 @@
-{% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
+{% if docsPrefix == 'pe/' or docsPrefix contains 'paas/' %}
 {% assign mobileDocsPrefix = "pe/" %}
 {% assign mobilePrefix = "ThingsBoard PE Mobile Application" %}
 {% else %}
@@ -1252,10 +1252,10 @@ Map widget has unique action sources that need to be considered separately.
 Let's start by adding a map widget, namely OpenStreetMap widget. We have a separate guide on [how to create and configure a map widget](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/){:target="_blank"}. Please, familiarize yourself with it first.
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
+![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](https://img.thingsboard.io/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
 {% endif %}
 
 Now it's time to add an action.

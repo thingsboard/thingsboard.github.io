@@ -7,4 +7,5 @@ description: ThingsBoard  X.509 Certificate based authentication for CoAP over D
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ssl/coap-x509-certificates.md %}

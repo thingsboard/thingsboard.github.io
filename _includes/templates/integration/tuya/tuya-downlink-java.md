@@ -31,8 +31,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-downlink-converter-java-pe.png)
+![image](/images/user-guide/integrations/tuya/tuya-create-downlink-converter-java-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-downlink-converter-java-pe.png)
+{% if docsPrefix contains "paas/" %}
+![image](/images/user-guide/integrations/tuya/tuya-create-downlink-converter-java-pe.png)
 {% endif %}

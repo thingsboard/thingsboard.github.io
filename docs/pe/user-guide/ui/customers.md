@@ -104,4 +104,5 @@ delete-customer-user-1:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/customers-pe.md %}

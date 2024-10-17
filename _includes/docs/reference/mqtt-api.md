@@ -80,17 +80,17 @@ Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix
 <br>
 Below are the examples of commands for publishing different types of telemetry data.
 
-{% if docsPrefix == null %}
-Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
+{% if docsPrefix == nil %}
+Don't forget to replace <code>{{mqttHostName}}</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>{{mqttHostName}}</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>{{mqttHostName}}</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 **Example 1**. Publish data as an object without timestamp (server-side timestamp will be used). 
@@ -203,7 +203,7 @@ Don't forget to replace <code>demo.thingsboard.io</code> with your host and <cod
 {% if docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -221,30 +221,10 @@ Telemetry data:
 
 Execute the command:
 
-{% if docsPrefix == null %}
 ```shell
-mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+mosquitto_pub -d -h "{{mqttHostName}}" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-mosquitto_pub -d -h "mqtt.thingsboard.cloud" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-mosquitto_pub -d -h "$THINGSBOARD_EDGE_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
-```
-{: .copy-code}
-{% endif %}
 
 **Example 2**. Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
 
@@ -296,7 +276,7 @@ Save the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attr
 {% if docsPrefix == "pe/" %}
 Save the "[mqtt-js-attributes-request.js](/docs/pe/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" to your host. In this example, the hostname reference your local installation.
 {% endif %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 Save the "[mqtt-js-attributes-request.js](/docs/paas/reference/resources/mqtt-js-attributes-request.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -348,7 +328,7 @@ For the following example, don't forget to replace <code>demo.thingsboard.io</co
 {% if docsPrefix == "pe/" %}
 For the following example, don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 For the following example, don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -402,7 +382,7 @@ In this example, the hostname references live demo server.
 Save the "[mqtt-js-rpc-from-server.js](/docs/pe/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" with your host.
 In this example, the hostname reference your local installation.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Save the "[mqtt-js-rpc-from-server.js](/docs/paas/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -460,7 +440,7 @@ In this example, the hostname references live demo server.
 Save the "[mqtt-js-rpc-from-client.js](/docs/pe/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" to your host.
 In this example, the hostname reference your local installation.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Save the "[mqtt-js-rpc-from-client.js](/docs/paas/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}

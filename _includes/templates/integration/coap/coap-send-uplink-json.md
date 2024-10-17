@@ -1,8 +1,8 @@
 {% if docsPrefix == "pe/" %}
 Use this command to send the message to the CoAP server that is hosted on **localhost**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
 {% endif %}
-{% if docsPrefix == "paas/" %}
-Use this command to send the message to the CoAP server that is hosted on **int.thingsboard.cloud**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
+{% if docsPrefix contains "paas/" %}
+Use this command to send the message to the CoAP server that is hosted on **int.{{hostName}}**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
 {% endif %}
 
 ```shell
@@ -11,8 +11,8 @@ echo -e -n '{"deviceName": "SN-001", "deviceType": "default", "temperature": 25.
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-json-pe.png)
+![image](/images/user-guide/integrations/coap/terminal-json-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-json-paas.png)
+{% if docsPrefix contains "paas/" %}
+![image](/images/user-guide/integrations/coap/terminal-json-paas.png)
 {% endif %}

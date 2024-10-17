@@ -111,5 +111,5 @@ fw-devicegroup:
 
 ---
 
-
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ota-updates.md %}

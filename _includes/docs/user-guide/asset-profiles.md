@@ -17,10 +17,10 @@ Let's take a look at the settings available in the asset profile.
 To create an asset profile, go to the Asset Profiles on the Profiles tab and click on the plus button to add a new asset profile.
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-add-1-ce.png)
+![image](/images/user-guide/asset-profile/asset-profile-add-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-add-1-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+![image](/images/user-guide/asset-profile/asset-profile-add-1-pe.png)
 {% endif %}
 
 ## Asset Profile settings
@@ -36,17 +36,17 @@ The new Rule Chain will receive asset attributes updates, and asset lifecycle(Cr
 This setting is available in the Asset Profile details.
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-1-ce.png)
+![image](/images/user-guide/asset-profile/asset-profile-rule-chain-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-1-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+![image](/images/user-guide/asset-profile/asset-profile-rule-chain-1-pe.png)
 {% endif %}
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-2-ce.png)
+![image](/images/user-guide/asset-profile/asset-profile-rule-chain-2-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-2-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+![image](/images/user-guide/asset-profile/asset-profile-rule-chain-2-pe.png)
 {% endif %}
 
 ### Queue
@@ -61,18 +61,18 @@ Separation of the queues also allows you to customize different [submit](/docs/{
 This setting is available when you create an Asset Profile and in the Asset Profile details.
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-1-ce.png)
+![image](/images/user-guide/asset-profile/asset-profile-queue-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-1-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+![image](/images/user-guide/asset-profile/asset-profile-queue-1-pe.png)
 {% endif %}
 
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-2-ce.png)
+![image](/images/user-guide/asset-profile/asset-profile-queue-2-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-2-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+![image](/images/user-guide/asset-profile/asset-profile-queue-2-pe.png)
 {% endif %}
 
 ## Related guides
@@ -91,7 +91,7 @@ You can use the following links to check out the related guides:
  - [Assets](/docs/pe/user-guide/ui/assets/)
  - [Entities and Relations](/docs/pe/user-guide/entities-and-relations/)
   {% endif %}
-  {% if docsPrefix == "paas/" %}
+  {% if docsPrefix contains "paas/" %}
  - [Rule Chains](/docs/paas/user-guide/ui/rule-chains/)
  - [Assets](/docs/paas/user-guide/ui/assets/)
  - [Entities and Relations](/docs/paas/user-guide/entities-and-relations/)

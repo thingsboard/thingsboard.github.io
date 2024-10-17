@@ -12,4 +12,5 @@ deviceImageFileName: iot-gateway-cell-1024.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/iot-gateway-cell-1024.md %}

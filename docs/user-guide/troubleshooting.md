@@ -29,4 +29,5 @@ metrics-dashboards:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/troubleshooting.md %}

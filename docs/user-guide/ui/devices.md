@@ -160,4 +160,5 @@ version-control:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/devices.md %}

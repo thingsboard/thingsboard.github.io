@@ -8,25 +8,25 @@ should pop up, and you will be prompted to upload the JSON file and click **“I
 
 {% assign importingDashboardPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
     '
 %}
 
 {% assign importingDashboardCE = '
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardPE %}
 {% else %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}
@@ -38,8 +38,8 @@ Then, choose a device with name My device from dropdown list and save entity ali
 
 If you did everything right, you have to see the following dashboard:
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
-![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-dashboard.png)
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+![imagePe](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-dashboard.png)
 {% else %}  
-![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-dashboard-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-dashboard-ce.png)
 {% endif %}

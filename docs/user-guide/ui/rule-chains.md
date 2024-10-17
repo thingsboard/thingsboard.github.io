@@ -89,4 +89,5 @@ delete-rule-chain-3:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/rule-chains.md %}

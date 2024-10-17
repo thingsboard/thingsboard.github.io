@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -22,13 +22,13 @@ That is why we propose each tenant to launch a TCP/UDP integration as a remote o
 
 It is possible to execute any ThingsBoard Integration separately from the ThingsBoard instance.
 
-This guide contains step-by-step instructions on how to launch MQTT remote integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+This guide contains step-by-step instructions on how to launch MQTT remote integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://{{hostName}}/signup).
 
 You can find additional information about the ThingsBoard Platform integrations feature [here](/docs/{{peDocsPrefix}}user-guide/integrations/).
 
 ## ThingsBoard configuration
 
-We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://{{hostName}}/signup).
 
 ### Create remote integration in ThingsBoard
 
@@ -46,7 +46,7 @@ Let's create remote integration in ThingsBoard that will connect to the local br
 
 ![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integration-3-paas.png)
 
-- Specify **host**: "**thingsboard.cloud**" and **port**: "**1883**" at the connection step;
+- Specify **host**: "**{{hostName}}**" and **port**: "**1883**" at the connection step;
 - Subscribe to all **topics**;
 - You can also select an MQTT **QoS** level. We use MQTT QoS level 0 (At most once) by default;
 - Copy and save the "**Integration key**" and "**Integration secret**". We will use this values later;

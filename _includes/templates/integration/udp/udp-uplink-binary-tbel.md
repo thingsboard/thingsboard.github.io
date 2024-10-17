@@ -30,8 +30,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-uplink-converter-binary-tbel-pe.png)
+![image](/images/user-guide/integrations/udp/udp-uplink-converter-binary-tbel-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-uplink-converter-binary-tbel-paas.png)
+{% if docsPrefix contains "paas/" %}
+![image](/images/user-guide/integrations/udp/udp-uplink-converter-binary-tbel-paas.png)
 {% endif %}

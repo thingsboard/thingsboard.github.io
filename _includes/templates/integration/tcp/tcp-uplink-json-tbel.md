@@ -27,8 +27,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-tbel-pe.png)
+![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-tbel-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
-![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-tbel-paas.png)
+{% if docsPrefix contains "paas/" %}
+![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-tbel-paas.png)
 {% endif %}

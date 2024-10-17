@@ -310,4 +310,5 @@ edge-search-query-2:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/aliases.md %}

@@ -328,4 +328,5 @@ mosquitto-windows:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/getting-started-guides/helloworld-pe.md %}

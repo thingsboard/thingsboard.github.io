@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -94,7 +94,7 @@ Integration should look like this:
       </tr>
       <tr>
           <td>Base URl</td>
-          <td>http://thingsboard.cloud</td>
+          <td>http://{{hostName}}</td>
       </tr>
       <tr>
           <td>Enable secrurity</td>

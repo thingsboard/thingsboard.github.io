@@ -28,6 +28,9 @@ upcomingInvoice:
         image: https://img.thingsboard.io/cloud/upcoming-invoice.png
         title: 'Upcoming invoice preview'
 ---
+
+{% include get-hosts-name.html docsTag="paas" %}
+
 * TOC
 {:toc}
 

@@ -19,7 +19,7 @@ The **durationMs** parameter determines the expiration of claiming time.
 In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
-{% unless docsPrefix == "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 In order to enable claiming devices feature a system parameter **security.claim.allowClaimingByDefault** (see [configuration guide](/docs/user-guide/install/{{docsPrefix}}config/)) 
 should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
 {% endunless %}
