@@ -11,4 +11,5 @@ deviceImageFileName: upesy-esp32-wroom-dev-kit-v2.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/upesy-esp32-wroom-dev-kit-v2.md %}

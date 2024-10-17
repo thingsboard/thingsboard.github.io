@@ -11,4 +11,5 @@ deviceImageFileName: upesy-esp32-low-power-dev-kit.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/upesy-esp32-low-power-dev-kit.md %}

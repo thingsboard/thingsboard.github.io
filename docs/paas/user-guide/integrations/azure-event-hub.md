@@ -113,4 +113,5 @@ solution_templates:
 
 ---
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/integrations/azure-event-hub.md %}

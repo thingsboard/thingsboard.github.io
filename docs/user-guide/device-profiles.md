@@ -141,5 +141,5 @@ alarmСonstantFilters:
  
 ---
 
-
+{% include get-hosts-name.html %}
 {% include docs/user-guide/device-profiles.md %}

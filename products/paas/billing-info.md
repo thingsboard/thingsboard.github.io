@@ -28,6 +28,9 @@ upcomingInvoice:
         image: /images/cloud/upcoming-invoice.png
         title: 'Upcoming invoice preview'
 ---
+
+{% include get-hosts-name.html docsTag="paas" %}
+
 * TOC
 {:toc}
 

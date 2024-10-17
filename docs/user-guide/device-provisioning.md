@@ -15,4 +15,5 @@ deviceProfileConfiguration:
          
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/device-provisioning.md %}

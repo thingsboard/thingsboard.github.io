@@ -7,7 +7,7 @@ In case you have not found out how to connect your device using the diagram or s
 <object width="100%" style="max-width: max-content;" data="/images/connectivity.svg"></object>
 
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 

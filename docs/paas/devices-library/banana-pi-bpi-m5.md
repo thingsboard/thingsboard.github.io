@@ -13,4 +13,5 @@ docsPrefix: paas/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/banana-pi-bpi-m5.md %}

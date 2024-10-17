@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <script type="text/javascript">
+        function WebSocketAPIExample() {
+            var token = "YOUR_JWT_TOKEN";
+            var entityId = "YOUR_DEVICE_ID";
+            var webSocket = new WebSocket("ws(s)://host:port/api/ws");
+
+            if (entityId === "YOUR_DEVICE_ID") {
+                alert("Invalid device id!");
+                webSocket.close();
+            }
+
+            if (token === "YOUR_JWT_TOKEN") {
+                alert("Invalid JWT token!");
+                webSocket.close();
+            }
+
+            webSocket.onopen = function () {
+                var object = {
+                    authCmd: {
+                        cmdId: 0,
+                        token: token
+                    },
+                    cmds: [
+                        {
+                            entityType: "DEVICE",
+                            entityId: entityId,
+                            scope: "LATEST_TELEMETRY",
+                            cmdId: 10,
+                            type: "TIMESERIES"
+                        }
+                    ]
+                };
+                var data = JSON.stringify(object);
+                webSocket.send(data);
+                alert("Message is sent: " + data);
+            };
+
+            webSocket.onmessage = function (event) {
+                var received_msg = event.data;
+                alert("Message is received: " + received_msg);
+            };
+
+            webSocket.onclose = function (event) {
+                alert("Connection is closed!");
+            };
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="sse">
+    <a href="javascript:WebSocketAPIExample()">Run WebSocket</a>
+</div>
+
+</body>
+</html>

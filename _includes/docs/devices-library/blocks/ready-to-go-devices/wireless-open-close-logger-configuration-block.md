@@ -4,11 +4,7 @@ Application can be downloaded from [Google Play](https://play.google.com/store/a
 Before you start configuration make sure the sensor is able to register in the NB-IoT network and the APN settings are right. 
 Detailed user manual of Efento NB-IoT sensors and Efento mobile application can be found in the [support section of Efento website](https://getefento.com/support/).  
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-{% assign thingsboardHost = 'coap.thingsboard.cloud' %}
-{% else %}
-{% assign thingsboardHost = 'demo.thingsboard.io' %}
-{% endif %}
+{% assign thingsboardHost = coapHostName %}
 
 {% assign efentoSensorConfiguration = '
     ===

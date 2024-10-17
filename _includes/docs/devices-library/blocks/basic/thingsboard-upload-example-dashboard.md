@@ -49,7 +49,7 @@ To add the dashboard to ThingsBoard, we need to import it. To import a dashboard
 
 - First download the [Check and control device data dashboard]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} file.
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or  docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or  docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importDashboardCE %}
