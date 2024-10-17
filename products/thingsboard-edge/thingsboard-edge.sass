@@ -174,7 +174,7 @@
         margin-left: -20px
         margin-right: -20px
         width: calc(100% + 40px)
-        .edge, .cloud, .gateway
+        .cloud, .edge, .gateway
           padding: 0 20px
           width: 20%
           position: absolute
@@ -192,7 +192,7 @@
               height: 106px
               background-color: #7A4DC3
         .cloud
-          right: 20%
+          right: 40%
           .coln
             border: 2px solid #2A7DEC
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
@@ -200,7 +200,7 @@
               height: 106px
               background-color: #2A7DEC
         .edge
-          right: 40%
+          right: 20%
           .coln
             border: 2px solid #009688
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
@@ -212,12 +212,12 @@
         margin: 160px -20px 16px
         td, th
           margin: 0 2px
-          &:nth-child(2n)
+          &:nth-child(3n)
             color: #009688
             img
               filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
           margin: 0 2px
-          &:nth-child(3n)
+          &:nth-child(2n)
             color: #2A7DEC
             img
               filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
@@ -545,7 +545,6 @@
           padding: 0 7%
         .labeling
           padding: 0 13%
-
 
   @media screen and (min-width: 1500px)
     #edgeContent

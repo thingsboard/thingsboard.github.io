@@ -177,8 +177,8 @@ description: Comprehensive software solutions for edge computing, providing data
 
 <section id="matrix">
     <div id="backg-matrix">
-        <div class="edge"><div class="coln"><div class="head"></div></div></div>
         <div class="cloud"><div class="coln"><div class="head"></div></div></div>
+        <div class="edge"><div class="coln"><div class="head"></div></div></div>
         <div class="gateway"><div class="coln"><div class="head"></div></div></div>
     </div>
     <h3>Feature Comparison Matrix</h3>
@@ -186,16 +186,16 @@ description: Comprehensive software solutions for edge computing, providing data
             <thead>
                 <tr>
                     <td></td>
-                    <th>ThingsBoard<br>Edge</th>
-                    <th>ThingsBoard<br>Cloud</th>
+                    <th>ThingsBoard<br>Server</th>
+                    <th>ThingsBoard<br>Edge</th>                    
                     <th>IoT<br>Gateway</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>Standalone Mode</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server Required)</td>
+                    <th>Standalone Mode</th>                    
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server Required)</td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Edge or Server<br>Required)</td>
                 </tr>
                 <tr>
@@ -217,7 +217,7 @@ description: Comprehensive software solutions for edge computing, providing data
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>End-User Real-Time Dashboards</th>
+                    <th><a href="/docs/user-guide/dashboards/" target="_blank">End-User Real-Time Dashboards<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
@@ -248,38 +248,32 @@ description: Comprehensive software solutions for edge computing, providing data
                 </tr>
                 <tr>
                     <th>Multi-Tenancy Support</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th>Micro Services Deployment</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th>Cassandra DB for Time-Series Data</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Offline Operation</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Limited to Data Collection)</td>
                 </tr>
                 <tr>
                     <th>Traffic Filtering</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Alarms on Edge</th>
+                    <th><a href="/docs/user-guide/alarms/" target="_blank">Alarms<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
@@ -289,9 +283,15 @@ description: Comprehensive software solutions for edge computing, providing data
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
+                    <th>On-Site Data Operations Without Server Connectivity</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Limited to Data Collection)</td>
+                </tr>
+                <tr>
                     <th>Hardware Resources Usage</th>
-                    <td>Medium to Low</td>
                     <td>High to Medium</td>
+                    <td>Medium to Low</td>
                     <td>Low</td>
                 </tr>
             </tbody>
