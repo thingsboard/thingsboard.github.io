@@ -74,6 +74,7 @@ notitle: "true"
         {
             classToSearch: ".company-hero-carousel",
             classToAdd: "company-hero-carousel-animation",
+            threshold: getThresholdValue ('--company-hero-carousel-animation'),
             carousel: true
         },
         {
@@ -146,20 +147,17 @@ notitle: "true"
             });
 
             searchedBlockObserver.observe(searchedBlock);
+        }
 
-        }
-         
-        if (block.threshold) {
-            showBlockByThreshold();
-        } else if (block.carousel) {
-            showCarouselIfLoaded();
-        }
+        showBlockByThreshold();
 
     }
 
-    animatedBlocks.forEach(block => {
-        searchForAnimation(block);
-    });
+    window.onload = function() {
+        animatedBlocks.forEach(block => {
+            searchForAnimation(block);
+        });
+    };
 
 
 

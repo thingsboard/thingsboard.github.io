@@ -1015,12 +1015,30 @@ var tb = (function () {
 
 					initializeCarousel();
 
-					$(window).resize(function() {
+					$(window).on('load', function() {
 						$('.owl-carousel').each(function() {
 							$(this).trigger('destroy.owl.carousel');
 						});
 						initializeCarousel();
 					});
+
+					let previousWidth = $(window).width();
+
+					$(window).resize(function() {
+						const currentWidth = $(window).width();
+						const widthDifference = Math.abs(currentWidth - previousWidth);
+
+						if (widthDifference > 1) {
+
+							$('.owl-carousel').each(function() {
+								$(this).trigger('destroy.owl.carousel');
+							});
+							initializeCarousel();
+
+							previousWidth = currentWidth;
+						}
+					});
+
 				});
 			});
 		}
