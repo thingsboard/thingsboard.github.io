@@ -139,7 +139,7 @@ description:
             Specialists in Bluetooth® Beacon Solutions.
         </h2>
         <p>
-            ThingsBoard offers a secure, scalable IoT solution that, being Open Source, we can control. Having created our own ThingsBoard instance, we have found it to be very customisable via widgets, the rule engine and the plugin system allowing it to be used in a variety of specialist situations.
+            ThingsBoard offers a secure, scalable IoT solution that, being Open-source, we can control. Having created our own ThingsBoard instance, we have found it to be very customisable via widgets, the rule engine and the plugin system allowing it to be used in a variety of specialist situations.
         </p>
     </div>
 </div>

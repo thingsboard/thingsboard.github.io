@@ -383,7 +383,7 @@ selfManagedPlan:
                         <div class="pricing-square">
                             <h2>Community Edition</h2>
                             <div class="pricing-square-description">
-                                <p>100% Open source</p>
+                                <p>100% Open-source</p>
                             </div>
                             <h4 class="pricing-square-price no-sign mb-0">
                                 YES, IT'S FREE
@@ -1056,7 +1056,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Community Edition</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
-                            <p>100% Open source</p>
+                            <p>100% Open-source</p>
                         </div>
                         <h4 class="pricing-square-price no-sign mb-0">
                             YES, IT'S FREE

@@ -18,7 +18,7 @@ designed to facilitate the creation of SCADA HMIs (Human-Machine Interfaces).
 
 The SCADA dashboard typically consists of special scalable widgets known as SCADA symbols. 
 Each symbol can represent the state of a physical object such as a valve, pump, motor, tank, or pipe. 
-Users can also interact with these widgets to send commands to the physical objects, such as turning a pump on or off, or opening or closing a valve. 
+Users can also interact with these widgets to send commands to the physical objects, such as turning a pump on and off, or opening and closing a valve. 
 Additionally, you can combine SCADA widgets with over 500 existing ThingsBoard [widgets](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"} on the same dashboard.
 
 Here are some key features of the SCADA layout:
@@ -54,9 +54,9 @@ You can configure different layout settings for each layout breakpoint: xl, lg, 
 {% include images-gallery.html imageCollection="scada-minimum-layout-width-1" %}
 
 <br>
-**Background color**. The "Background color setting allows you to customize the color of the dashboard's background.
+**Background color**. The "Background color" setting allows you to customize the color of the dashboard's background.
 To change the background color, click the color in the small square on the right in the background color section.
-In the popup window, select the desired color and transparency. Then click "Select". Afterward, apply the layout settings.
+In the popup window, select the desired color and transparency. Then click "Select". Afterwards, apply the layout settings.
 
 {% include images-gallery.html imageCollection="scada-background-color-1" %}
 
@@ -64,7 +64,7 @@ In the popup window, select the desired color and transparency. Then click "Sele
 **Background image** and **Background size mode**. This option allows you to set an image as the background of the dashboard. You can choose an image from the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/){:target="_blank"} or set a direct link.
 
 To select an image from the gallery, click "Browse from gallery". Choose an already uploaded image or add a new one.
-**Background size mode**. To more precisely adjust the position of the image, click the dropdown menu of the "Background size mode" section and select how exactly the image will fill the background space. 
+**Background size mode**. To adjust the positioning of the image more precisely, click the dropdown menu in the "Background size mode" section and select how exactly the image will fill the background space. 
 For example, let's choose "Cover" and click "Save" to see how the background has changed.
 
 {% include images-gallery.html imageCollection="scada-background-image-1" %}
@@ -88,7 +88,7 @@ Specifically, we define how the SVG object changes based on the properties confi
 We also define clickable areas of the SVG object, allowing users to configure actions that can be triggered once the symbol is added to the dashboard. 
 
 We currently provide 60+ SCADA symbols available out of the box, with plans to increase this number to 500+ in upcoming releases. 
-If you need a symbol that is not available, you are encouraged to create your own using the following [guide](/docs/{{docsPrefix}}user-guide/scada/symbols-dev-guide/){:target="_blank"}.
+If you need a symbol that is not available, you are encouraged to create your own using the following [guide](/docs/{{docsPrefix}}user-guide/scada/scada-symbols-dev-guide/){:target="_blank"}.
 
 ## SCADA symbol widget
 
@@ -169,7 +169,7 @@ The platform supports three types of **actions** regarding the target entity:
 
 <br>
 
-**Widget action** parameter "On click" define the actions triggered when the user clicks on the component. 
+**Widget action** parameter "On click" defines the actions triggered when the user clicks on the component. 
 In our example, the valve symbol does not have any widget action parameters, but you may explore other symbols like 'Left motor pump' for such actions. 
 Possible action types are documented [here](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types){:target="_blank"}.
 
@@ -182,7 +182,7 @@ As an example, we will consider the parameters of the "Horizontal Wheel Valve" s
 In the case of our valve, this parameter determines whether the valve is "Open" or "Closed";
 
 - The second and third parameters determine which action should be executed in relation to the target object when the user interacts with the valve.
-In the case of the horizontal wheel valve, there are two actions: "Open" and "Close": the "Open" action sets the value "true" for the "open" attribute, and the "Close" action sets the value "false" for the "open" attribute.
+In the case of the horizontal wheel valve, there are two actions: "Open" and "Close". The "Open" action sets the value "true" for the "open" attribute, and the "Close" action sets the value "false" for the "open" attribute.
 
 {% include images-gallery.html imageCollection="example-of-parameters-scada-symbol-1" %}
 
@@ -193,7 +193,7 @@ Other parameters are specific to the chosen SCADA symbol and are controlled by t
 In the case of our valve, you can define the color of the valve symbol in both the opened and closed states. 
 You can also configure the animation of the wheel by setting the angle of rotation. 
 There are several types of appearance parameters, which are intuitive for the end user. 
-For more details, see the symbol development [guide](/docs/{{docsPrefix}}user-guide/scada/symbols-dev-guide/){:target="_blank"}.
+For more details, see the symbol development [guide](/docs/{{docsPrefix}}user-guide/scada/scada-symbols-dev-guide/){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="scada-appearance-1" %}
 

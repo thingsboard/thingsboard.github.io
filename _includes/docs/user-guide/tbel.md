@@ -972,10 +972,13 @@ List<Integer>
 **Examples:**
 
 ```java
-var listBe = [-40, -1];
-var listLe = [-1, -40];
-return printUnsignedBytes(listBe);        // Returns [255, 216]
-return printUnsignedBytes(listBe);        // Returns [216, 255]
+var hexStrBe = "D8FF";                     // [-40, -1]
+var listBe = hexToBytes(hexStrBe);
+return printUnsignedBytes(listBe);         // Returns [216, 255]
+
+var hexStrLe = "FFD8";                     // [-1, -40]
+var listLe = hexToBytes(hexStrLe);
+return printUnsignedBytes(listLe);         // Returns [255, 216]
 ```
 {: .copy-code}
 
@@ -1038,13 +1041,15 @@ String
 
 ```java
 var str = "010011";
-return padEnd(str, 8, '0');                           // Returns  "01001100"
+padEnd(str, 8, '0');                           // Returns  "01001100"
+        
 var str ="1001010011";        
-return padEnd(str, 8, '0');                           // Returns  "1001010011"
-return padEnd(str, 16, '*');                          // Returns  "1001010011******"
+padEnd(str, 8, '0');                           // Returns  "1001010011"        
+padEnd(str, 16, '*');                          // Returns  "1001010011******"
+        
 var fullNumber = "203439900FFCD5581";
 var last4Digits = fullNumber.substring(11);
-return padEnd(last4Digits, fullNumber.length(), '*'); // Returns "203439900FF******"
+padEnd(last4Digits, fullNumber.length(), '*'); // Returns "203439900FF******"
 ```
 {: .copy-code}
 
@@ -1079,21 +1084,21 @@ A string in HexDecimal format.
 **Examples:**
 
 ```java
-var i = 0xFFD8FFA6 (4 292 411 302);
-intToHex(i, true, true);                        // Returns "0xFFD8FFA6"
-intToHex(171, true, false));                    // Returns "AB"
-intToHex(0xABCDEF, false, true, 4));            // Returns "0xCDAB"
+var i = 0x7FFFFFFF;                             // (2147483647);
+intToHex(i, true, true);                        // Returns "0x7FFFFFFF"
+intToHex(171, true, false);                     // Returns "AB"
+intToHex(0xABCDEF, false, true, 4);             // Returns "0xCDAB"
 intToHex(0xABCD, false, false, 2);              // Returns "AB"
 
-longToHex(0xFFCEFFA6FFD8FFA6l, false, true));   // Returns "0xA6FFD8FFA6FFCEFF"
-longToHex(0xFFD8FFA6FFD8FFA6l, true, true, 4))  // Returns "0xFFA6"
-longToHex(0xFFD8FFA6FFD8FFA6l, false, false, 4))// Returns "0D8FF"
+longToHex(9223372036854775807, true, true);     // Returns "0x7FFFFFFFFFFFFFFF"
+longToHex(0x7A12BCD3, true, true, 4);           // Returns "0xBCD3"
+longToHex(0x7A12BCD3, false, false, 4);         // Returns "127A"
 
-floatToHex(123456789.00f)                       // Returns "0x4CEB79A3"
-floatToHex(123456789.00f, false)                // Returns "0xA379EB4C"
+floatToHex(123456789.00);                       // Returns "0x4CEB79A3"
+floatToHex(123456789.00, false);                // Returns "0xA379EB4C"
 
-doubleToHex(1729.1729d)                         // Returns "0x409B04B10CB295EA"
-doubleToHex(1729.1729d, false)                  // Returns "0xEA95B20CB1049B40"
+doubleToHex(1729.1729d);                        // Returns "0x409B04B10CB295EA"
+doubleToHex(1729.1729d, false);                 // Returns "0xEA95B20CB1049B40"
 ```
 {: .copy-code}
 
@@ -1121,13 +1126,15 @@ A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
 **Examples:**
 
 ```java
-intLongToRadixString(58l, 2);                         // Returns "00111010"
-intLongToRadixString(13158L, 8);                      // Returns "31546"
-intLongToRadixString(-13158L, 8);                     // Returns "1777777777777777746232"
-intLongToRadixString(-13158L, 10);                    // Returns ":"-13158"
-intLongToRadixString(13158L, 16);                     // Returns "3366"
-intLongToRadixString(-13158L, 16);                    // Returns"FFCC9A"
-intLongToRadixString(-13158L, 16, true, true));       // Returns"0xFFCC9A"  
+intLongToRadixString(58, 2);                         // Returns "00111010"
+intLongToRadixString(13158, 8);                      // Returns "31546"
+intLongToRadixString(-13158, 8);                     // Returns "1777777777777777746232"
+intLongToRadixString(-13158, 10);                    // Returns ":"-13158"
+intLongToRadixString(13158, 16);                     // Returns "3366"
+intLongToRadixString(-13158, 16);                    // Returns "FFCC9A"
+intLongToRadixString(9223372036854775807, 16);       // Returns "7FFFFFFFFFFFFFFF"
+intLongToRadixString(9223372036854775807, 2);        // Returns "0111111111111111111111111111111111111111111111111111111111111111"
+intLongToRadixString(-13158, 16, true, true);        // Returns "0xFFCC9A"  
 ```
 {: .copy-code}
 
@@ -1154,10 +1161,10 @@ Parsed integer value.
 **Examples:**
 
 ```java
-return parseHexToInt("BBAA");        // returns 48042
-return parseHexToInt("BBAA", true);  // returns 48042
-return parseHexToInt("AABB", false); // returns 48042
-return parseHexToInt("BBAA", false); // returns 43707
+parseHexToInt("BBAA");        // Returns 48042
+parseHexToInt("BBAA", true);  // Returns 48042
+parseHexToInt("AABB", false); // Returns 48042
+parseHexToInt("BBAA", false); // Returns 43707
 ```
 {: .copy-code}
 
@@ -1199,10 +1206,10 @@ Parsed float value.
 **Examples:**
 
 ```java
-return parseHexToFloat("41EA62CC");         // returns 29.29824f
-return parseHexToFloat("41EA62CC", true);   // returns 29.29824f
-return parseHexToFloat("41EA62CC", false);  // returns -5.948442E7f
-return parseHexToFloat("CC62EA41", false);  // returns 29.29824f
+parseHexToFloat("41EA62CC");         // Returns 29.29824f
+parseHexToFloat("41EA62CC", true);   // Returns 29.29824f
+parseHexToFloat("41EA62CC", false);  // Returns -5.948442E7f
+parseHexToFloat("CC62EA41", false);  // Returns 29.29824f
 ```
 {: .copy-code}
 
@@ -1252,12 +1259,12 @@ Parsed float value.
 **Examples:**
 
 ```java
-return parseHexIntLongToFloat("0x0A", true);         // returns 10.0f
-return parseHexIntLongToFloat("0x0A", false);        // returns 10.0f
-return parseHexIntLongToFloat"0x00000A", true);      // returns 10.0f
-return parseHexIntLongToFloat("0x0A0000", false);    // returns 10.0f
-return parseHexIntLongToFloat("0x000A0A", true);     // returns 12570.0f
-return parseHexIntLongToFloat("0x0A0A00", false);    // returns 2570.0f
+return parseHexIntLongToFloat("0x0A", true);         // Returns 10.0f
+return parseHexIntLongToFloat("0x0A", false);        // Returns 10.0f
+return parseHexIntLongToFloat"0x00000A", true);      // Returns 10.0f
+return parseHexIntLongToFloat("0x0A0000", false);    // Returns 10.0f
+return parseHexIntLongToFloat("0x000A0A", true);     // Returns 12570.0f
+return parseHexIntLongToFloat("0x0A0A00", false);    // Returns 2570.0f
 ```
 {: .copy-code}
 
@@ -1283,10 +1290,10 @@ Parsed double value.
 **Examples:**
 
 ```java
-return parseHexToDouble("409B04B10CB295EA");            // returns 1729.1729
-return parseHexToDouble("409B04B10CB295EA" false);      // returns -2.7208640774822924E205
-return parseHexToDouble("409B04B10CB295EA" true);       // returns 1729.1729
-return parseHexToDouble("EA95B20CB1049B40" false);      // returns 1729.1729
+return parseHexToDouble("409B04B10CB295EA");            // Returns 1729.1729
+return parseHexToDouble("409B04B10CB295EA" false);      // Returns -2.7208640774822924E205
+return parseHexToDouble("409B04B10CB295EA" true);       // Returns 1729.1729
+return parseHexToDouble("EA95B20CB1049B40" false);      // Returns 1729.1729
 ```
 {: .copy-code}
 
@@ -1327,7 +1334,7 @@ Parsed list of integer values.
 **Examples:**
 
 ```java
-return hexToBytes("BBAA"); // returns [-69, -86]
+return hexToBytes("BBAA"); // Returns [-69, -86]
 ```
 {: .copy-code}
 
@@ -1355,9 +1362,9 @@ Returns a hexadecimal string.
 
 ```java
 var bytes = [0xBB, 0xAA];
-return bytesToHex( bytes); // returns "BBAA"
+return bytesToHex( bytes); // Returns "BBAA"
 var list = [-69, 83];
-return bytesToHex(list);   // returns "BB53"
+return bytesToHex(list);   // Returns "BB53"
 ```
 {: .copy-code}
 
@@ -1386,9 +1393,9 @@ integer value.
 
 ```java
 var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
-return parseBytesToInt(bytes, 0, 3); // returns 11189196 in Decimal or 0xAABBCC  
-return parseBytesToInt(bytes, 0, 3, true); // returns 11189196 in Decimal or 0xAABBCC  
-return parseBytesToInt(bytes, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
+return parseBytesToInt(bytes, 0, 3); // Returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(bytes, 0, 3, true); // Returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(bytes, 0, 3, false); // Returns 13417386 in Decimal or 0xCCBBAA
 ```
 {: .copy-code}
 
@@ -1417,8 +1424,8 @@ long value.
 
 ```java
 var longValByte = [64, -101, 4, -79, 12, -78, -107, -22];
-return parseBytesToLong(longValByte, 0, 8);         // returns 4655319798286292458L  == 0x409B04B10CB295EAL  
-return parseBytesToLong(longValByte, 0, 8, false);  // returns -1543131529725306048L == 0xEA95B20CB1049B40L  
+return parseBytesToLong(longValByte, 0, 8);         // Returns 4655319798286292458L  == 0x409B04B10CB295EAL  
+return parseBytesToLong(longValByte, 0, 8, false);  // Returns -1543131529725306048L == 0xEA95B20CB1049B40L  
 
 ```
 {: .copy-code}
@@ -1456,17 +1463,17 @@ float value.
 
 ```java
 var bytes = [0x0A];
-return parseBytesToFloat(bytes);                       // returns 1.4E-44f  
+return parseBytesToFloat(bytes);                       // Returns 1.4E-44f  
 var floatValByte = [0x41, 0xEA, 0x62, 0xCC];
-return parseBytesToFloat(floatValByte, 0);             // returns 29.29824f  
-return parseBytesToFloat(floatValByte, 0, 2, false);   // returns 8.4034E-41f 
-return parseBytesToFloat(floatValByte, 0, 2, true);    // returns 2.3646E-41f 
-return parseBytesToFloat(floatValByte, 0, 3, false);   // returns 9.083913E-39f  
-return parseBytesToFloat(floatValByte, 0, 3, true);    // returns 6.053388E-39f  
-return parseBytesToFloat(floatValByte, 0, 4, false);   // returns -5.948442E7f  
+return parseBytesToFloat(floatValByte, 0);             // Returns 29.29824f  
+return parseBytesToFloat(floatValByte, 0, 2, false);   // Returns 8.4034E-41f 
+return parseBytesToFloat(floatValByte, 0, 2, true);    // Returns 2.3646E-41f 
+return parseBytesToFloat(floatValByte, 0, 3, false);   // Returns 9.083913E-39f  
+return parseBytesToFloat(floatValByte, 0, 3, true);    // Returns 6.053388E-39f  
+return parseBytesToFloat(floatValByte, 0, 4, false);   // Returns -5.948442E7f  
 var floatValList = [65, -22, 98, -52];
-return parseBytesToFloat(floatValList, 0);             // returns 29.29824f  
-return parseBytesToFloat(floatValList, 0, 4, false);   // returns -5.948442E7f 
+return parseBytesToFloat(floatValList, 0);             // Returns 29.29824f  
+return parseBytesToFloat(floatValList, 0, 4, false);   // Returns -5.948442E7f 
 
 ```
 {: .copy-code}
@@ -1505,12 +1512,12 @@ float value.
 
 ```java
 var intValByte = [0x00, 0x00, 0x00, 0x0A];
-return parseBytesIntToFloat(intValByte, 3, 1, true);     // returns 10.0f
-return parseBytesIntToFloat(intValByte, 3, 1, false);    // returns 10.0f
-return parseBytesIntToFloat(intValByte, 2, 2, true);     // returns 10.0f
-return parseBytesIntToFloat(intValByte, 2, 2, false);    // returns 2560.0f
-return parseBytesIntToFloat(intValByte, 0, 4, true);     // returns 10.0f 
-return parseBytesIntToFloat(intValByte, 0, 4, false);    // returns 1.6777216E8f
+return parseBytesIntToFloat(intValByte, 3, 1, true);     // Returns 10.0f
+return parseBytesIntToFloat(intValByte, 3, 1, false);    // Returns 10.0f
+return parseBytesIntToFloat(intValByte, 2, 2, true);     // Returns 10.0f
+return parseBytesIntToFloat(intValByte, 2, 2, false);    // Returns 2560.0f
+return parseBytesIntToFloat(intValByte, 0, 4, true);     // Returns 10.0f 
+return parseBytesIntToFloat(intValByte, 0, 4, false);    // Returns 1.6777216E8f
 ```
 {: .copy-code}
 
@@ -1520,8 +1527,8 @@ return parseBytesIntToFloat(intValByte, 0, 4, false);    // returns 1.6777216E8f
 var dataAT101 = "0x01756403671B01048836BF7701F000090722050000";
 var byteAT101 = hexToBytes(dataAT101);
 var offset = 9;
-return parseBytesIntToFloat(byteAT101, offset, 4, false) / 1000000;     // returns 24.62495f
-return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // returns 118.030576f
+return parseBytesIntToFloat(byteAT101, offset, 4, false) / 1000000;     // Returns 24.62495f
+return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // Returns 118.030576f
 
 ```
 {: .copy-code}
@@ -1565,8 +1572,8 @@ var coordinatesAsHex = "0x32D009423F23B300B0106E08D96B6C00";
 var coordinatesasBytes = hexToBytes(coordinatesAsHex);
 var offset = 0;
 var factor = 1e15;
-return parseBytesLongToDouble(coordinatesasBytes, offset, 8, false) / factor;     // returns 50.422775429058610d, latitude
-return parseBytesLongToDouble(coordinatesasBytes, offset + 8, 8, false) / factor; // returns 30.517877378257072d, longitude
+return parseBytesLongToDouble(coordinatesasBytes, offset, 8, false) / factor;     // Returns 50.422775429058610d, latitude
+return parseBytesLongToDouble(coordinatesasBytes, offset + 8, 8, false) / factor; // Returns 30.517877378257072d, longitude
 
 ```
 {: .copy-code}
@@ -1593,7 +1600,7 @@ ExecutionArrayList<Byte> value.
 
 ```java
 var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
-return bytesToExecutionArrayList(bytes); // returns ExecutionArrayList<Byte> value with size = 4,  includes: [-86, -69, -52, -35]
+return bytesToExecutionArrayList(bytes); // Returns ExecutionArrayList<Byte> value with size = 4,  includes: [-86, -69, -52, -35]
 ```
 {: .copy-code}
 
@@ -1625,14 +1632,14 @@ byte[] value.
 
 ```java
 var byteVal = 0x39;
-return parseByteToBinaryArray(byteVal);               // returns byte[8] value => [0, 0, 1, 1, 1, 0, 0, 1]
-return parseByteToBinaryArray(byteVal, 3);            // returns byte[3] value => [0, 0, 1]
-return parseByteToBinaryArray(byteVal, 8, false);     // returns byte[8] value => [1, 0, 0, 1, 1, 1, 0, 0]
-return parseByteToBinaryArray(byteVal, 5, false);     // returns byte[5] value => [1, 0, 0, 1, 1]
-return parseByteToBinaryArray(byteVal, 4, false);     // returns byte[4] value => [1, 0, 0, 1]        
-return parseByteToBinaryArray(byteVal, 3, false);     // returns byte[3] value => [1, 0, 0]
+return parseByteToBinaryArray(byteVal);               // Returns byte[8] value => [0, 0, 1, 1, 1, 0, 0, 1]
+return parseByteToBinaryArray(byteVal, 3);            // Returns byte[3] value => [0, 0, 1]
+return parseByteToBinaryArray(byteVal, 8, false);     // Returns byte[8] value => [1, 0, 0, 1, 1, 1, 0, 0]
+return parseByteToBinaryArray(byteVal, 5, false);     // Returns byte[5] value => [1, 0, 0, 1, 1]
+return parseByteToBinaryArray(byteVal, 4, false);     // Returns byte[4] value => [1, 0, 0, 1]        
+return parseByteToBinaryArray(byteVal, 3, false);     // Returns byte[3] value => [1, 0, 0]
 
-var value = parseByteToBinaryArray(byteVal, 6, false);     // returns byte[6] value => [1, 0, 0, 1, 1, 1]
+var value = parseByteToBinaryArray(byteVal, 6, false);     // Returns byte[6] value => [1, 0, 0, 1, 1, 1]
 var actualLowCurrent1Alarm = value[0];
 var actualHighCurrent1Alarm = value[1];
 var actualLowCurrent2Alarm = value[2];
@@ -1665,10 +1672,10 @@ byte[] value.
 
 ```java
 var bytesVal = [0xCE, 0xB2];
-return parseByteToBinaryArray(bytesVal);              // returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(bytesVal, 15);          // returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(bytesVal, 14);          // returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(bytesVal, 2);           // returns byte[2]  value =>                                           [1, 0]
+return parseByteToBinaryArray(bytesVal);              // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(bytesVal, 15);          // Returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(bytesVal, 14);          // Returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(bytesVal, 2);           // Returns byte[2]  value =>                                           [1, 0]
 ```
 {: .copy-code}
 
@@ -1695,8 +1702,8 @@ byte[] value.
 
 ```java
 var longValue = 52914L;
-return parseByteToBinaryArray(longValue);        // returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(longValue, 16);    // returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(longValue);        // Returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseByteToBinaryArray(longValue, 16);    // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
 ```
 {: .copy-code}
 
@@ -1723,8 +1730,8 @@ int value.
 **Examples:**
 
 ```java
-return parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1]);                   // returns -97
-var actualVolt =  parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // returns 31
+return parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1]);                   // Returns -97
+var actualVolt =  parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // Returns 31
 ```
 {: .copy-code}
 
@@ -1751,19 +1758,19 @@ An integer value.
 **Examples:**
 
 ```java
-return parseInt("0");               // returns 0
-return parseInt("473");             // returns 473
-return parseInt("+42");             // returns 42
-return parseInt("-0", 10);          // returns 0
-return parseInt("-0xFF");           // returns -255        
-return parseInt("-FF", 16);         // returns -255
-return parseInt("1100110", 2);      // returns 102
-return parseInt("2147483647", 10);  // returns 2147483647
-return parseInt("-2147483648", 10); // returns -2147483648
+return parseInt("0");               // Returns 0
+return parseInt("473");             // Returns 473
+return parseInt("+42");             // Returns 42
+return parseInt("-0", 10);          // Returns 0
+return parseInt("-0xFF");           // Returns -255        
+return parseInt("-FF", 16);         // Returns -255
+return parseInt("1100110", 2);      // Returns 102
+return parseInt("2147483647", 10);  // Returns 2147483647
+return parseInt("-2147483648", 10); // Returns -2147483648
 return parseInt("2147483648", 10);  // throws a NumberFormatException
 return parseInt("99", 8);           // throws a NumberFormatException
 return parseInt("Kona", 10);        // throws a NumberFormatException
-return parseInt("Kona", 27);        // returns 411787
+return parseInt("Kona", 27);        // Returns 411787
 ```
 {: .copy-code}
 
@@ -1789,17 +1796,17 @@ A long value.
 **Examples:**
 
 ```java
-return parseLong("0");                          // returns 0L
-return parseLong("473");                        // returns 473L
-return parseLong("+42");                        // returns 42L
-return parseLong("-0", 10);                     // returns 0L
-return parseLong("-0xFFFF");                    // returns -65535L        
-return parseLong("-FFFF", 16);                  // returns -65535L
-return parseLong("11001101100110", 2);          // returns 13158L
-return parseLong("777777777777777777777", 8);   // returns 9223372036854775807L
-return parseLong("KonaLong", 27);               // returns 218840926543L
-return parseLong("9223372036854775807", 10);    // returns 9223372036854775807L
-return parseLong("-9223372036854775808", 10);   // returns -9223372036854775808L
+return parseLong("0");                          // Returns 0L
+return parseLong("473");                        // Returns 473L
+return parseLong("+42");                        // Returns 42L
+return parseLong("-0", 10);                     // Returns 0L
+return parseLong("-0xFFFF");                    // Returns -65535L        
+return parseLong("-FFFF", 16);                  // Returns -65535L
+return parseLong("11001101100110", 2);          // Returns 13158L
+return parseLong("777777777777777777777", 8);   // Returns 9223372036854775807L
+return parseLong("KonaLong", 27);               // Returns 218840926543L
+return parseLong("9223372036854775807", 10);    // Returns 9223372036854775807L
+return parseLong("-9223372036854775808", 10);   // Returns -9223372036854775808L
 return parseLong("9223372036854775808", 10);    //throws a NumberFormatException
 return parseLong("0xFGFFFFFF", 16);             // throws a NumberFormatException
 return parseLong("FFFFFFFF", 16);               // throws a NumberFormatException
@@ -1830,7 +1837,7 @@ A float value.
 **Examples:**
 
 ```java
-return parseFloat("4.2"); // returns 4.2
+return parseFloat("4.2"); // Returns 4.2
 ```
 {: .copy-code}
 
@@ -1855,7 +1862,7 @@ A double precision value.
 **Examples:**
 
 ```java
-return parseDouble("4.2"); // returns 4.2
+return parseDouble("4.2"); // Returns 4.2
 ```
 {: .copy-code}
 
@@ -1881,7 +1888,7 @@ Hex string
 **Examples:**
 
 ```java
-return base64ToHex("Kkk="); // returns "2A49"
+return base64ToHex("Kkk="); // Returns "2A49"
 ```
 {: .copy-code}
 
@@ -1906,7 +1913,7 @@ Base64 string.
 **Examples:**
 
 ```java
-return bytesToBase64([42, 73]); // returns "Kkk="
+return bytesToBase64([42, 73]); // Returns "Kkk="
 ```
 {: .copy-code}
 
@@ -1931,7 +1938,7 @@ Byte array.
 **Examples:**
 
 ```java
-return base64ToBytes("Kkk="); // returns [42, 73]
+return base64ToBytes("Kkk="); // Returns [42, 73]
 ```
 {: .copy-code}
 
@@ -2397,4 +2404,6 @@ var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 
 var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 00:04:05 Nordamerikanische Ostküsten-Sommerzeit"
 ```
 {: .copy-code}
+
+
 
