@@ -212,6 +212,7 @@
         margin: 160px -20px 16px
         td, th
           margin: 0 2px
+          align-content: center
           &:nth-child(3n)
             color: #009688
             img
@@ -236,7 +237,7 @@
           tr
             height: 110px
             th
-              width: 25%
+              width: 20%
               text-align: center
               vertical-align: center
               font-weight: 600
@@ -245,7 +246,7 @@
               &:nth-child(1n)
                 color: white
             td
-              width: 60%
+              width: 40%
         tbody
           tr
             background-color: unset
@@ -470,7 +471,7 @@
             width: 80%
       #matrix
         h3
-          font-size: 38px
+          font-size: 42px
           line-height: 63px
         table
           thead
@@ -485,8 +486,8 @@
           tbody
             tr
               th, a
-                padding-right: 10px
-                font-size: 20px
+                padding-right: 48px
+                font-size: 18px
               td
                 font-size: 20px
                 img
@@ -498,6 +499,58 @@
           width: calc(100% - 122px)
         img
           margin: 0 30px 0 0
+
+  @media screen and (max-width: 750px)
+    #matrix
+      h3
+        font-size: 38px
+        line-height: 42px
+        table
+          width: 100%
+          thead
+            font-size: 20px
+            tr
+              th
+                width: 20%
+                padding: 0 0 10px
+                font-size: 16px
+              td
+                width: 40%
+          tbody
+            tr
+              th, a
+                padding-right: 24px
+                font-size: 16px
+              td
+                font-size: 18px
+                img
+                  width: unset
+
+    @media screen and (max-width: 480px)
+    #matrix
+      h3
+        font-size: 20px
+        line-height: 28px
+        table
+          width: 100%
+          thead
+            font-size: 10px
+            tr
+              th
+                width: 20%
+                padding: 0 0 2px
+                font-size: 10px
+              td
+                width: 40%
+          tbody
+            tr
+              th, a
+                padding-right: 5px
+                font-size: 10px
+              td
+                font-size: 10px
+                img
+                  width: unset
 
   @media screen and (min-width: 1025px)
     section, header
