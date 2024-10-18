@@ -141,7 +141,7 @@ notitle: "true"
                     <p>Using data storage, you can always check historical data, make reports even <a href="/products/trendz/" class="blue-text">forecasts</a>. The platform supports flexible customization of the required data visualization.</p>
                 </div>
             </div>
-            <div class="expansion-panel">
+            <div class="expansion-panel last">
                 <div class="expansion-header">
                     <h3 class="expansion-title"><img class="header-icon" src="/images/usecases/fuel-level-monitoring/alert.webp" alt="Alert icon" loading="lazy"/>Alert management</h3>
                     <svg class="arrow-icon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.41 0.0898438L6 4.66984L10.59 0.0898438L12 1.49984L6 7.49984L0 1.49984L1.41 0.0898438Z" fill="#495057"/></svg>
@@ -175,20 +175,7 @@ notitle: "true"
     </div>
 </section>
 
-<section id="partners" class="content-wrapper">
-    <div class="title">Looking for hardware? Our hardware partners.</div>
-    <div class="logos">
-        <div class="logo"><img loading="lazy" alt="Efento logo" src="/images/usecases/fuel-level-monitoring/efento-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Seeed logo" src="/images/usecases/fuel-level-monitoring/seeed-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Milesight logo" src="/images/usecases/fuel-level-monitoring/milesight-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Nettra logo" src="/images/usecases/fuel-level-monitoring/nettra-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Actility logo" src="/images/usecases/fuel-level-monitoring/actility-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Sodaq logo" src="/images/usecases/fuel-level-monitoring/sodaq-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Decode logo" src="/images/usecases/fuel-level-monitoring/decode-logo.webp"/></div>
-        <div class="logo"><img loading="lazy" alt="Monoz logo" src="/images/usecases/fuel-level-monitoring/monoz-logo.webp"/></div>
-    </div>
-    <a class="outline-button" href="/partners/hardware/" type="button" value="All partners">All partners</a>
-</section>
+{% include use-cases-partners.html %}
 
 <section id="get-in-touch" class="get-in-touch">
     <div class="content-wrapper">
