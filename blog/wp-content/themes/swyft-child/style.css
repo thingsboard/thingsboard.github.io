@@ -1325,8 +1325,8 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text,header
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a .sub-text h1,header .head-menu ul .centered-sub .sub-menu a .sub-text span.item-heading {
     color: #212529;
-    font-size: 16px;
-    font-weight: 600;
+	font-size: 16px;
+	font-weight: 600;
     line-height: normal
 }
 

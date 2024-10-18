@@ -22,6 +22,8 @@ toc:
       path: /docs/paas/solution-templates/fleet-tracking/
     - title: Fuel Level Monitoring
       path: /docs/paas/solution-templates/fuel-level-monitoring/
+    - title: Swimming Pool SCADA system
+      path: /docs/paas/solution-templates/swimming-pool-scada-system/
       new: true
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
@@ -59,8 +61,17 @@ toc:
   section:
     - title: Overview
       path: /docs/paas/user-guide/dashboards/
+    - title: Layouts
+      path: /docs/paas/user-guide/ui/layouts/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
+    - title: SCADA
+      new: true
+      section:
+        - title: Overview
+          path: /docs/paas/user-guide/scada/
+        - title: SCADA symbols development guide
+          path: /docs/paas/user-guide/scada/scada-symbols-dev-guide/
     - title: Widgets
       section:
         - title: Overview
@@ -154,9 +165,9 @@ toc:
       path: /docs/paas/user-guide/mail-templates/
     - title: Custom translation
       path: /docs/paas/user-guide/custom-translation/
-      new: true
     - title: Custom menu
       path: /docs/paas/user-guide/custom-menu/
+      new: true
 - title: Integrations
   section:
     - title: Overview

@@ -124,7 +124,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
         <img class="image" src="/images/iot-articles/monitoring_dashboard_4_2180x1344.webp" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
             <h2>How to Use the ThingsBoard Dashboard</h2>
-            <div class="sub-title">To use the ThingsBoard IoT dashboard open source, you can follow these steps:</div>
+            <div class="sub-title">To use the ThingsBoard IoT dashboard open-source, you can follow these steps:</div>
             <ul class="list">
                 <li>Login to your ThingsBoard instance and navigate to the “Entities” section.</li>
                 <li>Click on the “+” icon in the top right corner of the table and then select "Add new dashboard".</li>

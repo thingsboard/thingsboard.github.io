@@ -9,6 +9,8 @@ toc:
   section:
     - title: Business entities
       path: /docs/trendz/business-entities/
+    - title: Aggregate telemetry and delta
+      path: /docs/trendz/telemetry-aggregation/
     - title: Group by time
       path: /docs/trendz/group-by-time/
     - title: Group by category
@@ -59,8 +61,6 @@ toc:
       path: /docs/trendz/calculated-fields/
     - title: Batch calculations
       path: /docs/trendz/batch-calculated-fields/
-    - title: Test functions
-      path: /docs/trendz/test-calculated-fields/
     - title: Save metric to ThingsBoard
       path: /docs/trendz/save-calculated-to-thingsboard/
 - title: Prediction
@@ -87,8 +87,6 @@ toc:
       path: /docs/trendz/widget-settings/
 - title: External datasources
   path: /docs/trendz/mix-sql-datasource/
-- title: Sync to ThingsBoard
-  path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States
   path: /docs/trendz/states/
 - title: Caching
@@ -97,6 +95,8 @@ toc:
   path: /docs/trendz/background-jobs/
 - title: White labeling
   path: /docs/trendz/white-labeling/
+- title: Tasks
+  path: /docs/trendz/tasks-service/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
 - title: Trendz release notes

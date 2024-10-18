@@ -114,5 +114,5 @@ downlink-events:
         title: 'Output data from downlink converter.'
 
 ---
-{% assign docsPrefix = "pass/" %}
+{% assign docsPrefix = "paas/" %}
 {% include docs/pe/user-guide/integrations/chirpstack.md %}

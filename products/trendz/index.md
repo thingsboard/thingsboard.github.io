@@ -148,7 +148,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Plot and aggregate your data with any granularity</h3>
                 <p class="text">See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level. Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.</p>
-                <a id="Products_TA_StartAnalysis3" href="/docs/trendz/data-grouping-aggregation/" class="button try-pe gtm_button">Start Analysis</a>
+                <a id="Products_TA_StartAnalysis3" href="/docs/trendz/telemetry-aggregation/" class="button try-pe gtm_button">Start Analysis</a>
             </div>
             <div class="image-block accent-circle accent-circle-center">
                 <div class="image-wrapper chart-wrapper line-chart">
