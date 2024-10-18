@@ -286,7 +286,7 @@ description: Comprehensive software solutions for edge computing, providing data
                     <th>On-Site Data Operations Without Server Connectivity</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Limited to Data Collection)</td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Data Collection Only)</td>
                 </tr>
                 <tr>
                     <th>Hardware Resources Usage</th>
