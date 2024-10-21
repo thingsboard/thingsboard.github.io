@@ -8,4 +8,5 @@ description: ThingsBoard Access Token based authentication for HTTP transport.
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ssl/http-access-token.md %}

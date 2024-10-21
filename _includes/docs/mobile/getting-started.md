@@ -52,10 +52,15 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
     </thead>
     <tbody>
         <tr>
+            <td>3.8.0</td>
+            <td>1.3.0</td>
+            <td>1.3.0</td>
+        </tr>
+        <tr>
             <td>3.6.3+</td>
             <td>1.1.0</td>
             <td>1.1.0</td>
-        </tr>        
+        </tr>      
         <tr>
             <td>3.6.2+</td>
             <td>1.0.8</td>
@@ -93,6 +98,11 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>3.8.0PE</td>
+            <td>1.3.0</td>
+            <td>1.3.0</td>
+        </tr>
         <tr>
             <td>3.6.3PE+</td>
             <td>1.1.0</td>
@@ -244,7 +254,7 @@ So let's get started:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectPE %}
 {% else %}  
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectCE %}
@@ -319,7 +329,7 @@ To confirm that Firebase has been integrated properly, run your application ([St
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=mobileNotificationsPE %}
 {% else %}  
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=mobileNotificationsCE %}

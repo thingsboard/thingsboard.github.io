@@ -1,52 +1,17 @@
+{% assign collectionMap = include.collectionMap %}
 {% assign productTag = include.productTag %}
-{% if productTag == "ce" or productTag == "pe" or productTag == "paas" %}
-    {% assign customersLogo = "{
-            'href': 'https://www.prosegur.com/',
-            'src': 'https://img.thingsboard.io/customers/clear/prosegur.svg',
-            'aria_label': 'Prosegur logo'
-        },
-        {
-            'href': 'https://www.engie.sk/en/kontakt',
-            'src': 'https://img.thingsboard.io/customers/clear/engie.svg',
-            'aria_label': 'Engie logo'
-        },
-        {
-            'href': '/industries/telecom/#tmobile',
-            'src': 'https://img.thingsboard.io/customers/clear/t-mobile.svg',
-            'aria_label': 'T-mobile logo'
-        },
-        {
-            'href': 'https://www.intel.com/',
-            'src': 'https://img.thingsboard.io/customers/clear/intel.svg',
-            'aria_label': 'Intel logo'
-        },
-        {
-            'href': 'https://gruppe.schwarz/en',
-            'src': 'https://img.thingsboard.io/customers/clear/schwarz-gruppe.svg',
-            'aria_label': 'Schwarz logo'
-        },
-        {
-            'href': 'https://www.bosch.com/',
-            'src': 'https://img.thingsboard.io/customers/clear/bosch.svg',
-            'aria_label': 'Bosch logo'
-        },
-        {
-            'href': '/industries/telecom/#tektelic',
-            'src': 'https://img.thingsboard.io/customers/clear/tektelic.svg',
-            'aria_label': 'Tektelic logo'
-        }" | split: "}," %}
+
+{% if site.data[collectionMap] %}
+    {% assign customersLogosCollection = site.data[collectionMap] %}
+{% else %}
+    {% assign customersLogosCollection = page[collectionMap] %}
 {% endif %}
+
 <section id="tb-customers" class="{{ productTag }}">
     <div class="tb-customers-content">
-        {% for customer in customersLogo %}
-            {% assign customer = customer | replace: "{", "" | replace: "}", "" %}
-            {% assign customer_parts = customer | split: "'," %}
-            {% assign href = customer_parts[0] | split: "': '" | last %}
-            {% assign src = customer_parts[1] | split: "': '" | last %}
-            {% assign aria_label = customer_parts[2] | split: "': '" | last %}
-
-            <a href="{{ href }}">
-                <object data="{{ src }}" aria-label="{{ aria_label }}"></object>
+        {% for customerLogo in customersLogosCollection %}
+            <a href="{{ customerLogo[1].href }}">
+                <object data="{{ customerLogo[1].src }}" aria-label="{{ customerLogo[1].aria_label }}"></object>
             </a>
         {% endfor %}
     </div>

@@ -6,10 +6,7 @@
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - Modbus Controller (in our case <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>) '
  %}
-{% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-{% assign thingsboardInstanceLink = "https://thingsboard.cloud" %}
-{% endif %}
+{% assign thingsboardInstanceLink = "https://" | append: hostName %}
 
 
 ## Introduction
@@ -58,7 +55,7 @@ To import rule chain from а JSON file, you should:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importRuleChainPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importRuleChainCE %}
@@ -100,7 +97,7 @@ Now, we are ready to create device profile. For this, follow steps below:
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=createDeviceProfilePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=createDeviceProfileCE %}
@@ -142,7 +139,7 @@ For simplicity, we will provide the device manually using the UI:
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}

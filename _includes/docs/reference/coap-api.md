@@ -73,10 +73,10 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
@@ -120,7 +120,7 @@ Don't forget to replace <code>demo.thingsboard.io</code> with your host and <cod
 {% if docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -222,10 +222,10 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -278,9 +278,9 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
 
@@ -334,9 +334,9 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -384,9 +384,9 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -429,9 +429,9 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 
@@ -453,11 +453,11 @@ coap-client -m get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 - Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
-coap-client -m get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
+coap-client -m get coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
 ```
 {: .copy-code}
 {% endif %}
@@ -489,9 +489,9 @@ coap-client -f rpc-response.json -m post coap://$THINGSBOARD_HOST_NAME/api/v1/$A
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-cat rpc-response.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/1
+cat rpc-response.json | coap post coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/rpc/1
 ```
 {: .copy-code}
 {% endif %}
@@ -532,9 +532,9 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -566,11 +566,11 @@ cat rpc-client-request.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$AC
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 - Now, send request to the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
-cat rpc-client-request.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+cat rpc-client-request.json | coap post coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 {% endif %}
@@ -615,9 +615,9 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
+coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
@@ -661,9 +661,9 @@ coap://demo.thingsboard.io/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/provision
+coap://{{coapHostName}}/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
@@ -702,9 +702,9 @@ coap get coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&v
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
+coap get coap://{{coapHostName}}/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 

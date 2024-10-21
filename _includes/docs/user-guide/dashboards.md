@@ -14,7 +14,7 @@ These dashboards aren't limited to a single data source; they can display data f
 {% if docsPrefix == null %}
 ![image](/images/user-guide/dashboards/overview/dashboard-introduction-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/dashboards/overview/dashboard-introduction.png)
 {% endif %}
 
@@ -30,7 +30,7 @@ Dashboards in ThingsBoard provide users with the following capabilities:
 
  - **Role-Based Access**: ThingsBoard allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ThingsBoard also offers convenient IoT solution templates to reduce time-to-market for your IoT products. 
 These templates include interactive dashboards, processing logic, sample devices, users, and all other necessary entities. Think of these templates as a complete PoC/MVP. 
 Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates/overview/).
@@ -44,7 +44,7 @@ To add a new dashboard, you should:
 
 {% include images-gallery.html imageCollection="creating-dashboard" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 At the stage of creating a dashboard, you can specify it to a different owner and a specific dashboard group right away.
 How to create a new group of dashboards, read [here](/docs/{{docsPrefix}}user-guide/groups/#create-new-entity-group).
 
@@ -243,80 +243,7 @@ By clicking on it, the hidden toolbar will be opened.
 
 ### Layouts
 
-Layouts define how widgets are arranged on a Dashboard. 
-To manage a layout, you should enter [edit mode](#edit-mode) and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window.
-It opens the small window for layouts' control.
-
-{% include images-gallery.html imageCollection="layout-1" %}
-
-The "Main" layout is the one that you’re managing now. Basically, it's your dashboard.
-Click the "gear" icon named "Layout setting" to open the layout settings window.
-
-{% include images-gallery.html imageCollection="layout-2" %}
-
-**Layout settings**
-
-*Columns count*
-
-While editing the Dashboard, specifically the size and space of your widgets, you can notice a whitish grid on a gray background.
-These are columns that determine how many widgets can fit horizontally on a Dashboard.
-By default, the number of columns is 24. You can increase or decrease their number. The minimum number of columns is 10. The maximum number is 1000 columns.
-
-{% include images-gallery.html imageCollection="columns" %}
-
-*Margin between widgets*
-
-This margin type determines how much space is between widgets.
-By default, the margin is set to 10. You can remove it by setting the _Margin between widgets_ field to 0 or increasing the margin, meaning the distance between widgets. The maximum allowable margin is 50.
-
-{% include images-gallery.html imageCollection="margin" %}
-
-*Auto fill layout height*
-
-By default, the _Auto fill layout height_ checkbox is unchecked so that you can freely adjust the size of the widgets.
-If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
-
-{% include images-gallery.html imageCollection="autofill" %}
-
-*Background color*
-
-The Background color option allows you to customize the color that you'd like to be on the Dashboard's background.
-To change it, click on the background color row. In the pop-up window with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes.
-After saving, you can see the customized background.
-
-{% include images-gallery.html imageCollection="background-settings" %}
-
-*Background image*
-
-This option allows setting the picture as a background. To do this, you should drop an image in the appropriate field, or upload it from a folder on your computer.
-Once you select it, an image preview will appear on the left of the Settings window.
-To adjust the position of the image more precisely, click the drop-down menu and choose how exactly the picture will fill the background space.
-For instance, let's choose "Cover" and click "Save" to see how the background has changed.
-
-{% include images-gallery.html imageCollection="background-image" %}
-
-*Mobile layout settings*
-
-By default, the *Auto fill layout height* checkbox is unchecked so that you can freely adjust the size of the widgets on your mobile device.
-If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
-
-*Mobile row height* determines how tall you’d like your widgets to be on your mobile device.
-By default, the height is set to 70px, but you can make it smaller or larger. The minimum Mobile row height is 5px, and the maximum allowable value is 200px.
-<br>
-
-**Divider**
-
-If we toggle the "Divider" checkbox, we divide the dashboard into two separate parts. For each part, we are able to configure their own settings and interface.
-
-{% include images-gallery.html imageCollection="layout-3" %}
-
-Just to see how it can look like, let's set up both layouts in completely different ways.
-Let's add a background image to the left layout and apply a new background color to the right layout.
-And we resize the window in a certain percentage ratio to each other (it is just an example and definitely not a recommendation).
-After setting the parameters, click the "Save" button in the Layouts window to see the changes.
-After setting the parameters, click the "Save" button in the Layouts window to see the changes.
-
-{% include images-gallery.html imageCollection="layout-4" %}
+Layouts determine how widgets will be displayed and organized on the dashboard grid. [Read more about layouts in a separate documentation](/docs/{{docsPrefix}}user-guide/ui/layouts/){:target="_blank"}.
 
 ### States
 
@@ -361,7 +288,7 @@ For the state to be named after the entity, use **${entityName}** as the name of
 
 ## Managing dashboard
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [share dashboard group](#share-dashboard-group), [make dashboard group public](#make-dashboard-group-public), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
 {% endif %}
 
@@ -380,7 +307,7 @@ To export a dashboard, go to the “Dashboards” page. Find the dashboard you w
 
 {% include images-gallery.html imageCollection="export-dashboard" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".
 The dashboard is exported to the configuration file in JSON format.
 
@@ -412,7 +339,7 @@ To import a dashboard, follow these steps:
 
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Share dashboard group
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role.
@@ -429,7 +356,7 @@ To share a dashboard group, follow these steps:
 
 You can make the dashboard public and share a link to it with other users.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Make dashboard group public
 
 You can make the dashboard group and all its dashboards public and then share links to those dashboards with other users.

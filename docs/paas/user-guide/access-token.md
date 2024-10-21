@@ -8,6 +8,7 @@ description: ThingsBoard Access Token based authentication.
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 * TOC
 {:toc}
 
@@ -21,11 +22,11 @@ Let's review a simple command to upload temperature readings using Access Token 
 See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
 
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}
 ```
 {: .copy-code}
 
-The above command uses **mqtt.thingsboard.cloud** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **{{mqttHostName}}** host and **1883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 
 #### MQTTS (MQTT over SSL)
 
@@ -42,9 +43,9 @@ wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ss
 Now you may use the *ca-root.pem* to setup secure connection to ThingsBoard Cloud and Access Token *YOUR_ACCESS_TOKEN* to authenticate the device to upload telemetry:
 
 ```bash
-mosquitto_pub --cafile ca-root.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" -t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "{{mqttHostName}}" -p "8883" -t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}
 ```
 {: .copy-code}
 
-The above command uses **mqtt.thingsboard.cloud** host and **8883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
+The above command uses **{{mqttHostName}}** host and **8883** port and requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**
 

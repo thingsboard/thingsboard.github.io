@@ -28,7 +28,7 @@ We will create a dashboard and add the most popular widgets. See the instruction
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingDashboardCE %}
@@ -84,7 +84,7 @@ type or related to a certain asset. You may learn more about different aliases h
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasCE %}

@@ -9,7 +9,7 @@ to get familiar with ThingsBoard. We also recommend to review the [Device Profil
 
 ## Sparkplug basics
 
-[Sparkplug](https://sparkplug.eclipse.org/) is an open source software specification that provides MQTT clients the framework 
+[Sparkplug](https://sparkplug.eclipse.org/) is an open-source software specification that provides MQTT clients the framework 
 to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
 
 ThingsBoard acts as an MQTT Server which support the SparkPlug payload and topic structure and allows connections from the 
@@ -68,33 +68,13 @@ First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/de
 We have prepared sparkplug node [emulator](https://github.com/thingsboard/sparkplug-emulator) for the testing purposes.
 Let's launch it and connect to our platform instance. We will use access token credentials from the previous step:
 
-{% if docsPrefix == null %}
 ```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://demo.thingsboard.io:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
+docker run -e SPARKPLUG_SERVER_URL='tcp://{{apiHostName}}:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
 ```
 {: .copy-code}
 
 Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>demo.thingsboard.io</code> with your server hostname.
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://YOUR_SERVER_HOSTNAME:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
-```
-{: .copy-code}
-
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>YOUR_SERVER_HOSTNAME</code> with your server hostname.
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://thingsboard.cloud:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
-```
-{: .copy-code}
-
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>thingsboard.cloud</code> with your server hostname.
-{% endif %}
+You should also replace <code>{{apiHostName}}</code> with your server hostname.
 
 {% capture difference %}
 **Please note**
@@ -106,10 +86,7 @@ You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> insi
 {% if docsPrefix == null %}
 ![image](/images/reference/sparkplug/sparkplug-emulator-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
-![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
 {% endif %}
 

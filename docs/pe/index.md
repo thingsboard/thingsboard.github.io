@@ -5,4 +5,5 @@ description: ThingsBoard Professional Edition documentation - learn about the pl
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/index.md %}

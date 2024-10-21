@@ -2,23 +2,27 @@
 This section in configuration file looks like:
 
 ```json
-  "serverSideRpc": [
-    {
+"serverSideRpc": [
+   {
+      "type": "twoWay",
       "deviceNameFilter": ".*",
       "methodFilter": "echo",
       "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
       "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "responseTopicQoS": 1,
       "responseTimeout": 10000,
       "valueExpression": "${params}"
-    },
-    {
+   },
+   {
+      "type": "oneWay",
       "deviceNameFilter": ".*",
       "methodFilter": "no-reply",
       "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "valueExpression": "${params.hum}::${params.temp}"
-    }
-  ]
+      "valueExpression": "${params}"
+   }
+]
 ```
+{: .copy-code}
 
 ![image](/images/gateway/mqtt-connector/server-side-rpc-commands-advanced-1-ce.png)
 

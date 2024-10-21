@@ -170,4 +170,5 @@ actions-column:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/entity-table-widget.md %}

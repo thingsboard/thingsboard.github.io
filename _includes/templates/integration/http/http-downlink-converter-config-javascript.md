@@ -1,7 +1,7 @@
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-create-downlink-java-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/downlink-java-1-pe.png)
 {% endif %}
 
@@ -18,7 +18,7 @@ where **msg** is the message that we receive and send back to the device.
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-create-downlink-java-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/downlink-java-2-pe.png)
 {% endif %}
 

@@ -23,11 +23,8 @@ After this we will [configure and connect the device](#connect-device-to-thingsb
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-- [ThingsBoard account](https://thingsboard.cloud)
-{% else %}
-- [ThingsBoard account](https://demo.thingsboard.io)
-{% endif %}
+
+- [ThingsBoard account](https://{{hostName}})
 
 ## Create device on ThingsBoard
 

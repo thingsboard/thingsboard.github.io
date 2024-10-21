@@ -17,8 +17,8 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 ## Prerequisites
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
-
+- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
+  
  
 ## Step 1. Pull ThingsBoard PE Image
 
