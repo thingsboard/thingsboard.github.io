@@ -36,7 +36,7 @@ notitle: "true"
                         <p class="company-text">Today, ThingsBoard Inc. is a testament to ingenuity and hard work. Our platform is used globally by businesses and developers, driving innovation across various industries. From smart cities to industrial automation, our solutions lead the IoT revolution.</p>
                         <p class="company-text">But our journey doesn’t end here. We continue to push the boundaries of IoT with a dedicated team and a commitment to excellence. ThingsBoard Inc. is more than a company; it’s a community of innovators, dreamers, and doers building a smarter, more connected world.</p>
                     </div>
-                    <img class="company-aboutus-image" src="/images/companyImages/history_image.webp" alt="">
+                    <img class="company-aboutus-image" src="/images/companyImages/history_image.webp" alt="Co-founders of ThingsBoard">
                 </div>
             </div>
         </div>

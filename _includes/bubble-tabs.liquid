@@ -32,7 +32,7 @@
                 {% for data in bubbleTabsItem[1] %}
                     {% if data[1].src %}
                         <div class="tab-item">
-                            <img src="{{ data[1].src }}">
+                            <img src="{{ data[1].src }}" alt="{{ data[1].alt }}">
                             <div class="tab-item-text">
                                 <span style="font-size: {{ titleSize }}; font-weight: {{ titleWeight }}; color: {{ titleColor }}">{{ data[1].title }}</span>
                                 <span style="font-size: {{ descriptionSize }}; font-weight: {{ descriptionWeight }}; color: {{ descriptionColor }}">{{ data[1].description }}</span>
