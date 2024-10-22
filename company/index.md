@@ -54,7 +54,7 @@ notitle: "true"
     <div class="company-team">
         <div class="company-team-wrapper">
             <h2 class="company-content-title">Meet our team</h2>
-            {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" columnsPerRowArray = "4,6" %}
+            {% include bubble-tabs.liquid collectionMap = "thingsboard-team-bubble-tabs-collection" %}
             <a class="join-link" href="/careers/">
                 <span>Join our team</span>
                 <i class="fas fa-arrow-right"></i>

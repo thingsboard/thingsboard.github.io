@@ -32,6 +32,7 @@
   arial-label: "Link to our linkedin"
 8:
   href: "https://twitter.com/thingsboard"
+  iconClass: 'twitter'
   src: "/images/social-twitt-icon.svg"
-  alt: "Link to our X"
+  arial-label: "Link to our X"
 
