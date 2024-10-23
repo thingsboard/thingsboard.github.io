@@ -70,7 +70,7 @@ You may find the exact commands to send data on behalf of created devices in the
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
 ### Alarms
-Alarms are generated using two <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
+Alarms are generated using two <a href="https://thingsboard.io/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
 "AIR Sensor" <a href="/docs/pe/user-guide/device-profiles/" target="_blank">device profile</a>.
 User may turn alarms on and off as well as configure the alarm thresholds via the "Air Quality Monitoring" dashboard using "Edit Sensor" form.
 

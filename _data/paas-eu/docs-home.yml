@@ -22,6 +22,8 @@ toc:
       path: /docs/paas/eu/solution-templates/fleet-tracking/
     - title: Fuel Level Monitoring
       path: /docs/paas/eu/solution-templates/fuel-level-monitoring/
+    - title: Swimming Pool SCADA system
+      path: /docs/paas/eu/solution-templates/swimming-pool-scada-system/
       new: true
     - title: Water metering
       path: /docs/paas/eu/solution-templates/water-metering/

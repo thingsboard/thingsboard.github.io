@@ -35,7 +35,7 @@ You may always customize the "Smart Irrigation" dashboard using dashboard develo
 
 ### Devices
 
-We have already created multiple devices and loaded some demo data for them. See solution <a href="https://thingsboard.io/docs/paas/solution-templates/overview/#install-solution-template">instructions</a> for the list of created devices and their credentials.
+We have already created multiple devices and loaded some demo data for them. See solution <a href="https://thingsboard.io/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template">instructions</a> for the list of created devices and their credentials.
 
 #### SI Water Meter
 The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30.
