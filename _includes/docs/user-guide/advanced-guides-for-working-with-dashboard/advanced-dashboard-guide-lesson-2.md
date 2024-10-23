@@ -3,7 +3,7 @@
 
 Welcome to the second part of our tutorial series! 
 If you missed part one, we covered the basics, including getting familiar with assets and devices, adding a dashboard, and adding your first widget. 
-It's highly recommended to check out lesson 1 if you haven't already.
+It's highly recommended that you check out lesson 1 if you haven't already.
 
 <br>
 <p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/" class="n-button add-device">Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets</a></p>
@@ -20,7 +20,7 @@ We will also continue adding widgets, including one that visualizes the placemen
 Dashboard [states](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} allow you to create a multi-level hierarchy within your dashboard. Think of each state as a separate page. 
 For instance, each building, office, and device can have its own state. We already have a default ("Buildings") state that shows a list of buildings and their locations on a map.
 
-We need to add a few more states to our dashboard: "building", "office", and states for each device.
+We need to add a few more states to our dashboard: "building", "office", and individual states for each device.
 
 In this lesson, we will focus on adding and configuring states for buildings and offices. Device states will be added in the next lesson.
 
@@ -63,11 +63,11 @@ For this, use the "[Navigate to new dashboard state](/docs/{{docsPrefix}}user-gu
 - Navigate to the "Actions" tab and click the "plus" icon to add an action;
 - Select "[Tooltip tag action](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#tooltip-tag-action){:target="_blank"}" as the action source, name it "building_details", set the action type to "Navigate to new dashboard state" and specify "building" state as "Target dashboard state". Click "Add";
 
-Now in the "Actions" window, you can see the configured action. All that's left is to add the line "Details" to the popup menu for transitioning to the new state.
+Now in the "Actions" window, you can see the configured action. All that's left is to add the "Details" line to the popup menu for transitioning to the new state.
 
 {% include images-gallery.html imageCollection="map-widget-navigation-between-states-1" %}
 
-- Navigate to the "Appearance" tab, find the "Tooltip" section and add the following lines to the end of the existing tooltip:
+- Navigate to the "Appearance" tab, find the "Tooltip" section and add the following lines to the end of the existing tooltip before the `;` sign:
 
 ```text
             +
@@ -137,7 +137,7 @@ To go to the "Building B" state:
 <br>
 **Adding a background image for the building state**
 
-Let's add a background image for the new state to make it visually more attractive. You can use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-background.png){:target="_blank"} or your own.
+Let's add a background image for the new state to make it visually more attractive. You can use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-background.png){:target="_blank"} or upload your own image.
 
 {% include images-gallery.html imageCollection="background-image-building-state" showListImageTitles="true" %}
 
@@ -151,7 +151,7 @@ The first widget we'll add to the "building" state is a card that displays infor
 - Select the "Markdown/HTML Card" from the "Cards" widgets bundle;
 - Now we need to add an alias to define the entities from which the data will be extracted. In the "Alias" field, enter a name for it - "Selected entity", and click "Create a new one";
 - Specify a filter type - "Entity from dashboard state", and click the "Add"; 
-- Add data keys like "address", "contactPerson", "email", and "phone";
+- Add data keys such as "address", "contactPerson", "email", and "phone";
 - Navigate to the "Appearance" tab, and add the Markdown/HTML pattern to the appropriate window by taking it from the documentation:
 
 ```html
@@ -258,7 +258,7 @@ The first widget we'll add to the "building" state is a card that displays infor
 
 - Navigate to the "Widget card" tab, disable "Enable fullscreen" and "Enable data export" options, and then click "Add" to confirm adding the widget.
 
-We have added an information card about the building. Resize the widget to your liking.
+We have added information card about the building. Resize the widget to your liking.
 
 {% include images-gallery.html imageCollection="adding-markdown-card-widget" %}
 
@@ -278,9 +278,9 @@ ThingsBoard allows copying widgets, so let’s add the map widget by copying and
 Now, we should change the data source to display only the selected building:
 
 - Click the "pencil" icon on the map widget to open its settings;
-- Change the data source to the alias "Selected entity" to focus the map on the selected building;
+- Change the data source to the "Selected entity" alias to focus the map on the selected building;
 - Go to the "Appearance" tab, find the "Tooltip" section, and delete the code fragment as shown in the screenshot. Confirm all changes;
-- Place the widget in the upper right corner of the dashboard and adjust its size. Save the dashboard by clicking "Save".
+- Place the widget in the upper-right corner of the dashboard and adjust its size. Save the dashboard by clicking "Save".
 
 {% include images-gallery.html imageCollection="copy-paste-map-widget-2" %}
 
@@ -290,16 +290,16 @@ In the "Building list" widget, click on the row of any building to transition to
 
 ### Offices list widget
 
-Next, we will add a widget to display the list of offices in the selected building. It will be a table that, in addition to listing the offices, will show information about which floor the office is located on and the contact person&#39;s phone number.
+Next, we will add a widget to display the list of offices in the selected building. It will be a table that, in addition to listing the offices, displays the floor each office is located on and the contact person&#39;s phone number.
 
 #### Adding the necessary attributes
 
 Information about the floor and the contact phone number should be added as attributes for each office. 
-Additionally, as attributes, we will add information such as the office manager&#39;s first and last name, physical address, and office email, which we will use later in another widget.
+Additionally, as attributes, we will add information such as the office manager&#39;s first and last name, physical address, and office email, which will be used later in another widget.
 
 {% include images-gallery.html imageCollection="adding-office-attributes-1" showListImageTitles="true" %} 
 
-- Similarly, add the attributes "phone", "email", "address", and "officeManager".
+- Similarly, add the "phone", "email", "address", and "officeManager" attributes.
 
 After adding these attributes for both offices, your attributes list for each office should look like this:
 
@@ -315,8 +315,8 @@ Use the values for the attributes from the table below:
 
 #### Adding Offices list widget
 
-Now let's add the widget itself, which will display the list of offices. In this widget, we will use the alias type "[Asset search query](/docs/{{docsPrefix}}user-guide/ui/aliases/#asset-search-query){:target="_blank"}". 
-This alias allows displaying assets of specified asset types (asset profiles) to a specified level that are linked to the root entity. In our case, the root entity is the selected building.
+Now let's add the widget itself, which will display the list of offices. In this widget, we will use the "[Asset search query](/docs/{{docsPrefix}}user-guide/ui/aliases/#asset-search-query){:target="_blank"}" alias type. 
+This alias allows displaying assets of specified asset types (asset profiles) up to a specified level that are linked to the root entity. In our case, the root entity is the selected building.
 
 {% include images-gallery.html imageCollection="offices-list-widget-1" showListImageTitles="true" %}
 
@@ -327,7 +327,7 @@ The configured "building" state should look like this:
 
 ## Office's state
 
-By transitioning to the state of the selected office, you will receive the contact information of the person responsible for the office, see a list of all devices in the office and their main telemetry readings, as well as see the office plan and the placement of devices on it.
+By transitioning to the state of the selected office, you will access the contact information of the person responsible for the office, see a list of all devices in the office and their main telemetry readings, as well as see the office plan and the placement of devices on it.
 
 ### Navigation between the building and office states
 
@@ -340,7 +340,7 @@ Navigate to the "Office A" state by selecting the appropriate office in the "Off
 
 {% include images-gallery.html imageCollection="navigate-to-office-state-2" showListImageTitles="true" %}
 
-Add a background image for this state. You already know how to do it. Use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-room.png){:target="_blank"} or your own.
+Add a background image for this state. You already know how to do it. Use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-room.png){:target="_blank"} or upload your own image.
 
 {% include images-gallery.html imageCollection="background-image-office-state" %}
 
@@ -350,7 +350,7 @@ Let's add a widget card that will display contact information about the selected
 
 - Click the large "Add new widget" icon in the center of the screen;
 - Select the "Markdown/HTML Card" from the "Cards" widgets bundle;
-- Specify the alias "Selected entity" as the data source;
+- Specify the "Selected entity" alias as the data source;
 - Add the following data keys: "address", "floor", "officeManager", "email", and "phone";
 - Navigate to the "Appearance" tab. Add the Markdown/HTML pattern to the appropriate window by taking it from the documentation:
 
@@ -467,7 +467,9 @@ Let's add a widget card that will display contact information about the selected
 
 - Navigate to the "Widget card" tab, disable "Enable fullscreen" and "Enable data export" options;
 - Click "Add" to confirm adding the widget;
-- Resize the widget to your liking. After, save the dashboard.
+- Resize the widget to your liking. Afterwards, save the dashboard.
+
+We have added an information card about the office.
 
 {% include images-gallery.html imageCollection="adding-office-markdown-card-widget" %}
 
@@ -502,32 +504,32 @@ Coordinates of the devices used in this example:
 
 Now we need to upload the Office A plan and the Office B plan as graphic files to the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery){:target="_blank"} and add links to them as server attributes for the "Office A" and "Office B" assets, respectively.
 
-For Office A use [the provided Office A plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-a-plan.png){:target="_blank"} or your own.
+For Office A use [the provided Office A plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-a-plan.png){:target="_blank"} or upload your own image.
 
 - Go to the "Image gallery" page of the "Resources" section;
-- Click "Upload image" button. This will open a new window designed for the upload image. Here, you can either drag and drop your office plan image file or select it through a file explorer. Then, click "Upload";
+- Click "Upload image" button. This will open a new window for uploading the image. Here, you can either drag and drop your office plan image file or select it through a file explorer. Then, click "Upload";
 - Once the upload is successful and your image appears in the gallery, look for the "Embed image" icon next to the image. Click this to get a unique link that directly references your uploaded image;
 - Go to the "Assets" page of the "Entities" section, and click on "Office A". Navigate to the "Attributes" tab, and click the "plus" icon to add a new attribute;
-- Name this attribute "office-plan", choose "String" for the value type, and paste the previously copied link into the value field. Confirm the addition by clicking "Add";
+- Name this attribute "office-plan", choose "String" as the value type, and paste the previously copied link into the value field. Confirm the addition by clicking "Add";
 
 We have added a new attribute with a link to the image of the Office A plan.
 
 {% include images-gallery.html imageCollection="add-office-plan-1" %}
 
-Similarly, upload the Office B plan image to the Image gallery, and add a link to it for "Office B" asset as a server attribute. Use the [provided Office B plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-b-plan.png){:target="_blank"} or your own.
+Similarly, upload the Office B plan image to the Image gallery, and add a link to it for "Office B" asset as a server attribute. Use the [provided Office B plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-b-plan.png){:target="_blank"} or upload your own image.
 
 {% include images-gallery.html imageCollection="add-office-plan-2" %}
 
 #### Adding Image Map widget
 
-Now that we've completed the preparatory steps, it's time to add the Image Map widget itself. In this widget we will use the "[Device search query](/docs/{{docsPrefix}}user-guide/ui/aliases/#device-search-query){:target="_blank"}" alias type. 
-This alias allows displaying devices of specified device types (device profiles) to a specified level that are linked to the root entity. In our case, the root entity is the selected office.
+Now that we've completed the preparatory steps, it's time to add the Image Map widget itself. In this widget, we will use the "[Device search query](/docs/{{docsPrefix}}user-guide/ui/aliases/#device-search-query){:target="_blank"}" alias type. 
+This alias allows displaying devices of specified device types (device profiles) up to a specified level that are linked to the root entity. In our case, the root entity is the selected office.
 
 - Go to the "office" state and enter dashboard editing mode;
 - Click the "Add widget" button at the top of the screen;
 - Select the "Image Map" widget from the "Maps" widgets bundle;
 - Now we need to add a new alias. In the "Alias" field, enter a name for it - "Office sensors", and click "Create a new one";
-- Select the alias type "Device search query", turn on the option "Use dashboard state entity as root", set "Max relation level" to 1, relation type to "Contains", and list the device types: "smart-sensor", "energy-sensor", and "water-sensor. Click "Add";
+- Select the "Device search query" alias type, turn on the "Use dashboard state entity as root" option, set "Max relation level" to 1, choose "Contains" as the relation type, and list the following device types: "smart-sensor", "energy-sensor", and "water-sensor. Finally, click "Add";
 - Add "xPos", "yPos", and "type" as data keys;
 
 {% include images-gallery.html imageCollection="adding-image-map-widget-1" %}
@@ -559,13 +561,13 @@ The label text used in the example:
 
 {% include images-gallery.html imageCollection="adding-image-map-widget-tooltip" %}
 
-- Use the marker image function to displays the marker image with the corresponding index, depending on the device type:
+- Use the marker image function to display the marker image with the corresponding index, depending on the device type:
   - Copy marker image function from the documentation and paste it into the "Marker image function" field.
-  - Remove default markers, and upload new markers for each device type. Image markers used in this example: [Indoor Air Quality Sensor](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-indoor-air-quality-default.svg){:target="_blank"}, [Energy Sensor](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-energy-default.svg){:target="_blank"}, and [Water Flow Meter](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-water-default.svg){:target="_blank"}.
+  - Remove default markers, and upload new markers for each device type. Image markers are used in these examples: [Indoor Air Quality Sensor](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-indoor-air-quality-default.svg){:target="_blank"}, [Energy Sensor](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-energy-default.svg){:target="_blank"}, and [Water Flow Meter](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-water-default.svg){:target="_blank"}.
 
 {% capture difference %}
 **Please note:**
-Each marker has its own index (images[0], images[1], etc.). The marker&#39;s index must correspond to the device type specified in the marker image function.'
+Each marker has its own index (images[0], images[1], etc.). The marker&#39;s index must correspond to the device type specified in the marker image function. You can manually reorder the marker images by dragging them.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -640,7 +642,7 @@ A widget has been added that displays the plan of the selected office and the pl
 
 {% include images-gallery.html imageCollection="image-map-widget" %}
 
-### Office sensor list widget
+### Office sensors list widget
 
 Add another one widget to "office" state that will display devices and their telemetry in a list.
 
@@ -653,7 +655,7 @@ The configured "office" state should look like this:
 
 ## Final view of the dashboard for this lesson
 
-Finally, your dashboard should look like this:
+As a result your dashboard should look like this:
 
 {% include images-gallery.html imageCollection="dashboard-final-lesson-2" %}
 
@@ -663,4 +665,4 @@ In the third part of this guide, we will continue to develop our dashboard. We w
 When you're ready to continue, just click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="n-button add-device">Lesson 3: Charts and card widgets</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="n-button add-device">Lesson 3: Adding and configuring individual states for each device</a></p>

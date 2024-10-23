@@ -31,7 +31,7 @@ First, create the new rule chain:
 
 Now, let&#39;s add the necessary nodes:
 
-- Find the [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} and drag it to the rules chain. With its help, we will generate telemetry values for further visualization on the dashboard. Name it "Indoor air quality data emulator", and set the number of messages to send to 100 and the sending period to 600;
+- Find the [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} and drag it to the rule chain. With its help, we will generate telemetry values for further visualization on the dashboard. Name it "Indoor air quality data emulator", and set the number of messages to send to 100 and the sending period to 600;
 - Specify the device "SD-001" (Indoor Air Quality Sensor) as originator;
 - Copy the following script from the documentation:
 
@@ -110,22 +110,25 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-5" %}
-
 - Click "Add.
 
+{% include images-gallery.html imageCollection="adding-new-rule-chain-5" %}
+
+<br>
 Added four generator nodes. Now we need to route messages from these nodes to the Root Rule Chain for further processing and saving telemetry in the database.
 For this purpose, there is a "[rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node){:target="_blank"}" node.
 
-- Find the "rule chain" node and drag it to the rules chain. This node forwards all messages to the Root Rule Chain;
+- Find the "rule chain" node and drag it to the rule chain. This node forwards all messages to the Root Rule Chain;
 - Name it "to Root Rule Chain", specify "Root Rule Chain" and click "Add".
 
-We have added all the necessary nodes. Now, we need to connect the generator nodes to the "rule chain" node for routing messages:
+{% include images-gallery.html imageCollection="adding-new-rule-chain-6" %}
+
+We have added all the necessary nodes. Now, we need to connect the generator nodes to the "rule chain" node for message routing:
 
 - Tap on the right grey circle of "generator" node and drag this circle to the left side of "rule chain" node. Select the "Success" link and click "Add";
-- Repeat this for each generator node. After, save rule chain.
+- Repeat this for each generator node. Afterwards, save rule chain.
 
-{% include images-gallery.html imageCollection="adding-new-rule-chain-6" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="adding-new-rule-chain-7" showListImageTitles="true" %}
 
 After waiting for the period specified in the generator nodes, you will be able to see the telemetry on the "Latest telemetry" tab of your devices.
 
@@ -139,7 +142,7 @@ We'll combine multiple telemetry values into a single column for a cleaner look 
 
 {% include images-gallery.html imageCollection="customize-office-sensors-list-widget-1" showListImageTitles="true" %}
 
-Cell content function, using in this example:
+Cell content function used in this example:
 
 ```text
 if (entity.temperature && entity.humidity && entity.co2){
@@ -179,14 +182,14 @@ Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/ad
 
 - Go to the "office" state and enter editing mode of the "Office sensors list" widget;
 - Scroll to the "Actions" menu section and click the "Add action" button;
-- The "Actions" window will open. Click the "plus" icon in the top right corner of the screen. In the "Add action" dialog: 
+- The "Actions" window will open. Click the "plus" icon in the top-right corner of the screen. Complete the following steps in the "Add action" dialog: 
   - Select "On row click" action source;
   - Enter action name;
   - Choose the "Custom action" action type;
   - After choosing an action type, the "Custom action function" section appears. Paste the function by copying it from the documentation.
   This function performs a transition to the dashboard state depending on the type (device profile) of the selected device.
 
-Custom action function, using in this example:
+Custom action function used in this example:
 
 ```js
 const $injector = widgetContext.$injector;
@@ -212,10 +215,10 @@ function openDashboardState(stateId) {
 ```
 {:.copy-code.expandable-4}
 
-- After, click "Add";
-- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
+- Afterwards, click "Add";
+- In the "Actions" window, you can review the configured action, including its source, icon, and type. Click "Save";
 - Click "Apply" to save the widget settings;
-- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
+- Save the dashboard by clicking "Save" in the upper-right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="action-go-to-device-1" %}
 
@@ -225,7 +228,7 @@ Check how it works. Click on the row of any device to transition to its state.
 
 ### Customize Office plan widget
 
-Now, enhance the functionality of the "[Office plan](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#adding-image-map-widget){:target="_blank"}" widget by adding the tooltip that display telemetry data of the sensors and adding the ability to drill down to the details of each device. Follow these steps to customize the widget:
+Enhance the functionality of the "[Office plan](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#adding-image-map-widget){:target="_blank"}" widget by adding a tooltip that display telemetry data for the sensors and adding the ability to drill down to the details of each device. Follow these steps to customize the widget:
 
 - While in the "office" state, enter the dashboard edit mode;
 - Click the "pencil" icon of the "Office sensors list" widget to modify its settings;
@@ -233,7 +236,7 @@ Now, enhance the functionality of the "[Office plan](/docs/{{docsPrefix}}user-gu
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-1" %}
 
-- Navigate to the "Appearance" tab. Scroll to the "Tooltip" section and enable the "Use tooltip function" option. Now, copy the tooltip function from the documentation and paste it into the "Tooltip function" field;
+- Navigate to the "Appearance" tab. Scroll to the "Tooltip" section and turn on the "Use tooltip function" option. Now, copy the tooltip function from the documentation and paste it into the "Tooltip function" field;
 
 The tooltip function used in the example:
 
@@ -307,8 +310,8 @@ a.leaflet-popup-close-button {
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-3" %}
 
-- Navigate to the "Actions" tab and click "plus" to add new action. In the "Add action" dialog:
-  - Select "On row click" as the action source;
+- Navigate to the "Actions" tab and click "plus" to add new action. Complete the following steps in the "Add action" dialog:
+  - Select "Tooltip tag action" as the action source;
   - Enter "sensor_details" as action name;
   - Choose "Custom action" for the action type;
   - Paste the custom action function by copying it from the documentation.
@@ -339,7 +342,7 @@ function openDashboardState(stateId) {
 ```
 {:.copy-code.expandable-4}
 
-- After, click "Add";
+- Then, click "Add";
 
 {% capture difference %}
 Ensure that the name of the created action matches the name specified in the tooltip function.
@@ -351,18 +354,18 @@ Ensure that the name of the created action matches the name specified in the too
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-4" %}
 
-Click any marker on the "Office plan" widget to open a tooltip. In each device’s tooltip, there is a line to access the details of the selected device. Click on this line.
+Click any marker on the "Office plan" widget to open a tooltip. Each device&#39;s tooltip includes a line button to access the details of the selected device. Click on this line.
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-5" %}
 
 ## Configuring state for Indoor Air Quality Sensor
 
 To effectively monitor and analyze indoor air quality, we'll add three widgets to display current readings of temperature, humidity, and CO2 levels, alongside two widgets for tracking historical data on air quality in the office.
-This will allow not only to monitor the current state of air quality parameters but also to analyze the trends of their changes over time.
+This will allow us to not only monitor the current state of air quality parameters but also to analyze the trends in their changes over time.
 
 ### Temperature, humidity, and CO2 level cards widgets
 
-In ThingsBoard, there is a bundle of pre-configured widgets for displaying telemetry of the indoor environment, such as temperature, humidity, and CO2 levels, etc. In this lesson, we will use this widgets bundle.
+In ThingsBoard, there is a bundle of pre-configured widgets for displaying telemetry of the indoor environment, including temperature, humidity, and CO2 levels, etc. In this lesson, we will use this widgets bundle.
 
 First, add a widget to display the current temperature in the office.
 
@@ -382,23 +385,23 @@ Now, you can see the current values of temperature, humidity, and CO2 levels.
 
 ### Temperature and humidity history charts
 
-Now, we will add a widget that displays temperature and humidity readings in the office on a chart for the last 12 hours. This way, we can track their changes.
+We will now add a widget that displays a chart of temperature and humidity readings in the office for the last 12 hours. This way, we can track their changes.
 
 {% include images-gallery.html imageCollection="temperature-and-humidity-history-1" showListImageTitles="true" %}
 
 <br>
 The "Temperature and humidity history" widget is added, but there are no charts on it. We will fix it right now.
 
-To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow), you need to adjust the time interval and aggregation function settings. To do this, open the time window, select to display data from the last 12 hours, choose the aggregation as "Average," and the grouping interval as "1 hour".
+To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow), you need to adjust the time interval and aggregation function settings. To do this, open the time window, select the last 12 hours of data, set the aggregation to "Average" and the grouping interval to "1 hour".
 
-This setup ensures that all widgets using the dashboard's time window will now display data averaged over each of the last 12 hours, providing a clear view of the temperature and humidity trends. 
+This setup ensures that all widgets using the dashboard&#39;s time window will display data averaged over the last 12 hours, providing a clear view of the temperature and humidity trends. 
 Now, you can effectively monitor the average temperature and humidity readings for each hour over the past 12 hours.
 
 {% include images-gallery.html imageCollection="temperature-and-humidity-history-2" %}
 
 ### CO2 level chart
 
-Now, add another line chart widget to display CO2 data in the office for the last 12 hours.
+Now, add another line chart widget to display CO2 data for the office over the last 12 hours.
 
 {% include images-gallery.html imageCollection="air-quality-widget-1" showListImageTitles="true" %}
 
