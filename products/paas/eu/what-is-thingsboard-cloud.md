@@ -9,7 +9,7 @@ description: Features and advantages of ThingsBoard Cloud
 
 {% include get-hosts-name.html docsTag="paas-eu" %}
 
-The [**ThingsBoard Cloud**](/products/paas/eu/) is a fully managed, scalable and fault-tolerant platform for your IoT applications.
+The [**ThingsBoard Cloud**](/products/paas/) is a fully managed, scalable and fault-tolerant platform for your IoT applications.
 ThingsBoard Cloud is for everyone who would like to use [ThingsBoard](/docs/paas/eu/getting-started-guides/what-is-thingsboard/) but don't want to host their own instance of the platform.
 As a platform user, you get a [tenant account](/docs/paas/eu/user-guide/entities-and-relations/) with certain entity and API [limits](/docs/paas/eu/user-guide/tenant-profiles/#entity-limits)
 that are defined based on the [subscription plan](/products/paas/eu/subscription/).
