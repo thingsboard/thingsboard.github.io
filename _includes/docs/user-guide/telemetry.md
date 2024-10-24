@@ -104,7 +104,7 @@ See [SQL vs NoSQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybr
 {% if docsPrefix contains "paas/" %}
 
 ThingsBoard Cloud stores data with configurable time-to-live (TTL) parameter. 
-The value of the parameter is part of the [Subscription](/products/paas/subscription/) plan.
+The value of the parameter is part of the [Subscription](/docs/{{docsPrefix}}subscription/) plan.
 You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
 This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
 For example, you may store "raw" data for 3 month and aggregated data for 3 years.

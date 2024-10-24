@@ -1,9 +1,10 @@
 ---
-layout: docwithnav-paas-eu
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: Plan and billing
 description: Billing options via ThingsBoard Cloud
+redirect_from: "/products/paas/billing-info/"
 subscription:
     0:
         image: /images/cloud/subscription.png
@@ -29,7 +30,8 @@ upcomingInvoice:
         title: 'Upcoming invoice preview'
 ---
 
-{% include get-hosts-name.html docsTag="paas-eu" %}
+{% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsTag="paas" %}
 
 * TOC
 {:toc}

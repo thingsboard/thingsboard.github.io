@@ -1424,7 +1424,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
-                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
+                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/docs/paas/subscription/" target="blank">documentation</a> for more details.
                 </p>  
             </div>    
         </div>
@@ -1433,7 +1433,7 @@ selfManagedPlan:
                 <p>
                 Data point is a key-value pair that your device telemetry messages contain. For example, the message <i>{"temperature":42, "humidity": 60}</i> contains two data points.  
                 Each ThingsBoard Cloud subscription plan has a maximum number of data points that can be sent from all your devices per month. 
-                There are other <a href="/products/paas/subscription/" target ="blank">important parameters</a> of the subscription.
+                There are other <a href="/docs/paas/subscription/" target ="blank">important parameters</a> of the subscription.
                 </p>  
             </div>    
         </div>
@@ -1442,7 +1442,7 @@ selfManagedPlan:
                 <p>
                ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
                See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. But currently it is not possible to connect third-party SMTP servers, notifications will be sent from our system. We plan to add this ability in future releases.
-               See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
+               See <a href="/docs/paas/domains/" target ="blank">managing domain</a> for more details.
                 </p>  
             </div>    
         </div>                   
