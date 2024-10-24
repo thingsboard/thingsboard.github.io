@@ -1,9 +1,10 @@
 ---
-layout: docwithnav-paas-eu
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: Managing domain
 description: Domain managing through ThingsBoard Cloud
+redirect_from: "/products/paas/domains/"
 registerDomain:
     0:
         image: https://img.thingsboard.io/user-guide/domain/domain-register-step-1.png
@@ -46,8 +47,8 @@ deleteDomain:
         title: 'In the confirmation dialog, click "Yes" if you are sure you want to delete the domain.'
 
 ---
-
-{% include get-hosts-name.html docsTag="paas-eu" %}
+{% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsTag="paas" %}
 
 * TOC
 {:toc}

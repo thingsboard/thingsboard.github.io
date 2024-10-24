@@ -379,7 +379,7 @@ See example of successful RPC message below:
 
 {% if docsPrefix contains 'paas/' %}
 
-The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TTL' parameter in [Subscriptions](/products/paas/subscription/) for more details.
+The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TTL' parameter in [Subscriptions](/docs/{{docsPrefix}}subscription/) for more details.
 
 {% else %}
 The time-to-live of persistent RPC is configured by the System Administrator in the [Tenant Profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/) using **RPC TTL days configuration** parameter.

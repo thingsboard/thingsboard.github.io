@@ -173,5 +173,5 @@ scada-card-appearance-1:
 
 
 ---
-
+{% assign docsPrefix = "paas/" %}
 {% include docs/user-guide/scada.md %}

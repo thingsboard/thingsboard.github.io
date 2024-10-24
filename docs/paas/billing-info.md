@@ -1,35 +1,37 @@
 ---
-layout: docwithnav-paas-eu
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: Plan and billing
 description: Billing options via ThingsBoard Cloud
+redirect_from: "/products/paas/billing-info/"
 subscription:
     0:
-        image: https://img.thingsboard.io/cloud/subscription.png
+        image: /images/cloud/subscription.png
         title: 'Subscription details'
     1:
-        image: https://img.thingsboard.io/cloud/subscription-plan-usage.png
+        image: /images/cloud/subscription-plan-usage.png
         title: 'Plan usage'
 billingInfo:
     0:
-        image: https://img.thingsboard.io/cloud/billing-info.png
+        image: /images/cloud/billing-info.png
 updatePaymentMethod:
     0:
-        image: https://img.thingsboard.io/cloud/update-payment-method.png
+        image: /images/cloud/update-payment-method.png
 updateBillingInfo:
     0:
-        image: https://img.thingsboard.io/cloud/update-billing-info.png
+        image: /images/cloud/update-billing-info.png
 invoices:
     0:
-        image: https://img.thingsboard.io/cloud/invoices.png
+        image: /images/cloud/invoices.png
 upcomingInvoice:
     0:
-        image: https://img.thingsboard.io/cloud/upcoming-invoice.png
+        image: /images/cloud/upcoming-invoice.png
         title: 'Upcoming invoice preview'
 ---
 
-{% include get-hosts-name.html docsTag="paas-eu" %}
+{% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsTag="paas" %}
 
 * TOC
 {:toc}

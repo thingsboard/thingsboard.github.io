@@ -93,7 +93,7 @@ Two types of application are available for tenant: default and custom.
 
 {% unless docsPrefix == null %}
 {% capture difference %}
-**Note:** To use custom mobile application tenant should have domain name configured in [Login White labeling settings](/products/paas/domains/){:target="_blank"}.
+**Note:** To use custom mobile application tenant should have domain name configured in [Login White labeling settings](/docs/{{docsPrefix}}domains/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 {% endunless %}
