@@ -10,13 +10,13 @@ In case you have not found out how to connect your device using the diagram or s
 {% endif %}
 
 {% if docsPrefix == 'pe/' %}
-  <object width="100%" style="max-width: max-content;" data="/images/connectivity-pe.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity-pe.svg"></object>
 {% elsif docsPrefix == 'paas/' %}
-  <object width="100%" style="max-width: max-content;" data="/images/connectivity-paas.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity-paas.svg"></object>
 {% elsif docsPrefix == 'paas/eu/' %}
-  <object width="100%" style="max-width: max-content;" data="/images/connectivity-paas-eu.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity-paas-eu.svg"></object>
 {% else %}
-  <object width="100%" style="max-width: max-content;" data="/images/connectivity.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity.svg"></object>
 {% endif %}
 
 
