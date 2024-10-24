@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-paas-eu
 assignees:
 - ashvayka
 title: SCADA dashboards
@@ -173,5 +173,7 @@ scada-card-appearance-1:
 
 
 ---
-{% assign docsPrefix = "paas/" %}
+
+{% assign docsPrefix = "paas/eu/" %}
+{% include get-hosts-name.html docsTag="paas-eu" %}
 {% include docs/user-guide/scada.md %}
