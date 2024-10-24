@@ -13,4 +13,5 @@ swagger-ui:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/rest-api.md %}

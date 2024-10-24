@@ -86,4 +86,5 @@ mqtts-options-2:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/basic-mqtt.md %}

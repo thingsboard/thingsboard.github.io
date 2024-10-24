@@ -1,4 +1,4 @@
-{% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
+{% if docsPrefix == 'pe/' or docsPrefix contains 'paas/' %}
 {% assign mobileDocsPrefix = "pe/" %}
 {% assign mobilePrefix = "ThingsBoard PE Mobile Application" %}
 {% else %}
@@ -1254,7 +1254,7 @@ Let's start by adding a map widget, namely OpenStreetMap widget. We have a separ
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
 {% endif %}
 

@@ -21,7 +21,7 @@ See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more feat
 {% if docsPrefix == null %}
 <object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture.svg"></object>
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 <object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture-pe.svg"></object>
 {% endif %}
 
@@ -36,11 +36,11 @@ ThingsBoard cluster can handle millions of devices.
 * **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
 * **durable**: never lose your data.
 
-{% if docsPrefix != "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 
 See [**ThingsBoard Architecture**](/docs/{{docsPrefix}}reference) for more details.
 
-{% endif %}
+{% endunless %}
 
 #### Ready to get started?
 

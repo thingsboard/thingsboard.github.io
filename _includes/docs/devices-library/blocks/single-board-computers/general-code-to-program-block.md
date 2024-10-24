@@ -33,7 +33,7 @@ Let’s setup our project:
    from tb_gateway_mqtt import TBDeviceMqttClient
    
    ACCESS_TOKEN = "TEST_TOKEN"
-   THINGSBOARD_SERVER = '{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}'
+   THINGSBOARD_SERVER = '{{hostName}}'
 
    logging.basicConfig(level=logging.DEBUG)
    
@@ -132,7 +132,7 @@ Let’s setup our project:
    | Variable name | Default value | Description | 
    |-|-|
    | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
-   | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
+   | THINGSBOARD_SERVER | **{{hostName}}** | Your ThingsBoard host or ip address. |
 
 5. Click **Ctrl+O** and **Ctrl+X** keys to save the file.
 6. And finally, let’s start our script:

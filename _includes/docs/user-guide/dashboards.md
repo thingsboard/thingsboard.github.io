@@ -14,7 +14,7 @@ These dashboards aren't limited to a single data source; they can display data f
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-introduction-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-introduction.png)
 {% endif %}
 
@@ -30,7 +30,7 @@ Dashboards in ThingsBoard provide users with the following capabilities:
 
  - **Role-Based Access**: ThingsBoard allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ThingsBoard also offers convenient IoT solution templates to reduce time-to-market for your IoT products. 
 These templates include interactive dashboards, processing logic, sample devices, users, and all other necessary entities. Think of these templates as a complete PoC/MVP. 
 Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates/overview/).
@@ -44,7 +44,7 @@ To add a new dashboard, you should:
 
 {% include images-gallery.html imageCollection="creating-dashboard" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 At the stage of creating a dashboard, you can specify it to a different owner and a specific dashboard group right away.
 How to create a new group of dashboards, read [here](/docs/{{docsPrefix}}user-guide/groups/#create-new-entity-group).
 
@@ -288,7 +288,7 @@ For the state to be named after the entity, use **${entityName}** as the name of
 
 ## Managing dashboard
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [share dashboard group](#share-dashboard-group), [make dashboard group public](#make-dashboard-group-public), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
 {% endif %}
 
@@ -307,7 +307,7 @@ To export a dashboard, go to the “Dashboards” page. Find the dashboard you w
 
 {% include images-gallery.html imageCollection="export-dashboard" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".
 The dashboard is exported to the configuration file in JSON format.
 
@@ -339,7 +339,7 @@ To import a dashboard, follow these steps:
 
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Share dashboard group
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role.
@@ -356,7 +356,7 @@ To share a dashboard group, follow these steps:
 
 You can make the dashboard public and share a link to it with other users.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Make dashboard group public
 
 You can make the dashboard group and all its dashboards public and then share links to those dashboards with other users.

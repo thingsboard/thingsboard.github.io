@@ -13,7 +13,7 @@ But only System and Tenant Administrators are able to set up customer email temp
 
 By default, the Tenant inherits the Sysadmin UI configuration, and the Customer inherits the Tenant UI configuration. But Tenant and Customer Administrators are able to set up their own White Labeling configuration.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Tenant and Customer Administrators can configure color scheme, icon, favicon and custom translation of system components and end-user dashboard elements.
 But only Tenant Administrator are able to set up customer email templates to interact with the users.
 
@@ -33,7 +33,7 @@ In the "General" tab you can set or change the following options:
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/white-labeling/application-title.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/white-labeling/application-title-paas.png)
 {% endif %}
 
@@ -42,7 +42,7 @@ In the "General" tab you can set or change the following options:
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/white-labeling/website-icon.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/white-labeling/website-icon-paas.png)
 {% endif %}
 
@@ -51,7 +51,7 @@ In the "General" tab you can set or change the following options:
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/white-labeling/logo.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/white-labeling/logo-paas.png)
 {% endif %}
 

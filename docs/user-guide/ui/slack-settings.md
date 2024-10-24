@@ -46,4 +46,5 @@ thingsboardTenantAdminSettings:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/slack-settings.md %}

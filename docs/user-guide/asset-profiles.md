@@ -8,4 +8,5 @@ redirect_from: "/docs/user-guide/ui/asset-profiles"
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/asset-profiles.md %}

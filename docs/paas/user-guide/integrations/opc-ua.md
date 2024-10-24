@@ -30,4 +30,5 @@ create_rule_chain_2:
 
 ---
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/integrations/opc-ua.md %}

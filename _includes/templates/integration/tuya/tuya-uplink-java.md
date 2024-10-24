@@ -63,6 +63,6 @@ return result;
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
 {% endif %}

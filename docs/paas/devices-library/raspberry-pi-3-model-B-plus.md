@@ -12,4 +12,5 @@ docsPrefix: paas/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/raspberry-pi-3-model-B-plus.md %}

@@ -11,4 +11,5 @@ deviceImageFileName: m5stack-timer-camera-f.svg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/m5stack-timer-camera-f.md %}

@@ -373,7 +373,7 @@ states-entity-name:
         image: https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-states-18-ce.png
         title: 'After clicking, you will be transitioned to a state that is called the same as the entity that took part in the action.'
 
---- 
+---
 
-
+{% include get-hosts-name.html %}
 {% include docs/user-guide/dashboards.md %}

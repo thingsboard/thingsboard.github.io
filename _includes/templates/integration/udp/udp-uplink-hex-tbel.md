@@ -30,6 +30,6 @@ return result;
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-uplink-converter-hex-tbel-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-uplink-converter-hex-tbel-paas.png)
 {% endif %}

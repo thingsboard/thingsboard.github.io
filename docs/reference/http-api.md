@@ -41,4 +41,5 @@ client-side-rpc:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/http-api.md %}

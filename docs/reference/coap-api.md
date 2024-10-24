@@ -40,4 +40,5 @@ client-side-rpc:
         title: 'You should receive a response from the server'
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/coap-api.md %}

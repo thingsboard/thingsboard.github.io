@@ -1150,7 +1150,7 @@ Allows to filter only one entity based on the id. For example, this entity filte
     }
 }
 ```
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 - **Group Entities Filter**
 
 Allows to filter multiple entities of the same type using the entity group type and id. For example, this entity filter selects all devices that belong to the group  **e52b0020-2a7a-11ec-94eb-213c95f54092**:
@@ -1198,7 +1198,7 @@ Allows to filter entities based on their type (CUSTOMER, USER, DASHBOARD, ASSET,
 }
 ```
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 - **Group List Filter**
 
 Return multiple groups of the same type using specified ids. For example, this entity filter selects 2 device groups (if they are present in the system) with ids  **e52b0020-2a7a-11ec-94eb-213c95f54092** and  **e52b0020-2a7a-11ec-94eb-213c95f54093**:

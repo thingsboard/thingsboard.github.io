@@ -34,7 +34,7 @@ This part of documentation covers provisioning of your first LwM2M device in Thi
 
 ### Step 1. Upload LwM2M models
 
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 System administrator is able to upload LwM2M models using "Resource library" UI located in the "System settings" menu.
 One may upload multiple files at once. We recommend you to download list of available models from official [github](https://github.com/OpenMobileAlliance/lwm2m-registry) repo and import all of them.
 Note that LwM2M models are versioned, and make sure to upload those that match the LwM2M object versions provided by your devices.
@@ -105,12 +105,12 @@ Now you are ready to turn on the device and observe the incoming telemetry.
 Let's launch the test client:
 
 ```bash
-./lwm2mclient -h lwm2m.thingsboard.cloud -n UniqueEndpointName -p 5685 -c
+./lwm2mclient -h {{lwm2mHostName}} -n UniqueEndpointName -p 5685 -c
 ```
 {: .copy-code}
 
 Where
-* 'lwm2m.thingsboard.cloud' is the host name of the LwM2M server;
+* '{{lwm2mHostName}}' is the host name of the LwM2M server;
 * '5685' is the port of LwM2M server;
 * 'UniqueEndpointName' is the unique name of your endpoint. Please replace this with IMEI or other unique ID.
 

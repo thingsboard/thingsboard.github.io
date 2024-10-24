@@ -42,4 +42,5 @@ deviceProfileConfiguring5:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/snmp-api.md %}

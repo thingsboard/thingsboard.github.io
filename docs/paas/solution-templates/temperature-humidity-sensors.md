@@ -26,4 +26,5 @@ solution-alarms:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/solution-templates/temperature-humidity-sensors.md %}

@@ -52,4 +52,5 @@ server-side-rpc-rule-chain:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/rpc.md %}

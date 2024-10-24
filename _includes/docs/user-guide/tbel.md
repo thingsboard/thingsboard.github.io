@@ -32,7 +32,7 @@ We have forked the TBEL codebase and added additional security improvements to e
 So, no need to run Nashorn with the sandbox environment.
 
 Of course, TBEL is not as powerful as JS, but the majority of the use cases do not need this.
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 The one who requires JS flexibility may use remote [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) as usual.
 {% else %}
 The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual.
@@ -40,7 +40,7 @@ The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPr
 
 #### TBEL vs JS Executors
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
 {% else %}
 [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.

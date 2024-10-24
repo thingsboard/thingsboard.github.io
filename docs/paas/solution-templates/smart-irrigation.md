@@ -17,4 +17,5 @@ solution-highlights:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/solution-templates/smart-irrigation.md %}

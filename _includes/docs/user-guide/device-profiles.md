@@ -25,7 +25,7 @@ This setting is available in the Device Profile wizard and in the Device Profile
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-chain-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-chain-1-pe.png)
 {% endif %}
 
@@ -40,7 +40,7 @@ Separation of the queues also allows you to customize different [submit](/docs/{
 
 This setting is available in the Device Profile wizard and Device Profile details.
 
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 {% capture difference %}
 **Please note:**
 <br>
@@ -52,7 +52,7 @@ if you choose to use a custom queue, you should configure it with the **system a
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-queue-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-queue-1-pe.png)
 {% endif %}
 
@@ -63,7 +63,7 @@ The current version of the ThingsBoard platform supports the following transport
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-1-pe.png)
 {% endif %}
 
@@ -98,9 +98,9 @@ mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t '/telem
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
 {% endif %}
@@ -120,9 +120,9 @@ mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/dev
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
 {% endif %}
@@ -134,9 +134,9 @@ mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/dev
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
+mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
 ```
 {: .copy-code}
 {% endif %}
@@ -155,7 +155,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-pe.png)
 {% endif %}
 
@@ -163,7 +163,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-pe.png)
 {% endif %}
 
@@ -178,7 +178,7 @@ The compatibility mode introduces slight performance degradation, so it is recom
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
 {% endif %}
 
@@ -189,7 +189,7 @@ The CoAP transport type enables advanced CoAP transport settings. With the CoAP 
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-1-pe.png)
 {% endif %}
 
@@ -209,7 +209,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-pe.png)
 {% endif %}
 
@@ -217,7 +217,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-pe.png)
 {% endif %}
 
@@ -240,7 +240,7 @@ Requires Efento devices with FW version: 06.02+.
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-pe.png)
 {% endif %}
 
@@ -276,9 +276,9 @@ Where:
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
+mosquitto_pub -d -h '{{mqttHostName}}' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
 ```
 {: .copy-code}
 Where **$ACCESS_TOKEN** is your device access token.
@@ -364,7 +364,7 @@ The rule node processes all incoming messages and reacts to the attributes and t
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-1-pe.png)
 {% endif %}
 
@@ -387,7 +387,7 @@ The Rule Node will fetch the state from the database when the first message from
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-2-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-2-pe.png)
 {% endif %}
 
@@ -405,7 +405,7 @@ There is also an additional 'Alarm Updated' relation type that should be ignored
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-notifications-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-notifications-pe.png)
 {% endif %}
 

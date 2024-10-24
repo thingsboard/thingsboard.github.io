@@ -212,4 +212,5 @@ advanced-settings-circle-settings-6:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/trip-animation-widget.md %}

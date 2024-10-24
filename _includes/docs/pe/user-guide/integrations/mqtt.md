@@ -23,8 +23,8 @@ In this tutorial, we will use:
 {% if docsPrefix == "pe/" %}
 - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
   {% endif %}
-  {% if docsPrefix == "paas/" %}
-- ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
+  {% if docsPrefix contains "paas/" %}
+- ThingsBoard Professional Edition instance — [{{hostName}}](https://{{hostName}});
   {% endif %}
  - MQTT broker, accessible by ThingsBoard PE instance — broker.hivemq.com (port 1883);
  - mosquitto_pub and mosquitto_sub MQTT clients to send and receive messages;   
@@ -149,7 +149,7 @@ Here you will see information about the new device. As well as the telemetry whi
 Learn more about *notifications* and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
 {% endif %}
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Once you go to the **Device Groups** -> **All* you should find a *SN-001* device provisioned by the Integration.
 Click on the device, go to *Latest Telemetry* tab to see "temperature" key and its value (25.1) there.
 
@@ -162,7 +162,7 @@ Go back to your **Integrations** page and navigate to the **Events** tab. There 
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-events-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-events-1.png)
 {% endif %}
 
@@ -172,7 +172,7 @@ The "*In*" and "*Metadata*" are the input for the data converter, and "*Out*" is
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-paas.png)
 {% endif %}
 
@@ -203,7 +203,7 @@ Now go back to your dashboard and turn knob a couple of times.
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1.png)
 {% endif %}
 
@@ -248,7 +248,7 @@ Go to the dashboard and turn the wheel again. In your terminal window you should
 
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1.png)
 
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2.png)
@@ -299,7 +299,7 @@ Apply changes.
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1.png)
 {% endif %}
 
@@ -325,7 +325,7 @@ Sending a response message: {"rpcReceived":"OK"}
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1.png)
 {% endif %}
 
@@ -334,7 +334,7 @@ Go to the **Devices** page and find *rpcReceived* telemetry value is "*OK*" on t
 {% if docsPrefix == "pe/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-device-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-device-1-paas.png)
 {% endif %}
 

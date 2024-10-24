@@ -13,4 +13,5 @@ deviceImageFileName: rock64.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/rock64.md %}
