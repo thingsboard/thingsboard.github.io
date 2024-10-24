@@ -61,8 +61,17 @@ toc:
   section:
     - title: Overview
       path: /docs/paas/eu/user-guide/dashboards/
+    - title: Layouts
+      path: /docs/paas/eu/user-guide/ui/layouts/
     - title: Aliases
       path: /docs/paas/eu/user-guide/ui/aliases/
+    - title: SCADA
+      new: true
+      section:
+        - title: Overview
+          path: /docs/paas/eu/user-guide/scada/
+        - title: SCADA symbols development guide
+          path: /docs/paas/eu/user-guide/scada/scada-symbols-dev-guide/
     - title: Widgets
       section:
         - title: Overview
@@ -159,6 +168,7 @@ toc:
       new: true
     - title: Custom menu
       path: /docs/paas/eu/user-guide/custom-menu/
+      new: true
 - title: Integrations
   section:
     - title: Overview

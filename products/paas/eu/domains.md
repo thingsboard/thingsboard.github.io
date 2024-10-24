@@ -66,9 +66,9 @@ You must be owner of the domain you are registering.
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}
 
-In order to use your own host name instead of **thingsboard.cloud** you must register it first. Follow the next steps to do that:
+In order to use your own host name instead of **eu.thingsboard.cloud** you must register it first. Follow the next steps to do that:
 
-* On your DNS provider’s website, you must add a canonical record for your domain to map it with **thingsboard.cloud**. See [How to Create a CNAME Record For Your Domain](#how-to-create-a-cname-record) for details. Once done, you can start the registration procedure;
+* On your DNS provider’s website, you must add a canonical record for your domain to map it with **eu.thingsboard.cloud**. See [How to Create a CNAME Record For Your Domain](#how-to-create-a-cname-record) for details. Once done, you can start the registration procedure;
 * Go to the "Settings" page, then navigate to the "Domain" tab. On the "Domain" tab click on the "Register domain" button;
 * Enter valid domain name in the input field and click on the "Register" button.
 * You will be prompted a reminder about the CNAME;
@@ -172,7 +172,7 @@ Correct output should look like that:
 ```bash
 ...
 ;; ANSWER SECTION:
-mydomain.thingsboard.online. 3600 IN	CNAME	thingsboard.cloud
+mydomain.thingsboard.online. 3600 IN	CNAME	eu.thingsboard.cloud
 ...
 ```
 
