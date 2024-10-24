@@ -34,5 +34,5 @@ assignment-from-cloud:
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
-{% assign cloudDocsPrefix = "pe/" %}
+{% assign peDocsPrefix = "pe/" %}
 {% include docs/edge/user-guide/config/device-on-edge.md %}

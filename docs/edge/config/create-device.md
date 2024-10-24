@@ -32,4 +32,4 @@ assignment-from-cloud:
 
 {% assign docsPrefix = "edge/" %}
 {% include docs/edge/user-guide/config/device-on-edge.md %}
-{% assign currentGuide = "CreateDeviceOnEdgeAndProvisionToCloud" %}
+
