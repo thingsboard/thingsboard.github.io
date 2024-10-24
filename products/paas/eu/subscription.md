@@ -6,11 +6,11 @@ title: ThingsBoard Cloud Subscription plans definition
 description: Features and advantages of subscription payment model
 
 ---
-
+{% assign docsPrefix = "paas/eu/" %}
 {% include get-hosts-name.html docsTag="paas-eu" %}
 
 ThingsBoars Cloud provides subscription plans based on the **pay-as-you-go** model. 
-Main characteristics of the subscription plan are: [entity limits](/docs/user-guide/tenant-profiles/#entity-limits), [api limits](/docs/user-guide/tenant-profiles/#api-limits--usage), [white-labeling](#white-labeling) and the level of support you get.   
+Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [white-labeling](#white-labeling) and the level of support you get.   
 
 
 ### Entity Limits
@@ -402,7 +402,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
 ### White-labeling
 
 ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
-See feature [documentation](/docs/user-guide/white-labeling/) for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
-See [managing domain](/products/paas/eu/domains/) for more details. 
+See feature [documentation](/docs/{{docsPrefix}}user-guide/white-labeling/) for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
+See [managing domain](/products/{{docsPrefix}}domains/) for more details. 
 
 The white-labeling feature is available for **Prototype** and **Startup** subscription plans. 
