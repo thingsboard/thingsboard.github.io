@@ -54,8 +54,8 @@ high message rates, and resource optimization, allowing for better management of
 
 ### Subscribing to Shared Subscriptions
 
-In this tutorial, we will be connecting [DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the Mosquitto client library, 
-which can be installed using the following command:
+In this tutorial, we will be connecting [DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the [Mosquitto](https://mosquitto.org/download/) client library.
+For Ubuntu users, it can be installed using the following command:
 ```
 sudo apt-get install mosquitto-clients
 ```
@@ -73,17 +73,38 @@ mosquitto_sub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t '$share/group/home/temp' 
 ```
 {: .copy-code}
 
-**Note,** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`.
+**Note:** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`.
 Make sure authentications are disabled. Otherwise, adjust the commands in this guide appropriately.
+
+For example, to use the system's default MQTT client credentials and connect to a locally deployed TBMQ, run the following commands:
+
+```bash
+mosquitto_sub -d -h "localhost" -p 1883 -t '$share/group/home/temp' -q 1 -V mqttv5 -i client1 -u tbmq_websockets_username
+```
+{: .copy-code}
+
+```bash
+mosquitto_sub -d -h "localhost" -p 1883 -t '$share/group/home/temp' -q 1 -V mqttv5 -i client2 -u tbmq_websockets_username
+```
+{: .copy-code}
 
 As a result, a new shared subscription is initiated (with ShareName equal to `group`) with two clients (`client1` and `client2`) subscribing to the `home/temp` topic. 
 Both clients will receive messages published on the mentioned topic evenly.
+
+{% include images-gallery.html imageCollection="shared-subscription-group" %}
 
 To ensure that the clients belonging to the shared subscription receive messages, you can publish some messages to the broker targeting the `home/temp` topic.
 Execute the following command to do so:
 
 ```bash
 mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t 'home/temp' -m 32 -q 1
+```
+{: .copy-code}
+
+Utilize the following command to connect to a locally deployed TBMQ using default credentials:
+
+```bash
+mosquitto_pub -d -h "localhost" -p 1883 -t 'home/temp' -m 32 -q 1 -u tbmq_websockets_username
 ```
 {: .copy-code}
 
@@ -113,6 +134,8 @@ TBMQ will treat them as separate shared subscription groups.
 This means that messages published to the shared subscription topic will be distributed only among clients of the same type. 
 DEVICE clients will receive messages within the DEVICE shared subscription group, while APPLICATION clients will receive messages within the APPLICATION shared subscription group.
 
+{% include images-gallery.html imageCollection="shared-subscription-groups" %}
+
 Therefore, it's important to consider the client type when working with shared subscriptions in TBMQ, 
 as the messages will be processed and distributed accordingly based on the client type within their respective shared subscription groups.
 
@@ -125,7 +148,7 @@ However, there are some considerations when persistent clients are involved in t
 1. If the shared subscription group **contains some persistent clients**, they will share the message load for the subscription topic as well until they go offline. 
 Once they are offline, the messages will not be distributed among them.
 2. On the other hand, if the shared subscription group **consists solely of persistent clients**, and they all go offline, 
-newly received messages will be stored per shared subscription group in the PostgreSQL database. 
+newly received messages will be stored per shared subscription group in the Redis database. 
 Once the first client from the group reconnects to the broker, it will receive stored persistent messages related to the shared subscription.
 
 These considerations ensure that message distribution and persistence are handled appropriately for shared subscription groups containing persistent clients.
@@ -138,11 +161,30 @@ To do so follow the instructions from the following [guide](/docs/mqtt-broker/us
 This can also be done through the REST API, and detailed instructions can be found in the next [documentation](/docs/mqtt-broker/application-shared-subscription/). 
 The entity creation process includes the automatic creation of a corresponding Kafka topic.
 
-Once the entity is created, you're all set to start using the shared subscription feature. 
-When the first client connects to the broker and initiates a shared subscription, a new Kafka consumer is created for that client and added to the 
-[Consumer Group](https://docs.confluent.io/platform/current/clients/consumer.html) (CG).
-As more clients subscribe to the shared subscription, their consumers are added to the CG as well, allowing them to share the message load. 
-Likewise, when a client unsubscribes, its consumer is removed from the CG, and the group rebalances accordingly.
+{% capture difference %}
+If this step is missed, the persistent APPLICATION client will be prevented from subscribing to the shared subscription.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+The naming convention for the Kafka topic created follows this format:
+
+```text
+tbmq.msg.app.shared.$TOPIC_FILTER
+```
+where $TOPIC_FILTER represents the topic filter for the shared subscription.
+
+**Important notice:** If the topic filter contains characters other than alphanumeric characters (and '/', '+', '#'), a hash derived from the topic filter will be used to construct the Kafka topic.
+This ensures compatibility with Kafka's naming conventions, as certain special characters may not be allowed in topic names. 
+By generating a hash, any unsupported characters are safely managed, ensuring correct topic creation and functionality.
+
+```text
+tbmq.msg.app.shared.$TOPIC_FILTER_HASH
+```
+
+After the entity is created, you're ready to start using the shared subscription feature. 
+When the client connects to the broker and initiates a shared subscription, a new Kafka consumer is created and added to the [Consumer Group](https://docs.confluent.io/platform/current/clients/consumer.html) (CG). 
+As additional clients subscribe, their consumers are also added to the CG, enabling them to share the message load. 
+Similarly, when a client unsubscribes, its consumer is removed from the CG, and the group rebalances automatically.
 
 This utilization of Kafka's capabilities enables enhanced performance, scalability, and reliability for shared subscriptions with APPLICATION clients in TBMQ. 
 By leveraging Kafka's features, the system can effectively manage and distribute the workload among the subscribed clients, ensuring optimal performance and fault tolerance.

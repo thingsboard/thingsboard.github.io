@@ -67,3 +67,6 @@ B,response.json,json,reference/resources/get-token-response.json,/docs/mqtt-brok
 - **Retained Msg Controller**: can be used to view information about Retain Messages for topics and force clean-up the data structure that stores retain messages.
 - **Subscription Controller**: can be used to view information about Client Subscriptions and force clean-up the data structure that stores subscriptions.
 - **Time series Controller**: can be used to get and delete historical stats data.
+- **Unauthorized Client Controller**: can be used to get and delete unauthorized clients in the system.
+- **WebSocket Connection Controller**: can be used to create, get and delete WebSocket connections for WebSocket client.
+- **WebSocket Subscription Controller**: can be used to create, get and delete WebSocket subscriptions for WebSocket client.

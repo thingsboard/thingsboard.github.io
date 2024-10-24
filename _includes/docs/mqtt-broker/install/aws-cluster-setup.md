@@ -375,6 +375,16 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ### Upgrading
 
+Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
+for detailed information on the latest changes.
+
+#### Backup and restore (Optional)
+
+While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
+For further guidance, follow the [next instructions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_CommonTasks.BackupRestore.html).
+
+#### Upgrade steps
+
 {% include templates/mqtt-broker/install/migration.md %}
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
