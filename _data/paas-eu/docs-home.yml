@@ -83,7 +83,7 @@ toc:
         - title: Widgets development
           path: /docs/paas/eu/user-guide/contribution/widgets-development/
         - title: Chart widgets
-          path: /docs/pe/user-guide/ui/chart-widget/
+          path: /docs/paas/eu/user-guide/ui/chart-widget/
         - title: Entities Table widget
           path: /docs/paas/eu/user-guide/ui/entity-table-widget/
         - title: Trip Animation Widget

@@ -404,4 +404,4 @@ ThingsBoard web interface allows you to configure your company or product logo a
 See feature [documentation](/docs/{{docsPrefix}}user-guide/white-labeling/) for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
 See [managing domain](/products/{{docsPrefix}}domains/) for more details. 
 
-The white-labeling feature is available for **Prototype** and **Startup** subscription plans. 
+The white-labeling feature is available for **Prototype** and **Startup** subscription plans.

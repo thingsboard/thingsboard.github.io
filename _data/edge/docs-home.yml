@@ -15,14 +15,14 @@ toc:
   section:
     - title: Overview
       path: /docs/edge/user-guide/db-overview/
-#- title: Configuration guides
-#  section:
+- title: Configuration Guides
+  section:
 #    - title: Edges
 #      path: /docs/user-guide/ui/edges/
 #    - title: Edge Management Overview
 #      path: /docs/edge/config/management/
-#    - title: Create Device on edge and provision to cloud
-#      path: /docs/edge/config/create-device/
+    - title: Device Creation and Cloud Provisioning
+      path: /docs/edge/config/create-device/
 #    - title: Provision Device from cloud to edge
 #      path: /docs/edge/config/provision-device/
 #    - title: Provision Asset from cloud to edge
