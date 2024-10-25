@@ -34,6 +34,7 @@ Let's start with adding the alarm rule condition with "Major" type:
 - Enter editing mode by clicking the big orange pencil button;
 - Click the "Add alarm rule" button;
 - Input the "High temperature alarm" as alarm type;
+- Check the "Propagate alarm to related entities" option to propagate the alarm to all related entities.
 - Select "Major" severity, and click on the red "+" sign;
 - Click the "Add key filter" button;
 - Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
@@ -135,7 +136,7 @@ Let's start with adding the alarm rule condition with "Major" type:
 - Open the "Device profiles" page, click on the "energy-sensor" device profile to open its details;
 - Enter editing mode by clicking the big orange pencil button;
 - Click the "Add alarm rule" button;
-- Input the "High temperature alarm" as alarm type;
+- Input the "Power consumption alarm" as alarm type;
 - Select "Major" severity, and click on the red "+" sign;
 - Click the "Add key filter" button;
 - Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
@@ -179,3 +180,79 @@ The alarm will be automatically cleared when the power consumption drops below `
 Finally, the power consumption alarm rules will look like this:
 
 {% include images-gallery.html imageCollection="final-power-consumption-alarm-rule" %}
+
+### "water-sensor" device profile
+
+A device that uses the "water-sensor" device profile sends telemetry data on water consumption. 
+Let's set up a rule to generate alarms when certain water consumption thresholds are reached.
+
+Alarm conditions:
+
+1. Major alarm: Triggered when water consumption exceeds 2 gallons per hour but stays at or below 3 gallons per hour.
+
+2. Critical alarm: Triggered when water consumption exceeds 3 gallons per hour.
+
+3. Alarm clearance: The alarm will clear automatically when water consumption drops below 2 gallons per hour.
+
+Let's start with adding the alarm rule condition with "Major" type:
+
+- Open the "Device profiles" page, and click on the "water-sensor" device profile to open its details;
+- Click the orange pencil icon to edit the profile;
+- Click the "Add alarm rule" button;
+- Input the "Water consumption alarm" as alarm type;
+- Select "Major" severity;
+- Click the red "+" icon;
+- In the opened window, click the "Add key filter" button;
+- Set the "Key type" to "Time series" and select "waterConsumption" as the key name. Change the "Value type" to "Numeric";
+- Click the "Add" button in the "Filters" section. Add a filter for values `greater than 2` and another for values `less or equal to 3`. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the "Major" alarm condition.
+
+Now, when the water consumption is between `2` and `3` (inclusive) gallons, an alarm with the type "Major" will be created.
+
+{% include images-gallery.html imageCollection="major-water-consumption-alarm-rule" %}
+
+<br>
+Add one more alarm rule condition with "Critical" type:
+
+- Click the "Add create condition" button;
+- Select "Critical" severity, and click on the red "+" sign;
+- Add a key filter for "waterConsumption" with a value `greater than 3`.
+- Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the "Critical" alarm condition.
+
+An alarm with the type "Critical" will be created if the water consumption exceeds 3 gallons per hour.
+
+{% include images-gallery.html imageCollection="critical-water-consumption-alarm-rule" %}
+
+<br>
+Finally, add the condition to clear the rule:
+
+- Click the "Add clear condition" button;
+- Click on the red "+" sign;
+- Add a key filter for "waterConsumption" with a value `less or equal to 2`;
+- Click the "Save" button to apply the alarm condition;
+- Finally, apply changes.
+
+The alarm will be automatically cleared when the water consumption drops below 2 gallons per hour.
+
+{% include images-gallery.html imageCollection="clear-water-consumption-alarm-rule" %}
+
+Finally, the water consumption alarm rule will look like this:
+
+{% include images-gallery.html imageCollection="final-water-consumption-alarm-rule" %}
+
+## Adding alarms table widget
+
+The alarms table widget displays alarms related to the specified entity in the certain time window.
+
+{% include images-gallery.html imageCollection="adding-alarms-table-widget-1" showListImageTitles="true" %}
+
+*Send telemetry*
+
+{% include images-gallery.html imageCollection="alarm-send-telemetry-1" showListImageTitles="true" %}
+
+*Clear alarm*
+
+To clear the alarm, click on the "Clear" icon in the "Alarms" widget.
+
+{% include images-gallery.html imageCollection="clear-alarm-1" showListImageTitles="true" %}

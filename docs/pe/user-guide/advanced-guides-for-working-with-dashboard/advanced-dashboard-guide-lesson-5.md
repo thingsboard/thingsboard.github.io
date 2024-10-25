@@ -148,10 +148,10 @@ critical-power-consumption-alarm-rule:
         title: 'Select the ""greater than" operation from drop-down menu, and input 3 as the threshold value. Click "Add" to confirm adding key filter;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-power-consumption-alarm-rule-6-pe.png
-        title: 'Click the "Save" button to apply the alarm condition.'
+        title: 'Click the "Save" button to apply the alarm condition;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-power-consumption-alarm-rule-7-pe.png
-        title: 'Select the "greater than" operation from drop-down menu, and input "30" as the threshold value. Click "Add" again to add another rule;'
+        title: 'Another alarm rule condition with the "Major" type has been added.'
 
 clear-power-consumption-alarm-rule:
     0:
@@ -180,6 +180,150 @@ final-power-consumption-alarm-rule:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/final-power-consumption-alarm-rule-1-pe.png
         title: 'Similarly, add the rule for creating and clearing low temperature alerts: If the temperature falls below 20 but is not below 18 (inclusive), the alarm with the type "Major" will be created. If the temperature drops below 18, an alarm with the type "Critical" will be created. When the temperature rises above 20 degrees again, the alarm will be cleared.'
+
+major-water-consumption-alarm-rule:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-1-pe.png
+        title: 'Open the "Device profiles" page, and click on the "energy-sensor" device profile to open its details. Click the orange pencil icon to edit the profile;'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-2-pe.png
+        title: 'Click the "Add alarm rule" button;'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-3-pe.png
+        title: 'Input the "Power consumption alarm" as alarm type. Select "Major" severity, and click on the red "+" icon;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-4-pe.png
+        title: 'In the opened window, click the "Add key filter" button;'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-5-pe.png
+        title: 'Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-6-pe.png
+        title: 'Select the "greater than" operation from drop-down menu, and input "2" as the threshold value. Click "Add" again to add another rule;'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-7-pe.png
+        title: 'Select the "less or equal" operation from drop-down menu, and input "3" as the threshold value. Click "Add" to confirm adding key filter;'
+    7:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-8-pe.png
+        title: 'Click the "Save" button to apply the alarm condition.'
+    8:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/major-water-consumption-alarm-rule-9-pe.png
+        title: 'Added the alarm rule condition of "Major" type.'
+
+critical-water-consumption-alarm-rule:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-1-pe.png
+        title: 'Click the "Add create condition" button;'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-2-pe.png
+        title: 'Select "Critical" severity, and click on the red "+" sign;'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-3-pe.png
+        title: 'Click the "Add key filter" button;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-4-pe.png
+        title: 'Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-5-pe.png
+        title: 'Select the ""greater than" operation from drop-down menu, and input 3 as the threshold value. Click "Add" to confirm adding key filter;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-6-pe.png
+        title: 'Click the "Save" button to apply the alarm condition;'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/critical-water-consumption-alarm-rule-7-pe.png
+        title: 'Another alarm rule condition with the "Critical" type has been added.'
+
+clear-water-consumption-alarm-rule:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-1-pe.png
+        title: 'Click the "Add clear condition" button;'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-2-pe.png
+        title: 'Click on the red "+" sign;'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-3-pe.png
+        title: 'Click the "Add key filter" button;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-4-pe.png
+        title: 'Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-5-pe.png
+        title: 'Select the "less or equal" operation from drop-down menu, and input "2" as the threshold value. Click "Add" to confirm adding key filter;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-6-pe.png
+        title: 'Click the "Save" button to apply the alarm condition;'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-water-consumption-alarm-rule-7-pe.png
+        title: 'Finally, apply changes.'
+
+final-water-consumption-alarm-rule:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/final-water-consumption-alarm-rule-1-pe.png
+        title: 'Finally, the water consumption alarm rule will look like this.'
+
+adding-alarms-table-widget-1:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-3-pe.png
+        title: ''
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-4-pe.png
+        title: ''
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-5-pe.png
+        title: ';'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-6-pe.png
+        title: ''
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-7-pe.png
+        title: ''
+    7:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-8-pe.png
+        title: ''
+    8:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/adding-alarms-table-widget-9-pe.png
+        title: ''
+  
+alarm-send-telemetry-1:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/alarm-send-telemetry-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/alarm-send-telemetry-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/alarm-send-telemetry-3-pe.png
+        title: ''
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/alarm-send-telemetry-4-pe.png
+        title: ''
+  
+clear-alarm-1:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-alarm-1-pe.png
+        title: 'To clear the alarm, click on the "Clear" icon;'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-alarm-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/clear-alarm-3-pe.png
+        title: ''
+
+
+
+
+
+
+
+
+
+
 
 ---
 

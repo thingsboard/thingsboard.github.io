@@ -174,8 +174,8 @@ Similarly, add the following attributes: "**address**", "**email**", "**phone**"
 
 Buildings' information used in this example:
 
-| **Building** | **Address**                           | **Email**           | **Phone**      | **Contact person** | **Building image**                   |
-|:-------------|:--------------------------------------|:--------------------|:---------------|:-------------------|:-------------------------------------|
+| **Building** | **Address**                 | **Email**           | **Phone**      | **Contact person** | **Building image**                   |
+|:-------------|:----------------------------|:--------------------|:---------------|:-------------------|:-------------------------------------|
 | Building A   | 645 5th Ave, New York       | building-a@mail.com | +121 244 55 66 | Thomas Johnson     | Use the link to the Building A image |
 | Building B   | 641 Lexington Ave, New York | building-b@mail.com | +121 555 66 77 | Jack Williams      | Use the link to the Building B image |
 |---

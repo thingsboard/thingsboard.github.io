@@ -64,8 +64,17 @@ Make sure that the devices are assigned to Customer B.
 
 ## Access to assets
 
-Since both offices are in Building A, your customers should have shared access to Building A, but should not be able to see each other&#39;s offices.
-Therefore, we will we need to change the owners for "Office A" and "Office B", and share the asset "Building A" with your customers.
+Since both Office A and Office B are located in Building A, your customers should have shared access to the building, but their access to offices should be restricted so they can only see their respective offices. Here's what we'll do:
+
+Change the owners of Office A and Office B:
+
+- Assign Customer A as the owner of Office A;
+- Assign Customer B as the owner of Office B.
+
+Share access to Building A:
+
+- Share the asset Building A with both Customer A and Customer B;
+- Set the permission level to "Read" for both customers, so they can access shared data about the building without seeing each other's offices.
 
 ### Changing owner of assets
 
@@ -120,3 +129,7 @@ The dashboard will open, displaying only the building where your office is locat
 Similarly, activate the user of Customer B. They should have access to Office B in Building A and the data from the IAQ Sensor located inside the Office B.
 
 {% include images-gallery.html imageCollection="reviewing-customer-user-dashboard-2" %}
+
+## Conclusion
+
+In the next lesson, which will be released very soon, we will learn how to create and manage alarms to respond to different conditions and events effectively. See you soon.
