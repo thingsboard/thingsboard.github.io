@@ -309,7 +309,7 @@ adding-office-markdown-card-widget:
         title: 'Add "Address" to the data keys row;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-8-pe.png
-        title: 'Navigate to the "Appearance" tab. Fill in the "Markdown/HTML Template" and "Markdown/HTML CSS" sections with the appropriate values, using those provided in the documentation;'
+        title: 'Navigate to the "Appearance" tab. Turn on "Use markdown/HTML value function" option. Fill in the "Markdown/HTML value function" and "Markdown/HTML CSS" sections with the appropriate values, using those provided in the documentation;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-9-pe.png
         title: 'Navigate to the "Widget card" tab, turn off "Enable fullscreen" and "Enable data export" options. Click "Add" to confirm adding the widget;'

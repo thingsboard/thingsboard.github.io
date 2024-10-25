@@ -419,7 +419,8 @@ Let's add a widget card that will display contact information about the selected
 - Click "Add datasource" to add another datasource. Input "Entity with relation to dashboard state (asset)" as alias name. Then, click "Create a new one!";
 - Specify "Relation type" as filter type. Turn on "Use dashboard state entity as root" option. Set the direction to "To", and maximum relation level to "1". Add a relation filter: set "Contains" as relation type, and "Asset" as entity type. Then, click "Add";
 - Add "Address" to the data keys row;
-- Navigate to the "Appearance" tab. Add the Markdown/HTML pattern to the appropriate window by taking it from the documentation:
+- Navigate to the "Appearance" tab. Turn on "Use markdown/HTML value function" option. 
+- Add the markdown/HTML value function to the appropriate window by taking it from the documentation:
 
 ```html
 if (data.length > 1) {
