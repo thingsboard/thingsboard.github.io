@@ -94,7 +94,7 @@ The plus character (`+`) represents a single level in the topic hierarchy. It ca
 </table>
 
 The single-level wildcard `+` **must** either:
-* Be at the Start of the topic filter or follow a forward slash `/`.
+* Be at the start of the topic filter or follow a forward slash `/`.
 * Be at the end of the topic filter or be followed by a forward slash `/`.
 
 These topic filters are **invalid** because the `+` wildcard is not correctly positioned relative to the delimiter characters:
