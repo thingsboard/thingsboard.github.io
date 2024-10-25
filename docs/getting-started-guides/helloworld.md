@@ -293,6 +293,8 @@ mosquitto-windows:
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
+
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
 
 - Connect devices to ThingsBoard;

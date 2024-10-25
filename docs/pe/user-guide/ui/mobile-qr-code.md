@@ -90,4 +90,5 @@ add-qr-code-widget:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/mobile-qr-code.md %}

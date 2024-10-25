@@ -247,7 +247,7 @@ description:
             <td><i class="fa fa-check"></i></td>
           </tr>
           <tr>
-            <th><a href="/products/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
+            <th><a href="/docs/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
             <td><i class="fa fa-times disabled"></i></td>
             <td><i class="fa fa-times disabled"></i></td>
             <td><i class="fa fa-check"></i></td>

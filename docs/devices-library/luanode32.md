@@ -11,4 +11,5 @@ deviceImageFileName: luanode32.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/luanode32.md %}

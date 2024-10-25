@@ -30,7 +30,7 @@ Now, let’s use the added alias in a widget:
 {% if docsPrefix == null %}
 In the ThingsBoard, there are various types of aliases, each offering different capabilities for configuring widgets: [Single entity](#single-entity), [Entity list](#entity-list), [Entity name](#entity-name), [Entity type](#entity-type), [Entity from dashboard state](#entity-from-dashboard-state), [Asset type](#asset-type), [Device type](#device-type), [Entity view type](#entity-view-type), [Edge type](#edge-type), [Api Usage State](#api-usage-state), [Relations query](#relations-query), [Asset search query](#asset-search-query), [Device search query](#device-search-query), [Entity view search query](#entity-view-search-query), and [Edge search query](#edge-search-query).
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 In the ThingsBoard, there are various types of aliases, each offering different capabilities for configuring widgets: [Single entity](#single-entity), [Group entities](#group-entities), [Entity list](#entity-list), [Entity name](#entity-name), [Entity type](#entity-type), [Entity group list](#entity-group-list), [Entities by group name](#entities-by-group-name), [Entity from dashboard state](#entity-from-dashboard-state), [Owner of entity from dashboard state](#owner-of-entity-from-dashboard-state), [Asset type](#asset-type), [Device type](#device-type), [Entity view type](#entity-view-type), [Edge type](#edge-type), [Api Usage State](#api-usage-state), [Relations query](#relations-query), [Asset search query](#asset-search-query), [Device search query](#device-search-query), [Entity view search query](#entity-view-search-query), [Edge search query](#edge-search-query), and [Scheduler events](#scheduler-events).
 {% endif %}
 
@@ -43,7 +43,7 @@ Let's take a look at each of them.
 {% if docsPrefix == null %}
 This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, user, dashboard, edge, current customer, current tenant, current user or current user owner.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user or current user owner.
 {% endif %}
 
@@ -58,7 +58,7 @@ The Entities table widget with the alias that displays one device - Thermometer 
 
 {% include images-gallery.html imageCollection="single-alias-2" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Group entities
 
 This alias allows choosing one entity group as the data source. It can be a device group, asset group, entity view group, customer group, dashboard group, user group and edge group.
@@ -80,7 +80,7 @@ The Entities table widget with the alias that displays all devices that belong t
 {% if docsPrefix == null %}
 This alias allows you to display multiple entities. It can be devices, assets, entity views, tenants, customers, dashboards, users or edges.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias allows you to display multiple entities. It can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, roles or edges.
 {% endif %}
 
@@ -91,7 +91,7 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, and select the
 {% if docsPrefix == null %}
 This alias filters a list from specified devices: Thermometer A1, Thermometer A2, and Thermometer A3.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias filters a list from specified devices: Thermometer A1, Compressor BC-10, and Compressor QA-32.
 {% endif %}
 
@@ -100,7 +100,7 @@ Let's use an added alias in a widget. In the "Tables" widgets bundle select the 
 {% if docsPrefix == null %}
 The Entities table widget with the alias that displays a list of several devices, which in this case are Thermometer A1, Thermometer A2, and Thermometer A3 has been added.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 The Entities table widget with the alias that displays a list of several devices, which in this case are Compressor BC-10, Compressor QA-32, and Thermometer A1 has been added.
 {% endif %}
 
@@ -112,7 +112,7 @@ The Entities table widget with the alias that displays a list of several devices
 {% if docsPrefix == null %}
 This alias allows you to display entities whose names start with the entered expression. These objects can be devices, assets, entity views, tenants, customers, users, dashboards or edges.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias allows you to display entities whose names start with the entered expression. These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.
 {% endif %}
 
@@ -132,7 +132,7 @@ The Entities table widget with alias that filters devices, which names start wit
 {% if docsPrefix == null %}
 This alias allows you to display all your entities and your customers' entities of the specified type. These objects can be devices, assets, entity views, tenants, customers, users, dashboards or edges.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias allows you to display all your entities and your customers' entities of the specified type. These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.
 {% endif %}
 
@@ -147,7 +147,7 @@ The Entities table widget displaying all your devices and your customers' device
 
 {% include images-gallery.html imageCollection="entity-type-2" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Entity group list
 
 This alias allows you to display a list of entity groups, which can include device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), user group(s) or edge group(s).
@@ -206,7 +206,7 @@ The Entities table widget that displays entities filtered by the exact full name
 {% if docsPrefix == null %}
 This alias allows choosing one or more entities from the dashboard state. The entities can be a device, asset, entity view, tenant, customer, user, dashboard, edge, current customer, current tenant, current user, or current user owner.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias allows choosing one or more entities from the dashboard state. The entities can be a device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user, or current user owner.
 {% endif %}
 
@@ -223,7 +223,7 @@ For the next example, we will need two aliases: the previously discussed "[Entit
 
 First we need to create an Entity table widget that will display a list of entities: add an Entities table widget that will display a list of entities. Use the "Entity type" alias as a data source.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 For the next example, we will need two aliases: the previously discussed "[Group entities](#group-entities)" alias and the "Entity from dashboard state" alias. Let's start:
 
 First we need to create an Entity table widget that will display a list of entities: add an Entities table widget that will display a list of entities. Use the "Group entities" alias as a data source.
@@ -243,7 +243,7 @@ Now, click the action button next to any entity. You will be transitioned to an 
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-5" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Owner of entity from dashboard state
 
 This alias allows displaying owners of the devices, assets, entities, etc. Commonly used when there is a hierarchy of customers, providing visibility into which devices belong to whom.
@@ -382,7 +382,7 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, select the "De
 {% if docsPrefix == null %}
 This alias displays devices with the "thermometers" device profile that have any relation to the asset "Building A" with direction "From" and relation level of 1.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias displays devices with the "compressors" device profile that have any relation to the asset "Building A" with direction "From" and relation level of 1.
 {% endif %}
 
@@ -403,7 +403,7 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, select the "En
 {% if docsPrefix == null %}
 This alias filters entity views with the "compressors entity view type" type that have any relation to the asset "Building A" with direction "From" and relation level of 1.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 This alias filters entity views with the "Compressors Entity View Type" type that have any relation to the asset "Building A" with direction "From" and relation level of 1.
 {% endif %}
 
@@ -425,7 +425,7 @@ Let's learn how to use the "Edge search query" alias in a widget. In the "Tables
 
 {% include images-gallery.html imageCollection="edge-search-query-2" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Scheduler events
 
 This alias allows displaying scheduler events associated with a specified entity.

@@ -20,7 +20,7 @@ should pop up, and you will be prompted to upload the JSON file and click **“I
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}
@@ -36,7 +36,7 @@ Then, choose a device with name My device from dropdown list and save entity ali
 
 If you did everything right, you have to see the following dashboard:
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![imagePe](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-gateway-dashboard.png)
 {% else %}  
 ![imageCe](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-dashboard-1-ce.png)

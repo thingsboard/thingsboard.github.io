@@ -54,7 +54,7 @@ selfManagedPlan:
        </nav>
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
-        <div class="product-selector">
+        <div class="product-selector product-selector-outlined">
             <div id="Pricing_PE_Cloud" 
                  class="solution thingsboard-cloud active defaultselection gtm_button" 
                  data-product-id="thingsboard-cloud" 
@@ -68,7 +68,7 @@ selfManagedPlan:
         </div>
     </div>
     <div id="trendz-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
-        <div class="product-selector">
+        <div class="product-selector product-selector-outlined">
             <div id="Pricing_TA_Cloud"
                  data-solutionId="trendz-cloud"
                  class="solution trendz-cloud gtm_button" 
@@ -91,16 +91,42 @@ selfManagedPlan:
 
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
     <div class="container">
-        <div class="pricing-content-header row">
-            <div class="pricing-content-description pricing-cloud active col-lg">
-                <h2>Subscription plans</h2>
-                <div class="pricing-content-details">
-                    All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
-                </div>
-            </div>
-        </div>
+      <div class="pricing-content-header row">
+          <div id="northAmericaHeader" class="pricing-content-description col-lg-6">
+              <h2>Subscription plans</h2>
+              <div class="pricing-content-details">
+                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+              </div>
+          </div>
+          <div id="europeHeader" class="pricing-content-description col-lg-6">
+              <h2>Subscription plans</h2>
+              <div class="pricing-content-details">
+                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+              </div>
+          </div>
+          <div class="col d-flex justify-content-end">
+              <div class="solution-selector solution-selector-cloud">
+                  <div id="Pricing_PE_Cloud_NorthAmerica"
+                       data-solutionId="cloud-north-america"
+                       class="solution north-america active gtm_button"
+                       data-toggle="#northAmerica"
+                       data-description-toggle="#northAmericaHeader"
+                       onClick="activateServerSection('cloud-north-america', '/docs/paas/')">
+                      <h3>North America</h3>
+                  </div>
+                  <div id="Pricing_PE_Cloud_Europe"
+                       data-solutionId="cloud-europe"
+                       class="solution europe gtm_button"
+                       data-toggle="#europe"
+                       data-description-toggle="#europeHeader"
+                       onClick="activateServerSection('cloud-europe', '/docs/paas/eu/')">
+                      <h3>Europe</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
         <div class="pricing-div">
-            <div class="pricing-section pricing-cloud active">
+            <div class="pricing-section pricing-cloud active" id="northAmerica">
                <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
@@ -222,6 +248,128 @@ selfManagedPlan:
                     </div>
                </div>
             </div>
+            <div class="pricing-section pricing-cloud" id="europe">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Maker</h2>
+                            <div class="pricing-square-description">
+                                <p>Become familiar with ThingsBoard features</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €9
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                    Start Free
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 30 Devices</div>
+                            <div class="pricing-square-item">Up to 30 Assets</div>
+                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <div class="pricing-square-description">
+                                <p>For PoCs and MVPs</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €145
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 100 Devices</div>
+                            <div class="pricing-square-item">Up to 100 Assets</div>
+                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>
+                            <div class="pricing-square-description">
+                                <p>For upcoming IoT Unicorns</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €385
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 500 Devices</div>
+                            <div class="pricing-square-item">Up to 500 Assets</div>
+                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <div class="pricing-square-description">
+                                <p>For the fast grown, defined long term projects</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €725
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Up to 1000 Devices</div>
+                            <div class="pricing-square-item">Up to 1000 Assets</div>
+                            <div class="pricing-square-item">1 billion <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Enterprise</h2>
+                            <div class="pricing-square-description">
+                                <p>Consider yourself a Fortune 500 company in the field?</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                Custom <span data-faq-id="calculate" data-faq-link-size="70%"></span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_PE_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Dedicated server instances</div>
+                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Custom <b>SLA</b>
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                        </div>
+                    </div>
+               </div>
+            </div>
         </div>
     </div>
 </div>
@@ -235,7 +383,7 @@ selfManagedPlan:
                         <div class="pricing-square">
                             <h2>Community Edition</h2>
                             <div class="pricing-square-description">
-                                <p>100% Open source</p>
+                                <p>100% Open-source</p>
                             </div>
                             <h4 class="pricing-square-price no-sign mb-0">
                                 YES, IT'S FREE
@@ -908,7 +1056,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Community Edition</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
-                            <p>100% Open source</p>
+                            <p>100% Open-source</p>
                         </div>
                         <h4 class="pricing-square-price no-sign mb-0">
                             YES, IT'S FREE
@@ -1276,7 +1424,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
-                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
+                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/docs/paas/subscription/" target="blank">documentation</a> for more details.
                 </p>  
             </div>    
         </div>
@@ -1285,7 +1433,7 @@ selfManagedPlan:
                 <p>
                 Data point is a key-value pair that your device telemetry messages contain. For example, the message <i>{"temperature":42, "humidity": 60}</i> contains two data points.  
                 Each ThingsBoard Cloud subscription plan has a maximum number of data points that can be sent from all your devices per month. 
-                There are other <a href="/products/paas/subscription/" target ="blank">important parameters</a> of the subscription.
+                There are other <a href="/docs/paas/subscription/" target ="blank">important parameters</a> of the subscription.
                 </p>  
             </div>    
         </div>
@@ -1294,7 +1442,7 @@ selfManagedPlan:
                 <p>
                ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
                See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. But currently it is not possible to connect third-party SMTP servers, notifications will be sent from our system. We plan to add this ability in future releases.
-               See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
+               See <a href="/docs/paas/domains/" target ="blank">managing domain</a> for more details.
                 </p>  
             </div>    
         </div>                   

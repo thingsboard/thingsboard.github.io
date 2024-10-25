@@ -1,11 +1,7 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://www.dusuniot.com/product/dsgw-210-rk3328-iot-gateway-hub-controller-bridge-hardware/" %}
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-{% assign thingsboardHost = 'https://thingsboard.cloud' %}
-{% else %}
-{% assign thingsboardHost = 'https://demo.thingsboard.io' %}
-{% endif %}
+{% assign thingsboardHost = "https://" | append: hostName %}
 {% assign officialManualLink = "https://manuals.plus/dusun/dsgw-210-home-assistant-gateway-manual/" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -53,10 +49,10 @@ To continue with this guide we will need the following:
 
 ### ThingsBoard configuration
 
-The configuration steps in ThingsBoard are shown below, we will demonstrate on the ThingsBoard.cloud server.
-You can use [ThingsBoard Cloud](https://thingsboard.cloud/signup){:target="_blank"} or [install](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} your own platform instance.
+The configuration steps in ThingsBoard are shown below, we will demonstrate on the {{hostName}} server.
+You can use [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"} or [install](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} your own platform instance.
 
-* [Step 1.1] Register and log in [ThingsBoard Cloud](https://thingsboard.cloud/signup){:target="_blank"};
+* [Step 1.1] Register and log in [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"};
 
 <img src="/images/samples/dusun/dsgw-210-gateways-1.png" alt="Thingsboard login screen">
 
@@ -85,7 +81,7 @@ You can use [ThingsBoard Cloud](https://thingsboard.cloud/signup){:target="_blan
 <img src="/images/samples/dusun/8.png" alt="Choosing cloud config item from IoT Servicees menu item">
 
 * [Step 2.3] Fill in the credentials from the ThingsBoard Cloud:
-  * ThingsBoard Server: **thingsboard.cloud**
+  * ThingsBoard Server: **{{hostName}}**
   * Server Port: **1883**
   * Insert the access token obtained in step 1.4
 

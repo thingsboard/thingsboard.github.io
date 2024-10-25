@@ -18,8 +18,8 @@ In this tutorial, we will use:
 {% if docsPrefix == "pe/" %}
  - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
   {% endif %}
-  {% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
+  {% if docsPrefix contains "paas/" %}
+ - ThingsBoard Professional Edition instance — [{{hostName}}](https://{{hostName}});
   {% endif %}
 
  - a [Sigfox](https://www.sigfox.com/) account;

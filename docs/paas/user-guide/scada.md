@@ -8,13 +8,13 @@ description: SCADA IoT dashboards using ThingsBoard
 scada-dashboard-layout-1:
     0:
         image: /images/user-guide/scada/scada-dashboards/add-scada-dashboard-1-pe.png
-        title: 'Go to the "Dashboards" page, and click on the "plus" icon located in the upper right corner of the screen to initiate adding a new dashboard. From the dropdown that appears, select "Create new dashboard". In the dialog box that opens, type in the title for the dashboard and confirm by clicking "Add";'
+        title: 'Go to the "Dashboards" page, and click on the "plus" icon located in the upper-right corner of the screen to add a new dashboard. Select "Create new dashboard" from the dropdown menu that appears. In the dialog box that opens, type in the title for the dashboard and confirm by clicking "Add";'
     1:
         image: /images/user-guide/scada/scada-dashboards/add-scada-dashboard-2-pe.png
-        title: 'Once created, the new dashboard will automatically open and you can immediately begin configuring it. Click on the "Layouts" sign in the top left corner of the dashboard interface;'
+        title: 'Once created, the new dashboard will open automatically, allowing you to configure it immediately. Click on the "Layouts" sign in the top-left corner of the dashboard interface;'
     2:
         image: /images/user-guide/scada/scada-dashboards/add-scada-dashboard-3-pe.png
-        title: 'Then, simply change the layout from "Default" to "SCADA". After, save changes.'
+        title: 'Then, simply change the layout from "Default" to "SCADA", then save your changes.'
 
 layout-settings-1:
     0:
@@ -173,5 +173,5 @@ scada-card-appearance-1:
 
 
 ---
-
+{% assign docsPrefix = "paas/" %}
 {% include docs/user-guide/scada.md %}

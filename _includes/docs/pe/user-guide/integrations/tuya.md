@@ -90,7 +90,7 @@ Go to **Integrations** section and click Add new integration button. Name it **T
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
 {% endif %}
 
@@ -99,7 +99,7 @@ In this step, you can select the recently created **Tuya Uplink Converter** or c
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
 {% endif %}
 
@@ -108,7 +108,7 @@ Add **Tuya Downlink Converter** to the integration or create a new downlink data
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
 {% endif %}
 
@@ -125,7 +125,7 @@ Click "Add" to create an integration.
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
 {% endif %}
 
@@ -136,7 +136,7 @@ When integration configured and ready to use, we need to go to **Rule Chains**, 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 {% endif %}
 
@@ -145,7 +145,7 @@ After these steps, we need to tap on a right grey circle of rule node **message 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
 {% endif %}
 
@@ -158,7 +158,7 @@ Go to **Device Groups** -> **All** you should find your device  provisioned by t
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
 {% endif %}
 
@@ -173,7 +173,7 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
 {% endif %}
 
@@ -183,7 +183,7 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-alias-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-alias-1-pe.png)
 {% endif %}
 
@@ -197,7 +197,7 @@ time series data keys of your device may differ from those presented. If necessa
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
 {% endif %}
 
@@ -207,7 +207,7 @@ If you have everything configured correctly, you will see Smart Plug status ligh
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
 {% endif %}
 
@@ -216,7 +216,7 @@ Smart Plug status light is green. Try to switch off the Smart Plug by clicking o
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 {% endif %}
 
@@ -225,7 +225,7 @@ The Smart Plug status indicator turns grey. Power consumption stops.
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 {% endif %}
 

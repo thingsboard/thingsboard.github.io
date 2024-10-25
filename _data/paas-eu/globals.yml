@@ -1,0 +1,20 @@
+tocs:
+- docs-home
+- getting-started
+- devices-library
+- guides
+- api
+- faq
+docs-header:
+- toc: getting-started
+  title: Getting Started
+- toc: docs-home
+  title: Documentation
+- toc: devices-library
+  title: Devices Library
+- toc: guides
+  title: Guides
+- toc: api
+  title: API
+- toc: faq
+  title: FAQ

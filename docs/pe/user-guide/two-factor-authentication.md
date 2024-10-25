@@ -99,4 +99,5 @@ two-factor-authentication-backup-code:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/two-factor-authentication.md %}

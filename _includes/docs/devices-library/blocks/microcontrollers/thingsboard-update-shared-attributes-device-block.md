@@ -32,6 +32,23 @@ So you can check results of shared attribute change using Serial Monitor (**Tool
 {% endif %}
 
 To reach this, we have a variable "blinkingInterval" used in the following parts of the code:  
+
+- Connecting modules to use API functionality:  
+```cpp
+...
+#include <AttributeRequest.h>
+...
+Attribute_Request<2U, MAX_ATTRIBUTES> attr_request;
+...
+const std::array<IAPI_Implementation*, ...> apis = {
+    ...
+    &shared_update
+    ...
+};
+...
+```
+To use attribute requests functionality we need to include related module and define it as a part of used API.
+
 - Callback for shared attributes update:  
     
 ```cpp
@@ -57,7 +74,12 @@ void processSharedAttributes(const JsonObjectConst &data) {
 }
 
 ...
-const Shared_Attribute_Callback<MAX_ATTRIBUTES> attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
+// Attribute request did not receive a response in the expected amount of microseconds 
+void requestTimedOut() {
+  Serial.printf("Attribute request timed out did not receive a response in (%llu) microseconds. Ensure client is connected to the MQTT broker and that the keys actually exist on the target device\n", REQUEST_TIMEOUT_MICROSECONDS);
+}
+...
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, SHARED_ATTRIBUTES_LIST);
 ...
 ```
 
@@ -65,7 +87,7 @@ const Shared_Attribute_Callback<MAX_ATTRIBUTES> attributes_callback(SHARED_ATTRI
     
 ```cpp
 ...
-    if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
+    if (!shared_update.Shared_Attributes_Request(attribute_shared_request_callback)) {
       Serial.println("Failed to request for shared attributes");
       return;
     }

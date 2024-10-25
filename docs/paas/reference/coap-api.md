@@ -41,4 +41,5 @@ client-side-rpc:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/coap-api.md %}

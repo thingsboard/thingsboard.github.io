@@ -101,4 +101,5 @@ add-api-permissions:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/mail-settings.md %}

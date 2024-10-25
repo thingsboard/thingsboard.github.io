@@ -82,10 +82,10 @@ $feature-box-div-margin-bottom: 40px
     #overflow
         overflow: hidden
         #react
-            margin-top: 125px
+            margin-top: 165px
             @media (max-width: 768px)
                 margin-top: 50px
-        #intro, #manage, #react, #products, #dashboard_description, #rule-engine, #bottom-features
+        #intro, #manage, #scada, #react, #products, #product-ecosystem, #dashboard_description, #rule-engine, #bottom-features
             color: #212529
             text-align: left
             h1, h2.past-h1
@@ -132,8 +132,8 @@ $feature-box-div-margin-bottom: 40px
                     font-weight: 400
                     text-align: center
 
-        #manage, #react
-            #features-top, #features-top-2
+        #manage, #scada, #react
+            #features-top, #features-top-1, #features-top-2
                 img
                     border-radius: 6px
                     box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
@@ -142,9 +142,9 @@ $feature-box-div-margin-bottom: 40px
                     display: flex
                     align-items: center
                     flex-direction: column
-                    .preview, .manage, .visualize
+                    .preview, .manage, .visualize, .scada-svg
                         margin-top: 32px
-                    img, .manage, .visualize, .process
+                    img, .manage, .visualize, .process, .scada-svg
                         order: 2
                     .feature-des
                         order: 1
@@ -175,15 +175,55 @@ $feature-box-div-margin-bottom: 40px
                             width: 100%
                             margin-bottom: 2%
                         .vis2
-                            width: 72%
+                            width: 68.5%
                         .vis3
-                            width: 25.82%
+                            width: 29.5%
                             position: absolute
                             right: 0
                     &.vis
                         margin: 80px 0 30px
                         @media (max-width: 768px)
                             margin: 60px 0 30px
+                    &.scada
+                        margin: 100px 0 300px
+                        @media (max-width: 1500px)
+                            margin: 50px 0 0 0
+                    .scada-svg
+                        width: 50%
+                        @media (max-width: 1024px)
+                            width: 76%
+                        @media (max-width: 750px)
+                            width: 94%
+                        z-index: -1
+                        @media (max-width: 1500px)
+                            z-index: 1
+                        position: relative
+                        img
+                            box-shadow: none !important
+                        .scada-back-scheme
+                            position: absolute
+                            z-index: -2
+                            width: 174.8%
+                            right: -73.5%
+                            bottom: -18.9%
+                        .scada-fade
+                            width: 64.8%
+                            height: 131.8%
+                            position: absolute
+                            bottom: -102px
+                            right: -545px
+                            background: linear-gradient(to right, rgba(255,255,255,0) 0%,#F7F9FC 100%)
+                        .scada-background
+                            position: absolute
+                            left: -4%
+                            z-index: -1
+                            width: 103%
+                            height: 104%
+                            background-color: white
+                            border-radius: 8px
+                            box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 30px 0px rgba(0, 0, 0, 0.04)
+                        .scada-front-scheme
+                            width: 95%
                     .process
                         position: relative
                         display: inline-block
@@ -194,25 +234,18 @@ $feature-box-div-margin-bottom: 40px
                             position: absolute
                             box-shadow: unset
                             z-index: -1
-                            right: -576px
-                            top: 0
-                            @media (max-width: 768px)
-                                right: 0
-                        div
-                            width: 100%
-                            height: 100px
-                            top: 90px
-                            background: #305680
-                            border-radius: 6px
-                            z-index: -1
-                            position: absolute
-                            box-shadow: 4px 0 30px 0 rgba(37,38,40,0.6)
+                            left: -95%
+                            top: 316px
+                            @media (max-width: 1024px)
+                                left: -76%
+                                top: -55px
                         .add-rule
                             width: 100%
-                            margin-top: 90px
                     &.dark
                         .feature-des
                             margin-bottom: 50px
+                            @media (max-width: 1024px)
+                                margin-bottom: 68px
                             h2, span.phrase-heading
                                 color: white
                             p
@@ -224,14 +257,16 @@ $feature-box-div-margin-bottom: 40px
                                 i
                                     filter: sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
                     &.micro
-                        margin: 100px 0
+                        margin: 300px 0 100px 0
+                        @media (max-width: 1024px)
+                            margin-top: 0
                         img
                             box-shadow: unset
                             max-width: 569px
                         .feature-des
                             margin-bottom: 20px
 
-        #products
+        #products, #product-ecosystem
             width: 100%
             padding-top: 100px
             padding-bottom: 56px
@@ -242,7 +277,11 @@ $feature-box-div-margin-bottom: 40px
                 color: white
                 text-align: center
                 margin-bottom: 72px
-            .product-list
+            .product-ecosystem-title
+                color: #212529
+                text-align: center
+                margin-bottom: 72px
+            .product-list, .product-ecosystem-list
                 display: flex
                 margin: unset
                 div
@@ -284,6 +323,19 @@ $feature-box-div-margin-bottom: 40px
                     flex-direction: column
                     div.main
                         margin: 0 0 40px
+            .product-ecosystem-list
+                flex-wrap: wrap
+                @media(max-width: 992px)
+                    flex-wrap: nowrap
+                justify-content: space-between
+                gap: 40px
+                div
+                    min-width: 291px
+                    @media (max-width: 768px)
+                        min-width: unset
+                    margin-bottom: 0
+                    img
+                        width: 32%
             a
                 color: #707275
                 font-weight: 500
@@ -458,8 +510,8 @@ $feature-box-div-margin-bottom: 40px
             left: 50%
             img
                 position: absolute
-                top: -650px
-                left: 134px
+                top: -410px
+                left: -888px
                 box-shadow: none !important
             div
                 position: absolute
@@ -490,27 +542,40 @@ $feature-box-div-margin-bottom: 40px
                     right: 814px
                     border: 2px solid #0D2743
                 &.main2
-                    top: -700px
-                    @media (max-width: 768px)
-                        top: -576px
+                    top: -574px
                     width: 2560px
-                    height: 825px
+                    height: 925px
+                    left: -1280px
+                    background-color: #F7F9FC
+                &.main3
+                    top: -641px
+                    @media (max-width: 1500px)
+                        top: -576px
+                        height: 550px
+                    width: 2560px
+                    height: 665px
                     left: -1280px
                     background-color: #252628
                 &.small5
-                    top: -742px
+                    top: -779px
                     left: 867px
                     border: 4px solid #305680
                 &.small6
-                    top: -37px
-                    right: 525px
-                    background-color: #305680
+                    top: 98px
+                    right: 830px
+                    border: 4px solid #305680
                 &.products
                     top: -590px
                     width: 2560px
                     height: 200px
                     left: -1280px
                     background-color: #305680
+                &.product-ecosystem
+                    top: -590px
+                    width: 2560px
+                    height: 200px
+                    left: -1280px
+                    background-color: #F7F9FC
                 &.small7
                     top: -742px
                     left: 732px
@@ -526,11 +591,11 @@ $feature-box-div-margin-bottom: 40px
                     left: -1280px
                     background-color: #F7F9FC
                 &.small9
-                    top: -746px
+                    top: -653px
                     left: 466px
                     border: 4px solid #0D2743
                 &.small10
-                    top: -805px
+                    top: -708px
                     left: 658px
                     background-color: #2A7DEC
                 &.bottom-features1
@@ -621,13 +686,13 @@ $feature-box-div-margin-bottom: 40px
                     font-size: 20px
                     margin-bottom: 60px
         #overflow
-            #manage, #react
-                #features-top, #features-top-2
+            #manage, #scada, #react
+                #features-top,#features-top-1, #features-top-2
                     .block
                         .feature-des, img, .manage, .visualize, .process
                             width: 80%
-            #products
-                .product-list
+            #products, #product-ecosystem
+                .product-list, .product-ecosystem-list
                     margin: 0 80px
             #bottom-features
                 #cards
@@ -652,8 +717,8 @@ $feature-box-div-margin-bottom: 40px
             main, div.main-div
                 max-width: 1400px
         #overflow
-            #manage, #react
-                #features-top, #features-top-2
+            #manage, #scada, #react
+                #features-top, #features-top-1, #features-top-2
                     .block
                         flex-direction: row
                         .feature-des, img, .manage, .visualize, .process
@@ -663,8 +728,8 @@ $feature-box-div-margin-bottom: 40px
                                 margin: unset
                         .preview, .manage, .visualize, .process
                             margin-top: unset
-            #products
-                .product-list
+            #products, #product-ecosystem
+                .product-list, .product-ecosystem-list
                     margin: 0 60px
             #rule-engine
                 .rule
@@ -676,9 +741,6 @@ $feature-box-div-margin-bottom: 40px
                         order: unset
                         width: calc(35% - 60px)
                         margin: unset
-            .background
-                div.main2
-                    height: 525px
             #dashboard_description
                 .owl-carousel.owl-theme.usecase-carousel
                     width: 90%

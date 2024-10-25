@@ -499,7 +499,7 @@ Widget style from the screen above:
 
 #### Widget buttons settings
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 
 **Enable data export**
 
