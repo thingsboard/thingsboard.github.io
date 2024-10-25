@@ -27,7 +27,7 @@
             {% include find-product-url.html %}
             <a href="{{ productUrl }}"
                {% if product.tag == 'paas' %}id="cloud-product-option"{% endif %}
-               class="product{% if product.tag == docsTag %} active{% endif %}">{{ product.title }}</a>
+               class="product{% if product.tag == docsTag or (product.tag == 'paas' and docsTag == "paas-eu") %} active{% endif %}">{{ product.title }}</a>
             {% endfor %}
         </div>
     </div>

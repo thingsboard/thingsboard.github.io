@@ -4,7 +4,7 @@ assignees:
 - ashvayka
 title: HTTP Device API Reference
 description: Supported HTTP API Reference for IoT Devices
-redirect_from: "/docs/paas/reference/http-api"
+redirect_from: "/docs/paas/eu/reference/http-api"
 
 server-side-rpc:
     0:
