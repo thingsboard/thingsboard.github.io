@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
 title: Lesson 4. Share dashboard with customers
@@ -212,6 +212,6 @@ reviewing-customer-user-dashboard-2:
         title: 'IAQ Sensor state.'
 ---
 
-{% assign docsPrefix = "paas/" %}
-{% include get-hosts-name.html docsPrefix=docsPrefix %}
+{% assign docsPrefix = "paas/eu/" %}
+{% include get-hosts-name.html docsTag="paas-eu" %}
 {% include docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4.md %}

@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
 title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets
@@ -282,6 +282,6 @@ dashboard-final-lesson-1:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
-{% include get-hosts-name.html docsPrefix=docsPrefix %}
+{% assign docsPrefix = "paas/eu/" %}
+{% include get-hosts-name.html docsTag="paas-eu" %}
 {% include docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1.md %}

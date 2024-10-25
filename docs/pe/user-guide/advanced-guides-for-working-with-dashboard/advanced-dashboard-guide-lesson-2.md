@@ -164,7 +164,7 @@ adding-markdown-card-widget:
         title: 'Add data keys such as "address", "contactPerson", "email", and "phone";'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-markdown-card-widget-8-pe.png
-        title: 'Navigate to the "Appearance" tab, and fill in the "Markdown/HTML pattern" and "Markdown/HTML CSS" sections using the values from the documentation;'
+        title: 'Navigate to the "Appearance" tab. Turn on the "Use markdown/HTML value function" option, and fill in the "Use markdown/HTML value function" and "Markdown/HTML CSS" sections using the values from the documentation;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-markdown-card-widget-9-pe.png
         title: 'Navigate to the "Widget card" tab, turn off "Enable fullscreen" and "Enable data export" options, and then click "Add" to confirm adding the widget;'
@@ -294,18 +294,30 @@ adding-office-markdown-card-widget:
         title: 'Select the "Markdown/HTML Card" from the "Cards" widgets bundle;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-3-pe.png
-        title: 'Specify the "Selected entity" alias as the data source and add the following data keys: "address," "floor," "officeManager," "email," and "phone";'
+        title: 'Specify the "Selected entity" alias as the data source and add the following data keys: "floor," "officeManager," "email," and "phone". Then, click "Add datasource" to add another datasource;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-4-pe.png
-        title: 'Navigate to the "Appearance" tab. Fill in the "Markdown/HTML Template" and "Markdown/HTML CSS" sections with the appropriate values, using those provided in the documentation;'
+        title: 'Input "Entity with relation to dashboard state (asset)" as alias name. Then, click "Create a new one!";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-5-pe.png
-        title: 'Navigate to the "Widget card" tab, turn off "Enable fullscreen" and "Enable data export" options. Click "Add" to confirm adding the widget;'
+        title: 'Specify "Relation type" as filter type. Turn on "Use dashboard state entity as root" option. Set the direction to "To", and maximum relation level to "1";'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-6-pe.png
-        title: 'Resize the widget to your liking. Afterwards, save the dashboard;'
+        title: 'Add a relation filter: set "Contains" as relation type, and "Asset" as entity type. Then, click "Add";'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-7-pe.png
+        title: 'Add "Address" to the data keys row;'
+    7:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-8-pe.png
+        title: 'Navigate to the "Appearance" tab. Fill in the "Markdown/HTML Template" and "Markdown/HTML CSS" sections with the appropriate values, using those provided in the documentation;'
+    8:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-9-pe.png
+        title: 'Navigate to the "Widget card" tab, turn off "Enable fullscreen" and "Enable data export" options. Click "Add" to confirm adding the widget;'
+    9:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-10-pe.png
+        title: 'Resize the widget to your liking. Afterwards, save the dashboard;'
+    10:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-markdown-card-widget-11-pe.png
         title: 'We have added an information card about the office.'
 
 device-coordinates-1:
@@ -479,4 +491,5 @@ dashboard-final-lesson-2:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2.md %}

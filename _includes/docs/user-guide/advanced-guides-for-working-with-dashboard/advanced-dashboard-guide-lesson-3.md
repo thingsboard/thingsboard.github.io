@@ -178,7 +178,7 @@ Similarly, add "Energy Meter" state with the "energy_sensor" state Id and "Water
 
 ### Customize Office sensors list widget
 
-Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensor-list){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
+Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensors-list-widget){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
 
 - Go to the "office" state and enter editing mode of the "Office sensors list" widget;
 - Scroll to the "Actions" menu section and click the "Add action" button;

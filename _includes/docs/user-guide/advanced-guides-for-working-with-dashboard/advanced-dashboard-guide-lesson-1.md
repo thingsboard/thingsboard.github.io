@@ -293,7 +293,7 @@ Now click on any building image to display a tooltip with information about it.
 
 {% include images-gallery.html imageCollection="adding-maps-widget-8" %}
 
-## Adding Entities table widget
+## Adding Buildings list widget
 
 We have already created a widget that displays our two buildings on a map. Now let&#39;s create another widget - Entities table, which will display our buildings in a list.
 

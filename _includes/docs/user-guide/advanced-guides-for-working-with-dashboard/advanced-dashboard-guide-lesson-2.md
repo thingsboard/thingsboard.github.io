@@ -122,7 +122,7 @@ Now, when you click on any building marker of the map widget, a tooltip with "De
 <br>
 **Adding an action for the "Buildings list" widget**
 
-Now let's add the action for the "[Buildings list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/#adding-entities-table-widget){:target="_blank"}" widget so that clicking on a building name takes you to its state.
+Now let's add the action for the "[Buildings list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/#adding-buildings-list-widget){:target="_blank"}" widget so that clicking on a building name takes you to its state.
 
 {% include images-gallery.html imageCollection="adding-action-buildings-list-widget" showListImageTitles="true" %}
 
@@ -152,66 +152,97 @@ The first widget we'll add to the "building" state is a card that displays infor
 - Now we need to add an alias to define the entities from which the data will be extracted. In the "Alias" field, enter a name for it - "Selected entity", and click "Create a new one";
 - Specify a filter type - "Entity from dashboard state", and click the "Add"; 
 - Add data keys such as "address", "contactPerson", "email", and "phone";
-- Navigate to the "Appearance" tab, and add the Markdown/HTML pattern to the appropriate window by taking it from the documentation:
+- Navigate to the "Appearance" tab. Turn on the "Use markdown/HTML value function" option;
+- Add the Markdown/HTML value function to the appropriate window by taking it from the documentation:
 
 ```html
-<div class="card">
-    <h1 class="card-title">Information on ${entityName}</h1>
-    <div class="attributes">
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>place</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${address}</p>
-                <span class="attribute attribute_label">Address</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>person</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${contactPerson}</p>
-                <span class="attribute attribute_label">Contact person</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>call</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${phone}</p>
-                <span class="attribute attribute_label">Phone</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>mail_outline</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${email}</p>
-                <span class="attribute attribute_label">Email</span>
-            </div>
-        </div>
-    </div>
-</div>
+if (data.length) {
+    const buildingAttributes = ['address', 'contactPerson', 'phone', 'email'];
+
+    let information = {
+        entityName: data[0].entityName ? data[0].entityName : 'Not found',
+        buildingAttributesField: {}
+    };
+
+    for (let key of buildingAttributes) {
+        information.buildingAttributesField[key] = data[0][key] ? data[0][key] : 'Not found';
+    }
+
+    const attributesNotFound = Object.values(information.buildingAttributesField).every(value => value === 'Not found');
+
+    if (attributesNotFound) {
+        return '<div class="no-data-card">' +
+            `<h1 class="card-title">Information on ${information.entityName}</h1>` +
+            '<div class="no-data-block">' +
+                '<div class="no-data-content">' +
+                    '<div><svg xmlns="http://www.w3.org/2000/svg" width="81" height="80" viewBox="0 0 81 80" fill="none"><path d="M14.8203 46.1166C16.6985 46.0291 18.2877 45.3003 19.588 43.9301C20.8883 42.56 21.5529 40.9274 21.5529 39.0325C21.5529 40.9274 22.1886 42.56 23.4889 43.9301C24.7892 45.3003 26.3784 46.0291 28.2566 46.1166C26.3784 46.204 24.7892 46.9328 23.4889 48.303C22.8602 48.9489 22.3653 49.7146 22.0329 50.5555C21.7005 51.3963 21.5374 52.2955 21.5529 53.2006C21.5529 51.3057 20.9172 49.6732 19.588 48.303C18.2877 46.9328 16.6985 46.204 14.8203 46.1166ZM21.5529 25.1267C25.1937 24.9518 28.2855 23.5234 30.8283 20.8413C33.371 18.1593 34.6424 14.9817 34.6424 11.2793C34.6424 14.9817 35.9138 18.1593 38.4566 20.8413C40.9994 23.5234 44.0912 24.9227 47.7609 25.1267C45.3626 25.2434 43.1665 25.9139 41.1439 27.1966C39.1501 28.4501 37.5608 30.141 36.3761 32.24C35.2203 34.3389 34.6424 36.5837 34.6424 39.0325C34.6424 35.3301 33.371 32.1234 30.8283 29.4413C28.2855 26.7301 25.1937 25.3017 21.5529 25.1267ZM31.1461 56.524C33.8912 56.4074 36.2317 55.3288 38.1387 53.3172C40.0458 51.3057 40.9994 48.9152 40.9994 46.1166C40.9994 48.9152 41.9529 51.3057 43.86 53.3172C45.7671 55.3288 48.0787 56.4074 50.8237 56.524C48.0787 56.6406 45.7671 57.7193 43.86 59.7308C41.9529 61.7423 40.9994 64.1328 40.9994 66.9315C40.9994 64.1328 40.0458 61.7423 38.1387 59.7308C36.316 57.7765 33.8041 56.6245 31.1461 56.524ZM50.8237 42.7057C53.5688 42.5891 55.8804 41.5105 57.7875 39.4989C59.6946 37.4874 60.6192 35.0969 60.6192 32.2691C60.6192 35.0678 61.5728 37.4583 63.4799 39.4698C65.3869 41.4813 67.7274 42.56 70.4725 42.6766C67.7274 42.7932 65.3869 43.8718 63.4799 45.8834C61.5728 47.8949 60.6192 50.2854 60.6192 53.084C60.6192 50.2854 59.6657 47.8949 57.7875 45.8834C55.8804 43.901 53.5688 42.8223 50.8237 42.7057Z" fill="#00695C" fill-opacity="0.4"/></svg></div>' +
+                    '<p class="no-data-title">There is no information about the building</p>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    } else {
+        return '<div class="card">' +
+            `<h1 class="card-title">Information on ${information.entityName}</h1>` +
+            '<div class="attributes">' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>place</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.buildingAttributesField.address}</p>` +
+                        '<span class="attribute_label">Address</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>person</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.buildingAttributesField.contactPerson}</p>` +
+                        '<span class="attribute_label">Contact person</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>call</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.buildingAttributesField.phone}</p>` +
+                        '<span class="attribute_label">Phone</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>mail_outline</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.buildingAttributesField.email}</p>` +
+                        '<span class="attribute_label">Email</span>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    }
+}
 ```
 {:.copy-code.expandable-5}
 
 - A little further down, find the "Markdown/HTML CSS" section. Add Markdown/HTML CSS by taking it from the documentation:
 
 ```css
-.card {
+.card, .no-data-card {
     padding: 0px;
+    height: 100%;
 }
 
 .card-title {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     font-size: 16px;
     letter-spacing: 0.25px;
     padding: 16px;
 }
-
 .attribute_container {
     display: flex;
     align-items: center;
@@ -229,7 +260,7 @@ The first widget we'll add to the "building" state is a card that displays infor
     position: relative;
     align-items: center;
     padding: 8px;
-    border: 1px solid var(--tb-primary-100, #9bc0e9);
+    border: 1px solid var(--tb-primary-100, #305680);
     border-radius: 4px;
 }
 
@@ -245,13 +276,46 @@ The first widget we'll add to the "building" state is a card that displays infor
     top: 0;
 }
 
-.attribute {
+.attribute, .attribute_label {
     font-size: 14px;
     line-height: 20px;
 }
 
 .attribute_label {
     color: #00000061;
+}
+
+.no-data-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-data-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 345px;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.no-data-content {
+    transform: translateY(-30%);
+}
+
+.no-data-block p {
+    font-weight: 500;
+}
+
+.no-data-title {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.no-data-subtitle {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.38);
 }
 ```
 {:.copy-code.expandable-5}
@@ -295,11 +359,11 @@ Next, we will add a widget to display the list of offices in the selected buildi
 #### Adding the necessary attributes
 
 Information about the floor and the contact phone number should be added as attributes for each office. 
-Additionally, as attributes, we will add information such as the office manager&#39;s first and last name, physical address, and office email, which will be used later in another widget.
+Additionally, as attributes, we will add information such as the office manager&#39;s first and last name, and office email, which will be used later in another widget.
 
 {% include images-gallery.html imageCollection="adding-office-attributes-1" showListImageTitles="true" %} 
 
-- Similarly, add the "phone", "email", "address", and "officeManager" attributes.
+- Similarly, add the "phone", "email", and "officeManager" attributes.
 
 After adding these attributes for both offices, your attributes list for each office should look like this:
 
@@ -307,10 +371,10 @@ After adding these attributes for both offices, your attributes list for each of
 
 Use the values for the attributes from the table below:
 
-| **Offices** | **Floor** | **Email**         | **Phone**       | **Office manager** | **Address**           |
-|:------------|:----------|:------------------|:----------------|:-------------------|:----------------------|
-| Office A    | 3         | office.a@mail.com | +1 121 333 4455 | Emma Johnson       | 645 5th Ave, New York |
-| Office B    | 4         | office.b@mail.com | +1 121 666 5522 | Millie Brown       | 645 5th Ave, New York |
+| **Offices** | **Floor** | **Email**         | **Phone**       | **Office manager** |
+|:------------|:----------|:------------------|:----------------|:-------------------|
+| Office A    | 3         | office.a@mail.com | +1 121 333 4455 | Emma Johnson       |
+| Office B    | 4         | office.b@mail.com | +1 121 666 5522 | Millie Brown       |
 | ---         
 
 #### Adding Offices list widget
@@ -351,76 +415,110 @@ Let's add a widget card that will display contact information about the selected
 - Click the large "Add new widget" icon in the center of the screen;
 - Select the "Markdown/HTML Card" from the "Cards" widgets bundle;
 - Specify the "Selected entity" alias as the data source;
-- Add the following data keys: "address", "floor", "officeManager", "email", and "phone";
+- Add the following data keys: "floor", "officeManager", "email", and "phone";
+- Click "Add datasource" to add another datasource. Input "Entity with relation to dashboard state (asset)" as alias name. Then, click "Create a new one!";
+- Specify "Relation type" as filter type. Turn on "Use dashboard state entity as root" option. Set the direction to "To", and maximum relation level to "1". Add a relation filter: set "Contains" as relation type, and "Asset" as entity type. Then, click "Add";
+- Add "Address" to the data keys row;
 - Navigate to the "Appearance" tab. Add the Markdown/HTML pattern to the appropriate window by taking it from the documentation:
 
 ```html
-<div class="card">
-    <h1 class="card-title">Information on ${entityName}</h1>
-    <div class="attributes">
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>place</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${address}</p>
-                <span class="attribute attribute_label">Address</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>mdi:floor-plan</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${floor:0}</p>
-                <span class="attribute attribute_label">Floor</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>person</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${officeManager}</p>
-                <span class="attribute attribute_label">Office manager</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>call</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${phone}</p>
-                <span class="attribute attribute_label">Phone</span>
-            </div>
-        </div>
-        <div class="attribute_container">
-            <div class="icon_wrapper">
-                <tb-icon class="icon" color="primary" matButtonIcon>mail_outline</tb-icon>
-            </div>
-            <div class="attribute_content">
-                <p class="attribute">${email}</p>
-                <span class="attribute attribute_label">Email</span>
-            </div>
-        </div>
-    </div>
-</div>
+if (data.length > 1) {
+    const officeAttributes = ['floor', 'officeManager', 'phone', 'email'];
+
+    let information = {
+        entityName: data[0].entityName ? data[0].entityName : 'Not found',
+        address: data[1].address ? data[1].address : 'Not found',
+        officeAttributesField: {}
+    };
+
+    for (let key of officeAttributes) {
+        information.officeAttributesField[key] = data[0][key] ? data[0][key] : 'Not found';
+    }
+
+    const attributesNotFound = Object.values(information.officeAttributesField).every(value => value === 'Not found');
+
+    if (attributesNotFound && information.address === 'Not found') {
+        return '<div class="no-data-card">' +
+            `<h1 class="card-title">Information on ${information.entityName}</h1>` +
+                '<div class="no-data-block">' +
+                    '<div class="no-data-content">' +
+                        '<div><svg xmlns="http://www.w3.org/2000/svg" width="81" height="80" viewBox="0 0 81 80" fill="none"><path d="M14.8203 46.1166C16.6985 46.0291 18.2877 45.3003 19.588 43.9301C20.8883 42.56 21.5529 40.9274 21.5529 39.0325C21.5529 40.9274 22.1886 42.56 23.4889 43.9301C24.7892 45.3003 26.3784 46.0291 28.2566 46.1166C26.3784 46.204 24.7892 46.9328 23.4889 48.303C22.8602 48.9489 22.3653 49.7146 22.0329 50.5555C21.7005 51.3963 21.5374 52.2955 21.5529 53.2006C21.5529 51.3057 20.9172 49.6732 19.588 48.303C18.2877 46.9328 16.6985 46.204 14.8203 46.1166ZM21.5529 25.1267C25.1937 24.9518 28.2855 23.5234 30.8283 20.8413C33.371 18.1593 34.6424 14.9817 34.6424 11.2793C34.6424 14.9817 35.9138 18.1593 38.4566 20.8413C40.9994 23.5234 44.0912 24.9227 47.7609 25.1267C45.3626 25.2434 43.1665 25.9139 41.1439 27.1966C39.1501 28.4501 37.5608 30.141 36.3761 32.24C35.2203 34.3389 34.6424 36.5837 34.6424 39.0325C34.6424 35.3301 33.371 32.1234 30.8283 29.4413C28.2855 26.7301 25.1937 25.3017 21.5529 25.1267ZM31.1461 56.524C33.8912 56.4074 36.2317 55.3288 38.1387 53.3172C40.0458 51.3057 40.9994 48.9152 40.9994 46.1166C40.9994 48.9152 41.9529 51.3057 43.86 53.3172C45.7671 55.3288 48.0787 56.4074 50.8237 56.524C48.0787 56.6406 45.7671 57.7193 43.86 59.7308C41.9529 61.7423 40.9994 64.1328 40.9994 66.9315C40.9994 64.1328 40.0458 61.7423 38.1387 59.7308C36.316 57.7765 33.8041 56.6245 31.1461 56.524ZM50.8237 42.7057C53.5688 42.5891 55.8804 41.5105 57.7875 39.4989C59.6946 37.4874 60.6192 35.0969 60.6192 32.2691C60.6192 35.0678 61.5728 37.4583 63.4799 39.4698C65.3869 41.4813 67.7274 42.56 70.4725 42.6766C67.7274 42.7932 65.3869 43.8718 63.4799 45.8834C61.5728 47.8949 60.6192 50.2854 60.6192 53.084C60.6192 50.2854 59.6657 47.8949 57.7875 45.8834C55.8804 43.901 53.5688 42.8223 50.8237 42.7057Z" fill="#00695C" fill-opacity="0.4"/></svg></div>' +
+                        '<p class="no-data-title">There is no information about the office and the office building address</p>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+        } else {
+        return '<div class="card">' +
+            `<h1 class="card-title">Information on ${information.entityName}</h1>` +
+            '<div class="attributes">' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>place</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.address}</p>` +
+                        '<span class="attribute_label">Address</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>mdi:floor-plan</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.officeAttributesField.floor}</p>` +
+                        '<span class="attribute_label">Floor</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>person</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.officeAttributesField.manager}</p>` +
+                        '<span class="attribute_label">Manager</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>call</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.officeAttributesField.phone}</p>` +
+                        '<span class="attribute_label">Phone</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="attribute_container">' +
+                    '<div class="icon_wrapper">' +
+                        '<tb-icon class="icon" color="primary" matButtonIcon>mail_outline</tb-icon>' +
+                    '</div>' +
+                    '<div class="attribute_content">' +
+                        `<p class="attribute">${information.officeAttributesField.email}</p>` +
+                        '<span class="attribute_label">Email</span>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    }
+}
 ```
 {:.copy-code.expandable-5}
 
 - A little further down, find the "Markdown/HTML CSS" section. Add Markdown/HTML CSS according to the example below:
 
 ```css
-.card {
+.card, .no-data-card {
     padding: 0px;
+    height: 100%;
 }
 
 .card-title {
+    position: sticky;
+    top: 0;
+    z-index: 2;
     font-size: 16px;
     letter-spacing: 0.25px;
     padding: 16px;
 }
-
 .attribute_container {
     display: flex;
     align-items: center;
@@ -438,7 +536,7 @@ Let's add a widget card that will display contact information about the selected
     position: relative;
     align-items: center;
     padding: 8px;
-    border: 1px solid var(--tb-primary-100, #9bc0e9);
+    border: 1px solid var(--tb-primary-100, #305680);
     border-radius: 4px;
 }
 
@@ -454,7 +552,7 @@ Let's add a widget card that will display contact information about the selected
     top: 0;
 }
 
-.attribute {
+.attribute, .attribute_label {
     font-size: 14px;
     line-height: 20px;
 }
@@ -462,6 +560,40 @@ Let's add a widget card that will display contact information about the selected
 .attribute_label {
     color: #00000061;
 }
+
+.no-data-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-data-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 345px;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.no-data-content {
+    transform: translateY(-30%);
+}
+
+.no-data-block p {
+    font-weight: 500;
+}
+
+.no-data-title {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.no-data-subtitle {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.38);
+}
+
 ```
 {:.copy-code.expandable-4}
 

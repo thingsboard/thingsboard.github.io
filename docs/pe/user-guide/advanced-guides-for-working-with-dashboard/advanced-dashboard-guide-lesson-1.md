@@ -159,7 +159,7 @@ adding-maps-widget-1:
         title: 'Now we need to add an alias to define the entities from which the data will be extracted. In the "Alias" field, enter a name for it - "Buildings", and click "Create a new one";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-5-pe.png
-        title: 'Enter the name of the alias and select a filter type - "Asset type". Then specify the "buildings" asset type and click the "Add" button in the lower right corner. This alias will display all assets of the "buildings" type in the widget;'
+        title: 'Select a filter type - "Asset type". Then specify the "buildings" asset type and click the "Add" button in the lower right corner. This alias will display all assets of the "buildings" type in the widget;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/adding-maps-widget-6-pe.png
         title: 'In the widget settings, add the following attributes as data keys: "latitude", "longitude", "address", "email", "phone", and "buildingImage";'
@@ -283,4 +283,5 @@ dashboard-final-lesson-1:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1.md %}

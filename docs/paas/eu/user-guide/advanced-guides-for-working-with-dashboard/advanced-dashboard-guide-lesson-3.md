@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
 title: Lesson 3. Adding and configuring individual states for each device
@@ -528,6 +528,6 @@ dashboard-final-lesson-3:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
-{% include get-hosts-name.html docsPrefix=docsPrefix %}
+{% assign docsPrefix = "paas/eu/" %}
+{% include get-hosts-name.html docsTag="paas-eu" %}
 {% include docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3.md %}

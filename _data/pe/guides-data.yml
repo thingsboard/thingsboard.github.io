@@ -49,12 +49,6 @@
       keywords: customer user share change owner helloworld
       video: false
       pe: false
-    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/
-      title: Lesson 5. Alarm management
-      subtitle: "Explore this guide to learn how to: create alarm rules, and handle alarms using the Alarms widget."
-      keywords: alarm alarms widget helloworld
-      video: false
-      pe: false
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
