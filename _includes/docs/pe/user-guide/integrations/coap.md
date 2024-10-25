@@ -144,7 +144,7 @@ export COAP_DTLS_KEY_ALIAS=serveralias
 export TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
 ```
 
-Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/pe/user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
+Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/{{docsPrefix}}user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
 
 {% endunless %}
 

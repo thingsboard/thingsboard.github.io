@@ -4,7 +4,7 @@ assignees:
 - ashvayka
 title: CoAP Device API Reference 
 description: Supported CoAP API Reference for IoT Devices
-redirect_from: "/docs/paas/reference/coap-api"
+redirect_from: "/docs/paas/eu/reference/coap-api"
 
 server-side-rpc:
     0:

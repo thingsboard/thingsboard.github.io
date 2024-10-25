@@ -860,7 +860,7 @@ selfManagedPlan:
             </div>
         </div>
         <div class="pricing-div">
-            <div class="pricing-section pricing-cloud active">
+            <div class="pricing-section trendz-pricing-cloud active">
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
