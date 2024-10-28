@@ -181,13 +181,14 @@ nano tb-broker-db-configmap.yml
 ```
 {: .copy-code}
 
-### Step 6. Azure Cache for Redis (Optional)
+### Step 6. Azure Cache for Redis
 
-Optionally, you can set up Azure Cache for Redis. TBMQ uses cache to improve performance and avoid frequent DB reads.
+You need to set up Azure Cache for Redis. TBMQ uses cache to store messages for [DEVICE persistent clients](/docs/mqtt-broker/architecture/#persistent-device-client),
+to improve performance and avoid frequent DB reads (see below for more details).
 
-We recommend enabling this in case you have several thousand MQTT clients (devices) connected to TBMQ. It is useful when clients connect to TBMQ with the authentication enabled.
-For every connection, the request is made to find MQTT client credentials that can authenticate the client. 
-Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once. 
+It is useful when clients connect to TBMQ with the authentication enabled.
+For every connection, the request is made to find MQTT client credentials that can authenticate the client.
+Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once.
 
 In order to set up the Redis, follow this [guide](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis).
 
@@ -504,9 +505,16 @@ for detailed information on the latest changes.
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-backup-restore).
 
-#### Upgrade steps
+#### Upgrade to 2.0.0
+
+For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-azure-cache-for-redis) to complete the installation.
+Only then can you proceed with the [upgrade](#run-upgrade).
+
+#### Upgrade to 1.3.0
 
 {% include templates/mqtt-broker/install/migration.md %}
+
+#### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
 

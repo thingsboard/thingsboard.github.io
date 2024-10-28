@@ -1505,6 +1505,37 @@
 </table>
 
 
+####  Redis lettuce configuration parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>lettuce.auto-flush</td>
+			<td>REDIS_LETTUCE_CMDS_AUTO_FLUSH_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable auto-flush. If disabled, commands are buffered and flushed based on cmd count or time interval</td>
+		</tr>
+		<tr>
+			<td>lettuce.buffered-cmd-count</td>
+			<td>REDIS_LETTUCE_BUFFERED_CMDS_COUNT</td>
+			<td>5</td>
+			<td> Number of buffered commands before flush is triggered. Used when auto-flush is disabled.</td>
+		</tr>
+		<tr>
+			<td>lettuce.flush-interval-ms</td>
+			<td>REDIS_LETTUCE_FLUSH_INTERVAL_MS</td>
+			<td>5</td>
+			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count.</td>
+		</tr>
+	</tbody>
+</table>
+
+
 ####  SQL DAO configuration parameters
 
 <table>
