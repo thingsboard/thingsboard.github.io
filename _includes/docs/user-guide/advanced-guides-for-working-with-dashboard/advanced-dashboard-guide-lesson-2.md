@@ -416,10 +416,10 @@ Let's add a widget card that will display contact information about the selected
 - Select the "Markdown/HTML Card" from the "Cards" widgets bundle;
 - Specify the "Selected entity" alias as the data source;
 - Add the following data keys: "floor", "officeManager", "email", and "phone";
-- Click "Add datasource" to add another datasource. Input "Entity with relation to dashboard state (asset)" as alias name. Then, click "Create a new one!";
+- We need to add another alias to extract the building address. Click "Add datasource". Input "Entity with relation to dashboard state (asset)" as alias name. Then, click "Create a new one!";
 - Specify "Relation type" as filter type. Turn on "Use dashboard state entity as root" option. Set the direction to "To", and maximum relation level to "1". Add a relation filter: set "Contains" as relation type, and "Asset" as entity type. Then, click "Add";
 - Add "Address" to the data keys row;
-- Navigate to the "Appearance" tab. Turn on "Use markdown/HTML value function" option. 
+- Navigate to the "Appearance" tab. Turn on "Use markdown/HTML value function" option;
 - Add the markdown/HTML value function to the appropriate window by taking it from the documentation:
 
 ```html
@@ -475,7 +475,7 @@ if (data.length > 1) {
                         '<tb-icon class="icon" color="primary" matButtonIcon>person</tb-icon>' +
                     '</div>' +
                     '<div class="attribute_content">' +
-                        `<p class="attribute">${information.officeAttributesField.manager}</p>` +
+                        `<p class="attribute">${information.officeAttributesField.officeManager}</p>` +
                         '<span class="attribute_label">Manager</span>' +
                     '</div>' +
                 '</div>' +
