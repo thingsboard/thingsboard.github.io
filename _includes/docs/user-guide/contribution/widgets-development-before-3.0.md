@@ -248,7 +248,7 @@ For other widget types like [RPC](/docs/{{docsPrefix}}user-guide/ui/widget-libra
 
 #### Timewindow functions
 
-Object with timewindow functions used to manage widget data time frame. Can by used by [Time-series](/docs/{{docsPrefix}}user-guide/ui/widget-library/#time-series) or [Alarm](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widget) widgets.
+Object with time window functions used to manage widget data time frame. Can by used by [Time-series](/docs/{{docsPrefix}}user-guide/ui/widget-library/#time-series) or [Alarm](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widget) widgets.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|

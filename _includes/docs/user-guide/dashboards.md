@@ -67,7 +67,7 @@ The dashboard toolbar allows you to manage
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases),
 [filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters),
 [version control](/docs/{{docsPrefix}}user-guide/version-control/),
-configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow),
+configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window),
 [enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
 
 Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" modes.
@@ -102,14 +102,14 @@ For more information about widgets, how to create them, and their settings, clic
 
 <br>
 
-### Timewindow
+### Time window
 
-Dashboard timewindow represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
-Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
-In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the timewindow.
-In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the timewindow.
+Dashboard time window represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
+Time window is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
+In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window.
+In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
 
-The timewindow can work in two modes:
+The time window can work in two modes:
 - In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp;
 - In the **history mode**, widgets receive data only during the initial load and no updates are issued over WebSockets.
 
@@ -136,8 +136,8 @@ All other intervals are distinguished in the same way.
 {% include images-gallery.html imageCollection="time-window-interval" %}
 
 There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in.
-Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look.
-To zoom out to the original size of the chart, double-click on the widget.
+Move the two sliders towards each other to specify the time period for displaying the data.
+To zoom out to the original size of the chart, move the sliders back to their default position.
 
 {% include images-gallery.html imageCollection="time-window-zoom-in" %}
 
@@ -221,12 +221,12 @@ You can set dashboard logo which displayed in dashboard fullscreen mode. For thi
 
 **Toolbar settings**
 
-The checkboxes "Display dashboard selection", "Display entities selection", "Display filters", "Display timewindow", "Display export" and "Display update dashboard image" are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
+The checkboxes "Display dashboard selection", "Display entities selection", "Display filters", "Display time window", "Display export" and "Display update dashboard image" are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
 
 The "Display filters" option is shown on the toolbar panel only if at least one filter has been created. 
 If the filter was created, but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
 
-You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page.
+You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display time window" and "Display export" icons on the dashboard page.
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-1" %}
 

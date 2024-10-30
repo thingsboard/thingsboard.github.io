@@ -7,7 +7,7 @@ It offers seamless management of MQTT clients, subscription to topics, and messa
 
 TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) library for communication between client and broker.
 
-![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-overview.png)
+![image](/images/mqtt-broker/user-guide/ui/ws-overview.png)
 
 ### Connections
 
@@ -83,7 +83,7 @@ If you select MQTT Version 5, additional parameters are available:
 
 ##### Last will
 
-The Last Will is an optional feature in MQTT that lets user specify a message to be sent by the MQTT broker, in the event of an ungraceful disconnection of the client.
+The Last Will (optional) is the feature in MQTT that lets user specify a message to be sent by the MQTT broker, in the event of an ungraceful disconnection of the client.
 Here's a closer look at the Last will properties:
 * **Topic**. MQTT topic on which your Last Will message will be published.
 * **QoS**. Quality of Service level for the Last Will message.
@@ -94,7 +94,7 @@ In case you select MQTT Version 5, please configure additional features:
 * **Payload Format Indicator**. When set to true, it indicates the payload is UTF-8 encoded character data. If false or unset, the payload is assumed to be unspecified binary data.
 * **Content Type**. Describes the form of the content carried by the will message.
 * **Will Delay Interval**. The time period the broker needs to wait after the client gets disconnected ungracefully, before publishing the will message.
-* **Message Expiry Interval**. The duration within which the will message should be delivered since it was published.
+* **Message Expiry Interval**. The duration within which the will message can be delivered since it was published.
 * **Response Topic**. A topic to which the broker may publish a response after broadcasting the will message.
 * **Correlation Data**. Binary data used to match the response message from the broker after it broadcasts the will message.
 * **User Properties**. It allows the client to include additional customized metadata to the Will message, in the form of an object of key-value pairs.
@@ -112,7 +112,7 @@ The status of the WebSocket Client may be one of the following:
 3. **Reconnecting** This status is displayed when the client is in the process of re-establishing a connection with the broker. The reconnecting can be cancelled clicking on the button Cancel in the top right corner.
 4. **Connection failed**. Indicates that the client was unable to establish a connection with the broker. This status may also include additional information such as the cause of the failure - for instance, authentication issues, session taken over, among others.
 
-![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-logs.png)
+![image](/images/mqtt-broker/user-guide/ui/ws-logs.png)
 
 ### Subscriptions
 
@@ -160,8 +160,9 @@ If false, messages have the RETAIN flag set to 0.
   * 2 - do not send retained messages at subscription time.
 * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
 * **Color**. Color is used for easier differentiation of the messages in the messages table. Can be changed.
+* **Subscription Identifier**. A unique identifier (numeric value greater than 0) assigned to a subscription. It is used to track, manage, and reference a specific subscription, ensuring that each subscription can be uniquely distinguished from others.
 
-![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-subscription-overview.png)
+{% include images-gallery.html imageCollection="ws-subscription-overview" %}
 
 ### Messages
 
@@ -182,7 +183,7 @@ The table messages can be filtered by:
 * **Type 'All/Received/Published'** - click on the type label in the header of the Messages table.
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
-![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-table-filter.png)
+![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
 
 #### Publish a message
 
@@ -207,7 +208,7 @@ Here is a list of basic options for publishing a message, along with brief expla
 After filling out the necessary information and settings, locate and **click on the Send icon** to publish your message.
 The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
 
-![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
 
 For MQTT clients utilizing **MQTT Version 5**, there are also additional parameters available to further customize your message publishing experience. 
 The combination of these features provides a comprehensive and flexible environment for MQTT message handling.
@@ -222,4 +223,4 @@ Below is a brief explanation of each setting:
 * **Response Topic**. String which is used as the Topic Name for a response message.
 * **User Properties**. Allows user-defined metadata in form of key-value pairs.
 
-![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
+![image](/images/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
