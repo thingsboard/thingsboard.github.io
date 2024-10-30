@@ -27,7 +27,7 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3
 To generate the EC based key and certificate, use:
 
 ```bash
-openssl ecparam -out key.pem -name secp256r1 -genkey
+openssl ecparam -out key.pem -name prime256v1 -genkey
 openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem 
 ```
 {: .copy-code}
