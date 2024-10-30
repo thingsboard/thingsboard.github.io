@@ -95,11 +95,12 @@ We also recommend to use private subnets. This way it will be nearly impossible 
 
 At the end, carefully review the whole configuration of the MSK and then finish the cluster creation.
 
-### Step 6. Amazon ElastiCache (Redis) Configuration (Optional)
+### Step 6. Amazon ElastiCache (Redis) Configuration
 
-Optionally, you can set up [ElastiCache](https://aws.amazon.com/elasticache/redis/) for Redis. TBMQ uses cache to improve performance and avoid frequent DB reads.
+You need to set up [ElastiCache](https://aws.amazon.com/elasticache/redis/) for Redis. TBMQ uses cache to store messages for [DEVICE persistent clients](/docs/mqtt-broker/architecture/#persistent-device-client),
+to improve performance and avoid frequent DB reads (see below for more details).
 
-We recommend enabling this in case you have several thousand MQTT clients (devices) connected to TBMQ. It is useful when clients connect to TBMQ with the authentication enabled.
+It is useful when clients connect to TBMQ with the authentication enabled.
 For every connection, the request is made to find MQTT client credentials that can authenticate the client.
 Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once.
 
@@ -115,7 +116,7 @@ Please open AWS console and navigate to ElastiCache->Redis clusters->Create Redi
 
 {% include images-gallery.html imageCollection="tbmq-redis-set-up" %}
 
-### Step 7. Configure links to the Kafka (Amazon MSK)/Postgres/Redis
+### Step 7. Configure links to the Kafka/Postgres/Redis
 
 #### Amazon RDS PostgreSQL
 
@@ -375,7 +376,24 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ### Upgrading
 
+Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
+for detailed information on the latest changes.
+
+#### Backup and restore (Optional)
+
+While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
+For further guidance, follow the [next instructions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_CommonTasks.BackupRestore.html).
+
+#### Upgrade to 2.0.0
+
+For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-amazon-elasticache-redis-configuration) to complete the installation.
+Only then can you proceed with the [upgrade](#run-upgrade).
+
+#### Upgrade to 1.3.0
+
 {% include templates/mqtt-broker/install/migration.md %}
+
+#### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
 

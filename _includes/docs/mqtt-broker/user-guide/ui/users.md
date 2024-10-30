@@ -26,8 +26,6 @@ To edit the details of an existing administrator, please follow these steps:
 
 {% include images-gallery.html imageCollection="edit-user-broker" %}
 
-Please note that users may change their own email addresses only via the _Profile_ page. 
-
 ### Delete User
 
 Logged-in user can delete other users, but not itself. To delete user follow these steps:

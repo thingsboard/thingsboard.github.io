@@ -9,7 +9,7 @@ ws-connection-add:
     title: 'Go to the WebSocket Client page and click the Select Connection, represented by the expand more icon.'
   1:
     image: /images/mqtt-broker/user-guide/ui/ws-connection-add-2.png
-    title: 'Click on the button Add new connection.'
+    title: 'Click on the button "Connect".'
 
 ws-connection-details:
   0:
@@ -88,6 +88,11 @@ ws-table-msg:
   2:
     image: /images/mqtt-broker/user-guide/ui/ws-table-msg-3.png
     title: 'Properties of the message.'
+
+ws-subscription-overview:
+  0:
+    image: /images/mqtt-broker/user-guide/ui/ws-subscription-overview-1.png
+    title: 'Subscription settings with MQTT 5 options.'
 
 ---
 
