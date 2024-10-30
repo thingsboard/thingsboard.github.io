@@ -81,7 +81,7 @@ step4:
         title: 'Resize the "Timeseries Line Chart" widget. Just drag the bottom right corner of the widget;'
     14:
         image: https://img.thingsboard.io/edge/getting-started/step-4-item-15-ce.png
-        title: 'Click the "Edit timewindow" icon. Specify "1 hour" as the time period and "None" as the "Data aggregation function". Click "Update" button. Apply all changes by clicking "Save" button in the upper right corner of the screen.'
+        title: 'Click the "Edit time window" icon. Specify "1 hour" as the time period and "None" as the "Data aggregation function". Click "Update" button. Apply all changes by clicking "Save" button in the upper right corner of the screen.'
     15:
         image: https://img.thingsboard.io/edge/getting-started/step-4-item-16-ce.png
         title: 'Congratulations! You have successfully configured the dashboard. Now, when you send a new telemetry reading, it will immediately appear in the table.'

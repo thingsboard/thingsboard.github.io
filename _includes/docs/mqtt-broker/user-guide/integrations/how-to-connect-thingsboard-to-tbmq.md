@@ -3,8 +3,6 @@
 * TOC
 {:toc}
 
-**TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, message publishing, and distribution among subscribers.
-
 In this guide, we integrate the TBMQ with the ThingsBoard using MQTT integration. 
 We utilize TBMQ client credentials with the type **APPLICATION** to connect ThingsBoard integration as an APPLICATION client.
 APPLICATION clients specialize in subscribing to topics with high message rates. 
@@ -13,15 +11,15 @@ Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-b
 
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
 In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
-Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
-ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network with no internet connection.
+Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or public static IP address. 
+ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local network with no internet connection.
 
 ### Prerequisites
 
 In this tutorial, we will use:
 
- - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
- - [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/) installed locally and accessible by ThingsBoard PE instance;
+ - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed **locally**;
+ - [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/) installed **locally** and accessible by ThingsBoard PE instance;
  - mosquitto_pub MQTT client to send messages.
 
 ### TBMQ setup
@@ -35,7 +33,7 @@ To do this, login to your TBMQ user interface and follow the next steps.
 {% capture difference %}
 **Please note**:
 <br>
-The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true".
+The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true" in the TBMQ configuration.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

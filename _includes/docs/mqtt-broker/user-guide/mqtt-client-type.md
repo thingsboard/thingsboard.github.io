@@ -43,9 +43,9 @@ These properties, defined in the respective MQTT specifications, provide insight
 TBMQ employs a Kafka consumer that actively polls messages from the `tbmq.msg.all` topic, subsequently forwarding these messages to their intended recipients. 
 However, the processing logic differs between persistent and non-persistent clients.
 
-* For non-persistent clients, messages are directly published to the subscribed clients.
+* For [non-persistent clients](/docs/mqtt-broker/architecture/#non-persistent-client), messages are directly published to the subscribed clients.
 
-* Persistent clients maintain a session state that persists beyond individual connections, allowing them to receive messages even when they were offline. 
+* [Persistent clients](/docs/mqtt-broker/architecture/#persistent-client) maintain a session state that persists beyond individual connections, allowing them to receive messages even when they were offline. 
 This persistence enables TBMQ to ensure message delivery to the client once it reconnects. Consequently, a distinct approach is employed for message processing intended for such clients.
 However, **please note**, that if the subscribing client is both persistent and subscribed with a Quality of Service (QoS) level of _0_ (_AT_MOST_ONCE_), 
 all the messages associated with that subscription will be delivered to the client without any supplementary steps. 
@@ -62,10 +62,10 @@ as discussed in the [Client persistence](#client-persistence) section.
 In the case of persistent DEVICE clients available, related messages are directed to an additional Kafka topic known as `tbmq.msg.persisted`.
 
 To facilitate the delivery of messages to both online and offline clients, a dedicated Kafka consumer diligently polls messages from the `tbmq.msg.persisted` topic. 
-These messages are then processed and persisted in a **PostgreSQL** database before being dispatched to the subscribed online clients. 
+These messages are then processed and persisted in a **Redis** database before being dispatched to the subscribed online clients. 
 This approach ensures that both online and offline clients can receive all messages, guaranteeing consistent message delivery across different client states.
 
-When offline clients reconnect to the broker, they receive the persisted messages that were stored during their offline period. 
+When offline clients reconnect to the broker, they receive the persisted messages that were stored in Redis during their offline period. 
 The number of messages received by an offline client upon reconnection can be controlled by modifying the 
 `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT` environment variable. 
 This enables fine-tuning of the message retrieval behavior for offline clients, allowing for customized handling of the number of messages they receive upon reconnection.
