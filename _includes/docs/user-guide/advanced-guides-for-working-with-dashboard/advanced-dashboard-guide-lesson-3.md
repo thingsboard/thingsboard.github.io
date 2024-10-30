@@ -392,7 +392,7 @@ We will now add a widget that displays a chart of temperature and humidity readi
 <br>
 The "Temperature and humidity history" widget is added, but there are no charts on it. We will fix it right now.
 
-To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow), you need to adjust the time interval and aggregation function settings. To do this, open the time window, select the last 12 hours of data, set the aggregation to "Average" and the grouping interval to "1 hour".
+To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, you need to adjust the time interval and aggregation function settings. To do this, open the time window, select the last 12 hours of data, set the aggregation to "Average" and the grouping interval to "1 hour".
 
 This setup ensures that all widgets using the dashboard&#39;s time window will display data averaged over the last 12 hours, providing a clear view of the temperature and humidity trends. 
 Now, you can effectively monitor the average temperature and humidity readings for each hour over the past 12 hours.
