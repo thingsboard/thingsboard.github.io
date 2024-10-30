@@ -22,7 +22,7 @@ Before using any of the client credential types mentioned above, please ensure t
 
 Note that on the Web UI _Home page_, you can check the current state of those parameters on the Configuration card.
 
-![image](/images/mqtt-broker/user-guide/ui/config-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/config-card.png)
 
 For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/).
 
@@ -97,7 +97,7 @@ Please consider the following examples:
 * If Subscribe authorization rule patterns is set to default value `.*` - client will be able to subscribe to any topic.
 * If Publish/Subscribe authorization rules has no rules (field is empty) - client will be forbidden to publish/subscribe to any topics.
 
-![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
 
 #### SCRAM
 

@@ -16,15 +16,15 @@ sessions-details:
     
 sessions-subscriptions:
   0:
-    image: /images/mqtt-broker/user-guide/ui/session-subscriptions-1.png
+    image: https://img.thingsboard.io/mqtt-broker/user-guide/ui/session-subscriptions-1.png
     title: 'The list of subscriptions of the session.'
   1:
-    image: /images/mqtt-broker/user-guide/ui/session-subscriptions-2.png
+    image: https://img.thingsboard.io/mqtt-broker/user-guide/ui/session-subscriptions-2.png
     title: 'Subscription MQTT 5.0 options.' 
 
 sessions-metrics:
   0:
-    image: /images/mqtt-broker/user-guide/ui/session-metrics-1.png
+    image: https://img.thingsboard.io/mqtt-broker/user-guide/ui/session-metrics-1.png
     title: 'The list of subscription metrics. To clear the statistics, click on the "Delete" icon in the top right corner.'
 
 ---

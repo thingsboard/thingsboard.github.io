@@ -24,7 +24,7 @@ MQTT defines three levels of Quality of Service:
 
 #### QoS 0 - At Most Once
 
-![image](/images/mqtt-broker/user-guide/tbmq-qos0.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/tbmq-qos0.png)
 
 In this default method the message can be delivered either one time or not delivered. The duplicate messages are impossible.
 
@@ -40,7 +40,7 @@ At the same time QoS 0 has the **lowest reliability** as there is no guarantee o
 
 #### QoS 1 - Al Least Once
 
-![image](/images/mqtt-broker/user-guide/tbmq-qos1.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/tbmq-qos1.png)
 
 The messages are delivered at least once, ensuring that the receiver gets the message, but it does not guarantee that it will be delivered only once.
 
@@ -56,7 +56,7 @@ The use of QoS 1 ensures that important data is not lost due to transmission iss
 
 #### QoS 2 - Exactly Once
 
-![image](/images/mqtt-broker/user-guide/tbmq-qos2.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/tbmq-qos2.png)
 
 The messages are delivered exactly once, ensuring that neither duplication nor loss occurs.
 

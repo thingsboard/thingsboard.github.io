@@ -7,7 +7,7 @@ It offers seamless management of MQTT clients, subscription to topics, and messa
 
 TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) library for communication between client and broker.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-overview.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-overview.png)
 
 ### Connections
 
@@ -112,7 +112,7 @@ The status of the WebSocket Client may be one of the following:
 3. **Reconnecting** This status is displayed when the client is in the process of re-establishing a connection with the broker. The reconnecting can be cancelled clicking on the button Cancel in the top right corner.
 4. **Connection failed**. Indicates that the client was unable to establish a connection with the broker. This status may also include additional information such as the cause of the failure - for instance, authentication issues, session taken over, among others.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-logs.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-logs.png)
 
 ### Subscriptions
 
@@ -183,7 +183,7 @@ The table messages can be filtered by:
 * **Type 'All/Received/Published'** - click on the type label in the header of the Messages table.
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-table-filter.png)
 
 #### Publish a message
 
@@ -208,7 +208,7 @@ Here is a list of basic options for publishing a message, along with brief expla
 After filling out the necessary information and settings, locate and **click on the Send icon** to publish your message.
 The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-publish-msg.png)
 
 For MQTT clients utilizing **MQTT Version 5**, there are also additional parameters available to further customize your message publishing experience. 
 The combination of these features provides a comprehensive and flexible environment for MQTT message handling.
@@ -223,4 +223,4 @@ Below is a brief explanation of each setting:
 * **Response Topic**. String which is used as the Topic Name for a response message.
 * **User Properties**. Allows user-defined metadata in form of key-value pairs.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
