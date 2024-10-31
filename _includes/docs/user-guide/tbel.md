@@ -2161,7 +2161,7 @@ var dIso = d.toISOString();                          //  return "2023-08-06T04:0
 
 ```java
 var d = new Date("2023-08-06T12:04:05.123");        // TZ => Default
-var dIso = d.toISOString();                         //  return "2023-08-06T09:04:05.123Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")                                                               
+var dIso = d.toISOString();                         //  return "2023-08-06T16:04:05.123Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")                                                               
 ```
 {: .copy-code}
 
@@ -2223,7 +2223,7 @@ var dIso = d.toISOString();                                   // return "2023-08
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSS";
 var d = new Date("2023-08-06 12:04:05.000", pattern);         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
-var dIso = d.toISOString();                                   //  return "2023-08-06T09:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
+var dIso = d.toISOString();                                   //  return "2023-08-06T16:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
@@ -2232,7 +2232,7 @@ var dIso = d.toISOString();                                   //  return "2023-0
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
 var d = new Date("12:15:30 PM, So. 10/09/2022", pattern, "de");         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
-var dIso = d.toISOString();                                             //  return "2022-10-09T09:15:30Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
+var dIso = d.toISOString();                                             //  return "2022-10-09T16:15:30Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 var dLocal= d.toLocaleString("de");                                     //  return "09.10.22, 12:15:30"
 ```
 {: .copy-code}
@@ -2240,7 +2240,7 @@ var dLocal= d.toLocaleString("de");                                     //  retu
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
 var d = new Date("12:15:30 PM, Sun 10/09/2022", pattern, "en-US");         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
-var dIso = d.toISOString();                                                //  return "2022-10-09T09:15:30Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
+var dIso = d.toISOString();                                                //  return "2022-10-09T16:15:30Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 var dLocal = d.toLocaleString("en-US");                                    //  return "10/9/22, 12:15:30 PM"
 ```
 {: .copy-code}
@@ -2256,28 +2256,28 @@ var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // r
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
-var d = new Date("2023-08-06 04:04:05.000-04:00", pattern, "de", "Europe/Kyiv");    // Pattern with TZ => "-04:00" but `Time Zone` as parameter = "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                                                         // return "2023-08-06T01:04:05Z"    ZoneId  "Europe/Kyiv" = "+03:00"
-var dLocal_de = d.toLocaleString("de");                                             // return "06.08.23, 04:04:05" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")   
+var d = new Date("2023-08-06 04:04:05.000+02:00", pattern, "de", "America/New_York");    // Pattern with TZ => "+02:00" but `Time Zone` as parameter = "America/New_York" = "-04:00"
+var dIso = d.toISOString();                                                         // return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
+var dLocal_de = d.toLocaleString("de");                                             // return "06.08.23, 04:04:05" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")   
 var dLocal_us = d.toLocaleString("en-US");                                          // return "8/6/23, 4:04:05 AM"      
 ```
 {: .copy-code}
 
 ###### Instant (year, month and etc) with Optional: time zone
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Kyiv");
-var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kyiv")
-var dIso = d.toISOString();             //  return "2023-08-06T01:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
-var dDate = d;                          //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом"
+var d = new Date(2023, 8, 6, 4, 4, 5, "America/New_York");
+var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "America/New_York")
+var dIso = d.toISOString();             //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dDate = d;                          //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time"
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");
-var dLocal = d.toLocaleString();                                    // return "2023-08-06 05:04:05" (Locale: "UTC", ZoneId "Europe/Kyiv")
+var dLocal = d.toLocaleString();                                    // return "2023-08-05 22:04:05" (Locale: "UTC", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"))
 var dLocal_us = d.toLocaleString("en-us", "America/New_York");      // return "8/5/23, 10:04:05 PM" (Locale: "en-us", ZoneId "America/New_York")
 var dIso = d.toISOString();                                         // return "2023-08-06T02:04:05Z"
-var dDate = d;                                                      // return "неділя, 6 серпня 2023 р. о 05:04:05 за східноєвропейським літнім часом" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
+var dDate = d;                                                      // return "Saturday, August 5, 2023 at 22:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
@@ -2303,14 +2303,14 @@ _Input date Without TZ (TZ Default = ZoneId.systemDefault())_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5);          //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds) => TZ Default = ZoneId.systemDefault();
 var dLocal = d.toLocaleString("en-US");         //  return "8/6/23, 4:04:05 AM" (Locale: "en-US")
-var dIso = d.toISOString();                     //  return Default = ZoneId.systemDefault: "2023-08-06T01:04:05Z", (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00");
-var dDate = d;                                  //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00");
+var dIso = d.toISOString();                     //  return Default = ZoneId.systemDefault: "2023-08-06T08:04:05Z", (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dDate = d;                                  //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
 ```
 {: .copy-code}
         
 ```java
 var d = new Date("2023-08-06T04:04:05.000");     //  Parameter (String 'yyyy-MM-ddThh:mm:ss.ms') => TZ Default = ZoneId.systemDefault():
-var dIso = d.toISOString();                      //  return "2023-08-06T01:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00");
+var dIso = d.toISOString();                      //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
 var dLocal_de = d.toLocaleString("de");          //  return "06.08.23, 04:04:05"  (Locale: "de",  ZoneId.systemDefault());
 var dLocal_utc = d.toLocaleString("UTC");        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId.systemDefault());
 ```
@@ -2319,10 +2319,10 @@ var dLocal_utc = d.toLocaleString("UTC");        //  return "2023-08-06 04:04:05
 _Input date With TZ (TZ = parameter TZ or 'Z' equals 'UTC')_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin"); //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin";
-var dIso = d.toISOString();                             //  return "2023-08-06T02:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00");
-var dLocal1 = d.toLocaleString("UTC");                  //  return "2023-08-06 05:04:05" (Locale: "UTC",  (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"));
-var dLocal2 = d.toLocaleString("en-us");                //  return "8/6/23, 5:04:05 AM" (Locale: "en-US", (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"));
-var dLocal3 = d.toLocaleString("de");                   // return "06.08.23, 05:04:05"  (Locale: "de",   (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"));
+var dIso = d.toISOString();                             //  return "2023-08-06T02:04:05Z";
+var dLocal1 = d.toLocaleString("UTC");                  //  return "2023-08-05 22:04:05" (Locale: "UTC",  (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal2 = d.toLocaleString("en-us");                //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal3 = d.toLocaleString("de");                   // return "05.08.23, 22:04:05"  (Locale: "de",   (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 ```     
 {: .copy-code}
 
@@ -2346,10 +2346,10 @@ a Date object as a string, using locale settings and Id time zone.
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");         //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin";
-var dIso = d.toISOString();                                     //  return "2023-08-06T02:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00");
-var dLocal1 = d.toLocaleString("UTC");                          //  return "2023-08-06 05:04:05" (Locale: "UTC",   (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"));
+var dIso = d.toISOString();                                     //  return "2023-08-06T02:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("UTC");                          //  return "2023-08-05 22:04:05" (Locale: "UTC",   (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 var dLocal2 = d.toLocaleString("en-us", "America/New_York");    //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", ZoneId "America/New_York" = "-04:00")
-var dLocal3 = d.toLocaleString("de", "Europe/Berlin");          //  return "06.08.23, 04:04:05"  (Locale: "de",    ZoneId "Europe/Berlin" =    "+02:00")
+var dLocal3 = d.toLocaleString("de", "Europe/Berlin");          //  return "06.08.23, 04:04:05"  (Locale: "de",    ZoneId "Europe/Berlin" = "+02:00")
 ```
 {: .copy-code}
 
@@ -2377,40 +2377,40 @@ a Date object as a string, using locale settings, {"timeZone": "Id time zone",
 ```java
 var d = new Date("2023-08-06T04:04:05.00Z");         // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"
-var dLocal1 = d.toLocaleString();                    // return "2023-08-06 07:04:05" (Locale: Default "UTC",   (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"));
+var dLocal1 = d.toLocaleString();                    // return "2023-08-06 00:04:05" (Locale: Default "UTC", ZoneId: (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 
-var options = {"timeZone":"America/New_York"};       // TZ = "-04:00"
+var options = {"timeZone":"Europe/Berlin"};       // TZ = "+02:00"
 var optionsStr = JSON.stringify(options);       
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // "8/6/23, 12:04:05 AM"  ("8/6/23, 00:04:05 AM", Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // "8/6/23, 6:04:05 AM"  (Locale:  "en-US",  options: ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
 var d = new Date("2023-08-06T04:04:05.000");         // TZ => Default = ZoneId.systemDefault
-var dIso = d.toISOString();                          // return "2023-08-06T01:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
-var options = {"timeZone":"America/New_York"};
+var dIso = d.toISOString();                          // return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var options = {"timeZone":"Europe/Berlin"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8/5/23, 9:04:05 PM" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"), (Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8/6/23, 10:04:05 AM" (Locale: "en-US",  options: ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5);               // TZ => Default = ZoneId.systemDefault
-var dIso = d.toISOString();                          // return "2023-08-06T01:04:05Z" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00")
-var options = {"timeZone":"America/New_York", "pattern": "M-d/yyyy, h:mm=ss a"};
+var dIso = d.toISOString();                          // return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var options = {"timeZone":"Europe/Berlin", "pattern": "M-d/yyyy, h:mm=ss a"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8-5/2023, 9:04=05 PM" (if ZoneId.systemDefault(): "Europe/Kyiv" = "+03:00"), (pattern, Locale: "en-US", ZoneId  => "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8-6/2023, 10:04=05 AM" (options: pattern,  Locale = "en-US", ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "UTC");        // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"       
-var options = {"timeZone":"America/New_York","dateStyle":"full","timeStyle":"full"};
+var options = {"timeZone":"Europe/Berlin","dateStyle":"full","timeStyle":"full"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 00:04:05 за північноамериканським східним літнім часом"
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 12:04:05 AM Eastern Daylight Time"
-var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 00:04:05 Nordamerikanische Ostküsten-Sommerzeit"
+var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 06:04:05 за центральноєвропейським літнім часом"
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 6:04:05 AM Central European Summer Time"
+var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 06:04:05 Mitteleuropäische Sommerzeit"
 ```
 {: .copy-code}
 
