@@ -24,6 +24,8 @@ After completing the first guide, you will have a dashboard that looks like this
 
 ![image](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/lesson-1-pe.png)
 
+{% include templates/prerequisites-pe.md %}
+
 ## Adding entities and establishing relationships between them
 
 Before we add and configure the dashboard, we need to add some entities, specifically assets and devices. 
