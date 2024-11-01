@@ -1,3 +1,5 @@
+
+{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceName = "reComputer R1000" %}
 {% assign deviceVendorLink = "https://wiki.seeedstudio.com/recomputer_r/" %}
 {% assign controllerName = "Siemens LOGO!" %}
@@ -11,6 +13,7 @@
   %}
 {% assign thingsboardInstanceLink = "https://demo.thingsboard.io/" %}
 {% assign thingsboardOnPremiceLink = "https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/install/installation-options/" %}
+
 
 ## Introduction
 

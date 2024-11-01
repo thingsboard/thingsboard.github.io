@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: Getting Started with ThingsBoard CE and reComputer R1000
+title: How to connect reComputer R1000 to ThingsBoard?
 category: Other devices
 connectivity: Ethernet, WIFI, Bluetooth, 4G
 chip: R1000
