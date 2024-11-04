@@ -50,9 +50,9 @@ To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{th
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgePE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgePE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgeCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgeCE %}
 {% endif %}
 
 Proceed with the installation of the **Edge instance** on the **reComputer R1000**: 
@@ -60,70 +60,55 @@ Proceed with the installation of the **Edge instance** on the **reComputer R1000
 * To initiate an **SSH (Secure Shell)** connection to the **reComputer R1000**, open the terminal and execute the following command:
 
 ```bash
-ssh recomputer@<ip_address>
+ssh recomputer@ip_address
 ```
 {: .copy-code}
   
-**ip_address:** The IP address of the reComputer R1000.<br>
-**Password:** Terminal requests the password from the reComputer R1000.
+**ip_address:** The IP address of the reComputer R1000. Enter the actual IP address instead of _ip_address_.<br>
+**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: 12345678
 
-* Once a connection has been established, you can follow the installation instructions provided by the ThingsBoard Server or the installation guide below. 
-Create a new directory:
+* Once connected, you can follow the installation instructions below. Start by creating a new directory:
 
 ```bash
 mkdir tb_edge
 ```
 {: .copy-code}
 
+* Open this directory:
+
+```bash
+cd /home/recomputer/tb_edge
+```
+{: .copy-code}
+
 * Create a docker compose file for the **ThingsBoard Edge** service within this directory:
 
 ```bash
-nano docker-compose-edge.yml
+nano docker-compose.yml
 ```
 {: .copy-code}
 
-* Add the following lines to the yml file:
+To configure this file properly:
+  
+{% assign copyYmlCE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/1.2-instrucrions-button.webp,
+        title: Go to the **Edge management > Instances** section of your [ThingsBoard Demo account]({{thingsboardInstanceLink}}){: target="_blank"}, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
+    === 
+        image: /images/devices-library/edge/recomputer-r1000/1.3-docker.webp,
+        title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and copy the configuration lines.
+'
+%}
 
-```bash
-version: '3.8'
-services:
-  mytbedge:
-    restart: always
-    image: "thingsboard/tb-edge:3.8.0EDGE"
-    ports:
-      - "8080:8080"
-      - "1883:1883"
-      - "5683-5688:5683-5688/udp"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
-      CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
-      CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or demo.thingsboard.io
-    volumes:
-      - tb-edge-data:/data
-      - tb-edge-logs:/var/log/tb-edge
-  postgres:
-    restart: always
-    image: "postgres:15"
-    ports:
-      - "5432"
-    environment:
-      POSTGRES_DB: tb-edge
-      POSTGRES_PASSWORD: postgres
-    volumes:
-      - tb-edge-postgres-data:/var/lib/postgresql/data
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=copyYmlPE %}
+{% else %}  
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=copyYmlCE %}
+{% endif %}
 
-volumes:
-  tb-edge-data:
-    name: tb-edge-data
-  tb-edge-logs:
-    name: tb-edge-logs
-  tb-edge-postgres-data:
-    name: tb-edge-postgres-data
-```
-{: .copy-code}
+* Insert the copied lines into the **docker-compose.yml** file and press **CTRL+S** to save it. To close the file press **CTRL+X**.
 
-* Save the docker-compose.yml file and execute the following commands:
+* Execute the following commands:
 
 ```bash
 docker compose up -d
@@ -136,14 +121,21 @@ The command must be executed in the same directory in which the docker-compose.y
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
 
-* To set up a local port forwarding via SSH, open another terminal tab and execute the following command:
+* To set up a local port forwarding via SSH, open **another terminal tab** and execute the following command:
 
 ```bash
-ssh -N -L 8080:127.0.0.1:8080 recomputer@<ip_address>
+ssh -N -L 8080:127.0.0.1:8080 recomputer@ip_address
 ```
 {: .copy-code}
 
-Any connection to **localhost:8080** on your local machine will be forwarded to **127.0.0.1:8080** on the **reComputer R1000**.
+Any connection to **localhost:8080** on your local machine will be forwarded to **127.0.0.1:8080** on the **reComputer R1000**. 
+
+* To access the **Edge Instance**, please copy local host address into the address bar of your browser. Use your credentials to log in:
+
+```bash
+127.0.0.1:8080
+```
+{: .copy-code}
 
 #### Step 2. Provisioning the ThingsBoard IoT Gateway on Edge
 
@@ -160,15 +152,15 @@ To provision the **ThingsBoard Gateway**:
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardCE %}
 {% endif %}
 
 {% assign localhostCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/3-login-to-edge.webp,
-        title: Open the **10.7.1.9:8080** and log in to your **Edge instance**. Navigate to the **Dashboards** section and open the **“ThingsBoard IoT Gateways”** dashboard.
+        title: Open your **Edge instance** and navigate to the **Dashboards** section and open the **“ThingsBoard IoT Gateways”** dashboard.
     ===
         image: /images/devices-library/edge/recomputer-r1000/4-add-gw.webp,
         title: Click the **“+”** icon in the upper right corner to add a new gateway. Enter the gateway name in the **“Name”** field, and select the **“default”** device profile. Click the **“Create”** button.
@@ -176,9 +168,9 @@ To provision the **ThingsBoard Gateway**:
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=localhostPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=localhostPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=localhostCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=localhostCE %}
 {% endif %}
 
 #### Step 3. Configuring the ModBus Connector
@@ -199,12 +191,12 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
 {% endif %}
 
-* Then, please insert the following configuration code:
+* Then, please insert the following configuration code. Then, click the **“Save”** button.
 
 ```bash
 {
@@ -283,8 +275,6 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 ```
 {: .copy-code}
 
-* Click the **“Save”** button.
-
 #### Step 4. Installing the ThingsBoard IoT Gateway on the reComputer R1000
 
 Start installation of the **IoT Gateway** on the **reComputer R1000**: 
@@ -300,16 +290,32 @@ Start installation of the **IoT Gateway** on the **reComputer R1000**:
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
 {% endif %}
 
+* Then, open another tab in the terminal and initiate the **SSH** connection to the **reComputer R1000**:
 
-* Then, open the terminal. You still should be connected to the **reComputer R1000** via **SSH**. Change the directory in the terminal and/or create the new one:
+```bash
+ssh recomputer@ip_address
+```
+{: .copy-code}
+
+**ip_address:** The IP address of the reComputer R1000. Enter the actual IP address instead of _ip_address_.<br>
+**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: 12345678
+
+* Create the directory for the Gateway service:
 
 ```bash
 mkdir gateway_service
+```
+{: .copy-code}
+
+* Open this directory:
+
+```bash
+cd /home/recomputer/gateway_service
 ```
 {: .copy-code}
 
@@ -324,7 +330,9 @@ nano docker-compose.yml
 
 ![image](/images/devices-library/edge/recomputer-r1000/10-copy-paste-configs.webp)
 
-Save the **docker-compose.yml** file and start the **Gateway** by executing the following command in the terminal:
+* Save the **docker-compose.yml** file and press **CTRL+S** to save it. To close the file press **CTRL+X**. 
+
+* Start the **Gateway** by executing the following command in the terminal:
 
 ```bash
 docker compose up -d
@@ -339,7 +347,7 @@ The command must be executed in the same directory in which the docker-compose.y
 
 ## Visualize Incoming Data with the Dashboard
 
-![image](/images/devices-library/edge/recomputer-r1000/logo-and-recomputer-r1000.webp){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1000** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
+![image](/images/devices-library/edge/recomputer-r1000/logo-and-recomputer-r1000.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1000** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
 
 {% assign dashboardCE = '
     ===
