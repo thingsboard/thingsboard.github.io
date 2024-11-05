@@ -134,12 +134,7 @@ ssh -N -L 8080:127.0.0.1:8080 recomputer@ip_address
 
 Any connection to **localhost:8080** on your local machine will be forwarded to **127.0.0.1:8080** on the **reComputer R1000**. 
 
-* To access the **Edge Instance**, please copy the local host address into the address bar of your browser. Use your credentials to log in.
-
-```bash
-127.0.0.1:8080
-```
-{: .copy-code}
+* The **ThingsBoard Edge** instance is available at [**http://127.0.0.1:8080**](http://127.0.0.1:8080){: target="_blank"}. Use your credentials to log in.
 
 #### Step 2. Provisioning the ThingsBoard IoT Gateway on Edge
 
