@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: OAuth 2.0 Support
-description: OAuth 2.0 Support
+title: OAuth 2.0
+description: OAuth 2.0
 
 adding-domain-1:
     0:
