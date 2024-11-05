@@ -36,7 +36,7 @@ To continue with this guide, we will require the following:
 
 For illustrative purposes, this guide will use the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"}.
 
-As an alternative, you may wish to consider installing the **ThingsBoard** server [on-premise](https://thingsboard.io/docs/{{pedocsPrefix}}user-guide/install/installation-options/){: target="_blank"}. 
+As an alternative, you may wish to consider installing the **ThingsBoard** server [on-premise](https://thingsboard.io/docs/{{peDocsPrefix}}user-guide/install/installation-options/){: target="_blank"}. 
 
 #### Step 1. Starting the ThingsBoard Edge on the reComputer R1000
 
