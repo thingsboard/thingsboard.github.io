@@ -11,8 +11,14 @@
 - Modbus Controller (in our case, <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>) 
 - <a href="' | append: dockerLink | append: '" target="_blank">' | append: dockerName | append: '</a> installed '
   %}
-{% assign thingsboardInstanceLink = "https://demo.thingsboard.io/" %}
-{% assign thingsboardOnPremiceLink = "https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/install/installation-options/" %}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% assign targetUrl = "https://thingsboard.cloud/signup" %}
+{% else %}
+{% assign targetUrl = "https://demo.thingsboard.io/" %}
+{% endif %}
+
+{% assign thingsboardInstanceLink = "targetUrl" %}
 
 
 ## Introduction
@@ -24,17 +30,17 @@ The [reComputer R1000]({{deviceVendorLink}}){: target="_blank"} edge IoT control
 
 To continue with this guide, we will require the following:  
 {{ prerequisites }}
-- [ThingsBoard Demo account]({{thingsboardInstanceLink}}){: target="_blank"}
+- [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"}
  
 ## Integration with ThingsBoard
 
-For illustrative purposes, this guide will use the [ThingsBoard Demo account]({{thingsboardInstanceLink}}){: target="_blank"}.
+For illustrative purposes, this guide will use the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"}.
 
 As an alternative, you may wish to consider installing the **ThingsBoard** server [on-premise](https://thingsboard.io/docs/{{pedocsPrefix}}user-guide/install/installation-options/){: target="_blank"}. 
 
 #### Step 1. Starting the ThingsBoard Edge on the reComputer R1000
 
-To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{thingsboardInstanceLink}}){: target="_blank"} and navigate to the **Edge Management > Instances** section:
+To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"} and navigate to the **Edge Management > Instances** section:
 
 {% assign startEdgeCE = '
     ===
@@ -49,7 +55,7 @@ To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{th
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgeCE %}
@@ -100,7 +106,7 @@ To configure this file properly:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=copyYmlPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=copyYmlCE %}
@@ -151,7 +157,7 @@ To provision the **ThingsBoard Gateway**:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardCE %}
@@ -167,7 +173,7 @@ To provision the **ThingsBoard Gateway**:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=localhostPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=localhostCE %}
@@ -190,7 +196,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
@@ -289,7 +295,7 @@ Start installation of the **IoT Gateway** on the **reComputer R1000**:
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
@@ -368,7 +374,7 @@ The command must be executed in the same directory in which the docker-compose.y
 '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
