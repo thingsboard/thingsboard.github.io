@@ -36,8 +36,6 @@ To continue with this guide, we will require the following:
 
 For illustrative purposes, this guide will use the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"}.
 
-As an alternative, you may wish to consider installing the **ThingsBoard** server [on-premise](https://thingsboard.io/docs/{{peDocsPrefix}}user-guide/install/installation-options/){: target="_blank"}. 
-
 #### Step 1. Starting the ThingsBoard Edge on the reComputer R1000
 
 To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"} and navigate to the **Edge Management > Instances** section:
@@ -71,7 +69,7 @@ ssh recomputer@ip_address
 {: .copy-code}
   
 **ip_address:** The IP address of the reComputer R1000. Enter the actual IP address instead of _ip_address_.<br>
-**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: 12345678
+**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: **12345678**
 
 * Once connected, you can follow the installation instructions below. Start by creating a new directory:
 
@@ -136,7 +134,7 @@ ssh -N -L 8080:127.0.0.1:8080 recomputer@ip_address
 
 Any connection to **localhost:8080** on your local machine will be forwarded to **127.0.0.1:8080** on the **reComputer R1000**. 
 
-* To access the **Edge Instance**, please copy local host address into the address bar of your browser. Use your credentials to log in:
+* To access the **Edge Instance**, please copy the local host address into the address bar of your browser. Use your credentials to log in.
 
 ```bash
 127.0.0.1:8080
