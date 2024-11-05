@@ -61,6 +61,9 @@
       },
       "Integration guide": {
         "href": "/docs/samples/raspberry/grove/"
+      },
+      "Connect reComputer R1000 to ThingsBoard": {
+        "href": "/docs/devices-library/recomputer-r1000/"
       }
     },
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
