@@ -13,7 +13,7 @@
   %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% assign targetUrl = "https://thingsboard.cloud/signup" %}
+{% assign targetUrl = "https://thingsboard.cloud/installations/" %}
 {% else %}
 {% assign targetUrl = "https://demo.thingsboard.io/" %}
 {% endif %}
