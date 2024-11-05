@@ -42,13 +42,13 @@ To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{ta
 
 {% assign startEdgeCE = '
     ===
-        image: /images/edge/installation-add-edge-item-1.png,
+        image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-1.webp,
         title: Click the **“+”** icon in the top right corner and select the **“Add new edge”** option.
     ===
-        image: /images/edge/installation-add-edge-item-2.png,
+        image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-2.webp,
         title: Enter a name for your Edge in the **"Name"** field, e.g., R1000 Demo Edge, and click the **"Add"** button to confirm the addition of your new Edge.
     ===
-        image: /images/edge/installation-add-edge-item-3.png,
+        image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-3.webp,
         title: Your new **Edge instance** is displayed at the top of the list, as entries are sorted by creation time by default.
 '
 %}
