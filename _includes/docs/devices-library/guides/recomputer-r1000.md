@@ -99,7 +99,7 @@ To configure this file properly:
 {% assign copyYmlCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/1.2-instrucrions-button.webp,
-        title: Go to the **Edge management > Instances** section of your [ThingsBoard Demo account]({{thingsboardInstanceLink}}){: target="_blank"}, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
+        title: Go to the **Edge management > Instances** section of your [ThingsBoard Demo account](https://demo.thingsboard.io/){: target="_blank"}, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
     === 
         image: /images/devices-library/edge/recomputer-r1000/1.3-docker.webp,
         title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and copy the configuration lines.
@@ -150,7 +150,7 @@ To provision the **ThingsBoard Gateway**:
 {% assign iotGWdashboardCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/1-instances-section.webp,
-        title: Log in to the [ThingsBoard Demo account]({{thingsboardInstanceLink}}){: target="_blank"} and navigate to the **Edge Management > Instances** section, then click the **“Manage dashboards”** button.
+        title: Log in to the [ThingsBoard Demo account](https://demo.thingsboard.io/){: target="_blank"} and navigate to the **Edge Management > Instances** section, then click the **“Manage dashboards”** button.
     ===
         image: /images/devices-library/edge/recomputer-r1000/2-assign-dashboard.webp,
         title: On the **“Edge Dashboards”** page, click the **“+”** icon to assign the **“ThingsBoard IoT Gateways”** dashboard to the Edge instance. Click the **“Assign”** button. The **"ThingsBoard IoT Gateways"** dashboard is one of the pre-created, out-of-the-box dashboards available.
