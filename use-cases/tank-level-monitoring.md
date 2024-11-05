@@ -33,6 +33,10 @@ The Fuel Level Monitoring interactive dashboard contains 2 states that are speci
 
 {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'tank-level-monitoring' %}
 
+<div class="center" style="margin-bottom: 64px;">
+    <a id="UseCases_FuelLevelMonitoring_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+</div>
+
 The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 
 ## Benefits of the Tank Level Monitoring template
