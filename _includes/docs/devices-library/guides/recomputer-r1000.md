@@ -2,24 +2,6 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceName = "reComputer R1000" %}
 {% assign deviceVendorLink = "https://wiki.seeedstudio.com/recomputer_r/" %}
-{% assign controllerName = "Siemens LOGO!" %}
-{% assign controllerVendorLink = "https://www.siemens.com/ua/uk/produkty/avtomatyzatsiya-promyslovosti/systemy-avtomatyzatsiyi/systemy-promyslovoyi-avtomatyzatsiyi-simatic/plc-kontrolery-simatic/lohichnyy-modul-logo.html" %}
-{% assign dockerName = "Docker" %}
-{% assign dockerLink = "https://docs.docker.com/engine/install/" %}
-{% assign prerequisites = '
-- <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- Modbus Controller (in our case, <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>) 
-- <a href="' | append: dockerLink | append: '" target="_blank">' | append: dockerName | append: '</a> installed '
-  %}
-
-{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% assign targetUrl = "https://thingsboard/installations/" %}
-{% else %}
-{% assign targetUrl = "https://demo.thingsboard.io/" %}
-{% endif %}
-
-{% assign thingsboardLink = "targetUrl" %}
-
 
 ## Introduction
 
@@ -28,22 +10,35 @@ The [reComputer R1000]({{deviceVendorLink}}){: target="_blank"} edge IoT control
 
 ## Prerequisites
 
-To continue with this guide, we will require the following:  
-{{ prerequisites }}
-- [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"}
- 
-## Integration with ThingsBoard
+{% capture prerequisites %}
+Community Edition %,%communityEdition%,%templates/device-library/ready-to-go-devices/reComputerR1000-ce.md%br%
+Professional Edition<br><small>(North America)</small>%,%professionalEditionAmerica%,%templates/device-library/ready-to-go-devices/reComputerR1000-pe-america.md%br%
+Professional Edition<br><small>(Europe)</small>%,%professionalEditionEurope%,%templates/device-library/ready-to-go-devices/reComputerR1000-pe-europe.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="prerequisites" toggle-spec=prerequisites %}
 
-For illustrative purposes, this guide will use the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"}.
+## Integration with ThingsBoard
 
 #### Step 1. Starting the ThingsBoard Edge on the reComputer R1000
 
-To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{targetUrl}}){: target="_blank"} and navigate to the **Edge Management > Instances** section:
+Create a new **Edge instance**:
+
+{% assign startEdgePE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/0.1-cloud-instances-section-pe.webp,
+        title: Log in to the **ThingsBoard Cloud** account and navigate to the **Edge Management > Instances** section. Click the **“+”** icon in the top right corner and select the **“Add new edge”** option.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/0.2-add-new-edge-pe.webp,
+        title: Enter a name for your Edge in the **"Name"** field, e.g., R1000 Demo Edge, and click the **"Add"** button to confirm the addition of your new Edge.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/0.3-done-pe.webp,
+        title: Your new **Edge instance** is displayed at the top of the list, as entries are sorted by creation time by default.
+'
+%}
 
 {% assign startEdgeCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-1.webp,
-        title: Click the **“+”** icon in the top right corner and select the **“Add new edge”** option.
+        title: Log in to the **ThingsBoard Demo** account and navigate to the **Edge Management > Instances** section. Click the **“+”** icon in the top right corner and select the **“Add new edge”** option.
     ===
         image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-2.webp,
         title: Enter a name for your Edge in the **"Name"** field, e.g., R1000 Demo Edge, and click the **"Add"** button to confirm the addition of your new Edge.
@@ -54,9 +49,9 @@ To create a new **Edge instance**, log in to the [ThingsBoard Demo account]({{ta
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-    {% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgePE %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgePE %}
 {% else %}  
-    {% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgeCE %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=startEdgeCE %}
 {% endif %}
 
 Proceed with the installation of the **Edge instance** on the **reComputer R1000**: 
@@ -64,12 +59,12 @@ Proceed with the installation of the **Edge instance** on the **reComputer R1000
 * To initiate an **SSH (Secure Shell)** connection to the **reComputer R1000**, open the terminal and execute the following command:
 
 ```bash
-ssh recomputer@ip_address
+ssh recomputer@ip_address #Enter the actual IP address
 ```
 {: .copy-code}
   
 **ip_address:** The IP address of the reComputer R1000. Enter the actual IP address instead of _ip_address_.<br>
-**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: **12345678**
+**Password:** Terminal requests the password. _The default password for the reComputer R1000 is: 12345678_
 
 * Once connected, you can follow the installation instructions below. Start by creating a new directory:
 
@@ -93,11 +88,21 @@ nano docker-compose.yml
 {: .copy-code}
 
 To configure this file properly:
-  
+
+{% assign copyYmlPE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/0.4-instrucrions-button-pe.webp,
+        title: Go to the **Edge management > Instances** section of your ThingsBoard Demo account, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/0.5-docker-pe.webp,
+        title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and copy the configuration lines.
+'
+%}
+
 {% assign copyYmlCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/1.2-instrucrions-button.webp,
-        title: Go to the **Edge management > Instances** section of your [ThingsBoard Demo account](https://demo.thingsboard.io/){: target="_blank"}, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
+        title: Go to the **Edge management > Instances** section of your ThingsBoard Demo account, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
     === 
         image: /images/devices-library/edge/recomputer-r1000/1.3-docker.webp,
         title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and copy the configuration lines.
@@ -128,7 +133,7 @@ The command must be executed in the same directory in which the docker-compose.y
 * To set up a local port forwarding via SSH, open **another terminal tab** and execute the following command:
 
 ```bash
-ssh -N -L 8080:127.0.0.1:8080 recomputer@ip_address
+ssh -N -L 8080:127.0.0.1:8080 recomputer@ip_address #Enter the actual IP address
 ```
 {: .copy-code}
 
@@ -140,10 +145,32 @@ Any connection to **localhost:8080** on your local machine will be forwarded to 
 
 To provision the **ThingsBoard Gateway**:
 
+{% assign iotGWdashboardPE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/1.1-create-group-pe.webp,
+        title: Log in to the **ThingsBoard Cloud** account, navigate to the **Dashboards** section and select the **"Group"** tab. Click the **"+"** icon to add a new group. In the **"Add entity group"** pop-up window, enter the group name in the **"Name"** field and click the **"Add"** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/1.2-click-details-dashboard-pe.webp,
+        title: Then, select the **"All"** tab and find the **"ThingsBoard IoT Gateways"** dashboard. The **"ThingsBoard IoT Gateways"** dashboard is one of the pre-created, out-of-the-box dashboards available. Click the **"Dashboard details"** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/1.3-manage-owners-pe.webp,
+        title: On the **"Dashboard details"** page click the **"Manage owner and groups"** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/1.4-select-group-pe.webp,
+        title: In the **"Manage owner and groups"** pop-up window, select the newly created group from the **"Groups"** drop-down menu. Click the **"Update"** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/1-instances-section-pe.webp,
+        title: Navigate to the **Edge Management > Instances** section, then click the **“Manage edge dashboard groups”** button. 
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/2-assign-dashboard-pe.webp,
+        title: On the **“Dashboard groups”** page, click the **“+”** icon to assign the newly created group to the Edge instance. Click the **“Assign”** button. The group and all dashboard within it will be assigned to the Edge instance.
+'
+%}
+
 {% assign iotGWdashboardCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/1-instances-section.webp,
-        title: Log in to the [ThingsBoard Demo account](https://demo.thingsboard.io/){: target="_blank"} and navigate to the **Edge Management > Instances** section, then click the **“Manage dashboards”** button.
+        title: Log in to the ThingsBoard Demo account and navigate to the **Edge Management > Instances** section, then click the **“Manage dashboards”** button.
     ===
         image: /images/devices-library/edge/recomputer-r1000/2-assign-dashboard.webp,
         title: On the **“Edge Dashboards”** page, click the **“+”** icon to assign the **“ThingsBoard IoT Gateways”** dashboard to the Edge instance. Click the **“Assign”** button. The **"ThingsBoard IoT Gateways"** dashboard is one of the pre-created, out-of-the-box dashboards available.
@@ -156,10 +183,20 @@ To provision the **ThingsBoard Gateway**:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=iotGWdashboardCE %}
 {% endif %}
 
+{% assign localhostPE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/3-login-to-edge-pe.webp,
+        title: Open your **Edge instance**, navigate to the **Dashboards** section and open the **“ThingsBoard IoT Gateways”** dashboard.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/4-add-gw-pe.webp,
+        title: Click the **“+”** icon in the upper right corner to add a new gateway. Enter the gateway name in the **“Name”** field, and select the **“default”** device profile. Click the **“Create”** button.
+'
+%}
+
 {% assign localhostCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/3-login-to-edge.webp,
-        title: Open your **Edge instance** and navigate to the **Dashboards** section and open the **“ThingsBoard IoT Gateways”** dashboard.
+        title: Open your **Edge instance**, navigate to the **Dashboards** section and open the **“ThingsBoard IoT Gateways”** dashboard.
     ===
         image: /images/devices-library/edge/recomputer-r1000/4-add-gw.webp,
         title: Click the **“+”** icon in the upper right corner to add a new gateway. Enter the gateway name in the **“Name”** field, and select the **“default”** device profile. Click the **“Create”** button.
@@ -175,6 +212,19 @@ To provision the **ThingsBoard Gateway**:
 #### Step 3. Configuring the ModBus Connector
 
 The new **IoT Gateway device** will be featured at the top of the **“ThingsBoard IoT Gateways”** dashboard list, allowing us to add a **ModBus Connector**. For example, we can use the ModBus Connector to fetch temperature data from the to fetch temperature data from the [Siemens LOGO!]({{controllerVendorLink}}){: target="_blank"} device:
+
+{% assign modbusConnectorPE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/5-connectors-button-pe.webp,
+        title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/6-add-connector-pe.webp,
+        title: To add a **Connector**, click the **“+”** button. In the pop-up window, select the **MODBUS** option in the **“Type”** field and enter the  name of the connector in the **“Name”** field. Click the **“Add”** button to proceed.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/7-advanced-config-pe.webp,
+        title: To make further adjustments, click on the newly added **Connector** and select the **“Advanced”** tab and the **“Configuration”** sub-tab on the right side of the **"MODBUS Configuration"** screen.
+'
+%}
 
 {% assign modbusConnectorCE = '
     ===
@@ -278,6 +328,16 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 Start installation of the **IoT Gateway** on the **reComputer R1000**: 
 
+{% assign downloadYMLPE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/8-back-to-iot-dasboard-pe.webp,
+        title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1000).
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/9-download-yml-pe.webp,
+        title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
+'
+%}
+
 {% assign downloadYMLCE = '
     ===
         image: /images/devices-library/edge/recomputer-r1000/8-back-to-iot-dasboard.webp,
@@ -297,12 +357,12 @@ Start installation of the **IoT Gateway** on the **reComputer R1000**:
 * Then, open another tab in the terminal and initiate the **SSH** connection to the **reComputer R1000**:
 
 ```bash
-ssh recomputer@ip_address
+ssh recomputer@ip_address #Enter the actual IP address
 ```
 {: .copy-code}
 
 **ip_address:** The IP address of the reComputer R1000. Enter the actual IP address instead of _ip_address_.<br>
-**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: 12345678
+**Password:** Terminal requests the password. _The default password for the reComputer R1000 is: 12345678_
 
 * Create the directory for the Gateway service:
 
@@ -344,9 +404,28 @@ The command must be executed in the same directory in which the docker-compose.y
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
 
-## Visualize Incoming Data with the Dashboard
+## Visualize Incoming Data on the Dashboard
 
 ![image](/images/devices-library/edge/recomputer-r1000/logo-and-recomputer-r1000.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1000** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
+
+{% assign dashboardPE = '
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/11-create-new-dashboard-pe.webp,
+        title: Go to the **Dashboards** section, click the **“+”** icon and select **"Create new dashboard"** option.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/12-enter-name-pe.webp,
+        title: In the pop-up window, enter the dashboard **title**. Other fields are optional. Click the **"Add"** button to proceed.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/13-configure-dashboard-pe.webp,
+        title: Once you have created the dashboard, it will be automatically opened. Click the **"Add widget"** button and select the widget you require. For example, open the **“Charts”** widget bundle and elect the **Line chart**.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/14-widget-configuration-pe.webp,
+        title: In the **"Add Widget"** pop-up window, select the **Device** (in our case, Siemens LOGO!) as the **Datasource**. Please verify that the **Series Key** is the same as the one entered in the **Advanced Configuration** settings of the connector. As an example, we have utilized the designation **"temp"**. Consequently, the series key must be **"temp"** as well. Click the **“Add”** button.
+    ===
+        image: /images/devices-library/edge/recomputer-r1000/15-dashboard-pe.webp,
+        title: You will now be able to see the real-time data on the dashboard.
+'
+%}
 
 {% assign dashboardCE = '
     ===
