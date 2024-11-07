@@ -19,13 +19,13 @@ This following instruction explain real-time, bidirectional communication betwee
 #### Prerequisites 
 
 To configure ThingsBoard Edge for seamless communication with ThingsBoard Cloud, you require:
-* **[MQTT Broker:](/docs/{{peDocsPrefix}}reference/mqtt-api/)** In this guide, we use the HTTP protocol. The HTTP or CoAP protocols are the alternatives.
+* **[MQTT Broker:](/docs/{{peDocsPrefix}}reference/mqtt-api/)** In this guide, we use the MQTT protocol. The HTTP or CoAP protocols are the alternatives.
 * **ThingsBoard Cloud(Server) and Edge:** Installed and running.
 * **Device:** A device that can connect to ThingsBoard Edge via MQTT, HTTP, or CoAP using an access token.
 
 #### Step 1. Subscribe to the 'v1/devices/me/attributes' Topic from the Device.
 
-Register the device on the Edge. 
+Log in to your Edge Instance and navigate to **Entities > Devices** section to create a device. Please refer to [Creating Device on Edge Instance](http://localhost:4000/docs/edge/config/create-device/#creating-device-on-edge-instance){: target="_blank"} article.
 
 To subscribe to shared device attribute changes, send SUBSCRIBE message:
 ```bash
@@ -36,6 +36,8 @@ mosquitto_sub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$
 * **v1/devices/me/attributes:** This is a topic on ThingsBoard Edge. It allows the device to listen for any updates related to its attributes from the cloud.
 * Replace the **$THINGSBOARD_HOST_NAME** with the actual value, e.g. "Localhost" references your local installation. 
 * Replace the **$ACCESS_TOKEN** with the actual access token of the device. 
+make the following as the pic gallery:
+ To find the device access token, go to the **Entities > Devices** section and click on the device. On the "Device details" page, you can copy the token by clicking the "Copy access token" button. 
 
 #### Step 2. Publish any Time-Series or Attribute Message from the Device.
 
