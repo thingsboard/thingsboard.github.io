@@ -14,35 +14,44 @@ Attributes are categorized into three types:
 
 For more detailed information and examples, please refer to the ThingsBoard documentation on [Working with IoT Device Attributes](/docs/{{peDocsPrefix}}user-guide/attributes/){: target="_blank"}.
 
-## Subscribe to Attribute Updates on Edge from the Cloud Server
-
 This following instruction explain real-time, bidirectional communication between your device and the ThingsBoard Cloud via ThingsBoard Edge. 
 
 #### Prerequisites 
 
 To configure ThingsBoard Edge for seamless communication with ThingsBoard Cloud, you require:
-* MQTT Broker: In this guide we are using HTTP protocol. HTTP or CoAP are the alternatives.
-* ThingsBoard Edge: Installed and running.
-* Registered Devices with access tokens
+* **[MQTT Broker:](/docs/{{peDocsPrefix}}reference/mqtt-api/)** In this guide, we use the HTTP protocol. The HTTP or CoAP protocols are the alternatives.
+* **ThingsBoard Cloud(Server) and Edge:** Installed and running.
+* **Device:** A device that can connect to ThingsBoard Edge via MQTT, HTTP, or CoAP using an access token.
 
-#### Step 
-Implementation based on netty MQTT framework with following most of the MQTT protocol design documents, but TB edge and server brokers are not providing regular publish/subscribe models.
+#### Step 1. Subscribe to the 'v1/devices/me/attributes' Topic from the Device.
 
-you can subscribe to the following topic: "v1/devices/me/attributes".
+Register the device on the Edge. 
 
-Here is the steps that you should do in your test case:
+To subscribe to shared device attribute changes, send SUBSCRIBE message:
+```bash
+mosquitto_sub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN"
+```
+{: .copy-code}
 
-Subscribe to topic 'v1/devices/me/attributes' from the device.
+* **v1/devices/me/attributes:** This is a topic on ThingsBoard Edge. It allows the device to listen for any updates related to its attributes from the cloud.
+* Replace the **$THINGSBOARD_HOST_NAME** with the actual value, e.g. "Localhost" references your local installation. 
+* Replace the **$ACCESS_TOKEN** with the actual access token of the device. 
 
-#### Step
+#### Step 2. Publish any Time-Series or Attribute Message from the Device.
 
-Publish any timeseries or attribute message from the device.
+The device sends data (time-series data like temperature readings or attribute data like device status) to ThingsBoard Edge. Sending data from the device to the edge enables ThingsBoard Edge to process and filter data before it’s sent to the cloud, reducing unnecessary traffic and saving bandwidth. Only relevant data is forwarded, which is especially valuable for devices with limited connectivity.
+mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
 
-#### Step
-Send this message to the cloud. Here is a sample how to configure edge root rule chain to publish message to the cloud: https://thingsboard.io/docs/edge/use-cases/data-filtering-traffic-reduce/#configure-edge-rule-engine-to-push-filtered-data-to-the-cloud
 
-#### Step
+#### Step 3. Send this message to the cloud (configure edge root rule chain).
+
+Configure a rule on ThingsBoard Edge to automatically forward the device’s messages (data or attributes) to the ThingsBoard cloud.
+
+Here is a sample how to [configure edge root rule chain to publish message to the cloud](/docs/edge/use-cases/data-filtering-traffic-reduce/#configure-edge-rule-engine-to-push-filtered-data-to-the-cloud)
+
+Configuring this rule chain ensures that only filtered and relevant data is sent to the cloud, allowing ThingsBoard Edge to act as a smart gateway. It manages traffic and reduces unnecessary data uploads, which can be cost-effective and efficient.
+
+#### Step 4. Modify the Root Rule Chain
 On the cloud modify root rule chain to send back some attributes update message to the edge. You should use 'push to edge' node for this
 
-#### Step 
 Once the attribute update message will arrive to the edge you should see this message on the device.
