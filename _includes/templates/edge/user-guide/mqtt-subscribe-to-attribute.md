@@ -1,8 +1,6 @@
 **MQTT** is a lightweight protocol commonly used for IoT communication. 
 
 To facilitate communication with **ThingsBoard Edge** using **MQTT**, we recommend installing the [MQTT Broker](/docs/{{peDocsPrefix}}reference/mqtt-api/?connectdevice=mqtt-linux#mqtt-connect). This allows the device to **publish** telemetry or attribute messages and **subscribe** to topics for attribute updates.
-* TOC
-{:toc}
 
 #### Subscribe to the Changes in Shared Device Attributes
 
