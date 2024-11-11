@@ -1,6 +1,6 @@
 **MQTT** is a lightweight protocol commonly used for IoT communication. 
 
-To facilitate communication with **ThingsBoard Edge** using **MQTT**, we recommend installing the [MQTT Broker](/docs/{{peDocsPrefix}}reference/mqtt-api/?connectdevice=mqtt-linux#mqtt-connect). This allows the device to **publish** telemetry or attribute messages and **subscribe** to topics for attribute updates.
+To facilitate communication with **ThingsBoard Edge** using **MQTT**, we recommend installing the [MQTT Broker](/docs/{{peDocsPrefix}}reference/mqtt-api/?connectdevice=mqtt-linux#mqtt-connect){: target="_blank"}. This allows the device to **publish** telemetry or attribute messages and **subscribe** to topics for attribute updates.
 
 #### Subscribe to the Changes in Shared Device Attributes
 
@@ -52,7 +52,7 @@ mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$
 * **$ACCESS_TOKEN:** The actual access token of the device.
 * **{"attribute1": "value1", "attribute2": true}** The telemetry data.
 
-You can also publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file:
+You can also publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json){: target="_blank"} file:
 
 ```bash
 mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -f "new-attributes-values.json"
