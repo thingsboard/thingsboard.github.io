@@ -53,7 +53,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 * **$THINGSBOARD_HOST_NAME:** The actual hostname or IP address of your ThingsBoard Edge instance
 * **$ACCESS_TOKEN:** The actual access token of the device.
 
-Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file:
+Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json){: target="_blank"} file:
 
 ```bash
 cat new-attributes-values.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes

@@ -60,7 +60,7 @@ Publish client-side attributes update
 curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" https:/$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 
-You can also publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file:
+You can also publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json){: target="_blank"} file:
 
 ```bash
 curl -v -X POST -d @new-attributes-values.json https://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
