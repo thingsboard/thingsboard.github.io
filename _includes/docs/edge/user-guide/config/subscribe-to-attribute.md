@@ -16,9 +16,21 @@ For more detailed information and examples, please refer to the ThingsBoard docu
 
 The following guide explains real-time, bidirectional communication between your device and the **ThingsBoard Cloud** via **ThingsBoard Edge**. 
 
-## Subscribe to Device Attributes Change And Publish Device Attributes Message
+## Step 1. Configure a Rule Chain for the Edge
 
-The procedure for subscribing to the **Device Attributes Change** and subsequently publishing the **Device Attributes Message** is dependent on the protocol in use. There are  the most commonly used protocols for basic telemetry and attribute updates in IoT applications:
+To automatically route messages (data or attributes) from the device to the **ThingsBoard Cloud**, configure the rule chain for the **ThingsBoard Edge**:
+
+{% include images-gallery.html imageCollection="routeMessagesToCloud" showListImageTitles="true" %}
+
+## Step 3. Configure a Rule Chain for the Cloud
+
+To send back some attributes update message to the Edge, modify root rule chain on the cloud. Once the attribute update message will arrive to the edge you should see this message on the device.
+
+{% include images-gallery.html imageCollection="backToEdge" showListImageTitles="true" %}
+
+## Step 3. Subscribe to Device Attributes Change And Publish Device Attributes Message
+
+The procedure for subscribing to the **Device Attribute Changes** and subsequently publishing the **Device Attributes Message** depends on the protocol used. There are  the most commonly used protocols for basic telemetry and attribute updates in IoT applications:
 
 {% capture  deviceConnectivityAPI %}
 MQTT%,%MQTT%,%/templates/edge/user-guide/mqtt-subscribe-to-attribute.md%br%
@@ -26,15 +38,6 @@ HTTP%,%HTTP%,%/templates/edge/user-guide/http-subscribe-to-attribute.md%br%
 CoAP%,%CoAP%,%/templates/edge/user-guide/coap-subscribe-to-attribute.md%br%{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="deviceConnectivityAPI" toggle-spec=deviceConnectivityAPI %}
 
-## Send the Device Attributes Message to the Cloud
+## Step 4. Check the Results
 
-To automatically route messages (data or attributes) from the device to the **ThingsBoard Cloud**, configure a rule chain for the **ThingsBoard Edge**:
-
-{% include images-gallery.html imageCollection="routeMessagesToCloud" showListImageTitles="true" %}
-
-[Here is a sample how to configure edge root rule chain to publish message to the cloud](/docs/edge/use-cases/data-filtering-traffic-reduce/#configure-edge-rule-engine-to-push-filtered-data-to-the-cloud)
-
-## Send the Device Attributes Message Back to the Edge
-On the cloud modify root rule chain to send back some attributes update message to the edge. You should use 'push to edge' node for this
-back to cloud - shared
-Once the attribute update message will arrive to the edge you should see this message on the device.
+{% include images-gallery.html imageCollection="checkResult" showListImageTitles="true" %}

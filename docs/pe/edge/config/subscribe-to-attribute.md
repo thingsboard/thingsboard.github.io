@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-edge
+layout: docwithnav-pe-edge
 title: Subscribe to Attribute Updates on Edge from the Cloud
 description: Subscribe to Attribute Updates on Edge from the Cloud Server
 
@@ -37,5 +37,7 @@ checkResult:
         title: 'Go to the <b>Entities > Devices</b> section of your <b>Edge</b> instance, and click on the device. On the <b>“Device details”</b> page, select the <b>"Attributes"</b> tab and <b>"Shared attributes"</b> option in the <b>"Client attributes"</b> drop-down menu. You should see received attributes.'
 
 ---
-{% assign docsPrefix = "edge/" %}
+
+{% assign peDocsPrefix = "pe/" %}
+{% assign docsPrefix = "pe/edge/" %}
 {% include docs/edge/user-guide/config/subscribe-to-attribute.md %}
