@@ -31,7 +31,7 @@ This setting is available in the Device Profile wizard and in the Device Profile
 
 ### Queue Name
 
-By default, the [Main](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
+By default, the [Main](/docs/pe/user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
 The transport layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
 However, for multiple use cases, you might want to use different queues for different devices. 
 For example, you might want to isolate data processing for Fire Alarm/Smoke Detector sensors and other devices.

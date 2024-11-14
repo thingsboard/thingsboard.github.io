@@ -61,7 +61,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="/images/usecases/smart-farming/video/smart-farming.png" alt="Smart farming dashboard">
+                            <img src="/images/smart-farming.png" alt="Smart farming dashboard">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
