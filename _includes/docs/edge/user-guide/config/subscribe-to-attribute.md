@@ -44,6 +44,15 @@ HTTP%,%HTTP%,%/templates/edge/user-guide/http-subscribe-to-attribute.md%br%
 CoAP%,%CoAP%,%/templates/edge/user-guide/coap-subscribe-to-attribute.md%br%{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="deviceConnectivityAPI" toggle-spec=deviceConnectivityAPI %}
 
-## Step 4. Check the Results
+## Step 4. Confirm the Results
 
-{% include images-gallery.html imageCollection="checkResult" showListImageTitles="true" %}
+You can confirm received and pushed attributes:
+{% include images-gallery.html imageCollection="checkResultOnDevice" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="checkResultOnEdge" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="checkResultOnCloud" showListImageTitles="true" %}
+
+{% capture local-deployment %}
+The system ignores messages if they have come from the Edge and are pushed back to the Edge again. Therefore, there are no incoming messages on the Edge.
+{% endcapture %}
+{% include templates/info-banner.md content=local-deployment %}
+
