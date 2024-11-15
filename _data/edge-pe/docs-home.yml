@@ -7,6 +7,8 @@ toc:
   path: /docs/pe/edge/getting-started-guides/what-is-edge/
 - title: Key concepts
   section:
+    - title: Comparing Edge and Cloud
+      path: /docs/pe/edge/comparison/
     - title: Alarms
       path: /docs/pe/edge/user-guide/alarms/
     - title: OTA updates
@@ -19,12 +21,8 @@ toc:
   section:
 #    - title: Edges
 #      path: /docs/pe/user-guide/ui/edges/
-#    - title: Edge Management Overview
-#      path: /docs/pe/edge/config/management/
     - title: Device Creation and Cloud Provisioning
       path: /docs/pe/edge/config/create-device/
-#    - title: Provision Device from cloud to edge
-#      path: /docs/pe/edge/config/provision-device/
 #    - title: Provision Asset from cloud to edge
 #      path: /docs/pe/edge/config/provision-asset/
 #    - title: Provision Entity View from cloud to edge
@@ -35,6 +33,8 @@ toc:
 #      path: /docs/pe/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/pe/edge/config/provision-customer/
+    - title: Subscribe to Attribute Updates on Edge from the Cloud
+      path: /docs/pe/edge/config/subscribe-to-attribute/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates
