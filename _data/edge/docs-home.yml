@@ -7,6 +7,8 @@ toc:
   path: /docs/edge/getting-started-guides/what-is-edge/
 - title: Key concepts
   section:
+    - title: Edge
+      path: /docs/edge/edge-management/
     - title: Comparing Edge and Cloud
       path: /docs/edge/comparison/
     - title: Alarms
@@ -19,8 +21,6 @@ toc:
       path: /docs/edge/user-guide/db-overview/
 - title: Configuration Guides
   section:
-#    - title: Edges
-#      path: /docs/user-guide/ui/edges/
     - title: Device Creation and Cloud Provisioning
       path: /docs/edge/config/create-device/
 #    - title: Provision Asset from cloud to edge

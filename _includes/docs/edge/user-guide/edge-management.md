@@ -1,12 +1,13 @@
 * TOC
 {:toc}
-## Overview of Key Differences
+
+## Overview
 
 **ThingsBoard** offers two distinct deployment options: **ThingsBoard Edge** and **ThingsBoard Cloud**.
 
-**ThingsBoard Edge** is designed specifically for local, distributed data processing, enabling data analysis and management directly at the source of data generation. This approach allows for local processing, storage, and immediate response to critical situations, even without a continuous connection to the central server.
+**ThingsBoard Edge** is designed specifically for local, distributed data processing, enabling data analysis and management directly at the source of data generation. This approach allows for local processing, storage, and immediate response to critical situations, even without a continuous connection to the central server. For more information, see the [What is ThingsBoard Edge](/docs/{{docsPrefics}}getting-started-guides/what-is-edge/){: target="_blank"} article.
 
-In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tolerant platform hosted in the cloud and dependent on an internet connection. While an **on-premises installation** can function without an internet connection, it does not offer the same inherent support for distributed data syncing.
+In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tolerant platform hosted in the cloud and dependent on an internet connection. While an **on-premises installation** can function without one, it does not offer the same inherent support for distributed data syncing. For more information, see the [What is ThingsBoard](/docs/{{peDocsPrefics}}getting-started-guides/what-is-thingsboard/){: target="_blank"} article.
 
 ## Synchronization Architecture
 
@@ -14,9 +15,7 @@ In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tole
 
 To optimize this process, messages are serialized using [Protocol Buffers (ProtoBuf)](https://github.com/protocolbuffers/protobuf){: target="_blank"}.
 
-All messages sent from **ThingsBoard Edge** to **ThingsBoard Cloud** are stored in a local **PostgreSQL** table **(cloud_event table)** prior to transmission. 
-
-This allows **ThingsBoard Edge** to operate without connectivity to the Cloud. Once a connection is established, all messages in the local **cloud_event table** are sent to the **Cloud** and marked as successfully transferred.
+All messages sent from **ThingsBoard Edge** to **ThingsBoard Cloud** are stored in a local **PostgreSQL** table **(cloud_event table)** prior to transmission. This allows **ThingsBoard Edge** to operate without connectivity to the Cloud. Once a connection is established, all messages in the local **cloud_event table** are sent to the **Cloud** and marked as successfully transferred.
 
 To view the list of messages transferred from the **Cloud** to the **Edge**, go to the **Edge management > Instances** section of your Cloud (Server), click on the **Edge** and select the **"Downlinks"** tab:
 
@@ -24,7 +23,7 @@ To view the list of messages transferred from the **Cloud** to the **Edge**, go 
 
 #### Force synchronization procedure
 
-During a network outage, or some other communication problem **ThingsBoard Edge** could become out of sync from the Cloud. The Edge instance continues operating independently, collecting telemetry data, processing device events, and applying local rules. However, this data and state changes does not reach the Cloud, leading to inconsistencies.
+During a network outage, or some other communication problem **ThingsBoard Edge** could become out of sync from the **Cloud**. The Edge instance continues operating independently, collecting telemetry data, processing device events, and applying local rules. However, this data and state changes does not reach the Cloud, leading to inconsistencies.
 
 To ensure that both the **ThingsBoard Edge** and **Cloud** are aligned to deliver accurate and efficient IoT functionality, user is able to force synchronization process. 
 
@@ -32,8 +31,7 @@ Go to the **Edge management > Instances** section of your Cloud (Server), click 
 
 {% include images-gallery.html imageCollection="forceSync" %}
 
-
-### Entities management on cloud
+## Entities Management
 
 At the moment ThingsBoard Edge is not able to create any entity locally, except **Device** entity.
 To be able to use other entities on the edge, User must *'assign'* these entities to the edge prior usage.
@@ -45,8 +43,6 @@ If connection between edge and cloud is active then assigned entity will be crea
 If at the moment edge not connected to the cloud then entity will be created once connection established.
 
 
-#### Next Steps
+## Next Steps
 
-{% assign currentGuide = "EdgeManagementOverview" %}
-{% assign docsPrefix = "edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
