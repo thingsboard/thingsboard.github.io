@@ -35,22 +35,22 @@ adding-new-rule-chain-2:
         title: 'Find the "generator" node and drag it to the rule chain. With its help, we will generate telemetry values for further visualization on the dashboard;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-5-pe.png
-        title: 'Name it "Indoor air quality data emulator". Set the number of messages to send to 100 and the sending period to 600. Specify the device "SD-001" (Indoor Air Quality Sensor) as originator. Copy the script from the documentation and paste it into the generation function section to simulate telemetry data for temperature, humidity, and CO2. Click "Add".'
+        title: 'Name it "Indoor air quality data emulator". Set the number of messages to send to 100 and the sending period to 600. Specify the device "SD-001" (Indoor Air Quality Sensor) as originator. Copy the script from the documentation and paste it into the generator function section to simulate telemetry data for temperature, humidity, and CO2. Click "Add".'
 
 adding-new-rule-chain-3:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-6-pe.png
-        title: 'Name it "Power consumption data emulator" Set the number of messages to send to 100 and the sending period to 600. Specify the device "EM-002" (Energy Meter) as originator. Copy the script from the documentation and paste it into the generation function section to simulate power consumption telemetry data. Click "Add."'
+        title: 'Name it "Power consumption data emulator" Set the number of messages to send to 100 and the sending period to 600. Specify the device "EM-002" (Energy Meter) as originator. Copy the script from the documentation and paste it into the generator function section to simulate power consumption telemetry data. Click "Add."'
 
 adding-new-rule-chain-4:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-7-pe.png
-        title: 'Name it "Water consumption data emulator". Set the number of messages to send to 100 and the sending period to 600. Specify the device "WM-003" (Water Flow Meter) as originator. Copy the script from the documentation and paste it into the generation function section to simulate water consumption, and battery voltage telemetry data. Click "Add."'
+        title: 'Name it "Water consumption data emulator". Set the number of messages to send to 100 and the sending period to 600. Specify the device "WM-003" (Water Flow Meter) as originator. Copy the script from the documentation and paste it into the generator function section to simulate water consumption, and battery voltage telemetry data. Click "Add."'
 
 adding-new-rule-chain-5:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-8-pe.png
-        title: 'Name it "IAQ data emulator". Set the number of messages to send to 100 and the sending period to 600. Specify the device "AM-307" (IAQ Sensor) as originator. Copy the script from the documentation and paste it into the generation function section to simulate water consumption, and battery voltage telemetry data. Click "Add."'
+        title: 'Name it "IAQ data emulator". Set the number of messages to send to 100 and the sending period to 600. Specify the device "AM-307" (IAQ Sensor) as originator. Copy the script from the documentation and paste it into the generator function section to simulate water consumption, and battery voltage telemetry data. Click "Add."'
 
 adding-new-rule-chain-6:
     0:
@@ -88,7 +88,7 @@ customize-office-sensors-list-widget-1:
         title: 'Add the columns for the following data keys: "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption";'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-4-pe.png
-        title: 'Add another column: name it "Telemetry value", and click the "Time series" icon to add a new key;'
+        title: 'Add another column: name it "telemetryValue", and click the "Time series" icon to add a new key;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-5-pe.png
         title: 'Rename the labels for the keys "label" and "telemetryValue" to "Device name" and "Telemetry value," respectively. Next, click the "gear" icon next to the "telemetryValue" row to open its settings;'
@@ -97,13 +97,13 @@ customize-office-sensors-list-widget-1:
         title: 'Turn on the "Use cell content function" option. Insert the function from the documentation into the corresponding field. This function will combine several telemetry columns into one for a single device. Then click "Save";'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-7-pe.png
-        title: 'Now we need to hide the unnecessary columns like temperature, humidity, co2, powerConsumption, and waterConsumption. Click the "gear" icon next to the "temperature" to open its settings;'
+        title: 'Now we need to hide the unnecessary columns such as "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption". Click the "gear" icon next to the "temperature" to open its settings;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-8-pe.png
-        title: 'Select "Hidden" in the "Default Column Visibility" menu. Click "Save";'
+        title: 'Select "Hidden" in the "Default column visibility" menu. Click "Save" to apply the changes for this column;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-9-pe.png
-        title: 'Similarly, hide all other columns. Keep only the "telemetryValue" column visible. Save changes;'
+        title: 'Repeat the steps described above for the columns "humidity", "co2", "powerConsumption", and "waterConsumption". Ensure that only the columns "Device name" and "Telemetry value" remain visible. Save changes;'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-10-pe.png
         title: 'Apply all changes by clicking the "Save" button in the upper-right corner of the dashboard.'
