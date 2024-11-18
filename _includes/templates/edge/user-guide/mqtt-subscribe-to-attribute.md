@@ -6,7 +6,7 @@ To facilitate communication with **ThingsBoard Edge** using **MQTT**, we recomme
 
 To subscribe to shared device attribute changes, send the SUBSCRIBE message:
 ```bash
-mosquitto_sub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN"
+mosquitto_sub -d -h $THINGSBOARD_HOST_NAME -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN"
 ```
 {: .copy-code}
 
@@ -43,7 +43,7 @@ To publish client-side device attributes to the **ThingsBoard Edge**, send a PUB
 You can publish the telemetry data:
 
 ```bash
-mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+mosquitto_pub -d -h $THINGSBOARD_HOST_NAME -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
 ```
 {: .copy-code}
 
@@ -55,6 +55,6 @@ mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$
 You can also publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json){: target="_blank"} file:
 
 ```bash
-mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -f "new-attributes-values.json"
+mosquitto_pub -d -h $THINGSBOARD_HOST_NAME -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -f "new-attributes-values.json"
 ```
 {: .copy-code}
