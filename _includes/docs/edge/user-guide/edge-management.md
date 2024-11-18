@@ -21,26 +21,27 @@ To view the list of messages transferred from the **Cloud** to the **Edge**, go 
 
 {% include images-gallery.html imageCollection="downlinks" %}
 
-#### Force synchronization procedure
+#### Force Synchronization Procedure
 
 During a network outage, or some other communication problem **ThingsBoard Edge** could become out of sync from the **Cloud**. The Edge instance continues operating independently, collecting telemetry data, processing device events, and applying local rules. However, this data and state changes does not reach the Cloud, leading to inconsistencies.
 
 To ensure that both the **ThingsBoard Edge** and **Cloud** are aligned to deliver accurate and efficient IoT functionality, user is able to force synchronization process. 
 
-Go to the **Edge management > Instances** section of your Cloud (Server), click on the **Edge** and then, click the **"Sync Edge"** button:
+To force synchronization procedure, go to the **Edge management > Instances** section of your Cloud (Server), click on the **Edge** and then, click the **"Sync Edge"** button:
 
 {% include images-gallery.html imageCollection="forceSync" %}
 
 ## Entities Management
 
-At the moment ThingsBoard Edge is not able to create any entity locally, except **Device** entity.
-To be able to use other entities on the edge, User must *'assign'* these entities to the edge prior usage.
+No **entities** can be created locally on **ThingsBoard Edge**, except for the **Device** entity. To enable the use of other entities on the **Edge**, these entities must be **assigned** to the **Edge** prior to use.
 
-User can *'assign'* specific entities to the edge using **Edge** entity card.
+To **assign** specific entities to the **Edge**, log in to your **Cloud** and navigate to the **Edge management > Instances** section:
 
-Once you'll assign any entity to specific edge this entity will be pushed to the edge event queue.
-If connection between edge and cloud is active then assigned entity will be created on the edge instantly.
-If at the moment edge not connected to the cloud then entity will be created once connection established.
+{% include images-gallery.html imageCollection="instancesSection" showListImageTitles="true" %}
+
+Once you'll assign any entity to specific Edge, this entity will be pushed to the Edge event queue.
+If connection between edge and cloud is active, then assigned entity will be created on the Edge instantly.
+In case Edge is not connected to the Cloud, entity will be created once connection is established.
 
 
 ## Next Steps
