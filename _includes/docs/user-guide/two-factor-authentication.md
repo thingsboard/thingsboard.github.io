@@ -1,3 +1,13 @@
+{% if docsPrefix == null %}
+{% assign USER = "system administrator" %}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+{% assign USER = "system administrator" %}
+{% endif %}
+{% if (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+{% assign USER = "tenant administrator" %}
+{% endif %} 
+
 * TOC
 {:toc}
 
@@ -8,10 +18,10 @@ In addition to entering a password, one must populate a secret code that comes t
 The validity period of the secret and the remaining properties available for the system administrator can make online accounts invulnerable to cybercriminals.
 
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
+![image](/images/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+![image](/images/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
 {% endif %}
 
 ### Two-factor authentication options available in ThingsBoard
@@ -23,33 +33,42 @@ The validity period of the secret and the remaining properties available for the
 
 ### How to enable two-factor authentication for the platform 
 
-The system administrator user configures the default security policies and options for all remaining users. The former can turn on/off the possibility to use 2FA of any kind while the end user defines whether to use an additional verification or not. Follow the steps below to enable two-factor authentication for your ThingsBoard instance.
+The {{USER}} configures the default security policies and options for all remaining users. The former can turn on/off the possibility to use 2FA of any kind while the end user defines whether to use an additional verification or not.
+{% if docsPrefix == "pe/" %}The tenant administrator can also configure security policies for themselves and their users or use the system administrator's settings.{% endif %}
 
-1. Log in as a sysadmin to your ThingsBoard platform instance;
-2. Go to "Security" page &mdash; "Two-factor authentication" section;
-3. Activate and configure one or more verification methods. Edit settings for all enabled 2FA providers (verification message template, verification code lifetime, total allowed time for verification, etc) if necessary;
-4. Save changes.
-
+Follow the steps below to enable two-factor authentication for your ThingsBoard instance:
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-ce.png)
+- Log in to ThingsBoard as the system administrator;
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-pe.png)
+- Log in to ThingsBoard as the system administrator or tenant administrator;
+{% endif %}
+{% if (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+- Log in to ThingsBoard as the tenant administrator;
+{% endif %}
+
+- Navigate to the "Two-factor authentication" page of the "Security" section;
+- {% if docsPrefix == "pe/" %}If you are logged in as a tenant administrator, uncheck the box labeled "Use system two factor auth settings". {% endif %} {% if (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}Uncheck the box labeled "Use system two factor auth settings". {% endif %}Choose one or more 2FA verification methods (such as SMS, email, or authenticator app), and set up details like verification message template, verification code lifetime, total allowed time for verification, etc.;
+- Save changes to apply the configuration.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+{% include images-gallery.html imageCollection="enable-two-factor-authentication" %}
+{% endif %}
+{% if (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+{% include images-gallery.html imageCollection="enable-two-factor-authentication" %}
 {% endif %}
 
 ### Two-factor authentication for the user login
 
-If enabled, users on the platform can add an extra verification of their identity to access the data. Although 2FA can be a corporate security standard, the final decision on whether to use it or not is with a particular user. Sysadmin cannot force users to authenticate with 2FA.    
-
-1. Log in with basic credentials;
-2. In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Security";
-3. Activate the convenient verification method. One can activate multiple providers;
-4. Save changes.
+If enabled, users on the platform can add an extra verification of their identity to access the data. Although 2FA can be a corporate security standard, the final decision on whether to use it or not is with a particular user. Sysadmin cannot force users to authenticate with 2FA.
 
 {% include images-gallery.html imageCollection="two-factor-authentication-password-and-authentication" showListImageTitles="true" %}
 
 {% capture difference %}
-**Important!** The list of toggleable 2FA options depends on the system administrator's settings.
+**Important!** The list of 2FA options available depends on the settings on the ["Two-factor authentication" page](#how-to-enable-two-factor-authentication-for-the-platform).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

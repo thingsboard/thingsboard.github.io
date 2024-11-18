@@ -64,22 +64,22 @@ So, let&#39;s start:
 
 - Create a CSV file or [download a pre-made one](/docs/user-guide/advanced-guides-for-working-with-dashboard/files-from-tutorial/devices.csv){:target="_blank"}, where each row corresponds to the creation of a single device with specified parameters:
 
-| **Name** | **Type**         | **Label**                 |
-|:---------|:-----------------|---------------------------|
-| SD-001   | smart-sensor     | Indoor Air Quality Sensor |
-| EM-002   | energy-sensor    | Energy Meter              |
-| WM-003   | water-sensor     | Water Flow Meter          |
-| AM-307   | smart-sensor     | IAQ Sensor                |
+| **Name** | **Type**      | **Label**                 |
+|:---------|:--------------|---------------------------|
+| SD-001   | air-sensor    | Indoor Air Quality Sensor |
+| EM-002   | energy-sensor | Energy Meter              |
+| WM-003   | water-sensor  | Water Flow Meter          |
+| AM-307   | air-sensor    | IAQ Sensor                |
 | ---      
 
 Your CSV file should look like this:
 
 ```text
 name,type,label
-SD-001,smart-sensor,Indoor Air Quality Sensor
+SD-001,air-sensor,Indoor Air Quality Sensor
 EM-002,energy-sensor,Energy Meter
 WM-003,water-sensor,Water Flow Meter
-AM-307,smart-sensor,IAQ Sensor
+AM-307,air-sensor,IAQ Sensor
 ```
 {: .copy-code}
 

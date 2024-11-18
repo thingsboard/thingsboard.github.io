@@ -662,7 +662,7 @@ This alias allows displaying devices of specified device types (device profiles)
 - Click the "Add widget" button at the top of the screen;
 - Select the "Image Map" widget from the "Maps" widgets bundle;
 - Now we need to add a new alias. In the "Alias" field, enter a name for it - "Office sensors", and click "Create a new one";
-- Select the "Device search query" alias type, turn on the "Use dashboard state entity as root" option, set "Max relation level" to 1, choose "Contains" as the relation type, and list the following device types: "smart-sensor", "energy-sensor", and "water-sensor. Finally, click "Add";
+- Select the "Device search query" alias type, turn on the "Use dashboard state entity as root" option, set "Max relation level" to 1, choose "Contains" as the relation type, and list the following device types: "air-sensor", "energy-sensor", and "water-sensor". Finally, click "Add";
 - Add "xPos", "yPos", and "type" as data keys;
 
 {% include images-gallery.html imageCollection="adding-image-map-widget-1" %}
@@ -708,7 +708,7 @@ The marker image function used in the example:
 
 ```text
 var type = dsData[dsIndex]['Type'];
-if (type == 'smart-sensor') {
+if (type == 'air-sensor') {
 	var res = {
 	    url: images[0],
 	    size: 50
