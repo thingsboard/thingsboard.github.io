@@ -91,7 +91,7 @@ Two types of application are available for tenant: default and custom.
 
 {% include images-gallery.html imageCollection="application-settings-custom" %}
 
-{% unless docsPrefix == null %}
+{% unless docsPrefix == null or docsPrefix == "pe/" %}
 {% capture difference %}
 **Note:** To use custom mobile application tenant should have domain name configured in [Login White labeling settings](/docs/{{docsPrefix}}domains/){:target="_blank"}.
 {% endcapture %}
