@@ -49,7 +49,7 @@ Now, let's change the owners of the devices. Assign Customer A as the owner of a
 
 {% include images-gallery.html imageCollection="change-devices-owner-1" showListImageTitles="true" %}
 
-Similarly, assign Customer A as the owner of "EM-002" (electricity meter) and "WM-003" (water consumption meter) devices, and Customer B as the owner of "AM-307" (indoor air quality sensor).
+Similarly, assign Customer A as the owner of "EM-002" (Energy Meter) and "WM-003" (Water Flow Meter) devices, and Customer B as the owner of "AM-307" (Indoor Air Quality Sensor).
 
 {% include images-gallery.html imageCollection="change-devices-owner-2" %}
 

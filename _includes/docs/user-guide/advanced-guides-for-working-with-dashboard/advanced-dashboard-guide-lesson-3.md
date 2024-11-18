@@ -44,7 +44,7 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
 
-- Paste the copied script into the generation function section to simulate temperature, humidity, and CO2 telemetry data;
+- Paste the copied script into the generator function section to simulate temperature, humidity, and CO2 telemetry data;
 - Click "Add".
 
 We added a "generator" node that will send telemetry to ThingsBoard on behalf of the "Indoor Air Quality Sensor" device every 10 minutes (600 seconds). There will be 100 such messages.
@@ -124,9 +124,6 @@ For this purpose, there is a "[rule chain](/docs/{{docsPrefix}}user-guide/rule-e
 {% include images-gallery.html imageCollection="adding-new-rule-chain-6" %}
 
 We have added all the necessary nodes. Now, we need to connect the generator nodes to the "rule chain" node for message routing:
-
-- Tap on the right grey circle of "generator" node and drag this circle to the left side of "rule chain" node. Select the "Success" link and click "Add";
-- Repeat this for each generator node. Afterwards, save rule chain.
 
 {% include images-gallery.html imageCollection="adding-new-rule-chain-7" showListImageTitles="true" %}
 
@@ -249,7 +246,7 @@ if (data.deviceType == 'energy-sensor') {
         '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${powerConsumption} per day</span>' +
     '</div>';
     typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
-} else if (data.deviceType == 'smart-sensor') {
+} else if (data.deviceType == 'air-sensor') {
     typeTooltip = '<div style="display: flex; flex-direction: column">' +
         '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
             '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Temperature: </span>' +
@@ -323,7 +320,7 @@ const $injector = widgetContext.$injector;
 const deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));
 
 deviceService.getDevice(entityId.id).subscribe(device => {
-    if (device.type === 'smart-sensor') {
+    if (device.type === 'air-sensor') {
         openDashboardState('smart_sensor');
     } else if (device.type === 'water-sensor') {
         openDashboardState('water_sensor');

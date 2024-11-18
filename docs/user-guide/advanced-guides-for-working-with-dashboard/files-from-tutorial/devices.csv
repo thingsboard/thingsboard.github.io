@@ -1,5 +1,5 @@
 name,type,label
-SD-001,smart-sensor,Indoor Air Quality Sensor
+SD-001,air-sensor,Indoor Air Quality Sensor
 EM-002,energy-sensor,Energy Meter
 WM-003,water-sensor,Water Flow Meter
-AM-307,smart-sensor,IAQ Sensor
+AM-307,air-sensor,IAQ Sensor
