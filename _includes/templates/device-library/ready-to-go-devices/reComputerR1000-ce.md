@@ -12,13 +12,13 @@ Create a new **Edge instance**:
 
 {% assign startEdgeCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-1.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/installation-add-edge-item-1.webp,
         title: Log in to the *[ThingsBoard Demo account](https://demo.thingsboard.io/signup){: target="_blank"} and navigate to the **Edge Management > Instances** section. Click the **“+”** icon in the top right corner and select the **“Add new edge”** option.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-2.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/installation-add-edge-item-2.webp,
         title: Enter a name for your Edge in the **"Name"** field, e.g., R1000 Demo Edge, and click the **"Add"** button to confirm the addition of your new Edge.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/installation-add-edge-item-3.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/installation-add-edge-item-3.webp,
         title: Your new **Edge instance** is displayed at the top of the list, as entries are sorted by creation time by default.
 '
 %}
@@ -62,10 +62,10 @@ To configure this file properly:
 
 {% assign copyYmlCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/1.2-instrucrions-button.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/1.2-instrucrions-button.webp,
         title: Go to the **Edge management > Instances** section of your [ThingsBoard Demo account](https://demo.thingsboard.io/signup){: target="_blank"}, and click on the **Instance** itself. Then, click the **"Install & Connect Instructions"** button.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/1.3-docker.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/1.3-docker.webp,
         title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and copy the configuration lines.
 '
 %}
@@ -104,10 +104,10 @@ To provision the **ThingsBoard Gateway**:
 
 {% assign iotGWdashboardCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/1-instances-section.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/1-instances-section.webp,
         title: Log in to the [ThingsBoard Demo account](https://demo.thingsboard.io/signup){: target="_blank"} and navigate to the **Edge Management > Instances** section, then click the **“Manage dashboards”** button.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/2-assign-dashboard.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/2-assign-dashboard.webp,
         title: On the **“Edge Dashboards”** page, click the **“+”** icon to assign the **“ThingsBoard IoT Gateways”** dashboard to the Edge instance. Click the **“Assign”** button. The **"ThingsBoard IoT Gateways"** dashboard is one of the pre-created, out-of-the-box dashboards available.
 '
 %}
@@ -116,10 +116,10 @@ To provision the **ThingsBoard Gateway**:
 
 {% assign localhostCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/3-login-to-edge.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/3-login-to-edge.webp,
         title: Open your **Edge instance**, navigate to the **Dashboards** section and open the **“ThingsBoard IoT Gateways”** dashboard.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/4-add-gw.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/4-add-gw.webp,
         title: Click the **“+”** icon in the upper right corner to add a new gateway. Enter the gateway name in the **“Name”** field, and select the **“default”** device profile. Click the **“Create”** button.
 '
 %}

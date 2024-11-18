@@ -18,10 +18,10 @@ In addition to entering a password, one must populate a secret code that comes t
 The validity period of the secret and the remaining properties available for the system administrator can make online accounts invulnerable to cybercriminals.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
 {% endif %}
 
 ### Two-factor authentication options available in ThingsBoard
@@ -52,7 +52,7 @@ Follow the steps below to enable two-factor authentication for your ThingsBoard 
 - Save changes to apply the configuration.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-ce.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
 {% include images-gallery.html imageCollection="enable-two-factor-authentication" %}

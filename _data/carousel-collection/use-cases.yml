@@ -182,11 +182,11 @@ waste-management:
 
 scada:
   0:
-    src: "/images/solutions/scada/scada1.png"
+    src: "https://img.thingsboard.io/solutions/scada/scada1.png"
     alt: "Swimming pool SCADA dashboard with opened flow rate chart"
   1:
-    src: "/images/solutions/scada/scada2.png"
+    src: "https://img.thingsboard.io/solutions/scada/scada2.png"
     alt: "Swimming pool SCADA dashboard on tabled and mobile layouts"
   2:
-    src: "/images/solutions/scada/scada3.png"
+    src: "https://img.thingsboard.io/solutions/scada/scada3.png"
     alt: "Swimming pool SCADA dashboard"
