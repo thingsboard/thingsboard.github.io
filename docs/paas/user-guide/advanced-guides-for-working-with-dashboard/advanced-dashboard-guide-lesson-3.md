@@ -97,13 +97,13 @@ customize-office-sensors-list-widget-1:
         title: 'Turn on the "Use cell content function" option. Insert the function from the documentation into the corresponding field. This function will combine several telemetry columns into one for a single device. Then click "Save";'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-7-pe.png
-        title: 'Now we need to hide the unnecessary columns such as temperature, humidity, co2, powerConsumption, and waterConsumption. Click the "gear" icon next to the "temperature" to open its settings;'
+        title: 'Now we need to hide the unnecessary columns such as "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption". Click the "gear" icon next to the "temperature" to open its settings;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-8-pe.png
-        title: 'Select "Hidden" in the "Default Column Visibility" menu. Click "Save" to apply the changes for this column;'
+        title: 'Select "Hidden" in the "Default column visibility" menu. Click "Save" to apply the changes for this column;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-9-pe.png
-        title: 'Repeat the above steps for the other columns: humidity, co2, powerConsumption, and waterConsumption. Ensure that only the "telemetryValue" and "Device name" columns remains visible. Save changes;'
+        title: 'Repeat the steps described above for the columns "humidity", "co2", "powerConsumption", and "waterConsumption". Ensure that only the columns "Device name" and "Telemetry value" remain visible. Save changes;'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-10-pe.png
         title: 'Apply all changes by clicking the "Save" button in the upper-right corner of the dashboard.'

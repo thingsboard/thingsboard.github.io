@@ -135,7 +135,7 @@ After waiting for the period specified in the generator nodes, you will be able 
 
 Now that we are receiving telemetry data from the devices, we can display it on the "Office sensors list" widget.
 Devices can send multiple telemetry values. By default, each telemetry value (key) is represented by a separate column in the table widget.
-We'll combine multiple telemetry values into a single column for a cleaner look and hide the columns we don’t need.
+We'll combine multiple telemetry values into a single column for a cleaner look and hide the columns we don't need.
 
 {% include images-gallery.html imageCollection="customize-office-sensors-list-widget-1" showListImageTitles="true" %}
 
@@ -159,7 +159,7 @@ return value;
 ```
 {:.copy-code.expandable-5}
 
-Now, the Office sensors list widget will display a list of your devices with their telemetry values combined into a single column for each device.
+Now, the "Office sensors list" widget will display a list of your devices with their telemetry values combined into a single column for each device.
 
 {% include images-gallery.html imageCollection="customize-office-sensors-list-widget-2" %}
 
