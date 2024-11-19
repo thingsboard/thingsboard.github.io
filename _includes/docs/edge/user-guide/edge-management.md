@@ -39,10 +39,9 @@ To **assign** specific entities to the **Edge**, log in to your **Cloud** and na
 
 {% include images-gallery.html imageCollection="instancesSection" showListImageTitles="true" %}
 
-Once you'll assign any entity to specific Edge, this entity will be pushed to the Edge event queue.
-If connection between edge and cloud is active, then assigned entity will be created on the Edge instantly.
-In case Edge is not connected to the Cloud, entity will be created once connection is established.
-
+Once an entity has been assigned to a specific **Edge**, it will be pushed to the **Edge event queue**. 
+If the connection between the **Edge** and the **Cloud** is active, the assigned entity will be created on the **Edge** instantly. 
+In the event that the **Edge** is not connected to the **Cloud**, the entity will be created once the connection is established.
 
 ## Next Steps
 
