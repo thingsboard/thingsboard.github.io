@@ -61,10 +61,10 @@ change-devices-owner-1:
 change-devices-owner-2:
     5:
         image: https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/change-devices-owner-6-pe.png
-        title: 'Assign Customer A as the owner of devices "EM-002" (electricity meter) and "WM-003" (water consumption meter) devices;'
+        title: 'Assign Customer A as the owner of devices "EM-002" (Energy Meter) and "WM-003" (Water Flow Meter) devices;'
     6:
         image: https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/change-devices-owner-7-pe.png
-        title: 'Assign Customer B as the owner of "AM-307" (indoor air quality sensor) device.'
+        title: 'Assign Customer B as the owner of "AM-307" (Indoor Air Quality Sensor) device.'
 
 change-devices-owner-3:
     0:

@@ -43,7 +43,7 @@ Major release with the following features and bug fixes:
   * [#11063](https://github.com/thingsboard/thingsboard/pull/11063) SCADA layout and symbol library by @ikulikov
   * [#11430](https://github.com/thingsboard/thingsboard/pull/11430) Dashboard layouts and breakpoints by @vvlladd28
   * [#11633](https://github.com/thingsboard/thingsboard/pull/11633) Timewindow redesign by @ChantsovaEkaterina
-  * [multiple PRs](https://github.com/thingsboard/thingsboard/pulls?page=1&q=is%3Apr+is%3Amerged+author%3Amaxunbearable+milestone%3A3.8) Gateway dashboard improvements by @maxunbearable
+  * [multiple PRs](https://github.com/thingsboard/thingsboard/pulls?page=1&q=is:pr%20is:merged%20author:maxunbearable%20milestone:3.8) Gateway dashboard improvements by @maxunbearable
   * [#11079](https://github.com/thingsboard/thingsboard/pull/11079) Label widgets by @ikulikov
   * [#11138](https://github.com/thingsboard/thingsboard/pull/11138) Notification widget by @ArtemDzhereleiko
 

@@ -408,7 +408,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.8.zip](https://github.com/thingsboard/thingsboard-edge/releases/download/v3.8/tb-edge-windows-3.8.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.8.zip](https://github.com/thingsboard/thingsboard-edge/releases/download/v3.8/tb-edge-windows-3.8.0.zip).
 
 #### ThingsBoard Edge service upgrade
 

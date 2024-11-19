@@ -211,7 +211,7 @@ adding-office-attributes-1:
         title: 'Go to the "Assets" page and click on the "Office A" to open its details. Navigate to the "Attributes" tab and click the "plus" icon to add a new attribute;'
     1:
         image: https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-office-attributes-2-pe.png
-        title: 'Enter "floor" as the key name, select "String" as the value type, and input the floor number. Click "Add".'
+        title: 'Enter "floor" as the key name, select "Integer" as the value type, and input the floor number. Click "Add".'
 
 adding-office-attributes-2:
     0:
@@ -382,7 +382,7 @@ adding-image-map-widget-1:
         title: 'Now we need to add an alias to define the entities from which the data will be extracted. In our case, the root entity is the selected office. In the "Alias" field, enter a name for it - "Office sensors", and click "Create a new one";'
     4:
         image: https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-5-pe.png
-        title: 'Select the filter type "Device search query", enable the option "Use dashboard state entity as root", set "Max relation level" to 1, relation type to "Contains", and list the device types: "smart-sensor", "energy-sensor", and "water-sensor". Click "Add";'
+        title: 'Select the filter type "Device search query", enable the option "Use dashboard state entity as root", set "Max relation level" to 1, relation type to "Contains", and list the device types: "air-sensor", "energy-sensor", and "water-sensor". Click "Add";'
     5:
         image: https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-2/adding-image-map-widget-6-pe.png
         title: 'Add "xPos", "yPos", and "type" as data keys;'

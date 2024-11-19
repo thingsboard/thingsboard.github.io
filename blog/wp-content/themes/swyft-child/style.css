@@ -4086,24 +4086,62 @@ body{
 }
 
 /* codeblock */
+
 .wp-block-code code{
 	max-width: 740px;
 	padding: 0px 10px;
 }
 
 .wp-block-code{
+	display: flex;
 	overflow: visible !important;
 	position: relative;
 	padding-top: 16px;
 	padding-left: 16px;
 	padding-bottom: 16px;
 	padding-right: 50px !important;
+	padding-bottom: 40px; 
+}
+
+.wp-block-code code{
+	max-height: 180px;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.wp-block-code.expanded code{
+	max-height: 100%;
+}
+
+.expand-container {
+	margin-top: 1px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 13px solid #2a7dec;
+}
+
+.expand-text {
+  font-size: 16px;
+  color: #2a7dec;
+  text-align: center;
 }
 
 .code-button-parent{
 	position: absolute;
-	top: 16px;
-	right: 16px;	
+	top: 0;
+	right: 0;	
 }
 
 .code-button-link-copy{

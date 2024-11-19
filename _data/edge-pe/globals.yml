@@ -1,6 +1,7 @@
 tocs:
 - docs-home
 - getting-started
+- devices-library
 - installation
 - reference
 - api
@@ -10,6 +11,8 @@ docs-header:
   title: Getting Started
 - toc: docs-home
   title: Documentation
+- toc: devices-library
+  title: Devices Library
 - toc: installation
   title: Installation
 - toc: reference
