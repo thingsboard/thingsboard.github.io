@@ -20,9 +20,8 @@ notitle: "true"
         </div>
     </div>
     <div class="long">
-        <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) is its ability to monitor production processes in real time and quickly respond to deviations.</p>
-        <p>In ThingsBoard, we have developed a fluid management system using SCADA symbols (pipes, valves, motors, filters, flow meters, tanks, leak sensors). This allows any production process to be displayed on a dashboard and enables real time monitoring of equipment operation and alarm signals.</p>
-        <p>In our template, we show how SCADA symbols in ThingsBoard can be used to create simple and effective process control systems for automating a wide range of tasks. Our Swimming Pool template demonstrates this.</p>
+        <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
+        <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the Swimming Pool Management System template. This solution demonstrates how SCADA symbols—such as pipes, valves, motors, filters, flow meters, tanks, and leak sensors—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals.</p>
     </div>
 </section>
 
@@ -38,27 +37,27 @@ notitle: "true"
     <div class="scada-solution-structure-cards">
         <div class="scada-solution-structure-card">
             <h2>PLCs and RTUs</h2>
-            <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <p>Seamlessly integrate your SCADA system with PLCs and RTUs using ThingsBoard integrations and IoT Gateway. Support for Modbus, OPC-UA, BACnet, and other popular protocols ensures reliable real-time data collection and control.</p>
         </div>
         <div class="scada-solution-structure-card">
             <h2>IoT gateway</h2>
-            <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+            <p>ThingsBoard’s IoT Gateway bridges the gap between legacy SCADA devices and modern IoT platforms. It ensures data reliability with built-in local data storage during network outages and supports efficient protocol conversion, secure data transmission, and centralized device management.</p>
         </div>
         <div class="scada-solution-structure-card">
             <h2>Data processing</h2>
-            <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+            <p>Unlock actionable insights with ThingsBoard’s robust data processing tools. Perform real-time transformations, apply complex rules, and automate workflows with built-in rule chains and scriptable integrations.</p>
         </div>
         <div class="scada-solution-structure-card">
-            <h2>Alarm system (acks, clears, comments)</h2>
-            <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+            <h2>Alarm system</h2>
+            <p>Enhance operational awareness with ThingsBoard’s advanced alarm system. Manage incident workflows with features like alarm acknowledgment, clearing, commenting, and configurable escalation rules.</p>
         </div>
         <div class="scada-solution-structure-card">
             <h2>Notification system</h2>
-            <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+            <p>Stay informed with ThingsBoard’s flexible notification system, delivering alerts via email, SMS, Slack, or custom webhooks. Automate critical notifications based on configurable conditions and thresholds.</p>
         </div>
         <div class="scada-solution-structure-card">
-            <h2>Real time dashboards</h2>
-            <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+            <h2>IoT dashboards</h2>
+            <p>Visualize your SCADA data with ThingsBoard’s real-time IoT dashboards. Design interactive views using SCADA symbols, customizable widgets, and dynamic updates to monitor and control processes seamlessly.</p>
         </div>
     </div>
 </section>
@@ -240,17 +239,17 @@ notitle: "true"
         <div class="advantage">
             <div><img src="/images/usecases/scada/security.svg" alt="Security"></div>
             <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-            <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <p>ThingsBoard protects your data with industry-standard encryption algorithms like RSA and ECDSA. Secure communication is ensured via TLS (TCP) and DTLS (UDP), with added support for SCADA-specific protocols like OPC-UA encryption and authentication. Role-based access control and audit logs further enhance platform security.</p>
         </div>
         <div class="advantage">
             <div><img src="/images/usecases/scada/data-visualization.svg" alt="Data visualization"></div>
             <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-            <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+            <p>Visualize your data effortlessly with ThingsBoard’s rich, interactive dashboards. Create multi-state, real-time dashboards using built-in widgets like charts, gauges, maps, and tables—no coding required. Customize layouts or develop custom widgets for complete flexibility. WebSocket support ensures low-latency updates.</p>
         </div>
         <div class="advantage">
             <div><img src="/images/usecases/scada/connectivity.svg" alt="Connectivity"></div>
             <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-            <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+            <p>Connect devices directly to ThingsBoard using protocols like HTTP, CoAP, MQTT, LwM2M, SNMP, LoRaWAN, and NB-IoT. For local networks, ThingsBoard Gateway bridges the cloud via Modbus, BLE, BACnet, OPC-UA, and more. Advanced protocol translation and offline data buffering ensure reliable communication even in challenging conditions.</p>
         </div>
         <div class="advantage scale">
             <div><img src="/images/usecases/scada/scalability.svg" alt="Scalability and high availability"></div>
