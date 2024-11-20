@@ -126,7 +126,7 @@ description: ThingsBoard IoT platform upgrade instructions
 </ul>
 
 
-## Upgrading to 3.8 {#upgrading-to-381}
+## Upgrading to 3.8.1 {#upgrading-to-381}
 
 ### Ubuntu/CentOS {#ubuntucentos-381}
 
@@ -225,6 +225,12 @@ net start thingsboard
 These upgrade steps are applicable for ThingsBoard version 3.7. In order to upgrade to 3.8 you need to [**upgrade to 3.7 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-37).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+#### Install PostgreSQL contrib package (For CentOS only) 
+
+{% capture tabspec %}install-postgres-contrib-3-8
+install-postgres-contrib-3-8-centos,CentOS,shell,resources/3.8/install-postgres-contrib.sh,/docs/user-guide/install/resources/3.8/install-postgres-contrib.sh{% endcapture %}
+{% include tabs.html %}
 
 #### ThingsBoard package download
 

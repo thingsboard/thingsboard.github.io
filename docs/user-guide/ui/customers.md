@@ -86,4 +86,5 @@ delete-customer-user-1:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/customers.md %}

@@ -29,7 +29,7 @@ To open the imported dashboard, click on it. Then you should specify your device
 
 To do this, follow these steps:
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeEntityAliasPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeEntityAliasCE %}

@@ -36,6 +36,22 @@ delete-client-credentials:
     image: /images/mqtt-broker/user-guide/ui/delete-credentials-2.png
     title: 'Delete mulptiple. Click on the checkboxes and confirm action by clicking on the button "Delete" in the top right corner.'
 
+check-connectivity:
+  0:
+    image: /images/mqtt-broker/user-guide/ui/check-connectivity-1.png
+    title: 'Click on the button "Check connectivity" of the Basic client credentials.'
+  1:
+    image: /images/mqtt-broker/user-guide/ui/check-connectivity-2.png
+    title: 'Select your operating system, install required tools, and copy commands.'
+    
+security-authentication-tls:
+  1:
+    image: /images/mqtt-broker/features/security-authentication-tls-2.png
+    title: 'TLS authentication with "Use certificate CN regex" disabled to match certificate common name by exact match.'
+  2:
+    image: /images/mqtt-broker/features/security-authentication-tls-3.png
+    title: 'TLS authentication with "Use certificate CN regex" enabled to match certificate common name using a regex pattern.'
+
 ---
 
 {% include docs/mqtt-broker/user-guide/ui/mqtt-client-credentials.md %}

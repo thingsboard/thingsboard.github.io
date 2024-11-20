@@ -90,8 +90,8 @@ release:
   pe_edge_ver: 3.8pe
   pe_edge_full_ver: 3.8.0EDGEPE
   # <<< EDGE
-  ce_flutter_app_ver: 1.3.0
-  pe_flutter_app_ver: 1.3.0
-  broker_full_ver: 1.4.0
-  broker_branch: release-1.4.0
+  ce_flutter_app_ver: 1.4.0
+  pe_flutter_app_ver: 1.4.0
+  broker_full_ver: 2.0.0
+  broker_branch: release-2.0.0
   trendz_ver: 1.11.0

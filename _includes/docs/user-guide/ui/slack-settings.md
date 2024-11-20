@@ -18,7 +18,7 @@ To configure Slack settings in Thingsboard, first register an application in Sla
 
 {% include images-gallery.html imageCollection="slackProviderSettings" showListImageTitles="true" %}
 
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 ### Slack settings configuration as System administrator
 
 Login to your ThingsBoard UI as a system administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".

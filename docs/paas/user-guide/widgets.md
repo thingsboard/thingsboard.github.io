@@ -57,10 +57,10 @@ add-widget-advanced-mode:
 timewindow:
     0:
         image: /images/user-guide/widgets/overview/data-settings/time-window-1-pe.png
-        title: 'By default, every widget uses the main timewindow determined in the dashboard&#39;s toolbar.'
+        title: 'By default, every widget uses the main time window determined in the dashboard&#39;s toolbar.'
     1:
         image: /images/user-guide/widgets/overview/data-settings/time-window-2-pe.png
-        title: 'Toggle the "Use widget timewindow" checkbox to overwrite the default timewindow.'
+        title: 'Toggle the "Use widget time window" checkbox to overwrite the default time window.'
 
 data-source-type-device:
     0:
@@ -501,4 +501,5 @@ export-widget:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/widgets.md %}

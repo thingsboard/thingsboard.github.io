@@ -1,10 +1,10 @@
 ## Prerequisites
 
 You will need to have ThingsBoard server up and running. 
-The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup) server.
+The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup){:target="_blank"} server.
 
-The alternative option is to install ThingsBoard using [Installation Guide](/docs/user-guide/install/installation-options/). 
-**Windows** users should follow this [guide](/docs/user-guide/install/docker-windows/). **Linux** users that have docker installed should execute the following commands:
+The alternative option is to install ThingsBoard using [Installation Guide](/docs/user-guide/install/installation-options/){:target="_blank"}. 
+**Windows** users should follow this [guide](/docs/user-guide/install/docker-windows/){:target="_blank"}. **Linux** users that have docker installed should execute the following commands:
 
 ```
 mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data

@@ -277,9 +277,9 @@ toc:
     path: /docs/pe/user-guide/audit-log/
   - title: Advanced RBAC for IoT
     path: /docs/pe/user-guide/rbac/
-  - title: Two-Factor Authentication
+  - title: Two-factor authentication
     path: /docs/pe/user-guide/two-factor-authentication/
-  - title: OAuth 2 Support
+  - title: OAuth 2.0
     path: /docs/pe/user-guide/oauth-2-support/
   - title: HTTP Transport
     section:

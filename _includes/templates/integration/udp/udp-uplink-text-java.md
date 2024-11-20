@@ -35,6 +35,6 @@ return result;
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/udp/udp-uplink-converter-text-java-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/udp/udp-uplink-converter-text-java-paas.png)
 {% endif %}

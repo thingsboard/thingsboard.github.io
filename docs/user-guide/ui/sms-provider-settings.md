@@ -20,4 +20,5 @@ smsProviderSettings:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/sms-provider-settings.md %}

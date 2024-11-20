@@ -8,14 +8,14 @@ The Image gallery serves as a centralized repository for storing and managing im
 This is an important resource for improving the visual appeal and functionality of widgets, dashboards, devices, and asset profiles in a mobile application. 
 Users can easily upload, organize, and select images to customize their interface and user experience, ensuring an integrity and branded look across the platform.
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/image-gallery/image-gallery-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/image-gallery/image-gallery-ce.png)
 {% endif %}
 
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 ## Cache configuration
 
 Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.

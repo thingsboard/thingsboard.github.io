@@ -100,4 +100,5 @@ sparkplug-update-metrics-using-the-thingsboard-rpc-command-3:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/mqtt-sparkplug-api.md %}

@@ -10,7 +10,7 @@ You can think of the ThingsBoard tenant as a separate business entity. This is t
 {% if docsPrefix == "pe/" %}
 Tenant may have multiple tenant administrator users, enormous number of [customers](/docs/{{docsPrefix}}user-guide/ui/customers), and an unlimited number of [users](/docs/{{docsPrefix}}user-guide/ui/users), assets, and devices.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Tenant may have multiple [customers](/docs/{{docsPrefix}}user-guide/ui/customers) and enormous number of [users](/docs/{{docsPrefix}}user-guide/ui/users), devices and assets.
 {% endif %}
 

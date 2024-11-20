@@ -14,7 +14,7 @@ These dashboards aren't limited to a single data source; they can display data f
 {% if docsPrefix == null %}
 ![image](/images/user-guide/dashboards/overview/dashboard-introduction-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/dashboards/overview/dashboard-introduction.png)
 {% endif %}
 
@@ -30,7 +30,7 @@ Dashboards in ThingsBoard provide users with the following capabilities:
 
  - **Role-Based Access**: ThingsBoard allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ThingsBoard also offers convenient IoT solution templates to reduce time-to-market for your IoT products. 
 These templates include interactive dashboards, processing logic, sample devices, users, and all other necessary entities. Think of these templates as a complete PoC/MVP. 
 Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates/overview/).
@@ -44,7 +44,7 @@ To add a new dashboard, you should:
 
 {% include images-gallery.html imageCollection="creating-dashboard" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 At the stage of creating a dashboard, you can specify it to a different owner and a specific dashboard group right away.
 How to create a new group of dashboards, read [here](/docs/{{docsPrefix}}user-guide/groups/#create-new-entity-group).
 
@@ -67,7 +67,7 @@ The dashboard toolbar allows you to manage
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases),
 [filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters),
 [version control](/docs/{{docsPrefix}}user-guide/version-control/),
-configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow),
+configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window),
 [enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
 
 Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" modes.
@@ -102,14 +102,14 @@ For more information about widgets, how to create them, and their settings, clic
 
 <br>
 
-### Timewindow
+### Time window
 
-Dashboard timewindow represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
-Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
-In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the timewindow.
-In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the timewindow.
+Dashboard time window represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
+Time window is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
+In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window.
+In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
 
-The timewindow can work in two modes:
+The time window can work in two modes:
 - In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp;
 - In the **history mode**, widgets receive data only during the initial load and no updates are issued over WebSockets.
 
@@ -136,8 +136,8 @@ All other intervals are distinguished in the same way.
 {% include images-gallery.html imageCollection="time-window-interval" %}
 
 There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in.
-Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look.
-To zoom out to the original size of the chart, double-click on the widget.
+Move the two sliders towards each other to specify the time period for displaying the data.
+To zoom out to the original size of the chart, move the sliders back to their default position.
 
 {% include images-gallery.html imageCollection="time-window-zoom-in" %}
 
@@ -221,12 +221,12 @@ You can set dashboard logo which displayed in dashboard fullscreen mode. For thi
 
 **Toolbar settings**
 
-The checkboxes "Display dashboard selection", "Display entities selection", "Display filters", "Display timewindow", "Display export" and "Display update dashboard image" are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
+The checkboxes "Display dashboard selection", "Display entities selection", "Display filters", "Display time window", "Display export" and "Display update dashboard image" are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
 
 The "Display filters" option is shown on the toolbar panel only if at least one filter has been created. 
 If the filter was created, but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
 
-You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page.
+You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display time window" and "Display export" icons on the dashboard page.
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-1" %}
 
@@ -288,7 +288,7 @@ For the state to be named after the entity, use **${entityName}** as the name of
 
 ## Managing dashboard
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [share dashboard group](#share-dashboard-group), [make dashboard group public](#make-dashboard-group-public), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
 {% endif %}
 
@@ -307,7 +307,7 @@ To export a dashboard, go to the “Dashboards” page. Find the dashboard you w
 
 {% include images-gallery.html imageCollection="export-dashboard" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".
 The dashboard is exported to the configuration file in JSON format.
 
@@ -339,7 +339,7 @@ To import a dashboard, follow these steps:
 
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Share dashboard group
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role.
@@ -356,7 +356,7 @@ To share a dashboard group, follow these steps:
 
 You can make the dashboard public and share a link to it with other users.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Make dashboard group public
 
 You can make the dashboard group and all its dashboards public and then share links to those dashboards with other users.

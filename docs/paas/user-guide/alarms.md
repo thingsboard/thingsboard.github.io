@@ -138,4 +138,5 @@ propagation-settings:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/alarms.md %}

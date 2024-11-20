@@ -11,6 +11,7 @@ docsPrefix: paas/
 
 
 * TOC
-{:toc}
+{:toc} 
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/lattepanda.md %}

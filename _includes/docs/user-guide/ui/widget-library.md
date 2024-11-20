@@ -40,8 +40,8 @@ Digital Gauge in the example is displays the current temperature value.
 
 The Time series widget type displays historical values for the selected period of time, or the latest values in the certain time window (e.g., Timeseries Line Chart or Timeseries Bar Chart).
 This widget type uses only the values of entity time series as a data source.
-In order to specify the time frame of displayed values, _Timewindow_ settings are used.
-The timewindow can be specified on the dashboard page or via widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
+In order to specify the time frame of displayed values, _Time window_ settings are used.
+The time window can be specified on the dashboard page or via widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
 All these settings are part of Timeseries widget configuration.
 In the example, the "Timeseries Line Chart" displays the speed value of the device in real-time.
 
@@ -59,7 +59,7 @@ In the example, the “Basic GPIO Control” widget sends GPIO switch commands a
 
 The Alarm Widget type displays alarms related to the specified entity in the certain time window (e.g., Alarms table).
 To configure the Alarm widget, you designate an entity as the alarm source and define the corresponding alarm fields.
-As the _Timeseries widgets_, Alarm widgets have the _timewindow_ configuration to specify the time frame of the displayed alarms.
+As the _Timeseries widgets_, Alarm widgets have the _time window_ configuration to specify the time frame of the displayed alarms.
 Additionally, the configuration includes parameters such as "Alarm status", "Alarm severity", and "Alarm type".
 The “Alarm status” parameter shows the status of the alarms being fetched.
 The "Alarm severity" parameter shows the frequency of alarm fetches in seconds.

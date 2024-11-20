@@ -52,13 +52,13 @@ widgetContext.stateController.updateState(stateId, stateParams);
 ```
 ## Configure Date selected action
 
-Trendz Calendar and Anomaly table support date-selected action, allowing you to dynamically update the timewindow of your ThingsBoard dashboard based on the selected date in either the calendar or the anomaly timerange.
+Trendz Calendar and Anomaly table support date-selected action, allowing you to dynamically update the time window of your ThingsBoard dashboard based on the selected date in either the calendar or the anomaly timerange.
 To enable the date-select event:
 1. Add a Trendz View to your dashboard.
 2. Enter widget edit mode and navigate to the Actions tab.
 3. Click on the "Add action" button.
 4. In the "Action source" field, choose "date-selected."
-5. Set the type to "Custom action." You will receive the startTs and endTs parameters in the additionalParams argument of the custom function. Use the following code example to update the timewindow of your dashboard:
+5. Set the type to "Custom action." You will receive the startTs and endTs parameters in the additionalParams argument of the custom function. Use the following code example to update the time window of your dashboard:
 
 ```javascript
 widgetContext.dashboard.onUpdateTimewindow(additionalParams.startTs, additionalParams.endTs);

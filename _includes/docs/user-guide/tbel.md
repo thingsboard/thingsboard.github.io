@@ -32,7 +32,7 @@ We have forked the TBEL codebase and added additional security improvements to e
 So, no need to run Nashorn with the sandbox environment.
 
 Of course, TBEL is not as powerful as JS, but the majority of the use cases do not need this.
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 The one who requires JS flexibility may use remote [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) as usual.
 {% else %}
 The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual.
@@ -40,7 +40,7 @@ The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPr
 
 #### TBEL vs JS Executors
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
 {% else %}
 [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
@@ -209,14 +209,14 @@ var listAdd = ["thigsboard", 4, 67];
     // add/push
 var addAll = list.addAll(listAdd);         // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
 var addAllI = list.addAll(2, listAdd);     // return true    => list = ["A", "B", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
-var add = list.add(3, "thigsboard");       // return true    => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var add = list.add(3, "thigsboard");       // return nothing => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
 var push = list.push("thigsboard");        // return true    => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
 var unshift = list.unshift("r");           // return nothing => list = ["r", "A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
-var unshift = ["Q", 4];
-list.unshift(unshift); // return nothing => list = [[["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var unshiftQ = ["Q", 4];
+var unshiftQun = list.unshift(unshift);    // return nothing => list = [[["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
     // delete  
-var removeI = list.remove(2);              // return "A" => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]    
-var removeC = list.remove("C");            // return true => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"] 
+var removeIndex2 = list.remove(2);         // return "A" => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]    
+var removeValueC = list.remove("C");       // return true => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"] 
 var shift = list.shift();                  // return ["Q", 4] => list = ["r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
 var pop = list.pop();                      // return "thigsboard" => list =  ["r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67]
 var splice3 = list.splice(3);              // return ["thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67] => list = ["r", "B", "thigsboard"]
@@ -244,7 +244,7 @@ var toReversed = list.toReversed();        // return new List [2, 2, 2, 67]
 var slice = list.slice();                  // return new List [67, 2, 2, 2]  
 var slice4 = list.slice(3);                // return new List [2]   
 var slice1_5 = list.slice(0,2);            // return new List [67, 2]  
-var with1 = list.with(1, 67);               // return new List [67, 67, 2, 2, 2] => list = [67, 2, 2, 2]
+var with1 = list.with(1, 69);               // return new List [67, 69, 2, 2, 2] => list = [67, 2, 2, 2]
 var concat = list.concat(listAdd);         // return new List [67, 2, 2, 2, "thigsboard", 4, 67] => list = [67, 2, 2, 2]
 var join = list.join();                    // return new String "67,2,2,2" => list = [67, 2, 2, 2]        
 var toSpliced2 = list.toSpliced(1, 0, "Feb"); // return new List [67, "Feb", 2, 2, 2] => list = [67, 2, 2, 2] 
@@ -254,7 +254,7 @@ var toSpliced4_5 = list.toSpliced(2, 4, "start", 5, "end"); // return new List[6
 
     // get Info        
 var length = list.length();                 // return  4 
-var memorySize = list.memorySize();         // return 28 
+var memorySize = list.memorySize();         // return 32L 
 var indOf1 = list.indexOf("B", 1);          // return -1  
 var indOf2 = list.indexOf(2, 2);            // return 2  
 var sStr =  list.validateClazzInArrayIsOnlyString(); // return false
@@ -281,8 +281,8 @@ array[0] = 1;
 array[1] = 2;
 array[2] = 3;
 
-str = "My String";
-str[0]; // returns 'M';
+var str = "My String";
+var str0 = str[0]; // returns 'M';
 
 function sum(list){
     var result = 0;
@@ -292,10 +292,17 @@ function sum(list){
     return result;
 };
 
-sum(array); // returns 6
+var sum = sum(array); // returns 6
+```
 
+```java
+// Will cause ArrayIndexOutOfBoundsException.
+var array = new int[3];
+array[0] = 1;
+array[1] = 2;
+array[2] = 3;
 
-array[3] = 4; // Will cause ArrayIndexOutOfBoundsException
+array[3] = 4; return: Error with message:"Invalid statement: 4" and "[Line: 5, Column: 12]"
 ```
 {: .copy-code}
 
@@ -421,7 +428,7 @@ var l2 = Long.toString(9223372036854775807, 2);   // Binary      "11111111111111
 
 ```java
 var dd0 = 99993219.156013e-002;
-var dd16 = Double.toHexString(dd0);              // Hexadecimal ""0x1.e83f862142b5bp19"
+var dd16 = Double.toHexString(dd0);              // Hexadecimal "0x1.e83f862142b5bp19"
 var dd10 = String.format("%.8f",dd0);            // Decimal     "999932,19156013"
 ```
 {: .copy-code}
@@ -486,7 +493,8 @@ It accepts two parameters separated by a colon. The first is the local variable 
 For example:
 
 ```java
-sum = 0;
+var numbers = [1, 2, 3];
+var sum = 0;
 foreach (n : numbers) {
    sum+=n;
 }
@@ -496,7 +504,7 @@ foreach (n : numbers) {
 Since TBEL treats Strings as iterable objects, you can iterate a String (character by character) with a foreach block:
 
 ```java
-str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 foreach (c : str) {
    //do something 
 }
@@ -665,7 +673,7 @@ return stringToBytes(bytesStr); // Returns [123, 34, 104, 101, 108, 108, 111, 34
 
 var inputStr = "hello world";
 return stringToBytes(inputStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
-var charsetStr = "UTF8"
+var charsetStr = "UTF8";
 return stringToBytes(inputStr, charsetStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
 ```
 {: .copy-code}
@@ -1048,7 +1056,7 @@ padEnd(str, 8, '0');                           // Returns  "1001010011"
 padEnd(str, 16, '*');                          // Returns  "1001010011******"
         
 var fullNumber = "203439900FFCD5581";
-var last4Digits = fullNumber.substring(11);
+var last4Digits = fullNumber.substring(0, 11);
 padEnd(last4Digits, fullNumber.length(), '*'); // Returns "203439900FF******"
 ```
 {: .copy-code}
@@ -1127,14 +1135,14 @@ A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
 
 ```java
 intLongToRadixString(58, 2);                         // Returns "00111010"
+intLongToRadixString(9223372036854775807, 2);        // Returns "0111111111111111111111111111111111111111111111111111111111111111"
 intLongToRadixString(13158, 8);                      // Returns "31546"
 intLongToRadixString(-13158, 8);                     // Returns "1777777777777777746232"
-intLongToRadixString(-13158, 10);                    // Returns ":"-13158"
+intLongToRadixString(-13158, 10);                    // Returns "-13158"
 intLongToRadixString(13158, 16);                     // Returns "3366"
 intLongToRadixString(-13158, 16);                    // Returns "FFCC9A"
 intLongToRadixString(9223372036854775807, 16);       // Returns "7FFFFFFFFFFFFFFF"
-intLongToRadixString(9223372036854775807, 2);        // Returns "0111111111111111111111111111111111111111111111111111111111111111"
-intLongToRadixString(-13158, 16, true, true);        // Returns "0xFFCC9A"  
+intLongToRadixString(-13158, 16, true, true);        // Returns "0xFFCC9A"
 ```
 {: .copy-code}
 
@@ -1261,9 +1269,9 @@ Parsed float value.
 ```java
 return parseHexIntLongToFloat("0x0A", true);         // Returns 10.0f
 return parseHexIntLongToFloat("0x0A", false);        // Returns 10.0f
-return parseHexIntLongToFloat"0x00000A", true);      // Returns 10.0f
+return parseHexIntLongToFloat("0x00000A", true);     // Returns 10.0f
 return parseHexIntLongToFloat("0x0A0000", false);    // Returns 10.0f
-return parseHexIntLongToFloat("0x000A0A", true);     // Returns 12570.0f
+return parseHexIntLongToFloat("0x000A0A", true);     // Returns 2570.0f
 return parseHexIntLongToFloat("0x0A0A00", false);    // Returns 2570.0f
 ```
 {: .copy-code}
@@ -1291,9 +1299,9 @@ Parsed double value.
 
 ```java
 return parseHexToDouble("409B04B10CB295EA");            // Returns 1729.1729
-return parseHexToDouble("409B04B10CB295EA" false);      // Returns -2.7208640774822924E205
-return parseHexToDouble("409B04B10CB295EA" true);       // Returns 1729.1729
-return parseHexToDouble("EA95B20CB1049B40" false);      // Returns 1729.1729
+return parseHexToDouble("409B04B10CB295EA", false);      // Returns -2.7208640774822924E205
+return parseHexToDouble("409B04B10CB295EA", true);       // Returns 1729.1729
+return parseHexToDouble("EA95B20CB1049B40", false);      // Returns 1729.1729
 ```
 {: .copy-code}
 
@@ -1362,7 +1370,7 @@ Returns a hexadecimal string.
 
 ```java
 var bytes = [0xBB, 0xAA];
-return bytesToHex( bytes); // Returns "BBAA"
+return bytesToHex(bytes); // Returns "BBAA"
 var list = [-69, 83];
 return bytesToHex(list);   // Returns "BB53"
 ```
@@ -1672,10 +1680,10 @@ byte[] value.
 
 ```java
 var bytesVal = [0xCE, 0xB2];
-return parseByteToBinaryArray(bytesVal);              // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(bytesVal, 15);          // Returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(bytesVal, 14);          // Returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(bytesVal, 2);           // Returns byte[2]  value =>                                           [1, 0]
+return parseBytesToBinaryArray(bytesVal);              // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseBytesToBinaryArray(bytesVal, 15);          // Returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseBytesToBinaryArray(bytesVal, 14);          // Returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseBytesToBinaryArray(bytesVal, 2);           // Returns byte[2]  value =>                                           [1, 0]
 ```
 {: .copy-code}
 
@@ -1702,8 +1710,8 @@ byte[] value.
 
 ```java
 var longValue = 52914L;
-return parseByteToBinaryArray(longValue);        // Returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-return parseByteToBinaryArray(longValue, 16);    // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseLongToBinaryArray(longValue);        // Returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseLongToBinaryArray(longValue, 16);    // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
 ```
 {: .copy-code}
 
@@ -1730,8 +1738,8 @@ int value.
 **Examples:**
 
 ```java
-return parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1]);                   // Returns -97
-var actualVolt =  parseByteToBinaryArray([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // Returns 31
+var binaryArrayToInt = parseBinaryArrayToInt([1, 0, 0, 1, 1, 1, 1, 1]);  // Returns -97
+var actualVolt = parseBinaryArrayToInt([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // Returns 31
 ```
 {: .copy-code}
 
@@ -1767,10 +1775,10 @@ return parseInt("-FF", 16);         // Returns -255
 return parseInt("1100110", 2);      // Returns 102
 return parseInt("2147483647", 10);  // Returns 2147483647
 return parseInt("-2147483648", 10); // Returns -2147483648
+return parseInt("Kona", 27);        // Returns 411787        
 return parseInt("2147483648", 10);  // throws a NumberFormatException
 return parseInt("99", 8);           // throws a NumberFormatException
 return parseInt("Kona", 10);        // throws a NumberFormatException
-return parseInt("Kona", 27);        // Returns 411787
 ```
 {: .copy-code}
 
@@ -1807,7 +1815,7 @@ return parseLong("777777777777777777777", 8);   // Returns 9223372036854775807L
 return parseLong("KonaLong", 27);               // Returns 218840926543L
 return parseLong("9223372036854775807", 10);    // Returns 9223372036854775807L
 return parseLong("-9223372036854775808", 10);   // Returns -9223372036854775808L
-return parseLong("9223372036854775808", 10);    //throws a NumberFormatException
+return parseLong("9223372036854775808", 10);    // throws a NumberFormatException
 return parseLong("0xFGFFFFFF", 16);             // throws a NumberFormatException
 return parseLong("FFFFFFFF", 16);               // throws a NumberFormatException
 return parseLong("1787", 8);                    // throws a NumberFormatException
@@ -1837,7 +1845,7 @@ A float value.
 **Examples:**
 
 ```java
-return parseFloat("4.2"); // Returns 4.2
+return parseFloat("4.2"); // Returns 4.2f
 ```
 {: .copy-code}
 
@@ -1862,7 +1870,7 @@ A double precision value.
 **Examples:**
 
 ```java
-return parseDouble("4.2"); // Returns 4.2
+return parseDouble("4.2"); // Returns 4.2d
 ```
 {: .copy-code}
 
@@ -2152,8 +2160,8 @@ var dIso = d.toISOString();                          //  return "2023-08-06T04:0
 {: .copy-code}
 
 ```java
-var d = new Date("2023-08-06T04:04:05.123");        // TZ => Default, ZoneId "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                         //  return "2023-08-06T01:04:05.123Z"   ZoneId  "Europe/Kyiv" = "+03:00"
+var d = new Date("2023-08-06T12:04:05.123");        // TZ => Default
+var dIso = d.toISOString();                         //  return "2023-08-06T16:04:05.123Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")                                                               
 ```
 {: .copy-code}
 
@@ -2199,8 +2207,8 @@ var dIso = d.toISOString();                             //  return "2008-06-03T0
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
-var d = new Date("2023-08-06 04:04:05.000Z", pattern);        //  Pattern without TZ => "UTC"
-var dIso = d.toISOString();                                   //  return "2008-06-03T08:05:30Z"    ZoneId "UTC" = "00:00"
+var d = new Date("2023-08-06 04:04:05.000Z", pattern);        // Pattern without TZ => ZoneId "UTC"
+var dIso = d.toISOString();                                   // return "2023-08-06T04:04:05Z"    ZoneId "UTC" = "00:00"
 ```
 {: .copy-code}
 
@@ -2208,14 +2216,14 @@ var dIso = d.toISOString();                                   //  return "2008-0
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
 var d = new Date("2023-08-06 04:04:05.000-04:00", pattern);   // Pattern with TZ => "-04:00"
-var dIso = d.toISOString();                                   //  return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
+var dIso = d.toISOString();                                   // return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
 ```
 {: .copy-code}
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSS";
-var d = new Date("2023-08-06 04:04:05.000", pattern);         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                                   //  return "2023-08-06T08:04:05Z"    ZoneId  "Europe/Kyiv" = "+03:00"
+var d = new Date("2023-08-06 12:04:05.000", pattern);         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
+var dIso = d.toISOString();                                   //  return "2023-08-06T16:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
@@ -2223,23 +2231,24 @@ var dIso = d.toISOString();                                   //  return "2023-0
 
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
-var d = new Date("09:15:30 PM, So. 10/09/2022", pattern, "de");         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                                             //  return "2022-10-09T18:15:30Z"    ZoneId  "Europe/Kyiv" = "+03:00"
-var dLocal= d.toLocaleString("de");                                     //  return "09.10.22, 21:15:30"      
+var d = new Date("12:15:30 PM, So. 10/09/2022", pattern, "de");         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
+var dIso = d.toISOString();                                             //  return "2022-10-09T16:15:30Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dLocal= d.toLocaleString("de");                                     //  return "09.10.22, 12:15:30"
 ```
 {: .copy-code}
 
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
-var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "en-US");         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                                                //  return "2022-10-09T11:15:30Z"    ZoneId  "Europe/Kyiv" = "+03:00"
-var dLocal = d.toLocaleString("en-US");                                    //  return "10/9/22, 2:15:30 PM"      
+var d = new Date("12:15:30 PM, Sun 10/09/2022", pattern, "en-US");         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
+var dIso = d.toISOString();                                                //  return "2022-10-09T16:15:30Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dLocal = d.toLocaleString("en-US");                                    //  return "10/9/22, 12:15:30 PM"
 ```
 {: .copy-code}
 
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
-var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // return: error. The pattern with input parameter of date does not match the locale
+var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // return: Error: could not create constructor 
+                                                                            // The pattern with input parameter of date does not match the locale
                                                                             // Locale = "de", input parameter "day of the week" is "Sun", should be "So.". 
 ```
 {: .copy-code}
@@ -2247,28 +2256,28 @@ var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // r
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
-var d = new Date("2023-08-06 04:04:05.000-04:00", pattern, "de", "Europe/Kyiv");    // Pattern with TZ => "-04:00" but `Time Zone` as parameter = "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                                                         // return "2023-08-06T01:04:05Z"    ZoneId  "Europe/Kyiv" = "+03:00"
-var dLocal_de = d.toLocaleString("de");                                             // return "06.08.23, 04:04:05"     
+var d = new Date("2023-08-06 04:04:05.000+02:00", pattern, "de", "America/New_York");    // Pattern with TZ => "+02:00" but `Time Zone` as parameter = "America/New_York" = "-04:00"
+var dIso = d.toISOString();                                                         // return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
+var dLocal_de = d.toLocaleString("de");                                             // return "06.08.23, 04:04:05" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")   
 var dLocal_us = d.toLocaleString("en-US");                                          // return "8/6/23, 4:04:05 AM"      
 ```
 {: .copy-code}
 
-###### Ints (year, month and etc) with Optional: time zone
+###### Instant (year, month and etc) with Optional: time zone
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5);
-var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kyiv")
-var dIso = d.toISOString();             //  return 2023-08-06T01:04:05Z"
-var dDate = d;                          //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом"
+var d = new Date(2023, 8, 6, 4, 4, 5, "America/New_York");
+var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "America/New_York")
+var dIso = d.toISOString();             //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dDate = d;                          //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time"
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");
-var dLocal = d.toLocaleString();                                    // return "2023-08-06 05:04:05" (Locale: "UTC", ZoneId "Europe/Kyiv")
-var dLocal_us = d.toLocaleString("en-us",  "America/New_York");     // return "8/5/23, 10:04:05 PM" (Locale: "en-us", ZoneId "America/New_York")
-var dIso = d.toISOString();                                         // return 2023-08-06T02:04:05Z"
-var dDate = d;                                                      // return "неділя, 6 серпня 2023 р. о 05:04:05 за східноєвропейським літнім часом"```
+var dLocal = d.toLocaleString();                                    // return "2023-08-05 22:04:05" (Locale: "UTC", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"))
+var dLocal_us = d.toLocaleString("en-us", "America/New_York");      // return "8/5/23, 10:04:05 PM" (Locale: "en-us", ZoneId "America/New_York")
+var dIso = d.toISOString();                                         // return "2023-08-06T02:04:05Z"
+var dDate = d;                                                      // return "Saturday, August 5, 2023 at 22:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
@@ -2294,16 +2303,16 @@ _Input date Without TZ (TZ Default = ZoneId.systemDefault())_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5);          //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds) => TZ Default = ZoneId.systemDefault();
 var dLocal = d.toLocaleString("en-US");         //  return "8/6/23, 4:04:05 AM" (Locale: "en-US")
-var dIso = d.toISOString();                     //  return "2023-08-06T01:04:05Z", ZoneId:  Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00";
-var dDate = d;                                  //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом";
+var dIso = d.toISOString();                     //  return Default = ZoneId.systemDefault: "2023-08-06T08:04:05Z", (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dDate = d;                                  //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
 ```
 {: .copy-code}
         
 ```java
 var d = new Date("2023-08-06T04:04:05.000");     //  Parameter (String 'yyyy-MM-ddThh:mm:ss.ms') => TZ Default = ZoneId.systemDefault():
-var dIso = d.toISOString();                      //  return "2023-08-06T01:04:05Z"
-var dLocal_de = d.toLocaleString("de");          //  return "06.08.23, 04:04:05"  (Locale: "de",  ZoneId "Europe/Kyiv" = "+03:00")
-var dLocal_utc = d.toLocaleString("UTC");        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kyiv" = "+03:00")
+var dIso = d.toISOString();                      //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dLocal_de = d.toLocaleString("de");          //  return "06.08.23, 04:04:05"  (Locale: "de",  ZoneId.systemDefault());
+var dLocal_utc = d.toLocaleString("UTC");        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId.systemDefault());
 ```
 {: .copy-code}
 
@@ -2311,9 +2320,9 @@ _Input date With TZ (TZ = parameter TZ or 'Z' equals 'UTC')_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin"); //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin";
 var dIso = d.toISOString();                             //  return "2023-08-06T02:04:05Z";
-var dLocal1 = d.toLocaleString("UTC");                  //  return "2023-08-06 05:04:05" (Locale: "UTC",  ZoneId Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00");
-var dLocal2 = d.toLocaleString("en-us");                //  return "8/6/23, 5:04:05 AM" (Locale: "en-US", ZoneId Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00");
-var dLocal3 = d.toLocaleString("de");                   // return "06.08.23, 05:04:05"  (Locale: "de",   ZoneId Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00");
+var dLocal1 = d.toLocaleString("UTC");                  //  return "2023-08-05 22:04:05" (Locale: "UTC",  (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal2 = d.toLocaleString("en-us");                //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal3 = d.toLocaleString("de");                   // return "05.08.23, 22:04:05"  (Locale: "de",   (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 ```     
 {: .copy-code}
 
@@ -2336,11 +2345,11 @@ a Date object as a string, using locale settings and Id time zone.
 **Examples:**
 
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");         //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin"
-var dIso = d.toISOString();                                     //  return "2023-08-06T02:04:05Z"
-var dLocal1 = d.toLocaleString("UTC");                          //  return "2023-08-06 05:04:05" (Locale: "UTC",   ZoneId Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00");
-var dLocal2 = d.toLocaleString("en-us",  "America/New_York");   //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", ZoneId "America/New_York" = "-04:00")
-var dLocal3 = d.toLocaleString("de",  "Europe/Berlin");         //  return "06.08.23, 04:04:05"  (Locale: "de",    ZoneId "Europe/Berlin" =    "+02:00")
+var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");         //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin";
+var dIso = d.toISOString();                                     //  return "2023-08-06T02:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("UTC");                          //  return "2023-08-05 22:04:05" (Locale: "UTC",   (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal2 = d.toLocaleString("en-us", "America/New_York");    //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", ZoneId "America/New_York" = "-04:00")
+var dLocal3 = d.toLocaleString("de", "Europe/Berlin");          //  return "06.08.23, 04:04:05"  (Locale: "de",    ZoneId "Europe/Berlin" = "+02:00")
 ```
 {: .copy-code}
 
@@ -2368,40 +2377,40 @@ a Date object as a string, using locale settings, {"timeZone": "Id time zone",
 ```java
 var d = new Date("2023-08-06T04:04:05.00Z");         // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"
-var dLocal1 = d.toLocaleString();                    // return "2023-08-06 07:04:05" (Locale: Default "UTC",   ZoneId Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00");
+var dLocal1 = d.toLocaleString();                    // return "2023-08-06 00:04:05" (Locale: Default "UTC", ZoneId: (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 
-var options = {"timeZone":"America/New_York"};       // TZ = "-04:00"
+var options = {"timeZone":"Europe/Berlin"};       // TZ = "+02:00"
 var optionsStr = JSON.stringify(options);       
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // "8/6/23, 12:04:05 AM"  ("8/6/23, 00:04:05 AM", Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // "8/6/23, 6:04:05 AM"  (Locale:  "en-US",  options: ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
-var d = new Date("2023-08-06T04:04:05.000");         // TZ => Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                          // return "2023-08-06T01:04:05Z"
-var options = {"timeZone":"America/New_York"};
+var d = new Date("2023-08-06T04:04:05.000");         // TZ => Default = ZoneId.systemDefault
+var dIso = d.toISOString();                          // return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var options = {"timeZone":"Europe/Berlin"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8/5/23, 9:04:05 PM" (Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8/6/23, 10:04:05 AM" (Locale: "en-US",  options: ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5);               // TZ => Default = ZoneId.systemDefault => "Europe/Kyiv" = "+03:00"
-var dIso = d.toISOString();                          // return "2023-08-06T01:04:05Z"
-var options = {"timeZone":"America/New_York", "pattern": "M-d/yyyy, h:mm=ss a"};
+var d = new Date(2023, 8, 6, 4, 4, 5);               // TZ => Default = ZoneId.systemDefault
+var dIso = d.toISOString();                          // return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var options = {"timeZone":"Europe/Berlin", "pattern": "M-d/yyyy, h:mm=ss a"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8-5/2023, 9:04=05 PM" (pattern, Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8-6/2023, 10:04=05 AM" (options: pattern,  Locale = "en-US", ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "UTC");        // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"       
-var options = {"timeZone":"America/New_York","dateStyle":"full","timeStyle":"full"};
+var options = {"timeZone":"Europe/Berlin","dateStyle":"full","timeStyle":"full"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 00:04:05 за північноамериканським східним літнім часом"
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 12:04:05 AM Eastern Daylight Time"
-var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 00:04:05 Nordamerikanische Ostküsten-Sommerzeit"
+var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 06:04:05 за центральноєвропейським літнім часом"
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 6:04:05 AM Central European Summer Time"
+var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 06:04:05 Mitteleuropäische Sommerzeit"
 ```
 {: .copy-code}
 
