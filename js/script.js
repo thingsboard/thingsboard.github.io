@@ -965,16 +965,19 @@ var tb = (function () {
 
 							const navStatus = !$(this)[0].classList.contains("disableNav");
 
+							const isSmoothAutoplay = $carousel[0].classList.contains("smoothAutoPlay");
+							const isSmallScreen = $(window).width() < 600;
+
 							$('#' + carouselId).owlCarousel({
 								margin: setupMarginPadding($carousel, '--carousel-margin'),
 								stagePadding: setupMarginPadding($carousel, '--stagePadding'),
 								autoHeight: false,
 								autoWidth: autoWidthStatus($carousel),
 								loop: loopStatus($carousel),
-								autoplay: autoPlayStatus($carousel),
-								autoplayTimeout: $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
-								autoplaySpeed: $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
-								autoplayHoverPause: false,
+								autoplay: isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel),
+								autoplayTimeout: isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
+								autoplaySpeed: isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
+								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
 								slideTransition: 'linear',
 								nav: $carousel[0].classList.contains("timeline"),
 								responsiveBaseElement: 'body',
