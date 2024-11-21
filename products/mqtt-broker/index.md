@@ -246,7 +246,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 <div class="block">
                     <img src="/images/mqtt-broker/product/unauthorized-clients.svg" alt="Unauthorized clients">
                     <div>
-                        <a href="/docs/mqtt-broker/user-guide/unauthorized-clients/">
+                        <a href="/docs/mqtt-broker/user-guide/ui/unauthorized-clients/">
                             <h4 class="title">Unauthorized clients</h4>
                         </a>
                         <p>Secure your IoT network with real-time monitoring of unauthorized access attempts. Gain critical details into potential security threats, enabling you to take proactive measures and strengthen overall system protection.</p>
@@ -257,7 +257,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 <div class="block">
                     <img src="/images/mqtt-broker/product/client-session-metrics.svg" alt="Client session metrics">
                     <div>
-                        <a href="/docs/mqtt-broker/user-guide/client-session-metrics/">
+                        <a href="/docs/mqtt-broker/user-guide/ui/sessions/#metrics">
                             <h4 class="title">Client session metrics</h4>
                         </a>
                         <p>Gain valuable insights into client behavior and performance with detailed session metrics, allowing you to identify messaging anomalies and proactively troubleshoot issues.</p>
