@@ -275,7 +275,7 @@ keycloak-add-domain:
 login-with-keycloak-1:
     0:
         image: /images/user-guide/oauth-2-support/keycloak/login-with-keycloak-1-pe.png
-        title: 'Go to the ThingsBoard login screen. You will see an additional option, "Sign in with Keycloak". Click this button;'
+        title: 'Go to the ThingsBoard login screen. You will see an additional option, "Login with Keycloak". Click this button;'
     1:
         image: /images/user-guide/oauth-2-support/keycloak/login-with-keycloak-2.png
         title: 'A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In";'

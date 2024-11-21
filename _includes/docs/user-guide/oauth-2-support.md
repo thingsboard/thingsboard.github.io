@@ -414,7 +414,7 @@ A new domain has been added.
 
 ### Sign in
 
-Go to the ThingsBoard login screen. You will see an additional option, "Sign in with Keycloak". Click this button. A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In". You are now logged into ThingsBoard using Keycloak authorization credentials.
+Go to the ThingsBoard login screen. You will see an additional option, "Login with Keycloak". Click this button. A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In". You are now logged into ThingsBoard using Keycloak authorization credentials.
 
 {% include images-gallery.html imageCollection="login-with-keycloak-1" %}
 
