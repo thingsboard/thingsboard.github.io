@@ -2,7 +2,7 @@
 
 #### Step 1. Prepare your server and certificate chain
 
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://{{hostName}}/signup).
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://eu.thingsboard.cloud/signup).
 {% if docsPrefix != 'paas/' %}
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 {% endif %}
