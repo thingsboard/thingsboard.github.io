@@ -3,6 +3,9 @@
   .owl-carousel.owl-theme.usecase-carousel
     margin: 40px 0 0
 
+  .owl-carousel.owl-theme.usecase-carousel.smoothAutoPlay
+    margin: 0
+
   #companyBg
     padding: 0
     overflow: hidden
@@ -25,19 +28,12 @@
 
         .company-aboutus-container
           position: relative
-          background: #f7f9fc
-          padding: 140px 0px
+          background: #F7F9FC
+          padding: 50px 0px
           overflow: hidden
-          &:before
-            content: ""
-            opacity: 0.25
-            position: absolute
-            transform: rotate(270deg) translate(-50%, -50%)
-            width: 1977px
-            height: 2055px
-            bottom: 50%
-            left: 50%
-            background: url(/images/tbstyled-bg.svg) center
+          .company-content-title
+            margin-bottom: 50px
+            padding: 0
           .company-aboutus-image-block
             display: flex
             flex-direction: column
@@ -182,7 +178,7 @@
     gap: 30px
 
   .company-content-title
-    padding: 120px 0
+    padding: 50px 0
     text-align: center
     font-size: 48px
     font-weight: 600

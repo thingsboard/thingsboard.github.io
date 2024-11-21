@@ -29,16 +29,26 @@
         </ul>
         {% for bubbleTabsItem in bubbleTabsCollection %}
             <div class="tab-content" id="tab-{{ bubbleTabsItem[0] | replace: ' ', '-' }}">
+                {% assign clusterIndex = 0 %}
                 {% for data in bubbleTabsItem[1] %}
-                    {% if data[1].src %}
-                        <div class="tab-item">
-                            <img src="{{ data[1].src }}" alt="{{ data[1].alt }}">
-                            <div class="tab-item-text">
-                                <span class="tab-item-text-title" style="font-size: {{ titleSize }}; font-weight: {{ titleWeight }}; line-height: {{ titleLineHeight }}; color: {{ titleColor }}">{{ data[1].title }}</span>
-                                <span class="tab-item-text-description" style="font-size: {{ descriptionSize }}; font-weight: {{ descriptionWeight }}; line-height: {{ descriptionLineHeight }};  color: {{ descriptionColor }}">{{ data[1].description }}</span>
-                            </div>
-                        </div>
-                    {%  endif %}
+                    {% assign clusterClass = "first-cluster" %}
+                    {% if clusterIndex > 0 %}
+                        {% assign clusterClass = "" %}
+                    {% endif %}
+                    <div class="team-claster {{ clusterClass }}">
+                        {% for sphere in data[1] %}
+                            {% if sphere[1].src %}
+                                <div class="tab-item">
+                                    <img src="{{ sphere[1].src }}" alt="{{ sphere[1].alt }}">
+                                    <div class="tab-item-text">
+                                        <span class="tab-item-text-title" style="font-size: {{ titleSize }}; font-weight: {{ titleWeight }}; line-height: {{ titleLineHeight }}; color: {{ titleColor }}">{{ sphere[1].title }}</span>
+                                        <span class="tab-item-text-description" style="font-size: {{ descriptionSize }}; font-weight: {{ descriptionWeight }}; line-height: {{ descriptionLineHeight }}; color: {{ descriptionColor }}">{{ sphere[1].description }}</span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% assign clusterIndex = clusterIndex | plus: 1 %}
                 {% endfor %}
             </div>
         {% endfor %}

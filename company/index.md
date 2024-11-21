@@ -10,8 +10,8 @@ notitle: "true"
         {% include carousel.liquid items = 4 collectionMap = "company-photos-carousel" autoplay = true smoothAutoPlay = true autoWidth = true nonActiveItemsVisibility = false carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "disableDots" imageBorderRadius = 0 %}
     </div>
     <div class="company-aboutus">
-        <h2 class="company-content-title">About Us</h2>
         <div class="company-aboutus-container">
+            <h2 class="company-content-title">About Us</h2>
             <div class="company-wrapper">
                 <div class="company-flex-content-default">
                     <div class="company-aboutus-image-block">
@@ -47,6 +47,7 @@ notitle: "true"
         </div>
     </div>
     <div class="company-values">
+        <h2 class="company-content-title">Our values</h2>
         <div class="company-values-wrapper">
             {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" darkenedImage = true navMode = "disableNav" carouselMargin = 0 stagePadding = 0 titleSize = "96px" titleSizeLower1280 = "64px" titleSizeLower960 = "56px" titleSizeLower600 = "40px" descriptionSize = "36px" descriptionSizeLower960 = "32px" descriptionSizeLower600 = "28px" titleLineHeight = "125%" descriptionLineHeight = "140%" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
         </div>
