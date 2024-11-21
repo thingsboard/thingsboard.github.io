@@ -158,7 +158,7 @@ oauth0-configuration-of-thingsboard-3:
 terminal-start-keycloak:
     0:
         image: /images/user-guide/oauth-2-support/keycloak/terminal-start-keycloak-1.png
-        title: 'Run this command to start Keycloak on local the port 8080 and create an initial admin user with the username admin and password admin.'
+        title: 'Run this command to start Keycloak on local the port 8081 and create an initial admin user with the username admin and password admin.'
     1:
         image: /images/user-guide/oauth-2-support/keycloak/terminal-start-keycloak-2.png
         title: ''

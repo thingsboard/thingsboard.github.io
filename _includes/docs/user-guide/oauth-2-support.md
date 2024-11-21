@@ -283,10 +283,10 @@ Get started with Keycloak using your [preferred method](https://www.keycloak.org
 In this example, we will run a test authentication and access management server Keycloak on Docker.
 
 - Make sure you have [Docker](https://docs.docker.com/compose/install/){:target="_blank"} installed;
-- Run the command below to start Keycloak on local the port 8080 and create an initial admin user with the username **admin** and password **admin**:
+- Run the command below to start Keycloak on local the port 8081 and create an initial admin user with the username **admin** and password **admin**:
 
 ```text
-docker run -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.0.5 start-dev
+docker run -p 8081:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.0.5 start-dev
 ```
 {: .copy-code}
 
@@ -294,7 +294,7 @@ docker run -p 8080:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADM
 
 **Log in to the admin console**
 
-- Log in to the [Keycloak Admin Console](http://localhost:8080/admin){:target="_blank"} using "admin" as username and password;
+- Log in to the [Keycloak Admin Console](http://localhost:8081/admin){:target="_blank"} using "admin" as username and password;
 
 {% include images-gallery.html imageCollection="log-in-to-admin-console" %}
 
@@ -379,7 +379,7 @@ Now let's add a new OAuth client in ThingsBoard by following the steps below:
 - Enter "Keycloak" as the title. 
 - Select the "Custom" from the dropdown menu as the authentication provider;
 - If necessary, specify the allowed platforms, or leave all;
-- Now enter the "Client ID" and "Client secret", using the values retrieved from the [Keycloak console](http://localhost:8080/admin){:target="_blank"}. 
+- Now enter the "Client ID" and "Client secret", using the values retrieved from the [Keycloak console](http://localhost:8081/admin){:target="_blank"}. 
 
 Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block:
 - Use [endpoint configuration file](#endpoints) to find the current values for "Access Token URI," "Authorization URI", "JSON Web Key URI", and "User info URI". Fill the corresponding fields with these values;
