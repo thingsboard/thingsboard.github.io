@@ -16,28 +16,27 @@ Leadership:
       title: "Volodymyr Babak"
       description: "VP EDGE"
     3:
-      src: "/images/companyImages/thingsboard-team-photos/leadership/vitaliy-paromskiy.webp"
-      alt: "Vitaliy Paromskiy"
-      title: "Vitaliy Paromskiy"
-      description: "Chief solutions officer"
-    4:
-      src: "/images/companyImages/thingsboard-team-photos/leadership/artur-ishkhanishvili.webp"
-      alt: "Artur Ishkhanishvili"
-      title: "Artur Ishkhanishvili"
-      description: "Business Development Executive"
-  1:
-    0:
       src: "/images/companyImages/thingsboard-team-photos/leadership/alex-doan.webp"
       alt: "Alex Doan"
       title: "Alex Doan"
       description: "VP Sales Marketing"
-    1:
-      src: "/images/companyImages/thingsboard-team-photos/product-team/yevheniia-havrysh.webp"
+    4:
+      src: "/images/companyImages/thingsboard-team-photos/leadership/vitaliy-paromskiy.webp"
+      alt: "Vitaliy Paromskiy"
+      title: "Vitaliy Paromskiy"
+      description: "Chief solutions officer"
+    5:
+      src: "/images/companyImages/thingsboard-team-photos/leadership/artur-ishkhanishvili.webp"
+      alt: "Artur Ishkhanishvili"
+      title: "Artur Ishkhanishvili"
+      description: "Business Development Executive"
+    6:
+      src: "/images/companyImages/thingsboard-team-photos/leadership/yevheniia-havrysh.webp"
       alt: "Yevheniia Havrysh"
       title: "Yevheniia Havrysh"
       description: "Growth Team Lead & Art Director"
-    2:
-      src: "/images/companyImages/thingsboard-team-photos/operation-team/oksana-kovalska.webp"
+    7:
+      src: "/images/companyImages/thingsboard-team-photos/leadership/oksana-kovalska.webp"
       alt: "Oksana Kovalska"
       title: "Oksana Kovalska"
       description: "HRD"
@@ -49,7 +48,7 @@ Product team:
       title: "Serhii Matviienko"
       description: "Site Reliability Engineer"
     1:
-      src: "/images/companyImages/thingsboard-team-photos/product-team/yevheniia-havrysh.webp"
+      src: "/images/companyImages/thingsboard-team-photos/leadership/yevheniia-havrysh.webp"
       alt: "Yevheniia Havrysh"
       title: "Yevheniia Havrysh"
       description: "Growth Team Lead & Art Director"
@@ -533,7 +532,7 @@ Sales/Marketing:
 Operation team:
   0:
     0:
-      src: "/images/companyImages/thingsboard-team-photos/operation-team/oksana-kovalska.webp"
+      src: "/images/companyImages/thingsboard-team-photos/leadership/oksana-kovalska.webp"
       alt: "Oksana Kovalska"
       title: "Oksana Kovalska"
       description: "HRD"
