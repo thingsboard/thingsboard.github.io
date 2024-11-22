@@ -9,6 +9,20 @@
 
 In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tolerant platform hosted in the cloud and dependent on an internet connection. While an **on-premises installation** can function without one, it does not offer the same inherent support for distributed data syncing. For more information, see the [What is ThingsBoard](/docs/{{peDocsPrefics}}getting-started-guides/what-is-thingsboard/){: target="_blank"} article.
 
+### The Key Differences Between Edge and Cloud 
+
+Although **Edge is designed similarly to Cloud**, the main difference lies **in the location of data processing**:
+* **Edge** stores and processes data locally on the edge device.
+* **Cloud** stores and processes data centrally in the cloud.
+
+**Connectivity requirements** also differ: 
+* **Edge** can operate independently of cloud connectivity.
+* **Cloud** is dependent on network availability.
+
+**Cluster deployment** is crucial for handling large-scale IoT applications with numerous devices and high data throughput:
+* **Edge does not support cluster deployment**. It is designed to operate, process and analyze data locally before synchronizing with the central ThingsBoard server.
+* **Cloud supports cluster deployment**. It refers to the deployment in a distributed architecture, where multiple nodes (instances) work together to ensure scalability, fault tolerance, and high availability.
+
 ## Synchronization Architecture
 
 **ThingsBoard Edge** and **ThingsBoard Cloud** communicate using the [gRPC (Remote Procedure Call) protocol](https://grpc.io/){: target="_blank"}. This communication channel allows for efficient data synchronization between edge devices and the cloud server, enabling a seamless flow of messages while minimizing overhead and latency.
@@ -21,11 +35,11 @@ To view the list of messages transferred from the **Cloud** to the **Edge**, go 
 
 {% include images-gallery.html imageCollection="downlinks" %}
 
-#### Force Synchronization Procedure
+### Force Synchronization Procedure
 
 During a network outage, or some other communication problem **ThingsBoard Edge** could become out of sync from the **Cloud**. The Edge instance continues operating independently, collecting telemetry data, processing device events, and applying local rules. However, this data and state changes does not reach the Cloud, leading to inconsistencies.
 
-To ensure that both the **ThingsBoard Edge** and **Cloud** are aligned to deliver accurate and efficient IoT functionality, user is able to force synchronization process. 
+To ensure that both the **ThingsBoard Edge** and **Cloud** are aligned to deliver accurate and efficient IoT functionality, the synchronisation process can be forced.
 
 To force synchronization procedure, go to the **Edge management > Instances** section of your Cloud (Server), click on the **Edge** and then, click the **"Sync Edge"** button:
 
@@ -40,8 +54,34 @@ To **assign** specific entities to the **Edge**, log in to your **Cloud** and na
 {% include images-gallery.html imageCollection="instancesSection" showListImageTitles="true" %}
 
 Once an entity has been assigned to a specific **Edge**, it will be pushed to the **Edge event queue**. 
-If the connection between the **Edge** and the **Cloud** is active, the assigned entity will be created on the **Edge** instantly. 
-In the event that the **Edge** is not connected to the **Cloud**, the entity will be created once the connection is established.
+If the **connection** between the Edge and the Cloud is **active**, the assigned entity will be created on the Edge **instantly**. 
+If the Edge instance is **not connected** to the **Cloud**, the entity will be created **once the connection is established**.
+
+### Edge Details
+
+Additional information about the Edge and the latest events can be found on the **"Edge Details"** page.
+Go the **Edge management > Instances** section and click on the Edge: 
+* The **"Details"** tab contains general information, such as **Edge ID**, **Edge key** and **Edge secret**. You also can **assign entities** and **force synchronization** on this tab.
+* The **"Attributes"** tab displays the latest attributes published to the server. 
+* The **"Latest telemetry"** tab displays the most recent telemetry records from your Edge.
+* The **"Alarms"** tab displays the list of alarms.
+* The **"Events"** tab displays various events related to the Edge, such ???alarms, ???  
+* The **"Downlinks"** tab displays the list of messages transferred from the Cloud to the Edge.
+* The **"Relations"** tab displays the records of other entities connected to the Edge. ??
+* The **"Audit logs"** tab displays audit records to track user actions ???
+
+{% include images-gallery.html imageCollection="edgeDetails" %}
+
+### Edge Status Page
+
+Basic information about the Edge configuration is provided on the Edge instance itself. To view this information, log in to your Edge instance and go to the Edge > Status section
+
+    Name, ID, Type, Routing Key
+    Connection status with the cloud: Connected / Disconnected
+    Last time connected to/disconnected from cloud
+
+
+### Cloud Events
 
 ## Next Steps
 
