@@ -16,7 +16,7 @@ ThingsBoard is designed to support different device credentials. There are three
 
 Device credentials need to be provisioned to corresponding device entity on the server. There are multiple ways to do this:
 
- - **Automatically**, using [X.509 Certificate chain](/docs/user-guide/certificates/) or [device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/). Allows devices to automatically provision themselves in ThingsBoard.
+ - **Automatically**, using [X.509 Certificate chain](/docs/{{docsPrefix}}user-guide/certificates/) or [device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/). Allows devices to automatically provision themselves in ThingsBoard.
  - **Via Script**, using ThingsBoard [REST API](/docs/{{docsPrefix}}reference/rest-api/). For example during manufacturing, QA or purchase order fulfilment.
  - **Manually**, using ThingsBoard [Web UI](/docs/{{docsPrefix}}user-guide/ui/devices/#manage-device-credentials). For example for development purposes, or by system administrator.
 
