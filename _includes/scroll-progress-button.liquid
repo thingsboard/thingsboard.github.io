@@ -1,0 +1,64 @@
+<button class="btn-toggle-round scroll-top js-scroll-top" type="button" title="Scroll to top">
+    <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="cuurentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="18" y1="15" x2="12" y2="9" />
+        <line x1="6" y1="15" x2="12" y2="9" />
+    </svg>
+</button>
+
+<script>
+    jqueryDefer(function () {
+        $(window).scroll(function() {
+            var height = $(window).scrollTop();
+            if (height > 0) {
+                $('nav.usecase-nav').addClass('nav-fixed');
+            } else {
+                $('nav.usecase-nav').removeClass('nav-fixed');
+            }
+        });
+
+
+        const scrollTopBtn = document.querySelector('.js-scroll-top');
+        if (scrollTopBtn) {
+            scrollTopBtn.onclick = () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+
+            const progressPath = document.querySelector('.scroll-top path');
+            const pathLength = progressPath.getTotalLength();
+            progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+            progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+            progressPath.style.strokeDashoffset = pathLength;
+            progressPath.getBoundingClientRect();
+            progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+            const updateProgress = function() {
+                const scroll = window.scrollY || window.scrollTopBtn || document.documentElement.scrollTopBtn;
+
+                const docHeight = Math.max(
+                    document.body.scrollHeight, document.documentElement.scrollHeight,
+                    document.body.offsetHeight, document.documentElement.offsetHeight,
+                    document.body.clientHeight, document.documentElement.clientHeight
+                );
+
+                const windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+                const height = docHeight - windowHeight;
+                progressPath.style.strokeDashoffset = pathLength - (scroll * pathLength / height);
+            }
+
+            updateProgress();
+            const offset = 100;
+
+            window.addEventListener('scroll', function(event) {
+                updateProgress();
+
+                const scrollPos = window.scrollY || window.scrollTopBtn || document.getElementsByTagName('html')[0].scrollTopBtn;
+                scrollPos > offset ? scrollTopBtn.classList.add('is-active') : scrollTopBtn.classList.remove('is-active');
+
+            }, false);
+        }
+    });
+</script>
