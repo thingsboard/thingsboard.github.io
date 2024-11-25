@@ -12,16 +12,16 @@ In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tole
 ### The Key Differences Between Edge and Cloud 
 
 Although **Edge is designed similarly to Cloud**, the main difference lies **in the location of data processing**:
-* **Edge** stores and processes data locally on the edge device.
-* **Cloud** stores and processes data centrally in the cloud.
+* **Edge** stores and processes data **locally** on the edge device.
+* **Cloud** stores and processes data **centrally** in the cloud.
 
 **Connectivity requirements** also differ: 
-* **Edge** can operate independently of cloud connectivity.
-* **Cloud** is dependent on network availability.
+* **Edge** can operate **independently of cloud connectivity**.
+* **Cloud** is **dependent on network** availability.
 
-**Cluster deployment** is crucial for handling large-scale IoT applications with numerous devices and high data throughput:
+**Cluster deployment** refers to the deployment in a distributed architecture, where multiple nodes (instances) work together to ensure scalability, fault tolerance, and high availability.
 * **Edge does not support cluster deployment**. It is designed to operate, process and analyze data locally before synchronizing with the central ThingsBoard server.
-* **Cloud supports cluster deployment**. It refers to the deployment in a distributed architecture, where multiple nodes (instances) work together to ensure scalability, fault tolerance, and high availability.
+* **Cloud supports cluster deployment** and is crucial for handling large-scale IoT applications with numerous devices and high data throughput.
 
 ## Synchronization Architecture
 
@@ -65,23 +65,35 @@ Go the **Edge management > Instances** section and click on the Edge:
 * The **"Attributes"** tab displays the latest attributes published to the server. 
 * The **"Latest telemetry"** tab displays the most recent telemetry records from your Edge.
 * The **"Alarms"** tab displays the list of alarms.
-* The **"Events"** tab displays various events related to the Edge, such ???alarms, ???  
+* The **"Events"** tab displays various events related to the Edge. 
 * The **"Downlinks"** tab displays the list of messages transferred from the Cloud to the Edge.
-* The **"Relations"** tab displays the records of other entities connected to the Edge. ??
-* The **"Audit logs"** tab displays audit records to track user actions ???
+* The **"Relations"** tab displays the records of other entities connected to the Edge.
+* The **"Audit logs"** tab displays audit records to track user actions.
 
 {% include images-gallery.html imageCollection="edgeDetails" %}
 
 ### Edge Status Page
 
-Basic information about the Edge configuration is provided on the Edge instance itself. To view this information, log in to your Edge instance and go to the Edge > Status section
+Basic information about the Edge configuration is provided on the Edge instance itself. To view this information, log in to your **Edge instance** and go to the **Edge > Status** section
 
-    Name, ID, Type, Routing Key
-    Connection status with the cloud: Connected / Disconnected
-    Last time connected to/disconnected from cloud
-
+{% include images-gallery.html imageCollection="edgeStatus" showListImageTitles="true" %}
 
 ### Cloud Events
+
+The **Cloud Events** page shows events that ThingsBoard Edge pushes to the Cloud. To view this information, log in to your **Edge instance** and go to the **Edge > Cloud events** section. The following information is displayed:
+
+* **Created time:** The date and time the event is created and pushed to the Cloud. Displayed in a format YYYY-MM-DD H:Min:Sec.
+* **Action:** The action pushed to the Cloud. Possible actions: Added, Deleted, Updated, Attributes Updated, Attributes Deleted, Timeseries Deleted, Timeseries Updated, RPC Call, Credentials Updated, Relation Add or Update, Relation Deleted, Relations Deleted, Alarm Ack, Alarm Clear, Attributes Request, Rule Chain Metadata Request, Relation Request, Credentials Request.
+* **Entity type:** The entity that created the event.
+* **Entity ID:** The identification code of the entity.
+* **Status:** Defines if the event has been pushed to the Cloud. 
+  * **Deployed:** The event was pushed to the ThingsBoard server.
+  * **Pending:** The event is created on the ThingsBoard Edge, stored to the local database and will be pushed to the Cloud as soon as connection is restored.
+* **Data:** Click to view the detailed information that was pushed to the Cloud.
+
+{% include images-gallery.html imageCollection="cloudEvenets" %}
+
+By default, events are displayed for the last day. To set a different time period, click the **"Time window"** button at the top of the page.
 
 ## Next Steps
 

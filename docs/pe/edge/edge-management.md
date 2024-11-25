@@ -18,7 +18,16 @@ instancesSection:
 
 edgeDetails:
     0:
-        image: /
+        image: /images/edge/edge-management/3-edge-details-pe.webp
+
+edgeStatus:
+    0:
+        image: /images/edge/edge-management/4-edge-status-pe.webp
+        title: '<b>Status:</b> Edge current status (Connected, Disconnected).<li><b>Name:</b> The name of the current Edge instance.</li><li><b>ID:</b> The identification code of the current Edge instance.</li><li><b>Type:</b> The "default" Edge type is by design.</li><li><b>Routing Key:</b> The Edge key used to install the instance.</li><li><b>Maximum amount of allowed devices:</b> The number of devices allowed by your <a href="/pricing/?section=thingsboard-edge&solution=edge-pay-as-you-go" target="_blank">price plan</a></li><li><b>Maximum amount of allowed assets:</b>The number of assets allowed by your <a href="/pricing/?section=thingsboard-edge&solution=edge-pay-as-you-go" target="_blank">price plan</a></li><li><b>Last time connected to/disconnected from cloud:</b> The date and time the instance is connected to/disconnected from Cloud. Displayed in a format YYYY-MM-DD H:Min:Sec.</li>'
+
+cloudEvenets:
+    0:
+        image: /images/edge/edge-management/5-cloud-events-pe.webp
 ---
 {% assign peDocsPrefix = "pe/" %}
 {% assign docsPrefix = "pe/edge/" %}
