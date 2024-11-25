@@ -357,17 +357,19 @@
                 color: #1F8B4D
                 transition: 0.6s
 
-    #latest-news
+    #news
       main
         max-width: 1500px
         margin-bottom: 24px
         h3
           font-size: 42px
-          padding-bottom: 20px
+          padding-bottom: 40px
         #cards
           display: flex
           justify-content: center
           gap: 36px
+          flex-direction: column
+          align-items: center
           &>div
             margin-bottom: 36px
             .block
@@ -418,8 +420,11 @@
                 img
                   height: fit-content
                   width: 100%
+                  max-height: 260px
                   &:hover
                     background: rgba(0, 0, 0, 0.38)
+            &.col-lg-6
+              max-width: 670px !important
 
     #background
       z-index: -1
@@ -463,9 +468,9 @@
           background-color: #1F8B4D
         &.main3
           top: 60px
-          width: 2560px
-          height: 3600px
-          left: -1280px
+          width: 2760px
+          height: 5100px
+          left: -1380px
           background-color: #1F8B4D0F
         &.small5
           top: 150px
@@ -521,12 +526,6 @@
       opacity: 1
       transform: translate3d(0, 0, 0)
 
-  @media screen and (min-width: 400px)
-    #tbmqContent
-      #background
-        div
-          &.main3
-            height: 3200px
   @media screen and (min-width: 600px)
     #tbmqContent
       #installation-options
@@ -539,7 +538,7 @@
             top: -140px
             height: 690px
           &.main3
-            height: 2000px
+            height: 3000px
           &.main4
             height: 500px
   @media screen and (max-width: 500px)
@@ -613,6 +612,18 @@
       #bottom-features
         h3
           padding-top: 250px
+        #cards
+          flex-direction: row
+          &>div
+            .block
+              padding: 40px
+              display: flex
+              flex-direction: row
+              gap: 40px
+              text-align: unset
+              div
+                .title
+                  text-align: unset
       #get-started
         padding-bottom: 230px
       #background
@@ -629,20 +640,20 @@
           &.main2
             height: 640px
           &.small3
-            top: 400px
+            top: 440px
             right: -700px
           &.small4
-            top: 445px
+            top: 480px
             right: -800px
           &.main3
             top: 90px
-            height: 1750px
+            height: 2200px
           &.small5
-            top: 145px
-            left: -700px
+            top: 95px
+            left: -760px
           &.small6
-            top: 80px
-            left: -600px
+            top: 20px
+            left: -700px
           &.small7
             top: 477px
             right: -700px
@@ -690,34 +701,25 @@
             &:nth-child(2n)
               .image-container
                 order: 1 !important
-      #bottom-features
-        #cards
-          flex-direction: row
-          &>div
-            .block
-              padding: 40px
-              display: flex
-              flex-direction: row
-              gap: 40px
-              text-align: unset
-              div
-                .title
-                  text-align: unset
       #installation-options
         main
           .row
             flex-direction: row
             gap: 160px
+      #news
+        main
+          #cards
+            flex-direction: row
       #background
         div
           &.main1
             height: 1650px
           &.small1
-            right: -900px
-            top: 75px
+            right: -650px
+            top: 95px
           &.small2
-            right: -1020px
-            top: -15px
+            right: -790px
+            top: 5px
           &.main2
             height: 579px
           &.small3
@@ -733,7 +735,7 @@
             top: 45px
             left: -840px
           &.main3
-            height: 1250px
+            height: 1600px
           &.small7
             top: 435px
             right: -900px
@@ -754,6 +756,7 @@
           margin-bottom: 40px
           line-height: 40px
           width: 65%
+    #tbmqContent
       #background
         div
           &.small1
@@ -763,11 +766,11 @@
             right: -1020px
             top: -20px
           &.small3
-            top: 290px
-            right: -1000px
+            top: 340px
+            right: -1100px
           &.small4
-            top: 335px
-            right: -1200px
+            top: 380px
+            right: -1170px
           &.small5
             top: 120px
             left: -1130px
@@ -775,11 +778,13 @@
             top: 60px
             left: -1060px
           &.small7
-            top: 400px
+            top: 435px
             right: -1110px
           &.small8
-            top: 455px
+            top: 485px
             right: -1200px
+          &.main3
+            height: 1400px
   @media screen and (min-width: 2480px)
     #hero
       #hero-content
