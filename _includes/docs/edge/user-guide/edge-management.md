@@ -7,7 +7,7 @@
 
 **ThingsBoard Edge** is designed specifically for local, distributed data processing, enabling data analysis and management directly at the source of data generation. This approach allows for local processing, storage, and immediate response to critical situations, even without a continuous connection to the central server. For more information, see the [What is ThingsBoard Edge](/docs/{{docsPrefics}}getting-started-guides/what-is-edge/){: target="_blank"} article.
 
-In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tolerant platform hosted in the cloud and dependent on an internet connection. While an **on-premises installation** can function without one, it does not offer the same inherent support for distributed data syncing. For more information, see the [What is ThingsBoard](/docs/{{peDocsPrefics}}getting-started-guides/what-is-thingsboard/){: target="_blank"} article.
+In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tolerant platform hosted in the cloud. The devices connected to the Cloud transfer data over the internet. It is perfect for centralized data collection, processing, and management. For more information, see the [What is ThingsBoard](/docs/{{peDocsPrefics}}getting-started-guides/what-is-thingsboard/){: target="_blank"} article.
 
 ### The Key Differences Between Edge and Cloud 
 
@@ -16,8 +16,8 @@ Although **Edge is designed similarly to Cloud**, the main difference lies **in 
 * **Cloud** stores and processes data **centrally** in the cloud.
 
 **Connectivity requirements** also differ: 
-* **Edge** can operate **independently of cloud connectivity**.
-* **Cloud** is **dependent on network** availability.
+* Devices connected to the **Edge** can operate over a local area network (LAN) **without requiring cloud connectivity**.
+* Devices connected to the **Cloud** are **require internet connectivity** to communicate with the platform.
 
 **Cluster deployment** refers to the deployment in a distributed architecture, where multiple nodes (instances) work together to ensure scalability, fault tolerance, and high availability.
 * **Edge does not support cluster deployment**. It is designed to operate, process and analyze data locally before synchronizing with the central ThingsBoard server.
@@ -29,7 +29,7 @@ Although **Edge is designed similarly to Cloud**, the main difference lies **in 
 
 To optimize this process, messages are serialized using [Protocol Buffers (ProtoBuf)](https://github.com/protocolbuffers/protobuf){: target="_blank"}.
 
-All messages sent from **ThingsBoard Edge** to **ThingsBoard Cloud** are stored in a local **PostgreSQL** table **(cloud_event table)** prior to transmission. This allows **ThingsBoard Edge** to operate without connectivity to the Cloud. Once a connection is established, all messages in the local **cloud_event table** are sent to the **Cloud** and marked as successfully transferred.
+All messages sent from **ThingsBoard Edge** to **ThingsBoard Cloud** are stored in a local **PostgreSQL** table **(cloud_event table)** prior to transmission. Starting with the **3.9 release**, these events can be stored in **Kafka topics** (in case Kafka is used as a queue). This allows **ThingsBoard Edge** to operate without connectivity to the Cloud. Once a connection is established, all messages in the local **cloud_event/ts_cloud_event tables (or Kafka topic)** are sent to the **Cloud** and marked as successfully transferred.
 
 To view the list of messages transferred from the **Cloud** to the **Edge**, go to the **Edge management > Instances** section of your Cloud (Server), click on the **Edge** and select the **"Downlinks"** tab:
 
