@@ -1,32 +1,29 @@
-## Deployment Scenarios
+* TOC
+{:toc}
 
-**ThingsBoard Edge** offers the flexibility to address the variety of challenges faced in IoT deployments, from connectivity and latency concerns to security and regulatory compliance. 
-The choice of deploying ThingsBoard Edge depends on the specific needs and constraints of the IoT project in question:
+**ThingsBoard Edge** offers the flexibility to address the variety of challenges faced in IoT deployments, from connectivity and latency concerns to security and regulatory compliance.
+The choice of deploying **ThingsBoard Edge** depends on the specific business needs and constraints.
 
-**Limited Connectivity:** In remote areas where connectivity is intermittent, ThingsBoard Edge can collect and store data locally, and then sync with the main ThingsBoard server when the connection is available.
+### Deployment Scenarios
 
-**Data Volume:** In scenarios where devices produce a massive volume of data, ThingsBoard Edge can aggregate and preprocess the data at the edge, sending only necessary or processed data to the main server, thereby saving bandwidth and storage.
+* **Limited Connectivity and Resilience:** In remote areas with intermittent connectivity, edge deployments can continue to operate even if the central server is down or unreachable. This ensures that critical applications and machines continue to operate. Synchronize with the main ThingsBoard server when connectivity is restored.
 
-**Low Latency Operations:** For operations that require real-time responses, ThingsBoard Edge can process data and act on it instantly without waiting for round trips to a central server. This is crucial in industries such as manufacturing or real-time monitoring.
+* **Data Volume and Cost Savings:** In scenarios where devices generate massive amounts of data, Edge can aggregate and pre-process data locally and then, send only necessary or processed data to the main server, saving bandwidth and storage. Thereby, businesses can reduce the amount of data sent to the cloud, leading to potential cost savings in terms of data storage and transfer.
 
-**Regulatory Compliance:** In some regions, there might be regulations that prevent certain data from being sent outside a specific geographical boundary. ThingsBoard Edge can process and store the data locally, ensuring that sensitive or regulated data doesn't leave the premises.
+* **Low Latency Operations:** For operations that require real-time reactions, Edge can process data and act on it immediately, without waiting for a response from the central server. Response time can be critical in industries such as manufacturing or real-time monitoring.
 
-**Resilience and Redundancy:** Edge deployments can continue to operate even if the central server is down or unreachable. This ensures that mission-critical applications have minimal downtime.
+* **Regulatory Compliance and Security:** Some regions may have regulations that prevent certain data from being sent outside a specific geographic boundary. Edge can process and store the data locally, ensuring that sensitive or regulated data doesn't leave the premises. In addition to that, sensitive information can be kept within a local network, reducing exposure to potential external threats.
 
-**Security:** By processing data at the edge, sensitive information can be kept within a local network, reducing exposure to potential external threats.
+* **Firmware Updates:** Edge can facilitate firmware updates for IoT devices. In environments with numerous devices, managing updates can be challenging. Edge deployment can help streamline this process.
 
-**Firmware Updates:** ThingsBoard Edge can facilitate firmware updates for IoT devices. In environments with numerous devices, managing updates can be challenging. Edge deployment can help streamline this process.
+* **Integration with Local Systems:** In some scenarios, IoT data might need to be integrated with local databases or systems. ThingsBoard Edge can serve as an integration point, communicating with both IoT devices and local systems.
 
-**Integration with Local Systems:** In some scenarios, IoT data might need to be integrated with local databases or systems. ThingsBoard Edge can serve as an integration point, communicating with both IoT devices and local systems.
+* **Distributed Architecture:** For organizations with multiple locations or branches, deploying ThingsBoard Edge at each location ensures local processing and management while maintaining a connection to the central server for consolidated data views and management.
 
-**Cost Savings:** By preprocessing and filtering data at the edge, businesses can reduce the amount of data sent to the cloud, leading to potential cost savings in terms of data storage and transfer.
+## Edge Use Cases
 
-**Distributed Architecture:** For organizations that have multiple locations or branches, deploying ThingsBoard Edge in each location ensures local processing and management while maintaining a connection with the central server for consolidated data views and management.
+The following guides can help you learn about the **use cases of ThingsBoard Edge functionality**:
 
-#### Contents
+* [**Manage alarms and RPC requests on edge devices**](/docs/{{docsPrefix}}use-cases/manage-alarms-rpc-requests/){: target="_blank"}: Learn how to manage local work environments, even without an Internet connection to the Cloud.
 
-Following ThingsBoard Edge **Use Cases** guides can help you to get familiar with **ThingsBoard Edge** functionality:
-
-* [**Manage alarms and RPC requests on edge devices**](/docs/{{docsPrefix}}use-cases/manage-alarms-rpc-requests/): Learn how to respond to local situations, even without an internet connection to the Cloud.
-
-* [**Data filtering and traffic reduction**](/docs/{{docsPrefix}}use-cases/data-filtering-traffic-reduce/): Learn how to reduce the amount of data sent from edge devices to the Cloud and save traffic costs.
+* [**Data filtering and traffic reduction**](/docs/{{docsPrefix}}use-cases/data-filtering-traffic-reduce/){: target="_blank"}: Learn how to reduce the amount of data sent from edge devices to the Cloud and save traffic costs.
