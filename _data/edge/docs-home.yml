@@ -8,7 +8,7 @@ toc:
 - title: Key concepts
   section:
     - title: Edge
-      path: /docs/edge/edge-management/
+      path: /docs/edge/config/management/
     - title: Comparing Edge and Cloud
       path: /docs/edge/comparison/
     - title: Alarms

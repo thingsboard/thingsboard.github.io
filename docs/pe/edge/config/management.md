@@ -28,6 +28,7 @@ edgeStatus:
 cloudEvenets:
     0:
         image: /images/edge/edge-management/5-cloud-events-pe.webp
+
 ---
 {% assign peDocsPrefix = "pe/" %}
 {% assign docsPrefix = "pe/edge/" %}

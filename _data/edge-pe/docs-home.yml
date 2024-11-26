@@ -8,7 +8,7 @@ toc:
 - title: Key concepts
   section:
     - title: Edge
-      path: /docs/pe/edge/edge-management/
+      path: /docs/pe/edge/config/management/
     - title: Alarms
       path: /docs/pe/edge/user-guide/alarms/
     - title: OTA updates
