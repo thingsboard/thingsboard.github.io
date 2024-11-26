@@ -287,7 +287,7 @@
                             height: fit-content
                             margin: 0 0 18px
 
-.usecase-background
+.usecase-background-main
     z-index: -1
     position: absolute
     top: 4%
@@ -385,6 +385,70 @@
             left: 658px
             background-color: #2A7DEC
 
+.usecase-background
+    z-index: -1
+    position: absolute
+    top: 300px
+    left: 50%
+    img
+        position: absolute
+        top: -650px
+        left: 134px
+        box-shadow: none !important
+    div
+        position: absolute
+        -ms-transform: skewY(-6deg)
+        transform: skewY(-6deg)
+        width: 436px
+        height: 90px
+        &.bottom-features1
+            top: -950px
+            width: 2560px
+            height: 3000px
+            left: -1280px
+            background-color: #F7F9FC
+        &.bottom-features2
+            top: -240px
+            width: 2560px
+            height: 525px
+            left: -1280px
+            background-color: #252628
+        &.small11
+            top: -382px
+            left: 757px
+            background-color: #2A7DEC
+        &.small12
+            top: 334px
+            right: 789px
+            border: 4px solid #305680
+        &.usecase-big-bg1
+            top: -890px
+            width: 2560px
+            height: 895px
+            left: -1280px
+            background-color: #F7F9FC
+        &.usecase-big-bg2
+            top: 1010px
+            width: 2560px
+            height: 845px
+            left: -1280px
+            background-color: #F7F9FC
+        &.small7
+            top: 1075px
+            right: 406px
+            border: 4px solid #2A7DEC
+        &.small8
+            top: 1120px
+            right: 458px
+            background-color: #305680
+        &.small9
+            top: -66px
+            left: 466px
+            border: 4px solid #0D2743
+        &.small10
+            top: -133px
+            left: 658px
+            background-color: #2A7DEC
 #contact-us
     padding: 70px 0 160px 0
     .block-content
@@ -473,7 +537,7 @@
                                 margin: 0 30px 0 0
 
 @media screen and (max-width: 1024px)
-    .usecase-background
+    .usecase-background-main
         display: none
 
     #usecase-list
