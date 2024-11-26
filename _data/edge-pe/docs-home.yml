@@ -62,12 +62,6 @@ toc:
   section:
     - title: Edge over TLS/SSL 
       path: /docs/pe/edge/user-guide/grpc-over-ssl/
-#- title: Features
-#  section:
-#    - title: Edge status
-#      path: /docs/pe/edge/features/edge-status/
-#    - title: Cloud Events
-#      path: /docs/pe/edge/features/cloud-events/
 - title: Use Cases
   section:
     - title: Overview
