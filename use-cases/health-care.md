@@ -44,7 +44,7 @@ notitle: "true"
         </div>
     </div>
     <div class="scheme">
-        <img loading="lazy" src="/images/usecases/health-care/health-care-solution-structure.svg" alt="Health care solution structure">
+        <img loading="lazy" src="https://img.thingsboard.io/usecases/health-care/health-care-solution-structure.svg" alt="Health care solution structure">
     </div>
 </section>
 <section style="margin-bottom: 120px" class="health-solution-structure">
@@ -196,11 +196,11 @@ notitle: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/health-care/hospital-1.svg" alt="Hospital"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/sport-complex-1.svg" alt="Sport complex"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/rehabilitation-center-1.svg" alt="Rehabilitation center"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/factories-1.svg" alt="Factory"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/prison-1.svg" alt="Prison"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/hospital-1.svg" alt="Hospital"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/sport-complex-1.svg" alt="Sport complex"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/rehabilitation-center-1.svg" alt="Rehabilitation center"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/factories-1.svg" alt="Factory"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/prison-1.svg" alt="Prison"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -215,7 +215,7 @@ notitle: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/health-care/hospital-2.svg" alt="Water valve"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/hospital-2.svg" alt="Water valve"></div>
             <div class="text-block">
                 <h2>Hospitals and Healthcare Facilities</h2>
                 <p>Real-time monitoring of patients' conditions, tracking vital signs, managing wards and departments, and setting up alerts for timely response by medical staff to any health deterioration.</p>
@@ -226,10 +226,10 @@ notitle: "true"
                 <h2>Rehabilitation Centers</h2>
                 <p>Monitoring the condition of patients undergoing rehabilitation after surgery or injuries. The system can track recovery progress, transmit data to doctors, and set reminders for physical therapy.</p>
             </div>
-            <div class="image"><img src="/images/usecases/health-care/sport-complex-2.svg" alt="Oil pump"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/sport-complex-2.svg" alt="Oil pump"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/health-care/rehabilitation-center-2.svg" alt="Food conveyor"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/rehabilitation-center-2.svg" alt="Food conveyor"></div>
             <div class="text-block">
                 <h2>Prisons and Correctional Facilities</h2>
                 <p>Monitoring the health of inmates with vital sign tracking, smoke detectors, and access control systems. The system can also monitor movements and support facility security.</p>
@@ -240,10 +240,10 @@ notitle: "true"
                 <h2>Sports Complexes and Fitness Centers</h2>
                 <p>Maintaining optimal conditions in gyms and locker rooms, monitoring the health of visitors (e.g., heart rate), and setting up emergency alerts if someone’s health deteriorates during workouts.</p>
             </div>
-            <div class="image"><img src="/images/usecases/health-care/factories-2.svg" alt="Chemical plant"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/factories-2.svg" alt="Chemical plant"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/health-care/prison-2.svg" alt="Power plant"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/prison-2.svg" alt="Power plant"></div>
             <div class="text-block">
                 <h2>Factories and Industrial Sites</h2>
                 <p>Ensuring employee safety by monitoring working conditions (temperature, gas emissions, noise, humidity) and controlling equipment status to respond promptly to emergency situations.</p>
@@ -256,7 +256,7 @@ notitle: "true"
     <h1>Summary</h1>
     <div>
         <p>This Smart Assisted Living Solution on ThingsBoard provides a comprehensive approach to resident and facility management, with robust monitoring capabilities, intuitive zoning and device management, and customizable alerts for both health and environmental conditions. The solution empowers caregivers and administrators to respond quickly, keep environments safe, and provide the highest standard of care for residents.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon">
     </div>
 </section>
 
@@ -264,42 +264,42 @@ notitle: "true"
     <h1>ThingsBoard advantages</h1>
     <div class="advantages-block">
         <div class="advantage">
-            <div><img src="/images/usecases/scada/security.svg" alt="Security"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/security.svg" alt="Security"></div>
             <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
             <p>ThingsBoard protects your data with industry-standard encryption algorithms like RSA and ECDSA. Secure communication is ensured via TLS (TCP) and DTLS (UDP). Role-based access control and audit logs further enhance platform security.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/data-visualization.svg" alt="Data visualization"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/data-visualization.svg" alt="Data visualization"></div>
             <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
             <p>Visualize your data effortlessly with ThingsBoard’s rich, interactive dashboards. Create multi-state, real-time dashboards using built-in widgets like charts, gauges, maps, and tables—no coding required. Customize layouts or develop custom widgets for complete flexibility. WebSocket support ensures low-latency updates.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/connectivity.svg" alt="Connectivity"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/connectivity.svg" alt="Connectivity"></div>
             <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
             <p>Connect devices directly to ThingsBoard using protocols like HTTP, CoAP, MQTT, LwM2M, SNMP, LoRaWAN, and NB-IoT. For local networks, ThingsBoard Gateway bridges the cloud via Modbus, BLE, BACnet, OPC-UA, and more. Advanced protocol translation and offline data buffering ensure reliable communication even in challenging conditions.</p>
         </div>
         <div class="advantage scale">
-            <div><img src="/images/usecases/scada/scalability.svg" alt="Scalability and high availability"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/scalability.svg" alt="Scalability and high availability"></div>
             <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
             <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments supporting more then 18 000 vehicles and 500 000 devices connected.</p>
         </div>
         <div class="advantage data">
-            <div><img src="/images/usecases/scada/data-processing.svg" alt="Data processing"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/data-processing.svg" alt="Data processing"></div>
             <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
             <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/multi-tenancy.svg" alt="Multi-tenancy"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/multi-tenancy.svg" alt="Multi-tenancy"></div>
             <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
             <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/lorawan-sigfox.svg" alt="LoRaWAN and SigFox support"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/lorawan-sigfox.svg" alt="LoRaWAN and SigFox support"></div>
             <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox support</a>
             <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/mobile.svg" alt="Mobile application"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/mobile.svg" alt="Mobile application"></div>
             <a class="title" href="/docs/mobile/">Mobile application</a>
             <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
         </div>
@@ -393,15 +393,15 @@ notitle: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/health-care/resident-overview.png' alt='Resident overview dialog of dashboard'/>",
-                "<img src='/images/usecases/health-care/resident-alarm.png' alt='Resident alarm configuration dialog of dashboard'/>",
-                "<img src='/images/usecases/health-care/real-time-resident-alarm.png' alt='Real time resident alarm state of dashboard'/>",
-                "<img src='/images/usecases/health-care/room-alarm-configuration.png' alt='Room alarm configuration state of dashboard'/>",
-                "<img src='/images/usecases/health-care/resident-list-management.png' alt='Resident list management state of dashboard'/>",
-                "<img src='/images/usecases/health-care/zone-and-floor-management.png' alt='Zone and floor management state of dashboard'/>",
-                "<img src='/images/usecases/health-care/room-and-device-layout.png' alt='Room and device layout state of dashboard'/>",
-                "<img src='/images/usecases/health-care/device-addition.png' alt='Device addition state of dashboard'/>",
-                "<img src='/images/usecases/health-care/room-configuration.png' alt='Room configuration state of dashboard'/>"
+                "<img src='https://img.thingsboard.io/usecases/health-care/resident-overview.png' alt='Resident overview dialog of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/resident-alarm.png' alt='Resident alarm configuration dialog of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/real-time-resident-alarm.png' alt='Real time resident alarm state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/room-alarm-configuration.png' alt='Room alarm configuration state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/resident-list-management.png' alt='Resident list management state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/zone-and-floor-management.png' alt='Zone and floor management state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/room-and-device-layout.png' alt='Room and device layout state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/device-addition.png' alt='Device addition state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/room-configuration.png' alt='Room configuration state of dashboard'/>"
             ];
             return images[index];
         }
