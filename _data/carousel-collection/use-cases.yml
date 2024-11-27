@@ -190,3 +190,14 @@ scada:
   2:
     src: "/images/solutions/scada/scada3.png"
     alt: "Swimming pool SCADA dashboard"
+
+health-care:
+  0:
+    src: "/images/solutions/health-care/health-care-1.png"
+    alt: "Assisted living dashboard with opened floor plan and residents alarms"
+  1:
+    src: "/images/solutions/health-care/health-care-2.png"
+    alt: "Assisted living dashboard with opened resident details"
+  2:
+    src: "/images/solutions/health-care/health-care-3.png"
+    alt: "Assisted living dashboard with opened zone sensors configuration"
