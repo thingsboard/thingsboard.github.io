@@ -15,7 +15,7 @@ Some of the industry use cases where ThingsBoard is being successfully utilized 
 Should you have any comments or questions please feel free to [Contact Us](/docs/contact-us/).
 
 <div id="usecase-list">
-    <div class="usecase-background">
+    <div class="usecase-background-main">
         <div class="usecase-big-bg1"></div><div class="small9"></div><div class="small10"></div><div class="usecase-big-bg2"></div><div class="small7"></div><div class="small8"></div><div class="usecase-big-bg3"></div><div class="small3"></div><div class="small4"></div><div class="small1"></div><div class="small2"></div>
     </div>
     <div class="list">

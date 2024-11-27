@@ -34,6 +34,10 @@
   title: Smart Metering
   link: /smart-metering/
   icon: https://img.thingsboard.io/case-met-icon.svg
+- id: health-care
+  title: Health Care
+  link: /use-cases/health-care/
+  icon: /images/case-health-care-icon.svg
 - id: air-quality-monitoring
   title: Air Quality Monitoring
   link: /use-cases/air-quality-monitoring/

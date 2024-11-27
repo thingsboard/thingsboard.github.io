@@ -11,17 +11,19 @@ notitle: "true"
 <h1 class="usecase-title">SCADA systems</h1>
 
 <section class="scada-about">
-    <div class="short">
-        <div class="block">
-            <p class="text">ThingsBoard-based SCADA solutions provide complete control and real-time analytics, making the management of industrial processes simpler and more efficient.</p>
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">ThingsBoard-based SCADA solutions provide complete control and real-time analytics, making the management of industrial processes simpler and more efficient.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/228be650-8acc-11ef-b31e-8fb75668852d?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+            </div>
         </div>
-        <div class="demo-button">
-            <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/228be650-8acc-11ef-b31e-8fb75668852d?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+        <div class="long">
+            <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
+            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the Swimming Pool Management System template. This solution demonstrates how SCADA symbols—such as pipes, valves, motors, filters, flow meters, tanks, and leak sensors—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals.</p>
         </div>
-    </div>
-    <div class="long">
-        <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-        <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the Swimming Pool Management System template. This solution demonstrates how SCADA symbols—such as pipes, valves, motors, filters, flow meters, tanks, and leak sensors—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals.</p>
     </div>
 </section>
 

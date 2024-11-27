@@ -411,5 +411,21 @@
       }
     },
     "blurb": "Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC."
+  },
+  {
+    "type": ["main", "nbiot", "lora", "lte"],
+    "program": "",
+    "name": "Yobiiq B.V.",
+    "logo": "Yobiiq_Logo_Primary.svg",
+    "links": {
+      "Site": {
+        "href": "https://yobiiq.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "https://docs.yobiiq.com/thingsboard/sd-1001-integration-guide#introduction"
+      }
+    },
+    "blurb": "The best way to predict the future is by creating it. As an IoT Solutions Company, we develop smart solutions daily, tailored to your business and objectives.\nWe pride ourselves on being a bit different, boosted by a healty dose of honest, straightforward communication without exaggeration. Manufacturing and creating devices that work, period is what we do at YOBIIQ."
   }
 ]
