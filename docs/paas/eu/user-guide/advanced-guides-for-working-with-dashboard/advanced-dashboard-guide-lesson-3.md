@@ -363,7 +363,7 @@ power-consumption-per-hour-1:
         title: 'The "Energy Meter" device sends data every 10 minutes. We need to use data aggregation to calculate the average value among the data points in the selected time interval. In our case, this will be 1 hour, representing hourly electricity usage. Select the "Average" as the aggregation function;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-6-pe.png
-        title: 'For this widget, we will use the widget&#39;s time window. Select the "Current hour" option as the time interval. Click "Update". Then, disable the display of the time interval selection on the widget;'
+        title: 'Use the widget&#39;s time window. Turn off the "Display time window" option. Then, select the "Current hour" option as the time interval. Click "Update";'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-7-pe.png
         title: 'Change the label to "Power consumption per hour", set it to display two decimal places, and open the font settings menu;'
@@ -386,7 +386,7 @@ power-consumption-range-chart-1:
         title: 'Navigate to the "Charts" widgets bundle and select the "Range chart" widget;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-3-pe.png
-        title: 'Use the widget&#39;s time window. Set the time interval to "12 hours," and "None" for data aggregation. Click "Update";'
+        title: 'Use the widget&#39;s time window. Turn off the "Display time window" option. Set the time interval to "12 hours," and "None" for data aggregation. Click "Update";'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-4-pe.png
         title: 'Specify "EM-002" (Energy Meter) device as the data source, and add "powerConsumption" data key. Change the chart title to "Power consumption history";'
@@ -441,7 +441,7 @@ water-consumption-per-hour-1:
         title: 'In this widget, we will also use data aggregation to calculate the hourly average of the received data. Select the "Average" as the aggregation function;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-5-pe.png
-        title: 'Use the dashboard&#39;s time window. Select the "Current hour" option as the time interval. Click "Update". Then, disable the time window display on the widget;'
+        title: 'Use the widget&#39;s time window. Turn off the "Display time window" option. Then, select the "Current hour" option as the time interval. Click "Update";'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-6-pe.png
         title: 'Change the label to "Water consumption per hour". Now, open the "Icons" window;'
