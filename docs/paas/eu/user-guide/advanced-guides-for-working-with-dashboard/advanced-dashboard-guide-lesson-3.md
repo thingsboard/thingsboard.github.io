@@ -283,7 +283,7 @@ temperature-and-humidity-history-1:
         title: 'Turn on "Show points" and "Point label" options. Click "Save". Repeat this for the "humidity" data key;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-6-pe.png
-        title: 'By default, the chart includes a single scale on the Y-axis. Label it "Temperature" and set the units to °C. Add another scale for "Humidity", place it on the right, and set the units to %;'
+        title: 'By default, the chart includes a single scale on the Y-axis. Label it "Temperature" and set the units to °C. Add another scale for "Humidity", place it on the right, and set the units to %. Now, apply the "axis1" scale to the "humidity" key;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-7-pe.png
         title: 'Change the chart title to "Temperature and Humidity history";'
@@ -323,7 +323,7 @@ air-quality-widget-1:
         title: 'Turn on the "Smooth line" option to make the chart line appear smoother. Click "Save";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-5-pe.png
-        title: 'Enter a name for the Y-axis, such as "CO2 level", and set the units to ppm (parts per million);'
+        title: 'Enter a name for the Y-axis, such as "CO2 level", and specify "ppm" as the units;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-6-pe.png
         title: 'Change the chart title to "Air Quality";'

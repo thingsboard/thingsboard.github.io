@@ -385,7 +385,7 @@ Now, you can see the current values of temperature, humidity, and CO2 levels.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-4" %}
 
-### Temperature and humidity history charts
+### Temperature and humidity history chart
 
 We will now add a widget that displays a chart of temperature and humidity readings in the office for the last 12 hours. This way, we can track their changes.
 
