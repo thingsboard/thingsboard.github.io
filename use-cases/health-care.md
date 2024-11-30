@@ -356,9 +356,7 @@ notitle: "true"
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
             const large = document.querySelector('.image-block-large');
 
-            if (elemCoor.top > -803 && elemCoor.top < 0) {
-                large.style.marginTop = Math.abs(elemCoor.top) + 'px';
-            } else if (expansionBlocks[4].classList.contains('expanded') && elemCoor.top > -815 && elemCoor.top < 0) {
+            if (elemCoor.top > -840 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 'px';
             }
         };
