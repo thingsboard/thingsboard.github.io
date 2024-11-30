@@ -8,21 +8,21 @@ notitle: "true"
 
 {% include usecase-nav.html usecase="health-care" %}
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div>><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
-<h1 class="usecase-title">Health Care: Smart Assisted Living Solution</h1>
+<h1 class="usecase-title">Health care: smart assisted living solution</h1>
 
 <section class="health-about">
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">ThingsBoard provides all the tools and platform capabilities to create a comprehensive monitoring and management solution for senior homes with minimal effort. With flexible customization options and a wide range of built-in features, ThingsBoard allows you to quickly set up a system to monitor the health and safety of your elderly residents.</p>
+                <p class="text">ThingsBoard offers a powerful platform with all the tools needed to build a comprehensive healthcare monitoring and management solution with ease. ThingsBoard provides flexible customization options and an extensive range of built-in features.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_HealthCare_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/f8e77210-8fa8-11ef-90c1-0b39f28da380?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
-            <p>As the elderly population grows, the demand for advanced care services that ensure the safety, health, and well-being of residents in assisted living facilities becomes critical. Many elderly residents require continuous monitoring of their vital signs, regular health checks, and prompt responses to emergencies. Traditional caregiving methods often struggle to meet these needs efficiently, leading to potential risks and gaps in care.</p>
-            <p>Our Smart Assisted Living solution powered by ThingsBoard addresses these challenges by providing a comprehensive, IoT-enabled platform for real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
+            <p>The healthcare industry is evolving rapidly to meet the diverse needs of patients, from routine care to managing chronic conditions and responding to emergencies. In such a dynamic field, real-time monitoring of critical health parameters and the ability for medical personnel to respond swiftly are paramount. This is especially true in assisted living facilities.</p>
+            <p>Our Smart Assisted Living solution powered by ThingsBoard providing a comprehensive, IoT-enabled platform for real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
         </div>
     </div>
 </section>
@@ -48,31 +48,31 @@ notitle: "true"
     </div>
 </section>
 <section style="margin-bottom: 120px" class="health-solution-structure">
-    <h1 style="margin-bottom: 0">Smart Assisted Living Benefits</h1>
+    <h1 style="margin-bottom: 0">Smart assisted living benefits</h1>
     <p style="margin-bottom: 64px">The Smart Assisted Living solution offers a range of benefits for care providers, residents, and facility administrators, supporting safe and efficient management of assisted living facilities:</p>
     <div class="health-solution-structure-cards">
         <div class="health-solution-structure-card">
-            <h2>Efficient Monitoring and Response</h2>
+            <h2>Efficient monitoring and sesponse</h2>
             <p>Enables real-time tracking of residents’ health and environmental conditions, allowing caregivers to respond promptly to emergencies.</p>
         </div>
         <div class="health-solution-structure-card">
-            <h2>Automated Alerts and Notifications</h2>
+            <h2>Automated alerts and notifications</h2>
             <p>Configurable alerts ensure that caregivers and family members are notified of potential health risks, reducing the likelihood of delayed responses.</p>
         </div>
         <div class="health-solution-structure-card">
-            <h2>Personalized Care Plans</h2>
+            <h2>Personalized care plans</h2>
             <p>Customizable alert rules and comprehensive health profiles allow facilities to tailor care based on individual residents' needs, enhancing the quality of care.</p>
         </div>
         <div class="health-solution-structure-card">
-            <h2>Increased Safety and Comfort</h2>
+            <h2>Increased safety and comfort</h2>
             <p>Environmental monitoring maintains optimal room conditions, minimizing risks associated with temperature or noise fluctuations.</p>
         </div>
         <div class="health-solution-structure-card">
-            <h2>Data-Driven Insights</h2>
+            <h2>Data-driven insights</h2>
             <p>Collects historical health data for each resident, allowing for trend analysis and proactive management of chronic conditions.</p>
         </div>
         <div class="health-solution-structure-card">
-            <h2>Streamlined Administration</h2>
+            <h2>Streamlined administration</h2>
             <p>A centralized dashboard and intuitive UI simplify the management of resident profiles, health alerts, and facility zones, saving time and reducing administrative burden.</p>
         </div>
     </div>
@@ -86,7 +86,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h2>Resident Overview</h2>
+                        <h2>Resident overview</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Provides a detailed profile for each resident, including health metrics such as heart rate, body temperature, and panic button status, allowing caregivers to quickly assess each resident's current health condition.</p>
@@ -96,7 +96,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h2>Resident Alarm Configuration</h2>
+                        <h2>Resident alarm configuration</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Allows administrators to set customized alarm rules for resident health parameters like heart rate and body temperature. Major and critical thresholds can be configured to trigger appropriate alerts in case of abnormalities.</p>
@@ -106,7 +106,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h2>Real-Time Resident Alarms</h2>
+                        <h2>Real-time resident alarms</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Displays active alarms for residents, such as panic button presses or irregular vital signs, with real-time updates on each alert's status and severity, enabling quick response by caregivers.</p>
@@ -116,7 +116,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h2>Room Alarm Configuration</h2>
+                        <h2>Room alarm configuration</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Provides settings to adjust alarm thresholds for environmental factors in rooms, such as temperature, humidity, air quality, and window or door status. This ensures rooms remain within safe and comfortable conditions for residents.</p>
@@ -126,7 +126,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel last">
                     <div class="expansion-header">
-                        <h2>Resident List Management</h2>
+                        <h2>Resident list management</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Lists all residents with essential information such as age, gender, assigned room, and floor, allowing caregivers to locate and access each resident’s data efficiently.</p>
@@ -136,7 +136,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel last">
                     <div class="expansion-header">
-                        <h2>Zone and Floor Management</h2>
+                        <h2>Zone and floor management</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Enables administrators to organize the facility into zones or floors, allowing for easy navigation and monitoring of different areas within the facility.</p>
@@ -146,7 +146,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel last">
                     <div class="expansion-header">
-                        <h2>Room and Device Layout</h2>
+                        <h2>Room and device layout</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Shows the layout of each floor with room labels and device icons, allowing caregivers and administrators to identify the location of sensors and devices quickly for effective monitoring.</p>
@@ -156,7 +156,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel last">
                     <div class="expansion-header">
-                        <h2>Device Addition</h2>
+                        <h2>Device addition</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Allows the addition of new devices like sensors or gateways to specific rooms, supporting scalability and enabling administrators to expand monitoring capabilities as needed.</p>
@@ -166,7 +166,7 @@ notitle: "true"
             <div class="expansion-block">
                 <div class="expansion-panel last">
                     <div class="expansion-header">
-                        <h2>Room Configuration</h2>
+                        <h2>Room configuration</h2>
                     </div>
                     <div class="expansion-content">
                         <p>Provides a tool to edit room details and positions within the facility layout, enabling accurate mapping and customization of room assignments.</p>
@@ -178,20 +178,20 @@ notitle: "true"
 </section>
 
 <section class="applications">
-    <h1 style="margin-bottom: 15px">Applications of Smart Assisted Living Solution</h1>
+    <h1 style="margin-bottom: 15px">Applications of smart assisted living solution</h1>
     <p style="margin-bottom: 60px">A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
-                <h2>Hospitals and Healthcare Facilities</h2>
+                <h2>Hospitals and healthcare facilities</h2>
                 <p>Real-time monitoring of patients' conditions, tracking vital signs, managing wards and departments, and setting up alerts for timely response by medical staff to any health deterioration.</p>
             </div>
             <div style="gap: unset" class="text-block">
-                <h2>Rehabilitation <br> Centers</h2>
+                <h2>Rehabilitation <br> centers</h2>
                 <p>Monitoring the condition of patients undergoing rehabilitation after surgery or injuries. The system can track recovery progress, transmit data to doctors, and set reminders for physical therapy.</p>
             </div>
             <div style="gap: unset" class="text-block">
-                <h2>Prisons and Correctional Facilities</h2>
+                <h2>Prisons and correctional facilities</h2>
                 <p>Monitoring the health of inmates with vital sign tracking, smoke detectors, and access control systems. The system can also monitor movements and support facility security.</p>
             </div>
         </div>
@@ -204,11 +204,11 @@ notitle: "true"
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
-                <h2>Sports Complexes and Fitness Centers</h2>
+                <h2>Sports complexes and fitness centers</h2>
                 <p>Maintaining optimal conditions in gyms and locker rooms, monitoring the health of visitors (e.g., heart rate), and setting up emergency alerts if someone’s health deteriorates during workouts.</p>
             </div>
             <div class="text-block">
-                <h2>Factories and Industrial Sites</h2>
+                <h2>Factories and industrial sites</h2>
                 <p>Ensuring employee safety by monitoring working conditions (temperature, gas emissions, noise, humidity) and controlling equipment status to respond promptly to emergency situations.</p>
             </div>
         </div>
@@ -217,13 +217,13 @@ notitle: "true"
         <div class="application-block">
             <div class="image"><img src="/images/usecases/health-care/hospital-2.svg" alt="Water valve"></div>
             <div class="text-block">
-                <h2>Hospitals and Healthcare Facilities</h2>
+                <h2>Hospitals and healthcare facilities</h2>
                 <p>Real-time monitoring of patients' conditions, tracking vital signs, managing wards and departments, and setting up alerts for timely response by medical staff to any health deterioration.</p>
             </div>
         </div>
         <div class="application-block">
             <div class="text-block">
-                <h2>Rehabilitation Centers</h2>
+                <h2>Rehabilitation centers</h2>
                 <p>Monitoring the condition of patients undergoing rehabilitation after surgery or injuries. The system can track recovery progress, transmit data to doctors, and set reminders for physical therapy.</p>
             </div>
             <div class="image"><img src="/images/usecases/health-care/sport-complex-2.svg" alt="Oil pump"></div>
@@ -231,13 +231,13 @@ notitle: "true"
         <div class="application-block">
             <div class="image"><img src="/images/usecases/health-care/rehabilitation-center-2.svg" alt="Food conveyor"></div>
             <div class="text-block">
-                <h2>Prisons and Correctional Facilities</h2>
+                <h2>Prisons and correctional facilities</h2>
                 <p>Monitoring the health of inmates with vital sign tracking, smoke detectors, and access control systems. The system can also monitor movements and support facility security.</p>
             </div>
         </div>
         <div class="application-block">
             <div class="text-block">
-                <h2>Sports Complexes and Fitness Centers</h2>
+                <h2>Sports complexes and fitness centers</h2>
                 <p>Maintaining optimal conditions in gyms and locker rooms, monitoring the health of visitors (e.g., heart rate), and setting up emergency alerts if someone’s health deteriorates during workouts.</p>
             </div>
             <div class="image"><img src="/images/usecases/health-care/factories-2.svg" alt="Chemical plant"></div>
@@ -245,7 +245,7 @@ notitle: "true"
         <div class="application-block">
             <div class="image"><img src="/images/usecases/health-care/prison-2.svg" alt="Power plant"></div>
             <div class="text-block">
-                <h2>Factories and Industrial Sites</h2>
+                <h2>Factories and industrial sites</h2>
                 <p>Ensuring employee safety by monitoring working conditions (temperature, gas emissions, noise, humidity) and controlling equipment status to respond promptly to emergency situations.</p>
             </div>
         </div>
