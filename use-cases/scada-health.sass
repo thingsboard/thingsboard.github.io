@@ -47,9 +47,14 @@
       h1
         font-size: 40px
         margin-bottom: 60px
+        padding-top: 80px
+
         @media screen and (max-width: 599px)
           font-size: 30px
           padding-right: 0
+
+        &:before
+          display: none
 
       h2
         font-size: 32px
@@ -73,6 +78,10 @@
 
     section
       padding: 0
+      margin-bottom: 100px
+
+      @media screen and (max-width: 599px)
+        margin-bottom: 50px
 
       .about-text
         display: flex
@@ -104,33 +113,26 @@
           flex: 2
 
     .scada-about, .health-about
-      margin-bottom: 100px
+
+      margin-bottom: 120px
+
       .short
         .demo-button > a
           @media screen and (max-width: 599px)
             width: 100%
 
     .scada-carousel, .health-carousel
-      margin-bottom: 100px
-
-      @media screen and (max-width: 599px)
-        margin-bottom: 50px
 
       &::before
         content: ""
         width: 200%
-        height: 115%
+        height: 123%
         background-color: #f4f8fe
         position: absolute
         left: -50%
-        top: -10%
+        top: -61px
 
     .scada-solution-structure, .health-solution-structure
-      margin-bottom: 100px
-
-      h1
-        @media screen and (max-width: 599px)
-          margin-bottom: 30px
 
       .scheme
         margin-bottom: 48px
@@ -171,15 +173,20 @@
         &::before
           content: ""
           width: 200%
-          height: 92%
+          height: 112%
           background-color: #f4f8fe
           position: absolute
           left: -50%
-          top: 170px
           z-index: -1
+          top: -4px
+
+          @media screen and (max-width: 959px)
+            height: 106%
+
+          @media screen and (max-width: 599px)
+            height: 107%
 
     .scada-key-functions, .health-key-functions
-      margin-bottom: 100px
 
       @media screen and (max-width: 599px)
         margin-bottom: unset
@@ -187,12 +194,16 @@
       &::before
         content: ""
         width: 200%
-        height: 94%
+        height: 105%
         background-color: #f4f8fe
         position: absolute
         left: -50%
-        top: 170px
         z-index: -1
+
+        @media screen and (max-width: 599px)
+          height: 101%
+          top: 28px
+
 
       .scada-key-function-block, .health-key-function-block
         display: flex
@@ -226,7 +237,6 @@
             width: 60%
 
     .dashboard-structure
-      margin-bottom: 224px
 
       @media screen and (max-width: 599px)
         margin-bottom: 45px
@@ -422,24 +432,27 @@
 
 
     .applications
-      margin-bottom: 100px
-
-      @media screen and (max-width: 599px)
-        margin-bottom: 90px
 
       &::before
         content: ""
         width: 200%
-        height: 91%
+        height: 109%
         background-color: #f4f8fe
         position: absolute
         left: -50%
-        top: 143px
         z-index: -1
 
         @media screen and (max-width: 599px)
-          top: 163px
-          height: 95%
+          height: 104%
+
+      &.health
+        margin-bottom: 200px
+
+        &::before
+          height: 107%
+
+          @media screen and (max-width: 599px)
+            height: 104%
 
       .applications-container-large
         display: flex

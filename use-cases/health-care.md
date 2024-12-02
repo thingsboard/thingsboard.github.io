@@ -47,7 +47,7 @@ notitle: "true"
         <img loading="lazy" src="/images/usecases/health-care/health-care-solution-structure.svg" alt="Health care solution structure">
     </div>
 </section>
-<section style="margin-bottom: 120px" class="health-solution-structure">
+<section class="health-solution-structure">
     <h1 style="margin-bottom: 0">Smart assisted living benefits</h1>
     <p style="margin-bottom: 64px">The Smart Assisted Living solution offers a range of benefits for care providers, residents, and facility administrators, supporting safe and efficient management of assisted living facilities:</p>
     <div class="health-solution-structure-cards">
@@ -177,7 +177,7 @@ notitle: "true"
     </div>
 </section>
 
-<section class="applications">
+<section class="applications health">
     <h1 style="margin-bottom: 15px">Applications of smart assisted living solution</h1>
     <p style="margin-bottom: 60px">A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
     <div class="applications-container-large">
