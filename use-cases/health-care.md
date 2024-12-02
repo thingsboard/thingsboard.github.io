@@ -21,7 +21,7 @@ notitle: "true"
             </div>
         </div>
         <div class="long">
-            <p>The healthcare industry is evolving rapidly to meet the diverse needs of patients, from routine care to managing chronic conditions and responding to emergencies. In such a dynamic field, real-time monitoring of critical health parameters and the ability for medical personnel to respond swiftly are paramount. This is especially true in assisted living facilities.</p>
+            <p>Healthcare monitoring systems are designed to track patient health metrics in real time and immediately notify medical professionals of critical changes. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE (Bluetooth Low Energy) or LoRa (Long Range) gateways, enabling seamless integration and support for flexible solutions.</p>
             <p>Our Smart Assisted Living solution powered by ThingsBoard providing a comprehensive, IoT-enabled platform for real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
         </div>
     </div>
