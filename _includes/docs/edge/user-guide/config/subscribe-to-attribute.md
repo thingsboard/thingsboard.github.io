@@ -34,6 +34,16 @@ To send back some attributes update message to the Edge, modify root rule chain 
 
 {% include images-gallery.html imageCollection="backToEdge" showListImageTitles="true" %}
 
+To rewrite and return received data back to Edge, add the following script into the **"script"** node:
+```bash
+// POST PROCESSING LOGIC
+msg = {"attribute1_result": "value1_result"};
+metadata = {};
+
+return {msg: msg, metadata: metadata, msgType: msgType};
+```
+{: .copy-code}
+
 ## Step 3. Subscribe to Device Attributes Change And Publish Device Attributes Message
 
 The procedure for subscribing to the **Device Attribute Changes** and subsequently publishing the **Device Attributes Message** depends on the protocol used. There are  the most commonly used protocols for basic telemetry and attribute updates in IoT applications:

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Bidirectional Attribute Subscription and Update with Post-Processing
-description: Bidirectional Attribute Subscription and Update with Post-Processing
+title: Bidirectional Attribute Subscription And Update with Post-Processing
+description: Bidirectional Attribute Subscription And Update with Post-Processing
 
 routeMessagesToCloud:
     0:
@@ -19,9 +19,12 @@ backToEdge:
         image: /images/edge/config/subscribe-to-attribute/4-rule-chain.webp
         title: 'Go to the <b>Rule Chains</b> section, to modify the <b>Rule Chain.</b>'
     1:
+        image: /images/edge/config/subscribe-to-attribute/5-add-script.webp
+        title: 'On the <b>Rule Chain</b> edit page, in the Node search bar find the <b>"script"</b> node. It allows modification of message payload, metadata or message type with JavaScript. Drag and drop the node onto the <b>Rule Chain</b> sheet. Then, in the <b>"Add rule node: script"</b> pop-up window enter the node title and enter the script below. Click the <b>"Add"</b> button to proceed.'
+    2:
         image: /images/edge/config/subscribe-to-attribute/5-add-push-to-edge.webp
         title: 'On the <b>Rule Chain</b> edit page, in the Node search bar find the <b>"push to edge"</b> node. It pushes messages from Cloud to Edge. Drag and drop the node onto the <b>Rule Chain</b> sheet. Then, in the <b>"Add rule node"</b> pop-up window enter the node title and select the <b>"Shared attributes"</b> option in the <b>"Entity attributes scope"</b> field. Click the <b>"Add"</b> button to proceed.'
-    2:
+    3:
         image: /images/edge/config/subscribe-to-attribute/6-save.webp
         title: 'Connect the <b>“save attributes”</b> and <b>“save time series”</b> nodes to the <b>"push to edge"</b> node and set the <b>"Success"</b> link label. Click the <b>“Apply changes”</b> button on the <b>Rule Chain</b> sheet.'
 
