@@ -232,6 +232,11 @@ toc:
       path: /docs/trendz/
     - title: Kafka Streams
       path: /docs/paas/eu/samples/analytics/kafka-streams/
+- title: Mobile center
+  new: true
+  section:
+    - title: Mobile application QR code
+      path: /docs/paas/eu/user-guide/ui/mobile-qr-code/
 - title: Other Features
   section:
     - title: Device Connectivity Status
@@ -318,9 +323,6 @@ toc:
       path: /docs/paas/eu/user-guide/ui/microsoft-teams-settings/
     - title: Mail Settings
       path: /docs/paas/eu/user-guide/ui/mail-settings/
-    - title: Mobile application QR code
-      path: /docs/paas/eu/user-guide/ui/mobile-qr-code/
-      new: true
 - title: Subscriptions
   path: /docs/paas/eu/subscription/
 - title: Plan and billing
