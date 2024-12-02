@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Subscribe to Attribute Updates on Edge from the Cloud
-description: Subscribe to Attribute Updates on Edge from the Cloud
+title: Bidirectional Attribute Subscription and Update with Post-Processing
+description: Bidirectional Attribute Subscription and Update with Post-Processing
 
 routeMessagesToCloud:
     0:

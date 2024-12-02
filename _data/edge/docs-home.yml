@@ -33,7 +33,7 @@ toc:
 #      path: /docs/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/edge/config/provision-customer/
-    - title: Subscribe to Attribute Updates on Edge from the Cloud
+    - title: Bidirectional Attribute Subscription and Update with Post-Processing
       path: /docs/edge/config/subscribe-to-attribute/
 - title: Rule Engine
   section:

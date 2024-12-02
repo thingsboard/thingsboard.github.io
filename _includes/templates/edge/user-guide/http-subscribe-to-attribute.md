@@ -10,10 +10,8 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates
 {: .copy-code}
 
 * **/attributes/updates** The endpoint that is used to fetch the updates of device attributes.
-* Replace the **$THINGSBOARD_HOST_NAME** with the actual hostname or IP address of your ThingsBoard Edge instance. For example:
-    * If you installed **ThingsBoard** using **Docker**, use **localhost** or **127.0.0.1**.
-    * If you installed **ThingsBoard** on your own server, use the **IP address** or **hostname** of that server.
-    * If you are using **ThingsBoard Cloud**, enter **the URL** of the **ThingsBoard Cloud** instance, e.g. demo.thingsboard.io.
+* Replace the **$THINGSBOARD_HOST_NAME** with the actual hostname or IP address of your ThingsBoard Edge instance.
+
 {% assign accessTokenPE = '
     ===
       image: /images/pe/edge/config/subscribe-to-attribute/9-copy-access-token-pe.webp,

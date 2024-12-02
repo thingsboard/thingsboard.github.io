@@ -11,10 +11,7 @@ mosquitto_sub -d -h $THINGSBOARD_HOST_NAME -t "v1/devices/me/attributes" -u "$AC
 {: .copy-code}
 
 * **v1/devices/me/attributes:** This is a topic on ThingsBoard Edge. It allows the device to listen for any updates related to its attributes from the cloud.
-* Replace the **$THINGSBOARD_HOST_NAME** with the actual hostname or IP address of your ThingsBoard Edge instance. For example:
-    * If you installed **ThingsBoard** using **Docker**, use **localhost** or **127.0.0.1**.
-    * If you installed **ThingsBoard** on your own server, use the **IP address** or **hostname** of that server.
-    * If you are using **ThingsBoard Cloud**, enter **the URL** of the **ThingsBoard Cloud** instance, e.g. demo.thingsboard.io.
+* Replace the **$THINGSBOARD_HOST_NAME** with the actual hostname or IP address of your ThingsBoard Edge instance. 
     
 {% assign accessTokenPE = '
   ===
