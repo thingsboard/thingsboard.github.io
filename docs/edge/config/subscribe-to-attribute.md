@@ -28,10 +28,15 @@ backToEdge:
         image: /images/edge/config/subscribe-to-attribute/6-save.webp
         title: 'Connect the <b>“save attributes”</b> and <b>“save time series”</b> nodes to the <b>"push to edge"</b> node and set the <b>"Success"</b> link label. Click the <b>“Apply changes”</b> button on the <b>Rule Chain</b> sheet.'
 
+terminal:
+    0:
+        image: /images/edge/config/subscribe-to-attribute/10-subscribe-post-update-attributes-mqtt.webp
+        title: 'Once you have subscribed to attribute updates, you will receive updates as the attributes change. We have used the <b>MQTT protocol</b> as an example. The updates were received after new attributes were published.'
+
 checkResultOnDevice:
     0:
-        image: /images/edge/config/subscribe-to-attribute/7-confirm-on-device.webp
-        title: 'To confirm if the attributes message is received on your Edge instance, go to the <b>Entities > Devices</b> section and click on the <b>device</b>. On the <b>"Device details"</b> page, select the <b>"Attributes"</b> tab and select the <b>"Client attributes"</b> option in the <b>"Entity attributes scope"</b> drop-down menu.'
+        image: /images/edge/config/subscribe-to-attribute/7-confirm-on-device-1.webp
+        title: 'To confirm if the <b>client-side attributes</b> are received, go to the <b>Entities > Devices</b> section of your <b>Edge</b> and click on the <b>device</b>. On the <b>"Device details"</b> page, select the <b>"Attributes"</b> tab and select the <b>"Client attributes"</b> option in the <b>"Entity attributes scope"</b> drop-down menu.'
 
 checkResultOnEdge:
     0:

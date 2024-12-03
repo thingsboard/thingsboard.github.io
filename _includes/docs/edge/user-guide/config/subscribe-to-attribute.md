@@ -57,14 +57,11 @@ CoAP%,%CoAP%,%/templates/edge/user-guide/coap-subscribe-to-attribute.md%br%{% en
 ## Step 4. Confirm the Results
 
 Confirm the received and pushed attributes:
+{% include images-gallery.html imageCollection="terminal" showListImageTitles="true" %}
 {% include images-gallery.html imageCollection="checkResultOnDevice" showListImageTitles="true" %}
 {% include images-gallery.html imageCollection="checkResultOnEdge" showListImageTitles="true" %}
 {% include images-gallery.html imageCollection="checkResultOnCloud" showListImageTitles="true" %}
 
-{% capture local-deployment %}
-To prevent messages from looping, the system ignores them when they come from the **Edge** and are pushed back to the **Edge**. Therefore, there are no incoming messages on the Edge instance.
-{% endcapture %}
-{% include templates/info-banner.md content=local-deployment %}
 
 ## Next Steps
 

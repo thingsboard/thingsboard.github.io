@@ -19,18 +19,23 @@ backToEdge:
         image: /images/pe/edge/config/subscribe-to-attribute/4-rule-chain-pe.webp
         title: 'Go to the <b>Rule Chains</b> section, to modify the <b>Rule Chain.</b>'
     1:
-        image: /images/edge/config/subscribe-to-attribute/5-add-script-pe.webp
+        image: /images/pe/edge/config/subscribe-to-attribute/5-add-script-pe.webp
         title: 'On the <b>Rule Chain</b> edit page, in the Node search bar find the <b>"script"</b> node. It allows modification of message payload, metadata or message type with JavaScript. Drag and drop the node onto the <b>Rule Chain</b> sheet. Then, in the <b>"Add rule node: script"</b> pop-up window enter the node title and enter the script below. Click the <b>"Add"</b> button to proceed.'
     2:
         image: /images/pe/edge/config/subscribe-to-attribute/5-add-push-to-edge-pe.webp
         title: 'On the <b>Rule Chain</b> edit page, in the Node search bar find the <b>"push to edge"</b> node. It pushes messages from Cloud to Edge. Drag and drop the node onto the <b>Rule Chain</b> sheet. Then, in the <b>"Add rule node"</b> pop-up window enter the node title and select the <b>"Shared attributes"</b> option in the <b>"Entity attributes scope"</b> field. Click the <b>"Add"</b> button to proceed.'
     3:
-        image: /images/edge/config/subscribe-to-attribute/6-save-pe.webp
+        image: /images/pe/edge/config/subscribe-to-attribute/6-save-pe.webp
         title: 'Connect the <b>“save attributes”</b> node to the <b>"push to edge"</b> node and set the <b>"Success"</b> link label. Click the <b>“Apply changes”</b> button in the <b>Rule Chain</b> sheet.'
+
+terminal:
+    0:
+        image: /images/pe/edge/config/subscribe-to-attribute/10-subscribe-post-update-attributes-mqtt-pe.webp
+        title: 'Once you have subscribed to attribute updates, you will receive updates as the attributes change. We have used the <b>MQTT protocol</b> as an example. The updates were received after new attributes were published.'
 
 checkResultOnDevice:
     0:
-        image: /images/pe/edge/config/subscribe-to-attribute/7-confirm-on-device-pe.webp
+        image: /images/pe/edge/config/subscribe-to-attribute/7-confirm-on-device-1-pe.webp
         title: 'To confirm if the attributes message is received on your Edge instance, go to the <b>Entities > Devices</b> section and click on the <b>device</b>. On the <b>"Device details"</b> page, select the <b>"Attributes"</b> tab and select the <b>"Client attributes"</b> option in the <b>"Entity attributes scope"</b> drop-down menu.'
 
 checkResultOnEdge:
