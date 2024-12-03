@@ -8,6 +8,39 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.11.2 (November, 2024)
+
+**Improvements:**
+
+* Configurable data gap for state fields
+* Add manual calculation task repeat
+* Extend calculation jobs configuration
+* Add failed execution details page
+* Add option to show selected date range and filters information in exported XLS/XLSX files
+
+**Bug fixes:**
+
+* Optimize export latency for large datasets
+* Fix relative dashboard time-window and interval time ranges
+
+## v1.11.1 (October, 2024)
+
+**Improvements:**
+
+* Add possibility to choose several entities in row click event
+* Add advanced formatting for filters in table view
+* Add quantile based classification method for heatmaps
+* Add additional settings for pie chart labels
+* Add time range strategy for calculation fields
+* Add export to XLSX
+
+**Bug fixes:**
+
+* Fix export from views (order of rows, formatting strings that contains scientific notation)
+* Fix filters in anomaly model settings
+* Fix table dynamic columns sorting
+* Fix showing units in views tooltips
+
 ## v1.11.0 (March, 2024)
 
 **Improvements:**
