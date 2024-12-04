@@ -14,15 +14,15 @@ notitle: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">ThingsBoard offers a powerful platform with all the tools needed to build a comprehensive healthcare monitoring and management solution with ease. ThingsBoard provides flexible customization options and an extensive range of built-in features.</p>
+                <p class="text">ThingsBoard is an IoT platform with all the tools needed to build a comprehensive healthcare monitoring and management solution with ease. ThingsBoard provides an extensive range of built-in features as well as flexible customization options.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_HealthCare_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/f8e77210-8fa8-11ef-90c1-0b39f28da380?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
-            <p>Healthcare monitoring systems are designed to track patient health metrics in real time and immediately notify medical professionals of critical changes. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE (Bluetooth Low Energy) or LoRa (Long Range) gateways, enabling seamless integration and support for flexible solutions.</p>
-            <p>Our Smart Assisted Living solution powered by ThingsBoard providing a comprehensive, IoT-enabled platform for real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
+            <p>Healthcare monitoring systems are designed to track patient health metrics in real time and immediately notify medical professionals of critical changes. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
+            <p>Our Smart Assisted Living solution powered by ThingsBoard provides real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
         </div>
     </div>
 </section>
@@ -36,7 +36,7 @@ notitle: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">The solution is designed to be used with BLE or LoRa gateways and devices. The rooms may be equipped with a number of sensors like room temperature, humidity, indoor air quality (IAQ), leak, smoke, and open/close detectors.</p>
+                <p class="text">The solution is designed to be used with BLE (Bluetooth Low Energy) or LoRaWAN gateways and devices. The rooms may be equipped with a number of sensors like room temperature, humidity, indoor air quality (IAQ), leak, smoke, and open/close detectors.</p>
             </div>
         </div>
         <div class="long">
