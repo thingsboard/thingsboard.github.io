@@ -1,0 +1,38 @@
+0:
+  href: "https://github.com/thingsboard/thingsboard"
+  icon: 'github'
+  arial-label: "Link to our Github"
+1:
+  href: "https://app.gitter.im/#/room/#thingsboard_chat:gitter.im"
+  icon: 'gitter'
+  arial-label: "Link to our Gitter"
+2:
+  href: "https://www.youtube.com/thingsboard"
+  icon: 'youtube'
+  arial-label: "Link to our Youtube channel"
+3:
+  href: "https://stackoverflow.com/questions/tagged/thingsboard"
+  icon: 'stack-overflow'
+  arial-label: "Link to our Stack Overflow page"
+4:
+  href: "https://groups.google.com/forum/#!forum/thingsboard"
+  icon: 'google'
+  arial-label: "Link to our Google Group"
+5:
+  href: "https://www.facebook.com/thingsboard"
+  icon: 'facebook'
+  arial-label: "Link to our Facebook"
+6:
+  href: "https://www.instagram.com/thingsboard_iot/"
+  icon: 'instagram'
+  arial-label: "Link to our Instagram"
+7:
+  href: "https://www.linkedin.com/company/thingsboard/"
+  icon: 'linkedin'
+  arial-label: "Link to our linkedin"
+8:
+  href: "https://twitter.com/thingsboard"
+  iconClass: 'twitter'
+  src: "/images/social-twitt-icon.svg"
+  arial-label: "Link to our X"
+

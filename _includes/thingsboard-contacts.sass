@@ -1,0 +1,30 @@
+.thingsboard-contacts-wrapper
+  padding: 120px 20px
+  font-style: normal
+  max-width: 1200px
+  margin: 0 auto
+  .thingsboard-contacts
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 20px
+    flex-wrap: wrap
+    li
+      display: flex
+      align-items: center
+      flex-direction: row
+      gap: 10px
+      a
+        color: #212529
+    span
+      font-weight: 400
+      font-size: 18px
+      color: #000000c2
+
+@media screen and (max-width: 900px)
+  .thingsboard-contacts-wrapper
+    .thingsboard-contacts
+      padding: 60px 20px
+      gap: 60px
+      flex-direction: column
+

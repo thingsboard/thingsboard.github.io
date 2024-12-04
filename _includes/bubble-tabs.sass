@@ -1,0 +1,147 @@
+.bubble-tabs-content
+
+  #tabs
+
+    --bubble-tabs-animation: 0.3
+
+    .ui-widget-header
+      background: transparent
+      border: none
+
+    .ui-tabs .ui-tabs-nav
+      ul
+        padding: 0
+        list-style: none
+        margin-bottom: 64px
+
+    .tab-content
+      display: flex
+      justify-content: center
+      flex-direction: column
+      gap: 48px
+      padding: 0
+      border: none
+      opacity: 0
+      .team-claster
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        gap: 48px
+        margin: 0 auto
+        max-width: 1400px
+      .team-claster.first-cluster
+        max-width: 100%
+
+    .ui-tabs-anchor
+      font-size: var(--tabTitleSize)
+      font-weight: var(--tabTitleWeight)
+      float: unset
+      padding: 0
+      display: block
+      height: 100%
+
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+      border: none
+      background: none
+      color: rgba(33, 37, 41, 0.6)
+      text-align: center
+
+    .ui-state-default a, .ui-state-default a:link
+      color: #00000033
+
+    .ui-state-hover a
+      color: #305680 !important
+
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+      &:after
+        content: ""
+        background: #305680
+        height: 3px
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+      a, a:link
+        color: #305680
+
+    .ui-helper-clearfix:before
+      display: none
+
+    .tabs-nav-content
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      margin-bottom: 64px
+
+    .tab-item
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 24px
+      img
+        background: linear-gradient(180deg, #A7B1B8 0%, #D8D9DA 100%)
+        box-shadow: 2px 2px 4px 0px rgba(48, 86, 128, 0.20)
+        border-radius: 100%
+        width: fit-content
+      .tab-item-text
+        display: flex
+        flex-direction: column
+        text-align: center
+        span
+          display: inline-block
+        .tab-item-text-description
+          max-width: 240px
+
+  .ui-widget-content
+    border: none !important
+
+  .ui-tabs,.ui-tabs-nav
+    padding: 0 !important
+
+  .ui-tabs
+    .ui-tabs-nav
+      li
+        scale: 0.9
+        opacity: 0
+        margin: 0 !important
+        padding: 0 !important
+        a
+          padding: 13.5px 50px !important
+
+  .tab-content-visible-animation
+      animation: revealFromTopToBottom 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+  .tabs-nav-item-animation
+    animation: scaleTransform 0.125s ease-in-out forwards, opacityTransform 0.125s ease-out forwards
+
+  .bubble-tabs-hidden
+    display: none
+
+  @keyframes revealFromTopToBottom
+    0%
+      clip-path: inset(0 0 100% 0)
+
+    100%
+      clip-path: inset(0 0 0 0)
+
+  @keyframes scaleTransform
+    0%
+      scale: 0.9
+
+    100%
+      scale: 1
+
+  @keyframes opacityTransform
+    0%
+      opacity: 0
+
+    100%
+      opacity: 1
+
+  @media screen and (max-width: 912px)
+    #tabs
+      --bubble-tabs-animation: 0.1
+      .tabs-nav-content
+        flex-direction: column
+        align-items: center
+        flex-wrap: unset
