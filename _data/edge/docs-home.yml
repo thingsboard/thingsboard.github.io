@@ -23,8 +23,6 @@ toc:
 #      path: /docs/edge/config/management/
     - title: Device Creation and Cloud Provisioning
       path: /docs/edge/config/create-device/
-#    - title: Provision Device from cloud to edge
-#      path: /docs/edge/config/provision-device/
 #    - title: Provision Asset from cloud to edge
 #      path: /docs/edge/config/provision-asset/
 #    - title: Provision Entity View from cloud to edge
@@ -35,6 +33,8 @@ toc:
 #      path: /docs/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/edge/config/provision-customer/
+    - title: Bidirectional Attribute Subscription and Update with Post-Processing
+      path: /docs/edge/config/subscribe-to-attribute/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates

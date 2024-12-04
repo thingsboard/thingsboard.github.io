@@ -19,9 +19,6 @@
         margin-right: auto
         width: 67.9vw
         height: 72.3vh
-        //background-size: contain
-        //background-repeat: no-repeat
-        //background-position: center
         img
           border: 4px solid white
           border-radius: 36px
@@ -46,13 +43,18 @@
           overflow: hidden
           vertical-align: middle
 
-    .scada-about, .scada-carousel, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages
+    .scada-about, .scada-carousel, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions,
       h1
         font-size: 40px
         margin-bottom: 60px
+        padding-top: 80px
+
         @media screen and (max-width: 599px)
           font-size: 30px
           padding-right: 0
+
+        &:before
+          display: none
 
       h2
         font-size: 32px
@@ -76,68 +78,66 @@
 
     section
       padding: 0
-
-    .scada-about
-      margin-bottom: 100px
-      display: flex
-      flex-direction: row
-      justify-content: space-between
-      gap: 50px
-
-      @media screen and (max-width: 599px)
-        margin-bottom: unset
-
-      @media screen and (max-width: 959px)
-        flex-direction: column
-        gap: unset
-
-      .short
-        flex: 1
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-
-        @media screen and (max-width: 1279px)
-          justify-content: unset
-
-        .block
-          .text
-            font-size: 20px
-            font-weight: 500
-
-        .demo-button > a
-          @media screen and (max-width: 599px)
-            width: 100%
-
-      .long
-        flex: 2
-
-    .scada-carousel
       margin-bottom: 100px
 
       @media screen and (max-width: 599px)
         margin-bottom: 50px
 
+      .about-text
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        gap: 50px
+
+        @media screen and (max-width: 599px)
+        margin-bottom: unset
+
+        @media screen and (max-width: 959px)
+          flex-direction: column
+          gap: unset
+
+        .short
+          flex: 1
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+
+          @media screen and (max-width: 1279px)
+            justify-content: unset
+
+          .block
+            .text
+              font-size: 20px
+              font-weight: 500
+        .long
+          flex: 2
+
+    .scada-about, .health-about
+
+      margin-bottom: 120px
+
+      .short
+        .demo-button > a
+          @media screen and (max-width: 599px)
+            width: 100%
+
+    .scada-carousel, .health-carousel
+
       &::before
         content: ""
         width: 200%
-        height: 115%
+        height: 123%
         background-color: #f4f8fe
         position: absolute
         left: -50%
-        top: -10%
+        top: -61px
 
-    .scada-solution-structure
-      margin-bottom: 100px
-
-      h1
-        @media screen and (max-width: 599px)
-          margin-bottom: 30px
+    .scada-solution-structure, .health-solution-structure
 
       .scheme
         margin-bottom: 48px
 
-      .scada-solution-structure-cards
+      .scada-solution-structure-cards, .health-solution-structure-cards
         display: flex
         flex-direction: row
         flex-wrap: wrap
@@ -146,7 +146,7 @@
         @media screen and (max-width: 1919px)
           gap: 24px
 
-        .scada-solution-structure-card
+        .scada-solution-structure-card, .health-solution-structure-card
           flex-basis: 31%
           min-height: 434px
           padding: 46px
@@ -165,8 +165,28 @@
           @media screen and (max-width: 599px)
             padding: 24px
 
-    .scada-key-functions
-      margin-bottom: 100px
+        .health-solution-structure-card
+          background-color: white
+          min-height: unset
+
+      .health-solution-structure-cards
+        &::before
+          content: ""
+          width: 200%
+          height: 112%
+          background-color: #f4f8fe
+          position: absolute
+          left: -50%
+          z-index: -1
+          top: -4px
+
+          @media screen and (max-width: 959px)
+            height: 106%
+
+          @media screen and (max-width: 599px)
+            height: 107%
+
+    .scada-key-functions, .health-key-functions
 
       @media screen and (max-width: 599px)
         margin-bottom: unset
@@ -174,14 +194,18 @@
       &::before
         content: ""
         width: 200%
-        height: 94%
+        height: 105%
         background-color: #f4f8fe
         position: absolute
         left: -50%
-        top: 170px
         z-index: -1
 
-      .scada-key-function-block
+        @media screen and (max-width: 599px)
+          height: 101%
+          top: 28px
+
+
+      .scada-key-function-block, .health-key-function-block
         display: flex
         flex-direction: row
         justify-content: space-between
@@ -213,7 +237,6 @@
             width: 60%
 
     .dashboard-structure
-      margin-bottom: 224px
 
       @media screen and (max-width: 599px)
         margin-bottom: 45px
@@ -409,24 +432,27 @@
 
 
     .applications
-      margin-bottom: 100px
-
-      @media screen and (max-width: 599px)
-        margin-bottom: 90px
 
       &::before
         content: ""
         width: 200%
-        height: 91%
+        height: 109%
         background-color: #f4f8fe
         position: absolute
         left: -50%
-        top: 143px
         z-index: -1
 
         @media screen and (max-width: 599px)
-          top: 163px
-          height: 95%
+          height: 104%
+
+      &.health
+        margin-bottom: 200px
+
+        &::before
+          height: 107%
+
+          @media screen and (max-width: 599px)
+            height: 104%
 
       .applications-container-large
         display: flex
@@ -511,6 +537,37 @@
             flex: 1
             text-align: center
 
+
+    .summary
+      display: flex
+      flex-direction: column
+      border-radius: 24px
+      box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+      padding: 40px
+      height: 320px
+      overflow: hidden
+      margin-bottom: 50px
+
+      @media screen and (max-width: 959px)
+        overflow: unset
+        height: unset
+
+      div
+        display: flex
+        flex-direction: row
+        gap: 16px
+
+        p
+          width: 75%
+
+          @media screen and (max-width: 959px)
+            width: 100%
+
+        img
+          margin-top: -84px
+
+          @media screen and (max-width: 959px)
+            display: none
 
     .advantages
 
