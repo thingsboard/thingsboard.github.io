@@ -15,14 +15,14 @@ mosquitto_sub -d -h $THINGSBOARD_HOST_NAME -t "v1/devices/me/attributes" -u "$AC
     
 {% assign accessTokenPE = '
   ===
-    image: /images/pe/edge/config/subscribe-to-attribute/9-copy-access-token-pe.webp,
+    image: https://img.thingsboard.io/pe/edge/config/subscribe-to-attribute/9-copy-access-token-pe.webp,
     title: Replace the **$ACCESS_TOKEN** with the actual access token of the device. To find the device access token, go to the **Entities > Devices** section and click on the device. On the **"Device details"** page, you can copy the token by clicking the **"Copy access token"** button.
 '
 %}
 
 {% assign accessTokenCE = '
   ===
-    image: /images/edge/config/subscribe-to-attribute/9-copy-access-token.webp,
+    image: https://img.thingsboard.io/edge/config/subscribe-to-attribute/9-copy-access-token.webp,
     title: Replace the **$ACCESS_TOKEN** with the actual access token of the device. To find the device access token, go to the **Entities > Devices** section and click on the device. On the **"Device details"** page, you can copy the token by clicking the **"Copy access token"** button.
 '
 %}
