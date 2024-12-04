@@ -41,7 +41,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/StevenKruse.jpeg" alt="Steven Kruse">
+            <img class="person-logo" src="/images/customers/StevenKruse.png" alt="Steven Kruse">
             <div class="person-title">
                 <p class="person-name"> Steven Kruse </p>
                 <p class="person-position"> CEO </p>
@@ -51,9 +51,11 @@ description:
             Innovative IoT solutions for automated temperature monitoring and documentation in food logistics
         </h2>
         <p>
-            With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.        </p>
+            With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.        
+        </p>
         <p>
-            In addition to fulfilling customer requirements, we also use ThingsBoard for internal use cases, such as controlling our production. This dual use emphasises the versatility and robustness of the platform. It is impossible to imagine our product range without ThingsBoard.        </p>
+            In addition to fulfilling customer requirements, we also use ThingsBoard for internal use cases, such as controlling our production. This dual use emphasises the versatility and robustness of the platform. It is impossible to imagine our product range without ThingsBoard.        
+        </p>
     </div>
 </div>
 
