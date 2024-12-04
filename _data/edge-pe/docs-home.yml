@@ -31,8 +31,6 @@ toc:
 #      path: /docs/pe/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/pe/edge/config/provision-customer/
-    - title: Subscribe to Attribute Updates on Edge from the Cloud
-      path: /docs/pe/edge/config/subscribe-to-attribute/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates
