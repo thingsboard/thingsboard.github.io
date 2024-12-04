@@ -44,7 +44,7 @@ checkResultOnEdge:
         title: 'To confirm if the attributes message is received and pushed to Cloud, go to the <b>Rule chains</b> section of your Edge instance and click on the <b>Rule chain</b>. Click on the <b>"push to cloud"</b> node.'
     1:
         image: /images/edge/config/subscribe-to-attribute/8-confirm-on-edge-node-2.webp
-        title: 'On the <b>"Push to cloud"</b> page, select the <b>"Events"</b> tab. If you have debug mode enabled, select the <b>"Debug"</b> option in the <b>"Event type"</b> drop-down menu. You should see two new records - <b>"IN"</b> and <b>"OUT"</b>, where the <b>"IN"</b> record defines the attributes received from the device, and the <b>"OUT"</b> record defines the attributes message pushed to the <b>Cloud</b>.'
+        title: 'On the <b>"Push to cloud"</b> page, select the <b>"Events"</b> tab. If you have debug mode enabled, select the <b>"Debug"</b> option in the <b>"Event type"</b> drop-down menu. You should see the new records - <b>"IN"</b> and <b>"OUT"</b>, where the <b>"IN"</b> record defines the attributes received from the device, and the <b>"OUT"</b> record defines the attributes message pushed to the <b>Cloud</b>.'
 
 checkResultOnCloud:
     0:
