@@ -138,26 +138,7 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.10.3 to {{ site.release.trendz_ver }}
-
-**Note:** starting from version 1.10.2 we add support of Python script execution. During an upgrade you need to add Python executor image into your docker compose file. 
-Full content of docker compose file you can find at the beginning of this article. Here is an example of the python executor service
-```yml
-  mypyexecutor:
-    restart: always
-    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
-    ports:
-      - "8181:8181"
-    environment:
-      MAX_HEAP_SIZE: 750M
-      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
-      EXECUTOR_MANAGER: 1
-      EXECUTOR_SCRIPT_ENGINE: 6
-      THROTTLING_QUEUE_CAPACITY: 10
-      THROTTLING_THREAD_POOL_SIZE: 6
-      NETWORK_BUFFER_SIZE: 5242880
-```
-{: .copy-code}
+Below is example on how to upgrade from 1.11.0 to {{ site.release.trendz_ver }}
 
 * Create a dump of your database:
 
@@ -175,17 +156,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.10.3' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.11.0' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.10.3' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.11.0' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.10.3:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.11.0:
 
 * Restart Trendz container
 

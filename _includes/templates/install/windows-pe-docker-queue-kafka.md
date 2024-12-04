@@ -15,7 +15,7 @@ version: '3.2'
 services:
   kafka:
     restart: always
-    image: bitnami/kafka:3.5.2
+    image: bitnami/kafka:3.8.1
     ports:
       - 9092:9092 #to localhost:9092 from host machine
       - 9093 #for Kraft
