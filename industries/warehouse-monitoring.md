@@ -41,7 +41,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/StevenKruse.webp" alt="Steven Kruse">
+            <img class="person-logo" src="/images/customers/StevenKruse.png" alt="Steven Kruse">
             <div class="person-title">
                 <p class="person-name"> Steven Kruse </p>
                 <p class="person-position"> CEO </p>
