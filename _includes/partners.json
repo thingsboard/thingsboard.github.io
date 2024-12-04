@@ -381,7 +381,7 @@
     "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality"
   },
   {
-    "type": ["main", "bluetooth", "nbiot",  "wifi", "sigfox", "lora", "gsm", "modbus"],
+    "type": ["main", "bluetooth", "nbiot", "wifi", "sigfox", "lora", "gsm", "modbus"],
     "program": "",
     "name": "EXXN",
     "logo": "exxn.jpg",
@@ -427,5 +427,21 @@
       }
     },
     "blurb": "The best way to predict the future is by creating it. As an IoT Solutions Company, we develop smart solutions daily, tailored to your business and objectives.\nWe pride ourselves on being a bit different, boosted by a healty dose of honest, straightforward communication without exaggeration. Manufacturing and creating devices that work, period is what we do at YOBIIQ."
+  },
+  {
+    "type": ["main", "gsm", "lte", "modbus", "wifi", "ethernet"],
+    "program": "",
+    "name": "YuDash",
+    "logo": "yudash_logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.yudash.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard"
+      }
+    },
+    "blurb": "YuDash is an Industrial IoT gateway manufacturer, offering flexible, user-friendly, and cost-effective products. Cloud connectivity through 4G/LTE, Ethernet and WiFi is available. Industrial protocols like Modbus-RS485, Modbus-TCP/IP, Analog and I2C are supported to IoT enable Industrial PLCs, Instruments and Sensors. YuDash products are used in Environment, Weather, Energy, Remote Asset Management and Industry 4.0 applications."
   }
 ]
