@@ -18,11 +18,14 @@ With ThingsBoard, you are able to:
  
 See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more features and useful links to the specific feature documentation. 
 
-{% if docsPrefix == null %}
-<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture.svg"></object>
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+{% if docsPrefix == 'pe/' %}
 <object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture-pe.svg"></object>
+{% elsif docsPrefix == 'paas/' %}
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture-paas.svg"></object>
+{% elsif docsPrefix == 'paas/eu/' %}
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture-paas-eu.svg"></object>
+{% else %}
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture.svg"></object>
 {% endif %}
 
 #### Architecture
