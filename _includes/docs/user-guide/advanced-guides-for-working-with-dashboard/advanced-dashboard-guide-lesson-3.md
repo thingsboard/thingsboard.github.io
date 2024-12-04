@@ -36,10 +36,12 @@ Now, let&#39;s add the necessary nodes:
 - Copy the following script from the documentation:
 
 ```js
-var msg = { temperature: Math.random()*10 + 20, humidity: Math.random()*15 + 30, co2: Math.random()*70 + 440 };
+var temperature = toFixed(Math.random()*10 + 20, 2);
+var humidity = toFixed(Math.random()*15 + 30, 2);
+var co2 = toFixed(Math.random()*70 + 440, 2);
+var msg = { temperature: temperature, humidity: humidity, co2: co2 };
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
-
 return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
@@ -60,10 +62,10 @@ Similarly, add data emulator for "Energy Meter" device:
 - Use the following script to simulate power consumption telemetry data:
 
 ```js
-var msg = { powerConsumption: Math.random() * 4.3 };
+var powerConsumption = toFixed(Math.random() * 4.3, 2);
+var msg = { powerConsumption: powerConsumption};
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
-
 return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
@@ -81,10 +83,11 @@ Add data emulator for "Water Flow Meter" device.
 - Use the following script to simulate water consumption telemetry data, and battery voltage data:
 
 ```js
-var msg = { waterConsumption: Math.random()*0.6 + 2, batteryLevel: Math.random()*1 + 45 };
+var waterConsumption = toFixed(Math.random()*1.6 + 1, 2);
+var batteryLevel = toFixed(Math.random()*1 + 45, 2);
+var msg = { waterConsumption: waterConsumption, batteryLevel: batteryLevel };
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
-
 return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
@@ -102,10 +105,12 @@ Finally, add data emulator for "IAQ Sensor" device. Name it "IAQ data emulator".
 - Use the following script to simulate water consumption, and battery voltage telemetry data:
 
 ```js
-var msg = { temperature: Math.random()*10 + 20, humidity: Math.random()*15 + 30, co2: Math.random()*70 + 440 };
+var temperature = toFixed(Math.random()*10 + 20, 2);
+var humidity = toFixed(Math.random()*15 + 30, 2);
+var co2 = toFixed(Math.random()*70 + 440, 2);
+var msg = { temperature: temperature, humidity: humidity, co2: co2 };
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
-
 return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
@@ -380,7 +385,7 @@ Now, you can see the current values of temperature, humidity, and CO2 levels.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-4" %}
 
-### Temperature and humidity history charts
+### Temperature and humidity history chart
 
 We will now add a widget that displays a chart of temperature and humidity readings in the office for the last 12 hours. This way, we can track their changes.
 

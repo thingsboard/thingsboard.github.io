@@ -35,6 +35,8 @@ toc:
 #      path: /docs/pe/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/pe/edge/config/provision-customer/
+    - title: Bidirectional Attribute Subscription and Update with Post-Processing
+      path: /docs/pe/edge/config/subscribe-to-attribute/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates

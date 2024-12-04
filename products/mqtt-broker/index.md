@@ -150,6 +150,19 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
         <div class="row">
             <div class="col-lg-6">
                 <div class="block">
+                    <h4 class="title">Administer client subscriptions</h4>
+                    <p>Efficiently manage subscriptions with a powerful and intuitive interface, ensuring optimal client communication and data flow across your IoT network.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 image-container">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/administer-client-subscriptions.webp" alt="Administer client subscriptions" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="block">
                     <h4 class="title">MQTT client credentials management</h4>
                     <p>Strengthen your IoT security using the MQTT client credentials management system, crafted to handle both Basic and X.509 Certificate Chain authentication options effortlessly.</p>
                 </div>
@@ -194,7 +207,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
         <div id="background">
             <div class="main3"></div><div class="small5"></div><div class="small6"></div>
         </div>
-        <h3>TBMQ Features</h3>
+        <h3>TBMQ features</h3>
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
@@ -229,6 +242,28 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/unauthorized-clients.svg" alt="Unauthorized clients">
+                    <div>
+                        <a href="/docs/mqtt-broker/user-guide/ui/unauthorized-clients/">
+                            <h4 class="title">Unauthorized clients</h4>
+                        </a>
+                        <p>Secure your IoT network with real-time monitoring of unauthorized access attempts. Gain critical details into potential security threats, enabling you to take proactive measures and strengthen overall system protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/client-session-metrics.svg" alt="Client session metrics">
+                    <div>
+                        <a href="/docs/mqtt-broker/user-guide/ui/sessions/#metrics">
+                            <h4 class="title">Client session metrics</h4>
+                        </a>
+                        <p>Gain valuable insights into client behavior and performance with detailed session metrics, allowing you to identify messaging anomalies and proactively troubleshoot issues.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </section>
@@ -250,15 +285,31 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
     </main>
 </section>
 
-<section id="latest-news">
+<section id="news">
     <main>
-        <h3>Latest news</h3>
+        <h3>TBMQ news</h3>
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
                     <div class="image-container">
+                        <a href="/blog/tbmq-2-0-migration-to-redis-mqtt-5-0-support-and-more/">
+                            <img src="/images/mqtt-broker/product/news-2.webp" alt="TBMQ 2.0.0 release" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="tags">
+                            <a href="/blog/category/updates/">Updates</a>
+                        </div>
+                        <a class="title" href="/blog/tbmq-2-0-migration-to-redis-mqtt-5-0-support-and-more/">TBMQ 2.0.0 release: migration to Redis, MQTT 5.0 support, and more</a>
+                        <p>TBMQ 2.0.0 release brings a major update with data migration of persistent sessions for devices from PostgreSQL to Redis. It also expands TBMQ’s MQTT 5.0 feature set, achieving full compatibility with the MQTT 5.0 standard. Here’s an overview of the features and updates included in this release</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <div class="image-container">
                         <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">
-                            <img src="/images/mqtt-broker/product/latest-news-1.webp" alt="TBMQ 1.3.0 release" loading="lazy">
+                            <img src="/images/mqtt-broker/product/news-1.webp" alt="TBMQ 1.3.0 release" loading="lazy">
                         </a>
                     </div>
                     <div class="content">
