@@ -24,6 +24,8 @@ $font-style-normal: normal
     margin-bottom: 100px
 @mixin small-margin
     margin-bottom: 60px
+@mixin mini-margin
+    margin-bottom: 40px
 @mixin text-style
     font-style: normal
     text-align: left
@@ -200,7 +202,36 @@ $font-style-normal: normal
                 img
                     max-width: 825px
                     height: auto
-
+        .smart-farming-callenges
+            .smart-farming-callenges-descr
+                margin-bottom: 25px
+                p
+                    width: 720px
+            .smart-farming-callenges-wrapper
+                @include middle-margin
+                .smart-farming-callenges-card
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    padding: 40px
+                    margin-bottom: 20px
+                    border-radius: 20px
+                    background: #FFF
+                    box-shadow: 0px 52px 14px 0px rgba(130, 130, 130, 0), 0px 33px 13px 0px rgba(130, 130, 130, 0.01), 0px 19px 11px 0px rgba(130, 130, 130, 0.05), 0px 8px 8px 0px rgba(130, 130, 130, 0.09), 0px 2px 5px 0px rgba(130, 130, 130, 0.1)
+                    .smart-farming-callenges-text
+                        max-width: 780px
+                    .smart-farming-callenges-num
+                        color: #EAF2FE
+                        font-size: 100px
+                        font-style: normal
+                        font-weight: 600
+                        margin-left: 80px
+                        img
+                            width: 130px
+                            height: 130px
+        .smart-farming-future-key
+            width: 720px
+            @include middle-margin
         .smart-farm-tech
             padding: 0px
             @include small-margin
@@ -264,6 +295,7 @@ $font-style-normal: normal
             .smart-farm-cycle-wrapper
                 display: flex
                 justify-content: space-between
+                align-items: center
                 padding: 40px
                 margin-bottom: 20px
                 border-radius: 20px
@@ -273,12 +305,13 @@ $font-style-normal: normal
                     width: 720px
                 .smart-farm-cycle-num 
                     color: #EAF2FE
-                    font-size: 170px
+                    font-size: 100px
                     font-style: normal
                     font-weight: 600
+                    margin-left: 80px
                     img
-                        width: 220px
-                        height: 220px
+                        width: 130px
+                        height: 130px
         .smart-farm-pros
             @include big-margin
             .smart-farm-pros-container
@@ -514,6 +547,15 @@ $font-style-normal: normal
                     img 
                         max-width: 582px
                         height: auto
+            .smart-farming-callenges
+                .smart-farming-callenges-descr
+                    p
+                        width: 582px
+                .smart-farming-callenges-wrapper
+                    @mixin small-margin
+            .smart-farming-future-key
+                width: 677px
+                @include mini-margin
             .smart-farm-tech
                 &::before
                     left: calc(640px - 50vw - 50px)
@@ -581,6 +623,14 @@ $font-style-normal: normal
                     img 
                         max-width: 620px
                         height: auto
+            .smart-farming-callenges
+                .smart-farming-callenges-descr
+                    p
+                        width: 621px
+                .smart-farming-callenges-wrapper
+                    @mixin small-margin
+            .smart-farming-future-key
+                @include small-margin
             .smart-farm-tech
                 @include small-margin
                 &::before
@@ -672,6 +722,20 @@ $font-style-normal: normal
             .smart-farm-key-difference 
                 .smart-farm-key-difference-text 
                     width: 100%
+            .smart-farming-callenges
+                .smart-farming-callenges-descr
+                    p
+                        width: 100%
+                .smart-farming-callenges-wrapper
+                    @mixin small-margin
+                    .smart-farming-callenges-card
+                        flex-direction: column-reverse
+                        align-items: center
+                        .smart-farming-callenges-num
+                            margin-left: 0px
+            .smart-farming-future-key
+                width: 100%
+                @include small-margin
             .smart-farm-tech
                 @include small-margin
                 &::before
@@ -693,6 +757,8 @@ $font-style-normal: normal
                 .smart-farm-cycle-wrapper
                     flex-direction: column-reverse
                     align-items: center
+                    .smart-farm-cycle-num 
+                        margin-left: 0px
                     .smart-farm-cycle-text
                         width: 100%
 
@@ -817,7 +883,6 @@ $font-style-normal: normal
                 .smart-farm-cycle-wrapper 
                     padding: 20px
                     .smart-farm-cycle-num 
-                        font-size: 100px
                         img 
                             width: 120px 
                             height: 120px
