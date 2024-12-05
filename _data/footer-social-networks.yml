@@ -33,6 +33,6 @@
 8:
   href: "https://twitter.com/thingsboard"
   iconClass: 'twitter'
-  src: "/images/social-twitt-icon.svg"
+  src: "https://img.thingsboard.io/social-twitt-icon.svg"
   arial-label: "Link to our X"
 
