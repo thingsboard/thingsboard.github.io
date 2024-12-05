@@ -1,67 +1,35 @@
 ---
 layout: docwithnav-edge
-title: Edge Management Overview
-description: Edge Management Overview
+title: Edge 
+description: Edge 
+
+downlinks:
+    0:
+        image: /images/edge/edge-management/0-downlinks.webp
+
+forceSync:
+    0:
+        image: /images/edge/edge-management/1-force-sync.webp
+
+instancesSection:
+    0:
+        image: /images/edge/edge-management/2-instances.webp
+        title: 'The following <a href="/docs/pe/user-guide/entities-and-relations/" target="_blank">entities</a> and events can be managed: <ul><li><b>Make edge public:</b> The edge and all its data will be accessible by others.</li><li><b>Assign to customer:</b> Link a specific customer entity to the Edge instance.</li><li><b>Make edge private:</b> The edge and all its data will not be accessible by others.</li><li><b>Manage assets:</b> Monitor and control assets (e.g., buildings, equipment, or other entities) at the Edge. </li><li><b>Manage devices:</b> Administer devices that are managed by the Edge.</li><li><b>Manage entity views:</b> Manage filtered views of entities (e.g., devices or assets) at the Edge to display specific subsets of data or contextual information. Read more about the Entity views in <a href="/docs/user-guide/entity-views/" target="_blank">this article</a>.</li><li><b>Manage dashboards:</b> Customize, and manage dashboards at the Edge.</li><li><b>Manage rule chains:</b> Create, configure, and manage rule chains specifically for the Edge.</li><li><b>Delete:</b> Remove the Edge and all related data.</li></ul>'
+
+edgeDetails:
+    0:
+        image: /images/edge/edge-management/3-edge-details.webp
+
+edgeStatus:
+    0:
+        image: /images/edge/edge-management/4-edge-status.webp
+        title: '<b>Status:</b> Edge current status (Connected, Disconnected).<li><b>Name:</b> The name of the current Edge instance.</li><li><b>ID:</b> The identification code of the current Edge instance.</li><li><b>Type:</b> The "default" Edge type is by design.</li><li><b>Routing Key:</b> The Edge key used to install the instance.</li><li><b>Last time connected to/disconnected from cloud:</b> The date and time the instance is connected to/disconnected from Cloud. Displayed in a format YYYY-MM-DD H:Min:Sec.</li>'
+
+cloudEvenets:
+    0:
+        image: /images/edge/edge-management/5-cloud-events.webp
+
 ---
 
-![image](/images/coming-soon.jpg)
-
-### Synchronization architecture
-
-ThingsBoard Edge and ThingsBoard CE/PE cloud are communicating over gRPC protocol.
-
-Messages serialized using Protocol Buffers (ProtoBuf).
-
-All messages that are pushed from ThingsBoard Edge to ThingsBoard CE/PE cloud are going to be stored in the local PostgreSQL table (**cloud_event table**) prior sending.
-In this way ThingsBoard Edge is able to operate without connectivity to the cloud.
-Once the connection established ThingsBoard Edge will push all messages in the local **cloud_event** table to the cloud and mark ones that are successfully transferred to the cloud.
-
-All messages that are pushed from ThingsBoard CE/PE cloud to ThingsBoard Edge are going to be stored in the cloud PostgreSQL table (**edge_event table**) prior sending.
-Once the connection established ThingsBoard CE/PE cloud will push all messages in the cloud **edge_event** table to the edge and mark ones that are successfully transferred to the edge.
-
-User is able to see list of transferred messages from the cloud to edge using **Downlinks** tab of **Edge** entity.
-
-![image](/images/edge/sync/downlink-events.png)
-
-##### Force synchronization procedure
-
-In case of network outage, or some other communication problem ThingsBoard Edge could become out of sync from the cloud.
-User is able to force synchronization process by clicking on the **Sync Edge** button:
-
-![image](/images/edge/sync/sync-button.png)
-
-### Device management on edge
-
-**Device** entity could be created directly on the edge and pushed to the cloud in case connection established.
-
-In case Edge connected to ThingsBoard **CE** any tenant administrator user is able to create device entities on the edge.
-
-In case Edge connected to ThingsBoard **PE** any user that has **DEVICE** write operation is able to create device entities on the edge.
-
-Once device created on the edge this device is going to be pushed for the creation on the cloud.
-
-If Edge connected to ThingsBoard **CE** a newly created device will be *'assigned'* to the edge automatically.
-
-If Edge connected to ThingsBoard **PE** a newly created device:
-- will be created on the cloud
-- new device entity group will be created, with specific name template: **[Edge] ${NAME_OF_EDGE} All**.
-- a newly created device will be added to group above
-- group above will be *'assigned'* to the edge automatically.
-
-### Entities management on cloud
-
-At the moment ThingsBoard Edge is not able to create any entity locally, except **Device** entity.
-To be able to use other entities on the edge, User must *'assign'* these entities to the edge prior usage.
-
-User can *'assign'* specific entities to the edge using **Edge** entity card.
-
-Once you'll assign any entity to specific edge this entity will be pushed to the edge event queue.
-If connection between edge and cloud is active then assigned entity will be created on the edge instantly.
-If at the moment edge not connected to the cloud then entity will be created once connection established.
-
-
-#### Next Steps
-
-{% assign currentGuide = "EdgeManagementOverview" %}
 {% assign docsPrefix = "edge/" %}
-{% include templates/edge/guides-banner-edge.md %}
+{% include /docs/edge/user-guide/edge-management.md %}
