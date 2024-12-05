@@ -176,16 +176,6 @@ notitle: "true"
                 </div>
                 <div class="smart-farm-tech-wrapper">
                     <div class="smart-farm-tech-text">
-                        <h3>Internet of Things (IoT)</h3>
-                        <p>The Internet of Things (IoT) in smart farming refers to a network of interconnected devices and systems that collect, exchange, and analyze data to improve agricultural practices. IoT technology enables farmers to monitor and manage various aspects of their farms in real-time, leading to enhanced productivity, efficiency, and sustainability. Here's an in-depth look at how IoT is transforming agriculture.</p>
-                        <p>IoT in smart farming involves deploying various sensors and devices across the farm, which continuously gather data on different aspects of the environment and crop health. This data is transmitted to a IoT platform where it is analyzed and processed to provide actionable insights. Farmers can access this information through computers or smartphones, allowing them to make informed decisions and automate certain tasks.</p>
-                    </div>
-                    <div class="smart-farm-tech-img">
-                        <img loading="lazy" class="img-iot" src="/images/usecases/smart-farming/internet_of_things.webp" alt="Internet of Things (IoT) icon">
-                    </div>              
-                </div>
-                <div class="smart-farm-tech-wrapper">
-                    <div class="smart-farm-tech-text">
                         <h3>Artificial Intelligence (AI) and Machine Learning (ML)</h3>
                         <p>Artificial Intelligence (AI) and Machine Learning (ML) are tools for analysing large, complex data sets (Big Data) provided by IoT systems. AI involves the creation of systems that can perform tasks that typically require human intelligence, such as decision-making, problem solving, and pattern recognition. As a part of AI, ML involves training algorithms that learn from data and make predictions or decisions based on the data. In smart agriculture, AI and ML involve collecting data from a variety of sources, such as sensors, drones, satellite imagery, and weather forecasts, which are used to analyse huge amounts of data to identify patterns, make predictions, and generate recommendations. Farmers can use this information to make informed decisions, optimise resource use and automate certain tasks.</p>
                     </div>
@@ -201,6 +191,16 @@ notitle: "true"
                     </div>
                     <div class="smart-farm-tech-img">
                         <img loading="lazy" class="img-auto-rob" src="/images/usecases/smart-farming/automation_and_robotics.webp" alt="Automation and Robotics icon">
+                    </div>              
+                </div>
+                <div class="smart-farm-tech-wrapper">
+                    <div class="smart-farm-tech-text">
+                        <h3>Internet of Things (IoT)</h3>
+                        <p>The Internet of Things (IoT) in smart farming refers to a network of interconnected devices and systems that collect, exchange, and analyze data to improve agricultural practices. IoT technology enables farmers to monitor and manage various aspects of their farms in real-time, leading to enhanced productivity, efficiency, and sustainability.</p>
+                        <p>IoT in smart farming involves deploying various sensors and devices across the farm, which continuously gather data on different aspects of the environment and crop health. This data is transmitted to a IoT platform where it is analyzed and processed to provide actionable insights. Farmers can access this information through computers or smartphones, allowing them to make informed decisions and automate certain tasks.</p>
+                    </div>
+                    <div class="smart-farm-tech-img">
+                        <img loading="lazy" class="img-iot" src="/images/usecases/smart-farming/internet_of_things.webp" alt="Internet of Things (IoT) icon">
                     </div>              
                 </div>
             </div>
@@ -374,8 +374,8 @@ notitle: "true"
                 </div>
                 <div class="smart-farm-solutions-item">
                     <div class="smart-farm-solutions-text">
-                        <h3>Livestock monitoring systems</h3>
-                        <p>Wearable sensors and IoT devices monitor the health, behaviour and location of livestock. These systems help farmers detect health problems at an early stage, optimise feeding schedules and improve the overall welfare of their animals.</p>
+                        <h3>Precision Livestock Farming</h3>
+                        <p>Wearable sensors and IoT devices monitor the health, behaviour and location of livestock. These systems help farmers detect health problems at an early stage, optimise feeding schedules and improve the overall welfare of their animals.These systems not only improve livestock management but also ensure the safety of animals and the farmers who care for them.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
                         <img loading="lazy" src="/images/usecases/smart-farming/livestock_monitoring_systems.webp">
