@@ -1874,6 +1874,67 @@ return parseDouble("4.2"); // Returns 4.2d
 ```
 {: .copy-code}
 
+#### Bitwise Operations
+
+Bitwise operations in ThingsBoard allow manipulation of individual bits within integer, long, and boolean values. These operations support mixed-type operands (Integer, Long, Boolean) without implicit type conversions, and the result type depends on the operation's outcome: either Integer or Long.
+
+#### Bitwise Operations
+Bitwise operations allow manipulation of individual bits within integer values. They are commonly used in scenarios requiring flag-based operations, performance optimizations, or low-level binary manipulations.
+
+**Supported operators:**
+
+```markdown
+- AND `&`: Performs a bit-by-bit comparison, where the result bit is `1` if both bits are `1`.
+- OR `|`: Sets a bit to `1` if at least one of the corresponding bits is `1`.
+- XOR `^` Sets a bit to `1` if the corresponding bits are different.
+- Left shift `<<`: Shifts bits to the left, effectively multiplying the number by `2^n`.
+- Right shift `>>`: Shifts bits to the right, effectively dividing the number by `2^n` (preserving the sign).
+- Unsigned Right shift `>>>`: Shifts bits to the right, filling with zeroes, regardless of the sign.
+```
+
+Supported Data Type Combinations
+
+1. Integer - Integer: Produces an Integer result.
+2. Long - Long: Produces a Long result.
+3. Boolean - Boolean: Produces an Integer result.
+3. Mixed Types (e.g., Integer - Long, Long - Boolean): The operation respects the input types, and the result type depends on the higher precision needed for the result.
+
+{% capture difference %}
+**Note**:
+<br>
+eg *Boolean* - (Integer / Long) or (Integer / Long) - *Boolean*:
+- Boolean values are interpreted as 1 (true) or 0 (false) and can interact with integers or longs directly.
+  {% endcapture %}
+  {% include templates/info-banner.md content=difference %}
+
+**Examples:**
+
+```java
+var x = true;
+var y = false;
+var a = 14;
+var b = -23;
+
+var andResult = x & y; 
+return andResult;       // Returns 0   
+        
+var orResult = x | y;  
+return orResult;        // Returns 1 
+        
+var xorResult = x ^ y;  
+return xorResult;       // Returns 1 
+        
+var leftShift = x << y; 
+return leftShift;       // Returns 1 
+        
+var rightShift = x >> y;
+return leftShift;       // Returns 1 
+        
+var rightUnShift = x >>> y;
+return rightUnShift;       // Returns 1 
+```
+{: .copy-code}
+
 #### base64
 ##### base64ToHex
 
