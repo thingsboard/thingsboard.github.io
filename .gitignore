@@ -1,7 +1,6 @@
 **/.DS_Store
 **/desktop.ini
 .jekyll-metadata
-Gemfile.lock
 _site/**
 .sass-cache/**
 CNAME
