@@ -11,7 +11,7 @@ smart-energy:
 
 smart-farming:
   0:
-    src: "/images/usecases/smart-farming/sf1.png"
+    src: "/images/usecases/smart-farming/sf1.webp"
     alt: "Smart farming dashboard with location"
   1:
     src: "/images/usecases/smart-farming/sf2.png"
@@ -28,7 +28,7 @@ fleet-tracking:
     src: "/images/usecases/fleet-tracking/ft2.png"
     alt: "Route history example"
   2:
-    src: "/images/usecases/fleet-tracking/ft3.png"
+    src: "/images/usecases/fleet-tracking/ft3.webp"
     alt: "Route area example"
 
 tank-level-monitoring:
@@ -47,7 +47,7 @@ tank-level-monitoring:
 
 smart-metering:
   0:
-    src: "/images/usecases/smart-metering/sm1.png"
+    src: "/images/usecases/smart-metering/sm1.webp"
     alt: "Smart metering dashboard with a map"
   1:
     src: "/images/usecases/smart-metering/sm2.png"
@@ -61,7 +61,7 @@ smart-metering:
 
 environment-monitoring:
   0:
-    src: "/images/usecases/environment-monitoring/em1.png"
+    src: "/images/usecases/environment-monitoring/em1.webp"
     alt: "environment monitoring 1"
   1:
     src: "/images/usecases/environment-monitoring/em2.png"
@@ -72,7 +72,7 @@ environment-monitoring:
 
 smart-office:
   0:
-    src: "/images/usecases/smart-office/so1.png"
+    src: "/images/usecases/smart-office/so1.webp"
     alt: "smart office 1"
   1:
     src: "/images/usecases/smart-office/so2.png"
@@ -98,7 +98,7 @@ water-metering:
     src: "/images/usecases/water-metering/wm3.png"
     alt: "water metering 3"
   3:
-    src: "/images/usecases/water-metering/wm4.png"
+    src: "/images/usecases/water-metering/wm4.webp"
     alt: "water metering 4"
   4:
     src: "/images/usecases/water-metering/wm5.png"
@@ -115,7 +115,7 @@ smart-retail:
     src: "/images/usecases/smart-retail/sr2.png"
     alt: "smart retail 2"
   2:
-    src: "/images/usecases/smart-retail/sr3.png"
+    src: "/images/usecases/smart-retail/sr3.webp"
     alt: "smart retail 3"
   3:
     src: "/images/usecases/smart-retail/sr4.png"

@@ -970,6 +970,7 @@ var tb = (function () {
 							const isSmallScreen = $(window).width() < 600;
 
 							$('#' + carouselId).owlCarousel({
+								lazyLoad: true,
 								margin: setupMarginPadding($carousel, '--carousel-margin'),
 								stagePadding: setupMarginPadding($carousel, '--stagePadding'),
 								autoHeight: false,
