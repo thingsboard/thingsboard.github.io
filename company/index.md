@@ -19,8 +19,9 @@ notitle: "true"
                         <span>ThingsBoard</span>
                     </div>
                     <div class="company-text-content-default">
-                        <p class="company-text">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella. Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management, data processing, security, privacy, analysis, etc.</p>
-                        <p class="company-text">ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period. Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.</p>
+                        <p class="company-text">At ThingsBoard, we help organizations worldwide unlock the full potential of IoT. Established with a vision to simplify and speed up IoT adoption, we provide a complete open-source IoT platform that enables easy device connectivity, data collection, processing, visualization, and management.</p>
+                        <p class="company-text">Our mission is to make IoT technology accessible, scalable, and flexible for organizations of all sizes. We empower businesses to optimize operations, reduce costs, and unlock new opportunities using cutting-edge tools and technologies.</p>
+                        <p class="company-text">Over a thousand organizations across industries such as energy, agriculture, retail, telecom, healthcare, and Industry 4.0 trust ThingsBoard to manage their devices and produce insights. Together, we are driving the future of IoT.</p>
                     </div>
                 </div>
             </div>
@@ -30,13 +31,12 @@ notitle: "true"
             <div class="company-wrapper">
                 <div class="company-flex-content-default">
                     <div class="company-text-content-default">
-                        <p class="company-text">Our journey began with a simple idea and a strong belief in our capabilities. We knew the future lay in IoT, so we set out to create software that enables users to develop exceptional IoT solutions worldwide. With this mission, two visionary programmers started building a product that would be accessible to everyone.</p>
-                        <p class="company-text">And it succeeded.</p>
-                        <p class="company-text">As we grew, so did our product. We introduced subproducts like EDGE, Trendz, Gateway, and TBMQ, each enhancing our platform’s efficiency and user experience. These additions brought new features and functionalities, empowering our clients to harness the full potential of IoT.</p>
-                        <p class="company-text">Today, ThingsBoard Inc. is a testament to ingenuity and hard work. Our platform is used globally by businesses and developers, driving innovation across various industries. From smart cities to industrial automation, our solutions lead the IoT revolution.</p>
-                        <p class="company-text">But our journey doesn’t end here. We continue to push the boundaries of IoT with a dedicated team and a commitment to excellence. ThingsBoard Inc. is more than a company; it’s a community of innovators, dreamers, and doers building a smarter, more connected world.</p>
+                        <p class="company-text">ThingsBoard started in 2016 as a vision shared by two co-founders: to create an open-source IoT platform that would simplify the complex process of connecting devices, managing data, and visualizing insights. From the very beginning, we were driven by the belief that IoT should be accessible to businesses of all sizes.</p>
+                        <p class="company-text">What began as a small project quickly grew into a global movement. Our first release captured the attention of developers and businesses worldwide, laying the foundation for a vibrant community. In 2018, we established ThingsBoard Inc., a company focused on scaling our mission and supporting our growing global customer and user base.</p>
+                        <p class="company-text">As we listened to our community, we expanded the ThingsBoard ecosystem with powerful tools like ThingsBoard Gateway, enabling seamless integration of legacy systems, and ThingsBoard Edge, bringing real-time processing and reliability to on-site deployments. In 2019, we introduced Trendz, a dedicated data analytics tool for advanced visualization. In 2020, we launched ThingsBoard Cloud, a fully managed IoT platform, offering a quick and hassle-free way to deploy and scale IoT solutions. Most recently, in 2023, we released TBMQ, our scalable and fault-tolerant MQTT broker designed to handle deployments with hundreds of millions of clients.</p>
+                        <p class="company-text">From just two co-founders, ThingsBoard has grown into a team of over 100 talented innovators. Trusted by thousands of organizations globally, we continue to innovate and shape the future of IoT, one device at a time.</p> 
                     </div>
-                    <img class="company-aboutus-image" src="/images/companyImages/history_image.webp" alt="Co-founders of ThingsBoard">
+                    <img class="company-aboutus-image" src="/images/company-images/history-image.webp" alt="Co-founders of ThingsBoard">
                 </div>
             </div>
         </div>
