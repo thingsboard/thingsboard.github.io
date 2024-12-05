@@ -190,7 +190,7 @@
         <div class="carousel-image">
             {% if carouselItem[1].href %}
             <a href="{{carouselItem[1].href}}">
-                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}" loading="lazy">
+                <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
                 {% if overlay == true %}
                 <div class="overlay">
                     <div class="eye">
@@ -201,7 +201,7 @@
                 {% endif %}
             </a>
             {% else %}
-            <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}" loading="lazy">
+            <img src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
             {% endif %}
         </div>
         {% endif %}
@@ -209,7 +209,7 @@
         <div class="carousel-image">
             <div class="multiple-image">
                 {% for image in carouselItem[1].multipleImage %}
-                <img src="{{image[1].src}}" alt="{{image[1].alt}}" loading="lazy">
+                <img src="{{image[1].src}}" alt="{{image[1].alt}}">
                 {% endfor %}
             </div>
         </div>
