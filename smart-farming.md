@@ -392,29 +392,11 @@ notitle: "true"
                 </div>
                 <div class="smart-farm-solutions-item">
                     <div class="smart-farm-solutions-text">
-                        <h3>Vertical farming</h3>
-                        <p>Vertical farming involves growing crops in vertically stacked layers, often under controlled indoor conditions. This method uses hydroponics, aeroponics and modern lighting systems to optimise plant growth and maximise space utilisation.</p>
-                    </div>
-                    <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/vertical_farming.webp">
-                    </div>
-                </div>
-                <div class="smart-farm-solutions-item">
-                    <div class="smart-farm-solutions-text">
                         <h3>Farm management software</h3>
                         <p>Farm management software integrates data from various sources and provides a comprehensive view of farm operations. This software helps farmers plan, monitor and manage their operations, from sowing to harvesting and all stages in between.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
                         <img loading="lazy" src="/images/usecases/smart-farming/farm_management_software.webp">
-                    </div>
-                </div> 
-                <div class="smart-farm-solutions-item">
-                    <div class="smart-farm-solutions-text">
-                        <h3>Autonomous machinery</h3>
-                        <p>Autonomous machinery, such as self-driving tractors and robotic weeders, perform various agricultural tasks with minimal human intervention. These machines use GPS, computer vision, and artificial intelligence to navigate the field and perform tasks accurately.</p>
-                    </div>
-                    <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/autonomous_machinery.webp">
                     </div>
                 </div> 
             </div>
