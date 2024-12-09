@@ -234,6 +234,12 @@ toc:
 - title: Mobile center
   new: true
   section:
+    - title: Bundles
+      path: /docs/pe/mobile-center/bundles/
+      new: true
+    - title: Applications
+      path: /docs/pe/mobile-center/applications/
+      new: true
     - title: Mobile application QR code
       path: /docs/pe/user-guide/ui/mobile-qr-code/
 - title: Other Features
