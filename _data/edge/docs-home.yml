@@ -9,8 +9,6 @@ toc:
   section:
     - title: Edge
       path: /docs/edge/config/management/
-    - title: Comparing Edge and Cloud
-      path: /docs/edge/comparison/
     - title: Alarms
       path: /docs/edge/user-guide/alarms/
     - title: OTA updates
