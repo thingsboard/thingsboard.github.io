@@ -19,10 +19,10 @@ toc:
       path: /docs/pe/edge/user-guide/db-overview/
 - title: Configuration Guides
   section:
-    - title: Device Creation and Cloud Provisioning
+    - title: Device Management
       path: /docs/pe/edge/config/create-device/
-#    - title: Provision Asset from cloud to edge
-#      path: /docs/pe/edge/config/provision-asset/
+    - title: Asset Management
+      path: /docs/pe/edge/config/provision-asset/
 #    - title: Provision Entity View from cloud to edge
 #      path: /docs/pe/edge/config/provision-entity-view/
 #    - title: Provision Dashboard from cloud to edge

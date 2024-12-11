@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-edge
+layout: docwithnav-pe-edge
 title: Edge Assets
 description: Edge Assets Overview
 
@@ -19,5 +19,7 @@ createAssetOnEdge:
 ---
 
 {% assign docsPrefix = "edge/" %}
+{% assign peDocsPrefix = "pe/" %}
 {% include docs/edge/user-guide/config/edge-asset.md %}
+
 
