@@ -186,9 +186,9 @@ description: Comprehensive software solutions for edge computing, providing data
             <thead>
                 <tr>
                     <td></td>
-                    <th>ThingsBoard<br>Server</th>
-                    <th>ThingsBoard<br>Edge</th>                    
                     <th>IoT<br>Gateway</th>
+                    <th>ThingsBoard<br>Edge</th>                    
+                    <th>ThingsBoard<br>Server</th>
                 </tr>
             </thead>
             <tbody>

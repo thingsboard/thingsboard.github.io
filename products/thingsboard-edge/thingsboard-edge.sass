@@ -174,7 +174,7 @@
         margin-left: -20px
         margin-right: -20px
         width: calc(100% + 40px)
-        .cloud, .edge, .gateway
+        .gateway, .edge, .cloud
           padding: 0 2px
           width: 20%
           position: absolute
@@ -184,21 +184,13 @@
           height: 1243px
           border-radius: 6px
         .gateway
-          right: 0
+          right: 40%
           .coln
             border: 2px solid #7A4DC3
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
             .head
               height: 106px
               background-color: #7A4DC3
-        .cloud
-          right: 40%
-          .coln
-            border: 2px solid #2A7DEC
-            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
-            .head
-              height: 106px
-              background-color: #2A7DEC
         .edge
           right: 20%
           .coln
@@ -207,6 +199,14 @@
             .head
               height: 106px
               background-color: #009688
+        .cloud
+          right: 0
+          .coln
+            border: 2px solid #2A7DEC
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+            .head
+              height: 106px
+              background-color: #2A7DEC
       table
         width: calc(100% + 40px)
         margin: 64px -20px 16px
@@ -219,13 +219,13 @@
             img
               filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
           &:nth-child(2n)
-            color: #2A7DEC
-            img
-              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
-          &:nth-child(4n)
             color: #7A4DC3
             img
               filter: invert(43%) sepia(48%) saturate(952%) hue-rotate(223deg) brightness(78%) contrast(96%)
+          &:nth-child(4n)
+            color: #2A7DEC
+            img
+              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
         border: none
         top: 40px
         thead
@@ -472,6 +472,10 @@
         h3
           font-size: 42px
           line-height: 63px
+        #backg-matrix
+          .gateway, .edge, .cloud
+            padding: 0 20px
+            width: 20%
         table
           thead
             font-size: 30px
