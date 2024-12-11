@@ -6,16 +6,13 @@ description: Edge Assets Overview
 createAssetOnEdge:
     0:
         image: /
-        title: 'Click the <b>"+"</b> button and then select the <b>“Add new device”</b> option.<ul><li>The <b>"Import device"</b> option allows <a href="/docs/user-guide/bulk-provisioning/#bulk-provisioning-overview" target="_blank">bulk deployment</a> using the CSV file.</li></ul>'
+        title: 'Click the <b>"+"</b> button and then select the <b>“Add new asset”</b> option.<ul><li>The <b>"Import assets"</b> option allows <a href="/docs/user-guide/bulk-provisioning/#bulk-provisioning-overview" target="_blank">bulk deployment</a> using the CSV file.</li></ul>'
     1:
         image: /
-        title: 'In the <b>“Add new device”</b> pop-up window enter the device title in the <b>“Name”</b> field and select the defile profile in the <b>“Device profile”</b> field. The device profile is preset to <b>"default"</b>. Other fields are optional. Click the <b>“Add”</b> button.'
+        title: 'In the <b>“Add asset”</b> pop-up window enter the asset name in the <b>“Name”</b> field and select the asset profile in the <b>“Asset profile”</b> field. The device profile is preset to <b>"default"</b>. Other fields are optional. Click the <b>“Add”</b> button.'
     2:
         image: /
-        title: 'To check the connectivity, follow the instructions that appear on the screen.'
-    3:
-        image: /
-        title: 'After the device is created, it will be automatically provisioned to the Cloud.'
+        title: 'After the <b>Asset</b> is created, it will be <b>automatically provisioned</b> to the Cloud.'
 ---
 
 {% assign docsPrefix = "edge/" %}
