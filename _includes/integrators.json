@@ -744,6 +744,18 @@
     }
   },
   {
+    "type": ["Australia and Oceania"],
+    "country": ["American Samoa", "Australia", "Cook Islands", "Federated States of Micronesia", "Fiji", "French Polynesia", "Guam", "Kiribati", "Marshall Islands", "Nauru", "New Caledonia", "New Zealand", "Niue", "Norfolk Island", "Northern Mariana Islands", "Palau", "Papua New Guinea", "Pitcairn Islands", "Samoa", "Solomon Islands", "Tonga", "Tuvalu", "Vanuatu", "Wallis and Futuna"],
+    "name": "Moreton Systems Pty Ltd",
+    "contact": {
+      "href": "info@moreton.io"
+    },
+    "site": {
+      "href": "https://www.moreton.io",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["Sri-Lanka"],
     "name": "N-able Pvt. Ltd.",
@@ -775,7 +787,7 @@
       "href": "teo.pavel@nttdata.ro"
     },
     "site": {
-      "href": "nttdata.ro",
+      "href": "ro.nttdata.com",
       "target": "_blank"
     }
   },
