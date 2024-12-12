@@ -3,43 +3,32 @@
 
 ## Overview
 
-The **Asset entity** is an abstract entity that helps group and manage the IoT ecosystem. **Assets** represent real-world objects such as factories, vehicles, warehouses, etc., and create a relation hierarchy between these objects and devices.
-**Edge Assets** allow for grouping Edge devices and visualizing the data they send. This approach applies whenever the devices or transmitted data are specific to a particular Edge.
+The **Asset entity** is an abstract entity that helps group and manage the IoT ecosystem. **Assets** represent real-world objects such as factories, vehicles, warehouses, etc., and create a relation hierarchy between these objects and other entities.
+**Edge Assets** allow for grouping Edge entities and visualizing the data they send. This approach applies whenever the devices or transmitted data are specific to a particular Edge.
 
 **Edge Assets** are designed in the same way as the **Cloud Assets**. Please read the [Assets documentation](/docs/{{peDocsPrefics}}user-guide/ui/assets/){:target="_blank"} to gain a general understanding of its functionality.
 
 ## Edge Asset Management
 
-ThingsBoard allows to create and manage Asset entity locally, however, cloud provides better flexibility.
+The **asset entity** can be created on the **Edge** or the **Cloud**, and then be associated with the Edge. However, the way the relations are made is different.
 
 #### Creating a New Asset on Edge
+
 To create the **Asset entity** locally on the **Edge**, log in to your instance and go to the **Entities > Assets** section.
 
 {% include images-gallery.html imageCollection="createAssetOnEdge" showListImageTitles="true" %}
 
 #### Creating Relations From Edge
-To assign another entity to the Edge 
-Step 1: Create a Relation Between the Asset and Device
 
-Navigate to the Devices section in the ThingsBoard UI.
-    Select the device you want to assign to the asset.
-    Open the device details and click the Relations tab.
-    Click the Add Relation button:
-        From Type: Asset
-        From Name: Select the asset you want to associate with this device.
-        Relation Type: You can use a predefined relation type (e.g., "Contains") or define your own (e.g., "BelongsTo").
-    Save the relation.
+On the **Edge** instance, the relations are constructed **from the entity to the asset**. For example, to assign an edge device to an edge asset right on your instance, go to the **Entities > Devices** section and select or [create the device](/docs/{{docsPrefix}}config/create-device/#creating-device-on-edge-instance){:target="_blank"} you want to assign:
 
-Step 2: Verify the Relation in the Asset
-
-Go to the Assets section and open the asset details.
-    Click the Relations tab.
-    Confirm that the newly added relation appears in the list, showing the linked device.
+{% include images-gallery.html imageCollection="deviceToAsset" showListImageTitles="true" %}
 
 #### How to Use These Relations in Dashboards
 
-This approach ensures that your dashboards reflect the data and telemetry from assets and their related devices, creating a seamless integration for monitoring and control.
-Once devices are linked to an asset through relations, you can use this relationship to configure dashboards:
+These relations can be used in dashboard configurations to reflect the asset's data and related devices. Go to the **Dashboards** section and select or [create a new dashboard](/docs/{{docsPrefix}}user-guide/db-overview/#the-edge-dashboard-creation-and-management){:target="_blank"}.
+
+{% include images-gallery.html imageCollection="dashboard" showListImageTitles="true" %}
 
 Create Entity Aliases:
         In your dashboard, create an alias that dynamically selects all devices related to the asset.
@@ -52,7 +41,6 @@ Add Widgets:
 ## Provisioning From Cloud
 Please use 'Edge Assets' icon to navigate to assets that are *'assigned'* to specific edge entity.
 User is able to assign to edge any asset that he has access to.
-
 
 ### Next Steps
 
