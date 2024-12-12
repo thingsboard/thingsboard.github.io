@@ -194,9 +194,9 @@ description: Comprehensive software solutions for edge computing, providing data
             <tbody>
                 <tr>
                     <th>Standalone Mode</th>                    
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server or Edge <br>Required)</td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server Required)</td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Edge or Server<br>Required)</td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Data Collection</th>
@@ -205,97 +205,99 @@ description: Comprehensive software solutions for edge computing, providing data
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Data Processing</th>
+                    <th>Core Protocols Support</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Peripheral Infrastructure Protocols Support</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Data Processing and Analysis <img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Real-Time and SCADA-like HMI Dashboards<img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Alarms & Notifications<img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Asset Management</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/dashboards/" target="_blank">End-User Real-Time Dashboards<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th><a href="/docs/user-guide/scada/" target="_blank">Remote Management (SCADA Dashboards)<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/" target="_blank">Rule Engine<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Real-Time Analytics</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th><a href="/docs/user-guide/integrations/" target="_blank">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th>Offline Data Processing and Storage<img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Data Collection Only)</td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th>Multi-Tenancy Support</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Micro Services Deployment</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th>Cluster Deployment</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Cassandra DB for Time-Series Data</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Traffic Filtering</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th><a href="/docs/user-guide/alarms/" target="_blank">Alarms<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Push Events on Demand</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>On-Site Data Operations Without Server Connectivity</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Data Collection Only)</td>
                 </tr>
                 <tr>
                     <th>Hardware Resources Usage</th>
-                    <td>High to Medium</td>
-                    <td>Medium to Low</td>
                     <td>Low</td>
+                    <td>Medium to Low</td>
+                    <td>High to Medium</td>
                 </tr>
             </tbody>
     </table>
+</section>
+
+<section id="products">
+    <div class="main-div">
+        <div id="background">
+            <div class="main2"></div><div class="small5"></div><div class="small6"></div><div class="small7"></div>
+        </div>
+        <h3 class="product-title">Typical Usage Scenario</h3>
+        <div class="product-list">
+            <div>
+                <p>ThingsBoard</p>
+                <h2>IoT Gateway</h2>
+                <p>Collect and distribute data from LAN devices to Edge or Server</p>
+                <img src="/images/edge/edge-gw.png" alt="ThingsBoard Gateway block" width="280" height="280" loading="lazy">
+                <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">What is ThingsBoard IoT Gateway?</a>
+            </div>
+            <div class="main">
+                <p>ThingsBoard</p>
+                <h2>Edge</h2>
+				<p>Process and visualize data at the edge of the network</p>
+				<img src="/images/edge/edge.png" alt="ThingsBoard Edge block" width="320" height="320" loading="lazy">
+				<a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">What is ThingsBoard Edge?</a>
+            </div>
+            <div>
+				<p>ThingsBoard</p>
+				<h2>Server</h2>
+				<p>Scalable data computing with on-premises (server) or cloud deployments</p>
+				<img src="/images/edge/cloud.png" alt="ThingsBoard Cloud block" width="280" height="280" loading="lazy">
+				<a href="/docs/getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard Cloud?</a>
+            </div>
+        </div>
+	</div>
 </section>
 
 <section id="minimal-requirements">

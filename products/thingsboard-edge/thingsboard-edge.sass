@@ -181,7 +181,7 @@
           z-index: -1
           top: 127px
         .coln
-          height: 1243px
+          height: 920px
           border-radius: 6px
         .gateway
           right: 40%
@@ -263,8 +263,67 @@
               font-size: 11px
               img
                 width: 32px
+    #products
+      width: 100%
+      padding-top: 100px
+      padding-bottom: 56px
+      @media (max-width: 768px)
+        padding-top: 60px
+        padding-bottom: 20px
+      product-title
+        color: white
+        text-align: center
+        margin-bottom: 72px
+      .product-list
+        display: flex
+        margin: unset
+        div
+          color: #212529
+          background-color: white
+          box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+          border-radius: 6px
+          padding: 40px
+          text-align: center
+          flex: 1
+          margin-bottom: 40px
+          p
+            margin: unset
+            h2, span.phrase-heading
+              font-size: 28px
+                font-weight: 600
+              h3
+                font-size: 16px
+                font-weight: unset
+                margin-top: 18px
+                line-height: 1.5
+              img
+                display: block
+                margin: 50px auto 50px auto
+                width: 80%
+              &.main
+                box-shadow: inset 0px -6px 0px #305680, 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                margin: 0 30px
+                h2, span.phrase-heading
+                  font-size: 42px
+                  font-weight: 600
+                  line-height: 1.5
+                img
+                  margin: 60px auto
+              a
+                color: #2A7DEC
+                font-weight: 500
+          @media(max-width: 992px)
+            flex-direction: column
+            margin: 0 0 40px
+      a
+        color: #707275
+        font-weight: 500
+        margin-top: 56px
+        text-align: center
+        @media (max-width: 768px)
+          margin-top: 20px
 
-    #local-deployment, #data-filtering, #local-alarms, #batch-update, #minimal-requirements
+    #local-deployment, #data-filtering, #local-alarms, #batch-update, #minimal-requirements, #products
       .block
         justify-content: space-between
         display: flex
