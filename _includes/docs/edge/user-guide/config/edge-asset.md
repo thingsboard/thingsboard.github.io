@@ -28,7 +28,7 @@ Several parameters define the [relation hierarchy](/docs/{{peDocsPrefix}}user-gu
   * The **"Contains"** type indicates that the entity **is a part of another entity** (e.g., Device A is the part of Asset A).
   * The **"Manages"** type indicates that the entity **is responsible for another entity** (e.g., Asset A manages Device A).
 
-To **construct the relation** between the Asset and another entity (e.g., device), go to the **Entities > Assets** section and do the following:
+To **construct the relations** between the Asset and another entity (e.g., device), go to the **Entities > Assets** section and do the following:
 
 {% include images-gallery.html imageCollection="deviceToAsset" showListImageTitles="true" %}
 
@@ -36,7 +36,7 @@ To **construct the relation** between the Asset and another entity (e.g., device
 
 Once the relations between the entities have been established, they can be **reflected on a dashboard**. The transmitted data from the asset-related devices can be **dynamically filtered by relation type** with [aliases](/docs/{{peDocsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
-To configure the **alias**, go to the **Dashboards** section and select or [create](/docs/{{docsPrefix}}user-guide/db-overview/#the-edge-dashboard-creation-and-management){:target="_blank"} a new dashboard.
+To configure the **alias**, go to the **Dashboards** section and [create](/docs/{{docsPrefix}}user-guide/db-overview/#the-edge-dashboard-creation-and-management){:target="_blank"} a new dashboard or edit an existing one.
 
 {% include images-gallery.html imageCollection="alias" showListImageTitles="true" %}
 
