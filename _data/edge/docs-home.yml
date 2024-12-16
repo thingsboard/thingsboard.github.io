@@ -19,7 +19,7 @@ toc:
       path: /docs/edge/user-guide/db-overview/
 - title: Configuration Guides
   section:
-    - title: Device Creation and Cloud Provisioning
+    - title: Device Management
       path: /docs/edge/config/create-device/
 #    - title: Provision Asset from cloud to edge
 #      path: /docs/edge/config/provision-asset/
