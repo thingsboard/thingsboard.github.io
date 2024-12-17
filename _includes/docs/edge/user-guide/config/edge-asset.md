@@ -3,44 +3,44 @@
 
 ## Overview
 
-The **Asset entity** is an abstract entity that helps group and manage the IoT ecosystem. **Assets** represent real-world objects such as factories, vehicles, warehouses,  etc., and create a relation hierarchy between these objects and other entities.
-**Edge Assets** allow for grouping Edge entities and visualizing the data they send. This approach applies whenever the devices or transmitted data are specific to a particular Edge.
+The **Asset entity** is an abstract entity that helps group and manage the IoT ecosystem. **Assets** represent real-world objects such as factories, vehicles, warehouses,  etc., and establish a relational hierarchy between these objects and other entities.
+**Edge Assets** enable grouping of Edge entities and visualizing the data they send. This approach applies whenever the devices or transmitted data are specific to a particular Edge.
 
-**Edge Assets** are designed in the same way as the **Cloud Assets**. Please read the [Assets documentation](/docs/{{peDocsPrefics}}user-guide/ui/assets/){:target="_blank"} to gain a general understanding of its functionality.
+**Edge Assets** are designed in the same way as the **Cloud Assets**. Please refer to the [Assets documentation](/docs/{{peDocsPrefics}}user-guide/ui/assets/){:target="_blank"} to gain a general understanding of its functionality.
 
 ## Edge Asset Management
 
-The **Asset entity** can be created and configured locally, on the **Edge** instance, in a same way as on the **Cloud**. If the **Asset entity** has been created on the **Cloud**, it must be [assigned](/docs/{{docsPrefix}}config/provision-asset/#provisioning-from-cloud){:target="_blank"} to the **Edge** before use.
+The **Asset entity** can be created and configured locally on the **Edge** instance, in the same way as on the **Cloud**. If the **Asset entity** has been created on the **Cloud**, it must be [assigned](/docs/{{docsPrefix}}config/provision-asset/#provisioning-from-cloud){:target="_blank"} to the **Edge** instance before use.
 
 #### Creating a New Asset
 
-To create the **Asset entity** locally on the **Edge**, log in to your instance and go to the **Entities > Assets** section.
+To create the **Asset entity** on the **Edge**, log in to your instance and go to the **Entities > Assets** section.
 
 {% include images-gallery.html imageCollection="createAssetOnEdge" showListImageTitles="true" %}
 
 #### Creating Relations
 
 Several parameters define the [relation hierarchy](/docs/{{peDocsPrefix}}user-guide/entities-and-relations/#relations){:target="_blank"} between the entities:
-* **Direction:** It describes how the entities are associated with each other.
-  * The **"Outbound relation - From"** direction indicates that the **relation originates from the entity (it is the source)**.
-  * The **"Inbound relation - To"** direction indicates that the **relation points to the entity (it is the recipient)**. 
-* **Relation type:** It describes the nature of the connection between entities.
-  * The **"Contains"** type indicates that the entity **is a part of another entity** (e.g., Device A is the part of Asset A).
-  * The **"Manages"** type indicates that the entity **is responsible for another entity** (e.g., Asset A manages Device A).
+* **Direction:** Describes how the entities are associated with each other.
+  * **"Outbound relation - From":** Indicates that the **relation originates from the entity (the entity is a source)**.
+  * **"Inbound relation - To":** Indicates that the **relation points to the entity (the entity is a recipient)**. 
+* **Relation type:** Describes the nature of the connection between the entities.
+  * **"Contains":** Indicates that the entity **is a part of another entity** (e.g., _Device A is the part of Asset A_).
+  * The **"Manages":** Indicates that the entity **is responsible for another entity** (e.g., _Asset A manages Device A_).
 
-To **construct the relations** between the Asset and another entity (e.g., device), go to the **Entities > Assets** section and do the following:
+To **construct relations** between the Asset and another entity (e.g., _device_), go to the **Entities > Assets** section and do the following:
 
 {% include images-gallery.html imageCollection="deviceToAsset" showListImageTitles="true" %}
 
-#### How to Use Relations in Dashboards
+#### Using Relations in Dashboards
 
-Once the relations between the entities have been established, they can be **reflected on a dashboard**. The transmitted data from the asset-related devices can be **dynamically filtered by relation type** with [aliases](/docs/{{peDocsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
+Once the relations between the entities are established, they can be **reflected on a dashboard**. Transmitted data from asset-related devices can be **dynamically filtered by relation type** with [aliases](/docs/{{peDocsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
-To configure the **alias**, go to the **Dashboards** section and [create](/docs/{{docsPrefix}}user-guide/db-overview/#the-edge-dashboard-creation-and-management){:target="_blank"} a new dashboard or edit an existing one.
+To configure an **alias**, go to the **Dashboards** section and enter the **Edit mode** for a new or existing dashboard. Read on **how to create the dashboard** [here](/docs/{{docsPrefix}}user-guide/db-overview/#the-edge-dashboard-creation-and-management){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="alias" showListImageTitles="true" %}
 
-Configure the **"Time series chart"** widget with the **alias** as its datasource:
+Continue with the configuration of a widget. Within the **"Edit mode"**, click the **"Add widget"** button to add the widget. Select the **Charts > Time series chart** widget. Read more about **how to add and configure a new widget** [here](/docs/{{peDocsPrefix}}user-guide/widgets/#adding-a-widget-to-the-dashboard){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="dashboard" showListImageTitles="true" %}
 
