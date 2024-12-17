@@ -33,8 +33,8 @@ toc:
 #      path: /docs/edge/config/provision-customer/
     - title: Bidirectional Attribute Subscription and Update with Post-Processing
       path: /docs/edge/config/subscribe-to-attribute/
-    - title: Operating Edge in conjunction with the IoT Gateway
-      path: /docs/edge/config/operating-edge-in-conjunction-with-iot-gateway/
+    - title: Deploying Edge Alongside IoT Gateway
+      path: /docs/edge/config/deploying-edge-alongside-iot-gateway/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates
