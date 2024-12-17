@@ -26,7 +26,7 @@ Several parameters define the [relation hierarchy](/docs/{{peDocsPrefix}}user-gu
   * **"Inbound relation - To":** Indicates that the **relation points to the entity (the entity is a recipient)**. 
 * **Relation type:** Describes the nature of the connection between the entities.
   * **"Contains":** Indicates that the entity **is a part of another entity** (e.g., _Device A is the part of Asset A_).
-  * The **"Manages":** Indicates that the entity **is responsible for another entity** (e.g., _Asset A manages Device A_).
+  * **"Manages":** Indicates that the entity **is responsible for another entity** (e.g., _Asset A manages Device A_).
 
 To **construct relations** between the Asset and another entity (e.g., _device_), go to the **Entities > Assets** section and do the following:
 
