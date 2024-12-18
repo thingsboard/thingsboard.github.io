@@ -42,7 +42,7 @@ which outlines the number of pods per instance and the number of instances deplo
 | 400k                 | 5             | 1                       |
 | 600k                 | 10            | 1                       |
 | 800k                 | 5             | 2                       |
-| 1M                   | 5             | 4	                      |
+| 1M                   | 5             | 4                       |
 
 The orchestrator pod was deployed on a separate EC2 instance, which also hosted additional components, including [Kafka Redpanda console](https://www.redpanda.com/redpanda-console-kafka-ui) and [Redis Insight](https://redis.io/docs/latest/operate/redisinsight/) pods, to facilitate monitoring and coordination. 
 This flexible configuration enabled the test agent to adapt to rising traffic demands while addressing infrastructure constraints, such as port limitations.
