@@ -8,6 +8,29 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v2.0.1 (December ?, 2024)
+
+Patch release with the following improvements and bug fixes.
+
+**Improvements:**
+
+* Core:
+
+  * [#178](https://github.com/thingsboard/tbmq/pull/178) MQTT processing improvement to eliminate unnecessary object creation;
+  * [#183](https://github.com/thingsboard/tbmq/pull/183) Improved Redis integration by enhancing Lettuce connection handling and cluster topology refresh logic;
+  * [#185](https://github.com/thingsboard/tbmq/pull/185) Allow `;` as a character in Kafka configurations;
+  * [#188](https://github.com/thingsboard/tbmq/pull/188) Vulnerabilities fixes;
+  * [#189](https://github.com/thingsboard/tbmq/pull/189) Added sort order support for aggregation queries of historical statistics;
+  * [#190](https://github.com/thingsboard/tbmq/pull/190) Removed search_text column from PostgreSQL.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#176](https://github.com/thingsboard/tbmq/pull/176) Added missing parameter for WebSocket client admin settings;
+  * [#182](https://github.com/thingsboard/tbmq/pull/182) Last will delivery error on broker shutdown;
+  * [#184](https://github.com/thingsboard/tbmq/pull/184) Added Redis cluster topology refresh options for Jedis implementation.
+
 ## v2.0.0 (October 29, 2024)
 
 Major release with the following features, improvements, and bug fixes.
