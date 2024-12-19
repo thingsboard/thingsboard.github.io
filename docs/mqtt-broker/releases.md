@@ -18,7 +18,7 @@ Patch release with the following improvements and bug fixes.
 
   * [#178](https://github.com/thingsboard/tbmq/pull/178) MQTT processing improvement to eliminate unnecessary object creation;
   * [#183](https://github.com/thingsboard/tbmq/pull/183) Improved Redis integration by enhancing Lettuce connection handling and cluster topology refresh logic;
-  * [#185](https://github.com/thingsboard/tbmq/pull/185) Allow `;` as a character in Kafka configurations;
+  * [#185](https://github.com/thingsboard/tbmq/pull/185) Allow semicolon (`;`) as a character in Kafka configurations;
   * [#188](https://github.com/thingsboard/tbmq/pull/188) Vulnerabilities fixes;
   * [#189](https://github.com/thingsboard/tbmq/pull/189) Added sort order support for aggregation queries of historical statistics;
   * [#190](https://github.com/thingsboard/tbmq/pull/190) Removed search_text column from PostgreSQL.
