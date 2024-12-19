@@ -17,24 +17,24 @@ startEdge:
 copyYml:
     0:
         image: /images/devices-library/edge/recomputer-r1000/1.2-instrucrions-button.webp
-        title: 'Go to the <b>Edge Management > Instances</b> section, and click on the <b>Edge instance</b> itself. On the <b>Edge details"</b> page, click the <b>"Install & Connect Instructions"</b> button.'
+        title: 'Go to the <b>Edge Management > Instances</b> section, and click on the <b>Edge instance</b>. On the <b>Edge details"</b> page, click the <b>"Install & Connect Instructions"</b> button.'
     1:
         image: /images/devices-library/edge/recomputer-r1000/1.3-docker.webp
         title: 'In the <b>"Install & Connect Instructions"</b> pop-up window, select the <b>"Docker"</b> tab and copy the configuration lines.'
     2:
         image: /images/edge/config/paste-yml-terminal.webp
-        title: 'Paste the copied lines into the <b>docker-compose.yml</b> file in the terminal and save it. To close the file press <b>CTRL+X</b>.'
+        title: 'Paste the copied lines into the <b>docker-compose.yml</b> file in the terminal and save it. To close the file, press <b>CTRL+X</b>.'
 
 provisionGW:
     0:
         image: /images/devices-library/edge/recomputer-r1000/1-instances-section.webp
-        title: 'Log in to your Cloud and navigate to the <b>Edge Management > Instances</b> section, then click the <b>“Manage dashboards”</b> button.'
+        title: 'Log into your Cloud, navigate to the <b>Edge Management > Instances</b> section, and click the <b>“Manage dashboards”</b> button.'
     1:
         image: /images/devices-library/edge/recomputer-r1000/2-assign-dashboard.webp
         title: 'Click the <b>“+”</b> button. Select the <b>“ThingsBoard IoT Gateways”</b> dashboard from the drop-down menu in the pop-up window. Click the <b>“Assign”</b> button to assign it to the <b>Edge instance</b>. The <b>“ThingsBoard IoT Gateways”</b> dashboard is one of the pre-created, out-of-the-box dashboards available.'
     2:
         image: /images/devices-library/edge/recomputer-r1000/3-login-to-edge.webp
-        title: 'Use <a href="http://127.0.0.1:8080" target="_blank">http://127.0.0.1:8080</a> to open the <b>Edge instance</b>, log in with your credentials and go to the <b>Dashboards</b> section to open the <b>“ThingsBoard IoT Gateways”</b> dashboard.'
+        title: 'Use <a href="http://127.0.0.1:8080" target="_blank">http://127.0.0.1:8080</a> to open the <b>Edge instance</b>, log in with your credentials, and go to the <b>Dashboards</b> section to open the <b>“ThingsBoard IoT Gateways”</b> dashboard.'
     3:
         image: /images/devices-library/edge/recomputer-r1000/4-add-gw.webp
         title: 'Click the <b>“+”</b> button to add a new <b>IoT Gateway</b> device. Enter the gateway name in the <b>“Name”</b> field, and select the <b>“default”</b> device profile. Click the <b>“Create”</b> button.'
