@@ -26,14 +26,22 @@ The following diagram shows the pivotal parts of the broker and the route of mes
 
 ### Motivation
 
-At ThingsBoard, we've gained a lot of experience in building scalable IoT applications, which has helped us identify two main scenarios for MQTT-based solutions. 
-In the first scenario, numerous devices generate a large volume of messages that are consumed by specific applications, resulting in a fan-in pattern. 
-Normally, a few applications are set up to handle these lots of incoming data. 
-They must be persistent clients with a Quality of Service (QoS) level set to 1 or 2, capable of retaining all the data even when they're temporarily offline due to restarts or upgrades. 
-This ensures applications don't miss any single message. On the other hand, the second scenario involves numerous devices subscribing to specific updates or notifications that must be delivered. 
+At ThingsBoard, we've gained a lot of experience in building scalable IoT applications, which has helped us identify three main scenarios for MQTT-based solutions.
+
+* In the first scenario, numerous devices generate a large volume of messages that are consumed by specific applications, resulting in a **fan-in** pattern. 
+Normally, a few applications are set up to handle these lots of incoming data. It must be ensured that they do not miss any single message. 
+
+* The second scenario involves numerous devices subscribing to specific updates or notifications that must be delivered. 
 This leads to a few incoming requests that cause a high volume of outgoing data. 
-This case is known as a fan-out (broadcast) pattern. 
-Acknowledging these scenarios, we intentionally designed TBMQ to be exceptionally well-suited for both.
+This case is known as a **fan-out (broadcast)** pattern. 
+
+* The third scenario, **point-to-point (P2P)** communication, is a targeted messaging pattern, primarily used for one-to-one communication.
+Ideal for use cases such as private messaging or command-based interactions where messages are routed between a single publisher and a specific subscriber through uniquely defined topics.
+
+> In all scenarios, persistent clients with a Quality of Service (QoS) level set to 1 or 2 are often utilized to ensure
+> reliable message delivery, even when they're temporarily offline due to restarts or upgrades.
+
+Acknowledging these scenarios, we intentionally designed TBMQ to be exceptionally well-suited for all three.
 
 Our design principles focused on ensuring the broker’s fault tolerance and high availability. 
 Thus, we deliberately avoided reliance on master or coordinated processes. 
