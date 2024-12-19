@@ -55,18 +55,18 @@ adding-new-rule-chain-5:
 adding-new-rule-chain-6:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-9-pe.png
-        title: 'Find the "rule chain" node and drag it to our rule chain;'
+        title: 'Find the "save timeseries" node and drag it to the rule chain;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-10-pe.png
-        title: 'Name it "to Root Rule Chain", specify the destination for message routing as "Root Rule Chain", and click "Add";'
+        title: 'Name it "save time series", and click "Add";'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-11-pe.png
-        title: 'We have added all the necessary nodes. Now, we need to connect the generator nodes to the "rule chain" node for message routing.'
+        title: 'We have added all the necessary nodes.'
 
 adding-new-rule-chain-7:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-12-pe.png
-        title: 'Tap on the right grey circle of "generator" node and drag this circle to the left side of "rule chain" node. Select the "Success" link and click "Add";'
+        title: 'Tap on the right grey circle of "generator" node and drag this circle to the left side of "save timeseries" node. Select the "Success" link and click "Add";'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-new-rule-chain-13-pe.png
         title: 'Repeat this for each generator node. Afterwards, save rule chain.'
@@ -85,36 +85,93 @@ customize-office-sensors-list-widget-1:
         title: 'Click on the "pencil" icon of the "Office sensors list" widget to enter its editing mode;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-3-pe.png
-        title: 'Add the columns for the following data keys: "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption";'
+        title: 'Add the columns for the following data keys: "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption". Then, apply the changes to the widget;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-4-pe.png
-        title: 'Add another column: name it "telemetryValue", and click the "Time series" icon to add a new key;'
-    4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-5-pe.png
-        title: 'Rename the labels for the keys "label" and "telemetryValue" to "Device name" and "Telemetry value," respectively. Next, click the "gear" icon next to the "telemetryValue" row to open its settings;'
-    5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-6-pe.png
-        title: 'Turn on the "Use cell content function" option. Insert the function from the documentation into the corresponding field. This function will combine several telemetry columns into one for a single device. Then click "Save";'
-    6:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-7-pe.png
-        title: 'Now we need to hide the unnecessary columns such as "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption". Click the "gear" icon next to the "temperature" to open its settings;'
-    7:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-8-pe.png
-        title: 'Select "Hidden" in the "Default column visibility" menu. Click "Save" to apply the changes for this column;'
-    8:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-9-pe.png
-        title: 'Repeat the steps described above for the columns "humidity", "co2", "powerConsumption", and "waterConsumption". Ensure that only the columns "Device name" and "Telemetry value" remain visible. Save changes;'
-    9:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-10-pe.png
-        title: 'Apply all changes by clicking the "Save" button in the upper-right corner of the dashboard.'
+        title: 'Now the table displays the devices&#39; telemetry.'
 
 customize-office-sensors-list-widget-2:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-11-pe.png
-        title: 'For Office A, the widget displays a list of devices with their respective telemetry values;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-5-pe.png
+        title: 'Re-enter the edit mode of the "Office sensors list" widget by clicking the pencil icon;'
     1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-6-pe.png
+        title: 'Add another column: name it "telemetryValue", and click the "Time series" icon to add a new key;'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-7-pe.png
+        title: 'Rename the labels for the keys "Name" and "telemetryValue" to "Device name" and "Telemetry value," respectively. Next, click the "gear" icon next to the "telemetryValue" row to open its settings;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-8-pe.png
+        title: 'Turn on the "Use cell content function" option. Insert the function from the documentation into the corresponding field. This function will combine several telemetry columns into one for a single device. Then click "Save";'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-9-pe.png
+        title: 'Now we need to hide the unnecessary columns such as "temperature", "humidity", "co2", "powerConsumption", and "waterConsumption". Click the "gear" icon next to the "temperature" to open its settings;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-10-pe.png
+        title: 'Select "Hidden" in the "Default column visibility" menu. Click "Save" to apply the changes for this column;'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-11-pe.png
+        title: 'Repeat the steps described above for the columns "humidity", "co2", "powerConsumption", and "waterConsumption". Ensure that only the columns "Device name" and "Telemetry value" remain visible;'
+
+customize-office-sensors-list-widget-3:
+    0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-12-pe.png
-        title: 'For Office B, the widget similarly shows a list of devices along with their telemetry values.'
+        title: 'Click the "pencil" icon of the "powerConsumption" key;'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-13-pe.png
+        title: 'Select the "Sum" as the aggregation function, and click "Save";'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-14-pe.png
+        title: 'Also, set "Sum" as the aggregation function for the telemetry key "waterConsumption". Remove the automatically added prefixes from the keys label "powerConsumption" and "waterConsumption" after selecting aggregation;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-15-pe.png
+        title: 'Scroll up to locate the time window settings. Use the dashboard&#39;s time window and apply the changes to the widget;'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-16-pe.png
+        title: 'Save changes to the dashboard.'
+    5:
+      image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-17-pe.png
+      title: 'Now, in the "Office sensors list" widget, the telemetry for the Indoor Air Quality Sensor is displayed in a single column.'
+
+time-window-configuration-1:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-1-pe.png
+        title: 'Enter dashboard editing mode;'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-2-pe.png
+        title: 'Click the "Edit time window" icon on the toolbar and then click the "gear" icon to open the time window settings;'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-3-pe.png
+        title: 'A new settings window will open. Start with the "Realtime" tab. Hide interval selection parameter on the "Last" tab;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-4-pe.png
+        title: 'On the "Relative" tab, click the "pencil" icon in the interval settings row;'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-5-pe.png
+        title: 'Adjust the grouping interval list: select "Current day," "Current week" (Sun-Sat), "Current week" (Mon-Sun), and "Current month." Set the grouping interval to "1 hour". Click "Apply";'
+
+time-window-configuration-2:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-6-pe.png
+        title: 'Hide the "Last: interval from users.'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-7-pe.png
+        title: 'Also, hide the fixed interval from users;'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-8-pe.png
+        title: 'For the "Relative" tab, leave the default settings. Set "Sum" as the aggregation method and hide the change of this parameter from users;'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-9-pe.png
+        title: 'Set the grouping interval to "1 hour" and hide the change of this parameter. Click "Apply";'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-10-pe.png
+        title: 'Click "Update" to apply the new time window settings to the dashboard;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-11-pe.png
+        title: 'Save the dashboard;'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-12-pe.png
+        title: 'As you can see, telemetry for the Energy Meter and Water Flow Meter devices is now displayed in the "Office Sensors List" widget. These are the total energy and water consumption of the office for the selected period, which in our case is the current day.'
 
 adding-devices-states-1:
     0:
@@ -125,7 +182,7 @@ adding-devices-states-1:
         title: 'Click on the "Manage dashboard states" menu option, then click the "plus" icon to add new dashboard state;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-devices-states-3-pe.png
-        title: 'Name it "Indoor Air Quality Sensor", and enter state ID - "smart_sensor". Click "Add".'
+        title: 'Name it "Indoor Air Quality Sensor", and enter state ID - "air_sensor". Click "Add".'
 
 adding-devices-states-2:
     0:
@@ -277,36 +334,31 @@ temperature-and-humidity-history-1:
         title: 'Choose the "Line chart" widget;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-4-pe.png
-        title: 'In this widget, we&#39;ll use the dashboard&#39;s time window. Specify "Selected entity" alias as the data source. Add data keys "temperature" and "humidity" and specify their labels and units. Then, click the "gear" icon for "temperature" key to open its configuration window;'
+        title: 'Use the widget&#39;s time window. Select "Relative" and set "Current day" as the time interval. Set the value "Average" as the aggregation method and the grouping interval to "1 hour". Then, click "Update;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-5-pe.png
-        title: 'Turn on "Show points" and "Point label" options. Click "Save". Repeat this for the "humidity" data key;'
+        title: 'In this widget, we&#39;ll use the dashboard&#39;s time window. Specify "Selected entity" alias as the data source. Add data keys "temperature" and "humidity" and specify their labels and units. Then, click the "gear" icon for "temperature" key to open its configuration window;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-6-pe.png
-        title: 'By default, the chart includes a single scale on the Y-axis. Label it "Temperature" and set the units to °C. Add another scale for "Humidity", place it on the right, and set the units to %. Now, apply the "axis1" scale to the "humidity" key;'
+        title: 'Turn on "Show points" and "Point label" options. Click "Save". Repeat this for the "humidity" data key;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-7-pe.png
-        title: 'Change the chart title to "Temperature and Humidity history";'
+        title: 'By default, the chart includes a single scale on the Y-axis. Label it "Temperature" and set the units to °C. Add another scale for "Humidity", place it on the right, and set the units to %. Now, apply the "axis1" scale to the "humidity" key;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-8-pe.png
-        title: 'Set the "Bottom" legend position and uncheck "Average" of the "Show values" section;'
+        title: 'Change the chart title to "Temperature and Humidity history";'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-9-pe.png
-        title: 'Clear the "Card border radius" value to streamline the widget&#39;s appearance. Click "Add";'
+        title: 'Set the "Bottom" legend position and uncheck "Average" of the "Show values" section;'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-10-pe.png
-        title: 'Move the widget to the top-right corner of your dashboard and adjust its size;'
+        title: 'Clear the "Card border radius" value to streamline the widget&#39;s appearance. Click "Add";'
     10:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-11-pe.png
-        title: 'The "Temperature and Humidity history" widget has been added. Save your dashboard to implement the changes.'
-
-temperature-and-humidity-history-2:
-    0:
+        title: 'Move the widget to the top-right corner of your dashboard and adjust its size;'
+    11:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-12-pe.png
-        title: 'Now you need to change the dashboard&#39;s time interval and aggregation function. To do this, open the dashboard&#39;s time window, select the last 12 hours of data, set the aggregation to "Average", and the grouping interval to "1 hour";'
-    1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-13-pe.png
-        title: 'Now you can monitor the average temperature and humidity readings for each hour over the past 12 hours.'
+        title: 'The "Temperature and Humidity history" widget has been added. Save your dashboard to implement the changes.'
 
 air-quality-widget-1:
     0:
@@ -317,29 +369,32 @@ air-quality-widget-1:
         title: 'Navigate to the "Charts" widgets bundle and select the "Line chart" widget;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-3-pe.png
-        title: 'This widget will also use the dashboard&#39;s time window. Specify "Selected entity" alias as the data source. Add "co2" as the data key, and specify its label and units. Then, click the gear icon to configure the "co2" data key settings;'
+        title: 'Use the widget&#39;s time window. Select "Relative" and set "Current day" as the time interval. Set the value "Average" as the aggregation method and the grouping interval to "1 hour". Then, click "Update;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-4-pe.png
-        title: 'Turn on the "Smooth line" option to make the chart line appear smoother. Click "Save";'
+        title: 'Now, specify "Selected entity" alias as the data source. Add "co2" as the data key, and set its label and units. Then, click the gear icon to configure the "co2" data key settings;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-5-pe.png
-        title: 'Enter a name for the Y-axis, such as "CO2 level", and specify "ppm" as the units;'
+        title: 'Turn on the "Smooth line" option to make the chart line appear smoother. Click "Save";'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-6-pe.png
-        title: 'Change the chart title to "Air Quality";'
+        title: 'Enter a name for the Y-axis, such as "CO2 level", and specify "ppm" as the units;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-7-pe.png
-        title: 'Set the "Bottom" legend position and check "Min", "Max" and "Average" options in the "Show values" section to display these statistics on the chart;'
+        title: 'Change the chart title to "Air Quality";'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-8-pe.png
-        title: 'Clear the "Card border radius" value. Click "Add";'
+        title: 'Set the "Bottom" legend position and check "Min", "Max" and "Average" options in the "Show values" section to display these statistics on the chart;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-9-pe.png
+        title: 'Clear the "Card border radius" value. Click "Add";'
+    9:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-10-pe.png
         title: 'Place this widget below the "Temperature and Humidity history" widget in the right-bottom corner of the dashboard and adjust its size. Save the dashboard to apply the changes.'
 
-smart-sensor-state:
+air-sensor-state:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/smart-sensor-state-1-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-sensor-state-1-pe.png
         title: 'The configured "Indoor Air Quality Sensor" state should look like this.'
 
 power-consumption-per-hour-1:
