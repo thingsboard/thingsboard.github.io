@@ -53,7 +53,7 @@ Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>
 
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/ubuntu-queue-kafka.md{% endcapture %}
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/rhel-queue-kafka.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
