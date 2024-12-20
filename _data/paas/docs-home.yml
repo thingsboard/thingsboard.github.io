@@ -55,8 +55,6 @@ toc:
       path: /docs/paas/user-guide/ota-updates/
     - title: Notification center
       path: /docs/paas/user-guide/notifications/
-    - title: Domains
-      path: /docs/paas/domains/
 - title: Dashboards
   section:
     - title: Overview
@@ -168,6 +166,8 @@ toc:
     - title: Custom menu
       path: /docs/paas/user-guide/custom-menu/
       new: true
+    - title: Domains
+      path: /docs/paas/domains/
 - title: Integrations
   section:
     - title: Overview

@@ -168,6 +168,8 @@ toc:
     - title: Custom menu
       path: /docs/pe/user-guide/custom-menu/
       new: true
+    - title: Domains
+      path: /docs/pe/domains/
 - title: Integrations
   section:
   - title: Overview
