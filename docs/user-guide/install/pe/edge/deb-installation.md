@@ -26,11 +26,30 @@ This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubunt
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. Configure PostgreSQL
+### Step 2. Configure ThingsBoard Edge database
 
-{% include templates/edge/install/ubuntu-db-postgresql.md %}
+{% include templates/install/install-db.md %}
 
-### Step 3. ThingsBoard Edge service installation
+{% capture contenttogglespec %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/edge/install/ubuntu-db-postgresql.md%br%
+Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %}
+
+### Step 3. Choose queue service
+**ThingsBoard Edge** is able to use different messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
+
+* **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
+
+* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now. It is useful for both on-prem and private cloud deployments. It is also useful if you like to stay independent from your cloud provider. However, some providers also have managed services for Kafka. See [AWS MSK](https://aws.amazon.com/msk/){: target="_blank"} for example.
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/ubuntu-queue-kafka.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
+
+### Step 4. ThingsBoard Edge service installation
 
 Download installation package.
 
@@ -46,22 +65,22 @@ sudo dpkg -i tb-edge-{{ site.release.pe_edge_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 4. Configure ThingsBoard Edge
+### Step 5. Configure ThingsBoard Edge
 
 {% include templates/edge/install/linux-configure-edge.md %}
 
-### Step 5. Run installation script
+### Step 6. Run installation script
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### Step 6. Restart ThingsBoard Edge service
+### Step 7. Restart ThingsBoard Edge service
 
 ```bash
 sudo service tb-edge restart
 ```
 {: .copy-code}
 
-### Step 7. Open ThingsBoard Edge UI
+### Step 8. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
