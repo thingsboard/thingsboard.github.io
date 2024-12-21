@@ -31,7 +31,7 @@ domain-details:
         title: 'To view details about a registered domain, simply click on it to open the domain details dialog;'
     1:
         image: /images/user-guide/domain/domain-details-2-paas.png
-        title: 'This dialog provides information about registered domain CNAME record and issued “SSL certificate” details including current validity period (Not before and Not after).'
+        title: 'This dialog provides information about registered domain CNAME record and issued "SSL certificate" details including current validity period (Not before and Not after).'
     
 delete-domain:
     0:

@@ -24,10 +24,10 @@ login-with-domain:
 domain-details:
     0:
         image: /images/user-guide/domain/domain-details-1-pe.png
-        title: 'To view a registered domain details click "Domain details" button on the "Domain" tab;'
+        title: 'To view details about a registered domain, simply click on it to open the domain details dialog. Switch to editing mode by clicking the large orange button;'
     1:
         image: /images/user-guide/domain/domain-details-2-pe.png
-        title: 'Make the required modifications. Confirm and save your changes by clicking the “Apply changes” button.'
+        title: 'Make the required modifications. Confirm and save your changes by clicking the "Apply changes" button.'
 
 delete-domain:
     0:
