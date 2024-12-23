@@ -99,7 +99,7 @@ It is important to note that non-persistent clients can only be of type **DEVICE
 
 In cluster mode, multiple TBMQ nodes can operate together, each running Kafka consumers in the same consumer group for the **tbmq.msg.all** topic. 
 This approach ensures efficient load balancing and message distribution across nodes. 
-This setup can result in scenarios where a published message is processed by one TBMQ node while the intended subscriber is connected to another.
+However, it can result in scenarios where a published message is processed by one TBMQ node while the intended subscriber is connected to another.
 To handle this, **downlink.basic** Kafka topic is used for communication between TBMQ nodes. 
 This ensures that the node processing the message forwards it to the target node, which then delivers it to the subscriber via the established connection.
 
@@ -160,13 +160,13 @@ Additionally, the nature of the Kafka consumer group makes the [MQTT 5 shared su
 APPLICATION clients can handle a large volume of received messages, reaching millions per second.
 It is important to note that APPLICATION clients can only be classified as [persistent](#persistent-client).
 
-For both types of clients, we provide configurable instruments to control the persistence of messages per client and the duration for which they are stored.
-You can refer to the following environment variables to adjust these settings:
-* TB_KAFKA_APP_PERSISTED_MSG_TOPIC_PROPERTIES;
-* MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT;
-* MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL.
-
-For more detailed information, please refer to the configurations provided in the following [documentation](/docs/mqtt-broker/install/config/).
+> For both types of clients, we provide configurable instruments to control the persistence of messages per client and the duration for which they are stored.
+> You can refer to the following environment variables to adjust these settings:
+>* TB_KAFKA_APP_PERSISTED_MSG_TOPIC_PROPERTIES;
+>* MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT;
+>* MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL.
+> 
+> For more detailed information, please refer to the configurations provided in the following [documentation](/docs/mqtt-broker/install/config/).
 
 **Persistent APPLICATION processing in cluster mode**
 
