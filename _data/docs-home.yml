@@ -272,6 +272,8 @@ toc:
       path: /docs/user-guide/two-factor-authentication/
     - title: OAuth 2.0
       path: /docs/user-guide/oauth-2-support/
+    - title: Domains
+      path: /docs/domains/
     - title: HTTP Transport
       section:
         - title: HTTP over SSL

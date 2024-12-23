@@ -167,8 +167,6 @@ toc:
     - title: Custom menu
       path: /docs/paas/eu/user-guide/custom-menu/
       new: true
-    - title: Domains
-      path: /docs/paas/eu/domains/
 - title: Integrations
   section:
     - title: Overview
@@ -274,6 +272,8 @@ toc:
       path: /docs/paas/eu/user-guide/rbac/
     - title: OAuth 2.0
       path: /docs/paas/eu/user-guide/oauth-2-support/
+    - title: Domains
+      path: /docs/paas/eu/domains/
     - title: HTTP Transport
       section:
         - title: Access Token based authentication

@@ -1,3 +1,8 @@
+{% if docsPrefix == null %}
+{% assign THINGSBOARD_WITH_URL = "[ThingsBoard CE](/docs/user-guide/install/installation-options/)" %}
+{% assign THINGSBOARD_HOST = "IP address" %}
+{% assign THINGSBOARD_URL = "ThingsBoard" %}
+{% endif %}
 {% if docsPrefix == "pe/" %}
 {% assign THINGSBOARD_WITH_URL = "[ThingsBoard PE](/docs/user-guide/install/pe/installation-options/)" %}
 {% assign THINGSBOARD_HOST = "IP address" %}
@@ -18,7 +23,7 @@
 {:toc}
 
 {{THINGSBOARD_WITH_URL}}{:target="_blank"} allows registering your custom domain to have the required host name for user’s access, links, etc.
-{% unless docsPrefix == 'pe/' %}When you register valid domain, the EU ThingsBoard Cloud automatically requests the SSL certificate from [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for the latter and manages further certificate renewals.
+{% unless docsPrefix == 'pe/' and docsPrefix == null %}When you register valid domain, the {{THINGSBOARD_URL}} automatically requests the SSL certificate from [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for the latter and manages further certificate renewals.
 After domain registration, your tenant and application(s) will be accessible via your domain name using a secure (HTTPS) connection.
 Like Web UI all other ThingsBoard Cloud services such as MQTT/HTTP/CoAP transports or HTTP integrations will be accessible via your custom domain name.{% endunless %}
 
@@ -142,5 +147,9 @@ mycompany.thingsboard.space. 3600 IN	CNAME	eu.thingsboard.cloud
 If all the things are correct, but some issue still persists - please [contact us](https://thingsboard.io/docs/contact-us/){:target="_blank"} for further support.
 
 ## Next step
+
+{% if docsPrefix == null %}
+{% assign feature = "White labeling" %}{% include templates/pe-feature-banner.md %}
+{% endif %}
 
 Learn how to customize ThingsBoard login page and user interface, configure your company or product logo, and adjust the color scheme, navigate to the [White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} section.
