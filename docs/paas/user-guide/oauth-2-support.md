@@ -68,7 +68,7 @@ google-credentials-for-oauth-1:
 google-configuration-of-thingsboard-google-1:
     0:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-1-paas.png
-        title: 'Login to your EU ThingsBoard Cloud account. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
+        title: 'Login to your ThingsBoard Cloud account. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
     1:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-2-paas.png
         title: 'Enter your domain name or IP address of your ThingsBoard instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
