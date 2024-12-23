@@ -44,7 +44,7 @@ editing-oauth2-client-1:
         title: 'Click on the OAuth 2.0 client to view its details. Switch to editing mode by clicking the large orange button;'
     1:
         image: /images/user-guide/oauth-2-support/managing-oauth2-client-2-pe.png
-        title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply Changes" button.'
+        title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply changes" button.'
 
 deleting-oauth2-client-1:
     0:
@@ -133,10 +133,10 @@ auth0-credentials-1:
 oauth0-configuration-of-thingsboard-1:
     0:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-1-pe.png
-        title: 'Login to your ThingsBoard instance as System Administrator. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
+        title: 'Login to your ThingsBoard instance. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
     1:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-2-pe.png
-        title: 'Enter your domain name or IP address of your ThingsBoard instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
+        title: 'Enter your domain name of your ThingsBoard instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
 
 oauth0-configuration-of-thingsboard-2:
     0:

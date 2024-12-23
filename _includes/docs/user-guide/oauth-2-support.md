@@ -81,7 +81,7 @@ To update the settings for an existing OAuth 2.0 client, follow these steps:
 
 Remove clients that are no longer needed or are obsolete:
 
-- Click the "trash can" icon in the client's row you wish to remove;
+- Click the "trash" icon in the client's row you wish to remove;
 - Confirm the deletion by clicking "Yes".
 
 {% include images-gallery.html imageCollection="deleting-oauth2-client-1" %}
@@ -128,7 +128,7 @@ OAuth client created. You now have credentials consisting of a *Client ID* and a
 
 To configure OAuth 2.0 authentication in ThingsBoard via Google, follow the steps below:
 
-- Login to your ThingsBoard instance as System Administrator;
+- Login to your ThingsBoard instance;
 - Go to the "OAuth 2.0" page of the "Security" section;
 - While on the "Domains" tab, click the "plus" icon;
 - Enter your domain name or IP address of your ThingsBoard instance;
@@ -230,7 +230,7 @@ Please note that it is not necessary to update the Application login URI.
 
 To configure OAuth 2.0 authentication in ThingsBoard via Auth0, follow the steps below:
 
-- Login to your ThingsBoard instance as System Administrator;
+- Login to your ThingsBoard instance;
 - Go to the "OAuth 2.0" page of the "Security" section;
 - While on the "Domains" tab, click the "plus" icon;
 - Enter your domain name or IP address of your ThingsBoard instance;
@@ -398,7 +398,7 @@ The password has been successfully.
 
 To configure OAuth 2.0 authentication in ThingsBoard via Keycloak, follow the steps below:
 
-- Login to your ThingsBoard instance as System Administrator;
+- Login to your ThingsBoard instance;
 - Go to the "OAuth 2.0" page of the "Security" section;
 - Navigate to the "OAuth 2.0 clients" tab, and click "plus";
 - Enter "Keycloak" as the title. 
