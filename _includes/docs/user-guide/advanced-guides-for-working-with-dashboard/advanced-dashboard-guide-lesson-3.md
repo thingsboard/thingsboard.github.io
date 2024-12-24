@@ -420,15 +420,14 @@ Now, you can see the current values of temperature, humidity, and CO2 levels.
 
 ### Temperature and humidity history chart
 
-We will now add a widget that displays a chart of temperature and humidity readings in the office for the last 12 hours. This way, we can track their changes.
-
-The "Temperature and humidity history" widget is added.
+Now we will add a chart widget to display historical temperature and humidity data for the office. This widget will utilize the dashboard time window, allowing us to view hourly data for a selected period (such as the current day, week, or month). 
+This way, we can track their changes over time.
 
 {% include images-gallery.html imageCollection="temperature-and-humidity-history-1" showListImageTitles="true" %}
 
 ### CO2 level chart
 
-Now, add another line chart widget to display CO2 data for the office over the last 12 hours.
+Add another line chart widget to display air quality data. This widget will also use the dashboard time window, showing hourly data for the selected time period.
 
 {% include images-gallery.html imageCollection="air-quality-widget-1" showListImageTitles="true" %}
 
@@ -439,32 +438,32 @@ The configured "Indoor Air Quality Sensor" state should look like this:
 
 ## Configuring state for Energy Meter
 
-Let's proceed to configure the state for the "Energy Meter" device. We will add two widgets: one to display power consumption per hour, and another to display power consumption data over the last 12 hours.
+Let&#39;s move on to configuring the state for the "Energy Meter" device. We will add two widgets: one to display the total energy consumption for the current day and another to display historical data on hourly energy consumption for the current day.
 
-### Power consumption per hour
+### Current power consumption
 
-To display power consumption per hour, we will use the "Power consumption card" widget from the "Industrial widgets" widget bundle:
+To display power consumption, use the "Power consumption card" widget from the "Industrial widgets" bundle:
 
-{% include images-gallery.html imageCollection="power-consumption-per-hour-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="power-consumption-card-1" showListImageTitles="true" %}
 
 ### Power consumption chart
 
-The next widget we will add is a "Range chart". A feature of this widget is that the line color on the chart is colored according to the range in which the value falls.
-This widget will visualize data on power consumption over the last 12 hours.
+To display historical data on hourly energy consumption, we will add the "Range chart" widget. 
+The unique feature of this widget is that changes in data values on the graph are visualized using configurable color ranges.
 
 {% include images-gallery.html imageCollection="power-consumption-range-chart-1" showListImageTitles="true" %}
 
-Now you can monitor hourly power consumption and power consumption data for the last 12 hours.
+Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption for the current day.
 
 {% include images-gallery.html imageCollection="energy-meter-state-final" %}
 
 ## Configuring state for Water Flow Meter
 
-Finally, we will configure the state for the "Water Flow Meter" device. We will add a card widget to display the average water consumption per hour, a chart widget to display water consumption data over the last 12 hour, and the device's battery level widget.
+Finally, we will configure the state for the "Water Flow Meter" device. This will include a card widget to display the total water consumption for the current day, a chart widget to show historical data on hourly water consumption, and a battery level widget for the device.
 
-### Water consumption per hour
+###  Current water consumption
 
-To visualize hourly water consumption, you can use any card widget and customize it. In this example, we will use the "Power consumption card" widget from the "Industrial widgets" widgets bundle and configure it according to our needs.
+If you need to display specific data but cannot find a suitable widget in the available bundles, you can customize any widget to fit your needs. Let’s take the "Flow rate card" widget from the "Industrial widgets" bundle as an example and configure it to display water consumption.
 
 {% include images-gallery.html imageCollection="water-consumption-per-hour-1" showListImageTitles="true" %}
 

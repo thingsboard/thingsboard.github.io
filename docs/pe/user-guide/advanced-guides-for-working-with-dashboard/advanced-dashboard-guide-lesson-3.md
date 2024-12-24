@@ -397,40 +397,52 @@ air-sensor-state:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-sensor-state-1-pe.png
         title: 'The configured "Indoor Air Quality Sensor" state should look like this.'
 
-power-consumption-per-hour-1:
+power-consumption-card-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/go-to-energy-meter-state-1-pe.png
-        title: 'Click on the "Energy Meter" device row in the "Office sensors list" widget to transition to its state;'
+        title: 'Click the "Energy Meter" device row in the "Office sensors list" widget to navigate to its state;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-1-pe.png
         title: 'Enter dashboard editing mode and click the "+ Add widget" button;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-2-pe.png
-        title: 'Find the "Industrial widgets" widgets bundle and click on it;'
+        title: 'In the widget library, locate and click on the "Industrial widgets" bundle;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-3-pe.png
         title: 'Select the "Power consumption card" widget;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-4-pe.png
-        title: 'Specify "EM-002" (Energy Meter) as the data source. The "powerConsumption" key has already been added. Now, open its data configuration by clicking the "pencil" icon;'
+        title: 'Set the "Selected entity" alias as the data source, and "powerConsumption" as the data key. Then, open the key data configuration by clicking the "pencil" icon;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-5-pe.png
-        title: 'The "Energy Meter" device sends data every 10 minutes. We need to use data aggregation to calculate the average value among the data points in the selected time interval. In our case, this will be 1 hour, representing hourly electricity usage. Select the "Average" as the aggregation function;'
+        title: 'Choose "Sum" as the aggregation function to sum all data point values within the selected time period;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-6-pe.png
-        title: 'Use the widget&#39;s time window. Turn off the "Display time window" option. Then, select the "Current hour" option as the time interval. Click "Update";'
+        title: 'Use the dashboard time window;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-7-pe.png
-        title: 'Change the label to "Power consumption per hour", set it to display two decimal places, and open the font settings menu;'
+        title: 'Scroll down and open the icon color range settings;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-8-pe.png
-        title: 'Set the font size to 35 pixels, and click "Apply";'
+        title: 'Set the value ranges and corresponding colors as shown in the screenshot, then click "Apply";'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-9-pe.png
-        title: 'Clear the "Card border radius" value. Click "Add";'
+        title: 'Open the font settings menu;'
     10:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-10-pe.png
-        title: 'The widget that displays the average power consumption per hour has been added. Resize it to your liking. Afterwards, save the dashboard to apply the changes.'
+        title: 'Set the font size to 35 pixels, then click "Apply";'
+    11:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-11-pe.png
+        title: 'Open the value color range settings;'
+    12:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-12-pe.png
+        title: 'Set the value color range. Click "Apply";'
+    13:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-13-pe.png
+        title: 'Clear the "Card border radius" value and click "Add";'
+    14:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-14-pe.png
+        title: 'The widget has been added to display the total energy consumption for the time period specified in the time window settings. Resize it to your liking. Afterwards, save the dashboard to apply the changes.'
 
 power-consumption-range-chart-1:
     0:
@@ -441,42 +453,33 @@ power-consumption-range-chart-1:
         title: 'Navigate to the "Charts" widgets bundle and select the "Range chart" widget;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-3-pe.png
-        title: 'Use the widget&#39;s time window. Turn off the "Display time window" option. Set the time interval to "12 hours," and "None" for data aggregation. Click "Update";'
+        title: 'Use the dashboard time window. Specify "Selected entity" alias as the data source, and add "powerConsumption" data key. Change the chart title to "Power consumption history";'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-4-pe.png
-        title: 'Specify "EM-002" (Energy Meter) device as the data source, and add "powerConsumption" data key. Change the chart title to "Power consumption history";'
+        title: 'Change the units to kWh, and proceed to the color range settings;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-5-pe.png
-        title: 'Change the units to kWh, and proceed to the color range settings;'
+        title: 'The line color on the chart is colored according to the range in which the value falls. This will help you to quickly orient yourself with the data by visually highlighting changes in color according to variations in values. Add five ranges and their corresponding colors: range 1: from 0 to 1, color, for example, light green; range 2: from 1 to 2, color, for example, green, range 3: from 2 to 3, color, for example, yellow, and so on. Click "Apply";'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-6-pe.png
-        title: 'The line color on the chart is colored according to the range in which the value falls. This will help you to quickly orient yourself with the data by visually highlighting changes in color according to variations in values. Add five ranges and their corresponding colors: range 1: from 0 to 1, color, for example, light green; range 2: from 1 to 2, color, for example, green, range 3: from 2 to 3, color, for example, yellow, and so on. Click "Apply";'
+        title: 'Go to the "Range thresholds settings", and turn off the "Label" option;'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-7-pe.png
-        title: 'Go to the "Range thresholds settings", and turn off the "Label" option;'
+        title: 'Open the "Line color" settings, and set the opacity to 40%. Apply changes;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-8-pe.png
-        title: 'Open the "Line color" settings, and set the opacity to 40%. Apply changes;'
+        title: 'Expand the Y-axis settings. Enter the "Power consumption" as the axis label, and turn off "Show split lines" option;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-9-pe.png
-        title: 'Turn off the "Fill area" option;'
+        title: 'Uncheck the "Data export" box in the "Show card buttons" section, and remove the value for the "Card border radius". Click "Add" to complete adding the range chart widget;'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-10-pe.png
-        title: 'For the Y-axis, set the scale: minimum value 0, maximum value 5;'
-    10:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-11-pe.png
-        title: 'Expand the Y-axis settings. Enter the "Power consumption" as the axis label, and turn off "Show split lines" option;'
-    11:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-12-pe.png
-        title: 'Uncheck the "Data export" box in the "Show card buttons" section, and remove the value for the "Card border radius". Click "Add" to complete adding the range chart widget;'
-    12:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-13-pe.png
         title: 'The "Power consumption history" widget has been added. Place it to the right of the "Power consumption per hour" widget and resize it to your liking. Save the dashboard to apply the changes.'
 
 energy-meter-state-final:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/energy-meter-state-final-1.png
-        title: 'Now you can track the average hourly power consumption and historical data on power consumption usage over the last 12 hours.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/energy-meter-state-final-1-pe.png
+        title: 'Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption for the current day.'
 
 water-consumption-per-hour-1:
     0:
