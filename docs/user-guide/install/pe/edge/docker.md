@@ -12,11 +12,11 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 
 {% assign docsPrefix = "pe/edge/" %}
 
-This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
+This guide will help you to install and start **ThingsBoard Edge** using **Docker** on Linux or Mac OS.
 
 {% include templates/edge/install/prerequisites.md %}
 
-### Docker installation
+### Docker Installation
 
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
@@ -35,7 +35,8 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-### Step 2. Choose queue service
+### Step 2. Choose Queue Service
+
 **ThingsBoard Edge** is able to use different messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
 
 * **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
@@ -44,7 +45,7 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/edge/pe-docker-queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/pe-docker-queue-kafka.md{% endcapture %}
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/edge/install/pe-docker-queue-kafka.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
@@ -52,7 +53,7 @@ Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 4. Detaching, stop and start commands
+### Step 4. Detaching, Stop and Start Commands
 
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}

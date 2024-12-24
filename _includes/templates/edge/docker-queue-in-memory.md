@@ -1,11 +1,11 @@
-Create docker compose file for ThingsBoard Edge service:
+Create docker compose file for the **ThingsBoard Edge** service:
 
 ```text
 nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following lines to the yml file:
+Add the following lines to the **docker-compose.yml** file:
 
 ```yml
 version: '3.8'

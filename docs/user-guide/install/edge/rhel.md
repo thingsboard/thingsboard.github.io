@@ -11,7 +11,7 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 
 {% assign docsPrefix = "edge/" %}
 
-This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
+This guide describes how to install **ThingsBoard Edge** on **RHEL/CentOS 7/8.**
 
 {% include templates/edge/install/prerequisites.md %}
 
@@ -34,13 +34,13 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 2. Configure ThingsBoard database
+### Step 2. Configure ThingsBoard Database
 
-{% include templates/install/install-db.md %}
+**ThingsBoard Edge** supports **SQL** and **hybrid** database approaches. See the architecture [page](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach){: target="_blank"} for details.
 
 {% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/rhel-db-postgresql.md%br%
-Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/rhel-db-hybrid.md{% endcapture %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/edge/install/rhel-db-postgresql.md%br%
+Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/edge/install/rhel-db-hybrid.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %}
 
@@ -53,11 +53,11 @@ Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>
 
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/install/rhel-queue-kafka.md{% endcapture %}
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/edge/install/rhel-queue-kafka.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
-### Step 4. ThingsBoard Edge service installation
+### Step 4. ThingsBoard Edge Service Installation
 
 Download installation package.
 
@@ -78,11 +78,11 @@ sudo rpm -Uvh tb-edge-{{ site.release.edge_ver }}.rpm
 
 {% include templates/edge/install/linux-configure-edge.md %}
 
-### Step 6. Run installation script
+### Step 6. Run installation Script
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### Step 7. Restart ThingsBoard Edge service
+### Step 7. Restart ThingsBoard Edge Service
 
 ```bash
 sudo service tb-edge restart
