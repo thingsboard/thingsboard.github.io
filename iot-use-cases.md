@@ -8,7 +8,7 @@ notitle: "true"
 
 # IoT Use Cases
 
-Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
+Being robust, scalable and user-friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
 Some of the industry use cases where ThingsBoard is being successfully utilized are listed below. Each use case is equipped with PoC dashboard and reference solution architecture.
 
@@ -21,15 +21,15 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
     <div class="list">
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Smart energy</h2>
+                <h2>Smart Energy</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-                <a class="read-more-button" href="/smart-energy/">Smart energy use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about smart energy dashboard"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <a class="read-more-button" href="/smart-energy/">Smart Energy use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about smart energy dashboard"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/smart-energy/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="See more about smart energy dashboard">Smart energy use case
+                            <img src="/images/eye-icon.svg" alt="See more about smart energy dashboard">Smart Energy overview
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -49,14 +49,14 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>SCADA</h2>
-                <p>Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements.</p>
+                <p>SCADA systems are generally divided into two types: Traditional and High-Performance. Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements.</p>
                 <a class="read-more-button" href="/use-cases/scada/">SCADA use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about SCADA use case"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/scada/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="See more about SCADA use case">SCADA use case
+                            <img src="/images/eye-icon.svg" alt="See more about SCADA use case">SCADA overview
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -183,15 +183,15 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Smart farming</h2>
+                <h2>Smart Farming</h2>
                 <p>Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
-                <a class="read-more-button" href="/smart-farming/">Smart farming use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Smart farming arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <a class="read-more-button" href="/smart-farming/">Smart Farming use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Smart farming arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/smart-farming/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="See more about Smart farming">Smart farming use case
+                            <img src="/images/eye-icon.svg" alt="See more about Smart farming">Smart Farming overview
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -210,15 +210,15 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Fleet tracking</h2>
+                <h2>Fleet Tracking</h2>
                 <p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
-                <a class="read-more-button" href="/fleet-tracking/">Fleet tracking use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Fleet tracking arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <a class="read-more-button" href="/fleet-tracking/">Fleet Tracking use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Fleet tracking arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/fleet-tracking/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="See more about Fleet tracking">Fleet tracking overview
+                            <img src="/images/eye-icon.svg" alt="See more about Fleet tracking">Fleet Tracking overview
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -237,15 +237,15 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Smart metering</h2>
+                <h2>Smart Metering</h2>
                 <p>Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users.</p>
-                <a class="read-more-button" href="/smart-metering/">Smart metering use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Smart metering arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <a class="read-more-button" href="/smart-metering/">Smart Metering use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Smart metering arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/smart-metering/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="See more about Smart metering">Smart metering overview
+                            <img src="/images/eye-icon.svg" alt="See more about Smart metering">Smart Metering overview
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -256,6 +256,33 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                             <video autoplay loop preload="auto" muted playsinline>
                                  <source src="https://video.thingsboard.io/usecases/smart-metering.mp4" type="video/mp4">
                                  <source src="https://video.thingsboard.io/usecases/smart-metering.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Health Care: Smart Assisted Living Solution</h2>
+                <p>Track patient health metrics in real time and immediately notify medical professionals of critical changes. This solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
+                <a class="read-more-button" href="/usecases/health-care/">Health Care use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Health Care arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/usecases//health-care/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg" alt="See more about Health Care">Health Care overview
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/health-care/video/health-care.png" alt="Health Care dashboard">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://video.thingsboard.io/usecases/health-care.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/health-care.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
