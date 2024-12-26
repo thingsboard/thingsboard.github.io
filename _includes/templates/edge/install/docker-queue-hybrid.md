@@ -1,6 +1,6 @@
 [Apache Cassandra](https://cassandra.apache.org/_/index.html){: target="_blank"} is an open source NoSQL database designed to manage massive amounts of data.
 
-[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing software platform.
 
 Create docker compose file for the **ThingsBoard Edge** service:
 

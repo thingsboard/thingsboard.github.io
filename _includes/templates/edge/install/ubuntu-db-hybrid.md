@@ -1,5 +1,5 @@
 {% capture hybrid-info %}
-The ThingsBoard team recommends using a **hybrid database approach** if you plan to manage 1M+ devices in production or handle **high data ingestion rate (grater than 5000 msg/sec)**.
+The ThingsBoard team recommends using a **hybrid database approach** if you plan to manage 1M+ devices in production or handle **high data ingestion rate (more than 5000 msg/sec)**.
 In this case, **ThingsBoard Edge** stores time-series data in Cassandra while continuing to use PostgreSQL for primary entities such as devices, assets, dashboards, and customers.  
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}

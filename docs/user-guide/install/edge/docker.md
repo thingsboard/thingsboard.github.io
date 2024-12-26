@@ -43,7 +43,7 @@ This guide will help you to install and start **ThingsBoard Edge** using **Docke
 
 * **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now. It is useful for both on-prem and private cloud deployments. It is also useful if you like to stay independent from your cloud provider. However, some providers also have managed services for Kafka. See [AWS MSK](https://aws.amazon.com/msk/){: target="_blank"} for example.
 
-* **Hybrid** implementation combines PostgreSQL and Cassandra databases with Kafka queue service. It is recommended to use a hybrid database approach if you plan to manage 1M+ devices in production or handle high data ingestion rate (more than 5000 msg/sec).
+* **Hybrid** implementation combines PostgreSQL and Cassandra databases with Kafka queue service. It is recommended if you plan to manage 1M+ devices in production or handle high data ingestion rate (more than 5000 msg/sec).
 
 Create a docker compose file for the **ThingsBoard Edge** service:
 
