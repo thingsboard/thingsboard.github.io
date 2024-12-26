@@ -50,7 +50,7 @@ Create a docker compose file for the **ThingsBoard Edge** service:
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/edge/pe-docker-queue-in-memory.md%br%
 Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/edge/install/pe-docker-queue-kafka.md%br%
-Hybrid <small>PostgreSQL+Cassandra with Kafka as the queue service </small>%,%hybrid%,%templates/edge/install/pe-docker-queue-hybrid.md{% endcapture %}
+Hybrid <small>PostgreSQL+Cassandra with Kafka queue service </small>%,%hybrid%,%templates/edge/install/pe-docker-queue-hybrid.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
