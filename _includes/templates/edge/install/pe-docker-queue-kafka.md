@@ -1,5 +1,5 @@
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing software platform.
 
 Create docker compose file for the **ThingsBoard Edge** service:
 

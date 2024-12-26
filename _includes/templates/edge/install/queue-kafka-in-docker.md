@@ -1,6 +1,6 @@
 #### Kafka Installation
 
-[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open-source stream-processing platform.
+[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing platform.
 
 To install **Kafka in a [Docker](https://docs.docker.com/engine/install/){: target="_blank"}** container, follow the instructions below:
 

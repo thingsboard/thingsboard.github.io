@@ -1,4 +1,4 @@
-Create docker compose file for ThingsBoard Edge service:
+Create docker compose file for **ThingsBoard Edge** service:
 
 ```text
 nano docker-compose.yml

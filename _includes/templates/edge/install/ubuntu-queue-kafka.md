@@ -1,6 +1,6 @@
 #### Kafka Installation
 
-[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open-source stream-processing platform.
+[Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing platform.
 
 {% capture local-deployment %}
 **Kafka** can be run on either **ThingsBoard Server** or **ThingsBoard Edge**. However, it is **not possible to run Kafka on both** services simultaneously, as this would create conflicts or inefficiencies.
