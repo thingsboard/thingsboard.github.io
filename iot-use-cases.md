@@ -266,10 +266,10 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Health Care: Smart Assisted Living Solution</h2>
                 <p>Track patient health metrics in real time and immediately notify medical professionals of critical changes. This solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
-                <a class="read-more-button" href="/usecases/health-care/">Health Care use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Health Care arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <a class="read-more-button" href="/use-cases/health-care/">Health Care use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Health Care arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/usecases//health-care/">
+                <a class="img-button" href="/use-cases/health-care/">
                     <div class="overlay">
                         <div class="eye">
                             <img src="/images/eye-icon.svg" alt="See more about Health Care">Health Care overview
