@@ -166,7 +166,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.11.0:
+* After this you need to update docker-compose.yml as in [Step 2](#docker-compose-setup) but with {{ site.release.trendz_ver }} instead of 1.11.0:
 
 * Restart Trendz container
 
