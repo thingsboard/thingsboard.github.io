@@ -231,6 +231,15 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/pe/samples/analytics/kafka-streams/
+- title: Mobile center
+  new: true
+  section:
+    - title: Overview
+      path: /docs/pe/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/pe/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/pe/user-guide/ui/mobile-qr-code/
 - title: Other Features
   section:
     - title: Edge Computing
@@ -281,6 +290,8 @@ toc:
     path: /docs/pe/user-guide/two-factor-authentication/
   - title: OAuth 2.0
     path: /docs/pe/user-guide/oauth-2-support/
+  - title: Domains
+    path: /docs/pe/domains/
   - title: HTTP Transport
     section:
       - title: HTTP over SSL
@@ -337,9 +348,6 @@ toc:
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Mobile application QR code
-    path: /docs/pe/user-guide/ui/mobile-qr-code/
-    new: true
   - title: JWT Security Settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide
