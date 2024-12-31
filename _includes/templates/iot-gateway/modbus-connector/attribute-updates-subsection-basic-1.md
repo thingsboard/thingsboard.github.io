@@ -1,12 +1,12 @@
 {% assign attributeUpdatesSubsection = '
     ===
-        image: /images/gateway/modbus-connector/attribute-updates-1-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attribute-updates-1-ce.png,
         title: To add new requests mapping, navigate to the "Attribute updates" section and click the "pencil" icon;
     ===
-        image: /images/gateway/modbus-connector/attribute-updates-2-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attribute-updates-2-ce.png,
         title: In the opened window click "Add attribute update";
 ===
-        image: /images/gateway/modbus-connector/attribute-updates-3-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attribute-updates-3-ce.png,
         title: Set an attribute key name, type, function code, objects count, and address. Then, click "Apply".
 '
 %}
@@ -27,13 +27,13 @@ For example, create a new attribute "maxTemperature" and give it a value "25".
 
 {% assign maxTemperatureAttribute = '
     ===
-        image: /images/gateway/modbus-connector/max-temperature-attribute-1-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/max-temperature-attribute-1-ce.png,
         title: Go to the "Devices" page. Click on your device to open the device details, then navigate to the "Attributes" tab. Select "Server attributes" as the entity attributes scope. Then, click the "plus" icon to add a new attribute;
     ===
-        image: /images/gateway/modbus-connector/max-temperature-attribute-2-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/max-temperature-attribute-2-ce.png,
         title: Name the attribute "maxTemperature", select "Integer" as the value type, and set the value to 25;
     ===
-        image: /images/gateway/modbus-connector/max-temperature-attribute-3-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/max-temperature-attribute-3-ce.png,
         title: Shared attribute is added.
 '
 %}

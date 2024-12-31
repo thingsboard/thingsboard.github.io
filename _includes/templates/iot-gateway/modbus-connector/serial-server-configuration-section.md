@@ -12,4 +12,4 @@ The table below describes the parameters required to configure serial connection
 | Send data to platform | **false**         | If set to **TRUE**, the Gateway will perform autoconfiguration and send values to ThingsBoard every poll period. |
 | ---                   
 
-![image](/images/gateway/modbus-connector/serial-server-configuration-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/serial-server-configuration-section-1-ce.png)

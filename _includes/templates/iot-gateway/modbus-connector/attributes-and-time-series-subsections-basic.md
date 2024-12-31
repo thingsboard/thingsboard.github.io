@@ -2,13 +2,13 @@ The configuration in this unit provides settings for processing data on Modbus s
 
 {% assign attributes = '
     ===
-        image: /images/gateway/modbus-connector/attributes-1-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attributes-1-ce.png,
         title: Click on "**pencil**" icon in the "Attributes" or "**Time series**" section (depends on the selected section);
     ===
-        image: /images/gateway/modbus-connector/attributes-2-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attributes-2-ce.png,
         title: In the opened window click "**Add attribute**" or "**Add time series**" (depends on selected section);
     ===
-        image: /images/gateway/modbus-connector/attributes-3-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attributes-3-ce.png,
         title: Fill in key, type, function code, objects count and address fields. Click "Apply".
 '
 %}
@@ -24,4 +24,4 @@ Also, **modifier** for attribute/time series value can be applied using the foll
 | Value         | The value that will be used to modify the read value                                                                                                                             | 
 | ---           
 
-![image](/images/gateway/modbus-connector/modifier.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/modifier.png)

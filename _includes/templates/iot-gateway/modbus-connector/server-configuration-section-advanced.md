@@ -1,6 +1,6 @@
 Due to the nature of preferred way of communication between Modbus master there are 2 options how to configure this part: if using TCP/UDP or via Serial port.
 
-![image](/images/gateway/modbus-connector/server-slave-configuration-advanced.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/server-slave-configuration-advanced.png)
 
 {% capture modbusserverconfigurationsection %}
 TCP<small></small>%,%tcp%,%templates/iot-gateway/modbus-connector/tcp-server-configuration-section-advanced.md%br%

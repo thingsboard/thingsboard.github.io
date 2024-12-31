@@ -9,7 +9,7 @@ The table below describes the attribute updates parameters:
 | address       | Object address                                                        |
 | ---           
 
-![image](/images/gateway/modbus-connector/attribute-updates-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/attribute-updates-advanced-1-ce.png)
 
 <br>
 Example:

@@ -1,192 +1,192 @@
 smart-energy:
   0:
-    src: "/images/usecases/smart-energy/se1.png"
+    src: "https://img.thingsboard.io/usecases/smart-energy/se1.png"
     alt: "Smart energy monitoring light theme example with the pie chart"
   1:
-    src: "/images/usecases/smart-energy/se2.png"
+    src: "https://img.thingsboard.io/usecases/smart-energy/se2.png"
     alt: "Smart energy monitoring dark theme example without the pie chart"
   2:
-    src: "/images/usecases/smart-energy/se3.png"
+    src: "https://img.thingsboard.io/usecases/smart-energy/se3.png"
     alt: "Smart energy monitoring dark theme example"
 
 smart-farming:
   0:
-    src: "/images/usecases/smart-farming/sf1.webp"
+    src: "https://img.thingsboard.io/usecases/smart-farming/sf1.webp"
     alt: "Smart farming dashboard with location"
   1:
-    src: "/images/usecases/smart-farming/sf2.png"
+    src: "https://img.thingsboard.io/usecases/smart-farming/sf2.png"
     alt: "Smart farming dashboard with big linear chart"
   2:
-    src: "/images/usecases/smart-farming/sf3.png"
+    src: "https://img.thingsboard.io/usecases/smart-farming/sf3.png"
     alt: "Smart farming dashboard dark theme"
 
 fleet-tracking:
   0:
-    src: "/images/usecases/fleet-tracking/ft1.png"
+    src: "https://img.thingsboard.io/usecases/fleet-tracking/ft1.png"
     alt: "Bus locations example"
   1:
-    src: "/images/usecases/fleet-tracking/ft2.png"
+    src: "https://img.thingsboard.io/usecases/fleet-tracking/ft2.png"
     alt: "Route history example"
   2:
-    src: "/images/usecases/fleet-tracking/ft3.webp"
+    src: "https://img.thingsboard.io/usecases/fleet-tracking/ft3.webp"
     alt: "Route area example"
 
 tank-level-monitoring:
   0:
-    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png"
+    src: "https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-1.png"
     alt: "Fuel level monitoring dashboard example"
   1:
-    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png"
+    src: "https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-2.png"
     alt: "Alarm rules settings example"
   2:
-    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png"
+    src: "https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-3.png"
     alt: "Specific tank fuel level monitoring dashboard example"
   3:
-    src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png"
+    src: "https://img.thingsboard.io/usecases/fuel-level-monitoring/fuel-monitoring-4.png"
     alt: "Edit sensor settings example"
 
 smart-metering:
   0:
-    src: "/images/usecases/smart-metering/sm1.webp"
+    src: "https://img.thingsboard.io/usecases/smart-metering/sm1.webp"
     alt: "Smart metering dashboard with a map"
   1:
-    src: "/images/usecases/smart-metering/sm2.png"
+    src: "https://img.thingsboard.io/usecases/smart-metering/sm2.png"
     alt: "Smart metering dashboard with a location"
   2:
-    src: "/images/usecases/smart-metering/sm3.png"
+    src: "https://img.thingsboard.io/usecases/smart-metering/sm3.png"
     alt: "Smart metering dashboard with a building plan"
   3:
-    src: "/images/usecases/smart-metering/sm4.png"
+    src: "https://img.thingsboard.io/usecases/smart-metering/sm4.png"
     alt: "Smart metering dashbord with a thermostat controller"
 
 environment-monitoring:
   0:
-    src: "/images/usecases/environment-monitoring/em1.webp"
+    src: "https://img.thingsboard.io/usecases/environment-monitoring/em1.webp"
     alt: "environment monitoring 1"
   1:
-    src: "/images/usecases/environment-monitoring/em2.png"
+    src: "https://img.thingsboard.io/usecases/environment-monitoring/em2.png"
     alt: "environment monitoring 2"
   2:
-    src: "/images/usecases/environment-monitoring/em3.png"
+    src: "https://img.thingsboard.io/usecases/environment-monitoring/em3.png"
     alt: "environment monitoring 3"
 
 smart-office:
   0:
-    src: "/images/usecases/smart-office/so1.webp"
+    src: "https://img.thingsboard.io/usecases/smart-office/so1.webp"
     alt: "smart office 1"
   1:
-    src: "/images/usecases/smart-office/so2.png"
+    src: "https://img.thingsboard.io/usecases/smart-office/so2.png"
     alt: "smart office 2"
   2:
-    src: "/images/usecases/smart-office/so3.png"
+    src: "https://img.thingsboard.io/usecases/smart-office/so3.png"
     alt: "smart office 3"
   3:
-    src: "/images/usecases/smart-office/so4.png"
+    src: "https://img.thingsboard.io/usecases/smart-office/so4.png"
     alt: "smart office 4"
   4:
-    src: "/images/usecases/smart-office/so5.png"
+    src: "https://img.thingsboard.io/usecases/smart-office/so5.png"
     alt: "smart office 5"
 
 water-metering:
   0:
-    src: "/images/usecases/water-metering/wm1.png"
+    src: "https://img.thingsboard.io/usecases/water-metering/wm1.png"
     alt: "water metering 1"
   1:
-    src: "/images/usecases/water-metering/wm2.png"
+    src: "https://img.thingsboard.io/usecases/water-metering/wm2.png"
     alt: "water metering 2"
   2:
-    src: "/images/usecases/water-metering/wm3.png"
+    src: "https://img.thingsboard.io/usecases/water-metering/wm3.png"
     alt: "water metering 3"
   3:
-    src: "/images/usecases/water-metering/wm4.webp"
+    src: "https://img.thingsboard.io/usecases/water-metering/wm4.webp"
     alt: "water metering 4"
   4:
-    src: "/images/usecases/water-metering/wm5.png"
+    src: "https://img.thingsboard.io/usecases/water-metering/wm5.png"
     alt: "water metering 5"
   5:
-    src: "/images/usecases/water-metering/wm6.png"
+    src: "https://img.thingsboard.io/usecases/water-metering/wm6.png"
     alt: "water metering 6"
 
 smart-retail:
   0:
-    src: "/images/usecases/smart-retail/sr1.png"
+    src: "https://img.thingsboard.io/usecases/smart-retail/sr1.png"
     alt: "smart retail 1"
   1:
-    src: "/images/usecases/smart-retail/sr2.png"
+    src: "https://img.thingsboard.io/usecases/smart-retail/sr2.png"
     alt: "smart retail 2"
   2:
-    src: "/images/usecases/smart-retail/sr3.webp"
+    src: "https://img.thingsboard.io/usecases/smart-retail/sr3.webp"
     alt: "smart retail 3"
   3:
-    src: "/images/usecases/smart-retail/sr4.png"
+    src: "https://img.thingsboard.io/usecases/smart-retail/sr4.png"
     alt: "smart retail 4"
   4:
-    src: "/images/usecases/smart-retail/sr5.png"
+    src: "https://img.thingsboard.io/usecases/smart-retail/sr5.png"
     alt: "smart retail 5"
 
 air-quality-monitoring-1:
   0:
-    src: "/images/usecases/air-quality/aq1.png"
+    src: "https://img.thingsboard.io/usecases/air-quality/aq1.png"
     alt: "air quality 1"
   1:
-    src: "/images/usecases/air-quality/aq2.png"
+    src: "https://img.thingsboard.io/usecases/air-quality/aq2.png"
     alt: "air quality 2"
   2:
-    src: "/images/usecases/air-quality/aq3.png"
+    src: "https://img.thingsboard.io/usecases/air-quality/aq3.png"
     alt: "air quality 3"
 
 air-quality-monitoring-2:
   0:
-    src: "/images/usecases/air-quality/aq4.png"
+    src: "https://img.thingsboard.io/usecases/air-quality/aq4.png"
     alt: "air quality 4"
   1:
-    src: "/images/usecases/air-quality/aq5.png"
+    src: "https://img.thingsboard.io/usecases/air-quality/aq5.png"
     alt: "air quality 5"
 
 smart-irrigation:
   0:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-1.png"
+    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-1.png"
     alt: "smart irrigation 1"
   1:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-2.png"
+    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-2.png"
     alt: "smart irrigation 2"
   2:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-3.png"
+    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-3.png"
     alt: "smart irrigation 3"
   3:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-4.png"
+    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-4.png"
     alt: "smart irrigation 4"
   4:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-5.png"
+    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-5.png"
     alt: "smart irrigation 5"
 
 waste-management:
   0:
-    src: "/images/solutions/waste_monitoring/waste-monitoring-1.png"
+    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-1.png"
     alt: "waste monitoring 1"
   1:
-    src: "/images/solutions/waste_monitoring/waste-monitoring-2.png"
+    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-2.png"
     alt: "waste monitoring 2"
   2:
-    src: "/images/solutions/waste_monitoring/waste-monitoring-3.png"
+    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-3.png"
     alt: "waste monitoring 3"
   3:
-    src: "/images/solutions/waste_monitoring/waste-monitoring-4.png"
+    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-4.png"
     alt: "waste monitoring 4"
   4:
-    src: "/images/solutions/waste_monitoring/waste-monitoring-5.png"
+    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-5.png"
     alt: "waste monitoring 5"
   5:
-    src: "/images/solutions/waste_monitoring/waste-monitoring-6.png"
+    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-6.png"
     alt: "waste monitoring 6"
 
 health-care:
   0:
-    src: "/images/solutions/health-care/health-care-1.png"
+    src: "https://img.thingsboard.io/solutions/health-care/health-care-1.png"
     alt: "Assisted living dashboard with opened floor plan and residents alarms"
   1:
-    src: "/images/solutions/health-care/health-care-2.png"
+    src: "https://img.thingsboard.io/solutions/health-care/health-care-2.png"
     alt: "Assisted living dashboard with opened resident details"
   2:
-    src: "/images/solutions/health-care/health-care-3.png"
+    src: "https://img.thingsboard.io/solutions/health-care/health-care-3.png"
     alt: "Assisted living dashboard with opened zone sensors configuration"

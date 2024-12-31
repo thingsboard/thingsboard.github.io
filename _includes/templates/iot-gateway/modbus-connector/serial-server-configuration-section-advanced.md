@@ -11,4 +11,4 @@ The table below describes the parameters required to configure serial connection
 | baudrate      | **4800**                 | Baudrate for The baud rate to use for the serial device                                    |
 | ---           
 
-![image](/images/gateway/modbus-connector/serial-server-configuration-section-advancd-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/serial-server-configuration-section-advancd-1-ce.png)

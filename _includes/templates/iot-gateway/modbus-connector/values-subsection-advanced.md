@@ -1,1 +1,1 @@
-![image](/images/gateway/modbus-connector/values-subsection-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/values-subsection-advanced-1-ce.png)

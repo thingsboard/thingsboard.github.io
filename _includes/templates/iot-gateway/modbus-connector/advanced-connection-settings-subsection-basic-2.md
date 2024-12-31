@@ -13,10 +13,10 @@ You can configure additional settings like: TLS connection, byte order, word ord
 
 {% assign advancedConnectionSettingsBasic = '
     ===
-        image: /images/gateway/modbus-connector/advanced-connection-settings-basic-1-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/advanced-connection-settings-basic-1-ce.png,
         title: Click on the "**Advanced connection settings**" subsection to open it;
     ===
-        image: /images/gateway/modbus-connector/advanced-connection-settings-basic-2-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/advanced-connection-settings-basic-2-ce.png,
         title: Make the necessary settings.
 '
 %}

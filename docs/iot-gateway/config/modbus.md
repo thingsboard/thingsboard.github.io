@@ -37,7 +37,7 @@ This configuration section contains general connector settings, such as:
   - Enable remote logging - enabling remote logging for connector;
   - Logging level - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, TRACE, NONE;
 
-![image](/images/gateway/modbus-connector/modbus-general-basic-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/modbus-general-basic-section-1-ce.png)
 
 {% capture difference %}
 The general tab is the same for both the basic and advanced configurations.

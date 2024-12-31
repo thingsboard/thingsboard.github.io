@@ -188,15 +188,15 @@ time-window:
 
 time-window-key-parameters:
     0:
-        image: /images/user-guide/dashboards/overview/time-window-key-parameters-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/time-window-key-parameters-1-pe.png
         title: ''
 
 displaying-data-for-desired-time-period:
     0:
-        image: /images/user-guide/dashboards/overview/displaying-data-for-desired-time-period-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/displaying-data-for-desired-time-period-1-pe.png
         title: 'To display data for your desired time period, set the time range in the time window and click "Update";'
     1:
-        image: /images/user-guide/dashboards/overview/displaying-data-for-desired-time-period-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/displaying-data-for-desired-time-period-2-pe.png
         title: 'The widget displays data for the specified time period.'
 
 time-window-aggregation:
@@ -216,86 +216,86 @@ time-window-interval:
 
 time-window-grouping-interval:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-grouping-interval-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/timewindow-grouping-interval-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/timewindow-grouping-interval-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/timewindow-grouping-interval-2-pe.png
         title: ''
 
 time-window-settings:
     0:
-        image: /images/user-guide/dashboards/overview/time-window-settings-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/time-window-settings-1-pe.png
         title: 'Enter the editing mode of the dashboard, click the "edit time window" icon on the dashboard toolbar. In the popup window, click the "gear" icon;'
     1:
-        image: /images/user-guide/dashboards/overview/time-window-settings-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/time-window-settings-2-pe.png
         title: 'The time window configuration window will open.'
 
 hide-time-window-section:
     0:
-        image: /images/user-guide/dashboards/overview/hide-time-window-section-from-end-users-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-time-window-section-from-end-users-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/hide-time-window-section-from-end-users-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-time-window-section-from-end-users-2-pe.png
         title: ''
 
 hide-only-last-or-relative-interval:
     0:
-        image: /images/user-guide/dashboards/overview/hide-only-last-or-relative-interval-from-end-users-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-only-last-or-relative-interval-from-end-users-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/hide-only-last-or-relative-interval-from-end-users-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-only-last-or-relative-interval-from-end-users-2-pe.png
         title: ''
 
 edit-list-of-intervals:
     0:
-        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/edit-list-of-intervals-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/edit-list-of-intervals-2-pe.png
         title: ''
     2:
-        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-3-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/edit-list-of-intervals-3-pe.png
         title: ''
     3:
-        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-4-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/edit-list-of-intervals-4-pe.png
         title: ''
 
 hide-aggregation:
     0:
-        image: /images/user-guide/dashboards/overview/hide-aggregation-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-aggregation-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/hide-aggregation-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-aggregation-2-pe.png
         title: ''
     2:
-        image: /images/user-guide/dashboards/overview/hide-aggregation-3-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-aggregation-3-pe.png
         title: ''
 
 edit-aggregation-list:
     0:
-        image: /images/user-guide/dashboards/overview/edit-aggregation-list-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/edit-aggregation-list-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/edit-aggregation-list-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/edit-aggregation-list-2-pe.png
         title: ''
 
 hide-grouping-interval:
     0:
-        image: /images/user-guide/dashboards/overview/hide-grouping-interval-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-grouping-interval-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/hide-grouping-interval-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-grouping-interval-2-pe.png
         title: ''
     2:
-        image: /images/user-guide/dashboards/overview/hide-grouping-interval-3-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-grouping-interval-3-pe.png
         title: ''
 
 hide-time-zone:
     0:
-        image: /images/user-guide/dashboards/overview/hide-time-zone-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-time-zone-1-pe.png
         title: ''
     1:
-        image: /images/user-guide/dashboards/overview/hide-time-zone-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/hide-time-zone-2-pe.png
         title: ''
 
 time-window-time-zone:

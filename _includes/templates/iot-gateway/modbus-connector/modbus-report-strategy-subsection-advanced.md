@@ -1,4 +1,4 @@
-![image](/images/gateway/modbus-connector/modbus-report-strategy-subsection-advanced.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/modbus-report-strategy-subsection-advanced.png)
 
 This subsection enabling report strategy for data sending, and you can use one of 3 behavior scenarios:
 

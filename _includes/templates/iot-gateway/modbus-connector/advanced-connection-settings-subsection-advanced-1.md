@@ -14,7 +14,7 @@ You can configure additional settings like: TLS connection, polling time, byte o
 | waitAfterFailedAttemptsMs | **300000**         | A waiting period in milliseconds before trying to send data to the master     |
 | ---                       
 
-![image](/images/gateway/modbus-connector/advanced-connection-settings-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/advanced-connection-settings-advanced-1-ce.png)
 
 <br>
 Example:

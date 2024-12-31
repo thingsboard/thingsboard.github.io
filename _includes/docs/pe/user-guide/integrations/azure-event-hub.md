@@ -12,7 +12,7 @@
 
 Azure Event Hub Integration allows to stream data from Azure Event Hub to ThingsBoard and converts device payloads to the ThingsBoard format.
 
-![image](/images/user-guide/integrations/azure-event-hub-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-event-hub-integration.svg)
  
 ## Create IoT hub using the Azure portal.
 
@@ -49,7 +49,7 @@ Great! You have successfully created your new device.
 
 Go to the "**Integrations**" page of the "**Integrations center**" section. Click "**plus**" button to start adding new integration. Select type "**Azure Event Hub**" integration and click "**Next**";
 
-![image](/images/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-1-pe.png)
 
 <br>
 **2. Uplink data converter**. 
@@ -58,7 +58,7 @@ Uplink is necessary in order to convert the incoming data from the device into t
 
 In the function decoder field, specify a script to parse and transform data. For our example, use the default decoder function (or use your own configuration). Then, click "**Next**";
 
-![image](/images/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-2-pe.png)
 
 You can always change the decoder function after creating it.
 
@@ -67,7 +67,7 @@ You can always change the decoder function after creating it.
 
 At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "**Skip**";
 
-![image](/images/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-3-pe.png)
 
 <br>
 **4. Connection**.
@@ -110,7 +110,7 @@ In ThingsBoard:
 - [Optional] Click on "Check connection" button to check connection to check correctly copied connection string;
 - Finally, click "**Add**" button to create the integration.
 
-![image](/images/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-event-hub/azure-event-hub-integration-setup-4-pe.png)
 
 ## Test it up!
 

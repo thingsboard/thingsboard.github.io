@@ -22,7 +22,7 @@ TBMQ is designed with great care to implement the following attributes:
 
 The following diagram shows the pivotal parts of the broker and the route of message transmission.
 
-![image](/images/mqtt-broker/architecture/tbmq-architecture.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-architecture.png)
 
 ### Motivation
 
@@ -80,7 +80,7 @@ the broker either redirects the message to another specific Kafka topic or direc
 
 #### Non-persistent client
 
-![image](/images/mqtt-broker/architecture/tbmq-non-persistent-dev.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-non-persistent-dev.png)
 
 A client is classified as a non-persistent one when the following conditions are met in the _CONNECT_ packet:
 
@@ -95,7 +95,7 @@ It is important to note that non-persistent clients can only be of type **DEVICE
 
 **Non-persistent DEVICE processing in cluster mode**
 
-![image](/images/mqtt-broker/architecture/tbmq-non-persist-dev-cluster.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-non-persist-dev-cluster.png)
 
 In cluster mode, multiple TBMQ nodes can operate together, each running Kafka consumers in the same consumer group for the **tbmq.msg.all** topic. 
 This approach ensures efficient load balancing and message distribution across nodes. 
@@ -128,7 +128,7 @@ Consequently, we made a strategic decision to optimize performance by separating
 
 ##### Persistent DEVICE client
 
-![image](/images/mqtt-broker/architecture/tbmq-persistent-dev.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-persistent-dev.png)
 
 For DEVICE persistent clients, we use the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
 This design separates the handling of persistent messages from other message types, ensuring a clear and efficient workflow.
@@ -138,7 +138,7 @@ This approach helps us recover stored messages smoothly when a client reconnects
 
 **Persistent DEVICE processing in cluster mode**
 
-![image](/images/mqtt-broker/architecture/tbmq-persist-dev-cluster.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-persist-dev-cluster.png)
 
 Similarly to non-persistent clients, TBMQ nodes in cluster mode operate together, running Kafka consumers in the same group for the **tbmq.msg.persisted** topic.
 To handle cases where a message is processed by one node but the subscriber is connected to another, **downlink.persisted** Kafka topic is used to forward the message to the appropriate node.
@@ -146,7 +146,7 @@ This ensures seamless delivery to the subscriber via its established connection.
 
 ##### Persistent APPLICATION client
 
-![image](/images/mqtt-broker/architecture/tbmq-app.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-app.png)
 
 The number of APPLICATION clients corresponds to the number of Kafka topics used. 
 The latest version of Kafka can handle millions of topics, making this design suitable even for the largest enterprise use cases.
@@ -170,7 +170,7 @@ It is important to note that APPLICATION clients can only be classified as [pers
 
 **Persistent APPLICATION processing in cluster mode**
 
-![image](/images/mqtt-broker/architecture/tbmq-app-cluster.png)
+![image](https://img.thingsboard.io/mqtt-broker/architecture/tbmq-app-cluster.png)
 
 APPLICATION clients function the same way in cluster mode as in standalone setup, eliminating the need for internode communication. 
 The processing of the message occurs directly on the target node, as a dedicated consumer for the APPLICATION client is created there once the client connects.

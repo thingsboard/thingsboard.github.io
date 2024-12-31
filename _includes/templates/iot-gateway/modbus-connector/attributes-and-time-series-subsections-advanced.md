@@ -11,7 +11,7 @@ The table below describes the attributes and time series parameters:
 | address       | Object address                                                        |
 | ---           
 
-![image](/images/gateway/modbus-connector/attributes-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/attributes-advanced-1-ce.png)
 
 <br>
 Example of attributes section:

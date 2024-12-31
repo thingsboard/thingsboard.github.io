@@ -81,10 +81,10 @@ multi-state-scada-dashboard-example-1:
 
 high-performance-scada-symbols:
     0:
-        image: /images/user-guide/scada/scada-dashboards/ce/high-performance-scada-symbols-1-ce.png
+        image: https://img.thingsboard.io/user-guide/scada/scada-dashboards/ce/high-performance-scada-symbols-1-ce.png
         title: 'High-performance SCADA dashboard.'
     1:
-        image: /images/user-guide/scada/scada-dashboards/ce/high-performance-scada-symbols-2-ce.png
+        image: https://img.thingsboard.io/user-guide/scada/scada-dashboards/ce/high-performance-scada-symbols-2-ce.png
         title: 'Traditional SCADA dashboard.'
 
 add-scada-symbol-widget-1:
@@ -135,7 +135,7 @@ scada-action-get-time-series-1:
 
 scada-action-get-alarm-status-1:
     0:
-        image: /images/user-guide/scada/scada-dashboards/ce/scada-action-get-alarm-status-1-ce.png
+        image: https://img.thingsboard.io/user-guide/scada/scada-dashboards/ce/scada-action-get-alarm-status-1-ce.png
         title: 'The "Get alarm status" action subscribes to the alarm status field. The widget will receive updates according to the type of alarm.'
 
 scada-action-get-dashboard-state-1:
