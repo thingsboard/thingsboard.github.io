@@ -31,6 +31,8 @@ Patch release with the following improvements and bug fixes.
   * [#182](https://github.com/thingsboard/tbmq/pull/182) Last will delivery error on broker shutdown;
   * [#184](https://github.com/thingsboard/tbmq/pull/184) Added Redis cluster topology refresh options for Jedis implementation.
 
+With the changes in this release, we have conducted performance testing, which can be reviewed [here](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/).
+
 ## v2.0.0 (October 29, 2024)
 
 Major release with the following features, improvements, and bug fixes.
