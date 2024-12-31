@@ -266,7 +266,7 @@ notitle: "true"
         <div class="advantage">
             <div><img src="https://img.thingsboard.io/usecases/scada/security.svg" alt="Security"></div>
             <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-            <p>ThingsBoard protects your data with industry-standard encryption algorithms like RSA and ECDSA. Secure communication is ensured via TLS (TCP) and DTLS (UDP). Role-based access control and audit logs further enhance platform security.</p>
+            <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
         </div>
         <div class="advantage">
             <div><img src="https://img.thingsboard.io/usecases/scada/data-visualization.svg" alt="Data visualization"></div>

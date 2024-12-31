@@ -43,7 +43,7 @@
           overflow: hidden
           vertical-align: middle
 
-    .scada-about, .scada-carousel, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions,
+    .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions,
       h1
         font-size: 40px
         margin-bottom: 60px
@@ -112,6 +112,64 @@
         .long
           flex: 2
 
+      .header-selector
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        @media screen and (max-width: 1115px)
+          flex-direction: column
+          align-items: start
+          margin-bottom: 50px
+          h1
+            margin-bottom: 0
+
+        .scada-mode-selector
+          margin-top: 25px
+          display: flex
+          border: 1px solid rgba(0, 0, 0, 0.08)
+          height: 44px
+          max-width: 350px
+          @media (max-width: 480px)
+            max-width: 348px
+          border-radius: 26px
+          background-color: rgba(42, 125, 236, 0.08)
+          .mode
+            position: relative
+            color: #707275
+            cursor: pointer
+            height: 100%
+            display: flex
+            align-items: center
+            padding-left: 14px
+            padding-right: 12px
+            &:nth-of-type(1)
+              margin-right: 0
+            h3
+              margin-bottom: 0
+              font-weight: 500
+              a.faq-link
+                &:after
+                  margin-left: 2px
+              font-size: 14px
+              line-height: 20px
+              @media (min-width: 480px)
+                font-size: 18px
+                line-height: 27px
+            &.active
+              &:before
+                filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
+              border-radius: 22px
+              color: #fff
+              background: #2A7DEC
+              box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+              &:after
+                background-color: #fff
+            &:hover:not(.active)
+              &:before
+                filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
+              color: #000
+
     .scada-about, .health-about
 
       margin-bottom: 120px
@@ -121,7 +179,7 @@
           @media screen and (max-width: 599px)
             width: 100%
 
-    .scada-carousel, .health-carousel
+    .scada-overview, .health-carousel
 
       &::before
         content: ""
@@ -131,6 +189,159 @@
         position: absolute
         left: -50%
         top: -61px
+        z-index: -1
+
+    .scada-overview
+      &::before
+        height: 110%
+        @media screen and (max-width: 959px)
+          height: 107%
+
+      img
+        max-width: unset
+
+      .img-comp-container
+        position: relative
+
+      .img-comp-img
+        position: absolute
+        overflow: hidden
+        &.img-comp-overlay
+          img
+            max-width: unset
+
+      .img-comp-img img
+        display: block
+        vertical-align: middle
+        max-width: 100%
+        height: auto
+        border-radius: 24px
+
+      .img-comp-slider
+        position: absolute
+        top: 0
+        z-index: 2
+        cursor: ew-resize
+        width: 1px
+        border: 1px solid grey
+        box-shadow: #fff 0 0 11px 8px
+        animation: 0.7s linear infinite alternate swingSlider
+        div
+          height: 100%
+          width: 10px
+          margin-left: -5px
+        &:before
+          position: absolute
+          top: 50%
+          transform: translateY(-33px)
+          left: -24px
+          content: "\2039"
+          font-size: 50px
+        &:after
+          position: absolute
+          top: 50%
+          transform: translateY(-33px)
+          right: -24px
+          content: "\203A"
+          font-size: 50px
+
+          @keyframes swingSlider
+            from
+              transform: translateX(-3px)
+            to
+              transform: translateX(5px)
+
+      .table-lg
+        @media screen and (max-width: 1800px)
+          display: none
+        display: flex
+        gap: 32px
+        div
+          display: flex
+          flex-direction: column
+
+        .criteria-col
+          padding-top: 140px
+          p
+            padding-bottom: 36px
+            font-size: 24px
+            font-weight: 500
+            border-bottom: 1px solid #3E9AF81F
+            color: #000000C2
+            white-space: nowrap
+
+            &:last-of-type
+              border-bottom: none
+
+        .compare-col
+          padding: 46px
+          gap: 32px
+          border-radius: 24px
+          background: #FFF
+          box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+
+          p
+            color: rgba(68, 71, 74, 0.80)
+            font-size: 18px
+            font-weight: 400
+            letter-spacing: 0.15px
+
+            &:first-of-type
+              color: #212529
+              font-size: 32px
+              font-weight: 500
+
+      .table-md-sm
+        @media screen and (max-width: 1800px)
+          display: flex
+        display: none
+        flex-direction: column
+        align-items: center
+        gap: 16px
+
+        .header
+          display: flex
+          width: 100%
+          justify-content: space-around
+
+          p
+            color: #212529
+            font-size: 32px
+            font-weight: 500
+            @media screen and (max-width: 959px)
+              font-size: 24px
+
+        .title
+          font-size: 24px
+          font-weight: 500
+          color: #000000C2
+          @media screen and (max-width: 959px)
+            font-size: 18px
+
+        .compare-container
+          display: flex
+          gap: 32px
+          width: 100%
+
+          @media screen and (max-width: 959px)
+            gap: 16px
+
+          div
+            width: 100%
+            padding: 46px
+            color: #44474ACC
+            font-size: 18px
+            font-weight: 400
+            border-radius: 24px
+            background: #FFF
+            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+            text-align: center
+
+            @media screen and (max-width: 959px)
+              padding: 16px
+              font-size: 16px
+              height: 160px
+              align-content: center
 
     .scada-solution-structure, .health-solution-structure
 
@@ -188,13 +399,22 @@
 
     .scada-key-functions, .health-key-functions
 
+      .high-performance
+        display: none
+        &.active
+          display: block
+      .traditional
+        display: none
+        &.active
+          display: block
+
       @media screen and (max-width: 599px)
         margin-bottom: unset
 
       &::before
         content: ""
         width: 200%
-        height: 105%
+        height: 104%
         background-color: #f4f8fe
         position: absolute
         left: -50%
@@ -242,6 +462,15 @@
         margin-bottom: 45px
 
       .dashboard-structure-block
+        &.high-performance
+          display: none
+          &.active
+            display: flex
+        &.traditional
+          display: none
+          &.active
+            display: flex
+
         display: flex
         flex-direction: row
         gap: 7%

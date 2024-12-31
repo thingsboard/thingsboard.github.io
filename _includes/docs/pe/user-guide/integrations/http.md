@@ -19,13 +19,7 @@ Before creating the integration, you need to create an Uplink converter in Data 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
-{% capture difference %}
-**NOTE**
-<br>
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.  
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 

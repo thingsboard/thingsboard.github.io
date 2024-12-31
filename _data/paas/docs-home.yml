@@ -55,8 +55,6 @@ toc:
       path: /docs/paas/user-guide/ota-updates/
     - title: Notification center
       path: /docs/paas/user-guide/notifications/
-    - title: Domains
-      path: /docs/paas/domains/
 - title: Dashboards
   section:
     - title: Overview
@@ -231,6 +229,15 @@ toc:
       path: /docs/trendz/
     - title: Kafka Streams
       path: /docs/paas/samples/analytics/kafka-streams/
+- title: Mobile center
+  new: true
+  section:
+    - title: Overview
+      path: /docs/paas/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/paas/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/paas/user-guide/ui/mobile-qr-code/
 - title: Other Features
   section:
     - title: Device Connectivity Status
@@ -275,6 +282,8 @@ toc:
       path: /docs/paas/user-guide/two-factor-authentication/
     - title: OAuth 2.0
       path: /docs/paas/user-guide/oauth-2-support/
+    - title: Domains
+      path: /docs/paas/domains/
     - title: HTTP Transport
       section:
         - title: Access Token based authentication
@@ -319,9 +328,6 @@ toc:
       path: /docs/paas/user-guide/ui/microsoft-teams-settings/
     - title: Mail Settings
       path: /docs/paas/user-guide/ui/mail-settings/
-    - title: Mobile application QR code
-      path: /docs/paas/user-guide/ui/mobile-qr-code/
-      new: true
 - title: Subscriptions
   path: /docs/paas/subscription/
 - title: Plan and billing

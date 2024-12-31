@@ -13,7 +13,7 @@ Once the user returns to the ThingsBoard client via redirect URL, the platform w
 Using the [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper), external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user. 
 After this, the regular ThingsBoard authorization flow will happen.
 
-## Setting Up Authentication via an external provider
+## Setting up authentication via an external provider
 
 Since the 3.8 release, OAuth 2.0 clients are configured separately from the domain allowing to reuse of the configured client and making the settings clearer.
 To use authentication through an external provider, first configure OAuth 2.0 client with all necessary credentials. 
@@ -81,7 +81,7 @@ To update the settings for an existing OAuth 2.0 client, follow these steps:
 
 Remove clients that are no longer needed or are obsolete:
 
-- Click the "trash can" icon in the client's row you wish to remove;
+- Click the "trash" icon in the client's row you wish to remove;
 - Confirm the deletion by clicking "Yes".
 
 {% include images-gallery.html imageCollection="deleting-oauth2-client-1" %}
@@ -104,37 +104,52 @@ Please, follow the instructions on the [OpenID Connect](https://developers.googl
 After completing the instructions above, you should have a new OAuth client with credentials consisting of a Client ID and a Client Secret.
 
 - Go to the "Credentials" page in the left menu and select "OAuth client ID" from the "Create credentials" dropdown menu;
-- Enter a OAuth client name, and add the ThingsBoard default redirect URI (if you use ThingsBoard installed locally), which we are going to use in this example, to the "Authorized Redirect URIs" section:
+- Enter a OAuth client name, and add the ThingsBoard redirect URI, to the "Authorized Redirect URIs" section using the format:
 
 ```
-http://localhost:8080/login/oauth2/code/
+http(s)://domain:port/login/oauth2/code/
 ```
 {: .copy-code}
 
+\* where under the domain, please, specify the current domain of yours and for the port specify the port to have an HTTP access to the ThingsBoard instance of yours.
+For the example reasons, my domain is *my.thingsboard.instance*.
+
+```
+https://my.thingsboard.instance/login/oauth2/code/
+```
+
 - Click "Create". 
  
-OAuth client created. You now have credentials consisting of a *Client ID* and a *Client secret*
+OAuth client created. You now have credentials consisting of a *Client ID* and a *Client secret*.
 
 {% include images-gallery.html imageCollection="google-credentials-for-oauth-1" %}
 
-### Configuring Google provider in ThingsBoard
+### Configuring Google as an OAuth 2.0 authentication provider in ThingsBoard
 
-To add new OAuth 2.0 client follow the steps below:
+To configure OAuth 2.0 authentication in ThingsBoard via Google, follow the steps below:
 
-- Login to your ThingsBoard instance as System Administrator;
+- Login to your ThingsBoard instance;
 - Go to the "OAuth 2.0" page of the "Security" section;
-- Navigate to the "Domains" tab, and click "plus" icon;
-- Your domain name and redirect URI template are already specified here. Now we need to add an OAuth 2.0 client. Click "Create new" to begin;
-- Enter the OAuth 2.0 client title;
-- Select "Google" as the provider;
+- While on the "Domains" tab, click the "plus" icon;
+- Enter your domain name or IP address of your ThingsBoard instance;
+- Click "Create new" in the "OAuth 2.0 clients" section to add a new one.
+
+{% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-1" %}
+
+Adding a new OAuth 2.0 client:
+
+- Enter "Google" as the title; 
+- The provider should be set to "Google";
 - If necessary, specify the allowed platforms, or leave all;
-- Now, enter the "Client ID" and "Client secret" from the [Google API Console](https://console.developers.google.com/){:target="_blank"};
+- Enter the "Client ID" and "Client secret" from the [Google API Console](https://console.developers.google.com/){:target="_blank"};
 
 Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block: 
 - Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery){:target="_blank"} to see the list of up-to-date URLs like "Access Token URI", "Authorization URI", etc.;
 - Select "POST" as the client authentication method;
 - Turn on the "Allow user creation" option;
 - Add to the scope field: "email", "openid", and "profile";
+
+{% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-2" %}
 
 Go to the "Mapper" block:
 - Leave the mapper type "BASIC";
@@ -144,11 +159,14 @@ Go to the "Mapper" block:
 - Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation;
 {% endif %}
 - Click "Add";
+
+{% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-3" %}
+
 - The OAuth client is added successfully. Click "Add" again to confirm the addition of the domain.
 
 A new domain has been added.
 
-{% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-1" %}
+{% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-4" %}
 
 ### Sign in
 
@@ -187,16 +205,16 @@ To apply the configurations properly, we first need to obtain OAuth 2.0 credenti
 - In the allowed Callback URLs field, update the redirect URI using the format:
 
 ```
-http://domain:port/login/oauth2/code/
-```
-
-  \* where under the domain, please, specify the current domain of yours and for the port please specify the port to have an HTTP access to the ThingsBoard instance of yours.
-For the example reasons, my domain is the *localhost*, and the port is being the default ThingsBoard installation port *8080*.
-
-```
-http://localhost:8080/login/oauth2/code/
+http(s)://domain:port/login/oauth2/code/
 ```
 {: .copy-code}
+
+\* where under the domain, please, specify the current domain of yours and for the port specify the port to have an HTTP access to the ThingsBoard instance of yours.
+For the example reasons, my domain is *my.thingsboard.instance*.
+
+```
+https://my.thingsboard.instance/login/oauth2/code/
+```
 
 {% capture difference %}
 Please note that it is not necessary to update the Application login URI.
@@ -208,57 +226,59 @@ Please note that it is not necessary to update the Application login URI.
 
 {% include images-gallery.html imageCollection="auth0-credentials-1" %}
 
-### Configuring OAuth0 provider in ThingsBoard
+### Configuring OAuth0 as an OAuth 2.0 authentication provider in ThingsBoard
 
-Now let's add Auth0 as an OAuth 2.0 client of ThingsBoard:
+To configure OAuth 2.0 authentication in ThingsBoard via Auth0, follow the steps below:
 
-- Access your ThingsBoard instance using your System Administrator credentials;
+- Login to your ThingsBoard instance;
 - Go to the "OAuth 2.0" page of the "Security" section;
-- Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon;
-- Enter a descriptive title for the client, and select "Custom" as the provider from the dropdown;
+- While on the "Domains" tab, click the "plus" icon;
+- Enter your domain name or IP address of your ThingsBoard instance;
+- Click "Create new" in the "OAuth 2.0 clients" section to add a new one.
+
+{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-1" %}
+
+Adding a new OAuth 2.0 client:
+
+- In the opened window, enter "OAuth0" as the title for the client;
+- Select "Custom" as the provider from the dropdown;
 - If necessary, specify the allowed platforms, or leave all;
-- Now enter the "Client ID" and "Client secret" obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"}.
+- Enter the "Client ID" and "Client secret" obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"}.
 
 In the "General" block of the "Advanced settings" section:
 - Fill in all the necessary URLs using the values obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"};
 - Select "POST" as the client authentication method;
-- Enter "Auth0" as the provider label;
+- Enter "OAuth0" as the provider label;
 - Add the following scopes in the scope field: "openid", "email", "profile".
 
+{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-2" %}
+
+<br>
 Proceed to the "Mapper" block:
 - Leave the mapper type "BASIC";
 - The tenant name strategy should be "DOMAIN";
-- Specify **%{email}** as "Customer name pattern" (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
+- Specify **%{email}** as the customer name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
 {% if docsPrefix == "pe/" %}
 - Specify "Customer Users" as the user group name pattern to automatically add a new user to the designated customer group upon creation;
 {% endif %} 
-- Click "Add" to confirm and finalize the addition of your new OAuth 2.0 client.
+- Click "Add" to complete the addition of the new OAuth 2.0 client.
 
-One more OAuth client added.
+{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-3" %}
 
-{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-1" %}
+- The OAuth0 client has been successfully added. Click "Add" again to confirm the addition of the domain.
 
-<br>
-Now we need to add the OAuth client to the domain. You can add a new domain or update an existing one. In this example, we will update the existing one. To do this, perform the following steps:
-
-- Navigate to the "Domains" tab, locate and click the domain you added previously;
-- Click the large orange button to enter the domain editing mode;
-- Find the field for adding OAuth clients. Add the "OAuth0" client alongside the existing "OAuth2 authentication with Google" client. Make sure to save the changes to update your domain settings.
-
-We have successfully updated the domain settings. Now it contains both providers used in our example:
-
-{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-2" %}
+{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-4" %}
 
 ### Sign in
 
 Navigate to the login screen. You will find two available login methods: Google and Auth0. Click on the "Login with Auth0" button. This method allows you to quickly and securely log in to the system as a Customer User using your Auth0 credentials.
 
-{% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-3" %}
+{% include images-gallery.html imageCollection="login-with-oauth0-1" %}
 
 {% if docsPrefix == "pe/" %}
 Go to the "Users" page. There you will find the new user is associated with the Customer Users group; the customer name corresponds to their email address.
 
-{% include images-gallery.html imageCollection="login-with-oauth-customer" %}
+{% include images-gallery.html imageCollection="login-with-oauth0-2" %}
 {% endif %}
 
 ## Login with Keycloak
@@ -314,15 +334,20 @@ A client can be considered as an application or service that requests user authe
 - Go to the "Clients" page in the left-hand menu, and click the "Create client" button;
 - Enter "thingsboard" as the client ID. Leave the client type as "OpenID Connect". Click "Next";
 - Turn on "Client authentication" option. Confirm that "Standard flow" is enabled. Click "Next";
-- In the "Login settings" section, add the ThingsBoard default redirect URI to the "Authorized Redirect URIs" section:
+- In the "Login settings" section, add the ThingsBoard redirect URI to the "Authorized Redirect URIs" section using the format:
 
-```text
-http://localhost:8080/login/oauth2/code/
+```
+http(s)://domain:port/login/oauth2/code/
 ```
 {: .copy-code}
 
-  \* Use the default ThingsBoard redirect URI if you use ThingsBoard installed locally. If not, replace "localhost:8080" with your domain name or IP address.
- 
+\* where under the domain, please, specify the current domain of yours and for the port specify the port to have an HTTP access to the ThingsBoard instance of yours.
+For the example reasons, my domain is *my.thingsboard.instance*.
+
+```
+https://my.thingsboard.instance/login/oauth2/code/
+```
+
 - Click "Save".
 
 Client created successfully.
@@ -369,23 +394,25 @@ The password has been successfully.
 
 {% include images-gallery.html imageCollection="create-password" %}
 
-### Configuring Keycloak provider in ThingsBoard
+### Configuring Keycloak as an OAuth 2.0 authentication provider in ThingsBoard
 
-Now let's add a new OAuth client in ThingsBoard by following the steps below:
+To configure OAuth 2.0 authentication in ThingsBoard via Keycloak, follow the steps below:
 
-- Login to your ThingsBoard instance as System Administrator;
+- Login to your ThingsBoard instance;
 - Go to the "OAuth 2.0" page of the "Security" section;
 - Navigate to the "OAuth 2.0 clients" tab, and click "plus";
 - Enter "Keycloak" as the title. 
 - Select the "Custom" from the dropdown menu as the authentication provider;
 - If necessary, specify the allowed platforms, or leave all;
-- Now enter the "Client ID" and "Client secret", using the values retrieved from the [Keycloak console](http://localhost:8081/admin){:target="_blank"}. 
+- Enter the "Client ID" and "Client secret", using the values retrieved from the [Keycloak console](http://localhost:8081/admin){:target="_blank"}. 
 
 Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block:
 - Use [endpoint configuration file](#endpoints) to find the current values for "Access Token URI," "Authorization URI", "JSON Web Key URI", and "User info URI". Fill the corresponding fields with these values;
 - The client authentication method should be set to "POST"; 
 - Enter "Keycloak" as the provider label;
 - Add to the scope field: "email", "openid", and "profile";
+
+{% include images-gallery.html imageCollection="keycloak-add-thingsboard-oauth-client-1" %}
 
 Go to the "Mapper" block:
 - Leave the mapper type "BASIC";
@@ -398,15 +425,15 @@ Go to the "Mapper" block:
 
 A new OAuth 2.0 client has been added.
 
-{% include images-gallery.html imageCollection="keycloak-add-thingsboard-oauth-client" %}
+{% include images-gallery.html imageCollection="keycloak-add-thingsboard-oauth-client-2" %}
 
 <br>
 Now, add a new domain by following these steps:
 
 - Go to the "Domains" tab of the "OAuth 2.0" page, and click the "plus" icon;
-- Enter your domain name or IP address;
+- Enter your domain name or IP address of your ThingsBoard instance;
 - Specify "Keycloak" as the OAuth 2.0 client;
-- Click "Add" to finalize adding the domain.
+- Click "Add" again to confirm the addition of the domain.
 
 A new domain has been added.
 

@@ -330,18 +330,17 @@ However, some integrations, like SigFox or generic HTTP integration are not able
 These integrations, due to the nature of underlying HTTP protocol, are only able to push downlink information synchronously in reply to uplink message request. 
 In this case, the last downlink message originated by rule engine will be stored in the queue until the new uplink message arrives for particular device.
 
-
 ### Debug mode
 
-This feature allows to persis: 
+Debug mode is very useful for verifying the configuration of converters and integrations, and allows to persis:
 
-  - incoming messages from thirdparty system;
-  - metadata values;
-  - the results of data converter;
-  - results of the payload processing. 
-  
-It enables rapid development of converters and configuration of integrations. 
-This feature allows to validate your configuration setup and should be used only for debug purposes, since it dramatically impacts performance.
+- incoming messages from thirdparty system;
+- metadata values;
+- the results of data converter;
+- results of the payload processing. 
+
+However, having it on all the time can significantly increase the disk space used by the database since all the debug data is stored there.
+Starting from version 3.9, ThingsBoard stores all debug events for the first 15 minutes. After that, only failure events are retained. These settings can be combined or completely disabled.
 
 ### Platform Integrations vs IoT Gateway
 
