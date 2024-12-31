@@ -22,12 +22,7 @@ You can сreate an **Uplink converter** in the **Data converters** section or di
 data from the device into the required format for displaying them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
-{% capture difference %}
-**NOTE**
-<br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 Let’s review sample uplink message from Service Bus topic:
 

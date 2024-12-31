@@ -179,6 +179,12 @@
 			<td> Per-user rate limit for WS subscriptions</td>
 		</tr>
 		<tr>
+			<td>server.ws.alarms_per_alarm_status_subscription_cache_size</td>
+			<td>TB_ALARMS_PER_ALARM_STATUS_SUBSCRIPTION_CACHE_SIZE</td>
+			<td>10</td>
+			<td> Maximum number of active originator alarm ids being saved in cache for single alarm status subscription. For example, no more than 10 alarm ids on the alarm widget</td>
+		</tr>
+		<tr>
 			<td>server.rest.server_side_rpc.min_timeout</td>
 			<td>MIN_SERVER_SIDE_RPC_TIMEOUT</td>
 			<td>5000</td>
@@ -505,7 +511,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.8</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.9</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
@@ -531,13 +537,13 @@
 			<td>database.ts.type</td>
 			<td>DATABASE_TS_TYPE</td>
 			<td>sql</td>
-			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
+			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
 		</tr>
 		<tr>
 			<td>database.ts_latest.type</td>
 			<td>DATABASE_TS_LATEST_TYPE</td>
 			<td>sql</td>
-			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
+			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
 		</tr>
 	</tbody>
 </table>
@@ -1365,7 +1371,7 @@
 			<td>actors.rule.chain.debug_mode_rate_limits_per_tenant.configuration</td>
 			<td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
 			<td>50000:3600</td>
-			<td> The value of DEBUG mode rate limit. By default, no more then 50 thousand events per hour</td>
+			<td> The value of DEBUG mode rate limit. By default, no more than 50 thousand events per hour</td>
 		</tr>
 		<tr>
 			<td>actors.rule.node.error_persist_frequency</td>
@@ -1411,6 +1417,21 @@
 			<td> Time in milliseconds for RPC to receive a response after delivery. Used only for SEQUENTIAL_ON_RESPONSE_FROM_DEVICE submit strategy.</td>
 		</tr>
 		<tr>
+			<td>actors.rpc.close_session_on_rpc_delivery_timeout</td>
+			<td>ACTORS_RPC_CLOSE_SESSION_ON_RPC_DELIVERY_TIMEOUT</td>
+			<td>false</td>
+			<td> Close transport session if RPC delivery timed out. If enabled, RPC will be reverted to the queued state.
+ Note:
+ - For MQTT transport:
+   - QoS level 0: This feature does not apply, as no acknowledgment is expected, and therefore no timeout is triggered.
+   - QoS level 1: This feature applies, as an acknowledgment is expected.
+   - QoS level 2: Unsupported.
+ - For CoAP transport:
+   - Confirmable requests: This feature applies, as delivery confirmation is expected.
+   - Non-confirmable requests: This feature does not apply, as no delivery acknowledgment is expected.
+ - For HTTP and SNPM transports: RPC is considered delivered immediately, and there is no logic to await acknowledgment.</td>
+		</tr>
+		<tr>
 			<td>actors.statistics.enabled</td>
 			<td>ACTORS_STATISTICS_ENABLED</td>
 			<td>true</td>
@@ -1427,6 +1448,13 @@
 			<td>ACTORS_STATISTICS_PERSIST_FREQUENCY</td>
 			<td>3600000</td>
 			<td> Actors statistic persistence frequency in milliseconds</td>
+		</tr>
+		<tr>
+			<td>debug.settings.default_duration</td>
+			<td>DEBUG_SETTINGS_DEFAULT_DURATION_MINUTES</td>
+			<td>15</td>
+			<td> Default duration (in minutes) for debug mode. Min value is 1 minute. Tenant profile settings override this one.
+ If value from this setting is invalid, the default value (15 minutes) will be used.</td>
 		</tr>
 	</tbody>
 </table>
@@ -1763,7 +1791,7 @@
 		<tr>
 			<td>cache.specs.relatedEdges.maxSize</td>
 			<td>CACHE_SPECS_RELATED_EDGES_MAX_SIZE</td>
-			<td>10000</td>
+			<td>0</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
@@ -1875,13 +1903,13 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
-			<td>cache.specs.mobileAppSettings.timeToLiveInMinutes</td>
+			<td>cache.specs.qrCodeSettings.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_TTL</td>
 			<td>1440</td>
-			<td> Mobile application cache TTL</td>
+			<td> Qr code settings cache TTL</td>
 		</tr>
 		<tr>
-			<td>cache.specs.mobileAppSettings.maxSize</td>
+			<td>cache.specs.qrCodeSettings.maxSize</td>
 			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
@@ -3574,6 +3602,30 @@
 			<td>60000</td>
 			<td> Interval of transport statistics logging</td>
 		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.enabled</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable gateways dashboard sync with git repository</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.repository_url</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_REPOSITORY_URL</td>
+			<td>https://github.com/thingsboard/gateway-management-extensions-dist.git</td>
+			<td> URL of gateways dashboard repository</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.branch</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_BRANCH</td>
+			<td>main</td>
+			<td> Branch of gateways dashboard repository to work with</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.fetch_frequency</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_FETCH_FREQUENCY</td>
+			<td>24</td>
+			<td> Fetch frequency in hours for gateways dashboard repository</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -3642,6 +3694,38 @@
  - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
  - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
  - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_transmission_unit</td>
+			<td>COAP_DTLS_MAX_TRANSMISSION_UNIT</td>
+			<td>1024</td>
+			<td> Specify the MTU (Maximum Transmission Unit).
+ Should be used if LAN MTU is not used, e.g. if IP tunnels are used or if the client uses a smaller value than the LAN MTU.
+ Default = 1024
+ Minimum value = 64
+ If set to 0 - LAN MTU is used.</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_fragment_length</td>
+			<td>COAP_DTLS_MAX_FRAGMENT_LENGTH</td>
+			<td>1024</td>
+			<td> DTLS maximum fragment length (RFC 6066, Section 4).
+ Default = 1024
+ Possible values: 512, 1024, 2048, 4096.
+ If set to 0, the default maximum fragment size of 2^14 bytes (16,384 bytes) is used.
+ Without this extension, TLS specifies a fixed maximum plaintext fragment length of 2^14 bytes.
+ It may be desirable for constrained clients to negotiate a smaller maximum fragment length due to memory limitations or bandwidth limitations.
+ In order to negotiate smaller maximum fragment lengths,
+ clients MAY include an extension of type "max_fragment_length" in the (extended) client hello.
+ The "extension_data" field of this extension SHALL contain:
+ enum {
+   2^9(1) == 512,
+   2^10(2) == 1024,
+   2^11(3) == 2048,
+   2^12(4) == 4096,
+   (255)
+ } MaxFragmentLength;
+ TLS already requires clients and servers to support fragmentation of handshake messages.</td>
 		</tr>
 		<tr>
 			<td>coap.dtls.credentials.type</td>
@@ -3948,19 +4032,19 @@
 		<tr>
 			<td>edges.scheduler_pool_size</td>
 			<td>EDGES_SCHEDULER_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to check DB for edge events</td>
 		</tr>
 		<tr>
 			<td>edges.send_scheduler_pool_size</td>
 			<td>EDGES_SEND_SCHEDULER_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to send downlink messages to edge over gRPC</td>
 		</tr>
 		<tr>
 			<td>edges.grpc_callback_thread_pool_size</td>
 			<td>EDGES_GRPC_CALLBACK_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to convert edge events from DB into downlink messages and send them for delivery</td>
 		</tr>
 		<tr>
@@ -4096,7 +4180,8 @@
 			<td>queue.type</td>
 			<td>TB_QUEUE_TYPE</td>
 			<td>in-memory</td>
-			<td> in-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+			<td> in-memory or kafka (Apache Kafka). The following queue types are deprecated and will no longer be supported in ThingsBoard 4.0:
+ aws-sqs (AWS SQS), pubsub (PubSub), service-bus (Azure Service Bus), rabbitmq (RabbitMQ)</td>
 		</tr>
 		<tr>
 			<td>queue.prefix</td>
@@ -4303,6 +4388,18 @@
 			<td> Example of specific consumer properties value per topic for VC</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Example of specific consumer properties value per topic for edge event</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENT_MAX_POLL_RECORDS</td>
+			<td>50</td>
+			<td> Example of specific consumer properties value per topic for edge event</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
 			<td></td>
 			<td>max.poll.records</td>
@@ -4391,6 +4488,12 @@
 			<td>TB_QUEUE_KAFKA_EDGE_TOPIC_PROPERTIES</td>
 			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Edge topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edge-event</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENT_TOPIC_PROPERTIES</td>
+			<td>retention.ms:2592000000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Edge event topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>

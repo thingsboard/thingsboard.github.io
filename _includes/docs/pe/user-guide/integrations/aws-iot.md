@@ -139,11 +139,7 @@ them in ThingsBoard. Click on the “plus” and on “Create new converter”. 
 In the function decoder field, specify a script, for it copy the example Uplink converter, or
 use own configuration to parse and transform data.
 
-{% capture noteDebug %}
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode
-can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.
-{% endcapture %}
-{% include templates/info-banner.md title="Note:" content=noteDebug %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 

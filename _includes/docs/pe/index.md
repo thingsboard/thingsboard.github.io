@@ -66,7 +66,7 @@
     </div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}devices-library/">
-            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/guides.svg" alt="Guides icon">
+            <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/devices-library.svg" alt="Guides icon">
             <div class="feature-title">Devices library</div>
             <div class="feature-text">
                 Learn how to connect different devices to {{platformName}}.

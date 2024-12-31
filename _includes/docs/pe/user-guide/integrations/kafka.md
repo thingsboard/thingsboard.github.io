@@ -20,10 +20,7 @@ Before you start setting up the integration, you should already have a prepared 
 
 Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. Click on the **“plus”** and on **“Create new converter”**. To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
 
-{% capture kafka_please_note %}
-**Note:** While debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all debug data is stored there. After debugging is complete, it is highly recommended turning off debug mode.
-{% endcapture %}
-{% include templates/info-banner.md content=kafka_please_note %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 Let’s review sample uplink message from Kafka:
 ```json

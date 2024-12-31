@@ -14,7 +14,7 @@ notitle: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">ThingsBoard-based SCADA solutions provide complete control and real-time analytics, making the management of industrial processes simpler and more efficient.</p>
+                <p class="text">SCADA systems are generally divided into two types: Traditional, which focuses on basic monitoring and control, and High-Performance, emphasizing streamlined interfaces, faster decision-making, and enhanced operational efficiency.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/228be650-8acc-11ef-b31e-8fb75668852d?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
@@ -22,14 +22,86 @@ notitle: "true"
         </div>
         <div class="long">
             <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the Swimming Pool Management System template. This solution demonstrates how SCADA symbols—such as pipes, valves, motors, filters, flow meters, tanks, and leak sensors—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals.</p>
+            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the Swimming Pool Management System template. This solution demonstrates how SCADA symbols—such as valves, motors, filters and tanks—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals. The template is designed to accommodate both Traditional and High-Performance SCADA systems.</p>
         </div>
     </div>
 </section>
 
-<section class="scada-carousel">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'scada' %}
-</section> 
+<section class="scada-overview">
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img class="traditional-background" src="https://img.thingsboard.io/usecases/scada/traditional.png">
+      </div>
+      <div class="img-comp-img img-comp-overlay" style="max-height: 74vh">
+        <img src="https://img.thingsboard.io/usecases/scada/high-performance.png" style="max-height: 74vh">
+      </div>
+    </div>
+    <h1>SCADA overview</h1>
+    <div class="table-lg">
+        <div class="criteria-col">
+            <p>Design approach</p>
+            <p>Color-coded visualization (active)</p>
+            <p>Color-coded visualization (inactive)</p>
+            <p>Alarm indicators (warning)</p>
+            <p>Alarm indicators (critical)</p>
+            <p>Interactivity</p>
+        </div>
+        <div class="compare-col">
+            <p>High-performance</p>
+            <p>Simplified, minimalist approach for focused operation</p>
+            <p>White elements</p>
+            <p>Dark gray elements</p>
+            <p>Yellow triangle, animated</p>
+            <p>Red square, animated</p>
+            <p>Not explicitly interactive</p>
+        </div>
+        <div class="compare-col">
+            <p>Traditional</p>
+            <p>Dynamic, visually engaging and interactive design</p>
+            <p>Green elements</p>
+            <p>Dark gray elements</p>
+            <p>Yellow color, animated</p>
+            <p>Red color, animated</p>
+            <p>Fully interactive components</p>
+        </div>
+    </div>
+    <div class="table-md-sm">
+        <div class="header">
+            <p>High-performance</p>
+            <p>Traditional</p>
+        </div>
+        <p class="title">Design approach</p>
+        <div class="compare-container">
+            <div>Simplified, minimalist approach for focused operation</div>
+            <div>Dynamic, visually engaging and interactive design</div>
+        </div>
+        <p class="title">Color-coded visualization (active)</p>
+        <div class="compare-container">
+            <div>White elements</div>
+            <div>Green elements</div>
+        </div>
+        <p class="title">Color-coded visualization (inactive)</p>
+        <div class="compare-container">
+            <div>Dark gray elements</div>
+            <div>Dark gray elements</div>
+        </div>
+        <p class="title">Alarm indicators (warning)</p>
+        <div class="compare-container">
+            <div>Yellow triangle, animated</div>
+            <div>Yellow color</div>
+        </div>
+        <p class="title">Alarm Indicators (critical)</p>
+        <div class="compare-container">
+            <div>Red square, animated</div>
+            <div>Red color, animated</div>
+        </div>
+        <p class="title">Interactivity</p>
+        <div class="compare-container">
+            <div>Not explicitly interactive</div>
+            <div>Fully interactive components </div>
+        </div>
+    </div>
+</section>
 
 <section class="scada-solution-structure">
     <h1>Solution structure</h1>
@@ -65,47 +137,167 @@ notitle: "true"
 </section>
 
 <section class="scada-key-functions">
-    <h1>Key functions of SCADA systems for fluid management</h1>
-    <div class="scada-key-function-block">
-        <div class="key-function-description">
-            <h2>Pipe monitoring and leakage sensors</h2>
-            <p>Drain pipe symbols help visualize areas where potential liquid leaks might occur. In SCADA systems, this solution can be integrated with sensors to immediately alert operators to any issues.</p>
+    <div class="header-selector">
+        <h1>Key functions of SCADA systems</h1>
+        <div class="scada-mode-selector">
+            <div class="mode active gtm_button" onClick="activateScadaSection(this, 'high-performance', 'scada-key-functions')">
+                <h3>High-performance</h3>
+            </div>
+            <div class="mode gtm_button" onClick="activateScadaSection(this, 'traditional', 'scada-key-functions')">
+                <h3>Traditional</h3>
+            </div>
         </div>
-        <img src="https://img.thingsboard.io/usecases/scada/pipe.svg" alt="Three examples of pipe monitoring and leakage sensors as dashboard symbols">
     </div>
-    <div class="scada-key-function-block">
-        <div class="key-function-description">
-            <h2>Pump monitoring and management</h2>
-            <p>A range of pump symbols (centrifugal, heat, motor pumps) allows for monitoring the performance and efficiency of pump systems. This solution is particularly important for regulating pressure and liquid volumes.</p>
+    <div class="high-performance active">
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Connectors and Flow Direction</h2>
+                <p>These symbols are designed to visualize and organize pipe connections, providing a clear representation of junctions and flow directions.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/connectors.svg" alt="Examples of SCADA high performance connectors symbols">
         </div>
-        <img src="https://img.thingsboard.io/usecases/scada/pump.svg" alt="Three examples of pump monitoring and management dashboard symbols">
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Fluid filtration</h2>
+                <p>Filter symbols provide visualization and control over filtration processes, ensuring the cleanliness and safety of the liquids being used in the system.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/fluid-filtration.svg" alt="Examples of SCADA high performance fluid filters symbols">
+        </div>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Pump monitoring and management</h2>
+                <p>A range of pump symbols (centrifugal, heat, motor pumps) allows for monitoring the performance and efficiency of pump systems. This solution is particularly important for regulating pressure and liquid volumes.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/pump-monitoring-management.svg" alt="Examples of SCADA high performance pump symbols">
+        </div>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Flow regulation</h2>
+                <p>These symbols allow operators to manage fluid flow through pipelines by opening or closing valves remotely. This ensures flexibility in regulating flow rates and isolating system segments during maintenance or emergencies.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/flow-regulation.svg" alt="Examples of SCADA high performance flow regulation symbols">
+        </div>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Tank level monitoring</h2>
+                <p>Tank level meter and reservoir symbols enable operators to monitor liquid levels within the system, preventing both overflow and depletion—critical for water supply and chemical processes.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/tank-level-monitoring.svg" alt="Examples of SCADA high performance tanks symbols">
+        </div>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Scales for Real-Time Monitoring</h2>
+                <p>Scales provide an intuitive way to monitor various parameters in real time, such as temperature, pressure, or flow rate. The scales enable operators to track current values and identify deviations from the desired range, ensuring precise control over system performance.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/scales.svg" alt="Examples of SCADA high performance scale symbols">
+        </div>
     </div>
-    <div class="scada-key-function-block">
-        <div class="key-function-description">
-            <h2>Tank level monitoring</h2>
-            <p>Tank level meter and reservoir symbols enable operators to monitor liquid levels within the system, preventing both overflow and depletion—critical for water supply and chemical processes.</p>
+    <div class="traditional">
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Pipe monitoring and leakage sensors</h2>
+                <p>Drain pipe symbols help visualize areas where potential liquid leaks might occur. In SCADA systems, this solution can be integrated with sensors to immediately alert operators to any issues.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/pipe.svg" alt="Three examples of pipe monitoring and leakage sensors as dashboard symbols">
         </div>
-        <img src="https://img.thingsboard.io/usecases/scada/tank.svg" alt="Three examples of tank level monitoring dashboard symbols">
-    </div>
-    <div class="scada-key-function-block">
-        <div class="key-function-description">
-            <h2>Flow regulation</h2>
-            <p>Flow meter and valve symbols allow precise control of fluid flow through pipelines, which is essential for filtration, cooling, and water supply systems.</p>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Fluid filtration</h2>
+                <p>Filter symbols provide visualization and control over filtration processes, ensuring the cleanliness and safety of the liquids being used in the system.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/fluid.svg" alt="Three examples of fluid filtration dashboard symbols">
         </div>
-        <img src="https://img.thingsboard.io/usecases/scada/flow.svg" alt="Three examples of flow regulation dashboard symbols">
-    </div>
-    <div class="scada-key-function-block">
-        <div class="key-function-description">
-            <h2>Fluid filtration</h2>
-            <p>Filter symbols provide visualization and control over filtration processes, ensuring the cleanliness and safety of the liquids being used in the system.</p>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Pump monitoring and management</h2>
+                <p>A range of pump symbols (centrifugal, heat, motor pumps) allows for monitoring the performance and efficiency of pump systems. This solution is particularly important for regulating pressure and liquid volumes.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/pump.svg" alt="Three examples of pump monitoring and management dashboard symbols">
         </div>
-        <img src="https://img.thingsboard.io/usecases/scada/fluid.svg" alt="Three examples of fluid filtration dashboard symbols">
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Flow regulation</h2>
+                <p>Flow meter and valve symbols allow precise control of fluid flow through pipelines, which is essential for filtration, cooling, and water supply systems.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/flow.svg" alt="Three examples of flow regulation dashboard symbols">
+        </div>
+        <div class="scada-key-function-block">
+            <div class="key-function-description">
+                <h2>Tank level monitoring</h2>
+                <p>Tank level meter and reservoir symbols enable operators to monitor liquid levels within the system, preventing both overflow and depletion—critical for water supply and chemical processes.</p>
+            </div>
+            <img src="https://img.thingsboard.io/usecases/scada/tank.svg" alt="Three examples of tank level monitoring dashboard symbols">
+        </div>
     </div>
 </section>
 
 <section class="dashboard-structure">
-    <h1>Dashboard structure</h1>
-    <div class="dashboard-structure-block">
+    <div class="header-selector" style="margin-bottom: 50px">
+        <h1>Dashboard structure</h1>
+        <div class="scada-mode-selector">
+            <div class="mode active gtm_button" onClick="activateScadaSection(this, 'high-performance', 'dashboard-structure')">
+                <h3>High-performance</h3>
+            </div>
+            <div class="mode gtm_button" onClick="activateScadaSection(this, 'traditional', 'dashboard-structure')">
+                <h3>Traditional</h3>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-structure-block high-performance active">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h2>Swimming pool SCADA system state</h2>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This interactive state allows operators to monitor the pool’s water level, temperature, and equipment operation. In real time, users can heat the pool, drain it, or fill it with water. By interacting with the on-screen widgets for water level, temperature, the filter sensor, and the pH filter, operators can access and control readings directly from a single dashboard.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h2>Water pump state</h2>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This feature enables real-time monitoring of critical parameters like flow rate, temperature, rotation speed, vibration, and power consumption. It also provides information on the pump’s status and last maintenance. An alarm widget is integrated for rapid response to any issues, ensuring that any malfunctions can be quickly addressed and resolved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h2>Heat pump state</h2>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This screen offers a comprehensive view of the heat pump's performance, including indicators like temperature, rotation speed, vibration, refrigerant pressure, and power consumption. Key data, such as inlet and outlet water temperatures, the desired pool water temperature, and the ambient air temperature, are displayed. Based on these inputs, the heat pump will automatically switch on or off. Operators can adjust the pool water temperature directly from the heat pump widget and also view information about the filter’s status and the last maintenance date. An alarm widget ensures that any malfunctions are quickly addressed in real time.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h2>Sand filter state</h2>
+                    </div>
+                    <div class="expansion-content">
+                        <p>The sand filter state provides detailed monitoring of flow rate, pressure, rotation speed, and vibration. It also displays the filter’s current mode, last maintenance date, and next scheduled service. Operators can easily switch filter modes directly from the widget, for example, from filtration to water draining (waste mode) with a simple click on the mode display.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h2>Gateway</h2>
+                    </div>
+                    <div class="expansion-content">
+                        <p>An essential component of this solution is the Gateway, which integrates all devices using an emulator. To simulate the entire swimming pool system, a Modbus emulator is employed, combining 14 individual devices. These devices operate as a unified system, communicating seamlessly via the Modbus protocol. For real-time monitoring of device data received from Modbus servers, the ThingsBoard IoT Gateway dashboard provides a clear view of the status and data from all connected devices, allowing operators to monitor and manage the system effortlessly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-structure-block traditional">
         <div class="menu">
             <div class="expansion-block">
                 <div class="expansion-panel">
@@ -241,7 +433,7 @@ notitle: "true"
         <div class="advantage">
             <div><img src="https://img.thingsboard.io/usecases/scada/security.svg" alt="Security"></div>
             <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-            <p>ThingsBoard protects your data with industry-standard encryption algorithms like RSA and ECDSA. Secure communication is ensured via TLS (TCP) and DTLS (UDP), with added support for SCADA-specific protocols like OPC-UA encryption and authentication. Role-based access control and audit logs further enhance platform security.</p>
+            <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
         </div>
         <div class="advantage">
             <div><img src="https://img.thingsboard.io/usecases/scada/data-visualization.svg" alt="Data visualization"></div>
@@ -283,72 +475,83 @@ notitle: "true"
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        const expansionBlocks = document.querySelectorAll('.expansion-block');
-        const structureBlock = document.querySelector('.dashboard-structure-block');
-        const smallImageBlock = createImageBlock('small');
-        const largeImageBlock = createImageBlock('large');
-
-        expansionBlocks[0].appendChild(smallImageBlock);
-        structureBlock.appendChild(largeImageBlock);
-
-        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
-        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
-
-        let currentExpandedIndex = 0;
-
-        expansionBlocks[0].classList.add('expanded');
-
-        expansionBlocks.forEach((panel, index) => {
-            panel.addEventListener('click', function() {
-                if (index === currentExpandedIndex) {
-                    return; 
-                }
-
-                smallImageElement.innerHTML = getImage(index);
-                this.appendChild(smallImageBlock);
-                largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
-                largeImageElement.innerHTML = getImage(index);
-
-                expansionBlocks.forEach(item => {
-                    item.classList.remove('expanded');
+        function initDashboardStructure(mode) {
+            const hp = mode === '.high-performance';
+            const expansionBlocks = document.querySelectorAll('.dashboard-structure-block' + mode  + ' .expansion-block');
+            const structureBlock = document.querySelector('.dashboard-structure-block' + mode);
+            const smallImageBlock = createImageBlock('small', hp);
+            const largeImageBlock = createImageBlock('large', hp);
+    
+            expansionBlocks[0].appendChild(smallImageBlock);
+            structureBlock.appendChild(largeImageBlock);
+    
+            const largeImageElement = structureBlock.querySelector('.image-block-large > .image-container > .image');
+            const smallImageElement = structureBlock.querySelector('.image-block-small > .image-container > .image');
+    
+            let currentExpandedIndex = 0;
+    
+            expansionBlocks[0].classList.add('expanded');
+    
+            expansionBlocks.forEach((panel, index) => {
+                panel.addEventListener('click', function() {
+                    if (index === currentExpandedIndex) {
+                        return; 
+                    }
+    
+                    smallImageElement.innerHTML = getImage(index, hp);
+                    this.appendChild(smallImageBlock);
+                    largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
+                    largeImageElement.innerHTML = getImage(index, hp);
+    
+                    expansionBlocks.forEach(item => {
+                        item.classList.remove('expanded');
+                    });
+    
+                    this.classList.add('expanded');
+                    currentExpandedIndex = index; 
+                    if (window.screen.width < 600) {
+                        const blockRect = expansionBlocks[index].getBoundingClientRect();
+                        const target = blockRect.top + window.scrollY - 80;
+                        window.scrollTo(0, target);
+                        setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                    }
+                    if (index === 4) {
+                        window.scrollTo(0, window.scrollY +1);
+                    }
                 });
-
-                this.classList.add('expanded');
-                currentExpandedIndex = index; 
-                if (window.screen.width < 600) {
-                    const blockRect = expansionBlocks[index].getBoundingClientRect();
-                    const target = blockRect.top + window.scrollY - 80;
-                    window.scrollTo(0, target);
-                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
-                }
-                if (index === 4) {
-                    window.scrollTo(0, window.scrollY +1);
-                }
             });
-        });
+        }
+
+        initDashboardStructure('.high-performance');
+        initDashboardStructure('.traditional');
 
         window.onscroll = function() {
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
-            const large = document.querySelector('.image-block-large');
+            const large = document.querySelector('.dashboard-structure-block.active .image-block-large');
+            const inactiveLarge = document.querySelector('.dashboard-structure-block:not(.active) .image-block-large');
 
             if (elemCoor.top > -453 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 'px';
-            } else if (expansionBlocks[4].classList.contains('expanded') && elemCoor.top > -523 && elemCoor.top < 0) {
+                inactiveLarge.style.marginTop = Math.abs(elemCoor.top) + 'px';
+            } else if (document.querySelectorAll('.dashboard-structure-block.active'  + ' .expansion-block')[4].classList.contains('expanded') && elemCoor.top > -523 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 'px';
+                inactiveLarge.style.marginTop = Math.abs(elemCoor.top) + 'px';
             }
         };
 
         if (window.screen.width > 960) {
             const fullPage = document.querySelector('#scada-fullpage');
-            largeImageElement.addEventListener('click', function(image) {
-                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
-                fullPage.style.display = 'block';
-                fullPage.style.top = window.scrollY + 'px';
-                document.querySelector('body').style.overflow = 'hidden';
-             });
+            document.querySelectorAll('.dashboard-structure-block .image-block-large > .image-container > .image').forEach(function(elem) {
+                elem.addEventListener('click', function(image) {
+                    fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                    fullPage.style.display = 'block';
+                    fullPage.style.top = window.scrollY + 'px';
+                    document.querySelector('body').style.overflow = 'hidden';
+                 });
+            });
         }
 
-        function createImageBlock(layout) {
+        function createImageBlock(layout, mode) {
             let block = document.createElement('div');
             block.className = `image-block-${layout}`;
             block.innerHTML = `
@@ -356,7 +559,7 @@ notitle: "true"
                 <div class="image-background"></div>
                 <div class="image-background"></div>
                 <div class="image-background"></div>
-                <div class=image>${getImage(0)}</div>
+                <div class=image>${getImage(0, mode)}</div>
             </div>
             <div class="buttons-block">
                 <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/228be650-8acc-11ef-b31e-8fb75668852d?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
@@ -366,7 +569,7 @@ notitle: "true"
             return block;
         }
 
-        function getImage(index) {
+        function getImage(index, hp) {
             const images = [
                 "<img src='https://img.thingsboard.io/usecases/scada/swiming-pool-system-state.svg' alt='Swimming pool SCADA system state dashboard'/>",
                 "<img src='https://img.thingsboard.io/usecases/scada/water-pump-state.svg' alt='Water pump state dashboard'/>",
@@ -374,7 +577,96 @@ notitle: "true"
                 "<img src='https://img.thingsboard.io/usecases/scada/sand-filter-state.svg' alt='Sand filter state dashboard'/>",
                 "<img src='https://img.thingsboard.io/usecases/scada/gateway.svg' alt='Gateway dashboard'/>"
             ];
-            return images[index];
+            const hpImages = [
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-swiming-pool-system-state.svg' alt='Swimming pool SCADA system state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-water-pump-state.svg' alt='Water pump state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-heat-pump-state.svg' alt='Heat pump state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-sand-filter-state.svg' alt='Sand filter state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/gateway.svg' alt='Gateway dashboard'/>"
+            ];
+            return hp ? hpImages[index] : images[index];
         }
+    });
+
+    function activateScadaSection(el, scadaMode, blockClassName) {
+        if (el.classList.contains('active')) return;
+        el.classList.add('active');
+        const performanceMode = scadaMode === 'high-performance';
+        el.previousElementSibling ? el.previousElementSibling.classList.remove('active') : el.nextElementSibling.classList.remove('active');
+        const block = document.getElementsByClassName(blockClassName)[0].querySelector('.' + scadaMode);
+        block.classList.add('active');
+        performanceMode ? block.nextElementSibling.classList.remove('active') : block.previousElementSibling.classList.remove('active');
+
+        if (blockClassName === 'dashboard-structure') {
+            const inactiveExpansionBlocks = document.querySelectorAll('.dashboard-structure-block:not(.active)' + ' .expansion-block');
+            const inactive = document.querySelector('.dashboard-structure-block:not(.active)' + ' .expansion-block' + '.expanded');
+            const expandedElemIndex = [].indexOf.call(inactiveExpansionBlocks, inactive);
+            const activeExpansionBlocks = document.querySelectorAll('.dashboard-structure-block' + '.' + scadaMode + '.active' + ' .expansion-block');
+            activeExpansionBlocks[expandedElemIndex].click();
+        }
+    }
+
+    window.addEventListener('load', function() {
+        window.removeEventListener("load", arguments.callee, false);
+        function compareImages() {
+            const container = document.getElementsByClassName("img-comp-container")[0];
+            const highPerfBlock = document.getElementsByClassName("img-comp-overlay")[0];
+            const trad = document.getElementsByClassName("traditional-background")[0];
+            if (!highPerfBlock) return;
+            let clicked = false;
+            highPerfBlock.style.width = (trad.offsetWidth / 2) + "px";
+            highPerfBlock.firstElementChild.style.width = trad.offsetWidth + "px";
+            highPerfBlock.firstElementChild.style.height = trad.offsetHeight + "px";
+            container.style.height = trad.offsetHeight + "px";
+            const slider = document.createElement("DIV");
+            slider.appendChild(document.createElement("DIV"));
+            slider.setAttribute("class", "img-comp-slider");
+            highPerfBlock.parentElement.insertBefore(slider, highPerfBlock);
+            slider.style.left = (trad.offsetWidth / 2) - (slider.offsetWidth / 2) + "px";
+            slider.style.height = trad.offsetHeight + "px";
+            slider.addEventListener("mousedown", slideReady);
+            window.addEventListener("mouseup", slideFinish);
+            slider.addEventListener("touchstart", slideReady);
+            window.addEventListener("touchend", slideFinish);
+            window.addEventListener('resize', function () {
+                highPerfBlock.firstElementChild.style.width = trad.offsetWidth + 'px';
+                highPerfBlock.style.width = (trad.offsetWidth / 2) + "px";
+                highPerfBlock.firstElementChild.style.height = 'auto';
+                slider.style.left = (trad.offsetWidth / 2) - (slider.offsetWidth / 2) + "px";
+                slider.style.height = trad.offsetHeight + "px";
+                container.style.height = trad.offsetHeight + "px";
+            });
+            function slideReady(e) {
+              e.preventDefault();
+              e.target.style.animation = 'unset';
+              e.target.parentElement.style.animation = 'unset';
+              clicked = true;
+              window.addEventListener("mousemove", slideMove);
+              window.addEventListener("touchmove", slideMove);
+            }
+            function slideFinish() {
+              clicked = false;
+            }
+            function slideMove(e) {
+              let pos;
+              if (!clicked) return false;
+              pos = getCursorPos(e);
+              if (pos < 0) pos = 0;
+              if (pos > trad.offsetWidth) pos = trad.offsetWidth;
+              slide(pos);
+            }
+            function getCursorPos(e) {
+              e = (e.changedTouches) ? e.changedTouches[0] : e;
+              const rect = highPerfBlock.getBoundingClientRect();
+              let position = e.pageX - rect.left;
+              position = position - window.pageXOffset;
+              return position;
+            }
+            function slide(x) {
+              highPerfBlock.style.width = x + "px";
+              slider.style.left = highPerfBlock.offsetWidth - (slider.offsetWidth / 2) + "px";
+            }
+        }
+        compareImages();
     });
 </script>

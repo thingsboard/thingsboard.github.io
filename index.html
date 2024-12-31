@@ -88,19 +88,28 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 						<div class="main2"></div>
 					</div>
 					<div class="block scada">
-						<div class="feature-des"><span class="phrase-heading">SCADA</span>
+						<div class="feature-des">
+							<div class="scada-mode-selector">
+								<div class="mode active gtm_button" onClick="activateScadaSection(this, 'performance')">
+									<h3>High-performance</h3>
+								</div>
+								<div class="mode gtm_button" onClick="activateScadaSection(this, 'traditional')">
+									<h3>Traditional</h3>
+								</div>
+							</div>
+							<span class="phrase-heading scada-title">SCADA High-performance</span>
 							<p>Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements.</p>
-							<a class="read-more-button" href="/docs/user-guide/scada/">Read more about SCADA
+							<a class="read-more-button" href="/use-cases/scada/">Read more about SCADA
 								<i class="fas fa-chevron-right arrow first"></i>
 								<i class="fas fa-chevron-right arrow second"></i>
 								<i class="fas fa-chevron-right arrow third"></i>
 							</a>
 						</div>
 						<div class="scada-svg">
-							<img class="scada-back-scheme" src="https://img.thingsboard.io/scada-background.svg" alt="SCADA background block schema" width="992" height="650" loading="lazy">
+							<img class="scada-scheme high-perf" src="https://img.thingsboard.io/high-perf-scada-background.svg" alt="SCADA background block schema">
+							<img class="scada-scheme trad hidden" src="https://img.thingsboard.io/scada-background.svg" alt="SCADA background block schema">
 							<div class="scada-fade"></div>
 							<div class="scada-background"></div>
-							<img class="scada-front-scheme" src="https://img.thingsboard.io/scada.svg" alt="SCADA block schema" width="992" height="650" loading="lazy">
 						</div>
 					</div>
 				</div>
@@ -498,6 +507,17 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 		var newone = el.clone(true);
 		el.before(newone);
 		el.remove();
+	}
+
+	function activateScadaSection(el, scadaMode) {
+		if (el.classList.contains('active')) return;
+		el.classList.add('active');
+		const performanceMode = scadaMode === 'performance';
+		el.previousElementSibling ? el.previousElementSibling.classList.remove('active') : el.nextElementSibling.classList.remove('active');
+		const schemes = document.getElementsByClassName('scada-scheme');
+		schemes[0].classList.toggle('hidden');
+		schemes[1].classList.toggle('hidden');
+		document.getElementsByClassName('scada-title')[0].innerText = performanceMode ? 'SCADA High-performance' : 'SCADA Traditional';
 	}
 
 </script>

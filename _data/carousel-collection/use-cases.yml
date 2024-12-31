@@ -180,17 +180,6 @@ waste-management:
     src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-6.png"
     alt: "waste monitoring 6"
 
-scada:
-  0:
-    src: "https://img.thingsboard.io/solutions/scada/scada1.png"
-    alt: "Swimming pool SCADA dashboard with opened flow rate chart"
-  1:
-    src: "https://img.thingsboard.io/solutions/scada/scada2.png"
-    alt: "Swimming pool SCADA dashboard on tabled and mobile layouts"
-  2:
-    src: "https://img.thingsboard.io/solutions/scada/scada3.png"
-    alt: "Swimming pool SCADA dashboard"
-
 health-care:
   0:
     src: "https://img.thingsboard.io/solutions/health-care/health-care-1.png"

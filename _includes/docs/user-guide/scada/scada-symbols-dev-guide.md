@@ -254,7 +254,7 @@ The list of behavior parameters is specific to the chosen SCADA symbol and is en
 Value behavior items fetch data from the platform into the [ScadaSymbolContext](#scadasymbolcontext), acting like variables. 
 These variables typically change based on target device attributes or time series data and are used in defining the 'State render function' for your tags.
 
-There are five types of actions to retrieve value:
+There are six types of actions to retrieve value:
 
 - **Do nothing** action type utilizes a constant value defined by the user.
 
@@ -272,9 +272,13 @@ There are five types of actions to retrieve value:
 
 {% include images-gallery.html imageCollection="five-types-of-actions-4" %} 
 
-- **Get dashboard state** action type uses the current dashboard state's name, beneficial in specific scenarios unrelated to the device's state.
+- **Get alarm status** action type subscribes to the alarm state field of the target entity, updating the widget status according to the alarm type.
 
 {% include images-gallery.html imageCollection="five-types-of-actions-5" %}
+
+- **Get dashboard state** action type uses the current dashboard state's name, beneficial in specific scenarios unrelated to the device's state.
+
+{% include images-gallery.html imageCollection="five-types-of-actions-6" %}
 
 #### Action
 
