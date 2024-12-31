@@ -8,6 +8,19 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.12.0 (December 31, 2024)
+
+**Improvements:**
+
+* Prediction model training and validation framework
+* Background tasks for prediction models
+* Add prediction fields support in calculated fields and views
+* Persisting forecasts as telemetry in ThingsBoard
+* Custom translation and locales management
+* Add support of new ThingsBoard widgets (ThingBoard 3.9+)
+* Add support of Two-factor authentication
+* Filter data by Date fields inside views
+
 ## v1.11.2 (November, 2024)
 
 **Improvements:**

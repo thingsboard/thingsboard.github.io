@@ -142,6 +142,11 @@ five-types-of-actions-4:
 five-types-of-actions-5:
     0:
         image: /images/user-guide/scada/symbols-dev-guide/five-types-of-actions-5-pe.png
+        title: 'The "Get alarm status" action type subscribes to the alarm state field of the target entity, updating the widget status according to the alarm type.'
+
+five-types-of-actions-6:
+    0:
+        image: /images/user-guide/scada/symbols-dev-guide/five-types-of-actions-6-pe.png
         title: 'The "Get dashboard state" action type uses the current dashboard state&#39;s name, beneficial in specific scenarios unrelated to the device&#39;s state.'
 
 value-types-1:
