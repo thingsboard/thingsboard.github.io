@@ -1874,6 +1874,98 @@ return parseDouble("4.2"); // Returns 4.2d
 ```
 {: .copy-code}
 
+#### Bitwise Operations
+
+Bitwise operations in ThingsBoard allow manipulation of individual bits within integer, long, and boolean values. These operations support mixed-type operands (Integer, Long, Boolean) without implicit type conversions, and the result type depends on the operation's outcome: either Integer or Long.
+
+**Supported operators:**
+
+```markdown
+- AND `&`: Performs a bit-by-bit comparison, where the result bit is `1` if both bits are `1`.
+- OR `|`: Sets a bit to `1` if at least one of the corresponding bits is `1`.
+- XOR `^` Sets a bit to `1` if the corresponding bits are different.
+- Left shift `<<`: Shifts bits to the left, effectively multiplying the number by `2^n`.
+- Right shift `>>`: Shifts bits to the right, effectively dividing the number by `2^n` (preserving the sign).
+- Unsigned Right shift `>>>`: Shifts bits to the right, filling with zeroes, regardless of the sign.
+```
+
+Supported Data Type Combinations
+
+1. Integer - Integer: Produces an Integer result.
+2. Long - Long: Produces a Long result.
+3. Boolean - Boolean: Produces an Integer result.
+3. Mixed Types (e.g., Integer - Long, Long - Boolean, Boolean - Integer): The operation ensures compatibility between input types, and the result type is determined based on precision or hierarchy:
+
+- If one of the types is Long, the result is Long.
+- If one type is Boolean and the other is Integer, the result is Integer.
+- If both types are Boolean, the result is also Integer.
+
+{% capture difference %}
+**Note**:
+<br>
+eg *Boolean* - (Integer / Long) or (Integer / Long) - *Boolean*:
+- Boolean values are interpreted as 1 (true) or 0 (false) and can interact with integers or longs directly.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+**Examples:**
+
+*Boolean - Boolean*
+
+```java
+var x = true;
+var y = false;
+
+var andResult = x & y; 
+return andResult;       // Returns 0   
+        
+var orResult = x | y;  
+return orResult;        // Returns 1 
+        
+var xorResult = x ^ y;  
+return xorResult;       // Returns 1 
+        
+var leftShift = x << y; 
+return leftShift;       // Returns 1 
+        
+var rightShift = x >> y;
+return rightShift;      // Returns 1 
+        
+var rightUnShift = x >>> y;
+return rightUnShift;     // Returns 1 
+```
+{: .copy-code}
+
+
+*Mixed*
+
+```java
+var x = true;
+var y = false;
+var i = 10;
+var b = -14;
+var l = 9223372036854775807;
+
+var andResult = x & b; 
+return andResult;       // Returns 0   
+        
+var orResult = i | y;  
+return orResult;        // Returns 10 
+        
+var xorResult = i ^ l;  
+return xorResult;       // Returns 9223372036854775797L
+        
+var leftShift = l << i; 
+return leftShift;       // Returns -1024L 
+        
+var rightShift = l >> b;
+return rightShift;      // Returns 8191L 
+        
+var rightUnShift = i >>> x;
+return rightUnShift;     // Returns 5 
+```
+{: .copy-code}
+
 #### base64
 ##### base64ToHex
 
