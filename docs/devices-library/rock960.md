@@ -13,4 +13,5 @@ deviceImageFileName: rock960.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/rock960.md %}

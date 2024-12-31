@@ -4,7 +4,7 @@
 ## Overview
 
 ThingsBoard allows you to provide Single Sign-On functionality for your customers and automatically create tenants, customers, or sub customers using external user management platforms, that supports the OAuth 2.0 protocol.  
-A list of platforms that supports the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Okta](/docs/user-guide/oauth/okta/){:target="_blank"}, [Azure](/docs/user-guide/oauth/azure/){:target="_blank"}, etc.   
+A list of platforms that supports the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Keycloak](#login-with-keycloak), [Okta](/docs/user-guide/oauth/okta/){:target="_blank"}, [Azure](/docs/user-guide/oauth/azure/){:target="_blank"}, etc.   
 
 ## OAuth 2.0 authentication flow
 
@@ -89,14 +89,10 @@ Remove clients that are no longer needed or are obsolete:
 ## Login with Google
 
 In this sample, we will be using authentication via [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"}.
-The user is going to be logged into the Tenant, and the Tenant name is going to be equal to the user's email.
+The user is going to be logged as the Tenant, and the Tenant name is going to be equal to the user's email.
 If the Tenant does not exist in the system, the new Tenant will be created.
 
-As a second step, we are going to add a new external provider for authentication - [Auth0](https://auth0.com/){:target="_blank"}.
-In this case, the User is going to be logged into the Tenant which name is going to be equal to a user email domain name.
-Additionally, for every user, we are going to create a new Customer and the Customer name is going to be equal to a user email. 
-
-To map that external user info from Google and Auth0 platform, we are going to use a built-in [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper). 
+To map this external user information from Google and the OAuth platform, we use the built-in [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper).
 
 If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
 
@@ -105,7 +101,7 @@ If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 
 To use Google OAuth 2.0 authentication platform for Login, you need to set up a project in the [Google API Console](https://console.developers.google.com/){:target="_blank"} to obtain OAuth 2.0 credentials.
 
 Please, follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"} page or follow the steps below to configure the OAuth 2.0 Client.
-After completing the instructions above, you should have a new OAuth Client with credentials consisting of a Client ID and a Client Secret.
+After completing the instructions above, you should have a new OAuth client with credentials consisting of a Client ID and a Client Secret.
 
 - Go to the "Credentials" page in the left menu and select "OAuth client ID" from the "Create credentials" dropdown menu;
 - Enter a OAuth client name, and add the ThingsBoard default redirect URI (if you use ThingsBoard installed locally), which we are going to use in this example, to the "Authorized Redirect URIs" section:
@@ -126,41 +122,54 @@ OAuth client created. You now have credentials consisting of a *Client ID* and a
 To add new OAuth 2.0 client follow the steps below:
 
 - Login to your ThingsBoard instance as System Administrator;
+- Go to the "OAuth 2.0" page of the "Security" section;
 - Navigate to the "Domains" tab, and click "plus" icon;
-- Your domain name and redirect URI template are already specified here. Now we need to add an OAuth 2.0 client. Click "Create" to begin;
-- Enter the title and select "Google" as the provider. If necessary, specify the allowed platforms, or leave all;
-- Now, enter the *Client ID* and *Client secret* from the [Google API Console](https://console.developers.google.com/){:target="_blank"}. Then, expand the "Advanced settings" menu;
-- Let's make the settings for the "General" block. Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery){:target="_blank"} to see the list of up-to-date URLs like "Access Token URI", "Authorization URI", etc. Select "POST" in the "Client authentication method" field. Then check the "Allow user creation" checkbox. Add to the scope field: "email", "openid", and "profile";
+- Your domain name and redirect URI template are already specified here. Now we need to add an OAuth 2.0 client. Click "Create new" to begin;
+- Enter the OAuth 2.0 client title;
+- Select "Google" as the provider;
+- If necessary, specify the allowed platforms, or leave all;
+- Now, enter the "Client ID" and "Client secret" from the [Google API Console](https://console.developers.google.com/){:target="_blank"};
 
-{% if docsPrefix == null %}
-- Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify **%{email}** as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
-{% endif %}
+Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block: 
+- Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery){:target="_blank"} to see the list of up-to-date URLs like "Access Token URI", "Authorization URI", etc.;
+- Select "POST" as the client authentication method;
+- Turn on the "Allow user creation" option;
+- Add to the scope field: "email", "openid", and "profile";
+
+Go to the "Mapper" block:
+- Leave the mapper type "BASIC";
+- Select "CUSTOM" as the tenant name strategy;
+- Specify **%{email}** as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
 {% if docsPrefix == "pe/" %}
-- Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify **%{email}** as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part). Specify "Tenant Administrators" as the user group name pattern to add a new user to the specified tenant group;
+- Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation;
 {% endif %}
+- Click "Add";
+- The OAuth client is added successfully. Click "Add" again to confirm the addition of the domain.
 
-- Click "Add" to confirm adding the OAuth 2 client;
-- OAuth client is added. Click "Add" to confirm adding domain.
+A new domain has been added.
 
 {% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-1" %}
 
-Now, navigate to the Login screen. We will see an additional "Login with Google" option. Once we click it and select one of our Google account, we are going to be logged into ThingsBoard with our Google's email as a Tenant Administrator email.
+### Sign in
+
+Now, navigate to the ThingsBoard login screen. We will see an additional "Login with Google" option. 
+Select one of your Google accounts. You are now logged into ThingsBoard using your Google email as a Tenant Administrator.
 
 {% include images-gallery.html imageCollection="login-with-google-1" %}
 
 {% if docsPrefix == "pe/" %}
-If you log in as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
+Go to the "Users" page. There you will find the new user is associated with the Tenant Administrators group; the tenant name corresponds to their email address.
 
 {% include images-gallery.html imageCollection="login-with-google-2" %}
 {% endif %}
 
 ## Login with Auth0
 
-In this guide we will configure the **OAuth** with the [OAuth0](https://auth0.auth0.com/){:target="_blank"} for the authentication.
-In this case User is going to be logged into the Tenant which name is going to be equal to user’s email domain name.  
-Additionally, for every user we are going to create a new Customer and Customer name is going to be user’s email
+In this sample, we will configure **OAuth** using an external provider for authentication - [Auth0](https://auth0.com/){:target="_blank"}.
+The User is going to be logged as the Tenant which name is going to be equal to a user email domain name.  
+Additionally, for every user, we are going to create a new Customer and the Customer name is going to be equal to a user email.
 
-To map those external user infos from Auth0 platform we are going to use built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper).
+To map this external user information from Auth0 and the OAuth platform, we use the built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper).
 
 If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper)  so that you are able to add an implementation that fits under your specific needs.
 
@@ -171,7 +180,7 @@ This time we are going to create customers for our users inside a single domain 
 
 To apply the configurations properly, we first need to obtain OAuth 2.0 credentials: 
 
-- First, we go to the [OAuth0 Management Console](https://manage.auth0.com/){:target="_blank"}. Open the "Applications" page, and click "+ Create Application" button;
+- First, we go to the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"}. Open the "Applications" page, and click "+ Create Application" button;
 - Name your application "ThingBoard", and choose the application type - "Regular Web Applications";
 - Afters, you need to choose the technology being used. Please, choose the "Java Spring Boot" technology;
 - Once your application is created, you are redirected to the application details page. Navigate to the "Settings" tab to find the *Client ID* and *Client Secret*;
@@ -180,8 +189,8 @@ To apply the configurations properly, we first need to obtain OAuth 2.0 credenti
 ```
 http://domain:port/login/oauth2/code/
 ```
- 
-\* where under the domain, please, specify the current domain of yours and for the port please specify the port to have an HTTP access to the ThingsBoard instance of yours.
+
+  \* where under the domain, please, specify the current domain of yours and for the port please specify the port to have an HTTP access to the ThingsBoard instance of yours.
 For the example reasons, my domain is the *localhost*, and the port is being the default ThingsBoard installation port *8080*.
 
 ```
@@ -204,19 +213,26 @@ Please note that it is not necessary to update the Application login URI.
 Now let's add Auth0 as an OAuth 2.0 client of ThingsBoard:
 
 - Access your ThingsBoard instance using your System Administrator credentials;
-- Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;
+- Go to the "OAuth 2.0" page of the "Security" section;
+- Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon;
 - Enter a descriptive title for the client, and select "Custom" as the provider from the dropdown;
 - If necessary, specify the allowed platforms, or leave all;
-- Now enter the *Client ID* and *Client secret* obtained from the [OAuth0 Management Console](https://manage.auth0.com/){:target="_blank"};
-- In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";
-{% if docsPrefix == null %}
-- Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify **%{email}** as "Customer name pattern" (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
-{% endif %}
-{% if docsPrefix == "pe/" %}
-- Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify **%{email}** as "Customer name pattern" (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part). Specify "Customer Users" as the user group name pattern to add a new user to the specified customer group;
-{% endif %} 
+- Now enter the "Client ID" and "Client secret" obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"}.
 
-- Click Add to confirm and finalize the addition of your new OAuth 2.0 client.
+In the "General" block of the "Advanced settings" section:
+- Fill in all the necessary URLs using the values obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"};
+- Select "POST" as the client authentication method;
+- Enter "Auth0" as the provider label;
+- Add the following scopes in the scope field: "openid", "email", "profile".
+
+Proceed to the "Mapper" block:
+- Leave the mapper type "BASIC";
+- The tenant name strategy should be "DOMAIN";
+- Specify **%{email}** as "Customer name pattern" (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
+{% if docsPrefix == "pe/" %}
+- Specify "Customer Users" as the user group name pattern to automatically add a new user to the designated customer group upon creation;
+{% endif %} 
+- Click "Add" to confirm and finalize the addition of your new OAuth 2.0 client.
 
 One more OAuth client added.
 
@@ -233,10 +249,180 @@ We have successfully updated the domain settings. Now it contains both providers
 
 {% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-2" %}
 
-<br>
+### Sign in
+
 Navigate to the login screen. You will find two available login methods: Google and Auth0. Click on the "Login with Auth0" button. This method allows you to quickly and securely log in to the system as a Customer User using your Auth0 credentials.
 
 {% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-3" %}
+
+{% if docsPrefix == "pe/" %}
+Go to the "Users" page. There you will find the new user is associated with the Customer Users group; the customer name corresponds to their email address.
+
+{% include images-gallery.html imageCollection="login-with-oauth-customer" %}
+{% endif %}
+
+## Login with Keycloak
+
+In this sample, we will be using authentication via [Keycloak](https://www.keycloak.org/){:target="_blank"}.
+The user is going to be logged as the Tenant, and the Tenant name is going to be equal to the user's email.
+If the Tenant does not exist in the system, the new Tenant will be created.
+
+To map this external user information from Keycloak and the OAuth platform, we use the built-in [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper).
+
+If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
+
+### Preparations
+
+To use Keycloak authentication platform for login, you need to set up a project in the [Keycloak](https://www.keycloak.org/){:target="_blank"} to obtain OAuth 2.0 credentials.
+For this, follow the [official instructions](https://www.keycloak.org/guides){:target="_blank"} or follow the steps below.
+By the end, you should have a new Keycloak client with credentials consisting of a Client ID and a Client Secret. Let's start.
+
+**Start Keycloak**
+
+Get started with Keycloak using your [preferred method](https://www.keycloak.org/guides){:target="_blank"}.
+In this example, we will run a test authentication and access management server Keycloak on Docker.
+
+- Make sure you have [Docker](https://docs.docker.com/compose/install/){:target="_blank"} installed;
+- Run the command below to start Keycloak on local the port 8081 and create an initial admin user with the username **admin** and password **admin**:
+
+```text
+docker run -p 8081:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.0.5 start-dev
+```
+{: .copy-code}
+
+{% include images-gallery.html imageCollection="terminal-start-keycloak" %}
+
+**Log in to the admin console**
+
+- Log in to the [Keycloak Admin Console](http://localhost:8081/admin){:target="_blank"} using "admin" as username and password;
+
+{% include images-gallery.html imageCollection="log-in-to-admin-console" %}
+
+**Create a realm**
+
+- Click "Keycloak" next to the master realm, then click "Create realm" button;
+- Enter "ThingsBoard" in the realm name field, and click "Create" button.
+
+The new realm has been created.
+
+{% include images-gallery.html imageCollection="create-new-realm" %}
+
+**Create new client**
+
+A client can be considered as an application or service that requests user authentication.
+
+- Go to the "Clients" page in the left-hand menu, and click the "Create client" button;
+- Enter "thingsboard" as the client ID. Leave the client type as "OpenID Connect". Click "Next";
+- Turn on "Client authentication" option. Confirm that "Standard flow" is enabled. Click "Next";
+- In the "Login settings" section, add the ThingsBoard default redirect URI to the "Authorized Redirect URIs" section:
+
+```text
+http://localhost:8080/login/oauth2/code/
+```
+{: .copy-code}
+
+  \* Use the default ThingsBoard redirect URI if you use ThingsBoard installed locally. If not, replace "localhost:8080" with your domain name or IP address.
+ 
+- Click "Save".
+
+Client created successfully.
+
+{% include images-gallery.html imageCollection="create-client" %}
+
+<br>
+You now have credentials consisting of a Client ID and a Client secret. You can find the Client ID on the "Settings" tab. The Client Secret is located on the "Credentials" tab.
+
+{% include images-gallery.html imageCollection="client-id-and-secret" %}
+
+#### Endpoints
+
+As a fully-compliant OpenID Connect Provider implementation, Keycloak exposes a set of endpoints that applications and services can use to authenticate and authorize their users.
+
+Go to the "Realm settings" page. Scroll down and locate the link to "OpenID Endpoint Configuration", then click on it.
+A new window with OpenID Endpoint Configuration will open. Check the "Pretty-print" option to make the data view more user-friendly.
+Here you found "Access token URI," "Authorization URI," "JSON Web Key URI," and "User info URI," which are necessary for configuring the OAuth 2.0 client in ThingsBoard.
+You can find a description of the available endpoints [here](https://www.keycloak.org/securing-apps/oidc-layers){:target="_blank"}.
+
+{% include images-gallery.html imageCollection="endpoint-configuration" %}
+
+### Create a user
+
+Now add the user. Only the added users will be able to authenticate via Keycloak.
+Use these steps to create a user:
+
+- Go to the "Users" page in the left-hand menu;
+- Click "Create new user";
+- Enter the username and email address in the form. First name and last name are optional;
+- Click "Create".
+
+The user has been created.
+
+{% include images-gallery.html imageCollection="create-user" %}
+
+Set a password for this user:
+
+- Navigate to the "Credentials" tab. Click "Set password". 
+- Fill in the "Set password" form with a password. Toggle "Temporary" to "Off" so that the user does not need to update this password at the first login. 
+- Click "Save password" to confirm the set password.
+
+The password has been successfully.
+
+{% include images-gallery.html imageCollection="create-password" %}
+
+### Configuring Keycloak provider in ThingsBoard
+
+Now let's add a new OAuth client in ThingsBoard by following the steps below:
+
+- Login to your ThingsBoard instance as System Administrator;
+- Go to the "OAuth 2.0" page of the "Security" section;
+- Navigate to the "OAuth 2.0 clients" tab, and click "plus";
+- Enter "Keycloak" as the title. 
+- Select the "Custom" from the dropdown menu as the authentication provider;
+- If necessary, specify the allowed platforms, or leave all;
+- Now enter the "Client ID" and "Client secret", using the values retrieved from the [Keycloak console](http://localhost:8081/admin){:target="_blank"}. 
+
+Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block:
+- Use [endpoint configuration file](#endpoints) to find the current values for "Access Token URI," "Authorization URI", "JSON Web Key URI", and "User info URI". Fill the corresponding fields with these values;
+- The client authentication method should be set to "POST"; 
+- Enter "Keycloak" as the provider label;
+- Add to the scope field: "email", "openid", and "profile";
+
+Go to the "Mapper" block:
+- Leave the mapper type "BASIC";
+- Select "CUSTOM" as the tenant name strategy;
+- Specify **%{email}** as tenant name pattern (more details about these properties are described below in the "[Basic mapper](#basic-mapper)" part);
+{% if docsPrefix == "pe/" %}
+- Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation;
+{% endif %}
+- Click "Add" to confirm adding the OAuth 2 client.
+
+A new OAuth 2.0 client has been added.
+
+{% include images-gallery.html imageCollection="keycloak-add-thingsboard-oauth-client" %}
+
+<br>
+Now, add a new domain by following these steps:
+
+- Go to the "Domains" tab of the "OAuth 2.0" page, and click the "plus" icon;
+- Enter your domain name or IP address;
+- Specify "Keycloak" as the OAuth 2.0 client;
+- Click "Add" to finalize adding the domain.
+
+A new domain has been added.
+
+{% include images-gallery.html imageCollection="keycloak-add-domain" %}
+
+### Sign in
+
+Go to the ThingsBoard login screen. You will see an additional option, "Login with Keycloak". Click this button. A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In". You are now logged into ThingsBoard using Keycloak authorization credentials.
+
+{% include images-gallery.html imageCollection="login-with-keycloak-1" %}
+
+{% if docsPrefix == "pe/" %}
+Go to the "Users" page. There you will find the new user is associated with the Tenant Administrators group; the tenant name corresponds to their email address.
+
+{% include images-gallery.html imageCollection="login-with-keycloak-2" %}
+{% endif %}
 
 ## Mapping of the external user into ThingsBoard internal user structure
 

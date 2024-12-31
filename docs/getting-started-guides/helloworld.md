@@ -293,6 +293,8 @@ mosquitto-windows:
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
+
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
 
 - Connect devices to ThingsBoard;
@@ -381,7 +383,7 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart.
 
-Also, you can open the timewindow and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
+Also, you can open the time window and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
 
 {% include images-gallery.html imageCollection="step33_2" %}
 

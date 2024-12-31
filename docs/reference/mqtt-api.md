@@ -38,4 +38,5 @@ client-side-rpc:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/mqtt-api.md %}

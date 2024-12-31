@@ -1,0 +1,12 @@
+- title: North America
+  description: N. Virginia
+  tag: paas
+  server: us
+  path: /docs/paas/
+  docsPrefix: /docs/paas/
+- title: Europe
+  description: Frankfurt
+  tag: paas-eu
+  server: eu
+  path: /docs/paas/eu/
+  docsPrefix: /docs/paas/eu/

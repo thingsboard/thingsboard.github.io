@@ -136,4 +136,5 @@ object-attributes:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/lwm2m-api.md %}

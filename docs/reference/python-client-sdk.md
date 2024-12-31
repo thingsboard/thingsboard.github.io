@@ -7,4 +7,5 @@ description: Software development kit for client-side integration of your Python
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/python-client-sdk.md %}

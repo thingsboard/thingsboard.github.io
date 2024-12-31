@@ -9,6 +9,6 @@ return typeof msg.temperature === 'undefined'
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-java-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-java-pe.png)
 {% endif %}

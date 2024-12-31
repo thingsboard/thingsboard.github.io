@@ -25,7 +25,7 @@ description:
           <div>
             <img src="/images/paas/advanced-features.svg" alt="Advanced features" width="96" height="104">
             <h2>Advanced features</h2>
-            <p>Platform supports all <a href="/products/thingsboard-pe/">Professional Edition</a> features and advanced <a href="/products/paas/domains/">domain management</a>.</p>
+            <p>Platform supports all <a href="/products/thingsboard-pe/">Professional Edition</a> features and advanced <a href="/docs/paas/domains/">domain management</a>.</p>
           </div>
         </div>
         <div class="col-lg-6">
@@ -155,7 +155,7 @@ description:
           <td><i class="fa fa-check"></i></td>
         </tr>
         <tr>
-          <th><a href="/products/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
+          <th><a href="/docs/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
           <td><i class="fa fa-times disabled"></i></td>
           <td><i class="fa fa-times disabled"></i></td>
           <td><i class="fa fa-check"></i></td>

@@ -1,0 +1,573 @@
+Leadership:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/leadership/andrii-shvaika.webp"
+      alt: "Andrii Shvaika"
+      title: "Andrii Shvaika"
+      description: "CEO, Co-founder"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/leadership/igor-kulikov.webp"
+      alt: "Igor Kulikov"
+      title: "Igor Kulikov"
+      description: "CTO, Co-founder"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/leadership/vitaliy-paromskiy.webp"
+      alt: "Vitaliy Paromskiy"
+      title: "Vitaliy Paromskiy"
+      description: "Chief solutions officer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/leadership/volodymyr-babak.webp"
+      alt: "Volodymyr Babak"
+      title: "Volodymyr Babak"
+      description: "VP EDGE"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/leadership/alex-doan.webp"
+      alt: "Alex Doan"
+      title: "Alex Doan"
+      description: "VP Sales & Marketing"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/leadership/artur-ishkhanishvili.webp"
+      alt: "Artur Ishkhanishvili"
+      title: "Artur Ishkhanishvili"
+      description: "VP Business Development"
+    6:
+      src: "/images/company-images/thingsboard-team-photos/leadership/yevheniia-havrysh.webp"
+      alt: "Yevheniia Havrysh"
+      title: "Yevheniia Havrysh"
+      description: "VP Growth"
+    7:
+      src: "/images/company-images/thingsboard-team-photos/leadership/oksana-kovalska.webp"
+      alt: "Oksana Kovalska"
+      title: "Oksana Kovalska"
+      description: "HR Director"
+Product:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/product-team/serhii-matviienko.webp"
+      alt: "Serhii Matviienko"
+      title: "Serhii Matviienko"
+      description: "Site Reliability Engineer"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/leadership/yevheniia-havrysh.webp"
+      alt: "Yevheniia Havrysh"
+      title: "Yevheniia Havrysh"
+      description: "VP Growth"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/product-team/viacheslav-klimov.webp"
+      alt: "Viacheslav Klimov"
+      title: "Viacheslav Klimov"
+      description: "Java Team Lead"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/product-team/vlad-prykhodko.webp"
+      alt: "Vlad Prykhodko"
+      title: "Vlad Prykhodko"
+      description: "Frontend Team Lead"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/product-team/iryna-uzhvii.webp"
+      alt: "Iryna Uzhvij"
+      title: "Iryna Uzhvij"
+      description: "QA Team Lead"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/product-team/yevhen-bondarenko.webp"
+      alt: "Yevhen Bondarenko"
+      title: "Yevhen Bondarenko"
+      description: "Java Engineer"
+    6:
+      src: "/images/company-images/thingsboard-team-photos/product-team/dmytro-shvaika.webp"
+      alt: "Dmytro Shvaika"
+      title: "Dmytro Shvaika"
+      description: "Java Engineer"
+    7:
+      src: "/images/company-images/thingsboard-team-photos/product-team/daria-shevchenko.webp"
+      alt: "Daria Shevchenko"
+      title: "Daria Shevchenko"
+      description: "Java Engineer"
+    8:
+      src: "/images/company-images/thingsboard-team-photos/product-team/dmytro-skarzhynets.webp"
+      alt: "Dmytro Skarzhynets"
+      title: "Dmytro Skarzhynets"
+      description: "Java Engineer"
+    9:
+      src: "/images/company-images/thingsboard-team-photos/product-team/artem-dzhereleiko.webp"
+      alt: "Artem Dzhereleiko"
+      title: "Artem Dzhereleiko"
+      description: "Frontend Engineer"
+    10:
+      src: "/images/company-images/thingsboard-team-photos/product-team/ruslan-vasylkiv.webp"
+      alt: "Ruslan Vasylkiv"
+      title: "Ruslan Vasylkiv"
+      description: "Frontend Engineer"
+    11:
+      src: "/images/company-images/thingsboard-team-photos/product-team/max-petrov.webp"
+      alt: "Max Petrov"
+      title: "Max Petrov"
+      description: "Frontend Engineer"
+    12:
+      src: "/images/company-images/thingsboard-team-photos/product-team/sergii-tarnavskiy.webp"
+      alt: "Sergii Tarnavskiy"
+      title: "Sergii Tarnavskiy"
+      description: "Frontend Engineer"
+    13:
+      src: "/images/company-images/thingsboard-team-photos/product-team/kateryna-chantsova.webp"
+      alt: "Kateryna Chantsova"
+      title: "Kateryna Chantsova"
+      description: "Frontend Engineer"
+    14:
+      src: "/images/company-images/thingsboard-team-photos/product-team/yevhen-kalytka.webp"
+      alt: "Yevhen Kalytka"
+      title: "Yevhen Kalytka"
+      description: "Frontend Engineer"
+    15:
+      src: "/images/company-images/thingsboard-team-photos/product-team/oleg-khalkov.webp"
+      alt: "Oleg Khalkov"
+      title: "Oleg Khalkov"
+      description: "QA Engineer"
+    16:
+      src: "/images/company-images/thingsboard-team-photos/product-team/maryna-shulzhenko.webp"
+      alt: "Maryna Shulzhenko"
+      title: "Maryna Shulzhenko"
+      description: "QA Engineer"
+    17:
+      src: "/images/company-images/thingsboard-team-photos/product-team/glib-petrukh.webp"
+      alt: "Glib Petrukh"
+      title: "Glib Petrukh"
+      description: "QA Engineer"
+    18:
+      src: "/images/company-images/thingsboard-team-photos/product-team/valeriya-zolotariova.webp"
+      alt: "Valeriya Zolotariova"
+      title: "Valeriya Zolotariova"
+      description: "Manual QA Engineer (Mobile)"
+    19:
+      src: "/images/company-images/thingsboard-team-photos/product-team/yevhen-beshkarov.webp"
+      alt: "Yevhen Beshkarov"
+      title: "Yevhen Beshkarov"
+      description: "Flutter Engineer"
+    20:
+      src: "/images/company-images/thingsboard-team-photos/product-team/dmytro-zolotarenko.webp"
+      alt: "Dmytro Zolotarenko"
+      title: "Dmytro Zolotarenko"
+      description: "Frontend Engineer"
+    21:
+      src: "/images/company-images/thingsboard-team-photos/product-team/nickolay-kulikov.webp"
+      alt: "Nickolay Kulikov"
+      title: "Nickolay Kulikov"
+      description: "Java Engineer"
+    22:
+      src: "/images/company-images/thingsboard-team-photos/product-team/iryna-matveieva.webp"
+      alt: "Iryna Matveieva"
+      title: "Iryna Matveieva"
+      description: "Java Engineer"
+    23:
+      src: "/images/company-images/thingsboard-team-photos/product-team/artem-barysh.webp"
+      alt: "Artem Barysh"
+      title: "Artem Barysh"
+      description: "Java Engineer"
+    24:
+      src: "/images/company-images/thingsboard-team-photos/product-team/serhii-titenko.webp"
+      alt: "Serhii Titenko"
+      title: "Serhii Titenko"
+      description: "Technical Writer"
+    25:
+      src: "/images/company-images/thingsboard-team-photos/product-team/mariia-naida.webp"
+      alt: "Mariia Naida"
+      title: "Mariia Naida"
+      description: "Educational Course Developer"
+    26:
+      src: "/images/company-images/thingsboard-team-photos/product-team/yana-semeniak.webp"
+      alt: "Yana Semeniak"
+      title: "Yana Semeniak"
+      description: "UI/UX Designer"
+    27:
+      src: "/images/company-images/thingsboard-team-photos/product-team/maryna-zakharchenko.webp"
+      alt: "Maryna Zakharchenko"
+      title: "Maryna Zakharchenko"
+      description: "UI/UX Designer"
+    28:
+      src: "/images/company-images/thingsboard-team-photos/product-team/oleksii-zolotukhin.webp"
+      alt: "Oleksii  Zolotukhin"
+      title: "Oleksii  Zolotukhin"
+      description: "UI/UX Designer"
+Solutions:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/leadership/vitaliy-paromskiy.webp"
+      alt: "Vitaliy Paromskiy"
+      title: "Vitaliy Paromskiy"
+      description: "Chief solutions officer"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/leadership/artur-ishkhanishvili.webp"
+      alt: "Artur Ishkhanishvili"
+      title: "Artur Ishkhanishvili"
+      description: "VP Business Development"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/nizar-ali.webp"
+      alt: "Nizar Ali"
+      title: "Nizar Ali"
+      description: "Unit Lead"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-zaiko.webp"
+      alt: "Andrii Zaiko"
+      title: "Andrii Zaiko"
+      description: "Project Manager"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/ganna-olefirenko.webp"
+      alt: "Ganna Olefirenko"
+      title: "Ganna Olefirenko"
+      description: "Project Manager"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/yuliia-sharabar.webp"
+      alt: "Yuliia Sharabar"
+      title: "Yuliia Sharabar"
+      description: "Project Manager"
+  1:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/serhii-skoryi.webp"
+      alt: "Serhii Skoryi"
+      title: "Serhii Skoryi"
+      description: "Java Engineer"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/roman-bondarenko.webp"
+      alt: "Roman Bondarenko"
+      title: "Roman Bondarenko"
+      description: "Java Engineer"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-ivanov.webp"
+      alt: "Andrii Ivanov"
+      title: "Andrii Ivanov"
+      description: "Java Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/olexandr-mykolaichuk.webp"
+      alt: "Olexandr Mykolaichuk"
+      title: "Olexandr Mykolaichuk"
+      description: "Java Engineer"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Ivan Bondarenko"
+      title: "Ivan Bondarenko"
+      description: "Java Engineer"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-tkachenko.webp"
+      alt: "Andrii Tkachenko"
+      title: "Andrii Tkachenko"
+      description: "Java Engineer"
+    6:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/artemii-molyboha.webp"
+      alt: "Artemii Molyboha"
+      title: "Artemii Molyboha"
+      description: "Java Engineer"
+    7:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/vlad-myrhorodskyi.webp"
+      alt: "Vlad Myrhorodskyi"
+      title: "Vlad Myrhorodskyi"
+      description: "Java Engineer"
+    8:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/nikita-mazurenko.webp"
+      alt: "Nikita Mazurenko"
+      title: "Nikita Mazurenko"
+      description: "Java Engineer"
+    9:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/vladyslav-tetorko.webp"
+      alt: "Vladyslav Tetorko"
+      title: "Vladyslav Tetorko"
+      description: "Java Engineer"
+    10:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/oleksandr-rotan.webp"
+      alt: "Oleksandr Rotan"
+      title: "Oleksandr Rotan"
+      description: "Java Engineer"
+    11:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/vitalii-kukoba.webp"
+      alt: "Vitalii Kukoba"
+      title: "Vitalii Kukoba"
+      description: "Java Engineer"
+    12:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-tikholoz.webp"
+      alt: "Andrii Tikholoz"
+      title: "Andrii Tikholoz"
+      description: "Java Engineer"
+    13:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-perun.webp"
+      alt: "Andrii Perun"
+      title: "Andrii Perun"
+      description: "Java Engineer"
+  2:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/valeriia-koriavikova.webp"
+      alt: "Valeriia Koriavikova"
+      title: "Valeriia Koriavikova"
+      description: "Frontend Engineer"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/dmytro-khylko.webp"
+      alt: "Dmytro Khylko"
+      title: "Dmytro Khylko"
+      description: "Frontend Engineer"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/dmytro-pinkevych.webp"
+      alt: "Dmytro Pinkevych"
+      title: "Dmytro Pinkevych"
+      description: "Frontend Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/oleksandr-mykytenko.webp"
+      alt: "Oleksandr Mykytenko"
+      title: "Oleksandr Mykytenko"
+      description: "Frontend Engineer"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/oleh-kolesnyk.webp"
+      alt: "Oleh Kolesnyk"
+      title: "Oleh Kolesnyk"
+      description: "Frontend Engineer"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/tetiana-yankiv.webp"
+      alt: "Tetiana Yankiv"
+      title: "Tetiana Yankiv"
+      description: "Frontend Engineer"
+    6:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/vlad-symonenko.webp"
+      alt: "Vlad Symonenko"
+      title: "Vlad Symonenko"
+      description: "UI/UX Designer"
+    7:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/eldar-nasirov.webp"
+      alt: "Eldar Nasirov"
+      title: "Eldar Nasirov"
+      description: "QA Engineer"
+    8:
+      src: "/images/company-images/thingsboard-team-photos/solutions-team/kateryna-zhezheria.webp"
+      alt: "Kateryna Zhezheria"
+      title: "Kateryna Zhezheria"
+      description: "QA Engineer"
+Support:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/support-team/artem-murenko.webp"
+      alt: "Artem Murenko"
+      title: "Artem Murenko"
+      description: "Support Team Lead"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/support-team/anna-shaforost.webp"
+      alt: "Anna Shaforost"
+      title: "Anna Shaforost"
+      description: "Cloud Solutions Engineer"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/support-team/mykhailo-bondar.webp"
+      alt: "Mykhailo Bondar"
+      title: "Mykhailo Bondar"
+      description: "Cloud Solutions Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/support-team/andrii-ponomariov.webp"
+      alt: "Andrii Ponomariov"
+      title: "Andrii Ponomariov"
+      description: "Cloud Solutions Engineer"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/support-team/sofiia-sakharova.webp"
+      alt: "Sofiia Sakharova"
+      title: "Sofiia Sakharova"
+      description: "Technical Support Engineer"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/support-team/eugen-palchenko.webp"
+      alt: "Eugen Palchenko"
+      title: "Eugen Palchenko"
+      description: "Technical Support Engineer"
+    6:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Mykhailo Kornieiev"
+      title: "Mykhailo Kornieiev"
+      description: "Technical Support Engineer"
+    7:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Denys Sumin"
+      title: "Denys Sumin"
+      description: "Technical Support Engineer"
+    8:
+      src: "/images/company-images/thingsboard-team-photos/support-team/oleksii-kuripko.webp"
+      alt: "Oleksii Kuripko"
+      title: "Oleksii Kuripko"
+      description: "Technical Support Engineer"
+    9:
+      src: "/images/company-images/thingsboard-team-photos/support-team/oleksii-mahurin.webp"
+      alt: "Oleksii Mahurin"
+      title: "Oleksii Mahurin"
+      description: "Technical Support Engineer"
+  1:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/support-team/daniela-dodonova.webp"
+      alt: "Daniela Dodonova"
+      title: "Daniela Dodonova"
+      description: "Account manager"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/support-team/pavlo-kachurko.webp"
+      alt: "Pavlo Kachurko"
+      title: "Pavlo Kachurko"
+      description: "Technical Support Engineer"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Yaroslav Chynkyn"
+      title: "Yaroslav Chynkyn"
+      description: "Technical Support Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Dmytro Shyshka"
+      title: "Dmytro Shyshka"
+      description: "Technical Support Engineer"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/support-team/illia-tsybulenko-sihov.webp"
+      alt: "Illia Tsybulenko-Sihov"
+      title: "Illia Tsybulenko-Sihov"
+      description: "Technical Support Engineer"
+Gateway:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/gateway/illia-barkov.webp"
+      alt: "Illia Barkov"
+      title: "Illia Barkov"
+      description: "Product Owner"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/gateway/vitalii-bidochka.webp"
+      alt: "Vitalii Bidochka"
+      title: "Vitalii Bidochka"
+      description: "Python Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/gateway/tymur-chubarov.webp"
+      alt: "Tymur Chubarov"
+      title: "Tymur Chubarov"
+      description: "Python Engineer"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/gateway/vadym-yakymuk.webp"
+      alt: "Vadym Yakymuk"
+      title: "Vadym Yakymuk"
+      description: "QA Engineer"
+Trendz:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/leadership/vitaliy-paromskiy.webp"
+      alt: "Vitaliy Paromskiy"
+      title: "Vitaliy Paromskiy"
+      description: "Chief solutions officer"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/trendz/iryna-kheroim.webp"
+      alt: "Iryna Kheroim"
+      title: "Iryna Kheroim"
+      description: "Project Manager"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/trendz/anatolii-davydko.webp"
+      alt: "Anatolii Davydko"
+      title: "Anatolii Davydko"
+      description: "Java Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/trendz/yuliia-klochai.webp"
+      alt: "Yuliia Klochai"
+      title: "Yuliia Klochai"
+      description: "Frontend Engineer"
+EDGE:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/leadership/volodymyr-babak.webp"
+      alt: "Volodymyr Babak"
+      title: "Volodymyr Babak"
+      description: "VP EDGE"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/edge/andrii-landiak.webp"
+      alt: "Andrii Landiak"
+      title: "Andrii Landiak"
+      description: "Java Engineer"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/edge/yevhenii-zahrebelnyi.webp"
+      alt: "Yevhenii Zahrebelnyi"
+      title: "Yevhenii Zahrebelnyi"
+      description: "Java Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/edge/yevheniia-mala.webp"
+      alt: "Yevheniia Mala"
+      title: "Yevheniia Mala"
+      description: "Technical Writer"
+TBMQ:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/tbmq/dmytro-landiak.webp"
+      alt: "Dmytro Landiak"
+      title: "Dmytro Landiak"
+      description: "Java Engineer"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/product-team/dmytro-shvaika.webp"
+      alt: "Dmytro Shvaika"
+      title: "Dmytro Shvaika"
+      description: "Java Engineer"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Artem Babak"
+      title: "Artem Babak"
+      description: "Frontend Engineer"
+Sales:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/leadership/alex-doan.webp"
+      alt: "Alex Doan"
+      title: "Alex Doan"
+      description: "VP Sales & Marketing"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/leadership/artur-ishkhanishvili.webp"
+      alt: "Artur Ishkhanishvili"
+      title: "Artur Ishkhanishvili"
+      description: "Business Development Executive"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/sales-marketing/alla-sidnenko.webp"
+      alt: "Alla Sidnenko"
+      title: "Alla Sidnenko"
+      description: "Customer Success Manager"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/sales-marketing/anastasiia-antoniuk.webp"
+      alt: "Anastasiia Antoniuk"
+      title: "Anastasiia Antoniuk"
+      description: "Sales Manager"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/sales-marketing/maksym-shcherbytskyi.webp"
+      alt: "Maksym Shcherbytskyi"
+      title: "Maksym Shcherbytskyi"
+      description: "Business Development Manager"
+Operations:
+  0:
+    0:
+      src: "/images/company-images/thingsboard-team-photos/leadership/oksana-kovalska.webp"
+      alt: "Oksana Kovalska"
+      title: "Oksana Kovalska"
+      description: "HR Director"
+    1:
+      src: "/images/company-images/thingsboard-team-photos/operation-team/mariia-kalitka.webp"
+      alt: "Mariia Kalitka"
+      title: "Mariia Kalitka"
+      description: "Recruiter"
+    2:
+      src: "/images/company-images/thingsboard-team-photos/operation-team/valeriia-kalchenko.webp"
+      alt: "Valeriia Kalchenko"
+      title: "Valeriia Kalchenko"
+      description: "Sourcer/HR Manager"
+    3:
+      src: "/images/company-images/thingsboard-team-photos/operation-team/nataliia-avramenko.webp"
+      alt: "Nataliia Avramenko"
+      title: "Nataliia Avramenko"
+      description: "Sr Accountant"
+    4:
+      src: "/images/company-images/thingsboard-team-photos/operation-team/albina-kukharchuk.webp"
+      alt: "Albina Kukharchuk"
+      title: "Albina Kukharchuk"
+      description: "Accountant"
+    5:
+      src: "/images/company-images/thingsboard-team-photos/operation-team/nadiia-tsymbaliuk.webp"
+      alt: "Nadiia Tsymbaliuk"
+      title: "Nadiia Tsymbaliuk"
+      description: "Accounting Assistant"
+    6:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Katia Goldin"
+      title: "Katia Goldin"
+      description: "CFO"
+    7:
+      src: "/images/company-images/thingsboard-team-photos/operation-team/anastasiia-orlata.webp"
+      alt: "Anastasiia Orlata"
+      title: "Anastasiia Orlata"
+      description: "Office manager"
+    8:
+      src: "/images/company-images/thingsboard-team-photos/kasharix.webp"
+      alt: "Andrii Doan"
+      title: "Andrii Doan"
+      description: "Lawyer"

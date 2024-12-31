@@ -1,0 +1,112 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign tabTitleSize = include.tabTitleSize | default: "28px" %}
+{% assign tabTitleWeight = include.tabTitleWeight | default: "500" %}
+{% assign titleSize = include.titleSize | default: "20px" %}
+{% assign titleColor = include.titleColor | default: "#000000de" %}
+{% assign titleWeight = include.titleWight | default: "600" %}
+{% assign titleLineHeight = include.titleLineHeight | default: "28px" %}
+{% assign descriptionSize = include.descriptionSize | default: "16px" %}
+{% assign descriptionColor = include.descriptionColor | default: "#00000061" %}
+{% assign descriptionWeight = include.descriptionWeight | default: "400" %}
+{% assign descriptionLineHeight = include.descriptionLineHeight | default: "28px" %}
+
+{% if site.data.bubble-tabs-collection[collectionMap] %}
+    {% assign bubbleTabsCollection = site.data.bubble-tabs-collection[collectionMap] %}
+{% else %}
+    {% assign bubbleTabsCollection = page[collectionMap] %}
+{% endif %}
+
+<div class="bubble-tabs-content">
+    <div class="bubble-tabs bubble-tabs-hidden" id="tabs" style="--tabTitleSize: {{ tabTitleSize }}; --tabTitleWeight: {{ tabTitleSize }}">
+        <ul class="tabs-nav-content" style="">
+            {% for bubbleTabsItem in bubbleTabsCollection %}
+                <li class="tabs-nav-item" style="--tabLabelWidth: {{ bubbleTabsItem[1].tabLabelWidth }}">
+                    <a href="#tab-{{ bubbleTabsItem[0] | replace: ' ', '-' }}">
+                        {{ bubbleTabsItem[0] }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% for bubbleTabsItem in bubbleTabsCollection %}
+            <div class="tab-content" id="tab-{{ bubbleTabsItem[0] | replace: ' ', '-' }}">
+                {% assign clusterIndex = 0 %}
+                {% for data in bubbleTabsItem[1] %}
+                    {% assign clusterClass = "first-cluster" %}
+                    {% if clusterIndex > 0 %}
+                        {% assign clusterClass = "" %}
+                    {% endif %}
+                    <div class="team-claster {{ clusterClass }}">
+                        {% for sphere in data[1] %}
+                            {% if sphere[1].src %}
+                                <div class="tab-item">
+                                    <img src="{{ sphere[1].src }}" alt="{{ sphere[1].alt }}" loading="lazy">
+                                    <div class="tab-item-text">
+                                        <span class="tab-item-text-title" style="font-size: {{ titleSize }}; font-weight: {{ titleWeight }}; line-height: {{ titleLineHeight }}; color: {{ titleColor }}">{{ sphere[1].title }}</span>
+                                        <span class="tab-item-text-description" style="font-size: {{ descriptionSize }}; font-weight: {{ descriptionWeight }}; line-height: {{ descriptionLineHeight }}; color: {{ descriptionColor }}">{{ sphere[1].description }}</span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% assign clusterIndex = clusterIndex | plus: 1 %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script async>
+    jqueryUiDefer(initTabs);
+    function initTabs() {
+        $(function(){
+            $("#tabs").tabs().removeClass("bubble-tabs-hidden").addClass("bubble-tabs-loaded");
+            searchForAnimateBubbleTabs(".bubble-tabs", Number(getComputedStyle($("#tabs")[0]).getPropertyValue('--bubble-tabs-animation')));
+        });
+    }
+    function searchForAnimateBubbleTabs (classToSearch, threshold) {
+        const searchedBlock = document.querySelector(classToSearch);
+
+        const searchedBlockObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tabsContentRevealAnimation();
+                    searchedBlockObserver.unobserve(entry.target);
+                }
+            })
+        }, {
+            threshold: threshold
+        });
+
+        searchedBlockObserver.observe(searchedBlock);
+    }
+    function tabsContentRevealAnimation () {
+        const tabNavItem = document.querySelectorAll(".tabs-nav-item");
+        const tabContent = document.querySelectorAll(".tab-content");
+
+        tabNavItem.forEach((navItem, index) => {
+            setTimeout(() => {
+                navItem.classList.add("tabs-nav-item-animation")
+            }, index * 125)
+        });
+
+        tabContent.forEach((contentItem) => {
+            if (contentItem.getAttribute("aria-hidden") === "false") {
+                contentItem.classList.add("tab-content-visible-animation");
+            }
+        });
+
+        tabNavItem.forEach((navItem) => {
+            navItem.addEventListener("click", () => {
+                if(navItem.classList.contains("ui-tabs-active")) {
+                    tabContent.forEach((contentItem) => {
+                        if (navItem.getAttribute("aria-controls") === contentItem.id) {
+                            contentItem.classList.add("tab-content-visible-animation");
+                        } else {
+                            contentItem.classList.remove("tab-content-visible-animation");
+                        }
+                    })
+                }
+            })
+        })
+    }
+</script>

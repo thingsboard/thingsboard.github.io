@@ -16,7 +16,7 @@ The "details" button allows reviewing low-level details of the logged action.
 It is possible to fetch audit logs via [REST API](https://demo.thingsboard.io/swagger-ui.html#/audit-log-controller). 
 There are several API calls that allow to fetch entities related to particular user, entity, customer or fetch all records using page links.  
 
-{% unless docsPrefix == "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 ### General configuration
 
 System administrator is able to configure audit log levels using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/). You can find sample configuration below:

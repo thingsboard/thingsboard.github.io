@@ -11,4 +11,5 @@ deviceImageFileName: orangepi2giot.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/orangepi-2g-iot.md %}

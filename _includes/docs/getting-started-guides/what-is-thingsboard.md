@@ -18,11 +18,14 @@ With ThingsBoard, you are able to:
  
 See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more features and useful links to the specific feature documentation. 
 
-{% if docsPrefix == null %}
-<object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if docsPrefix == 'pe/' %}
 <object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
+{% elsif docsPrefix == 'paas/' %}
+<object width="100%" data="/images/reference/thingsboard-architecture-paas.svg"></object>
+{% elsif docsPrefix == 'paas/eu/' %}
+<object width="100%" data="/images/reference/thingsboard-architecture-paas-eu.svg"></object>
+{% else %}
+<object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
 {% endif %}
 
 #### Architecture
@@ -36,11 +39,11 @@ ThingsBoard cluster can handle millions of devices.
 * **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
 * **durable**: never lose your data.
 
-{% if docsPrefix != "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 
 See [**ThingsBoard Architecture**](/docs/{{docsPrefix}}reference) for more details.
 
-{% endif %}
+{% endunless %}
 
 #### Ready to get started?
 

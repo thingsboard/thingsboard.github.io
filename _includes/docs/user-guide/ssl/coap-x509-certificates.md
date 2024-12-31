@@ -34,13 +34,13 @@ Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}r
 {% include templates/coap-dtls/coap-client-dtls.md %}
 
 Finally, run the example script below to validate DTLS with X.509 Certificate auth and subscribe for shared attributes updates:
-The coap-client example below demonstrates how to connect to [ThingsBoard Cloud](https://thingsboard.cloud/signup) or to any other ThingsBoard CoAP server that has valid and trusted certificate.
+The coap-client example below demonstrates how to connect to [ThingsBoard Cloud](https://{{hostName}}/signup) or to any other ThingsBoard CoAP server that has valid and trusted certificate.
 
 ```bash
 coap-client-openssl -v 9 -c cert.pem  -j key.pem -m POST \
--t "application/json" -e '{"temperature":43}' coaps://coap.thingsboard.cloud/api/v1/telemetry
+-t "application/json" -e '{"temperature":43}' coaps://{{coapHostName}}/api/v1/telemetry
 ```
 {: .copy-code}
 
-Don't forget to replace **coap.thingsboard.cloud** with the host of your ThingsBoard instance.
+Don't forget to replace **{{coapHostName}}** with the host of your ThingsBoard instance.
 

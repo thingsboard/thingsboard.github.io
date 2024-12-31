@@ -188,7 +188,7 @@ time-window:
 
 time-window-aggregation:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-aggregation-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-aggregation-1-pe.png
 
 time-window-interval:
     0:
@@ -203,15 +203,18 @@ time-window-interval:
 
 time-window-time-zone:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-timezone-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-timezone-1-pe.png
 
 time-window-zoom-in:
     0:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-1-pe.png
-        title: 'Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look.'
+        title: 'Move the two sliders towards each other to specify the time period for displaying the data.'
     1:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-2-pe.png
-        title: 'To zoom out to the original size of the chart, double-click on the widget.'
+        title: 'The data for the selected period is displayed on the chart.'
+    2:
+        image: /images/user-guide/dashboards/overview/timewindow-zoom-3-pe.png
+        title: 'To zoom out to the original size of the chart, move the sliders back to their default position.'
 
 filters:
     0:
@@ -280,7 +283,7 @@ dashboard-logo-settings:
 toolbar-dashboard-1:
     0:
         image: /images/user-guide/dashboards/overview/toolbar-settings-1-pe.png
-        title: 'Hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page;'
+        title: 'Hide "Display dashboards selection", "Display time window" and "Display export" icons on the dashboard page;'
     1:
         image: /images/user-guide/dashboards/overview/toolbar-settings-2-pe.png
         title: 'The specified icons are hidden on the dashboard page.'
@@ -373,4 +376,5 @@ states-entity-name:
 --- 
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/dashboards.md %}

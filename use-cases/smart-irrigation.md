@@ -37,6 +37,9 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 
 {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
 
+<div class="center" style="margin-bottom: 64px;">
+    <a id="UseCases_SmartIrrigation_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/a4640cc0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+</div>
 
 ## ThingsBoard advantages
 <section class="usecase-advantages">
@@ -137,3 +140,4 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
     <a id="UseCases_SmartIrrigation_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
     <a id="UseCases_SmartIrrigation_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>
+

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: OAuth 2.0 Support
-description: OAuth 2.0 Support
+title: OAuth 2.0
+description: OAuth 2.0
 
 adding-domain-1:
     0:
@@ -33,7 +33,7 @@ adding-oauth2-client-1:
         title: 'Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page. Click the "plus" icon to add a new OAuth 2.0 client;'
     1:
         image: /images/user-guide/oauth-2-support/adding-oauth2-client-2-pe.png
-        title: 'Enter a descriptive title for the client, and select the authentication provider from the dropdown menu. Provide the Client ID and Client Secret obtained from your authentication provider. Configure advanced settings as necessary. Then, click "Add".'
+        title: 'Enter a descriptive title for the client, and select the "Google" from the dropdown menu as the authentication provider. Provide the Client ID and Client Secret obtained from your authentication provider. Configure advanced settings as necessary. Then, click "Add".'
     2:
         image: /images/user-guide/oauth-2-support/adding-oauth2-client-3-pe.png
         title: 'New OAuth 2.0 client added.'
@@ -74,34 +74,35 @@ google-configuration-of-thingsboard-google-1:
         title: 'Your domain name and redirect URI template are already specified here. Now we need to add an OAuth 2.0 client. Click "Create" to begin;'
     2:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-3-pe.png
-        title: 'Enter the title and select "Google" as the provider. If necessary, specify the allowed platforms, or leave all. Now, enter the Client ID and Client secret from the Google API Console. Then, expand the "Advanced settings" menu;'
+        title: 'Enter the title and select "Google" as the provider. If necessary, specify the allowed platforms, or leave all. Now, enter the "Client ID" and "Client secret" from the Google API Console. Then, expand the "Advanced settings" menu;'
     3:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-4-pe.png
-        title: 'Let&#39;s make the settings for the "General" block. Select "POST" in the "Client authentication method" field. Then check the "Allow user creation" checkbox. Add to the scope field: "email", "openid", and "profile";'
+        title: 'Let&#39;s make the settings for the "General" block. Select "POST" as the client authentication method. Turn on the "Allow user creation" option. Add to the scope field: "email", "openid", and "profile";'
     4:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-5-pe.png
-        title: 'Go to the "Mapper" block. Select the "Basic" mapper type and "Custom" tenant name strategy. Specify %{email} as "Tenant name pattern" (more details about these properties are described below in the "Basic mapper" part). Specify "Tenant Administrators" as the user group name pattern to add a new user to the specified tenant group. Click "Add" to confirm adding the OAuth 2 client;'
+        title: 'Go to the "Mapper" block. Leave the mapper type "BASIC". Select "CUSTOM" as the tenant name strategy. Specify %{email} as "Tenant name pattern". Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation. Click "Add";'
     5:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-6-pe.png
-        title: 'OAuth client is added. Click "Add" to confirm adding domain.'
+        title: 'The OAuth client is added successfully. Click "Add" again to confirm the addition of the domain;'
     6:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-7-pe.png
-        title: ''
+        title: 'A new domain has been added.'
 
 login-with-google-1:
     0:
         image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/login-with-google-1-pe.png
-        title: 'Navigate to the Login screen. We will see an additional "Login with Google" option;'
+        title: 'Navigate to the ThingsBoard login screen. We will see an additional "Login with Google" option. Click this button;'
     1:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/login-with-google-2-pe.png
-        title: 'Once we click it and select one of our Google account, we are going to be logged into ThingsBoard with our Google’s email as a Tenant Administrator email;'
+        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/login-with-google-2.png
+        title: 'Select one of your Google accounts;'
+    2:
+        image: /images/user-guide/oauth-2-support/login-with-oauth-1-pe.png
+        title: 'You are logged into ThingsBoard using your Google email as a Tenant Administrator.'
 
 login-with-google-2:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/login-with-google-3-pe.png
-        title: 'Go to the "Credentials" page in the left menu and select "OAuth client ID" from the "Create credentials" dropdown menu;'
-
-
+        image: /images/user-guide/oauth-2-support/login-with-oauth-2-pe.png
+        title: 'Go to the "Users" page. There you will find the new user is associated with the Tenant Administrators group; the tenant name corresponds to their email address.'
 
 auth0-credentials-1:
     0:
@@ -126,13 +127,13 @@ auth0-credentials-1:
 oauth0-configuration-of-thingsboard-1:
     0:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-1-pe.png
-        title: 'Access your ThingsBoard instance using your System Administrator credentials. Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
+        title: 'Access your ThingsBoard instance using your System Administrator credentials. Go to the "OAuth 2.0" page of the "Security" section. Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
     1:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-2-pe.png
-        title: 'Enter a descriptive title for the client, and select "Custom" as the provider. Now enter the "Client ID" and "Client secret" obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs, choose "POST" for the client authentication method, and enter "Auth0" as the provider label. Next, check the "Allow user creation" box. Add the following scopes in the scope field: "openid", "email", "profile";'
+        title: 'Enter a descriptive title for the client, and select "Custom" as the provider. Now enter the "Client ID" and "Client secret" obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs. The client authentication method should be set to "POST". Enter "Auth0" as the provider label. Add the following scopes in the scope field: "openid", "email", "profile";'
     2:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-3-pe.png
-        title: 'Proceed to the "Mapper" block. Select the "Basic" mapper type and "Domain" tenant name strategy. Specify %{email} as "Customer name pattern" (more details about these properties are described below in the "Basic mapper" part). Specify "Customer Users" as the user group name pattern to add a new user to the specified customer group. Click "Add" to confirm adding the OAuth 2 client;'
+        title: 'Proceed to the "Mapper" block. Leave the mapper type "BASIC". The tenant name strategy should be "DOMAIN". Specify %{email} as customer name pattern. Specify "Customer Users" as the user group name pattern to automatically add a new user to the designated customer group upon creation. Click "Add" to confirm adding the OAuth 2 client;'
     3:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-4-pe.png
         title: 'One more OAuth client added.'
@@ -159,6 +160,134 @@ oauth0-configuration-of-thingsboard-3:
         image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-10-pe.png
         title: 'You have logged into ThingsBoard as a Customer User.'
 
+login-with-oauth-customer:
+    0:
+        image: /images/user-guide/oauth-2-support/login-with-oauth-customer-2-pe.png
+        title: 'Go to the "Users" page. There you will find the new user is associated with the Customer Users group; the customer name corresponds to their email address.'
+
+terminal-start-keycloak:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/terminal-start-keycloak-1.png
+        title: 'Run this command to start Keycloak on local the port 8081 and create an initial admin user with the username admin and password admin.'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/terminal-start-keycloak-2.png
+        title: ''
+
+log-in-to-admin-console:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/log-in-to-admin-console-1.png
+        title: 'Log in to the Keycloak Admin Console using your username and password.'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/log-in-to-admin-console-2.png
+        title: ''
+
+create-new-realm:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/create-new-realm-1.png
+        title: 'Click "Keycloak" next to the master realm, then click "Create realm" button;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/create-new-realm-2.png
+        title: 'Enter "ThingsBoard" in the realm name field, and click "Create" button;'
+    2:
+        image: /images/user-guide/oauth-2-support/keycloak/create-new-realm-3.png
+        title: 'The new realm has been created.'
+
+create-client:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/create-client-1.png
+        title: 'Go to the "Clients" page in the left-hand menu, and click the "Create client" button;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/create-client-2.png
+        title: 'Enter "thingsboard" as the client ID. Leave the client type as "OpenID Connect". Click "Next";'
+    2:
+        image: /images/user-guide/oauth-2-support/keycloak/create-client-3.png
+        title: 'Turn on "Client authentication" option. Confirm that "Standard flow" is enabled. Click "Next";'
+    3:
+        image: /images/user-guide/oauth-2-support/keycloak/create-client-4.png
+        title: 'In the "Login settings" section, add the ThingsBoard default redirect URI to the "Authorized Redirect URIs" section. Then, click "Save";'
+    4:
+        image: /images/user-guide/oauth-2-support/keycloak/create-client-5.png
+        title: 'Client created successfully.'
+
+client-id-and-secret:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/client-id-and-secret-1.png
+        title: 'You can find the "Client ID" on the "Settings" tab;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/client-id-and-secret-2.png
+        title: 'The "Client Secret" is located on the "Credentials" tab.'
+
+endpoint-configuration:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/openid-endpoint-configuration-1.png
+        title: 'Go to the "Realm settings" page in the left-hand menu. Scroll down and locate the link to "OpenID Endpoint Configuration", then click on it;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/openid-endpoint-configuration-2.png
+        title: 'A new window with OpenID Endpoint Configuration will open. Check the "Pretty-print" option to make the data view more user-friendly. Here you found "Access token URI," "Authorization URI," "JSON Web Key URI," and "User info URI," which are necessary for configuring the OAuth 2.0 client in ThingsBoard.'
+
+create-user:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-1.png
+        title: 'Go to the "Users" page in the left-hand menu. Click "Create new user";'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-2.png
+        title: 'Enter the username and email address in the form. First name and last name are optional. Then, click "Create";'
+    2:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-3.png
+        title: 'The user has been created;'
+
+create-password:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-4.png
+        title: 'Navigate to the "Credentials" tab. Click "Set password";'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-5.png
+        title: 'Fill in the "Set password" form with a password. Toggle "Temporary" to "Off" so that the user does not need to update this password at the first login. Click "Save";'
+    2:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-6.png
+        title: 'Confirm the set password by clicking the "Save password";'
+    3:
+        image: /images/user-guide/oauth-2-support/keycloak/create-user-7.png
+        title: 'The password has been successfully.'
+
+keycloak-add-thingsboard-oauth-client:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-1-pe.png
+        title: 'Access your ThingsBoard instance using your System Administrator credentials. Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-2-pe.png
+        title: 'Enter "Keycloak" as the title. Select the "Custom" from the dropdown menu as the authentication provider. Now enter the "Client ID" and "Client secret" using the values retrieved from the Keycloak console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs. The client authentication method should be set to "POST". Enter "Keycloak" as the provider label. Add the following scopes in the scope field: "openid", "email", "profile";'
+    2:
+        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-3-pe.png
+        title: 'Proceed to the "Mapper" block. Go to the "Mapper" block. Leave the mapper type "BASIC". Select "CUSTOM" as the tenant name strategy. Specify %{email} as tenant name pattern. Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation. Click "Add" to confirm adding the OAuth 2 client;'
+    3:
+        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-4-pe.png
+        title: 'A new OAuth 2.0 client has been added.'
+
+keycloak-add-domain:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/keycloak-adding-domain-1-pe.png
+        title: 'Navigate to the "Domains" tab, and click "plus" icon. Enter your domain name or IP address, and specify "Keycloak" as the OAuth 2.0 client. Click "Add" to finalize adding the domain;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/keycloak-adding-domain-2-pe.png
+        title: 'A new domain has been added.'
+
+login-with-keycloak-1:
+    0:
+        image: /images/user-guide/oauth-2-support/keycloak/login-with-keycloak-1-pe.png
+        title: 'Go to the ThingsBoard login screen. You will see an additional option, "Login with Keycloak". Click this button;'
+    1:
+        image: /images/user-guide/oauth-2-support/keycloak/login-with-keycloak-2.png
+        title: 'A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In";'
+    2:
+        image: /images/user-guide/oauth-2-support/login-with-oauth-1-pe.png
+        title: 'You are logged into ThingsBoard using Keycloak authorization credentials.'
+
+login-with-keycloak-2:
+    0:
+        image: /images/user-guide/oauth-2-support/login-with-oauth-2-pe.png
+        title: 'Go to the "Users" page. There you will find the new user is associated with the Tenant Administrators group; the tenant name corresponds to their email address.'
+  
 mapper-basic-1:
     0:
         image: /images/user-guide/oauth-2-support/mapper-basic-1-pe.png
@@ -172,4 +301,5 @@ mapper-custom-1:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/oauth-2-support.md %}

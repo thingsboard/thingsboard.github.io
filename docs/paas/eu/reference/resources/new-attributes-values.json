@@ -1,0 +1,11 @@
+{
+  "attribute1": "value1",
+  "attribute2": true,
+  "attribute3": 42.0,
+  "attribute4": 73,
+  "attribute5": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+  }
+}

@@ -11,4 +11,5 @@ deviceImageFileName: raspberry-pi-pico-w.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/raspberry-pi-pico-w.md %}

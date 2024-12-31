@@ -1,0 +1,30 @@
+0:
+  width: 900px
+  src: "/images/company-images/company-photos-carousel/company-photo-carousel-1.webp"
+  alt: "A man smiles while working on a laptop in an office setting. Three other men sit in the background."
+1:
+  width: 451px
+  multipleImage:
+    0:
+      src: "/images/company-images/company-photos-carousel/company-photo-carousel-2.webp"
+      alt: "Three people working at a computer, with a whiteboard in the background and plants in the foreground."
+    1:
+      src: "/images/company-images/company-photos-carousel/company-photo-carousel-3.webp"
+      alt: "A person in a white hoodie sits at a desk with a computer, wearing earbuds and holding a travel mug. In the background, another person is focused on a laptop with colorful stickers. Headphones are on the desk."
+2:
+  width: 900px
+  src: "/images/company-images/company-photos-carousel/company-photo-carousel-4.webp"
+  alt: "Two men sit attentively in an informal setting, while a person in the foreground uses a laptop. A large plant and bookshelves are in the background, creating a relaxed office atmosphere."
+3:
+  width: 451px
+  multipleImage:
+    0:
+      src: "/images/company-images/company-photos-carousel/company-photo-carousel-5.webp"
+      alt: "Two people are sitting on blue bean bag chairs in a modern office space. The man is wearing glasses, a white shirt, and a vest. The woman is in formal attire. Shelves and plants are in the background, with another person working at a computer."
+    1:
+      src: "/images/company-images/company-photos-carousel/company-photo-carousel-6.webp"
+      alt: "A person wearing glasses and a red checkered shirt sits at a desk with a computer monitor and a laptop. He is smiling and there is a window in the background."
+4:
+  width: 900px
+  src: "/images/company-images/company-photos-carousel/company-photo-carousel-7.webp"
+  alt: "A group of six people gathered around a desk with computers and a laptop, collaborating on a project. The room has a vibrant red brick wall with brainstorming notes on a whiteboard. Everyone is focused and engaged in discussion."

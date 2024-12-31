@@ -30,8 +30,6 @@ $font-style-normal: normal
 
 #smart-farming
     position: relative
-    .smart-farming-content
-        overflow-x: hidden
     footer
         position: relative
 .smart-farm-banner-section
@@ -47,14 +45,15 @@ $font-style-normal: normal
 
         .smart-farm-banner-container
             position: absolute
-            padding: 85px 115px
+            padding: 40px 20px
             color: #212529 
 
             h1
                 font-size: 90px
                 font-weight: 600
-                line-height: 130px
+                line-height: 105px
                 @include text-style
+                width: 70%
 
             p
                 font-size: 40px
@@ -345,6 +344,9 @@ $font-style-normal: normal
                 p
                     text-align: center
                     padding-bottom: 50px
+                .smart-farm-demo-descr 
+                    padding-bottom: 0px
+                    margin-bottom: 0px                   
                 h2
                     text-align: center
                     margin-bottom: 30px   
@@ -437,7 +439,14 @@ $font-style-normal: normal
             img 
                 height: auto
             .smart-farm-banner-container
-                padding: 40px 80px
+                padding: 40px 40px
+                h1
+                    font-size: 70px
+                    line-height: 90px
+                p
+                    font-size: 30px
+                    width: 576px
+                    line-height: 39px
     .smart-farm-about-section
         .smart-farm-about 
             max-width: 1440px
@@ -470,7 +479,7 @@ $font-style-normal: normal
     .smart-farm-banner-section
         .smart-farm-banner
             .smart-farm-banner-container
-                padding: 40px 80px
+                padding: 30px 40px
                 h1
                     font-size: 70px
                     line-height: 90px
@@ -527,10 +536,10 @@ $font-style-normal: normal
     .smart-farm-banner-section
         .smart-farm-banner
             .smart-farm-banner-container
-                padding: 41px 30px
+                padding: 30px 40px
                 h1
                     font-size: 50px
-                    line-height: 70px
+                    line-height: 60px
                 p
                     font-size: 20px
                     width: 400px
@@ -623,6 +632,13 @@ $font-style-normal: normal
         .smart-farm-banner
             .smart-farm-banner-container
                 padding: 15px 15px
+                h1
+                    font-size: 45px
+                    line-height: 55px
+                p
+                    font-size: 20px
+                    width: 400px
+                    line-height: 26px
     .smart-farm-about-section
         @include small-margin
         .smart-farm-about 
@@ -719,6 +735,19 @@ $font-style-normal: normal
                 .smart-farm-management-software-img
                     img
                         margin-left: 0px
+@media screen and (max-width: 820px)
+    .smart-farm-banner-section
+        .smart-farm-banner
+            .smart-farm-banner-container
+                padding: 15px 15px
+                h1
+                    font-size: 35px
+                    line-height: 43px
+                p
+                    font-size: 18px
+                    width: 350px
+                    line-height: 24px
+
 
 @media screen and (max-width: 671px)
     .smart-farm-banner-section
@@ -726,13 +755,16 @@ $font-style-normal: normal
         .smart-farm-banner
             .smart-farm-banner-container
                 position: static
-                padding: 16px 15px
+                padding: 15px 15px
                 h1
-                    font-size: 40px
-                    line-height: 60px
+                    font-size: 30px
+                    line-height: 40px
+                    width: 100%
+                    max-width: 450px
                 p
                     font-size: 16px
-                    width: 290px
+                    width: 100%
+
                     line-height: 24px
     .smart-farm-about-section
         .smart-farm-about
@@ -818,6 +850,7 @@ $font-style-normal: normal
                             margin-bottom: 16px
                         .contact-us
                             margin-left: 0px
+                            width: 100%
                 .smart-farm-demo-img
                     display: none
             .smart-farm-management-software

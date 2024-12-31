@@ -1,11 +1,9 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/gateway/ug67" %}
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-{% assign thingsboardHost = 'https://thingsboard.cloud' %}
-{% else %}
-{% assign thingsboardHost = 'https://demo.thingsboard.io' %}
-{% endif %}
+
+{% assign thingsboardHost = "https://" | append: hostName %}
+
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [UG67 gateway user manual](https://resource.milesight.com/milesight/iot/document/ug67-user-guide-en.pdf){: target="_blank"}

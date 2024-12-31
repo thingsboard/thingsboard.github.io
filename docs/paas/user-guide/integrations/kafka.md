@@ -79,4 +79,5 @@ kafka_confluent_downlink_result:
         image: /images/user-guide/integrations/kafka/confluent/downlink/kafka_confluent_downlink_result_1.png
 ---
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/integrations/kafka.md %}

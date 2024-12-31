@@ -349,4 +349,5 @@ donut-legend:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/chart-widget.md %}

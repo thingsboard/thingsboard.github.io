@@ -52,37 +52,14 @@ Using custom binary format or some serialization framework is also possible. See
 
 ## Telemetry upload API
 
-In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
+In order to publish telemetry data to ThingsBoard server node, send POST request.
 
-{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
-```
-{: .copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/" %}
-
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
+{% capture coapAuthenticationCredentials %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/telemetry-upload-api-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/telemetry-upload-api-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapAuthenticationCredentials" toggle-spec=coapAuthenticationCredentials %}
 
 The simplest supported data formats are:
 
@@ -120,7 +97,7 @@ Don't forget to replace <code>demo.thingsboard.io</code> with your host and <cod
 {% if docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -201,37 +178,14 @@ ThingsBoard attributes API allows devices to
 
 ### Publish attribute update to the server
 
-In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
+In order to publish client-side device attributes to ThingsBoard server node, send POST request.
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/" %}
-
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
+{% capture coapPublishAttributeUpdate %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/publish-attribute-update-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/publish-attribute-update-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapPublishAttributeUpdate" toggle-spec=coapPublishAttributeUpdate %}
 
 Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
 
@@ -257,35 +211,14 @@ A,Execute the command:,shell,resources/coap-attributes-publish.sh,/docs/referenc
 
 ### Request attribute values from the server
 
-In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
+In order to request client-side or shared device attributes to ThingsBoard server node, send GET request.
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-{% endif %}
+{% capture coapRequestAttributeValues %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/request-attribute-values-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/request-attribute-values-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapRequestAttributeValues" toggle-spec=coapRequestAttributeValues %}
 
 {% capture difference %}
 **NOTE**:
@@ -314,35 +247,14 @@ However, it is still possible to have same keys for client, shared or even serve
 
 ### Subscribe to attribute updates from the server
 
-In order to subscribe to shared device attribute changes, send GET request with Observe option to the following URL:
+In order to subscribe to shared device attribute changes, send GET request with Observe option.
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
+{% capture coapSubscribeToAttributeUpdates %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/subscribe-to-attribute-updates-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/subscribe-to-attribute-updates-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapSubscribeToAttributeUpdates" toggle-spec=coapSubscribeToAttributeUpdates %}
 
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
@@ -364,266 +276,38 @@ Result:
 
 ### Server-side RPC
 
-In order to subscribe to RPC commands from the server, send GET request with observe flag to the following URL:
+In order to subscribe to RPC commands from the server, send GET request with observe flag.
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
-
-Once subscribed, a client may receive rpc requests. An example of RPC request body is shown below:
-
-```json
-{
-  "id": "1",
-  "method": "setGpio",
-  "params": {
-    "pin": "23",
-    "value": 1
-  }
-}
-```
-
-Where
-
- - **id** - request id, integer request identifier;
- - **method** - RPC method name, string;
- - **params** - RPC method params, custom json object.
-
-and can reply to them using POST request to the following URL:
-
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
-```
-{: .copy-code}
-
-{% endif %}
-
-Where 
- - **$id** is an integer request identifier.
-
-<br>
-**Let's look at an example**:
-
-- Use **RPC debug terminal** widget in your ThingsBoard instance;
-
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
-
-```shell
-coap-client -m get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
-
-```shell
-coap-client -m get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
-
-```shell
-coap-client -m get coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
-```
-{: .copy-code}
-{% endif %}
-
-{% capture difference %}
-The "`s`" option stands for subscribe and the value has to be specified in seconds.
-
-The "`B`" options stands for break (the operation will be break after desired timeout) and the value has to be specified in seconds
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
-- Send an RPC request "connect" to the device using **RPC debug terminal** widget;
-
-- Save the "[rpc-response.json](/docs/reference/resources/rpc-response.json)" file to your PC;
-
-- In the second terminal window simulate sending a response from the device to the server:
-
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-```shell
-coap-client -f rpc-response.json -m post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/1
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-cat rpc-response.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/1
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-```shell
-coap-client -f rpc-response.json -m post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/1
-```
-{: .copy-code}
-{% endif %}
-
-- You should receive a response from the device:
-
-```shell
-{"result":"ok"}
-```
-
-{% include images-gallery.html imageCollection="server-side-rpc" %}
+{% capture coapServerSideRPC %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/server-side-rpc-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/server-side-rpc-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapServerSideRPC" toggle-spec=coapServerSideRPC %}
 
 ### Client-side RPC
 
-In order to send RPC commands to the server, send POST request to the following URL:
+In order to send RPC commands to the server, send POST request.
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
-
-Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
-
-<br>
-**Let's look at an example**:
-
-- Add two nodes to the Rule Chain: "**script**" and "**rpc call reply**";
-
-- In the **script** node enter the function:
-
-```shell
-return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
-```
-{: .copy-code}
-
-- Save the "[rpc-client-request.json](/docs/reference/resources/rpc-client-request.json)" file to your PC;
-
-{% if docsPrefix == null or docsPrefix == "pe/" %}
-- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
-
-```shell
-cat rpc-client-request.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-- Now, send request to the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
-
-```shell
-cat rpc-client-request.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "edge/" %}
-- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
-
-```shell
-cat rpc-client-request.json | coap post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-{% endif %}
-
-- You should receive a response from the server:
-
-```shell
-{"time":"2016 11 21 12:54:44.287"}
-```
-
-{% include images-gallery.html imageCollection="client-side-rpc" %}
+{% capture coapClientSideRPC %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/client-side-rpc-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/client-side-rpc-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapClientSideRPC" toggle-spec=coapClientSideRPC %}
 
 ## Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
 
-In order to initiate claiming device, send POST request to the following URL:
+In order to initiate claiming device, send POST request.
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
-```
-{: .copy-code}
+First, select the authentication method:
 
-Where
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
-```
-{: .copy-code}
-
-Where **$ACCESS_TOKEN** - device access token.
-
-{% endif %}
+{% capture coapClaimingDevices %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/claiming-devices-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/claiming-devices-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapClaimingDevices" toggle-spec=coapClaimingDevices %}
 
 The supported data format is:
 
@@ -661,9 +345,9 @@ coap://demo.thingsboard.io/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-coap://coap.thingsboard.cloud/api/v1/provision
+coap://{{coapHostName}}/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
@@ -680,40 +364,12 @@ The supported data format is:
 
 ## Firmware API
 
-The CoAP client has to issue the GET request to
+Select the authentication method:
 
-{% if docsPrefix == null or docsPrefix == "pe/"%}
-```shell
-coap get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
-```
-{: .copy-code}
-
-Where
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
-- **$ACCESS_TOKEN** -  device access token;
-- **$TITLE** - the firmware title;
-- **$VERSION** - the version of the target firmware.
-{% endif %}
-{% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
-
-```shell
-coap get coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```shell
-coap get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
-```
-{: .copy-code}
-
-Where
-- **$ACCESS_TOKEN** -  device access token;
-- **$TITLE** - the firmware title;
-- **$VERSION** - the version of the target firmware.
-
-{% endif %}
+{% capture coapFirmwareAPI %}
+Access token<small></small>%,%accesstoken%,%templates/api/coap/firmware-api-access-token.md%br%
+X.509 Certificate<small></small>%,%certificate%,%templates/api/coap/firmware-api-certificate.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="coapFirmwareAPI" toggle-spec=coapFirmwareAPI %}
 
 ## Protocol customization
 

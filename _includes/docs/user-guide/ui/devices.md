@@ -3,13 +3,13 @@
 
 In the context of the ThingsBoard IoT platform, "devices" are basic Internet of Things objects that can produce telemetry data and transmit it to the ThingsBoard platform, as well as respond to Remote Procedure Call (RPC) commands.
 
-ThingsBoard offers the capability to manage devices through a web interface and [REST API](/docs/{{docsPrefix}}reference/rest-api/), store data from devices, and facilitate interaction between devices and other components of the platform.
+ThingsBoard offers the capability to manage devices through a web interface and [REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}, store data from devices, and facilitate interaction between devices and other components of the platform.
 
 Devices, in this context, can refer to physical or virtual objects connected to a network, such as monitoring sensors, smart devices, machines, sensors, and more. These devices can collect data like temperature, humidity, GPS coordinates and send this data to the ThingsBoard platform.
 
-Devices can be organized into various [groups](/docs/{{docsPrefix}}user-guide/groups/).
+Devices can be organized into various [groups](/docs/{{docsPrefix}}user-guide/groups/){:target="_blank"}.
 
-The ThingsBoard platform allows you to create [dashboards](/docs/{{docsPrefix}}user-guide/dashboards/), track and analyze data from devices, and configure rules and automation based on this data.
+The ThingsBoard platform allows you to create [dashboards](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"}, track and analyze data from devices, and configure rules and automation based on this data.
 
 In short, devices in ThingsBoard are a central part of your IoT system, and the platform provides tools for managing them and utilizing the data they collect.
 
@@ -23,7 +23,7 @@ In short, devices in ThingsBoard are a central part of your IoT system, and the 
  - Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.
 {% endif %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
  - Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;
  - By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";
  - Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";
@@ -37,7 +37,7 @@ When adding a new device, you will receive a notification. You can view it by cl
 
 {% include images-gallery.html imageCollection="add-device-notification" %}
 
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
 
 {% unless docsPrefix == null %}
 <br>
@@ -74,7 +74,7 @@ Second way:
 {% if docsPrefix == null %}
 You can perform various operations with the device, such as [make device public](#make-device-public), [assign device to customer](#assign-device-to-customer), [manage credentials](#manage-device-credentials), [check connectivity](#check-connectivity), [delete device](#deletion-device), copy [device id](#copy-device-id), and copy [access token](#copy-device-credentials).
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 You can perform various operations with the device, such as [manage credentials](#manage-device-credentials), [manage owner and groups](#manage-owner-and-groups), [check connectivity](#check-connectivity), [delete device](#deletion-device), copy [device id](#copy-device-id), and copy [access token](#copy-device-credentials).
 {% endif %}
 
@@ -91,7 +91,7 @@ To make the device private again, follow these steps:
 
 ### Assign device to customer
 
-You can assign devices to certain [customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
+You can assign devices to certain [customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}.
 This will allow Customer users to fetch device data using REST APIs or Web UI.
 
 {% include images-gallery.html imageCollection="assign-device-to-customer" showListImageTitles="true" %}
@@ -105,7 +105,7 @@ By default, "access token" credentials are used. To change device credentials, f
 
 {% include images-gallery.html imageCollection="manage-device-credentials" showListImageTitles="true" %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ### Manage owner and groups
 
 You can change the owner of the device or add the device to one or more device groups in the device details window.

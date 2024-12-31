@@ -13,4 +13,5 @@ deviceImageFileName: the-parallella-board.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/the-parallella-board.md %}

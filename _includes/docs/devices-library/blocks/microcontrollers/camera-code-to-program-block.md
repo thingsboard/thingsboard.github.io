@@ -13,7 +13,7 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 
 {% endcapture %}
 
-{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
 {% include templates/warn-banner.md content=demoExample %}
 {% endunless %}
 
@@ -24,7 +24,7 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 
-#define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}0{% else %}1{% endif %}
+#define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}0{% else %}1{% endif %}
 
 #include <Server_Side_RPC.h>
 #include <Attribute_Request.h>
@@ -39,12 +39,12 @@ extern "C" {
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
-// See https://thingsboard.io/docs/getting-started-guides/helloworld/
+// See https://thingsboard.io/docs/{{page.docsPrefix}}getting-started-guides/helloworld/
 // to understand how to obtain an access token
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
 // Thingsboard we want to establish a connection too
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{{hostName}}";
 // MQTT port used to communicate with the server, 1883 is the default unencrypted MQTT port.
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
@@ -194,13 +194,13 @@ bool initCamera() {
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
-  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
   if (DEMO_MODE == 1) {
     config.frame_size = FRAMESIZE_96X96;
     config.jpeg_quality = 63;
   } else { {% endunless %}
   config.frame_size = FRAMESIZE_240X240;
-  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
   }{% endunless %}
 
   esp_err_t err = esp_camera_init(&config);
@@ -229,7 +229,7 @@ bool captureImage() {
   return true;
 }
 
-void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
   if (DEMO_MODE == 1) {
     length = 756;
   }{% endunless %} 
@@ -510,16 +510,16 @@ Don’t forget to replace placeholders with your real WiFi network SSID, passwor
 
 Necessary variables for connection:    
 
-| Variable name | Default value                                                                                                                | Description                                                                                                                                  | 
-|-|------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| WIFI_SSID | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                                                                      | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                                                                                  |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard                                                      | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                                                                         |
-| THINGSBOARD_PORT | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                                                                                 |
-| MAX_MESSAGE_SIZE | **100U*1024**                                                                                                                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.                                                             |
-| SERIAL_DEBUG_BAUD | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                                                                                    |
-| DEMO_MODE | **1**                                                                                                                       | If you want to use **demo.thingsboard.io** set this value to **1**. This reduces the resolution, quality and cut the encoded photo to avoid size limit. |
+| Variable name | Default value                | Description                                                                                                                                  | 
+|-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| WIFI_SSID | **YOUR_WIFI_SSID**           | Your WiFi network name.                                                                                                                      | 
+| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**       | Your WiFi network password.                                                                                                                  |
+| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard                                                      | 
+| THINGSBOARD_SERVER | **{{hostName}}**             | Your ThingsBoard host or ip address.                                                                                                         |
+| THINGSBOARD_PORT | **1883U**                    | ThingsBoard server MQTT port. Can be default for this guide.                                                                                 |
+| MAX_MESSAGE_SIZE | **100U*1024**                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.                                                             |
+| SERIAL_DEBUG_BAUD | **1883U**                    | Baud rate for serial port. Can be default for this guide.                                                                                    |
+| DEMO_MODE | **1**                        | If you want to use **demo.thingsboard.io** set this value to **1**. This reduces the resolution, quality and cut the encoded photo to avoid size limit. |
 
 ```cpp
 ...
@@ -529,7 +529,7 @@ constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{{hostName}}";
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 constexpr uint32_t MAX_MESSAGE_SIZE = 100U * 1024;

@@ -9,6 +9,6 @@ return msg.temperature == null
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-tbel-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-tbel-pe.png)
 {% endif %}

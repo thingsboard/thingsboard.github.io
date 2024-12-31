@@ -1,4 +1,5 @@
 {% if page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
+{% assign cssTag="use-case" %}
 
 <!Doctype html>
 <html id="common" class="use-cases" lang="en">
@@ -19,18 +20,7 @@
 
 {% include footer.html %}
 
-<script>
-    jqueryDefer(function () {
-        $(window).scroll(function() {
-            var height = $(window).scrollTop();
-            if (height > 0) {
-                $('nav.usecase-nav').addClass('nav-fixed');
-            } else {
-                $('nav.usecase-nav').removeClass('nav-fixed');
-            }
-        });
-    });
-</script>
+{% include scroll-progress-button.liquid %}
 
 <script>
     jqueryDefer(

@@ -11,4 +11,5 @@ view-statistics:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/rule-engine-2-0/overview.md %}

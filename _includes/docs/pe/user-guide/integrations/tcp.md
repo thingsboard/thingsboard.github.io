@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -26,8 +26,8 @@ In this tutorial, we will use:
 {% if docsPrefix == "pe/" %}
  - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} installed locally;
 {% endif %}
-{% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud){:target="_blank"};
+{% if docsPrefix contains "paas/" %}
+ - ThingsBoard Professional Edition instance — [{{hostName}}](https://{{hostName}}){:target="_blank"};
 {% endif %}
  - TCP Integration, running externally and connected to the cloud ThingsBoard PE instance;
  - **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
