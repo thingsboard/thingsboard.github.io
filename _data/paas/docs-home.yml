@@ -55,8 +55,6 @@ toc:
       path: /docs/paas/user-guide/ota-updates/
     - title: Notification center
       path: /docs/paas/user-guide/notifications/
-    - title: Domains
-      path: /docs/paas/domains/
 - title: Dashboards
   section:
     - title: Overview
@@ -282,6 +280,8 @@ toc:
       path: /docs/paas/user-guide/rbac/
     - title: OAuth 2.0
       path: /docs/paas/user-guide/oauth-2-support/
+    - title: Domains
+      path: /docs/paas/domains/
     - title: HTTP Transport
       section:
         - title: Access Token based authentication

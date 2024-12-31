@@ -290,6 +290,8 @@ toc:
     path: /docs/pe/user-guide/two-factor-authentication/
   - title: OAuth 2.0
     path: /docs/pe/user-guide/oauth-2-support/
+  - title: Domains
+    path: /docs/pe/domains/
   - title: HTTP Transport
     section:
       - title: HTTP over SSL
