@@ -129,7 +129,7 @@ One of the most significant challenges during performance testing was overcoming
 With Jedis, each Redis command is sent and processed sequentially, meaning the system has to wait for each command to complete before issuing the next one.
 This approach significantly limited Redis’s potential to handle concurrent operations and fully utilize available system resources.
 
-To address this, we migrated to the [Lettuce](https://github.com/redis/lettuce) client, which leverages [Netty](https://github.com/netty/netty) under the hood for efficient asynchronous communication.
+To address this, we [migrated](https://github.com/thingsboard/tbmq/pull/174) to the [Lettuce](https://github.com/redis/lettuce) client, which leverages [Netty](https://github.com/netty/netty) under the hood for efficient asynchronous communication.
 Unlike Jedis, Lettuce allows multiple commands to be sent in parallel without waiting for their completion, enabling non-blocking operations and better resource utilization.
 This architecture made it possible to fully exploit Redis’s performance capabilities, especially under high message loads. Migration to Lettuce, however, was not trivial. 
 It required rewriting a substantial portion of the codebase to transition from synchronous to asynchronous workflows. This included restructuring how Redis commands were issued and handled. 
