@@ -86,6 +86,31 @@ notitle: "true"
     </div>
 </div>
 
+### Upgrading to 2.0.1
+
+{% capture difference %}
+**NOTE**:
+<br>
+These steps are applicable for 2.0.0 TBMQ version. In order to upgrade to 2.0.1 you need to [upgrade to 2.0.0 first](#upgrading-to-200).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### Pull TBMQ image (Optional)
+
+Pull 2.0.1 version TBMQ image depending on your current installation.
+
+{% capture tabspec %}tbmq-pull-2-0-1
+tbmq-pull-2-0-1-single,Single node,shell,resources/2.0.1/tbmq-single-node-pull.sh,/docs/mqtt-broker/install/resources/2.0.1/tbmq-single-node-pull.sh
+tbmq-pull-2-0-1-cluster,Cluster mode,shell,resources/2.0.1/tbmq-cluster-mode-pull.sh,/docs/mqtt-broker/install/resources/2.0.1/tbmq-cluster-mode-pull.sh{% endcapture %}
+{% include tabs.html %}
+
+#### From version
+
+The _fromVersion_ should be set to **2.0.0**.
+
+Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the cards](/docs/mqtt-broker/install/upgrade-instructions/)
+on top of the page.
+
 ### Upgrading to 2.0.0
 
 {% capture difference %}
