@@ -402,46 +402,46 @@ power-consumption-card-1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/go-to-energy-meter-state-1-pe.png
         title: 'Click the "Energy Meter" device row in the "Office sensors list" widget to navigate to its state;'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-1-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-1-pe.png
         title: 'Enter dashboard editing mode and click the "+ Add widget" button;'
     2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-2-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-2-pe.png
         title: 'In the widget library, locate and click on the "Industrial widgets" bundle;'
     3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-3-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-3-pe.png
         title: 'Select the "Power consumption card" widget;'
     4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-4-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-4-pe.png
         title: 'Set the "Selected entity" alias as the data source, and "powerConsumption" as the data key. Then, open the key data configuration by clicking the "pencil" icon;'
     5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-5-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-5-pe.png
         title: 'Choose "Sum" as the aggregation function to sum all data point values within the selected time period;'
     6:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-6-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-6-pe.png
         title: 'Use the dashboard time window;'
     7:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-7-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-7-pe.png
         title: 'Scroll down and open the icon color range settings;'
     8:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-8-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-8-pe.png
         title: 'Set the value ranges and corresponding colors as shown in the screenshot, then click "Apply";'
     9:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-9-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-9-pe.png
         title: 'Open the font settings menu;'
     10:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-10-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-10-pe.png
         title: 'Set the font size to 35 pixels, then click "Apply";'
     11:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-11-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-11-pe.png
         title: 'Open the value color range settings;'
     12:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-12-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-12-pe.png
         title: 'Set the value color range. Click "Apply";'
     13:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-13-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-13-pe.png
         title: 'Clear the "Card border radius" value and click "Add";'
     14:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-per-hour-14-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-14-pe.png
         title: 'The widget has been added to display the total energy consumption for the time period specified in the time window settings. Resize it to your liking. Afterwards, save the dashboard to apply the changes.'
 
 power-consumption-range-chart-1:
