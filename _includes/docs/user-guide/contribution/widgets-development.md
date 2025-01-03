@@ -2345,7 +2345,7 @@ Browser debugger (if enabled) will automatically pause code execution at the deb
 
 ## ThingsBoard extensions
 
-[ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) is our additional project that allows you to create your own angular components and use them in your widgets and actions.
+[ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions){:target="_blank"} is our additional project that allows you to create your own angular components and use them in your widgets and actions.
 We highly recommend using this feature for any complex logic in your solutions, because it provides you an opportunity to reuse your code, using all functionality of TypeScript, RXJS, Angular, etc.
 In this topic, we will cover how to connect your extensions in ThingsBoard 3.6 and higher using our UI.
 
@@ -2354,52 +2354,44 @@ In this topic, we will cover how to connect your extensions in ThingsBoard 3.6 a
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-First of all, you need a file with your compiled components. By default, it is called **thingsboard-extension-widgets.js**. All instructions on how to create it can be found inside the **README** file to [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions).
+First of all, you need a file with your compiled components. By default, it is called **thingsboard-extension-widgets.js**. All instructions on how to create it can be found inside the **README** file to [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions){:target="_blank"}.
 
-Once you have the file with your components, let's proceed to load them into ThingsBoard. 
+Once you have the file with your components, let's proceed to load them into ThingsBoard:
 
-Go to the "**Resources library**" page inside "**Resources**" section, and click the **add** button on right top corner of the window ("+" icon). 
-In the open popup, select **JS module** in **Resource type** selector, enter **Title** for your module, and import your compiled file:
-
-![image](https://img.thingsboard.io/user-guide/contribution/widgets/add-js-module.png)
+- Go to the "**JavaScript library**" page inside "**Resources**" section;
+- Click the "**Add JavaScript resource**" button (the "plus" icon in the upper right corner of the window);
+- In the open popup, select "**Extension**" in the "**JavaScript type**" selector (or "**Module**" to paste a piece of code);
+- Enter title for your module;
+- Drag the file with your compiled components;
+- Click "Add".
 
 Congratulations, your components were added to the ThingsBoard!
 
-Now, let's use them in some widget. 
-
-Go to the "**Widgets library**" page inside "**Resources**" section. We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)).
-
-![image](https://img.thingsboard.io/user-guide/contribution/widgets/add-static-widget.png)
+{% include images-gallery.html imageCollection="add-js-module" %}
 
 <br>
-First of all, go to the **Resources** tab and choose your extensions module.
+Now, let's use them in some widget. We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)):
 
-<div class="info-banner">
-  <img src="https://img.thingsboard.io/doc-info-icon.svg" alt="Doc info icon" />   
-  <div>
-    <p><strong>Important!</strong> Don’t forget about the <strong>Is module</strong> checkbox!</p>
-  </div>
-</div>
+- Go to the "**Widgets library**" page of the "**Resources**" section;
+- Click the "**plus**" icon in the upper right corner of the window, and select the "**Create new widget**" option;
+- Select widget type - "**Static widget**";
+- Enter widget name;
+- Navigate to the "**Resources**" tab, and click "**Add**" button;
+- Check the "**Is extension**" box;
+- Choose your extension module from drop-don menu;
 
-![image](https://img.thingsboard.io/user-guide/contribution/widgets/select-extensions-module-2.png)
+Your module is connected to your widget. Now, you can use your angular components:
 
-Your module is connected to your widget. Now, you can use your angular components. Let's add a custom component in the **HTML** tab. To apply the changes, click the Save button.
+- Go the "**HTML**" tab, and add the custom component;
+- Clean the default **self.onInit** function;
+- Click the "Run" button to preview how your widget will look;
+- To apply the changes, click the "Save" button.
 
-<div class="info-banner">
-  <img src="https://img.thingsboard.io/doc-info-icon.svg" alt="Doc info icon" />   
-  <div>
-    <p><strong>Important!</strong> Don’t forget to clean the default <strong>self.onInit</strong> function!</p>
-  </div>
-</div>
+Now, your component is used inside your widget.
 
-![image](https://img.thingsboard.io/user-guide/contribution/widgets/select-extensions-module-3.png)
+{% include images-gallery.html imageCollection="select-extensions-module" %}
 
-Now, your component is used inside your widget. 
-
-![image](https://img.thingsboard.io/user-guide/contribution/widgets/select-extensions-module-4.png)
-
-<br>
-In general, [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) allows you to create any possible widgets in the scope of ThingsBoard platforms.
+In general, [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions){:target="_blank"} allows you to create any possible widgets in the scope of ThingsBoard platforms.
 
 Good luck with your future awesome solutions!
 

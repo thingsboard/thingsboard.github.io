@@ -5,8 +5,11 @@
 
 ThingsBoard platform uses queues to guarantee the message processing, handle occasional spikes, and keep the system up and running on extreme loads. 
 You can review the architecture to find our [more about queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome).
-ThingsBoard supports renowned message brokers/queue providers (Kafka, RabbitMQ, AWS SQS, Azure Service Bus, Google Pub/Sub). 
-In later releases, we will add new implementations. 
+
+ThingsBoard supports two types of message queues: **Kafka** and **In-Memory**.
+- **Kafka** is a widely used, distributed, and durable message queue system designed to handle large volumes of data. It is well-suited for production environments where high throughput, fault tolerance, and scalability are critical.
+- **In-Memory** queue is a lightweight, fast, and simple message queue implementation designed for smaller-scale or development environments. It stores messages in memory rather than on disk, prioritizing speed over persistence.
+
 With the platform's 3.4 version, the configuration UI was introduced to simplify the setup and management process and to improve user experience.
 In a nutshell, the Rule Engine subscribes to queues on startup and polls new messages. 
 There is always **Main** topic (queue) that is used as a default entry point for new messages. 
