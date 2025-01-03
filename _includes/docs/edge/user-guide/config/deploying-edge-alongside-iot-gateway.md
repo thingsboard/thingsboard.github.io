@@ -9,7 +9,7 @@ This approach can create a robust, decentralized IoT architecture due to **Edge'
 **ThingsBoard IoT Gateway** collects data locally, translates it into the [ThingsBoard-compatible communication protocols](/docs/{{peDocsPrefix}}edge/api/){: target="_blank"}, and transmits it to the **ThingsBoard Edge**.
 The [Rule Engine](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/){: target="_blank"} processes the data in real time, enabling immediate visualizations and event responses. Summarised or aggregated data can be sent to the central server for analysis if required.
 
-![image](/images/edge/how-does-it-work.webp){: style="display: block; margin: auto; max-width: 600px; max-height: 600px"}
+![image](https://img.thingsboard.io/edge/how-does-it-work.webp){: style="display: block; margin: auto; max-width: 600px; max-height: 600px"}
 
 {% capture local-deployment %}
 When deployed in remote locations with unreliable internet connections, **Edge** continues operating until connectivity is restored.
