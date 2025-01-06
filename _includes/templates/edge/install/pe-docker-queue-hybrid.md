@@ -16,7 +16,7 @@ version: '3.8'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge:{{ site.release.pe_edge_full_ver }}"
+    image: "thingsboard/tb-edge-pe:{{ site.release.pe_edge_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
@@ -30,9 +30,9 @@ services:
       TB_KAFKA_SERVERS: "kafka:9092"
       DATABASE_TS_TYPE: "cassandra"
       CASSANDRA_URL: "cassandra:9042"
-    volumes:
-      - tb-edge-data:/data
-      - tb-edge-logs:/var/log/tb-edge
+      volumes:
+        - tb-edge-data:/data
+        - tb-edge-logs:/var/log/tb-edge
   postgres:
     restart: always
     image: "postgres:15"
@@ -68,11 +68,18 @@ services:
       - kafka-data:/bitnami
   cassandra:
     restart: always
-    image: "cassandra:4.1"
+    image: cassandra:4.0
+    container_name: cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: "Thingsboard Edge Cluster"
+      CASSANDRA_KEYSPACE_NAME: "tb_edge"
+      CASSANDRA_LOCAL_DATACENTER: "datacenter1"
     ports:
-      - "9042"
+      - 9042:9042
     volumes:
-      - tb-edge-cassandra-data:/var/lib/cassandra
+      - ./data/cassandra:/var/lib/cassandra
+    networks:
+      - cassandra-network
 volumes:
   tb-edge-data:
     name: tb-edge-data
@@ -82,6 +89,9 @@ volumes:
     name: tb-edge-postgres-data
   kafka-data:
     driver: local
+networks:
+  cassandra-network:
+    driver: bridge
 ```
 {: .copy-code}
 

@@ -9,7 +9,7 @@ nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following lines to the **docker-compose.yml** file:
+Add the following lines to the **docker-compose.yml** file: 
 
 ```yml
 version: '3.8'
@@ -68,11 +68,18 @@ services:
       - kafka-data:/bitnami
   cassandra:
     restart: always
-    image: "cassandra:4.1"
+    image: "cassandra:4.0"
+    container_name: cassandra
+    environment:
+      CASSANDRA_CLUSTER_NAME: "Thingsboard Edge Cluster"
+      CASSANDRA_KEYSPACE_NAME: "tb_edge"
+      CASSANDRA_LOCAL_DATACENTER: "datacenter1"
     ports:
-      - "9042"
+      - 9042:9042
     volumes:
-      - tb-edge-cassandra-data:/var/lib/cassandra
+      - ./data/cassandra:/var/lib/cassandra
+    networks:
+      - cassandra-network
 volumes:
   tb-edge-data:
     name: tb-edge-data
@@ -82,6 +89,9 @@ volumes:
     name: tb-edge-postgres-data
   kafka-data:
     driver: local
+networks:
+  cassandra-network:
+    driver: bridge
 ```
 {: .copy-code}
 
