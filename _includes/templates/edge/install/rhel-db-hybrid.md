@@ -38,8 +38,8 @@ You can optionally add the following parameters to reconfigure your ThingsBoard 
 
 ```bash
 export CASSANDRA_CLUSTER_NAME=Edge Cluster
-export CASSANDRA_KEYSPACE_NAME=tb_edge
-export CASSANDRA_URL=127.0.0.1:9043
+export CASSANDRA_KEYSPACE_NAME=thingsboard
+export CASSANDRA_URL=127.0.0.1:9042
 export CASSANDRA_USE_CREDENTIALS=false
 export CASSANDRA_USERNAME=
 export CASSANDRA_PASSWORD=

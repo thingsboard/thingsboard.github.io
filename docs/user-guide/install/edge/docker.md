@@ -35,13 +35,13 @@ This guide will help you to install and start **ThingsBoard Edge** using **Docke
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-### Step 2. Choose Queue Service
+### Step 2. Choose Queue and/or Database Services
 
 **ThingsBoard Edge** is able to use different messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
 
 * **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
 
-* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now. It is useful for both on-prem and private cloud deployments. It is also useful if you like to stay independent from your cloud provider. However, some providers also have managed services for Kafka. See [AWS MSK](https://aws.amazon.com/msk/){: target="_blank"} for example.
+* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now.
 
 * **Hybrid** implementation combines PostgreSQL and Cassandra databases with Kafka queue service. It is recommended if you plan to manage 1M+ devices in production or handle high data ingestion rate (more than 5000 msg/sec).
 

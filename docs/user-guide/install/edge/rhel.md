@@ -49,7 +49,7 @@ Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>
 
 * **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
 
-* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now. It is useful for both on-prem and private cloud deployments. It is also useful if you like to stay independent from your cloud provider. However, some providers also have managed services for Kafka. See [AWS MSK](https://aws.amazon.com/msk/){: target="_blank"} for example.
+* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now. 
 
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
