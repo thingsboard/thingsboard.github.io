@@ -3,9 +3,8 @@
 {:toc}
 
 Point-to-point (P2P) communication is one of the core MQTT patterns, enabling devices to exchange messages directly in a one-to-one manner.
-This pattern is especially relevant for IoT scenarios requiring reliable, targeted messaging. In our previous benchmarks, we focused on two other core MQTT communication patterns: 
-fan-in, leveraging [persistent APPLICATION clients](/docs/mqtt-broker/architecture/#persistent-application-client),
-and fan-out. Following these tests, we aimed to evaluate how well the broker performs with [persistent DEVICE clients](/docs/mqtt-broker/architecture/#persistent-device-client) in a P2P communication scenario.
+This pattern is especially relevant for IoT scenarios requiring reliable, targeted messaging, like private messaging, command delivery, and other direct interaction use cases.
+We aimed to evaluate how well the broker performs with [persistent DEVICE clients](/docs/mqtt-broker/architecture/#persistent-device-client) in a P2P communication scenario.
 Persistent DEVICE clients are well-suited for P2P messaging because they use a shared Kafka topic, reducing the load on [Kafka](/docs/mqtt-broker/architecture/#kafka-topics), while leveraging [Redis](/docs/mqtt-broker/architecture/#redis)
 to ensure reliable message delivery even if the client is temporarily offline. The tests involved scaling the infrastructure while progressively increasing
 the load from 200,000 to **1,000,000 messages per second**, demonstrating TBMQ’s scalability and consistent performance.
