@@ -5,10 +5,10 @@ toc:
   path: /docs/mqtt-broker/architecture/
 - title: Performance Tests
   section:
-    - title: 100M MQTT Connections Performance Test
-      path: /docs/mqtt-broker/reference/100m-connections-performance-test/
-    - title: 3M Msg/sec Throughput Performance Test
-      path: /docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/
-    - title: 1M Msg/sec Throughput Point-to-point Performance Test
+    - title: "Point-to-point: 1M Msg/sec Throughput"
       path: /docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/
       new: true
+    - title: "Fan-out: 3M Msg/sec Throughput"
+      path: /docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/
+    - title: "Fan-in: 100M MQTT Connections"
+      path: /docs/mqtt-broker/reference/100m-connections-performance-test/
