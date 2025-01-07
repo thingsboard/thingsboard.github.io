@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Edge Device Creation and Cloud Provisioning
-description: Seamlessly Create Edge Devices and Provision Them to the Cloud
+title: Edge Device Management
+description: Seamlessly create Edge devices and assign them to the Cloud
 
 create-device:
     0:

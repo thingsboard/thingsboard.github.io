@@ -60,5 +60,11 @@ toc:
       path: /docs/iot-gateway/guides/how-to-use-gateway-shell/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
-- title: Customization guide
-  path: /docs/iot-gateway/custom/
+- title: Customization
+  section:
+    - title: Overview
+      path: /docs/iot-gateway/custom/
+    - title: Customization guide (Serial connector)
+      path: /docs/iot-gateway/custom/serial-connector/
+    - title: Methods and data types
+      path: /docs/iot-gateway/custom/methods-and-datatypes/
