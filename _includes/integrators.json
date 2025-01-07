@@ -757,7 +757,7 @@
   },
   {
     "type": ["Asia"],
-    "country": ["Sri-Lanka"],
+    "country": ["Sri Lanka"],
     "name": "N-able Pvt. Ltd.",
     "contact": {
       "href": "info@n-able.biz"
@@ -1148,6 +1148,18 @@
     },
     "site": {
       "href": "teslawater.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Sri Lanka"],
+    "name": "Thingsnode Private Limited",
+    "contact": {
+      "href": "migara@thingsnode.cc"
+    },
+    "site": {
+      "href": "thingsnode.cc",
       "target": "_blank"
     }
   },
