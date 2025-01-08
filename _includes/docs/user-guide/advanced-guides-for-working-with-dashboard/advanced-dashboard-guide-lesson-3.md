@@ -62,7 +62,7 @@ Similarly, add data emulator for "Energy Meter" device:
 - Use the following script to simulate power consumption telemetry data:
 
 ```js
-var powerConsumption = toFixed(Math.random() * 4.3, 2);
+var powerConsumption = toFixed(Math.random() * 2.2, 2);
 var msg = { powerConsumption: powerConsumption};
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
@@ -83,7 +83,7 @@ Add data emulator for "Water Flow Meter" device.
 - Use the following script to simulate water consumption telemetry data, and battery voltage data:
 
 ```js
-var waterConsumption = toFixed(Math.random()*1.6 + 1, 2);
+var waterConsumption = toFixed(Math.random()*1.2, 2);
 var batteryLevel = toFixed(Math.random()*1 + 45, 2);
 var msg = { waterConsumption: waterConsumption, batteryLevel: batteryLevel };
 var metadata = { data: 40 };
@@ -188,8 +188,8 @@ Therefore, let&#39;s proceed to configure the time window.
 
 ## Time window
 
-To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, you need to adjust the time interval and aggregation parameters.
-Data sent by devices will be grouped "by hour" and displayed for the current day, week, or month, depending on your choice.
+To correctly display data on widgets that use the [dashboard time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, you need to adjust the time interval and aggregation parameters.
+Data sent by devices will be grouped by hour and displayed for the current day, week, or month, depending on your choice.
 
 Let’s proceed with the setup:
 
@@ -197,7 +197,17 @@ Let’s proceed with the setup:
 
 Now, configure the "History" tab:
 
-{% include images-gallery.html imageCollection="time-window-configuration-2" showListImageTitles="true" %}
+- Navigate to the "History" tab, and hide the "Last" and "Range" interval options from users;
+- For the "Relative" tab, leave the default settings;
+- Set "Sum" as the aggregation function and ensure users cannot modify this parameter by hiding it;
+- Configure the grouping interval to "1 hour" and restrict users from changing it.
+- Click "Apply" to save the time window adjustments;
+- Select "Update" to apply the updated time window settings to the dashboard;
+- Save the dashboard to confirm the changes.
+
+As you can see, the "Office sensors list" widget now displays data on the office&#39;s energy and water consumption for the selected time period, which in our case is the current day.
+
+{% include images-gallery.html imageCollection="time-window-configuration-2" %}
 
 This configuration ensures that all widgets using the dashboard's time window will display the aggregated telemetry values for the current day (or another selected interval) grouped by the hour.
 
@@ -406,11 +416,11 @@ First, add a widget to display the current temperature in the office.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-1" showListImageTitles="true" %}
 
-Similarly, add a widget to display the humidity.
+Now, add a widget to display the humidity.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-2" showListImageTitles="true" %}
 
-Now, add a widget to display the CO2 level.
+Add another card widget to display the CO2 level.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-3" showListImageTitles="true" %}
 
@@ -420,14 +430,14 @@ Now, you can see the current values of temperature, humidity, and CO2 levels.
 
 ### Temperature and humidity history chart
 
-Now we will add a chart widget to display historical temperature and humidity data for the office. This widget will utilize the dashboard time window, allowing us to view hourly data for a selected period (such as the current day, week, or month). 
-This way, we can track their changes over time.
+Now, we will add a chart widget to display historical data on temperature and humidity in the office. This widget will use its own time window settings.
+The configuration we set will allow us to view the hourly average values of temperature and humidity for the current day. This way, we can monitor their changes over time.
 
 {% include images-gallery.html imageCollection="temperature-and-humidity-history-1" showListImageTitles="true" %}
 
 ### CO2 level chart
 
-Add another line chart widget to display air quality data. This widget will also use the dashboard time window, showing hourly data for the selected time period.
+Add another line chart widget to display air quality data. This widget will also use its own time window settings, showing hourly data for the selected time period.
 
 {% include images-gallery.html imageCollection="air-quality-widget-1" showListImageTitles="true" %}
 
@@ -438,22 +448,22 @@ The configured "Indoor Air Quality Sensor" state should look like this:
 
 ## Configuring state for Energy Meter
 
-Let&#39;s move on to configuring the state for the "Energy Meter" device. We will add two widgets: one to display the total energy consumption for the current day and another to display historical data on hourly energy consumption for the current day.
+Let&#39;s move on to configuring the "Energy Meter" state. We will add two widgets: one to display the total energy consumption for the current day and another to display historical data on hourly energy consumption.
 
 ### Current power consumption
 
-To display power consumption, use the "Power consumption card" widget from the "Industrial widgets" bundle:
+To display total power consumption, use the "Power consumption card" widget from the "Industrial widgets" bundle:
 
 {% include images-gallery.html imageCollection="power-consumption-card-1" showListImageTitles="true" %}
 
 ### Power consumption chart
 
-To display historical data on hourly energy consumption, we will add the "Range chart" widget. 
+To display historical data on power consumption, we will add the "Range chart" widget. 
 The unique feature of this widget is that changes in data values on the graph are visualized using configurable color ranges.
 
 {% include images-gallery.html imageCollection="power-consumption-range-chart-1" showListImageTitles="true" %}
 
-Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption for the current day.
+Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption.
 
 {% include images-gallery.html imageCollection="energy-meter-state-final" %}
 
@@ -465,21 +475,23 @@ Finally, we will configure the state for the "Water Flow Meter" device. This wil
 
 If you need to display specific data but cannot find a suitable widget in the available bundles, you can customize any widget to fit your needs. Let’s take the "Flow rate card" widget from the "Industrial widgets" bundle as an example and configure it to display water consumption.
 
-{% include images-gallery.html imageCollection="water-consumption-per-hour-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="water-consumption-1" showListImageTitles="true" %}
 
 ### Water consumption chart
 
-Now we need to visualize the water consumption data for the last 12 hours. Earlier, we added a similar widget to track power consumption. Therefore, let's copy the ["Power consumption history" widget](#power-consumption-chart), insert it into the "water_sensor" state, and change its data source to water consumption.
+Now we need to add a widget to visualize historical data on water consumption. Previously, we added a similar widget for tracking [power consumption](#power-consumption-chart).
+Let's copy the ["Power consumption history" widget](#power-consumption-chart), paste it into the "water_sensor" state, and change the data source to water consumption.
 
 {% include images-gallery.html imageCollection="water-consumption-range-chart-1" showListImageTitles="true" %}
 
 ### Battery level widget
 
-And lastly in this tutorial, we will add the "Battery charge" widget. It will display the battery charge level in the "Water Flow Meter" device.
+And lastly in this lesson, we will add the "Battery charge" widget. It will display the battery charge level of the "Water Flow Meter" device.
 
 {% include images-gallery.html imageCollection="battery-charge-1" showListImageTitles="true" %}
 
-Now you can track water usage per hour, over the last 12 hours, and control the battery level in the "Water Flow Meter" device.
+The state for the "Water Flow Meter" device has been configured. 
+Monitor water consumption for the current day, track historical data on hourly water consumption, and control the battery charge level of the "Water Flow Meter" device.
 
 {% include images-gallery.html imageCollection="water-flow-meter-final" %}
 

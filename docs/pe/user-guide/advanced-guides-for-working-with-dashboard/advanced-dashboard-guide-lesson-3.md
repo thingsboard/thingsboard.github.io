@@ -130,8 +130,8 @@ customize-office-sensors-list-widget-3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-16-pe.png
         title: 'Save changes to the dashboard.'
     5:
-      image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-17-pe.png
-      title: 'Now, in the "Office sensors list" widget, the telemetry for the Indoor Air Quality Sensor is displayed in a single column.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/customize-office-sensors-list-widget-17-pe.png
+        title: 'Now, in the "Office sensors list" widget, the telemetry for the Indoor Air Quality Sensor is displayed in a single column.'
 
 time-window-configuration-1:
     0:
@@ -142,36 +142,39 @@ time-window-configuration-1:
         title: 'Click the "Edit time window" icon on the toolbar and then click the "gear" icon to open the time window settings;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-3-pe.png
-        title: 'A new settings window will open. Start with the "Realtime" tab. Hide interval selection parameter on the "Last" tab;'
+        title: 'A new settings window will open. Start with the "Realtime" tab. Hide interval selection parameter for the "Last" tab;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-4-pe.png
         title: 'On the "Relative" tab, click the "pencil" icon in the interval settings row;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-5-pe.png
-        title: 'Adjust the grouping interval list: select "Current day," "Current week" (Sun-Sat), "Current week" (Mon-Sun), and "Current month." Set the grouping interval to "1 hour". Click "Apply";'
+        title: 'Uncheck all intervals except for "Current day," "Current week" (Sun-Sat), and "Current week" (Mon-Sun). Set their grouping interval and default grouping interval to 1 hour;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-6-pe.png
+        title: 'Also check the "Current month" interval. Set grouping interval and default grouping interval to 2 hour. Click "Apply";'
 
 time-window-configuration-2:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-6-pe.png
-        title: 'Hide the "Last: interval from users.'
-    1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-7-pe.png
-        title: 'Also, hide the fixed interval from users;'
-    2:
+        title: 'Navigate to the "History" tab. Hide the "Last" interval option from users;'
+    1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-8-pe.png
-        title: 'For the "Relative" tab, leave the default settings. Set "Sum" as the aggregation method and hide the change of this parameter from users;'
-    3:
+        title: 'Also, hide the "Range" interval option from users;'
+    2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-9-pe.png
-        title: 'Set the grouping interval to "1 hour" and hide the change of this parameter. Click "Apply";'
-    4:
+        title: 'For the "Relative" tab, leave the default settings; Set "Sum" as the aggregation function and ensure users cannot modify this parameter by hiding it;'
+    3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-10-pe.png
-        title: 'Click "Update" to apply the new time window settings to the dashboard;'
-    5:
+        title: 'Configure the grouping interval to "1 hour" and restrict users from changing it. Click "Apply";'
+    4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-11-pe.png
-        title: 'Save the dashboard;'
-    6:
+        title: 'Select "Update" to apply the updated time window settings to the dashboard;'
+    5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-12-pe.png
-        title: 'As you can see, telemetry for the Energy Meter and Water Flow Meter devices is now displayed in the "Office Sensors List" widget. These are the total energy and water consumption of the office for the selected period, which in our case is the current day.'
+        title: 'Save the dashboard to confirm the changes;'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/time-window-configuration-13-pe.png
+        title: 'As you can see, the "Office sensors list" widget now displays data on the office&#39;s energy and water consumption for the selected time period, which in our case is the current day.'
 
 adding-devices-states-1:
     0:
@@ -334,10 +337,10 @@ temperature-and-humidity-history-1:
         title: 'Choose the "Line chart" widget;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-4-pe.png
-        title: 'Use the widget&#39;s time window. Select "Relative" and set "Current day" as the time interval. Set the value "Average" as the aggregation method and the grouping interval to "1 hour". Then, click "Update;'
+        title: 'Use the widget&#39;s time window and make some changes to its settings. Select "Relative" and set "Current day" as the time interval. Leave the aggregation function as "Average" and set the grouping interval to 1 hour. Then, click "Update;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-5-pe.png
-        title: 'In this widget, we&#39;ll use the dashboard&#39;s time window. Specify "Selected entity" alias as the data source. Add data keys "temperature" and "humidity" and specify their labels and units. Then, click the "gear" icon for "temperature" key to open its configuration window;'
+        title: 'Specify "Selected entity" alias as the data source. Add data keys "temperature" and "humidity" and specify their labels and units. Then, click the "gear" icon for "temperature" key to open its configuration window;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/temperature-and-humidity-history-6-pe.png
         title: 'Turn on "Show points" and "Point label" options. Click "Save". Repeat this for the "humidity" data key;'
@@ -363,16 +366,16 @@ temperature-and-humidity-history-1:
 air-quality-widget-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-1-pe.png
-        title: 'Enter the edit mode of your dashboard, and click the "+ Add widget" button;'
+        title: 'Enter the dashboard editing mode, and click the "+ Add widget" button;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-2-pe.png
-        title: 'Navigate to the "Charts" widgets bundle and select the "Line chart" widget;'
+        title: 'Select the "Line chart" widget of the "Charts" widgets bundle;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-3-pe.png
-        title: 'Use the widget&#39;s time window. Select "Relative" and set "Current day" as the time interval. Set the value "Average" as the aggregation method and the grouping interval to "1 hour". Then, click "Update;'
+        title: 'Use the widget&#39;s time window. In the time window settings, select "Relative" and set "Current day" as the time interval. Leave the aggregation function as "Average" and set the grouping interval to 1 hour. Then, click "Update;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-4-pe.png
-        title: 'Now, specify "Selected entity" alias as the data source. Add "co2" as the data key, and set its label and units. Then, click the gear icon to configure the "co2" data key settings;'
+        title: 'Now, specify "Selected entity" alias as the datasource. Add "co2" as the data key, and set its label and units. Then, click the "gear" icon to configure the "co2" data key settings;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-5-pe.png
         title: 'Turn on the "Smooth line" option to make the chart line appear smoother. Click "Save";'
@@ -384,7 +387,7 @@ air-quality-widget-1:
         title: 'Change the chart title to "Air Quality";'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-8-pe.png
-        title: 'Set the "Bottom" legend position and check "Min", "Max" and "Average" options in the "Show values" section to display these statistics on the chart;'
+        title: 'Set the "Bottom" legend position. Check "Min", "Max" and "Average" options in the "Show values" section to display these statistics on the chart;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-quality-widget-9-pe.png
         title: 'Clear the "Card border radius" value. Click "Add";'
@@ -394,7 +397,7 @@ air-quality-widget-1:
 
 air-sensor-state:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/air-sensor-state-1-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/smart-sensor-state-1-pe.png
         title: 'The configured "Indoor Air Quality Sensor" state should look like this.'
 
 power-consumption-card-1:
@@ -403,7 +406,7 @@ power-consumption-card-1:
         title: 'Click the "Energy Meter" device row in the "Office sensors list" widget to navigate to its state;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-1-pe.png
-        title: 'Enter dashboard editing mode and click the "+ Add widget" button;'
+        title: 'Enter dashboard editing mode, and click the "+ Add widget" button;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-2-pe.png
         title: 'In the widget library, locate and click on the "Industrial widgets" bundle;'
@@ -412,54 +415,54 @@ power-consumption-card-1:
         title: 'Select the "Power consumption card" widget;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-4-pe.png
-        title: 'Set the "Selected entity" alias as the data source, and "powerConsumption" as the data key. Then, open the key data configuration by clicking the "pencil" icon;'
+        title: 'Specify the "Selected entity" alias as the datasource. The "powerConsumption" key is already specified as the data key. Open the "powerConsumption" data key configuration by clicking the "pencil" icon;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-5-pe.png
-        title: 'Choose "Sum" as the aggregation function to sum all data point values within the selected time period;'
+        title: 'Select the "Sum" as the aggregation function to sum all data point values within the selected time period. Click "Save";'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-6-pe.png
         title: 'Use the dashboard time window;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-7-pe.png
-        title: 'Scroll down and open the icon color range settings;'
+        title: 'Change the widget label to "Power consumption". Open the icon color settings;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-8-pe.png
-        title: 'Set the value ranges and corresponding colors as shown in the screenshot, then click "Apply";'
+        title: 'Set the value ranges and their corresponding colors as shown in the screenshot. Then, click "Apply";'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-9-pe.png
-        title: 'Open the font settings menu;'
+        title: 'Open the font settings;'
     10:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-10-pe.png
-        title: 'Set the font size to 35 pixels, then click "Apply";'
+        title: 'Set the font size to 35 pixels, and click "Apply";'
     11:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-11-pe.png
-        title: 'Open the value color range settings;'
+        title: 'Open the value color settings;'
     12:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-12-pe.png
-        title: 'Set the value color range. Click "Apply";'
+        title: 'Set the value ranges and their corresponding colors as shown in the screenshot. Then, click "Apply";'
     13:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-13-pe.png
-        title: 'Clear the "Card border radius" value and click "Add";'
+        title: 'Clear the "Card border radius" value, and click "Add";'
     14:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-14-pe.png
-        title: 'The widget has been added to display the total energy consumption for the time period specified in the time window settings. Resize it to your liking. Afterwards, save the dashboard to apply the changes.'
+        title: 'The widget has been added to display the total power consumption for the time period specified in the dashboard&#39;s time window. Adjust widget size to your preference. Then, save the dashboard to apply the changes.'
 
 power-consumption-range-chart-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-1-pe.png
-        title: 'While in dashboard editing mode click the "+ Add widget" button at the top of the screen;'
+        title: 'Enter dashboard editing mode, and click the "+ Add widget" button at the top of the screen;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-2-pe.png
-        title: 'Navigate to the "Charts" widgets bundle and select the "Range chart" widget;'
+        title: 'Select the "Range chart" widget of the "Charts" widgets bundle;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-3-pe.png
-        title: 'Use the dashboard time window. Specify "Selected entity" alias as the data source, and add "powerConsumption" data key. Change the chart title to "Power consumption history";'
+        title: 'Use the dashboard time window. Specify "Selected entity" alias as the datasource, and the "powerConsumption" key as the data key. Change the chart title to "Power consumption history";'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-4-pe.png
-        title: 'Change the units to kWh, and proceed to the color range settings;'
+        title: 'Change the units to kW. Then, open the range colors settings;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-5-pe.png
-        title: 'The line color on the chart is colored according to the range in which the value falls. This will help you to quickly orient yourself with the data by visually highlighting changes in color according to variations in values. Add five ranges and their corresponding colors: range 1: from 0 to 1, color, for example, light green; range 2: from 1 to 2, color, for example, green, range 3: from 2 to 3, color, for example, yellow, and so on. Click "Apply";'
+        title: 'The line color on the chart is colored according to the range in which the value falls. This will help you to quickly orient yourself with the data by visually highlighting changes in color according to variations in values. Set the value ranges and their corresponding colors. Click "Apply";'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-6-pe.png
         title: 'Go to the "Range thresholds settings", and turn off the "Label" option;'
@@ -468,78 +471,81 @@ power-consumption-range-chart-1:
         title: 'Open the "Line color" settings, and set the opacity to 40%. Apply changes;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-8-pe.png
-        title: 'Expand the Y-axis settings. Enter the "Power consumption" as the axis label, and turn off "Show split lines" option;'
+        title: 'Expand the Y-axis settings. Enter the "Power consumption" as the axis label, and turn off the "Show split lines" option;'
     8:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-9-pe.png
         title: 'Uncheck the "Data export" box in the "Show card buttons" section, and remove the value for the "Card border radius". Click "Add" to complete adding the range chart widget;'
     9:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/power-consumption-range-chart-10-pe.png
-        title: 'The "Power consumption history" widget has been added. Place it to the right of the "Power consumption per hour" widget and resize it to your liking. Save the dashboard to apply the changes.'
+        title: 'The "Power consumption history" widget has been added. Place it to the right of the "Power consumption" widget and resize it to your liking. Save the dashboard to apply the changes.'
 
 energy-meter-state-final:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/energy-meter-state-final-1-pe.png
-        title: 'Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption for the current day.'
+        title: 'Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption.'
 
-water-consumption-per-hour-1:
+water-consumption-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/go-to-water-flow-meter-state-1-pe.png
-        title: 'Click on the "Water Flow Meter" device to go to its state;'
+        title: 'Click on the "Water Flow Meter" device in the "Office sensors list" to go to its state;'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-1-pe.png
-        title: 'While in dashboard editing mode click the "+ Add widget" button;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-1-pe.png
+        title: 'Enter the dashboard editing mode, and click the "+ Add widget" button;'
     2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-2-pe.png
-        title: 'Navigate to the "Industrial" widgets bundle and select any widget, for example "Power consumption card";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-2-pe.png
+        title: 'Navigate to the "Industrial widgets" bundle and select any widget, for example "Flow rate card";'
     3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-3-pe.png
-        title: 'Specify "WM-003" (Water Flow Meter) as the data source. Add "waterConsumption" key as data key and click "pencil" icon to open its data key configuration;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-3-pe.png
+        title: 'Specify "Selected entity" alias as the data source. Add the "waterConsumption" key as data key, and click "pencil" icon to open its data key configuration;'
     4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-4-pe.png
-        title: 'In this widget, we will also use data aggregation to calculate the hourly average of the received data. Select the "Average" as the aggregation function;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-4-pe.png
+        title: 'Select the "Sum" as the aggregation function. Click "Save";'
     5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-5-pe.png
-        title: 'Use the widget&#39;s time window. Turn off the "Display time window" option. Then, select the "Current hour" option as the time interval. Click "Update";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-5-pe.png
+        title: 'Use the dashboard time window. Change the widget label to "Water consumption". Let&#39;s change the widget icon to better correspond to the type of data displayed. Open the "Icons" window;'
     6:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-6-pe.png
-        title: 'Change the label to "Water consumption per hour". Now, open the "Icons" window;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-6-pe.png
+        title: 'Choose a new icon;'
     7:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-7-pe.png
-        title: 'Choose a new icon for the widget that better corresponds to the type of data displayed;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-7-pe.png
+        title: 'Open the color settings of the icon. Set the value ranges and their corresponding colors. Then, click "Apply";'
     8:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-8-pe.png
-        title: 'Change units to gal (gallon), set to show one decimal place, and clear the "Card border radius" value. Click "Add";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-8-pe.png
+        title: 'Set gallon as the units. Open the color settings of the "Value" option;'
     9:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-per-hour-9-pe.png
-        title: 'The widget that displays the average water consumption per hour has been added. Resize it to your liking. Save the dashboard.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-9-pe.png
+        title: 'Set the value ranges and their corresponding colors as shown in the screenshot. Then, click "Apply";'
+    10:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-10-pe.png
+        title: 'Clear the "Card border radius" value. Click "Add";'
+    11:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-11-pe.png
+        title: 'The widget has been added to display the total water consumption for the time period specified in the dashboard&#39;s time window. Resize widget to your liking, and save the dashboard.'
 
 water-consumption-range-chart-1:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-1-pe.png
-        title: 'Go to the "Energy Meter" state, enter dashboard editing mode. Right-click on the "Power consumption history" widget and select "Copy" from the dropdown menu that appears;'
+        title: 'Go to the "Energy Meter" state, and enter the dashboard editing mode. Right-click on the "Power consumption history" widget and select "Copy" from the dropdown menu that appears;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-2-pe.png
-        title: 'Navigate to the "Water Flow Meter" state. Right-click on the dashboard and select "Paste" to insert the copied widget;'
+        title: 'Navigate to the "Water Flow Meter" state. Right-click on the dashboard and select "Paste" to insert the copied widget on the dashboard;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-3-pe.png
-        title: 'Place this widget to the right of the "Water consumption per hour" widget, resize it, and click the "pencil" icon to enter its settings;'
+        title: 'Place this widget to the right of the "Water consumption" widget, and resize it. Now, enter the "Power consumption history" widget settings by clicking the "pencil" icon;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-4-pe.png
-        title: 'Specify the device "WM-003" (Water Flow Meter) instead of "EM-002". Replace the data key with "waterConsumption". Change the title to "Water consumption history";'
+        title: 'Leave the "Selected entity" alias as the datasource. Replace the data key "powerConsumption" with "waterConsumption". Change the title to "Water consumption history";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-5-pe.png
-        title: 'Change units to gal (gallon), and proceed to edit the range colors;'
+        title: 'Change units to gal (gallon). Turn off the "Fill area" option. Now, go to the range colors settings;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-6-pe.png
-        title: 'Remove the extra color range and apply the changes;'
+        title: 'Set the value ranges and their corresponding colors as shown in the screenshot. Then, click "Apply";'
     6:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-7-pe.png
-        title: 'For the Y-axis, change the scale: minimum value 0, maximum value 4;'
+        title: 'Expand the Y-axis settings. Change axis label to "Water consumption". Click "Apply" to save changes;'
     7:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-8-pe.png
-        title: 'Expand the Y-axis settings. Change axis label to "Water consumption". Click "Apply" to save changes;'
-    8:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-consumption-range-chart-9-pe.png
         title: 'The "Water consumption history" widget has been added. Save the dashboard.'
       
 battery-charge-1:
@@ -548,21 +554,21 @@ battery-charge-1:
         title: 'While in dashboard editing mode click the "+ Add widget" button;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/battery-charge-2-pe.png
-        title: 'Navigate to the "Status indicators" widgets bundle and select the "Battery level" widget;'
+        title: 'Select the "Battery level" widget of the "Status indicators" widgets bundle;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/battery-charge-3-pe.png
-        title: 'Specify "WM-003" (Water Flow Meter) as the data source, and add "batteryLevel" key as data key;'
+        title: 'Specify the "Selected entity" alias as the datasource. The "batteryLevel" key is already specified as the data key;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/battery-charge-4-pe.png
         title: 'Clear the "Card border radius" value. Click "Add";'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/battery-charge-5-pe.png
-        title: 'Place this widget to the right of the "Water consumption history" widget, resize it. Save the dashboard.'
+        title: 'Place this widget to the right of the "Water consumption history" widget, and resize it. Finally, save the dashboard.'
 
 water-flow-meter-final:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/water-flow-meter-state-final-1-pe.png
-        title: 'Now you can track water usage per hour, over the last 12 hours, and control the battery level in the "Water Flow Meter" device.'
+        title: 'The state for the "Water Flow Meter" device has been configured. Monitor water consumption for the current day, track historical data on hourly water consumption, and control the battery charge level of the "Water Flow Meter" device.'
 
 dashboard-final-lesson-3:
     0:
@@ -579,10 +585,10 @@ dashboard-final-lesson-3:
         title: 'Indoor Air Quality Sensor state;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-5-pe.png
-        title: 'Water Flow Meter state'
+        title: 'Energy Meter state'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/dashboard-final-lesson-3-6-pe.png
-        title: 'Energy Meter state'
+        title: 'Water Flow Meter state'
 
 ---
 

@@ -189,10 +189,10 @@ reviewing-customer-user-dashboard-1:
         title: 'Here we see the office layout and the sensors with their readings. Navigate to the state of each sensor to ensure that their telemetry readings are accessible to you;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/reviewing-customer-user-dashboard-4-pe.png
-        title: 'Energy Meter state;'
+        title: 'Indoor Air Quality Sensor state;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/reviewing-customer-user-dashboard-5-pe.png
-        title: 'Indoor Air Quality Sensor state;'
+        title: 'Energy Meter state;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/reviewing-customer-user-dashboard-6-pe.png
         title: 'Water Flow Meter state.'
