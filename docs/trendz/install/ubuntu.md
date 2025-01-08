@@ -261,6 +261,9 @@ acl trendz_acl path_beg /trendz path_beg /apiTrendz
 use_backend tb-trendz if trendz_acl
 ```
 
+### Post-installation steps
+It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
+
 ### Troubleshooting
 
 Trendz logs are stored in the following directory:

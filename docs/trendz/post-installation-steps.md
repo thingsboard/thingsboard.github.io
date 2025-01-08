@@ -20,7 +20,6 @@ applications do). Also, if it is difficult to manage the configuration of Trendz
 Trendz database, but it is not recommended because of possible security concerns. For validation the solution there is the indicator was designed to check if 
 your signing key is set in Trendz, and if it is valid.
 
-Let's consider ways of each set approach and validation of the result.
 To check your signing key is relevant follow the following steps:
 * Open Trendz home page
 * Go to the Settings page by clicking the “Setting” button on the left-bottom corner of the page.
@@ -33,21 +32,6 @@ To check your signing key is relevant follow the following steps:
   ![image](/images/trendz/signing-key-2.png)
 
   - The signing key is valid
-
-  ![image](/images/trendz/signing-key-3.png)
-
-Let's consider the easier way of setting signing way, but remember that is not the recommended way. There are the steps you need to follow:
-* Open Trendz home page
-* Go to the Settings page by clicking the “Setting” button on the left-bottom corner of the page.
-
-  ![image](/images/trendz/signing-key-1.png)
-
-* Scroll down to the bottom of the page, you will see the “Signing Key” panel
-
-  ![image](/images/trendz/signing-key-2.png)
-
-* Enter your sysadmin credentials and click the “Update Signing key” button. If you use MFA you will need to enter a code from email, phone, or go by another way of
-  authentication. In the end, you will see the “Active” status on the panel.
 
   ![image](/images/trendz/signing-key-3.png)
 
