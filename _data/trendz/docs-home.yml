@@ -63,6 +63,8 @@ toc:
       path: /docs/trendz/batch-calculated-fields/
     - title: Save metric to ThingsBoard
       path: /docs/trendz/save-calculated-to-thingsboard/
+    - title: Calculate time to value
+      path: /docs/trendz/calculate-time-to-value/
 - title: Prediction
   section:
     - title: Overview
