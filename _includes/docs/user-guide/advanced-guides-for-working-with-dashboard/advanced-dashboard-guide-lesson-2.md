@@ -476,7 +476,7 @@ if (data.length > 1) {
                     '</div>' +
                     '<div class="attribute_content">' +
                         `<p class="attribute">${information.officeAttributesField.officeManager}</p>` +
-                        '<span class="attribute_label">Manager</span>' +
+                        '<span class="attribute_label">Office manager</span>' +
                     '</div>' +
                 '</div>' +
                 '<div class="attribute_container">' +

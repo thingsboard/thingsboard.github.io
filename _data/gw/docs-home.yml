@@ -50,14 +50,10 @@ toc:
       path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
     - title: Device renaming/removing handling
       path: /docs/iot-gateway/how-device-removing-renaming-works/
-    - title: Gateway Configurator
-      path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
     - title: GET/SET RPC methods
       path: /docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/
-    - title: Remote converter update
-      path: /docs/iot-gateway/guides/how-to-use-remote-converter-update/
-    - title: Gateway Shell
-      path: /docs/iot-gateway/guides/how-to-use-gateway-shell/
+    - title: Report Strategies
+      path: /docs/iot-gateway/features-overview/report-strategy/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
 - title: Customization
