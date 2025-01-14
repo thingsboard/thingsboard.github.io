@@ -288,6 +288,22 @@
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
   },
   {
+    "type": ["main", "lora", "bluetooth", "wifi"],
+    "program": "",
+    "name": "Netvox",
+    "logo": "netvox-logo.jpg",
+    "links": {
+      "Site": {
+        "href": "http://www.netvox.com.tw/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/netvox/netvox-guide/"
+      }
+    },
+    "blurb": "Netvox LoRaWAN products follow the standard LoRaWAN V1.0.2 specification and they will be compatible as long as the network server and gateway device also follow the protocol. We have developed over 400 LoRaWAN end devices to work with existing systems.\nThere are more than 200 items in our LoRaWAN magnetic-mounted R718 series that comes with an IP 65/67 housing, and most of them are battery powered with long battery life."
+  },
+  {
     "type": ["main", "nbiot", "lte"],
     "program": "",
     "name": "AKKR8",
