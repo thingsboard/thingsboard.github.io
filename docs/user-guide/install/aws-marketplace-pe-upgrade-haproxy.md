@@ -198,7 +198,6 @@ $ cat <<EOT | sudo tee /usr/local/etc/letsencrypt/cli.ini
 authenticator = standalone
 agree-tos = True
 http-01-port = 8090
-tls-sni-01-port = 8443
 non-interactive = True
 preferred-challenges = http-01
 EOT
