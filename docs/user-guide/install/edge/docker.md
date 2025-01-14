@@ -12,7 +12,7 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 
 {% assign docsPrefix = "edge/" %}
 
-This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
+This guide will help you to install and start **ThingsBoard Edge** using **Docker** on Linux or Mac OS.
 
 {% include templates/edge/install/prerequisites.md %}
 
@@ -35,64 +35,30 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-Create docker compose file for ThingsBoard Edge service:
+### Step 2. Choose Queue and/or Database Services
 
-```text
-nano docker-compose.yml
-```
-{: .copy-code}
+**ThingsBoard Edge** is able to use different messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
 
-Add the following lines to the yml file:
+* **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
 
-```yml
-version: '3.8'
-services:
-  mytbedge:
-    restart: always
-    image: "thingsboard/tb-edge:{{ site.release.edge_full_ver }}"
-    ports:
-      - "8080:8080"
-      - "1883:1883"
-      - "5683-5688:5683-5688/udp"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
-      CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
-      CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or demo.thingsboard.io
-    volumes:
-      - tb-edge-data:/data
-      - tb-edge-logs:/var/log/tb-edge
-  postgres:
-    restart: always
-    image: "postgres:15"
-    ports:
-      - "5432"
-    environment:
-      POSTGRES_DB: tb-edge
-      POSTGRES_PASSWORD: postgres
-    volumes:
-      - tb-edge-postgres-data:/var/lib/postgresql/data
+* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now.
 
-volumes:
-  tb-edge-data:
-    name: tb-edge-data
-  tb-edge-logs:
-    name: tb-edge-logs
-  tb-edge-postgres-data:
-    name: tb-edge-postgres-data
-```
-{: .copy-code}
+* **Hybrid** implementation combines PostgreSQL and Cassandra databases with Kafka queue service. It is recommended if you plan to manage 1M+ devices in production or handle high data ingestion rate (more than 5000 msg/sec).
 
-{% include templates/edge/install/docker_compose_details_explain.md %}
+Create a docker compose file for the **ThingsBoard Edge** service:
 
-{% assign serviceName = "tbedge" %}
-{% include templates/install/docker/docker-compose-up.md %}
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/edge/docker-queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/edge/install/docker-queue-kafka.md%br%
+Hybrid <small>(PostgreSQL+Cassandra with Kafka queue service)</small>%,%hybrid%,%templates/edge/install/docker-queue-hybrid.md{% endcapture %}
 
-### Step 2. Open ThingsBoard Edge UI
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
+
+### Step 3. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 3. Detaching, stop and start commands
+### Step 4. Detaching, Stop and Start Commands
 
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}

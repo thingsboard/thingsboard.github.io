@@ -1,4 +1,4 @@
-Instructions listed below will help you to install PostgreSQL.
+The following instructions will help you install **PostgreSQL**:
 
 ```bash
 # Automated repository configuration:

@@ -8,6 +8,14 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.9.0 (Jan 13, 2025) {#v39}
+
+**Major** release with everything from [TB CE v3.9](/docs/reference/releases/#v39):
+
+* [#125](https://github.com/thingsboard/thingsboard-edge/pull/125) Use of Kafka to store and process Cloud Events to improve processing throughput by @jekka001;
+* [#136](https://github.com/thingsboard/thingsboard-edge/pull/136) Access Edge Attributes on edge instance itself @jekka001;
+* Cassandra support as Timeseries storage by @AndriiLandiak;
+
 ## v3.8.0 (Oct 15, 2024) {#v38}
 
 **Major** release with everything from [TB CE v3.8](/docs/reference/releases/#v38):

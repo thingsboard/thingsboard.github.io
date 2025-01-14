@@ -12,7 +12,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 
 {% assign docsPrefix = "edge/" %}
 
-This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+This guide describes how to install **ThingsBoard Edge** on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 
 {% include templates/edge/install/prerequisites.md %}
 
@@ -26,13 +26,34 @@ This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubunt
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. Configure PostgreSQL
+### Step 2. Configure ThingsBoard Edge Database
 
-{% include templates/edge/install/ubuntu-db-postgresql.md %}
+**ThingsBoard Edge** supports **SQL** and **hybrid** database approaches. See the architecture [page](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach){: target="_blank"} for details.
 
-### Step 3. ThingsBoard Edge service installation
+{% capture contenttogglespec %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/edge/install/ubuntu-db-postgresql.md%br%
+Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/edge/install/ubuntu-db-hybrid.md{% endcapture %}
 
-Download installation package.
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %}
+
+### Step 3. Choose Queue Service
+
+**ThingsBoard Edge** can use different messaging systems and brokers for storing messages and enabling communication between its services. Choose the appropriate queue implementation based on your specific business needs:
+
+* **In Memory**: The built-in and default queue implementation. It is useful for development or proof-of-concept (PoC) environments, but is not recommended for production or any type of clustered deployments due to limited scalability.
+
+* **Kafka**: Recommended for production deployments. This queue is used in the most of ThingsBoard production environments now.
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/edge/install/ubuntu-queue-kafka.md%br%
+Kafka in docker container <small>(recommended for on-prem, production installations)</small>%,%kafka-in-docker%,%templates/edge/install/ubuntu-queue-kafka-in-docker.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
+
+### Step 4. ThingsBoard Edge Service Installation
+
+Download the installation package.
 
 ```bash
 wget https://github.com/thingsboard/thingsboard-edge/releases/download/{{ site.release.edge_tag }}/tb-edge-{{ site.release.edge_ver }}.deb
@@ -46,28 +67,28 @@ sudo dpkg -i tb-edge-{{ site.release.edge_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 4. Configure ThingsBoard Edge
+### Step 5. Configure ThingsBoard Edge
 
 {% include templates/edge/install/linux-configure-edge.md %}
 
-### Step 5. Run installation script
+### Step 6. Run installation Script
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### Step 6. Restart ThingsBoard Edge service
+### Step 7. Restart ThingsBoard Edge Service
 
 ```bash
 sudo service tb-edge restart
 ```
 {: .copy-code}
 
-### Step 7. Open ThingsBoard Edge UI
+### Step 8. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
 ## Troubleshooting
 
-ThingsBoard Edge logs stored in the following directory:
+**ThingsBoard Edge** logs stored in the following directory:
  
 ```bash
 /var/log/tb-edge
