@@ -560,12 +560,12 @@ selfManagedPlan:
            <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
-                        <h2>Perpetual</h2>
+                        <h2>Standalone Kit</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Use your ThingsBoard instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $2,999
+                            $4,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button id="Pricing_PE_SM_Perpetual_Perpetual" class="btn-blue btn-pricing gtm_button" 
@@ -577,25 +577,25 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
+                        <div class="pricing-square-item">1 production instance</div>
+                        <div class="pricing-square-item">1 development instance</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
-                        <div class="pricing-square-item" data-faq-id="subscription-support">
-                            Email support within <b>24 hours</b>
-                        </div>
+                        <div class="pricing-square-item">Basic support within 24 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
-                        <h2>Perpetual Kit</h2>
+                        <h2>Cluster Kit</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Everything your product needs to succeed</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $4,999
+                            $8,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button id="Pricing_PE_SM_Perpetual_Kit" class="btn-blue btn-pricing gtm_button" 
@@ -607,48 +607,44 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
+                        <div class="pricing-square-item">2 production instances</div>
+                        <div class="pricing-square-item">2 development instances</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
-                        <div class="pricing-square-item" data-faq-id="subscription-support">
-                            Email support within <b>12 hours</b>
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="what-is-development-server">
-                            <b>Development</b> instance included 
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="additional-services">
-                            <b>10 hours</b> of consulting or configuration services
-                        </div>
+                        <div class="pricing-square-item">Basic support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Enterprise Bundle</h2>
-                        <div class="pricing-square-description" style="min-height: 50px;">
+                        <div class="pricing-square-description" style="min-height: 50px">
                             <p>Supercharge your IoT solution</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $14,999
+                            $19,999
                         </h4>
                         <div class="row justify-content-center">
                             <a id="Pricing_PE_SM_Enterprise_Bundle" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
-                        <div class="pricing-square-item"><b>2 ThingsBoard Perpetual Kits</b></div>
+                        <div class="pricing-square-item"><b>2 ThingsBoard Cluster Kits</b></div>
                         <div class="pricing-square-item">1 Trendz perpetual license</div>
                         <div class="pricing-square-item">1 Trendz development license</div>
                         <div class="pricing-square-item">3 Edge perpetual licenses</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
-                        <div class="pricing-square-item">Training sessions</div>
-                        <div class="pricing-square-item" data-faq-id="subscription-support">
-                            Email support within <b>12 hours</b>
-                        </div>
-                        <div class="pricing-square-item">1 year of software updates and support for all products in bundle</div>
+                        <div class="pricing-square-item">Basic support within 12 hours</div>
+                        <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
            </div>
+            <div class="row justify-content-center" style="margin-top: 60px">
+                <a id="Pricing_PE_SM_Perpetual" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" style="margin:0">
+                    Contact Us
+                </a>
+            </div>
         </div>
     </div>
  </div>  
