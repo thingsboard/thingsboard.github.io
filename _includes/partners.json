@@ -144,6 +144,22 @@
     "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
   },
   {
+    "type": ["main", "lora", "wifi", "lte"],
+    "program": "",
+    "name": "MOKO SMART",
+    "logo": "moko-smart-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.mokosmart.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/moko-smart/moko-smart-guide/"
+      }
+    },
+    "blurb": "MOKO Technology Ltd. is a leading manufacturer and provider of ODM, OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand, MOKO SMART, which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS, LTE, UWB, and other wireless technologies. This commitment to innovation and diverse wireless products drives MOKO’s vision of a connected future."
+  },
+  {
     "type": ["main", "bluetooth", "wifi", "nbiot"],
     "program": "",
     "name": "Nettra",
@@ -157,7 +173,7 @@
         "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
       }
     },
-    "blurb": "We provide comprehensive hardware and software IoT solutions"
+    "blurb": "We provide comprehensive hardware and software IoT solutions."
   },
   {
     "type": ["main", "wifi"],

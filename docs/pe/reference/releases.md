@@ -227,7 +227,7 @@ Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases
 
 * Core & Rule Engine
 
-  * Default converters for most Integrations with well-defined message forma;
+  * Default converters for most Integrations with well-defined message format;
   * Fuel level monitoring solution template;
   * Move integration rate limits configuration to tenant profile;
   * Improved validation for group permissions, group owner, and resource deletion;

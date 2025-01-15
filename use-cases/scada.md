@@ -17,7 +17,7 @@ notitle: "true"
                 <p class="text">SCADA systems are generally divided into two types: Traditional, which focuses on basic monitoring and control, and High-Performance, emphasizing streamlined interfaces, faster decision-making, and enhanced operational efficiency.</p>
             </div>
             <div class="demo-button">
-                <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/228be650-8acc-11ef-b31e-8fb75668852d?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+                <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/231a5800-ce96-11ef-852e-bd51c2b30fde?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
@@ -562,7 +562,7 @@ notitle: "true"
                 <div class=image>${getImage(0, mode)}</div>
             </div>
             <div class="buttons-block">
-                <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/228be650-8acc-11ef-b31e-8fb75668852d?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+                <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/231a5800-ce96-11ef-852e-bd51c2b30fde?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
                 <a id="UseCases_SCADA_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     

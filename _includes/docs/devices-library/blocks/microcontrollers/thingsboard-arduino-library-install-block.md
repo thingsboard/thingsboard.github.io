@@ -22,7 +22,7 @@ All provided code examples require ThingsBoard Library version {% if wifininaIns
 
 {% if mbedtlsInstallationRequired == "true" %}
 
-Also, for boards, based on ESP8266 chip we should install the "mbedtls" and "arduino-timer" libraries.  
+Also, for boards, based on ESP8266 or RP2040 chip we should install the "mbedtls" and "arduino-timer" libraries.  
 
 {% assign mbedtlsInstallation='
     ===
