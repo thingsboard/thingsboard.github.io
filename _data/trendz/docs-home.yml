@@ -63,6 +63,8 @@ toc:
       path: /docs/trendz/batch-calculated-fields/
     - title: Save metric to ThingsBoard
       path: /docs/trendz/save-calculated-to-thingsboard/
+    - title: Calculate time to value
+      path: /docs/trendz/calculate-time-to-value/
 - title: Prediction
   section:
     - title: Overview
@@ -85,6 +87,12 @@ toc:
       path: /docs/trendz/widget-actions/
     - title: Widget settings
       path: /docs/trendz/widget-settings/
+- title: White labeling
+  section:
+    - title: Overview
+      path: /docs/trendz/white-labeling/
+    - title: Custom translation
+      path: /docs/trendz/custom-translation/
 - title: External datasources
   path: /docs/trendz/mix-sql-datasource/
 - title: States
@@ -93,8 +101,6 @@ toc:
   path: /docs/trendz/cache-settings/
 - title: Processing jobs
   path: /docs/trendz/background-jobs/
-- title: White labeling
-  path: /docs/trendz/white-labeling/
 - title: Tasks
   path: /docs/trendz/tasks-service/
 - title: Trendz REST API

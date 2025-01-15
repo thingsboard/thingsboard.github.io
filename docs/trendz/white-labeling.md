@@ -2,7 +2,7 @@
 layout: docwithnav-trendz
 assignees:
   - vparomskiy
-title: White Labeling
+title: Overview
 description: Trendz White Labeling configuration - set color schema, logo and other branding settings
 
 trendz-white-labeling-section:

@@ -8,7 +8,7 @@ description: Apply filter from alias
 ---
 
 In this guide we will describe how to connect standard ThingsBoard widgets located on the dashboard with Trendz View. 
-You can do this using ThingsBoard dashboard aliases and **Trendz View - with filter alias** from **Trendz widget Bundle**.
+You can do this using ThingsBoard dashboard aliases and **Trendz View Latest** from **Trendz widget Bundle**.
 
 **Example**: we have 10 **Machine** devices in ThingsBoard. We want to create a dashboard that will show all **Machine** devices 
 in a list and once device selected - other widget on the dashboard should show details about selected device. In total we will have 2 widgets 
@@ -35,7 +35,7 @@ On **Trendz View** side:
 
 Return to ThingsBoard Dashboard:
 * Edit dashboard
-* Add  **Trendz View - with filter alias** from **Trendz widget Bundle** to the dashboard
+* Add  **Trendz View Latest** from **Trendz widget Bundle** to the dashboard
 * Set **selected_device** as a datasource for Trendz View
 * Use **name** as a key from alias
 

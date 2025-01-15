@@ -2,7 +2,7 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Connect To the ThingsBoard
+title: Connect Trendz to the ThingsBoard
 description: Connect Trendz Analytics platform to the ThingsBoard
 ---
 

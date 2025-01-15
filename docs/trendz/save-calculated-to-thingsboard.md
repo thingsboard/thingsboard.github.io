@@ -4,6 +4,14 @@ assignees:
 - vparomskiy
 title: Save calculated values as a telemetry into ThingsBoard
 description: Save calculated values as a telemetry into ThingsBoard
+
+save-calc-to-tb:
+  0:
+    image: /images/trendz/save-calc-to-tb-1.png
+    text: Click on the JOBS button to open the Parameters for Saving Calculation Telemetry Job modal.
+  1: 
+    image: /images/trendz/save-calc-to-tb-2.png
+    text: 1. Enable/disable saving calculation results to ThingsBoard. 2. Specify the starting point for saving the calculated telemetry. 3. Define how often the telemetry should be updated. 4. Select the specific devices for which the calculated telemetry will be saved.
 ---
 
 Calculated fields in Trendz offer the ability to compute various metrics based on existing telemetry and attributes.
@@ -20,7 +28,7 @@ Let's explore a few examples of how this feature can be utilized:
   Instead of loading raw telemetry and recomputing metrics each time when they are required, the pre-computed metrics can be loaded directly from ThingsBoard.
   This reduces the load on the server, resulting in faster and more efficient operations.
 
-## Calculation Enable/Disable
+## Calculation Jobs
 
 When you save a calculated field, it can be activated to initiate two main tasks and store the data in ThingsBoard as telemetry:
 1. *Reprocess Historical Data:*
@@ -30,14 +38,16 @@ When you save a calculated field, it can be activated to initiate two main tasks
 * This task allows you to specify the data update frequency and select items to be refreshed.
 * The task is scheduled to run at regular intervals, ensuring the data remains current in real-time.
 
-#### Item Selection for Calculation
+To schedule a task for saving calculation results, follow these steps:
+* Click on the JOBS button to open the Parameters for Saving Calculation Telemetry Job modal.
+* In the modal, you can configure the following parameters:
+  1. Enable/disable saving calculation results to ThingsBoard.
+  2. Specify the starting point for saving the calculated telemetry.
+  3. Define how often the telemetry should be updated.
+  4. Select the specific devices for which the calculated telemetry will be saved.
+* After configuring the parameters, click Save to apply the changes.
 
-In addition to setting up the tasks, you can choose specific items for which you want the calculation to run:
-* Select All: Apply the calculation to all available items.
-* Choose Items for Calculate: Manually select the items to include in the calculation.
-
-![image](/images/trendz/enable-button.png)
-
+{% include images-gallery.html imageCollection="save-calc-to-tb" %}
 
 #### Storing Calculations as Telemetry
 

@@ -53,6 +53,11 @@ if(unit.length) {
 }
 ```
 
+
+**Note**: When using batch calculation fields, only the following aggregation types are supported:
+* NONE (applicable for telemetry data)
+* UNIQ (applicable for attributes)
+
 ## Examples
 
 #### Filter raw telemetry 
