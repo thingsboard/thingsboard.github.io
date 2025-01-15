@@ -31,6 +31,10 @@ calc-time-to-value-alarm:
   1:
     image: /images/trendz/calc-time-to-value-7.png
 ---
+
+* TOC
+{:toc}
+
 The most common use case for predicted telemetry is estimating the time remaining until a specific event occurs. For example, predicting when fuel will run out in a tank or when a battery will be fully discharged. 
 These events can typically be defined as conditions based on telemetry values. For instance, fuel running out can be represented by the condition: fuel_in_tank <= minimal_fuel_threshold. The same logic applies to battery levels or similar cases.
 
@@ -47,23 +51,29 @@ We can also create an alarm rule to trigger notifications or alerts if the criti
 
 **Example: Predicting Energy Consumption Threshold**
 
-Let’s consider an example of the usage of the feature. Today is 1st January 2025, you have a device an Energy Meter and it measures telemetry such as “Energy Consumption” in kWh. The telemetry exist for the whole 2024 year. 
+Let’s consider an example of the usage of the feature. Today is the 1st of January 2025, you have an Energy Meter device, and it measures “Energy Consumption” telemetry in kWh. We have historical telemetry for the whole 2024 year. 
 
-1.You create a prediction model with the following parameters:
+## Build prediction model 
+
+Start with creating a prediction model with the following parameters:
 
   * **Name:** Energy Consumption Prediction
   * **Business entity:** Energy Meter
   * **ThingsBoard key:** energy_consumption_prediction
   * **Training range:** 01/01/2024 - 31/12/2024
-  * **Prediction range:** 1 month
+  * **Prediction range:** 30 days
 
-After successfully training the model, you see predictions for the entire month of January 2025. You also build a view to display these predictions (as shown in the screenshot).
+After successfully training the model, you see predictions for the next 30 days. You also build a view to display these predictions (as shown in the screenshot). Configure automated forecast generation task with the required frequency.
 
 {% include images-gallery.html imageCollection="calc-time-to-value-chart" %}
 
-2.You know that energy consumption higher than 15 kWh is too much for the current meter (for example) and you want to react right before it will happen, let it be 3 days. So, we have 15 kWh as a telemetry threshold and 3 days as the time threshold. So, your condition is “Energy Consumption Prediction” >= 15000.
+## Define a logical condition based on the telemetry value 
 
-3.Next, you need to create a **Calculated Field**:
+You know that energy consumption higher than 15 kWh is too much for the meter (for example) and you want to react right before it will happen, let it be 3 days. So, we have 15 kWh as a telemetry threshold and 3 days as the time threshold. So, your condition is “Energy Consumption Prediction” >= 15000.
+
+## Compute time to event
+
+Next, you need to create a **Calculated Field**:
   * **Name:** Energy Consumption Prediction Countdown
   * **ThingsBoard key:** energy_consumption_prediction_countdown
 
@@ -87,7 +97,7 @@ The template with need parameters :
 var inputTelemetry = none(EM energy meter.Energy Consumption Prediction); // List of (ts, value), internal function
 
 var limit = 15000;              // Options: Any number
-var up = true;                  // Options: true, false
+var up = true;                  // Options: is true, check the actual value higher then limit. False - lower then limit
 var timeUnit = groupBy;         // Options: "null", groupBy, "minute", "hour", "day", "week", "month"
 var timeUnitDefault = "hour";   // Options: "minute", "hour", "day", "week", "month"
 
@@ -192,13 +202,15 @@ Now you need to enable the calculation field to make the countdown telemetry ava
 
 {% include images-gallery.html imageCollection="calc-time-to-value-job" %}
 
-Now you can return to your visualization and add the new telemetry with the prediction. You probably need to change the template to Table to make it understandable. 
+Now you can return to your visualization and add the new telemetry with the prediction. You may change the view template to Table to make it simpler for end users to analyze time to event. 
 
 **WARNING:** pay attention that the countdown telemetry will exist only for future time for the first launch and since time only future values will be updated.
 
 {% include images-gallery.html imageCollection="calc-time-to-value-table" %}
 
-4.Now when we have countdown telemetry, and it is available on the ThingsBoard we can create an alarm rule to ask the system to notify us about the problem in the future. For this purpose, we need to find the device/asset profile of the needed device.
+## Configure alert generation 
+
+Now when we have countdown telemetry, and it is available on the ThingsBoard we can create an alarm rule to ask the system to notify us about the problem in the future. For this purpose, we need to find the device/asset profile of the needed device.
 
 After that, we need to go to the Edit mode, go to the “Alarm Rules” tab, and click the “Add alarm rule” button, and you will see a template of the new alarm rule.
 
