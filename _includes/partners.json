@@ -92,6 +92,9 @@
       },
       "Connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard": {
         "href": "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
+      },
+      "Thingsboard-Milesight LoRaWAN Gateways&Devices Integration: IoT Support": {
+        "href": "https://support.milesight-iot.com/support/solutions/articles/73000646805-thingsboard-milesight-lorawan-gateways-devices-integration"
       }
     },
     "blurb": "Milesight, a leading innovator in IoT technologies such as sensing, LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array of advanced products, like dependable gateways, indoor air quality sensors, occupancy trackers, water leak detectors, and more."
