@@ -503,8 +503,8 @@ Finally, your dashboard should look like this:
 
 ## Next step
 
-At this stage, the development of our dashboard is complete. In the next lesson, we will share this dashboard with customers.
-When you are ready to proceed, simply click the button below.
+In the next lesson, you will learn how to configure notification rules, add the "Alarms table" widget, and manage alarm notifications.
+If you're ready to proceed, click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Share dashboard with customer</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Alarm management</a></p>

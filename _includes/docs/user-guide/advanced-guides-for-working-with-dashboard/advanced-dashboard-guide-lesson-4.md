@@ -1,135 +1,312 @@
 * TOC
 {:toc}
 
-One of the most important ThingsBoard features is the ability to create end-user dashboards.
-Each end user will only see their own devices and data, enjoying all the benefits of working with their personalized dashboard. They will not see devices or any other data belonging to other customers.
-As an administrator, you will always retain the access to edit and modify your dashboard. 
-
-There are two ways a Tenant Administrator can grant a Customer access to a specific entity (such as a Device, Dashboard, Asset, etc.):
-
-- Assign ownership: This option makes the customer the sole user able to access the specific entity and its data;
-- Share the entity: Useful for allowing multiple customers to access the same entity.
-
-In the previous lesson, we added separate states for each device and configured them to display telemetry data.
+In the previous lesson, we added two customers and configured shared access for them to the dashboard.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="n-button add-device">Lesson 3. Adding and configuring individual states for each device</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="n-button add-device">Lesson 3: Adding and configuring individual states for each device</a></p>
 
 <br>
 
-In this lesson, we will add two customers and configure shared access for them to the dashboard created in previous lessons.
-In our case, a Customer is an individual or organization that rents an office in your building and uses the devices available there.
-Each customer will have access solely to their respective rented office and the devices within it.
+**An alarm** is a notification generated when a predefined condition or rule is met. Alarms are associated with entities such as devices, assets, customers, and others.
 
-{% include carousel.liquid collectionMap = 'dashboard-lesson-4' nonActiveItemsVisibility = false %}
+Alarms in ThingsBoard are a powerful mechanism to monitor and react to critical events and conditions occurring in your IoT ecosystem. 
+An alarm represents a significant state or condition that requires attention, such as a device malfunction, a breach of predefined thresholds, or unexpected behavior in your system. 
+Understanding and effectively utilizing alarms is key to maintaining the health, performance, and security of your IoT infrastructure.
 
-As part of our lesson, imagine two customers: Customer A rents Office A in Building A. Customer B rents Office B in the same building.
+**Core Concepts of Alarms in ThingsBoard:**
 
-Let's create these customers and grant them the necessary access.
+- **Severity Levels**: Alarms are categorized by severity levels, which include Critical, Major, Minor, Warning, and Indeterminate. This categorization helps prioritize responses.
 
-## Add customers
+- **Lifecycle States**: Each alarm has a lifecycle consisting of states such as Active, Cleared, and Acknowledged. The state transitions allow effective tracking and resolution.
 
-Let's start by adding two customers. 
+- **Rule-Based Triggers**: Alarms are triggered by rules defined in device profiles or rule chains. These rules evaluate incoming telemetry data, attribute changes, or other events.
 
-{% include images-gallery.html imageCollection="adding-customers-1" showListImageTitles="true" %}
+- **Visualization and Management**: ThingsBoard provides a centralized interface to view, filter, and manage alarms. This includes tools for real-time monitoring and historical analysis.
 
-Similarly, create another customer named "Customer B" and add them to the "Office renters" group.
+By implementing alarms, you can automate responses to predefined conditions, improve operational efficiency, and ensure system reliability.
 
-{% include images-gallery.html imageCollection="adding-customers-2" %}
+In this lesson, we will configure alarm rules for our devices, and the widget for managing alarm signals will be added to each state.
 
-## Sharing dashboard
+Let's start.
 
-Since both of our clients will be using the dashboard, we cannot make them both owners, but we can provide them with shared access to the dashboard. You also cannot share an individual dashboard; only the group that includes the dashboard can be shared.
+## Creating alarm rules
 
-{% include images-gallery.html imageCollection="share-dashboard-1" showListImageTitles="true" %}
+**Defining Alarm Rules in Device Profiles**
 
-## Changing owner of devices
+To configure alarms in ThingsBoard, you need to define rules within device profiles. These rules specify the conditions under which alarms should be generated. Follow these steps to set up alarm rules:
 
-Now, let's change the owners of the devices. Assign Customer A as the owner of all devices in Office A, specifically: "Indoor Air Quality Sensor", "Energy Meter", and "Water Flow Meter". Assign Customer B as the owner of the "IQA Sensor" in Office B.
+### Rules for devices that use the "air-sensor" device profile
 
-{% include images-gallery.html imageCollection="change-devices-owner-1" showListImageTitles="true" %}
+Devices using the device profile “air-sensor” transmit telemetry readings such as temperature, humidity, and CO2 levels. Below is an example of defining individual alarm creation rules for the "temperature" telemetry key.
 
-Similarly, assign Customer A as the owner of "EM-002" (Energy Meter) and "WM-003" (Water Flow Meter) devices, and Customer B as the owner of "AM-307" (Indoor Air Quality Sensor).
+**High temperature alarm rule**
 
-{% include images-gallery.html imageCollection="change-devices-owner-2" %}
+We will set two conditions for creating a high temperature alarm for the "temperature" key, and one condition for clear alarm: 
+- An alarm with the type "Major" will be created if the temperature exceeds 24 but does not go above 26 (inclusive).
+- If the temperature exceeds 26, an alarm with the type "Critical" will be created. 
+- When the temperature drops below 24 degrees, the alarm will be cleared.
 
-<br>
-Make sure that the devices are assigned to Customer A.
+Let's start with adding the alarm rule condition with "Major" severity type:
 
-{% include images-gallery.html imageCollection="change-devices-owner-3" showListImageTitles="true" %}
+- Go to the "Device profile" page and click on the "air-sensor" device profile to open its details;
+- Navigate to the "Alarm rules" tab;
+- Enter editing mode by clicking the big orange pencil button, and click the "Add alarm rule" button;
+- Input the "High temperature alarm" as alarm type;
+- Check the "Propagate alarm to related entities" option in the advanced settings to propagate the alarm to all related entities.
+- Select "Major" severity, and click on the red "+" sign;
+- Set the Key Filter:
+  - In the opened window, click the "Add key filter" button;
+  - Specify the time series key to monitoring: 
+    - Select the "Time series" as key type;
+    - Input the "temperature" as the key name; 
+    - Change "Value type" to "Numeric";
+    - Click the "Add" button in the "Filters" section to add first filter;
+    - Set the threshold:
+      - Select the "greater than" operation from drop-down menu;
+      - Input `24` as the threshold value; 
+      - Click "Add" again to add another filter:
+      - Select the "less or equal" operation from drop-down menu; 
+      - Input `26` as the threshold value;
+      - Click "Add" to confirm adding the key filter;
+- Click the "Save" button to apply the alarm condition.
 
-Make sure that the devices are assigned to Customer B.
+Now, when the temperature value is between `24` and `26` (inclusive), an alarm with the type "Major" will be created.
 
-{% include images-gallery.html imageCollection="change-devices-owner-4" showListImageTitles="true" %}
-
-## Access to assets
-
-Since both Office A and Office B are located in Building A, your customers should have shared access to the building, but their access to offices should be restricted so they can only see their respective offices. Here's what we'll do:
-
-Change the owners of Office A and Office B:
-
-- Assign Customer A as the owner of Office A;
-- Assign Customer B as the owner of Office B.
-
-Share access to Building A:
-
-- Share the asset Building A with both Customer A and Customer B;
-- Set the permission level to "Read" for both customers, so they can access shared data about the building without seeing each other's offices.
-
-### Changing owner of assets
-
-{% include images-gallery.html imageCollection="change-assets-owner-1" showListImageTitles="true" %}
-
-Make sure that the office assets are assigned to the correct customers.
-
-{% include images-gallery.html imageCollection="change-assets-owner-2" showListImageTitles="true" %}
-
-{% include images-gallery.html imageCollection="change-assets-owner-3" showListImageTitles="true" %}
-
-### Sharing assets
-
-Now we will add Building A to a group and share access to it for both customers.
-
-{% include images-gallery.html imageCollection="share-assets-1" showListImageTitles="true" %}
-
-We&#39;ve granted access to all the necessary customers. Time to move on to adding customer users.
-
-## Adding a customer user
-
-Finally, let&#39;s create one customer [user](/docs/{{docsPrefix}}user-guide/ui/users){:target="_blank"} for each customer. They will have access to our dashboards and the data to which we have granted them access.
-
-First, let&#39;s add user Emma Johnson to Customer A:
-
-- Go to the "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;
-- Navigate to the "Groups" tab and select the "Customer Users" group. This is an automatically created group of customer users with read-only permissions already granted. To learn more about permissions and [Role-Based Access Control (RBAC)](/docs/{{docsPrefix}}user-guide/rbac){:target="_blank"}, read this article;
-- Click "plus" icon in the top-right corner. Enter the user&#39;s email. Additionally, specify the first and last name. Then click "Add";
-- Copy the user activation link and save it to a safe place. Then click "OK";
-- We added new customer user. Click on the created user to open their details, then click the big orange "pencil" icon to enter editing mode;
-- Set our "Building" dashboard as default, and check "Always fullscreen" option. Finally, apply changes.
-
-{% include images-gallery.html imageCollection="add-customer-user-1" %}
-
-We have finished adding the user of Customer A. Similarly, add the customer user Jack Smith to Customer B.
-
-{% include images-gallery.html imageCollection="add-customer-user-2" %}
-
-## Reviewing the dashboard from the perspective of customer users
-
-Next up, we&#39;ll activate the customer users and check how our dashboard looks from each user&#39;s perspective
-
-Let&#39;s start with Client A&#39;s user - Emma Johnson.
-
-{% include images-gallery.html imageCollection="activation-customer-user-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="major-high-temperature-alarm-rule" %}
 
 <br>
-The dashboard will open, displaying only the building where your office is located — Building A. Navigate through the dashboard to ensure that your user has access only to the data you have granted them access to.
+Add one more alarm rule condition with "Critical" type:
 
-{% include images-gallery.html imageCollection="reviewing-customer-user-dashboard-1" %}
+- Click the "Add create condition" button;
+- Select "Critical" severity, and click on the red "+" sign;
+- Click the "Add key filter" button;
+- Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
+- Select the "greater than" operation from drop-down menu, and input `32` as the threshold value. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the alarm condition.
 
-Similarly, activate the user of Customer B. They should have access to Office B in Building A and the data from the IAQ Sensor located inside the Office B.
+An alarm with the type "Critical" will be created if the temperature exceeds `32` degrees.
 
-{% include images-gallery.html imageCollection="reviewing-customer-user-dashboard-2" %}
+{% include images-gallery.html imageCollection="critical-high-temperature-alarm-rule" %}
 
-## Conclusion
+<br>
+Finally, add the condition to clear the rule:
 
-In the next lesson, which will be released very soon, we will learn how to create and manage alarms to respond to different conditions and events effectively. See you soon.
+- Click the "Add clear condition" button;
+- Click on the red "+" sign;
+- Click the "Add key filter" button;
+- Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
+- Select the "less or equal" operation from drop-down menu, and input `30` as the threshold value. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the alarm condition;
+- Finally, apply changes.
+
+The alarm will be automatically cleared when the temperature drops below `30` degrees.
+
+{% include images-gallery.html imageCollection="high-temperature-clear-alarm-rule" %}
+
+<br>
+Finally, the high temperature alarm rules will look like this:
+
+{% include images-gallery.html imageCollection="final-high-temperature-alarm-rules" %}
+
+<br>
+
+
+
+
+
+
+By effectively configuring alarm rules in device profiles, you can proactively monitor device performance and ensure timely responses to critical conditions.
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+We will configure ThingsBoard to automatically create alarm signals when the readings from our sensors exceed certain thresholds. Alarm rules are set in the device profile. 
+Let's consider the following scenarios:
+
+*Low temperature alarm rule*
+
+Similarly, add a rule for the creation and clearing of low temperature alerts: If the temperature falls below `20` but is not below `18` (inclusive), the alarm with the type "Major" will be created. 
+If the temperature drops below `18`, an alarm with the type "Critical" will be created. 
+When the temperature rises above `20` degrees again, the alarm will be cleared.
+
+{% include images-gallery.html imageCollection="final-low-temperature-alarm-rules" %}
+
+<br>
+
+Add the rules for the creation and clearing of alerts for low and high humidity, as well as exceeding CO2 levels, on your own using previous experience.
+
+For "humidity" readings, we will set the following rules:
+
+*High humidity alarm rule*
+
+The alarm with the type "Major" will be created if the humidity exceeds `45` but does not rise above `55` (inclusive). 
+If the humidity exceeds `55`, an alarm with the type "Critical" will be created. When the humidity drops below `55`, the alarm will be cleared.
+
+{% include images-gallery.html imageCollection="final-high-humidity-alarm-rules" %}
+
+*Low humidity alarm rule*
+
+If the humidity falls below `30` but is not below `28` (inclusive), the alarm with the type "Major" will be created.
+If the humidity drops below `28`, an alarm with the type "Critical" will be created.
+When the humidity rises above `30` degrees again, the alarm will be cleared.
+
+{% include images-gallery.html imageCollection="final-low-humidity-alarm-rules" %}
+
+<br>
+For "CO2" readings, we will set the High CO2 alarm rule:
+
+If the CO2 level is equal to or exceeds `450` ppm, a "Major" alarm will be created. 
+If the CO2 level exceeds `550` ppm, a "Critical" alarm will be generated. When the CO2 level drops below `450` ppm, the alarm will be cleared.
+
+{% include images-gallery.html imageCollection="final-co2-alarm-rules" %}
+
+### "energy-sensor" device profile
+
+The device that uses the "energy-sensor" device profile transmits telemetry data on power consumption. Let's define a rule for generating an alarm.
+
+Set the following conditions for creating an alarm when power consumption exceeds the threshold:
+
+1. Major alarm: If energy consumption exceeds 2 kWh but does not exceed 3 kWh (inclusive), a "Major" alarm will be created.
+
+2. Critical alarm: If energy consumption exceeds 3 kWh, a "Critical" alarm will be triggered.
+
+3. Alarm clearance: When energy consumption drops below 2 kWh, the alarm will be cleared automatically.
+
+Let's start with adding the alarm rule condition with "Major" type:
+
+- Open the "Device profiles" page, click on the "energy-sensor" device profile to open its details;
+- Enter editing mode by clicking the big orange pencil button;
+- Click the "Add alarm rule" button;
+- Input the "Power consumption alarm" as alarm type;
+- Select "Major" severity, and click on the red "+" sign;
+- Click the "Add key filter" button;
+- Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
+- Select the "greater than" operation from drop-down menu, and input `2` as the threshold value. Click "Add" again to add another rule;
+- Select the "less or equal" operation from drop-down menu, and input `3` as the threshold value. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the alarm condition.
+
+Now, when the power consumption value is between `2` and `3` kWh (inclusive), an alarm with the type "Major" will be created.
+
+{% include images-gallery.html imageCollection="major-power-consumption-alarm-rule" %}
+
+<br>
+Add one more alarm rule condition with "Critical" type:
+
+- Click the "Add create condition" button;
+- Select "Critical" severity, and click on the red "+" sign;
+- Click the "Add key filter" button;
+- Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
+- Select the "greater than" operation from drop-down menu, and input `3` as the threshold value. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the alarm condition.
+
+An alarm with the type "Critical" will be created if the power consumption exceeds `3` kWh.
+
+{% include images-gallery.html imageCollection="critical-power-consumption-alarm-rule" %}
+
+<br>
+Finally, add the condition to clear the rule:
+
+- Click the "Add clear condition" button;
+- Click on the red "+" sign;
+- Click the "Add key filter" button;
+- Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
+- Select the "less or equal" operation from drop-down menu, and input `2` as the threshold value. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the alarm condition;
+- Finally, apply changes.
+
+The alarm will be automatically cleared when the power consumption drops below `2` kWh.
+
+{% include images-gallery.html imageCollection="clear-power-consumption-alarm-rule" %}
+
+Finally, the power consumption alarm rules will look like this:
+
+{% include images-gallery.html imageCollection="final-power-consumption-alarm-rule" %}
+
+### "water-sensor" device profile
+
+A device that uses the "water-sensor" device profile sends telemetry data on water consumption. 
+Let's set up a rule to generate alarms when certain water consumption thresholds are reached.
+
+Alarm conditions:
+
+1. Major alarm: Triggered when water consumption exceeds 2 gallons per hour but stays at or below 3 gallons per hour.
+
+2. Critical alarm: Triggered when water consumption exceeds 3 gallons per hour.
+
+3. Alarm clearance: The alarm will clear automatically when water consumption drops below 2 gallons per hour.
+
+Let's start with adding the alarm rule condition with "Major" type:
+
+- Open the "Device profiles" page, and click on the "water-sensor" device profile to open its details;
+- Click the orange pencil icon to edit the profile;
+- Click the "Add alarm rule" button;
+- Input the "Water consumption alarm" as alarm type;
+- Select "Major" severity;
+- Click the red "+" icon;
+- In the opened window, click the "Add key filter" button;
+- Set the "Key type" to "Time series" and select "waterConsumption" as the key name. Change the "Value type" to "Numeric";
+- Click the "Add" button in the "Filters" section. Add a filter for values `greater than 2` and another for values `less or equal to 3`. Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the "Major" alarm condition.
+
+Now, when the water consumption is between `2` and `3` (inclusive) gallons, an alarm with the type "Major" will be created.
+
+{% include images-gallery.html imageCollection="major-water-consumption-alarm-rule" %}
+
+<br>
+Add one more alarm rule condition with "Critical" type:
+
+- Click the "Add create condition" button;
+- Select "Critical" severity, and click on the red "+" sign;
+- Add a key filter for "waterConsumption" with a value `greater than 3`.
+- Click "Add" to confirm adding key filter;
+- Click the "Save" button to apply the "Critical" alarm condition.
+
+An alarm with the type "Critical" will be created if the water consumption exceeds 3 gallons per hour.
+
+{% include images-gallery.html imageCollection="critical-water-consumption-alarm-rule" %}
+
+<br>
+Finally, add the condition to clear the rule:
+
+- Click the "Add clear condition" button;
+- Click on the red "+" sign;
+- Add a key filter for "waterConsumption" with a value `less or equal to 2`;
+- Click the "Save" button to apply the alarm condition;
+- Finally, apply changes.
+
+The alarm will be automatically cleared when the water consumption drops below 2 gallons per hour.
+
+{% include images-gallery.html imageCollection="clear-water-consumption-alarm-rule" %}
+
+Finally, the water consumption alarm rule will look like this:
+
+{% include images-gallery.html imageCollection="final-water-consumption-alarm-rule" %}
+
+## Adding alarms table widget
+
+Displaying alarms in a user-friendly manner is crucial for monitoring and management. 
+The Alarm Table widget in ThingsBoard provides a customizable interface to view and interact with alarms.
+
+Steps to Add an Alarm Table Widget:
+
+{% include images-gallery.html imageCollection="adding-alarms-table-widget-1" showListImageTitles="true" %}
+
+*Send telemetry*
+
+{% include images-gallery.html imageCollection="alarm-send-telemetry-1" showListImageTitles="true" %}
+
+*Clear alarm*
+
+To clear the alarm, click on the "Clear" icon in the "Alarms" widget.
+
+{% include images-gallery.html imageCollection="clear-alarm-1" showListImageTitles="true" %}
+
+
+## Next step
+
+At this stage, the development of our dashboard is complete. In the next lesson, we will share this dashboard with customers.
+When you are ready to proceed, simply click the button below.
+
+<br>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/" class="n-button add-device">Lesson 5: Share dashboard with customer</a></p>
