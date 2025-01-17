@@ -13,6 +13,8 @@ toc:
       path: /docs/edge/user-guide/alarms/
     - title: OTA updates
       path: /docs/edge/user-guide/ota-updates/
+    - title: Attributes
+      path: /docs/edge/user-guide/edge-attributes/
 - title: Dashboards
   section:
     - title: Overview
