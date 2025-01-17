@@ -176,8 +176,9 @@ html#pricing
 
     .pricing-square
       padding: 25px 32px
-      box-shadow: 0 52px 40px -32px rgba(0,0,0,0.1)
-      border-radius: 4px
+      border: 1px solid rgba(42, 125, 236, 0.16)
+      border-radius: 12px
+      box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
       background-color: #fff
       height: 100%
       h2
@@ -198,8 +199,9 @@ html#pricing
           min-height: 100px
         p
           margin-bottom: 1rem
+          font-weight: 300
       .pricing-square-price
-        font-weight: 700
+        font-weight: 600
         font-size: 32px
         line-height: 60px
         text-align: center
@@ -213,13 +215,13 @@ html#pricing
       .pricing-square-item
         font-size: 14px
         line-height: 21px
-        padding-bottom: 5px
+        padding-bottom: 12px
         margin-left: 32px
         &:before
           content: "\f00c"
           position: absolute
-          height: 20px
-          width: 20px
+          height: 21px
+          width: 22px
           margin-right: 11px
           margin-left: -32px
           padding: 0 5px
@@ -459,7 +461,7 @@ html#pricing
       @media (min-width: 1200px)
         height: 96px
     .pricing-header-divider
-      height: 8px
+      height: 3px
       width: 100%
       background-color: #102A4E
       &:not(.no-margin)
