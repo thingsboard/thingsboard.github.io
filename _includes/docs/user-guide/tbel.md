@@ -1321,7 +1321,8 @@ Alias for [parseBigEndianHexToDouble(hex, true)](#parsehextodouble)
 
 *double parseBigEndianHexToDouble(String hex)*
 
-##### hexToBytes
+##### hexToBytes List or Array
+###### hexToBytes
 
 Converts the hex string to list of integer values, where each integer represents single byte.
 
@@ -1342,7 +1343,33 @@ Parsed list of integer values.
 **Examples:**
 
 ```java
-return hexToBytes("BBAA"); // Returns [-69, -86]
+return hexToBytes("0x01752B0367FA000500010488FFFFFFFFFFFFFFFF33"); // Returns [1, 117, 43, 3, 103, -6, 0, 5, 0, 1, 4, -120, -1, -1, -1, -1, -1, -1, -1, -1, 51]
+```
+{: .copy-code}
+
+###### hexToBytesArray
+
+Converts the hex string to Array of single byte values.
+
+**Syntax:**
+
+*byte[] hexToBytesArray(String hex)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+</ul>
+
+**Return value:**
+
+Parsed array of single byte values.
+
+**Examples:**
+
+```java
+return hexToBytesArray("AABBCCDDEE"); // Returns [(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD, (byte) 0xEE]
+                                      //  Returns [-86, -69, -52, -35, -18]  
 ```
 {: .copy-code}
 
@@ -1354,7 +1381,7 @@ Converts the list of integer values, where each integer represents a single byte
 **Syntax:**
 
 *String bytesToHex(List<Integer> bytes)*
-*String bytesToHex(byte[] bytes)*
+*String bytesToHex(byte[] bytes)*~~~~
 
 **Parameters:**
 
@@ -2017,7 +2044,8 @@ return bytesToBase64([42, 73]); // Returns "Kkk="
 ```
 {: .copy-code}
 
-##### base64ToBytes
+##### base64 To Bytes Array or List
+###### base64ToBytes
 
 Decodes a Base64 string into a byte array.
 
@@ -2039,6 +2067,31 @@ Byte array.
 
 ```java
 return base64ToBytes("Kkk="); // Returns [42, 73]
+```
+{: .copy-code}
+
+###### base64ToBytesList
+
+Decodes a Base64 string into a byte list.
+
+**Syntax:**
+
+*List<Byte> base64ToBytesList(String input)*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>String</code> - the Base64 string.</li>
+</ul>
+
+**Return value:**
+
+Byte array.
+
+**Examples:**
+
+```java
+return base64ToBytesList("AQIDBAU="); // Returns ExecutionArrayList<Byte> value with size = 5,  includes: [1, 2, 3, 4, 5]
 ```
 {: .copy-code}
 
