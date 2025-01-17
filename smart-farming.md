@@ -302,7 +302,7 @@ notitle: "true"
             </div>
         </section>
         <section id="smart-farm-contact-us" class="smart-farm-contact-us">
-            <img loading="lazy" class="rec55" src="https://img.thingsboard.io/usecases//smart-farming/rectangle_55.webp">
+            <img loading="lazy" class="rec55" src="https://img.thingsboard.io/usecases/smart-farming/rectangle_55.webp">
             <div class="smart-farm-contact-us-text">
                 <h3>Enhance your farm with Smart Technology</h3>
                 <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
@@ -310,7 +310,7 @@ notitle: "true"
             <div class="smart-farm-contact-us-btn">
                 <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
-            <img loading="lazy" class="rec56" src="https://img.thingsboard.io/usecases//smart-farming/rectangle_56.webp">
+            <img loading="lazy" class="rec56" src="https://img.thingsboard.io/usecases/smart-farming/rectangle_56.webp">
         </section>
         <section id="smart-farm-solutions" class="smart-farm-solutions">
             <div class="smart-farm-solutions-container">

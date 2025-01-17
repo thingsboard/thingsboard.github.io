@@ -87,13 +87,13 @@ Two types of application are available for tenant: default and custom.
 {% include templates/info-banner.md content=difference %}
 {% endunless %}
 
-* **Custom**. If you prefer to use your {{CUSTOM_APPLICATION}}, switch to the custom settings, and specify the bundle preconfigured on the "[Bundle](/docs/{{docsPrefix}}user-guide/mobile-center/bundles/){:target="_blank"}" tab. Then, save changes.
+* **Custom**. If you prefer to use your {{CUSTOM_APPLICATION}}, switch to the custom settings, and specify the bundle preconfigured on the "[Bundle](/docs/{{docsPrefix}}mobile-center/mobile-center/#bundle){:target="_blank"}" tab. Then, save changes.
  
 {% include images-gallery.html imageCollection="application-settings-custom" %}
 
 {% unless docsPrefix == null or docsPrefix == "pe/" %}
 {% capture difference %}
-**Note:** To use custom mobile application tenant should have domain name configured in [Login White labeling settings](/docs/{{docsPrefix}}domains/){:target="_blank"}.
+**Note:** To use a custom mobile application, the tenant must have a domain name configured in the [Domain settings](/docs/{{docsPrefix}}domains/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 {% endunless %}
