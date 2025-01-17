@@ -79,7 +79,7 @@ Import Native Trendz widgets bundle
 
 This bundle contains 3 widgets:
 * **Trendz View Static**- allow adding saved Trendz visualizations into ThingsBoard dashboards
-* **Trendz View - with filter alias**- similar to previous but also support dashboard aliases for resolving entities
+* **Trendz View Latest**- similar to previous but also support dashboard aliases for resolving entities
 * **Trendz Builder** - Trendz Visualization Builder for providing self-service interface to your end-users, 
 so they can create their own analysis using ThingsBoard dashboard. 
  
