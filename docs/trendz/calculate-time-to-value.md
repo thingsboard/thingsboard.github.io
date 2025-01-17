@@ -7,29 +7,29 @@ description: Calculate time to value based on predicted telemetry
 
 calc-time-to-value-chart:
   0:
-    image: /images/trendz/calc-time-to-value-1.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-1.png
 
 calc-time-to-value-script:
   0:
-    image: /images/trendz/calc-time-to-value-2.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-2.png
 
 calc-time-to-value-output:
   0: 
-    image: /images/trendz/calc-time-to-value-3.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-3.png
 
 calc-time-to-value-job:
   0:
-    image: /images/trendz/calc-time-to-value-4.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-4.png
 
 calc-time-to-value-table:
   0:
-    image: /images/trendz/calc-time-to-value-5.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-5.png
 
 calc-time-to-value-alarm:
   0:
-    image: /images/trendz/calc-time-to-value-6.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-6.png
   1:
-    image: /images/trendz/calc-time-to-value-7.png
+    image: https://img.thingsboard.io/trendz/calc-time-to-value-7.png
 ---
 
 * TOC

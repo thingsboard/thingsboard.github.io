@@ -7,9 +7,9 @@ description: How to filter and clear dataset in Trendz Analytics
 
 date-filtering-example:
   0: 
-    image: /images/trendz/date-filtering-1.png
+    image: https://img.thingsboard.io/trendz/date-filtering-1.png
   1:
-    image: /images/trendz/date-filtering-2.png
+    image: https://img.thingsboard.io/trendz/date-filtering-2.png
 ---
 
 * TOC

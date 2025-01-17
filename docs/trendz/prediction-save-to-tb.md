@@ -7,15 +7,15 @@ description: Save predicted telemetry to ThingsBoard
 
 models-save-telemetry:
   0: 
-    image: /images/trendz/models-save-telemetry.png
+    image: https://img.thingsboard.io/trendz/models-save-telemetry.png
     title: 
 
 models-jobs:
   0:
-    image: /images/trendz/models-jobs-1.png
+    image: https://img.thingsboard.io/trendz/models-jobs-1.png
     title: Click on the JOBS button to open the Prediction Model Parameters modal
   1:
-    image: /images/trendz/models-jobs-2.png
+    image: https://img.thingsboard.io/trendz/models-jobs-2.png
     title: 1. Enable/disable saving predicted telemetry to ThingsBoard. Toggle this setting to save predicted telemetry to ThingsBoard and ensure regular updates. 2. Specify how often telemetry should be updated. 3. Select the specific devices for which predicted telemetry will be saved. 4. Toggle Enable Model Retraining to allow the model to retrain automatically whenever new real data is detected.
 ---
 

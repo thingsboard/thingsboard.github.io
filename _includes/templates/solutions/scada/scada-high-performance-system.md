@@ -1,4 +1,4 @@
-![image](/images/solutions/swimming_pool_scada_system/scada-high-performance-systems-1.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-high-performance-systems-1.png)
 
 Clicking on different devices provides detailed metrics and controls for each component.
 

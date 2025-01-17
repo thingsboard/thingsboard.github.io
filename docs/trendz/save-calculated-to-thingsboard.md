@@ -7,10 +7,10 @@ description: Save calculated values as a telemetry into ThingsBoard
 
 save-calc-to-tb:
   0:
-    image: /images/trendz/save-calc-to-tb-1.png
+    image: https://img.thingsboard.io/trendz/save-calc-to-tb-1.png
     text: Click on the JOBS button to open the Parameters for Saving Calculation Telemetry Job modal.
   1: 
-    image: /images/trendz/save-calc-to-tb-2.png
+    image: https://img.thingsboard.io/trendz/save-calc-to-tb-2.png
     text: 1. Enable/disable saving calculation results to ThingsBoard. 2. Specify the starting point for saving the calculated telemetry. 3. Define how often the telemetry should be updated. 4. Select the specific devices for which the calculated telemetry will be saved.
 ---
 
@@ -56,7 +56,7 @@ When these settings are saved, your calculations are recorded in ThingsBoard as 
 The data generated appears in the construction of view fields in the list of business entities under the name assigned to the calculation at the time of creation and,
 if activated, will be updated according to the specified frequency when creating the task. The created calculation will appear in the view fields under the name given to the calculation during its creation.
 
-![image](/images/trendz/name-calculation-field.png)
+![image](https://img.thingsboard.io/trendz/name-calculation-field.png)
 
 If the calculation is not activated, it can still be used when constructing view fields, but users will receive a reminder indicating that no task has been created for this calculation.
 

@@ -30,10 +30,10 @@ notitle: "true"
 <section class="scada-overview">
     <div class="img-comp-container">
       <div class="img-comp-img">
-        <img class="traditional-background" src="/images/usecases/scada/traditional.png">
+        <img class="traditional-background" src="https://img.thingsboard.io/usecases/scada/traditional.png">
       </div>
       <div class="img-comp-img img-comp-overlay" style="max-height: 65vh">
-        <img src="/images/usecases/scada/high-performance.png" style="max-height: 65vh">
+        <img src="https://img.thingsboard.io/usecases/scada/high-performance.png" style="max-height: 65vh">
       </div>
     </div>
     <h1>SCADA overview</h1>
@@ -106,7 +106,7 @@ notitle: "true"
 <section class="scada-solution-structure">
     <h1>Solution structure</h1>
     <div class="scheme">
-        <img loading="lazy" src="/images/usecases/scada/scada-solution-structure.svg" alt="SCADA solution structure">
+        <img loading="lazy" src="https://img.thingsboard.io/usecases/scada/scada-solution-structure.svg" alt="SCADA solution structure">
     </div>
     <div class="scada-solution-structure-cards">
         <div class="scada-solution-structure-card">
@@ -154,42 +154,42 @@ notitle: "true"
                 <h2>Connectors and Flow Direction</h2>
                 <p>These symbols are designed to visualize and organize pipe connections, providing a clear representation of junctions and flow directions.</p>
             </div>
-            <img src="/images/usecases/scada/connectors.svg" alt="Examples of SCADA high performance connectors symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/connectors.svg" alt="Examples of SCADA high performance connectors symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Fluid filtration</h2>
                 <p>Filter symbols provide visualization and control over filtration processes, ensuring the cleanliness and safety of the liquids being used in the system.</p>
             </div>
-            <img src="/images/usecases/scada/fluid-filtration.svg" alt="Examples of SCADA high performance fluid filters symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/fluid-filtration.svg" alt="Examples of SCADA high performance fluid filters symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Pump monitoring and management</h2>
                 <p>A range of pump symbols (centrifugal, heat, motor pumps) allows for monitoring the performance and efficiency of pump systems. This solution is particularly important for regulating pressure and liquid volumes.</p>
             </div>
-            <img src="/images/usecases/scada/pump-monitoring-management.svg" alt="Examples of SCADA high performance pump symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/pump-monitoring-management.svg" alt="Examples of SCADA high performance pump symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Flow regulation</h2>
                 <p>These symbols allow operators to manage fluid flow through pipelines by opening or closing valves remotely. This ensures flexibility in regulating flow rates and isolating system segments during maintenance or emergencies.</p>
             </div>
-            <img src="/images/usecases/scada/flow-regulation.svg" alt="Examples of SCADA high performance flow regulation symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/flow-regulation.svg" alt="Examples of SCADA high performance flow regulation symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Tank level monitoring</h2>
                 <p>Tank level meter and reservoir symbols enable operators to monitor liquid levels within the system, preventing both overflow and depletion—critical for water supply and chemical processes.</p>
             </div>
-            <img src="/images/usecases/scada/tank-level-monitoring.svg" alt="Examples of SCADA high performance tanks symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/tank-level-monitoring.svg" alt="Examples of SCADA high performance tanks symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Scales for Real-Time Monitoring</h2>
                 <p>Scales provide an intuitive way to monitor various parameters in real time, such as temperature, pressure, or flow rate. The scales enable operators to track current values and identify deviations from the desired range, ensuring precise control over system performance.</p>
             </div>
-            <img src="/images/usecases/scada/scales.svg" alt="Examples of SCADA high performance scale symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/scales.svg" alt="Examples of SCADA high performance scale symbols">
         </div>
     </div>
     <div class="traditional">
@@ -198,35 +198,35 @@ notitle: "true"
                 <h2>Pipe monitoring and leakage sensors</h2>
                 <p>Drain pipe symbols help visualize areas where potential liquid leaks might occur. In SCADA systems, this solution can be integrated with sensors to immediately alert operators to any issues.</p>
             </div>
-            <img src="/images/usecases/scada/pipe.svg" alt="Three examples of pipe monitoring and leakage sensors as dashboard symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/pipe.svg" alt="Three examples of pipe monitoring and leakage sensors as dashboard symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Fluid filtration</h2>
                 <p>Filter symbols provide visualization and control over filtration processes, ensuring the cleanliness and safety of the liquids being used in the system.</p>
             </div>
-            <img src="/images/usecases/scada/fluid.svg" alt="Three examples of fluid filtration dashboard symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/fluid.svg" alt="Three examples of fluid filtration dashboard symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Pump monitoring and management</h2>
                 <p>A range of pump symbols (centrifugal, heat, motor pumps) allows for monitoring the performance and efficiency of pump systems. This solution is particularly important for regulating pressure and liquid volumes.</p>
             </div>
-            <img src="/images/usecases/scada/pump.svg" alt="Three examples of pump monitoring and management dashboard symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/pump.svg" alt="Three examples of pump monitoring and management dashboard symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Flow regulation</h2>
                 <p>Flow meter and valve symbols allow precise control of fluid flow through pipelines, which is essential for filtration, cooling, and water supply systems.</p>
             </div>
-            <img src="/images/usecases/scada/flow.svg" alt="Three examples of flow regulation dashboard symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/flow.svg" alt="Three examples of flow regulation dashboard symbols">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h2>Tank level monitoring</h2>
                 <p>Tank level meter and reservoir symbols enable operators to monitor liquid levels within the system, preventing both overflow and depletion—critical for water supply and chemical processes.</p>
             </div>
-            <img src="/images/usecases/scada/tank.svg" alt="Three examples of tank level monitoring dashboard symbols">
+            <img src="https://img.thingsboard.io/usecases/scada/tank.svg" alt="Three examples of tank level monitoring dashboard symbols">
         </div>
     </div>
 </section>
@@ -371,11 +371,11 @@ notitle: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/scada/water-1.svg" alt="Water valve"></div>
-            <div class="application-image"><img src="/images/usecases/scada/oil-1.svg" alt="Oil pump"></div>
-            <div class="application-image"><img src="/images/usecases/scada/food-1.svg" alt="Food conveyor"></div>
-            <div class="application-image"><img src="/images/usecases/scada/chemical-1.svg" alt="Chemical plant"></div>
-            <div class="application-image"><img src="/images/usecases/scada/energy-1.svg" alt="Power plant"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada/water-1.svg" alt="Water valve"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada/oil-1.svg" alt="Oil pump"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada/food-1.svg" alt="Food conveyor"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada/chemical-1.svg" alt="Chemical plant"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada/energy-1.svg" alt="Power plant"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -390,7 +390,7 @@ notitle: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada/water-2.svg" alt="Water valve"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada/water-2.svg" alt="Water valve"></div>
             <div class="text-block">
                 <h2>Water and wastewater management</h2>
                 <p>Ensuring continuous water supply and efficient wastewater treatment is made easier through precise control and management of systems.</p>
@@ -401,10 +401,10 @@ notitle: "true"
                 <h2>Food industry</h2>
                 <p>Product quality control is achieved through precise management of processes like mixing, heating, and cooling of liquids.</p>
             </div>
-            <div class="image"><img src="/images/usecases/scada/oil-2.svg" alt="Oil pump"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada/oil-2.svg" alt="Oil pump"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada/food-2.svg" alt="Food conveyor"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada/food-2.svg" alt="Food conveyor"></div>
             <div class="text-block">
                 <h2>Energy and heating</h2>
                 <p>Optimization of heating, ventilation, and air conditioning (HVAC) systems becomes more efficient with accurate control of flows and temperatures.</p>
@@ -415,10 +415,10 @@ notitle: "true"
                 <h2>Oil and gas industry</h2>
                 <p>From extraction to refining, SCADA symbols help manage complex processes, ensuring the safety and efficiency of operations.</p>
             </div>
-            <div class="image"><img src="/images/usecases/scada/chemical-2.svg" alt="Chemical plant"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada/chemical-2.svg" alt="Chemical plant"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada/energy-2.svg" alt="Power plant"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada/energy-2.svg" alt="Power plant"></div>
             <div class="text-block">
                 <h2>Chemical industry</h2>
                 <p>Filter symbols provide visualization and control over filtration processes, ensuring the cleanliness and safety of the liquids being used in the system.</p>
@@ -431,42 +431,42 @@ notitle: "true"
     <h1>ThingsBoard advantages</h1>
     <div class="advantages-block">
         <div class="advantage">
-            <div><img src="/images/usecases/scada/security.svg" alt="Security"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/security.svg" alt="Security"></div>
             <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
             <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/data-visualization.svg" alt="Data visualization"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/data-visualization.svg" alt="Data visualization"></div>
             <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
             <p>Visualize your data effortlessly with ThingsBoard’s rich, interactive dashboards. Create multi-state, real-time dashboards using built-in widgets like charts, gauges, maps, and tables—no coding required. Customize layouts or develop custom widgets for complete flexibility. WebSocket support ensures low-latency updates.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/connectivity.svg" alt="Connectivity"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/connectivity.svg" alt="Connectivity"></div>
             <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
             <p>Connect devices directly to ThingsBoard using protocols like HTTP, CoAP, MQTT, LwM2M, SNMP, LoRaWAN, and NB-IoT. For local networks, ThingsBoard Gateway bridges the cloud via Modbus, BLE, BACnet, OPC-UA, and more. Advanced protocol translation and offline data buffering ensure reliable communication even in challenging conditions.</p>
         </div>
         <div class="advantage scale">
-            <div><img src="/images/usecases/scada/scalability.svg" alt="Scalability and high availability"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/scalability.svg" alt="Scalability and high availability"></div>
             <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
             <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments supporting more then 18 000 vehicles and 500 000 devices connected.</p>
         </div>
         <div class="advantage data">
-            <div><img src="/images/usecases/scada/data-processing.svg" alt="Data processing"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/data-processing.svg" alt="Data processing"></div>
             <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
             <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/multi-tenancy.svg" alt="Multi-tenancy"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/multi-tenancy.svg" alt="Multi-tenancy"></div>
             <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
             <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/lorawan-sigfox.svg" alt="LoRaWAN and SigFox support"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/lorawan-sigfox.svg" alt="LoRaWAN and SigFox support"></div>
             <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox support</a>
             <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
         </div>
         <div class="advantage">
-            <div><img src="/images/usecases/scada/mobile.svg" alt="Mobile application"></div>
+            <div><img src="https://img.thingsboard.io/usecases/scada/mobile.svg" alt="Mobile application"></div>
             <a class="title" href="/docs/mobile/">Mobile application</a>
             <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
         </div>
@@ -571,18 +571,18 @@ notitle: "true"
 
         function getImage(index, hp) {
             const images = [
-                "<img src='/images/usecases/scada/swiming-pool-system-state.png' alt='Swimming pool SCADA system state dashboard'/>",
-                "<img src='/images/usecases/scada/water-pump-state.png' alt='Water pump state dashboard'/>",
-                "<img src='/images/usecases/scada/heat-pump-state.png' alt='Heat pump state dashboard'/>",
-                "<img src='/images/usecases/scada/sand-filter-state.png' alt='Sand filter state dashboard'/>",
-                "<img src='/images/usecases/scada/gateway.png' alt='Gateway dashboard'/>"
+                "<img src='https://img.thingsboard.io/usecases/scada/swiming-pool-system-state.png' alt='Swimming pool SCADA system state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/water-pump-state.png' alt='Water pump state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/heat-pump-state.png' alt='Heat pump state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/sand-filter-state.png' alt='Sand filter state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/gateway.png' alt='Gateway dashboard'/>"
             ];
             const hpImages = [
-                "<img src='/images/usecases/scada/hp-swiming-pool-system-state.png' alt='Swimming pool SCADA system state dashboard'/>",
-                "<img src='/images/usecases/scada/hp-water-pump-state.png' alt='Water pump state dashboard'/>",
-                "<img src='/images/usecases/scada/hp-heat-pump-state.png' alt='Heat pump state dashboard'/>",
-                "<img src='/images/usecases/scada/hp-sand-filter-state.png' alt='Sand filter state dashboard'/>",
-                "<img src='/images/usecases/scada/gateway.png' alt='Gateway dashboard'/>"
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-swiming-pool-system-state.png' alt='Swimming pool SCADA system state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-water-pump-state.png' alt='Water pump state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-heat-pump-state.png' alt='Heat pump state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/hp-sand-filter-state.png' alt='Sand filter state dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada/gateway.png' alt='Gateway dashboard'/>"
             ];
             return hp ? hpImages[index] : images[index];
         }

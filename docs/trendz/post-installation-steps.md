@@ -24,29 +24,29 @@ To check your signing key is relevant follow the following steps:
 * Open Trendz home page
 * Go to the Settings page by clicking the “Setting” button on the left-bottom corner of the page.
 
-  ![image](/images/trendz/signing-key-1.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
 
 * Scroll down to the bottom of the page, you will see the “Signing Key” panel. You can see one of two possible options:
   - The signing key is not valid (not set or expired)
   
-  ![image](/images/trendz/signing-key-2.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-2.png)
 
   - The signing key is valid
 
-  ![image](/images/trendz/signing-key-3.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-3.png)
 
 Let's consider the standard way of setting signing way, there are steps you need to follow:
 * Open your ThingsBoard login page and log in as a system administrator
 
-  ![image](/images/trendz/signing-key-4.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-4.png)
 
 * Open the “Security” → “General” page
 
-  ![image](/images/trendz/signing-key-5.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-5.png)
 
 * Scroll down to the bottom of the page and find the “JWT Security Setting” page
 
-  ![image](/images/trendz/signing-key-6.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-6.png)
 
 * Copy the value from the “Signing key” text field.
 * The next step will be different depending on your installation type. We will cover two of
@@ -68,24 +68,24 @@ export JWT_TOKEN_SIGNING_KEY=<signing-key>
 
 * Save the file and reboot Trendz
 
-  ![image](/images/trendz/signing-key-7.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-7.png)
 
 ### Docker Compose installation
 * Open your docker-compose file
 * Add a new environment variable with the name **JWT_TOKEN_SIGNING_KEY** and put your signing key as a value of the variable
 * Save the file and reboot the Trendz container
 
-  ![image](/images/trendz/signing-key-8.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-8.png)
 
 ## Trendz Widget Bundle
 Uploading the Trendz bundle is essential to enable sharing views on the ThingsBoard dashboard. When accessing Trendz for the first time, you can upload the bundle after discovering your topology.
 
-![image](/images/trendz/topology-upload-bundle.png)
+![image](https://img.thingsboard.io/trendz/topology-upload-bundle.png)
 
 You can also upload, update, or check the status of your Trendz bundle from the Settings page. Follow these steps:
 * Log in as a Tenant Administrator and navigate to the Settings page. 
 
-  ![image](/images/trendz/signing-key-1.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
 
 * In the Trendz Widget Bundle Management section, review the status of the Widget Bundle. The status can be one of the following:
     * **Not installed**: The bundle is not currently present in ThingsBoard.
@@ -97,19 +97,19 @@ You can also upload, update, or check the status of your Trendz bundle from the 
     * For any other status, click the Upload Bundle button. If the bundle is not installed, it will be uploaded for the first time. 
       If the bundle is outdated, it will be updated to the latest version.
 
-    ![image](/images/trendz/settings-upload-button.png)
+    ![image](https://img.thingsboard.io/trendz/settings-upload-button.png)
 
 ## Link to ThingsBoard
 To simplify the process of adding Trendz views to ThingsBoard dashboards, we have introduced the ability to open the dashboard where the view was added in a new tab. 
 Configure the link to your ThingsBoard instance in Settings to use this feature. Follow these steps:
 * Log in to Trendz and navigate to the Settings page.
 
-  ![image](/images/trendz/signing-key-1.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
 
 * Enter the URL of your ThingsBoard instance (e.g., *https://your-link-to-platform*) in the designated field.
 
-  ![image](/images/trendz/link-to-tb.png)
+  ![image](https://img.thingsboard.io/trendz/link-to-tb.png)
 
 After this, you can open your modified or newly created dashboard in a new tab by enabling the Open dashboard in a separate window field.
 
-![image](/images/trendz/open-dashboard-in-separate-tab.png)
+![image](https://img.thingsboard.io/trendz/open-dashboard-in-separate-tab.png)

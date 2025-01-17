@@ -20,10 +20,10 @@ Netvox has more than 400 LoRaWAN end devices, which can be organized by systems 
 
 {% assign createapplication = '
     ===
-        image: /images/samples/netvox/2-1-1_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-1-1_sign.png,
         title: Log in to the Network Server and navigate to the "**Applications**" page. Click the "**+ Add applications**" button;
     ===
-        image: /images/samples/netvox/2-1-2_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-1-2_sign.png,
         title: Enter **Application ID** and **Application name**б and click "**Create application**" button.
 '
 %}
@@ -46,16 +46,16 @@ Check if the information is correct after the device is successfully registered.
 
 {% assign registerenddevice = '
     ===
-        image: /images/samples/netvox/2-2-1_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-2-1_sign.png,
         title: Go to the "**End devices**" page. Click the "**+ Register end device**" button;
     ===
-        image: /images/samples/netvox/2-2-2_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-2-2_sign.png,
         title: Fill in the Netvox device information.
     ===
-        image: /images/samples/netvox/2-2-3_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-2-3_sign.png,
         title: Provisioning information about device, and click "**Register end device**" button;
     ===
-        image: /images/samples/netvox/2-2-4_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-2-4_sign.png,
         title: Check if the information is correct after the device is successfully registered.
 '
 %}
@@ -68,7 +68,7 @@ Turn on the device and make sure it is connected to the Network Server.
 
 {% assign networkjoining = '
     ===
-        image: /images/samples/netvox/2-3-1_sign.png,
+        image: https://img.thingsboard.io/samples/netvox/2-3-1_sign.png,
         title: Turn on the device and make sure it is connected to the Network Server.
 '
 %}
@@ -89,16 +89,16 @@ Turn on the device and make sure it is connected to the Network Server.
 
 {% assign createintegration = '
     ===
-        image: /images/samples/netvox/nevox-add-integration-1.png,
+        image: https://img.thingsboard.io/samples/netvox/nevox-add-integration-1.png,
         title: Sign up and log in to ThingsBoard. Go to the "**Integrations**" page of the "**Integrations center**" section. Click "**plus**" icon in the upper right corner to add new integration. Select "**The Things Stack Community**" as the integration type. Then, click "**Next**";
     ===
-        image: /images/samples/netvox/nevox-add-integration-2.png,
+        image: https://img.thingsboard.io/samples/netvox/nevox-add-integration-2.png,
         title: Use the default Decoder function. Click "**Next**";
     ===
-        image: /images/samples/netvox/nevox-add-integration-3.png,
+        image: https://img.thingsboard.io/samples/netvox/nevox-add-integration-3.png,
         title: Use the default Encoder function. Click "**Next**";
     ===
-        image: /images/samples/netvox/nevox-add-integration-4.png,
+        image: https://img.thingsboard.io/samples/netvox/nevox-add-integration-4.png,
         title: Next, fill in the fields with your parameters. Enter the third platform’s MQTT account and password. After, press "**Add**" button.
 '
 %}
@@ -113,7 +113,7 @@ Turn on the device and make sure it is connected to the Network Server.
 
 {% assign devicelist = '
     ===
-        image: /images/samples/netvox/device-1.png,
+        image: https://img.thingsboard.io/samples/netvox/device-1.png,
         title: Go to the "Devices" page in the sidebar. Click on the created device (If the device’s info does not show on the list, please reboot the device.).Navigate to the "Latest telemetry" tab to check the latest data.
 '
 %}
@@ -132,7 +132,7 @@ Let&#39;s create a dashboard:
 
 {% assign adddashboard = '
     ===
-        image: /images/samples/netvox/add-dashboard-1.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-1.png,
         title: Go to the "Dashboards" page. Click "plus" icon and select "Create new dashboard" from drop-down menu;
 '
 %}
@@ -155,19 +155,19 @@ To make the widget slightly larger, simply grab the bottom right corner and drag
 
 {% assign adddashboard2 = '
     ===
-        image: /images/samples/netvox/add-dashboard-2.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-2.png,
         title: Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);
     ===
-        image: /images/samples/netvox/add-dashboard-3.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-3.png,
         title: Find the "Charts" widget bundle and click on it;
     ===
-        image: /images/samples/netvox/add-dashboard-4.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-4.png,
         title: Select the "Bars" widget;
     ===
-        image: /images/samples/netvox/add-dashboard-5.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-5.png,
         title: Specify the device "r718n37" as the datasource. Add "Current1", "Current2", "Current3" key. Then, click "Add";
     ===
-        image: /images/samples/netvox/add-dashboard-6.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-6.png,
         title: To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.
 '
 %}
@@ -179,7 +179,7 @@ Add another "Timeseries table" widget.
 
 {% assign adddashboard3 = '
     ===
-        image: /images/samples/netvox/add-dashboard-7.png,
+        image: https://img.thingsboard.io/samples/netvox/add-dashboard-7.png,
         title: Add another "Timeseries table" widget.
 '
 %}
@@ -214,7 +214,7 @@ Click to open [the data converters library of ThingsBoard](https://github.com/th
 
 {% assign adddashboard3 = '
     ===
-        image: /images/samples/netvox/4-2-1.png,
+        image: https://img.thingsboard.io/samples/netvox/4-2-1.png,
         title: The original document of ThingsBoard data converter.
 '
 %}
