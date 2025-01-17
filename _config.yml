@@ -84,11 +84,11 @@ release:
   pe_full_ver: 3.9.0PE
   wd_examples_commit: v3.9
   # >>> EDGE
-  edge_ver: 3.8
-  edge_tag: v3.8
-  edge_full_ver: 3.8.0EDGE
-  pe_edge_ver: 3.8pe
-  pe_edge_full_ver: 3.8.0EDGEPE
+  edge_ver: 3.9
+  edge_tag: v3.9
+  edge_full_ver: 3.9.0EDGE
+  pe_edge_ver: 3.9pe
+  pe_edge_full_ver: 3.9.0EDGEPE
   # <<< EDGE
   ce_flutter_app_ver: 1.4.0
   pe_flutter_app_ver: 1.4.0
