@@ -32,8 +32,8 @@ notitle: "true"
       <div class="img-comp-img">
         <img class="traditional-background" src="/images/usecases/scada/traditional.png">
       </div>
-      <div class="img-comp-img img-comp-overlay" style="max-height: 74vh">
-        <img src="/images/usecases/scada/high-performance.png" style="max-height: 74vh">
+      <div class="img-comp-img img-comp-overlay" style="max-height: 65vh">
+        <img src="/images/usecases/scada/high-performance.png" style="max-height: 65vh">
       </div>
     </div>
     <h1>SCADA overview</h1>
@@ -138,7 +138,7 @@ notitle: "true"
 
 <section class="scada-key-functions">
     <div class="header-selector">
-        <h1>Key functions of SCADA systems</h1>
+        <h1 style="padding-right:0">Key functions of SCADA systems</h1>
         <div class="scada-mode-selector">
             <div class="mode active gtm_button" onClick="activateScadaSection(this, 'high-performance', 'scada-key-functions')">
                 <h3>High-performance</h3>
@@ -571,18 +571,18 @@ notitle: "true"
 
         function getImage(index, hp) {
             const images = [
-                "<img src='/images/usecases/scada/swiming-pool-system-state.svg' alt='Swimming pool SCADA system state dashboard'/>",
-                "<img src='/images/usecases/scada/water-pump-state.svg' alt='Water pump state dashboard'/>",
-                "<img src='/images/usecases/scada/heat-pump-state.svg' alt='Heat pump state dashboard'/>",
-                "<img src='/images/usecases/scada/sand-filter-state.svg' alt='Sand filter state dashboard'/>",
-                "<img src='/images/usecases/scada/gateway.svg' alt='Gateway dashboard'/>"
+                "<img src='/images/usecases/scada/swiming-pool-system-state.png' alt='Swimming pool SCADA system state dashboard'/>",
+                "<img src='/images/usecases/scada/water-pump-state.png' alt='Water pump state dashboard'/>",
+                "<img src='/images/usecases/scada/heat-pump-state.png' alt='Heat pump state dashboard'/>",
+                "<img src='/images/usecases/scada/sand-filter-state.png' alt='Sand filter state dashboard'/>",
+                "<img src='/images/usecases/scada/gateway.png' alt='Gateway dashboard'/>"
             ];
             const hpImages = [
-                "<img src='/images/usecases/scada/hp-swiming-pool-system-state.svg' alt='Swimming pool SCADA system state dashboard'/>",
-                "<img src='/images/usecases/scada/hp-water-pump-state.svg' alt='Water pump state dashboard'/>",
-                "<img src='/images/usecases/scada/hp-heat-pump-state.svg' alt='Heat pump state dashboard'/>",
-                "<img src='/images/usecases/scada/hp-sand-filter-state.svg' alt='Sand filter state dashboard'/>",
-                "<img src='/images/usecases/scada/gateway.svg' alt='Gateway dashboard'/>"
+                "<img src='/images/usecases/scada/hp-swiming-pool-system-state.png' alt='Swimming pool SCADA system state dashboard'/>",
+                "<img src='/images/usecases/scada/hp-water-pump-state.png' alt='Water pump state dashboard'/>",
+                "<img src='/images/usecases/scada/hp-heat-pump-state.png' alt='Heat pump state dashboard'/>",
+                "<img src='/images/usecases/scada/hp-sand-filter-state.png' alt='Sand filter state dashboard'/>",
+                "<img src='/images/usecases/scada/gateway.png' alt='Gateway dashboard'/>"
             ];
             return hp ? hpImages[index] : images[index];
         }
@@ -614,9 +614,10 @@ notitle: "true"
             const trad = document.getElementsByClassName("traditional-background")[0];
             if (!highPerfBlock) return;
             let clicked = false;
+            highPerfBlock.style.maxHeight = 'unset';
+            highPerfBlock.firstElementChild.style.maxHeight = 'unset';
             highPerfBlock.style.width = (trad.offsetWidth / 2) + "px";
             highPerfBlock.firstElementChild.style.width = trad.offsetWidth + "px";
-            highPerfBlock.firstElementChild.style.height = trad.offsetHeight + "px";
             container.style.height = trad.offsetHeight + "px";
             const slider = document.createElement("DIV");
             slider.appendChild(document.createElement("DIV"));
