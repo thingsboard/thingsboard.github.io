@@ -12,7 +12,7 @@ notitle: "true"
             <h1>Smart Farming & IoT Agriculture Solutions</h1>
             <p>A comprehensive guide to choosing the right solution</p>
         </div>
-        <img loading="lazy" src="/images/usecases/smart-farming/hero_photo.webp" alt="Smart farming in action: a farmer manages the field through a tablet">
+        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/hero_photo.webp" alt="Smart farming in action: a farmer manages the field through a tablet">
     </div>
 </section>
 <section class="smart-farm-about-section">
@@ -28,7 +28,7 @@ notitle: "true"
                 </div>
             </div>
             <div class="smart-farm-demo-img">
-                <img loading="lazy" src="/images/usecases/smart-farming/farming_solutions.webp" alt="Dashboard interface with field condition data for smart farming">
+                <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/farming_solutions.webp" alt="Dashboard interface with field condition data for smart farming">
             </div>
         </section>
         <section class="smart-farm-about-container">
@@ -72,7 +72,7 @@ notitle: "true"
                     <p>In conventional agriculture, the entire field is treated as a single unit and inputs are applied evenly across the land. Farmers use standardized amounts of water, pesticides and fertilizers, which often leads to wastage of resources. Despite its simplicity, traditional agriculture remains effective because farmers have a deep understanding of their land and crops, which allows them to successfully manage pests and diseases.</p>
                 </div>
                 <div class="block-img">
-                    <img loading="lazy" src="/images/usecases/smart-farming/traditional_farming_.webp" alt="A farmer plants sprouts by hand in traditional agriculture">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/traditional_farming_.webp" alt="A farmer plants sprouts by hand in traditional agriculture">
                 </div>
             </div>
             <div class="smart-farm-about-block">
@@ -82,12 +82,12 @@ notitle: "true"
                     <p>Smart agriculture includes sensors, automated machinery, GPS technology and data analytics. These technologies allow for precise control of resources, reducing environmental impact and increasing crop production efficiency. Farmers can tailor water and fertiliser applications to the specific needs of each plant, optimizing growth and yield.</p>
                 </div>
                 <div class="block-img">
-                    <img loading="lazy" src="/images/usecases/smart-farming/smart_farming_.webp" alt="Smart farming: the drone monitors the field, the farmer watches">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/smart_farming_.webp" alt="Smart farming: the drone monitors the field, the farmer watches">
                 </div>
             </div>
         </section>
         <section class="smart-farm-contact-us">
-            <img loading="lazy" class="rec55" src="/images/usecases/smart-farming/rectangle_55.webp" alt="rectangle">
+            <img loading="lazy" class="rec55" src="https://img.thingsboard.io/usecases/smart-farming/rectangle_55.webp" alt="rectangle">
             <div class="smart-farm-contact-us-text">
                 <h3>Enhance your farm with Smart Technology</h3>
                 <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
@@ -95,7 +95,7 @@ notitle: "true"
             <div class="smart-farm-contact-us-btn" id="Serv_DevServ_ContactUs1">
                 <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
-            <img loading="lazy" class="rec56" src="/images/usecases/smart-farming/rectangle_56.webp" alt="rectangle">
+            <img loading="lazy" class="rec56" src="https://img.thingsboard.io/usecases/smart-farming/rectangle_56.webp" alt="rectangle">
         </section>
         <section id="smart-farm-key-difference" class="smart-farm-key-difference">
             <div class="smart-farm-key-difference-text">
@@ -104,7 +104,7 @@ notitle: "true"
                 <p>While traditional farming has its advantages proven over the years, smart farming offers significant benefits in efficiency, productivity, and sustainability. By integrating smart agricultural technology, farmers can optimize resource use, improve crop quality, and ensure environmental sustainability. Transitioning to smart farming can help meet the growing global food demand while addressing modern agricultural challenges, as climate change.</p>
             </div>
             <div class="smart-farm-key-difference-img">
-                <img loading="lazy" src="/images/usecases/smart-farming/key_differences.webp" alt="key differences icon">
+                <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/key_differences.webp" alt="key differences icon">
             </div>
         </section>
         <section id="challenges-in-smart-farming" class="smart-farming-callenges">
@@ -147,7 +147,7 @@ notitle: "true"
                     <div class="smart-farming-callenges-text">
                         <p>While smart agriculture has the potential to revolutionise agriculture, addressing these challenges is critical to ensuring its widespread adoption and success. Solutions such as government subsidies, training programmes, improved infrastructure, and partnerships between technology providers and farming communities can help mitigate these obstacles.</p>
                     </div>
-                    <div class="smart-farming-callenges-num"><img loading="lazy" src="/images/usecases/smart-farming/infinity.webp"></div>
+                    <div class="smart-farming-callenges-num"><img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/infinity.webp"></div>
                 </div>
             </div>
         </section>
@@ -171,7 +171,7 @@ notitle: "true"
                         <p>Smart farming sensors are integral components of modern agricultural practices, providing real-time data and insights that help optimize farming operations. These sensors are part of the broader Internet of Things (IoT) ecosystem, enabling the collection, analysis, and utilization of data to improve productivity, efficiency, and sustainability in agriculture. </p>
                     </div>
                     <div class="smart-farm-tech-img">
-                        <img loading="lazy" class="img-sensors"  src="/images/usecases/smart-farming/smart_farming_sensors.webp" alt="Smart farming sensors icon">
+                        <img loading="lazy" class="img-sensors"  src="https://img.thingsboard.io/usecases/smart-farming/smart_farming_sensors.webp" alt="Smart farming sensors icon">
                     </div>              
                 </div>
                 <div class="smart-farm-tech-wrapper">
@@ -180,7 +180,7 @@ notitle: "true"
                         <p>Artificial Intelligence (AI) and Machine Learning (ML) are tools for analysing large, complex data sets (Big Data) provided by IoT systems. AI involves the creation of systems that can perform tasks that typically require human intelligence, such as decision-making, problem solving, and pattern recognition. As a part of AI, ML involves training algorithms that learn from data and make predictions or decisions based on the data. In smart agriculture, AI and ML involve collecting data from a variety of sources, such as sensors, drones, satellite imagery, and weather forecasts, which are used to analyse huge amounts of data to identify patterns, make predictions, and generate recommendations. Farmers can use this information to make informed decisions, optimise resource use and automate certain tasks.</p>
                     </div>
                     <div class="smart-farm-tech-img">
-                        <img loading="lazy" class="img-ai-ml" src="/images/usecases/smart-farming/artificial_intelligence.webp" alt="Artificial Intelligence (AI) and Machine Learning (ML) icon">
+                        <img loading="lazy" class="img-ai-ml" src="https://img.thingsboard.io/usecases/smart-farming/artificial_intelligence.webp" alt="Artificial Intelligence (AI) and Machine Learning (ML) icon">
                     </div>              
                 </div>
                 <div class="smart-farm-tech-wrapper">
@@ -190,7 +190,7 @@ notitle: "true"
                         <p> Automation and robotics are playing a crucial role in the modernization of agriculture, addressing challenges such as labor shortages, rising operating costs, and the need for sustainable agriculture.</p>
                     </div>
                     <div class="smart-farm-tech-img">
-                        <img loading="lazy" class="img-auto-rob" src="/images/usecases/smart-farming/automation_and_robotics.webp" alt="Automation and Robotics icon">
+                        <img loading="lazy" class="img-auto-rob" src="https://img.thingsboard.io/usecases/smart-farming/automation_and_robotics.webp" alt="Automation and Robotics icon">
                     </div>              
                 </div>
                 <div class="smart-farm-tech-wrapper">
@@ -200,7 +200,7 @@ notitle: "true"
                         <p>IoT in smart farming involves deploying various sensors and devices across the farm, which continuously gather data on different aspects of the environment and crop health. This data is transmitted to a IoT platform where it is analyzed and processed to provide actionable insights. Farmers can access this information through computers or smartphones, allowing them to make informed decisions and automate certain tasks.</p>
                     </div>
                     <div class="smart-farm-tech-img">
-                        <img loading="lazy" class="img-iot" src="/images/usecases/smart-farming/internet_of_things.webp" alt="Internet of Things (IoT) icon">
+                        <img loading="lazy" class="img-iot" src="https://img.thingsboard.io/usecases/smart-farming/internet_of_things.webp" alt="Internet of Things (IoT) icon">
                     </div>              
                 </div>
             </div>
@@ -212,7 +212,7 @@ notitle: "true"
                     <p>The Internet of Things (IoT) plays a general role in modernizing agriculture by providing real-time data and insights that enable farmers to optimize their farming processes. The core of IoT in smart farming are continuous collection and transmission of data over the network. This data driven agriculture approach helps farmers react quickly to emerging issues and changing conditions, ensuring efficient and sustainable farming practices. The IoT-based smart farming cycle involves four main stages: observation, diagnostics, decision, and action.</p>
                 </div>
                 <div class="smart-farm-cycle-img">
-                    <img loading="lazy" src="/images/usecases/smart-farming/smart_farming_cycle.webp" alt="smart farming alt">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/smart_farming_cycle.webp" alt="smart farming alt">
                 </div>
             </div>
             <div class="smart-farm-cycle-wrapper">
@@ -248,7 +248,7 @@ notitle: "true"
                     <h3>The Repetitive Cycle</h3>
                     <p>The IoT-based smart farming cycle is continuous and repetitive. After each action is taken, the sensors resume their observation phase, recording new data and starting the cycle anew. This ongoing process ensures that any issues or problems are caught and addressed immediately, providing farmers with a clear and timely window to act on emerging problems.</p>
                 </div>
-                <div class="smart-farm-cycle-num"><img loading="lazy" src="/images/usecases/smart-farming/infinity.webp"></div>
+                <div class="smart-farm-cycle-num"><img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/infinity.webp"></div>
             </div>
         </section>
         <section id="smart-farm-pros" class="smart-farm-pros">
@@ -302,7 +302,7 @@ notitle: "true"
             </div>
         </section>
         <section id="smart-farm-contact-us" class="smart-farm-contact-us">
-            <img loading="lazy" class="rec55" src="/images/usecases/smart-farming/rectangle_55.webp">
+            <img loading="lazy" class="rec55" src="https://img.thingsboard.io/usecases/smart-farming/rectangle_55.webp">
             <div class="smart-farm-contact-us-text">
                 <h3>Enhance your farm with Smart Technology</h3>
                 <p>Ready to upgrade your farming operations?We specialize in developing and deploying IoT solutions tailored to your farming needs.</p>
@@ -310,7 +310,7 @@ notitle: "true"
             <div class="smart-farm-contact-us-btn">
                 <button id="smart-farm-contact-us" class="button anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
-            <img loading="lazy" class="rec56" src="/images/usecases/smart-farming/rectangle_56.webp">
+            <img loading="lazy" class="rec56" src="https://img.thingsboard.io/usecases/smart-farming/rectangle_56.webp">
         </section>
         <section id="smart-farm-solutions" class="smart-farm-solutions">
             <div class="smart-farm-solutions-container">
@@ -324,7 +324,7 @@ notitle: "true"
                         <p>Precision farming involves the use of technology to collect and analyse data to optimise agricultural practices. This approach ensures that crops receive the right amount of water, nutrients and pesticides at the right time, maximizing yields and minimizing waste.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/precision_agriculture.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/precision_agriculture.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -333,7 +333,7 @@ notitle: "true"
                         <p>Drones are used for a variety of smart agriculture applications, including crop monitoring, soil analysis and spraying. Equipped with sensors and cameras, drones can capture high-resolution images and provide detailed information about crop health and field conditions.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/agricultural_drones.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/agricultural_drones.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -342,7 +342,7 @@ notitle: "true"
                         <p>IoT devices, such as soil moisture sensors, weather stations and livestock monitors, collect real-time data on various aspects of the farm. This data is transmitted to a central platform where it can be analysed and used to make informed decisions.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/monitoring_systems.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/monitoring_systems.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -351,7 +351,7 @@ notitle: "true"
                         <p>Automated irrigation systems use data from soil moisture sensors and weather forecasts to deliver the right amount of water to crops at the right time. These systems help save water, reduce labour and increase yields.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/irrigation_systems.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/irrigation_systems.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -360,7 +360,7 @@ notitle: "true"
                         <p>Smart greenhouses use IoT and artificial intelligence technologies to monitor and control the growing environment, including temperature, humidity, light levels and CO2 concentration. These systems provide optimal conditions for plant growth, which leads to higher yields and product quality.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/smart_greenhouses.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/smart_greenhouses.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -369,7 +369,7 @@ notitle: "true"
                         <p>Robotic harvesters are designed to pick fruit and vegetables accurately and gently, reducing the need for manual labour and ensuring timely harvest. These robots use computer vision and artificial intelligence to identify ripe produce and pick it without causing damage.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/robotic_harvesting.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/robotic_harvesting.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -378,7 +378,7 @@ notitle: "true"
                         <p>Wearable sensors and IoT devices monitor the health, behaviour and location of livestock. These systems help farmers detect health problems at an early stage, optimise feeding schedules and improve the overall welfare of their animals.These systems not only improve livestock management but also ensure the safety of animals and the farmers who care for them.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/livestock_monitoring_systems.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/livestock_monitoring_systems.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -387,7 +387,7 @@ notitle: "true"
                         <p>Modern data analytics and decision support systems use AI and ML to analyse huge amounts of data collected from various sensors and devices. These systems provide actionable insights and recommendations that help farmers make informed decisions.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/decision_support_systems.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/decision_support_systems.webp">
                     </div>
                 </div>
                 <div class="smart-farm-solutions-item">
@@ -396,7 +396,7 @@ notitle: "true"
                         <p>Farm management software integrates data from various sources and provides a comprehensive view of farm operations. This software helps farmers plan, monitor and manage their operations, from sowing to harvesting and all stages in between.</p>
                     </div>
                     <div class="smart-farm-solutions-img">
-                        <img loading="lazy" src="/images/usecases/smart-farming/farm_management_software.webp">
+                        <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/farm_management_software.webp">
                     </div>
                 </div> 
             </div>
@@ -405,32 +405,32 @@ notitle: "true"
             <h2>Key features of ThingsBoard Smart farming solution</h2>
             <div class="smart-farm-key-features-cards">
                 <div class="smart-farm-key-features-card">
-                    <img loading="lazy" src="/images/usecases/smart-farming/data_collection_integration.webp">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/data_collection_integration.webp">
                     <h3>Data collection and integration</h3>
                     <p>ThingsBoard collects data from various sensors and IoT devices installed on the farm. These sensors monitor soil moisture, temperature, humidity, light levels, livestock health, and more.</p>
                 </div>
                 <div class="smart-farm-key-features-card">
-                    <img loading="lazy" src="/images/usecases/smart-farming/real_time_monitoring.webp" alt="real time monitoring">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/real_time_monitoring.webp" alt="real time monitoring">
                     <h3>Real-Time Monitoring</h3>
                     <p>The platform offers real-time monitoring capabilities that allow farmers to continuously track various parameters. This helps to identify and resolve problems quickly.</p>
                 </div>
                 <div class="smart-farm-key-features-card">
-                    <img loading="lazy" src="/images/usecases/smart-farming/alerts_notifications.webp" alt="alerts notifications">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/alerts_notifications.webp" alt="alerts notifications">
                     <h3>Automated alerts and notifications</h3>
                     <p>ThingsBoard can be configured to send automatic notifications and alerts based on predefined thresholds or conditions. This ensures that farmers are promptly informed about critical issues.</p>
                 </div>
                 <div class="smart-farm-key-features-card">
-                    <img loading="lazy" src="/images/usecases/smart-farming/advanced_analytics.webp" alt="advanced analytics">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/advanced_analytics.webp" alt="advanced analytics">
                     <h3>Advanced analytics</h3>
                     <p>The platform uses advanced analytics to analyze collected data and generate insights. This information helps to make data-driven decisions and optimize agricultural practices.</p>
                 </div>
                 <div class="smart-farm-key-features-card">
-                    <img loading="lazy" src="/images/usecases/smart-farming/visualization_tools.webp" alt="visualization tools">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/visualization_tools.webp" alt="visualization tools">
                     <h3>Visualization tools</h3>
                     <p>ThingsBoard provides powerful visualization tools, including dashboards and charts, to present data in an easy-to-understand format. It helps farmers understand complex data and identify trends.</p>
                 </div>
                 <div class="smart-farm-key-features-card">
-                    <img loading="lazy" src="/images/usecases/smart-farming/scalability_flexibility.webp" alt="scalability flexibility">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/scalability_flexibility.webp" alt="scalability flexibility">
                     <h3>Scalability and flexibility</h3>
                     <p>The platform is highly scalable, meeting the needs of small farms to large agricultural enterprises. It supports different data sources and can be customized according to specific requirements.</p>
                 </div>
@@ -444,7 +444,7 @@ notitle: "true"
                     <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0"><button class="try-demo">Live demo</button></a>
                 </div>
                 <div class="smart-farm-management-software-img">
-                    <img loading="lazy" src="/images/usecases/smart-farming/agriculture_farm_management.webp" alt="agriculture_farm_management">
+                    <img loading="lazy" src="https://img.thingsboard.io/usecases/smart-farming/agriculture_farm_management.webp" alt="agriculture_farm_management">
                 </div>
             </div>
         </section>
@@ -454,7 +454,7 @@ notitle: "true"
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img loading="lazy" class="close" src="/images/close-icon.svg" alt="Close"/>
+        <img loading="lazy" class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">
