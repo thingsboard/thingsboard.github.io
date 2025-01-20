@@ -25,7 +25,7 @@ edit-application:
         title: 'To edit a mobile application, open its details and enter the edit mode by clicking the large orange "pencil" button;'
     1:
         image: /images/mobile-center/applications/edit-application-2-ce.png
-        title: 'Edit the necessary fields. Afterward, save the changes;'
+        title: 'Make the necessary changes, and then save them;'
     2:
         image: /images/mobile-center/applications/edit-application-3-ce.png
         title: ''
