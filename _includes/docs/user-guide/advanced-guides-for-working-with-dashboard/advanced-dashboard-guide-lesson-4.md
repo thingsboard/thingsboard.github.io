@@ -26,7 +26,10 @@ Understanding and effectively utilizing alarms is key to maintaining the health,
 
 By implementing alarms, you can automate responses to predefined conditions, improve operational efficiency, and ensure system reliability.
 
-In this lesson, we will configure alarm rules for our devices, and the widget for managing alarm signals will be added to each state.
+<br>
+As you may recall, the  Indoor Air Quality Sensor transmits telemetry values such as temperature, humidity, and CO2 levels to ThingsBoard.
+
+In this lesson, we will configure alarm rules for the Indoor Air Quality Sensor and add a widget to manage the device's alarms.
 
 Let's start.
 
@@ -171,148 +174,8 @@ Alarm Clearing:
 
 {% include images-gallery.html imageCollection="final-co2-alarm-rules" %}
 
-### Rules for devices that use the "energy-sensor" device profile
-
-The "Energy Meter" device, which uses the "energy-sensor" device profile, transmits telemetry data on power consumption. Let's set up a rule for creating the alarm.
-
-##### Power consumption alarm rule
-
-Set two conditions for triggering the alarm about exceeding energy consumption and one condition for clearing it:
-
-- An alarm with a severity type of "**Major**" will be triggered if water consumption exceeds `7` kWh but does not exceed `8` kWh (inclusive).
-- If water consumption exceeds `8` kWh, an alarm with a severity type of "**Critical**" will be triggered.
-- The alarm will be **cleared** when water consumption drops below `7` kWh.
-
-Let's start with adding the alarm rule condition with "**Major**" severity type:
-
-- Go to the "Device profiles" page and click on the "energy-sensor" profile to open its details;
-- Switch to the "Alarm rules" tab;
-- Click the big orange pencil button to enable editing mode;
-- Click the "Add alarm rule" button;
-- Enter "Power consumption alarm" as the alarm type;
-- In the advanced settings, check the "Propagate alarm to related entities" option to propagate the alarm to all related entities.
-- Select "Major" as the severity type and click the red "+" sign;
-
-- Add alarm rule condition:
-  - Click the "Add key filter" button;
-  - Set the following:
-    - Key type: "Time series";
-    - Key name: "powerConsumption";
-    - Value type: "Numeric";
-    - Click the "Add" button in the "Filters" section. Define conditions:
-      - For the first condition, select the "greater than" operation from the drop-down menu and input `7` as the threshold value. Click "Add".
-      - For the second condition, select the "less or equal" operation and input `8` as the threshold value. Click "Add" to confirm adding the key filter.
-  - Click the "Save" button to apply the alarm condition.
-
-An alarm with the severity type "Major" will now be created when the power consumption value is between `7` kWh and `8` kWh (inclusive).
-
-{% include images-gallery.html imageCollection="major-power-consumption-alarm-rule" %}
-
-<br>
-Add one more alarm rule condition with the "**Critical**" severity type:
-
-- Click the "Add create condition" button in the alarm configuration panel;
-- Select "Critical" as the severity type and click the red "+" sign;
-
-- Add alarm rule condition:
-  - Click the "Add key filter" button;
-  - Set the following:
-    - Key type: "Time series";
-    - Key name: "powerConsumption";
-    - Value type: "Numeric";
-    - Click the "Add" button in the "Filters" section. Define the condition:
-      - Select the "greater than" operation from the drop-down menu and input `8` as the threshold value. Click "Add" to confirm adding the key filter.
-  - Click the "Save" button to apply the alarm condition.
-
-An alarm with the severity type "Critical" will now be created if the power consumption exceeds `8` kWh.
-
-{% include images-gallery.html imageCollection="critical-power-consumption-alarm-rule" %}
-
-<br>
-Add the **condition to clear** the "Power consumption alarm" alarm:
-
-- Click the "Add clear condition" button in the alarm configuration panel;
-- Click the red "+" sign to start defining the condition;
-- Add alarm rule condition:
-  - Click the "Add key filter" button;
-  - Set the following:
-    - Key type: "Time series";
-    - Key name: "powerConsumption";
-    - Value type: "Numeric";
-    - Click the "Add" button in the "Filters" section. Define the condition:
-      - Select the "less or equal" operation from the drop-down menu and input `7` as the threshold value. Click "Add" to confirm adding the key filter.
-  - Click the "Save" button to apply the clear condition.
-- Ensure all configurations are correct and save the overall changes to finalize the rule.
-
-The alarm will automatically clear when the power consumption drops to `7` kWh or below.
-
-{% include images-gallery.html imageCollection="clear-power-consumption-alarm-rule" %}
-
-Finally, the power consumption alarm rules will look like this:
-
-{% include images-gallery.html imageCollection="final-power-consumption-alarm-rule" %}
-
-### Rules for devices that use the "water-sensor" device profile
-
-The "Water Flow Meter" device using the "water-sensor" device profile send telemetry data on water consumption. 
-Let's configure an alarm rule to trigger when specific water consumption thresholds are reached.
-
-##### Water consumption alarm rule
-
-Set two conditions for triggering the alarm about exceeding water consumption and one condition for clearing it:
-
-- An alarm with a severity type of "**Major**" will be triggered if water consumption exceeds `4` gallons per hour but does not exceed `5` gallons per hour (inclusive).
-- If water consumption exceeds `5` gallons per hour, an alarm with a severity type of "**Critical**" will be triggered.
-- The alarm will be **cleared** when water consumption drops below `4` gallons per hour.
-
-Let's start with adding the alarm rule condition with "Major" type:
-
-- Open the "Device profiles" page, and click on the "water-sensor" device profile to open its details;
-- Click the orange pencil icon to edit the profile;
-- Click the "Add alarm rule" button;
-- Input the "Water consumption alarm" as alarm type;
-- Select "Major" severity;
-- Click the red "+" icon;
-- In the opened window, click the "Add key filter" button;
-- Set the "Key type" to "Time series" and select "waterConsumption" as the key name. Change the "Value type" to "Numeric";
-- Click the "Add" button in the "Filters" section. Add a filter for values `greater than 2` and another for values `less or equal to 3`. Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the "Major" alarm condition.
-
-Now, when the water consumption is between `2` and `3` (inclusive) gallons, an alarm with the type "Major" will be created.
-
-{% include images-gallery.html imageCollection="major-water-consumption-alarm-rule" %}
-
-<br>
-Add one more alarm rule condition with "Critical" type:
-
-- Click the "Add create condition" button;
-- Select "Critical" severity, and click on the red "+" sign;
-- Add a key filter for "waterConsumption" with a value `greater than 3`.
-- Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the "Critical" alarm condition.
-
-An alarm with the type "Critical" will be created if the water consumption exceeds 3 gallons per hour.
-
-{% include images-gallery.html imageCollection="critical-water-consumption-alarm-rule" %}
-
-<br>
-Finally, add the condition to clear the rule:
-
-- Click the "Add clear condition" button;
-- Click on the red "+" sign;
-- Add a key filter for "waterConsumption" with a value `less or equal to 2`;
-- Click the "Save" button to apply the alarm condition;
-- Finally, apply changes.
-
-The alarm will be automatically cleared when the water consumption drops below 2 gallons per hour.
-
-{% include images-gallery.html imageCollection="clear-water-consumption-alarm-rule" %}
-
-Finally, the water consumption alarm rule will look like this:
-
-{% include images-gallery.html imageCollection="final-water-consumption-alarm-rule" %}
-
-### Importing the pre-configured "air-sensor" device profile
+<br><br>
+Now that we have defined all the alarm rules for the "air-sensor" device profile, the next step is to add a widget to manage the alarms.
 
 If, for any reason, you were unable to configure the rules mentioned above, you can [download the air-sensor device profile with pre-configured alarm rules](/docs/user-guide/advanced-guides-for-working-with-dashboard/files-from-tutorial/air_sensor_imported_.json){:target="_blank"} and import it into your ThingsBoard instance.
 
