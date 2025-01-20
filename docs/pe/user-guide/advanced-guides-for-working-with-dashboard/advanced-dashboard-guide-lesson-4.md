@@ -17,22 +17,24 @@ major-high-temperature-alarm-rule:
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-4-pe.png
         title: 'Select "Major" severity, and click on the red "+" sign;'
-    4:
+
+major-high-temperature-alarm-rule-2:
+    0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-5-pe.png
         title: 'Click the "Add key filter" button;'
-    5:
+    1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-6-pe.png
         title: 'Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;'
-    6:
+    2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-7-pe.png
         title: 'Select the "greater than" operation from drop-down menu, and input "24" as the threshold value. Click "Add" again to add another rule;'
-    7:
+    3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-8-pe.png
         title: 'Select the "less or equal" operation from drop-down menu, and input "26" as the threshold value. Click "Add" to confirm adding key filter;'
-    8:
+    4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-9-pe.png
         title: 'Added the alarm rule condition of "Major" type.'
-    9:
+    5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-10-pe.png
         title: 'Added the alarm rule condition of "Major" type.'
 

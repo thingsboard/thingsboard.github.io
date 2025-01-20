@@ -30,24 +30,23 @@ In this lesson, we will configure alarm rules for our devices, and the widget fo
 
 Let's start.
 
-## Creating alarm rules
+## Adding alarm rules
 
-**Defining Alarm Rules in Device Profiles**
-
-To configure alarms in ThingsBoard, you need to define rules within device profiles. These rules specify the conditions under which alarms should be generated. Follow these steps to set up alarm rules:
+First, you need to define the rules that will trigger the alarm. The simplest way to create the alarm rule is to configure it within the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}. These rules specify the conditions under which reminders should be generated.
 
 ### Rules for devices that use the "air-sensor" device profile
 
-Devices using the device profile “air-sensor” transmit telemetry readings such as temperature, humidity, and CO2 levels. Below is an example of defining individual alarm creation rules for the "temperature" telemetry key.
+Devices using the "air-sensor" device profile transmit telemetry data such as temperature, humidity, and CO2 levels. 
+Let's configure alarm rules for each of these telemetry keys:
 
-**High temperature alarm rule**
+##### High temperature alarm rule
 
-We will set two conditions for creating a high temperature alarm for the "temperature" key, and one condition for clear alarm: 
-- An alarm with the type "Major" will be created if the temperature exceeds 24 but does not go above 26 (inclusive).
-- If the temperature exceeds 26, an alarm with the type "Critical" will be created. 
-- When the temperature drops below 24 degrees, the alarm will be cleared.
+We will set two conditions for creating a high temperature alarm for the "**temperature**" key, and one condition for clear alarm: 
+- An alarm with the severity type "**Major**" will be created if the temperature exceeds 24 °C but does not go above 26 °C (inclusive);
+- If the temperature exceeds 26 °C, an alarm with the severity type "**Critical**" will be created; 
+- When the temperature drops below 24 °C, the alarm will be **cleared**.
 
-Let's start with adding the alarm rule condition with "Major" severity type:
+Let's start with adding the alarm rule condition with "**Major**" severity type:
 
 - Go to the "Device profile" page and click on the "air-sensor" device profile to open its details;
 - Navigate to the "Alarm rules" tab;
@@ -55,167 +54,197 @@ Let's start with adding the alarm rule condition with "Major" severity type:
 - Input the "High temperature alarm" as alarm type;
 - Check the "Propagate alarm to related entities" option in the advanced settings to propagate the alarm to all related entities.
 - Select "Major" severity, and click on the red "+" sign;
-- Set the Key Filter:
+
+{% include images-gallery.html imageCollection="major-high-temperature-alarm-rule" %} 
+
+- Add alarm rule condition:
+  - Click the "Add key filter" button;
   - In the opened window, click the "Add key filter" button;
-  - Specify the time series key to monitoring: 
-    - Select the "Time series" as key type;
-    - Input the "temperature" as the key name; 
-    - Change "Value type" to "Numeric";
-    - Click the "Add" button in the "Filters" section to add first filter;
-    - Set the threshold:
-      - Select the "greater than" operation from drop-down menu;
-      - Input `24` as the threshold value; 
-      - Click "Add" again to add another filter:
-      - Select the "less or equal" operation from drop-down menu; 
-      - Input `26` as the threshold value;
-      - Click "Add" to confirm adding the key filter;
-- Click the "Save" button to apply the alarm condition.
+  - Set the following: 
+    - Key type: "Time series";
+    - Key name: "temperature";
+    - Value type: "Numeric";
+    - Click the "Add" button in the "Filters" section. Define conditions:
+      - For the first condition, select the "greater than" operation from the drop-down menu and input `24` as the threshold value. Click "Add";
+      - For the second condition, select the "less or equal" operation and input `26` as the threshold value. Click "Add" to confirm adding the key filter.
+  - Click the "Save" button to apply the alarm condition.
 
-Now, when the temperature value is between `24` and `26` (inclusive), an alarm with the type "Major" will be created.
+Now, when the temperature value is between `24` °C  and `26` °C (inclusive), an alarm with the severity type "Major" will be created.
 
-{% include images-gallery.html imageCollection="major-high-temperature-alarm-rule" %}
+{% include images-gallery.html imageCollection="major-high-temperature-alarm-rule-2" %}
 
 <br>
-Add one more alarm rule condition with "Critical" type:
+Add one more alarm rule condition with severity type "**Critical**":
 
 - Click the "Add create condition" button;
 - Select "Critical" severity, and click on the red "+" sign;
 - Click the "Add key filter" button;
 - Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "greater than" operation from drop-down menu, and input `32` as the threshold value. Click "Add" to confirm adding key filter;
+- Select the "greater than" operation from drop-down menu, and input `26` as the threshold value. Click "Add" to confirm adding key filter;
 - Click the "Save" button to apply the alarm condition.
 
-An alarm with the type "Critical" will be created if the temperature exceeds `32` degrees.
+An alarm with the type "Critical" will be created if the temperature exceeds `26` °C.
 
 {% include images-gallery.html imageCollection="critical-high-temperature-alarm-rule" %}
 
 <br>
-Finally, add the condition to clear the rule:
+Now, add the **condition to clear** the alarm:
 
 - Click the "Add clear condition" button;
 - Click on the red "+" sign;
 - Click the "Add key filter" button;
 - Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "less or equal" operation from drop-down menu, and input `30` as the threshold value. Click "Add" to confirm adding key filter;
+- Select the "less or equal" operation from drop-down menu, and input `24` as the threshold value. Click "Add" to confirm adding key filter;
 - Click the "Save" button to apply the alarm condition;
 - Finally, apply changes.
 
-The alarm will be automatically cleared when the temperature drops below `30` degrees.
+The alarm will be automatically cleared when the temperature drops below `24` °C.
 
 {% include images-gallery.html imageCollection="high-temperature-clear-alarm-rule" %}
 
-<br>
-Finally, the high temperature alarm rules will look like this:
+Finally, the configured rules for creating a high-temperature alarm and its clearing rule will look as follows:
 
 {% include images-gallery.html imageCollection="final-high-temperature-alarm-rules" %}
 
-<br>
+<br><br>
 
+**Now, drawing on your previous experience, you can independently configure the alarm rules for low temperature, high and low humidity, and high CO2 levels. Go ahead!**
 
+##### Low temperature alarm rule
 
+Set the following rules for creating and clearing a low air temperature alarm:
 
+Alarm creation:
 
+- If the temperature drops below `20` °C but not below `18` °C (inclusive), an alarm of the severity type "**Major**" will be created;
+- If the temperature drops below `18` °C, an alarm of the severity type "**Critical**" will be created.
 
-By effectively configuring alarm rules in device profiles, you can proactively monitor device performance and ensure timely responses to critical conditions.
+Alarm clearing:
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-We will configure ThingsBoard to automatically create alarm signals when the readings from our sensors exceed certain thresholds. Alarm rules are set in the device profile. 
-Let's consider the following scenarios:
-
-*Low temperature alarm rule*
-
-Similarly, add a rule for the creation and clearing of low temperature alerts: If the temperature falls below `20` but is not below `18` (inclusive), the alarm with the type "Major" will be created. 
-If the temperature drops below `18`, an alarm with the type "Critical" will be created. 
-When the temperature rises above `20` degrees again, the alarm will be cleared.
+- When the temperature rises above `20` °C, the alarm will be cleared.
 
 {% include images-gallery.html imageCollection="final-low-temperature-alarm-rules" %}
 
 <br>
+**Rules for creating and clearing high and low humidity alarms**
 
-Add the rules for the creation and clearing of alerts for low and high humidity, as well as exceeding CO2 levels, on your own using previous experience.
+For the telemetry key "humidity", we will define two conditions for triggering a high humidity alarm and one condition for clearing the alarm:
 
-For "humidity" readings, we will set the following rules:
+##### High humidity alarm rule
 
-*High humidity alarm rule*
+Alarm creation:
 
-The alarm with the type "Major" will be created if the humidity exceeds `45` but does not rise above `55` (inclusive). 
-If the humidity exceeds `55`, an alarm with the type "Critical" will be created. When the humidity drops below `55`, the alarm will be cleared.
+- An alarm with severity type "Major" will be created if humidity rises above `60` % but does not exceed 65% (inclusive).
+- An alarm with severity type "Critical" will be created if humidity exceeds `65` %.
+
+Alarm clearing:
+
+- The alarm will clear when humidity drops below `60` %.
 
 {% include images-gallery.html imageCollection="final-high-humidity-alarm-rules" %}
 
-*Low humidity alarm rule*
+##### Low humidity alarm rule
 
-If the humidity falls below `30` but is not below `28` (inclusive), the alarm with the type "Major" will be created.
-If the humidity drops below `28`, an alarm with the type "Critical" will be created.
-When the humidity rises above `30` degrees again, the alarm will be cleared.
+Alarm creation:
+
+- An alarm with severity type "Major" will be created if humidity drops below `40` % but does not fall below `35` % (inclusive).
+- An alarm with severity type "Critical" will be created if humidity drops below `35` %.
+
+Alarm clearing:
+
+- The alarm will clear when humidity rises above `40` %.
 
 {% include images-gallery.html imageCollection="final-low-humidity-alarm-rules" %}
 
-<br>
-For "CO2" readings, we will set the High CO2 alarm rule:
+##### High CO2 alarm rule
 
-If the CO2 level is equal to or exceeds `450` ppm, a "Major" alarm will be created. 
-If the CO2 level exceeds `550` ppm, a "Critical" alarm will be generated. When the CO2 level drops below `450` ppm, the alarm will be cleared.
+Finally, for the telemetry key "co2", we will define the following conditions for creating and clearing alarms:
+
+Alarm Creation:
+
+- If the CO2 level is equal to or exceeds `490` ppm  but does not exceed `500` ppm, the alarm with severity type "Major" will be created.
+- If the CO2 level exceeds `500` ppm, the alarm with severity type "Critical" will be triggered.
+
+Alarm Clearing:
+
+- The alarm will be cleared when the CO2 level drops below `490` ppm.
 
 {% include images-gallery.html imageCollection="final-co2-alarm-rules" %}
 
-### "energy-sensor" device profile
+### Rules for devices that use the "energy-sensor" device profile
 
-The device that uses the "energy-sensor" device profile transmits telemetry data on power consumption. Let's define a rule for generating an alarm.
+The "Energy Meter" device, which uses the "energy-sensor" device profile, transmits telemetry data on power consumption. Let's set up a rule for creating the alarm.
 
-Set the following conditions for creating an alarm when power consumption exceeds the threshold:
+##### Power consumption alarm rule
 
-1. Major alarm: If energy consumption exceeds 2 kWh but does not exceed 3 kWh (inclusive), a "Major" alarm will be created.
+Set two conditions for triggering the alarm about exceeding energy consumption and one condition for clearing it:
 
-2. Critical alarm: If energy consumption exceeds 3 kWh, a "Critical" alarm will be triggered.
+- An alarm with a severity type of "**Major**" will be triggered if water consumption exceeds `7` kWh but does not exceed `8` kWh (inclusive).
+- If water consumption exceeds `8` kWh, an alarm with a severity type of "**Critical**" will be triggered.
+- The alarm will be **cleared** when water consumption drops below `7` kWh.
 
-3. Alarm clearance: When energy consumption drops below 2 kWh, the alarm will be cleared automatically.
+Let's start with adding the alarm rule condition with "**Major**" severity type:
 
-Let's start with adding the alarm rule condition with "Major" type:
-
-- Open the "Device profiles" page, click on the "energy-sensor" device profile to open its details;
-- Enter editing mode by clicking the big orange pencil button;
+- Go to the "Device profiles" page and click on the "energy-sensor" profile to open its details;
+- Switch to the "Alarm rules" tab;
+- Click the big orange pencil button to enable editing mode;
 - Click the "Add alarm rule" button;
-- Input the "Power consumption alarm" as alarm type;
-- Select "Major" severity, and click on the red "+" sign;
-- Click the "Add key filter" button;
-- Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "greater than" operation from drop-down menu, and input `2` as the threshold value. Click "Add" again to add another rule;
-- Select the "less or equal" operation from drop-down menu, and input `3` as the threshold value. Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the alarm condition.
+- Enter "Power consumption alarm" as the alarm type;
+- In the advanced settings, check the "Propagate alarm to related entities" option to propagate the alarm to all related entities.
+- Select "Major" as the severity type and click the red "+" sign;
 
-Now, when the power consumption value is between `2` and `3` kWh (inclusive), an alarm with the type "Major" will be created.
+- Add alarm rule condition:
+  - Click the "Add key filter" button;
+  - Set the following:
+    - Key type: "Time series";
+    - Key name: "powerConsumption";
+    - Value type: "Numeric";
+    - Click the "Add" button in the "Filters" section. Define conditions:
+      - For the first condition, select the "greater than" operation from the drop-down menu and input `7` as the threshold value. Click "Add".
+      - For the second condition, select the "less or equal" operation and input `8` as the threshold value. Click "Add" to confirm adding the key filter.
+  - Click the "Save" button to apply the alarm condition.
+
+An alarm with the severity type "Major" will now be created when the power consumption value is between `7` kWh and `8` kWh (inclusive).
 
 {% include images-gallery.html imageCollection="major-power-consumption-alarm-rule" %}
 
 <br>
-Add one more alarm rule condition with "Critical" type:
+Add one more alarm rule condition with the "**Critical**" severity type:
 
-- Click the "Add create condition" button;
-- Select "Critical" severity, and click on the red "+" sign;
-- Click the "Add key filter" button;
-- Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "greater than" operation from drop-down menu, and input `3` as the threshold value. Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the alarm condition.
+- Click the "Add create condition" button in the alarm configuration panel;
+- Select "Critical" as the severity type and click the red "+" sign;
 
-An alarm with the type "Critical" will be created if the power consumption exceeds `3` kWh.
+- Add alarm rule condition:
+  - Click the "Add key filter" button;
+  - Set the following:
+    - Key type: "Time series";
+    - Key name: "powerConsumption";
+    - Value type: "Numeric";
+    - Click the "Add" button in the "Filters" section. Define the condition:
+      - Select the "greater than" operation from the drop-down menu and input `8` as the threshold value. Click "Add" to confirm adding the key filter.
+  - Click the "Save" button to apply the alarm condition.
+
+An alarm with the severity type "Critical" will now be created if the power consumption exceeds `8` kWh.
 
 {% include images-gallery.html imageCollection="critical-power-consumption-alarm-rule" %}
 
 <br>
-Finally, add the condition to clear the rule:
+Add the **condition to clear** the "Power consumption alarm" alarm:
 
-- Click the "Add clear condition" button;
-- Click on the red "+" sign;
-- Click the "Add key filter" button;
-- Select the "Time series" as key type, and the "powerConsumption" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;
-- Select the "less or equal" operation from drop-down menu, and input `2` as the threshold value. Click "Add" to confirm adding key filter;
-- Click the "Save" button to apply the alarm condition;
-- Finally, apply changes.
+- Click the "Add clear condition" button in the alarm configuration panel;
+- Click the red "+" sign to start defining the condition;
+- Add alarm rule condition:
+  - Click the "Add key filter" button;
+  - Set the following:
+    - Key type: "Time series";
+    - Key name: "powerConsumption";
+    - Value type: "Numeric";
+    - Click the "Add" button in the "Filters" section. Define the condition:
+      - Select the "less or equal" operation from the drop-down menu and input `7` as the threshold value. Click "Add" to confirm adding the key filter.
+  - Click the "Save" button to apply the clear condition.
+- Ensure all configurations are correct and save the overall changes to finalize the rule.
 
-The alarm will be automatically cleared when the power consumption drops below `2` kWh.
+The alarm will automatically clear when the power consumption drops to `7` kWh or below.
 
 {% include images-gallery.html imageCollection="clear-power-consumption-alarm-rule" %}
 
@@ -223,18 +252,18 @@ Finally, the power consumption alarm rules will look like this:
 
 {% include images-gallery.html imageCollection="final-power-consumption-alarm-rule" %}
 
-### "water-sensor" device profile
+### Rules for devices that use the "water-sensor" device profile
 
-A device that uses the "water-sensor" device profile sends telemetry data on water consumption. 
-Let's set up a rule to generate alarms when certain water consumption thresholds are reached.
+The "Water Flow Meter" device using the "water-sensor" device profile send telemetry data on water consumption. 
+Let's configure an alarm rule to trigger when specific water consumption thresholds are reached.
 
-Alarm conditions:
+##### Water consumption alarm rule
 
-1. Major alarm: Triggered when water consumption exceeds 2 gallons per hour but stays at or below 3 gallons per hour.
+Set two conditions for triggering the alarm about exceeding water consumption and one condition for clearing it:
 
-2. Critical alarm: Triggered when water consumption exceeds 3 gallons per hour.
-
-3. Alarm clearance: The alarm will clear automatically when water consumption drops below 2 gallons per hour.
+- An alarm with a severity type of "**Major**" will be triggered if water consumption exceeds `4` gallons per hour but does not exceed `5` gallons per hour (inclusive).
+- If water consumption exceeds `5` gallons per hour, an alarm with a severity type of "**Critical**" will be triggered.
+- The alarm will be **cleared** when water consumption drops below `4` gallons per hour.
 
 Let's start with adding the alarm rule condition with "Major" type:
 
@@ -282,6 +311,15 @@ The alarm will be automatically cleared when the water consumption drops below 2
 Finally, the water consumption alarm rule will look like this:
 
 {% include images-gallery.html imageCollection="final-water-consumption-alarm-rule" %}
+
+### Importing the pre-configured "air-sensor" device profile
+
+If, for any reason, you were unable to configure the rules mentioned above, you can [download the air-sensor device profile with pre-configured alarm rules](/docs/user-guide/advanced-guides-for-working-with-dashboard/files-from-tutorial/air_sensor_imported_.json){:target="_blank"} and import it into your ThingsBoard instance.
+
+{% capture difference %}
+**Important!** If you choose to import the device profile, you will need to assign the new device profile "**air-sensor(imported)**" to all devices currently using the "**air-sensor**" device profile, specifically the **Indoor Air Quality Sensor** and **IAQ Sensor**.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Adding alarms table widget
 
