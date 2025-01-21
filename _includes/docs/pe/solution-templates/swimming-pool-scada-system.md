@@ -11,7 +11,7 @@ Sensors data in the local network is collected and sent via the Modbus protocol 
 ThingsBoard acts as the core of the SCADA system, storing data from devices in a database, processing it, visualizing the information, and sending control commands to the devices.
 
 <br>
-<object width="95%" data="/images/solutions/swimming_pool_scada_system/scada-solution-structure.svg"></object>
+<object width="95%" data="https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-solution-structure.svg"></object>
 
 <br>
 To understand how the Swimming Pool SCADA system template works, let's start by installing it.
