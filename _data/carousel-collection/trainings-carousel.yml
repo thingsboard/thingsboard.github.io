@@ -1,0 +1,40 @@
+0:
+  crisp:
+    0:
+      faIcon: "far fa-clock"
+      text: "8 hours"
+    1:
+      faIcon: "fas fa-graduation-cap"
+      text: "4 sessions"
+  title: "Data Visualization"
+  textContent: "Basic understanding of ThingsBoard's data visualization capabilities and custom widget development."
+1:
+  crisp:
+    0:
+      faIcon: "far fa-clock"
+      text: "8 hours"
+    1:
+      faIcon: "fas fa-graduation-cap"
+      text: "4 sessions"
+  title: "Data Visualization"
+  textContent: "Basic understanding of ThingsBoard's data visualization capabilities and custom widget development."
+2:
+  crisp:
+    0:
+      faIcon: "far fa-clock"
+      text: "8 hours"
+    1:
+      faIcon: "fas fa-graduation-cap"
+      text: "4 sessions"
+  title: "Data Visualization"
+  textContent: "Basic understanding of ThingsBoard's data visualization capabilities and custom widget development."
+3:
+  crisp:
+    0:
+      faIcon: "far fa-clock"
+      text: "8 hours"
+    1:
+      faIcon: "fas fa-graduation-cap"
+      text: "4 sessions"
+  title: "Data Visualization"
+  textContent: "Basic understanding of ThingsBoard's data visualization capabilities and custom widget development."

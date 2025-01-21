@@ -1,0 +1,45 @@
+.accordion-collection
+  display: flex
+  flex-direction: column
+  .accordion-item
+    cursor: pointer
+    padding: 57.5px 32px
+    border-bottom: 1.5px solid #3E9AF81F
+    .accordion-preview
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .accordion-title
+        margin: 0
+        font-size: 28px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+      .accordion-additional
+        display: flex
+        align-items: center
+        gap: 24px
+      .accordion-additional-content
+        display: flex
+        align-items: center
+        flex-direction: row
+        gap: 12px
+        p
+          font-size: 24px
+      .accordion-chevron
+        transition: ease-in-out 0.3s
+    .accordion-content
+      max-height: 0
+      overflow: hidden
+      transition: max-height 0.3s ease-out
+      ul
+        margin-top: 30px !important
+        padding-left: 0 !important
+        li
+          display: flex
+          align-items: center
+          gap: 16px
+          list-style: none
+  .opened
+    .accordion-chevron
+      transform: rotate(180deg)

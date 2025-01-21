@@ -1049,3 +1049,20 @@ var tb = (function () {
 		}
 	}
 })();
+
+//new-accordion
+(function () {
+	$(document).ready(function(){
+		$('.accordion-item').on('click', function() {
+			const content = $(this).find('.accordion-content');
+			if ($(this).hasClass('opened')) {
+				content.css('max-height', 0);
+			} else {
+				const contentHeight = content.get(0).scrollHeight;
+				content.css('max-height', contentHeight);
+			}
+
+			$(this).toggleClass('opened');
+		})
+	});
+})();

@@ -1,0 +1,68 @@
+0:
+  title: "ThingsBoard Data Modeling and Visualization (sessions 1)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Overview of TB hierarchy and main features based on real examples."
+    1:
+      textContent: "Devices, Assets, Entity Views, Customers, Users, and Dashboards based on real-life examples."
+    2:
+      textContent: "Explain ThingsBoard entity attributes and telemetry APIs. Overview of best practices with the naming of data keys and usage of the APIs."
+    3:
+      textContent: "Device and Asset Groups (PE feature). Covers configuration of the groups and usage scenarios."
+    4:
+      textContent: "Entity relations. Covers entity relation types, usage scenarios, and limitations."
+    5:
+      textContent: "The dashboard features overview: Covers entity Aliases, Time Window selection, General Settings, Dashboard states, and transition between states."
+    6:
+      textContent: "Q&A (questions and answers)."
+1:
+  title: "ThingsBoard Data Modeling and Visualization (sessions 2)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Single-node platform installation."
+    1:
+      textContent: "ThingsBoard configuration."
+    2:
+      textContent: "ThingsBoard troubleshooting."
+    3:
+      textContent: "ThingsBoard cluster installation."
+    4:
+      textContent: "Load Balancing, Scalability, and Failover."
+2:
+  title: "ThingsBoard Custom Widget Development (sessions 1)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Rule engine data flow."
+    1:
+      textContent: "What is a rule node and how it can be used in rule chains."
+    2:
+      textContent: "How profiles may affect data flow to rule chains."
+    3:
+      textContent: "How to build efficient and proper data flow logic for any business use case."
+    4:
+      textContent: "Q&A (questions and answers)."
+3:
+  title: "ThingsBoard Custom Widget Development (sessions 2)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Rule engine data flow."
+    1:
+      textContent: "What is a rule node and how it can be used in rule chains."
+    2:
+      textContent: "How profiles may affect data flow to rule chains."
+    3:
+      textContent: "How to build efficient and proper data flow logic for any business use case."
+    4:
+      textContent: "Q&A (questions and answers)."
