@@ -15,7 +15,7 @@
 The "Applications" tab in the "Mobile center" serves as a control center for your [mobile applications](/docs/{{docsPrefix}}mobile/){:target="_blank"}. It allows you to:
 
 - Add new applications: Create configurations for new mobile apps to integrate with ThingsBoard.
-- Edit existing applications: Update application details, such as package names, statuses, versions, or store information.
+- Edit the existing applications: Update application details, such as package names, statuses, versions, or store information.
 - Delete applications: Remove obsolete or unused application configurations from the platform.
 
 ## Add application
@@ -28,15 +28,15 @@ To add a new mobile application, following these steps:
 - A unique Application Secret will be generated automatically. Remember it or replace with your own;
 - Set the application status:
 
-ㅤㅤ&bull; *Draft*: For applications still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
+ㅤㅤ&bull; *Draft*: For applications that are still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
 
-ㅤㅤ&bull; *Published*: For applications ready to be launched and used by end users.
+ㅤㅤ&bull; *Published*: For applications that are ready to be launched and used by end users.
 
-ㅤㅤ&bull; *Deprecated*: For older applications no longer actively supported but still available.
+ㅤㅤ&bull; *Deprecated*: For older applications that are no longer actively supported but still available.
 
-ㅤㅤ&bull; *Suspended*: For applications temporarily disabled or restricted from use.
+ㅤㅤ&bull; *Suspended*: For applications that are temporarily disabled or restricted from use.
 
-- Optionally, specify the minimum and latest application versions along with release notes for each;
+- Optionally, specify the minimum and the latest application versions along with release notes for each version;
 - Add store information:
 
 ㅤㅤ&bull; *Android*:
@@ -57,8 +57,8 @@ To add a new mobile application, following these steps:
 
 ## Edit application
 
-You can edit almost all fields of the mobile application, except for changing the platform type.
-To edit a mobile application, open its details and enter the edit mode by clicking the large orange "pencil" button. Edit the necessary fields. Afterward, save the changes.
+You can edit almost all fields of the mobile application, except for the platform type.
+To edit a mobile application, open its details and enter the edit mode by clicking the large orange "pencil" button. Make the necessary changes, and then save them.
 
 {% include images-gallery.html imageCollection="edit-application" %}
 
