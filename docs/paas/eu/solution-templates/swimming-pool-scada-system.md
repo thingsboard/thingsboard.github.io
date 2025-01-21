@@ -35,7 +35,7 @@ docker-compose-yml:
         title: 'Copy the configuration for the docker-compose.yml file from the instructions;'
     1:
         image: https://img.thingsboard.io/solutions/swimming_pool_scada_system/docker-compose-yml.png
-        title: 'Create a new docker-compose.yml file on your PC, paste the copied configuration into it, and save the file.'
+        title: 'Create a new file named docker-compose.yml on your computer, paste the copied configuration into it, and save the file.'
 
 go-to-dashboard-1:
     0:
