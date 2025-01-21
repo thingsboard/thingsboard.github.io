@@ -80,6 +80,8 @@ Turn on the device and make sure it is connected to the Network Server.
 
 ## Connect to the ThingsBoard
 
+[Integrations](/docs/{{docsPrefix}}user-guide/integrations/){:target="_blank"} in ThingsBoard is a feature that enables connecting external devices, services, or platforms to ThingsBoard for processing, storing, and visualizing data. It is designed to integrate IoT devices that do not directly support standard ThingsBoard protocols (e.g., MQTT or HTTP).
+
 ### Create Integration in ThingsBoard
 
 - Sign up and log in to ThingsBoard;
@@ -107,6 +109,8 @@ Turn on the device and make sure it is connected to the Network Server.
 
 ### Check the device list
 
+[Devices](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} - basic IoT entities that may produce telemetry data and handle RPC commands. For example, sensors, actuators, switches;
+
 - Go to the "Devices" page in the sidebar; 
 - Click on the created device (If the device’s info does not show on the list, please reboot the device.); 
 - Navigate to the "Latest telemetry" tab to check the latest data.
@@ -122,7 +126,7 @@ Turn on the device and make sure it is connected to the Network Server.
 
 ### Create Dashboard
 
-A dashboard in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
+A [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
 
 Let&#39;s create a dashboard:
 
@@ -175,7 +179,7 @@ To make the widget slightly larger, simply grab the bottom right corner and drag
 {% include images-gallery.liquid adddashboard2="true" imageCollection=adddashboard2 %}
 
 <br>
-Add another "Timeseries table" widget.
+Add another widget, "Timeseries table". Learn more about widgets [here](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"}.
 
 {% assign adddashboard3 = '
     ===
