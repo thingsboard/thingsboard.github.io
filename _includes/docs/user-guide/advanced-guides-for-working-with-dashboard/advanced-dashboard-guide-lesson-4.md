@@ -174,8 +174,12 @@ Alarm Clearing:
 
 {% include images-gallery.html imageCollection="final-co2-alarm-rules" %}
 
-<br><br>
+<br>
 Now that we have defined all the alarm rules for the "air-sensor" device profile, the next step is to add a widget to manage the alarms.
+
+<br>
+
+**Import device profile**
 
 If, for any reason, you were unable to configure the rules mentioned above, you can [download the air-sensor device profile with pre-configured alarm rules](/docs/user-guide/advanced-guides-for-working-with-dashboard/files-from-tutorial/air_sensor_imported_.json){:target="_blank"} and import it into your ThingsBoard instance.
 
@@ -186,23 +190,58 @@ If, for any reason, you were unable to configure the rules mentioned above, you 
 
 ## Adding alarms table widget
 
-Displaying alarms in a user-friendly manner is crucial for monitoring and management. 
-The Alarm Table widget in ThingsBoard provides a customizable interface to view and interact with alarms.
+Displaying alarms in a user-friendly format is essential for monitoring and managing them effectively. 
+The "Alarms table" widget in ThingsBoard provides a customizable interface for easy monitoring and interaction with alarms.
 
-Steps to Add an Alarm Table Widget:
+Steps to add the "Alarm table" widget:
 
 {% include images-gallery.html imageCollection="adding-alarms-table-widget-1" showListImageTitles="true" %}
 
-*Send telemetry*
+## Send telemetry
+
+Now that the alarm rules have been defined and the widget for displaying them has been added, let&#39;s manually create conditions to trigger an alarm.
+We&#39;ll send test telemetry with a value exceeding the threshold defined in the alarm rule. 
+As you may recall, if the temperature value exceeds 24, an alarm with a "Major" severity will be triggered. Follow these steps:
 
 {% include images-gallery.html imageCollection="alarm-send-telemetry-1" showListImageTitles="true" %}
 
-*Clear alarm*
+### Clear alarm
 
 To clear the alarm, click on the "Clear" icon in the "Alarms" widget.
 
 {% include images-gallery.html imageCollection="clear-alarm-1" showListImageTitles="true" %}
 
+
+## Adding alarm widget to all other states
+
+**Add alarm widget to Office state**
+
+Add an alarm widget to the building state as well. This widget will display alarms from all devices associated with the selected building. We'll add this widget using the copy method.
+
+- Go to the device state, enter Edit Mode, right-click on the alarm widget, and select "Copy" from the dropdown menu;
+- Navigate to the office state, right-click on an empty area of the dashboard, and select "Paste";
+- Position the widget to align with the dashboard aesthetics, then open its settings and adjust as needed.
+- Save the changes.
+
+Switch to the office state. As you may notice, active alarms are not displayed in the widget. This happens because the widget needs to be configured to search for propagated alarms.
+
+- Enter Edit Mode on the dashboard and edit the alarm widget:
+- Turn on the "Search propagated alarms" option. The "Search propagated alarms" parameter allows displaying alarms for both the selected entity and its child entities, provided there are relationships between them;
+- Change the widget title to "${entityName} alarms";
+- Apply the changes;
+- Save the dashboard.
+
+Now, as you can see, alarms from the devices are properly displayed in the widget.
+
+{% include images-gallery.html imageCollection="add-alarm-widget-to-office-state-1" showListImageTitles="true" %}
+
+**Add alarm widget to Building A state**
+
+{% include images-gallery.html imageCollection="add-alarm-widget-to-building-a-state-1" showListImageTitles="true" %}
+
+**Add alarm widget to Buildings state**
+
+{% include images-gallery.html imageCollection="add-alarm-widget-to-buildings-state-1" showListImageTitles="true" %}
 
 ## Next step
 
