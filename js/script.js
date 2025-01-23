@@ -106,7 +106,7 @@ var tb = (function () {
 
 
 	function openAccordionItem(itemId) {
-	    var thisItem = $('#'+itemId);
+	    var thisItem = $('.answers section.active .pi-accordion.active #'+itemId);
         if (!thisItem) return;
         var thisWrapper = $(thisItem).find('.wrapper').eq(0);
         if (!thisWrapper) return;
@@ -162,7 +162,9 @@ var tb = (function () {
             $(faqLink).css('fontSize', fontSize);
             faqAnchor.appendChild(faqLink);
             $(faqLink).click(function() {
-                openFaqNode(nodeId);
+				const sectionId = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-')[3];
+				switchFaqSection(sectionId, document.getElementById(`faq-option-${sectionId}`));
+                setTimeout(()=>openFaqNode(nodeId));
             });
         });
 
@@ -192,7 +194,7 @@ var tb = (function () {
     }
 
     function openFaqNode(nodeId) {
-		$('.pi-accordion > .container > div[data-item-id]').each(function () {
+		$('.pi-accordion.active > .container > div[data-item-id]').each(function () {
 			if ($(this).hasClass('on')) {
 				var thisWrapper = $(this).find('.wrapper').eq(0);
 				if (!thisWrapper) return;
@@ -201,7 +203,11 @@ var tb = (function () {
 			}
 		});
         tb.openAccordionItem(nodeId);
-        document.getElementById(nodeId).scrollIntoView();
+        document.querySelector('.answers section.active .pi-accordion.active #' + nodeId).scrollIntoView({
+			behavior: 'auto',
+			block: 'center',
+			inline: 'center'
+		});
         reportFaqNode(nodeId);
     }
 
