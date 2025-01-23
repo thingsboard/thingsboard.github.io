@@ -1,17 +1,21 @@
 ---
 layout: docwithnav
-title: Nevox LoRaWAN Devices and ThingsBoard
+title: Netvox LoRaWAN Devices and ThingsBoard
 
 ---
 
 * TOC
 {:toc}
 
-Netvox has more than 400 LoRaWAN end devices, which can be organized by systems that support LoRaWAN protocol and be widely used in IoT solutions. With the integration of data and ThingsBoard, users can easily add visual elements and monitor data through a dashboard. The settings of the TTN industry are as follows:
+Netvox has more than 400 LoRaWAN end devices that can be integrated into systems supporting the LoRaWAN protocol and are widely used in IoT solutions. By integrating data from Netvox devices into ThingsBoard, users can easily visualize and monitor data through the ThingsBoard [dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"}.
 
-## Register Nevox devices on a third-party platform
+## Register Netvox devices on a third-party platform
+
+To register a Netvox device, we will use The Things Stack Cloud Discovery. This is a free plan of [The Things Stack Cloud](https://www.thethingsindustries.com/stack/plans/){:target="_blank"} that allows you to connect up to 10 devices and 10 gateways with no time restrictions, making it ideal for testing your device.
 
 ### Create application
+
+First, you need to create an application. Follow these steps:
 
 - Log in to the Network Server and navigate to the "**Applications**" page;
 - Click the "**+ Add applications**" button;
@@ -31,6 +35,8 @@ Netvox has more than 400 LoRaWAN end devices, which can be organized by systems 
 {% include images-gallery.liquid createapplication="true" imageCollection=createapplication %}
 
 ### Register End Device
+
+Now, register a device by following these steps:
 
 - Go to the "**End devices**" page;
 - Click the "**+ Register end device**" button;
@@ -76,13 +82,16 @@ Turn on the device and make sure it is connected to the Network Server.
 {% include images-gallery.liquid networkjoining="true" imageCollection=networkjoining %}
 
 <br>
-*Please go to the [Nevox Devices](#nevox-devices) section or [official Netvox website](http://www.netvox.com.tw/index.html){:target="_blank"} for detailed info about turning on a device.
+*Please go to the [Netvox devices](#netvox-devices) section or [official Netvox website](http://www.netvox.com.tw/index.html){:target="_blank"} for detailed info about turning on a device.
 
-## Connect to the ThingsBoard
+## Connect the device to ThingsBoard
 
-[Integrations](/docs/{{docsPrefix}}user-guide/integrations/){:target="_blank"} in ThingsBoard is a feature that enables connecting external devices, services, or platforms to ThingsBoard for processing, storing, and visualizing data. It is designed to integrate IoT devices that do not directly support standard ThingsBoard protocols (e.g., MQTT or HTTP).
+[Integrations](/docs/{{docsPrefix}}user-guide/integrations/){:target="_blank"} in ThingsBoard is a feature that enables connecting external devices, services, or platforms to ThingsBoard for processing, storing, and visualizing data.
 
 ### Create Integration in ThingsBoard
+
+You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
+The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
 
 - Sign up and log in to ThingsBoard;
 - Go to the "**Integrations**" page of the "**Integrations center**" section. Click "**plus**" icon in the upper right corner to add new integration. Select "**The Things Stack Community**" as the integration type. Then, click "**Next**";
@@ -91,16 +100,16 @@ Turn on the device and make sure it is connected to the Network Server.
 
 {% assign createintegration = '
     ===
-        image: /images/samples/netvox/nevox-add-integration-1.png,
+        image: /images/samples/netvox/netvox-add-integration-1.png,
         title: Sign up and log in to ThingsBoard. Go to the "**Integrations**" page of the "**Integrations center**" section. Click "**plus**" icon in the upper right corner to add new integration. Select "**The Things Stack Community**" as the integration type. Then, click "**Next**";
     ===
-        image: /images/samples/netvox/nevox-add-integration-2.png,
+        image: /images/samples/netvox/netvox-add-integration-2.png,
         title: Use the default Decoder function. Click "**Next**";
     ===
-        image: /images/samples/netvox/nevox-add-integration-3.png,
+        image: /images/samples/netvox/netvox-add-integration-3.png,
         title: Use the default Encoder function. Click "**Next**";
     ===
-        image: /images/samples/netvox/nevox-add-integration-4.png,
+        image: /images/samples/netvox/netvox-add-integration-4.png,
         title: Next, fill in the fields with your parameters. Enter the third platform’s MQTT account and password. After, press "**Add**" button.
 '
 %}
@@ -111,14 +120,14 @@ Turn on the device and make sure it is connected to the Network Server.
 
 [Devices](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} - basic IoT entities that may produce telemetry data and handle RPC commands. For example, sensors, actuators, switches;
 
-- Go to the "Devices" page in the sidebar; 
-- Click on the created device (If the device’s info does not show on the list, please reboot the device.); 
-- Navigate to the "Latest telemetry" tab to check the latest data.
+- Go to the "**Devices**" page of the "**Entities**" section; 
+- Click on the created device (If the device’s info does not show on the list, please reboot the device); 
+- Navigate to the "**Latest telemetry**" tab to check the latest data.
 
 {% assign devicelist = '
     ===
         image: /images/samples/netvox/device-1.png,
-        title: Go to the "Devices" page in the sidebar. Click on the created device (If the device’s info does not show on the list, please reboot the device.).Navigate to the "Latest telemetry" tab to check the latest data.
+        title: Go to the "**Devices**" page of the "**Entities**" section. Click on the created device (If the device’s info does not show on the list, please reboot the device). Navigate to the "**Latest telemetry**" tab to check the latest data.
 '
 %}
 
@@ -130,14 +139,14 @@ A [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} in T
 
 Let&#39;s create a dashboard:
 
-- Go to the "Dashboards" page;
-- Click "+", and select "Create new dashboard" from drop-down menu;
-- Enter the dashboard title and other information. Then click "Add";
+- Go to the "**Dashboards**" page;
+- Click "**+**", and select "**Create new dashboard**" from drop-down menu;
+- Enter the dashboard title and other information. Then click "**Add**".
 
 {% assign adddashboard = '
     ===
         image: /images/samples/netvox/add-dashboard-1.png,
-        title: Go to the "Dashboards" page. Click "plus" icon and select "Create new dashboard" from drop-down menu;
+        title: Go to the "**Dashboards**" page. Click "**plus**" icon and select "**Create new dashboard**" from drop-down menu. Enter the dashboard title and other information. Then click "**Add**".
 '
 %}
 
@@ -146,33 +155,34 @@ Let&#39;s create a dashboard:
 <br>
 The dashboard has been successfully created. After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. 
 
-Now, add your first widget on the dashboard:
+Now, [add your first widget](/docs/{{docsPrefix}}user-guide/widgets/#adding-a-widget-to-the-dashboard){:target="_blank"} on the dashboard:
 
-- Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);
+- Click the "**+ Add widget**" button at the top of the screen or click the large "**Add new widget**" icon in the center of the screen (if this is your first widget on this dashboard);
 - Add a widget to the dashboard, such as the bar chart of the device's current: 
-  - Find the "Charts" widget bundle and click on it; 
-  - Select the "Bars" widget;
-- Specify the device "r718n37" as the datasource;
-- Add "Current1", "Current2", "Current3" key, and click "Add";
+  - Find the "**Charts**" widget bundle and click on it; 
+  - Select the "**Bars**" widget;
+- Specify the device "**r718n37**" as the datasource;
+- Add "**Current1**", "**Current2**", "**Current3**" key.
+- Click "**Add**";
 
-To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.
+To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "**Save**" to save your changes to the dashboard.
 
 {% assign adddashboard2 = '
     ===
         image: /images/samples/netvox/add-dashboard-2.png,
-        title: Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);
+        title: Click the "**+ Add widget**" button at the top of the screen or click the large "**Add new widget**" icon in the center of the screen (if this is your first widget on this dashboard);
     ===
         image: /images/samples/netvox/add-dashboard-3.png,
-        title: Find the "Charts" widget bundle and click on it;
+        title: Find the "**Charts**" widget bundle and click on it;
     ===
         image: /images/samples/netvox/add-dashboard-4.png,
-        title: Select the "Bars" widget;
+        title: Select the "**Bars**" widget;
     ===
         image: /images/samples/netvox/add-dashboard-5.png,
-        title: Specify the device "r718n37" as the datasource. Add "Current1", "Current2", "Current3" key. Then, click "Add";
+        title: Specify the device "**r718n37**" as the datasource. Add "**Current1**", "**Current2**", "**Current3**" key. Then, click "**Add**";
     ===
         image: /images/samples/netvox/add-dashboard-6.png,
-        title: To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.
+        title: To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "**Save**" to save your changes to the dashboard.
 '
 %}
 
@@ -190,7 +200,7 @@ Add another widget, "Timeseries table". Learn more about widgets [here](/docs/{{
 
 {% include images-gallery.liquid adddashboard3="true" imageCollection=adddashboard3 %}
 
-## Nevox Devices
+## Netvox devices
 
 | **Model**                                                               | **Power Supply**                         | **Turn on**                                                                                                              |
 |:------------------------------------------------------------------------|:-----------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|
