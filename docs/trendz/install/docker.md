@@ -130,6 +130,9 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
+## Post-installation steps
+It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
+
 ## Detaching, stop and start commands
 
 {% assign serviceName = "trendz" %}
