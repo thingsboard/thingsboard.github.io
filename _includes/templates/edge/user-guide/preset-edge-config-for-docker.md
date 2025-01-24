@@ -6,7 +6,7 @@ nano docker-compose.yml
 ```
 {: .copy-code}
 
-Then you need to fill this file with the configuration lines.
+Then, you need to fill this file with the configuration lines.
 Once the **Edge** instance has been created, the preset installation instructions will be available for use. 
 They contain important credentials, such as **Edge Secret**, **Edge Key**, etc. To access these configurations:
 
@@ -16,7 +16,7 @@ They contain important credentials, such as **Edge Secret**, **Edge Key**, etc. 
         image: /,
         title: Go to the **Edge management > Instances** section of your **ThingsBoard Professional Edition** instance, and click on the **Instance**. Then, click the **"Install & Connect Instructions"** button.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/0.5-docker-pe.webp,
+        image: /,
         title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and **copy the configuration lines**.
 '
 %}
