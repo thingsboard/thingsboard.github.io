@@ -138,7 +138,7 @@ You may find the exact commands to send data on behalf of created devices in the
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
 ### Alarms
-User may turn alarms on and off as well as configure the alarm thresholds via the <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">“Smart Retail”</a> dashboard. 
+User may turn alarms on and off as well as configure the alarm thresholds via the <a href="https://thingsboard.io/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules" target="_blank">“Smart Retail”</a> dashboard. 
 
 
 

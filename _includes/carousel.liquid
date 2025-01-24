@@ -1,0 +1,224 @@
+{% assign timeline = include.timeline %}
+{% assign collectionMap = include.collectionMap %}
+{% assign items = include.items | default: 1 %}
+{% assign itemsHigher960 = include.itemsHigher960 | default: items %}
+{% assign itemsHigher600 = include.itemsHigher600 | default: items %}
+{% assign itemsHigher0 = include.itemsHigher0 | default: items %}
+{% assign autoplay = include.autoplay %}
+{% assign smoothAutoPlay = include.smoothAutoPlay %}
+{% assign autoWidth = include.autoWidth %}
+{% assign loop = include.loop %}
+{% assign carouselMargin = include.carouselMargin | default: 100 %}
+{% assign stagePadding = include.stagePadding | default: 50 %}
+{% assign transitionAnimation = include.transitionAnimation %}
+{% assign thingsboardStyledBackground = include.thingsboardStyledBackground | default: false %}
+{% assign navMode = include.navMode | default: "thinArrow" %}
+{% assign dotButtonMode = include.dotButtonMode | default: "line" %}
+{% assign dotButtonInCarouselContainer = include.dotButtonInCarouselContainer | default: false %}
+{% assign titleSize = include.titleSize | default: "36px" %}
+{% assign titleSizeLower1280 = include.titleSizeLower1280 | default: titleSize %}
+{% assign titleSizeLower960 = include.titleSizeLower960 | default: titleSizeLower1280 %}
+{% assign titleSizeLower600 = include.titleSizeLower600 | default: titleSizeLower960 %}
+{% assign descriptionSize = include.descriptionSize | default: "18px" %}
+{% assign descriptionSizeLower1280 = include.descriptionSizeLower1280 | default: descriptionSize %}
+{% assign descriptionSizeLower960 = include.descriptionSizeLower960 | default: descriptionSizeLower1280 %}
+{% assign descriptionSizeLower600 = include.descriptionSizeLower600 | default: descriptionSizeLower960 %}
+{% assign titleColor = include.titleColor | default: "#212529" %}
+{% assign descriptionColor = include.descriptionColor | default: "#75767c" %}
+{% assign titleWeight = include.titleWight | default: "500" %}
+{% assign descriptionWeight = include.descriptionWeight | default: "400" %}
+{% assign titleLineHeight = include.titleLineHeight | default: "54px" %}
+{% assign descriptionLineHeight = include.descriptionLineHeight | default: "27px" %}
+{% assign imageBorderRadius = include.imageBorderRadius | default: "6px" %}
+
+{% if site.data.carousel-collection[collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[collectionMap] %}
+{% endif %}
+
+{% assign autoplayClass = "autoplay" %}
+
+{% if autoplay == false %}
+    {% assign autoplayClass = "no-autoplay" %}
+{% endif %}
+
+{% assign smoothAutoPlayClass = "no-smoothAutoPlay" %}
+
+{% if smoothAutoPlay == true %}
+    {% assign smoothAutoPlayClass = "smoothAutoPlay" %}
+{% endif %}
+
+{% assign autoWidthClass = "no-autoWidth" %}
+
+{% if autoWidth == true %}
+    {% assign autoWidthClass = "autoWidth" %}
+{% endif %}
+
+{% assign loopClass = "loopEnabled" %}
+
+{% if loop == false %}
+    {% assign loopClass = "loopDisabled" %}
+{% endif %}
+
+{% assign transitionAnimationClass = "transitionAnimationEnabled" %}
+
+{% if transitionAnimation == false %}
+    {% assign transitionAnimationClass = "transitionAnimationDisabled" %}
+{% endif %}
+
+{% assign thingsboardStyledBackgroundClass = "thingsboardStyledBackgroundDisabled" %}
+
+{% if thingsboardStyledBackground == true %}
+    {% assign thingsboardStyledBackgroundClass = "thingsboardStyledBackgroundEnabled" %}
+{% endif %}
+
+{% assign dotButtonInCarouselContainerClass = "dotButtonInCarouselContainerDisabled" %}
+
+{% if dotButtonInCarouselContainer == true %}
+    {% assign dotButtonInCarouselContainerClass = "dotButtonInCarouselContainerEnabled" %}
+{% endif %}
+
+{% if timeline %}
+
+{% assign carouselCollection = carouselCollection | values %}
+
+{% assign titleHoverScale = include.titleHoverScale | default: 0 %}
+{% assign titleHoverScaleClass = "titleHoverDisabled" %}
+
+{% if titleHoverScale %}
+    {% assign titleHoverScaleClass = "titleHoverEnabled" %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme hidden-carousel timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --stagePadding: {{ stagePadding }}; --title-hover-scale: {{ titleHoverScale }}" data-itemsHigher0 = "{{ itemsHigher0 }}" data-itemsHigher600 = "{{ itemsHigher600 }}" data-itemsHigher960 = "{{ itemsHigher960 }}">
+    {% for key in carouselCollection %}
+        <div class="timeline-item" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
+            <div class="timeline-label">
+                <span class="timeline-title {{ titleHoverScaleClass }}" style="color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}; --title-hover-scale: {{ titleHoverScale }}">{{ key[0] }}</span>
+                <span class="timeline-circle">
+                    <i class="fas fa-chevron-down fa-lg" style="color: #305680"></i>
+                </span>
+            </div>
+            <ul class="timeline-text">
+                {% for data in key[1] %}
+                    <li style="color:{{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ data[1] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+
+{% else %}
+
+{% assign collectionKey = include.collectionKey %}
+{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
+{% assign darkenedImage = include.darkenedImage | default: false %}
+{% assign overlay = include.overlay | default: false %}
+{% assign enableLinkArrow = include.enableLinkArrow %}
+{% assign contentDirection = include.contentDirection %}
+{% assign linkSize = include.linkSize | default: "18px"  %}
+{% assign linkSizeLower1280 = include.linkSizeLower1280 | default: linkSize %}
+{% assign linkSizeLower960 = include.linkSizeLower960 | default: linkSizeLower1280 %}
+{% assign linkSizeLower600 = include.linkSizeLower600 | default: linkSizeLower960 %}
+{% assign descriptionSize = include.descriptionSize | default: "18px" %}
+{% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
+{% assign linkColor = include.linkColor | default: "#2a7dec" %}
+{% assign linkWeight = include.linkWeight | default: "500" %}
+
+{% if collectionKey %}
+    {% assign carouselCollection = carouselCollection[collectionKey] %}
+{% endif %}
+
+{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
+
+{% if nonActiveItemsVisibility == false %}
+    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
+{% endif %}
+
+{% assign darkenedImageClass = "darkenedImageDisabled" %}
+
+{% if darkenedImage == true %}
+    {% assign darkenedImageClass = "darkenedImageEnabled" %}
+{% endif %}
+
+{% if enableLinkArrow == nil %}
+    {% assign enableLinkArrow = true %}
+{% endif %}
+
+{% if carouselCollection %}
+<div class="usecase-carousel owl-carousel owl-theme hidden-carousel {{ nonActiveItemsVisibilityClass }} {{ dotButtonMode }} {{ dotButtonInCarouselContainerClass }} {{ navMode }} {{ autoplayClass }} {{ smoothAutoPlayClass }} {{ loopClass }} {{ autoWidthClass }} {{ transitionAnimationClass }} {{ thingsboardStyledBackgroundClass }} {{ darkenedImageClass }}" style="--carousel-margin: {{ carouselMargin }};  --stagePadding: {{ stagePadding }}; --imageBorderRadius: {{ imageBorderRadius }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}'>
+    {% for carouselItem in carouselCollection %}
+        {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel and carouselItem[1].src %}
+            {% assign contentDirectionClass = "carousel-item-flex-row" %}
+
+            {% if contentDirection == "column" %}
+                {% assign contentDirectionClass = "carousel-item-flex-column" %}
+            {% endif %}
+        {% else %}
+            {% assign contentDirectionClass = 'carousel-item' %}
+        {% endif %}
+
+        {% assign backgroundImage = "" %}
+
+        {% if contentDirection == "imageBackground" %}
+            {% assign contentDirectionClass = "carousel-item-image-background" %}
+            {% assign backgroundImage = carouselItem[1].src %}
+        {% endif %}
+
+        <div class="carousel-item-default {{ contentDirectionClass }}" style="width: {{ carouselItem[1].width | default: '100%' }}; height: {{ carouselItem[1].height | default: 'auto' }}; background-image: url({{ backgroundImage }})">
+        {% if carouselItem[1].title or carouselItem[1].description or carouselItem[1].linkLabel %}
+        <div class="carousel-text" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }}; --linkSize: {{ linkSize }}; --linkSizeLower1280: {{ linkSizeLower1280 }}; --linkSizeLower960: {{ linkSizeLower960 }}; --linkSizeLower600: {{ linkSizeLower600 }}">
+            {% if carouselItem[1].title %}
+            <h2 style="color: {{titleColor}}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}">{{carouselItem[1].title}}</h2>
+            {% endif %}
+            {% if carouselItem[1].description %}
+            <p style="color: {{descriptionColor}}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{carouselItem[1].description}}</p>
+            {% endif %}
+            {% if carouselItem[1].linkLabel %}
+            <a href="{{carouselItem[1].href}}" style="color: {{linkColor}}; line-height: {{linkLineHeight}}; font-weight: {{ linkWeight }}">
+                {{carouselItem[1].linkLabel}}
+                {% if enableLinkArrow == true %}
+                <i class="fas fa-chevron-right arrow first" style="color: {{linkColor}}"></i>
+                <i class="fas fa-chevron-right arrow second" style="color: {{linkColor}}"></i>
+                <i class="fas fa-chevron-right arrow third" style="color: {{linkColor}}"></i>
+                {% endif %}
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% if carouselItem[1].src %}
+        <div class="carousel-image">
+            {% if carouselItem[1].href %}
+            <a href="{{carouselItem[1].href}}">
+                <img class="owl-lazy" data-src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+                {% if overlay == true %}
+                <div class="overlay">
+                    <div class="eye">
+                        <i class="far fa-eye"></i>
+                        See more about {{carouselItem[1].title}}
+                    </div>
+                </div>
+                {% endif %}
+            </a>
+            {% else %}
+            <img class="owl-lazy" data-src="{{carouselItem[1].src}}" alt="{{carouselItem[1].alt}}">
+            {% endif %}
+        </div>
+        {% endif %}
+        {% if carouselItem[1].multipleImage %}
+        <div class="carousel-image">
+            <div class="multiple-image">
+                {% for image in carouselItem[1].multipleImage %}
+                <img class="owl-lazy" data-src="{{image[1].src}}" alt="{{image[1].alt}}">
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+<span class="not-found-message">Collection not found</span>
+{% endif %}
+{% endif %}
+

@@ -397,6 +397,12 @@
 			<td> messages await in the queue before device connected state. This limit works on low level before TenantProfileLimits mechanism</td>
 		</tr>
 		<tr>
+			<td>transport.mqtt.gateway_metrics_report_interval_sec</td>
+			<td>MQTT_GATEWAY_METRICS_REPORT_INTERVAL_SEC</td>
+			<td>60</td>
+			<td> Interval of periodic report of the gateway metrics</td>
+		</tr>
+		<tr>
 			<td>transport.mqtt.netty.leak_detector_level</td>
 			<td>NETTY_LEAK_DETECTOR_LVL</td>
 			<td>DISABLED</td>
@@ -606,7 +612,8 @@
 			<td>queue.type</td>
 			<td>TB_QUEUE_TYPE</td>
 			<td>kafka</td>
-			<td> kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+			<td> kafka (Apache Kafka). The following queue types are deprecated and will no longer be supported in ThingsBoard 4.0:
+ aws-sqs (AWS SQS), pubsub (PubSub), service-bus (Azure Service Bus), rabbitmq (RabbitMQ)</td>
 		</tr>
 		<tr>
 			<td>queue.prefix</td>

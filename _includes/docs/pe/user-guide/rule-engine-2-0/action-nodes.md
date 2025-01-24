@@ -1,7 +1,7 @@
 {% include docs/user-guide/rule-engine-2-0/ce-action-nodes.md %}
 
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -118,8 +118,8 @@ Configuration:
 - **Dashboard** - dashboard that will be used for report generation.
 - **Dashboard state parameter value** - used to specify target dashboard state for report generation. Can be set automatically by clicking on right most button of the field and invoking **Select dashboard state** dialog.
 - **Timezone** - timezone in which target dashboard will be presented in report.
-- **Use dashboard timewindow** - if set, timewindow configured in the target dashboard will be used during report generation.
-- **Timewindow** - specific dashboard timewindow that will be used during report generation.
+- **Use dashboard time window** - if set, time window configured in the target dashboard will be used during report generation.
+- **Time window** - specific dashboard time window that will be used during report generation.
 - **Report name pattern** - file name pattern of generated report, can contain date-time pattern in form of `%d{date-time pattern}`. See [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) documentation for date-time pattern details.
 - **Report type** - report file type, can be *PDF \| PNG \| JPEG*.
 - **Use current user credentials** - if set, credentials of user created this report configuration will be used to open dashboard UI during report generation.
@@ -162,30 +162,6 @@ Configuration:
 - **Integration** - target Integration for downlink message processing.
 
 **Failure** chain is used if Message push to Integration will fail, otherwise **Success** chain.
-
-<br>
-
-## REST Call Reply Node
-
-{% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
-
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
-
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
-
-Sends reply to REST API call that was originally sent to rule engine.
-
-Expects messages with any message type. Forwards incoming message as a reply to REST API call sent to rule engine.
-
-Configuration:
-
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
 <br>
 

@@ -11,4 +11,5 @@ deviceImageFileName: esp-eye.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/esp-eye.md %}

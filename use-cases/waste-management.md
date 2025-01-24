@@ -37,25 +37,10 @@ Save up to 90% of development time for your waste management solution by utilizi
 - remote control and OTA updates for your smart sensors and other devices;
 - customizable mobile applications with minimum coding efforts.
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-1.png" alt="waste monitoring 1">
-    </div>
-    <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-2.png" alt="waste monitoring 2">
-    </div>
-    <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-3.png" alt="waste monitoring 3">
-    </div>
-    <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-4.png" alt="waste monitoring 4">
-    </div>
-    <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-5.png" alt="waste monitoring 5">
-    </div>
-    <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-6.png" alt="waste monitoring 6">
-    </div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'waste-management' %}
+
+<div class="center" style="margin-bottom: 64px;">
+    <a id="UseCases_WasteManagement_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
 </div>
 
 ## ThingsBoard advantages

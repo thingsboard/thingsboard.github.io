@@ -8,4 +8,5 @@ description: ThingsBoard Access Token based authentication for CoAP transport.
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ssl/coap-access-token.md %}

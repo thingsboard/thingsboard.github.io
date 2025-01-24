@@ -92,7 +92,7 @@ description:
       </div>
     </div>
   </section>
-  <section id="scheduler">
+  <section id="scheduler-section">
     <div class="main-div">
       <div id="features-top-3">
         <div id="background-scheduler" >
@@ -247,7 +247,7 @@ description:
             <td><i class="fa fa-check"></i></td>
           </tr>
           <tr>
-            <th><a href="/products/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
+            <th><a href="/docs/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
             <td><i class="fa fa-times disabled"></i></td>
             <td><i class="fa fa-times disabled"></i></td>
             <td><i class="fa fa-check"></i></td>

@@ -25,8 +25,8 @@
 		<tr>
 			<td>server.forward_headers_strategy</td>
 			<td>HTTP_FORWARD_HEADERS_STRATEGY</td>
-			<td>NONE</td>
-			<td> Server forward headers strategy</td>
+			<td>framework</td>
+			<td> Server forward headers strategy. Required for SWAGGER UI when reverse proxy is used</td>
 		</tr>
 		<tr>
 			<td>server.ssl.enabled</td>
@@ -87,6 +87,12 @@
 			<td>SSL_KEY_PASSWORD</td>
 			<td>thingsboard</td>
 			<td> Password used to access the key</td>
+		</tr>
+		<tr>
+			<td>server.http.max_payload_size</td>
+			<td>HTTP_MAX_PAYLOAD_SIZE_LIMIT_CONFIGURATION</td>
+			<td>/api/image*/**=52428800;/api/resource/**=52428800;/api/**=16777216</td>
+			<td> Semi-colon-separated list of urlPattern=maxPayloadSize pairs that define max http request size for specified url pattern. After first match all other will be skipped</td>
 		</tr>
 		<tr>
 			<td>server.http2.enabled</td>
@@ -159,6 +165,24 @@
 			<td>TB_SERVER_WS_AUTH_TIMEOUT_MS</td>
 			<td>10000</td>
 			<td> Maximum time between WS session opening and sending auth command</td>
+		</tr>
+		<tr>
+			<td>server.ws.rate_limits.subscriptions_per_tenant</td>
+			<td>TB_SERVER_WS_SUBSCRIPTIONS_PER_TENANT_RATE_LIMIT</td>
+			<td></td>
+			<td> Per-tenant rate limit for WS subscriptions</td>
+		</tr>
+		<tr>
+			<td>server.ws.rate_limits.subscriptions_per_user</td>
+			<td>TB_SERVER_WS_SUBSCRIPTIONS_PER_USER_RATE_LIMIT</td>
+			<td></td>
+			<td> Per-user rate limit for WS subscriptions</td>
+		</tr>
+		<tr>
+			<td>server.ws.alarms_per_alarm_status_subscription_cache_size</td>
+			<td>TB_ALARMS_PER_ALARM_STATUS_SUBSCRIPTION_CACHE_SIZE</td>
+			<td>10</td>
+			<td> Maximum number of active originator alarm ids being saved in cache for single alarm status subscription. For example, no more than 10 alarm ids on the alarm widget</td>
 		</tr>
 		<tr>
 			<td>server.rest.server_side_rpc.min_timeout</td>
@@ -487,8 +511,14 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.7</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.9</td>
 			<td> Base URL for UI help assets</td>
+		</tr>
+		<tr>
+			<td>ui.solution_templates.docs_base_url</td>
+			<td>UI_SOLUTION_TEMPLATES_DOCS_BASE_URL</td>
+			<td>https://thingsboard.io/docs/pe</td>
+			<td> Base URL for solution templates docs</td>
 		</tr>
 	</tbody>
 </table>
@@ -513,13 +543,13 @@
 			<td>database.ts.type</td>
 			<td>DATABASE_TS_TYPE</td>
 			<td>sql</td>
-			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
+			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
 		</tr>
 		<tr>
 			<td>database.ts_latest.type</td>
 			<td>DATABASE_TS_LATEST_TYPE</td>
 			<td>sql</td>
-			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
+			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
 		</tr>
 	</tbody>
 </table>
@@ -889,7 +919,7 @@
 			<td>sql.ts.batch_max_delay</td>
 			<td>SQL_TS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td> Max timeout for time series entries queue polling. The value set in milliseconds</td>
+			<td> Max timeout for time-series entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.ts.stats_print_interval_ms</td>
@@ -1371,7 +1401,7 @@
 			<td>actors.rule.chain.debug_mode_rate_limits_per_tenant.configuration</td>
 			<td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
 			<td>50000:3600</td>
-			<td> The value of DEBUG mode rate limit. By default, no more then 50 thousand events per hour</td>
+			<td> The value of DEBUG mode rate limit. By default, no more than 50 thousand events per hour</td>
 		</tr>
 		<tr>
 			<td>actors.rule.node.error_persist_frequency</td>
@@ -1396,6 +1426,7 @@
 			<td>ACTORS_RULE_EXTERNAL_NODE_FORCE_ACK</td>
 			<td>false</td>
 			<td> Force acknowledgment of the incoming message for external rule nodes to decrease processing latency.
+ The Generate Report node also adheres to this forced acknowledgment, as it operates similarly to a REST API call.
  Enqueue the result of external node processing as a separate message to the rule engine.</td>
 		</tr>
 		<tr>
@@ -1417,6 +1448,21 @@
 			<td> Time in milliseconds for RPC to receive a response after delivery. Used only for SEQUENTIAL_ON_RESPONSE_FROM_DEVICE submit strategy.</td>
 		</tr>
 		<tr>
+			<td>actors.rpc.close_session_on_rpc_delivery_timeout</td>
+			<td>ACTORS_RPC_CLOSE_SESSION_ON_RPC_DELIVERY_TIMEOUT</td>
+			<td>false</td>
+			<td> Close transport session if RPC delivery timed out. If enabled, RPC will be reverted to the queued state.
+ Note:
+ - For MQTT transport:
+   - QoS level 0: This feature does not apply, as no acknowledgment is expected, and therefore no timeout is triggered.
+   - QoS level 1: This feature applies, as an acknowledgment is expected.
+   - QoS level 2: Unsupported.
+ - For CoAP transport:
+   - Confirmable requests: This feature applies, as delivery confirmation is expected.
+   - Non-confirmable requests: This feature does not apply, as no delivery acknowledgment is expected.
+ - For HTTP and SNPM transports: RPC is considered delivered immediately, and there is no logic to await acknowledgment.</td>
+		</tr>
+		<tr>
 			<td>actors.statistics.enabled</td>
 			<td>ACTORS_STATISTICS_ENABLED</td>
 			<td>true</td>
@@ -1433,6 +1479,13 @@
 			<td>ACTORS_STATISTICS_PERSIST_FREQUENCY</td>
 			<td>3600000</td>
 			<td> Actors statistic persistence frequency in milliseconds</td>
+		</tr>
+		<tr>
+			<td>debug.settings.default_duration</td>
+			<td>DEBUG_SETTINGS_DEFAULT_DURATION_MINUTES</td>
+			<td>15</td>
+			<td> Default duration (in minutes) for debug mode. Min value is 1 minute. Tenant profile settings override this one.
+ If value from this setting is invalid, the default value (15 minutes) will be used.</td>
 		</tr>
 	</tbody>
 </table>
@@ -1544,6 +1597,30 @@
  - 'FIRST_AND_LAST': Both the first and last activity events in the reporting period are reported.
  - 'ALL': All activity events in the reporting period are reported.</td>
 		</tr>
+		<tr>
+			<td>integrations.converters.library.enabled</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable data converters library</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.url</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_URL</td>
+			<td>https://github.com/thingsboard/data-converters.git</td>
+			<td> URL of the data converters repository</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.branch</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_BRANCH</td>
+			<td>main</td>
+			<td> Branch of the data converters repository to use</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.fetch_frequency</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_FETCH_FREQUENCY</td>
+			<td>24</td>
+			<td> Fetch frequency in hours for data converters repository</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -1617,6 +1694,13 @@
 			<td>CACHE_ATTRIBUTES_ENABLED</td>
 			<td>true</td>
 			<td> make sure that if cache.type is 'redis' and cache.attributes.enabled is 'true' if you change 'maxmemory-policy' Redis config property to 'allkeys-lru', 'allkeys-lfu' or 'allkeys-random'</td>
+		</tr>
+		<tr>
+			<td>cache.ts_latest.enabled</td>
+			<td>CACHE_TS_LATEST_ENABLED</td>
+			<td>true</td>
+			<td> Will enable cache-aside strategy for SQL timeseries latest DAO.
+ make sure that if cache.type is 'redis' and cache.ts_latest.enabled is 'true' if you change 'maxmemory-policy' Redis config property to 'allkeys-lru', 'allkeys-lfu' or 'allkeys-random'</td>
 		</tr>
 		<tr>
 			<td>cache.specs.relations.timeToLiveInMinutes</td>
@@ -1835,6 +1919,18 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.tsLatest.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_TS_LATEST_TTL</td>
+			<td>1440</td>
+			<td> Timeseries latest cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.tsLatest.maxSize</td>
+			<td>CACHE_SPECS_TS_LATEST_MAX_SIZE</td>
+			<td>100000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.specs.userSessionsInvalidation.timeToLiveInMinutes</td>
 			<td></td>
 			<td>"0"</td>
@@ -1879,6 +1975,30 @@
 		<tr>
 			<td>cache.specs.edges.maxSize</td>
 			<td>CACHE_SPECS_EDGES_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.edgeSessions.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_EDGE_SESSIONS_TTL</td>
+			<td>0</td>
+			<td> Edge Sessions cache TTL; no expiration time if set to '0'</td>
+		</tr>
+		<tr>
+			<td>cache.specs.edgeSessions.maxSize</td>
+			<td>CACHE_SPECS_EDGE_SESSIONS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.relatedEdges.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_RELATED_EDGES_TTL</td>
+			<td>1440</td>
+			<td> Related Edges cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.relatedEdges.maxSize</td>
+			<td>CACHE_SPECS_RELATED_EDGES_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
@@ -1991,13 +2111,13 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
-			<td>cache.specs.mobileAppSettings.timeToLiveInMinutes</td>
+			<td>cache.specs.qrCodeSettings.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_TTL</td>
 			<td>1440</td>
-			<td> Mobile application cache TTL</td>
+			<td> Qr code settings cache TTL</td>
 		</tr>
 		<tr>
-			<td>cache.specs.mobileAppSettings.maxSize</td>
+			<td>cache.specs.qrCodeSettings.maxSize</td>
 			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
@@ -2111,6 +2231,30 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.customMenu.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_TTL</td>
+			<td>1440</td>
+			<td> Custom menu cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.customMenu.maxSize</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.entityGroups.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_ENTITY_GROUPS_TTL</td>
+			<td>1440</td>
+			<td> entity groups cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.entityGroups.maxSize</td>
+			<td>CACHE_SPECS_ENTITY_GROUPS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.notificationRules.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_NOTIFICATION_RULES_TTL</td>
 			<td>30</td>
@@ -2179,6 +2323,18 @@
 		<tr>
 			<td>cache.translation.etag.maxSize</td>
 			<td>CACHE_SPECS_TRANSLATION_ETAGS_MAX_SIZE</td>
+			<td>1000000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.customMenu.etag.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_ETAGS_TTL</td>
+			<td>44640</td>
+			<td> Custom Menu ETags cache TTL in minutes (one month by default)</td>
+		</tr>
+		<tr>
+			<td>cache.customMenu.etag.maxSize</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_ETAGS_MAX_SIZE</td>
 			<td>1000000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
@@ -2630,7 +2786,57 @@
 			<td>spring.datasource.hikari.registerMbeans</td>
 			<td>SPRING_DATASOURCE_HIKARI_REGISTER_MBEANS</td>
 			<td>false</td>
-			<td> true - enable MBean to diagnose pools state via JMX</td>
+			<td> Enable MBean to diagnose pools state via JMX</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.enabled</td>
+			<td>SPRING_DEDICATED_EVENTS_DATASOURCE_ENABLED</td>
+			<td>false</td>
+			<td> Enable dedicated datasource (a separate database) for events and audit logs.
+ Before enabling this, make sure you have set up the following tables in the new DB:
+ error_event, lc_event, rule_chain_debug_event, rule_node_debug_event, stats_event, converter_debug_event, integration_debug_event, raw_data_event, audit_log</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.driverClassName</td>
+			<td>SPRING_EVENTS_DATASOURCE_DRIVER_CLASS_NAME</td>
+			<td>org.postgresql.Driver</td>
+			<td> Database driver for Spring JPA for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.url</td>
+			<td>SPRING_EVENTS_DATASOURCE_URL</td>
+			<td>jdbc:postgresql://localhost:5432/thingsboard_events</td>
+			<td> Database connection URL for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.username</td>
+			<td>SPRING_EVENTS_DATASOURCE_USERNAME</td>
+			<td>postgres</td>
+			<td> Database username for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.password</td>
+			<td>SPRING_EVENTS_DATASOURCE_PASSWORD</td>
+			<td>postgres</td>
+			<td> Database user password for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.hikari.leakDetectionThreshold</td>
+			<td>SPRING_EVENTS_DATASOURCE_HIKARI_LEAK_DETECTION_THRESHOLD</td>
+			<td>0</td>
+			<td> This property controls the amount of time that a connection can be out of the pool before a message is logged indicating a possible connection leak for events datasource. A value of 0 means leak detection is disabled</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.hikari.maximumPoolSize</td>
+			<td>SPRING_EVENTS_DATASOURCE_MAXIMUM_POOL_SIZE</td>
+			<td>4</td>
+			<td> This property increases the number of connections in the pool as demand increases for events datasource. At the same time, the property ensures that the pool doesn't grow to the point of exhausting a system's resources, which ultimately affects an application's performance and availability</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.hikari.registerMbeans</td>
+			<td>SPRING_EVENTS_DATASOURCE_HIKARI_REGISTER_MBEANS</td>
+			<td>false</td>
+			<td> Enable MBean to diagnose pools state via JMX for events datasource</td>
 		</tr>
 	</tbody>
 </table>
@@ -3218,6 +3424,12 @@
 			<td> HTTP maximum request processing timeout in milliseconds</td>
 		</tr>
 		<tr>
+			<td>transport.http.max_payload_size</td>
+			<td>HTTP_TRANSPORT_MAX_PAYLOAD_SIZE_LIMIT_CONFIGURATION</td>
+			<td>/api/v1/*/rpc/**=65536;/api/v1/**=52428800</td>
+			<td> Semi-colon-separated list of urlPattern=maxPayloadSize pairs that define max http request size for specified url pattern. After first match all other will be skipped</td>
+		</tr>
+		<tr>
 			<td>transport.mqtt.enabled</td>
 			<td>MQTT_ENABLED</td>
 			<td>true</td>
@@ -3259,6 +3471,12 @@
 			<td>MQTT_MSG_QUEUE_SIZE_PER_DEVICE_LIMIT</td>
 			<td>100</td>
 			<td> messages await in the queue before the device connected state. This limit works on the low level before TenantProfileLimits mechanism</td>
+		</tr>
+		<tr>
+			<td>transport.mqtt.gateway_metrics_report_interval_sec</td>
+			<td>MQTT_GATEWAY_METRICS_REPORT_INTERVAL_SEC</td>
+			<td>60</td>
+			<td> Interval of periodic report of the gateway metrics</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.netty.leak_detector_level</td>
@@ -3778,6 +3996,30 @@
 			<td>60000</td>
 			<td> Interval of transport statistics logging</td>
 		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.enabled</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable gateways dashboard sync with git repository</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.repository_url</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_REPOSITORY_URL</td>
+			<td>https://github.com/thingsboard/gateway-management-extensions-dist.git</td>
+			<td> URL of gateways dashboard repository</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.branch</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_BRANCH</td>
+			<td>main</td>
+			<td> Branch of gateways dashboard repository to work with</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.fetch_frequency</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_FETCH_FREQUENCY</td>
+			<td>24</td>
+			<td> Fetch frequency in hours for gateways dashboard repository</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -3846,6 +4088,38 @@
  - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
  - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
  - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_transmission_unit</td>
+			<td>COAP_DTLS_MAX_TRANSMISSION_UNIT</td>
+			<td>1024</td>
+			<td> Specify the MTU (Maximum Transmission Unit).
+ Should be used if LAN MTU is not used, e.g. if IP tunnels are used or if the client uses a smaller value than the LAN MTU.
+ Default = 1024
+ Minimum value = 64
+ If set to 0 - LAN MTU is used.</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_fragment_length</td>
+			<td>COAP_DTLS_MAX_FRAGMENT_LENGTH</td>
+			<td>1024</td>
+			<td> DTLS maximum fragment length (RFC 6066, Section 4).
+ Default = 1024
+ Possible values: 512, 1024, 2048, 4096.
+ If set to 0, the default maximum fragment size of 2^14 bytes (16,384 bytes) is used.
+ Without this extension, TLS specifies a fixed maximum plaintext fragment length of 2^14 bytes.
+ It may be desirable for constrained clients to negotiate a smaller maximum fragment length due to memory limitations or bandwidth limitations.
+ In order to negotiate smaller maximum fragment lengths,
+ clients MAY include an extension of type "max_fragment_length" in the (extended) client hello.
+ The "extension_data" field of this extension SHALL contain:
+ enum {
+   2^9(1) == 512,
+   2^10(2) == 1024,
+   2^11(3) == 2048,
+   2^12(4) == 4096,
+   (255)
+ } MaxFragmentLength;
+ TLS already requires clients and servers to support fragmentation of handshake messages.</td>
 		</tr>
 		<tr>
 			<td>coap.dtls.credentials.type</td>
@@ -4144,21 +4418,27 @@
 			<td> Number of milliseconds to wait before resending failed batch of edge events to edge</td>
 		</tr>
 		<tr>
+			<td>edges.max_high_priority_queue_size_per_session</td>
+			<td>EDGES_MAX_HIGH_PRIORITY_QUEUE_SIZE_PER_SESSION</td>
+			<td>10000</td>
+			<td> Max number of high priority edge events per edge session. No persistence - stored in memory</td>
+		</tr>
+		<tr>
 			<td>edges.scheduler_pool_size</td>
 			<td>EDGES_SCHEDULER_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to check DB for edge events</td>
 		</tr>
 		<tr>
 			<td>edges.send_scheduler_pool_size</td>
 			<td>EDGES_SEND_SCHEDULER_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to send downlink messages to edge over gRPC</td>
 		</tr>
 		<tr>
 			<td>edges.grpc_callback_thread_pool_size</td>
 			<td>EDGES_GRPC_CALLBACK_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to convert edge events from DB into downlink messages and send them for delivery</td>
 		</tr>
 		<tr>
@@ -4213,7 +4493,7 @@
 		</tr>
 		<tr>
 			<td>swagger.exclude_api_path</td>
-			<td>SWAGGER_API_PATH</td>
+			<td>SWAGGER_EXCLUDE_API_PATH</td>
 			<td>/api/v1/integrations/**</td>
 			<td> Excluded API path match pattern of swagger UI links</td>
 		</tr>
@@ -4277,6 +4557,12 @@
 			<td></td>
 			<td> The version of the API doc to display. Default to the package version.</td>
 		</tr>
+		<tr>
+			<td>swagger.group_name</td>
+			<td>SWAGGER_GROUP_NAME</td>
+			<td>thingsboard</td>
+			<td> The group name (definition) on the API doc UI page.</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -4294,7 +4580,8 @@
 			<td>queue.type</td>
 			<td>TB_QUEUE_TYPE</td>
 			<td>in-memory</td>
-			<td> in-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+			<td> in-memory or kafka (Apache Kafka). The following queue types are deprecated and will no longer be supported in ThingsBoard 4.0:
+ aws-sqs (AWS SQS), pubsub (PubSub), service-bus (Azure Service Bus), rabbitmq (RabbitMQ)</td>
 		</tr>
 		<tr>
 			<td>queue.prefix</td>
@@ -4501,6 +4788,18 @@
 			<td> Example of specific consumer properties value per topic for VC</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Example of specific consumer properties value per topic for edge event</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENT_MAX_POLL_RECORDS</td>
+			<td>50</td>
+			<td> Example of specific consumer properties value per topic for edge event</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
 			<td></td>
 			<td>max.poll.records</td>
@@ -4589,6 +4888,18 @@
 			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_REPROCESSING_TOPIC_PROPERTIES</td>
 			<td>retention.ms:7776000000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Housekeeper reprocessing topic; retention.ms is set to 90 days; partitions is set to 1 since only one reprocessing service is running at a time</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edge</td>
+			<td>TB_QUEUE_KAFKA_EDGE_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Edge topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edge-event</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENT_TOPIC_PROPERTIES</td>
+			<td>retention.ms:2592000000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Edge event topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -4687,6 +4998,12 @@
 			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
 		</tr>
 		<tr>
+			<td>queue.aws_sqs.queue-properties.edge</td>
+			<td>TB_QUEUE_AWS_SQS_EDGE_QUEUE_PROPERTIES</td>
+			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
+		</tr>
+		<tr>
 			<td>queue.aws_sqs.queue-properties.integration-api</td>
 			<td>TB_QUEUE_AWS_SQS_INTEGRATION_QUEUE_PROPERTIES</td>
 			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
@@ -4759,6 +5076,12 @@
 			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
 		</tr>
 		<tr>
+			<td>queue.pubsub.queue-properties.edge</td>
+			<td>TB_QUEUE_PUBSUB_EDGE_QUEUE_PROPERTIES</td>
+			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+			<td> Pub/Sub properties for Edge subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
+		</tr>
+		<tr>
 			<td>queue.pubsub.queue-properties.integration-api</td>
 			<td>TB_QUEUE_PUBSUB_INTEGRATION_QUEUE_PROPERTIES</td>
 			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
@@ -4825,6 +5148,12 @@
 			<td> Azure Service Bus properties for Version Control queues</td>
 		</tr>
 		<tr>
+			<td>queue.service_bus.queue-properties.edge</td>
+			<td>TB_QUEUE_SERVICE_BUS_EDGE_QUEUE_PROPERTIES</td>
+			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
+			<td> Azure Service Bus properties for Edge queues</td>
+		</tr>
+		<tr>
 			<td>queue.service_bus.queue-properties.integration-api</td>
 			<td>TB_QUEUE_SERVICE_BUS_INTEGRATION_QUEUE_PROPERTIES</td>
 			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
@@ -4885,6 +5214,12 @@
 			<td> RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout</td>
 		</tr>
 		<tr>
+			<td>queue.rabbitmq.max_poll_messages</td>
+			<td>TB_QUEUE_RABBIT_MQ_MAX_POLL_MESSAGES</td>
+			<td>1</td>
+			<td> The maximum number of messages returned in a single call of doPoll() method</td>
+		</tr>
+		<tr>
 			<td>queue.rabbitmq.queue-properties.rule-engine</td>
 			<td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
 			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
@@ -4919,6 +5254,12 @@
 			<td>TB_QUEUE_RABBIT_MQ_VC_QUEUE_PROPERTIES</td>
 			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
 			<td> RabbitMQ properties for Version Control queues</td>
+		</tr>
+		<tr>
+			<td>queue.rabbitmq.queue-properties.edge</td>
+			<td>TB_QUEUE_RABBIT_MQ_EDGE_QUEUE_PROPERTIES</td>
+			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
+			<td> RabbitMQ properties for Edge queues</td>
 		</tr>
 		<tr>
 			<td>queue.rabbitmq.queue-properties.integration-api</td>
@@ -5091,6 +5432,12 @@
 			<td> Maximum amount of task reprocessing attempts. After exceeding, the task will be dropped</td>
 		</tr>
 		<tr>
+			<td>queue.core.housekeeper.entities-cleanup-frequency</td>
+			<td>TB_HOUSEKEEPER_ENTITIES_CLEANUP_FREQUENCY</td>
+			<td>3600</td>
+			<td> Expiration check frequency in seconds for entities that have ttl</td>
+		</tr>
+		<tr>
 			<td>queue.core.housekeeper.stats.enabled</td>
 			<td>TB_HOUSEKEEPER_STATS_ENABLED</td>
 			<td>true</td>
@@ -5239,6 +5586,54 @@
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS</td>
 			<td>25</td>
 			<td> Interval in milliseconds to poll messages</td>
+		</tr>
+		<tr>
+			<td>queue.edge.topic</td>
+			<td>TB_QUEUE_EDGE_TOPIC</td>
+			<td>tb_edge</td>
+			<td> Default topic name for Kafka, RabbitMQ, etc.</td>
+		</tr>
+		<tr>
+			<td>queue.edge.partitions</td>
+			<td>TB_QUEUE_EDGE_PARTITIONS</td>
+			<td>10</td>
+			<td> Amount of partitions used by Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.poll-interval</td>
+			<td>TB_QUEUE_EDGE_POLL_INTERVAL_MS</td>
+			<td>25</td>
+			<td> Poll interval for topics related to Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.pack-processing-timeout</td>
+			<td>TB_QUEUE_EDGE_PACK_PROCESSING_TIMEOUT_MS</td>
+			<td>10000</td>
+			<td> Timeout for processing a message pack by Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.pack-processing-retries</td>
+			<td>TB_QUEUE_EDGE_MESSAGE_PROCESSING_RETRIES</td>
+			<td>3</td>
+			<td> Retries for processing a failure message pack by Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.consumer-per-partition</td>
+			<td>TB_QUEUE_EDGE_CONSUMER_PER_PARTITION</td>
+			<td>false</td>
+			<td> Enable/disable a separate consumer per partition for Edge queue</td>
+		</tr>
+		<tr>
+			<td>queue.edge.stats.enabled</td>
+			<td>TB_QUEUE_EDGE_STATS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable statistics for Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.stats.print-interval-ms</td>
+			<td>TB_QUEUE_EDGE_STATS_PRINT_INTERVAL_MS</td>
+			<td>60000</td>
+			<td> Statistics printing interval for Edge services</td>
 		</tr>
 		<tr>
 			<td>queue.integration.partitions</td>

@@ -29,3 +29,5 @@ toc:
   path: /docs/trendz/connect-thingsboard/
 - title: Configuration properties
   path: /docs/trendz/configuration-properties/
+- title: Post-installation steps
+  path: /docs/trendz/post-installation-steps/

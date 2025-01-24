@@ -8,4 +8,5 @@ description: IoT data visualization for various IoT projects using iot dashboard
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/visualization.md %}

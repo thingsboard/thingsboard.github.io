@@ -1,4 +1,5 @@
 {% if page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
+{% assign cssTag="use-case" %}
 
 <!Doctype html>
 <html id="common" class="use-cases" lang="en">
@@ -19,53 +20,9 @@
 
 {% include footer.html %}
 
-<script>
-    jqueryDefer(function () {
-        $(window).scroll(function() {
-            var height = $(window).scrollTop();
-            if (height > 0) {
-                $('nav.usecase-nav').addClass('nav-fixed');
-            } else {
-                $('nav.usecase-nav').removeClass('nav-fixed');
-            }
-        });
-    });
-</script>
+{% include scroll-progress-button.liquid %}
 
 <script>
-    jqueryDefer(Owl);
-
-    function Owl() {
-        var scriptsList = [
-            {src: '/css/owl.carousel.min.css', type: 'css'},
-            {src: '/css/owl.theme.default.min.css', type: 'css'},
-            {src: '/js/owl.carousel.min.js', type: 'script'}
-        ];
-        loadNextScript(0, scriptsList,
-            function() {
-                $(document).ready(function(){
-                    $('.owl-carousel').owlCarousel({
-                        items:1,
-                        margin:50,
-                        stagePadding: 0,
-                        autoHeight:true,
-                        loop:true,
-                        autoplay:true,
-                        autoplayTimeout:5000,
-                        autoplayHoverPause:true,
-                        nav:false,
-                        responsive: {
-                            1025: {
-                                nav:true,
-                                margin:100,
-                                stagePadding: 50,
-                            }
-                        }
-                    });
-                });
-            }
-        );
-    }
     jqueryDefer(
         function () {
             $(document).ready(function () {

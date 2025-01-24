@@ -138,7 +138,7 @@
 
   #searchBox
     display: block
-    z-index: 9999
+    z-index: 8000
     position: fixed
     top: 89px
     right: 22px
@@ -151,6 +151,7 @@
     @media screen and (max-width: 1280px)
       top: 18px
       right: 91px
+      z-index: 9999
     @media screen and (max-width: 768px)
       top: 164px
       left: 22px
@@ -336,19 +337,23 @@
           display: flex
           align-items: center
           height: 100%
-          margin-left: 28px
+          margin-left: 17px
           float: left
-          @media screen and (max-width: 1500px)
+          @media screen and (min-width: 1500px)
             margin-left: 20px
+          @media screen and (min-width: 1700px)
+            margin-left: 28px
           a
             position: relative
             display: block
             color: #212529
             opacity: 0.6
-            font-size: 18px
+            font-size: 14px
             font-weight: normal
-            @media screen and (max-width: 1500px)
-              font-size: 17px
+            @media screen and (min-width: 1500px)
+              font-size: 16px
+            @media screen and (min-width: 1700px)
+              font-size: 18px
             &.YAH
               position: relative
               opacity: 1
@@ -657,25 +662,19 @@ a.feature-card
   display: flex
   flex-direction: row
   align-items: center
-  z-index: 10001
+  z-index: 8000
   @media screen and (min-width: 769px)
-    width: 250px
+    width: 270px
   @media screen and (min-width: 870px)
     width: 348px
   @media screen and (min-width: 1281px)
-    width: 250px
+    width: 270px
     top: 80px
   @media screen and (min-width: 1601px)
-    width: 316px
-  img
-    width: 54px
-    height: 54px
-    margin-right: 16px
-    @media screen and (max-width: 1024px)
-      width: 46px
-      height: 46px
-      margin-right: 10px
-      margin-left: -10px
+    width: 338px
+  @media screen and (max-width: 1280px)
+    z-index: 10001
+
   .product-info
     display: flex
     flex-direction: column
@@ -686,6 +685,16 @@ a.feature-card
     justify-content: center
     border-radius: 8px
     background: var(--tb-main-background)
+    @media screen and (max-width: 769px)
+      width: 270px
+    @media screen and (min-width: 769px)
+      width: 270px
+    @media screen and (min-width: 870px)
+      width: 348px
+    @media screen and (min-width: 1281px)
+      width: 272px
+    @media screen and (min-width: 1601px)
+      width: 338px
     .product-title
       font-size: 18px
       font-weight: 500
@@ -741,16 +750,67 @@ a.feature-card
       &.active
         font-weight: 500
         background: rgba(42, 125, 236, 0.04)
-  &:hover, &.active
-    cursor: pointer
-  &.active
-    .product-title
-      &::after
-        transform: rotate(-90deg)
-    .products
-      visibility: visible
-      opacity: 1
 
+  .product-selector, .server-selector
+    &:hover, &.active
+      cursor: pointer
+    &.active
+      .product-title
+        &::after
+          transform: rotate(-90deg)
+      .products
+        visibility: visible
+        opacity: 1
+
+.products-selector-cloud
+  gap: 10px
+  .server-selector
+    min-width: 150px
+    display: flex
+    flex: 1
+    .products
+      a.product
+        &:hover, &.active
+          color: #75767C
+          .server-option-title
+            color: #2a7dec
+    .server-option
+      display: flex
+      flex-direction: column
+      &-title
+        color: #000000
+      &-subtitle
+        font-size: 14px
+  @media screen and (max-width: 769px)
+    .product-info
+      .product-title
+        font-size: 14px
+    .product-selector
+      display: flex
+      flex: 1
+  @media screen and (min-width: 769px)
+    .product-selector
+      width: 94px
+    .product-info
+      .product-title
+        font-size: 14px
+  @media screen and (min-width: 870px)
+    .product-selector
+      width: 124px
+  @media screen and (min-width: 1281px)
+    .product-selector
+      width: 94px
+    .product-info
+      .product-title
+        font-size: 14px
+  @media screen and (min-width: 1601px)
+    .product-selector
+      width: 124px
+    .product-info
+      .product-title
+        font-size: 18px
+  .product-info
+    width: 100%
 details
   summary
     outline: none

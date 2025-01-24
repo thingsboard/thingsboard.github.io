@@ -29,12 +29,12 @@ Install the package.
 ```bash
 # Install packages
 sudo dnf -qy module disable postgresql
-sudo dnf -y install postgresql15 postgresql15-server
+sudo dnf -y install postgresql16 postgresql16-server postgresql16-contrib
 # Initialize your PostgreSQL DB
-sudo /usr/pgsql-15/bin/postgresql-15-setup initdb
-sudo systemctl start postgresql-15
+sudo /usr/pgsql-16/bin/postgresql-16-setup initdb
+sudo systemctl start postgresql-16
 # Optional: Configure PostgreSQL to start on boot
-sudo systemctl enable --now postgresql-15
+sudo systemctl enable --now postgresql-16
 ```
 {: .copy-code}
 

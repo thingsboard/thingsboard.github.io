@@ -23,19 +23,19 @@ If you are using older version of Windows OS, you may find official installation
 
 This command works for Windows, Ubuntu and macOS, assuming the cURL tool is already installed. 
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
 Replace $ACCESS_TOKEN with corresponding value.
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
 For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" {{httpsUrl}}/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

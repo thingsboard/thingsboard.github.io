@@ -2,16 +2,24 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Two-Factor Authentication
-description: Two-Factor Authentication using ThingsBoard
+title: Two-factor authentication
+description: Two-factor authentication using ThingsBoard
 
 two-factor-authentication-password-and-authentication:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-1-pe.png
-        title: 'In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Security";'
+        title: 'Log in to ThingsBoard with basic credentials. In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Account";'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-2-pe.png
-        title: 'Activate the convenient verification method. One can activate multiple providers. Save changes.'
+        title: 'Navigate to the "Security" tab. Activate the convenient verification method. One can activate multiple providers. Then, save changes.'
+
+enable-two-factor-authentication:
+    0:
+        image: /images/user-guide/two-factor-authentication/two-factor-authentication-1-pe.png
+        title: 'Log in to ThingsBoard as the system administrator or tenant administrator. Navigate to the "Two-factor authentication" page of the "Security" section. If you are logged in as a tenant administrator, uncheck the box labeled "Use system two factor auth settings";'
+    1:
+        image: /images/user-guide/two-factor-authentication/two-factor-authentication-2-pe.png
+        title: 'Choose one or more 2FA verification methods (such as SMS, email, or authenticator app), and set up details like verification message template, verification code lifetime, total allowed time for verification, etc. Save changes to apply the configuration.'
 
 two-factor-authentication-app:
     0:
@@ -99,4 +107,5 @@ two-factor-authentication-backup-code:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/two-factor-authentication.md %}

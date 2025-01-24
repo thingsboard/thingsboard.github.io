@@ -16,15 +16,15 @@ add-device:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
     3:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
         title: 'Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.'
 
 add-device-notification:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-6-pe.png
         title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
 
 add-device-group-pe:
@@ -156,4 +156,5 @@ version-control:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/devices.md %}

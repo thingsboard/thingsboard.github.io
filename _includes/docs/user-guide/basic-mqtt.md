@@ -8,8 +8,8 @@
 {% assign TB_HOST = "10.7.3.177" %}
 {% assign PEM_CERTIFICATE = "root-ca.pem" %}
 {% endif %}
-{% if docsPrefix == "paas/" %}
-{% assign TB_HOST = "mqtt.thingsboard.cloud" %}
+{% if docsPrefix contains "paas/" %}
+{% assign TB_HOST = "{{mqttHostName}}" %}
 {% assign PEM_CERTIFICATE = "tb-cloud-root-ca.pem" %}
 {% assign CLOUD = " Cloud" %}
 {% endif %} 
@@ -36,9 +36,9 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" -t "v1/devices/me/telemetry" -
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -m {"temperature":25}
 ```
 {: .copy-code}
 {% endif %}
@@ -79,9 +79,9 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" -t "v1/devices/me/telemetry" -
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetry" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}
 {% endif %}
@@ -121,9 +121,9 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" -t "v1/devices/me/telemetry" -
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}
 {% endif %}
@@ -161,7 +161,7 @@ Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide 
 
 Once provisioned, use "Check connectivity" feature to download the CA root certificate to your working directory and publish telemetry. But first, change the credential type for your device from "Access token" to "MQTT Basic":
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Use "Check connectivity" feature to download the CA root certificate and publish telemetry. But first, change the credential type for your device from "Access token" to "MQTT Basic":
 {% endif %}
 
@@ -176,7 +176,7 @@ Once you have successfully executed the command, you should see the published "t
 {% include images-gallery.html imageCollection="mqtts-options-2" %}
 
 <br>
-Example of a generated command to publish telemetry using the *{{PEM_CERTIFICATE}}* certificate, {% unless docsPrefix == 'paas/' %}host of your ThingsBoard instance (YOUR_TB_HOST),{% endunless %} client id (YOUR_CLIENT_ID), and client username and password (YOUR_CLIENT_USERNAME / YOUR_CLIENT_PASSWORD) of the selected device:
+Example of a generated command to publish telemetry using the *{{PEM_CERTIFICATE}}* certificate, {% unless docsPrefix contains 'paas/' %}host of your ThingsBoard instance (YOUR_TB_HOST),{% endunless %} client id (YOUR_CLIENT_ID), and client username and password (YOUR_CLIENT_USERNAME / YOUR_CLIENT_PASSWORD) of the selected device:
 
 {% if (docsPrefix == "pe/") or (docsPrefix == null) %}
 ```bash
@@ -184,9 +184,9 @@ mosquitto_pub -d -q 1 --cafile {{PEM_CERTIFICATE}} -h YOUR_TB_HOST -p 8883 -t v1
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -d -q 1 --cafile {{PEM_CERTIFICATE}} -h mqtt.thingsboard.cloud -p 8883 -t v1/devices/me/telemetry -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
+mosquitto_pub -d -q 1 --cafile {{PEM_CERTIFICATE}} -h {{mqttHostName}} -p 8883 -t v1/devices/me/telemetry -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}
 {% endif %}

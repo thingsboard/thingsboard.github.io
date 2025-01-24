@@ -354,11 +354,11 @@ $ cat /var/log/thingsboard/thingsboard.log | grep ERROR
 Execute the following command in order to install Report Server prerequisites:
 
 ```bash
-$ sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
-     libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
+sudo apt install -yq  libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
+     libexpat1 libfontconfig1 libgcc1  libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
      libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
      libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 \
-     ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget fonts-roboto
+     ca-certificates fonts-liberation libnss3 lsb-release xdg-utils unzip wget libgbm-dev
 ```
 
 Download ThingsBoard Web Report Server installation script:
@@ -756,7 +756,7 @@ Execute the following commands:
 ```bash
 mkdir ~/noto
 cd ~/noto
-wget https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip
+wget https://src.fedoraproject.org/repo/extras/chromium/NotoSansCJKjp-hinted.zip/sha512/e7bcbc53a10b8ec3679dcade5a8a94cea7e1f60875ab38f2193b4fa8e33968e1f0abc8184a3df1e5210f6f5c731f96c727c6aa8f519423a29707d2dee5ada193/NotoSansCJKjp-hinted.zip
 unzip NotoSansCJKjp-hinted.zip
 sudo mkdir -p /usr/share/fonts/noto
 sudo cp *.otf /usr/share/fonts/noto

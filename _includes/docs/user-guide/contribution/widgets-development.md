@@ -1150,7 +1150,7 @@ Allows to filter only one entity based on the id. For example, this entity filte
     }
 }
 ```
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 - **Group Entities Filter**
 
 Allows to filter multiple entities of the same type using the entity group type and id. For example, this entity filter selects all devices that belong to the group  **e52b0020-2a7a-11ec-94eb-213c95f54092**:
@@ -1198,7 +1198,7 @@ Allows to filter entities based on their type (CUSTOMER, USER, DASHBOARD, ASSET,
 }
 ```
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 - **Group List Filter**
 
 Return multiple groups of the same type using specified ids. For example, this entity filter selects 2 device groups (if they are present in the system) with ids  **e52b0020-2a7a-11ec-94eb-213c95f54092** and  **e52b0020-2a7a-11ec-94eb-213c95f54093**:
@@ -1625,9 +1625,9 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
             ...
         }
     );
@@ -1649,7 +1649,7 @@ self.onInit = function() {
     ...
     const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
             [
                 {
@@ -1705,9 +1705,9 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
             ...
         }
     );
@@ -1728,7 +1728,7 @@ self.onInit = function() {
     ...
     const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
             [
                 {
@@ -1789,12 +1789,12 @@ self.onInit = function() {
 
      self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             subscribeForPaginatedData(self.ctx.$scope.pageLink);
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
-            self.ctx.dataPages = subscription.dataPages; //Saving dataPages into widget context
-            self.ctx.datasourcePages = subscription.datasourcePages; //Saving datasourcePages into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
+            self.ctx.dataPages = subscription.dataPages; //Saves dataPages into widget context
+            self.ctx.datasourcePages = subscription.datasourcePages; //Saves datasourcePages into widget context
             ...
         }
      );
@@ -1820,7 +1820,7 @@ self.onInit = function() {
     ...
     const datasources = [
         {
-            type: "entity", //Sets that there is a subscription to entity data
+            type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes time-series keys
             [
                 {
@@ -1857,6 +1857,7 @@ self.onInit = function() {
         type: 'timeseries', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
         hasDataPageLink: true, //Sets subscription into pageLink mode
+        ignoreDataUpdateOnIntervalTick: true, //if true onDataUpdated will be triggered only when new data appears otherwise onDataUpdate will be triggered every second
         useDashboardTimewindow: true,
         callbacks: //Sets callbacks for subscription
         {
@@ -1869,12 +1870,12 @@ self.onInit = function() {
 
      self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             subscribeForPaginatedData(self.ctx.$scope.pageLink);
-            self.ctx.data = subscription.data; //Saving data into widget context
-            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
-            self.ctx.dataPages = subscription.dataPages; //Saving dataPages into widget context
-            self.ctx.datasourcePages = subscription.datasourcePages; //Saving datasourcePages into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
+            self.ctx.dataPages = subscription.dataPages; //Saves dataPages into widget context
+            self.ctx.datasourcePages = subscription.datasourcePages; //Saves datasourcePages into widget context
             ...
         }
      );
@@ -1900,7 +1901,7 @@ Let’s create a custom subscription to the alarms from **thermostat** type devi
 self.onInit = function() {
     ...
     const alarmSource = {
-        type: 'entity', //Sets that there is a subscription to entity data
+        type: 'entity', //Indicates that there is a subscription to entity data
         dataKeys: //Describes keys
         [
           {
@@ -1961,7 +1962,7 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
-            self.ctx.alarmsSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.alarmsSubscription = subscription; //Saves subscription information into widget context
             self.ctx.alarmsSubscription.subscribeForAlarms(alarmDataPageLink, null); //Get information by pageLink params
             ...
         }
@@ -1973,6 +1974,150 @@ self.onInit = function() {
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
 
 ![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
+
+##### Subscription with post-processing
+
+Custom subscription supports the ability to post-process incoming data. Next example will be based on [Subscription for attributes/telemetry](#subscription-for-attributestelemetry)
+
+Sometimes there is a need to provide the user with the ability to modify the incoming data. Imagine the following situation: a device sends weight telemetry in kilograms, but we also want to give the user the ability to convert this value. In this case, we could use the post-processing feature.
+
+First of all, we need to create a custom setting schema that will contain user's function that will convert weight telemetry. We will use a simple schema that contains JavaScript field:
+```
+{
+    "schema":{
+       "type": "object",
+       "properties": {
+           "weightPostProcessingFunction": {
+               "title": "Weight post-processing: f(time, value, prevValue, timePrev, prevOrigValue)",
+               "type": "string",
+               "default": "return value;"
+           }
+       }
+    },
+    "form": [
+       {
+           "key": "weightPostProcessingFunction",
+           "type": "javascript"
+       }
+   ]
+ }
+```
+![image](/images/user-guide/contribution/widgets/post-processing-function.png)
+
+Now let's create a custom subscription. For clarity, we will add two fields: one contains the original value and the second one contains the processed value:
+```javascript
+   const datasources = [
+        {
+            type: "entity", //Indicates that there is a subscription to entity data
+            dataKeys: //Describes keys
+            [
+                 {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Weight telemetry", //Key label
+                    name: "weight", //Key name
+                    settings: {},
+                    type: "timeseries" //Key type
+                },
+                {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Post processing weight", //Key label
+                    name: "weight", //Key name
+                    settings: {},
+                    usePostProcessing: true, //Enable post-processing
+                    postFuncBody: self.ctx.settings.postProcessingFunction, //Set post-processing function from widget settings
+                    type: "timeseries" //Key type
+                },
+                {
+                    decimals: 0,
+                    label: "Active",
+                    name: "active",
+                    settings: {},
+                    type: "attribute"
+                 }
+            ],
+            entityFilter: //Describes entities (See Entity Filters topic)
+            {
+                type: "entityType", //Entity filter type
+                entityType: "DEVICE" //Entity type
+            },
+            keyFilters: //Filtering entity by keys (See Key Filters topic)
+            [
+                {
+                    key: {
+                        key: "active", //Key name
+                        type: "ATTRIBUTE" //Key type
+                    },
+                    predicate: {
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
+                        type: "BOOLEAN", //Sorting value type
+                        value: {
+                            defaultValue: true //Sorting value
+                        }
+                    },
+                    valueType: "BOOLEAN" //Value type
+                }
+            ]
+        }
+    ];
+
+    const subscriptionOptions = {
+        type: 'latest', //Subscription type
+        datasources: datasources, //Describes what data you want to subscribe to
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+                self.onDataUpdated();
+            }
+        }
+   };
+
+    self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
+        (subscription) => {
+            self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
+            self.ctx.data = subscription.data; //Saves data into widget context
+            self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
+            ...
+        }
+    );
+```
+The subscription is ready now let's convert weight telemetry from kilograms into grams:
+![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
+![image](/images/user-guide/contribution/widgets/post-processing-subscription.png)
+
+As you can see, despite subscribing to the same key twice, the output shows different values because one of them was additionally transformed using the post-processing function.
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+## Troubleshooting
+
+### Empty web report
+Sometimes, while working with reports, you may encounter the following problem:
+Heavy widgets may not load in time before the web report begins to be generated. As a result, the report will be empty(because, at the time of creation, data is not present on the dashboard):
+![image](/images/user-guide/contribution/widgets/web-report-error.png)
+
+To resolve this problem report service contains a special feature that allows us to inform it that the widget was loaded.
+
+First of all, we need to inform the reporting service that we have a widget to wait for. We will do this via widget's ```self.onInit```:
+```javascript
+self.onInit = function () {
+   ...
+   if (self.ctx.reportService.reportView) {
+     self.ctx.$scope.widgetUuid = self.ctx.reportService.onWaitForWidget();
+   }
+};
+```
+
+Now, the report service will wait until widget sends information about its loading status or the waiting timeout will expires. We will inform the report service about the successful loading of widget inside ```self.onDataUpdated```:
+```javascript
+self.onDataUpdated = function () {
+    ...data is ready
+    if (self.ctx.reportService.reportView) {
+        self.ctx.reportService.onWidgetLoaded(self.ctx.$scope.widgetUuid);
+    }
+};
+```
+
+Service will start generating a report only when all widgets on a dashboard that are marked as ```onWaitForWidget()``` will send ```onWidgetLoaded(${widgetUuid})``` or when the timeout for widgets waiting will expire.
+{% endif %}
 
 ## Integrating existing code to create widget definition
 
@@ -2200,7 +2345,7 @@ Browser debugger (if enabled) will automatically pause code execution at the deb
 
 ## ThingsBoard extensions
 
-[ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) is our additional project that allows you to create your own angular components and use them in your widgets and actions.
+[ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions){:target="_blank"} is our additional project that allows you to create your own angular components and use them in your widgets and actions.
 We highly recommend using this feature for any complex logic in your solutions, because it provides you an opportunity to reuse your code, using all functionality of TypeScript, RXJS, Angular, etc.
 In this topic, we will cover how to connect your extensions in ThingsBoard 3.6 and higher using our UI.
 
@@ -2209,52 +2354,44 @@ In this topic, we will cover how to connect your extensions in ThingsBoard 3.6 a
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-First of all, you need a file with your compiled components. By default, it is called **thingsboard-extension-widgets.js**. All instructions on how to create it can be found inside the **README** file to [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions).
+First of all, you need a file with your compiled components. By default, it is called **thingsboard-extension-widgets.js**. All instructions on how to create it can be found inside the **README** file to [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions){:target="_blank"}.
 
-Once you have the file with your components, let's proceed to load them into ThingsBoard. 
+Once you have the file with your components, let's proceed to load them into ThingsBoard:
 
-Go to the "**Resources library**" page inside "**Resources**" section, and click the **add** button on right top corner of the window ("+" icon). 
-In the open popup, select **JS module** in **Resource type** selector, enter **Title** for your module, and import your compiled file:
-
-![image](/images/user-guide/contribution/widgets/add-js-module.png)
+- Go to the "**JavaScript library**" page inside "**Resources**" section;
+- Click the "**Add JavaScript resource**" button (the "plus" icon in the upper right corner of the window);
+- In the open popup, select "**Extension**" in the "**JavaScript type**" selector (or "**Module**" to paste a piece of code);
+- Enter title for your module;
+- Drag the file with your compiled components;
+- Click "Add".
 
 Congratulations, your components were added to the ThingsBoard!
 
-Now, let's use them in some widget. 
-
-Go to the "**Widgets library**" page inside "**Resources**" section. We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)).
-
-![image](/images/user-guide/contribution/widgets/add-static-widget.png)
+{% include images-gallery.html imageCollection="add-js-module" %}
 
 <br>
-First of all, go to the **Resources** tab and choose your extensions module.
+Now, let's use them in some widget. We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)):
 
-<div class="info-banner">
-  <img src="/images/doc-info-icon.svg" alt="Doc info icon" />   
-  <div>
-    <p><strong>Important!</strong> Don’t forget about the <strong>Is module</strong> checkbox!</p>
-  </div>
-</div>
+- Go to the "**Widgets library**" page of the "**Resources**" section;
+- Click the "**plus**" icon in the upper right corner of the window, and select the "**Create new widget**" option;
+- Select widget type - "**Static widget**";
+- Enter widget name;
+- Navigate to the "**Resources**" tab, and click "**Add**" button;
+- Check the "**Is extension**" box;
+- Choose your extension module from drop-don menu;
 
-![image](/images/user-guide/contribution/widgets/select-extensions-module-2.png)
+Your module is connected to your widget. Now, you can use your angular components:
 
-Your module is connected to your widget. Now, you can use your angular components. Let's add a custom component in the **HTML** tab. To apply the changes, click the Save button.
+- Go the "**HTML**" tab, and add the custom component;
+- Clean the default **self.onInit** function;
+- Click the "Run" button to preview how your widget will look;
+- To apply the changes, click the "Save" button.
 
-<div class="info-banner">
-  <img src="/images/doc-info-icon.svg" alt="Doc info icon" />   
-  <div>
-    <p><strong>Important!</strong> Don’t forget to clean the default <strong>self.onInit</strong> function!</p>
-  </div>
-</div>
+Now, your component is used inside your widget.
 
-![image](/images/user-guide/contribution/widgets/select-extensions-module-3.png)
+{% include images-gallery.html imageCollection="select-extensions-module" %}
 
-Now, your component is used inside your widget. 
-
-![image](/images/user-guide/contribution/widgets/select-extensions-module-4.png)
-
-<br>
-In general, [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) allows you to create any possible widgets in the scope of ThingsBoard platforms.
+In general, [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions){:target="_blank"} allows you to create any possible widgets in the scope of ThingsBoard platforms.
 
 Good luck with your future awesome solutions!
 

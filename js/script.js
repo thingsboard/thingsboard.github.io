@@ -72,6 +72,7 @@ var tb = (function () {
             case 'pricing':
             case 'partner-program':
 			case 'installations':
+			case 'choose-region':
             case 'partners':
 				bodyHeight = windowHeight;
 				break;
@@ -847,5 +848,204 @@ var tb = (function () {
 				});
 			}
 		});
+	}
+})();
+
+//carousel
+
+(function () {
+	jqueryDefer(Owl);
+
+	function Owl() {
+		if ($('.owl-carousel').length > 0) {
+			const scriptsList = [
+				{src: '/css/owl.carousel.min.css', type: 'css'},
+				{src: '/css/owl.theme.default.min.css', type: 'css'},
+				{src: '/js/owl.carousel.min.js', type: 'script'}
+			];
+			loadNextScript(0, scriptsList, function() {
+
+				$(document).ready(function() {
+
+					if ($('.owl-carousel').hasClass('timeline')) {
+
+						const timeline = document.querySelector('.timeline')
+
+						const timelineItems = document.querySelectorAll('.timeline-item')
+
+						const timelineTitle = document.querySelectorAll(".timeline-title");
+
+						let maxTitleHeight = 0;
+
+						function searchForTimelineAnimation() {
+
+							const searchedBlockObserver = new IntersectionObserver(entries => {
+								entries.forEach(entry => {
+									if (entry.isIntersecting) {
+										Array.from(timelineItems).slice().reverse().forEach((item, index) => {
+											const timelineText = item.querySelector('.timeline-text');
+											const listItems = timelineText.querySelectorAll('li');
+
+											setTimeout(() => {
+												item.classList.add('active')
+
+												listItems.forEach((li, index) => {
+													li.style.transitionDelay = `${index * 0.2}s`;
+												});
+											}, index * 300)
+										})
+										searchedBlockObserver.unobserve(entry.target);
+									}
+								})
+							}, {
+								threshold: 1
+							});
+
+							searchedBlockObserver.observe(timeline);
+						}
+
+						searchForTimelineAnimation ();
+
+						Array.from(timelineItems).slice().reverse().forEach((item, index) => {
+							const timelineText = item.querySelector('.timeline-text');
+							const listItems = timelineText.querySelectorAll('li');
+
+							item.querySelector('.timeline-label').addEventListener('click', () => {
+								item.classList.toggle('active')
+
+								if (item.classList.contains('active')) {
+									listItems.forEach((li, index) => {
+										li.style.transitionDelay = `${index * 0.2}s`;
+									});
+								} else {
+									listItems.forEach((li, index) => {
+										li.style.transitionDelay = `${(listItems.length - 1 - index) * 0.1}s`;
+									});
+								}
+							})
+						})
+
+						timelineTitle.forEach((element) => {
+							const elementHeight = element.offsetHeight;
+							if (elementHeight > maxTitleHeight) {
+								maxTitleHeight = elementHeight;
+							}
+						});
+
+						document.documentElement.style.setProperty('--maxTitleHeight', `${maxTitleHeight}px`);
+					}
+
+					function setupMarginPadding($carousel, property) {
+						return Number(getComputedStyle($carousel[0]).getPropertyValue(property));
+					}
+
+					function autoPlayStatus($carousel) {
+						return !$carousel[0].classList.contains("no-autoplay");
+					}
+
+					function autoWidthStatus($carousel) {
+						return $carousel[0].classList.contains("autoWidth");
+					}
+
+					function loopStatus($carousel) {
+						return $carousel[0].classList.contains("loopEnabled");
+					}
+
+					function initializeCarousel() {
+						$('.owl-carousel').each(function(index) {
+
+							const $carousel = $(this);
+							const carouselId = "owl-carousel-" + index;
+							$(this).attr("id", carouselId);
+
+							const settings = $(this).data('setting');
+							const itemsHigher0 = settings[0] || 1;
+							const itemsHigher600 = settings[600] || 1;
+							const itemsHigher960 = settings[960] || 1;
+							const defaultItems = settings['defaultItems'] || 1;
+
+							const navStatus = !$(this)[0].classList.contains("disableNav");
+
+							const isSmoothAutoplay = $carousel[0].classList.contains("smoothAutoPlay");
+							const isSmallScreen = $(window).width() < 600;
+
+							$('#' + carouselId).owlCarousel({
+								lazyLoad: true,
+								margin: setupMarginPadding($carousel, '--carousel-margin'),
+								stagePadding: setupMarginPadding($carousel, '--stagePadding'),
+								autoHeight: false,
+								autoWidth: autoWidthStatus($carousel),
+								loop: loopStatus($carousel),
+								autoplay: isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel),
+								autoplayTimeout: isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
+								autoplaySpeed: isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
+								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
+								slideTransition: 'linear',
+								nav: $carousel[0].classList.contains("timeline"),
+								responsiveBaseElement: 'body',
+								responsiveClass: true,
+								mouseDrag: !$carousel[0].classList.contains("timeline"),
+								startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
+								responsive: {
+									0: {
+										items: itemsHigher0
+									},
+									600: {
+										items: itemsHigher600
+									},
+									960: {
+										items: itemsHigher960
+									},
+									1025: {
+										nav: navStatus,
+										items: itemsHigher960
+									},
+									1280: {
+										nav: navStatus,
+										items: defaultItems
+									}
+								},
+								onInitialized: function(event) {
+									if ($carousel[0].classList.contains("smoothAutoPlay")) {
+										$(event.target).trigger('play.owl.autoplay');
+										setTimeout(function() {
+											$(event.target).trigger('stop.owl.autoplay');
+											$(event.target).trigger('play.owl.autoplay', [15000]);
+										}, 10);
+									}
+								}
+							});
+						});
+					}
+
+					initializeCarousel();
+
+					$(window).on('load', function() {
+						$('.owl-carousel').each(function() {
+							$(this).trigger('destroy.owl.carousel');
+						});
+						initializeCarousel();
+					});
+
+					let previousWidth = $(window).width();
+
+					$(window).resize(function() {
+						const currentWidth = $(window).width();
+						const widthDifference = Math.abs(currentWidth - previousWidth);
+
+						if (widthDifference > 1) {
+
+							$('.owl-carousel').each(function() {
+								$(this).trigger('destroy.owl.carousel');
+							});
+							initializeCarousel();
+
+							previousWidth = currentWidth;
+						}
+					});
+
+				});
+			});
+		}
 	}
 })();

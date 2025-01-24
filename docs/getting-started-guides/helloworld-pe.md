@@ -102,7 +102,7 @@ step33:
 step33_2:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-6-pe.png
-        title: 'You can open the time selection window and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
+        title: 'You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval. To do this, open the Time window and make the necessary adjustments. Update the time window settings by clicking the "Update" button.'
 
 step34:
     0:
@@ -163,7 +163,12 @@ step5:
     2:
         image: /images/helloworld/getting-started-pe/hello-world-5-create-alarm-3-pe.png
         title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'
-        
+
+notification-center:
+    0:
+        image: /images/helloworld/getting-started-pe/notification-center-getting-started-1-pe.png
+        title: 'The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.'
+
 step71:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-1-pe.png
@@ -329,4 +334,5 @@ mosquitto-windows:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/getting-started-guides/helloworld-pe.md %}

@@ -21,7 +21,7 @@ notitle: "true"
     <a href="/docs/getting-started-guides/what-is-thingsboard/" class="card com">
         <img src="/images/thingsboard-cm-icon.svg" alt="Community Edition">
         <h5 class="title">ThingsBoard Community Edition</h5>
-        <p>Open source platform</p>
+        <p>Open-source platform</p>
     </a>
     <a href="/products/thingsboard-edge/" class="card thingsboard-edge">
         <img src="/images/thingsboard-e-icon.svg" alt="Edge">
@@ -54,8 +54,8 @@ notitle: "true"
         <p>Advanced IoT mobile product</p>
     </a>
     <a href="/products/mqtt-broker/" class="card card-middle mqtt-broker">
-        <img src="/images/tbmq-icon.svg" alt="MQTT Broker">
+        <img src="/images/tbmq-icon.svg" alt="TBMQ">
         <h5 class="title">ThingsBoard MQTT Broker</h5>
-        <p>Connect MQTT clients</p>
+        <p>Scalable MQTT broker</p>
     </a>
 </div>

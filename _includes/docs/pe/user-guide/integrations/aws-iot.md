@@ -139,11 +139,7 @@ them in ThingsBoard. Click on the “plus” and on “Create new converter”. 
 In the function decoder field, specify a script, for it copy the example Uplink converter, or
 use own configuration to parse and transform data.
 
-{% capture noteDebug %}
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode
-can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.
-{% endcapture %}
-{% include templates/info-banner.md title="Note:" content=noteDebug %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 
@@ -233,7 +229,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-do
 {% include content-toggle.liquid content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
 Next, configure the conditions under which a message will be sent through the AWS IoT Downlink integration.
-To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
+To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
 
 {% include images-gallery.html imageCollection="downlink_2-3" %}
 

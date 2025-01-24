@@ -61,6 +61,9 @@
       },
       "Integration guide": {
         "href": "/docs/samples/raspberry/grove/"
+      },
+      "Connect reComputer R1000 to ThingsBoard": {
+        "href": "/docs/devices-library/recomputer-r1000/"
       }
     },
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
@@ -89,6 +92,9 @@
       },
       "Connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard": {
         "href": "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
+      },
+      "Thingsboard-Milesight LoRaWAN Gateways&Devices Integration: IoT Support": {
+        "href": "https://support.milesight-iot.com/support/solutions/articles/73000646805-thingsboard-milesight-lorawan-gateways-devices-integration"
       }
     },
     "blurb": "Milesight, a leading innovator in IoT technologies such as sensing, LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array of advanced products, like dependable gateways, indoor air quality sensors, occupancy trackers, water leak detectors, and more."
@@ -141,6 +147,22 @@
     "blurb": "Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications."
   },
   {
+    "type": ["main", "lora", "wifi", "lte"],
+    "program": "",
+    "name": "MOKO SMART",
+    "logo": "moko-smart-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.mokosmart.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/moko-smart/moko-smart-guide/"
+      }
+    },
+    "blurb": "MOKO Technology Ltd. is a leading manufacturer and provider of ODM, OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand, MOKO SMART, which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS, LTE, UWB, and other wireless technologies. This commitment to innovation and diverse wireless products drives MOKO’s vision of a connected future."
+  },
+  {
     "type": ["main", "bluetooth", "wifi", "nbiot"],
     "program": "",
     "name": "Nettra",
@@ -154,7 +176,7 @@
         "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
       }
     },
-    "blurb": "We provide comprehensive hardware and software IoT solutions"
+    "blurb": "We provide comprehensive hardware and software IoT solutions."
   },
   {
     "type": ["main", "wifi"],
@@ -269,6 +291,22 @@
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
   },
   {
+    "type": ["main", "lora", "bluetooth", "wifi"],
+    "program": "",
+    "name": "Netvox",
+    "logo": "netvox-logo.jpg",
+    "links": {
+      "Site": {
+        "href": "http://www.netvox.com.tw/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/netvox/netvox-guide/"
+      }
+    },
+    "blurb": "Netvox LoRaWAN products follow the standard LoRaWAN V1.0.2 specification and they will be compatible as long as the network server and gateway device also follow the protocol. We have developed over 400 LoRaWAN end devices to work with existing systems.\nThere are more than 200 items in our LoRaWAN magnetic-mounted R718 series that comes with an IP 65/67 housing, and most of them are battery powered with long battery life."
+  },
+  {
     "type": ["main", "nbiot", "lte"],
     "program": "",
     "name": "AKKR8",
@@ -378,7 +416,7 @@
     "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality"
   },
   {
-    "type": ["main", "bluetooth", "nbiot",  "wifi", "sigfox", "lora", "gsm", "modbus"],
+    "type": ["main", "bluetooth", "nbiot", "wifi", "sigfox", "lora", "gsm", "modbus"],
     "program": "",
     "name": "EXXN",
     "logo": "exxn.jpg",
@@ -408,5 +446,37 @@
       }
     },
     "blurb": "Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC."
+  },
+  {
+    "type": ["main", "nbiot", "lora", "lte"],
+    "program": "",
+    "name": "Yobiiq B.V.",
+    "logo": "Yobiiq_Logo_Primary.svg",
+    "links": {
+      "Site": {
+        "href": "https://yobiiq.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "https://docs.yobiiq.com/thingsboard/sd-1001-integration-guide#introduction"
+      }
+    },
+    "blurb": "The best way to predict the future is by creating it. As an IoT Solutions Company, we develop smart solutions daily, tailored to your business and objectives.\nWe pride ourselves on being a bit different, boosted by a healty dose of honest, straightforward communication without exaggeration. Manufacturing and creating devices that work, period is what we do at YOBIIQ."
+  },
+  {
+    "type": ["main", "gsm", "lte", "modbus", "wifi", "ethernet"],
+    "program": "",
+    "name": "YuDash",
+    "logo": "yudash_logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.yudash.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard"
+      }
+    },
+    "blurb": "YuDash is an Industrial IoT gateway manufacturer, offering flexible, user-friendly, and cost-effective products. Cloud connectivity through 4G/LTE, Ethernet and WiFi is available. Industrial protocols like Modbus-RS485, Modbus-TCP/IP, Analog and I2C are supported to IoT enable Industrial PLCs, Instruments and Sensors. YuDash products are used in Environment, Weather, Energy, Remote Asset Management and Industry 4.0 applications."
   }
 ]

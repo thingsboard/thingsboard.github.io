@@ -11,4 +11,5 @@ deviceImageFileName: esp32-pico-kit.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/esp32-pico-kit.md %}

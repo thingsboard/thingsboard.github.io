@@ -18,8 +18,8 @@ In this tutorial, we will use:
 {% if docsPrefix == "pe/" %}
  - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
   {% endif %}
-  {% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
+  {% if docsPrefix contains "paas/" %}
+ - ThingsBoard Professional Edition instance — [{{hostName}}](https://{{hostName}});
   {% endif %}
 
  - a [Sigfox](https://www.sigfox.com/) account;
@@ -35,12 +35,7 @@ You can сreate an uplink converter in the Data converters page or directly in t
 
 Go to the **Integration center** -> **Data converters** page and click "plus" button to create a new converter. Name it "**SigFox Uplink Converter**" and select type **Uplink**. To view the events, enable **debug mode**. In the function decoder field, specify a script to parse and transform data.
 
-{% capture difference %}
-**NOTE**
-<br>
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended to turn the Debug mode off after debugging is complete.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 Let’s review sample uplink message from SigFox device:
 ```json

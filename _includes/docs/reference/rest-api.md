@@ -4,13 +4,13 @@
 
 ## Interactive Documentation
 
-{% if docsPrefix == "paas/" or docsPrefix == "pe/"  %}
-ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse ThingsBoard Cloud API documentation using the **[Swagger UI link.](https://thingsboard.cloud/swagger-ui.html)**. 
+{% if docsPrefix contains "paas/" or docsPrefix == "pe/"  %}
+ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse ThingsBoard Cloud API documentation using the **[Swagger UI link](https://{{hostName}}/swagger-ui.html)**.
 {% else %}
-ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse Community Edition demo server API documentation using the **[Swagger UI link.](https://demo.thingsboard.io/swagger-ui.html)**.
+ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse Community Edition demo server API documentation using the **[Swagger UI link](https://demo.thingsboard.io/swagger-ui.html)**.
 {% endif %}
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 {% else %}
 Once you will install ThingsBoard server you can open an interactive documentation using the following URL:
     
@@ -25,9 +25,9 @@ You may use “Authorize” button in the top right corner of the documentation 
 
 {% include images-gallery.html imageCollection="swagger-ui" %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 
-The easiest way to get your account is to use [ThingsBoard Cloud](https://thingsboard.cloud/signup) server.
+The easiest way to get your account is to use [ThingsBoard Cloud](https://{{hostName}}/signup) server.
 
 {% else %}
 
@@ -41,7 +41,7 @@ ThingsBoard uses [JWT](https://jwt.io/) tokens for representing claims securely 
 When you login to the platform, your username and password is exchanged to the pair of tokens. 
 
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 The main token is short-lived token you should use to perform the API calls. The refresh token is used to get new main token once it is expired.
 Default expiration time values are 2.5 hours and 1 week respectively.
 

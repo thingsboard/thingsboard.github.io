@@ -32,6 +32,6 @@ return result;
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/udp/udp-uplink-converter-binary-tbel-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/udp/udp-uplink-converter-binary-tbel-paas.png)
 {% endif %}

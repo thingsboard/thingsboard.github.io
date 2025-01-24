@@ -18,10 +18,7 @@ Also, you must connect the device. How to connect it you can find in [connection
 
 Go to the "Integrations" page of the "Integrations center" section. Click "plus" button to start adding new integration. Select type "ChirpStack" integration and click "Next";
 
-{% capture kafka_please_note %}
-**Note:** While debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all debug data is stored there. After debugging is complete, it is highly recommended turning off debug mode.
-{% endcapture %}
-{% include templates/info-banner.md content=kafka_please_note %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 ![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-1-pe.png)
 

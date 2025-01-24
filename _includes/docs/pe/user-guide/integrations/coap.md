@@ -18,8 +18,8 @@ In this tutorial, we will show you how CoAP integration works as part of **tb-co
 {% if docsPrefix == "pe/" %}
 - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
 {% endif %}
-{% if docsPrefix == "paas/" %}
-- ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
+{% if docsPrefix contains "paas/" %}
+- ThingsBoard Professional Edition instance — [{{hostName}}](https://{{hostName}});
 {% endif %}
 
 - [coap-client](https://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) utility which is intended to simulate CoAP client that will connect to CoAP integration;
@@ -27,8 +27,8 @@ In this tutorial, we will show you how CoAP integration works as part of **tb-co
 {% if docsPrefix == "pe/" %}
 Let's assume that we have a sensor which is sending current temperature and humidity readings. Our sensor device **SN-001** publishes it's temperature and humidity readings to CoAP Integration on **coap://localhost** URL.
 {% endif %}
-{% if docsPrefix == "paas/" %}
-Let's assume that we have a sensor which is sending current temperature and humidity readings. Our sensor device **SN-001** publishes it's temperature and humidity readings to CoAP Integration on **coap://int.thingsboard.cloud** URL.
+{% if docsPrefix contains "paas/" %}
+Let's assume that we have a sensor which is sending current temperature and humidity readings. Our sensor device **SN-001** publishes it's temperature and humidity readings to CoAP Integration on **coap://int.{{hostName}}** URL.
 {% endif %}
 
 For demo purposes we assume that our device is smart enough to send data in 3 different payload types:
@@ -70,12 +70,7 @@ Before setting up an **CoAP integration**, you need to create an **Uplink Conver
 To create an **Uplink Converter** go to **Data Converters** section and Click **Add new data converter —> Create new converter**.
 Name it **"CoAP Uplink Converter"** and select type **Uplink**. Use debug mode for now.
 
-{% capture difference %}
-**NOTE**
-<br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 **Choose device payload type to for decoder configuration:**
 
@@ -122,7 +117,7 @@ CoAP Integration allows us to choose a security mode:
 
 ![image](/images/user-guide/integrations/coap/coap-integration-modes-1.png)
 
-{% if docsPrefix != "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 
 
 For the last 2 types, before creating integration, DTLS support should be enabled in the .yml configuration file or should be updated by overriding the next environment variables in the .conf file:
@@ -144,9 +139,9 @@ export COAP_DTLS_KEY_ALIAS=serveralias
 export TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
 ```
 
-Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/pe/user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
+Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/{{docsPrefix}}user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
 
-{% endif %}
+{% endunless %}
 
 In addition, CoAP integration will provide us automatically generated CoAP endpoint URL for data transmitting based on the Base URL path and next path prefixes:
 - **/i** - Integration resource in the CoAP server
@@ -183,7 +178,7 @@ Click on the device, go to the **Latest Telemetry** tab to see the “temperatur
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/coap/coap-integration-test-uplink-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/coap/coap-integration-test-uplink-paas.png)
 {% endif %}
 

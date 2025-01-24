@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Raspberry Pi GPIO control using Android Things and ThingsBoard
+title: Raspberry Pi GPIO control using Android Things and ThingsBoard (deprecated)
 description: ThingsBoard IoT Platform sample for Raspberry Pi GPIO control over MQTT running Android Things
 
 ---
@@ -14,7 +14,7 @@ description: ThingsBoard IoT Platform sample for Raspberry Pi GPIO control over 
 This sample application will allow you to control GPIO of your Raspberry Pi device using ThingsBoard RPC widgets. We will observe GPIO control using LEDs connected to the pins.
 The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
 
-Raspberry Pi will use simple [Android Things](https://developer.android.com/things/index.html) application that will connect to ThingsBoard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
+Raspberry Pi will use simple Android Things application that will connect to ThingsBoard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
 Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
 
 The video below demonstrates the final result of this tutorial.
@@ -42,7 +42,7 @@ The video below demonstrates the final result of this tutorial.
 ## Wiring schema
 
  Since our application will allow us to control the state of all available GPIO pins, we recommend attaching some LEDs to those pins for visibility.
- You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
+ You can use this [basic instruction](https://www.raspberrypi.com/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
  Below is sample wiring schema used in this tutorial.
 
  ![image](/images/samples/raspberry/gpio-android-things/raspberry-gpio-leds.png)
@@ -51,13 +51,13 @@ The video below demonstrates the final result of this tutorial.
 
 ### Flashing the Android Things image 
 
-First, you need to flash Android Things image to your Raspberry Pi board using this [**guide**](https://developer.android.com/things/hardware/raspberrypi.html#flashing_the_image).
+First, you need to flash Android Things image to your Raspberry Pi board using this guide.
 After finishing this guide make sure that your board has Internet access and accessible via adb tool. 
 
 ### Android Things development environment
 
 Before starting with application introduced in this tutorial you need to prepare development environment to work with Android Things applications.
-Follow instructions from the official [**guide**](https://developer.android.com/things/training/first-device/index.html) to build and deploy your first Android Things application.
+Follow instructions from the official guide to build and deploy your first Android Things application.
 
 ### Application source code
 
@@ -96,8 +96,8 @@ adb shell pm install -r "/data/local/tmp/org.thingsboard.sample.gpiocontrol"
 
 Or you can use other options to deploy the Android application: 
 
-- [Using Android Studio](https://developer.android.com/studio/run/index.html)
-- [Using Command Line](https://developer.android.com/studio/build/building-cmdline.html)
+- Using Android Studio
+- [Using Command Line](https://developer.android.com/build/building-cmdline.html)
  
 Finally you can start the application by issuing the following adb command:
 

@@ -7,20 +7,24 @@ toc:
   path: /docs/edge/getting-started-guides/what-is-edge/
 - title: Key concepts
   section:
+    - title: Edge
+      path: /docs/edge/config/management/
+    - title: Alarms
+      path: /docs/edge/user-guide/alarms/
     - title: OTA updates
       path: /docs/edge/user-guide/ota-updates/
-#- title: Configuration guides
-#  section:
-#    - title: Edges
-#      path: /docs/user-guide/ui/edges/
-#    - title: Edge Management Overview
-#      path: /docs/edge/config/management/
-#    - title: Create Device on edge and provision to cloud
-#      path: /docs/edge/config/create-device/
-#    - title: Provision Device from cloud to edge
-#      path: /docs/edge/config/provision-device/
-#    - title: Provision Asset from cloud to edge
-#      path: /docs/edge/config/provision-asset/
+    - title: Attributes
+      path: /docs/edge/user-guide/edge-attributes/
+- title: Dashboards
+  section:
+    - title: Overview
+      path: /docs/edge/user-guide/db-overview/
+- title: Configuration Guides
+  section:
+    - title: Device Management
+      path: /docs/edge/config/create-device/
+    - title: Asset Management
+      path: /docs/edge/config/provision-asset/
 #    - title: Provision Entity View from cloud to edge
 #      path: /docs/edge/config/provision-entity-view/
 #    - title: Provision Dashboard from cloud to edge
@@ -29,6 +33,10 @@ toc:
 #      path: /docs/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/edge/config/provision-customer/
+    - title: Bidirectional Attribute Subscription and Update with Post-Processing
+      path: /docs/edge/config/subscribe-to-attribute/
+    - title: Deploying Edge Alongside IoT Gateway
+      path: /docs/edge/config/deploying-edge-alongside-iot-gateway/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates
@@ -58,12 +66,6 @@ toc:
   section:
     - title: Edge over TLS/SSL 
       path: /docs/edge/user-guide/grpc-over-ssl/
-#- title: Features
-#  section:
-#    - title: Edge status
-#      path: /docs/edge/features/edge-status/
-#    - title: Cloud Events
-#      path: /docs/edge/features/cloud-events/
 - title: Use Cases
   section:
     - title: Overview

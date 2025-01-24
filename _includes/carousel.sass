@@ -1,0 +1,457 @@
+.owl-carousel.owl-theme.usecase-carousel
+  margin: 64px 0 24px
+  position: relative
+  visibility: hidden
+  display: block
+  min-height: 500px
+  max-height: 500px
+  &.owl-loaded
+    visibility: visible
+    min-height: unset
+    max-height: unset
+    .owl-stage-outer
+      .owl-stage
+        .owl-item
+          transition: unset
+  &.support-ukraine
+    img
+      max-height: 600px
+      margin: auto
+      width: auto
+  .carousel-item-default
+    a
+      position: relative
+      .arrow
+        font-size: 13px
+        transform: translate(0px)
+        transition-duration: 0.3s
+        box-shadow: none !important
+        width: 12px !important
+        margin-left: 12px
+        position: absolute
+        top: 7px
+        &.first
+          opacity: 0.2
+        &.second
+          opacity: 0.5
+      &:hover
+        transition-duration: 0.3s
+        .first
+          transform: translate(10px)
+        .second
+          transform: translate(20px)
+        .third
+          transform: translate(30px)
+    .carousel-text
+      display: flex
+      flex-direction: column
+    .carousel-image
+      position: relative
+      img
+        height: auto
+        width: 100%
+        border-radius: var(--imageBorderRadius)
+      .overlay
+        top: 0
+        position: absolute
+        opacity: 0
+        color: #fff
+        z-index: 1000
+        display: block
+        width: 100%
+        font-weight: 400
+        height: 100%
+        background: linear-gradient(0deg,rgba(37,38,40,0.8) 0%,rgba(37,38,40,0.6) 100%)
+        transition-duration: .3s
+        border-radius: var(--imageBorderRadius)
+        &:hover
+          opacity: 1
+          .eye
+            bottom: 14%
+        .eye
+          transition-duration: 0.3s
+          position: absolute
+          bottom: 0
+          left: 33%
+          display: flex
+          img, i
+            font-size: 24px
+            margin-right: 10px
+            width: unset !important
+      &:hover
+        .overlay
+          opacity: 1
+  .carousel-item
+    display: block
+    .carousel-text
+      width: 100%
+      margin: 0 auto
+      text-align: center
+  .carousel-item-flex-row
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    .carousel-text
+      width: 30%
+    .carousel-image
+      width: 66%
+    @media screen and (max-width: 1024px)
+      flex-direction: column
+      gap: 32px
+      .carousel-text
+        width: 100%
+      .carousel-image
+        width: 100%
+  .carousel-item-flex-column
+    display: flex
+    flex-direction: column-reverse
+    justify-content: space-between
+    align-items: flex-start
+    gap: 35px
+    .carousel-text
+      gap: 25px
+  .carousel-item-image-background
+    display: flex
+    align-items: center
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    .carousel-image
+      display: none
+    .carousel-text
+      padding: 30px
+      position: relative
+      max-width: 1430px
+      width: 100%
+      margin: 0 auto
+      height: auto
+      gap: 15px
+      z-index: 3
+      p
+        max-width: 935px
+        align-self: flex-end
+      a
+        align-self: flex-end
+    &:after
+      content: ""
+      z-index: 1
+      backdrop-filter: blur(4px)
+
+  .owl-nav
+    button.owl-prev, button.owl-next
+      position: absolute
+      filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
+      outline: none
+      background-color: transparent
+      width: 17px
+      height: 50px
+      top: calc(50% - 25px)
+      &:hover
+        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+      span
+        display: none
+    button.owl-prev
+      left: 0
+      transform: scale(-1, 1)
+    button.owl-next
+      right: 0
+  .owl-nav.disabled+.owl-dots
+    margin-top: 32px
+  .owl-dots
+    margin-top: 32px
+    button.owl-dot
+      outline: none
+      margin: 0 12px
+      &:hover, &.active
+        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+      span
+        margin: 8px 0
+        background: #E0E1E2
+        border-radius: 4px
+.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityTrue
+  .owl-stage-outer
+    overflow: visible
+.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityFalse
+  .owl-stage-outer
+    overflow: hidden
+.owl-carousel.owl-theme.usecase-carousel.circle
+  .owl-dots
+    button.owl-dot
+      width: 10px
+      height: 10px
+.owl-carousel.owl-theme.usecase-carousel.line
+  .owl-dots
+    button.owl-dot
+      span
+        width: 72px
+        height: 4px
+.owl-carousel.owl-theme.usecase-carousel.square
+  .owl-dots
+    button.owl-dot
+      &:hover, &.active
+        filter: unset
+        span
+          background: #305680
+      span
+        border-radius: 0
+        width: 12px
+        height: 12px
+
+.owl-carousel.owl-theme.usecase-carousel.dotButtonInCarouselContainerEnabled
+  .owl-dots
+    position: absolute
+    bottom: 5px
+    left: 50%
+    transform: translate(-50%, -50%)
+
+.owl-carousel.owl-theme.usecase-carousel.disableDots
+  .owl-dots
+    display: none
+
+@media screen and (max-width: 750px)
+  .owl-carousel.owl-theme.usecase-carousel.line
+      .owl-dots
+        button.owl-dot
+          span
+            width: 10px
+            height: 10px
+.owl-carousel.owl-theme.usecase-carousel.thingsboardStyledBackgroundEnabled
+  .carousel-item-default
+    position: relative
+    &:before
+      content: ""
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      background-image: url(/images/tbstyled-bg.svg)
+      background-repeat: no-repeat
+      z-index: 2
+      opacity: 0.3
+.owl-carousel.owl-theme.usecase-carousel.darkenedImageEnabled
+  .carousel-item-default
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      background-color: #3F474F99
+      z-index: 1
+.owl-carousel.owl-theme.usecase-carousel.transitionAnimationEnabled
+  .owl-stage-outer
+    position: relative
+    .owl-stage
+      .owl-item
+        filter: blur(8px)
+        transform: scale(0.9)
+        transition: filter 0.5s ease, transform 0.5s ease
+        .item-image
+          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+        &.active
+          filter: blur(0)
+          transform: scale(1)
+.owl-carousel.owl-theme.usecase-carousel.thinArrow
+  .owl-nav
+    button.owl-prev, button.owl-next
+      background-image: url(/images/slider-arrow.svg)
+.owl-carousel.owl-theme.usecase-carousel.fatArrow
+  .carousel-item-default
+    padding: 0 30px
+  .owl-nav
+    button.owl-prev, button.owl-next
+      filter: unset
+      width: 26px
+      height: 40px
+      background-image: url(/images/slider-forward.svg)
+.owl-carousel.owl-theme.usecase-carousel.smallArrow
+  .owl-nav
+    button.owl-prev, button.owl-next
+      filter: unset
+      width: 60px
+      height: 60px
+      border-radius: 100px
+      transition: ease-in-out 0.3s
+      &:before
+        content: "\f078"
+        font-family: "Font Awesome 5 Free"
+        position: absolute
+        top: 50%
+        left: 32px
+        transform: translate(-50%, -50%) rotate(-90deg)
+        font-weight: 900
+        font-size: 40px
+        color: #305680
+        transition: ease-in-out 0.3s
+      &:hover
+        background-color: #E6EAEF
+        &:before
+          content: "\f078"
+          color: #7093b9
+
+
+
+.owl-carousel.owl-theme.usecase-carousel.timeline
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    top: calc((var(--maxTitleHeight) * var(--title-hover-scale)) + 50px)
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 90%
+    height: 5px
+    background: #305680
+  .owl-stage-outer
+    .owl-stage
+      .owl-item
+        filter: blur(0)
+  .owl-nav
+    button.owl-prev, button.owl-next
+      margin: 0
+      transform: translateY(-50%)
+      top: calc((var(--maxTitleHeight) * var(--title-hover-scale)) + 50px)
+    button.owl-prev
+      transform: translateY(-50%) scale(-1, 1)
+    .disabled
+      display: none
+  .timeline-item
+    display: flex
+    flex-direction: column
+    gap: 16px
+    width: auto
+    .timeline-label
+      padding-top: 10px
+      display: flex
+      gap: 10px
+      flex-direction: column
+      text-align: center
+      cursor: pointer
+      &:hover
+        .timeline-title.titleHoverEnabled
+          text-shadow: 4px 4px 4px rgba(48, 86, 128, 0.15)
+          transform-origin: bottom
+          transform: scale(var(--title-hover-scale))
+      &:hover
+        .timeline-circle
+          background: #E6EAEF
+      .timeline-title
+        display: flex
+        justify-content: center
+        align-items: end
+        height: calc(var(--maxTitleHeight) * var(--title-hover-scale))
+        transition: ease-in-out 0.3s
+      .timeline-circle
+        display: inline-block
+        position: relative
+        left: 50%
+        transform: translateX(-50%)
+        width: 60px
+        height: 60px
+        border-radius: 100px
+        border: 2px solid #305680
+        background: #FFF
+        transition: ease-in-out 0.3s
+        .fas
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          transition: ease-in-out 0.4s
+
+    .timeline-text
+      align-self: center
+      li
+        list-style-type: disc
+        opacity: 0
+        transform: translateY(20px)
+        transition: opacity 0.5s ease, transform 0.5s ease
+  .timeline-item.active
+    .timeline-circle
+      background: #E6EAEF
+      .fas
+        transform: translate(-50%, -50%) rotate(180deg)
+    .timeline-text
+      li
+        opacity: 1
+        transform: translateY(0)
+    .timeline-label
+      .timeline-title.titleHoverEnabled
+        text-shadow: 4px 4px 4px rgba(48, 86, 128, 0.15)
+        transform: scale(var(--title-hover-scale))
+        transform-origin: bottom
+
+.not-found-message
+  display: block
+  font-size: 36px
+  text-align: center
+
+@media screen and (min-width: 1280px)
+  .owl-carousel.owl-theme.usecase-carousel
+    .carousel-text
+      h2
+        font-size: var(--titleSize)
+      p
+        font-size: var(--descriptionSize)
+      a
+        font-size: var(--linkSize)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSize)
+      .timeline-text
+        font-size: var(--descriptionSize)
+
+@media screen and (max-width: 1279px)
+  .owl-carousel.owl-theme.usecase-carousel
+    .carousel-text
+      h2
+        font-size: var(--titleSizeLower1280)
+      p
+        font-size: var(--descriptionSizeLower1280)
+      a
+        font-size: var(--linkSizeLower1280)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSizeLower1280)
+      .timeline-text
+        font-size: var(--descriptionSizeLower1280)
+
+@media screen and (max-width: 959px)
+  .owl-carousel.owl-theme.usecase-carousel
+    .carousel-text,.timeline-item
+      h2
+        font-size: var(--titleSizeLower960)
+      p
+        font-size: var(--descriptionSizeLower960)
+      a
+        font-size: var(--linkSizeLower960)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSizeLower960)
+      .timeline-text
+        font-size: var(--descriptionSizeLower960)
+  .owl-carousel.owl-theme.usecase-carousel.timeline
+    &:before
+      content: ""
+      width: 80%
+
+@media screen and (max-width: 599px)
+  .owl-carousel.owl-theme.usecase-carousel
+    .carousel-text,.timeline-item
+      h2
+        font-size: var(--titleSizeLower600)
+      p
+        font-size: var(--descriptionSizeLower600)
+      a
+        font-size: var(--linkSizeLower600)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSizeLower600)
+      .timeline-text
+        font-size: var(--descriptionSizeLower600)
+  .owl-carousel.owl-theme.usecase-carousel.timeline
+    &:before
+      content: ""
+      width: 70%

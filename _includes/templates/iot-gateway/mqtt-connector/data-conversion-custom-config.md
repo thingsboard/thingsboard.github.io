@@ -18,15 +18,18 @@ A custom converter is converter written for some device:
 
 Converter subsection in the configuration will look like:
 ```json
-      "converter": {
-        "type": "custom",
-        "extension": "CustomMqttUplinkConverter",
-        "extension-config": {
-            "temperatureBytes" : 2,
-            "humidityBytes" :  2,
-            "batteryLevelBytes" : 1
-        }
-      }
+"topicFilter": "custom/sensors/+",
+  "subscriptionQos": 1,
+  "converter": {
+    "type": "custom",
+    "extension": "CustomMqttUplinkConverter",
+    "cached": true,
+    "extensionConfig": {
+      "temperature": 2,
+      "humidity": 2,
+      "batteryLevel": 1
+    }
+  }
 ```
 
 ![image](/images/gateway/mqtt-connector/data-conversion-advanced-custom-1-ce.png)

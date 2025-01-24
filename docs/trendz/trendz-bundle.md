@@ -33,8 +33,8 @@ You can import Trendz bundle to the ThingsBoard via Trendz UI:
 
 * Open Trendz settings page as tenant administrator
 * Scroll to `Trendz Widget Bundle Management` section
-* Press `Upload bundle to ThingsBoard` button to add Trendz widget library to the ThingsBoard.
-* In case when ThingsBoard already contains `Trendz bundle` but it is not up-to-date - you should click on `Update bundle` button to apply latest changes.
+* Press `Upload bundle` button to add Trendz widget library to the ThingsBoard.
+* In case when ThingsBoard already contains `Trendz bundle` but it is not up-to-date, the `Upload bundle` button would apply the latest changes.
 
 #### ThingsBoard 3.3+ and Trendz 1.8+
 Starting from ThingsBoard 3.3 and Trendz 1.8 - Trendz widgets can be natively embedded into the ThingsBaord dashboard.
@@ -79,7 +79,7 @@ Import Native Trendz widgets bundle
 
 This bundle contains 3 widgets:
 * **Trendz View Static**- allow adding saved Trendz visualizations into ThingsBoard dashboards
-* **Trendz View - with filter alias**- similar to previous but also support dashboard aliases for resolving entities
+* **Trendz View Latest**- similar to previous but also support dashboard aliases for resolving entities
 * **Trendz Builder** - Trendz Visualization Builder for providing self-service interface to your end-users, 
 so they can create their own analysis using ThingsBoard dashboard. 
  

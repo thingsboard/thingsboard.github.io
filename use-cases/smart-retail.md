@@ -23,23 +23,7 @@ All the logic to raise the alarms is already pre-configured in the corresponding
 With this template you get interactive dashboards that allow you and your customers to 
 browse current and historical state of their supermarkets.  
 
-<div class="usecase-carousel owl-carousel owl-theme">
-    <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr1.png" alt="smart retail 1">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr2.png" alt="smart retail 2">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr3.png" alt="smart retail 3">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr4.png" alt="smart retail 4">
-    </div>
-    <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr5.png" alt="smart retail 5">
-    </div>
-</div>
+{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-retail' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartRetail_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
@@ -200,3 +184,4 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
     <a id="UseCases_SmartRetail_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
     <a id="UseCases_SmartRetail_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
 </div>
+

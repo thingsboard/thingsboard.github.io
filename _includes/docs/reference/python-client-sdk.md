@@ -46,7 +46,7 @@ client.disconnect()
 
 ### Connection using TLS
 
-TLS connection to localhost. {% if docsPrefix != 'paas/' %}See [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) for more information about client and ThingsBoard configuration.{% endif %}
+TLS connection to localhost. {% unless docsPrefix contains "paas/" %}See [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) for more information about client and ThingsBoard configuration.{% endunless %}
 To connect to ThingsBoard with MQTT over SSL, first, you should generate a certificate and have a code like the following one:
 
 ```python

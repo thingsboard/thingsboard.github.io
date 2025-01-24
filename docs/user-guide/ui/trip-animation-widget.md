@@ -38,7 +38,7 @@ create-dashboard-2:
         title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Click "Save" button in the upper right corner to save the dashboard;'
     5:
         image: /images/user-guide/ui/widgets/trip-animation-widget/adding-widget-9-ce.png
-        title: 'We will use data received at the last minute. Click "Edit timewindow", switch to "History" mode, and change the aggregation function to "None", because we don&#39;t need to estimate the possible data value for the next time period since we receive the data in real-time;'
+        title: 'We will use data received at the last minute. Click "Edit time window", switch to "History" mode, and change the aggregation function to "None", because we don&#39;t need to estimate the possible data value for the next time period since we receive the data in real-time;'
 
 create-dashboard-3:
     1:
@@ -212,4 +212,5 @@ advanced-settings-circle-settings-6:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/trip-animation-widget.md %}
