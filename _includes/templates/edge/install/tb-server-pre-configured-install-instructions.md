@@ -1,13 +1,6 @@
-<<<<<<< HEAD
+
 Once the **Edge** instance has been created, the installation instructions will be available for use. 
-Each **Edge** has preset configurations that contain important credentials, such as **Edge Secret**, **Edge Key**, etc.  
-=======
-The easiest way to install and connect the **Edge** to the Server is to follow the installation instructions provided by the **ThingsBoard Server**.
-For every **Edge Entity**,  the Server displays the instructions with **pre-populated field**s such as the Edge secret key, Edge routing key, Edge RPC host URI, and so on
-
->>>>>>> upstream/master
-Please follow the steps below to use these prepared instructions:
-
+Each **Edge** has preset configurations that contain important credentials, such as **Edge Secret**, **Edge Key**, etc.  To access these configurations:
 
 {% if docsPrefix == 'pe/edge/' %}
 
