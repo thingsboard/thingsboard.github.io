@@ -174,31 +174,23 @@
         margin-left: -20px
         margin-right: -20px
         width: calc(100% + 40px)
-        .cloud, .edge, .gateway
+        .gateway, .edge, .cloud
           padding: 0 2px
           width: 20%
           position: absolute
           z-index: -1
           top: 127px
         .coln
-          height: 1243px
+          height: 920px
           border-radius: 6px
         .gateway
-          right: 0
+          right: 40%
           .coln
             border: 2px solid #7A4DC3
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
             .head
               height: 106px
               background-color: #7A4DC3
-        .cloud
-          right: 40%
-          .coln
-            border: 2px solid #2A7DEC
-            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
-            .head
-              height: 106px
-              background-color: #2A7DEC
         .edge
           right: 20%
           .coln
@@ -207,6 +199,14 @@
             .head
               height: 106px
               background-color: #009688
+        .cloud
+          right: 0
+          .coln
+            border: 2px solid #2A7DEC
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+            .head
+              height: 106px
+              background-color: #2A7DEC
       table
         width: calc(100% + 40px)
         margin: 64px -20px 16px
@@ -219,13 +219,13 @@
             img
               filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
           &:nth-child(2n)
-            color: #2A7DEC
-            img
-              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
-          &:nth-child(4n)
             color: #7A4DC3
             img
               filter: invert(43%) sepia(48%) saturate(952%) hue-rotate(223deg) brightness(78%) contrast(96%)
+          &:nth-child(4n)
+            color: #2A7DEC
+            img
+              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
         border: none
         top: 40px
         thead
@@ -263,8 +263,67 @@
               font-size: 11px
               img
                 width: 32px
+    #products
+      width: 100%
+      padding-top: 100px
+      padding-bottom: 56px
+      @media (max-width: 768px)
+        padding-top: 60px
+        padding-bottom: 20px
+      product-title
+        color: white
+        text-align: center
+        margin-bottom: 72px
+      .product-list
+        display: flex
+        margin: unset
+        div
+          color: #212529
+          background-color: white
+          box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+          border-radius: 6px
+          padding: 40px
+          text-align: center
+          flex: 1
+          margin-bottom: 40px
+          p
+            margin: unset
+            h2, span.phrase-heading
+              font-size: 28px
+                font-weight: 600
+              h3
+                font-size: 16px
+                font-weight: unset
+                margin-top: 18px
+                line-height: 1.5
+              img
+                display: block
+                margin: 50px auto 50px auto
+                width: 80%
+              &.main
+                box-shadow: inset 0px -6px 0px #305680, 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+                margin: 0 30px
+                h2, span.phrase-heading
+                  font-size: 42px
+                  font-weight: 600
+                  line-height: 1.5
+                img
+                  margin: 60px auto
+              a
+                color: #2A7DEC
+                font-weight: 500
+          @media(max-width: 992px)
+            flex-direction: column
+            margin: 0 0 40px
+      a
+        color: #707275
+        font-weight: 500
+        margin-top: 56px
+        text-align: center
+        @media (max-width: 768px)
+          margin-top: 20px
 
-    #local-deployment, #data-filtering, #local-alarms, #batch-update, #minimal-requirements
+    #local-deployment, #data-filtering, #local-alarms, #batch-update, #minimal-requirements, #products
       .block
         justify-content: space-between
         display: flex
@@ -472,6 +531,10 @@
         h3
           font-size: 42px
           line-height: 63px
+        #backg-matrix
+          .gateway, .edge, .cloud
+            padding: 0 20px
+            width: 20%
         table
           thead
             font-size: 30px
