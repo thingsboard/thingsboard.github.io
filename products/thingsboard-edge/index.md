@@ -187,16 +187,16 @@ description: Comprehensive software solutions for edge computing, providing data
                 <tr>
                     <td></td>
                     <th>IoT<br>Gateway</th>
-                    <th>ThingsBoard<br>Edge</th>                    
+                    <th>ThingsBoard<br>Edge</th>
                     <th>ThingsBoard<br>Server</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>Standalone Mode</th>                    
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server or Edge <br>Required)</td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"><br>(Server Required)</td>
+                    <th>ThingsBoard Server Required</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td>N/A</td>
                 </tr>
                 <tr>
                     <th>Data Collection</th>
@@ -205,31 +205,31 @@ description: Comprehensive software solutions for edge computing, providing data
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Core Protocols Support</th>
+                    <th>Core Protocols Support<br>(MQTT, HTTP, CoAP, etc.)</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Peripheral Infrastructure Protocols Support</th>
+                    <th>Peripheral Infrastructure Protocols Support<br>(Modbus, BACNet, BLE, etc.)</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Data Processing and Analysis <img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <th>Data Processing and Analysis</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Real-Time and SCADA-like HMI Dashboards<img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <th>Real-Time and SCADA-like HMI Dashboards</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Alarms & Notifications<img src="/images/pe/help-black18.svg" alt="help"></th>
+                    <th>Alarms & Notifications</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
@@ -241,19 +241,13 @@ description: Comprehensive software solutions for edge computing, providing data
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Offline Data Processing and Storage<img src="/images/pe/help-black18.svg" alt="help"></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Data Collection Only)</td>
+                    <th>Offline Data Computing and Storage<br>(Remote Site Scenarios)</th>
+                    <td>Data Collection</td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
                     <th>Multi-Tenancy Support</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                </tr>
-                <tr>
-                    <th>Cluster Deployment</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
@@ -276,25 +270,22 @@ description: Comprehensive software solutions for edge computing, providing data
         <h3 class="product-title">Typical Usage Scenario</h3>
         <div class="product-list">
             <div>
-                <p>ThingsBoard</p>
                 <h2>IoT Gateway</h2>
                 <p>Collect and distribute data from LAN devices to Edge or Server</p>
-                <img src="/images/edge/edge-gw.png" alt="ThingsBoard Gateway block" width="280" height="280" loading="lazy">
+                <img src="/images/edge/edge-gw.png" alt="ThingsBoard Gateway block" width="306" height="318" loading="lazy">
                 <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">What is ThingsBoard IoT Gateway?</a>
             </div>
             <div class="main">
-                <p>ThingsBoard</p>
                 <h2>Edge</h2>
-				<p>Process and visualize data at the edge of the network</p>
-				<img src="/images/edge/edge.png" alt="ThingsBoard Edge block" width="320" height="320" loading="lazy">
-				<a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">What is ThingsBoard Edge?</a>
+                <p>Process and visualize data at the edge of the network</p>
+                <img src="/images/edge/edge.png" alt="ThingsBoard Edge block" width="357" height="371" loading="lazy">
+                <a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">What is ThingsBoard Edge?</a>
             </div>
             <div>
-				<p>ThingsBoard</p>
-				<h2>Server</h2>
-				<p>Scalable data computing with on-premises (server) or cloud deployments</p>
-				<img src="/images/edge/cloud.png" alt="ThingsBoard Cloud block" width="280" height="280" loading="lazy">
-				<a href="/docs/getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard Cloud?</a>
+                <h2>Server</h2>
+                <p>Scalable data computing with on-premises (server) or cloud deployments</p>
+                <img src="/images/edge/cloud.png" alt="ThingsBoard Cloud block" width="306" height="318" loading="lazy">
+                <a href="/docs/getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard Cloud?</a>
             </div>
         </div>
 	</div>
