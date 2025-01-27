@@ -17,7 +17,7 @@ With its small size, flexibility, low cost, and programmability, it provides str
 
 ## Integration with ThingsBoard Edge
 
-{% if page.docsPrefix contains "pe/" or page.docsPrefix contains "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 {% include /templates/device-library/ready-to-go-devices/pe-prerequisites-recomuterR11.md %}
 {% else %}
 {% include /templates/device-library/ready-to-go-devices/ce-prerequisites-recomuterR11.md %}
@@ -29,7 +29,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 {% assign modbusConnectorPE = '
     ===
-        image: /,
+        image: /images/devices-library/edge/recomputer-r1100/14-connector-pe.webp,
         title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
     ===
         image: /images/devices-library/edge/recomputer-r1000/6-add-connector-pe.webp,
@@ -42,7 +42,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 {% assign modbusConnectorCE = '
     ===
-        image: /,
+        image: /images/devices-library/edge/recomputer-r1100/10-connector.webp,
         title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
     ===
         image: /images/devices-library/edge/recomputer-r1000/6-add-connector.webp,
@@ -54,9 +54,9 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
 {% endif %}
 
 * Then, please insert the following configuration code. Then, click the **“Save”** button.
@@ -144,28 +144,28 @@ Start installation of the **IoT Gateway** on the **reComputer R1100**:
 
 {% assign downloadYMLPE = '
     ===
-        image: /,
+        image: /images/devices-library/edge/recomputer-r1100/15-gw-list-pe.webp,
         title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1100).
     ===
-        image: /images/devices-library/edge/recomputer-r1000/9-download-yml-pe.webp,
+        image: /images/devices-library/edge/recomputer-r1100/16-launch-command.webp,
         title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
 '
 %}
 
 {% assign downloadYMLCE = '
     ===
-        image: /,
+        image: /images/devices-library/edge/recomputer-r1100/11-gw-list.webp,
         title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1100).
     ===
-        image: /images/devices-library/edge/recomputer-r1000/9-download-yml.webp,
+        image: /images/devices-library/edge/recomputer-r1100/12-launch-command.webp,
         title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
 '
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
 {% endif %}
 
 * Then, open another tab in the terminal and initiate the **SSH** connection to the **reComputer R1100**:
@@ -220,7 +220,7 @@ The command must be executed in the same directory in which the docker-compose.y
 
 ## Visualize Incoming Data with the Dashboard
 
-![image](/){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1100** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
+![image](/images/devices-library/edge/recomputer-r1100/r1100-logo.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1100** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
 
 {% assign dashboardPE = '
     ===
@@ -261,8 +261,8 @@ The command must be executed in the same directory in which the docker-compose.y
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
 {% endif %}
 
