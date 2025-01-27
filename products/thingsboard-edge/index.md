@@ -271,19 +271,19 @@ description: Comprehensive software solutions for edge computing, providing data
         <div class="product-list">
             <div>
                 <h2>IoT Gateway</h2>
-                <p>Collect and distribute data from LAN devices to Edge or Server</p>
+                <p>The IoT Gateway collects, processes, and routes data from local area networks (LAN) to the Edge or Server. It acts as a critical bridge, facilitating seamless communication between IoT devices and larger network infrastructures.</p>
                 <img src="/images/edge/edge-gw.png" alt="ThingsBoard Gateway block" width="306" height="318" loading="lazy">
                 <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">What is ThingsBoard IoT Gateway?</a>
             </div>
             <div class="main">
                 <h2>Edge</h2>
-                <p>Process and visualize data at the edge of the network</p>
+                <p>ThingsBoard Edge processes and visualizes data directly at the network edge, offering immediate insights and reducing bandwidth demands by minimizing the volume of data transmitted to centralized servers.</p>
                 <img src="/images/edge/edge.png" alt="ThingsBoard Edge block" width="357" height="371" loading="lazy">
                 <a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">What is ThingsBoard Edge?</a>
             </div>
             <div>
                 <h2>Server</h2>
-                <p>Scalable data computing with on-premises (server) or cloud deployments</p>
+                <p>The ThingsBoard Server provides robust data processing and storage solutions, along with advanced analytics capabilities. It supports a wide range of deployments, from on-premises to cloud-based, ensuring flexibility and scalability for diverse enterprise needs.</p>
                 <img src="/images/edge/cloud.png" alt="ThingsBoard Cloud block" width="306" height="318" loading="lazy">
                 <a href="/docs/getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard Cloud?</a>
             </div>
@@ -303,8 +303,6 @@ description: Comprehensive software solutions for edge computing, providing data
                     <div>
                         <h4 class="title">ThingsBoard Edge</h4>
                         <p><b>Platform:</b> Compact server (e.g, Intel NUC, mini-PC, embedded PC)<br><b>CPU:</b> 2-core x86-64 processor<br><b>RAM:</b> 2 GB<br><b>Storage:</b> 20 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS) or Windows<br><b>Java VM:</b> JDK 8+ (JDK 17 preferred)</p>
-                        <h4 class="title">Performance Expectations</h4>
-                        <p> ThingsBoard Edge instance with the above configuration, can handle approximately 50 to 100 devices, assuming each device sends data at a low frequency (e.g., once per minute) </p>
                     </div>
                 </div>
             </div>
@@ -312,9 +310,7 @@ description: Comprehensive software solutions for edge computing, providing data
                 <div class="block">
                    <div> 
                        <h4 class="title">ThingsBoard IoT Gateway</h4>
-                        <p><b>Platform:</b> Low-spec server (e.g, Raspberry Pi, Intel NUC)<br><b>CPU:</b> Single-core x86-x64 processor<br><b>RAM:</b> 1 GB<br><b>Storage:</b> 10 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS)<br><b>Java VM:</b> JDK 8+ (JDK 17 preferred)</p>
-                        <h4 class="title">Performance Expectations</h4>
-                        <p> ThingsBoard IoT Gateway instance with the above configuration can handle approximately 20-50 devices sending data at a low frequency (e.g., once per minute)</p>
+                        <p><b>Platform:</b> Low-spec server (e.g, Raspberry Pi, Intel NUC)<br><b>CPU:</b> Single-core x86-x64 processor<br><b>RAM:</b> 1 GB<br><b>Storage:</b> 10 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS)<br></p>
                    </div>
                 </div>
             </div>
