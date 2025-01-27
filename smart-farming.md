@@ -454,7 +454,7 @@ notitle: "true"
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img loading="lazy" class="close" src="/images/close-icon.svg" alt="Close"/>
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">
@@ -467,20 +467,17 @@ notitle: "true"
             <span>Please fill out the form below and we will get back to you within 1-2 business days. 
             We are looking forward to hearing from you!</span>
         </div>
-        <!-- Id in the form below is dynamically changing for purposes of GTM -->
-        <form method="post"
-              onsubmit="return validateContactForm(this)"
-              class="gtm_form developmentServicesContactUsForm">
+        <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
             <div class="form-section">
                 <div class="form-element">
                     <label for="first-name">
-                        <input id="first-name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                        <input id="first-name" class="cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
                         <p>Name*</p>
                     </label>
                 </div>
                 <div class="form-element">
                     <label for="email">
-                        <input id="email" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                        <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
                         <p>Email Address*</p>
                     </label>
                 </div>
@@ -488,7 +485,7 @@ notitle: "true"
             <div class="form-section secondary">
                 <div class="form-element next">
                     <label for="subject" class="label-select">
-                        <select class="form-control cdu-form-control" name="subject">
+                        <select class="cdu-form-control" name="subject">
                             <option value="Custom Development" selected>Custom Development</option>
                             <option value="Technical Support">Technical Support</option>
                             <option value="ThingsBoard Products">ThingsBoard Products</option>
@@ -507,7 +504,7 @@ notitle: "true"
             <div class="form-section secondary">
                 <div class="form-element next">
                     <label for="msg">
-                        <textarea id="msg" class="form-control cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                        <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
                         <p>Your message*</p>
                     </label>
                 </div>
@@ -527,14 +524,13 @@ notitle: "true"
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    };
+    }
 
     var span = document.getElementsByClassName("close")[0];
 
     span.onclick = function() {
         modal.style.display = "none";
-    };
-
+    }
     function onContactUsClick(index) {
         handleGTMFormID(index);
         modal.style.display = "flex";
@@ -547,82 +543,24 @@ notitle: "true"
         }
     }
 
-    let cduHeader = document.querySelector(".cdu-services .header");
-
-    const headerObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("header-animation");
-                headerObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.5
+    document.querySelectorAll('.anchor-button').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            modal.style.display = "flex";
+        });
     });
-
-    headerObserver.observe(cduHeader);
-
-    const sectionLists = document.querySelectorAll(".section-list");
-
-    const sectionListObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("section-list-animation");
-                sectionListObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.2
-    });
-
-    sectionLists.forEach(sectionList => {
-        sectionListObserver.observe(sectionList)
-    });
-
-    const baseImages = document.querySelectorAll(".base-image");
-
-    const baseImagesObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("base-image-animation");
-                baseImagesObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.3
-    });
-
-    baseImages.forEach(element => {
-        baseImagesObserver.observe(element)
-    });
-
-    const secondaryImages = document.querySelectorAll(".secondary-image");
-
-    const secondaryImagesObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("secondary-image-animation");
-                secondaryImagesObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.2
-    });
-
-    secondaryImages.forEach(element => {
-        secondaryImagesObserver.observe(element)
-    });
-
-    jqueryDefer(Owl);
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();
         var email = $('input[name=email]', form).val();
+        var message = $('textarea[name=message]', form).val();
 
         if (!validateValue('Name', name)) {
             return false;
         }
         if (!validateValue('Email Address', email)) {
+            return false;
+        }
+        if (!validateValue('Message', message)) {
             return false;
         }
 
@@ -645,16 +583,18 @@ notitle: "true"
         return val === undefined || val === null || val.trim().length == 0;
     }
 
+    var contactform =  document.getElementById('contact-form');
+
+    contactform.setAttribute('action', 'https://formspree.io/f/xbjvbeln');
+
     jqueryDefer(
         function () {
-            var $contactForm =  jQuery('.developmentServicesContactUsForm');
-            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
                           }, 0);*/
-                 $contactForm.find('.form-element .form-control').addClass("input--empty");
-                 $contactForm.find('.form-element .form-control').on('input', function() {
+                 $('#contact-form .form-element .form-control').addClass("input--empty");
+                 $('#contact-form .form-element .form-control').on('input', function() {
                       if( !$(this).val() ) {
                          $(this).addClass("input--empty");
                       } else {
@@ -668,27 +608,14 @@ notitle: "true"
                  };
                  var subjectValue = $.urlParam('subject');
                  if (subjectValue != undefined && subjectValue.trim().length > 0) {
-                    $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
-                    $contactForm.find('select[name=subject]').removeClass("input--empty");
+                    $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
+                    $('#contact-form select[name=subject]').removeClass("input--empty");
                  }
             });
-            waitForForm();
         }
     );
-
-    function waitForForm() {
-        let $form = jQuery('.developmentServicesContactUsForm');
-        if ($form.length) {
-            $form
-                .attr('id', 'Serv_DevServ_ContactUs1Form')
-                .addClass('gtm_form');
-        } else {
-            setTimeout(function(){
-                waitForForm();
-            }, 150);
-        }
-    }
 </script>
+
 <script type="text/javascript">
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
