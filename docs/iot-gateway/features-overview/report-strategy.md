@@ -151,6 +151,7 @@ Here are some examples demonstrating how to configure the **Report Strategy** at
       }
     }
     ```
+    **Note**: In case of using UI, you can set the report strategy in the **general tab** of connector configuration.
 
 - **Result**:
   - Data from the Modbus connector is reported every 60 seconds.
@@ -172,10 +173,10 @@ Here are some examples demonstrating how to configure the **Report Strategy** at
     }
     ```
 
-  - **MQTT Connector Device Configuration** (in `dataMapping`):
+  - **MQTT Connector Device Configuration** (in `mapping`):
     ```json
     {
-      "dataMapping": [
+      "mapping": [
         {
           "topicFilter": "...",
           "deviceInfo": "...",
@@ -216,9 +217,9 @@ Here are some examples demonstrating how to configure the **Report Strategy** at
             "timeseries": [
               {
                 "tag": "valveState",
-                "type": "long",
+                "type": "uint16",
                 "functionCode": 4,
-                "registerCount": 1,
+                "objectsCount": 1,
                 "address": 3,
                 "reportStrategy": {
                   "type": "ON_CHANGE"
