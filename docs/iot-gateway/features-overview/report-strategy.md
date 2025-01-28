@@ -278,7 +278,7 @@ Here are some examples demonstrating how to configure the **Report Strategy** at
   - **MQTT Connector Device Configuration**:
     ```json
     {
-      "dataMapping": [
+      "mapping": [
         {
           "topicFilter": "...",
           "deviceInfo": "...",
