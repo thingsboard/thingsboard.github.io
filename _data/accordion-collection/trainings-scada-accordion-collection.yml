@@ -1,0 +1,36 @@
+0:
+  title: "Basics and interface operation"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Introduction to SCADA user interface capabilities."
+    1:
+      textContent: "Creating a basic dashboard: using existing symbols and their configurations."
+    2:
+      textContent: "Overview of layout settings: grid, toolbar, and scaling options."
+    3:
+      textContent: "Customizing the user interface for various operational scenarios."
+    4:
+      textContent: "Q&A (questions and answers)."
+1:
+  title: "Advanced use, SVG integration, behaviors, and properties"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Working with the library of existing symbols: searching, configuring, and adding."
+    1:
+      textContent: "Creating a new SCADA symbol: adding it to the library and integrating it into the dashboard."
+    2:
+      textContent: "Working with SVG tags: principles of data binding and display configuration."
+    3:
+      textContent: "Utilizing dynamic tags for interactive dashboards."
+    4:
+      textContent: "Defining behaviors for elements: triggers, animations, and event reactions."
+    5:
+      textContent: "Configuring properties: static and dynamic parameters."
+    6:
+      textContent: "Q&A (questions and answers)."

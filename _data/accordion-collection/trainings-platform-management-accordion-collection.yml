@@ -1,0 +1,68 @@
+0:
+  title: "Rule engine"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Rule engine data flow."
+    1:
+      textContent: "What is a rule node and how it can be used in rule chains."
+    2:
+      textContent: "How profiles may affect data flow to rule chains."
+    3:
+      textContent: "How to build efficient and proper data flow logic for any business use case."
+    4:
+      textContent: "Q&A (questions and answers)."
+1:
+  title: "Alarm events and notifications"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Alarm events: what are they and ways to manage them."
+    1:
+      textContent: "Visualization of alarm events"
+    2:
+      textContent: "Alarm notifications: how users can be notified and when."
+    3:
+      textContent: "Notification center."
+    4:
+      textContent: "Q&A (questions and answers)."
+2:
+  title: "ThingsBoard professional edition security model"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Overview of Security Challenges we address."
+    1:
+      textContent: "Possibilities and restrictions for different user types."
+    2:
+      textContent: "Roles and user permissions."
+    3:
+      textContent: "Customer Hierarchy and ways to manage it."
+    4:
+      textContent: "Use cases and hands-on sessions."
+    5:
+      textContent: "Q&A (questions and answers)."
+3:
+  title: "Platform API"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "REST API overview and ways to work with it."
+    1:
+      textContent: "Swagger UI: what useful information it has."
+    2:
+      textContent: "How ThingsBoard authenticates and authorizes incoming API requests."
+    3:
+      textContent: "RPC commands and available possibilities."
+    4:
+      textContent: "WebSocket connection: how to subscribe to data feed."
+    5:
+      textContent: "Q&A (questions and answers)."

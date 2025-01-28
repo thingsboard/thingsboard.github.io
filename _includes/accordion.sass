@@ -2,9 +2,10 @@
   display: flex
   flex-direction: column
   .accordion-item
-    cursor: pointer
     padding: 57.5px 32px
     border-bottom: 1.5px solid #3E9AF81F
+    .accordion-toggle
+      cursor: pointer
     .accordion-preview
       display: flex
       align-items: center
@@ -29,17 +30,50 @@
       .accordion-chevron
         transition: ease-in-out 0.3s
     .accordion-content
-      max-height: 0
-      overflow: hidden
-      transition: max-height 0.3s ease-out
+      display: grid
+      grid-template-rows: 0fr
+      transition: ease-in-out 0.3s
+      opacity: 0
       ul
-        margin-top: 30px !important
-        padding-left: 0 !important
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        gap: 16px
+        margin-top: 30px
+        padding-left: 0
         li
           display: flex
           align-items: center
           gap: 16px
           list-style: none
-  .opened
-    .accordion-chevron
-      transform: rotate(180deg)
+          p
+            color: #0000008A
+    .accordion-toggle.opened
+      .accordion-chevron
+        transform: rotate(180deg)
+    .accordion-content.opened
+      opacity: 1
+      grid-template-rows: 1fr
+@media screen and (max-width: 1279px)
+  .accordion-collection
+    .accordion-item
+      .accordion-preview
+        .accordion-title
+          max-width: 600px
+@media screen and (max-width: 959px)
+  .accordion-collection
+    .accordion-item
+      .accordion-preview
+        .accordion-title
+          max-width: 280px
+@media screen and (max-width: 599px)
+  .accordion-collection
+    .accordion-item
+      .accordion-preview
+        gap: 25px
+        align-items: flex-start
+        flex-direction: column
+        .accordion-additional
+          width: 100%
+          justify-content: space-between
+

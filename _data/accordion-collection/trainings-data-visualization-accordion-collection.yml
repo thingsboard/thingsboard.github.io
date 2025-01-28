@@ -1,5 +1,5 @@
 0:
-  title: "ThingsBoard Data Modeling and Visualization (sessions 1)"
+  title: "ThingsBoard data modeling and visualization (sessions 1)"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock"
   allTextContentIcon: "fas fa-check"
@@ -19,7 +19,7 @@
     6:
       textContent: "Q&A (questions and answers)."
 1:
-  title: "ThingsBoard Data Modeling and Visualization (sessions 2)"
+  title: "ThingsBoard data modeling and visualization (sessions 2)"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock"
   allTextContentIcon: "fas fa-check"
@@ -35,7 +35,7 @@
     4:
       textContent: "Load Balancing, Scalability, and Failover."
 2:
-  title: "ThingsBoard Custom Widget Development (sessions 1)"
+  title: "ThingsBoard custom widget development (sessions 1)"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock"
   allTextContentIcon: "fas fa-check"
@@ -51,7 +51,7 @@
     4:
       textContent: "Q&A (questions and answers)."
 3:
-  title: "ThingsBoard Custom Widget Development (sessions 2)"
+  title: "ThingsBoard custom widget development (sessions 2)"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock"
   allTextContentIcon: "fas fa-check"

@@ -1,0 +1,16 @@
+0:
+  title: "ThingsBoard administration"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Single-node platform installation."
+    1:
+      textContent: "ThingsBoard configuration."
+    2:
+      textContent: "ThingsBoard troubleshooting."
+    3:
+      textContent: "ThingsBoard cluster installation."
+    4:
+      textContent: "Load Balancing, Scalability, and Failover."

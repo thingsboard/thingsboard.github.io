@@ -30,7 +30,21 @@
 {% assign descriptionWeight = include.descriptionWeight | default: "400" %}
 {% assign titleLineHeight = include.titleLineHeight | default: "54px" %}
 {% assign descriptionLineHeight = include.descriptionLineHeight | default: "27px" %}
+{% assign linkSize = include.linkSize | default: "18px"  %}
+{% assign linkSizeLower1280 = include.linkSizeLower1280 | default: linkSize %}
+{% assign linkSizeLower960 = include.linkSizeLower960 | default: linkSizeLower1280 %}
+{% assign linkSizeLower600 = include.linkSizeLower600 | default: linkSizeLower960 %}
+{% assign descriptionSize = include.descriptionSize | default: "18px" %}
+{% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
+{% assign linkColor = include.linkColor | default: "#2a7dec" %}
+{% assign linkWeight = include.linkWeight | default: "500" %}
 {% assign imageBorderRadius = include.imageBorderRadius | default: "6px" %}
+
+{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
+
+{% if nonActiveItemsVisibility == false %}
+    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
+{% endif %}
 
 {% if site.data.carousel-collection[collectionMap] %}
     {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
@@ -91,7 +105,7 @@
     {% assign titleHoverScaleClass = "titleHoverEnabled" %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme hidden-carousel timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --stagePadding: {{ stagePadding }}; --title-hover-scale: {{ titleHoverScale }}" data-itemsHigher0 = "{{ itemsHigher0 }}" data-itemsHigher600 = "{{ itemsHigher600 }}" data-itemsHigher960 = "{{ itemsHigher960 }}">
+<div class="usecase-carousel owl-carousel owl-theme hidden-carousel timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --stagePadding: {{ stagePadding }}; --title-hover-scale: {{ titleHoverScale }}">
     {% for key in carouselCollection %}
         <div class="timeline-item" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
             <div class="timeline-label">
@@ -111,23 +125,34 @@
 
 {% elsif cardMode %}
 
-    <div class="usecase-carousel owl-carousel owl-theme hidden-carousel timeline {{ navMode }} {{ dotButtonMode }} {{ autoplayClass }} {{ smoothAutoPlay }} {{ loopClass }} {{ transitionAnimationClass }}" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}' style="--carousel-margin: {{ carouselMargin }}; --stagePadding: {{ stagePadding }}; --title-hover-scale: {{ titleHoverScale }}" data-itemsHigher0 = "{{ itemsHigher0 }}" data-itemsHigher600 = "{{ itemsHigher600 }}" data-itemsHigher960 = "{{ itemsHigher960 }}">
-        {% for key in carouselCollection %}
-            <div class="timeline-item" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
-                <div class="timeline-label">
-                    <span class="timeline-title {{ titleHoverScaleClass }}" style="color:{{ titleColor }}; line-height: {{titleLineHeight}}; font-weight: {{ titleWeight }}; --title-hover-scale: {{ titleHoverScale }}">{{ key[0] }}</span>
-                    <span class="timeline-circle">
-                    <i class="fas fa-chevron-down fa-lg" style="color: #305680"></i>
-                </span>
-                </div>
-                <ul class="timeline-text">
-                    {% for data in key[1] %}
-                        <li style="color:{{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ data[1] }}</li>
-                    {% endfor %}
-                </ul>
+<div class="usecase-carousel owl-carousel owl-theme hidden-carousel cardMode {{ navMode }} {{ dotButtonMode }} {{ loopClass }} {{ transitionAnimationClass }}" style="--carousel-margin: {{ carouselMargin }}; --stagePadding: {{ stagePadding }};" data-setting='{"0": {{ itemsHigher0 }}, "600": {{ itemsHigher600 }}, "960": {{ itemsHigher960 }}, "defaultItems": {{ items }}}'>
+    {% for carouselItem in carouselCollection %}
+        <div class="card" id="{{ carouselItem[1].id }}" style="height: {{ carouselItem[1].height }}">
+            <div class="card-header">
+                {% if carouselItem[1].crisp %}
+                    <ul>
+                        {% for crisp in carouselItem[1].crisp %}
+                            <li>
+                                {% if crisp[1].faIcon %}
+                                    <i class="{{ crisp[1].faIcon }}" style="color: #2A7DEC"></i>
+                                {% elsif crisp[1].src %}
+                                    <img src="{{ crisp[1].src }}" alt="Crisp icon">
+                                {% endif %}
+                                <span>{{ crisp[1].text }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <h2 style="font-size:{{ titleSize }}; color: {{ titleColor }}; line-height: {{ titleLineHeight }}; font-weight: {{ titleWeight }};">{{ carouselItem[1].title }}</h2>
             </div>
-        {% endfor %}
-    </div>
+            <p style="font-size:{{ descriptionSize }}; color: {{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ carouselItem[1].description }}</p>
+            <div id="{{ carouselItem[1].linkId }}" class="card-link">
+                <a href="{{ carouselItem[1].href }}" style="color: {{linkColor}}; line-height: {{linkLineHeight}}; font-weight: {{ linkWeight }}">{{ carouselItem[1].linkLabel }}</a>
+                <i class="fas fa-arrow-down" style="color: {{linkColor}}"></i>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% else %}
 
@@ -137,23 +162,9 @@
 {% assign overlay = include.overlay | default: false %}
 {% assign enableLinkArrow = include.enableLinkArrow %}
 {% assign contentDirection = include.contentDirection %}
-{% assign linkSize = include.linkSize | default: "18px"  %}
-{% assign linkSizeLower1280 = include.linkSizeLower1280 | default: linkSize %}
-{% assign linkSizeLower960 = include.linkSizeLower960 | default: linkSizeLower1280 %}
-{% assign linkSizeLower600 = include.linkSizeLower600 | default: linkSizeLower960 %}
-{% assign descriptionSize = include.descriptionSize | default: "18px" %}
-{% assign linkLineHeight = include.linkLineHeight | default: "24px" %}
-{% assign linkColor = include.linkColor | default: "#2a7dec" %}
-{% assign linkWeight = include.linkWeight | default: "500" %}
 
 {% if collectionKey %}
     {% assign carouselCollection = carouselCollection[collectionKey] %}
-{% endif %}
-
-{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
-
-{% if nonActiveItemsVisibility == false %}
-    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
 {% endif %}
 
 {% assign darkenedImageClass = "darkenedImageDisabled" %}

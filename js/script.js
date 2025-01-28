@@ -958,6 +958,8 @@ var tb = (function () {
 							const carouselId = "owl-carousel-" + index;
 							$(this).attr("id", carouselId);
 
+							const carouselContentToggle = $(`.owl-carousel-toggle-content#${carouselId}`)
+
 							const settings = $(this).data('setting');
 							const itemsHigher0 = settings[0] || 1;
 							const itemsHigher600 = settings[600] || 1;
@@ -971,15 +973,16 @@ var tb = (function () {
 
 							$('#' + carouselId).owlCarousel({
 								lazyLoad: true,
+								center: $carousel[0].classList.contains("cardMode"),
 								margin: setupMarginPadding($carousel, '--carousel-margin'),
 								stagePadding: setupMarginPadding($carousel, '--stagePadding'),
 								autoHeight: false,
 								autoWidth: autoWidthStatus($carousel),
 								loop: loopStatus($carousel),
-								autoplay: isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel),
-								autoplayTimeout: isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
-								autoplaySpeed: isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
-								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
+								autoplay: !$carousel[0].classList.contains("cardMode") && (isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel)),
+								autoplayTimeout: $carousel[0].classList.contains("cardMode") ? 0 : (isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000),
+								autoplaySpeed: $carousel[0].classList.contains("cardMode") ? false : (isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false),
+								autoplayHoverPause: !$carousel[0].classList.contains("cardMode") && !$carousel[0].classList.contains("smoothAutoPlay"),
 								slideTransition: 'linear',
 								nav: $carousel[0].classList.contains("timeline"),
 								responsiveBaseElement: 'body',
@@ -988,15 +991,20 @@ var tb = (function () {
 								startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
 								responsive: {
 									0: {
+										stagePadding: $carousel[0].classList.contains("cardMode") ? 0 : setupMarginPadding($carousel, '--stagePadding'),
 										items: itemsHigher0
 									},
 									600: {
+										stagePadding: $carousel[0].classList.contains("cardMode") ? 50 : setupMarginPadding($carousel, '--stagePadding'),
 										items: itemsHigher600
 									},
 									960: {
+										nav: $carousel[0].classList.contains("cardMode") ? true : false,
+										stagePadding: $carousel[0].classList.contains("cardMode") ? 125 : setupMarginPadding($carousel, '--stagePadding'),
 										items: itemsHigher960
 									},
 									1025: {
+										stagePadding: $carousel[0].classList.contains("cardMode") ? 125 : setupMarginPadding($carousel, '--stagePadding'),
 										nav: navStatus,
 										items: itemsHigher960
 									},
@@ -1012,6 +1020,48 @@ var tb = (function () {
 											$(event.target).trigger('stop.owl.autoplay');
 											$(event.target).trigger('play.owl.autoplay', [15000]);
 										}, 10);
+									}
+									if ($carousel[0].classList.contains("cardMode")) {
+										$carousel.find('.owl-item').on('click', function () {
+											const itemsVisible = $carousel.find('.owl-item.active').length;
+											if (itemsVisible > 1 && !$(this).hasClass('center')) {
+												const index = $(this).index();
+												$carousel.trigger('to.owl.carousel', [index + 1, 300]);
+											}
+										});
+										const cardLink = $carousel.find('.card-link');
+										cardLink.on('click', function(event) {
+											event.preventDefault();
+											const targetId = $(this).attr('id');
+											const target = carouselContentToggle.find(`#${targetId}`)
+											if(target) {
+												const elementTop = target.offset().top;
+												const windowHeight = $(window).height();
+												$('html, body').animate(
+													{
+														scrollTop: elementTop - windowHeight / 2 + target.outerHeight() / 2,
+													},
+													200
+												);
+											}
+										})
+									}
+								},
+								onChanged: function(event) {
+									if (carouselContentToggle) {
+										setTimeout(() => {
+											const currentItem = $carousel.find('.owl-item.active.center');
+											const currentItemContent = currentItem.children().first();
+											const currentItemContentId = currentItemContent.attr('id')
+
+											carouselContentToggle.children().each(function() {
+												if($(this).is(`#${currentItemContentId}`)) {
+													$(this).addClass("current-content");
+												} else {
+													$(this).removeClass("current-content")
+												}
+											})
+										}, 50)
 									}
 								}
 							});
@@ -1052,17 +1102,13 @@ var tb = (function () {
 
 //new-accordion
 (function () {
-	$(document).ready(function(){
-		$('.accordion-item').on('click', function() {
-			const content = $(this).find('.accordion-content');
-			if ($(this).hasClass('opened')) {
-				content.css('max-height', 0);
-			} else {
-				const contentHeight = content.get(0).scrollHeight;
-				content.css('max-height', contentHeight);
-			}
+	$(document).ready(function () {
+		$('.accordion-toggle').on('click', function () {
+			const targetId = $(this).attr('id');
+			const $content = $(`.accordion-content#${targetId}`);
 
 			$(this).toggleClass('opened');
-		})
+			$content.toggleClass('opened');
+		});
 	});
 })();

@@ -163,17 +163,29 @@
           background-color: #4F97F8
       p
         color: #899AAB
+#trainings
+  .owl-stage
+    padding: 30px 0
   .trainings
+    .trainings-wrapper
+      padding: 0 32px
+      max-width: 1460px
+      margin: 0 auto
     .trainings-h1
       font-size: 48px
       font-weight: 600
       line-height: 60px
     .trainings-h3
+      font-size: 48px
+      font-weight: 600
+      line-height: 60px
+    .trainings-h4
       color: #212529
       font-size: 32px
       font-weight: 500
       line-height: normal
     .contact-us-button
+      width: fit-content
       display: inline-block
       font-size: 18px
       font-weight: 500
@@ -181,33 +193,102 @@
       border-radius: 6px
       background: #2A7DEC
       color: #FFF
+      opacity: 1
+      transition: ease-in-out 0.2s
+      &:hover
+        opacity: 0.7
+        text-decoration: none
+    .contact-us-button-hidden
+      display: none
     .trainings-contact
       display: flex
       justify-content: space-between
+      gap: 32px
+      margin-top: 77px
       .contact
         display: flex
         flex-direction: column
         gap: 32px
+        .contact-label
+          display: flex
+          flex-direction: column
+          gap: 12px
+        h4
+          max-width: 385px
+          width: 100%
+        a
+          white-space: nowrap
         p
+          font-size: 18px
           color: #0909098a
+          font-weight: 500
       .contact-text
         max-width: 928px
         font-size: 16px
         line-height: 32px
         letter-spacing: 0.15px
     .trainings-hero
-      max-width: 1396px
-      margin: 0 auto
+      padding-top: 100px
+      padding-bottom: 100px
+      .trainings-hero-top
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 50px
+        &:before
+          content: ""
+          z-index: -1
+          position: absolute
+          width: 20%
+          height: 90%
+          transform: translateX(-50%)
+          left: 50%
+          top: 50px
+          border-radius: 675.253px
+          background: conic-gradient(from 180deg at 50% 50%, rgba(21, 114, 255, 0.24) 0deg, rgba(64, 145, 255, 0.24) 360deg)
+          filter: blur(155.00009155273438px)
+        img
+          width: 100%
+          height: auto
+        .trainings-hero-top-images
+          position: relative
+          .trainings-hero-image
+            transform: translateY(-2%)
+            animation-name: fadeoutCenter
+            animation-duration: 750ms
+            animation-timing-function: cubic-bezier(0.07, 0.43, 0.17, 0.81)
+            animation-fill-mode: forwards
+          .trainings-hero-image-2
+            opacity: 0
+            animation-name: fadeoutRight
+            animation-duration: 1000ms
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            animation-fill-mode: forwards
+            animation-delay: 1000ms
+            position: absolute
+            bottom: 0
+            left: 10%
+            max-width: 23%
+          .trainings-hero-image-3
+            position: absolute
+            right: 0
+            top: 20%
+            opacity: 0
+            animation-name: fadeoutLeft
+            animation-duration: 1500ms
+            animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
+            animation-fill-mode: forwards
+            animation-delay: 500ms
+            max-width: 33.3%
     .trainings-cards
       padding: 100px 0
       background: #F7F9FC
       .trainings-cards-wrapper
-        max-width: 1396px
-        margin: 0 auto
         display: flex
         justify-content: space-between
         gap: 32px
         .trainings-card
+          width: 100%
           display: flex
           flex-direction: column
           gap: 32px
@@ -219,11 +300,117 @@
             display: flex
             flex-direction: column
             justify-content: space-between
+            height: 100%
+            gap: 16px
+            max-width: 501px
             li
               display: flex
+              align-items: center
               gap: 16px
+              span
+                font-size: 16px
+                color: rgba(68, 71, 74, 0.80)
+          .trainings-card-icon
+            width: fit-content
+            padding: 22px 16px
+            border-radius: 24px
+            border: 3px solid #3E9AF8
+          .trainings-card-title-text
+            display: flex
+            align-items: baseline
+            flex-direction: row
+            gap: 16px
+            .trainings-card-title
+              font-size: 64px
+              font-weight: 500
+              line-height: normal
+            .trainings-card-subtitle
+              font-size: 32px
+              font-weight: 500
+              line-height: normal
+              color: #0000008A
+          .trainings-card-text
+            color: #44474ACC
+            font-size: 18px
+            font-weight: 400
+            line-height: normal
+            letter-spacing: 0.15px
+    .trainings-cards-bottom
+      .trainings-card-contact-us
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        gap: 32px
+        margin-top: 80px
+        p
+          line-height: 32px
+          font-size: 24px
+          color: #000000C2
+
     .courses
+      padding: 100px 0
+      .trainings-h3
+        text-align: center
+      .trainings-contact
+        margin-bottom: 32px
+        .contact
+          .trainings-h4
+            font-size: 28px
+
+  footer
+    position: static
+
+@keyframes fadeoutRight
+  from
+    opacity: 0
+    transform: scale(80%)
+  to
+    opacity: 1
+    transform: scale(100%)
+
+@keyframes fadeoutLeft
+  from
+    opacity: 0
+    transform: scale(80%)
+  to
+    opacity: 1
+    transform: scale(100%)
+
+@keyframes fadeoutCenter
+  from
+    opacity: 0
+    transform: translateY(0%) scale(1.2)
+  to
+    opacity: 1
+    transform: translateY(-2%) scale(1)
+
+@media screen and (max-width: 1279px)
+  #trainings
+    .trainings
+      .trainings-cards
+        .trainings-cards-wrapper
+          .trainings-card
+            .trainings-card-title-text
+              flex-direction: column
+              gap: 0
+@media screen and (max-width: 959px)
+  #trainings
+    .trainings
+      .trainings-cards
+        .trainings-cards-wrapper
+          flex-direction: column
+      .trainings-contact
+        flex-direction: column
+        .contact-us-button
+          display: none
+        .contact-us-button-hidden
+          display: block
+@media screen and (max-width: 599px)
+  #trainings
+    .trainings
       .trainings-contact
         .contact
-          .trainings-h3
-            font-size: 28px
+          h4
+            white-space: normal
+
