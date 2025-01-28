@@ -6,6 +6,7 @@
 {% assign itemsHigher600 = include.itemsHigher600 | default: items %}
 {% assign itemsHigher0 = include.itemsHigher0 | default: items %}
 {% assign autoplay = include.autoplay %}
+{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
 {% assign smoothAutoPlay = include.smoothAutoPlay %}
 {% assign autoWidth = include.autoWidth %}
 {% assign loop = include.loop %}
@@ -157,7 +158,6 @@
 {% else %}
 
 {% assign collectionKey = include.collectionKey %}
-{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
 {% assign darkenedImage = include.darkenedImage | default: false %}
 {% assign overlay = include.overlay | default: false %}
 {% assign enableLinkArrow = include.enableLinkArrow %}
