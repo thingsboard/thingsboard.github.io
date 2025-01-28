@@ -79,6 +79,14 @@ multi-state-scada-dashboard-example-1:
         image: /images/user-guide/scada/scada-dashboards/multi-state-dashboards-4-pe.png
         title: ''
 
+high-performance-scada-symbols:
+    0:
+        image: /images/user-guide/scada/scada-dashboards/high-performance-scada-symbols-1-pe.png
+        title: 'High-performance SCADA dashboard.'
+    1:
+        image: /images/user-guide/scada/scada-dashboards/high-performance-scada-symbols-2-pe.png
+        title: 'Traditional SCADA dashboard.'
+
 add-scada-symbol-widget-1:
     0:
         image: /images/user-guide/scada/scada-dashboards/add-scada-symbol-widget-1-pe.png
@@ -124,6 +132,11 @@ scada-action-get-time-series-1:
     0:
         image: /images/user-guide/scada/scada-dashboards/scada-action-get-time-series-1-pe.png
         title: '"Get time series" action will subscribe to the value of the target entity&#39;s time series field. The widget will receive updates when new time series data arrives.'
+
+scada-action-get-alarm-status-1:
+    0:
+        image: /images/user-guide/scada/scada-dashboards/scada-action-get-alarm-status-1-pe.png
+        title: 'The "Get alarm status" action subscribes to the alarm status field. The widget will receive updates according to the type of alarm.'
 
 scada-action-get-dashboard-state-1:
     0:
@@ -173,5 +186,5 @@ scada-card-appearance-1:
 
 
 ---
-
+{% assign docsPrefix = "paas/" %}
 {% include docs/user-guide/scada.md %}

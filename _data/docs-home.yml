@@ -214,6 +214,15 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/samples/analytics/kafka-streams/
+- title: Mobile center
+  new: true
+  section:
+    - title: Overview
+      path: /docs/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/user-guide/ui/mobile-qr-code/
 - title: Other Features
   section:
     - title: Edge Computing
@@ -268,10 +277,12 @@ toc:
     - title: Advanced RBAC for IoT
       path: /docs/pe/user-guide/rbac/
       pe: true
-    - title: Two-Factor Authentication
+    - title: Two-factor authentication
       path: /docs/user-guide/two-factor-authentication/
-    - title: OAuth 2 Support
+    - title: OAuth 2.0
       path: /docs/user-guide/oauth-2-support/
+    - title: Domains
+      path: /docs/domains/
     - title: HTTP Transport
       section:
         - title: HTTP over SSL
@@ -329,9 +340,6 @@ toc:
     path: /docs/user-guide/ui/microsoft-teams-settings/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
-  - title: Mobile application QR code
-    path: /docs/user-guide/ui/mobile-qr-code/
-    new: true
   - title: JWT Security Settings
     path: /docs/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide

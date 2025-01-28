@@ -8,6 +8,85 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v2.0.1 (December 31, 2024)
+
+Patch release with the following improvements and bug fixes.
+
+**Improvements:**
+
+* Core:
+
+  * [#178](https://github.com/thingsboard/tbmq/pull/178) MQTT processing improvement to eliminate unnecessary object creation;
+  * [#183](https://github.com/thingsboard/tbmq/pull/183) Improved Redis integration by enhancing Lettuce connection handling and cluster topology refresh logic;
+  * [#185](https://github.com/thingsboard/tbmq/pull/185) Allow semicolon (`;`) as a character in Kafka configurations;
+  * [#188](https://github.com/thingsboard/tbmq/pull/188) Vulnerabilities fixes;
+  * [#189](https://github.com/thingsboard/tbmq/pull/189) Added sort order support for aggregation queries of historical statistics;
+  * [#190](https://github.com/thingsboard/tbmq/pull/190) Removed search_text column from PostgreSQL.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#176](https://github.com/thingsboard/tbmq/pull/176) Added missing parameter for WebSocket client admin settings;
+  * [#182](https://github.com/thingsboard/tbmq/pull/182) Last will delivery error on broker shutdown;
+  * [#184](https://github.com/thingsboard/tbmq/pull/184) Added Redis cluster topology refresh options for Jedis implementation.
+
+With the changes in this release, we have conducted performance testing, which can be reviewed [here](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/).
+
+## v2.0.0 (October 29, 2024)
+
+Major release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#142](https://github.com/thingsboard/tbmq/pull/142) **Core**: Migrated Device persistent storage from PostgreSQL to Redis;
+* [#149](https://github.com/thingsboard/tbmq/pull/149) **Core**: MQTT 5: Subscription Identifier;
+* [#158](https://github.com/thingsboard/tbmq/pull/158) **Core**: MQTT 5: Enhanced authentication;
+* [#139](https://github.com/thingsboard/tbmq/pull/139) **Core & UI**: Client session details: added MQTT client credentials that authenticated the client;
+* [#139](https://github.com/thingsboard/tbmq/pull/139) **Core & UI**: Client session details: added client MQTT version info;
+* [#151](https://github.com/thingsboard/tbmq/pull/151) **UI**: Getting started page;
+* [#152](https://github.com/thingsboard/tbmq/pull/152) **Core**: Added PostgreSQL table to persist latest key-value pairs;
+* [#154](https://github.com/thingsboard/tbmq/pull/154) **Core & UI**: Advanced client session metrics;
+* [#157](https://github.com/thingsboard/tbmq/pull/157) **Core & UI**: Unauthorized clients;
+* [#159](https://github.com/thingsboard/tbmq/pull/159) **Core & UI**: Added subscriptions page to display all broker subscriptions;
+* [#168](https://github.com/thingsboard/tbmq/pull/168) **Core & UI**: Retained messages added advanced filter.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#164](https://github.com/thingsboard/tbmq/pull/164) MQTT publish ordered processing performance improvement;
+  * [#165](https://github.com/thingsboard/tbmq/pull/165) Updated default parameters and added write-and-flush option control for persistent Device clients;
+  * [#166](https://github.com/thingsboard/tbmq/pull/166) Client sessions filter improvement: added search filter by client IP, and enhanced filtering by subscriptions number;
+  * [#167](https://github.com/thingsboard/tbmq/pull/167) MQTT client credentials filter improvement: added search filters by client ID, username, and certificate common name;
+  * [#169](https://github.com/thingsboard/tbmq/pull/169) TBMQ's latest version available logic moved from frontend to backend, works in a scheduled fashion to prevent rate limiting;
+  * [#170](https://github.com/thingsboard/tbmq/pull/170) Library versions update and vulnerabilities fixes;
+  * [#149](https://github.com/thingsboard/tbmq/pull/149) MQTT client subscriptions management improvement: admins can update shared subscriptions and MQTT 5 subscription options;
+  * Performance improvement of get all client sessions, subscriptions, and retained messages queries;
+  * Added backup and restore guides for PostgreSQL.
+
+* UI:
+  * [#147](https://github.com/thingsboard/tbmq/pull/147) Added Subscription Identifier feature parameters;
+  * [#158](https://github.com/thingsboard/tbmq/pull/158) MQTT client credentials: added enhanced authentication (SCRAM) credentials;
+  * [#155](https://github.com/thingsboard/tbmq/pull/155) Added entity details page;
+  * [#166](https://github.com/thingsboard/tbmq/pull/166) Client sessions filter improvement: added search filter for client IP, and enhanced filtering by subscriptions number;
+  * [#167](https://github.com/thingsboard/tbmq/pull/167) MQTT client credentials filter improvement: added search filters by client ID, username, and certificate common name;
+  * Check connectivity: added topic generation based on authorization rule regex pattern;
+  * WebSocket client page: added pagination, control of maximum messages limit, improved topic validation.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#172](https://github.com/thingsboard/tbmq/pull/172) Allow edit system WebSocket MQTT client credentials;
+  * Do not allow to publish message with topic starting with "$".
+
+* UI:
+
+  * MQTT client credentials: fixed authorization rule editing;
+  * Fixed HTTP request URL encoding;
+  * Fixed table sorting.
+
 ## v1.4.0 (August 19, 2024)
 
 Minor release with the following features, improvements, and bug fixes.

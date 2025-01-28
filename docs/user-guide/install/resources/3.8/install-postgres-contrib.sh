@@ -1,1 +1,1 @@
-sudo dnf install -y postgresql15-contrib
+sudo dnf install -y postgresql16-contrib

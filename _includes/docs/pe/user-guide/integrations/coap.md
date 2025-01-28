@@ -70,12 +70,7 @@ Before setting up an **CoAP integration**, you need to create an **Uplink Conver
 To create an **Uplink Converter** go to **Data Converters** section and Click **Add new data converter —> Create new converter**.
 Name it **"CoAP Uplink Converter"** and select type **Uplink**. Use debug mode for now.
 
-{% capture difference %}
-**NOTE**
-<br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 **Choose device payload type to for decoder configuration:**
 
@@ -144,7 +139,7 @@ export COAP_DTLS_KEY_ALIAS=serveralias
 export TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
 ```
 
-Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/pe/user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
+Please, note, that added above environment variables use default DTLS configuration settings. In order to get the CoAP server launched correctly in the DTLS mode, you need to update at least key store settings. Please refer to the [CoAP over DTLS](/docs/{{docsPrefix}}user-guide/coap-over-dtls) guide in order to learn more about the CoAP DTLS configuration.
 
 {% endunless %}
 

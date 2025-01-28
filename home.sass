@@ -82,7 +82,6 @@ $feature-box-div-margin-bottom: 40px
     #overflow
         overflow: hidden
         #react
-            margin-top: 165px
             @media (max-width: 768px)
                 margin-top: 50px
         #intro, #manage, #scada, #react, #products, #product-ecosystem, #dashboard_description, #rule-engine, #bottom-features
@@ -185,10 +184,55 @@ $feature-box-div-margin-bottom: 40px
                         @media (max-width: 768px)
                             margin: 60px 0 30px
                     &.scada
-                        margin: 100px 0 300px
+                        margin-bottom: 100px
                         @media (max-width: 1500px)
-                            margin: 50px 0 0 0
+                            margin-top: 100px
+                        .scada-mode-selector
+                            display: flex
+                            border: 1px solid rgba(0, 0, 0, 0.08)
+                            height: 44px
+                            max-width: 323px
+                            @media (max-width: 480px)
+                                max-width: 275px
+                            border-radius: 26px
+                            margin-bottom: 32px
+                            background-color: rgba(42, 125, 236, 0.08)
+                            .mode
+                                position: relative
+                                color: #707275
+                                cursor: pointer
+                                height: 100%
+                                display: flex
+                                align-items: center
+                                padding-left: 14px
+                                padding-right: 12px
+                                &:nth-of-type(1)
+                                    margin-right: 0
+                                h3
+                                    font-weight: 500
+                                    a.faq-link
+                                        &:after
+                                            margin-left: 2px
+                                    font-size: 14px
+                                    line-height: 20px
+                                    @media (min-width: 480px)
+                                        font-size: 18px
+                                        line-height: 27px
+                                &.active
+                                    &:before
+                                        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
+                                    border-radius: 22px
+                                    color: #fff
+                                    background: #2A7DEC
+                                    box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+                                    &:after
+                                        background-color: #fff
+                                &:hover:not(.active)
+                                    &:before
+                                        filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
+                                    color: #000
                     .scada-svg
+                        margin-top: 42px
                         width: 50%
                         @media (max-width: 1024px)
                             width: 76%
@@ -200,30 +244,30 @@ $feature-box-div-margin-bottom: 40px
                         position: relative
                         img
                             box-shadow: none !important
-                        .scada-back-scheme
-                            position: absolute
+                        .scada-scheme
                             z-index: -2
-                            width: 174.8%
-                            right: -73.5%
-                            bottom: -18.9%
+                            width: 163.8%
+                            &.hidden
+                                display: none
                         .scada-fade
                             width: 64.8%
-                            height: 131.8%
+                            height: 93.8%
                             position: absolute
-                            bottom: -102px
-                            right: -545px
+                            top: 0
+                            right: -498px
                             background: linear-gradient(to right, rgba(255,255,255,0) 0%,#F7F9FC 100%)
+                            @media (max-width: 1024px)
+                                display: none
                         .scada-background
                             position: absolute
-                            left: -4%
-                            z-index: -1
-                            width: 103%
-                            height: 104%
+                            top: 10.3%
+                            z-index: -3
+                            width: 96%
+                            height: 73%
                             background-color: white
                             border-radius: 8px
                             box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 30px 0px rgba(0, 0, 0, 0.04)
-                        .scada-front-scheme
-                            width: 95%
+
                     .process
                         position: relative
                         display: inline-block
@@ -544,7 +588,7 @@ $feature-box-div-margin-bottom: 40px
                 &.main2
                     top: -574px
                     width: 2560px
-                    height: 925px
+                    height: 1050px
                     left: -1280px
                     background-color: #F7F9FC
                 &.main3

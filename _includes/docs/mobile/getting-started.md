@@ -51,8 +51,18 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+         <tr>
+            <td>3.9.0</td>
+            <td>1.5.0</td>
+            <td>3.0.0</td>
+        </tr>
         <tr>
-            <td>3.8.0</td>
+            <td>3.8.1</td>
+            <td>1.4.0</td>
+            <td>2.0.0</td>
+        </tr>
+        <tr>
+            <td>3.8.0+</td>
             <td>1.3.0</td>
             <td>1.3.0</td>
         </tr>
@@ -98,8 +108,18 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+         <tr>
+            <td>3.9.0PE</td>
+            <td>1.5.0</td>
+            <td>3.0.0</td>
+        </tr>
         <tr>
-            <td>3.8.0PE</td>
+            <td>3.8.1PE</td>
+            <td>1.4.0</td>
+            <td>2.0.0</td>
+        </tr>
+        <tr>
+            <td>3.8.0PE+</td>
             <td>1.3.0</td>
             <td>1.3.0</td>
         </tr>
@@ -155,7 +175,7 @@ In case of {{cloudApp}} set it to `{{cloudEndpoint}}`.
 
 ```dart
 abstract class ThingsboardAppConstants {
-  static final thingsBoardApiEndpoint = '{{cloudEndpoint}}';
+  static const thingsBoardApiEndpoint = '{{cloudEndpoint}}';
   
   ...
 }
