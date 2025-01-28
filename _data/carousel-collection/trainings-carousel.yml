@@ -3,7 +3,7 @@
   height: "416px"
   crisp:
     0:
-      src: "/images/trainings/icon_clock.svg"
+      faIcon: "far fa-clock"
       text: "8 hours"
     1:
       src: "/images/trainings/icon_hat-graduation.svg"
@@ -17,7 +17,7 @@
   height: "416px"
   crisp:
     0:
-      src: "/images/trainings/icon_clock.svg"
+      faIcon: "far fa-clock"
       text: "2 hours"
     1:
       src: "/images/trainings/icon_hat-graduation.svg"
@@ -31,7 +31,7 @@
   height: "416px"
   crisp:
     0:
-      src: "/images/trainings/icon_clock.svg"
+      faIcon: "far fa-clock"
       text: "4 hours"
     1:
       src: "/images/trainings/icon_hat-graduation.svg"
@@ -45,7 +45,7 @@
   height: "416px"
   crisp:
     0:
-      src: "/images/trainings/icon_clock.svg"
+      faIcon: "far fa-clock"
       text: "8 hours"
     1:
       src: "/images/trainings/icon_hat-graduation.svg"

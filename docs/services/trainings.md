@@ -59,7 +59,7 @@ description: ThingsBoard training sessions
                             <span>Enhance your <b>experience</b> with ThingsBoard. </span>
                         </li>
                         <li>
-                            <img src="/images/trainings/icon_question.svg" alt="Akar icons">
+                            <i class="far fa-question-circle fa-lg" style="color: #2A7DEC"></i>
                             <span>Answer <b>practical questions</b> related to your specific use cases. </span>
                         </li>
                         <li>

@@ -1,7 +1,7 @@
 0:
   title: "ThingsBoard administration"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:

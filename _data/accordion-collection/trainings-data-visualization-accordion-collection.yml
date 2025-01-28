@@ -1,7 +1,7 @@
 0:
   title: "ThingsBoard data modeling and visualization (sessions 1)"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
@@ -21,7 +21,7 @@
 1:
   title: "ThingsBoard data modeling and visualization (sessions 2)"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
@@ -37,7 +37,7 @@
 2:
   title: "ThingsBoard custom widget development (sessions 1)"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
@@ -53,7 +53,7 @@
 3:
   title: "ThingsBoard custom widget development (sessions 2)"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:

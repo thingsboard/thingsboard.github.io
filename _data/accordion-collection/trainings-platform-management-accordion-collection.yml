@@ -33,7 +33,7 @@
 2:
   title: "ThingsBoard professional edition security model"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
@@ -51,7 +51,7 @@
 3:
   title: "Platform API"
   additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock"
+  additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
