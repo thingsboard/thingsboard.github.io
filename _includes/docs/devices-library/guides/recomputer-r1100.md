@@ -18,9 +18,9 @@ With its small size, flexibility, low cost, and programmability, it provides str
 ## Integration with ThingsBoard Edge
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include /templates/device-library/ready-to-go-devices/pe-prerequisites-recomuterR11.md %}
+{% include /templates/device-library/ready-to-go-devices/pe-prerequisites-recomuterR.md %}
 {% else %}
-{% include /templates/device-library/ready-to-go-devices/ce-prerequisites-recomuterR11.md %}
+{% include /templates/device-library/ready-to-go-devices/ce-prerequisites-recomuterR.md %}
 {% endif %}
 
 ## Configuring the ModBus Connector
@@ -201,7 +201,7 @@ nano docker-compose.yml
 
 * Copy the content of the previously downloaded **docker-compose.yml** file, and paste it into the new one via the terminal:
 
-![image]()
+![image](/images/devices-library/edge/recomputer-r1100/copy-paste-configs.webp)
 
 * Save the **docker-compose.yml** file and press **CTRL+S** to save it. To close the file press **CTRL+X**.
 
