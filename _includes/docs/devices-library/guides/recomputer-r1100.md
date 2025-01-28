@@ -176,7 +176,7 @@ ssh recomputer@ip_address
 {: .copy-code}
 
 **ip_address:** The IP address of the reComputer R1100. Enter the actual IP address instead of _ip_address_.<br>
-**Password:** Terminal requests the password. The **default password** for the reComputer R1100 is: 
+**Password:** Terminal requests the password. _The **default password** for the reComputer R1100 is: 12345678_
 
 * Create the directory for the Gateway service:
 

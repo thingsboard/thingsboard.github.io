@@ -1,10 +1,9 @@
 ### Prerequisites
 
-To continue with this guide, we will require the following:
-* reComputer R1100
-* Modbus Controller (in our case, [Siemens LOGO!](https://www.siemens.com/ua/uk/produkty/avtomatyzatsiya-promyslovosti/systemy-avtomatyzatsiyi/systemy-promyslovoyi-avtomatyzatsiyi-simatic/plc-kontrolery-simatic/lohichnyy-modul-logo.html){: target="_blank"})
-* [Docker](https://docs.docker.com/engine/install/){: target="_blank"} installed
-* [ThingsBoard Cloud (North America)](https://thingsboard.cloud/signup){: target="_blank"}/[ThingsBoard Cloud (Europe)](https://eu.thingsboard.cloud/signup){: target="_blank"} or the **ThingsBoard Community Edition** [local](/docs/user-guide/install/installation-options/){: target="_blank"} server as an alternative.
+{% capture prerequisites %}
+Professional Edition<br><small>(North America)</small>%,%prerequisitesNorthAmerica%,%templates/edge/devices-library/prerequisites-pe-america.md%br%
+Professional Edition<br><small>(Europe)</small>%,%professionalEditionAmerica%,%templates/edge/devices-library/prerequisites-pe-europe.md%br%{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="prerequisites" toggle-spec=prerequisites %}
 
 ### Starting Edge on the reComputer R1100 
 
@@ -20,7 +19,7 @@ ssh recomputer@ip_address #Enter the actual IP address
 {: .copy-code}
 
 **ip_address:** The IP address of the reComputer R1100. Enter the actual IP address instead of _ip_address_.<br>
-**Password:** Terminal requests the password. _The default password for the reComputer R1100 is: _
+**Password:** Terminal requests the password. _The **default password** for the reComputer R1100 is: 12345678_
 
 * Once connected, you can follow the installation instructions below. Start by creating a new directory:
 
