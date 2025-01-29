@@ -14,19 +14,31 @@ add-js-module:
 
 select-extensions-module:
     0:
-        image: /images/user-guide/contribution/extensions/add-static-widget-1-pe.png
-        title: 'Go to the "Widgets library" page of the "Resources" section. Click the "plus" icon in the upper right corner of the window, and select the "Create new widget" option. Then, select widget type - "Static widget";'
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-1-ce.png
+        title: 'Go to the "Widgets library" page of the "Resources" section. Click the "plus" icon in the upper right corner of the window, and select the "Create new widget" option. Then, select widget type - "Latest widget";'
     1:
-        image: /images/user-guide/contribution/extensions/select-extensions-module-1-pe.png
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-2-ce.png
         title: 'Enter widget name. Navigate to the "Resources" tab, and click "Add" button;'
     2:
-        image: /images/user-guide/contribution/extensions/select-extensions-module-2-pe.png
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-3-ce.png
         title: 'Check the "Is extension" box, and choose your extension module from drop-don menu;'
     3:
-        image: /images/user-guide/contribution/extensions/select-extensions-module-3-pe.png
-        title: 'Your module is connected to your widget. Now, you can use your angular components. Go the "HTML" tab, and add the custom component. Clean the default self.onInit function. Click the "Run" button to preview how your widget will look;'
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-4-ce.png
+        title: 'Your module is connected to your widget. Now, you can use your angular components. Go the "HTML" tab, and add the custom component. In our case it will be "tb-example-table".'
     4:
-        image: /images/user-guide/contribution/extensions/select-extensions-module-4-pe.png
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-5-ce.png
+        title: 'Clean the default content of self.onInit, self.onDataUpdated, self.onResize, self.onDestroy functions'
+    5:
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-6-ce.png
+        title: 'Add the following code to the "onDataUpdate" function: "self.ctx.$scope.exampleTableComponent.onDataUpdated();"'
+    6:
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-7-ce.png
+        title: 'Add a new function by taking it from the documentation'
+    7:
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-8-ce.png
+        title: 'Click "Run" button to see how your widget will look.'
+    8:
+        image: /images/user-guide/contribution/extensions/add-latest-values-widget-9-ce.png
         title: 'To apply the changes, click the "Save" button.'
 
 ---

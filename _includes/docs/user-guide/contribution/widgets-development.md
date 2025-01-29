@@ -544,13 +544,21 @@ as a result on Widget 2 you can see your data:
 
 #### Type parameters object
 
-Object [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) describing widget datasource parameters. It has the following properties:
+Object [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/v3.9/ui-ngx/src/app/shared/models/widget.models.ts#L170) describing widget datasource parameters. It has the following properties:
 
 ```javascript
     return {
         maxDatasources: -1, // Maximum allowed datasources for this widget, -1 - unlimited
         maxDataKeys: -1, //Maximum allowed data keys for this widget, -1 - unlimited
-        dataKeysOptional: false //Whether this widget can be configured with datasources without data keys
+        dataKeysOptional: false, //Whether this widget can be configured with datasources without data keys
+        datasourcesOptional: false, //Whether this widget can be configured without datasources
+        singleEntity: false, //Whether this widget will work with only one entity
+        hasAdditionalLatestDataKeys: false, //Whether this widget will support additional latest data keys
+        ignoreDataUpdateOnIntervalTick: true, //Use for time series widgets. if true, onDataUpdate will trigger when new data is received otherwise it will be triggered each second.
+        previewWidth: 250px, //Default size of preview X axis
+        previewHeight: 250px, //Default size of preview Y axis
+        embedTitlePanel: false, //Whether hide title panel
+        hideDataSettings: false, //Whether data settings will hide (appearance tab)
     }
 ```
 
@@ -1256,6 +1264,54 @@ Allows to fetch owner (Tenant or Customer) of the specified entity. For example,
 ```
 {% endif %}
 
+- **Asset Type Filter**
+
+Allows to filter assets based on their type and the **'starts with'** expression over their name. For example, this entity filter selects all 'charging station' assets which name starts with 'Tesla':
+```javascript
+{
+     type: "assetType", 
+     assetTypes: ["charging station"],
+     assetNameFilter: "Tesla"
+}
+
+```
+
+- **Device Type Filter**
+
+Allows to filter devices based on their type and the **'starts with'** expression over their name. For example, this entity filter selects all 'Temperature Sensor' devices which name starts with 'ABC':
+```javascript
+{
+     type: "deviceType",
+     deviceTypes: ["Temperature Sensor"],
+     deviceNameFilter: "ABC"
+}
+
+```
+
+- **Entity View Filter**
+
+Allows to filter entity views based on their type and the **'starts with'** expression over their name. For example, this entity filter selects all 'Concrete Mixer' entity views which name starts with 'CAT':
+```javascript
+{
+     type: "entityViewType",
+     entityViewTypes: ["Concrete Mixer"],
+     entityViewNameFilter: "CAT"
+}
+
+```
+
+- **Edge Type Filter**
+
+Allows to filter edge instances based on their type and the **'starts with'** expression over their name. For example, this entity filter selects all 'Factory' edge instances which name starts with 'Nevada':
+```javascript
+{
+     type: "edgeType",
+     edgeTypes: ["Factory"], 
+     edgeNameFilter: "Nevada"
+}
+
+```
+
 - **Api Usage Filter**
 
 Allows to query for Api Usage based on optional customer id. If the customer id is not set, returns current tenant API usage. For example, this entity filter selects the **Api Usage** entity for customer with id **e6501f30-2a7a-11ec-94eb-213c95f54092**:
@@ -1383,6 +1439,21 @@ For example, this entity filter selects **Factory** edge instances that are rela
     edgeTypes: [
         "Factory"
     ]
+}
+```
+
+- **Scheduler Event Query**
+
+Allows to filter schedulers based on entity and scheduler event type. For example, this entity filter selects all schedulers with event type **Light switch scheduler** and related to the device with id **e01d2630-d710-11ef-a015-9bbc9baea46f**.
+
+```javascript
+{
+    type: "schedulerEvent",
+    originator: {
+        entityType: "DEVICE", 
+        id: "e01d2630-d710-11ef-a015-9bbc9baea46f"
+    },
+    eventType: "Light switch scheduler"
 }
 ```
 
@@ -1545,7 +1616,10 @@ Note that you may use **CURRENT_USER**, **CURRENT_CUSTOMER** and **CURRENT_TENAN
 
 Available for users with **TENANT_ADMIN** or **CUSTOMER_USER** authority.
 
-
+{% capture difference %}
+Entities filtering is based on the **"latest"** value of the attribute or time series key. Don't use this feature to **"filter out"** historical time series values.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### Examples
 
@@ -1601,9 +1675,9 @@ self.onInit = function() {
                     },
                     predicate: {
                         operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
-                        type: "BOOLEAN", //Sorting value type
+                        type: "BOOLEAN", //Predicate value type
                         value: {
-                            defaultValue: true //Sorting value
+                            defaultValue: true //Predicate value
                         }
                     },
                     valueType: "BOOLEAN" //Value type
@@ -1618,6 +1692,7 @@ self.onInit = function() {
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
+                //Data ready to processing
                 self.onDataUpdated();
             }
         }
@@ -1625,6 +1700,7 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
+            //Data is not available here! Code below just indicates where data will save.
             self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             self.ctx.data = subscription.data; //Saves data into widget context
             self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
@@ -1632,6 +1708,10 @@ self.onInit = function() {
         }
     );
     ...
+}
+
+self.onDataUpdated = function() {
+    //Data processing logic should be place here
 }
 ...
 ```
@@ -1681,9 +1761,9 @@ self.onInit = function() {
                     },
                     predicate: {
                         operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
-                        type: "BOOLEAN", //Sorting value type
+                        type: "BOOLEAN", //Predicate value type
                         value: {
-                            defaultValue: true //Sorting value
+                            defaultValue: true //Predicate value
                         }
                     },
                     valueType: "BOOLEAN" //Value type
@@ -1698,6 +1778,7 @@ self.onInit = function() {
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
+                //Data ready to processing
                 self.onDataUpdated();
             }
         }
@@ -1705,6 +1786,7 @@ self.onInit = function() {
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
+            //Data is not available here! Code below just indicates where data will save.
             self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             self.ctx.data = subscription.data; //Saves data into widget context
             self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
@@ -1713,8 +1795,13 @@ self.onInit = function() {
     );
     ...
 }
+
+self.onDataUpdated = function() {
+ //Data processing logic should be place here
+}
 ...
 ```
+
 As a result a subscription to the **temperature** and **active** keys will be created **only** for active devices (**the widget is illustrative**):
 
 ![image](/images/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
@@ -1747,7 +1834,9 @@ self.onInit = function() {
             entityFilter: //Describes entities (See Entity Filters topic)
             {
                 type: "deviceType", //Entity filter type
-                deviceType: "thermostat" //Device type
+                deviceTypes: [
+                    "thermostat" //Device type
+                ]
             },
             keyFilters: //Filtering entity by keys (See Key Filter topic)
             [
@@ -1758,9 +1847,9 @@ self.onInit = function() {
                     },
                     predicate: {
                         operation: "GREATER", //Operation type (You can find full list of operations in Key Filters topic)
-                        type: "NUMERIC", //Sorting value type
+                        type: "NUMERIC", //Predicate value type
                         value: {
-                            defaultValue: 30 //Sorting value
+                            defaultValue: 30 //Predicate value
                         }
                     },
                     valueType: "NUMERIC" //Value type
@@ -1776,6 +1865,7 @@ self.onInit = function() {
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
+                //Data ready to processing
                 self.onDataUpdated();
             }
         }
@@ -1789,6 +1879,7 @@ self.onInit = function() {
 
      self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
+            //Data is not available here! Code below just indicates where data will save.
             self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             subscribeForPaginatedData(self.ctx.$scope.pageLink);
             self.ctx.data = subscription.data; //Saves data into widget context
@@ -1801,11 +1892,16 @@ self.onInit = function() {
     ...
 }
 
+self.onDataUpdated = function() {
+ //Data processing logic should be place here
+}
+
 function subscribeForPaginatedData(pageLink) {
     self.ctx.defaultSubscription.subscribeAllForPaginatedData(pageLink, null); //Get information by pageLink params
 }
 ...
 ```
+
 As a result, a subscription to the **temperature** and **active** keys will be created using PageLink (**the widget is illustrative**):
 
 ![image](/images/user-guide/contribution/widgets/page-link-subscription.png)
@@ -1848,30 +1944,24 @@ self.onInit = function() {
         }
     ];
 
-    self.ctx.$scope.pageLink = {
-        page: 0, //Page Number
-        pageSize: 2  //Number of entities per page
-    };
-
     const subscriptionOptions = { 
         type: 'timeseries', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
-        hasDataPageLink: true, //Sets subscription into pageLink mode
         ignoreDataUpdateOnIntervalTick: true, //if true onDataUpdated will be triggered only when new data appears otherwise onDataUpdate will be triggered every second
         useDashboardTimewindow: true,
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
+                //Data ready to processing
                 self.onDataUpdated();
             }
         }
     };
-
-
+    
      self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
+            //Data is not available here! Code below just indicates where data will save.
             self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
-            subscribeForPaginatedData(self.ctx.$scope.pageLink);
             self.ctx.data = subscription.data; //Saves data into widget context
             self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
             self.ctx.dataPages = subscription.dataPages; //Saves dataPages into widget context
@@ -1882,8 +1972,8 @@ self.onInit = function() {
     ...
 }
 
-function subscribeForPaginatedData(pageLink) {
-    self.ctx.defaultSubscription.subscribeAllForPaginatedData(pageLink, null); //Get information by pageLink params
+self.onDataUpdated = function() {
+ //Data processing logic should be place here
 }
 ...
 ```
@@ -1928,7 +2018,9 @@ self.onInit = function() {
         entityFilter: //Describes entities (See Entity Filters topic)
         {
             type: "deviceType", //Entity filter type
-            deviceType: "thermostat" //Device type
+            deviceType: [
+                "thermostat" //Device type
+            ]
         }
     };
 
@@ -1971,6 +2063,7 @@ self.onInit = function() {
 }
 ...
 ```
+
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
 
 ![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
@@ -2049,9 +2142,9 @@ Now let's create a custom subscription. For clarity, we will add two fields: one
                     },
                     predicate: {
                         operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
-                        type: "BOOLEAN", //Sorting value type
+                        type: "BOOLEAN", //Predicate value type
                         value: {
-                            defaultValue: true //Sorting value
+                            defaultValue: true //Predicate value
                         }
                     },
                     valueType: "BOOLEAN" //Value type
@@ -2370,11 +2463,11 @@ Congratulations, your components were added to the ThingsBoard!
 {% include images-gallery.html imageCollection="add-js-module" %}
 
 <br>
-Now, let's use them in some widget. We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)):
+Now, let's use them in some widget. We shall create a simple latest telemetry widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)):
 
 - Go to the "**Widgets library**" page of the "**Resources**" section;
 - Click the "**plus**" icon in the upper right corner of the window, and select the "**Create new widget**" option;
-- Select widget type - "**Static widget**";
+- Select widget type - "**Latest value**";
 - Enter widget name;
 - Navigate to the "**Resources**" tab, and click "**Add**" button;
 - Check the "**Is extension**" box;
@@ -2382,8 +2475,31 @@ Now, let's use them in some widget. We shall create a simple static widget that 
 
 Your module is connected to your widget. Now, you can use your angular components:
 
-- Go the "**HTML**" tab, and add the custom component;
-- Clean the default **self.onInit** function;
+- Go the "**HTML**" tab, and add the custom component. In our case it will be **tb-example-table** (don't forget to add **ctx**);
+- Clean the default content of **self.onInit**, **self.onDataUpdated**, **self.onResize** functions;
+- Add to the onDataUpdated function next code:  
+  ```javascript
+  self.ctx.$scope.exampleTableComponent.onDataUpdated();
+  ```
+  {: .copy-code}
+  It will trigger the update function inside a custom component when the widget receives new data;
+- Add next function: 
+  ```javascript
+  self.typeParameters = function() {
+    return {
+        maxDatasources: 1, //Maximum number of datasources 1
+        singleEntity: true, //Allow only one entity
+        previewWidth: '250px', //Default size of preview X axis 
+        previewHeight: '250px', //Default size of preview Y axis 
+        embedTitlePanel: true, //Hided title panel
+        defaultDataKeysFunction: function() { //Default key that widget will use
+            return [{ name: 'temperature', label: 'Temperature', type: 'timeseries' }];
+        }
+    };
+  };
+  ```
+  {: .copy-code}
+  It sets behavior rules for the widget
 - Click the "Run" button to preview how your widget will look;
 - To apply the changes, click the "Save" button.
 
