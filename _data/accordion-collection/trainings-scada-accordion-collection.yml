@@ -1,4 +1,20 @@
 0:
+  title: "Device connectivity, data processing, and visualization"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Connecting devices and retrieving data using transport protocols (HTTP, MQTT, CoAP, LWM2M), integrations with external systems, and ThingsBoard Gateway."
+    1:
+      textContent: "Configuring an emulator to send data via MQTT and displaying it in real-time."
+    2:
+      textContent: "Processing data through the default rule chain and setting up a custom rule chain."
+    3:
+      textContent: "Configuring dashboard widgets and customizing layouts to display incoming data effectively."
+    4:
+      textContent: "Q&A (questions and answers)."
+1:
   title: "Basics and interface operation"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
@@ -14,7 +30,7 @@
       textContent: "Customizing the user interface for various operational scenarios."
     4:
       textContent: "Q&A (questions and answers)."
-1:
+2:
   title: "Advanced use, SVG integration, behaviors, and properties"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"

@@ -32,10 +32,10 @@
   crisp:
     0:
       faIcon: "far fa-clock"
-      text: "4 hours"
+      text: "6 hours"
     1:
       src: "/images/trainings/icon_hat-graduation.svg"
-      text: "2 sessions"
+      text: "3 sessions"
   title: "SCADA system"
   description: "Detailed guide to creating dashboards for SCADA systems, including layout and configuration settings."
   linkLabel: "More about the course below"

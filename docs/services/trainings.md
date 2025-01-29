@@ -26,7 +26,7 @@ description: ThingsBoard training sessions
                 <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
             </div>
             <p class="contact-text">
-                Our ThingsBoard training sessions are practical workshops led by experts from the ThingsBoard team, created especially for your company’s engineers. We offer eleven 2-hour sessions that explain the basics of using ThingsBoard. Even though our documentation is detailed, these sessions focus on the most important points, helping you start IoT solution development quickly and easily.
+                Our ThingsBoard training sessions are practical workshops led by experts from the ThingsBoard team, created especially for your company’s engineers. We offer twelve 2-hour sessions that explain the basics of using ThingsBoard. Even though our documentation is detailed, these sessions focus on the most important points, helping you start IoT solution development quickly and easily.
             </p>
             <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
         </div>
@@ -165,7 +165,7 @@ description: ThingsBoard training sessions
             </div>    
             <div class="trainings-card-contact-us">
                 <p>
-                    Contact us to order the ThingsBoard training courses                
+                    Professional training tailored for your needs. Get in touch and start learning!
                 </p>
                 <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
             </div>
