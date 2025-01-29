@@ -467,7 +467,7 @@ notitle: "true"
             <span>Please fill out the form below and we will get back to you within 1-2 business days. 
             We are looking forward to hearing from you!</span>
         </div>
-        <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
+        <form id="contact-form" method="post" onsubmit="return validateContactForm(this)" class="gtm_form developmentServicesContactUsForm">
             <div class="form-section">
                 <div class="form-element">
                     <label for="first-name">
@@ -589,6 +589,8 @@ notitle: "true"
 
     jqueryDefer(
         function () {
+            var $contactForm =  jQuery('.developmentServicesContactUsForm');
+            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
@@ -612,8 +614,21 @@ notitle: "true"
                     $('#contact-form select[name=subject]').removeClass("input--empty");
                  }
             });
+            waitForForm();
         }
     );
+    function waitForForm() {
+        let $form = jQuery('.developmentServicesContactUsForm');
+        if ($form.length) {
+            $form
+                .attr('id', 'Serv_DevServ_ContactUs1Form')
+                .addClass('gtm_form');
+        } else {
+            setTimeout(function(){
+                waitForForm();
+            }, 150);
+        }
+    }
 </script>
 
 <script type="text/javascript">
