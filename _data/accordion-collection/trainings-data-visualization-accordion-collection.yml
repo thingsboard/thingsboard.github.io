@@ -25,15 +25,13 @@
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
-      textContent: "Single-node platform installation."
+      textContent: "Creating a dashboard with multiple states to display Asset hierarchy with the ability to drill down to particular asset/device details."
     1:
-      textContent: "ThingsBoard configuration."
+      textContent: "Exploring advanced configuration of Chart, Markdown/HTML Card, and Map widgets."
     2:
-      textContent: "ThingsBoard troubleshooting."
+      textContent: "Custom Tooltip functions and custom Dashboard Actions."
     3:
-      textContent: "ThingsBoard cluster installation."
-    4:
-      textContent: "Load Balancing, Scalability, and Failover."
+      textContent: "Q&A (questions and answers)."
 2:
   title: "ThingsBoard custom widget development (sessions 1)"
   additionalText: "2 hours"
@@ -41,13 +39,13 @@
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
-      textContent: "Rule engine data flow."
+      textContent: "Creating new bundles/widgets. Modifying system-bundles. Import/Export bundles and widgets. Built editor overview."
     1:
-      textContent: "What is a rule node and how it can be used in rule chains."
+      textContent: "Building “Last values”-type widget."
     2:
-      textContent: "How profiles may affect data flow to rule chains."
+      textContent: "Building “Timeseries”-type widget(simple time-series-table or line-chart)."
     3:
-      textContent: "How to build efficient and proper data flow logic for any business use case."
+      textContent: "Custom actions and custom actions templates with HTML."
     4:
       textContent: "Q&A (questions and answers)."
 3:
@@ -57,12 +55,10 @@
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
-      textContent: "Rule engine data flow."
+      textContent: "Building a “Control”-type widget."
     1:
-      textContent: "What is a rule node and how it can be used in rule chains."
+      textContent: "Building a “Static”-type widget."
     2:
-      textContent: "How profiles may affect data flow to rule chains."
+      textContent: "Building Markdown/HTML Card based widget."
     3:
-      textContent: "How to build efficient and proper data flow logic for any business use case."
-    4:
       textContent: "Q&A (questions and answers)."
