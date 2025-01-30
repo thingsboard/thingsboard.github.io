@@ -31,7 +31,7 @@
     4:
       textContent: "Q&A (questions and answers)."
 2:
-  title: "Advanced use, SVG integration, behaviors, and properties"
+  title: "Advanced use, tags, behaviors, and properties"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
@@ -39,14 +39,16 @@
     0:
       textContent: "Working with the library of existing symbols: searching, configuring, and adding."
     1:
-      textContent: "Creating a new SCADA symbol: adding it to the library and integrating it into the dashboard."
+      textContent: "Creating a new SCADA symbol"
     2:
-      textContent: "Working with SVG tags: principles of data binding and display configuration."
+      textContent: "Working with tags: editor or XML"
     3:
-      textContent: "Utilizing dynamic tags for interactive dashboards."
+      textContent: 'Defining behavior parameters: “Value,” “Action,” and “Widget action”.'
     4:
-      textContent: "Defining behaviors for elements: triggers, animations, and event reactions."
-    5:
       textContent: "Configuring properties: static and dynamic parameters."
+    5:
+      textContent: "Working with tag functions: principles of data binding, animations, and event reactions."
     6:
+      textContent: "Preview, create widget, and bundle. Add it to the dashboard."
+    7:
       textContent: "Q&A (questions and answers)."
