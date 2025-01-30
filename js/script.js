@@ -106,7 +106,7 @@ var tb = (function () {
 
 
 	function openAccordionItem(itemId) {
-	    var thisItem = $('.answers section.active .pi-accordion.active #'+itemId);
+	    var thisItem = $('.answers section.active .pi-accordion #'+itemId);
         if (!thisItem) return;
         var thisWrapper = $(thisItem).find('.wrapper').eq(0);
         if (!thisWrapper) return;
@@ -203,7 +203,7 @@ var tb = (function () {
 			}
 		});
         tb.openAccordionItem(nodeId);
-        document.querySelector('.answers section.active .pi-accordion.active #' + nodeId).scrollIntoView({
+        document.querySelector('.answers section.active .pi-accordion ' + `div[data-item-id="${nodeId}"]`).scrollIntoView({
 			behavior: 'auto',
 			block: 'center',
 			inline: 'center'

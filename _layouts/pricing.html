@@ -259,14 +259,27 @@
         document.getElementById(`faq-${containerId}`).classList.add('active');
         currentFaqContainer = containerId;
         switchToActiveFaqSection();
+        changeCloudOptionName(containerId.startsWith('trendz'));
+        toggleBillingForCe(containerId === 'thingsboard-ce');
+    }
+
+    function changeCloudOptionName(isTrendz) {
+        document.getElementById('faq-option-cloud').innerText = isTrendz ? 'Trendz Cloud' : 'ThingsBoard Cloud';
     }
 
     function switchToActiveFaqSection() {
         document.getElementById(`faq-${currentFaqContainer}-${document.querySelector('.faq-section-option.active').id.split('-')[2]}-section`).classList.add('active');
     }
 
+    function toggleBillingForCe(isCe) {
+        document.getElementById('faq-option-billing').classList.toggle('disabled', isCe);
+        if (document.querySelector('.faq-section-option.active').id.includes('billing')) {
+            switchFaqSection('licensing', document.getElementById('faq-option-licensing'));
+        }
+    }
+
     function switchFaqSection(sectionId, el) {
-        if (el.classList.contains('active')) return
+        if (el.classList.contains('active') || (currentFaqContainer === 'thingsboard-ce' && sectionId === 'billing')) return
         document.querySelectorAll('.faq-section-option').forEach(el => el.classList.remove('active'));
         document.querySelectorAll('.pi-accordion').forEach(el => el.classList.remove('active'));
         el.classList.add('active');
