@@ -1630,6 +1630,7 @@ Below is a set of typical custom subscription examples.
 Let's create a custom subscription for the number of devices in the system, and the number of active devices:
 
 ```javascript
+...
 self.onInit = function() {
     ...
     const datasources = [
@@ -1725,6 +1726,7 @@ As a result, will be created subscription to count devices in the system and cou
 
 Let's create a custom subscription to the latest **temperature** key value for active devices:
 ```javascript
+...
 self.onInit = function() {
     ...
     const datasources = [
@@ -2018,7 +2020,7 @@ self.onInit = function() {
         entityFilter: //Describes entities (See Entity Filters topic)
         {
             type: "deviceType", //Entity filter type
-            deviceType: [
+            deviceTypes: [
                 "thermostat" //Device type
             ]
         }
@@ -2105,59 +2107,60 @@ First of all, we need to create a custom setting schema that will contain user's
 
 Now let's create a custom subscription. For clarity, we will add two fields: one contains the original value and the second one contains the processed value:
 ```javascript
-self.onInit = function() {
 ...
+self.onInit = function() {
+    ...
     const datasources = [
         {
             type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
-                [
-                    {
-                        decimals: 0, //Number of digits after floating point for this key
-                        label: "Weight telemetry", //Key label
-                        name: "weight", //Key name
-                        settings: {},
-                        type: "timeseries" //Key type
-                    },
-                    {
-                        decimals: 0, //Number of digits after floating point for this key
-                        label: "Post processing weight", //Key label
-                        name: "weight", //Key name
-                        settings: {},
-                        usePostProcessing: true, //Enable post-processing
-                        postFuncBody: self.ctx.settings.postProcessingFunction, //Set post-processing function from widget settings
-                        type: "timeseries" //Key type
-                    },
-                    {
-                        decimals: 0,
-                        label: "Active",
-                        name: "active",
-                        settings: {},
-                        type: "attribute"
-                    }
-                ],
-            entityFilter: //Describes entities (See Entity Filters topic)
+            [
                 {
-                    type: "entityType", //Entity filter type
-                    entityType: "DEVICE" //Entity type
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Weight telemetry", //Key label
+                    name: "weight", //Key name
+                    settings: {},
+                    type: "timeseries" //Key type
                 },
+                {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Post processing weight", //Key label
+                    name: "weight", //Key name
+                    settings: {},
+                    usePostProcessing: true, //Enable post-processing
+                    postFuncBody: self.ctx.settings.postProcessingFunction, //Set post-processing function from widget settings
+                    type: "timeseries" //Key type
+                },
+                {
+                    decimals: 0,
+                    label: "Active",
+                    name: "active",
+                    settings: {},
+                    type: "attribute"
+                }
+            ],
+            entityFilter: //Describes entities (See Entity Filters topic)
+            {
+                type: "entityType", //Entity filter type
+                entityType: "DEVICE" //Entity type
+            },
             keyFilters: //Filtering entity by keys (See Key Filters topic)
-                [
-                    {
-                        key: {
-                            key: "active", //Key name
-                            type: "ATTRIBUTE" //Key type
-                        },
-                        predicate: {
-                            operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
-                            type: "BOOLEAN", //Predicate value type
-                            value: {
-                                defaultValue: true //Predicate value
-                            }
-                        },
-                        valueType: "BOOLEAN" //Value type
-                    }
-                ]
+            [
+                {
+                    key: {
+                        key: "active", //Key name
+                        type: "ATTRIBUTE" //Key type
+                    },
+                    predicate: {
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
+                        type: "BOOLEAN", //Predicate value type
+                        value: {
+                            defaultValue: true //Predicate value
+                        }
+                    },
+                    valueType: "BOOLEAN" //Value type
+                }
+            ]
         }
     ];
 
@@ -2165,12 +2168,12 @@ self.onInit = function() {
         type: 'latest', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe to
         callbacks: //Sets callbacks for subscription
-            {
-                onDataUpdated: () => {
-                    //Data ready to processing
-                     self.onDataUpdated();
-                }
+        {
+            onDataUpdated: () => {
+                //Data ready to processing
+                 self.onDataUpdated();
             }
+        }
     };
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
@@ -2187,6 +2190,7 @@ self.onInit = function() {
 self.onDataUpdated = function() {
  //Data processing logic should be place here
 }
+...
 ```
 The subscription is ready now let's convert weight telemetry from kilograms into grams:
 ![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
@@ -2478,7 +2482,7 @@ Congratulations, your components were added to the ThingsBoard!
 {% include images-gallery.html imageCollection="add-js-module" %}
 
 <br>
-Now, let's use them in some widget. We shall create a simple latest telemetry widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)):
+Now, let's use them in some widget. We shall create a simple latest value widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)):
 
 - Go to the "**Widgets library**" page of the "**Resources**" section;
 - Click the "**plus**" icon in the upper right corner of the window, and select the "**Create new widget**" option;
