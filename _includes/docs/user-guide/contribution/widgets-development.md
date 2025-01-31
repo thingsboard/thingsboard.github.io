@@ -544,7 +544,7 @@ as a result on Widget 2 you can see your data:
 
 #### Type parameters object
 
-Object [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/v3.9/ui-ngx/src/app/shared/models/widget.models.ts#L170) describing widget datasource parameters. It has the following properties:
+Object [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/5a16da51b5d755e18c5d8088e88336f07e4766ea/ui-ngx/src/app/shared/models/widget.models.ts#L170) describing widget datasource parameters. It has the following properties:
 
 ```javascript
     return {
@@ -2047,19 +2047,25 @@ self.onInit = function() {
         callbacks: //Sets callbacks for subscription
         {
             onDataUpdated: () => {
-               ...
+                //Data ready to processing
+                self.onDataUpdated();
             }
         }
     };
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
+            //Data is not available here! Code below just indicates where data will save.
             self.ctx.alarmsSubscription = subscription; //Saves subscription information into widget context
             self.ctx.alarmsSubscription.subscribeForAlarms(alarmDataPageLink, null); //Get information by pageLink params
             ...
         }
     );
     ...
+}
+
+self.onDataUpdated = function() {
+ //Data processing logic should be place here
 }
 ...
 ```
@@ -2099,57 +2105,59 @@ First of all, we need to create a custom setting schema that will contain user's
 
 Now let's create a custom subscription. For clarity, we will add two fields: one contains the original value and the second one contains the processed value:
 ```javascript
-   const datasources = [
+self.onInit = function() {
+...
+    const datasources = [
         {
             type: "entity", //Indicates that there is a subscription to entity data
             dataKeys: //Describes keys
-            [
-                 {
-                    decimals: 0, //Number of digits after floating point for this key
-                    label: "Weight telemetry", //Key label
-                    name: "weight", //Key name
-                    settings: {},
-                    type: "timeseries" //Key type
-                },
-                {
-                    decimals: 0, //Number of digits after floating point for this key
-                    label: "Post processing weight", //Key label
-                    name: "weight", //Key name
-                    settings: {},
-                    usePostProcessing: true, //Enable post-processing
-                    postFuncBody: self.ctx.settings.postProcessingFunction, //Set post-processing function from widget settings
-                    type: "timeseries" //Key type
-                },
-                {
-                    decimals: 0,
-                    label: "Active",
-                    name: "active",
-                    settings: {},
-                    type: "attribute"
-                 }
-            ],
+                [
+                    {
+                        decimals: 0, //Number of digits after floating point for this key
+                        label: "Weight telemetry", //Key label
+                        name: "weight", //Key name
+                        settings: {},
+                        type: "timeseries" //Key type
+                    },
+                    {
+                        decimals: 0, //Number of digits after floating point for this key
+                        label: "Post processing weight", //Key label
+                        name: "weight", //Key name
+                        settings: {},
+                        usePostProcessing: true, //Enable post-processing
+                        postFuncBody: self.ctx.settings.postProcessingFunction, //Set post-processing function from widget settings
+                        type: "timeseries" //Key type
+                    },
+                    {
+                        decimals: 0,
+                        label: "Active",
+                        name: "active",
+                        settings: {},
+                        type: "attribute"
+                    }
+                ],
             entityFilter: //Describes entities (See Entity Filters topic)
-            {
-                type: "entityType", //Entity filter type
-                entityType: "DEVICE" //Entity type
-            },
-            keyFilters: //Filtering entity by keys (See Key Filters topic)
-            [
                 {
-                    key: {
-                        key: "active", //Key name
-                        type: "ATTRIBUTE" //Key type
-                    },
-                    predicate: {
-                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
-                        type: "BOOLEAN", //Predicate value type
-                        value: {
-                            defaultValue: true //Predicate value
-                        }
-                    },
-                    valueType: "BOOLEAN" //Value type
-                }
-            ]
+                    type: "entityType", //Entity filter type
+                    entityType: "DEVICE" //Entity type
+                },
+            keyFilters: //Filtering entity by keys (See Key Filters topic)
+                [
+                    {
+                        key: {
+                            key: "active", //Key name
+                            type: "ATTRIBUTE" //Key type
+                        },
+                        predicate: {
+                            operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
+                            type: "BOOLEAN", //Predicate value type
+                            value: {
+                                defaultValue: true //Predicate value
+                            }
+                        },
+                        valueType: "BOOLEAN" //Value type
+                    }
+                ]
         }
     ];
 
@@ -2157,21 +2165,28 @@ Now let's create a custom subscription. For clarity, we will add two fields: one
         type: 'latest', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe to
         callbacks: //Sets callbacks for subscription
-        {
-            onDataUpdated: () => {
-                self.onDataUpdated();
+            {
+                onDataUpdated: () => {
+                    //Data ready to processing
+                     self.onDataUpdated();
+                }
             }
-        }
-   };
+    };
 
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
+            //Data is not available here! Code below just indicates where data will save.
             self.ctx.defaultSubscription = subscription; //Saves subscription information into widget context
             self.ctx.data = subscription.data; //Saves data into widget context
             self.ctx.datasources = subscription.datasources; //Saves datasource into widget context
-            ...
+        ...
         }
     );
+}
+
+self.onDataUpdated = function() {
+ //Data processing logic should be place here
+}
 ```
 The subscription is ready now let's convert weight telemetry from kilograms into grams:
 ![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
@@ -2492,9 +2507,6 @@ Your module is connected to your widget. Now, you can use your angular component
         previewWidth: '250px', //Default size of preview X axis 
         previewHeight: '250px', //Default size of preview Y axis 
         embedTitlePanel: true, //Hided title panel
-        defaultDataKeysFunction: function() { //Default key that widget will use
-            return [{ name: 'temperature', label: 'Temperature', type: 'timeseries' }];
-        }
     };
   };
   ```
