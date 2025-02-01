@@ -1,16 +1,17 @@
 * TOC
 {:toc}
 
-One of the most important ThingsBoard features is the ability to create end-user dashboards.
-Each end user will only see their own devices and data, enjoying all the benefits of working with their personalized dashboard. They will not see devices or any other data belonging to other customers.
-As an administrator, you will always retain the access to edit and modify your dashboard. 
+One of the most important features of ThingsBoard is the ability to create dashboards for end users.
+Your customers should have access only to their own premises, devices, and data that you have granted them access to while enjoying all the benefits of working with their personalized dashboard.
+At the same time, they should not have access to information about premises, devices, or any other data belonging to other customers.
+As an administrator, you will always have access to edit and modify your dashboard.
 
 There are two ways a Tenant Administrator can grant a Customer access to a specific entity (such as a Device, Dashboard, Asset, etc.):
 
 - Assign ownership: This option makes the customer the sole user able to access the specific entity and its data;
 - Share the entity: Useful for allowing multiple customers to access the same entity.
 
-In the previous lesson, we added separate states for each device and configured them to display telemetry data.
+We're continuing to enhance our dashboard. In the last lesson, we set up alarm rules for the Indoor Air Quality sensor and added a widget to manage alarms. If you haven’t completed that lesson yet, I suggest going through it first.
 
 <br>
 <p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Alarm management</a></p>
@@ -132,4 +133,6 @@ Similarly, activate the user of Customer B. They should have access to Office B 
 
 ## Conclusion
 
-In the next lesson, which will be released very soon, we will learn how to create and manage alarms to respond to different conditions and events effectively. See you soon.
+Throughout this series, we have developed a comprehensive dashboard for visualizing and monitoring data from connected devices in your facilities.
+Additionally, we have shared access to this dashboard with your clients. Each customer only has access to the data that you have given them permission to view.
+We hope this series of guides has been useful and has inspired you to further enhance and expand the capabilities of your dashboard. See you next time!

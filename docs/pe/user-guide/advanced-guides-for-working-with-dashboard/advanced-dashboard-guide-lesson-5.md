@@ -6,13 +6,13 @@ title: Lesson 5. Share dashboard with customers
 
 dashboard-lesson-5:
     0:
-        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-4-1-pe.png
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-5-1-pe.png
     1:
-        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-4-2-pe.png
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-5-2-pe.png
     2:
-        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-4-3-pe.png
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-5-3-pe.png
     3:
-        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-4-4-pe.png
+        src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-5/dashboard-final-lesson-5-4-pe.png
 
 adding-customers-1:
     0:
