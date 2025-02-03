@@ -271,19 +271,19 @@ description: Comprehensive software solutions for edge computing, providing data
         <div>
             <h4>IoT Gateway</h4>
             <p>The IoT Gateway collects, processes, and routes data from local area networks (LAN) to the Edge or Server. It acts as a critical bridge, facilitating seamless communication between IoT devices and larger network infrastructures.</p>
-            <img src="/images/edge/edge-gw.webp" alt="ThingsBoard Gateway block" width="306" height="318" loading="lazy">
+            <img src="/images/edge/tb-edge-gw.webp" alt="ThingsBoard Gateway block" width="306" height="318" loading="lazy">
             <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">What is ThingsBoard IoT Gateway?</a>
         </div>
         <div class="main">
             <h4>Edge</h4>
             <p>ThingsBoard Edge processes and visualizes data directly at the network edge, offering immediate insights and reducing bandwidth demands by minimizing the volume of data transmitted to centralized servers.</p>
-            <img src="/images/edge/edge.webp" alt="ThingsBoard Edge block" width="357" height="371" loading="lazy">
+            <img src="/images/edge/tb-edge.webp" alt="ThingsBoard Edge block" width="357" height="371" loading="lazy">
             <a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">What is ThingsBoard Edge?</a>
         </div>
         <div>
             <h4>Server</h4>
             <p>The ThingsBoard Server provides robust data processing and storage solutions, along with advanced analytics capabilities. It supports a wide range of deployments, from on-premises to cloud-based, ensuring flexibility and scalability for diverse enterprise needs.</p>
-            <img src="/images/edge/cloud.webp" alt="ThingsBoard Cloud block" width="306" height="318" loading="lazy">
+            <img src="/images/edge/tb-cloud.webp" alt="ThingsBoard Cloud block" width="306" height="318" loading="lazy">
             <a href="/docs/getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard Cloud?</a>
         </div>
     </div>
