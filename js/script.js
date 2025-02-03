@@ -971,6 +971,19 @@ var tb = (function () {
 							const isSmoothAutoplay = $carousel[0].classList.contains("smoothAutoPlay");
 							const isSmallScreen = $(window).width() < 600;
 
+							function updateUrl(currentItem) {
+								const currentItemContent = currentItem.children().first();
+								const currentItemContentId = currentItemContent.attr('id');
+
+								if (currentItemContentId) {
+									let url = new URL(window.location);
+									url.searchParams.set('course', currentItemContentId);
+									history.pushState(null, null, url);
+								}
+							}
+
+							let changesCount = 0;
+
 							$('#' + carouselId).owlCarousel({
 								lazyLoad: true,
 								center: $carousel[0].classList.contains("cardMode"),
@@ -1014,6 +1027,18 @@ var tb = (function () {
 									}
 								},
 								onInitialized: function(event) {
+
+									function scrollToContent(content) {
+										const elementTop = content.offset().top;
+										const windowHeight = $(window).height();
+										$('html, body').animate(
+											{
+												scrollTop: elementTop - windowHeight / 2 + content.outerHeight() / 2,
+											},
+											200
+										);
+									}
+
 									if ($carousel[0].classList.contains("smoothAutoPlay")) {
 										$(event.target).trigger('play.owl.autoplay');
 										setTimeout(function() {
@@ -1022,6 +1047,25 @@ var tb = (function () {
 										}, 10);
 									}
 									if ($carousel[0].classList.contains("cardMode")) {
+										const currentCourse = new URL(window.location.href).searchParams.get("course");
+
+										if(currentCourse) {
+											setTimeout(() => {
+												const originalItems = $(".owl-carousel .owl-item").not(".cloned");
+
+												let foundIndex = -1;
+
+												originalItems.each(function(index) {
+													const firstChild = $(this).children().first();
+													if (firstChild.attr("id") === currentCourse) {
+														foundIndex = $(this).index();
+														return false;
+													}
+												});
+
+												$carousel.trigger("to.owl.carousel", [foundIndex + 1, 0, true]);
+											}, 50)
+										}
 										$carousel.find('.owl-item').on('click', function () {
 											const itemsVisible = $carousel.find('.owl-item.active').length;
 											if (itemsVisible > 1 && !$(this).hasClass('center')) {
@@ -1035,14 +1079,7 @@ var tb = (function () {
 											const targetId = $(this).attr('id');
 											const target = carouselContentToggle.find(`#${targetId}`)
 											if(target) {
-												const elementTop = target.offset().top;
-												const windowHeight = $(window).height();
-												$('html, body').animate(
-													{
-														scrollTop: elementTop - windowHeight / 2 + target.outerHeight() / 2,
-													},
-													200
-												);
+												scrollToContent(target);
 											}
 										})
 									}
@@ -1052,8 +1089,7 @@ var tb = (function () {
 										setTimeout(() => {
 											const currentItem = $carousel.find('.owl-item.active.center');
 											const currentItemContent = currentItem.children().first();
-											const currentItemContentId = currentItemContent.attr('id')
-
+											const currentItemContentId = currentItemContent.attr('id');
 											carouselContentToggle.children().each(function() {
 												if($(this).is(`#${currentItemContentId}`)) {
 													$(this).addClass("current-content");
@@ -1061,7 +1097,7 @@ var tb = (function () {
 													$(this).removeClass("current-content")
 												}
 											})
-										}, 50)
+										}, 100)
 									}
 								}
 							});

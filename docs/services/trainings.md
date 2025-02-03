@@ -140,7 +140,7 @@ description: ThingsBoard training sessions
         </div>
     </div>
     <div class="trainings-cards trainings-cards-bottom">
-        <div class="trainings-wrapper">
+        <div class="trainings-bottom trainings-wrapper">
             <div class="trainings-cards-wrapper">
                 <div class="trainings-card">
                     <span class="trainings-card-icon">

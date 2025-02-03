@@ -164,11 +164,13 @@
       p
         color: #899AAB
 #trainings
-  .owl-stage
-    padding: 30px 0
-    .card-header
-      .fa-clock
-        font-size: 20px
+  .owl-carousel.owl-theme.usecase-carousel
+    margin: 64px 0 45px
+    .owl-stage
+      padding: 30px 0
+      .card-header
+        .fa-clock
+          font-size: 20px
   .trainings
     .trainings-wrapper
       padding: 0 32px
@@ -208,7 +210,6 @@
       display: flex
       justify-content: space-between
       gap: 32px
-      margin-top: 77px
       .contact
         display: flex
         flex-direction: column
@@ -232,6 +233,9 @@
         line-height: 32px
         letter-spacing: 0.15px
     .trainings-hero
+      display: flex
+      flex-direction: column
+      gap: 77px
       padding-top: 100px
       padding-bottom: 100px
       .trainings-hero-top
@@ -341,13 +345,16 @@
             line-height: normal
             letter-spacing: 0.15px
     .trainings-cards-bottom
+      .trainings-bottom
+        display: flex
+        flex-direction: column
+        gap: 80px
       .trainings-card-contact-us
         display: flex
         flex-direction: column
         align-items: center
         text-align: center
         gap: 32px
-        margin-top: 80px
         p
           line-height: 32px
           font-size: 24px
@@ -357,8 +364,6 @@
       padding: 100px 0
       .trainings-h3
         text-align: center
-      .trainings-contact
-        margin-bottom: 32px
         .contact
           .trainings-h4
             font-size: 28px
@@ -402,7 +407,13 @@
 @media screen and (max-width: 959px)
   #trainings
     .trainings
+      .owl-carousel.owl-theme.usecase-carousel
+        margin: 24px 0 24px
+      .trainings-hero
+        gap: 50px
+        padding: 40px 0 48px 0
       .trainings-cards
+        padding: 50px 0
         .trainings-cards-wrapper
           flex-direction: column
       .trainings-contact
