@@ -210,6 +210,8 @@
       table
         width: calc(100% + 40px)
         margin: 64px -20px 16px
+        border: none
+        top: 40px
         td, th
           margin: 0 2px
           padding: 2px
@@ -226,8 +228,6 @@
             color: #2A7DEC
             img
               filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
-        border: none
-        top: 40px
         thead
           color: #212529
           font-size: 12px
@@ -265,6 +265,8 @@
                 width: 32px
     #products
       margin-bottom: 143px
+      #typical-usage-scenario
+        font-size: 42px
       #background
         .main2
           height: 877px
@@ -278,9 +280,6 @@
         @media screen and (max-width: 1450px)
           flex-direction: column
         div
-          &:first-of-type
-            p
-              margin-bottom: 21px
           width: 100%
           display: flex
           flex-direction: column
@@ -291,18 +290,27 @@
           text-align: center
           background-color: white
           box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
-          &.main
-            height: 800px
-            gap: 50px
-            h2
-              font-size: 55px
+          @media screen and (max-width: 1450px)
+            gap: 30px
+            padding: 30px
           p
-            margin: 0
-            font-size: 15px
-            color: #000
-          a
-            color: #009688
-            font-weight: 500
+            font-size: 16px
+          h4
+            font-size: 40px
+          &:first-of-type
+            p
+              margin-bottom: 45px
+          &.main
+            height: 820px
+            h4
+              font-size: 55px
+            p
+              font-size: 18px
+              margin: 0
+            a
+              padding-top: 20px
+              color: #009688
+              font-weight: 500
     #minimal-requirements
       main
         #background
