@@ -4,9 +4,10 @@
 ## Entities Overview
 
 In **ThingsBoard**, an **entity** is a core component that represents a physical object or a concept within the platform. You can view the list of ThingsBoard entities [here](/docs/{{peDocsPrefix}}user-guide/entities-and-relations/){: target="_blank"}.
+
 **ThingsBoard Edge** supports entities that are relevant for edge computing.
 
-### Available Edge Entities
+#### Available Edge Entities
 
 * **Devices:** Physical IoT devices (sensors, actuators, controllers).
 * **Assets:** A real world object that helps group and manage the IoT ecosystem (e.g., machines, buildings, factories).
@@ -21,7 +22,7 @@ Most entities can be created on the **Edge**, except for **Customers**, **Users*
 
 The **Devices** and **Assets** entities have the configuration templates as [Device Profiles](/docs/{{peDocsPrefix}}user-guide/device-profiles/){: target="_blank"} and [Asset Profiles](/docs/{{peDocsPrefix}}user-guide/asset-profiles/){: target="_blank"}, respectively. 
 
-## Entities Key Features
+## Entity Key Features
 
 ### Attributes 
 **Attributes** are the structured data that can be assigned to the entities, such as metadata or static properties (e.g., device model, location). They are stored in the database and can be used for visualization, analysis, logic configuration, and integration with other services.
@@ -33,15 +34,15 @@ Time-series data collected from devices (e.g., temperature, pressure).
 https://thingsboard.io/docs/user-guide/telemetry/
 
 ### Relations
-Entities can be linked hierarchically (e.g., devices assigned to assets).
+
+**Entities** can be linked hierarchically. 
 
 Several parameters define the relation hierarchy between the entities:
-
-    Direction: Describes how the entities are associated with each other.
-        “Outbound relation - From”: Indicates that the relation originates from the entity (the entity is a source).
-        “Inbound relation - To”: Indicates that the relation points to the entity (the entity is a recipient).
-    Relation type: Describes the nature of the connection between the entities.
-        “Contains”: Indicates that the entity is a part of another entity (e.g., Device A is the part of Asset A).
-        “Manages”: Indicates that the entity is responsible for another entity (e.g., Asset A manages Device A).
+* **Direction:** Describes how the entities are associated with each other.
+    * **“Outbound relation - From”:** Indicates that the relation originates from the entity (_the entity is a source_).
+    * **“Inbound relation - To”:** Indicates that the relation points to the entity (_the entity is a recipient_).
+* **Relation type:** Describes the nature of the connection between the entities.
+    * **“Contains”:** Indicates that the entity is a part of another entity (_e.g., Device A is the part of Asset A_).
+    * **“Manages”:** Indicates that the entity is responsible for another entity (_e.g., Asset A manages Device A_).
 
 
