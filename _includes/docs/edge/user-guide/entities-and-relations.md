@@ -67,3 +67,6 @@ Several parameters define the relation hierarchy between the entities:
 The entity relations diagram can appear as follows: 
 ![image](/images/edge/user-guide/relations.webp){: style="display: block; margin: auto; max-width: 600px; max-height: 600px"}
 
+## Next steps
+
+{% include templates/edge/guides-banner-edge.md %}
