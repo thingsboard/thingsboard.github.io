@@ -60,7 +60,11 @@ Device Telemetry Tab:
 - Click on the device row in the table to open device details;
 - Navigate to the telemetry tab.
 
-**images**
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+![imagePe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-pe.png)
+{% else %}  
+![imageCe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-ce.png)
+{% endif %}
 
 Let’s display Temco Tstat10 time series on a dashboard. For this purpose, you can create your own dashboard with your 
 custom widgets or use a ready-made dashboard and simply import it.

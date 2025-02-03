@@ -39,7 +39,7 @@ Then, choose a created device from dropdown list and save entity alias. Now, you
 If you did everything right, you have to see the following dashboard:
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-dashboard-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-dashboard-ce.png)
 {% else %}  
-![imageCe](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-dashboard-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-dashboard-ce.png)
 {% endif %}
