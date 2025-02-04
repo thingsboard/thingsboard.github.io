@@ -16,11 +16,11 @@
         title: Select "**BACnet**" connector type, fill in the "**Name**" field, disable filling configuration with default values and click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/advanced-temco-tstat10-gateway-configuring-2-ce.png,
-        title: In the created connector go to "**Advanced**" section and paste the below json configuration. Click on "Save" button;
+        title: In the created connector go to "**Advanced**" section and paste the below json configuration. Click on "Save" button.
 '
 %}
 
-{% assign creatingGatewayCE = '
+{% assign creatingGatewayPE = '
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-1-pe.png,
         title: Open the ThingsBoard in your browser and log in. Go to "**Entities**" > "**Gateways**" tab in the sidebar and click on "**+**" button. Fill in "**Name**" and "**Device profile**" fields and click "**Create**" button;
@@ -38,7 +38,7 @@
         title: Select "**BACnet**" connector type, fill in the "**Name**" field, disable filling configuration with default values and click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/advanced-temco-tstat10-gateway-configuring-2-pe.png,
-        title: In the created connector go to "**Advanced**" section and paste the below json configuration. Click on "Save" button;
+        title: In the created connector go to "**Advanced**" section and paste the below json configuration. Click on "Save" button.
 '
 %}
 

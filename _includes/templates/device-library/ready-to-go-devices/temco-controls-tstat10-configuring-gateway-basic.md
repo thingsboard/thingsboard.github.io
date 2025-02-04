@@ -46,7 +46,7 @@
         title: Click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-16-ce.png,
-        title: Device added;
+        title: Device added.
 '
 %}
 
@@ -98,7 +98,7 @@
         title: Click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-16-pe.png,
-        title: Device added;
+        title: Device added.
 '
 %}
 

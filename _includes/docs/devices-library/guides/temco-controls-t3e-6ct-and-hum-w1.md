@@ -36,8 +36,17 @@ Also, you need to download and install the T3000 software from the [official web
 Using the T3000 software, you can configure the controller. You need to connect the controller to your network 
 over Ethernet. For this purpose, use the following steps:
 
-1. Connect T3E-6CT to PC by Ethernet cable and start T3000 software.
-2. Click the button "**Search**" to scan your network, the following view will appear. When Tstat10 will discover, close the view.
+{% assign configuringDevice = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
+        title: Connect T3E-6CT to PC by Ethernet cable and start T3000 software. Click the button "**Search**" to scan your network, the following view will appear;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-configuring-2.png,
+        title: When T3E-6CT will discover, close the view.
+' 
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=configuringDevice %}
 
 ## Creating and configuring ThingsBoard IoT Gateway
 
@@ -55,7 +64,11 @@ Device Telemetry Tab:
 - Click on the device row in the table to open device details;
 - Navigate to the telemetry tab.
 
-**images**
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+![imagePe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
+{% else %}
+![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
+{% endif %}
 
 Let’s display Temco T3E-6CT time series on a dashboard. For this purpose, you can create your own dashboard with your 
 custom widgets or use a ready-made dashboard and simply import it.

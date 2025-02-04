@@ -39,10 +39,20 @@ Also, you need to download and install the T3000 software from the [official web
 Using the T3000 software, you can configure the controller. You need to connect the controller to your network 
 over Wi-Fi or Ethernet. For this purpose, use the following steps:
 
-1. Connect Tstat10 to PC by RS485 and start T3000 software.
-2. Click the button "**Search**" to scan your network, the following view will appear. When Tstat10 will discover, close the view.
-3. Click on "**Tstat10**" device in the sidebar, in the opened window select "**TCP/IP**" tab and click on the 
-   "**Wifi Configuration**" button. In the opened window, provide your Wi-Fi network credentials and click "**Apply**".
+{% assign configuringDevice = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
+        title: Connect Tstat10 to PC by RS485 and start T3000 software. Click the button "**Search**" to scan your network, the following view will appear;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-2.png,
+        title: When Tstat10 will discover, close the view;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-3.png,
+        title: Click on "**Tstat10**" device in the sidebar, in the opened window select "**TCP/IP**" tab and click on the "**Wifi Configuration**" button. In the opened window, provide your Wi-Fi network credentials and click "**Apply**".
+' 
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=configuringDevice %}
 
 ## Creating and configuring ThingsBoard IoT Gateway
 
