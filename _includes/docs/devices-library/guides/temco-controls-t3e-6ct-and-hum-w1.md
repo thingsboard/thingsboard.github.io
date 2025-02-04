@@ -15,8 +15,7 @@
 integrators. Available in several input/output configurations, the T3 module provide convenient termination for field 
 devices and interfacing to your HVAC, lighting, temperature sensors, and other typical building automation 
 applications. Each of the analog inputs can be jumper configured for signals of either 0-5V, 0-20mA, or dry contact. 
-The outputs are available in dry contacts 1amp/output, 0-10V analog, and PNP sinking. The modules are slave devices that
-can be easily controlled via the RS485 serial interface using the industry standard Modbus Protocol.<br><br>
+The outputs are available in dry contacts 1amp/output, 0-10V analog, and PNP sinking.<br><br>
 
 ## Prerequisites
 
