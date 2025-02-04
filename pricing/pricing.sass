@@ -66,6 +66,34 @@ html#pricing
                     font-size: 14px
                     line-height: 18px
 
+    .faq-section-selector
+      display: flex
+      align-items: center
+      gap: 23px
+      padding: 8px
+      background-color: #F7F9FC
+      border-radius: 100px
+      width: fit-content
+      margin-bottom: 24px
+      @media (max-width: 690px)
+        flex-direction: column
+        width: 100%
+        border-radius: 20px
+      .faq-section-option
+        padding: 7px 24px
+        border-radius: 22px
+        cursor: pointer
+        color: #75767C
+        &:hover
+          color: #000
+        &.active
+          border: 1px solid #2A7DEC
+          color: #2A7DEC
+        &.disabled
+          cursor: default
+          &:hover
+            color: #75767C
+
     .faq-content
       padding: 60px 30px 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
@@ -95,63 +123,71 @@ html#pricing
         li
           list-style: disc
           margin-bottom: .75em
-
-      .pi-accordion
-        h4.title
-          font-size: 18px
-          font-weight: 500
-          line-height: 27px
-          padding: 22px
-          transition: none
-          &:after
-            content: "+"
-            position: absolute
-            right: 25px
-            font-size: 28px
-            color: #707275
-            transform: rotate(0deg)
-            transition: transform 0.3s
-            margin-right: 1px
-
-        div.item
-          border: 1px solid #EBEBEB
-          border-radius: 4px
-          overflow: visible
-          &:hover
-            border: 2px solid #2A7DEC
-            h4.title
-              padding: 21px
-              color: #1f3a52
-              &:after
-                color: #1f3a52
-                right: 24px
-          &:not(:last-of-type)
-            margin-bottom: 7px
-          &:before
+      .answers
+        section
+          display: none
+          padding: 0
+          &.active
             display: block
-            content: " "
-            margin-top: -70px
-            height: 70px
-            visibility: hidden
-          & > h4.title
-            &:before
-              display: none
+          .pi-accordion
+            display: none
+            &.active
+              display: block
+            h4.title
+              font-size: 18px
+              font-weight: 500
+              line-height: 27px
+              padding: 22px
+              transition: none
+              &:after
+                content: "+"
+                position: absolute
+                right: 25px
+                font-size: 28px
+                color: #707275
+                transform: rotate(0deg)
+                transition: transform 0.3s
+                margin-right: 1px
 
-        .content
-          border: none
-          box-shadow: none
-          border-radius: 4px
-          padding: 5px 50px 25px 10px
-          margin: 0 10px 10px
-        .item.on
-          border: 2px solid #2A7DEC
-          box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
-          h4.title
-            padding: 21px
-            &:after
-              transform: rotate(45deg)
-              transition: transform 0.3s
-              margin: unset
+            div.item
+              border: 1px solid #EBEBEB
+              border-radius: 4px
+              overflow: visible
+              &:hover
+                border: 2px solid #2A7DEC
+                h4.title
+                  padding: 21px
+                  color: #1f3a52
+                  &:after
+                    color: #1f3a52
+                    right: 24px
+              &:not(:last-of-type)
+                margin-bottom: 7px
+              &:before
+                display: block
+                content: " "
+                margin-top: -70px
+                height: 70px
+                visibility: hidden
+              & > h4.title
+                &:before
+                  display: none
+
+            .content
+              border: none
+              box-shadow: none
+              border-radius: 4px
+              padding: 5px 50px 25px 10px
+              margin: 0 10px 10px
+            .item.on
+              border: 2px solid #2A7DEC
+              box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+              h4.title
+                padding: 21px
+                &:after
+                  transform: rotate(45deg)
+                  transition: transform 0.3s
+                  margin: unset
 
     a, button
       &.btn-blue
@@ -176,8 +212,9 @@ html#pricing
 
     .pricing-square
       padding: 25px 32px
-      box-shadow: 0 52px 40px -32px rgba(0,0,0,0.1)
-      border-radius: 4px
+      border: 1px solid rgba(42, 125, 236, 0.16)
+      border-radius: 12px
+      box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
       background-color: #fff
       height: 100%
       h2
@@ -198,8 +235,9 @@ html#pricing
           min-height: 100px
         p
           margin-bottom: 1rem
+          font-weight: 300
       .pricing-square-price
-        font-weight: 700
+        font-weight: 600
         font-size: 32px
         line-height: 60px
         text-align: center
@@ -213,13 +251,13 @@ html#pricing
       .pricing-square-item
         font-size: 14px
         line-height: 21px
-        padding-bottom: 5px
+        padding-bottom: 12px
         margin-left: 32px
         &:before
           content: "\f00c"
           position: absolute
-          height: 20px
-          width: 20px
+          height: 21px
+          width: 22px
           margin-right: 11px
           margin-left: -32px
           padding: 0 5px
@@ -327,7 +365,7 @@ html#pricing
           @media (max-width: 1450px) and (min-width: 1200px)
             a
               display: none
-        &.pay-as-you-go, &.perpetual, &.community-edition, &.thingsboard-cloud, &.trendz-cloud, &.thingsboard-pe, &.trendz-self-managed
+        &.pay-as-you-go, &.perpetual, &.community-edition, &.thingsboard-cloud, &.trendz-cloud, &.thingsboard-sm, &.trendz-self-managed
           &:before
             content: ""
             display: inline-block
@@ -350,7 +388,7 @@ html#pricing
         &.thingsboard-cloud, &.trendz-cloud
           &:before
             background: url("https://img.thingsboard.io/pricing/cloud-icon.svg") no-repeat
-        &.thingsboard-pe, &.trendz-self-managed
+        &.thingsboard-sm, &.trendz-self-managed
           &:before
             background: url("https://img.thingsboard.io/pricing/self-icon.svg") no-repeat
 
@@ -459,7 +497,7 @@ html#pricing
       @media (min-width: 1200px)
         height: 96px
     .pricing-header-divider
-      height: 8px
+      height: 3px
       width: 100%
       background-color: #102A4E
       &:not(.no-margin)
