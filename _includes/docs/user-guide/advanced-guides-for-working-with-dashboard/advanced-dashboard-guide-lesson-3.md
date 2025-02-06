@@ -19,7 +19,10 @@ In this part, we will add separate states for each device, simulate telemetry da
 Since we are using virtual devices, they do not send telemetry data to the ThingsBoard. However, we can simulate the transmission of such data in real time.
 To do this, we will use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"}.
 
-We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices. Let's get started.
+We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices.
+Then, we will save this telemetry in the database using the [save timeseries](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} node.
+Let&#39;s get started.
+
 
 First, create the new rule chain:
 
@@ -36,8 +39,8 @@ Now, let&#39;s add the necessary nodes:
 - Copy the following script from the documentation:
 
 ```js
-var temperature = toFixed(Math.random()*10 + 20, 2);
-var humidity = toFixed(Math.random()*15 + 30, 2);
+var temperature = toFixed(Math.random()*10 + 18, 2);
+var humidity = toFixed(Math.random()*15 + 40, 2);
 var co2 = toFixed(Math.random()*70 + 440, 2);
 var msg = { temperature: temperature, humidity: humidity, co2: co2 };
 var metadata = { data: 40 };
@@ -83,7 +86,7 @@ Add data emulator for "Water Flow Meter" device.
 - Use the following script to simulate water consumption telemetry data, and battery voltage data:
 
 ```js
-var waterConsumption = toFixed(Math.random()*1.2, 2);
+var waterConsumption = toFixed(Math.random()*1.3, 2);
 var batteryLevel = toFixed(Math.random()*1 + 45, 2);
 var msg = { waterConsumption: waterConsumption, batteryLevel: batteryLevel };
 var metadata = { data: 40 };
@@ -105,8 +108,8 @@ Finally, add data emulator for "IAQ Sensor" device. Name it "IAQ data emulator".
 - Use the following script to simulate water consumption, and battery voltage telemetry data:
 
 ```js
-var temperature = toFixed(Math.random()*10 + 20, 2);
-var humidity = toFixed(Math.random()*15 + 30, 2);
+var temperature = toFixed(Math.random()*10 + 18, 2);
+var humidity = toFixed(Math.random()*15 + 40, 2);
 var co2 = toFixed(Math.random()*70 + 440, 2);
 var msg = { temperature: temperature, humidity: humidity, co2: co2 };
 var metadata = { data: 40 };
@@ -146,7 +149,7 @@ Now that we are receiving telemetry data from the devices, we can display it on 
 Devices can send multiple telemetry values. For example, an Indoor Air Quality Sensor sends values of temperature, humidity, and CO2 level. 
 By default, each telemetry value (key) is represented as a separate column in the table widget. 
 However, this layout might not be the most convenient for viewing. 
-Let's combine the telemetry values for a device that transmits multiple readings into a single column for a cleaner appearance and hide unnecessary columns.
+Let&#39;s combine the telemetry values for a device that transmits multiple readings into a single column for a cleaner appearance and hide unnecessary columns.
 
 {% include images-gallery.html imageCollection="customize-office-sensors-list-widget-2" showListImageTitles="true" %}
 
@@ -209,7 +212,7 @@ As you can see, the "Office sensors list" widget now displays data on the office
 
 {% include images-gallery.html imageCollection="time-window-configuration-2" %}
 
-This configuration ensures that all widgets using the dashboard's time window will display the aggregated telemetry values for the current day (or another selected interval) grouped by the hour.
+This configuration ensures that all widgets using the dashboard&#39;s time window will display the aggregated telemetry values for the current day (or another selected interval) grouped by the hour.
 
 ## Adding state for each device & navigation between states
 
@@ -217,13 +220,13 @@ Now we need to add separate states for each of our devices and set up transition
 
 {% include images-gallery.html imageCollection="adding-devices-states-1" showListImageTitles="true" %}
 
-Similarly, add "Energy Meter" state with the "energy_sensor" state Id and "Water Flow Meter" state with the "water_sensor" state Id.
+Similarly, add "Energy Meter" state with the **energy_sensor** state Id and "Water Flow Meter" state with the **water_sensor** state Id.
 
 {% include images-gallery.html imageCollection="adding-devices-states-2" %}
 
 ### Customize Office sensors list widget
 
-Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensors-list-widget){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
+Now let&#39;s customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensors-list-widget){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
 
 - Go to the "office" state and enter editing mode of the "Office sensors list" widget;
 - Scroll to the "Actions" menu section and click the "Add action" button;
@@ -327,7 +330,7 @@ return tooltip + typeTooltip;
 ```
 {:.copy-code.expandable-4}
 
-- Adjust the tooltip's Y offset relative to the marker to -0.77 for optimal positioning;
+- Adjust the tooltip&#39;s Y offset relative to the marker to -0.77 for optimal positioning;
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-2" %}
 
@@ -403,10 +406,10 @@ Click any marker on the "Office plan" widget to open a tooltip. Each device&#39;
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-5" %}
 
-## Configuring state for Indoor Air Quality Sensor
+## Configuring air_sensor state
 
-To effectively monitor and analyze indoor air quality, we'll add three widgets to display current readings of temperature, humidity, and CO2 levels, alongside two widgets for tracking historical data on air quality in the office.
-This will allow us to not only monitor the current state of air quality parameters but also to analyze the trends in their changes over time.
+To effectively monitor and analyze indoor air quality, we&#39;ll add three widgets to display current readings of temperature, humidity, and CO2 levels, alongside two widgets for tracking historical data on air quality in the office.
+This will allow us to not only monitor the current state of air quality but also to analyze the trends in their changes over time.
 
 ### Temperature, humidity, and CO2 level cards widgets
 
@@ -424,7 +427,7 @@ Add another card widget to display the CO2 level.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-3" showListImageTitles="true" %}
 
-Now, you can see the current values of temperature, humidity, and CO2 levels.
+Now you can see the current temperature, humidity, and CO2 values.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-4" %}
 
@@ -442,13 +445,13 @@ Add another line chart widget to display air quality data. This widget will also
 {% include images-gallery.html imageCollection="air-quality-widget-1" showListImageTitles="true" %}
 
 <br>
-The configured "Indoor Air Quality Sensor" state should look like this:
+Monitor the current air quality status and analyze its changes over time in a separate dashboard state.
 
 {% include images-gallery.html imageCollection="air-sensor-state" %}
 
-## Configuring state for Energy Meter
+## Configuring energy_sensor state
 
-Let&#39;s move on to configuring the "Energy Meter" state. We will add two widgets: one to display the total energy consumption for the current day and another to display historical data on hourly energy consumption.
+Let&#39;s move on to configuring the **energy_sensor** state. We will add two widgets: one to display the total energy consumption for the current day and another to display historical data on hourly energy consumption.
 
 ### Current power consumption
 
@@ -467,7 +470,7 @@ Now you can monitor the total energy consumption for the current day and track h
 
 {% include images-gallery.html imageCollection="energy-meter-state-final" %}
 
-## Configuring state for Water Flow Meter
+## Configuring water_sensor state
 
 Finally, we will configure the state for the "Water Flow Meter" device. This will include a card widget to display the total water consumption for the current day, a chart widget to show historical data on hourly water consumption, and a battery level widget for the device.
 
@@ -480,7 +483,7 @@ If you need to display specific data but cannot find a suitable widget in the av
 ### Water consumption chart
 
 Now we need to add a widget to visualize historical data on water consumption. Previously, we added a similar widget for tracking [power consumption](#power-consumption-chart).
-Let's copy the ["Power consumption history" widget](#power-consumption-chart), paste it into the "water_sensor" state, and change the data source to water consumption.
+Let&#39;s copy the ["Power consumption history" widget](#power-consumption-chart), paste it into the **water_sensor** state, and change the data source to display water consumption.
 
 {% include images-gallery.html imageCollection="water-consumption-range-chart-1" showListImageTitles="true" %}
 
@@ -503,8 +506,8 @@ Finally, your dashboard should look like this:
 
 ## Next step
 
-At this stage, the development of our dashboard is complete. In the next lesson, we will share this dashboard with customers.
-When you are ready to proceed, simply click the button below.
+In the next lesson, you will learn how to configure notification rules, add the "Alarms table" widget, and manage alarm notifications.
+If you&#39;re ready to proceed, click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Share dashboard with customer</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Alarm management</a></p>
