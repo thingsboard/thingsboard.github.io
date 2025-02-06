@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - stitenko
-title: Dashboard states, widget actions, and analogue and digital gauges
+title: Lesson 4. Alarm management
 redirect_to: "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/"
 
 ---
