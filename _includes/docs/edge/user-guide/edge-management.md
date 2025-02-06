@@ -47,7 +47,7 @@ To force synchronization procedure, go to the **Edge management > Instances** se
 
 ## Entities Management
 
-No **entities** can be created locally on **ThingsBoard Edge**, except for the **Device** entity. To enable the use of other entities on the **Edge**, these entities must be **assigned** to the **Edge** prior to use.
+Most entities can be created on the **Edge** instance, except for **Customers**, **Users**, and **Rule Chains** entities. To enable the use of these entities on the **Edge**, these entities must be **assigned** to the **Edge** prior to use.
 
 To **assign** specific entities to the **Edge**, log in to your **Cloud** and navigate to the **Edge management > Instances** section:
 

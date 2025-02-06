@@ -1,35 +1,33 @@
-The easiest way to install and connect the **Edge** to the Server is to follow the installation instructions provided by the **ThingsBoard Server**.
-For every **Edge Entity**,  the Server displays the instructions with **pre-populated field**s such as the Edge secret key, Edge routing key, Edge RPC host URI, and so on
 
-Please follow the steps below to use these prepared instructions:
-
+Once the **Edge** instance has been created, the installation instructions will be available for use. 
+Each **Edge** has preset configurations that contain important credentials, such as **Edge Secret**, **Edge Key**, etc.  To access these configurations:
 
 {% if docsPrefix == 'pe/edge/' %}
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
-        title: Click an **Edge entity row** to open its details;
+        image: /images/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
+        title: Click on the **Edge** entity to open its details.
     ===
-        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
-        title: Click on the **"Install & Connect Instructions"** button;
+        image: /images/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
+        title: Click the **"Install & Connection Instructions"** button.
     ===
-        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
-        title: Follow the instructions to install **Edge** and connect to the server.
+        image: /images/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
+        title: Follow the instructions to install **Edge** and connect it to the server.
 '%}
 
 {% else %}
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-1-ce.png,
-        title: Click an **Edge entity row** to open its details;
+        image: /images/edge/installation/prepared-instructions-install-item-1-ce.png,
+        title: Click on the **Edge** entity to open its details.
     ===
-        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-2-ce.png,
-        title: Click on the **"Install & Connect Instructions"** button;
+        image: /images/edge/installation/prepared-instructions-install-item-2-ce.png,
+        title: Click the **"Install & Connection Instructions"** button.
     ===
-        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-3-ce.png,
-        title: Follow the instructions to install **Edge** and connect to the server.
+        image: /images/edge/installation/prepared-instructions-install-item-3-ce.png,
+        title: Follow the instructions to install **Edge** and connect it to the server.
 '%}
 
 {% endif %}

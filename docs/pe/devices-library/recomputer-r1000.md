@@ -10,8 +10,5 @@ docsPrefix: pe/
 ---
 
 
-* TOC
-{:toc}
-
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/recomputer-r1000.md %}
