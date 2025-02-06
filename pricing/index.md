@@ -417,7 +417,7 @@ selfManagedPlan:
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
-            <h2>License package</h2>
+            <h2>License packages</h2>
         </div>
         <div class="col d-flex justify-content-end">
             <div class="solution-selector">
@@ -657,7 +657,7 @@ selfManagedPlan:
                 <h2>Subscription plans</h2>
             </div>
             <div id="trendzPerpetualHeader" class="pricing-content-description col-lg-6">
-                <h2>License packages</h2>
+                <h2>License package</h2>
             </div>
             <div class="col d-flex justify-content-end">
                 <div class="solution-selector">
@@ -707,7 +707,7 @@ selfManagedPlan:
                                 Community support
                             </div>
                             <br>
-                            <div>
+                            <div style="margin-top:32px">
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
                         </div>
@@ -1018,7 +1018,7 @@ selfManagedPlan:
             </div>
         </div>
         <div id="perpetualHeader" class="pricing-content-description col-lg-6">
-            <h2>License packages</h2>
+            <h2>License package</h2>
         </div>
         <div class="col d-flex justify-content-end">
             <div class="solution-selector">
@@ -1251,7 +1251,7 @@ selfManagedPlan:
  </div>  
 </div>
 <div class="container faq-content">
-    <h2 style="display: inline-block;margin-bottom: 24px;font-weight: 600;">Frequently asked questions</h2>
+    <h2 id="faq-header" style="display: inline-block;margin-bottom: 24px;font-weight: 600;">Frequently asked questions</h2>
     <div class="faq-section-selector">
         <div class="faq-section-option active" id="faq-option-licensing" onClick="switchFaqSection('licensing', this)">Licensing</div>
         <div class="faq-section-option" id="faq-option-billing" onClick="switchFaqSection('billing', this)">Billing</div>
@@ -1524,7 +1524,7 @@ selfManagedPlan:
                         <p>Pay-as-you-go license is based on different subscription plans and represents a typical SaaS model. Each plan is usually limited by the number of devices or assets that ThingsBoard instance will manage. The billing is being provided either monthly or yearly. Your credit card will be charged once per billing period, at the beginning of the corresponding period.</p>
                     </div>    
                 </div>
-                <div class="item" data-tag="h4" data-item-id="what-is-perpetual" data-title="What is &quot;Perpetual&quot; license??">
+                <div class="item" data-tag="h4" data-item-id="what-is-perpetual" data-title="What is &quot;Perpetual&quot; license?">
                     <div class="container">
                         <p>Perpetual license is a license that allows you to use specific version of software, without an active subscription to it. Whenever you purchase a perpetual license package (Standalone or Cluster Kit or Enterprise bunddle) you get one year of software updates included.</p>
                     </div>    

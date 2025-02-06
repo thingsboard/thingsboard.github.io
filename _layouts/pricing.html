@@ -258,9 +258,35 @@
         document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
         document.getElementById(`faq-${containerId}`).classList.add('active');
         currentFaqContainer = containerId;
+        changeFaqHeader();
         switchToActiveFaqSection();
         changeCloudOptionName(containerId.startsWith('trendz'));
         toggleBillingForCe(containerId === 'thingsboard-ce');
+    }
+
+    function changeFaqHeader() {
+        let correspondingHeader
+        switch (currentFaqContainer) {
+            case 'thingsboard-ce':
+                correspondingHeader = 'ThingsBoard Community Edition FAQs';
+                break;
+            case 'thingsboard-cloud':
+                correspondingHeader = 'ThingsBoard Professional Edition: Cloud FAQs';
+                break;
+            case 'thingsboard-pe':
+                correspondingHeader = 'ThingsBoard Professional Edition: Self-managed FAQs';
+                break;
+            case 'trendz-self-managed':
+                correspondingHeader = 'Trendz Analytics: Self-managed FAQs';
+                break;
+            case 'trendz-cloud':
+                correspondingHeader = 'Trendz Analytics: Cloud FAQs';
+                break;
+            case 'thingsboard-edge':
+                correspondingHeader = 'Edge FAQs';
+                break;
+        }
+        document.getElementById('faq-header').innerText = correspondingHeader;
     }
 
     function changeCloudOptionName(isTrendz) {
