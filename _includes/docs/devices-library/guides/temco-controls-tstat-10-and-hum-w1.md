@@ -10,7 +10,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{controllerVendorLink}}){: target="_blank"} Bacnet programmable controller is a low-cost high
 performance programmable controller. With an I/O configuration, it can be extended through external I/O modules to
 form a complete building automation solution. There are five relays and two analog outputs as well as
@@ -41,13 +41,13 @@ over Wi-Fi or Ethernet. For this purpose, use the following steps:
 
 {% assign configuringDevice = '
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
         title: Connect Tstat10 to PC by RS485 and start T3000 software. Click the button "**Search**" to scan your network, the following view will appear;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-2.png,
         title: When Tstat10 will discover, close the view;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-3.png,
         title: Click on "**Tstat10**" device in the sidebar, in the opened window select "**TCP/IP**" tab and click on the "**Wifi Configuration**" button. In the opened window, provide your Wi-Fi network credentials and click "**Apply**".
 ' 
 %}
@@ -71,9 +71,9 @@ Device Telemetry Tab:
 - Navigate to the telemetry tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-pe.png)
+![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-pe.png)
 {% else %}  
-![imageCe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-ce.png)
+![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-ce.png)
 {% endif %}
 
 Let’s display Temco Tstat10 time series on a dashboard. For this purpose, you can create your own dashboard with your 

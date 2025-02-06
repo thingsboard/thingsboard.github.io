@@ -6,13 +6,13 @@ Each **Edge** has preset configurations that contain important credentials, such
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
+        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
         title: Click on the **Edge** entity to open its details.
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
+        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
         title: Click the **"Install & Connection Instructions"** button.
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
+        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
         title: Follow the instructions to install **Edge** and connect it to the server.
 '%}
 
@@ -20,13 +20,13 @@ Each **Edge** has preset configurations that contain important credentials, such
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-1-ce.png,
+        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-1-ce.png,
         title: Click on the **Edge** entity to open its details.
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-2-ce.png,
+        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-2-ce.png,
         title: Click the **"Install & Connection Instructions"** button.
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-3-ce.png,
+        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-3-ce.png,
         title: Follow the instructions to install **Edge** and connect it to the server.
 '%}
 
