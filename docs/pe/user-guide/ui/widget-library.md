@@ -124,7 +124,7 @@ wl-files-bundle:
 
 wl-scada-hp-general-symbols:
     0:
-        image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-general-symbols-1-pe.png
+        image: https://img.thingsboard.io/user-guide/ui/widgets/widget-library/wl-scada-hp-general-symbols-1-pe.png
         title: 'Bundle with high-performance SCADA symbols.'
 
 wl-gpio:
@@ -134,7 +134,7 @@ wl-gpio:
 
 wl-scada-hp-fluid-system:
     0:
-        image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-fluid-system-1-pe.png
+        image: https://img.thingsboard.io/user-guide/ui/widgets/widget-library/wl-scada-hp-fluid-system-1-pe.png
         title: 'Bundle with high-performance SCADA symbols for fluid system.'
 
 wl-home:
@@ -184,7 +184,7 @@ wl-outdoor-environment-bundle:
 
 wl-scada-symbols-bundle:
     0:
-        image: /images/user-guide/ui/widgets/widget-library/wl-scada-symbols-bundle-pe.png
+        image: https://img.thingsboard.io/user-guide/ui/widgets/widget-library/wl-scada-symbols-bundle-pe.png
         title: 'For uploading SVG symbols to your SCADA dashboard.'
 
 wl-status-indicators-bundle:
@@ -204,7 +204,7 @@ wl-tables-bundle:
 
 wl-scada-traditional-fluid-system:
     0:
-        image: /images/user-guide/ui/widgets/widget-library/wl-scada-traditional-fluid-system-1-pe.png
+        image: https://img.thingsboard.io/user-guide/ui/widgets/widget-library/wl-scada-traditional-fluid-system-1-pe.png
         title: 'Bundle with high-performance SCADA symbols for fluid system.'
 
 add-widget:
