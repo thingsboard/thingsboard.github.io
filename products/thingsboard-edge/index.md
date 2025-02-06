@@ -177,6 +177,7 @@ description: Comprehensive software solutions for edge computing, providing data
 
 <section id="matrix">
     <div id="backg-matrix">
+        <div class="cloud"><div class="coln"><div class="head"></div></div></div>
         <div class="edge"><div class="coln"><div class="head"></div></div></div>
         <div class="gateway"><div class="coln"><div class="head"></div></div></div>
     </div>
@@ -185,78 +186,107 @@ description: Comprehensive software solutions for edge computing, providing data
             <thead>
                 <tr>
                     <td></td>
-                    <th>ThingsBoard<br>Edge</th>
                     <th>IoT<br>Gateway</th>
+                    <th>ThingsBoard<br>Edge</th>
+                    <th>ThingsBoard<br>Server</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>ThingsBoard Server required (CE, PE or Cloud)</th>
+                    <th>ThingsBoard Server Required</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <th>Data Collection</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Data collection</th>
+                    <th>Core Protocols Support<br>(MQTT, HTTP, CoAP, etc.)</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Data processing</th>
+                    <th>Peripheral Infrastructure Protocols Support<br>(Modbus, BACNet, BLE, etc.)</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Asset management</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>End-user real-time dashboards</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Real-time Analytics</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                </tr>
-                <tr>
-                    <th>Multi-tenancy Support</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Offline Operation on edge</th>
+                    <th>Data Processing and Analysis</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"><br>(Limited to Data Collection)</td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>Traffic Filtering on edge</th>
+                    <th>Real-Time and SCADA-like HMI Dashboards</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Alarms & Notifications</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Asset Management</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Offline Data Computing and Storage<br>(Remote Site Scenarios)</th>
+                    <td>Data Collection</td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                 </tr>
                 <tr>
-                    <th>Local Alarms on edge</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th>Multi-Tenancy Support</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Hardware Resources Usage</th>
-                    <td>Medium to Low</td>
                     <td>Low</td>
+                    <td>Medium to Low</td>
+                    <td>High to Medium</td>
                 </tr>
             </tbody>
     </table>
+</section>
+
+<section id="products">
+    <div id="background">
+        <div class="main2"></div><div class="small5"></div><div class="small6"></div><div class="small7"></div>
+    </div>
+    <h3 class="product-title">Typical Usage Scenario</h3>
+    <div class="product-list">
+        <div>
+            <h4>IoT Gateway</h4>
+            <p>The IoT Gateway collects, processes, and routes data from local area networks (LAN) to the Edge or Server. It acts as a critical bridge, facilitating seamless communication between IoT devices and larger network infrastructures.</p>
+            <img src="/images/edge/tb-edge-gw.webp" alt="ThingsBoard Gateway block" width="306" height="318" loading="lazy">
+            <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">What is ThingsBoard IoT Gateway?</a>
+        </div>
+        <div class="main">
+            <h4>Edge</h4>
+            <p>ThingsBoard Edge processes and visualizes data directly at the network edge, offering immediate insights and reducing bandwidth demands by minimizing the volume of data transmitted to centralized servers.</p>
+            <img src="/images/edge/tb-edge.webp" alt="ThingsBoard Edge block" width="357" height="371" loading="lazy">
+            <a href="/docs/edge/getting-started-guides/what-is-edge/" target="_blank">What is ThingsBoard Edge?</a>
+        </div>
+        <div>
+            <h4>Server</h4>
+            <p>The ThingsBoard Server provides robust data processing and storage solutions, along with advanced analytics capabilities. It supports a wide range of deployments, from on-premises to cloud-based, ensuring flexibility and scalability for diverse enterprise needs.</p>
+            <img src="/images/edge/tb-cloud.webp" alt="ThingsBoard Cloud block" width="306" height="318" loading="lazy">
+            <a href="/docs/getting-started-guides/what-is-thingsboard/" target="_blank">What is ThingsBoard Cloud?</a>
+        </div>
+    </div>
 </section>
 
 <section id="minimal-requirements">
@@ -271,8 +301,6 @@ description: Comprehensive software solutions for edge computing, providing data
                     <div>
                         <h4 class="title">ThingsBoard Edge</h4>
                         <p><b>Platform:</b> Compact server (e.g, Intel NUC, mini-PC, embedded PC)<br><b>CPU:</b> 2-core x86-64 processor<br><b>RAM:</b> 2 GB<br><b>Storage:</b> 20 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS) or Windows<br><b>Java VM:</b> JDK 8+ (JDK 17 preferred)</p>
-                        <h4 class="title">Performance Expectations</h4>
-                        <p> ThingsBoard Edge instance with the above configuration, can handle approximately 50 to 100 devices, assuming each device sends data at a low frequency (e.g., once per minute) </p>
                     </div>
                 </div>
             </div>
@@ -280,9 +308,7 @@ description: Comprehensive software solutions for edge computing, providing data
                 <div class="block">
                    <div> 
                        <h4 class="title">ThingsBoard IoT Gateway</h4>
-                        <p><b>Platform:</b> Low-spec server (e.g, Raspberry Pi, Intel NUC)<br><b>CPU:</b> Single-core x86-x64 processor<br><b>RAM:</b> 1 GB<br><b>Storage:</b> 10 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS)<br><b>Java VM:</b> JDK 8+ (JDK 17 preferred)</p>
-                        <h4 class="title">Performance Expectations</h4>
-                        <p> ThingsBoard IoT Gateway instance with the above configuration can handle approximately 20-50 devices sending data at a low frequency (e.g., once per minute)</p>
+                        <p><b>Platform:</b> Low-spec server (e.g, Raspberry Pi, Intel NUC)<br><b>CPU:</b> Single-core x86-x64 processor<br><b>RAM:</b> 1 GB<br><b>Storage:</b> 10 GB of free disk space<br><b>OS:</b> Linux (Debian, CentOS)<br></p>
                    </div>
                 </div>
             </div>
