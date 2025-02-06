@@ -1,6 +1,6 @@
 ## Prerequisites
 
-To start using the **ThingsBoard Edge**, it is essential to have a running **ThingsBoard {{appPrefix}} server** that supports Edge functionality.
+To start running **ThingsBoard {{appPrefix}} Edge**, you will need an active **ThingsBoard {{appPrefix}} account** that supports **Edge** functionality.
 
 {% if docsPrefix == 'pe/edge/' %}
 {% include templates/edge/obtain-pe-cloud.md %}
@@ -10,33 +10,37 @@ To start using the **ThingsBoard Edge**, it is essential to have a running **Thi
 
 {% include templates/edge/install/hardware-requirements.md %}
 
-### Provisioning a new Edge instance on the ThingsBoard server
+### Deploying a New Edge Instance
 
-Additionally, you will need to provision **Edge** on the ThingsBoard server.
+To create a new **Edge**:
 
 {% if docsPrefix == 'pe/edge/' %}
 {% assign addEdge = '
     ===
         image: https://img.thingsboard.io/pe/edge/installation-add-edge-item-1.png,
-        title: Log in to your **ThingsBoard PE** instance and navigate to the **Edge Management -> Instances** section. Click the **"+"** icon in the top right corner and select **"Add new edge"**.
+        title: Sign in to your **ThingsBoard PE** instance and navigate to the **Edge Management > Instances** section. Click the **"+"** icon in the top right corner and select the **"Add new edge"** option.
     ===
         image: https://img.thingsboard.io/pe/edge/installation-add-edge-item-2.png,
-        title: Enter a name for your edge. For instance, "My New Edge". If necessary, update the cloud endpoint. This URL should be accessible from the edge. **If the Edge is running in a Docker container, using "localhost" is incorrect**. It must be the **IP address** of the machine running **ThingsBoard PE** that is accessible from the edge container. If you are using the **ThingsBoard Cloud** server to evaluate the edge, leave this setting as it is. Click **"Add"** to confirm the addition of your new Edge.
+        title: Enter a name for the Edge you are creating. For example, "My New Edge". **If needed**, update the **cloud endpoint**. 
+* If the **Edge** runs in a [Docker container](https://docs.docker.com/get-started/docker-overview/){:target="_blank"}, **do not** use “localhost” as the endpoint. Instead, use the **IP address** of the machine where **ThingsBoard PE** is hosted and accessible by the Edge container. For example, http://10.7.2.143:8080.
+* If you are using the **ThingsBoard Cloud**, there’s no need to change this setting — keep it as is.
+* Click the **"Add"** button to confirm the addition of the **Edge instance**. 
+
     ===
         image: https://img.thingsboard.io/pe/edge/installation-add-edge-item-3.png,
-        title: Your new edge should now appear at the top of the list, as entries are sorted by creation time by default.
+        title: Your new **Edge** is created and will appear at the top of the list, as entries are sorted by creation time by default.
 '%}
 {% else %}
 {% assign addEdge = '
     ===
         image: https://img.thingsboard.io/edge/installation-add-edge-item-1.png,
-        title: Log in to your **ThingsBoard PE** instance and navigate to the **Edge Management -> Instances** section. Click the **"+"** icon in the top right corner and select **"Add new edge"**.
+        title: Sign in to your **ThingsBoard PE** instance and navigate to the **Edge Management > Instances** section. Click the **"+"** icon in the top right corner and select the **"Add new edge"** option.
     ===
         image: https://img.thingsboard.io/edge/installation-add-edge-item-2.png,
-        title: Enter a name for your Edge. For instance, "My New Edge". Click **"Add"** to confirm the addition of your new Edge.
+        title: Enter a name for the Edge you are creating. For example, "My New Edge". Click the **"Add"** button to confirm the addition of the **Edge instance**.
     ===
         image: https://img.thingsboard.io/edge/installation-add-edge-item-3.png,
-        title: Your new Edge should now appear at the top of the list, as entries are sorted by creation time by default.
+        title: Your new **Edge** is created and will appear at the top of the list, as entries are sorted by creation time by default.
 '%}
 {% endif %}
 

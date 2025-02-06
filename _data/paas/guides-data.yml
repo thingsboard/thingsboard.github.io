@@ -44,7 +44,13 @@
       video: false
       pe: false
     - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/
-      title: Lesson 4. Adding customers & sharing or changing ownership of assets.
+      title: Lesson 4. Alarm management
+      subtitle: "Explore this guide to learn how to: create alarm rules, and handle alarms using the Alarms widget."
+      keywords: alarm alarms widget helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/
+      title: Lesson 5. Adding customers & sharing or changing ownership of assets.
       subtitle: "Explore this guide to learn how to: grant access to the dashboard by assigning ownership or shared access to specific entities (such as devices, assets, etc.) to different clients; create customer and customer users."
       keywords: customer user share change owner helloworld
       video: false

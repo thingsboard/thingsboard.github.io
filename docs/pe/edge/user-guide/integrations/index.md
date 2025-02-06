@@ -48,8 +48,6 @@ missingPlaceholder:
 {% assign sinceVersion = "3.4" %}
 {% include templates/since.md %}
 
-{% include templates/edge/integrations/edge-pe-reference.md %}
-
 ### Overview
 
 Edge Integrations feature was designed in a similar way as Platform Integrations. The only major difference is in the way how integrations and converters are configured. 

@@ -3,6 +3,9 @@
 {% assign deviceName = "reComputer R1000" %}
 {% assign deviceVendorLink = "https://wiki.seeedstudio.com/recomputer_r/" %}
 
+* TOC
+{:toc}
+
 ## Introduction
 
 ![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
@@ -10,13 +13,11 @@ The [reComputer R1000]({{deviceVendorLink}}){: target="_blank"} edge IoT control
 
 ## Integration with ThingsBoard
 
-{% if page.docsPrefix contains "pe/" or page.docsPrefix contains "paas/" %}
-{% assign prerequisites = "Professional Edition<br><small>(North America)</small>%,%professionalEditionAmerica%,%templates/device-library/ready-to-go-devices/reComputerR1000-pe-america.md%br%Professional Edition<br><small>(Europe)</small>%,%professionalEditionEurope%,%templates/device-library/ready-to-go-devices/reComputerR1000-pe-europe.md" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include /templates/device-library/ready-to-go-devices/pe-prerequisites-recomuterR.md %}
 {% else %}
-{% assign prerequisites = "Community Edition %,%communityEdition%,%templates/device-library/ready-to-go-devices/reComputerR1000-ce.md" %}
+{% include /templates/device-library/ready-to-go-devices/ce-prerequisites-recomuterR.md %}
 {% endif %}
-
-{% include content-toggle.liquid content-toggle-id="prerequisites" toggle-spec=prerequisites %}
 
 ## Configuring the ModBus Connector
 
@@ -56,7 +57,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 * Then, please insert the following configuration code. Then, click the **“Save”** button.
 
-```bash
+```cpp
 {
   "master": {
     "slaves": [
@@ -131,7 +132,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
   "slave": {}
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
 
 ## Installing the ThingsBoard IoT Gateway on the reComputer R1000
 
