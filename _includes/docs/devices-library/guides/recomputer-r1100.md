@@ -1,7 +1,7 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign deviceName = "reComputer R1000" %}
-{% assign deviceVendorLink = "https://wiki.seeedstudio.com/recomputer_r/" %}
+{% assign deviceName = "reComputer R1100" %}
+{% assign deviceVendorLink = "https://www.seeedstudio.com/blog/2024/11/20/just-launched-recomputer-r11-a%EF%BC%84179-edge-iot-gateway-controller-could-be-the-most-adapatble-and-cost-effective-edge-iot-gateway-controller-in-your-equipment-cabinets/?srsltid=AfmBOopWn625P_n59sPhbUJavUGYus7l3ah1NTd0-90w51unAIVVTgRp" %}
 
 * TOC
 {:toc}
@@ -9,9 +9,13 @@
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The [reComputer R1000]({{deviceVendorLink}}){: target="_blank"} edge IoT controller is built on the high-performance Raspberry Pi CM4 platform, featuring a quad-core A72 processor with a maximum support of 8GB RAM and 32GB eMMC. Equipped with dual Ethernet interfaces that can be flexibly configured, it also includes 3 isolated RS485 channels supporting BACnet, Modbus RTU, Modbus TCP/IP protocols. With robust IoT network communication capabilities, the R1000 series supports multiple wireless communication options including 4G, LoRa®, Wi-Fi/BLE, allowing for flexible configurations to serve as corresponding wireless gateways. This controller is well-suited for remote device management, energy management, and various other scenarios in the field of smart buildings.
+The [reComputer R1100]({{deviceVendorLink}}){: target="_blank"}, powered by Raspberry Pi CM4, is an adaptable edge IoT gateway with AI capabilities. 
+It features comprehensive industrial interfaces (2x Ethernet, 2xUSB, 2xRS485, 2xRS232, 2xDI and 2xDO) and flexible wireless connectivity options (4G, LoRa®, Wi-Fi/BLE), making it ideal for diverse industrial applications
 
-## Integration with ThingsBoard
+It has extensive applications in the IoT field. It can be used in aspects such as data acquisition and process monitoring, automation and robot control, intelligent manufacturing, and industrial communication and networking. 
+With its small size, flexibility, low cost, and programmability, it provides strong support for automation & IoT system and more. 
+
+## Integration with ThingsBoard Edge
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 {% include /templates/device-library/ready-to-go-devices/pe-prerequisites-recomuterR.md %}
@@ -25,7 +29,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 {% assign modbusConnectorPE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/5-connectors-button-pe.webp,
+        image: /images/devices-library/edge/recomputer-r1100/14-connector-pe.webp,
         title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
     ===
         image: /images/devices-library/edge/recomputer-r1000/6-add-connector-pe.webp,
@@ -38,7 +42,7 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 {% assign modbusConnectorCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/5-connectors-button.webp,
+        image: /images/devices-library/edge/recomputer-r1100/10-connector.webp,
         title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
     ===
         image: /images/devices-library/edge/recomputer-r1000/6-add-connector.webp,
@@ -50,9 +54,9 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=modbusConnectorCE %}
 {% endif %}
 
 * Then, please insert the following configuration code. Then, click the **“Save”** button.
@@ -134,45 +138,45 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 ```
 {:.copy-code.expandable-15}
 
-## Installing the ThingsBoard IoT Gateway on the reComputer R1000
+## Installing the ThingsBoard IoT Gateway on the reComputer R1100
 
-Start installation of the **IoT Gateway** on the **reComputer R1000**:
+Start installation of the **IoT Gateway** on the **reComputer R1100**:
 
 {% assign downloadYMLPE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/8-back-to-iot-dasboard-pe.webp,
-        title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1000).
+        image: /images/devices-library/edge/recomputer-r1100/15-gw-list-pe.webp,
+        title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1100).
     ===
-        image: /images/devices-library/edge/recomputer-r1000/9-download-yml-pe.webp,
+        image: /images/devices-library/edge/recomputer-r1100/16-launch-command.webp,
         title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
 '
 %}
 
 {% assign downloadYMLCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/8-back-to-iot-dasboard.webp,
-        title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1000).
+        image: /images/devices-library/edge/recomputer-r1100/11-gw-list.webp,
+        title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1100).
     ===
-        image: /images/devices-library/edge/recomputer-r1000/9-download-yml.webp,
+        image: /images/devices-library/edge/recomputer-r1100/12-launch-command.webp,
         title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
 '
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=downloadYMLCE %}
 {% endif %}
 
-* Then, open another tab in the terminal and initiate the **SSH** connection to the **reComputer R1000**:
+* Then, open another tab in the terminal and initiate the **SSH** connection to the **reComputer R1100**:
 
 ```bash
 ssh recomputer@ip_address
 ```
 {: .copy-code}
 
-**ip_address:** The IP address of the reComputer R1000. Enter the actual IP address instead of _ip_address_.<br>
-**Password:** Terminal requests the password. The **default password** for the reComputer R1000 is: 12345678
+**ip_address:** The IP address of the reComputer R1100. Enter the actual IP address instead of _ip_address_.<br>
+**Password:** Terminal requests the password. _The **default password** for the reComputer R1100 is: 12345678_
 
 * Create the directory for the Gateway service:
 
@@ -197,7 +201,7 @@ nano docker-compose.yml
 
 * Copy the content of the previously downloaded **docker-compose.yml** file, and paste it into the new one via the terminal:
 
-![image](/images/devices-library/edge/recomputer-r1000/10-copy-paste-configs.webp)
+![image](/images/devices-library/edge/recomputer-r1100/copy-paste-configs.webp)
 
 * Save the **docker-compose.yml** file and press **CTRL+S** to save it. To close the file press **CTRL+X**.
 
@@ -216,7 +220,7 @@ The command must be executed in the same directory in which the docker-compose.y
 
 ## Visualize Incoming Data with the Dashboard
 
-![image](/images/devices-library/edge/recomputer-r1000/logo-and-recomputer-r1000.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1000** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
+![image](/images/devices-library/edge/recomputer-r1100/r1100-logo.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1100** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
 
 {% assign dashboardPE = '
     ===
@@ -257,7 +261,8 @@ The command must be executed in the same directory in which the docker-compose.y
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/edge" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardPE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardPE %}
 {% else %}  
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
 {% endif %}
+
