@@ -5455,3 +5455,7 @@ blockquote p{
     from {opacity: 0}
     to {opacity: 1}
 }
+
+.extra-hidden{
+	overflow: hidden !important
+}
