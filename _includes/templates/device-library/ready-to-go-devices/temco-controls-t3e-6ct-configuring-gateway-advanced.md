@@ -50,46 +50,63 @@
 
 ```json
 {
- "application": {
-   "objectName": "TB_gateway",
-   "host": "0.0.0.0",
-   "port": "47808",
-   "objectIdentifier": 599,
-   "maxApduLengthAccepted": 1476,
-   "segmentationSupported": "segmentedBoth",
-   "vendorIdentifier": 15
- },
- "devices": [
-   {
-     "altResponsesAddresses": [],
-     "host": "DEVICE_HOST",
-     "port": 47808,
-     "deviceInfo": {
-       "deviceNameExpression": "T3E-6CT",
-       "deviceNameExpressionSource": "constant",
-       "deviceProfileExpressionSource": "constant",
-       "deviceProfileExpression": "default"
-     },
-     "pollPeriod": 3000,
-     "timeseries": [
-       {
-         "key": "humidity",
-         "objectType": "analogInput",
-         "objectId": 0,
-         "propertyId": "presentValue"
-       },
-       {
-         "key": "temperature",
-         "objectType": "analogInput",
-         "objectId": 1,
-         "propertyId": "presentValue"
-       }
-     ],
-     "attributes": [],
-     "attributeUpdates": [],
-     "serverSideRpc": []
-   }
- ]
+  "application": {
+    "objectName": "TB_gateway",
+    "host": "0.0.0.0",
+    "port": "47808",
+    "objectIdentifier": 599,
+    "maxApduLengthAccepted": 1476,
+    "segmentationSupported": "segmentedBoth",
+    "vendorIdentifier": 15
+  },
+  "devices": [
+    {
+      "altResponsesAddresses": [],
+      "host": "192.168.1.228",
+      "port": 47808,
+      "deviceInfo": {
+        "deviceNameExpression": "T3E-6CT",
+        "deviceNameExpressionSource": "constant",
+        "deviceProfileExpressionSource": "constant",
+        "deviceProfileExpression": "default"
+      },
+      "pollPeriod": 10000,
+      "timeseries": [
+        {
+          "key": "humidity",
+          "objectType": "analogInput",
+          "objectId": 0,
+          "propertyId": "presentValue"
+        },
+        {
+          "key": "temperature",
+          "objectType": "analogInput",
+          "objectId": 1,
+          "propertyId": "presentValue"
+        }
+      ],
+      "attributes": [],
+      "attributeUpdates": [],
+      "serverSideRpc": [
+        {
+          "method": "setRelay1",
+          "objectType": "binaryOutput",
+          "objectId": 0,
+          "propertyId": "presentValue",
+          "requestTimeout": 5000,
+          "requestType": "writeProperty"
+        },
+        {
+          "method": "setRelay2",
+          "objectType": "binaryOutput",
+          "objectId": 1,
+          "propertyId": "presentValue",
+          "requestTimeout": 5000,
+          "requestType": "writeProperty"
+        }
+      ]
+    }
+  ]
 }
 ```
 {:.copy-code.expandable-10}
