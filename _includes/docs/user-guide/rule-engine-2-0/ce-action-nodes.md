@@ -652,37 +652,71 @@ The node accepts messages of type `POST_TELEMETRY_REQUEST` and supports the foll
     ]
     ```
 
-**Configuration: Persistence settings**
+**Configuration: Processing settings**
 
-The save time series node can perform three distinct actions, each governed by configurable persistence strategies:
+The save time series node can perform three distinct actions, each governed by configurable processing strategies:
 - **Time series**: saves time series data to the `ts_kv` table in the database.
 - **Latest values**: updates time series data in the `ts_kv_latest` table in the database, if new data is more recent.
 - **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
 
-For each of these actions, you can choose from the following **persistence strategies**:
+For each of these actions, you can choose from the following **processing strategies**:
 - **On every message**: perform the action for every incoming message.
 - **Deduplicate**: perform the action only for the first message from a specific originator within a configurable time interval. Minimum value for a deduplication interval is 1 second and maximum is 1 day.
 - **Skip**: never perform the action.
 
-> **Note**: Persistence strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
+> **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
 
-Persistence strategies are configured through **Persistence settings**, which offer two configuration modes:
+Processing strategies are configured through **Processing settings**, which offer two configuration modes:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-basic-advanced-persistence-settings-modes.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-basic-advanced-processing-settings-modes.png)
 
 - **Basic** - provides predefined strategies for all actions:
     - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
-    - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions. Everything is done once only for the first message that arrives during configured interval.
+    - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions, meaning that only the first message from each originator received during the configured interval is processed, 
+    while subsequent messages from that originator within the same interval are ignored.
     - WebSockets only: applies the **Skip** strategy to Time series and Latest values, and the **On every message** strategy to WebSockets. 
       Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-basic-persistence-settings.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-basic-processing-settings.png)
 
-- **Advanced** - allows you to configure each action’s persistence strategy independently.
+- **Advanced** - allows you to configure each action’s processing strategy independently.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-persistence-settings.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings.png)
 
-> **Note**: Skipping database storage for certain messages can reduce database load and improve performance.
+When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
+
+- **Disabling WebSocket (WS) updates**
+
+  If WS updates are disabled, any changes to the time series data won’t be pushed to dashboards (or other WS subscriptions).
+  This means that even if a database is updated, dashboards may not display the updated data until browser page is reloaded.
+
+- **Different deduplication intervals across actions**
+
+  When you configure different deduplication intervals for actions, the same incoming message might be processed differently for each action.
+  For example, a message might be stored immediately in the Time series table (if set to *On every message*) while not being stored in the Latest values table because its deduplication interval hasn’t elapsed.
+  Also, if the WebSocket updates are configured with a different interval, dashboards might show updates that do not match what is stored in the database.
+
+- **Skipping database storage**
+
+  Choosing to disable one or more persistence actions (for instance, skipping database storage for Time series or Latest values while keeping WS updates enabled) introduces the risk of having only partial data available:
+  - If a message is processed only for real-time notifications (WebSockets) and not stored in the database, historical queries may not match data on the dashboard.
+  - When processing strategies for Time series and Latest values are out-of-sync, telemetry data may be stored in one table (e.g., Time series) while the same data is absent in the other (e.g., Latest values).
+
+- **Deduplication cache clearing**
+
+  The deduplication mechanism uses a cache to track processed messages within each interval. This cache is configured to store a maximum of 100 deduplication intervals, with a total retention period of up to 2 days.
+  For performance and system stability reasons, this cache is periodically cleared.
+  As a result, if a cache entry is removed during the deduplication period, messages from the same originator may be processed more than once within that interval.
+  This means deduplication should be used as a performance optimization rather than an absolute guarantee of single processing per interval.
+
+- **Whole message deduplication**
+
+  It’s important to note that deduplication is applied to the entire incoming message rather than to individual time series keys. 
+  For example, if the first message contains key A and is processed, and a subsequent message (received within the deduplication interval) contains key B, the second message will be skipped—even though it includes a new key. 
+  To safely leverage deduplication, ensure that your messages maintain a consistent structure so that all required keys are present in the same message, avoiding unintended data loss.
+
+The ability to configure each persistence action independently—including setting different deduplication intervals—is designed primarily as a performance optimization. 
+Because of the scenarios described above, these settings should be viewed as percentage enhancements rather than strict processing guarantees.
 
 **Configuration: Advanced settings**
 
@@ -700,10 +734,10 @@ Persistence strategies are configured through **Persistence settings**, which of
     The DB layer has certain optimizations to ignore the updates of the attributes and latest values if the new record has a timestamp that is older than the previous record.
     So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
 
-* **Default TTL (Time to Live)** - determines how long the stored data remains in the database. The TTL is set based on the following priority:
-1. If the metadata contains a `TTL` property (expected as integer representing seconds), this value is used.
-2. If the metadata does not specify a `TTL`, the node's configured TTL value is applied.
-3. If the node's configured TTL is set to **0**, the Storage TTL defined in the tenant profile is used.
+* **Default TTL (Time-to-Live)** - determines how long the stored data remains in the database. The TTL is set based on the following priority:
+    1. If the metadata contains a `TTL` property (expected as integer representing seconds), this value is used.
+    2. If the metadata does not specify a `TTL`, the node's configured TTL value is applied.
+    3. If the node's configured TTL is set to **0**, the Storage TTL defined in the tenant profile is used.
 
 > **Note**: TTL value of 0 means that the data never expires.
 
