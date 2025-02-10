@@ -235,10 +235,10 @@ add-alarm-widget-to-office-state-3:
         title: 'Enter the dashboard edit mode and click the "pencil" icon on the alarm widget to edit it;'
     1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-office-state-8-pe.png
-        title: 'Turn on the "Search propagated alarms" option. This option enables displaying alarms for both the selected entity and its child entities, provided that relationships exist between them;'
+        title: 'Change the alarms source to "Office sensors" entity alias. Turn on the "Search propagated alarms" option. This option enables displaying alarms for both the selected entity and its child entities, provided that relationships exist between them;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-office-state-9-pe.png
-        title: 'Change the widget title to <b>${entityName} alarms</b>. Then, apply the changes;'  
+        title: 'Change the widget title to "Office alarms". Then, apply the changes;'  
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-office-state-10-pe.png
         title: 'Save the dashboard.'
@@ -260,10 +260,10 @@ add-alarm-widget-to-building-a-state-1:
         title: 'Place the widget in an empty spot on the dashboard and adjust its size. Click the "pencil" icon on the alarm widget to edit it;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-building-state-4-pe.png
-        title: 'Change the alarms source to "<b>Building offices</b>" entity alias;'
+        title: 'Change the alarms source to "Building offices" entity alias;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-building-state-5-pe.png
-        title: 'Change the widget title to "<b>Building alarms</b>". Then, apply the changes;'
+        title: 'Change the widget title to "Building alarms". Then, apply the changes;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-building-state-6-pe.png
         title: 'Save the dashboard.'
@@ -285,10 +285,10 @@ add-alarm-widget-to-buildings-state-1:
         title: 'Place the widget in an empty area on the dashboard and adjust its size. Then, click the "pencil" icon on the alarm widget to edit it;'
     3:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-buildings-state-4-pe.png
-        title: 'Change the alarm source to "<b>Buildings</b>" entity alias;'
+        title: 'Change the alarm source to "Buildings" entity alias;'
     4:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-buildings-state-5-pe.png
-        title: 'Rename the widget to "<b>All alarms</b>", and apply changes;'
+        title: 'Rename the widget to "All alarms", and apply changes;'
     5:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/add-alarm-widget-to-buildings-state-6-pe.png
         title: 'Finally, save the dashboard.'
