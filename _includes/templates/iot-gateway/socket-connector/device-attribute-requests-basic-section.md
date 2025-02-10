@@ -9,7 +9,7 @@ In order to add new attribute request, use the following steps:
         title: In the opened window click “**Add attribute request**”;
     ===
         image: /images/gateway/socket-connector/socket-adding-device-12-ce.png,
-        title: Enter the request type, request expression, and attribute name expression. Click “**Apply**”.
+        title: Select the request type, enter request expression, and attribute name expression. Click “**Apply**”.
     '
 %}
 

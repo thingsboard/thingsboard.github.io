@@ -11,7 +11,7 @@ To add new time series or attribute key, use the following steps:
         image: /images/gateway/socket-connector/socket-adding-device-2-ce.png,
         title: In the opened window click “**Add attribute**”;
     ===
-        image: /images/gateway/socket-connector/socket-adding-device-3-ce.png,
+        image: /images/gateway/socket-connector/socket-adding-device-4-ce.png,
         title: Enter the **key name** and fill in the **byte positions**. Click “**Apply**”;
     ===
         image: /images/gateway/socket-connector/socket-adding-device-5-ce.png,
@@ -36,3 +36,8 @@ data will be sent to the ThingsBoard server. The following strategies are availa
 - **On received** - sending data to ThingsBoard after receiving data from the device (default strategy).
 
 ![image](/images/gateway/socket-connector/socket-adding-device-9-ce.png)
+
+{% capture difference %}
+Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

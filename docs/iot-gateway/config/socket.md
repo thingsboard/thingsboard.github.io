@@ -48,6 +48,11 @@ This configuration section contains general connector settings, such as:
     - **On value change and report period** - sending data to ThingsBoard after the value change or report period;
     - **On received** - sending data to ThingsBoard after receiving data from the device (default strategy).
 
+{% capture difference %}
+Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ![image](/images/gateway/socket-connector/socket-general-basic-section-1-ce.png)
 
 {% capture difference %}

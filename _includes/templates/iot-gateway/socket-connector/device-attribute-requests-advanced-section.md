@@ -17,7 +17,7 @@ Configuration of this subsection looks like:
 ]
 ```
 
-Also, you can request multiple attributes at once. Simply add one more JSON-path to 
+Also, you can request multiple attributes at once. Simply add one more slice expression to 
 attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
 will look like:
 
@@ -32,6 +32,6 @@ will look like:
 ```
 
 That means that we have to send the next message for requesting two shared attributes:
-`atr sharedAttribute sharedAttribite1`
+`atr sharedAttribute sharedAttribute1`
 
 ![image](/images/gateway/socket-connector/socket-subsection-attribute-request-advanced-1-ce.png)
