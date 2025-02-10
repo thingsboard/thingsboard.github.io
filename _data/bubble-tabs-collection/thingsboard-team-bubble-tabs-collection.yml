@@ -63,9 +63,9 @@ Product:
       title: "Vlad Prykhodko"
       description: "Frontend Team Lead"
     4:
-      src: "/images/company-images/thingsboard-team-photos/product-team/iryna-uzhvii.webp"
-      alt: "Iryna Uzhvij"
-      title: "Iryna Uzhvij"
+      src: "/images/company-images/thingsboard-team-photos/product-team/maryna-shulzhenko.webp"
+      alt: "Maryna Shulzhenko"
+      title: "Maryna Shulzhenko"
       description: "QA Team Lead"
     5:
       src: "/images/company-images/thingsboard-team-photos/product-team/yevhen-bondarenko.webp"
@@ -123,9 +123,9 @@ Product:
       title: "Oleg Khalkov"
       description: "QA Engineer"
     16:
-      src: "/images/company-images/thingsboard-team-photos/product-team/maryna-shulzhenko.webp"
-      alt: "Maryna Shulzhenko"
-      title: "Maryna Shulzhenko"
+      src: "/images/company-images/thingsboard-team-photos/product-team/iryna-uzhvii.webp"
+      alt: "Iryna Uzhvij"
+      title: "Iryna Uzhvij"
       description: "QA Engineer"
     17:
       src: "/images/company-images/thingsboard-team-photos/product-team/glib-petrukh.webp"
@@ -133,56 +133,46 @@ Product:
       title: "Glib Petrukh"
       description: "QA Engineer"
     18:
-      src: "/images/company-images/thingsboard-team-photos/product-team/valeriya-zolotariova.webp"
-      alt: "Valeriya Zolotariova"
-      title: "Valeriya Zolotariova"
-      description: "Manual QA Engineer (Mobile)"
-    19:
       src: "/images/company-images/thingsboard-team-photos/product-team/yevhen-beshkarov.webp"
       alt: "Yevhen Beshkarov"
       title: "Yevhen Beshkarov"
       description: "Flutter Engineer"
-    20:
+    19:
       src: "/images/company-images/thingsboard-team-photos/product-team/dmytro-zolotarenko.webp"
       alt: "Dmytro Zolotarenko"
       title: "Dmytro Zolotarenko"
       description: "Frontend Engineer"
-    21:
+    20:
       src: "/images/company-images/thingsboard-team-photos/product-team/nickolay-kulikov.webp"
       alt: "Nickolay Kulikov"
       title: "Nickolay Kulikov"
       description: "Java Engineer"
-    22:
+    21:
       src: "/images/company-images/thingsboard-team-photos/product-team/iryna-matveieva.webp"
       alt: "Iryna Matveieva"
       title: "Iryna Matveieva"
       description: "Java Engineer"
-    23:
+    22:
       src: "/images/company-images/thingsboard-team-photos/product-team/artem-barysh.webp"
       alt: "Artem Barysh"
       title: "Artem Barysh"
       description: "Java Engineer"
-    24:
+    23:
       src: "/images/company-images/thingsboard-team-photos/product-team/serhii-titenko.webp"
       alt: "Serhii Titenko"
       title: "Serhii Titenko"
       description: "Technical Writer"
-    25:
-      src: "/images/company-images/thingsboard-team-photos/product-team/mariia-naida.webp"
-      alt: "Mariia Naida"
-      title: "Mariia Naida"
-      description: "Educational Course Developer"
-    26:
+    24:
       src: "/images/company-images/thingsboard-team-photos/product-team/yana-semeniak.webp"
       alt: "Yana Semeniak"
       title: "Yana Semeniak"
       description: "UI/UX Designer"
-    27:
+    25:
       src: "/images/company-images/thingsboard-team-photos/product-team/maryna-zakharchenko.webp"
       alt: "Maryna Zakharchenko"
       title: "Maryna Zakharchenko"
       description: "UI/UX Designer"
-    28:
+    26:
       src: "/images/company-images/thingsboard-team-photos/product-team/oleksii-zolotukhin.webp"
       alt: "Oleksii  Zolotukhin"
       title: "Oleksii  Zolotukhin"
@@ -266,26 +256,21 @@ Solutions:
       title: "Nikita Mazurenko"
       description: "Java Engineer"
     9:
-      src: "/images/company-images/thingsboard-team-photos/solutions-team/vladyslav-tetorko.webp"
-      alt: "Vladyslav Tetorko"
-      title: "Vladyslav Tetorko"
-      description: "Java Engineer"
-    10:
       src: "/images/company-images/thingsboard-team-photos/solutions-team/oleksandr-rotan.webp"
       alt: "Oleksandr Rotan"
       title: "Oleksandr Rotan"
       description: "Java Engineer"
-    11:
+    10:
       src: "/images/company-images/thingsboard-team-photos/solutions-team/vitalii-kukoba.webp"
       alt: "Vitalii Kukoba"
       title: "Vitalii Kukoba"
       description: "Java Engineer"
-    12:
+    11:
       src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-tikholoz.webp"
       alt: "Andrii Tikholoz"
       title: "Andrii Tikholoz"
       description: "Java Engineer"
-    13:
+    12:
       src: "/images/company-images/thingsboard-team-photos/solutions-team/andrii-perun.webp"
       alt: "Andrii Perun"
       title: "Andrii Perun"
@@ -327,11 +312,6 @@ Solutions:
       title: "Vlad Symonenko"
       description: "UI/UX Designer"
     7:
-      src: "/images/company-images/thingsboard-team-photos/solutions-team/eldar-nasirov.webp"
-      alt: "Eldar Nasirov"
-      title: "Eldar Nasirov"
-      description: "QA Engineer"
-    8:
       src: "/images/company-images/thingsboard-team-photos/solutions-team/kateryna-zhezheria.webp"
       alt: "Kateryna Zhezheria"
       title: "Kateryna Zhezheria"

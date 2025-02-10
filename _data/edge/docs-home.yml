@@ -9,6 +9,8 @@ toc:
   section:
     - title: Edge
       path: /docs/edge/config/management/
+    - title: Entities and Relations
+      path: /docs/edge/user-guide/entities-and-relations/
     - title: Alarms
       path: /docs/edge/user-guide/alarms/
     - title: OTA updates

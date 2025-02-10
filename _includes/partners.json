@@ -63,7 +63,10 @@
         "href": "/docs/samples/raspberry/grove/"
       },
       "Connect reComputer R1000 to ThingsBoard": {
-        "href": "/docs/devices-library/recomputer-r1000/"
+        "href": "/docs/edge/devices-library/recomputer-r1000/"
+      },
+      "Connect reComputer R1100 to ThingsBoard": {
+        "href": "/docs/edge/devices-library/recomputer-r1100/"
       }
     },
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
@@ -289,6 +292,22 @@
       }
     },
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+  },
+  {
+    "type": ["main", "lora", "bluetooth", "wifi", "ethernet"],
+    "program": "",
+    "name": "National Control Devices, LLC",
+    "logo": "ncd-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://ncd.io/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/pe/devices-library/ncd-vibration-temperature-sensor/"
+      }
+    },
+    "blurb": "NCD.io is an IoT Hardware Design and Development Company specializing in Wireless IoT sensors. It offers a wide range of plug-and-play devices for monitoring temperature, humidity, pressure, energy, acceleration, gas, and industrial I/O. NCD devices allow control over pumps, valves, motors, relays, and more. All NCD products are manufactured in the USA. Since 1995, NCD.io has been providing custom IoT hardware and firmware solutions."
   },
   {
     "type": ["main", "lora", "bluetooth", "wifi"],
