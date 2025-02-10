@@ -62,7 +62,7 @@
   "devices": [
     {
       "altResponsesAddresses": [],
-      "host": "192.168.1.228",
+      "host": "DEVICE_HOST",
       "port": 47808,
       "deviceInfo": {
         "deviceNameExpression": "T3E-6CT",
