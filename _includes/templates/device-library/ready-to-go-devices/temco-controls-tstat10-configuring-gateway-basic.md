@@ -102,6 +102,12 @@
 '
 %}
 
+{% capture difference %}
+Don't forget to expose **47808** port in the docker compose file. 
+Also, add device host to the **Alternative responses address** array in the device **advanced configuration section**.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingGatewayPE %}
 {% else %}
