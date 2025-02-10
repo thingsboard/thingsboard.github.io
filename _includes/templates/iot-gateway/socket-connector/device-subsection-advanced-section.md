@@ -16,4 +16,4 @@ Example:
   ...
 ```
 
-**image**
+![image](/images/gateway/socket-connector/socket-subsection-device-advanced-1-ce.png)

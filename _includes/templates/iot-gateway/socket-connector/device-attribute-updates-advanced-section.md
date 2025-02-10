@@ -18,4 +18,4 @@ This subsection in configuration file looks like:
 ]
 ```
 
-**image**
+![image](/images/gateway/socket-connector/socket-subsection-attribute-updates-advanced-1-ce.png)

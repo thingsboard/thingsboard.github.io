@@ -21,4 +21,4 @@ Configuration section will look like this:
 }
 ```
 
-**image**
+![image](/images/gateway/socket-connector/socket-advanced-configuration-section-1-ce.png)

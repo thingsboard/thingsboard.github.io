@@ -34,4 +34,4 @@ will look like:
 That means that we have to send the next message for requesting two shared attributes:
 `atr sharedAttribute sharedAttribite1`
 
-**image**
+![image](/images/gateway/socket-connector/socket-subsection-attribute-request-advanced-1-ce.png)

@@ -49,4 +49,12 @@ Example:
 }
 ```
 
-**image**
+{% assign deviceAttrTimeseriesAdvanced = '
+    ===
+        image: /images/gateway/socket-connector/socket-subsection-time-series-advanced-1-ce.png,
+    ===
+        image: /images/gateway/socket-connector/socket-subsection-attributes-advanced-1-ce.png
+    '
+%}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=deviceAttrTimeseriesAdvanced %}

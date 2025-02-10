@@ -5,4 +5,4 @@ This configuration section contains settings of the socket, such as:
 - **Port** - connector bound port;
 - **Buffer size** - size of received data block buffer.
 
-**image**
+![image](/images/gateway/socket-connector/socket-basic-section-1-ce.png)
