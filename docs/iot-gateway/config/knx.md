@@ -22,7 +22,7 @@ the data and other service features. Let’s review the format of the configurat
 
 <b>Example of KNX Connector config file.</b>
 
-{% capture knxConf %}
+```json
 {
   "logLevel": "INFO",
   "client": {
@@ -90,29 +90,41 @@ the data and other service features. Let’s review the format of the configurat
     }
   ]
 }
-{% endcapture %}
-{% include code-toggle.liquid code=knxConf params="conf|.copy-code.expandable-20" %}
+```
+{:.copy-code.expandable-10}
 
 ### Section "Client"
 
 Configuration in this section is used to configure the KNX client, that is responsible for communication with KNX router.
 
-| **Parameter**     | **Default value** | **Description**                                                                                                   |
-|:------------------|:------------------|-------------------------------------------------------------------------------------------------------------------|
-| type              | **AUTOMATIC**     | Type of connection: AUTOMATIC, ROUTING, TUNNELING, TUNNELING_TCP, TUNNELING_TCP_SECURE.                           |
-| addressFormat     | **LONG**          | Address format: SHORT, LONG, FREE.                                                                                |
-| localIP           |                   | Local ip or interface name.                                                                                       |
-| localPort         |                   | Local port.                                                                                                       |
-| autoReconnect     | **true**          | Auto reconnect to KNX/IP tunneling device if connection cannot be established.                                    |
-| autoReconnectWait | **3**             | Wait n seconds before trying to reconnect to KNX/IP tunneling device.                                             |
-| gatewayIP         |                   | IP or hostname of KNX/IP tunneling device.                                                                        |
-| gatewayPort       | **3671**          | Port of KNX/IP tunneling device.                                                                                  |
-| individualAddress |                   | Individual address.                                                                                               |
-| rateLimit         | **0**             | Can be used to limit the outgoing traffic to the KNX/IP interface by the telegram queue. 0 disables rate limiter. |
-| multicastGroup    | **224.0.23.12**   | Multicast group for KNXnet/IP routing.                                                                            |
-| multicastPort     | **3671**          | Multicast port for KNXnet/IP routing.                                                                             |
-| stateUpdater      | **false**         | Used to set the default state-updating mechanism used by devices.                                                 |
-| ---               |                   |                                                                                                                   |
+| **Parameter**     | **Default value** | **Description**                                                                                                      |
+|:------------------|:------------------|----------------------------------------------------------------------------------------------------------------------|
+| type              | **AUTOMATIC**     | Type of connection (detailed description below): AUTOMATIC, ROUTING, TUNNELING, TUNNELING_TCP, TUNNELING_TCP_SECURE. |
+| addressFormat     | **LONG**          | Address format (detailed description below): SHORT, LONG, FREE.                                                      |
+| localIP           |                   | Local ip or interface name.                                                                                          |
+| localPort         |                   | Local port.                                                                                                          |
+| autoReconnect     | **true**          | Auto reconnect to KNX/IP tunneling device if connection cannot be established.                                       |
+| autoReconnectWait | **3**             | Wait n seconds before trying to reconnect to KNX/IP tunneling device.                                                |
+| gatewayIP         |                   | IP or hostname of KNX/IP tunneling device.                                                                           |
+| gatewayPort       | **3671**          | Port of KNX/IP tunneling device.                                                                                     |
+| individualAddress |                   | Individual address.                                                                                                  |
+| rateLimit         | **0**             | Can be used to limit the outgoing traffic to the KNX/IP interface by the telegram queue. 0 disables rate limiter.    |
+| multicastGroup    | **224.0.23.12**   | Multicast group for KNXnet/IP routing.                                                                               |
+| multicastPort     | **3671**          | Multicast port for KNXnet/IP routing.                                                                                |
+| stateUpdater      | **false**         | Used to set the default state-updating mechanism used by devices.                                                    |
+| ---               |                   |                                                                                                                      |
+
+Address format:
+- SHORT - representation like "1/34" without middle groups;
+- LONG - representation like "1/2/34" with middle groups;
+- FREE - integer or hex representation.
+
+Type of connection:
+- AUTOMATIC - using GatewayScanner for searching and finding KNX/IP devices in the network;
+- ROUTING - using KNX/IP multicast routing;
+- TUNNELING - connecting to a specific KNX/IP tunneling device via UDP;
+- TUNNELING_TCP - connecting to a specific KNX/IP tunneling v2 device via TCP;
+- TUNNELING_TCP_SECURE - connecting to a specific KNX/IP tunneling v2 device via secure TCP.
 
 Example:
 
@@ -347,8 +359,7 @@ See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 ## Next steps
 
 Explore guides related to main ThingsBoard features:
- - [How to connect OPC-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
- - [ThingsBoard IoT Gateway Features](/docs/iot-gateway/features/)
+
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
