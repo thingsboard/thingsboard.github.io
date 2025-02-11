@@ -37,6 +37,8 @@ toc:
       path: /docs/iot-gateway/config/xmpp/
     - title: OCPP Connector
       path: /docs/iot-gateway/config/ocpp/
+    - title: KNX Connector
+      path: /docs/iot-gateway/config/knx/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
