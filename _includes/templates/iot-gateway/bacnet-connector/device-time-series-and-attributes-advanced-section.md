@@ -1,0 +1,39 @@
+This converter designed for binary payloads, this converter directly interprets binary data to retrieve attributes and 
+time series, using specific byte positions for data extraction.
+
+| **Parameter**  | **Description**                                                                                                |
+|----------------|----------------------------------------------------------------------------------------------------------------|
+| timeseries     | This subsection contains parameters of the device data, that will be interpreted as timeseries for the device. |
+| ... key        | Name for timeseries in the platform.                                                                           |
+| ... objectType | Object type in the BACnet device.                                                                              |
+| ... objectId   | Object id in the BACnet device.                                                                                |
+| ... propertyId | Property id in the BACnet device.                                                                              |
+| attributes     | This subsection contains parameters of the device data, that will be interpreted as attributes for the device. |
+| ... key        | Name for attribute in the platform.                                                                            |
+| ... objectType | Object type in the BACnet device.                                                                              |
+| ... objectId   | Object id in the BACnet device.                                                                                |
+| ... propertyId | Property id in the BACnet device.                                                                              |
+| ---            | ---                                                                                                            |
+
+Example:
+
+```json
+"attributes": [
+    {
+      "key": "temperature",
+      "objectType": "analogOutput",
+      "objectId": "1",
+      "propertyId": "presentValue"
+    }
+],
+"timeseries": [
+    {
+      "key": "state",
+      "objectType": "binaryValue",
+      "objectId": "1",
+      "propertyId": "presentValue"
+    }
+],
+```
+
+**images**
