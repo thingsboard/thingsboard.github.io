@@ -8,7 +8,7 @@ These parameters are available for configuration in the "**security**" subsectio
 | knxkeys_password  | Password to decrypt the knxkeys file.                      |
 | :--------------   | ---------------------------------------------------------- |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "security": {

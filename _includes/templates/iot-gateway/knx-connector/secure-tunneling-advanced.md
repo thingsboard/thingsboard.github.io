@@ -11,7 +11,7 @@ These parameters are available for configuration in the "**security**" subsectio
 | user_password                  | User password.                                                    |
 | ---                            |                                                                   |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "security": {

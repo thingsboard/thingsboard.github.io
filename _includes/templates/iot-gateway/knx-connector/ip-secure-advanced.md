@@ -8,7 +8,7 @@ These parameters are available for configuration in the "**security**" subsectio
 | latency_ms    | Latency in milliseconds for KNX Secure Routing.    |
 | ---           |                                                    |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "security": {

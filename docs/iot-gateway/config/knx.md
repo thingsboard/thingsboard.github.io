@@ -8,16 +8,16 @@ description: KNX API support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with KNX Connector configuration for ThingsBoard IoT Gateway.
+This guide will help you get familiar with KNX Connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. The purpose of this 
-Connector is to connect KNX-based devices to ThingsBoard, allowing to process data from KNX devices and control of 
-KNX automation systems
+Connector is to connect KNX-based devices to ThingsBoard, allowing to process data from KNX devices and control 
+KNX automation systems.
 
 We will describe the connector configuration file below.
 
 ## Connector configuration: knx.json
 
-Connector configuration is a JSON file that contains information about how to connect to KNX device, how to process
+Connector configuration is a JSON file that contains information on how to connect to KNX device, process
 the data and other service features. Let’s review the format of the configuration file using the example below.
 
 <b>Example of KNX Connector config file.</b>
@@ -95,7 +95,7 @@ the data and other service features. Let’s review the format of the configurat
 
 ### Section "Client"
 
-Configuration in this section is used to configure the KNX client, that is responsible for communication with KNX router.
+Configuration in this section is used to set up the KNX client, that is responsible for communication with KNX router.
 
 | **Parameter**     | **Default value** | **Description**                                                                                                      |
 |:------------------|:------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -142,7 +142,7 @@ Example:
 #### Subsection "Security"
 
 {% capture difference %}
-**By default, connector use unsecure connection.**
+**By default, the connector uses an unsecured connection.**
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -151,7 +151,7 @@ KNX protocol security consists of two primary security mechanisms designed to pr
 - KNX Data Secure - encrypts communication at the telegram (data) level to prevent unauthorized control or reading of KNX group addresses;
 - KNX Secure Tunneling (Extended KNX IP Secure) - encrypts communication between a KNX Secure IP interface and a client.
 
-For enable security, you need to set the following parameters 
+To enable security, you need to set the following parameters 
 in the "**security**" subsection of the "**client**" section:
 
 {% capture knxsecuritytogglespec %}
@@ -164,7 +164,7 @@ in the "**security**" subsection of the "**client**" section:
 #### Subsection "Gateways Scanner"
 
 Gateways Scanner is helpful when you don't know the IP address of the KNX router. It scans the network for KNX routers
-and prints the found IP addresses in the log.
+and prints the detected IP addresses in the log.
 
 These parameters are available for configuration in the "**gatewaysScanner**" subsection:
 
@@ -175,7 +175,7 @@ These parameters are available for configuration in the "**gatewaysScanner**" su
 | stopOnFound   | **false**         | Used to stop scanning when the first KNX router is found. |
 | ---           |                   |                                                           |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "gatewaysScanner": {
@@ -197,14 +197,14 @@ Found KNX gateway:
 
 ### Section "Devices"
 
-This section is used to configure devices polling period and data processing. The section consist of the array of 
+This section is used to configure devices polling period and data processing. The section consists of the array of 
 objects, where each object contains the following fields:
 - **deviceInfo** - device name and profile configuration.
 - **pollPeriod** - polling period in milliseconds.
 - **attributes** - array of objects that contains the configuration of attributes.
 - **timeseries** - array of objects that contains the configuration of time series.
 
-General view of the device configuration looks like:
+General view of the device configuration looks like this:
 
 ```json
 "devices": [
@@ -238,7 +238,7 @@ These parameters are available for configuration in the "**deviceInfo**" subsect
 | deviceProfileNameExpression   | **default**         | Expression for device profile.                    |
 | ---                           |                     |                                                   |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "deviceInfo": {
@@ -253,7 +253,7 @@ This subsection in configuration file looks like:
 
 #### Subsection "Attributes" and "Timeseries"
 
-These subsections are used to configure the telemetry and attributes that will be sent to ThingsBoard and provides the
+These subsections are used to configure the telemetry and attributes that will be sent to ThingsBoard and provide the
 settings for processing data from KNX devices.
 
 The table below describes the attributes and time series parameters:
@@ -265,7 +265,7 @@ The table below describes the attributes and time series parameters:
 | groupAddress        | Group address.  |
 | --                  |                 |
 
-Example of attributes section:
+Example of the attributes section:
 ```json
 "attributes": [
   {
@@ -293,20 +293,20 @@ This configuration section is optional.
 
 ThingsBoard allows the provisioning of device attributes and fetches some of them from 
 the device application. You can treat this as a remote configuration for devices, enabling them to request 
-shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/) for more details.
+shared attributes from ThingsBoard. See the [user guide](/docs/user-guide/attributes/) for more details.
 
 The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be 
 sent to the KNX device. The configuration is an array of objects, where each object contains the following fields:
 
-| **Parameter**    | **Default value** | **Description**                                                                      |
-|:-----------------|:------------------|--------------------------------------------------------------------------------------|
-| deviceNameFilter | .*                | Regular expression device name filter, uses to determine, which function to execute. |
-| dataType         | **string**        | Type of value.                                                                       |
-| groupAddress     | **1/0/5**         | Group address.                                                                       |
-| key              | **sharedName**    | Shared attribute name                                                                |
-| ---              |                   |                                                                                      |
+| **Parameter**    | **Default value** | **Description**                                                                    |
+|:-----------------|:------------------|------------------------------------------------------------------------------------|
+| deviceNameFilter | .*                | Regular expression device name filter used to determine which function to execute. |
+| dataType         | **string**        | Type of value.                                                                     |
+| groupAddress     | **1/0/5**         | Group address.                                                                     |
+| key              | **sharedName**    | Shared attribute name.                                                             |
+| ---              |                   |                                                                                    |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "attributeUpdates": [
@@ -324,19 +324,19 @@ This subsection in configuration file looks like:
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard 
 directly or via Gateway.
  
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device. The configuration is 
+The configuration provided in this section is used for sending RPC requests from ThingsBoard to device. The configuration is 
 an array of objects, where each object contains the following fields:
 
-| **Parameter**    | **Default value** | **Description**                                                                      |
-|:-----------------|:------------------|--------------------------------------------------------------------------------------|
-| requestType      | **read**          | Request type: read or write.                                                         |
-| deviceNameFilter | .*                | Regular expression device name filter, uses to determine, which function to execute. |
-| method           | **rpcMethod1**    | RPC method name.                                                                     |
-| dataType         | **string**        | Type of value.                                                                       |
-| groupAddress     | **1/0/5**         | Group address.                                                                       |
-| ---              |                   |                                                                                      |
+| **Parameter**    | **Default value** | **Description**                                                                    |
+|:-----------------|:------------------|------------------------------------------------------------------------------------|
+| requestType      | **read**          | Request type: read or write.                                                       |
+| deviceNameFilter | .*                | Regular expression device name filter used to determine which function to execute. |
+| method           | **rpcMethod1**    | RPC method name.                                                                   |
+| dataType         | **string**        | Type of value.                                                                     |
+| groupAddress     | **1/0/5**         | Group address.                                                                     |
+| ---              |                   |                                                                                    |
 
-This subsection in configuration file looks like:
+This subsection in the configuration file looks like:
 
 ```json
 "serverSideRpc": [
@@ -350,11 +350,10 @@ This subsection in configuration file looks like:
 ]
 ```
 
-Also, every telemetry and attribute parameter has a built-in SET RPC method out of the box, eliminating the need for 
-manual configuration. To use them, make sure you set all the required parameters (in the case of KNX Connector, 
-these are the following:
-**dataType**, **groupAddress**, **value** only if RPC method name is "**set**"). 
-See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+Additionally, every telemetry and attribute parameter comes with a built-in SET RPC method out of the box, eliminating the need for 
+manual configuration. To use them, make sure you set all the required parameters (for the KNX Connector, 
+these include: **dataType**, **groupAddress**, and **value** - only if RPC method name is "**set**"). 
+See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods) for more details.
 
 ## Next steps
 
