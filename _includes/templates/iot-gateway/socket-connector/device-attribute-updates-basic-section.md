@@ -1,4 +1,4 @@
-In order to add new attribute update, use the following steps:
+In order to add new attribute update, follow these steps:
 
 {% assign socketAttrUpdateBasic = '
     ===
@@ -6,7 +6,7 @@ In order to add new attribute update, use the following steps:
         title: Click “**pencil**” icon of the “**Attribute updates**” section to add new attribute update;
     ===
         image: /images/gateway/socket-connector/socket-adding-device-14-ce.png,
-        title: In the opened window click “**Add attribute update**”;
+        title: Click on "**Add attribute update**" in the opened window;
     ===
         image: /images/gateway/socket-connector/socket-adding-device-15-ce.png,
         title: Select encoding and fill in "**Attribute on platform**" field. Click “**Apply**”.

@@ -1,11 +1,11 @@
-| **Parameter**           | **Default value** | **Description**                                                                                   |
-|:------------------------|:------------------|---------------------------------------------------------------------------------------------------|
-| type                    | **shared**        | The type of requested attribute can be “shared” or “client”.                                      |
-| requestExpression       | **${[0:3]==atr}** | The expression that is used to know if the request from the device is "Attribute Request" or not. |
-| attributeNameExpression | **[3:]**          | The expression that is used to get the name of the requested attribute from the received data.    |
-| ---                     |                   |                                                                                                   |
+| **Parameter**           | **Default value** | **Description**                                                                                        |
+|:------------------------|:------------------|--------------------------------------------------------------------------------------------------------|
+| type                    | **shared**        | The type of requested attribute, can be either “shared” or “client”.                                   |
+| requestExpression       | **${[0:3]==atr}** | The expression that is used to determine if the request from the device is "Attribute Request" or not. |
+| attributeNameExpression | **[3:]**          | The expression that is used to get the name of the requested attribute from the received data.         |
+| ---                     |                   |                                                                                                        |
 
-Configuration of this subsection looks like:
+Configuration of this subsection looks like this:
 
 ```json
 "attributeRequests": [
@@ -17,9 +17,9 @@ Configuration of this subsection looks like:
 ]
 ```
 
-Also, you can request multiple attributes at once. Simply add one more slice expression to 
-attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
-will look like:
+Additionally, you can request multiple attributes at once. Simply add one more slice expression to 
+attributeNameExpression parameter. For example, if we want to request two shared attributes in a single request, our config 
+will look like this:
 
 ```json
 "attributeRequests": [
@@ -31,7 +31,7 @@ will look like:
 ]
 ```
 
-That means that we have to send the next message for requesting two shared attributes:
+This means that we have to send the following message to request two shared attributes:
 `atr sharedAttribute sharedAttribute1`
 
 ![image](/images/gateway/socket-connector/socket-subsection-attribute-request-advanced-1-ce.png)

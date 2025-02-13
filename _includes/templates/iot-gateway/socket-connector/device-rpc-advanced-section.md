@@ -8,7 +8,7 @@ Configuration, provided in this section is used for sending RPC requests from Th
 | encoding         | **utf-8**         | Encoding used when writing received string data to storage.                 |
 | ---              |                   |                                                                             |
 
-This subsection in configuration file looks like:
+This subsection in configuration file looks like this:
 
 ```json
 "serverSideRpc": [

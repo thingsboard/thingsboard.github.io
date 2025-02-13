@@ -1,4 +1,4 @@
-For adding new device, click the "plus" icon:
+To add a new device, click the "plus" icon:
 
 ![image](/images/gateway/socket-connector/socket-device-subsection-basic-1-ce.png)
 

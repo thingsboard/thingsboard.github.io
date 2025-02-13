@@ -1,4 +1,4 @@
-This converter designed for binary payloads, this converter directly interprets binary data to retrieve attributes and 
+This converter is designed for binary payloads. It directly interprets binary data to retrieve attributes and 
 time series, using specific byte positions for data extraction.
 
 | **Parameter** | **Default value** | **Description**                                                                                                      |
@@ -13,7 +13,7 @@ time series, using specific byte positions for data extraction.
 | ... byteTo    | **4**             | Used to slice received data to the specific index.                                                                   |
 | ---           |                   |                                                                                                                      |
 
-Attributes section using the same parameters as telemetry section.
+The attributes section uses the same parameters as the telemetry section.
 
 Example:
 ```json

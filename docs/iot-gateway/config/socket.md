@@ -8,9 +8,9 @@ description: Socket API support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with Socket Connector configuration for ThingsBoard IoT Gateway. 
-Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. The purpose of this 
-Connector is to connect to your server using TCP or UDP connection type.
+This guide will help you get familiar with Socket Connector configuration for ThingsBoard IoT Gateway. 
+Use the [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. It's purpose  
+is to connect to your server using TCP or UDP connection type.
 
 This Connector is useful when you have a local server in your facility or corporate network and want to push
 data from the server to ThingsBoard.
@@ -25,9 +25,9 @@ If you are new to IoT Gateway, use the "Basic" configuration mode. If you are fa
 
 ## Connector configuration
 
-Connector configuration is a UI form that contains information about how to connect to an external server, how to process
+Connector configuration is a UI form that contains information on how to connect to an external server, how to process
 the data and other service features. Let’s review the format of the configuration file using the example below.
-Let’s take a comprehensive look at all the possible settings. We will go through each option in detail to ensure 
+Let’s take a comprehensive look at all the available settings. We will go through each option in detail to ensure 
 that we thoroughly understand their functions and implications. By doing so, we can make well-informed decisions about 
 which settings will best suit our needs and preferences.
 
@@ -35,18 +35,18 @@ which settings will best suit our needs and preferences.
 
 This configuration section contains general connector settings, such as:
 
-- **Name** - connector name for logs and saving to persistent devices;
+- **Name** - connector name used for logs and saving to persistent devices;
 - Logs configuration:
-  - **Enable remote logging** - enabling remote logging for connector;
+  - **Enable remote logging** - enables remote logging for the connector;
   - **Logging level** - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
-- **Send data only on change** - sending only if data changed from last check, if not – data will be sent after every check;
+- **Send data only on change** - sends data only it has changed since the last check, otherwise – data will be sent after every check;
 - **Report strategy** - strategy for sending data to ThingsBoard:
   - **Report period** - period for sending data to ThingsBoard in milliseconds;
   - **Type** - type of the report strategy:
-    - **On report period** - sending data to ThingsBoard after the report period;
-    - **On value change** - sending data to ThingsBoard after the value change;
-    - **On value change and report period** - sending data to ThingsBoard after the value change or report period;
-    - **On received** - sending data to ThingsBoard after receiving data from the device (default strategy).
+    - **On report period** - sends data to ThingsBoard after the report period;
+    - **On value change** - sends data to ThingsBoard when the value changes;
+    - **On value change and report period** - sends data to ThingsBoard when the value changes or report period;
+    - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
 {% capture difference %}
 Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
@@ -62,7 +62,7 @@ The settings are the same for both the basic and advanced configurations.
 
 ## Section "Socket"
 
-Section “Socket” using for configuring socket connection settings.
+The “Socket” section is used for configuring socket connection settings.
 
 {% capture socketsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/socket-basic-section.md%br%
@@ -73,7 +73,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/sock
 ## Section "Devices"
 
 This configuration section contains an array of objects that contains clients that can be connected to the connector and
-send the data. This means that connector rejects all connections not included in this array.
+send the data. Any connection not included in this array will be rejected by the connector.
 
 #### Subsection "Device"
 
@@ -85,13 +85,13 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/devi
 
 Let’s review more examples of IP addresses filtering:
 
-For example, we have a device that has the following IP address: 192.168.0.120:5001. Now let's look at examples of the 
-configuration of the field to allow the connection of different variants of IP addresses:
+For example, we have a device that has the following IP address: 192.168.0.120:5001. Now, let's look at configuration examples 
+of the field to allow connections with different IP address variants:
 
 1. Only one device with a specified IP address and port can connect:
 
    **Address filter:** 192.168.0.120:5001
-2. Allow any devices with any IP address and only port 5001:
+2. Allow any devices with any IP address, but only port 5001:
 
    **Address filter:** *:5001
 3. Allow all devices that have the IP address 192.168.0.120 with any port:
@@ -103,7 +103,7 @@ configuration of the field to allow the connection of different variants of IP a
 
 ##### Subsection "Time series" and "Attributes"
 
-This configuration section includes the parameters of how to proceed with incoming data.
+This configuration section includes the parameters for handling incoming data.
 
 {% capture subsectiondevicedataconversion %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-time-series-and-attributes-basic-section.md%br%
@@ -142,7 +142,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/devi
 
 This configuration section is optional. 
 
-ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
+ThingsBoard allows sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
 {% capture subsectiondevicerpc %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-rpc-basic-section.md%br%

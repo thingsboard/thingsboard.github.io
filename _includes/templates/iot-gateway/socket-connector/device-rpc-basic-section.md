@@ -1,4 +1,4 @@
-In order to add new RPC method, use the following steps:
+In order to add new RPC method, follow these steps:
 
 {% assign socketRPCBasic = '
     ===
@@ -6,7 +6,7 @@ In order to add new RPC method, use the following steps:
         title: Click “**pencil**” icon of the “**RPC methods**” section to add new RPC;
     ===
         image: /images/gateway/socket-connector/socket-adding-device-17-ce.png,
-        title: In the opened window click “**Add method**”;
+        title: Click on "**Add method**" in the opened window;
     ===
         image: /images/gateway/socket-connector/socket-adding-device-18-ce.png,
         title: Fill in "**Method name**" field, select **encoding** and check/uncheck "**With Response**" field. Click “**Apply**”.

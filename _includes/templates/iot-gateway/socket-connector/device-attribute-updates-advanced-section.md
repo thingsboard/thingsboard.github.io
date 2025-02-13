@@ -1,4 +1,4 @@
-The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be 
+The “attributeUpdates” configuration allows you to set up the format of the corresponding attribute data that will be 
 sent to the server.
 
 | **Parameter**          | **Default value** | **Description**                                             |
@@ -7,7 +7,7 @@ sent to the server.
 | attributeOnThingsBoard | **sharedName**    | Shared attribute name                                       |
 | ---                    |                   |                                                             |
 
-This subsection in configuration file looks like:
+This subsection in configuration file looks like this:
 
 ```json
 "attributeUpdates": [
