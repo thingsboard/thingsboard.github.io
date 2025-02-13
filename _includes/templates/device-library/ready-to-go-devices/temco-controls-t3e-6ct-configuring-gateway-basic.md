@@ -113,44 +113,44 @@ to control the relay. For this purpose, use the following steps:
 
 {% assign creatingGatewayRPCCE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-19-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-19-ce.png,
         title: Select created device in the device list of BACnet connector. Click on "pencil" icon;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-20-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-20-ce.png,
         title: In the opened window scroll down to the "RPC methods" section and click on "pencil" icon;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-21-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-21-ce.png,
         title: Click on "Add method" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-16-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-16-ce.png,
         title: fill in the "Method" field with "setRelay1", "Object ID" with "Binary Output" and "0". Click "Add method" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-17-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-17-ce.png,
         title: Click on "Add method" button and fill in the "Method" field with "setRelay2", "Object ID" with "Binary Output" and "1". Click "Apply" button;;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-18-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-18-ce.png,
         title: Click "Save" button.
 '
 %}
 
 {% assign creatingGatewayRPCPE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-19-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-19-pe.png,
         title: Select created device in the device list of BACnet connector. Click on "pencil" icon;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-20-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-20-pe.png,
         title: In the opened window scroll down to the "RPC methods" section and click on "pencil" icon;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-21-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-21-pe.png,
         title: Click on "Add method" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-16-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-16-pe.png,
         title: fill in the "Method" field with "setRelay1", "Object ID" with "Binary Output" and "0". Click "Add method" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-17-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-17-pe.png,
         title: Click on "Add method" button and fill in the "Method" field with "setRelay2", "Object ID" with "Binary Output" and "1". Click "Apply" button;;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-18-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-18-pe.png,
         title: Click "Save" button.
 '
 %}
