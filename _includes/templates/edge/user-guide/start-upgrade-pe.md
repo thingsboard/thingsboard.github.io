@@ -24,7 +24,7 @@ version: '3.8'
 services:
   mytbedge:
     restart: on-failure
-    image: "thingsboard/tb-edge:{{versionName}}"
+    image: "thingsboard/tb-edge-pe:{{versionName}}"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
     volumes:
@@ -49,6 +49,7 @@ volumes:
     name: tb-edge-logs
   tb-edge-postgres-data:
     name: tb-edge-postgres-data
+
   EOF
 ```
 {: .copy-code.expandable-9}
@@ -56,7 +57,7 @@ volumes:
 Modify the main docker compose file (docker-compose.yml) for **ThingsBoard Edge** and update the image version:
 
 ```text
-sed -i 's|thingsboard/tb-edge:{{previousVersion}}|thingsboard/tb-edge:{{versionName}}|' docker-compose.yml
+sed -i 's|thingsboard/tb-edge-pe:{{previousVersion}}|thingsboard/tb-edge-pe:{{versionName}}|' docker-compose.yml
 ```
 {: .copy-code}
 
