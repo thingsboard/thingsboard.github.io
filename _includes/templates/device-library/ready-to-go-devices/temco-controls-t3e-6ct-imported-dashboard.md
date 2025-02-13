@@ -1,6 +1,6 @@
 ### Import dashboard
 
-Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="teltonika-rut955-dashboard.json"} and import.
+Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="temco-t3e-6ct-dashboard.json"} and import.
 
 You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
  on the **“+”** button in the upper right corner of the page and choose **“Import dashboard”**. The dashboard import window 
@@ -41,5 +41,5 @@ If you did everything right, you have to see the following dashboard:
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-pe.png)
 {% else %}  
-![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-pe.png)
+![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-ce.png)
 {% endif %}
