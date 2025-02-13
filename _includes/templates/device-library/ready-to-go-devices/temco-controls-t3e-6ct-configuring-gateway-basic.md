@@ -96,8 +96,67 @@
 '
 %}
 
+{% capture difference %}
+Don't forget to expose **47808** port in the docker compose file. 
+Also, add device host to the **Alternative responses address** array in the **device advanced configuration section**.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingGatewayPE %}
 {% else %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingGatewayCE %}
+{% endif %}
+
+Also, Temco T3E-6CT provide two output relays that can be controlled using the gateway. Let's create a new RPC commands 
+to control the relay. For this purpose, use the following steps:
+
+{% assign creatingGatewayRPCCE = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-19-ce.png,
+        title: Select created device in the device list of BACnet connector. Click on "pencil" icon;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-20-ce.png,
+        title: In the opened window scroll down to the "RPC methods" section and click on "pencil" icon;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-21-ce.png,
+        title: Click on "Add method" button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-16-ce.png,
+        title: fill in the "Method" field with "setRelay1", "Object ID" with "Binary Output" and "0". Click "Add method" button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-17-ce.png,
+        title: Click on "Add method" button and fill in the "Method" field with "setRelay2", "Object ID" with "Binary Output" and "1". Click "Apply" button;;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-18-ce.png,
+        title: Click "Save" button.
+'
+%}
+
+{% assign creatingGatewayRPCPE = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-19-pe.png,
+        title: Select created device in the device list of BACnet connector. Click on "pencil" icon;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-20-pe.png,
+        title: In the opened window scroll down to the "RPC methods" section and click on "pencil" icon;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-21-pe.png,
+        title: Click on "Add method" button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-16-pe.png,
+        title: fill in the "Method" field with "setRelay1", "Object ID" with "Binary Output" and "0". Click "Add method" button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-17-pe.png,
+        title: Click on "Add method" button and fill in the "Method" field with "setRelay2", "Object ID" with "Binary Output" and "1". Click "Apply" button;;
+    ===
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-gateway-configuring-18-pe.png,
+        title: Click "Save" button.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingGatewayRPCPE %}
+{% else %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingGatewayRPCCE %}
 {% endif %}

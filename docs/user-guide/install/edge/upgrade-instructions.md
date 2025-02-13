@@ -373,22 +373,7 @@ volumes:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -564,22 +549,7 @@ volumes:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -757,22 +727,7 @@ volumes:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -950,22 +905,7 @@ volumes:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -1141,22 +1081,7 @@ volumes:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -1402,22 +1327,7 @@ volumes:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -1584,22 +1494,7 @@ services:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -1766,22 +1661,7 @@ services:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -2061,22 +1941,7 @@ services:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
@@ -2243,22 +2108,7 @@ services:
 ```
 {: .copy-code}
 
-Execute the following command to start upgrade process:
-```
-docker compose -f docker-compose-upgrade.yml up
-```
-{: .copy-code}
-
-Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
-```
-Ctrl + C
-```
-
-Execute the following command to stop TB Edge upgrade container:
-```
-docker compose -f docker-compose-upgrade.yml stop
-```
-{: .copy-code}
+{% include templates/edge/user-guide/start-upgrade.md %}
 
 Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
 
