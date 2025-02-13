@@ -7,7 +7,7 @@
         title: Start gateway using launch command; 
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-ce.png,
-        title: Gateway created. Click on "Connectors configuration" button in the sidebar menu;
+        title: The gateway has been created. Click on the "**Connectors configuration**" button in the sidebar menu;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-ce.png,
         title: Click on "**+**" button to add a new connector;
@@ -16,7 +16,7 @@
         title: Select "**BACnet**" connector type, fill in the "**Name**" field, disable filling configuration with default values and click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/advanced-temco-tstat10-gateway-configuring-2-ce.png,
-        title: In the created connector go to "**Advanced**" section and paste the below json configuration. Replace **host** and **port** configuration parameter values with the device host and port. Also, replace "**DEVICE_HOST**" in "**altResponsesAddresses**" with device host. Click on "Save" button.
+        title: In the created connector, go to "**Advanced**" section and paste the JSON configuration below. Replace **host** and **port** configuration parameter values with the device&#39;s host and port. Also, replace "**DEVICE_HOST**" in "**altResponsesAddresses**" with device host. Click on "Save" button.
 '
 %}
 
@@ -29,7 +29,7 @@
         title: Start gateway using launch command; 
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-pe.png,
-        title: Gateway created. Click on "Connectors configuration" button in the sidebar menu;
+        title: The gateway has been created. Click on the "**Connectors configuration**" button in the sidebar menu;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-pe.png,
         title: Click on "**+**" button to add a new connector;
@@ -38,7 +38,7 @@
         title: Select "**BACnet**" connector type, fill in the "**Name**" field, disable filling configuration with default values and click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/advanced-temco-tstat10-gateway-configuring-2-pe.png,
-        title: In the created connector go to "**Advanced**" section and paste the below json configuration. Replace **host** and **port** configuration parameter values with the device host and port. Also, replace "**DEVICE_HOST**" in "**altResponsesAddresses**" with device host. Click on "Save" button.
+        title: In the created connector, go to "**Advanced**" section and paste the JSON configuration below. Replace **host** and **port** configuration parameter values with the device&#39;s host and port. Also, replace "**DEVICE_HOST**" in "**altResponsesAddresses**" with device host. Click on "Save" button.
 '
 %}
 
