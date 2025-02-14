@@ -8,7 +8,7 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you set up the OPC-UA connector for the ThingsBoard IoT Gateway. We'll explain the configuration 
+This documentation will help you set up the OPC-UA connector for the ThingsBoard IoT Gateway. We'll explain the configuration 
 parameters in simple terms to make it easy for you to understand and follow. The OPC-UA (Open Platform Communications 
 Unified Architecture) is a machine-to-machine communication protocol for industrial automation, and this connector 
 allows seamless integration with the ThingsBoard platform.
@@ -31,8 +31,7 @@ everything works.
 
 {% capture difference %}
 **Please note:**
-Connect the gateway before creating the connector. Otherwise, the UI will display the old configuration fields 
-for backward compatibility.
+To get the actual UI for the gateway - you need to have connected gateway, before adding connector. Otherwise, you will see old UI.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -61,7 +60,7 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 **image**
 
 {% capture difference %}
-The settings are the same for both the basic and advanced configurations.
+General tab in settings are the same for both the basic and advanced configurations.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -158,7 +157,7 @@ Gateway expects that the node exist and the value of **Root\.Objects\.TempSensor
 
 _Expression:_
 
-`${Root\.Objects\.TempSensor\.Temperature}`
+`${Root\\.Objects\\.TempSensor\\.Temperature}`
 
 _Converted data:_
 
@@ -174,7 +173,7 @@ Gateway expects that the node exist and the value of “Root\.Objects\.TempSenso
 
 _Device Node Expression:_
 
-`Root\.Objects\.TempSensor`
+`Root\\.Objects\\.TempSensor`
 
 _Expression:_
 
