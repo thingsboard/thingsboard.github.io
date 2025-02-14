@@ -76,7 +76,7 @@ collections:
 release:
   branch: release-3.9
   branch_major_next: master
-  ver: 3.9
+  ver: 3.9.0
   ce_ver: 3.9
   ce_tag: v3.9
   ce_full_ver: 3.9.0
