@@ -12,6 +12,6 @@ Clicking on the heat pump device, you will access its state, displaying operatio
 
 {% include images-gallery.html imageCollection="scada-alarms-traditional-1" %}
 
-Switching to the "Alarms" page will display all active and cleared alarms in the system, organized by the originating device, and their respective alarm types and severities.
+Switching to the "Alarms" page will display all active alarms in the system, organized by the originating device, and their respective alarm types and severities.
 
 {% include images-gallery.html imageCollection="scada-alarms-traditional-2" %}

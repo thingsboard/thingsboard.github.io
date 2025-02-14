@@ -141,7 +141,7 @@ All other intervals are distinguished in the same way.
 
 **Aggregation**
 
-The data aggregation function is applied to time-series data and does not apply to alarms. Currently, six aggregation functions are available:
+The data aggregation function is applied to time series data and does not apply to alarms. Currently, six aggregation functions are available:
 
 - **Min**: Identifies the smallest value among all data in the selected time interval. Useful for displaying the minimum value, such as the lowest temperature recorded in an hour.
 - **Max**: Identifies the largest value among all data in the selected time interval. This is useful for displaying the maximum value, such as the highest energy consumption level.
@@ -150,7 +150,7 @@ The data aggregation function is applied to time-series data and does not apply 
 - **Count**: Counts the number of records in the selected interval. Useful for assessing the volume of data received or to count the number of events.
 - **None**: Transmits raw data without applying any aggregation functions. Used when access to each unaltered value is required.
 
-Data aggregation is useful when you do not want to retrieve all raw time-series data to the user interface but prefer to pre-aggregate it at the database level.
+Data aggregation is useful when you do not want to retrieve all raw time series data to the user interface but prefer to pre-aggregate it at the database level.
 
 Using aggregation functions helps save network bandwidth and reduces the computational load on the client's browser. We recommend using aggregation functions whenever possible, especially when dealing with a large amount of raw data points.
 
@@ -179,7 +179,7 @@ Now it is possible to set the time of your browser or a specific country. To qui
 <br>
 **Time window settings**
 
-You can customize the time window for the end user by hiding certain configuration elements. Enter the editing mode of the dashboard, click the "edit time window" icon on the dashboard toolbar. In the popup window, click the "gear" icon. The time window configuration window will open.
+You can customize the time window for the end-user by hiding certain configuration elements. Enter the editing mode of the dashboard, click the "edit time window" icon on the dashboard toolbar. In the popup window, click the "gear" icon. The time window configuration window will open.
 
 {% include images-gallery.html imageCollection="time-window-settings" %}
 
@@ -187,7 +187,7 @@ Here, you can perform the following configurations:
 
 *For time window*:
 
-- **Hide the time window settings from end-users**: Users will not be able to change the set time interval.
+- **Hide the time window section from end-users**: Users will not be able to change the set time interval.
 
 {% include images-gallery.html imageCollection="hide-time-window-section" %}
 
@@ -201,17 +201,17 @@ Edit the list of intervals available to users. Additionally, for each interval, 
 
 *For aggregation function*:
 
-- **Hide the aggregation settings from end users**: Users will not be able to change or disable the aggregation function you set during configuration.
+- **Hide the aggregation from end-users**: Users will not be able to change or disable the aggregation function you set during configuration.
 
 {% include images-gallery.html imageCollection="hide-aggregation" %}
 
-You can edit the list of available aggregation functions. List the available aggregation functions for the end user.
+You can edit the list of available aggregation functions. List the available aggregation functions for the end-user.
 
 {% include images-gallery.html imageCollection="edit-aggregation-list" %}
 
 *For grouping interval*:
 
-- **Hide the grouping interval settings from end users**: Users will not be able to change the grouping interval set during configuration.
+- **Hide the grouping interval from end-users**: Users will not be able to change the grouping interval set during configuration.
 
 {% include images-gallery.html imageCollection="hide-grouping-interval" %}
 
