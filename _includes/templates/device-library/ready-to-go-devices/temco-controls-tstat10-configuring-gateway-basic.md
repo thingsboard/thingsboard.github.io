@@ -7,7 +7,7 @@
         title: Start gateway using launch command; 
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-ce.png,
-        title: Gateway created. Click on "Connectors configuration" button in the sidebar menu;
+        title: The gateway has been created. Click on the "**Connectors configuration**" button in the sidebar menu;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-ce.png,
         title: Click on "**+**" button to add a new connector;
@@ -16,7 +16,7 @@
         title: Select "**BACnet**" connector type, fill in the "**Name**" field and click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-6-ce.png,
-        title: Connector created;
+        title: The connector has been created;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-7-ce.png,
         title: In the created connector go to "**Devices**" tab and delete default device;
@@ -59,7 +59,7 @@
         title: Start gateway using launch command; 
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-pe.png,
-        title: Gateway created. Click on "Connectors configuration" button in the sidebar menu;
+        title: The gateway has been created. Click on the "**Connectors configuration**" button in the sidebar menu;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-pe.png,
         title: Click on "**+**" button to add a new connector;
@@ -68,7 +68,7 @@
         title: Select "**BACnet**" connector type, fill in the "**Name**" field and click "**Add**" button;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-6-pe.png,
-        title: Connector created;
+        title: The connector has been created;
     ===
         image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-7-pe.png,
         title: In the created connector go to "**Devices**" tab and delete default device;
