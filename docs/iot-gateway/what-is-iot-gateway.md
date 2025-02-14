@@ -29,6 +29,7 @@ The ThingsBoard IoT Gateway provides the following features:
  - [**Socket** connector](/docs/iot-gateway/config/socket/) to collect data from IoT devices that are connected through TCP/UDP protocol.
  - [**XMPP** connector](/docs/iot-gateway/config/xmpp/) to collect data from IoT devices that are connected through XMPP protocol.
  - [**OCPP** connector](/docs/iot-gateway/config/ocpp/) to communicate between Charge Point and Central System.
+ - [**KNX** connector](/docs/iot-gateway/config/knx/) to collect data from IoT devices that are connected through KNX protocol.
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the required protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to the ThingsBoard cluster.
