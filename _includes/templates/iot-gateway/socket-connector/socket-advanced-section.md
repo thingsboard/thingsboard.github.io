@@ -21,4 +21,4 @@ Configuration section will look like this:
 }
 ```
 
-![image](/images/gateway/socket-connector/socket-advanced-configuration-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/socket-connector/socket-advanced-configuration-section-1-ce.png)

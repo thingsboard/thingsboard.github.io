@@ -51,9 +51,9 @@ Example:
 
 {% assign deviceAttrTimeseriesAdvanced = '
     ===
-        image: /images/gateway/socket-connector/socket-subsection-time-series-advanced-1-ce.png,
+        image: https://img.thingsboard.io/gateway/socket-connector/socket-subsection-time-series-advanced-1-ce.png,
     ===
-        image: /images/gateway/socket-connector/socket-subsection-attributes-advanced-1-ce.png
+        image: https://img.thingsboard.io/gateway/socket-connector/socket-subsection-attributes-advanced-1-ce.png
     '
 %}
 

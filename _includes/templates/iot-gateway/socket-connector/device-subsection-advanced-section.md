@@ -16,4 +16,4 @@ Example:
   ...
 ```
 
-![image](/images/gateway/socket-connector/socket-subsection-device-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/socket-connector/socket-subsection-device-advanced-1-ce.png)

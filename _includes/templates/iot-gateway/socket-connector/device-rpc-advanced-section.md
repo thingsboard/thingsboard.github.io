@@ -21,4 +21,4 @@ This subsection in configuration file looks like this:
 ]
 ```
 
-![image](/images/gateway/socket-connector/socket-subsection-rpc-methods-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/socket-connector/socket-subsection-rpc-methods-advanced-1-ce.png)
