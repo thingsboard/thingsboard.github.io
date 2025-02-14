@@ -132,95 +132,6 @@ gateway-master-connections-2:
         image: /images/solutions/swimming_pool_scada_system/gateway-master-connections-2-pe.png
         title: 'The host host.docker.internal and port 5021 are specific to your Modbus device.'
 
-heat-pump-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-
-heat-pump-high-performance-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-high-performance.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-
-water-pump-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/water-pump.png
-        title: 'Use the water pump to control water circulation in the pool.'
-
-water-pump-high-performance-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/water-pump-high-performance.png
-        title: 'Use the water pump to control water circulation in the pool.'
-
-water-pump-high-performance-2:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/water-pump-high-performance-major.png
-        title: 'Use the water pump to control water circulation in the pool.'
-    1:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/water-pump-high-performance-critical.png
-        title: 'Use the water pump to control water circulation in the pool.'
-
-water-pump-2:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/water-pump-1.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-    1:
-        image: /images/solutions/swimming_pool_scada_system/water-pump-2.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-    2:
-        image: /images/solutions/swimming_pool_scada_system/water-pump-3.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-water-pump-3:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/water-pump-4.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-    1:
-        image: /images/solutions/swimming_pool_scada_system/water-pump-5.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-    2:
-        image: /images/solutions/swimming_pool_scada_system/water-pump-6.png
-        title: 'The heat pump controls the pool temperature and operates automatically based on predefined temperature settings.'
-
-ph-filter-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/ph-filter.png
-        title: 'Monitor the pH level in the water.'
-
-ph-filter-high-performance-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/ph-filter-high-performance.png
-        title: 'Monitor the pH level in the water.'
-      
-sand-filter-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/sand-filter.png
-        title: 'Sand filter allow for efficient debris removal from the pool.'
-
-sand-filter-high-performance-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/sand-filter-high-performance.png
-        title: 'Sand filter allow for efficient debris removal from the pool.'
-
-water-level-meter-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/water-level-meter.png
-        title: 'A device for measuring the water level in the pool.'
-
-hp-pool-performance-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/hp-pool-performance.png
-        title: 'Measure the water level in the pool, providing critical data to maintain optimal water levels and detect potential leaks.'
-
-valves-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/valve.png
-        title: 'Valves allow for precise control of water flow between different sections of the pool system.'
-
-valve-high-performance-1:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/valve-high-performance.png
-        title: 'Valves allow for precise control of water flow between different sections of the pool system.'
-
 solution-scada-asset:
     0:
         image: /images/solutions/swimming_pool_scada_system/scada-asset-1-pe.png
@@ -304,10 +215,10 @@ rule-chain-6:
 device-profiles-1:
     0:
         image: /images/solutions/swimming_pool_scada_system/device-profiles-1-pe.png
-        title: 'The logic for determining water flow conditions through the pipes.'
+        title: 'Go to the "Device profiles" page. For the "Swimming Pool SCADA system" solution template, six device profiles were created to manage the 14 operational devices;'
     1:
         image: /images/solutions/swimming_pool_scada_system/device-profiles-2-pe.png
-        title: 'After the device profile switch node, the message is sent to the script node. The function of this node creates a new message that contains the device name in the modified camelCase format + its telemetry from the incoming message, and returns an object with the updated data;'
+        title: 'Click on the any device profiles to open its details. The "Swimming Pool Device Rule Chain" is set as the default rule chain for our devices, and specific alarm rules are defined for them.'
 
 heat-pump-alarms-rule-1:
     0:
@@ -353,7 +264,7 @@ alarm-widget-configuration-traditional-1:
 
 alarm-heat-pump-traditional-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump.png
+        image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-normal.png
         title: 'Normal state of the Heat pump.'
     1:
         image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-major.png
@@ -364,7 +275,7 @@ alarm-heat-pump-traditional-1:
 
 alarm-heat-pump-high-performance-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-high-performance.png
+        image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-high-performance-normal.png
         title: 'Normal state of the Heat pump.'
     1:
         image: /images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-high-performance-major.png
@@ -384,7 +295,10 @@ scada-alarms-high-performance-1:
 scada-alarms-high-performance-2:
     0:
         image: /images/solutions/swimming_pool_scada_system/scada-alarms-high-performance-3.png
-        title: 'Switching to the "Alarms" tab will display all active and cleared alarms in the system, organized by the originating device, and their respective alarm types and severities.'
+        title: 'Switching to the "Alarms" tab will display all active alarms in the system, organized by the originating device, and their respective alarm types and severities.'
+    1:
+        image: /images/solutions/swimming_pool_scada_system/scada-alarms-high-performance-4.png
+        title: 'Configure the filters to view other alarms.'
 
 scada-alarms-traditional-1:
     0:
@@ -397,7 +311,10 @@ scada-alarms-traditional-1:
 scada-alarms-traditional-2:
     0:
         image: /images/solutions/swimming_pool_scada_system/scada-alarms-traditional-3.png
-        title: 'Switching to the "Alarms" tab will display all active and cleared alarms in the system, organized by the originating device, and their respective alarm types and severities.'
+        title: 'Switching to the "Alarms" tab will display all active alarms in the system, organized by the originating device, and their respective alarm types and severities.'
+    1:
+        image: /images/solutions/swimming_pool_scada_system/scada-alarms-traditional-4.png
+        title: 'Configure the filters to view other alarms.'
 
 ---
 
