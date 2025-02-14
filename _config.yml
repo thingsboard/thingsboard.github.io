@@ -76,13 +76,13 @@ collections:
 release:
   branch: release-3.9
   branch_major_next: master
-  ver: 3.9
-  ce_ver: 3.9
-  ce_tag: v3.9
-  ce_full_ver: 3.9.0
-  pe_ver: 3.9pe
-  pe_full_ver: 3.9.0PE
-  wd_examples_commit: v3.9
+  ver: 3.9.1
+  ce_ver: 3.9.1
+  ce_tag: v3.9.1
+  ce_full_ver: 3.9.1
+  pe_ver: 3.9.1pe
+  pe_full_ver: 3.9.1PE
+  wd_examples_commit: v3.9.1
   # >>> EDGE
   edge_ver: 3.9
   edge_tag: v3.9
