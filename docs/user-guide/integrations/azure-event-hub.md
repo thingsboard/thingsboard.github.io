@@ -51,10 +51,7 @@ container:
 connection-string:
     0:
         image: https://img.thingsboard.io/user-guide/integrations/azure-event-hub/storage-connection-string-1.png
-        title: 'In the Azure portal, click the "Subscriptions";'
-    1:
-        image: https://img.thingsboard.io/user-guide/integrations/azure-event-hub/storage-connection-string-2.png
-        title: 'Go to the "Access keys" page of the "Security + networking" section. Here you will find the connection string.'
+        title: 'To find the storage connection string values, navigate to the "Access keys" page in the "Security + networking" section.'
 
 event-hub-compatible-endpoint:
     0:
@@ -64,27 +61,33 @@ event-hub-compatible-endpoint:
         image: https://img.thingsboard.io/azure-event-hub/event_hub_compatible_endpoint.png
         title: 'Copy and save the "Event Hub-compatible endpoint" value.'
 
-generator:
+rule-chain-generator-node:
     0: 
-        image: https://img.thingsboard.io/azure-event-hub/rule_chain_generator.png
+        image: https://img.thingsboard.io/user-guide/integrations/azure-event-hub/test-azure-event-hub-integration-1-pe.png
+        title: 'Go to the "<b>Rule chains</b>" page and select one of your rule chains. In the search nodes field, type &#39;gen&#39; to find the <b>generator</b> node in the menu. Drag it onto the canvas. In the pop-up window, specify the <b>name</b> of the generator, the <b>number of messages</b>, and the <b>generate function</b> (you can use our example). Finally, click "<b>Add</b>";'
 
-primary_key:
+primary-key:
     0: 
         image: https://img.thingsboard.io/azure-event-hub/your_devices.png
+        title: 'Now, find the device&#39;s <b>Primary key</b>. Go to the Azure portal, navigate to the <b>IoT devices</b> tab, and select your device;'
     1: 
         image: https://img.thingsboard.io/azure-event-hub/primary_key.png
+        title: 'Locate the "<b>Primary key</b>" field. Copy and save it for later use.'
 
-iot_rule_node:
+rule-chain-iot-node:
     0:
-        image: https://img.thingsboard.io/azure-event-hub/rule_chain_azure_iot_hub.png
+        image: https://img.thingsboard.io/user-guide/integrations/azure-event-hub/test-azure-event-hub-integration-2-pe.png
+        title: 'Return to your ThingsBoard instance. We need to find another rule node. Type &#39;iot&#39; in the search nodes field and select the <b>azure iot hub</b> node. Drag it onto the canvas. In the pop-up window, specify the <b>node name</b>, replace <b>&#60;device_id&#62;</b> in the <b>Topic</b> with your Device Name, and enter the <b>Hostname</b> by retrieving it from the "<b>IoT Hub</b>" resource in the Azure portal. Enter the Device Name as the <b>Device ID</b> and add the <b>SAS Key</b> (<b>Primary Key</b>) that we previously copied from the device credentials. If you need to monitor events, enable Debug mode;'
 
-generator_iot_rule_chain:
+link-generator-iot-nodes:
     0:
-        image: https://img.thingsboard.io/azure-event-hub/rule_chain_generator_and_azure_iot_hub.png
+        image: https://img.thingsboard.io/user-guide/integrations/azure-event-hub/test-azure-event-hub-integration-3-pe.png
+        title: 'Connect the <b>generator</b> to the <b>azure iot hub</b>. Tap on the right grey circle of "<b>generator</b>" node and drag this circle to the left side of the <b>azure iot hub</b> node. Select the "<b>Success</b>" link and click "<b>Add</b>". <b>Save</b> the rule chain, and go to the integration;'
 
-event_uplink:
+event-uplink:
     0:
-        image: https://img.thingsboard.io/azure-event-hub/integrations_events_uplink.png
+        image: https://img.thingsboard.io/user-guide/integrations/azure-event-hub/test-azure-event-hub-integration-4-pe.png
+        title: 'Go to the "<b>Integrations</b>" page and select your <b>Azure Event Hub integration</b>. If you see a message of type "Uplink" in the "Events" section of your integration, everything is working correctly.'
 
 event-hub-compatible-name:
     0:

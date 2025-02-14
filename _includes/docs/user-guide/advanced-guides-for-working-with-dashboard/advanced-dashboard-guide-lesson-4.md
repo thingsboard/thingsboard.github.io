@@ -276,13 +276,7 @@ Previously, in the alarm rule, we specified that the [alarm should propagate to 
 
 Now we need to configure the widget to search for and display alarms for both the selected entity and its child entities, provided that relationships exist between them:
 
-- Enter the dashboard edit mode and click the "pencil" icon on the alarm widget to edit it;
-- Turn on the "Search propagated alarms" option;
-- Change the widget title to **${entityName} alarms**;
-- Apply the changes;
-- Save the dashboard.
-
-{% include images-gallery.html imageCollection="add-alarm-widget-to-office-state-3" %}
+{% include images-gallery.html imageCollection="add-alarm-widget-to-office-state-3" showListImageTitles="true" %}
 
 Now, as you can see, the widget displays the alarms of the devices that have a relation to the selected office.
 
