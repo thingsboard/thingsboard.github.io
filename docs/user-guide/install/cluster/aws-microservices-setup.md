@@ -87,7 +87,7 @@ We will use Amazon RDS for managed PostgreSQL, Amazon MSK for managed Kafka and 
 ## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/microservices
 ```
 {: .copy-code}
