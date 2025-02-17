@@ -74,7 +74,7 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with X509 certificate authorization example script. MQTT API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (thingsboard.cloud): ")
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default ({{hostName}}): ")
     config["host"] = host if host else "{{mqttHostName}}"
     port = input("Please write your ThingsBoard \033[93mSSL port\033[0m or leave it blank to use default (8883): ")
     config["port"] = int(port) if port else 8883
