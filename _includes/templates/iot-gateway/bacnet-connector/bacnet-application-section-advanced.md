@@ -13,10 +13,10 @@
 | ---                         |                   |                                                                                                                                    |
 
 **segmentationSupported** can be one of the following values:
-- **segmentedBoth** - support sending and receiving segmented messages;
-- **segmentedTransmit** - support only sending segmented messages;
-- **segmentedReceive** - support only receiving segmented messages;
-- **noSegmentation** - don't support segmented messages.
+- **segmentedBoth** - supports both sending and receiving segmented messages;
+- **segmentedTransmit** - supports only sending segmented messages;
+- **segmentedReceive** - supports only receiving segmented messages;
+- **noSegmentation** - doesn't support segmented messages.
 
 Example:
 

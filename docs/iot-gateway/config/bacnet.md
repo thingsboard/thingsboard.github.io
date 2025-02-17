@@ -20,8 +20,8 @@ If you are new to IoT Gateway, use the "Basic" configuration mode. If you are fa
 
 ## Connector configuration
 
-Connector configuration is a UI form that contains information about how to connect to the BACnet device, how to 
-process the data and other service features. Let's take a comprehensive look at all the possible settings. 
+Connector configuration is a UI form that contains information on how to connect to the BACnet device, how to 
+process the data and other service features. Let's take a comprehensive look at all the available settings. 
 We will go through each option in detail to ensure that we thoroughly understand their functions and implications. 
 By doing so, we can make well-informed decisions about which settings will best suit our needs and preferences.
 
@@ -29,18 +29,18 @@ By doing so, we can make well-informed decisions about which settings will best 
 
 This configuration section contains general connector settings, such as:
 
-- **Name** - connector name for logs and saving to persistent devices;
+- **Name** - connector name used for logs and saving to persistent devices;
 - Logs configuration:
-  - **Enable remote logging** - enabling remote logging for connector;
+  - **Enable remote logging** - enables remote logging for the connector;
   - **Logging level** - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
-- **Send data only on change** - sending only if data changed from last check, if not – data will be sent after every check;
+- **Send data only on change** - sends data only if it has changed since the last check, otherwise – data will be sent after every check;
 - **Report strategy** - strategy for sending data to ThingsBoard:
   - **Report period** - period for sending data to ThingsBoard in milliseconds;
   - **Type** - type of the report strategy:
-    - **On report period** - sending data to ThingsBoard after the report period;
-    - **On value change** - sending data to ThingsBoard after the value change;
-    - **On value change and report period** - sending data to ThingsBoard after the value change or report period;
-    - **On received** - sending data to ThingsBoard after receiving data from the device (default strategy).
+    - **On report period** - sends data to ThingsBoard after the report period;
+    - **On value change** - sends data to ThingsBoard when the value changes;
+    - **On value change and report period** - sends data to ThingsBoard when the value changes or after the report period;
+    - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
 {% capture difference %}
 Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
@@ -66,8 +66,8 @@ Advanced%,%advanced%,%templates/iot-gateway/bacnet-connector/bacnet-application-
 
 ## Section "Devices"
 
-This configuration section contains an array of BACnet devices that can be connected to the connector and send the data.
-This mean that connector rejects all BACnet devices not included in this array.
+This configuration section contains an array of BACnet devices that can be connected to the connector and send data.
+Any BACnet device not included in this array will be rejected by the connector.
 
 #### Subsection "Device"
 
@@ -79,7 +79,7 @@ Advanced%,%advanced%,%templates/iot-gateway/bacnet-connector/bacnet-device-subse
 
 ##### Subsection "Time series" and "Attributes"
 
-This configuration section includes the parameters of how to proceed with incoming data.
+This configuration section includes the parameters for handling incoming data.
 
 {% capture subsectiondevicedataconversion %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/bacnet-connector/device-time-series-and-attributes-basic-section.md%br%
@@ -105,7 +105,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/bacnet-connector/devi
 
 This configuration subsection is optional.
 
-ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
+ThingsBoard allows sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
 {% capture subsectiondevicerpc %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/bacnet-connector/device-rpc-basic-section.md%br%
@@ -113,16 +113,16 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/bacnet-connector/devi
 
 {% include content-toggle.liquid content-toggle-id="subsectiondevicerpc" toggle-spec=subsectiondevicerpc %}
 
-Also, every telemetry and attribute parameter has a built-in SET RPC method out of the box, eliminating the need for 
-manual configuration. To use them, make sure you set all the required parameters (in the case of BACnet Connector, 
-these are the following: **objectType**, **objectId**, **propertyId**, **value** only if rpc method name is "**set**"). 
+Additionally, every telemetry and attribute parameter comes with a built-in SET RPC method out of the box, eliminating the need for 
+manual configuration. To use them, make sure you set all the required parameters (for the BACnet Connector, 
+these include: **objectType**, **objectId**, **propertyId**, and **value** -- only if RPC method name is "**set**"). 
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
 ## (Examples) Device name expression and device profile expression
 
 Let’s review more examples of device name expression and device profile expression fields.
 
-These fields allow dynamically constructing a formatted device name/profile using values extracted from a JSON object. 
+These fields allow for the dynamic construction of a formatted device name/profile using values extracted from a JSON object. 
 You can specify variables to access the relevant fields in the JSON.
 
 You can use the following variables to extract specific device information:
@@ -132,12 +132,12 @@ You can use the following variables to extract specific device information:
 - **address** - extracts the device's network address (e.g., "192.168.1.1").
 
 **Examples:**
-- "**Device ${objectName}**" If the objectName variable exist and contains "**objectName": "Main Controller**", 
+- "**Device ${objectName}**" If the objectName variable exists and contains "**objectName": "Main Controller**", 
   the device on platform will have the following name: **Device Main Controller**;
-- "**Vendor: ${vendorId}**" If the vendorId variable exist and contains **"vendorId": 1234**, the device on platform 
+- "**Vendor: ${vendorId}**" If the vendorId variable exists and contains **"vendorId": 1234**, the device on platform 
   will have the following name: **Vendor: 1234**;
-- "**Device ID: ${objectId} at ${address}**" If the objectId variable exist and contains **"vendorId": 999** and 
-  address variable exist and contains **"address": "192.168.1.1"**, the device on platform will have the following 
+- "**Device ID: ${objectId} at ${address}**" If the objectId variable exists and contains **"vendorId": 999** and 
+  address variable exists and contains **"address": "192.168.1.1"**, the device on platform will have the following 
   name: **Device ID: 999 at 192.168.1.1**.
 
 ## (Examples) Alternative responses addresses
@@ -153,8 +153,8 @@ For example, if gateway running via the docker container and the BACnet device i
 "altResponsesAddresses": ["192.168.1.200"]
 ```
 
-This is important because bacpypes provide APDU to the gateway without port number, so connector can't determine that 
-it is allowed device. In this case, the connector will use the alternative address to determine that it is allowed 
+This is important because bacpypes provide APDU to the gateway without port number, so the connector can't determine if  
+it is an allowed device. In this case, the connector will use the alternative address to determine that it is an allowed 
 device.
 
 ## Object identifiers

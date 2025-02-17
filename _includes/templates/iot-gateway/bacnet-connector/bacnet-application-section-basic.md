@@ -1,4 +1,4 @@
-This configuration section contains settings of the application, such as:
+This configuration section contains application settings, such as:
 
 - **Object Name** - the gateway object name in the BACnet network;
 - **Host** - the gateway host in the BACnet network;
@@ -9,9 +9,9 @@ This configuration section contains settings of the application, such as:
 - **Advanced settings**:
   - **Max APDU Length Accepted** - maximal length of the APDU;
   - **Segmentation Supported** - the type of segmentation:
-    - **Both** - support sending and receiving segmented messages;
-    - **Transmit** - support only sending segmented messages;
-    - **Receive** - support only receiving segmented messages;
-    - **None** - don't support segmented messages;
+    - **Both** - supports both sending and receiving segmented messages;
+    - **Transmit** - supports only sending segmented messages;
+    - **Receive** - supports only receiving segmented messages;
+    - **None** - doesn't support segmented messages;
 
 **image**

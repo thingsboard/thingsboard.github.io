@@ -1,4 +1,4 @@
-The “attributeRequest” configuration allows you to configure the format of the corresponding attribute data 
+The “attributeUpdates” configuration allows you to set up the format of the corresponding attribute data 
 that will be sent to the BACnet device.
 
 | **Parameter** | **Description**                                    |

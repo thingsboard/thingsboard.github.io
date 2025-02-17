@@ -1,4 +1,4 @@
-In order to add new RPC method, use the following steps:
+In order to add new RPC method, follow these steps:
 
 1. Click “**pencil**” icon of the “**RPC methods**” section to add new RPC;
 2. In the opened window click “**Add method**”;

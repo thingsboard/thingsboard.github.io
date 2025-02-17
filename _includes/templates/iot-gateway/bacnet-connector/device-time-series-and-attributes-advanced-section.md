@@ -1,4 +1,4 @@
-This converter designed for binary payloads, this converter directly interprets binary data to retrieve attributes and 
+This converter is designed for binary payloads, and interprets binary data to retrieve attributes and 
 time series, using specific byte positions for data extraction.
 
 | **Parameter**  | **Description**                                                                                                |
