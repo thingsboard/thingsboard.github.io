@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 assignees:
-title: Upgrade instructions
+title: Upgrade Instructions
 description: ThingsBoard Edge upgrade instructions
 
 ---
@@ -179,7 +179,7 @@ description: ThingsBoard Edge upgrade instructions
 
 {% include templates/edge/install/compatibility-warning-general.md %}
 
-## Prepare for Upgrading ThingsBoard Edge {#prepare-for-upgrading}
+## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
 ### Ubuntu/CentOS {#prepare-ubuntucentos}
 

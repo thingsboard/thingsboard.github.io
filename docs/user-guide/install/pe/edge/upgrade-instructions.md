@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
 assignees:
-title: Upgrade instructions
+title: Upgrade Instructions
 description: ThingsBoard PE Edge upgrade instructions
 
 ---
@@ -180,7 +180,7 @@ description: ThingsBoard PE Edge upgrade instructions
 {% assign docsPrefix = "pe/" %}
 {% include templates/edge/install/compatibility-warning-general.md %}
 
-## Prepare for Upgrading ThingsBoard Edge {#prepare-for-upgrading}
+## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
 ### Ubuntu/CentOS {#prepare-ubuntucentos}
 
@@ -1667,18 +1667,18 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - ~/.mytb-edge-data/db:/var/lib/postgresql/data
-EOF
+  EOF
 ```
 {: .copy-code.expandable-9}
 
-Modify the main docker compose file (docker-compose.yml) for **ThingsBoard Edge** and update the image version:
+Modify the **main docker compose file** (docker-compose.yml) for **ThingsBoard Edge** and update the image version:
 
 ```text
 sed -i 's|thingsboard/tb-edge-pe:{{previousVersion}}|thingsboard/tb-edge-pe:{{versionName}}|' docker-compose.yml
 ```
 {: .copy-code}
 
-To start this docker compose, run the following command:
+To start this docker compose , run the following command:
 ```
 docker compose up -d && docker compose logs -f mytbedge
 ```

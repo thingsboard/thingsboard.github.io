@@ -2,15 +2,11 @@
 
 [Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing platform.
 
-To install **Kafka in a [Docker](https://docs.docker.com/engine/install/){: target="_blank"}** container, follow the instructions below:
+To install **Kafka in a [Docker container](https://docs.docker.com/engine/install/){: target="_blank"}**, run the command below.
+It creates **docker-compose-kafka.yml**, fills it with configuration lines, and starts the container.
 
-```text
-nano docker-compose-kafka.yml
 ```
-{: .copy-code}
-
-Add the following lines to the **docker-compose-kafka.yml** file:
-```yml
+cat > docker-compose-kafka.yml <<EOF && docker compose -f docker-compose-kafka.yml up -d
 version: '3.8'
 services:
   kafka:
@@ -39,11 +35,6 @@ services:
 volumes:
   kafka-data:
     driver: local
+EOF
 ```
-{: .copy-code}
-
-Start the container:
-```text
-docker compose -f docker-compose-kafka.yml up -d
-```
-{: .copy-code}
+{: .copy-code.expandable-10}
