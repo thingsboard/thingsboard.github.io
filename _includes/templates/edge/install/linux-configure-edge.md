@@ -31,7 +31,7 @@ tb-edge-install-ubuntu-onprem,On-Premise,shell,resources/tb-edge-ubuntu-install-
   * Use **localhost** if the Edge is running on the same machine as the Server instance.
   * Use an **X.X.X.X** IP address if the Edge is connecting to the Server instance in the same network or in a Docker container.
 
-#### PostgreSQL settings (Optional)
+#### Configure PostgreSQL (Optional)
 
 If you changed PostgreSQL default datasource settings, use the following command:
 

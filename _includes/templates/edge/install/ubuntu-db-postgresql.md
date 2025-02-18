@@ -8,11 +8,9 @@ Many cloud providers offer managed **PostgreSQL** services, making it a cost-eff
 
 {% include templates/install/postgres-install-ubuntu.md %}
 
-To create a new PostgreSQL database named **tb_edge**, use the following command:
+Finally, create a new PostgreSQL database named **tb_edge** by running the following command:
 
 ```bash
 echo "CREATE DATABASE tb_edge;" | psql -U postgres -d postgres -h 127.0.0.1 -W
 ```
 {: .copy-code}
-
-Press **"Ctrl+D"** twice to quit PostgreSQL.

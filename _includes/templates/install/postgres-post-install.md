@@ -6,6 +6,4 @@ sudo -u postgres psql -c "\password"
 ```
 {: .copy-code}
 
-Then, **enter and confirm** the password. 
-
-Then, press **"Ctrl+D"** to return to the main user console. 
+Then, **enter and confirm** the password.
