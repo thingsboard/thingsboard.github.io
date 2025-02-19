@@ -1,64 +1,99 @@
 0:
-  title: "ThingsBoard data modeling and visualization (sessions 1)"
+  title: "ThingsBoard UI fundamentals: data modeling and visual representation"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
-      textContent: "Overview of TB hierarchy and main features based on real examples."
+      textContent: "Learn how to navigate the ThingsBoard UI confidently, understanding its layout, navigation, and key features."
     1:
-      textContent: "Devices, Assets, Entity Views, Customers, Users, and Dashboards based on real-life examples."
+      textContent: "Explore the ThingsBoard hierarchy: SysAdmin, Tenants, Customers, and Users, along with roles and permissions."
     2:
-      textContent: "Explain ThingsBoard entity attributes and telemetry APIs. Overview of best practices with the naming of data keys and usage of the APIs."
+      textContent: "Learn how to configure Tenant Profiles."
     3:
-      textContent: "Device and Asset Groups (PE feature). Covers configuration of the groups and usage scenarios."
+      textContent: "Manage core entities like Devices, Assets, and Entity Views."
     4:
-      textContent: "Entity relations. Covers entity relation types, usage scenarios, and limitations."
+      textContent: "Learn how to group Devices and Assets for better scalability (PE Feature)."
     5:
-      textContent: "The dashboard features overview: Covers entity Aliases, Time Window selection, General Settings, Dashboard states, and transition between states."
+      textContent: "Work with entity attributes and telemetry data to retrieve both real-time and historical insights."
     6:
-      textContent: "Q&A (questions and answers)."
+      textContent: "Understand entity relations, different relationship types, and how they define connections between entities."
+    7:
+      textContent: "Explore real-world use cases of entity relations in ThingsBoard."
+    8:
+      textContent: "Identify common limitations and best practices to avoid performance bottlenecks."
+    9:
+      textContent: "Apply knowledge through real-world scenarios."
+    10:
+      textContent: "Discuss best practices for ThingsBoard UI and data management."
 1:
-  title: "ThingsBoard data modeling and visualization (sessions 2)"
+  title: "ThingsBoard dashboard & widget mastery"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
-      textContent: "Creating a dashboard with multiple states to display Asset hierarchy with the ability to drill down to particular asset/device details."
+      textContent: "Deep Dive into ThingsBoard Dashboards to understand Entity Aliases, Time Window selection, General Settings, and Dashboard States."
     1:
-      textContent: "Exploring advanced configuration of Chart, Markdown/HTML Card, and Map widgets."
+      textContent: "Explore state transitions and how to enhance user experience."
     2:
-      textContent: "Custom Tooltip functions and custom Dashboard Actions."
+      textContent: "Learn how to customize Chart, Markdown/HTML Card, and Map widgets."
     3:
-      textContent: "Q&A (questions and answers)."
-2:
-  title: "ThingsBoard custom widget development (sessions 1)"
-  additionalText: "2 hours"
-  additionalFaIcon : "far fa-clock fa-lg"
-  allTextContentIcon: "fas fa-check"
-  textContentCollection:
-    0:
-      textContent: "Creating new bundles/widgets. Modifying system-bundles. Import/Export bundles and widgets. Built editor overview."
-    1:
-      textContent: "Building “Last values”-type widget."
-    2:
-      textContent: "Building “Timeseries”-type widget(simple time-series-table or line-chart)."
-    3:
-      textContent: "Custom actions and custom actions templates with HTML."
+      textContent: "Utilize Custom Tooltips and Dashboard Actions to improve usability and interaction."
     4:
-      textContent: "Q&A (questions and answers)."
-3:
-  title: "ThingsBoard custom widget development (sessions 2)"
+      textContent: "Create dashboards with multiple states to display Asset hierarchy."
+    5:
+      textContent: "Implement drill-down functionality for detailed views of assets and devices."
+    6:
+      textContent: "Discuss advanced visualization strategies."
+    7:
+      textContent: "Gain hands-on experience with dashboard configurations."
+2:
+  title: "ThingsBoard custom widget development (session 1)"
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
   textContentCollection:
     0:
-      textContent: "Building a “Control”-type widget."
+      textContent: "Learn how to use the ThingsBoard Widget Editor, its layout, and key features."
     1:
-      textContent: "Building a “Static”-type widget."
+      textContent: "Explore how to navigate, create, and configure widget bundles."
     2:
-      textContent: "Building Markdown/HTML Card based widget."
+      textContent: "Manage widgets efficiently through importing, modifying, and exporting."
     3:
-      textContent: "Q&A (questions and answers)."
+      textContent: "Learn how to build Control Widgets: develop widgets for real-time user interactions."
+    4:
+      textContent: "Develop Static Widgets: Create non-interactive elements for structured data display."
+    5:
+      textContent: "Understand how to develop Markdown/HTML Widgets: Enhance dashboards with flexible content."
+    6:
+      textContent: "Learn how to structure widgets for performance, scalability, and maintainability."
+    7:
+      textContent: "Troubleshoot common widget development challenges."
+    8:
+      textContent: "Gain hands-on experience in custom widget creation."
+3:
+  title: "ThingsBoard custom widget development (session 2)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Understand complex widget structures and custom logic implementation."
+    1:
+      textContent: "Work with the Last Values widgets for real-time data representation."
+    2:
+      textContent: "Learn how to Develop Time-Series Widgets."
+    3:
+      textContent: "Build a Time-Series Table to structure historical data."
+    4:
+      textContent: "Create a Dynamic Line Chart to visualize trends in telemetry data."
+    5:
+      textContent: "Implement custom action templates for interactive dashboards."
+    6:
+      textContent: "Use HTML extensions for advanced data manipulation."
+    7:
+      textContent: "Discuss common custom widget challenges."
+    8:
+      textContent: "Learn best practices for scalable and maintainable widget development."
+
