@@ -38,13 +38,13 @@ Minor release with the following improvements and bug fixes:
 ### Transport
 
   * [#12427](https://github.com/thingsboard/thingsboard/pull/12427) LwM2M: Client serialization fixes by @YevhenBondarenko
-    * [#12575](https://github.com/thingsboard/thingsboard/pull/12575) MQTT: Fixed unsubscribe error without previous subscribe by @artem-barysh-dev
+  * [#12575](https://github.com/thingsboard/thingsboard/pull/12575) MQTT: Fixed unsubscribe error without previous subscribe by @artem-barysh-dev
 
 ### Edge
 
   * [#12593](https://github.com/thingsboard/thingsboard/pull/12593) Fixed assignment/un-assignment of dashboards by @volodymyr-babak
-    * [#12653](https://github.com/thingsboard/thingsboard/pull/12653) Speed up initial setup and improved handling of connect/disconnect by @volodymyr-babak
-    * [#12566](https://github.com/thingsboard/thingsboard/pull/12566) Fixed error in device profile processing by @jekka001
+  * [#12653](https://github.com/thingsboard/thingsboard/pull/12653) Speed up initial setup and improved handling of connect/disconnect by @volodymyr-babak
+  * [#12566](https://github.com/thingsboard/thingsboard/pull/12566) Fixed error in device profile processing by @jekka001
 
 ## v3.9.0 (Dec 31, 2024) {#v39}
 
