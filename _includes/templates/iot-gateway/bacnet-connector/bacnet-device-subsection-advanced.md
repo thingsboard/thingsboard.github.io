@@ -12,7 +12,7 @@
 | ---                               |                                                                                                                                       |
 
 Example:
-
+ 
 ```json
 {
   "host": "192.168.2.110",
@@ -29,3 +29,5 @@ Example:
   },
   ...
 ```
+
+![image](/images/gateway/bacnet-connector/bacnet-section-devices-advanced-1-ce.png)

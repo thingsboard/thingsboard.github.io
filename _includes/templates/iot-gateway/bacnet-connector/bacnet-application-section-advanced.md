@@ -31,4 +31,5 @@ Example:
     "vendorIdentifier": 15
 },
 ```
-**image**
+
+![image](/images/gateway/bacnet-connector/bacnet-section-application-advanced-1-ce.png)

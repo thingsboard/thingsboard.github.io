@@ -36,4 +36,12 @@ Example:
 ],
 ```
 
-**images**
+{% assign deviceAttrTimeseriesAdvanced = '
+    ===
+        image: /images/gateway/bacnet-connector/bacnet-subsection-time-series-advanced-1-ce.png,
+    ===
+        image: /images/gateway/bacnet-connector/bacnet-subsection-attributes-advanced-1-ce.png
+    '
+%}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=deviceAttrTimeseriesAdvanced %}

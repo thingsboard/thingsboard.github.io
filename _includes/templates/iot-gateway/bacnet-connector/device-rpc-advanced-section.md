@@ -25,4 +25,4 @@ This subsection in configuration file looks like this:
 ],
 ```
 
-**image**
+![image](/images/gateway/bacnet-connector/bacnet-subsection-rpc-methods-advanced-1-ce.png)
