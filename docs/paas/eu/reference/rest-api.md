@@ -7,10 +7,10 @@ description: Supported REST API Reference for server-side integration of your Io
 
 swagger-ui:
     0:
-        image: /images/reference/swagger-ui-1-paas-eu.png
+        image: https://img.thingsboard.io/reference/swagger-ui-1-paas-eu.png
         title: 'You can manually authenticate or authorize as a different user using the "Authorize" button in the top-right corner of the Swagger page.'
     1:
-        image: /images/reference/swagger-ui-2-paas-eu.png
+        image: https://img.thingsboard.io/reference/swagger-ui-2-paas-eu.png
         title: 'Enter the username and password. Then, click "Authorize".'
 
 ---

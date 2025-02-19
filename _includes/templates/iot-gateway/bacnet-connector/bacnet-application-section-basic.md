@@ -14,4 +14,4 @@ This configuration section contains application settings, such as:
     - **Receive** - supports only receiving segmented messages;
     - **None** - doesn't support segmented messages;
 
-![image](/images/gateway/bacnet-connector/bacnet-application-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-application-basic-1-ce.png)

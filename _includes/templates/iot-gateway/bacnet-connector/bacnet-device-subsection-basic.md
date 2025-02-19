@@ -1,6 +1,6 @@
 To add a new device, click the "plus" icon:
 
-![image](/images/gateway/bacnet-connector/bacnet-gateway-configuring-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-gateway-configuring-1-ce.png)
 
 Provide the following fields in the opened model window:
 - **Host** - the host of the device;
@@ -15,4 +15,4 @@ Provide the following fields in the opened model window:
 - **Advanced configuration settings**:
   - **Alternative responses addresses** - the alternative address for responses from the device (you can find detail examples [here](/docs/iot-gateway/config/bacnet#examples-alternative-responses-addresses)).
 
-![image](/images/gateway/bacnet-connector/bacnet-gateway-configuring-2-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-gateway-configuring-2-ce.png)

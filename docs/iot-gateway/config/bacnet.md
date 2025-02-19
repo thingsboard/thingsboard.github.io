@@ -47,7 +47,7 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/bacnet-general-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-general-basic-1-ce.png)
 
 {% capture difference %}
 The settings are the same for both the basic and advanced configurations.

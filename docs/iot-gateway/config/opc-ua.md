@@ -102,7 +102,7 @@ This example uses the Prosys OPC-UA Simulation Server to demonstrate how to conf
 <br>
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-simulation-server-1.png)
 {: refdef}
 
 
@@ -125,7 +125,7 @@ Our **server** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-configuration-1.png)
 {: refdef}
 
 ### Subsection "identity"
@@ -167,7 +167,7 @@ Specify **deviceNodePattern** as it is on our test server. In this example it is
 **deviceNamePattern** should be specified as **"Device OPC-UA"**.
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-2.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-simulation-server-2.png)
 {: refdef}
 
 <br>
@@ -179,13 +179,13 @@ In this example, the **mapping** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-2.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-configuration-2.png)
 {: refdef}
 
 After running **ThingsBoard IoT gateway**, you will see the new **Device OPC-UA** device in your ThingsBoard instance.
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-1.png)
 {: refdef}
 
 ### Subsection "attributes"
@@ -226,7 +226,7 @@ In the "path" line set the NodeId value taken from our test server.
 <br>
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-3.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-simulation-server-3.png)
 {: refdef}
 
 In this example, the **attributes** section would look like this:
@@ -245,13 +245,13 @@ In this example, the **attributes** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-3.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-configuration-3.png)
 {: refdef}
 
 You should be able to see the attributes you have sent to ThingsBoard in the **Attributes** section of your device:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-2.png)
 {: refdef}
 
 ### Subsection "timeseries"
@@ -287,7 +287,7 @@ Replace the "path" value with the "NodeId" value. This is a relative path from d
 <br>
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-simulation-server-4.png)
 {: refdef}
 
 In this example, the **timeseries** section would look like this:
@@ -310,13 +310,13 @@ In this example, the **timeseries** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-configuration-4.png)
 {: refdef}
 
 You should be able to see the telemetry you have sent to ThingsBoard in the **Latest telemetry** section of your device:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-3.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-3.png)
 {: refdef}
 
 ### Subsection "rpc_methods"
@@ -374,7 +374,7 @@ In the OPC-UA Connector configuration file (opcua.json) change **"attributeOnDev
 In this example it is **"Root\\.Objects\\.Simulation\\.deviceName"**.
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-updates-2.png)
 {: refdef}
 
 Our **attributes_updates** section would look like this:
@@ -389,7 +389,7 @@ Our **attributes_updates** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-updates-1.png)
 {: refdef}
 
 Go to **"Shared attributes"** and create a new one for your device in the ThingsBoard instance.
@@ -397,17 +397,17 @@ Go to **"Shared attributes"** and create a new one for your device in the Things
 Specify the key name - deviceName, value type - String, string value - Device OPC-UA.
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-3.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-updates-3.png)
 {: refdef}
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-4.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-updates-4.png)
 {: refdef}
 
 Now go to OPC UA server and make sure the value of the deviceName node is updated.
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-5.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-updates-5.png)
 {: refdef}
 
 ## Next steps
