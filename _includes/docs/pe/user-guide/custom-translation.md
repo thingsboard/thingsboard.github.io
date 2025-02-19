@@ -1,5 +1,13 @@
 {% assign feature = "Custom Translations" %}{% include templates/pe-feature-banner.md %}
 
+{% assign addEntityTableWidgetLink = "/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget" %}
+{% if docsPrefix == "paas/" %}
+{% assign addEntityTableWidgetLink = "/docs/paas/getting-started-guides/helloworld/#step-32-add-an-entities-table-widget" %}
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+{% assign addEntityTableWidgetLink = "/docs/paas/eu/getting-started-guides/helloworld/#step-32-add-an-entities-table-widget" %}
+{% endif %}
+
 * TOC
 {:toc}
 
@@ -196,7 +204,7 @@ Here is an example of an entry for translating the dashboard title into Italian:
   }
 ...
 ```
-- Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
+- Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
 - Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}:
 ```text
 {i18n:custom.my-dashboard.title}
@@ -213,7 +221,7 @@ Here is an example of an entry for translating the dashboard title into Italian:
         title: Specify [custom translation](#translation-editing-using-advanced-mode) for the dashboard name in the translation map. In this example, we will use a translation map in JSON format;
     ===
         image: /images/user-guide/custom-translation/dashboard-internalization-2-pe.png,
-        title: Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
+        title: Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
     ===
         image: /images/user-guide/custom-translation/dashboard-internalization-3-pe.png,
         title: Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}: <b>{i18n:custom.my-dashboard.title}</b>. Apply changes;
@@ -242,7 +250,7 @@ Here's an example entry:
 ...
 ```
 
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget){:target="_blank"} or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget]({{addEntityTableWidgetLink}}){:target="_blank"} or use an existing one and enter its editing mode;
 - In the widget settings, set the custom translations for:
   - Widget title - <b>{i18n:custom.my-widget.name}</b>;
   - Entity label column title - <b>{i18n:custom.my-widget.label-text}</b>;
@@ -285,7 +293,7 @@ Here's an example entry:
   }
 ...
 ```
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget]({{addEntityTableWidgetLink}}) or use an existing one and enter its editing mode;
 - Navigate to the "Widget card" tab of the "Advanced" settings and set a custom translation for the widget title tooltip using a structure in the format {i18n} - <b>{i18n:custom.my-widget.name}</b>;
 - Apply changes;
 - Hover on widget title and check applied translation.
@@ -329,7 +337,7 @@ Here's an example entry:
   }
 ...
 ```
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget]({{addEntityTableWidgetLink}}) or use an existing one and enter its editing mode;
 - Open the "temperature" data key configuration;
 - Use cell content function. An example of the function we use is provided below:
 - Apply all changes;
@@ -393,7 +401,7 @@ Here's an example entry:
   }
 ...
 ```
-- Open your dashboard on the "Dashboards" page. [Add a new widget](/docs/pe/user-guide/widgets/#adding-a-widget-to-the-dashboard) - "HTML Value Card" from the "Cards" widgets bundle. 
+- Open your dashboard on the "Dashboards" page. [Add a new widget](/docs/{{docsPrefix}}user-guide/widgets/#adding-a-widget-to-the-dashboard) - "HTML Value Card" from the "Cards" widgets bundle. 
 Specify the device that transmits temperature readings as the data source;
 - Now, navigate to the "Appearance" tab. Take the function from the example below and paste it into the "HTML" field. Click "Add";
 - Save the dashboard;
