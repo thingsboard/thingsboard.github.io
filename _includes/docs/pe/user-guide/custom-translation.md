@@ -1,5 +1,13 @@
 {% assign feature = "Custom Translations" %}{% include templates/pe-feature-banner.md %}
 
+{% assign addEntityTableWidgetLink = "/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget" %}
+{% if docsPrefix == "paas/" %}
+{% assign addEntityTableWidgetLink = "/docs/paas/getting-started-guides/helloworld/#step-32-add-an-entities-table-widget" %}
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+{% assign addEntityTableWidgetLink = "/docs/paas/eu/getting-started-guides/helloworld/#step-32-add-an-entities-table-widget" %}
+{% endif %}
+
 * TOC
 {:toc}
 
@@ -7,7 +15,7 @@ The Custom translation feature allows you to add new languages not currently sup
 
 Go to the "Custom translation" tab of the "White labeling" page. On this page, you will find the current list of available languages and their translation progress indicated in percentages. While not all translations are complete, our team is constantly working on improving and expanding the list.
 
-![image](https://img.thingsboard.io/user-guide/custom-translation/main-page-1-pe.png)
+![image](/images/user-guide/custom-translation/main-page-1-pe.png)
 
 On the custom translation page, you can customize any language according to your needs, download an existing language translation file in JSON format, or delete a language using the respective buttons.
 
@@ -27,13 +35,13 @@ To add new language, follow these steps:
 
 {% assign addNewLanguagePE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-1-pe.png,
+        image: /images/user-guide/custom-translation/add-new-language-1-pe.png,
         title: Go to the "Custom translation" tab of the "White labeling" page and click the "Add new language" button located at the top of the "Custom translation" window;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-2-pe.png,
+        image: /images/user-guide/custom-translation/add-new-language-2-pe.png,
         title: In the new window, click on the "Language" field and select the desired language from the drop-down menu. The list is sorted by localization code. Then, click "Add";
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-3-pe.png,
+        image: /images/user-guide/custom-translation/add-new-language-3-pe.png,
         title: You&#39;ve successfully added a new language. Since translations for term keys have not yet been added, the translation progress is at 0%. By default, languages are sorted in alphabetical order by their localization code.
 '
 %}
@@ -48,16 +56,16 @@ To change the ThingsBoard's interface language, follow these steps:
 
 {% assign changeLanguagePE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-1-pe.png,
+        image: /images/user-guide/custom-translation/change-language-1-pe.png,
         title: Navigate to your profile by clicking on the three dots in the top right corner of the screen and select "Account" tab;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-2-pe.png,
+        image: /images/user-guide/custom-translation/change-language-2-pe.png,
         title: Click on the "Language" field and choose desired system language from the drop-down list. For example, Italian;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-3-pe.png,
+        image: /images/user-guide/custom-translation/change-language-3-pe.png,
         title: Click the "Save" button to apply the changes;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-4-pe.png,
+        image: /images/user-guide/custom-translation/change-language-4-pe.png,
         title: As you can see, some elements of the menu and text have been translated into Italian.
 '
 %}
@@ -79,16 +87,16 @@ Let's consider manually adding translations for term keys:
 
 {% assign manualAdditionOfTranslationPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/manual-addition-of-translation-1-pe.png,
+        image: /images/user-guide/custom-translation/manual-addition-of-translation-1-pe.png,
         title: Click on the "pencil" icon of the language you want to edit;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/manual-addition-of-translation-2-pe.png,
+        image: /images/user-guide/custom-translation/manual-addition-of-translation-2-pe.png,
         title: You will see a table with three columns: the term key, its default value (in English), and a field for entering the translation;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/manual-addition-of-translation-3-pe.png,
+        image: /images/user-guide/custom-translation/manual-addition-of-translation-3-pe.png,
         title: As you can see, not all translation fields are filled. Let&#39;s fill in the translation field for the "Home" menu item. Use the search to find the term key responsible for this menu item and enter its translation;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/manual-addition-of-translation-4-pe.png,
+        image: /images/user-guide/custom-translation/manual-addition-of-translation-4-pe.png,
         title: The entered value will be automatically saved and applied when you click outside of this row.
 '
 %}
@@ -109,10 +117,10 @@ To clear a custom translation or reset its value to the one specified by the sys
 
 {% assign clearCustomTranslationPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/clear-custom-translation-1-pe.png,
+        image: /images/user-guide/custom-translation/clear-custom-translation-1-pe.png,
         title: To clear a custom translation or reset its value to the one specified by the system administrator, click the broom icon in the term key row;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/clear-custom-translation-2-pe.png,
+        image: /images/user-guide/custom-translation/clear-custom-translation-2-pe.png,
         title: The value has been reset to its default setting.
 '
 %}
@@ -127,13 +135,13 @@ Let's see how it works:
 
 {% assign customTranslationInJsonPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/manual-addition-of-translation-1-pe.png,
+        image: /images/user-guide/custom-translation/manual-addition-of-translation-1-pe.png,
         title: Click on the language to open its translation map;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-json-1-pe.png,
+        image: /images/user-guide/custom-translation/custom-translation-in-json-1-pe.png,
         title: Navigate to the "Advanced" tab, and then insert JSON from example below. After, click "Save";
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-json-2-pe.png,
+        image: /images/user-guide/custom-translation/custom-translation-in-json-2-pe.png,
         title: Check that the translation is applied ("Home" menu item should be translated to "Pagina principale di un sito web").
 '
 %}
@@ -196,7 +204,7 @@ Here is an example of an entry for translating the dashboard title into Italian:
   }
 ...
 ```
-- Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
+- Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
 - Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}:
 ```text
 {i18n:custom.my-dashboard.title}
@@ -209,16 +217,16 @@ Here is an example of an entry for translating the dashboard title into Italian:
 
 {% assign translationOfDashboardNamePE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-internalization-1-pe.png,
+        image: /images/user-guide/custom-translation/dashboard-internalization-1-pe.png,
         title: Specify [custom translation](#translation-editing-using-advanced-mode) for the dashboard name in the translation map. In this example, we will use a translation map in JSON format;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-internalization-2-pe.png,
-        title: Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/pe/user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
+        image: /images/user-guide/custom-translation/dashboard-internalization-2-pe.png,
+        title: Navigate to the "Dashboards" page. You can either [create a new dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#create-new-dashboard){:target="_blank"} or select an existing one. Open the dashboard details;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-internalization-3-pe.png,
+        image: /images/user-guide/custom-translation/dashboard-internalization-3-pe.png,
         title: Enter the dashboard editing mode. Set a custom translation for the dashboard title using a structure in the format {i18n}: <b>{i18n:custom.my-dashboard.title}</b>. Apply changes;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-internalization-4-pe.png,
+        image: /images/user-guide/custom-translation/dashboard-internalization-4-pe.png,
         title: Make sure the dashboard title is correctly translated according to the translation map.
 '
 %}
@@ -242,7 +250,7 @@ Here's an example entry:
 ...
 ```
 
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget){:target="_blank"} or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget]({{addEntityTableWidgetLink}}){:target="_blank"} or use an existing one and enter its editing mode;
 - In the widget settings, set the custom translations for:
   - Widget title - <b>{i18n:custom.my-widget.name}</b>;
   - Entity label column title - <b>{i18n:custom.my-widget.label-text}</b>;
@@ -252,19 +260,19 @@ Here's an example entry:
 
 {% assign widgetInternalizationPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-1-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-1-pe.png,
         title: Specify [custom translation](#translation-editing-using-advanced-mode) for the widget&#39;s name, the temperature column title, and the entity label column title in the translation map;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-2-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-2-pe.png,
         title: [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-3-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-3-pe.png,
         title: Apply translation to the widget title - <b>{i18n:custom.my-widget.name}</b>, temperature column title - <b>{i18n:custom.my-widget.temperature}</b>, and entity label column title - <b>{i18n:custom.my-widget.label-text}</b>. Apply all changes;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-4-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-4-pe.png,
         title: Save the dashboard;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-5-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-5-pe.png,
         title: Check that the widget&#39;s title, temperature column title, and entity label column title are correctly translated as per the translation map.
 '
 %}
@@ -285,26 +293,26 @@ Here's an example entry:
   }
 ...
 ```
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget]({{addEntityTableWidgetLink}}) or use an existing one and enter its editing mode;
 - Navigate to the "Widget card" tab of the "Advanced" settings and set a custom translation for the widget title tooltip using a structure in the format {i18n} - <b>{i18n:custom.my-widget.name}</b>;
 - Apply changes;
 - Hover on widget title and check applied translation.
 
 {% assign widgetTooltipInternalizationPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-tooltip-internalization-1-pe.png,
+        image: /images/user-guide/custom-translation/widget-tooltip-internalization-1-pe.png,
         title: Specify [custom translation](#translation-editing-using-advanced-mode) for the widget tooltip title in the translation map, using JSON format;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-tooltip-internalization-2-pe.png,
+        image: /images/user-guide/custom-translation/widget-tooltip-internalization-2-pe.png,
         title: Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-tooltip-internalization-3-pe.png,
+        image: /images/user-guide/custom-translation/widget-tooltip-internalization-3-pe.png,
         title: Navigate to the "Widget card" tab of the "Advanced" settings and set a custom translation for the widget title tooltip using a structure in the format {i18n} - <b>{i18n:custom.my-widget.name}</b>. Apply changes;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-tooltip-internalization-4-pe.png,
+        image: /images/user-guide/custom-translation/widget-tooltip-internalization-4-pe.png,
         title: Save the dashboard;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-tooltip-internalization-5-pe.png,
+        image: /images/user-guide/custom-translation/widget-tooltip-internalization-5-pe.png,
         title: Hover on widget title and check applied translation.
 '
 %}
@@ -329,7 +337,7 @@ Here's an example entry:
   }
 ...
 ```
-- Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
+- Open your dashboard on the "Dashboards" page. [Add an Entities table widget]({{addEntityTableWidgetLink}}) or use an existing one and enter its editing mode;
 - Open the "temperature" data key configuration;
 - Use cell content function. An example of the function we use is provided below:
 - Apply all changes;
@@ -337,28 +345,28 @@ Here's an example entry:
 
 {% assign widgetCellContentFunctionInternalizationPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-1-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-1-pe.png,
         title: Define [custom translation](#translation-editing-using-advanced-mode) for each cell content function value in the translation map, using JSON format;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-2-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-2-pe.png,
         title: Open your dashboard on the "Dashboards" page. [Add an Entities table widget](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) or use an existing one and enter its editing mode;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-3-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-3-pe.png,
         title: Open the "temperature" data key configuration;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-4-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-4-pe.png,
         title: Use cell content function. Apply all changes;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-5-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-5-pe.png,
         title: Save the dashboard;
     === 
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-6-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-6-pe.png,
         title: Check the result. If the temperature value is between 20 and 70 degrees, the result in the temperature column will be "Temperatura normale";
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-7-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-7-pe.png,
         title: If the temperature value is greater than 70 degrees, the result in the temperature column will be "Alta temperatura";
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-8-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-8-pe.png,
         title: If the temperature value is less than 20 degrees, the result in the temperature column will be "Bassa temperatura".
 '
 %}
@@ -393,7 +401,7 @@ Here's an example entry:
   }
 ...
 ```
-- Open your dashboard on the "Dashboards" page. [Add a new widget](/docs/pe/user-guide/widgets/#adding-a-widget-to-the-dashboard) - "HTML Value Card" from the "Cards" widgets bundle. 
+- Open your dashboard on the "Dashboards" page. [Add a new widget](/docs/{{docsPrefix}}user-guide/widgets/#adding-a-widget-to-the-dashboard) - "HTML Value Card" from the "Cards" widgets bundle. 
 Specify the device that transmits temperature readings as the data source;
 - Now, navigate to the "Appearance" tab. Take the function from the example below and paste it into the "HTML" field. Click "Add";
 - Save the dashboard;
@@ -401,25 +409,25 @@ Specify the device that transmits temperature readings as the data source;
 
 {% assign widgetInternalizationUsageInHtmlValueCardPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-cell-content-function-internalization-1-pe.png,
+        image: /images/user-guide/custom-translation/widget-cell-content-function-internalization-1-pe.png,
         title: Specify [custom translation](#translation-editing-using-advanced-mode) for the telemetry data;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-2-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-2-pe.png,
         title: Open your dashboard on the "Dashboards" page. [Add a new widget](/docs/pe/user-guide/widgets/#adding-a-widget-to-the-dashboard) - "HTML Value Card" from the "Cards" widgets bundle;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-3-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-3-pe.png,
         title: Specify the device that transmits temperature readings as the data source;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-4-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-4-pe.png,
         title: Now, navigate to the "Appearance" tab. Take the function from the example below and paste it into the "HTML" field. Click "Add";
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-5-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-5-pe.png,
         title: Save the dashboard;
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-6-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-6-pe.png,
         title: Check the result. The value in the HTML Value Card will change depending on the value of the incoming telemetry.
     ===
-        image: https://img.thingsboard.io/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-7-pe.png,
+        image: /images/user-guide/custom-translation/widget-internalization-usage-in-html-value-card-7-pe.png,
 '
 %}
 

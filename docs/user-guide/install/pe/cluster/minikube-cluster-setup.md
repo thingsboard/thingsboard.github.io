@@ -42,7 +42,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard PE Kubernetes scripts
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/minikube
 ```
 {: .copy-code}
