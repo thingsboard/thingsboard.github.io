@@ -258,7 +258,7 @@ toc:
     - title: Version control
       path: /docs/paas/user-guide/version-control/
     - title: PSM and eDRX Support
-      path: /docs/user-guide/psm/
+      path: /docs/paas/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
     - title: Scheduler
