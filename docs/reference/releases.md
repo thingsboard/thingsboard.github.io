@@ -12,7 +12,7 @@ description: ThingsBoard architecture
 
 Minor release with the following improvements and bug fixes:
 
-### Core & Rule Engine
+* Core & Rule Engine
 
   * [#12444](https://github.com/thingsboard/thingsboard/pull/12444) Version Control: Fixed error when checking access to repository by @ViacheslavKlimov
   * [#12445](https://github.com/thingsboard/thingsboard/pull/12445) Mobile app center: Fixed bundle id null pointer exception after migration by @dashevchenko
@@ -20,7 +20,7 @@ Minor release with the following improvements and bug fixes:
   * [#12581](https://github.com/thingsboard/thingsboard/pull/12581) Actor system: Fixed memory leak with device subscriptions by @smatvienko-tb
   * [#12640](https://github.com/thingsboard/thingsboard/pull/12640) REST API call node: Fixed Basic auth by @devaskim
 
-### UI
+* UI
 
   * [#12389](https://github.com/thingsboard/thingsboard/pull/12389) Notification center: Fixed entity tables not updating after copy or creation by @vvlladd28
   * [#12455](https://github.com/thingsboard/thingsboard/pull/12455) Map widgets: Fixed issue with drawing a circle by @vvlladd28
@@ -35,16 +35,16 @@ Minor release with the following improvements and bug fixes:
   * [#12631](https://github.com/thingsboard/thingsboard/pull/12631) Entity details page: Fixed mobile view by @vvlladd28
   * [#12664](https://github.com/thingsboard/thingsboard/pull/12664) Liquid level widget: Fixed incorrect shape layout settings by @vvlladd28
 
-### Transport
+* Transport
 
   * [#12427](https://github.com/thingsboard/thingsboard/pull/12427) LwM2M: Client serialization fixes by @YevhenBondarenko
-    * [#12575](https://github.com/thingsboard/thingsboard/pull/12575) MQTT: Fixed unsubscribe error without previous subscribe by @artem-barysh-dev
+  * [#12575](https://github.com/thingsboard/thingsboard/pull/12575) MQTT: Fixed unsubscribe error without previous subscribe by @artem-barysh-dev
 
-### Edge
+* Edge
 
   * [#12593](https://github.com/thingsboard/thingsboard/pull/12593) Fixed assignment/un-assignment of dashboards by @volodymyr-babak
-    * [#12653](https://github.com/thingsboard/thingsboard/pull/12653) Speed up initial setup and improved handling of connect/disconnect by @volodymyr-babak
-    * [#12566](https://github.com/thingsboard/thingsboard/pull/12566) Fixed error in device profile processing by @jekka001
+  * [#12653](https://github.com/thingsboard/thingsboard/pull/12653) Speed up initial setup and improved handling of connect/disconnect by @volodymyr-babak
+  * [#12566](https://github.com/thingsboard/thingsboard/pull/12566) Fixed error in device profile processing by @jekka001
 
 ## v3.9.0 (Dec 31, 2024) {#v39}
 
