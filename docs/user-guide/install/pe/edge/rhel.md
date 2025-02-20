@@ -25,8 +25,7 @@ This guide describes how to install **ThingsBoard Edge** on **RHEL/CentOS 7/8.**
 Before continue to installation execute the following commands in order to install necessary tools:
 
 ```bash
-sudo yum install -y nano wget
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install -y nano wget && sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
 ### Step 1. Install Java 17 (OpenJDK) 

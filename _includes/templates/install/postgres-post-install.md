@@ -1,23 +1,9 @@
-Once **PostgreSQL** is installed, you may want to create a new user or set the password for the main user.
-The following instructions will help you to set the **password** for the main **PostgreSQL** user.
+Once **PostgreSQL** is installed, it is recommended to set the password for the **PostgreSQL main user**.
 
-To switch your current user context to the postgres user, execute the following script:
+The following command will switch the current user to the PostgreSQL user and set the password directly in PostgreSQL.
 ```bash
-sudo su - postgres
+sudo -u postgres psql -c "\password"
 ```
 {: .copy-code}
 
-To interact with the **PostgreSQL** database, enter:
-```bash
-psql
-```
-{: .copy-code}
-
-You will connect to the database as the **main** PostgreSQL user. To set the password, enter the following command after **postgres=#** :
-```bash
-\password
-```
-{: .copy-code}
-
-Enter and confirm the password. 
-Then, press **"Ctrl+D"** to return to the main user console. 
+Then, **enter and confirm** the password.
