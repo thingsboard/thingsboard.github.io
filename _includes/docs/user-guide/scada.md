@@ -11,6 +11,13 @@ Additionally, ThingsBoard offers robust [alarm](/docs/{{docsPrefix}}user-guide/a
 
 Starting from release 3.8.0, ThingsBoard introduces support for SCADA-like HMI dashboards, which we will cover in this documentation.
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/kBMcsg7YEcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## SCADA dashboard layout
 
 A SCADA dashboard in ThingsBoard provides all the functionalities of a typical platform [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} with a specialized SCADA [layout](/docs/{{docsPrefix}}user-guide/dashboards/#layouts){:target="_blank"}, 
