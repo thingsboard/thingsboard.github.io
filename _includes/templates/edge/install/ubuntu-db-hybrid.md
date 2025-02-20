@@ -8,16 +8,10 @@ In this case, **ThingsBoard Edge** stores time-series data in Cassandra while co
 
 {% include templates/install/postgres-install-ubuntu.md %}
 
-Connect to the **"postgres"** database as the **"postgres"** user:
+To create a new PostgreSQL database named **tb_edge**, use the following command:
 
 ```bash
-psql -U postgres -d postgres -h 127.0.0.1 -W
-```
-{: .copy-code}
-
-Create the **ThingsBoard Edge** database and name it **"tb_edge"** :
-```bash
-CREATE DATABASE tb_edge;
+echo "CREATE DATABASE tb_edge;" | psql -U postgres -d postgres -h 127.0.0.1 -W
 ```
 {: .copy-code}
 
