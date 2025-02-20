@@ -26,3 +26,5 @@ This part of configuration will look like:
       "password": "5Tr0nG?@$sW0rD"
     },
 ```
+
+![image](/images/gateway/opc-ua-connector/opc-ua-section-application-advanced-certificates-1-ce.png)
