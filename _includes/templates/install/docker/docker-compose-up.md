@@ -5,4 +5,3 @@ docker compose up -d && docker compose logs -f my{{serviceName}}
 ```
 {: .copy-code}
 
-{% include templates/install/docker/docker-compose-standalone-banner.md %}
