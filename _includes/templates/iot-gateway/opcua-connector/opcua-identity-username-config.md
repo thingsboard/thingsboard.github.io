@@ -1,4 +1,4 @@
-Using this option you can provide the username and password for connection to OPC-UA server.
+Using this option, you can provide the username and password to connect to the OPC-UA server.
 
 | **Parameter** | **Default value**  | **Description**                              |
 |:--------------|:-------------------|----------------------------------------------|
@@ -7,7 +7,7 @@ Using this option you can provide the username and password for connection to OP
 | password      | **5Tr0nG?@$sW0rD** | Password for logging into the OPC-UA server. |
 | ---           |                    |                                              |
 
-This part of configuration will look like:  
+This part of configuration will look like this:  
 
 ```json
     "identity": {
@@ -17,3 +17,4 @@ This part of configuration will look like:
     },
 ```
 
+![image](/images/gateway/opc-ua-connector/opc-ua-section-application-advanced-basic-1-ce.png)

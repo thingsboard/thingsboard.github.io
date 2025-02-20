@@ -1,4 +1,4 @@
-This subsection contains configuration for RPC request from ThingsBoard platform instance.
+This subsection contains the configuration for RPC requests from ThingsBoard platform instance.
 
 | **Parameter** | **Default value** | **Description**                                                                                       |
 |:--------------|:------------------|-------------------------------------------------------------------------------------------------------|
@@ -27,3 +27,5 @@ This part of configuration will look like this:
     }
 ],
 ```
+
+![image](/images/gateway/opc-ua-connector/opc-ua-subsection-rpc-methods-advanced-1-ce.png)

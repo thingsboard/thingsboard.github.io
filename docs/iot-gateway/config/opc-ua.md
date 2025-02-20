@@ -31,7 +31,7 @@ everything works.
 
 {% capture difference %}
 **Please note:**
-To get the actual UI for the gateway - you need to have connected gateway, before adding connector. Otherwise, you will see old UI.
+To access the actual UI for the gateway - you need to a have connected gateway before adding a connector. Otherwise, you will see the old UI.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -49,7 +49,7 @@ This configuration section contains general connector settings, such as:
   - **Type** - type of the report strategy:
     - **On report period** - sends data to ThingsBoard after the report period;
     - **On value change** - sends data to ThingsBoard when the value changes;
-    - **On value change and report period** - sends data to ThingsBoard when the value changes or report period;
+    - **On value change and report period** - sends data to ThingsBoard when the value changes or after the report period;
     - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
 {% capture difference %}
@@ -57,10 +57,10 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**image**
+![image](/images/gateway/opc-ua-connector/opc-ua-general-basic-1-ce.png)
 
 {% capture difference %}
-General tab in settings are the same for both the basic and advanced configurations.
+The General tab in settings is the same for both the basic and advanced configurations.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -95,8 +95,6 @@ Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-data-
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-data-mapping-advanced-section.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcuadatamappingsection" toggle-spec=opcuadatamappingsection %}
 
-Let’s review more examples of configuring "**Node path**", "**Device name**" and "**Profile name**" fields:
-
 #### Subsection "Attributes" and "Time series"
 
 The configuration in this subsection provides settings for processing data from OPC-UA node. These settings will be 
@@ -106,8 +104,6 @@ interpreted in ThingsBoard platform instance as attributes/time series of the de
 Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-attr-and-time-series-basic-section.md%br%
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-attr-and-time-series-advanced-section.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcuaattrandtimeseriessection" toggle-spec=opcuaattrandtimeseriessection %}
-
-Let’s review more examples of configuring:
 
 #### Subsection "Attribute updates"
 
@@ -153,7 +149,7 @@ target node.
 
 **Example:**
 
-Gateway expects that the node exist and the value of **Root\.Objects\.TempSensor\.Temperature** is **23.54**.
+Gateway expects the node to exist and the value of "**Root\.Objects\.TempSensor\.Temperature**" to be **23.54**.
 
 _Expression:_
 
@@ -169,7 +165,7 @@ A **relative path** specifies the address relative to a predefined starting poin
 
 **Example:**
 
-Gateway expects that the node exist and the value of “Root\.Objects\.TempSensor\.Temperature” is 23.56.
+Gateway expects the node to exist and the value of “**Root\.Objects\.TempSensor\.Temperature**” to be 23.56.
 
 _Device Node Expression:_
 
@@ -188,7 +184,7 @@ _Converted data:_
 An **Identifier** type is a unique ID assigned to a node within the OPC-UA server. It is used to directly reference 
 specific nodes without navigating through the namespace hierarchy.
 
-The Identifier type in the OPC-UA connector configuration can be used in various forms to uniquely reference nodes 
+The Identifier type in the OPC-UA connector configuration can take various forms to uniquely reference nodes 
 in the OPC-UA server's address space. Identifiers can be of different types, such as numeric (`i`), string (`s`), 
 byte string (`b`), and GUID (`g`). Below is an explanation of each identifier type with examples.
 

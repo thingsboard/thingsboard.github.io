@@ -1,7 +1,16 @@
 In order to add new RPC method, follow these steps:
 
-1. Click “**pencil**” icon of the “**RPC methods**” section to add new RPC method;
-2. Click on "**Add method**" in the opened window;
-3. Fill in "**Method name**" field, if method have some arguments, click on "**Add argument**" button and select the type of argument, fill in the "**Value**" field and click "**Apply**" button.
+{% assign RPC = '
+    ===
+        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-14-ce.png,
+        title: Click the “**pencil**” icon in the “**RPC methods**” section to add new RPC method;
+    ===
+        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-15-ce.png,
+        title: Click on "**Add method**" in the opened window;
+    ===
+        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-16-ce.png,
+        title: Fill in "**Method name**" field. If the method has arguments, click on "**Add argument**" button and select the type of argument. Fill in the "**Value**" field and click "**Apply**" button.
+    '
+%}
 
-**images**
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=RPC %}

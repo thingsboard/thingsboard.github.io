@@ -41,5 +41,5 @@ Our **server** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-1.png)
+![image](/images/gateway/opc-ua-connector/opc-ua-section-application-advanced-anonymous-1-ce.png)
 {: refdef}

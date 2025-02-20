@@ -6,14 +6,14 @@
 | ---           |                                                                                      |                                                                                                                 |
 
 {% capture difference %}
-All rules below work the same for attributes configuration.
+All rules below apply in the same way to attributes configuration.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 ** \* ** You can input some expressions for search here, like:
 1. Full path to node - **${Root\\\\.Objects\\\\.Device1\\\\.TemperatureAndHumiditySensor\\\\.Temperature}**
 2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Temperature}** 
-3. Some regular expression to search - **${Root\\\\.Objects\\\\.Device\\\\d\*\\\\.TemperatureAndHumiditySensor\\\\.Temperature}**
+3. Some regular expressions to search for - **${Root\\\\.Objects\\\\.Device\\\\d\*\\\\.TemperatureAndHumiditySensor\\\\.Temperature}**
 4. Namespace identifier and node identifier - **${ns=2;i=5}**
 
 This part of the configuration will look like this:  
@@ -57,7 +57,7 @@ In this example, the **timeseries** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-4.png)
+![image](/images/gateway/opc-ua-connector/opc-ua-subsection-time-series-advanced-1-ce.png)
 {: refdef}
 
 You should be able to see the telemetry you have sent to ThingsBoard in the **Latest telemetry** section of your device:
