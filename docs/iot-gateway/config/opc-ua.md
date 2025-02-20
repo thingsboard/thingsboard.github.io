@@ -57,7 +57,7 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-general-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-general-basic-1-ce.png)
 
 {% capture difference %}
 The General tab in settings is the same for both the basic and advanced configurations.

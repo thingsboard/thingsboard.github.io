@@ -17,7 +17,7 @@ This example uses the Prosys OPC-UA Simulation Server to demonstrate how to conf
 <br>
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-simulation-server-1.png)
 {: refdef}
 
 On the main **"Status"** tab, copy connection address (UA TCP).
@@ -41,5 +41,5 @@ Our **server** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-connector/opc-ua-section-application-advanced-anonymous-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-section-application-advanced-anonymous-1-ce.png)
 {: refdef}

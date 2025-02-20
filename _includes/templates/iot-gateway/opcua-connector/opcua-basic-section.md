@@ -8,4 +8,4 @@ This configuration section contains settings of the OPC-UA server connection, su
 - **Enable subscription** - if true - the gateway will subscribe to interesting nodes and wait for data update and if false - the gateway will rescan OPC-UA server every **scanPeriodInMillis**;
 - **Show map** - show nodes on scanning **true** or **false**.
 
-![image](/images/gateway/opc-ua-connector/opc-ua-application-basic-certificates-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-application-basic-certificates-1-ce.png)

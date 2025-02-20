@@ -17,4 +17,4 @@ This subsection in configuration file looks like this:
 ]
 ```
 
-![image](/images/gateway/opc-ua-connector/opc-ua-subsection-attribute-updates-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-subsection-attribute-updates-advanced-1-ce.png)
