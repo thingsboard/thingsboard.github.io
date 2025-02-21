@@ -18,6 +18,9 @@ toc:
       path: /docs/paas/eu/solution-templates/temperature-humidity-sensors/
     - title: Smart office
       path: /docs/paas/eu/solution-templates/smart-office/
+    - title: SCADA systems in drilling
+      path: /docs/paas/eu/solution-templates/scada-systems-in-drilling/
+      new: true
     - title: Fleet tracking
       path: /docs/paas/eu/solution-templates/fleet-tracking/
     - title: Fuel Level Monitoring
