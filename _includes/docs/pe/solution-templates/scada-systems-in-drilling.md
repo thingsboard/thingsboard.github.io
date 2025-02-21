@@ -4,12 +4,13 @@
 {% assign sinceVersion = "4.0.0" %}
 {% include templates/since.md %}
 
-SCADA (Supervisory Control and Data Acquisition) and ThingsBoard platform play a crucial role in automating oil and gas drilling processes.
+A SCADA (Supervisory Control and Data Acquisition) system template for automating oil and gas drilling processes has been implemented based on ThingsBoard.
 The use of SCADA systems allows operators to monitor drilling parameters in real time, control equipment, and prevent emergency situations. ThingsBoard, as an IoT platform, enables the collection, processing, and visualization of data from sensors and controllers, making drilling safer, more efficient, and more predictable.
 
 <br>
 <object width="95%" data="/images/solutions/scada_systems_in_drilling/scada-systems-in-drilling-scheme.svg"></object>
 
+<br>
 To understand how the SCADA systems in Drilling template works, let&#39;s start by installing it.
 
 ## Install solution template
@@ -115,47 +116,35 @@ The mobile view demonstrates the flexibility of the dashboard, allowing you to m
 
 The SCADA Swimming Pool system includes:
 
-- Devices – Sensors and actuators installed on drilling equipment. They collect data on drilling parameters such as rotation speed, tension, fluid level, and other indicators.
-- Modbus Protocol – The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
-- Gateway – A device that transmits data from sensors to the cloud platform. It converts and relays data over the network for further processing.
-- ThingsBoard – An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
-- Dashboard Visualization – SCADA dashboards provide a clear representation of all drilling processes, enabling real-time monitoring and informed decision-making.
+- **Devices** – Sensors and actuators installed on drilling equipment. They collect data on drilling parameters such as rotation speed, tension, fluid level, and other indicators.
+- **Modbus** Protocol – The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
+- **Gateway** – A device that transmits data from sensors to the cloud platform. It converts and relays data over the network for further processing.
+- **ThingsBoard** – An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
+- **Dashboard Visualization** – SCADA dashboards provide a clear representation of all drilling processes, enabling real-time monitoring and informed decision-making.
 
 ## Key components of a drilling rig
 
 These symbols represent key structural elements of the drilling system:
 
-**HP Drilling Rig**
+**Drilling Rig**
 
 Main structure essential for supporting drilling operations.
 
 ![image](/images/solutions/scada_systems_in_drilling/hp-drilling-rig.png)
 
-### Rotational and Pressure Control Components
-
-Symbols essential for managing drilling rotation and pressure safety:
-
-**HP Preventer**
+**Preventer**
 
 Blowout preventer for pressure control and system safety.
 
 ![image](/images/solutions/scada_systems_in_drilling/hp-preventer.png)
 
-### Drilling Operation Components
-
-Symbols that directly impact the drilling process:
-
-**HP Drill**
+**Drill**
 
 Represents the drill bit responsible for boring into the ground.
 
 ![image](/images/solutions/scada_systems_in_drilling/hp-drill.png)
 
-### Crane and Hoisting Systems
-
-These symbols facilitate the movement of heavy equipment and materials in drilling operations:
-
-**HP Drawwork**
+**Drawwork**
 
 Controls the hoisting and lowering of the drill string.
 
