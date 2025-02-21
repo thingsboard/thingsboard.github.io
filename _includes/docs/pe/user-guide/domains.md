@@ -40,12 +40,25 @@ First, on your DNS provider&#39;s website, you must add a canonical record for y
 
 Once done, you can start the procedure of adding a domain. 
 
+{% if docsPrefix == "pe/" %}
 {% capture domain_owner_note %}
 Starting from ThingsBoard version 3.9.0, adding your own domain name is available at both the Tenant level and the Customer level.
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}
+{% endif %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% capture domain_owner_note %}
+Registering your own domain name is available at both the Tenant level and the Customer level.
+{% endcapture %}
+{% include templates/info-banner.md content=domain_owner_note %}
+{% endif %}
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 - Log in to your {{THINGSBOARD_WITH_URL}}{:target="_blank"} account;
+{% endif %}
+{% if docsPrefix == null %}
+- Log in to {{THINGSBOARD_WITH_URL}}{:target="_blank"} account as system administrator;
+{% endif %}
 
 {% include images-gallery.html imageCollection="register-domain" showListImageTitles="true" %}
 
