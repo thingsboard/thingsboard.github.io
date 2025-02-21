@@ -108,8 +108,6 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuratio
 
 {% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-4-pe.png)
-
 We leave other options by default, but there is brief description of them:
 - **Max number of pending connects on the socket** - The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection is refused;
 - **Size of the buffer for inbound socket** - the size in KBytes of the socket data receive buffer;
