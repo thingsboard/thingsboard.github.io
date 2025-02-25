@@ -1,5 +1,22 @@
 [
   {
+    "type": ["main", "lora", "wifi"],
+    "program": "",
+    "name": "Atomsenses",
+    "logo": "atomsenses-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.atomsenses.com/",
+        "target": "_blank"
+      },
+      "Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard": {
+        "href": "https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/",
+        "target": "_blank"
+      }
+    },
+    "blurb": "Atomsenses is a specialist IoT solution provider focusing on Lorawan sensors for indoor air quality monitoring, our vision is to transform how we manage and maintain healthy indoor environments."
+  },
+  {
     "type": ["main", "bluetooth", "nbiot", "lte"],
     "program": "",
     "name": "Efento",
