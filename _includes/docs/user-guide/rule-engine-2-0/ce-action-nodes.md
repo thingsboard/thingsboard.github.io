@@ -658,6 +658,7 @@ The save time series node can perform three distinct actions, each governed by c
 - **Time series**: saves time series data to the `ts_kv` table in the database.
 - **Latest values**: updates time series data in the `ts_kv_latest` table in the database, if new data is more recent.
 - **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
+- **Calculated fields**: notifies calculated fields about updates to the time series data.
 
 For each of these actions, you can choose from the following **processing strategies**:
 - **On every message**: perform the action for every incoming message.
@@ -685,22 +686,27 @@ Processing strategies are configured through **Processing settings**, which offe
 
 When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
 
+- **Skipping database storage**
+
+  Choosing to disable one or more persistence actions (for instance, skipping database storage for Time series or Latest values while keeping WS updates enabled) introduces the risk of having only partial data available:
+  - If a message is processed only for real-time notifications (WebSockets) and not stored in the database, historical queries may not match data on the dashboard.
+  - When processing strategies for Time series and Latest values are out-of-sync, telemetry data may be stored in one table (e.g., Time series) while the same data is absent in the other (e.g., Latest values).
+
 - **Disabling WebSocket (WS) updates**
 
   If WS updates are disabled, any changes to the time series data won’t be pushed to dashboards (or other WS subscriptions).
   This means that even if a database is updated, dashboards may not display the updated data until browser page is reloaded.
+
+- **Skipping calculated field recalculation**
+
+  If telemetry data is saved to the database while bypassing calculated field recalculation, the aggregated value may not update to reflect the latest data.
+  Conversely, if the calculated field is recalculated with new data but the corresponding telemetry value is not persisted in the database, the calculated field's value might include data that isn’t stored.
 
 - **Different deduplication intervals across actions**
 
   When you configure different deduplication intervals for actions, the same incoming message might be processed differently for each action.
   For example, a message might be stored immediately in the Time series table (if set to *On every message*) while not being stored in the Latest values table because its deduplication interval hasn’t elapsed.
   Also, if the WebSocket updates are configured with a different interval, dashboards might show updates that do not match what is stored in the database.
-
-- **Skipping database storage**
-
-  Choosing to disable one or more persistence actions (for instance, skipping database storage for Time series or Latest values while keeping WS updates enabled) introduces the risk of having only partial data available:
-  - If a message is processed only for real-time notifications (WebSockets) and not stored in the database, historical queries may not match data on the dashboard.
-  - When processing strategies for Time series and Latest values are out-of-sync, telemetry data may be stored in one table (e.g., Time series) while the same data is absent in the other (e.g., Latest values).
 
 - **Deduplication cache clearing**
 
