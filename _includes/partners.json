@@ -432,7 +432,26 @@
         "href": "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ"
       }
     },
-    "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality"
+    "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality."
+  },
+  {
+    "type": ["main", "bacnet", "modbus", "wifi", "ethernet"],
+    "program": "",
+    "name": "Temco Controls",
+    "logo": "temco-controls-logo.jpg",
+    "links": {
+      "Site": {
+        "href": "https://temcocontrols.com/",
+        "target": "_blank"
+      },
+      "Connect Temco T3E-6CT to ThingsBoard": {
+        "href": "/docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/"
+      },
+      "Connect Temco Tstat10 to ThingsBoard": {
+        "href": "/docs/devices-library/temco-controls-tstat-10/"
+      }
+    },
+    "blurb": "Temco Controls Ltd. specializes in manufacturing low-cost sensors and controllers for the HVAC industry. We proudly provide solutions with no license or recurring fees to our customers from all over the world. Both our software and device firmware are open source, making us one of the most open building automation systems on the market. We make collaboration simple and straightforward with easy purchases on the web and open, long-term support on the forum."
   },
   {
     "type": ["main", "bluetooth", "nbiot", "wifi", "sigfox", "lora", "gsm", "modbus"],
