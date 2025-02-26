@@ -1,0 +1,75 @@
+0:
+  title: "MQTT, gateways, and data processing"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Overview of the MQTT protocol and introduction to ThingsBoard Gateway, explaining its role in device connectivity and data aggregation."
+    1:
+      textContent: "Running an emulator and configuring data collection using Gateway over the Modbus protocol and displaying it in real-time."
+    2:
+      textContent: "Processing data through the default rule chain and setting up a custom rule chain."
+    3:
+      textContent: "Configuring dashboard widgets and customizing layouts to display incoming data effectively."
+    4:
+      textContent: "Q&A (questions and answers)."
+1:
+  title: "Basics and interface operation"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Introduction to SCADA user interface capabilities."
+    1:
+      textContent: "Understanding the structure and navigation of the SCADA platform."
+    2:
+      textContent: "Creating a basic dashboard: using existing symbols and their configurations."
+    3:
+      textContent: "Overview of layout settings: grid, toolbar, and scaling options."
+    4:
+      textContent: "Customizing the user interface for various operational scenarios."
+    5:
+      textContent: "Setting up a basic dashboard with different layout settings."
+    6:
+      textContent: "Q&A (questions and answers)."
+2:
+  title: "Advanced use and working with tags"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: "Working with the library of existing symbols: searching, configuring, and adding."
+    1:
+      textContent: "Creating a new SCADA symbol and integrating it into the dashboard."
+    2:
+      textContent: "Understanding tags and their role in SCADA systems."
+    3:
+      textContent: "Working with tags using the built-in editor or XML."
+    4:
+      textContent: "Configuring tags for real-time data visualization."
+    5:
+      textContent: "Q&A (questions and answers)."
+3:
+  title: "Behaviors, properties, and widget development"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  textContentCollection:
+    0:
+      textContent: 'Defining behavior parameters: “Value,” “Action,” and “Widget action.”'
+    1:
+      textContent: "Configuring properties: static and dynamic parameters."
+    2:
+      textContent: "Working with tag functions: principles of data binding, animations, and event reactions."
+    3:
+      textContent: "Previewing changes and optimizing dashboard performance."
+    4:
+      textContent: "Creating custom widgets and bundles."
+    5:
+      textContent: "Adding widgets to dashboards and configuring interactive elements."
+    6:
+      textContent: "Q&A (questions and answers)."
+
