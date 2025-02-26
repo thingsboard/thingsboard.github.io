@@ -185,12 +185,12 @@ adding-devices-states-1:
         title: 'Click on the "Manage dashboard states" menu option, then click the "plus" icon to add new dashboard state;'
     2:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-devices-states-3-pe.png
-        title: 'Name it "Indoor Air Quality Sensor", and enter state ID - "air_sensor". Click "Add".'
+        title: 'Name it "Indoor Air Quality Sensor", and enter state ID - <b>air_sensor</b>. Click "Add".'
 
 adding-devices-states-2:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/adding-devices-states-4-pe.png
-        title: 'Similarly, add "Energy Meter" with the "energy_sensor" state Id and "Water Flow Meter" state with the "water_sensor" state Id.'
+        title: 'Similarly, add "Energy Meter" with the <b>energy_sensor</b> state Id and "Water Flow Meter" state with the <b>water_sensor</b> state Id.'
 
 action-go-to-device-1:
     0:
@@ -268,62 +268,80 @@ indoor-air-quality-sensor-card-widgets-1:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/go-to-indoor-ai-quality-state-1-pe.png
         title: 'Click on the "Indoor Air Quality Sensor" device row in the "Office sensors list" widget to transition to its state;'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-1-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-1-pe.png
         title: 'Enter dashboard editing mode and click either the "+ Add widget" button at the top or the large "Add new widget" icon in the center of the screen;'
     2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-2-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-2-pe.png
         title: 'Find the "Indoor Environment" widgets bundle and click on it;'
     3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-3-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-3-pe.png
         title: 'Choose the "Indoor temperature card" widget;'
     4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-4-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-4-pe.png
         title: 'Specify "Selected entity" alias as the data source. The "temperature" key, from which the temperature value will be "extracted", has already been added;'
     5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-5-pe.png
-        title: 'Clear the "Card border radius" value, and click "Add";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-5-pe.png
+        title: 'Scroll down to the "Icon" section. Customize icon color change based on temperature value using predefined ranges. This helps to estimate the temperature value faster. Set the value ranges and their corresponding colors. Then, click "Apply";'
     6:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-6-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-6-pe.png
+        title: 'Set the value ranges and their corresponding colors for the "Value" section. Apply changes;'
+    7:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-7-pe.png
+        title: 'Clear the "Card border radius" value, and click "Add";'
+    8:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-temperature-card-widgets-8-pe.png
         title: 'We&#39;ve added a widget that displays the current temperature. Adjust the widget size to your liking.'
 
 indoor-air-quality-sensor-card-widgets-2:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-7-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-1-pe.png
         title: 'Click the "Add widget" button at the top of the screen;'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-8-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-2-pe.png
         title: 'Navigate to the "Indoor Environment" widgets bundle and select the "Indoor humidity card" widget;'
     2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-9-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-3-pe.png
         title: 'Specify "Selected entity" alias as the data source. The "humidity" key, from which the humidity value will be "extracted", has already been added;'
     3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-10-pe.png
-        title: 'Clear the "Card border radius" value. Click "Add";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-4-pe.png
+        title: 'Scroll down to the "Icon" section. Set the value ranges and their corresponding colors. Then, click "Apply";'
     4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-11-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-5-pe.png
+        title: 'Set the value ranges and their corresponding colors for the "Value" section. Apply changes;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-6-pe.png
+        title: 'Clear the "Card border radius" value. Click "Add";'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-humidity-card-widgets-7-pe.png
         title: 'The widget displaying the current humidity has been added. Place it to the right of the "Temperature" card widget and adjust its size.'
 
 indoor-air-quality-sensor-card-widgets-3:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-12-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-1-pe.png
         title: 'Click the "+ Add widget" button at the top of the screen;'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-13-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-2-pe.png
         title: 'Select the "Indoor CO2 card" widget. This widget is located in the "Indoor Environment" widgets bundle;'
     2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-14-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-3-pe.png
         title: 'Specify "Selected entity" alias as the data source. The "CO2" key has already been added, from which the CO2 value in the air will be "extracted";'
     3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-15-pe.png
-        title: 'Clear the "Card border radius" value. Click "Add";'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-4-pe.png
+        title: 'Scroll down to the "Icon" section. Set the value ranges and their corresponding colors. Then, click "Apply";'
     4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-16-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-5-pe.png
+        title: 'Set the value ranges and their corresponding colors for the "Value" section. Apply changes;'
+    5:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-6-pe.png
+        title: 'Clear the "Card border radius" value. Click "Add";'
+    6:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-co2-card-widgets-7-pe.png
         title: 'The widget displaying the current CO2 level has been added. Place it to the right of the "Humidity" widget. Adjust the widget size to match the dashboard aesthetics, and save the dashboard.'
 
 indoor-air-quality-sensor-card-widgets-4:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-widgets-17-pe.png
-        title: 'Now on our dashboard, you can see the current values of temperature, humidity, and CO2 levels.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/indoor-air-quality-sensor-card-three-widgets-1-pe.png
+        title: 'Now you can see the current temperature, humidity, and CO2 values.'
 
 temperature-and-humidity-history-1:
     0:
@@ -398,7 +416,7 @@ air-quality-widget-1:
 air-sensor-state:
     0:
         image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-3/smart-sensor-state-1-pe.png
-        title: 'The configured "Indoor Air Quality Sensor" state should look like this.'
+        title: 'Monitor the current air quality status and analyze its changes over time in a separate dashboard state.'
 
 power-consumption-card-1:
     0:

@@ -1,10 +1,9 @@
 ### Import dashboard
 
-Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="teltonika-rut955-dashboard.json"} and import.
+Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="temco-t3e-6ct-dashboard.json"} and import it.
 
-You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
- on the **“+”** button in the upper right corner of the page and choose **“Import dashboard”**. The dashboard import window 
-should pop up, and you will be prompted to upload the JSON file and click **“Import”**.
+You can import a dashboard in JSON format. To do this, you should go to the Dashboard group, click on the "**+**" button in the upper-right corner of the page and choose "**Import dashboard**".
+The dashboard import window will appear, prompting you to upload the JSON file and click "**Import**".
 
 {% assign importingDashboardPE = '
     ===
@@ -33,13 +32,13 @@ should pop up, and you will be prompted to upload the JSON file and click **“I
 {% endif %}
 
 After importing, we should choose an entity alias for our device.  
-To do this - we need to press the pen icon and select entity aliases, select alias **"My device"** and open it for editing by pressing the pen icon.    
-Then, choose a created device from dropdown list and save entity alias. Now, you should be able to see the data from the device. 
+Start by clicking the "**pencil**" icon, selecting  entity aliases, choosing the "**My device**" alias and then clicking the "**pencil**" icon again to open it for editing.   
+Then, choose the created device from dropdown list and save entity alias. Now, you should be able to see the data from the device. 
 
-If you did everything right, you have to see the following dashboard:
+If you did everything right, you should see the following dashboard:
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![imagePe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-pe.png)
 {% else %}  
-![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-pe.png)
+![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-ce.png)
 {% endif %}

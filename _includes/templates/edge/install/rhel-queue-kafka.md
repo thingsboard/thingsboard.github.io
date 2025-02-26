@@ -2,16 +2,8 @@
 
 ##### ThingsBoard Edge Configuration
 
-Edit **ThingsBoard Edge** configuration file:
-
-```bash 
-sudo nano /etc/tb-edge/conf/tb-edge.conf
-``` 
-{: .copy-code}
-
-Add the following line to the configuration file. Replace "localhost:9092" with **your real Kafka bootstrap servers** if needed:
+Edit the **ThingsBoard Edge** configuration file (tb-edge.conf):
 
 ```bash
-export TB_QUEUE_TYPE=kafka
-export TB_KAFKA_SERVERS=localhost:9092
+echo -e "\nexport TB_QUEUE_TYPE=kafka\nexport TB_KAFKA_SERVERS=localhost:9092" | sudo tee -a /etc/tb-edge/conf/tb-edge.conf > /dev/null
 ```

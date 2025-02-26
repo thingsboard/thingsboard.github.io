@@ -6,9 +6,7 @@ The heat pump controls the pool temperature and operates automatically based on 
 * turn off if the pool temperature exceeds the target set on the heat pump, or if the outdoor temperature is above the defined threshold.
 * turn on if both the pool temperature and outdoor temperature fall below their respective target values.
 
-{% include images-gallery.html imageCollection="heat-pump-high-performance-1" %}
-
-<br>
+![image](/images/solutions/swimming_pool_scada_system/scada-devices/heat-pump-high-performance.png)
 
 The following settings are available for the heat pump:
 
@@ -18,37 +16,32 @@ The following settings are available for the heat pump:
 - Enabling critical state animations;
 - Propeller Speed Adjustment: Adjust the propeller speed depending on the temperature or other device parameters.
 
-<br>
 **Water pump**
 
 Manage the circulation of water throughout the pool by turning the pump on or off.
 
-{% include images-gallery.html imageCollection="water-pump-high-performance-1" %}
+![image](/images/solutions/swimming_pool_scada_system/scada-devices/water-pump-high-performance.png)
 
-<br>
 **pH filter**
 
 Ensure the water pH levels are within optimal ranges by managing the filtration and chemical treatment process. Pressing the pH filter will open the pH filter diagram in a popup window.
 
-{% include images-gallery.html imageCollection="ph-filter-high-performance-1" %}
+![image](/images/solutions/swimming_pool_scada_system/scada-devices/ph-filter-high-performance.png)
 
-<br>
 **Sand filter**
 
 Allow for efficient debris removal from the pool. The filter supports multiple functions, including filtration, wasting, backwashing, recirculation and rinsing, all of which can be controlled remotely via the SCADA system.
 
-{% include images-gallery.html imageCollection="sand-filter-high-performance-1" %}
+![image](/images/solutions/swimming_pool_scada_system/scada-devices/sand-filter-high-performance.png)
 
-<br>
 **Water level meter**
 
 Measure the water level in the pool, providing critical data to maintain optimal water levels and detect potential leaks.
 
-{% include images-gallery.html imageCollection="hp-pool-performance-1" %}
+![image](/images/solutions/swimming_pool_scada_system/scada-devices/hp-pool-performance.png)
 
-<br>
 **Valves**
 
 Allow for precise control of water flow between different sections of the pool system. Pressing the valve will open or close it.
 
-{% include images-gallery.html imageCollection="valve-high-performance-1" %}
+![image](/images/solutions/swimming_pool_scada_system/scada-devices/valve-high-performance.png)

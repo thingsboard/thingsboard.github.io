@@ -93,14 +93,9 @@ Here you will find the **container**. Save its name.
 {% include images-gallery.html imageCollection="container" preview="false" %}
 
 <br>
-To find **storage connection string** values:
+To find the storage <b>connection string</b> values, navigate to the "<b>Access keys</b>" page in the "<b>Security + networking</b>" section.
 
-- In the Azure portal, click the "**Subscriptions**";
-- Go to the "**Access keys**" page of the "**Security + networking**" section.
-
-Here you will find the **connection string**.
-
-{% include images-gallery.html imageCollection="connection-string" preview="false" %}
+{% include images-gallery.html imageCollection="connection-string" %}
 
 <br>
 In ThingsBoard:
@@ -114,11 +109,11 @@ In ThingsBoard:
 
 ## Test it up!
 
-For now, we ready to test our integration. So we have to go to Rule Chain (tab in Thingsboard menu), choose one of your rule chains and do next steps:
+For now, we ready to test our integration. To do this, follow these steps:
 
-1) In field Search Nodes type 'gen' and find in the menu **generator**. Drag it on the Canvas. In pop-up specify **name** of Generator, **number of messages** and generate function, you can use our example. Next click 'Add' 
+1) Go to the "<b>Rule chains</b>" page and select one of your rule chains. In the search nodes field, type &#39;gen&#39; to find the <b>generator</b> node in the menu. Drag it onto the canvas. In the pop-up window, specify the <b>name</b> of the generator, the <b>number of messages</b>, and the <b>generate function</b> (you can use our example). Finally, click "<b>Add</b>";
 
-{% include images-gallery.html imageCollection="generator" preview="false" %}
+{% include images-gallery.html imageCollection="rule-chain-generator-node" %}
 
 ```javascript
 var msg = {
@@ -135,25 +130,21 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {: .copy-code}
 
-2) This is a time to find device **Primary key**. Go to azure portal, tap on **Iot Devices** , tap on your device and see **Primary key** field. Copy it
+2) Now, find the device&#39;s <b>Primary key</b>. Go to the Azure portal, navigate to the <b>IoT devices</b> tab, select your device, and locate the "<b>Primary key</b>" field. Copy and save it for later use;
 
-{% include images-gallery.html imageCollection="primary_key" preview="false" %}
+{% include images-gallery.html imageCollection="primary-key" preview="false" %}
 
-3) Now we need to find another rule node. So type in Search Nodes 'iot' and choose **azure iot hub** in menu. Drag it to the Canvas. In pop-up you need to specify a name, instead of <device_id> type your device name, same Device ID and add to credentials Primary Key that we have copied. Also, if you need to see events - click on Debug mode.
+3) Return to your ThingsBoard instance. We need to find another rule node. Type &#39;iot&#39; in the search nodes field and select the <b>azure iot hub</b> node. Drag it onto the canvas. In the pop-up window, specify the <b>node name</b>, replace <b>&#60;device_id&#62;</b> in the <b>Topic</b> with your Device Name, and enter the <b>Hostname</b> by retrieving it from the "<b>IoT Hub</b>" resource in the Azure portal. Enter the Device Name as the <b>Device ID</b> and add the <b>SAS Key</b> (<b>Primary Key</b>) that we previously copied from the device credentials. If you need to monitor events, enable Debug mode;
 
-{% include images-gallery.html imageCollection="iot_rule_node" preview="false" %}
+{% include images-gallery.html imageCollection="rule-chain-iot-node" %}
 
-4) If it looks like on the photo - nice. Click **Add** and go on
+4) Connect the <b>generator</b> to the <b>azure iot hub</b>. Tap on the right grey circle of "<b>generator</b>" node and drag this circle to the left side of the <b>azure iot hub</b> node. Select the "<b>Success</b>" link and click "<b>Add</b>". <b>Save</b> the rule chain, and go to the integration;
 
-5) Last steps: connect **generator** to **azure iot hub**. Click on the gray circle of **generator** and drag it to left gray circle of **azure iot hub**. In pop-up menu you need to choose 'Success', click Add and smile
+{% include images-gallery.html imageCollection="link-generator-iot-nodes" %}
 
-6) All ready, lets save Canvas and go to the integration.
+Go to the "<b>Integrations</b>" page and select your <b>Azure Event Hub integration</b>. If you see a message of type "Uplink" in the "Events" section of your integration, everything is working correctly.
 
-{% include images-gallery.html imageCollection="generator_iot_rule_chain" preview="false" %}
-
-Looks nice if you see type 'Uplink' in 'Events' of your integration and message that we have typed looks same as here
-
-{% include images-gallery.html imageCollection="event_uplink" preview="false" %}
+{% include images-gallery.html imageCollection="event-uplink" %}
 
 ## Advanced usage: create Downlink converter
 
@@ -204,23 +195,23 @@ return result;
 
 **Ok, downlink converter ready, integration ready, Let's test it:**
 
-1) After test of uplink, integration have created the device inside Thingsboard, and we need to know for which Rule Chain it connected.
-Just go to the Device groups in Thingsboard menu choose **All** and find the device with the name that we have used in the uplink.
+1) After test of uplink, integration have created the device inside ThingsBoard, and we need to know for which Rule Chain it connected.
+Just go to the Device groups in ThingsBoard menu choose **All** and find the device with the name that we have used in the uplink.
 
 {% include images-gallery.html imageCollection="device_groups_all" preview="false" %}
 
-2) Find the name of necessary rule chain in Rule Chain tabs of Thingsboard menu. 
+2) Find the name of necessary rule chain in "Rule Chains" pages of ThingsBoard menu. 
 
-3) In the "Search nodes" field type 'down' and choose in the menu **integration downlink**, drag it to the Canvas. In pop-up you need to specify the name of rule node and choose our integration
+3) In the "Search nodes" field type 'down' and choose in the menu **integration downlink** node, drag it to the canvas. In pop-up you need to specify the name of rule node and choose our integration.
 
-4) Click on left gray circle of **message type switch** node and drag it to gray circle of our downlink rule node. Here choose **Attributes update** and click 'Add'
+4) Click on left gray circle of **message type switch** node and drag it to gray circle of our "downlink" node. Here choose **Attributes update** and click "Add".
 
 {% include images-gallery.html imageCollection="downlink_rule_node" preview="false" %}
 
-5) Great. Save Canvas and lets go to 'Device groups' -> 'All' and choose our device. Switch to **Attributes** in 'Entity attributes scope' list choose **Shared attributes**. 
+5) Great. Save Canvas and let's go to "Device groups" -> "All" and choose our device. Switch to **Attributes** in 'Entity attributes scope' list choose **Shared attributes**. 
    Tap on 'plus' to create new. Specify in pop-up the key of attribute, type of value and some value.
 
-6) Tap 'Add' and go to the Integration to check the result of downlink.
+6) Tap "Add" and go to the Integration to check the result of downlink.
 
 {% include images-gallery.html imageCollection="device_last_part" preview="false" %}
 
@@ -236,7 +227,7 @@ Just look this images to understand how we make simple downlink check for Azure 
 
 {% include images-gallery.html imageCollection="advanced_testing" preview="false" %}
 
-You can familiarize with Azure Iot Hub using next Link: [Azure IoT Hub Integration](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub)
+You can familiarize with Azure Iot Hub using next Link: [Azure IoT Hub Integration](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub){:target="_blank"}.
 
 ## Conclusion
 

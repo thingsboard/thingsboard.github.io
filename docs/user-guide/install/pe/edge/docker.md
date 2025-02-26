@@ -18,6 +18,14 @@ This guide will help you to install and start **ThingsBoard Edge** using **Docke
 
 ### Docker Installation
 
+{% capture local-deployment %}
+**ThingsBoard** supports **Docker Compose V2** (Docker Desktop or Compose plugin) starting from **3.4.2 release**. 
+
+We strongly recommend **upgrading to and using Docker Compose V2**, as Docker no longer supports docker-compose as a standalone setup.
+
+{% endcapture %}
+{% include templates/info-banner.md content=local-deployment %}
+
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
 
@@ -61,7 +69,7 @@ Hybrid <small>PostgreSQL+Cassandra with Kafka queue service </small>%,%hybrid%,%
 ### Step 4. Detaching, Stop and Start Commands
 
 {% assign serviceFullName = "ThingsBoard Edge" %}
-{% include templates/install/docker/detaching-stop-start-commands.md %}
+{% include templates/edge/detaching-stop-start-edge.md %}
 
 ## Troubleshooting
 

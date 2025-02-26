@@ -23,5 +23,5 @@ toc:
       path: /docs/edge/user-guide/install/how-to-change-config/
     - title: Edge Core/Rule engine deployment parameters
       path: /docs/edge/user-guide/install/config/
-  - title: Upgrade instructions
+  - title: Upgrade Instructions
     path: /docs/user-guide/install/edge/upgrade-instructions/
