@@ -10,7 +10,7 @@ Where:
 - `<requestUrlExpression>` - the URL of the REST API;
 - `<value>` - the value to send.
 
-For example, in our case, we know that we can get the room light level from the REST API that have the URL
+For example, in our case, we know that we can get the room light level from the REST API with the URL
 **"http://127.0.0.1:8000/light-level"**. To get the value of the room light level, run the query:
 
 ```bash
@@ -40,8 +40,8 @@ Where:
 - `<value>` - the value to send.
 - `<HTTPMethod>` - the HTTP method to use.
 
-For example, in our case, we know that we can set the room light level to the REST API that have the URL
-**"http://127.0.0.1:8000/light-level"**. To set the value of the room light level, run the query:
+For example, in our case, we know that we can set the room light level to the REST API with the URL
+**"http://127.0.0.1:8000/light-level"**. To set the value of the room light level, run the following query:
 
 ```bash
 set requestUrlExpression=http://127.0.0.1:8000/light-level;value=80;HTTPMethod=POST;
@@ -57,8 +57,8 @@ set requestUrlExpression=http://127.0.0.1:8000/light-level;value=80;HTTPMethod=P
 ![image](/images/gateway/get-set-connector-rpc/rest-get-set-rpc-2.png)
 {: refdef}
 
-Also, let's see light level after setting it using GET method. For this purpose, simply run the GET rpc method, 
-that was described above:
+Also, let's take a look at light level after setting it using GET method. To do this, simply run the GET RPC method, 
+described above:
 
 ```bash
 get requestUrlExpression=http://127.0.0.1:8000/light-level;value=${params};

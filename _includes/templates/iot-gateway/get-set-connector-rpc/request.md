@@ -9,8 +9,8 @@ get requestUrlExpression=<requestUrlExpression>;
 Where:
 - `<requestUrlExpression>` - the URL of the external API.
 
-For example, in our case, we know that we can get the room light level from the external API that have the URL
-**"http://127.0.0.1:8000/light-level"**. To get the value of the room light level, run the query:
+For example, in our case, we know that we can get the room light level from the external API with the URL
+**"http://127.0.0.1:8000/light-level"**. To get the value of the room light level, run the following query:
 
 ```bash
 get requestUrlExpression=light-level;
@@ -39,8 +39,8 @@ Where:
 - `<value>` - the value to send;
 - `<HTTPMethod>` - the HTTP method to use.
 
-For example, in our case, we know that we can set the room light level to the external API that have the URL
-**"http://127.0.0.1:8000/light-level"**. To set the value of the room light level, run the query:
+For example, in our case, we know that we can set the room light level to the external API with the URL
+**"http://127.0.0.1:8000/light-level"**. To set the value of the room light level, run this query:
 
 ```bash
 set requestUrlExpression=light-level;value=80;httpMethod=POST;
@@ -56,8 +56,8 @@ set requestUrlExpression=light-level;value=80;httpMethod=POST;
 ![image](/images/gateway/get-set-connector-rpc/request-get-set-rpc-2.png)
 {: refdef}
 
-Also, let's see light level after setting it using GET method. For this purpose, simply run the GET rpc method,
-that was described above:
+Also, let's take a look at light level after setting it using GET method. To do this, simply run the GET RPC method,
+described above:
 
 ```bash
 get requestUrlExpression=light-level;

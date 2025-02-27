@@ -1,6 +1,6 @@
 Every telemetry and attribute parameter has **GET** and **SET** RPC methods out of the box, so you don't need to configure
-it manually.
-For example, if you have some telemetry parameter:
+them manually.
+For example, if you have a telemetry parameter:
 ```json
 "timeseries": [
   {
@@ -10,7 +10,7 @@ For example, if you have some telemetry parameter:
 ]
 ```
 
-To get temperature telemetry current value, run the query:
+To get the current value of temperature telemetry, run the query:
 
 ```bash
 get ns=3;i=1001;
@@ -33,7 +33,7 @@ set ns=3;i=1001; 23
 ![image](/images/gateway/gateway-opc-ua-rpc-1.png)
 {: refdef}
 <br>
-To set new value (T3000) for **"model"** attribute, run the query:
+To set new value (T3000) for **"model"** attribute, run this query:
 
 ```bash
 set ns=3;i=1008; T3000;

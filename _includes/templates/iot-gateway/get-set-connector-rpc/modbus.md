@@ -1,6 +1,6 @@
 ### GET method
 
-With the GET method you can read Modbus slave registers values.
+With the GET method you can read the values of Modbus slave registers.
 
 ```bash
 get type=<type>;functionCode=<functionCode>;objectsCount=<objectsCount>;address=<address>;
@@ -12,8 +12,8 @@ Where:
 - `<objectsCount>` - the number of objects to read;
 - `<address>` - the address of the register to read.
 
-For example, in our case, we know that we can read 16-bit integer values from the Modbus slave with the address 1 
-that contain outdoor temperature. To read the value of the register with the address 1, run the query:
+For example, in our case, we know that we can read 16-bit integer values from the Modbus slave with the address 1, 
+which contains the outdoor temperature. To read the value of the register with the address 1, run this query:
 
 ```bash
 get type=16int;functionCode=3;objectsCount=1;address=1;
@@ -31,7 +31,7 @@ get type=16int;functionCode=3;objectsCount=1;address=1;
 
 ### SET method
 
-With the SET method you can write Modbus slave registers values.
+With the SET method you can write values to Modbus slave registers.
 
 ```bash
 set type=<type>;functionCode=<functionCode>;objectsCount=<objectsCount>;address=<address>;value=<value>;
@@ -45,7 +45,7 @@ Where:
 - `<value>` - the value to write.
 
 For example, in our case, we know that we can write 16-bit integer values to the Modbus slave with the address 2 
-that contain room light level. To write the value of the register with the address 2, run the query:
+that contains room light level. To write the value of the register with the address 2, run the following query:
 
 ```bash
 set type=16int;functionCode=3;objectsCount=1;address=2;value=80;
@@ -61,7 +61,7 @@ set type=16int;functionCode=3;objectsCount=1;address=2;value=80;
 ![image](/images/gateway/get-set-connector-rpc/modbus-get-set-rpc-2.png)
 {: refdef}
 
-Let's check the result. To read the value of the register with the address 2, run the query:
+Let's check the result. To read the value of the register with the address 2, run this query:
 
 ```bash
 get type=16int;functionCode=3;objectsCount=1;address=2;
