@@ -44,6 +44,7 @@
             setCloudServerDefault();
             window.addEventListener('popstate', onPopPricingState);
             onPopPricingState();
+            setTimeout(()=> popCopyButton(), 200);
         });
     }
 
@@ -57,32 +58,38 @@
     }
 
     function onPopPricingState() {
-        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-        var sectionId = params['section'] || params['active'];
+        const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        let sectionId = params['section'] || params['active'];
         if (!sectionId) {
             sectionId = '{{page.defaultActivePricingSection}}';
         }
         setActivePricingSection(sectionId);
-        var productId = params['product'];
+        const productId = params['product'];
         if (productId) {
             setActiveProductSection(productId);
-            switchFaqContainer(productId);
         }
-        var solutionId = params['solution'];
+        let solutionId = params['solution'];
         if (solutionId) {
             setActiveSolutionSection(solutionId);
+        }
+        let faqSection = params['faqSection'];
+        if (faqSection) {
+            switchFaqSection(faqSection);
+            setTimeout(() => updateQueryParam({}, true), 500);
+            const loadMoreEl = document.querySelector(`#faq-${currentFaqContainer} .answers #faq-${currentFaqContainer}-${faqSection} .load-more`);
+            if (loadMoreEl) loadMoreFaq(loadMoreEl);
         }
     }
 
     function activatePricingSection(sectionId) {
         updateQueryParam({section: sectionId, product: null, solution: null});
         setActivePricingSection(sectionId);
+        switchFaqContainer(sectionId);
     }
 
     function activateProductSection(productId) {
         updateQueryParam({product: productId, solution: null});
         setActiveProductSection(productId);
-        switchFaqContainer(productId);
     }
 
     function activateSolutionSection(solutionId) {
@@ -97,7 +104,7 @@
         setActiveSolutionSection(solutionId);
     }
 
-    function updateQueryParam(setParams) {
+    function updateQueryParam(setParams, clear = false) {
         var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
         for (var paramName of Object.keys(setParams)) {
             var paramValue = setParams[paramName];
@@ -107,8 +114,11 @@
                 params[paramName] = undefined;
             }
         }
+        if (clear) {
+            delete params.faqSection;
+        }
         var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
-        if (window.location.hash) {
+        if (window.location.hash && !clear) {
             newurl += window.location.hash;
         }
         window.history.pushState({ path: newurl }, '', newurl);
@@ -126,7 +136,6 @@
             var productId = $('#' + sectionId + ' .product-selector .solution.defaultselection').attr("data-product-id");
             if (productId) {
                 setActiveProductSection(productId);
-                switchFaqContainer(productId);
             }
         } else {
             $('div.pricing-header-divider').removeClass("no-margin");
@@ -134,8 +143,9 @@
             var solutionId = getDefaultSolutionIdBySectionId(sectionId);
             if (solutionId) {
                 setActiveSolutionSection(solutionId);
+            } else {
+                switchFaqContainer('thingsboard-ce');
             }
-            switchFaqContainer(sectionId);
         }
 
         if (sectionId) {
@@ -152,6 +162,7 @@
             var solutionId = getDefaultSolutionIdBySectionId(sectionId);
             setActiveSolutionSection(solutionId);
             reportPriceOpen(sectionId);
+            switchFaqContainer(sectionId);
         }
     }
 
@@ -173,6 +184,7 @@
             var headerId = $solutionButtonElement.attr("data-description-toggle");
             $('.pricing-div .pricing-section'+id).addClass("active");
             $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
+            switchFaqContainer(sectionId);
         }
     }
 
@@ -252,65 +264,103 @@
         });
     }
 
-    let currentFaqContainer = 'thingsboard-pe';
+    let currentFaqContainer = 'thingsboard-cloud';
 
     function switchFaqContainer(containerId) {
-        document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
-        document.getElementById(`faq-${containerId}`).classList.add('active');
-        currentFaqContainer = containerId;
-        changeFaqHeader();
-        switchToActiveFaqSection();
-        changeCloudOptionName(containerId.startsWith('trendz'));
-        toggleBillingForCe(containerId === 'thingsboard-ce');
+        if (changeFaqHeader(containerId)) {
+            currentFaqContainer = containerId;
+            document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
+            document.getElementById(`faq-${containerId}`).classList.add('active');
+        }
     }
 
-    function changeFaqHeader() {
-        let correspondingHeader
-        switch (currentFaqContainer) {
+    function changeFaqHeader(id) {
+        let correspondingHeader;
+        switch (id) {
             case 'thingsboard-ce':
                 correspondingHeader = 'ThingsBoard Community Edition FAQs';
                 break;
             case 'thingsboard-cloud':
                 correspondingHeader = 'ThingsBoard Professional Edition: Cloud FAQs';
                 break;
-            case 'thingsboard-pe':
-                correspondingHeader = 'ThingsBoard Professional Edition: Self-managed FAQs';
+            case 'pe-pay-as-you-go':
+                correspondingHeader = 'ThingsBoard Professional Edition: Self-managed Subscriptions FAQs';
                 break;
-            case 'trendz-self-managed':
-                correspondingHeader = 'Trendz Analytics: Self-managed FAQs';
+            case 'pe-perpetual':
+                correspondingHeader = 'ThingsBoard Professional Edition: Self-managed Perpetual FAQs';
+                break;
+            case 'trendz-pay-as-you-go':
+                correspondingHeader = 'Trendz Analytics: Self-managed Subscriptions FAQs';
+                break;
+            case 'trendz-perpetual':
+                correspondingHeader = 'Trendz Analytics: Self-managed Perpetual FAQs';
                 break;
             case 'trendz-cloud':
                 correspondingHeader = 'Trendz Analytics: Cloud FAQs';
                 break;
-            case 'thingsboard-edge':
-                correspondingHeader = 'Edge FAQs';
+            case 'edge-community':
+                correspondingHeader = 'Edge Community FAQs';
+                break;
+            case 'edge-pay-as-you-go':
+                correspondingHeader = 'Edge Subscriptions FAQs';
+                break;
+            case 'edge-perpetual':
+                correspondingHeader = 'Edge Perpetual FAQs';
                 break;
         }
-        document.getElementById('faq-header').innerText = correspondingHeader;
-    }
-
-    function changeCloudOptionName(isTrendz) {
-        document.getElementById('faq-option-cloud').innerText = isTrendz ? 'Trendz Cloud' : 'ThingsBoard Cloud';
-    }
-
-    function switchToActiveFaqSection() {
-        document.getElementById(`faq-${currentFaqContainer}-${document.querySelector('.faq-section-option.active').id.split('-')[2]}-section`).classList.add('active');
-    }
-
-    function toggleBillingForCe(isCe) {
-        document.getElementById('faq-option-billing').classList.toggle('disabled', isCe);
-        if (document.querySelector('.faq-section-option.active').id.includes('billing')) {
-            switchFaqSection('licensing', document.getElementById('faq-option-licensing'));
+        if (correspondingHeader) {
+            document.getElementById('faq-header').innerText = correspondingHeader;
         }
+        return correspondingHeader;
     }
 
     function switchFaqSection(sectionId, el) {
-        if (el.classList.contains('active') || (currentFaqContainer === 'thingsboard-ce' && sectionId === 'billing')) return
-        document.querySelectorAll('.faq-section-option').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.pi-accordion').forEach(el => el.classList.remove('active'));
-        el.classList.add('active');
-        document.getElementById(`faq-${currentFaqContainer}-${sectionId}-section`).classList.add('active');
+        if (el?.classList.contains('active')) return
+        document.querySelectorAll(`#faq-${currentFaqContainer} .faq-section-option`).forEach(el => el.classList.remove('active'));
+        document.querySelectorAll(`#faq-${currentFaqContainer} .pi-accordion`).forEach(el => el.classList.remove('active'));
+        document.getElementById(`faq-${currentFaqContainer}-${sectionId}`).classList.add('active');
+        el ? el.classList.add('active') : document.querySelector(`#faq-${currentFaqContainer} #${sectionId}`).classList.add('active');
     }
+
+    function loadMoreFaq(el) {
+        while(el) {
+            el.classList.toggle('hidden');
+            el = el.nextElementSibling;
+        }
+    }
+
+    function copyQuestionLink(event, questionId, button) {
+        event.stopPropagation();
+        const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        params['faqSection'] = document.querySelector(`#faq-${currentFaqContainer} .faq-section-option.active`).id;
+        const questionUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params) + '#' + questionId;
+        const $temp = $("<input>");
+        $("body").append($temp);
+        window.getSelection().removeAllRanges();
+        $temp.val(questionUrl).select();
+        document.execCommand("copy");
+        $temp.remove();
+        button.classList.toggle('copied');
+        const tooltipEl = button.firstElementChild;
+        tooltipEl.innerHTML = "Copied";
+        setTimeout(() => {
+            tooltipEl.innerHTML = 'Copy question link';
+            button.classList.toggle('copied');
+        }, 1500);
+    }
+
+    function popCopyButton() {
+        document.querySelectorAll('.item').forEach(el => {
+            const clipButton = $(`
+                <button class="clipboard-btn" onmousedown="this.style.backgroundColor='#e8f1ff'"
+                  onmouseup="this.style.removeProperty('background-color')"
+                  onclick="copyQuestionLink(event, '${el.getAttribute('data-item-id')}', this)">
+                    <span class="tooltiptext">Copy question link</span>
+                </button>`);
+            $(el).find('.title').append(clipButton);
+        });
+    }
+
 </script>
 
 {% include cookie-consent.html %}
