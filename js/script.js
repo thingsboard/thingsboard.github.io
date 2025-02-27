@@ -106,7 +106,7 @@ var tb = (function () {
 
 
 	function openAccordionItem(itemId) {
-	    var thisItem = $('.answers section.active .pi-accordion #'+itemId);
+	    var thisItem = $('#'+itemId);
         if (!thisItem) return;
         var thisWrapper = $(thisItem).find('.wrapper').eq(0);
         if (!thisWrapper) return;
@@ -114,6 +114,7 @@ var tb = (function () {
         if (!$(thisItem).hasClass('on')) {
             $(thisItem).addClass('on');
             thisWrapper.css({height: contentHeight});
+			thisWrapper.css({overflow: 'visible'});
 
             var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
 
@@ -162,8 +163,9 @@ var tb = (function () {
             $(faqLink).css('fontSize', fontSize);
             faqAnchor.appendChild(faqLink);
             $(faqLink).click(function() {
-				const sectionId = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-')[3];
-				switchFaqSection(sectionId, document.getElementById(`faq-option-${sectionId}`));
+				const sectionIdArr = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-');
+				const sectionId = sectionIdArr[sectionIdArr.length -1];
+				switchFaqSection(sectionId);
                 setTimeout(()=>openFaqNode(nodeId));
             });
         });
@@ -176,7 +178,6 @@ var tb = (function () {
 
         window.addEventListener('popstate', onPopStateFaqNode);
         onPopStateFaqNode();
-
     });
 
     function onPopStateFaqNode() {
@@ -194,7 +195,7 @@ var tb = (function () {
     }
 
     function openFaqNode(nodeId) {
-		$('.pi-accordion.active > .container > div[data-item-id]').each(function () {
+		$('.pi-accordion > .container > div[data-item-id]').each(function () {
 			if ($(this).hasClass('on')) {
 				var thisWrapper = $(this).find('.wrapper').eq(0);
 				if (!thisWrapper) return;
@@ -203,7 +204,7 @@ var tb = (function () {
 			}
 		});
         tb.openAccordionItem(nodeId);
-        document.querySelector('.answers section.active .pi-accordion ' + `div[data-item-id="${nodeId}"]`).scrollIntoView({
+        document.getElementById(nodeId).scrollIntoView({
 			behavior: 'auto',
 			block: 'center',
 			inline: 'center'
