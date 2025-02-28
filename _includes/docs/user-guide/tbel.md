@@ -175,6 +175,22 @@ map.putAll(mapAdd);
 ```
 {: .copy-code}
 
+
+##### Map - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable map.
+
+**Examples:**
+
+```java
+var original = {};
+original.humidity = 73;
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionHashMap that is unmodifiable.
+unmodifiable.put("temperature1", 96);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.put("temperature1", 96): Map is unmodifiable'."
+```
+{: .copy-code}
+
 #### Lists
 
 TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script.
@@ -257,7 +273,7 @@ var length = list.length();                 // return  4
 var memorySize = list.memorySize();         // return 32L 
 var indOf1 = list.indexOf("B", 1);          // return -1  
 var indOf2 = list.indexOf(2, 2);            // return 2  
-var sStr =  list.validateClazzInArrayIsOnlyString(); // return false
+var sNumber = list.vvalidateClazzInArrayIsOnlyNumber(); // return true
 ```
 {: .copy-code}
 
@@ -269,6 +285,21 @@ var sStr =  list.validateClazzInArrayIsOnlyString(); // return false
 - If the list consists of one or more non-numeric values ("123K45" or "FEB" or {345: "re56"}) - the sort/toSorted... operation is interpreted as sorting the String;
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+##### List - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable list.
+
+**Examples:**
+
+```java
+var original = [];
+original.add(0x67);
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionArrayList that is unmodifiable.
+unmodifiable.add(0x35);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.add(0x35): List is unmodifiable'."
+```
+{: .copy-code}
 
 #### Arrays
 
@@ -2506,5 +2537,66 @@ var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. Aug
 ```
 {: .copy-code}
 
+##### functions to add time units separately: years, months, weeks, days, hours, minutes, seconds, and milliseconds.
 
+**Examples:**
 
+```java
+var d = new Date(2024, 1, 1, 10, 0, 0, 0);            // TZ => "UTC"
+var dIso = d.toISOString();                           // return 2024-01-01T08:00:00Z 
+        
+d.addYears(1);
+d.toISOString();                                     // return 2025-01-01T08:00:00Z
+
+d.addYears(-2);
+d.toISOString();                                     // return 2023-01-01T08:00:00Z
+
+d.addMonths(2);
+d.toISOString();                                     // return 2023-03-01T08:00:00Z
+
+d.addMonths(10);
+d.toISOString();                                     // return 2024-01-01T08:00:00Z
+
+d.addMonths(-13);
+d.toISOString();                                     // return 2022-12-01T08:00:00Z
+
+d.addWeeks(4);
+d.toISOString();                                     // return 2022-12-29T08:00:00Z
+
+d.addWeeks(-5);
+d.toISOString();                                     // return 2022-11-24T08:00:00Z
+
+d.addDays(6);
+d.toISOString();                                     // return 2022-11-30T08:00:00Z
+
+d.addDays(45);
+d.toISOString();                                     // return 2023-01-14T08:00:00Z
+
+d.addDays(-50);
+d.toISOString();                                     // return 2022-11-25T08:00:00Z
+
+d.addHours(23);
+d.toISOString();                                     // return 2022-11-26T07:00:00Z
+
+d.addHours(-47);
+d.toISOString();                                     // return 2022-11-24T08:00:00Z
+
+d.addMinutes(59);
+d.toISOString();                                     // return 2022-11-24T08:59:00Z
+        
+d.addMinutes(-60);
+d.toISOString();                                     // return 2022-11-24T07:59:00Z
+
+d.addSeconds(59);
+d.toISOString();                                     // return 2022-11-24T07:59:59Z
+
+d.addSeconds(-60);
+d.toISOString();                                     // return 2022-11-24T07:58:59Z
+
+d.addNanos(999999);
+d.toISOString();                                     // return 2022-11-24T07:58:59.000999999Z
+
+d.addNanos(-1000000);
+d.toISOString();                                     // return 2022-11-24T07:58:58.999999999Z
+```
+{: .copy-code}
