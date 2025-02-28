@@ -11,7 +11,7 @@ description: ThingsBoard Edge upgrade instructions
         <a href="#prepare-for-upgrading" id="markdown-toc-prepare-for-upgrading">Prepare for upgrading ThingsBoard Edge</a>
         <ul>
             <li>
-                <a href="#prepare-ubuntucentos" id="markdown-toc-prepare-ubuntucentos">Ubuntu/CentOS</a>
+                <a href="#prepare-ubuntucentosrpi" id="markdown-toc-prepare-ubuntucentos">Ubuntu/CentOS/Raspberry Pi</a>
             </li>
             <li>
                 <a href="#prepare-docker-linux-mac" id="markdown-toc-prepare-docker-linux-mac">Docker (Linux or Mac OS)</a>
@@ -25,7 +25,7 @@ description: ThingsBoard Edge upgrade instructions
         <a href="#upgrading-to-39" id="markdown-toc-upgrading-to-39">Upgrading to 3.9EDGE</a>
         <ul>
             <li>
-                <a href="#ubuntucentos-39" id="markdown-toc-ubuntucentos-39">Ubuntu/CentOS</a>
+                <a href="#ubuntucentosrpi-39" id="markdown-toc-ubuntucentos-39">Ubuntu/CentOS/Raspberry Pi</a>
             </li>
             <li>
                 <a href="#docker-linux-mac-39" id="markdown-toc-docker-linux-mac-39">Docker (Linux or Mac OS)</a>
@@ -181,7 +181,7 @@ description: ThingsBoard Edge upgrade instructions
 
 ## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
-### Ubuntu/CentOS {#prepare-ubuntucentos}
+### Ubuntu/CentOS/Raspberry Pi {#prepare-ubuntucentosrpi}
 
 Stop ThingsBoard Edge service:
 
@@ -269,14 +269,14 @@ Open your server and create backup of database **tb_edge** using 'Backup Dialog'
 {% assign updateServerLink = "#upgrading-to-39" %}
 {% include templates/edge/install/compatibility-warning-version.md %}
 
-### Ubuntu/CentOS {#ubuntucentos-39}
+### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-39}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.8EDGE version.
 
 #### ThingsBoard Edge package download
 
 {% capture tabspec %}tb-edge-download-3-9-0
-tb-edge-download-3-9-0-ubuntu,Ubuntu,shell,resources/3.9/tb-edge-ubuntu-download.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-ubuntu-download.sh
+tb-edge-download-3-9-0-ubuntu,Ubuntu/Raspberry Pi,shell,resources/3.9/tb-edge-ubuntu-download.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-ubuntu-download.sh
 tb-edge-download-3-9-0-centos,CentOS,shell,resources/3.9/tb-edge-centos-download.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
@@ -290,7 +290,7 @@ sudo service tb-edge stop
 {: .copy-code}
 
 {% capture tabspec %}tb-edge-installation-3-9-0
-tb-edge-installation-3-9-0-ubuntu,Ubuntu,shell,resources/3.9/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-ubuntu-installation.sh
+tb-edge-installation-3-9-0-ubuntu,Ubuntu/Raspberry Pi,shell,resources/3.9/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-ubuntu-installation.sh
 tb-edge-installation-3-9-0-centos,CentOS,shell,resources/3.9/tb-edge-centos-installation.sh,/docs/user-guide/install/edge/resources/3.9/tb-edge-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
