@@ -15,22 +15,8 @@ There are three types of supported jobs: `cache refresh job`, `save telemetry jo
 These jobs run in the background without any user intervention. However, it is important to configure the authentication method for background jobs in ThingsBoard to ensure secure execution.
 
 ## Job authentication
-Background job periodically fetch data from ThingsBoard via API and those requests should be authenticated. For making it we need to copy JWT token sign key from ThingsBoard to Trendz configuration.
-
-* Login into ThingsBoard as System Administrator
-* Go to Security -> General
-* Copy Signing Key
-* Open Trendz configuration file **/etc/trendz/conf/trendz.conf**
-* Add following line into configuration file
-
-```bash
-export JWT_TOKEN_SIGNING_KEY={SIGN_KEY_FROMTHINGSBOARD}
-```
-
-* Save configuration
-* Restart Trendz service
-
-After this configuration, Trendz will execute background jobs on behalf of the user who created it.
+Background job periodically fetch data from ThingsBoard via API and those requests should be authenticated. To enable this, the JWT signing key must be stored in Trendz configuration files. 
+You can find detailed instructions on how to do this and verify the validity of your signing key on the [Post-installation Steps page](/docs/trendz/post-installation-steps/#signing-key).
 
 ## Caching job
 Cache autorefresh jobs in Trendz serve the purpose of regularly updating the cache of the data source. 

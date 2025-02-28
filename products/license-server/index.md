@@ -102,24 +102,10 @@ This request contains the license key and version info about the current platfor
 License Server lookup the subscription info based on the license key and replies with the instance id, subscription plan data, and some magic bytes.
 License Client stores this information locally and uses instance id and some magic bytes for the next license check requests. 
 
-![image](https://img.thingsboard.io/license/license-activation.gif)
+![image](/images/license/license-activation.gif)
 
 License Client issues periodic license check requests to the License Server.
 If those requests are not successful for a configurable period of time (typically 24 hours), the license client will shut down the ThingsBoard PE instance.
 In case of a successful request, the client may receive an update to the subscription plan data. This may be caused by the update of the subscription plan.   
 
-![image](https://img.thingsboard.io/license/license-check.gif)    
-
-### User Guide
-
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
-
-
+![image](/images/license/license-check.gif)

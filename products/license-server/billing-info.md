@@ -23,6 +23,7 @@ All invoices are automatically generated and available for download in the Licen
 ![image](https://img.thingsboard.io/license/billing.png) 
  
 ### Payment method
+
 ThingsBoard Inc. wants the customer get most of the product and the way to get it was as comfortable as possible.  Launching of License portal allowed to use credit/debit cards for online payments. But we continue diversifying payment methods and this section will constantly extend.
 
 In order to pay with the card the ***Owner name***, ***Country***, ***Card number*** and ***Expiry date*** should be populated either after registration on License portal or during first purchasing. Stripe provides charging silently (no need to confirm).
@@ -32,18 +33,5 @@ In order to proceed with wire transfer you should create the Subscription or a P
 **Couponing.** License Server allows administrator to provision coupons (promo codes). This coupons may be used by partners, distributors and for marketing campaigns. They provide occasional discounts either for Pay-as-you-go or Perpetual licenses.
  
 ### Billing information
+
 Billing information is used by Stripe to generate the invoice. You may easily update this info.
-
-### User Guide
-
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
-
-
