@@ -13,8 +13,11 @@ description: Installing ThingsBoard Edge on Windows
 
 {% include templates/install/windows-warning-note.md %}
 
-This guide describes how to install ThingsBoard Edge on Windows machine.
-Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
+This guide provides instructions for installing **ThingsBoard Edge** on **Windows**
+
+The steps below apply to:
+* 32-bit or 64-bit systems
+* Windows versions 10, 8.1, 8, and 7
 
 {% include templates/edge/install/prerequisites.md %}
 

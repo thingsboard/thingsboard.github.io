@@ -12,7 +12,7 @@ description: Installing ThingsBoard Edge on Raspberry Pi
 
 {% assign docsPrefix = "edge/" %}
 
-This guide describes how to install **ThingsBoard Edge** on **RaspberryPi**.
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **RaspberryPi**.
 
 {% include templates/edge/install/prerequisites.md %}
 
