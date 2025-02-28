@@ -420,6 +420,18 @@
     }
   },
   {
+    "type": ["Australia and Oceania"],
+    "country": ["New Caledonia", "Vanuatu", "Wallis and Futuna", "French Polynesia", "Fiji"],
+    "name": "ELEMENT",
+    "contact": {
+      "href": "laurent.degen@element.nc"
+    },
+    "site": {
+      "href": "element.nc",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Germany", "Austria", "Switzerland"],
     "name": "one:solutions Engineering GmbH",

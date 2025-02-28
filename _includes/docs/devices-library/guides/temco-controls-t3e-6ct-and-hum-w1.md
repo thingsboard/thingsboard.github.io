@@ -11,7 +11,7 @@
 ## Introduction
 
 ![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[{{deviceName}}]({{controllerVendorLink}}){: target="_blank"} is general purpose input / ouput modules for building 
+[{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} is general purpose input / ouput modules for building 
 integrators. Available in several input/output configurations, the T3 module provide convenient termination for field 
 devices and interfacing to your HVAC, lighting, temperature sensors, and other typical building automation 
 applications. Each of the analog inputs can be jumper configured for signals of either 0-5V, 0-20mA, or dry contact. 

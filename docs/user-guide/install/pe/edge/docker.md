@@ -8,11 +8,13 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-{% include templates/edge/install/compatibility-warning-general.md %}
 
 {% assign docsPrefix = "pe/edge/" %}
+{% assign peDocsPrefix = "pe/" %}
 
-This guide will help you to install and start **ThingsBoard Edge** using **Docker** on Linux or Mac OS.
+{% include templates/edge/install/compatibility-warning-general.md %}
+
+This guide provides step-by-step instructions for running **ThingsBoard Edge** on **Linux or Mac OS** using **Docker**.
 
 {% include templates/edge/install/prerequisites.md %}
 

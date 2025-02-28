@@ -52,7 +52,6 @@ description: Real feedback from real clients. Dive into our testimonials to unde
                 <h6>I cannot remember the last time our services were unavailable. The team monitors our infrastructure closely so we can sleep tight at night. They are also very responsive when we have technical questions or need guidance when implementing a new feature in our IoT devices.</h6>
                 <h5>ThingsBoard Platform</h5>
                 <h6>ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.</h6>
-                <h6>ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.</h6>
                 <h6>It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!</h6>
             </div>
         </div>

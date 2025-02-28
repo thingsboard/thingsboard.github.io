@@ -11,7 +11,7 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 
 {% assign docsPrefix = "edge/" %}
 
-This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **Windows** using **Docker**.
 
 {% include templates/edge/install/prerequisites.md %}
 

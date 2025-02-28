@@ -1,41 +1,69 @@
 * TOC
 {:toc}
 
-ThingsBoard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.{% unless docsPrefix %}
-This configuration step is required in production environments. If you are evaluating the platform, pre-provisioned
-[**demo accounts**](/docs/samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
+This document provides step-by-step instructions for configuring the mail server in ThingsBoard.
+Using email allows you to send [notifications](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}, password recovery messages, scheduled reports, and other important system messages.
+
+{% if docsPrefix == null %}
+ThingsBoard system administrator defines global mail server settings, which apply to all customers.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+
+ThingsBoard allows configuring the mail server at two levels:
+
+- System administrator level – Defines global SMTP settings that apply to all tenants unless overridden.
+- Tenant administrator level – Allows individual tenants to set up their own SMTP settings, overriding the global configuration if needed.
+{% endif %}
+
+{% unless docsPrefix == null %}
+By default, if a Tenant mail server is not configured, the system will use the system administrator level mail server settings. However, tenants who require custom email configurations (e.g., company-specific SMTP servers) can define their own settings.
 {% endunless %}
 
 {% capture difference %}
-**NOTE:**
-<br>
-System Mail settings are used only during user creation and password reset process and are controlled by a system administrator.
-Tenant administrator is able to [**set up email rule node**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
+**Note:** The tenant administrator can [configure the email rule node](/docs/user-guide/rule-engine-2-0/tutorials/send-email/){:target="_blank"} to send emails using the [rule engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Mail Server configuration
+## Mail server configuration
 
-Following steps are required to configure Mail Server settings.
-
-First, you must log in to your ThingsBoard instance WEB UI as a *system administrator*. Then, left click on the three dots in the top-right corner of the WEB UI and select "Profile".
-Change 'sysadmin@thingsboard.org' to your email address. Now re-login as administrator again.
-
+Following steps are required to configure Mail server settings:
 {% if docsPrefix == null %}
-![image](https://img.thingsboard.io/user-guide/ui/mail/mail-settings-change-administrator-email-address-ce.png)
+**Step 1.** Log in to your ThingsBoard instance WEB UI as system administrator;
+
+**Step 2.** Go to the "Mail server" tab on the "Settings" page. You will be taken directly to the mail server settings;
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](https://img.thingsboard.io/user-guide/ui/mail/mail-settings-change-administrator-email-address-pe.png)
+{% if docsPrefix == "pe/" %}
+**Step 1.** Log in to your ThingsBoard instance WEB UI;
+
+**Step 2.** Go to the "Mail server" tab on the "Settings" page. If you are logged in as a sysadmin, you will be taken directly to the mail server settings. If you are logged in as a tenant administrator, uncheck the "Use System Mail Server Settings" option to configure your own mail server settings;
+{% endif %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+**Step 1.** Log in to your ThingsBoard instance WEB UI;
+
+**Step 2.** Go to the "Mail server" tab on the "Settings" page. Uncheck the "Use System Mail Server Settings" option to configure your own mail server settings;
 {% endif %}
 
-<br>
-Now we need to configure SMTP server.
+**Step 3.** Mail server configuration:
+  - Fill in the "Mail From" field;
+  - Select an SMTP provider;
+  - Proceed to the connection settings: 
+    - Choose the SMTP protocol;
+    - Specify host and port of the SMTP server;
+    - Set the timeout;
+    - Optionally, enable TLS and Proxy;
+  - Authentication: Enter credentials for SMTP authentication. Use either the "Basic" or "OAuth 2.0" authentication method. 
 
-Starting from ThingsBoard 3.5.2 we have added mail settings templates for such providers: Google, Office 356, SendGrid. 
+**Step 4.** You can send a test email to verify the settings;
+
+**Step 5.** Finally, click "Save" to complete the mail server configuration.
+
+{% include images-gallery.html imageCollection="mail-server-configuration-1" %}
+
+## Examples of mail server settings
+
+Starting from ThingsBoard 3.5.2 we have added mail settings templates for such providers: [Sendgrid](#sendgrid-configuration-example), [Gmail](#gmail-configuration-with-basic-authentication-example) and [Office 365](#office-365-configuration-with-oauth2-authentication-example). 
 So users don't have to fill in connection settings like SMTP server host, port and TLS configuration.
-If you want to change some setting use "Custom" SMTP provider type.
-
-This guide provides examples of configuring SMTP server using [Sendgrid](#sendgrid-configuration-example), [Gmail](#gmail-configuration-with-basic-authentication-example) and [Office 365](#office-365-configuration-with-oauth2-authentication-example). In your configuration you can use any other SMTP server.
+If you want to use a different SMTP server, use the SMTP provider type "Custom".
 
 ### Sendgrid configuration example
 
