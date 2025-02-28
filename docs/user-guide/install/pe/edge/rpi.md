@@ -7,12 +7,13 @@ description: Installing ThingsBoard Edge on Raspberry Pi
 
 * TOC
 {:toc}
+  
+{% assign docsPrefix = "pe/edge/" %}
+{% assign peDocsPrefix = "pe/" %}
 
 {% include templates/edge/install/compatibility-warning-general.md %}
 
-{% assign docsPrefix = "pe/edge/" %}
-
-This guide describes how to install **ThingsBoard Edge** on **RaspberryPi**.
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **RaspberryPi**.
 
 {% include templates/edge/install/prerequisites.md %}
 
