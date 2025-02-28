@@ -10,14 +10,20 @@ Additionally, verify that the **ThingsBoard Edge** and **ThingsBoard Server** ve
 
 {% capture update_server_first %}
 ### **Version Compatibility Rules:**
-* **ThingsBoard Edge version X.Y.Z** works with the same **ThingsBoard Server version (X.Y.Z) and the next two versions**.
-* ThingsBoard Edge version X.Y.Z **DOES NOT WORK** with **older ThingsBoard Server** versions.
+* **ThingsBoard Edge version X.Y.Z** works with the **ThingsBoard Server version X.Y.Z** and the next <span style="color:blue">**two**</span> versions.
 
-_**For example**:_ 
+_**ThingsBoard Edge 3.8.0** works with **ThingsBoard Server 3.8.0** and two later versions (3.9.0 and 3.9.1). You can view the **ThingsBoard Server Release Notes** [here](/docs/{{peDocsPrefix}}reference/releases/){: target="_blank"}._
 
-_**ThingsBoard Edge** version **3.8.0** is compatible with **ThingsBoard Server** version **3.8.0** and two later versions (3.9.0, and 3.9.1)._
+* **ThingsBoard Edge version X.Y.Z** <span style="color:red">**does not work**</span> with **older** ThingsBoard Server versions.
 
-_**ThingsBoard Edge** version **3.9.1** is not compatible with **ThingsBoard Server** version **3.8.0** or any earlier versions. In such cases, the older version of **ThingsBoard Server must be upgraded first**._
+_**ThingsBoard Edge 3.9.1** does not support **ThingsBoard Server 3.8.0** or any **earlier versions**. In such cases, the **ThingsBoard Server** must be [upgraded to the latest version](/docs/user-guide/install/{{peDocsPrefix}}upgrade-instructions/){: target="_blank"} first._
 
 {% endcapture %}
 {% include templates/warn-banner.md content=update_server_first %}
+
+{% capture note %}
+_If you run an **older version of ThingsBoard Edge** (e.g., version 3.6.0), the ThingsBoard team cannot guarantee the availability or proper functioning of all features._
+{% endcapture %}
+{% include templates/info-banner.md content=note %}
+
+
