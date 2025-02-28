@@ -86,10 +86,10 @@ Now navigate to the "Settings" page -> "Mail Server" tab your ThingsBoard instan
 Click "Save" button.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/sendgrid-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-settings-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/sendgrid-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-settings-pe.png)
 {% endif %}
 
 <br>
@@ -100,7 +100,7 @@ In case of error in configuration, you should receive a popup with the error log
 
 You can also complete verification on the SendGrid website.
 
-![image](/images/user-guide/ui/mail/sendgrid-it-works.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-it-works.png)
 
 ### Gmail configuration with basic authentication example
 
@@ -124,10 +124,10 @@ Navigate to the "Settings" page -> "Mail Server" tab your ThingsBoard instance a
 Click "Save" button.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/gmail-settings-basic-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/gmail-settings-basic-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/gmail-settings-basic-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/gmail-settings-basic-pe.png)
 {% endif %}
 
 <br>
@@ -154,10 +154,10 @@ To use Gmail OAuth2 you need to create a project in Google Developers Console bu
 - Copy and save the "**Redirect URI template**". It will be needed while set up Google project credentials.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/google-oauth-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/google-oauth-settings-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/google-oauth-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/google-oauth-settings-1-pe.png)
 {% endif %}
 
 <br>
@@ -175,10 +175,10 @@ To use Gmail OAuth2 you need to create a project in Google Developers Console bu
 Back to the Thingsboard portal and paste **Client ID** and **Client secret** from the previous steps into the appropriate fields. Click "Save".
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/google-oauth-settings-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/google-oauth-settings-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/google-oauth-settings-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/google-oauth-settings-2-pe.png)
 {% endif %}
 
 <br>
@@ -189,10 +189,10 @@ Please follow the steps in your browser and after acceptance we will automatical
 If access token was successfully generated you will see status "generated".
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/google-oauth-settings-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/google-oauth-settings-3-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/google-oauth-settings-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/google-oauth-settings-3-pe.png)
 {% endif %}
 
 <br>
@@ -230,10 +230,10 @@ To use Office 365 OAuth2 you need to register an application in the Azure portal
  - Copy and save the "**Redirect URI template**". It will be needed while set up the Azure portal credentials.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/microsoft-azure-oauth-settings-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/microsoft-azure-oauth-settings-1-pe.png)
 {% endif %}
 
 <br>
@@ -257,10 +257,10 @@ To use Office 365 OAuth2 you need to register an application in the Azure portal
 Back to the ThingsBoard portal and paste **Client ID**, **Client secret** and **Directory (tenant) ID** from the previous steps into the appropriate fields. Click "Save".
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/microsoft-azure-oauth-settings-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/microsoft-azure-oauth-settings-2-pe.png)
 {% endif %}
 
 <br>
@@ -271,10 +271,10 @@ in your browser and after acceptance we will automatically save Refresh Token an
 If access token was successfully generated you will see status "generated".
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/microsoft-azure-oauth-settings-3-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/microsoft-azure-oauth-settings-3-pe.png)
 {% endif %}
 
 <br>

@@ -5,4 +5,4 @@ To parse payload properly, please make sure that next values are set:
 - **Strip Delimiter** - whether the decoded frame should strip out the delimiter or not. Please check it to drop newline delimiter from the payload;
 - **Message Separator** - specify it to **System Line Separator** - in this case newline symbol will be used as delimiter;
 
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-text-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-text-4-pe.png)

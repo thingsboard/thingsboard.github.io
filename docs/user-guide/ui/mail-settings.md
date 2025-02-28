@@ -7,13 +7,13 @@ description: ThingsBoard IoT platform mail settings
 
 mail-server-configuration-1:
     0:
-        image: /images/user-guide/ui/mail/mail-server-configuration-1-ce.png
+        image: https://img.thingsboard.io/user-guide/ui/mail/mail-server-configuration-1-ce.png
         title: 'Go to the "Mail server" tab of the "Settings" page. You will be taken directly to the mail server settings. Fill in the "Mail From" field, select an SMTP provider, and proceed to the connection settings: choose the SMTP protocol, specify host and port of the SMTP server, and set the timeout;'
     2:
-        image: /images/user-guide/ui/mail/mail-server-configuration-2-ce.png
+        image: https://img.thingsboard.io/user-guide/ui/mail/mail-server-configuration-2-ce.png
         title: 'Optionally, enable TLS and Proxy;'
     3:
-        image: /images/user-guide/ui/mail/mail-server-configuration-3-ce.png
+        image: https://img.thingsboard.io/user-guide/ui/mail/mail-server-configuration-3-ce.png
         title: 'Enter credentials for SMTP authentication. Use either the "Basic" or "OAuth 2.0" authentication method. Now, you can send a test email to verify the settings. Finally, click "Save" to complete the mail server configuration.'
 
 sendgrid-configuration:

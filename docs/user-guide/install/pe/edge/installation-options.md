@@ -54,7 +54,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/pe/edge/rpi/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi" alt="Raspberry Pi">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/rpi3.svg" title="Raspberry Pi" alt="Raspberry Pi">
                                                  </div>
                                             </span>
                                         </a>
