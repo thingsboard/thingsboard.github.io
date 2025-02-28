@@ -19,18 +19,4 @@ So, if you like to run ThingsBoard PE in a HA mode, you will need at least two l
 In order to purchase the Perpetual license the customer may register on License portal and then follow simple steps: 
 - Go to ***Perpetual*** — ***Choose a product*** — Input ***Billing info*** — ***Create***
 
-or choose exact product from [pricing](/pricing/). Once you press ***Get your license*** button you will be routed to the License portal authentication/registration or directly to ***Billing info*** step if you are already logged in on the License portal.   
-
-### User Guide
-
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
-
-
+or choose exact product from [pricing](/pricing/). Once you press ***Get your license*** button you will be routed to the License portal authentication/registration or directly to ***Billing info*** step if you are already logged in on the License portal.
