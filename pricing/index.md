@@ -145,7 +145,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 30 Devices</div>
                             <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br> per month</div> 
+                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
@@ -168,11 +168,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br> per month</div> 
+                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -192,11 +192,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Support
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -216,11 +216,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 1000 Devices</div>
                             <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Support
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -239,11 +239,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-priority-support">
                                 Custom <b>SLA</b>
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                </div>
@@ -267,7 +267,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 30 Devices</div>
                             <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br> per month</div> 
+                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
@@ -290,11 +290,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br> per month</div> 
+                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -314,11 +314,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Support
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -338,11 +338,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 1000 Devices</div>
                             <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Support
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -352,7 +352,7 @@ selfManagedPlan:
                                 <p>Consider yourself a Fortune 500 company in the field?</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                Custom <span data-faq-id="calculate" data-faq-link-size="70%"></span>
+                                Custom <span data-faq-id="tb-cloud-enterprise-pricing-calculation" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a id="Pricing_PE_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
@@ -361,11 +361,11 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-priority-support">
                                 Custom <b>SLA</b>
                             </div>
-                            <div class="pricing-square-item" data-faq-id="white-labeling"><b>White-labeling</b></div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
                </div>
@@ -427,7 +427,7 @@ selfManagedPlan:
                      data-toggle="#payAsYouGo"
                      data-description-toggle="#payAsYouGoHeader"
                      onClick="activateSolutionSection('pe-pay-as-you-go')">
-                    <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    <h3 data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
                 <div id="Pricing_PE_SM_Perpetual"
                      data-solutionId="pe-perpetual"
@@ -667,11 +667,11 @@ selfManagedPlan:
                          data-toggle="#trendzPayAsYouGo"
                          data-description-toggle="#trendzPayAsYouGoHeader" 
                          onClick="activateSolutionSection('trendz-pay-as-you-go')">
-                        <h3 data-faq-id="trendz-pay-as-you-go-payg-vs-cloud" data-faq-link-size="70%">Pay-as-you-go</h3>
+                        <h3 data-faq-id="trendz-pay-as-you-go-self-managed" data-faq-link-size="70%">Pay-as-you-go</h3>
                     </div>
                     <div id="Pricing_TA_SM_Perpetual" 
                          data-solutionId="trendz-perpetual"
-                         class="solution perpetual trendz-perpetual gtm_button" 
+                         class="solution perpetual trendz-perpetual gtm_button"
                          data-toggle="#trendzPerpetual"
                          data-description-toggle="#trendzPerpetualHeader" 
                          onClick="activateSolutionSection('trendz-perpetual')">
@@ -1105,7 +1105,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
                             Optional support
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
                             Tiered discounts
                         </div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
@@ -1137,7 +1137,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
                             Optional support
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
                             Tiered discounts
                         </div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
@@ -1169,7 +1169,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
                             Optional support
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
                             Tiered discounts
                         </div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
@@ -1202,7 +1202,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
                             Optional support
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
                             Tiered discounts
                         </div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
@@ -1714,13 +1714,18 @@ selfManagedPlan:
                             <p>Yes, you can upgrade your plan at any time to increase limits.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-cloud-migration-to-sm-support" data-title="What support options are available for migrating to a self-managed system instead of switching to the Enterprise plan?">
+                    <div class="item" data-tag="h4" data-item-id="tb-cloud-white-labeling" data-title="Is white labeling available out of the box?">
                         <div class="container">
-                            <p>You can perform the migration on your own using the Version Control feature to transfer your configurations. Telemetry data can be exported via the REST API. Alternatively, the ThingsBoard team can provide additional migration assistance. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> for more details.</p>
+                            <p>White labeling functionality is available starting from the Prototype subscription.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-migration-to-sm-support" data-title="What support options are available for migrating to a self-managed system instead of switching to the Enterprise plan?">
+                        <div class="container">
+                            <p>You can perform the migration on your own using the Version Control feature to transfer your configurations. Telemetry data can be exported via the REST API. Alternatively, the ThingsBoard team can provide additional migration assistance. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> for more details.</p>
+                        </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-telemetry-storage-billing" data-title="How is telemetry data storage billed?">
                         <div class="container">
@@ -3734,6 +3739,11 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-edge-pay-as-you-go-billingAndPayments" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-bulk-discount" data-title="Can we have a discounted price for ThingsBoard Edges in case of bulk purchase?">
+                        <div class="container">
+                            <p>We do understand that you may need multiple edge computing services. Price reduction starts from 10 licenses. Discount tiers are as follows: 10–50 Edges — 10%, 51–100 Edges — 12%, above 100 Edges — 15%+ off the license cost regardless of the plan.</p>
+                        </div>
+                    </div>
                     <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-billing" data-title="How does billing work for ThingsBoard Edge?">
                         <div class="container">
                             <p>Billing is handled via Stripe and is charged monthly based on your selected plan.</p>
@@ -3759,13 +3769,13 @@ selfManagedPlan:
                             <p>If a payment fails, Stripe will retry the charge. If unresolved, your account may be suspended until payment is completed.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-refund-policy" data-title="Can I get a refund if I cancel my subscription?">
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-pay-as-you-go-refund-policy" data-title="Can I get a refund if I cancel my subscription?">
                         <div class="container">
                             <p>ThingsBoard Edge does not offer refunds for unused time if you cancel before the billing cycle ends.</p>
                         </div>
-                    </div>
-                    <div class="load-more" onClick="loadMoreFaq(this)">
-                        <h4 class="title">Load more FAQ</h4>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-pay-as-you-go-proration" data-title="How does proration work when upgrading or downgrading my plan?">
                         <div class="container">
@@ -3815,8 +3825,8 @@ selfManagedPlan:
                 <div id="faq-edge-perpetual-general" class="pi-accordion active">
                     <div class="item" data-tag="h4" data-item-id="edge-perpetual-license" data-title="What is Perpetual license?">
                         <div class="container">
-                            <p>Perpetual fallback license is a license that allows you to use a specific version of the software, without an active subscription to it. Whenever you purchase a perpetual fallback license, you get one year of software updates included. You can purchase additional updates if required. The typical price for a one-year update package is 159 USD.</p>
-                            <p><strong>Example 1:</strong> Let's assume you purchased one license for ThingsBoard Edge v3.7 in August 2024 and received an update to ThingsBoard Edge v4.0 in April 2025. This means you can continue using this ThingsBoard v4.0 instance forever. You can also migrate to different hardware without issues.</p>
+                            <p>Perpetual fallback license is a license that allows you to use a specific version of the software, without an active subscription to it. Whenever you purchase a perpetual fallback license, you get one year of software updates included. You can purchase additional updates if required. The typical price for a one-year update package is 159 USD. <br><br></p>
+                            <p><strong>Example 1:</strong> Let's assume you purchased one license for ThingsBoard Edge v3.7 in August 2024 and received an update to ThingsBoard Edge v4.0 in April 2025. This means you can continue using this ThingsBoard v4.0 instance forever. You can also migrate to different hardware without issues.<br><br></p>
                             <p><strong>Example 2:</strong> Let's assume you purchased one license for ThingsBoard Edge v3.7 in August 2024 and received an update to ThingsBoard Edge v4.0 in April 2025. This means you can continue using this ThingsBoard v4.0 instance forever. Later, in September 2025, we released v4.1. In order to get the v4.1 update, you will need to purchase an additional year of software updates for ThingsBoard Edge PE, which will cost 159 USD. However, you can continue using v4.0 without updates.</p>
                         </div>
                     </div>

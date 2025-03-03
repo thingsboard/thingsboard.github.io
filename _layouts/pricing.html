@@ -75,9 +75,11 @@
         let faqSection = params['faqSection'];
         if (faqSection) {
             switchFaqSection(faqSection);
+            const questionEl = document.querySelector(`div[data-item-id="${window.location.hash.replace('#', '')}"]`);
+            if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
+              loadMoreFaq(questionEl.parentNode.children[6]);
+            }
             setTimeout(() => updateQueryParam({}, true), 500);
-            const loadMoreEl = document.querySelector(`#faq-${currentFaqContainer} .answers #faq-${currentFaqContainer}-${faqSection} .load-more`);
-            if (loadMoreEl) loadMoreFaq(loadMoreEl);
         }
     }
 
