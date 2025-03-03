@@ -66,36 +66,8 @@ html#pricing
                     font-size: 14px
                     line-height: 18px
 
-    .faq-section-selector
-      display: flex
-      align-items: center
-      gap: 23px
-      padding: 8px
-      background-color: #F7F9FC
-      border-radius: 100px
-      width: fit-content
-      margin-bottom: 24px
-      @media (max-width: 690px)
-        flex-direction: column
-        width: 100%
-        border-radius: 20px
-      .faq-section-option
-        padding: 7px 24px
-        border-radius: 22px
-        cursor: pointer
-        color: #75767C
-        &:hover
-          color: #000
-        &.active
-          border: 1px solid #2A7DEC
-          color: #2A7DEC
-        &.disabled
-          cursor: default
-          &:hover
-            color: #75767C
-
     .faq-content
-      padding: 60px 30px 80px
+      padding: 60px 15px 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
         margin-top: 30px
       h1
@@ -123,72 +95,155 @@ html#pricing
         li
           list-style: disc
           margin-bottom: .75em
-      .answers
+      #faq-header
+        display: inline-block
+        margin-bottom: 24px
+        font-size: 36px
+        font-weight: 500
+        color: #212529
+      #FAQ
         section
           display: none
           padding: 0
           &.active
-            display: block
-          .pi-accordion
-            display: none
-            &.active
-              display: block
-            h4.title
-              font-size: 18px
+            display: flex
+            gap: 40px
+            @media (max-width: 1200px)
+              flex-direction: column
+          .faq-section-selector
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            padding: 8px
+            width: fit-content
+            margin-bottom: 24px
+            color: #00000061
+            @media (max-width: 690px)
+              width: 100%
+            .faq-section-option
+              width: 100%
+              font-size: 24px
               font-weight: 500
-              line-height: 27px
-              padding: 22px
-              transition: none
-              &:after
-                content: "+"
-                position: absolute
-                right: 25px
-                font-size: 28px
-                color: #707275
-                transform: rotate(0deg)
-                transition: transform 0.3s
-                margin-right: 1px
-
-            div.item
-              border: 1px solid #EBEBEB
-              border-radius: 4px
-              overflow: visible
+              padding: 24px 32px
+              border: 1.5px solid transparent
+              border-radius: 24px
+              cursor: pointer
+              color: #00000061
               &:hover
-                border: 2px solid #2A7DEC
-                h4.title
-                  padding: 21px
-                  color: #1f3a52
-                  &:after
-                    color: #1f3a52
-                    right: 24px
-              &:not(:last-of-type)
-                margin-bottom: 7px
-              &:before
+                color: #000000A1
+              &.active
+                color: #000000DE
+                border-bottom: 1.5px solid #E6F0FC
+                background: #F4F8FE
+          .answers
+            flex: 1.5
+            .pi-accordion
+              display: none
+              &.active
                 display: block
-                content: " "
-                margin-top: -70px
-                height: 70px
-                visibility: hidden
-              & > h4.title
-                &:before
+              div.item, div.load-more
+                border-bottom: 1.5px solid #3E9AF81F
+                overflow: visible
+                &.hidden
                   display: none
+                &:not(:last-of-type)
+                  margin-bottom: 7px
+                &:before
+                  display: block
+                  content: " "
+                  margin-top: -70px
+                  height: 70px
+                  visibility: hidden
+                & > h4.title
+                  font-size: 18px
+                  font-weight: 400
+                  line-height: 27px
+                  color: #000000C2
+                  padding: 22px 37px 22px 22px
+                  transition: none
+                  &:hover
+                    color: #000000E8
+                  &:after
+                    font-family: "Font Awesome 5 Free"
+                    font-weight: 900
+                    color: #00000061
+                    content: "\f077"
+                    position: absolute
+                    right: 8px
+                    top: 22px
+                    transform: rotate(0deg)
+                    transition: transform 0.3s
+                  &:before
+                    display: none
+                    color: #0000008A
+                  .clipboard-btn
+                    display: none
+                    padding: 0
+                    width: 25px
+                    height: 25px
+                    font-size: 14px
+                    border-radius: 50%
+                    position: relative
+                    margin-left: 4px
+                    &:after
+                      font-family: "Font Awesome 5 Free"
+                      font-weight: 900
+                      content: "\f0c1"
+                      color: #00000061
+                    &:hover
+                      background-color: #F4F8FE
+                      .tooltiptext
+                        visibility: visible
+                    .tooltiptext
+                      position: absolute
+                      top: -32px
+                      left: -57px
+                      width: max-content
+                      padding: 0 7px
+                      visibility: hidden
+                      background-color: #0000008F
+                      color: #fff
+                      text-align: center
+                      border-radius: 6px
+                    &.copied
+                      &:after
+                        content: "\f00c"
+                      .tooltiptext
+                        left: -20px
+                .content
+                  border: none
+                  box-shadow: none
+                  border-radius: 4px
+                  padding: 5px 50px 25px 10px
+                  margin: 0 10px 10px
+                  font-size: 14px
+                  font-weight: 400
+                  line-height: 28px
 
-            .content
-              border: none
-              box-shadow: none
-              border-radius: 4px
-              padding: 5px 50px 25px 10px
-              margin: 0 10px 10px
-            .item.on
-              border: 2px solid #2A7DEC
-              box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
-              h4.title
-                padding: 21px
-                &:after
-                  transform: rotate(45deg)
-                  transition: transform 0.3s
-                  margin: unset
-
+                &.on
+                  h4.title
+                    padding: 22px 37px 22px 22px
+                    &:after
+                      transform: rotate(180deg)
+                      transition: transform 0.3s
+                      margin: unset
+                    .clipboard-btn
+                      @media screen and (max-width: 700px)
+                        display: inline-block
+                  &:hover
+                    .clipboard-btn
+                      display: inline-block
+              div.load-more
+                & > h4.title
+                  color: #0094FF
+                  &:hover
+                    color: #0095ff
+                  &:after
+                    content: '+'
+                    color: #0094FF
+                    border: 0
+                    font-size: 30px
+                    transform: rotate(0deg)
     a, button
       &.btn-blue
         background-color: #2A7DEC
@@ -375,6 +430,8 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
+            @media screen and (max-width: 700px)
+              display: none
 
         &.pay-as-you-go
           &:before
