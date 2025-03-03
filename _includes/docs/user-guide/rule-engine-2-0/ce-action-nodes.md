@@ -590,7 +590,7 @@ For each of these actions, you can choose from the following **processing strate
 
 Processing strategies are configured through **Processing settings**, which offer two configuration modes:
 
-<!--- TODO: add processing settings modes switcher screenshot -->
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-processing-settings-modes.png)
 
 - **Basic** - provides predefined strategies for all actions:
   - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
@@ -599,18 +599,18 @@ Processing strategies are configured through **Processing settings**, which offe
   - WebSockets only: for all actions except WebSocket notifications, the **Skip** strategy is applied, while WebSocket notifications use the **On every message** strategy.
     Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
-<!--- TODO: add Basic processing settings screenshot -->
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-basic-processing-settings.png)
 
 - **Advanced** - allows you to configure each action’s processing strategy independently.
 
-<!--- TODO: add Advanced processing settings screenshot -->
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings.png)
 
 When configuring processing strategies in advanced mode, certain combinations may lead to unexpected behavior. 
 For further details, please refer to the advanced processing strategies section of the Save Timeseries Node documentation.
 
 **Configuration: Scope**
 
-<!--- TODO: add Scope configuration screenshot -->
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope.png)
 
 The node determines the attribute scope for each incoming message by evaluating the `scope` property in its metadata. 
 The supported scope types are **Client attributes**, **Shared attributes**, and **Server attributes**. The algorithm is as follows:
@@ -625,7 +625,7 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
 
 **Configuration: Advanced settings**
 
-<!--- TODO: add Advanced settings screenshot -->
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
 
 * **Save attributes only if the value changes** – if enabled, the node first retrieves the current values for the specified attribute keys and then compares them with the incoming values.
   If an attribute is missing, its value has changed, or its data type differs from what’s stored, it is marked for saving. If no changes are detected, the node skips the save operation.
