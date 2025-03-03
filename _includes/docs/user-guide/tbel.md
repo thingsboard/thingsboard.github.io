@@ -113,11 +113,49 @@ This expression is *true* in TBEL because the type coercion system will coerce t
 #### Maps
 
 TBEL allows you to create Maps. We use our own implementation of the Map to control memory usage.
-That is why TBEL allows only inline creation of maps. Most common operation with the map:
+That is why TBEL allows only inline creation of maps.
 
 ```java
 // Create new map
 var map = {"temperature": 42, "nested" : "508"};
+```
+{: .copy-code}
+
+There are two syntax variations for iterating over a map:
+1. Explicit entrySet() iteration:
+
+```java
+// Iterate through the map using entrySet()
+for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
+        // Get the key
+        entry.getKey();
+        // or 
+        entry.key;
+
+        // Get the value
+        entry.getValue();
+        // or 
+        entry.value;
+}
+
+```
+{: .copy-code}
+
+2. Implicit iteration without entrySet():
+
+```java
+// Iterate through the map without entrySet()
+for (ValueType value : map) {
+        // Process each value
+}
+```
+{: .copy-code}
+
+Most common operation with the map:
+
+**Examples:**
+
+```java
 // Change value of the key
 map.temperature = 0;
 
@@ -128,18 +166,6 @@ if(map.temperature != null){
 // Null-Safe expressions using ?
 if(map.?nonExistingKey.smth > 10){
 // <you code>
-}
-// Iterate through the map
-foreach(element : map.entrySet()){
-    // Get the key
-    element.getKey();
-    //or 
-    element.key;
-    
-    // Get the value
-    element.getValue();
-    //or 
-    element.value;
 }
 
 // get Info
@@ -273,7 +299,7 @@ var length = list.length();                 // return  4
 var memorySize = list.memorySize();         // return 32L 
 var indOf1 = list.indexOf("B", 1);          // return -1  
 var indOf2 = list.indexOf(2, 2);            // return 2  
-var sNumber = list.vvalidateClazzInArrayIsOnlyNumber(); // return true
+var sNumber = list.validateClazzInArrayIsOnlyNumber(); // return true
 ```
 {: .copy-code}
 
