@@ -12,9 +12,11 @@ description: ThingsBoard training sessions
         <div class="trainings-hero-top">
             <h1 class="trainings-h1">ThingsBoard training sessions</h1>
             <div class="trainings-hero-top-images">
-                <img src="/images/trainings/trainings-hero-image.webp" class="trainings-hero-image" alt="Thingsboard dashboards and menus">
-                <img src="/images/trainings/trainings-hero-image-2.webp" class="trainings-hero-image-2" alt="Thingsboard menu">
-                <img src="/images/trainings/trainings-hero-image-3.webp" class="trainings-hero-image-3" alt="Thingsboard menu">
+                <img src="/images/trainings/thingsboard-home-page.png" class="trainings-hero-image" alt="Thingsboard dashboards and menus">
+                <img src="/images/trainings/thingsboard-tenant-list.png" class="trainings-hero-image-2" alt="Thingsboard tenant list">
+                <img src="/images/trainings/thingsboard-alarm-list.png" class="trainings-hero-image-3" alt="Thingsboard alarm list">
+                <img src="/images/trainings/thingsboard-scada-example.png" class="trainings-hero-image-4" alt="Thingsboard SCADA">
+                <img src="/images/trainings/thingsboard-rule-chains-list.png" class="trainings-hero-image-5" alt="Thingsboard rule chains list">
             </div>
         </div>
         <div class="trainings-contact">
@@ -100,7 +102,7 @@ description: ThingsBoard training sessions
                             <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
                         </div>
                         <p class="contact-text">
-                            Learn how to install, configure, and maintain the ThingsBoard platform to ensure optimal performance and reliability. This training session covers the essentials of single-node and cluster installations, platform configuration, and troubleshooting techniques. You will also explore advanced topics such as load balancing, scalability, and failover mechanisms to ensure your IoT solutions can handle increased demand and maintain high availability.
+                            This training provides administrators with the skills needed to successfully deploy, configure, and manage ThingsBoard in various environments. You will learn monolithic and cluster-based deployment strategies, understand architecture components. This training covers hands-on AWS deployment, troubleshooting common issues using logs and diagnostic tools, and improving ThingsBoard’s performance and stability.                        
                         </p>
                         <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
                     </div>   
@@ -109,8 +111,14 @@ description: ThingsBoard training sessions
                 <div class="owl-carousel-toggle-content-item" id="scada">
                     <div class="trainings-contact">
                         <div class="contact">
-                            <div>
+                            <div class="tip-content">
                                 <h4 class="trainings-h4">SCADA system</h4>
+                                <p class="tip">
+                                    <i class="fas fa-exclamation-circle" style="color: #F36500"></i>
+                                    <span style="color: #F36500; font-size: 20px">
+                                        This training is for advanced users
+                                    </span>
+                                </p>
                             </div>
                             <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
                         </div>
@@ -130,7 +138,7 @@ description: ThingsBoard training sessions
                             <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
                         </div>
                         <p class="contact-text">
-                            Gain in-depth knowledge of ThingsBoard's platform management and security features. This training session delves into the intricacies of the rule engine, alarm events, and notifications, providing you with the skills to manage data flows and notifications efficiently. Additionally, you will learn about the security challenges addressed by ThingsBoard, user roles and permissions, and the capabilities of the platform's API. This knowledge will empower you to implement robust IoT solutions with enhanced security and efficient management.
+                            This training program helps participants gain a strong understanding of ThingsBoard’s main features through hands-on practice. It covers data automation using the Rule Engine, user access control with RBAC, alarm management, and API interaction. Advanced users will also learn custom rule node development to extend the system capabilities. This program is perfect for professionals who want to build scalable, secure, high-performing IoT solutions using ThingsBoard.                        
                         </p>
                         <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
                     </div>   
@@ -147,7 +155,9 @@ description: ThingsBoard training sessions
                         <i class="fas fa-users fa-5x" style="color: #2A7DEC"></i>
                     </span>
                     <div class="trainings-card-title-text">
-                        <span class="trainings-card-title">1200+</span>
+                        <span class="trainings-card-title" style="display: flex">
+                            {% include number-animation.html startNum = 1 targetNum = 1200 %}+
+                        </span>
                         <span class="trainings-card-subtitle">Participants</span>
                     </div>
                     <p class="trainings-card-text">More than 1200 participants took part in ThingsBoard training sessions</p>
@@ -157,7 +167,9 @@ description: ThingsBoard training sessions
                         <i class="fas fa-comments fa-5x" style="color: #2A7DEC"></i>
                     </div>
                     <div class="trainings-card-title-text">
-                        <span class="trainings-card-title">200+</span>
+                        <span class="trainings-card-title" style="display: flex">
+                            {% include number-animation.html startNum = 1 targetNum = 200 %}+
+                        </span>
                         <span class="trainings-card-subtitle">Sessions</span>
                     </div>
                     <p class="trainings-card-text">More than 200 sessions were organized for ThingsBoard clients</p>

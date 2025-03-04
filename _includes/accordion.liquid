@@ -27,6 +27,14 @@
                     </span>
                 </div>
             </div>
+            <div class="accordion-subtitle">
+                {% if accordionItem[1].subtitle %}
+                    {% if accordionItem[1].subtitleIcon %}
+                        <i class="{{ accordionItem[1].subtitleIcon }}"></i>
+                    {% endif %}
+                    <span>{{ accordionItem[1].subtitle }}</span>
+                {% endif %}
+            </div>
             <div class="accordion-content {% if openStatus == "firstOpened" and forloop.first or openStatus == "allOpened" %}opened{% endif %}{% if openStatus == "allOpened" %}opened{% endif %}" id="{{ collectionMap }}-{{ forloop.index }}">
                 <ul>
                     {% for textContent in accordionItem[1].textContentCollection %}

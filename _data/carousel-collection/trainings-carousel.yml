@@ -46,10 +46,10 @@
   crisp:
     0:
       faIcon: "far fa-clock"
-      text: "8 hours"
+      text: "12 hours"
     1:
       src: "/images/trainings/icon_hat-graduation.svg"
-      text: "4 sessions"
+      text: "6 sessions"
   title: "Platform management and security"
   description: "Comprehensive overview of rule engine, alarm management, security model, and API usage."
   linkLabel: "More about the course below"

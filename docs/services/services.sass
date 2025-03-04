@@ -214,6 +214,14 @@
         display: flex
         flex-direction: column
         gap: 32px
+        .tip-content
+          display: flex
+          flex-direction: column
+          gap: 8px
+          .tip
+            display: flex
+            gap: 8px
+            align-items: center
         .contact-label
           display: flex
           flex-direction: column
@@ -242,7 +250,7 @@
         display: flex
         flex-direction: column
         align-items: center
-        gap: 50px
+        gap: 145px
         &:before
           content: ""
           z-index: -1
@@ -268,26 +276,50 @@
             animation-fill-mode: forwards
           .trainings-hero-image-2
             opacity: 0
-            animation-name: fadeoutRight
+            animation-name: fadein
+            animation-duration: 600ms
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            animation-fill-mode: forwards
+            animation-delay: 600ms
+            position: absolute
+            bottom: 2%
+            left: 8%
+            max-width: 23%
+          .trainings-hero-image-3
+            position: absolute
+            right: -3%
+            top: -9%
+            opacity: 0
+            animation-name: fadein
+            animation-duration: 800ms
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            animation-fill-mode: forwards
+            animation-delay: 800ms
+            max-width: 33.3%
+          .trainings-hero-image-4
+            opacity: 0
+            animation-name: fadein
             animation-duration: 1000ms
             animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
             animation-fill-mode: forwards
             animation-delay: 1000ms
             position: absolute
-            bottom: 0
-            left: 10%
-            max-width: 23%
-          .trainings-hero-image-3
-            position: absolute
-            right: 0
-            top: 20%
+            left: -1%
+            top: -21%
+            max-width: 35%
+            z-index: -1
+          .trainings-hero-image-5
             opacity: 0
-            animation-name: fadeoutLeft
-            animation-duration: 1500ms
-            animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
+            animation-name: fadein
+            animation-duration: 500ms
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
             animation-fill-mode: forwards
             animation-delay: 500ms
-            max-width: 33.3%
+            position: absolute
+            right: 9%
+            top: -19%
+            z-index: -1
+            max-width: 49%
     .trainings-cards
       padding: 100px 0
       background: #F7F9FC
@@ -370,15 +402,7 @@
   footer
     position: static
 
-@keyframes fadeoutRight
-  from
-    opacity: 0
-    transform: scale(80%)
-  to
-    opacity: 1
-    transform: scale(100%)
-
-@keyframes fadeoutLeft
+@keyframes fadein
   from
     opacity: 0
     transform: scale(80%)
@@ -425,6 +449,12 @@
           display: none
         .contact-us-button-hidden
           display: block
+@media screen and (max-width: 799px)
+  #trainings
+    .trainings
+      .trainings-hero
+        .trainings-hero-top
+          gap: 75px
 @media screen and (max-width: 599px)
   #trainings
     .trainings
@@ -438,4 +468,12 @@
         .contact
           h4
             white-space: normal
+.accordion-subtitle
+  margin-top: 18px
+  .fa-exclamation-circle:before
+    color: #F36500
+  span
+    font-size: 20px
+    color: #F36500
+
 
