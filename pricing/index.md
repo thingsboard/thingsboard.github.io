@@ -240,7 +240,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
                             <div class="pricing-square-item">Unlimited <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-priority-support">
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
@@ -362,7 +362,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
                             <div class="pricing-square-item">Unlimited <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-priority-support">
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
@@ -427,7 +427,7 @@ selfManagedPlan:
                      data-toggle="#payAsYouGo"
                      data-description-toggle="#payAsYouGoHeader"
                      onClick="activateSolutionSection('pe-pay-as-you-go')">
-                    <h3 data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    <h3 data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
                 <div id="Pricing_PE_SM_Perpetual"
                      data-solutionId="pe-perpetual"
@@ -667,7 +667,7 @@ selfManagedPlan:
                          data-toggle="#trendzPayAsYouGo"
                          data-description-toggle="#trendzPayAsYouGoHeader" 
                          onClick="activateSolutionSection('trendz-pay-as-you-go')">
-                        <h3 data-faq-id="trendz-pay-as-you-go-self-managed" data-faq-link-size="70%">Pay-as-you-go</h3>
+                        <h3 data-faq-id="trendz-pay-as-you-go-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
                     </div>
                     <div id="Pricing_TA_SM_Perpetual" 
                          data-solutionId="trendz-perpetual"
@@ -2566,7 +2566,7 @@ selfManagedPlan:
                             <p>No, ThingsBoard and Trendz Analytics must have the same license type to function correctly. Trendz Analytics automatically detects all devices and assets from your ThingsBoard instance, along with their relationships, and analyzes all entities without the option to select specific ones. You cannot select specific devices or assets; all entities will be analyzed and added to the 'business entity' column.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="trendz-cloud-enterprise-price" data-title="Why is there no listed price for the Enterprise subscription?">
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-cloud-enterprise-price-not-listed" data-title="Why is there no listed price for the Enterprise subscription?">
                         <div class="container">
                             <p>The Enterprise subscription is a fully managed cloud solution with a dedicated environment established for each customer upon request. Pricing is customized based on the specific infrastructure, resources, and service requirements of the customer. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> to discuss your needs and receive a tailored quote.</p>
                         </div>
@@ -3427,11 +3427,6 @@ selfManagedPlan:
                     <div class="item hidden" data-tag="h4" data-item-id="edge-community-edge-hardware" data-title="Can I run ThingsBoard Edge on Raspberry Pi or other edge devices?">
                         <div class="container">
                             <p>Yes, ThingsBoard Edge is specifically designed to run on a variety of Edge hardware platforms, including single-board computers like Raspberry Pi and other devices with sufficient processing power and memory.</p>
-                        </div>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="edge-community-communication-protocols" data-title="What communication protocols does ThingsBoard Edge Community Edition support?">
-                        <div class="container">
-                            <p>Yes, the Community Edition supports secure device connectivity options.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-community-legacy-devices" data-title="What should I do if I have legacy devices to connect?">
