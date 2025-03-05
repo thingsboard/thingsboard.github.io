@@ -1033,7 +1033,7 @@ var tb = (function () {
 										const windowHeight = $(window).height();
 										$('html, body').animate(
 											{
-												scrollTop: elementTop - windowHeight / 2 + content.outerHeight() / 2,
+												scrollTop: elementTop - 100,
 											},
 											200
 										);
@@ -1052,6 +1052,7 @@ var tb = (function () {
 										if(currentCourse) {
 											setTimeout(() => {
 												const originalItems = $(".owl-carousel .owl-item").not(".cloned");
+												const activeItems = $(".owl-carousel .owl-item.active");
 
 												let foundIndex = -1;
 
@@ -1062,8 +1063,11 @@ var tb = (function () {
 														return false;
 													}
 												});
-
-												$carousel.trigger("to.owl.carousel", [foundIndex + 1, 0, true]);
+												if (activeItems.length === 1) {
+													$carousel.trigger("to.owl.carousel", [foundIndex - 2, 0, true]);
+												} else {
+													$carousel.trigger("to.owl.carousel", [foundIndex + 1, 0, true]);
+												}
 											}, 50)
 										}
 										$carousel.find('.owl-item').on('click', function () {

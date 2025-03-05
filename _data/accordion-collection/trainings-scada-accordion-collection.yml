@@ -3,6 +3,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Learn the main device connectivity possibilities and fundamentals of the ThingsBoard IoT Gateway option."
@@ -27,6 +28,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Learn the core functions of the SCADA user interface."
@@ -45,6 +47,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Learn how to navigate and manage the library of existing SCADA symbols."
@@ -63,6 +66,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: 'Learn to set key behaviour parameters like “Value”, “Action,” and “Widget Action”.'

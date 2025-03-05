@@ -3,6 +3,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Learn what a Rule Engine is and how it helps process data automatically."
@@ -37,6 +38,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Explore the hierarchy model, including system administrators, tenants, customers, and sub-customers and permissions on different levels."
@@ -67,6 +69,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Understand what an alarm is in ThingsBoard and how it models real-life abnormal conditions."
@@ -103,6 +106,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Understand how to interact with ThingsBoard using the REST API."
@@ -131,6 +135,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Get an overview of different data transport protocols such as MQTT, HTTP, CoAP, LwM2M, and SNMP."
@@ -149,31 +154,34 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
-  subtitle: "This training is intended for advanced users"
-  subtitleIcon: "fas fa-exclamation-circle"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
-      textContent: "Learn how to write a custom rule node from scratch and integrate it into ThingsBoard."
+      textContent: "Recommended for users with Java development experience"
+      faIcon: "fas fa-exclamation-circle"
+      faIconColor: "#F36500"
     1:
-      textContent: "Explore a prepared project template that includes a basic skeleton and sample custom nodes."
+      textContent: "Learn how to write a custom rule node from scratch and integrate it into ThingsBoard."
     2:
-      textContent: "Use internal ThingsBoard APIs to manipulate and execute various operations within the system."
+      textContent: "Explore a prepared project template that includes a basic skeleton and sample custom nodes."
     3:
-      textContent: "Manage entity data, update records, store information, and send data using custom nodes."
+      textContent: "Use internal ThingsBoard APIs to manipulate and execute various operations within the system."
     4:
-      textContent: "Learn how to deploy a custom node to a self-hosted ThingsBoard instance."
+      textContent: "Manage entity data, update records, store information, and send data using custom nodes."
     5:
-      textContent: "Explore rule node versioning and upgrade mechanisms."
+      textContent: "Learn how to deploy a custom node to a self-hosted ThingsBoard instance."
     6:
-      textContent: "Work with the @RuleNode annotation and understand its role in ThingsBoard."
+      textContent: "Explore rule node versioning and upgrade mechanisms."
     7:
-      textContent: "Use the TbNode interface to define custom logic within a rule node."
+      textContent: "Work with the @RuleNode annotation and understand its role in ThingsBoard."
     8:
-      textContent: "Handle message transformations, including modifying message payloads and metadata."
+      textContent: "Use the TbNode interface to define custom logic within a rule node."
     9:
-      textContent: "Understand the lifecycle of a rule node, including initialization, updates, and deletion."
+      textContent: "Handle message transformations, including modifying message payloads and metadata."
     10:
-      textContent: "Optimize performance by utilizing asynchronous programming and efficient threading."
+      textContent: "Understand the lifecycle of a rule node, including initialization, updates, and deletion."
     11:
+      textContent: "Optimize performance by utilizing asynchronous programming and efficient threading."
+    12:
       textContent: "Learn how to avoid common mistakes when implementing custom nodes."
 

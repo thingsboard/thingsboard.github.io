@@ -3,6 +3,7 @@
   additionalText: "2 hours"
   additionalFaIcon : "far fa-clock fa-lg"
   allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
   textContentCollection:
     0:
       textContent: "Learn how to install and configure ThingsBoard in both monolithic and cluster deployments."

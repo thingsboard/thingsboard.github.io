@@ -28,7 +28,7 @@ description: ThingsBoard training sessions
                 <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
             </div>
             <p class="contact-text">
-                Our ThingsBoard training sessions are practical workshops led by experts from the ThingsBoard team, created especially for your company’s engineers. We offer twelve 2-hour sessions that explain the basics of using ThingsBoard. Even though our documentation is detailed, these sessions focus on the most important points, helping you start IoT solution development quickly and easily.
+                Our ThingsBoard training sessions are practical workshops led by experts from the ThingsBoard team, created especially for your company’s engineers. We offer fifteen 2-hour sessions that explain the basics of using ThingsBoard. Even though our documentation is detailed, these sessions focus on the most important points, helping you start IoT solution development quickly and easily.
             </p>
             <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
         </div>
@@ -111,20 +111,22 @@ description: ThingsBoard training sessions
                 <div class="owl-carousel-toggle-content-item" id="scada">
                     <div class="trainings-contact">
                         <div class="contact">
-                            <div class="tip-content">
+                            <div>
                                 <h4 class="trainings-h4">SCADA system</h4>
-                                <p class="tip">
-                                    <i class="fas fa-exclamation-circle" style="color: #F36500"></i>
-                                    <span style="color: #F36500; font-size: 20px">
-                                        This training is for advanced users
-                                    </span>
-                                </p>
                             </div>
                             <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
                         </div>
-                        <p class="contact-text">
-                            You will learn how to utilize existing SCADA symbols, add new ones, work with SVG tags, and define behaviors and properties with a full description of their capabilities. By the end of the course, participants will be able to build powerful dashboards that optimize process management and monitoring.
-                        </p>
+                        <div class="contact-text">
+                            <p class="test">
+                                You will learn how to utilize existing SCADA symbols, add new ones, work with SVG tags, and define behaviors and properties with a full description of their capabilities. By the end of the course, participants will be able to build powerful dashboards that optimize process management and monitoring.
+                            </p> 
+                            <p class="tip">
+                                <i class="fas fa-exclamation-circle" style="color: #F36500"></i>
+                                <span>
+                                    Recommended for users with knowledge of the platform or after completing the "Data Visualization" training
+                                </span>
+                            </p>  
+                        </div>
                         <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
                     </div>   
                     {% include accordion.liquid collectionMap = "trainings-scada-accordion-collection" openStatus = "firstOpened" %}

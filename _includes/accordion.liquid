@@ -40,9 +40,9 @@
                     {% for textContent in accordionItem[1].textContentCollection %}
                         <li>
                             {% if textContent[1].faIcon %}
-                            <i class="{{ textContent[1].faIcon }}" style="color: #2A7DEC"></i>
+                            <i class="{{ textContent[1].faIcon }}" style="color: {{ textContent[1].faIconColor }}"></i>
                             {% elsif accordionItem[1].allTextContentIcon %}
-                            <i class="{{ accordionItem[1].allTextContentIcon }}" style="color: #2A7DEC"></i>
+                            <i class="{{ accordionItem[1].allTextContentIcon }}" style="color: {{ accordionItem[1].allTextContentIconColor }}"></i>
                             {% endif %}
                             <p>{{ textContent[1].textContent }}</p>
                         </li>
