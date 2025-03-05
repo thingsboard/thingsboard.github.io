@@ -562,7 +562,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Standalone</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
-                            <p>A lifetime of control with a single-instance</p>
+                            <p>Use your ThingsBoard instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $4,999
@@ -578,11 +578,11 @@ selfManagedPlan:
                             </button>
                         </div>
                         <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item">1 development instance</div>
+                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">1 development instance</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
+                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 24 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
@@ -608,11 +608,11 @@ selfManagedPlan:
                             </button>
                         </div>
                         <div class="pricing-square-item">2 production instances</div>
-                        <div class="pricing-square-item">2 development instances</div>
+                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">2 development instances</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
+                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
@@ -630,10 +630,12 @@ selfManagedPlan:
                         <div class="row justify-content-center">
                             <a id="Pricing_PE_SM_Enterprise_Bundle" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
-                        <div class="pricing-square-item"><b>1 ThingsBoard Cluster Kit</b></div>
-                        <div class="pricing-square-item">1 Trendz perpetual license</div>
-                        <div class="pricing-square-item">1 Trendz development license</div>
-                        <div class="pricing-square-item">3 Edge perpetual licenses</div>
+                        <div class="pricing-square-item">2 production instances</div>
+                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">2 development instances</div> 
+                        <div class="pricing-square-item">1 Trendz production instances</div>
+                        <div class="pricing-square-item">1 Trendz development instances</div>
+                        <div class="pricing-square-item">3 Edge production instances</div>
+                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
@@ -2235,17 +2237,17 @@ selfManagedPlan:
                             <p>Standalone, Cluster and Enterprise Bundle.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-standalone-aim" data-title="What is the Standalone package aim for?">
+                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
                         <div class="container">
-                            <p>The Standalone is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production server and one development server. No programmatic limits by entities for both servers.</p>
+                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-standalone-aim" data-title="What is the Standalone package aim for?">
                         <div class="container">
-                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI.</p>
+                            <p>The Standalone is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production server and one development server. No programmatic limits by entities for both servers.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development Instance separately?">
