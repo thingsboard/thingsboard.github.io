@@ -630,7 +630,7 @@ selfManagedPlan:
                         <div class="row justify-content-center">
                             <a id="Pricing_PE_SM_Enterprise_Bundle" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
-                        <div class="pricing-square-item"><b>1 ThingsBoard Cluster Kits</b></div>
+                        <div class="pricing-square-item"><b>1 ThingsBoard Cluster Kit</b></div>
                         <div class="pricing-square-item">1 Trendz perpetual license</div>
                         <div class="pricing-square-item">1 Trendz development license</div>
                         <div class="pricing-square-item">3 Edge perpetual licenses</div>
