@@ -583,6 +583,7 @@ selfManagedPlan:
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
                         <div class="pricing-square-item">Integrations feature</div>
+                        <div class="pricing-square-item">Multi-tenancy</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 24 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
@@ -613,6 +614,7 @@ selfManagedPlan:
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
                         <div class="pricing-square-item">Integrations feature</div>
+                        <div class="pricing-square-item">Multi-tenancy</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
@@ -636,6 +638,7 @@ selfManagedPlan:
                         <div class="pricing-square-item">1 Trendz development instances</div>
                         <div class="pricing-square-item">3 Edge production instances</div>
                         <div class="pricing-square-item">Integrations feature</div>
+                        <div class="pricing-square-item">Multi-tenancy</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
