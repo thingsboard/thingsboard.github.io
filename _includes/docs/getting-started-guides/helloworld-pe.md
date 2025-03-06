@@ -172,8 +172,8 @@ You can make the customer the owner of the device during its creation stage.
 ### Step 7.3 Share the dashboard
 
 Let's share our dashboard with the customer.
-But нou can't share an individual dashboard directly; you can only share a dashboard group that includes the desired dashboard.
-Our dashboard is in the group "All". Ideally, we should create a new dashboard group and move our dashboard into it, but to simplify this guide, we'll use the "All" group.
+In ThingsBoard, you can't share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
+By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we'll use the existing "All" group for this guide.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
