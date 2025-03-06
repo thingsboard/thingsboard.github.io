@@ -80,7 +80,7 @@ and explore step-by-step how-to guides for constructing end-to-end IoT solutions
             <img class="feature-logo" src="/images/trendz/icons/ai-assistant.svg" alt="ai-assistant">
             <div class="feature-title">AI Assistant</div>
             <div class="feature-text">
-                Learn how to use AI Assistance to generate visualizations effortlessly.
+                Learn how to use AI Assistant to generate visualizations effortlessly.
             </div>
         </a>
     </div>

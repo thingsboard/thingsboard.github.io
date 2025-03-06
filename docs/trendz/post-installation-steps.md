@@ -113,3 +113,12 @@ Configure the link to your ThingsBoard instance in Settings to use this feature.
 After this, you can open your modified or newly created dashboard in a new tab by enabling the Open dashboard in a separate window field.
 
 ![image](/images/trendz/open-dashboard-in-separate-tab.png)
+
+## AI Assistant
+
+To use AI Assistant feature in Trendz, you need to configure it first. To enable your own AI model, go to **Settings → General → AI Assistant** in Trendz. 
+There, you can enable the **Use own model** option, select an AI provider (OpenAI, Amazon Bedrock, or Google), and enter the required API credentials.
+
+For more details on configuring AI Assistant, you can read more [here](/docs/trendz/custom-ai-model-configuration.md).
+
+![image](/images/trendz/ai/use-own-model-1.png)

@@ -24,7 +24,7 @@ trendz-assistance-ai-models:
 
 To enable the AI Assistance feature on the self-hosted Trendz application, or to not be related to the provided by cloud token limits, it is possible to configure your own large language model.
 
-To enable/configure your own model, it’s necessary to go: *Setting* -> *General* -> *AI Assistance*
+To enable/configure your own model, it’s necessary to go: *Setting* -> *General* -> *AI Assistant*
 {% include images-gallery.html imageCollection="trendz-assistance-use-own-model" %}
 
 To use the own model it’s necessary to enable **Use own model**. After enabling the own model it’s possible to choose an AI provider and model. Additionally, it’s necessary to enter *API key* or
