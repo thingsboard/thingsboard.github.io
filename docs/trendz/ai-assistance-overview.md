@@ -5,128 +5,128 @@ description: Step-by-step guide to interact with Trendz AI Assistance.
 
 trendz-assistance-overview:
   0:
-    image: /images/trendz/ai/overview-start-new-chat.png
+    image: https://img.thingsboard.io/trendz/ai/overview-start-new-chat.png
     title: 1.Press “New Chat”
   1:
-    image: /images/trendz/ai/overview-save-topology-entities.png
+    image: https://img.thingsboard.io/trendz/ai/overview-save-topology-entities.png
     title: 2.Here you will see the popup with business entity selection - here you can define the entities that will be considered by AI for the current conversation. Select business entities that will be used for this chat (It’s possible to always modify them). Click “Save” to apply selections.
   2:
-    image: /images/trendz/ai/overview-send-new-message.png
+    image: https://img.thingsboard.io/trendz/ai/overview-send-new-message.png
     title: 3.Write and send the question.
   3:
-    image: /images/trendz/ai/overview-final-view.png
+    image: https://img.thingsboard.io/trendz/ai/overview-final-view.png
     title: 4.See the result.
 
 trendz-assistance-capabilities-visualization:
   0:
-    image: /images/trendz/ai/capabilities/1-simple-table.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/1-simple-table.png
     title: Table (without dynamic columns)
   1:
-    image: /images/trendz/ai/capabilities/2-line.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/2-line.png
     title: Line
   2:
-    image: /images/trendz/ai/capabilities/3-pie.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/3-pie.png
     title: Pie
   3:
-    image: /images/trendz/ai/capabilities/4-bar.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/4-bar.png
     title: Bar
   4:
-    image: /images/trendz/ai/capabilities/5-heatmap.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/5-heatmap.png
     title: Heatmap
   5:
-    image: /images/trendz/ai/capabilities/6-heatmap-calendar.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/6-heatmap-calendar.png
     title: Heatmap Calendar
   6:
-    image: /images/trendz/ai/capabilities/7-card.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/7-card.png
     title: Card
 
 trendz-assistance-capabilities-date-picker:
   0:
-    image: /images/trendz/ai/capabilities/8-date-picker.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/8-date-picker.png
     title: Apply a date picker
 
 trendz-assistance-capabilities-date-fields:
   0:
-    image: /images/trendz/ai/capabilities/9-date-fields.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/9-date-fields.png
     title: Use date fields
 
 trendz-assistance-capabilities-view-name:
   0:
-    image: /images/trendz/ai/capabilities/10-view-name.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/10-view-name.png
     title: Assign a name for each column and visualization
 
 trendz-assistance-capabilities-filter:
   0:
-    image: /images/trendz/ai/capabilities/11-filter.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/11-filter.png
     title: Add filters
 
 trendz-assistance-capabilities-foreing-language:
   0:
-    image: /images/trendz/ai/capabilities/12-foreign-language.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/12-foreign-language.png
     title: Answer questions in different languages
 
 trendz-assistance-chat-page:
   0:
-    image: /images/trendz/ai/chat-page-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-page-1.png
     title: The chat history will be shown on the left side of the screen (1). The visualization of the previously asked in this chat question will be located on the right side of the screen (2).
   1:
-    image: /images/trendz/ai/chat-page-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-page-2.png
     title: If it is necessary it is possible to change the generated time range.
   2:
-    image: /images/trendz/ai/chat-page-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-page-3.png
     title: If it is necessary it is possible to change or remove generated filters. 
 
 trendz-assistance-send-new-msg:
   0:
-    image: /images/trendz/ai/send-message-1.png
+    image: https://img.thingsboard.io/trendz/ai/send-message-1.png
     title: Press the “New message” button
   1:
-    image: /images/trendz/ai/send-message-2.png
+    image: https://img.thingsboard.io/trendz/ai/send-message-2.png
     title: Type and send the message by pressing the “Send” icon on the left side of the input field.
 
 trendz-assistance-edit-msg:
   0:
-    image: /images/trendz/ai/edit-message-1.png
+    image: https://img.thingsboard.io/trendz/ai/edit-message-1.png
     title: Press the “Edit last message” button
   1:
-    image: /images/trendz/ai/edit-message-2.png
+    image: https://img.thingsboard.io/trendz/ai/edit-message-2.png
     title: Modify this message, and send it by pressing the “Submit” icon on the left side of the input field.
 
 trendz-assistance-check-msg:
   0:
-    image: /images/trendz/ai/check-message-1.png
+    image: https://img.thingsboard.io/trendz/ai/check-message-1.png
     title: You can check on of the previous messages by pressing on it. After the previously generated view/answer will appear on the right side of the screen.
 
 trendz-assistance-edit-selected-msg:
   0:
-    image: /images/trendz/ai/edit-selected-msg-1.png
+    image: https://img.thingsboard.io/trendz/ai/edit-selected-msg-1.png
     title: Press on the pencil icon on the left of the message to edit
   1:
-    image: /images/trendz/ai/edit-selected-msg-2.png
+    image: https://img.thingsboard.io/trendz/ai/edit-selected-msg-2.png
     title: After that, it’s necessary to modify the selected message by typing inside it. You can confirm or cancel the change by pressing the buttons on the right side of the message. 
 
 trendz-assistance-rerun-msg:
   0:
-    image: /images/trendz/ai/rerun-msg.png
+    image: https://img.thingsboard.io/trendz/ai/rerun-msg.png
     title: Press on the refresh button on the right upper side of the selected message.
 
 trendz-assistance-save-config:
   0:
-    image: /images/trendz/ai/chat-save-config-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-save-config-1.png
     title: Press the “Save config” button
   1:
-    image: /images/trendz/ai/chat-save-config-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-save-config-2.png
     title: Choose the view collection where you want to save the generated view config
 
 trendz-assistance-topology:
   0:
-    image: /images/trendz/ai/chat-topology-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-topology-1.png
     title: You can access the Topology Entities tab by starting a new chat or by clicking on the selected business entities next to the Topology Entities label in the upper left corner of the screen.
   1:
-    image: /images/trendz/ai/chat-topology-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-topology-2.png
     title: Specify which business entities or business entity fields AI Assistance needs to know.
   2:
-    image: /images/trendz/ai/chat-topology-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-topology-3.png
     title: It is also possible to specify the description for a business entity or its fields.
 ---
 
@@ -138,7 +138,7 @@ different visualizations according to the request given in the free-speech form 
 like date range, time grouping, aggregation, filtering, etc.
 
 To interact with the AI Assistant, follow these simple steps:
-1. To access AI Assistance, click on the icon![image](/images/trendz/ai/overview-ai-assistance-icon.png) labeled *Assistant*
+1. To access AI Assistance, click on the icon![image](https://img.thingsboard.io/trendz/ai/overview-ai-assistance-icon.png) labeled *Assistant*
    located on the left side of the workspace. Press **New Chat**.
 2. Here you will see the popup with business entity selection - here you can define the entities that will be considered
    by AI for the current conversation. Select **business entities** that will be used for this chat (It’s possible to always modify them).

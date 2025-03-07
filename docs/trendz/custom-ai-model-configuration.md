@@ -5,18 +5,18 @@ description: Step-by-step guide how to configure custom AI model.
 
 trendz-assistance-use-own-model:
   0:
-    image: /images/trendz/ai/use-own-model-1.png
+    image: https://img.thingsboard.io/trendz/ai/use-own-model-1.png
     title: To enable/configure your own model, it’s necessary to go Setting -> General -> AI Assistance
 
 trendz-assistance-ai-models:
   0:
-    image: /images/trendz/ai/ai-google-model.png
+    image: https://img.thingsboard.io/trendz/ai/ai-google-model.png
     title: Google (Recommended)
   1:
-    image: /images/trendz/ai/ai-openai-model.png
+    image: https://img.thingsboard.io/trendz/ai/ai-openai-model.png
     title: Open AI
   2:
-    image: /images/trendz/ai/ai-aws-model.png
+    image: https://img.thingsboard.io/trendz/ai/ai-aws-model.png
     title: Amazon Bedrock
 ---
 * TOC
