@@ -705,7 +705,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
@@ -734,7 +734,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
@@ -765,7 +765,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
@@ -795,7 +795,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
@@ -836,7 +836,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support within <b>12 hours</b>
@@ -880,7 +880,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
@@ -909,7 +909,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
@@ -938,7 +938,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
@@ -967,7 +967,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
