@@ -144,7 +144,7 @@
                         {% endfor %}
                     </ul>
                 {% endif %}
-                <h2 style="font-size:{{ titleSize }}; color: {{ titleColor }}; line-height: {{ titleLineHeight }}; font-weight: {{ titleWeight }};">{{ carouselItem[1].title }}</h2>
+                <span style="font-size:{{ titleSize }}; color: {{ titleColor }}; line-height: {{ titleLineHeight }}; font-weight: {{ titleWeight }}; text-align: center">{{ carouselItem[1].title }}</span>
             </div>
             <p style="font-size:{{ descriptionSize }}; color: {{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ carouselItem[1].description }}</p>
             <div id="{{ carouselItem[1].linkId }}" class="card-link">
