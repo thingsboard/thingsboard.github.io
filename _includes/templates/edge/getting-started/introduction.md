@@ -1,8 +1,7 @@
-The aim of this tutorial is to guide you through the fundamental usage of the most widely-used features of ThingsBoard Edge. Throughout this tutorial, you will learn how to:
+This tutorial will guide you through the fundamentals of the **ThingsBoard Edge** platform and introduce you to the most widely used features. From this tutorial, you will learn how to:
+* Install and run **ThingsBoard Edge** on your machine.
+* Connect local devices, such as temperature sensors.
+* Transmit data from the device to the **Edge** and then from the **Edge** to the **ThingsBoard Cloud**.
+* Create and configure real-time dashboards.
 
-- Connect local devices, such as sensors, to ThingsBoard Edge;
-- Provision sensors from ThingsBoard Edge to the {{currentThingsBoardVersion}} server;
-- Transmit data from sensors to ThingsBoard Edge and further propagate this data to the {{currentThingsBoardVersion}} server;
-- Construct real-time end-user dashboards in the cloud and provision them to the Edge.
-
-To maintain simplicity, in this guide we will connect and visualize data from a temperature sensor.
+To keep it simple, we will skip over lengthy descriptions. However, if you need more detailed information, check out the [“What is ThingsBoard Edge” article](/docs/{{docsPrefix}}getting-started-guides/what-is-edge/){:target="_blank"} and explore our other documentation. 

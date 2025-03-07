@@ -2,7 +2,7 @@
 - [Getting started guide](/docs/{{docsPrefix}}getting-started/) - Provide quick overview of main ThingsBoard Edge features. Designed to be completed in 15-30 minutes:
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [Installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE server.
+- [Installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard Server.
 {% endif %}
 - Edge Rule Engine:
 {% if currentGuide != "RuleChainTemplates" %}

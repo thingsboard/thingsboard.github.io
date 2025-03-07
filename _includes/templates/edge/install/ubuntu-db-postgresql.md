@@ -8,17 +8,9 @@ Many cloud providers offer managed **PostgreSQL** services, making it a cost-eff
 
 {% include templates/install/postgres-install-ubuntu.md %}
 
-Connect to the **"postgres"** database as the **"postgres"** user:
+Finally, create a new PostgreSQL database named **tb_edge** by running the following command:
 
 ```bash
-psql -U postgres -d postgres -h 127.0.0.1 -W
+echo "CREATE DATABASE tb_edge;" | psql -U postgres -d postgres -h 127.0.0.1 -W
 ```
 {: .copy-code}
-
-Create the **ThingsBoard Edge** database and name it **"tb_edge"** :
-```bash
-CREATE DATABASE tb_edge;
-```
-{: .copy-code}
-
-Press **"Ctrl+D"** twice to quit PostgreSQL.
