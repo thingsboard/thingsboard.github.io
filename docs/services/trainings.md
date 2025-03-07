@@ -1,231 +1,189 @@
 ---
-layout: common
+layout: trainings
 title: Training sessions
 notitle: "true"
 description: ThingsBoard training sessions
 
 ---
 
-<h1 class="mainTitle">Training sessions</h1>
 
-ThingsBoard training sessions are educational events that are delivered to your company’s engineers by ThingsBoard core team members. The primary goals of ThingsBoard education courses are:
-
-- Boosting your experience with the ThingsBoard platform.
-- Familiarizing you with platform features, APIs and integrations.
-- Addressing practical questions related to your use cases.
-- Minimizing time-to-market for your IoT product or solution.
-
-ThingsBoard training sessions are on-demand online events for up to 8 people. On-site training sessions are also available. [Contact us](/docs/contact-us/) for more details.
-
-<br>
-
-<span class="heading">Training courses:</span>
-
-<div class="service-info-blocks">
-  <div class="card">
-    <h3 class="title">ThingsBoard Basics</h3>
-    <p class="sub-title">Basic understanding of IoT and programming concepts</p>
-    <p class="description">Learn how ThingsBoard platform helps businesses to implement IoT use cases and support IoT solutions. This training session will provide you with the basic understanding of ThingsBoard features and how they can be used in your IoT product.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>software and hardware engineers, architects</b></p>
-      <div id="thingsboard-basics" class="card-drop" onclick="dropContent(id)">Agenda</div>
+<div class="trainings">
+    <div class="trainings-hero trainings-wrapper">
+        <div class="trainings-hero-top">
+            <h1 class="trainings-h1">ThingsBoard training sessions</h1>
+            <div class="trainings-hero-top-images">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-home-page.png" class="trainings-hero-image" alt="Thingsboard dashboards and menus">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-tenant-list.png" class="trainings-hero-image-2" alt="Thingsboard tenant list">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-alarm-list.png" class="trainings-hero-image-3" alt="Thingsboard alarm list">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-scada-example.png" class="trainings-hero-image-4" alt="Thingsboard SCADA">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-rule-chains-list.png" class="trainings-hero-image-5" alt="Thingsboard rule chains list">
+            </div>
+        </div>
+        <div class="trainings-contact">
+            <div class="contact">
+                <div class="contact-label">
+                    <h4 class="trainings-h4">Training sessions</h4>
+                    <p>Fast, informative, and engaging</p>
+                </div>
+                <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
+            </div>
+            <p class="contact-text">
+                Our ThingsBoard training sessions are practical workshops led by experts from the ThingsBoard team, created especially for your company’s engineers. We offer fifteen 2-hour sessions that explain the basics of using ThingsBoard. Even though our documentation is detailed, these sessions focus on the most important points, helping you start IoT solution development quickly and easily.
+            </p>
+            <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
+        </div>
     </div>
-    <div id="thingsboard-basics" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Platform installation</p>
-        <li>Review available installation options. Highlight security and configuration aspects.</li>
-        <li>Exercise: setup ThingsBoard instance on AWS.</li>
-        <p>Web UI</p>
-        <li>Explain basic web UI capabilities and main entities: Devices, Customers, Users, Dashboards.</li>
-        <li>Review available widget types and explain their basic configuration parameters.</li>
-        <li>Explain ThingsBoard user roles and their permissions.</li>
-        <li>Exercise: create Device and provision Device Credentials.</li>
-        <li>Exercise: create Dashboard and assign it to the Customer.</li>
-        <p>ThingsBoard API</p>
-        <li>Explain ThingsBoard API for device connectivity and integration with server-side applications.</li>
-        <li>Exercise: create device firmware to publish telemetry and attributes over MQTT.</li>
-        <li>Exercise: add widgets to the Dashboard to visualize data from the previous exercise.</li>
-        <p>Rule Engine</p>
-        <li>Explain Rule engine data flow.</li>
-        <li>Review Rule components: messages, relations, nodes and their available implementations.</li>
-        <li>Exercise: configure alerting rule based on device attributes and timeseries values.</li>
-        <p>Use-cases and Q&A session</p>
-      </div>
+    <div class="trainings-cards">
+        <div class="trainings-wrapper">
+            <div class="trainings-cards-wrapper">
+                <div class="trainings-card">
+                    <h4 class="trainings-h4">Who is this for</h4>
+                    <ul>
+                        <li>
+                            <img src="https://img.thingsboard.io/trainings/icon_people.svg" alt="Users icon">
+                            <span>Teams of <b>up to 8 people</b> who need to learn at the same pace.</span>
+                        </li>
+                        <li>
+                            <img src="https://img.thingsboard.io/trainings/icon_trophy.svg" alt="Trophy icon">
+                            <span>Individuals ready to get a <b>solid foundation and fully leverage</b> ThingsBoard.</span>
+                        </li>
+                        <li>
+                            <img src="https://img.thingsboard.io/trainings/icon_target-line.svg" alt="Target icon">
+                            <span>Those eager to quickly create <b>top-notch solutions</b>.</span>
+                        </li>
+                    </ul>
+                </div>       
+                <div class="trainings-card">
+                    <h4 class="trainings-h4">Primary goals of the training</h4>
+                    <ul>
+                        <li>
+                            <img src="https://img.thingsboard.io/trainings/icon_arrow-growth.svg" alt="Graph icon">
+                            <span>Enhance your <b>experience</b> with ThingsBoard. </span>
+                        </li>
+                        <li>
+                            <i class="far fa-question-circle fa-lg" style="color: #2A7DEC"></i>
+                            <span>Answer <b>practical questions</b> related to your specific use cases. </span>
+                        </li>
+                        <li>
+                            <img src="https://img.thingsboard.io/trainings/akar-icons_reduce.svg" alt="Akar icons">
+                            <span>Reduce your <b>time-to-market</b> for IoT products or solutions.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="card">
-    <h3 class="title">ThingsBoard Data Visualization</h3>
-    <p class="sub-title">Basic concepts of ThingsBoard platform</p>
-    <p class="description">Learn how ThingsBoard platform helps to collect and visualize IoT data and use this knowledge to improve customer experience. This training session will provide you with the in-depth understanding of ThingsBoard visualization capabilities, widget customization, user roles, and permissions.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>front-end developers, engineers, architects</b></p>
-      <div id="thingsboard-data-visualization" class="card-drop" onclick="dropContent(id)">Agenda</div>
+    <div class="courses">
+        <div class="trainings-wrapper">
+            <h3 class="trainings-h3">Training courses</h3>
+            {% include carousel.liquid items = 3 itemsHigher960 = 1 itemsHigher600 = 1 itemsHigher0 = 1 dotButtonMode = "circle" collectionMap = "trainings-carousel" cardMode = true carouselMargin = 0 stagePadding = 0 navMode = "smallArrow" titleSize = "28px" titleColor = "#000000DE" titleWeight = "500" titleLineHeight = "38px" descriptionSize = "18px" descriptionColor = "#0000008A" descriptionLineHeight = "24px" linkSize = "16px" linkLineHeight = "24px" linkWeight = "400" %}
+            <div class="owl-carousel-toggle-content" id="owl-carousel-0">
+                <div class="owl-carousel-toggle-content-item" id="data-visualization">
+                    <div class="trainings-contact">
+                        <div class="contact">
+                            <div>
+                                <h4 class="trainings-h4">Data visualization</h4>
+                            </div>
+                            <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
+                        </div>
+                        <p class="contact-text">
+                            Learn how to effectively model and visualize data using the ThingsBoard platform. This training block covers the essentials of ThingsBoard's Web UI, entity management, and advanced data visualization techniques. You will gain hands-on experience with creating and customizing widgets, as well as building comprehensive dashboards that provide insightful data representations for your IoT projects.            
+                        </p>
+                        <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
+                    </div>                
+                    {% include accordion.liquid collectionMap = "trainings-data-visualization-accordion-collection" openStatus = "firstOpened" %}
+                </div>
+                <div class="owl-carousel-toggle-content-item" id="administration">
+                    <div class="trainings-contact">
+                        <div class="contact">
+                            <div>
+                                <h4 class="trainings-h4">ThingsBoard administration</h4>
+                            </div>
+                            <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
+                        </div>
+                        <p class="contact-text">
+                            This training provides administrators with the skills needed to successfully deploy, configure, and manage ThingsBoard in various environments. You will learn monolithic and cluster-based deployment strategies, understand architecture components. This training covers hands-on AWS deployment, troubleshooting common issues using logs and diagnostic tools, and improving ThingsBoard’s performance and stability.                        
+                        </p>
+                        <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
+                    </div>   
+                    {% include accordion.liquid collectionMap = "trainings-thingsboard-administration-accordion-collection" openStatus = "firstOpened" %}
+                </div>
+                <div class="owl-carousel-toggle-content-item" id="scada">
+                    <div class="trainings-contact">
+                        <div class="contact">
+                            <div>
+                                <h4 class="trainings-h4">SCADA system</h4>
+                            </div>
+                            <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
+                        </div>
+                        <div class="contact-text">
+                            <p class="test">
+                                You will learn how to utilize existing SCADA symbols, add new ones, work with SVG tags, and define behaviors and properties with a full description of their capabilities. By the end of the course, participants will be able to build powerful dashboards that optimize process management and monitoring.
+                            </p> 
+                            <p class="tip">
+                                <i class="fas fa-exclamation-circle" style="color: #F36500"></i>
+                                <span>
+                                    Recommended for users with knowledge of the platform or after completing the "Data Visualization" training
+                                </span>
+                            </p>  
+                        </div>
+                        <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
+                    </div>   
+                    {% include accordion.liquid collectionMap = "trainings-scada-accordion-collection" openStatus = "firstOpened" %}
+                </div>
+                <div class="owl-carousel-toggle-content-item" id="management">
+                    <div class="trainings-contact">
+                        <div class="contact">
+                            <div>
+                                <h4 class="trainings-h4">Platform management and security</h4>
+                            </div>
+                            <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
+                        </div>
+                        <p class="contact-text">
+                            This training program helps participants gain a strong understanding of ThingsBoard’s main features through hands-on practice. It covers data automation using the Rule Engine, user access control with RBAC, alarm management, and API interaction. Advanced users will also learn custom rule node development to extend the system capabilities. This program is perfect for professionals who want to build scalable, secure, high-performing IoT solutions using ThingsBoard.                        
+                        </p>
+                        <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/">Contact Us</a>
+                    </div>   
+                    {% include accordion.liquid collectionMap = "trainings-platform-management-accordion-collection" openStatus = "firstOpened" %}                
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="thingsboard-data-visualization" class="drop-content">
-      <div>
-        <p>Web UI</p>
-        <li>Explain web UI capabilities and main business entities: Devices, Customers, Users, and Dashboards.</li>
-        <li>Explain ThingsBoard user roles and their permissions.</li>
-        <li>Exercise: create Device and provision Device Credentials</li>
-        <p>Dashboards</p>
-        <li>Explain Dashboard features and capabilities</li>
-        <li>Exercise: create Dashboard and assign it to Customer.</li>
-        <li>Exercise: modify dashboard settings: background color, image, margins.</li>
-        <li>Exercise: working with device aliases.</li>
-        <li>Exercise: import/export your dashboard.</li>
-        <p>Widgets</p>
-        <li>Explain widget types, data sources, basic and advanced settings.</li>
-        <li>Exercise: configure and tune widget to show simulated device values.</li>
-        <li>Exercise: configure and tune widget to show real device values.</li>
-        <li>Exercise: configure and tune card widgets.</li>
-        <li>Exercise: configure and tune gauge widgets.</li>
-        <li>Exercise: configure and tune line chart widgets.</li>
-        <li>Exercise: configure and tune map widgets.</li>
-        <p>Real-time and historical data visualization</p>
-        <li>Configure line chart widget to show historical data</li>
-        <li>Configure line chart widget to show real-time data with time-window.</li>
-        <p>Custom widgets</p>
-        <li>Explain widget library functionality</li>
-        <li>Exercise: Customize widget look and feel</li>
-        <li>Exercise: Customize widget logic</li>
-      </div>
+    <div class="trainings-cards trainings-cards-bottom">
+        <div class="trainings-bottom trainings-wrapper">
+            <div class="trainings-cards-wrapper">
+                <div class="trainings-card">
+                    <span class="trainings-card-icon">
+                        <i class="fas fa-users fa-5x" style="color: #2A7DEC"></i>
+                    </span>
+                    <div class="trainings-card-title-text">
+                        <span class="trainings-card-title" style="display: flex">
+                            {% include number-animation.html startNum = 1 targetNum = 1200 %}+
+                        </span>
+                        <span class="trainings-card-subtitle">Participants</span>
+                    </div>
+                    <p class="trainings-card-text">More than 1200 participants took part in ThingsBoard training sessions</p>
+                </div>       
+                <div class="trainings-card">
+                    <div class="trainings-card-icon">
+                        <i class="fas fa-comments fa-5x" style="color: #2A7DEC"></i>
+                    </div>
+                    <div class="trainings-card-title-text">
+                        <span class="trainings-card-title" style="display: flex">
+                            {% include number-animation.html startNum = 1 targetNum = 200 %}+
+                        </span>
+                        <span class="trainings-card-subtitle">Sessions</span>
+                    </div>
+                    <p class="trainings-card-text">More than 200 sessions were organized for ThingsBoard clients</p>
+                </div>    
+            </div>    
+            <div class="trainings-card-contact-us">
+                <p>
+                    Professional training tailored for your needs. Get in touch and start learning!
+                </p>
+                <a class="contact-us-button" href="/docs/contact-us/">Contact Us</a>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="card">
-    <h3 class="title">Device connectivity and application development using ThingsBoard</h3>
-    <p class="sub-title">Basic concepts of ThingsBoard platform</p>
-    <p class="description">Learn how to use ThingsBoard platform APIs to build connected applications for your IoT devices. This training session will provide you with the in-depth understanding of supported network protocols and device APIs.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>developers, engineers, architects</b></p>
-      <div id="device-connectivity" class="card-drop" onclick="dropContent(id)">Agenda</div>
-    </div>
-    <div id="device-connectivity" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Device connectivity options</p>
-        <li>Review of supported network protocols: MQTT, HTTP and CoAP.</li>
-        <li>Exercise: telemetry data upload using MQTT.</li>
-        <li>Exercise: telemetry data upload using HTTP.</li>
-        <li>Exercise: telemetry data upload using CoAP.</li>
-        <p>Attributes API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Reporting device attribute changes to ThingsBoard.</li>
-        <li>Exercise: Subscribe to server-side attribute updates.</li>
-        <li>Exercise: Save and restore application state using ThingsBoard server.</li>
-        <p>Timeseries API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Reporting time-series data to ThingsBoard.</li>
-        <p>RPC API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Send one-way RPC command to Device.</li>
-        <li>Exercise: Send two-way RPC command to Device.</li>
-        <li>Exercise: Send RPC command from Device to Server.</li>
-        <p>Messaging between Devices</p>
-        <li>Messaging rule nodes overview.</li>
-        <li>Exercise: Send message from one device application to another.</li>
-        <p>Load Balancing, Scalability, and Failover</p>
-        <li>Use cases and platform capabilities overview.</li>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="title">Server-side application development using ThingsBoard API</h3>
-    <p class="sub-title">Basic concepts of ThingsBoard platform</p>
-    <p class="description">Learn how to connect your cloud applications with your IoT devices using ThingsBoard platform APIs. This training session will provide you with in-depth understanding platform REST and websocket APIs, rule engine, data collection and analytics use cases.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>developers, engineers, analysts and architects</b></p>
-      <div id="server-side-application" class="card-drop" onclick="dropContent(id)">Agenda</div>
-    </div>
-    <div id="server-side-application" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Platform API</p>
-        <li>REST API overview.</li>
-        <li>Exercise: Create tenant, device and customer using REST API.</li>
-        <li>Exercise: Create dashboard and assign it to user using REST API.</li>
-        <li>Exercise: Send RPC command to device using REST API.</li>
-        <li>Exercise: Fetch device data using REST API.</li>
-        <li>Exercise: Update device attribute using REST API.</li>
-        <li>Exercise: Subscribe to device data feed using websocket.</li>
-        <p>Rule engine</p>
-        <li>Explain Rule engine data flow.</li>
-        <li>Review Rule components: filters, processors and actions and their available implementations.</li>
-        <li>Explain available rule nodes and their implementations.</li>
-        <p>Data collection and analytics</p>
-        <li>Use cases and data flow overview.</li>
-        <li>Exercise: Pushing telemetry and attributes data to Kafka.</li>
-        <li>Exercise: Pushing telemetry and attributes data to RabbitMQ.</li>
-        <li>Exercise: Pushing telemetry and attributes data to REST API.</li>
-        <p>RPC API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Send one-way RPC command to Device.</li>
-        <li>Exercise: Send two-way RPC command to Device.</li>
-        <p>Load Balancing, Scalability and Failover</p>
-        <li>Use cases and platform capabilities overview.</li>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3 class="title">ThingsBoard Administration</h3>
-    <p class="sub-title">Basic understanding of IoT and system administration</p>
-    <p class="description">Learn how to provision, monitor and scale your ThingsBoard cluster. This training session will provide you with in-depth understanding platform configuration, troubleshooting and scalability. We will also cover security and load balancing topics.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>system administrators and architects</b></p>
-      <div id="thingsboard-administration" class="card-drop" onclick="dropContent(id)">Agenda</div>
-    </div>
-    <div id="thingsboard-administration" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Single-node platform installation</p>
-        <li>Explain installation options. Highlight security and configuration aspects.</li>
-        <li>Exercise: setup ThingsBoard instance on AWS using public AMIs.</li>
-        <li>Exercise: setup ThingsBoard instance on CentOS.</li>
-        <p>ThingsBoard configuration</p>
-        <li>Explain main configuration files.</li>
-        <li>Exercise: general system configuration.</li>
-        <p>ThingsBoard troubleshooting</p>
-        <li>Review log files and their configuration.</li>
-        <li>Exercise: changing log levels for particular components.</li>
-        <p>ThingsBoard cluster installation</p>
-        <li>Explain cluster deployment options and configuration.</li>
-        <li>Exercise: ThingsBoard cluster setup.</li>
-        <li>Exercise: ThingsBoard cluster setup troubleshooting.</li>
-        <p>Load Balancing, Scalability, and Failover</p>
-        <li>Use cases and platform capabilities overview.</li>
-        <li>ThingsBoard architecture overview.</li>
-        <li>Exercise: Tuning cluster performance.</li>
-        <li>Exercise: Scaling ThingsBoard cluster.</li>
-        <li>Exercise: Replacing Failed node.</li>
-        <li>Exercise: Load balancing device connections.</li>
-        <li>Exercise: Load balancing server-side API calls.</li>
-        <p>Security</p>
-        <li>Use cases and security options overview.</li>
-        <li>Exercise: Securing MQTT API calls using SSL and X.509 certificates.</li>
-        <li>Exercise: Securing HTTP API calls using SSL.</li>
-      </div>
-    </div>
-  </div>
 </div>
 
-<div class="bottom">
-    <a id="Serv_Trainings_ContactUs" href="/docs/contact-us/" class="contact-button gtm_button">Contact Us</a>
-    <p>Contact us to join the ThingsBoard training courses</p>
-</div>

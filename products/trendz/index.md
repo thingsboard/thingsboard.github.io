@@ -44,8 +44,8 @@ selfManagedPlan:
                     <p class="text">Identify when a machine is likely to fail, and take preventive measures to avoid downtime</p>
                 </div>
                 <div class="content-block">
-                    <h3 class="header">Self-service Analytics</h3>
-                    <p class="text">Give users simple instrument for answering their own questions in minutes.</p>
+                    <h3 class="header">AI Assistant</h3>
+                    <p class="text">Chat with your data to get instant, AI-driven insights.</p>
                 </div>
             </div>
         </main>
