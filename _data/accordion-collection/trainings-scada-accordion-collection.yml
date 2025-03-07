@@ -1,0 +1,83 @@
+0:
+  title: "ThingsBoard and IoT gateway essentials – from connectivity to SCADA visualisation"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Learn the main device connectivity possibilities and fundamentals of the ThingsBoard IoT Gateway option."
+    1:
+      textContent: "Understand what ThingsBoard IoT Gateway is and explore the variety of capabilities and protocols it provides."
+    2:
+      textContent: "Learn about rule chains – what they are, how they work, and how to set them up with practical examples such as processing data with default rule chains, editing them, and assigning custom rule chains to devices."
+    3:
+      textContent: "Dive into a quick overview of ThingsBoard IoT data visualisation."
+    4:
+      textContent: "Learning how to set up a dashboard with an example of SCADA systems in traditional and high-performance modes."
+    5:
+      textContent: "Learn how to use acquired knowledge to develop a SCADA system from scratch or by utilising existing solution templates."
+    6:
+      textContent: "Review the SCADA water pool template, including setting up the solution, a walkthrough, and an explanation of its inner workings."
+    7:
+      textContent: "Configure additional features on top of the SCADA pool template to create new solutions."
+    8:
+      textContent: "Engage in a Q&A session to ask questions and clarify any doubts."
+1:
+  title: "SCADA intro – fundamentals of SCADA interface and dashboard creation"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Learn the core functions of the SCADA user interface."
+    1:
+      textContent: "Understand the structure and navigation of the SCADA platform."
+    2:
+      textContent: "Discover how to create a basic dashboard using pre-configured symbols."
+    3:
+      textContent: "Use layout settings—such as grid, toolbar, and scaling options—for effective dashboard customization."
+    4:
+      textContent: "Work with different configurations to adjust the user interface to various operational scenarios."
+    5:
+      textContent: "Engage in a Q&A session to clear up any doubts and strengthen your skills."
+2:
+  title: "SCADA advanced - symbol management and tag configuration"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Learn how to navigate and manage the library of existing SCADA symbols."
+    1:
+      textContent: "Understand the process of searching, configuring, and adding symbols to dashboards."
+    2:
+      textContent: "Discover how to create new SCADA symbols and integrate them into your dashboard."
+    3:
+      textContent: "Use the built-in editor or XML to work with tags for real-time data visualization."
+    4:
+      textContent: "Work with tags effectively and ensure they update data correctly and interact smoothly."
+    5:
+      textContent: "Engage in a Q&A session to better understand advanced topics."
+3:
+  title: "SCADA mastery – advanced properties, behaviors, and widget engineering"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: 'Learn to set key behaviour parameters like “Value”, “Action,” and “Widget Action”.'
+    1:
+      textContent: "Understand the difference between static and dynamic properties and how to configure them."
+    2:
+      textContent: "Discover the principles of data binding, animations, and event reactions that drive interactive dashboard elements."
+    3:
+      textContent: "Use custom widget development techniques to optimize dashboard performance."
+    4:
+      textContent: "Work with custom widgets and bundles, integrating interactive elements into your dashboards."
+    5:
+      textContent: "Engage in a Q&A session to resolve any queries and ensure mastery of advanced development concepts."
+

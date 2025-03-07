@@ -77,11 +77,12 @@ Import Native Trendz widgets bundle
 * Press **Add new widget bundle** and select **import widget bundle**
 * Import downloaded  widget bundle
 
-This bundle contains 3 widgets:
+This bundle contains 4 widgets:
 * **Trendz View Static**- allow adding saved Trendz visualizations into ThingsBoard dashboards
 * **Trendz View Latest**- similar to previous but also support dashboard aliases for resolving entities
-* **Trendz Builder** - Trendz Visualization Builder for providing self-service interface to your end-users, 
-so they can create their own analysis using ThingsBoard dashboard. 
+* **Trendz Chat Assitant** - is an interactive tool that allows users to engage in chat-based sessions for quick data retrieval and analysis.
+* **Trendz Builder (Deprecated)** - Trendz Visualization Builder for providing self-service interface to your end-users, 
+so they can create their own analysis using ThingsBoard dashboard.
  
 **Note:** If after importing Trendz Widget Bundle into ThingsBoard, widgets do not work and white screen with error displayed - double-check
 that correct bundle was imported. Widget API in ThingsBoard v2.x and v3.x is different. Ensure that you downloaded bundle for 
