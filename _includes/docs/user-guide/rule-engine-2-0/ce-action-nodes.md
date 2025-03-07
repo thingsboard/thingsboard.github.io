@@ -652,7 +652,7 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
 
 ## Save Timeseries Node 
 
-<table  style="width:250px;">
+<table style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -660,57 +660,153 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries.png)
+Stores the incoming message payload as time series data of the message originator.
 
-Stores Timeseries data from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
-Configured **TTL** seconds is used for timeseries data expiration. **0** value means that data will never expire.
+**Expected incoming message format**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config.png)
+The node accepts messages of type `POST_TELEMETRY_REQUEST` and supports the following three **payload formats**:
 
-Additionally, you could disable updating values for incoming keys for the latest timeseries data (ts_kv_latest table) if **'Skip latest persistence'** flag is set to **true**.
-This could be helpful for highly loaded use-cases to decrease the pressure on the DB. 
-Please note, this feature could be enabled when the use-case does not require advanced filtering on the Dashboards. 
-For getting the latest value, the historical data could be fetched with limit 1 and DESC order.
+1. Key-value pairs: an object where each property name represents a time series key, and its corresponding value is the time series value.
+    ```json
+    {
+      "temperature": 42.2,
+      "humidity": 70
+    }
+    ```
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config-latest.png)
+2. Timestamped key-value pairs: an object that includes a `ts` property for the timestamp and a `values` property containing key-value pairs as defined in format 1.
+    ```json
+    {
+      "ts": 1737963587742,
+      "values": {
+        "temperature": 42.2,
+        "humidity": 70
+      }
+    }
+    ```
 
-Expects messages with **POST_TELEMETRY_REQUEST** message type. 
-If message Type is not **POST_TELEMETRY_REQUEST**, Message will be routed via **Failure** chain.
- 
-When timeseries data is published over existing API (HTTP / MQTT / CoAP / etc.) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
+3. Multiple timestamped key-value pairs: an array of timestamped key-value pair objects (defined in format 2).
+    ```json
+    [
+      {
+        "ts": 1737963595638,
+        "values": {
+          "temperature": 42.2,
+          "humidity": 70
+        }
+      },
+      {
+        "ts": 1737963601607,
+        "values": {
+          "pressure": 2.56,
+          "velocity": 0.553
+        }
+      }
+    ]
+    ```
 
-In cases when it is required to trigger timeseries data saving inside Rule Chain, the Rule Chain should be configured to transform Message payload  
-to the expected format and set message type to **POST_TELEMETRY_REQUEST**. It could be done using [**Script Transformation Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
+**Configuration: Processing settings**
 
-Message Metadata must contain **ts** field. This field identifies timestamp in milliseconds of published telemetry.
+The save time series node can perform three distinct actions, each governed by configurable processing strategies:
+- **Time series**: saves time series data to the `ts_kv` table in the database.
+- **Latest values**: updates time series data in the `ts_kv_latest` table in the database, if new data is more recent.
+- **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
+- **Calculated fields**: notifies calculated fields about updates to the time series data.
 
-Also, if Message Metadata contains **TTL** field, its value is used for timeseries data expiration, otherwise **TTL** 
-from Node Configuration is used.
+For each of these actions, you can choose from the following **processing strategies**:
+- **On every message**: perform the action for every incoming message.
+- **Deduplicate**: perform the action only for the first message from a specific originator within a configurable time interval. Minimum value for a deduplication interval is 1 second and maximum is 1 day.
+- **Skip**: never perform the action.
 
-**Since TB Version 3.3.3** you can enable 'useServerTs' param to use the timestamp of the message processing instead of the timestamp from the message. 
-Useful for all sorts of sequential processing if you merge messages from multiple sources (devices, assets, etc).
+> **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
 
-In the case of sequential processing, the platform guarantees that the messages are processed in the order of their submission to the queue. 
-However, the timestamp of the messages originated by multiple devices/servers may be unsynchronized long before they are pushed to the queue. 
-The DB layer has certain optimizations to ignore the updates of the "attributes" and "latest values" tables if the new record has a timestamp that is older than the previous record. 
+Processing strategies are configured through **Processing settings**, which offer two configuration modes:
 
-So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-basic-advanced-processing-settings-modes.png)
 
+- **Basic** - provides predefined strategies for all actions:
+    - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
+    - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions, meaning that only the first message from each originator received during the configured interval is processed, 
+    while subsequent messages from that originator within the same interval are ignored.
+    - WebSockets only: applies the **Skip** strategy to Time series and Latest values, and the **On every message** strategy to WebSockets. 
+      Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
-**Expected Message Payload example:**
-{% highlight json %}
-{  
-  "values": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-{% endhighlight %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-basic-processing-settings.png)
 
-After successful timeseries data saving, original Message will be passed to the next nodes via **Success** chain, 
-otherwise **Failure** chain is used.
+- **Advanced** - allows you to configure each action’s processing strategy independently.
 
-<br>
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings.png)
+
+When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
+
+- **Skipping database storage**
+
+  Choosing to disable one or more persistence actions (for instance, skipping database storage for Time series or Latest values while keeping WS updates enabled) introduces the risk of having only partial data available:
+  - If a message is processed only for real-time notifications (WebSockets) and not stored in the database, historical queries may not match data on the dashboard.
+  - When processing strategies for Time series and Latest values are out-of-sync, telemetry data may be stored in one table (e.g., Time series) while the same data is absent in the other (e.g., Latest values).
+
+- **Disabling WebSocket (WS) updates**
+
+  If WS updates are disabled, any changes to the time series data won’t be pushed to dashboards (or other WS subscriptions).
+  This means that even if a database is updated, dashboards may not display the updated data until browser page is reloaded.
+
+- **Skipping calculated field recalculation**
+
+  If telemetry data is saved to the database while bypassing calculated field recalculation, the aggregated value may not update to reflect the latest data.
+  Conversely, if the calculated field is recalculated with new data but the corresponding telemetry value is not persisted in the database, the calculated field's value might include data that isn’t stored.
+
+- **Different deduplication intervals across actions**
+
+  When you configure different deduplication intervals for actions, the same incoming message might be processed differently for each action.
+  For example, a message might be stored immediately in the Time series table (if set to *On every message*) while not being stored in the Latest values table because its deduplication interval hasn’t elapsed.
+  Also, if the WebSocket updates are configured with a different interval, dashboards might show updates that do not match what is stored in the database.
+
+- **Deduplication cache clearing**
+
+  The deduplication mechanism uses a cache to track processed messages within each interval. This cache is configured to store a maximum of 100 deduplication intervals, with a total retention period of up to 2 days.
+  For performance and system stability reasons, this cache is periodically cleared.
+  As a result, if a cache entry is removed during the deduplication period, messages from the same originator may be processed more than once within that interval.
+  This means deduplication should be used as a performance optimization rather than an absolute guarantee of single processing per interval.
+
+- **Whole message deduplication**
+
+  It’s important to note that deduplication is applied to the entire incoming message rather than to individual time series keys. 
+  For example, if the first message contains key A and is processed, and a subsequent message (received within the deduplication interval) contains key B, the second message will be skipped—even though it includes a new key. 
+  To safely leverage deduplication, ensure that your messages maintain a consistent structure so that all required keys are present in the same message, avoiding unintended data loss.
+
+The ability to configure each persistence action independently—including setting different deduplication intervals—is designed primarily as a performance optimization. 
+Because of the scenarios described above, these settings should be viewed as percentage enhancements rather than strict processing guarantees.
+
+**Configuration: Advanced settings**
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings.png)
+
+* **Use server timestamp** - if enabled, rule node will use current server time when time series data does not have an explicit timestamp associated with it (**payload format 1** is used). Available since TB Version 3.3.3
+
+    The node determines the timestamp for each time series data point using the following priority:
+    1. If the time series data includes a `ts` property (**payload formats 2 and 3**), this timestamp is used.
+    2. If the **Use server timestamp** option is enabled, the current server time is used.
+    3. If the message metadata contains a `ts` property (expected in UNIX milliseconds), this value is used.
+    4. If none of the above are provided, the timestamp when the message was created is used.
+
+    Using server time is particularly important in sequential processing scenarios where messages may arrive with out-of-order timestamps from multiple sources.
+    The DB layer has certain optimizations to ignore the updates of the attributes and latest values if the new record has a timestamp that is older than the previous record.
+    So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
+
+* **Default TTL (Time-to-Live)** - determines how long the stored data remains in the database. The TTL is set based on the following priority:
+    1. If the metadata contains a `TTL` property (expected as integer representing seconds), this value is used.
+    2. If the metadata does not specify a `TTL`, the node's configured TTL value is applied.
+    3. If the node's configured TTL is set to **0**, the Storage TTL defined in the tenant profile is used.
+
+> **Note**: TTL value of 0 means that the data never expires.
+
+**Output connections**
+* **Success:**
+  * If an incoming message was successfully processed.
+* **Failure:**
+  * If an incoming message type is not `POST_TELEMETRY_REQUEST`.
+  * If an incoming message payload is empty (for example, `{}` or `[]` or even `[{}, {}, {}]`).
+  * If unexpected error occurs during message processing.
 
 ## Save to Custom Table
 
