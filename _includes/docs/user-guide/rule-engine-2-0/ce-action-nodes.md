@@ -555,7 +555,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 ## Save Attributes Node
 
-<table  style="width:250px;">
+<table style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -563,37 +563,90 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes.png)
+Stores the incoming message payload as attribute data of the message originator.
 
-Stores attributes from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
-Configured **scope** is used to identify attributes scope.
+**Expected incoming message format**
 
-Supported scope types:
-
-- Client attributes
-- Shared attributes
-- Server attributes
-
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-config.png)
-
-Expects messages with **POST_ATTRIBUTES_REQUEST** message type.
-If message Type is not **POST_ATTRIBUTES_REQUEST**, Message will be routed via **Failure** chain. 
-
-When attributes are uploaded over existing API (HTTP / MQTT / CoAP / etc.) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
-
-In cases when it is required to trigger attributes saving inside Rule Chain, the Rule Chain should be configured to transform Message payload 
-to the expected format and set message type to **POST_ATTRIBUTES_REQUEST**. It could be done using [**Script Transformation Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
-
-**Expected Message Payload example:**
-{% highlight json %}
+The node accepts messages of type `POST_ATTRIBUTES_REQUEST` and expects incoming message payload to be an object where each property name represents an attribute key, and its corresponding value is the attribute value. For example:
+```json
 {
   "firmware_version": "1.0.1",
   "serial_number": "SN-001"
 }
-{% endhighlight %}
+```
 
-After successful attributes saving, original Message will be passed to the next nodes via **Success** chain, 
-otherwise **Failure** chain is used.
+**Configuration: Processing settings**
+
+The save attributes node can perform two distinct actions, each governed by configurable processing strategies:
+- **Attributes**: saves attribute data to the database.
+- **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
+
+For each of these actions, you can choose from the following **processing strategies**:
+- **On every message**: perform the action for every incoming message.
+- **Deduplicate**: perform the action only for the first message from a specific originator within a configurable time interval. Minimum value for a deduplication interval is 1 second and maximum is 1 day.
+- **Skip**: never perform the action.
+
+> **Note**: Processing strategies are available since TB version 4.0.
+
+Processing strategies are configured through **Processing settings**, which offer two configuration modes:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-processing-settings-modes.png)
+
+- **Basic** - provides predefined strategies for all actions:
+  - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
+  - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions, meaning that only the first message from each originator received during the configured interval is processed,
+    while subsequent messages from that originator within the same interval are ignored.
+  - WebSockets only: for all actions except WebSocket notifications, the **Skip** strategy is applied, while WebSocket notifications use the **On every message** strategy.
+    Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-basic-processing-settings.png)
+
+- **Advanced** - allows you to configure each action’s processing strategy independently.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings.png)
+
+When configuring processing strategies in advanced mode, certain combinations may lead to unexpected behavior. 
+For further details, please refer to the advanced processing strategies section of the Save Timeseries Node documentation.
+
+**Configuration: Scope**
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope.png)
+
+The node determines the attribute scope for each incoming message by evaluating the `scope` property in its metadata. 
+The supported scope types are **Client attributes**, **Shared attributes**, and **Server attributes**. The algorithm is as follows:
+
+1. If the incoming message metadata contains a non-empty `scope` property, the node compares its value against the supported scope values:
+   - `CLIENT_SCOPE` corresponds to **Client attributes**
+   - `SHARED_SCOPE` corresponds to **Shared attributes**
+   - `SERVER_SCOPE` corresponds to **Server attributes**
+2. If a match is found, the corresponding scope is applied, and processing continues.
+3. If no valid match is found, the message processing fails.
+4. If the `scope` property is absent or an empty string, the node uses the scope specified in the node configuration.
+
+**Configuration: Advanced settings**
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
+
+* **Save attributes only if the value changes** – if enabled, the node first retrieves the current values for the specified attribute keys and then compares them with the incoming values.
+  If an attribute is missing, its value has changed, or its data type differs from what’s stored, it is marked for saving. If no changes are detected, the node skips the save operation.
+* **Send attributes updated notification** – if enabled, and if the attribute scope is not `CLIENT_SCOPE` (i.e., for `SHARED_SCOPE` and `SERVER_SCOPE`), 
+  the node puts an [Attributes Updated](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) event to the queue named `Main`.
+* **Force notification to the device** - the node determines whether to notify the device about attribute updates by evaluating the **Force notification to the device** option and the `notifyDevice` property in the incoming message metadata. The algorithm is as follows:
+  1. If the **Force notification to the device** option is enabled, the node always sends attribute update notifications to the device, regardless of the `notifyDevice` metadata value.
+  2. If the option is disabled, the node checks the `notifyDevice` property in the message metadata:
+     - If the property is absent or an empty string, it defaults to sending the notification.
+     - If the property is provided, the notification is sent only if its value is `true` (ignoring case).
+  3. In all cases, the notification is only sent if the device has an active subscription for the updated (or deleted) attributes.
+
+**Output connections**
+
+* **Success:**
+  * If an incoming message was successfully processed.
+* **Failure:**
+  * If an incoming message type is not `POST_ATTRIBUTES_REQUEST`.
+  * If an incoming message payload cannot be parsed to attribute key-value pairs.
+  * If the incoming message metadata includes a non-empty `scope` property whose value does not match one of the valid attribute scopes (i.e. `CLIENT_SCOPE`, `SHARED_SCOPE`, or `SERVER_SCOPE`).
+  * If unexpected error occurs during message processing.
 
 <br>
 
