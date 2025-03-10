@@ -12,7 +12,7 @@
     {% for accordionItem in accordionCollection %}
         <div class="accordion-item">
             <div class="accordion-preview accordion-toggle {% if openStatus == "firstOpened" and forloop.first %}opened{% endif %}{% if openStatus == "allOpened" %}opened{% endif %}" id="{{ collectionMap }}-{{ forloop.index }}">
-                <h2 class="accordion-title">{{ accordionItem[1].title }}</h2>
+                <p class="accordion-title">{{ accordionItem[1].title }}</p>
                 <div class="accordion-additional">
                     <div class="accordion-additional-content">
                         {% if accordionItem[1].additionalFaIcon %}
@@ -26,14 +26,6 @@
                         <i class="fas fa-chevron-down fa-lg" style="color:#2A7DEC"></i>
                     </span>
                 </div>
-            </div>
-            <div class="accordion-subtitle">
-                {% if accordionItem[1].subtitle %}
-                    {% if accordionItem[1].subtitleIcon %}
-                        <i class="{{ accordionItem[1].subtitleIcon }}"></i>
-                    {% endif %}
-                    <span>{{ accordionItem[1].subtitle }}</span>
-                {% endif %}
             </div>
             <div class="accordion-content {% if openStatus == "firstOpened" and forloop.first or openStatus == "allOpened" %}opened{% endif %}{% if openStatus == "allOpened" %}opened{% endif %}" id="{{ collectionMap }}-{{ forloop.index }}">
                 <ul>
