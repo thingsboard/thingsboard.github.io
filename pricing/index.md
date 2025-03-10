@@ -611,8 +611,8 @@ selfManagedPlan:
                         <div class="pricing-square-item">Unlimited API calls</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
-                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">Development instance included</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
+                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev"><b>Development instance included</b></div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
@@ -2228,7 +2228,7 @@ selfManagedPlan:
                             <p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed installation guides.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-perpetual-packages" data-title="What Perpetual Packages do you offer?">
+                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-perpetual-packages" data-title="What Perpetual License Packages do you offer?">
                         <div class="container">
                             <p>Perpetual, Perpetual Kit, Enterprise Bundle.</p>
                         </div>
@@ -2243,12 +2243,12 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-pachage-aim-for" data-title="What is the Perpetual package aim for?">
                         <div class="container">
-                            <p>The Perpetual license package includes one license key (activation code) in scope of a license. This package permits the deployment of one ThingsBoard Prpfessional Edition server.</p>
+                            <p>The Perpetual License Package includes a single license key (activation code) for one licensed deployment. This license allows the deployment of a single instance of ThingsBoard Professional Edition, whether as a standalone server, a Docker container, or another supported environment.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-kit-scope" data-title="What is within the scope of a Perpetual Kit package?">
                         <div class="container">
-                            <p>The Perpetual Kit is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production server and one development server. No programmatic limits by entities for both servers.</p>
+                            <p>The Perpetual Kit is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production instance and one development instance. No programmatic limits by entities for both servers.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development Instance separately?">
@@ -2265,12 +2265,16 @@ selfManagedPlan:
                                 <li>3 Edge instances</li>
                                 <li>Enhanced support response time</li>
                             </ul>
-                            This bundle provides the most cost-effective solution for enterprise deployments, as purchasing these products separately would cost approximately 27,000 USD. By choosing the Enterprise Bundle, you can maximize value while meeting your deployment needs.</p>
+                            This bundle provides the most cost-effective solution for enterprise deployments, as purchasing these products separately would cost 27,000 USD. By choosing the Enterprise Bundle, you can maximize value while meeting your deployment needs.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-perpetual-servers" data-title="How many servers can I have with the Perpetual license?">
                         <div class="container">
-                            <p>Perpetual License - one active server in a moment. Perpetual Kit - 2 active servers in a moment (one production and one development).</p>
+                            <ul>
+                                <li>Perpetual License – Allows one active instance at a time.</li>
+                                <li>Perpetual Kit – Allows two active instances at a time (one production and one development).</li>
+                            </ul>
+                            <p>If you need to scale beyond a standalone deployment, you can purchase additional instances within the scope of your existing license to convert your deployment into a ThingsBoard cluster. This enables horizontal scaling while maintaining compliance with the licensing terms. For more details, please contact the ThingsBoard sales team.</p>
                         </div>
                     </div>
                 </div>
@@ -2325,7 +2329,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-refund-policy" data-title="Can I request a refund after purchasing the license?">
                         <div class="container">
-                            <p>No, all sales are final.</p>
+                            <p>Since the Perpetual License is a one-time purchase granting lifetime access, all sales are final. However, we encourage customers to explore our subscription options before committing to a perpetual license. Subscriptions provide full access to ThingsBoard Professional Edition, allowing you to evaluate its features and scalability. If you need guidance on selecting the best licensing option for your needs, our <a href="https://thingsboard.io/docs/contact-us/">sales team</a> is happy to assist you.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-discounts" data-title="Do you offer discounts for multiple licenses?">
@@ -2464,7 +2468,7 @@ selfManagedPlan:
                 <div id="faq-pe-perpetual-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-support-level" data-title="What level of support is included with my perpetual license?">
                         <div class="container">
-                            <p>The perpetual license includes dedicated support, with varying response times depending on the chosen package.</p>
+                            <p>The perpetual license includes dedicated support, providing access to the support portal with an initial response time of 12 hours.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-license-support-issues" data-title="What issues are included in license support?">
