@@ -144,8 +144,43 @@ description: Trendz configuration properties description
             <td>ADMIN_PASSWORD</td>
             <td> </td>
             <td>Password for authenticating background requests to ThingsBoard</td>
-        </tr>         
-                                                  
+        </tr>   
+        <tr>
+            <td>viewAssistance.enable</td>
+            <td>VIEW_ASSISTANCE_ENABLE</td>
+            <td>true</td>
+            <td>Enable/disable AI assistant</td>
+        </tr> 
+        <tr>
+            <td>viewAssistance.quota.enable</td>
+            <td>VIEW_ASSISTANCE_QUOTA_ENABLE</td>
+            <td>true</td>
+            <td>Enable/disable AI assistant</td>
+        </tr> 
+        <tr>
+            <td>viewAssistance.quota.maxRequestsForTenant</td>
+            <td>VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_TENANT</td>
+            <td>10</td>
+            <td>Max amount of AI requests for tenant per duration period</td>
+        </tr>
+        <tr>
+            <td>viewAssistance.quota.maxRequestsForCustomer</td>
+            <td>VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_CUSTOMER</td>
+            <td>10</td>
+            <td>Max amount of AI requests for customer per duration period</td>
+        </tr>
+        <tr>
+            <td>viewAssistance.quota.maxRequestsForUser</td>
+            <td>VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_USER</td>
+            <td>10</td>
+            <td>Max amount of AI requests for user per duration period</td>
+        </tr>
+        <tr>
+            <td>viewAssistance.quota.durationInMinutes</td>
+            <td>VIEW_ASSISTANCE_QUOTA_DURATION_IN_MINUTES</td>
+            <td>1</td>
+            <td>Duration period for quota</td>
+        </tr>
                                
   </tbody>
 </table>
