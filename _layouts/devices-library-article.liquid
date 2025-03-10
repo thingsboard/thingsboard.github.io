@@ -40,6 +40,9 @@
 {% endfor %}
 {% if siteData[foundTOC].notitle == "true" or page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
 
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
+
 <!Doctype html>
 <html id="docs" class="{{ siteData[foundTOC].bigheader }} {{ productInfo.tag }}">
 
