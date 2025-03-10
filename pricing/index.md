@@ -590,7 +590,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Perpetual Kit</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
-                            <p>Optimized for high availability</p>
+                            <p>Everything your product needs to succeed</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $5,999
@@ -2233,22 +2233,22 @@ selfManagedPlan:
                             <p>Perpetual, Perpetual Kit, Enterprise Bundle.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-pachage-aim-for" data-title="What is the Perpetual package aim for?">
+                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
                         <div class="container">
-                            <p>The Perpetual license package includes one license keys (activation code) in scope of a license. This package permits the deployment of one ThingsBoard Prpfessional Edition server.</p>
+                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
                     </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-pachage-aim-for" data-title="What is the Perpetual package aim for?">
+                        <div class="container">
+                            <p>The Perpetual license package includes one license key (activation code) in scope of a license. This package permits the deployment of one ThingsBoard Prpfessional Edition server.</p>
+                        </div>
+                    </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-kit-scope" data-title="What is within the scope of a Perpetual Kit package?">
                         <div class="container">
                             <p>The Perpetual Kit is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production server and one development server. No programmatic limits by entities for both servers.</p>
-                        </div>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
-                        <div class="container">
-                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development Instance separately?">
