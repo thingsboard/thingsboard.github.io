@@ -560,7 +560,7 @@ selfManagedPlan:
            <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
-                        <h2>Standalone</h2>
+                        <h2>Perpetual</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Use your ThingsBoard instance forever</p>
                         </div>
@@ -577,26 +577,23 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item">1 production instance</div>
-                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">1 development instance</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
-                        <div class="pricing-square-item">Integrations feature</div>
-                        <div class="pricing-square-item">Multi-tenancy</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
-                        <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 24 hours</div>
+                        <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
-                        <h2>Cluster Kit</h2>
+                        <h2>Perpetual Kit</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
-                            <p>Optimized for high availability</p>
+                            <p>Everything your product needs to succeed</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $8,999
+                            $5,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button id="Pricing_PE_SM_Perpetual_Kit" class="btn-blue btn-pricing gtm_button" 
@@ -608,15 +605,13 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item">2 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">2 development instances</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                        <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
-                        <div class="pricing-square-item">Integrations feature</div>
-                        <div class="pricing-square-item">Multi-tenancy</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
+                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">Development instance included</div>
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
@@ -632,16 +627,14 @@ selfManagedPlan:
                         <div class="row justify-content-center">
                             <a id="Pricing_PE_SM_Enterprise_Bundle" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
-                        <div class="pricing-square-item">2 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev">2 development instances</div> 
-                        <div class="pricing-square-item">1 Trendz production instances</div>
-                        <div class="pricing-square-item">1 Trendz development instances</div>
-                        <div class="pricing-square-item">3 Edge production instances</div>
-                        <div class="pricing-square-item">Integrations feature</div>
-                        <div class="pricing-square-item">Multi-tenancy</div>
+                        <div class="pricing-square-item"><b>2 ThingsBoard Perpetual Kits</b></div>
+                        <div class="pricing-square-item">1 Trendz perpetual license</div> 
+                        <div class="pricing-square-item">1 Trendz development license</div>
+                        <div class="pricing-square-item">3 Edge perpetual licenses</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
+                        <div class="pricing-square-item">Training sessions</div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
-                        <div class="pricing-square-item">1 year of software updates and support</div>
+                        <div class="pricing-square-item">1 year of software updates and support for all products in bundle</div>
                     </div>
                 </div>
            </div>
@@ -2237,7 +2230,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-perpetual-packages" data-title="What Perpetual Packages do you offer?">
                         <div class="container">
-                            <p>Standalone, Cluster and Enterprise Bundle.</p>
+                            <p>Perpetual, Perpetual Kit, Enterprise Bundle.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
@@ -2248,36 +2241,36 @@ selfManagedPlan:
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-standalone-aim" data-title="What is the Standalone package aim for?">
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-pachage-aim-for" data-title="What is the Perpetual package aim for?">
                         <div class="container">
-                            <p>The Standalone is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production server and one development server. No programmatic limits by entities for both servers.</p>
+                            <p>The Perpetual license package includes one license key (activation code) in scope of a license. This package permits the deployment of one ThingsBoard Prpfessional Edition server.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-kit-scope" data-title="What is within the scope of a Perpetual Kit package?">
+                        <div class="container">
+                            <p>The Perpetual Kit is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production server and one development server. No programmatic limits by entities for both servers.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development Instance separately?">
                         <div class="container">
-                            <p>Development instances can only be purchased separately by owners of Standalone or Cluster licenses. To request an additional development instance, please contact the ThingsBoard sales team through the <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> page.</p>
-                        </div>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-cluster-scope" data-title="What is within the scope of a Cluster perpetual license?">
-                        <div class="container">
-                            <p>With a Cluster perpetual license you can run up to 4 servers or pods of the ThingsBoard platform or licensed microservices, enabling you to deploy a high available cluster for your productive system and a cluster of the same size for your development and testing purposes. Same as for a Standalone, the Cluster license has Production and Development instances within the scope, as well as access to Ticketing System and latest releases that we make available during the year.</p>
+                            <p>Development instances can only be purchased separately by owners of Perpetual packages. To request an additional development instance, please contact the ThingsBoard sales team through the <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> page.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-enterprise-bundle" data-title="What is within the scope of Enterprise Bundle?">
                         <div class="container">
                             <p>The ThingsBoard Enterprise Bundle includes:
                             <ul>
-                                <li>1 Cluster kit</li>
+                                <li>2 ThingsBoard Perpetual Kits</li>
                                 <li>Trendz production and development instances</li>
                                 <li>3 Edge instances</li>
                                 <li>Enhanced support response time</li>
                             </ul>
-                            This bundle provides the most cost-effective solution for enterprise deployments, as purchasing these products separately would cost approximately <b>24,000 USD</b>. By choosing the Enterprise Bundle, you can maximize value while meeting your deployment needs.</p>
+                            This bundle provides the most cost-effective solution for enterprise deployments, as purchasing these products separately would cost approximately 27,000 USD. By choosing the Enterprise Bundle, you can maximize value while meeting your deployment needs.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-perpetual-servers" data-title="How many servers can I have with the Perpetual license?">
                         <div class="container">
-                            <p>Before the change, the licensing approach was identical regardless of the license type. So, please refer to How many servers can I have with the Pay-as-you-go license? question above. Since April 2025, the perpetual license covers at least 2 running servers — Prod and Dev. The Licensee gets a few license keys. Pay attention, the Dev server key enables running in a Developer mode indicated by the watermark throughout UI.</p>
+                            <p>Perpetual License - one active server in a moment. Perpetual Kit - 2 active servers in a moment (one production and one development).</p>
                         </div>
                     </div>
                 </div>
@@ -2296,8 +2289,8 @@ selfManagedPlan:
                         <div class="container">
                             <p>The annual renewal fees for the perpetual license are as follows:</p>
                             <ul>
-                                <li>Standalone: 1,199 USD</li>
-                                <li>Cluster Kit: 2,399 USD</li>
+                                <li>Perpetual: 1,199 USD</li>
+                                <li>Perpetual Kit: 1,199 USD</li>
                             </ul>
                         </div>
                     </div>
@@ -2325,9 +2318,9 @@ selfManagedPlan:
                             <p>No, we do not charge extra unless you want an additional service that we offer: professional support, Custom development and consulting, Training, or Managed service.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-upgrade-standalone" data-title="If I have a Standalone package, can I upgrade it to a Cluster Kit?">
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-upgrade-perpetual" data-title="If I have a Perpetual license, can I upgrade it to a Perpetual Kit?">
                         <div class="container">
-                            <p>Yes, it is possible to upgrade your Standalone package to a Cluster Kit. For more details, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a>, and we will assist you with the upgrade process.</p>
+                            <p>Yes, it is possible to upgrade your Perpetual license to Perpetual Kit. For more details, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a>, and we will assist you with the upgrade process.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-refund-policy" data-title="Can I request a refund after purchasing the license?">
