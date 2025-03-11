@@ -95,6 +95,7 @@
   let chosenPlan;
 
   function openTrendzWizard(e, id, plan){
+    console.log('e', e)
     e.preventDefault();
     $('.modal-wizard').removeClass('hidden');
     $('body').css('overflow', 'hidden');
@@ -105,7 +106,17 @@
 
     if(plan) {
       chosenPlan = plan;
-      console.log(plan)
+    }
+
+    if(id === 'cloud-content') {
+      console.log('e.target.classList', e.target.classList)
+      let isNorthAmericaCloud = e.target.classList.contains('north-america');
+      console.log('isNorthAmericaCloud', isNorthAmericaCloud)
+      if(isNorthAmericaCloud) {
+        $('.goToTBCloud').attr("href", "https://thingsboard.cloud/billing")
+      } else {
+        $('.goToTBCloud').attr("href", "https://eu.thingsboard.cloud/billing")
+      }
     }
 
     changePurchaseButtonId(id, plan);
