@@ -64,6 +64,15 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/tcp/
   - title: UDP
     path: /docs/pe/edge/user-guide/integrations/udp/
+- title: White Labeling
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/edge/user-guide/white-labeling/
+    - title: Custom translation
+      path: /docs/pe/user-guide/custom-translation/
+    - title: Custom menu
+      path: /docs/pe/user-guide/custom-menu/
 - title: Security
   section:
     - title: Edge over TLS/SSL 
