@@ -632,7 +632,6 @@ selfManagedPlan:
                         <div class="pricing-square-item">1 Trendz development license</div>
                         <div class="pricing-square-item">3 Edge perpetual licenses</div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
-                        <div class="pricing-square-item">Training sessions</div>
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-support-level">Support within 12 hours</div>
                         <div class="pricing-square-item">1 year of software updates and support for all products in bundle</div>
                     </div>
