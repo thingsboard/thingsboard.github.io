@@ -173,11 +173,19 @@ html#pricing
     a.btn-blue
       text-decoration: none
 
-
+    .card-1
+      transform: translateX(50px) translateY(130px) rotate(-10deg)
+    .card-3
+      transform: translateX(-50px) translateY(130px) rotate(10deg)
+    .card-to-animate
+      transition: ease-in-out 0.3s
+    .card-to-animate.card-animation
+      transform: translateY(0) translateX(0) rotate(0)
     .pricing-square
-      padding: 25px 32px
-      box-shadow: 0 52px 40px -32px rgba(0,0,0,0.1)
-      border-radius: 4px
+      padding: 24px 24px 80px
+      box-shadow: 0px 26px 40px 0px rgba(42, 125, 236, 0.08)
+      border-radius: 12px
+      border: 1px solid rgba(42, 125, 236, 0.16)
       background-color: #fff
       height: 100%
       h2
@@ -198,8 +206,23 @@ html#pricing
           min-height: 100px
         p
           margin-bottom: 1rem
+      .community-support-card
+        display: flex
+        flex-direction: column
+        gap: 16px
+        ul
+          display: flex
+          flex-direction: column
+          gap: 12px
+          li
+            display: flex
+            align-items: center
+            gap: 12px
+          .filter-icon
+            width: 18px
+            filter: invert(37%) sepia(84%) saturate(891%) hue-rotate(184deg) brightness(105%) contrast(88%)
       .pricing-square-price
-        font-weight: 700
+        font-weight: 600
         font-size: 32px
         line-height: 60px
         text-align: center
@@ -207,13 +230,13 @@ html#pricing
         @media (min-width: 768px)
           min-height: 42px
         span
-          font-size: 24px
+          font-size: 18px
           line-height: 34px
           font-weight: 400
       .pricing-square-item
         font-size: 14px
         line-height: 21px
-        padding-bottom: 5px
+        padding-bottom: 12px
         margin-left: 32px
         &:before
           content: "\f00c"
@@ -459,15 +482,10 @@ html#pricing
       @media (min-width: 1200px)
         height: 96px
     .pricing-header-divider
-      height: 8px
+      height: 3px
       width: 100%
       background-color: #102A4E
-      &:not(.no-margin)
-        margin-top: 64px
-        @media (min-width: 768px)
-          margin-top: 64px
-        @media (min-width: 1200px)
-          margin-top: 96px
+      margin-top: 24px
     .pricing-hero
       position: relative
       z-index: 6

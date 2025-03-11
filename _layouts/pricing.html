@@ -41,7 +41,7 @@
 
     function initPricingState() {
         $(function(){
-            setCloudServerDefault();
+            // setCloudServerDefault();
             window.addEventListener('popstate', onPopPricingState);
             onPopPricingState();
         });
@@ -247,6 +247,23 @@
             "event_category": solutionId
         });
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card-to-animate");
+        const params = new URLSearchParams(window.location.search);
+        const value = params.get('section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && value === "thingsboard-pe") {
+                    entry.target.classList.add("card-animation");
+                }
+            });
+        }, { threshold: 0.7 });
+
+        cards.forEach((card) => observer.observe(card));
+    });
+
 </script>
 
 {% include cookie-consent.html %}
