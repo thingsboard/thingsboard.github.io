@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - stitenko
-title: SCADA systems in Drilling
-description: SCADA systems in Drilling overview
+title: SCADA Drilling system
+description: SCADA Drilling system overview
 
 go-to-solution-templates-page-1:
     0:
@@ -320,4 +320,4 @@ scada-alarms-traditional-2:
 
 {% assign docsPrefix = "paas/" %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
-{% include docs/pe/solution-templates/scada-systems-in-drilling.md %}
+{% include docs/pe/solution-templates/scada-drilling-system.md %}

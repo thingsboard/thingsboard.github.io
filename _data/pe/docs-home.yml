@@ -16,8 +16,8 @@ toc:
     path: /docs/pe/solution-templates/temperature-humidity-sensors/
   - title: Smart office
     path: /docs/pe/solution-templates/smart-office/
-  - title: SCADA systems in drilling
-    path: /docs/pe/solution-templates/scada-systems-in-drilling/
+  - title: SCADA Drilling system
+    path: /docs/pe/solution-templates/scada-drilling-system/
     new: true
   - title: Fleet tracking
     path: /docs/pe/solution-templates/fleet-tracking/

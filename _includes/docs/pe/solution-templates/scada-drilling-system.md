@@ -8,7 +8,7 @@ A SCADA (Supervisory Control and Data Acquisition) system template for automatin
 The use of SCADA systems allows operators to monitor drilling parameters in real time, control equipment, and prevent emergency situations. ThingsBoard, as an IoT platform, enables the collection, processing, and visualization of data from sensors and controllers, making drilling safer, more efficient, and more predictable.
 
 <br>
-<object width="95%" data="/images/solutions/scada_systems_in_drilling/scada-systems-in-drilling-scheme.svg"></object>
+<object width="95%" data="/images/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
 
 <br>
 To understand how the SCADA systems in Drilling template works, let&#39;s start by installing it.
@@ -27,11 +27,11 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 \- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
 
 ```text
-docker run --pull always --rm -d --name tb-modbus-pool-emulator -p 5021-5034:5021-5034 thingsboard/tb-modbus-pool-emulator:latest && docker logs -f tb-modbus-pool-emulator
+docker run --pull always --rm -d --name tb-drilling-emulator -p 5035-5039:5035-5039 thingsboard/tb-drilling-emulator:latest && docker logs -f tb-drilling-emulator
 ```
 {: .copy-code}
 
-This command will launch a Modbus pool emulator containing 14 devices, which act as a unified system and communicate through the ModBus protocol.
+This command will launch a Modbus pool emulator containing 5 separate devices, which act as a unified system and communicate through the ModBus protocol.
 
 {% include images-gallery.html imageCollection="launch-modbus-pool-emulator-1" %}
 
@@ -48,7 +48,7 @@ services:
   # ThingsBoard IoT Gateway Service Configuration
   tb-gateway:
     image: thingsboard/tb-gateway:latest
-    container_name: tb-gateway
+    container_name: tb-gateway-scada-drilling-system
     restart: always
 
     # Necessary mapping for Linux
@@ -102,7 +102,7 @@ Key features:
 - **Alarms and Notifications** – Real-time logging of alerts and warnings for quick response to failures, abnormal pressure, or leaks.
 - **Modbus Gateway & Device Connectivity** – Monitoring device connectivity, status, communication protocols, and troubleshooting in real time.
 
-![image](/images/solutions/scada_systems_in_drilling/go-to-drilling-dashboard-2-pe.png)
+![image](/images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png)
 
 Clicking on different devices provides detailed metrics and controls for each component.
 
@@ -130,25 +130,25 @@ These symbols represent key structural elements of the drilling system:
 
 Main structure essential for supporting drilling operations.
 
-![image](/images/solutions/scada_systems_in_drilling/hp-drilling-rig.png)
+![image](/images/solutions/scada-drilling-system/hp-drilling-rig.png)
 
 **Preventer**
 
 Blowout preventer for pressure control and system safety.
 
-![image](/images/solutions/scada_systems_in_drilling/hp-preventer.png)
+![image](/images/solutions/scada-drilling-system/hp-preventer.png)
 
 **Drill**
 
 Represents the drill bit responsible for boring into the ground.
 
-![image](/images/solutions/scada_systems_in_drilling/hp-drill.png)
+![image](/images/solutions/scada-drilling-system/hp-drill.png)
 
 **Drawwork**
 
 Controls the hoisting and lowering of the drill string.
 
-![image](/images/solutions/scada_systems_in_drilling/hp-drawwork.png)
+![image](/images/solutions/scada-drilling-system/hp-drawwork.png)
 
 ### Connection Components
 

@@ -1,49 +1,49 @@
 ---
-layout: docwithnav-paas-eu
+layout: docwithnav-pe
 assignees:
 - stitenko
-title: SCADA systems in Drilling
-description: SCADA systems in Drilling overview
+title: SCADA Drilling system
+description: SCADA Drilling system overview
 
-go-to-solution-templates-page-1:
+go-to-drilling-solution-templates-page-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/go-to-solution-templates-page-1-pe.png
-        title: 'Navigate to the "Solution templates" page. Locate "Swimming Pool SCADA system" in your solution templates library. Click "Install" to begin the installation process;'
+        image: /images/solutions/scada-drilling-system/go-to-drilling-solution-templates-page-1-pe.png
+        title: 'Navigate to the "Solution templates" page. Locate "SCADA Drilling system" in your solution templates library. Click "Install" to begin the installation process;'
     1:
-        image: /images/solutions/swimming_pool_scada_system/solution-instruction-1-pe.png
+        image: /images/solutions/scada-drilling-system/drilling-solution-instruction-1-pe.png
         title: 'After installation, the instructions for setting up the solution will open.'
 
 launch-modbus-pool-emulator-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/launch-modbus-pool-emulator-1-pe.png
+        image: /images/solutions/scada-drilling-system/drilling-launch-modbus-emulator-1-pe.png
         title: 'Run the command to start the Modbus pool emulator.'
     1:
-        image: /images/solutions/swimming_pool_scada_system/launch-modbus-pool-emulator-2-pe.png
+        image: /images/solutions/scada-drilling-system/drilling-launch-modbus-emulator-2-pe.png
         title: ''
 
 launch-iot-gateway-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/launch-iot-gateway-1-pe.png
+        image: /images/solutions/scada-drilling-system/drilling-launch-iot-gateway-1-pe.png
         title: 'Run the command from the folder where you&#39;ve saved the docker-compose.yml file to run the IoT Gateway:'
     1:
-        image: /images/solutions/swimming_pool_scada_system/launch-iot-gateway-2-pe.png
+        image: /images/solutions/scada-drilling-system/drilling-launch-iot-gateway-2-pe.png
         title: ''
 
 docker-compose-yml:
     0:
-        image: /images/solutions/swimming_pool_scada_system/solution-instruction-2-pe.png
+        image: /images/solutions/scada-drilling-system/drilling-solution-instruction-2-pe.png
         title: 'Copy the configuration for the docker-compose.yml file from the instructions;'
     1:
-        image: /images/solutions/swimming_pool_scada_system/docker-compose-yml.png
+        image: /images/solutions/scada-drilling-system/drilling-docker-compose-yml.png
         title: 'Create a new file named docker-compose.yml on your computer, paste the copied configuration into it, and save the file.'
 
 go-to-dashboard-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/go-to-dashboard-1-pe.png
+        image: /images/solutions/scada-drilling-system/go-to-drilling-dashboard-1-pe.png
         title: 'Click "Close" to proceed to the dashboard;'
     1:
-        image: /images/solutions/swimming_pool_scada_system/go-to-dashboard-2-pe.png
-        title: 'Swimming pool SCADA system dashboard.'
+        image: /images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png
+        title: 'SCADA Drilling system dashboard.'
 
 solution-scada-dashboard-traditional:
     0:
@@ -318,6 +318,6 @@ scada-alarms-traditional-2:
 
 ---
 
-{% assign docsPrefix = "paas/eu/" %}
+{% assign docsPrefix = "pe/" %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
-{% include docs/pe/solution-templates/scada-systems-in-drilling.md %}
+{% include docs/pe/solution-templates/scada-drilling-system.md %}

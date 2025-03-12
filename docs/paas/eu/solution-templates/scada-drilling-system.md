@@ -1,11 +1,11 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
-title: SCADA systems in Drilling
-description: SCADA systems in Drilling overview
+title: SCADA Drilling system
+description: SCADA Drilling system overview
 
-go-to-drilling-solution-templates-page-1:
+go-to-solution-templates-page-1:
     0:
         image: /images/solutions/swimming_pool_scada_system/go-to-solution-templates-page-1-pe.png
         title: 'Navigate to the "Solution templates" page. Locate "Swimming Pool SCADA system" in your solution templates library. Click "Install" to begin the installation process;'
@@ -42,8 +42,8 @@ go-to-dashboard-1:
         image: /images/solutions/swimming_pool_scada_system/go-to-dashboard-1-pe.png
         title: 'Click "Close" to proceed to the dashboard;'
     1:
-        image: /images/solutions/scada_systems_in_drilling/go-to-drilling-dashboard-2-pe.png
-        title: 'SCADA systems in Drilling dashboard.'
+        image: /images/solutions/swimming_pool_scada_system/go-to-dashboard-2-pe.png
+        title: 'Swimming pool SCADA system dashboard.'
 
 solution-scada-dashboard-traditional:
     0:
@@ -318,6 +318,6 @@ scada-alarms-traditional-2:
 
 ---
 
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "paas/eu/" %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
-{% include docs/pe/solution-templates/scada-systems-in-drilling.md %}
+{% include docs/pe/solution-templates/scada-drilling-system.md %}
