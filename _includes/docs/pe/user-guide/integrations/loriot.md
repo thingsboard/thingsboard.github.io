@@ -155,7 +155,6 @@ ThingsBoard has examples of several types of dashboards that you can use. You ca
 
 How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/)
 
-
 ## Advanced Usage: Create Downlink Converter
 
 Create Downlink in **Data converters.** To see events - enable **Debug.**
@@ -166,13 +165,6 @@ Create Downlink in **Data converters.** To see events - enable **Debug.**
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-downlink-converter-config-java.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="loriotdownlinkconverterconfig" toggle-spec=loriotdownlinkconverterconfig %}
-
-Get EUI in LORIOT in the Devices section, where the devices have already been created:
-
-{% include images-gallery.html imageCollection="devices" %}
-
-Add a converter to the integration.
-You can do this at the stage of creating an integration or editing it.
 
 To send Downlink, enable the **Send downlink** option in the integration.
 Once we enable the “Send downlink” option, specify the Server, Application ID, Application Access Token in the fields:
