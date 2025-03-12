@@ -22,10 +22,23 @@
 * TOC
 {:toc}
 
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 {{THINGSBOARD_WITH_URL}}{:target="_blank"} allows registering your custom domain to have the required host name for user’s access, links, etc.
-{% unless docsPrefix == 'pe/' and docsPrefix == null %}When you register valid domain, the {{THINGSBOARD_URL}} automatically requests the SSL certificate from [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for the latter and manages further certificate renewals.
+When you register valid domain, the {{THINGSBOARD_URL}} automatically requests the SSL certificate from [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for the latter and manages further certificate renewals.
 After domain registration, your tenant and application(s) will be accessible via your domain name using a secure (HTTPS) connection.
-Like Web UI all other ThingsBoard Cloud services such as MQTT/HTTP/CoAP transports or HTTP integrations will be accessible via your custom domain name.{% endunless %}
+Like Web UI all other ThingsBoard Cloud services such as MQTT/HTTP/CoAP transports or HTTP integrations will be accessible via your custom domain name.
+{% endif %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{{THINGSBOARD_WITH_URL}}{:target="_blank"} [White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature allows you to use a custom domain to provide a personalized hostname for user access.
+When you register a valid domain, ThingsBoard Cloud automatically requests an SSL certificate from [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} and manages future certificate renewals.
+After domain registration, your tenant and application(s) will be accessible via your domain name using a secure (HTTPS) connection. 
+
+{% capture difference %}
+**Important note**: Not all {{THINGSBOARD_WITH_URL}}{:target="_blank"} services, such as MQTT or CoAP transports, will be available via your custom domain name. This feature is primarily intended for HTTPS connectivity.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% endif %}
 
 ## Domain registration
 
