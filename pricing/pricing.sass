@@ -67,7 +67,7 @@ html#pricing
                     line-height: 18px
 
     .faq-content
-      padding: 60px 30px 80px
+      padding: 60px 15px 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
         margin-top: 30px
       h1
@@ -95,64 +95,155 @@ html#pricing
         li
           list-style: disc
           margin-bottom: .75em
-
-      .pi-accordion
-        h4.title
-          font-size: 18px
-          font-weight: 500
-          line-height: 27px
-          padding: 22px
-          transition: none
-          &:after
-            content: "+"
-            position: absolute
-            right: 25px
-            font-size: 28px
-            color: #707275
-            transform: rotate(0deg)
-            transition: transform 0.3s
-            margin-right: 1px
-
-        div.item
-          border: 1px solid #EBEBEB
-          border-radius: 4px
-          overflow: visible
-          &:hover
-            border: 2px solid #2A7DEC
-            h4.title
-              padding: 21px
-              color: #1f3a52
-              &:after
-                color: #1f3a52
-                right: 24px
-          &:not(:last-of-type)
-            margin-bottom: 7px
-          &:before
-            display: block
-            content: " "
-            margin-top: -70px
-            height: 70px
-            visibility: hidden
-          & > h4.title
-            &:before
+      #faq-header
+        display: inline-block
+        margin-bottom: 24px
+        font-size: 36px
+        font-weight: 500
+        color: #212529
+      #FAQ
+        section
+          display: none
+          padding: 0
+          &.active
+            display: flex
+            gap: 40px
+            @media (max-width: 1200px)
+              flex-direction: column
+          .faq-section-selector
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            padding: 8px
+            width: fit-content
+            margin-bottom: 24px
+            color: #00000061
+            @media (max-width: 690px)
+              width: 100%
+            .faq-section-option
+              width: 100%
+              font-size: 24px
+              font-weight: 500
+              padding: 24px 32px
+              border: 1.5px solid transparent
+              border-radius: 24px
+              cursor: pointer
+              color: #00000061
+              &:hover
+                color: #000000A1
+              &.active
+                color: #000000DE
+                border-bottom: 1.5px solid #E6F0FC
+                background: #F4F8FE
+          .answers
+            flex: 1.5
+            .pi-accordion
               display: none
+              &.active
+                display: block
+              div.item, div.load-more
+                border-bottom: 1.5px solid #3E9AF81F
+                overflow: visible
+                &.hidden
+                  display: none
+                &:not(:last-of-type)
+                  margin-bottom: 7px
+                &:before
+                  display: block
+                  content: " "
+                  margin-top: -70px
+                  height: 70px
+                  visibility: hidden
+                & > h4.title
+                  font-size: 18px
+                  font-weight: 400
+                  line-height: 27px
+                  color: #000000C2
+                  padding: 22px 37px 22px 22px
+                  transition: none
+                  &:hover
+                    color: #000000E8
+                  &:after
+                    font-family: "Font Awesome 5 Free"
+                    font-weight: 900
+                    color: #00000061
+                    content: "\f077"
+                    position: absolute
+                    right: 8px
+                    top: 22px
+                    transform: rotate(0deg)
+                    transition: transform 0.3s
+                  &:before
+                    display: none
+                    color: #0000008A
+                  .clipboard-btn
+                    display: none
+                    padding: 0
+                    width: 25px
+                    height: 25px
+                    font-size: 14px
+                    border-radius: 50%
+                    position: relative
+                    margin-left: 4px
+                    &:after
+                      font-family: "Font Awesome 5 Free"
+                      font-weight: 900
+                      content: "\f0c1"
+                      color: #00000061
+                    &:hover
+                      background-color: #F4F8FE
+                      .tooltiptext
+                        visibility: visible
+                    .tooltiptext
+                      position: absolute
+                      top: -32px
+                      left: -57px
+                      width: max-content
+                      padding: 0 7px
+                      visibility: hidden
+                      background-color: #0000008F
+                      color: #fff
+                      text-align: center
+                      border-radius: 6px
+                    &.copied
+                      &:after
+                        content: "\f00c"
+                      .tooltiptext
+                        left: -20px
+                .content
+                  border: none
+                  box-shadow: none
+                  border-radius: 4px
+                  padding: 5px 50px 25px 10px
+                  margin: 0 10px 10px
+                  font-size: 14px
+                  font-weight: 400
+                  line-height: 28px
 
-        .content
-          border: none
-          box-shadow: none
-          border-radius: 4px
-          padding: 5px 50px 25px 10px
-          margin: 0 10px 10px
-        .item.on
-          border: 2px solid #2A7DEC
-          box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
-          h4.title
-            padding: 21px
-            &:after
-              transform: rotate(45deg)
-              transition: transform 0.3s
-              margin: unset
-
+                &.on
+                  h4.title
+                    padding: 22px 37px 22px 22px
+                    &:after
+                      transform: rotate(180deg)
+                      transition: transform 0.3s
+                      margin: unset
+                    .clipboard-btn
+                      @media screen and (max-width: 700px)
+                        display: inline-block
+                  &:hover
+                    .clipboard-btn
+                      display: inline-block
+              div.load-more
+                & > h4.title
+                  color: #0094FF
+                  &:hover
+                    color: #0095ff
+                  &:after
+                    content: '+'
+                    color: #0094FF
+                    border: 0
+                    font-size: 30px
+                    transform: rotate(0deg)
     a, button
       &.btn-blue
         background-color: #2A7DEC
@@ -182,10 +273,10 @@ html#pricing
     .card-to-animate.card-animation
       transform: translateY(0) translateX(0) rotate(0)
     .pricing-square
-      padding: 24px 24px 80px
-      box-shadow: 0px 26px 40px 0px rgba(42, 125, 236, 0.08)
-      border-radius: 12px
+      padding: 25px 32px
       border: 1px solid rgba(42, 125, 236, 0.16)
+      border-radius: 12px
+      box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
       background-color: #fff
       height: 100%
       h2
@@ -241,8 +332,8 @@ html#pricing
         &:before
           content: "\f00c"
           position: absolute
-          height: 20px
-          width: 20px
+          height: 21px
+          width: 22px
           margin-right: 11px
           margin-left: -32px
           padding: 0 5px
@@ -360,6 +451,8 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
+            @media screen and (max-width: 700px)
+              display: none
 
         &.pay-as-you-go
           &:before
