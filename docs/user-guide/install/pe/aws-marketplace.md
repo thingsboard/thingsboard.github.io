@@ -43,8 +43,8 @@ Make sure you review the usage instructions. It is always a good idea to copy th
 You can optionally change your EC2 Instance Type, VPC and Subnet. This step is usually for advanced AWS EC2 users.  
 
 {% capture vm-min-req %}
-It is recommended that the EC2 instance has at least **8GB of RAM** and **2 vCPUs** for optimal performance.  
-ThingsBoard can run on machines with **4GB of RAM**, but you must [adjust the memory parameters](/docs/user-guide/install/pe/ubuntu/#step-6-optional-memory-update-for-slow-machines-4gb-of-ram) to ensure stability.
+ThingsBoard requires EC2 instance with at least **4GB of RAM**; consider [adjusting the memory parameters](/docs/user-guide/install/pe/ubuntu/#step-6-optional-memory-update-for-slow-machines-4gb-of-ram) to ensure stability.
+For optimal performance, we recommend an instance with at least **8GB of RAM** and **2 vCPUs**.
 {% endcapture %}
 {% include templates/info-banner.md content=vm-min-req %}
 
@@ -261,14 +261,10 @@ This email notification will contain a link to <a href="/docs/user-guide/install
 
 **How do I backup my database?**
 
-Depending on your instance type and configuration, ThingsBoard may store data in SQL or NoSQL databases. 
-ThingsBoard may also store data using hybrid database mode. 
-Please review <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">architecture docs</a> for more info on available database types.
+You can follow <a href="/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu">backup instructions</a> avgit sailable with upgrade instructions.
 
-Once you have identified the database type(s) used in your instance, follow the  <a href="/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu">backup instructions</a>.
+For additional guidance, you can also refer to the official <a href="https://www.postgresql.org/docs/16/backup.html">PostgreSQL backup documentation</a>.
 
-For additional guidance, you can also refer to the official <a href="https://www.postgresql.org/docs/16/backup.html">PostgreSQL backup documentation</a>  
-or <a href="https://cassandra.apache.org/doc/4.1/cassandra/operating/backups.html">Cassandra backup guide</a>.  
 <br><br>
 
 **How do I upgrade my instance type?**
