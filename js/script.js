@@ -189,10 +189,20 @@ var tb = (function () {
             }
             var item = $('.pi-accordion div[data-item-id='+nodeId+']');
             if (item.length) {
-                openFaqNode(nodeId);
+				retryOpenNodeFromHash(nodeId, 0);
             }
         }
     }
+
+	function retryOpenNodeFromHash(nodeId, tries) {
+		if (sectionSwitched) {
+			openFaqNode(nodeId);
+		} else {
+			if (tries < 10) {
+				setTimeout(() => retryOpenNodeFromHash(nodeId, ++tries), 150);
+			}
+		}
+	}
 
     function openFaqNode(nodeId) {
 		$('.pi-accordion > .container > div[data-item-id]').each(function () {
