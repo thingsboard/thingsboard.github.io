@@ -1216,7 +1216,7 @@ selfManagedPlan:
                             <p>Use your ThingsBoard Edge instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $399
+                            $499
                         </h4>
                         <div class="row justify-content-center">
                             <button id="Pricing_Edge_Perpetual_EdgePerpetualFallbackLicense" class="btn-blue btn-pricing gtm_button" 
