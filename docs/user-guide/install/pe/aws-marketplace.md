@@ -42,6 +42,12 @@ Make sure you review the usage instructions. It is always a good idea to copy th
 
 You can optionally change your EC2 Instance Type, VPC and Subnet. This step is usually for advanced AWS EC2 users.  
 
+{% capture vm-min-req %}
+ThingsBoard requires EC2 instance with at least **4GB of RAM**; consider [adjusting the memory parameters](/docs/user-guide/install/pe/ubuntu/#step-6-optional-memory-update-for-slow-machines-4gb-of-ram) to ensure stability.
+For optimal performance, we recommend an instance with at least **8GB of RAM** and **2 vCPUs**.
+{% endcapture %}
+{% include templates/info-banner.md content=vm-min-req %}
+
 #### Step 3.3. Configure Security Group Settings
 
 Make sure you create new Security Group based on seller settings. 
@@ -111,7 +117,7 @@ Please use the official guides:
   * [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html) - for Windows users;
   * [Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) - For Linux/Mac users.
   
-Note: You will need to use instance Public DNS name (see [Step 3.7](/docs/user-guide/install/pe/aws/#step-37-obtain-your-public-ip-and-ec2-instance-id)) and the key file (see [Step 3.4](/docs/user-guide/install/pe/aws/#step-34-configure-key-pair-settings))
+Note: You will need to use instance Public DNS name (see [Step 3.7](/docs/user-guide/install/pe/aws-marketplace/#step-37-obtain-your-public-ip-and-ec2-instance-id)) and the key file (see [Step 3.4](/docs/user-guide/install/pe/aws-marketplace/#step-34-configure-key-pair-settings))
 
 #### Step 5.2. Put License Secret to thingsboard configuration file
 
@@ -165,13 +171,20 @@ Use this login to connect as system Administrator
 
 - **sysadmin@thingsboard.org**
 
-Default password for System Administrator is Instance ID (see [Step 3.7](/docs/user-guide/install/pe/aws/#step-37-obtain-your-public-ip-and-ec2-instance-id)). In this example: 
+Default password for System Administrator is Instance ID (see [Step 3.7](/docs/user-guide/install/pe/aws-marketplace/#step-37-obtain-your-public-ip-and-ec2-instance-id)). In this example: 
 
 -  **i-032b8bbf297987458**
 
 Now you can proceed to the next steps.
 
 ### Post-installation steps
+
+{% capture elastic-ip-note %}
+By default, AWS Marketplace instances **do not assign a static public IP**. This means that the **public IP may change upon instance restart**.  
+To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 instance. You can follow the steps in the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-eips.html).  
+{% endcapture %}
+
+{% include templates/info-banner.md content=elastic-ip-note %}
 
 **Configure HAProxy to enable HTTPS**
 
@@ -202,16 +215,16 @@ Customer may still use <a href="https://thingsboard.cloud" target="blank">Things
     <li>AWS EC2 instance price - we believe <a href="https://www.ec2instances.info/">ec2instances.info</a> is a convenient resource to compare prices.</li>
     <li>Additional EC2 costs for network traffic, disk space and other optional services (Cloud Watch or similar)</li>
 </ul>
-<p>Example A: The price for ThingsBoard PE instance with Maker subscription plan based on t2.micro with 20 GB disk will cost approximately $20.5 per month:</p>
+<p>Example A: The price for ThingsBoard PE instance with Maker subscription plan based on t3.medium with 20 GB disk will cost approximately $42.4 per month:</p>
 <ul>
     <li>$10.00 for monthly ThingsBoard PE Maker subscription fee</li>
-    <li>$8.468 for 1 month of t2.micro usage</li>
+    <li>$30.368 for 1 month of t3.medium usage</li>
     <li>$2.0 for 20 GB of EBS volume per month</li>
 </ul>
-<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on t2.medium with 100 GB disk will cost approximately $142.872 per month:</p>
+<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on m5.large with 100 GB disk will cost approximately $179 per month:</p>
 <ul>
     <li>$99.00  for monthly ThingsBoard PE Prototype subscription fee</li>
-    <li>$33.872 for 1 month of t2.medium usage</li>
+    <li>$70.08 for 1 month of m5.large usage</li>
     <li>$10.0 for 100 GB of EBS volume per month</li>
 </ul>
 <p>All prices are in USD.</p>
@@ -231,7 +244,7 @@ See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">off
 
 **How to enable HTTPS?**
 
-See <a href="/docs/user-guide/install/pe/aws/#post-installation-steps">Post-installation steps</a>
+See <a href="/docs/user-guide/install/pe/aws-marketplace/#post-installation-steps">Post-installation steps</a>
 <br><br>
 
 **How do I configure my TB PE instance?**
@@ -243,27 +256,54 @@ See <a href="/docs/user-guide/install/config/">official documentation page</a> f
 **How do I get software updates for my TB PE instance?**
 
 You will receive an email notification about new software versions once it becomes available. 
-This email notification will contain a link to <a href="/docs/user-guide/install/aws-marketplace-pe-upgrade/">official documentation page</a> with the upgrade instructions.
+This email notification will contain a link to <a href="/docs/user-guide/install/pe/upgrade-instructions/">official documentation page</a> with the upgrade instructions.
 <br><br>
 
 **How do I backup my database?**
-Depending on your instance type and configuration, ThingsBoard may store data in SQL or NoSQL databases. 
-ThingsBoard may also store data using hybrid database mode. 
-Please review <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">architecture docs</a> for more info on available database types.
-Once you figure out the database type(s) you are using in your instance, you can review official <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a> 
-or <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsBackupRestore.html">Cassandra</a> documentation. 
-There is also planty of docs and tools in the web how you can backup and restore your DB. 
+
+You can follow <a href="/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu">backup instructions</a> avgit sailable with upgrade instructions.
+
+For additional guidance, you can also refer to the official <a href="https://www.postgresql.org/docs/16/backup.html">PostgreSQL backup documentation</a>.
+
 <br><br>
 
 **How do I upgrade my instance type?**
 
-See official License Server <a href="/products/license-server/">documentation page</a> for more details.
+To upgrade your EC2 instance type, follow these steps:
+
+1. Stop the ThingsBoard Service
+
+    Before changing the instance type, stop the ThingsBoard service to ensure a clean shutdown:
+
+    ```bash
+    sudo service thingsboard stop
+    ```
+    {: .copy-code}
+
+2. Stop the EC2 Instance
+
+    Go to the AWS EC2 Console, select your instance, and stop it:
+
+    - Navigate to EC2 Dashboard
+    - Select the instance you want to upgrade
+    - Click Instance state → Stop instance
+
+3. Change the Instance Type
+
+    Once the instance is stopped, update its type:
+
+    - In the EC2 Console, go to Actions → Instance settings → Change instance type
+    - Select the desired instance type
+    - Click Change
+
+4. Start the Instance
+
 <br><br>
 
 **Where is my ThingsBoard instance logs?**
 
 ThingsBoard logs are stored in the <i>/var/log/thingsboard</i> folder. 
-See <a href="/docs/user-guide/install/config/#logging">configuration page</a> to find out how to configure logging levels.
+For more details on managing logs and configuring log levels, refer to the <a href="/docs/pe/user-guide/troubleshooting/#logs">Troubleshooting Guide</a>
 <br><br>
 
 **How do I get professional support?**

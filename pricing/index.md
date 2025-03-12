@@ -2308,13 +2308,13 @@ selfManagedPlan:
                             If you purchased your license on January 1, 2024, your support period and access to new version releases will expire on January 1, 2025. You can continue using the version of the platform you have without any interruptions. However, after January 1, 2025, you will no longer have access to new versions that are released after that date. You can still use the version you have, and you are free to migrate your hardware or upgrade to any version that was available before January 2, 2025.</p>
                         </div>
                     </div>
-                    <div class="load-more" onClick="loadMoreFaq(this)">
-                        <h4 class="title">Load more FAQ</h4>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-renewal-delay" data-title="If I miss 1 year and then decide to prolong, how much should I pay?">
+                    <div class="item" data-tag="h4" data-item-id="pe-perpetual-renewal-delay" data-title="If I miss 1 year and then decide to prolong, how much should I pay?">
                         <div class="container">
                             <p>If you miss the renewal for one year and then decide to renew, you will need to pay the yearly renewal fee for the missed period, in addition to the fee for the new period. If you miss 6 months after the initial expiration date, you can still renew by paying the annual fee, and the renewal will be calculated based on the original expiration date of your license, not from the moment you choose to renew. If you require further clarifications on this, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a>, and we will be happy to explain.</p>
                         </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-additional-fees" data-title="Is there an additional payment for the software use besides the license fee?">
                         <div class="container">

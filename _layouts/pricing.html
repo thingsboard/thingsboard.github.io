@@ -79,7 +79,7 @@
             if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
               loadMoreFaq(questionEl.parentNode.children[6]);
             }
-            setTimeout(() => updateQueryParam({}, true), 500);
+            checkIfOpenedRetryClear(`div[data-item-id="${window.location.hash.replace('#', '')}"]`);
         }
     }
 
@@ -352,15 +352,28 @@
     }
 
     function popCopyButton() {
-        document.querySelectorAll('.item').forEach(el => {
-            const clipButton = $(`
+        if (document.querySelector('.item').querySelector('.title')) {
+            document.querySelectorAll('.item').forEach(el => {
+                const clipButton = $(`
                 <button class="clipboard-btn" onmousedown="this.style.backgroundColor='#e8f1ff'"
                   onmouseup="this.style.removeProperty('background-color')"
                   onclick="copyQuestionLink(event, '${el.getAttribute('data-item-id')}', this)">
                     <span class="tooltiptext">Copy question link</span>
                 </button>`);
-            $(el).find('.title').append(clipButton);
-        });
+                $(el).find('.title').append(clipButton);
+            });
+        } else {
+            setTimeout(() => popCopyButton(), 100);
+        }
+    }
+
+    function checkIfOpenedRetryClear(questionId) {
+        const question = document.querySelector(questionId);
+        if (question.classList.contains('on')){
+            updateQueryParam({}, true);
+        } else {
+            setTimeout(() => checkIfOpenedRetryClear(questionId), 100)
+        }
     }
 
 </script>
