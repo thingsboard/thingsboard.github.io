@@ -221,9 +221,9 @@ Customer may still use <a href="https://thingsboard.cloud" target="blank">Things
     <li>$30.368 for 1 month of t3.medium usage</li>
     <li>$2.0 for 20 GB of EBS volume per month</li>
 </ul>
-<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on m5.large with 100 GB disk will cost approximately $229 per month:</p>
+<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on m5.large with 100 GB disk will cost approximately $179 per month:</p>
 <ul>
-    <li>$149.00  for monthly ThingsBoard PE Prototype subscription fee</li>
+    <li>$99.00  for monthly ThingsBoard PE Prototype subscription fee</li>
     <li>$70.08 for 1 month of m5.large usage</li>
     <li>$10.0 for 100 GB of EBS volume per month</li>
 </ul>
