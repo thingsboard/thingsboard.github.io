@@ -212,6 +212,19 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="block">
+                    <h4 class="title">Data flow management</h4>
+                    <p>Facilitate smooth data transmission between IoT devices, the broker, and external platforms with an integration solution designed for continuous and reliable data exchange.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 image-container">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/administer-client-session.webp" alt="Data flow management" loading="lazy">
+                </div>
+            </div>
+        </div>
     </main>
 </section>
 
@@ -302,6 +315,22 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
     <main>
         <h3>TBMQ news</h3>
         <div id="cards">
+            <div class="col-lg-6">
+                <div class="block">
+                    <div class="image-container">
+                        <a href="/blog/tbmq-2-0-migration-to-redis-mqtt-5-0-support-and-more/">
+                            <img src="/images/mqtt-broker/product/news-2.webp" alt="TBMQ 2.0.0 release" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="tags">
+                            <a href="/blog/category/updates/">Updates</a>
+                        </div>
+                        <a class="title" href="/blog/tbmq-2-0-migration-to-redis-mqtt-5-0-support-and-more/">TBMQ 2.1.0 release: integrations, Helm charts, and more</a>
+                        <p>TBMQ 2.1.0 release brings a major update with data migration of persistent sessions for devices from PostgreSQL to Redis. It also expands TBMQ’s MQTT 5.0 feature set, achieving full compatibility with the MQTT 5.0 standard. Here’s an overview of the features and updates included in this release</p>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-6">
                 <div class="block">
                     <div class="image-container">
