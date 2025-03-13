@@ -267,6 +267,7 @@
     }
 
     let currentFaqContainer = 'thingsboard-cloud';
+    let sectionSwitched = false;
 
     function switchFaqContainer(containerId) {
         if (changeFaqHeader(containerId)) {
@@ -322,6 +323,7 @@
         document.querySelectorAll(`#faq-${currentFaqContainer} .pi-accordion`).forEach(el => el.classList.remove('active'));
         document.getElementById(`faq-${currentFaqContainer}-${sectionId}`).classList.add('active');
         el ? el.classList.add('active') : document.querySelector(`#faq-${currentFaqContainer} #${sectionId}`).classList.add('active');
+        sectionSwitched = true;
     }
 
     function loadMoreFaq(el) {
