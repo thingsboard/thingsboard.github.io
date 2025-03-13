@@ -41,7 +41,7 @@
 
     function initPricingState() {
         $(function(){
-            // setCloudServerDefault();
+            setCloudServerDefault();
             window.addEventListener('popstate', onPopPricingState);
             onPopPricingState();
             setTimeout(()=> popCopyButton(), 200);
@@ -51,9 +51,9 @@
     function setCloudServerDefault() {
         const cloudServer = getCookie('cloudServer')
         if (cloudServer === '/docs/paas/eu/') {
-            document.getElementById('Pricing_PE_Cloud_Europe').classList.add("defaultselection");
+            document.getElementById('Pricing_PE_Cloud_Europe')?.classList.add("defaultselection");
         } else {
-            document.getElementById('Pricing_PE_Cloud_NorthAmerica').classList.add("defaultselection");
+            document.getElementById('Pricing_PE_Cloud_NorthAmerica')?.classList.add("defaultselection");
         }
     }
 
@@ -64,6 +64,7 @@
             sectionId = '{{page.defaultActivePricingSection}}';
         }
         setActivePricingSection(sectionId);
+        animateSupportCards(sectionId);
         const productId = params['product'];
         if (productId) {
             setActiveProductSection(productId);
@@ -77,7 +78,7 @@
             switchFaqSection(faqSection);
             const questionEl = document.querySelector(`div[data-item-id="${window.location.hash.replace('#', '')}"]`);
             if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
-              loadMoreFaq(questionEl.parentNode.children[6]);
+                loadMoreFaq(questionEl.parentNode.children[6]);
             }
             setTimeout(() => updateQueryParam({}, true), 500);
         }
@@ -87,6 +88,7 @@
         updateQueryParam({section: sectionId, product: null, solution: null});
         setActivePricingSection(sectionId);
         switchFaqContainer(sectionId);
+        animateSupportCards(sectionId);
     }
 
     function activateProductSection(productId) {
@@ -272,7 +274,7 @@
         if (changeFaqHeader(containerId)) {
             currentFaqContainer = containerId;
             document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
-            document.getElementById(`faq-${containerId}`).classList.add('active');
+            document.getElementById(`faq-${containerId}`)?.classList.add('active');
         }
     }
 
@@ -363,40 +365,36 @@
         });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const cards = document.querySelectorAll(".card-to-animate");
-        const thingsboardPeSection = document.querySelector("#thingsboard-pe");
-        const pricingDiv = thingsboardPeSection.querySelector(".pricing-div")
+    function animateSupportCards(sectionId) {
+        const currentSection = document.querySelector(`#${sectionId}`);
+        const cards = currentSection.querySelectorAll('.card-to-animate')
 
-        function applyAnimationToAllCards() {
-            const params = new URLSearchParams(window.location.search);
-            const value = params.get('section');
+        if(sectionId === 'thingsboard-pe') {
+            currentSection.addEventListener("mouseover", () => applyAnimation(sectionId, cards));
 
-            if (value !== 'thingsboard-ce') {
-                cards.forEach((card) => card.classList.add("card-animation"));
-            }
+            let lastScrollTop = window.scrollY;
+
+            window.addEventListener("scroll", () => {
+                const currentScroll = window.scrollY;
+
+                if (currentScroll > lastScrollTop) {
+                    applyAnimation(sectionId, cards);
+                }
+
+                lastScrollTop = currentScroll;
+            })
+        } else if(sectionId === 'thingsboard-ce') {
+            applyAnimation(sectionId, cards);
         }
+    }
 
-        if (pricingDiv) {
-            pricingDiv.addEventListener("mouseover", applyAnimationToAllCards);
-        }
-
-        let lastScrollTop = window.scrollY;
-
-        window.addEventListener("scroll", () => {
-            const currentScroll = window.scrollY;
-
-            if (currentScroll > lastScrollTop) {
-                applyAnimationToAllCards();
-            }
-
-            lastScrollTop = currentScroll;
-        });
-    });
-
-
-
-
+    function applyAnimation(sectionId, cards) {
+        cards.forEach((card) => {
+            setTimeout(() => {
+                card.classList.add(`${sectionId}-card-animation`)
+            }, 1)
+        })
+    }
 
 </script>
 
