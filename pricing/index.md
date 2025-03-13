@@ -868,7 +868,7 @@ selfManagedPlan:
                        class="solution north-america active gtm_button defaultselection"
                        data-toggle="#trendzNorthAmerica"
                        data-description-toggle="#trendzNorthAmericaHeader"
-                       onClick="activateServerSection('trendz-cloud-north-america', '/docs/trendz/')">
+                       onClick="setActiveSolutionSection('trendz-cloud-north-america')">
                       <h3>North America</h3>
                   </div>
                   <div id="Pricing_Trendz_Cloud_Europe"
@@ -876,7 +876,7 @@ selfManagedPlan:
                        class="solution europe gtm_button"
                        data-toggle="#trendzEurope"
                        data-description-toggle="#trendzEuropeHeader"
-                       onClick="activateServerSection('trendz-cloud-europe', '/docs/trendz')">
+                       onClick="setActiveSolutionSection('trendz-cloud-europe')">
                       <h3>Europe</h3>
                   </div>
               </div>
@@ -992,8 +992,8 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                                Support
                             </div>
                             <br>
                             <div>
@@ -1008,7 +1008,7 @@ selfManagedPlan:
                                 <p>Custom plan and SLA</p> 
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                Custom <span data-faq-id="calculate" data-faq-link-size="70%"></span>
+                                Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a id="Pricing_TA_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
@@ -1017,8 +1017,8 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-usage-limits">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
                         </div>
@@ -1047,7 +1047,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="community-support">
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
                             <br>
@@ -1076,7 +1076,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="community-support">
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
                             <br>
@@ -1105,8 +1105,8 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                                Support
                             </div>
                             <br>
                             <div>
@@ -1159,7 +1159,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-usage-limits">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
@@ -2827,7 +2827,7 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-trendz-cloud-usageAndLimits" class="pi-accordion">
-                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-limits" data-title="What are the device, message, and data storage limits for each plan?">
+                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-usage-limits" data-title="What are the device, message, and data storage limits for each plan?">
                         <div class="container">
                             <p>Limits vary by plan; details can be found on our plans definition <a href="https://thingsboard.io/docs/paas/subscription/">page</a>.</p>
                         </div>

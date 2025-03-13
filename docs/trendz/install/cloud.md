@@ -36,7 +36,7 @@ You need to have active ThingsBoard Cloud account to active Trendz Analytics Clo
 
 ### Activate Trendz Analytics Cloud
 
-- Log in to ThingsBaord Cloud account and select [Plan and Billing](https://thingsboard.cloud/billing) menu option.
+- Log in to ThingsBoard Cloud account and select [Plan and Billing (North America)](https://thingsboard.cloud/billing) / [Plan and Billing (Europe)](https://eu.thingsboard.cloud/billing) menu option.
 - Press **Update Plan** button
 - Choose **ThingsBoard + Trendz** and select the most suitable plan for you
 
