@@ -61,6 +61,11 @@ ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cl
 
 Please download the CA root certificate using this [**link**](/docs/{{docsPrefix}}user-guide/resources/coap-over-dtls/ca-root.pem) and save it to your working directory as "**ca-root.pem**".
 
+```bash
+wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/coap-over-tls/ca-root.pem
+```
+{: .copy-code}
+
 Now you may use the *ca-root.pem* to setup secure connection to ThingsBoard Cloud and Access Token **YOUR_ACCESS_TOKEN** to authenticate the device to upload telemetry:
 
 ```bash
