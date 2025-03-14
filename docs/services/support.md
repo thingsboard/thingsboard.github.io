@@ -88,7 +88,7 @@ defaultActivePricingSection: thingsboard-pe
         <div class="pricing-div">
             <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-1 card-to-animate">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-to-animate">
                         <div class="pricing-square support-cards">
                             <h2>Essential</h2>
                             <div class="pricing-square-description">
@@ -116,7 +116,7 @@ defaultActivePricingSection: thingsboard-pe
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-2">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-to-animate">
                         <div class="pricing-square support-cards">
                             <h2>Premium</h2>
                             <div class="pricing-square-description">
@@ -144,7 +144,7 @@ defaultActivePricingSection: thingsboard-pe
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-3 card-to-animate">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-to-animate">
                         <div class="pricing-square support-cards">
                             <h2>Ultimate</h2>
                             <div class="pricing-square-description">

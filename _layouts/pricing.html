@@ -369,33 +369,12 @@
         const currentSection = document.querySelector(`#${sectionId}`);
         const cards = currentSection.querySelectorAll('.card-to-animate')
 
-        if(sectionId === 'thingsboard-pe') {
-            currentSection.addEventListener("mouseover", () => applyAnimation(sectionId, cards));
-
-            let lastScrollTop = window.scrollY;
-
-            window.addEventListener("scroll", () => {
-                const currentScroll = window.scrollY;
-
-                if (currentScroll > lastScrollTop) {
-                    applyAnimation(sectionId, cards);
-                }
-
-                lastScrollTop = currentScroll;
-            })
-        } else if(sectionId === 'thingsboard-ce') {
-            applyAnimation(sectionId, cards);
-        }
-    }
-
-    function applyAnimation(sectionId, cards) {
         cards.forEach((card) => {
             setTimeout(() => {
-                card.classList.add(`${sectionId}-card-animation`)
+                card.classList.add(`card-animation`)
             }, 1)
         })
     }
-
 </script>
 
 {% include cookie-consent.html %}
