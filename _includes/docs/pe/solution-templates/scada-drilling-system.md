@@ -11,7 +11,7 @@ The use of SCADA systems allows operators to monitor drilling parameters in real
 <object width="95%" data="/images/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
 
 <br>
-To understand how the SCADA systems in Drilling template works, let&#39;s start by installing it.
+To understand how the SCADA Drilling system template works, let&#39;s start by installing it.
 
 ## Install solution template
 
@@ -22,7 +22,7 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 
 **Follow the next steps:**
 
-\- **Step 1**: Install Docker Compose on your system. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
+\- **Step 1**: Install Docker Compose. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
 
 \- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
 
@@ -78,59 +78,60 @@ docker compose up
 
 {% include images-gallery.html imageCollection="launch-iot-gateway-1" %}
 
-We will explore the IoT Gateway in more detail in the "[Gateway](#gateway)" section, where we will discuss how the gateway operates within the ThingsBoard environment, devices connectivity, and data transmission configuration.
-
 The IoT Gateway is running. Click "Close" to proceed to the dashboard.
 
 {% include images-gallery.html imageCollection="go-to-dashboard-1" %}
 
-You will need to have access to ThingsBoard Professional Edition. The easiest way is to use ThingsBoard Cloud server. The alternative option is to install ThingsBoard using installation guide.
+## System components
+
+The SCADA Oil & Gas Drilling system includes:
+
+- **Devices** – Sensors and actuators installed on drilling equipment. They collect data on drilling parameters such as rotation speed, tension, fluid level, and other indicators.
+- **Modbus** protocol – The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
+- **Gateway** – A device that transmits data from sensors to the cloud platform. It converts and relays data over the network for further processing.
+- **ThingsBoard** – An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
+- **Dashboard visualization** – SCADA dashboards provide a clear representation of all drilling processes, enabling real-time monitoring and informed decision-making.
 
 ## Dashboard
 
-As part of this solution, we have developed a comprehensive SCADA system for a drilling dashboard, providing real-time monitoring and control of key drilling parameters such as rotary speed, depth, tension, and fluid flow rate.
+As part of this solution, we have developed a comprehensive SCADA Oil & Gas Drilling system dashboard, providing real-time monitoring and control of key drilling parameters such as rotary speed, depth, tension, and fluid flow rate.
 Operators can manage equipment (pumps, rotors, preventers), analyze the condition of the drilling rig, drill bit, and drilling mud, and track load and vibration levels.
 The system features interactive graphs, alarm logs, and notifications, helping to prevent accidents and enhance operational efficiency.
 
-Key features:
-
-- **Drilling Rig State** – Monitoring and control of rotary speed, hoisting speed, and pressure, with real-time load analysis and drilling progress tracking.
-- **Draw Works System State** – Control of lifting speed, direction, and tension, with vibration, position, and inclination monitoring.
-- **Blowout Preventer (BOP) State** – Well pressure control, activation/deactivation of the preventer, leak detection, mud temperature, and gas cut monitoring.
-- **Drill Bit Performance State** – Tracking drilling speed, bit position, vibration, and temperature to ensure optimal penetration rate (ROP).
-- **Drilling Mud System State** – Monitoring flow rate, mud level, density, pressure, and temperature to ensure proper lubrication and cooling.
-- **Alarms and Notifications** – Real-time logging of alerts and warnings for quick response to failures, abnormal pressure, or leaks.
-- **Modbus Gateway & Device Connectivity** – Monitoring device connectivity, status, communication protocols, and troubleshooting in real time.
-
 ![image](/images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png)
 
-Clicking on different devices provides detailed metrics and controls for each component.
+<br>
 
-{% include images-gallery.html imageCollection="solution-scada-dashboard-high-performance" %}
+**Key features:**
 
-The mobile view demonstrates the flexibility of the dashboard, allowing you to manage and monitor the swimming pool SCADA system across different devices, including tablets and smartphones.
+- **Main drilling SCADA system state** – Real-time monitoring of drilling parameters (speed, depth, tension, flow rate) with control over pumps, rotors, and preventers.
+- **Data monitoring SCADA system state** – Tracks drill bit position, well pressure, mud flow, mechanical tension, drilling performance, equipment status, and environmental conditions while analyzing temperature, vibration, and gas levels to prevent failures.
+- **Drilling rig state** –Monitoring and controlling the rotational speed, hoisting speed, and drilling rig pressure, with real-time load analysis and drilling progress tracking.
+- **Blowout preventer (BOP) state** – Ensures well pressure control, monitors leaks, mud temperature, and gas levels, with real-time pressure trend analysis.
+- **Drill bit performance state** – Tracks drilling speed, bit position, vibration, and temperature to optimize penetration rate and efficiency.
+- **Drilling mud system state** – Monitors and controls drilling fluid properties, ensuring proper lubrication, cooling, and circulation.
+- **Draw works system state** – Controls hoisting and lowering of the drill string, adjusting speed, direction, and tension while tracking vibrations and position.
+- **Alarms and notifications** – Logs real-time alerts and warnings for quick response to failures, abnormal pressure, and leaks. 
 
-{% include images-gallery.html imageCollection="scada-mobile-high-performance" %}
+Navigating through the states provides detailed metrics and control elements for the drilling rig components.
 
-## System components
+{% include images-gallery.html imageCollection="drilling-dashboard-1" %}
 
-The SCADA Swimming Pool system includes:
+The mobile view demonstrates the flexibility of the dashboard, allowing you to manage and monitor the SCADA Oil & Gas Drilling system across different devices, including tablets and smartphones.
 
-- **Devices** – Sensors and actuators installed on drilling equipment. They collect data on drilling parameters such as rotation speed, tension, fluid level, and other indicators.
-- **Modbus** Protocol – The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
-- **Gateway** – A device that transmits data from sensors to the cloud platform. It converts and relays data over the network for further processing.
-- **ThingsBoard** – An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
-- **Dashboard Visualization** – SCADA dashboards provide a clear representation of all drilling processes, enabling real-time monitoring and informed decision-making.
+{% include images-gallery.html imageCollection="scada-mobile" %}
 
 ## Key components of a drilling rig
 
 These symbols represent key structural elements of the drilling system:
 
-**Drilling Rig**
+**Drilling rig**
 
 Main structure essential for supporting drilling operations.
 
 ![image](/images/solutions/scada-drilling-system/hp-drilling-rig.png)
+
+<br>
 
 **Preventer**
 
@@ -138,11 +139,15 @@ Blowout preventer for pressure control and system safety.
 
 ![image](/images/solutions/scada-drilling-system/hp-preventer.png)
 
+<br>
+
 **Drill**
 
 Represents the drill bit responsible for boring into the ground.
 
 ![image](/images/solutions/scada-drilling-system/hp-drill.png)
+
+<br>
 
 **Drawwork**
 
@@ -150,25 +155,14 @@ Controls the hoisting and lowering of the drill string.
 
 ![image](/images/solutions/scada-drilling-system/hp-drawwork.png)
 
-### Connection Components
+<br>
 
-These connector symbols facilitate the integration and linking of different equipment and symbols within the SCADA system, ensuring structured and logical connections
+**Drilling mud pump**
 
-### Real-Time Monitoring and Control
+Controls the circulation of the drilling fluid.
 
-These components provide real-time visualization and control over key parameters in the system:
-
-- HP Control Panel – Allows toggling system components on and off.
-- HP Simple Horizontal Scale – Basic monitoring for horizontal parameters.
-- HP Dynamic Horizontal Scale – Adjustable monitoring of real-time horizontal metrics.
-- HP Simple Vertical Scale – Vertical parameter representation for monitoring.
-
-This structured SCADA system enhances precision, efficiency, and safety in drilling operations by integrating high-performance visual symbols.
+![image](/images/solutions/scada-drilling-system/drilling-mud-pump.png)
 
 ## Conclusion
-
-SCADA symbols provide critical visualization and control capabilities across industries that rely on automation, precision, and safety. Their adaptability ensures seamless integration into various industrial control systems, optimizing operations and reducing risks.
-
-## Summary
 
 The implementation of SCADA and the ThingsBoard platform in drilling significantly enhances operational efficiency and safety. Through a comprehensive monitoring system, operators can track all key drilling process parameters, respond to changes promptly, and minimize risks of equipment failure. The integration of sensors, communication protocols, and powerful analytical tools enables the creation of smart drilling rigs, ensuring maximum productivity and resilience against potential disruptions.
