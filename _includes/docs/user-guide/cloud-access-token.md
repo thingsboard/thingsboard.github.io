@@ -20,7 +20,7 @@ The above command uses **{{mqttHostName}}** host and **1883** port and requires 
 #### MQTTS (MQTT over SSL)
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-ThingsBoard Team has already provisioned a valid certificate for [{{hostLabel}}](https://thingsboard.cloud/signup){:target="_blank"}.
+ThingsBoard Team has already provisioned a valid certificate for [{{hostLabel}}](https://{{hostName}}/signup){:target="_blank"}.
 
 Please download the CA root certificate using this [**link**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem) and save it to your working directory as "**ca-root.pem**".
 

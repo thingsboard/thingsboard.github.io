@@ -46,7 +46,7 @@ Before we explore usage examples, we need to install a CoAP client that supports
 
 Since the CoAP client must always provide the CA certificate for verification,
 use the `-R` flag followed by the path to a PEM file containing the trusted root CA certificates.
-ThingsBoard Team has already provisioned a valid certificate for [{{hostLabel}}](https://eu.thingsboard.cloud/signup){:target="_blank"}.
+ThingsBoard Team has already provisioned a valid certificate for [{{hostLabel}}](https://{{hostName}}/signup){:target="_blank"}.
 
 Please download the CA root certificate using this [**link**](/docs/{{docsPrefix}}user-guide/resources/coap-over-dtls/ca-root.pem) and save it to your working directory as "**ca-root.pem**".
 
