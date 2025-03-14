@@ -35,21 +35,33 @@ defaultActivePricingSection: thingsboard-pe
         <div class="container">
             <div class="pricing-section pricing-community active" id="community">
                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
-                        <div class="pricing-square">
+                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4 community-card-to-animate card-to-animate">
+                        <div class="pricing-square support-cards">
                             <h2>Community support</h2>
-                            <div class="pricing-square-description">
-                                <p> <strong>Community</strong> <strong>support</strong> is free-of-charge option. It is a volonteering initiative, provided by our team. Please, be aware that support is one of ThingsBoard Inc. business fields. Although our engineers (as many of our customers know) successfully handle user's requests in their free time. Community support doesn't mean any obligation for ThingsBoard Inc. We encourage you to:<br>
-                               <a href="/docs/">read documentation</a>;<br>
-                               subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a>.<br>
-                               and time fater time took an eye on <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> updates.
+                            <div class="community-support-card">
+                                <p>
+                                    Community support is free-of-charge option. It is a volunteering initiative, provided by our team. Please, be aware that support is one of ThingsBoard Inc. business fields. Although our engineers (as many of our customers know) successfully handle user's requests in their free time. Community support doesn't mean any obligation for ThingsBoard Inc. We encourage you to:
                                 </p>
-                                <p>So, most demanded tutorials, samples and guides are available 24/7
+                                <ul>
+                                    <li>
+                                        <img class="filter-icon" src="https://img.thingsboard.io/feature-logo/guides.svg" alt="Documentation icon">
+                                        <a href="/docs">Read documentation</a>
+                                    </li>
+                                    <li>
+                                        <img src="https://img.thingsboard.io/pricing/yootube-icon.svg" alt="YouTube icon">
+                                        <span>Subscribe to our <a href="https://www.youtube.com/c/thingsboard">YouTube channel</a></span>
+                                    </li>
+                                    <li>
+                                        <img src="https://img.thingsboard.io/pricing/education-icon.svg" alt="Education icon">
+                                        <span>Keep an eye on our <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO">free Education course updates</a></span>
+                                    </li>
+                                </ul>
+                                <p>So, most demanded tutorials, samples and guides are available 24/7.</p>
+                                <p>
+                                    Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues">community on GitHub</a> (issues page), start <a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> themes.
                                 </p>
-                                <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="https://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.
-                                </p>  
-                                <div class="row justify-content-center">
-                                    <a id="Serv_Support_CS_HelpMe" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <div class="row justify-content-center mt-4">
+                                    <a id="Serv_Support_CS_HelpMe" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/?subject=Technical%20Support">
                                         Help me!
                                     </a>
                                 </div>
@@ -76,16 +88,20 @@ defaultActivePricingSection: thingsboard-pe
         <div class="pricing-div">
             <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>ESSENTIAL</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p> <b>for 1 server instance only</b></p>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-to-animate">
+                        <div class="pricing-square support-cards">
+                            <h2>Essential</h2>
+                            <div class="pricing-square-description">
+                                <p>for 1 server instance only</p>
                             </div>
-                            <div>
-                                What's in?
+                            <h4 class="pricing-square-price mb-4">
+                                $248<span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Serv_Support_PS_Essential" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/?subject=Technical%20Support">
+                                    Order
+                                </a>
                             </div>
-                            <br>
                             <div class="pricing-square-item">
                                 <strong>Email</strong> <strong>consulting</strong>: 2h per month
                             </div>
@@ -93,32 +109,27 @@ defaultActivePricingSection: thingsboard-pe
                                 <b>Server issue response time</b>: < 24h
                             </div>
                             <div class="pricing-square-item">
-                                <b>On-demand trainings</b>: <i>not packed</i>
+                                <b>On-demand trainings</b>: not packed
                             </div>
                             <div class="pricing-square-item">
                                 <b>1 named contact</b> within normal business hours
                             </div>
-                            <h4 class="pricing-square-price mt-4 mb-4">
-                                $248
-                                <span>/ month</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-to-animate">
+                        <div class="pricing-square support-cards">
+                            <h2>Premium</h2>
+                            <div class="pricing-square-description">
+                                <p>for up to 5 running servers</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-4">
+                                $498<span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Serv_Support_PS_Essential" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <a id="Serv_Support_PS_Premium" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/?subject=Technical%20Support">
                                     Order
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>PREMIUM</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p> <b>for up to 5 running servers</b></p>
-                            </div>
-                            <div>
-                                What's in?
-                            </div>
-                            <br>
                             <div class="pricing-square-item">
                                 <strong>Email</strong> <strong>consulting</strong>: 4h per month
                             </div>
@@ -131,27 +142,22 @@ defaultActivePricingSection: thingsboard-pe
                             <div class="pricing-square-item">
                                 <b>2 named contacts</b> within extended business hours
                             </div>
-                            <h4 class="pricing-square-price mt-4 mb-4">
-                                $498
-                                <span>/ month</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4 card-to-animate">
+                        <div class="pricing-square support-cards">
+                            <h2>Ultimate</h2>
+                            <div class="pricing-square-description">
+                                <p>privileged bundle for up to 10 running servers</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-4">
+                                $1198<span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Serv_Support_PS_Premium" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <a id="Serv_Support_PS_Ultimate" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/?subject=Technical%20Support">
                                     Order
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl mb-4">
-                        <div class="pricing-square">
-                            <h2>ULTIMATE</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p><b>privileged bundle for up to 10 running servers</b></p>
-                            </div>
-                            <div>
-                                What's in?
-                            </div>
-                            <br>
                             <div class="pricing-square-item">
                                 <strong>Email</strong> <strong>consulting</strong>: 8h per month
                             </div>
@@ -163,15 +169,6 @@ defaultActivePricingSection: thingsboard-pe
                             </div>
                             <div class="pricing-square-item">
                                 <b>3 named contact</b> within 24/7
-                            </div>
-                            <h4 class="pricing-square-price mt-4 mb-4">
-                                $1198
-                                <span>/ month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Serv_Support_PS_Ultimate" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
-                                    Order
-                                </a>
                             </div>
                         </div>
                     </div>
