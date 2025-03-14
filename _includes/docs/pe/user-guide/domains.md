@@ -23,7 +23,7 @@
 {:toc}
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-{{THINGSBOARD_WITH_URL}}{:target="_blank"} [White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature allows you to use a custom domain to provide a personalized hostname for user access.
+{{THINGSBOARD_WITH_URL}}{:target="_blank"} {% unless docsPrefix == null %}[White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature{% endunless %} allows you to use a custom domain to provide a personalized hostname for user access.
 When you register a valid domain, ThingsBoard automatically requests an SSL certificate.
 After domain registration, you will be able to access the platform via your domain name using a secure (HTTPS) connection.
 {% endif %}
