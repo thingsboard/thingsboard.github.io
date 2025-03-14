@@ -241,7 +241,7 @@ selfManagedPlan:
                                 <p>Consider yourself a Fortune 500 company in the field?</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                Custom <span data-faq-id="tb-cloud-no-enterprise-pricing-listed" data-faq-link-size="70%"></span>
+                                Custom <span data-faq-id="tb-cloud-enterprise-pricing-calculation" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
                                 <a id="Pricing_PE_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
@@ -1372,7 +1372,7 @@ selfManagedPlan:
                             </button>
                         </div>
                         <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-unlim-devices">
+                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-limits">
                             Unlimited Devices and Assets
                         </div>
                         <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
@@ -1587,7 +1587,7 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-thingsboard-ce-supportAndCommunityAssistance" class="pi-accordion">
-                    <div class="item" data-tag="h4" data-item-id="ce-out-of-box-support" data-title="Is there any out-of-the-box support from the ThingsBoard team for Community Edition users?">
+                    <div class="item" data-tag="h4" data-item-id="ce-out-of-box-support" data-title="Is there out-of-the-box support from ThingsBoard team for Community Edition users?">
                         <div class="container">
                             <p>The ThingsBoard team does not provide dedicated support for Community Edition users. However, users can access community-driven resources such as forums, documentation, and GitHub for assistance.</p>  
                         </div>    
@@ -1710,7 +1710,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What pricing plans does ThingsBoard Cloud offer?">
                         <div class="container">
-                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 4 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/">pricing</a> page.</p>
+                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 4 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-structure" data-title="How is ThingsBoard Cloud pricing structured?">
@@ -2751,7 +2751,7 @@ selfManagedPlan:
                             <p>The Enterprise subscription is a fully managed cloud solution with a dedicated environment established for each customer upon request. Pricing is customized based on the specific infrastructure, resources, and service requirements of the customer. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> to discuss your needs and receive a tailored quote.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="trendz-cloud-limits" data-title="Are there any Limits?">
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-cloud-any-limits" data-title="Are there any Limits?">
                         <div class="container">
                             <p>Yes, each plan has specific API limits. You can review the detailed limits for each plan <a href="https://thingsboard.io/docs/paas/subscription/">here</a>.</p>
                         </div>
@@ -2890,7 +2890,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-enterprise-price" data-title="How is the Enterprise plan price calculated?">
                         <div class="container">
-                            <p>The ThingsBoard Enterprise plan price is determined based on resource usage, starting with a fixed base price and additional fees for extra resources. To receive a detailed price calculation, please contact our sales team by filling out the <a href="https://thingsboard.io/docs/contact-us/">"Contact Us"</a> "Contact Us" form on our website.</p>
+                            <p>The ThingsBoard Enterprise plan price is determined based on resource usage, starting with a fixed base price and additional fees for extra resources. To receive a detailed price calculation, please contact our sales team by filling out the <a href="https://thingsboard.io/docs/contact-us/">"Contact Us"</a> form on our website.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-enterprise-support" data-title="What support options are included in the enterprise plan?">
@@ -3759,7 +3759,7 @@ selfManagedPlan:
                             <p>ThingsBoard Edge data is stored locally.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-community-compliance" data-title="Does ThingsBoard Edge Community Edition comply with industry standards (GDPR, ISO, etc.)?">
+                    <div class="item" data-tag="h4" data-item-id="edge-community-compliance" data-title="Does Edge Community Edition comply with industry standards (GDPR, ISO, etc.)?">
                         <div class="container">
                             <p>Compliance depends on your hosting environment and data security practices.</p>
                         </div>
