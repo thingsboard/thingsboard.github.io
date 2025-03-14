@@ -335,4 +335,4 @@ TBMQ provides a highly scalable and resilient architecture for handling MQTT com
 
 ### Programming languages
 
-The back end of TBMQ is implemented in Java 17. The front end of TBMQ is developed as a SPA using the Angular 15 framework.
+The back end of TBMQ is implemented in Java 17. The front end of TBMQ is developed as a SPA using the Angular 19 framework.

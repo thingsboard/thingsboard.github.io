@@ -6,7 +6,13 @@ toc:
 - title: What is TBMQ?
   path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
 - title: Configuration
-  path: /docs/mqtt-broker/install/config/
+  new: true
+  section:
+    - title: TBMQ
+      path: /docs/mqtt-broker/install/config/
+    - title: TBMQ Integration Executor
+      path: /docs/mqtt-broker/install/ie-config/
+      new: true
 - title: Security
   path: /docs/mqtt-broker/security/
 - title: Integration with ThingsBoard
