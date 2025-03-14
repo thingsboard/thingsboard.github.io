@@ -23,9 +23,9 @@
 {:toc}
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-{{THINGSBOARD_WITH_URL}}{:target="_blank"} {% unless docsPrefix == null %}[White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature{% endunless %} allows you to use a custom domain to provide a personalized hostname for user access.
-When you register a valid domain, ThingsBoard automatically requests an SSL certificate.
-After domain registration, you will be able to access the platform via your domain name using a secure (HTTPS) connection.
+{{THINGSBOARD_WITH_URL}}{:target="_blank"} {% unless docsPrefix == null %}[White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature{% endunless %} allows you to use a custom domain to provide secure user access.
+To achieve this, you need to configure an HAProxy Load Balancer and provide an SSL certificate. [This documentation](/docs/user-guide/install/pe/add-haproxy-ubuntu/){:target="_blank"} will help you do this.
+Once set up, you will be able to access the ThingsBoard platform through your custom domain using a secure (HTTPS) connection.
 {% endif %}
 {% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 {{THINGSBOARD_WITH_URL}}{:target="_blank"} [White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature allows you to use a custom domain to provide a personalized hostname for user access.
