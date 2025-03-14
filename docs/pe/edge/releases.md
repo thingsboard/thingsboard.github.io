@@ -8,6 +8,10 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.9.1 (Mar 14, 2025) {#v391}
+
+**Minor** release with everything from [TB Edge v3.9.1](/docs/edge/releases/#v391) and [TB PE v3.9.1](/docs/pe/reference/releases/#v391).
+
 ## v3.9.0 (Jan 13, 2025) {#v39}
 
 **Major** release with everything from [TB Edge v3.9](/docs/edge/releases/#v39) and [TB PE v3.9](/docs/pe/reference/releases/#v39).
