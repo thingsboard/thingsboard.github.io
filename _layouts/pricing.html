@@ -179,8 +179,8 @@
 
     function setActiveSolutionSection(sectionId) {
         $('.solution-selector .solution').removeClass("active");
-        $('.pricing-div .pricing-section:not(.pricing-community):not(.trendz-pricing-cloud)').removeClass("active");
-        $('.pricing-content-header .pricing-content-description:not(.trendz-pricing-cloud)').removeClass("active");
+        $('.pricing-div .pricing-section:not(.pricing-community)').removeClass("active");
+        $('.pricing-content-header .pricing-content-description').removeClass("active");
         if (sectionId) {
             var $solutionButtonElement = $('.solution-selector .solution'+`[data-solutionid=${sectionId}]`);
             $solutionButtonElement.addClass("active");
