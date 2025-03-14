@@ -1028,7 +1028,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-usage-limits">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-limits">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
@@ -1170,7 +1170,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-usage-limits">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-limits">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
@@ -2838,7 +2838,7 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-trendz-cloud-usageAndLimits" class="pi-accordion">
-                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-usage-limits" data-title="What are the device, message, and data storage limits for each plan?">
+                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-limits" data-title="What are the device, message, and data storage limits for each plan?">
                         <div class="container">
                             <p>Limits vary by plan; details can be found on our plans definition <a href="https://thingsboard.io/docs/paas/subscription/">page</a>.</p>
                         </div>
