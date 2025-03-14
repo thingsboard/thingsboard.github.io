@@ -17,7 +17,7 @@ tenant-set configurations can be overridden by the customer, and so on.
 
  ![hierarchy_scheme](/images/edge/user-guide/white-labeling/hierarchy.webp){: style="display: block; margin: auto; max-height: 350px"}
 
-Similarly, **white-label** configurations are propagated to the **Edge instances**:
+Similarly, **white-labeling** configurations are propagated to the **Edge instances**:
 
 * **Tenant-Owned Edge:** If the edge is owned by a **tenant**, the white labeling settings are retrieved from the **tenant level** and merged with those from the system administrator. 
 
@@ -29,7 +29,7 @@ Similarly, **white-label** configurations are propagated to the **Edge instances
 
 However, the displayed interface depends on the **account** used to log in to an **Edge** instance.
 
-_**For example:** When a user logs in to the **customer-owned Edge** with the **tenant account**, he will see the interface for a **tenant**._
+_**For example:** When a user logs in to a **customer-owned Edge** with the **tenant account**, that user will see the interface for a **tenant**._
 
 ![interface](/images/edge/user-guide/white-labeling/interface.webp){: style="display: block; margin: auto; max-height: 400px"}
 
@@ -46,13 +46,13 @@ The appearance of the **Edge login page** depends on the **ownership** only.
 {% endcapture %}
 {% include templates/info-banner.md content=edge-login %}
 
-_**For example:** When a user logs in to the **customer-owned Edge**, the **customer's** white-label login configurations are applied._
+_**For example:** When a user logs in to the **customer-owned Edge**, the **customer's** white-labeling login configurations are applied._
 
 ![edge-login-page](/images/edge/user-guide/white-labeling/edge-login-page.webp){: style="display: block; margin: auto; max-height: 450px"}
 
 ### Other Configurations
 
-The **white label** configuration for **Edge** is designed in the same way as for the **Platform (Server or Cloud)**. Please refer to the **Platform White Label documentation** for detailed configuration instructions:
+The **white labeling** configuration for **Edge** is designed in the same way as for the **Platform (Server or Cloud)**. Please refer to the **Platform White Labeling documentation** for detailed configuration instructions:
 * [Custom translation](/docs/pe/user-guide/custom-translation/){: target="_blank"}
 * [Custom menu](/docs/pe/user-guide/custom-menu/){: target="_blank"}
 
