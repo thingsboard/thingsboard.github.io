@@ -64,6 +64,11 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/tcp/
   - title: UDP
     path: /docs/pe/edge/user-guide/integrations/udp/
+- title: Scheduler
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/edge/user-guide/scheduler/
 - title: Security
   section:
     - title: Edge over TLS/SSL 
