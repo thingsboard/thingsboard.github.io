@@ -50,7 +50,7 @@ volumes:
   tb-edge-postgres-data:
     name: tb-edge-postgres-data
 
-  EOF
+EOF
 ```
 {: .copy-code.expandable-9}
 
