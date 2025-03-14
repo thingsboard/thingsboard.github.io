@@ -2,15 +2,16 @@
 
 #### Step 1. Prepare your server and certificate chain
 
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://{{hostName}}/signup).
-{% if docsPrefix != 'paas/' %}
-Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"}.
+{% endif %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/){:target="_blank"} guide to provision server certificate if you are hosting your own ThingsBoard instance.
 {% endif %}
 
 Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
 Save the CA root certificate to your working directory as "**ca-root.pem**".
-An example of CA root certificate for *{{mqttHostName}}* is located 
-[here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+An example of CA root certificate for *{{mqttHostName}}* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
 
 #### Step 2. Generate Client certificate chain
 
