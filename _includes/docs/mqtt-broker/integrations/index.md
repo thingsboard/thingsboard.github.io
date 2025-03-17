@@ -46,7 +46,7 @@ At a high level, the integration flow in TBMQ works like this:
 
 > This architecture ensures clear separation of concerns, high availability, and improves scalability and system performance.
 
-[Insert diagram here to illustrate the data flow and service interaction]
+![image](/images/mqtt-broker/integrations/tbmq-ie-main.png)
 
 #### Deployment Options
 
@@ -143,10 +143,7 @@ This asynchronous communication model ensures **non-blocking message flow**.
 
 #### Diagram of data communication and detailed description
 
-[Insert diagram here to illustrate the data flow and service interaction]
-
-
-#### Kafka Topics and Parallel Processing
+![image](/images/mqtt-broker/integrations/tbmq-ie-communication.png)
 
 TBMQ and its Integration Executor microservices communicate asynchronously over Kafka using multiple dedicated topics.
 Each topic serves a specific purpose and allows for decoupled, reliable, and scalable data flow between the components.
@@ -162,12 +159,9 @@ TBMQ and its Integration Executors use **dedicated Kafka topics** to exchange di
 
 #### Downlink topics
 
-
-### Configuration Storage Using Compact Topics
-
 TBMQ uses **Kafka compact topics** for integration configuration delivery (`tbmq.ie.downlink.*`). This design ensures that the **latest configuration for each integration is always retained**, regardless of when the Integration Executor (TBMQ IE) starts or restarts.
 
-### 🔁 How It Works
+##### How It Works
 
 - Each integration lifecycle event (create, update, delete) is published to the corresponding **downlink compact topic** based on integration type (e.g., `tbmq.ie.downlink.http`).
 - Kafka’s **log compaction** guarantees that only the **most recent event per integration ID** remains in the topic over time.
@@ -177,20 +171,14 @@ TBMQ uses **Kafka compact topics** for integration configuration delivery (`tbmq
   3. Once restoration is complete and the **end of the partition is reached**, it transitions to **real-time mode** and begins normal operation.
 - Integrations are only launched after their **latest configurations have been fully restored** from Kafka.
 
----
-
-### ✅ Benefits of This Approach
+##### Benefits of This Approach
 
 - **Resilience**: Ensures TBMQ IE can fully recover after restarts without requiring external config stores.
 - **Consistency**: Always works with the latest valid config — no stale or conflicting states.
 - **Scalability**: Stateless service design; all config state is persisted in Kafka.
 - **Reduced Load**: Only changed configurations are written; no need to resend the full config set repeatedly.
 
----
-
 This pattern provides a **durable, distributed configuration source** backed by Kafka, enabling reliable and scalable integration execution across multiple TBMQ IE instances.
-
-
 
 Downlink topics are used to **send configuration and validation requests** from TBMQ to Integration Executors. Each integration type has its own dedicated topic:
 
@@ -217,32 +205,30 @@ This design empowers operators to deploy **specialized executor instances** — 
 
 #### Uplink Topic
 
-This topic is used by the Integration Executors to **send messages back to the TBMQ Core**, such as:
+This topic is used by the Integration Executors to **send messages back to the TBMQ**, such as:
 
 - Integration lifecycle events (e.g., executor started, integration activated)
 - Error reports from failed deliveries
 - Integration statistics (success/failure counts)
 
-#### Purpose:
+##### Purpose:
 - Allow TBMQ to persist operational data and metrics in the database.
 - Enable observability and system-wide monitoring.
 
 
-#### — Uplink Node-Specific Notifications
+#### Uplink Node-Specific Notifications Topic
 
 This topic prefix is used to **send direct replies from executors to specific TBMQ nodes**, typically in response to validation requests or one-time commands.
 
-#### Example usage:
+##### Example usage:
 
 - Replying to a "Check Connection" request for an HTTP integration.
 - Sending validation error details back to the correct broker node.
 
-#### Purpose:
+##### Purpose:
 
 - Ensure responses go to the correct TBMQ instance in clustered setups.
 - Maintain request-response correlation.
-
-
 
 
 
@@ -254,8 +240,6 @@ This topic prefix is used to **send direct replies from executors to specific TB
 The lifecycle of an integration in TBMQ includes its creation, update, deletion, execution, monitoring, and error handling.
 Integrations can be created/updated/deleted either from the TBMQ Web UI or using the REST API.
 
-[Insert diagrams here to illustrate lifecycle in 3 cases - OK, Failure, Timeout]
-
 Once the request from UI or REST API is received by TBMQ, it generates the validation request and sends it to the Integration Executor.
 The IE receives the request and do the validation of configuration based on the type of integration.
 Note, similarly the `Check connection` feauture is working to send the request to test the connection to external system.
@@ -265,13 +249,19 @@ Let's review 3 examples.
 
 **Scenario 1. Integration Executor running**
 
+![image](/images/mqtt-broker/integrations/tbmq-ie-admin-ok.png)
+
 When it is running - the expected result is Success.
 
 **Scenario 2. Integration Executor running validation failed**
 
+![image](/images/mqtt-broker/integrations/tbmq-ie-admin-error.png)
+
 When it is running but the configuration is wrong - the expected result is Failure.
 
 **Scenario 3. Integration Executor running validation failed**
+
+![image](/images/mqtt-broker/integrations/tbmq-ie-admin-timeout.png)
 
 When it is not running the integration will be be saved after the period of timeout and you will see Timeout exception.
 
@@ -280,9 +270,9 @@ In case the validation is success, the integration entity is saved in the DB and
 
 
 
-[Insert diagram here to illustrate the data flow and service interaction]
+![image](/images/mqtt-broker/integrations/tbmq-ie-msg-processing.png)
 
-### `tbmq.msg.ie` — Integration Message Processing Topic
+#### Integration Message Processing Topic
 
 
 
@@ -306,7 +296,7 @@ This is the **core topic used to deliver MQTT messages from TBMQ to Integration 
 
 Each integration, when triggered by an MQTT publish event, results in a message being placed on this topic.
 
-#### Power & Design Choice:
+##### Power & Design Choice:
 - Messages from all integrations are published to this topic.
 - Executors consume messages **in separate threads**, with processing logic specific to each integration instance.
 - This design ensures:
@@ -316,25 +306,24 @@ Each integration, when triggered by an MQTT publish event, results in a message 
 
 Thanks! Here’s a clear and well-structured version of that explanation, rewritten for documentation in a user-friendly, B1/B2 style. It explains the behavior, provides reassurance, and introduces the configuration parameters clearly.
 
-### Integration Message Storage and Cleanup
+##### Integration Message Storage and Cleanup
 
 Each integration in TBMQ has a **dedicated Kafka topic** for storing messages that match its topic filters. This design allows integrations to process messages reliably, even if the integration is temporarily disabled.
 
-#### What Happens When an Integration is Disabled?
+##### What Happens When an Integration is Disabled?
 
 - While an integration is **disabled**, messages that match its topic filters are **still received and stored** in its dedicated Kafka topic.
 - Once the integration is **enabled again**, the executor starts delivering those messages to the external system.
 
-#### What If the Integration Stays Disabled for a Long Time?
+##### What If the Integration Stays Disabled for a Long Time?
 
 To prevent unused topics from taking up storage indefinitely, TBMQ includes a **cleanup mechanism**:
 
 - If an integration remains **disconnected or disabled for a long period**, its message topic will be **automatically deleted**, along with the stored data.
 - Don’t worry — when you **re-enable the integration**, the system will **automatically recreate the topic** and resume normal operation.
 
----
 
-#### Cleanup Configuration Parameters
+##### Cleanup Configuration Parameters
 
 You can control the cleanup behavior using the following environment variables:
 
@@ -355,101 +344,63 @@ This approach ensures that inactive integrations do not waste resources while st
 
 
 
+#### Message Delivery Error Handling & Retry Mechanism
 
-#### Integration Metrics Overview
+When an integration message fails to be processed (e.g., due to a timeout, unreachable external system, or malformed response), 
+the Integration Executor handles the error based on the configured **acknowledgment and retry strategy** for the `tbmq.msg.ie` topic.
 
-The Integration Executor collects and reports detailed metrics that provide visibility into the health, throughput, and behavior of each integration type. 
-These metrics are logged periodically and can be integrated with external monitoring tools (e.g., Prometheus/Grafana).
+These behaviors are controlled via the following configuration block:
 
-Here’s a breakdown of the key metric categories shown in the log:
-
-**1. Current Integration Activity**
-
-These are **per-integration-type counters** for the current reporting period:
-
-```
-IntegrationStatisticsKey(integrationStatisticsMetricName=START, success=true, integrationType=HTTP) = [0]
-```
-
-This entry means:
-- `START`: Number of times integration startup was attempted.
-- `success=true/false`: Indicates whether the startup attempt was successful or not.
-- `integrationType`: The type of integration (e.g., HTTP, MQTT, Kafka).
-
-You also see:
-- `integrationStatisticsMetricName=STOP`: Number of times integration stop was attempted.
-- `integrationStatisticsMetricName=MSGS_UPLINK`: Number of messages forwarded from IE to external systems (e.g., Kafka, HTTP, MQTT).
-
-Example insight:
-```
-MSGS_UPLINK, success=true, integrationType=MQTT = [38]
-```
--> 38 messages were successfully forwarded to the external MQTT target.
-
-**2. Integration State Summary**
-
-This section shows the **current number of integrations** in each lifecycle state (`STARTED` or `FAILED`), grouped by integration type.
-
-These values are recalculated whenever an integration changes state and reflect the **latest status** of all active integrations managed by the executor.
-
-For example:
-```
-START, success=true, integrationType=MQTT = [1]
-```
--> There is currently **one MQTT integration** in the `STARTED` state.
-
-The executor updates:
-- `success=true`: Number of integrations currently in `STARTED` state;
-- `success=false`: Number of integrations currently in `FAILED` state.
-
-These gauges help monitor the current health of the integration pool, showing how many integrations are actively running or have failed.
-
-**3. Integration Uplink Queue Stats**
-
-These metrics summarize the **uplink Kafka topic** used to send stats from the executor back to TBMQ:
-
-```
-queueSize = [0]
-totalMsgs = [1]
-successfulMsgs = [1]
-failedMsgs = [0]
+```yaml
+integration-msg:
+  # Interval in milliseconds to poll messages from 'tbmq.msg.ie' topics
+  poll-interval: "${TB_IE_MSG_POLL_INTERVAL:1000}"
+  # Timeout in milliseconds for processing the pack of messages
+  pack-processing-timeout: "${TB_IE_MSG_PACK_PROCESSING_TIMEOUT:30000}"
+  ack-strategy:
+    # Processing strategy for 'tbmq.msg.ie' topics. Can be: SKIP_ALL, RETRY_ALL
+    type: "${TB_IE_MSG_ACK_STRATEGY_TYPE:SKIP_ALL}"
+    # Number of retries, 0 is unlimited. Use for RETRY_ALL processing strategy
+    retries: "${TB_IE_MSG_ACK_STRATEGY_RETRIES:5}"
+    # Time in seconds to wait in consumer thread before retries
+    pause-between-retries: "${TB_IE_MSG_ACK_STRATEGY_PAUSE_BETWEEN_RETRIES:1}"
 ```
 
-- `queueSize`: Current backlog in the Kafka uplink queue.
-- `totalMsgs`: Total number of messages attempted to publish to the uplink topic.
-- `successfulMsgs` / `failedMsgs`: Publishing outcome.
+##### Strategy Options
 
-**4. Integration Message Processing Stats**
+- **SKIP_ALL** (default):
+  - If a message fails or timed out during processing, it is skipped after logging the error.
+  - This ensures high throughput and avoids retry delays but sacrifices guaranteed delivery to external systems.
 
-These stats are reported per integration instance and reflect **message-level processing**:
+- **RETRY_ALL**:
+  - The executor retries failed and timed out messages in-place, up to the configured number of times (`retries`).
+  - A pause between retries is enforced (`pause-between-retries`) to avoid tight retry loops.
+  - If `retries` is set to `0`, the executor retries the message indefinitely.
 
+##### Timeout Control
+
+Each batch of messages (or “pack”) has a **processing timeout** (`pack-processing-timeout`) to prevent long-running tasks from blocking the entire consumer thread.
+This ensures system responsiveness even under high load or slow external targets.
+
+This approach provides a flexible balance between performance and delivery guarantees, giving admins control over retry behavior, failure tolerance, and system resilience.
+
+#### Hot Reinitialization of Failed Integrations
+
+In addition to message-level retries, TBMQ supports **automatic reinitialization** of failed integrations through a periodic background check.
+
+```yaml
+reinit:
+  # Enable/disable integrations hot reinitialization. This process is done for integrations with state 'FAILED'
+  enabled: "${INTEGRATIONS_REINIT_ENABLED:true}"
+  # Checking interval in milliseconds for reinit integrations. Defaults to 5 minutes
+  frequency: "${INTEGRATIONS_REINIT_FREQUENCY_MS:300000}"
 ```
-[integrationProcessor][f6e82897-dd18-4c6f-ac31-5f19ce75e2db]
-totalMsgs = [38]
-successfulMsgs = [38]
-tmpTimeout = [0]
-tmpFailed = [0]
-timeoutMsgs = [0]
-failedMsgs = [0]
-successfulIterations = [38]
-failedIterations = [0]
-```
 
-- `[integrationProcessor][f6e82897-dd18-4c6f-ac31-5f19ce75e2db]`: type of metric and Integration UUID.
-- `totalMsgs`: Messages received for processing.
-- `successfulMsgs`: Successfully processed and delivered messages.
-- `timeoutMsgs`: Messages that exceeded the configured processing timeout.
-- `failedMsgs`: Permanently failed messages after retries.
-- `successfulIterations`: Number of successful handler executions.
-- `failedIterations`: Any logic-level failures in the integration flow.
+- If an integration enters the `FAILED` state (e.g., broken connections, or configuration issues), the executor will periodically **attempt to reinitialize it**.
+- This process checks all failed integrations every `frequency` milliseconds.
+- If the issue is resolved (e.g., the remote system becomes reachable), the integration is restored automatically without requiring manual intervention.
 
-
-
-
-
-
-
-
+This feature ensures long-running integrations remain self-healing and robust in dynamic environments.
 
 #### Integration Metrics Overview
 
@@ -457,8 +408,6 @@ The **Integration Executor** (`tbmq-ie`) collects and reports detailed metrics t
 These metrics are logged periodically and can be exported to external monitoring systems like **Prometheus** or **Grafana** for alerting, dashboards, and historical analysis.
 
 Below is a breakdown of the main metric categories recorded in the logs:
-
----
 
 **1. Current Integration Activity**
 
@@ -475,16 +424,14 @@ IntegrationStatisticsKey(integrationStatisticsMetricName=START, success=true, in
 - `integrationType`: The type of integration (e.g., HTTP, MQTT, Kafka).
 
 Additional metric types you may see:
-- `STOP`: Number of times integration shutdown was triggered.
-- `MSGS_UPLINK`: Number of messages forwarded from the executor to external systems.
+- `integrationStatisticsMetricName=STOP`: Number of times integration shutdown was triggered.
+- `integrationStatisticsMetricName=MSGS_UPLINK`: Number of messages forwarded from the executor to external systems.
 
 Example:
 ```
 MSGS_UPLINK, success=true, integrationType=MQTT = [38]
 ```
-→ 38 messages were successfully forwarded to an external MQTT broker.
-
----
+-> 38 messages were successfully forwarded to an external MQTT broker.
 
 **2. Integration State Summary**
 
@@ -494,19 +441,17 @@ Example:
 ```
 START, success=true, integrationType=MQTT = [1]
 ```
-→ There is currently **one active MQTT integration** in the `STARTED` state.
+-> There is currently **one active MQTT integration** in the `STARTED` state.
 
 **Key points:**
 - `success=true`: Number of integrations in `STARTED` state.
 - `success=false`: Number of integrations in `FAILED` state.
 
-These values are updated whenever an integration changes state. They help operators understand the **real-time health** of all running integrations across types.
-
----
+These values are updated whenever an integration changes state. They help admins understand the **real-time health** of all running integrations across types.
 
 **3. Integration Uplink Queue Stats**
 
-These metrics summarize the state of the **uplink Kafka topic**, which is used by the executor to send stats and status updates back to TBMQ Core.
+These metrics summarize the state of the **uplink Kafka topic**, which is used by the executor to send stats and lifecycle events back to TBMQ.
 
 Example:
 ```
@@ -523,8 +468,6 @@ failedMsgs = [0]
 - `failedMsgs`: Messages that failed to publish.
 
 These values help monitor the **reliability and health of internal communication** between executor and core services.
-
----
 
 **4. Integration Message Processing Stats**
 
@@ -547,96 +490,23 @@ failedIterations = [0]
 - `[integrationProcessor][<UUID>]`: The metric group for a specific integration instance.
 - `totalMsgs`: Total messages received for processing.
 - `successfulMsgs`: Messages successfully delivered.
-- `timeoutMsgs`: Messages that exceeded the processing timeout.
+- `tmpTimeout`: Messages that exceeded the processing timeout but will be retried.
+- `tmpFailed`: Messages that failed but will be retried.
+- `timeoutMsgs`: Messages that exceeded the processing timeout and will not be retried.
 - `failedMsgs`: Messages that failed permanently after retry attempts.
-- `successfulIterations`: Number of successful handler executions (typically matches `successfulMsgs`).
-- `failedIterations`: Internal processing failures (e.g., exceptions during mapping or delivery).
+- `successfulIterations`: Number of successful message batch executions (all messages in the batch processed without error).
+- `failedIterations`: Number of message batch executions that resulted in one or more processing failures.
 
 These metrics are essential for monitoring **message-level reliability**, troubleshooting integration issues, and ensuring timely delivery to external targets.
 
+### Scalability and Fault Tolerance
 
+- **Executor Scaling**: You can run multiple instances of the `tbmq-ie` service in parallel. Kafka handles partitioning and distributes integration messages across executors automatically, enabling horizontal scaling.
+- **Fault Isolation**: Issues in external systems (e.g., a slow or unreachable HTTP endpoint) affect only the Integration Executor. The TBMQ broker continues operating normally without delay or message loss.
+- **Backpressure Management**: Kafka acts as a message buffer. If executors become slow or temporarily overloaded, Kafka retains messages based on its configured retention policies until the executors are ready to process them.
+- **Resilience**: Executor instances can restart or fail independently. Integrations are restored automatically using compacted configuration topics, without manual intervention.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### Error Handling & Retry Mechanism
-
-When an integration message fails to be processed (e.g., due to a timeout, unreachable external system, or malformed response), the `tbmq-integration-executor` handles the error based on the configured **acknowledgment and retry strategy** for the `tbmq.msg.ie` topic.
-
-These behaviors are controlled via the following configuration block:
-
-```yaml
-integration-msg:
-  poll-interval: 1000  # Interval in ms to poll for new messages
-  pack-processing-timeout: 30000  # Timeout for processing a batch of messages
-  ack-strategy:
-    type: SKIP_ALL | RETRY_ALL
-    retries: 5  # 0 means unlimited
-    pause-between-retries: 1  # in seconds
-```
-
-#### ⚙️ Strategy Options
-
-- **SKIP_ALL** (default):
-  - If a message fails during processing, it is skipped after logging the error.
-  - This ensures high throughput and avoids retry delays but sacrifices guaranteed delivery to external systems.
-
-- **RETRY_ALL**:
-  - The executor retries failed messages in-place, up to the configured number of times (`retries`).
-  - A pause between retries is enforced (`pause-between-retries`) to avoid tight retry loops.
-  - If `retries` is set to `0`, the executor retries the message indefinitely.
-
-#### ⏱️ Timeout Control
-
-Each batch of messages (or “pack”) has a **processing timeout** (`pack-processing-timeout`) to prevent long-running tasks from blocking the entire consumer thread.
-This ensures system responsiveness even under high load or slow external targets.
-
-This approach provides a flexible balance between performance and delivery guarantees, giving operators control over retry behavior, failure tolerance, and system resilience.
-
-#### Hot Reinitialization of Failed Integrations
-
-In addition to message-level retries, TBMQ supports **automatic reinitialization** of failed integrations through a periodic background check.
-
-```yaml
-reinit:
-  enabled: true
-  frequency: 300000  # 5 minutes
-```
-
-##### How it works:
-- If an integration enters the `FAILED` state (e.g., due to repeated delivery errors, broken connections, or configuration issues), the executor will periodically **attempt to reinitialize it**.
-- This process checks all failed integrations every `frequency` milliseconds.
-- If the issue is resolved (e.g., the remote system becomes reachable), the integration is restored automatically without requiring manual intervention.
-
-This feature ensures long-running integrations remain self-healing and robust in dynamic environments.
-
-#### Scalability and Fault Tolerance
-
-- **Executor Scaling**: Multiple instances of `tbmq-ie` can run in parallel, each consuming from the Kafka topic. Kafka ensures proper partitioning and load distribution.
-- **Fault Isolation**: Failures in external systems (e.g., a down HTTP endpoint) only impact the executor; the broker remains unaffected.
-- **Backpressure Handling**: Kafka acts as a buffer — if executors fall behind, messages are retained and retried based on Kafka configuration.
-- **Resilience**: Executor microservices can crash or restart independently. Kafka ensures at-least-once delivery for integration events.
-
-This model supports cloud-native scaling patterns and allows TBMQ to operate reliably in high-throughput environments.
+This architecture supports modern cloud-native deployment models and ensures that TBMQ remains robust and responsive, even under heavy load or partial system failures.
 
 ### Supported Integration Types
 
