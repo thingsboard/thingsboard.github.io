@@ -148,7 +148,7 @@ Each topic serves a specific purpose and allows for decoupled, reliable, and sca
 
 #### Downlink topics
 
-TBMQ configures downlink Kafka topics to be **compact** ones. Each integration type has its own dedicated topic:
+TBMQ uses **Kafka compact topics** for downlink communication. Each integration type has its own dedicated topic:
 
 - `tbmq.ie.downlink.http`
 - `tbmq.ie.downlink.mqtt`
@@ -156,8 +156,8 @@ TBMQ configures downlink Kafka topics to be **compact** ones. Each integration t
 
 These topics are used to:
 
-- Deliver integration configuration data when integration is created, updated, or deleted.
-- Trigger **connection and validation requests** to test the connectivity to external system or configuration before activation.
+- Deliver integration configuration data when integration is **created, updated, or deleted**.
+- Trigger **connection and validation requests** to test the connectivity to external system and validate configuration before activation.
 
 ##### How It Works
 
@@ -168,6 +168,7 @@ These topics are used to:
   2. **Restores the latest state** of all relevant integrations from the compacted records.
   3. Once restoration is complete and the **end of the partition is reached**, it transitions to **real-time mode** and begins normal operation.
 - Integrations are only initialized after their configurations are fully restored from Kafka.
+- In real-time mode, new integration events are handled immediately. Validation requests are processed on the fly.
 
 ##### Benefits of This Approach
 
