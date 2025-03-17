@@ -8,52 +8,49 @@
 ### Overview
 
 **Integrations** in TBMQ are the data bridges that allow you to forward MQTT messages from connected clients to external systems such as HTTP endpoints, Kafka brokers, or other MQTT brokers. 
-This enables seamless data flow between IoT devices and the broader data infrastructure — whether it's cloud services, analytics pipelines, or third-party applications.
-
-#### How It Works
-
-TBMQ uses a dedicated microservice called `TBMQ Integration Executor` (shortened as "TBMQ IE") to manage and run integrations.
-
-With this feature, TBMQ supports two service types defined by the `TB_SERVICE_TYPE` environment variable:
-
-* **tbmq** – the core MQTT broker service;
-* **tbmq-integration-executor** – the integration execution service (tbmq-ie).
-
-This separation allows each service to scale independently and keeps the broker fast and lightweight.
-
-The executor service listens for integration events and messages from TBMQ (via Kafka), processes them based on the integration configuration, 
-and then forwards the data to the correct external system.
+This enables seamless data flow between IoT devices and the broader data infrastructure.
 
 #### Why Use Integrations?
 
 Integrations make MQTT data useful outside the broker. They help you:
 
-- Bridge MQTT messages to external systems for processing, storage, or real-time actions.
+- Bridge MQTT messages to external systems for processing, storage, or analytics.
+- Enable interoperability between MQTT and other protocols.
 - Build complex event-driven workflows across different platforms.
-- Offload processing logic from the broker to dedicated, scalable integration services.
 - Maintain modularity and scalability in your IoT architecture.
 
 #### High-Level Design
 
 At a high level, the integration flow in TBMQ works like this:
 
-1. **MQTT clients** connect to the **TBMQ broker** using **MQTT** or **MQTTS** and publish messages.
-2. When a message matches an integration [rule](#integrations-configuration), **TBMQ** sends the message to the **Integration Executor (tbmq-ie)** using **Kafka**.
+1. **MQTT clients** connect to the **TBMQ** broker using **MQTT** or **MQTTS** and publish messages.
+2. When a message matches an integration [topic filter](#integration-entity), **TBMQ** sends the message to the [TBMQ Integration Executor](#new-microservice) using **Kafka**.
 3. The **Integration Executor** receives the message, processes it, and forwards it to the correct external system, such as:
-  - An **HTTP endpoint** over **HTTP or HTTPS**.
-  - Another **MQTT broker** over **MQTT or MQTTS**.
-  - A **Kafka broker** using the **Kafka binary protocol over TCP or TLS**.
-
-> This architecture ensures clear separation of concerns, high availability, and improves scalability and system performance.
+- An **HTTP endpoint** over **HTTP or HTTPS**.
+- Another **MQTT broker** over **MQTT or MQTTS**.
+- A **Kafka broker** using the **Kafka binary protocol over TCP or TLS**.
 
 ![image](/images/mqtt-broker/integrations/tbmq-ie-main.png)
 
+#### New microservice
+
+TBMQ uses a dedicated microservice called **TBMQ Integration Executor** (shortened as "TBMQ IE") to manage and run integrations.
+
+With this feature, TBMQ supports two service types defined by the `TB_SERVICE_TYPE` environment variable:
+
+* **tbmq** – the core MQTT broker service;
+* **tbmq-integration-executor** – the integration execution service (tbmq-ie).
+
+The executor service listens for integration events and messages from TBMQ (via Kafka), processes them based on the integration configuration, 
+and forwards the data to the correct external system.
+
+> This architecture ensures clear separation of concerns, high availability, and improves scalability and system performance.
+
 #### Deployment Options
 
-In TBMQ, integrations are deployed using a separate microservice **TBMQ Integration Executor** (`tbmq-ie`).  
-This service is responsible for executing all outbound integrations and must be deployed alongside the core TBMQ service.
+In TBMQ, integrations can only be deployed using Integration Executor microservice.
 
-> Why Not Embedded in the Broker?
+> Why Not Embedded in the TBMQ?
 
 We **intentionally do not embed integration logic** inside the TBMQ broker. This decision provides several key benefits:
 
@@ -67,17 +64,14 @@ We **intentionally do not embed integration logic** inside the TBMQ broker. This
 
 In this section, you'll learn how TBMQ and the Integration Executor communicate internally, how data flows between components, and how the system remains scalable and fault-tolerant under load.
 
-TBMQ’s integration system is based on a **modular, event-driven architecture**. 
-It clearly separates MQTT message handling from integration execution by introducing a dedicated microservice and using Kafka as an internal communication layer.
-
 #### Integration Entity
 
-Each integration includes basic fields like:
+Integrations are stored in the TBMQ’s PostgreSQL database. Each integration entity includes basic fields like:
 
 - **Type** – HTTP, Kafka, or MQTT.
 - **Name** – a human-readable name.
 - **Enabled** – whether the integration is enabled or disabled.
-- **Status** – actual status of the integration.
+- **Status** – actual status of the integration (Disabled/Active/Failed/Pending).
 - **Configuration** – contains connection details and parameters for the external system.
 - **Topic filters** – define MQTT-based subscriptions and act as triggers. When a broker receives a message matching a topic filter, the integration is triggered and forwards it to the configured external system.
 
@@ -103,14 +97,12 @@ An example of MQTT integration (partial configuration):
 }
 ```
 
-The integration entity is **stored in the TBMQ's PostgreSQL database**.
-
 #### TBMQ (MQTT Broker) Component
 
 The core TBMQ service (`TB_SERVICE_TYPE=tbmq`) is responsible for:
 
 - Handling MQTT protocol logic.
-- Managing integration entities - handles create/update/delete integration requests to persist in DB.
+- Managing integration entities - handles create/update/delete integration requests to update them in DB.
 - Delivering integration validation requests (configuration validation/check connection) to TBMQ IE.
 - Delivering integration configuration events to TBMQ IE.
 - Matching incoming messages to active integration subscriptions and delivering them to TBMQ IE.
