@@ -7,13 +7,13 @@ description: Activate Trendz Analytics Cloud
 
 cloudPlan:
   0:
-    image: /images/trendz/cloud-1.webp
+    image: https://img.thingsboard.io/trendz/cloud-1.webp
     title: 'Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
   1:
-    image: /images/trendz/cloud-2.webp
+    image: https://img.thingsboard.io/trendz/cloud-2.webp
     title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'
   2:
-    image: /images/trendz/cloud-3.webp
+    image: https://img.thingsboard.io/trendz/cloud-3.webp
     title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
 
 ---
