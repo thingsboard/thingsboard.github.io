@@ -193,144 +193,116 @@ This design empowers admins to deploy **specialized executor instances** — for
 
 #### Uplink Topic
 
-This topic is used by the Integration Executors to **send messages back to the TBMQ**, such as:
+This topic is used by Integration Executors to send important events back to the TBMQ broker. This includes:
 
-- Integration lifecycle events (e.g., executor started, integration activated)
-- Error reports from failed deliveries
-- Integration statistics (success/failure counts)
+- **Lifecycle events** (e.g., integration started or stopped).
+- **Errors** (for failed message deliveries to external systems).
+- **Statistics** such as success/failure counts).
 
-##### Purpose:
-- Allow TBMQ to persist operational data and metrics in the database.
-- Enable observability and system-wide monitoring.
+All messages received on this topic are stored in the TBMQ database as Event entities and used for internal tracking, diagnostics, and administrative visibility.
 
+#### Uplink Notifications Topic
 
-#### Uplink Node-Specific Notifications Topic
+These node-specific topics are used by Integration Executors to **send direct replies to specific TBMQ nodes**, 
+typically in response to one-time operations such as validation or connection checks. 
+The topic is dynamically constructed using the target node's service ID.
 
-This topic prefix is used to **send direct replies from executors to specific TBMQ nodes**, typically in response to validation requests or one-time commands.
+Examples include:
 
-##### Example usage:
+- Replying to a **“Check Connection”** requests.
+- Sending **validation results or error details** back to the initiating TBMQ node.
 
-- Replying to a "Check Connection" request for an HTTP integration.
-- Sending validation error details back to the correct broker node.
-
-##### Purpose:
-
-- Ensure responses go to the correct TBMQ instance in clustered setups.
-- Maintain request-response correlation.
-
-
-
-> All integration configurations are automatically sent to the Integration Executor (`tbmq-ie`) via Kafka compact topics. These topics ensure that the latest integration settings are always available, even after a restart.
-
+This mechanism ensures that responses are routed to the correct instance in clustered environments and maintains accurate request-response correlation.
 
 #### Integration Lifecycle
 
-The lifecycle of an integration in TBMQ includes its creation, update, deletion, execution, monitoring, and error handling.
-Integrations can be created/updated/deleted either from the TBMQ Web UI or using the REST API.
+The lifecycle of an integration in TBMQ includes its **creation, update, deletion, execution, monitoring**, and **error handling**.  
+Integrations can be managed either through the **TBMQ Web UI** or via the **REST API**.
 
-Once the request from UI or REST API is received by TBMQ, it generates the validation request and sends it to the Integration Executor.
-The IE receives the request and do the validation of configuration based on the type of integration.
-Note, similarly the `Check connection` feauture is working to send the request to test the connection to external system.
-You can also test an integration connection via the UI or API using the **"Validate"** function, which checks if the external system is reachable.
+When a create or update request is received, TBMQ sends a **validation request** to the Integration Executor. 
+The IE then validates the configuration based on the integration type and responds with the result.
 
-Let's review 3 examples.
+This validation process ensures the configuration of the integration is correct and the external system is reachable before the integration is saved and activated.
 
-**Scenario 1. Integration Executor running**
+You can also manually test the integration connectivity with the external system using the **“Check Connection”** button in the UI or via the API. 
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-admin-ok.png)
+##### Validation Scenarios
 
-When it is running - the expected result is Success.
-
-**Scenario 2. Integration Executor running validation failed**
-
-![image](/images/mqtt-broker/integrations/tbmq-ie-admin-error.png)
-
-When it is running but the configuration is wrong - the expected result is Failure.
-
-**Scenario 3. Integration Executor running validation failed**
+**Scenario 1: Integration Executor not running — Timeout**
 
 ![image](/images/mqtt-broker/integrations/tbmq-ie-admin-timeout.png)
 
-When it is not running the integration will be be saved after the period of timeout and you will see Timeout exception.
+The Integration Executor is not running, so the broker waits for a response until a timeout occurs. Result: **Timeout exception**.
+The integration will not be saved.
 
+**Scenario 2: Integration Executor running — Configuration Error**
 
-In case the validation is success, the integration entity is saved in the DB and the configuration event is sent to IE.
+![image](/images/mqtt-broker/integrations/tbmq-ie-admin-error.png)
 
+The Integration Executor is running, but the integration configuration is invalid. Result: **Failure**.
+The integration will not be saved.
 
+**Scenario 3: Integration Executor running — Success**
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-msg-processing.png)
+![image](/images/mqtt-broker/integrations/tbmq-ie-admin-ok.png)
+
+The Integration Executor is running and the configuration is valid. Result: **Success**.
+Once validation succeeds, the integration entity is saved in the database and integration configuration event is sent to the Integration Executor 
+for processing.
 
 #### Integration Message Processing Topic
 
+![image](/images/mqtt-broker/integrations/tbmq-ie-msg-processing.png)
 
+TBMQ uses a **dedicated Kafka topic for each integration** to deliver MQTT messages to the Integration Executor (`tbmq-ie`).
 
+When an MQTT client publishes a message, the TBMQ broker first checks if any integration has a topic filter matching the message topic. 
+If a match is found, TBMQ creates an integration event by serializing the message and publishes it to that integration’s own Kafka topic 
+(`tbmq.msg.ie.{integrationId}`). The Integration Executor, that is managing that integration and subscribed to that topic, 
+consumes the message, processes it, and forwards it to the configured external system. 
+The executor may also log the result or report back to TBMQ for monitoring purposes.
 
-The integration processing flow in TBMQ follows a decoupled, event-driven model:
+This decoupled, event-driven flow allows TBMQ to offload integration handling entirely to the executor service. 
+As a result, the broker never waits for external responses, preserving low-latency MQTT performance even when external systems are slow or unavailable.
 
-1. **MQTT Client publishes a message** to a topic handled by TBMQ Core.
-2. TBMQ Core **checks for active integration rules** matching the topic.
-3. If a match is found, the broker **serializes the message into an integration event** and **publishes it to an internal Kafka topic**.
-4. One or more instances of `tbmq-integration-executor` **subscribe to the Kafka topic**, consume the event, and **forward the message to the target external system** (HTTP endpoint, Kafka topic, or MQTT broker).
-5. Optional: the executor **logs the result** or error internally for monitoring and observability.
+Each integration has its own Kafka topic, which enables full isolation of message flow. 
+Messages for different integrations are processed independently, in separate threads, allowing parallel execution and fine-grained error control.
 
-This decoupled architecture ensures non-blocking behavior — TBMQ Core never waits for external system responses.
+Even when an integration is disabled, TBMQ continues publishing matching messages to its Kafka topic. 
+This ensures no message loss, as the executor will resume processing once the integration is re-enabled. 
+Kafka’s retention policies and buffering capabilities provide additional resilience in high-load or temporary-failure scenarios.
 
+This architecture ensures reliable, scalable, and fault-tolerant message processing without impacting core broker performance.
+Several key benefits:
 
+- High throughput and non-blocking broker performance.
+- Clean separation of concerns between message routing and message delivery.
+- Full control over retry, backpressure, and error handling per integration.
 
-Once an integration is created and enabled, it becomes **active immediately** and will start processing messages that match the topic filter.
-In case integration is disabled, it continues receiveing messages in the dedicated Kafka topic and once it is back online the messages will start to be delivering to external system.
+##### What Happens If an Integration Stays Disabled for a Long Time?
 
-This is the **core topic used to deliver MQTT messages from TBMQ to Integration Executors** for actual processing and delivery to external systems.
+To avoid unused topics consuming storage indefinitely, TBMQ includes an automatic **cleanup mechanism**.
 
-Each integration, when triggered by an MQTT publish event, results in a message being placed on this topic.
+If an integration remains **disabled** for an extended period, its dedicated Kafka message topic will be **deleted automatically**, 
+along with any undelivered messages it contains.
 
-##### Power & Design Choice:
-- Messages from all integrations are published to this topic.
-- Executors consume messages **in separate threads**, with processing logic specific to each integration instance.
-- This design ensures:
-  - High throughput and parallelism
-  - Isolation between integration executions
-  - Better resource utilization and fault tolerance
+However, there’s no need to take manual action — when the integration is **re-enabled**, 
+TBMQ will **recreate the topic automatically** and resume normal message processing.
 
-Thanks! Here’s a clear and well-structured version of that explanation, rewritten for documentation in a user-friendly, B1/B2 style. It explains the behavior, provides reassurance, and introduces the configuration parameters clearly.
-
-##### Integration Message Storage and Cleanup
-
-Each integration in TBMQ has a **dedicated Kafka topic** for storing messages that match its topic filters. This design allows integrations to process messages reliably, even if the integration is temporarily disabled.
-
-##### What Happens When an Integration is Disabled?
-
-- While an integration is **disabled**, messages that match its topic filters are **still received and stored** in its dedicated Kafka topic.
-- Once the integration is **enabled again**, the executor starts delivering those messages to the external system.
-
-##### What If the Integration Stays Disabled for a Long Time?
-
-To prevent unused topics from taking up storage indefinitely, TBMQ includes a **cleanup mechanism**:
-
-- If an integration remains **disconnected or disabled for a long period**, its message topic will be **automatically deleted**, along with the stored data.
-- Don’t worry — when you **re-enable the integration**, the system will **automatically recreate the topic** and resume normal operation.
-
-
-##### Cleanup Configuration Parameters
-
-You can control the cleanup behavior using the following environment variables:
+You can control the cleanup behavior using the following environment variables.
+By default, the cleanup task runs every 3 hours and removes topics associated with integrations that have been inactive for more than 1 week.
 
 ```yaml
 cleanup:
-  # How often the system checks for inactive integrations (in seconds).
-  period: "${INTEGRATIONS_CLEANUP_PERIOD_SEC:10800}"  # Default: every 3 hours
-
-  # Time-to-live (TTL) for inactive integration topics (in seconds).
-  # Topics will be deleted if they stay inactive longer than this value.
-  # Set to 0 or a negative number to disable cleanup.
-  ttl: "${INTEGRATIONS_CLEANUP_TTL_SEC:604800}"  # Default: 1 week
+  # The parameter to specify the period of execution cleanup task for disconnected integrations. Value set in seconds. Default value corresponds to three hours
+  period: "${INTEGRATIONS_CLEANUP_PERIOD_SEC:10800}"
+  # Administration TTL (in seconds) for cleaning up disconnected integrations.
+  # The cleanup removes integration topics that persist messages.
+  # The current value is set to one week. A value of 0 or negative disables this TTL
+  ttl: "${INTEGRATIONS_CLEANUP_TTL_SEC:604800}"
 ```
 
 This approach ensures that inactive integrations do not waste resources while still allowing for automatic recovery when they’re reactivated.
-
-
-
-
 
 #### Message Delivery Error Handling & Retry Mechanism
 
