@@ -121,7 +121,8 @@ The alternative option is to install Trendz Analytics using [Installation Guide]
 ## Step 1. Discover topology
 Once Trendz Service is up and running you can sign-in to Trendz UI using following URL:
 
-* Trendz Cloud: [https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz).
+* Trendz Cloud (North America): [https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz).
+* Trendz Cloud (Europe): [https://eu.thingsboard.cloud/trendz](https://eu.thingsboard.cloud/trendz).
 * Self-hosted Trendz: http://localhost:8888
 
 You can login using Tenant Administrator credentials form ThingsBoard. Trendz uses ThingsBoard as an authentication service. 
