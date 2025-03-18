@@ -37,10 +37,10 @@ You can import Trendz bundle to the ThingsBoard via Trendz UI:
 * In case when ThingsBoard already contains `Trendz bundle` but it is not up-to-date, the `Upload bundle` button would apply the latest changes.
 
 #### ThingsBoard 3.3+ and Trendz 1.8+
-Starting from ThingsBoard 3.3 and Trendz 1.8 - Trendz widgets can be natively embedded into the ThingsBaord dashboard.
+Starting from ThingsBoard 3.3 and Trendz 1.8 - Trendz widgets can be natively embedded into the ThingsBoard dashboard.
 Native Trendz widgets works much faster compared to original Trendz widgets that are based on iFrame. 
 
-Add native Trendz library into ThingsBaord extensions:
+Add native Trendz library into ThingsBoard extensions:
 * Download <a href="https://dist.thingsboard.io/trendz-tb-lib-1.8.0-SNAPSHOT.jar" download target="_blank">Native Trendz Library</a>
 * Deploy library into ThingsBoard extension directory
 
@@ -102,7 +102,8 @@ To solve the problem you should follow next steps:
   * Open for edit
   * Switch to resources tab (top left corner)
   * Update link to Trendz library
-    * In case of ThingsBoard/Trendz cloud use the following URL - https://thingsboard.cloud/trendz/bundle/trendz-tb-lib.js
+    * In case of ThingsBoard/Trendz cloud (North America) use the following URL - https://thingsboard.cloud/trendz/bundle/trendz-tb-lib.js
+    * In case of ThingsBoard/Trendz cloud (Europe) use the following URL - https://eu.thingsboard.cloud/trendz/bundle/trendz-tb-lib.js
   * Save widget
 * Navigate to your dashboard and refresh the page - issue should be solved
 
