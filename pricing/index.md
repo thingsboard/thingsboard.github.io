@@ -920,7 +920,7 @@ selfManagedPlan:
                                 Community support
                             </div>
                             <br>
-                            <div>
+                            <div style="margin-top:33px">
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
                         </div>
@@ -1066,7 +1066,7 @@ selfManagedPlan:
                                 Community support
                             </div>
                             <br>
-                            <div>
+                            <div style="margin-top:33px">
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
                         </div>
