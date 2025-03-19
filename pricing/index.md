@@ -714,10 +714,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div style="margin-top:32px">
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -744,10 +740,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -776,10 +768,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -807,10 +795,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>                    
                 </div>
@@ -919,10 +903,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div style="margin-top:33px">
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -949,10 +929,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -979,10 +955,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -1009,10 +981,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -1065,10 +1033,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div style="margin-top:33px">
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -1095,10 +1059,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -1125,10 +1085,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -1155,10 +1111,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
