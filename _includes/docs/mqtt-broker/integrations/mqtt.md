@@ -1,6 +1,95 @@
 
-### MQTT
-
 * TOC
 {:toc}
 
+TBMQ MQTT Integration enables seamless communication with **external MQTT brokers**, allowing bidirectional message exchange between TBMQ and third-party platforms. 
+It allows TBMQ to **subscribe to external MQTT topics**, process incoming messages, and forward data to internal systems or connected devices.
+
+It is useful for scenarios such as:
+
+- Devices are already connected to an **external MQTT broker** or **IoT platform**.
+- Data needs to be **streamed into TBMQ** from another system for processing.
+- TBMQ should act as an **intermediary** between different MQTT-based solutions.
+
+### Data Flow Overview
+
+MQTT Integration processes messages and forwards them to an external MQTT broker or system in the following steps:
+
+1. **Device (client) publishes an MQTT message** to a topic that matches the Integration's **Topic Filters**.
+2. **TBMQ broker receives the message**.
+3. **TBMQ Integration Executor processes the message**, formats it accordingly, and forwards it to the external MQTT broker or system.
+4. **External system receives the message** and processes the data as needed.
+
+![image](/images/mqtt-broker/integrations/tbmq-mqtt-integration.png)
+
+### Prerequisites
+
+Before setting up the integration, ensure the following:
+
+- A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.
+- A client capable of publishing MQTT messages (e.g., `mosquitto_pub`).
+- A client capable of receiving MQTT messages (e.g., `mosquitto_sub`).
+
+### Create TBMQ MQTT Integration
+
+1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
+2. Select **MQTT** as the integration type and click **Next**.
+3. On the **Topic Filters** subscribe to the topic `tbmq/integration/mqtt` and click **Next**.
+4. In the **Configuration** step:
+   * Enter the **Host** (`localhost`);
+   * Enter the **Port** (`1883`);
+   * Set 'Dynamic topic name' to `false` and 'Topic name' to `tbmq/demo/mqtt`;
+   * Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
+5. Click **Add** to save the integration.
+
+#### Topic Filters
+
+{% include templates/mqtt-broker/user-guide/integrations/topic-filters.md %}
+
+#### Configuration
+
+|**Field**|**Description**|
+|:-|:-|-
+| **Send only message payload** | If enabled, the incoming message's payload is forwarded as is. If disabled, a JSON object with the payload and other properties is sent. |
+| **Host** | MQTT broker host. |
+| **Port** | MQTT broker port. |
+| **Client ID** | Client identifier used for connecting to the external broker. |
+| **Dynamic topic name** | If enabled, the message will be forwarded with the topic name from the incoming message. |
+| **Credentials** | Supported authentication options: |
+| | **Anonymous** – No authentication. |
+| | **Basic Authentication** – Uses `Username` and `Password` for authentication. |
+| | **PEM-based authentication** – Uses PEM certificate to authenticate. |
+| | **Enable SSL** – Enables a secure connection using SSL/TLS. |
+| **Keep alive (seconds)** | Indicates the duration for which the broker and client can remain without communication before the session is closed. |
+| **Connect timeout (seconds)** | Time to wait before a 'CONNACK' is received. |
+| **Reconnect period (seconds)** | Defines how often TBMQ should attempt to reconnect if the connection is lost. |
+| **Dynamic QoS** | If enabled, the message will be forwarded with QoS from the incoming message. |
+| **Dynamic retain** | If enabled, the message will be forwarded with the Retain flag from the incoming message. |
+| **Metadata** | Custom metadata that can be used for additional processing. |
+|---
+
+#### Events
+
+{% include templates/mqtt-broker/user-guide/integrations/events.md %}
+
+### Sending an Uplink Message
+
+To test the TBMQ MQTT Integration and verify message flow, follow these steps:
+
+1. Navigate to the **Credentials** page and select **TBMQ WebSockets MQTT Credentials**.
+2. Click **Check Connectivity** to open window with ready-to-use mosquitto commands.
+3. Copy the **MQTT subscribe** command and run it in a terminal to listen for messages.
+
+```bash
+mosquitto_sub -d -q 1 -h localhost -p 1883 -t "tbmq/demo/+" -u "tbmq_websockets_username" -v
+```
+
+4. Copy the **MQTT publish** command and run it in a new terminal tab.
+
+```bash
+   mosquitto_pub -d -q 1 -h localhost -p 1883 -t "tbmq/integration/mqtt" -u "tbmq_websockets_username" -m 'Hello World'
+```
+
+5. If successful, you should see the received message displayed in the terminal where the client is subscribed.
+
+### Next steps  
