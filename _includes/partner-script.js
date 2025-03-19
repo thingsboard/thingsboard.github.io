@@ -33,11 +33,24 @@ function rengen() {
             box.appendChild(programImg);
         }
 
+        var cardHeader = document.createElement('div');
+        cardHeader.className = "cardHeader"
+
 		var img = document.createElement('img');
         img.className = 'logo';
 		img.src = '/images/partners/' + obj.logo;
 
+        var siteLink = document.createElement('a');
+        siteLink.className = 'siteLink';
+        siteLink.textContent = 'Website';
+        siteLink.href = obj.site.href;
+        siteLink.target = obj.site.target;
+
 		var div = document.createElement('div');
+        div.className = 'wrapper';
+
+        var cardContent = document.createElement('div');
+        cardContent.className = 'card-content';
 
         var titleElement = document.createElement('p');
         titleElement.textContent = obj.name;
@@ -54,7 +67,7 @@ function rengen() {
         bg.className = 'box-background';
 
         var linksElement = document.createElement('div');
-        linksElement.className = 'links';
+        linksElement.className = 'links owl-carousel partnersCarousel';
 
         for (var linkName in obj.links) {
             var linkInfo = obj.links[linkName];
@@ -65,14 +78,29 @@ function rengen() {
             }
             link.textContent = linkName;
             linksElement.appendChild(link);
+
+            linksCounter += 1;
+
+            if(linksCounter >= 2 && !linksElement.classList.contains('owl-carousel')) {
+
+            }
         }
 
+        if(linksElement.children.length >= 2) {
+            linksElement.classList.add('usecase-carousel', 'owl-theme', 'smallArrow');
+        } else {
+            linksElement.classList.remove('owl-carousel', 'partnersCarousel');
+        }
+
+        cardHeader.appendChild(img);
+        cardHeader.appendChild(siteLink);
         text.appendChild(titleElement);
 		text.appendChild(p);
-        div.appendChild(text);
+        cardContent.appendChild(cardHeader);
+        cardContent.appendChild(text);
+        div.appendChild(cardContent);
 		div.appendChild(linksElement);
 		box.appendChild(bg);
-		box.appendChild(img);
 		box.appendChild(div);
 
 
@@ -127,4 +155,23 @@ function actions(sectionId) {
             rengen();
         }
     }
+
+    jqueryDefer(addCarousel);
+}
+
+function addCarousel() {
+    $('.owl-carousel').each(function(index) {
+        const $carousel = $(this);
+        const carouselId = "owl-carousel-" + index;
+        $(this).attr("id", carouselId);
+
+        if(!$carousel[0].classList.contains("owl-loaded")) {
+            $('#' + carouselId).owlCarousel({
+                autoWidth: true,
+                margin: 10,
+                nav: true,
+                dots: false
+            });
+        }
+    })
 }

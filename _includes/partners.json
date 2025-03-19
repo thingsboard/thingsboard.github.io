@@ -4,11 +4,11 @@
     "program": "",
     "name": "Atomsenses",
     "logo": "atomsenses-logo.png",
+    "site": {
+      "href": "https://www.atomsenses.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.atomsenses.com/",
-        "target": "_blank"
-      },
       "Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard": {
         "href": "https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/",
         "target": "_blank"
@@ -21,11 +21,11 @@
     "program": "",
     "name": "Efento",
     "logo": "efento.png",
+    "site": {
+      "href": "https://getefento.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://getefento.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "https://getefento.com/library/efento-nb-iot-sensors-and-things-board/",
         "target": "_blank"
@@ -38,11 +38,11 @@
     "program": "",
     "name": "Teltonika Networks",
     "logo": "teltonika-networks.png",
+    "site": {
+      "href": "https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "https://wiki.teltonika-networks.com/view/Monitoring_with_ThingsBoard_IoT_Platform#Configuring_data_to_server_with_MQTT_protocol",
         "target": "_blank"
@@ -55,11 +55,11 @@
     "program": "",
     "name": "Espressif Systems",
     "logo": "espressif.svg",
+    "site": {
+      "href": "https://www.espressif.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.espressif.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
       }
@@ -71,11 +71,11 @@
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
     "logo": "seeed.png",
+    "site": {
+      "href": "https://www.seeedstudio.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.seeedstudio.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/raspberry/grove/"
       },
@@ -93,11 +93,11 @@
     "program": "",
     "name": "Milesight",
     "logo": "milesight-logo.png",
+    "site": {
+      "href": "https://www.milesight.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.milesight.com/",
-        "target": "_blank"
-      },
       "Connect UG56 LoRaWAN® Gateway to ThingsBoard": {
         "href": "/docs/pe/devices-library/ug56-lorawan-gateway/"
       },
@@ -113,7 +113,7 @@
       "Connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard": {
         "href": "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
       },
-      "Thingsboard-Milesight LoRaWAN Gateways&Devices Integration: IoT Support": {
+      "Thingsboard-Milesight LoRaWAN Gateways&Devices Integration": {
         "href": "https://support.milesight-iot.com/support/solutions/articles/73000646805-thingsboard-milesight-lorawan-gateways-devices-integration"
       }
     },
@@ -124,11 +124,11 @@
     "program": "",
     "name": "Smartico",
     "logo": "smartico.png",
+    "site": {
+      "href": "https://www.smartico.biz/en/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.smartico.biz/en/",
-        "target": "_blank"
-      },
       "Electricity Meter": {
         "href": "/docs/samples/smartico/elec-meter-lorawan/Electricity_Meter_LoRaWAN/"
       },
@@ -155,11 +155,11 @@
     "program": "",
     "name": "Digital Communications Technologies, LLC.",
     "logo": "DCT-Logo-Standard-Color-01.png",
+    "site": {
+      "href": "https://www.digitalcomtech.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.digitalcomtech.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/syrus/syrus/"
       }
@@ -171,11 +171,11 @@
     "program": "",
     "name": "MOKO SMART",
     "logo": "moko-smart-logo.png",
+    "site": {
+      "href": "https://www.mokosmart.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.mokosmart.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/moko-smart/moko-smart-guide/"
       }
@@ -187,11 +187,11 @@
     "program": "",
     "name": "Nettra",
     "logo": "nettra.png",
+    "site": {
+      "href": "https://nettra.tech/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://nettra.tech/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/nettrartu+/rtu_temp_sensor/"
       }
@@ -203,11 +203,11 @@
     "program": "",
     "name": "Things On Edge",
     "logo": "things-on-edge.svg",
+    "site": {
+      "href": "https://thingsonedge.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://thingsonedge.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/cricket-wifi/cricket-wifi/"
       }
@@ -219,11 +219,11 @@
     "program": "",
     "name": "Solandtec",
     "logo": "solandtec.png",
+    "site": {
+      "href": "https://solandtec.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://solandtec.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/solandtec/thingsboard-guide-solandtec/"
       }
@@ -235,11 +235,11 @@
     "program": "",
     "name": "Actility",
     "logo": "actility.png",
+    "site": {
+      "href": "https://www.actility.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.actility.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/abeeway/tracker"
       }
@@ -251,11 +251,11 @@
     "program": "",
     "name": "SODAQ",
     "logo": "sodaq.jpg",
+    "site": {
+      "href": "https://sodaq.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://sodaq.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/user-guide/integrations/sodaq/"
       }
@@ -267,11 +267,11 @@
     "program": "",
     "name": "SensiEDGE",
     "logo": "sensiedge_logo.png",
+    "site": {
+      "href": "https://www.sensiedge.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.sensiedge.com/",
-        "target": "_blank"
-      },
       "Getting Started SensiLoRa 2.0 V1.2": {
         "href": "/docs/samples/sensiedge/getting_started_sensiLoRa.pdf"
       },
@@ -286,13 +286,13 @@
     "program": "",
     "name": "DECODE",
     "logo": "decode.png",
+    "site": {
+      "href": "https://www.decode.rs/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.decode.rs/",
-        "target": "_blank"
-     },
-    "Integration guide": {
-      "href": "/docs/user-guide/integrations/decode/"
+      "Integration guide": {
+        "href": "/docs/user-guide/integrations/decode/"
       }
     },
     "blurb": "Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry."
@@ -302,12 +302,11 @@
     "program": "",
     "name": "TEKTELIC Communications Inc.",
     "logo": "tektelic.png",
-    "links": {
-      "Site": {
-        "href": "https://tektelic.com/",
-        "target": "_blank"
-      }
+    "site": {
+      "href": "https://tektelic.com/",
+      "target": "_blank"
     },
+    "links": {},
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
   },
   {
@@ -315,11 +314,11 @@
     "program": "",
     "name": "National Control Devices, LLC",
     "logo": "ncd-logo.png",
+    "site": {
+      "href": "https://ncd.io/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://ncd.io/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/pe/devices-library/ncd-vibration-temperature-sensor/"
       }
@@ -331,11 +330,11 @@
     "program": "",
     "name": "Netvox",
     "logo": "netvox-logo.jpg",
+    "site": {
+      "href": "http://www.netvox.com.tw/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "http://www.netvox.com.tw/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/netvox/netvox-guide/"
       }
@@ -347,12 +346,11 @@
     "program": "",
     "name": "AKKR8",
     "logo": "akkr8.png",
-    "links": {
-      "Site": {
-        "href": "https://www.akkr8.io/",
-        "target": "_blank"
-      }
+    "site": {
+      "href": "https://www.akkr8.io/",
+      "target": "_blank"
     },
+    "links": {},
     "blurb": "AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the ThingsBoard platform."
   },
   {
@@ -360,11 +358,11 @@
     "program": "",
     "name": "ROLTEK",
     "logo": "roltek_logo_dark.png",
+    "site": {
+      "href": "https://www.roltek.com.tr/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.roltek.com.tr/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/roltek/roltek/"
       }
@@ -376,11 +374,11 @@
     "program": "",
     "name": "Kernel Sistemi",
     "logo": "kernel_logo.jpg",
+    "site": {
+      "href": "https://www.kernelgroup.it/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.kernelgroup.it/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/kernel/kernel/"
       }
@@ -392,11 +390,11 @@
     "program": "",
     "name": "KingPigeon Technology Co., Ltd.",
     "logo": "kingpigeon.png",
+    "site": {
+      "href": "https://www.iot-solution.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.iot-solution.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/kingpigeon/kingpigeon/"
       }
@@ -408,11 +406,11 @@
     "program": "",
     "name": "Senquip",
     "logo": "senquip.png",
+    "site": {
+      "href": "https://www.senquip.com",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.senquip.com",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/senquip/senquip/"
       }
@@ -424,11 +422,11 @@
     "program": "",
     "name": "Dusun",
     "logo": "dusun.png",
+    "site": {
+      "href": "https://www.dusuniot.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.dusuniot.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/pe/devices-library/dsgw-210-iot-gateway-hub/"
       }
@@ -440,11 +438,11 @@
     "program": "",
     "name": "monoZ",
     "logo": "monoz-logo.png",
+    "site": {
+      "href": "https://monoz.io/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://monoz.io/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ"
       }
@@ -456,11 +454,11 @@
     "program": "",
     "name": "Temco Controls",
     "logo": "temco-controls-logo.jpg",
+    "site": {
+      "href": "https://temcocontrols.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://temcocontrols.com/",
-        "target": "_blank"
-      },
       "Connect Temco T3E-6CT to ThingsBoard": {
         "href": "/docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/"
       },
@@ -475,11 +473,11 @@
     "program": "",
     "name": "EXXN",
     "logo": "exxn.jpg",
+    "site": {
+      "href": "https://exxn.es/en/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://exxn.es/en/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/exxn/exxn"
       }
@@ -491,11 +489,11 @@
     "program": "",
     "name": "Fusion DAQ",
     "logo": "FusionDAQ-Nav-Logo.png",
+    "site": {
+      "href": "https://fusiondaq.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://fusiondaq.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/fusion-daq/fusion-daq"
       }
@@ -507,11 +505,11 @@
     "program": "",
     "name": "Yobiiq B.V.",
     "logo": "Yobiiq_Logo_Primary.svg",
+    "site": {
+      "href": "https://yobiiq.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://yobiiq.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "https://docs.yobiiq.com/thingsboard/sd-1001-integration-guide#introduction"
       }
@@ -523,11 +521,11 @@
     "program": "",
     "name": "YuDash",
     "logo": "yudash_logo.png",
+    "site": {
+      "href": "https://www.yudash.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.yudash.com/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard"
       }
