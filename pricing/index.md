@@ -740,7 +740,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Community support
                             </div>
@@ -772,7 +772,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Support
                             </div>
@@ -803,7 +803,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Support
                             </div>
@@ -845,7 +845,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-perpetual-support-level">
                                 Support within <b>12 hours</b>
                             </div>
@@ -920,7 +920,7 @@ selfManagedPlan:
                                 Community support
                             </div>
                             <br>
-                            <div>
+                            <div style="margin-top:33px">
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
                         </div>
@@ -945,6 +945,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
@@ -974,6 +975,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
@@ -1003,6 +1005,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
@@ -1032,6 +1035,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                         </div>
                     </div>
                 </div>
@@ -1062,7 +1066,7 @@ selfManagedPlan:
                                 Community support
                             </div>
                             <br>
-                            <div>
+                            <div style="margin-top:33px">
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
                         </div>
@@ -1087,6 +1091,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
@@ -1116,6 +1121,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
@@ -1145,6 +1151,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
@@ -1174,6 +1181,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                         </div>
                     </div>
                 </div>
@@ -2851,6 +2859,11 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-increase-limits" data-title="Can I increase my resource limits if needed?">
                         <div class="container">
                             <p>Yes, you can upgrade your plan at any time to increase limits.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-white-labeling" data-title="Is white labeling available out of the box?">
+                        <div class="container">
+                            <p>White labeling functionality is available starting from the Prototype subscription.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-self-managed-support" data-title="If I don’t want to switch to the Enterprise plan but prefer to migrate to a self-managed system, what kind of support do I get?">
