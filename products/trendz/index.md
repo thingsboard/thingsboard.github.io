@@ -162,18 +162,16 @@ selfManagedPlan:
 
 <div class="main-bg accent-bg">
     <main>
-        <div class="title-block">
-            <p class="accent-text">Get it and learn easy</p>
-            <h2 class="title">Learn fast</h2>
-            <div class="btn-container">
-                <a id="Products_TA_WatchTutorials" target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe gtm_button">Watch Tutorials<span class="triangle-right"></span></a>
-            </div>
-        </div>
         <div class="get-started">
             <div class="get-started-container">
                 <h3 class="header">Trendz Cloud</h3>
-                <p class="text">Once your upgrade your plan - you will find Trendz Analytics tab in your Things Board menu</p>
-                <a href="https://thingsboard.cloud/billing" class="link">Upgrade your Things Board Plan</a>
+                <p class="text">Upgrade your plan to gain deeper insights into your data</p>
+                <a href="https://thingsboard.cloud/billing" class="link">Upgrade your ThingsBoard Plan</a>
+            </div>
+            <div class="get-started-container">
+                <h3 class="header">Trendz EU Cloud</h3>
+                <p class="text">Unlock powerful analytics tools by upgrading your plan</p>
+                <a href="https://eu.thingsboard.cloud/billing" class="link">Upgrade your ThingsBoard EU Plan</a>
             </div>
             <div class="get-started-container">
                 <h3 class="header">Trendz Self-Hosted</h3>
