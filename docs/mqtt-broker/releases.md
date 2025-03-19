@@ -8,6 +8,42 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v2.1.0 (March ?, 2025)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#201](https://github.com/thingsboard/tbmq/pull/201) **Core & UI**: Implemented Integration Executor microservice and HTTP integration by @dmytro-landiak and @deaflynx;
+* [#202](https://github.com/thingsboard/tbmq/pull/202) **Core & UI**: Added Kafka integration by @dmytro-landiak and @deaflynx;
+* [#203](https://github.com/thingsboard/tbmq/pull/203) **Core & UI**: Added MQTT integration by @dmytro-landiak and @deaflynx;
+* [#200](https://github.com/thingsboard/tbmq/pull/200) **UI**: Migrated to Angular 19 by @deaflynx.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#191](https://github.com/thingsboard/tbmq/pull/191) Incremental upgrade by @ShvaykaD.
+
+* UI:
+
+  * [#200](https://github.com/thingsboard/tbmq/pull/200) Updates by @deaflynx:
+    * Switched from flex-layout to pure CSS with Tailwind;
+    * Switched to Angular esbuild;
+    * Monitoring charts: extended time-window options to include minutes, added custom legend;
+    * Menu: switched from toggle menu to tabs.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#207](https://github.com/thingsboard/tbmq/issues/207) Fixed persistent message loss in Redis persistence by @dmytro-landiak;
+  * [#205](https://github.com/thingsboard/tbmq/pull/205) Fix MqttConnAckMessage incorrectly returns auth method property even if no enhanced auth is used by @Nanabell.
+
+**We welcome our new contributors:**
+
+  * @Nanabell made their first contribution in [#205](https://github.com/thingsboard/tbmq/pull/205)
+
 ## v2.0.1 (December 31, 2024)
 
 Patch release with the following improvements and bug fixes.
