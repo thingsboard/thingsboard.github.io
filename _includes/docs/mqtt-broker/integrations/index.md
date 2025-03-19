@@ -42,7 +42,7 @@ With this feature, TBMQ supports two service types defined by the `TB_SERVICE_TY
 * **tbmq-integration-executor** – the integration execution service (tbmq-ie).
 
 The Integration Executor service listens for integration events and messages from TBMQ (via Kafka), processes them based on the integration configuration, 
-and forwards the data to the correct external system. You can deploy multiple Integration Executor microservices within your TBMQ cluster to ensure scalability and fault isolation.
+and forwards the data to the external system. You can deploy multiple Integration Executor microservices within your TBMQ cluster to ensure scalability and fault isolation.
 
 > This architecture ensures clear separation of concerns, high availability, and improves scalability and system performance.
 
@@ -86,6 +86,7 @@ An example of MQTT integration (partial configuration):
 
 ```json
 {
+  "id": "3e3abdb2-12f9-4850-a654-50a0c8dbbed6",
   "name":"MQTT integration",
   "type":"MQTT",
   "enabled":true,
@@ -164,28 +165,29 @@ These topics are used to:
 
 - Integration lifecycle events (create, update, delete) are published to the relevant **downlink compact topic**, based on integration type (e.g., `tbmq.ie.downlink.http` for HTTP integration).
 - Kafka’s **log compaction** mechanism keeps only the most recent configuration per integration ID, discarding outdated messages.
-- On startup or partition reassignment, each `tbmq-ie` instance enters **restoration mode**:
-  1. **Seeks to the beginning** of the assigned topic partition.
+- On startup or partitions reassignment, the `tbmq-ie` instance enters **restoration mode**:
+  1. **Seeks to the beginning** of the assigned topic partitions.
   2. **Restores the latest state** of all relevant integrations from the compacted records.
-  3. Once restoration is complete and the **end of the partition is reached**, it transitions to **real-time mode** and begins normal operation.
-- Integrations are only initialized after their configurations are fully restored from Kafka.
+  3. **Skips all validation requests** since they were already processed in the past.
+  4. Once the **end of the partition is reached** the restoration is complete, it transitions to **real-time mode** and begins normal operation.
+- Integrations are only initialized after their latest configurations are fully restored from Kafka.
 - In real-time mode, new integration events are handled immediately. Validation requests are processed on the fly.
-- On shutdown or partition revocation, the `tbmq-ie` instance stops the affected integrations and cleans up underlying resources such as protocol clients and connections.
+- On shutdown or partitions revocation, the `tbmq-ie` instance stops the affected integrations and cleans up underlying resources such as protocol clients and connections.
 
 ##### Benefits of This Approach
 
-- **Resilience**: Ensures TBMQ IE can fully recover after restarts without requiring external config stores.
-- **Consistency**: Always works with the latest valid config — no stale or conflicting states.
-- **Scalability**: Stateless service design; all config state is persisted in Kafka.
-- **Reduced Load**: Only changed configurations are written; no need to resend the full config set repeatedly.
+- **Resilience**: Ensures TBMQ IE can fully recover after restarts without requiring external configuration stores.
+- **Consistency**: Always works with the latest valid configuration — no stale or conflicting states.
+- **Scalability**: Stateless service design; all configuration state is persisted in Kafka.
+- **Reduced Load**: Only changed configurations are written; no need to resend the full configuration set repeatedly.
 
 This pattern provides a **durable, distributed configuration source** backed by Kafka, enabling reliable and scalable integration execution across multiple TBMQ IE instances.
 
 ##### Why Separate Topics?
 
-Although downlink topics are not used for message processing, separating them by integration type provides several key benefits:
+Although downlink topics are not used for message processing (which is useful for parallel processing), separating them by integration type provides several key benefits:
 
-- **Executor Specialization**: You can assign specific Integration Executor instances to process only certain integration types using the `TB_SERVICE_INTEGRATIONS_SUPPORTED` and `TB_SERVICE_INTEGRATIONS_EXCLUDED` environment variables.
+- **Executor Specialization**: You can assign specific Integration Executor instances to process only certain integration types using the `TB_SERVICE_INTEGRATIONS_SUPPORTED` and `TB_SERVICE_INTEGRATIONS_EXCLUDED` [environment variables](/docs/mqtt-broker/install/ie-config/#service-parameters).
 - **Targeted Consumption**: Executors subscribe only to topics they are configured to handle.
 - **Improved Isolation**: Different integration types often have different configuration payloads and validation logic. Dedicated topics ensure that only relevant messages are received by each executor.
 - **Operational Simplicity**: Easier to debug and monitor traffic per integration type.
@@ -198,8 +200,8 @@ This design empowers admins to deploy **specialized executor instances** — for
 This topic is used by Integration Executors to send important events back to the TBMQ broker. This includes:
 
 - **Lifecycle events** (e.g., integration started or stopped).
-- **Errors** (for failed message deliveries to external systems).
-- **Statistics** (such as success/failure counts).
+- **Errors** (to report failed message deliveries to external systems).
+- **Statistics** (such as success/failure processing counts).
 
 All messages received on this topic are stored in the TBMQ database as Event entities and used for internal tracking, diagnostics, and administrative visibility.
 
@@ -259,15 +261,15 @@ TBMQ uses a **dedicated Kafka topic for each integration** to deliver MQTT messa
 
 When an MQTT client publishes a message, the TBMQ broker first checks if any integration has a topic filter in Subscription Trie matching the message topic. 
 If a match is found, TBMQ creates an integration event by serializing the message and publishes it to that integration’s own Kafka topic 
-(`tbmq.msg.ie.{integrationId}`). The Integration Executor, that is managing that integration and subscribed to that topic, 
+(`tbmq.msg.ie.$integrationId`). The Integration Executor, that is managing that integration and subscribed to that Kafka topic, 
 consumes the message, processes it, and forwards it to the configured external system. 
 The executor may also log the result or report back to TBMQ for monitoring purposes.
 
-This decoupled, event-driven flow allows TBMQ to offload integration handling entirely to the executor service. 
+This decoupled, event-driven flow allows TBMQ to offload integration message handling entirely to the executor service. 
 As a result, the broker never waits for external responses, preserving low-latency MQTT performance even when external systems are slow or unavailable.
 
 Each integration has its own Kafka topic, which enables full isolation of message flow. 
-Messages for different integrations are processed independently, in separate threads, allowing parallel execution and fine-grained error control.
+Messages for different integrations are processed independently, in separate threads (Kafka consumers), allowing parallel execution and fine-grained error control.
 
 Even when an integration is disabled, TBMQ continues publishing matching messages to its Kafka topic. 
 This ensures no message loss, as the executor will resume processing once the integration is re-enabled. 
@@ -308,8 +310,8 @@ Additionally, Kafka topic retention settings can be customized to fine-tune stor
 
 #### Message Delivery Error Handling & Retry Mechanism
 
-When an integration message fails to be processed (e.g., due to a timeout, unreachable external system, or malformed response), 
-the Integration Executor handles the error based on the configured **acknowledgment and retry strategy** for the `tbmq.msg.ie` topic.
+When an integration message fails to be processed (e.g., due to a timeout, unreachable external system, or malformed request), 
+the Integration Executor handles the error based on the configured **acknowledgment and retry strategy** for the `tbmq.msg.ie.$integrationId` topic.
 
 These behaviors are controlled via the following configuration block:
 
@@ -358,7 +360,7 @@ reinit:
   frequency: "${INTEGRATIONS_REINIT_FREQUENCY_MS:300000}"
 ```
 
-- If an integration enters the `FAILED` state (e.g., broken connections, or configuration issues), the executor will periodically **attempt to reinitialize it**.
+- If an integration enters the `FAILED` state (e.g., broken connections, or configuration issues), the Integration Executor will periodically **attempt to reinitialize it**.
 - This process checks all failed integrations every `frequency` milliseconds.
 - If the issue is resolved (e.g., the remote system becomes reachable), the integration is restored automatically without requiring manual intervention.
 
@@ -409,11 +411,11 @@ START, success=true, integrationType=MQTT = [1]
 - `success=true`: Number of integrations in `STARTED` state.
 - `success=false`: Number of integrations in `FAILED` state.
 
-These values are updated whenever an integration changes state. They help admins understand the **real-time health** of all running integrations across types.
+These values are updated whenever any integration changes state. They help admins understand the **real-time health** of all running integrations across types.
 
 **3. Integration Uplink Queue Stats**
 
-These metrics summarize the state of the **uplink Kafka topic**, which is used by the executor to send stats and lifecycle events back to TBMQ.
+These metrics summarize the state of the **uplink Kafka topic**, which is used by the executor to send error, statistics and lifecycle events back to TBMQ.
 
 Example:
 ```
@@ -429,7 +431,7 @@ failedMsgs = [0]
 - `successfulMsgs`: Messages published successfully.
 - `failedMsgs`: Messages that failed to publish.
 
-These values help monitor the **reliability and health of internal communication** between executor and core services.
+These values help monitor the **reliability and health of internal communication** between executor and broker services.
 
 **4. Integration Message Processing Stats**
 
@@ -475,5 +477,17 @@ This architecture supports modern cloud-native deployment models and ensures tha
 TBMQ currently supports three outbound integration types, each designed for specific use cases:
 
 - [**HTTP Integration**](/docs/mqtt-broker/integrations/http/) – Send MQTT messages to REST APIs or Webhooks via HTTP(S).
-- [**MQTT Integration**](/docs/mqtt-broker/integrations/mqtt/) – Forward messages to external MQTT brokers for cross-broker communication.
-- [**Kafka Integration**](/docs/mqtt-broker/integrations/kafka/) – Stream messages into Kafka topics for real-time processing.
+- [**MQTT Integration**](/docs/mqtt-broker/integrations/mqtt/) – Forward messages to external MQTT brokers for cross-broker communication via MQTT(S).
+- [**Kafka Integration**](/docs/mqtt-broker/integrations/kafka/) – Stream messages into Kafka topics for real-time processing via TCP(TLS).
+
+### Roadmap
+
+We’re actively working on expanding integration capabilities in TBMQ. Upcoming plans include:
+
+- **New outbound integration types**, such as Redis, PostgreSQL, RabbitMQ, and more.
+- **Inbound (source) integrations**, which will allow TBMQ to receive messages from external systems — for example, Kafka integrations (acting as consumers) or MQTT integrations (acting as subscribers).
+- **Message transformation and filtering**, enabling dynamic processing before forwarding data to external targets.
+
+These enhancements will enable even greater flexibility in building event-driven and bi-directional IoT architectures.
+
+**Stay tuned for future updates!**
