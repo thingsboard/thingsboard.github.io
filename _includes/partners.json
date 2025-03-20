@@ -187,11 +187,11 @@
     "program": "",
     "name": "Digicom B810 Spa",
     "logo": "digicom-logo.png",
+    "site": {
+      "href": "https://www.digicom.it/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://www.digicom.it/",
-        "target": "_blank"
-      },
       "Integration guide": {
         "href": "/docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-plaƞorm/"
       }
@@ -454,11 +454,11 @@
     "program": "",
     "name": "MikroTik",
     "logo": "mikrotik-logo.svg",
+    "site": {
+      "href": "https://mikrotik.com/",
+      "target": "_blank"
+    },
     "links": {
-      "Site": {
-        "href": "https://mikrotik.com/",
-        "target": "_blank"
-      },
       "MQTT and ThingsBoard configuration": {
         "href": "https://help.mikrotik.com/docs/spaces/ROS/pages/105742352/MQTT+and+ThingsBoard+configuration"
       },
