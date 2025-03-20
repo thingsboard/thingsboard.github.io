@@ -1,7 +1,7 @@
-- Select the argument type **"Latest telemetry"**;
-- Specify the **time series key**;
-- If necessary, set **default value** for time series;
-- Finally, click "Add".
+- Select the argument type **Latest telemetry**;
+- Specify the **Time series key**;
+- Optionally, set **Default value** for time series;
+- Finally, click **Add** button.
 
 A new argument has been added.
 
