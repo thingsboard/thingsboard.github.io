@@ -3,7 +3,7 @@ It is similar to [access token](/docs/{{docsPrefix}}user-guide/access-token/) au
 
 Instructions below will describe how to connect MQTT client using X.509 Certificate to ThingsBoard Cloud. 
 
-<br>In particular, there are two strategies that can be used for establishing connection between client and ThingsBoard:
+In particular, there are two strategies that can be used for establishing connection between client and ThingsBoard:
 
 - **X.509 Certificate chain** - *recommended*. <br>
 Configure ThingsBoard to trust all client certificates from a specific trust anchor (*intermediate certificate*). 
