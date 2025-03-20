@@ -1,16 +1,36 @@
 ---
 layout: docwithnav-pe 
-title: LORIOT Integration 
-description: LORIOT Integration Guide 
+title: Loriot integration
+description: Loriot integration guide
+
 register:
     0:
         image: /images/user-guide/integrations/loriot/loriot_register.png 
     1:
         image: /images/user-guide/integrations/loriot/loriot_server.png
 
-server:
+create-loriot-application-output-1:
     0:
         image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_server_1.png
+        title: 'Open the Loriot UI. The URL contains the server name that we selected during the registration process. This server needs to be specified in the integration settings.'
+
+create-loriot-application-output-2:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot_applications.png
+        title: 'Select your application in the "Applications" section.'
+    1:
+        image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_id_1.png
+        title: 'Locate the <b>Application ID</b> associated with your project. This value needs to be specified in the integration settings.'
+
+create-loriot-application-output-3:
+    0:
+        image: /images/user-guide/integrations/loriot/thingsboard_add_integration_output_basic.png
+        title: 'Select the "Basic" credential type and enter your Loriot account credentials. Click "Add" to confirm creating integration.'
+
+endpoint-url:
+    0:
+        image: /images/user-guide/integrations/loriot/send-uplink-http-endpoint-1-pe.png
+        title: 'Go to the "Integrations" page in ThingsBoard. Find your Loriot integration and click on it. There you can find the "HTTP endpoint URL".'
 
 downlink_server:
     0:
@@ -91,16 +111,19 @@ send_downlink:
 loriot_output:
     0:
         image: /images/user-guide/integrations/loriot/loriot_output.png
+        title: 'In Loriot UI, go to the "Output" page and click on the "Add new output".'
+    1:
+        image: /images/user-guide/integrations/loriot/loriot_output_http_push.png
+        title: 'Select the output type as "HTTP Push" and enter the HTTP endpoint URL taken from the integration.'
 
 endpoint:
     0:
         image: /images/user-guide/integrations/loriot/loriot_output_http_push.png
 
-basic:
+enable_security:
     0:
-        image: /images/user-guide/integrations/loriot/thingsboard_add_integration_output_basic.png
-    1:
-        image: /images/user-guide/integrations/loriot/thingsboard_add_integration_output_basic_email_and_password.png
+        image: /images/user-guide/integrations/loriot/enable-security-1-pe.png
+        title: 'Click "Add" to confirm creating integration.'
 
 security_token:
     0:
@@ -130,27 +153,10 @@ parameters:
     0:
         image: /images/user-guide/integrations/loriot/loriot_devices_downlink_queue.png
 
-integration:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot-add-integration-1-pe.png
-    1:
-        image: /images/user-guide/integrations/loriot/loriot-add-integration-2-pe.png
-    2:
-        image: /images/user-guide/integrations/loriot/loriot-add-integration-3-pe.png
-    3:
-        image: /images/user-guide/integrations/loriot/loriot-add-integration-4-pe.png
-
-enable_security:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot-security-1-pe.png
-
 custom_authorization:
     0:
         image: /images/user-guide/integrations/loriot/custom-authorization-pe.png
 
-uplink-message:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot-security-2-pe.png
 
 terminal:
     0:
@@ -160,19 +166,15 @@ terminal_1:
     0:
         image: /images/user-guide/integrations/loriot/terminal_1.png
 
-device_groups:
+device:
     0:
-        image: /images/user-guide/integrations/loriot/thingsboard_devices_all_attributes.png
+        image: /images/user-guide/integrations/loriot/loriot-device-attributes-1-pe.png
+    1:
+        image: /images/user-guide/integrations/loriot/loriot-device-telemetry-1-pe.png
 
 uplink_events:
     0:
-        image: /images/user-guide/integrations/loriot/thingsboard_uplink_converter_events_in.png
-    1:
-        image: /images/user-guide/integrations/loriot/thingsboard_uplink_converter_events_out.png
-
-endpoint_url:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot-send-uplink-message-1-pe.png
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-1-pe.png
 
 solution_templates:
     0:
