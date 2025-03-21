@@ -5,16 +5,27 @@ description: ThingsBoard Products Pricing
 defaultActivePricingSection: thingsboard-pe-options
 
 
-cloudPlan:
+northAmericaCloudPlan:
     0:
-        image: https://img.thingsboard.io/trendz/cloud-1.png
-        title: 'Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
+        image: https://img.thingsboard.io/trendz/cloud-1.webp
+        title: 'Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
     1:
-        image: https://img.thingsboard.io/trendz/cloud-2.png
+        image: https://img.thingsboard.io/trendz/cloud-2.webp
         title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'        
     2:
-        image: https://img.thingsboard.io/trendz/cloud-3.png
+        image: https://img.thingsboard.io/trendz/cloud-3.webp
         title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
+
+europeCloudPlan:
+  0:
+    image: https://img.thingsboard.io/trendz/eu-cloud-1.webp
+    title: 'Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
+  1:
+    image: https://img.thingsboard.io/trendz/eu-cloud-2.webp
+    title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'
+  2:
+    image: https://img.thingsboard.io/trendz/eu-cloud-3.webp
+    title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
 
 selfManagedPlan:
     0:
@@ -703,10 +714,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div style="margin-top:32px">
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -729,14 +736,10 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -761,14 +764,10 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -792,14 +791,10 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>                    
                 </div>
@@ -834,7 +829,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item"><b>White-labeling</b></div>
+                            <div class="pricing-square-item">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-perpetual-support-level">
                                 Support within <b>12 hours</b>
                             </div>
@@ -849,15 +844,41 @@ selfManagedPlan:
 <div id="trendz-cloud" class="pricing-content" style="display: none;">
     <div class="container">
         <div class="pricing-content-header row">
-            <div class="pricing-content-description-cloud pricing-cloud active col-lg">
+            <div id="trendzNorthAmericaHeader" class="pricing-content-description col-lg-6">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
+                  <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
                 </div>
             </div>
+            <div id="trendzEuropeHeader" class="pricing-content-description col-lg-6">
+              <h2>Subscription plans</h2>
+              <div class="pricing-content-details">
+                  <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
+              </div>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <div class="solution-selector solution-selector-cloud">
+                  <div id="Pricing_Trendz_Cloud_NorthAmerica"
+                       data-solutionId="trendz-cloud-north-america"
+                       class="solution north-america active gtm_button defaultselection"
+                       data-toggle="#trendzNorthAmerica"
+                       data-description-toggle="#trendzNorthAmericaHeader"
+                       onClick="setActiveSolutionSection('trendz-cloud-north-america')">
+                      <h3>North America</h3>
+                  </div>
+                  <div id="Pricing_Trendz_Cloud_Europe"
+                       data-solutionId="trendz-cloud-europe"
+                       class="solution europe gtm_button"
+                       data-toggle="#trendzEurope"
+                       data-description-toggle="#trendzEuropeHeader"
+                       onClick="setActiveSolutionSection('trendz-cloud-europe')">
+                      <h3>Europe</h3>
+                  </div>
+              </div>
+          </div>
         </div>
         <div class="pricing-div">
-            <div class="pricing-section trendz-pricing-cloud active">
+            <div class="pricing-section trendz-pricing-cloud active" id="trendzNorthAmerica">
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                         <div class="pricing-square">
@@ -870,7 +891,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
+                                <a id="Pricing_TA_Cloud_Maker" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
                                     Get Started
                                 </a>
                             </div>
@@ -882,10 +903,6 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -899,7 +916,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
+                                <a id="Pricing_TA_Cloud_Prototype" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
                                     Get Started
                                 </a>
                             </div>
@@ -908,13 +925,10 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Community support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -928,7 +942,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
+                                <a id="Pricing_TA_Cloud_Startup" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
                                     Get Started
                                 </a>
                             </div>
@@ -937,13 +951,10 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -957,7 +968,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
+                                <a id="Pricing_TA_Cloud_Business" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
                                     Get Started
                                 </a>
                             </div>
@@ -966,13 +977,10 @@ selfManagedPlan:
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">AI Assistant</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
                                 Support
                             </div>
-                            <br>
-                            <div>
-                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
-                            </div>   
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
@@ -995,6 +1003,137 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
                                 Custom <b>SLA</b>
                             </div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-section trendz-pricing-cloud active" id="trendzEurope">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Maker</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 30 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €9
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TA_Cloud_Maker" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">AI Assistant</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                                Community support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 100 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €100
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TA_Cloud_Prototype" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">AI Assistant</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                                Community support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>                            
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 500 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €250
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TA_Cloud_Startup" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">AI Assistant</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                                Support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 1000 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                €450
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TA_Cloud_Business" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">AI Assistant</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                                Support
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Enterprise</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Custom plan and SLA</p> 
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a id="Pricing_TA_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                    Contact Us
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">Dedicated server instances</div>
+                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-limits">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
+                                Custom <b>SLA</b>
+                            </div>
+                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                         </div>
                     </div>
                 </div>
@@ -2672,6 +2811,11 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-increase-limits" data-title="Can I increase my resource limits if needed?">
                         <div class="container">
                             <p>Yes, you can upgrade your plan at any time to increase limits.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-white-labeling" data-title="Is white labeling available out of the box?">
+                        <div class="container">
+                            <p>White labeling functionality is available starting from the Prototype subscription.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-self-managed-support" data-title="If I don’t want to switch to the Enterprise plan but prefer to migrate to a self-managed system, what kind of support do I get?">
