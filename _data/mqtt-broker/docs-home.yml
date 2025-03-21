@@ -21,13 +21,10 @@ toc:
   section:
     - title: MQTT protocol
       path: /docs/mqtt-broker/user-guide/mqtt-protocol/
-      new: true
     - title: Topics & Wildcards
       path: /docs/mqtt-broker/user-guide/topics/
-      new: true
     - title: Quality of Service (QoS)
       path: /docs/mqtt-broker/user-guide/qos/
-      new: true
     - title: TBMQ client type
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
     - title: MQTT over WebSocket
@@ -38,10 +35,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/retained-messages/
     - title: Last Will & Testament
       path: /docs/mqtt-broker/user-guide/last-will/
-      new: true
     - title: Keep Alive
       path: /docs/mqtt-broker/user-guide/keep-alive/
-      new: true
 - title: Integrations
   new: true
   section:
@@ -61,10 +56,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/sessions/
     - title: Subscriptions
       path: /docs/mqtt-broker/user-guide/ui/subscriptions/
-      new: true
     - title: Unauthorized Clients
       path: /docs/mqtt-broker/user-guide/ui/unauthorized-clients/
-      new: true
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
     - title: WebSocket Client
@@ -75,7 +68,6 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: Settings
       path: /docs/mqtt-broker/user-guide/ui/settings/
-      new: true
 - title: Troubleshooting
   path: /docs/mqtt-broker/troubleshooting/
 - title: Release Notes
