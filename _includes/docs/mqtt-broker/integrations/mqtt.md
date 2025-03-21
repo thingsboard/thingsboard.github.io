@@ -27,19 +27,19 @@ MQTT Integration processes messages and forwards them to an external MQTT broker
 Before setting up the integration, ensure the following:
 
 - A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.
-- A client capable of publishing MQTT messages (e.g., `mosquitto_pub`).
-- A client capable of receiving MQTT messages (e.g., `mosquitto_sub`).
+- A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
+- A client capable of receiving MQTT messages (e.g., **TBMQ WebSocket Client**).
 
 ### Create TBMQ MQTT Integration
 
 1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
 2. Select **MQTT** as the integration type and click **Next**.
-3. On the **Topic Filters** subscribe to the topic `tbmq/integration/mqtt` and click **Next**.
+3. On the **Topic Filters** subscribe to the topic `tbmq/mqtt-integration` and click **Next**.
 4. In the **Configuration** step:
-   * Enter the **Host** (`localhost`);
-   * Enter the **Port** (`1883`);
-   * Set 'Dynamic topic name' to `false` and 'Topic name' to `tbmq/demo/mqtt`;
-   * Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
+* Enter the **Host** (`localhost`);
+* Enter the **Port** (`1883`);
+* Set 'Dynamic topic name' to `false` and 'Topic name' to `sensors/mqtt-integration`;
+* Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
 5. Click **Add** to save the integration.
 
 #### Topic Filters
@@ -74,22 +74,31 @@ Before setting up the integration, ensure the following:
 
 ### Sending an Uplink Message
 
-To test the TBMQ MQTT Integration and verify message flow, follow these steps:
+To send a message, follow these steps:
 
-1. Navigate to the **Credentials** page and select **TBMQ WebSockets MQTT Credentials**.
-2. Click **Check Connectivity** to open window with ready-to-use mosquitto commands.
-3. Copy the **MQTT subscribe** command and run it in a terminal to listen for messages.
+1. Navigate to the **WebSocket Client** page.
+2. Select 'WebSocket Default Connection' or any other available working connection, then click **Connect**. Make sure the 'Connection status' is shown as `Connected`.
+3. Set the 'Topic' field to `tbmq/mqtt-integration` to match the Integration's 'Topic Filter'. 
+4. Click the **Send** icon to publish the message. 
+5. If successful, you should see two new messages in the 'Messages' table:
 
-```bash
-mosquitto_sub -d -q 1 -h localhost -p 1883 -t "tbmq/demo/+" -u "tbmq_websockets_username" -v
+* One sent by the **WebSocket Client**.
+* One received from the **MQTT Integration** with message payload similar to:
+```json
+{
+   "payload": "eyJ0ZW1wZXJhdHVyZSI6MjV9",
+   "topicName": "tbmq/mqtt-integration",
+   "clientId": "tbmq_7QUvZzow",
+   "eventType": "PUBLISH_MSG",
+   "qos": 1,
+   "retain": false,
+   "tbmqIeNode": "tbmq_node",
+   "tbmqNode": "tbmq_node",
+   "ts": 1742554969254,
+   "props": {},
+   "metadata": {
+      "A": "B",
+      "integrationName": "MQTT integration"
+   }
+}
 ```
-
-4. Copy the **MQTT publish** command and run it in a new terminal tab.
-
-```bash
-   mosquitto_pub -d -q 1 -h localhost -p 1883 -t "tbmq/integration/mqtt" -u "tbmq_websockets_username" -m 'Hello World'
-```
-
-5. If successful, you should see the received message displayed in the terminal where the client is subscribed.
-
-### Next steps  

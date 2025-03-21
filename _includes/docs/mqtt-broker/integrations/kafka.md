@@ -27,19 +27,22 @@ TBMQ Kafka Integration processes messages and forwards them to an external **Kaf
 Before setting up the integration, ensure the following:
 
 - A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.
-- An external service ready to receive Kafka message.
-- A client capable of publishing MQTT messages (e.g., `mosquitto_pub`).
+- An external service ready to receive Kafka message (e.g. **Confluent Cloud**).
+- A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
 
 ### Create Integration
 
-* Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
-* Select **Kafka** as the integration type and click **Next**. *On the **Topic Filters** page, define the MQTT topic filters that will trigger the integration, then click **Next**.
-* In the **Configuration** step enter the **Bootstrap servers** (Kafka broker addresses).
+1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
+2. Select **Kafka** as the integration type and click **Next**.
+3. On the **Topic Filters** page click **Next** to subscribe to the default topic `tbmq/#`.
+4. In the **Configuration** step enter the **Bootstrap servers** (Kafka broker addresses).
 {% capture integrationTypes %}
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/mqtt-broker/user-guide/integrations/kafka/kafka-common-and-docker-integration%br%
 Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-broker/user-guide/integrations/kafka/kafka-confluent-integration{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
-* Click **Add** to save the integration.
+<ol start="5">
+  <li>Click <strong>Add</strong> to save the integration.</li>
+</ol>
 
 #### Topic Filters
 
@@ -71,14 +74,10 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-b
 
 ### Sending an Uplink Message
 
-To test the TBMQ MQTT Integration and verify message flow, follow these steps:
+To send a message, follow these steps:
 
-1. Navigate to the **Credentials** page and select **TBMQ WebSockets MQTT Credentials**.
-2. Click **Check Connectivity** to open window with ready-to-use mosquitto commands.
-3. Copy the **MQTT publish** command and run it in a new terminal tab.
-```bash
-   mosquitto_pub -d -q 1 -h localhost -p 1883 -t "tbmq/demo/topic" -u "tbmq_websockets_username" -m 'Hello World'
-```
-4. Check whether the message has been transmitted by viewing messages in your Kafka service under the topic `tbmq.messages`.
-
-### Next steps  
+1. Navigate to the **WebSocket Client** page.
+2. Select 'WebSocket Default Connection' or any other available working connection, then click **Connect**. Make sure the 'Connection status' is shown as `Connected`.
+3. Set the 'Topic' field to `tbmq/kafka-integration` to match the Integration's 'Topic Filter' `tbmq/#`.
+4. Click the **Send** icon to publish the message.
+5. If successful, the message should be available in your Kafka service under the topic `tbmq.messages`.

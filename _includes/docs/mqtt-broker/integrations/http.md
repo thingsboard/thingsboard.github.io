@@ -21,7 +21,7 @@ Before setting up the integration, ensure the following:
 
 - A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.  
 - An external service ready to receive HTTP requests (e.g., **ThingsBoard Cloud**).  
-- A client capable of publishing MQTT messages (e.g., `mosquitto_pub`).  
+- A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).  
 
 ### Create ThingsBoard Integration
 
@@ -31,16 +31,16 @@ Follow the official **[ThingsBoard HTTP Integration Guide](/docs/paas/user-guide
 
 Once the HTTP Integration is created:
 
-- Open the **details page** and enable **debug mode** to verify data reception.  
-- **Copy the HTTP endpoint URL**, as this will be needed in the next step.  
+1. Open the **details page** and enable **debug mode** to verify data reception.  
+2. **Copy the HTTP endpoint URL**, as this will be needed in the next step.  
 
 ### Create TBMQ Integration
 
 1. Go to the **Integrations** page and click the "+" button to create a new integration.
 2. Select **HTTP** as the integration type and click **Next**.
-3. On the **Topic Filters** page, define the MQTT topic filters that will trigger the integration, then click **Next**.
+3. On the **Topic Filters** page click **Next** to subscribe to the default topic `tbmq/#`.
 4. In the **Configuration** step, paste the **Endpoint URL** from the ThingsBoard Integration.
-5. Open **Advanced settings** and set **Payload content type** to `"Text"`.
+5. Open **Advanced settings** and set **Payload content type** to `JSON`.
 6. Click **Add** to save the integration.
 
 #### Topic Filters
@@ -76,14 +76,34 @@ Once the HTTP Integration is created:
 
 To send a message, follow these steps:
 
-1. Navigate to the **Credentials** page and select **TBMQ WebSockets MQTT Credentials**.
-2. Click **Check Connectivity** and copy the MQTT publish command.
-3. Open a terminal and execute the command to send a test message.
+1. Navigate to the **WebSocket Client** page.
+2. Select 'WebSocket Default Connection' or any other available working connection, then click **Connect**. Make sure the 'Connection status' is shown as `Connected`.
+3. Set the 'Topic' field to `tbmq/http-integration` to match the Integration's 'Topic Filter' `tbmq/#`.
+4. Click the **Send** icon to publish the message. 
+5. If successfull, the message should appears in the 'Messages' table.
 
 Once the message is sent:
 
-- Open **ThingsBoard** HTTP Integration details.
-- Go to the **Events** tab.
-- If the setup is correct, you should see an event with the status **'OK'**.
+1. Open **ThingsBoard** HTTP Integration details.
+2. Go to the **Events** tab.
+3. If the setup is correct, you should see an event with the status **'OK'** and a message payload similar to:
 
-### Next steps
+```json
+{
+    "payload": {
+        "temperature": 25
+    },
+    "topicName": "tbmq/http-integration",
+    "clientId": "tbmq_7QUvZzow",
+    "eventType": "PUBLISH_MSG",
+    "qos": 1,
+    "retain": false,
+    "tbmqIeNode": "tbmq_node",
+    "tbmqNode": "tbmq_node",
+    "ts": 1742553324248,
+    "props": {},
+    "metadata": {
+        "integrationName": "HTTP integration"
+    }
+}
+```
