@@ -6,5 +6,4 @@
 
 A new argument has been added.
 
-[//]: # (fix image)
 {% include images-gallery.html imageCollection="attribute-argument-type" %}
