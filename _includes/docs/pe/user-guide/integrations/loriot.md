@@ -3,29 +3,36 @@
 * TOC 
 {:toc}
 
-## Overview
-
-LORIOT is LoRaWAN network designed for connecting your devices using LoRaWAN stack. After integrating LORIOT with the
+[Loriot](https://loriot.io/) is LoRaWAN network designed for connecting your devices using LoRaWAN stack. After integrating LORIOT with the
 ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
 
-## Create Loriot account
+## Register an account on Loriot
 
-Choosing a package of services and server location. Then we register an account with Loriot. For example, select the
-community public network server.
+Here&#39;s how to get started with Loriot:
 
-{% include images-gallery.html imageCollection="register" %}
+- Visit the [Loriot](https://loriot.io/){:target="_blank"} website.
+- Choose a service package — for example, select the **Community Public Network Server**.
+- Pick your preferred region and country.
+- Complete the registration process and log in to your Loriot account.
 
-*The LORIOT interface may change in the future.*
+{% include images-gallery.html imageCollection="create-loriot-account" %}
 
-Fill in the registration fields. The registration confirmation letter will be sent to the specified email. Follow the
-specified link. 
+*&#42; The Loriot interface may change in the future.*
 
 ## Create Loriot integration
 
+You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
+The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+
+<br>
+Let's move on to setting up the integration between the ThingsBoard platform and Loriot.
+
 **1. Basic settings**.
 
-- Go to the "**Integrations**" page of the "**Integrations center**" section. Click "plus" button to start adding new integration. 
-- Select integration type "**Loriot**". To view the events, enable [debug mode](#debug-mode){:target="_blank"}.
+- Sign in to your ThingsBoard account.
+- Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click "plus" button to add a new integration.
+- From the list, select the integration type "**Loriot**".
+- If you'd like to monitor events and troubleshoot, enable [debug mode](/docs/{{docsPrefix}}user-guide/integrations/#debug-mode){:target="_blank"}.
 
 {% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
@@ -74,12 +81,14 @@ Let's convert them into temperature and humidity values.
 
 **3F** is the value for **humidity.** In decoded form it will be **63**
 
+<br>
 Let's return to configuring the integration:
 
 - Enter a name for the converter. It must be unique.
 - To view the events, enable [debug mode](#debug-mode){:target="_blank"}.
 - In the "**Main decoding configuration**" section
   - Select the entity type (**Device** or **Asset**) that will be created as a result of the integration, and specify the entity name. The **$eui** pattern will dynamically fetch the device&#39;s unique identifier from the Loriot message.
+  > **Example**: If the entity name is set as Device $eui, and the incoming message contains: **"EUI": "BE7A000000000552"**, the converter will replace $eui with "BE7A000000000552". The final device name will be: "Device BE7A000000000552".
   - Use the existing script for parsing and transforming data, or provide your own custom script.
 
 ![image](/images/user-guide/integrations/loriot/loriot-add-integration-2-1-pe.png)
@@ -92,6 +101,8 @@ Let's return to configuring the integration:
 
 ![image](/images/user-guide/integrations/loriot/loriot-add-integration-2-2-pe.png)
 
+<br>
+
 **3. Downlink data converter**.
 
 At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty.   
@@ -99,24 +110,28 @@ Click "**Skip**".
 
 ![image](/images/user-guide/integrations/loriot/loriot-add-integration-3-pe.png)
 
+<br>
+
 **4. Connection**.
 
 In order for data to be transferred from Loriot to ThingsBoard, you need to configure an **Output** for your Loriot application. You can do this manually (recommended) or ThingsBoard Integration can do this for you (you will need to specify login and password from your Loriot account for us to be able to automatically provision the output).
 
-We can create Output with LORIOT or in integration by enabling the **Create Loriot Application output** option or specifying the “Basic” credential.
+We can create the **Output** by either specifying the "**HTTP endpoint URL**" of the integration directly in the Loriot account or by enabling the "**Create Loriot Application output**" option in ThingsBoard and providing your Loriot credentials there.
 
 {% capture loriotAuthorizationTypes %}
 Use Loriot account<br><small>Recommended</small>%,%loriot-account%,%templates/integration/loriot/loriot-account-authorization-type.md%br%
 Create Loriot Application output<br><small></small>%,%basic-credential%,%templates/integration/loriot/thingsboard-basic-credentials.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="loriotAuthorizationTypes" toggle-spec=loriotAuthorizationTypes %}
 
+<br>
+
 **Enable security option**
 
 If necessary, you can specify additional parameters, without which the data will not be included in the integration.
 
-To do this, turn on the "Enable security" option. Click "Add" and enter an arbitrary value for the "Header" and "Value" fields.  Then, save the changes.
+To do this, turn on the "<b>Enable security</b>" option. Click "<b>Add</b>" and enter an arbitrary value for the "<b>Header</b>" and "<b>Value</b>" fields.  Then, save the changes.
 
-{% include images-gallery.html imageCollection="enable_security" %}
+{% include images-gallery.html imageCollection="enable-security" %}
 
 Also need to specify this in Loriot:
 
@@ -154,23 +169,25 @@ curl -v -X POST -d "{\"EUI\":\"BE7A000000000552\",\"data\":\"2A3F\",\"port\":1,\
 ```
 {: .copy-code}
 
-To find the "**HTTP endpoint URL**", go to the "Integrations" page in ThingsBoard and click on the integration to open its details. There, you will find the "HTTP endpoint URL.
+To find the "**HTTP endpoint URL**", go to the "Integrations" page in ThingsBoard and click on the Loriot integration to open its details. There, you will find the "<b>HTTP endpoint URL</b>".
 
 {% include images-gallery.html imageCollection="endpoint-url" %}
 
 <br>
+
 The created device with data can be seen in the "**"Devices**" page of the "**Entities**" section.
 
 {% include images-gallery.html imageCollection="device" %}
 
 <br>
-The data can be viewed in the Uplink converter. In the "**In**" and "**Metadata**" blocks of the "**Events**" tab:
+
+The data can be viewed in the Uplink converter. In the "**In**", "**Out**" and "**Metadata**" blocks of the "**Events**" tab:
 
 {% include images-gallery.html imageCollection="uplink_events" %}
 
 ## Advanced usage: Create downlink converter
 
-Create Downlink in **Data converters**. To see events - enable [debug mode](#debug-mode){:target="_blank"}.
+Create Downlink in **Data converters**. To see events - enable [debug mode](/docs/{{docsPrefix}}user-guide/integrations/#debug-mode){:target="_blank"}.
 
 {% include templates/tbel-vs-js.md %}
 
@@ -221,7 +238,7 @@ The **“Out”** field displays messages to device:
 
 {% include images-gallery.html imageCollection="event_out" %}
 
-It is possible to check that messages have reached LORIOT on the **Devices -> LoRaWAN Parameters** page at the very bottom in the **Downlink Queue** field.
+It is possible to check that messages have reached LORIOT on the **Devices** -> **LoRaWAN Parameters** page at the very bottom in the **Downlink Queue** field.
 
 {% include images-gallery.html imageCollection="parameters" %}
 
@@ -229,6 +246,3 @@ It is possible to check that messages have reached LORIOT on the **Devices -> Lo
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
-
-
-

@@ -1,5 +1,9 @@
-{% include images-gallery.html imageCollection="loriot_output" showListImageTitles="true" %}
 
-- In ThingsBoard UI, click "Add" to confirm creating integration.
+In Loriot UI:
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-4-pe.png)
+{% include images-gallery.html imageCollection="loriot-output" showListImageTitles="true" %}
+
+In ThingsBoard UI: 
+- Click "Add" to confirm creating integration.
+
+![image](/images/user-guide/integrations/loriot/loriot-add-integration-4-1-pe.png)

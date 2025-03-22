@@ -134,39 +134,13 @@ This feature applies to uplink converters for the following integrations:
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-To better understand how the new feature works, let's examine a message received from Loriot in ThingsBoard and how the converter processes it.
+As an example to better understand how this works, let&#39;s create a new converter for the Loriot integration, which supports the new uplink converter functionality:
 
-Example of a message from the Loriot:
-
-```
-{
-	"cmd": "rx",
-	"seqno": 3149,
-	"EUI": "70B3D5993000152F",
-	"ts": 1742218500377,
-	"fcnt": 128,
-	"port": 1,
-	"freq": 867700000,
-	"rssi": -92,
-	"snr": 13,
-	"toa": 412,
-	"dr": "SF10 BW125 4/5",
-	"ack": false,
-	"bat": 0,
-	"offline": false,
-	"confirmed": true,
-	"devaddr": "31282D35",
-	"data": "1100f92b094012f303804000"
-}
-```
-
-Start creating a new converter:
 - The "**Integration type**" field lists all supported integrations. Find Loriot and select it.
 - Specify a name for the converter.
 - Go to the "**Main decoding configuration**" section: 
   - Select the entity type (**Device** or **Asset**) that will be created as a result of the integration, and specify the entity name.
-
-> The Entity name field is mandatory, so it cannot be left empty. By default, the entity name follows the pattern **Device $eui** (or **Asset $eui**). Here you need to underline the pattern **$** in the device name. As you type **$**, a list of available keys from the Loriot message will appear. This list is standardized and does not depend on the specific message content. The **$eui** pattern will dynamically fetch the device&#39;s unique identifier from the Loriot message. <br><br> **Example**: If the entity name is set as Device $eui, and the incoming message contains: **"EUI": "70B3D5993000152F"**, the converter will replace $eui with "70B3D5993000152F". The final device name will be: "Device 70B3D5993000152F".
+  > The Entity name field is mandatory, so it cannot be left empty. By default, the entity name follows the pattern **Device $eui** (or **Asset $eui**). Here you need to underline the pattern **$** in the device name. As you type **$**, a list of available keys from the Loriot message will appear. This list is standardized and does not depend on the specific message content. The **$eui** pattern will dynamically fetch the device&#39;s unique identifier from the Loriot message.
 
 - Use the existing script for parsing and transforming data, or provide your own custom script.
 
@@ -178,8 +152,9 @@ Start creating a new converter:
   - In the **Attributes** and **Telemetry** sections specify the keys that should be interpreted as attributes and telemetry, respectively.
   If a specified key is not present in the incoming message, it will be ignored by the converter.
   - In the **Update only keys list** section, define keys whose values will be saved to the database only if they have changed from the previous incoming message.This applies to both Attributes and Telemetry, helping optimize data storage.
-
 - Once everything is set up, click "**Add**" to save the converter, and it will start processing incoming Loriot messages accordingly.
+
+![image](/images/user-guide/integrations/uplink-converter-20-2.png)
 
 #### Payload
 

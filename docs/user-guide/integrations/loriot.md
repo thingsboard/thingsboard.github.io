@@ -3,23 +3,28 @@ layout: docwithnav-pe
 title: Loriot integration
 description: Loriot integration guide
 
-register:
+create-loriot-account:
     0:
-        image: /images/user-guide/integrations/loriot/loriot_register.png 
+        image: /images/user-guide/integrations/loriot/create-loriot-account-1.png
+        title: 'Visit the Loriot website. Choose a service package — for example, select the <b>Community Public Network Server</b>.'
     1:
-        image: /images/user-guide/integrations/loriot/loriot_server.png
+        image: /images/user-guide/integrations/loriot/create-loriot-account-2.png
+        title: 'Pick your preferred region and country.'
+    2:
+        image: /images/user-guide/integrations/loriot/create-loriot-account-3.png
+        title: 'Complete the registration process.'
+    3:
+        image: /images/user-guide/integrations/loriot/create-loriot-account-4.png
+        title: 'Log in to your Loriot account.'
 
 create-loriot-application-output-1:
     0:
-        image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_server_1.png
+        image: /images/user-guide/integrations/loriot/loriot-server.png
         title: 'Open the Loriot UI. The URL contains the server name that we selected during the registration process. This server needs to be specified in the integration settings.'
 
 create-loriot-application-output-2:
     0:
-        image: /images/user-guide/integrations/loriot/loriot_applications.png
-        title: 'Select your application in the "Applications" section.'
-    1:
-        image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_id_1.png
+        image: /images/user-guide/integrations/loriot/loriot-application-id.png
         title: 'Locate the <b>Application ID</b> associated with your project. This value needs to be specified in the integration settings.'
 
 create-loriot-application-output-3:
@@ -29,20 +34,12 @@ create-loriot-application-output-3:
 
 endpoint-url:
     0:
-        image: /images/user-guide/integrations/loriot/send-uplink-http-endpoint-1-pe.png
+        image: /images/user-guide/integrations/loriot/loriot-copy-http-endpoint-pe.png
         title: 'Go to the "Integrations" page in ThingsBoard. Find your Loriot integration and click on it. There you can find the "HTTP endpoint URL".'
 
 downlink_server:
     0:
         image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_server.png
-
-applications:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot_applications.png
-
-application_id:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_id_1.png 
 
 downlink_applications:
     0:
@@ -54,7 +51,7 @@ access_token:
     0:
         image: /images/user-guide/integrations/loriot/loriot_access_tokens.png
     1:
-        image: /images/user-guide/integrations/loriot/loriut_authentication_tokens.png
+        image: /images/user-guide/integrations/loriot/loriot_authentication_tokens.png
     2:
         image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_access_token.png
 
@@ -108,22 +105,30 @@ send_downlink:
     0:
         image: /images/user-guide/integrations/loriot/thingsboard_add_integration_send_downlink.png
 
-loriot_output:
+loriot-output:
     0:
-        image: /images/user-guide/integrations/loriot/loriot_output.png
-        title: 'In Loriot UI, go to the "Output" page and click on the "Add new output".'
+        image: /images/user-guide/integrations/loriot/loriot-http-push-1.png
+        title: 'Go to the "<b>Applications</b>" page and click select application.'
     1:
-        image: /images/user-guide/integrations/loriot/loriot_output_http_push.png
-        title: 'Select the output type as "HTTP Push" and enter the HTTP endpoint URL taken from the integration.'
+        image: /images/user-guide/integrations/loriot/loriot-http-push-2.png
+        title: 'Go to the "<b>Output</b>" page.'
+    2:
+        image: /images/user-guide/integrations/loriot/loriot-http-push-3.png
+        title: 'Click on the "<b>Add new output</b>" button.'
+    3:
+        image: /images/user-guide/integrations/loriot/loriot-http-push-4.png
+        title: 'Select the output type as "<b>HTTP Push</b>" and enter the "<b>HTTP endpoint URL</b>" taken from the integration. Then, click "<b>Add output</b>" button.'
+    4:
+        image: /images/user-guide/integrations/loriot/loriot-http-push-5.png
+        title: 'Output created successfully.'
 
-endpoint:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot_output_http_push.png
-
-enable_security:
+enable-security:
     0:
         image: /images/user-guide/integrations/loriot/enable-security-1-pe.png
-        title: 'Click "Add" to confirm creating integration.'
+        title: 'To do this, turn on the "<b>Enable security</b>" option. Click "<b>Add</b>" and enter an arbitrary value for the "<b>Header</b>" and "<b>Value</b>" fields. Then, save the changes.'
+    1:
+        image: /images/user-guide/integrations/loriot/enable-security-2-pe.png
+        title: 'Also need to specify this credentials in Loriot UI.'
 
 security_token:
     0:
@@ -145,18 +150,6 @@ event_in:
     0:
         image: /images/user-guide/integrations/loriot/thingsboard_downlink_converter_events_in.png
 
-event_out:
-    0:
-        image: /images/user-guide/integrations/loriot/thingsboard_downlink_converter_events_out.png
-
-parameters:
-    0:
-        image: /images/user-guide/integrations/loriot/loriot_devices_downlink_queue.png
-
-custom_authorization:
-    0:
-        image: /images/user-guide/integrations/loriot/custom-authorization-pe.png
-
 
 terminal:
     0:
@@ -169,16 +162,32 @@ terminal_1:
 device:
     0:
         image: /images/user-guide/integrations/loriot/loriot-device-attributes-1-pe.png
+        title: ''
     1:
-        image: /images/user-guide/integrations/loriot/loriot-device-telemetry-1-pe.png
+        image: /images/user-guide/integrations/loriot/loriot-device-attributes-2-pe.png
+        title: ''
 
 uplink_events:
     0:
         image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-1-pe.png
+        title: 'The data can be viewed in the Uplink converter. In the "<b>In</b>", "<b>Out</b>" and "<b>Metadata</b>" blocks of the "<b>Events</b>" tab.'
+    1:
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-2-pe.png
+        title: '"Input" block.'
+    2:
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-3-pe.png
+        title: '"Output" block.'
+    3:
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-3-pe.png
+        title: '"Metadata" block.'
 
-solution_templates:
+event_out:
     0:
-        image: /images/user-guide/integrations/loriot/solution_templates.png
+        image: /images/user-guide/integrations/loriot/thingsboard_downlink_converter_events_out.png
+    
+parameters:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot_devices_downlink_queue.png
 
 ---
 {% assign docsPrefix = "pe/" %}

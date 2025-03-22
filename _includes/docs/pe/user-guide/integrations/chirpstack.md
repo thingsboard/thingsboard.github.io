@@ -14,11 +14,24 @@ Also, you must connect the device. How to connect it you can find in [connection
 
 ## Add ChirpStack integration
 
+You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
+The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+
+<br>
+Let's move on to setting up the integration between the ThingsBoard platform and ChirpStack.
+
 **1. Basic settings**.
 
-Go to the "Integrations" page of the "Integrations center" section. Click "plus" button to start adding new integration. Select type "ChirpStack" integration and click "Next";
+- Sign in to your ThingsBoard account.
+- Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click "plus" button to add a new integration.
+- From the list, select the integration type "**ChirpStack**".
+- If you'd like to monitor events and troubleshoot, enable [debug mode](/docs/{{docsPrefix}}user-guide/integrations/#debug-mode){:target="_blank"}.
 
 {% assign feature = "integrations" %}{% include templates/debug-mode.md %}
+
+- Click "**Next**".
+
+Go to the "Integrations" page of the "Integrations center" section. Click "plus" button to start adding new integration. Select type "ChirpStack" integration and click "Next";
 
 ![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-1-pe.png)
 
