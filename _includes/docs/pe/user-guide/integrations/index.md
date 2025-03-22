@@ -108,7 +108,7 @@ The primary function of the Uplink data converter is to parse the payload of inc
   - Ensure the converter type selector is set to "Uplink".
   - Choose the integration type where you will use this converter.
   - Enter a name for the converter.
-  - Optionally, enable [debug mode](#debug-mode){:target="_blank"} for troubleshooting.
+  - Optionally, enable [debug mode](/docs/user-guide/integrations/#debug-mode){:target="_blank"} for troubleshooting.
 - In the "Main decoding configuration" section, use the existing script for parsing and transforming data, or provide your own custom script.
 - Optionally, use advanced decoding parameters if needed.
 - Click "Add" to create the converter.
@@ -124,10 +124,10 @@ This feature applies to uplink converters for the following integrations:
 
 - [ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/){:target="_blank"}
 - [Loriot](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/){:target="_blank"}
-- [ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/){:target="_blank"}
-- **ThingPark Enterprise**
 - [The Things Stack Community](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/){:target="_blank"}
 - [The Things Stack Industries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/){:target="_blank"}
+- **ThingPark**
+- **ThingPark Enterprise**
 
 {% capture difference %}
 **Note**: Converters created before the release of ThingsBoard 4.0 will still be available and will continue to function properly.

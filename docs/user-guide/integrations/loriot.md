@@ -39,13 +39,13 @@ endpoint-url:
 
 downlink_server:
     0:
-        image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_server.png
+        image: /images/user-guide/integrations/loriot/loriot-server.png
+        title: 'Open the Loriot UI. The URL contains the server name that we selected during the registration process. This server needs to be specified in the integration settings.'
 
 downlink_applications:
     0:
-        image: /images/user-guide/integrations/loriot/loriot_applications.png
-    1:
-        image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_id.png
+        image: /images/user-guide/integrations/loriot/loriot-application-id.png
+        title: 'Locate the <b>Application ID</b> associated with your project. This value needs to be specified in the integration settings.'
 
 access_token:
     0:
@@ -108,7 +108,7 @@ send_downlink:
 loriot-output:
     0:
         image: /images/user-guide/integrations/loriot/loriot-http-push-1.png
-        title: 'Go to the "<b>Applications</b>" page and click select application.'
+        title: 'Go to the "<b>Applications</b>" page and click on the application.'
     1:
         image: /images/user-guide/integrations/loriot/loriot-http-push-2.png
         title: 'Go to the "<b>Output</b>" page.'
@@ -162,15 +162,15 @@ terminal_1:
 device:
     0:
         image: /images/user-guide/integrations/loriot/loriot-device-attributes-1-pe.png
-        title: ''
+        title: 'The created device and its data can be found on the "Devices" page in the "Entities" section. On the "Attributes" tab, you will find the attributes sent by the device to ThingsBoard.'
     1:
         image: /images/user-guide/integrations/loriot/loriot-device-attributes-2-pe.png
-        title: ''
+        title: 'On the "Latest telemetry" tab, you will find the telemetry data transmitted by the device to ThingsBoard.'
 
 uplink_events:
     0:
         image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-1-pe.png
-        title: 'The data can be viewed in the Uplink converter. In the "<b>In</b>", "<b>Out</b>" and "<b>Metadata</b>" blocks of the "<b>Events</b>" tab.'
+        title: 'You can view the data in the Uplink converter under the "<b>Events</b>" tab, within the "<b>In</b>", "<b>Out</b>", and "<b>Metadata</b>" blocks.'
     1:
         image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-2-pe.png
         title: '"Input" block.'

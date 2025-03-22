@@ -3,7 +3,7 @@
 * TOC 
 {:toc}
 
-[Loriot](https://loriot.io/) is LoRaWAN network designed for connecting your devices using LoRaWAN stack. After integrating LORIOT with the
+[Loriot](https://loriot.io/){:target="_blank"} is LoRaWAN network designed for connecting your devices using LoRaWAN stack. After integrating LORIOT with the
 ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
 
 ## Register an account on Loriot
@@ -30,9 +30,9 @@ Let's move on to setting up the integration between the ThingsBoard platform and
 **1. Basic settings**.
 
 - Sign in to your ThingsBoard account.
-- Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click "plus" button to add a new integration.
+- Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click "**plus**" button to add a new integration.
 - From the list, select the integration type "**Loriot**".
-- If you'd like to monitor events and troubleshoot, enable [debug mode](/docs/{{docsPrefix}}user-guide/integrations/#debug-mode){:target="_blank"}.
+- If you'd like to monitor events and troubleshoot, enable [debug mode](/docs/user-guide/integrations/#debug-mode){:target="_blank"}.
 
 {% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
@@ -85,7 +85,7 @@ Let's convert them into temperature and humidity values.
 Let's return to configuring the integration:
 
 - Enter a name for the converter. It must be unique.
-- To view the events, enable [debug mode](#debug-mode){:target="_blank"}.
+- To view the events, enable [debug mode](/docs/user-guide/integrations/#debug-mode){:target="_blank"}.
 - In the "**Main decoding configuration**" section
   - Select the entity type (**Device** or **Asset**) that will be created as a result of the integration, and specify the entity name. The **$eui** pattern will dynamically fetch the device&#39;s unique identifier from the Loriot message.
   > **Example**: If the entity name is set as Device $eui, and the incoming message contains: **"EUI": "BE7A000000000552"**, the converter will replace $eui with "BE7A000000000552". The final device name will be: "Device BE7A000000000552".
@@ -105,8 +105,7 @@ Let's return to configuring the integration:
 
 **3. Downlink data converter**.
 
-At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty.   
-Click "**Skip**".
+At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty. Click "**Skip**".
 
 ![image](/images/user-guide/integrations/loriot/loriot-add-integration-3-pe.png)
 
@@ -131,11 +130,9 @@ If necessary, you can specify additional parameters, without which the data will
 
 To do this, turn on the "<b>Enable security</b>" option. Click "<b>Add</b>" and enter an arbitrary value for the "<b>Header</b>" and "<b>Value</b>" fields.  Then, save the changes.
 
+Also need to specify this credentials in Loriot UI.
+
 {% include images-gallery.html imageCollection="enable-security" %}
-
-Also need to specify this in Loriot:
-
-{% include images-gallery.html imageCollection="custom_authorization" %}
 
 <br>
 Once the Headers filter has been configured, it will also need to be specified in the uplink message in the format:
@@ -162,10 +159,10 @@ curl -v -X POST -d "{\"EUI\":\"BE7A000000000552\",\"data\":\"2A3F\",\"port\":1,\
 ```
 {: .copy-code}
 
-With the **enable security** option: replace **$HTTP_ENDPOINT_URL** and **$SECURITY_VALUE** with corresponding values. 
+With the **enable security** option: replace **$HTTP_ENDPOINT_URL** and **$HEADER:$VALUE** with corresponding values. 
 
 ```bash
-curl -v -X POST -d "{\"EUI\":\"BE7A000000000552\",\"data\":\"2A3F\",\"port\":1,\"cmd\":\"rx\",\"dr\":\"SF12 BW125 4/5\",\"snr\":1.2,\"ack\":\"false\",\"freq\":868500000,\"fcnt\":1,\"rssi\":-130,\"ts\":1613745998000}" $HTTP_ENDPOINT_URL "Content-Type:application/json" -H "$SECURITY_VALUE"
+curl -v -X POST -d "{\"EUI\":\"BE7A000000000552\",\"data\":\"2A3F\",\"port\":1,\"cmd\":\"rx\",\"dr\":\"SF12 BW125 4/5\",\"snr\":1.2,\"ack\":\"false\",\"freq\":868500000,\"fcnt\":1,\"rssi\":-130,\"ts\":1613745998000}" $HTTP_ENDPOINT_URL "Content-Type:application/json" -H "$HEADER:$VALUE"
 ```
 {: .copy-code}
 
