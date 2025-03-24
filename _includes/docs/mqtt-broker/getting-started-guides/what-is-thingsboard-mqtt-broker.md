@@ -36,6 +36,7 @@ Following its successful deployment in production environments, it was determine
 * Cluster and clients' metrics monitoring
 * Unauthorized clients
 * MQTT WebSocket client
+* Integrations with external systems (HTTP, MQTT, Kafka)
 * Kafka topics and consumer groups monitoring
 
 #### Architecture
