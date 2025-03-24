@@ -107,36 +107,30 @@ An example of MQTT integration (partial configuration):
 
 #### TBMQ (MQTT Broker) Component
 
-The core TBMQ service (`TB_SERVICE_TYPE=tbmq`) is responsible for:
-
-- Handling MQTT protocol logic, including client connections, subscriptions, and message routing.
-- Managing integration entities — processing create, update, and delete requests and storing them in the database.
-- Sending integration validation requests (for validating configuration or connection checks) to TBMQ IE.
-- Publishing integration configuration events to TBMQ IE.
-- Matching incoming MQTT messages against integration subscriptions and forwarding them to TBMQ IE when applicable.
+The core TBMQ service (`TB_SERVICE_TYPE=tbmq`) is responsible for handling MQTT protocol logic, including client connections, subscriptions, and message routing. 
+It also manages integration entities by processing create, update, and delete requests and storing them in the database. 
+Additionally, it sends integration validation requests (for validating configuration or connection checks) to TBMQ IE and publishes integration configuration events to TBMQ IE. 
+Finally, it matches incoming MQTT messages against integration subscriptions and forwards them to TBMQ IE when applicable.
 
 The broker is stateless with respect to Integration Executor and can be scaled horizontally to handle increasing MQTT traffic.
 
 #### TBMQ Integration Executor Component
 
-The Integration Executor (`TB_SERVICE_TYPE=tbmq-integration-executor`) is a standalone microservice responsible for:
-
-- Receiving and processing validation requests from TBMQ, then sending back responses.
-- Managing the full integration lifecycle based on configuration events (create/update/delete).
-- Executing integration logic, including retry mechanisms, timeout handling, and backpressure control.
-- Delivering MQTT messages to the configured external system (HTTP, Kafka, or MQTT).
-- Sending lifecycle, error, and statistics integration events back to TBMQ.
+The Integration Executor (`TB_SERVICE_TYPE=tbmq-integration-executor`) is a standalone microservice responsible for receiving and processing validation requests from TBMQ, then sending back responses. 
+It also manages the full integration lifecycle based on configuration events (create, update, or delete). 
+Additionally, it executes integration logic, including retry mechanisms, timeout handling, and backpressure control. 
+It delivers MQTT messages to the configured external system, such as HTTP, Kafka, or MQTT. 
+It also sends lifecycle, error, and statistics integration events back to TBMQ.
 
 This component operates independently of the broker and can be scaled separately. 
 It ensures that delays or failures in external systems do not affect the broker’s ability to process MQTT traffic.
 
 #### Kafka (Internal Communication Layer)
 
-Kafka acts as the **bridge** between the TBMQ brokers and Integration Executors. It enables:
-
-- Reliable delivery of integration-related events between services.
-- Buffering of messages in case of component downtime, processing delays, or spikes in load.
-- Scalable and parallel processing by allowing multiple broker and executor instances to work concurrently.
+Kafka acts as the **bridge** between the TBMQ brokers and Integration Executors.
+It enables reliable delivery of integration-related events between services. 
+It also provides buffering of messages in case of component downtime, processing delays, or spikes in load. 
+Additionally, it supports scalable and parallel processing by allowing multiple broker and executor instances to work concurrently.
 
 ![image](/images/mqtt-broker/integrations/tbmq-ie-communication.png)
 
@@ -156,10 +150,8 @@ TBMQ uses **Kafka compact topics** for downlink communication. Each integration 
 - `tbmq.ie.downlink.mqtt`
 - `tbmq.ie.downlink.kafka`
 
-These topics are used to:
-
-- Deliver integration configuration data when integration is **created, updated, or deleted**.
-- Trigger **connection and validation requests** to test the connectivity to external system and validate configuration before activation.
+These topics are used to deliver integration configuration data when an integration is **created, updated, or deleted**. 
+They are also used to trigger **connection and validation requests** to test the connectivity to the external system and validate the configuration before activation.
 
 ##### How It Works
 
@@ -176,10 +168,10 @@ These topics are used to:
 
 ##### Benefits of This Approach
 
-- **Resilience**: Ensures TBMQ IE can fully recover after restarts without requiring external configuration stores.
-- **Consistency**: Always works with the latest valid configuration — no stale or conflicting states.
-- **Scalability**: Stateless service design; all configuration state is persisted in Kafka.
-- **Reduced Load**: Only changed configurations are written; no need to resend the full configuration set repeatedly.
+**Resilience** ensures that TBMQ IE can fully recover after restarts without requiring external configuration stores. 
+**Consistency** guarantees that it always works with the latest valid configuration, avoiding stale or conflicting states. 
+**Scalability** is achieved through a stateless service design, with all configuration state persisted in Kafka. 
+**Reduced Load** means that only changed configurations are written, eliminating the need to resend the full configuration set repeatedly.
 
 This pattern provides a **durable, distributed configuration source** backed by Kafka, enabling reliable and scalable integration execution across multiple TBMQ IE instances.
 
@@ -208,13 +200,9 @@ All messages received on this topic are stored in the TBMQ database as Event ent
 #### Uplink Notifications Topic
 
 These node-specific topics are used by Integration Executors to **send direct replies to specific TBMQ nodes**, 
-typically in response to one-time operations such as validation or connection checks. 
+typically in response to one-time operations. 
 The topic is dynamically constructed using the target node's service ID.
-
-Examples include:
-
-- Replying to a **“Check Connection”** requests.
-- Sending **validation results or error details** back to the initiating TBMQ node.
+For example, they are used to reply to **“Check Connection”** requests and to send **validation results or error details** back to the initiating TBMQ node.
 
 This mechanism ensures that responses are routed to the correct instance in clustered environments and maintains accurate request-response correlation.
 
@@ -360,9 +348,9 @@ reinit:
   frequency: "${INTEGRATIONS_REINIT_FREQUENCY_MS:300000}"
 ```
 
-- If an integration enters the `FAILED` state (e.g., broken connections, or configuration issues), the Integration Executor will periodically **attempt to reinitialize it**.
-- This process checks all failed integrations every `frequency` milliseconds.
-- If the issue is resolved (e.g., the remote system becomes reachable), the integration is restored automatically without requiring manual intervention.
+If an integration enters the `FAILED` state (for example, due to broken connections or configuration issues), the Integration Executor will periodically **attempt to reinitialize it**. 
+This process checks all failed integrations every `frequency` milliseconds. 
+If the issue is resolved, such as the remote system becoming reachable, the integration is restored automatically without requiring manual intervention.
 
 This feature ensures long-running integrations remain self-healing and robust in dynamic environments.
 
