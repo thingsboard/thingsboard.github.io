@@ -924,7 +924,7 @@
 		<tr>
 			<td>queue.kafka.msg-all.topic-properties</td>
 			<td>TB_KAFKA_MSG_ALL_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:24;replication.factor:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:16;replication.factor:1</td>
 			<td> Kafka topic properties separated by semicolon for `tbmq.msg.all` topic</td>
 		</tr>
 		<tr>
@@ -1080,7 +1080,7 @@
 		<tr>
 			<td>queue.kafka.client-session-event.topic-properties</td>
 			<td>TB_KAFKA_CLIENT_SESSION_EVENT_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:48;replication.factor:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:24;replication.factor:1</td>
 			<td> Kafka topic properties separated by semicolon for `tbmq.client.session.event.request` topic</td>
 		</tr>
 		<tr>
@@ -1406,7 +1406,7 @@
  which is unnecessary in single-node setups where no other instances are sharing rate limit data.
  Set this parameter to 'false' if your TBMQ is a cluster deployment (with 2 or more nodes in the cluster).
  In this mode, rate limiting will be managed using Redis, allowing all nodes
- in the cluster to enforce consistent rate limits across the entire cluster.</td>
+ in the cluster to enforce consistent rate limits across the entire cluster</td>
 		</tr>
 	</tbody>
 </table>
