@@ -2,14 +2,10 @@
 * TOC
 {:toc}
 
-TBMQ MQTT Integration enables seamless communication with **external MQTT brokers**, allowing bidirectional message exchange between TBMQ and third-party platforms. 
-It allows TBMQ to **subscribe to external MQTT topics**, process incoming messages, and forward data to internal systems or connected devices.
+TBMQ MQTT Integration enables forwarding messages to **external MQTT brokers**, allowing real-time data delivery to third-party platforms. This is useful in scenarios such as:
 
-It is useful for scenarios such as:
-
-- Devices are already connected to an **external MQTT broker** or **IoT platform**.
-- Data needs to be **streamed into TBMQ** from another system for processing.
-- TBMQ should act as an **intermediary** between different MQTT-based solutions.
+- Data from TBMQ needs to be **forwarded** to an external MQTT broker or IoT platform.
+- TBMQ is used as an **intermediary to route data** between internal sources and external MQTT-based systems.
 
 ### Data Flow Overview
 

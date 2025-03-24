@@ -50,5 +50,3 @@ To generate the required API key and secret for it, in the cluster you must go t
 It remains to create a topic on Confluent. To do this, select the **"Topics"** menu, select **"Create Topics"**, set the name to **tbmq.messages**.
 
 {% include images-gallery.html imageCollection="kafka_confluent_create_topic" %}
-
-With these settings, the integration will request updates from the Kafka broker every 5 seconds.
