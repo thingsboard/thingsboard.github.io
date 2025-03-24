@@ -11,7 +11,7 @@ Sensors data in the local network is collected and sent via the Modbus protocol 
 ThingsBoard acts as the core of the SCADA system, storing data from devices in a database, processing it, visualizing the information, and sending control commands to the devices.
 
 <br>
-<object width="95%" data="/images/solutions/swimming_pool_scada_system/scada-anim.svg"></object>
+<object width="100%" data="/images/solutions/swimming_pool_scada_system/swimming-pool-scada-system-scheme.svg"></object>
 
 <br>
 To understand how the Swimming Pool SCADA system template works, let's start by installing it.
@@ -23,11 +23,11 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 
 {% include images-gallery.html imageCollection="go-to-solution-templates-page-1" showListImageTitles="true" %}
 
-Follow the next steps:
+**Follow the next steps:**
 
-\- Step 1: Install Docker Compose on your system. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
+\- **Step 1**: Install Docker Compose on your system. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
 
-\- Step 2: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
+\- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
 
 ```text
 docker run --rm -d --name tb-modbus-pool-emulator -p 5021-5034:5021-5034 thingsboard/tb-modbus-pool-emulator:latest && docker logs -f tb-modbus-pool-emulator
@@ -38,7 +38,11 @@ This command will launch a Modbus pool emulator containing 14 devices, which act
 
 {% include images-gallery.html imageCollection="launch-modbus-pool-emulator-1" %}
 
-\- Step 3: Launch the IoT Gateway. First, create the **docker-compose.yml** file with the necessary configurations:
+\- **Step 3**: Launch the IoT Gateway. ThingsBoard will automatically generate the required configuration. Simply copy and save it as a **docker-compose.yml** file in a suitable folder on your computer for easy access and use.
+
+{% include images-gallery.html imageCollection="docker-compose-yml" %}
+
+Below is a sample configuration for the ThingsBoard IoT Gateway service:
 
 ```text
 version: '3.4'
@@ -56,21 +60,16 @@ services:
     # Environment variables
     environment:
       - host=$YOUR_INSTANCE_HOST
-      - port=$YOUR_INSTANCE_PORT
+      - port=$YOUR_INSTANCE_TCP_UDP_PORT
       - accessToken=$ACCESS_TOKEN
 ```
 
 where
 
 - **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance
-- **$YOUR_INSTANCE_PORT** is a port of your ThingsBoard instance
+- **$YOUR_INSTANCE_TCP_UDP_PORT** is a TCP/UDP PORT port of your ThingsBoard instance
 - **$ACCESS_TOKEN** is an access token for the gateway from platform server
 
-ThingsBoard will automatically generate and substitute the necessary values. You only need to copy and save this configuration in the **docker-compose.yml** file.
-
-{% include images-gallery.html imageCollection="docker-compose-yml" %}
-
-<br>
 Now, run the command below from the folder where you've saved the docker-compose.yml file to run the IoT Gateway:
 
 ```text
@@ -80,9 +79,7 @@ docker compose up
 
 {% include images-gallery.html imageCollection="launch-iot-gateway-1" %}
 
-We'll delve into more details on this topic in the Gateway section, where we'll cover how Gateway operates within the ThingsBoard environment, setting up various devices, and configuring data communications.
-
-We will explore the IoT Gateway in more detail in the "[Gateway](#gateway)" section, where we will discuss how the gateway operates within the ThingsBoard environment, devices connectivity, and data transmission configuration.
+We will delve into more details on this topic in the "[Gateway](#gateway)", where we will discuss how the gateway operates within the ThingsBoard environment, devices connectivity, and data transmission configuration.
 
 The IoT Gateway is running. Click "Close" to proceed to the dashboard.
 

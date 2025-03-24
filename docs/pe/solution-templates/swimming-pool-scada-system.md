@@ -7,11 +7,11 @@ description: Swimming Pool SCADA system template overview
 
 go-to-solution-templates-page-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/go-to-solution-templates-page-1-pe.png
-        title: 'Navigate to the "Solution templates" page. Locate "Swimming Pool SCADA system" in your solution templates library. Click "Install" to begin the installation process;'
+        image: /images/solutions/swimming_pool_scada_system/go-to-pool-solution-templates-page-1-pe.png
+        title: 'Navigate to the "Solution templates" page. Find "Swimming Pool SCADA system" and click "Install" to begin the installation process;'
     1:
         image: /images/solutions/swimming_pool_scada_system/solution-instruction-1-pe.png
-        title: 'After installation, the instructions for setting up the solution will open.'
+        title: 'Once the installation is complete, setup instructions will be displayed.'
 
 launch-modbus-pool-emulator-1:
     0:
