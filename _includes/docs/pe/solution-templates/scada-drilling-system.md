@@ -62,9 +62,9 @@ services:
 
 where
 
-- **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance
-- **$YOUR_INSTANCE_TCP_UDP_PORT** is a TCP/UDP PORT port of your ThingsBoard instance
-- **$ACCESS_TOKEN** is an access token for the gateway from platform server
+- **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance.
+- **$YOUR_INSTANCE_TCP_UDP_PORT** is a TCP/UDP port of your ThingsBoard instance.
+- **$ACCESS_TOKEN** is an access token for the gateway from platform server.
 
 Now, run the command below from the folder where you've saved the docker-compose.yml file to run the IoT Gateway:
 
