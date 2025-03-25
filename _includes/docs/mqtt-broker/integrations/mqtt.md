@@ -32,11 +32,13 @@ Before setting up the integration, ensure the following:
 2. Select **MQTT** as the integration type and click **Next**.
 3. On the **Topic Filters** subscribe to the topic `tbmq/mqtt-integration` and click **Next**.
 4. In the **Configuration** step:
-* Enter the **Host** (`localhost`);
-* Enter the **Port** (`1883`);
-* Set 'Dynamic topic name' to `false` and 'Topic name' to `sensors/mqtt-integration`;
-* Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
+   * Enter the **Host** (`localhost`);
+   * Enter the **Port** (`1883`);
+   * Set 'Dynamic topic name' to `false` and 'Topic name' to `sensors/mqtt-integration`;
+   * Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
 5. Click **Add** to save the integration.
+
+{% include images-gallery.html imageCollection="add-mqtt-integration" %}
 
 #### Topic Filters
 
@@ -76,7 +78,7 @@ To send a message, follow these steps:
 2. Select 'WebSocket Default Connection' or any other available working connection, then click **Connect**. Make sure the 'Connection status' is shown as `Connected`.
 3. Set the 'Topic' field to `tbmq/mqtt-integration` to match the Integration's 'Topic Filter'. 
 4. Click the **Send** icon to publish the message. 
-5. If successful, you should see two new messages in the 'Messages' table:
+5. If successful, two new messages should appear in the 'Messages' table:
 
 * One sent by the **WebSocket Client**.
 * One received from the **MQTT Integration** with message payload similar to:
@@ -93,8 +95,9 @@ To send a message, follow these steps:
    "ts": 1742554969254,
    "props": {},
    "metadata": {
-      "A": "B",
       "integrationName": "MQTT integration"
    }
 }
 ```
+
+{% include images-gallery.html imageCollection="send-uplink-message" %}
