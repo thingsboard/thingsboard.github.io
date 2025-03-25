@@ -26,7 +26,7 @@ Note that on the Web UI _Home page_, you can check the current state of those pa
 
 For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/).
 
-### Adding MQTT Client Credentials
+## Adding MQTT Client Credentials
 
 To add new client credentials, please follow these steps:
 
@@ -42,9 +42,9 @@ To add new client credentials, please follow these steps:
 
 {% include images-gallery.html imageCollection="add-client-credentials" %}
 
-#### MQTT Basic Credentials
+### MQTT Basic Credentials
 
-##### Authentication
+#### Authentication
 
 MQTT Basic authentication is based on different combinations of the client ID, username, and/or password:
 - **Client ID** - verifies if the connecting client has a specified clientId.
@@ -56,7 +56,7 @@ MQTT Basic authentication is based on different combinations of the client ID, u
 
 {% include templates/mqtt-broker/authorization-rules.md %}
 
-##### Changing Password for MQTT Basic Credentials
+#### Changing Password for MQTT Basic Credentials
 
 Broker administrators can modify the password for MQTT Basic client credentials. To do this, follow these instructions:
 1. Go to _Client Credentials_ page.
@@ -67,11 +67,11 @@ Broker administrators can modify the password for MQTT Basic client credentials.
 
 {% include images-gallery.html imageCollection="change-password-basic-credentials" %}
 
-#### X.509 Certificate Chain Credentials
+### X.509 Certificate Chain Credentials
 
 **X.509 Certificate chain** is a secure two-way authentication method over TLS with a chain of public-key certificates.
 
-##### Authentication
+#### Authentication
 
 There are two authentication options based on the "Use certificate CN regex" parameter in the credentials. 
 Depending on this parameter, TBMQ can either authenticate clients by exact match using the certificate's Common Name (CN) or apply specific regex patterns to match and authorize clients, 
@@ -84,7 +84,7 @@ Authentication will fail if none of the certificate CN in the chain match the re
 
 {% include images-gallery.html imageCollection="security-authentication-tls" %}
 
-##### Authorization Rules
+#### Authorization Rules
 
 Authorization rules allow controlling what topics authenticated clients can publish/subscribe to based on the successful combination of:
 
@@ -99,18 +99,18 @@ Please consider the following examples:
 
 ![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
 
-#### SCRAM
+### SCRAM
 
 **SCRAM** (Salted Challenge Response Authentication Mechanism) is an enhanced authentication method for MQTT 5 clients, based on **username and password**.
 
-##### Authentication
+#### Authentication
 
 * **Username** - a unique identifier for the client, used in conjunction with the password in authentication.
 * **Password** - a secret string known only to the user and the server. Password is salted and hashed before being stored and used in authentication.
 
 {% include templates/mqtt-broker/authorization-rules.md %}
 
-### Delete Client Credentials
+## Delete Client Credentials
 
 Broker administrators can remove client credentials from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
 
@@ -123,7 +123,7 @@ There are a few ways of deleting client credentials:
 
 {% include images-gallery.html imageCollection="delete-client-credentials" %}
 
-### Check connectivity
+## Check connectivity
 
 “Check Connectivity” is a useful tool that automatically generates commands to **subscribe to a topic** and **publish a message**.
 This feature utilizes the user's host, port, and client credentials to generate the necessary commands. 
