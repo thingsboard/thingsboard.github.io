@@ -1,6 +1,6 @@
-#### X.509 Certificate chain:
+## X.509 Certificate chain:
 
-#### Step 1. Prepare your server and certificate chain
+### Step 1. Prepare your server and certificate chain
 
 ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://{{hostName}}/signup).
 {% if docsPrefix != 'paas/' %}
@@ -12,7 +12,7 @@ Save the CA root certificate to your working directory as "**ca-root.pem**".
 An example of CA root certificate for *{{mqttHostName}}* is located 
 [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
 
-#### Step 2. Generate Client certificate chain
+### Step 2. Generate Client certificate chain
 
 We should generate a certificate chain with **reasonable** Common Names (CNs). We will use the intermediate certificate to sign certificates for our devices.
 For example, the certificate chain CNs might be the following: 
@@ -189,14 +189,14 @@ cat deviceCert.pem intermediateCert.pem rootCert.pem > chain.pem
 The output of the commands will be private keys and certificates for each level of chain. In the next steps
 we will use device key file *deviceKey.pem* and a chain of certificates *chain.pem*.
 
-#### Step 3. Provision Client Intermediate Public Key as Device Profile X509 provision strategy
+### Step 3. Provision Client Intermediate Public Key as Device Profile X509 provision strategy
 
 Go to **ThingsBoard Web UI -> Profiles -> Device profiles -> Your Device profile -> Device provisioning**.
 Select **X.509 Certificates Chain** provision strategy, insert the contents of *intermediateCert.pem* file
 and regular expression pattern to fetch common name from *deviceCert.pem*, choose allow to create new devices or not and click save.
 Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-#### Step 4. Test the connection
+### Step 4. Test the connection
 
 Execute the following command to upload temperature readings to ThingsBoard Cloud using secure channel:
 

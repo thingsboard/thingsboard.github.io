@@ -11,7 +11,7 @@ Otherwise, a connection will fail with the 'Unknown CA' error.
 
 The coap-client example below demonstrates how to connect to [ThingsBoard Cloud](https://{{hostName}}/signup) or to any other ThingsBoard CoAP server that has valid and trusted certificate.
 
-### Connect DTLS CoAP Client using access token 
+## Connect DTLS CoAP Client using access token 
 
 {% include templates/coap-dtls/coap-client-dtls.md %}
 
