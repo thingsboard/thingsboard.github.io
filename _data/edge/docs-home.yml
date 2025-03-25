@@ -69,6 +69,8 @@ toc:
   section:
     - title: Overview
       path: /docs/pe/edge/user-guide/scheduler/
+    - title: Scheduler vs Rule Chain
+      path: /docs/pe/edge/user-guide/scheduler-vs-rule-chain/
 - title: Security
   section:
     - title: Edge over TLS/SSL 
