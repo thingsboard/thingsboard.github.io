@@ -71,6 +71,11 @@ toc:
       path: /docs/pe/edge/user-guide/scheduler/
     - title: Scheduler vs Rule Chain
       path: /docs/pe/edge/user-guide/scheduler-vs-rule-chain/
+- title: White Labeling
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/edge/user-guide/white-labeling/
 - title: Security
   section:
     - title: Edge over TLS/SSL 

@@ -675,13 +675,13 @@
 			<td>database.ts.type</td>
 			<td>DATABASE_TS_TYPE</td>
 			<td>sql</td>
-			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
+			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
 		</tr>
 		<tr>
 			<td>database.ts_latest.type</td>
 			<td>DATABASE_TS_LATEST_TYPE</td>
 			<td>sql</td>
-			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
+			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
 		</tr>
 	</tbody>
 </table>
@@ -3785,7 +3785,7 @@
 		<tr>
 			<td>transport.gateway.dashboard.sync.enabled</td>
 			<td>TB_GATEWAY_DASHBOARD_SYNC_ENABLED</td>
-			<td>true</td>
+			<td>false</td>
 			<td> Enable/disable gateways dashboard sync with git repository</td>
 		</tr>
 		<tr>
