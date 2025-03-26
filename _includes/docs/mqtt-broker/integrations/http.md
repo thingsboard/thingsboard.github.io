@@ -9,7 +9,7 @@ It acts as a **bridge** between TBMQ and external applications, ensuring seamles
 TBMQ HTTP Integration enables forwarding MQTT messages to an external HTTP service:  
 
 1. **Device (client) publishes an MQTT message** to a topic that matches the Integration's **Topic Filters**.  
-2. **TBMQ broker receives the message**.  
+2. **TBMQ broker receives the message** and forwards to TBMQ Integration Executor.  
 3. **TBMQ Integration Executor processes the message**, formats it as an HTTP request, and forwards it to the external service.  
 4. **External service receives the request** and processes the data accordingly.  
 
@@ -27,7 +27,7 @@ Before setting up the integration, ensure the following:
 
 In this tutorial, we use **ThingsBoard** as the external service receiving HTTP requests from TBMQ. However, any other HTTP-compatible service can be used.
 
-Follow the official **[ThingsBoard HTTP Integration Guide](/docs/paas/user-guide/integrations/http/)** to create an integration on [ThingsBoard Cloud](/docs/paas/user-guide/integrations/http/).
+Follow the official **[ThingsBoard HTTP Integration Guide](/docs/paas/user-guide/integrations/http/)** to create an integration on ThingsBoard Cloud.
 
 Once the HTTP Integration is created:
 
@@ -62,7 +62,6 @@ Once the HTTP Integration is created:
 | | **Anonymous** – No authentication. |
 | | **Basic Authentication** – Uses `Username` and `Password` for authentication. |
 | | **PEM-based authentication** – Uses PEM certificate to authenticate. |
-| | **Enable SSL** – Enables a secure connection using SSL/TLS. |
 | **Headers** | A collection of key-value pairs added to the HTTP request headers. |
 | **Payload Content Type** | Defines the format of the request body. Supported: `JSON`, `Text`, `Binary (Base64)`. |
 | **Send as binary on parsing error** | If enabled, messages with a failed `JSON` or `Text` parsing attempt will be sent as a binary payload. If disabled, failed messages will not be sent. |
@@ -104,7 +103,7 @@ Once the message is published:
     "eventType": "PUBLISH_MSG",
     "qos": 1,
     "retain": false,
-    "tbmqIeNode": "tbmq_node",
+    "tbmqIeNode": "tbmq_ie_node",
     "tbmqNode": "tbmq_node",
     "ts": 1742553324248,
     "props": {},

@@ -4,7 +4,7 @@ Below are three 'Event' types:
 {% assign integrationEvents = '
     ===
         image: /images/mqtt-broker/user-guide/ui/integration-events-1.png,
-        title: **Lifecycle Events** – Logs events such as `Started`, `Created`, `Updated`, `Stopped` etc.
+        title: **Lifecycle Events** – Logs events such as `Started`, `Created`, `Updated`, `Stopped`, etc.
     ===
         image: /images/mqtt-broker/user-guide/ui/integration-events-2.png,
         title: **Statistics** – Provides insights into integration performance, including the number of processed messages and occured errors.

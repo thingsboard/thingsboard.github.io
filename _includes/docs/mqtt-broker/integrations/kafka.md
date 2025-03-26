@@ -13,7 +13,7 @@ TBMQ Kafka Integration enables seamless communication with **Apache Kafka**. It 
 TBMQ Kafka Integration processes messages and forwards them to an external Kafka cluster in the following steps:
 
 1. **Device (client) publishes an MQTT message** to a topic that matches the Integration's **Topic Filters**.
-2. **TBMQ broker receives the message**.
+2. **TBMQ broker receives the message** and forwards to TBMQ Integration Executor.
 3. **TBMQ Integration Executor processes the message**, formats it accordingly, and sends it to a configured **Kafka topic**.
 4. **Kafka consumers process the message** in downstream systems.
 

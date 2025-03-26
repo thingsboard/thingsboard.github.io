@@ -12,7 +12,7 @@ TBMQ MQTT Integration enables forwarding messages to **external MQTT brokers**, 
 MQTT Integration processes messages and forwards them to an external MQTT broker or system in the following steps:
 
 1. **Device (client) publishes an MQTT message** to a topic that matches the Integration's **Topic Filters**.
-2. **TBMQ broker receives the message**.
+2. **TBMQ broker receives the message** and forwards to TBMQ Integration Executor.
 3. **TBMQ Integration Executor processes the message**, formats it accordingly, and forwards it to the external MQTT broker or system.
 4. **External system receives the message** and processes the data as needed.
 
@@ -90,7 +90,7 @@ To send a message, follow these steps:
    "eventType": "PUBLISH_MSG",
    "qos": 1,
    "retain": false,
-   "tbmqIeNode": "tbmq_node",
+   "tbmqIeNode": "tbmq_ie_node",
    "tbmqNode": "tbmq_node",
    "ts": 1742554969254,
    "props": {},
