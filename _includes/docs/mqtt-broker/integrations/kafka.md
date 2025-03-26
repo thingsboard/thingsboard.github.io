@@ -36,7 +36,7 @@ Before setting up the integration, ensure the following:
 {% include images-gallery.html imageCollection="add-kafka-integration" %}
 
 <ol start="4">
-  <li>In the **Configuration** step enter the <strong>Bootstrap servers</strong> (Kafka broker addresses).</li>
+  <li>In the <strong>Configuration</strong> step enter the <strong>Bootstrap servers</strong> (Kafka broker addresses).</li>
 </ol>
 {% capture integrationTypes %}
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/mqtt-broker/user-guide/integrations/kafka/kafka-common-and-docker-integration%br%
