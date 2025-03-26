@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-TBMQ HTTP Integration provides a **simple and efficient** way to forward MQTT messages from devices to an external system using the HTTP protocol. 
+TBMQ HTTP Integration provides a simple and efficient way to forward MQTT messages from devices to an external system using the HTTP protocol. 
 It acts as a **bridge** between TBMQ and external applications, ensuring seamless and reliable data exchange. 
 
 ### Data Flow Overview
@@ -19,9 +19,9 @@ TBMQ HTTP Integration enables forwarding MQTT messages to an external HTTP servi
 
 Before setting up the integration, ensure the following:
 
-- A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.  
-- An external service ready to receive HTTP requests (e.g., **ThingsBoard Cloud**).  
-- A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).  
+- A running **[TBMQ](/docs/mqtt-broker/install/installation-options/)** instance.  
+- An external service ready to receive HTTP requests (e.g., **[ThingsBoard Cloud](/docs/paas/getting-started-guides/what-is-thingsboard-cloud/)**).  
+- A client capable of publishing MQTT messages (e.g., **[TBMQ WebSocket Client](/docs/mqtt-broker/user-guide/ui/websocket-client/)**).  
 
 ### Create ThingsBoard Integration
 
@@ -32,7 +32,9 @@ Follow the official **[ThingsBoard HTTP Integration Guide](/docs/paas/user-guide
 Once the HTTP Integration is created:
 
 1. Open the **details page** and enable **debug mode** to verify data reception.  
-2. **Copy the HTTP endpoint URL**, as this will be needed in the next step.  
+2. **Copy the HTTP endpoint URL**, as this will be needed in the next step.
+
+{% include images-gallery.html imageCollection="tb-endpoint-url" %}
 
 ### Create TBMQ Integration
 
@@ -42,6 +44,8 @@ Once the HTTP Integration is created:
 4. In the **Configuration** step, paste the **Endpoint URL** from the ThingsBoard Integration.
 5. Open **Advanced settings** and set **Payload content type** to `JSON`.
 6. Click **Add** to save the integration.
+
+{% include images-gallery.html imageCollection="add-http-integration" %}
 
 #### Topic Filters
 
@@ -60,7 +64,7 @@ Once the HTTP Integration is created:
 | | **PEM-based authentication** – Uses PEM certificate to authenticate. |
 | | **Enable SSL** – Enables a secure connection using SSL/TLS. |
 | **Headers** | A collection of key-value pairs added to the HTTP request headers. |
-| **Payload Content Type** | Defines the format of the request body (`JSON`, `Text`, `Binary (Base64)`). |
+| **Payload Content Type** | Defines the format of the request body. Supported: `JSON`, `Text`, `Binary (Base64)`. |
 | **Send as binary on parsing error** | If enabled, messages with a failed `JSON` or `Text` parsing attempt will be sent as a binary payload. If disabled, failed messages will not be sent. |
 | **Read Timeout** | Maximum time the request waits for a response before timing out. |
 | **Max Parallel Requests** | Limits the number of concurrent HTTP requests. |
@@ -80,11 +84,13 @@ To send a message, follow these steps:
 2. Select 'WebSocket Default Connection' or any other available working connection, then click **Connect**. Make sure the 'Connection status' is shown as `Connected`.
 3. Set the 'Topic' field to `tbmq/http-integration` to match the Integration's 'Topic Filter' `tbmq/#`.
 4. Click the **Send** icon to publish the message. 
-5. If successfull, the message should appears in the 'Messages' table.
+5. If successfull, the message should appear in the 'Messages' table.
 
-Once the message is sent:
+{% include images-gallery.html imageCollection="send-uplink-message" %}
 
-1. Open **ThingsBoard** HTTP Integration details.
+Once the message is published:
+
+1. In the **ThingsBoard Cloud** open the HTTP Integration details.
 2. Go to the **Events** tab.
 3. If the setup is correct, you should see an event with the status **'OK'** and a message payload similar to:
 
@@ -107,3 +113,5 @@ Once the message is sent:
     }
 }
 ```
+
+{% include images-gallery.html imageCollection="http-integration-result" %}

@@ -2,18 +2,15 @@
 * TOC 
 {:toc}
 
-TBMQ Kafka Integration enables seamless communication with **Apache Kafka**, allowing **real-time streaming of messages** between TBMQ and external Kafka clusters. 
-It allows TBMQ to **publish messages** to Kafka topics, enabling **data ingestion, event processing, and analytics**.
+TBMQ Kafka Integration enables seamless communication with **Apache Kafka**. It allows to TBMQ to **publish messages** to the external Kafka clusters and can be useful for the following scenarios:
 
-This integration is useful for scenarios such as:
-
-- **Streaming IoT Data** – Forwarding device telemetry, logs, or events to **Kafka for processing and storage**.
-- **Event-Driven Architectures** – Publishing messages to Kafka topics for **real-time analytics and monitoring**.
-- **Decoupled System Communication** – Using Kafka as a **buffer between TBMQ and downstream applications**.
+- **Streaming IoT Data** – Forwarding device telemetry, logs, or events to Kafka for processing and storage.
+- **Event-Driven Architectures** – Publishing messages to Kafka topics for real-time analytics and monitoring.
+- **Decoupled System Communication** – Using Kafka as a buffer between TBMQ and downstream applications.
 
 ### Data Flow Overview
 
-TBMQ Kafka Integration processes messages and forwards them to an external **Kafka cluster** in the following steps:
+TBMQ Kafka Integration processes messages and forwards them to an external Kafka cluster in the following steps:
 
 1. **Device (client) publishes an MQTT message** to a topic that matches the Integration's **Topic Filters**.
 2. **TBMQ broker receives the message**.
@@ -35,7 +32,12 @@ Before setting up the integration, ensure the following:
 1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
 2. Select **Kafka** as the integration type and click **Next**.
 3. On the **Topic Filters** page click **Next** to subscribe to the default topic `tbmq/#`.
-4. In the **Configuration** step enter the **Bootstrap servers** (Kafka broker addresses).
+
+{% include images-gallery.html imageCollection="add-kafka-integration" %}
+
+<ol start="4">
+  <li>In the <strong>Configuration</strong> step enter the <strong>Bootstrap servers</strong> (Kafka broker addresses).</li>
+</ol>
 {% capture integrationTypes %}
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/mqtt-broker/user-guide/integrations/kafka/kafka-common-and-docker-integration%br%
 Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-broker/user-guide/integrations/kafka/kafka-confluent-integration{% endcapture %}
@@ -61,7 +63,7 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-b
 | **Produces batch size in bytes** | Maximum batch size before sending messages to Kafka. |
 | **Time to buffer locally (ms)** | Time in milliseconds to buffer messages locally before sending. |
 | **Client buffer max size in bytes** | Maximum memory allocated for buffering messages before sending them to Kafka. |
-| **Number of acknowledgments** | Specifies Kafka's acknowledgment mode (`all`, `1`, `0` for message durability). |
+| **Number of acknowledgments** | Specifies Kafka's acknowledgment mode: `all`, `1`, `0`. |
 | **Compression** | Defines the compression algorithm used for messages: `none`, `gzip`, `snappy`, `lz4`, `zstd`. |
 | **Other properties** | A collection of key-value pairs for additional Kafka producer configurations. |
 | **Kafka headers** | Custom headers added to Kafka messages. |
@@ -81,3 +83,5 @@ To send a message, follow these steps:
 3. Set the 'Topic' field to `tbmq/kafka-integration` to match the Integration's 'Topic Filter' `tbmq/#`.
 4. Click the **Send** icon to publish the message.
 5. If successful, the message should be available in your Kafka service under the topic `tbmq.messages`.
+
+{% include images-gallery.html imageCollection="send-uplink-message-kafka" %}

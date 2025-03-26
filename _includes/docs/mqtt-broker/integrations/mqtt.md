@@ -2,14 +2,10 @@
 * TOC
 {:toc}
 
-TBMQ MQTT Integration enables seamless communication with **external MQTT brokers**, allowing bidirectional message exchange between TBMQ and third-party platforms. 
-It allows TBMQ to **subscribe to external MQTT topics**, process incoming messages, and forward data to internal systems or connected devices.
+TBMQ MQTT Integration enables forwarding messages to **external MQTT brokers**, allowing real-time data delivery to third-party platforms. This is useful in scenarios such as:
 
-It is useful for scenarios such as:
-
-- Devices are already connected to an **external MQTT broker** or **IoT platform**.
-- Data needs to be **streamed into TBMQ** from another system for processing.
-- TBMQ should act as an **intermediary** between different MQTT-based solutions.
+- Data from TBMQ needs to be **forwarded** to an external MQTT broker or IoT platform.
+- TBMQ is used as an **intermediary to route data** between internal sources and external MQTT-based systems.
 
 ### Data Flow Overview
 
@@ -36,11 +32,13 @@ Before setting up the integration, ensure the following:
 2. Select **MQTT** as the integration type and click **Next**.
 3. On the **Topic Filters** subscribe to the topic `tbmq/mqtt-integration` and click **Next**.
 4. In the **Configuration** step:
-* Enter the **Host** (`localhost`);
-* Enter the **Port** (`1883`);
-* Set 'Dynamic topic name' to `false` and 'Topic name' to `sensors/mqtt-integration`;
-* Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
+   * Enter the **Host** (`localhost`);
+   * Enter the **Port** (`1883`);
+   * Set 'Dynamic topic name' to `false` and 'Topic name' to `sensors/mqtt-integration`;
+   * Set 'Credentials' type to `Basic` and 'Username' to `tbmq_websockets_username`;
 5. Click **Add** to save the integration.
+
+{% include images-gallery.html imageCollection="add-mqtt-integration" %}
 
 #### Topic Filters
 
@@ -80,7 +78,7 @@ To send a message, follow these steps:
 2. Select 'WebSocket Default Connection' or any other available working connection, then click **Connect**. Make sure the 'Connection status' is shown as `Connected`.
 3. Set the 'Topic' field to `tbmq/mqtt-integration` to match the Integration's 'Topic Filter'. 
 4. Click the **Send** icon to publish the message. 
-5. If successful, you should see two new messages in the 'Messages' table:
+5. If successful, two new messages should appear in the 'Messages' table:
 
 * One sent by the **WebSocket Client**.
 * One received from the **MQTT Integration** with message payload similar to:
@@ -97,8 +95,9 @@ To send a message, follow these steps:
    "ts": 1742554969254,
    "props": {},
    "metadata": {
-      "A": "B",
       "integrationName": "MQTT integration"
    }
 }
 ```
+
+{% include images-gallery.html imageCollection="send-uplink-message" %}
