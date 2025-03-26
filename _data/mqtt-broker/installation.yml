@@ -15,6 +15,8 @@ toc:
     path: /docs/mqtt-broker/install/cluster/aws-cluster-setup/
   - title: Cluster setup with Kubernetes on Azure
     path: /docs/mqtt-broker/install/cluster/azure-cluster-setup/
+  - title: Cluster setup with Helm Chart
+    path: /docs/mqtt-broker/install/cluster/helm-cluster-setup/
   - title: Building from sources
     path: /docs/mqtt-broker/install/building-from-source/
   - title: Upgrade instructions

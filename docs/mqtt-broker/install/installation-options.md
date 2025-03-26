@@ -73,6 +73,15 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cluster/helm.svg" title="Cluster setup with Helm Chart" alt="Cluster setup with Helm Chart">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/mqtt-broker/install/building-from-source/">
                                             <span>
                                                 <div class="deployment-logo">
