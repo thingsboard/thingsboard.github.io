@@ -40,6 +40,11 @@ Before setting up the integration, ensure the following:
 
 {% include images-gallery.html imageCollection="add-mqtt-integration" %}
 
+{% capture mqtt_integration_localhost_dynamic_topic %}
+**Important: When configuring an integration to publish messages back to TBMQ, make sure to disable "Dynamic topic name" and ensure that the publish topic does not overlap with the integration's topic filter, to prevent creating an infinite message loop**.
+{% endcapture %}
+{% include templates/warn-banner.md content=mqtt_integration_localhost_dynamic_topic %}
+
 #### Topic Filters
 
 {% include templates/mqtt-broker/user-guide/integrations/topic-filters.md %}
