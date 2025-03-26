@@ -64,6 +64,13 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/tcp/
   - title: UDP
     path: /docs/pe/edge/user-guide/integrations/udp/
+- title: Scheduler
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/edge/user-guide/scheduler/
+    - title: Scheduler vs Rule Chain
+      path: /docs/pe/edge/user-guide/scheduler-vs-rule-chain/
 - title: White Labeling
   pe: true
   section:
