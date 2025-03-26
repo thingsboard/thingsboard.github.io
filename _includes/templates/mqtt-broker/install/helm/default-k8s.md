@@ -6,7 +6,7 @@ If you're deploying TBMQ in self-managed cluster without cloud-specific load bal
 To deploy TBMQ cluster, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/),
 [helm](https://helm.sh/docs/intro/install/), and [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) tools.
 
-#### Start minikube
+### Start minikube
 
 ```bash
 minikube start
