@@ -445,10 +445,10 @@
   },
   {
     "type": ["Asia"],
-    "country": ["Thailand"],
+    "country": ["Thailand", "Indonesia", "Vietnam"],
     "name": "Epithos Co., Ltd",
     "contact": {
-      "href": "pnt@epithos.com"
+      "href": "global@epithos.com"
     },
     "site": {
       "href": "epithos.com",
