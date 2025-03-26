@@ -53,6 +53,7 @@ Before setting up the integration, ensure the following:
 | **Port** | MQTT broker port. |
 | **Client ID** | Client identifier used for connecting to the external broker. |
 | **Dynamic topic name** | If enabled, the message will be forwarded with the topic name from the incoming message. |
+| **Topic name** | If **Dynamic topic name** is disabled, this Topic name is used to send message. |
 | **Credentials** | Supported authentication options: |
 | | **Anonymous** – No authentication. |
 | | **Basic Authentication** – Uses `Username` and `Password` for authentication. |
@@ -62,7 +63,9 @@ Before setting up the integration, ensure the following:
 | **Connect timeout (seconds)** | Time to wait before a 'CONNACK' is received. |
 | **Reconnect period (seconds)** | Defines how often TBMQ should attempt to reconnect if the connection is lost. |
 | **Dynamic QoS** | If enabled, the message will be forwarded with QoS from the incoming message. |
+| **QoS** | If **Dynamic QoS** is disabled, you can set the desired QoS. |
 | **Dynamic retain** | If enabled, the message will be forwarded with the Retain flag from the incoming message. |
+| **Retain** | If **Dynamic retain** is disabled, you can set the desired Retain as "true" or "false". |
 | **Metadata** | Custom metadata that can be used for additional processing. |
 |---
 
@@ -99,5 +102,19 @@ To send a message, follow these steps:
    }
 }
 ```
+
+Message description:
+
+- **payload**: Base64-encoded content of the MQTT message (e.g., `"eyJ0ZW1wZXJhdHVyZSI6MjV9"` is a JSON object `{"temperature": 25}`).
+- **topicName**: The MQTT topic to which the message was published.
+- **clientId**: The ID of the MQTT client that published the message.
+- **eventType**: Type of MQTT event, here it's a published message (the only supported type for now).
+- **qos**: Quality of Service level used for the incoming message.
+- **retain**: Indicates if the message is a retained MQTT message.
+- **tbmqIeNode**: Node ID of the Integration Executor service that handled the message.
+- **tbmqNode**: Node ID of the TBMQ broker that received the message.
+- **ts**: Timestamp (in milliseconds) when the message was received.
+- **props**: MQTT 5.0 user properties or other MQTT properties.
+- **metadata**: Additional metadata added from integration configuration, e.g., the name of the integration that handled the message, added by default.
 
 {% include images-gallery.html imageCollection="send-uplink-message" %}

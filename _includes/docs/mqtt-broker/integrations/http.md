@@ -113,4 +113,18 @@ Once the message is published:
 }
 ```
 
+Message description:
+
+- **payload**: Content of the MQTT message.
+- **topicName**: The MQTT topic to which the message was published.
+- **clientId**: The ID of the MQTT client that published the message.
+- **eventType**: Type of MQTT event, here it's a published message (the only supported type for now).
+- **qos**: Quality of Service level used for the incoming message.
+- **retain**: Indicates if the message is a retained MQTT message.
+- **tbmqIeNode**: Node ID of the Integration Executor service that handled the message.
+- **tbmqNode**: Node ID of the TBMQ broker that received the message.
+- **ts**: Timestamp (in milliseconds) when the message was received.
+- **props**: MQTT 5.0 user properties or other MQTT properties.
+- **metadata**: Additional metadata added from integration configuration, e.g., the name of the integration that handled the message, added by default.
+
 {% include images-gallery.html imageCollection="http-integration-result" %}

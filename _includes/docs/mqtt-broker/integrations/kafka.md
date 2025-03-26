@@ -2,7 +2,7 @@
 * TOC 
 {:toc}
 
-TBMQ Kafka Integration enables seamless communication with **Apache Kafka**. It allows to TBMQ to **publish messages** to the external Kafka clusters and can be useful for the following scenarios:
+TBMQ Kafka Integration enables seamless communication with **Apache Kafka**. It allows TBMQ to **publish messages** to the external Kafka clusters and can be useful for the following scenarios:
 
 - **Streaming IoT Data** – Forwarding device telemetry, logs, or events to Kafka for processing and storage.
 - **Event-Driven Architectures** – Publishing messages to Kafka topics for real-time analytics and monitoring.

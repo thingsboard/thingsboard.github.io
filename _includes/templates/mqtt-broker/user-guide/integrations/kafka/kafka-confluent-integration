@@ -6,7 +6,7 @@ After, find Bootstrap server URL, it looks like **URL_OF_YOUR_BOOTSTRAP_SERVER:9
 
 {% include images-gallery.html imageCollection="kafka-integration-cloud-server" %}
 
-Also, need will be to add several **Other properties**, namely:
+Also, will be needed to add several **Other properties**, namely:
 
 <table>
   <thead>
