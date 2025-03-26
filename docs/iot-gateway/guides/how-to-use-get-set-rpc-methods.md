@@ -8,55 +8,27 @@ description: How to use built-in GET/SET RPC methods
 * TOC
 {:toc}
 
-This guide will help you use the OPC-UA Connector example's built-in GET/SET RPC methods.
+Built-in GET/SET RPC methods provide a way to get and set the values of telemetry and attribute parameters values without 
+additional configuration. The following connectors support built-in GET/SET RPC methods:
 
-Every telemetry and attribute parameter has **GET** and **SET** RPC methods out of the box, so you don't need to configure
-it manually.
-For example, if you have some telemetry parameter:
-```json
-"timeseries": [
-  {
-    "key": "temperature",
-    "path": "${ns=3;i=1001}"
-  }
-]
-```
+{% capture getSetConnectorRPCType %}
+OPC-UA<small></small>%,%opcua%,%templates/iot-gateway/get-set-connector-rpc/opcua.md%br%
+Modbus<small></small>%,%modbus%,%templates/iot-gateway/get-set-connector-rpc/modbus.md%br%
+MQTT<small></small>%,%mqtt%,%templates/iot-gateway/get-set-connector-rpc/mqtt.md%br%
+BACnet<small></small>%,%bacnet%,%templates/iot-gateway/get-set-connector-rpc/bacnet.md%br%
+REST<small></small>%,%rest%,%templates/iot-gateway/get-set-connector-rpc/rest.md%br%
+Request<small></small>%,%request%,%templates/iot-gateway/get-set-connector-rpc/request.md%br%
+FTP<small></small>%,%ftp%,%templates/iot-gateway/get-set-connector-rpc/ftp.md%br%
+Socket<small></small>%,%socket%,%templates/iot-gateway/get-set-connector-rpc/socket.md{% endcapture %}
 
-To get temperature telemetry current value, run the query:
+{% include content-toggle.liquid content-toggle-id="getSetConnectorRPC" toggle-spec=getSetConnectorRPCType %}
 
-```bash
-get ns=3;i=1001
-```
-{: .copy-code}
+## Next steps
 
-Response:
-```json
-{"get": 25.34, "code": 200}
-```
+Explore guides related to main ThingsBoard features:
 
-To set temperature telemetry value, run the query:
-
-```bash
-set ns=3;i=1001; 23
-```
-{: .copy-code}
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-rpc-1.png)
-{: refdef}
-<br>
-To set new value (T3000) for **"model"** attribute, run the query:
-
-```bash
-set ns=3;i=1008; T3000
-```
-{: .copy-code}
-
-Response:
-```json
-{"success":"true","code": 200}
-```
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-rpc-2.png)
-{: refdef}
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
