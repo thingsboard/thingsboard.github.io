@@ -23,7 +23,7 @@ get requestUrlExpression=light-level;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/request-get-set-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/request-get-set-rpc-1.png)
 {: refdef}
 
 ### SET method
@@ -53,7 +53,7 @@ set requestUrlExpression=light-level;value=80;httpMethod=POST;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/request-get-set-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/request-get-set-rpc-2.png)
 {: refdef}
 
 Also, let's take a look at light level after setting it using GET method. To do this, simply run the GET RPC method,
@@ -70,5 +70,5 @@ get requestUrlExpression=light-level;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/request-get-set-rpc-3.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/request-get-set-rpc-3.png)
 {: refdef}

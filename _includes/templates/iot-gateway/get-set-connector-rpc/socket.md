@@ -25,11 +25,11 @@ set address=192.168.0.200;port=50003;value=80;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/socket-get-set-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/socket-get-set-rpc-1.png)
 {: refdef}
 
 Also, let's see the result on the sensor's side:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/socket-get-set-rpc-2.jpeg)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/socket-get-set-rpc-2.jpeg)
 {: refdef}
