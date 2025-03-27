@@ -6,7 +6,7 @@ description: Edge over TLS/SSL
 
 {% include docs/edge/user-guide/grpc-over-ssl.md %}
 
-#### Next Steps
+### Next Steps
 
 {% assign currentGuide = "GrpcOverSsl" %}
 {% assign docsPrefix = "edge/" %}

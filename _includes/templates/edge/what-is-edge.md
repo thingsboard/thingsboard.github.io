@@ -6,7 +6,7 @@
 {% endif %}
 
 {% if docsPrefix != 'pe/edge/' %}
-<h3>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/">Here</a>.</h3>
+<h2>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/">Here</a>.</h2>
 {% endif %}
 
 {% capture tb-open-source %}
@@ -37,7 +37,7 @@ In such cases, multiple ThingsBoard Edge instances need to be provisioned for ea
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-#### Use-Cases for ThingsBoard Edge
+## Use-Cases for ThingsBoard Edge
 
 - **Autonomous Vehicles**
   Edge computing allows for the collection, processing, and response to road events with minimal latency. Modern autonomous vehicles generate enormous amounts of data - ranging from 5 TB to 20 TB per day. 4G or 5G networks might not be able to handle such high throughput, but ThingsBoard Edge can filter this data, processing most of it locally, and only pushing a subset of this data to the cloud.
@@ -57,7 +57,7 @@ In such cases, multiple ThingsBoard Edge instances need to be provisioned for ea
 - **Predictive Maintenance**
   Processing and storing data from edge devices closer to the equipment enables analysis of vast amounts of data locally. This allows detection of changes in production lines before a failure occurs, with only average readings from production lines being sent to the cloud, according to your business needs.
 
-#### Features of ThingsBoard Edge
+## Features of ThingsBoard Edge
 
 With **ThingsBoard Edge**, you get:
 
@@ -101,10 +101,10 @@ Furthermore, Edge PE supports the following **ThingsBoard PE** features:
 * [**Entity Groups**](/docs/pe/user-guide/groups/) - Organize entities into groups, assign roles to specific user groups, grant specific permissions to specific user groups over specific device groups.
 {% endif %}
 
-#### Project Roadmap
+## Project Roadmap
 
 <p><a href="/docs/{{docsPrefix}}roadmap" class="button">ThingsBoard Edge Roadmap</a></p>
 
-#### Next Steps
+## Next Steps
 
 <p><a href="/docs/{{docsPrefix}}getting-started" class="button">Getting Started Guide</a></p>
