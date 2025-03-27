@@ -1,0 +1,1 @@
+{% include templates/mqtt-broker/install/azure/aks-helm-prerequisites.md %} 

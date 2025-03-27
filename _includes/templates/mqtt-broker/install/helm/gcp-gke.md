@@ -1,0 +1,1 @@
+{% include templates/mqtt-broker/install/gcp/gke-helm-prerequisites.md %} 

@@ -2,6 +2,7 @@
 layout: docwithnav-mqtt-broker
 title: Cluster setup using Helm Chart
 description: TBMQ microservices setup with Helm
+
 ---
 
 * TOC
@@ -9,14 +10,17 @@ description: TBMQ microservices setup with Helm
 
 This guide will help you to set up TBMQ Cluster using the official Helm [chart](https://artifacthub.io/packages/helm/tbmq-helm-chart/tbmq-cluster).
 
+### General Prerequisites
+
+To deploy TBMQ Cluster using Helm, regardless of which deployment environment you use, you need to have the following tools installed on your local machine:
+
+- [helm](https://helm.sh/docs/intro/install/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+
 ### Choose your deployment environment
 
 While the core Helm-based installation of TBMQ is the same across all environments, 
 the load balancer setup differs depending on the Kubernetes platform. 
-By default, both HTTP(S) and MQTT(S) load balancers are disabled in the default Helm chart values.
-This means that after installation, only `kubectl port-forward` will be available for accessing TBMQ services 
-unless you explicitly enable and configure load balancers for your environment.
-
 Select your deployment environment below to see the appropriate platform-specific prerequisites.
 
 {% capture contenttogglespechelmdeployment %}

@@ -6,7 +6,7 @@ If you're deploying TBMQ in self-managed cluster without cloud-specific load bal
 To deploy TBMQ cluster, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/),
 [helm](https://helm.sh/docs/intro/install/), and [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) tools.
 
-### Start minikube
+### Start Minikube
 
 ```bash
 minikube start
@@ -97,7 +97,7 @@ Instead, we will pass it explicitly using `--set` option in the `helm install` c
 
 By default, the chart uses `loadbalancer.type: "nginx"`, which is suitable for Minikube and other generic Kubernetes environments.
 
-### Create a namespace:
+### Create Namespace
 
 It's a good practice to create a dedicated namespace for your TBMQ cluster deployment:
 
