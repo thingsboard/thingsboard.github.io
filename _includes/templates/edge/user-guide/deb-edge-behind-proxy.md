@@ -55,6 +55,13 @@ sudo service tb-edge restart
 ```
 {: .copy-code}
 
+Once the **Edge** service is started, open the **Edge UI** at [http://localhost:8080](http://localhost:8080){: target="_blank"}. Use the **tenant credentials** to log in.
+
+{% capture docker-deployment %}
+If the Edge HTTP bind port was changed to **18080** during Edge installation, access the **ThingsBoard Edge** instance at [http://localhost:18080](http://localhost:18080){: target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=docker-deployment %}
+
 #### Troubleshooting
 
 **ThingsBoard Edge** logs stored in the following directory:
