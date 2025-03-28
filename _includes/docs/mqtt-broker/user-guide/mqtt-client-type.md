@@ -26,7 +26,7 @@ However, when Basic or TLS authentication is enabled, the client type is determi
 Each MQTT client credential incorporates a `clientType` field that explicitly defines the client type. 
 For step-by-step instructions on creating MQTT credentials, please refer to the designated [guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/).
 
-### Client persistence
+## Client persistence
 
 All messages published by MQTT clients are persistently stored in the `tbmq.msg.all` Kafka topic. 
 The subsequent processing of these messages varies based on the client type and whether the client is persistent or non-persistent.
@@ -55,7 +55,7 @@ This behavior is implemented as a result of QoS level downgrading.
 By leveraging Kafka as intermediary message storage and employing different processing strategies based on client characteristics, 
 TBMQ optimizes message delivery and ensures reliable communication in both persistent and non-persistent client scenarios.
 
-### Device client
+## Device client
 
 Clients of the **DEVICE** type can exhibit either persistent or non-persistent behavior, depending on the settings specified in the _CONNECT_ packet, 
 as discussed in the [Client persistence](#client-persistence) section. 
@@ -70,7 +70,7 @@ The number of messages received by an offline client upon reconnection can be co
 `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT` environment variable. 
 This enables fine-tuning of the message retrieval behavior for offline clients, allowing for customized handling of the number of messages they receive upon reconnection.
 
-### Application client
+## Application client
 
 **Clients of the APPLICATION type are exclusively persistent.** 
 

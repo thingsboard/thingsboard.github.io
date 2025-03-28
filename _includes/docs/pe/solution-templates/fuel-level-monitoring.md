@@ -9,7 +9,7 @@ The intuitive dashboard facilitates seamless monitoring of fuel levels, customis
 <br>
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we have created the dashboard. This dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
@@ -27,7 +27,7 @@ Tank State:
 
 The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 
-### Devices
+## Devices
 
 We have already created nine sensors and loaded some demo data for them. The solution expects that the sensor device will upload temperature, fuel and battery level. The most simple example of the expected payload is in JSON format:
 
@@ -39,7 +39,7 @@ We have already created nine sensors and loaded some demo data for them. The sol
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Level measurement representation
+## Level measurement representation
 
 Our dashboard can calculate the volume of the presented tank shapes based on the “filling height” or “remaining space”.
 
@@ -51,6 +51,6 @@ Similarly, the volume can also be calculated considering the “remaining space�
 
 You can find more detailed information about calculating the volume of the presented tank shapes based on the “filling height” or “remaining space” in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 
-### Alarms
+## Alarms
 
 Alarms are generated using four [Alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) in the “Tank Sensor” [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/). User may configure the alarm rules via the "Fuel Level Monitoring" dashboard using “Alarm rules” form.

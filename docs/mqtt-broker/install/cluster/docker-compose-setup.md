@@ -11,13 +11,13 @@ description: Cluster setup using Docker Compose
 
 This guide will help you to set up TBMQ in cluster mode using Docker Compose.
 
-### Prerequisites
+## Prerequisites
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
 
 {% include templates/install/docker-install-note.md %}
 
-### Step 1. Pull TBMQ Image
+## Step 1. Pull TBMQ Image
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
@@ -26,7 +26,7 @@ docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
 
-### Step 2. Clone TBMQ repository
+## Step 2. Clone TBMQ repository
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -34,7 +34,7 @@ cd tbmq/docker
 ```
 {: .copy-code}
 
-### Step 3. Installation
+## Step 3. Installation
 
 Execute the following command to create necessary volumes for all the services and to update the haproxy config in the created volume.
 
@@ -50,7 +50,7 @@ Execute the following command to run installation:
 ```
 {: .copy-code}
 
-### Step 4. Running
+## Step 4. Running
 
 Execute the following command to start services:
 
@@ -64,7 +64,7 @@ in you browser (e.g. **http://localhost:8083**) and connect clients using MQTT p
 
 {% include templates/mqtt-broker/login.md %}
 
-### Step 5. Logs, stop and start commands
+## Step 5. Logs, stop and start commands
 
 In case of any issues you can examine service logs for errors.
 For example to see TBMQ logs execute the following command:
@@ -118,21 +118,21 @@ Afterward, execute the next command to apply the changes for the container:
 ```
 {: .copy-code}
 
-### Upgrading
+## Upgrading
 
 Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
 for detailed information on the latest changes.
 
-#### Backup and restore (Optional)
+### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/docker/backup-restore/README.md).
 
-#### Upgrade to 1.3.0
+### Upgrade to 1.3.0
 
 {% include templates/mqtt-broker/install/migration.md %}
 
-#### Run upgrade
+### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
 
@@ -158,7 +158,7 @@ After that execute the following commands:
 Where `FROM_VERSION` - from which version upgrade should be started. 
 See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
-### Generate certificate for HTTPS
+## Generate certificate for HTTPS
 
 We are using HAproxy for proxying traffic to containers and for web UI by default we are using 8083 and 443 ports. 
 For using HTTPS with a valid certificate, execute these commands:
@@ -171,6 +171,6 @@ docker exec haproxy-certbot haproxy-refresh
 
 **Note**: Valid certificate is used only when you visit web UI by domain in URL.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

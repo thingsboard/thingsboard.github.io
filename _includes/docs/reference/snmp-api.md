@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-### SNMP Basics
+## SNMP Basics
 
 Simple Network Management Protocol (SNMP) is an Internet Standard Protocol used for collecting information from managed
 devices and for sending information to modify the behavior of these devices.
@@ -26,7 +26,7 @@ Three significant versions of SNMP have been developed and deployed. SNMP v1 is 
 More recent versions, SNMP v2c and SNMP v3, feature improvements in performance, flexibility and security. ThingsBoard
 supports them all.
 
-### Device profile configuring
+## Device profile configuring
 
 Foremost, you should configure SNMP device profile: specify request timeout (timeout in milliseconds before a confirmed
 request is resent or timed out), number of retries (to be performed before a request is timed out), and the main part -
@@ -39,7 +39,7 @@ Here is an example of a device profile configuration:
 We will talk about possible types of the configs a bit later, after taking a look at SNMP device
 configuring.
 
-### Device configuring
+## Device configuring
 
 Regardless of the version of your SNMP device, you have to specify a host and a port.
 
@@ -69,7 +69,7 @@ Here is a sample of a config for version 3:
 
 {% include images-gallery.html imageCollection="deviceConfiguring2" %}
 
-### Telemetry
+## Telemetry
 
 As was mentioned, there should be certain communication configs in your SNMP device profile configuration, and for
 telemetry querying you need to have one as well. For this type of config you have to specify some mappings and querying
@@ -85,9 +85,9 @@ configured data type of `JSON` will be treated as a regular string).
 
 For this and other querying configs a method type that is being used is `GET`.
 
-### Attributes
+## Attributes
 
-#### Client-side attributes
+### Client-side attributes
 
 To set up querying of an SNMP device attributes you may add another communication config. This config, the same as for
 telemetry, should contain mappings and required querying frequency.
@@ -96,7 +96,7 @@ A sample:
 
 {% include images-gallery.html imageCollection="deviceProfileConfiguring3" %}
 
-#### Shared attributes
+### Shared attributes
 
 In order to make your SNMP device receive updates of some shared attributes, you may add another communication config to
 your SNMP device profile:
@@ -110,7 +110,7 @@ For this type of config (as well as for another ones with a `SET` type of used S
 decide what type of SNMP variable to send in a PDU. We use `INTEGER` (or `Integer32`, a signed 32-bit integer)
 for `LONG` data type, and `OCTET STRING` for all other data types.
 
-### Server-side RPC
+## Server-side RPC
 
 To send custom SNMP request you may use RPC feature. First, you should configure some key mappings in a device profile
 to use in RPC command:
@@ -155,6 +155,6 @@ of "12901200312" as OCTET STRING.
 
 Notice, that for "SET" request you have to specify some value in your RPC command.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

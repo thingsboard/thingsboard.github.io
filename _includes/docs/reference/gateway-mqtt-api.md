@@ -51,7 +51,7 @@ ThingsBoard attributes API allows devices to
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 
-##### Publish attribute update to the server
+### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
@@ -63,7 +63,7 @@ Message: {"Device A":{"attribute1":"value1", "attribute2": 42}, "Device B":{"att
 
 where **Device A** and **Device B** are your device names, **attribute1** and **attribute2** are attribute keys.
 
-##### Request attribute values from the server
+### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
@@ -88,7 +88,7 @@ and expect messages with result in the following format:
 Message: {"id": $request_id, "device": "Device A", "value": "value1"}
 ```
 
-##### Subscribe to attribute updates from the server
+### Subscribe to attribute updates from the server
 
 In order to subscribe to shared device attribute changes, send SUBSCRIBE message to the following topic:
 

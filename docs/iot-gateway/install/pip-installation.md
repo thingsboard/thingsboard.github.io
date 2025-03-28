@@ -4,7 +4,7 @@ title: IoT Gateway Pip installation.
 
 ---
 
-### Package manager installation
+## Package manager installation
 
 To install ThingsBoard Gateway as python module, you should follow steps below:  
 

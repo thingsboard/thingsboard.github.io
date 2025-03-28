@@ -37,7 +37,7 @@ Currently, Trendz could be integrated with the following models:
 * AMAZON_BEDROCK
 * GOOGLE
 
-### Google (Recommended):
+## Google (Recommended):
 
 Please refer to the [Google API key documentation](https://ai.google.dev/gemini-api/docs/api-key) to find out how to create an API key for Google models.
 
@@ -55,7 +55,7 @@ Supported models:
   * Input (1m) token price: 0.075$
   * Output (1m) token price: 0.3$
 
-### Open AI
+## Open AI
 
 Please refer to the [Open AI API key documentation](https://platform.openai.com/api-keys) to find out how to create API keys for Open AI models.
 
@@ -70,7 +70,7 @@ Supported models:
   * Input (1m) token price: 1.1$
   * Output (1m) token price: 4.4$
 
-### Amazon Bedrock
+## Amazon Bedrock
 
 Please refer to [AWS API key documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started-api.html) to find out how to create Access key IDs and Secret access keys.
 

@@ -10,7 +10,7 @@ description: TBMQ upcoming releases
 
 The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.
 
-### Upcoming releases
+## Upcoming releases
 
 * MQTT-SN support;
 * Table for tracking dropped messages;

@@ -99,7 +99,7 @@ In a [subsection telemetry](#subsection-telemetry) we write the configuration fo
 In a [subsection attributeUpdates](#subsection-attributes) we write the configuration to rename the device after receiving attribute update request from ThingsBoard.  
 If device shared attribute with a name "sharedName" changed - gateway will write data from this attribute to characteristic with ID - 00002A00-0000-1000-8000-00805F9B34FB.  
 
-### Main section
+## Main section
 
 This section contains general settings for the connector.
 
@@ -168,7 +168,7 @@ Also let's take a look at methods for discovering available devices. For this we
 
    24:71:89:cc:09:05 - NH11
 
-#### Device object subsection
+### Device object subsection
 
 This subsection contains general settings for the device and subsections for processing data.
 
@@ -211,7 +211,7 @@ This part of configuration will look like:
 }
 ```
 
-##### Subsection telemetry
+#### Subsection telemetry
 
 This subsection contains general settings for the processing data interpreted as telemetry.  
 
@@ -245,7 +245,7 @@ You can find more examples of data converting in section **"Examples of data con
 
 
 
-##### Subsection attributes
+#### Subsection attributes
 
 This subsection contains general settings for the processing data interpreted as attributes.  
 
@@ -286,7 +286,7 @@ Services and characteristics, from <a target="_blank" rel="noopener noreferrer" 
 
 
 
-##### Examples of data converting
+#### Examples of data converting
 Let's review more examples of data converting:
 
 **Basic scenario:** we have a device that measures temperature and humidity. Device has charasteristic that can be read and when we receive data from her, the data combine temperature
@@ -312,7 +312,7 @@ and humidity. So, data from device have the next view: **b'\x08<\x08\x00'** and 
    
    Data to ThingsBoard: **8°C 34%**    
 
-##### Subsection attributeUpdates
+#### Subsection attributeUpdates
 
 This subsection contains settings for the processing attributeUpdate requests from ThingsBoard.  
 
@@ -338,7 +338,7 @@ Characteristic should support method **WRITE** for processing the attributeUpdat
 {% include templates/info-banner.md content=bleAttrUpdInfo %}
 
 
-##### Subsection serverSideRpc
+#### Subsection serverSideRpc
 
 This subsection contains settings for the processing RPC requests from ThingsBoard.  
 

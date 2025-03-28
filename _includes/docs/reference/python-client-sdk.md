@@ -68,7 +68,7 @@ client.disconnect()
 **TBDeviceMqttClient** provides access to Device MQTT APIs of ThingsBoard platform.  
 It allows publishing telemetry and attributes updates, subscribing to attribute changes, sending and receiving RPC commands, etc.    
 
-#### Subscribtion to attributes
+### Subscribtion to attributes
 
 If you need to receive shared attributes updates, you can use the code like the following:  
 
@@ -90,7 +90,7 @@ while True:
 ```
 {:.copy-code}
 
-#### Telemetry pack sending
+### Telemetry pack sending
 
 In order to send data to ThingsBoard you can use code like the following one:
 
@@ -116,7 +116,7 @@ client.disconnect()
 ```
 {:.copy-code}
 
-#### Request attributes from server
+### Request attributes from server
 
 In order to request shared attributes values from ThingsBoard you can use the following example:
 
@@ -142,7 +142,7 @@ while True:
 ```
 {:.copy-code}
 
-#### Respond to server RPC call
+### Respond to server RPC call
 
 If you want to send a response for some RPC request, you can use the logic like in the code below.  
 The following example connects to the ThingsBoard local instance and waits for RPC request.  
@@ -178,7 +178,7 @@ while True:
 **TBGatewayMqttClient** extends **TBDeviceMqttClient**, thus has access to all its APIs as a regular device.   
 Besides, gateway is able to represent multiple devices connected to it. For example, sending telemetry or attributes on behalf of other, constrained, device. See more info about the gateway [**here**](/docs/iot-gateway/).  
 
-#### Telemetry and attributes sending 
+### Telemetry and attributes sending 
 
 In order to send data to ThingsBoard for device with name **Test Device A1** you can use code like the following one:
 
@@ -200,7 +200,7 @@ gateway.disconnect()
 ```
 {:.copy-code}
 
-####  Request attributes from server
+###  Request attributes from server
 
 In order to request shared attributes values from ThingsBoard for device with name **Test Device A1** you can use the following example:
 
@@ -225,7 +225,7 @@ while True:
 ```
 {:.copy-code}
 
-#### Respond to server RPC call
+### Respond to server RPC call
 
 If you want to send response for some RPC request, you can use the logic like in the code below.  
 The following example will connect to the ThingsBoard local instance and wait for RPC request.  

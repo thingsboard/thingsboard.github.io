@@ -22,19 +22,19 @@ Latest values widgets are used when you need to see the latest attribute values 
 
 Time series widgets visualize changes in time series data over time. Read [here](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) how to set up the time window.
 
-##### Bar Chart
+#### Bar Chart
 
 [Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart) widget displays changes to time series data over time. The example shows the temperature readings.
 
 {% include images-gallery.html imageCollection="charts-bar" %}
 
-##### Line Chart
+#### Line Chart
 
 [Line Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-line-chart) widget displays changes to time series data over time. The example shows temperature and humidity readings.
 
 {% include images-gallery.html imageCollection="charts-line" %}
 
-##### State Chart
+#### State Chart
 
 [State Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#state-chart-1) widget displays changes to the state of the entity over time. 
 For example, if a device on and off, its states and conditions.
@@ -45,7 +45,7 @@ For example, if a device on and off, its states and conditions.
 
 Latest values widgets render the latest values of attributes or time series data for multiple entities. Latest values widgets mostly support numeric values.
 
-##### Radar
+#### Radar
 
 Radar widget displays the latest attribute or time series data values for multiple entities in a radar chart. Supports numeric values only.
 
@@ -53,7 +53,7 @@ In the example, the widget displays the latest pressure time series data for thr
 
 {% include images-gallery.html imageCollection="charts-radar" %}
 
-##### Polar Area
+#### Polar Area
 
 Polar Area widget displays the latest attribute or time series data values for multiple entities in a polar area chart. Supports numeric values only.
 
@@ -61,7 +61,7 @@ In the example, the widget displays the latest pressure time series data for thr
 
 {% include images-gallery.html imageCollection="charts-polar" %}
 
-##### Pie - Chart.js
+#### Pie - Chart.js
 
 Pie - Chart.js widget displays the latest attribute or time series data values for multiple entities in a pie chart. Supports numeric values only.
 
@@ -69,7 +69,7 @@ In the example, the widget displays the latest temperature time series data valu
 
 {% include images-gallery.html imageCollection="charts-piejs" %}
 
-##### Pie - Flot
+#### Pie - Flot
 
 [Pie - Flot](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-pie---flot) widget displays the latest attribute or time series data values for multiple entities in a pie chart. 
 Supports numeric values only.
@@ -78,7 +78,7 @@ In the example, the widget displays the latest pressure time series data values 
 
 {% include images-gallery.html imageCollection="charts-pieflot" %}
 
-##### Doughnut
+#### Doughnut
 
 [Doughnut](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-doughnut) widget displays the latest attribute or time series data values for multiple entities in a donut chart. 
 Supports numeric values only.
@@ -87,7 +87,7 @@ In the example, the widget displays the latest humidity time series data values 
 
 {% include images-gallery.html imageCollection="charts-doughnut" %}
 
-##### Bars
+#### Bars
 
 Bars widget displays the latest values of the attributes or time series data for multiple entities as separate bars.
 The only latest values chart widget that allows using not only numeric values.

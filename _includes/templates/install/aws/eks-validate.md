@@ -1,4 +1,4 @@
-#### Validate Web UI access
+### Validate Web UI access
 
 Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
 
@@ -22,7 +22,7 @@ If you installed DataBase with demo data (using `--loadDemo` flag) you can also 
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
 
-#### Validate MQTT/CoAP access
+### Validate MQTT/CoAP access
 
 To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
 
@@ -42,7 +42,7 @@ There are two load-balancers:
 
 Use `EXTERNAL-IP` field of the load-balancers to connect to the cluster.
 
-#### Troubleshooting
+### Troubleshooting
 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard node logs execute the following command:

@@ -113,7 +113,7 @@ Some internal state metrics can be exposed by the Spring Actuator using Promethe
 
 Here's the list of metrics ThingsBoard pushes to Prometheus.
 
-#### <b>tb-edge</b> metrics:
+### <b>tb-edge</b> metrics:
 - <i>attributes_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>attributes</b> to the database.
   Note that there are several queues (threads) for persisting attributes in order to reach maximum performance.
 - <i>ruleEngine_${name_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>):
@@ -141,14 +141,14 @@ Here's the list of metrics ThingsBoard pushes to Prometheus.
 - <i>attributes_cache</i> (results - <i>hit, miss</i>): stats about how much attribute requests went to the cache
 
 
-#### <b>transport</b> metrics:
+### <b>transport</b> metrics:
 - <i>transport</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests received by Transport from Core
 - <i>ruleEngine_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the Rule Engine.
 - <i>core_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the TB node Device actor.
 - <i>transport_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests from Transport to the Core.
 
 
-#### PostgreSQL-specific metrics:
+### PostgreSQL-specific metrics:
 - <i>ts_latest_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>latest telemetry</b> to the database.
   Note that there are several queues (threads) in order to reach maximum performance.
 - <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database.

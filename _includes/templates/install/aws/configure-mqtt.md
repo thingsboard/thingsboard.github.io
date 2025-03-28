@@ -9,7 +9,7 @@ kubectl apply -f receipts/mqtt-load-balancer.yml
 
 The load balancer will forward all TCP traffic for ports 1883 and 8883.
 
-##### One-way TLS
+#### One-way TLS
 
 The simplest way to configure MQTTS is to make your MQTT load balancer (AWS NLB) to act as a TLS termination point.
 This way we setup the one-way TLS connection, where the traffic between your devices and load balancers is encrypted, and the traffic between your load balancer and MQTT Transport is not encrypted.
@@ -34,7 +34,7 @@ kubectl apply -f receipts/mqtts-load-balancer.yml
 ```
 {: .copy-code}
 
-##### Two-way TLS
+#### Two-way TLS
 
 The more complex way to enable MQTTS is to obtain valid (signed) TLS certificate and configure it in the MQTT Transport. The main advantage of this option is that you may use it in combination with "X.509 certificate" MQTT client credentials.
 

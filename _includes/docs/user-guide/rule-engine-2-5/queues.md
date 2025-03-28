@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-#### Introduction
+## Introduction
 
 ThingsBoard platform uses queues to guarantee the message processing, handle occasional spikes, and keep the system up and running on extreme loads. 
 You can review the architecture to find our [more about queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome).
@@ -16,14 +16,14 @@ There is always **Main** topic (queue) that is used as a default entry point for
 One can put messages into the other topic using the **Checkpoint** node. 
 The latter automatically acknowledges corresponding messages in the targeted topic.
 
-#### Queue configuration
+## Queue configuration
 
 Only a **system administrator** user can configure queues. After
 configuration, new changes will apply immediately.
 There are two configuration profiles for queues: a **Common queue configuration** and a **Queue configuration for isolated tenants**.
 To know more about isolated tenants please read a [tenant profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/#processing-in-isolated-thingsboard-rule-engine-queues) documentation.
 
-##### Common queue configuration
+### Common queue configuration
 
 Out of the box, all messages (like telemetry, connectivity or lifecycle events, etc.) are pushed to **Main** or another topic chosen as default.
 ThingsBoard puts messages for all Tenants to a common topics when isolated processing is disabled (default). Pros: this approach is more
@@ -66,11 +66,11 @@ The **Main** queue settings can be adjusted, but the topic itself cannot be rena
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### Queue configuration for isolated tenants
+### Queue configuration for isolated tenants
 
 For your convenience, this configuration is placed together with the isolated tenant [documentation](/docs/{{docsPrefix}}user-guide/tenant-profiles/#queue-configuration-for-isolated-tenants).
 
-#### Queue settings
+## Queue settings
 
 The definition of the queue consists of the following parameters and modules:
 
@@ -79,7 +79,7 @@ The definition of the queue consists of the following parameters and modules:
 * [Retries processing settings](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#retries-processing-settings) - defines logic of acknowledgement of the messages;
 * [Polling settings](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#polling-settings) - queue settings for batch and immediate processing.
 
-##### Submit settings
+### Submit settings
 
 Rule Engine service constantly polls messages for specific topic and once the Consumer returns a list of messages it creates the
 TbMsgPackProcessingContext object. Queue submit strategy controls how messages from TbMsgPackProcessingContext are delivered to rule chains.
@@ -93,7 +93,7 @@ There are 5 available strategies:
 
 See this [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/) as an example of submit strategy use case.
 
-##### Retries processing settings
+### Retries processing settings
 
 Processing Strategy controls how failed or timed out messages are re-processed. There are 5 available strategies:
 
@@ -132,7 +132,7 @@ All retry processing strategies support important configuration parameters:
 
 See this [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/) for an example of processing strategy use case.
 
-##### Polling settings
+### Polling settings
 
 Batch processing:
 * **Poll interval** - duration in milliseconds between polling of the messages if no new messages arrive.
@@ -142,7 +142,7 @@ Immediate processing:
 * **Send message poll for each consumer** - the queue is composed of partitions. If the checkbox is unchecked, there is one consumer for all partitions. If checked, there will be separate consumers for each partition.
 * **Processing within** - interval in milliseconds for processing of the particular pack of messages returned by consumer.
 
-##### Custom properties
+### Custom properties
 
 You may specify custom properties for queue (topic) creation. They are specific for a queue provider,
 for example `retention.ms:604800000;retention.bytes:1048576000` for Kafka, 
@@ -150,7 +150,7 @@ or `MaximumMessageSize:262144;MessageRetentionPeriod:604800` for AWS SQS, etc.
 
 Note, that these properties are applied only when a queue is first created.
 
-#### Default queues
+## Default queues
 
 There are three default queues configured: Main, HighPriority and SequentialByOriginator.
 They differ based on submission and processing strategy.

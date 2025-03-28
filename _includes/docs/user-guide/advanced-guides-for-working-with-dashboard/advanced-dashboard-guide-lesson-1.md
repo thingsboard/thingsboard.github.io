@@ -145,7 +145,7 @@ This information will also be added as attributes.
 
 So, let&#39;s start with the preparatory work - adding building images and attributes.
 
-#### Upload building images
+### Upload building images
 
 Building images need to be uploaded to the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/#upload-image){:target="_blank"}, which serves as a centralized repository for storing and managing images.
 They will be used in the tooltip of the map widget. You can use the [Building A](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/645-5th-Ave-New-York.png){:target="_blank"} and [Building B](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/641-E-54th-St-New-York.png){:target="_blank"} images from this guide or upload your own images.
@@ -156,7 +156,7 @@ Now you need to obtain and save the links to these images for further use it in 
 
 {% include images-gallery.html imageCollection="embed-buildings-images" showListImageTitles="true" %}
 
-#### Adding the necessary attributes
+### Adding the necessary attributes
 
 Now let&#39;s move on to adding the necessary attributes:
 
@@ -190,7 +190,7 @@ The attributes list for Building B should look like this:
 
 {% include images-gallery.html imageCollection="adding-building-attributes-4" %}
 
-#### Adding OpenStreet Map widget
+### Adding OpenStreet Map widget
 
 All preparatory settings are done, and now we can add **OpenStreet Map** widget:
 
@@ -365,4 +365,4 @@ This achievement lays a solid foundation for more advanced functionalities that 
 In the second part of our guide, we will continue developing our dashboard. When you are ready to proceed, simply click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="n-button add-device">Lesson 2. Dashboard states, widget actions, and analogue and digital gauges</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="button">Lesson 2. Dashboard states, widget actions, and analogue and digital gauges</a></p>

@@ -84,7 +84,7 @@ Once you upload your SCADA symbol, you'll be directed to the SCADA symbol editor
 
 {% include images-gallery.html imageCollection="explore-scada-editor-1" %}
 
-##### SCADA editor actions
+### SCADA editor actions
 
 - **Create Widget** - this button allows you to quickly create a widget based on your SCADA symbol. Any major changes to the SCADA symbol will automatically reflect in the widget library, except for fields like title, description, and search tags, which are copied at the moment you create the widget.
 
@@ -98,7 +98,7 @@ As a simple exercise, populate the description and search tags, then click "Appl
 
 {% include images-gallery.html imageCollection="scada-editor-actions-2" %}
 
-##### Widget size and aspect ratio
+### Widget size and aspect ratio
 
 Notice the widget size in columns and rows, which hints at how the SCADA layout should place the widget. 
 This setting impacts the aspect ratio of the widget and should ideally match the aspect ratio of your SVG. 

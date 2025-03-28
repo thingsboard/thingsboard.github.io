@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 ThingsBoard supports [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box.
 
@@ -10,7 +10,7 @@ You can treat Tenant as a separate business-entity: individual or organization w
 
 Tenant may have multiple tenant administrator users, enormous number of [customers](/docs/{{docsPrefix}}user-guide/ui/customers), and an unlimited number of [users](/docs/{{docsPrefix}}user-guide/ui/users), assets, and devices.
 
-### Сreate new tenant
+## Сreate new tenant
 
 The **System administrator** is able to create tenant entities.
 
@@ -25,7 +25,7 @@ On the Tenant details page, you as the System administrator can view the attribu
 
 {% include images-gallery.html imageCollection="tenant-details-ce" %}
 
-### Сreate tenant administrator
+## Create tenant administrator
 
 The **System administrator** is also able to create multiple **users with Tenant administrator role** in each tenant.
 
@@ -47,7 +47,7 @@ In a tenant details window, the System administrator can use the following actio
 
 {% include images-gallery.html imageCollection="user-details-ce" %}
 
-### Edit tenant or user
+## Edit tenant or user
 
 In the Tenant details you can edit all fields.
 
@@ -61,7 +61,7 @@ The steps are similar to how we edit the tenant:
 
 {% include images-gallery.html imageCollection="user-edit-ce" showListImageTitles="true" %}
 
-### Delete tenant or user
+## Delete tenant or user
 
 You can delete the **Tenant** at once with all its users. To do this, click on the "trash" icon and then also confirm the deletion by clicking on "Yes".
 
@@ -79,7 +79,7 @@ In addition, there is an option to delete the Tenant using the action tab in Ten
 
 {% include images-gallery.html imageCollection="user-delete-2-ce" %}
 
-### Login as tenant administrator
+## Login as tenant administrator
 
 If you need to log in as a tenant, just open the tenant group and click the icon opposite to the user account to log in as this tenant.
 
@@ -96,6 +96,6 @@ The Tenant Administrator is able to do following actions:
 
 All actions listed above are available using [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

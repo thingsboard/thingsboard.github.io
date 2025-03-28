@@ -5,7 +5,7 @@ Access Token based authentication is the default device authentication type.
 The unique access token is generated once the device is created in ThingsBoard. It can be changed afterwards.
 The client must specify the access token as a username in MQTT connect message.
 
-#### Plain MQTT (without SSL)
+## Plain MQTT (without SSL)
 
 Let's review a simple command to upload temperature readings using Access Token *YOUR_ACCESS_TOKEN* to ThingsBoard Cloud.
 See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
@@ -19,7 +19,7 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
 Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.
 
-#### MQTTS (MQTT over SSL)
+## MQTTS (MQTT over SSL)
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
 

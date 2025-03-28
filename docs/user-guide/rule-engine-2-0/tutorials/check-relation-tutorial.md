@@ -99,7 +99,7 @@ Also, you need to create **Related Fire Alarm System** Rule Chain or you can dow
 
  The following section shows you how to create it.
 
-#### Create new Rule Chain (**Related Fire Alarm System**)
+### Create new Rule Chain (**Related Fire Alarm System**)
 
 Go to **Rule Chains** -> **Add new Rule Chain**
 
@@ -111,11 +111,11 @@ Configuration:
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
-###### Adding the required nodes
+#### Adding the required nodes
 
 In this rule chain, you will create 4 nodes as it will be explained in the following sections:
 
-###### Node A: **Check Relation**
+#### Node A: **Check Relation**
 
  - Add the **Check Relation** node and connect it to the **Input** node.<br>
 
@@ -156,7 +156,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check-relation.png)
 
-###### Node B: **Change Orignator**
+#### Node B: **Change Orignator**
 
 - Add the **Change Orignator** node and connect it to the **Check Relation** node with a relation type **True**. <br>
   This node will change the originator from the Device **Smoke Detector** to the related Device **Fire Alarm System** and the submitted message will be processed as a message from another entity, namely **Fire Alarm System**.
@@ -199,7 +199,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/change-originator.png)
 
-###### Node C: **Script Transformation**
+#### Node C: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
 
 This node will transform an original message into RPC request message. 
@@ -239,7 +239,7 @@ This node will transform an original message into RPC request message.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)
 
-###### Node D: **RPC call request** node
+#### Node D: **RPC call request** node
 - Add the **RPC call request** node and connect it to the **Script Transformation** node with a relation type **Success**. <br>
   This node takes the message payload and sends it as a response to the Message Originator **Fire Alarm System**.
 - Enter the Name field as **Fire Alarm System**.
@@ -249,11 +249,11 @@ This node will transform an original message into RPC request message.
 
 This Rule chain is ready and we should save it.
 
-#### Modify Root Rule Chain
+### Modify Root Rule Chain
 
 The initial Rule Chain has been modified by adding the following nodes:
 
-###### Node E: **Filter Script**
+#### Node E: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Save Timeseries** node with a relation type **Success**. <br>
   This node will check if data of incoming message is **smoke** using the following script:
 
@@ -263,7 +263,7 @@ The initial Rule Chain has been modified by adding the following nodes:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/alarm-filter.png)
 
-###### Node F: **Clear Alarm**
+#### Node F: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.
 
@@ -271,7 +271,7 @@ The initial Rule Chain has been modified by adding the following nodes:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/clear-alarm.png)
 
-###### Node G: **Create alarm**
+#### Node G: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.
 
@@ -279,7 +279,7 @@ The initial Rule Chain has been modified by adding the following nodes:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/create-alarm.png)
 
-###### Node H: **Rule Chain**
+#### Node H: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node forwards incoming Message to specified Rule Chain **Related Fire Alarm System**.
 

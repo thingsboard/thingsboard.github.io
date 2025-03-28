@@ -8,7 +8,7 @@ Water Metering template represent generic water metering solution.
 With this template you get interactive dashboards that allow administrator and end user browse state of the water meters and aggregated water consumption statistics.
 Users are able to define thresholds and enable alarms and notifications over SMS or email.
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we have created the "Water Metering Tenant Dashboard" that allows you to manage water metering devices, users and alarms:
 
@@ -45,7 +45,7 @@ We have also created the "Water Metering User Dashboard" for the end users. This
 You may always customize the "Water Metering" dashboards using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
 
-### Devices
+## Devices
 
 We have already created three water metering devices and loaded some demo data for them.
 See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
@@ -62,14 +62,14 @@ You may find the exact commands to send data on behalf of created devices in the
 Most of the water meters are using LoRaWAN, Sigfox or NB IoT technology. 
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
+## Alarms
 
 Alarms are generated using nine Alarm rules in the "Water Meter" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/).
 Alarms notifications are sent via SMS or email to Tenant Administrators and Customer Users depending on the thresholds and settings defined in the dashboard.
 
 {% include images-gallery.html imageCollection="solution-alarms" %}
 
-### Rule Chains
+## Rule Chains
 
 The "Water Metering Solution Main" rule chain is processing all incoming messages from water metering devices.
 This rule chain is responsible for aggregation of the incoming data on a daily and weekly basis for device, customer and tenant level.
@@ -81,13 +81,13 @@ They are responsible for routing incoming messages to tenant administrators and 
 
 {% include images-gallery.html imageCollection="rule-chains" %}
 
-### Customers
+## Customers
 
 Meters "WM0000123" and "WM0000124" are assigned to a newly created customer "Water Metering Customer A".
 You may notice that "Water Metering Customer A" has a user, and the "Water Metering User Dashboard" dashboard is assigned to the user by default.
 You may create more [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/) and more [Users](/docs/{{docsPrefix}}user-guide/ui/users/) via administration UI.
 
-### Role Based Access Control (RBAC)
+## Role Based Access Control (RBAC)
 
 We have created separate users for customers "Water Metering Customer A" and "Water Metering Customer B". See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created users and their passwords.
 

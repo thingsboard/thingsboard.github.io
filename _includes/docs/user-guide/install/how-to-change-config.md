@@ -8,7 +8,7 @@ located {% if docsPrefix == null %}[here](/docs/user-guide/install/config/){% en
 
 ## How to change configuration parameters?
 
-#### Monolithic deployment on Linux
+### Monolithic deployment on Linux
 
 If ThingsBoard is installed on **Linux** as a **monolithic application**, you may specify the environment variables in
 the thingsboard.conf file:
@@ -24,7 +24,7 @@ Use simple example below to add new environment variable 'HTTP_BIND_PORT' with v
 export HTTP_BIND_PORT=8081
 ```
 
-#### Monolithic deployment on Windows
+### Monolithic deployment on Windows
 
 If ThingsBoard is installed on **Windows** as a **monolithic application**, you may specify the environment variables in
 the thingsboard.yml file located in the following directory:
@@ -45,14 +45,14 @@ server:
 
 In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'* is a default value.
 
-#### Docker based deployment
+### Docker based deployment
 
 If ThingsBoard is installed in a docker compose environment, you may edit the scripts and add environment variables for
 the corresponding containers.
 See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
 more details.
 
-#### K8S based deployment
+### K8S based deployment
 
 If ThingsBoard is installed in a K8S environment, you may edit the scripts and add environment variables for the
 corresponding deployments/stateful sets.

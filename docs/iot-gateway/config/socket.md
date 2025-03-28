@@ -75,7 +75,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/sock
 This configuration section contains an array of objects that contains clients that can be connected to the connector and
 send the data. Any connection not included in this array will be rejected by the connector.
 
-#### Subsection "Device"
+### Subsection "Device"
 
 {% capture subsectiondevicesection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-subsection-basic-section.md%br%
@@ -101,7 +101,7 @@ of the field to allow connections with different IP address variants:
 
    **Address filter:** *:*
 
-##### Subsection "Time series" and "Attributes"
+#### Subsection "Time series" and "Attributes"
 
 This configuration section includes the parameters for handling incoming data.
 
@@ -111,7 +111,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/devi
 
 {% include content-toggle.liquid content-toggle-id="subsectiondevicedataconversion" toggle-spec=subsectiondevicedataconversion %}
 
-##### Subsection "Attribute request"
+#### Subsection "Attribute request"
 
 This configuration section is optional.
 
@@ -124,7 +124,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/devi
 
 {% include content-toggle.liquid content-toggle-id="subsectiondeviceattrrequest" toggle-spec=subsectiondeviceattrrequest %}
 
-##### Subsection "Attribute update"
+#### Subsection "Attribute update"
 
 This configuration section is optional. 
 
@@ -138,7 +138,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/devi
 
 {% include content-toggle.liquid content-toggle-id="subsectiondeviceattrupdates" toggle-spec=subsectiondeviceattrupdates %}
 
-##### Subsection "RPC methods"
+#### Subsection "RPC methods"
 
 This configuration section is optional. 
 

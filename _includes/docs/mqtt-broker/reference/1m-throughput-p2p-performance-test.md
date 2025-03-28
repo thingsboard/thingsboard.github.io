@@ -11,7 +11,7 @@ the load from 200,000 to **1,000,000 messages per second**, demonstrating TBMQ�
 
 ![image](/images/mqtt-broker/reference/p2p-test/tbmq-perf-test-diagram.png)
 
-### Test methodology
+## Test methodology
 
 To assess the TBMQ's ability to handle point-to-point communication at scale, we conducted five tests to measure performance, efficiency, and latency, 
 with a maximum throughput of 1M msg/sec. Throughput refers to the total number of messages per second, including both incoming and outgoing messages.
@@ -26,7 +26,7 @@ Publishers sent 62-byte messages to unique topics `"europe/ua/kyiv/$number"` onc
 while subscribers subscribed to corresponding topics `"europe/ua/kyiv/$number/+"`. 
 Here, `$number` used as the unique identifier for each pair of publisher and subscriber.
 
-#### Test agent setup
+### Test agent setup
 
 The [test agent](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/#how-to-repeat-the-1m-msgsec-throughput-test) 
 was designed to simulate publishers and subscribers, ensuring a realistic evaluation of TBMQ's performance under growing message traffic. 
@@ -46,7 +46,7 @@ which outlines the number of pods per instance and the number of instances deplo
 The orchestrator pod was deployed on a separate EC2 instance, which also hosted additional components, including [Kafka Redpanda console](https://www.redpanda.com/redpanda-console-kafka-ui) and [Redis Insight](https://redis.io/docs/latest/operate/redisinsight/) pods, to facilitate monitoring and coordination. 
 This flexible configuration enabled the test agent to adapt to rising traffic demands while addressing infrastructure constraints, such as port limitations.
 
-#### Infrastructure Overview
+### Infrastructure Overview
 
 To provide a clear understanding of our test environment, this section details the hardware specifications of the services used and illustrates how the EKS cluster pods were distributed across the AWS EC2 instances.
 
@@ -73,7 +73,7 @@ The following images provide a detailed overview of our AWS EC2 instances and ho
 
 Instance scaling was adjusted during each test to match workload demands, as described in the next section.
 
-### Performance tests
+## Performance tests
 
 TBMQ's performance was tested in phases, starting at 200k msg/sec and increasing by 200k each time, up to 1M msg/sec.
 In each phase, we scaled the number of TBMQ brokers, Redis nodes. For 1M msg/sec test we also scaled the number of Kafka nodes to handle the corresponding workload.
@@ -114,7 +114,7 @@ These results demonstrate TBMQ's ability to provide reliable and scalable point-
 Our focus remains on further optimization to enhance performance without compromising reliability. 
 For more details on potential improvements, see the [Future optimizations](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/#future-optimizations) section.
 
-### How to repeat the 1M Msg/sec throughput test
+## How to repeat the 1M Msg/sec throughput test
 
 We recommend referring to our [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/p2p-perf-test/k8s/aws#readme) containing the scripts and parameters used for running TBMQ during this performance test,
@@ -122,7 +122,7 @@ enabling you to gain deeper insights into our configuration. For the practical e
 capable of generating MQTT clients and simulating the desired message load. Especially for the P2P scenario testing, we improved our testing tool to have the ability to autogenerate the configuration for publishers and subscribers instead of loading it from a JSON configuration file.
 Please refer to the [README.md](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/p2p-perf-test/k8s#readme) for more details about P2P testing configuration.
 
-### Migrating from Jedis to Lettuce: Overcoming a Key Testing Challenge
+## Migrating from Jedis to Lettuce: Overcoming a Key Testing Challenge
 
 One of the most significant challenges during performance testing was overcoming the limitations of the [Jedis](https://github.com/redis/jedis) library, whose synchronous nature became a bottleneck in high-throughput scenarios.
 With Jedis, each Redis command is sent and processed sequentially, meaning the system has to wait for each command to complete before issuing the next one.
@@ -134,7 +134,7 @@ This architecture made it possible to fully exploit Redis’s performance capabi
 It required rewriting a substantial portion of the codebase to transition from synchronous to asynchronous workflows. This included restructuring how Redis commands were issued and handled. 
 Careful planning and rigorous testing ensured that these changes maintained system reliability and correctness.
 
-### Future optimizations
+## Future optimizations
 
 Currently, we use [Lua scripts](https://redis.io/docs/latest/develop/interact/programmability/eval-intro/) in Redis to process messages for DEVICE persistent clients.
 These scripts ensure atomic operations for saving, updating, and deleting messages, which is crucial for maintaining data consistency.
@@ -144,7 +144,7 @@ To optimize performance, we are considering adjusting the hashing mechanism for 
 By doing so, we aim to increase the likelihood of batching operations into a single script execution per hash slot, allowing the Lua scripts to handle multiple clients simultaneously.
 This approach could reduce overhead and improve Redis efficiency, while still adhering to the cluster’s constraints.
 
-### Conclusion
+## Conclusion
 
 Across all five tests, TBMQ demonstrated linear scalability and efficient resource utilization. As the workload increased from 200,000 to 1,000,000 msg/sec, 
 the system ensured reliable message delivery and maintained sufficiently low latency, remaining within efficient bounds for point-to-point messaging scenarios.

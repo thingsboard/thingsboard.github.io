@@ -7,7 +7,7 @@ description: ThingsBoard architecture
 
 The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.         
 
-### v4.0
+## v4.0
 
 Everything in [CE 4.0](/docs/reference/roadmap/#v40).
 
@@ -15,7 +15,7 @@ Everything in [CE 4.0](/docs/reference/roadmap/#v40).
 * Keystore for secrets and credentials; 
 * More SCADA Solution Templates;
 
-### v4.1
+## v4.1
 
 Everything in [CE 4.1](/docs/reference/roadmap/#v41), plus:
 

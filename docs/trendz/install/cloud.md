@@ -21,7 +21,7 @@ cloudPlan:
 * TOC
 {:toc}
 
-### What is Trendz Cloud
+## What is Trendz Cloud
 
 The Trendz Analytics Cloud is a fully managed, scalable and fault-tolerant version of [Trendz Analytics product](/products/trendz/). It is already integrated with ThingsBoard Cloud and can be used to analyze your data from ThingsBoard Cloud.
 
@@ -30,11 +30,11 @@ The Trendz Analytics Cloud is a fully managed, scalable and fault-tolerant versi
 - **High availability.** Trendz Cloud uses microservices architecture and is deployed in multiple availability zones.
 - **Data durability.** Platform uses data replication and backup procedures to make sure you don't lose the data.
 
-### Prerequisites
+## Prerequisites
 
 You need to have active ThingsBoard Cloud account to active Trendz Analytics Cloud. If you don't have ThingsBoard Cloud account yet, please [sign up](https://thingsboard.cloud/signup). 
 
-### Activate Trendz Analytics Cloud
+## Activate Trendz Analytics Cloud
 
 - Log in to ThingsBoard Cloud account and select [Plan and Billing (North America)](https://thingsboard.cloud/billing) / [Plan and Billing (Europe)](https://eu.thingsboard.cloud/billing) menu option.
 - Press **Update Plan** button
@@ -43,6 +43,6 @@ You need to have active ThingsBoard Cloud account to active Trendz Analytics Clo
 
 {% include images-gallery.html imageCollection="cloudPlan" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

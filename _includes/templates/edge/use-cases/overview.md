@@ -4,7 +4,7 @@
 **ThingsBoard Edge** offers the flexibility to address the variety of challenges faced in IoT deployments, from connectivity and latency concerns to security and regulatory compliance.
 The choice of deploying **ThingsBoard Edge** depends on the specific business needs and constraints.
 
-### Deployment Scenarios
+## Deployment Scenarios
 
 * **Limited Connectivity and Resilience:** In remote areas with intermittent connectivity, edge deployments can continue to operate even if the central server is down or unreachable. This ensures that critical applications and machines continue to operate. Synchronize with the main ThingsBoard server when connectivity is restored.
 

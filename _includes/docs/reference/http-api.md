@@ -4,7 +4,7 @@
 
 ## Getting started
 
-##### HTTP basics
+### HTTP basics
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a general-purpose network protocol that can be used in IoT applications. 
 You can find more information about HTTP [here](https://www.w3.org/Protocols/rfc2616/rfc2616.txt).
@@ -12,12 +12,12 @@ HTTP protocol is TCP based and uses request-response model.
 
 ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS protocols.
 
-##### Client libraries setup
+### Client libraries setup
 
 You can find HTTP client libraries for different programming languages on the web. The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
 
-##### HTTP Authentication and error codes
+### HTTP Authentication and error codes
 
 In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to include **$ACCESS_TOKEN** as a path parameter in each HTTP request.
@@ -277,7 +277,7 @@ ThingsBoard attributes API allows devices to
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
  
-##### Publish attribute update to the server
+### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
@@ -398,7 +398,7 @@ The content of the JSON file:
 ```
 {: .copy-code}
 
-##### Request attribute values from the server
+### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
@@ -482,7 +482,7 @@ However, it is still possible to have same keys for client, shared or even serve
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### Subscribe to attribute updates from the server
+### Subscribe to attribute updates from the server
 
 In order to subscribe to shared device attribute changes, send GET request with optional "timeout" request parameter to the following URL:
 

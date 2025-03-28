@@ -1,8 +1,8 @@
-### Self-signed certificates generation
+## Self-signed certificates generation
 
 Use instructions below to generate your own certificate files. Useful for tests, but time consuming and not recommended for production.
 
-#### PEM certificate file
+### PEM certificate file
 
 **Note** This step requires Linux based OS with openssl installed.
 

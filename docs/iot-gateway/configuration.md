@@ -180,14 +180,14 @@ different connectors active. If you prefer to use only one, simply remove the ot
 {% endcapture %}
 {% include code-toggle.liquid code=genConf params="conf|.copy-code.expandable-20" %}
 
-#### Sections in config file
+### Sections in config file
 
 + **thingsboard** -- Configuration for connecting to ThingsBoard platform.
   - *security* -- Configuration for type of encryption and authorization.
 + **storage** -- Configuration for local storage of incoming data from devices.
 + **connectors** -- Array of Connectors and their configuration to use.
 
-#### Connection to ThingsBoard
+### Connection to ThingsBoard
 
 |**Parameter**             | **Default value**                            | **Description**                                                                         |
 |---                       |---                                           |-----------------------------------------------------------------------------------------|
@@ -198,7 +198,7 @@ different connectors active. If you prefer to use only one, simply remove the ot
 | minPackSendDelayMS       | **200**                                      | Delay between sending packets (Decreasing this setting results in increased CPU usage). |
 | minPackSizeToSend        | **500**                                      | Minimum size of packs to send.                                                          |
 
-###### Subsection "statistics"
+#### Subsection "statistics"
 
 This subsection is used to configure collecting statistics data and sending them to ThingsBoard Gateway device attributes.
 
@@ -248,7 +248,7 @@ This configuration file can look like the example below:
 ```
 Also, you can find example files for different OS (Linux, macOS, Windows) in `/config/statistics/` folder.
 
-###### Subsection "deviceFiltering"
+#### Subsection "deviceFiltering"
 
 This subsection is optional and used to filter allowed devices to send data to ThingsBoard.
 
@@ -346,7 +346,7 @@ to connector types based on device names. By using the "deny" and "allow" proper
 access within your gateway.
 
 
-###### Subsection “checkingDeviceActivity”
+#### Subsection “checkingDeviceActivity”
 
 This subsection is optional and used to monitor the activity of each connected device. 
 
@@ -361,7 +361,7 @@ is inactive for n seconds, it will disconnect it.
 | ... inactivityCheckPeriodSeconds | **10**       | Periodicity of device activity check                          |
 |---
 
-###### Subsection "security"
+#### Subsection "security"
 
 {% capture securitytogglespec %}
 Access Token<small>Basic security</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
@@ -373,7 +373,7 @@ There are 3 variants of security subsection:
 
 {% include content-toggle.liquid content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 
-###### Subsection "provisioning"
+#### Subsection "provisioning"
 
 {% capture provisioningtogglespec %}
 Auto<small>Server generated access token</small>%,%auto%,%templates/iot-gateway/provisioning-auto-config.md%br%
@@ -384,7 +384,7 @@ X.509 Certificate<small></small>%,%x509%,%templates/iot-gateway/provisioning-x-5
 There are 4 options of provisioning configuration (you can read more about provisioning in [the official documentation](/docs/user-guide/device-provisioning/)):
 {% include content-toggle.liquid content-toggle-id="provisioningConfig" toggle-spec=provisioningtogglespec %}
 
-#### Storage configuration
+### Storage configuration
 
 Configs in storage subsection provides configuration for saving incoming data before it will be send to ThingsBoard platform.
   
@@ -400,7 +400,7 @@ SQLite storage<br> <small>(recommended for more speed)</small>%,%sqlite%,%templa
 
 {% include content-toggle.liquid content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
 
-#### Connectors configuration
+### Connectors configuration
 
 Configs in connectors section configuration for connecting to devices by implemented protocols.
 Config for every connector in this section must have parameters as in table below:  

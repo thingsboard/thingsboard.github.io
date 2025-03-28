@@ -150,7 +150,7 @@ ThingsBoard has examples of several types of dashboards that you can use. Learn 
 ![image](/images/user-guide/integrations/http/solution-templates.png)
 {% endif %}
 
-#### Enable security option
+### Enable security option
 
 If necessary, you can specify additional parameters, without which the data will not be included in the integration.
 To do this, check the Enable security checkbox and click on the Headers filter. Specify an arbitrary value and save the changes.

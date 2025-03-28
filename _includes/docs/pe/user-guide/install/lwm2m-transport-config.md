@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-####  Spring common parameters
+##  Spring common parameters
 
 <table>
 	<thead>
@@ -32,7 +32,7 @@
 </table>
 
 
-####  Server common parameters
+##  Server common parameters
 
 <table>
 	<thead>
@@ -57,7 +57,7 @@
 </table>
 
 
-####  Zookeeper connection parameters. Used for service discovery.
+##  Zookeeper connection parameters. Used for service discovery.
 
 <table>
 	<thead>
@@ -114,7 +114,7 @@
 </table>
 
 
-####  Cache parameters
+##  Cache parameters
 
 <table>
 	<thead>
@@ -145,7 +145,7 @@
 </table>
 
 
-####  Redis configuration parameters
+##  Redis configuration parameters
 
 <table>
 	<thead>
@@ -350,7 +350,7 @@
 </table>
 
 
-####  LWM2M server parameters
+##  LWM2M server parameters
 
 <table>
 	<thead>
@@ -732,7 +732,7 @@
 </table>
 
 
-####  Queue configuration properties
+##  Queue configuration properties
 
 <table>
 	<thead>
@@ -1370,7 +1370,7 @@
 </table>
 
 
-####  Service common parameters
+##  Service common parameters
 
 <table>
 	<thead>
@@ -1395,7 +1395,7 @@
 </table>
 
 
-####  Usage statistics parameters
+##  Usage statistics parameters
 
 <table>
 	<thead>
@@ -1426,7 +1426,7 @@
 </table>
 
 
-####  Metrics parameters
+##  Metrics parameters
 
 <table>
 	<thead>
@@ -1445,7 +1445,7 @@
 </table>
 
 
-####  General management parameters
+##  General management parameters
 
 <table>
 	<thead>
@@ -1464,7 +1464,7 @@
 </table>
 
 
-####  Notification system parameters
+##  Notification system parameters
 
 <table>
 	<thead>

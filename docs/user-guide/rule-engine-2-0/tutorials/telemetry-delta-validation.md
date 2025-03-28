@@ -58,7 +58,7 @@ Create Node G as shown on the image above in the root rule chain to forward tele
 
 The following section shows you how to create this rule chain from scratch.
 
-#### Create new Rule Chain (**Temperature delta validation**)
+### Create new Rule Chain (**Temperature delta validation**)
 
 Go to **Rule Chains** -> **Add new Rule Chain**
 
@@ -70,11 +70,11 @@ Configuration:
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
-###### Adding the required nodes
+#### Adding the required nodes
 
 In this rule chain, you will create 6 nodes as it will be explained in the following sections:
 
-###### Node A: **Originator telemetry**
+#### Node A: **Originator telemetry**
 - Add the **Originator telemetry** node and connect it to the **Input** node with a relation type **Success**.
   This rule node adds selected telemetry of message originator into message metadata for the selected time range.
 
@@ -92,7 +92,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/latest-five-minute-old-record.png)
 
-###### Fetch Mode ALL
+#### Fetch Mode ALL
 
   Originator telemetry node also supports ability to fetch all telemetry from the particular time range.
   We will not use this ability in our tutorial, but it may be useful in the cases if you need to calculate variance for a particular key or to
@@ -130,7 +130,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
   }{% endhighlight %}
 
 
-###### Node B: **Script Transformation**
+#### Node B: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
 
  This node will calculate the delta between the temperature reading from message payload and the five-minute old temperature reading from the message metadata using the following script:
@@ -146,7 +146,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/calculate-delta.png)
 
-###### Node C: **Save Timeseries**
+#### Node C: **Save Timeseries**
  - Add the **Save TimeSeries** node and connect it to the **Script Transformation** node with a relationship type **Success**.
    This node will save the TimeSeries data from the incoming Message payload into the database and link it to the Device that is identified as the Message Originator.
 
@@ -154,7 +154,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/save-timeseries.png)
 
-###### Node D: **Filter Script**
+#### Node D: **Filter Script**
  - Add the **Filter Script** node and connect it to the **Save TimeSeries** node with a relation type **Success**.
  <br>This node will validate that calculated delta value between the latest temperature reading and five-minutes ago temperature reading did not exceed 5 degrees using the following script:
 
@@ -166,7 +166,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/validate-delta.png)
 
 
-###### Node E: **Create alarm**
+#### Node E: **Create alarm**
  - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator, namely **Thermometer**<br> if the published delta temperature is not at expected range (filter script node returns True).
 
@@ -174,7 +174,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/create-alarm.png)
 
-###### Node F: **Clear Alarm**
+#### Node F: **Clear Alarm**
  - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator **Thermometer**<br> and Clears alarm if it exists in case if the published temperature delta is in expected range (script node returns False).
 
@@ -182,11 +182,11 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/clear-alarm.png)
 
-#### Modify Root Rule Chain
+### Modify Root Rule Chain
 
 The initial root Rule Chain has been modified by adding the following node:
 
-###### Node G: **Rule Chain**
+#### Node G: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Save Timeseries** node with a relation type **Success**. <br>
   This node forwards incoming Message to specified Rule Chain **Temperature delta validation**.
 

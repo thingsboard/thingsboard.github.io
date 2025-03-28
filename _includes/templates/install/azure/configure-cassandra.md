@@ -1,7 +1,7 @@
 Using Cassandra is an optional step. 
 We recommend to use Cassandra if you plan to insert more than 5K data points per second or would like to optimize storage space.
 
-##### Provision additional node pools
+#### Provision additional node pools
 
 Provision additional node pools that will be hosting Cassandra instances. 
 You may change the machine type. At least 4 vCPUs and 16GB of RAM is recommended.

@@ -9,7 +9,7 @@ Additionally, verify that the **ThingsBoard Edge** and **ThingsBoard Server** ve
 {% endif %}
 
 {% capture update_server_first %}
-### **Version Compatibility Rules:**
+## **Version Compatibility Rules:**
 * **ThingsBoard Edge version X.Y.Z** works with the **ThingsBoard Server version X.Y.Z** and the next <span style="color:blue">**two**</span> versions.
 
 _**ThingsBoard Edge 3.8.0** works with **ThingsBoard Server 3.8.0** and two later versions (3.9.0 and 3.9.1). You can view the **ThingsBoard Server Release Notes** [here](/docs/{{peDocsPrefix}}reference/releases/){: target="_blank"}._

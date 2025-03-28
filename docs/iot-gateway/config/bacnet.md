@@ -69,7 +69,7 @@ Advanced%,%advanced%,%templates/iot-gateway/bacnet-connector/bacnet-application-
 This configuration section contains an array of BACnet devices that can be connected to the connector and send data.
 Any BACnet device not included in this array will be rejected by the connector.
 
-#### Subsection "Device"
+### Subsection "Device"
 
 {% capture applicationsection %} 
 Basic%,%basic%,%templates/iot-gateway/bacnet-connector/bacnet-device-subsection-basic.md%br% 
@@ -77,7 +77,7 @@ Advanced%,%advanced%,%templates/iot-gateway/bacnet-connector/bacnet-device-subse
 
 {% include content-toggle.liquid content-toggle-id="applicationsection" toggle-spec=applicationsection %}
 
-##### Subsection "Time series" and "Attributes"
+#### Subsection "Time series" and "Attributes"
 
 This configuration section includes the parameters for handling incoming data.
 
@@ -87,7 +87,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/bacnet-connector/devi
 
 {% include content-toggle.liquid content-toggle-id="subsectiondevicedataconversion" toggle-spec=subsectiondevicedataconversion %}
 
-##### Subsection "Attribute updates"
+#### Subsection "Attribute updates"
 
 This configuration subsection is optional.
 
@@ -101,7 +101,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/bacnet-connector/devi
 
 {% include content-toggle.liquid content-toggle-id="subsectiondeviceattrupdates" toggle-spec=subsectiondeviceattrupdates %}
 
-##### Subsection "RPC methods"
+#### Subsection "RPC methods"
 
 This configuration subsection is optional.
 

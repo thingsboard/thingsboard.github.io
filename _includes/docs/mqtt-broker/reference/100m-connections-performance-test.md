@@ -9,7 +9,7 @@ while effectively managing a throughput of **6M MQTT publish messages per second
 
 ![image](/images/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
 
-### Test methodology
+## Test methodology
 
 We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
 We have deployed the TBMQ cluster of 25 nodes in the [EKS](https://aws.amazon.com/eks/) 
@@ -58,7 +58,7 @@ For detailed information regarding the configurations associated with each topic
 Every individual MQTT client establishes a distinct connection to the broker. 
 This approach ensures that each client operates independently and maintains its own dedicated connection for seamless communication with the broker.
 
-### Hardware used
+## Hardware used
 
 | Service Name              | **TBMQ**  | **AWS RDS (PostgreSQL)** | **Kafka**   |
 |---------------------------|-----------|--------------------------|-------------|
@@ -70,7 +70,7 @@ This approach ensures that each client operates independently and maintains its 
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
-### Test summary
+## Test summary
 
 The connection rate of the clients reached a notable level of ~22k connections per second, signifying an efficient setup.
 To ensure the absence of any resource leakage or performance degradation over time, the test was executed for a duration of one hour, allowing for thorough observation and analysis.
@@ -149,7 +149,7 @@ alongside other minor performance improvements.
 
 Through these diligent efforts, we successfully addressed various challenges along the way, optimizing code performance and ensuring a smooth and efficient operation of the system.
 
-### TCO calculations
+## TCO calculations
 
 Herewith you can find total cost of ownership (TCO) calculations for TBMQ deployed using AWS.
 
@@ -170,7 +170,7 @@ AWS MSK: 9 brokers (3 brokers per AZ) x m6a.2xlarge (8 vCPU, 32 GiB), 4,500GiB t
 
 **TCO**: ~26,573 USD per month or 0.0003 USD per month per device.
 
-### Running tests
+## Running tests
 
 **Load configuration:**
 
@@ -277,7 +277,7 @@ Here is the JMX monitoring for TBMQ. The broker nodes are operating steadily and
 
 {% include images-gallery.html imageCollection="broker-jmx-monitoring" %}
 
-### How to repeat the tests
+## How to repeat the tests
 
 Please refer to the subsequent [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/100M/k8s/aws#readme) 
@@ -289,7 +289,7 @@ For configuring the performance tests, you can review and modify the configurati
 [subscribers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/100M/k8s/broker-tests-subscribers-config.yml) 
 to simulate the desired load.
 
-### Conclusion
+## Conclusion
 
 This performance test demonstrates the capabilities of TBMQ cluster in efficiently
 processing the throughput of 6M messages per second originating from diverse devices along with handling 100M concurrent connections.
@@ -300,7 +300,7 @@ We sincerely hope that this article be valuable to individuals evaluating TBMQ a
 Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us 
 on [GitHub](https://github.com/thingsboard/tbmq) and [Twitter](https://twitter.com/thingsboard).
 
-### Reference Commits
+## Reference Commits
 
 [1] - [Kafka topics renaming](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13).
 

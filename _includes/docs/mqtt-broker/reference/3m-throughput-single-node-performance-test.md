@@ -8,7 +8,7 @@ With only one node, we pushed the limits of TBMQ's capabilities.
 
 ![image](/images/mqtt-broker/reference/single-node-test/tbmq-perf-test-diagram.png)
 
-### Test methodology
+## Test methodology
 
 We established a performance test environment by deploying a single TBMQ node within an [EKS](https://aws.amazon.com/eks/) cluster alongside 3 [Kafka](https://kafka.apache.org/) nodes 
 and an [RDS](https://aws.amazon.com/rds/) instance. This setup served as the foundation for our performance test.
@@ -24,7 +24,7 @@ This broad distribution of messages put the broker's capabilities to the test.
 During the 30-minute performance test, we wanted to test if TBMQ can demonstrate its ability to consistently manage the significant message load 
 without experiencing any performance degradation or resource exhaustion.
 
-### Hardware used
+## Hardware used
 
 | Service Name              | **TBMQ**    | **AWS RDS (PostgreSQL)** | **Kafka** |
 |---------------------------|-------------|--------------------------|-----------|
@@ -36,7 +36,7 @@ without experiencing any performance degradation or resource exhaustion.
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
-### Test summary
+## Test summary
 
 TBMQ, running on a single node, demonstrated remarkable performance by successfully processing a throughput of 3M messages per second. 
 This significant achievement underlines the reliability of TBMQ in real-world scenarios.
@@ -68,7 +68,7 @@ This configuration delivered an average message latency of **14.2 ms** while mai
 These findings highlight the flexibility and potential of TBMQ to perform greatly across diverse instance types, 
 providing users with the opportunity to choose the configuration that best suits their specific requirements.
 
-### Running test
+## Running test
 
 The test agent represents a cluster of performance test nodes (runners) and an orchestrator that supervises these runners.
 To fulfill their respective roles, we deployed 1 publisher and 6 subscriber Kubernetes pods, with a single pod designated as the orchestrator.
@@ -88,7 +88,7 @@ This finding indicates that TBMQ demonstrates substantial processing capacity, s
 
 {% include images-gallery.html imageCollection="tbmq-3m-single-node-test-monitoring" %}
 
-### How to repeat the test
+## How to repeat the test
 
 We recommend referring to our [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/3M-single-node-perf-test/k8s/aws#readme) containing the scripts and parameters used for running TBMQ during this performance test,
@@ -99,7 +99,7 @@ For configuring the performance tests, you can review and modify the configurati
 [publishers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/3M-single-node-perf-test/k8s/broker-tests-publishers-config.yml) and 
 [subscribers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/3M-single-node-perf-test/k8s/broker-tests-subscribers-config.yml) as per your specific requirements.
 
-### Conclusion
+## Conclusion
 
 The performance test of TBMQ, where it successfully processed 3M messages per second with an average latency of just 7.4 milliseconds, confirms again its position as a robust and scalable MQTT broker. 
 This achievement underscores TBMQ's readiness for handling demanding workloads, making it a reliable choice for applications that rely on efficient message distribution.

@@ -18,20 +18,20 @@ Also, there is the "All" user group. If a user is created directly in the "All" 
 
 A User group is group of users of the same level with the same permissions. One user can simultaneously belong to several user groups.
 
-##### "Tenant Administrators" user group
+### "Tenant Administrators" user group
 
 The created user in the Tenant Administrators group has all the  permissions such as view, add, edit and delete entities.
 Let's create a tenant administrator to see what he can do.
 
 {% include images-gallery.html imageCollection="user-bob-pe" showListImageTitles='true' %}
 
-##### "Tenant Users" user group
+### "Tenant Users" user group
 
 Tenant users group has read-only permissions. Let's create a tenant user to see what he can do.
 
 {% include images-gallery.html imageCollection="user-alice-pe" showListImageTitles='true' %}
 
-##### Adding a new user group
+### Adding a new user group
 
 Tenant or Customer administrators can create user groups with custom permissions.
 Create a user group and add the previously created [Roles](/docs/{{docsPrefix}}user-guide/rbac/#roles) in the Roles tab in the user group details to configure users permissions in the new group.
@@ -56,7 +56,7 @@ Please note that the users that belong to a group will not be deleted. A single 
 
 {% include images-gallery.html imageCollection="user-delete-pe" showListImageTitles='true' %}
 
-##### Delete user
+### Delete user
 
 There are cases when you have several created users in a group and you need to delete one of them.
 

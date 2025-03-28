@@ -190,7 +190,7 @@ If the {i18n} structure is used but a translation isn't provided in the translat
 
 Let's see how it works.
 
-#### Custom translation for the dashboard title
+### Custom translation for the dashboard title
 
 - First, set a [custom translation](#translation-editing-using-advanced-mode) for your dashboard title within a translation map, using JSON format.
 Here is an example of an entry for translating the dashboard title into Italian:
@@ -233,7 +233,7 @@ Here is an example of an entry for translating the dashboard title into Italian:
 
 {% include images-gallery.liquid imageCollection=translationOfDashboardNamePE %}
 
-#### Custom translation for the widget title
+### Custom translation for the widget title
 
 - Set [custom translation](#translation-editing-using-advanced-mode) for the widget's name, the temperature column title, and the entity label column title in the translation map, using advanced mode.
 Here's an example entry:
@@ -279,7 +279,7 @@ Here's an example entry:
 
 {% include images-gallery.liquid imageCollection=widgetInternalizationPE %}
 
-#### Custom translation for the widget tooltip
+### Custom translation for the widget tooltip
 
 - Set [custom translation](#translation-editing-using-advanced-mode) for the widget tooltip title in the translation map, using advanced mode.
 Here's an example entry:
@@ -319,7 +319,7 @@ Here's an example entry:
 
 {% include images-gallery.liquid imageCollection=widgetTooltipInternalizationPE %}
 
-#### Using custom translation in the cell content function
+### Using custom translation in the cell content function
 
 Custom translation can be used in the cell content function in widgets like Entity Table, Timeseries table and Alarms table. JavaScript code requires quotes for the i18n.
 
@@ -385,7 +385,7 @@ if(value>70){
 ```
 {: .copy-code}
 
-#### Using custom translation in HTML Value Card widget
+### Using custom translation in HTML Value Card widget
 
 - Set [custom translation](#translation-editing-using-advanced-mode) for each cell content function value in the translation map, using advanced mode.
 Here's an example entry:

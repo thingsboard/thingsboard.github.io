@@ -10,7 +10,7 @@ There are a few important notes to mention regarding retained messages:
 * The **message with an empty payload** published on the same topic will **clear** it entirely from that topic.
 * The subscribers for the topic will receive **only the last message** if available.
 
-### Retained Messages usage
+## Retained Messages usage
 
 When a client subscribes to a topic, it typically only receives messages published after it has subscribed. 
 However, with retained messages, the broker stores the last message sent to that topic, ensuring that any new subscriber immediately receives the latest retained message, 
@@ -38,7 +38,7 @@ using retained messages may not add significant value and could create unnecessa
 By leveraging retained messages effectively, you can ensure that new subscribers always receive the latest critical information without waiting, 
 improving the overall responsiveness and user experience in your MQTT setup.
 
-### Publish Retained Message
+## Publish Retained Message
 
 In MQTT, the retained message refers to a regular publish message with the **retained flag** set to _true_.
 Let's consider a simple command using `mosquitto_pub` to publish a retained message. 
@@ -58,7 +58,7 @@ mosquitto_pub -d -h "localhost" -p 1883 -D PUBLISH user-property hello world -q 
 ```
 {: .copy-code}
 
-### Payload, User Properties
+## Payload, User Properties
 
 To access and view the payload and user properties of the last message for a specific topic on the WEB UI Retained Messages page, please follow these steps:
 
@@ -69,7 +69,7 @@ To access and view the payload and user properties of the last message for a spe
 
 {% include images-gallery.html imageCollection="details-retained-messages" %}
 
-### Deleting Retained Message
+## Deleting Retained Message
 
 Deleting a retained message is a straightforward process. To remove a previous retained message, you can send a new retained message with a `zero-byte payload` to the 
 specific topic associated with the retained message you want to delete. Subsequently, any new subscribers to that topic will no longer receive the previously retained message.
@@ -95,7 +95,7 @@ To delete retained messages using the WEB UI of TBMQ, you have two options based
 
 {% include images-gallery.html imageCollection="delete-retained-messages" %}
 
-### Clearing Empty Retained Message Nodes
+## Clearing Empty Retained Message Nodes
 
 Retained messages in the broker are stored in the memory using the [Trie](https://en.wikipedia.org/wiki/Trie) data structure, 
 which is known for its efficient searching capabilities.

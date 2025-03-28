@@ -74,7 +74,7 @@ It is a [**binary classification task**](https://machinelearningmastery.com/type
 There are many Machine learning algorithms that can do this job for us and identify anomalies in the data. We can split them 
 into 2 groups - supervised and unsupervised algorithms.
 
-#### Supervised anomaly detection
+### Supervised anomaly detection
 Supervised algorithms require a labeled data for model training. It means that we should say what segments are good and what 
 segments contain anomalies. Based on this knowledge, an anomaly detection model will train to detect segments with anomalies automatically. 
 
@@ -90,7 +90,7 @@ take a lot of time and resources.
 shows excellent results for detecting anomalies related to temperature conditions. But the same model does not detect mechanical 
 wear because such problems were not observed in the training dataset.
 
-#### Unsupervised anomaly detection 
+### Unsupervised anomaly detection 
 The main advantage of unsupervised classification algorithms is that they do not need labeled datasets for model 
 training. Thanks to this, such algorithms suit well for automated anomaly detection in various use-cases like
 asset monitoring, process fault detection, equipment prediction maintenance. 
@@ -120,7 +120,7 @@ background we will explain in detail what should be done in each step and show h
 algorithms for automated anomaly detection.
 
 
-#### How automated unsupervised anomaly detection works
+### How automated unsupervised anomaly detection works
 **Step 1**: We have collections of data segments from sensors. Each segment is a point. Features of the segment are 
 point coordinates. 
 

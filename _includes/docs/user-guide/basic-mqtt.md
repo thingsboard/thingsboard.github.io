@@ -23,7 +23,7 @@ Basic MQTT credentials consist of the optional client id, username and password.
 Next, we will explore how to change the device credentials and how clients can connect to the device using these credentials.
 Let's consider several options:
 
-#### Authentication based on Client ID only. 
+## Authentication based on Client ID only. 
 
 To enable this, only the client ID needs to be populated in the device credentials. MQTT clients will be able to connect if they specify correct client ID.
 
@@ -66,7 +66,7 @@ Once you have successfully executed the command, you should see the published "t
 
 {% include images-gallery.html imageCollection="client-id-only-2" %}
 
-#### Authentication based on Username and Password. 
+## Authentication based on Username and Password. 
 
 For this purpose, only the username and password need to be populated in the credentials form.
 MQTT Clients will be able to connect if they specify correct username and password.
@@ -109,7 +109,7 @@ Once you have successfully executed the command, you should see the published "t
 
 {% include images-gallery.html imageCollection="username-and-password-2" %}
 
-#### Authentication based on Client ID, Username and Password. 
+## Authentication based on Client ID, Username and Password. 
 
 For this option, you should populate Client ID, Username and Password. MQTT Clients will be able to connect if they specify correct combination of client ID, username and password.
 
@@ -152,7 +152,7 @@ Once you have successfully executed the command, you should see the published "t
 
 {% include images-gallery.html imageCollection="client-id-username-and-password-2" %}
 
-#### MQTTS (MQTT over TLS)
+## MQTTS (MQTT over TLS)
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate. {% unless (docsPrefix == "pe/") or (docsPrefix == null) %}This certificate will be used by MQTT client to validate the server certificate.{% endunless %}
 

@@ -15,7 +15,7 @@ For Basic authentication, `SECURITY_MQTT_BASIC_ENABLED` should be set to `true`,
 {% endcapture %}
 {% include templates/info-banner.md title="Check configuration" content=unauthorizedClientEnableAuth %}
 
-### Unauthorized Clients table
+## Unauthorized Clients table
 
 On the Unauthorized Clients page, you can view and filter a list of all unauthorized client connection attempts to the broker.
 The table contains the following information about each unauthorized client:
@@ -29,12 +29,12 @@ The table contains the following information about each unauthorized client:
 
 {% include images-gallery.html imageCollection="unauthorized-clients" %}
 
-### Reasons
+## Reasons
 
 Each unauthorized client connection attempt has a specific reason for access denial that TBMQ identifies and notifies users about. 
 These reasons, whether related to Basic authentication, SSL/TLS or SCRAM issues, are clearly listed in the table for easy reference.
 
-#### Basic credentials
+### Basic credentials
 
 Below are the reasons related to TBMQ Basic Credentials for why a client could not be authorized, along with generalized examples and possible solutions:
 
@@ -51,7 +51,7 @@ Below are the reasons related to TBMQ Basic Credentials for why a client could n
   * **Example**. The server cannot parse the Basic credentials due to a malformed configuration.
   * **Solution**. Verify that the credentials are correctly formed and parsable.
 
-#### X.509 Certificate Chain credentials
+### X.509 Certificate Chain credentials
 
 Below are the reasons related to SSL/TLS for why a client could not be authorized:
 
@@ -83,7 +83,7 @@ Below are the reasons related to SSL/TLS for why a client could not be authorize
   * **Example**. The server fails to parse the X.509 Certificate Chain credentials due to a malformed configuration.
   * **Solution**. Ensure that the credentials are correctly formed and parsable.
 
-### Manage Unauthorized Clients
+## Manage Unauthorized Clients
 
 To delete client that had failed to pass the authentication from the Unauthorized Clients table please follow these steps:
 1. Find the client in the _Unauthorized Clients_ table and click on the delete icon.

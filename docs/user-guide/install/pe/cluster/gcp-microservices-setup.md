@@ -16,7 +16,7 @@ This guide will help you to set up ThingsBoard in microservices mode in GKE.
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-### Pull ThingsBoard PE images from docker hub
+## Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "microservices" %}
 {% include templates/install/dockerhub/checkout.md %}

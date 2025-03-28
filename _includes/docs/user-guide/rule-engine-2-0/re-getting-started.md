@@ -30,7 +30,7 @@ DHT22 sensor can measure temperature from -40°C to +80°C.
 
 In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and log all other readings to the system log.
 
-#### Adding temperature validation node
+### Adding temperature validation node
 In Thingsboard UI go to **Rule Chains** section and open **Root Rule Chain**.
 
 {% if docsPrefix == null %}
@@ -100,7 +100,7 @@ Also, we will connect **Script Filter** node with **Log Other** node using **Fal
 
 Press Save button to apply changes.
 
-#### Validate results
+### Validate results
 For validating results we will need to create Device and submit telemetry to the Thingsboard. So go to **Devices** section and create new Device:
 
 {% if docsPrefix == null %}

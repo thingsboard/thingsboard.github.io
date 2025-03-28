@@ -6,7 +6,7 @@ In the first two parts, we explored assets and devices, added a dashboard, creat
 Before we proceed, we strongly recommend reviewing the previous lessons if you have not done so already.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="n-button add-device">Lesson 2: Dashboard states, widget actions, and Image Map widget</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="button">Lesson 2: Dashboard states, widget actions, and Image Map widget</a></p>
 
 <br>
 
@@ -510,4 +510,4 @@ In the next lesson, you will learn how to configure notification rules, add the 
 If you&#39;re ready to proceed, click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Alarm management</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="button">Lesson 4: Alarm management</a></p>

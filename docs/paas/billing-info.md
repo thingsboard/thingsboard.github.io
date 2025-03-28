@@ -41,39 +41,39 @@ You can easily pay for the subscription online, without manual paperwork.
 
 Notice: payments are non-refundable.
 
-### Subscription
+## Subscription
 
 **Subscription** tab displays all details about current subscription including current subscription plan, subscription status, current subscription period, applied discount.
 **Plan details** section displays current subscription plan limits. It is also possible to view current plan usage by clicking on **Show usage** toggle. 
 
 {% include images-gallery.html imageCollection="subscription" %}
 
-### Billing information
+## Billing information
 
 **Billing information** tab allows managing current payment method (credit or debit card details) and billing details such as company name and billing address used for invoicing.
 
 {% include images-gallery.html imageCollection="billingInfo" %}
 
-#### Payment method
+### Payment method
 
 Allows managing current credit or debit card details. You may easily update it at any time by clicking on **Update** button.
 In order to pay with the card the ***Owner name***, ***Country***, ***Card number***, ***Expiry date*** and ***CVC*** should be populated.
 
 {% include images-gallery.html imageCollection="updatePaymentMethod" %}
 
-#### Billing information
+### Billing information
 
 Consist of company contact details and billing address and is used by Stripe to generate the invoice. You may easily update this info by clicking on **Update** button.
 
 {% include images-gallery.html imageCollection="updateBillingInfo" %}
 
-### Invoices
+## Invoices
 
 **Invoices** tab displays list of automatically generated invoices. All invoices are available for download in a PDF-format.
 
 {% include images-gallery.html imageCollection="invoices" %}
 
-### Upcoming invoice
+## Upcoming invoice
 
 **Upcoming invoice** tab displays upcoming invoice preview that will be generated at the beginning of the next billing cycle. 
 

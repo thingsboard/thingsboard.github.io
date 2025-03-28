@@ -17,7 +17,7 @@ Throughout this documentation, all provided examples will employ the **curl** co
 
 {% include templates/mqtt-broker/authentication.md %}
 
-##### Get all users
+## Get all users
 
 ```bash
 curl --location --request GET "http://localhost:8083/api/admin?pageSize=50&page=0" \
@@ -28,7 +28,7 @@ curl --location --request GET "http://localhost:8083/api/admin?pageSize=50&page=
 Within the system, every user entity possesses a distinct and unique identifier known as the **id**. 
 This id serves as a reference point and can be utilized to perform operations such as _updating_ or _deleting_ users.
 
-##### Create/update user
+## Create/update user
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/admin' \
@@ -46,7 +46,7 @@ curl --location --request POST 'http://localhost:8083/api/admin' \
 
 If _$USER_ID_ is _null_ or _id_ field is absent in the request body, the new admin user will be created, otherwise the user with _$USER_ID_ identifier will be updated.
 
-##### Delete user
+## Delete user
 
 ```bash
 curl --location --request DELETE 'http://localhost:8083/api/admin/$USER_ID' \

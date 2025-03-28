@@ -1,4 +1,4 @@
-##### Authorization Rules
+#### Authorization Rules
 
 Authorization rule patterns allow controlling what topics clients can publish/subscribe to based on **regular expression syntax**:
 

@@ -12,13 +12,13 @@ The **Asset entity** is an abstract entity that helps group and manage the IoT e
 
 The **Asset entity** can be created and configured locally on the **Edge** instance, in the same way as on the **Cloud**. If the **Asset entity** has been created on the **Cloud**, it must be [assigned](/docs/{{docsPrefix}}config/provision-asset/#provisioning-from-cloud){:target="_blank"} to the **Edge** instance before use.
 
-#### Creating a New Asset
+### Creating a New Asset
 
 To create the **Asset entity** on the **Edge**, log in to your instance and go to the **Entities > Assets** section.
 
 {% include images-gallery.html imageCollection="createAssetOnEdge" showListImageTitles="true" %}
 
-#### Creating Relations
+### Creating Relations
 
 Several parameters define the [relation hierarchy](/docs/{{peDocsPrefix}}user-guide/entities-and-relations/#relations){:target="_blank"} between the entities:
 * **Direction:** Describes how the entities are associated with each other.
@@ -32,7 +32,7 @@ To **construct relations** between the Asset and another entity (e.g., _device_)
 
 {% include images-gallery.html imageCollection="deviceToAsset" showListImageTitles="true" %}
 
-#### Using Relations in Dashboards
+### Using Relations in Dashboards
 
 Once the relations between the entities are established, they can be **reflected on a dashboard**. Transmitted data from asset-related devices can be **dynamically filtered by relation type** with [aliases](/docs/{{peDocsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 

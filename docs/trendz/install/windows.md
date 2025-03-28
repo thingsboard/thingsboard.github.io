@@ -10,7 +10,7 @@ description: Installing ThingsBoard Trendz Analytics on Windows
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install Trendz Analytics on a Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
@@ -20,11 +20,11 @@ To run Trendz Analytics on a single machine you will need at least 1Gb of free R
 
 In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
 
-### Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 2. Trendz Analytics service installation
+## Step 2. Trendz Analytics service installation
 
 Download and extract the package.
 
@@ -35,7 +35,7 @@ https://dist.thingsboard.io/trendz-windows-{{ site.release.trendz_ver }}.zip
 
 **Note:** We assume you have extracted Trendz package to default location: *C:\Program Files (x86)\trendz*  
 
-### Step 3. Obtain and configure license key 
+## Step 3. Obtain and configure license key 
 
 We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
@@ -56,7 +56,7 @@ license:
     secret: "${TRENDZ_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ```
 
-### Step 4. Configure connection with ThingsBoard Platform
+## Step 4. Configure connection with ThingsBoard Platform
 
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
@@ -76,24 +76,24 @@ tb.api.url: "${TB_API_URL:http://localhost:8080}"
 ```
 {: .copy-code}
 
-### Step 5. Configure Trendz database
+## Step 5. Configure Trendz database
 Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
 service from your cloud vendor.
 
-#### PostgreSQL Installation
+### PostgreSQL Installation
 
 Download the installation file (PostgreSQL 12.17 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
 
 During PostgreSQL installation, you will be prompted for superuser (postgres) password.
 Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
 
-#### Create Database for Trendz
+### Create Database for Trendz
 
 Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create database "trendz" with owner "postgres".
 
 
-#### Configure database connection for Trendz
+### Configure database connection for Trendz
 
 Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
@@ -117,7 +117,7 @@ datasource:
 ``` 
 {: .copy-code}
 
-### Step 6. Run installation script
+## Step 6. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
@@ -136,7 +136,7 @@ Installing Trendz Analytics...
 Trendz Analytics installed successfully!
 ```
 
-### Step 7. Start Trendz service
+## Step 7. Start Trendz service
 
 Now let's start the Trendz service!
 Open the command prompt as an Administrator and execute the following command:
@@ -169,17 +169,17 @@ http://localhost:8888/trendz
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
 the server or with a domain name. Also, check that port 8888 opened for public access.
 
-##### Authentication
+### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Post-installation steps
+## Post-installation steps
 It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
 
-### Troubleshooting
+## Troubleshooting
 
 The log files are located in **logs** folder ("C:\Program Files (x86)\trendz\logs" in our case).
 
@@ -191,7 +191,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.t.TrendzApplication - Started TrendzApp
 
 In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
 
-### Windows firewall settings
+## Windows firewall settings
 
 In order to have external access to Trendz Web UI 
 you need to create a new inbound rule with Windows Firewall with Advanced Security.

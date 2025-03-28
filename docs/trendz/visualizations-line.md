@@ -34,13 +34,13 @@ Add Date field on **X-axis** and numeric telemetry to the **Y-axis**
 
 ## Line Chart with series
 
-#### Telemetry as series
+### Telemetry as series
 When you want to show multiple telemetry fields for selected device/asset you have to add required fields into 
 **Y-asix** and leave **Series** section blank. To focus in interested device you can use **Filter**. 
 
 ![image](/images/trendz/line-multi-telemetry.png)
 
-#### Group as series
+### Group as series
 In this case you want to see how same telemetry looks like for different assets/devices or categories. Add required grouping field inti **Series** section:
 
 ![image](/images/trendz/basic-line.png)

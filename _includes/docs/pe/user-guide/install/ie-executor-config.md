@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-####  Server common parameters
+##  Server common parameters
 
 <table>
 	<thead>
@@ -32,7 +32,7 @@
 </table>
 
 
-####  Spring common parameters
+##  Spring common parameters
 
 <table>
 	<thead>
@@ -63,7 +63,7 @@
 </table>
 
 
-####  Zookeeper connection parameters. Used for service discovery.
+##  Zookeeper connection parameters. Used for service discovery.
 
 <table>
 	<thead>
@@ -120,7 +120,7 @@
 </table>
 
 
-####  Integration common parameters
+##  Integration common parameters
 
 <table>
 	<thead>
@@ -175,7 +175,7 @@
 </table>
 
 
-####  Queue common parameters
+##  Queue common parameters
 
 <table>
 	<thead>
@@ -1065,7 +1065,7 @@
 </table>
 
 
-####  Tbel parameters
+##  Tbel parameters
 
 <table>
 	<thead>
@@ -1144,7 +1144,7 @@
 </table>
 
 
-####  JS parameters
+##  JS parameters
 
 <table>
 	<thead>
@@ -1247,7 +1247,7 @@
 </table>
 
 
-####  Cache parameters
+##  Cache parameters
 
 <table>
 	<thead>
@@ -1320,7 +1320,7 @@
 </table>
 
 
-####  Redis configuration parameters
+##  Redis configuration parameters
 
 <table>
 	<thead>
@@ -1525,7 +1525,7 @@
 </table>
 
 
-####  CoAP server parameters
+##  CoAP server parameters
 
 <table>
 	<thead>
@@ -1690,7 +1690,7 @@
 </table>
 
 
-####  Event parameters
+##  Event parameters
 
 <table>
 	<thead>
@@ -1745,7 +1745,7 @@
 </table>
 
 
-####  Usage statistics parameters
+##  Usage statistics parameters
 
 <table>
 	<thead>
@@ -1776,7 +1776,7 @@
 </table>
 
 
-####  Metrics parameters
+##  Metrics parameters
 
 <table>
 	<thead>
@@ -1801,7 +1801,7 @@
 </table>
 
 
-####  General management parameters
+##  General management parameters
 
 <table>
 	<thead>
@@ -1820,7 +1820,7 @@
 </table>
 
 
-####  Notification system parameters
+##  Notification system parameters
 
 <table>
 	<thead>
