@@ -1,10 +1,9 @@
 This guide uses **Minikube** as the reference environment for the self-hosted kubernetes deployment.
 If you're deploying TBMQ in self-managed cluster without cloud-specific load balancer integrations, Minikube provides a simple way to test the setup end-to-end.
 
-### Install and configure tools
+### Install Minikube
 
-To deploy TBMQ cluster, you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/),
-[helm](https://helm.sh/docs/intro/install/), and [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) tools.
+To deploy TBMQ cluster using Helm in Minikube, you’ll need to additionally install [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) tools.
 
 ### Start Minikube
 
@@ -72,77 +71,30 @@ NAME                                     TYPE           CLUSTER-IP       EXTERNA
 nginx-ingress-ingress-nginx-controller   LoadBalancer   10.101.102.99    192.168.49.2     80:32023/TCP,443:32144/TCP   2m
 ```
 
-### Add the TBMQ Cluster Helm Repository
+### Add the TBMQ Cluster Helm repository
 
-Before installing the chart, add the TBMQ Helm repository to your local Helm client:
+{% include templates/mqtt-broker/install/helm/common/add-helm-repo.md %}
 
-```bash
-helm repo add tbmq-helm-chart https://shvaykad.github.io/tbmq-helm-chart
-helm repo update
+### Retrieve and modify default chart values
+
+{% include templates/mqtt-broker/install/helm/common/retrieve-and-modify-default-chart-values.md %}
+
+By default, the Helm chart uses:
+
+```yaml
+loadbalancer:
+  type: "nginx"
 ```
-{: .copy-code}
 
-### Retrieve and Modify Default Chart Values
+which is suitable for Minikube and other generic Kubernetes environments.
 
-To customize your TBMQ deployment, download the default `values.yaml` from the chart and update it as needed:
+### Create namespace
 
-```bash
-helm show values tbmq-helm-chart/tbmq-cluster > values.yaml
-```
-{: .copy-code}
+{% include templates/mqtt-broker/install/helm/common/create-namespace.md %}
 
-> **Note:** Do not modify `installation.installDbSchema` directly in the `values.yaml`.
-This parameter is only required during the first installation to initialize the TBMQ database schema.
-Instead, we will pass it explicitly using `--set` option in the `helm install` command.
+### Install the TBMQ Helm chart
 
-By default, the chart uses `loadbalancer.type: "nginx"`, which is suitable for Minikube and other generic Kubernetes environments.
-
-### Create Namespace
-
-It's a good practice to create a dedicated namespace for your TBMQ cluster deployment:
-
-```bash
-kubectl create namespace tbmq
-```
-{: .copy-code}
-
-```bash
-kubectl config set-context --current --namespace=tbmq
-```
-{: .copy-code}
-
-This sets tbmq as the default namespace for your current context, so you don’t need to pass --namespace to every command.
-
-### Install the TBMQ Helm Chart
-
-Now you’re ready to install TBMQ using the Helm chart.
-Make sure you're in the same directory as your customized `values.yaml` file.
-
-
-```bash
-helm install my-tbmq-cluster tbmq-helm-chart/tbmq-cluster \
-  -f values.yaml \
-  --set installation.installDbSchema=true
-```
-{: .copy-code}
-
-> **Tip:** `my-tbmq-cluster` is the Helm release name. 
-You can change it to any name of your choice, which will be used to reference this deployment in future Helm commands.
-
-Once installed, you should see output similar to the following:
-
-```bash
-NAME: my-tbmq-cluster
-LAST DEPLOYED: Wed Mar 26 17:42:49 2025
-NAMESPACE: tbmq
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-TBMQ Cluster my-tbmq-cluster will be deployed in few minutes.
-Info:
-Namespace: tbmq
-```
+{% include templates/mqtt-broker/install/helm/common/install-chart.md %}
 
 ### Validate MQTT LoadBalancer
 
@@ -168,7 +120,7 @@ You should see the similar picture:
 
 ```bash
 NAME                      TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)                                                       AGE
-my-tbmq-cluster-mqtt-lb   LoadBalancer   10.101.27.40   10.101.27.40   1883:31041/TCP,8084:30151/TCP,8883:30188/TCP,8085:32706/TCP   41m
+my-tbmq-cluster-mqtt-lb   LoadBalancer   10.101.27.40   *******        1883:31041/TCP,8084:30151/TCP,8883:30188/TCP,8085:32706/TCP   41m
 ```
 {: .copy-code}
 
@@ -190,39 +142,9 @@ my-tbmq-cluster-http-lb   nginx   *       10.111.137.85   80      47m
 
 Use `ADDRESS` field of the `my-tbmq-cluster-http-lb` to connect to the cluster.
 
-You should see TBMQ login page. Use the following default credentials for System Administrator:
-
-**Username:**
-
-```
-sysadmin@thingsboard.org
-```
-{: .copy-code}
-
-**Password:**
-
-```
-sysadmin
-```
-{: .copy-code}
-
-On the first user log-in you will be asked to change the default password to the preferred one and then re-login using the new credentials.
+{% include templates/mqtt-broker/login.md %}
 
 ### Troubleshooting
 
-In case of any issues, you can examine service logs for errors. For example, to see TBMQ logs, execute the following command:
-
-```bash
-kubectl logs -f my-tbmq-cluster-tbmq-node-0
-```
-{: .copy-code}
-
-Use the next command to see the state of all statefulsets.
-
-```bash
-kubectl get statefulsets
-```
-{: .copy-code}
-
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/quick-reference/) command reference for more details.
+{% include templates/mqtt-broker/install/helm/common/helm-setup-troubleshooting.md %}
 
