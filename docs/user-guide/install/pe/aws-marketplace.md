@@ -12,17 +12,17 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 - Active [Amazon AWS](https://aws.amazon.com/){:target="_blank"} account
 
-### Step 1. Subscribe to ThingsBoard PE BYOL
+## Step 1. Subscribe to ThingsBoard PE BYOL
 
 Open [ThingsBoard Professional Edition BYOL](https://aws.amazon.com/marketplace/pp/B07V8S6JLG) product page on [AWS Marketplace](https://aws.amazon.com/marketplace).
 
 - Click the **Continue to Subscribe** button
 
-### Step 2. General configuration
+## Step 2. General configuration
 
 - Review and Accept all Terms and Conditions. Click the "Accept Terms" button.
 
@@ -32,13 +32,13 @@ Open [ThingsBoard Professional Edition BYOL](https://aws.amazon.com/marketplace/
 
 - Click the **Continue to Launch** button
 
-### Step 3. Launch your ThingsBoard PE instance 
+## Step 3. Launch your ThingsBoard PE instance 
 
-#### Step 3.1. Choose your Region
+### Step 3.1. Choose your Region
 
 Make sure you review the usage instructions. It is always a good idea to copy them to a safe place. 
 
-#### Step 3.2. Choose your EC2 Instance Type
+### Step 3.2. Choose your EC2 Instance Type
 
 You can optionally change your EC2 Instance Type, VPC and Subnet. This step is usually for advanced AWS EC2 users.  
 
@@ -48,7 +48,7 @@ For optimal performance, we recommend an instance with at least **8GB of RAM** a
 {% endcapture %}
 {% include templates/info-banner.md content=vm-min-req %}
 
-#### Step 3.3. Configure Security Group Settings
+### Step 3.3. Configure Security Group Settings
 
 Make sure you create new Security Group based on seller settings. 
 
@@ -62,25 +62,25 @@ Populate necessary Security Group name and details and save new group
 
 Click the "Save" button.
 
-#### Step 3.4. Configure Key Pair Settings
+### Step 3.4. Configure Key Pair Settings
 
 You can optionally select different or create new Key Pair for your instance. 
 Make sure you have access to the key file before you proceed. 
 We will use the key file later in this guide. 
 
-#### Step 3.5. Launch your ThingsBoard PE Instance
+### Step 3.5. Launch your ThingsBoard PE Instance
 
 Finally, click the "Launch" button.
 
 ![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-launch.png)
 
-#### Step 3.6. Open EC2 console
+### Step 3.6. Open EC2 console
 
 Once Launch is complete, you can navigate to EC2 console to find out the Public IP address of the newly created instance.
 
 ![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-complete.png)
 
-#### Step 3.7. Obtain your Public IP and EC2 Instance ID
+### Step 3.7. Obtain your Public IP and EC2 Instance ID
 
 In AWS EC2 console you need to wait while instance state will be changes to **running** and all Status checks will be finished.
 
@@ -96,7 +96,7 @@ Instance ID
 
 Please save your Instance ID and Public DNS name to a safe place. We will use them later in this guide.  
 
-### Step 4. Obtain your license secret
+## Step 4. Obtain your license secret
 
 In order to activate your ThingsBoard instance you will need to get the license secret. 
 ThingsBoard Licenses are managed by [ThingsBoard License Portal](https://license.thingsboard.io/signup).   
@@ -106,11 +106,11 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
  
 Please save your license secret to a safe place. We will use them later in this guide.
  
-### Step 5. Configure your license secret
+## Step 5. Configure your license secret
 
 Once you get the license secret, you should put it to the thingsboard configuration file. 
 
-#### Step 5.1. Connect to your Thingsboard Instance over SSH
+### Step 5.1. Connect to your Thingsboard Instance over SSH
 
 Please use the official guides: 
 
@@ -119,7 +119,7 @@ Please use the official guides:
   
 Note: You will need to use instance Public DNS name (see [Step 3.7](/docs/user-guide/install/pe/aws-marketplace/#step-37-obtain-your-public-ip-and-ec2-instance-id)) and the key file (see [Step 3.4](/docs/user-guide/install/pe/aws-marketplace/#step-34-configure-key-pair-settings))
 
-#### Step 5.2. Put License Secret to thingsboard configuration file
+### Step 5.2. Put License Secret to thingsboard configuration file
 
 Open the file for editing using the following command:
 
@@ -144,7 +144,7 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### Step 6. Launch ThingsBoard service  
+## Step 6. Launch ThingsBoard service  
 
 Execute the following command to start ThingsBoard:
 
@@ -157,7 +157,7 @@ sudo service thingsboard start
 Please allow up to 120 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 7. Connect to Thingsboard UI
+## Step 7. Connect to Thingsboard UI
 
 Now you can open this link in your browser:
 
@@ -177,7 +177,7 @@ Default password for System Administrator is Instance ID (see [Step 3.7](/docs/u
 
 Now you can proceed to the next steps.
 
-### Post-installation steps
+## Post-installation steps
 
 {% capture elastic-ip-note %}
 By default, AWS Marketplace instances **do not assign a static public IP**. This means that the **public IP may change upon instance restart**.  
@@ -198,7 +198,7 @@ To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 
     where **smth.yourcompany.com** is your DNS name from the second step
     and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).   
  
-### Frequently Asked Questions
+## Frequently Asked Questions
 
 
 **How can I enable free trial?**
@@ -311,6 +311,6 @@ For more details on managing logs and configuring log levels, refer to the <a hr
 Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>.
 <br><br>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

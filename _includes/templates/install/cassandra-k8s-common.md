@@ -1,4 +1,4 @@
-##### Deploy Cassandra stateful set
+#### Deploy Cassandra stateful set
 
 Create ThingsBoard namespace:
 
@@ -21,7 +21,7 @@ kubectl get pods
 ```
 {: .copy-code}
 
-##### Update DB settings
+#### Update DB settings
 
 Edit the ThingsBoard DB settings file and add Cassandra settings{{tbCassandraRegionComments}}
 
@@ -46,7 +46,7 @@ Expected output:
   DATABASE_TS_TYPE: cassandra
 ```
 
-##### Create keyspace
+#### Create keyspace
 
 Create *thingsboard* keyspace using following command:
 
