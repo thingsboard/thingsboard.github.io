@@ -12,7 +12,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="hero-container">
         <div id="hero-content">
             <h1 id="cdu-title-h1" class="cdu-title">Development services</h1>
-            <h2 class="cdu-sub-title">We will create your custom IoT solution that perfectly suits your business</h2>
+            <h2 class="cdu-sub-title">We create custom IoT solutions that perfectly suit your business</h2>
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
@@ -28,7 +28,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     src="/images/development-services/half-circle-progress.svg"
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
-                <span class="result-text">We offer time-guaranteed result</span>
+                <span class="result-text">Fixed Price. Firm Deadlines. Proven Results.</span>
                 <button id="Serv_DevServ_ContactUs1" 
                         class="button anchor-button gtm_button"
                         onclick="onContactUsClick(0)">Contact Us</button>
@@ -38,7 +38,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 </section>
 
 <section class="our-customers">
-    <span class="title">We created solutions for:</span>
+    <div class="section-title">Our Customers</div> 
     <div style="width: 90vw; overflow: hidden">
         <div class="customer-logos">
             <div class="logo">
@@ -98,8 +98,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="side-title" style="margin-top: 0">
                 <span>OUR SERVICES</span>
             </div>
-            <div class="section-title">From complicated widgets to diverse IoT solutions</div>
-            <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery.</div>
+            <div class="section-title">From PoC to complete IoT solutions</div>
+            <div class="section-text">Short on time or internal resources? Our Team handles it all — from configuration and development to deployment — fully tailored to your requirements and scope.  We ensure fast, reliable, and hassle-free delivery of your IoT solution.</div>
         </div>
     </div>
     <div id="content-poc" class="content-wrapper">
@@ -114,9 +114,9 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     Proof of concept
                 </div>
                 <ul class="section-list">
-                    <li>One-two layers dashboard</li>
-                    <li>Emulated data with simple logic of data processing</li>
-                    <li>Default widgets for visualization</li>
+                    <li>Two states dashboard</li>
+                    <li>Emulated data and simple processing logic</li>
+                    <li>Default widgets</li>
                     <li>1 type of user role</li>
                     <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
@@ -128,13 +128,13 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="mvp">
             <div class="left-block">
                 <div class="section-title">
-                    Minimal value product
+                    Minimum viable product
                 </div>
                 <ul class="section-list">
-                    <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, aggregation, calculations, etc</li>
+                    <li>Multiple states dashboard</li>
+                    <li>Connecting real devices and define data processing logic, aggregation, calculations, and more</li>
                     <li>Alarms and notification setup</li>
-                    <li>A diverse range of user roles and permissions are available</li>
+                    <li>Diverse range of user roles and permissions</li>
                     <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
@@ -153,13 +153,14 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="right-block">
                 <div class="section-title">
-                    Ready for the market solutions
+                    Complete IoT solutions
                 </div>
                 <ul class="section-list">
-                    <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, agracationg, calculations, etc</li>
+                    <li>Multiple states dashboard</li>
+                    <li>Connecting real devices and define data processing logic, aggregation, calculations, and more</li>
                     <li>Alarms and notification setup</li>
-                    <li>External system integrations (e.g. Billing system, analytic system, etc.)</li>
+                    <li>Diverse range of user roles and permissions</li>
+                    <li>External system integrations: billing, analytics, and more</li>
                     <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
@@ -167,13 +168,14 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         </div>
     </div>
     <div class="content-wrapper" style="background-color: #F4F8FE; margin-bottom: 100px">
-        <div class="additionally">
-            <div class="section-title">
-                We offer architecture design session for clear vision of your product
+        <div class="header">
+            <div class="side-title" style="margin-top: 0">
+                <span>ADDITIONALLY</span>
             </div>
-            <div class="section-text">
-                In case you are facing uncertainty regarding your user story, topology, or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea.
-            </div>
+            <div class="section-title">Architecture Design Sessions</div>
+            <div class="section-text">Feeling uncertain about your user stories, system topology, or overall architecture? Our expert team offers a focused one-week <b>Architecture Design Session</b> to help you gain total clarity. 
+                <br>At the end of the session, you’ll receive a comprehensive architecture document that outlines a well-defined technical roadmap, detailed system design, a clarified scope of work, and a step-by-step plan to bring your IoT solution to life.
+                <br>Start your project with confidence — built on a solid foundation.</div>
         </div>
     </div>
 </section>
