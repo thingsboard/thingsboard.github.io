@@ -19,952 +19,6 @@ $form-control-border: 1px solid rgba(0, 0, 0, 0.12)
 $button-background-color: #2A7DEC
 $font-style-normal: normal
 
-#development-services-reviews
-    .development-services-reviews-content
-        overflow: hidden
-    footer
-        position: relative
-
-    .content-wrapper
-        position: relative
-        z-index: 1
-
-    .full-review
-        display: flex
-        justify-content: center
-
-    #encyclopedia
-        padding: 20px 0
-        position: relative
-        overflow: auto
-
-        #content
-            position: inherit
-
-    .back-link
-        display: flex
-        color: #727381
-        font-size: 24px
-        font-style: normal
-        font-weight: 500
-        line-height: 30px
-        letter-spacing: 0.024px
-        padding: 10px
-        margin-bottom: 25px
-        align-items: center
-        &:hover
-            text-decoration: none
-
-        .icon
-            margin-right: 14px
-            display: flex
-
-    .header
-        display: flex
-        margin-bottom: 80px
-
-        .title
-            color: #333
-            font-size: 48px
-            font-style: normal
-            font-weight: 600
-            line-height: 68px
-            letter-spacing: 0.48px
-
-    .side-title
-        margin-top: 10px
-        margin-right: 91px
-        z-index: 2
-        span
-            display: inline-block
-            border-radius: 6px
-            padding: 7px 0px
-            color: #3622A4
-            text-align: center
-            font-size: 26px
-            font-style: normal
-            font-weight: 700
-            line-height: 30px
-            letter-spacing: 0.26px
-            text-transform: uppercase
-            width: max-content
-
-    #review-asg
-        padding-top: 50px
-        padding-bottom: 150px
-        &::before
-            content: ""
-            border-radius: 1478px
-            background: rgba(62, 103, 251, 0.16)
-            filter: blur(250px)
-            position: absolute
-            z-index: 0
-            width: 100%
-            height: 100%
-
-    #review-superbockgroup
-        padding-top: 200px
-        padding-bottom: 120px
-
-    #review-kalitec
-        padding: 120px 130px
-        background: #F7F9FC
-        z-index: 1
-
-    #review-ionatech
-        padding: 120px 130px
-        background: #F7F9FC
-        z-index: 1
-
-    .get-in-touch
-        position: relative
-        display: flex
-        background-color: white
-        padding: 100px
-
-        .content-get-in-touch
-            display: flex
-            justify-content: space-between
-            width: 100%
-
-        .section-title
-            margin-right: 94px
-
-        .info
-            margin-right: 70px
-
-        .side-title
-            margin-top: 15px
-            margin-right: 94px
-
-        .section-title
-            max-width: 700px
-            min-width: 700px
-            line-height: 68px
-            margin-right: 40px
-            color: #333
-            font-size: 48px
-            font-style: normal
-            font-weight: 600
-            line-height: 76px
-            letter-spacing: 0.48px
-            padding-bottom: 30px
-
-        .section-text
-            color: #5E5F62
-            font-size: 16px
-            font-style: normal
-            font-weight: 400
-            line-height: 28px
-            letter-spacing: 0.016px
-            max-width: 470px
-
-        .contact-form
-            padding-top: 30px
-            width: 100%
-            z-index: 2
-            .form-element
-                margin-bottom: 28px
-                label
-                    position: relative
-                    width: 100%
-                    p
-                        color: rgba(0, 0, 0, 0.54)
-                        font-size: 12px
-                        font-style: normal
-                        font-weight: 400
-                        line-height: 16px
-                        letter-spacing: 0.4px
-                        position: absolute
-                        top: -8px
-                        left: 10px
-                        z-index: 2
-                        padding: 0px 5px
-                        background: white
-
-        .cdu-form-control
-            width: 100%
-            color: #898B8F
-            font-size: 16px
-            font-style: normal
-            font-weight: 400
-            line-height: 24px
-            letter-spacing: 0.15px
-            border-radius: 4px
-            border: 1px solid rgba(0, 0, 0, 0.12)
-            padding: 16px 18px
-
-        .cdu-button
-            padding: 15px
-            border-radius: 6px
-            color: white
-            background-color: #2A7DEC
-            width: 100%
-
-    .review
-        display: flex
-        position: relative
-        flex-direction: column
-        width: 100%
-        padding: 0 290px
-        z-index: 2
-
-        .logo
-            display: flex
-            margin-bottom: 30px
-            > img
-                object-fit: contain
-                width: 100%
-                height: auto
-                max-width: fit-content
-
-        .review-header
-            color: #2E2F3B
-            font-size: 28px
-            font-style: normal
-            font-weight: 500
-            line-height: 40px
-            letter-spacing: 0.028px
-            margin-bottom: 20px
-
-        .review-body
-            max-width: 900px
-            h6, h5
-                color: #5E5F62
-                font-size: 22px
-                font-style: normal
-                font-weight: 400
-                line-height: 40px
-                letter-spacing: 0.022px
-            h6
-                margin-bottom: 22px
-
-            h5
-                margin-bottom: 5px
-
-    .bg-rectangle
-        position: absolute
-        width: 692px
-        height: 659px
-        transform: rotate(36.145deg)
-        flex-shrink: 0
-        border-radius: 60px
-        opacity: 0.3
-        background: #E9EBFB
-        z-index: 0
-
-    #rectangle1
-        top: 4%
-        left: 82%
-
-    #rectangle2
-        top: 45%
-        left: -10%
-
-    #rectangle3
-        top: 20%
-        left: 82%
-
-    #rectangle4
-        top: 45%
-        left: -10%
-
-    .modal 
-        display: none
-        position: fixed
-        align-items: center
-        justify-content: center
-        z-index: $modal-z-index
-        left: 0
-        top: 0
-        width: 100%
-        height: 100%
-        background-color: $modal-background-color
-    
-        .modal-content 
-            animation-name: animatetop
-            animation-duration: 0.4s
-            background-color: $modal-content-background-color
-            padding: 20px 20px 30px
-            border: $modal-content-border
-            width: 950px
-
-            .sub-content
-                overflow: auto
-                height: 95%
-
-            .close-button
-                display: flex
-                justify-content: end
-                
-            .close
-                width: 28px
-                height: 28px
-                cursor: pointer
-
-            .title, .sub-title, .sub-sub-title 
-                letter-spacing: 0.01em
-                text-align: center
-                display: flex
-                justify-content: center 
-                font-style: $font-style-normal
-
-            .title
-                font: $title-font
-                color: #3622A4
-
-            .sub-title
-                font: $sub-title-font
-                color: #333333
-
-            .sub-sub-title
-                font: $sub-sub-title-font
-                color: #5E5F62
-                letter-spacing: .001em
-                margin-top: 15px
-                span
-                    width: 556px
-                    height: 56px
-
-            .form-section
-                padding: 30px 40px 0px 40px
-                display: flex
-                justify-content: space-around
-                .form-element
-                    margin-bottom: 15px
-                    width: 48%
-                    label
-                        position: relative
-                        width: 100%
-                        p
-                            color: $form-element-label-color
-                            font-size: 12px
-                            line-height: 16px 
-                            font-style: $font-style-normal 
-                            font-weight: 400
-                            letter-spacing: 0.4px
-                            position: absolute
-                            top: -8px
-                            left: 10px
-                            z-index: 2
-                            padding: 0px 5px
-                            background: white
-
-                        .cdu-form-control, .cdu-text-area
-                            width: 100%
-                            color: #898B8F
-                            font-size: 16px
-                            font-style: normal
-                            font-weight: 400
-                            line-height: 24px
-                            letter-spacing: 0.15px
-                            border-radius: 4px
-                            border: $form-control-border
-                            padding: 16px 18px
-
-                        .cdu-text-area
-                            height: 170px
-
-                    .label-select
-                        select 
-                            width: 100%
-                            appearance: none
-                            -webkit-appearance: none
-                            -moz-appearance: none
-                            &::-ms-expand 
-                                display: none
-
-                        &::after
-                            content: ""
-                            position: absolute
-                            top: 40%
-                            right: 10px
-                            width: 16px
-                            height: 16px
-                            background-image: url(/images/pe/read-more-arrow.svg) no-repeat center
-                            transform: rotate(90deg)
-                            transform-origin: center center
-
-                .next
-                    width: 98%
-
-            .secondary
-                padding-top: 0px
-
-            .submit-button-container
-                display: flex
-                justify-content: center
-                .cdu-button
-                    padding: 15px
-                    border-radius: 6px
-                    color: white
-                    background-color: $button-background-color
-                    width: 400px
-
-    @media screen and (max-width: $step6)
-        .review
-            padding: 0 100px
-
-        .header
-            .title
-                font-size: 36px
-
-        .get-in-touch
-            .info
-                margin-right: 0px
-                .section-title
-                    min-width: 570px
-
-            .side-title
-                span
-                    text-wrap: nowrap
-                    width: 210px
-                    height: 44px
-
-            .section-title
-                min-width: 570px
-                height: 136px
-                line-height: 60px
-
-            .section-text
-                line-height: 40px
-
-    @media screen and (max-width: $step5)
-        .review
-                padding: 0 100px
-
-        .header
-            .title
-                font-size: 36px
-
-        .get-in-touch
-            .content-get-in-touch
-                max-width: 1280px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
-
-                .info
-                    grid-area: info
-                    margin-right: 0px
-                    .section-title
-                        width: 609px
-
-                .side-title
-                    grid-area: side-title
-                    span
-                        text-wrap: nowrap
-                        width: 210px
-                        height: 44px
-
-                .section-title
-                    width: 610px
-                    height: 136px
-
-                .contact-form
-                    grid-area: contact-form
-                    display: flex
-                    align-items: center
-                    width: 100%
-                    padding-top: 0px
-                    fieldset
-                        width: 100%
-
-        .modal 
-            .modal-content 
-                width: 800px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 130px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px      
-
-    @media screen and (max-width: $step4) and (min-width: $step3)
-        #review-kalitec
-            padding: 120px 20px
-
-        #review-ionatech
-            padding: 120px 20px
-
-        .review
-            padding: 0 20px
-
-        .get-in-touch
-            padding: 150px 50px 200px 50px
-            .content-get-in-touch
-                max-width: 1000px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
-
-                .info
-                    grid-area: info
-                    margin-right: 0px
-                    max-width: 50%
-
-                    .section-title
-                        height: auto
-                        line-height: 40px
-                        width: 100% 
-                        margin: 0px
-                        font-size: 30px
-
-                    .section-text
-                        max-width: 100%
-
-                .side-title
-                    grid-area: side-title
-                    span
-                        text-wrap: nowrap
-                        width: 210px
-                        height: 44px
-                        text-align: start
-
-                .contact-form
-                    grid-area: contact-form
-                    width: 100%
-
-            .info
-                grid-area: info
-                margin-right: 0px
-
-                .section-title
-                    width: 341px
-                    height: auto
-                    line-height: 40px
-
-                .section-text
-                    max-width: 327px
-
-            .cdu-button
-                width: 100%
-
-        .modal 
-            .modal-content 
-                width: 693px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 80px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step3)
-        .back-link
-            margin-bottom: 10px
-
-        .side-title
-            margin-bottom: 10px
-
-        .header
-            display: flex
-            flex-direction: column
-            margin-left: 0px
-            margin-bottom: 40px
-
-            .title
-                font-size: 30px
-                line-height: 48px
-
-        .review
-            padding: 0
-            max-width: 750px
-            .review-header
-                font-size: 30px
-                line-height: 48px
-
-            .review-body
-                h6, h5
-                    font-size: 14px
-                    line-height: 30px
-                h6
-                    margin-bottom: 8px
-
-                h5
-                    margin-bottom: 3px
-
-        .get-in-touch
-            padding: 50px 40px 80px 40px
-
-            .content-get-in-touch
-                flex-direction: column
-                padding: 0px
-                max-width: 750px
-                display: flex
-
-                .section-title
-                    height: fit-content
-
-            .info
-                margin-right: 70px
-
-            .side-title
-                margin-top: 15px
-                margin-right: 94px
-                span
-                    text-align: start
-
-            .section-title
-                font-size: 25px
-                line-height: 30px
-                min-width: 300px
-                margin-right: 94px
-                height: fit-content
-                max-width: fit-content
-
-            .section-text
-                font-size: 16px
-                line-height: 28px
-                max-width: fit-content
-
-            .contact-form
-                padding-top: 30px
-                max-width: 100%
-                z-index: 2
-                .form-element
-                    margin-bottom: 28px
-                    width: 100%
-                    label
-                        position: relative
-                        p
-                            font-size: 12px
-                            line-height: 16px
-
-        #review-asg
-            padding: 40px 40px
-
-        #review-superbockgroup
-            padding: 40px 40px
-
-        #review-kalitec
-            padding: 40px 40px
-            z-index: 1
-
-        #review-ionatech
-            padding: 40px 40px
-
-        .side-title
-            margin-right: 0
-            margin-bottom: 10px
-
-        .modal 
-            .modal-content 
-                width: 620px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 110px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step2)
-        .back-link
-            margin-bottom: 10px
-
-        .side-title
-            margin-bottom: 10px
-
-        .header
-            display: flex
-            flex-direction: column
-            margin-left: 0px
-            margin-bottom: 40px
-
-            .title
-                font-size: 20px
-                line-height: 30px
-
-        .review
-            padding: 0
-            .review-header
-                font-size: 20px
-
-            .review-body
-                h6, h5
-                    font-size: 14px
-                    line-height: 30px
-                h6
-                    margin-bottom: 8px
-
-                h5
-                    margin-bottom: 3px
-
-        .get-in-touch
-            padding: 50px 20px 80px 20px
-
-            .content-get-in-touch
-                flex-direction: column
-                padding: 0px
-
-            .info
-                margin-right: 70px
-
-                .section-title
-                    min-width: 300px
-
-            .side-title
-                margin-top: 15px
-                margin-right: 94px
-
-            .section-title
-                margin-right: 94px
-                font-size: 25px
-                line-height: 30px
-                height: fit-content
-                width: fit-content
-                max-width: fit-content
-
-            .section-text
-                font-size: 16px
-                line-height: 28px
-                max-width: fit-content
-
-            .contact-form
-                padding-top: 30px
-                z-index: 2
-                width: 100%
-                .form-element
-                    margin-bottom: 28px
-                    width: 100%
-                    label
-                        position: relative
-                        p
-                            font-size: 12px
-                            line-height: 16px
-
-            fieldset
-                width: 100%
-
-            .cdu-button
-                width: 100%
-
-        #review-asg
-            padding: 50px 20px 40px 20px
-
-        #review-superbockgroup
-            padding: 40px 20px
-
-        #review-kalitec
-            padding: 40px 20px
-            z-index: 1
-
-        #review-ionatech
-            padding: 40px 20px
-
-        .side-title
-            margin-right: 0
-            margin-bottom: 10px
-
-        .modal 
-            .modal-content 
-                width: 331px
-                padding: 15px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 24px
-
-                .sub-sub-title
-                    font-size: 14px
-                    span    
-                        width: 271px
-                        height: 84px
-
-                .form-section
-                    padding-top: 40px 15px 0
-                    flex-direction: column
-                    .form-element
-                        margin-bottom: 15px
-                        width: 98%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-    @media screen and (max-width: $step3) and (max-height: $verticalStep1)
-        .modal 
-            .modal-content 
-                width: 90%
-                height: 90%
-                padding: 10px
-                .title
-                    font-size: 12px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 15px
-
-                .sub-sub-title
-                    font-size: 12px
-                    margin-top: 0px
-                    span
-                        width: auto
-
-                .form-section
-                    padding-top: 10px
-                    display: flex
-                    flex-direction: row
-                    .form-element
-                        margin-bottom: 5px
-                        width: 48%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-                    .next
-                        width: 98%
-
-    @media screen and (max-width: $step2) and (max-height: $verticalStep1)
-        .modal 
-            .modal-content 
-                width: 90%
-                height: 90%
-                padding: 10px
-                .title
-                    font-size: 12px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 15px
-
-                .sub-sub-title
-                    font-size: 12px
-
-                .form-section
-                    padding-top: 10px
-                    display: flex
-                    flex-direction: row
-                    .form-element
-                        margin-bottom: 5px
-                        width: 48%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-                    .next
-                        width: 98%
-
-    @media screen and (max-width: $step3) and (min-height: $verticalStep1)
-        .modal 
-            .modal-content 
-                width: 620px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 110px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step2) and (min-height: $verticalStep1)
-        .modal 
-            .modal-content 
-                width: 90%
-                height: 90%
-                padding: 15px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 24px
-
-                .sub-sub-title
-                    font-size: 14px
-                    span    
-                        width: 271px
-                        height: 84px
-
-                .form-section
-                    padding: 40px 15px 0
-                    flex-direction: column
-                    .form-element
-                        margin-bottom: 15px
-                        width: 98%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-                .secondary
-                    padding-top: 0px
-
 #development-services
     .noToc
         position: relative
@@ -979,28 +33,33 @@ $font-style-normal: normal
             position: relative
             > *
                 width: 100%
-                max-width: 1920px
+                max-width: 2100px
                 position: relative
                 z-index: 3
+            button.secondary
+                color: #2A7DEC
+                background-color: #fff
+                border-radius: 6px
+                border: 1px solid  #2A7DEC
+                width: 200px
+                opacity: 0
+                &:hover
+                    filter: brightness(1.2)
+
+            button:hover
+                filter: brightness(1.3) contrast(.9)
+
 
         #content-mvp
             z-index: 2
             border-radius: 10px
             background: rgba(255,255,255,0.2)
-            box-shadow: 0px 0px 10px 0px rgba(21,29,111,0.08)
             backdrop-filter: blur(25px)
 
         #content-market-solution
             z-index: 1
             background-color: white
 
-        #content-get-in-touch
-            display: flex
-            flex-direction: row
-            align-items: unset
-            justify-content: space-between
-            padding: 0 130px
-            max-width: 1920px
 
     #hero
         padding-top: 80px
@@ -1008,8 +67,7 @@ $font-style-normal: normal
         padding-top: 80px
 
     #first-screen
-        height: 100vh
-        min-height: 750px
+        height: 950px
         width: 100%
         background-color: #F8F9FD
         overflow: hidden
@@ -1036,25 +94,18 @@ $font-style-normal: normal
             align-items: center
             position: relative
             margin: 0 20px
-            &::before
-                background: rgba(62, 103, 251, 0.30)
-                filter: blur(250px)
-                content: ''
-                display: block
-                position: absolute
-                width: 50%
-                height: 90%
-                margin: 18% 25%
 
             #hero-content
                 width: 100%
                 display: flex
                 flex-direction: column
                 justify-content: flex-start
+                gap: 16px
                 align-items: center
                 text-align: initial
                 z-index: 1
                 padding-top: 60px
+                margin-bottom: 20px
 
                 animation-name: slideup-in
                 animation-duration: 1000ms
@@ -1062,18 +113,17 @@ $font-style-normal: normal
                 animation-fill-mode: forwards
 
                 .cdu-title
-                    color: #313251
+                    color: #000000DE
                     text-align: center
-                    font-size: 64px
+                    font-size: 56px
                     font-style: normal
-                    font-weight: 500
+                    font-weight: 600
                     line-height: 76px
-                    letter-spacing: -0.84px
 
                 .cdu-sub-title
                     color: #4F5662
                     text-align: center
-                    font-size: 24px
+                    font-size: 20px
                     font-style: normal
                     font-weight: 400
                     line-height: 40px
@@ -1090,7 +140,7 @@ $font-style-normal: normal
 
                 .image-wrapper-icon-laptop
                     position: absolute
-                    top: 0%
+                    top: 0
                     left: 50%
 
                     .schedule
@@ -1104,7 +154,7 @@ $font-style-normal: normal
 
                 #icon-laptop
                     position: relative
-                    top: 0%
+                    top: 0
                     left: -50%
                     z-index: 1
                     opacity: 0
@@ -1129,7 +179,6 @@ $font-style-normal: normal
                     background-color: white
                     width: 344px
                     height: 401px
-                    box-shadow: 0px 0px 10px 0px rgba(16, 14, 111, 0.10)
                     border-radius: 20px
                     opacity: 0
                     animation-name: fadeoutRight
@@ -1142,6 +191,7 @@ $font-style-normal: normal
                     flex-direction: column
                     align-items: center
                     z-index: 1
+                    box-shadow: 0 0 10.65px 0 rgba(16, 14, 111, 0.10)
 
                     #progress
                         position: absolute
@@ -1191,36 +241,56 @@ $font-style-normal: normal
         z-index: 1
         border-radius: 10px
         background: rgba(255, 255, 255, 0.20)
-        box-shadow: 0px 0px 10px 0px rgba(21, 29, 111, 0.08)
         backdrop-filter: blur(25px)
 
+        & > div
+            position: relative
+            &:before, &:after
+                position: absolute
+                top: 0
+                width: 15vw
+                height: 100%
+                content: ""
+                z-index: 1
+                pointer-events: none
+            &:before
+                left: 0
+                background: linear-gradient(to right, #fff 40%, transparent 100%)
+
+            &:after
+                right: 0
+                background: linear-gradient(to left, #fff 40%, transparent 100%)
+
         .title
-            color: #3D3E40
+            color: #000000C2
             text-align: center
-            font-size: 20px
+            text-transform: uppercase
+            font-size: 16px
             font-style: normal
             font-weight: 400
             line-height: 32px
             letter-spacing: 0.2px
-            padding: 44px 0 39px 0
+            padding: 40px 0
 
         .customer-logos
-            width: 100%
             display: flex
-            justify-content: space-evenly
-            flex-wrap: wrap
-            padding-bottom: 50px
+            align-items: center
+            gap: 150px
+            animation-name: running
+            animation-duration: 25s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+            position: relative
 
             .logo
-                display: flex
-                > img
-                    object-fit: contain
-                    width: 100%
-                    height: auto
-                    max-width: fit-content
+                filter: grayscale(100%)
+                opacity: 0.6
+                &:hover
+                    filter: unset
+                    opacity: unset
 
     .cdu-services
-        padding: 140px 0 0px 0
+        padding: 140px 0 0 0
         background-color: white
 
         .header
@@ -1247,11 +317,7 @@ $font-style-normal: normal
             .section-title
                 max-width: 700px
                 min-width: 700px
-                line-height: 68px
                 margin-right: 40px
-
-            .section-text
-                margin-top: 12px
 
         .poc
             position: relative
@@ -1307,7 +373,7 @@ $font-style-normal: normal
 
         .market-solution
             position: relative
-            padding: 120px 130px 200px 130px
+            padding: 120px 130px 280px 130px
             display: flex
             justify-content: space-between
             z-index: 1
@@ -1331,183 +397,61 @@ $font-style-normal: normal
 
         .additionally
             position: relative
-            padding: 100px 130px
+            padding: 100px 0
             display: flex
             flex-direction: column
+            align-items: center
             z-index: 0
-
-            .side-title
-                z-index: 1
-                margin-bottom: 40px
-
-            .info
-                display: flex
-                z-index: 1
-                .left-block
-                    max-width: 1000px
-                    .section-title
-                        line-height: 68px
-
-                .right-block
-                    padding: 62px 0 0 200px
-                    button
-                        border-radius: 6px
-                        border: 1px solid #3622A4
-                        background: #F7F9FC
-                        color: #3622A4
-                        text-align: center
-                        font-size: 20px
-                        font-style: normal
-                        font-weight: 500
-                        line-height: 40px
-                        letter-spacing: 0.03px
-                        padding: 10px 70px
-
-            #additionally-bg1
-                position: absolute
-                width: 2000px
-                height: 2000px
-                border-radius: 50%
-                top: -100%
-                left: -50%
-                opacity: 0.6
-                background: radial-gradient(#949ef2 0%, transparent 60%)
-
-            #additionally-bg2
-                position: absolute
-                width: 2000px
-                height: 2000px
-                border-radius: 50%
-                top: -180%
-                left: 50%
-                opacity: 0.6
-                background: radial-gradient(#949ef2 0%, transparent 60%)
+            text-align: center
+            max-width: 800px !important
 
     .testimonials
         position: relative
         background: white
-        padding: 180px 0 30px 0
+        padding: 30px 0
         display: flex
         flex-direction: column
         z-index: 3
 
         #carousel-wrapper
             max-width: 1200px
+            button:hover
+                filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
 
         .upper-block
             display: flex
+            align-items: baseline
             padding: 0 130px
             .side-title
-                margin-top: 15px
                 margin-right: 94px
 
-            .section-title
-                line-height: 68px
-
-    .get-in-touch
-        position: relative
-        display: flex
-        justify-content: center
-        background-color: white
-        padding: 50px 0 100px 0
-
-        .section-title
-            margin-right: 94px
-
-        .info
-            margin-right: 70px
-            z-index: 2
-
-        .side-title
-            margin-top: 15px
-            margin-right: 94px
-            max-width: 200px
-
-        .section-title
-            max-width: 610px
-            line-height: 68px
-
-        .section-text
-            max-width: 470px
-
-        .contact-form
-            padding-top: 30px
-            z-index: 2
-            width: 400px
-            .form-element
-                margin-bottom: 28px
-                label
-                    position: relative
-                    width: 100%
-                    p
-                        color: rgba(0, 0, 0, 0.54)
-                        font-size: 12px
-                        font-style: normal
-                        font-weight: 400
-                        line-height: 16px
-                        letter-spacing: 0.4px
-                        position: absolute
-                        top: -8px
-                        left: 10px
-                        z-index: 2
-                        padding: 0px 5px
-                        background: white
-
-        .cdu-form-control
-            width: 100%
-            color: #898B8F
-            font-size: 16px
-            font-style: normal
-            font-weight: 400
-            line-height: 24px
-            letter-spacing: 0.15px
-            border-radius: 4px
-            border: 1px solid rgba(0, 0, 0, 0.12)
-            padding: 16px 18px
-
-        .cdu-button
-            padding: 11px 14px
-            color: white
-            background-color: #2A7DEC
-            width: 100%
-            font-size: 18px
-            font-weight: 500
-            text-align: center
-            text-decoration: none
-            border-radius: 4px
+        button.anchor-button
+            max-width: 290px
+            height: 60px
+            padding: 0
 
     .side-title
         z-index: 2
         span
-            display: inline-block
-            flex-direction: column
-            align-items: flex-start
-            gap: 4px
-            border-radius: 6px
-            padding: 7px 0px
-            color: #3622A4
-            text-align: center
-            font-size: 26px
-            font-style: normal
-            font-weight: 700
-            line-height: 30px
-            letter-spacing: 0.26px
             text-transform: uppercase
-            text-wrap: nowrap
-            width: max-content
+            display: inline-block
+            color: #2A7DEC
+            font-size: 24px
+            font-weight: 500
+            line-height: 48px
 
     .section-title
         color: #333
-        font-size: 48px
+        font-size: 36px
         font-style: normal
-        font-weight: 600
-        line-height: 76px
+        font-weight: 500
+        line-height: 48px
         letter-spacing: 0.48px
-        padding-bottom: 30px
+        margin-bottom: 15px
 
     .section-text
-        color: #5E5F62
-        font-size: 16px
+        color: #000000C2
+        font-size: 18px
         font-style: normal
         font-weight: 400
         line-height: 28px
@@ -1515,20 +459,29 @@ $font-style-normal: normal
 
     .section-list
         li
-            list-style-type: disc
+            list-style-type: none
             margin-left: 30px
-            color: #5E5F62
-            font-size: 22px
+            color: #000000C2
+            font-size: 16px
             font-style: normal
             font-weight: 400
-            line-height: 32px
+            line-height: 28px
             letter-spacing: 0.022px
-            padding-bottom: 24px
+            padding-bottom: 16px
             opacity: 0
+            &:before
+                content: "\f00c"
+                position: absolute
+                margin-left: -32px
+                padding: 0 5px
+                font-family: "Font Awesome 5 Free"
+                font-weight: 600
+                font-size: 14px
+                color: #2A7DEC
 
     .section-list-animation
         $delay: 500ms
-        li
+        li, button.secondary
             animation-name: slideup-in
             animation-duration: 1000ms
             animation-timing-function: cubic-bezier(.25, .46, .4, 1)
@@ -1575,13 +528,6 @@ $font-style-normal: normal
         opacity: 0.3
         background: #E9EBFB
         z-index: 0
-
-    button:hover
-        filter: brightness(1.3) contrast(.9)
-
-    #rectangle1
-        top: 20%
-        left: 82%
 
     #rectangle2
         top: 80%
@@ -1682,7 +628,7 @@ $font-style-normal: normal
                     height: 56px
 
             .form-section
-                padding: 30px 40px 0px 40px
+                padding: 30px 40px 0 40px
                 display: flex
                 justify-content: space-around
                 .form-element
@@ -1702,7 +648,7 @@ $font-style-normal: normal
                             top: -8px
                             left: 10px
                             z-index: 2
-                            padding: 0px 5px
+                            padding: 0 5px
                             background: white
 
                         .cdu-form-control, .cdu-text-area
@@ -1744,7 +690,7 @@ $font-style-normal: normal
                     width: 98%
 
             .secondary
-                padding-top: 0px
+                padding-top: 0
 
             .submit-button-container
                 display: flex
@@ -1760,13 +706,7 @@ $font-style-normal: normal
         .noToc
             .content-wrapper
                 > *
-                    max-width: 1440px
-
-            #content-get-in-touch
-                padding: 0 50px
-
-            #content-get-in-touch
-                max-width: 1440px
+                    max-width: 1540px
 
         #first-screen
             .hero-container
@@ -1784,10 +724,10 @@ $font-style-normal: normal
 
                     .schedule-block
                         top: 21%
-                        right: 8%
+                        right: 4%
 
         .cdu-services
-            padding: 100px 0 0px 0
+            padding: 100px 0 0 0
             .header
                 padding: 0 40px
 
@@ -1796,9 +736,6 @@ $font-style-normal: normal
                     margin-right: 50px
                     min-width: 198px
                     margin-top: 10px
-
-                    span
-                        padding: 12px 0px
 
                 .section-title
                     max-width: 528px
@@ -1823,8 +760,6 @@ $font-style-normal: normal
                     left: 41%
 
             .mvp
-                padding: 100px 120px 109px 50px
-
                 #solution-mvp1
                     width: 720px
 
@@ -1844,7 +779,7 @@ $font-style-normal: normal
 
                     #solution-market-solution2
                         top: 32%
-                        left: 0%
+                        left: 0
                         width: 700px
 
                 .right-block
@@ -1852,50 +787,13 @@ $font-style-normal: normal
                     max-width: 460px
 
             .additionally
-                padding: 100px 50px
-                .info
-                    .right-block
-                        button
-                            min-width: 290px
-                            height: 60px
-                            padding: 0px
+                padding: 100px 0
 
         .testimonials
-            padding: 130px 0 30px 0px
+            padding: 30px 0
 
             .upper-block
                 padding: 0 50px
-
-            .review-slider
-                .reviews
-                    margin: 0px 100px
-
-                    .review
-                        .review-header
-                            font-size: 28px
-
-                        .review-body
-                            h6, h5
-                                font-size: 18px
-
-        .get-in-touch
-            .info
-                margin-right: 0px
-                .section-title
-                    width: 609px
-
-            .side-title
-                span
-                    text-wrap: nowrap
-                    width: 210px
-                    height: 44px
-
-            .section-title
-                width: 610px
-                height: 136px
-
-            .cdu-button
-                width: 300px
 
         #number-one
             top: 20%
@@ -1907,12 +805,11 @@ $font-style-normal: normal
 
         .section-title
             font-size: 36px
-            line-height: 63px
             letter-spacing: 0.3px
 
         .section-list
             li
-                font-size: 18px
+                font-size: 16px
 
         #rectangle3
             top: 92%
@@ -1923,17 +820,6 @@ $font-style-normal: normal
             .content-wrapper
                 > *
                     max-width: 1280px
-
-            #content-get-in-touch
-                padding: 0 50px
-
-            #content-get-in-touch
-                max-width: 1280px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
 
         #first-screen
             .hero-container
@@ -1961,7 +847,7 @@ $font-style-normal: normal
                         right: 8%
 
         .cdu-services
-            padding: 100px 0 0px 0
+            padding: 100px 0 0 0
             .header
                 padding: 0 55px
                 display: grid
@@ -1977,7 +863,7 @@ $font-style-normal: normal
                     margin-top: 10px
                     grid-area: side-title
                     span
-                        padding: 6px 0px
+                        padding: 6px 0
 
                 .section-title
                     grid-area: section-title
@@ -2017,7 +903,7 @@ $font-style-normal: normal
                     width: 562px
 
             .market-solution
-                padding: 100px 65px 285px 50px
+                padding: 100px 65px 185px 50px
 
                 .left-block
                     padding-left: 50px
@@ -2027,7 +913,7 @@ $font-style-normal: normal
 
                     #solution-market-solution2
                         top: 32%
-                        left: 0%
+                        left: 0
                         width: 600px
 
                 .right-block
@@ -2035,61 +921,17 @@ $font-style-normal: normal
                     max-width: 460px
 
             .additionally
-                padding: 100px 50px
-                .info
-                    .right-block
-                        button
-                            min-width: 290px
-                            height: 60px
-                            padding: 0px
+                padding: 100px 0
+                button
+                    min-width: 290px
+                    height: 60px
+                    padding: 0
 
         .testimonials
-            padding: 130px 0 30px 0px
+            padding: 130px 0 30px 0
 
             .upper-block
                 padding: 0 50px
-
-            .review-slider
-                .reviews
-                    margin: 0px 100px
-
-                    .review
-                        .review-header
-                            font-size: 28px
-
-                        .review-body
-                            h6, h5
-                                font-size: 18px
-
-        .get-in-touch
-            padding-top: 0
-            .info
-                grid-area: info
-                margin-right: 0px
-                .section-title
-                    width: 609px
-
-            .side-title
-                grid-area: side-title
-                span
-                    text-wrap: nowrap
-                    width: 210px
-                    height: 44px
-
-            .section-title
-                width: 610px
-                height: 136px
-
-            .contact-form
-                display: flex
-                justify-content: center
-                align-items: center
-                grid-area: contact-form
-                width: 100%
-                padding-top: 0px
-
-            .cdu-button
-                width: 400px
 
         #number-one
             top: 15%
@@ -2101,12 +943,12 @@ $font-style-normal: normal
 
         .section-title
             font-size: 36px
-            line-height: 63px
             letter-spacing: 0.3px
 
         .section-list
             li
-                font-size: 18px
+                font-size: 16px
+                color: #000000C2
 
         #rectangle3
             top: 92%
@@ -2144,17 +986,6 @@ $font-style-normal: normal
             .content-wrapper
                 > *
                     max-width: 1000px
-
-            #content-get-in-touch
-                padding: 0 50px
-
-            #content-get-in-touch
-                max-width: 1000px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
 
         #first-screen
             .hero-container
@@ -2195,19 +1026,8 @@ $font-style-normal: normal
                             font-size: 16px
                             margin-bottom: 10px
 
-        .our-customers
-            .customer-logos
-                justify-content: space-around
-                padding-bottom: 50px
-                padding-right: 70px
-                padding-left: 70px
-
-                .logo
-                    display: flex
-                    padding: 10px
-
         .cdu-services
-            padding: 100px 0 0px 0
+            padding: 100px 0 0 0
             .header
                 padding: 0 55px
                 display: grid
@@ -2226,7 +1046,7 @@ $font-style-normal: normal
                 .section-text
                     grid-area: section-text
                     font-size: 14px
-                    margin-top: 0px
+                    margin-top: 0
 
             .poc
                 padding: 110px 40px
@@ -2234,7 +1054,7 @@ $font-style-normal: normal
                 .right-block
                     max-width: 260px
                     max-height: 228px
-                    margin-top: 50px
+                    margin: 50px 0
 
                 #solution-poc
                     width: 600px
@@ -2253,6 +1073,9 @@ $font-style-normal: normal
             .mvp
                 padding: 100px 35px 109px 40px
 
+                .left-block
+                    margin-bottom: 50px
+
                 #solution-mvp1
                     width: 600px
 
@@ -2262,7 +1085,7 @@ $font-style-normal: normal
                     width: 446px
 
             .market-solution
-                padding: 100px 40px 285px 40px
+                padding: 100px 40px 185px 40px
 
                 .left-block
                     padding-left: 30px
@@ -2272,7 +1095,7 @@ $font-style-normal: normal
 
                     #solution-market-solution2
                         top: 50%
-                        left: 0%
+                        left: 0
                         width: 500px
 
                 .right-block
@@ -2281,73 +1104,23 @@ $font-style-normal: normal
                     max-height: 288px
 
             .additionally
-                padding: 100px 50px
-
-                .info
-                    .left-block
-                        max-width: 600px
-
-                        .section-title
-                            line-height: 40px
-
-                    .right-block
-                        padding: 65px 0 0 70px
-
-                        button
-                            min-width: 224px
-                            height: 52px
-                            padding: 0px
+                button
+                    min-width: 224px
+                    height: 52px
+                    padding: 0
 
         .testimonials
-            padding: 130px 0 30px 0px
+            padding: 130px 0 30px 0
 
             .upper-block
                 padding: 0 50px
                 display: flex
                 flex-direction: column
+                align-items: flex-start
 
             #carousel-wrapper
                 max-width: 1000px
                 padding: 0 50px
-
-            .review-slider
-                .reviews
-                    margin: 0px 100px
-
-                    .review
-                        max-width: 800px
-                        .review-header
-                            font-size: 28px
-
-                        .review-body
-                            h6, h5
-                                font-size: 18px
-
-        .get-in-touch
-            padding: 0px 0 200px 0
-
-            .info
-                grid-area: info
-                margin-right: 0px
-
-            .side-title
-                grid-area: side-title
-                span
-                    text-wrap: nowrap
-                    width: 210px
-                    height: 44px
-                    text-align: start
-
-            .section-title
-                max-width: 341px
-                height: auto
-                line-height: 40px
-
-            .section-text
-                max-width: 327px
-
-            .contact-form
-                grid-area: contact-form
 
         #number-one
             top: 15%
@@ -2373,7 +1146,7 @@ $font-style-normal: normal
         .section-list
             li
                 font-size: 14px
-                padding: 0px
+                padding: 0
 
         #rectangle3
             top: 92%
@@ -2475,14 +1248,9 @@ $font-style-normal: normal
                 > *
                     max-width: 761px
 
-            #content-get-in-touch
-                padding: 0 50px
-
-            #content-get-in-touch
-                max-width: 761px
-                display: flex
-
         #first-screen
+            height: 70vh
+            min-height: unset
             &::before
                 transform: translate(-56%, -5%) scale(3.5)
                 animation-name: backgroundFadeoutMobile
@@ -2490,7 +1258,7 @@ $font-style-normal: normal
                 .hero-image
                     width: 671px
                     #icon-laptop
-                        width: unset
+                        width: 560px
 
                     .schedule-block
                         width: 212px
@@ -2544,7 +1312,7 @@ $font-style-normal: normal
                         display: none
 
         .cdu-services
-            padding: 60px 0 0px 0
+            padding: 60px 0 0 0
             .header
                 flex-direction: column
                 padding: 0 20px
@@ -2591,7 +1359,7 @@ $font-style-normal: normal
                 padding: 60px 20px 260px 20px
                 flex-direction: column-reverse
                 .left-block
-                    padding-left: 0px
+                    padding-left: 0
                     #solution-market-solution1
                         width: 90%
 
@@ -2601,25 +1369,17 @@ $font-style-normal: normal
                         left: 7%
 
                 .right-block
-                    padding-top: 0px
+                    padding-top: 0
+                    margin-bottom: 130px
                     .section-title
-                        padding-bottom: 0px
+                        padding-bottom: 0
 
             .additionally
                 padding: 40px 20px
                 .side-title
                     margin-bottom: 10px
-
-                .info
-                    flex-direction: column
-                    .left-block
-                        max-width: 1000px
-                        .section-title
-                            line-height: 40px
-                    .right-block
-                        padding: 30px 0 0 0px
-                        button
-                            padding: 5px 50px
+                    button
+                        padding: 5px 50px
 
             .header-animation
                 .section-title
@@ -2627,39 +1387,15 @@ $font-style-normal: normal
                     line-height: 48px
                     font-size: 30px
 
-        .get-in-touch
-            padding: 40px 0
-            .section-title
-                margin-right: 0
-                line-height: 30px
-                height: unset
-                max-width: fit-content
-
-            .side-title
-                span
-                    text-wrap: nowrap
-                    height: fit-content
-                    width: fit-content
-
-            .contact-form
-                width: 100%
-
         .noToc
             position: relative
 
-            #content-get-in-touch
-                flex-direction: column
-                padding: 0 20px
 
         .our-customers
             .title
                 font-size: 14px
                 line-height: 32px
-                padding: 44px 0 39px 0
-
-            .customer-logos
-                .logo
-                    padding: 20px
+                padding: 40px 0
 
         .testimonials
             padding: 80px 0 30px 0
@@ -2669,45 +1405,24 @@ $font-style-normal: normal
                 .side-title
                     margin-bottom: 10px
                 .section-title
-                    margin-bottom: 0px
-                    padding-bottom: 0px
+                    margin-bottom: 0
+                    padding-bottom: 0
 
             #carousel-wrapper
                 max-width: 870px
-
-            .owl-carousel.owl-theme.reviews-carousel
-                margin: 20px 0 15px
-
-                .owl-stage-outer
-                    .owl-stage
-                        .owl-item
-                            padding: 0 45px
-
-                .review
-                    .review-header
-                        font-size: 20px
-                        line-height: 30px
-
-                    .review-body
-                        h6, h5
-                            font-size: 14px
-                            line-height: 20px
-
-                    .full-review-link
-                        font-size: 16px
 
         .side-title
             margin-bottom: 10px
             span
                 font-size: 20px
                 line-height: 20px
-                padding: 8px 0px
+                padding: 8px 0
 
         .section-title
             font-size: 30px
             line-height: 40px
             margin-bottom: 10px
-            padding-bottom: 0px
+            padding-bottom: 0
 
         .section-text
             font-size: 14px
@@ -2719,10 +1434,6 @@ $font-style-normal: normal
                 font-size: 14px
                 line-height: 32px
                 padding-bottom: 10px
-
-        #rectangle1
-            top: 20%
-            left: 82%
 
         #rectangle2
             top: 80%
@@ -2786,9 +1497,6 @@ $font-style-normal: normal
                         width: 250px
 
     @media screen and (max-width: $step2) and (min-height: $verticalStep1)
-        .noToc
-            #content-get-in-touch
-                display: flex
         #first-screen
             &::before
                 transform: translate(-56%, -5%) scale(3.5)
@@ -2797,7 +1505,7 @@ $font-style-normal: normal
                 .hero-image
                     width: 100%
                     #icon-laptop
-                        width: unset
+                        width: 360px
 
             .hero-container
                 #hero-content
@@ -2820,7 +1528,7 @@ $font-style-normal: normal
                         .schedule
                             display: block
                             border-radius: 6px
-                            background: #3622A4
+                            background: #2A7DEC
                             height: 60px
                             padding: 0 60px
                             transform: translateX(-50%)
@@ -2832,7 +1540,7 @@ $font-style-normal: normal
                         display: none
 
         .cdu-services
-            padding: 60px 0 0px 0
+            padding: 60px 0 0 0
             .header
                 flex-direction: column
                 padding: 0 20px
@@ -2876,7 +1584,7 @@ $font-style-normal: normal
                 padding: 60px 20px 215px 20px
                 flex-direction: column-reverse
                 .left-block
-                    padding-left: 0px
+                    padding-left: 0
                     #solution-market-solution1
                         width: 90%
 
@@ -2886,31 +1594,16 @@ $font-style-normal: normal
                         left: 7%
 
                 .right-block
-                    padding-top: 0px
+                    padding-top: 0
                     .section-title
-                        padding-bottom: 0px
+                        padding-bottom: 0
 
             .additionally
                 padding: 40px 20px
                 .side-title
                     margin-bottom: 10px
-
-                .info
-                    flex-direction: column
-                    .left-block
-                        max-width: 1000px
-                        .section-title
-                            line-height: 30px
-                    .right-block
-                        padding: 30px 0 0 0px
-                        button
-                            padding: 5px 50px
-
-                #additionally-bg1
-                    width: 200%
-                    height: 200%
-                    top: -50%
-                    left: -90%
+                    button
+                        padding: 5px 50px
 
             .header-animation
                 .section-title
@@ -2918,43 +1611,14 @@ $font-style-normal: normal
                     line-height: 30px
                     font-size: 20px
 
-        .get-in-touch
-            padding: 40px 0
-            .section-title
-                margin-right: 0
-                line-height: 30px
-                height: unset
-            .side-title
-                span
-                    text-wrap: nowrap
-                    height: fit-content
-                    width: fit-content
-
-            .contact-form
-                width: 100%
-
-            fieldset
-                width: 100%
-
-            .cdu-button
-                width: 100%
-
         .noToc
             position: relative
-
-            #content-get-in-touch
-                flex-direction: column
-                padding: 0 20px
 
         .our-customers
             .title
                 font-size: 14px
                 line-height: 32px
-                padding: 44px 0 39px 0
-
-            .customer-logos
-                .logo
-                    padding: 20px
+                padding: 40px 0
 
         .testimonials
             padding: 80px 0 30px 0
@@ -2964,32 +1628,10 @@ $font-style-normal: normal
                 .side-title
                     margin-bottom: 10px
                 .section-title
-                    margin-bottom: 0px
-                    padding-bottom: 0px
+                    margin-bottom: 0
+                    padding-bottom: 0
             #carousel-wrapper
                 padding: 0
-
-            .owl-carousel.owl-theme.reviews-carousel
-                margin: 20px 0 15px
-
-                .owl-stage-outer
-                    .owl-stage
-                        .owl-item
-                            padding: 0 45px
-
-                .review
-                    padding: 0
-                    .review-header
-                        font-size: 20px
-                        line-height: 30px
-
-                    .review-body
-                        h6, h5
-                            font-size: 14px
-                            line-height: 20px
-
-                    .full-review-link
-                        font-size: 16px
 
         .side-title
             margin-bottom: 10px
@@ -3000,7 +1642,7 @@ $font-style-normal: normal
             font-size: 20px
             line-height: 30px
             margin-bottom: 10px
-            padding-bottom: 0px
+            padding-bottom: 0
 
         .section-text
             font-size: 14px
@@ -3012,10 +1654,6 @@ $font-style-normal: normal
                 font-size: 14px
                 line-height: 32px
                 padding-bottom: 10px
-
-        #rectangle1
-            top: 20%
-            left: 82%
 
         #rectangle2
             top: 80%
@@ -3079,6 +1717,11 @@ $font-style-normal: normal
                         label
                             .cdu-text-area
                                 height: 90px
+@keyframes running
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-2825px)
 
 @keyframes slideup-in
     from

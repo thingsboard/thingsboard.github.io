@@ -16,20 +16,11 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
-                <img
-                    id="icon-laptop"
-                    srcset="/images/development-services/laptop-with-dashboard_360x230_1x.png 360w, /images/development-services/laptop-with-dashboard_560x358_1x.png 560w, /images/development-services/laptop-with-dashboard_1127x720_1x.png 1127w, /images/development-services/laptop-with-dashboard_2254x1440_2x.png 2254w"
-                    sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
-                    src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
-                    alt="Laptop with a dashboard"/>
+                <img id="icon-laptop" src="/images/development-services/laptop-with-dashboard.png" alt="Laptop with a dashboard"/>
                 <button class="button schedule anchor-button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
-                <img
-                    id="icon-phone"
-                    srcset="/images/development-services/phone-with-dashboard_459x552_1x.png 1x, /images/development-services/phone-with-dashboard_918x1104_2x.png 2x"
-                    src="/images/development-services/phone-with-dashboard_459x552_1x.png"
-                    alt="Phone with a dashboard"/>
+                <img id="icon-phone" src="/images/development-services/phone-with-dashboard.png" alt="Phone with a dashboard"/>
             </div>
             <div class="schedule-block">
                 <img
@@ -48,28 +39,63 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 
 <section class="our-customers">
     <span class="title">We created solutions for:</span>
-    <div class="customer-logos">
-        <div class="logo">
-            <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-        </div>
-        <div class="logo">
-            <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-        </div>
-        <div class="logo">
-            <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-        </div>
-        <div class="logo">
-            <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
-        </div>
-        <div class="logo">
-            <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+    <div style="width: 90vw; overflow: hidden">
+        <div class="customer-logos">
+            <div class="logo">
+                <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+            </div>
+            <div class="logo">
+                <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
+            </div>
         </div>
     </div>
 </section>
 <section class="cdu-services">
     <div class="content-wrapper">
         <div class="header">
-            <div class="side-title">
+            <div class="side-title" style="margin-top: 0">
                 <span>OUR SERVICES</span>
             </div>
             <div class="section-title">From complicated widgets to diverse IoT solutions</div>
@@ -79,26 +105,9 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div id="content-poc" class="content-wrapper">
         <div class="poc">
             <div class="left-block">
-                <img
-                    id="solution-poc"
-                    srcset="/images/development-services/solution-coinify_mobile.png 360w, /images/development-services/solution-coinify.png 1900w"
-                    sizes="(max-width: 672px) 360px, 1900px"
-                    src="/images/development-services/solution-coinify.png"
-                    alt="Custom solution">
-                <img
-                    id="solution-widget-1"
-                    class="absolute-image secondary-image"
-                    srcset="/images/development-services/solution-widget-1_mobile.png 360w, /images/development-services/solution-widget-1.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-widget-1.png"
-                    alt="Custom solution widget pie chart">
-                <img
-                    id="solution-widget-2"
-                    srcset="/images/development-services/solution-widget-2_mobile.png 360w, /images/development-services/solution-widget-2.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    class="absolute-image secondary-image"
-                    src="/images/development-services/solution-widget-2.png"
-                    alt="Custom solution widet value card with graph">
+                <img id="solution-poc" src="/images/development-services/solution-coinify.png" alt="Custom solution">
+                <img id="solution-widget-1" class="absolute-image secondary-image" src="/images/development-services/solution-widget-1.svg" alt="Custom solution widget pie chart">
+                <img id="solution-widget-2" class="absolute-image secondary-image" src="/images/development-services/solution-widget-2.svg" alt="Custom solution widet value card with graph">
             </div>
             <div class="right-block">
                 <div class="section-title">
@@ -109,6 +118,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <li>Emulated data with simple logic of data processing</li>
                     <li>Default widgets for visualization</li>
                     <li>1 type of user role</li>
+                    <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
             <img id="number-one" class="absolute-image" src="/images/development-services/number-1.svg" alt="background number one">
@@ -122,25 +132,15 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <ul class="section-list">
                     <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, agriculture, calculations, etc</li>
+                    <li>Real connected devices with concrete logic of data processing, aggregation, calculations, etc</li>
                     <li>Alarms and notification setup</li>
                     <li>A diverse range of user roles and permissions are available</li>
+                    <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
             <div class="right-block">
-                <img
-                    id="solution-mvp1"
-                    srcset="/images/development-services/solution-mvp_mobile.png 360w, /images/development-services/solution-mvp.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-mvp.png"
-                    alt="Custom solution mvp">
-                <img
-                    id="solution-widget-3"
-                    srcset="/images/development-services/solution-widget-3_mobile.png 360w, /images/development-services/solution-widget-3.svg 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    class="absolute-image secondary-image"
-                    src="/images/development-services/solution-widget-3.svg"
-                    alt="Custom solution widget dark card with pie chart">
+                <img id="solution-mvp1" src="/images/development-services/solution-mvp.png" alt="Custom solution mvp">
+                <img id="solution-widget-3" class="absolute-image secondary-image" src="/images/development-services/solution-widget-3.svg" alt="Custom solution widget dark card with pie chart">
             </div>
             <img id="number-two" class="absolute-image" src="/images/development-services/number-2.svg" alt="Background number two">
         </div>
@@ -148,19 +148,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div id="content-market-solution" class="content-wrapper">
         <div class="market-solution">
             <div class="left-block">
-                <img
-                    id="solution-market-solution1"
-                    srcset="/images/development-services/solution-market-solution_mobile.png 360w, /images/development-services/solution-market-solution.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-market-solution.png"
-                    alt="Custom solution market solution">
-                <img
-                    id="solution-market-solution2"
-                    class="absolute-image base-image"
-                    srcset="/images/development-services/solution-market-solution2_mobile.png 360w, /images/development-services/solution-market-solution2.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-market-solution2.png"
-                    alt="Custom solution market solution: dashboard with trucks">
+                <img id="solution-market-solution1" src="/images/development-services/solution-market-solution.png" alt="Custom solution market solution">
+                <img id="solution-market-solution2" class="absolute-image base-image" src="/images/development-services/solution-market-solution2.png" alt="Custom solution market solution: dashboard with trucks">
             </div>
             <div class="right-block">
                 <div class="section-title">
@@ -171,36 +160,22 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <li>Real connected devices with concrete logic of data processing, agracationg, calculations, etc</li>
                     <li>Alarms and notification setup</li>
                     <li>External system integrations (e.g. Billing system, analytic system, etc.)</li>
+                    <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
             <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
         </div>
     </div>
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="background-color: #F4F8FE; margin-bottom: 100px">
         <div class="additionally">
-            <div class="side-title">
-                <span>additionally</span>
+            <div class="section-title">
+                We offer architecture design session for clear vision of your product
             </div>
-            <div class="info">
-                <div class="left-block">
-                    <div class="section-title">
-                        We offer architecture design session for clear vision of your product
-                    </div>
-                    <div class="section-text">
-                        In case you are facing uncertainty regarding your user story, topology, or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea.
-                    </div>
-                </div>
-                <div class="right-block">
-                    <button id="Serv_DevServ_ContactUs2" 
-                            class="anchor-button gtm_button" 
-                            onclick="onContactUsClick(1)">Contact Us</button>
-                </div>
+            <div class="section-text">
+                In case you are facing uncertainty regarding your user story, topology, or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea.
             </div>
-            <span id="additionally-bg1"></span>
-            <span id="additionally-bg2"></span>
         </div>
     </div>
-    <svg id="rectangle1" class="bg-rectangle"></svg>
 </section>
 
 <section class="testimonials">
@@ -214,31 +189,9 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
         </div>
         <div id="carousel-wrapper">
-            {% include carousel.liquid collectionMap = 'development-services-testimonials-carousel' nonActiveItemsVisibility = false overlay = false dotButtonMode = 'circle' navMode = 'fatArrow' contentDirection = 'column' enableLinkArrow = false titleSize = '28px' descriptionSize = '22px' linkSize = '22px' titleLineHeight = '40px' descriptionLineHeight = '40px' descriptionColor = '#5e5f62' linkColor = '#3622a4' %}
+            {% include carousel.liquid collectionMap = 'development-services-testimonials-carousel' nonActiveItemsVisibility = false autoplay = false  overlay = false contentDirection = 'column' titleSize = '28px' descriptionSize = '16px'  titleLineHeight = '40px'  descriptionColor = '#000000DE' %}
         </div>
-    </div>
-</section>
-
-<section id="get-in-touch" class="get-in-touch">
-    <div class="content-wrapper">
-        <div id="content-get-in-touch">
-            <div class="side-title">
-                <span id="side-title-heading">get in touch</span>
-            </div>
-            <div class="info">
-                <div class="section-title">Ready to launch your unique product?</div>
-                <div class="section-text">Leave us your name and email and we will get back to you within 2 business days</div>
-            </div>
-            <div>
-                <fieldset>
-                    <div class="submit-button-container">
-                        <button id="Serv_DevServ_GetInTouch" 
-                                onclick="onContactUsClick(2)" 
-                                class="cdu-button anchor-button gtm_button">Get in touch</button>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
+        <button id="Serv_DevServ_ContactUs2" class="button anchor-button gtm_button" onclick="onContactUsClick(1)">Contact Us</button>
     </div>
 </section>
 
