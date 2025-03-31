@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 ThingsBoard supports [Multi-tenancy](https://en.wikipedia.org/wiki/Multitenancy) right out of the box. 
 
@@ -15,7 +15,7 @@ Tenant may have multiple [customers](/docs/{{docsPrefix}}user-guide/ui/customers
 {% endif %}
 
 {% if docsPrefix == "pe/" %}
-### Сreate new tenant
+## Сreate new tenant
 
 The **System administrator** is able to create tenant entities.
 
@@ -25,7 +25,7 @@ To add a new tenant, you should:
 
 Learn more about tenant profiles [here](/docs/{{docsPrefix}}user-guide/tenant-profiles).
 
-### Сreate tenant administrator
+## Сreate tenant administrator
 
 System administrator can create multiple **users with tenant administrator role** for each tenant.
 
@@ -37,7 +37,7 @@ The tenant can have multiple users.
 
 {% include images-gallery.html imageCollection="multiple-users-pe" %}
 
-### Edit tenant or user
+## Edit tenant or user
 
 In the Tenant details you can edit all fields.
 
@@ -51,7 +51,7 @@ The steps are similar to how we edit the tenant:
 
 {% include images-gallery.html imageCollection="user-edit-pe" showListImageTitles="true" %}
 
-### Delete tenant or user
+## Delete tenant or user
 
 You can delete the **Tenant** at once with all its users. To do this, click on the "trash" icon and then also confirm the deletion by clicking on "Yes".
 
@@ -61,7 +61,7 @@ Also, you can delete any **user** from the Tenant. To do this, go to the Tenant,
 
 {% include images-gallery.html imageCollection="user-delete-pe" %}
 
-### Login as tenant administrator
+## Login as tenant administrator
 
 If you need to log in as a tenant, just open the tenant group and click the icon opposite to the user account to log in as this tenant.
 

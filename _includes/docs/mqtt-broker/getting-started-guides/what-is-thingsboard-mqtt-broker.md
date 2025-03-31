@@ -24,7 +24,7 @@ which ensures low-latency message delivery, data durability, and horizontal scal
 Commencing in 2018, an active and continuous development process was initiated, leading to the integration of the broker into commercial applications as of 2021. 
 Following its successful deployment in production environments, it was determined in early 2023 that a public version of the broker should be made available.
 
-#### TBMQ Features
+## TBMQ Features
 
 * All MQTT v3.x features
 * All MQTT v5.0 features
@@ -38,7 +38,7 @@ Following its successful deployment in production environments, it was determine
 * MQTT WebSocket client
 * Kafka topics and consumer groups monitoring
 
-#### Architecture
+## Architecture
 
 TBMQ is designed to be:
 
@@ -49,6 +49,6 @@ TBMQ is designed to be:
 
 See [**TBMQ Architecture**](/docs/mqtt-broker/architecture) for more details.
 
-#### Ready to get started?
+## Ready to get started?
 
 <p><a href="/docs/mqtt-broker/getting-started/" class="button">Hello World Application</a></p>

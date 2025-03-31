@@ -4,7 +4,7 @@ title: IoT Gateway installation from sources.
 
 ---
 
-### Installation from sources
+## Installation from sources
 
 To install ThingsBoard Gateway from sources, you should follow steps below:    
   
@@ -65,7 +65,7 @@ python3 ./thingsboard_gateway/tb_gateway.py
 ```
 {: .copy-code}
 
-### Build local docker image
+## Build local docker image
 
 In order to build local docker image, follow the next steps:
 
@@ -83,7 +83,7 @@ docker build -t local-gateway .
 ```
 {: .copy-code}
 
-### Hot Reloader
+## Hot Reloader
 
 If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any project file.
 

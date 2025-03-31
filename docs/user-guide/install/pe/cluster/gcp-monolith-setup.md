@@ -18,7 +18,7 @@ This guide will help you to set up ThingsBoard in monolith mode using [Google Ku
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-### Pull ThingsBoard PE images from docker hub
+## Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}

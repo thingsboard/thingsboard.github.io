@@ -5,7 +5,7 @@ title: IoT Gateway upgrade instructions.
 ---
 
 
-### Upgrade instructions
+## Upgrade instructions
 
 There are 2 ways for upgrade ThingsBoard IoT Gateway, depends on a version that you want (**Release** or **Develop**).
 

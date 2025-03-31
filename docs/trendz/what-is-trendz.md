@@ -14,7 +14,7 @@ With Trendz you can:
 - Filter, group and aggregate data in different dimensions
 - Share the analysis with other users by embedding visualizations into a dashboard
 
-#### Ready to get started?
+## Ready to get started?
 
 <p><a href="/docs/trendz/getting-started/" class="button">Hello World analytics</a></p>
 

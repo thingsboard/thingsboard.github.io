@@ -5,7 +5,7 @@ Configure HTTP(S) Load Balancer to access web interface of your ThingsBoard inst
    
 See links/instructions below on how to configure each of the suggested options.
 
-#### HTTP Load Balancer
+### HTTP Load Balancer
 
 Execute the following command to deploy plain http load balancer:
 
@@ -33,7 +33,7 @@ Now, you may use the address (the one you see instead of 34.111.24.134 in the co
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
 
-#### HTTPS Load Balancer
+### HTTPS Load Balancer
 
 For using ssl certificates we can add our certificate directly in Azure ApplicationGateWay using command:
 ```

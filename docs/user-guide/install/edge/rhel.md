@@ -21,7 +21,7 @@ This guide provides step-by-step instructions for installing **ThingsBoard Edge*
 
 {% include templates/edge/install/manual-install-instructions-intro.md %}
 
-#### Pre-installation step 
+### Pre-installation step 
 Before continue to installation execute the following commands in order to install necessary tools:
 
 ```bash

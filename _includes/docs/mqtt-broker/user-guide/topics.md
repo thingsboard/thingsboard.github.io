@@ -4,7 +4,7 @@
 
 This guide explains how MQTT topics work, how to use wildcards in topic strings, and provide examples to help you effectively utilize this feature in your MQTT deployments.
 
-### Topics
+## Topics
 
 In MQTT, topics are fundamental to the communication model. They act as addressing mechanisms that enable publishers and subscribers to exchange messages.
 There are two types of topics:
@@ -19,7 +19,7 @@ This separator divides the topic tree into "topic levels".
 For example, a topic may look like `sensors/livingroom/temperature`, where `sensors`, `livingroom` and `temperature` are topic levels.
 Such a structure facilitates effective control over message routing, especially when using wildcards in topics.
 
-### Wildcards
+## Wildcards
 
 Wildcards in MQTT topics provide powerful mechanisms to simplify the subscription to multiple topics and reduce the complexity of managing topic subscriptions in dynamic environments. They enable subscribers to use patterns to match multiple topic hierarchies with a single subscription.
 
@@ -27,7 +27,7 @@ MQTT supports two types of wildcards:
 1. **Multi-level wildcard (`#`)** - matches any number of levels at the end of the topic string.
 2. **Single-level wildcard (`+`)** - matches one level in the topic hierarchy.
 
-#### Multi-level wildcard
+### Multi-level wildcard
 
 The number sign (`#`) is a wildcard character that matches all remaining levels in the topic hierarchy. It represents the parent and any number of child levels.
 
@@ -66,7 +66,7 @@ These topic filters are **invalid** because the `#` wildcard is not correctly po
 * `sensors/#/`
 * `sensors/#/temperature`
 
-#### Single-level wildcard
+### Single-level wildcard
 
 The plus character (`+`) represents a single level in the topic hierarchy. It can be used to subscribe to topics with a common pattern at one specific level.
 
@@ -103,7 +103,7 @@ These topic filters are **invalid** because the `+` wildcard is not correctly po
 * `sensors/home+`
 * `sensors/+home`
 
-#### Wildcards usage examples
+### Wildcards usage examples
 
 The next examples demonstrate the flexibility and depth of subscription patterns possible with different positions of single-level and multi-level wildcards in MQTT topics.
 
@@ -165,7 +165,7 @@ The next examples demonstrate the flexibility and depth of subscription patterns
   </tbody>
 </table>
 
-### Best practices
+## Best practices
 
 When designing MQTT topics, it's important to follow best practices to ensure clarity, consistency, and manageability. 
 
@@ -176,7 +176,7 @@ When designing MQTT topics, it's important to follow best practices to ensure cl
 * Avoid very deep hierarchies as they can become difficult to manage over time. Use clear, descriptive, and hierarchical topic names, for example `building/floor1/room1/temperature`.
 * Avoid non-printable characters to ensure compatibility across different systems and prevent unexpected issues. Try to use only ASCII characters instead.
 
-### Multiple subscriptions match
+## Multiple subscriptions match
 
 In MQTT, it's possible for a client to have multiple subscriptions where more than one subscription matches the topic of a published message.
 
@@ -189,7 +189,7 @@ If a message is published to the topic `sensors/room1/temperature`, **both subsc
 In this case, TBMQ will not send the message to each matching subscription. 
 Instead, it will deliver the message to the **subscription with the highest QoS**, or to the first matching subscription if multiple have the same QoS.
 
-### Configuring maximum topic segments
+## Configuring maximum topic segments
 
 In TBMQ configuration, you can define the maximum number of forward slashes (`/`) that can be used in a topic.
 
@@ -200,7 +200,7 @@ Each additional segment increases the complexity of topic matching and routing w
 
 For example, if you set `MQTT_TOPIC_MAX_SEGMENTS_COUNT` to `2`, the broker will throw an error if a user tries to use more than two forward slashes (`/`) in the topic, such as in `sensors/floor1/room1/temperature` that contains `3` forward slashes.
 
-### Shared subscription topics
+## Shared subscription topics
 
 It is also worth mentioning feature [shared subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) that are used to distribute messages across multiple subscribers, allowing for load balancing and efficient use of resources.
 
