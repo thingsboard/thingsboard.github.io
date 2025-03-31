@@ -27,7 +27,7 @@ Before setting up the integration, ensure the following:
 - An external service ready to receive Kafka message (e.g. **Confluent Cloud**).
 - A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
 
-### Create Integration
+### Create TBMQ Kafka Integration
 
 1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
 2. Select **Kafka** as the integration type and click **Next**.
@@ -45,6 +45,11 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-b
 <ol start="5">
   <li>Click <strong>Add</strong> to save the integration.</li>
 </ol>
+
+> You can test the connectivity to the configured Kafka brokers by using the 'Check connection' button. 
+> This action creates an admin client that connects to the Kafka cluster and verifies whether the specified topic exists on the target brokers.
+> Even if the topic is missing, you can still proceed with creating the integration. 
+> If the Kafka cluster has `auto.create.topics.enable` set to `true`, the topic will be automatically created when the first message is published.
 
 #### Topic Filters
 

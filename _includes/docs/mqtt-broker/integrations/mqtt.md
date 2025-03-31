@@ -45,6 +45,9 @@ Before setting up the integration, ensure the following:
 {% endcapture %}
 {% include templates/warn-banner.md content=mqtt_integration_localhost_dynamic_topic %}
 
+> You can test the connectivity to the configured MQTT broker by using the 'Check connection' button. 
+> This will create an MQTT client that attempts to connect to the broker and then immediately disconnects.
+
 #### Topic Filters
 
 {% include templates/mqtt-broker/user-guide/integrations/topic-filters.md %}

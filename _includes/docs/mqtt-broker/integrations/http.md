@@ -36,7 +36,7 @@ Once the HTTP Integration is created:
 
 {% include images-gallery.html imageCollection="tb-endpoint-url" %}
 
-### Create TBMQ Integration
+### Create TBMQ HTTP Integration
 
 1. Go to the **Integrations** page and click the "+" button to create a new integration.
 2. Select **HTTP** as the integration type and click **Next**.
@@ -46,6 +46,8 @@ Once the HTTP Integration is created:
 6. Click **Add** to save the integration.
 
 {% include images-gallery.html imageCollection="add-http-integration" %}
+
+> You can test the connectivity to the configured HTTP endpoint by sending a HEAD request using the 'Check connection' button.
 
 #### Topic Filters
 

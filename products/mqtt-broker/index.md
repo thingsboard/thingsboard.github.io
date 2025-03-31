@@ -341,7 +341,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     </div>
                     <div class="content">
                         <div class="tags">
-                            <a href="/blog/category/updates/">Updates</a>
+                            <a href="/blog/category/tech/">Tech</a>
                         </div>
                         <a class="title" href="/blog/1-million-reasons-to-choose-tbmq-as-high-performance-mqtt-broker/">1 Million reasons to choose TBMQ as a high-performance MQTT broker</a>
                         <p>Can an open-source MQTT broker handle one million messages per second for persistent sessions? TBMQ 2.x proves it can! Even more importantly, it achieves this with no single point of failure and ensures no data loss, even when hardware fails, making it a robust self-hosted MQTT broker solution for IIoT applications</p>
