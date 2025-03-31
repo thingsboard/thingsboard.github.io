@@ -37,7 +37,7 @@ kubectl get pods -n default
 
 You should see something like:
 
-```bash
+```text
 NAME                                                     READY   STATUS    RESTARTS   AGE
 nginx-ingress-ingress-nginx-controller-xxxxx             1/1     Running   0          1m
 ```
@@ -66,85 +66,7 @@ kubectl get svc -n default
 
 Example output:
 
-```bash
+```text
 NAME                                     TYPE           CLUSTER-IP       EXTERNAL-IP      PORT(S)                      AGE
 nginx-ingress-ingress-nginx-controller   LoadBalancer   10.101.102.99    192.168.49.2     80:32023/TCP,443:32144/TCP   2m
 ```
-
-### Add the TBMQ Cluster Helm repository
-
-{% include templates/mqtt-broker/install/helm/common/add-helm-repo.md %}
-
-### Retrieve and modify default chart values
-
-{% include templates/mqtt-broker/install/helm/common/retrieve-and-modify-default-chart-values.md %}
-
-By default, the Helm chart uses:
-
-```yaml
-loadbalancer:
-  type: "nginx"
-```
-
-which is suitable for Minikube and other generic Kubernetes environments.
-
-### Create namespace
-
-{% include templates/mqtt-broker/install/helm/common/create-namespace.md %}
-
-### Install the TBMQ Helm chart
-
-{% include templates/mqtt-broker/install/helm/common/install-chart.md %}
-
-### Validate MQTT LoadBalancer
-
-If minikube tunnel is running, you should notice that a new service appears in the list, exposing MQTT traffic externally:
-
-```bash
-Status:	
-	machine: minikube
-	pid: 35528
-	route: 10.96.0.0/12 -> 192.168.49.2
-	minikube: Running
-	services: [nginx-ingress-ingress-nginx-controller, my-tbmq-cluster-mqtt-lb]
-```
-
-The service `my-tbmq-cluster-mqtt-lb` is the LoadBalancer used for MQTT communication. You can retrieve its `EXTERNAL-IP` with:
-
-```bash
-kubectl get svc my-tbmq-cluster-mqtt-lb
-```
-{: .copy-code}
-
-You should see the similar picture:
-
-```bash
-NAME                      TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)                                                       AGE
-my-tbmq-cluster-mqtt-lb   LoadBalancer   10.101.27.40   *******        1883:31041/TCP,8084:30151/TCP,8883:30188/TCP,8085:32706/TCP   41m
-```
-{: .copy-code}
-
-Use `EXTERNAL-IP` field of the load-balancer to connect to the cluster via MQTT protocol.
-
-### Validate HTTP access
-
-```bash
-kubectl get ingress my-tbmq-cluster-http-lb
-```
-{: .copy-code}
-
-You should see the similar picture:
-
-```bash
-NAME                      CLASS   HOSTS   ADDRESS         PORTS   AGE
-my-tbmq-cluster-http-lb   nginx   *       10.111.137.85   80      47m
-```
-
-Use `ADDRESS` field of the `my-tbmq-cluster-http-lb` to connect to the cluster.
-
-{% include templates/mqtt-broker/login.md %}
-
-### Troubleshooting
-
-{% include templates/mqtt-broker/install/helm/common/helm-setup-troubleshooting.md %}
-

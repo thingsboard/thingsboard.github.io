@@ -13,3 +13,22 @@ gcloud init
 ```
 
 {: .copy-code}
+
+### Enable GKE service
+
+```bash
+gcloud services enable container.googleapis.com
+```
+{: .copy-code}
+
+### Define environment variables
+
+{% include templates/mqtt-broker/install/helm/gcp/define-env-variables.md %}
+
+## Configure and create GKE cluster
+
+{% include templates/install/gcp/zonal-gke-cluster.md %}
+
+## Update the context of kubectl
+
+{% include templates/install/gcp/update-kubectl-zone.md %}

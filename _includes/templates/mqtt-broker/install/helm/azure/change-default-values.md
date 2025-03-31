@@ -1,0 +1,42 @@
+By default, the Helm chart deploys a standard NGINX Ingress Controller for HTTP and MQTT traffic when installing TBMQ on Kubernetes.
+
+```yaml
+loadbalancer:
+  type: "nginx"
+```
+
+Since you are deploying TBMQ Cluster on Azure AKS, you need to change this value to:
+
+```yaml
+loadbalancer:
+  type: "azure"
+```
+
+This will automatically configure:
+
+- Plain HTTP traffic to be exposed via Azure Application Gateway.
+- Plain MQTT traffic to be exposed via Azure Load Balancer.
+
+#### HTTP(S) access
+
+To enable TLS for HTTP traffic, you need to configure the `appgw-ssl-certificate` reference in the Helm chart.
+See the example below:
+
+```yaml
+loadbalancer:
+  type: "azure"
+  http:
+    enabled: true
+    ssl:
+      enabled: true
+      certificateRef: "<your-appgw-ssl-certificate-name>"
+```
+
+Where `certificateRef` must be set to the name of the SSL certificate already configured in your Azure Application Gateway.
+
+#### MQTT(S) access
+
+Azure Load Balancer does not support TLS termination for MQTT traffic.
+If you want to secure MQTT communication,
+you must configure Two-Way TLS (Mutual TLS or mTLS) directly on the application level (TBMQ side).
+Please refer to the TBMQ Helm chart documentation for [details](https://artifacthub.io/packages/helm/tbmq-helm-chart/tbmq-cluster#configuring-mutual-tls-mtls-for-mqtt) on configuring Two-Way TLS.

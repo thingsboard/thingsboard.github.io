@@ -17,19 +17,67 @@ To deploy TBMQ Cluster using Helm, regardless of which deployment environment yo
 - [helm](https://helm.sh/docs/intro/install/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 
-### Choose your deployment environment
+### Configure your deployment environment
 
 While the core Helm-based installation of TBMQ is the same across all environments, 
-the load balancer setup differs depending on the Kubernetes platform. 
+the Kubernetes cluster setup differs depending on the Kubernetes platform. 
 Select your deployment environment below to see the appropriate platform-specific prerequisites.
 
 {% capture contenttogglespechelmdeployment %}
-Self-Managed %,%default%,%templates/mqtt-broker/install/helm/default-k8s.md%br%
-Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/aws-eks.md%br%
-Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure-aks.md%br%
-Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp-gke.md{% endcapture %}
+Self-Managed %,%default%,%templates/mqtt-broker/install/helm/minikube/configure-deployment.md%br%
+Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/aws/configure-deployment.md%br%
+Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/configure-deployment.md%br%
+Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/configure-deployment.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="helmDeploymentType" toggle-spec=contenttogglespechelmdeployment %}
+
+### Add the TBMQ Cluster Helm repository
+
+{% include templates/mqtt-broker/install/helm/common/add-helm-repo.md %}
+
+### Retrieve and modify default chart values
+
+{% include templates/mqtt-broker/install/helm/common/retrieve-and-modify-default-chart-values.md %}
+
+{% capture contenttogglespechelmdefaultvalues %}
+Self-Managed %,%default%,%templates/mqtt-broker/install/helm/minikube/change-default-values.md%br%
+Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/aws/change-default-values.md%br%
+Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/change-default-values.md%br%
+Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/change-default-values.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="helmDefaultValues" toggle-spec=contenttogglespechelmdefaultvalues %}
+
+### Create namespace
+
+{% include templates/mqtt-broker/install/helm/common/create-namespace.md %}
+
+### Install the TBMQ Helm chart
+
+{% include templates/mqtt-broker/install/helm/common/install-chart.md %}
+
+### Validate HTTP Access
+
+{% capture contenttogglespechelmvalidatehttp %}
+Self-Managed %,%default%,%templates/mqtt-broker/install/helm/minikube/validate-http.md%br%
+Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/aws/validate-http.md%br%
+Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/validate-http.md%br%
+Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/validate-http.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="helmValidateHttp" toggle-spec=contenttogglespechelmvalidatehttp %}
+
+### Validate MQTT Access
+
+{% capture contenttogglespechelmvalidatemqtt %}
+Self-Managed %,%default%,%templates/mqtt-broker/install/helm/minikube/validate-mqtt.md%br%
+Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/aws/validate-mqtt.md%br%
+Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/validate-mqtt.md%br%
+Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/validate-mqtt.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="helmValidateMqtt" toggle-spec=contenttogglespechelmvalidatemqtt %}
+
+### Troubleshooting
+
+{% include templates/mqtt-broker/install/helm/common/helm-setup-troubleshooting.md %}
 
 ### Upgrading
 
