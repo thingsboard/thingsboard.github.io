@@ -17,7 +17,7 @@ This will automatically configure:
 - Plain HTTP traffic to be exposed via HTTP Load Balancer.
 - Plain MQTT traffic to be exposed via TCP Load Balancer.
 
-#### HTTP(S) access
+#### HTTPS access
 
 The process of configuring the load balancer using Google-managed SSL certificates is described on the official [documentation page](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs).
 The instructions below are extracted from the official documentation. Make sure you read prerequisites carefully before proceeding.
@@ -61,7 +61,7 @@ loadbalancer:
 
 This will automatically issue and manage an SSL certificate via the ManagedCertificate resource created by the Helm chart and expose TBMQ securely over HTTPS.
 
-#### MQTT(S) access
+#### MQTTS access
 
 GCP Load Balancer does not support TLS termination for MQTT traffic.
 If you want to secure MQTT communication,

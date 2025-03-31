@@ -17,9 +17,12 @@ This will automatically configure:
 - Plain HTTP traffic to be exposed via Azure Application Gateway.
 - Plain MQTT traffic to be exposed via Azure Load Balancer.
 
-#### HTTP(S) access
+#### HTTPS access
 
-To enable TLS for HTTP traffic, you need to configure the `appgw-ssl-certificate` reference in the Helm chart.
+To enable TLS for HTTP traffic,
+you must set `loadbalancer.http.ssl.enabled` to `true`
+and update the `loadbalancer.http.ssl.certificateRef` with name of the SSL certificate already configured in your Azure Application Gateway.
+
 See the example below:
 
 ```yaml
@@ -32,9 +35,7 @@ loadbalancer:
       certificateRef: "<your-appgw-ssl-certificate-name>"
 ```
 
-Where `certificateRef` must be set to the name of the SSL certificate already configured in your Azure Application Gateway.
-
-#### MQTT(S) access
+#### MQTTS access
 
 Azure Load Balancer does not support TLS termination for MQTT traffic.
 If you want to secure MQTT communication,

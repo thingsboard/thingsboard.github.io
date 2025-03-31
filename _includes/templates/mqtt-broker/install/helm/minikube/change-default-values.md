@@ -1,4 +1,4 @@
-By default, the Helm chart uses:
+By default, the Helm chart deploys a standard NGINX Ingress Controller for HTTP and MQTT traffic when installing TBMQ on Kubernetes.
 
 ```yaml
 loadbalancer:
