@@ -21,7 +21,7 @@ This guide will help you to set up ThingsBoard in monolith mode in GKE.
 Clone the repository and change the working directory to GCP scripts.
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-сe-k8s.git
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-сe-k8s.git
 cd thingsboard-сe-k8s/gcp/monolith
 ```
 {: .copy-code}

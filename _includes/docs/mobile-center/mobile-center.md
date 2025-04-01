@@ -28,11 +28,11 @@ This was done for the convenience of configuring applications for both platforms
 The following settings are available for the applications bundle:
 
 1. **Basic settings**: Here, you specify the bundle name and your applications. If you don&#39;t have the mobile app yet, you can create one directly in this section.
-2. **OAuth 2.0**: Configure a Single Sign-On (SSO) feature for your ThingsBoard mobile application users using external user management platforms that support the OAuth 2.0 protocol. In this step, specify the OAuth 2.0 client(s) (either select an existing one or create a new one).
-3. **Layout**: allows you to customize the navigation menu mobile application according to your needs, providing quick access to the pages and features you use most frequently. You can add new menu items and show or hide existing ones.
+2. **OAuth 2.0**: Configure Single Sign-On (SSO) feature for your ThingsBoard mobile application users through using external user management platforms that support the OAuth 2.0 protocol. In this step, specify the OAuth 2.0 client(s) (either select an existing one or create a new one).
+3. **Layout**: allows you to customize the navigation menu mobile application according to your needs, providing quick access to the pages and features you use most frequently. You can add new menu items and show or hide the existing ones.
 
 {% unless docsPrefix == null %}
-4. **Self-registration**: Configure the new customer registration page so that they can simply register and log in to ThingsBoard using the mobile app with predefined permission configurations.
+4. **Self-registration**: Configure the new customer registration page to allow users to simply register and log in to ThingsBoard via the mobile app with predefined permission configurations.
 {% endunless %}
 
 <br>
@@ -65,11 +65,11 @@ To add a new mobile application (Android or iOS) to ThingsBoard, follow these st
 
 ㅤㅤ&bull; *Draft*: For applications still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
 
-ㅤㅤ&bull; *Published*: For applications ready to be launched and used by end users.
+ㅤㅤ&bull; *Published*: For applications that are ready to be launched and used by end users.
 
-ㅤㅤ&bull; *Deprecated*: For older applications no longer actively supported but still available.
+ㅤㅤ&bull; *Deprecated*: For older applications that are no longer actively supported but still available.
 
-ㅤㅤ&bull; *Suspended*: For applications temporarily disabled or restricted from use.
+ㅤㅤ&bull; *Suspended*: For applications that are temporarily disabled or restricted from use.
 
 - Optionally, specify the minimum and latest application versions along with release notes for each;
 - Add store information:
@@ -95,7 +95,7 @@ After completing these steps, your {{MOBILE_APPLICATION}} will be added to Thing
 ### OAuth 2.0
 
 Add an authentication feature for your users in the {{MOBILE_APPLICATION}} through an external provider that supports the [OAuth 2.0](/docs/{{docsPrefix}}user-guide/oauth-2-support/){:target="_blank"} protocol.
-For this, specify an already configured OAuth 2.0 client(s) or [configure a new one](/docs/{{docsPrefix}}user-guide/oauth-2-support/#operations-with-oauth-20-client){:target="_blank"}. After completing the OAuth 2.0 configuration, click "Next".
+In order to do this, specify an already configured OAuth 2.0 client(s) or [configure a new one](/docs/{{docsPrefix}}user-guide/oauth-2-support/#operations-with-oauth-20-client){:target="_blank"}. After completing the OAuth 2.0 configuration, click "Next".
 
 You can also disable the use of OAuth 2.0 for mobile devices.
 
@@ -171,7 +171,7 @@ The self-registration feature allows the tenant to configure a sign-up page for 
 
 Configure the self-registration form for new clients:
 
-- Page title. Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users'
+- Page title. Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users.
 - Notification recipient. Specify the recipients that will receive notifications about new user registrations. Learn more about notifications and how to add a new notification recipient [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"};
 - Redirect settings:
 
@@ -190,7 +190,7 @@ Configure the self-registration form for new clients:
 - Captcha properties. Captcha (Completely Automated Public Turing test to tell Computers and Humans Apart) is an automated test used to distinguish between human users and bots. 
 Using Captcha in ThingsBoard helps prevent the automated creation of fake accounts in the system.
 
-To protect your registration form from bots, generate a Captcha. To do this, navigate to the Google ReCaptcha [admin console](https://www.google.com/recaptcha/intro/v3.html){:target="_blank"}. 
+To protect your registration from bots, generate a Captcha. To do this, navigate to the Google ReCaptcha [admin console](https://www.google.com/recaptcha/intro/v3.html){:target="_blank"}. 
 Choose which reCAPTCHA version you will use: v2, v3, or Enterprise.
 Specify the domain name of your ThingsBoard instance.
 
@@ -212,7 +212,7 @@ In ThingsBoard:
 {% include images-gallery.html imageCollection="self-registration-3" %}
 
 <br>
-- Show Privacy Policy. Enables or disables the display of a Privacy Policy link on the registration page;
+- Show Privacy Policy. Enable or disable the display of a Privacy Policy link on the registration page;
 
 - Show Terms of Use. Enable or disable the display of a Terms of Use link on the registration page;
 

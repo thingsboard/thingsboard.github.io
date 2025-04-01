@@ -122,10 +122,20 @@ wl-files-bundle:
         image: /images/user-guide/ui/widgets/widget-library/wl-files-bundle-pe.png
         title: 'For displaying a list of files or PDF reports as a table. Allows to download and delete the file.'
 
+wl-scada-hp-general-symbols:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-general-symbols-1-ce.png
+        title: 'Bundle with high-performance SCADA symbols.'
+
 wl-gpio:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-gpio-ce.png
         title: 'For visualization and control of GPIO state for target devices.'
+
+wl-scada-hp-fluid-system:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-fluid-system-1-ce.png
+        title: 'Bundle with high-performance SCADA symbols for fluid system.'
 
 wl-home:
     0:
@@ -171,7 +181,12 @@ wl-outdoor-environment-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-outdoor-environment-bundle-ce.png
         title: 'For scheduling various types of events with flexible schedule configuration.'
-    
+
+wl-scada-symbols-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scada-symbols-bundle-ce.png
+        title: 'For uploading SVG symbols to your SCADA dashboard.'
+
 wl-status-indicators-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-status-indicators-bundle-ce.png
@@ -186,6 +201,11 @@ wl-tables-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-tables-bundle-ce.png
         title: 'For displaying a list of entities, a list of alarm signals, and time series data for one or several entities, and for displaying Persistent RPC requests based on entity alias and optional filter with the ability of pagination.'
+
+wl-scada-traditional-fluid-system:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scada-traditional-fluid-system-1-ce.png
+        title: 'Bundle with high-performance SCADA symbols for fluid system.'
 
 add-widget:
     0:

@@ -18,6 +18,13 @@ If you are new to IoT Gateway, use the “Basic” configuration mode. If you ar
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/kBMcsg7YEcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## Connector configuration
 
 Connector configuration is a UI form that contains information about how to connect to Modbus slaves. Let's look at all the available settings and explain each one clearly. This will help you understand how everything works.

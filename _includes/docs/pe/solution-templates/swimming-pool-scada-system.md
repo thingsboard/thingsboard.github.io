@@ -4,21 +4,23 @@
 {% assign sinceVersion = "3.8.0" %}
 {% include templates/since.md %}
 
-SCADA (Supervisory Control And Data Acquisition) is a complex software system designed for the collection, processing, and storage of information in real-time.
+SCADA (Supervisory Control And Data Acquisition) is a complex software system for managing automated processes that collects and processes data in real time.
 
 Based on ThingsBoard, a Swimming Pool SCADA system template has been implemented. It's designed to monitor and control swimming pool components.
 Sensors data in the local network is collected and sent via the Modbus protocol to the [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/){:target="_blank"}. The Gateway communicates with ThingsBoard through the MQTT protocol, ensuring continuous devices connectivity and data transmission to the SCADA system.
 ThingsBoard acts as the core of the SCADA system, storing data from devices in a database, processing it, visualizing the information, and sending control commands to the devices.
 
 <br>
+
 <object width="100%" data="/images/solutions/swimming_pool_scada_system/swimming-pool-scada-system-scheme.svg"></object>
+
 
 <br>
 To understand how the Swimming Pool SCADA system template works, let's start by installing it.
 
 ## Install solution template
 
-You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"} server.
+You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
 The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="go-to-solution-templates-page-1" showListImageTitles="true" %}
@@ -30,7 +32,7 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 \- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
 
 ```text
-docker run --rm -d --name tb-modbus-pool-emulator -p 5021-5034:5021-5034 thingsboard/tb-modbus-pool-emulator:latest && docker logs -f tb-modbus-pool-emulator
+docker run --pull always --rm -d --name tb-modbus-pool-emulator -p 5021-5034:5021-5034 thingsboard/tb-modbus-pool-emulator:latest && docker logs -f tb-modbus-pool-emulator
 ```
 {: .copy-code}
 
@@ -45,7 +47,6 @@ This command will launch a Modbus pool emulator containing 14 devices, which act
 Below is a sample configuration for the ThingsBoard IoT Gateway service:
 
 ```text
-version: '3.4'
 services:
   # ThingsBoard IoT Gateway Service Configuration
   tb-gateway:
@@ -70,6 +71,7 @@ where
 - **$YOUR_INSTANCE_TCP_UDP_PORT** is a TCP/UDP port of your ThingsBoard instance.
 - **$ACCESS_TOKEN** is an access token for the gateway from platform server.
 
+<br>
 Now, run the command below from the folder where you've saved the docker-compose.yml file to run the IoT Gateway:
 
 ```text
@@ -78,6 +80,7 @@ docker compose up
 {: .copy-code}
 
 {% include images-gallery.html imageCollection="launch-iot-gateway-1" %}
+
 
 We will delve into more details on this topic in the "[Gateway](#gateway)", where we will discuss how the gateway operates within the ThingsBoard environment, devices connectivity, and data transmission configuration.
 

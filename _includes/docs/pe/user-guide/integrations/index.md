@@ -8,8 +8,6 @@
 * TOC
 {:toc}
 
-### Overview
-
 ThingsBoard Platform integrations feature was designed for two primary use cases / deployment options:
 
   - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
@@ -20,7 +18,7 @@ The payload format of the device is not well-defined. Often two devices that hav
 
 The job of ThingsBoard Integration is to provide secure and reliable API bridge between core platform features (telemetry collection, attributes and RPC calls) and specific third-party platform APIs.    
 
-### How it works?
+## How it works?
 
 At the moment ThingsBoard supports various integration protocols. Most popular are HTTP, MQTT and OPC-UA. 
 Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
@@ -52,12 +50,11 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
 
 <object width="80%" data="/images/user-guide/integrations/integrations-overview.svg"></object>
  
- 
-### Deployment options
+## Deployment options
  
 ThingsBoard Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
 
-#### Embedded integrations
+### Embedded integrations
 
 Embedded integration is running in the main ThingsBoard server process. Basically it is part of a monolith deployment scenario.
 
@@ -72,7 +69,7 @@ Cons:
   
 <object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object> 
   
-#### Remote integrations
+### Remote integrations
  
 Remote integration become available since ThingsBoard PE v2.4.1 and enables new deployment scenario. 
 One can install remote integration in the local network and stream data to the cloud.   
@@ -94,26 +91,72 @@ Learn how to configure integration to run remotely using [this guide](/docs/{{pe
 
 <object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object> 
 
-### Data Converters
+## Data converters
 
-Data Converters is a part of the Platform Integrations feature. There are **Uplink** and **Downlink** data converters.
- 
-#### Uplink Data Converter
+Data converters in ThingsBoard are part of the Integration feature and are used to transform the payload that either comes from devices (**Uplink**) to the platform or is sent by the platform to devices (**Downlink**).
 
-The main function of **Uplink Data Converter** is to parse payload of the incoming message and transform it to format that ThingsBoard uses.
+Let&#39;s look at both types.
 
-To create an Uplink Converter go to Data Converters section and Click Add new data converter —> Create new converter. Enter converter name, select its type, specify a script to parse and transform data. Optional you can turn the Debug mode. Click “Add” to create converter.
+### Uplink data converter
 
-![image](/images/user-guide/integrations/uplink-converter-add.png)
+The primary function of the Uplink data converter is to parse the payload of incoming messages from devices (e.g., MQTT, HTTP, CoAP, or other protocols) and convert it into a format that ThingsBoard can process.
+
+**To create the Uplink data converter, follow these steps:**
+
+- Navigate to the "Data converters" section in the "Integration center", click the "plus" icon, and In the dropdown menu, select "Create new converter".
+- In the new window:
+  - Ensure the converter type selector is set to "Uplink".
+  - Choose the integration type where you will use this converter.
+  - Enter a name for the converter.
+  - Optionally, enable [debug mode](/docs/user-guide/integrations/#debug-mode){:target="_blank"} for troubleshooting.
+- In the "Main decoding configuration" section, use the existing script for parsing and transforming data, or provide your own custom script.
+- Optionally, use advanced decoding parameters if needed.
+- Click "Add" to create the converter.
+
+![image](/images/user-guide/integrations/uplink-converter-adding.png)
 
 <br>
-Uplink Converter is basically a user defined function with the following signature:
+Starting from **ThingsBoard 4.0**, we have simplified the process of writing converters for certain integrations that receive payload messages with the same structure.
 
-```javascript
-function Decoder(payload, metadata);
-```
+You can now easily choose where the message fields from the integration should go (attributes or telemetry) without manually defining this in the decoder function.
 
-##### Payload
+This feature applies to uplink converters for the following integrations:
+
+- [ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/){:target="_blank"}
+- [Loriot](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/){:target="_blank"}
+- [The Things Stack Community](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/){:target="_blank"}
+- [The Things Stack Industries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/){:target="_blank"}
+- **ThingPark**
+- **ThingPark Enterprise**
+
+{% capture difference %}
+**Note**: Converters created before the release of ThingsBoard 4.0 will still be available and will continue to function properly.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+As an example to better understand how this works, let&#39;s create a new converter for the Loriot integration, which supports the new uplink converter functionality:
+
+- The "**Integration type**" field lists all supported integrations. Find Loriot and select it.
+- Specify a name for the converter.
+- Go to the "**Main decoding configuration**" section: 
+  - Select the entity type (**Device** or **Asset**) that will be created as a result of the integration, and specify the entity name.
+  > The Entity name field is mandatory, so it cannot be left empty. By default, the entity name follows the pattern **Device $eui** (or **Asset $eui**). Here you need to underline the pattern **$** in the device name. As you type **$**, a list of available keys from the Loriot message will appear. This list is standardized and does not depend on the specific message content. The **$eui** pattern will dynamically fetch the device&#39;s unique identifier from the Loriot message.
+
+- Use the existing script for parsing and transforming data, or provide your own custom script.
+
+![image](/images/user-guide/integrations/uplink-converter-20-1.png)
+
+- "**Advanced decoding parameters**" section: 
+  - The **Device profile**, **Device label**, **Customer name**, and **Device group name** fields are not mandatory, and you can also use the **$** pattern to populate them dynamically.
+  If the Device profile field is left empty, the device profile will be set to "default".
+  - In the **Attributes** and **Telemetry** sections specify the keys that should be interpreted as attributes and telemetry, respectively.
+  If a specified key is not present in the incoming message, it will be ignored by the converter.
+  - In the **Update only keys list** section, define keys whose values will be saved to the database only if they have changed from the previous incoming message.This applies to both Attributes and Telemetry, helping optimize data storage.
+- Once everything is set up, click "**Add**" to save the converter, and it will start processing incoming Loriot messages accordingly.
+
+![image](/images/user-guide/integrations/uplink-converter-20-2.png)
+
+#### Payload
 
 Payload is one of the following content types: JSON, TEXT, Binary(Base64) and is specific to your Integration type.
 
@@ -134,12 +177,12 @@ function decodeToJson(payload) {
 
 There are also **btoa** and **atob** functions available to decode Binary(Base64) payload.  
 
-##### Metadata
+#### Metadata
 
 Metadata is a key-value map with some integration specific fields. You can configure additional metadata for each integration in the integration details.
 For example, you can put device type as an additional Integration metadata parameter and use it to automatically assign corresponding device type to new devices.
 
-##### Converter output
+#### Converter output
  
 Converter output should be a valid JSON document with the following structure:
 
@@ -221,7 +264,7 @@ Converter may also output array of device values and/or contain timestamps in th
 ]
 ```
 
-##### Update only keys field
+#### Update only keys field
 
 To avoid constant updates for telemetry attributes or keys, you can use the "Update only keys list" field.  
 Any keys provided in this field that exist in the telemetry or attribute arrays in the message after conversion will not be updated if the values associated with those keys have not changed from their previous values.
@@ -232,7 +275,7 @@ The same behavior is expected if the converter configuration has been updated.
 {% endcapture %}
 {% include templates/warn-banner.md content=update-only-keys-cluster-mode %}
 
-##### Example
+#### Example
 
 Let's assume a complex example where payload is encoded in hex "value" field and there is a timestamp associated with each record. 
 First two bytes of "value" field contain battery and second two bytes contain temperature. See payload example and metadata on a screen shoot below.
@@ -245,9 +288,6 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/overview/uplink-da
 
 {% include content-toggle.liquid content-toggle-id="uplinkdataconverterexample1" toggle-spec=uplinkdataconverterexample1 %}
 
-
-
-
 See video tutorial below for step-by-step instruction how to setup Uplink Data Converter.
 
 <br>
@@ -257,7 +297,7 @@ See video tutorial below for step-by-step instruction how to setup Uplink Data C
     </div>
 </div> 
 
-#### Downlink Data Converter
+### Downlink data converter
  
 The main function of **Downlink Data Converter** is to transform the incoming rule engine message and its metadata 
 to the format that is used by corresponding Integration.
@@ -280,7 +320,7 @@ Where
  - **msgType** - Rule Engine message type. See [predefined message types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) for more details.
  - **integrationMetadata** - key-value map with some integration specific fields. You can configure additional metadata for each integration in the integration details.
   
-##### Converter output
+#### Converter output
 
 Converter output should be a valid JSON document with the following structure:
 
@@ -300,7 +340,7 @@ Where
  - **data** - data string according to the content type
  - **metadata** - list of key-value pairs with additional data about the message. For example, topic to use for MQTT integration, etc.
 
-##### Example
+#### Example
 
 Let's assume an example where temperature and humidity upload frequency attributes are updated via ThingsBoard REST API and 
 you would like to push this update to an external MQTT broker (TTN, Mosquitto, AWS IoT, etc). 
@@ -321,7 +361,7 @@ In order to invoke the downlink processing by the integration, tenant administra
 
 The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink-example-rule-chain.json).
 
-##### Synchronous vs Asynchronous Downlinks 
+#### Synchronous vs Asynchronous Downlinks 
 
 Most of the integrations are able to process downlink messages to devices asynchronously. 
 For example, each message pushed by the rule engine to MQTT based integration is immediately pushed to the corresponding external MQTT broker.
@@ -330,7 +370,7 @@ However, some integrations, like SigFox or generic HTTP integration are not able
 These integrations, due to the nature of underlying HTTP protocol, are only able to push downlink information synchronously in reply to uplink message request. 
 In this case, the last downlink message originated by rule engine will be stored in the queue until the new uplink message arrives for particular device.
 
-### Debug mode
+## Debug mode
 
 Debug mode is very useful for verifying the configuration of converters and integrations, and allows to persis:
 
@@ -342,7 +382,7 @@ Debug mode is very useful for verifying the configuration of converters and inte
 However, having it on all the time can significantly increase the disk space used by the database since all the debug data is stored there.
 Starting from version 3.9, ThingsBoard stores all debug events for the first 15 minutes. After that, only failure events are retained. These settings can be combined or completely disabled.
 
-### Platform Integrations vs IoT Gateway
+## Platform Integrations vs IoT Gateway
 
 Experienced ThingsBoard users may notice that functionality of Integrations feature partially overlap with functionality of [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/).
 However, there are key differences between these two systems/features:
@@ -353,24 +393,24 @@ However, there are key differences between these two systems/features:
   
 As you can see, both systems are important and applicable in different use cases.
 
-### Feature Roadmap
+## Feature Roadmap
 
-#### Usage statistics
+### Usage statistics
  
 We plan to log statistics for amount of messages processed by each integration with possible limitations of messages processed on a tenant / system levels.
 
-#### More integrations and protocols
+### More integrations and protocols
 
 We plan to provide specific integrations for different platforms, and also for different communication protocols, like gRPC.
 
-#### More data converters
+### More data converters
 
 We plan to collect and maintain data converters for most popular devices on the market to simplify integration path even more. 
 Please note that you can share your converters with community and send them to us to make part of official ThingsBoard distributive.   
 
 [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 
-### See Also
+## See also
 
 Explore guides and video tutorials related to specific integrations:
 
@@ -394,8 +434,6 @@ Explore guides and video tutorials related to specific integrations:
  - [Kafka](/docs/{{peDocsPrefix}}user-guide/integrations/kafka/)
  - [ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/)
  - [CoAP](/docs/{{peDocsPrefix}}user-guide/integrations/coap/)
-
-
 
 ## Next steps
 

@@ -104,12 +104,13 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 
 * Update docker-compose.yml - TB image should be the latest version (see [Step 3](#step-3-choose-thingsboard-queue-service))
 
-* Change upgradeversion variable to your **current** ThingsBoard version. For ex., if you are upgrading from 3.6.4:
-
- ```bash
-echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
-```
-{: .copy-code}
+* In case you are upgrading to:
+  * 3.9.1 or newer - no additional actions required
+  * 3.9.0 or previous releases - change `upgradeversion` variable to your **current** ThingsBoard version. For ex., if upgrading from 3.6.4:
+    ```bash
+    echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
+    ```
+    {: .copy-code}
 
 * Execute the following commands:
 

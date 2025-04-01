@@ -53,11 +53,7 @@ sudo systemctl enable --now zookeeper
 ##### Install Kafka
 
 ```text
-wget https://downloads.apache.org/kafka/3.8.1/kafka_2.13-3.8.1.tgz
-
-tar -xzf kafka_2.13-3.8.1.tgz
-
-sudo mv kafka_2.13-3.8.1 /usr/local/kafka
+wget https://downloads.apache.org/kafka/3.8.1/kafka_2.13-3.8.1.tgz && tar -xzf kafka_2.13-3.8.1.tgz && sudo mv kafka_2.13-3.8.1 /usr/local/kafka
 ```
 {: .copy-code}
 
@@ -96,17 +92,11 @@ sudo systemctl enable --now kafka
 
 ##### ThingsBoard Configuration
 
-Edit the **ThingsBoard Edge** configuration file:
+Edit the **ThingsBoard Edge** configuration file (tb-edge.conf):
 
 ```text
-sudo nano /etc/tb-edge/conf/tb-edge.conf
+echo -e "export TB_QUEUE_TYPE=kafka\nexport TB_KAFKA_SERVERS=localhost:9092" | sudo tee -a /etc/tb-edge/conf/tb-edge.conf > /dev/null
 ```
 {: .copy-code}
 
-Add the following line to the **tb-edge.conf** file. **Make sure** to replace "localhost:9092" with your real Kafka bootstrap servers if necessary:
-
-```bash
-export TB_QUEUE_TYPE=kafka
-export TB_KAFKA_SERVERS=localhost:9092
-```
-{: .copy-code}
+**Make sure** to replace "localhost:9092" with your real Kafka bootstrap servers if necessary

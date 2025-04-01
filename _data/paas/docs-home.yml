@@ -49,6 +49,9 @@ toc:
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
       path: /docs/paas/user-guide/telemetry/
+    - title: Calculated fields
+      path: /docs/paas/user-guide/calculated-fields/
+      new: true
     - title: Alarms
       path: /docs/paas/user-guide/alarms/
     - title: Remote commands to devices
@@ -184,15 +187,15 @@ toc:
       path: /docs/paas/user-guide/integrations/kafka/
     - title: OPC-UA
       path: /docs/paas/user-guide/integrations/opc-ua/
-    - title: Actility ThingPark
+    - title: ThingPark
       path: /docs/paas/user-guide/integrations/thingpark/
-    - title: TheThingsStack
+    - title: The Things Stack Community
       path: /docs/paas/user-guide/integrations/ttn/
-    - title: TheThingsIndustries
+    - title: The Things Stack Industries
       path: /docs/paas/user-guide/integrations/tti/
     - title: KPN Things
       path: /docs/paas/user-guide/integrations/kpn-things/
-    - title: LORIOT
+    - title: Loriot
       path: /docs/paas/user-guide/integrations/loriot/
     - title: ChirpStack
       path: /docs/paas/user-guide/integrations/chirpstack/
@@ -260,7 +263,7 @@ toc:
     - title: Version control
       path: /docs/paas/user-guide/version-control/
     - title: PSM and eDRX Support
-      path: /docs/user-guide/psm/
+      path: /docs/paas/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
     - title: Scheduler
