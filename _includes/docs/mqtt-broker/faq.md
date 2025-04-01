@@ -58,4 +58,4 @@ TBMQ is licensed under Apache 2.0 License. It is free for both personal and comm
  
 ## How to get support?
 
-You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/docs/services/) we provide.
+You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/services/) we provide.
