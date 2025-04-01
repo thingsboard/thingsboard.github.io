@@ -8,11 +8,11 @@ Installing **Edge** behind a [proxy](https://en.wikipedia.org/wiki/Proxy_server)
 Compare:
 * **Without Proxy** (direct connection):
 
-![Without Proxy](/images/edge/config/edge-behind-proxy/without-proxy.webp){: style="max-width: 400px"}
+![Without Proxy](https://img.thingsboard.io/edge/config/edge-behind-proxy/without-proxy.webp){: style="max-width: 400px"}
 
 * **With Proxy** (indirect connection):
 
-![With Proxy](/images/edge/config/edge-behind-proxy/with-proxy.webp){: style="max-width: 575px"}
+![With Proxy](https://img.thingsboard.io/edge/config/edge-behind-proxy/with-proxy.webp){: style="max-width: 575px"}
 
 Using a proxy server allows enhancing security by filtering and monitoring internet traffic. In restricted environments, direct internet access is often deliberately blocked, making proxy configurations a necessity for maintaining security protocols. 
 
