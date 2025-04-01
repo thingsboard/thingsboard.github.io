@@ -3,7 +3,7 @@ layout: common
 title: Professional services
 notitle: "true"
 description: Professional services
-
+redirect_from: "docs/services/consulting/"
 ---
 
 <h1 class="mainTitle">Professional services</h1>

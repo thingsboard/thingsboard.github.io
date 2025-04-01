@@ -49,6 +49,30 @@ $font-style-normal: normal
             button:hover
                 filter: brightness(1.3) contrast(.9)
 
+            &.additionally
+                .header
+                    display: flex
+                    flex-direction: row
+                    align-items: flex-start
+                    position: relative
+                    z-index: 1
+                    padding: 0 120px
+                    opacity: 0
+                    transform: translate3d(0, 45px, 0)
+
+                .header-animation
+                    animation-name: slideup-in
+                    animation-duration: 1000ms
+                    animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+                    animation-fill-mode: forwards
+
+                    .side-title
+                        min-width: 202px
+                        margin-top: 14px
+
+                    .section-title
+                        max-width: 700px
+                        min-width: 700px
 
         #content-mvp
             z-index: 2
@@ -264,10 +288,9 @@ $font-style-normal: normal
         .title
             color: #000000C2
             text-align: center
-            text-transform: uppercase
-            font-size: 16px
+            font-size: 36px
             font-style: normal
-            font-weight: 400
+            font-weight: 500
             line-height: 32px
             letter-spacing: 0.2px
             padding: 40px 0
@@ -310,7 +333,7 @@ $font-style-normal: normal
             animation-fill-mode: forwards
 
             .side-title
-                margin-right: 100px
+                margin-right: 65px
                 min-width: 202px
                 margin-top: 14px
 
@@ -332,18 +355,8 @@ $font-style-normal: normal
                 max-width: fit-content
 
             #solution-widget-1
-                object-fit: contain
-                width: 38%
-                max-width: fit-content
-                top: 26%
-                left: 74%
-
-            #solution-widget-2
-                object-fit: contain
-                width: 29%
-                max-width: fit-content
-                top: 72%
-                left: 49%
+                top: 42%
+                left: 35%
 
             .right-block
                 display: flex
@@ -367,9 +380,16 @@ $font-style-normal: normal
             .left-block
                 max-width: 620px
 
+            #solution-widget-2
+                object-fit: contain
+                width: 29%
+                max-width: fit-content
+                top: 68%
+                left: 66%
+
             #solution-widget-3
-                top: 42%
-                left: 61%
+                top: 37%
+                left: 77%
 
         .market-solution
             position: relative
@@ -402,8 +422,6 @@ $font-style-normal: normal
             flex-direction: column
             align-items: center
             z-index: 0
-            text-align: center
-            max-width: 800px !important
 
     .testimonials
         position: relative
@@ -703,6 +721,10 @@ $font-style-normal: normal
                     width: 400px
 
     @media screen and (max-width: $step6)
+        .content-wrapper.additionally
+            .header
+                flex-direction: column !important
+
         .noToc
             .content-wrapper
                 > *
@@ -749,24 +771,27 @@ $font-style-normal: normal
                     width: 800px
 
                 #solution-widget-1
-                    width: 331px
-                    top: 26%
-                    left: 62%
-
-                #solution-widget-2
-                    width: 257px
-                    max-width: fit-content
-                    top: 78%
-                    left: 41%
+                    //width: 331px
+                    //top: 26%
+                    //left: 62%
+                    top: 42%
+                    left: 28%
+                    width: 562px
 
             .mvp
                 #solution-mvp1
                     width: 720px
 
+                #solution-widget-2
+                    width: 237px
+                    max-width: fit-content
+                    top: 65%
+                    left: 59%
+
                 #solution-widget-3
-                    top: 42%
-                    left: 58%
-                    width: 562px
+                    top: 35%
+                    left: 72%
+                    width: 19%
 
             .market-solution
                 padding: 100px 102px 285px 50px
@@ -881,15 +906,9 @@ $font-style-normal: normal
                     width: 700px
 
                 #solution-widget-1
-                    width: 331px
-                    top: 35%
-                    left: 65%
-
-                #solution-widget-2
-                    width: 257px
-                    max-width: fit-content
-                    top: 80%
-                    left: 37%
+                    top: 43%
+                    left: 23%
+                    width: 562px
 
             .mvp
                 padding: 100px 50px 109px 50px
@@ -897,10 +916,16 @@ $font-style-normal: normal
                 #solution-mvp1
                     width: 660px
 
+                #solution-widget-2
+                    width: 257px
+                    max-width: fit-content
+                    top: 65%
+                    left: 66%
+
                 #solution-widget-3
-                    top: 43%
-                    left: 53%
-                    width: 562px
+                    top: 36%
+                    left: 82%
+                    width: 246px
 
             .market-solution
                 padding: 100px 65px 185px 50px
@@ -1060,15 +1085,9 @@ $font-style-normal: normal
                     width: 600px
 
                 #solution-widget-1
-                    width: 240px
-                    top: 35%
-                    left: 65%
-
-                #solution-widget-2
-                    width: 200px
-                    max-width: fit-content
-                    top: 80%
-                    left: 37%
+                    top: 46%
+                    left: 23%
+                    width: 446px
 
             .mvp
                 padding: 100px 35px 109px 40px
@@ -1077,12 +1096,18 @@ $font-style-normal: normal
                     margin-bottom: 50px
 
                 #solution-mvp1
-                    width: 600px
+                    width: 500px
+
+                #solution-widget-2
+                    width: 200px
+                    max-width: fit-content
+                    top: 59%
+                    left: 61%
 
                 #solution-widget-3
-                    top: 46%
-                    left: 53%
-                    width: 446px
+                    top: 32%
+                    left: 79%
+                    width: 226px
 
             .market-solution
                 padding: 100px 40px 185px 40px
@@ -1328,16 +1353,8 @@ $font-style-normal: normal
                     max-width: unset
 
                 #solution-widget-1
-                    max-width: unset
-                    width: 46%
-                    top: 47%
-                    left: 56%
-
-                #solution-widget-2
-                    max-width: unset
-                    width: 38%
-                    top: 72%
-                    left: 22%
+                    top: 43%
+                    left: 35%
 
             .mvp
                 padding: 40px 20px 80px 20px
@@ -1350,10 +1367,16 @@ $font-style-normal: normal
                     #solution-mvp1
                         width: 100%
 
+                    #solution-widget-2
+                        width: 227px
+                        max-width: fit-content
+                        top: 63%
+                        left: 65%
+
                     #solution-widget-3
-                        width: 70%
-                        top: 43%
-                        left: 35%
+                        width: 302px
+                        top: 30%
+                        left: 78%
 
             .market-solution
                 padding: 60px 20px 260px 20px
@@ -1370,7 +1393,7 @@ $font-style-normal: normal
 
                 .right-block
                     padding-top: 0
-                    margin-bottom: 130px
+                    margin-bottom: 170px
                     .section-title
                         padding-bottom: 0
 
@@ -1554,16 +1577,13 @@ $font-style-normal: normal
                     max-width: unset
 
                 #solution-widget-1
-                    max-width: unset
-                    width: 46%
-                    top: 47%
-                    left: 56%
-
-                #solution-widget-2
-                    max-width: unset
-                    width: 38%
-                    top: 72%
-                    left: 22%
+                    //max-width: unset
+                    //width: 46%
+                    //top: 47%
+                    //left: 56%
+                    width: 70%
+                    top: 43%
+                    left: 35%
 
             .mvp
                 padding: 40px 20px 80px 20px
@@ -1575,10 +1595,16 @@ $font-style-normal: normal
                     #solution-mvp1
                         width: 100%
 
+                    #solution-widget-2
+                        max-width: unset
+                        width: 30%
+                        top: 72%
+                        left: 43%
+
                     #solution-widget-3
-                        width: 70%
-                        top: 43%
-                        left: 35%
+                        width: 40%
+                        top: 28%
+                        left: 64%
 
             .market-solution
                 padding: 60px 20px 215px 20px
