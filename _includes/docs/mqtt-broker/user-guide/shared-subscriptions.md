@@ -8,7 +8,7 @@ The official [documentation](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-
 and this tutorial will focus on the fundamental aspects of this functionality. 
 By understanding and exploring shared subscriptions, users can harness the full potential of this powerful feature in their MQTT interactions.
 
-### What are Shared Subscriptions?
+## What are Shared Subscriptions?
 
 In traditional or standard subscriptions, each subscribed client receives a duplicate copy of every published message that matches the subscribed topic. 
 This approach ensures that all clients receive the same set of messages. 
@@ -34,7 +34,7 @@ For example, the following is a shared subscription:
 $share/group1/country/+/city/+/home/#
 ```
 
-### Shared Subscription Use Cases
+## Shared Subscription Use Cases
 
 Shared subscriptions can be applied to various use cases based on their suitability and advantages. 
 However, there are several common scenarios where shared subscriptions are particularly beneficial:
@@ -52,7 +52,7 @@ ensuring a balanced and efficient operation of the system.
 In summary, shared subscriptions offer flexibility and scalability for scenarios involving backend applications, 
 high message rates, and resource optimization, allowing for better management of MQTT message streams.
 
-### Subscribing to Shared Subscriptions
+## Subscribing to Shared Subscriptions
 
 In this tutorial, we will be connecting [DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the [Mosquitto](https://mosquitto.org/download/) client library.
 For Ubuntu users, it can be installed using the following command:
@@ -116,7 +116,7 @@ Let's see shared subscription processing in action:
 
 ![image](https://img.thingsboard.io/mqtt-broker/user-guide/shared-subscription-demo.gif)
 
-### Shared Subscriptions Load Balancing Strategy
+## Shared Subscriptions Load Balancing Strategy
 
 Currently, TBMQ supports the **ROUND_ROBIN** load balancing strategy type for shared subscriptions. 
 This means that incoming messages for a shared subscription are evenly distributed among the subscribed clients in a round-robin fashion. 
@@ -124,7 +124,7 @@ Each client in the group receives messages in sequential order, taking turns to 
 We are continuously working on enhancing TBMQ and plan to introduce additional load-balancing strategy types in the near future. 
 These may include random and hash-based load-balancing strategies. Stay tuned for updates as we expand the capabilities of TBMQ.
 
-### Shared Subscriptions & Client Type
+## Shared Subscriptions & Client Type
 
 The **DEVICE** and **APPLICATION** clients in TBMQ are implemented differently, and this impacts how the shared subscription feature 
 is utilized and how it processes messages for each client type.
@@ -139,7 +139,7 @@ DEVICE clients will receive messages within the DEVICE shared subscription group
 Therefore, it's important to consider the client type when working with shared subscriptions in TBMQ, 
 as the messages will be processed and distributed accordingly based on the client type within their respective shared subscription groups.
 
-#### DEVICE client type
+### DEVICE client type
 
 From the user's perspective, using the shared subscription feature for DEVICE clients in TBMQ is seamless. 
 Simply subscribe your clients to the shared subscription, and the feature will work as intended.
@@ -153,7 +153,7 @@ Once the first client from the group reconnects to the broker, it will receive s
 
 These considerations ensure that message distribution and persistence are handled appropriately for shared subscription groups containing persistent clients.
 
-#### APPLICATION client type
+### APPLICATION client type
 
 To utilize the shared subscription feature for APPLICATION clients in TBMQ, you need to follow an additional step. 
 First, you'll need to create an Application Shared Subscription entity in the PostgreSQL database. 

@@ -30,7 +30,7 @@ Entity View contains the following information:
 
 It is important to understand how TB handles telemetry and attribute updates, and how these changes affect Entity Views.
 
-#### Time series data view
+### Time series data view
 
 All time series data is stored in the database on behalf of the target entity. There is no time series data duplication to any of the Entity Views.
 When a user opens a dashboard or performs a REST API call on behalf of the entity view ID, the following actions take place:
@@ -40,7 +40,7 @@ When a user opens a dashboard or performs a REST API call on behalf of the entit
  - Request time series data keys are validated and adjusted based on time series data keys provisioned in the Entity View.
  Thus, if Dashboard tries to fetch the telemetry keys that are forbidden for this particular view, it will fail to do so.
 
-#### Attributes view
+### Attributes view
 
 Entity View automatically copies specified attributes from Target Entity each time you save or update this entity view.
 For performance reasons, target entity attributes are not propagated to entity view on each attribute change.

@@ -2,7 +2,7 @@ API & Rate Limits feature allows controlling API usage, by limiting number of re
 
 API & Rate limits are **disabled by default**. System administrator is able to configure rate limits using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/).
 
-#### REST API limits
+## REST API limits
 
 REST API calls are used by all sorts of UI components and possibly some automatic scripts launched on behalf of customer user or tenant user.
 It is critical to limit amount of API calls by tenant or by customer to avoid overloading the server due to mistakes in a custom widget or script.
@@ -25,7 +25,7 @@ server:
         configuration: "${TB_SERVER_REST_LIMITS_CUSTOMER_CONFIGURATION:50:1,1000:60}"
 ```
 
-### Websocket limits
+## Websocket limits
 
 Websockets are used to deliver real-time notifications about new telemetry values from device to the dashboard. 
 
@@ -63,7 +63,7 @@ server:
       max_updates_per_session: "${TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_UPDATES_PER_SESSION:300:1,3000:60}"
 ```
 
-### Database rate limits
+## Database rate limits
 
 Although we are limiting users by amount of REST API calls, some of the calls may produce more then one database query. Similar, rule chains may also cause a lot of queries during the message processing. 
 Single telemetry upload also causes database queries to write the data to DB.
@@ -96,7 +96,7 @@ cassandra:
       print_tenant_names: "${CASSANDRA_QUERY_TENANT_RATE_LIMITS_PRINT_TENANT_NAMES:false}"
 ```
 
-### Transport rate limits
+## Transport rate limits
 
 It is quite important to be able to limit amount of messages that are accepted from a single device or from all devices per tenant. 
 This limit is applied on a transport level, before messages are pushed to the rule engine.  

@@ -3,7 +3,7 @@ layout: pricing
 title: Support plans
 description: ThingsBoard professional support plans for IoT projects, cloud infrastructure support
 defaultActivePricingSection: thingsboard-pe
-
+redirect_from: "docs/services/support/"
 ---
 
 <div class="container">

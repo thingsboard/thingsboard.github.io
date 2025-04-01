@@ -3,7 +3,7 @@ layout: trainings
 title: Training sessions
 notitle: "true"
 description: ThingsBoard training sessions
-
+redirect_from: "docs/services/trainings/"
 ---
 
 

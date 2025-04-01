@@ -71,7 +71,7 @@ Create Node D as shown on the image above in the root rule chain to forward tele
 
 The following section shows you how to create this rule chain from scratch.
 
-#### Create new Rule Chain (**Create & Clear Alarms**)
+### Create new Rule Chain (**Create & Clear Alarms**)
 
 Go to **Rule Chains** -> **Add new Rule Chain**
 
@@ -83,11 +83,11 @@ Configuration:
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
-###### Adding the required nodes
+#### Adding the required nodes
 
 In this rule chain, you will create 3 nodes as it will be explained in the following sections:
 
-###### Node A: **Filter Script**
+#### Node A: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Input** node with a relation type **Success**.
  <br>This node will verify: "if the temperature is in the expected interval" using the following script:
 
@@ -99,7 +99,7 @@ If the temperature is in the expected interval the script will return False, oth
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/filter-alarm.png)
 
-###### Node B: **Create alarm**
+#### Node B: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator, namely **Thermostat Home**<br> if the published temperature is not at expected range (filter script node returns True). 
 
@@ -107,7 +107,7 @@ If the temperature is in the expected interval the script will return False, oth
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/create-alarm.png)
 
-###### Node C: **Clear Alarm**
+#### Node C: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator **Thermostat Home**<br> and Clears alarm if it exists in case if the published temperature is in expected range (script node returns False). 
 
@@ -116,7 +116,7 @@ If the temperature is in the expected interval the script will return False, oth
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/clear-alarm.png)
 
 
-#### Modify Root Rule Chain
+### Modify Root Rule Chain
 
 The following screenshot shows the initial Root Rule Chain.
 
@@ -124,7 +124,7 @@ The following screenshot shows the initial Root Rule Chain.
 
 The initial Rule Chain has been modified by adding the following node:
 
-###### Node D: **Rule Chain**
+#### Node D: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node forwards incoming Message to specified Rule Chain **Create & Clear Alarms**.
 
