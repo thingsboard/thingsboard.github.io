@@ -49,7 +49,7 @@ To schedule a task for saving calculation results, follow these steps:
 
 {% include images-gallery.html imageCollection="save-calc-to-tb" %}
 
-#### Storing Calculations as Telemetry
+### Storing Calculations as Telemetry
 
 When these settings are saved, your calculations are recorded in ThingsBoard as telemetry with a key name prefixed by \_ECD_, and the status of the calculation is set to “enabled”
 

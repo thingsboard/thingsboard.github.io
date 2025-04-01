@@ -880,7 +880,7 @@ The rule node fetches perimeter information from message metadata by default. If
 
 <br>
 
-###### Fetch perimeter information from message metadata
+### Fetch perimeter information from message metadata
 
 There are two options of area definition based on the perimeter type: **Polygon** and **Circle**
 
@@ -904,7 +904,7 @@ All values for these keys are in double-precision floating-point data type.
 
 The **"radiusUnit"** key requires specific value from a list of **METER**, **KILOMETER**, **FOOT**, **MILE**, **NAUTICAL_MILE** (capital letters obligatory).
 
-###### Fetch perimeter information from node configuration
+### Fetch perimeter information from node configuration
  
 There are two options of area definition based on the perimeter type:
  
@@ -916,7 +916,7 @@ There are two options of area definition based on the perimeter type:
                   
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
 
-###### Event Types
+### Event Types
 There are 4 types of events managed by geofencing rule node:
 
 - **Entered** — is reporting whenever latitude and longitude from the incoming message to belong the required perimeter area for the first time;

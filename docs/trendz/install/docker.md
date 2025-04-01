@@ -27,7 +27,7 @@ Note: We will reference the license key you have obtained during this step as PU
 
 ## Step 2. Running Trendz service
 
-##### Docker Compose setup
+### Docker Compose setup
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
@@ -115,7 +115,7 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
-##### Running service
+### Running service
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
@@ -123,7 +123,7 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). 
 You should see Trendz login page.
 
-##### Authentication
+### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 

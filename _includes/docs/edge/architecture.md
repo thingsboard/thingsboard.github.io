@@ -78,6 +78,6 @@ Messages from ThingsBoard Edge can be pushed to external systems via the Rule En
 It's possible to transmit data to an external system, process that data, and then relay the processing results back to ThingsBoard Edge for visualization.
 Please review the rule engine documentation and guides for further details.
 
-#### Next Steps
+### Next Steps
 
 <p><a href="/docs/edge/getting-started" class="button">Getting Started Guide</a></p>

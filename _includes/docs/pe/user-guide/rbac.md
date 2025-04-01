@@ -12,7 +12,7 @@ Similarly, you can restrict access to sensitive information, increasing business
 
 ## ThingsBoard CE vs PE security features comparison
 
-#### ThingsBoard Community Edition
+### ThingsBoard Community Edition
 
 ![image](https://img.thingsboard.io/user-guide/security/rbac/TB_CE.png)
 
@@ -21,7 +21,7 @@ A system administrator is able to manage tenants, while a tenant administrator m
 Customer user is able to view dashboards and control devices that are assigned to a specific customer.
 ThingsBoard Community Edition functionality is sufficient for a lot of simple use cases, especially building real-time [end-user dashboards](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-#### ThingsBoard Professional Edition
+### ThingsBoard Professional Edition
 
 ![image](https://img.thingsboard.io/user-guide/security/rbac/TB_PE.png)
 

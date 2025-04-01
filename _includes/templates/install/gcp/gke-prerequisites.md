@@ -1,4 +1,4 @@
-#### Install and configure tools 
+### Install and configure tools 
 
 To deploy ThingsBoard on GKE cluster you'll need to install
 [`kubectl`](https://kubernetes.io/docs/tasks/tools/) and [`gcloud`](https://cloud.google.com/sdk/downloads) tools.
@@ -13,7 +13,7 @@ gcloud init
 ```
 {: .copy-code}
 
-#### Enable GCP services
+### Enable GCP services
 
 Enable the GKE and SQL services for your project by executing the following command:
 

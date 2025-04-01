@@ -253,54 +253,59 @@ header
       &.active
         visibility: visible
         opacity: 1
+        background-color: #f7f9fe
         &.bounds-transition
-          transition: visibility 0.3s, opacity ease-in-out 0.3s, left ease-in-out 0.2s, width ease-in-out 0.2s, height ease-in-out 0.2s
+          transition: left ease-in-out 0.4s, width ease-in-out 0.35s, height ease-in-out 0.35s
+        & > div.open
+          opacity: 1
+          display: block
+          transition-property: display, opacity
+          transition-duration: .6s
+          transition-behavior: allow-discrete
+          @starting-style
+            opacity: 0
+      & > div
+        opacity: 0
+        display: none
 
     .sub-menu-container, ul
       .centered-sub
         width: max-content
         .sub-menu
           width: max-content
-          padding: 40px 70px 40px 40px
           display: block
           z-index: 1
 
-          &.products
-            @media screen and (min-width: 1281px)
-              .sub-groups
-                .group
-                  &:first-child
-                    padding-right: 35px
-                  &:nth-child(2)
-                    padding-left: 35px
-                    border-left: 1px solid #d7d7d7
+          li
+            padding: 0
 
           .sub-groups
             display: flex
-            align-items: flex-start
+            flex-direction: column
+            align-items: stretch
             .group
-              padding-right: 70px
-              &:last-child
-                padding-right: 0
-              .group-name
-                height: 62px
-                text-transform: uppercase
-                font-weight: 500
-                color: #899AAB
-                font-size: 15px
-                line-height: normal
-
-          .bottom-group
-            background-color: #F9FBFF
-            border-radius: 4px
-            width: calc(100% + 94px)
-            margin: 32px -32px -32px
-            padding: 32px
+              display: flex
+              padding: 32px
+              gap: 36px
+              &:first-child
+                margin: 5px
+                border-radius: 4px
+                background-color: #fff
+              .column
+                display: flex
+                flex-direction: column
+                gap: 24px
+                min-width: 250px
+                .group-name
+                  text-transform: uppercase
+                  font-weight: 500
+                  color: #305680
+                  font-size: 14px
+                  line-height: normal
 
           a
             text-align: left
             display: flex
-            margin-bottom: 22px
 
             &:hover
               .sub-text
@@ -339,54 +344,31 @@ header
               margin-bottom: 0
 
             .sub-text
-              padding-top: 4px
-              max-width: 300px
+              max-width: 284px
               h1, span.item-heading
                 color: #212529
                 font-size: 16px
-                font-weight: 600
-                line-height: normal
+                font-weight: 400
+                line-height: 24px
               p
                 color: #899AAB
-                font-size: 15px
-                font-weight: normal
-                line-height: normal
+                font-size: 14px
+                font-weight: 400
+                line-height: 24px
             img
               margin-right: 12px
               height: fit-content
 
             &.small-link
-              margin-bottom: 15px
               .sub-text
                 padding: 0
                 h1, span.item-heading
-                  font-weight: 500
+                  font-weight: 400
               &:last-child
                 margin-bottom: 0
 
     ul
       display: flex
-
-      .nav-products
-        width: 108px
-
-      .nav-services
-        width: 103px
-
-      .nav-cases
-        width: 122px
-
-      .nav-customers
-        width: 127px
-
-      .nav-company
-        width: 118px
-
-      .nav-partners
-        width: 104px
-
-      .nav-docs
-        width: 74px
 
       li
         cursor: default
@@ -396,7 +378,6 @@ header
         height: calc(100% + 4px)
 
         a, span.main-menu-link
-          width: 100%
           text-align: center
 
         &:hover a
@@ -405,7 +386,7 @@ header
       a, span.main-menu-link
         display: block
         color: #212529
-        font-size: 18px
+        font-size: 16px
         font-weight: normal
         text-decoration: none
 
@@ -436,16 +417,16 @@ header
 
 .indicator.active
   transition-delay: 0s
-  transition-duration: 0.3s
+  transition-duration: 0.2s
   .line
     transition-delay: 0s
-    transition-duration: 0.3s
+    transition-duration: 0.2s
     width: 100%
     left: 0
     opacity: 1
   .head-arrow
     transition-delay: 0.1s
-    transition-duration: 0.3s
+    transition-duration: 0.2s
     opacity: 1
 .indicator
   width: 0
@@ -455,7 +436,7 @@ header
   height: 4px
   bottom: -4px
   transition-delay: 0s
-  transition-duration: 0.3s
+  transition-duration: 0.2s
   z-index: -1
   padding: 0 14px
   transition-property: none
@@ -473,7 +454,7 @@ header
     bottom: 4px
     opacity: 0
     transition-delay: 0s
-    transition-duration: 0.3s
+    transition-duration: 0.2s
 
   .line
     position: relative
@@ -482,11 +463,11 @@ header
     height: 100%
     left: 50%
     opacity: 0
-    transition-duration: 0.3s
+    transition-duration: 0.2s
 
 .n-button
-  font-size: 18px
-  font-weight: 500
+  font-size: 16px
+  font-weight: 400
   text-align: center
   height: 47px
   transition-duration: 0.3s
@@ -661,7 +642,7 @@ footer
           text-align: right
           display: inline-block
           margin: 0 14px
-          font-size: 18px
+          font-size: 16px
           color: white
           transition: 300ms
           &:hover
@@ -785,7 +766,7 @@ footer
     justify-content: space-between
     .copyright
       color: #847989
-      font-size: 16px
+      font-size: 14px
     .social
       width: fit-content
       display: flex
@@ -829,30 +810,6 @@ dd
         li
           padding: 10px 10px 14px
 
-          &.nav-products
-            width: 94px
-
-          &.nav-services
-            width: 91px
-
-          &.nav-cases
-            width: 109px
-
-          &.nav-customers
-            width: 114px
-
-          &.nav-company
-            width: 105px
-
-          &.nav-partners
-            width: 90px
-
-          &.nav-docs
-            width: 61px
-
-          a
-            font-size: 17px
-
         .indicator
           padding: 0 10px
 
@@ -864,29 +821,9 @@ dd
   header
     .head-menu
       ul
+        gap: 10px
         li
           padding: 10px 6px 14px
-
-          &.nav-products
-            width: 78px
-
-          &.nav-services
-            width: 74px
-
-          &.nav-cases
-            width: 92px
-
-          &.nav-customers
-            width: 96px
-
-          &.nav-company
-            width: 88px
-
-          &.nav-partners
-            width: 73px
-
-          &.nav-docs
-            width: 50px
 
           a, span.main-menu-link
             font-size: 15px
@@ -936,8 +873,6 @@ dd
 
                 &:hover a
                   color: #2A7DEC
-              .bottom-group
-                width: calc(100% + 94px)
 
       .n-button
         &.try
@@ -1024,26 +959,36 @@ dd
               position: unset
               box-shadow: unset
               padding: 12px 0
-              background-color: unset
 
               &.open-sub
                 display: flex
                 width: 100%
                 flex-wrap: wrap
 
-              .bottom-group
-                margin: 0 -32px 0
-                padding: 10px 32px 0
+                .sub-groups
+                  gap: 60px
+                  flex-flow: row wrap
+                  align-items: flex-start
+                  padding-left: 25px
 
-              .sub-groups
-                flex-wrap: wrap
-                .group .group-name
-                  display: none
+                  .group
+                    flex-direction: column
+                    gap: 15px
+                    padding: 0
 
-              a:last-child
-                margin-bottom: 22px
-                &.small-link
-                  margin-bottom: 15px
+                    &:first-child
+                      width: unset
+                      align-self: unset
+
+                    .column
+                      gap: 15px
+
+                      .small-link
+                        margin: 0
+
+                      &:not(:first-child)
+                        .group-name
+                          display: none
 
       .indicator
         display: none

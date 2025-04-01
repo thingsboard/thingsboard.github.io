@@ -17,7 +17,7 @@ subscribers, in our case of integration.
 You should already have an [AWS account](https://aws.amazon.com/iot/) prepared, on which 
 perform a few settings. To establish a correct and secure connection between the service and ThingsBoard, you need to create Policies, devices, and certificates for them.
 
-#### Create Policy
+### Create Policy
 
 A policy is an object in AWS that, when associated with an entity or resource, defines their permissions. 
 Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in 
@@ -86,7 +86,7 @@ After that, click the **Create** button. The policy will be added to the list, a
 
 {% include images-gallery.html imageCollection="create-policies_3" %}
 
-#### Create Things and Certificates
+### Create Things and Certificates
 A Thing is a digital representation of a physical device or logical entity in AWS IoT.
 
 You can create a conditional device in several steps, but for it need to go to the appropriate section. 

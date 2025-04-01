@@ -19,7 +19,7 @@ This approach ensures that the system remains secure and that only authorized cl
 
 {% include templates/mqtt-broker/authentication.md %}
 
-##### Create/update MQTT Client Credentials
+## Create/update MQTT Client Credentials
 
 **MQTT_BASIC** credentials example:
 
@@ -78,7 +78,7 @@ The X.509 Certificate chain should have the certificate CN that matches exactly 
 matches with _.* Pattern Common Name .*_ in the second case, and the certificate's CN should contain the string _test_.
 Once authenticated using these credentials, clients will gain access to publishing and subscribing privileges limited to topics that start with _test_ssl/_.
 
-##### Get all MQTT Client Credentials
+## Get all MQTT Client Credentials
 
 ```bash
 curl --location --request GET 'http://localhost:8083/api/mqtt/client/credentials?pageSize=100&page=0' \
@@ -87,7 +87,7 @@ curl --location --request GET 'http://localhost:8083/api/mqtt/client/credentials
 {: .copy-code}
 **Note**, _pageSize_ parameter equal to 100 and _page_ parameter equal to 0, so the above request will fetch first 100 MQTT client credentials.
 
-##### Delete MQTT Client Credentials
+## Delete MQTT Client Credentials
 
 ```bash
 curl --location --request DELETE 'http://localhost:8083/api/mqtt/client/credentials/$CREDENTIALS_ID' \

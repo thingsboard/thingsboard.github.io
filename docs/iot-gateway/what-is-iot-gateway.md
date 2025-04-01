@@ -11,7 +11,7 @@ ThingsBoard is an open-source IoT platform for data collection, processing, visu
 
 <object width="95%" data="https://img.thingsboard.io/gateway/python-gateway-animd-ff.svg"></object>
 
-#### Gateway features
+## Gateway features
 
 The ThingsBoard IoT Gateway provides the following features:
 
@@ -36,7 +36,7 @@ The ThingsBoard IoT Gateway provides the following features:
  - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
 
 
-#### Architecture
+## Architecture
 
 The IoT Gateway is a software component that is designed to run on a Linux based microcomputers that support **Python 3.7+**.
 The main components of ThingsBoard IoT Gateway are listed below.
@@ -79,11 +79,11 @@ The Gateway Service is responsible for bootstrapping the Connectors, Event Stora
 This Service collects and periodically reports statistics to ThingsBoard about incoming messages and connected devices.
 Gateway Service persists list of connected devices to be able to re-subscribe to device configuration updates in case of the restart of the gateway. 
 
-#### Project Roadmap
+## Project Roadmap
 
 <p><a id="Products_IoTGateway_GRoadmap" href="/docs/iot-gateway/roadmap/" class="button gtm_button">Gateway Roadmap</a></p>
 
-#### Next Steps
+## Next Steps
 
 <p><a id="Products_IoTGateway_GSGuide" href="/docs/iot-gateway/getting-started/" class="button gtm_button">Getting Started 
 Guide</a></p>

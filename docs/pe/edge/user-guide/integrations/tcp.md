@@ -249,7 +249,7 @@ Once converter and integration templates are created, we can assign Integration 
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-#### Installing and running external TCP Integration
+### Installing and running external TCP Integration
 
 Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations) and install TCP Integration service locally or on separate machine.
 

@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-### Overview
+## Overview
 
 {% capture white-labeling-note %}
 The **white labeling** feature is supported only in the **Professional Edition**.
@@ -33,7 +33,7 @@ _**For example:** When a user logs in to a **customer-owned Edge** with the **te
 
 ![interface](https://img.thingsboard.io/edge/user-guide/white-labeling/interface.webp){: style="display: block; margin: auto; max-height: 400px"}
 
-### Edge Login Page
+## Edge Login Page
 
 **ThingsBoard** also allows customization of the login page. In a **multi-tenant environment**, domain-based branding defines the configurations that apply at login, meaning that different tenants can have different branding configurations. Read about **login page configurations** [here](/docs/pe/user-guide/white-labeling/#customize-the-login-page){: target="_blank"}.
 
@@ -50,13 +50,13 @@ _**For example:** When a user logs in to the **customer-owned Edge**, the **cust
 
 ![edge-login-page](https://img.thingsboard.io/edge/user-guide/white-labeling/edge-login-page.webp){: style="display: block; margin: auto; max-height: 450px"}
 
-### Other Configurations
+## Other Configurations
 
 The **white labeling** configuration for **Edge** is designed in the same way as for the **Platform (Server or Cloud)**. Please refer to the **Platform White Labeling documentation** for detailed configuration instructions:
 * [Custom translation](/docs/pe/user-guide/custom-translation/){: target="_blank"}
 * [Custom menu](/docs/pe/user-guide/custom-menu/){: target="_blank"}
 
-### Next Steps
+## Next Steps
 
 {% include templates/edge/guides-banner-edge.md %}
 

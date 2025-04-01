@@ -32,7 +32,7 @@ After running the docker image, you will see the following logs in your terminal
 
 ## Setup SIA Connect
 
-#### Installing SIA Connect
+### Installing SIA Connect
 
 In our case, we installed SIA Connect as a <b>.deb</b> package. You can find the official installation guide [here](https://help.sia-connect.com/en_US/linux-installation/install-sia-connect-on-linux){:target="_blank"}. Additionally, you can install SIA Connect as a Docker image [here](https://help.sia-connect.com/en_US/docker/install-sia-connect-using-docker){:target="_blank"}.
 After successful installation, navigate to the default host <b>127.0.0.1:80</b> where the Web UI is running (host might differ, depending on your settings).
@@ -41,7 +41,7 @@ After successful installation, navigate to the default host <b>127.0.0.1:80</b> 
 
 You need to log in and provide your LICENSE key. Alternatively, you can use the demo version, which has a 30-minute session limit.
 
-#### Installing OPC-UA connector
+### Installing OPC-UA connector
 
 Now, we have to download <b>OPC-UA</b> connector. For this purpose, follow these steps:
 
@@ -53,7 +53,7 @@ Now, we have to download <b>OPC-UA</b> connector. For this purpose, follow these
 
 {% include images-gallery.liquid imageCollection="installing-opc-ua-connector" %}
 
-#### Installing MQTT connector
+### Installing MQTT connector
 
 Also, we need to download <b>MQTT</b> connector to establish connection with ThingsBoard. The steps are as for downloading MQTT connector:
 
@@ -72,7 +72,7 @@ To connect our test device, we need to create two instances:
 - One for the device - this instance will connect to the demo OPC-UA server and receive data from it;
 - One for ThingsBoard - this instance will map data from the device instance, convert it to a suitable format, and send data to ThingsBoard.
 
-#### Adding OPC-UA Device instance
+### Adding OPC-UA Device instance
 
 First of all, we need to create OPC-UA Device instance, for this purpose, follow the steps below:
 
@@ -111,7 +111,7 @@ So, in the final result, you will have the following list of items:
 
 {% include images-gallery.liquid imageCollection="adding-opc-ua-device-instance-3" %}
 
-#### Adding ThingsBoard instance
+### Adding ThingsBoard instance
 
 This instance will map data from the device instance, convert it to a suitable format, and send data to ThingsBoard. To add a new instance, use follow these steps:
 

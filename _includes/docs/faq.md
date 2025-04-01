@@ -79,4 +79,4 @@ It is free for both personal and commercial usage and you can deploy it anywhere
 
 ## How to get support?
 
-You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/docs/services/) we provide.
+You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/services/) we provide.

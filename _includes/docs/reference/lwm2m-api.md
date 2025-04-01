@@ -53,20 +53,20 @@ Note that LwM2M models are versioned, and make sure to upload those that match t
 Once you upload the LwM2M models, you are ready to use them to define the device profile.
 See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device-profiles/) for more info about device profiles.
 
-##### Step 2.1 Create the LwM2M profile.
+#### Step 2.1 Create the LwM2M profile.
 
 The important step is to chose LwM2M Transport type on the "Transport configuration" step.
 The Transport Configuration allows us to define list of the LwM2M Objects that your devices supports.
 
 {% include images-gallery.html imageCollection="device-profile" showListImageTitles="true" %}
 
-##### Step 2.2 Choose LwM2M objects.
+#### Step 2.2 Choose LwM2M objects.
 
 Let's define a profile that supports Device Object (id: 3), Connectivity (id: 4), Firmware Update (id: 5) and Location monitoring (id: 6):
 
 {% include images-gallery.html imageCollection="device-objects" showListImageTitles="true" %}
 
-##### Step 2.3 Configure the mapping
+#### Step 2.3 Configure the mapping
 
 You may notice that Device Object supports Manufacturer, model, and serial numbers. Let’s configure ThingsBoard to fetch
 those data when device connects and store it as ThingsBoard attributes.
@@ -126,7 +126,7 @@ As a platform user, you are able to provision and define the mapping between the
 The mapping is configured in the corresponding device profile. We will use some screenshots of the LwM2M device profile below to explain the basics. 
 See the [Getting Started](#getting-started) guide for a step-by-step instruction to create the device profile.
 
-#### Read LwM2M resources to ThingsBoard attributes
+### Read LwM2M resources to ThingsBoard attributes
 
 You may configure device profile to read and observe certain LwM2M Resource. 
 The values of the resource may be stored as the device [attributes](/docs/{{docsPrefix}}user-guide/attributes/). 
@@ -146,7 +146,7 @@ To do this, select the "Observe" checkbox for the corresponding Resource. Let's 
 
 Using the above configuration, we will make sure that the attribute *timezone* will always contain the latest value of the *Timezone* resource.
 
-#### Write LwM2M resource via ThingsBoard attributes update
+### Write LwM2M resource via ThingsBoard attributes update
 
 ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
@@ -155,7 +155,7 @@ If the resource is marked as an attribute, platform will send the LwM2M Write op
 
 See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-thingsboard-attributes)
 
-#### Read LwM2M resources to time series data
+### Read LwM2M resources to time series data
 
 You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time series data](/docs/{{docsPrefix}}user-guide/telemetry/).
 To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in ThingsBoard.
@@ -164,7 +164,7 @@ and to store them as time series data in ThingsBoard:
 
 ![image](https://img.thingsboard.io/lwm2m/time-series-ce.png)
 
-#### Execute LwM2M operation using the ThingsBoard RPC command
+### Execute LwM2M operation using the ThingsBoard RPC command
 
 ThingsBoard supports on-demand LwM2M operations using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity. 
 You can send the command using REST API, dashboard widget, rule engine, or custom script.

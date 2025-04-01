@@ -8,7 +8,7 @@
 * TOC
 {:toc}
 
-### Overview
+## Overview
 
 ThingsBoard Platform integrations feature was designed for two primary use cases / deployment options:
 
@@ -20,7 +20,7 @@ The payload format of the device is not well-defined. Often two devices that hav
 
 The job of ThingsBoard Integration is to provide secure and reliable API bridge between core platform features (telemetry collection, attributes and RPC calls) and specific third-party platform APIs.    
 
-### How it works?
+## How it works?
 
 At the moment ThingsBoard supports various integration protocols. Most popular are HTTP, MQTT and OPC-UA. 
 Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
@@ -53,11 +53,11 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
 <object width="80%" data="https://img.thingsboard.io/user-guide/integrations/integrations-overview.svg"></object>
  
  
-### Deployment options
+## Deployment options
  
 ThingsBoard Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
 
-#### Embedded integrations
+### Embedded integrations
 
 Embedded integration is running in the main ThingsBoard server process. Basically it is part of a monolith deployment scenario.
 
@@ -72,7 +72,7 @@ Cons:
   
 <object width="60%" data="https://img.thingsboard.io/user-guide/integrations/embeded-integrations-overview.svg"></object> 
   
-#### Remote integrations
+### Remote integrations
  
 Remote integration become available since ThingsBoard PE v2.4.1 and enables new deployment scenario. 
 One can install remote integration in the local network and stream data to the cloud.   
@@ -94,11 +94,11 @@ Learn how to configure integration to run remotely using [this guide](/docs/{{pe
 
 <object width="70%" data="https://img.thingsboard.io/user-guide/integrations/remote-integrations-overview.svg"></object> 
 
-### Data Converters
+## Data Converters
 
 Data Converters is a part of the Platform Integrations feature. There are **Uplink** and **Downlink** data converters.
  
-#### Uplink Data Converter
+### Uplink Data Converter
 
 The main function of **Uplink Data Converter** is to parse payload of the incoming message and transform it to format that ThingsBoard uses.
 
@@ -113,7 +113,7 @@ Uplink Converter is basically a user defined function with the following signatu
 function Decoder(payload, metadata);
 ```
 
-##### Payload
+#### Payload
 
 Payload is one of the following content types: JSON, TEXT, Binary(Base64) and is specific to your Integration type.
 
@@ -134,12 +134,12 @@ function decodeToJson(payload) {
 
 There are also **btoa** and **atob** functions available to decode Binary(Base64) payload.  
 
-##### Metadata
+#### Metadata
 
 Metadata is a key-value map with some integration specific fields. You can configure additional metadata for each integration in the integration details.
 For example, you can put device type as an additional Integration metadata parameter and use it to automatically assign corresponding device type to new devices.
 
-##### Converter output
+#### Converter output
  
 Converter output should be a valid JSON document with the following structure:
 
@@ -221,7 +221,7 @@ Converter may also output array of device values and/or contain timestamps in th
 ]
 ```
 
-##### Update only keys field
+#### Update only keys field
 
 To avoid constant updates for telemetry attributes or keys, you can use the "Update only keys list" field.  
 Any keys provided in this field that exist in the telemetry or attribute arrays in the message after conversion will not be updated if the values associated with those keys have not changed from their previous values.
@@ -232,7 +232,7 @@ The same behavior is expected if the converter configuration has been updated.
 {% endcapture %}
 {% include templates/warn-banner.md content=update-only-keys-cluster-mode %}
 
-##### Example
+#### Example
 
 Let's assume a complex example where payload is encoded in hex "value" field and there is a timestamp associated with each record. 
 First two bytes of "value" field contain battery and second two bytes contain temperature. See payload example and metadata on a screen shoot below.
@@ -257,7 +257,7 @@ See video tutorial below for step-by-step instruction how to setup Uplink Data C
     </div>
 </div> 
 
-#### Downlink Data Converter
+### Downlink Data Converter
  
 The main function of **Downlink Data Converter** is to transform the incoming rule engine message and its metadata 
 to the format that is used by corresponding Integration.
@@ -280,7 +280,7 @@ Where
  - **msgType** - Rule Engine message type. See [predefined message types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) for more details.
  - **integrationMetadata** - key-value map with some integration specific fields. You can configure additional metadata for each integration in the integration details.
   
-##### Converter output
+#### Converter output
 
 Converter output should be a valid JSON document with the following structure:
 
@@ -300,7 +300,7 @@ Where
  - **data** - data string according to the content type
  - **metadata** - list of key-value pairs with additional data about the message. For example, topic to use for MQTT integration, etc.
 
-##### Example
+#### Example
 
 Let's assume an example where temperature and humidity upload frequency attributes are updated via ThingsBoard REST API and 
 you would like to push this update to an external MQTT broker (TTN, Mosquitto, AWS IoT, etc). 
@@ -321,7 +321,7 @@ In order to invoke the downlink processing by the integration, tenant administra
 
 The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink-example-rule-chain.json).
 
-##### Synchronous vs Asynchronous Downlinks 
+#### Synchronous vs Asynchronous Downlinks 
 
 Most of the integrations are able to process downlink messages to devices asynchronously. 
 For example, each message pushed by the rule engine to MQTT based integration is immediately pushed to the corresponding external MQTT broker.
@@ -330,7 +330,7 @@ However, some integrations, like SigFox or generic HTTP integration are not able
 These integrations, due to the nature of underlying HTTP protocol, are only able to push downlink information synchronously in reply to uplink message request. 
 In this case, the last downlink message originated by rule engine will be stored in the queue until the new uplink message arrives for particular device.
 
-### Debug mode
+## Debug mode
 
 Debug mode is very useful for verifying the configuration of converters and integrations, and allows to persis:
 
@@ -342,7 +342,7 @@ Debug mode is very useful for verifying the configuration of converters and inte
 However, having it on all the time can significantly increase the disk space used by the database since all the debug data is stored there.
 Starting from version 3.9, ThingsBoard stores all debug events for the first 15 minutes. After that, only failure events are retained. These settings can be combined or completely disabled.
 
-### Platform Integrations vs IoT Gateway
+## Platform Integrations vs IoT Gateway
 
 Experienced ThingsBoard users may notice that functionality of Integrations feature partially overlap with functionality of [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/).
 However, there are key differences between these two systems/features:
@@ -353,24 +353,24 @@ However, there are key differences between these two systems/features:
   
 As you can see, both systems are important and applicable in different use cases.
 
-### Feature Roadmap
+## Feature Roadmap
 
-#### Usage statistics
+### Usage statistics
  
 We plan to log statistics for amount of messages processed by each integration with possible limitations of messages processed on a tenant / system levels.
 
-#### More integrations and protocols
+### More integrations and protocols
 
 We plan to provide specific integrations for different platforms, and also for different communication protocols, like gRPC.
 
-#### More data converters
+### More data converters
 
 We plan to collect and maintain data converters for most popular devices on the market to simplify integration path even more. 
 Please note that you can share your converters with community and send them to us to make part of official ThingsBoard distributive.   
 
 [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 
-### See Also
+## See Also
 
 Explore guides and video tutorials related to specific integrations:
 
