@@ -8,7 +8,7 @@ A SCADA (Supervisory Control and Data Acquisition) system template for automatin
 The use of SCADA systems allows operators to monitor drilling parameters in real time, control equipment, and prevent emergency situations. ThingsBoard, as an IoT platform, enables the collection, processing, and visualization of data from sensors and controllers, making drilling safer, more efficient, and more predictable.
 
 <br>
-<object width="95%" data="/images/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
+<object width="100%" data="/images/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
 
 <br>
 To understand how the SCADA Drilling system template works, let&#39;s start by installing it.
@@ -24,7 +24,7 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 
 \- **Step 1**: Install Docker Compose. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
 
-\- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
+\- **Step 2**: Launch the Modbus Drilling Emulator. Execute the provided command to simulate a comprehensive drilling system:
 
 ```text
 docker run --pull always --rm -d --name tb-drilling-emulator -p 5035-5039:5035-5039 thingsboard/tb-drilling-emulator:latest && docker logs -f tb-drilling-emulator
@@ -35,13 +35,11 @@ This command will launch a Modbus pool emulator containing 5 separate devices, w
 
 {% include images-gallery.html imageCollection="launch-modbus-pool-emulator-1" %}
 
-\- **Step 3**: Launch the IoT Gateway.
-
-ThingsBoard will automatically generate a yml file with the required settings. All you need to do is copy and save this configuration as a **docker-compose.yml** file in a convenient location on your computer for storage and execution.
+\- **Step 3**: Launch the IoT Gateway. ThingsBoard will automatically generate the required configuration. Simply copy and save it as a **docker-compose.yml** file in a suitable folder on your computer for easy access and use.
 
 {% include images-gallery.html imageCollection="docker-compose-yml" %}
 
-Here&#39;s an example of the configuration:
+Below is a sample configuration for the ThingsBoard IoT Gateway service:
 
 ```text
 services:
@@ -58,17 +56,16 @@ services:
     # Environment variables
     environment:
       - host=$YOUR_INSTANCE_HOST
-      - port=$YOUR_INSTANCE_PORT
+      - port=$YOUR_INSTANCE_TCP_UDP_PORT
       - accessToken=$ACCESS_TOKEN
 ```
 
 where
 
-- **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance
-- **$YOUR_INSTANCE_PORT** is a port of your ThingsBoard instance
-- **$ACCESS_TOKEN** is an access token for the gateway from platform server
+- **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance.
+- **$YOUR_INSTANCE_TCP_UDP_PORT** is a TCP/UDP port of your ThingsBoard instance.
+- **$ACCESS_TOKEN** is an access token for the gateway from platform server.
 
-<br>
 Now, run the command below from the folder where you've saved the docker-compose.yml file to run the IoT Gateway:
 
 ```text
@@ -95,7 +92,7 @@ The SCADA Oil & Gas Drilling system includes:
 ## Dashboard
 
 As part of this solution, we have developed a comprehensive SCADA Oil & Gas Drilling system dashboard, providing real-time monitoring and control of key drilling parameters such as rotary speed, depth, tension, and fluid flow rate.
-Operators can manage equipment (pumps, rotors, preventers), analyze the condition of the drilling rig, drill bit, and drilling mud, and track load and vibration levels.
+Operators can manage equipment (pump, rotor, preventer), analyze the condition of the drilling rig, drill bit, and drilling mud, and track load and vibration levels.
 The system features interactive graphs, alarm logs, and notifications, helping to prevent accidents and enhance operational efficiency.
 
 ![image](/images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png)
@@ -104,22 +101,24 @@ The system features interactive graphs, alarm logs, and notifications, helping t
 
 **Key features:**
 
-- **Main drilling SCADA system state** – Real-time monitoring of drilling parameters (speed, depth, tension, flow rate) with control over pumps, rotors, and preventers.
+- **Main drilling SCADA system state** – Real-time monitoring of drilling parameters (speed, depth, tension, flow rate) with control over pump, rotor, and preventer.
 - **Data monitoring SCADA system state** – Tracks drill bit position, well pressure, mud flow, mechanical tension, drilling performance, equipment status, and environmental conditions while analyzing temperature, vibration, and gas levels to prevent failures.
 - **Drilling rig state** –Monitoring and controlling the rotational speed, hoisting speed, and drilling rig pressure, with real-time load analysis and drilling progress tracking.
-- **Blowout preventer (BOP) state** – Ensures well pressure control, monitors leaks, mud temperature, and gas levels, with real-time pressure trend analysis.
-- **Drill bit performance state** – Tracks drilling speed, bit position, vibration, and temperature to optimize penetration rate and efficiency.
-- **Drilling mud system state** – Monitors and controls drilling fluid properties, ensuring proper lubrication, cooling, and circulation.
-- **Draw works system state** – Controls hoisting and lowering of the drill string, adjusting speed, direction, and tension while tracking vibrations and position.
-- **Alarms and notifications** – Logs real-time alerts and warnings for quick response to failures, abnormal pressure, and leaks. 
+- **Preventer (BOP) state** – Ensures well pressure control, monitors leaks, mud temperature, and gas levels, with real-time pressure trend analysis.
+- **Drill bit state** – Tracks drilling speed, bit position, vibration, and temperature to optimize penetration rate and efficiency.
+- **Drilling mud state** – Monitors and controls drilling fluid properties, ensuring proper lubrication, cooling, and circulation.
+- **Drawwork state** – Controls hoisting and lowering of the drill string, adjusting speed, direction, and tension while tracking vibrations and position.
+- **Alarms state** – Logs real-time alerts and warnings for quick response to failures, abnormal pressure, or unexpected temperature.
 
-Navigating through the states provides detailed metrics and control elements for the drilling rig components.
+Navigate through dashboard states using navigation buttons to track and manage details for each drilling rig component.
 
 {% include images-gallery.html imageCollection="drilling-dashboard-1" %}
 
 The mobile view demonstrates the flexibility of the dashboard, allowing you to manage and monitor the SCADA Oil & Gas Drilling system across different devices, including tablets and smartphones.
 
 {% include images-gallery.html imageCollection="scada-mobile" %}
+
+<object width="40%" data="/images/solutions/scada-drilling-system/drilling-tablet-and-mobile.png"></object>
 
 ## Key components of a drilling rig
 

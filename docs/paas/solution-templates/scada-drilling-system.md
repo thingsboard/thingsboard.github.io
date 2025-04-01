@@ -8,10 +8,10 @@ description: SCADA Oil & Gas Drilling system overview
 go-to-drilling-solution-templates-page-1:
     0:
         image: /images/solutions/scada-drilling-system/go-to-drilling-solution-templates-page-1-pe.png
-        title: 'Navigate to the "Solution templates" page. Locate "SCADA Oil & Gas Drilling system" in your solution templates library. Click "Install" to begin the installation process;'
+        title: 'Navigate to the "Solution templates" page. Find "SCADA Oil & Gas Drilling system" and click "Install" to begin the installation process;'
     1:
         image: /images/solutions/scada-drilling-system/drilling-solution-instruction-1-pe.png
-        title: 'After installation, the instructions for setting up the solution will open.'
+        title: 'Once the installation is complete, setup instructions will be displayed.'
 
 launch-modbus-pool-emulator-1:
     0:
@@ -69,12 +69,7 @@ drilling-dashboard-1:
         title: 'Draw works system state – Controls hoisting and lowering of the drill string, adjusting speed, direction, and tension while tracking vibrations and position.'
     7:
         image: /images/solutions/scada-drilling-system/drilling-dashboard-8-pe.png
-        title: 'Alarms and notifications – Logs real-time alerts and warnings for quick response to failures, abnormal pressure, and leaks.'
-
-scada-mobile:
-    0:
-        image: /images/solutions/scada-drilling-system/drilling-tablet-and-mobile.png
-        title: 'This view demonstrates the flexibility of the dashboard, allowing you to manage and monitor the SCADA Oil & Gas Drilling system across different devices, including tablets and smartphones.'
+        title: 'Alarms and notifications – Logs real-time alerts and warnings for quick response to failures, abnormal pressure, or unexpected temperature.'
 
 ---
 
