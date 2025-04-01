@@ -21,6 +21,9 @@ toc:
     path: /docs/user-guide/attributes/
   - title: Time-series data
     path: /docs/user-guide/telemetry/
+  - title: Calculated fields
+    path: /docs/user-guide/calculated-fields/
+    new: true
   - title: Alarms
     path: /docs/user-guide/alarms/
   - title: Remote commands to devices
