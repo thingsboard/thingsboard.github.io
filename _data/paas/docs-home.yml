@@ -18,13 +18,15 @@ toc:
       path: /docs/paas/solution-templates/temperature-humidity-sensors/
     - title: Smart office
       path: /docs/paas/solution-templates/smart-office/
+    - title: SCADA Oil & Gas Drilling system
+      path: /docs/paas/solution-templates/scada-drilling-system/
+      new: true
     - title: Fleet tracking
       path: /docs/paas/solution-templates/fleet-tracking/
     - title: Fuel Level Monitoring
       path: /docs/paas/solution-templates/fuel-level-monitoring/
     - title: Swimming Pool SCADA system
       path: /docs/paas/solution-templates/swimming-pool-scada-system/
-      new: true
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
     - title: Smart retail
@@ -47,6 +49,9 @@ toc:
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
       path: /docs/paas/user-guide/telemetry/
+    - title: Calculated fields
+      path: /docs/paas/user-guide/calculated-fields/
+      new: true
     - title: Alarms
       path: /docs/paas/user-guide/alarms/
     - title: Remote commands to devices
