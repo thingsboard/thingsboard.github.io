@@ -3,7 +3,7 @@ layout: development-services
 title: ᐉ Professional IoT Solution Development Services
 notitle: "true"
 description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to complex systems, ✔ including dashboards, ✔ device connections, and tailored ✔ system integration."
-
+redirect_from: "docs/services/development-services/"
 ---
 
 <section class="hero light-text">
@@ -38,7 +38,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 </section>
 
 <section class="our-customers">
-    <div class="section-title">Our Customers</div> 
+    <span class="title">Our Customers</span> 
     <div style="width: 90vw; overflow: hidden">
         <div class="customer-logos">
             <div class="logo">
@@ -105,9 +105,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div id="content-poc" class="content-wrapper">
         <div class="poc">
             <div class="left-block">
-                <img id="solution-poc" src="/images/development-services/solution-coinify.png" alt="Custom solution">
-                <img id="solution-widget-1" class="absolute-image secondary-image" src="/images/development-services/solution-widget-1.svg" alt="Custom solution widget pie chart">
-                <img id="solution-widget-2" class="absolute-image secondary-image" src="/images/development-services/solution-widget-2.svg" alt="Custom solution widet value card with graph">
+                <img id="solution-poc" src="/images/development-services/solution-mvp.png" alt="Custom solution">
+                <img id="solution-widget-1" class="absolute-image secondary-image" src="/images/development-services/solution-widget-3.svg"  alt="Custom solution widget dark card with pie chart">
             </div>
             <div class="right-block">
                 <div class="section-title">
@@ -139,8 +138,9 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </ul>
             </div>
             <div class="right-block">
-                <img id="solution-mvp1" src="/images/development-services/solution-mvp.png" alt="Custom solution mvp">
-                <img id="solution-widget-3" class="absolute-image secondary-image" src="/images/development-services/solution-widget-3.svg" alt="Custom solution widget dark card with pie chart">
+                <img id="solution-mvp1" src="/images/development-services/solution-coinify.png" alt="Custom solution mvp">
+                <img id="solution-widget-3" class="absolute-image secondary-image" src="/images/development-services/solution-widget-1.svg" alt="Custom solution widget value card with pie chart">
+                <img id="solution-widget-2" class="absolute-image secondary-image" src="/images/development-services/solution-widget-2.svg" alt="Custom solution widget value card with graph" >
             </div>
             <img id="number-two" class="absolute-image" src="/images/development-services/number-2.svg" alt="Background number two">
         </div>
@@ -167,15 +167,15 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
         </div>
     </div>
-    <div class="content-wrapper" style="background-color: #F4F8FE; margin-bottom: 100px">
-        <div class="header">
+    <div class="content-wrapper additionally" style="background-color: #F4F8FE; margin-bottom: 100px">
+        <div class="header header-animation">
             <div class="side-title" style="margin-top: 0">
                 <span>ADDITIONALLY</span>
             </div>
             <div class="section-title">Architecture Design Sessions</div>
             <div class="section-text">Feeling uncertain about your user stories, system topology, or overall architecture? Our expert team offers a focused one-week <b>Architecture Design Session</b> to help you gain total clarity. 
-                <br>At the end of the session, you’ll receive a comprehensive architecture document that outlines a well-defined technical roadmap, detailed system design, a clarified scope of work, and a step-by-step plan to bring your IoT solution to life.
-                <br>Start your project with confidence — built on a solid foundation.</div>
+                <br><br>At the end of the session, you’ll receive a comprehensive architecture document that outlines a well-defined technical roadmap, detailed system design, a clarified scope of work, and a step-by-step plan to bring your IoT solution to life.
+                <br><br>Start your project with confidence — built on a solid foundation.</div>
         </div>
     </div>
 </section>
@@ -307,6 +307,21 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     });
 
     headerObserver.observe(cduHeader);
+
+    let additionalHeader = document.querySelector(".additionally .header");
+
+    const additionalObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("header-animation");
+                headerObserver.unobserve(entry.target);
+            }
+        })
+    }, {
+        threshold: 0.5
+    });
+
+    additionalObserver.observe(cduHeader);
 
     const sectionLists = document.querySelectorAll(".section-list");
 
