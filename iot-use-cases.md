@@ -6,28 +6,22 @@ notitle: "true"
 
 ---
 
-<div class="filter">
-    <div class="filter-content">
-        <div class="actions">
-            <div onclick="actions('main')" class="check-box main checked">All</div>
-            <div onclick="actions('general')" class="check-box general">General</div>
-            <div onclick="actions('scada')" class="check-box scada">SCADA</div>
-        </div>
-    </div>
-</div>
+{% include contact-us-card.liquid %}
 
-<div id="usecase-list"></div>
+{% include filter.html filters = "General,SCADA" containerId = "usecase-list" %}
+
+<div id="usecase-list">
+    {% include use-cases-cards.html %}
+</div>
 
 <style>
 	{% include partner-style.css %}
 </style>
 
 <script>
-    	{% include partner-script.js type="iot-use-cases"
-        containerId="usecase-list" content="iot-use-cases" %}
+
 </script>
 
 <script>
-	window.onload = rengen();
 </script>
 

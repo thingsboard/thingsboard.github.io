@@ -129,7 +129,9 @@ function rengen() {
 
         function cardLeave() {
             video.pause();
-            box.style.setProperty("--current-height", '100%');
+            setTimeout(() => {
+                box.style.setProperty("--current-height", '100%');
+            }, 300)
         }
 
         eye.appendChild(eyeImg);
