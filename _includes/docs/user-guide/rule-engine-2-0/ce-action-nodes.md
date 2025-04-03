@@ -112,6 +112,14 @@ To **avoid persisting unnecessary data to the database**, route messages to this
 > **Important**: when a calculated field is evaluated, new message with the originator which calculated field state was updated is generated and pushed into the root rule chain of originator.
 To store the calculated result, you still need to use a **save time series** or **save attributes** node in the rule chain.
 
+**Output connections**
+
+* **Success:**
+    * If the message payload contains valid telemetry or attribute data to process, or it is empty.
+* **Failure:**
+    * If an incoming message type is not `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`.
+    * If unexpected error occurs during message processing.
+
 **Usage example**:
 
 Consider a **smart building energy management system**, where the building operator wants to monitor the **Energy Efficiency Ratio (EER)** of air conditioning systems to analyze performance trends.
