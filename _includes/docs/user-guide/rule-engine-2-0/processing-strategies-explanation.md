@@ -1,7 +1,6 @@
 - **On every message**: perform the action for every incoming message.
 - **Deduplicate**: perform the action only for the first message from a specific originator within a configurable time interval. Minimum value for a deduplication interval is 1 second and maximum is 1 day.
-  To determine whether a message falls within a previously processed interval,
-  The system calculates a deduplication interval number using the following formula:
+  To determine whether a message falls within a previously processed interval, the system calculates a deduplication interval number using the following formula:
   ```java
   long intervalNumber = ts / deduplicationIntervalMillis;
   ```

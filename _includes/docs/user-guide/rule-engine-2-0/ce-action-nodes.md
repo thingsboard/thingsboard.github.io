@@ -653,8 +653,7 @@ When configuring the processing strategies in advanced mode, certain combination
 
 {% include docs/user-guide/rule-engine-2-0/advanced-processing-strategies-hazards.md %}
 
-The ability to configure each persistence action independently—including setting different deduplication intervals—is designed primarily as a performance optimization.
-Because of the scenarios described above, these settings should be viewed as performance enhancements rather than strict processing guarantees.
+Due to the scenarios described above, the ability to configure each persistence action independently—including setting different deduplication intervals—should be treated as a performance optimization rather than a strict processing guarantee.
 
 **Configuration: Scope**
 
@@ -687,12 +686,12 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
 * **Force notification to the device** - the node determines whether to notify the device about attribute updates by evaluating the **Force notification to the device** option and the `notifyDevice` property in the incoming message metadata. The algorithm is as follows:
   1. If the **Force notification to the device** option is enabled, the node always sends attribute update notifications to the device, regardless of the `notifyDevice` metadata value.
   2. If the option is disabled, the node checks the `notifyDevice` property in the message metadata:
-     - If the property is absent or an empty string, it defaults to sending the notification.
-     - If the property is provided, the notification is sent only if its value is `true` (ignoring case).
+     * If the property is absent or an empty string, it defaults to sending the notification.
+     * If the property is provided, the notification is sent only if its value is `true` (ignoring case).
   3. In all cases, the notification is only sent if the device has an active subscription for the updated (or deleted) attributes.
   4. Additionally, attribute notifications are not sent if:
-     1. The attribute save is skipped because its value did not change (when **Save attributes only if the value changes** is enabled).
-     2. The attribute save is skipped due to the configured processing strategy (e.g., set to Skip).
+     * The attribute save is skipped because its value did not change (when **Save attributes only if the value changes** is enabled).
+     * The attribute save is skipped due to the configured processing strategy (e.g., set to Skip).
 
 **Output connections**
 
@@ -730,7 +729,7 @@ The node accepts messages of type `POST_TELEMETRY_REQUEST` and supports the foll
     }
     ```
 
-2. Timestamped key-value pairs: an object that includes a `ts` property for the timestamp and a `values` property containing key-value pairs as defined in format 1.
+2. Timestamped key-value pairs: an object that includes a `ts` property for the timestamp and a `values` property containing key-value pairs (defined in format 1).
     ```json
     {
       "ts": 1737963587742,
@@ -772,8 +771,6 @@ The save time series node can perform four distinct actions, each governed by co
 For each of these actions, you can choose from the following **processing strategies**:
 {% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
 
-- **Skip**: never perform the action.
-
 > **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
 
 Processing strategies are configured through **Processing settings**, which offer two configuration modes:
@@ -796,8 +793,7 @@ When configuring the processing strategies in advanced mode, certain combination
 
 {% include docs/user-guide/rule-engine-2-0/advanced-processing-strategies-hazards.md %}
 
-The ability to configure each persistence action independently—including setting different deduplication intervals—is designed primarily as a performance optimization. 
-Because of the scenarios described above, these settings should be viewed as performance enhancements rather than strict processing guarantees.
+Due to the scenarios described above, the ability to configure each persistence action independently—including setting different deduplication intervals—should be treated as a performance optimization rather than a strict processing guarantee.
 
 **Configuration: Advanced settings**
 
