@@ -19,6 +19,946 @@ $form-control-border: 1px solid rgba(0, 0, 0, 0.12)
 $button-background-color: #2A7DEC
 $font-style-normal: normal
 
+#development-services-reviews
+    .development-services-reviews-content
+        overflow: hidden
+    footer
+        position: relative
+
+    .content-wrapper
+        position: relative
+        z-index: 1
+
+    .full-review
+        display: flex
+        justify-content: center
+
+    #encyclopedia
+        padding: 20px 0
+        position: relative
+        overflow: auto
+
+        #content
+            position: inherit
+
+    .back-link
+        display: flex
+        color: #727381
+        font-size: 24px
+        font-style: normal
+        font-weight: 500
+        line-height: 30px
+        letter-spacing: 0.024px
+        padding: 10px
+        margin-bottom: 25px
+        align-items: center
+        &:hover
+            text-decoration: none
+
+        .icon
+            margin-right: 14px
+            display: flex
+
+    .header
+        display: flex
+        margin-bottom: 80px
+
+        .title
+            color: #333
+            font-size: 48px
+            font-style: normal
+            font-weight: 600
+            line-height: 68px
+            letter-spacing: 0.48px
+
+    .side-title
+        padding-top: 10px
+        margin-right: 91px
+        z-index: 2
+        span
+            display: inline-block
+            border-radius: 6px
+            padding: 7px 0
+            color: #3622A4
+            text-align: center
+            font-size: 26px
+            font-style: normal
+            font-weight: 700
+            line-height: 30px
+            letter-spacing: 0.26px
+            text-transform: uppercase
+            width: max-content
+
+    #review-asg
+        padding-top: 50px
+        padding-bottom: 150px
+        &::before
+            content: ""
+            border-radius: 1478px
+            background: rgba(62, 103, 251, 0.16)
+            filter: blur(250px)
+            position: absolute
+            z-index: 0
+            width: 100%
+            height: 100%
+
+    #review-superbockgroup
+        padding-top: 200px
+        padding-bottom: 120px
+
+    #review-kalitec
+        padding: 120px 130px
+        background: #F7F9FC
+        z-index: 1
+
+    #review-ionatech
+        padding: 120px 130px
+        background: #F7F9FC
+        z-index: 1
+
+    .get-in-touch
+        position: relative
+        display: flex
+        background-color: white
+        padding: 100px
+
+        .content-get-in-touch
+            display: flex
+            justify-content: space-between
+            width: 100%
+
+        .section-title
+            margin-right: 94px
+
+        .info
+            margin-right: 70px
+
+        .side-title
+            margin-right: 94px
+
+        .section-title
+            max-width: 700px
+            min-width: 700px
+            line-height: 68px
+            margin-right: 40px
+            color: #333
+            font-size: 48px
+            font-style: normal
+            font-weight: 600
+            letter-spacing: 0.48px
+            padding-bottom: 30px
+
+        .section-text
+            color: #5E5F62
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 28px
+            letter-spacing: 0.016px
+            max-width: 470px
+
+        .contact-form
+            padding-top: 30px
+            width: 100%
+            z-index: 2
+            .form-element
+                margin-bottom: 28px
+                label
+                    position: relative
+                    width: 100%
+                    p
+                        color: rgba(0, 0, 0, 0.54)
+                        font-size: 12px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 16px
+                        letter-spacing: 0.4px
+                        position: absolute
+                        top: -8px
+                        left: 10px
+                        z-index: 2
+                        padding: 0 5px
+                        background: white
+
+        .cdu-form-control
+            width: 100%
+            color: #898B8F
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 24px
+            letter-spacing: 0.15px
+            border-radius: 4px
+            border: 1px solid rgba(0, 0, 0, 0.12)
+            padding: 16px 18px
+
+        .cdu-button
+            padding: 15px
+            border-radius: 6px
+            color: white
+            background-color: #2A7DEC
+            width: 100%
+
+    .review
+        display: flex
+        position: relative
+        flex-direction: column
+        width: 100%
+        padding: 0 290px
+        z-index: 2
+
+        .logo
+            display: flex
+            margin-bottom: 30px
+            > img
+                object-fit: contain
+                width: 100%
+                height: auto
+                max-width: fit-content
+
+        .review-header
+            color: #2E2F3B
+            font-size: 28px
+            font-style: normal
+            font-weight: 500
+            line-height: 40px
+            letter-spacing: 0.028px
+            margin-bottom: 20px
+
+        .review-body
+            max-width: 900px
+            h6, h5
+                color: #5E5F62
+                font-size: 22px
+                font-style: normal
+                font-weight: 400
+                line-height: 40px
+                letter-spacing: 0.022px
+            h6
+                margin-bottom: 22px
+
+            h5
+                margin-bottom: 5px
+
+    .bg-rectangle
+        position: absolute
+        width: 692px
+        height: 659px
+        transform: rotate(36.145deg)
+        flex-shrink: 0
+        border-radius: 60px
+        opacity: 0.3
+        background: #E9EBFB
+        z-index: 0
+
+    #rectangle1
+        top: 4%
+        left: 82%
+
+    #rectangle2
+        top: 45%
+        left: -10%
+
+    #rectangle3
+        top: 20%
+        left: 82%
+
+    #rectangle4
+        top: 45%
+        left: -10%
+
+    .modal
+        display: none
+        position: fixed
+        align-items: center
+        justify-content: center
+        z-index: $modal-z-index
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        background-color: $modal-background-color
+
+        .modal-content
+            animation-name: animatetop
+            animation-duration: 0.4s
+            background-color: $modal-content-background-color
+            padding: 20px 20px 30px
+            border: $modal-content-border
+            width: 950px
+
+            .sub-content
+                overflow: auto
+                height: 95%
+
+            .close-button
+                display: flex
+                justify-content: end
+
+            .close
+                width: 28px
+                height: 28px
+                cursor: pointer
+
+            .title, .sub-title, .sub-sub-title
+                letter-spacing: 0.01em
+                text-align: center
+                display: flex
+                justify-content: center
+                font-style: $font-style-normal
+
+            .title
+                font: $title-font
+                color: #3622A4
+
+            .sub-title
+                font: $sub-title-font
+                color: #333333
+
+            .sub-sub-title
+                font: $sub-sub-title-font
+                color: #5E5F62
+                letter-spacing: .001em
+                span
+                    width: 556px
+                    height: 56px
+
+            .form-section
+                padding: 30px 40px 0 40px
+                display: flex
+                justify-content: space-around
+                .form-element
+                    margin-bottom: 15px
+                    width: 48%
+                    label
+                        position: relative
+                        width: 100%
+                        p
+                            color: $form-element-label-color
+                            font-size: 12px
+                            line-height: 16px
+                            font-style: $font-style-normal
+                            font-weight: 400
+                            letter-spacing: 0.4px
+                            position: absolute
+                            top: -8px
+                            left: 10px
+                            z-index: 2
+                            padding: 0 5px
+                            background: white
+
+                        .cdu-form-control, .cdu-text-area
+                            width: 100%
+                            color: #898B8F
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 24px
+                            letter-spacing: 0.15px
+                            border-radius: 4px
+                            border: $form-control-border
+                            padding: 16px 18px
+
+                        .cdu-text-area
+                            height: 170px
+
+                    .label-select
+                        select
+                            width: 100%
+                            appearance: none
+                            -webkit-appearance: none
+                            -moz-appearance: none
+                            &::-ms-expand
+                                display: none
+
+                        &::after
+                            content: ""
+                            position: absolute
+                            top: 40%
+                            right: 10px
+                            width: 16px
+                            height: 16px
+                            background-image: url(https://img.thingsboard.io/pe/read-more-arrow.svg) no-repeat center
+                            transform: rotate(90deg)
+                            transform-origin: center center
+
+                .next
+                    width: 98%
+
+            .secondary
+                padding-top: 0
+
+            .submit-button-container
+                display: flex
+                justify-content: center
+                .cdu-button
+                    padding: 15px
+                    border-radius: 6px
+                    color: white
+                    background-color: $button-background-color
+                    width: 400px
+
+    @media screen and (max-width: $step6)
+        .review
+            padding: 0 100px
+
+        .header
+            .title
+                font-size: 36px
+
+        .get-in-touch
+            .info
+                margin-right: 0
+                .section-title
+                    min-width: 570px
+
+            .side-title
+                span
+                    text-wrap: nowrap
+                    width: 210px
+                    height: 44px
+
+            .section-title
+                min-width: 570px
+                height: 136px
+                line-height: 60px
+
+            .section-text
+                line-height: 40px
+
+    @media screen and (max-width: $step5)
+        .review
+            padding: 0 100px
+
+        .header
+            .title
+                font-size: 36px
+
+        .get-in-touch
+            .content-get-in-touch
+                max-width: 1280px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+
+                .info
+                    grid-area: info
+                    margin-right: 0
+                    .section-title
+                        width: 609px
+
+                .side-title
+                    grid-area: side-title
+                    span
+                        text-wrap: nowrap
+                        width: 210px
+                        height: 44px
+
+                .section-title
+                    width: 610px
+                    height: 136px
+
+                .contact-form
+                    grid-area: contact-form
+                    display: flex
+                    align-items: center
+                    width: 100%
+                    padding-top: 0
+                    fieldset
+                        width: 100%
+
+        .modal
+            .modal-content
+                width: 800px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 130px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step4) and (min-width: $step3)
+        #review-kalitec
+            padding: 120px 20px
+
+        #review-ionatech
+            padding: 120px 20px
+
+        .review
+            padding: 0 20px
+
+        .get-in-touch
+            padding: 150px 50px 200px 50px
+            .content-get-in-touch
+                max-width: 1000px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+
+                .info
+                    grid-area: info
+                    margin-right: 0
+                    max-width: 50%
+
+                    .section-title
+                        height: auto
+                        line-height: 40px
+                        width: 100%
+                        margin: 0
+                        font-size: 30px
+
+                    .section-text
+                        max-width: 100%
+
+                .side-title
+                    grid-area: side-title
+                    span
+                        text-wrap: nowrap
+                        width: 210px
+                        height: 44px
+                        text-align: start
+
+                .contact-form
+                    grid-area: contact-form
+                    width: 100%
+
+            .info
+                grid-area: info
+                margin-right: 0
+
+                .section-title
+                    width: 341px
+                    height: auto
+                    line-height: 40px
+
+                .section-text
+                    max-width: 327px
+
+            .cdu-button
+                width: 100%
+
+        .modal
+            .modal-content
+                width: 693px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 80px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step3)
+        .back-link
+            margin-bottom: 10px
+
+        .side-title
+            margin-bottom: 10px
+
+        .header
+            display: flex
+            flex-direction: column
+            margin-left: 0
+            margin-bottom: 40px
+
+            .title
+                font-size: 30px
+                line-height: 48px
+
+        .review
+            padding: 0
+            max-width: 750px
+            .review-header
+                font-size: 30px
+                line-height: 48px
+
+            .review-body
+                h6, h5
+                    font-size: 14px
+                    line-height: 30px
+                h6
+                    margin-bottom: 8px
+
+                h5
+                    margin-bottom: 3px
+
+        .get-in-touch
+            padding: 50px 40px 80px 40px
+
+            .content-get-in-touch
+                flex-direction: column
+                padding: 0
+                max-width: 750px
+                display: flex
+
+                .section-title
+                    height: fit-content
+
+            .info
+                margin-right: 70px
+
+            .side-title
+                margin-right: 94px
+                span
+                    text-align: start
+
+            .section-title
+                font-size: 25px
+                line-height: 30px
+                min-width: 300px
+                margin-right: 94px
+                height: fit-content
+                max-width: fit-content
+
+            .section-text
+                font-size: 16px
+                line-height: 28px
+                max-width: fit-content
+
+            .contact-form
+                padding-top: 30px
+                max-width: 100%
+                z-index: 2
+                .form-element
+                    margin-bottom: 28px
+                    width: 100%
+                    label
+                        position: relative
+                        p
+                            font-size: 12px
+                            line-height: 16px
+
+        #review-asg
+            padding: 40px 40px
+
+        #review-superbockgroup
+            padding: 40px 40px
+
+        #review-kalitec
+            padding: 40px 40px
+            z-index: 1
+
+        #review-ionatech
+            padding: 40px 40px
+
+        .side-title
+            margin-right: 0
+            margin-bottom: 10px
+
+        .modal
+            .modal-content
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step2)
+        .back-link
+            margin-bottom: 10px
+
+        .side-title
+            margin-bottom: 10px
+
+        .header
+            display: flex
+            flex-direction: column
+            margin-left: 0
+            margin-bottom: 40px
+
+            .title
+                font-size: 20px
+                line-height: 30px
+
+        .review
+            padding: 0
+            .review-header
+                font-size: 20px
+
+            .review-body
+                h6, h5
+                    font-size: 14px
+                    line-height: 30px
+                h6
+                    margin-bottom: 8px
+
+                h5
+                    margin-bottom: 3px
+
+        .get-in-touch
+            padding: 50px 20px 80px 20px
+
+            .content-get-in-touch
+                flex-direction: column
+                padding: 0
+
+            .info
+                margin-right: 70px
+
+                .section-title
+                    min-width: 300px
+
+            .side-title
+                margin-right: 94px
+
+            .section-title
+                margin-right: 94px
+                font-size: 25px
+                line-height: 30px
+                height: fit-content
+                width: fit-content
+                max-width: fit-content
+
+            .section-text
+                font-size: 16px
+                line-height: 28px
+                max-width: fit-content
+
+            .contact-form
+                padding-top: 30px
+                z-index: 2
+                width: 100%
+                .form-element
+                    margin-bottom: 28px
+                    width: 100%
+                    label
+                        position: relative
+                        p
+                            font-size: 12px
+                            line-height: 16px
+
+            fieldset
+                width: 100%
+
+            .cdu-button
+                width: 100%
+
+        #review-asg
+            padding: 50px 20px 40px 20px
+
+        #review-superbockgroup
+            padding: 40px 20px
+
+        #review-kalitec
+            padding: 40px 20px
+            z-index: 1
+
+        #review-ionatech
+            padding: 40px 20px
+
+        .side-title
+            margin-right: 0
+            margin-bottom: 10px
+
+        .modal
+            .modal-content
+                width: 331px
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding-top: 40px
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+    @media screen and (max-width: $step3) and (max-height: $verticalStep1)
+        .modal
+            .modal-content
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+                    span
+                        width: auto
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step2) and (max-height: $verticalStep1)
+        .modal
+            .modal-content
+                width: 90%
+                height: 90%
+                padding: 10px
+                .title
+                    font-size: 12px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 15px
+
+                .sub-sub-title
+                    font-size: 12px
+
+                .form-section
+                    padding-top: 10px
+                    display: flex
+                    flex-direction: row
+                    .form-element
+                        margin-bottom: 5px
+                        width: 48%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+                    .next
+                        width: 98%
+
+    @media screen and (max-width: $step3) and (min-height: $verticalStep1)
+        .modal
+            .modal-content
+                width: 620px
+                .title
+                    font-size: 15px
+
+                .sub-title
+                    font-size: 27px
+
+                .sub-sub-title
+                    font-size: 14px
+
+                .form-section
+                    .form-element
+                        label
+                            p
+                                font-size: 11px
+                            .cdu-form-control
+                                font-size: 14px
+
+                            .cdu-text-area
+                                height: 110px
+
+                .submit-button-container
+                    .cdu-button
+                        width: 250px
+
+    @media screen and (max-width: $step2) and (min-height: $verticalStep1)
+        .modal
+            .modal-content
+                width: 90%
+                height: 90%
+                padding: 15px
+                .close
+                    width: 20px
+                    height: 20px
+
+                .sub-title
+                    font-size: 24px
+
+                .sub-sub-title
+                    font-size: 14px
+                    span
+                        width: 271px
+                        height: 84px
+
+                .form-section
+                    padding: 40px 15px 0
+                    flex-direction: column
+                    .form-element
+                        margin-bottom: 15px
+                        width: 98%
+                        label
+                            .cdu-text-area
+                                height: 90px
+
+                .secondary
+                    padding-top: 0
+
 #development-services
     .noToc
         position: relative
@@ -50,6 +990,8 @@ $font-style-normal: normal
                 filter: brightness(1.3) contrast(.9)
 
             &.additionally
+                background-color: #F4F8FE
+                margin-bottom: 100px
                 .header
                     display: flex
                     flex-direction: row
@@ -57,18 +999,11 @@ $font-style-normal: normal
                     position: relative
                     z-index: 1
                     padding: 0 120px
-                    opacity: 0
-                    transform: translate3d(0, 45px, 0)
-
-                .header-animation
-                    animation-name: slideup-in
-                    animation-duration: 1000ms
-                    animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-                    animation-fill-mode: forwards
+                    opacity: 1
 
                     .side-title
                         min-width: 202px
-                        margin-top: 14px
+                        margin-right: 60px
 
                     .section-title
                         max-width: 700px
@@ -229,7 +1164,7 @@ $font-style-normal: normal
                         font-style: normal
                         font-weight: 700
                         line-height: 60px
-                        margin-top: 75px
+                        padding-top: 75px
 
                     .result-text
                         color: #1E1B39
@@ -240,7 +1175,7 @@ $font-style-normal: normal
                         font-style: normal
                         font-weight: 400
                         line-height: 32px
-                        margin-top: 20px
+                        padding-top: 20px
                         margin-bottom: 54px
 
                     .button
@@ -269,6 +1204,8 @@ $font-style-normal: normal
 
         & > div
             position: relative
+            width: 90vw
+            overflow: hidden
             &:before, &:after
                 position: absolute
                 top: 0
@@ -335,7 +1272,6 @@ $font-style-normal: normal
             .side-title
                 margin-right: 65px
                 min-width: 202px
-                margin-top: 14px
 
             .section-title
                 max-width: 700px
@@ -640,8 +1576,7 @@ $font-style-normal: normal
                 font: $sub-sub-title-font
                 color: #5E5F62
                 letter-spacing: .001em
-                margin-top: 15px
-                span    
+                span
                     width: 556px
                     height: 56px
 
@@ -757,7 +1692,6 @@ $font-style-normal: normal
                 .side-title
                     margin-right: 50px
                     min-width: 198px
-                    margin-top: 10px
 
                 .section-title
                     max-width: 528px
@@ -771,9 +1705,6 @@ $font-style-normal: normal
                     width: 800px
 
                 #solution-widget-1
-                    //width: 331px
-                    //top: 26%
-                    //left: 62%
                     top: 42%
                     left: 28%
                     width: 562px
@@ -885,7 +1816,6 @@ $font-style-normal: normal
                 .side-title
                     margin-right: 50px
                     min-width: 198px
-                    margin-top: 10px
                     grid-area: side-title
                     span
                         padding: 6px 0
@@ -947,10 +1877,6 @@ $font-style-normal: normal
 
             .additionally
                 padding: 100px 0
-                button
-                    min-width: 290px
-                    height: 60px
-                    padding: 0
 
         .testimonials
             padding: 130px 0 30px 0
@@ -1021,7 +1947,6 @@ $font-style-normal: normal
                     .cdu-sub-title
                         font-size: 24px
                         min-width: 622px
-                        margin-top: 10px
 
                 .hero-image
                     .image-wrapper-icon-phone
@@ -1071,7 +1996,6 @@ $font-style-normal: normal
                 .section-text
                     grid-area: section-text
                     font-size: 14px
-                    margin-top: 0
 
             .poc
                 padding: 110px 40px
@@ -1128,10 +2052,8 @@ $font-style-normal: normal
                     max-width: 352px
                     max-height: 288px
 
-            .additionally
-                button
-                    min-width: 224px
-                    height: 52px
+            .content-wrapper.additionally
+                div.header
                     padding: 0
 
         .testimonials
@@ -1164,9 +2086,6 @@ $font-style-normal: normal
             line-height: 45px
             letter-spacing: 0.3px
             padding-bottom: 10px
-
-        .section-text
-            margin-top: 10px
 
         .section-list
             li
@@ -1301,7 +2220,7 @@ $font-style-normal: normal
                         .result-number
                             font-size: 28px
                             line-height: 40px
-                            margin-top: 32px
+                            padding-top: 32px
 
                         .result-text
                             font-size: 14px
@@ -1577,10 +2496,6 @@ $font-style-normal: normal
                     max-width: unset
 
                 #solution-widget-1
-                    //max-width: unset
-                    //width: 46%
-                    //top: 47%
-                    //left: 56%
                     width: 70%
                     top: 43%
                     left: 35%
@@ -1628,8 +2543,6 @@ $font-style-normal: normal
                 padding: 40px 20px
                 .side-title
                     margin-bottom: 10px
-                    button
-                        padding: 5px 50px
 
             .header-animation
                 .section-title

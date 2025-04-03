@@ -16,11 +16,11 @@ redirect_from: "docs/services/development-services/"
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
-                <img id="icon-laptop" src="https://img.thingsboard.io/development-services/laptop-with-dashboard.png" alt="Laptop with a dashboard"/>
+                <img id="icon-laptop" src="https://img.thingsboard.io/development-services/laptop-with-dashboard.webp" alt="Laptop with a dashboard"/>
                 <button class="button schedule anchor-button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
-                <img id="icon-phone" src="https://img.thingsboard.io/development-services/phone-with-dashboard.png" alt="Phone with a dashboard"/>
+                <img id="icon-phone" src="https://img.thingsboard.io/development-services/phone-with-dashboard.webp" alt="Phone with a dashboard"/>
             </div>
             <div class="schedule-block">
                 <img
@@ -39,7 +39,7 @@ redirect_from: "docs/services/development-services/"
 
 <section class="our-customers">
     <span class="title">Our Customers</span> 
-    <div style="width: 90vw; overflow: hidden">
+    <div>
         <div class="customer-logos">
             <div class="logo">
                 <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
@@ -95,7 +95,7 @@ redirect_from: "docs/services/development-services/"
 <section class="cdu-services">
     <div class="content-wrapper">
         <div class="header">
-            <div class="side-title" style="margin-top: 0">
+            <div class="side-title">
                 <span>OUR SERVICES</span>
             </div>
             <div class="section-title">From PoC to complete IoT solutions</div>
@@ -105,7 +105,7 @@ redirect_from: "docs/services/development-services/"
     <div id="content-poc" class="content-wrapper">
         <div class="poc">
             <div class="left-block">
-                <img id="solution-poc" src="https://img.thingsboard.io/development-services/solution-mvp.png" alt="Custom solution">
+                <img id="solution-poc" src="https://img.thingsboard.io/development-services/solution-mvp.webp" alt="Custom solution">
                 <img id="solution-widget-1" class="absolute-image secondary-image" src="https://img.thingsboard.io/development-services/solution-widget-3.svg"  alt="Custom solution widget dark card with pie chart">
             </div>
             <div class="right-block">
@@ -138,7 +138,7 @@ redirect_from: "docs/services/development-services/"
                 </ul>
             </div>
             <div class="right-block">
-                <img id="solution-mvp1" src="https://img.thingsboard.io/development-services/solution-coinify.png" alt="Custom solution mvp">
+                <img id="solution-mvp1" src="https://img.thingsboard.io/development-services/solution-coinify.webp" alt="Custom solution mvp">
                 <img id="solution-widget-3" class="absolute-image secondary-image" src="https://img.thingsboard.io/development-services/solution-widget-1.svg" alt="Custom solution widget value card with pie chart">
                 <img id="solution-widget-2" class="absolute-image secondary-image" src="https://img.thingsboard.io/development-services/solution-widget-2.svg" alt="Custom solution widget value card with graph" >
             </div>
@@ -148,8 +148,8 @@ redirect_from: "docs/services/development-services/"
     <div id="content-market-solution" class="content-wrapper">
         <div class="market-solution">
             <div class="left-block">
-                <img id="solution-market-solution1" src="https://img.thingsboard.io/development-services/solution-market-solution.png" alt="Custom solution market solution">
-                <img id="solution-market-solution2" class="absolute-image base-image" src="https://img.thingsboard.io/development-services/solution-market-solution2.png" alt="Custom solution market solution: dashboard with trucks">
+                <img id="solution-market-solution1" src="https://img.thingsboard.io/development-services/solution-market-solution.webp" alt="Custom solution market solution">
+                <img id="solution-market-solution2" class="absolute-image base-image" src="https://img.thingsboard.io/development-services/solution-market-solution2.webp" alt="Custom solution market solution: dashboard with trucks">
             </div>
             <div class="right-block">
                 <div class="section-title">
@@ -167,9 +167,9 @@ redirect_from: "docs/services/development-services/"
             <img id="number-three" class="absolute-image" src="https://img.thingsboard.io/development-services/number-3.svg" alt="Background number three">
         </div>
     </div>
-    <div class="content-wrapper additionally" style="background-color: #F4F8FE; margin-bottom: 100px">
+    <div class="content-wrapper additionally">
         <div class="header header-animation">
-            <div class="side-title" style="margin-top: 0">
+            <div class="side-title">
                 <span>ADDITIONALLY</span>
             </div>
             <div class="section-title">Architecture Design Sessions</div>
@@ -307,22 +307,6 @@ redirect_from: "docs/services/development-services/"
     });
 
     headerObserver.observe(cduHeader);
-
-    let additionalHeader = document.querySelector(".additionally .header");
-
-    const additionalObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("header-animation");
-                headerObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.5
-    });
-
-    additionalObserver.observe(cduHeader);
-
     const sectionLists = document.querySelectorAll(".section-list");
 
     const sectionListObserver = new IntersectionObserver(entries => {
