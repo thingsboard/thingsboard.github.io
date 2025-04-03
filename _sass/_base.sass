@@ -244,7 +244,7 @@ header
       top: 84px
       left: 0
       transition: visibility, opacity ease-in-out
-      transition-duration: 0.3s
+      transition-duration: .3s
       border-radius: 4px
       box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
       background-color: #fff
@@ -255,12 +255,12 @@ header
         opacity: 1
         background-color: #f7f9fe
         &.bounds-transition
-          transition: left ease-in-out 0.4s, width ease-in-out 0.35s, height ease-in-out 0.35s
+          transition: left ease-in-out .45s, width ease-in-out .45s, height ease-in-out .45s
         & > div.open
           opacity: 1
           display: block
           transition-property: display, opacity
-          transition-duration: .6s
+          transition-duration: .45s
           transition-behavior: allow-discrete
           @starting-style
             opacity: 0
@@ -287,15 +287,22 @@ header
               display: flex
               padding: 32px
               gap: 36px
+              margin: 5px 5px 0
               &:first-child
-                margin: 5px
                 border-radius: 4px
                 background-color: #fff
+              &:first-child:last-child
+                margin: 0
+                .column
+                  width: 100%
+                  min-width: unset
+              &:not(only-child)
+                .column
+                  min-width: 250px
               .column
                 display: flex
                 flex-direction: column
                 gap: 24px
-                width: 100%
                 .group-name
                   text-transform: uppercase
                   font-weight: 500
