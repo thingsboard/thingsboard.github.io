@@ -288,28 +288,15 @@ otherwise **Failure** chain is used.
 
 **MQTT retransmission mechanism**
 
-The MQTT Node uses ThingsBoard's internal MQTT client, which includes a retransmission mechanism to improve reliability for certain message types that require acknowledgment. 
-This mechanism applies specifically to the following MQTT message types: PUBLISH (only for QoS 1 or 2), SUBSCRIBE, UNSUBSCRIBE, PUBREL (only for QoS 2).
+The MQTT node uses ThingsBoard's internal MQTT client.
 
-When one of these messages is sent, the client waits for an acknowledgment within a configurable delay period. 
-If the acknowledgment is not received, the message is retransmitted. 
-The delay between retransmissions follows an exponential backoff strategy, starting from an initial delay and doubling with each attempt. 
-A configurable jitter factor is applied to introduce randomness to the delay, helping to prevent synchronized retries.
+{% if docsPrefix contains "paas" %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=false %}
+{% else %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=true %}
+{% endif %}
 
-By default, the client performs up to three retransmission attempts in addition to the original send. 
-These retries are scheduled at approximately 5,000 ms, 10,000 ms, and 20,000 ms, each adjusted by ±15% jitter. 
-If no acknowledgment is received after the final attempt, the message is considered undeliverable and is dropped. 
-When this happens, the corresponding Rule Engine message is routed via the **Failure** chain, along with an appropriate exception message.
-
-These parameters can be adjusted in the thingsboard.yml configuration file. Note that changes here affect all MQTT clients across the platform—not just this specific rule node:
-```yaml
-mqtt:
-  client:
-    retransmission:
-      max_attempts: "${TB_MQTT_CLIENT_RETRANSMISSION_MAX_ATTEMPTS:3}"
-      initial_delay_millis: "${TB_MQTT_CLIENT_RETRANSMISSION_INITIAL_DELAY_MILLIS:5000}"
-      jitter_factor: "${TB_MQTT_CLIENT_RETRANSMISSION_JITTER_FACTOR:0.15}"
-```
+When the message is dropped, the corresponding rule engine message is routed via **Failure** chain with the appropriate exception message.
 
 <br>
 
