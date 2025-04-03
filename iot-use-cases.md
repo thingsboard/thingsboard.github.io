@@ -1,5 +1,5 @@
 ---
-layout: use-case
+layout: iot-use-cases
 title: IoT Use Cases
 description: ThingsBoard IoT Platform use cases
 notitle: "true"
@@ -10,13 +10,7 @@ notitle: "true"
 
 {% include filter.html filters = "General,SCADA" containerId = "usecase-list" %}
 
-<div id="usecase-list">
-    {% include use-cases-cards.html %}
-</div>
-
-<style>
-	{% include partner-style.css %}
-</style>
+{% include use-cases-cards.html %}
 
 <script>
 

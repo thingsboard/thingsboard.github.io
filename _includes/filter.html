@@ -2,34 +2,17 @@
 {% assign containerId = include.containerId %}
 
 
-<div class="filter">
+<div class="filter" data-container-id="{{ containerId }}">
     <div class="filter-content">
         <div class="actions">
-            <div onclick="filter('main')" class="check-box checked">
+            <div class="check-box checked" id="main">
                 All
             </div>
             {% for filter in filters %}
-            <div onclick="filter('{{ filter }}')" class="check-box">
+            <div class="check-box" id="{{ filter }}">
                 {{ filter }}
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
-
-<script>
-    const containerId = document.getElementById("{{ containerId }}");
-
-    function filter(id) {
-        const content = containerId.children;
-
-        content.forEach((item) => {
-            if(id === 'main') {
-                item.style.display = 'block';
-            } else {
-                const itemId = item.id;
-                itemId === id ? item.style.display === 'block' : item.style.display === 'none';
-            }
-        })
-    }
-</script>
