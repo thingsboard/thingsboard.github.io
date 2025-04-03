@@ -290,6 +290,18 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
+**MQTT retransmission mechanism**
+
+The MQTT node uses ThingsBoard's internal MQTT client.
+
+{% if docsPrefix contains "paas" %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=false %}
+{% else %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=true %}
+{% endif %}
+
+When the message is dropped, the corresponding rule engine message is routed via **Failure** chain with the appropriate exception message.
+
 <br>
 
 ## Azure IoT Hub Node

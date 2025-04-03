@@ -333,6 +333,18 @@ Go to the **Devices** page and find *rpcReceived* telemetry value is "*OK*" on t
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1-paas.png)
 {% endif %}
 
+### MQTT retransmission mechanism
+
+The MQTT integration uses ThingsBoard's internal MQTT client.
+
+{% if docsPrefix contains "paas" %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=false %}
+{% else %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=true %}
+{% endif %}
+
+When the MQTT message is dropped, the corresponding rule engine message is routed via **Failure** chain with the appropriate exception message.
+
 ## Video tutorials
 
 ### Setting up MQTT Integration
