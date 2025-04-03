@@ -1,0 +1,155 @@
+#usecase-list
+  display: grid
+  gap: 32px
+  grid-template-columns: repeat(2, 1fr)
+  grid-auto-flow: row dense
+
+  .parent-box
+    overflow: hidden
+    background: #FFF
+    padding: 8px
+    border-radius: 24px
+    box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+    height: var(--current-height, 100%)
+
+    &:hover
+      text-decoration: none
+      .card-content
+        .dashboard-frame-wrapper
+          padding: 9px 20px
+        .text
+          .title
+            color: #2A7DEC
+          .read-more-button
+            transform: translateY(0)
+            opacity: 1
+
+    &:nth-child(3n)
+      grid-column: span 2
+      height: 100%
+
+      .card-content
+        flex-direction: row-reverse
+        gap: 80px
+
+        .text
+          height: auto
+          gap: 16px
+          padding: 0 32px
+
+      &:hover .dashboard-frame-wrapper
+        padding: 32px 10px
+
+    &:nth-child(6n) .card-content
+      flex-direction: row
+
+    .card-content
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 32px
+      height: 100%
+
+      .text
+        height: 100%
+        width: 100%
+        padding: 0 32px 32px 32px
+        display: flex
+        flex-direction: column
+        gap: 8px
+
+        .description
+          margin: 0 !important
+          font-size: 16px !important
+          line-height: 28px !important
+          color: #000000C2 !important
+
+        .title
+          margin: 0 !important
+          font-size: 28px
+          line-height: 44px
+          font-weight: 500
+          color: #000000DE
+          transition: ease-in-out 0.3s
+
+        .read-more-button
+          margin-top: auto
+          transform: translateY(100px)
+          opacity: 0
+          transition: ease-in-out 0.3s
+
+      .dashboard-frame-wrapper
+        transition: padding 0.3s ease-in-out
+        width: 100%
+        background: #F4F8FE
+        border-radius: 16px
+        padding: 32px 20px
+        position: relative
+
+        .frame-video video
+          border-radius: 6px
+
+      .overlay
+        border-radius: 16px
+
+        .eye
+          left: 50%
+          transform: translateX(-50%)
+          width: max-content
+
+@media screen and (max-width: 1279px)
+  #usecase-list
+    grid-template-columns: 1fr
+
+    .parent-box
+      grid-column: span 1
+      &:nth-child(3n)
+        grid-column: span 1
+        height: var(--current-height, 100%)
+
+        .card-content
+          flex-direction: column
+          gap: 32px
+
+          .text
+            height: 100%
+            gap: 8px
+            padding: 0 32px 32px 32px
+
+        &:hover .dashboard-frame-wrapper
+          padding: 9px 20px
+
+      &:nth-child(6n) .card-content
+        flex-direction: column
+
+      .card-content
+        .text
+          .description
+            margin-bottom: 8px !important
+          .read-more-button
+            transform: translateY(0)
+            opacity: 1
+
+@media screen and (max-width: 599px)
+  #usecase-list
+    .parent-box
+      &:nth-child(3n)
+        .card-content
+          .text
+            padding: 0 16px 12px 16px
+      .card-content
+        gap: 16px
+        .text
+          padding: 0 16px 12px 16px
+          .description
+            font-size: 14px !important
+            line-height: 24px !important
+          .title
+            font-size: 24px
+            line-height: 36px
+          .read-more-button
+            font-size: 16px
+            .arrow
+              top: 5px
+        .dashboard-frame-wrapper
+          padding: 20px 12px

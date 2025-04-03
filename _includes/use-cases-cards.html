@@ -1,5 +1,7 @@
 {% assign useCasesCollection = site.data.iot-use-cases %}
 
+
+<div id="usecase-list">
 {% for card in useCasesCollection %}
 <div class="parent-box" id="{{ card[1].type }}">
     <div class="card-content">
@@ -9,7 +11,7 @@
                     <img src="{{ card[1].media.image }}" alt="{{ card[1].media.alt }}">
                 </div>
                 <div class="frame-video">
-                    <video loop preload="auto" playsinline>
+                    <video loop muted preload="auto" playsinline>
                         {% for videoSrc in card[1].media.video %}
                         {% assign video_extension = videoSrc | split: '.' | last %}
                         <source src="{{ videoSrc }}" type="video/{{ video_extension }}">
@@ -37,3 +39,27 @@
     </div>
 </div>
 {% endfor %}
+</div>
+
+<script>
+    const cardsContainer = document.getElementById('usecase-list');
+
+    const cards = Array.from(cardsContainer.children);
+
+    cards.forEach((item) => {
+        const video = item.getElementsByTagName('video');
+
+        item.addEventListener('mouseenter', () => {
+            video[0].play();
+            item.style.setProperty("--current-height", `${item.offsetHeight}px`);
+        })
+
+        item.addEventListener('mouseleave', () => {
+            video[0].pause();
+            setTimeout(() => {
+                item.style.setProperty("--current-height", '100%');
+            }, 300)
+        })
+    })
+</script>
+

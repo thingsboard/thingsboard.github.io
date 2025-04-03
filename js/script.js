@@ -1185,3 +1185,59 @@ var tb = (function () {
 		});
 	});
 })();
+
+//filter
+(function () {
+	$(document).ready(function () {
+
+		const containerId = $('.filter').attr('data-container-id');
+		const container = document.getElementById(containerId);
+		const content = Array.from(container.children);
+		const checkboxes = $('.filter .check-box');
+
+		checkboxes.on('click', function() {
+			const checkboxId = $(this).attr('id');
+			handleCheckboxes(this, checkboxId);
+			const checkedIds = getCheckedIds();
+
+			filter(checkedIds);
+		});
+
+		function handleCheckboxes(clickedElement, checkboxId) {
+			if(checkboxId === "main") {
+				checkboxes.not('#main').removeClass('checked');
+				checkboxes.filter('#main').addClass('checked');
+			} else {
+				$(clickedElement).toggleClass('checked');
+
+				const anyChecked = checkboxes.is('.checked');
+
+				if(!anyChecked) {
+					checkboxes.filter('#main').addClass('checked');
+				} else {
+					checkboxes.filter('#main').removeClass('checked');
+				}
+			}
+		}
+
+		function getCheckedIds() {
+			return $('.filter .check-box.checked').map(function () {
+				return this.id;
+			}).get();
+		}
+
+		function filter(checkedIds) {
+			if (checkedIds.includes('main')) {
+				content.forEach(item => {
+					item.style.display = 'block';
+				});
+				return;
+			}
+
+			content.forEach(item => {
+				item.style.display = checkedIds.includes(item.id) ? 'block' : 'none';
+			});
+		}
+	});
+})();
+
