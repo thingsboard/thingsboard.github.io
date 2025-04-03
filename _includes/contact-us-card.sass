@@ -7,14 +7,16 @@
   flex-direction: column
   gap: 16px
   border-radius: 12px
-  max-width: 300px
-  width: 100%
+  width: 300px
   overflow: hidden
+  opacity: 0
+  animation: fadeInScale 0.8s ease-out forwards
   .contact-us-card-title
     font-size: 24px !important
     font-weight: 500 !important
     line-height: 36px !important
     color: #000000DE !important
+    margin: 0 !important
   .contact-us-card-link
     border-radius: 6px
     border: 1px solid #2A7DEC
@@ -39,3 +41,11 @@
     top: -90px
     right: -60px
 
+@keyframes fadeInScale
+  0%
+    opacity: 0
+    transform: scale(0.5)
+
+  100%
+    opacity: 1
+    transform: scale(1)

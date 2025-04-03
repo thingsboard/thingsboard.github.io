@@ -336,6 +336,59 @@
             left: 814px
             background-color: #2A7DEC
 
+#encyclopedia:has(.iot-use-cases-hero)
+    padding-top: 0
+
+.iot-use-cases-hero
+    display: flex
+    justify-content: space-between
+    gap: 100px
+    position: relative
+    padding: 100px 0 50px
+    .iot-use-cases-hero-left
+        display: flex
+        flex-direction: column
+        gap: 32px
+        max-width: 1000px
+        .iot-use-cases-title
+            font-size: 56px !important
+            font-weight: 600 !important
+            line-height: 72px !important
+            margin: 0 !important
+            padding: 0 !important
+        .iot-use-cases-description
+            display: flex
+            flex-direction: column
+            gap: 20px
+            p
+                margin: 0 !important
+                font-size: 16px !important
+                line-height: 28px !important
+                color: #000000C2 !important
+    &::before
+        background: #F4F8FE
+        content: ''
+        width: 100vw
+        left: 50%
+        transform: translateX(-50%)
+        height: 100%
+        position: absolute
+        top: 0
+        z-index: -1
+
+@media screen and (max-width: 959px)
+    .iot-use-cases-hero
+        flex-direction: column
+        .iot-use-cases-hero-right
+            .contact-us-card
+                padding: 32px
+                width: 100%
+                .contact-us-card-title
+                    max-width: 275px
+                .icon
+                    top: -17px
+                    right: -49px
+
 .usecase-background
     z-index: -1
     position: absolute
