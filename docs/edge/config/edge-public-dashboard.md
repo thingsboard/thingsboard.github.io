@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-edge
-title: Configuring Public Dashboard on Edge
+title: Edge Public Dashboard Configuration Guide
 description: Detailed configuration instructions for the public dashboard on ThingsBoard Edge
 
 makePublic:
