@@ -24,7 +24,7 @@ redirect_from: "docs/services/customers-full-reviews/"
         </div>
         <div class="review">
             <div class="logo">
-                <img src="/images/development-services/logo-asg-tech.svg" alt=""/>
+                <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt=""/>
             </div>
             <div class="review-header">Exceptional experience working with ThingsBoard's unit</div>
             <div class="review-body"><h6>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.</h6>
@@ -40,7 +40,7 @@ redirect_from: "docs/services/customers-full-reviews/"
     <div class="content-wrapper">
         <div class="review">
             <div class="logo">
-                <img src="/images/development-services/logo-kalitec.svg" alt=""/>
+                <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt=""/>
             </div>
             <div class="review-header">Very professional in its approach to projects</div>
             <div class="review-body">
@@ -61,7 +61,7 @@ redirect_from: "docs/services/customers-full-reviews/"
     <div class="content-wrapper">
         <div class="review">
             <div class="logo">
-                <img src="/images/development-services/logo-super-bock-group.svg" alt=""/>
+                <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt=""/>
             </div>
             <div class="review-header">Impressed by professionalism, knowledge, and commitment</div>
             <div class="review-body">
@@ -80,7 +80,7 @@ redirect_from: "docs/services/customers-full-reviews/"
     <div class="content-wrapper">
         <div class="review">
             <div class="logo">
-                <img src="/images/development-services/logo-iona-tech.svg" alt=""/>
+                <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt=""/>
             </div>
             <div class="review-header">Expertise, attention to detail, and client satisfaction</div>
             <div class="review-body">
@@ -112,7 +112,7 @@ redirect_from: "docs/services/customers-full-reviews/"
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="/images/close-icon.svg" alt="Close"/>
+        <img class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">
