@@ -623,14 +623,13 @@ The node accepts messages of type `POST_ATTRIBUTES_REQUEST` and expects incoming
 
 **Configuration: Processing settings**
 
-The save attributes node can perform two distinct actions, each governed by configurable processing strategies:
+The save attributes node can perform three distinct actions, each governed by configurable processing strategies:
 - **Attributes**: saves attribute data to the database.
-- **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
+- **WebSockets**: notifies WebSocket subscriptions about updates to the attribute data.
+- **Calculated fields**: notifies calculated fields about updates to the attribute data.
 
 For each of these actions, you can choose from the following **processing strategies**:
-- **On every message**: perform the action for every incoming message.
-- **Deduplicate**: perform the action only for the first message from a specific originator within a configurable time interval. Minimum value for a deduplication interval is 1 second and maximum is 1 day.
-- **Skip**: never perform the action.
+{% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
 
 > **Note**: Processing strategies are available since TB version 4.0.
 
@@ -640,8 +639,7 @@ Processing strategies are configured through **Processing settings**, which offe
 
 - **Basic** - provides predefined strategies for all actions:
   - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
-  - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions, meaning that only the first message from each originator received during the configured interval is processed,
-    while subsequent messages from that originator within the same interval are ignored.
+  - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions.
   - WebSockets only: for all actions except WebSocket notifications, the **Skip** strategy is applied, while WebSocket notifications use the **On every message** strategy.
     Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
@@ -651,8 +649,12 @@ Processing strategies are configured through **Processing settings**, which offe
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings.png)
 
-When configuring processing strategies in advanced mode, certain combinations may lead to unexpected behavior. 
-For further details, please refer to the advanced processing strategies section of the Save Timeseries Node documentation.
+When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
+
+{% include docs/user-guide/rule-engine-2-0/advanced-processing-strategies-hazards.md %}
+
+The ability to configure each persistence action independently—including setting different deduplication intervals—is designed primarily as a performance optimization.
+Because of the scenarios described above, these settings should be viewed as performance enhancements rather than strict processing guarantees.
 
 **Configuration: Scope**
 
@@ -675,6 +677,11 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
 
 * **Save attributes only if the value changes** – if enabled, the node first retrieves the current values for the specified attribute keys and then compares them with the incoming values.
   If an attribute is missing, its value has changed, or its data type differs from what’s stored, it is marked for saving. If no changes are detected, the node skips the save operation.
+
+  > **Note**: Avoid concurrent writes of the same attributes because change-detection is not transactional and may produce unexpected results in such cases.
+
+  > **Note**: If the attribute save is skipped because the value has not changed, the attribute’s last updated timestamp will not be updated.
+
 * **Send attributes updated notification** – if enabled, and if the attribute scope is not `CLIENT_SCOPE` (i.e., for `SHARED_SCOPE` and `SERVER_SCOPE`), 
   the node puts an [Attributes Updated](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) event to the queue named `Main`.
 * **Force notification to the device** - the node determines whether to notify the device about attribute updates by evaluating the **Force notification to the device** option and the `notifyDevice` property in the incoming message metadata. The algorithm is as follows:
@@ -683,6 +690,9 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
      - If the property is absent or an empty string, it defaults to sending the notification.
      - If the property is provided, the notification is sent only if its value is `true` (ignoring case).
   3. In all cases, the notification is only sent if the device has an active subscription for the updated (or deleted) attributes.
+  4. Additionally, attribute notifications are not sent if:
+     1. The attribute save is skipped because its value did not change (when **Save attributes only if the value changes** is enabled).
+     2. The attribute save is skipped due to the configured processing strategy (e.g., set to Skip).
 
 **Output connections**
 
@@ -753,15 +763,15 @@ The node accepts messages of type `POST_TELEMETRY_REQUEST` and supports the foll
 
 **Configuration: Processing settings**
 
-The save time series node can perform three distinct actions, each governed by configurable processing strategies:
+The save time series node can perform four distinct actions, each governed by configurable processing strategies:
 - **Time series**: saves time series data to the `ts_kv` table in the database.
 - **Latest values**: updates time series data in the `ts_kv_latest` table in the database, if new data is more recent.
 - **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
 - **Calculated fields**: notifies calculated fields about updates to the time series data.
 
 For each of these actions, you can choose from the following **processing strategies**:
-- **On every message**: perform the action for every incoming message.
-- **Deduplicate**: perform the action only for the first message from a specific originator within a configurable time interval. Minimum value for a deduplication interval is 1 second and maximum is 1 day.
+{% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
+
 - **Skip**: never perform the action.
 
 > **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
@@ -772,8 +782,7 @@ Processing strategies are configured through **Processing settings**, which offe
 
 - **Basic** - provides predefined strategies for all actions:
     - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
-    - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions, meaning that only the first message from each originator received during the configured interval is processed, 
-    while subsequent messages from that originator within the same interval are ignored.
+    - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions.
     - WebSockets only: applies the **Skip** strategy to Time series and Latest values, and the **On every message** strategy to WebSockets. 
       Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
@@ -785,43 +794,10 @@ Processing strategies are configured through **Processing settings**, which offe
 
 When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
 
-- **Skipping database storage**
-
-  Choosing to disable one or more persistence actions (for instance, skipping database storage for Time series or Latest values while keeping WS updates enabled) introduces the risk of having only partial data available:
-  - If a message is processed only for real-time notifications (WebSockets) and not stored in the database, historical queries may not match data on the dashboard.
-  - When processing strategies for Time series and Latest values are out-of-sync, telemetry data may be stored in one table (e.g., Time series) while the same data is absent in the other (e.g., Latest values).
-
-- **Disabling WebSocket (WS) updates**
-
-  If WS updates are disabled, any changes to the time series data won’t be pushed to dashboards (or other WS subscriptions).
-  This means that even if a database is updated, dashboards may not display the updated data until browser page is reloaded.
-
-- **Skipping calculated field recalculation**
-
-  If telemetry data is saved to the database while bypassing calculated field recalculation, the aggregated value may not update to reflect the latest data.
-  Conversely, if the calculated field is recalculated with new data but the corresponding telemetry value is not persisted in the database, the calculated field's value might include data that isn’t stored.
-
-- **Different deduplication intervals across actions**
-
-  When you configure different deduplication intervals for actions, the same incoming message might be processed differently for each action.
-  For example, a message might be stored immediately in the Time series table (if set to *On every message*) while not being stored in the Latest values table because its deduplication interval hasn’t elapsed.
-  Also, if the WebSocket updates are configured with a different interval, dashboards might show updates that do not match what is stored in the database.
-
-- **Deduplication cache clearing**
-
-  The deduplication mechanism uses a cache to track processed messages within each interval. This cache is configured to store a maximum of 100 deduplication intervals, with a total retention period of up to 2 days.
-  For performance and system stability reasons, this cache is periodically cleared.
-  As a result, if a cache entry is removed during the deduplication period, messages from the same originator may be processed more than once within that interval.
-  This means deduplication should be used as a performance optimization rather than an absolute guarantee of single processing per interval.
-
-- **Whole message deduplication**
-
-  It’s important to note that deduplication is applied to the entire incoming message rather than to individual time series keys. 
-  For example, if the first message contains key A and is processed, and a subsequent message (received within the deduplication interval) contains key B, the second message will be skipped—even though it includes a new key. 
-  To safely leverage deduplication, ensure that your messages maintain a consistent structure so that all required keys are present in the same message, avoiding unintended data loss.
+{% include docs/user-guide/rule-engine-2-0/advanced-processing-strategies-hazards.md %}
 
 The ability to configure each persistence action independently—including setting different deduplication intervals—is designed primarily as a performance optimization. 
-Because of the scenarios described above, these settings should be viewed as percentage enhancements rather than strict processing guarantees.
+Because of the scenarios described above, these settings should be viewed as performance enhancements rather than strict processing guarantees.
 
 **Configuration: Advanced settings**
 
