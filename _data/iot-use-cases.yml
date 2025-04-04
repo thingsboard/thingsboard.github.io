@@ -5,7 +5,7 @@
   media:
     image: "https://img.thingsboard.io/usecases/smart-energy/video/smart-energy.png"
     alt: "Smart energy"
-    video: ["https://video.thingsboard.io/usecases/smart-office.mp4", "https://video.thingsboard.io/usecases/smart-office.webm"]
+    video: ["https://video.thingsboard.io/usecases/smart-energy.mp4", "https://video.thingsboard.io/usecases/smart-energy.webm"]
   href: "/smart-energy/"
 1:
   type: "SCADA"
@@ -75,9 +75,9 @@
   name: "Smart Metering"
   description: "Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users."
   media:
-    image: "https://img.thingsboard.io/usecases/fleet-tracking/video/fleet-tracking.png"
+    image: "https://img.thingsboard.io/usecases/fleet-tracking/video/smart-metering.png"
     alt: "Fleet tracking dashboard"
-    video: ["https://video.thingsboard.io/usecases/fleet-tracking.mp4", "https://video.thingsboard.io/usecases/fleet-tracking.webm"]
+    video: ["https://video.thingsboard.io/usecases/smart-metering.mp4", "https://video.thingsboard.io/usecases/smart-metering.webm"]
   href: "/smart-metering/"
 9:
   type: "General"
@@ -113,7 +113,6 @@
   media:
     image: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-1.png"
     alt: "Waste monitoring dashboard"
-    video: []
   href: "/use-cases/waste-management/"
 13:
   type: "General"
@@ -122,5 +121,4 @@
   media:
     image: "https://img.thingsboard.io/solutions/fuel_level_monitoring/fuel-monitoring-1.png"
     alt: "Fuel level monitoring"
-    video: []
   href: "/use-cases/tank-level-monitoring/"
