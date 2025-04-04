@@ -26,7 +26,7 @@
         var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if(email.match(emailExp)==null) {
             window.alert("Entered Email Address is not valid.");
-            return false; 
+            return false;
         }
     }
 
@@ -47,27 +47,27 @@
             $( document ).ready(function() {
                 var $contactForm = jQuery('.readyToLaunchForm');
                 $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
-               /*  $('html, body').animate({
-                            scrollTop: $('#contact-form').offset().top - 200
-                          }, 0);*/
-                 $contactForm.find('.form-element .form-control').addClass("input--empty");
-                 $contactForm.find('.form-element .form-control').on('input', function() {
-                      if( !$(this).val() ) {
-                         $(this).addClass("input--empty");
-                      } else {
-                         $(this).removeClass("input--empty");
-                      }
-                 });
+                /*  $('html, body').animate({
+                             scrollTop: $('#contact-form').offset().top - 200
+                           }, 0);*/
+                $contactForm.find('.form-element .form-control').addClass("input--empty");
+                $contactForm.find('.form-element .form-control').on('input', function() {
+                    if( !$(this).val() ) {
+                        $(this).addClass("input--empty");
+                    } else {
+                        $(this).removeClass("input--empty");
+                    }
+                });
 
-                 $.urlParam = function (name) {
-                     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-                     return results ? results[1] : null;
-                 };
-                 var subjectValue = $.urlParam('subject');
-                 if (subjectValue != undefined && subjectValue.trim().length > 0) {
+                $.urlParam = function (name) {
+                    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+                    return results ? results[1] : null;
+                };
+                var subjectValue = $.urlParam('subject');
+                if (subjectValue != undefined && subjectValue.trim().length > 0) {
                     $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
                     $contactForm.find('select[name=subject]').removeClass("input--empty");
-                 }
+                }
             });
         }
     );

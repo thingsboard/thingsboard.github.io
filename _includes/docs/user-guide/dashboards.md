@@ -98,7 +98,7 @@ Each widget typically has specific settings and parameters that allow users to c
 For more information about widgets, how to create them, and their settings, click the button below:
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/widgets/" class="n-button add-device">Widgets documentation</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/widgets/" class="button">Widgets documentation</a></p>
 
 <br>
 

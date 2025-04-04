@@ -302,7 +302,7 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="How do I get professional support?">
         <div class="container">
             <p>
-                Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>. 
+                Please review ThingsBoard professional <a href="/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>. 
             </p>    
         </div>    
     </div>                            

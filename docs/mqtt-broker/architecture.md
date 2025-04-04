@@ -8,7 +8,7 @@ description: TBMQ architecture
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 This article explains the architectural structure of TBMQ, breaking down how data moves between different components and outlining the core architectural choices.
 TBMQ is designed with great care to implement the following attributes:
@@ -18,13 +18,13 @@ TBMQ is designed with great care to implement the following attributes:
 * **Robustness and efficiency**: can manage millions of clients and process millions of messages per second;
 * **Durability**: provides high message durability, ensuring that data is never lost.
 
-#### Architecture diagram
+### Architecture diagram
 
 The following diagram shows the pivotal parts of the broker and the route of message transmission.
 
 ![image](/images/mqtt-broker/architecture/tbmq-architecture.png)
 
-### Motivation
+## Motivation
 
 At ThingsBoard, we've gained a lot of experience in building scalable IoT applications, which has helped us identify three main scenarios for MQTT-based solutions.
 
@@ -55,7 +55,7 @@ We aimed for a system where once the broker acknowledges receiving a message, it
 To ensure the fulfillment of the above requirements and prevent message loss in the case of clients or some of the broker instances failures, 
 TBMQ uses the powerful capabilities of [Kafka](https://kafka.apache.org/) as its underlying infrastructure.
 
-### How does TBMQ work in a nutshell?
+## How does TBMQ work in a nutshell?
 
 Kafka plays a crucial role in various stages of the MQTT message processing. 
 All unprocessed published messages, client sessions, and subscriptions are stored within dedicated Kafka topics. 
@@ -78,7 +78,7 @@ utilize the Subscription Trie data structure to identify the intended recipients
 Depending on the client type (**DEVICE** or **APPLICATION**) and the persistence options described below, 
 the broker either redirects the message to another specific Kafka topic or directly delivers it to the recipient.
 
-#### Non-persistent client
+### Non-persistent client
 
 ![image](/images/mqtt-broker/architecture/tbmq-non-persistent-dev.png)
 
@@ -103,7 +103,7 @@ However, it can result in scenarios where a published message is processed by on
 To handle this, **downlink.basic** Kafka topic is used for communication between TBMQ nodes. 
 This ensures that the node processing the message forwards it to the target node, which then delivers it to the subscriber via the established connection.
 
-#### Persistent client
+### Persistent client
 
 MQTT clients that do not meet the non-persistent conditions mentioned above are categorized as persistent clients. 
 Let's delve into the conditions for persistent clients:
@@ -126,7 +126,7 @@ Building on our knowledge within the IoT ecosystem and the successful implementa
 
 Consequently, we made a strategic decision to optimize performance by separating the processing flow for these two types of clients.
 
-##### Persistent DEVICE client
+#### Persistent DEVICE client
 
 ![image](/images/mqtt-broker/architecture/tbmq-persistent-dev.png)
 
@@ -144,7 +144,7 @@ Similarly to non-persistent clients, TBMQ nodes in cluster mode operate together
 To handle cases where a message is processed by one node but the subscriber is connected to another, **downlink.persisted** Kafka topic is used to forward the message to the appropriate node.
 This ensures seamless delivery to the subscriber via its established connection.
 
-##### Persistent APPLICATION client
+#### Persistent APPLICATION client
 
 ![image](/images/mqtt-broker/architecture/tbmq-app.png)
 
@@ -177,7 +177,7 @@ The processing of the message occurs directly on the target node, as a dedicated
 This design ensures seamless and rapid message delivery.
 By avoiding additional message transmission steps, this approach ensures significantly improved performance, even as the system scales horizontally.
 
-#### Kafka topics
+### Kafka topics
 
 Below is a comprehensive list of Kafka topics used within TBMQ, along with their respective descriptions.
 
@@ -196,7 +196,7 @@ Below is a comprehensive list of Kafka topics used within TBMQ, along with their
 * **tbmq.sys.app.removed** - topic for events to process removal of APPLICATION client topic. Used when the client changes its type from APPLICATION to DEVICE.
 * **tbmq.sys.historical.data** - topic for historical data statistics (e.g., number of incoming messages, outgoing messages, etc.) published from each broker node in the cluster to calculate the total values per cluster.
 
-#### Redis
+### Redis
 
 [Redis](https://redis.io/) is a powerful, in-memory data store that excels in scenarios requiring low-latency and high-throughput data access, making it an ideal choice for storing real-time data. 
 
@@ -212,7 +212,7 @@ This migration to Redis enables us to handle much higher throughput while ensuri
 {% endcapture %}
 {% include templates/info-banner.md content=tbmq-redis-postgresql %}
 
-#### PostgreSQL database
+### PostgreSQL database
 
 TBMQ uses a [PostgreSQL](https://www.postgresql.org/) database to store different entities such as users, user credentials, MQTT client credentials, statistics, 
 WebSocket connections, WebSocket subscriptions, and others.
@@ -223,7 +223,7 @@ Given the nature of MQTT applications, which involve high message volumes and fr
 PostgreSQL's transaction management and ACID compliance provide strong consistency guarantees, 
 ensuring that important data is safely stored and retrievable in any scenarios.
 
-#### Web UI
+### Web UI
 
 TBMQ offers a user-friendly and lightweight graphical user interface (GUI) 
 that simplifies the administration of the broker in an intuitive and efficient manner. 
@@ -244,7 +244,7 @@ enabling administrators to gain a better understanding of the system's health an
 
 The combination of these features makes the GUI an invaluable tool for managing, configuring, and monitoring TBMQ in a user-friendly and efficient manner.
 
-#### Netty
+### Netty
 
 In our pursuit of leveraging cutting-edge technologies, we selected [Netty](https://netty.io/) for implementing the TCP server that facilitates the MQTT protocol, owing to its proven performance and flexibility.
 
@@ -258,7 +258,7 @@ This approach ensures high throughput and low-latency communication, even under 
 Netty is highly flexible, allowing developers to customize the networking stack to meet specific protocol requirements.
 With its modular design, Netty provides the building blocks to easily implement protocol handling, message parsing, and connection management, while offering TLS encryption options, making it secure and extensible for future needs.
 
-#### Actor system
+### Actor system
 
 TBMQ utilizes an Actor System as the underlying mechanism for implementing actors responsible for handling MQTT clients.
 The adoption of the Actor model enables efficient and concurrent processing of messages received from clients, thereby ensuring high-performance operation.
@@ -276,7 +276,7 @@ With the Actor System and various actor types, TBMQ efficiently processes messag
 
 For further insights into the Actor model, you can refer to the provided [link](https://en.wikipedia.org/wiki/Actor_model).
 
-#### Message dispatcher service
+### Message dispatcher service
 
 The Message dispatcher service is another core component of TBMQ's architecture, responsible for managing the flow of messages between publisher clients and Kafka, 
 ensuring safe processing, persistence, and efficient delivery to the appropriate subscribers.
@@ -295,7 +295,7 @@ After identifying the appropriate subscribers, the Message dispatcher service de
 Once the appropriate handling route is determined and done for each subscriber, the message is passed to Netty, which manages the actual network transmission, 
 ensuring the message is delivered to the appropriate online clients.
 
-#### Subscriptions Trie
+### Subscriptions Trie
 
 The Trie data structure is highly efficient for fast lookups due to its hierarchical organization and prefix-based matching.
 It allows for quick identification of matching topics by storing common prefixes only once, which minimizes search space and reduces memory usage.
@@ -313,7 +313,7 @@ However, it is worth noting that this method requires increased memory consumpti
 
 For more detailed information on the Trie data structure, you can refer to the provided [link](https://en.wikipedia.org/wiki/Trie).
 
-### Standalone vs cluster mode
+## Standalone vs cluster mode
 
 TBMQ is designed to be horizontally scalable, allowing for the addition of new broker nodes to the cluster automatically. 
 All nodes within the cluster are identical and share the overall load, ensuring a balanced distribution of client connections and message processing.
@@ -333,6 +333,6 @@ as they can establish connections with any available node in the cluster.
 By leveraging horizontal scalability, load balancing, and automatic discovery of new nodes, 
 TBMQ provides a highly scalable and resilient architecture for handling MQTT communication in large-scale deployments.
 
-### Programming languages
+## Programming languages
 
 The back end of TBMQ is implemented in Java 17. The front end of TBMQ is developed as a SPA using the Angular 19 framework.

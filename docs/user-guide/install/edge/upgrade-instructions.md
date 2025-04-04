@@ -22,6 +22,20 @@ description: ThingsBoard Edge upgrade instructions
         </ul>
     </li>
     <li>
+        <a href="#upgrading-to-391" id="markdown-toc-upgrading-to-391">Upgrading to 3.9.1EDGE</a>
+        <ul>
+            <li>
+                <a href="#ubuntucentosrpi-391" id="markdown-toc-ubuntucentos-391">Ubuntu/CentOS/Raspberry Pi</a>
+            </li>
+            <li>
+                <a href="#docker-linux-mac-391" id="markdown-toc-docker-linux-mac-391">Docker (Linux or Mac OS)</a>
+            </li>
+            <li>
+                <a href="#windows-391" id="markdown-toc-windows-391">Windows</a>
+            </li> 
+        </ul>
+    </li>
+    <li>
         <a href="#upgrading-to-39" id="markdown-toc-upgrading-to-39">Upgrading to 3.9EDGE</a>
         <ul>
             <li>
@@ -262,6 +276,100 @@ net stop tb-edge
 
 Launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
+
+## Upgrading to 3.9.1EDGE {#upgrading-to-391}
+
+{% assign serverVersion = "3.9.1" %}
+{% assign updateServerLink = "#upgrading-to-391" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
+### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-391}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.9EDGE version.
+
+#### ThingsBoard Edge package download
+
+{% capture tabspec %}tb-edge-download-3-9-1
+tb-edge-download-3-9-1-ubuntu,Ubuntu/Raspberry Pi,shell,resources/3.9.1/tb-edge-ubuntu-download.sh,/docs/user-guide/install/edge/resources/3.9.1/tb-edge-ubuntu-download.sh
+tb-edge-download-3-9-1-centos,CentOS,shell,resources/3.9.1/tb-edge-centos-download.sh,/docs/user-guide/install/edge/resources/3.9.1/tb-edge-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard Edge service upgrade
+
+* Stop ThingsBoard Edge service if it is running.
+
+```bash
+sudo service tb-edge stop
+```
+{: .copy-code}
+
+{% capture tabspec %}tb-edge-installation-3-9-1
+tb-edge-installation-3-9-1-ubuntu,Ubuntu/Raspberry Pi,shell,resources/3.9.1/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/edge/resources/3.9.1/tb-edge-ubuntu-installation.sh
+tb-edge-installation-3-9-1-centos,CentOS,shell,resources/3.9.1/tb-edge-centos-installation.sh,/docs/user-guide/install/edge/resources/3.9.1/tb-edge-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/tb-edge/bin/install/upgrade.sh
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service tb-edge start
+```
+{: .copy-code}
+
+### Docker (Linux or Mac OS) {#docker-linux-mac-391}
+
+{% assign versionName = "3.9.1EDGE" %}
+{% assign previousVersion = "3.9.0EDGE" %}
+
+{% include templates/edge/user-guide/start-upgrade.md %}
+
+### Windows {#windows-391}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.9EDGE version.
+
+#### ThingsBoard Edge package download
+
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.9.1.zip](https://github.com/thingsboard/thingsboard-edge/releases/download/v3.9.1/tb-edge-windows-3.9.1.zip).
+
+#### ThingsBoard Edge service upgrade
+
+* Stop ThingsBoard Edge service if it is running:
+
+```text
+net stop tb-edge
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard Edge configuration located in *\<ThingsBoard Edge install dir\>\conf* (for example: *C:\tb-edge\conf*).
+
+* Extract ThingsBoard Edge package.
+
+* Compare and merge your old ThingsBoard Edge configuration files (from the backup you made in the previous step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard Edge to the new version.
+
+**NOTE** Scripts listed below should be executed using Administrator Role.
+
+Execute regular upgrade script:
+
+```text
+C:\tb-edge>upgrade.bat
+```
+
+#### Start the service
+
+```text
+net start tb-edge
+```
+{: .copy-code}
 
 ## Upgrading to 3.9EDGE {#upgrading-to-39}
 

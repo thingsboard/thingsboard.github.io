@@ -15,14 +15,14 @@ The integration of MQTT over WebSocket is not merely a technological combination
 It enables MQTT messages to be sent and received directly through browsers, leveraging the unique strengths of both MQTT and WebSocket.
 This synergy opens up possibilities, from displaying live device information and receiving real-time alerts to efficient communication in mobile web applications.
 
-### Defining the WebSocket
+## Defining the WebSocket
 
 WebSocket is a communication protocol enabling real-time, bi-directional communication between a web client and a server over a single, long-lived TCP connection. 
 It differs significantly from the traditional HTTP request/response model by allowing continuous data exchange with lower latency. 
 Initiated through an HTTP upgrade handshake, it supports both unencrypted (ws://) and encrypted (wss://) connections. 
 WebSocket is essential for web applications requiring live content updates due to its efficient and persistent communication channel.
 
-### Benefits of using MQTT over WebSocket
+## Benefits of using MQTT over WebSocket
 
 The integration of MQTT with WebSocket offers significant advantages for web-based IoT applications. 
 By utilizing MQTT over WebSocket, the traditionally non-web MQTT protocol is effectively extended into the web application area. 
@@ -38,7 +38,7 @@ This feature, combined with MQTT's publish/subscribe model, enables dynamic and 
 * **Compatibility with Web Ecosystem**: By using MQTT over WebSocket, the protocol becomes compatible with the web browser security model, facilitating its integration into web applications without additional plugins or special arrangements.
 * **Supports MQTT Features**: The integration does not compromise MQTT's native features like retained messages, last will and testament, and clean session, ensuring robust and feature-rich implementations.
 
-### MQTT over WebSocket in TBMQ
+## MQTT over WebSocket in TBMQ
 
 TBMQ utilizes two listeners, WS (WebSocket) and WSS (WebSocket Secure), to facilitate communication over WebSocket. 
 You can refer to the overview of these listeners provided [here](/docs/mqtt-broker/security/#ws-listener).
@@ -53,11 +53,11 @@ To address this, pull the latest configuration files or update existing ones to 
 For detailed WebSocket-related parameters, please refer to the provided [link](/docs/mqtt-broker/install/config/#mqtt-listeners-parameters) 
 (locate `LISTENER_WS_ENABLED` and related environment variables).
 
-### Getting started
+## Getting started
 
 In this guide, we present an illustrative example of how to establish MQTT over WebSocket connection to a TBMQ, subscribe to a specific topic, and exchange messages using the [MQTT.js](https://github.com/mqttjs/MQTT.js) library.
 
-#### Installing TBMQ
+### Installing TBMQ
 
 Before we delve in, make sure the TBMQ is successfully installed.
 To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the [Installation options](/docs/mqtt-broker/install/installation-options/) documentation.
@@ -70,7 +70,7 @@ Windows%,%windows%,%templates/mqtt-broker/install/windows/windows.md{% endcaptur
 
 {% include content-toggle.html content-toggle-id="tbmqGettingStartedInstallation" toggle-spec=contenttogglespec %}
 
-#### Installing MQTT WebSocket client
+### Installing MQTT WebSocket client
 
 To install MQTT.js, ensure you have the Node.js runtime environment installed on your machine. 
 Follow the guide below for instructions on [installing Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs).
@@ -102,7 +102,7 @@ yarn global add mqtt
 
 Note that global installations should be used judiciously as they can lead to version conflicts.
 
-#### Connecting the client
+### Connecting the client
 
 We suggest consulting the [MQTT.js documentation](https://github.com/mqttjs/MQTT.js?tab=readme-ov-file#api) for comprehensive information on connection options, 
 subscribing to topics, and publishing messages with this library.
@@ -237,7 +237,7 @@ Closing client...
 Moreover, you can utilize the [WebSocket client](/docs/mqtt-broker/user-guide/ui/websocket-client/) to subscribe to the topic and receive messages, allowing you to verify the result.
 ![image](/images/mqtt-broker/ws/ws_example.png)
 
-#### Connection details
+### Connection details
 
 The URL `ws://localhost:8084/mqtt` is composed of several components, as detailed below:
 
@@ -246,7 +246,7 @@ The URL `ws://localhost:8084/mqtt` is composed of several components, as detaile
 * **8084**: Indicates the port number on which the WebSocket server is listening for incoming connections.
 * **/mqtt**: This is the required path used by TBMQ for MQTT over WebSocket. The choice of '/mqtt' for the path is based on the MQTT specification.
 
-#### MQTT over WebSocket Secure (WSS)
+### MQTT over WebSocket Secure (WSS)
 
 Using MQTT over WebSocket Secure (WSS) in TBMQ offers enhanced security for your data. 
 It encrypts communication, making sure that information sent between devices and the broker is protected from unauthorized access.
@@ -380,7 +380,7 @@ node wss_example.js
 
 Upon successful execution of the wss.example.js file, you should observe a similar output as for the ws_example.js example.
 
-### Conclusion
+## Conclusion
 
 In this guide, we explored the powerful combination of MQTT and WebSocket, a solution that enhances IoT communication with efficiency and flexibility. 
 We delved into how MQTT over WebSocket provides a real-time, bi-directional communication channel that operates seamlessly in web environments, ensuring data is exchanged swiftly and reliably. 

@@ -10,7 +10,7 @@ and have a high-level report of key metrics necessary for effective and proactiv
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we have created the "Smart Office" dashboard that displays data from multiple devices. You may use the dashboard to:
 
@@ -25,7 +25,7 @@ You may drill down to the device details state by clicking on the table row. The
 
 You may always customize the "Smart Office" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-### Devices
+## Devices
 
 We have already created "Office" asset and 4 devices related to it. We have also loaded demo data for those devices. 
 See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
@@ -81,6 +81,6 @@ The commands are sent using the platform [RPC API](/docs/{{docsPrefix}}user-guid
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
+## Alarms
 
 Alarms are generated using two Alarm rules in the "smart-sensor" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/).
