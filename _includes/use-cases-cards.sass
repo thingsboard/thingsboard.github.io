@@ -85,9 +85,13 @@
         border-radius: 16px
         padding: 32px 20px
         position: relative
-
-        .frame-video video
-          border-radius: 6px
+        .dashboard-frame
+          .frame-image
+            z-index: 1
+          .frame-video
+            z-index: 2
+            video
+              border-radius: 6px
 
       .overlay
         border-radius: 16px

@@ -10,6 +10,7 @@
                 <div class="frame-image">
                     <img src="{{ card[1].media.image }}" alt="{{ card[1].media.alt }}">
                 </div>
+                {% if card[1].media.video %}
                 <div class="frame-video">
                     <video loop muted preload="auto" playsinline>
                         {% for videoSrc in card[1].media.video %}
@@ -18,6 +19,7 @@
                         {% endfor %}
                     </video>
                 </div>
+                {% endif %}
             </div>
             <div class="overlay">
                 <div class="eye">
@@ -50,12 +52,16 @@
         const video = item.getElementsByTagName('video');
 
         item.addEventListener('mouseenter', () => {
-            video[0].play();
+            if (video.length) {
+                video[0].play();
+            }
             item.style.setProperty("--current-height", `${item.offsetHeight}px`);
         })
 
         item.addEventListener('mouseleave', () => {
-            video[0].pause();
+            if (video.length) {
+                video[0].pause();
+            }
             setTimeout(() => {
                 item.style.setProperty("--current-height", '100%');
             }, 300)
