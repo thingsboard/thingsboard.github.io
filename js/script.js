@@ -1152,3 +1152,54 @@ var tb = (function () {
 		});
 	});
 })();
+
+//toggle-group
+(function () {
+	let toggleGroupsMap = {};
+	jqueryDefer(function () {
+		$(document).ready(function () {
+			const groupInstances = {};
+			$('.tb-content-toggle').each(function () {
+				const $toggleBlock = $(this);
+				const groupName = $toggleBlock.data('toggle-group');
+				if (groupName) {
+					if (!toggleGroupsMap[groupName]) {
+						toggleGroupsMap[groupName] = [];
+					}
+					toggleGroupsMap[groupName].push(this);
+					if (!groupInstances[groupName]) {
+						groupInstances[groupName] = 1;
+					} else {
+						groupInstances[groupName]++;
+					}
+					if (groupInstances[groupName] > 1) {
+						$toggleBlock.find('> .panel > .panel-heading').hide();
+					}
+					initToggleGroupHandler(this, groupName);
+				}
+			});
+		});
+	});
+
+	function initToggleGroupHandler(toggleBlock, groupName) {
+		$(toggleBlock)
+			.find('> .panel > .panel-heading > a.content-toggle-button')
+			.each((index, button) => {
+				button.addEventListener('click', function (event) {
+					event.preventDefault();
+					const targetId = button.getAttribute('data-target').substring(1);
+					toggleGroupsMap[groupName].forEach(otherBlock => {
+						applyGroupToggle(otherBlock, targetId);
+					});
+				});
+			});
+	}
+
+	function applyGroupToggle(toggleBlock, targetId) {
+		const $block = $(toggleBlock);
+		$block.find('> .panel > .panel-heading > a.content-toggle-button').removeClass('active');
+		$block.find('> .panel > .panel-collapse').removeClass('show');
+		$block.find(`> .panel > .panel-heading > a.content-toggle-button[data-target="#${targetId}"]`).addClass('active');
+		$block.find(`> .panel > .panel-collapse#${targetId}`).addClass('show');
+	}
+})();

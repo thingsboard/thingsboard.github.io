@@ -1,7 +1,8 @@
 {% assign contentToggleId = include.content-toggle-id %}
 {% assign toggleraw = include.toggle-spec | split: '%br%' %}
+{% assign toggleGroup = include.toggle-group %}
 
-<div class="tb-content-toggle" id="{{contentToggleId}}">
+<div class="tb-content-toggle" id="{{contentToggleId}}" data-toggle-group="{{toggleGroup}}">
     <div class="panel panel-default">
         <div class="panel-heading">
             {% for content in toggleraw %}
