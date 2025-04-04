@@ -1479,7 +1479,7 @@
 </table>
 
 
-####  Platform integrations parameters
+###  Platform integrations parameters
 
 <table>
 	<thead>
