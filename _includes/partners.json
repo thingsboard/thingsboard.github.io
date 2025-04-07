@@ -185,6 +185,22 @@
   {
     "type": ["main", "bluetooth", "wifi", "nbiot"],
     "program": "",
+    "name": "Digicom B810 Spa",
+    "logo": "digicom-logo.png",
+    "site": {
+      "href": "https://www.digicom.it/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "/docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-plaƞorm/"
+      }
+    },
+    "blurb": "Digicom is a brand with over 45 years of history and experience in the development and management of Internet-connected products. In 2017, Digicom Spa joined the B810 Group, becoming a leading company in the IoT sector enriching its skills and expanding its offer to advanced solutions in various industrial sectors. We offer a wide range of “connected solutions” in the fields of telecommunications, industrial applications, energy, elevators and escalators, providing design, manufacturing, assembly, testing, logistics and support services."
+  },
+  {
+    "type": ["main", "bluetooth", "wifi", "nbiot"],
+    "program": "",
     "name": "Nettra",
     "logo": "nettra.png",
     "site": {
@@ -432,6 +448,34 @@
       }
     },
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
+  },
+  {
+    "type": ["main", "ethernet", "wifi", "LoRaWAN", "bluetooth", "lte", "modbus", "nbiot"],
+    "program": "",
+    "name": "MikroTik",
+    "logo": "mikrotik-logo.svg",
+    "site": {
+      "href": "https://mikrotik.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "MQTT and ThingsBoard configuration": {
+        "href": "https://help.mikrotik.com/docs/spaces/ROS/pages/105742352/MQTT+and+ThingsBoard+configuration"
+      },
+      "Bluetooth tag-tracking using MQTT and ThingsBoard": {
+        "href": "https://help.mikrotik.com/docs/spaces/ROS/pages/176914435/Bluetooth+tag-tracking+using+MQTT+and+ThingsBoard"
+      },
+      "GPS-tracking using MQTT and ThingsBoard": {
+        "href": "https://help.mikrotik.com/docs/spaces/ROS/pages/166920428/GPS-tracking+using+MQTT+and+ThingsBoard"
+      },
+      "Container - ThingsBoard MQTT/HTTP server": {
+        "href": "https://help.mikrotik.com/docs/spaces/ROS/pages/166920348/Container+-+ThingsBoard+MQTT+HTTP+server"
+      },
+      "Sending temperature readings from the TG-BT5-OUT tag to ThingsBoard": {
+        "href": "https://help.mikrotik.com/docs/spaces/UM/pages/143327239/Sending+temperature+readings+from+the+TG-BT5-OUT+tag+to+ThingsBoard"
+      }
+    },
+    "blurb": "MikroTik is an EU-based leader in networking hardware and software, providing high-performance routers, switches, 5G and wireless solutions. Our technology powers ISPs, enterprises, and IoT networks—enabling everything from asset tracking to smart city integration and adding wireless connectivity to legacy sensors. We focus on efficiency, security, and scalability to build reliable, cost-effective networks worldwide."
   },
   {
     "type": ["main", "nbiot", "lte"],

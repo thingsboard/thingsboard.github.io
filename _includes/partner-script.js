@@ -78,12 +78,6 @@ function rengen() {
             }
             link.textContent = linkName;
             linksElement.appendChild(link);
-
-            linksCounter += 1;
-
-            if(linksCounter >= 2 && !linksElement.classList.contains('owl-carousel')) {
-
-            }
         }
 
         if(linksElement.children.length >= 2) {
@@ -109,7 +103,7 @@ function rengen() {
 
 	if (partnersType === 'hardware') {
         var becomeHardwarePartnerBox = document.createElement('div');
-        becomeHardwarePartnerBox.className = 'partner-box';
+        becomeHardwarePartnerBox.className = 'partner-box become-partner-box';
 
         var bg = document.createElement('div');
         bg.className = 'box-background';
