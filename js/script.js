@@ -1196,7 +1196,7 @@ var tb = (function () {
 			const filterMode = $('.filters').attr('data-mode');
 			const container = document.getElementById(containerId);
 			const content = Array.from(container.children);
-			const checkboxes = $('.filter .check-box');
+			const checkboxes = $('.filters .check-box');
 
 			checkboxes.on('click', function() {
 				const checkboxId = $(this).attr('id');
