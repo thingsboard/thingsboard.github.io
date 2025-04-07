@@ -151,13 +151,13 @@
       "Gas Meter": {
         "href": "/docs/samples/smartico/gas-meter-lorawan/Gas_Meter_LoRaWAN/"
       },
-      "Gas Shutoff Valve": {
+	  "Gas Shutoff Valve": {
         "href": "/docs/samples/smartico/gas-valve-lorawan/Gas_Valve_LoRaWAN/"
       },
       "Leaks Detector": {
         "href": "/docs/samples/smartico/leaks-detector-lorawan/Leaks_Detector_LoRaWAN/"
       },
-      "Water meter Pulse Sensor": {
+	  "Water meter Pulse Sensor": {
         "href": "/docs/samples/smartico/pulse-sensor-lorawan/Pulse_Sensor_LoRaWAN/"
       },
       "Water meter wM-Bus Reader": {
