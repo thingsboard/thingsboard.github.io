@@ -1,11 +1,11 @@
-#### What Is an Edge Rule Chain Template?
+## What Is an Edge Rule Chain Template?
 
 An Edge Rule Chain Template is a predefined Rule Chain in ThingsBoard, designed specifically for use with ThingsBoard Edge. 
 It is important to note that the rule chain template itself does not execute on the server. 
 Instead, it serves merely as a template. 
 The actual rule chain, derived from this template, begins functioning and processing data from devices according to its configuration only after it is assigned to an Edge instance and delivered to it.
 
-#### Creating Rule Chain Template on the Server
+## Creating Rule Chain Template on the Server
 
 {% assign createRuleChainTemplatePE = '
     ===
@@ -43,7 +43,7 @@ The actual rule chain, derived from this template, begins functioning and proces
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createRuleChainTemplateCE %}
 {% endif %}
 
-#### Assigning the Rule Chain Template to ThingsBoard Edge
+## Assigning the Rule Chain Template to ThingsBoard Edge
 
 {% assign assignRuleChainTemplateToEdgePE = '
     ===
@@ -81,7 +81,7 @@ The actual rule chain, derived from this template, begins functioning and proces
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=assignRuleChainTemplateToEdgeCE %}
 {% endif %}
 
-#### Verify Assigned Rule Chain on the Edge
+## Verify Assigned Rule Chain on the Edge
 
 {% assign verifyRuleChainPE = '
     ===

@@ -24,11 +24,11 @@ If more complex logic is required, we suggest utilising the alternative option, 
 
 The **ThingsBoard system** allows for pushing **Alarms** from the **Cloud** to the **Edge** in order to enhance operational efficiency and reduce reliance on **Cloud** resources.
 
-#### Prerequisite
+### Prerequisite
 
 It is essential to determine which **Rule chain** you intend to use, as this will have a significant impact on the configuration process.
 
-#### Guidelines
+### Guidelines
 
 To push Alarms from the **Cloud** to the **Edge**, follow these steps:
 
@@ -43,11 +43,11 @@ You **cannot** create or edit the **Rule Chain** on the **Edge** itself. It must
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
 
-#### Prerequisite
+### Prerequisite
 
 It is essential to determine which **Rule chain** you intend to use, as this will have a significant impact on the configuration process.
 
-#### Guidelines
+### Guidelines
 
 To push Alarms from the **Edge** to the **Cloud**, follow these steps:
 

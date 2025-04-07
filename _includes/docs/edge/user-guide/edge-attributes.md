@@ -1,13 +1,13 @@
 * TOC 
 {:toc}
 
-### Overview
+## Overview
 
 **Custom attributes** are the structured data that can be assigned to the entities. They are stored in the database and can be used for visualization, analysis, logic configuration, and integration with other services.
 
 In **ThingsBoard Edge**, attributes work similarly to the **ThingsBoard** platform. For a comprehensive understanding of the **ThingsBoard Attributes**, please refer to the [Working with IoT Attributes](/docs/{{peDocsPrefix}}user-guide/attributes/){: target="_blank"} documentation.
 
-### Assigning Attributes to the Edge Entities
+## Assigning Attributes to the Edge Entities
 
 **Custom attributes** can be managed from the **Edge** instance. They are stored and processed locally for immediate use. 
 
@@ -21,7 +21,7 @@ To add an attribute to any Edge [entity](/docs/{{peDocsPrefix}}user-guide/entiti
 If an attribute is assigned to an entity on the **ThingsBoard Server**, and the entity is then assigned to an **Edge** instance, the **attribute** is automatically assigned as well. 
 Read about **how to assign entities to the Edge** instance [here](/docs/{{docsPrefix}}config/management/#entities-management){: target="_blank"}.
 
-### Using Attributes to Visualize Data on the Dashboard
+## Using Attributes to Visualize Data on the Dashboard
 
 In visualization data process, **entity attributes** can be used to provide context for telemetry data, display static or dynamic metadata about devices, and act as configuration parameters to filter or annotate dashboards. 
 
@@ -31,7 +31,7 @@ To display **attributes** on the Dashboard, create the [Entity alias](/docs/{{pe
 
 Read more about **Edge Dashboards configuration** [here](/docs/{{docsPrefix}}user-guide/db-overview/){: target="_blank"}.
 
-### Syncing Attribute Updates
+## Syncing Attribute Updates
 
 To ensure that any changes to the **attributes** are synchronized between the **Server** and **Edge** instances, adjust the **Rule Chains**. 
 
@@ -51,7 +51,7 @@ To keep the **ThingsBoard Server** up to date with any attribute changes that ha
 
 Read about how to **subscribe to device attributes change** [here](/docs/{{docsPrefix}}config/subscribe-to-attribute/#step-3-subscribe-to-device-attributes-change-and-publish-device-attributes-message){: target="_blank"}.
 
-### Custom Attributes for Edge Instance
+## Custom Attributes for Edge Instance
 
 Starting with the 3.9.0 release, **custom attributes** can be assigned to the **Edge** instance and used as placeholders in the **Rule Chains**. This allows each **Edge** instance to dynamically replace placeholders with its specific attributes in real time. In this way, one **Edge Rule Chain** template can be used for multiple instances, eliminating the need to create a separate **Rule Chain template** for each **Edge** instance.
 The retrieved **Edge attributes** can be used for metadata enrichment, authentication and tagging, analysis, and contextualization of transmitted data. This approach streamlines the management of multiple **Edge** instances and supports efficient scaling while minimizing errors and simplifying maintenance. 
@@ -84,7 +84,7 @@ To use **Edge** attributes as placeholders in the **Rule Chain template**:
 
 {% include images-gallery.html imageCollection="edgeAttributesAsPlaceholders" %}
 
-### Using Attributes in Edge Rule Chains
+## Using Attributes in Edge Rule Chains
 
 In **ThingsBoard Edge**, **Rule Chains** can leverage **edge attributes** to create dynamic, real-time data processing logic. 
 

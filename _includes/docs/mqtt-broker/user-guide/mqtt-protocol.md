@@ -2,14 +2,14 @@
 * TOC
 {:toc}
 
-### Introduction to MQTT
+## Introduction to MQTT
 
 MQTT is a lightweight messaging protocol designed for constrained devices and low-bandwidth, high-latency, or unreliable networks. 
 It follows the publish/subscribe messaging model, allowing devices to communicate efficiently in environments with limited resources, 
 such as IoT (Internet of Things) systems, mobile applications, and embedded systems. 
 MQTT is built for simplicity, ensuring minimal overhead and ease of implementation across a wide range of devices, from small sensors to large industrial systems.
 
-#### MQTT protocol format
+### MQTT protocol format
 
 The MQTT protocol is designed to minimize data transfer overhead. Its messages consist of a fixed header, an optional variable header, and a payload. 
 Here's a breakdown of the format:
@@ -28,7 +28,7 @@ Here's a breakdown of the format:
 
 The simple format, with its fixed and variable header components, enables MQTT to keep message sizes small and optimize network use.
 
-#### Comparison with other protocols
+### Comparison with other protocols
 
 When compared to other widely-used messaging and communication protocols, MQTT stands out for its simplicity and focus on low-bandwidth environments. Here is a brief comparison:
 
@@ -48,7 +48,7 @@ In summary, MQTT excels in environments where simplicity, low bandwidth, and pow
 while other protocols like HTTP, CoAP, and AMQP may be better suited for applications that require richer feature sets, 
 more complex communication patterns, or higher network bandwidth.
 
-#### Purpose of the MQTT protocol
+### Purpose of the MQTT protocol
 
 The main goal of MQTT is to provide a flexible and efficient way to transfer data between devices, particularly in environments where:
 - **Low bandwidth** is a constraint.
@@ -64,7 +64,7 @@ Some common use cases of MQTT include:
 - **Connected vehicles** (vehicle telemetry, fleet management).
 - **Industrial monitoring and control** (factory equipment sensors).
 
-#### Core principles
+### Core principles
 
 MQTT operates based on the following key principles:
 
@@ -78,7 +78,7 @@ This model decouples message producers and consumers, allowing for more scalable
     - The broker is responsible for managing connections, distributing messages, and ensuring reliable delivery based on the requested Quality of Service (QoS) level.
     - Multiple clients can publish and subscribe to the same topic, with the broker ensuring that messages are delivered to all interested subscribers.
 
-### MQTT architecture
+## MQTT architecture
 
 At the core of the MQTT protocol is a simple but powerful architecture that enables scalable and efficient communication between devices. 
 The architecture is based on three key components: Clients, Brokers, and Topics, each playing a distinct role in ensuring seamless message delivery and communication.
@@ -99,7 +99,7 @@ The architecture is based on three key components: Clients, Brokers, and Topics,
     - Topics are arranged in a hierarchical structure, allowing subscribers to listen to specific topics or use wildcards (`+`, `#`) to subscribe to multiple topics at once.
     - Example: A topic might be `/home/livingroom/temperature` where a client can publish temperature data, and any subscribers to this topic will receive that data.
 
-### MQTT message flow
+## MQTT message flow
 
 In MQTT, messages are exchanged using the **publish/subscribe** pattern, which decouples message producers (publishers) from consumers (subscribers). This allows for flexible, scalable communication across numerous devices. The key to this flow is the **broker**, which handles routing messages between publishers and subscribers.
 
@@ -111,7 +111,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
 2. **Description of Message Types:**
    MQTT defines several packet types, also known as **Control Packets**, that govern communication between clients and the broker:
 
-#### CONNECT
+### CONNECT
 
 - **Purpose:** Establishes a connection between the client and the broker.
 - **Packet Format:**
@@ -123,7 +123,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Includes authentication details (username, password) and connection options (keep-alive time, clean session).
     - May include the Last Will and Testament (LWT) to notify other clients if the client disconnects unexpectedly.
 
-#### CONNACK
+### CONNACK
 
 - **Purpose:** Acknowledges a client's connection request.
 - **Packet Format:**
@@ -133,7 +133,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Sent by the broker in response to a CONNECT packet.
     - Indicates whether the connection was accepted or rejected (e.g., due to authentication failure).
 
-#### PUBLISH
+### PUBLISH
 
 - **Purpose:** Delivers an application message from a publisher to the broker (and eventually to subscribers).
 - **Packet Format:**
@@ -145,7 +145,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Includes the QoS level to define how the message is delivered and whether acknowledgments are required.
     - The message can be marked as retained, so future subscribers receive it upon subscription.
 
-#### PUBACK
+### PUBACK
 
 - **Purpose:** Acknowledges receipt of a PUBLISH packet when QoS 1 is used.
 - **Packet Format:**
@@ -155,7 +155,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Sent by the subscriber or broker to acknowledge a QoS 1 message received from the publisher.
     - Ensures the message is delivered exactly once when using QoS 1.
 
-#### PUBREC
+### PUBREC
 
 - **Purpose:** Acknowledges the receipt of a PUBLISH packet when QoS 2 is used.
 - **Packet Format:**
@@ -165,7 +165,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - The first step in ensuring that a QoS 2 message is delivered exactly once.
     - Sent by the subscriber or broker after receiving a QoS 2 PUBLISH message to begin the handshake process.
 
-#### PUBREL
+### PUBREL
 
 - **Purpose:** Confirms the receipt of a PUBREC packet in QoS 2 communication.
 - **Packet Format:**
@@ -175,7 +175,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Sent by the publisher after receiving a PUBREC, indicating that the publisher is ready to complete the message delivery.
     - Part of the handshake in QoS 2 communication.
 
-#### PUBCOMP
+### PUBCOMP
 
 - **Purpose:** Acknowledges the completion of a QoS 2 message delivery.
 - **Packet Format:**
@@ -185,7 +185,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Sent by the subscriber to confirm that a QoS 2 message has been completely processed.
     - This concludes the four-step handshake for QoS 2 delivery.
 
-#### SUBSCRIBE
+### SUBSCRIBE
 
 - **Purpose:** Subscribes a client to one or more topics.
 - **Packet Format:**
@@ -196,7 +196,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Sent by a client to the broker to subscribe to specific topics.
     - Each topic can be associated with a different QoS level, depending on how the client wants to receive messages.
 
-#### SUBACK
+### SUBACK
 
 - **Purpose:** Acknowledges a SUBSCRIBE packet.
 - **Packet Format:**
@@ -206,7 +206,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
 - **Description:**
     - Sent by the broker to confirm or deny the client's subscription to each requested topic.
 
-#### UNSUBSCRIBE
+### UNSUBSCRIBE
 
 - **Purpose:** Unsubscribes a client from one or more topics.
 - **Packet Format:**
@@ -216,7 +216,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
 - **Description:**
     - Sent by a client to the broker to remove its subscription to specific topics.
 
-#### UNSUBACK
+### UNSUBACK
 
 - **Purpose:** Acknowledges an UNSUBSCRIBE packet.
 - **Packet Format:**
@@ -225,7 +225,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
 - **Description:**
     - Sent by the broker to confirm that the client has been unsubscribed from the specified topics.
 
-#### PINGREQ
+### PINGREQ
 
 - **Purpose:** Sent by the client to check if the broker is still available.
 - **Packet Format:**
@@ -234,7 +234,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - Sent periodically by the client if it doesn't have any data to send but needs to maintain the connection with the broker.
     - This is used to ensure the connection is still alive, especially when long periods of inactivity are expected.
 
-#### PINGRESP
+### PINGRESP
 
 - **Purpose:** Acknowledges a PINGREQ packet.
 - **Packet Format:**
@@ -242,7 +242,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
 - **Description:**
     - Sent by the broker to confirm that it is still connected to the client after receiving a PINGREQ packet.
 
-#### DISCONNECT
+### DISCONNECT
 
 - **Purpose:** Sent by the client to cleanly disconnect from the broker and optionally provide a reason for the disconnection.
 - **Packet Format:**
@@ -251,7 +251,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
 - **Description:**
     - The client sends this to indicate it is disconnecting intentionally, allowing the broker to clear the session state if needed.
 
-#### AUTH
+### AUTH
 
 - **Purpose:** Used for authentication during an MQTT session, specifically in MQTT 5.0, to continue or complete the authentication process after the initial connection.
 - **Packet Format:**
@@ -264,7 +264,7 @@ In MQTT, messages are exchanged using the **publish/subscribe** pattern, which d
     - After a CONNECT packet, if the broker requires additional authentication steps, it may send an AUTH packet, and the client can respond with another AUTH packet until the authentication process is complete.
     - This mechanism allows for more secure, pluggable authentication mechanisms compared to previous MQTT versions.
 
-### Quality of Service (QoS) levels
+## Quality of Service (QoS) levels
 
 MQTT defines three **Quality of Service (QoS)** levels that control message delivery reliability between the client and broker:
 
@@ -274,7 +274,7 @@ MQTT defines three **Quality of Service (QoS)** levels that control message deli
 
 These levels provide flexibility based on the reliability requirements of the application.
 
-### Session management
+## Session management
 
 Session management in MQTT defines how the broker maintains the state of the client’s connection over time. It impacts message delivery, subscriptions, and other session data.
 
@@ -284,21 +284,21 @@ Session management in MQTT defines how the broker maintains the state of the cli
 - **Clean Session:**
     - With a clean session, all session data (subscriptions, undelivered messages) is cleared when the client disconnects. When the client reconnects, it starts fresh, with no history of its previous session.
 
-#### Reconnecting clients and message redelivery:
+### Reconnecting clients and message redelivery:
 
 - When a client reconnects after a disconnect, the broker can redeliver any missed messages if a persistent session was used.
 - If using QoS 1 or 2, the broker ensures that messages are redelivered until they are acknowledged by the client, ensuring message reliability.
 
 This session flexibility allows clients to maintain continuous operation, even with intermittent connectivity.
 
-### MQTT protocol versions
+## MQTT protocol versions
 
-#### Differences between MQTT 3.1.1 and MQTT 5.0:
+### Differences between MQTT 3.1.1 and MQTT 5.0:
 
 - **MQTT 3.1.1:** This version is widely adopted and provides core functionalities like the publish/subscribe model, QoS levels, and simple session management. It is known for its lightweight nature and ease of implementation.
 - **MQTT 5.0:** Introduced more advanced features to enhance scalability, flexibility, and control, building on the foundation of MQTT 3.1.1.
 
-#### New features in MQTT 5.0:
+### New features in MQTT 5.0:
 
 1. **Reason Codes:**
    Provides detailed feedback for both successful operations and errors, enabling better diagnostics and error handling between clients and brokers.
@@ -339,7 +339,7 @@ This session flexibility allows clients to maintain continuous operation, even w
 
 These features collectively enhance MQTT 5.0’s scalability, performance, security, and flexibility for complex use cases, especially in IoT and enterprise systems.
 
-### Best practices
+## Best practices
 
 1. **Optimizing Performance:**
     - **Reducing latency:** To minimize latency, ensure that the broker and clients are running on optimized hardware and network infrastructure. Keep messages small and use appropriate **QoS levels** to balance reliability with performance. Avoid excessive use of retained messages and carefully manage topic hierarchies to prevent message flooding.

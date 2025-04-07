@@ -180,7 +180,7 @@ The API is backward compatible with TB v1.0+ and this is the main reason why API
 {% endcapture %}
 {% include templates/info-banner.md content=api_note %}
 
-##### Get time-series data keys for specific entity
+### Get time-series data keys for specific entity
 
 You can fetch list of all time-series *data keys* for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -196,7 +196,7 @@ B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-##### Get latest time-series data values for specific entity
+### Get latest time-series data values for specific entity
 
 You can fetch list of latest values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -212,7 +212,7 @@ B,get-latest-telemetry-values-result.json,json,resources/get-latest-telemetry-va
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-##### Get historical time-series data values for specific entity
+### Get historical time-series data values for specific entity
 
 You can also fetch list of historical values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -274,7 +274,7 @@ where
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  
-#### Example 
+### Example 
 
 Change values of the following variables : 
 

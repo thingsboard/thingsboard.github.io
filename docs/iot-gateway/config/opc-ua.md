@@ -75,7 +75,7 @@ Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-basic
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-advanced-section.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcuasection" toggle-spec=opcuasection %}
 
-#### Subsection "Security"
+### Subsection "Security"
 
 Select basic or advanced OPC-UA configuration:
 
@@ -95,7 +95,7 @@ Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-data-
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-data-mapping-advanced-section.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcuadatamappingsection" toggle-spec=opcuadatamappingsection %}
 
-#### Subsection "Attributes" and "Time series"
+### Subsection "Attributes" and "Time series"
 
 The configuration in this subsection provides settings for processing data from OPC-UA node. These settings will be 
 interpreted in ThingsBoard platform instance as attributes/time series of the device.
@@ -105,7 +105,7 @@ Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-attr-
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-attr-and-time-series-advanced-section.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcuaattrandtimeseriessection" toggle-spec=opcuaattrandtimeseriessection %}
 
-#### Subsection "Attribute updates"
+### Subsection "Attribute updates"
 
 This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
 
@@ -119,7 +119,7 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/devic
 
 {% include content-toggle.liquid content-toggle-id="subsectiondeviceattrupdates" toggle-spec=subsectiondeviceattrupdates %}
 
-#### Subsection "RPC methods"
+### Subsection "RPC methods"
 
 ThingsBoard allows sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
@@ -142,7 +142,7 @@ nodes in the server.
 
 The path for the attribute value can be absolute or relative.
 
-#### Absolute path
+### Absolute path
 
 An **absolute path** specifies the full hierarchical address from the root of the OPC-UA server's namespace to the 
 target node.
@@ -159,7 +159,7 @@ _Converted data:_
 
 `23.54`
 
-#### Relative path
+### Relative path
 
 A **relative path** specifies the address relative to a predefined starting point in the OPC-UA server's namespace.
 

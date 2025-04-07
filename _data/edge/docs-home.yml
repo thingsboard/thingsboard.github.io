@@ -21,6 +21,8 @@ toc:
   section:
     - title: Overview
       path: /docs/edge/user-guide/db-overview/
+    - title: Public Dashboards
+      path: /docs/edge/config/edge-public-dashboard/
 - title: Configuration Guides
   section:
     - title: Device Management
@@ -39,6 +41,8 @@ toc:
       path: /docs/edge/config/subscribe-to-attribute/
     - title: Deploying Edge Alongside IoT Gateway
       path: /docs/edge/config/deploying-edge-alongside-iot-gateway/
+    - title: Installing Edge Behind a Proxy
+      path: /docs/edge/config/edge-behind-proxy/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates

@@ -7,7 +7,7 @@
 
 TBMQ offers users the convenience of configuring various settings directly from the user interface.
 
-### Security settings
+## Security settings
 
 To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password. 
 You can enhance the security of your account by updating your security settings, including the **password policy**.
@@ -17,7 +17,7 @@ Additionally, you can set a password expiration period to ensure that passwords 
 
 These measures will help ensure stronger and more secure passwords, thereby promoting better overall account security.
 
-#### Password policy
+### Password policy
 
 The password policy sets the rules that passwords for the TBMQ users must meet. You can specify the following options to ensure stronger security:
 - **Minimum password length** - the parameter determines the minimum number of characters in the password. Minimum password length should be in a range from 6 to 50 and is the only required field.
@@ -41,7 +41,7 @@ To see other security-related settings, please refer to our [Security documentat
 {% endcapture %}
 {% include templates/info-banner.md content=securityDocumentation %}
 
-#### Change password
+### Change password
 
 To change your account password to comply with the new requirements, you should follow these steps:
 
@@ -52,9 +52,9 @@ To change your account password to comply with the new requirements, you should 
 
 {% include images-gallery.html imageCollection="settings-password-policy" %}
 
-### General settings
+## General settings
 
-#### Connectivity
+### Connectivity
 
 In this section, you can override the default **host** and **port** for **MQTT, MQTTS, WS**, and **WSS** protocols.
 These custom values will be used in various parts of the TBMQ application where protocol-specific connectivity is required.
@@ -72,7 +72,7 @@ Here are two examples of pages where the custom host and port settings are appli
 
 {% include images-gallery.html imageCollection="settings-connectivity-settings" %}
 
-#### WebSocket client
+### WebSocket client
 
 In this section, you can configure additional settings related to the [WebSocket Client](/docs/mqtt-broker/user-guide/ui/websocket-client/) - a browser-accessible tool that provides management of MQTT clients, subscription to topics, receiving messages, and publishing messages.
 
@@ -92,6 +92,6 @@ If set to true, you will see logs for the following [MQTT.js](https://github.com
 
 * **Maximum messages in WebSocket Client table** setting allows you to control the limit of messages per WebSocket connection to be persisted in the browser's memory.
 
-### Mail server settings
+## Mail server settings
 
 {% include docs/mqtt-broker/user-guide/ui/mail-server.md %}
