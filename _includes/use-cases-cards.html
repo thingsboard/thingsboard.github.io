@@ -55,16 +55,17 @@
             if (video.length) {
                 video[0].play();
             }
-            item.style.setProperty("--current-height", `${item.offsetHeight}px`);
+            // item.style.setProperty("--current-height", `${item.offsetHeight}px`);
         })
 
         item.addEventListener('mouseleave', () => {
             if (video.length) {
+                video[0].currentTime = 0;
                 video[0].pause();
             }
-            setTimeout(() => {
-                item.style.setProperty("--current-height", '100%');
-            }, 300)
+            // setTimeout(() => {
+            //     item.style.setProperty("--current-height", '100%');
+            // }, 300)
         })
     })
 </script>

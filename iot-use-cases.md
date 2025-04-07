@@ -19,7 +19,7 @@ notitle: "true"
     </div>
 </div>
 
-{% include filter.html filters = "General,SCADA" containerId = "usecase-list" %}
+{% include filter.html filters = "General,SCADA" mode = "tab" containerId = "usecase-list" %}
 
 {% include use-cases-cards.html %}
 

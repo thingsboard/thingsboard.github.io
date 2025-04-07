@@ -163,7 +163,7 @@
             right: 0
             font-weight: 400
             opacity: 0
-            background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
+            background: linear-gradient(180deg, rgba(14, 20, 39, 0.50) 0%, rgba(14, 20, 39, 0.70) 100%)
             transition-duration: 0.3s
             &:hover
                 opacity: 1
@@ -336,12 +336,15 @@
             left: 814px
             background-color: #2A7DEC
 
-#encyclopedia:has(.iot-use-cases-hero)
+#encyclopedia:has(#usecase-list)
     padding-top: 0
+    padding-left: 40px
+    padding-right: 40px
 
 .iot-use-cases-hero
     display: flex
     justify-content: space-between
+    align-items: center
     gap: 100px
     position: relative
     padding: 100px 0 50px
@@ -379,6 +382,8 @@
 @media screen and (max-width: 959px)
     .iot-use-cases-hero
         flex-direction: column
+        align-items: initial
+        gap: 40px
         .iot-use-cases-hero-right
             .contact-us-card
                 padding: 32px
@@ -684,3 +689,14 @@
 
                 &.one-to-one-and-half
                     grid-template-columns: 1fr
+
+@media screen and (max-width: 1280px)
+    .iot-use-cases-hero
+        padding: 50px 0
+
+@media screen and (max-width: 599px)
+    #encyclopedia:has(#usecase-list)
+        padding-left: 16px
+        padding-right: 16px
+        .iot-use-cases-hero
+            padding: 40px 0
