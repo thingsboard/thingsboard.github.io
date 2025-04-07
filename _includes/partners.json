@@ -89,6 +89,22 @@
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
   },
   {
+    "type": ["main", "bluetooth", "lora"],
+    "program": "",
+    "name": "Lansitec",
+    "logo": "lansitec-logo.svg",
+    "site": {
+      "href": "https://www.lansitec.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "/docs/samples/lansitec/solar-bluetooth-gateway/"
+      }
+    },
+    "blurb": "Lansitec is at the forefront of technological innovation, specializing in the provision of affordable, compact, and highly efficient hardware designed to accurately locate people, resources, and assets. Our unique approach combines cutting-edge trackers, gateways, tags, and sensors with advanced software and algorithms to optimize performance and ensure the best possible outcomes."
+  },
+  {
     "type": ["main", "lora"],
     "program": "",
     "name": "Milesight",
@@ -135,13 +151,13 @@
       "Gas Meter": {
         "href": "/docs/samples/smartico/gas-meter-lorawan/Gas_Meter_LoRaWAN/"
       },
-	  "Gas Shutoff Valve": {
+      "Gas Shutoff Valve": {
         "href": "/docs/samples/smartico/gas-valve-lorawan/Gas_Valve_LoRaWAN/"
       },
       "Leaks Detector": {
         "href": "/docs/samples/smartico/leaks-detector-lorawan/Leaks_Detector_LoRaWAN/"
       },
-	  "Water meter Pulse Sensor": {
+      "Water meter Pulse Sensor": {
         "href": "/docs/samples/smartico/pulse-sensor-lorawan/Pulse_Sensor_LoRaWAN/"
       },
       "Water meter wM-Bus Reader": {
