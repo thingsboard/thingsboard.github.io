@@ -90,7 +90,11 @@
     text-align: left
     color: #333333
 
+.filter
+    animation: slide-in-from-top 0.8s ease-out forwards
+
 #usecase-list
+    animation: slide-in 0.8s ease-out forwards
     position: relative
     .list
         margin-bottom: 80px
@@ -387,7 +391,9 @@
         .iot-use-cases-hero-right
             .contact-us-card
                 padding: 32px
+                max-width: 570px
                 width: 100%
+                margin: 0 auto
                 .contact-us-card-title
                     max-width: 275px
                 .icon
@@ -700,3 +706,24 @@
         padding-right: 16px
         .iot-use-cases-hero
             padding: 40px 0
+
+
+@keyframes slide-in
+    from
+        opacity: 0
+        transform: translateY(100px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+
+
+@keyframes slide-in-from-top
+    from
+        opacity: 0
+        transform: translateY(-50%)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+
