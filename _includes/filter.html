@@ -1,8 +1,9 @@
 {% assign filters = include.filters | split: "," %}
+{% assign mode = include.mode | default: "checkbox" %}
 {% assign containerId = include.containerId %}
 
 
-<div class="filter" data-container-id="{{ containerId }}">
+<div class="filter" data-container-id="{{ containerId }}" data-mode="{{ mode }}">
     <div class="filter-content">
         <div class="actions">
             <div class="check-box checked" id="main">

@@ -1191,6 +1191,7 @@ var tb = (function () {
 	$(document).ready(function () {
 
 		const containerId = $('.filter').attr('data-container-id');
+		const filterMode = $('.filter').attr('data-mode');
 		const container = document.getElementById(containerId);
 		const content = Array.from(container.children);
 		const checkboxes = $('.filter .check-box');
@@ -1215,7 +1216,11 @@ var tb = (function () {
 				if(!anyChecked) {
 					checkboxes.filter('#main').addClass('checked');
 				} else {
-					checkboxes.filter('#main').removeClass('checked');
+					if(filterMode === 'checkbox') {
+						checkboxes.filter('#main').removeClass('checked');
+					} else if(filterMode === 'tab') {
+						checkboxes.not($(clickedElement)).removeClass('checked');
+					}
 				}
 			}
 		}

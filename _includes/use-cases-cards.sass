@@ -10,35 +10,57 @@
     padding: 8px
     border-radius: 24px
     box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
-    height: var(--current-height, 100%)
-
+    transition: padding 0.3s ease-in-out
+    height: 100%
+    &:after
+      content: ""
+      display: block
+      height: 100%
+      visibility: hidden
     &:hover
       text-decoration: none
       .card-content
         .dashboard-frame-wrapper
           padding: 9px 20px
         .text
+          padding: 0 32px 70px 32px
           .title
             color: #2A7DEC
           .read-more-button
-            transform: translateY(0)
+            bottom: 24px
             opacity: 1
 
     &:nth-child(3n)
+
+      .card-content
+
+        .dashboard-frame-wrapper
+          width: 50%
+
+        .text
+          width: 50%
+
+      &:hover
+        padding: 26px 8px
+        .card-content
+          .dashboard-frame-wrapper
+            padding: 9px
+          .text
+            padding: 0 32px 46px 32px
+            .read-more-button
+              bottom: 0
       grid-column: span 2
       height: 100%
 
       .card-content
         flex-direction: row-reverse
-        gap: 80px
+        gap: 32px
 
         .text
           height: auto
           gap: 16px
-          padding: 0 32px
+          padding: 32px
 
-      &:hover .dashboard-frame-wrapper
-        padding: 32px 10px
 
     &:nth-child(6n) .card-content
       flex-direction: row
@@ -53,10 +75,12 @@
       .text
         height: 100%
         width: 100%
-        padding: 0 32px 32px 32px
+        padding: 0 32px 24px 32px
+        transition: padding 0.3s ease-in-out
         display: flex
         flex-direction: column
         gap: 8px
+        position: relative
 
         .description
           margin: 0 !important
@@ -73,8 +97,8 @@
           transition: ease-in-out 0.3s
 
         .read-more-button
-          margin-top: auto
-          transform: translateY(100px)
+          position: absolute
+          bottom: -200px
           opacity: 0
           transition: ease-in-out 0.3s
 
@@ -103,48 +127,57 @@
 
 @media screen and (max-width: 1279px)
   #usecase-list
-    grid-template-columns: 1fr
-
     .parent-box
-      grid-column: span 1
+      &:hover
+        .card-content
+          .dashboard-frame-wrapper
+            padding: 32px 20px
       &:nth-child(3n)
         grid-column: span 1
-        height: var(--current-height, 100%)
-
+        &:hover
+          padding: 8px
+          .card-content
+            .text
+              padding: 0 32px 70px 32px
+              .read-more-button
+                bottom: 24px
+            .dashboard-frame-wrapper
+              padding: 32px 20px
         .card-content
           flex-direction: column
-          gap: 32px
-
+          .dashboard-frame-wrapper
+            width: 100%
           .text
             height: 100%
-            gap: 8px
-            padding: 0 32px 32px 32px
-
-        &:hover .dashboard-frame-wrapper
-          padding: 9px 20px
+            padding: 0 32px 70px 32px
+            width: 100%
+      .card-content
+        .text
+          padding: 0 32px 70px 32px
+          width: 100%
+          .read-more-button
+            bottom: 24px
+            opacity: 1
 
       &:nth-child(6n) .card-content
         flex-direction: column
 
-      .card-content
-        .text
-          .description
-            margin-bottom: 8px !important
-          .read-more-button
-            transform: translateY(0)
-            opacity: 1
+@media screen and (max-width: 959px)
+  #usecase-list
+    grid-template-columns: 1fr
 
 @media screen and (max-width: 599px)
   #usecase-list
+    gap: 24px
     .parent-box
       &:nth-child(3n)
         .card-content
           .text
-            padding: 0 16px 12px 16px
+            padding: 0 16px 66px 16px
       .card-content
         gap: 16px
         .text
-          padding: 0 16px 12px 16px
+          padding: 0 16px 66px 16px
           .description
             font-size: 14px !important
             line-height: 24px !important
