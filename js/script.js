@@ -1190,58 +1190,61 @@ var tb = (function () {
 (function () {
 	$(document).ready(function () {
 
-		const containerId = $('.filter').attr('data-container-id');
-		const filterMode = $('.filter').attr('data-mode');
-		const container = document.getElementById(containerId);
-		const content = Array.from(container.children);
-		const checkboxes = $('.filter .check-box');
+		if ($('.filters').length > 0) {
 
-		checkboxes.on('click', function() {
-			const checkboxId = $(this).attr('id');
-			handleCheckboxes(this, checkboxId);
-			const checkedIds = getCheckedIds();
+			const containerId = $('.filters').attr('data-container-id');
+			const filterMode = $('.filters').attr('data-mode');
+			const container = document.getElementById(containerId);
+			const content = Array.from(container.children);
+			const checkboxes = $('.filter .check-box');
 
-			filter(checkedIds);
-		});
+			checkboxes.on('click', function() {
+				const checkboxId = $(this).attr('id');
+				handleCheckboxes(this, checkboxId);
+				const checkedIds = getCheckedIds();
 
-		function handleCheckboxes(clickedElement, checkboxId) {
-			if(checkboxId === "main") {
-				checkboxes.not('#main').removeClass('checked');
-				checkboxes.filter('#main').addClass('checked');
-			} else {
-				$(clickedElement).toggleClass('checked');
+				filter(checkedIds);
+			});
 
-				const anyChecked = checkboxes.is('.checked');
-
-				if(!anyChecked) {
+			function handleCheckboxes(clickedElement, checkboxId) {
+				if(checkboxId === "main") {
+					checkboxes.not('#main').removeClass('checked');
 					checkboxes.filter('#main').addClass('checked');
 				} else {
-					if(filterMode === 'checkbox') {
-						checkboxes.filter('#main').removeClass('checked');
-					} else if(filterMode === 'tab') {
-						checkboxes.not($(clickedElement)).removeClass('checked');
+					$(clickedElement).toggleClass('checked');
+
+					const anyChecked = checkboxes.is('.checked');
+
+					if(!anyChecked) {
+						checkboxes.filter('#main').addClass('checked');
+					} else {
+						if(filterMode === 'checkbox') {
+							checkboxes.filter('#main').removeClass('checked');
+						} else if(filterMode === 'tab') {
+							checkboxes.not($(clickedElement)).removeClass('checked');
+						}
 					}
 				}
 			}
-		}
 
-		function getCheckedIds() {
-			return $('.filter .check-box.checked').map(function () {
-				return this.id;
-			}).get();
-		}
-
-		function filter(checkedIds) {
-			if (checkedIds.includes('main')) {
-				content.forEach(item => {
-					item.style.display = 'block';
-				});
-				return;
+			function getCheckedIds() {
+				return $('.filters .check-box.checked').map(function () {
+					return this.id;
+				}).get();
 			}
 
-			content.forEach(item => {
-				item.style.display = checkedIds.includes(item.id) ? 'block' : 'none';
-			});
+			function filter(checkedIds) {
+				if (checkedIds.includes('main')) {
+					content.forEach(item => {
+						item.style.display = 'block';
+					});
+					return;
+				}
+
+				content.forEach(item => {
+					item.style.display = checkedIds.includes(item.id) ? 'block' : 'none';
+				});
+			}
 		}
 	});
 })();
