@@ -70,8 +70,7 @@ This feature applies to uplink converters for the following integrations:
 
 ### Generic Uplink data converter
 
-The general Uplink data converter is suitable for all integrations.   
-To create the Uplink data converter, follow these steps:
+To create a generic Uplink data converter suitable for all integration types, follow these steps:
 
 - Navigate to the "**Data converters**" section in the "**Integration center**", click the "**plus**" icon button, and In the dropdown menu, select "**Create new converter**".
 - In the new window:
@@ -89,15 +88,16 @@ To create the Uplink data converter, follow these steps:
 
 ![image](/images/user-guide/integrations/overview/adding-uplink-converter-1.png)
 
-- Configure **advanced decoding parameters**: 
-  - To avoid constant updates for telemetry attributes or keys, you can use the "**Update only keys list**" field. Any keys provided in this field that exist in the telemetry or attribute arrays in the message after conversion will not be updated if the values associated with those keys have not changed from their previous values.
+- Configure **advanced decoding parameters**:
+  - To prevent unnecessary updates for telemetry or attribute values, you can use the "**Update only keys list**" field. Keys specified in this list will only be updated if their values have changed compared to the previous ones. If a listed key appears in the converted message but its value remains the same, the update will be skipped.
   > **Please note** that in a cluster setup, values, associated with keys specified in the "Update only keys list" field may be updated more than once if a message is received by a different integration executor nodes. The same behavior is expected if the converter configuration has been updated.  
 - Once everything is set up, click the "**Add**" button to create and save the new converter.
 
 ![image](/images/user-guide/integrations/overview/adding-uplink-converter-2.png)
 
-### Specific Uplink data converter
+### Typed Uplink data converter
 
+The typed Uplink data converter is designed for use with a specific integration type.
 To create the Uplink data converter for an integration that supports the **new uplink converter functionality** ([ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/){:target="_blank"}, [Loriot](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/){:target="_blank"}, [The Things Stack Community](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/){:target="_blank"}, [The Things Stack Industries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/){:target="_blank"}, ThingPark, ThingPark Enterprise), follow these steps:
 
 - The "**Integration type**" field lists all supported integrations. For this example, I&#39;ll use [Loriot](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/){:target="_blank"}.
@@ -116,7 +116,7 @@ To create the Uplink data converter for an integration that supports the **new u
   If the Device profile field is left empty, the device profile will be set to "default".
   - In the **Attributes** and **Telemetry** sections specify the keys that should be interpreted as attributes and telemetry, respectively.
   If a specified key is not present in the incoming message, it will be ignored by the converter.
-  - To avoid constant updates for telemetry attributes or keys, you can use the "**Update only keys list**" field. Any keys provided in this field that exist in the telemetry or attribute arrays in the message after conversion will not be updated if the values associated with those keys have not changed from their previous values.
+  - To prevent unnecessary updates for telemetry or attribute values, you can use the "**Update only keys list**" field. Keys specified in this list will only be updated if their values have changed compared to the previous ones. If a listed key appears in the converted message but its value remains the same, the update will be skipped.
   > **Please note** that in a cluster setup, values, associated with keys specified in the "Update only keys list" field may be updated more than once if a message is received by a different integration executor nodes. The same behavior is expected if the converter configuration has been updated.
 - Once everything is set up, click the "**Add**" button to create and save the new converter.
 
@@ -243,10 +243,10 @@ function encoder(msg, metadata, msgType, integrationMetadata);
 
 where
 
-**&#42; msg** - JSON with rule engine msg<br>
-**&#42; metadata** - list of key-value pairs with additional data about the message (produced by the rule engine)<br>
-**&#42; msgType** - Rule Engine message type. See [predefined message types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types){:target="_blank"} for more details<br>
-**&#42; integrationMetadata** - key-value map with some integration specific fields. You can configure additional metadata for each integration in the integration details
+ㅤ**&#42; msg** - JSON with rule engine msg<br>
+ㅤ**&#42; metadata** - list of key-value pairs with additional data about the message (produced by the rule engine)<br>
+ㅤ**&#42; msgType** - Rule Engine message type. See [predefined message types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types){:target="_blank"} for more details<br>
+ㅤ**&#42; integrationMetadata** - key-value map with some integration specific fields. You can configure additional metadata for each integration in the integration details
   
 ### Converter output
 
@@ -264,9 +264,9 @@ Converter output should be a valid JSON document with the following structure:
 
 where
 
-**&#42; contentType** - JSON, TEXT or BINARY (Base64 string) and is specific to your Integration type<br>
-**&#42; data** - data string according to the content type<br>
-**&#42; metadata** - list of key-value pairs with additional data about the message. For example, topic to use for MQTT integration, etc.
+ㅤ**&#42; contentType** - JSON, TEXT or BINARY (Base64 string) and is specific to your Integration type<br>
+ㅤ**&#42; data** - data string according to the content type<br>
+ㅤ**&#42; metadata** - list of key-value pairs with additional data about the message. For example, topic to use for MQTT integration, etc.
 
 ### Synchronous vs asynchronous downlinks
 
@@ -300,7 +300,7 @@ The full rule chain configuration is available [**here**](/docs/user-guide/resou
 
 ## Converters library
 
-ThingsBoard Converters library is a built-in collection of ready-to-use uplink decoder functions for over 100 devices, supporting four popular LoRaWAN network servers.   
+ThingsBoard Converters library is a built-in collection of ready-to-use uplink decoder functions for over 100 devices, supporting six popular LoRaWAN network servers.   
 It significantly simplifies integration setup with various sensors and vendors.
 
 Currently, the converters library is supported by the following integrations: [ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/){:target="_blank"}, [Loriot](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/){:target="_blank"}, [The Things Stack Community](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/){:target="_blank"}, [The Things Stack Industries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/){:target="_blank"}, **ThingPark**, and **ThingPark Enterprise**.   
@@ -319,38 +319,29 @@ To access the Converters library:
   - Click "**Next**".
 - Continue the process to finalize the integration setup.
 
-{% assign convertorsLibrary = '
+{% assign convertersLibrary = '
     ===
-        image: /images/user-guide/integrations/overview/convertors-library-1.png,
-        title: Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click the "**plus**" icon button to start creating a new integration. Select one of the integrations that currently support the convertors library. Click "**Next**" to proceed.
+        image: /images/user-guide/integrations/overview/converters-library-1.png,
+        title: Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click the "**plus**" icon button to start creating a new integration. Select one of the integrations that currently support the converters library. Click "**Next**" to proceed.
     ===
-        image: /images/user-guide/integrations/overview/convertors-library-2.png,
+        image: /images/user-guide/integrations/overview/converters-library-2.png,
         title: Switch to the "**Library**" option. From the dropdown menu, choose the **device vendor**. Then select the specific **sensor model** you are using. The corresponding decoder function will be automatically loaded into the editor.
     ===
-        image: /images/user-guide/integrations/overview/convertors-library-3.png,
+        image: /images/user-guide/integrations/overview/converters-library-3.png,
         title: If needed, configure advanced decoding options. Click "**Next**". Continue the process to finalize the integration setup.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=convertorsLibrary %}
+{% include images-gallery.liquid imageCollection=convertersLibrary %}
 
 The Converters library is open-source and actively maintained by the ThingsBoard team. It is hosted on GitHub at the [following link](https://github.com/thingsboard/data-converters){:target="_blank"}.
 
 {% if docsPrefix == "pe/" %}
-### Using a custom convertors repository
+<br>**Using a custom converters repository**
 
-You can configure ThingsBoard to use your own repository with personalized decoders for your specific devices instead of using the default converters library.
+You can [configure](/docs/user-guide/install/pe/how-to-change-config/){:target="_blank"} ThingsBoard to use your own repository with personalized decoders for your specific devices instead of using the default converters library.
 
-Steps to set it up:
-
-- Open the ThingsBoard configuration file:
-
-```text
-sudo nano /etc/thingsboard/conf/thingsboard.conf
-```
-{:.copy-code}
-
-- Set the environment variables to define your custom repository and branch:
+Set new environment variables in ThingsBoard configuration file to define your custom repository and branch:
 
 ```text
 export TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_URL=https://github.com/my-github-account/my-repo-name.git
@@ -359,17 +350,10 @@ export TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_BRANCH=my-branch
 
 where
 
-**&#42; TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_URL** – URL of your GitHub (or other Git-based) repository<br>
-**&#42; TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_BRANCH** – The branch name you want ThingsBoard to pull the converters from (e.g., main, develop, or any custom branch name)
+ㅤ**&#42; TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_URL** – URL of your GitHub (or other Git-based) repository<br>
+ㅤ**&#42; TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_BRANCH** – The branch name you want ThingsBoard to pull the converters from (e.g., main, develop, or any custom branch name)
 
 ![image](/images/user-guide/integrations/overview/terminal-custom-repo-converters-library.png)
-
-- Save and close the file, then restart ThingsBoard to apply the changes.
-
-```text
-sudo systemctl restart thingsboard
-```
-{:.copy-code}
 
 Once configured, ThingsBoard will pull device decoder functions directly from your custom Git repository.
 {% endif %}
