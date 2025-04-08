@@ -1,6 +1,6 @@
 - id: smart-energy
   title: Smart energy
-  link: /smart-energy/
+  link: /use-cases/smart-energy/
   icon: https://img.thingsboard.io/case-eng-icon.svg
 - id: scada
   title: SCADA
@@ -24,15 +24,15 @@
   icon: https://img.thingsboard.io/case-ret-icon.svg
 - id: smart-farming
   title: Smart farming
-  link: /smart-farming/
+  link: /use-cases/smart-farming/
   icon: https://img.thingsboard.io/case-fam-icon.svg
 - id: fleet-tracking
   title: Fleet tracking
-  link: /fleet-tracking/
+  link: /use-cases/fleet-tracking/
   icon: https://img.thingsboard.io/case-trk-icon.svg
 - id: smart-metering
   title: Smart metering
-  link: /smart-metering/
+  link: /use-cases/smart-metering/
   icon: https://img.thingsboard.io/case-met-icon.svg
 - id: health-care
   title: Health care

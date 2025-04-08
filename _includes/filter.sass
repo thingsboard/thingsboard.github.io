@@ -1,0 +1,51 @@
+.filters
+  margin: 50px 0 40px
+  .filter-content
+    .actions
+      display: flex
+      white-space: nowrap
+      flex-wrap: wrap
+      gap: 8px
+      overflow-x: auto
+
+      .check-box
+        cursor: pointer
+        border-radius: 6px
+        color: #212529
+        border: 1px solid #EBEBEB
+        padding: 7px 14px
+        position: relative
+        font-size: 16px
+
+        &:hover
+          background-color: #EEF5FD
+          color: #2A7DEC
+          border: 1px solid #2A7DEC
+
+        &:not(.checked, :hover)
+          color: #000000C2
+          border: 1px solid #EBEBEB
+
+      .checked
+        background-color: #EEF5FD
+        color: #2A7DEC
+        border: 1px solid #2A7DEC
+        padding-left: 40px
+
+        &:after
+          content: ""
+          background-image: url(https://img.thingsboard.io/checked-box-icon.svg)
+          background-size: contain
+          display: block
+          position: absolute
+          left: 14px
+          top: 8px
+          width: 18px
+          height: 18px
+          border: none
+          transition: all 0.3s ease-out
+          filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+
+@media screen and (max-width: 599px)
+  .filters
+    margin: 40px 0 24px
