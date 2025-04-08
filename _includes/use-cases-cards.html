@@ -61,6 +61,10 @@
 
         item.addEventListener('mouseenter', () => {
             if (video.length) {
+                if (video[0].readyState === 0) {
+                    video[0].load();
+                }
+
                 video[0].play();
             }
         })
