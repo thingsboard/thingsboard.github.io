@@ -8,10 +8,10 @@ description: Calculated fields
 create-new-calculated-field:
     0:
         image: /images/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
-        title: 'To create a new calculated field, select the entity or profile for which you want to apply this function. In the details window, navigate to the "Calculated fields" tab. Click the "plus" icon, and from the dropdown menu, select "Create new calculated field";'
+        title: 'To create a calculated field, select to the Entity or Profile where the calculated field should be applied. In the entity details window, navigate to the "Calculated fields" tab. Click the "plus" icon button and select "Create new calculated field" from the dropdown menu.'
     1:
         image: /images/user-guide/calculated-fields/create-new-calculated-field-2-pe.png
-        title: 'A calculated field configuration window will open with four sections: "General", "Arguments", "Expression", and "Output".'
+        title: 'The calculated field configuration window will open — let&#39;s proceed with the setup.'
 
 calculated-field-general:
     0:
@@ -50,24 +50,7 @@ time-series-rolling-argument-type:
 expression-simple-calculated-fields-1:
     0:
         image: /images/user-guide/calculated-fields/expression-simple-calculated-fields-1-pe.png
-        title: 'Specify the mathematical expression using the variables from the "Arguments" section. In the "Output" section, specify the type ("Time series" or "Attribute") and assign a name to the new variable that will store the calculation result. Then, click "Add";'
-    1:
-        image: /images/user-guide/calculated-fields/expression-simple-calculated-fields-2-pe.png
-        title: 'The calculated field has been added;'
-    2:
-        image: /images/user-guide/calculated-fields/expression-simple-calculated-fields-3-pe.png
-        title: 'Navigate to the "Latest telemetry" tab. You will see the two keys - "temperature" (Fahrenheit) and "temperatureC" (Celsius) and their values.'
-
-expression-script-calculated-fields-1:
-    0:
-        image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-pe.png
-        title: 'Define a function that performs calculations using arguments from the Arguments section. Then, select the type and assign a name to the new variable that will store the calculation result;'
-    1:
-        image: /images/user-guide/calculated-fields/expression-script-calculated-fields-2-pe.png
-        title: 'The calculated field has been added;'
-    2:
-        image: /images/user-guide/calculated-fields/expression-script-calculated-fields-3-pe.png
-        title: 'Navigate to the "Latest telemetry" tab. You will see the two keys - "temperature" (Fahrenheit) and "temperatureC" (Celsius) and their values.'
+        title: 'In the "Expression" section, enter the mathematical expression for the calculation using the variables defined in the "Arguments" section.'
 
 output-simple-1:
     0:
@@ -77,34 +60,77 @@ output-simple-1:
         image: /images/user-guide/calculated-fields/output-simple-2-pe.png
         title: 'Select the output type as "Attribute" and choose its scope: "Server attributes", "Client attributes", or "Shared attributes". Set a name to the variable that will store the calculation result. Optionally, set the number of decimal places.'
 
+expression-script-calculated-fields-1:
+    0:
+        image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-pe.png
+        title: 'Define a function that performs the calculation using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.'
+
 output-script-1:
     0:
         image: /images/user-guide/calculated-fields/output-script-1-pe.png
-        title: 'Select the output type as "Time series". THe variable name is defined within the calculate function.'
+        title: 'Time series: function must return a JSON object or array with or without a timestamp containing the computed value.'
     1:
         image: /images/user-guide/calculated-fields/output-script-2-pe.png
-        title: 'Select the output type as "Attribute" and choose its scope: "Server attributes", "Client attributes", or "Shared attributes". The variable name is defined within the calculate function.'
+        title: 'Attribute: function must return a JSON object without timestamp information containing the computed value.'
+
+calculated-field-result:
+    0:
+        image: /images/user-guide/calculated-fields/calculated-field-result-1-pe.png
+        title: 'After clicking the "Add" button, the calculated field will be added to your entity or profile.'
+
+calculated-field-debug-events-2:
+    0:
+        image: /images/user-guide/calculated-fields/calculated-field-debug-events-2-pe.png
+        title: 'Check the debug events by clicking the "Events" icon button".'
+    1:
+        image: /images/user-guide/calculated-fields/calculated-field-debug-events-3-pe.png
+        title: 'The debugging window displays calculated field arguments and the computed result.'
+
+export-calculated-field:
+    0:
+        image: /images/user-guide/calculated-fields/export-calculated-field-1-pe.png
+        title: 'To export a calculated field, navigate to the "Calculated fields" tab of the target entity or profile and click the export button located in the row of the specific calculated field.'
 
 import-calculated-field-1:
-  0:
-    image: /images/user-guide/calculated-fields/import-calculated-field-1-pe.png
-    title: 'Navigate to the "Calculated fields" tab of the target entity or profile. Click the "plus" icon, and select "Import calculated field" from the dropdown menu.'
-  1:
-    image: /images/user-guide/calculated-fields/import-calculated-field-2-pe.png
-    title: 'In the opened window, upload the JSON file with the calculated field configuration and click "Import".'
-  2:
-    image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png
-    title: 'When importing, the edit window will open to allow modifications.'
-  3:
-    image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png
-    title: 'Ensure the imported field is correctly applied and update any necessary parameters.'
-  4:
-    image: /images/user-guide/calculated-fields/import-calculated-field-5-pe.png
-    title: 'Click "Add" to complete the import.'
-  5:
-    image: /images/user-guide/calculated-fields/import-calculated-field-6-pe.png
-    title: 'You have imported the calculated field configuration.'
-
+    0:
+        image: /images/user-guide/calculated-fields/import-calculated-field-1-pe.png
+        title: 'Navigate to the "Calculated fields" tab of the target entity or profile. Click the "plus" icon button, and select "Import calculated field" from the dropdown menu.'
+    1:
+        image: /images/user-guide/calculated-fields/import-calculated-field-2-pe.png
+        title: 'In the opened window, upload the JSON file with the calculated field configuration and click "Import".'
+    2:
+        image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png
+        title: 'When importing, the edit window will open to allow modifications.'
+    3:
+        image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png
+        title: 'Ensure the imported field is correctly applied and update any necessary parameters.'
+    4:
+        image: /images/user-guide/calculated-fields/import-calculated-field-5-pe.png
+        title: 'Click "Add" to complete the import.'
+    5:
+        image: /images/user-guide/calculated-fields/import-calculated-field-6-pe.png
+        title: 'You have imported the calculated field configuration.'
+  
+example-dew-point-calculated-fields:
+    0:
+        image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-1-pe.png
+        title: 'Enter a title for the calculated field and select "Simple" as the calculation type. In the "Arguments" section, click "Add argument". Set the argument name to "temperature", choose "Current entity" as the entity type, leave the argument type as "Latest telemetry", and specify the time series key as "temperature". Click "Add".'
+    1:
+        image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-2-pe.png
+        title: 'Similarly, create an argument named "humidity". All other parameters should remain the same, except for the telemetry key name — set it to "humidity".'
+    2:
+        image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-3-pe.png
+        title: 'Define a mathematical expression for the calculation using the variables defined in the "Arguments" section. In the Output section, set the output type to "Time series" and assign "dew point" as the name of the new variable that will store the calculation result. Finally, click "Add".'
+    3:
+        image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-4-pe.png
+        title: 'The calculated field has now been added.'
+    4:
+        image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-5-pe.png
+        title: 'Now open the calculated field debugging window. Here, you can view the calculated field arguments and the computed result.'
+    5:
+        image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-6-pe.png
+        title: 'Go to the "Latest telemetry" tab. You&#39;ll see three keys: "temperature" and "humidity" — the telemetry values received from the device, and "dewPoint" — the result of the calculated field, showing the computed dew point value.'
+    
 example-script-calculated-fields-1:
     0:
         image: /images/user-guide/calculated-fields/example-script-calculated-fields-1-pe.png
