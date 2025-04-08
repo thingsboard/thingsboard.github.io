@@ -18,6 +18,7 @@ This feature is particularly useful for optimizing data processing, improving an
 
 ### Use case examples
 
+- **Combine telemetry from multiple sources**: calculate dew point from Device A&#39;s temperature and Device B&#39;s humidity, etc.
 - **Standardize measurement units**: convert temperature readings from Celsius to Fahrenheit or normalize pressure and voltage levels across different sensor models.
 - **Energy consumption tracking**: calculate power usage per hour to help optimize energy consumption and cost efficiency.
 - **Data smoothing**: compute rolling averages of environmental telemetry like humidity or temperature to reduce fluctuations in sensor readings.
@@ -52,7 +53,7 @@ The calculated field configuration window will open — let&#39;s proceed with t
   - **Script**: enables complex calculations using the [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} scripting language and can return multiple output values.
 - Use the **Debug mode** to track calculated field events, such as state changes and errors, for easier debugging and troubleshooting.
 
-{% assign feature = "calculated fields" %}
+{% assign feature = "components" %}
 {% include templates/debug-mode.md %}
 
 {% include images-gallery.html imageCollection="calculated-field-general" %}
@@ -90,7 +91,7 @@ Time series rolling<small>only for Script type</small>%,%timeSeriesRolling%,%tem
 
 ### Simple calculated field
 
-Simple calculated fields use basic arithmetic operations (+, -, *, /) and standard functions such as `sqrt` (square root), `pow` (power), and `abs` (absolute value).
+Simple calculated fields use basic arithmetic operations (+, -, *, /) and standard functions such as `sqrt` (square root), `pow` (power), `abs` (absolute value), etc.
 
 #### Expression
 
@@ -100,7 +101,7 @@ In the "Expression" section, enter the mathematical expression for the calculati
 
 #### Output
 
-The result of the calculation can be saved either as a [time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} or as an [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.
+The result of the calculation can be saved either as a [time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} or as an [attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.
 
 In the "Output" section: 
 - Specify the variable type: **Time series** or **Attribute**, along with the **attribute scope**.
@@ -117,20 +118,24 @@ It enables advanced operations such as conditional statements, loops, and access
 
 #### Script
 
-Define a function that performs the calculation using the variables defined in the ["Arguments"](#arguments) section.
+Define a function that will perform calculations using the variables defined in the ["Arguments"](#arguments) section.
 
 > The variable name that will store the calculation result is defined within the function itself.
 
 <br>
 
-Example: the function below uses the `temperatureF` argument to convert the temperature from Fahrenheit (°F) to Celsius (°C).
-The calculation result will be stored in the variable `temperatureC`, rounding the value to two decimal places.
+Example: the function below uses the `temperature` and `humidity` arguments to calculate the dew point value.
+The calculation result will be stored in the variable `dewPoint`, rounding the value to one decimal places.
 
 ```js
-var temperatureC = (temperatureF - 32) / 1.8;
-return {
-  "temperatureC": toFixed(temperatureC, 2)
-}
+// Constants for Magnus formula
+var a = 17.625;
+var b = 243.04;
+
+var alpha = ((a * temperature) / (b + temperature)) + Math.log(humidity / 100.0);
+var dewPoint = toFixed((b * alpha) / (a - alpha), 1);
+
+return {"dewPoint": dewPoint};
 ```
 {: .copy-code}
 
@@ -164,8 +169,8 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 The calculated values are returned as a JSON object containing **keys** that represent the computed results, which are then used to store those values in the system.
 
 - Specify the **Output type** for storing the calculation result:
-  - **Time series**: function must return a JSON object or array with or without a timestamp containing the computed value.
-  - **Attribute**: function must return a JSON object **without timestamp** information containing the computed value. 
+  - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: function must return a JSON object or array with or without a timestamp containing the computed value.
+  - [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}: function must return a JSON object **without timestamp** information containing the computed value. 
     - Choose the **attribute scope**: **Server attributes**, **Client attributes**, or **Shared attributes**.
 - To finish adding the calculated field, click "Add".
 
