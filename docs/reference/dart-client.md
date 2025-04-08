@@ -4,7 +4,7 @@ title: Dart API Client
 description: ThingsBoard API client library for Dart developers
 
 ---
-{% assign flutterAppVer = site.release.ce_flutter_app_ver %}
+{% assign dartClientVer = site.release.ce_dart_client_ver %}
  * TOC
  {:toc}
 
@@ -40,7 +40,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```yaml
 dependencies:
-  thingsboard_client: ^{{flutterAppVer}}
+  thingsboard_client: ^{{dartClientVer}}
 ```
 {: .copy-code}
 
