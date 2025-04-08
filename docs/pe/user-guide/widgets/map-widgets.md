@@ -233,7 +233,7 @@ manually-add-polygon:
     0:
         image: /images/user-guide/widgets/maps/manually-add-polygon-1-pe.png
         title: 'Switch to the widget edit mode and click "Add polygon" in the "Overlays" section. Specify the data source — it can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to assets of the type "Parking spots". ThingsBoard automatically sets the coordinate key to "perimeter". If you&#39;re using a custom key name, update it here accordingly. Now, open polygon configuration'
-    2:
+    1:
         image: /images/user-guide/widgets/maps/manually-add-polygon-2-pe.png
         title: 'Scroll down to the "Edit polygon" section and check the "Add" tool. Choose where to store the coordinates — either in the "Server" or "Shared" attribute scope. Optionally, enable snapping to other vertices for precision drawing. Don&#39;t forget to save your changes.'
 
@@ -287,6 +287,71 @@ polygon-color:
     1:
         image: /images/user-guide/widgets/maps/polygon-color-2-pe.png
         title: ''
+
+add-circle:
+    0:
+        image: /images/user-guide/widgets/maps/add-circle-1-pe.png
+        title: 'Switch to edit mode on the widget and click "Add circle" in the "Overlays" section.'
+    1:
+        image: /images/user-guide/widgets/maps/add-circle-2-pe.png
+        title: 'Specify the data source — this can be a device, an entity alias, or a function. ThingsBoard automatically uses "perimeter" as the default coordinate key. If your setup uses a custom key name, update it here accordingly. Apply changes.'
+    2:
+        image: /images/user-guide/widgets/maps/add-circle-3-pe.png
+        title: 'The circle has been successfully added to the map.'
+    
+manually-add-circle:
+    0:
+        image: /images/user-guide/widgets/maps/manually-add-circle-1-pe.png
+        title: 'Switch to the widget edit mode and click "Add circle" in the "Overlays" section. Specify the data source — it can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to assets of the type "Parking spots". ThingsBoard automatically sets the coordinate key to "perimeter". If you&#39;re using a custom key name, update it here accordingly. Now, open polygon configuration'
+    1:
+        image: /images/user-guide/widgets/maps/manually-add-circle-2-pe.png
+        title: 'Scroll down to the "Edit circle" section and check the "Add" tool. Choose where to store the coordinates — either in the "Server" or "Shared" attribute scope. Optionally, enable snapping to other vertices for precision drawing. Don&#39;t forget to save your changes.'
+    
+place-circle:
+    0:
+        image: /images/user-guide/widgets/maps/place-circle-1-pe.png
+        title: 'The map widget now offers two tools for adding a circle: "Drew rectangle" and "Drew circle". Choose the option that suits your needs.'
+    1:
+        image: /images/user-guide/widgets/maps/place-circle-2-pe.png
+        title: 'If you&#39;re using an alias with multiple entities as the data source, select the desired entity from the dropdown list.'
+    2:
+        image: /images/user-guide/widgets/maps/place-circle-3-pe.png
+        title: 'Find the desired location on the map and click to place the first point;'
+    3:
+        image: /images/user-guide/widgets/maps/place-circle-4-pe.png
+        title: 'Adjust the polygon to the desired size, then click again to finish. If you&#39;re using "Drew polygon", make sure to close the shape by clicking the first point once you&#39;ve placed all others.'
+    
+circle-configuration:
+    0:
+        image: /images/user-guide/widgets/maps/circle-configuration-1-pe.png
+        title: 'To access the settings of a specific polygon, go to the "Polygons" tab in the “Overlays” section, then click the "gear" icon next to the polygon you want to configure.'
+    
+circle-configuration-datasource:
+    0:
+        image: /images/user-guide/widgets/maps/circle-configuration-datasource-1-pe.png
+        title: 'Specify the polygon’s data source — it can be a device, an entity alias, or a function. If needed, apply a filter to narrow down the selection.'
+    
+circle-configuration-keys:
+    0:
+        image: /images/user-guide/widgets/maps/circle-configuration-keys-1-pe.png
+        title: 'Define the key that contains the polygon coordinates. By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here. Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.'
+    
+circle-color:
+    0:
+        image: /images/user-guide/widgets/maps/circle-color-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/maps/circle-color-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/widgets/maps/circle-color-3-pe.png
+        title: ''
+
+
+
+
+
+
 
 ---
 

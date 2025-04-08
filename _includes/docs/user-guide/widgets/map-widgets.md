@@ -424,21 +424,66 @@ For example, the label can show the current status of the polygon, providing use
 If desired, you can also hide the label entirely.
 
 ```
-<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #03bafc; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
+<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #0C5500; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
 ```
+{:.copy-code}
 
+{% include images-gallery.html imageCollection="polygon-label" showListImageTitles="true" %}
 
-#### Circle&#39;s configuration
+#### Add circle
 
 A circle can be used to define areas of influence, such as a Wi-Fi zone or the range of a sensor, and more.
 
 
+Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. You may mark your assets and any other entities with a circle option.
+We use circle which is based on coordinates that are specified within the device we use, but you can use any other entity.
+
+To add a circle to the Trip Animation map widget, you need to:
+- Have a device that transmits the coordinates of the circle as telemetry data. Circle coordinates are being received in a format:
+
+```
+{"latitude":Coordinatelatitude, "longitude":Coordinatelongitude, "radius":radius}
+``` 
+
+Circle coordinates in our example:
+
+```
+{"latitude":37.770460000, "longitude":-122.510870000, "radius":700}
+``` 
+
+- Add a circle data key to the "Timeseries data keys" field of the "Trip Animation" widget;
+- Turn on "Show circle" option and specify circle key to the "Circle key name" field of the "Circle settings" section.
+
+{% include images-gallery.html imageCollection="advanced-settings-circle-settings-1" %}
+
+<br>
+The following settings are available for the circle:
+
+{% include images-gallery.html imageCollection="add-circle" %}
 
 
+{% include images-gallery.html imageCollection="manually-add-circle" %}
+
+{% include images-gallery.html imageCollection="place-circle" %}
+
+#### Circle configuration
 
 
+{% include images-gallery.html imageCollection="circle-configuration" showListImageTitles="true" %}
+
+{% include images-gallery.html imageCollection="circle-configuration-datasource" showListImageTitles="true" %}
+
+{% include images-gallery.html imageCollection="circle-configuration-keys" showListImageTitles="true" %}
 
 
+Label
+
+```text
+<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #3B7FE1; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
+```
+{:.copy-code}
+
+{% include images-gallery.html imageCollection="circle-label" showListImageTitles="true" %}
 
 
 
