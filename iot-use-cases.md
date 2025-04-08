@@ -23,10 +23,3 @@ notitle: "true"
 
 {% include use-cases-cards.html %}
 
-<script>
-
-</script>
-
-<script>
-</script>
-
