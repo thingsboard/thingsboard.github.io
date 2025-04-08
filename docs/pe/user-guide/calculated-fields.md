@@ -63,7 +63,7 @@ output-simple-1:
 expression-script-calculated-fields-1:
     0:
         image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-pe.png
-        title: 'Define a function that performs the calculation using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.'
+        title: 'Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.'
 
 output-script-1:
     0:
