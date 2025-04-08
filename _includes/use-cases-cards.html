@@ -9,11 +9,11 @@
             <a href="{{ card[1].href }}" class="dashboard-frame-wrapper img-button">
                 <div class="dashboard-frame">
                     <div class="frame-image">
-                        <img src="{{ card[1].media.image }}" alt="{{ card[1].media.alt }}">
+                        <img src="{{ card[1].media.image }}" alt="{{ card[1].media.alt }}" loading="lazy">
                     </div>
                     {% if card[1].media.video %}
                     <div class="frame-video">
-                        <video loop muted preload="auto" playsinline>
+                        <video loop muted preload="none" playsinline>
                             {% for videoSrc in card[1].media.video %}
                             {% assign video_extension = videoSrc | split: '.' | last %}
                             <source src="{{ videoSrc }}" type="video/{{ video_extension }}">

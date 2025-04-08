@@ -12,7 +12,7 @@
   name: "SCADA Swimming Pool System"
   description: "SCADA systems are generally divided into two types: Traditional and High-Performance. Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements."
   media:
-    image: "https://img.thingsboard.io/usecases/smart-energy/video/scada.png"
+    image: "https://img.thingsboard.io/usecases/scada/video/scada.png"
     alt: "See more about SCADA use case"
     video: ["https://video.thingsboard.io/usecases/scada.mp4", "https://video.thingsboard.io/usecases/scada.webm"]
   href: "/use-cases/scada/"
@@ -75,7 +75,7 @@
   name: "Smart Metering"
   description: "Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users."
   media:
-    image: "https://img.thingsboard.io/usecases/fleet-tracking/video/smart-metering.png"
+    image: "	https://img.thingsboard.io/usecases/smart-metering/video/smart-metering.png"
     alt: "Fleet tracking dashboard"
     video: ["https://video.thingsboard.io/usecases/smart-metering.mp4", "https://video.thingsboard.io/usecases/smart-metering.webm"]
   href: "/smart-metering/"
