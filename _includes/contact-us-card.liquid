@@ -1,0 +1,14 @@
+{% assign subjectParams = include.subjectParams %}
+
+{% if subjectParams %}
+    {% assign param = "?subject=" | append: subjectParams %}
+{% else %}
+    {% assign param = "" %}
+{% endif %}
+
+
+<div class="contact-us-card">
+    <p class="contact-us-card-title">Have any comments or questions?</p>
+    <a class="contact-us-card-link" href="/docs/contact-us/{{ param }}">Contact us</a>
+    <img src="/images/email-icon.svg" class="icon" alt="Email icon">
+</div>

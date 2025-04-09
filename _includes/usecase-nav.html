@@ -17,12 +17,14 @@
             const cropNav = document.querySelector('.crop-nav');
             const prev = document.querySelector('.prev');
             const next = document.querySelector('.next');
+            const active = document.querySelector('.crop-nav ul li a.active');
 
             const savedScrollPos = sessionStorage.getItem('useCaseMenuScrollPos');
             if (savedScrollPos !== null) {
                 cropNav.scrollLeft = savedScrollPos;
-            } else {
-                document.querySelector('.crop-nav ul li a.active').parentElement.scrollIntoView();
+            }
+            if (!isActiveInView()) {
+                active.parentElement.scrollIntoView();
             }
 
             checkScroll();
@@ -45,6 +47,12 @@
                     next.classList.remove('disabled');
                     prev.classList.remove('disabled');
                 }
+            }
+
+            function isActiveInView() {
+                const elRect = active.getBoundingClientRect();
+                const containerRect = cropNav.getBoundingClientRect();
+                return elRect.left >= containerRect.left && elRect.right <= containerRect.right;
             }
 
             if (window.screen.width < 600) {
