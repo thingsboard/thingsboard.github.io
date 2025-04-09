@@ -29,7 +29,7 @@ Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/a
 Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/configure-deployment.md%br%
 Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/configure-deployment.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="helmDeploymentType" toggle-spec=contenttogglespechelmdeployment %}
+{% include content-toggle.liquid content-toggle-id="helmDeploymentType" toggle-spec=contenttogglespechelmdeployment toggle-group="helm-env" %}
 
 ### Add the TBMQ Cluster Helm repository
 
@@ -45,7 +45,7 @@ Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/a
 Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/change-default-values.md%br%
 Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/change-default-values.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="helmDefaultValues" toggle-spec=contenttogglespechelmdefaultvalues %}
+{% include content-toggle.liquid content-toggle-id="helmDefaultValues" toggle-spec=contenttogglespechelmdefaultvalues toggle-group="helm-env" %}
 
 ### Create namespace
 
@@ -63,7 +63,7 @@ Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/a
 Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/validate-http.md%br%
 Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/validate-http.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="helmValidateHttp" toggle-spec=contenttogglespechelmvalidatehttp %}
+{% include content-toggle.liquid content-toggle-id="helmValidateHttp" toggle-spec=contenttogglespechelmvalidatehttp toggle-group="helm-env" %}
 
 ### Validate MQTT Access
 
@@ -73,7 +73,7 @@ Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/a
 Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/validate-mqtt.md%br%
 Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/validate-mqtt.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="helmValidateMqtt" toggle-spec=contenttogglespechelmvalidatemqtt %}
+{% include content-toggle.liquid content-toggle-id="helmValidateMqtt" toggle-spec=contenttogglespechelmvalidatemqtt toggle-group="helm-env" %}
 
 ### Troubleshooting
 
