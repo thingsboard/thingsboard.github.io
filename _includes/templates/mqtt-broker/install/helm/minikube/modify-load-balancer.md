@@ -7,11 +7,11 @@ loadbalancer:
 
 which is suitable for Minikube and other generic Kubernetes environments.
 
-#### HTTPS access
+### HTTPS access
 
 Currently, HTTPS termination at the load balancer level is not implemented for the NGINX Ingress Controller. This functionality may be added in a future release.
 
-#### MQTTS access
+### MQTTS access
 
 The NGINX Ingress Controller does not support TLS termination for TCP-based protocols like MQTT.
 If you want to secure MQTT communication,

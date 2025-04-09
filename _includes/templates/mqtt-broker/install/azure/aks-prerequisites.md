@@ -1,4 +1,4 @@
-#### Install and configure tools
+### Install and configure tools
 
 To deploy TBMQ on the AKS cluster you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/),
 [helm](https://helm.sh/docs/intro/install/), and [az](https://learn.microsoft.com/en-us/cli/azure/) tools.

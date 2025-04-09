@@ -14,8 +14,7 @@ aws configure
 ```
 {: .copy-code}
 
-
-### Configure EKS cluster
+### Configuration overview
 
 To deploy the EKS cluster, we recommend using a pre-defined EKS cluster configuration file.
 Please download it using next command:
@@ -23,8 +22,6 @@ Please download it using next command:
 ```bash
 curl -o cluster.yml https://raw.githubusercontent.com/ShvaykaD/tbmq/helm-aws/k8s/helm/aws/cluster.yml
 ```
-
-#### Configuration overview
 
 Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
@@ -36,7 +33,7 @@ Here are the fields you can change depending on your needs:
 Refer to [Amazon EC2 Instance types](https://aws.amazon.com/ec2/instance-types/)
 to choose the right instance types for your production workloads.
 
-#### PostgreSQL consideration (Optional Node Group)
+### PostgreSQL consideration (Optional Node Group)
 
 TBMQ Helm chart supports external PostgreSQL, so you might not need this node group:
 
@@ -56,7 +53,7 @@ You can safely remove this section if:
  - You're using Amazon RDS or an existing PostgreSQL service.
  - You want to keep your database outside the EKS cluster.
 
-####  IAM setup for OIDC and AWS Load Balancer Controller:
+###  IAM setup for OIDC and AWS Load Balancer Controller:
 
 By including the following block in your `cluster.yml`, you automatically enable IAM roles for service accounts and provision the AWS Load Balancer Controller service account:
 
@@ -84,7 +81,7 @@ Follow these official guides from AWS:
 - [Create an IAM OIDC provider for your cluster](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html)
 - [Route internet traffic with AWS Load Balancer Controller](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)
 
-#### Add-ons explained
+### Add-ons explained
 
 The `addons` section in `cluster.yml` automatically installs and configures essential components that extend the base functionality of your EKS cluster.
 
