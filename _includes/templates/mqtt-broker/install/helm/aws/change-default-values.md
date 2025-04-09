@@ -70,5 +70,9 @@ The main advantage of this option is that you may use it in combination with “
 
 Please refer to the TBMQ Helm chart documentation for [details](https://artifacthub.io/packages/helm/tbmq-helm-chart/tbmq-cluster#configuring-mutual-tls-mtls-for-mqtt) on configuring Two-Way TLS.
 
-> **Warning:** TLS Termination configuration will be ignored if `loadbalancer.mqtt.mutualTls.enabled` is set to `true`.
+{% capture tls-termination %}
 
+TLS Termination configuration will be ignored if `loadbalancer.mqtt.mutualTls.enabled` is set to `true`.
+
+{% endcapture %}
+{% include templates/info-banner.md content=tls-termination %}

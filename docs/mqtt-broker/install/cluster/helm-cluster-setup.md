@@ -17,7 +17,7 @@ To deploy TBMQ Cluster using Helm, regardless of which deployment environment yo
 - [helm](https://helm.sh/docs/intro/install/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
 
-### Configure your deployment environment
+### Configure your Kubernetes environment
 
 While the core Helm-based installation of TBMQ is the same across all environments, 
 the Kubernetes cluster setup differs depending on the Kubernetes platform. 
@@ -35,9 +35,11 @@ Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/g
 
 {% include templates/mqtt-broker/install/helm/common/add-helm-repo.md %}
 
-### Retrieve and modify default chart values
+### Get default chart values
 
-{% include templates/mqtt-broker/install/helm/common/retrieve-and-modify-default-chart-values.md %}
+{% include templates/mqtt-broker/install/helm/common/get-default-chart-values.md %}
+
+### Modify default chart values
 
 {% capture contenttogglespechelmdefaultvalues %}
 Self-Managed %,%default%,%templates/mqtt-broker/install/helm/minikube/change-default-values.md%br%
@@ -45,7 +47,7 @@ Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/a
 Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/change-default-values.md%br%
 Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/change-default-values.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="helmDefaultValues" toggle-spec=contenttogglespechelmdefaultvalues toggle-group="helm-env" %}
+{% include content-toggle.liquid content-toggle-id="helmModifyValues" toggle-spec=contenttogglespechelmdefaultvalues toggle-group="helm-env" %}
 
 ### Create namespace
 
@@ -84,6 +86,35 @@ Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/g
 Helm support was introduced with the TBMQ 2.1.0 release.
 Upgrade options were not included in the initial version of the Helm chart and will be provided alongside a future TBMQ release.
 This section will be updated once a new version of TBMQ and its Helm chart become available.
+
+### Uninstalling TBMQ Helm chart
+
+To uninstall the TBMQ Helm chart, run the following command:
+
+```bash
+helm delete my-tbmq-cluster
+```
+{: .copy-code}
+
+This command removes all TBMQ components associated with the release from the namespace set in your current Kubernetes context.
+
+The `helm delete` command removes only the logical resources of the TBMQ cluster. 
+To fully clean up all persistent data, you may also need to manually delete the associated Persistent Volume Claims (PVCs) after uninstallation:
+
+```bash
+kubectl delete pvc -l app.kubernetes.io/instance=my-tbmq-cluster
+```
+{: .copy-code}
+
+### Delete Kubernetes Cluster
+
+{% capture contenttogglespechelmvalidatemqtt %}
+Self-Managed %,%default%,%templates/mqtt-broker/install/helm/minikube/delete-cluster.md%br%
+Amazon EKS <small>(AWS)</small>%,%aws-eks%,%templates/mqtt-broker/install/helm/aws/delete-cluster.md%br%
+Azure AKS <small>(Azure)</small>%,%azure-aks%,%templates/mqtt-broker/install/helm/azure/delete-cluster.md%br%
+Google GKE <small>(GCP)</small>%,%gcp-gke%,%templates/mqtt-broker/install/helm/gcp/delete-cluster.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="helmValidateMqtt" toggle-spec=contenttogglespechelmvalidatemqtt toggle-group="helm-env" %}
 
 ### Next steps
 
