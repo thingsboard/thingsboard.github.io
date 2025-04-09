@@ -7,7 +7,7 @@ TBMQ MQTT Integration enables forwarding messages to **external MQTT brokers**, 
 - Data from TBMQ needs to be **forwarded** to an external MQTT broker or IoT platform.
 - TBMQ is used as an **intermediary to route data** between internal sources and external MQTT-based systems.
 
-### Data Flow Overview
+## Data Flow Overview
 
 MQTT Integration processes messages and forwards them to an external MQTT broker or system in the following steps:
 
@@ -18,7 +18,7 @@ MQTT Integration processes messages and forwards them to an external MQTT broker
 
 ![image](/images/mqtt-broker/integrations/tbmq-mqtt-integration.png)
 
-### Prerequisites
+## Prerequisites
 
 Before setting up the integration, ensure the following:
 
@@ -26,7 +26,7 @@ Before setting up the integration, ensure the following:
 - A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
 - A client capable of receiving MQTT messages (e.g., **TBMQ WebSocket Client**).
 
-### Create TBMQ MQTT Integration
+## Create TBMQ MQTT Integration
 
 1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
 2. Select **MQTT** as the integration type and click **Next**.
@@ -48,11 +48,11 @@ Before setting up the integration, ensure the following:
 > You can test the connectivity to the configured MQTT broker by using the 'Check connection' button. 
 > This will create an MQTT client that attempts to connect to the broker and then immediately disconnects.
 
-#### Topic Filters
+### Topic Filters
 
 {% include templates/mqtt-broker/user-guide/integrations/topic-filters.md %}
 
-#### Configuration
+### Configuration
 
 |**Field**|**Description**|
 |:-|:-|-
@@ -77,11 +77,11 @@ Before setting up the integration, ensure the following:
 | **Metadata** | Custom metadata that can be used for additional processing. |
 |---
 
-#### Events
+### Events
 
 {% include templates/mqtt-broker/user-guide/integrations/events.md %}
 
-### Sending an Uplink Message
+## Sending an Uplink Message
 
 To send a message, follow these steps:
 
