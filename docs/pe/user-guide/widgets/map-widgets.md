@@ -63,10 +63,10 @@ add-marker:
         title: 'Switch to the widget edit mode and click "Add marker" in the "Overlays" section.'
     1:
         image: /images/user-guide/widgets/maps/add-marker-2-pe.png
-        title: 'Specify the data source and define the coordinate keys. ThingsBoard automatically sets the coordinate keys as "latitude" and "longitude". If your entity uses custom key names, update them here. Apply changes.'
+        title: 'Select the data source — this can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to the asset "Gas Station 1" as the data source. Define the coordinate keys. ThingsBoard automatically uses latitude and longitude as default coordinate keys. If your entity uses different key names, update them here. Apply the changes.'
     2:
         image: /images/user-guide/widgets/maps/add-marker-3-pe.png
-        title: 'The marker will appear on the map according to the specified coordinates.'
+        title: 'he marker will appear on the map based on the specified coordinates.'
 
 manually-add-marker:
     0:
@@ -237,7 +237,7 @@ manually-add-polygon:
         image: /images/user-guide/widgets/maps/manually-add-polygon-2-pe.png
         title: 'Scroll down to the "Edit polygon" section and check the "Add" tool. Choose where to store the coordinates — either in the "Server" or "Shared" attribute scope. Optionally, enable snapping to other vertices for precision drawing. Don&#39;t forget to save your changes.'
 
-place-polygon-1:
+place-polygon:
     0:
         image: /images/user-guide/widgets/maps/place-polygon-1-pe.png
         title: 'The map widget now offers two tools for adding a polygon: "Drew rectangle" and "Drew polygon". Choose the option that suits your needs.'
@@ -252,17 +252,6 @@ place-polygon-1:
         title: 'Adjust the polygon to the desired size, then click again to finish. If you&#39;re using "Drew polygon", make sure to close the shape by clicking the first point once you&#39;ve placed all others.'
     4:
         image: /images/user-guide/widgets/maps/place-polygon-5-pe.png
-        title: ''
-
-place-polygon-2:
-    0:
-        image: /images/user-guide/widgets/maps/place-polygon-6-pe.png
-        title: ''
-    1:
-        image: /images/user-guide/widgets/maps/place-polygon-7-pe.png
-        title: ''
-    2:
-        image: /images/user-guide/widgets/maps/place-polygon-8-pe.png
         title: ''
 
 polygon-configuration:
