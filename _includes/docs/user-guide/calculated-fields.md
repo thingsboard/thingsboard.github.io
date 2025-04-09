@@ -423,7 +423,7 @@ Suppose you have a smart device that monitors the current temperature and humidi
 This mathematical expression calculates the dew point using two arguments: temperature and humidity.
 
 ```text
-(243.04 * (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature)) / (17.625 - (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature))
+(243.04 * (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature)) / (17.625 - (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature))))
 ```
 {: .copy-code}
 
