@@ -125,7 +125,7 @@ Let's first add this widget to the dashboard:
 
 {% include images-gallery.html imageCollection="add-scada-symbol-widget-1" showListImageTitles="true" %}
 
-#### Target entity
+### Target entity
 
 This points the widget to a single entity: device, asset, etc. 
 It defines the entity that will be used to control the behavior of the symbol. 
@@ -137,7 +137,7 @@ In our example, we will select the smart device that controls our valve. Typical
 
 {% include images-gallery.html imageCollection="scada-selected-target-device-1" %}
 
-#### SCADA symbol
+### SCADA symbol
 
 This points to a specific SCADA [symbol](#scada-symbol) from the library. 
 In our case, we have selected the 'Horizontal wheel valve' from the library. 
@@ -145,7 +145,7 @@ Ensure you have selected 'Include system symbols' if this symbol is not visible 
 
 {% include images-gallery.html imageCollection="scada-symbol-device-1" %}
 
-#### Behavior
+### Behavior
 
 The list of behavior parameters is specific to the chosen SCADA symbol and is entirely controlled by the symbol's author. 
 
@@ -215,7 +215,7 @@ In the case of the horizontal wheel valve, there are two actions: "Open" and "Cl
 
 {% include images-gallery.html imageCollection="example-of-parameters-scada-symbol-1" %}
 
-#### Appearance
+### Appearance
 
 There are common appearance parameters, such as symbol title and icon, available for any SCADA symbol. 
 Other parameters are specific to the chosen SCADA symbol and are controlled by the symbol's author. 
@@ -226,7 +226,7 @@ For more details, see the symbol development [guide](/docs/{{docsPrefix}}user-gu
 
 {% include images-gallery.html imageCollection="scada-appearance-1" %}
 
-#### Card Appearance
+### Card Appearance
 
 The card appearance settings are generic for any SCADA symbol and include background (transparent by default), list of enabled card buttons, card border radius, and padding parameters.
 

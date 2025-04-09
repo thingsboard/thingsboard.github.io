@@ -38,7 +38,7 @@ If field value is already in cache - system will reuse it. If it is not there ye
 
 This cache does not connected to specific visualization and can be reused in case when the same field used in multiple views. 
 
-#### Cache intervals
+### Cache intervals
 
 Trendz cache contains aggregated field data for specific time intervals. User can define what time interval used for data caching.
 
@@ -49,7 +49,7 @@ What time unit to select depends on requirements, but in most cases it should be
 The only option when Hour aggregation can be useful - final report has HOUR dimension. For example, it may be a weekly heatmap because it has 
 HOUR field in X axis. 
 
-#### Scheduled cache refresh
+### Scheduled cache refresh
 
 By default, the cache is initialized/updated only when the Build Report button is pressed. It may be critical when a heavy 
 report is generated on a daily\weekly basis and the user loads it for the first time. In this case, there would be no values 
@@ -68,7 +68,7 @@ During cache refresh in the background, Trendz will make requests to the ThingsB
 For enabling such authentication, administrator should define login\password pair in Trendz configuration file - `ADMIN_LOGIN` and `ADMIN_PASSWORD`. 
 Without this step scheduled cache refresh would not work and cache would be refreshed only when user request report from the UI or Rest API.
 
-#### Clear cache
+### Clear cache
 
 You can clear long term cache if required. It may be useful if you re-import or change historical data in ThingsBoard. 
 

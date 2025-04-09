@@ -38,7 +38,7 @@ The alternative option is to install {{appPrefix}} using [Installation Guide](/d
 
 ## Step 2. Get app source code
 
-#### Flutter {{appPrefix}} Mobile Application compatibility table 
+### Flutter {{appPrefix}} Mobile Application compatibility table 
 
 Determine the Flutter {{appPrefix}} Mobile Application version according to the version of {{appPrefix}}.
 

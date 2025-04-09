@@ -12,18 +12,18 @@ description: Installing ThingsBoard on Ubuntu
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install ThingsBoard on Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS.
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
-### Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. ThingsBoard service installation
+## Step 2. ThingsBoard service installation
 
 Download installation package.
 
@@ -39,7 +39,7 @@ sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 3. Obtain and configure license key 
+## Step 3. Obtain and configure license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -69,7 +69,7 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### Step 4. Configure ThingsBoard database
+## Step 4. Configure ThingsBoard database
 
 {% include templates/install/install-db.md %}
 
@@ -79,7 +79,7 @@ Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. Choose ThingsBoard queue service
+## Step 5. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -95,15 +95,15 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (4GB of RAM) 
+## Step 6. [Optional] Memory update for slow machines (4GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 7. Run installation script
+## Step 7. Run installation script
 
 {% include templates/run-install.md %} 
 
-### Step 8. Start ThingsBoard service
+## Step 8. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
@@ -111,18 +111,18 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 9. Install ThingsBoard WebReport component
+## Step 9. Install ThingsBoard WebReport component
 
 {% capture contenttogglespecreport %}
 WebReport docker <small>(Recommended and simple installtion)</small>%,%dockerized%,%templates/install/ubuntu-webreport-docker.md%br%
 WebReport service <small>(Install service and dependencies manually)</small>%,%service%,%templates/install/ubuntu-webreport-service.md%br%{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardWebreport" toggle-spec=contenttogglespecreport %} 
 
-### Post-installation steps
+## Post-installation steps
 
 {% include templates/install/ubuntu-haproxy-postinstall.md %}
 
-### Troubleshooting
+## Troubleshooting
 
 {% include templates/install/troubleshooting.md %}
 

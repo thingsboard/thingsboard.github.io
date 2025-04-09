@@ -8,7 +8,7 @@
 In MQTT, a subscription is a mechanism that allows clients to receive messages directed to specific topics. 
 When a client subscribes to a topic, it expresses its interest in receiving all messages published to that topic.
 
-### Subscriptions table
+## Subscriptions table
 
 On the Subscriptions page you may **observe, analyze or filter** all subscriptions on the broker. 
 The table contains the following information about each subscription:
@@ -17,7 +17,7 @@ The table contains the following information about each subscription:
 
 {% include images-gallery.html imageCollection="subscriptions-table" %}
 
-### Manage subscriptions
+## Manage subscriptions
 
 You can easily add, remove or edit subscriptions from the 'Session details' window.
 1. Open the 'Subscriptions' page in the left-hand menu.
@@ -33,7 +33,7 @@ You can track the number of current subscriptions and other broker activity on t
 {% endcapture %}
 {% include templates/info-banner.md title="Subscriptions chart" content=monitoringSubscriptions %}
 
-### Clearing Empty Subscription Nodes
+## Clearing Empty Subscription Nodes
 
 Subscriptions in the broker are stored in the memory using the [Trie](https://en.wikipedia.org/wiki/Trie) data structure,
 which is known for its efficient searching capabilities.

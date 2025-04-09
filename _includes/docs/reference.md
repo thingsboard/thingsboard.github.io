@@ -156,5 +156,5 @@ database:
 
 ## Programming languages and third-party
 
-ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular 9 framework. 
+ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular framework. 
 See [monolithic](/docs/{{docsPrefix}}reference/monolithic) and [microservices](/docs/{{docsPrefix}}reference/monolithic) pages for more details about third-party components used.  

@@ -10,7 +10,7 @@ description: TBMQ upcoming releases
 
 The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.
 
-### Upcoming releases
+## Upcoming releases
 
 * More integrations with external third-party services;
 * Tracking dropped messages;

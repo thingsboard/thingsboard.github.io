@@ -7,27 +7,26 @@
     padding-bottom: 30px
     a.content-toggle-button
       padding: 10px
-      border: 1px solid #ebebeb
+      border: 1px solid rgba(0, 0, 0, 0.08)
       border-radius: 4px
       margin: 0.75em 0.75em
       cursor: pointer
+      transition: ease-in-out 0.3s
+      background: #EEF5FD
       &.active
-        border: 2px solid #2a7dec
-        padding: 9px
+        border: 1px solid #2A7DEC
+        background: #2A7DEC
         .content-toggle-button-text
-          font-weight: 600
+          color: #FFF
           small
-            color: #212529
+            color: #FFF
       &:not(.active):hover
-        border: 2px solid #212529
-        padding: 9px
-        .content-toggle-button-text
-          small
-            color: #212529
+        border: 1px solid rgba(0, 0, 0, 0.87)
       .content-toggle-button-text
-        font-size: 18px
+        font-size: 16px
         font-weight: 500
-        color: #333
+        line-height: 28px
+        color: #000000C2
         height: 80px
         width: 260px
         display: flex
@@ -37,7 +36,9 @@
         text-align: center
         small
           color: rgba(33, 37, 41, 0.6)
+          font-size: 14px
           line-height: 24px
+          font-weight: 400
 
   .panel-collapse
     .panel-body
