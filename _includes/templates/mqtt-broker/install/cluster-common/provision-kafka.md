@@ -23,4 +23,4 @@ helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 25.3.3
 ```
 {: .copy-code}
 
-Wait up to several minutes until Kafka and Zookeeper pods are up and running.
+Wait up to several minutes until Kafka pods are up and running.
