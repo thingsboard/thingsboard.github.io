@@ -1,6 +1,6 @@
 
 
-####  HTTP server parameters
+###  HTTP server parameters
 
 <table>
 	<thead>
@@ -25,7 +25,7 @@
 </table>
 
 
-####  Kafka parameters
+###  Kafka parameters
 
 <table>
 	<thead>
@@ -320,7 +320,7 @@
 </table>
 
 
-####  Service parameters
+###  Service parameters
 
 <table>
 	<thead>
@@ -359,7 +359,7 @@
 </table>
 
 
-####  Integration common parameters
+###  Integration common parameters
 
 <table>
 	<thead>
@@ -464,7 +464,7 @@
 </table>
 
 
-####  Management parameters
+###  Management parameters
 
 <table>
 	<thead>
@@ -483,7 +483,7 @@
 </table>
 
 
-####  Statistics parameters
+###  Statistics parameters
 
 <table>
 	<thead>
@@ -514,7 +514,7 @@
 </table>
 
 
-####  Event configuration parameters
+###  Event configuration parameters
 
 <table>
 	<thead>

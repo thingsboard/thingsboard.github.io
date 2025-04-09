@@ -107,6 +107,12 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>listener.leak_detector_level</td>
+			<td>NETTY_LEAK_DETECTOR_LVL</td>
+			<td>DISABLED</td>
+			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID. It is set globally for all listeners</td>
+		</tr>
+		<tr>
 			<td>listener.tcp.enabled</td>
 			<td>LISTENER_TCP_ENABLED</td>
 			<td>true</td>
@@ -123,12 +129,6 @@
 			<td>LISTENER_TCP_BIND_PORT</td>
 			<td>1883</td>
 			<td> MQTT TCP listener bind port</td>
-		</tr>
-		<tr>
-			<td>listener.tcp.netty.leak_detector_level</td>
-			<td>TCP_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.tcp.netty.boss_group_thread_count</td>
@@ -252,12 +252,6 @@
 			<td> Optional password to access the private key. If not set, the platform will attempt to load the private keys that are not protected with the password</td>
 		</tr>
 		<tr>
-			<td>listener.ssl.netty.leak_detector_level</td>
-			<td>SSL_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
-		</tr>
-		<tr>
 			<td>listener.ssl.netty.boss_group_thread_count</td>
 			<td>SSL_NETTY_BOSS_GROUP_THREADS</td>
 			<td>1</td>
@@ -316,12 +310,6 @@
 			<td>WS_NETTY_SUB_PROTOCOLS</td>
 			<td>mqttv3.1,mqtt</td>
 			<td> Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
-		</tr>
-		<tr>
-			<td>listener.ws.netty.leak_detector_level</td>
-			<td>WS_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.ws.netty.boss_group_thread_count</td>
@@ -449,12 +437,6 @@
 			<td>WSS_NETTY_SUB_PROTOCOLS</td>
 			<td>mqttv3.1,mqtt</td>
 			<td> Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
-		</tr>
-		<tr>
-			<td>listener.wss.netty.leak_detector_level</td>
-			<td>WSS_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.wss.netty.boss_group_thread_count</td>

@@ -319,16 +319,16 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             <div class="col-lg-6">
                 <div class="block">
                     <div class="image-container">
-                        <a href="/blog/tbmq-2-1-0/">
-                            <img src="/images/mqtt-broker/product/news-4.webp" alt="TBMQ 2.1.0 release" loading="lazy">
+                        <a href="/blog/introducing-tbmq-2-1-a-new-chapter-in-extensible-iot-messaging/">
+                            <img src="/images/mqtt-broker/product/news-4.webp" alt="Introducing TBMQ 2.1: A new chapter in extensible IoT messaging" loading="lazy">
                         </a>
                     </div>
                     <div class="content">
                         <div class="tags">
                             <a href="/blog/category/updates/">Updates</a>
                         </div>
-                        <a class="title" href="/blog/tbmq-1-0/">TBMQ 2.1.0 release: integrations, Helm charts, and more</a>
-                        <p>TBMQ 2.1.0 notes</p>
+                        <a class="title" href="/blog/introducing-tbmq-2-1-a-new-chapter-in-extensible-iot-messaging/">Introducing TBMQ 2.1: A new chapter in extensible IoT messaging</a>
+                        <p>We're excited to announce the release of TBMQ 2.1.0! This version marks a major milestone by introducing the Integration Executor microservice, responsible for managing integrations. It powers scalable and multi-protocol message delivery to external systems, starting with support for HTTP, Kafka, and MQTT outbound integrations. We've also released the official Helm Chart for TBMQ, simplifying deployment and management of the infrastructure in K8s environments.</p>
                     </div>
                 </div>
             </div>
@@ -341,7 +341,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     </div>
                     <div class="content">
                         <div class="tags">
-                            <a href="/blog/category/updates/">Updates</a>
+                            <a href="/blog/category/tech/">Tech</a>
                         </div>
                         <a class="title" href="/blog/1-million-reasons-to-choose-tbmq-as-high-performance-mqtt-broker/">1 Million reasons to choose TBMQ as a high-performance MQTT broker</a>
                         <p>Can an open-source MQTT broker handle one million messages per second for persistent sessions? TBMQ 2.x proves it can! Even more importantly, it achieves this with no single point of failure and ensures no data loss, even when hardware fails, making it a robust self-hosted MQTT broker solution for IIoT applications</p>

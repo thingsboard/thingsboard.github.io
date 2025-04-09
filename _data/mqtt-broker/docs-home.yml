@@ -68,6 +68,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: Settings
       path: /docs/mqtt-broker/user-guide/ui/settings/
+- title: Need Help?
+  path: /docs/mqtt-broker/help/
 - title: Troubleshooting
   path: /docs/mqtt-broker/troubleshooting/
 - title: Release Notes
