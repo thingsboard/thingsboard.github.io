@@ -9,8 +9,12 @@ helm install my-tbmq-cluster tbmq-helm-chart/tbmq-cluster \
 
 {: .copy-code}
 
-> **Tip:** `my-tbmq-cluster` is the Helm release name.
-> You can change it to any name of your choice, which will be used to reference this deployment in future Helm commands.
+{% capture installation-tip %}
+
+`my-tbmq-cluster` is the Helm release name. You can change it to any name of your choice, which will be used to reference this deployment in future Helm commands.
+
+{% endcapture %}
+{% include templates/info-banner.md content=installation-tip %}
 
 Once the deployment process is completed, you should see output similar to the following:
 

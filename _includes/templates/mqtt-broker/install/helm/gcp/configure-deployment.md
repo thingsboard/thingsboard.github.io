@@ -25,10 +25,10 @@ gcloud services enable container.googleapis.com
 
 {% include templates/mqtt-broker/install/helm/gcp/define-env-variables.md %}
 
-## Configure and create GKE cluster
+### Configure and create GKE cluster
 
 {% include templates/install/gcp/zonal-gke-cluster.md %}
 
-## Update the context of kubectl
+### Update the context of kubectl
 
 {% include templates/install/gcp/update-kubectl-zone.md %}

@@ -14,7 +14,7 @@ and cluster in it $TB_CLUSTER_NAME
 
 where:
 
-* TBMQResources - a logical group in which Azure resources are deployed and managed. We will refer to it later in this guide using **AKS_RESOURCE_GROUP**;
-* eastus - is the location where you want to create resource group. We will refer to it later in this guide using **AKS_LOCATION**. You can see all locations list by executing `az account list-locations`;
+* TBMQResources - a logical group in which Azure resources are deployed and managed. We will refer to it later in this guide using **$AKS_RESOURCE_GROUP**;
+* eastus - is the location where you want to create resource group. We will refer to it later in this guide using **$AKS_LOCATION**. You can see all locations list by executing `az account list-locations`;
 * tbmq-gateway - the name of Azure application gateway;
-* tbmq-cluster - cluster name. We will refer to it later in this guide using **TB_CLUSTER_NAME**;
+* tbmq-cluster - cluster name. We will refer to it later in this guide using **$TB_CLUSTER_NAME**;
