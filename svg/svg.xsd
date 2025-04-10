@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://thingsboard.io/svg"
+           xmlns="https://thingsboard.io/svg"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <!-- Global definition of the attribute -->
+  <xs:attribute name="tag" type="xs:string"/>
+
+  <!-- Allow attribute for any element through wildcards -->
+  <xs:complexType name="anyElementExtension" mixed="true">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:any processContents="lax"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##any" processContents="lax"/>
+  </xs:complexType>
+
+</xs:schema>
