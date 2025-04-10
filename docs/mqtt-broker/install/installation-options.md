@@ -76,7 +76,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/gcp-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gke.jpeg" title="Cluster setup on GKE" alt="GCP K8S cluster">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/gke.jpeg" title="Cluster setup on GKE" alt="GCP K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
