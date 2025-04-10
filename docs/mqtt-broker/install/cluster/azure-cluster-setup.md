@@ -299,50 +299,11 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 
 ## Step 8. Provision Kafka
 
-We recommend deploying Bitnami Kafka from Helm. For that, review the `kafka` folder.
-
-```bash
-ls kafka/
-```
-{: .copy-code}
-
-You can find there _default-values-kafka.yml_ file - default values downloaded from [Bitnami artifactHub](https://artifacthub.io/packages/helm/bitnami/kafka). And _values-kafka.yml_ file with modified values.
-We recommend keeping the first file untouched and making changes to the second one only. This way the upgrade process to the next version will go more smoothly as it will be possible to see diff.
-
-To add the Bitnami helm repo:
-
-```bash
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
-```
-{: .copy-code}
-
-To install Bitnami Kafka execute the following command:
-
-```bash
-helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 25.3.3
-```
-{: .copy-code}
-
-Wait up to several minutes until Kafka and Zookeeper pods are up and running.
+{% include templates/mqtt-broker/install/cluster-common/provision-kafka.md %}
 
 ## Step 9. Starting
 
-Execute the following command to deploy the broker:
-
-```bash
-./k8s-deploy-tbmq.sh
-```
-{: .copy-code}
-
-After a few minutes, you may execute the next command to check the state of all pods.
-
-```bash
-kubectl get pods
-```
-{: .copy-code}
-
-If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-1` pods. Every pod should be in the `READY` state.
+{% include templates/mqtt-broker/install/cluster-common/starting.md %}
 
 ## Step 10. Configure Load Balancers
 
@@ -357,26 +318,7 @@ See links/instructions below on how to configure each of the suggested options.
 
 #### HTTP Load Balancer
 
-Execute the following command to deploy plain http load balancer:
-
-```bash
-kubectl apply -f receipts/http-load-balancer.yml
-```
-{: .copy-code}
-
-The process of load balancer provisioning may take some time. You may periodically check the status of the load balancer using the following command:
-
-```bash
-kubectl get ingress
-```
-{: .copy-code}
-
-Once provisioned, you should see similar output:
-
-```text
-NAME                          CLASS    HOSTS   ADDRESS         PORTS   AGE
-tb-broker-http-loadbalancer   <none>   *       34.111.24.134   80      3d1h
-```
+{% include templates/mqtt-broker/install/cluster-common/configure-http-load-balancer.md %}
 
 #### HTTPS Load Balancer
 
@@ -401,99 +343,19 @@ kubectl apply -f receipts/https-load-balancer.yml
 
 ### 10.2 Configure MQTT Load Balancer
 
-Configure MQTT load balancer to be able to use MQTT protocol to connect devices.
-
-Create TCP load balancer using following command:
-
-```bash
-kubectl apply -f receipts/mqtt-load-balancer.yml
-```
-{: .copy-code}
-
-The load balancer will forward all TCP traffic for ports 1883 and 8883.
-
-#### MQTT over SSL
-
-Follow [this guide](https://thingsboard.io/docs/user-guide/mqtt-over-ssl/) to create a .pem file with the SSL certificate. Store the file as _server.pem_ in the working directory.
-
-You’ll need to create a config-map with your PEM file, you can do it by calling command:
-
-```bash
-kubectl create configmap tbmq-mqtts-config \
- --from-file=server.pem=YOUR_PEM_FILENAME \
- --from-file=mqttserver_key.pem=YOUR_PEM_KEY_FILENAME \
- -o yaml --dry-run=client | kubectl apply -f -
-```
-{: .copy-code}
-
-* where **YOUR_PEM_FILENAME** is the name of your **server certificate file**.
-* where **YOUR_PEM_KEY_FILENAME** is the name of your **server certificate private key file**.
-
-Then, uncomment all sections in the ‘tb-broker.yml’ file that are marked with “Uncomment the following lines to enable two-way MQTTS”.
-
-Execute command to apply changes:
-
-```bash
-kubectl apply -f tb-broker.yml
-```
-{: .copy-code}
+{% include templates/mqtt-broker/install/cluster-common/configure-mqtt-load-balancer.md %}
 
 ## Step 11. Validate the setup
 
-Now you can open TBMQ web interface in your browser using DNS name of the load balancer.
-
-You can get DNS name of the load-balancers using the next command:
-
-```bash
-kubectl get ingress
-```
-{: .copy-code}
-
-You should see the similar picture:
-
-```text
-NAME                          CLASS    HOSTS   ADDRESS         PORTS   AGE
-tb-broker-http-loadbalancer   <none>   *       34.111.24.134   80      3d1h
-```
-
-Use `ADDRESS` field of the tb-broker-http-loadbalancer to connect to the cluster.
-
-{% include templates/mqtt-broker/login.md %}
+{% include templates/mqtt-broker/install/cluster-common/validate-the-setup.md %}
 
 ### Validate MQTT access
 
-To connect to the cluster via MQTT you will need to get corresponding service IP. You can do this with the command:
-
-```bash
-kubectl get services
-```
-{: .copy-code}
-
-You should see the similar picture:
-
-```text
-NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP              PORT(S)                         AGE
-tb-broker-mqtt-loadbalancer   LoadBalancer   10.100.119.170   *******                  1883:30308/TCP,8883:31609/TCP   6m58s
-```
-
-Use `EXTERNAL-IP` field of the load-balancer to connect to the cluster via MQTT protocol.
+{% include templates/mqtt-broker/install/cluster-common/validate-mqtt-access.md %}
 
 ### Troubleshooting
 
-In case of any issues you can examine service logs for errors. For example to see TBMQ logs execute the following command:
-
-```bash
-kubectl logs -f tb-broker-0
-```
-{: .copy-code}
-
-Use the next command to see the state of all statefulsets.
-```bash
-kubectl get statefulsets
-```
-{: .copy-code}
-
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
+{% include templates/mqtt-broker/install/cluster-common/troubleshooting.md %}
 
 ## Upgrading
 
