@@ -8,7 +8,7 @@ TBMQ Kafka Integration enables seamless communication with **Apache Kafka**. It 
 - **Event-Driven Architectures** – Publishing messages to Kafka topics for real-time analytics and monitoring.
 - **Decoupled System Communication** – Using Kafka as a buffer between TBMQ and downstream applications.
 
-### Data Flow Overview
+## Data Flow Overview
 
 TBMQ Kafka Integration processes messages and forwards them to an external Kafka cluster in the following steps:
 
@@ -19,7 +19,7 @@ TBMQ Kafka Integration processes messages and forwards them to an external Kafka
 
 ![image](/images/mqtt-broker/integrations/tbmq-kafka-integration.png)
 
-### Prerequisites
+## Prerequisites
 
 Before setting up the integration, ensure the following:
 
@@ -27,7 +27,7 @@ Before setting up the integration, ensure the following:
 - An external service ready to receive Kafka message (e.g. **Confluent Cloud**).
 - A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
 
-### Create TBMQ Kafka Integration
+## Create TBMQ Kafka Integration
 
 1. Navigate to the **Integrations** page and click the **"+"** button to create a new integration.
 2. Select **Kafka** as the integration type and click **Next**.
@@ -51,11 +51,11 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-b
 > Even if the topic is missing, you can still proceed with creating the integration. 
 > If the Kafka cluster has `auto.create.topics.enable` set to `true`, the topic will be automatically created when the first message is published.
 
-#### Topic Filters
+### Topic Filters
 
 {% include templates/mqtt-broker/user-guide/integrations/topic-filters.md %}
 
-#### Configuration
+### Configuration
 
 |**Field**|**Description**|
 |:-|:-|-
@@ -75,11 +75,11 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/mqtt-b
 | **Metadata** | Custom metadata that can be used for processing and tracking. |
 |---
 
-#### Events
+### Events
 
 {% include templates/mqtt-broker/user-guide/integrations/events.md %}
 
-### Sending an Uplink Message
+## Sending an Uplink Message
 
 To send a message, follow these steps:
 

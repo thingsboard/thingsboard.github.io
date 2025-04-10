@@ -4,7 +4,7 @@
 TBMQ HTTP Integration provides a simple and efficient way to forward MQTT messages from devices to an external system using the HTTP protocol. 
 It acts as a **bridge** between TBMQ and external applications, ensuring seamless and reliable data exchange. 
 
-### Data Flow Overview
+## Data Flow Overview
 
 TBMQ HTTP Integration enables forwarding MQTT messages to an external HTTP service:  
 
@@ -15,7 +15,7 @@ TBMQ HTTP Integration enables forwarding MQTT messages to an external HTTP servi
 
 ![image](/images/mqtt-broker/integrations/tbmq-http-integration.png)
 
-### Prerequisites
+## Prerequisites
 
 Before setting up the integration, ensure the following:
 
@@ -23,7 +23,7 @@ Before setting up the integration, ensure the following:
 - An external service ready to receive HTTP requests (e.g., **[ThingsBoard Cloud](/docs/paas/getting-started-guides/what-is-thingsboard-cloud/)**).  
 - A client capable of publishing MQTT messages (e.g., **[TBMQ WebSocket Client](/docs/mqtt-broker/user-guide/ui/websocket-client/)**).  
 
-### Create ThingsBoard Integration
+## Create ThingsBoard Integration
 
 In this tutorial, we use **ThingsBoard** as the external service receiving HTTP requests from TBMQ. However, any other HTTP-compatible service can be used.
 
@@ -36,7 +36,7 @@ Once the HTTP Integration is created:
 
 {% include images-gallery.html imageCollection="tb-endpoint-url" %}
 
-### Create TBMQ HTTP Integration
+## Create TBMQ HTTP Integration
 
 1. Go to the **Integrations** page and click the "+" button to create a new integration.
 2. Select **HTTP** as the integration type and click **Next**.
@@ -49,11 +49,11 @@ Once the HTTP Integration is created:
 
 > You can test the connectivity to the configured HTTP endpoint by sending a HEAD request using the 'Check connection' button.
 
-#### Topic Filters
+### Topic Filters
 
 {% include templates/mqtt-broker/user-guide/integrations/topic-filters.md %}
 
-#### Configuration
+### Configuration
 
 |**Field**|**Description**|
 |:-|:-|-
@@ -73,11 +73,11 @@ Once the HTTP Integration is created:
 | **Metadata** | Custom metadata that can be used for additional processing. |
 |---
 
-#### Events
+### Events
 
 {% include templates/mqtt-broker/user-guide/integrations/events.md %}
 
-### Sending an Uplink Message
+## Sending an Uplink Message
 
 To send a message, follow these steps:
 
