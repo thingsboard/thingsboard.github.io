@@ -50,6 +50,7 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 ### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
 
+{% assign tbDbName = "thingsboard" %}
 {% include templates/install/gcp/provision-postgresql.md %}
 
 ### Step 5.2 Cassandra (optional)
@@ -72,7 +73,7 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 ### 9.1 Configure HTTP(S) Load Balancer
 
-{% include templates/install/gcp/http-lb.md %}
+{% include templates/install/gcp/configure-http.md %}
 
 #### Transparent Load Balancer
 
