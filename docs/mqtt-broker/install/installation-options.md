@@ -73,6 +73,15 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/cluster/gcp-cluster-setup/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cloud/gcp.svg" title="Cluster setup on GKE" alt="GCP K8S cluster">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-options/">
                                             <span>
                                                 <div class="deployment-logo">
