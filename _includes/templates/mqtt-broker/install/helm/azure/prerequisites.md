@@ -1,9 +1,5 @@
-To deploy TBMQ using Helm on the AKS cluster, you'll need to additionally
-install [az](https://learn.microsoft.com/en-us/cli/azure/) tools.
-After installation is done, you need to log in to the cli using the next command:
+To deploy TBMQ Cluster using Helm on AKS cluster, you need to have the following tools installed on your local machine:
 
-```bash
-az login
-```
-
-{: .copy-code}
+- [helm](https://helm.sh/docs/intro/install/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [az](https://learn.microsoft.com/en-us/cli/azure/)

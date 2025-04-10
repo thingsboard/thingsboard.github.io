@@ -1,6 +1,11 @@
-### Install and configure AZ tools
+### Configure AZ tools
 
-{% include templates/mqtt-broker/install/helm/azure/prerequisites.md %} 
+After installation is done, you need to log in to the cli using the next command:
+
+```bash
+az login
+```
+{: .copy-code}
 
 ### Define environment variables
 

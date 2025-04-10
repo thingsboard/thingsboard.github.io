@@ -1,13 +1,4 @@
-### Install and configure AWS tools
-
-To deploy TBMQ using Helm on EKS cluster, you'll need to additionally install the following tools:
-
-- [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html)
-- [awscli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-
-Afterward, you need to configure Access Key, Secret Key and default region.
-To get Access and Secret keys, please follow [this](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) guide.
-The default region should be the ID of the region where you'd like to deploy the cluster.
+### Configure AWS tools
 
 ```bash
 aws configure
@@ -22,6 +13,7 @@ Please download it using next command:
 ```bash
 curl -o cluster.yml https://raw.githubusercontent.com/ShvaykaD/tbmq/helm-aws/k8s/helm/aws/cluster.yml
 ```
+{: .copy-code}
 
 Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
@@ -53,7 +45,7 @@ You can safely remove this section if:
  - You're using Amazon RDS or an existing PostgreSQL service.
  - You want to keep your database outside the EKS cluster.
 
-###  IAM setup for OIDC and AWS Load Balancer Controller:
+###  IAM setup for OIDC and AWS Load Balancer Controller
 
 By including the following block in your `cluster.yml`, you automatically enable IAM roles for service accounts and provision the AWS Load Balancer Controller service account:
 
@@ -94,7 +86,7 @@ The `addons` section in `cluster.yml` automatically installs and configures esse
  - **coredns** - provides internal DNS resolution for Kubernetes services via [CoreDNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/).
  - **kube-proxy** - manages network rules on each node to handle service routing, via [kube-proxy](https://kubernetes.io/docs/concepts/services-networking/service/#kube-proxy).
 
-### Create EKS cluster:
+### Create EKS cluster
 
 ```bash
 eksctl create cluster -f cluster.yml

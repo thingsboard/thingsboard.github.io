@@ -6,7 +6,6 @@ helm install my-tbmq-cluster tbmq-helm-chart/tbmq-cluster \
   -f values.yaml \
   --set installation.installDbSchema=true
 ```
-
 {: .copy-code}
 
 {% capture installation-tip %}

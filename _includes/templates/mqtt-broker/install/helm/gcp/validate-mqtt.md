@@ -3,7 +3,6 @@ To connect to the cluster via MQTT you will need to get the corresponding servic
 ```bash
 kubectl get services
 ```
-
 {: .copy-code}
 
 You should see the similar picture:

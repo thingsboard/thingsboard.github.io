@@ -17,7 +17,7 @@ This will automatically configure:
 - Plain HTTP traffic to be exposed via AWS Application Load Balancer (ALB).
 - Plain MQTT traffic to be exposed via AWS Network Load Balancer (NLB).
 
-### HTTPS access
+#### HTTPS access
 
 Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate. Note your certificate ARN.
 
@@ -36,9 +36,9 @@ loadbalancer:
       certificateRef: "<your-acm-certificate-arn-for-alb>"
 ```
 
-### MQTTS access
+#### MQTTS access
 
-#### TLS termination (One-way TLS)
+##### TLS termination (One-way TLS)
 
 The simplest way to configure MQTTS is to make your MQTT load balancer (AWS NLB) to act as a TLS termination point.
 This way we set up the one-way TLS connection, where the traffic between your devices and load balancers is encrypted, and the traffic between your load balancer and TBMQ is not encrypted.
@@ -63,7 +63,7 @@ loadbalancer:
       certificateRef: "<your-acm-certificate-arn-for-nlb>"
 ```
 
-#### Mutual TLS (Two-Way TLS or mTLS)
+##### Mutual TLS (Two-Way TLS or mTLS)
 
 The more complex way to enable MQTTS is to obtain valid (signed) TLS certificate and configure it in the TBMQ.
 The main advantage of this option is that you may use it in combination with “X.509 certificate” MQTT client credentials.

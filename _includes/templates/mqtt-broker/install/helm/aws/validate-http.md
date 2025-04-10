@@ -5,7 +5,6 @@ You can get DNS name of the load-balancers using the next command:
 ```bash
 kubectl get ingress
 ```
-
 {: .copy-code}
 
 You should see the similar picture:

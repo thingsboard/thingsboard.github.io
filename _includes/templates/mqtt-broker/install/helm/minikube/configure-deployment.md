@@ -1,10 +1,3 @@
-This guide uses **Minikube** as the reference environment for the self-hosted kubernetes deployment.
-If you're deploying TBMQ in self-managed cluster without cloud-specific load balancer integrations, Minikube provides a simple way to test the setup end-to-end.
-
-### Install Minikube
-
-To deploy TBMQ cluster using Helm in Minikube, you’ll need to additionally install [minikube](https://kubernetes.io/docs/tasks/tools/#minikube) tools.
-
 ### Start Minikube
 
 ```bash
