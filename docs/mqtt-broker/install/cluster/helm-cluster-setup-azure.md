@@ -31,6 +31,9 @@ on Azure using Azure Kubernetes Service (AKS).
 
 {% include templates/mqtt-broker/install/helm/common/external-postgres.md %}
 
+If you're deploying on Azure AKS and plan to use Azure Database for PostgreSQL, follow this
+[guide](/docs/mqtt-broker/install/cluster/azure-cluster-setup/#step-5-provision-postgresql-db) to provision and configure your PostgreSQL instance.
+
 ### Load Balancer configuration
 
 {% include templates/mqtt-broker/install/helm/azure/modify-load-balancer.md %}

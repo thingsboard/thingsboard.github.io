@@ -31,7 +31,8 @@ on AWS using Elastic Kubernetes Service (EKS).
 
 {% include templates/mqtt-broker/install/helm/common/external-postgres.md %}
 
-See appropriate external PostgreSQL configuration guidance [here](). 
+If you're deploying on Amazon EKS and plan to use AWS RDS for PostgreSQL, follow this 
+[guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/#step-4-amazon-postgresql-db-configuration) to provision and configure your RDS instance.
 
 ### Load Balancer configuration
 
