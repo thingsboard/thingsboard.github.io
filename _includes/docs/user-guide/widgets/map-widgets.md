@@ -58,7 +58,8 @@ To add a Map widget to the dashboard, follow these steps:
 
 ## Map type
 
-The first step in configuring your map widget is choosing the Map Type. ThingsBoard offers different options, including Image Map, which allows you to use custom background images as maps, in addition to standard map providers.
+The first step in configuring the map widget is selecting the map type.
+ThingsBoard offers several map widgets, including Image Map, which allows you to use a custom background image as the map.
 
 You can also configure map layers, enabling flexible switching between different map styles — such as satellite, hybrid, or custom layers — directly within the widget, with just a few clicks.
 
@@ -68,12 +69,12 @@ You can also configure map layers, enabling flexible switching between different
 
 **Adding a new map layer**
 
-You can add an additional layer to the map widget by following these steps:
+You can add additional layer to the map widget by following these steps:
 
 - Click "Add layer".
 - Enter a label for the layer — this name will be shown in the widget&#39;s layer switcher.
 - Choose the map provider by selecting from the available options (OpenStreetMap, Google, HERE, Tencent) or by specifying a custom tile server.
-- Apply your changes.
+- Apply changes.
 
 {% include images-gallery.html imageCollection="map-type-adding-layer-1" %}
 
@@ -85,7 +86,7 @@ Now switch to the new layer on the widget.
 
 In the "**Layer settings**", you can also enable the "**Reference layer**" option — a special transparent layer that contains labeled map elements: 
 
-- Go to the "Layer settings" by clicking the "gear" icon;
+- Go to the "Layer settings" by clicking the "gear" icon.
 - From the dropdown menu, select the layer type, or leave it as "No layer" if you don&#39;t want to use one.
 - Apply changes.
 
@@ -107,57 +108,40 @@ You can customize their appearance, behavior, and interaction rules directly in 
 
 ### Marker
 
-Markers are commonly used to indicate the location of buildings, fixed sensors, vehicle tracking, or any other static or moving objects.
+Markers are commonly used to indicate the location of buildings, fixed sensors, vehicle tracking, or any other static or moving entities.
+
+To be placed on the map, the entity must have coordinates as attributes or telemetry in the following format:
+```
+Latitude,Longitude
+```
 
 ![image](/images/user-guide/widgets/maps/marker-1-pe.png)
 
 #### Place marker on map
 
-You can place a marker on the map in one of the following ways:
-- using predefined coordinates
-- using the built-in tools of the map widget.
+To place a marker on the map, follow these steps:
 
-Let&#39;s go over each method separately:
-
-**Option 1: Place a marker on the widget based on predefined coordinates from a device or another entity, provided as attributes or telemetry.**
-
-- Enter widget edit mode, go to the "Overlays" section, and click "Add polygon".
-- Select the data source — this can be a device, an entity alias, or a function.
-- Define the coordinate keys. ThingsBoard automatically uses *latitude* and *longitude* as default coordinate keys. If your entity uses different key names, update them here.
+- Enter widget edit mode and go to the "Overlays" section.
+- Make sure you&#39;re on the "Marker" tab and click "Add marker".
+- Select the data source - it can be a device, an entity alias, or a function.
+- Define the coordinate keys. By default, ThingsBoard uses *latitude* and *longitude* attributes as the coordinate keys for the marker. If your entity uses different key names, update them here.
 - Apply the changes.
 
 The marker will appear on the map based on the specified coordinates.
 
 {% include images-gallery.html imageCollection="add-marker" %}
 
-**Option 2: Manually place a marker using the built-in tools of the map widget.**
-
-If an entity doesn&#39;t have coordinates set, you can manually **place marker using the map widget tools** — its coordinates will be automatically saved to the entity as attributes.
-In this example, I&#39;ll also use an entity alias, which refers to the asset "Gas station 1" as the data source.
-
-First, add the marker placement tool to the map:
-
-{% include images-gallery.html imageCollection="manually-add-marker" showListImageTitles="true" %}
-
-You can now place the marker on the map:
-
-{% include images-gallery.html imageCollection="place-marker" showListImageTitles="true" %}
-
 #### Marker configuration
 
-To configure a specific marker:
-
-- Enter widget edit mode.
-- Locate the marker in the "Overlays" section.
-- Click the "gear" icon button next to the marker to open its configuration panel.
+To configure a specific marker, switch to the map widget&#39;s edit mode. In the "Overlays" section, click the "gear" icon button next to the desired marker to open its configuration panel.
 
 {% include images-gallery.html imageCollection="marker-configuration" %}
 
 **Datasource**
 
 Specify the data source for the marker. It can be:
-- A device
-- An entity alias
+- A [device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"}
+- An [entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}
 - A function
 
 If needed, use the data filter to refine the selection (e.g., filter by name or type).
@@ -166,8 +150,9 @@ If needed, use the data filter to refine the selection (e.g., filter by name or 
 
 **Keys**
 
-ThingsBoard uses *latitude* and *longitude* keys by default for positioning the marker.
-If your entity uses custom keys, update them accordingly.
+Define the coordinate keys.
+By default, ThingsBoard uses *latitude* and *longitude* attributes as the default coordinate keys.
+If your entity uses custom key names, update them accordingly.
 
 You can also define additional keys for dynamic display elements, such as marker color, tooltip content, Label text, etc.
 
@@ -183,14 +168,15 @@ Marker styling example: The marker color will change dynamically based on the va
 
 ```js
 var state = data.state;
-if (typeof state !== undefined) {
-    if (state == 'opened'){
-        return 'green';
-    } else {
-        return 'red';
-    }
+if (state  !== '') {
+  if (state == 'opened'){
+    return 'green';
+  } else {
+    return 'red';
+  }
+} else {
+  return 'grey';
 }
-
 ```
 {:.copy-code}
 
@@ -202,8 +188,12 @@ The marker label is placed above the icon and, by default, displays the entity n
 You can edit the label text or use a label function to show more dynamic information.
 
 Label styling example:
+
 ```text
-<div style='position: relative; white-space: nowrap; text-align: center; font-size: 14px; top: 2px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #EC9704; border-radius: 10px; color: #000; background-color: #fff;  padding-left: 8px; padding-right: 8px; padding-top: 3px; padding-bottom: 3px;'>${entityLabel}</div></div>
+<div style='position: relative; white-space: nowrap; text-align: center; font-size: 14px; top: 2px;'>
+    <span style='margin-left: -500%;'></span>
+    <div style='border: 2px solid #EC9704; border-radius: 10px; color: #000; background-color: #fff;  padding-left: 8px; padding-right: 8px; padding-top: 3px; padding-bottom: 3px;'>${entityLabel}</div>
+</div>
 ```
 {:.copy-code}
 
@@ -234,13 +224,14 @@ return `<div style="display: flex; justify-content: space-between; align-items: 
 
 {% include images-gallery.html imageCollection="marker-configuration-appearance-tooltip" %}
 
-<br>
+**Tag actions**
 
-Tag actions
+You can add an action to a tooltip as a tag. This can be to switch to a new dashboard state or another dashboard, to open an external URL, or even to initiate a custom action. 
+Learn more about the available action types and how to configure them in the [widget actions documentation](/docs/{{docsPrefix}}user-guide/ui/widget-actions/){:target="_blank"}.
 
-You can add an action to the tooltip in the form of a tag.
-This action could be switching to a new dashboard state, navigating to a different dashboard, opening a URL, or even triggering a custom action.
-First, you need to add a tag action and then reference its name in the tooltip function.
+First, you need to add a tag action and then reference its name in the tooltip function:
+
+{% include images-gallery.html imageCollection="marker-configuration-appearance-tooltip-action-1" showListImageTitles="true" %}
 
 The function below already includes a reference to the tag action named "my-action".
 If you gave your tag action a different name, please replace "my-action" with your actual tag name.
@@ -264,35 +255,212 @@ return `<div style="text-align: center">
 ```
 {:.copy-code.expandable-6}
 
-{% include images-gallery.html imageCollection="marker-configuration-appearance-tooltip-action" showListImageTitles="true" %}
+Click on the marker. In the tooltip that appears, you&#39;ll see a tag — click on it. The action you defined in the tag&#39;s settings will be executed.
 
-<br>
+{% include images-gallery.html imageCollection="marker-configuration-appearance-tooltip-action-1" %}
 
-Behavior
+**Behavior**
 
-Customize the behavior of the marker when clicked to go to another state/dashboard, open an external link, or perform a custom action.
+Set the behavior of the marker when you click it.
 
 {% include images-gallery.html imageCollection="marker-configuration-appearance-behavior" showListImageTitles="true" %}
 
-<br>
+**Groups**
 
-Groups
-
-Overlays can be grouped, making it easier to show or hide multiple map objects at once by organizing them into a group.
+Markers can be grouped, making it easier to show or hide them on the map with just a few clicks.
 
 {% include images-gallery.html imageCollection="marker-configuration-appearance-groups" showListImageTitles="true" %}
 
+**Edit marker**
+
+If your entity doesn&#39;t have coordinates set, you can **manually place marker using the map widget tools** — its coordinates will be automatically saved to the entity as attributes.
+
+First, add the marker placement tool to the map:
+
+- In the "**Edit marker**" section, check the "**Add**" tool.
+- Next, select the **attribute scope** where the coordinates will be stored: "**Server**" or "**Shared**".
+- Optionally, enable snapping to other vertices for precision drawing.
+- Then, save the changes.
+
+{% include images-gallery.html imageCollection="manually-add-marker" %}
+
+You can now place the marker on the map:
+
+- On the map widget, locate and click the "Place marker" icon button. If you&#39;re using an alias with multiple entities as the data source, you&#39;ll need to select the appropriate entity from the dropdown menu.
+- Find the location on the map where you want to place the marker and click on it.
+- The marker will be added, and its coordinates will be automatically saved to the entity as attributes.
+
+{% include images-gallery.html imageCollection="place-marker" showListImageTitles="true" %}
+
+<br>
+Also, by selecting the checkboxes next to the desired tools, you&#39;ll be able to **move** or **remove** a marker.
+
+**Move marker**
+
+Enable the ability to move the marker on the map by checking the "**Move**" tool in the marker settings under the "**Edit marker**" section.
+
+To move the marker, click and hold the marker with your mouse, drag it to the new location, and then release the mouse button.
+
+{% include images-gallery.html imageCollection="move-marker" %}
+
+**Remove marker**
+
+Enable the "**Remove**" tool in the marker settings under the "**Edit marker**" section.
+
+To delete a marker, simply click on it, then click the trash bin icon in the menu at the bottom of the widget.
+
+{% include images-gallery.html imageCollection="remove-marker" %}
+
+**Use map markers clustering**
+
+Map clustering is a feature that automatically groups multiple markers located within the same visible area at a certain zoom level into a single cluster — a circular icon displaying the number of grouped items inside, instead of showing each marker individually.
+
+This greatly improves map readability, especially when visualizing a large number of markers.
+
+{% include images-gallery.html imageCollection="use-map-markers-clustering" %}
+
+### Polygon
+
+The polygon is a flat shape defined by a finite number of points. 
+It can be used to mark areas such as buildings, fields, service areas, visualize coverage areas or restricted regions, etc.
+
+To display an entity as a polygon, it must have coordinates provided as attributes or telemetry in the following format:
+
+```
+[[1Latitude,1Longitude],[2Latitude,2Longitude],...,[nLatitude,nLongitude]]
+```
+
+where
+
+ㅤ&#42; **n** - number of coordinates which polygon is described by.
+
+![image](/images/user-guide/widgets/maps/polygon-1-pe.png)
+
+#### Adding polygon
+
+To place the polygon on the map, follow these steps:
+
+- Enter widget edit mode and go to the "Overlays" section.
+- Switch to the "Polygons" tab and click "Add polygon".
+- Select the entity that will be represented as a polygon. This can be a device, entity alias, or function.
+- Define the key with the coordinates of the polygon. ThingsBoard will use the "perimeter" key by default to read the polygon coordinates from the entity&#39;s attributes. If you use a different key, update it accordingly.
+- Click "Apply" — the polygon will appear on the map based on the entity&#39;s data.
+
+{% include images-gallery.html imageCollection="add-polygon" %}
+
+#### Polygon configuration
+
+To configure a specific polygon, switch to the map widget&#39;s edit mode.
+Then, in the "Polygon" tab under the "Overlays" section, click the "gear" icon button next to the desired polygon to open its configuration panel.
+
+{% include images-gallery.html imageCollection="polygon-configuration" %}
+
 <br>
 
-Edit marker
+**Datasource**
 
-Check the boxes next to the desired tools (**Add** / **Move** / **Remove**) to enable these options for marker operations on the widget.
+Specify the polygon’s data source — it can be a device, an entity alias, or a function.
+
+If needed, apply a filter to narrow down the selection.
+
+{% include images-gallery.html imageCollection="polygon-configuration-datasource" %}
+
+<br>
+
+**Keys**
+
+Define the key that contains the polygon coordinates.
+By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here.
+
+Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.
+
+{% include images-gallery.html imageCollection="polygon-configuration-keys" %}
+
+**Polygon color**
+
+Customize the appearance of the polygon by adjusting its fill color and stroke color.
+
+{% include images-gallery.html imageCollection="polygon-color" showListImageTitles="true" %}
+
+**Label** 
+
+Configure the label displayed above the polygon.
+By default, the label shows the name of the entity linked to that polygon. You can manually edit the label text or use a label function to display dynamic information.
+
+For example, the label can show the current status of the polygon, providing users with a quick and clear understanding of its state.
+If desired, you can also hide the label entirely.
+
+```
+<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #0C5500; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
+```
+{:.copy-code}
+
+{% include images-gallery.html imageCollection="polygon-label" showListImageTitles="true" %}
+
+
+
+
+
+
+
+
+**Edit polygon**
+
+Check the boxes next to the desired tools (**Add** / **Edit** / **Move** / **Remove**) to enable these options for polygon operations on the widget.
 
 You can also choose the scope where the marker&#39;s location coordinates should be stored: either the **Server** or **Shared** attribute.
 
 Optionally, enable snapping to other vertices for more precise drawing.
 
-{% include images-gallery.html imageCollection="marker-configuration-appearance-edit-marker" %}
+{% include images-gallery.html imageCollection="marker-configuration-appearance-edit-polygon" %}
+
+**Add marker using the built-in tools of the map widget.**
+
+If an entity doesn&#39;t have coordinates set, you can manually **place marker using the map widget tools** — its coordinates will be automatically saved to the entity as attributes.
+In this example, I&#39;ll also use an entity alias, which refers to the asset "Gas station 1" as the data source.
+
+First, add the marker placement tool to the map:
+
+{% include images-gallery.html imageCollection="manually-add-marker" showListImageTitles="true" %}
+
+You can now place the marker on the map:
+
+{% include images-gallery.html imageCollection="place-marker" showListImageTitles="true" %}
+
+<br><br>
+
+
+**Option 2: Draw a polygon directly on the map. Its coordinates will be added to the specified entity as attributes.**
+
+**Step 1**: Add the polygon placement tool to the map:
+
+- Enter widget edit mode and go to the "Overlays" section.
+- Switch to the "Polygons" tab and click "Add polygon".
+- Select the entity that will be represented as a polygon. This can be a device, entity alias, or function.
+- Specify the key that will store the polygon's coordinates. You can keep the default key (e.g., perimeter) or enter a custom one.
+- Proceed to the polygon configuration screen.
+- Scroll down to the "Edit polygon" section and check the "Add" tool.
+- Choose where to store the polygon's coordinates:
+  - Server attribute
+  - Shared attribute
+- (Optionally) Enable snapping to other vertices for precision drawing.
+- Apply changes.
+
+{% include images-gallery.html imageCollection="manually-add-polygon" %}
+
+**Step 2**: Drawing the polygon on the map:
+
+- Locate the polygon drawing tools on the map (by default, they are in the top-left corner) and choose one of the two available options:
+  - **Draw rectangle** – creates a four-point rectangle.
+  - **Draw polygon** – allows a free-form shape with 3 or more points.
+- If you&#39;re using an alias with multiple entities as the data source, select the desired entity from the dropdown list;
+- Find the location on the map where you want to draw the polygon, then click to place the first point.
+- Adjust the polygon to the desired size, then click again to finish drawing. If you&#39;re using the "Drew polygon" tool, make sure to close the shape by connecting the first and last points.
+- Once finished, the polygon is added to the map and its coordinates are saved automatically to the entity.
+
+{% include images-gallery.html imageCollection="place-polygon" %}
+
+
 
 <br>
 
@@ -320,120 +488,6 @@ Use map markers clustering
 
 {% include images-gallery.html imageCollection="use-map-markers-clustering" %}
 
-### Polygon
-
-The polygon is a flat shape defined by a finite number of points. 
-It can be used to mark areas such as buildings, fields, service areas, visualize coverage areas or restricted regions, etc.
-
-Polygon coordinates should follow this format:
-
-```
-[[1Latitude,1Longitude],[2Latitude,2Longitude],...,[nLatitude,nLongitude]]
-```
-
-ㅤ&#42; **n** - number of coordinates which polygon is described by.
-
-![image](/images/user-guide/widgets/maps/polygon-1-pe.png)
-
-#### Adding polygon
-
-You can create a polygon in two ways:
-
-- Using predefined coordinates
-- Manually draw a polygon
-
-Let&#39;s go over each method separately:
-
-**Option 1: Display the polygon using the predefined coordinates from the entity.**
-
-- Enter widget edit mode, go to the "Overlays" section, and click "Add polygon".
-- Select the data source — this can be a device, an entity alias, or a function.
-- Define the key with the coordinates of the polygon. ThingsBoard will use the "perimeter" key by default to read the polygon coordinates from the entity&#39;s attributes. If you use a different key, update it accordingly.
-- Click "Apply" — the polygon will appear on the map based on the entity’s data.
-
-{% include images-gallery.html imageCollection="add-polygon" %}
-
-<br>
-
-**Option 2: Draw a polygon directly on the map. Its coordinates will be added to the specified entity as attributes.**
-
-**Step 1**: Add the polygon placement tool to the map:
-
-- Enter widget edit mode and go to the "Overlays" section.
-- Switch to the "Polygons" tab and click "Add polygon".
-- Select the entity that will be represented as a polygon. This can be a device, entity alias, or function.
-- Specify the key that will store the polygon's coordinates. You can keep the default key (e.g., perimeter) or enter a custom one.
-- Proceed to the polygon configuration screen.
-- Scroll down to the "Edit polygon" section and check the "Add" tool.
-- Choose where to store the polygon's coordinates:
-  - Server attribute 
-  - Shared attribute
-- (Optionally) Enable snapping to other vertices for precision drawing.
-- Apply changes.
-
-{% include images-gallery.html imageCollection="manually-add-polygon" %}
-
-**Step 2**: Drawing the polygon on the map:
-
-- Locate the polygon drawing tools on the map (by default, they are in the top-left corner) and choose one of the two available options:
-  - **Draw rectangle** – creates a four-point rectangle.
-  - **Draw polygon** – allows a free-form shape with 3 or more points.
-- If you&#39;re using an alias with multiple entities as the data source, select the desired entity from the dropdown list;
-- Find the location on the map where you want to draw the polygon, then click to place the first point.
-- Adjust the polygon to the desired size, then click again to finish drawing. If you&#39;re using the "Drew polygon" tool, make sure to close the shape by connecting the first and last points.
-- Once finished, the polygon is added to the map and its coordinates are saved automatically to the entity.
-
-{% include images-gallery.html imageCollection="place-polygon" %}
-
-#### Polygon configuration
-
-To access the settings of a specific polygon, go to the "Polygons" tab in the “Overlays” section, then click the "gear" icon next to the polygon you want to configure.
-
-{% include images-gallery.html imageCollection="polygon-configuration" %}
-
-<br>
-
-**Datasource**
-
-Specify the polygon’s data source — it can be a device, an entity alias, or a function.
-
-If needed, apply a filter to narrow down the selection.
-
-{% include images-gallery.html imageCollection="polygon-configuration-datasource" %}
-
-<br>
-
-**Keys**
-
-Define the key that contains the polygon coordinates.
-By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here.
-
-Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.
-
-{% include images-gallery.html imageCollection="polygon-configuration-keys" %}
-
-<br>
-
-**Polygon color**
-
-{% include images-gallery.html imageCollection="polygon-color" showListImageTitles="true" %}
-
-<br>
-
-**Label** 
-
-Configure the label displayed above the polygon.
-By default, the label shows the name of the entity linked to that polygon. You can manually edit the label text or use a label function to display dynamic information.
-
-For example, the label can show the current status of the polygon, providing users with a quick and clear understanding of its state.
-If desired, you can also hide the label entirely.
-
-```
-<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #0C5500; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
-```
-{:.copy-code}
-
-{% include images-gallery.html imageCollection="polygon-label" showListImageTitles="true" %}
 
 ### Circle
 
@@ -472,7 +526,8 @@ The following settings are available for the circle:
 
 #### Circle configuration
 
-To access the settings of a specific circle, go to the "Circle" tab in the "Overlays" section, then click the "gear" icon next to the circle you want to configure.
+To configure a specific polygon, switch to the map widget&#39;s edit mode.
+Then, in the "Circle" tab under the "Overlays" section, click the "gear" icon button next to the desired circle to open its configuration panel.
 
 {% include images-gallery.html imageCollection="circle-configuration" showListImageTitles="true" %}
 
@@ -485,7 +540,7 @@ If needed, apply a filter to narrow down the selection.
 
 **Keys**
 
-Define the key that contains the polygon coordinates. By default, ThingsBoard uses “perimeter” as the polygon key. If your entity uses a different key name, make sure to update it here.
+Define the key that contains the polygon coordinates. By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here.
 
 Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.
 
@@ -517,40 +572,35 @@ You can enhance your map widget by adding custom action buttons.
 These buttons allow users to perform interactive actions such as: navigating to another dashboard/dashboard state, Opening an external URL, triggering a custom action and placing new map items directly on the map
 Learn more about available action types and configurations in the [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/){:target="_blank"} documentation.
 
-Example: "Add building" button
+Let&#39;s consider an example of adding an action button to a map that will allow users to place new objects on the map.
 
-In this example, we'll explore the new action type: "Place map item", which allows users to create new entities of a specified type directly from the map interface.
+In the "**Map action buttons**" section, click "**Add button**".
+Specify a name for the new button — for our example, "Add Building" — and set its icon and color.
+Now, click the "**Action**" field to define the action instead of the default "Do nothing" — for this example, we&#39;ll choose "**Place map item**".
+Select the map item type to be placed — in this case, it&#39;s "Marker".
+The custom action function field contains a default function that displays a dialog for creating a device or an asset — exactly what we need.
+Save the changes.
 
-Let's take an example of creating an "Add building" action button that allows users to place new asset entities (of type building) as markers on the map.
+{% include images-gallery.html imageCollection="map-action-buttons-1" %}
 
-Step 1: Configure the map’s data source to display newly added entities.
+To ensure that newly created entities are immediately displayed on the map, you need to properly configure the data source.
 
-Наприклад, ви можете додати на карту кнопку "Add building", щоб створювати нові ентіті (building) з ентіті типом "Ассет".
-Давайте розглянемо як це зробити.
+In the Overlays section, under the "Marker" tab, create a new entity alias as the data source. Name it "buildings".
+Since I&#39;ll be creating assets with the asset type "buildings", set the filter type to "Asset type" and specify the type as "buildings".
+Save all changes.
 
+{% include images-gallery.html imageCollection="map-action-buttons-2" %}
 
-Перейдіть віджет едіт моде та в секції "Overlays" вкажіть новий entiti alias як source. Назвіть його "buildings", filter type вкажіть "buildings" asset type.
-Scroll down to **Map action buttons** and click "Add button".
-Specify button label, choose icon and its color.
-А тепер клікніть на полі "Action", щоб задати дію замість параметра "Do nothing".
-Оберіть в спадному меню опцію "Place map item".
-Оберіть "Map item type". В нашому випадку це "Marker".
-В полі Custom action function за замовчуванням вказана функція, яка display dialog to create a device or an asset.
-Вона нам підходить.
-Збережіть зміни.
+Now, an action button has appeared at the top of the map. Click it, find the location where you want to place the entity, and click on the map.
+In the dialog that appears, be sure to enter a name for the new entity and select its type — Asset. Other fields are optional. Click "Create".
 
-В верхній частині карти зявилася екшн кнопка, яку ми щойно додавали. Натисніть її, знайдіть місце на карті, де ви хочете розмістити ваш ентіті і клікніть по цьому місці.
-В діалоговому вікні, що зявився обовязково введіть назву нового ентіті, його тип. Інші поля опціональні. Натисніть "Create".
-Маркер відобразився на карті.
+The new marker is now added to the map.
 
-Перейдіть на "Assets" page. Тут ви знайдете ваш новостворений ассет "Building A".
+{% include images-gallery.html imageCollection="map-action-buttons-3" %}
 
+Next, go to the "Assets" page — here you&#39;ll find your newly created asset, "Building A".
 
-
-
-
-
-
+{% include images-gallery.html imageCollection="map-action-buttons-4" %}
 
 ### Common map  swttings
 

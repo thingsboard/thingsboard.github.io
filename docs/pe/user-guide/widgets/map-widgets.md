@@ -8,32 +8,21 @@ description: Map widgets
 adding-map-widget:
     0:
         image: /images/user-guide/widgets/maps/adding-map-widget-1-pe.png
-        title: 'Click the "Groups" icon on the widget.'
+        title: 'In dashboard edit mode, click the "Add widget" button at the top of the screen, or click the large "Add new widget" icon in the center of the screen (if this is your first widget on the dashboard).'
     1:
         image: /images/user-guide/widgets/maps/adding-map-widget-2-pe.png
-        title: 'Switch between map types.'
+        title: 'Find the "Maps" widget bundle and click on it. This category includes all available map widget types.'
     2:
         image: /images/user-guide/widgets/maps/adding-map-widget-3-pe.png
-        title: ''
+        title: 'Select the map widget that best fits your use case.'
     3:
         image: /images/user-guide/widgets/maps/adding-map-widget-4-pe.png
-        title: ''
+        title: 'Configure the widget to match your data and visualization requirements. You can adjust data sources, appearance, map provider settings, and more. Click the "Add" in the bottom-right corner of the widget configuration window to place it on your dashboard.'
 
 map-type:
     0:
         image: /images/user-guide/widgets/maps/map-type-1-pe.png
-        title: ''
-
-changing-map-type:
-    0:
-        image: /images/user-guide/widgets/maps/changing-map-type-1-pe.png
-        title: 'Click the "Groups" icon on the widget.'
-    1:
-        image: /images/user-guide/widgets/maps/changing-map-type-2-pe.png
-        title: 'Switch between map types.'
-    2:
-        image: /images/user-guide/widgets/maps/changing-map-type-3-pe.png
-        title: ''
+        title: 'The first step in configuring the map widget is selecting the map type. ThingsBoard offers several map widgets, including Image Map, which allows you to use a custom background image as the map. You can also configure map layers, enabling flexible switching between different map styles — such as satellite, hybrid, or custom layers — directly within the widget, with just a few clicks.'
 
 map-type-adding-layer-1:
     0:
@@ -43,70 +32,43 @@ map-type-adding-layer-1:
         image: /images/user-guide/widgets/maps/map-type-adding-layer-2-pe.png
         title: 'Enter a label for the layer. Select a provider from the available options, or add a custom provider and specify its layer.'
 
+changing-map-type:
+    0:
+        image: /images/user-guide/widgets/maps/changing-map-type-1-pe.png
+        title: 'Click the "Layer" icon button on the widget.'
+    1:
+        image: /images/user-guide/widgets/maps/changing-map-type-2-pe.png
+        title: 'You will see the available map layers. Switch between them.'
+    2:
+        image: /images/user-guide/widgets/maps/changing-map-type-3-pe.png
+        title: 'Enter a label for the layer — this name will be shown in the widget&#39;s layer switcher. Choose the map provider by selecting from the available options (OpenStreetMap, Google, HERE, Tencent) or by specifying a custom tile server. Apply changes.'
+
 map-type-reference-layer-1:
     0:
         image: /images/user-guide/widgets/maps/map-type-reference-layer-1-pe.png
-        title: ''
+        title: 'Go to the "Layer settings" by clicking the "gear" icon.'
     1:
         image: /images/user-guide/widgets/maps/map-type-reference-layer-2-pe.png
-        title: ''
+        title: 'From the dropdown menu, select the layer type, or leave it as "No layer" if you don&#39;t want to use one. Apply changes.'
     2:
         image: /images/user-guide/widgets/maps/map-type-reference-layer-3-pe.png
-        title: ''
-    3:
-        image: /images/user-guide/widgets/maps/map-type-reference-layer-4-pe.png
         title: ''
 
 add-marker:
     0:
         image: /images/user-guide/widgets/maps/add-marker-1-pe.png
-        title: 'Switch to the widget edit mode and click "Add marker" in the "Overlays" section.'
+        title: 'Enter widget edit mode and go to the "Overlays" section. Make sure you&#39;re on the "Marker" tab and click "Add marker".'
     1:
         image: /images/user-guide/widgets/maps/add-marker-2-pe.png
-        title: 'Select the data source — this can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to the asset "Gas Station 1" as the data source. Define the coordinate keys. ThingsBoard automatically uses latitude and longitude as default coordinate keys. If your entity uses different key names, update them here. Apply the changes.'
+        title: 'Select the data source - it can be a device, an entity alias, or a function. Define the coordinate keys. By default, ThingsBoard uses *latitude* and *longitude* attributes as the coordinate keys for the marker. If your entity uses different key names, update them here. Apply the changes.'
     2:
         image: /images/user-guide/widgets/maps/add-marker-3-pe.png
-        title: 'he marker will appear on the map based on the specified coordinates.'
-
-manually-add-marker:
-    0:
-        image: /images/user-guide/widgets/maps/manually-add-marker-1-pe.png
-        title: 'Specify the marker&#39;s data source and open its configuration.'
-    1:
-        image: /images/user-guide/widgets/maps/manually-add-marker-2-pe.png
-        title: 'Scroll down to the "Edit marker" section and add the "Add" tool to the map. Select the attribute scope where the coordinates should be stored: "Server" or "Shared". Optionally, enable snapping to other vertices for precision drawing. Make sure to save your changes.'
-
-place-marker:
-    0:
-        image: /images/user-guide/widgets/maps/place-marker-1-pe.png
-        title: 'On the map widget, click the "Place marker" icon. If you&#39;re using an alias with multiple entities as the datasource, you&#39;ll need to select the desired entity from the dropdown menu;'
-    1:
-        image: /images/user-guide/widgets/maps/place-marker-2-pe.png
-        title: 'Find the desired location on the map and click to place the marker;'
-    2:
-        image: /images/user-guide/widgets/maps/place-marker-3-pe.png
-        title: 'The marker will be added, and its coordinates will be automatically saved as entity attributes.'
-
-move-marker:
-    0:
-        image: /images/user-guide/widgets/maps/move-marker-1-pe.png
-        title: 'To enable moving the marker on the map, activate the "Move" tool in the marker settings under the "Edit marker" section.'
-    1:
-        image: /images/user-guide/widgets/maps/move-marker-2-pe.png
-        title: 'Click on the marker, hold the mouse button, and drag it to a new location.'
-
-remove-marker:
-    0:
-        image: /images/user-guide/widgets/maps/remove-marker-1-pe.png
-        title: 'To delete the marker, activate the "Remove" tool in the marker settings under the "Edit marker" section.'
-    1:
-        image: /images/user-guide/widgets/maps/remove-marker-2-pe.png
-        title: 'On the map, click on the marker and select the "trash bin" icon from the menu at the bottom of the widget.'
+        title: 'The marker will appear on the map based on the specified coordinates.'
 
 marker-configuration:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-1-pe.png
-        title: 'To access the configuration of a specific marker, click the "gear" icon in the same row.'
+        title: 'To configure a specific marker, switch to the map widget&#39;s edit mode and, in the Overlays section, click the gear icon next to the desired marker to open its configuration panel.'
 
 marker-configuration-datasource:
     0:
@@ -154,39 +116,41 @@ marker-configuration-appearance-tooltip:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-2-pe.png
         title: 'Click on the marker to display a tooltip.'
 
-marker-configuration-appearance-tooltip-action:
+marker-configuration-appearance-tooltip-action-1:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-1-pe.png
-        title: 'Click the "Add tag action" icon;'
+        title: 'Click the "Add tag action" icon button.'
     1:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-2-pe.png
-        title: 'Configure the action and click "Add";'
+        title: 'Configure the action and click "Add".'
     2:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-3-pe.png
-        title: 'Now, you need to add the tag action link to the tooltip function. Expand the tooltip function window to fullscreen for easier editing;'
+        title: 'Now, you need to add the tag action link to the tooltip function. Expand the tooltip function window to fullscreen for easier editing.'
     3:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-4-pe.png
-        title: 'Edit the function by adding a reference to the tag action;'
+        title: 'Edit the function by adding a link to the tag action. Be sure to specify the tag action name correctly.'
     4:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-5-pe.png
-        title: 'Apply the changes;'
-    5:
+        title: 'Apply all changes.'
+
+marker-configuration-appearance-tooltip-action-2:
+    0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-6-pe.png
-        title: 'Click the marker icon. In the tooltip, you&#39;ll see the added tag action — click on it;'
-    6:
+        title: 'Click on the marker. In the tooltip that appears, you&#39;ll see a tag — click on it.'
+    1:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-7-pe.png
-        title: 'The action you specified in the tag action settings will be executed.'
+        title: 'The action you defined in the tag&#39;s settings will be executed.'
 
 marker-configuration-appearance-behavior:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-behavior-1-pe.png
-        title: 'Go to the "Behavior" section and click the pencil icon to start configuring it;'
+        title: 'Go to the "Behavior" section and click the "On click" action field to define the action instead of the default "Do nothing".'
     1:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-behavior-2-pe.png
-        title: 'Set up the desired action and apply the changes;'
+        title: 'Set up the desired action and apply the changes.'
     2:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-behavior-3-pe.png
-        title: 'Click on the marker icon;'
+        title: 'Click on the marker.'
     3:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-behavior-4-pe.png
         title: 'The action you specified in the tag action settings will be triggered.'
@@ -197,37 +161,70 @@ marker-configuration-appearance-groups:
         title: 'In the "Groups" section, enter a name for the group to which you want to add this marker;'
     1:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-2-pe.png
-        title: 'A group control icon will appear on the widget. Click it;'
+        title: 'A "Groups" icon button will appear on the widget. Click on it;'
     2:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-3-pe.png
         title: 'Uncheck the checkbox next to the newly created group;'
     3:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-4-pe.png
         title: 'The markers that belong to this group have been hidden.'
-  
-marker-configuration-appearance-edit-marker:
+    4:
+        image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-5-pe.png
+        title: ''
+
+manually-add-marker:
     0:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-edit-marker-1-pe.png
-        title: 'Check the boxes next to the desired tools (Add / Move / Remove) to enable these options for marker operations on the widget. You can also choose the scope where the marker&#39;s location coordinates should be stored: either the "Server" or "Shared" attribute. Optionally, enable snapping to other vertices for more precise drawing.'
+        image: /images/user-guide/widgets/maps/manually-add-marker-1-pe.png
+        title: 'In the "Edit marker" section, check the "Add" tool. Next, select the attribute scope where the coordinates will be stored: "Server" or "Shared". Optionally, enable snapping to other vertices for precision drawing. Then, save the changes.'
+
+place-marker:
+    0:
+        image: /images/user-guide/widgets/maps/place-marker-1-pe.png
+        title: 'On the map widget, locate and click the "Place marker" icon button. If you&#39;re using an alias with multiple entities as the data source, you&#39;ll need to select the appropriate entity from the dropdown menu.'
+    1:
+        image: /images/user-guide/widgets/maps/place-marker-2-pe.png
+        title: 'Find the location on the map where you want to place the marker and click on it.'
+    2:
+        image: /images/user-guide/widgets/maps/place-marker-3-pe.png
+        title: 'The marker will be added, and its coordinates will be automatically saved to the entity as attributes.'
+
+move-marker:
+    0:
+        image: /images/user-guide/widgets/maps/move-marker-1-pe.png
+        title: 'Enable the ability to move the marker on the map by checking the "Move" tool in the marker settings under the "Edit marker" section.'
+    1:
+        image: /images/user-guide/widgets/maps/move-marker-2-pe.png
+        title: 'To move the marker, click and hold the marker with your mouse, drag it to the new location, and then release the mouse button.'
+
+remove-marker:
+    0:
+        image: /images/user-guide/widgets/maps/remove-marker-1-pe.png
+        title: 'Enable the "Remove" tool in the marker settings under the "Edit marker" section.'
+    1:
+        image: /images/user-guide/widgets/maps/remove-marker-2-pe.png
+        title: 'To delete a marker, simply click on it, then click the trash bin icon in the menu at the bottom of the widget.'
 
 use-map-markers-clustering:
     0:
         image: /images/user-guide/widgets/maps/use-map-markers-clustering-1-pe.png
-        title: ''
+        title: 'To enable clustering for map markers, check the corresponding option and configure the necessary settings.'
     1:
         image: /images/user-guide/widgets/maps/use-map-markers-clustering-2-pe.png
-        title: ''
+        title: 'Change the zoom level.'
+    2:
+        image: /images/user-guide/widgets/maps/use-map-markers-clustering-3-pe.png
+        title: 'Your markers with clustering enabled will group into a circular icon that shows the number of clustered items inside.'
 
 add-polygon:
     0:
         image: /images/user-guide/widgets/maps/add-polygon-1-pe.png
-        title: 'Switch to edit mode on the widget and click "Add polygon" in the "Overlays" section.'
+        title: 'Enter widget edit mode and go to the "Overlays" section. Switch to the "Polygons" tab and click "Add polygon".'
     1:
         image: /images/user-guide/widgets/maps/add-polygon-2-pe.png
-        title: 'Specify the data source — this can be a device, an entity alias, or a function. ThingsBoard automatically uses "perimeter" as the default coordinate key. If your setup uses a custom key name, update it here accordingly. Apply changes.'
+        title: 'Select the entity that will be represented as a polygon. This can be a device, entity alias, or function. Define the key with the coordinates of the polygon. ThingsBoard will use the "perimeter" key by default to read the polygon coordinates from the entity&#39;s attributes. If you use a different key, update it accordingly. Click "Apply".'
     2:
         image: /images/user-guide/widgets/maps/add-polygon-3-pe.png
-        title: 'The polygon has been successfully added to the map.'
+        title: 'The polygon will appear on the map based on the entity&#39;s data.'
 
 manually-add-polygon:
     0:
@@ -257,7 +254,7 @@ place-polygon:
 polygon-configuration:
     0:
         image: /images/user-guide/widgets/maps/polygon-configuration-1-pe.png
-        title: 'To access the settings of a specific polygon, go to the "Polygons" tab in the “Overlays” section, then click the "gear" icon next to the polygon you want to configure.'
+        title: 'To configure a specific polygon, switch to the map widget&#39;s edit mode. Then, in the "Polygon" tab under the "Overlays" section, click the "gear" icon button next to the desired polygon to open its configuration panel.'
 
 polygon-configuration-datasource:
     0:
@@ -313,7 +310,7 @@ place-circle:
 circle-configuration:
     0:
         image: /images/user-guide/widgets/maps/circle-configuration-1-pe.png
-        title: 'To access the settings of a specific polygon, go to the "Polygons" tab in the “Overlays” section, then click the "gear" icon next to the polygon you want to configure.'
+        title: 'To configure a specific polygon, switch to the map widget&#39;s edit mode. Then, in the "Circle" tab under the "Overlays" section, click the "gear" icon button next to the desired circle to open its configuration panel.'
     
 circle-configuration-datasource:
     0:
@@ -337,9 +334,46 @@ circle-color:
         title: ''
 
 
+map-action-buttons-1:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/maps/map-action-buttons-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/widgets/maps/map-action-buttons-3-pe.png
+        title: ''
+    3:
+        image: /images/user-guide/widgets/maps/map-action-buttons-4-pe.png
+        title: ''
+    4:
+        image: /images/user-guide/widgets/maps/map-action-buttons-5-pe.png
+        title: ''
 
+map-action-buttons-2:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-6-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/maps/map-action-buttons-7-pe.png
+        title: ''
 
+map-action-buttons-3:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-8-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/maps/map-action-buttons-9-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/widgets/maps/map-action-buttons-10-pe.png
+        title: ''
 
+map-action-buttons-4:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-11-pe.png
+        title: ''
 
 
 ---

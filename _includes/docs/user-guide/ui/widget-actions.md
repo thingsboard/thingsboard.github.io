@@ -20,11 +20,11 @@ To fully understand how to use Actions, you have to add a State to your dashboar
 
 ## Add action
 
-Let's add your first action. In this step, we will outline only the general steps without going into the details of each setting. Examples of using each  [type of action](#action-types) and [action source](#action-sources) will be covered later in the guide for better understanding.
+Let&#39;s add your first action. In this step, we will outline only the general steps without going into the details of each setting. Examples of using each  [type of action](#action-types) and [action source](#action-sources) will be covered later in the guide for better understanding.
 
 Most widgets offer two configuration options: *basic* and *advanced*. Accordingly, the process of adding actions differs slightly between these modes. Let's explore both:
 
-If you're using the *basic* widget configuration:
+If you&#39;re using the *basic* widget configuration:
 
 - Enter the editing mode of the widget to which you want to add an action, scroll down and find the "Actions" menu item;
 - Click the "Add action" button (once you have created one or more actions, the "Add actions" button will change to the `+` icon).
@@ -36,10 +36,10 @@ If you're using the *basic* widget configuration:
 
 {% include images-gallery.html imageCollection="add-new-action-1" %}
 
-If you're using the *advanced* widget settings:
+If you&#39;re using the *advanced* widget settings:
 
 - Enter the widget editing mode, and navigate to the "Actions" tab. Currently, it is empty, but later all created actions will be displayed here;
-- Click the 'plus' icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
+- Click the "plus" icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
 - Now, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
 - Click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
@@ -60,7 +60,10 @@ There are seven action types that are applicable to all widgets:
 - **Mobile action** - allows the use of various mobile device functions such as taking photos, scanning QR codes, getting device location, making phone calls and so on;
 - **Open URL** - allows you to go to any resource represented by a URL.
 
-Let's consider each of these types of actions separately.
+There is also a special action type available exclusively for [Map widgets](/docs/{{docsPrefix}}user-guide/widgets/map-widgets/){:target="_blank"}:
+- **Place map item** — use it to add your own buttons with custom actions.
+
+Let&#39;s consider each of these types of actions separately.
 
 #### Navigate to new dashboard state
 
