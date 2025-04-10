@@ -82,7 +82,7 @@ Once Launch is complete, you can navigate to EC2 console to find out the Public 
 
 ### Step 3.7. Obtain your Public IP and EC2 Instance ID
 
-In AWS EC2 console you need to wait while instance state will be changes to **running** and all Status checks will be finished.
+In AWS EC2 console you need to wait until the instance state changes to **running** and all Status checks will be finished.
 
 ![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/tb-pe-mk-ec2-console.png)
 
@@ -104,13 +104,13 @@ ThingsBoard Licenses are managed by [ThingsBoard License Portal](https://license
 Please register on [ThingsBoard License Portal](https://license.thingsboard.io/signup) to get your license. 
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
  
-Please save your license secret to a safe place. We will use them later in this guide.
+Please save your license secret to a safe place. We will use it later in this guide.
  
 ## Step 5. Configure your license secret
 
 Once you get the license secret, you should put it to the thingsboard configuration file. 
 
-### Step 5.1. Connect to your Thingsboard Instance over SSH
+### Step 5.1. Connect to your ThingsBoard Instance over SSH
 
 Please use the official guides: 
 
@@ -119,7 +119,7 @@ Please use the official guides:
   
 Note: You will need to use instance Public DNS name (see [Step 3.7](/docs/user-guide/install/pe/aws-marketplace/#step-37-obtain-your-public-ip-and-ec2-instance-id)) and the key file (see [Step 3.4](/docs/user-guide/install/pe/aws-marketplace/#step-34-configure-key-pair-settings))
 
-### Step 5.2. Put License Secret to thingsboard configuration file
+### Step 5.2. Put your license secret to ThingsBoard configuration file
 
 Open the file for editing using the following command:
 
@@ -157,7 +157,7 @@ sudo service thingsboard start
 Please allow up to 120 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-## Step 7. Connect to Thingsboard UI
+## Step 7. Connect to ThingsBoard UI
 
 Now you can open this link in your browser:
 
@@ -189,7 +189,7 @@ To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 
 **Configure HAProxy to enable HTTPS**
 
  * Step 1. Assign valid domain name system (DNS) record to your instance external IP address.
- * Step 2. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.
+ * Step 2. Connect to your instance using SSH or PuTTY (see [Step 5.1](/docs/user-guide/install/pe/aws-marketplace/#step-51-connect-to-your-thingsboard-instance-over-ssh)).
  * Step 3. Execute the following commands:
  ```bash
  sudo certbot-certonly --domain smth.yourcompany.com --email support@yourcompany.com
@@ -203,7 +203,7 @@ To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 
 
 **How can I enable free trial?**
 
-Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> for that. 
+Customers may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> for that. 
 30 days of seamless experience and the newest features, except white-labeling, from the latest source code!
 <br><br>
 
@@ -261,8 +261,7 @@ This email notification will contain a link to <a href="/docs/user-guide/install
 
 **How do I backup my database?**
 
-You can follow <a href="/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu">backup instructions</a> avgit sailable with upgrade instructions.
-
+You can follow <a href="/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu">backup instructions</a> available with upgrade instructions.
 For additional guidance, you can also refer to the official <a href="https://www.postgresql.org/docs/16/backup.html">PostgreSQL backup documentation</a>.
 
 <br><br>
