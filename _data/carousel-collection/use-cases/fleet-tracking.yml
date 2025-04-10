@@ -1,0 +1,9 @@
+0:
+  src: "/images/usecases/fleet-tracking/ft1.png"
+  alt: "Bus locations example"
+1:
+  src: "/images/usecases/fleet-tracking/ft2.png"
+  alt: "Route history example"
+2:
+  src: "/images/usecases/fleet-tracking/ft3.webp"
+  alt: "Route area example"

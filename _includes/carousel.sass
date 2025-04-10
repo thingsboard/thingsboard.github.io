@@ -298,7 +298,7 @@
   &:before
     content: ""
     position: absolute
-    top: calc((var(--maxTitleHeight) * var(--title-hover-scale)) + 50px)
+    top: 40%
     left: 50%
     transform: translate(-50%, -50%)
     width: 90%
@@ -312,7 +312,7 @@
     button.owl-prev, button.owl-next
       margin: 0
       transform: translateY(-50%)
-      top: calc((var(--maxTitleHeight) * var(--title-hover-scale)) + 50px)
+      top: 40%
     button.owl-prev
       transform: translateY(-50%) scale(-1, 1)
     .disabled
@@ -330,18 +330,21 @@
       text-align: center
       cursor: pointer
       &:hover
-        .timeline-title.titleHoverEnabled
+        .timeline-title
           text-shadow: 4px 4px 4px rgba(48, 86, 128, 0.15)
           transform-origin: bottom
-          transform: scale(var(--title-hover-scale))
+          transform: scale(1.6)
       &:hover
         .timeline-circle
           background: #E6EAEF
       .timeline-title
         display: flex
+        font-size: 24px
+        color: #305680
+        font-weight: 500
+        line-height: 40px
         justify-content: center
         align-items: end
-        height: calc(var(--maxTitleHeight) * var(--title-hover-scale))
         transition: ease-in-out 0.3s
       .timeline-circle
         display: inline-block
@@ -364,6 +367,9 @@
     .timeline-text
       align-self: center
       li
+        color: #000000c2
+        line-height: 30px
+        font-size: 18px
         list-style-type: disc
         opacity: 0
         transform: translateY(20px)
@@ -378,9 +384,9 @@
         opacity: 1
         transform: translateY(0)
     .timeline-label
-      .timeline-title.titleHoverEnabled
+      .timeline-title
         text-shadow: 4px 4px 4px rgba(48, 86, 128, 0.15)
-        transform: scale(var(--title-hover-scale))
+        transform: scale(1.6)
         transform-origin: bottom
 
 .owl-carousel.owl-theme.usecase-carousel.cardMode
@@ -487,50 +493,7 @@
   font-size: 36px
   text-align: center
 
-@media screen and (min-width: 1280px)
-  .owl-carousel.owl-theme.usecase-carousel
-    .carousel-text
-      h2
-        font-size: var(--titleSize)
-      p
-        font-size: var(--descriptionSize)
-      a
-        font-size: var(--linkSize)
-    .timeline-item
-      .timeline-title
-        font-size: var(--titleSize)
-      .timeline-text
-        font-size: var(--descriptionSize)
-
-@media screen and (max-width: 1279px)
-  .owl-carousel.owl-theme.usecase-carousel
-    .carousel-text
-      h2
-        font-size: var(--titleSizeLower1280)
-      p
-        font-size: var(--descriptionSizeLower1280)
-      a
-        font-size: var(--linkSizeLower1280)
-    .timeline-item
-      .timeline-title
-        font-size: var(--titleSizeLower1280)
-      .timeline-text
-        font-size: var(--descriptionSizeLower1280)
-
 @media screen and (max-width: 959px)
-  .owl-carousel.owl-theme.usecase-carousel
-    .carousel-text,.timeline-item
-      h2
-        font-size: var(--titleSizeLower960)
-      p
-        font-size: var(--descriptionSizeLower960)
-      a
-        font-size: var(--linkSizeLower960)
-    .timeline-item
-      .timeline-title
-        font-size: var(--titleSizeLower960)
-      .timeline-text
-        font-size: var(--descriptionSizeLower960)
   .owl-carousel.owl-theme.usecase-carousel.timeline
     &:before
       content: ""
@@ -540,19 +503,6 @@
       display: block
 
 @media screen and (max-width: 599px)
-  .owl-carousel.owl-theme.usecase-carousel
-    .carousel-text,.timeline-item
-      h2
-        font-size: var(--titleSizeLower600)
-      p
-        font-size: var(--descriptionSizeLower600)
-      a
-        font-size: var(--linkSizeLower600)
-    .timeline-item
-      .timeline-title
-        font-size: var(--titleSizeLower600)
-      .timeline-text
-        font-size: var(--descriptionSizeLower600)
   .owl-carousel.owl-theme.usecase-carousel.timeline
     &:before
       content: ""
@@ -560,3 +510,27 @@
   .owl-carousel.owl-theme.usecase-carousel.cardMode
     .card
       padding: 24px
+
+.owl-carousel.owl-theme.dev-serv
+  .development-title
+    font-size: 28px
+    color: #212529
+    line-height: 40px
+    font-weight: 500
+  .development-description
+    font-size: 16px
+    color: #000000DE
+    line-height: 27px
+    font-weight: 400
+
+.owl-carousel.owl-theme
+  .company-values-title
+    font-size: 96px
+    font-weight: 500
+    line-height: 125%
+    color: #FFF
+  .company-values-description
+    font-size: 36px
+    font-weight: 400
+    line-height: 140%
+    color: #FFF

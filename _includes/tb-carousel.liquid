@@ -1,0 +1,26 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign settings = include.settings | jsonify %}
+
+{% if site.data.carousel-collection[include.collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[include.collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[include.collectionMap] %}
+{% endif %}
+
+{% assign defaultSettings = '{"items":1,"stagePadding":0,"margin":0,"nav":false,"dots":true,"autoplay":true}' %}
+
+{% if settings == 'null' or settings == '""' %}
+    {% assign settings = defaultSettings %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme transitionAnimationEnabled nonActiveItemsVisibilityTrue square dotButtonInCarouselContainerEnabled thingsboardStyledBackgroundEnabled darkenedImageEnabled" data-settings='{{ settings }}'>
+    {% for carouselItem in carouselCollection %}
+        <div class="carousel-item-default carousel-item-image-background" style="width: 100%; height: {{ carouselItem[1].height }}; background-image: url({{ carouselItem[1].src }})">
+            <div class="carousel-text">
+                <h2 class="company-values-title">{{ carouselItem[1].title }}</h2>
+                <p class="company-values-description">{{ carouselItem[1].description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

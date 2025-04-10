@@ -1,0 +1,12 @@
+0:
+  src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png"
+  alt: "Fuel level monitoring dashboard example"
+1:
+  src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png"
+  alt: "Alarm rules settings example"
+2:
+  src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png"
+  alt: "Specific tank fuel level monitoring dashboard example"
+3:
+  src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png"
+  alt: "Edit sensor settings example"

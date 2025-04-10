@@ -37,7 +37,7 @@ Smart Office [template](https://thingsboard.io/docs/paas/solution-templates/smar
 With this layout you get an interactive dashboard with the ability to control HVAC system, 
 and have a high-level report of key metrics necessary for effective and proactive office management.
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-office' %}
+{% include use-cases-carousel.liquid collectionMap = 'smart-office' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartOffice_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>

@@ -37,7 +37,7 @@ Save up to 90% of development time for your waste management solution by utilizi
 - remote control and OTA updates for your smart sensors and other devices;
 - customizable mobile applications with minimum coding efforts.
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'waste-management' %}
+{% include use-cases-carousel.liquid collectionMap = 'waste-management' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_WasteManagement_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>

@@ -1,0 +1,33 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign settings = include.settings | jsonify %}
+
+{% if site.data.carousel-collection[include.collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[include.collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[include.collectionMap] %}
+{% endif %}
+
+{% assign defaultSettings = '{"items":5,"stagePadding":0,"loop":false,"margin":0,"nav":true,"dots":false,"mouseDrag":false,"autoplay":false}' %}
+
+{% if settings == 'null' or settings == '""' %}
+    {% assign settings = defaultSettings %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme timeline transitionAnimationEnabled smallArrow" data-settings='{{ settings }}'>
+    {% for key in carouselCollection %}
+        <div class="timeline-item">
+            <div class="timeline-label">
+                <span class="timeline-title">{{ key[0] }}</span>
+                <span class="timeline-circle">
+                    <i class="fas fa-chevron-down fa-lg" style="color: #305680"></i>
+                </span>
+            </div>
+            <ul class="timeline-text">
+                {% for data in key[1] %}
+                    <li>{{ data[1] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+

@@ -28,7 +28,7 @@ notitle: "true"
 </section>
 
 <section class="health-carousel">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'health-care' %}
+    {% include use-cases-carousel.liquid collectionMap = 'health-care' %}
 </section> 
 
 <section class="health-solution-structure">

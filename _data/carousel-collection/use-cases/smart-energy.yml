@@ -1,0 +1,9 @@
+0:
+  src: "/images/usecases/smart-energy/se1.png"
+  alt: "Smart energy monitoring light theme example with the pie chart"
+1:
+  src: "/images/usecases/smart-energy/se2.png"
+  alt: "Smart energy monitoring dark theme example without the pie chart"
+2:
+  src: "/images/usecases/smart-energy/se3.png"
+  alt: "Smart energy monitoring dark theme example"

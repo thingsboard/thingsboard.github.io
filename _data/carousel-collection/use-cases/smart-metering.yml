@@ -1,0 +1,12 @@
+0:
+  src: "/images/usecases/smart-metering/sm1.webp"
+  alt: "Smart metering dashboard with a map"
+1:
+  src: "/images/usecases/smart-metering/sm2.png"
+  alt: "Smart metering dashboard with a location"
+2:
+  src: "/images/usecases/smart-metering/sm3.png"
+  alt: "Smart metering dashboard with a building plan"
+3:
+  src: "/images/usecases/smart-metering/sm4.png"
+  alt: "Smart metering dashbord with a thermostat controller"

@@ -35,7 +35,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 - customizable mobile applications with minimum coding efforts.
 
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
+{% include use-cases-carousel.liquid collectionMap = 'smart-irrigation' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartIrrigation_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/a4640cc0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
