@@ -27,6 +27,7 @@ cd thingsboard-ce-k8s/gcp/microservices
 ## Step 2. Define environment variables
 
 {% assign tbClusterName = "tb-ce-msa" %}
+{% assign tbDbClusterName = "tb-db" %}
 {% include templates/install/gcp/env-variables-msa.md %}
 
 ## Step 3. Configure and create GKE cluster
@@ -41,6 +42,7 @@ cd thingsboard-ce-k8s/gcp/microservices
 
 ### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
 
+{% assign tbDbName = "thingsboard" %}
 {% include templates/install/gcp/provision-postgresql.md %}
 
 ### Step 5.2 Cassandra (optional)
@@ -59,7 +61,7 @@ cd thingsboard-ce-k8s/gcp/microservices
 
 ### 8.1 Configure HTTP(S) Load Balancer
 
-{% include templates/install/gcp/http-lb.md %}
+{% include templates/install/gcp/configure-http.md %}
 
 ### 8.2. Configure MQTT Load Balancer (Optional)
 
