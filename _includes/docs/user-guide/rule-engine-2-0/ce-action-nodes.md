@@ -633,7 +633,7 @@ For each of these actions, you can choose from the following **processing strate
 
 > **Note**: Processing strategies are available since TB version 4.0.
 
-Processing strategies are configured through **Processing settings**, which offer two configuration modes:
+Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
@@ -641,7 +641,7 @@ Processing strategies are configured through **Processing settings**, which offe
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
 {% endif %}
 
-- **Basic** - provides predefined strategies for all actions:
+- **Basic processing settings** - provide predefined strategies for all actions:
   - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
   - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions.
   - WebSockets only: for all actions except WebSocket notifications, the **Skip** strategy is applied, while WebSocket notifications use the **On every message** strategy.
@@ -653,7 +653,7 @@ Processing strategies are configured through **Processing settings**, which offe
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
 {% endif %}
 
-- **Advanced** - allows you to configure each action’s processing strategy independently.
+- **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-ce.png)
@@ -789,7 +789,7 @@ For each of these actions, you can choose from the following **processing strate
 
 > **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
 
-Processing strategies are configured through **Processing settings**, which offer two configuration modes:
+Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
@@ -797,7 +797,7 @@ Processing strategies are configured through **Processing settings**, which offe
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
 {% endif %}
 
-- **Basic** - provides predefined strategies for all actions:
+- **Basic processing settings** - provide predefined strategies for all actions:
     - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
     - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions.
     - WebSockets only: applies the **Skip** strategy to Time series and Latest values, and the **On every message** strategy to WebSockets. 
@@ -809,7 +809,7 @@ Processing strategies are configured through **Processing settings**, which offe
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
 {% endif %}
 
-- **Advanced** - allows you to configure each action’s processing strategy independently.
+- **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-ce.png)
