@@ -113,11 +113,49 @@ This expression is *true* in TBEL because the type coercion system will coerce t
 ### Maps
 
 TBEL allows you to create Maps. We use our own implementation of the Map to control memory usage.
-That is why TBEL allows only inline creation of maps. Most common operation with the map:
+That is why TBEL allows only inline creation of maps.
 
 ```java
 // Create new map
 var map = {"temperature": 42, "nested" : "508"};
+```
+{: .copy-code}
+
+There are two syntax variations for iterating over a map:
+1. Explicit entrySet() iteration:
+
+```java
+// Iterate through the map using entrySet()
+for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
+        // Get the key
+        entry.getKey();
+        // or 
+        entry.key;
+
+        // Get the value
+        entry.getValue();
+        // or 
+        entry.value;
+}
+
+```
+{: .copy-code}
+
+2. Implicit iteration without entrySet():
+
+```java
+// Iterate through the map without entrySet()
+for (ValueType value : map) {
+        // Process each value
+}
+```
+{: .copy-code}
+
+Most common operation with the map:
+
+**Examples:**
+
+```java
 // Change value of the key
 map.temperature = 0;
 
@@ -128,18 +166,6 @@ if(map.temperature != null){
 // Null-Safe expressions using ?
 if(map.?nonExistingKey.smth > 10){
 // <you code>
-}
-// Iterate through the map
-foreach(element : map.entrySet()){
-    // Get the key
-    element.getKey();
-    //or 
-    element.key;
-    
-    // Get the value
-    element.getValue();
-    //or 
-    element.value;
 }
 
 // get Info
@@ -172,6 +198,22 @@ var sortByValue = map.sortByValue();                   // return nothing => map 
 // add new Entry/(new key/new value)
 var mapAdd = {"test": 12, "input" : {"http": 130}};
 map.putAll(mapAdd);
+```
+{: .copy-code}
+
+
+#### Map - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable map.
+
+**Examples:**
+
+```java
+var original = {};
+original.humidity = 73;
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionHashMap that is unmodifiable.
+unmodifiable.put("temperature1", 96);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.put("temperature1", 96): Map is unmodifiable'."
 ```
 {: .copy-code}
 
@@ -257,7 +299,7 @@ var length = list.length();                 // return  4
 var memorySize = list.memorySize();         // return 32L 
 var indOf1 = list.indexOf("B", 1);          // return -1  
 var indOf2 = list.indexOf(2, 2);            // return 2  
-var sStr =  list.validateClazzInArrayIsOnlyString(); // return false
+var sNumber = list.validateClazzInArrayIsOnlyNumber(); // return true
 ```
 {: .copy-code}
 
@@ -269,6 +311,21 @@ var sStr =  list.validateClazzInArrayIsOnlyString(); // return false
 - If the list consists of one or more non-numeric values ("123K45" or "FEB" or {345: "re56"}) - the sort/toSorted... operation is interpreted as sorting the String;
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+#### List - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable list.
+
+**Examples:**
+
+```java
+var original = [];
+original.add(0x67);
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionArrayList that is unmodifiable.
+unmodifiable.add(0x35);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.add(0x35): List is unmodifiable'."
+```
+{: .copy-code}
 
 ### Arrays
 
@@ -1321,7 +1378,9 @@ Alias for [parseBigEndianHexToDouble(hex, true)](#parsehextodouble)
 
 *double parseBigEndianHexToDouble(String hex)*
 
-#### hexToBytes
+#### hexToBytes List or Array
+
+##### hexToBytes
 
 Converts the hex string to list of integer values, where each integer represents single byte.
 
@@ -1342,7 +1401,33 @@ Parsed list of integer values.
 **Examples:**
 
 ```java
-return hexToBytes("BBAA"); // Returns [-69, -86]
+return hexToBytes("0x01752B0367FA000500010488FFFFFFFFFFFFFFFF33"); // Returns [1, 117, 43, 3, 103, -6, 0, 5, 0, 1, 4, -120, -1, -1, -1, -1, -1, -1, -1, -1, 51]
+```
+{: .copy-code}
+
+###### hexToBytesArray
+
+Converts the hex string to Array of single byte values.
+
+**Syntax:**
+
+*byte[] hexToBytesArray(String hex)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+</ul>
+
+**Return value:**
+
+Parsed array of single byte values.
+
+**Examples:**
+
+```java
+return hexToBytesArray("AABBCCDDEE"); // Returns [(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD, (byte) 0xEE]
+                                      //  Returns [-86, -69, -52, -35, -18]  
 ```
 {: .copy-code}
 
@@ -1354,7 +1439,7 @@ Converts the list of integer values, where each integer represents a single byte
 **Syntax:**
 
 *String bytesToHex(List<Integer> bytes)*
-*String bytesToHex(byte[] bytes)*
+*String bytesToHex(byte[] bytes)*~~~~
 
 **Parameters:**
 
@@ -2017,7 +2102,8 @@ return bytesToBase64([42, 73]); // Returns "Kkk="
 ```
 {: .copy-code}
 
-#### base64ToBytes
+#### base64 To Bytes Array or List
+##### base64ToBytes
 
 Decodes a Base64 string into a byte array.
 
@@ -2039,6 +2125,31 @@ Byte array.
 
 ```java
 return base64ToBytes("Kkk="); // Returns [42, 73]
+```
+{: .copy-code}
+
+###### base64ToBytesList
+
+Decodes a Base64 string into a byte list.
+
+**Syntax:**
+
+*List<Byte> base64ToBytesList(String input)*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>String</code> - the Base64 string.</li>
+</ul>
+
+**Return value:**
+
+Byte array.
+
+**Examples:**
+
+```java
+return base64ToBytesList("AQIDBAU="); // Returns ExecutionArrayList<Byte> value with size = 5,  includes: [1, 2, 3, 4, 5]
 ```
 {: .copy-code}
 
@@ -2506,5 +2617,67 @@ var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. Aug
 ```
 {: .copy-code}
 
+##### functions to add time units separately: years, months, weeks, days, hours, minutes, seconds, and milliseconds.
 
+**Examples:**
 
+```java
+var stringDateUTC = "2024-01-01T10:00:00.00Z";
+var d = new Date(stringDateUTC);            // TZ => "UTC"
+var dIso = d.toISOString();                           // return 2024-01-01T10:00:00Z 
+        
+d.addYears(1);
+d.toISOString();                                     // return 2025-01-01T10:00:00Z
+
+d.addYears(-2);
+d.toISOString();                                     // return 2023-01-01T10:00:00Z
+
+d.addMonths(2);
+d.toISOString();                                     // return 2023-03-01T10:00:00Z
+
+d.addMonths(10);
+d.toISOString();                                     // return 2024-01-01T10:00:00Z
+
+d.addMonths(-13);
+d.toISOString();                                     // return 2022-12-01T10:00:00Z
+
+d.addWeeks(4);
+d.toISOString();                                     // return 2022-12-29T10:00:00Z
+
+d.addWeeks(-5);
+d.toISOString();                                     // return 2022-11-24T10:00:00Z
+
+d.addDays(6);
+d.toISOString();                                     // return 2022-11-30T10:00:00Z
+
+d.addDays(45);
+d.toISOString();                                     // return 2023-01-14T10:00:00Z
+
+d.addDays(-50);
+d.toISOString();                                     // return 2022-11-25T10:00:00Z
+
+d.addHours(23);
+d.toISOString();                                     // return 2022-11-26T09:00:00Z
+
+d.addHours(-47);
+d.toISOString();                                     // return 2022-11-24T10:00:00Z
+
+d.addMinutes(59);
+d.toISOString();                                     // return 2022-11-24T10:59:00Z
+        
+d.addMinutes(-60);
+d.toISOString();                                     // return 2022-11-24T09:59:00Z
+
+d.addSeconds(59);
+d.toISOString();                                     // return 2022-11-24T09:59:59Z
+
+d.addSeconds(-60);
+d.toISOString();                                     // return 2022-11-24T09:58:59Z
+
+d.addNanos(999999);
+d.toISOString();                                     // return 2022-11-24T09:58:59.000999999Z
+
+d.addNanos(-1000000);
+d.toISOString();                                     // return 2022-11-24T09:58:58.999999999Z
+```
+{: .copy-code}

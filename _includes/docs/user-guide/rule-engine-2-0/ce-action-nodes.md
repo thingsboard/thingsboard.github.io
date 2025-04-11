@@ -91,6 +91,52 @@ The execution is synchronized in scope of message originator (e.g. device) and s
 
 The result of the function may be added to the message body or metadata. You may also save the result to the database as an attribute or time-series.
 
+## Calculated Fields Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 4.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields.png)
+
+This node is used to trigger calculated field processing **without storing the incoming telemetry in the database**.
+By default, the processing of calculated fields are triggered by the [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"} and [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} nodes.
+The **calculated fields** node accepts the same type of messages as these nodes, but allows you to decouple processing from data persistence — ideal when you want to use telemetry for calculated fields processing only.
+> **Note**: This node does **not store any telemetry or attribute data** in the database — it simply triggers calculated field execution based on the incoming telemetry.
+
+To **avoid persisting unnecessary data to the database**, route messages to this node instead of **save time series** or **save attributes** nodes.
+> **Important**: when a calculated field is evaluated, new message with the originator which calculated field state was updated is generated and pushed into the root rule chain of originator.
+To store the calculated result, you still need to use a **save time series** or **save attributes** node in the rule chain.
+
+**Output connections**
+
+* **Success:**
+    * If the message payload contains valid telemetry or attribute data to process, or it is empty.
+* **Failure:**
+    * If an incoming message type is not `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`.
+    * If unexpected error occurs during message processing.
+
+**Usage example**:
+
+Consider a **smart building energy management system**, where the building operator wants to monitor the **Energy Efficiency Ratio (EER)** of air conditioning systems to analyze performance trends.
+
+There are two types of devices involved:
+* **Sensor** (e.g., flow meters, power meters): these devices send high-frequency telemetry such as cooling output and power usage that can be used for calculated fields processing.
+  Since the data changes rapidly and is not useful on its own, it **is not worth to persist**.
+* **HVAC unit** (e.g., HVAC controllers, logical aggregators for zone-based HVAC systems): these devices send critical telemetry such as compressor temperature and vibration level required for diagnostics and analytics.
+  This data, along with the calculated EER, is persisted for long-term analysis.
+
+The **calculated field** is defined on the **HVAC controller** and uses telemetry from **Sensor** devices.
+When telemetry message, for example, from the flow meter, enters the rule chain, **device profile switch** node routes this message to **calculated fields** node.
+**Calculated fields** node triggers processing of the calculated field based on incoming telemetry from the message.
+As a result of calculation a new message is generated with the **HVAC controller** as the originator, containing the calculated value.
+This message enters rule chain where the [device profile switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"} node routes it to the **save time series** node to persist the result.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
 
 ## Create Alarm Node
 
@@ -102,7 +148,7 @@ The result of the function may be added to the message body or metadata. You may
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
 This Node tries to load the latest Alarm with configured **Alarm Type** for Message Originator.
 If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
@@ -120,20 +166,20 @@ Note: Since TB Version 2.3.0 the rule node has the ability to:
 
 -  get alarm type using pattern with fields from message metadata:
 
-    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
   
 Note: Since TB Version 2.4.3 the rule node has the ability to:
 
 - filter propagation to parent entities by relation types:
 
-    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
 
 **Alarm Details Builder** script used for generating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata. 
 
 **Alarm Details Builder** script should return **details** object.
  
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
 
 - Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
 - Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
@@ -241,7 +287,7 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
 
 This Node loads the latest Alarm with configured **Alarm Type** for Message Originator and Clear the Alarm if it exist.
 
@@ -252,14 +298,14 @@ Node Configuration:
 
 Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
 
-   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
+   ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
 
 **Alarm Details Builder** script used for updating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
 
 **Alarm Details Builder** script should return **details** object. 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
  
 - Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
 - Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
@@ -365,7 +411,7 @@ Delays incoming messages for configurable period.
 
 Configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
 
 - **Period in seconds** - specifies the value of the period during which incoming message should be suspended
 - **Maximum pending messages** - specifies the amount of maximum allowed pending messages (queue of suspended messages) 
@@ -386,7 +432,7 @@ Each next message will be routed via **Failure** chain if the maximum pending me
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-generator.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-generator.png)
 
 Generates Messages with configurable period. JavaScript function is used for message generation.
 
@@ -411,7 +457,7 @@ Script should return the following structure:
 }
 {% endhighlight %}
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-generator-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-generator-config.png)
 
 All fields in resulting object are optional and will be taken from previously generated Message if not specified.
 
@@ -433,7 +479,7 @@ This node can be used for Rule Chain debugging purposes.
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-log.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-log.png)
 
 Transform incoming Message with configured JavaScript function to String and log final value into the Thingsboard log file. 
 
@@ -447,7 +493,7 @@ JavaScript function receive 3 input parameters
 
 Script should return String value.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-log-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-log-config.png)
 
 JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
@@ -465,7 +511,7 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
 
 Sends response to the RPC Call originator. All incoming RPC requests are passed through Rule Chain as Messages.
 Also all RPC requests have request ID field. It is used for mapping requests and responses.
@@ -473,7 +519,7 @@ Message Originator must be a **Device** entity because RPC response is initiated
 
 Node configuration has special request ID field mapping. If the mapping is not specified, **requestId** metadata field is used by default. 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
 
 RPC request can be received via different transports:
 
@@ -514,14 +560,14 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
 
 Sends RPC requests to the Device and routing response to the next Rule nodes.
 Message Originator must be a **Device** entity as RPC request can be initiated only to device.
 
 Node configuration has **Timeout** field used to specify timeout waiting for response from device.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-request-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request-config.png)
 
 Message payload must have correct format for RPC request. It must contains **method** and **params** fields.
 Example:
@@ -555,7 +601,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 ## Save Attributes Node
 
-<table  style="width:250px;">
+<table style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -563,43 +609,121 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes.png)
+Stores the incoming message payload as attribute data of the message originator.
 
-Stores attributes from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
-Configured **scope** is used to identify attributes scope.
+**Expected incoming message format**
 
-Supported scope types:
-
-- Client attributes
-- Shared attributes
-- Server attributes
-
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-config.png)
-
-Expects messages with **POST_ATTRIBUTES_REQUEST** message type.
-If message Type is not **POST_ATTRIBUTES_REQUEST**, Message will be routed via **Failure** chain. 
-
-When attributes are uploaded over existing API (HTTP / MQTT / CoAP / etc.) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
-
-In cases when it is required to trigger attributes saving inside Rule Chain, the Rule Chain should be configured to transform Message payload 
-to the expected format and set message type to **POST_ATTRIBUTES_REQUEST**. It could be done using [**Script Transformation Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
-
-**Expected Message Payload example:**
-{% highlight json %}
+The node accepts messages of type `POST_ATTRIBUTES_REQUEST` and expects incoming message payload to be an object where each property name represents an attribute key, and its corresponding value is the attribute value. For example:
+```json
 {
   "firmware_version": "1.0.1",
   "serial_number": "SN-001"
 }
-{% endhighlight %}
+```
 
-After successful attributes saving, original Message will be passed to the next nodes via **Success** chain, 
-otherwise **Failure** chain is used.
+**Configuration: Processing settings**
+
+The save attributes node can perform three distinct actions, each governed by configurable processing strategies:
+- **Attributes**: saves attribute data to the database.
+- **WebSockets**: notifies WebSocket subscriptions about updates to the attribute data.
+- **Calculated fields**: notifies calculated fields about updates to the attribute data.
+
+For each of these actions, you can choose from the following **processing strategies**:
+{% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
+
+> **Note**: Processing strategies are available since TB version 4.0.
+
+Processing strategies can be set using either **Basic** or **Advanced processing settings**.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
+{% endif %}
+
+- **Basic processing settings** - provide predefined strategies for all actions:
+  - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
+  - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions.
+  - WebSockets only: for all actions except WebSocket notifications, the **Skip** strategy is applied, while WebSocket notifications use the **On every message** strategy.
+    Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
+{% endif %}
+
+- **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-pe.png)
+{% endif %}
+
+When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
+
+{% include docs/user-guide/rule-engine-2-0/advanced-processing-strategies-hazards.md %}
+
+Due to the scenarios described above, the ability to configure each persistence action independently—including setting different deduplication intervals—should be treated as a performance optimization rather than a strict processing guarantee.
+
+**Configuration: Scope**
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-pe.png)
+{% endif %}
+
+The node determines the attribute scope for each incoming message by evaluating the `scope` property in its metadata. 
+The supported scope types are **Client attributes**, **Shared attributes**, and **Server attributes**. The algorithm is as follows:
+
+1. If the incoming message metadata contains a non-empty `scope` property, the node compares its value against the supported scope values:
+   - `CLIENT_SCOPE` corresponds to **Client attributes**
+   - `SHARED_SCOPE` corresponds to **Shared attributes**
+   - `SERVER_SCOPE` corresponds to **Server attributes**
+2. If a match is found, the corresponding scope is applied, and processing continues.
+3. If no valid match is found, the message processing fails.
+4. If the `scope` property is absent or an empty string, the node uses the scope specified in the node configuration.
+
+**Configuration: Advanced settings**
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
+
+* **Save attributes only if the value changes** – if enabled, the node first retrieves the current values for the specified attribute keys and then compares them with the incoming values.
+  If an attribute is missing, its value has changed, or its data type differs from what’s stored, it is marked for saving. If no changes are detected, the node skips the save operation.
+
+  > **Note**: Avoid concurrent writes of the same attributes because change-detection is not transactional and may produce unexpected results in such cases.
+
+  > **Note**: If the attribute save is skipped because the value has not changed, the attribute’s last updated timestamp will not be updated.
+
+* **Send attributes updated notification** – if enabled, and if the attribute scope is not `CLIENT_SCOPE` (i.e., for `SHARED_SCOPE` and `SERVER_SCOPE`), 
+  the node puts an [Attributes Updated](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) event to the queue named `Main`.
+* **Force notification to the device** - the node determines whether to notify the device about attribute updates by evaluating the **Force notification to the device** option and the `notifyDevice` property in the incoming message metadata. The algorithm is as follows:
+  1. If the **Force notification to the device** option is enabled, the node always sends attribute update notifications to the device, regardless of the `notifyDevice` metadata value.
+  2. If the option is disabled, the node checks the `notifyDevice` property in the message metadata:
+     * If the property is absent or an empty string, it defaults to sending the notification.
+     * If the property is provided, the notification is sent only if its value is `true` (ignoring case).
+  3. In all cases, the notification is only sent if the device has an active subscription for the updated (or deleted) attributes.
+  4. Additionally, attribute notifications are not sent if:
+     * The attribute save is skipped because its value did not change (when **Save attributes only if the value changes** is enabled).
+     * The attribute save is skipped due to the configured processing strategy (e.g., set to Skip).
+
+**Output connections**
+
+* **Success:**
+  * If an incoming message was successfully processed.
+* **Failure:**
+  * If an incoming message type is not `POST_ATTRIBUTES_REQUEST`.
+  * If an incoming message payload cannot be parsed to attribute key-value pairs.
+  * If the incoming message metadata includes a non-empty `scope` property whose value does not match one of the valid attribute scopes (i.e. `CLIENT_SCOPE`, `SHARED_SCOPE`, or `SERVER_SCOPE`).
+  * If unexpected error occurs during message processing.
 
 <br>
 
 ## Save Timeseries Node 
 
-<table  style="width:250px;">
+<table style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
@@ -607,57 +731,132 @@ otherwise **Failure** chain is used.
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries.png)
+Stores the incoming message payload as time series data of the message originator.
 
-Stores Timeseries data from incoming Message payload to the database and associate them to the Entity, that is identified by the Message Originator. 
-Configured **TTL** seconds is used for timeseries data expiration. **0** value means that data will never expire.
+**Expected incoming message format**
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config.png)
+The node accepts messages of type `POST_TELEMETRY_REQUEST` and supports the following three **payload formats**:
 
-Additionally, you could disable updating values for incoming keys for the latest timeseries data (ts_kv_latest table) if **'Skip latest persistence'** flag is set to **true**.
-This could be helpful for highly loaded use-cases to decrease the pressure on the DB. 
-Please note, this feature could be enabled when the use-case does not require advanced filtering on the Dashboards. 
-For getting the latest value, the historical data could be fetched with limit 1 and DESC order.
+1. Key-value pairs: an object where each property name represents a time series key, and its corresponding value is the time series value.
+    ```json
+    {
+      "temperature": 42.2,
+      "humidity": 70
+    }
+    ```
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config-latest.png)
+2. Timestamped key-value pairs: an object that includes a `ts` property for the timestamp and a `values` property containing key-value pairs (defined in format 1).
+    ```json
+    {
+      "ts": 1737963587742,
+      "values": {
+        "temperature": 42.2,
+        "humidity": 70
+      }
+    }
+    ```
 
-Expects messages with **POST_TELEMETRY_REQUEST** message type. 
-If message Type is not **POST_TELEMETRY_REQUEST**, Message will be routed via **Failure** chain.
- 
-When timeseries data is published over existing API (HTTP / MQTT / CoAP / etc.) Message with correct payload and type will be passed into **Input** node of the **Root Rule Chain**.
+3. Multiple timestamped key-value pairs: an array of timestamped key-value pair objects (defined in format 2).
+    ```json
+    [
+      {
+        "ts": 1737963595638,
+        "values": {
+          "temperature": 42.2,
+          "humidity": 70
+        }
+      },
+      {
+        "ts": 1737963601607,
+        "values": {
+          "pressure": 2.56,
+          "velocity": 0.553
+        }
+      }
+    ]
+    ```
 
-In cases when it is required to trigger timeseries data saving inside Rule Chain, the Rule Chain should be configured to transform Message payload  
-to the expected format and set message type to **POST_TELEMETRY_REQUEST**. It could be done using [**Script Transformation Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
+**Configuration: Processing settings**
 
-Message Metadata must contain **ts** field. This field identifies timestamp in milliseconds of published telemetry.
+The save time series node can perform four distinct actions, each governed by configurable processing strategies:
+- **Time series**: saves time series data to the `ts_kv` table in the database.
+- **Latest values**: updates time series data in the `ts_kv_latest` table in the database, if new data is more recent.
+- **WebSockets**: notifies WebSocket subscriptions about updates to the time series data.
+- **Calculated fields**: notifies calculated fields about updates to the time series data.
 
-Also, if Message Metadata contains **TTL** field, its value is used for timeseries data expiration, otherwise **TTL** 
-from Node Configuration is used.
+For each of these actions, you can choose from the following **processing strategies**:
+{% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
 
-**Since TB Version 3.3.3** you can enable 'useServerTs' param to use the timestamp of the message processing instead of the timestamp from the message. 
-Useful for all sorts of sequential processing if you merge messages from multiple sources (devices, assets, etc).
+> **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
 
-In the case of sequential processing, the platform guarantees that the messages are processed in the order of their submission to the queue. 
-However, the timestamp of the messages originated by multiple devices/servers may be unsynchronized long before they are pushed to the queue. 
-The DB layer has certain optimizations to ignore the updates of the "attributes" and "latest values" tables if the new record has a timestamp that is older than the previous record. 
+Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
-So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
+{% endif %}
 
+- **Basic processing settings** - provide predefined strategies for all actions:
+    - On every message: applies the **On every message** strategy to all actions. All actions are performed for all messages.
+    - Deduplicate: applies the **Deduplicate** strategy (with a specified interval) to all actions.
+    - WebSockets only: applies the **Skip** strategy to Time series and Latest values, and the **On every message** strategy to WebSockets. 
+      Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
-**Expected Message Payload example:**
-{% highlight json %}
-{  
-  "values": {
-    "key1": "value1",
-    "key2": "value2"
-  }
-}
-{% endhighlight %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
+{% endif %}
 
-After successful timeseries data saving, original Message will be passed to the next nodes via **Success** chain, 
-otherwise **Failure** chain is used.
+- **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
-<br>
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-pe.png)
+{% endif %}
+
+When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
+
+{% include docs/user-guide/rule-engine-2-0/advanced-processing-strategies-hazards.md %}
+
+Due to the scenarios described above, the ability to configure each persistence action independently—including setting different deduplication intervals—should be treated as a performance optimization rather than a strict processing guarantee.
+
+**Configuration: Advanced settings**
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-ce.png)
+{% else %}
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-pe.png)
+{% endif %}
+
+* **Use server timestamp** - if enabled, rule node will use current server time when time series data does not have an explicit timestamp associated with it (**payload format 1** is used). Available since TB Version 3.3.3
+
+    The node determines the timestamp for each time series data point using the following priority:
+    1. If the time series data includes a `ts` property (**payload formats 2 and 3**), this timestamp is used.
+    2. If the **Use server timestamp** option is enabled, the current server time is used.
+    3. If the message metadata contains a `ts` property (expected in UNIX milliseconds), this value is used.
+    4. If none of the above are provided, the timestamp when the message was created is used.
+
+    Using server time is particularly important in sequential processing scenarios where messages may arrive with out-of-order timestamps from multiple sources.
+    The DB layer has certain optimizations to ignore the updates of the attributes and latest values if the new record has a timestamp that is older than the previous record.
+    So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
+
+* **Default TTL (Time-to-Live)** - determines how long the stored data remains in the database. The TTL is set based on the following priority:
+    1. If the metadata contains a `TTL` property (expected as integer representing seconds), this value is used.
+    2. If the metadata does not specify a `TTL`, the node's configured TTL value is applied.
+    3. If the node's configured TTL is set to **0**, the Storage TTL defined in the tenant profile is used.
+
+> **Note**: TTL value of 0 means that the data never expires.
+
+**Output connections**
+* **Success:**
+  * If an incoming message was successfully processed.
+* **Failure:**
+  * If an incoming message type is not `POST_TELEMETRY_REQUEST`.
+  * If an incoming message payload is empty (for example, `{}` or `[]` or even `[{}, {}, {}]`).
+  * If unexpected error occurs during message processing.
 
 ## Save to Custom Table
 
@@ -669,7 +868,7 @@ otherwise **Failure** chain is used.
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table.png)
 
 Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have **cs_tb_** prefix, to avoid the data insertion to the common TB tables.
 
@@ -679,11 +878,11 @@ Configuration:
 
 Administrator should set the custom table name without prefix: **cs_tb_**.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
 
 Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **$entityId**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
 
 If specified message field does not exist in the **data** of the message or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
 
@@ -701,7 +900,7 @@ If specified message field does not exist in the **data** of the message or is n
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
 
 Assign Message Originator Entity to [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/). 
 
@@ -713,7 +912,7 @@ Will create new Customer if it doesn't exists and **Create new Customer if not e
 
 Configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node-configuration.png)
 
 - **Customer name pattern** - can be set direct customer name or pattern can be used, that will be resolved to the real customer name using Message metadata.
 - **Create new customer if not exists** - if checked will create new customer if it doesn't exist.
@@ -738,7 +937,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
 
 Unassign Message Originator Entity from [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/). 
 
@@ -748,7 +947,7 @@ Finds target Customer by customer name pattern and then unassign Originator Enti
 
 Configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node-configuration.png)
 
 - **Customer name pattern** - can be set direct customer name or pattern can be used, that will be resolved to the real customer name using Message metadata.
 - **Customers cache expiration time** - specifies maximum time interval is seconds allowed to store found customers records. 0 value means that records will never expire.
@@ -772,7 +971,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
 
 Create the relation from the selected entity to originator of the message by type and direction. 
 
@@ -792,7 +991,7 @@ Otherwise, only name pattern should be set.
 
 Configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -810,11 +1009,11 @@ In other cases Message will be routed via **Success** chain.
 
  - remove current relations from the originator of the incoming message based on direction and type: 
 
-    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
 
  - change the originator of the incoming message to the selected entity and process outboud messages as messages from another entity: 
  
-    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
+    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
 
 <br>
 
@@ -829,7 +1028,7 @@ In other cases Message will be routed via **Success** chain.
 </table> 
 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
 
 Delete the relation from the selected entity to originator of the message by type and direction.
 
@@ -839,7 +1038,7 @@ Finds target Entity by entity name pattern and then delete a relation between Or
 
 Configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -856,7 +1055,7 @@ In other cases Message will be routed via **Success** chain.
 
 **Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
 <br>
 
@@ -870,11 +1069,11 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
 
 Produces incoming messages by GPS based parameters. Extracts latitude and longitude from incoming message data or metadata and returns different events based on configuration parameters (geo fence).
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
 
 The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
 
@@ -910,11 +1109,11 @@ There are two options of area definition based on the perimeter type:
  
 - Polygon 
              
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
 
 - Circle
                   
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
 
 ### Event Types
 There are 4 types of events managed by geofencing rule node:
@@ -926,7 +1125,7 @@ There are 4 types of events managed by geofencing rule node:
 Administrator can configure duration time threshold for reporting inside or outside event. For example, whenever minimal inside time is set to 1 minute the message originator is considered as being inside the perimeter 60 seconds after entering the area.
 Minimal outside time defines whenever message originator is considered as out of the perimeter as well.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)  
+![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)  
  
 **Failure** chain will to be used when:
 
@@ -953,7 +1152,7 @@ Minimal outside time defines whenever message originator is considered as out of
   </thead>
 </table>
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
 
 Sends reply to REST API call that was originally sent to rule engine.
 
@@ -961,7 +1160,7 @@ Expects messages with any message type. Forwards incoming message as a reply to 
 
 Configuration:
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
 <br>
 

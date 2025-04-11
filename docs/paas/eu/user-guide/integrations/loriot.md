@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-paas-eu
-title: LORIOT Integration 
-description: LORIOT Integration Guide 
+title: Loriot integration
+description: Loriot integration guide
+
 register:
     0:
         image: https://img.thingsboard.io/user-guide/integrations/loriot/loriot_register.png
