@@ -3,7 +3,7 @@
 - Select the "**Basic**" credential type and enter your Loriot account credentials.
 - Click "Add" to confirm creating integration.
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-4-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/loriot/loriot-add-integration-4-2-pe.png)
 
 <br>
 You can find the values for "**Server**" and "**Application ID**" in the Loriot UI:

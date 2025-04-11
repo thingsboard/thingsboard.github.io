@@ -7,4 +7,4 @@ In Loriot UI:
 In ThingsBoard UI: 
 - Click "Add" to confirm creating integration.
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-4-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/loriot/loriot-add-integration-4-1-pe.png)

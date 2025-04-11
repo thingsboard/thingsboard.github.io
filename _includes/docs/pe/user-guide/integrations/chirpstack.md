@@ -31,7 +31,7 @@ Let's move on to setting up the integration between the ThingsBoard platform and
 
 - Click "**Next**".
 
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/chirpstack/chirpstack-integration-setup-1-pe.png)
 
 <br>
 
@@ -61,7 +61,7 @@ TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/chirpstack/
 JavaScript<small></small>%,%anonymous%,%templates/integration/chirpstack/chirpstack-uplink-converter-config-javascript.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="chirpstackuplinkconverterconfig" toggle-spec=chirpstackuplinkconverterconfig %}
 
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-2-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/chirpstack/chirpstack-integration-setup-2-1-pe.png)
 
 - **Advanced decoding parameters**" section:
     - The **Device profile**, **Device label**, **Customer name**, and **Device group name** fields are not mandatory, and you can also use the $ pattern to populate them dynamically.
@@ -69,7 +69,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/chirpstack/chirpst
     - In the **Update only keys list** section, define keys whose values will be saved to the database only if they have changed from the previous incoming message.This applies to both Attributes and Telemetry, helping optimize data storage.
 - Once the uplink converter is set up, click "**Next**".
 
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-2-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/chirpstack/chirpstack-integration-setup-2-2-pe.png)
 
 <br>
 
@@ -77,7 +77,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/chirpstack/chirpst
 
 At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "**Skip**";
 
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/chirpstack/chirpstack-integration-setup-3-pe.png)
 
 <br>
 **4. Connection**.
@@ -93,7 +93,7 @@ To complete adding integration, you need to:
 
 Finally, click "Add" button to complete adding the ChirpStack integration.
 
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/chirpstack/chirpstack-integration-setup-4-pe.png)
 
 ## Configure integration on your ChirpStack application
 

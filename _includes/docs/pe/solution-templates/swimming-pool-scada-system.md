@@ -12,7 +12,7 @@ ThingsBoard acts as the core of the SCADA system, storing data from devices in a
 
 <br>
 
-<object width="100%" data="/images/solutions/swimming_pool_scada_system/swimming-pool-scada-system-scheme.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/solutions/swimming_pool_scada_system/swimming-pool-scada-system-scheme.svg"></object>
 
 
 <br>
