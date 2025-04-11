@@ -12,7 +12,7 @@ description: Installing ThingsBoard PE on CentOS/RHEL
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install ThingsBoard on RHEL 8/9, CentOS 8/9, or their derivatives (Alma, Rocky, Oracle, etc). 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
@@ -41,11 +41,11 @@ sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.
 ```
 {: .copy-code}
 
-### Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 2. ThingsBoard service installation
+## Step 2. ThingsBoard service installation
 
 Download installation package.
 
@@ -61,7 +61,7 @@ sudo rpm -Uvh thingsboard-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 
-### Step 3. Obtain and configure license key 
+## Step 3. Obtain and configure license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -91,7 +91,7 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### Step 4. Configure ThingsBoard database
+## Step 4. Configure ThingsBoard database
 
 {% include templates/install/install-db.md %}
 
@@ -102,7 +102,7 @@ Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>
 
 {% include content-toggle.liquid content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. Choose ThingsBoard queue service
+## Step 5. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -113,15 +113,15 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (4GB of RAM) 
+## Step 6. [Optional] Memory update for slow machines (4GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 7. Run installation script
+## Step 7. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 8. Start ThingsBoard service
+## Step 8. Start ThingsBoard service
 
 ThingsBoard UI is accessible on 8080 port by default. 
 Make sure that your 8080 port is accessible via firewall.
@@ -138,18 +138,18 @@ sudo firewall-cmd --reload
 Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 9. Install ThingsBoard WebReport component
+## Step 9. Install ThingsBoard WebReport component
 
 {% capture contenttogglespecreport %}
 WebReport docker <small>(Recommended and simple installtion)</small>%,%dockerized%,%templates/install/rhel-webreport-docker.md%br%
 WebReport service <small>(Install service and dependencies manually)</small>%,%service%,%templates/install/rhel-webreport-service.md%br%{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="rhelThingsboardWebreport" toggle-spec=contenttogglespecreport %} 
 
-### Post-installation steps
+## Post-installation steps
 
 {% include templates/install/rhel-haproxy-postinstall.md %}
 
-### Troubleshooting
+## Troubleshooting
 
 {% include templates/install/troubleshooting.md %}
 

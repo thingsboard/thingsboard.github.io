@@ -331,7 +331,7 @@ toc:
       path: /docs/paas/user-guide/ui/slack-settings/
     - title: Microsoft Teams Settings
       path: /docs/paas/user-guide/ui/microsoft-teams-settings/
-    - title: Mail Settings
+    - title: Mail server
       path: /docs/paas/user-guide/ui/mail-settings/
 - title: Subscriptions
   path: /docs/paas/subscription/

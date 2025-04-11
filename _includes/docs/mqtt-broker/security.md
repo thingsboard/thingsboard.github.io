@@ -15,11 +15,11 @@ You will learn how to assign topic authorization rules to clients to control the
 By understanding and implementing the authentication and authorization options outlined in this guide, 
 you can ensure secure and controlled access to the MQTT broker, protecting your infrastructure and data from unauthorized access or misuse.
 
-### MQTT Listeners
+## MQTT Listeners
 
 TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols as well as for MQTT over WebSockets.
 
-#### TCP Listener
+### TCP Listener
 
 By default, TBMQ has the TCP listener enabled on port `1883`.
 However, if you wish to disable the TCP listener, you can set the `LISTENER_TCP_ENABLED` environment variable to `false`.
@@ -30,7 +30,7 @@ This gives you the flexibility to configure the broker to listen on a specific n
 
 By adjusting these environment variables, you can customize the TCP listening behavior of TBMQ to suit your specific requirements.
 
-#### TLS Listener
+### TLS Listener
 
 To enable the SSL/TLS listener, set the `LISTENER_SSL_ENABLED` environment variable to `true`. By default, the broker is listening on the `8883` port.
 To change the host and/or port that the broker is listening to, update the `LISTENER_SSL_BIND_ADDRESS` and `LISTENER_SSL_BIND_PORT` variables, respectively.
@@ -51,7 +51,7 @@ If you choose Pem as the credentials type, you need to configure the following:
 If you require two-way TLS, you also need to configure the TrustStore by adding the trusted certificates/chains to the configured KeyStore/PEM files.
 For more information about configuration possibilities and certificate generation, please review the following ThingsBoard security [pages](/docs/user-guide/mqtt-over-ssl/).
 
-#### WS Listener
+### WS Listener
 
 By default, TBMQ has the WebSocket listener enabled on port `8084`.
 However, in case you want to disable the WS listener, you can set the `LISTENER_WS_ENABLED` environment variable to `false`.
@@ -62,7 +62,7 @@ you can modify the `LISTENER_WS_BIND_ADDRESS` and `LISTENER_WS_BIND_PORT` variab
 WS listener is configured to negotiate via all MQTT versions by default, i.e. `WS_NETTY_SUB_PROTOCOLS` is set to `mqttv3.1,mqtt`.
 The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5.
 
-#### WSS Listener
+### WSS Listener
 
 To enable the WebSocket Secure listener, set the `LISTENER_WSS_ENABLED` environment variable to `true`. By default, the broker is listening on the `8085` port.
 To change the host and/or port that the broker is listening to, update the `LISTENER_WSS_BIND_ADDRESS` and `LISTENER_WSS_BIND_PORT` variables, respectively.

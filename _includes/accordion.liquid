@@ -1,0 +1,50 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign openStatus = include.openStatus %}
+
+{% if site.data.accordion-collection[collectionMap] %}
+    {% assign accordionCollection = site.data.accordion-collection[collectionMap] %}
+{% else %}
+    {% assign accordionCollection = page[collectionMap] %}
+{% endif %}
+
+{% if accordionCollection %}
+<div class="accordion-collection">
+    {% for accordionItem in accordionCollection %}
+        <div class="accordion-item">
+            <div class="accordion-preview accordion-toggle {% if openStatus == "firstOpened" and forloop.first %}opened{% endif %}{% if openStatus == "allOpened" %}opened{% endif %}" id="{{ collectionMap }}-{{ forloop.index }}">
+                <p class="accordion-title">{{ accordionItem[1].title }}</p>
+                <div class="accordion-additional">
+                    <div class="accordion-additional-content">
+                        {% if accordionItem[1].additionalFaIcon %}
+                        <i class="{{ accordionItem[1].additionalFaIcon }}" style="color: #2A7DEC"></i>
+                        {% endif %}
+                        {% if accordionItem[1].additionalText %}
+                        <p>{{ accordionItem[1].additionalText }}</p>
+                        {% endif %}
+                    </div>
+                    <span class="accordion-chevron">
+                        <i class="fas fa-chevron-down fa-lg" style="color:#2A7DEC"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="accordion-content {% if openStatus == "firstOpened" and forloop.first or openStatus == "allOpened" %}opened{% endif %}{% if openStatus == "allOpened" %}opened{% endif %}" id="{{ collectionMap }}-{{ forloop.index }}">
+                <ul>
+                    {% for textContent in accordionItem[1].textContentCollection %}
+                        <li>
+                            {% if textContent[1].faIcon %}
+                            <i class="{{ textContent[1].faIcon }}" style="color: {{ textContent[1].faIconColor }}"></i>
+                            {% elsif accordionItem[1].allTextContentIcon %}
+                            <i class="{{ accordionItem[1].allTextContentIcon }}" style="color: {{ accordionItem[1].allTextContentIconColor }}"></i>
+                            {% endif %}
+                            <p>{{ textContent[1].textContent }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+<span class="not-found-message">Collection not found</span>
+{% endif %}
+

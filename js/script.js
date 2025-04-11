@@ -114,6 +114,7 @@ var tb = (function () {
         if (!$(thisItem).hasClass('on')) {
             $(thisItem).addClass('on');
             thisWrapper.css({height: contentHeight});
+			thisWrapper.css({overflow: 'visible'});
 
             var duration = parseFloat(getComputedStyle(thisWrapper[0]).transitionDuration) * 1000;
 
@@ -162,7 +163,10 @@ var tb = (function () {
             $(faqLink).css('fontSize', fontSize);
             faqAnchor.appendChild(faqLink);
             $(faqLink).click(function() {
-                openFaqNode(nodeId);
+				const sectionIdArr = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-');
+				const sectionId = sectionIdArr[sectionIdArr.length -1];
+				switchFaqSection(sectionId);
+                setTimeout(()=>openFaqNode(nodeId));
             });
         });
 
@@ -174,7 +178,6 @@ var tb = (function () {
 
         window.addEventListener('popstate', onPopStateFaqNode);
         onPopStateFaqNode();
-
     });
 
     function onPopStateFaqNode() {
@@ -186,10 +189,20 @@ var tb = (function () {
             }
             var item = $('.pi-accordion div[data-item-id='+nodeId+']');
             if (item.length) {
-                openFaqNode(nodeId);
+				retryOpenNodeFromHash(nodeId, 0);
             }
         }
     }
+
+	function retryOpenNodeFromHash(nodeId, tries) {
+		if (sectionSwitched) {
+			openFaqNode(nodeId);
+		} else {
+			if (tries < 10) {
+				setTimeout(() => retryOpenNodeFromHash(nodeId, ++tries), 150);
+			}
+		}
+	}
 
     function openFaqNode(nodeId) {
 		$('.pi-accordion > .container > div[data-item-id]').each(function () {
@@ -201,7 +214,11 @@ var tb = (function () {
 			}
 		});
         tb.openAccordionItem(nodeId);
-        document.getElementById(nodeId).scrollIntoView();
+        document.getElementById(nodeId).scrollIntoView({
+			behavior: 'auto',
+			block: 'center',
+			inline: 'center'
+		});
         reportFaqNode(nodeId);
     }
 
@@ -953,68 +970,174 @@ var tb = (function () {
 
 					function initializeCarousel() {
 						$('.owl-carousel').each(function(index) {
-
 							const $carousel = $(this);
 							const carouselId = "owl-carousel-" + index;
 							$(this).attr("id", carouselId);
 
-							const settings = $(this).data('setting');
-							const itemsHigher0 = settings[0] || 1;
-							const itemsHigher600 = settings[600] || 1;
-							const itemsHigher960 = settings[960] || 1;
-							const defaultItems = settings['defaultItems'] || 1;
+							if($carousel[0].classList.contains("partnersCarousel")) {
 
-							const navStatus = !$(this)[0].classList.contains("disableNav");
+								const itemsCount = $carousel.children().length;
 
-							const isSmoothAutoplay = $carousel[0].classList.contains("smoothAutoPlay");
-							const isSmallScreen = $(window).width() < 600;
+								if(itemsCount >= 2){
+									$('#' + carouselId).owlCarousel({
+										autoWidth: true,
+										margin: 10,
+										nav: true,
+										dots: false
+									});
+								} else {
+									$carousel[0].classList.remove('owl-carousel', 'partnersCarousel')
+								}
+							} else {
 
-							$('#' + carouselId).owlCarousel({
-								lazyLoad: true,
-								margin: setupMarginPadding($carousel, '--carousel-margin'),
-								stagePadding: setupMarginPadding($carousel, '--stagePadding'),
-								autoHeight: false,
-								autoWidth: autoWidthStatus($carousel),
-								loop: loopStatus($carousel),
-								autoplay: isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel),
-								autoplayTimeout: isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000,
-								autoplaySpeed: isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false,
-								autoplayHoverPause: !$carousel[0].classList.contains("smoothAutoPlay"),
-								slideTransition: 'linear',
-								nav: $carousel[0].classList.contains("timeline"),
-								responsiveBaseElement: 'body',
-								responsiveClass: true,
-								mouseDrag: !$carousel[0].classList.contains("timeline"),
-								startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
-								responsive: {
-									0: {
-										items: itemsHigher0
-									},
-									600: {
-										items: itemsHigher600
-									},
-									960: {
-										items: itemsHigher960
-									},
-									1025: {
-										nav: navStatus,
-										items: itemsHigher960
-									},
-									1280: {
-										nav: navStatus,
-										items: defaultItems
-									}
-								},
-								onInitialized: function(event) {
-									if ($carousel[0].classList.contains("smoothAutoPlay")) {
-										$(event.target).trigger('play.owl.autoplay');
-										setTimeout(function() {
-											$(event.target).trigger('stop.owl.autoplay');
-											$(event.target).trigger('play.owl.autoplay', [15000]);
-										}, 10);
+								const carouselContentToggle = $(`.owl-carousel-toggle-content#${carouselId}`)
+
+								const settings = $(this).data('setting');
+								const itemsHigher0 = settings[0] || 1;
+								const itemsHigher600 = settings[600] || 1;
+								const itemsHigher960 = settings[960] || 1;
+								const defaultItems = settings['defaultItems'] || 1;
+
+								const navStatus = !$(this)[0].classList.contains("disableNav");
+
+								const isSmoothAutoplay = $carousel[0].classList.contains("smoothAutoPlay");
+								const isSmallScreen = $(window).width() < 600;
+
+								function updateUrl(currentItem) {
+									const currentItemContent = currentItem.children().first();
+									const currentItemContentId = currentItemContent.attr('id');
+
+									if (currentItemContentId) {
+										let url = new URL(window.location);
+										url.searchParams.set('course', currentItemContentId);
+										history.pushState(null, null, url);
 									}
 								}
-							});
+
+								let changesCount = 0;
+
+								$('#' + carouselId).owlCarousel({
+									lazyLoad: true,
+									center: $carousel[0].classList.contains("cardMode"),
+									margin: setupMarginPadding($carousel, '--carousel-margin'),
+									stagePadding: setupMarginPadding($carousel, '--stagePadding'),
+									autoHeight: false,
+									autoWidth: autoWidthStatus($carousel),
+									loop: loopStatus($carousel),
+									autoplay: !$carousel[0].classList.contains("cardMode") && (isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel)),
+									autoplayTimeout: $carousel[0].classList.contains("cardMode") ? 0 : (isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000),
+									autoplaySpeed: $carousel[0].classList.contains("cardMode") ? false : (isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false),
+									autoplayHoverPause: !$carousel[0].classList.contains("cardMode") && !$carousel[0].classList.contains("smoothAutoPlay"),
+									slideTransition: 'linear',
+									nav: $carousel[0].classList.contains("timeline"),
+									responsiveBaseElement: 'body',
+									responsiveClass: true,
+									mouseDrag: !$carousel[0].classList.contains("timeline"),
+									startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
+									responsive: {
+										0: {
+											stagePadding: $carousel[0].classList.contains("cardMode") ? 0 : setupMarginPadding($carousel, '--stagePadding'),
+											items: itemsHigher0
+										},
+										600: {
+											stagePadding: $carousel[0].classList.contains("cardMode") ? 50 : setupMarginPadding($carousel, '--stagePadding'),
+											items: itemsHigher600
+										},
+										960: {
+											nav: $carousel[0].classList.contains("cardMode") ? true : false,
+											stagePadding: $carousel[0].classList.contains("cardMode") ? 125 : setupMarginPadding($carousel, '--stagePadding'),
+											items: itemsHigher960
+										},
+										1025: {
+											stagePadding: $carousel[0].classList.contains("cardMode") ? 125 : setupMarginPadding($carousel, '--stagePadding'),
+											nav: navStatus,
+											items: itemsHigher960
+										},
+										1280: {
+											nav: navStatus,
+											items: defaultItems
+										}
+									},
+									onInitialized: function(event) {
+
+										function scrollToContent(content) {
+											const elementTop = content.offset().top;
+											const windowHeight = $(window).height();
+											$('html, body').animate(
+												{
+													scrollTop: elementTop - 100,
+												},
+												200
+											);
+										}
+
+										if ($carousel[0].classList.contains("smoothAutoPlay")) {
+											$(event.target).trigger('play.owl.autoplay');
+											setTimeout(function() {
+												$(event.target).trigger('stop.owl.autoplay');
+												$(event.target).trigger('play.owl.autoplay', [15000]);
+											}, 10);
+										}
+										if ($carousel[0].classList.contains("cardMode")) {
+											const currentCourse = new URL(window.location.href).searchParams.get("course");
+
+											if(currentCourse) {
+												setTimeout(() => {
+													const originalItems = $(".owl-carousel .owl-item").not(".cloned");
+													const activeItems = $(".owl-carousel .owl-item.active");
+
+													let foundIndex = -1;
+
+													originalItems.each(function(index) {
+														const firstChild = $(this).children().first();
+														if (firstChild.attr("id") === currentCourse) {
+															foundIndex = $(this).index();
+															return false;
+														}
+													});
+													if (activeItems.length === 1) {
+														$carousel.trigger("to.owl.carousel", [foundIndex - 2, 0, true]);
+													} else {
+														$carousel.trigger("to.owl.carousel", [foundIndex + 1, 0, true]);
+													}
+												}, 50)
+											}
+											$carousel.find('.owl-item').on('click', function () {
+												const itemsVisible = $carousel.find('.owl-item.active').length;
+												if (itemsVisible > 1 && !$(this).hasClass('center')) {
+													const index = $(this).index();
+													$carousel.trigger('to.owl.carousel', [index + 1, 300]);
+												}
+											});
+											const cardLink = $carousel.find('.card-link');
+											cardLink.on('click', function(event) {
+												event.preventDefault();
+												const targetId = $(this).attr('id');
+												const target = carouselContentToggle.find(`#${targetId}`)
+												if(target) {
+													scrollToContent(target);
+												}
+											})
+										}
+									},
+									onChanged: function(event) {
+										if (carouselContentToggle) {
+											setTimeout(() => {
+												const currentItem = $carousel.find('.owl-item.active.center');
+												const currentItemContent = currentItem.children().first();
+												const currentItemContentId = currentItemContent.attr('id');
+												carouselContentToggle.children().each(function() {
+													if($(this).is(`#${currentItemContentId}`)) {
+														$(this).addClass("current-content");
+													} else {
+														$(this).removeClass("current-content")
+													}
+												})
+											}, 100)
+										}
+									}
+								});
+							}
 						});
 					}
 
@@ -1049,3 +1172,79 @@ var tb = (function () {
 		}
 	}
 })();
+
+//new-accordion
+(function () {
+	$(document).ready(function () {
+		$('.accordion-toggle').on('click', function () {
+			const targetId = $(this).attr('id');
+			const $content = $(`.accordion-content#${targetId}`);
+
+			$(this).toggleClass('opened');
+			$content.toggleClass('opened');
+		});
+	});
+})();
+
+//filter
+(function () {
+	$(document).ready(function () {
+
+		if (!$('.filters').length) return;
+
+		const containerId = $('.filters').attr('data-container-id');
+		const filterMode = $('.filters').attr('data-mode');
+		const container = document.getElementById(containerId);
+		const content = Array.from(container.children);
+		const checkboxes = $('.filters .check-box');
+
+		checkboxes.on('click', function() {
+			const checkboxId = $(this).attr('id');
+			handleCheckboxes(this, checkboxId);
+			const checkedIds = getCheckedIds();
+
+			filter(checkedIds);
+		});
+
+		function handleCheckboxes(clickedElement, checkboxId) {
+			if(checkboxId === "main") {
+				checkboxes.not('#main').removeClass('checked');
+				checkboxes.filter('#main').addClass('checked');
+			} else {
+				$(clickedElement).toggleClass('checked');
+
+				const anyChecked = checkboxes.is('.checked');
+
+				if(!anyChecked) {
+					checkboxes.filter('#main').addClass('checked');
+				} else {
+					if(filterMode === 'checkbox') {
+						checkboxes.filter('#main').removeClass('checked');
+					} else if(filterMode === 'tab') {
+						checkboxes.not($(clickedElement)).removeClass('checked');
+					}
+				}
+			}
+		}
+
+		function getCheckedIds() {
+			return $('.filters .check-box.checked').map(function () {
+				return this.id;
+			}).get();
+		}
+
+		function filter(checkedIds) {
+			if (checkedIds.includes('main')) {
+				content.forEach(item => {
+					item.style.display = 'block';
+				});
+				return;
+			}
+
+			content.forEach(item => {
+				item.style.display = checkedIds.includes(item.id) ? 'block' : 'none';
+			});
+		}
+	});
+})();
+

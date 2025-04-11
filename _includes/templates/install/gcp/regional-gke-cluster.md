@@ -1,4 +1,6 @@
-Create a regional cluster with **3** nodes of **e2-standard-4** machine type.
+Create a regional cluster distributed across 3 zones with nodes of your preferred machine type.
+The example below provisions one **e2-standard-4** node per zone **(three nodes total)**, but you can modify the `--machine-type` and `--num-nodes` to suit your workload requirements.
+For a full list of available machine types and their specifications, refer to the [GCP machine types documentation](https://cloud.google.com/compute/docs/machine-resource).
 
 Execute the following command (recommended):
 

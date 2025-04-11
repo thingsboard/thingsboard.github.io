@@ -7,7 +7,7 @@ In **ThingsBoard**, an **entity** is a core component that represents a physical
 
 **ThingsBoard Edge** supports entities that are relevant for edge computing.
 
-#### Available Edge Entities
+### Available Edge Entities
 
 * **Devices:** Physical IoT devices (sensors, actuators, controllers).
 * **Assets:** A real world object that helps group and manage the IoT ecosystem (e.g., machines, buildings, factories).
@@ -24,14 +24,14 @@ The **Devices** and **Assets** entities have the configuration templates as [Dev
 
 ## Entity Key Features
 
-#### Attributes 
+### Attributes 
 **Attributes** are the structured data that can be associated with the entities (e.g., device model, location, token). 
 They are stored in the local database and can be used for visualization, analysis, logic configuration, and integration with other services.
 
 For a comprehensive understanding of the **ThingsBoard attributes**, please refer to the [Working with IoT Attributes](/docs/{{peDocsPrefix}}user-guide/attributes/){: target="_blank"} documentation. 
 You can also refer to the [Edge Attributes article](/docs/{{docsPrefix}}user-guide/edge-attributes/){: target="_blank"} to review the attributes specific to **Edge**.
 
-#### Telemetry
+### Telemetry
 
 **Telemetry** refers to **time-series data** collected from IoT devices and processed by the **Rule Chain**.
 
@@ -52,7 +52,7 @@ You can learn more about working with telemetry data [here](/{{peDocsPrefix}}doc
 By default, **ThingsBoard Edge** synchronizes telemetry data with the **ThingsBoard Cloud**. 
 During an internet outage, telemetry is stored **locally** and sent to the **Cloud** once the connection is restored.
 
-#### Relations
+### Relations
 
 The **relation** feature defines connections between entities and helps to model the real-world hierarchy between physical objects. 
 

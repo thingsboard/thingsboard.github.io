@@ -351,7 +351,7 @@ toc:
     path: /docs/pe/user-guide/ui/slack-settings/
   - title: Microsoft Teams Settings
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
-  - title: Mail Settings
+  - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
   - title: JWT Security Settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/

@@ -1304,8 +1304,8 @@ Minor release with the following features and bug fixes:
   * [#7402](https://github.com/thingsboard/thingsboard/pull/7402) Update package version for tb docker images;  
   * [#7555](https://github.com/thingsboard/thingsboard/pull/7555) improved lifecycle events and added kill for crash event for js-executor;
   * [#7655](https://github.com/thingsboard/thingsboard/pull/7655) added max_old_space_size to node.js based modules.
-  
-## We welcome our new contributors:
+
+**We welcome our new contributors:**
 
   * [@ashaforost](https://github.com/ashaforost) made their first contribution in [#7199](https://github.com/thingsboard/thingsboard/pull/7199)
   * [@Lenteguppie](https://github.com/Lenteguppie) made their first contribution in [#7394](https://github.com/thingsboard/thingsboard/pull/7394)

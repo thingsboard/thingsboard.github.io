@@ -4,7 +4,7 @@ Flow Nodes are used to control message processing flow.
 * TOC
 {:toc}
 
-##### Acknowledge Node
+## Acknowledge Node
 
 The node will mark the message as successfully processed (acknowledged). See [message processing result](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#message-processing-result) for more details. 
 This indicates to rule engine that the message was successfully processed.
@@ -19,7 +19,7 @@ Failure of unimportant message will be simply ignored.
 Theoretically, you may add other rule nodes after the "acknowledge" one. However, this may cause the OOM errors. 
 For example, subsequent rule nodes may process messages slowly. Unprocessed messages will be stored in memory and will consume too much RAM  
 
-##### Checkpoint Node
+## Checkpoint Node
 
 Publish a copy of the message to the selected [rule engine queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
 The original message is marked as successfully processed once the target queue acknowledge publish of the copied message. 
@@ -27,7 +27,7 @@ The original message is marked as successfully processed once the target queue a
 Useful if you want to mark message as high priority or process messages sequentially grouped by originator of the message. 
 See [default queues](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues) or define your own [queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/). 
 
-##### Rule Chain Node
+## Rule Chain Node
 
 <table  style="width:250px;">
    <thead>
@@ -52,7 +52,7 @@ The logic of message validation may be reused in other rule chains. For this pur
 Notice the "Output" nodes we use in validation rule chain. 
 The names of the output nodes should match the outgoing [relations](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) of the "rule chain node" in the main rule chain.
 
-##### Output Node
+## Output Node
 
 <table  style="width:250px;">
    <thead>

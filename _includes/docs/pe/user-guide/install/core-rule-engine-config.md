@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-####  Server common parameters
+##  Server common parameters
 
 <table>
 	<thead>
@@ -208,7 +208,7 @@
 </table>
 
 
-####  Application info parameters
+##  Application info parameters
 
 <table>
 	<thead>
@@ -227,7 +227,7 @@
 </table>
 
 
-####  Zookeeper connection parameters
+##  Zookeeper connection parameters
 
 <table>
 	<thead>
@@ -284,7 +284,7 @@
 </table>
 
 
-####  Cluster parameters
+##  Cluster parameters
 
 <table>
 	<thead>
@@ -309,7 +309,7 @@
 </table>
 
 
-####  Plugins configuration parameters
+##  Plugins configuration parameters
 
 <table>
 	<thead>
@@ -328,7 +328,7 @@
 </table>
 
 
-####  Security parameters
+##  Security parameters
 
 <table>
 	<thead>
@@ -419,7 +419,7 @@
 </table>
 
 
-####  Mail settings parameters
+##  Mail settings parameters
 
 <table>
 	<thead>
@@ -444,7 +444,7 @@
 </table>
 
 
-####  Usage statistics parameters
+##  Usage statistics parameters
 
 <table>
 	<thead>
@@ -499,7 +499,7 @@
 </table>
 
 
-####  UI settings parameters
+##  UI settings parameters
 
 <table>
 	<thead>
@@ -530,7 +530,7 @@
 </table>
 
 
-####  Database telemetry parameters
+##  Database telemetry parameters
 
 <table>
 	<thead>
@@ -561,7 +561,7 @@
 </table>
 
 
-####  Cassandra driver configuration parameters
+##  Cassandra driver configuration parameters
 
 <table>
 	<thead>
@@ -876,7 +876,7 @@
 </table>
 
 
-####  SQL configuration parameters
+##  SQL configuration parameters
 
 <table>
 	<thead>
@@ -1274,7 +1274,7 @@
 </table>
 
 
-####  Actor system parameters
+##  Actor system parameters
 
 <table>
 	<thead>
@@ -1521,7 +1521,7 @@
 </table>
 
 
-####  Platform integrations parameters
+##  Platform integrations parameters
 
 <table>
 	<thead>
@@ -1657,7 +1657,7 @@
 </table>
 
 
-####  Reports parameters
+##  Reports parameters
 
 <table>
 	<thead>
@@ -1700,7 +1700,7 @@
 </table>
 
 
-####  Cache parameters
+##  Cache parameters
 
 <table>
 	<thead>
@@ -2374,7 +2374,7 @@
 </table>
 
 
-####  Spring data parameters
+##  Spring data parameters
 
 <table>
 	<thead>
@@ -2393,7 +2393,7 @@
 </table>
 
 
-####  Redis configuration parameters
+##  Redis configuration parameters
 
 <table>
 	<thead>
@@ -2604,7 +2604,7 @@
 </table>
 
 
-####  Update version parameters
+##  Update version parameters
 
 <table>
 	<thead>
@@ -2623,7 +2623,7 @@
 </table>
 
 
-####  Spring CORS configuration parameters
+##  Spring CORS configuration parameters
 
 <table>
 	<thead>
@@ -2666,7 +2666,7 @@
 </table>
 
 
-####  General spring parameters
+##  General spring parameters
 
 <table>
 	<thead>
@@ -2745,7 +2745,7 @@
 </table>
 
 
-####  SQL DAO Configuration parameters
+##  SQL DAO Configuration parameters
 
 <table>
 	<thead>
@@ -2874,7 +2874,7 @@
 </table>
 
 
-####  Audit log parameters
+##  Audit log parameters
 
 <table>
 	<thead>
@@ -3083,7 +3083,7 @@
 </table>
 
 
-####  Device state parameters
+##  Device state parameters
 
 <table>
 	<thead>
@@ -3138,7 +3138,7 @@
 </table>
 
 
-####  Tbel parameters
+##  Tbel parameters
 
 <table>
 	<thead>
@@ -3223,7 +3223,7 @@
 </table>
 
 
-####  JS parameters
+##  JS parameters
 
 <table>
 	<thead>
@@ -3350,7 +3350,7 @@
 </table>
 
 
-####  Transport configuration parameters
+##  Transport configuration parameters
 
 <table>
 	<thead>
@@ -4068,7 +4068,7 @@
 </table>
 
 
-####  CoAP server parameters
+##  CoAP server parameters
 
 <table>
 	<thead>
@@ -4241,7 +4241,7 @@
 </table>
 
 
-####  Device connectivity properties
+##  Device connectivity properties
 
 <table>
 	<thead>
@@ -4380,7 +4380,7 @@
 </table>
 
 
-####  Edges parameters
+##  Edges parameters
 
 <table>
 	<thead>
@@ -4507,7 +4507,7 @@
 </table>
 
 
-####  Spring doc common parameters
+##  Spring doc common parameters
 
 <table>
 	<thead>
@@ -4532,7 +4532,7 @@
 </table>
 
 
-####  Swagger common parameters
+##  Swagger common parameters
 
 <table>
 	<thead>
@@ -4623,7 +4623,7 @@
 </table>
 
 
-####  Queue configuration parameters
+##  Queue configuration parameters
 
 <table>
 	<thead>
@@ -5694,7 +5694,7 @@
 </table>
 
 
-####  Event configuration parameters
+##  Event configuration parameters
 
 <table>
 	<thead>
@@ -5731,7 +5731,7 @@
 </table>
 
 
-####  General service parameters
+##  General service parameters
 
 <table>
 	<thead>
@@ -5781,7 +5781,7 @@
 </table>
 
 
-####  Metrics parameters
+##  Metrics parameters
 
 <table>
 	<thead>
@@ -5818,7 +5818,7 @@
 </table>
 
 
-####  Version control parameters
+##  Version control parameters
 
 <table>
 	<thead>
@@ -5849,7 +5849,7 @@
 </table>
 
 
-####  Notification system parameters
+##  Notification system parameters
 
 <table>
 	<thead>
@@ -5874,7 +5874,7 @@
 </table>
 
 
-####  General management parameters
+##  General management parameters
 
 <table>
 	<thead>
@@ -5899,7 +5899,7 @@
 </table>
 
 
-####  Mobile application settings for Thingsboard mobile application
+##  Mobile application settings for Thingsboard mobile application
 
 <table>
 	<thead>

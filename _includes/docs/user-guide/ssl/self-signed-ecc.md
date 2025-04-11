@@ -1,4 +1,4 @@
-### Self-signed certificates generation
+## Self-signed certificates generation
 
 Use the instructions below to generate your own certificate files. Useful for tests, but time-consuming and not recommended for production.
 

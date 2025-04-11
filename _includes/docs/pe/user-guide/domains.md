@@ -22,17 +22,22 @@
 * TOC
 {:toc}
 
-{{THINGSBOARD_WITH_URL}}{:target="_blank"} allows registering your custom domain to have the required host name for user’s access, links, etc.
-{% unless docsPrefix == 'pe/' and docsPrefix == null %}When you register valid domain, the {{THINGSBOARD_URL}} automatically requests the SSL certificate from [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for the latter and manages further certificate renewals.
-After domain registration, your tenant and application(s) will be accessible via your domain name using a secure (HTTPS) connection.
-Like Web UI all other ThingsBoard Cloud services such as MQTT/HTTP/CoAP transports or HTTP integrations will be accessible via your custom domain name.{% endunless %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+{{THINGSBOARD_WITH_URL}}{:target="_blank"} {% unless docsPrefix == null %}[White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature{% endunless %} allows you to use a custom domain to provide secure user access.
+To achieve this, you need to configure an HAProxy Load Balancer and provide an SSL certificate. [This documentation](/docs/user-guide/install/pe/add-haproxy-ubuntu/){:target="_blank"} will help you do this.
+Once set up, you will be able to access the ThingsBoard platform through your custom domain using a secure (HTTPS) connection.
+{% endif %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{{THINGSBOARD_WITH_URL}}{:target="_blank"} [White labeling](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} feature allows you to use a custom domain to provide a personalized hostname for user access.
+When you register a valid domain, {{THINGSBOARD_URL}} automatically requests an SSL certificate and manages future certificate renewals.
+After domain registration, you will be able to access the platform via your domain name using a secure (HTTPS) connection. 
+This feature is primarily intended for Web UI access, so some services, such as MQTT or CoAP transports, may not be available through your custom domain name.
+{% endif %}
 
 ## Domain registration
 
 {% capture domain_owner_note %}
-**Note**
-<br>
-You must be owner of the domain you are registering.
+**Note**: You must be owner of the domain you are registering.
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}
 
@@ -40,7 +45,27 @@ In order to use your own host name instead of **{{THINGSBOARD_HOST}}** you must 
 
 First, on your DNS provider&#39;s website, you must add a canonical record for your domain to map it with eu.thingsboard.cloud{% if docsPrefix == "pe/" %}, and add **SSL certificate**{% endif %}. See [How to Create a CNAME Record For Your Domain](#how-to-create-a-cname-record) for details.
 
-Once done, you can start the procedure of adding a domain. Log in to your {{THINGSBOARD_WITH_URL}}{:target="_blank"} account:
+Once done, you can start the procedure of adding a domain. 
+
+{% if docsPrefix == "pe/" %}
+{% capture domain_owner_note %}
+Starting from ThingsBoard version 3.9.0, adding your own domain name is available at both the Tenant level and the Customer level.
+{% endcapture %}
+{% include templates/info-banner.md content=domain_owner_note %}
+{% endif %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% capture domain_owner_note %}
+Registering your own domain name is available at both the Tenant level and the Customer level.
+{% endcapture %}
+{% include templates/info-banner.md content=domain_owner_note %}
+{% endif %}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+- Log in to your {{THINGSBOARD_WITH_URL}}{:target="_blank"} account;
+{% endif %}
+{% if docsPrefix == null %}
+- Log in to {{THINGSBOARD_WITH_URL}}{:target="_blank"} account as system administrator;
+{% endif %}
 
 {% include images-gallery.html imageCollection="register-domain" showListImageTitles="true" %}
 

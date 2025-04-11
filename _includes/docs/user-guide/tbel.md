@@ -24,7 +24,7 @@ Our search for existing Script/Expression Language (EL) implementations led us t
 The ThingsBoard Expression Language (TBEL) is basically a [fork](https://github.com/thingsboard/tbel) of MVEL with some important security constraints, 
 built-in memory management, and frequently used helper functions that are specific to ThingsBoard.
  
-#### TBEL vs Nashorn
+### TBEL vs Nashorn
 
 TBEL is lightweight and is super fast compared to Nashorn. For example, the execution of 1000 simple scripts like:
 "return msg.temperature > 20" took 16 seconds for Nashorn and 12 milliseconds for MVEL. More than 1000 times faster.
@@ -38,7 +38,7 @@ The one who requires JS flexibility may use remote [JS Executors](/docs/pe/refer
 The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual.
 {% endif %}
 
-#### TBEL vs JS Executors
+### TBEL vs JS Executors
 
 {% if docsPrefix contains 'paas/' %}
 [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
@@ -58,7 +58,7 @@ TBEL execution consumes much less resources and has no extra latency for inter-p
 TBEL is used to evaluate expressions written using Java syntax. Unlike Java however, TBEL is dynamically typed (with optional typing), meaning that the source code does not require type qualification.
 The TBEL expression can be as simple as a single identifier, or as complicated as an expression with method calls and inline collections.
 
-#### Simple Property Expression
+### Simple Property Expression
 
 ```java
 msg.temperature
@@ -83,7 +83,7 @@ return (msg.temperature > 10 && msg.temperature < 20) || (msg.humidity > 10 && m
 ```
 {: .copy-code}
 
-#### Multiple statements
+### Multiple statements
 
 You may write scripts with an arbitrary number of statements using the semi-colon to denote the termination of a statement. 
 This is required in all cases except in cases where there is only one statement, or for the last statement in a script.
@@ -97,7 +97,7 @@ return a + b
 
 Note the lack of a semi-colon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
 
-#### Value Coercion
+### Value Coercion
 
 MVEL’s type coercion system is applied in cases where two incomparable types are presented by attempting to coerce the ‘’right’‘value to that of the type of the’‘left’’ value, and then vice-versa.
 
@@ -110,7 +110,7 @@ For example:
 
 This expression is *true* in TBEL because the type coercion system will coerce the untyped number *123* to a String in order to perform the comparison.
 
-#### Maps
+### Maps
 
 TBEL allows you to create Maps. We use our own implementation of the Map to control memory usage.
 That is why TBEL allows only inline creation of maps.
@@ -202,7 +202,7 @@ map.putAll(mapAdd);
 {: .copy-code}
 
 
-##### Map - Unmodifiable
+#### Map - Unmodifiable
 
 TBEL use our own implementation of an unmodifiable map.
 
@@ -217,7 +217,7 @@ return unmodifiable;      // An error occurs with the message: 'Error: unmodifia
 ```
 {: .copy-code}
 
-#### Lists
+### Lists
 
 TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script.
 That is why TBEL allows only inline creation of lists. For example:
@@ -312,7 +312,7 @@ var sNumber = list.validateClazzInArrayIsOnlyNumber(); // return true
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### List - Unmodifiable
+#### List - Unmodifiable
 
 TBEL use our own implementation of an unmodifiable list.
 
@@ -327,7 +327,7 @@ return unmodifiable;      // An error occurs with the message: 'Error: unmodifia
 ```
 {: .copy-code}
 
-#### Arrays
+### Arrays
 
 TBEL allows you to create Arrays. To control the memory usage, we permit only arrays of primitive types. String arrays are automatically converted to lists.
 
@@ -363,7 +363,7 @@ array[3] = 4; return: Error with message:"Invalid statement: 4" and "[Line: 5, C
 ```
 {: .copy-code}
 
-#### Literals
+### Literals
 
 A literal is used to represent a fixed-value in the source of a particular script.
 
@@ -431,7 +431,7 @@ Boolean literals are represented by the reserved keywords `true` and `false`.
 
 The null literal is denoted by the reserved keywords `null` or `nil`.
 
-#### Using Java Classes
+### Using Java Classes
 
 The TBEL implementation allows the usage of **some** Java classes from the `java.util` and `java.lang` packages. For example:
 
@@ -441,7 +441,7 @@ var foo = Math.sqrt(4);
 {: .copy-code}
 
 
-##### Convert Number to Hexadecimal/Octal/Binary String
+#### Convert Number to Hexadecimal/Octal/Binary String
 - Byte
 
 ```java
@@ -514,7 +514,7 @@ For the same purpose:
 - Added [Date](#tbdate)class, which can be used without specifying a package name.
 - In the `tbel` library, the  [map](#maps) and [list](#lists) classes have extended support for their primary methods, similar to Java.
  
-#### Flow Control
+### Flow Control
 
 **If-Then-Else**
 
@@ -622,7 +622,7 @@ until (isFalse()) {
 
 ## Helper functions
 
-#### btoa
+### btoa
 
 Creates a Base64-encoded ASCII string from a binary string (i.e., a string in which each character in the string is treated as a byte of binary data)
 
@@ -648,7 +648,7 @@ var decodedData = atob(encodedData); // decode the string
 ```
 {: .copy-code}
 
-#### atob
+### atob
 
 Decodes a string of data which has been encoded using Base64 encoding.
 
@@ -674,7 +674,7 @@ var decodedData = atob(encodedData); // decode the string
 ```
 {: .copy-code}
 
-#### toFixed
+### toFixed
 
 Rounds the double value towards "nearest neighbor".
 
@@ -702,7 +702,7 @@ return toFixed(0.345, 2); // returns 0.35
 {: .copy-code}
 
 
-#### stringToBytes
+### stringToBytes
 
 Converts input binary string to the list of bytes.
 
@@ -746,7 +746,7 @@ return stringToBytes(dataJson.inputStr); // Returns  [104, 101, 108, 108, 111, 3
 ```
 {: .copy-code}
 
-#### bytesToString
+### bytesToString
 
 Creates a string from the list of bytes
 
@@ -773,11 +773,11 @@ return bytesToString(bytes); // Returns "HELLO"
 ```
 {: .copy-code}
 
-#### decodeToString
+### decodeToString
 
 Alias for the [bytesToString](#bytestostring)
 
-#### decodeToJson
+### decodeToJson
 
 Decodes a list of bytes to the JSON document.
 
@@ -805,8 +805,8 @@ return decodeToJson(bytes); // Returns '{"hello": "world"}'
 ```
 {: .copy-code}
 
-#### isTypeInValue
-##### isBinary
+### isTypeInValue
+#### isBinary
 
 Validates whether a string represents a binary (base-2) value.
 
@@ -834,7 +834,7 @@ return isBinary("2100110"); // Returns -1
 ```
 {: .copy-code}
 
-##### isOctal
+#### isOctal
 
 Validates whether a string represents an octal (base-8) value.
 
@@ -862,7 +862,7 @@ return isOctal("8100110"); // Returns -1
 ```
 {: .copy-code}
 
-##### isDecimal
+#### isDecimal
 
 Validates whether a string represents a decimal (base-10) value.
 
@@ -890,7 +890,7 @@ return isDecimal("C100110"); // Returns -1
 ```
 {: .copy-code}
 
-##### isHexadecimal
+#### isHexadecimal
 
 Validates whether a string represents a hexadecimal (base-16) value.
 
@@ -918,8 +918,8 @@ return isHexadecimal("K100110"); // Returns -1
 ```
 {: .copy-code}
 
-#### encodeDecodeUri
-##### encodeURI
+### encodeDecodeUri
+#### encodeURI
 {% capture difference %}
 **Note**:
 <br>
@@ -957,7 +957,7 @@ return encodeURI(uriOriginal); // Returns "-_.!~*'();/?:@&=+$,#ht://example.%D0%
 ```
 {: .copy-code}
 
-##### decodeURI
+#### decodeURI
 {% capture difference %}
 **Note**:
 <br>
@@ -989,7 +989,7 @@ return decodeURI(uriEncode); // Returns "-_.!~*'();/?:@&=+$,#ht://example.ж д 
 ```
 {: .copy-code}
 
-#### raiseError
+### raiseError
 
 **Syntax:**
 
@@ -1016,7 +1016,7 @@ return raiseError(message, value); // Returns "frequency_weighting_type must be 
 ```
 {: .copy-code}
 
-#### printUnsignedBytes
+### printUnsignedBytes
 
 Converts List<Signed byte> to List<Unsigned integer>
 
@@ -1047,8 +1047,8 @@ return printUnsignedBytes(listLe);         // Returns [255, 216]
 ```
 {: .copy-code}
 
-#### pad
-##### padStart
+### pad
+#### padStart
 - Pads this string with another string (multiple times, if needed) until the resulting string reaches the given length. 
 - The padding is applied from the start of this string.
 
@@ -1082,7 +1082,7 @@ return padStart(last4Digits, fullNumber.length(), '*'); // Returns "***********C
 ```
 {: .copy-code}
 
-##### padEnd
+#### padEnd
 - Pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length. 
 - The padding is applied from the end of this string.
 
@@ -1118,11 +1118,11 @@ padEnd(last4Digits, fullNumber.length(), '*'); // Returns "203439900FF******"
 ```
 {: .copy-code}
 
-#### numberToRadixString
-##### intToHex
-##### longToHex
-##### floatToHex
-##### doubleToHex
+### numberToRadixString
+#### intToHex
+#### longToHex
+#### floatToHex
+#### doubleToHex
 
 Converts input number (int, long, float, double) to hexString.
 
@@ -1167,7 +1167,7 @@ doubleToHex(1729.1729d, false);                 // Returns "0xEA95B20CB1049B40"
 ```
 {: .copy-code}
 
-##### intLongToRadixString
+#### intLongToRadixString
 
 Converts input number (int, long) to radix String (default Dec).
 
@@ -1203,8 +1203,8 @@ intLongToRadixString(-13158, 16, true, true);        // Returns "0xFFCC9A"
 ```
 {: .copy-code}
 
-#### parseHex
-##### parseHexToInt
+### parseHex
+#### parseHexToInt
 
 Converts the hex string to integer.
 
@@ -1233,7 +1233,7 @@ parseHexToInt("BBAA", false); // Returns 43707
 ```
 {: .copy-code}
 
-###### parseLittleEndianHexToInt
+##### parseLittleEndianHexToInt
 
 Alias for [parseHexToInt(hex, false)](#parsehextoint)
 
@@ -1241,7 +1241,7 @@ Alias for [parseHexToInt(hex, false)](#parsehextoint)
 
 *int parseLittleEndianHexToInt(String hex)*
 
-###### parseBigEndianHexToInt
+##### parseBigEndianHexToInt
 
 Alias for [parseHexToInt(hex, true)](#parsehextoint)
 
@@ -1249,7 +1249,7 @@ Alias for [parseHexToInt(hex, true)](#parsehextoint)
 
 *int parseBigEndianHexToInt(String hex)*
 
-##### parseHexToFloat
+#### parseHexToFloat
 
 Converts the hex string to float from HexString.
 
@@ -1278,7 +1278,7 @@ parseHexToFloat("CC62EA41", false);  // Returns 29.29824f
 ```
 {: .copy-code}
 
-###### parseLittleEndianHexToFloat
+##### parseLittleEndianHexToFloat
 
 Alias for [parseHexToFloat(hex, false)](#parsehextofloat)
 
@@ -1286,7 +1286,7 @@ Alias for [parseHexToFloat(hex, false)](#parsehextofloat)
 
 *float parseLittleEndianHexToFloat(String hex)*
 
-###### parseBigEndianHexToFloat
+##### parseBigEndianHexToFloat
 
 Alias for [parseBigEndianHexToFloat(hex, true)](#parsehextofloat)
 
@@ -1294,7 +1294,7 @@ Alias for [parseBigEndianHexToFloat(hex, true)](#parsehextofloat)
 
 *float parseBigEndianHexToFloat(String hex)*
 
-##### parseHexIntLongToFloat
+#### parseHexIntLongToFloat
 
 {% capture difference %}
 **Note**:
@@ -1333,7 +1333,7 @@ return parseHexIntLongToFloat("0x0A0A00", false);    // Returns 2570.0f
 ```
 {: .copy-code}
 
-##### parseHexToDouble
+#### parseHexToDouble
 
 Converts the hex string to Double.
 
@@ -1362,7 +1362,7 @@ return parseHexToDouble("EA95B20CB1049B40", false);      // Returns 1729.1729
 ```
 {: .copy-code}
 
-###### parseLittleEndianHexToDouble
+##### parseLittleEndianHexToDouble
 
 Alias for [parseHexToDouble(hex, false)](#parsehextodouble)
 
@@ -1370,7 +1370,7 @@ Alias for [parseHexToDouble(hex, false)](#parsehextodouble)
 
 *double parseLittleEndianHexToDouble(String hex)*
 
-###### parseBigEndianHexToDouble
+##### parseBigEndianHexToDouble
 
 Alias for [parseBigEndianHexToDouble(hex, true)](#parsehextodouble)
 
@@ -1378,8 +1378,9 @@ Alias for [parseBigEndianHexToDouble(hex, true)](#parsehextodouble)
 
 *double parseBigEndianHexToDouble(String hex)*
 
-##### hexToBytes List or Array
-###### hexToBytes
+#### hexToBytes List or Array
+
+##### hexToBytes
 
 Converts the hex string to list of integer values, where each integer represents single byte.
 
@@ -1430,8 +1431,8 @@ return hexToBytesArray("AABBCCDDEE"); // Returns [(byte) 0xAA, (byte) 0xBB, (byt
 ```
 {: .copy-code}
 
-#### parseBytes
-##### bytesToHex
+### parseBytes
+#### bytesToHex
 
 Converts the list of integer values, where each integer represents a single byte, to the hex string.
 
@@ -1460,7 +1461,7 @@ return bytesToHex(list);   // Returns "BB53"
 ```
 {: .copy-code}
 
-##### parseBytesToInt
+#### parseBytesToInt
 
 Converts a byte array with the given offset to an int, length, and optional byte order.
 
@@ -1491,7 +1492,7 @@ return parseBytesToInt(bytes, 0, 3, false); // Returns 13417386 in Decimal or 0x
 ```
 {: .copy-code}
 
-##### parseBytesToLong
+#### parseBytesToLong
 
 Converts a byte array with the given offset to a long, length, and optional byte order.
 
@@ -1522,7 +1523,7 @@ return parseBytesToLong(longValByte, 0, 8, false);  // Returns -1543131529725306
 ```
 {: .copy-code}
 
-##### parseBytesToFloat
+#### parseBytesToFloat
 
 {% capture difference %}
 **Note**:
@@ -1570,7 +1571,7 @@ return parseBytesToFloat(floatValList, 0, 4, false);   // Returns -5.948442E7f
 ```
 {: .copy-code}
 
-##### parseBytesIntToFloat
+#### parseBytesIntToFloat
 
 {% capture difference %}
 **Note**:
@@ -1625,7 +1626,7 @@ return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // Retur
 ```
 {: .copy-code}
 
-##### parseBytesLongToDouble
+#### parseBytesLongToDouble
 
 {% capture difference %}
 **Note**:
@@ -1670,7 +1671,7 @@ return parseBytesLongToDouble(coordinatesasBytes, offset + 8, 8, false) / factor
 ```
 {: .copy-code}
 
-##### bytesToExecutionArrayList
+#### bytesToExecutionArrayList
 
 Converts a byte array to an Array List implementation of a byte array with the given offset, length, and optional byte order.
 
@@ -1697,8 +1698,8 @@ return bytesToExecutionArrayList(bytes); // Returns ExecutionArrayList<Byte> val
 {: .copy-code}
 
 
-#### parseBinaryArray
-##### parseByteToBinaryArray
+### parseBinaryArray
+#### parseByteToBinaryArray
 
 Converts a byte to binary array.
 
@@ -1741,7 +1742,7 @@ var actualHighCurrent3Alarm = value[5];
 ```
 {: .copy-code}
 
-##### parseBytesToBinaryArray
+#### parseBytesToBinaryArray
 
 Converts a byte Array to binary Array from the byte Array/List with the given length.
 
@@ -1771,7 +1772,7 @@ return parseBytesToBinaryArray(bytesVal, 2);           // Returns byte[2]  value
 ```
 {: .copy-code}
 
-##### parseLongToBinaryArray
+#### parseLongToBinaryArray
 
 Converts a long value to binary Array from the long value with the given length.
 
@@ -1799,7 +1800,7 @@ return parseLongToBinaryArray(longValue, 16);    // Returns byte[16] value => [1
 ```
 {: .copy-code}
 
-##### parseBinaryArrayToInt
+#### parseBinaryArrayToInt
 
 Converts a binary array to an int value from a binary array, optionally specifying an integer offset, length, and byte order.
 
@@ -1827,8 +1828,8 @@ var actualVolt = parseBinaryArrayToInt([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // Retu
 ```
 {: .copy-code}
 
-#### parseNumber
-##### parseInt
+### parseNumber
+#### parseInt
 
 Converts input string to integer.
 
@@ -1866,7 +1867,7 @@ return parseInt("Kona", 10);        // throws a NumberFormatException
 ```
 {: .copy-code}
 
-##### parseLong
+#### parseLong
 
 Converts input string to long.
 
@@ -1908,7 +1909,7 @@ return parseLong("KonaLong", 16);               // throws a NumberFormatExceptio
 ```
 {: .copy-code}
 
-##### parseFloat
+#### parseFloat
 
 Converts input string to float.
 
@@ -1933,7 +1934,7 @@ return parseFloat("4.2"); // Returns 4.2f
 ```
 {: .copy-code}
 
-##### parseDouble
+#### parseDouble
 
 Converts input string to double.
 
@@ -1958,7 +1959,7 @@ return parseDouble("4.2"); // Returns 4.2d
 ```
 {: .copy-code}
 
-#### Bitwise Operations
+### Bitwise Operations
 
 Bitwise operations in ThingsBoard allow manipulation of individual bits within integer, long, and boolean values. These operations support mixed-type operands (Integer, Long, Boolean) without implicit type conversions, and the result type depends on the operation's outcome: either Integer or Long.
 
@@ -2050,8 +2051,8 @@ return rightUnShift;     // Returns 5
 ```
 {: .copy-code}
 
-#### base64
-##### base64ToHex
+### base64
+#### base64ToHex
 
 Decodes the Base64 string, to hex string.
 
@@ -2076,7 +2077,7 @@ return base64ToHex("Kkk="); // Returns "2A49"
 ```
 {: .copy-code}
 
-##### bytesToBase64
+#### bytesToBase64
 
 Encodes a byte array into a Base64 string.
 
@@ -2101,8 +2102,8 @@ return bytesToBase64([42, 73]); // Returns "Kkk="
 ```
 {: .copy-code}
 
-##### base64 To Bytes Array or List
-###### base64ToBytes
+#### base64 To Bytes Array or List
+##### base64ToBytes
 
 Decodes a Base64 string into a byte array.
 
@@ -2152,7 +2153,7 @@ return base64ToBytesList("AQIDBAU="); // Returns ExecutionArrayList<Byte> value 
 ```
 {: .copy-code}
 
-#### toFlatMap
+### toFlatMap
 
 Iterates recursive over the given object and creates a single level json object.  
 If the incoming message contains arrays, the key for transformed value will contain index of the element.  
@@ -2214,7 +2215,7 @@ JSON Object
 }
 ```
 
-##### toFlatMap(json)
+#### toFlatMap(json)
 
 Expected behavior - get the single level object with paths in keys. 
 
@@ -2244,7 +2245,7 @@ return toFlatMap(json);
 ```
 {: .copy-code}
 
-##### toFlatMap(json, pathInKey)
+#### toFlatMap(json, pathInKey)
 
 Expected behavior - get the single level object without paths in keys.  
 **key_to_overwrite** should contain the value from **key11.key_to_overwrite**.  
@@ -2276,7 +2277,7 @@ return toFlatMap(json, false);
 
 As you can see, **key_to_overwrite** is **second_level_value** instead of **root_value**.  
   
-##### toFlatMap(json, excludeList)
+#### toFlatMap(json, excludeList)
 
 Expected behavior - get the single level object with paths in keys, without keys **key1** and **key3**.  
 
@@ -2297,7 +2298,7 @@ return toFlatMap(json, ["key1", "key3"]);
 
 As you can see, **key1** and **key3** were removed from output. Excluding works on any level with incoming keys.   
   
-##### toFlatMap(json, excludeList, pathInKey)
+#### toFlatMap(json, excludeList, pathInKey)
 
 Expected behavior - get the single level object without paths in keys, without keys **key2** and **key4**.  
 **key_to_overwrite** should contain the value from **key11.key_to_overwrite**.    
@@ -2326,11 +2327,11 @@ return toFlatMap(json, ["key2", "key4"], false);
 
 As you can see, **key2** and **key4** was excluded from the output and **key_to_overwrite** is **second_level_value**.  
 
-####  tbDate: 
+### tbDate: 
 
 The *Tbel* library uses all standard JavaScript methods in the [JavaScript Date](https://www.w3schools.com/jsref/jsref_getdate.asp), such as **"toLocaleString"**,  **"toISOString"** and other methods;
 
-##### Input format data:
+#### Input format data:
 - String with Optional: pattern, locale, time zone
 - ints (year, month and etc) with Optional: pattern, locale, time zone
 
@@ -2342,7 +2343,7 @@ Time zone Id default: *ZoneId.systemDefault()*;
 
 a Date object as a string, using locale default: "UTC", time zone Id default: ZoneId.systemDefault().
 
-###### String with Optional: pattern, locale, time zone 
+##### String with Optional: pattern, locale, time zone 
 
 **Examples:**
 - Input data format: Only one - String (Variable the Time Zone in the input parameter), without pattern:
@@ -2465,7 +2466,7 @@ var dLocal_us = d.toLocaleString("en-US");                                      
 ```
 {: .copy-code}
 
-###### Instant (year, month and etc) with Optional: time zone
+##### Instant (year, month and etc) with Optional: time zone
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "America/New_York");
 var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "America/New_York")
@@ -2483,7 +2484,7 @@ var dDate = d;                                                      // return "S
 ```
 {: .copy-code}
 
-##### locale
+#### locale
 
 **Syntax:**
 
@@ -2528,7 +2529,7 @@ var dLocal3 = d.toLocaleString("de");                   // return "05.08.23, 22:
 ```     
 {: .copy-code}
 
-##### locale, time zone
+#### locale, time zone
 
 **Syntax:**
 
@@ -2555,7 +2556,7 @@ var dLocal3 = d.toLocaleString("de", "Europe/Berlin");          //  return "06.0
 ```
 {: .copy-code}
 
-##### local, pattern (With Map options)
+#### local, pattern (With Map options)
 
 **Syntax:**
 

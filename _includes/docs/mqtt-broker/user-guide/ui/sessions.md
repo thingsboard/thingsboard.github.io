@@ -18,7 +18,7 @@ In the "Session Details" users can disconnect or remove client session:
 
 {% include images-gallery.html imageCollection="sessions-details" %}
 
-### Session Details
+## Session Details
 
 The **Details** tab contains the next information: 
    * **Connected Status** (Connected/Disconnected).
@@ -35,7 +35,7 @@ The **Details** tab contains the next information:
    * [**Client Credentials**](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) that authenticated current session.
    * **MQTT version** - determines which version of MQTT protocol to be used - MQTT 3.1 (3), MQTT 3.1.1 (4), or MQTT 5.0 (5).
 
-### Subscriptions
+## Subscriptions
 
 On the **Subscriptions** tab users can view various details about the subscriptions associated with a session, such as:
 {% include templates/mqtt-broker/subscription-options.md %}
@@ -48,7 +48,7 @@ Here are the available actions for managing subscriptions:
 
 {% include images-gallery.html imageCollection="sessions-subscriptions" %}
 
-### Metrics
+## Metrics
 
 The **Metrics** tab provide detailed insights into the flow of MQTT messages within the session that may be helpful in monitoring the performance and reliability of message delivery:
 * **Received PUBLISH Messages**. The total number of PUBLISH messages received by the client.

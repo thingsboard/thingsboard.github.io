@@ -5,7 +5,7 @@ We continue to develop our dashboard. In the previous lesson, we added and confi
 We recommend reviewing it if you haven't done so yet.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="n-button add-device">Lesson 3: Adding and configuring individual states for each device</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/" class="button">Lesson 3: Adding and configuring individual states for each device</a></p>
 
 <br>
 
@@ -44,7 +44,7 @@ First, you need to define the rules that will trigger the alarm. The simplest wa
 Devices using the **air-sensor** device profile transmit telemetry data such as temperature, humidity, and CO2 levels. 
 Let&#39;s configure alarm rules for each of these telemetry keys:
 
-##### High temperature alarm rule
+#### High temperature alarm rule
 
 We will set two conditions for creating a high temperature alarm for the "temperature" key, and one condition for clear alarm:
 
@@ -116,7 +116,7 @@ Finally, the configured rule for creating a high-temperature alarm and the condi
 
 **Now, drawing on your previous experience, you can independently configure the alarm rules for low temperature, high and low humidity, and high CO2 levels. Go ahead!**
 
-##### Low temperature alarm rule
+#### Low temperature alarm rule
 
 Set the following rules for creating and clearing a low air temperature alarm:
 
@@ -136,7 +136,7 @@ Alarm clearing:
 
 For the telemetry key "humidity", we will define two conditions for triggering a high humidity alarm and one condition for clearing the alarm:
 
-##### High humidity alarm rule
+#### High humidity alarm rule
 
 Alarm creation:
 
@@ -149,7 +149,7 @@ Alarm clearing:
 
 {% include images-gallery.html imageCollection="final-high-humidity-alarm-rules" %}
 
-##### Low humidity alarm rule
+#### Low humidity alarm rule
 
 Alarm creation:
 
@@ -162,7 +162,7 @@ Alarm clearing:
 
 {% include images-gallery.html imageCollection="final-low-humidity-alarm-rules" %}
 
-##### High CO2 alarm rule
+#### High CO2 alarm rule
 
 Finally, for the telemetry key "co2", we will define the following conditions for creating and clearing alarms:
 
@@ -318,4 +318,4 @@ The configuration of alarm creation rules for these devices will be covered in t
 In the next lesson, we will share this dashboard with customers. When you are ready to proceed, simply click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/" class="n-button add-device">Lesson 5: Share dashboard with customer</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/" class="button">Lesson 5: Share dashboard with customer</a></p>
