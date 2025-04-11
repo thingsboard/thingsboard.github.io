@@ -64,7 +64,16 @@ Where:
 ## Step 4. Running
 
 {% include templates/install/docker/docker-create-folders-sudo-explained.md %}
+{% capture docker-desktop-osx-pe-warning %}
+For Docker Desktop users on MacOS, that utilize [Synchronized file shares feature](https://docs.docker.com/desktop/features/synchronized-file-sharing/) (enabled by default for `/Users` subdirectories):
 
+Please note that you need to omit changing host volume ownership, since it is resolved automatically by virtualization engine.
+
+`mkdir -p ~/.mytbpe-data`
+
+`mkdir -p ~/.mytbpe-logs`
+{% endcapture %}
+{% include templates/warn-banner.md content=docker-desktop-osx-pe-warning %}
 ```
 mkdir -p ~/.mytbpe-data && sudo chown -R 799:799 ~/.mytbpe-data
 mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs

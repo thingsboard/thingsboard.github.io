@@ -51,7 +51,16 @@ Where:
 - `image: thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
 
 {% include templates/install/docker/docker-create-folders-sudo-explained.md %}
+{% capture docker-desktop-osx-warning %}
+For Docker Desktop users on MacOS, that utilize [Synchronized file shares feature](https://docs.docker.com/desktop/features/synchronized-file-sharing/) (enabled by default for `/Users` subdirectories):
 
+Please note that you need to omit changing host volume ownership, since it is resolved automatically by virtualization engine.
+
+`mkdir -p ~/.mytb-data`
+
+`mkdir -p ~/.mytb-logs`
+{% endcapture %}
+{% include templates/warn-banner.md content=docker-desktop-osx-warning %}
 ```
 mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
 mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
