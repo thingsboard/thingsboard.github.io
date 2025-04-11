@@ -13,10 +13,28 @@
   description: "SCADA systems are generally divided into two types: Traditional and High-Performance. Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements."
   media:
     image: "https://img.thingsboard.io/usecases/scada/video/scada.png"
-    alt: "See more about SCADA use case"
+    alt: "See more about SCADA Swimming pool"
     video: ["https://video.thingsboard.io/usecases/scada.mp4", "https://video.thingsboard.io/usecases/scada.webm"]
   href: "/use-cases/scada/"
 2:
+  type: "SCADA"
+  name: "SCADA Oil & Gas drilling system"
+  description: "Automate drilling operations with SCADA and ThingsBoard. Control rigs, pumps, and blowout preventers in real time, visualize key parameters, and enhance operational safety. Flexible SCADA symbol templates allow you to tailor the system to any production scenario."
+  media:
+    image: "https://img.thingsboard.io/usecases/scada-oil-and-gas-drilling-system/video/scada-oil-and-gas-drilling.png"
+    alt: "See more about SCADA Oil & gas drilling system"
+    video: ["https://video.thingsboard.io/usecases/scada-oil-and-gas-drilling-system.mp4", "https://video.thingsboard.io/usecases/scada-oil-and-gas-drilling-system.webm"]
+  href: "/use-cases/scada-oil-and-gas-drilling-system/"
+3:
+  type: "SCADA"
+  name: "SCADA Energy management"
+  description: "Gain a complete real-time view of energy consumption and generation. Use SCADA powered by ThingsBoard to monitor, analyze, and optimize energy flows — from generation to end use. Track efficiency, forecast demand peaks, and reduce costs with intuitive dashboards and seamless integration with industrial equipment."
+  media:
+    image: "https://img.thingsboard.io/usecases/scada-energy-management/video/scada-energy-management.png"
+    alt: "See more about SCADA Energy management"
+    video: ["https://video.thingsboard.io/usecases/scada-energy-management.mp4", "https://video.thingsboard.io/usecases/scada-energy-management.webm"]
+  href: "/use-cases/scada-energy-management/"
+4:
   type: "General"
   name: "Environment Monitoring"
   description: "Monitor and analyze indoor and outdoor environments using a wide range of sensors. ThingsBoard supports data acquisition using modern connectivity technologies and protocols: NB IoT, LoRaWAN, SigFox, MQTT, CoAP, HTTP, LwM2M, and others."
@@ -25,7 +43,7 @@
     alt: "Environment monitoring dashboard"
     video: ["https://video.thingsboard.io/usecases/environment-monitoring.mp4", "https://video.thingsboard.io/usecases/environment-monitoring.webm"]
   href: "/use-cases/environment-monitoring/"
-3:
+5:
   type: "General"
   name: "Smart Office"
   description: "Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities."
@@ -34,7 +52,7 @@
     alt: "See more about Smart Office"
     video: ["https://video.thingsboard.io/usecases/smart-office.mp4", "https://video.thingsboard.io/usecases/smart-office.webm"]
   href: "/use-cases/smart-office/"
-4:
+6:
   type: "General"
   name: "Water Metering"
   description: "Enable water consumption data collection, analysis and fraud detection using ThingsBoard. Use interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. Enable alarms over SMS and email and integrate with external billing systems."
@@ -43,7 +61,7 @@
     alt: "Water metering dashboard"
     video: ["https://video.thingsboard.io/usecases/water-metering.mp4", "https://video.thingsboard.io/usecases/water-metering.webm"]
   href: "/use-cases/water-metering/"
-5:
+7:
   type: "General"
   name: "Smart Retail"
   description: "Control quality of food storage by monitoring chillers and freezers. Ensure availability of the goods using smart shelves. Ensure safety using motion detection and fire alarms. ThingsBoard provides a solution template to monitor supermarket assets, browse historical data and generate alarms based on user-defined thresholds."
@@ -52,7 +70,7 @@
     alt: "Smart retail dashboard"
     video: ["https://video.thingsboard.io/usecases/smart-retail.mp4", "https://video.thingsboard.io/usecases/smart-retail.webm"]
   href: "/use-cases/smart-retail/"
-6:
+8:
   type: "General"
   name: "Smart Farming"
   description: "Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform."
@@ -61,7 +79,7 @@
     alt: "Smart farming dashboard"
     video: ["https://video.thingsboard.io/usecases/smart-farming.mp4", "https://video.thingsboard.io/usecases/smart-farming.webm"]
   href: "/use-cases/smart-farming/"
-7:
+9:
   type: "General"
   name: "Fleet Tracking"
   description: "ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards."
@@ -70,7 +88,7 @@
     alt: "Fleet tracking dashboard"
     video: ["https://video.thingsboard.io/usecases/fleet-tracking.mp4", "https://video.thingsboard.io/usecases/fleet-tracking.webm"]
   href: "/use-cases/fleet-tracking/"
-8:
+10:
   type: "General"
   name: "Smart Metering"
   description: "Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users."
@@ -79,7 +97,7 @@
     alt: "Fleet tracking dashboard"
     video: ["https://video.thingsboard.io/usecases/smart-metering.mp4", "https://video.thingsboard.io/usecases/smart-metering.webm"]
   href: "/use-cases/smart-metering/"
-9:
+11:
   type: "General"
   name: "Health Care: Smart Assisted Living Solution"
   description: "Track patient health metrics in real time and immediately notify medical professionals of critical changes. This solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care."
@@ -88,7 +106,7 @@
     alt: "Health Care dashboard"
     video: ["https://video.thingsboard.io/usecases/health-care.mp4", "https://video.thingsboard.io/usecases/health-care.webm"]
   href: "/use-cases/health-care/"
-10:
+12:
   type: "General"
   name: "Air Quality Monitoring"
   description: "Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions."
@@ -97,7 +115,7 @@
     alt: "Air quality dashboard"
     video: ["https://video.thingsboard.io/usecases/air-quality.mp4", "https://video.thingsboard.io/usecases/air-quality.webm"]
   href: "/use-cases/air-quality-monitoring/"
-11:
+13:
   type: "General"
   name: "Smart Irrigation"
   description: "Monitor the irrigation system and respond in time to changes in field conditions. List the fields and monitor their soil moisture, location, statistics, etc."
@@ -106,7 +124,7 @@
     alt: "Smart irrigation dashboard"
     video: ["https://video.thingsboard.io/usecases/smart-irrigation.mp4", "https://video.thingsboard.io/usecases/smart-irrigation.webm"]
   href: "/use-cases/smart-irrigation/"
-12:
+14:
   type: "General"
   name: "Waste Management"
   description: "Optimize waste management operations with our solution. Streamline processes, monitor waste levels, and track data for efficient and sustainable practices."
@@ -114,7 +132,7 @@
     image: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-1.png"
     alt: "Waste monitoring dashboard"
   href: "/use-cases/waste-management/"
-13:
+15:
   type: "General"
   name: "Tank Level Monitoring"
   description: "Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions."
