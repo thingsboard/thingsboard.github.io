@@ -92,8 +92,9 @@ All deployment modes support separate JS executors, Redis, and different [queues
 
 {% include templates/install/install-queue-docker-compose.md %}
 
-{% include templates/install/cluster-queue-kafka.md %}
-
+{% capture contenttogglespecqueue %}
+Kafka <small>(default, recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/cluster-queue-kafka.md%br%
+Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/cluster-queue-confluent-cloud.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
 ## Step 8. Enable monitoring (optional)
