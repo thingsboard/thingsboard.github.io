@@ -1410,7 +1410,7 @@ selfManagedPlan:
                             <p>Yes, it is completely free, with no licensing fees or hidden costs.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="is-ce-free" data-title="Can I use ThingsBoard Community Edition for commercial projects?">
+                    <div class="item" data-tag="h4" data-item-id="ce-for-commercial" data-title="Can I use ThingsBoard Community Edition for commercial projects?">
                         <div class="container">
                             <p>Yes, ThingsBoard Community Edition can be used for commercial purposes. You can develop and deploy IoT solutions based on the Community Edition as part of your business operations. It is distributed under the Apache 2.0 license, which allows commercial use without the license or royalty fees.</p>
                         </div>
@@ -1592,7 +1592,7 @@ selfManagedPlan:
                             <p>You can report it on <a href="https://github.com/thingsboard/">GitHub</a>, and the open-source community may help fix it.</p>
                         </div>    
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="ce-bug-found" data-title="Can I contribute to the development of ThingsBoard Community Edition?">
+                    <div class="item hidden" data-tag="h4" data-item-id="ce-contribute" data-title="Can I contribute to the development of ThingsBoard Community Edition?">
                         <div class="container">
                             <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/">GitHub</a>.</p>
                         </div>    

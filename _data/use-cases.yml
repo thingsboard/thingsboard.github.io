@@ -3,9 +3,17 @@
   link: /use-cases/smart-energy/
   icon: /images/case-eng-icon.svg
 - id: scada
-  title: SCADA
+  title: SCADA Swimming pool
   link: /use-cases/scada/
   icon: /images/case-scada-icon.svg
+- id: scada-oil-and-gas-drilling-system
+  title: SCADA Oil and gas drilling system
+  link: /use-cases/scada-oil-and-gas-drilling-system/
+  icon: /images/case-scada-drilling-system-icon.svg
+- id: scada-energy-management
+  title: SCADA Energy management
+  link: /use-cases/scada-energy-management/
+  icon: /images/case-scada-energy-management.svg
 - id: environment-monitoring
   title: Environment monitoring
   link: /use-cases/environment-monitoring/
