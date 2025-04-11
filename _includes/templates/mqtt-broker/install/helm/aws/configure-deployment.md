@@ -20,7 +20,7 @@ Here are the fields you can change depending on your needs:
 - `availabilityZones` - should specify the exact IDs of the region's availability zones (the default value is `[ us-east-1a,us-east-1b,us-east-1c ]`)
 - `instanceType` - type of the instances for node groups. Change per workload (e.g., TBMQ, Redis, Kafka).
 - `desiredCapacity` - number of nodes per node group. Defaults are suggested for testing.
-- `volumeType` - type of EBS volume for EC2 nodes. You can set it to `gp3` for better performance and lower cost, but ensure a `gp3` StorageClass exists.
+- `volumeType` - type of EBS volume for EC2 nodes. Defaults to `gp3`.
 
 Refer to [Amazon EC2 Instance types](https://aws.amazon.com/ec2/instance-types/)
 to choose the right instance types for your production workloads.
@@ -36,7 +36,7 @@ TBMQ Helm chart supports external PostgreSQL, so you might not need this node gr
     maxSize: 1
     minSize: 0
     labels: { role: postgresql }
-    volumeType: gp2
+    volumeType: gp3
     volumeSize: 20
 ```
 
@@ -93,17 +93,60 @@ eksctl create cluster -f cluster.yml
 ```
 {: .copy-code}
 
+### Create GP3 storage class and make it default
+
+When provisioning persistent storage in Amazon EKS, the `gp3` volume type is the modern, recommended default. It offers superior performance, cost-efficiency, and flexibility compared to `gp2`.
+
+Please download the storage class configuration file:
+
+```bash
+curl -o gp3-def-sc.yml https://raw.githubusercontent.com/ShvaykaD/tbmq/helm-aws/k8s/helm/aws/gp3-def-sc.yml
+```
+{: .copy-code}
+
+Apply the configuration:
+
+```bash
+kubectl apply -f gp3-def-sc.yml
+```
+{: .copy-code}
+
+If a `gp2` StorageClass exists, it may conflict with `gp3`. You can either make `gp2` storage class non-default:
+
+```bash
+kubectl patch storageclass gp2 -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+```
+{: .copy-code}
+
+Or delete the `gp2` StorageClass (if unused):
+
+```bash
+kubectl delete storageclass gp2
+```
+{: .copy-code}
+
+Check the `gp3` storage class available and marked as default:
+
+```bash
+kubectl get sc
+```
+{: .copy-code}
+
+You should see similar output:
+
+```text
+NAME            PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+gp3 (default)   ebs.csi.aws.com   Delete          WaitForFirstConsumer   true                   30s
+```
 
 ### Attach Policy
 
-If you've created your EKS cluster using the provided cluster.yml, then the following are already configured automatically:
+If you've created your EKS cluster using the provided `cluster.yml`, then the following are already configured automatically:
  - OIDC provider is enabled (withOIDC: true)
  - Service account aws-load-balancer-controller is created in the kube-system namespace.
  - The account is annotated for IAM access and linked with the well-known AWS-managed policy.
 
-However, one final step remains:
-
-You must manually attach the AWSLoadBalancerControllerIAMPolicy (or your custom policy) to the IAM role created by eksctl.
+However, you must manually attach the AWSLoadBalancerControllerIAMPolicy (or your custom policy) to the IAM role created by eksctl.
 
  - Find the role created by `eksctl`:
 
@@ -117,10 +160,10 @@ aws iam list-roles \
 Looks for something like:
 
 ```text
-eksctl-tbmq-addon-iamserviceaccount-kube-syst-Role1-XYZ123ABC
+eksctl-tbmq-addon-iamserviceaccount-kube-syst-Role1-J9l4M87BqmNu
 ```
 
- - Attach the policy:
+- Attach the policy:
 
 Replace both `YOUR_AWS_ACCOUNT_ID` and `ROLE_NAME` with your actual AWS account ID and the IAM role name found in the previous step:
 
@@ -128,5 +171,40 @@ Replace both `YOUR_AWS_ACCOUNT_ID` and `ROLE_NAME` with your actual AWS account 
 aws iam attach-role-policy \
 --policy-arn arn:aws:iam::YOUR_AWS_ACCOUNT_ID:policy/AWSLoadBalancerControllerIAMPolicy \
 --role-name ROLE_NAME
+```
+{: .copy-code}
+
+You can verify the attachment with:
+
+```bash
+aws iam list-attached-role-policies --role-name ROLE_NAME
+```
+{: .copy-code}
+
+You should see similar output:
+
+```text
+ATTACHEDPOLICIES        arn:aws:iam::YOUR_AWS_ACCOUNT_ID:policy/AWSLoadBalancerControllerIAMPolicy     AWSLoadBalancerControllerIAMPolicy
+```
+
+### Create AWS Load Balancer Controller
+
+To support Network Load Balancer (NLB) and Application Load Balancer (ALB) provisioning via Kubernetes annotations,
+you'll need to deploy the AWS Load Balancer Controller into your EKS cluster.
+
+```bash
+helm repo add eks https://aws.github.io/eks-charts
+helm repo update
+```
+{: .copy-code}
+
+After that, install the controller into the `kube-system` namespace and associates it with your cluster:
+
+```bash
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+--namespace kube-system \
+--set clusterName=tbmq \
+--set serviceAccount.create=false \
+--set serviceAccount.name=aws-load-balancer-controller
 ```
 {: .copy-code}
