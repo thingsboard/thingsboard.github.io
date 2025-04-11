@@ -27,6 +27,10 @@ on AWS using Elastic Kubernetes Service (EKS).
 
 {% include templates/mqtt-broker/install/helm/common/get-default-chart-values.md %}
 
+### Update nodeSelector for Pods Scheduling
+
+{% include templates/mqtt-broker/install/helm/aws/pods-scheduling.md %}
+
 ### External PostgreSQL
 
 {% include templates/mqtt-broker/install/helm/common/external-postgres.md %}
