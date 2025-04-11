@@ -61,7 +61,7 @@ There are seven action types that are applicable to all widgets:
 - **Open URL** - allows you to go to any resource represented by a URL.
 
 There is also a special action type available exclusively for [Map widgets](/docs/{{docsPrefix}}user-guide/widgets/map-widgets/){:target="_blank"}:
-- **Place map item** — use it to add your own buttons with custom actions.
+- **Place map item** — allows you to create and place a new entity directly on the map widget in just a few clicks.
 
 Let&#39;s consider each of these types of actions separately.
 
@@ -1016,6 +1016,43 @@ We assume that you are already familiar with the "[Add action](#add-action)" ste
 After saving the changes, you can see an icon in the upper right part of the widget. Click this icon. You will be transferred to the URL specified in the action. In our case, it's the "Working with ThingsBoard widgets" documentation page.
 
 {% include images-gallery.html imageCollection="open-url-2" %}
+
+#### Place map item
+
+The **Place map item** action type allows users to create new entities and immediately place them on the map widget.
+
+Let&#39;s consider an example of adding an action button to a map that will allow users to place new objects on the map.
+
+- In the "**Map action buttons**" section, click "**Add button**".
+- Specify a name for the new button — for our example, "Add building" — and set its icon and color.
+- Now click the "**Action**" field to define the action, and instead of the default "Do nothing", select "**Place map item**".
+- Select the map item type to be placed — in this case, it&#39;s "Marker".
+- The custom action function field contains a default function that displays a dialog for creating a device or an asset — exactly what we need.
+- Save the changes.
+
+{% include images-gallery.html imageCollection="place-map-item-1" %}
+
+To ensure that newly created entities are immediately displayed on the map, you need to properly configure the data source.
+
+- In the "**Overlays**" section, under the "**Marker**" tab, create a new entity alias as the data source. Name it "**buildings**".
+- Since I&#39;ll be creating assets with the asset type "**buildings**", set the filter type to "**Asset type**" and specify the type as "**buildings**".
+- Apply all changes.
+
+{% include images-gallery.html imageCollection="place-map-item-2" %}
+
+Now, the action button labeled "Add building" has appeared at the top of the map.
+
+- Find the location on the map where you want to place the entity and click on it.
+- In the "Add entity" dialog window that appears, make sure to **enter a name for the new entity** and **select its type — Asset**. Other fields are optional.
+- Then, click "**Create**".
+
+The new marker is now added to the map.
+
+{% include images-gallery.html imageCollection="place-map-item-3" %}
+
+Go to the "**Assets**" page — here you&#39;ll find your newly created asset, "Building A".
+
+{% include images-gallery.html imageCollection="place-map-item-4" %}
 
 ## Action sources
 

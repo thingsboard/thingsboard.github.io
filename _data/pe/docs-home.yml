@@ -76,15 +76,15 @@ toc:
     section:
       - title: Overview
         path: /docs/pe/user-guide/widgets/
-      - title: Map widgets
-        path: /docs/pe/user-guide/widgets/map-widgets/
-        new: true
       - title: Widget actions
         path: /docs/pe/user-guide/ui/widget-actions/
       - title: Widgets library
         path: /docs/pe/user-guide/ui/widget-library/
       - title: Chart widgets
         path: /docs/pe/user-guide/ui/chart-widget/
+      - title: Map widgets
+        path: /docs/pe/user-guide/widgets/map-widgets/
+        new: true
       - title: Entities table widget
         path: /docs/pe/user-guide/ui/entity-table-widget/
       - title: Trip animation widget

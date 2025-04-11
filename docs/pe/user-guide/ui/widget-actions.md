@@ -252,6 +252,47 @@ open-url-2:
         image: /images/user-guide/ui/widgets/actions/guide/types/open-url-6-pe.png
         title: 'You will be transferred to the URL specified in the action. In our case, it&#39;s the "Working with ThingsBoard widgets" documentation page.'
 
+place-map-item-1:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-1-pe.png
+        title: 'In the "Map action buttons" section, click "Add button".'
+    1:
+        image: /images/user-guide/widgets/maps/map-action-buttons-2-pe.png
+        title: 'Specify a name for the new button — for our example, "Add building" — and set its icon and color. Click the "Action" field to define the action, and instead of the default "Do nothing"'
+    2:
+        image: /images/user-guide/widgets/maps/map-action-buttons-3-pe.png
+        title: 'Choose the "Place map item" action.'
+    3:
+        image: /images/user-guide/widgets/maps/map-action-buttons-4-pe.png
+        title: 'Select the map item type to be placed — in this case, it&#39;s "Marker". The custom action function field contains a default function that displays a dialog for creating a device or an asset — exactly what we need. Then, click "Add".'
+    4:
+        image: /images/user-guide/widgets/maps/map-action-buttons-5-pe.png
+        title: 'Save the changes.'
+
+place-map-item-2:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-6-pe.png
+        title: 'In the "Overlays" section, under the "Marker" tab, create a new entity alias as the data source. Name it "buildings".'
+    1:
+        image: /images/user-guide/widgets/maps/map-action-buttons-7-pe.png
+        title: 'Since I&#39;ll be creating assets with the asset type "buildings", set the filter type to "Asset type" and specify the type as "buildings". Apply all changes.'
+
+place-map-item-3:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-8-pe.png
+        title: 'Now, the action button labeled "Add building" has appeared at the top of the map. Find the location on the map where you want to place the entity and click on it.'
+    1:
+        image: /images/user-guide/widgets/maps/map-action-buttons-9-pe.png
+        title: 'In the "Add entity" dialog window that appears, make sure to enter a name for the new entity and select its type — Asset. Other fields are optional. Then, click "Create".'
+    2:
+        image: /images/user-guide/widgets/maps/map-action-buttons-10-pe.png
+        title: 'The new marker is now added to the map.'
+
+place-map-item-4:
+    0:
+        image: /images/user-guide/widgets/maps/map-action-buttons-11-pe.png
+        title: 'Go to the "Assets" page — here you&#39;ll find your newly created asset, "Building A".'
+
 action-cell-button-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/action-cell-button-1-pe.png

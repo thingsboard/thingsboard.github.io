@@ -80,27 +80,28 @@ marker-configuration-keys:
         image: /images/user-guide/widgets/maps/marker-configuration-keys-1-pe.png
         title: 'Define the coordinate keys. ThingsBoard automatically sets the coordinate keys as latitude and longitude. If your entity uses custom coordinate key names, update them here. Additional data keys can be used for labels, tooltips, and displaying extra information directly on the map.'
 
-icon-configuration:
+marker-icon-color-1:
     0:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-icon-1-pe.png
-        title: 'Choose the marker type (Shape / Icon / Image) and adjust its size if needed.'
+        image: /images/user-guide/widgets/maps/marker-icon-color-1-pe.png
+        title: 'Customize the marker by selecting a different one from a variety of standard shapes and icons, and adjusting its size.'
     1:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-icon-2-pe.png
-        title: 'Pick a new icon that best represents your entity.'
+        image: /images/user-guide/widgets/maps/marker-icon-color-2-pe.png
+        title: 'Use a function that dynamically changes the marker color based on the value of the "state" key.'
     2:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-icon-3-pe.png
-        title: ''
-    3:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-icon-4-pe.png
-        title: 'Apply the changes to see them on the map.'
-    4:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-icon-5-pe.png
-        title: 'Currently, the key state has the value opened, so the marker appears green.'
-    5:
-        image: /images/user-guide/widgets/maps/marker-configuration-appearance-icon-6-pe.png
-        title: 'Change the value of the state key to closed — the marker will now turn red.'
+        image: /images/user-guide/widgets/maps/marker-icon-color-3-pe.png
+        title: 'Apply all changes.'
 
-marker-configuration-appearance-label:
+marker-icon-color-2:
+    0:
+        image: /images/user-guide/widgets/maps/marker-icon-color-4-pe.png
+        title: 'Currently, the "state" key has the value "opened", so the marker is displayed in green.'
+
+marker-icon-color-3:
+    0:
+        image: /images/user-guide/widgets/maps/marker-icon-color-5-pe.png
+        title: 'As soon as the value of the "state" key changes to anything else, the marker will turn red.'
+
+marker-label:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-label-1-pe.png
         title: 'Here, you can customize the label displayed above the marker. By default, the label displays the entity name. You can edit the label text or use a label function to display more dynamic information;'
@@ -108,7 +109,7 @@ marker-configuration-appearance-label:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-label-2-pe.png
         title: 'Customized marker label.'
 
-marker-configuration-appearance-tooltip:
+marker-tooltip:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-1-pe.png
         title: 'Use the tooltip pattern or tooltip function;'
@@ -116,7 +117,7 @@ marker-configuration-appearance-tooltip:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-2-pe.png
         title: 'Click on the marker to display a tooltip.'
 
-marker-configuration-appearance-tooltip-action-1:
+marker-tooltip-action-1:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-1-pe.png
         title: 'Click the "Add tag action" icon button.'
@@ -133,7 +134,7 @@ marker-configuration-appearance-tooltip-action-1:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-5-pe.png
         title: 'Apply all changes.'
 
-marker-configuration-appearance-tooltip-action-2:
+marker-tooltip-action-2:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-6-pe.png
         title: 'Click on the marker. In the tooltip that appears, you&#39;ll see a tag — click on it.'
@@ -141,7 +142,7 @@ marker-configuration-appearance-tooltip-action-2:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-tooltip-action-7-pe.png
         title: 'The action you defined in the tag&#39;s settings will be executed.'
 
-marker-configuration-appearance-behavior:
+marker-behavior:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-behavior-1-pe.png
         title: 'Go to the "Behavior" section and click the "On click" action field to define the action instead of the default "Do nothing".'
@@ -153,24 +154,29 @@ marker-configuration-appearance-behavior:
         title: 'Click on the marker.'
     3:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-behavior-4-pe.png
-        title: 'The action you specified in the tag action settings will be triggered.'
+        title: 'The action you specified in the action settings will be triggered.'
       
-marker-configuration-appearance-groups:
+marker-groups:
     0:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-1-pe.png
-        title: 'In the "Groups" section, enter a name for the group to which you want to add this marker;'
+        title: 'In the "Groups" section, enter a name for the group to which you want to add this marker.'
     1:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-2-pe.png
-        title: 'A "Groups" icon button will appear on the widget. Click on it;'
+        title: 'A "Groups" icon button will appear on the widget. Click on it.'
     2:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-3-pe.png
-        title: 'Uncheck the checkbox next to the newly created group;'
+        title: 'To hide a group, uncheck the box next to its name.'
     3:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-4-pe.png
         title: 'The markers that belong to this group have been hidden.'
     4:
         image: /images/user-guide/widgets/maps/marker-configuration-appearance-groups-5-pe.png
         title: ''
+
+marker-editing-tools:
+    0:
+        image: /images/user-guide/widgets/maps/marker-editing-tools-1-pe.png
+        title: 'You can use the built-in tools to perform operations on markers such as Add / Move / Delete. By default, these tools are disabled. Check the boxes next to the tools you want to enable.'
 
 manually-add-marker:
     0:
@@ -201,7 +207,7 @@ remove-marker:
         image: /images/user-guide/widgets/maps/remove-marker-1-pe.png
         title: 'Enable the "Remove" tool in the marker settings under the "Edit marker" section.'
     1:
-        image: /images/user-guide/widgets/maps/remove-marker-2-pe.png
+        image: /images/user-guide/widgets/maps/remove-marker-1-pe.png
         title: 'To delete a marker, simply click on it, then click the trash bin icon in the menu at the bottom of the widget.'
 
 use-map-markers-clustering:
@@ -226,13 +232,82 @@ add-polygon:
         image: /images/user-guide/widgets/maps/add-polygon-3-pe.png
         title: 'The polygon will appear on the map based on the entity&#39;s data.'
 
+polygon-configuration:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-configuration-1-pe.png
+        title: 'To configure a specific polygon, switch to the map widget&#39;s edit mode. Then, in the "Polygon" tab under the "Overlays" section, click the "gear" icon button next to the desired polygon to open its configuration panel.'
+
+polygon-configuration-datasource:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-configuration-datasource-1-pe.png
+        title: 'Specify the polygon data source — it can be a device, entity alias, or function. If necessary, use a filter.'
+
+polygon-configuration-keys:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-configuration-keys-1-pe.png
+        title: 'Define the key that contains the polygon coordinates. By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here. Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.'
+
+polygon-color:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-color-1-pe.png
+        title: 'Change the fill color and stroke color of the polygon. For the fill, you can also use stripes or an image as a background.'
+    1:
+        image: /images/user-guide/widgets/maps/polygon-color-2-pe.png
+        title: ''
+
+polygon-label:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-label-1-pe.png
+        title: 'Configure the label displayed above the polygon. By default, the label shows the name of the entity linked to that polygon. You can manually edit the label text or use a label function to display dynamic information.'
+    1:
+        image: /images/user-guide/widgets/maps/polygon-label-2-pe.png
+        title: 'Custom polygon label.'
+
+polygon-tooltip:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-tooltip-1-pe.png
+        title: 'Here you can configure a tooltip that appears when you click on or hover over the polygon. Use the tooltip pattern or tooltip function to define more dynamic content. Alternatively, you can hide the tooltip altogether.'
+    1:
+        image: /images/user-guide/widgets/maps/polygon-tooltip-2-pe.png
+        title: 'Click on the polygon to display the tooltip.'
+
+polygon-behavior:
+  0:
+      image: /images/user-guide/widgets/maps/polygon-behavior-1-pe.png
+      title: 'Go to the "Behavior" section and click the "On click" action field to define the action instead of the default "Do nothing".'
+  1:
+      image: /images/user-guide/widgets/maps/polygon-behavior-2-pe.png
+      title: 'Set up the desired action and apply the changes.'
+  2:
+      image: /images/user-guide/widgets/maps/polygon-behavior-3-pe.png
+      title: 'Click on the polygon.'
+  3:
+      image: /images/user-guide/widgets/maps/polygon-behavior-4-pe.png
+      title: 'The action you specified in the action settings will be triggered.'
+
+polygon-groups:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-groups-1-pe.png
+        title: 'In the "Groups" section, enter a name for the group to which you want to add this polygon;'
+    1:
+        image: /images/user-guide/widgets/maps/polygon-groups-2-pe.png
+        title: 'A "Groups" icon button will appear on the widget. Click on it;'
+    2:
+        image: /images/user-guide/widgets/maps/polygon-groups-3-pe.png
+        title: 'To hide a group, uncheck the box next to its name.'
+    3:
+        image: /images/user-guide/widgets/maps/polygon-groups-4-pe.png
+        title: 'The polygon that belong to this group have been hidden.'
+
+polygon-editing-tools:
+    0:
+        image: /images/user-guide/widgets/maps/polygon-editing-tools-1-pe.png
+        title: 'You can use the built-in tools to perform operations on markers such as Add / Move / Delete. By default, these tools are disabled. Check the boxes next to the tools you want to enable.'
+
 manually-add-polygon:
     0:
         image: /images/user-guide/widgets/maps/manually-add-polygon-1-pe.png
-        title: 'Switch to the widget edit mode and click "Add polygon" in the "Overlays" section. Specify the data source — it can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to assets of the type "Parking spots". ThingsBoard automatically sets the coordinate key to "perimeter". If you&#39;re using a custom key name, update it here accordingly. Now, open polygon configuration'
-    1:
-        image: /images/user-guide/widgets/maps/manually-add-polygon-2-pe.png
-        title: 'Scroll down to the "Edit polygon" section and check the "Add" tool. Choose where to store the coordinates — either in the "Server" or "Shared" attribute scope. Optionally, enable snapping to other vertices for precision drawing. Don&#39;t forget to save your changes.'
+        title: 'In the "Edit polygon" section, check the "Add" tool. Next, select the attribute scope where the coordinate will be stored: "Server" or "Shared". Optionally, enable snapping to other vertices for precision drawing. Then, save the changes.'
 
 place-polygon:
     0:
@@ -249,132 +324,300 @@ place-polygon:
         title: 'Adjust the polygon to the desired size, then click again to finish. If you&#39;re using "Drew polygon", make sure to close the shape by clicking the first point once you&#39;ve placed all others.'
     4:
         image: /images/user-guide/widgets/maps/place-polygon-5-pe.png
-        title: ''
+        title: 'The polygon will be added, and its coordinates will be automatically saved to the entity as attribute.'
 
-polygon-configuration:
+edit-polygon:
     0:
-        image: /images/user-guide/widgets/maps/polygon-configuration-1-pe.png
-        title: 'To configure a specific polygon, switch to the map widget&#39;s edit mode. Then, in the "Polygon" tab under the "Overlays" section, click the "gear" icon button next to the desired polygon to open its configuration panel.'
-
-polygon-configuration-datasource:
-    0:
-        image: /images/user-guide/widgets/maps/polygon-configuration-datasource-1-pe.png
-        title: 'Specify the polygon’s data source — it can be a device, an entity alias, or a function. If needed, apply a filter to narrow down the selection.'
-
-polygon-configuration-keys:
-    0:
-        image: /images/user-guide/widgets/maps/polygon-configuration-keys-1-pe.png
-        title: 'Define the key that contains the polygon coordinates. By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here. Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.'
-
-polygon-color:
-    0:
-        image: /images/user-guide/widgets/maps/polygon-color-1-pe.png
-        title: ''
+        image: /images/user-guide/widgets/maps/edit-polygon-1-pe.png
+        title: 'To enable polygon editing, check the "Edit" tool in its settings under the "Edit polygon" section.'
     1:
-        image: /images/user-guide/widgets/maps/polygon-color-2-pe.png
+        image: /images/user-guide/widgets/maps/edit-polygon-2-pe.png
+        title: 'To resize the polygon, click on it — its vertices will appear. Drag any of the points to adjust the polygon&#39;s size.'
+    2:
+        image: /images/user-guide/widgets/maps/edit-polygon-3-pe.png
+        title: 'Once you&#39;re satisfied with the new size, click anywhere outside the polygon to apply the current dimensions.'
+    3:
+        image: /images/user-guide/widgets/maps/edit-polygon-4-pe.png
         title: ''
+
+move-polygon:
+    0:
+        image: /images/user-guide/widgets/maps/move-polygon-1-pe.png
+        title: 'To enable moving a polygon on the map, activate the "Move" tool in the polygon settings under the "Edit polygon" section.'
+    1:
+        image: /images/user-guide/widgets/maps/move-polygon-2-pe.png
+        title: 'Now, click on the polygon, hold down the mouse button, and drag it to the new location.'
+
+rotate-polygon:
+    0:
+        image: /images/user-guide/widgets/maps/rotate-polygon-1-pe.png
+        title: 'Select the polygon by clicking on it, then click the "Rotate polygon" icon button from the tools at the bottom.'
+    1:
+        image: /images/user-guide/widgets/maps/rotate-polygon-2-pe.png
+        title: 'Grab any point of the polygon and drag it in the desired direction to rotate it.'
+    2:
+        image: /images/user-guide/widgets/maps/rotate-polygon-3-pe.png
+        title: 'Once you&#39;re satisfied with the rotation, click the "Rotate polygon" icon button again to finish.'
+
+cut-polygon-area:
+    0:
+        image: /images/user-guide/widgets/maps/cut-polygon-area-1-pe.png
+        title: 'Select the polygon by clicking on it, then choose "Cut polygon area" from the tools at the bottom.'
+    1:
+        image: /images/user-guide/widgets/maps/cut-polygon-area-2-pe.png
+        title: 'Draw the area you want to remove by outlining it on the polygon.'
+    2:
+        image: /images/user-guide/widgets/maps/cut-polygon-area-3-pe.png
+        title: 'Close the shape by connecting the first and last points.'
+    3:
+        image: /images/user-guide/widgets/maps/cut-polygon-area-4-pe.png
+        title: 'Click anywhere outside the polygon to save the changes.'
+
+remove-polygon:
+    0:
+        image: /images/user-guide/widgets/maps/remove-polygon-1-pe.png
+        title: 'Enable the "Remove" tool in the polygon settings under the "Edit polygon" section.'
+    1:
+        image: /images/user-guide/widgets/maps/remove-polygon-2-pe.png
+        title: 'To delete a polygon, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
+    2:
+        image: /images/user-guide/widgets/maps/remove-polygon-3-pe.png
+        title: 'The polygon has been removed from the map.'
+
+
 
 add-circle:
     0:
         image: /images/user-guide/widgets/maps/add-circle-1-pe.png
-        title: 'Switch to edit mode on the widget and click "Add circle" in the "Overlays" section.'
+        title: 'Enter widget edit mode and go to the "Overlays" section. Switch to the "Circles" tab and click "Add circle".'
     1:
         image: /images/user-guide/widgets/maps/add-circle-2-pe.png
-        title: 'Specify the data source — this can be a device, an entity alias, or a function. ThingsBoard automatically uses "perimeter" as the default coordinate key. If your setup uses a custom key name, update it here accordingly. Apply changes.'
+        title: 'Select the entity that will be represented as a circle. This can be a device, entity alias, or function. Define the key with the coordinates of the circle. ThingsBoard will use the "perimeter" key by default to read the circle coordinates from the entity&#39;s attribute. If your entity uses a different key name, update it here. Click "Apply" — the circle will appear on the map based on the entity&#39;s data.'
     2:
         image: /images/user-guide/widgets/maps/add-circle-3-pe.png
         title: 'The circle has been successfully added to the map.'
-    
-manually-add-circle:
-    0:
-        image: /images/user-guide/widgets/maps/manually-add-circle-1-pe.png
-        title: 'Switch to the widget edit mode and click "Add circle" in the "Overlays" section. Specify the data source — it can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to assets of the type "Parking spots". ThingsBoard automatically sets the coordinate key to "perimeter". If you&#39;re using a custom key name, update it here accordingly. Now, open polygon configuration'
-    1:
-        image: /images/user-guide/widgets/maps/manually-add-circle-2-pe.png
-        title: 'Scroll down to the "Edit circle" section and check the "Add" tool. Choose where to store the coordinates — either in the "Server" or "Shared" attribute scope. Optionally, enable snapping to other vertices for precision drawing. Don&#39;t forget to save your changes.'
-    
-place-circle:
-    0:
-        image: /images/user-guide/widgets/maps/place-circle-1-pe.png
-        title: 'The map widget now offers two tools for adding a circle: "Drew rectangle" and "Drew circle". Choose the option that suits your needs.'
-    1:
-        image: /images/user-guide/widgets/maps/place-circle-2-pe.png
-        title: 'If you&#39;re using an alias with multiple entities as the data source, select the desired entity from the dropdown list.'
-    2:
-        image: /images/user-guide/widgets/maps/place-circle-3-pe.png
-        title: 'Find the desired location on the map and click to place the first point;'
-    3:
-        image: /images/user-guide/widgets/maps/place-circle-4-pe.png
-        title: 'Adjust the polygon to the desired size, then click again to finish. If you&#39;re using "Drew polygon", make sure to close the shape by clicking the first point once you&#39;ve placed all others.'
-    
+
 circle-configuration:
     0:
         image: /images/user-guide/widgets/maps/circle-configuration-1-pe.png
-        title: 'To configure a specific polygon, switch to the map widget&#39;s edit mode. Then, in the "Circle" tab under the "Overlays" section, click the "gear" icon button next to the desired circle to open its configuration panel.'
+        title: 'To configure a specific circle, switch to the map widget&#39;s edit mode. Then, in the "Circle" tab under the "Overlays" section, click the "gear" icon button next to the desired circle to open its configuration panel.'
     
 circle-configuration-datasource:
     0:
         image: /images/user-guide/widgets/maps/circle-configuration-datasource-1-pe.png
-        title: 'Specify the polygon’s data source — it can be a device, an entity alias, or a function. If needed, apply a filter to narrow down the selection.'
+        title: 'Specify the circle&#39;s data source — it can be a device, an entity alias, or a function. If needed, apply a filter to narrow down the selection.'
     
 circle-configuration-keys:
     0:
         image: /images/user-guide/widgets/maps/circle-configuration-keys-1-pe.png
-        title: 'Define the key that contains the polygon coordinates. By default, ThingsBoard uses "perimeter" as the polygon key. If your entity uses a different key name, make sure to update it here. Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.'
+        title: 'Define the key that contains the circle coordinates. By default, ThingsBoard uses "perimeter" as the circle key. If your entity uses a different key name, make sure to update it here. Additional data keys can be used for labels, tooltips, or to display extra information directly on the map.'
     
 circle-color:
     0:
         image: /images/user-guide/widgets/maps/circle-color-1-pe.png
-        title: ''
+        title: 'Change the fill color and stroke color of the circle. For the fill, you can also use stripes or an image as a background.'
     1:
         image: /images/user-guide/widgets/maps/circle-color-2-pe.png
         title: ''
+
+circle-label:
+    0:
+        image: /images/user-guide/widgets/maps/circle-label-1-pe.png
+        title: 'Configure the label displayed above the circle. By default, the label shows the name of the entity linked to that circle. You can manually edit the label text or use a label function to display dynamic information.'
+    1:
+        image: /images/user-guide/widgets/maps/circle-label-2-pe.png
+        title: 'Custom circle label.'
+
+circle-tooltip:
+    0:
+        image: /images/user-guide/widgets/maps/circle-tooltip-1-pe.png
+        title: 'Use tooltip pattern or tooltip function.'
+    1:
+        image: /images/user-guide/widgets/maps/circle-tooltip-2-pe.png
+        title: 'Click on the circle to display the tooltip.'
+
+circle-behavior:
+    0:
+        image: /images/user-guide/widgets/maps/circle-behavior-1-pe.png
+        title: 'Go to the "Behavior" section and click the "On click" action field to define the action instead of the default "Do nothing".'
+    1:
+        image: /images/user-guide/widgets/maps/circle-behavior-2-pe.png
+        title: 'Set up the desired action and apply the changes.'
     2:
-        image: /images/user-guide/widgets/maps/circle-color-3-pe.png
-        title: ''
+        image: /images/user-guide/widgets/maps/circle-behavior-3-pe.png
+        title: 'Click on the circle.'
+    3:
+        image: /images/user-guide/widgets/maps/circle-behavior-4-pe.png
+        title: 'The action you specified in the action settings will be triggered.'  
+
+circle-groups:
+    0:
+        image: /images/user-guide/widgets/maps/circle-groups-1-pe.png
+        title: 'In the "Groups" section, enter a name for the group to which you want to add this circle.'
+    1:
+        image: /images/user-guide/widgets/maps/circle-groups-2-pe.png
+        title: 'Click on the "Groups" icon button.'
+    2:
+        image: /images/user-guide/widgets/maps/circle-groups-3-pe.png
+        title: 'To hide a group, uncheck the box next to its name.'
+    3:
+        image: /images/user-guide/widgets/maps/circle-groups-4-pe.png
+        title: 'The circle that belong to this group have been hidden.'
+
+circle-editing-tools:
+    0:
+        image: /images/user-guide/widgets/maps/circle-editing-tools-1-pe.png
+        title: 'You can use the built-in tools to perform operations on circles such as Add / Move / Delete. By default, these tools are disabled. Check the boxes next to the tools you want to activate.'
+
+manually-add-circle:
+    0:
+        image: /images/user-guide/widgets/maps/manually-add-circle-1-pe.png
+        title: 'Switch to the widget edit mode and click "Add circle" in the "Overlays" section. Specify the data source — it can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to assets of the type "Parking spots". ThingsBoard automatically sets the coordinate key to "perimeter". If you&#39;re using a custom key name, update it here accordingly. Now, open polygon configuration'
+
+place-circle:
+    0:
+        image: /images/user-guide/widgets/maps/place-circle-1-pe.png
+        title: 'The map widget now offers a tool for adding a circle: "Draw circle". Click on this icon button to begin.'
+    1:
+        image: /images/user-guide/widgets/maps/place-circle-2-pe.png
+        title: 'Find the desired location on the map and click to place the first point;'
+    2:
+        image: /images/user-guide/widgets/maps/place-circle-3-pe.png
+        title: 'Adjust the circle to the desired size, then click again to finish.'
+    3:
+        image: /images/user-guide/widgets/maps/place-circle-4-pe.png
+        title: 'The circle has been added to the map.'
+
+edit-circle:
+    0:
+        image: /images/user-guide/widgets/maps/edit-circle-1-pe.png
+        title: 'To resize the circle, click on it — the radius handle will appear. Drag this point to adjust the size of the circle.'
+    1:
+        image: /images/user-guide/widgets/maps/edit-circle-2-pe.png
+        title: 'Once you&#39;re satisfied with the new size, click anywhere outside the circle to apply the current dimensions.'
+
+move-circle:
+    0:
+        image: /images/user-guide/widgets/maps/move-circle-1-pe.png
+        title: 'To move a circle, click on it, hold down the mouse button, and drag circle to the new location.'
+
+remove-circle:
+    0:
+        image: /images/user-guide/widgets/maps/remove-circle-1-pe.png
+        title: 'To delete a circle, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
+
+
+map-controls:
+    0:
+        image: /images/user-guide/widgets/maps/map-controls-1-pe.png
+        title: 'Enable the "Remove" tool in the circle settings under the "Edit circle" section.'
+    1:
+        image: /images/user-guide/widgets/maps/map-controls-2-pe.png
+        title: 'To delete a circle, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
+
+
+
+
+
 
 
 map-action-buttons-1:
     0:
         image: /images/user-guide/widgets/maps/map-action-buttons-1-pe.png
-        title: ''
+        title: 'In the "Map action buttons" section, click "Add button".'
     1:
         image: /images/user-guide/widgets/maps/map-action-buttons-2-pe.png
-        title: ''
+        title: 'Specify a name for the new button — for our example, "Add building" — and set its icon and color. Click the "Action" field to define the action, and instead of the default "Do nothing"'
     2:
         image: /images/user-guide/widgets/maps/map-action-buttons-3-pe.png
-        title: ''
+        title: 'Choose the "Place map item" action.'
     3:
         image: /images/user-guide/widgets/maps/map-action-buttons-4-pe.png
-        title: ''
+        title: 'Select the map item type to be placed — in this case, it&#39;s "Marker". The custom action function field contains a default function that displays a dialog for creating a device or an asset — exactly what we need. Then, click "Add".'
     4:
         image: /images/user-guide/widgets/maps/map-action-buttons-5-pe.png
-        title: ''
+        title: 'Save the changes.'
 
 map-action-buttons-2:
     0:
         image: /images/user-guide/widgets/maps/map-action-buttons-6-pe.png
-        title: ''
+        title: 'In the "Overlays" section, under the "Marker" tab, create a new entity alias as the data source. Name it "buildings".'
     1:
         image: /images/user-guide/widgets/maps/map-action-buttons-7-pe.png
-        title: ''
+        title: 'Since I&#39;ll be creating assets with the asset type "buildings", set the filter type to "Asset type" and specify the type as "buildings". Apply all changes.'
 
 map-action-buttons-3:
     0:
         image: /images/user-guide/widgets/maps/map-action-buttons-8-pe.png
-        title: ''
+        title: 'Now, the action button labeled "Add building" has appeared at the top of the map. Find the location on the map where you want to place the entity and click on it.'
     1:
         image: /images/user-guide/widgets/maps/map-action-buttons-9-pe.png
-        title: ''
+        title: 'In the "Add entity" dialog window that appears, make sure to enter a name for the new entity and select its type — Asset. Other fields are optional. Then, click "Create".'
     2:
         image: /images/user-guide/widgets/maps/map-action-buttons-10-pe.png
-        title: ''
+        title: 'The new marker is now added to the map.'
 
 map-action-buttons-4:
     0:
         image: /images/user-guide/widgets/maps/map-action-buttons-11-pe.png
-        title: ''
+        title: 'Go to the "Assets" page — here you&#39;ll find your newly created asset, "Building A".'
 
+common-map-settings:
+    0:
+        image: /images/user-guide/widgets/maps/common-map-settings-1-pe.png
+        title: 'Common map settings are the basic global settings for the Map widget in ThingsBoard. They define how the map behaves on load and what is displayed initially.'
+
+card-appearance:
+    0:
+        image: /images/user-guide/widgets/maps/card-appearance-1-pe.png
+        title: 'Customize the widget&#39;s appearance.'
+
+data-source-for-action:
+    0:
+        image: /images/user-guide/widgets/maps/data-source-for-action-1-pe.png
+        title: 'In the "Overlays" section, under the "Marker" tab, create a new entity alias as the data source. Name it "EV stations".'
+    1:
+        image: /images/user-guide/widgets/maps/data-source-for-action-2-pe.png
+        title: 'Since we&#39;ll be creating entities of the type "EV station", set the filter type to "Asset type" and specify the type as "EV station". Apply changes.'
+
+action:
+    0:
+        image: /images/user-guide/widgets/maps/action-1-pe.png
+        title: 'Scroll down and find the "Actions" section. Click the "Add action" button.'
+    1:
+        image: /images/user-guide/widgets/maps/action-2-pe.png
+        title: 'The "Actions" window will open. It&#39;s currently empty, but once you add actions, they&#39;ll appear here. Click the "plus" icon button in the top-right corner to add a new action.'
+    2:
+        image: /images/user-guide/widgets/maps/action-3-pe.png
+        title: 'Select the action source as "Widget header button", enter a button name, and choose its type.'
+    3:
+        image: /images/user-guide/widgets/maps/action-4-pe.png
+        title: 'Optionally, customize the button icon and color.'
+    4:
+        image: /images/user-guide/widgets/maps/action-5-pe.png
+        title: 'In the "Action" section, choose "Place map item" from the dropdown menu. Select the type of map item to be placed — in our case, it&#39;s "Marker". The Custom action function field contains a default function that opens a dialog to create a device or an asset — exactly what we need.'
+    5:
+        image: /images/user-guide/widgets/maps/action-6-pe.png
+        title: 'Then click "Add" and save all your changes.'
+    6:
+        image: /images/user-guide/widgets/maps/action-7-pe.png
+        title: 'A new action button labeled "Add EV station" has now appeared at the top of the map.'
+
+action-place-marker:
+    0:
+        image: /images/user-guide/widgets/maps/action-place-marker-1-pe.png
+        title: 'Find the location on the map where you want to place the EV station, and click on it.'
+    1:
+        image: /images/user-guide/widgets/maps/action-place-marker-2-pe.png
+        title: 'In the "Add entity" dialog that appears, make sure to enter a name for the new entity and select its type — Asset. The other fields are optional. Then click "Create".'
+    2:
+        image: /images/user-guide/widgets/maps/action-place-marker-3-pe.png
+        title: 'The new "EV station" marker is now added to the map.'
+
+action-created-asset:
+    0:
+        image: /images/user-guide/widgets/maps/action-created-asset-1-pe.png
+        title: 'Go to the "Assets" page — there you&#39;ll find your newly created asset, "EV station 1".'
 
 ---
 

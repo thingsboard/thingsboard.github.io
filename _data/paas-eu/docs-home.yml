@@ -76,9 +76,6 @@ toc:
       section:
         - title: Overview
           path: /docs/paas/eu/user-guide/widgets/
-        - title: Map widgets
-          path: /docs/paas/eu/user-guide/widgets/map-widgets/
-          new: true
         - title: Widget actions
           path: /docs/paas/eu/user-guide/ui/widget-actions/
         - title: Widgets library
@@ -87,6 +84,9 @@ toc:
           path: /docs/paas/eu/user-guide/contribution/widgets-development/
         - title: Chart widgets
           path: /docs/paas/eu/user-guide/ui/chart-widget/
+        - title: Map widgets
+          path: /docs/paas/eu/user-guide/widgets/map-widgets/
+          new: true
         - title: Entities table widget
           path: /docs/paas/eu/user-guide/ui/entity-table-widget/
         - title: Trip animation widget
