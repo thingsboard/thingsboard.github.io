@@ -24,7 +24,7 @@ gcloud services enable container.googleapis.com
 
 ### Configure and create GKE cluster
 
-{% include templates/install/gcp/zonal-gke-cluster.md %}
+{% include templates/install/gcp/regional-gke-cluster.md %}
 
 ### Update the context of kubectl
 
