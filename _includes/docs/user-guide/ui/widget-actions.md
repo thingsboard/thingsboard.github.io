@@ -1021,38 +1021,39 @@ After saving the changes, you can see an icon in the upper right part of the wid
 
 The **Place map item** action type allows users to create new entities and immediately place them on the map widget.
 
-Let&#39;s consider an example of adding an action button to a map that will allow users to place new objects on the map.
+<br>
+As an example, let&#39;s add a button that allows users to place charging stations on the map:
 
-- In the "**Map action buttons**" section, click "**Add button**".
-- Specify a name for the new button — for our example, "Add building" — and set its icon and color.
-- Now click the "**Action**" field to define the action, and instead of the default "Do nothing", select "**Place map item**".
-- Select the map item type to be placed — in this case, it&#39;s "Marker".
-- The custom action function field contains a default function that displays a dialog for creating a device or an asset — exactly what we need.
-- Save the changes.
+To start, and to ensure that newly created entities are instantly displayed on the map, you need to configure the data source.
 
-{% include images-gallery.html imageCollection="place-map-item-1" %}
+- In the "**Overlays**" section, under the "**Marker**" tab, create a new entity alias as the data source. Name it "**EV stations**".
+- Since we&#39;ll be creating entities of the type "**EV station**", set the filter type to "**Asset type**" and specify the type as "**EV station**".
+- Apply changes.
 
-To ensure that newly created entities are immediately displayed on the map, you need to properly configure the data source.
+{% include images-gallery.html imageCollection="data-source-for-action" %}
 
-- In the "**Overlays**" section, under the "**Marker**" tab, create a new entity alias as the data source. Name it "**buildings**".
-- Since I&#39;ll be creating assets with the asset type "**buildings**", set the filter type to "**Asset type**" and specify the type as "**buildings**".
-- Apply all changes.
+Now let&#39;s move on to configuring the action:
 
-{% include images-gallery.html imageCollection="place-map-item-2" %}
+- Scroll down to the "**Actions**" section and click the "**Add action**" button.
+- A new window will open, displaying all your created actions. Click the "plus" icon button in the top-right corner to add one.
+- Select the action source as "**Widget header button**", enter a name for the button, and choose its type.
+- Optionally, change the icon that will appear next to the button or hide it entirely. You can also set a custom color for the button.
+- From the dropdown menu, select the type of action to be performed. In our case, it&#39;s "**Place map item**".
+- Next, choose the **type of map item** to be placed — we&#39;ll be placing a "**Marker**".
+- The **custom action function** field already contains a default function that opens a dialog for creating a device or an asset — exactly what we need.
+- In the "**Action**" section, choose "**Place map item**" from the dropdown menu. Select the type of map item to be placed — in our case, it&#39;s "**Marker**". The Custom action function field contains a default function that opens a dialog to create a device or an asset — exactly what we need.
+- Then click "**Add**".
+- Apply all changes and save the dashboard.
 
-Now, the action button labeled "Add building" has appeared at the top of the map.
+{% include images-gallery.html imageCollection="action" %}
 
-- Find the location on the map where you want to place the entity and click on it.
-- In the "Add entity" dialog window that appears, make sure to **enter a name for the new entity** and **select its type — Asset**. Other fields are optional.
-- Then, click "**Create**".
+A new action button labeled "**Add EV station**" has now appeared at the top of the map. Let&#39;s use it.
 
-The new marker is now added to the map.
+{% include images-gallery.html imageCollection="action-place-marker" showListImageTitles="true" %}
 
-{% include images-gallery.html imageCollection="place-map-item-3" %}
+Go to the "**Assets**" page — there you&#39;ll find your newly created asset, "**EV station 1**".
 
-Go to the "**Assets**" page — here you&#39;ll find your newly created asset, "Building A".
-
-{% include images-gallery.html imageCollection="place-map-item-4" %}
+{% include images-gallery.html imageCollection="action-created-asset" %}
 
 ## Action sources
 

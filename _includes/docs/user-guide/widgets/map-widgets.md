@@ -20,27 +20,27 @@ In ThingsBoard version 4.0, we&#39;ve completely reworked our Map widgets to mak
 
 <b><font size="4">Key improvements:</font></b>
 
-- Placing the desired element (e.g., marker, polygon, circle) on the map in just a few clicks. Under the hood, this action triggers a custom function that receives the coordinates of the clicked location and adds them as attributes to the target entity.
-- The unified **Trip Map** widget combines the functionality of the legacy Trip Animation and Router Map widgets:
-    - Supports animated routes, markers, and stop points.
-    - Introduced a dedicated set of marker icons.
-    - Support for different path decorators and the option to display points.
-    - Custom timeline controls (date format, playback speed, etc.).
-- Dynamic map layers switching. Switch between standard, satellite, hybrid, or custom map views directly within the widget.
-- Reference layer. A new optional layer for displaying transparent contextual map elements.
-- Improved configuration of map items (Marker / Polygon / Circle):
-  - Independent overlay configuration. Each overlay (marker, polygon, circle) now has separate settings that do not interfere with each other.
-  - Fewer coordinate errors. Validation has been improved to help avoid mistakes when defining coordinates — it&#39;s now harder to forget required keys or misconfigure the source.
-  - Predefined marker shapes. A set of standard marker shapes is now available out of the box. If needed, you can still use custom icons for full visual flexibility.
-  - More color settings. In addition to "constant" and "function" types, there is now a "range" option, allowing automatic color changes based on key values (e.g., temperature, status).
-  - You can now define *Action on click* and *Tag action* separately for each overlay, giving you better control over behavior.
-  - Overlays can now be grouped, making it easy to show/hide multiple items at once on the map.
-  - Improved item editing UX. Click on a map item, and contextual edit options will appear.
-  - Attribute scope selection for coordinates. When configuring coordinates, you can now specify the scope (e.g., shared attributes, latest telemetry, etc.) to pull the values from.
-- Additional datasources can be used for labels, tooltips, and displaying extra information directly on the map.
-- Flexible control panel placement. Map controls (zoom, layer switch, custom buttons) can be placed in any corner of the map — adapt to your UI layout with ease.
-- Map scale display. Optional scale bar added — useful for estimating distances directly on the map.
-- Action buttons on the map. Add your own buttons with custom actions.
+- **Easily place elements on the map**. Add items like markers, polygons, or circles to the map with just a few clicks. Under the hood, this triggers a custom function that captures the clicked location’s coordinates and stores them as attributes on the target entity.
+- **New unified Trip Map widget**. Combines the features of the older Trip Animation and Router Map widgets into one powerful tool:
+  - Supports animated routes, moving markers, and stop points.
+  - Includes a set of dedicated marker icons.
+  - Offers multiple route styling options, including path decorators and visible points.
+  - Comes with customizable timeline controls — change date formats, playback speed, and more.
+- **Dynamic map layer switching**. Switch between map types — standard, satellite, hybrid, or even your own custom layers — directly inside the widget.
+- **Reference layer support**. Add an transparent overlay layer to provide extra map context or background visuals.
+- **Improved configuration for map items (Marker / Polygon / Circle)**
+  - Each overlay type now has separate settings, so they don’t conflict with one another. 
+  - Better coordinate validation reduces the chance of mistakes — fewer missing keys or misconfigured sources. 
+  - Built-in marker shapes available out of the box, with full support for custom icons too. 
+  - New "Range" color mode added — dynamically change marker color based on key values (e.g., temperature or status). 
+  - Set separate "Action on click" and "Tag action" for each overlay for more precise interactivity. 
+  - Easily group overlays — toggle visibility for multiple map items in one click.
+  - Improved editing experience — click on any map item to see contextual edit options right away. 
+  - You can now choose the attribute scope (e.g., shared, server-side, telemetry) when setting coordinate values.
+- **Use extra data sources**. Pull in additional values for labels, tooltips, or any extra info you want to show on the map.
+- **Flexible control panel placement**. Move map controls (zoom, layer switchers, custom buttons) to any corner of the widget — perfect for adapting to different UI layouts. 
+- **Map scale display**. Add an optional scale bar to help users visually estimate distances on the map.
+- **Custom action buttons**. Add your own buttons right on the map — each can trigger a specific custom action (like creating an entity, switching views, or opening URLs).
 
 All of this — and more — is now available in the new Map widgets in ThingsBoard 4.0.
 
@@ -115,7 +115,12 @@ To be placed on the map, the entity must have coordinates as attributes or telem
 Latitude,Longitude
 ```
 
+{% if docsPrefix == null %}
+![image](/images/user-guide/widgets/maps/marker-1-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 ![image](/images/user-guide/widgets/maps/marker-1-pe.png)
+{% endif %}
 
 #### Place marker on map
 
@@ -136,6 +141,8 @@ The marker will appear on the map based on the specified coordinates.
 To configure a specific marker, switch to the map widget&#39;s edit mode. In the "Overlays" section, click the "gear" icon button next to the desired marker to open its configuration panel.
 
 {% include images-gallery.html imageCollection="marker-configuration" %}
+
+<br>
 
 **Datasource**
 
@@ -208,10 +215,10 @@ You can edit the label text or use a label function to show more dynamic informa
 
 Label styling example:
 
-```text
+```html
 <div style='position: relative; white-space: nowrap; text-align: center; font-size: 14px; top: 2px;'>
     <span style='margin-left: -500%;'></span>
-    <div style='border: 2px solid #EC9704; border-radius: 10px; color: #000; background-color: #fff;  padding-left: 8px; padding-right: 8px; padding-top: 3px; padding-bottom: 3px;'>${entityLabel}</div>
+    <div style='border: 2px solid #EC9704; border-radius: 10px; color: #000; background-color: #fff;  padding-left: 8px; padding-right: 8px; padding-top: 3px; padding-bottom: 3px;'>${entityName}</div>
 </div>
 ```
 {:.copy-code}
@@ -252,7 +259,7 @@ Learn more about the available action types and how to configure them in the [wi
 
 First, you need to add a tag action and then reference its name in the tooltip function:
 
-{% include images-gallery.html imageCollection="marker-action-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="marker-tooltip-action-1" showListImageTitles="true" %}
 
 The function below already includes a reference to the tag action named "my-action".
 If you gave your tag action a different name, please replace "my-action" with your actual tag name.
@@ -294,7 +301,12 @@ Set the behavior of the marker when you click it.
 
 Markers can be grouped, allowing you to easily show or hide grouped elements later using the "Groups" tab.
 
-{% include images-gallery.html imageCollection="marker-groups" showListImageTitles="true" %}
+- In the "Groups" section, enter a name for the group to which you want to add this marker.
+- A "Groups" icon button will appear on the widget. Click on it.
+- To hide a group, uncheck the box next to its name.
+- The markers that belong to this group have been hidden.
+
+{% include images-gallery.html imageCollection="marker-groups" %}
 
 <br>
 
@@ -367,7 +379,12 @@ This greatly improves map readability, especially when visualizing a large numbe
 The polygon is a flat shape defined by a finite number of points. 
 It can be used to mark areas such as buildings, fields, service areas, visualize coverage areas or restricted regions, etc.
 
+{% if docsPrefix == null %}
+![image](/images/user-guide/widgets/maps/polygon-1-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 ![image](/images/user-guide/widgets/maps/polygon-1-pe.png)
+{% endif %}
 
 <br>
 
@@ -444,8 +461,11 @@ By default, the label shows the name of the entity linked to that polygon. You c
 For example, the label can show the current status of the polygon, providing users with a quick and clear understanding of its state.
 If desired, you can also hide the label entirely.
 
-```
-<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #0C5500; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
+```html
+<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'>
+  <span style='margin-left: -500%;'></span>
+  <div style='border: 2px solid #3388FF; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div>
+</div>
 ```
 {:.copy-code}
 
@@ -482,6 +502,8 @@ Polygons can be grouped, allowing you to easily show or hide grouped elements la
 You can use the built-in tools to perform operations on markers such as **Add** / **Edit** / **Move** / **Delete**. By default, these tools are disabled.
 
 Check the boxes next to the tools you want to enable.
+
+{% include images-gallery.html imageCollection="polygon-editing-tools" showListImageTitles="true" %}
 
 <br>
 
@@ -553,9 +575,7 @@ Don&#39;t forget to enable the "**Remove**" tool in the polygon settings under t
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-To delete a polygon, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
-
-The polygon has been removed from the map.
+To delete a polygon, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.
 
 {% include images-gallery.html imageCollection="remove-polygon" %}
 
@@ -571,7 +591,12 @@ Circle coordinates must follow this format:
 {"latitude":CoordinateLatitude, "longitude":CoordinateLongitude, "radius":radius}
 ``` 
 
+{% if docsPrefix == null %}
+![image](/images/user-guide/widgets/maps/circle-1-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 ![image](/images/user-guide/widgets/maps/circle-1-pe.png)
+{% endif %}
 
 #### Add circle
 
@@ -636,8 +661,11 @@ Configure the label displayed above the circle. By default, the label shows the 
 
 For example, the label can show the current status of the circle, providing users with a quick and clear understanding of its state. If desired, you can also hide the label entirely.
 
-```text
-<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'><span style='margin-left: -500%;'></span><div style='border: 2px solid #3B7FE1; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div></div>
+```html
+<div style='position: relative; white-space: nowrap; text-align: center; font-size: 10px; top: -7px;'>
+    <span style='margin-left: -500%;'></span>
+    <div style='border: 2px solid #3B7FE1; border-radius: 5px; color: #000; background-color: #fff;  padding-left: 4px; padding-right: 4px; padding-top: 2px; padding-bottom: 2px;'>${entityLabel}</div>
+</div>
 ```
 {:.copy-code}
 
@@ -721,6 +749,8 @@ To move a circle, click on it, hold down the mouse button, and drag circle to th
 
 {% include images-gallery.html imageCollection="move-circle" %}
 
+<br>
+
 **Removing circle**
 
 {% capture difference %}
@@ -734,15 +764,17 @@ To delete a circle, simply click on it, then click the "trash bin" icon in the m
 
 ## Additional datasources
 
-Additional datasources are auxiliary data sources that can be used for processing, filtering, or overlaying data on the main entities.
+**Additional datasources** are auxiliary data sources that can be used for processing, filtering, or overlaying data on the main entities.
 They are often used in map overlay features or tooltips when additional context or information needs to be provided.
+
+{% include images-gallery.html imageCollection="additional-datasources" %}
 
 ## Map controls
 
-Map Controls are settings for configuring map control buttons within the widget. They allow you to:
-- Specify the position of control elements (e.g., top-left, bottom-right, etc.);
-- Configure zoom interactions (via buttons, mouse wheel, or double-click);
-- Choose the zoom scale units: metric or imperial.
+**Map controls** are settings for configuring map control buttons within the widget. They allow you to:
+- Specify the **position of control elements** (e.g., top-left, bottom-right, etc.);
+- Configure **zoom** interactions (via buttons, mouse wheel, or double-click);
+- Choose the zoom **scale units**: metric or imperial.
 
 {% include images-gallery.html imageCollection="map-controls" %}
 
@@ -795,20 +827,32 @@ Go to the "**Assets**" page — here you&#39;ll find your newly created asset, "
 
 {% include images-gallery.html imageCollection="common-map-settings" %}
 
-## Card appearance
+## Appearance
 
 Customize the widget&#39;s appearance.
 
 - **Title** – Sets the name of the widget that appears at the top of the map. This helps identify the map on the dashboard (e.g., "Vehicle Tracking", "Sensor Locations").
 - **Card icon** – Defines the icon displayed in the widget header (next to the title). It can be used to visually indicate the map’s context or theme (e.g., GPS, map, transportation icons).
 
+{% include images-gallery.html imageCollection="appearance" %}
+
+## Card appearance
+
+**Card appearance** section controls the visual appearance of the widget on the dashboard.
+
+- **Background**: Sets the background color of the card.
+- **Show card buttons**: Enables or disables the edit and fullscreen buttons in the top-right corner.
+- **Card border radius**: Defines the corner rounding of the card.
+- **Card padding**: Sets the inner spacing between the map content and the card edges.
+
 {% include images-gallery.html imageCollection="card-appearance" %}
 
 ## Actions
 
-You can add buttons to the widget header that will trigger predefined actions. You can learn more about the available action types at this link.
+You can add buttons to the widget header that will trigger predefined actions. You can learn more about the available action types at [this link](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types/){:target="_blank"}.
 
-As an example, let&#39;s add a button that allows users to place charging stations on the map:
+<br>
+As an example, let&#39&#39;s add a button that allows users to place charging stations on the map:
 
 To start, and to ensure that newly created entities are instantly displayed on the map, you need to properly configure the data source.
 
@@ -820,14 +864,18 @@ To start, and to ensure that newly created entities are instantly displayed on t
 
 Now let&#39;s move on to configuring the action:
 
-- Scroll down and find the "**Actions**" section. Click the "**Add action**" button.
-- The "Actions" window will open. It&#39;s currently empty, but once you add actions, they&#39;ll appear here. Click the "**plus**" icon button in the top-right corner to add a new action.
-- Select the action source as "**Widget header button**", enter a button name, and choose its type.
-- Optionally, customize the button icon and color.
+- Scroll down to the "**Actions**" section and click the "**Add action**" button.
+- A new window will open, displaying all your created actions. Click the "plus" icon button in the top-right corner to add one.
+- Select the action source as "**Widget header button**", enter a name for the button, and choose its type.
+- Optionally, change the icon that will appear next to the button or hide it entirely. You can also set a custom color for the button.
+- From the dropdown menu, select the type of action to be performed. In our case, it&#39;s "**Place map item**".
+- Next, choose the **type of map item** to be placed — we&#39;ll be placing a "**Marker**".
+- The **custom action function** field already contains a default function that opens a dialog for creating a device or an asset — exactly what we need.
 - In the "**Action**" section, choose "**Place map item**" from the dropdown menu. Select the type of map item to be placed — in our case, it&#39;s "**Marker**". The Custom action function field contains a default function that opens a dialog to create a device or an asset — exactly what we need.
-- Then click "**Add**" and save all your changes.
+- Then click "**Add**".
+- Apply all changes and save the dashboard.
 
-{% include images-gallery.html imageCollection="action" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="action" %}
 
 A new action button labeled "**Add EV station**" has now appeared at the top of the map. Let&#39;s use it.
 

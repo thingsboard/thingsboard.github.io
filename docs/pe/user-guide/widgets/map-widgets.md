@@ -197,16 +197,10 @@ place-marker:
 move-marker:
     0:
         image: /images/user-guide/widgets/maps/move-marker-1-pe.png
-        title: 'Enable the ability to move the marker on the map by checking the "Move" tool in the marker settings under the "Edit marker" section.'
-    1:
-        image: /images/user-guide/widgets/maps/move-marker-2-pe.png
         title: 'To move the marker, click and hold the marker with your mouse, drag it to the new location, and then release the mouse button.'
 
 remove-marker:
     0:
-        image: /images/user-guide/widgets/maps/remove-marker-1-pe.png
-        title: 'Enable the "Remove" tool in the marker settings under the "Edit marker" section.'
-    1:
         image: /images/user-guide/widgets/maps/remove-marker-1-pe.png
         title: 'To delete a marker, simply click on it, then click the trash bin icon in the menu at the bottom of the widget.'
 
@@ -329,15 +323,12 @@ place-polygon:
 edit-polygon:
     0:
         image: /images/user-guide/widgets/maps/edit-polygon-1-pe.png
-        title: 'To enable polygon editing, check the "Edit" tool in its settings under the "Edit polygon" section.'
-    1:
-        image: /images/user-guide/widgets/maps/edit-polygon-2-pe.png
         title: 'To resize the polygon, click on it — its vertices will appear. Drag any of the points to adjust the polygon&#39;s size.'
     2:
-        image: /images/user-guide/widgets/maps/edit-polygon-3-pe.png
+        image: /images/user-guide/widgets/maps/edit-polygon-2-pe.png
         title: 'Once you&#39;re satisfied with the new size, click anywhere outside the polygon to apply the current dimensions.'
     3:
-        image: /images/user-guide/widgets/maps/edit-polygon-4-pe.png
+        image: /images/user-guide/widgets/maps/edit-polygon-3-pe.png
         title: ''
 
 move-polygon:
@@ -376,14 +367,7 @@ cut-polygon-area:
 remove-polygon:
     0:
         image: /images/user-guide/widgets/maps/remove-polygon-1-pe.png
-        title: 'Enable the "Remove" tool in the polygon settings under the "Edit polygon" section.'
-    1:
-        image: /images/user-guide/widgets/maps/remove-polygon-2-pe.png
         title: 'To delete a polygon, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
-    2:
-        image: /images/user-guide/widgets/maps/remove-polygon-3-pe.png
-        title: 'The polygon has been removed from the map.'
-
 
 
 add-circle:
@@ -472,7 +456,7 @@ circle-editing-tools:
 manually-add-circle:
     0:
         image: /images/user-guide/widgets/maps/manually-add-circle-1-pe.png
-        title: 'Switch to the widget edit mode and click "Add circle" in the "Overlays" section. Specify the data source — it can be a device, an entity alias, or a function. In this example, I&#39;ll use an entity alias that refers to assets of the type "Parking spots". ThingsBoard automatically sets the coordinate key to "perimeter". If you&#39;re using a custom key name, update it here accordingly. Now, open polygon configuration'
+        title: 'In the "Edit marker" section, check the "Add" tool. Next, select the attribute scope where the coordinates will be stored: "Server" or "Shared". Optionally, enable snapping to other vertices for precision drawing. Then, save the changes.'
 
 place-circle:
     0:
@@ -491,7 +475,7 @@ place-circle:
 edit-circle:
     0:
         image: /images/user-guide/widgets/maps/edit-circle-1-pe.png
-        title: 'To resize the circle, click on it — the radius handle will appear. Drag this point to adjust the size of the circle.'
+        title: 'To resize the circle, click on it, and a radius edi point will appear. Drag it to adjust the size of the circle.'
     1:
         image: /images/user-guide/widgets/maps/edit-circle-2-pe.png
         title: 'Once you&#39;re satisfied with the new size, click anywhere outside the circle to apply the current dimensions.'
@@ -500,12 +484,20 @@ move-circle:
     0:
         image: /images/user-guide/widgets/maps/move-circle-1-pe.png
         title: 'To move a circle, click on it, hold down the mouse button, and drag circle to the new location.'
+    1:
+        image: /images/user-guide/widgets/maps/move-circle-2-pe.png
+        title: 'To move a circle, click on it, hold down the mouse button, and drag circle to the new location.'
 
 remove-circle:
     0:
         image: /images/user-guide/widgets/maps/remove-circle-1-pe.png
         title: 'To delete a circle, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
 
+
+additional-datasources:
+    0:
+        image: /images/user-guide/widgets/maps/additional-datasources-1-pe.png
+        title: 'Additional datasources are auxiliary data sources that can be used for processing, filtering, or overlaying data on the main entities. They are often used in map overlay features or tooltips when additional context or information needs to be provided.'
 
 map-controls:
     0:
@@ -514,12 +506,6 @@ map-controls:
     1:
         image: /images/user-guide/widgets/maps/map-controls-2-pe.png
         title: 'To delete a circle, simply click on it, then click the "trash bin" icon in the menu at the bottom of the widget.'
-
-
-
-
-
-
 
 map-action-buttons-1:
     0:
@@ -567,10 +553,13 @@ common-map-settings:
         image: /images/user-guide/widgets/maps/common-map-settings-1-pe.png
         title: 'Common map settings are the basic global settings for the Map widget in ThingsBoard. They define how the map behaves on load and what is displayed initially.'
 
-card-appearance:
+appearance:
     0:
-        image: /images/user-guide/widgets/maps/card-appearance-1-pe.png
-        title: 'Customize the widget&#39;s appearance.'
+        image: /images/user-guide/widgets/maps/appearance-1-pe.png
+
+card-appearance:
+  0:
+    image: /images/user-guide/widgets/maps/card-appearance-1-pe.png
 
 data-source-for-action:
     0:
@@ -583,22 +572,22 @@ data-source-for-action:
 action:
     0:
         image: /images/user-guide/widgets/maps/action-1-pe.png
-        title: 'Scroll down and find the "Actions" section. Click the "Add action" button.'
+        title: 'Scroll down to the "Actions" section and click the "Add action" button.'
     1:
         image: /images/user-guide/widgets/maps/action-2-pe.png
-        title: 'The "Actions" window will open. It&#39;s currently empty, but once you add actions, they&#39;ll appear here. Click the "plus" icon button in the top-right corner to add a new action.'
+        title: 'A new window will open, displaying all your created actions. Click the "plus" icon button in the top-right corner to add one.'
     2:
         image: /images/user-guide/widgets/maps/action-3-pe.png
-        title: 'Select the action source as "Widget header button", enter a button name, and choose its type.'
+        title: 'Select the action source as "Widget header button", enter a name for the button, and choose its type.'
     3:
         image: /images/user-guide/widgets/maps/action-4-pe.png
-        title: 'Optionally, customize the button icon and color.'
+        title: 'Optionally, change the icon that will appear next to the button or hide it entirely. You can also set a custom color for the button.'
     4:
         image: /images/user-guide/widgets/maps/action-5-pe.png
-        title: 'In the "Action" section, choose "Place map item" from the dropdown menu. Select the type of map item to be placed — in our case, it&#39;s "Marker". The Custom action function field contains a default function that opens a dialog to create a device or an asset — exactly what we need.'
+        title: 'From the dropdown menu, select the type of action to be performed. In our case, it&#39;s "Place map item". Next, choose the type of map item to be placed — we&#39;ll be placing a "Marker". The custom action function field already contains a default function that opens a dialog for creating a device or an asset — exactly what we need. Then, click "Add".'
     5:
         image: /images/user-guide/widgets/maps/action-6-pe.png
-        title: 'Then click "Add" and save all your changes.'
+        title: 'Apply all changes and save the dashboard.'
     6:
         image: /images/user-guide/widgets/maps/action-7-pe.png
         title: 'A new action button labeled "Add EV station" has now appeared at the top of the map.'
@@ -606,7 +595,7 @@ action:
 action-place-marker:
     0:
         image: /images/user-guide/widgets/maps/action-place-marker-1-pe.png
-        title: 'Find the location on the map where you want to place the EV station, and click on it.'
+        title: 'Click the newly created "Add EV station" button. Then, find the location on the map where you want to place the EV station and click on it.'
     1:
         image: /images/user-guide/widgets/maps/action-place-marker-2-pe.png
         title: 'In the "Add entity" dialog that appears, make sure to enter a name for the new entity and select its type — Asset. The other fields are optional. Then click "Create".'

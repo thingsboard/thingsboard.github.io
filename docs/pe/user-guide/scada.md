@@ -181,7 +181,7 @@ scada-appearance-1:
 
 scada-card-appearance-1:
     0:
-        image: /images/user-guide/scada/scada-dashboards/scada-card-appearance-1-pe.png
+        image: /images/user-guide/scada/scada-dashboards/scada-appearance-1-pe.png
         title: 'The card appearance settings are generic for any SCADA symbol and include background (transparent by default), list of enabled card buttons, card border radius, and padding parameters.'
 
 
