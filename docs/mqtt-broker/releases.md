@@ -23,7 +23,8 @@ Minor release with the following features, improvements, and bug fixes.
 
 * Core and install scripts:
 
-  * [#191](https://github.com/thingsboard/tbmq/pull/191) Incremental upgrade by @ShvaykaD.
+  * [#191](https://github.com/thingsboard/tbmq/pull/191) Incremental upgrade by @ShvaykaD;
+  * [#217](https://github.com/thingsboard/tbmq/pull/217) Proxy protocol support by @dmytro-landiak.
 
 * UI:
 
