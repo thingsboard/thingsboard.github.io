@@ -84,6 +84,15 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-upgrading-options/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cluster/helm.svg" title="Helm Cluster setup upgrading options" alt="Helm Cluster setup upgrading options">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
                                </div>
                             </div>
                         </div>
