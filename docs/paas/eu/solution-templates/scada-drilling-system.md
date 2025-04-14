@@ -8,10 +8,16 @@ description: SCADA Oil & Gas Drilling system overview
 go-to-drilling-solution-templates-page-1:
     0:
         image: /images/solutions/scada-drilling-system/go-to-drilling-solution-templates-page-1-pe.png
-        title: 'Navigate to the "Solution templates" page. Find "SCADA Oil & Gas Drilling system" and click "Install" to begin the installation process;'
+        title: 'Go to the "Solution templates" page. Find "SCADA Oil & Gas Drilling system" and click "Install" to start the installation process.'
     1:
         image: /images/solutions/scada-drilling-system/drilling-solution-instruction-1-pe.png
-        title: 'Once the installation is complete, setup instructions will be displayed.'
+        title: 'Configuration instructions for this solution will be provided — follow the steps as instructed.'
+    2:
+        image: /images/solutions/scada-drilling-system/go-to-drilling-dashboard-1-pe.png
+        title: 'Once done, click "Close" to complete the setup and proceed to the dashboard.'
+    3:
+        image: /images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png
+        title: 'SCADA Oil & Gas Drilling system dashboard.'
 
 launch-modbus-pool-emulator-1:
     0:
@@ -70,6 +76,14 @@ drilling-dashboard-1:
     7:
         image: /images/solutions/scada-drilling-system/drilling-dashboard-8-pe.png
         title: 'Alarms and notifications – Logs real-time alerts and warnings for quick response to failures, abnormal pressure, or unexpected temperature.'
+
+drilling-dashboard-2:
+    0:
+        image: /images/solutions/scada-drilling-system/drilling-dashboard-9-pe.png
+        title: 'Try changing some of the equipment configurations — for example, set a greater well depth, adjust the drilling speed, or turn off the pump.'
+    1:
+        image: /images/solutions/scada-drilling-system/drilling-dashboard-10-pe.png
+        title: 'Observe the results of these actions to see how they affect the system.'
 
 ---
 

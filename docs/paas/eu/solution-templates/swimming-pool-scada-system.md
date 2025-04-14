@@ -8,10 +8,16 @@ description: Swimming Pool SCADA system template overview
 go-to-solution-templates-page-1:
     0:
         image: /images/solutions/swimming_pool_scada_system/go-to-pool-solution-templates-page-1-pe.png
-        title: 'Navigate to the "Solution templates" page. Find "Swimming Pool SCADA system" and click "Install" to begin the installation process;'
+        title: 'Go to the "Solution templates" page. Find "Swimming Pool SCADA system" and click "Install" to start the installation process.'
     1:
         image: /images/solutions/swimming_pool_scada_system/solution-instruction-1-pe.png
-        title: 'Once the installation is complete, setup instructions will be displayed.'
+        title: 'Configuration instructions for this solution will be provided — follow the steps as instructed.'
+    2:
+        image: /images/solutions/scada-drilling-system/go-to-drilling-dashboard-1-pe.png
+        title: 'Once done, click "Close" to complete the setup and proceed to the dashboard.'
+    3:
+        image: /images/solutions/swimming_pool_scada_system/go-to-dashboard-2-pe.png
+        title: 'Swimming pool SCADA system dashboard.'
 
 launch-modbus-pool-emulator-1:
     0:
@@ -32,7 +38,7 @@ launch-iot-gateway-1:
 docker-compose-yml:
     0:
         image: /images/solutions/swimming_pool_scada_system/solution-instruction-2-pe.png
-        title: 'Copy the configuration for the docker-compose.yml file from the instructions;'
+        title: 'Copy the configuration for the docker-compose.yml file from the instructions.'
     1:
         image: /images/solutions/swimming_pool_scada_system/docker-compose-yml.png
         title: 'Create a new file named docker-compose.yml on your computer, paste the copied configuration into it, and save the file.'
