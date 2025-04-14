@@ -122,7 +122,9 @@ Once the channel becomes writable again, TBMQ resumes delivery by reading pendin
 
 - Redis has a **per-client message queue limit** (e.g., 10,000 messages). If this limit is exceeded before the client becomes writable, older messages may be dropped.
 - This limit is configurable via an environment variable `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT`.
-- Additionally, each message stored in Redis has a **time-to-live (TTL)** to ensure stale messages are eventually cleaned up. The TTL is configurable via another environment variable `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL`.
+- Additionally, each message stored in Redis has a **time-to-live (TTL)** to ensure stale messages are eventually cleaned up. 
+The TTL is configurable via the environment variable `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL`.
+For MQTT 5.0 clients that specify a `message expiry interval`, TBMQ respects the client-defined value and uses it in place of the configured default.
 
 For **Application clients**, messages are stored in **Kafka**. If the channel to the client becomes non-writable, 
 TBMQ temporarily **pauses the Kafka consumer** for that client to avoid polling and buffering unnecessary messages. 
