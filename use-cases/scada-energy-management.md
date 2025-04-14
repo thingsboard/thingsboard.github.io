@@ -175,6 +175,16 @@ includeAdvantages: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
+                        <h3>Batteries state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This dashboard displays the status of battery energy storage, including charge level (SOC), cycle count, and battery voltage. Graphs show battery current (charge/discharge trends), temperature, and voltage over time. An alarm section notifies users about battery health issues or operational concerns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
                         <h3>Power transformer state</h3>
                     </div>
                     <div class="expansion-content">
