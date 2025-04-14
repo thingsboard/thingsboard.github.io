@@ -11,7 +11,7 @@ To deploy the EKS cluster, we recommend using a pre-defined EKS cluster configur
 Please download it using next command:
 
 ```bash
-curl -o cluster.yml https://raw.githubusercontent.com/ShvaykaD/tbmq/helm-aws/k8s/helm/aws/cluster.yml
+curl -o cluster.yml https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/k8s/helm/aws/cluster.yml
 ```
 {: .copy-code}
 
@@ -100,7 +100,7 @@ When provisioning persistent storage in Amazon EKS, the `gp3` volume type is the
 Please download the storage class configuration file:
 
 ```bash
-curl -o gp3-def-sc.yml https://raw.githubusercontent.com/ShvaykaD/tbmq/helm-aws/k8s/helm/aws/gp3-def-sc.yml
+curl -o gp3-def-sc.yml https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/k8s/helm/aws/gp3-def-sc.yml
 ```
 {: .copy-code}
 
