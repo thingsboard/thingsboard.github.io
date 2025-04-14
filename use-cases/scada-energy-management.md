@@ -17,7 +17,7 @@ includeAdvantages: "true"
                 <p class="text">SCADA (Supervisory Control and Data Acquisition) systems play a crucial role in energy monitoring and management, providing real-time insights into power generation, distribution, and consumption. With platforms like ThingsBoard, businesses can integrate advanced SCADA solutions to optimize energy efficiency, reduce costs, and enhance system reliability.</p>
             </div>
             <div class="demo-button">
-                <a id="UseCases_ScadaEnerty_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/f8e77210-8fa8-11ef-90c1-0b39f28da380?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+                <a id="UseCases_ScadaEnergy_ViewLiveDemo" target="_blank" href="https://tbqa.cloud/dashboard/9b601410-18f3-11f0-afb5-6581137e2031?publicId=3b728e20-3d08-11ee-be4b-434ecc9fc7b7" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
@@ -366,7 +366,7 @@ includeAdvantages: "true"
             const large = document.querySelector('.image-block-large');
 
             if (Math.abs(elemCoor.top) < elemCoor.height / 2 && elemCoor.top < 0) {
-                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+                large.style.marginTop = Math.abs(elemCoor.top) + 40 + 'px';
             }
         };
 
@@ -391,7 +391,7 @@ includeAdvantages: "true"
                 <div class=image>${getImage(0)}</div>
             </div>
             <div class="buttons-block">
-                <a id="UseCases_ScadaEnergy_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/f8e77210-8fa8-11ef-90c1-0b39f28da380?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
+                <a id="UseCases_ScadaEnergy_ViewLiveDemo" target="_blank" href="https://tbqa.cloud/dashboard/9b601410-18f3-11f0-afb5-6581137e2031?publicId=3b728e20-3d08-11ee-be4b-434ecc9fc7b7" class="button gtm_button">View live demo</a>
                 <a id="UseCases_ScadaEnergy_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     

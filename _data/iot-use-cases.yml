@@ -21,16 +21,16 @@
   name: "SCADA Oil & Gas drilling system"
   description: "Automate drilling operations with SCADA and ThingsBoard. Control rigs, pumps, and blowout preventers in real time, visualize key parameters, and enhance operational safety. Flexible SCADA symbol templates allow you to tailor the system to any production scenario."
   media:
-    image: "https://img.thingsboard.io/usecases/scada-oil-and-gas-drilling-system/video/scada-oil-and-gas-drilling.png"
+    image: "https://img.thingsboard.io/solutions/scada_drilling_system/hp-scada-systems-in-drilling-1.png"
     alt: "See more about SCADA Oil & gas drilling system"
-    video: ["https://video.thingsboard.io/usecases/scada-oil-and-gas-drilling-system.mp4", "https://video.thingsboard.io/usecases/scada-oil-and-gas-drilling-system.webm"]
+    video: ["https://video.thingsboard.io/usecases/hp-drilling-scada-system.mp4", "https://video.thingsboard.io/usecases/hp-drilling-scada-system.webm"]
   href: "/use-cases/scada-oil-and-gas-drilling-system/"
 3:
   type: "SCADA"
   name: "SCADA Energy management"
   description: "Gain a complete real-time view of energy consumption and generation. Use SCADA powered by ThingsBoard to monitor, analyze, and optimize energy flows — from generation to end use. Track efficiency, forecast demand peaks, and reduce costs with intuitive dashboards and seamless integration with industrial equipment."
   media:
-    image: "https://img.thingsboard.io/usecases/scada-energy-management/video/scada-energy-management.png"
+    image: "https://img.thingsboard.io/solutions/scada_energy_management/scada-energy-management-1.png"
     alt: "See more about SCADA Energy management"
     video: ["https://video.thingsboard.io/usecases/scada-energy-management.mp4", "https://video.thingsboard.io/usecases/scada-energy-management.webm"]
   href: "/use-cases/scada-energy-management/"
