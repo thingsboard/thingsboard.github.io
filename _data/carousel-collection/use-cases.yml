@@ -197,18 +197,18 @@ scada-oil-and-gas-drilling-system:
     alt: "Main state of SCADA drilling system dashboard"
   1:
     src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-2.webp"
-    alt: "SCADA drilling system dashboard small screed responsiveness"
+    alt: "SCADA drilling system dashboard small screen responsiveness"
   2:
     src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-3.webp"
     alt: "Data state of SCADA drilling system dashboard"
 
 scada-energy-management:
   0:
-    src: "/images/solutions/scada-energy-management/scada-drilling-system-1.webp"
-    alt: "Main state of SCADA drilling system dashboard"
+    src: "/images/solutions/scada-energy-management/scada-energy-management-1.webp"
+    alt: "Main state of SCADA energy management dashboard"
   1:
-    src: "/images/solutions/scada-energy-management/scada-drilling-system-2.webp"
-    alt: "SCADA drilling system dashboard small screed responsiveness"
+    src: "/images/solutions/scada-energy-management/scada-energy-management-2.webp"
+    alt: "SCADA energy management dashboard consumption state"
   2:
-    src: "/images/solutions/scada-energy-management/scada-drilling-system-3.webp"
-    alt: "Data state of SCADA drilling system dashboard"
+    src: "/images/solutions/scada-energy-management/scada-energy-management-3.webp"
+    alt: "SCADA energy management dashboard small screen responsiveness"
