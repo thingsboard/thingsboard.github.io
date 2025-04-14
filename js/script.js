@@ -1102,22 +1102,24 @@ var tb = (function () {
 													}
 												}, 50)
 											}
-											$carousel.find('.owl-item').on('click', function () {
-												const itemsVisible = $carousel.find('.owl-item.active').length;
-												if (itemsVisible > 1 && !$(this).hasClass('center')) {
-													const index = $(this).index();
-													$carousel.trigger('to.owl.carousel', [index + 1, 300]);
-												}
-											});
+											// $carousel.find('.owl-item').on('click', function () {
+											// 	const itemsVisible = $carousel.find('.owl-item.active').length;
+											// 	if (itemsVisible > 1 && !$(this).hasClass('center')) {
+											// 		const index = $(this).index();
+											// 		$carousel.trigger('to.owl.carousel', [index + 1, 300]);
+											// 	}
+											// });
 											const cardLink = $carousel.find('.card-link');
-											cardLink.on('click', function(event) {
-												event.preventDefault();
-												const targetId = $(this).attr('id');
-												const target = carouselContentToggle.find(`#${targetId}`)
-												if(target) {
-													scrollToContent(target);
-												}
-											})
+											if (!cardLink.hasClass('linkDefault')) {
+												cardLink.on('click', function(event) {
+													event.preventDefault();
+													const targetId = $(this).attr('id');
+													const target = carouselContentToggle.find(`#${targetId}`)
+													if(target) {
+														scrollToContent(target);
+													}
+												})
+											}
 										}
 									},
 									onChanged: function(event) {

@@ -40,6 +40,7 @@
 {% assign linkColor = include.linkColor | default: "#2a7dec" %}
 {% assign linkWeight = include.linkWeight | default: "500" %}
 {% assign imageBorderRadius = include.imageBorderRadius | default: "6px" %}
+{% assign enableLinkArrow = include.enableLinkArrow %}
 
 {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
 
@@ -149,7 +150,9 @@
             <p style="font-size:{{ descriptionSize }}; color: {{ descriptionColor }}; line-height: {{descriptionLineHeight}}; font-weight: {{ descriptionWeight }}">{{ carouselItem[1].description }}</p>
             <div id="{{ carouselItem[1].linkId }}" class="card-link">
                 <a href="{{ carouselItem[1].href }}" style="color: {{linkColor}}; line-height: {{linkLineHeight}}; font-weight: {{ linkWeight }}">{{ carouselItem[1].linkLabel }}</a>
-                <i class="fas fa-arrow-down" style="color: {{linkColor}}"></i>
+                {% if enableLinkArrow %}
+                    <i class="fas fa-arrow-down" style="color: {{linkColor}}"></i>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
@@ -160,7 +163,6 @@
 {% assign collectionKey = include.collectionKey %}
 {% assign darkenedImage = include.darkenedImage | default: false %}
 {% assign overlay = include.overlay | default: false %}
-{% assign enableLinkArrow = include.enableLinkArrow %}
 {% assign contentDirection = include.contentDirection %}
 
 {% if collectionKey %}
