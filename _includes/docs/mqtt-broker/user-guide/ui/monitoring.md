@@ -114,3 +114,5 @@ Services are automatically added to the registry on their first launch, and the 
 
 The key is not managed by TTL and entries are stored indefinitely. TBMQ does not automatically remove services from the registry, even if they stop running.
 You can manually delete a service from the UI (or using REST API) using the "Delete" button that is available only when the service status is `Outdated`.
+
+![image](/images/mqtt-broker/user-guide/ui/resource-usage.png)
