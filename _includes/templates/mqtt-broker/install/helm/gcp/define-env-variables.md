@@ -11,7 +11,8 @@ export GCP_ZONE2=us-central1-b
 export GCP_ZONE3=us-central1-c
 export GCP_NETWORK=default
 export TB_CLUSTER_NAME=tbmq-cluster
-echo "You have selected project: $GCP_PROJECT, region: $GCP_REGION, gcp zones: $GCP_ZONE1,$GCP_ZONE2,$GCP_ZONE3, network: $GCP_NETWORK, cluster: $TB_CLUSTER_NAME"
+export TB_DATABASE_NAME=tbmq-db
+echo "You have selected project: $GCP_PROJECT, region: $GCP_REGION, gcp zones: $GCP_ZONE1,$GCP_ZONE2,$GCP_ZONE3, network: $GCP_NETWORK, cluster: $TB_CLUSTER_NAME, database: $TB_DATABASE_NAME"
 ```
 {: .copy-code}
 

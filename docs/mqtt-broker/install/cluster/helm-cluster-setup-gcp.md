@@ -31,9 +31,9 @@ on Google Cloud Platform (GCP) using Google Kubernetes Engine (GKE).
 
 {% include templates/mqtt-broker/install/helm/common/external-postgres.md %}
 
-If you're deploying on GCP GKE and plan to use Google Cloud SQL (PostgreSQL) Instance, follow this
-[guide](/docs/mqtt-broker/install/cluster/gcp-cluster-setup/#step-5-provision-google-cloud-sql-postgresql-instance) to provision
-and configure your PostgreSQL instance.
+If you're deploying on GCP GKE and plan to use a Google Cloud SQL (PostgreSQL) instance, 
+make sure to first [enable the required GCP services](/docs/mqtt-broker/install/cluster/gcp-cluster-setup/#enable-gcp-services), then follow this 
+[instructions](/docs/mqtt-broker/install/cluster/gcp-cluster-setup/#step-5-provision-google-cloud-sql-postgresql-instance) to provision and configure your PostgreSQL instance.
 
 ### Load Balancer configuration
 

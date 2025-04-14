@@ -14,6 +14,12 @@ NAME                          CLASS    HOSTS   ADDRESS              PORTS   AGE
 my-tbmq-cluster-http-lb       <none>   *       <your-domain-name>   80      3d1h
 ```
 
+Use `ADDRESS` field of the my-tbmq-cluster-http-lb to connect to the cluster.
+
+{% include templates/mqtt-broker/login.md %}
+
+### Validate HTTPS access (if configured)
+
 Check that the domain name is configured correctly using dig:
 
 ```bash
@@ -53,9 +59,4 @@ kubectl describe managedcertificate <your-managed-certificate-resource-name>
 ```
 {: .copy-code}
 
-The Certificate will be eventually provisioned if you have configured domain records properly.
-
-
-Use `<your-domain-name>` to connect to the cluster.
-
-{% include templates/mqtt-broker/login.md %}
+The Certificate will be eventually provisioned if you have configured domain records properly. Use `<your-domain-name>` to connect to the cluster.
