@@ -68,6 +68,10 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 ## Step 7. Running
 
+### Create and check required host volumes
+{% include templates/install/docker/docker-compose-setup-volumes.md %}
+
+### Install and run ThingsBoard
 {% assign dockerComposeFileLocation = "" %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
