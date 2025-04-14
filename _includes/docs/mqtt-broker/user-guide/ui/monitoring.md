@@ -93,7 +93,7 @@ System metrics are collected and saved periodically. By default, system informat
 
 ```yaml
 # Persist frequency of system info (CPU, memory usage, etc.) in seconds
-  persist-frequency: "${STATS_SYSTEM_INFO_PERSIST_FREQUENCY_SEC:60}"
+persist-frequency: "${STATS_SYSTEM_INFO_PERSIST_FREQUENCY_SEC:60}"
 ```
 
 The Resource Usage table includes the following info about each service:
@@ -113,4 +113,4 @@ Each **Service ID**, used later to fetch resource usage data, is stored in this 
 Services are automatically added to the registry on their first launch, and the stored metadata helps identify which services are currently available for system metrics reporting.
 
 The key is not managed by TTL and entries are stored indefinitely. TBMQ does not automatically remove services from the registry, even if they stop running.
-You can manually delete a service from both the UI and Redis using the "Delete" button that is available only when the service status is `Outdated`.
+You can manually delete a service from the UI (or using REST API) using the "Delete" button that is available only when the service status is `Outdated`.
