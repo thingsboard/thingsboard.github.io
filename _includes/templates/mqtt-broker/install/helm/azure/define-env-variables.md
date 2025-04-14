@@ -7,8 +7,9 @@ export AKS_RESOURCE_GROUP=TBMQResources
 export AKS_LOCATION=eastus
 export AKS_GATEWAY=tbmq-gateway
 export TB_CLUSTER_NAME=tbmq-cluster
+export TB_DATABASE_NAME=tbmq-db
 echo "You variables ready to create resource group $AKS_RESOURCE_GROUP in location $AKS_LOCATION 
-and cluster in it $TB_CLUSTER_NAME
+and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
 ```
 {: .copy-code}
 
