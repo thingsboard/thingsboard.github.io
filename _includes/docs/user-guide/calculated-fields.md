@@ -462,9 +462,9 @@ To implement this, follow these steps:
 
 **Example 3: Air density calculation**
 
-Let&#39;s say you have an asset called Building A that sends altitude as telemetry, and a device that sends temperature values as telemetry as well. Configure a calculated field using these values. As a result, we will get the air density value as telemetry.
+Let&#39;s assume you have an asset called Building A that sends altitude value as an attribute, and a smart device located within it that sends temperature value as telemetry.
 
-This function calculates air density using altitude (single value argument) and temperature (time series rolling argument):
+Configure a calculated field using these values along with the function provided below. As a result, you&#39;ll obtain a computed air density value, saved as telemetry.
 
 <br>
 
