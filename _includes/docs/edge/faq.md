@@ -21,7 +21,10 @@
 {% endif %}
 
 ### Does ThingsBoard Edge support clustering? 
-<p>No, <b>ThingsBoard Edge</b> does not support clustering at the moment. But cluster support will be added in the following releases.</p>
+
+The **earlier versions** of **ThingsBoard Edge** do not support clustering. It is designed to operate, process and analyze data locally before synchronizing with the central **ThingsBoard Server**.
+
+Starting **with release 4.0**, Edge supports clustering. Multiple **Edge nodes** can be clustered to provide high availability. If one node fails, the others can seamlessly continue to handle workloads.
 
 ### Do I need an internet connection to use the ThingsBoard Edge?
 <p>No, you can run it completely offline if you need to. The only connection required is to the <b>ThingsBoard Server</b> via <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
@@ -93,7 +96,7 @@ If this is required, you'll need to provision multiple <b>ThingsBoard Edge</b> i
 ### How many devices can ThingsBoard Edge support? 
 {% if docsPrefix == 'pe/edge/' %}
 <p>The number of connected devices depends on your <a href="https://thingsboard.io/pricing/?section=thingsboard-edge" target="_blank">subscription plan</a>.</p>
-<p>Some plans offer 'Unlimited Devices and Assets', thus there are no soft limits on creating devices and assets on the edge side.</p>
+<p>Some plans offer 'Unlimited Devices and Assets, thus there are no soft limits on creating devices and assets on the edge side.</p>
 {% else %}
 <p><b>ThingsBoard Edge</b> doesn’t impose a fixed limit on the number of devices you can connect.</p>
 <p>In practice, the number of devices you can support depends largely on your hardware resources, system configuration, and the specific use case. 
