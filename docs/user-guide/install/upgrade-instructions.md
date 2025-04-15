@@ -11,6 +11,17 @@ description: ThingsBoard IoT platform upgrade instructions
 
 <ul id="markdown-toc">
     <li>
+      <a href="#upgrading-to-40" id="markdown-toc-upgrading-to-40">Upgrading to 4.0</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-40" id="markdown-toc-ubuntucentos-40">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-40" id="markdown-toc-windows-40">Windows</a>
+          </li>
+      </ul>
+    </li>
+    <li>
       <a href="#upgrading-to-391" id="markdown-toc-upgrading-to-391">Upgrading to 3.9.1</a>
       <ul>
           <li>

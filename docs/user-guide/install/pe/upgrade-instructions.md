@@ -12,6 +12,17 @@ description: ThingsBoard PE IoT platform upgrade instructions
   <li>
         <a href="#prepare-for-upgrading-thingsboard-centos-ubuntu" id="markdown-toc-prepare-for-upgrading-thingsboard-centos-ubuntu">Prepare for upgrading ThingsBoard (CentOS, Ubuntu)</a>
   </li>
+    <li>
+      <a href="#upgrading-to-40pe" id="markdown-toc-upgrading-to-40pe">Upgrading to 4.0PE</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-40" id="markdown-toc-ubuntucentos-40">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-40" id="markdown-toc-windows-40">Windows</a>
+          </li>
+      </ul>
+    </li>
   <li>
       <a href="#upgrading-to-391pe" id="markdown-toc-upgrading-to-391pe">Upgrading to 3.9.1PE</a>
       <ul>
@@ -332,7 +343,7 @@ These upgrade steps are applicable for ThingsBoard version 3.9.xPE. In order to 
 
 #### ThingsBoard PE package download
 
-Download and extract ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-4.0pe.zip](https://dist.thingsboard.io/thingsboard-windows-4.0pe.zip).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-4.0pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-4.0pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -344,7 +355,7 @@ net stop thingsboard
 {: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Copy content of the **thingsboard-windows-4.0pe.zip** to the same location.
+* Run installation package **thingsboard-windows-setup-4.0pe.exe**.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
