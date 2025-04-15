@@ -888,6 +888,7 @@ var tb = (function () {
 							const $carousel = $(this);
 							const carouselId = "owl-carousel-" + index;
 							$carousel.attr("id", carouselId);
+
 							function startSmoothAutoPlay (event) {
 								$(event.target).trigger('play.owl.autoplay');
 								setTimeout(function() {
@@ -895,6 +896,7 @@ var tb = (function () {
 									$(event.target).trigger('play.owl.autoplay', [15000]);
 								}, 10);
 							}
+
 							function timelineContentOpen() {
 								const timeline = document.querySelector('.timeline');
 
@@ -945,6 +947,103 @@ var tb = (function () {
 								});
 							}
 
+							const carouselContentToggle = $(`.owl-carousel-toggle-content#${carouselId}`)
+
+							function owlCarouselToggleContent() {
+								const currentItem = $carousel.find('.owl-item.active.center');
+								const currentItemContent = currentItem.children().first();
+								const currentItemContentId = currentItemContent.attr('id');
+								carouselContentToggle.children().each(function() {
+									if($(this).is(`#${currentItemContentId}`)) {
+										$(this).addClass("current-content");
+									} else {
+										$(this).removeClass("current-content")
+									}
+								})
+
+							}
+
+							function scrollToToggleContent(time) {
+								const targetPosition = carouselContentToggle.offset().top - 150;
+
+								$('html, body').stop(true, false).animate({
+									scrollTop: targetPosition
+								}, time);
+							}
+
+							function courseBelowScroll() {
+								$carousel.find('.course-below').on('click', function() {
+									scrollToToggleContent(150)
+								});
+							}
+
+							//courses handle url param
+							let isCoursesVisible = false;
+							let skipInitialUrlReset = false;
+
+							const urlParams = new URLSearchParams(window.location.search);
+							if (urlParams.has("course")) {
+								skipInitialUrlReset = true;
+							}
+
+							function updateUrl() {
+								const currentItem = $carousel.find('.owl-item.active.center');
+								const currentItemContent = currentItem.children().first();
+								const currentItemContentId = currentItemContent.attr('id');
+
+								const url = new URL(window.location);
+								url.searchParams.set("course", currentItemContentId);
+								history.replaceState(null, "", url);
+							}
+
+							function resetUrl() {
+								const url = new URL(window.location);
+								url.searchParams.delete("course");
+								history.replaceState(null, "", url);
+							}
+
+							function handleCourseCarouselUrlTracking() {
+								const observer = new IntersectionObserver(entries => {
+									entries.forEach(entry => {
+										if (entry.target === carouselContentToggle[0]) {
+											if (entry.isIntersecting) {
+												isCoursesVisible = true;
+												skipInitialUrlReset = false;
+
+												updateUrl();
+											} else {
+												isCoursesVisible = false;
+
+												if (skipInitialUrlReset) {
+													skipInitialUrlReset = false;
+												} else {
+													resetUrl();
+												}
+											}
+										}
+									});
+								}, { threshold: 0 });
+
+								observer.observe(carouselContentToggle[0]);
+							}
+
+							if($carousel[0].classList.contains("courses-carousel")) {
+								handleCourseCarouselUrlTracking();
+							};
+							
+							function setUpCourseFromUrl() {
+								const urlParams = new URLSearchParams(window.location.search);
+								const courseId = urlParams.get('course');
+
+								if(courseId) {
+									const itemIndex = $carousel.data('id');
+									scrollToToggleContent(500);
+									return itemIndex[courseId];
+								} else {
+									return 0;
+								}
+							}
+
 							const initialSettings = {
 								loop: true,
 								nav: true,
@@ -953,7 +1052,7 @@ var tb = (function () {
 								slideTransition: 'linear',
 								responsiveBaseElement: 'body',
 								responsiveClass: true,
-								startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
+								startPosition: $carousel[0].classList.contains("courses-carousel") ? setUpCourseFromUrl() : 0,
 								onInitialized: function(event) {
 									if ($carousel[0].classList.contains("smooth-carousel")) {
 										startSmoothAutoPlay(event);
@@ -961,12 +1060,26 @@ var tb = (function () {
 									if($carousel[0].classList.contains("timeline")) {
 										timelineContentOpen();
 										timelineContentToggle();
-									};
+									}
+									if($carousel[0].classList.contains("courses-carousel")) {
+										courseBelowScroll();
+									}
+								},
+								onChanged: function (event) {
+									if($carousel[0].classList.contains("carousel-content-toggle")) {
+										setTimeout(() => {
+											owlCarouselToggleContent();
+										}, 0)
+									}
+									if ($carousel[0].classList.contains("courses-carousel") && isCoursesVisible) {
+										setTimeout(() => {
+											updateUrl();
+										}, 0)
+									}
 								}
 							}
 
 							const customSettings = $carousel.data('settings');
-
 							const settings = Object.assign(initialSettings, customSettings);
 
 							$('#' + carouselId).owlCarousel(settings);

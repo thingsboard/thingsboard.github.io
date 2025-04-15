@@ -463,8 +463,6 @@
         background-color: unset
         opacity: 0.7
 .owl-carousel.owl-theme.usecase-carousel.cardMode.circle
-  .owl-dots
-    display: none
     button.owl-dot
       width: 8px
       height: 8px
@@ -475,6 +473,10 @@
     display: flex
     flex-direction: column
     gap: 32px
+
+.owl-carousel.owl-theme.usecase-carousel.cardMode
+  .course-below
+    color: #2a7dec
 
 @keyframes slideUp
   0%
@@ -498,9 +500,6 @@
     &:before
       content: ""
       width: 80%
-  .owl-carousel.owl-theme.usecase-carousel.cardMode.circle
-    .owl-dots
-      display: block
 
 @media screen and (max-width: 599px)
   .owl-carousel.owl-theme.usecase-carousel.timeline

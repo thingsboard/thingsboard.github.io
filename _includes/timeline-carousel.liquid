@@ -7,7 +7,7 @@
     {% assign carouselCollection = page[include.collectionMap] %}
 {% endif %}
 
-{% assign defaultSettings = '{"items":5,"stagePadding":0,"loop":false,"margin":0,"nav":true,"dots":false,"mouseDrag":false,"autoplay":false}' %}
+{% assign defaultSettings = '{"items":5,"stagePadding":0,"loop":false,"margin":0,"nav":true,"dots":false,"mouseDrag":false,"autoplay":false,"startPosition":-1}' %}
 
 {% if settings == 'null' or settings == '""' %}
     {% assign settings = defaultSettings %}
