@@ -18,13 +18,15 @@ toc:
       path: /docs/paas/eu/solution-templates/temperature-humidity-sensors/
     - title: Smart office
       path: /docs/paas/eu/solution-templates/smart-office/
+    - title: SCADA Oil & Gas Drilling system
+      path: /docs/paas/eu/solution-templates/scada-drilling-system/
+      new: true
     - title: Fleet tracking
       path: /docs/paas/eu/solution-templates/fleet-tracking/
     - title: Fuel Level Monitoring
       path: /docs/paas/eu/solution-templates/fuel-level-monitoring/
     - title: Swimming Pool SCADA system
       path: /docs/paas/eu/solution-templates/swimming-pool-scada-system/
-      new: true
     - title: Water metering
       path: /docs/paas/eu/solution-templates/water-metering/
     - title: Smart retail
@@ -47,6 +49,9 @@ toc:
       path: /docs/paas/eu/user-guide/attributes/
     - title: Time-series data
       path: /docs/paas/eu/user-guide/telemetry/
+    - title: Calculated fields
+      path: /docs/paas/eu/user-guide/calculated-fields/
+      new: true
     - title: Alarms
       path: /docs/paas/eu/user-guide/alarms/
     - title: Remote commands to devices
@@ -74,17 +79,20 @@ toc:
       section:
         - title: Overview
           path: /docs/paas/eu/user-guide/widgets/
-        - title: Widget Actions
+        - title: Widget actions
           path: /docs/paas/eu/user-guide/ui/widget-actions/
-        - title: Widgets Library
+        - title: Widgets library
           path: /docs/paas/eu/user-guide/ui/widget-library/
         - title: Widgets development
           path: /docs/paas/eu/user-guide/contribution/widgets-development/
         - title: Chart widgets
           path: /docs/paas/eu/user-guide/ui/chart-widget/
-        - title: Entities Table widget
+        - title: Map widgets
+          path: /docs/paas/eu/user-guide/widgets/map-widgets/
+          new: true
+        - title: Entities table widget
           path: /docs/paas/eu/user-guide/ui/entity-table-widget/
-        - title: Trip Animation Widget
+        - title: Trip animation widget
           path: /docs/paas/eu/user-guide/ui/trip-animation-widget/
         - title: Advanced data key configuration
           path: /docs/paas/eu/user-guide/ui/advanced-data-key-configuration/
@@ -183,15 +191,15 @@ toc:
       path: /docs/paas/eu/user-guide/integrations/kafka/
     - title: OPC-UA
       path: /docs/paas/eu/user-guide/integrations/opc-ua/
-    - title: Actility ThingPark
+    - title: ThingPark
       path: /docs/paas/eu/user-guide/integrations/thingpark/
-    - title: TheThingsStack
+    - title: The Things Stack Community
       path: /docs/paas/eu/user-guide/integrations/ttn/
-    - title: TheThingsIndustries
+    - title: The Things Stack Industries
       path: /docs/paas/eu/user-guide/integrations/tti/
     - title: KPN Things
       path: /docs/paas/eu/user-guide/integrations/kpn-things/
-    - title: LORIOT
+    - title: Loriot
       path: /docs/paas/eu/user-guide/integrations/loriot/
     - title: ChirpStack
       path: /docs/paas/eu/user-guide/integrations/chirpstack/

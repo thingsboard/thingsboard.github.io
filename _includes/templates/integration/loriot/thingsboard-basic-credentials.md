@@ -1,20 +1,19 @@
-Check the **Create Loriot Application output** checkbox. 
+- Turn on the "**Create Loriot Application output**" option. 
+- Fill in the "**Server**" and "**Application ID**" fields.
+- Select the "**Basic**" credential type and enter your Loriot account credentials.
+- Click "Add" to confirm creating integration.
 
-Let`s open the account in LORIOT. The link contains the server that we selected at the registration stage. It need to be specified in the integration.
+![image](/images/user-guide/integrations/loriot/loriot-add-integration-4-2-pe.png)
 
-{% include images-gallery.html imageCollection="server" preview="false" %}
+<br>
+You can find the values for "**Server**" and "**Application ID**" in the Loriot UI:
 
-By default, Applications is already created. It used for our integration in the example. To get the value we need, go to Аpplications.
+**Server**:
 
-{% include images-gallery.html imageCollection="applications" preview="false" %}
+{% include images-gallery.html imageCollection="create-loriot-application-output-1" showListImageTitles="true" %}
 
-This value needed at the stage of creating the integration to fill in the Application ID field.
+<br>
 
-{% include images-gallery.html imageCollection="application_id" preview="false" %}
+**Application ID**:
 
-Then click on the “Credentials - Basic” block and input the email and password from your account to account in LORIOT.
-
-{% include images-gallery.html imageCollection="basic" preview="false" %}
-
-
-
+{% include images-gallery.html imageCollection="create-loriot-application-output-2" showListImageTitles="true" %}

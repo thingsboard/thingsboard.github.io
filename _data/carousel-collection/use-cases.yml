@@ -182,11 +182,33 @@ waste-management:
 
 health-care:
   0:
-    src: "/images/solutions/health-care/health-care-1.png"
+    src: "/images/solutions/health-care/health-care-1.webp"
     alt: "Assisted living dashboard with opened floor plan and residents alarms"
   1:
-    src: "/images/solutions/health-care/health-care-2.png"
+    src: "/images/solutions/health-care/health-care-2.webp"
     alt: "Assisted living dashboard with opened resident details"
   2:
-    src: "/images/solutions/health-care/health-care-3.png"
+    src: "/images/solutions/health-care/health-care-3.webp"
     alt: "Assisted living dashboard with opened zone sensors configuration"
+
+scada-oil-and-gas-drilling-system:
+  0:
+    src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-1.webp"
+    alt: "Main state of SCADA drilling system dashboard"
+  1:
+    src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-2.webp"
+    alt: "SCADA drilling system dashboard small screen responsiveness"
+  2:
+    src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-3.webp"
+    alt: "Data state of SCADA drilling system dashboard"
+
+scada-energy-management:
+  0:
+    src: "/images/solutions/scada-energy-management/scada-energy-management-1.webp"
+    alt: "Main state of SCADA energy management dashboard"
+  1:
+    src: "/images/solutions/scada-energy-management/scada-energy-management-2.webp"
+    alt: "SCADA energy management dashboard consumption state"
+  2:
+    src: "/images/solutions/scada-energy-management/scada-energy-management-3.webp"
+    alt: "SCADA energy management dashboard small screen responsiveness"
