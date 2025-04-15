@@ -287,7 +287,7 @@ For further guidance, follow the [next instructions](https://learn.microsoft.com
 ### Upgrade to 2.0.0
 
 For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-azure-cache-for-redis) to complete the installation.
-Only then can you proceed with the [upgrade](#run-upgrade).
+Only then you can proceed with the [upgrade](#run-upgrade).
 
 ### Upgrade to 1.3.0
 
