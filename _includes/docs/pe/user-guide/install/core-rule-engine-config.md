@@ -4866,7 +4866,7 @@
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge.notifications.key.value</td>
 			<td>TB_QUEUE_KAFKA_EDGE_HP_EVENTS_MAX_POLL_RECORDS</td>
 			<td>10</td>
-			<td> Define the maximum number of records that can be polled from tb_edge.notifications.<SERVICE_ID> topics.</td>
+			<td> Define the maximum number of records that can be polled from tb_edge.notifications.SERVICE_ID topics.</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key</td>
@@ -4879,7 +4879,7 @@
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key.value</td>
 			<td>TB_QUEUE_KAFKA_EDGE_NOTIFICATIONS_MAX_POLL_RECORDS</td>
 			<td>10</td>
-			<td> Define the maximum number of records that can be polled from tb_edge_event.notifications.<TENANT_ID>.<EDGE_ID> topics.</td>
+			<td> Define the maximum number of records that can be polled from tb_edge_event.notifications.TENANT_ID.EDGE_ID topics.</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
@@ -5324,7 +5324,7 @@
 		<tr>
 			<td>queue.edqs.poll_interval</td>
 			<td>TB_EDQS_POLL_INTERVAL_MS</td>
-			<td>125</td>
+			<td>25</td>
 			<td> Poll interval for EDQS topics</td>
 		</tr>
 		<tr>
@@ -5532,6 +5532,18 @@
 			<td> RocksDB path for storing CF states</td>
 		</tr>
 		<tr>
+			<td>queue.calculated_fields.init_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_FETCH_PACK_SIZE</td>
+			<td>50000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for initial fetching</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.init_tenant_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_TENANT_FETCH_PACK_SIZE</td>
+			<td>1000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for per-tenant fetching</td>
+		</tr>
+		<tr>
 			<td>queue.transport.notifications_topic</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_transport.notifications</td>
@@ -5554,14 +5566,14 @@
 			<td>TB_QUEUE_EDGE_NOTIFICATIONS_TOPIC</td>
 			<td>tb_edge.notifications</td>
 			<td> Topic prefix for high-priority edge notifications (rpc, lifecycle, new messages in queue) that require minimum latency and processing time.
- Each tb-core has its own topic: <PREFIX>.<SERVICE_ID></td>
+ Each tb-core has its own topic: PREFIX.SERVICE_ID</td>
 		</tr>
 		<tr>
 			<td>queue.edge.event_notifications_topic</td>
 			<td>TB_QUEUE_EDGE_EVENT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_edge_event.notifications</td>
 			<td> Topic prefix for downlinks to be pushed to specific edge.
- Every edge has its own unique topic: <PREFIX>.<TENANT_ID>.<EDGE_ID></td>
+ Every edge has its own unique topic: PREFIX.TENANT_ID.EDGE_ID</td>
 		</tr>
 		<tr>
 			<td>queue.edge.partitions</td>
