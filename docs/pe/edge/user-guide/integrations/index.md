@@ -46,7 +46,7 @@ missingPlaceholder:
 {:toc}
 
 {% assign sinceVersion = "3.4" %}
-{% include templates/since.md %}
+{% include templates/edge/since-edge.md %}
 
 ## Overview
 
