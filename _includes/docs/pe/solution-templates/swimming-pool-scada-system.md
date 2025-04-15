@@ -23,70 +23,11 @@ To understand how the Swimming Pool SCADA system template works, let's start by 
 You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
 The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
 
-{% include images-gallery.html imageCollection="go-to-solution-templates-page-1" showListImageTitles="true" %}
+- Go to the "**Solution templates**" page. Find "**Swimming Pool SCADA system**" and click "**Install**" to start the installation process.
+- Configuration instructions for this solution will be provided — follow the steps as instructed.
+- Once done, click "**Close**" to complete the setup and proceed to the dashboard.
 
-**Follow the next steps:**
-
-\- **Step 1**: Install Docker Compose on your system. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
-
-\- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
-
-```text
-docker run --pull always --rm -d --name tb-modbus-pool-emulator -p 5021-5034:5021-5034 thingsboard/tb-modbus-pool-emulator:latest && docker logs -f tb-modbus-pool-emulator
-```
-{: .copy-code}
-
-This command will launch a Modbus pool emulator containing 14 devices, which act as a unified system and communicate through the ModBus protocol.
-
-{% include images-gallery.html imageCollection="launch-modbus-pool-emulator-1" %}
-
-\- **Step 3**: Launch the IoT Gateway. ThingsBoard will automatically generate the required configuration. Simply copy and save it as a **docker-compose.yml** file in a suitable folder on your computer for easy access and use.
-
-{% include images-gallery.html imageCollection="docker-compose-yml" %}
-
-Below is a sample configuration for the ThingsBoard IoT Gateway service:
-
-```text
-services:
-  # ThingsBoard IoT Gateway Service Configuration
-  tb-gateway:
-    image: thingsboard/tb-gateway:latest
-    container_name: tb-gateway
-    restart: always
-
-    # Necessary mapping for Linux
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-    # Environment variables
-    environment:
-      - host=$YOUR_INSTANCE_HOST
-      - port=$YOUR_INSTANCE_TCP_UDP_PORT
-      - accessToken=$ACCESS_TOKEN
-```
-
-where
-
-- **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance.
-- **$YOUR_INSTANCE_TCP_UDP_PORT** is a TCP/UDP port of your ThingsBoard instance.
-- **$ACCESS_TOKEN** is an access token for the gateway from platform server.
-
-<br>
-Now, run the command below from the folder where you've saved the docker-compose.yml file to run the IoT Gateway:
-
-```text
-docker compose up
-```
-{: .copy-code}
-
-{% include images-gallery.html imageCollection="launch-iot-gateway-1" %}
-
-
-We will delve into more details on this topic in the "[Gateway](#gateway)", where we will discuss how the gateway operates within the ThingsBoard environment, devices connectivity, and data transmission configuration.
-
-The IoT Gateway is running. Click "Close" to proceed to the dashboard.
-
-{% include images-gallery.html imageCollection="go-to-dashboard-1" %}
+{% include images-gallery.html imageCollection="go-to-solution-templates-page-1" %}
 
 ## Dashboard
 
