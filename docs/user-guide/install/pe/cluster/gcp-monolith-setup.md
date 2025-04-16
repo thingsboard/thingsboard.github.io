@@ -18,7 +18,7 @@ This guide will help you to set up ThingsBoard in monolith mode using [Google Ku
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-### Pull ThingsBoard PE images from docker hub
+## Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}
@@ -28,7 +28,7 @@ This guide will help you to set up ThingsBoard in monolith mode using [Google Ku
 Clone the repository and change the working directory to GCP scripts.
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/gcp/monolith
 ```
 {: .copy-code}
@@ -50,6 +50,7 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 ### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
 
+{% assign tbDbName = "thingsboard" %}
 {% include templates/install/gcp/provision-postgresql.md %}
 
 ### Step 5.2 Cassandra (optional)
@@ -72,7 +73,7 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 ### 9.1 Configure HTTP(S) Load Balancer
 
-{% include templates/install/gcp/http-lb.md %}
+{% include templates/install/gcp/configure-http.md %}
 
 #### Transparent Load Balancer
 

@@ -53,9 +53,14 @@ if(unit.length) {
 }
 ```
 
+
+**Note**: When using batch calculation fields, only the following aggregation types are supported:
+* NONE (applicable for telemetry data)
+* UNIQ (applicable for attributes)
+
 ## Examples
 
-#### Filter raw telemetry 
+### Filter raw telemetry 
 
 You can exclude some telemetry values from metric calculation. In this example we will exclude all temperature values that bigger than 40:
 
@@ -74,7 +79,7 @@ for (var i = 0; i < temperatureReadings.length; i++) {
 return filteredReadings;
 ```
 
-#### Modify raw telemetry
+### Modify raw telemetry
 
 Here is an example how to transform raw telemetry array based on attribute value: 
 
@@ -96,7 +101,7 @@ for (var i = 0; i < temperatureReadings.length; i++) {
 return temperatureReadings;
 ```
 
-#### Group multiple telemetries by timestamp
+### Group multiple telemetries by timestamp
 
 ```javascript
 var voltageTelemetry = none(energyMeter.voltage);
@@ -123,7 +128,7 @@ groupTelemetryByTime = function (telemetry, groupedTelemetry, keyName) {
 
 ```
  
-#### Fill gaps in telemetry stream
+### Fill gaps in telemetry stream
 
 In this example we demonstrate how to detect gaps im time series stream and fill it with `0` values:
 

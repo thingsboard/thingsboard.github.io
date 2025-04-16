@@ -16,13 +16,15 @@ toc:
     path: /docs/pe/solution-templates/temperature-humidity-sensors/
   - title: Smart office
     path: /docs/pe/solution-templates/smart-office/
+  - title: SCADA Oil & Gas Drilling system
+    path: /docs/pe/solution-templates/scada-drilling-system/
+    new: true
   - title: Fleet tracking
     path: /docs/pe/solution-templates/fleet-tracking/
   - title: Fuel Level Monitoring
     path: /docs/pe/solution-templates/fuel-level-monitoring/
   - title: Swimming Pool SCADA system
     path: /docs/pe/solution-templates/swimming-pool-scada-system/
-    new: true
   - title: Water metering
     path: /docs/pe/solution-templates/water-metering/
   - title: Smart retail
@@ -47,6 +49,9 @@ toc:
     path: /docs/pe/user-guide/attributes/
   - title: Time-series data
     path: /docs/pe/user-guide/telemetry/
+  - title: Calculated fields
+    path: /docs/pe/user-guide/calculated-fields/
+    new: true
   - title: Alarms
     path: /docs/pe/user-guide/alarms/
   - title: Remote commands to devices
@@ -74,15 +79,18 @@ toc:
     section:
       - title: Overview
         path: /docs/pe/user-guide/widgets/
-      - title: Widget Actions
+      - title: Widget actions
         path: /docs/pe/user-guide/ui/widget-actions/
-      - title: Widgets Library
+      - title: Widgets library
         path: /docs/pe/user-guide/ui/widget-library/
-      - title: Chart Widgets
+      - title: Chart widgets
         path: /docs/pe/user-guide/ui/chart-widget/
-      - title: Entities Table widget
+      - title: Map widgets
+        path: /docs/pe/user-guide/widgets/map-widgets/
+        new: true
+      - title: Entities table widget
         path: /docs/pe/user-guide/ui/entity-table-widget/
-      - title: Trip Animation Widget
+      - title: Trip animation widget
         path: /docs/pe/user-guide/ui/trip-animation-widget/
       - title: Advanced data key configuration
         path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
@@ -184,15 +192,15 @@ toc:
     path: /docs/user-guide/integrations/kafka/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
-  - title: Actility ThingPark
+  - title: ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsStack
+  - title: The Things Stack Community
     path: /docs/user-guide/integrations/ttn/
-  - title: TheThingsIndustries
+  - title: The Things Stack Industries
     path: /docs/user-guide/integrations/tti/
   - title: KPN Things
     path: /docs/user-guide/integrations/kpn-things/
-  - title: LORIOT
+  - title: Loriot
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
     path: /docs/user-guide/integrations/chirpstack/
@@ -231,6 +239,15 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/pe/samples/analytics/kafka-streams/
+- title: Mobile center
+  new: true
+  section:
+    - title: Overview
+      path: /docs/pe/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/pe/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/pe/user-guide/ui/mobile-qr-code/
 - title: Other Features
   section:
     - title: Edge Computing
@@ -253,7 +270,7 @@ toc:
     - title: Version control
       path: /docs/pe/user-guide/version-control/
     - title: PSM and eDRX Support
-      path: /docs/user-guide/psm/
+      path: /docs/pe/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/pe/user-guide/bulk-provisioning/
     - title: Scheduler
@@ -281,6 +298,8 @@ toc:
     path: /docs/pe/user-guide/two-factor-authentication/
   - title: OAuth 2.0
     path: /docs/pe/user-guide/oauth-2-support/
+  - title: Domains
+    path: /docs/pe/domains/
   - title: HTTP Transport
     section:
       - title: HTTP over SSL
@@ -335,11 +354,8 @@ toc:
     path: /docs/pe/user-guide/ui/slack-settings/
   - title: Microsoft Teams Settings
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
-  - title: Mail Settings
+  - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Mobile application QR code
-    path: /docs/pe/user-guide/ui/mobile-qr-code/
-    new: true
   - title: JWT Security Settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide

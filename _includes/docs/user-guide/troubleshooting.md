@@ -156,7 +156,7 @@ Some internal state metrics can be exposed by the Spring Actuator using Promethe
 
 Here's the list of metrics ThingsBoard pushes to Prometheus.
 
-#### <b>tb-node</b> metrics
+### <b>tb-node</b> metrics
 - <i>attributes_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>attributes</b> to the database. 
 Note that there are several queues (threads) for persisting attributes in order to reach maximum performance.
 - <i>ruleEngine_${name_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>): 
@@ -184,7 +184,7 @@ Note that there are several queues (threads) for persisting attributes in order 
 - <i>attributes_cache</i> (results - <i>hit, miss</i>): stats about how much attribute requests went to the cache
 
 
-#### <b>transport</b> metrics
+### <b>transport</b> metrics
 - <i>transport</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests received by Transport from TB nodes 
 - <i>ruleEngine_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the Rule Engine.
 - <i>core_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the TB node Device actor.
@@ -193,13 +193,13 @@ Note that there are several queues (threads) for persisting attributes in order 
 
 <b>Some metrics depends on the type of the database you are using to persist timeseries data.</b>
 
-#### PostgreSQL-specific metrics
+### PostgreSQL-specific metrics
 - <i>ts_latest_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>latest telemetry</b> to the database. 
 Note that there are several queues (threads) in order to reach maximum performance.
 - <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database. 
 Note that there are several queues (threads) in order to reach maximum performance.
 
-#### Cassandra-specific metrics
+### Cassandra-specific metrics
 - <i>rateExecutor_currBuffer</i>: number of messages that are currently being persisted inside the Cassandra.
 - <i>rateExecutor_tenant</i> (for each present <i>tenantId</i>): number of requests that got rate-limited
 - <i>rateExecutor</i> (statsNames - <i>totalAdded, totalRejected, totalLaunched, totalReleased, totalFailed, totalExpired, totalRateLimited</i>)
@@ -249,13 +249,9 @@ For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-sup
 
 <section id="talkToUs">
     <div id="gettingHelp">
-        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
-            <span class="phrase-heading">Community chat</span>
-            <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
-        </a>
-        <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <span class="phrase-heading">Q&A forum</span>
-            <p>Our user forum is a great place to go for community support.</p>
+        <a href="https://github.com/thingsboard/thingsboard">
+            <span class="phrase-heading">Github Project</span>
+            <p>Check out the project and consider contributing.</p>
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>

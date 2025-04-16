@@ -5,35 +5,17 @@ Configure HTTP(S) Load Balancer to access web interface of your ThingsBoard inst
    
 See links/instructions below on how to configure each of the suggested options.
 
-#### HTTP Load Balancer
+### HTTP Load Balancer
 
-Execute the following command to deploy plain http load balancer:
+{% include templates/install/cloud-cluster-common/http-lb.md %}
 
-```
-kubectl apply -f receipts/http-load-balancer.yml
-```
-{: .copy-code}
-
-The process of load balancer provisioning may take some time. You may periodically check the status of the load balancer using the following command:
-
-```
-kubectl get ingress
-```
-{: .copy-code}
-
-Once provisioned, you should see similar output:
-
-```text
-NAME                   CLASS    HOSTS   ADDRESS         PORTS   AGE
-tb-http-loadbalancer   <none>   *       34.111.24.134   80      7m25s
-```
 Now, you may use the address (the one you see instead of 34.111.24.134 in the command output) to access HTTP web UI (port 80) and connect your devices via HTTP API Use the following default credentials:
 
 - **System Administrator**: sysadmin@thingsboard.org / sysadmin
 - **Tenant Administrator**: tenant@thingsboard.org / tenant
 - **Customer User**: customer@thingsboard.org / customer
 
-#### HTTPS Load Balancer
+### HTTPS Load Balancer
 
 For using ssl certificates we can add our certificate directly in Azure ApplicationGateWay using command:
 ```

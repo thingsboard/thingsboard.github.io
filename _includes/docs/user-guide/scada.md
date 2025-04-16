@@ -11,6 +11,13 @@ Additionally, ThingsBoard offers robust [alarm](/docs/{{docsPrefix}}user-guide/a
 
 Starting from release 3.8.0, ThingsBoard introduces support for SCADA-like HMI dashboards, which we will cover in this documentation.
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/kBMcsg7YEcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## SCADA dashboard layout
 
 A SCADA dashboard in ThingsBoard provides all the functionalities of a typical platform [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} with a specialized SCADA [layout](/docs/{{docsPrefix}}user-guide/dashboards/#layouts){:target="_blank"}, 
@@ -87,7 +94,25 @@ ThingsBoard's engineers have extended the SVG format to make these symbols inter
 Specifically, we define how the SVG object changes based on the properties configured by the user or the data received from the device.
 We also define clickable areas of the SVG object, allowing users to configure actions that can be triggered once the symbol is added to the dashboard. 
 
-We currently provide 60+ SCADA symbols available out of the box, with plans to increase this number to 500+ in upcoming releases. 
+{% capture difference %}
+In ThingsBoard version 3.9, in addition to traditional SCADA symbols, high-performance SCADA symbols have been introduced.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+High-performance SCADA symbols in ThingsBoard are optimized graphical elements used to display information about the status of processes and equipment in SCADA systems created on the ThingsBoard platform. They are designed to enhance the efficiency of information perception and speed up decision-making by the operator.
+
+Key features of High-performance SCADA symbols in ThingsBoard:
+
+- Simplified Design: Minimalist symbols that exclude unnecessary decorative elements. Priority is given to informativeness and readability.
+- Color Coding: Main states (normal) are typically represented by neutral colors (e.g., gray). Critical states (emergencies, errors) are highlighted with bright colors such as red or yellow.
+- Dynamic Changes: Symbols can change color depending on their state (e.g., valve closed/open, or pump on/off).
+- Standardization: A standardized set of symbols is used for different types of devices or processes to reduce user training time.
+- Compatibility: Symbols are easily adaptable to different screen sizes and device types (desktops, tablets, smartphones).
+
+{% include images-gallery.html imageCollection="high-performance-scada-symbols" %}
+
+<br>
+We currently provide 100+ SCADA symbols available out of the box, with plans to increase this number to 500+ in upcoming releases. 
 If you need a symbol that is not available, you are encouraged to create your own using the following [guide](/docs/{{docsPrefix}}user-guide/scada/scada-symbols-dev-guide/){:target="_blank"}.
 
 ## SCADA symbol widget
@@ -100,7 +125,7 @@ Let's first add this widget to the dashboard:
 
 {% include images-gallery.html imageCollection="add-scada-symbol-widget-1" showListImageTitles="true" %}
 
-#### Target entity
+### Target entity
 
 This points the widget to a single entity: device, asset, etc. 
 It defines the entity that will be used to control the behavior of the symbol. 
@@ -112,7 +137,7 @@ In our example, we will select the smart device that controls our valve. Typical
 
 {% include images-gallery.html imageCollection="scada-selected-target-device-1" %}
 
-#### SCADA symbol
+### SCADA symbol
 
 This points to a specific SCADA [symbol](#scada-symbol) from the library. 
 In our case, we have selected the 'Horizontal wheel valve' from the library. 
@@ -120,7 +145,7 @@ Ensure you have selected 'Include system symbols' if this symbol is not visible 
 
 {% include images-gallery.html imageCollection="scada-symbol-device-1" %}
 
-#### Behavior
+### Behavior
 
 The list of behavior parameters is specific to the chosen SCADA symbol and is entirely controlled by the symbol's author. 
 
@@ -150,7 +175,11 @@ Action types to retrieve **value**:
 - "**Get time series**" action will subscribe to the value of the target entity's time series field. The widget will receive updates when new time series data arrives.
 
 {% include images-gallery.html imageCollection="scada-action-get-time-series-1" %}
- 
+
+- "**Get alarm status**" action subscribes to the alarm status field. The widget will receive updates according to the type of alarm.
+
+{% include images-gallery.html imageCollection="scada-action-get-alarm-status-1" %}
+
 - "**Get dashboard state**" action will use the name of the current dashboard state. This is useful in specific cases that are not related to the state of the target device.
 
 {% include images-gallery.html imageCollection="scada-action-get-dashboard-state-1" %}
@@ -186,7 +215,7 @@ In the case of the horizontal wheel valve, there are two actions: "Open" and "Cl
 
 {% include images-gallery.html imageCollection="example-of-parameters-scada-symbol-1" %}
 
-#### Appearance
+### Appearance
 
 There are common appearance parameters, such as symbol title and icon, available for any SCADA symbol. 
 Other parameters are specific to the chosen SCADA symbol and are controlled by the symbol's author. 
@@ -197,7 +226,7 @@ For more details, see the symbol development [guide](/docs/{{docsPrefix}}user-gu
 
 {% include images-gallery.html imageCollection="scada-appearance-1" %}
 
-#### Card Appearance
+### Card Appearance
 
 The card appearance settings are generic for any SCADA symbol and include background (transparent by default), list of enabled card buttons, card border radius, and padding parameters.
 

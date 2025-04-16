@@ -3,13 +3,13 @@
 {:toc}
 
 An essential attribute of the MQTT broker involves the reception of messages published by clients, their filtration based on topics, and subsequent distribution to subscribers. 
-This procedure bears immense significance, particularly when operating under substantial workloads.
-Within this discourse, we shall illustrate the measures undertaken to ascertain that TBMQ maintains unwavering capability 
-in simultaneously accommodating approximately **100M** connected clients, while effectively managing the influx and outflow of **3M MQTT publish messages per second**.
+This procedure holds great significance, particularly when operating under substantial workloads.
+Within this article, we will show the steps taken to ensure that TBMQ can reliably handle about **100M** connected clients 
+while effectively managing a throughput of **6M MQTT publish messages per second**.
 
 ![image](/images/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
 
-### Test methodology
+## Test methodology
 
 We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
 We have deployed the TBMQ cluster of 25 nodes in the [EKS](https://aws.amazon.com/eks/) 
@@ -31,14 +31,15 @@ In parallel, 500 subscriber groups have been configured, each featuring a single
 The topic filter employed by these subscribers corresponds to the topic pattern employed by the respective publisher group (i.e. `CountryCode/RandomString/GroupId/+`). 
 As a consequence, each subscriber is capable of receiving 6k messages per second, ensuring the efficient processing of incoming data.
 
-In the described scenario, TBMQ cluster consistently sustains 100,000,500 connections and efficiently handles the processing 
-of 3M messages per second, resulting in a total of 10,800M messages over the course of 1-hour test run.
+In the described scenario, TBMQ cluster consistently sustains 100,000,500 connections and efficiently handles the throughput 
+of 6M messages per second. Throughput refers to the total number of messages per second, including both incoming and outgoing messages.
+The processing of 3M incoming messages per second results in a total of 10,800M messages over the course of 1-hour test run.
 
 The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their count.
 These clients operate persistently, continuously publishing time series data over MQTT to designated topics.
 Furthermore, the agent facilitates the provisioning of MQTT clients that subscribe by topic filters to receive the messages published by the aforementioned clients.
 
-In contemplation of the warm-up phase for the clients, it is noteworthy to acknowledge that 6 iterations of publishers transmitting a single message each took place. 
+Considering the warm-up phase for the clients, it is noteworthy to acknowledge that 6 iterations of publishers transmitting a single message each took place. 
 Consequently, a total of 600M warm-up messages were generated within a span of ~7 minutes. 
 These warm-up messages serve the purpose of preparing the system and initiating the flow of data.
 In addition to the warm-up phase, the overall test encompasses a grand total of 11,400M messages that were processed. 
@@ -57,7 +58,7 @@ For detailed information regarding the configurations associated with each topic
 Every individual MQTT client establishes a distinct connection to the broker. 
 This approach ensures that each client operates independently and maintains its own dedicated connection for seamless communication with the broker.
 
-### Hardware used
+## Hardware used
 
 | Service Name              | **TBMQ**  | **AWS RDS (PostgreSQL)** | **Kafka**   |
 |---------------------------|-----------|--------------------------|-------------|
@@ -69,7 +70,7 @@ This approach ensures that each client operates independently and maintains its 
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
-### Test summary
+## Test summary
 
 The connection rate of the clients reached a notable level of ~22k connections per second, signifying an efficient setup.
 To ensure the absence of any resource leakage or performance degradation over time, the test was executed for a duration of one hour, allowing for thorough observation and analysis.
@@ -81,9 +82,9 @@ This QoS level ensures that messages are guaranteed to be delivered at least onc
 
 Considering the comprehensive scope of the test, it would be advantageous to review an informative table that summarizes the key elements and outcomes of the conducted test.
 
-| Devices | Msgs/sec | Broker CPU | Broker Memory | Kafka CPU | Kafka Read/Write throughput | PostgreSQL  CPU | PostgreSQL Read/Write IOPS |
-|---------|----------|------------|---------------|-----------|-----------------------------|-----------------|----------------------------|
-| 100M    | 3M       | 45%        | 160GiB        | 58%       | 7k / 80k KiB/s              | 2%              | less than 1 / less than 3  |
+| Devices | Throughput (msgs/sec) | Broker CPU | Broker Memory | Kafka CPU | Kafka Read/Write throughput | PostgreSQL  CPU | PostgreSQL Read/Write IOPS |
+|---------|-----------------------|------------|---------------|-----------|-----------------------------|-----------------|----------------------------|
+| 100M    | 6M                    | 45%        | 160GiB        | 58%       | 7k / 80k KiB/s              | 2%              | less than 1 / less than 3  |
 
 The following statistics provide insights into the Kafka topics used during the test 
 (i.e. `publish_msg`, after [Kafka topics renaming [1]](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.msg.all`, 
@@ -115,7 +116,7 @@ There is no direct communication between TBMQ nodes that helped scale horizontal
 Although employing a QoS level of 0 would further elevate the message rate, our intention was to demonstrate TBMQ's processing capabilities with a more practical setup.
 In general, a QoS level of 1 is widely favored as it strikes a balance between message delivery speed and reliability, making it a popular configuration choice.
 TBMQ is a great choice for both low and high message rates. 
-It excels in various processing use cases, such as fan-in and fan-out scenarios, and proves equally suitable for deployments of various scales.
+It excels in various processing use cases, such as fan-in, p2p, and fan-out scenarios, and proves equally suitable for deployments of various scales.
 Thanks to its inherent capacity for both vertical and horizontal scalability, the broker adapts to the demands of either small-scale or large-scale deployments.
 
 **Challenges faced during testing**
@@ -148,7 +149,7 @@ alongside other minor performance improvements.
 
 Through these diligent efforts, we successfully addressed various challenges along the way, optimizing code performance and ensuring a smooth and efficient operation of the system.
 
-### TCO calculations
+## TCO calculations
 
 Herewith you can find total cost of ownership (TCO) calculations for TBMQ deployed using AWS.
 
@@ -169,13 +170,13 @@ AWS MSK: 9 brokers (3 brokers per AZ) x m6a.2xlarge (8 vCPU, 32 GiB), 4,500GiB t
 
 **TCO**: ~26,573 USD per month or 0.0003 USD per month per device.
 
-### Running tests
+## Running tests
 
 **Load configuration:**
 
 * 100M publish MQTT clients (smart tracker devices);
 * 500 persistent subscribe MQTT clients (specific applications that consume the data - e.g. for analysis/graphs);
-* 3M msg/sec over MQTT, each MQTT message contains 5 data points, message size is 114 bytes;
+* 6M msg/sec throughput over MQTT, each MQTT message contains 5 data points, message size is 114 bytes;
 * PostgreSQL database to store MQTT client credentials, client session states;
 * Kafka queue to persist messages.
 
@@ -233,7 +234,7 @@ where
 
 **Test run**
 
-The test commences by establishing connections between the clients and the cluster. `APPLICATION` clients subscribe to the relevant topics, while publishers undergo a warm-up phase. 
+The test starts by establishing connections between the clients and the cluster. `APPLICATION` clients subscribe to the relevant topics, while publishers undergo a warm-up phase. 
 The 100,000,500 clients are evenly distributed among the performance test pods, facilitating parallel connections to the broker.
 
 After a period of time, all clients successfully establish connections, and each performance test pod notifies the orchestrator of its readiness.
@@ -276,7 +277,7 @@ Here is the JMX monitoring for TBMQ. The broker nodes are operating steadily and
 
 {% include images-gallery.html imageCollection="broker-jmx-monitoring" %}
 
-### How to repeat the tests
+## How to repeat the tests
 
 Please refer to the subsequent [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/100M/k8s/aws#readme) 
@@ -288,10 +289,10 @@ For configuring the performance tests, you can review and modify the configurati
 [subscribers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/100M/k8s/broker-tests-subscribers-config.yml) 
 to simulate the desired load.
 
-### Conclusion
+## Conclusion
 
-This performance test demonstrates the capabilities of TBMQ cluster in efficiently receiving,
-processing, and distributing 3M messages per second originating from diverse devices along with handling 100M concurrent connections.
+This performance test demonstrates the capabilities of TBMQ cluster in efficiently
+processing the throughput of 6M messages per second originating from diverse devices along with handling 100M concurrent connections.
 Our commitment to continuous improvement compels us to undertake further efforts aimed at enhancing performance.
 As a result, we anticipate publishing updated performance results for TBMQ cluster in the near future.
 We sincerely hope that this article be valuable to individuals evaluating TBMQ and those seeking to conduct performance tests within their own environments.
@@ -299,7 +300,7 @@ We sincerely hope that this article be valuable to individuals evaluating TBMQ a
 Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us 
 on [GitHub](https://github.com/thingsboard/tbmq) and [Twitter](https://twitter.com/thingsboard).
 
-### Reference Commits
+## Reference Commits
 
 [1] - [Kafka topics renaming](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13).
 

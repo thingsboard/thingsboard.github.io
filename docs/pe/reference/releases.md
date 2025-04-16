@@ -8,6 +8,111 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.0.0 (Apr 15, 2025) {#v40}
+
+Everything from [TB CE v4.0](https://github.com/thingsboard/thingsboard/releases/tag/v4.0) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Typed uplink data converters designed for use with a specific integration type;
+  * Improved performance of the aggregation rule node;
+  * Improved vendors and models selection in converter library;
+  * Improved integration executor performance using parallel requests to Redis cache;
+
+* UI
+
+  * SCADA: Oil & Gas drilling system solution template;
+  * SCADA: Energy management solution template;
+  * Solution templates cards redesign;
+  * Added debug configuration option to the Data converters table;
+  * Added scheduler event types autocomplete in alias configuration;
+  * Added option of data export for gauge widgets basic settings;
+  * Added home dashboard handling for mobile signup;
+  * Changed sort order in scheduler events;
+  * Captcha version is now required for self-registration form;
+
+* Edge
+
+  * Avoid creation of unnecessary public customers during Edge connection;
+
+**Bug fixes**
+
+* Fixed the customer details dashboard autocomplete;
+* Fixed converter library arrow button position for small description;
+* Fixed converter library model search;
+* Fixed entities table content export;
+* Fixed help link for mail template settings;
+* Fixed incorrect help container size for custom actions in group actions;
+* Fixed placement of IoT Hub name input for Azure Event Hub;
+* Fixed converter library for ThingPark and ThingParkEnterprise;
+* Fixed entity data query bug;
+* Fixed integration daily activity stats when using dedicated events datasource;
+* Fixed relations cleanup from group after OTA removing;
+* Fixed timeseries table export data with latest;
+* Fixed untranslated error message on login page;
+* Prevented converter type changes via API;
+
+## v3.9.1 (Feb 19, 2025) {#v391}
+
+Everything from [TB CE v3.9.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.9.1) with the following improvements and bug fixes.
+
+**Bug fixes**
+
+  * White labeling: Added validation for custom translation keys;
+  * White labeling: Custom menu encoding fix;
+  * White labeling: Fixed OAuth 2 login redirect for white-labeled domains;
+  * Integrations: Fixed debug settings translation;
+  * Assets: Fixed database error when customer user is filtering assets by profile;
+  * Notification center: Fixed permission check;
+  * Queries: Fixed some corner cases in "entities by group name" query;
+  * Queries: Fixed swagger description for entities by group name filter;
+  * Dashboards: Fixed opening the default dashboard without dashboard group permission in fullscreen;
+
+
+## v3.9.0 (Dec 31, 2024) {#v39}
+
+Everything from [TB CE v3.9](https://github.com/thingsboard/thingsboard/releases/tag/v3.9) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Notifications localization;
+  * Updated default converters;
+  * Migrated self-registration notifications to notification center;
+  * Single storage for all tenant domains across all related entities;
+  * Housekeeper TTL cleanup implementation for blob entities;
+  * Advanced debug mode settings for Integrations and Converters;
+
+* UI
+
+  * Improved generation of help links;
+  * Added description column for converters table;
+  * Added ability to reset white labeling to default;
+  * Added auto scroll down when adding new subitem in custom menu;
+  * Updated navigation buttons of the Water Metering solution template;
+
+**Bug fixes**
+
+* Fixed entity hierarchy widget not displaying entity groups;
+* Fixed integration rate limits per tenant;
+* Fixed fuel level monitoring template;
+* Fixed error when making entity group private;
+* Fixed incorrect display of copy button in custom translate (Firefox);
+* Fixed user activation link refresh when resending activation email;
+* Fixed entitiesByGroupNameFilter with non-empty ownerId;
+* Fixed opening default dashboard without dashboard group permission;
+* Fixed missing new menu items in previously created custom menu;
+* Fixed mail template and self-registration editor configuration;
+* Fixed updated base URL in login white labeling;
+* Fixed NPE during persist integration statistics;
+* Fixed vendor logo display in converter library;
+* Fixed issue with entity groups import by version control;
+* Solutions template custom actions typo fixes;
+
+
 ## v3.8.1 (Oct 15, 2024) {#v381}
 
 Everything from [TB CE v3.8.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.8.1) with the following improvements and bug fixes.
@@ -185,7 +290,7 @@ Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases
 
 * Core & Rule Engine
 
-  * Default converters for most Integrations with well-defined message forma;
+  * Default converters for most Integrations with well-defined message format;
   * Fuel level monitoring solution template;
   * Move integration rate limits configuration to tenant profile;
   * Improved validation for group permissions, group owner, and resource deletion;

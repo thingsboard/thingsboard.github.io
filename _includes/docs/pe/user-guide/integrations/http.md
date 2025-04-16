@@ -19,13 +19,7 @@ Before creating the integration, you need to create an Uplink converter in Data 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
-{% capture difference %}
-**NOTE**
-<br>
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.  
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 
@@ -156,7 +150,7 @@ ThingsBoard has examples of several types of dashboards that you can use. Learn 
 ![image](/images/user-guide/integrations/http/solution-templates.png)
 {% endif %}
 
-#### Enable security option
+### Enable security option
 
 If necessary, you can specify additional parameters, without which the data will not be included in the integration.
 To do this, check the Enable security checkbox and click on the Headers filter. Specify an arbitrary value and save the changes.

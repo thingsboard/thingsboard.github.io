@@ -2,7 +2,7 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Connect To the ThingsBoard
+title: Connect Trendz to the ThingsBoard
 description: Connect Trendz Analytics platform to the ThingsBoard
 ---
 
@@ -61,7 +61,7 @@ Here is a list of supported fields:
     - Telemetry
 - **Relations** - configured relations between Business Entities and their properties. Trendz Relations represent ThingsBoard relations between Devices and Assets
 
-#### First Topology discovery
+### First Topology discovery
 
 
 After the first sign-in user should perform initial Topology Discovery. During this process, Trendz will analyze all Devices/Assets available in the ThingsBoard, their attributes/telemetry and all relations between them.
@@ -73,7 +73,7 @@ As a result, Trendz will extract and save the collection of Business Entities. Y
 
 ![image](/images/trendz/discover-results.png)
  
-#### Manual Topology rediscovery
+### Manual Topology rediscovery
 Business Entity does not represent a single Device or Asset, but the query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.
 
 When new Device/Asset types were added or attribute/telemetry with a new key was created in the ThingsBoard - you should update Topology. 
@@ -83,7 +83,7 @@ Manual Topology Rediscovery will scan ThingsBoard again, detect modifications an
 You can trigger this process on the `Settings` page by pressing `Refresh Topology`.
 
  
-#### Manual Modification
+### Manual Modification
 Another option for updating topology is a manual modification of Business Entity properties. You can have as many Business Entities with similar properties as you want. 
 It may be useful in case when the same devices/assets represent different aspects of business solution. For example, single devices can monitor the environment and submit debug events for troubleshooting.
 By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on a single aspect of your solution.

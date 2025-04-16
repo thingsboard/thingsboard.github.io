@@ -1,20 +1,19 @@
-The most straightforward method to install and connect Edge to the Server is by utilizing the prepared installation instructions provided by the ThingsBoard Server.
-For every Edge Entity, the Server has prepared instructions with already populated fields such as the Edge secret key, Edge routing key, Edge RPC host URI, etc.
-Please follow the steps below to use these prepared instructions:
 
+Once the **Edge** instance has been created, the installation instructions will be available for use. 
+Each **Edge** has preset configurations that contain important credentials, such as **Edge Secret**, **Edge Key**, etc.  To access these configurations:
 
 {% if docsPrefix == 'pe/edge/' %}
 
 {% assign preparedInstructionsInstall = '
     ===
         image: /images/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
-        title: Click an Edge entity row to open it&#39;s details;
+        title: Click on the **Edge** entity to open its details.
     ===
         image: /images/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
-        title: Click on the "Install & Connection Instructions" button;
+        title: Click the **"Install & Connection Instructions"** button.
     ===
         image: /images/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
-        title: Follow instructions to install Edge and connect to the server.
+        title: Follow the instructions to install **Edge** and connect it to the server.
 '%}
 
 {% else %}
@@ -22,13 +21,13 @@ Please follow the steps below to use these prepared instructions:
 {% assign preparedInstructionsInstall = '
     ===
         image: /images/edge/installation/prepared-instructions-install-item-1-ce.png,
-        title: Click an Edge entity row to open it&#39;s details;
+        title: Click on the **Edge** entity to open its details.
     ===
         image: /images/edge/installation/prepared-instructions-install-item-2-ce.png,
-        title: Click on the "Install & Connection Instructions" button;
+        title: Click the **"Install & Connection Instructions"** button.
     ===
         image: /images/edge/installation/prepared-instructions-install-item-3-ce.png,
-        title: Follow instructions to install Edge and connect to the server.
+        title: Follow the instructions to install **Edge** and connect it to the server.
 '%}
 
 {% endif %}

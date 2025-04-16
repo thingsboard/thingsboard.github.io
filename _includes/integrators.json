@@ -420,6 +420,18 @@
     }
   },
   {
+    "type": ["Australia and Oceania"],
+    "country": ["New Caledonia", "Vanuatu", "Wallis and Futuna", "French Polynesia", "Fiji"],
+    "name": "ELEMENT",
+    "contact": {
+      "href": "laurent.degen@element.nc"
+    },
+    "site": {
+      "href": "element.nc",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Germany", "Austria", "Switzerland"],
     "name": "one:solutions Engineering GmbH",
@@ -433,10 +445,10 @@
   },
   {
     "type": ["Asia"],
-    "country": ["Thailand"],
+    "country": ["Thailand", "Indonesia", "Vietnam"],
     "name": "Epithos Co., Ltd",
     "contact": {
-      "href": "pnt@epithos.com"
+      "href": "global@epithos.com"
     },
     "site": {
       "href": "epithos.com",
@@ -744,8 +756,20 @@
     }
   },
   {
+    "type": ["Australia and Oceania"],
+    "country": ["American Samoa", "Australia", "Cook Islands", "Federated States of Micronesia", "Fiji", "French Polynesia", "Guam", "Kiribati", "Marshall Islands", "Nauru", "New Caledonia", "New Zealand", "Niue", "Norfolk Island", "Northern Mariana Islands", "Palau", "Papua New Guinea", "Pitcairn Islands", "Samoa", "Solomon Islands", "Tonga", "Tuvalu", "Vanuatu", "Wallis and Futuna"],
+    "name": "Moreton Systems Pty Ltd",
+    "contact": {
+      "href": "info@moreton.io"
+    },
+    "site": {
+      "href": "https://www.moreton.io",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
-    "country": ["Sri-Lanka"],
+    "country": ["Sri Lanka"],
     "name": "N-able Pvt. Ltd.",
     "contact": {
       "href": "info@n-able.biz"
@@ -775,7 +799,7 @@
       "href": "teo.pavel@nttdata.ro"
     },
     "site": {
-      "href": "nttdata.ro",
+      "href": "ro.nttdata.com",
       "target": "_blank"
     }
   },
@@ -1140,6 +1164,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Sri Lanka"],
+    "name": "Thingsnode Private Limited",
+    "contact": {
+      "href": "migara@thingsnode.cc"
+    },
+    "site": {
+      "href": "thingsnode.cc",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia", "Middle East"],
     "country": ["Israel"],
     "name": "IoT Experts",
@@ -1238,7 +1274,7 @@
   {
     "type": ["Europe"],
     "country": ["Hungary"],
-    "name": "4iG Nyrt.",
+    "name": "4iG Information Technology Ltd",
     "contact": {
       "href": "barnabas.rejto@4ig.hu"
     },

@@ -13,12 +13,22 @@
 </nav>
 <script>
     jqueryDefer(function () {
-        document.querySelector('.crop-nav ul li a.active').parentElement.scrollIntoView();
         $( document ).ready(function() {
             const cropNav = document.querySelector('.crop-nav');
             const prev = document.querySelector('.prev');
             const next = document.querySelector('.next');
+            const active = document.querySelector('.crop-nav ul li a.active');
+
+            const savedScrollPos = sessionStorage.getItem('useCaseMenuScrollPos');
+            if (savedScrollPos !== null) {
+                cropNav.scrollLeft = savedScrollPos;
+            }
+            if (!isActiveInView()) {
+                active.parentElement.scrollIntoView();
+            }
+
             checkScroll();
+
             $('.prev').click(function() {
                 $('.crop-nav').animate( { scrollLeft: `-=${$('.crop-nav').width() / 1.6}` }, 450, 'swing', () => checkScroll());
             });
@@ -39,6 +49,12 @@
                 }
             }
 
+            function isActiveInView() {
+                const elRect = active.getBoundingClientRect();
+                const containerRect = cropNav.getBoundingClientRect();
+                return elRect.left >= containerRect.left && elRect.right <= containerRect.right;
+            }
+
             if (window.screen.width < 600) {
                 let prevScrollPos = window.scrollY;
                 window.onscroll = function() {
@@ -51,6 +67,36 @@
                     prevScrollPos = currentScrollPos;
                 }
             }
+
+            let x,left,down;
+
+            $('.crop-nav').mousedown(function(e){
+                e.preventDefault();
+                down = true;
+                x = e.pageX;
+                left = $(this).scrollLeft();
+                $('.crop-nav').css('cursor', 'grabbing');
+            });
+
+            $('body').mousemove(function(e){
+                if(down){
+                    let newX = e.pageX;
+                    $('.crop-nav').scrollLeft(left - newX + x);
+                    checkScroll();
+                }
+            });
+
+            $('body').mouseup(function(e){
+                checkScroll();
+                down = false;
+                $('.crop-nav').css('cursor', 'grab');
+            });
+
+            $('.crop-nav ul li').each(function(){
+                $(this).click(function(){
+                    sessionStorage.setItem('useCaseMenuScrollPos', cropNav.scrollLeft);
+                })
+            })
         });
 
     });

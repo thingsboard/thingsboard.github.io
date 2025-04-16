@@ -1,0 +1,187 @@
+0:
+  title: "Rule engine deep dive: data processing & automation in ThingsBoard"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Learn what a Rule Engine is and how it helps process data automatically."
+    1:
+      textContent: "Understand how messages flow through rule chains."
+    2:
+      textContent: "Understand the differences between regular and edge rule chains."
+    3:
+      textContent: "Discover how data arrives in the rule chains, including messages produced by the device and platform-generated events (e.g., lifecycle events)."
+    4:
+      textContent: "Explore what a Rule Node is and understand its purpose."
+    5:
+      textContent: "Understand why there are different types of nodes (filter, enrichment, transformation, actions, analytics, and external) and how they work together in a rule chain."
+    6:
+      textContent: "Learn how to filter, modify, and enrich incoming data, store telemetry, trigger alarms, and send REST API calls, using nodes."
+    7:
+      textContent: "Use script nodes (TBEL and JavaScript) to enable flexible message processing."
+    8:
+      textContent: "Understand how the Rule Engine operates on a deeper level, including message handling through queues."
+    9:
+      textContent: "Learn how different queue settings affect processing latency and throughput, and how incorrect configurations can cause failures."
+    10:
+      textContent: "Identify common mistakes when working with queues, such as Kafka consumer polling issues."
+    11:
+      textContent: "Use debug mode and logging to track message flow and troubleshoot execution problems."
+    12:
+      textContent: "Understand how to handle large-scale data loads while maintaining high system performance."
+    13:
+      textContent: "Optimize rule chains to reduce unnecessary actions and improve processing speed."
+1:
+  title: "Security model & access management"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Explore the hierarchy model, including system administrators, tenants, customers, and sub-customers and permissions on different levels."
+    1:
+      textContent: "Learn how to use entity groups to efficiently manage access control for multiple users."
+    2:
+      textContent: "Understand how to use role-based access control (RBAC) and control user access and permissions."
+    3:
+      textContent: "Understand the difference between generic and group roles."
+    4:
+      textContent: "Learn how to structure user roles, groups, and permissions to ensure secure access management."
+    5:
+      textContent: "Gain practical knowledge of how to configure access to dashboards and devices at different user levels."
+    6:
+      textContent: "Discover how to create a clear separation between administrators and end users, allowing only limited access."
+    7:
+      textContent: "Learn how to fix permission errors by setting correct roles."
+    8:
+      textContent: "Configure security settings, including password policies, JWT settings, 2FA, and OAuth 2.0 authentication."
+    9:
+      textContent: "Understand the importance of audit logs for tracking user activity and identifying security breaches."
+    10:
+      textContent: "Learn how to prevent common security risks, such as manipulating the Host header in login requests."
+    11:
+      textContent: "Discover how security is implemented in REST API (e.g., user authorities)."
+2:
+  title: "Alarm management"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Understand what an alarm is in ThingsBoard and how it models real-life abnormal conditions."
+    1:
+      textContent: "Learn about alarm types and their intended usage(e.g. threshold-exceeded alarm)."
+    2:
+      textContent: "Explore alarm severity levels and how they help prioritize incidents."
+    3:
+      textContent: "Understand alarm statuses and how they indicate whether the issue is happening now or is already over. "
+    4:
+      textContent: "Learn how alarm uniqueness works to prevent duplicate alarms for the same real-life event."
+    5:
+      textContent: "Discover alarm timing concepts, including created time, start time, and end time."
+    6:
+      textContent: "Learn how to assign responsibility for alarms using the assignee feature."
+    7:
+      textContent: "Understand how alarm comments work, differentiating between user-defined and system-generated comments."
+    8:
+      textContent: "Understand how alarm rules define when alarms are created and cleared."
+    9:
+      textContent: "Explore different rule conditions and how they are evaluated."
+    10:
+      textContent: "Learn how to configure alarm propagation settings for efficient alert management."
+    11:
+      textContent: "Work with alarm-related Rule Engine nodes, including alarm status filters, create, count and clear alarm nodes."
+    12:
+      textContent: "Learn how to send alarm notifications via email, SMS, and the notification centre."
+    13:
+      textContent: "Configure an alarm escalation chain to ensure critical alarms receive the necessary attention."
+    14:
+      textContent: "Manage alarms using the REST API, including creating, acknowledging, and clearing alarms programmatically."
+3:
+  title: "ThingsBoard platform API fundamentals (session 1)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Understand how to interact with ThingsBoard using the REST API."
+    1:
+      textContent: "Learn how to use Swagger UI for testing, developing, and exploring APIs."
+    2:
+      textContent: "Discover how authentication and authorization work in REST API."
+    3:
+      textContent: "Learn how to obtain and use JWT tokens for secure API access."
+    4:
+      textContent: "Explore entity hierarchy access control."
+    5:
+      textContent: "Understand user authorities and how RBAC applies to API interactions."
+    6:
+      textContent: "Learn how to troubleshoot API permission issues and handle errors."
+    7:
+      textContent: "Work with CRUD APIs to create, update, and delete entities programmatically."
+    8:
+      textContent: "Use Entity Data Query to efficiently fetch and aggregate data from multiple entities."
+    9:
+      textContent: "Learn how to manage attributes via the Attributes API, including fetching, uploading, and subscribing to updates."
+    10:
+      textContent: "Work with Time Series API for fetching and uploading telemetry data."
+4:
+  title: "ThingsBoard platform API fundamentals (session 2)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Get an overview of different data transport protocols such as MQTT, HTTP, CoAP, LwM2M, and SNMP."
+    1:
+      textContent: "Learn how to send and receive data using MQTT, HTTP, and CoAP protocols."
+    2:
+      textContent: "Understand how Remote Procedure Calls (RPC) work in ThingsBoard."
+    3:
+      textContent: "Learn different ways to send RPC commands from server to device and vice versa."
+    4:
+      textContent: "Discover how to use WebSockets for real-time communication with ThingsBoard."
+    5:
+      textContent: "Learn how to subscribe to WebSocket updates and integrate them into applications."
+5:
+  title: "Custom node development in rule engine"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Recommended for users with Java development experience"
+      faIcon: "fas fa-exclamation-circle"
+      faIconColor: "#F36500"
+    1:
+      textContent: "Learn how to write a custom rule node from scratch and integrate it into ThingsBoard."
+    2:
+      textContent: "Explore a prepared project template that includes a basic skeleton and sample custom nodes."
+    3:
+      textContent: "Use internal ThingsBoard APIs to manipulate and execute various operations within the system."
+    4:
+      textContent: "Manage entity data, update records, store information, and send data using custom nodes."
+    5:
+      textContent: "Learn how to deploy a custom node to a self-hosted ThingsBoard instance."
+    6:
+      textContent: "Explore rule node versioning and upgrade mechanisms."
+    7:
+      textContent: "Work with the @RuleNode annotation and understand its role in ThingsBoard."
+    8:
+      textContent: "Use the TbNode interface to define custom logic within a rule node."
+    9:
+      textContent: "Handle message transformations, including modifying message payloads and metadata."
+    10:
+      textContent: "Understand the lifecycle of a rule node, including initialization, updates, and deletion."
+    11:
+      textContent: "Optimize performance by utilizing asynchronous programming and efficient threading."
+    12:
+      textContent: "Learn how to avoid common mistakes when implementing custom nodes."
+

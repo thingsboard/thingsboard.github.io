@@ -219,11 +219,23 @@ The Gateway widgets bundle is useful for managing extensions.
 
 {% include images-gallery.html imageCollection="wl-gateway-bundle" %}
 
+### General high-performance SCADA symbols
+
+Bundle with high-performance SCADA symbols.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-general-symbols" %}
+
 ### GPIO widgets
 
 The GPIO widgets bundle is useful for visualization and controlling GPIO state for target devices.
 
 {% include images-gallery.html imageCollection="wl-gpio" %}
+
+### High-performance SCADA fluid system
+
+Bundle with high-performance SCADA symbols for fluid system.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-fluid-system" %}
 
 ### Home page widgets
 
@@ -273,11 +285,11 @@ The Outdoor Environment widget bundle is effective in visualizing data related t
 
 {% include images-gallery.html imageCollection="wl-outdoor-environment-bundle" %}
 
-### Status indicators
+### SCADA symbols
 
-The Status indicators widgets bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+Use for uploading SVG symbols to your SCADA dashboard.
 
-{% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
+{% include images-gallery.html imageCollection="wl-scada-symbols-bundle" %}
 
 ### Scheduling widgets
 
@@ -290,6 +302,12 @@ The Scheduling widgets bundle is useful for [scheduling](/docs/{{docsPrefix}}use
 
 {% include images-gallery.html imageCollection="wl-scheduling-bundle" %}
 
+### Status indicators
+
+The Status indicators widgets bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+
+{% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
+
 ### Tables Widgets
 
 The Tables widgets bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
@@ -297,6 +315,12 @@ Additionally, this widget bundle showcases Persistent RPC requests, which are ba
 It can also be filtered optionally and supports pagination for enhanced usability.
 
 {% include images-gallery.html imageCollection="wl-tables-bundle" %}
+
+### Traditional SCADA fluid system
+
+Bundle with high-performance SCADA symbols for fluid system.
+
+{% include images-gallery.html imageCollection="wl-scada-traditional-fluid-system" %}
 
 ## Operations with Widget
 

@@ -9,7 +9,7 @@ The Keep Alive interval is expressed in seconds and can range from 0 (Keep Alive
 
 The broker will **close connection** in case there will be no MQTT control packet sent from the client **within one and a half times the Keep Alive** time period.
 
-### Half-Open TCP Connections in MQTT
+## Half-Open TCP Connections in MQTT
 
 A significant issue in networked systems, including MQTT, is the occurrence of half-open TCP connections. 
 This happens when the network connection between the client and broker is disrupted (e.g., due to a network failure), and one party (usually the broker) is unaware that the connection has been lost. 
@@ -21,7 +21,7 @@ the connection status is constantly checked.
 If the broker does not receive a keep-alive signal (like a PINGREQ) within the expected interval, 
 it can correctly assume that the client is no longer reachable, preventing the connection from remaining in a half-open state indefinitely.
 
-### How Keep Alive works
+## How Keep Alive works
 
 The Keep Alive interval is set when a client connects to the broker, in the `CONNECT` packet.
 
@@ -35,7 +35,7 @@ This exchange ensures the connection remains healthy even when no data is being 
 In TBMQ, the `MQTT_KEEP_ALIVE_MONITORING_DELAY_MS` environment variable defines the interval at which the broker checks for inactive client connections. 
 By default, this check occurs every second. If a dead connection is detected, the broker terminates the connection, providing "KEEP_ALIVE_TIMEOUT" as the reason.
 
-### When to turn off Keep Alive
+## When to turn off Keep Alive
 
 Setting the **Keep Alive interval to 0** means that the feature is not working and there is no Keep Alive timeout for the connection. 
 Basically, the client is telling the broker that it will not send `PINGREQ` packets and doesn’t expect the broker to monitor the connection for inactivity.
@@ -52,7 +52,7 @@ We generally recommend keeping the Keep Alive mechanism enabled. Only consider t
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### When to use Keep Alive
+## When to use Keep Alive
 
 The Keep Alive feature functions much like a check-in system where one party regularly confirms their presence to prevent others from assuming something has gone wrong.
 If the client fails to send these keep-alive signals within the expected interval, the broker considers it disconnected and may trigger to terminate connection or to publish a Last Will message.
@@ -63,7 +63,7 @@ For example:
 * **Smart home**. Devices like thermostats or smart lights might not be constantly sending data. However, by using the Keep Alive feature, they can periodically send a signal to the broker to confirm they’re still connected, even during idle times.
 * **Smart farming**. Sensors that monitor weather conditions may not constantly transmit data but will still periodically send keep-alive pings to confirm they are still functioning. If a sensor fails to do so, the broker may alert the farmer, allowing for timely intervention before any important data is lost.
 
-### Client Take-Over in MQTT
+## Client Take-Over in MQTT
 
 Client Take-Over refers to the scenario where two clients with the same **clientId** attempt to connect to the broker simultaneously. 
 According to the MQTT protocol, the broker supports only one active connection per **clientId**. 

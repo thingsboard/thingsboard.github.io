@@ -98,32 +98,36 @@ Each widget typically has specific settings and parameters that allow users to c
 For more information about widgets, how to create them, and their settings, click the button below:
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/widgets/" class="n-button add-device">Widgets documentation</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/widgets/" class="button">Widgets documentation</a></p>
 
 <br>
 
 ### Time window
 
-Dashboard time window represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
-Time window is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
-In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window.
-In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
+The Time window is a tool used to define time intervals when working with telemetry data. 
+The time window is used by all time series and alarm widgets unless they are configured to use their own [widget time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window){:target="_blank"}.
+In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window. In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
 
-The time window can work in two modes:
+**The time window can work in two modes**:
+
 - In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp;
 - In the **history mode**, widgets receive data only during the initial load and no updates are issued over WebSockets.
 
 {% include images-gallery.html imageCollection="time-window" %}
 
-**The data aggregation function** is applicable for time series data and is not applicable for alarms.
-There are five aggregation functions available at the moment: Min, Max, Average, Sum and Count. The special function called None is used to disable the aggregation.
-Data aggregation is useful when you don't want to fetch all time-series data to UI, and you would like to pre-aggregate it on the database level.
-Using the aggregation functions saves network bandwidth and computation power of the client browser.
-We recommend using aggregation functions whenever possible if you have a lot of raw values.
+<br>
+**Key parameters of the time window:**
 
-{% include images-gallery.html imageCollection="time-window-aggregation" %}
+- **Last**: Displays real-time data for a specified time interval (e.g., the last 5 minutes, the last hour, or the last 24 hours).
+- **Range**: Displays data for a fixed period, such as from December 1, 2024, to December 7, 2024.
+- **Relative**: Uses predefined intervals, such as the current day, the previous day, or the previous month.
 
-The ThingsBoard it is possible to use predefined **intervals** (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
+{% include images-gallery.html imageCollection="time-window-key-parameters" %}
+
+<br>
+To display data for your desired time period, set the time range in the time window and click "Update".
+
+{% include images-gallery.html imageCollection="displaying-data-for-desired-time-period" %}
 
 {% capture difference %}
 **Please note:**
@@ -135,6 +139,32 @@ All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="time-window-interval" %}
 
+**Aggregation**
+
+The data aggregation function is applied to time series data and does not apply to alarms. Currently, six aggregation functions are available:
+
+- **Min**: Identifies the smallest value among all data in the selected time interval. Useful for displaying the minimum value, such as the lowest temperature recorded in an hour.
+- **Max**: Identifies the largest value among all data in the selected time interval. This is useful for displaying the maximum value, such as the highest energy consumption level.
+- **Average**: Calculates the arithmetic mean of all data in the selected interval. Useful for analyzing average metrics, such as the average humidity over a day.
+- **Sum**: Computes the total sum of all values in the selected time interval. This can be helpful for calculating the total volume of water or electricity consumed.
+- **Count**: Counts the number of records in the selected interval. Useful for assessing the volume of data received or to count the number of events.
+- **None**: Transmits raw data without applying any aggregation functions. Used when access to each unaltered value is required.
+
+Data aggregation is useful when you do not want to retrieve all raw time series data to the user interface but prefer to pre-aggregate it at the database level.
+
+Using aggregation functions helps save network bandwidth and reduces the computational load on the client's browser. We recommend using aggregation functions whenever possible, especially when dealing with a large amount of raw data points.
+
+{% include images-gallery.html imageCollection="time-window-aggregation" %}
+
+<br>
+**Grouping interval**
+
+Group time series values by the specified time interval. This enables data analysis within a defined period and provides a more structured and convenient approach to handling large volumes of data.
+
+For example, if a device sends temperature data every 10 minutes, but you need hourly average values, set the grouping interval to 1 hour and use the "Average" aggregation function. This will provide the desired result without additional processing on the client side.
+
+{% include images-gallery.html imageCollection="time-window-grouping-interval" %}
+
 There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in.
 Move the two sliders towards each other to specify the time period for displaying the data.
 To zoom out to the original size of the chart, move the sliders back to their default position.
@@ -145,6 +175,49 @@ The ThingsBoard introduces time zone configurations. By default, the dashboard u
 Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
 
 {% include images-gallery.html imageCollection="time-window-time-zone" %}
+
+<br>
+**Time window settings**
+
+You can customize the time window for the end-user by hiding certain configuration elements. Enter the editing mode of the dashboard, click the "edit time window" icon on the dashboard toolbar. In the popup window, click the "gear" icon. The time window configuration window will open.
+
+{% include images-gallery.html imageCollection="time-window-settings" %}
+
+Here, you can perform the following configurations:
+
+*For time window*:
+
+- **Hide the time window section from end-users**: Users will not be able to change the set time interval.
+
+{% include images-gallery.html imageCollection="hide-time-window-section" %}
+
+You can also hide the "Last", "Range" (History) or "Relative" intervals from end-users.
+
+{% include images-gallery.html imageCollection="hide-only-last-or-relative-interval" %}
+
+Edit the list of intervals available to users. Additionally, for each interval, you can configure the grouping intervals and set a default grouping interval.
+
+{% include images-gallery.html imageCollection="edit-list-of-intervals" %}
+
+*For aggregation function*:
+
+- **Hide the aggregation from end-users**: Users will not be able to change or disable the aggregation function you set during configuration.
+
+{% include images-gallery.html imageCollection="hide-aggregation" %}
+
+You can edit the list of available aggregation functions. List the available aggregation functions for the end-user.
+
+{% include images-gallery.html imageCollection="edit-aggregation-list" %}
+
+*For grouping interval*:
+
+- **Hide the grouping interval from end-users**: Users will not be able to change the grouping interval set during configuration.
+
+{% include images-gallery.html imageCollection="hide-grouping-interval" %}
+
+- **Hide the time zone from end-users**: Restrict users from changing the timezone.
+
+{% include images-gallery.html imageCollection="hide-time-zone" %}
 
 ### Filters
 

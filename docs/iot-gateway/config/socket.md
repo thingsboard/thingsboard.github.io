@@ -8,262 +8,147 @@ description: Socket API support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide will help you to get familiar with Socket Connector configuration for ThingsBoard IoT Gateway. 
-Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. The purpose of this 
-Connector is to connect to your server using TCP or UDP connection type.
+This guide will help you get familiar with Socket Connector configuration for ThingsBoard IoT Gateway. 
+Use the [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. It's purpose  
+is to connect to your server using TCP or UDP connection type.
 
 This Connector is useful when you have a local server in your facility or corporate network and want to push
 data from the server to ThingsBoard.
 
 We will describe the connector configuration file below.
 
-## Connector configuration: socket.json
-
-Connector configuration is a JSON file that contains information about how to connect to an external server, how to process
-the data and other service features. Let’s review the format of the configuration file using the example below.
-
-<b>Example of Socket Connector config file.</b>
-
-{% capture socketConf %}
-{
-  "name": "TCP Connector Example",
-  "type": "TCP",
-  "address": "127.0.0.1",
-  "port": 50000,
-  "bufferSize": 1024,
-  "devices": [
-    {
-      "address": "127.0.0.1:50001",
-      "deviceName": "Device Example",
-      "deviceType": "default",
-      "encoding": "utf-8",
-      "telemetry": [
-        {
-          "key": "temp",
-          "byteFrom": 0,
-          "byteTo": -1
-        },
-        {
-          "key": "hum",
-          "byteFrom": 0,
-          "byteTo": 2
-        }
-      ],
-      "attributes": [
-        {
-          "key": "name",
-          "byteFrom": 0,
-          "byteTo": -1
-        },
-        {
-          "key": "num",
-          "byteFrom": 2,
-          "byteTo": 4
-        }
-      ],
-      "attributeRequests": [
-        {
-          "type": "shared",
-          "requestExpression": "${[0:3]==atr}",
-          "attributeNameExpression": "[3:]"
-        }
-      ],
-      "attributeUpdates": [
-        {
-          "encoding": "utf-16",
-          "attributeOnThingsBoard": "sharedName"
-        }
-      ],
-      "serverSideRpc": [
-        {
-          "methodRPC": "rpcMethod1",
-          "withResponse": true,
-          "methodProcessing": "write",
-          "encoding": "utf-8"
-        }
-      ]
-    }
-  ]
-}
+{% capture difference %}
+**Please note:**
+If you are new to IoT Gateway, use the "Basic" configuration mode. If you are familiar with configuring IoT Gateway, you can use the "Advanced" configuration mode.
 {% endcapture %}
-{% include code-toggle.liquid code=socketConf params="conf|.copy-code.expandable-20" %}
+{% include templates/info-banner.md content=difference %}
 
-### General section
+## Connector configuration
 
-| **Parameter**     | **Default value**                     | **Description**                                          |
-|:-|:-|-
-| name              | **TCP Connector Example**             | Connector name                                           |
-| type              | **TCP**                               | Socket type, that can be TCP or UDP                      |
-| address           | **127.0.0.1**                         | Connector bound address                                  |
-| port              | **50000**                             | Connector bound port                                     |
-| bufferSize        | **1024**                              | Size of received data block buffer                       |
-|---
+Connector configuration is a UI form that contains information on how to connect to an external server, how to process
+the data and other service features. Let’s review the format of the configuration file using the example below.
+Let’s take a comprehensive look at all the available settings. We will go through each option in detail to ensure 
+that we thoroughly understand their functions and implications. By doing so, we can make well-informed decisions about 
+which settings will best suit our needs and preferences.
 
-Configuration section will look like this:
+## Section "General"
 
-```json
-{
-  "name": "TCP Connector Example",
-  "type": "TCP",
-  "address": "127.0.0.1",
-  "port": 50000,
-  "bufferSize": 1024,
-  ...
-}
-```
+This configuration section contains general connector settings, such as:
 
-### General section
+- **Name** - connector name used for logs and saving to persistent devices;
+- Logs configuration:
+  - **Enable remote logging** - enables remote logging for the connector;
+  - **Logging level** - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
+- **Send data only on change** - sends data only it has changed since the last check, otherwise – data will be sent after every check;
+- **Report strategy** - strategy for sending data to ThingsBoard:
+  - **Report period** - period for sending data to ThingsBoard in milliseconds;
+  - **Type** - type of the report strategy:
+    - **On report period** - sends data to ThingsBoard after the report period;
+    - **On value change** - sends data to ThingsBoard when the value changes;
+    - **On value change and report period** - sends data to ThingsBoard when the value changes or report period;
+    - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
+
+{% capture difference %}
+Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/gateway/socket-connector/socket-general-basic-section-1-ce.png)
+
+{% capture difference %}
+The settings are the same for both the basic and advanced configurations.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+## Section "Socket"
+
+The “Socket” section is used for configuring socket connection settings.
+
+{% capture socketsection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/socket-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/socket-advanced-section.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="socketsection" toggle-spec=socketsection %}
+
+## Section "Devices"
 
 This configuration section contains an array of objects that contains clients that can be connected to the connector and
-send the data. This means that connector rejects all connections not included in this array.
+send the data. Any connection not included in this array will be rejected by the connector.
 
-#### Device subsection
+### Subsection "Device"
 
-This object configuration section includes the parameters of how to proceed with incoming data.
+{% capture subsectiondevicesection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-subsection-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/device-subsection-advanced-section.md{% endcapture %}
 
-| **Parameter**     | **Default value**                     | **Description**                                                                                                      |
-|:-|:-|-
-| address           | **127.0.0.1:50001**                   | The address and port of the client that will be connecting to the connector.                                         |
-| deviceName        | **Device Example**                    | Name for the device in ThingsBoard.                                                                                  |
-| deviceType        | **default**                           | Device type for ThingsBoard, by default this parameter is absent, but you can add it.                                |
-| encoding          | **utf-8**                             | Encoding used when writing string data to storage.                                                                   |
-| telemetry         |                                       | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.   |
-| ... key           | **temp**                              | Name for telemetry in ThingsBoard.                                                                                   |
-| ... byteFrom      | **0**                                 | Used to slice received data from the specific index.                                                                 |
-| ... byteTo        | **-1**                                | Used to slice received data to the specific index.                                                                   |
-| attributes        |                                       | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device. |
-| ... key           | **hum**                               | Name for attribute in ThingsBoard.                                                                                   |
-| ... byteFrom      | **2**                                 | Used to slice received data from the specific index.                                                                 |
-| ... byteTo        | **4**                                 | Used to slice received data to the specific index.                                                                   |
-|---
+{% include content-toggle.liquid content-toggle-id="subsectiondevicesection" toggle-spec=subsectiondevicesection %}
 
-Example:
-```json
-{
-  "address": "127.0.0.1:50001",
-  "deviceName": "Device Example",
-  "deviceType": "default",
-  "encoding": "utf-8",
-  "telemetry": [
-    {
-      "key": "temp",
-      "byteFrom": 0,
-      "byteTo": -1
-    },
-    {
-      "key": "hum",
-      "byteFrom": 0,
-      "byteTo": 2
-    }
-  ],
-  "attributes": [
-    {
-      "key": "name",
-      "byteFrom": 0,
-      "byteTo": -1
-    },
-    {
-      "key": "num",
-      "byteFrom": 2,
-      "byteTo": 4
-    }
-  ]
-}
-```
+Let’s review more examples of IP addresses filtering:
 
-#### Attribute request subsection
+For example, we have a device that has the following IP address: 192.168.0.120:5001. Now, let's look at configuration examples 
+of the field to allow connections with different IP address variants:
 
-In order to request client-side or shared device attributes from ThingsBoard server node, Gateway allows sending attribute
-requests.
+1. Only one device with a specified IP address and port can connect:
 
-| **Parameter**           | **Default value**                     | **Description**                                                                                   |
-|:-|:-|-
-| type                    | **shared**                            | The type of requested attribute can be “shared” or “client”.                                      |
-| requestExpression       | **${[0:3]==atr}**                     | The expression that is used to know if the request from the device is "Attribute Request" or not. |
-| attributeNameExpression | **[3:]**                              | The expression that is used to get the name of the requested attribute from the received data.    |
-|---
+   **Address filter:** 192.168.0.120:5001
+2. Allow any devices with any IP address, but only port 5001:
 
-Configuration of this subsection looks like:
+   **Address filter:** *:5001
+3. Allow all devices that have the IP address 192.168.0.120 with any port:
 
-```json
-"attributeRequests": [
-  {
-    "type": "shared",
-    "requestExpression": "${[0:3]==atr}",
-    "attributeNameExpression": "[3:]"
-  }
-]
-```
+   **Address filter:** 192.168.0.120:*
+4. Allow all devices with any IP address and any port:
 
-Also, you can request multiple attributes at once. Simply add one more JSON-path to 
-attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
-will look like:
+   **Address filter:** *:*
 
-```json
-"attributeRequests": [
-  {
-    "type": "shared",
-    "requestExpression": "${[0:3]==atr}",
-    "attributeNameExpression": "[4:19][20:]"
-  }
-]
-```
+#### Subsection "Time series" and "Attributes"
 
-That means that we have to send the next message for requesting two shared attributes:
-`atr sharedAttribute sharedAttribite1`
+This configuration section includes the parameters for handling incoming data.
 
-#### Attribute update subsection
+{% capture subsectiondevicedataconversion %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-time-series-and-attributes-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/device-time-series-and-attributes-advanced-section.md{% endcapture %}
 
-This configuration section is optional. ThingsBoard allows the provisioning of device attributes and fetches some of them from 
+{% include content-toggle.liquid content-toggle-id="subsectiondevicedataconversion" toggle-spec=subsectiondevicedataconversion %}
+
+#### Subsection "Attribute request"
+
+This configuration section is optional.
+
+In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows 
+sending attribute requests.
+
+{% capture subsectiondeviceattrrequest %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-attribute-requests-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/device-attribute-requests-advanced-section.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="subsectiondeviceattrrequest" toggle-spec=subsectiondeviceattrrequest %}
+
+#### Subsection "Attribute update"
+
+This configuration section is optional. 
+
+ThingsBoard allows the provisioning of device attributes and fetches some of them from 
 the device application. You can treat this as a remote configuration for devices, enabling them to request 
 shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/) for more details.
 
-The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be 
-sent to the server.
+{% capture subsectiondeviceattrupdates %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-attribute-updates-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/device-attribute-updates-advanced-section.md{% endcapture %}
 
-| **Parameter**           | **Default value**                     | **Description**                                             |
-|:-|:-|-
-| encoding                | **utf-16**                            | Encoding used when writing received string data to storage. |
-| attributeOnThingsBoard  | **sharedName**                        | Shared attribute name                                       |
-|---
+{% include content-toggle.liquid content-toggle-id="subsectiondeviceattrupdates" toggle-spec=subsectiondeviceattrupdates %}
 
-This subsection in configuration file looks like:
+#### Subsection "RPC methods"
 
-```json
-"attributeUpdates": [
-  {
-    "encoding": "utf-16",
-    "attributeOnThingsBoard": "sharedName"
-  }
-]
-```
+This configuration section is optional. 
 
-#### Server side RPC subsection
+ThingsBoard allows sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
-ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
+{% capture subsectiondevicerpc %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/device-rpc-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/device-rpc-advanced-section.md{% endcapture %}
 
-Configuration, provided in this section is used for sending RPC requests from ThingsBoard to the device.
-
-| **Parameter**           | **Default value**                     | **Description**                                                             |
-|:-|:-|-----------------------------------------------------------------------------
-| methodRPC               | **rpcMethod1**                        | RPC method name.                                                            |
-| withResponse            | **true**                              | Boolean value that determines whether to send response back to ThingsBoard. |
-| methodProcessing        | **write**                             | Type of operation.                                                          |
-| encoding                | **utf-8**                             | Encoding used when writing received string data to storage.                 |
-|---
-
-This subsection in configuration file looks like:
-
-```json
-"serverSideRpc": [
-  {
-    "methodRPC": "rpcMethod1",
-    "withResponse": true,
-    "methodProcessing": "write",
-    "encoding": "utf-8"
-  }
-]
-```
+{% include content-toggle.liquid content-toggle-id="subsectiondevicerpc" toggle-spec=subsectiondevicerpc %}
 
 Also, every telemetry and attribute parameter has a built-in SET RPC method out of the box, eliminating the need for 
 manual configuration. To use them, make sure you set all the required parameters (in the case of Socket Connector, 

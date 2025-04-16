@@ -50,12 +50,7 @@ The purpose of the decoder function is to parse the incoming data and metadata t
 To create an uplink converter go to the **Integrations center** -> **Data converters** page and click "plus" button.
 Name it "**MQTT Uplink Converter**" and select type **Uplink**. Use **debug mode** for now.
 
-{% capture difference %}
-**NOTE:**
-<br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 
@@ -337,6 +332,18 @@ Go to the **Devices** page and find *rpcReceived* telemetry value is "*OK*" on t
 {% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1-paas.png)
 {% endif %}
+
+### MQTT retransmission mechanism
+
+The MQTT integration uses ThingsBoard's internal MQTT client.
+
+{% if docsPrefix contains "paas" %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=false %}
+{% else %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=true %}
+{% endif %}
+
+When the MQTT message is dropped, the corresponding rule engine message is routed via **Failure** chain with the appropriate exception message.
 
 ## Video tutorials
 

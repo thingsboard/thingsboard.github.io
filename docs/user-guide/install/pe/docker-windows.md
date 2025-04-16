@@ -42,10 +42,6 @@ Note: We will reference the license key you have obtained during this step as PU
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/windows-pe-docker-queue-in-memory.md%br%
 Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/windows-pe-docker-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/windows-pe-docker-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-pe-docker-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-pe-docker-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-pe-docker-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-pe-docker-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
@@ -114,12 +110,13 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 
 * Update docker-compose.yml - TB image should be the latest version (see [Step 3](#step-3-choose-thingsboard-queue-service))
 
-* Change upgradeversion variable to your **current** ThingsBoard version. For ex., if you are upgrading from 3.6.4:
-
- ```bash
-echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
-```
-{: .copy-code}
+* In case you are upgrading to:
+  * 3.9.1 or newer - no additional actions required
+  * 3.9.0 or previous releases - change `upgradeversion` variable to your **current** ThingsBoard version. For ex., if upgrading from 3.6.4:
+    ```bash
+    echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
+    ```
+    {: .copy-code}
 
 * Execute the following commands:
 

@@ -68,19 +68,19 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="scenarios">
     <main>
         <div id="background">
-            <div class="main1"></div><div class="small1"></div><div class="small2"></div>
+            <div class="main1"></div>
         </div>
-        <div class="block first-scenario">
-            <div class="feature-des">
+        <div class="block scenarios-header">
+            <div class="scenarios-title">
                 <h3 class="item-heading">MQTT broker for real-life IoT scenarios</h3>
             </div>
-            <div class="feature-details">
-                <p>Utilize diverse communication patterns effectively, ensuring comprehensive coverage of your use cases. TBMQ places particular emphasis on mastering fan-in and fan-out messaging.</p>
+            <div class="scenarios-details">
+                <p>Utilize diverse communication patterns effectively, ensuring comprehensive coverage of your use cases. TBMQ places particular emphasis on mastering fan-in, fan-out, and point-to-point (p2p) messaging.</p>
             </div>
         </div>
         <div class="block">
             <div class="description">
-                <div class="fan-title">
+                <div class="scenario-title">
                     <a href="/docs/mqtt-broker/reference/100m-connections-performance-test/" class="item-heading">Fan-in</a>
                 </div>
                 <div>
@@ -88,20 +88,33 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 </div>
             </div>            
             <div class="image-container">
-                <img src="/images/mqtt-broker/product/fan-in.gif" alt="Fan in" loading="lazy">
+                <img src="/images/mqtt-broker/product/fan-in.svg" alt="Fan in" loading="lazy">
             </div>
         </div>
         <div class="block">
-            <div class="image-container fan-out-img">
-                <img src="/images/mqtt-broker/product/fan-out.gif" alt="Fan out" loading="lazy">
+            <div class="image-container reverse-img">
+                <img src="/images/mqtt-broker/product/fan-out.svg" alt="Fan out" loading="lazy">
             </div>            
             <div class="description">
-                <div class="fan-title">
+                <div class="scenario-title">
                     <a href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/" class="item-heading">Fan-out</a>
                 </div>
                 <div>
                     <span>This scenario facilitates one-to-many messaging. It involves numerous devices subscribing to specific updates or notifications that must be delivered. This leads to a few incoming requests that cause a high volume of outgoing data.</span>
                 </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="description">
+                <div class="scenario-title">
+                    <a href="/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/" class="item-heading">Point-to-point</a>
+                </div>
+                <div>
+                    <span>A targeted messaging pattern, primarily used for one-to-one communication. Achieved through uniquely defined topics, p2p is ideal for use cases such as private messaging or command-based interactions. Persistent clients with QoS levels set to 1 or 2 are often utilized to ensure reliable message delivery, even during temporary disconnections or client downtime.</span>
+                </div>
+            </div>            
+            <div class="image-container">
+                <img src="/images/mqtt-broker/product/p2p.svg" alt="Point to point" loading="lazy">
             </div>
         </div>
     </main>
@@ -110,7 +123,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="installation-options">
     <main>
         <div id="background">
-            <div class="main2"></div><div class="small3"></div><div class="small4"></div>
+            <div class="main2"></div>
         </div>
         <div class="row">
             <div class="col-lg-6">
@@ -205,7 +218,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="bottom-features">
     <main>
         <div id="background">
-            <div class="main3"></div><div class="small5"></div><div class="small6"></div>
+            <div class="main3"></div>
         </div>
         <h3>TBMQ features</h3>
         <div id="cards">
@@ -214,7 +227,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     <img src="/images/thingsboard-logo.svg" alt="MQTT client type">
                     <div>
                         <a href="/docs/mqtt-broker/user-guide/mqtt-client-type/"><h4 class="title">MQTT client type</h4></a>
-                        <p>Supports two distinct client types to provide customized messaging solutions for diverse IoT scenarios. One type efficiently handles frequent data transmissions and effectively manages incoming moderate message volumes (fan-out). The other specializes in high-rate topic subscriptions, perfect for data analytics and processing (fan-in).</p>
+                        <p>Supports two distinct client types to provide customized messaging solutions for diverse IoT scenarios. One type efficiently handles frequent data transmissions and effectively manages incoming moderate message volumes (fan-out and p2p). The other specializes in high-rate topic subscriptions, perfect for data analytics and processing (fan-in).</p>
                     </div>
                 </div>
             </div>
@@ -271,7 +284,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="get-started">
     <main>
         <div id="background">
-            <div class="main4"></div><div class="small7"></div><div class="small8"></div>
+            <div class="main4"></div>
         </div>
         <div class="row">
             <div class="container">

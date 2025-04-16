@@ -23,7 +23,7 @@ notitle: "true"
             return false;
         }
         
-        var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        var emailExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
         if(email.match(emailExp)==null) {
             window.alert("Entered Email Address is not valid.");
             return false; 

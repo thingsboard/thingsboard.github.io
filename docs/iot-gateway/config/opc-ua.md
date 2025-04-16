@@ -1,7 +1,5 @@
 ---
 layout: docwithnav-gw
-assignees:
-- ashvayka
 title: OPC-UA Connector Configuration
 description: OPC-UA protocol support for ThingsBoard IoT Gateway
 
@@ -10,334 +8,126 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-{% capture difference %}
-**Starting from Gateway version 3.1, we added a new OPC-UA connector based on the AsyncIO library. 
-Please note that the connector is in the early beta stage and may contain bugs. 
-Also, it is not recommended to use it in production mode for now.
-To enable it, use the type of connector "opcua_asyncio".**
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
-This guide will help you to get familiar with OPC-UA connector configuration for ThingsBoard IoT Gateway.
+This documentation will help you set up the OPC-UA connector for the ThingsBoard IoT Gateway. We'll explain the configuration 
+parameters in simple terms to make it easy for you to understand and follow. The OPC-UA (Open Platform Communications 
+Unified Architecture) is a machine-to-machine communication protocol for industrial automation, and this connector 
+allows seamless integration with the ThingsBoard platform.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
-The connector configuration file will be described below.
 
-<b>Example of OPC-UA Connector config file.</b>
-
-{% capture opcuaConf %}
-
-{
-  "server": {
-    "name": "OPC-UA Default Server",
-    "url": "localhost:4840/freeopcua/server/",
-    "timeoutInMillis": 5000,
-    "scanPeriodInMillis": 5000,
-    "disableSubscriptions":false,
-    "subCheckPeriodInMillis": 100,
-    "showMap": false,
-    "security": "Basic128Rsa15",
-    "identity": {
-      "type": "anonymous"
-    },
-    "mapping": [
-      {
-        "deviceNodePattern": "Root\\.Objects\\.Device1",
-        "deviceNamePattern": "Device ${Root\\.Objects\\.Device1\\.serialNumber}",
-        "attributes": [
-          {
-            "key": "CertificateNumber",
-            "path": "${ns=2;i=5}"
-          }
-        ],
-        "timeseries": [
-          {
-            "key": "temperature °C",
-            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}"
-          },
-          {
-            "key": "batteryLevel",
-            "path": "${Battery\\.batteryLevel}"
-          }
-        ],
-        "rpc_methods": [
-          {
-            "method": "multiply",
-            "arguments": [2, 4]
-          }
-        ],
-        "attributes_updates": [
-          {
-            "attributeOnThingsBoard": "deviceName",
-            "attributeOnDevice": "Root\\.Objects\\.Device1\\.serialNumber"
-          }
-        ]
-      }
-    ]
-  }
-}
-
-{% endcapture %}
-{% include code-toggle.liquid code=opcuaConf params="conf|.copy-code.expandable-20" %}
-
-## Section "server"
-
-The configuration in this section is used to connect to the OPC-UA server.  
-
-| **Parameter**                 | **Default value**                    | **Description**                                                                                                                                                      |
-|:-|:-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| name                          | **OPC-UA Default Server**            | Name of the connector to server.                                                                                                                                     |
-| host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of OPC-UA server.                                                                                                                             |
-| timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to OPC-UA server.                                                                                                                  |
-| scanPeriodInMillis            | **5000**                             | Period in milliseconds to rescan the server.                                                                                                                         |
-| disableSubscriptions          | **false**                            | If true - the gateway will subscribe to interesting nodes and wait for data update and if false - the gateway will rescan OPC-UA server every **scanPeriodInMillis** |
-| subCheckPeriodInMillis        | **100**                              | Period to check the subscriptions in the OPC-UA server.                                                                                                              |
-| showMap                       | **true**                             | Show nodes on scanning **true** or **false**.                                                                                                                        |
-| security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                                                                                                |
-|---
-
-<br>
-**Let's look at an example.**
-<br>
-This example uses the Prosys OPC-UA Simulation Server to demonstrate how to configure the OPC-UA connector.
-<br>
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-1.png)
-{: refdef}
-
-
-On the main **"Status"** tab, copy connection address (UA TCP).
-
-To connect your OPC-UA server to ThingsBoard, open the OPC-UA Connector configuration file (opcua.json) and replace the "url" value with the copied connection address.
-
-Our **server** section would look like this:
-
-```json
-  "server": {
-    "name": "OPC-UA Default Server",
-    "url": "localhost:53530/OPCUA/SimulationServer",
-    "timeoutInMillis": 5000,
-    "scanPeriodInMillis": 5000,
-    "disableSubscriptions": false,
-    "subCheckPeriodInMillis": 100,
-    "showMap": false,
-    "security": "Basic128Rsa15",
-```
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-1.png)
-{: refdef}
-
-### Subsection "identity"
-There are several types available for this subsection:  
-1. anonymous  
-2. username  
-3. cert.PEM  
-
-{% capture identityopcuatogglespec %}
-<b>anonymous</b><br> <small>(recommended if all servers are in the local network)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
-<b>username</b><br> <small>(recommended for a basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
-<b>cert.PEM</b><br> <small>(recommended for a higher level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
-
-## Section "mapping"
-This configuration section contains an array of nodes that the gateway will subscribe to after connecting to the OPC-UA server, along with settings for processing data from these nodes.
-
-| **Parameter**                 | **Default value**                                     | **Description**                                                                            |
-|:-|:-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| deviceNodePattern             | **Root\\.Objects\\.Device1**                          | Regular expression, is used for looking the node for a current device.                     |
-| deviceNamePattern             | **Device ${Root\\.Objects\\.Device1\\.serialNumber}** | Path to a variable with device name, is used for looking the device name in some variable. |
-|---
-
-This part of the configuration will look like this:  
-
-```json
-        "deviceNodePattern": "Root\\.Objects\\.Device1",
-        "deviceNamePattern": "Device ${Root\\.Objects\\.Device1\\.serialNumber}",
-```
-
-***Optionally, in this section, you can add the "converter" parameter to use a custom converter.***
-<br>
-<br><br>
-**Let's look at an example.**
-
-Specify **deviceNodePattern** as it is on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
-
-**deviceNamePattern** should be specified as **"Device OPC-UA"**.
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-2.png)
-{: refdef}
-
-<br>
-In this example, the **mapping** section would look like this:
-
-```json
-        "deviceNodePattern": "Root\\.Objects\\.Simulation",
-        "deviceNamePattern": "Device OPC-UA",
-```
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-2.png)
-{: refdef}
-
-After running **ThingsBoard IoT gateway**, you will see the new **Device OPC-UA** device in your ThingsBoard instance.
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-1.png)
-{: refdef}
-
-### Subsection "attributes"
-This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
-
-| **Parameter**   | **Default value**           | **Description**                                                                                       |
-|:-|:-|-------------------------------------------------------------------------------------------------------
-| key             | **CertificateNumber**       | Tag, that will be interpreted as attribute for the ThingsBoard platform instance.                     |
-| path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object is used for looking up the value within a specific variable. ** \* ** |
-|---
+We will describe the connector configuration below.
 
 {% capture difference %}
-**If you don't specify the "key" parameter, the node name will be used instead**  
+**Please note:**
+If you are new to IoT Gateway, use the "Basic" configuration mode. If you are familiar with configuring IoT Gateway, 
+you can use the "Advanced" configuration mode.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-** \* ** You can input some expressions for search here, like:
-1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
-2. Relative path from device object - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
-3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
-4. Namespace identifier and node identifier - **${ns=2;i=5}**
+## Connector configuration
 
-This part of the configuration will look like this:  
+The connector configuration is a user interface form that helps you set up a connection to OPC-UA server. 
+Let's look at all the available settings and explain each one clearly. This will help you understand how 
+everything works.
 
-```json
-        "attributes": [
-          {
-            "key": "CertificateNumber",
-            "path": "${ns=2;i=5}"
-          }
-        ],
-```
+{% capture difference %}
+**Please note:**
+To access the actual UI for the gateway - you need to a have connected gateway before adding a connector. Otherwise, you will see the old UI.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-<br>
-**Let's look at an example.**
-<br>
-In the "path" line set the NodeId value taken from our test server.
-<br>
+## Section "General"
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-3.png)
-{: refdef}
+This configuration section contains general connector settings, such as:
 
-In this example, the **attributes** section would look like this:
+- **Name** - connector name used for logs and saving to persistent devices;
+- Logs configuration:
+  - **Enable remote logging** - enables remote logging for the connector;
+  - **Logging level** - logging level for local and remote logs: NONE, ERROR, CRITICAL, WARNING, INFO, DEBUG, TRACE;
+- **Send data only on change** - sends data only it has changed since the last check, otherwise – data will be sent after every check;
+- **Report strategy** - strategy for sending data to ThingsBoard:
+  - **Report period** - period for sending data to ThingsBoard in milliseconds;
+  - **Type** - type of the report strategy:
+    - **On report period** - sends data to ThingsBoard after the report period;
+    - **On value change** - sends data to ThingsBoard when the value changes;
+    - **On value change and report period** - sends data to ThingsBoard when the value changes or after the report period;
+    - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
-```json
-        "attributes": [
-          {
-            "key": "model",
-            "path": "${ns=3;i=1008}"
-          },
-          {
-            "key": "CertificateNumber",
-            "path": "${ns=3;i=1007}"
-          }
-        ],
-```
+{% capture difference %}
+Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-3.png)
-{: refdef}
+![image](/images/gateway/opc-ua-connector/opc-ua-general-basic-1-ce.png)
 
-You should be able to see the attributes you have sent to ThingsBoard in the **Attributes** section of your device:
+{% capture difference %}
+The General tab in settings is the same for both the basic and advanced configurations.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-2.png)
-{: refdef}
+## Section "Server"
 
-### Subsection "timeseries"
-This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
+The configuration in this section is used to connect to the OPC-UA server.
 
-| **Parameter**   | **Default value**                                                            | **Description**                                                                                                 |
-|:-|:-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------
-| key             | **temperature °C**                                                           | Tag, that will be interpreted as telemetry for ThingsBoard platform instance.                                   |
-| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}** | Name of the variable in the OPC-UA object is used for looking up the value within a specific variable. ** \* ** |
-|---
+Select basic or advanced OPC-UA configuration:
 
-** \* ** You can input some expressions for search here, like:
-1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**
-2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Temperature}** 
-3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Temperature}**
-4. Namespace identifier and node identifier - **${ns=2;i=5}**
+{% capture opcuasection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-advanced-section.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="opcuasection" toggle-spec=opcuasection %}
 
-This part of the configuration will look like this:  
+### Subsection "Security"
 
-```json
-        "timeseries": [
-          {
-            "key": "temperature °C",
-            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}"
-          }
-        ],
-```
+Select basic or advanced OPC-UA configuration:
 
-<br>
-**Let's look at an example.**
+{% capture opcuasecuritysubsection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-security-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-security-advanced-section.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="opcuasecuritysubsection" toggle-spec=opcuasecuritysubsection %}
 
-Replace the "path" value with the "NodeId" value. This is a relative path from device object or Display Name identifier taken from our test server.
-<br>
+## Section "Data mapping"
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-4.png)
-{: refdef}
+This section contains general settings for the nodes and subsections for data processing.
 
-In this example, the **timeseries** section would look like this:
+Select basic or advanced OPC-UA configuration:
 
-```json
-        "timeseries": [
-          {
-            "key": "humidity",
-            "path": "${Counter}"
-          },
-          {
-            "key": "pressure",
-            "path": "${Root\\.Objects\\.Simulation\\.Triangle}"
-          },
-          {
-            "key": "temperature °C",
-            "path": "${ns=3;i=1002}"
-          }
-        ],
-```
+{% capture opcuadatamappingsection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-data-mapping-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-data-mapping-advanced-section.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="opcuadatamappingsection" toggle-spec=opcuadatamappingsection %}
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-configuration-4.png)
-{: refdef}
+### Subsection "Attributes" and "Time series"
 
-You should be able to see the telemetry you have sent to ThingsBoard in the **Latest telemetry** section of your device:
+The configuration in this subsection provides settings for processing data from OPC-UA node. These settings will be 
+interpreted in ThingsBoard platform instance as attributes/time series of the device.
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-3.png)
-{: refdef}
+{% capture opcuaattrandtimeseriessection %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/opcua-attr-and-time-series-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/opcua-attr-and-time-series-advanced-section.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="opcuaattrandtimeseriessection" toggle-spec=opcuaattrandtimeseriessection %}
 
-### Subsection "rpc_methods"
-This subsection contains configuration for RPC request from ThingsBoard platform instance.
+### Subsection "Attribute updates"
 
-| **Parameter**         | **Default value**                 | **Description**                                                                                       |
-|:-|:-|-------------------------------------------------------------------------------------------------------
-| method                | **multiply**                      | Name of method on OPC-UA server.                                                                      |
-| arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will be taken from RPC request). |
-|---
+This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
 
-This part of configuration will look like this:  
+ThingsBoard allows the provisioning of device attributes and fetches some of them from
+the device application. You can treat this as a remote configuration for devices, enabling them to request 
+shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/) for more details.
 
-```json
-        "rpc_methods": [
-          {
-            "method": "multiply",
-            "arguments": [2, 4]
-          }
-        ]
-```
+{% capture subsectiondeviceattrupdates %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/device-attribute-updates-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/device-attribute-updates-advanced-section.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="subsectiondeviceattrupdates" toggle-spec=subsectiondeviceattrupdates %}
+
+### Subsection "RPC methods"
+
+ThingsBoard allows sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
+
+{% capture subsectiondevicerpc %}
+Basic<small></small>%,%basic%,%templates/iot-gateway/opcua-connector/device-rpc-basic-section.md%br%
+Advanced<small></small>%,%advanced%,%templates/iot-gateway/opcua-connector/device-rpc-advanced-section.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="subsectiondevicerpc" toggle-spec=subsectiondevicerpc %}
 
 {% capture methodFilterOptions %}
 Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
@@ -345,75 +135,110 @@ it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-met
 {% endcapture %}
 {% include templates/info-banner.md content=methodFilterOptions %}
 
-### Subsection "attributes_updates"
-This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
+## Path types
 
-| **Parameter**             | **Default value**                                           | **Description**                                                                              |
-|:-|:------------------------------------------------------------|----------------------------------------------------------------------------------------------
-| attributeOnThingsBoard    | **deviceName**                                              | Name of a server side argument.                                                              |
-| attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                 | Name of a variable that will change its own value with a value from attribute update request. |
-|---
+A Path type refers to the hierarchical address within the OPC-UA server's namespace. It is used to navigate to specific 
+nodes in the server.
 
-This part of configuration will look like this:  
+The path for the attribute value can be absolute or relative.
 
-```json
-        "attributes_updates": [
-          {
-            "attributeOnThingsBoard": "deviceName",
-            "attributeOnDevice": "Root\\.Objects\\.Device1\\.serialNumber"
-          }
-        ]
-```
+### Absolute path
 
-**Let’s look at an example.**
+An **absolute path** specifies the full hierarchical address from the root of the OPC-UA server's namespace to the 
+target node.
 
-Suppose you want to set the value of the **"deviceName"** attribute. Currently, the attribute doesn't have any value.
+**Example:**
 
-In the OPC-UA Connector configuration file (opcua.json) change **"attributeOnDevice"** value to the full path to the "deviceName" node.
+Gateway expects the node to exist and the value of "**Root\.Objects\.TempSensor\.Temperature**" to be **23.54**.
 
-In this example it is **"Root\\.Objects\\.Simulation\\.deviceName"**.
+_Expression:_
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-2.png)
-{: refdef}
+`${Root\\.Objects\\.TempSensor\\.Temperature}`
 
-Our **attributes_updates** section would look like this:
+_Converted data:_
 
-```json
-  "attributes_updates": [
-    {
-      "attributeOnThingsBoard": "deviceName",
-      "attributeOnDevice": "Root\\.Objects\\.Simulation\\.deviceName"
-    }
-  ]
-```
+`23.54`
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-1.png)
-{: refdef}
+### Relative path
 
-Go to **"Shared attributes"** and create a new one for your device in the ThingsBoard instance.
+A **relative path** specifies the address relative to a predefined starting point in the OPC-UA server's namespace.
 
-Specify the key name - deviceName, value type - String, string value - Device OPC-UA.
+**Example:**
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-3.png)
-{: refdef}
+Gateway expects the node to exist and the value of “**Root\.Objects\.TempSensor\.Temperature**” to be 23.56.
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-4.png)
-{: refdef}
+_Device Node Expression:_
 
-Now go to OPC UA server and make sure the value of the deviceName node is updated.
+`Root\\.Objects\\.TempSensor`
 
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-updates-5.png)
-{: refdef}
+_Expression:_
+
+`${Temperature}`
+
+_Converted data:_
+
+`23.56`
+
+## Identifier types
+
+An **Identifier** type is a unique ID assigned to a node within the OPC-UA server. It is used to directly reference 
+specific nodes without navigating through the namespace hierarchy.
+
+The Identifier type in the OPC-UA connector configuration can take various forms to uniquely reference nodes 
+in the OPC-UA server's address space. Identifiers can be of different types, such as numeric (`i`), string (`s`), 
+byte string (`b`), and GUID (`g`). Below is an explanation of each identifier type with examples.
+
+- **Numeric Identifier (`i`)**
+
+  A **numeric identifier** uses an integer value to uniquely reference a node in the OPC-UA server.
+
+  _Expression:_
+
+  `${ns=2;i=1235}`
+  
+  _Converted data:_
+  
+  `21.34`
+
+- **String Identifier (`s`)**
+
+  A **string identifier** uses a string value to uniquely reference a node in the OPC-UA server.
+
+  _Expression:_
+
+  `${ns=3;s=TemperatureSensor}`
+  
+  _Converted data:_
+  
+  `21.34`
+
+- **Byte String Identifier (`b`)**
+
+  A **byte string identifier** uses a byte string to uniquely reference a node in the OPC-UA server. This is useful for binary data that can be converted to a byte string.
+
+  _Expression:_
+
+  `${ns=3;b=Q2xpZW50RGF0YQ==}`
+  
+  _Converted data:_
+  
+  `21.34`
+
+- **GUID Identifier (`g`)**
+
+  A **GUID identifier** uses a globally unique identifier (GUID) to uniquely reference a node in the OPC-UA server.
+
+  _Expression:_
+
+  `${ns=3;g=550e8400-e29b-41d4-a716-446655440000}`
+  
+  _Converted data:_
+  
+  `21.34`
 
 ## Next steps
 
 Explore guides related to main ThingsBoard features:
- - [How to connect OPC-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
  - [ThingsBoard IoT Gateway Features](/docs/iot-gateway/features/)
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

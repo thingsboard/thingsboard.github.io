@@ -9,8 +9,5 @@ deviceImageFileName: recomputer-r1000.png
 ---
 
 
-* TOC
-{:toc}
-
 {% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/recomputer-r1000.md %}

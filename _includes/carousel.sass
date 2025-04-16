@@ -383,6 +383,105 @@
         transform: scale(var(--title-hover-scale))
         transform-origin: bottom
 
+.owl-carousel.owl-theme.usecase-carousel.cardMode
+  .card
+    cursor: pointer
+    transform: scale(0.7)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    border-radius: 24px
+    border: 1px solid rgba(42, 125, 236, 0.25)
+    background: #FFF
+    box-shadow: 0px 10px 25px -15px rgba(0, 0, 0, 0.08), 0px 0px 6px 0px rgba(0, 0, 0, 0.08)
+    padding: 46px
+    transition: ease-in-out 0.3s
+    .card-header
+      display: flex
+      flex-direction: column
+      gap: 32px
+      align-items: center
+    .card-link
+      display: flex
+      flex-direction: row
+      align-items: center
+      gap: 8px
+      transition: ease-in-out 0.3s
+      opacity: 0
+      transform: translateY(100%)
+      animation: slideDown 0.3s forwards
+    ul
+      margin: 0 !important
+      padding: 0 !important
+      display: flex
+      justify-content: space-between
+      gap: 12px
+      li
+        width: auto
+        display: flex
+        align-items: center
+        gap: 6px
+        padding: 8px
+        background: #2A7DEC14
+        border-radius: 8px
+        img
+          width: auto
+        span
+          font-size: 14px
+    h2
+      text-align: center
+    p
+      text-align: center
+  .owl-item.center
+    .card
+      transform: scale(1)
+      .card-link
+        opacity: 1
+        animation: slideUp 0.3s forwards
+        &:hover
+          opacity: 0.7
+          a
+            text-decoration: none
+.owl-carousel.owl-theme.usecase-carousel.cardMode
+  .owl-item.active.center
+    .card
+      box-shadow: -4px 15px 50px -20px rgba(42, 125, 236, 0.15), 0px 0px 8px 0px rgba(42, 125, 236, 0.08)
+.owl-carousel.owl-theme.usecase-carousel.cardMode.smallArrow
+  .owl-nav
+    button.owl-prev, button.owl-next
+      &:before
+        font-size: 30px
+        color: #2A7DEC
+      &:hover
+        background-color: unset
+        opacity: 0.7
+.owl-carousel.owl-theme.usecase-carousel.cardMode.circle
+  .owl-dots
+    display: none
+    button.owl-dot
+      width: 8px
+      height: 8px
+.owl-carousel-toggle-content
+  .owl-carousel-toggle-content-item
+    display: none
+  .owl-carousel-toggle-content-item.current-content
+    display: flex
+    flex-direction: column
+    gap: 32px
+
+@keyframes slideUp
+  0%
+    transform: translateY(50px)
+  100%
+    transform: translateY(0)
+
+@keyframes slideDown
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(50px)
+
 .not-found-message
   display: block
   font-size: 36px
@@ -436,6 +535,9 @@
     &:before
       content: ""
       width: 80%
+  .owl-carousel.owl-theme.usecase-carousel.cardMode.circle
+    .owl-dots
+      display: block
 
 @media screen and (max-width: 599px)
   .owl-carousel.owl-theme.usecase-carousel
@@ -455,3 +557,6 @@
     &:before
       content: ""
       width: 70%
+  .owl-carousel.owl-theme.usecase-carousel.cardMode
+    .card
+      padding: 24px

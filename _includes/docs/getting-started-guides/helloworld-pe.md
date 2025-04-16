@@ -89,7 +89,8 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart. 
 
-Also, you can open the time window and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
+You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval.
+To do this, open the [Time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"} and make the necessary adjustments. Update the time window settings by clicking the "Update" button.
 
 {% include images-gallery.html imageCollection="step33_2" %}
 
@@ -109,10 +110,10 @@ You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) feature to raise the alarm when the temperature reading is greater than 25 degrees.
+We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading is greater than 25 degrees.
 For this purpose, we should edit the device profile and add a new alarm rule. 
 The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) for each corresponding device type but will skip this step for simplicity.
+We recommend creating dedicated [device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} for each corresponding device type but will skip this step for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
@@ -124,16 +125,17 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
-and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
+We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms){:target="_blank"}.
 
 ## Step 6. Alarm notifications
 
-The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/) allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
 
-Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/) allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
-Follow [this guide](/docs/pe/mobile/getting-started/) to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
+{% include images-gallery.html imageCollection="notification-center" %}
+
+Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
+Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
 
 ## Step 7. Share dashboard with customers
 
@@ -170,8 +172,8 @@ You can make the customer the owner of the device during its creation stage.
 ### Step 7.3 Share the dashboard
 
 Let's share our dashboard with the customer.
-But нou can't share an individual dashboard directly; you can only share a dashboard group that includes the desired dashboard.
-Our dashboard is in the group "All". Ideally, we should create a new dashboard group and move our dashboard into it, but to simplify this guide, we'll use the "All" group.
+In ThingsBoard, you can't share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
+By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we'll use the existing "All" group for this guide.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 

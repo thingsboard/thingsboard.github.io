@@ -7,11 +7,13 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 * TOC
 {:toc}
 
-{% include templates/edge/install/compatibility-warning-general.md %}
 
 {% assign docsPrefix = "pe/edge/" %}
+{% assign peDocsPrefix = "pe/" %}
 
-This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
+{% include templates/edge/install/compatibility-warning-general.md %}
+
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **RHEL/CentOS 7 and 8**.
 
 {% include templates/edge/install/prerequisites.md %}
 
@@ -25,19 +27,38 @@ This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
 Before continue to installation execute the following commands in order to install necessary tools:
 
 ```bash
-sudo yum install -y nano wget
-sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install -y nano wget && sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
 ### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 2. Configure PostgreSQL
+### Step 2. Configure ThingsBoard Database
 
-{% include templates/edge/install/rhel-db-postgresql.md %}
+**ThingsBoard Edge** supports **SQL** and **hybrid** database approaches. See the architecture [page](/docs/pe/reference/#sql-vs-nosql-vs-hybrid-database-approach){: target="_blank"} for details.
 
-### Step 3. ThingsBoard Edge service installation
+{% capture contenttogglespec %}
+PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/edge/install/rhel-db-postgresql.md%br%
+Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/edge/install/rhel-db-hybrid.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %}
+
+### Step 3. Choose queue service
+
+**ThingsBoard Edge** is able to use different messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
+
+* **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
+
+* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now.
+
+{% capture contenttogglespecqueue %}
+In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(recommended for on-prem, production installations)</small> %,%kafka%,%templates/edge/install/rhel-queue-kafka.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
+
+### Step 4. ThingsBoard Edge Service Installation
 
 Download installation package.
 
@@ -54,21 +75,21 @@ sudo rpm -Uvh tb-edge-{{ site.release.pe_edge_ver }}.rpm
 {: .copy-code}
 
 
-### Step 4. Configure ThingsBoard Edge
+### Step 5. Configure ThingsBoard Edge
 
 {% include templates/edge/install/linux-configure-edge.md %}
 
-### Step 5. Run installation script
+### Step 6. Run installation Script
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### Step 6. Restart ThingsBoard Edge service
+### Step 7. Restart ThingsBoard Edge Service
 
 ```bash
 sudo service tb-edge restart
 ```
 
-### Step 7. Open ThingsBoard Edge UI
+### Step 8. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %} 
 

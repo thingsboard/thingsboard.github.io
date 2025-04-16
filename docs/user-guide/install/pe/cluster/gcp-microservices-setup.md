@@ -16,7 +16,7 @@ This guide will help you to set up ThingsBoard in microservices mode in GKE.
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-### Pull ThingsBoard PE images from docker hub
+## Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "microservices" %}
 {% include templates/install/dockerhub/checkout.md %}
@@ -26,7 +26,7 @@ This guide will help you to set up ThingsBoard in microservices mode in GKE.
 Clone the repository and change the working directory to GCP scripts.
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/gcp/microservices
 ```
 {: .copy-code}
@@ -34,6 +34,7 @@ cd thingsboard-pe-k8s/gcp/microservices
 ## Step 2. Define environment variables
 
 {% assign tbClusterName = "tb-pe-msa" %}
+{% assign tbDbClusterName = "tb-db" %}
 {% include templates/install/gcp/env-variables-msa.md %}
 
 ## Step 3. Configure and create GKE cluster
@@ -48,6 +49,7 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 ### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
 
+{% assign tbDbName = "thingsboard" %}
 {% include templates/install/gcp/provision-postgresql.md %}
 
 ### Step 5.2 Cassandra (optional)
@@ -70,7 +72,7 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 ### 9.1 Configure HTTP(S) Load Balancer
 
-{% include templates/install/gcp/http-lb.md %}
+{% include templates/install/gcp/configure-http.md %}
 
 ### 9.2. Configure MQTT Load Balancer (Optional)
 

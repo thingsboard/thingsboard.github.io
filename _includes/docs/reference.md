@@ -60,10 +60,13 @@ ThingsBoard provides a lightweight component written using Express.js framework 
 Those components are completely stateless and no much configuration available. 
 The static web UI contains application bundle. Once it is loaded, the application starts using the REST API and WebSockets API provided by ThingsBoard Core.  
  
-## Message Queues are awesome!
+## ThingsBoard message queues
 
-ThingsBoard supports multiple message queue implementations: Kafka, RabbitMQ, AWS SQS, Azure Service Bus and Google Pub/Sub. We plan to extend this list in the future.
-Using durable and scalable queues allow ThingsBoard to implement back-pressure and load balancing. Back-pressure is extremely important in case of peak loads.  
+ThingsBoard supports two types of message queues: **Kafka** and **In-Memory**.
+- **Kafka** is a widely used, distributed, and durable message queue system designed to handle large volumes of data. It is well-suited for production environments where high throughput, fault tolerance, and scalability are critical.
+- **In-Memory** queue is a lightweight, fast, and simple message queue implementation designed for testing, smaller-scale or development environments. It stores messages in memory rather than on disk, prioritizing speed over persistence.
+
+Using durable and scalable Kafka queue allow ThingsBoard to implement back-pressure and load balancing. Back-pressure is extremely important in case of peak loads. 
 We provide "abstraction layer" over specific queue implementations and maintain two main concepts: topic and topic partition. 
 One topic may have configurable number of partitions. Since most of the queue implementations does not support partitions, we use *topic + "." + partition* pattern.
   
@@ -78,13 +81,19 @@ ThingsBoard uses following topics:
  * **tb_transport.api.responses**: to receive device credentials verification results from ThingsBoard Core to Transport.
  * **tb_core**: to push messages from Transport or Rule Engine to ThingsBoard Core. Messages include session lifecycle events, attribute and RPC subscriptions, etc.
  * **tb_rule_engine**: to push messages from Transport or ThingsBoard Core to Rule Engine. Messages include incoming telemetry, device states, entity lifecycle events, etc.
- 
-**Note:** All topic properties including names and number of partitions are [configurable](/docs/user-guide/install/{{docsPrefix}}config/) via thingsboard.yml or environment variables. 
-Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
 
-**Note:** Starting version 2.5 we have switched from using [gRPC](https://grpc.io/) to  [Message Queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)
+{% capture difference %}
+**Note:** All topic properties including names and number of partitions are [configurable](/docs/user-guide/install/{{docsPrefix}}config/){:target="_blank"} via thingsboard.yml or environment variables. 
+Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% capture difference %}
+**Note:** Starting version 2.5 we have switched from using [gRPC](https://grpc.io/){:target="_blank"} to [Message Queues](/docs/{{docsPrefix}}reference/#thingsboard-message-queues)
 for all communication between ThingsBoard components. 
 The main idea was to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing.  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## On-premise vs cloud deployments
 
@@ -130,8 +139,6 @@ Platform supports three database options at the moment:
 
 * **SQL** - Stores all entities and telemetry in SQL database. ThingsBoard authors recommend to use PostgreSQL and this is the main SQL database that ThingsBoard supports. 
 It is possible to use HSQLDB for local development purposes. **We do not recommend to use HSQLDB** for anything except running tests and launching dev instance that has minimum possible load.
-* **NoSQL (Deprecated)** - Stores all entities and telemetry in NoSQL database. ThingsBoard authors recommend to use Cassandra and this is the only NoSQL database that ThingsBoard supports at the moment.
-Please note that this option is deprecated in favor of Hybrid approach due to many limitations of NoSQL for transactions and "joins" that are required to enable advanced search over IoT entities.
 * **Hybrid (PostgreSQL + Cassandra)** - Stores all entities in PostgreSQL database and timeseries data in Cassandra database. 
 * **Hybrid (PostgreSQL + TimescaleDB)** - Stores all entities in PostgreSQL database and timeseries data in Timescale database. 
 
@@ -149,5 +156,5 @@ database:
 
 ## Programming languages and third-party
 
-ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular 9 framework. 
+ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular framework. 
 See [monolithic](/docs/{{docsPrefix}}reference/monolithic) and [microservices](/docs/{{docsPrefix}}reference/monolithic) pages for more details about third-party components used.  

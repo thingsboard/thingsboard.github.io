@@ -10,13 +10,13 @@ description: TBMQ cluster setup with Kubernetes and Minikube guide
 
 This guide will help you to set up TBMQ in cluster mode using Minikube.
 
-### Prerequisites
+## Prerequisites
 
 You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 Additionally, you will need [helm](https://helm.sh/docs/intro/install/) to be installed.
 
-### Step 1. Clone TBMQ repository
+## Step 1. Clone TBMQ repository
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -24,7 +24,7 @@ cd tbmq/k8s/minikube
 ```
 {: .copy-code}
 
-### Step 2. Installation
+## Step 2. Installation
 
 To install TBMQ execute the following command:
 
@@ -33,7 +33,7 @@ To install TBMQ execute the following command:
 ```
 {: .copy-code}
 
-### Step 3. Running
+## Step 3. Running
 
 Execute the following command to deploy TBMQ:
 
@@ -51,7 +51,7 @@ minikube ip
 
 {% include templates/mqtt-broker/login.md %}
 
-### Step 4. Logs, delete statefulsets and services
+## Step 4. Logs, delete statefulsets and services
 
 In case of any issues, you can examine service logs for errors.
 For example to see TBMQ node logs execute the following commands:
@@ -114,21 +114,21 @@ Execute the following command to delete all resources (including database):
 ```
 {: .copy-code}
 
-### Upgrading
+## Upgrading
 
 Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
 for detailed information on the latest changes.
 
-#### Backup and restore (Optional)
+### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/k8s/minikube/backup-restore/README.md).
 
-#### Upgrade to 1.3.0
+### Upgrade to 1.3.0
 
 {% include templates/mqtt-broker/install/migration.md %}
 
-#### Run upgrade
+### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
 
@@ -153,6 +153,6 @@ After that execute the following commands:
 Where `FROM_VERSION` - from which version upgrade should be started.
 See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

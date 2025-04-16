@@ -45,3 +45,9 @@ toc:
       path: /docs/iot-gateway/config/ftp/
     - title: Socket Connector
       path: /docs/iot-gateway/config/socket/
+    - title: XMPP Connector
+      path: /docs/iot-gateway/config/xmpp/
+    - title: OCPP Connector
+      path: /docs/iot-gateway/config/ocpp/
+    - title: KNX Connector
+      path: /docs/iot-gateway/config/knx/

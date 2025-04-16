@@ -38,7 +38,7 @@ The alternative option is to install {{appPrefix}} using [Installation Guide](/d
 
 ## Step 2. Get app source code
 
-#### Flutter {{appPrefix}} Mobile Application compatibility table 
+### Flutter {{appPrefix}} Mobile Application compatibility table 
 
 Determine the Flutter {{appPrefix}} Mobile Application version according to the version of {{appPrefix}}.
 
@@ -51,6 +51,16 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+         <tr>
+            <td>4.0.0</td>
+            <td>1.6.0</td>
+            <td>4.0.0</td>
+        </tr>
+         <tr>
+            <td>3.9.0</td>
+            <td>1.5.0</td>
+            <td>3.0.0</td>
+        </tr>
         <tr>
             <td>3.8.1</td>
             <td>1.4.0</td>
@@ -103,6 +113,16 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+         <tr>
+            <td>4.0.0PE</td>
+            <td>1.6.0</td>
+            <td>4.0.0</td>
+        </tr>
+         <tr>
+            <td>3.9.0PE</td>
+            <td>1.5.0</td>
+            <td>3.0.0</td>
+        </tr>
         <tr>
             <td>3.8.1PE</td>
             <td>1.4.0</td>

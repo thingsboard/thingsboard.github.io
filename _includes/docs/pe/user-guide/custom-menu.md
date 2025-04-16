@@ -137,7 +137,7 @@ Now, click on the new menu item. You will navigate to the specified dashboard.
 
 {% include images-gallery.liquid imageCollection=addCustomMenuItemBetweenExistingItems %}
 
-#### Adding suitem
+#### Adding subitem
 
 You can place several menu items into one section. For example, devices, assets, and entity views are located in the "Entities" section.
 

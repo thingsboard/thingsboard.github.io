@@ -21,6 +21,9 @@ toc:
     path: /docs/user-guide/attributes/
   - title: Time-series data
     path: /docs/user-guide/telemetry/
+  - title: Calculated fields
+    path: /docs/user-guide/calculated-fields/
+    new: true
   - title: Alarms
     path: /docs/user-guide/alarms/
   - title: Remote commands to devices
@@ -48,15 +51,18 @@ toc:
     section:
       - title: Overview
         path: /docs/user-guide/widgets/
-      - title: Widget Actions
+      - title: Widget actions
         path: /docs/user-guide/ui/widget-actions/
-      - title: Widgets Library
+      - title: Widgets library
         path: /docs/user-guide/ui/widget-library/
       - title: Chart widgets
         path: /docs/user-guide/ui/chart-widget/
-      - title: Entities Table widget
+      - title: Map widgets
+        path: /docs/user-guide/widgets/map-widgets/
+        new: true
+      - title: Entities table widget
         path: /docs/user-guide/ui/entity-table-widget/
-      - title: Trip Animation widget
+      - title: Trip animation widget
         path: /docs/user-guide/ui/trip-animation-widget/
       - title: Advanced data key configuration
         path: /docs/user-guide/ui/advanced-data-key-configuration/
@@ -167,15 +173,15 @@ toc:
     path: /docs/user-guide/integrations/kafka/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
-  - title: Actility ThingPark
+  - title: ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsStack
+  - title: The Things Stack Community
     path: /docs/user-guide/integrations/ttn/
-  - title: TheThingsIndustries
+  - title: The Things Stack Industries
     path: /docs/user-guide/integrations/tti/
   - title: KPN Things
     path: /docs/user-guide/integrations/kpn-things/
-  - title: LORIOT
+  - title: Loriot
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
     path: /docs/user-guide/integrations/chirpstack/
@@ -214,6 +220,15 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/samples/analytics/kafka-streams/
+- title: Mobile center
+  new: true
+  section:
+    - title: Overview
+      path: /docs/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/user-guide/ui/mobile-qr-code/
 - title: Other Features
   section:
     - title: Edge Computing
@@ -272,6 +287,8 @@ toc:
       path: /docs/user-guide/two-factor-authentication/
     - title: OAuth 2.0
       path: /docs/user-guide/oauth-2-support/
+    - title: Domains
+      path: /docs/domains/
     - title: HTTP Transport
       section:
         - title: HTTP over SSL
@@ -327,11 +344,8 @@ toc:
     path: /docs/user-guide/ui/slack-settings/
   - title: Microsoft Teams Settings
     path: /docs/user-guide/ui/microsoft-teams-settings/
-  - title: Mail Settings
+  - title: Mail server
     path: /docs/user-guide/ui/mail-settings/
-  - title: Mobile application QR code
-    path: /docs/user-guide/ui/mobile-qr-code/
-    new: true
   - title: JWT Security Settings
     path: /docs/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide

@@ -1,6 +1,6 @@
 
 
-####  HTTP server parameters
+###  HTTP server parameters
 
 <table>
 	<thead>
@@ -97,7 +97,7 @@
 </table>
 
 
-####  MQTT listeners parameters
+###  MQTT listeners parameters
 
 <table>
 	<thead>
@@ -496,7 +496,7 @@
 </table>
 
 
-####  Kafka parameters
+###  Kafka parameters
 
 <table>
 	<thead>
@@ -1237,7 +1237,7 @@
 </table>
 
 
-####  General service parameters
+###  General service parameters
 
 <table>
 	<thead>
@@ -1268,7 +1268,7 @@
 </table>
 
 
-####  Actor system parameters
+###  Actor system parameters
 
 <table>
 	<thead>
@@ -1353,7 +1353,7 @@
 </table>
 
 
-####  Database time series parameters
+###  Database time series parameters
 
 <table>
 	<thead>
@@ -1372,7 +1372,7 @@
 </table>
 
 
-####  SQL configuration parameters
+###  SQL configuration parameters
 
 <table>
 	<thead>
@@ -1505,7 +1505,7 @@
 </table>
 
 
-####  Redis lettuce configuration parameters
+###  Redis lettuce configuration parameters
 
 <table>
 	<thead>
@@ -1532,11 +1532,64 @@
 			<td>5</td>
 			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count.</td>
 		</tr>
+		<tr>
+			<td>lettuce.config.shutdown-quiet-period</td>
+			<td>REDIS_LETTUCE_SHUTDOWN_QUIET_PERIOD_SEC</td>
+			<td>1</td>
+			<td> The shutdown quiet period for lettuce client set in seconds</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.shutdown-timeout</td>
+			<td>REDIS_LETTUCE_SHUTDOWN_TIMEOUT_SEC</td>
+			<td>10</td>
+			<td> The shutdown timeout for lettuce client set in seconds</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.cluster.topology-refresh.enabled</td>
+			<td>REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_ENABLED</td>
+			<td>false</td>
+			<td> Enables or disables periodic cluster topology updates.
+ Useful for Redis Cluster setup to handle topology changes,
+ such as node failover, restarts, or IP address changes</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.cluster.topology-refresh.period</td>
+			<td>REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_PERIOD_SEC</td>
+			<td>60</td>
+			<td> Specifies the interval (in seconds) for periodic cluster topology updates</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  SQL DAO configuration parameters
+###  Redis jedis configuration parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>jedis.cluster.topology-refresh.enabled</td>
+			<td>REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED</td>
+			<td>false</td>
+			<td> Enables or disables periodic cluster topology updates.
+ Useful for Redis cluster setup to handle topology changes,
+ such as node failover, restarts, or IP address changes</td>
+		</tr>
+		<tr>
+			<td>jedis.cluster.topology-refresh.period</td>
+			<td>REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_PERIOD_SEC</td>
+			<td>60</td>
+			<td> Specifies the interval (in seconds) for periodic cluster topology updates</td>
+		</tr>
+	</tbody>
+</table>
+
+
+###  SQL DAO configuration parameters
 
 <table>
 	<thead>
@@ -1606,7 +1659,7 @@
 </table>
 
 
-####  General Spring parameters
+###  General Spring parameters
 
 <table>
 	<thead>
@@ -1661,7 +1714,7 @@
 </table>
 
 
-####  Security parameters
+###  Security parameters
 
 <table>
 	<thead>
@@ -1736,7 +1789,7 @@
 </table>
 
 
-####  MQTT parameters
+###  MQTT parameters
 
 <table>
 	<thead>
@@ -2092,6 +2145,12 @@
 			<td> Number of threads in thread pool for processing application persisted publish messages callbacks after sending them to Kafka</td>
 		</tr>
 		<tr>
+			<td>mqtt.handler.downlink_msg_callback_threads</td>
+			<td>MQTT_HANDLER_DOWNLINK_MSG_CALLBACK_THREADS</td>
+			<td>2</td>
+			<td> Number of threads in thread pool for processing downlink messages callbacks after sending them to Kafka</td>
+		</tr>
+		<tr>
 			<td>mqtt.response-info</td>
 			<td>MQTT_RESPONSE_INFO</td>
 			<td></td>
@@ -2103,7 +2162,7 @@
 </table>
 
 
-####  Cache parameters
+###  Cache parameters
 
 <table>
 	<thead>
@@ -2164,7 +2223,7 @@
 </table>
 
 
-####  Redis configuration parameters
+###  Redis configuration parameters
 
 <table>
 	<thead>
@@ -2345,7 +2404,7 @@
 </table>
 
 
-####  Statistics parameters
+###  Statistics parameters
 
 <table>
 	<thead>
@@ -2367,6 +2426,12 @@
 			<td> Period in milliseconds to print stats. Default value corresponds to 1 minute</td>
 		</tr>
 		<tr>
+			<td>stats.timer.percentiles</td>
+			<td>STATS_TIMER_PERCENTILES</td>
+			<td>0.5</td>
+			<td> Metrics percentiles returned by actuator for timer metrics. List of comma-separated (,) double values</td>
+		</tr>
+		<tr>
 			<td>stats.application-processor.enabled</td>
 			<td>APPLICATION_PROCESSOR_STATS_ENABLED</td>
 			<td>true</td>
@@ -2376,7 +2441,7 @@
 </table>
 
 
-####  Historical data statistics parameters
+###  Historical data statistics parameters
 
 <table>
 	<thead>
@@ -2407,7 +2472,7 @@
 </table>
 
 
-####  Metrics management parameters
+###  Metrics management parameters
 
 <table>
 	<thead>
@@ -2426,7 +2491,7 @@
 </table>
 
 
-####  Spring CORS configuration
+###  Spring CORS configuration
 
 <table>
 	<thead>
@@ -2469,7 +2534,7 @@
 </table>
 
 
-####  Spring doc common parameters
+###  Spring doc common parameters
 
 <table>
 	<thead>
@@ -2494,7 +2559,7 @@
 </table>
 
 
-####  Swagger common parameters
+###  Swagger common parameters
 
 <table>
 	<thead>
@@ -2573,7 +2638,7 @@
 </table>
 
 
-####  Application info parameters
+###  Application info parameters
 
 <table>
 	<thead>
@@ -2592,7 +2657,7 @@
 </table>
 
 
-####  Analysis parameters
+###  Analysis parameters
 
 <table>
 	<thead>

@@ -47,7 +47,7 @@ K8S will restart the service on another instance. We will use Amazon RDS for man
 ## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/monolith
 ```
 

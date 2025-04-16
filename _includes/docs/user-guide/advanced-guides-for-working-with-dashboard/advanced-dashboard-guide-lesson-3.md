@@ -6,7 +6,7 @@ In the first two parts, we explored assets and devices, added a dashboard, creat
 Before we proceed, we strongly recommend reviewing the previous lessons if you have not done so already.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="n-button add-device">Lesson 2: Dashboard states, widget actions, and Image Map widget</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/" class="button">Lesson 2: Dashboard states, widget actions, and Image Map widget</a></p>
 
 <br>
 
@@ -19,7 +19,10 @@ In this part, we will add separate states for each device, simulate telemetry da
 Since we are using virtual devices, they do not send telemetry data to the ThingsBoard. However, we can simulate the transmission of such data in real time.
 To do this, we will use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"}.
 
-We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices. Let's get started.
+We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices.
+Then, we will save this telemetry in the database using the [save timeseries](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} node.
+Let&#39;s get started.
+
 
 First, create the new rule chain:
 
@@ -36,8 +39,8 @@ Now, let&#39;s add the necessary nodes:
 - Copy the following script from the documentation:
 
 ```js
-var temperature = toFixed(Math.random()*10 + 20, 2);
-var humidity = toFixed(Math.random()*15 + 30, 2);
+var temperature = toFixed(Math.random()*10 + 18, 2);
+var humidity = toFixed(Math.random()*15 + 40, 2);
 var co2 = toFixed(Math.random()*70 + 440, 2);
 var msg = { temperature: temperature, humidity: humidity, co2: co2 };
 var metadata = { data: 40 };
@@ -62,7 +65,7 @@ Similarly, add data emulator for "Energy Meter" device:
 - Use the following script to simulate power consumption telemetry data:
 
 ```js
-var powerConsumption = toFixed(Math.random() * 4.3, 2);
+var powerConsumption = toFixed(Math.random() * 2.2, 2);
 var msg = { powerConsumption: powerConsumption};
 var metadata = { data: 40 };
 var msgType = "POST_TELEMETRY_REQUEST";
@@ -83,7 +86,7 @@ Add data emulator for "Water Flow Meter" device.
 - Use the following script to simulate water consumption telemetry data, and battery voltage data:
 
 ```js
-var waterConsumption = toFixed(Math.random()*1.6 + 1, 2);
+var waterConsumption = toFixed(Math.random()*1.3, 2);
 var batteryLevel = toFixed(Math.random()*1 + 45, 2);
 var msg = { waterConsumption: waterConsumption, batteryLevel: batteryLevel };
 var metadata = { data: 40 };
@@ -105,8 +108,8 @@ Finally, add data emulator for "IAQ Sensor" device. Name it "IAQ data emulator".
 - Use the following script to simulate water consumption, and battery voltage telemetry data:
 
 ```js
-var temperature = toFixed(Math.random()*10 + 20, 2);
-var humidity = toFixed(Math.random()*15 + 30, 2);
+var temperature = toFixed(Math.random()*10 + 18, 2);
+var humidity = toFixed(Math.random()*15 + 40, 2);
 var co2 = toFixed(Math.random()*70 + 440, 2);
 var msg = { temperature: temperature, humidity: humidity, co2: co2 };
 var metadata = { data: 40 };
@@ -120,15 +123,16 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 {% include images-gallery.html imageCollection="adding-new-rule-chain-5" %}
 
 <br>
-Added four generator nodes. Now we need to route messages from these nodes to the Root Rule Chain for further processing and saving telemetry in the database.
-For this purpose, there is a "[rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node){:target="_blank"}" node.
+Four generator nodes have been added. Now, we need to route incoming messages from these nodes to the "[save timeseries](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}" node to save time-series data in the database.
 
-- Find the "rule chain" node and drag it to the rule chain. This node forwards all messages to the Root Rule Chain;
-- Name it "to Root Rule Chain", specify "Root Rule Chain" and click "Add".
+- Find the "save timeseries" node and drag it to the rule chain;
+- Name it "save time series", and click "Add".
+
+We have added all the necessary nodes.
 
 {% include images-gallery.html imageCollection="adding-new-rule-chain-6" %}
 
-We have added all the necessary nodes. Now, we need to connect the generator nodes to the "rule chain" node for message routing:
+Now, we need to connect the generator nodes to the "save timeseries" node for message routing:
 
 {% include images-gallery.html imageCollection="adding-new-rule-chain-7" showListImageTitles="true" %}
 
@@ -139,10 +143,15 @@ After waiting for the period specified in the generator nodes, you will be able 
 ## Displaying devices telemetry in Office sensors list widget
 
 Now that we are receiving telemetry data from the devices, we can display it on the "Office sensors list" widget.
-Devices can send multiple telemetry values. By default, each telemetry value (key) is represented by a separate column in the table widget.
-We'll combine multiple telemetry values into a single column for a cleaner look and hide the columns we don't need.
 
 {% include images-gallery.html imageCollection="customize-office-sensors-list-widget-1" showListImageTitles="true" %}
+
+Devices can send multiple telemetry values. For example, an Indoor Air Quality Sensor sends values of temperature, humidity, and CO2 level. 
+By default, each telemetry value (key) is represented as a separate column in the table widget. 
+However, this layout might not be the most convenient for viewing. 
+Let&#39;s combine the telemetry values for a device that transmits multiple readings into a single column for a cleaner appearance and hide unnecessary columns.
+
+{% include images-gallery.html imageCollection="customize-office-sensors-list-widget-2" showListImageTitles="true" %}
 
 Cell content function used in this example:
 
@@ -155,18 +164,55 @@ if (entity.temperature && entity.humidity && entity.co2){
     + '</div>';
 }
 else if (entity.powerConsumption){
-    return '<div style="display: inline-block;padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px;background:#d3d3d3;border-radius:20px">' + entity.powerConsumption.toFixed(2) + ' kWh per hour</div>';
+    return '<div style="display: inline-block;padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px;background:#d3d3d3;border-radius:20px">' + entity.powerConsumption.toFixed(1) + ' kW</div>';
 }
 else if (entity.waterConsumption){
-    return '<div style="display: inline-block;padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px;background:#d3d3d3;border-radius:20px">' + entity.waterConsumption.toFixed(2) + ' gal per hour</div>';
+    return '<div style="display: inline-block;padding-left: 12px; padding-right: 12px; padding-top: 4px; padding-bottom: 4px;background:#d3d3d3;border-radius:20px">' + entity.waterConsumption.toFixed(1) + ' gal</div>';
 }
 return value;
 ```
 {:.copy-code.expandable-5}
 
-Now, the "Office sensors list" widget will display a list of your devices with their telemetry values combined into a single column for each device.
+For the "power Consumption" and "water Consumption" keys, we will sum all data point values over the selected time interval.
+We will specify the time interval later in the dashboard time window settings.
 
-{% include images-gallery.html imageCollection="customize-office-sensors-list-widget-2" %}
+- Click the "pencil" icon of the "powerConsumption" key;
+- Select the "Sum" as the aggregation function, and click "Save";
+- Also, set "Sum" as the aggregation function for the telemetry key "waterConsumption". Remove the automatically added prefixes from the keys label "powerConsumption" and "waterConsumption" after selecting aggregation;
+- Scroll up to locate the time window settings. Use the dashboard&#39;s time window and apply the changes to the widget;
+- Save changes to the dashboard.
+
+Now, in the "Office sensors list" widget, the telemetry for the Indoor Air Quality Sensor is displayed in a single column.
+
+{% include images-gallery.html imageCollection="customize-office-sensors-list-widget-3" %}
+
+However, telemetry for the other two devices is not displayed because the aggregation applied to the keys "powerConsumption" and "waterConsumption" is available only for fixed time intervals, like "current day" or "current month", etc., and is not available for sliding window intervals like "last 30 minutes," "last 24 hours," or "last 1 minute," which our dashboard currently uses. 
+Therefore, let&#39;s proceed to configure the time window.
+
+## Time window
+
+To correctly display data on widgets that use the [dashboard time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, you need to adjust the time interval and aggregation parameters.
+Data sent by devices will be grouped by hour and displayed for the current day, week, or month, depending on your choice.
+
+Let’s proceed with the setup:
+
+{% include images-gallery.html imageCollection="time-window-configuration-1" showListImageTitles="true" %}
+
+Now, configure the "History" tab:
+
+- Navigate to the "History" tab, and hide the "Last" and "Range" interval options from users;
+- For the "Relative" tab, leave the default settings;
+- Set "Sum" as the aggregation function and ensure users cannot modify this parameter by hiding it;
+- Configure the grouping interval to "1 hour" and restrict users from changing it.
+- Click "Apply" to save the time window adjustments;
+- Select "Update" to apply the updated time window settings to the dashboard;
+- Save the dashboard to confirm the changes.
+
+As you can see, the "Office sensors list" widget now displays data on the office&#39;s energy and water consumption for the selected time period, which in our case is the current day.
+
+{% include images-gallery.html imageCollection="time-window-configuration-2" %}
+
+This configuration ensures that all widgets using the dashboard&#39;s time window will display the aggregated telemetry values for the current day (or another selected interval) grouped by the hour.
 
 ## Adding state for each device & navigation between states
 
@@ -174,13 +220,13 @@ Now we need to add separate states for each of our devices and set up transition
 
 {% include images-gallery.html imageCollection="adding-devices-states-1" showListImageTitles="true" %}
 
-Similarly, add "Energy Meter" state with the "energy_sensor" state Id and "Water Flow Meter" state with the "water_sensor" state Id.
+Similarly, add "Energy Meter" state with the **energy_sensor** state Id and "Water Flow Meter" state with the **water_sensor** state Id.
 
 {% include images-gallery.html imageCollection="adding-devices-states-2" %}
 
 ### Customize Office sensors list widget
 
-Now let's customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensors-list-widget){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
+Now let&#39;s customize the "[Office sensors list](/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/#office-sensors-list-widget){:target="_blank"}" widget by adding an action so that when you click on a device row, we transition to its state.
 
 - Go to the "office" state and enter editing mode of the "Office sensors list" widget;
 - Scroll to the "Actions" menu section and click the "Add action" button;
@@ -203,7 +249,7 @@ deviceService.getDevice(entityId.id).subscribe(device => {
     } else if (device.type === 'water-sensor') {
         openDashboardState('water_sensor');
     } else {
-        openDashboardState('smart_sensor');
+        openDashboardState('air_sensor');
     }
 });
 
@@ -246,45 +292,45 @@ The tooltip function used in the example:
 let tooltip = '<h1 style="margin: 8px 0; width: 200px; border-bottom: 1px solid #0000000d; padding-bottom: 8px; padding-right: 15px; font-size: 16px; font-weight: 600; line-height: 24px; top: 15px;">${entityLabel}</h1>';
 let typeTooltip = '';
 if (data.deviceType == 'energy-sensor') {
-    typeTooltip = '<div style="display: flex; flex-direction: row; justify-content: space-between;align-items: center; gap: 10px;">' +
-        '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Power consumption: </span>' +
-        '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${powerConsumption} per day</span>' +
-    '</div>';
-    typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
+  typeTooltip = '<div style="display: flex; flex-direction: row; justify-content: space-between;align-items: center; gap: 10px;">' +
+          '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Power consumption: </span>' +
+          '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${powerConsumption:1} kW</span>' +
+          '</div>';
+  typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
 } else if (data.deviceType == 'air-sensor') {
-    typeTooltip = '<div style="display: flex; flex-direction: column">' +
-        '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
-            '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Temperature: </span>' +
-            '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${temperature:0} °C</span>' +
-        '</div>' +
-        '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
-            '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Humidity: </span>' +
-            '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${humidity:0} %</span>' +
-        '</div>' +
-        '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap 10px;">' +
-            '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">CO2: </span>' +
-            '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${co2:0} ppm</span>' +
-        '</div>' +
-    '</div>';
-    typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
+  typeTooltip = '<div style="display: flex; flex-direction: column">' +
+          '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
+          '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Temperature: </span>' +
+          '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${temperature:0} °C</span>' +
+          '</div>' +
+          '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
+          '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Humidity: </span>' +
+          '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${humidity:0} %</span>' +
+          '</div>' +
+          '<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap 10px;">' +
+          '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">CO2: </span>' +
+          '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${co2:0} ppm</span>' +
+          '</div>' +
+          '</div>';
+  typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
 } else if (data.deviceType == 'water-sensor') {
-    typeTooltip = '<div style="display: flex; flex-direction: column">' + 
-        '<div style="font-weight: 600; display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
-            '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Water consumption: </span>' +
-            '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${waterConsumption} per day</span>' +
-        '</div>' +
-        '<div style="font-weight: 600; display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
-            '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Battery Level: </span>' +
-            '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${batteryLevel:0} %</span>' +
-        '</div>';
-    '</div>';    
-    typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
+  typeTooltip = '<div style="display: flex; flex-direction: column">' +
+          '<div style="font-weight: 600; display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
+          '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Water consumption: </span>' +
+          '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${waterConsumption:1} gal</span>' +
+          '</div>' +
+          '<div style="font-weight: 600; display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 10px">' +
+          '<span style="font-weight: 600; font-size: 12px; line-height: 16px; color: #0000008a; max-width: 90px;">Battery Level: </span>' +
+          '<span style="font-weight: 600; font-size: 13px; line-height: 20px; color: #000000de">${batteryLevel:0} %</span>' +
+          '</div>';
+  '</div>';
+  typeTooltip += '<div style="margin-top: 17px; text-align: center; background: var(--tb-primary-50, #87CEEB); border-radius: 6px;"><link-act name="sensor_details">Details ></link-act></div>';
 }
 return tooltip + typeTooltip;
 ```
 {:.copy-code.expandable-4}
 
-- Adjust the tooltip's Y offset relative to the marker to -0.77 for optimal positioning;
+- Adjust the tooltip&#39;s Y offset relative to the marker to -0.77 for optimal positioning;
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-2" %}
 
@@ -326,7 +372,7 @@ const deviceService = $injector.get(widgetContext.servicesMap.get('deviceService
 
 deviceService.getDevice(entityId.id).subscribe(device => {
     if (device.type === 'air-sensor') {
-        openDashboardState('smart_sensor');
+        openDashboardState('air_sensor');
     } else if (device.type === 'water-sensor') {
         openDashboardState('water_sensor');
     } else {
@@ -360,10 +406,10 @@ Click any marker on the "Office plan" widget to open a tooltip. Each device&#39;
 
 {% include images-gallery.html imageCollection="customize-office-plan-widget-5" %}
 
-## Configuring state for Indoor Air Quality Sensor
+## Configuring air_sensor state
 
-To effectively monitor and analyze indoor air quality, we'll add three widgets to display current readings of temperature, humidity, and CO2 levels, alongside two widgets for tracking historical data on air quality in the office.
-This will allow us to not only monitor the current state of air quality parameters but also to analyze the trends in their changes over time.
+To effectively monitor and analyze indoor air quality, we&#39;ll add three widgets to display current readings of temperature, humidity, and CO2 levels, alongside two widgets for tracking historical data on air quality in the office.
+This will allow us to not only monitor the current state of air quality but also to analyze the trends in their changes over time.
 
 ### Temperature, humidity, and CO2 level cards widgets
 
@@ -373,89 +419,82 @@ First, add a widget to display the current temperature in the office.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-1" showListImageTitles="true" %}
 
-Similarly, add a widget to display the humidity.
+Now, add a widget to display the humidity.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-2" showListImageTitles="true" %}
 
-Now, add a widget to display the CO2 level.
+Add another card widget to display the CO2 level.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-3" showListImageTitles="true" %}
 
-Now, you can see the current values of temperature, humidity, and CO2 levels.
+Now you can see the current temperature, humidity, and CO2 values.
 
 {% include images-gallery.html imageCollection="indoor-air-quality-sensor-card-widgets-4" %}
 
 ### Temperature and humidity history chart
 
-We will now add a widget that displays a chart of temperature and humidity readings in the office for the last 12 hours. This way, we can track their changes.
+Now, we will add a chart widget to display historical data on temperature and humidity in the office. This widget will use its own time window settings.
+The configuration we set will allow us to view the hourly average values of temperature and humidity for the current day. This way, we can monitor their changes over time.
 
 {% include images-gallery.html imageCollection="temperature-and-humidity-history-1" showListImageTitles="true" %}
 
-<br>
-The "Temperature and humidity history" widget is added, but there are no charts on it. We will fix it right now.
-
-To correctly display data on widgets that use the dashboard [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}, you need to adjust the time interval and aggregation function settings. To do this, open the time window, select the last 12 hours of data, set the aggregation to "Average" and the grouping interval to "1 hour".
-
-This setup ensures that all widgets using the dashboard&#39;s time window will display data averaged over the last 12 hours, providing a clear view of the temperature and humidity trends. 
-Now, you can effectively monitor the average temperature and humidity readings for each hour over the past 12 hours.
-
-{% include images-gallery.html imageCollection="temperature-and-humidity-history-2" %}
-
 ### CO2 level chart
 
-Now, add another line chart widget to display CO2 data for the office over the last 12 hours.
+Add another line chart widget to display air quality data. This widget will also use its own time window settings, showing hourly data for the selected time period.
 
 {% include images-gallery.html imageCollection="air-quality-widget-1" showListImageTitles="true" %}
 
 <br>
-The configured "Indoor Air Quality Sensor" state should look like this:
+Monitor the current air quality status and analyze its changes over time in a separate dashboard state.
 
-{% include images-gallery.html imageCollection="smart-sensor-state" %}
+{% include images-gallery.html imageCollection="air-sensor-state" %}
 
-## Configuring state for Energy Meter
+## Configuring energy_sensor state
 
-Let's proceed to configure the state for the "Energy Meter" device. We will add two widgets: one to display power consumption per hour, and another to display power consumption data over the last 12 hours.
+Let&#39;s move on to configuring the **energy_sensor** state. We will add two widgets: one to display the total energy consumption for the current day and another to display historical data on hourly energy consumption.
 
-### Power consumption per hour
+### Current power consumption
 
-To display power consumption per hour, we will use the "Power consumption card" widget from the "Industrial widgets" widget bundle:
+To display total power consumption, use the "Power consumption card" widget from the "Industrial widgets" bundle:
 
-{% include images-gallery.html imageCollection="power-consumption-per-hour-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="power-consumption-card-1" showListImageTitles="true" %}
 
 ### Power consumption chart
 
-The next widget we will add is a "Range chart". A feature of this widget is that the line color on the chart is colored according to the range in which the value falls.
-This widget will visualize data on power consumption over the last 12 hours.
+To display historical data on power consumption, we will add the "Range chart" widget. 
+The unique feature of this widget is that changes in data values on the graph are visualized using configurable color ranges.
 
 {% include images-gallery.html imageCollection="power-consumption-range-chart-1" showListImageTitles="true" %}
 
-Now you can monitor hourly power consumption and power consumption data for the last 12 hours.
+Now you can monitor the total energy consumption for the current day and track historical data on hourly energy consumption.
 
 {% include images-gallery.html imageCollection="energy-meter-state-final" %}
 
-## Configuring state for Water Flow Meter
+## Configuring water_sensor state
 
-Finally, we will configure the state for the "Water Flow Meter" device. We will add a card widget to display the average water consumption per hour, a chart widget to display water consumption data over the last 12 hour, and the device's battery level widget.
+Finally, we will configure the state for the "Water Flow Meter" device. This will include a card widget to display the total water consumption for the current day, a chart widget to show historical data on hourly water consumption, and a battery level widget for the device.
 
-### Water consumption per hour
+###  Current water consumption
 
-To visualize hourly water consumption, you can use any card widget and customize it. In this example, we will use the "Power consumption card" widget from the "Industrial widgets" widgets bundle and configure it according to our needs.
+If you need to display specific data but cannot find a suitable widget in the available bundles, you can customize any widget to fit your needs. Let’s take the "Flow rate card" widget from the "Industrial widgets" bundle as an example and configure it to display water consumption.
 
-{% include images-gallery.html imageCollection="water-consumption-per-hour-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="water-consumption-1" showListImageTitles="true" %}
 
 ### Water consumption chart
 
-Now we need to visualize the water consumption data for the last 12 hours. Earlier, we added a similar widget to track power consumption. Therefore, let's copy the ["Power consumption history" widget](#power-consumption-chart), insert it into the "water_sensor" state, and change its data source to water consumption.
+Now we need to add a widget to visualize historical data on water consumption. Previously, we added a similar widget for tracking [power consumption](#power-consumption-chart).
+Let&#39;s copy the ["Power consumption history" widget](#power-consumption-chart), paste it into the **water_sensor** state, and change the data source to display water consumption.
 
 {% include images-gallery.html imageCollection="water-consumption-range-chart-1" showListImageTitles="true" %}
 
 ### Battery level widget
 
-And lastly in this tutorial, we will add the "Battery charge" widget. It will display the battery charge level in the "Water Flow Meter" device.
+And lastly in this lesson, we will add the "Battery charge" widget. It will display the battery charge level of the "Water Flow Meter" device.
 
 {% include images-gallery.html imageCollection="battery-charge-1" showListImageTitles="true" %}
 
-Now you can track water usage per hour, over the last 12 hours, and control the battery level in the "Water Flow Meter" device.
+The state for the "Water Flow Meter" device has been configured. 
+Monitor water consumption for the current day, track historical data on hourly water consumption, and control the battery charge level of the "Water Flow Meter" device.
 
 {% include images-gallery.html imageCollection="water-flow-meter-final" %}
 
@@ -467,8 +506,8 @@ Finally, your dashboard should look like this:
 
 ## Next step
 
-At this stage, the development of our dashboard is complete. In the next lesson, we will share this dashboard with customers.
-When you are ready to proceed, simply click the button below.
+In the next lesson, you will learn how to configure notification rules, add the "Alarms table" widget, and manage alarm notifications.
+If you&#39;re ready to proceed, click the button below.
 
 <br>
-<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="n-button add-device">Lesson 4: Share dashboard with customer</a></p>
+<p><a href="/docs/{{docsPrefix}}user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/" class="button">Lesson 4: Alarm management</a></p>
