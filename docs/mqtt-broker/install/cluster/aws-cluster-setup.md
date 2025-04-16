@@ -123,7 +123,7 @@ One of the ways to do it is by following [this](https://docs.aws.amazon.com/Amaz
 
 **Note**: Some recommendations:
 
-* Make sure your PostgreSQL version is 15.x;
+* Make sure your PostgreSQL version is 16.x;
 * Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
 * Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
 * Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
@@ -145,7 +145,7 @@ You should see the similar image:
 
 **Note**: Some recommendations:
 
-* Apache Kafka version can be safely set to the 3.5.1 version as TBMQ is fully tested on it;
+* Apache Kafka version can be safely set to the 3.7.0 version as TBMQ is fully tested on it;
 * Use m5.large or similar instance types;
 * Consider creation of custom cluster configuration for your MSK. It will make change of Kafka parameters easier;
 * Use default 'Monitoring' settings or enable 'Enhanced topic-level monitoring'.
