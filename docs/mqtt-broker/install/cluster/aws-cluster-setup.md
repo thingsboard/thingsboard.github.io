@@ -62,7 +62,7 @@ tbmq-redis-link-configure:
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 This guide will help you to set up TBMQ in AWS EKS.
 

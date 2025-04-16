@@ -107,9 +107,20 @@ It is useful when clients connect to TBMQ with the authentication enabled.
 For every connection, the request is made to find MQTT client credentials that can authenticate the client.
 Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once.
 
-In order to set up the Redis, follow this [guide](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis).
+{% capture redis-azure-version %}
+**Note:** Starting from **TBMQ v2.1.0**, Redis 7.2.5 is the officially supported version for third-party Redis deployments. 
+Please be aware that, as of now, only the **Enterprise** and **Enterprise Flash** SKUs of Azure Cache for Redis support Redis 7.2.x.
+The Basic, Standard, and Premium SKUs continue to support only up to **Redis 6.x**. To ensure full compatibility, we recommend using an 
+Enterprise-tier SKU to ensure proper alignment with the Redis 7.2.5 features and behavior expected by TBMQ.
+{% endcapture %}
+{% include templates/info-banner.md content=redis-azure-version %}
 
-Another way to do this is by using `az` tool:
+In order to set up the Redis, follow one of the following guides:
+
+ - [Quickstart: Create a Redis Enterprise cache (Recommended)](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis-enterprise)
+ - [Quickstart: Create an open-source Redis cache](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
+
+For the open-source (legacy) Redis cache, we provide alternative instructions using the `az` tools, extracted from the official Azure documentation:
 
 ```bash
 az redis create --name $TB_REDIS_NAME --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP --sku basic --vm-size C0 --enable-non-ssl-port
