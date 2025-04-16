@@ -8,7 +8,7 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v2.1.0 (March ?, 2025)
+## v2.1.0 (April ?, 2025)
 
 Minor release with the following features, improvements, and bug fixes.
 
@@ -43,6 +43,10 @@ Minor release with the following features, improvements, and bug fixes.
 **We welcome our new contributors:**
 
   * @Nanabell made their first contribution in [#205](https://github.com/thingsboard/tbmq/pull/205)
+
+**Third-party versions update:**
+
+  * [#218](https://github.com/thingsboard/tbmq/pull/218) Bump Kafka, Redis and PostgreSQL versions by @ShvaykaD.
 
 ## v2.0.1 (December 31, 2024)
 

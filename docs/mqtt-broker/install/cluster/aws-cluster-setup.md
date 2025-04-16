@@ -426,30 +426,27 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ## Upgrading
 
-Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
-for detailed information on the latest changes.
+{% include templates/mqtt-broker/upgrade/upgrading.md %}
 
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_CommonTasks.BackupRestore.html).
 
-### Upgrade to 1.3.0
+### Upgrade to 2.1.0
 
-{% include templates/mqtt-broker/install/migration.md %}
+{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
 
 ### Upgrade to 2.0.0
 
 For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-amazon-elasticache-redis-configuration) to complete the installation.
 Only then you can proceed with the [upgrade](#run-upgrade).
 
-### Upgrade to 2.1.0
+### Upgrade to 1.3.0
 
-#### Upgrade third-parties (Recomended)
+{% include templates/mqtt-broker/install/migration.md %}
 
-{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release.md %}
-
-#### Run upgrade
+### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
 
@@ -465,27 +462,11 @@ git pull origin {{ site.release.broker_branch }}
 After that, execute the following command:
 
 {% capture tabspec %}tbmq-upgrade
-tbmq-upgrade-without-from-version,Since 2.1.0,shell,resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh
-tbmq-upgrade-with-from-version,Before 2.1.0,markdown,resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md{% endcapture %}
+tbmq-upgrade-without-from-version,Since v2.1.0,shell,resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh
+tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md{% endcapture %}
 {% include tabs.html %}
 
-
-**Note**: You may optionally stop the TBMQ pods while you run the upgrade of the database with the below command.
-
-```bash
-./k8s-delete-tbmq.sh
-```
-{: .copy-code}
-
-This will cause downtime, but will make sure that the DB state will be consistent after the update.
-Most of the updates do not require the TBMQ to be stopped.
-
-Once completed, execute deployment of the resources again. This will cause rollout restart of the TBMQ with the newest version.
-
-```bash
-./k8s-deploy-tbmq.sh
-```
-{: .copy-code}
+{% include templates/mqtt-broker/upgrade/stop-tbmq-pods-before-upgrade.md %}
 
 ## Cluster deletion
 
