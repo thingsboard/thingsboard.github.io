@@ -40,7 +40,7 @@ You’ll need to set up PostgreSQL on Azure. You may follow [this](https://learn
 but take into account the following requirements:
 
 * Keep your postgresql password in a safe place. We will refer to it later in this guide using YOUR_AZURE_POSTGRES_PASSWORD;
-* Make sure your Azure Database for PostgreSQL version is 15.x;
+* Make sure your Azure Database for PostgreSQL version is 16.x;
 * Make sure your Azure Database for PostgreSQL instance is accessible from the TBMQ cluster;
 * Make sure you use "thingsboard_mqtt_broker" as the initial database name.
 
@@ -52,7 +52,7 @@ Another way by which you can create Azure Database for PostgreSQL is using az to
 az postgres flexible-server create --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP \
   --name $TB_DATABASE_NAME --admin-user POSTGRESS_USER --admin-password POSTGRESS_PASS \
   --public-access 0.0.0.0 --storage-size 32 \
-  --version 15 -d thingsboard_mqtt_broker
+  --version 16 -d thingsboard_mqtt_broker
 ```
 {: .copy-code}
 
@@ -85,7 +85,7 @@ Example of response:
   "resourceGroup": "TBMQResources",
   "skuname": "Standard_D2s_v3",
   "username": "postgres",
-  "version": "15"
+  "version": "16"
 }
 ```
 
@@ -107,9 +107,20 @@ It is useful when clients connect to TBMQ with the authentication enabled.
 For every connection, the request is made to find MQTT client credentials that can authenticate the client.
 Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once.
 
-In order to set up the Redis, follow this [guide](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis).
+{% capture redis-azure-version %}
+**Note:** Starting from **TBMQ v2.1.0**, Redis 7.2.5 is the officially supported version for third-party Redis deployments. 
+Please be aware that, as of now, only the **Enterprise** and **Enterprise Flash** SKUs of Azure Cache for Redis support Redis 7.2.x.
+The Basic, Standard, and Premium SKUs continue to support only up to **Redis 6.x**. To ensure full compatibility, we recommend using an 
+Enterprise-tier SKU to ensure proper alignment with the Redis 7.2.5 features and behavior expected by TBMQ.
+{% endcapture %}
+{% include templates/info-banner.md content=redis-azure-version %}
 
-Another way to do this is by using `az` tool:
+In order to set up the Redis, follow one of the following guides:
+
+ - [Quickstart: Create a Redis Enterprise cache (Recommended)](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis-enterprise)
+ - [Quickstart: Create an open-source Redis cache](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
+
+For the open-source (legacy) Redis cache, we provide alternative instructions using the `az` tools, extracted from the official Azure documentation:
 
 ```bash
 az redis create --name $TB_REDIS_NAME --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP --sku basic --vm-size C0 --enable-non-ssl-port
@@ -276,18 +287,21 @@ kubectl apply -f receipts/https-load-balancer.yml
 
 ## Upgrading
 
-Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
-for detailed information on the latest changes.
+{% include templates/mqtt-broker/upgrade/upgrading.md %}
 
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-backup-restore).
 
+### Upgrade to 2.1.0
+
+{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
+
 ### Upgrade to 2.0.0
 
 For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-azure-cache-for-redis) to complete the installation.
-Only then can you proceed with the [upgrade](#run-upgrade).
+Only then you can proceed with the [upgrade](#run-upgrade).
 
 ### Upgrade to 1.3.0
 
@@ -306,17 +320,14 @@ git pull origin {{ site.release.broker_branch }}
 
 {% include templates/mqtt-broker/install/upgrade-hint.md %}
 
-After that execute the following commands:
+After that, execute the following command:
 
-```bash
-./k8s-delete-tbmq.sh
-./k8s-upgrade-tbmq.sh --fromVersion=FROM_VERSION
-./k8s-deploy-tbmq.sh
-```
-{: .copy-code}
+{% capture tabspec %}tbmq-upgrade
+tbmq-upgrade-without-from-version,Since v2.1.0,shell,resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh
+tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md{% endcapture %}
+{% include tabs.html %}
 
-Where `FROM_VERSION` - from which version upgrade should be started.
-See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
+{% include templates/mqtt-broker/upgrade/stop-tbmq-pods-before-upgrade.md %}
 
 ## Cluster deletion
 

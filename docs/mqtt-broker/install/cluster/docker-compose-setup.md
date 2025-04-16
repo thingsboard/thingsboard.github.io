@@ -120,13 +120,16 @@ Afterward, execute the next command to apply the changes for the container:
 
 ## Upgrading
 
-Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
-for detailed information on the latest changes.
+{% include templates/mqtt-broker/upgrade/upgrading.md %}
 
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/docker/backup-restore/README.md).
+
+### Upgrade to 2.1.0
+
+{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
 
 ### Upgrade to 1.3.0
 
@@ -146,17 +149,12 @@ Make sure `TBMQ_VERSION` in .env file is set to the target version (e.g., set it
 
 {% include templates/mqtt-broker/install/upgrade-hint.md %}
 
-After that execute the following commands:
+After that, execute the following commands:
 
-```bash
-./scripts/docker-stop-services.sh
-./scripts/docker-upgrade-tbmq.sh --fromVersion=FROM_VERSION
-./scripts/docker-start-services.sh
-```
-{: .copy-code}
-
-Where `FROM_VERSION` - from which version upgrade should be started. 
-See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
+{% capture tabspec %}tbmq-upgrade
+tbmq-upgrade-without-from-version,Since v2.1.0,shell,resources/upgrade-options/docker-compose-upgrade-tbmq-without-from-version.md,/docs/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-without-from-version.md
+tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version.md,/docs/mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version.md{% endcapture %}
+{% include tabs.html %}
 
 ## Generate certificate for HTTPS
 

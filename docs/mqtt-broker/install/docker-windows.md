@@ -11,13 +11,13 @@ description: Installing TBMQ using Docker (Windows)
 This guide will help you to install and start standalone TBMQ using Docker on Windows.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).
 
-### Prerequisites
+## Prerequisites
 
 To run TBMQ on a single machine you will need at least 2Gb of RAM.
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
 
-### Installation
+## Installation
 
 Execute the following commands to download the script that will install and start TBMQ:
 
@@ -56,7 +56,7 @@ Once the installation process is complete you can access TBMQ UI by visiting the
 
 {% include templates/mqtt-broker/login.md %}
 
-### Logs, stop and start commands
+## Logs, stop and start commands
 
 In case of any issues you can examine service logs for errors.
 For example to see TBMQ logs execute the following command:
@@ -80,17 +80,20 @@ docker compose start
 ```
 {: .copy-code}
 
-### Upgrading
+## Upgrading
 
-Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/) 
-for detailed information on the latest changes.
+{% include templates/mqtt-broker/upgrade/upgrading.md %}
 
-#### Backup and restore (Optional)
+### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade. 
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/msa/tbmq/configs/README.md).
 
-#### Upgrade to 2.0.0
+### Upgrade to 2.1.0
+
+{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release.md %}
+
+### Upgrade to 2.0.0
 
 For the TBMQ 2.0.0 release, the installation scripts have been updated to include Redis configuration.
 
@@ -215,11 +218,11 @@ Once this is done, run the script to apply the changes:
 This will restart TBMQ with Redis enabled. Afterward, you can proceed with the upgrade process.
 Please [contact us](https://github.com/thingsboard/tbmq/issues), so we can answer any questions and provide our help if needed.
 
-#### Upgrade to 1.3.0
+### Upgrade to 1.3.0
 
 {% include templates/mqtt-broker/install/migration.md %}
 
-#### Run upgrade
+### Run upgrade
 
 In order to update to the latest version, execute the following commands:
 
@@ -231,6 +234,6 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ si
 
 **NOTE**: replace `redis_url`, `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}
