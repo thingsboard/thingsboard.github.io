@@ -10,10 +10,9 @@ The use of SCADA systems allows operators to monitor drilling parameters in real
 <br>
 <object width="100%" data="/images/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
 
-<br>
-To understand how the SCADA Drilling system template works, let&#39;s start by installing it.
-
 ## Install solution template
+
+To understand how the SCADA Drilling system template works, let&#39;s start by installing it.
 
 You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
 The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
@@ -30,7 +29,7 @@ The SCADA Oil & Gas Drilling system includes:
 
 - **Devices** – Sensors and actuators installed on drilling equipment. They collect data on drilling parameters such as rotation speed, tension, fluid level, and other indicators.
 - **Modbus** protocol – The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
-- **Gateway** – A device that transmits data from sensors to the cloud platform. It converts and relays data over the network for further processing.
+- **Gateway** – A device that transmits data from sensors to ThingsBoard platform. It converts and relays data over the network for further processing.
 - **ThingsBoard** – An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
 - **Dashboard visualization** – SCADA dashboards provide a clear representation of all drilling processes, enabling real-time monitoring and informed decision-making.
 
@@ -42,9 +41,7 @@ The system features interactive graphs, alarm logs, and notifications, helping t
 
 ![image](/images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png)
 
-<br>
-
-**Key features:**
+**Dashboard structure:**
 
 - **Main drilling SCADA system state** – Real-time monitoring of drilling parameters (speed, depth, tension, flow rate) with control over pump, rotor, and preventer.
 - **Data monitoring SCADA system state** – Tracks drill bit position, well pressure, mud flow, mechanical tension, drilling performance, equipment status, and environmental conditions while analyzing temperature, vibration, and gas levels to prevent failures.
