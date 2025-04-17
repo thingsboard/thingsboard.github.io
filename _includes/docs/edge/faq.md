@@ -175,12 +175,12 @@ Some useful references include <a href="https://github.com/mqtt/mqtt.github.io/w
 <p>This means that Edge support is not bundled with the license. For now, we provide basic support to customers with more than 25 Edge licenses of any type.</p>
 
 ### Refund and Delivery Policy
-<p>Refund Policy</p>
+<p><b>Refund Policy</b></p>
 <p>The License fee is non-refundable, regardless of any circumstances. 
 Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, Stripe will keep the balance. 
 After a certain time period (about an hour) positive Amount due with the remain credits will appear in Billing section of License portal. 
 This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.</p>
-<p>Delivery Policy</p>
+<p><b>Delivery Policy</b></p>
 <p>The software is available for download and installation from our website. 
 See <a href="/docs/user-guide/install/pe/edge/installation-options/" target="_blank">Installation Guides</a>for more details. 
 In order to activate the software you will need to obtain the license key. 
