@@ -127,10 +127,6 @@ For further guidance, follow the [next instructions](https://github.com/thingsbo
 
 {% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
 
-### Upgrade to 1.3.0
-
-{% include templates/mqtt-broker/install/migration.md %}
-
 ### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:

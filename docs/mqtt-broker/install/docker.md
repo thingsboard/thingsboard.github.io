@@ -224,10 +224,6 @@ Once this is done, run the script to apply the changes:
 This will restart TBMQ with Redis enabled. Afterward, you can proceed with the upgrade process.
 Please [contact us](https://github.com/thingsboard/tbmq/issues), so we can answer any questions and provide our help if needed.
 
-### Upgrade to 1.3.0
-
-{% include templates/mqtt-broker/install/migration.md %}
-
 ### Run upgrade
 
 In order to update to the latest version, execute the following commands:

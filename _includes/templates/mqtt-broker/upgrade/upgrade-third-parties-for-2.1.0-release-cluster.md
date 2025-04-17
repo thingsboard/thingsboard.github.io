@@ -7,12 +7,12 @@ With v2.1.0, TBMQ updates the versions of key third-party dependencies, includin
 | **Kafka**      | 3.5.1            | 3.7.0           |
 
 We **strongly recommend** aligning your environment with the updated third-party versions to ensure full compatibility with this release.
+Alternatively, you may proceed without upgrading, but compatibility is only guaranteed with the recommended versions.
 
 {% capture third-party-upgrade %}
-We do not provide step-by-step upgrade documentation for third-party services.
-Please refer to the appropriate resources from your infrastructure or service provider when upgrading.
+We do not provide step-by-step upgrade instructions for third-party services.
+For such procedures, please refer to the official documentation of the respective platform or, in the case of managed services, consult your service provider’s resources.
 {% endcapture %}
 {% include templates/info-banner.md content=third-party-upgrade %}
 
 Once your third-party services are updated, you can proceed with the [upgrade](#run-upgrade).
-Alternatively, you may proceed without upgrading, but compatibility is only guaranteed with the recommended versions.

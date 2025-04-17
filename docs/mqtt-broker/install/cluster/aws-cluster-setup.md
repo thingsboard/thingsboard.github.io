@@ -442,10 +442,6 @@ For further guidance, follow the [next instructions](https://docs.aws.amazon.com
 For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-amazon-elasticache-redis-configuration) to complete the installation.
 Only then you can proceed with the [upgrade](#run-upgrade).
 
-### Upgrade to 1.3.0
-
-{% include templates/mqtt-broker/install/migration.md %}
-
 ### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:

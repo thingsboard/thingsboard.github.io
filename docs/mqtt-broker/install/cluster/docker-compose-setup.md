@@ -118,6 +118,13 @@ Afterward, execute the next command to apply the changes for the container:
 ```
 {: .copy-code}
 
+To reload HAProxy's configuration without restarting the Docker container you can send the HUP signal to this process (PID 1):
+
+```
+docker exec -it haproxy-certbot sh -c "kill -HUP 1"
+```
+{: .copy-code}
+
 ## Upgrading
 
 {% include templates/mqtt-broker/upgrade/upgrading.md %}
@@ -130,10 +137,6 @@ For further guidance, follow the [next instructions](https://github.com/thingsbo
 ### Upgrade to 2.1.0
 
 {% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
-
-### Upgrade to 1.3.0
-
-{% include templates/mqtt-broker/install/migration.md %}
 
 ### Run upgrade
 
