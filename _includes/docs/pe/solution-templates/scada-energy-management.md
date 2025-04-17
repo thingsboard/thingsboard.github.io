@@ -21,6 +21,16 @@ All of this is showcased in our SCADA Energy solution, demonstrating how easily 
 - **Smart buildings**. Improves energy efficiency in commercial and residential buildings by managing lighting, HVAC, and electrical systems.
 - **Data centers**. Monitors energy usage, ensures continuous power delivery, and manages backup systems to avoid downtime.
 
+## System components
+
+The SCADA Energy management system includes:
+
+- **Devices**. Sensors and actuators installed on energy generation sources. They collect and transmit data such as the condition of solar panels, rotor speed of a wind turbine, input and output voltage of a transformer, generator performance metrics, and many other parameters.
+- **Modbus protocol**. The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
+- **Gateway**. A device that transmits data from sensors to ThingsBoard platform. It converts and relays data over the network for further processing.
+- **ThingsBoard**. An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
+- **Dashboard visualization**. Track solar, wind, battery, generator, and consumption data in a single unified dashboard, enabling energy managers to make smarter and faster decisions.
+
 ## Install solution template
 
 To understand how the SCADA Energy management template works, let's start by installing it.
@@ -33,16 +43,6 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 - Once done, click "**Close**" to complete the setup and proceed to the dashboard.
 
 {% include images-gallery.html imageCollection="go-to-scada-energy-management-solution-templates" %}
-
-## System components
-
-The SCADA Energy management system includes:
-
-- **Devices**. Sensors and actuators installed on energy generation sources. They collect and transmit data such as the condition of solar panels, rotor speed of a wind turbine, input and output voltage of a transformer, generator performance metrics, and many other parameters.
-- **Modbus protocol**. The primary communication protocol for data exchange between devices. It ensures reliable connection and seamless integration of equipment with the SCADA system.
-- **Gateway**. A device that transmits data from sensors to ThingsBoard platform. It converts and relays data over the network for further processing.
-- **ThingsBoard**. An IoT platform where data is collected, analyzed, and visualized. It allows operators to access information and set up alerts for critical parameter changes.
-- **Dashboard visualization**. Track solar, wind, battery, generator, and consumption data in a single unified dashboard, enabling energy managers to make smarter and faster decisions.
 
 ## Dashboard
 
