@@ -15,7 +15,7 @@ The goal of this tutorial is to demonstrate the basic usage of the most popular 
 
 ## Step 1. Provision device
 
-As an example, let's add a device that will transmit the following data to ThingsBoard platform: the device's name and temperature readings as telemetry.
+As an example, let&#39;s add a device that will transmit the following data to ThingsBoard platform: the device&#39;s name and temperature readings as telemetry.
 
 To add a new device, follow these steps:
  
@@ -36,7 +36,7 @@ You may also use:
 
 ## Step 2. Connect device
 
-Now, let's check the connection of our device to the ThingsBoard platform.
+Now, let&#39;s check the connection of our device to the ThingsBoard platform.
 To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
@@ -48,7 +48,7 @@ You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you
 
 A dashboard in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
 
-Let's create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
+Let&#39;s create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
 
 ### Step 3.1 Create an empty dashboard
 
@@ -65,7 +65,7 @@ To add the table widget we need to select it from the widget library. Widgets ar
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
 
-Let's add your first widget:
+Let&#39;s add your first widget:
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
@@ -103,25 +103,24 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 Now it's time to configure alarm rules and raise some alarms. 
 
-**Note:** in this documentation, we are using a single device as a data source for the widgets. 
+> **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
-You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
+You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading is greater than 25 degrees.
-For this purpose, we should edit the device profile and add a new alarm rule. 
+We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
+To do this, we should edit the device profile and add a new alarm rule.
 The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} for each corresponding device type but will skip this step for simplicity.
+We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 3](#step-3-configure-alarm-rules-and-trigger-an-alarm)),
-and we should send new telemetry on behalf of the device (see [Step 1.2](#step-12-connect-a-device)) to trigger the alarm.
-Note that the temperature value should be 26 or higher to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
+Now, our alarm rule is active (see [Step 3](#step-3-configure-alarm-rules-and-trigger-an-alarm)), and we should send new telemetry on behalf of the device (see [Step 1.2](#step-12-connect-a-device)) to trigger the alarm.
+> Note that the temperature value should be **26 or higher** to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
@@ -134,7 +133,7 @@ Learn more about notifications and how to configure them [here](/docs/{{docsPref
 
 {% include images-gallery.html imageCollection="notification-center" %}
 
-Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
+Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be promptly informed about any events in your IoT solution, no matter where you are.
 Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
 
 ## Step 7. Share dashboard with customers
@@ -151,13 +150,13 @@ There are two options for how Tenant Administrator can give access to a certain 
  
 #### Step 7.1 Create a customer
 
-Let's create a customer with the title "My New Customer". Please see the instructions below:
+Let&#39;s create a customer with the title "My New Customer". Please see the instructions below:
 
 {% include images-gallery.html imageCollection="step71" showListImageTitles="true" %}
 
 ### Step 7.2 Change owner of the device
 
-Let's assign the Customer as the owner of the device. We will also create a group of devices and add our device to this group.
+Let&#39;s assign the Customer as the owner of the device. We will also create a group of devices and add our device to this group.
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
@@ -165,7 +164,7 @@ Make sure that the device is assigned to your customer.
 
 {% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
 
-You can make the customer the owner of the device during its creation stage.
+You can make the customer the owner of the device during its creation stage. To do this, follow this steps:
 
 {% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
 
@@ -183,14 +182,20 @@ You can also share the dashboard with your customer or user during its creation 
 
 ### Step 7.4 Create a customer user
 
-Finally, let's create a user that will belong to the customer and will have `read-only` access to the dashboard and the device itself.
-You may optionally configure the dashboard to appear just after the user login to the platform web UI. 
+Now, let's create a user that will belong to the customer and will have `read-only` access both to the dashboard and the device itself.
+You may optionally configure the dashboard to appear just after user logs in to the platform&#39;s web UI.
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
 
 ### Step 7.5 Activate the customer user
 
-{% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
+Finally, log in to ThingsBoard as a customer user.
+
+- Paste the previously copied link into a new browser tab and press the "Enter" key. Now create a password by entering it twice and clicking "Create Password".
+- You are now logged in as a customer user. Since this user has read-only access, you can view device data and its alarms, but you cannot acknowledge or clear them.   
+To learn more about permissions and role-based access control (RBAC), click [here](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}.
+
+{% include images-gallery.html imageCollection="step75" %}
 
 ## Next steps
 
@@ -199,4 +204,3 @@ You may optionally configure the dashboard to appear just after the user login t
 ## Your feedback
 
 Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

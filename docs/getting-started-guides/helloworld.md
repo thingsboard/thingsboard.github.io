@@ -20,7 +20,7 @@ step1:
         title: 'A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
-        title: 'Congratulations on adding your first device! As you add more devices, the will be added at the top of the table, since the table automatically sorts devices by their creation time, with the newest ones first.'
+        title: 'Congratulations on adding your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
 
 step11:
     0:
@@ -30,7 +30,7 @@ step11:
 step2:
     0:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
-        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
+        title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window;'
     1:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
         title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
@@ -120,7 +120,7 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
-        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severity and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severities and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
         title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'   
@@ -257,10 +257,10 @@ step74:
 step75:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically log in as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press the "Enter" key. Now create a password by entering it twice and clicking "Create Password".'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
-        title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
+        title: 'You are now logged in as a customer user. You may browse the data and acknowledge/clear alarms.'
 
 mqttWindows:
     0:
@@ -402,17 +402,17 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 Now it's time to configure alarm rules and raise some alarms.
 
-**Note:** in this documentation, we are using a single device as a data source for the widgets. 
+> **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
-You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
+You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading is greater than 25 degrees.
-For this purpose, we should edit the device profile and add a new alarm rule. 
+We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
+To do this, we should edit the device profile and add a new alarm rule. 
 The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type but will skip this step for simplicity.
+We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
@@ -433,7 +433,7 @@ Learn more about notifications and how to configure them [here](/docs/{{docsPref
 
 {% include images-gallery.html imageCollection="notification-center" %}
 
-Additionally, the [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
+Additionally, the [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be promptly informed about any events in your IoT solution, no matter where you are.
 Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
 
 ## Step 7. Assign device and dashboard to customer
@@ -461,7 +461,7 @@ Make sure that the device is assigned to your customer.
 
 {% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
 
-You can make the customer the owner of the device during its creation stage.
+You can make the customer the owner of the device during its creation stage. To do this, follow this steps:
 
 {% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
 
@@ -473,8 +473,8 @@ Let's share our dashboard with the customer. The customer users will have read-o
 
 ### Step 7.4 Create customer user
 
-Finally, let's create a user that will belong to the customer and will have `read-only` access to the dashboard and the device.
-You may optionally configure the dashboard to appear just after user login to the platform web UI.
+Finally, let's create a user that will belong to the customer and will have `read-only` access both to the dashboard and the device.
+You may optionally configure the dashboard to appear just after user logs in to the platform&#39;s web UI.
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
 
