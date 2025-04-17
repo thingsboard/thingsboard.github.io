@@ -31,7 +31,7 @@ Learn more about **notifications** and how to configure them [here](#step-6-alar
 <br>
 You may also use:
  * [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don't need to configure each device manually;
+ * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don&#39;t need to configure each device manually;
  * [REST API](/docs/{{docsPrefix}}api/) to provision devices and other entities programmatically;
 
 ## Step 2. Connect device
@@ -69,10 +69,10 @@ Let&#39;s add your first widget:
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
-Congratulations! You've added your first widget.
+Congratulations! You&#39;ve added your first widget.
 
 In the "Entities table" widget, there are two columns. 
-The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry). 
+The first column displays the device&#39;s name, and the second column displays the value of the "temperature" key (device telemetry). 
 So, each column corresponds to an added key.
 
 Now you are able to send a new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
@@ -101,7 +101,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Now it's time to configure alarm rules and raise some alarms. 
+Now it&#39;s time to configure alarm rules and raise some alarms. 
 
 > **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
@@ -142,7 +142,7 @@ One of the most important ThingsBoard features is the ability to create end-user
 Each Customer User should see his own devices and should not be able to see devices or any other data that belongs to a different customer. 
 
 We have already created the Device (see [Step 1](#step-1-provision-device)), the Dashboard and added widgets to it (see [Step 3](#step-3-create-dashboard)).
-Now it's time to create a Customer and a Customer User and make sure they will have access to the device's data and the dashboard.
+Now it&#39;s time to create a Customer and a Customer User and make sure they will have access to the device&#39;s data and the dashboard.
 There are two options for how Tenant Administrator can give access to a certain Entity (Device, Dashboard, Asset, etc.) for a Customer:
 
 * A. Assign the Customer as the owner of the entity. This option is useful to ensure that only this customer can access the device and its data (see [Step 7.2](#step-72-change-owner-of-the-device)).
@@ -170,9 +170,9 @@ You can make the customer the owner of the device during its creation stage. To 
 
 ### Step 7.3 Share the dashboard
 
-Let's share our dashboard with the customer.
-In ThingsBoard, you can't share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
-By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we'll use the existing "All" group for this guide.
+Let&#39;s share our dashboard with the customer.
+In ThingsBoard, you can&#39;t share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
+By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we&#39;ll use the existing "All" group for this guide.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
@@ -182,7 +182,7 @@ You can also share the dashboard with your customer or user during its creation 
 
 ### Step 7.4 Create a customer user
 
-Now, let's create a user that will belong to the customer and will have `read-only` access both to the dashboard and the device itself.
+Now, let&#39;s create a user that will belong to the customer and will have `read-only` access both to the dashboard and the device itself.
 You may optionally configure the dashboard to appear just after user logs in to the platform&#39;s web UI.
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
@@ -203,4 +203,5 @@ To learn more about permissions and role-based access control (RBAC), click [her
 
 ## Your feedback
 
-Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word. 
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.
