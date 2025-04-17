@@ -783,7 +783,7 @@
                     overflow: hidden
                     vertical-align: middle
 
-        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions
+        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions, .environment-monitoring-about, .environment-monitoring-carousel, .environment-monitoring-solution-structure, smart-energy-solution-structure, .smart-energy-overview, .smart-office-about, .smart-office-carousel
             h2
                 margin-bottom: 60px
                 padding-top: 50px
@@ -917,7 +917,7 @@
                     @media screen and (max-width: 599px)
                         width: 100%
 
-        .scada-overview, .health-carousel
+        .scada-overview, .health-carousel, .environment-monitoring-carousel, .smart-office-carousel
 
             &::before
                 content: ""
@@ -929,6 +929,38 @@
                 top: -61px
                 z-index: -1
 
+        .smart-energy-overview
+            padding: 80px 0
+            margin-bottom: 40px
+
+        .smart-energy-benefits, .env-monitoring
+            padding: 100px 0
+
+        .env-monitoring
+            margin-top: 100px
+            margin-bottom: 0
+
+        .smart-energy-overview, .smart-energy-benefits, .applications.env-monitoring
+            position: relative
+            &::before
+                content: ""
+                background: #F4F8FE
+                width: 100vw
+                left: 50%
+                transform: translateX(-50%)
+                height: 100%
+                position: absolute
+                top: 0
+                z-index: -1
+
+        .smart-energy-solution-structure
+            h2
+                padding-top: 0
+
+        .env-monitoring
+            h2
+                padding-top: 0
+
         .scada-overview
             &::before
                 height: 110%
@@ -938,6 +970,8 @@
 
                 @media screen and (max-width: 599px)
                     top: -16px
+
+        .scada-overview, .smart-energy-overview
 
             .img-comp-container
                 position: relative
@@ -1083,14 +1117,14 @@
                             height: 160px
                             align-content: center
 
-        .scada-solution-structure, .health-solution-structure
+        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure
             .scheme
                 margin-bottom: 48px
 
                 img
                     width: 100%
 
-            .scada-solution-structure-cards, .health-solution-structure-cards
+            .use-cases-solution-structure-cards, .health-solution-structure-cards
                 display: flex
                 flex-direction: row
                 flex-wrap: wrap
@@ -1099,11 +1133,12 @@
                 @media screen and (max-width: 1919px)
                     gap: 24px
 
-                .scada-solution-structure-card, .health-solution-structure-card
+                .use-cases-solution-structure-card, .health-solution-structure-card
                     flex-basis: 31%
                     min-height: 392px
                     padding: 46px
                     border-radius: 24px
+                    background: #FFF
                     box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
 
                     h3
@@ -1142,6 +1177,10 @@
 
                     @media screen and (max-width: 599px)
                         height: 107%
+
+        .smart-energy-solution-structure
+            .scheme
+                margin-bottom: 100px
 
         .scada-key-functions, .health-key-functions
             margin-bottom: 0
@@ -1525,7 +1564,18 @@
                         flex: 1
                         text-align: center
 
-
+            .applications-container-small.smart-energy-applications-container-small
+                .application-block
+                    @media screen and (max-width: 599px)
+                        &:nth-of-type(odd)
+                            flex-direction: column
+                            .image
+                                padding-left: 23%
+                        &:nth-of-type(even)
+                            flex-direction: column
+                            .image
+                                padding-right: 23%
+                                padding-left: 0
         .summary
             display: flex
             flex-direction: column

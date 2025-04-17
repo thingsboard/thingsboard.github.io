@@ -1250,3 +1250,97 @@ var tb = (function () {
 	});
 })();
 
+//compare images
+(function () {
+	$(document).ready(function () {
+
+		if (!$('.img-comp-container').length) return;
+
+		$(window).on('load', function handler() {
+			$(window).off('load', handler);
+
+			function compareImages() {
+				const $container = $(".img-comp-container").first();
+				const $highPerfBlock = $(".img-comp-overlay").first();
+				const $trad = $(".traditional-background").first();
+
+				if (!$highPerfBlock.length) return;
+
+				let clicked = false;
+
+				$highPerfBlock.css({
+					maxHeight: 'unset',
+					width: ($trad.outerWidth() / 2) + "px"
+				});
+				$highPerfBlock.children().first().css({
+					maxHeight: 'unset',
+					width: $trad.outerWidth() + "px"
+				});
+				$container.css("height", $trad.outerHeight() + "px");
+
+				const $slider = $("<div><div></div></div>").addClass("img-comp-slider");
+				$highPerfBlock.parent().prepend($slider);
+				$slider.css({
+					left: ($trad.outerWidth() / 2) - ($slider.outerWidth() / 2) + "px",
+					height: $trad.outerHeight() + "px"
+				});
+
+				$slider.on("mousedown touchstart", slideReady);
+				$(window).on("mouseup touchend", slideFinish);
+
+				$(window).on("resize", function () {
+					$highPerfBlock.children().first().css({
+						width: $trad.outerWidth() + "px",
+						height: 'auto'
+					});
+					$highPerfBlock.css("width", ($trad.outerWidth() / 2) + "px");
+					$slider.css({
+						left: ($trad.outerWidth() / 2) - ($slider.outerWidth() / 2) + "px",
+						height: $trad.outerHeight() + "px"
+					});
+					$container.css("height", $trad.outerHeight() + "px");
+				});
+
+				function slideReady(e) {
+					e.preventDefault();
+					$slider.css("animation", "unset");
+					$slider.parent().css("animation", "unset");
+					clicked = true;
+					$(window).on("mousemove touchmove", slideMove);
+				}
+
+				function slideFinish() {
+					clicked = false;
+					$(window).off("mousemove touchmove", slideMove);
+				}
+
+				function slideMove(e) {
+					if (!clicked) return false;
+
+					let pos = getCursorPos(e);
+					pos = Math.max(0, Math.min(pos, $trad.outerWidth()));
+					slide(pos);
+				}
+
+				function getCursorPos(e) {
+					e = (e.originalEvent.changedTouches) ? e.originalEvent.changedTouches[0] : e;
+					const rect = $highPerfBlock[0].getBoundingClientRect();
+					let position = e.pageX - rect.left;
+					position -= window.pageXOffset;
+					return position;
+				}
+
+				function slide(x) {
+					$highPerfBlock.css("width", x + "px");
+					$slider.css("left", x - ($slider.outerWidth() / 2) + "px");
+				}
+			}
+
+			compareImages();
+		});
+	});
+})();
+
+
+
+

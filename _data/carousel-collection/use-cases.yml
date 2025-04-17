@@ -61,13 +61,13 @@ smart-metering:
 
 environment-monitoring:
   0:
-    src: "/images/usecases/environment-monitoring/em1.webp"
+    src: "/images/usecases/environment-monitoring/environment-monitoring-carousel-1.webp"
     alt: "environment monitoring 1"
   1:
-    src: "/images/usecases/environment-monitoring/em2.png"
+    src: "/images/usecases/environment-monitoring/environment-monitoring-carousel-2.webp"
     alt: "environment monitoring 2"
   2:
-    src: "/images/usecases/environment-monitoring/em3.png"
+    src: "/images/usecases/environment-monitoring/environment-monitoring-carousel-3.webp"
     alt: "environment monitoring 3"
 
 smart-office:
