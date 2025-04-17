@@ -50,6 +50,32 @@ $button-width: 208px
             background-color: $button-background-color
             color: #fff
 
+    a
+        font-weight: 500
+
+    .filled-button
+        background-color: $button-background-color
+        border-radius: 8px
+        font-size: 16px
+        font-weight: 600
+        line-height: 20.8px
+        color: #fff
+        width: $button-width
+        height: 48px
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+        &:hover
+            background-color: #fff
+            border: 1px solid $button-background-color
+            color: $button-background-color
+
+    .link-text
+        color: $button-background-color
+        text-decoration: underline
+        font-weight: 500
+
     footer
         position: relative
 
@@ -110,24 +136,6 @@ $button-width: 208px
                     min-width: 436px
                     margin-bottom: 70px
 
-                    .filled-button
-                        background-color: $button-background-color
-                        border-radius: 8px
-                        font-size: 16px
-                        font-weight: 600
-                        line-height: 20.8px
-                        color: #fff
-                        width: $button-width
-                        height: 48px
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        text-decoration: none
-                        &:hover
-                            background-color: #fff
-                            border: 1px solid $button-background-color
-                            color: $button-background-color
-
     #second-screen
         height: 600px 
         width: 100%
@@ -148,7 +156,7 @@ $button-width: 208px
             #icon-mobile
                 position: absolute
                 right: 7%
-                top: 35%
+                top: 45%
                 width: 195px
                 z-index: 2
                 box-shadow: 0px 4px 25px 5px #21252917
@@ -190,7 +198,7 @@ $button-width: 208px
                     line-height: 24.8px
                     text-align: left
                     color: #495057
-                    margin-bottom: 50px
+                    margin-bottom: 20px
                 .outline-button
                     &:hover
                         background-color: $button-background-color
@@ -212,6 +220,7 @@ $button-width: 208px
         margin-bottom: 100px
         .blue-text
             color: $button-background-color
+            font-weight: 500
         
         .benefits-title
             font-size: 48px
@@ -219,7 +228,7 @@ $button-width: 208px
             line-height: 62.4px
             text-align: center
             color: #212529
-            width: 680px
+            width: 675px
             margin-bottom: 30px
 
         .benefits-sub-title
@@ -246,15 +255,22 @@ $button-width: 208px
             padding: 20px
             border-radius: 12px
             margin: 10px 0
-            height: 260px
+            height: 287px
             display: flex
             flex-direction: column
-            justify-content: space-evenly
+            justify-content: flex-start
+            gap: 10px
 
-            img
+            .icon  
                 width: 50px
                 height: 50px
-                margin-bottom: 20px
+                border-radius: 6px
+                background: #E5F0FF
+                color: $button-background-color
+                border: 1px solid $button-background-color
+                display: flex
+                justify-content: center
+                align-items: center
 
             .title
                 font-size: 24px
@@ -270,6 +286,45 @@ $button-width: 208px
                 line-height: 24.8px
                 text-align: left
                 color: #495057
+
+    #start-your-free
+        background: url("/images/usecases/fuel-level-monitoring/start-your-background.webp")
+        background-repeat: round
+        .container
+            width: 100%
+            height: 447px
+            display: flex
+            
+            .left
+                width: 60%
+                display: flex
+                flex-direction: column
+                justify-content: center
+            
+                .side-title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    color: #212529
+                    margin-bottom: 20px
+           
+                .side-text
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: left
+                    color: #495057
+                    margin-bottom: 50px
+
+            .right
+                width: 40%
+                display: flex
+                align-items: center
+                justify-content: center
+            
+                .filled-button
+                    width: 320px
 
     #dark-section
         height: 1414px
@@ -411,6 +466,237 @@ $button-width: 208px
                     height: 537px
                     border-radius: 60px
 
+    #features
+        margin-bottom: 50px
+        .container
+            width: 100%
+            display: flex
+            flex-direction: column
+            gap: 30px
+            .title 
+                width: 821px
+                font-weight: 500
+                font-size: 65px
+                line-height: 72px
+                color: #0D1717
+
+            .side-text
+                width: 821px
+                font-weight: 400
+                font-size: 16px
+                line-height: 155%
+                color: #495057
+
+            .cards
+                display: flex
+                justify-content: space-around
+                flex-wrap: wrap
+
+                .card
+                    box-shadow: 0px 5px 15px 0px #21252940 
+                    width: 32%
+                    padding: 20px
+                    border-radius: 12px
+                    margin: 10px 0
+                    height: 315px
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-start
+                    gap: 16px
+
+                    .icon  
+                        width: 50px
+                        height: 50px
+                        border-radius: 6px
+                        background: #E5F0FF
+                        color: $button-background-color
+                        border: 1px solid $button-background-color
+                        display: flex
+                        justify-content: center
+                        align-items: center
+
+                    .card-title
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 31.2px
+                        text-align: left
+                        color: $button-background-color                
+
+                    .text
+                        font-size: 16px
+                        font-weight: 400
+                        line-height: 24.8px
+                        text-align: left
+                        color: #495057
+
+    #schedule-consultation
+        background: url("/images/usecases/fuel-level-monitoring/schedule-consultation.webp")
+        background-repeat: round
+        margin-bottom: 50px
+        .container
+            width: 100%
+            height: 447px
+            display: flex
+            .left
+                width: 60%
+                display: flex
+                flex-direction: column
+                justify-content: center
+            
+                .side-title
+                    font-size: 48px
+                    font-weight: 600
+                    line-height: 62.4px
+                    text-align: left
+                    color: #FFFFFF
+                    margin-bottom: 20px
+           
+                .side-text
+                    font-size: 16px
+                    font-weight: 400
+                    line-height: 24.8px
+                    text-align: left
+                    color: #CED4DA
+                    margin-bottom: 50px
+
+            .right
+                width: 40%
+                display: flex
+                align-items: center
+                justify-content: center
+            
+                .filled-button
+                    background-color: #FFFFFF
+                    color: #192234
+                    width: 320px
+                    &:hover
+                        border: 1px solid #fff
+                        color: #fff
+                        background-color: transparent
+
+    #bussiness-needs
+        display: flex
+        flex-direction: column
+        margin-bottom: 150px
+        .header-block
+            display: flex
+            justify-content: space-between
+            margin-bottom: 50px
+            .title 
+                width: 60%
+                font-weight: 500
+                font-size: 65px
+                line-height: 72px
+                color: #0D1717
+
+            .side-text
+                width: 40%
+                font-weight: 400
+                font-size: 16px
+                line-height: 155%
+                color: #495057
+
+        .cards
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+            .card
+                position: relative
+                display: flex
+                flex-direction: column
+                gap: 16px
+                margin: 10px 0
+                width: 49%
+                box-shadow: 0px 5px 15px 0px #21252940
+                border-radius: 12px
+                padding: 20px
+                height: 350px
+                .card-icon
+                    position: absolute
+                    top: 0
+                    right: 0
+                    overflow: hidden
+                    img
+                        width: 140px
+                        height: auto
+                        transform: translate(15%, -15%)
+
+                .card-container
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+                    margin-top: 130px
+                    height: 100%
+                    .title
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 31.2px
+                        text-align: left
+                        color: #212529                
+
+                    .text
+                        font-size: 16px
+                        font-weight: 400
+                        line-height: 24.8px
+                        text-align: left
+                        color: #495057
+
+    #resources
+        margin-bottom: 50px
+        .container
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            gap: 60px
+            .side-title
+                font-size: 48px
+                font-weight: 600
+                line-height: 62.4px
+                text-align: left
+                color: #212529
+                margin-bottom: 20px
+            .cards
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .card
+                    width: 32%
+                    border-radius: 20px
+                    display: flex
+                    flex-direction: column 
+                    justify-content: space-between 
+                    height: 602px
+                    background: #F8F9FE
+                    box-shadow: 0px 5px 15px 0px #21252940
+
+                    .image-block
+                        width: 100%
+                        img
+                            width: 100%
+                            border-radius: 20px 20px 0 0
+
+                    .info-block
+                        display: flex
+                        height: 320px
+                        justify-content: space-between
+                        flex-direction: column
+                        padding: 24px
+                        .title
+                            color: #212529
+                            font-weight: 600
+                            font-size: 24px
+                            text-align: left
+
+                        .text
+                            font-weight: 400
+                            font-size: 16px
+                            letter-spacing: 0%
+                            color: #495057
+
+                        .outline-button
+                            width: 100%
+
     #connectivity
         margin-bottom: 150px
         .container
@@ -451,6 +737,8 @@ $button-width: 208px
                     margin-bottom: 20px
 
     #get-in-touch
+        background: url("/images/usecases/fuel-level-monitoring/start-your-background.webp")
+        background-repeat: round
         position: relative
         display: flex
         justify-content: center
@@ -473,9 +761,13 @@ $button-width: 208px
             max-width: 470px
 
         .contact-form
-            padding-top: 30px
+            display: flex
+            align-items: center
             z-index: 2
             width: 400px
+            fieldset
+                width: 100%
+
             .form-element
                 margin-bottom: 28px
                 label
@@ -672,6 +964,12 @@ $button-width: 208px
                         &.dark-map4-image 
                             bottom: 20%
 
+        #features
+            .container
+                .cards
+                    .card
+                        height: 390px
+
         #connectivity
             .container
                 .left
@@ -685,17 +983,6 @@ $button-width: 208px
                 width: 300px
 
     @media screen and (max-width: $step4)
-        .noToc
-            #content-get-in-touch
-                padding: 0 50px
-                max-width: 1000px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 3fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
-                align-items: center
-
         #first-screen
             .hero-container 
                 #hero-content
@@ -777,6 +1064,20 @@ $button-width: 208px
                         &.dark-map3-image 
                             bottom: 28%
 
+        #features
+            .container
+                .cards
+                    .card
+                        height: 421px
+                        padding: 16px
+
+        #bussiness-needs
+            .container
+                .cards
+                    .card
+                        .card-container
+                            margin-top: 90px
+
         #connectivity
             .container
                 min-height: 450px
@@ -795,15 +1096,22 @@ $button-width: 208px
                     .text
                         margin-bottom: 20px
 
-        #get-in-touch
-            padding: 0px 0 100px 0
+        #resources
+            .container
+                .cards
+                    .card
+                        height: 530px
+                        justify-content: space-between
+                        .info-block
+                            padding: 16px
 
+        #get-in-touch
+            padding: 100px 0
             .info
-                grid-area: info
+                width: 60%
                 margin-right: 0px
 
             .side-title
-                grid-area: side-title
                 span
                     text-wrap: nowrap
                     width: 210px
@@ -816,9 +1124,6 @@ $button-width: 208px
 
             .section-text
                 max-width: 100%
-
-            .contact-form
-                grid-area: contact-form
             
     @media screen and (max-width: $step3)
         .noToc
@@ -834,6 +1139,7 @@ $button-width: 208px
                 #hero-content
                     .title
                         font-size: 50px
+                        max-width: 530px
 
         #second-screen 
             height: 500px
@@ -872,12 +1178,27 @@ $button-width: 208px
                         top: 55%
                         right: 10%
 
+        #start-your-free
+            .container
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .left
+                    width: 100%
+                    .side-title
+                        font-size: 40px
+                        line-height: 52px
+                .right
+                    width: 100%
+                    justify-content: start
+
         #benefits-screen
             .benefits-title
                 font-size: 40px
 
             .card
                 width: 80%
+                height: 230px
 
         #dark-section 
             background-size: auto
@@ -896,7 +1217,52 @@ $button-width: 208px
                 
                 .images
                     display: none
-        
+
+        #features
+            .container
+                .title
+                    max-width: 100%
+                    font-size: 40px
+                    line-height: 52px
+                .side-text
+                    max-width: 100%
+                .cards
+                    .card
+                        width: 100%
+                        height: 240px
+
+        #schedule-consultation
+            .container
+                display: flex
+                flex-direction: column
+                justify-content: center
+                .left
+                    width: 100%
+                    align-items: flex-start
+
+                .right
+                    width: 100%
+                    justify-content: flex-start
+
+        #bussiness-needs
+            margin-bottom: 70px
+            .container
+                .header-block
+                    flex-direction: column
+                    gap: 10px
+                    margin-bottom: 30px
+                    .title
+                        width: 100%
+                        font-size: 40px
+                        line-height: 52px
+
+                    .side-text
+                        width: 100%
+                
+                .cards
+                    .card
+                        width: 100%
+
         #connectivity
             .container
                 min-height: 900px
@@ -922,6 +1288,21 @@ $button-width: 208px
 
                     .text
                         margin-bottom: 20px
+
+        #resources
+            .container
+                .side-title
+                    font-size: 40px
+                    line-height: 52px
+                    text-align: center
+                    margin-bottom: 0px
+
+                .cards
+                    flex-direction: column
+                    gap: 20px
+                    .card
+                        width: 100%
+                        height: 522px
 
         #get-in-touch
             padding: 0px 0 100px 0
@@ -952,6 +1333,10 @@ $button-width: 208px
         .outline-button
             width: 100%
 
+        .filled-button
+            width: 100%
+            margin-bottom: 10px
+
         #first-screen
             .hero-container 
                 #hero-content
@@ -964,13 +1349,6 @@ $button-width: 208px
                         min-width: 100%
                         display: flex
                         flex-direction: column
-
-                        .filled-button
-                            width: 100%
-                            margin-bottom: 10px
-
-                        .outline-button
-                            width: 100%
 
         #second-screen
             height: 220px
