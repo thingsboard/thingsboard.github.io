@@ -4,40 +4,40 @@ title: Edge Integrations
 description: Edge Integrations Documentation
 converterTemplateCreation:
     0:
-        image: /images/pe/edge/integrations/create-converter-step-1.png
+        image: /images/pe/edge/integrations/create-converter-step-1.webp
         title: 'Create Converter template'
     1:
-        image: /images/pe/edge/integrations/create-converter-step-2.png
+        image: /images/pe/edge/integrations/create-converter-step-2.webp
         title: 'Converter template configuration'
 
 integrationTemplateCreation:
     0:
-        image: /images/pe/edge/integrations/create-integration-step-1.png
+        image: /images/pe/edge/integrations/create-integration-step-1.webp
         title: 'Create Integration template'
     1:
-        image: /images/pe/edge/integrations/create-integration-step-2.png
+        image: /images/pe/edge/integrations/create-integration-step-2.webp
         title: 'Integration template configuration'
 
 placeholderFeature:
     0:
-        image: /images/pe/edge/integrations/placeholder-feature-step-1.png
+        image: /images/pe/edge/integrations/placeholder-feature-step-1.webp
         title: 'Add <b>ipAddress</b> attribute to Edge'
     1:
-        image: /images/pe/edge/integrations/placeholder-feature-step-2.png
+        image: /images/pe/edge/integrations/placeholder-feature-step-2.webp
         title: 'Add placeholder <b>${{ipAddress}}</b> to Integration configuration'
     2:
-        image: /images/pe/edge/integrations/placeholder-feature-step-3.png
+        image: /images/pe/edge/integrations/placeholder-feature-step-3.webp
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     3:
-        image: /images/pe/edge/integrations/placeholder-feature-step-4.png
+        image: /images/pe/edge/integrations/placeholder-feature-step-4.webp
         title: 'Assign Integration to the Edge'
     4:
-        image: /images/pe/edge/integrations/placeholder-feature-step-5.png
+        image: /images/pe/edge/integrations/placeholder-feature-step-5.webp
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 missingPlaceholder:
     0:
-        image: /images/pe/edge/integrations/missing-placeholder.png
+        image: /images/pe/edge/integrations/missing-placeholder.webp
         title: 'Add ipAddress attribute to Edge'
 
 ---
