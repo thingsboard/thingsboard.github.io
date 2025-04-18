@@ -361,11 +361,15 @@ redirect_from: "docs/services/development-services/"
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();
         var email = $('input[name=email]', form).val();
+        var message = $('textarea[name=message]', form).val();
 
         if (!validateValue('Name', name)) {
             return false;
         }
         if (!validateValue('Email Address', email)) {
+            return false;
+        }
+        if (!validateValue('Message', message)) {
             return false;
         }
 
