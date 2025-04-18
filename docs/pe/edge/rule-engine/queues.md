@@ -5,5 +5,5 @@ description: Queues
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
-{% assign cloudDocsPrefix = "pe/" %}
+{% assign peDocsPrefix = "pe/" %}
 {% include docs/edge/user-guide/rule-engine/queues.md %}

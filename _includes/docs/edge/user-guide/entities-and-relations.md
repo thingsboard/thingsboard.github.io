@@ -9,8 +9,8 @@ In **ThingsBoard**, an **entity** is a core component that represents a physical
 
 ### Available Edge Entities
 
-* **Devices:** Physical IoT devices (sensors, actuators, controllers).
-* **Assets:** A real world object that helps group and manage the IoT ecosystem (e.g., machines, buildings, factories).
+* **Devices:** Physical IoT devices (_sensors, actuators, controllers_).
+* **Assets:** A real world object that helps group and manage the IoT ecosystem (_e.g., machines, buildings, factories_).
 * **Customers:** Organizations or users assigned to specific devices/assets.
 * **Users (for PE):** People who manage and interact with edge resources. 
 * **Entity Views:** Predefined views of selected entity data.
@@ -18,7 +18,7 @@ In **ThingsBoard**, an **entity** is a core component that represents a physical
 * **Dashboards:** Visualizations of telemetry and device data.
 * **Rule Chains:** Local data processing and automation logic.
 
-Most entities can be created on the **Edge**, except for **Customers**, **Users**, and **Rule Chain** entities. These entities can be created on the **Server** and then [assigned](/docs/{{docsPrefix}}config/management/#entities-management){: target="_blank"} to the **Edge instance**.
+Most entities can be created on the **Edge**, except for **Customers**, and **Users** entities. These entities can be created on the **Server** and then [assigned](/docs/{{docsPrefix}}config/management/#entities-management){: target="_blank"} to the **Edge instance**.
 
 The **Devices** and **Assets** entities have the configuration templates as [Device Profiles](/docs/{{peDocsPrefix}}user-guide/device-profiles/){: target="_blank"} and [Asset Profiles](/docs/{{peDocsPrefix}}user-guide/asset-profiles/){: target="_blank"}, respectively. 
 
@@ -47,7 +47,7 @@ Example:
   "status": "ON"
 }
 ```
-You can learn more about working with telemetry data [here](/{{peDocsPrefix}}docs/user-guide/telemetry/).
+You can learn more about working with telemetry data [here](/{{peDocsPrefix}}docs/user-guide/telemetry/){: target="_blank"}.
 
 By default, **ThingsBoard Edge** synchronizes telemetry data with the **ThingsBoard Cloud**. 
 During an internet outage, telemetry is stored **locally** and sent to the **Cloud** once the connection is restored.
