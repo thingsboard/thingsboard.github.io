@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: IoT environment monitoring solutions with ThingsBoard
-description: IoT environment monitoring solutions with ThingsBoard
+title: IoT smart office solutions with ThingsBoard
+description: IoT smart office solutions with ThingsBoard
 notitle: "true"
 includeAdvantages: "true"
 
@@ -30,7 +30,7 @@ includeAdvantages: "true"
     {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
 
-<section class="environment-monitoring-solution-structure">
+<section class="smart-office-solution-structure">
     <h2>Solution structure</h2>
     <div class="about-text">
         <div class="short">
@@ -47,11 +47,13 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="dashboard-structure">
-    <h2>Dashboard structure</h2>
-    <p>
-        ThingsBoard provides a flexible dashboard system that allows for clear visualization of key metrics. In the context of the Smart Office, this includes parameters such as energy and water consumption, air quality, temperature and humidity, and the status of the HVAC system. Additionally, dashboards display alarms, enabling prompt response to any deviations from normal conditions.
-    </p>
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Dashboard structure</h2>
+        <p>
+            ThingsBoard provides a flexible dashboard system that allows for clear visualization of key metrics. In the context of the Smart Office, this includes parameters such as energy and water consumption, air quality, temperature and humidity, and the status of the HVAC system. Additionally, dashboards display alarms, enabling prompt response to any deviations from normal conditions.
+        </p>
+    </div>
     <div class="dashboard-structure-block">
         <div class="menu">
             <div class="expansion-block">
@@ -108,9 +110,11 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="applications env-monitoring">
-    <h2>Applications of environment monitoring solution</h2>
-    <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header">
+        <h2>Applications of smart office solution</h2>
+        <p>The Smart Office approach can be easily adapted to various other sectors</p>
+    </div>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
@@ -141,6 +145,43 @@ includeAdvantages: "true"
             <div class="text-block">
                 <h3>Hospitality</h3>
                 <p>Room automation, personalized climate control, and monitoring of CO₂ levels and space occupancy.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-office/mall-2.svg" alt="Mall"></div>
+            <div class="text-block">
+                <h3>Smart retail</h3>
+                <p>Energy consumption monitoring, climate automation in shopping areas, and lighting control.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Manufacturing</h3>
+                <p>Energy audits, airflow monitoring, and smart overload notifications.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-office/manufacturing-2.svg" alt="Manufacturing"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-office/hospital-2.svg" alt="Hospital"></div>
+            <div class="text-block">
+                <h3>Healthcare</h3>
+                <p>Microclimate control in patient rooms, occupancy monitoring, and tracking of CO₂ levels and temperature.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Hospitality</h3>
+                <p>Room automation, personalized climate control, and monitoring of CO₂ levels and space occupancy.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-office/hospitality-2.svg" alt="Hospitality"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-office/education-2.svg" alt="Education"></div>
+            <div class="text-block">
+                <h3>Education</h3>
+                <p>Managing comfort and resource usage in educational facilities.</p>
             </div>
         </div>
     </div>
@@ -254,10 +295,11 @@ includeAdvantages: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-1.webp'/>",
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-2.webp'/>",
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-3.webp'/>",
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-4.webp'/>",
+                "<img src='/images/usecases/smart-office/smart-office-2.webp'/>",
+                "<img src='/images/usecases/smart-office/smart-office-5.webp'/>",
+                "<img src='/images/usecases/smart-office/smart-office-4.webp'/>",
+                "<img src='/images/usecases/smart-office/smart-office-1.webp'/>",
+                "<img src='/images/usecases/smart-office/smart-office-3.webp'/>"
             ];
             return images[index];
         }

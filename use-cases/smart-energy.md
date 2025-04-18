@@ -53,7 +53,11 @@ includeAdvantages: "true"
     <div class="scheme">
         <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-energy/smart-energy-solution-structure.svg" alt="Smart energy solution structure">
     </div>
-    <div class="smart-energy-benefits">
+    <div class="smart-energy-benefits section-padding">
+        <div class="section-header">
+            <h2>Smart energy benefits</h2>
+            <p>The Smart Energy solution provides a wide range of benefits for businesses, facility managers, and technical teams, enabling efficient, automated, and scalable energy management.</p>
+        </div>
         <div class="use-cases-solution-structure-cards">
             <div class="use-cases-solution-structure-card">
                 <h3>Failure detection and risk mitigation</h3>
@@ -83,11 +87,13 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="dashboard-structure">
-    <h2>Dashboard structure</h2>
-    <p>
-        The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds. Click on the alarm or energy meter row to open the meter details. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.    
-    </p>
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Dashboard structure</h2>
+        <p>
+            The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds. Click on the alarm or energy meter row to open the meter details. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.    
+        </p>
+    </div>
     <div class="dashboard-structure-block">
         <div class="menu">
             <div class="expansion-block">
@@ -144,9 +150,11 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="applications env-monitoring">
-    <h2>Applications of smart energy solution</h2>
-    <p>A scalable IoT-based energy monitoring and management system can be adapted for a wide range of industries and infrastructure types. Below are just a few examples of where Smart Energy solutions can be applied.</p>
+<section class="applications applications-additional section-padding">
+    <div class="section-header">
+        <h2>Applications of smart energy solution</h2>
+        <p>A scalable IoT-based energy monitoring and management system can be adapted for a wide range of industries and infrastructure types. Below are just a few examples of where Smart Energy solutions can be applied.</p>
+    </div>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
@@ -189,11 +197,11 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/buildings-2.svg" alt="Buildings"></div>
             <div class="text-block">
                 <h3>Commercial buildings and offices</h3>
                 <p>Optimizing HVAC, lighting, and equipment usage across floors and departments, with real-time monitoring to reduce energy waste and operational costs.</p>
             </div>
+            <div class="image"><img src="/images/usecases/smart-energy/buildings-2.svg" alt="Buildings"></div>
         </div>
         <div class="application-block">
             <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="School"></div>
@@ -203,11 +211,11 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/data-centers-2.svg" alt="Data center"></div>
             <div class="text-block">
                 <h3>Data centers</h3>
                 <p>Maintaining stable voltage, temperature, and load balancing to ensure uninterrupted operations while reducing electricity consumption and cooling costs.</p>
             </div>
+            <div class="image"><img src="/images/usecases/smart-energy/data-centers-2.svg" alt="Data center"></div>
         </div>
         <div class="application-block">
             <div class="image"><img src="/images/usecases/smart-energy/malls-2.svg" alt="Mall"></div>
@@ -284,7 +292,7 @@ includeAdvantages: "true"
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
             const large = document.querySelector('.image-block-large');
 
-            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 200 && elemCoor.top < 0) {
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 300 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
             }
         };

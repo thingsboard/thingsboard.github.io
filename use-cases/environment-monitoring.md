@@ -48,11 +48,13 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="dashboard-structure">
-    <h2>Dashboard structure</h2>
-    <p>
-        The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template
-    </p>
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Dashboard structure</h2>
+        <p>
+            The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template
+        </p>
+    </div>
     <div class="dashboard-structure-block">
         <div class="menu">
             <div class="expansion-block">
@@ -99,9 +101,11 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="applications env-monitoring">
-    <h2>Applications of environment monitoring solution</h2>
-    <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header">
+        <h2>Applications of environment monitoring solution</h2>
+        <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+    </div>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
@@ -132,6 +136,43 @@ includeAdvantages: "true"
             <div class="text-block">
                 <h3>Educational and research institutions</h3>
                 <p>Collecting long-term environmental data for scientific research, campus sustainability programs, and educational use in environmental studies.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/environment-monitoring/smart-cities-2.svg" alt="City"></div>
+            <div class="text-block">
+                <h3>Smart cities and urban infrastructure</h3>
+                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support environmental policy, alert residents, improve urban living conditions.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Healthcare and laboratory environments</h3>
+                <p>Maintaining sterile conditions and proper ventilation by tracking air quality, CO₂ levels, and temperature in sensitive medical or laboratory zones.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/laboratory-2.svg" alt="Laboratory"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/environment-monitoring/agriculture-2.svg" alt="Greenhouse"></div>
+            <div class="text-block">
+                <h3>Agricultural and greenhouse facilities</h3>
+                <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Educational and research institutions</h3>
+                <p>Collecting long-term environmental data for scientific research, campus sustainability programs, and educational use in environmental studies.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/education-2.svg" alt="School"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/environment-monitoring/warehouse-2.svg" alt="Warehouse"></div>
+            <div class="text-block">
+                <h3>Warehouses and cold storage facilities</h3>
+                <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
             </div>
         </div>
     </div>

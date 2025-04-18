@@ -72,19 +72,19 @@ environment-monitoring:
 
 smart-office:
   0:
-    src: "/images/usecases/smart-office/so1.webp"
+    src: "/images/usecases/smart-office/smart-office-1.webp"
     alt: "smart office 1"
   1:
-    src: "/images/usecases/smart-office/so2.png"
+    src: "/images/usecases/smart-office/smart-office-2.webp"
     alt: "smart office 2"
   2:
-    src: "/images/usecases/smart-office/so3.png"
+    src: "/images/usecases/smart-office/smart-office-3.webp"
     alt: "smart office 3"
   3:
-    src: "/images/usecases/smart-office/so4.png"
+    src: "/images/usecases/smart-office/smart-office-4.webp"
     alt: "smart office 4"
   4:
-    src: "/images/usecases/smart-office/so5.png"
+    src: "/images/usecases/smart-office/smart-office-5.webp"
     alt: "smart office 5"
 
 water-metering:

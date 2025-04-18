@@ -917,7 +917,27 @@
                     @media screen and (max-width: 599px)
                         width: 100%
 
-        .scada-overview, .health-carousel, .environment-monitoring-carousel, .smart-office-carousel
+        .section-header
+            display: flex
+            flex-direction: column
+            gap: 32px
+            max-width: 928px
+            margin-bottom: 60px
+            @media screen and (max-width: 599px)
+                margin-bottom: 20px
+            h2
+                font-size: 36px
+                padding: 0
+                margin: 0
+                @media screen and (max-width: 599px)
+                    font-size: 28px
+                    margin-bottom: 0 !important
+            p
+                margin: 0
+                @media screen and (max-width: 599px)
+                    font-size: 14px
+
+        .scada-overview, .health-carousel
 
             &::before
                 content: ""
@@ -929,18 +949,38 @@
                 top: -61px
                 z-index: -1
 
+        .smart-office-carousel, .environment-monitoring-carousel
+            .owl-carousel
+                margin: 0
+
         .smart-energy-overview
             padding: 80px 0
+            @media screen and (max-width: 959px)
+                padding: 40px 0
+
+        .smart-office-carousel, .environment-monitoring-carousel
+            padding: 90px 0 40px
+            @media screen and (max-width: 959px)
+                padding: 45px 0 20px
+
+
+        .smart-energy-overview, .smart-office-carousel, .environment-monitoring-carousel
             margin-bottom: 40px
 
-        .smart-energy-benefits, .env-monitoring
+
+
+        .section-padding
+            margin: 0
             padding: 100px 0
+            @media screen and (max-width: 959px)
+                padding: 40px 0
 
-        .env-monitoring
-            margin-top: 100px
-            margin-bottom: 0
+        .applications.summary-margin
+            margin-bottom: 100px
+            @media screen and (max-width: 959px)
+                margin-bottom: 50px
 
-        .smart-energy-overview, .smart-energy-benefits, .applications.env-monitoring
+        .smart-energy-overview, .smart-energy-benefits, .applications.applications-additional, .smart-office-carousel, .environment-monitoring-carousel
             position: relative
             &::before
                 content: ""
@@ -953,11 +993,14 @@
                 top: 0
                 z-index: -1
 
-        .smart-energy-solution-structure
+        .smart-energy-solution-structure, .smart-office-solution-structure
+            margin: 0
             h2
-                padding-top: 0
+                font-size: 36px
+                @media screen and (max-width: 599px)
+                    font-size: 28px
 
-        .env-monitoring
+        .smart-energy-solution-structure, .environment-monitoring-solution-structure, .env-monitoring
             h2
                 padding-top: 0
 
@@ -1135,7 +1178,6 @@
 
                 .use-cases-solution-structure-card, .health-solution-structure-card
                     flex-basis: 31%
-                    min-height: 392px
                     padding: 46px
                     border-radius: 24px
                     background: #FFF
@@ -1143,6 +1185,8 @@
 
                     h3
                         margin-bottom: 24px
+                    p
+                        margin: 0
 
                     @media screen and (max-width: 1919px)
                         flex-basis: 48.6%
@@ -1563,6 +1607,8 @@
                     .text-block
                         flex: 1
                         text-align: center
+                        h3
+                            font-size: 24px
 
             .applications-container-small.smart-energy-applications-container-small
                 .application-block
