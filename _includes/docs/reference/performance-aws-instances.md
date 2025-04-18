@@ -105,19 +105,19 @@ Use the Docker Compose file listed below to setup the AWS EC2 instance based on 
 ```bash
 version: '3.0'
 services:
-  postgres:
-    image: "postgres:14"
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - postgres:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: "thingsboard"
-      POSTGRES_PASSWORD: "postgres"
+#  postgres:
+#    image: "postgres:14"
+#    network_mode: "host"
+#    restart: "always"
+#    volumes:
+#      - postgres:/var/lib/postgresql/data
+#    environment:
+#      POSTGRES_DB: "thingsboard"
+#      POSTGRES_PASSWORD: "postgres"
   tb:
-    depends_on:
-      - postgres
-    image: "thingsboard/tb"
+#    depends_on:
+#      - postgres
+    image: "thingsboard/tb-postgres:3.9.1"
     network_mode: "host"
     restart: "always"
     volumes:
@@ -128,16 +128,17 @@ services:
       TB_QUEUE_TYPE: "in-memory"
       TB_SERVICE_ID: "tb-node-0"
       HTTP_BIND_PORT: "8080"
+# login sysadmin. Settings - Queues - Main - adjust as shown below:
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
-      # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
-      SPRING_DATASOURCE_USERNAME: "postgres"
-      SPRING_DATASOURCE_PASSWORD: "postgres"
+#      # Postgres connection
+#      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+#      SPRING_DATASOURCE_USERNAME: "postgres"
+#      SPRING_DATASOURCE_PASSWORD: "postgres"
       # Java options for 4G instance and JMX enabled
       JAVA_OPTS: " -Xmx2048M -Xms2048M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
 volumes: # to persist data between container restarts or being recreated
-  postgres:
+#  postgres:
   thingsboard-data:
   thingsboard-logs:
 ```
@@ -154,7 +155,7 @@ Use the Docker command listed below to launch the performance test tool based on
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
@@ -163,7 +164,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -204,8 +205,8 @@ Use the Docker command listed below to launch the performance test tool based on
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
-docker run -it --rm --network host --name tb-perf-test \
+export TB_INTERNAL_IP=172.31.22.182 
+docker run -it -d --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
   --env DEVICE_END_IDX=5000 \
@@ -213,7 +214,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=false \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -255,8 +256,8 @@ Use the Docker command listed below to launch the performance test tool based on
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
-docker run -it --rm --network host --name tb-perf-test \
+export TB_INTERNAL_IP=172.31.22.182 
+docker run -it -d --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
   --env DEVICE_END_IDX=5000 \
@@ -264,7 +265,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=false \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -341,46 +342,39 @@ Setup the ThingsBoard instance on AWS EC2
 </summary>
 
 Take a note that Zookeeper is required to run Kafka these days.
-Here is the docker-compose file to set up _ThingsBoard + Postgresql + Zookeeper + Kafka_ on AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
+Here is the docker-compose file to set up _ThingsBoard + Postgresql + Kafka_ on AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-version: '3.0'
 services:
-  zookeeper:
-    image: docker.io/bitnami/zookeeper:3.7
-    network_mode: "host"
-    restart: "always"
-    volumes:
-      - zookeeper:/bitnami
-    environment:
-      ALLOW_ANONYMOUS_LOGIN: "yes"
-      ZOO_ENABLE_ADMIN_SERVER: "no"
-      JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   kafka:
-    image: docker.io/bitnami/kafka:3
+    image: bitnami/kafka:4.0
     network_mode: "host"
     restart: "always"
     volumes:
-      - kafka:/bitnami
+      - kafka:/bitnami/kafka
     environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=localhost:2181
-      - ALLOW_PLAINTEXT_LISTENER=yes
+#      KAFKA_KRAFT_CLUSTER_ID: "abcdefghijklmnopqrstuv"  # 22-char base64-like string
+      KAFKA_CFG_NODE_ID: 0
+      KAFKA_CFG_PROCESS_ROLES: controller,broker
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: 0@localhost:9093
+      KAFKA_CFG_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: false
+  kafka-ui:
     depends_on:
-      - zookeeper
-  postgres:
-    image: "postgres:14"
+      - kafka
+    image: redpandadata/console
     network_mode: "host"
     restart: "always"
-    volumes:
-      - postgres:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: "thingsboard"
-      POSTGRES_PASSWORD: "postgres"
+      KAFKA_BROKERS: "localhost:9092" # put your broker here
   tb:
     depends_on:
-      - postgres
+#      - postgres
       - kafka
-    image: "thingsboard/tb"
+    image: "thingsboard/tb-postgres:4.0.0"
     network_mode: "host"
     restart: "always"
     volumes:
@@ -393,25 +387,30 @@ services:
       TB_KAFKA_LINGER_MS: "5" # default is 1
       TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
       TB_SERVICE_ID: "tb-node-0"
-      HTTP_BIND_PORT: "8080"
+      HTTP_BIND_PORT: "9090"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
-      # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
-      SPRING_DATASOURCE_USERNAME: "postgres"
-      SPRING_DATASOURCE_PASSWORD: "postgres"
+      JS_EVALUATOR: "remote"
       # Java options for 8G instance and JMX enabled
       JAVA_OPTS: " -Xmx3072M -Xms3072M -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+  js:
+    depends_on:
+      - tb
+      - kafka
+    image: "thingsboard/tb-js-executor:4.0.0"
+    network_mode: "host"
+    restart: "always"
+    environment:
+      NODE_OPTIONS: "--max-old-space-size=200"
 volumes: # to persist data between container restarts or being recreated
   kafka:
-  zookeeper:
-  postgres:
+#  postgres:
   thingsboard-data:
   thingsboard-logs:
 ```
 {: .copy-code}
 
 </details>
-
+    
 <details markdown="1">
 <summary>
 Launch performance test tool
@@ -421,16 +420,16 @@ Use the Docker command listed below to launch the performance test tool based on
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
-docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://$TB_INTERNAL_IP:8080 \
+export TB_INTERNAL_IP=127.0.0.1
+docker run --rm -d --network host --name tb-perf-test \
+  --env REST_URL=http://127.0.0.1:9090 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
-  --env DEVICE_END_IDX=5000 \
-  --env MESSAGES_PER_SECOND=5000 \
-  --env ALARMS_PER_SECOND=50 \
+  --env DEVICE_END_IDX=10000 \
+  --env MESSAGES_PER_SECOND=3000 \
+  --env ALARMS_PER_SECOND=1 \
   --env DURATION_IN_SECONDS=86400 \
-  --env DEVICE_CREATE_ON_START=true \  
-  thingsboard/tb-ce-performance-test:3.3.3
+  --env DEVICE_CREATE_ON_START=true \
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -478,16 +477,16 @@ Use the Docker command listed below to launch the performance test tool based on
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
-  --env MQTT_HOST=$TB_INTERNAL_IP 
+  --env MQTT_HOST=$TB_INTERNAL_IP \
   --env DEVICE_END_IDX=5000 \
   --env MESSAGES_PER_SECOND=15000 \
   --env ALARMS_PER_SECOND=50 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=false \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -709,7 +708,7 @@ Use the Docker command listed below to launch the performance test tool based on
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
@@ -718,7 +717,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=50 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \  
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -902,7 +901,7 @@ Here is the run script for the _first node_.
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
@@ -912,7 +911,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -920,7 +919,7 @@ Here is the run script for the _second node_. Note the DEVICE_START_IDX and DEVI
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
@@ -930,7 +929,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -1133,7 +1132,7 @@ Here is the run script for the _first node_.
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
@@ -1143,7 +1142,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
@@ -1151,7 +1150,7 @@ Here is the run script for the _second node_. Note the DEVICE_START_IDX and DEVI
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export TB_INTERNAL_IP=172.31.16.229 
+export TB_INTERNAL_IP=172.31.22.182 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
   --env MQTT_HOST=$TB_INTERNAL_IP \
@@ -1161,7 +1160,7 @@ docker run -it --rm --network host --name tb-perf-test \
   --env ALARMS_PER_SECOND=10 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \
-  thingsboard/tb-ce-performance-test:3.3.3
+  thingsboard/tb-ce-performance-test:latest
 ```
 {: .copy-code}
 
