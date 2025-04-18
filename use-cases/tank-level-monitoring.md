@@ -1,7 +1,7 @@
 ---
 layout: tank-level-monitoring
-title: Tank Level Monitoring
-description: Tank level monitoring system with ThingsBoard - Open-source IoT Visualisation Platform
+title: Tank Level Monitoring System | ThingsBoard IoT Platform
+description: Cloud-based tank level monitoring system for real-time fluid management across multiple sites. Reduce costs and increase efficiency with IoT-based tank monitoring. Try the ThingsBoard solution.
 notitle: "true"
 
 ---
