@@ -32,6 +32,16 @@ $button-width: 208px
             padding: 0 50px
             max-width: 1440px
 
+    .primary-text
+        color: #212529
+        font: normal 600 48px/63px 'Poppins'
+        text-align: center
+
+    .secondary-text
+        color: #495057
+        font: normal 400 16px/24.8px 'Poppins'
+        text-align: left
+
     .outline-button
         background-color: white 
         border-radius: 8px
@@ -71,10 +81,30 @@ $button-width: 208px
             border: 1px solid $button-background-color
             color: $button-background-color
 
-    .link-text
-        color: $button-background-color
-        text-decoration: underline
-        font-weight: 500
+    .cards
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+        .card
+            box-shadow: 0px 5px 15px 0px #21252940 
+            width: 32%
+            padding: 20px
+            border-radius: 12px
+            margin: 10px 0
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            gap: 10px
+            .icon  
+                width: 50px
+                height: 50px
+                border-radius: 6px
+                background: #E5F0FF
+                color: $button-background-color
+                border: 1px solid $button-background-color
+                display: flex
+                justify-content: center
+                align-items: center
 
     footer
         position: relative
@@ -100,8 +130,6 @@ $button-width: 208px
                 align-items: center
                 text-align: initial
                 z-index: 1
-                padding-top: 20px
-
                 .hero-title
                     font-size: 16px
                     font-weight: 600
@@ -110,22 +138,14 @@ $button-width: 208px
                     color: $button-background-color
                     margin-bottom: 30px
 
-                .title
+                .primary-text
                     font-size: 60px
                     font-weight: 500
-                    line-height: 66px
-                    text-align: center
-                    color: #212529
                     max-width: 608px
                     margin-bottom: 40px
 
-                .sub-title
-                    font-family: Poppins
-                    font-size: 16px
-                    font-weight: 400
-                    line-height: 24.8px
+                .secondary-text
                     text-align: center
-                    color: #495057
                     max-width: 608px
                     margin-bottom: 40px
 
@@ -185,19 +205,10 @@ $button-width: 208px
                 width: 45%
                 display: flex
                 flex-direction: column
-                .side-title
-                    font-size: 48px
-                    font-weight: 600
-                    line-height: 62.4px
+                .primary-text
                     text-align: left
-                    color: #212529
                     margin-bottom: 20px
-                .side-text
-                    font-size: 16px
-                    font-weight: 400
-                    line-height: 24.8px
-                    text-align: left
-                    color: #495057
+                .secondary-text
                     margin-bottom: 20px
                 .outline-button
                     &:hover
@@ -222,19 +233,12 @@ $button-width: 208px
             color: $button-background-color
             font-weight: 500
         
-        .benefits-title
-            font-size: 48px
-            font-weight: 600
-            line-height: 62.4px
-            text-align: center
-            color: #212529
-            width: 675px
+        .primary-text
+            width: 700px
             margin-bottom: 30px
 
-        .benefits-sub-title
+        .secondary-text
             font-size: 18px
-            font-weight: 400
-            line-height: 27.9px
             text-align: center
             width: 608px
             margin-bottom: 40px
@@ -244,48 +248,20 @@ $button-width: 208px
                 background-color: $button-background-color
                 color: #fff
 
-        .cards
-            display: flex
-            justify-content: space-around
-            flex-wrap: wrap
-        
-        .card
-            box-shadow: 0px 5px 15px 0px #21252940 
-            width: 32%
-            padding: 20px
-            border-radius: 12px
-            margin: 10px 0
-            height: 287px
-            display: flex
-            flex-direction: column
-            justify-content: flex-start
-            gap: 10px
+        .cards      
+            .card
+                height: 287px
+                .primary-text
+                    font-size: 24px
+                    line-height: 31.2px
+                    text-align: left
+                    margin-bottom: 16px
 
-            .icon  
-                width: 50px
-                height: 50px
-                border-radius: 6px
-                background: #E5F0FF
-                color: $button-background-color
-                border: 1px solid $button-background-color
-                display: flex
-                justify-content: center
-                align-items: center
-
-            .title
-                font-size: 24px
-                font-weight: 600
-                line-height: 31.2px
-                text-align: left
-                color: #212529                
-                margin-bottom: 16px
-
-            .text
-                font-size: 16px
-                font-weight: 400
-                line-height: 24.8px
-                text-align: left
-                color: #495057
+                .secondary-text
+                    font-size: 16px
+                    text-align: left
+                    width: auto
+                    margin-bottom: 0px
 
     #start-your-free
         background: url("/images/usecases/fuel-level-monitoring/start-your-background.webp")
@@ -301,20 +277,11 @@ $button-width: 208px
                 flex-direction: column
                 justify-content: center
             
-                .side-title
-                    font-size: 48px
-                    font-weight: 600
-                    line-height: 62.4px
+                .primary-text
                     text-align: left
-                    color: #212529
                     margin-bottom: 20px
            
-                .side-text
-                    font-size: 16px
-                    font-weight: 400
-                    line-height: 24.8px
-                    text-align: left
-                    color: #495057
+                .secondary-text
                     margin-bottom: 50px
 
             .right
@@ -336,9 +303,8 @@ $button-width: 208px
 
         .header
             margin-bottom: 100px
-            .title 
+            .primary-text 
                 font-size: 68px
-                font-weight: 600
                 line-height: 104px
                 text-align: left
                 color: #fff
@@ -402,10 +368,9 @@ $button-width: 208px
                         .arrow-icon
                             transform: rotate(180deg)
 
-                    .expansion-title
+                    .primary-text
                         margin: 0
                         font-size: 24px
-                        font-weight: 600
                         line-height: 31.2px
                         color: #fff
                         text-align: left
@@ -417,13 +382,10 @@ $button-width: 208px
                         display: none
                         max-height: 0
                         overflow: hidden
-                        color: #CED4DA
-                        font-size: 16px
-                        font-weight: 400
-                        line-height: 24px
-                        text-align: left
                         margin: 10px 0 10px 35px
                         transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+                        .secondary-text
+                            color: #CED4DA
 
                     &.expanded
                         .expansion-content
@@ -432,6 +394,21 @@ $button-width: 208px
 
                 .last
                     margin-bottom: 50px
+
+                .buttons
+                    display: flex
+                    justify-content: flex-start
+                    gap: 10px
+                    .outline-button
+                        width: 250px
+                        background-color: transparent 
+                        border: 1px solid #fff
+                        color: #FFF
+                        &:hover
+                            border: 1px solid #192234
+                            color: #192234
+                            background-color: #fff
+
 
             .images
                 width: 55%
@@ -473,61 +450,30 @@ $button-width: 208px
             display: flex
             flex-direction: column
             gap: 30px
-            .title 
+            .primary-text 
                 width: 821px
                 font-weight: 500
                 font-size: 65px
                 line-height: 72px
                 color: #0D1717
+                text-align: left
 
-            .side-text
+            .secondary-text
                 width: 821px
-                font-weight: 400
-                font-size: 16px
-                line-height: 155%
-                color: #495057
 
             .cards
-                display: flex
-                justify-content: space-around
-                flex-wrap: wrap
-
                 .card
-                    box-shadow: 0px 5px 15px 0px #21252940 
-                    width: 32%
-                    padding: 20px
-                    border-radius: 12px
-                    margin: 10px 0
                     height: 315px
-                    display: flex
-                    flex-direction: column
-                    justify-content: flex-start
                     gap: 16px
-
-                    .icon  
-                        width: 50px
-                        height: 50px
-                        border-radius: 6px
-                        background: #E5F0FF
-                        color: $button-background-color
-                        border: 1px solid $button-background-color
-                        display: flex
-                        justify-content: center
-                        align-items: center
-
-                    .card-title
+                    .primary-text
+                        width: auto
                         font-size: 24px
-                        font-weight: 600
                         line-height: 31.2px
                         text-align: left
                         color: $button-background-color                
 
-                    .text
-                        font-size: 16px
-                        font-weight: 400
-                        line-height: 24.8px
-                        text-align: left
-                        color: #495057
+                    .secondary-text
+                        width: auto
 
     #schedule-consultation
         background: url("/images/usecases/fuel-level-monitoring/schedule-consultation.webp")
@@ -543,19 +489,12 @@ $button-width: 208px
                 flex-direction: column
                 justify-content: center
             
-                .side-title
-                    font-size: 48px
-                    font-weight: 600
-                    line-height: 62.4px
+                .primary-text
                     text-align: left
                     color: #FFFFFF
                     margin-bottom: 20px
            
-                .side-text
-                    font-size: 16px
-                    font-weight: 400
-                    line-height: 24.8px
-                    text-align: left
+                .secondary-text
                     color: #CED4DA
                     margin-bottom: 50px
 
@@ -582,34 +521,24 @@ $button-width: 208px
             display: flex
             justify-content: space-between
             margin-bottom: 50px
-            .title 
+            .primary-text 
+                text-align: left
                 width: 60%
                 font-weight: 500
                 font-size: 65px
                 line-height: 72px
                 color: #0D1717
 
-            .side-text
+            .secondary-text
                 width: 40%
-                font-weight: 400
-                font-size: 16px
-                line-height: 155%
-                color: #495057
 
         .cards
-            display: flex
-            justify-content: space-around
-            flex-wrap: wrap
             .card
                 position: relative
-                display: flex
                 flex-direction: column
                 gap: 16px
                 margin: 10px 0
                 width: 49%
-                box-shadow: 0px 5px 15px 0px #21252940
-                border-radius: 12px
-                padding: 20px
                 height: 350px
                 .card-icon
                     position: absolute
@@ -627,19 +556,14 @@ $button-width: 208px
                     justify-content: space-between
                     margin-top: 130px
                     height: 100%
-                    .title
+                    .primary-text
+                        width: auto
                         font-size: 24px
-                        font-weight: 600
                         line-height: 31.2px
                         text-align: left
-                        color: #212529                
 
-                    .text
-                        font-size: 16px
-                        font-weight: 400
-                        line-height: 24.8px
-                        text-align: left
-                        color: #495057
+                    .secondary-text
+                        width: auto
 
     #resources
         margin-bottom: 50px
@@ -649,26 +573,20 @@ $button-width: 208px
             flex-direction: column
             align-items: center
             gap: 60px
-            .side-title
-                font-size: 48px
-                font-weight: 600
-                line-height: 62.4px
+            .primary-text
                 text-align: left
-                color: #212529
                 margin-bottom: 20px
             .cards
                 display: flex
                 justify-content: space-between
                 align-items: center
                 .card
+                    padding: 0px
                     width: 32%
                     border-radius: 20px
-                    display: flex
-                    flex-direction: column 
                     justify-content: space-between 
                     height: 602px
                     background: #F8F9FE
-                    box-shadow: 0px 5px 15px 0px #21252940
 
                     .image-block
                         width: 100%
@@ -682,17 +600,10 @@ $button-width: 208px
                         justify-content: space-between
                         flex-direction: column
                         padding: 24px
-                        .title
-                            color: #212529
-                            font-weight: 600
+                        .primary-text
                             font-size: 24px
+                            line-height: 31.2px
                             text-align: left
-
-                        .text
-                            font-weight: 400
-                            font-size: 16px
-                            letter-spacing: 0%
-                            color: #495057
 
                         .outline-button
                             width: 100%
@@ -719,20 +630,11 @@ $button-width: 208px
                 flex-direction: column
                 justify-content: center
                 
-                .title
-                    font-size: 48px
-                    font-weight: 600
-                    line-height: 62.4px
+                .primary-text
                     text-align: left
-                    color: #212529
                     margin-bottom: 40px 
 
-                .text
-                    font-size: 16px
-                    font-weight: 400
-                    line-height: 24.8px
-                    text-align: left
-                    color: #495057
+                .secondary-text
                     padding-right: 20px
                     margin-bottom: 20px
 
@@ -749,15 +651,13 @@ $button-width: 208px
             margin-right: 70px
             z-index: 2
 
-        .side-title
-            margin: 15px 94px 0 0
-            max-width: 200px
-
-        .section-title
+        .primary-text
+            text-align: left
             max-width: 610px
             line-height: 68px
+            margin-bottom: 20px
 
-        .section-text
+        .secondary-text
             max-width: 470px
 
         .contact-form
@@ -767,89 +667,6 @@ $button-width: 208px
             width: 400px
             fieldset
                 width: 100%
-
-            .form-element
-                margin-bottom: 28px
-                label
-                    position: relative
-                    width: 100%
-                    p
-                        color: rgba(0, 0, 0, 0.54)
-                        font-size: 12px
-                        font-style: normal
-                        font-weight: 400
-                        line-height: 16px
-                        letter-spacing: 0.4px
-                        position: absolute
-                        top: -8px
-                        left: 10px
-                        z-index: 2
-                        padding: 0px 5px
-                        background: white
-
-        .cdu-form-control
-            width: 100%
-            color: #898B8F
-            font-size: 16px
-            font-style: normal
-            font-weight: 400
-            line-height: 24px
-            letter-spacing: 0.15px
-            border-radius: 4px
-            border: 1px solid rgba(0, 0, 0, 0.12)
-            padding: 16px 18px
-
-        .cdu-button
-            padding: 11px 14px
-            color: white
-            background-color: $button-background-color
-            border: 1px solid $button-background-color
-            width: 100%
-            font-size: 18px
-            font-weight: 600
-            text-align: center
-            text-decoration: none
-            border-radius: 4px
-            &:hover
-                background-color: #fff
-                color: $button-background-color
-    
-    .side-title
-        z-index: 2
-        span
-            display: inline-block
-            flex-direction: column
-            align-items: flex-start
-            gap: 4px
-            border-radius: 6px
-            padding: 7px 0px
-            color: $button-background-color
-            text-align: center
-            font-size: 26px
-            font-style: normal
-            font-weight: 700
-            line-height: 30px
-            letter-spacing: 0.26px
-            text-transform: uppercase
-            text-wrap: nowrap
-            width: max-content
-
-    .section-title
-        color: #333
-        font-size: 48px
-        font-style: normal
-        font-weight: 600
-        line-height: 76px
-        letter-spacing: 0.48px
-        padding-bottom: 30px
-
-    .section-text
-        color: #5E5F62
-        font-size: 16px
-        font-style: normal
-        font-weight: 400
-        line-height: 28px
-        letter-spacing: 0.016px
 
     @media screen and (max-width: $step6)
         #second-screen
@@ -929,13 +746,13 @@ $button-width: 208px
             background-size: auto
             .header
                 margin-bottom: 60px
-                .title 
+                .primary-text 
                     font-size: 60px
             
             .info-block
                 .menu
                     .expansion-panel
-                        .expansion-title
+                        .primary-text
                             font-size: 20px
                 
                 .images
@@ -1017,7 +834,7 @@ $button-width: 208px
                     width: 55%
                     display: flex
                     flex-direction: column
-                    .side-title
+                    .primary-text
                         font-size: 40px 
 
                 .right-side
@@ -1027,26 +844,25 @@ $button-width: 208px
                         right: 0%
 
         #benefits-screen
-            .benefits-title
+            .primary-text
                 font-size: 40px
-
-            .card
-                width: 47%
+            
+            .cards
+                .card
+                    width: 32%
+                    height: 420px
+                    .primary-text
+                        width: auto
 
         #dark-section 
             margin-bottom: 0px
             background-size: auto
             .header
                 margin-bottom: 60px
-                .title 
+                .primary-text 
                     font-size: 50px
             
-            .info-block
-                .menu
-                    .expansion-panel
-                        .expansion-title
-                            font-size: 20px
-                
+            .info-block  
                 .images
                     .dark-background-image
                         right: -53%
@@ -1089,11 +905,11 @@ $button-width: 208px
 
                 .right
                     justify-content: flex-start
-                    .title
+                    .primary-text
                         font-size: 40px
                         margin-bottom: 10px
 
-                    .text
+                    .secondary-text
                         margin-bottom: 20px
 
         #resources
@@ -1111,24 +927,13 @@ $button-width: 208px
                 width: 60%
                 margin-right: 0px
 
-            .side-title
-                span
-                    text-wrap: nowrap
-                    width: 210px
-                    height: 44px
-                    text-align: start
-
-            .section-title
-                height: auto
-                line-height: 40px
-
-            .section-text
+            .secondary-text
                 max-width: 100%
             
     @media screen and (max-width: $step3)
         .noToc
             #content-get-in-touch
-                padding: 0 50px
+                gap: 20px
                 max-width: 672px
                 display: flex
                 flex-direction: column
@@ -1167,8 +972,6 @@ $button-width: 208px
                     width: 100%
                     display: flex
                     flex-direction: column
-                    .side-title
-                        font-size: 40px 
 
                 .right-side
                     min-height: 480px
@@ -1185,7 +988,7 @@ $button-width: 208px
                 align-items: center
                 .left
                     width: 100%
-                    .side-title
+                    .primary-text
                         font-size: 40px
                         line-height: 52px
                 .right
@@ -1193,18 +996,16 @@ $button-width: 208px
                     justify-content: start
 
         #benefits-screen
-            .benefits-title
-                font-size: 40px
-
-            .card
-                width: 80%
-                height: 230px
+            .cards
+                .card
+                    width: 80%
+                    height: 230px
 
         #dark-section 
             background-size: auto
             .header
                 margin-bottom: 60px
-                .title 
+                .primary-text 
                     font-size: 34px
             
             .info-block
@@ -1212,19 +1013,17 @@ $button-width: 208px
                     width: 100%
                     .expansion-panel
                         width: 100%
-                        .expansion-title
-                            font-size: 20px
                 
                 .images
                     display: none
 
         #features
             .container
-                .title
+                .primary-text
                     max-width: 100%
                     font-size: 40px
                     line-height: 52px
-                .side-text
+                .secondary-text
                     max-width: 100%
                 .cards
                     .card
@@ -1251,12 +1050,12 @@ $button-width: 208px
                     flex-direction: column
                     gap: 10px
                     margin-bottom: 30px
-                    .title
+                    .primary-text
                         width: 100%
                         font-size: 40px
                         line-height: 52px
 
-                    .side-text
+                    .secondary-text
                         width: 100%
                 
                 .cards
@@ -1282,16 +1081,10 @@ $button-width: 208px
                     width: 100%
                     height: 400px
                     justify-content: flex-start
-                    .title
-                        font-size: 40px
-                        margin-bottom: 10px
-
-                    .text
-                        margin-bottom: 20px
 
         #resources
             .container
-                .side-title
+                .primary-text
                     font-size: 40px
                     line-height: 52px
                     text-align: center
@@ -1301,34 +1094,29 @@ $button-width: 208px
                     flex-direction: column
                     gap: 20px
                     .card
-                        width: 100%
+                        width: 430px
                         height: 522px
+                
+                .filled-button
+                    width: 430px
 
         #get-in-touch
-            padding: 0px 0 100px 0
-
             .info
-                margin-bottom: 10px
-                margin-right: 0px
-
-                .section-title
-                    height: auto
-                    line-height: 40px
+                width: 100%
 
             .contact-form
                 width: 344px
                 fieldset
                     padding: 0px
-            
-        .side-title
-            span
-                padding: 0px
 
     @media screen and (max-width: $step2)
         .noToc
             #content-get-in-touch
                 display: flex
                 padding: 0 12px
+
+        .content-wrapper
+            padding: 0 5px 0 5px
 
         .outline-button
             width: 100%
@@ -1341,7 +1129,7 @@ $button-width: 208px
             .hero-container 
                 #hero-content
                     padding-top: 40px
-                    .title
+                    .primary-text
                         font-size: 40px
                         line-height: 44px
 
@@ -1366,42 +1154,49 @@ $button-width: 208px
     
         #third-screen
             .container
+                min-height: auto
                 .left-side
-                    .side-title
+                    .primary-text
                         margin-bottom: 30px
                         font-size: 32px
                         line-height: 41.6px
-                    .side-text
+                    .secondary-text
                         margin-bottom: 30px
                 .right-side
-                    min-height: 250px
+                    min-height: auto
+                    display: flex
+                    justify-content: center
+                    align-items: center
                     #rectangle
-                        width: 80%
-                        right: 7%
-                        top: 75%
+                        width: 90%
+                        position: static
 
         #benefits-screen
             margin-bottom: 0px
-            .benefits-title
+            .primary-text
                 font-size: 32px
                 line-height: 41.6px
                 width: 100%
 
-            .benefits-sub-title
+            .secondary-text
                 width: 100%
 
-            .card
-                width: 100%
-                height: 310px
+            .cards
+                .card
+                    width: 100%
+                    height: auto
+
+        #start-your-free
+            padding: 20px 0
 
         #dark-section
-            height: 950px
+            height: 1020px
             background-size: 1337px
             margin-bottom: 50px
             .header
                 height: 80px
                 margin-bottom: 50px
-                .title 
+                .primary-text 
                     font-size: 20px
                     height: 100%
                     display: flex
@@ -1418,40 +1213,70 @@ $button-width: 208px
             .info-block
                 margin-bottom: 0px
                 .menu
+                    margin-bottom: 0px
                     .try-demo-button
                         width: 100%
+                        
+                    .last
+                        margin-bottom: 15px
+
+                    .buttons
+                        flex-direction: column
+                        .outline-button
+                            width: 100%
+
+        #features
+            .container
+                .cards
+                    .card
+                        height: auto
+
+        #schedule-consultation
+            .container
+                .left
+                    .primary-text
+                        font-size: 40px
+
+        #bussiness-needs 
+            .container 
+                .cards 
+                    .card
+                        height: auto
 
         #connectivity
+            margin-bottom: 0px
             .container
                 min-height: 650px
                 display: flex
 
                 .left
-                    height: 440px
+                    height: auto
                     .connectivity-image
                         width: 90%
                         top: 75%
+                        position: static
                         
                 .right
-                    .title
+                    height: auto
+                    .primary-text
                         font-size: 32px
                         line-height: 41.6px
-
-                    .text
-                        margin-bottom: 20px
         
+        #resources
+            .container
+                .cards
+                    .card
+                        width: 100%
+                
+                .filled-button
+                    width: 100%
+
         #get-in-touch
             padding: 40px 0
-            margin-bottom: 30px
-            .section-title
-                font-size: 32px
-                line-height: 41.6px
+            margin-bottom: 0px
 
             .contact-form
                 width: 100%
 
             fieldset
-                width: 100%
-
-            .cdu-button
                 width: 100%
