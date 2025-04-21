@@ -17,30 +17,281 @@
 * TOC
 {:toc}
 
-## Introduction
+Welcome! This guide will walk you through building and setting up a custom {{appPrefix}} mobile application from scratch for your own instance of the {{appPrefix}} platform.
 
-The goal of this tutorial is to demonstrate the basic setup of {{appPrefix}} Mobile Application with your {{appPrefix}} platform instance. You will learn how to:
+## Prerequisites
 
-* Setup development environment;
-* Get application project source code;
-* Configure API endpoint to your {{appPrefix}} platform instance;
-* Build and run your version of {{appPrefix}} Mobile Application;
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
+The alternative option is to install ThingsBoard PE using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+{% else %}  
+You will need to have access to ThingsBoard. The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup){:target="_blank"}. 
+The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/installation-options/){:target="_blank"}.
+{% endif %}
 
-## Step 1. Prepare development environment
+> **Note**: The mobile app requires {{appPrefix}} platform version **3.4.0** or newer to run correctly.
 
-Flutter {{appPrefix}} Mobile Application requires Flutter SDK starting from version 2.12.0.
-Follow [these](https://flutter.dev/docs/get-started/install) instructions in order to setup Flutter SDK.
-For an even better experience we recommend to set up an editor using [these](https://flutter.dev/docs/get-started/editor) instructions.
+## Step 1: Create a bundle in the Mobile center
 
-Flutter {{appPrefix}} Mobile Application is served by {{appPrefix}} platform starting from version 3.4.0{% if docsPrefix == 'pe/' %}PE{% endif %}.
-You will need to have {{appPrefix}} server up and running. The easiest way is to use {{cloudApp}}.
-The alternative option is to install {{appPrefix}} using [Installation Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/).
+The [Mobile center](/docs/{{docsPrefix}}mobile-center/mobile-center/){:target="_blank"} is your control hub for creating, configuring, and managing mobile applications for your {{appPrefix}} instance. 
+It allows you to quickly launch a custom {{appPrefix}} mobile application tailored to your platform.
 
-## Step 2. Get app source code
+<br><b><font size="4">Create a new bundle</font></b>
 
-### Flutter {{appPrefix}} Mobile Application compatibility table 
+A [bundle](/docs/{{docsPrefix}}mobile-center/mobile-center/#bundle){:target="_blank"} contains both your Android and/or iOS app configurations — including OAuth 2.0 settings, layout preferences, and self-registration options — all in one place for easier setup.
 
-Determine the Flutter {{appPrefix}} Mobile Application version according to the version of {{appPrefix}}.
+To add a new bundle: 
+- Navigate to the "**Mobile center**" page
+- On the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window. 
+
+The bundle creation window will open.
+
+{% assign addNewBundleCE = '
+    ===
+        image: /images/mobile-center/add-new-bundle-1-ce.png,
+        title: To add a new bundle, navigate to the "**Mobile center**" page and, on the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window.
+'
+%}
+
+{% assign addNewBundlePE = '
+    ===
+        image: /images/mobile-center/add-new-bundle-1-pe.png,
+        title: To add a new bundle, navigate to the "**Mobile center**" page and, on the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window.
+'
+%}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=addNewBundlePE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=addNewBundleCE %}
+{% endif %}
+
+<br><b><font size="4">Basic settings</font></b>
+
+First, enter the **bundle name** and choose the **mobile app platform(s)** — **Android** or **iOS** — then click "**Create new**" in the corresponding section and proceed with the next steps:
+
+- Enter the **application package** name.
+- An **Application Secret** will be generated automatically (you can also set your own).
+- Set the **application status**:
+  - **Draft** – still under development.
+  - **Published** – ready for release.
+  - **Deprecated** – no longer maintained but still available.
+  - **Suspended** – temporarily disabled.
+- (Optional) Specify minimum and latest app versions + release notes.
+- Add **store information**:
+    - **Android**: **Google Play Store link** and **SHA256 certificate fingerprints**.
+    - **iOS**: **App Store link** and **App ID**.
+- Click "**Add**" to save and continue. 
+
+Then click "**Next**".
+
+{% assign addApplicationCE = '
+    ===
+        image: /images/mobile-center/add-application-1-ce.png,
+        title: Click "**Create new**" in the appropriate section (Android Application or iOS Application).
+    ===
+        image: /images/mobile-center/android-application-2-ce.png,
+        title: **Android Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and **SHA256 certificate fingerprints**. Click "**Add**".
+    ===
+        image: /images/mobile-center/ios-application-2-ce.png,
+        title: **iOS Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the App Store, and **App ID**. Click "**Add**".
+'
+%}
+
+{% assign addApplicationPE = '
+    ===
+        image: /images/mobile-center/add-application-1-pe.png,
+        title: Click "Create new" in the appropriate section (Android Application or iOS Application).
+    ===
+        image: /images/mobile-center/android-application-2-pe.png,
+        title: Android Application. Enter the application package name. Remember autogenerated "Application Secret" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and SHA256 certificate fingerprints. Click "Add".
+    ===
+        image: /images/mobile-center/ios-application-2-pe.png,
+        title: iOS Application. Enter the application package name. Remember autogenerated "Application Secret" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the App Store, and App ID. Click "Add".
+'
+%}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=addApplicationPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=addApplicationCE %}
+{% endif %}
+
+<br><b><font size="4">[Optional] OAuth 2.0 authentication</font></b>
+
+Add authentication using external [OAuth 2.0](/docs/{{docsPrefix}}user-guide/oauth-2-support/){:target="_blank"} providers to your {{appPrefix}} mobile application:
+specify an existing OAuth 2.0 client (or clients), [configure a new one](/docs/{{docsPrefix}}user-guide/oauth-2-support/#operations-with-oauth-20-client){:target="_blank"}, or disable OAuth 2.0 authentication for mobile.
+
+{% assign specifyOAuthClientsCE = '
+    ===
+        image: /images/mobile-center/specify-oauth-clients-1-ce.png,
+        title: Specify an already configured OAuth 2.0 client(s) or configure a new one.
+    ===
+        image: /images/mobile-center/specify-oauth-clients-2-ce.png,
+        title: Then, click "Next" to continue.
+'
+%}
+
+{% assign specifyOAuthClientsPE = '
+    ===
+        image: /images/mobile-center/specify-oauth-clients-1-pe.png,
+        title: Specify an already configured OAuth 2.0 client(s) or configure a new one.
+    ===
+        image: /images/mobile-center/specify-oauth-clients-2-pe.png,
+        title: Then, click "Next" to continue.
+'
+%}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=specifyOAuthClientsPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=specifyOAuthClientsCE %}
+{% endif %}
+
+Click "**Next**" to continue.
+
+<br><b><font size="4">[Optional] Layout configuration</font></b>
+
+Set up quick access to the features and dashboards you use most often.
+Add new menu items, customize icons and labels, and reorganize the navigation menu of the {{appPrefix}} mobile app to fit your needs.
+
+[This documentation](/docs/{{docsPrefix}}mobile-center/mobile-center/#layout){:target="_blank"} will help you configure the layout.
+
+{% assign mobileLayoutCE = '
+    ===
+        image: /images/mobile-center/mobile-layout-1-ce.png,
+        title: Set up quick access to the features and dashboards you use most often.
+    ===
+        image: /images/mobile-center/mobile-layout-2-ce.png,
+        title: Add new menu items, customize icons and labels, and reorganize the navigation menu of the ThingsBoard mobile app to fit your needs.
+'
+%}
+
+{% assign mobileLayoutPE = '
+    ===
+        image: /images/mobile-center/mobile-layout-1-pe.png,
+        title: Set up quick access to the features and dashboards you use most often.
+    ===
+        image: /images/mobile-center/mobile-layout-2-pe.png,
+        title: Add new menu items, customize icons and labels, and reorganize the navigation menu of the ThingsBoard PE mobile app to fit your needs.
+'
+%}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=mobileLayoutPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=mobileLayoutCE %}
+{% endif %}
+
+{% unless docsPrefix == null %}
+
+Click "**Next**" to proceed.
+
+<br><b><font size="4">[Optional] Self registration configuration</font></b>
+
+The self-registration feature allows you to configure a registration page for your new customers, enabling them to easily sign up and log in to ThingsBoard with predefined permission configurations.
+
+Use [this documentation](/docs/{{docsPrefix}}mobile-center/mobile-center/#self-registration){:target="_blank"} to set up a self-registration form for your new customers.
+
+{% assign selfRegistrationCE = '
+    ===
+        image: /images/mobile-center/self-registration-1-ce.png,
+        title: Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users. Specify the recipients that will receive notifications about new user registrations. Specify the redirect settings: Application URL Scheme, and Application URL Hostname.
+    ===
+        image: /images/mobile-center/self-registration-2-ce.png,
+        title: The mandatory fields for completing the registration form are email, password, and repeat password. If needed, specify additional fields.
+    ===
+        image: /images/mobile-center/self-registration-3-ce.png,
+        title: Choose the Captcha version to be used, and specify "Captcha site key" and "Captcha secret key".
+    ===
+        image: /images/mobile-center/self-registration-4-ce.png,
+        title: Show/hide Privacy Policy and Terms of Use. Specify the roles that will be assigned to the user upon successful registration.
+    ===
+        image: /images/mobile-center/self-registration-5-ce.png,
+        title: Fill in the required fields in "Advanced settings". Specify the dashboard that the user sees upon logging in for the first time.
+    ===
+        image: /images/mobile-center/self-registration-6-ce.png,
+        title: Specify the main dashboard that will be displayed to the user when navigating to the “Home” menu item. Click "Add" to complete the bundle creation.
+'
+%}
+
+{% assign selfRegistrationPE = '
+    ===
+        image: /images/mobile-center/self-registration-1-pe.png,
+        title: Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users. Specify the recipients that will receive notifications about new user registrations. Specify the redirect settings: Application URL Scheme, and Application URL Hostname.
+    ===
+        image: /images/mobile-center/self-registration-2-pe.png,
+        title: The mandatory fields for completing the registration form are email, password, and repeat password. If needed, specify additional fields.
+    ===
+        image: /images/mobile-center/self-registration-3-pe.png,
+        title: Choose the Captcha version to be used, and specify "Captcha site key" and "Captcha secret key".
+    ===
+        image: /images/mobile-center/self-registration-4-pe.png,
+        title: Show/hide Privacy Policy and Terms of Use. Specify the roles that will be assigned to the user upon successful registration.
+    ===
+        image: /images/mobile-center/self-registration-5-pe.png,
+        title: Fill in the required fields in "Advanced settings". Specify the dashboard that the user sees upon logging in for the first time.
+    ===
+        image: /images/mobile-center/self-registration-6-pe.png,
+        title: Specify the main dashboard that will be displayed to the user when navigating to the “Home” menu item. Click "Add" to complete the bundle creation.
+'
+%}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=selfRegistrationPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=selfRegistrationCE %}
+{% endif %}
+
+{% endunless %}
+
+Click "**Add**" to finalize the bundle.
+
+At this point, your {{appPrefix}} mobile app is ready for further configuration and deployment!
+
+<br><b><font size="4">Configuration dialog</font></b>
+
+After adding the bundle, a dialog window will appear with the next steps to help you build and configure your custom mobile application. You can follow the quick instructions provided, or continue with this extended guide for a deeper setup.
+
+{% assign configurationDialogCE = '
+    ===
+        image: /images/mobile-center/add-new-bundle-2-ce.png,
+        title: Next, a configuration dialog will open, which contains the basic configuration settings for the ThingsBoard Mobile Application.
+'
+%}
+
+{% assign configurationDialogPE = '
+    ===
+        image: /images/mobile-center/add-new-bundle-2-pe.png,
+        title: Next, a configuration dialog will open, which contains the basic configuration settings for the ThingsBoard PE Mobile Application.
+'
+%}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=configurationDialogPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=configurationDialogCE %}
+{% endif %}
+
+## Step 2: Prepare development environment
+
+Further building of the Flutter {{appPrefix}} mobile app requires the Flutter SDK, so you&#39;ll need to:
+
+- Install **Flutter SDK** (version 2.12.0 or later) by following [these](https://flutter.dev/docs/get-started/install){:target="_blank"} instructions.
+- For better performance, we recommend configuring the editor using [these](https://flutter.dev/docs/get-started/editor){:target="_blank"} instructions.
+
+## Step 3: Get app source code
+
+To build your custom mobile app, you&#39;ll need the {{appPrefix}} Flutter mobile app source code.
+
+Clone the repository from the official [GitHub page]({{appRepo}}){:target="_blank"}, making sure to select the mobile app version that matches your {{appPrefix}} instance:
+
+```bash
+git clone -b release/{{flutterAppVer}} {{appRepo}}
+```
+{: .copy-code}
+
+Refer to the compatibility table to identify the correct version of the Flutter {{appPrefix}} mobile app for your {{appPrefix}} instance version:
 
 {% if docsPrefix != 'pe/' %}
 
@@ -169,19 +420,18 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
 
 {% endif %}
 
-You can get Flutter {{appPrefix}} Mobile Application source code by cloning it from [github repository]({{appRepo}}):
+## Step 4. Configure {{appPrefix}} API endpoint
 
-```bash
-git clone -b release/{{flutterAppVer}} {{appRepo}}
-```
-{: .copy-code}
-
-## Step 3. Configure {{appPrefix}} API endpoint
-
-Open **{{appProject}}** project in your editor/IDE. Edit **lib/constants/app_constants.dart**.
-
-Set value of **thingsBoardApiEndpoint** constant to match api endpoint of your {{appPrefix}} server instance.<br>
+- Open **{{appProject}}** project in your editor/IDE. Edit **lib/constants/app_constants.dart**.
+- Set value of **thingsBoardApiEndpoint** constant to match api endpoint of your {{appPrefix}} server instance.<br>
 In case of {{cloudApp}} set it to `{{cloudEndpoint}}`.
+
+{% capture local_endpoint_note %}
+**Note:** Do not use `localhost` or `127.0.0.1` host names.<br>
+If you are using local {{appPrefix}} installation use alternative ip address/host name accessible within your local network.<br>
+You can read [Connecting Flutter application to Localhost](https://medium.com/@podcoder/connecting-flutter-application-to-localhost-a1022df63130){:target="_blank"} for more information.
+{% endcapture %}
+{% include templates/info-banner.md content=local_endpoint_note %}
 
 ```dart
 abstract class ThingsboardAppConstants {
@@ -192,19 +442,12 @@ abstract class ThingsboardAppConstants {
 
 ```
 
-{% capture local_endpoint_note %}
-**Note:** Do not use `localhost` or `127.0.0.1` host names.<br>
-If you are using local {{appPrefix}} installation use alternative ip address/host name accessible within your local network.<br>
-You can read [Connecting Flutter application to Localhost](https://medium.com/@podcoder/connecting-flutter-application-to-localhost-a1022df63130){:target="_blank"} for more information.
-{% endcapture %}
-{% include templates/info-banner.md content=local_endpoint_note %}
-
-## Step 4. [Optional] Configure push notifications
+## Step 5. [Optional] Configure push notifications
 
 Our system leverages Firebase to send notifications from ThingsBoard instance directly to mobile application.
 This setup requires each platform tenant to configure Firebase specifically for their account to begin the distribution of notifications to their mobile app.
 
-### Step 4.1 Create Firebase project
+### Step 5.1 Create Firebase project
 
 Next, we will walk through step-by-step how to create a Firebase project, and within it, we will generate a private key. This key is required for securely connecting your ThingsBoard instance to Firebase services. 
 
@@ -214,7 +457,7 @@ for ThingsBoard CE, only the system administrator can configure mobile settings.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-So let's get started:
+So let&#39;s get started:
 
 {% assign firebaseProjectCE = '
     ===
@@ -290,9 +533,9 @@ So let's get started:
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectCE %}
 {% endif %}
 
-### Step 4.2 Add Firebase to your mobile application
+### Step 5.2 Add Firebase to your mobile application
 
-To integrate Firebase into the mobile application, you'll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
+To integrate Firebase into the mobile application, you&#39;ll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
 
 #### [Only for IOS] Apple app configuration
 
@@ -324,7 +567,7 @@ The APNs authentication key is uploaded.
 
 {% include images-gallery.liquid imageCollection=APNsAuthenticationKey %}
 
-### Step 4.3 Check project configuration
+### Step 5.3 Check project configuration
 
 After successfully completing these steps, make sure that your project contains the following file:
 
@@ -345,7 +588,7 @@ if the **{{appProject}}** project is currently running, please stop it and proce
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-To confirm that Firebase has been integrated properly, run your application ([Step 5](#step-5-run-the-app)). If everything is configured correctly, the notifications menu in your mobile application should be active, as shown in the screenshot below.
+To confirm that Firebase has been integrated properly, run your application ([Step 6](#step-6-run-the-app)). If everything is configured correctly, the notifications menu in your mobile application should be active, as shown in the screenshot below.
 
 {% assign mobileNotificationsPE = '
     ===
@@ -366,10 +609,10 @@ To confirm that Firebase has been integrated properly, run your application ([St
 {% endif %}
 
 <br>
-Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
 
-## Step 5. Run the app
-Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
+## Step 6. Run the app
+Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive){:target="_blank"}.
 
 When using terminal run the app with the following command:
 
@@ -402,14 +645,14 @@ When running an app directly from the console using `flutter run`, enter `r` to 
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
 
-## Step 6. [Optional] Build and release mobile application
+## Step 7. [Optional] Build and release mobile application
 
-If you need to build and release ThingsBoard Mobile Application for iOS or Android, please refer to [this guide](/docs/{{docsPrefix}}mobile/release/).
+If you need to **build and release** {{appPrefix}} mobile application for iOS or Android, please refer to [this guide](/docs/{{docsPrefix}}mobile/release/){:target="_blank"}.
 
 {% if docsPrefix != 'pe/' %}
 ## Live demo app
 
-To be familiar with common app features try out our ThingsBoard Live mobile application available on Google Play and App Store.
+To be familiar with common app features try out our **ThingsBoard Live mobile application** available on Google Play and App Store.
 
 <br>
 
@@ -432,5 +675,5 @@ To be familiar with common app features try out our ThingsBoard Live mobile appl
 
 ## Next Steps
 
-- [Customize your app](/docs/{{docsPrefix}}mobile/customization) - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
-- [Publish your app](/docs/{{docsPrefix}}mobile/release) - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.
+- [Customize your app](/docs/{{docsPrefix}}mobile/customization){:target="_blank"} - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
+- [Publish your app](/docs/{{docsPrefix}}mobile/release){:target="_blank"} - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.

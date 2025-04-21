@@ -12,46 +12,30 @@
 * TOC
 {:toc}
 
-The "Applications" tab in the "Mobile center" serves as a control center for your [mobile applications](/docs/{{docsPrefix}}mobile/){:target="_blank"}. It allows you to:
+The "**Applications**" tab in the "**Mobile center**" serves as a control center for your [mobile applications](/docs/{{docsPrefix}}mobile/){:target="_blank"}. It allows you to:
 
-- Add new applications: Create configurations for new mobile apps to integrate with ThingsBoard.
-- Edit the existing applications: Update application details, such as package names, statuses, versions, or store information.
-- Delete applications: Remove obsolete or unused application configurations from the platform.
+- **Add new applications**: Create configurations for new mobile apps to integrate with ThingsBoard.
+- **Edit the existing applications**: Update application details, such as package names, statuses, versions, or store information.
+- **Delete applications**: Remove obsolete or unused application configurations from the ThingsBoard platform.
 
 ## Add application
 
 To add a new mobile application, following these steps: 
 
-- Go to the "Applications" tab of the "Mobile center" page, and click the "+ Add application" button in the upper-right corner of the window;
-- Input the application package name;
-- Select the platform type: Android or iOS;
-- A unique Application Secret will be generated automatically. Remember it or replace with your own;
-- Set the application status:
-
-ㅤㅤ&bull; *Draft*: For applications that are still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
-
-ㅤㅤ&bull; *Published*: For applications that are ready to be launched and used by end users.
-
-ㅤㅤ&bull; *Deprecated*: For older applications that are no longer actively supported but still available.
-
-ㅤㅤ&bull; *Suspended*: For applications that are temporarily disabled or restricted from use.
-
-- Optionally, specify the minimum and the latest application versions along with release notes for each version;
-- Add store information:
-
-ㅤㅤ&bull; *Android*:
-
-ㅤㅤㅤㅤ&bull; Provide the link to the {{MOBILE_APPLICATION}} in the Google Play Store.
-
-ㅤㅤㅤㅤ&bull; Enter the SHA256 certificate fingerprints for the application.
-
-ㅤㅤ&bull; *iOS*:
-
-ㅤㅤㅤㅤ&bull; Provide the link to the {{MOBILE_APPLICATION}} in the App Store.
-
-ㅤㅤㅤㅤ&bull; Enter the App ID associated with your iOS application.
-
-- Click "Add" to save your application and complete the process.
+- Go to the "**Applications**" tab on the "**Mobile center**" page, and click the "**+ Add application**" button in the upper-right corner of the window.
+- Enter the **application package** name.
+- Select the **platform type**: Android or iOS.
+- An **Application Secret** will be generated automatically. Remember it or replace with your own.
+- Set the **application status**:
+  - **Draft**: For applications that are still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
+  - **Published**: For applications that are ready to be launched and used by end users.
+  - **Deprecated**: For older applications that are no longer actively supported but still available.
+  - **Suspended**: For applications that are temporarily disabled or restricted from use.
+- (Optional) Specify minimum/latest app versions and release notes.
+- Add **store information**:
+  - **Android**: **Google Play Store link** and **SHA256 certificate fingerprints**.
+  - **iOS**: **App Store link** and **App ID**.
+- Click "**Add**" to save your application and complete the process.
 
 {% include images-gallery.html imageCollection="add-application" %}
 
