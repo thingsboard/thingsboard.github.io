@@ -142,13 +142,14 @@ If a particular **Edge** is missing a placeholder attribute key, the **Platform*
 
 ## Edge limitations
 
-In the current version, **Edge** is not able to **customer**. This limitation affects Uplink Data converter functionality:
-
-* If a customer is not available on the Edge, a device will be assigned to a Tenant.
+In the current release, **Edge** is unable to create customers and entity groups. Note that this limitation affects the functionality of the **Uplink Data Converter**:
+* If a non-existent **device type** is used in the converter, the 'default' device type is used.
+* if a **Customer** is not available on the Edge, the device is assigned to the **Tenant**.
+* If the **entity group** does not exist on the edge, the **'All'** group gets used.
 
 ## See Also
 
-Explore guides and video tutorials related to specific integrations:
+Explore guides and video tutorials for specific integrations:
 
  - [HTTP](/docs/pe/edge/user-guide/integrations/http/){: target="_blank"}
  - [MQTT](/docs/pe/edge/user-guide/integrations/mqtt/){: target="_blank"}
