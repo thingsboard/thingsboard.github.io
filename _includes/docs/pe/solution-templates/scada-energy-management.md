@@ -11,7 +11,7 @@ The ability to collect, analyze, and visualize data from multiple energy sources
 All of this is showcased in our SCADA Energy solution, demonstrating how easily and effectively energy systems can be managed using ThingsBoard.
 
 <br>
-<object width="100%" data="/images/solutions/scada-energy-management/scada-energy-management-scheme.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/solutions/scada-energy-management/scada-energy-management-scheme.svg"></object>
 
 ## Key application areas
 
@@ -53,7 +53,7 @@ It enables operators to track the status of the energy system, analyze energy fl
 The dashboard helps detect faults, prevent failures, and improve energy efficiency through built-in alarms and historical data analysis. 
 This ensures reliable power supply, minimizes energy losses, and facilitates the seamless integration of multiple energy sources.
 
-![image](/images/solutions/scada-energy-management/scada-energy-management-4-pe.png)
+![image](https://img.thingsboard.io/solutions/scada-energy-management/scada-energy-management-4-pe.png)
 
 <br>
 
@@ -78,4 +78,4 @@ Navigate through dashboard states using navigation buttons to track and manage d
 
 The mobile view demonstrates the flexibility of the dashboard, allowing you to manage and monitor the SCADA Energy management across different devices, including tablets and smartphones.
 
-<object width="40%" data="/images/solutions/scada-energy-management/mobile-view-scada-energy-management.png"></object>
+<object width="40%" data="https://img.thingsboard.io/solutions/scada-energy-management/mobile-view-scada-energy-management.png"></object>
