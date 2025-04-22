@@ -8,6 +8,21 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.0.1 (Apr 22, 2025) {#v401}
+
+Minor release with the following bug fixes and improvements:
+
+* UI
+
+  * [#13214](https://github.com/thingsboard/thingsboard/pull/13214) Fixed dynamic form array items configuration by @vvlladd28
+  * [#13215](https://github.com/thingsboard/thingsboard/pull/13215) Fixed type checking for Date and Array in deepClone utils method by @vvlladd28
+  * [#13218](https://github.com/thingsboard/thingsboard/pull/13218) Fixed early updatePosition call to prevent CDK overlay crash in matSuffix context by @maxunbearable
+  * [#13226](https://github.com/thingsboard/thingsboard/pull/13226) Fixed mutation of default widget settings by @vvlladd28
+  * [#13229](https://github.com/thingsboard/thingsboard/pull/13229) Fixed SCADA HP bottom right elbow connector pipe by @ArtemDzhereleiko
+  * [#13217](https://github.com/thingsboard/thingsboard/pull/13217) Updated links for the rule nodes by @irynamatveieva
+
+**Full Changelog**: https://github.com/thingsboard/thingsboard/compare/v4.0...v4.0.1
+
 ## v4.0.0 (Apr 15, 2025) {#v40}
 
 Major release with the following features and bug fixes:
