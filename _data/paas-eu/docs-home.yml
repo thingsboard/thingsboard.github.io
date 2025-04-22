@@ -9,7 +9,7 @@ toc:
   path: /docs/paas/eu/getting-started-guides/what-is-thingsboard-cloud/
 - title: How to connect your device?
   path: /docs/paas/eu/getting-started-guides/connectivity/
-- title: Solution Templates
+- title: Solution templates
   new: true
   section:
     - title: Overview
@@ -20,6 +20,9 @@ toc:
       path: /docs/paas/eu/solution-templates/smart-office/
     - title: SCADA Oil & Gas Drilling system
       path: /docs/paas/eu/solution-templates/scada-drilling-system/
+      new: true
+    - title: SCADA Energy management
+      path: /docs/paas/eu/solution-templates/scada-energy-management/
       new: true
     - title: Fleet tracking
       path: /docs/paas/eu/solution-templates/fleet-tracking/
@@ -174,7 +177,6 @@ toc:
       new: true
     - title: Custom menu
       path: /docs/paas/eu/user-guide/custom-menu/
-      new: true
 - title: Integrations
   section:
     - title: Overview
@@ -239,7 +241,6 @@ toc:
     - title: Kafka Streams
       path: /docs/paas/eu/samples/analytics/kafka-streams/
 - title: Mobile center
-  new: true
   section:
     - title: Overview
       path: /docs/paas/eu/mobile-center/mobile-center/
