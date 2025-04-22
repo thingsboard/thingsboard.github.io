@@ -80,7 +80,7 @@ captcha:
         title: 'Specify the domain name of your ThingsBoard instance. Choose reCAPTCHA type;'
     2:
         image: /images/mobile-center/captcha-3.png
-        title: 'Copy-paste the site key and secret key to the safe place.'
+        title: 'Copy and securely store the the site key and secret key.'
 
 self-registration-3:
     0:

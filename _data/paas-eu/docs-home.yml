@@ -239,7 +239,6 @@ toc:
     - title: Kafka Streams
       path: /docs/paas/eu/samples/analytics/kafka-streams/
 - title: Mobile center
-  new: true
   section:
     - title: Overview
       path: /docs/paas/eu/mobile-center/mobile-center/
