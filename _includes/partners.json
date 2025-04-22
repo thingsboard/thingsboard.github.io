@@ -199,7 +199,7 @@
     "blurb": "MOKO Technology Ltd. is a leading manufacturer and provider of ODM, OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand, MOKO SMART, which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS, LTE, UWB, and other wireless technologies. This commitment to innovation and diverse wireless products drives MOKO’s vision of a connected future."
   },
   {
-    "type": ["main", "bluetooth", "wifi", "nbiot"],
+    "type": ["main", "ethernet", "bluetooth", "wifi", "modbus", "gsm", "lte", "nbiot"],
     "program": "",
     "name": "Digicom B810 Spa",
     "logo": "digicom-logo.png",
@@ -466,7 +466,7 @@
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
   },
   {
-    "type": ["main", "ethernet", "wifi", "LoRaWAN", "bluetooth", "lte", "modbus", "nbiot"],
+    "type": ["main", "ethernet", "wifi", "LoRaWAN", "bluetooth", "lte", "modbus", "catm", "nbiot"],
     "program": "",
     "name": "MikroTik",
     "logo": "mikrotik-logo.svg",
