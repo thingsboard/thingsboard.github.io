@@ -237,6 +237,8 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ si
 
 **NOTE**: replace `redis_url`, `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
 
+{% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -147,6 +147,8 @@ git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
+{% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
+
 **Note**: Make sure custom changes of yours if available are not lost during the merge process. 
 Make sure `TBMQ_VERSION` in .env file is set to the target version (e.g., set it to {{ site.release.broker_full_ver }} if you are upgrading to the latest).
 

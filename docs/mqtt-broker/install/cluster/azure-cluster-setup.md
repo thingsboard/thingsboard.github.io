@@ -312,6 +312,8 @@ git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
+{% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
+
 **Note**: Make sure custom changes of yours if available are not lost during the merge process.
 
 {% include templates/mqtt-broker/install/upgrade-hint.md %}
