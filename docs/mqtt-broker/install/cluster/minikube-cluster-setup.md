@@ -125,7 +125,7 @@ For further guidance, follow the [next instructions](https://github.com/thingsbo
 
 ### Upgrade to 2.1.0
 
-{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
+{% include templates/mqtt-broker/upgrade/update-to-2.1.0-release-cluster.md %}
 
 ### Run upgrade
 

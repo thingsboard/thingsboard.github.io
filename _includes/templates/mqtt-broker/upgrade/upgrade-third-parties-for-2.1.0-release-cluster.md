@@ -16,7 +16,7 @@ For such procedures, please refer to the official documentation of the respectiv
 **Note:** simply **changing the image tag** is not enough and may not be the correct or safe way to upgrade third-party services.
 <br>
 <br>
-If you chose to skip updating third-party service versions, be sure to carefully check whether the merge process has altered any of their versions.
+If you choose to skip updating third-party service versions, be sure to carefully check whether the merge process in the previous step has altered any of their versions. 
 Revert those changes if necessary.
 {% endcapture %}
 {% include templates/info-banner.md content=third-party-upgrade %}
