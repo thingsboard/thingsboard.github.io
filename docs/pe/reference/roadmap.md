@@ -14,7 +14,7 @@ Everything in [CE 4.0](/docs/reference/roadmap/#v40).
 * Report Service 2.0;
 * Processing historical data with the Calculated Fields;  
 * Secrets storage;
-* facility management solution;
+* Facility management solution;
 * More SCADA Solution Templates;
 
 ## v4.1

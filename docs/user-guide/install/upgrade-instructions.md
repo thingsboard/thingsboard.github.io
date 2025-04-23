@@ -222,12 +222,12 @@ sudo service thingsboard start
 ```
 {: .copy-code}
 
-### Windows {#windows-40}
+### Windows {#windows-401}
 
 {% capture difference %}
 **NOTE:**
 <br>
-These upgrade steps are applicable for ThingsBoard version 3.9.x. In order to upgrade to 4.0 you need to [**upgrade to 3.9.x first**](/docs/user-guide/install/upgrade-instructions/#windows-39).
+These upgrade steps are applicable for ThingsBoard version 3.9.x. In order to upgrade to 4.0.1 you need to [**upgrade to 3.9.x first**](/docs/user-guide/install/upgrade-instructions/#windows-39).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
