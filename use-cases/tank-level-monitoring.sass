@@ -1,0 +1,1282 @@
+$step2: 671px
+$step3: 999px
+$step4: 1279px
+$step5: 1439px
+$step6: 1919px
+$button-background-color: #2A7DEC
+$button-width: 208px
+
+#tank-level-monitoring
+    .noToc
+        position: relative
+        overflow: hidden
+
+        .content-wrapper
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            position: relative
+            > *
+                width: 100%
+                max-width: 1440px
+                position: relative
+                z-index: 3
+    
+        #content-get-in-touch
+            display: flex
+            flex-direction: row
+            align-items: unset
+            justify-content: space-between
+            padding: 0 50px
+            max-width: 1440px
+
+    .primary-text
+        color: #212529
+        font: normal 600 48px/63px 'Poppins'
+        text-align: center
+
+    .secondary-text
+        color: #495057
+        font: normal 400 16px/24.8px 'Poppins'
+        text-align: left
+
+    .outline-button
+        background-color: white 
+        border-radius: 8px
+        border: 1px solid $button-background-color
+        font-size: 16px
+        font-weight: 600
+        line-height: 20.8px
+        color: $button-background-color
+        width: $button-width
+        height: 48px 
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+        &:hover
+            background-color: $button-background-color
+            color: #fff
+
+    a
+        font-weight: 500
+
+    .filled-button
+        background-color: $button-background-color
+        border-radius: 8px
+        font-size: 16px
+        font-weight: 600
+        line-height: 20.8px
+        color: #fff
+        width: $button-width
+        height: 48px
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+        &:hover
+            background-color: #fff
+            border: 1px solid $button-background-color
+            color: $button-background-color
+
+    .cards
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+        .card
+            box-shadow: 0px 5px 15px 0px #21252940 
+            width: 32%
+            padding: 20px
+            border-radius: 12px
+            margin: 10px 0
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            gap: 10px
+            .icon  
+                width: 50px
+                height: 50px
+                border-radius: 6px
+                background: #E5F0FF
+                color: $button-background-color
+                border: 1px solid $button-background-color
+                display: flex
+                justify-content: center
+                align-items: center
+
+    footer
+        position: relative
+
+    #first-screen
+        min-height: 525px
+        width: 100%
+        overflow: hidden
+    
+        .hero-container 
+            height: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            position: relative
+            margin: 0 20px
+
+            #hero-content
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: center
+                text-align: initial
+                z-index: 1
+                .hero-title
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 24px
+                    text-align: center
+                    color: $button-background-color
+                    margin-bottom: 30px
+
+                .primary-text
+                    font-size: 60px
+                    font-weight: 500
+                    max-width: 608px
+                    margin-bottom: 40px
+
+                .secondary-text
+                    text-align: center
+                    max-width: 608px
+                    margin-bottom: 40px
+
+                .info-block
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    min-width: 436px
+                    margin-bottom: 70px
+
+    #second-screen
+        height: 600px 
+        width: 100%
+        display: flex
+        justify-content: center
+        margin-bottom: 150px
+        .container
+            display: flex
+            justify-content: center
+            height: 100%
+            #icon-laptop
+                width: 1032px
+                position: absolute
+                z-index: 1
+                box-shadow: 0px 4px 25px 5px #21252917
+                border-radius: 12px
+
+            #icon-mobile
+                position: absolute
+                right: 7%
+                top: 45%
+                width: 195px
+                z-index: 2
+                box-shadow: 0px 4px 25px 5px #21252917
+                border-radius: 12px
+
+            #left-line
+                position: absolute
+                z-index: 0
+                width: 1442px
+                right: -25%
+                bottom: -13%
+
+            #right-line
+                position: absolute
+                z-index: 0
+                top: -2%
+                left: -12%
+                width: 1189px
+
+    #third-screen
+        .container
+            width: 100%
+            display: flex
+            min-height: 600px
+            .left-side
+                width: 45%
+                display: flex
+                flex-direction: column
+                .primary-text
+                    text-align: left
+                    margin-bottom: 20px
+                .secondary-text
+                    margin-bottom: 20px
+                .outline-button
+                    &:hover
+                        background-color: $button-background-color
+                        color: #fff
+
+            .right-side
+                width: 50%
+                #rectangle
+                    width: 570px
+                    position: absolute
+                    z-index: 0
+                    bottom: 22%
+                    right: 0%
+
+    #benefits-screen
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 100px
+        .blue-text
+            color: $button-background-color
+            font-weight: 500
+        
+        .primary-text
+            width: 700px
+            margin-bottom: 30px
+
+        .secondary-text
+            font-size: 18px
+            text-align: center
+            width: 608px
+            margin-bottom: 40px
+
+        .outline-button
+            &:hover
+                background-color: $button-background-color
+                color: #fff
+
+        .cards      
+            .card
+                height: 287px
+                .primary-text
+                    font-size: 24px
+                    line-height: 31.2px
+                    text-align: left
+                    margin-bottom: 16px
+
+                .secondary-text
+                    font-size: 16px
+                    text-align: left
+                    width: auto
+                    margin-bottom: 0px
+
+    #start-your-free
+        background: url("/images/usecases/fuel-level-monitoring/start-your-background.webp")
+        background-repeat: round
+        .container
+            width: 100%
+            height: 447px
+            display: flex
+            
+            .left
+                width: 60%
+                display: flex
+                flex-direction: column
+                justify-content: center
+            
+                .primary-text
+                    text-align: left
+                    margin-bottom: 20px
+           
+                .secondary-text
+                    margin-bottom: 50px
+
+            .right
+                width: 40%
+                display: flex
+                align-items: center
+                justify-content: center
+            
+                .filled-button
+                    width: 320px
+
+    #dark-section
+        height: 1414px
+        background: url("/images/usecases/fuel-level-monitoring/dark-background.png")
+        background-repeat: no-repeat
+        background-position: center top
+        background-size: 100% auto
+        margin-bottom: 150px
+
+        .header
+            margin-bottom: 100px
+            .primary-text 
+                font-size: 68px
+                line-height: 104px
+                text-align: left
+                color: #fff
+                span
+                    display: block
+
+            .second
+                padding-left: 140px
+
+            .third
+                padding-left: 50px
+
+        .info-block
+            display: flex
+            margin-bottom: 80px
+            .menu
+                width: 45%
+                margin-bottom: 40px
+                .try-demo-button
+                    background-color: white 
+                    border-radius: 8px
+                    border: 1px solid #192234
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 20.8px
+                    color: #192234
+                    width: 250px
+                    height: 48px 
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    text-decoration: none
+                    &:hover
+                        border: 1px solid #fff
+                        color: #fff
+                        background-color: transparent
+                
+                .expansion-panel
+                    margin-bottom: 10px
+                    overflow: hidden
+                    border-bottom: 1px solid #495057
+                    padding: 10px
+                    width: 90%
+
+                    .expansion-header
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        padding: 10px
+                        cursor: pointer
+
+                    .header-icon
+                        margin-right: 20px
+                        height: 20px
+                        width: 20px
+
+                    .arrow-icon
+                        transition: max-height 1s cubic-bezier(0.5, 0.1, 0.3, 1.1)
+
+                    &.expanded
+                        .arrow-icon
+                            transform: rotate(180deg)
+
+                    .primary-text
+                        margin: 0
+                        font-size: 24px
+                        line-height: 31.2px
+                        color: #fff
+                        text-align: left
+                        display: flex
+                        align-items: center
+
+                    .expansion-content
+                        padding: 0 10px
+                        display: none
+                        max-height: 0
+                        overflow: hidden
+                        margin: 10px 0 10px 35px
+                        transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1)
+                        .secondary-text
+                            color: #CED4DA
+
+                    &.expanded
+                        .expansion-content
+                            display: block
+                            max-height: 1000px
+
+                .last
+                    margin-bottom: 50px
+
+                .buttons
+                    display: flex
+                    justify-content: flex-start
+                    gap: 10px
+                    .outline-button
+                        width: 250px
+                        background-color: transparent 
+                        border: 1px solid #fff
+                        color: #FFF
+                        &:hover
+                            border: 1px solid #192234
+                            color: #192234
+                            background-color: #fff
+
+
+            .images
+                width: 55%
+                .dark-map-image,
+                .dark-map1-image,
+                .dark-map2-image,
+                .dark-map3-image,
+                .dark-map4-image
+                    position: absolute
+                    right: 0%
+                    width: 642px
+                    z-index: 1
+                    &.dark-map-image
+                        bottom: 15%
+                    &.dark-map1-image
+                        bottom: 20%
+                    &.dark-map2-image
+                        bottom: 21%
+                        width: 591px
+                    &.dark-map3-image
+                        bottom: 20%
+                        width: 650px
+                    &.dark-map4-image
+                        bottom: 20%
+                        width: 650px
+
+                .dark-background-image
+                    position: absolute
+                    width: 900px
+                    right: -15%
+                    background: linear-gradient(180deg, #1B2945 0%, rgba(27, 41, 69, 0) 130.58%)
+                    height: 537px
+                    border-radius: 60px
+
+    #features
+        margin-bottom: 50px
+        .container
+            width: 100%
+            display: flex
+            flex-direction: column
+            gap: 30px
+            .primary-text 
+                width: 821px
+                font-weight: 500
+                font-size: 65px
+                line-height: 72px
+                color: #0D1717
+                text-align: left
+
+            .secondary-text
+                width: 821px
+
+            .cards
+                .card
+                    height: 315px
+                    gap: 16px
+                    .primary-text
+                        width: auto
+                        font-size: 24px
+                        line-height: 31.2px
+                        text-align: left
+                        color: $button-background-color                
+
+                    .secondary-text
+                        width: auto
+
+    #schedule-consultation
+        background: url("/images/usecases/fuel-level-monitoring/schedule-consultation.webp")
+        background-repeat: round
+        margin-bottom: 50px
+        .container
+            width: 100%
+            height: 447px
+            display: flex
+            .left
+                width: 60%
+                display: flex
+                flex-direction: column
+                justify-content: center
+            
+                .primary-text
+                    text-align: left
+                    color: #FFFFFF
+                    margin-bottom: 20px
+           
+                .secondary-text
+                    color: #CED4DA
+                    margin-bottom: 50px
+
+            .right
+                width: 40%
+                display: flex
+                align-items: center
+                justify-content: center
+            
+                .filled-button
+                    background-color: #FFFFFF
+                    color: #192234
+                    width: 320px
+                    &:hover
+                        border: 1px solid #fff
+                        color: #fff
+                        background-color: transparent
+
+    #bussiness-needs
+        display: flex
+        flex-direction: column
+        margin-bottom: 150px
+        .header-block
+            display: flex
+            justify-content: space-between
+            margin-bottom: 50px
+            .primary-text 
+                text-align: left
+                width: 60%
+                font-weight: 500
+                font-size: 65px
+                line-height: 72px
+                color: #0D1717
+
+            .secondary-text
+                width: 40%
+
+        .cards
+            .card
+                position: relative
+                flex-direction: column
+                gap: 16px
+                margin: 10px 0
+                width: 49%
+                height: 350px
+                .card-icon
+                    position: absolute
+                    top: 0
+                    right: 0
+                    overflow: hidden
+                    img
+                        width: 140px
+                        height: auto
+                        transform: translate(15%, -15%)
+
+                .card-container
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+                    margin-top: 130px
+                    height: 100%
+                    .primary-text
+                        width: auto
+                        font-size: 24px
+                        line-height: 31.2px
+                        text-align: left
+
+                    .secondary-text
+                        width: auto
+
+    #resources
+        margin-bottom: 50px
+        .container
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            gap: 60px
+            .primary-text
+                text-align: left
+                margin-bottom: 20px
+            .cards
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .card
+                    padding: 0px
+                    width: 32%
+                    border-radius: 20px
+                    justify-content: space-between 
+                    height: 602px
+                    background: #F8F9FE
+
+                    .image-block
+                        width: 100%
+                        img
+                            width: 100%
+                            border-radius: 20px 20px 0 0
+
+                    .info-block
+                        display: flex
+                        height: 320px
+                        justify-content: space-between
+                        flex-direction: column
+                        padding: 24px
+                        .primary-text
+                            font-size: 24px
+                            line-height: 31.2px
+                            text-align: left
+
+                        .outline-button
+                            width: 100%
+
+    #connectivity
+        margin-bottom: 150px
+        .container
+            min-height: 650px
+            display: flex
+
+            .left
+                width: 50%
+                .connectivity-image
+                    position: absolute
+                    z-index: 1
+                    left: -17%
+                    top: -16%
+                    width: 900px
+
+            .right
+                width: 50%
+                display: flex
+                align-items: flex-start
+                flex-direction: column
+                justify-content: center
+                
+                .primary-text
+                    text-align: left
+                    margin-bottom: 40px 
+
+                .secondary-text
+                    padding-right: 20px
+                    margin-bottom: 20px
+
+    #get-in-touch
+        background: url("/images/usecases/fuel-level-monitoring/start-your-background.webp")
+        background-repeat: round
+        position: relative
+        display: flex
+        justify-content: center
+        background-color: white
+        padding: 50px 0 100px 0
+
+        .info
+            margin-right: 70px
+            z-index: 2
+
+        .primary-text
+            text-align: left
+            max-width: 610px
+            line-height: 68px
+            margin-bottom: 20px
+
+        .secondary-text
+            max-width: 470px
+
+        .contact-form
+            display: flex
+            align-items: center
+            z-index: 2
+            width: 400px
+            fieldset
+                width: 100%
+
+    @media screen and (max-width: $step6)
+        #second-screen
+            #icon-mobile
+                right: 8%
+            
+            #left-line
+                right: -15%
+                bottom: -20%
+
+            #right-line
+                top: 0%
+                left: -13%
+
+        #dark-section
+            background-size: auto
+            .info-block
+                .images
+                    .dark-background-image,
+                    .dark-map3-image,
+                    .dark-map4-image
+                        right: -14% 
+                        &.dark-map3-image,
+                        &.dark-map4-image
+                            right: 0% 
+                            width: 650px
+
+        #third-screen
+            .container
+                .left-side
+                    width: 50%
+
+        #connectivity
+            .container
+                .left
+                    .connectivity-image
+                        left: -11%
+                        top: -11%
+                        width: 830px
+
+    @media screen and (max-width: $step5)
+        #second-screen
+            .container
+                #icon-laptop
+                    width: 919px
+
+                #icon-mobile
+                    width: 173px 
+                    right: 5%
+                    top: 30%
+            
+                #left-line
+                    right: -30%
+                    bottom: 21%
+                    width: 637.82px
+
+                #right-line
+                    width: 637.82px
+                    top: -9%
+                    left: -7%
+
+        #third-screen
+            .container
+                .left-side
+                    width: 55%
+
+                .right-side
+                    #rectangle
+                        width: 480px
+                        bottom: 25%
+
+        #benefits-screen
+            .card
+                height: 300px
+
+        #dark-section
+            background-size: auto
+            .header
+                margin-bottom: 60px
+                .primary-text 
+                    font-size: 60px
+            
+            .info-block
+                .menu
+                    .expansion-panel
+                        .primary-text
+                            font-size: 20px
+                
+                .images
+                    .dark-background-image
+                        right: -30% 
+                        width: 1017px
+                        top: 10%
+
+                    .dark-map-image,
+                    .dark-map1-image,
+                    .dark-map2-image,
+                    .dark-map3-image,
+                    .dark-map4-image
+                        right: 0%
+                        width: 547px !important
+
+                        &.dark-map1-image 
+                            bottom: 17%
+                        
+                        &.dark-map2-image 
+                            bottom: 21%
+                        
+                        &.dark-map3-image 
+                            bottom: 25%
+
+                        &.dark-map4-image 
+                            bottom: 20%
+
+        #features
+            .container
+                .cards
+                    .card
+                        height: 390px
+
+        #connectivity
+            .container
+                .left
+                    .connectivity-image
+                        width: 544px
+                        top: 13%
+                        left: 0%
+
+        #get-in-touch
+            .contact-form
+                width: 300px
+
+    @media screen and (max-width: $step4)
+        #first-screen
+            .hero-container 
+                #hero-content
+                    .title
+                        font-size: 50px
+
+        #second-screen
+            margin-bottom: 0px
+            .container
+                #icon-laptop
+                    width: 718px
+
+                #icon-mobile
+                    width: 135px 
+                    right: 5%
+                    top: 30%
+            
+                #left-line
+                    right: -30%
+                    bottom: 34%
+                    width: 498.3px
+
+                #right-line
+                    width: 498.3px
+                    top: -9%
+                    left: -7%
+
+        #third-screen
+            margin-bottom: 100px
+            .container
+                .left-side
+                    width: 55%
+                    display: flex
+                    flex-direction: column
+                    .primary-text
+                        font-size: 40px 
+
+                .right-side
+                    #rectangle
+                        width: 430px
+                        bottom: 25%
+                        right: 0%
+
+        #benefits-screen
+            .primary-text
+                font-size: 40px
+            
+            .cards
+                .card
+                    width: 32%
+                    height: 420px
+                    .primary-text
+                        width: auto
+
+        #dark-section 
+            margin-bottom: 0px
+            background-size: auto
+            .header
+                margin-bottom: 60px
+                .primary-text 
+                    font-size: 50px
+            
+            .info-block  
+                .images
+                    .dark-background-image
+                        right: -53%
+                        top: 21%
+
+                    .dark-map-image,
+                    .dark-map1-image,
+                    .dark-map2-image,
+                    .dark-map3-image,
+                    .dark-map4-image
+                        right: 0%
+                        width: 450px !important
+                        bottom: 20%
+                        
+                        &.dark-map3-image 
+                            bottom: 28%
+
+        #features
+            .container
+                .cards
+                    .card
+                        height: 421px
+                        padding: 16px
+
+        #bussiness-needs
+            .container
+                .cards
+                    .card
+                        .card-container
+                            margin-top: 90px
+
+        #connectivity
+            .container
+                min-height: 450px
+                .left
+                    .connectivity-image
+                        width: 449px
+                        left: -5%
+                        top: 0%
+
+                .right
+                    justify-content: flex-start
+                    .primary-text
+                        font-size: 40px
+                        margin-bottom: 10px
+
+                    .secondary-text
+                        margin-bottom: 20px
+
+        #resources
+            .container
+                .cards
+                    .card
+                        height: 530px
+                        justify-content: space-between
+                        .info-block
+                            padding: 16px
+
+        #get-in-touch
+            padding: 100px 0
+            .info
+                width: 60%
+                margin-right: 0px
+
+            .secondary-text
+                max-width: 100%
+            
+    @media screen and (max-width: $step3)
+        .noToc
+            #content-get-in-touch
+                gap: 20px
+                max-width: 672px
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+
+        #first-screen
+            .hero-container 
+                #hero-content
+                    .title
+                        font-size: 50px
+                        max-width: 530px
+
+        #second-screen 
+            height: 500px
+            .container
+                #icon-laptop
+                    width: 600px
+
+                #icon-mobile
+                    width: 118px 
+                    right: 2%
+                    top: 28%
+            
+                #left-line
+                    display: none
+
+                #right-line
+                    display: none
+
+        #third-screen
+            margin-bottom: 100px
+            .container
+                min-height: 1000px
+                flex-direction: column
+                .left-side
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+
+                .right-side
+                    min-height: 480px
+                    width: 100%
+                    #rectangle
+                        width: 480px
+                        top: 55%
+                        right: 10%
+
+        #start-your-free
+            .container
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .left
+                    width: 100%
+                    .primary-text
+                        font-size: 40px
+                        line-height: 52px
+                .right
+                    width: 100%
+                    justify-content: start
+
+        #benefits-screen
+            .cards
+                .card
+                    width: 80%
+                    height: 230px
+
+        #dark-section 
+            background-size: auto
+            .header
+                margin-bottom: 60px
+                .primary-text 
+                    font-size: 34px
+            
+            .info-block
+                .menu
+                    width: 100%
+                    .expansion-panel
+                        width: 100%
+                
+                .images
+                    display: none
+
+        #features
+            .container
+                .primary-text
+                    max-width: 100%
+                    font-size: 40px
+                    line-height: 52px
+                .secondary-text
+                    max-width: 100%
+                .cards
+                    .card
+                        width: 100%
+                        height: 240px
+
+        #schedule-consultation
+            .container
+                display: flex
+                flex-direction: column
+                justify-content: center
+                .left
+                    width: 100%
+                    align-items: flex-start
+
+                .right
+                    width: 100%
+                    justify-content: flex-start
+
+        #bussiness-needs
+            margin-bottom: 70px
+            .container
+                .header-block
+                    flex-direction: column
+                    gap: 10px
+                    margin-bottom: 30px
+                    .primary-text
+                        width: 100%
+                        font-size: 40px
+                        line-height: 52px
+
+                    .secondary-text
+                        width: 100%
+                
+                .cards
+                    .card
+                        width: 100%
+
+        #connectivity
+            .container
+                min-height: 900px
+                display: flex
+                flex-direction: column-reverse
+                .left
+                    width: 100%
+                    height: 500px
+                    display: flex
+                    justify-content: center
+                    .connectivity-image
+                        width: 550px
+                        top: 50%
+                        left: 0%
+
+                .right
+                    width: 100%
+                    height: 400px
+                    justify-content: flex-start
+
+        #resources
+            .container
+                .primary-text
+                    font-size: 40px
+                    line-height: 52px
+                    text-align: center
+                    margin-bottom: 0px
+
+                .cards
+                    flex-direction: column
+                    gap: 20px
+                    .card
+                        width: 430px
+                        height: 522px
+                
+                .filled-button
+                    width: 430px
+
+        #get-in-touch
+            .info
+                width: 100%
+
+            .contact-form
+                width: 344px
+                fieldset
+                    padding: 0px
+
+    @media screen and (max-width: $step2)
+        .noToc
+            #content-get-in-touch
+                display: flex
+                padding: 0 12px
+
+        .content-wrapper
+            padding: 0 5px 0 5px
+
+        .outline-button
+            width: 100%
+
+        .filled-button
+            width: 100%
+            margin-bottom: 10px
+
+        #first-screen
+            .hero-container 
+                #hero-content
+                    padding-top: 40px
+                    .primary-text
+                        font-size: 40px
+                        line-height: 44px
+
+                    .info-block
+                        min-width: 100%
+                        display: flex
+                        flex-direction: column
+
+        #second-screen
+            height: 220px
+            .container
+                display: flex
+                justify-content: center
+                height: 100%
+                #icon-laptop
+                    width: 296px
+
+                #icon-mobile
+                    width: 58px
+                    right: 4%
+                    top: 32%
+    
+        #third-screen
+            .container
+                min-height: auto
+                .left-side
+                    .primary-text
+                        margin-bottom: 30px
+                        font-size: 32px
+                        line-height: 41.6px
+                    .secondary-text
+                        margin-bottom: 30px
+                .right-side
+                    min-height: auto
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    #rectangle
+                        width: 90%
+                        position: static
+
+        #benefits-screen
+            margin-bottom: 0px
+            .primary-text
+                font-size: 32px
+                line-height: 41.6px
+                width: 100%
+
+            .secondary-text
+                width: 100%
+
+            .cards
+                .card
+                    width: 100%
+                    height: auto
+
+        #start-your-free
+            padding: 20px 0
+
+        #dark-section
+            height: 1020px
+            background-size: 1337px
+            margin-bottom: 50px
+            .header
+                height: 80px
+                margin-bottom: 50px
+                .primary-text 
+                    font-size: 20px
+                    height: 100%
+                    display: flex
+                    justify-content: space-between
+                    flex-direction: column
+                    line-height: 40px
+                
+                .second
+                    padding-left: 22px
+
+                .third
+                    padding-left: 0px
+
+            .info-block
+                margin-bottom: 0px
+                .menu
+                    margin-bottom: 0px
+                    .try-demo-button
+                        width: 100%
+                        
+                    .last
+                        margin-bottom: 15px
+
+                    .buttons
+                        flex-direction: column
+                        .outline-button
+                            width: 100%
+
+        #features
+            .container
+                .cards
+                    .card
+                        height: auto
+
+        #schedule-consultation
+            .container
+                .left
+                    .primary-text
+                        font-size: 40px
+
+        #bussiness-needs 
+            .container 
+                .cards 
+                    .card
+                        height: auto
+
+        #connectivity
+            margin-bottom: 0px
+            .container
+                min-height: 650px
+                display: flex
+
+                .left
+                    height: auto
+                    .connectivity-image
+                        width: 90%
+                        top: 75%
+                        position: static
+                        
+                .right
+                    height: auto
+                    .primary-text
+                        font-size: 32px
+                        line-height: 41.6px
+        
+        #resources
+            .container
+                .cards
+                    .card
+                        width: 100%
+                
+                .filled-button
+                    width: 100%
+
+        #get-in-touch
+            padding: 40px 0
+            margin-bottom: 0px
+
+            .contact-form
+                width: 100%
+
+            fieldset
+                width: 100%
