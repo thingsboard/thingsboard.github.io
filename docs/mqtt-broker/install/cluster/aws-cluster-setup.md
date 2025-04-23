@@ -435,7 +435,7 @@ For further guidance, follow the [next instructions](https://docs.aws.amazon.com
 
 ### Upgrade to 2.1.0
 
-{% include templates/mqtt-broker/upgrade/upgrade-third-parties-for-2.1.0-release-cluster.md %}
+{% include templates/mqtt-broker/upgrade/update-to-2.1.0-release-aws-cluster.md %}
 
 ### Upgrade to 2.0.0
 
