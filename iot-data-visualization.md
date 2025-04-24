@@ -1,5 +1,5 @@
 ---
-layout: visualization
+layout: iot-data-visualization
 title: IoT Data Visualization with Widgets, SCADA & Dashboards
 notitle: "true"
 description: Explore powerful IoT data visualization with ThingsBoard. Build interactive dashboards using charts, graphs, SCADA widgets, and control elements. Leverage states and responsive layouts for real-time monitoring, enhanced UX, decision-making, and industrial process optimization.

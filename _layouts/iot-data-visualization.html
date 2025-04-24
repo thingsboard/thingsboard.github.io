@@ -21,13 +21,19 @@
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
-                    img.style.visibility = 'visible';
+                    if ( !img.complete) {
+                        img.addEventListener('load', handleImageLoad);
+                    }
                     obs.unobserve(img);
                 }
             });
         }, {threshold: 1.0});
 
         svgAnimations.forEach(img => svgObserver.observe(img));
+
+        function handleImageLoad(event) {
+            event.target.style.visibility = 'visible';
+        }
 
         const templatesAnimations = document.querySelectorAll(".solution-template img");
         const templatesObserver = new IntersectionObserver((entries, obs) => {
