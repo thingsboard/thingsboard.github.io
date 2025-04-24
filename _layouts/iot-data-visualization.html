@@ -21,8 +21,12 @@
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
-                    if ( !img.complete) {
-                        img.addEventListener('load', handleImageLoad);
+                    if (!img.complete) {
+                        addListenerForImageLoad(img);
+                        img.addEventListener('error', handleImageLoad);
+                    } else {
+                        img.src = img.dataset.src + '?t=' + Date.now();
+                        addListenerForImageLoad(img);
                     }
                     obs.unobserve(img);
                 }
@@ -31,8 +35,14 @@
 
         svgAnimations.forEach(img => svgObserver.observe(img));
 
+        function addListenerForImageLoad(img) {
+            img.addEventListener('load', handleImageLoad);
+            img.addEventListener('error', handleImageLoad);
+        }
+
         function handleImageLoad(event) {
             event.target.style.visibility = 'visible';
+            event.target.removeEventListener('load', handleImageLoad);
         }
 
         const templatesAnimations = document.querySelectorAll(".solution-template img");
