@@ -118,7 +118,7 @@ For **MQTT v5 clients**:
 Building on our knowledge within the IoT ecosystem and the successful implementation of numerous IoT use cases, we have classified MQTT clients into two distinct categories:
 
 * The _DEVICE_ clients primarily engaged in publishing a significant volume of messages while subscribing to a limited number of topics with relatively low message rates. 
-  These clients are typically associated with IoT devices or sensors that frequently transmit data to the broker.
+  These clients are typically associated with IoT devices or sensors.
 
 * The _APPLICATION_ clients specialize in subscribing to topics with high message rates. 
   They often require messages to be persisted when the client is offline with later delivery, ensuring the availability of crucial data. 
@@ -135,6 +135,8 @@ This design separates the handling of persistent messages from other message typ
 Dedicated threads, functioning as Kafka consumers, retrieve these messages and store them in a [Redis](#redis) database utilized for persistence storage. 
 This method is particularly suitable for DEVICE clients, as they typically do not require extensive message reception. 
 This approach helps us recover stored messages smoothly when a client reconnects. At the same time, it ensures great performance for scenarios involving a moderate incoming message rate.
+
+A detailed breakdown of how we use Redis as persistent message storage for DEVICE clients is available [here](/docs/mqtt-broker/architecture-details/persistent-device-client/).
 
 **Persistent DEVICE processing in cluster mode**
 
