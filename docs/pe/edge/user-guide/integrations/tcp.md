@@ -85,29 +85,29 @@ downlinkTerminal:
 {% assign integrationUrl = "tcp" %}
 {% include templates/edge/integrations/edge-pe-reference.md %}
 
-## Overview
+### Overview
 
 {% include templates/edge/integrations/tcp-udp/overview.md %}
 
 {% include templates/edge/integrations/tcp-udp/remote-only.md %}
 
-Please review the integration diagram to learn more.
+To learn more, review the integration diagram:
 
-![image](/images/user-guide/integrations/tcp-integration.svg)
+![image](/images/user-guide/integrations/tcp-integration.svg){: style="display: block; margin: auto"} 
 
-## Prerequisites
+### Prerequisites
 
 In this tutorial, we will use:
 
-- ThingsBoard PE Edge;
-- TCP Integration, running externally and connected to the cloud ThingsBoard Edge instance;
-- **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
-- **netcat** (**nc**) utility to establish TCP connections, receive data from there and transfer them;
+- ThingsBoard Edge Professional Edition;
+- **TCP Integration**: The integration that runs externally and is connected to the **ThingsBoard Edge** instance.
+- **echo** command: To display a line of text, and redirect its output to the **netcat** (**nc**) utility.
+- **netcat** (**nc**) utility: To establish TCP connections, receive data from there, and transmit it.
 
 Let's assume that we have a sensor which is sending current temperature and humidity readings.
 Our sensor device **SN-002** publishes it's temperature and humidity readings to TCP Integration on **10560** port to the machine where TCP Integration is running.
 
-For demo purposes we assume that our device is smart enough to send data in 3 different payload types:
+For demo purposes, we assume that our device is smart enough to send data in 3 different payload types:
 - **Text** - in this case payload is **SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69**
 - **JSON** - in this case payload is
 
@@ -130,28 +130,28 @@ For demo purposes we assume that our device is smart enough to send data in 3 di
     - **18-21** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
     - **22-24** bytes - **\x00\x00\x00** - dummy bytes. We are going to ignore them, because payload size is **17** bytes - from **5** till **21** byte. These bytes are included for sample purposes;
 
-You can select payload type based on your device capabilities and business cases.
+You can select the payload type based on your device capabilities and business cases.
 
 {% assign integrationPort = "10560" %}
 {% include templates/edge/integrations/tcp-udp/firewall.md %}
 
-## Create Converter templates
+### Create Converter templates
 
-Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+Converter and Integration templates are created on the **Cloud**, so please log in to the **Cloud** instance as a **Tenant administrator**.
 
-### Uplink Converter template
+#### Uplink Converter template
 
-Before creating the Integration template, you need to create an Uplink and Downlink converter templates in **Converters templates** page.
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge.
+Before creating the **Integration template**, you need to create an Uplink and Downlink converter templates on the **Converters templates** page.
+Uplink is required to convert incoming data from the device into the required format for display on **ThingsBoard Edge**.
 
-Click on the 'plus' and on 'Create new converter'. To view the events, enable Debug.
-In the function decoder field, specify a script to parse and transform data.
+Click the **"plus"** button and select the "**Create new converter**" option. To view the events, enable the **Debug** mode.
+Enter a script to parse and transform data in the **"function decoder"** field.
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-Choose device payload type to for decoder configuration:
+Select the device payload type to for decoder configuration:
 
 {% capture uplinkpayload %}
 Text payload<br>%,%text%,%templates/integration/tcp/tcp-uplink-converter-text.md%br%
@@ -160,22 +160,22 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-bin
 
 {% include content-toggle.liquid content-toggle-id="tcpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
-You can change the decoder function while creating the converter or after creating it.
-If the converter has already been created, then click on the 'pencil' icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function.
-Save changes by clicking on the 'checkmark' icon.
+During or after creating the converter, you can change the decoder function:
+If the converter has already been created, click the **"Edit"** button (the "pencil" icon) to edit it.
+Copy the converter configuration example (or your own configuration) and paste it into the decoder function.
+Save the changes by clicking on the **"Save"** button (the "checkmark" icon).
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
-### Downlink Converter template
+#### Downlink Converter template
 
-Create Downlink in **Converter templates** page as well. To see events select **Debug** checkbox.
+Create the Downlink on the **Converter templates** page as well. To see the events, select the **Debug** checkbox.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
 You can customize a downlink according to your configuration.
 Let’s consider an example where we send an attribute update message.
-An example of downlink converter:
+An example of a downlink converter:
 
 ```ruby
 // Encode downlink data from incoming Rule Engine message
@@ -202,12 +202,12 @@ return result;
 ```
 {: .copy-code}
 
-## Create Integration template
+### Create Integration template
 
 Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
 Go to **Integration templates** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
 
-As you mentioned **Execute remotely** is checked and can not be modified - TCP Integration can be only **remote** type.
+As you mentioned, **Execute remotely** is checked and can not be modified - TCP Integration can be only **remote** type.
 
 Please note down **Integration key** and **Integration secret** - we will use these values later in the configuration on the remote TCP Integration itself.
 
@@ -234,7 +234,7 @@ Click **Add** to save the Integration.
 {% include images-gallery.html imageCollection="addIntegration" %}
 
 
-## Modify Edge Root Rule chain for Downlinks
+### Modify Edge Root Rule chain for Downlinks
 
 We can send a downlink message to the device from Rule chain using the rule node.
 To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
@@ -243,19 +243,19 @@ When changes are made to device attribute, the downlink message will be sent to 
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
-## Assign Integration to Edge
+### Assign Integration to Edge
 
 Once converter and integration templates are created, we can assign Integration template to Edge.
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-### Installing and running external TCP Integration
+#### Installing and running external TCP Integration
 
 Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations) and install TCP Integration service locally or on separate machine.
 
 Please use **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
 
-## Send uplink message
+### Send uplink message
 
 Once ThingsBoard TCP Integration has been created, the TCP server starts, and then it waits for data from the devices.
 
@@ -278,7 +278,7 @@ Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-## Send downlink message
+### Send downlink message
 
 Now let's check downlink functionality. Let's add **firmware** shared attribute:
 
@@ -295,7 +295,7 @@ An example of sent message and a response from ThingsBoard Edge in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
-## Next steps
+### Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

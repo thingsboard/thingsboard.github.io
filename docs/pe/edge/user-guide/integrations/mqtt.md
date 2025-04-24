@@ -111,7 +111,7 @@ In this tutorial, we will use:
 - Locally installed [ThingsBoard PE Edge](/docs/user-guide/install/pe/edge/installation-options/){: target="_blank"} instance;
 - **MQTT broker** that can be accessed through the **ThingsBoard Edge** instance: broker.hivemq.com (port 1883);
 - **mosquitto_pub** and **mosquitto_sub** MQTT clients for sending and receiving messages.
-- a sensor device **SN-001** that sends temperature readings to **'tb-edge/mqtt-integration-tutorial/sensors/SN-001/temperature'** and is subscribed to **'tb-edge/mqtt-integration-tutorial/sensors/SN-001/rx'** to receive **RPC calls**. We will send a message with temperature readings in a simple format: **`{"value":25.1}`**
+- a sensor device that sends temperature readings. In this guide we'll use **SN-001** to **'tb-edge/mqtt-integration-tutorial/sensors/SN-001/temperature'** and is subscribed to **'tb-edge/mqtt-integration-tutorial/sensors/SN-001/rx'** to receive **RPC calls**. We will send a message with temperature readings in a simple format: **`{"value":25.1}`**
 
 ### Create converter and integration templates
 

@@ -98,6 +98,7 @@ SN-001,default,temperature,25.7,humidity,69
   "humidity": 69
 }
 ```
+{: .copy-code.expandable-15}
 
 - **Binary** - in this case, the payload looks like this (in HEX string):
 ```text
@@ -118,7 +119,7 @@ So please use [**ThingsBoard Cloud**](https://thingsboard.cloud/signup){: target
 
 To add the **MQTT integration**, follow the steps below:
 
-- Go to **Edge management > Integration templates** section and click the **"plus"** button to add a new integration. Select the type '**MQTT**'. Name it **"Edge MQTT integration"**. Then click **"Next"**.
+- Go to the **Edge management > Integration templates** section and click the **"plus"** button to add a new integration. Select the type '**MQTT**'. Name it **"Edge MQTT integration"**. Then click **"Next"**.
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
