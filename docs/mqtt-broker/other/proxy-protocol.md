@@ -133,5 +133,6 @@ See official [AWS documentation](https://kubernetes-sigs.github.io/aws-load-bala
 ## Considerations
 
 * If PROXY Protocol is enabled in TBMQ but not used by your proxy/load balancer, TBMQ will fail to interpret the initial bytes, potentially rejecting the connection.
+* If PROXY Protocol is disabled in TBMQ but enabled on your proxy/load balancer, TBMQ will misinterpret the PROXY Protocol header as part of the MQTT data, leading to connection errors or protocol parsing failures.
 * Ensure all connections to TBMQ are routed through a properly configured proxy when PROXY Protocol support is enabled.
 * PROXY Protocol should only be enabled if TBMQ is deployed behind a trusted proxy, as it allows the proxy to define client IPs.
