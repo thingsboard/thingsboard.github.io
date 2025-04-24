@@ -7,6 +7,8 @@ toc:
   section:
     - title: "Persistent DEVICE Client"
       path: /docs/mqtt-broker/architecture-details/persistent-device-client/
+    - title: "Persistent APPLICATION Client"
+      path: /docs/mqtt-broker/architecture-details/persistent-app-client/
 - title: Performance Tests
   section:
     - title: "Point-to-point: 1M Msg/sec Throughput"
