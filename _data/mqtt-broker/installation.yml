@@ -19,6 +19,7 @@ toc:
     path: /docs/mqtt-broker/install/cluster/gcp-cluster-setup/
   - title: Cluster setup with Helm Chart
     path: /docs/mqtt-broker/install/cluster/helm-cluster-setup-options/
+    new: true
   - title: Building from sources
     path: /docs/mqtt-broker/install/building-from-source/
   - title: Upgrade instructions

@@ -68,6 +68,11 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: Settings
       path: /docs/mqtt-broker/user-guide/ui/settings/
+- title: Other Features
+  new: true
+  section:
+    - title: PROXY Protocol
+      path: /docs/mqtt-broker/other/proxy-protocol/
 - title: Need Help?
   path: /docs/mqtt-broker/help/
 - title: Troubleshooting
