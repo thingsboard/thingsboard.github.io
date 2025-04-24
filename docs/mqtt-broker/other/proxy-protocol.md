@@ -119,7 +119,7 @@ aws elbv2 modify-target-group-attributes \
 
 > **Note**: AWS NLB only supports **PROXY Protocol v2**.
 
-To enable **PROXY Protocol v2** with AWS NLB via Kubernetes, add the following **annotation** to your Service:
+Alternatively, to enable **PROXY Protocol v2** with AWS NLB in a Kubernetes environment, add the following annotation to your Service definition:
 
 ```yaml
 service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
