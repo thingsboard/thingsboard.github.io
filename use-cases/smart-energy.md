@@ -1,8 +1,9 @@
 ---
 layout: use-case
-title: ᐉ IoT Energy Management & Monitoring — ThingsBoard
-description: IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤ Smart energy monitoring and data visualization with ThingsBoard IoT Platform
+title: IoT Energy Management & Monitoring with ThingsBoard
+description: The Smart Energy solution based on ThingsBoard IoT platform enables real-time energy monitoring and optimization. It helps reduce costs, improve energy efficiency, automate management processes, and achieve sustainable development.
 notitle: "true"
+customTitle: "true"
 includeAdvantages: "true"
 
 ---
@@ -29,16 +30,16 @@ includeAdvantages: "true"
 <section class="smart-energy-overview">
     <div class="img-comp-container">
         <div class="img-comp-img">
-            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-1.webp">
+            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-1.webp" alt="ThingsBoard dashboard in light theme showing energy data from smart meters" title="Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters">
         </div>
         <div class="img-comp-img img-comp-overlay">
-            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-2.webp">
+            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-2.webp" alt="ThingsBoard dashboard in dark theme with smart meter data visualization" title="Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions">
         </div>
     </div>
 </section>
 
 <section class="smart-energy-solution-structure">
-    <h2>Solution structure</h2>
+    <h2>Solution structure of smart energy use case</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
@@ -51,7 +52,7 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-energy/smart-energy-solution-structure.svg" alt="Smart energy solution structure">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
     <div class="smart-energy-benefits section-padding">
         <div class="section-header">
@@ -89,7 +90,7 @@ includeAdvantages: "true"
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>Dashboard structure</h2>
+        <h2>Dashboard structure of smart energy solution</h2>
         <p>
             The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds. Click on the alarm or energy meter row to open the meter details. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.    
         </p>
@@ -171,11 +172,11 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-energy/factory-1.svg" alt="Factory"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/buildings-1.svg" alt="Buildings"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="School"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/data-centers-1.svg" alt="Data center"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/factory-1.svg" alt="Factory" title="Industrial facilities and factories"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/buildings-1.svg" alt="Buildings" title="Commercial buildings and offices"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="School" title="Educational institutions and campuses"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/data-centers-1.svg" alt="Data centers" title="Data centers"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall" title="Shopping malls and retail chains"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -190,7 +191,7 @@ includeAdvantages: "true"
     </div>
     <div class="applications-container-small smart-energy-applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/factory-2.svg" alt="Factory"></div>
+            <div class="image"><img src="/images/usecases/smart-energy/factory-2.svg" alt="Factory" title="Industrial facilities and factories"></div>
             <div class="text-block">
                 <h3>Industrial facilities and factories</h3>
                 <p>Tracking energy usage of heavy machinery, identifying inefficiencies, and improving power distribution for safer and more cost-effective production processes.</p>
@@ -201,10 +202,10 @@ includeAdvantages: "true"
                 <h3>Commercial buildings and offices</h3>
                 <p>Optimizing HVAC, lighting, and equipment usage across floors and departments, with real-time monitoring to reduce energy waste and operational costs.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-energy/buildings-2.svg" alt="Buildings"></div>
+            <div class="image"><img src="/images/usecases/smart-energy/buildings-2.svg" alt="Buildings" title="Commercial buildings and offices"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="School"></div>
+            <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="School" title="Educational institutions and campuses"></div>
             <div class="text-block">
                 <h3>Educational institutions and campuses</h3>
                 <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
@@ -215,10 +216,10 @@ includeAdvantages: "true"
                 <h3>Data centers</h3>
                 <p>Maintaining stable voltage, temperature, and load balancing to ensure uninterrupted operations while reducing electricity consumption and cooling costs.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-energy/data-centers-2.svg" alt="Data center"></div>
+            <div class="image"><img src="/images/usecases/smart-energy/data-centers-2.svg" alt="Data centers" title="Data centers"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/malls-2.svg" alt="Mall"></div>
+            <div class="image"><img src="/images/usecases/smart-energy/malls-2.svg" alt="Mall" title="Shopping malls and retail chains"></div>
             <div class="text-block">
                 <h3>Shopping malls and retail chains</h3>
                 <p>Monitoring energy usage across multiple locations, managing peak hours, and controlling lighting and HVAC systems automatically for higher efficiency.</p>
@@ -229,16 +230,19 @@ includeAdvantages: "true"
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        const img = document.getElementById("schemeSVG");
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              img.src = img.getAttribute("data-src");
-              obs.unobserve(img);
-            }
-          });
-        }, { threshold: 1 });
-        observer.observe(img);
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
         document.querySelectorAll('.card-link').forEach((link) => {
             link.classList.add('linkDefault');
@@ -311,7 +315,7 @@ includeAdvantages: "true"
             let block = document.createElement('div');
             block.className = `image-block-${layout}`;
             block.innerHTML = `
-            <div class="image-container">
+            <div class="image-container image-background">
                 <div class="image-background"></div>
                 <div class="image-background"></div>
                 <div class="image-background"></div>
@@ -327,11 +331,11 @@ includeAdvantages: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-energy/smart-energy-1.webp'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-3.webp'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-4.webp'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-5.webp'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-2.webp'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-1.webp' alt='ThingsBoard dashboard in light theme showing energy data from smart meters' title='Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-3.webp' alt='Smart Meter A dashboard on the 1st floor showing voltage, frequency, amperage, and energy consumption' title='Smart Meter A on the 1st floor: real-time monitoring of voltage, frequency, current and weekly energy usage with one active high voltage alarm'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-4.webp' alt='Smart Meter B dashboard on the 2nd floor with energy data and real-time frequency' title='Smart Meter B on the 2nd floor: displays live voltage, frequency, amperage and energy consumption. No active alarms detected'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-5.webp' alt='Smart Meter C dashboard on the 3rd floor showing real-time energy metrics and critical alarm' title='Smart Meter C on the 3rd floor: visualization of voltage, frequency, current and consumption, with one unacknowledged low voltage alarm'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-2.webp' alt='ThingsBoard dashboard in dark theme with smart meter data visualization' title='Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions'/>",
             ];
             return images[index];
         }

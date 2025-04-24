@@ -910,6 +910,9 @@
                                 filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
                             color: #000
 
+        .svg-animation
+            visibility: hidden
+
         .scada-about, .health-about
 
             .short
@@ -937,6 +940,14 @@
                 @media screen and (max-width: 599px)
                     font-size: 14px
 
+        .carousel-padding
+            .carousel-item
+                img
+                    border-radius: 24px
+                    background: #EDEDED
+                    padding: 8px
+
+
         .scada-overview, .health-carousel
 
             &::before
@@ -963,11 +974,10 @@
             @media screen and (max-width: 959px)
                 padding: 45px 0 20px
 
-
         .smart-energy-overview, .smart-office-carousel, .environment-monitoring-carousel
-            margin-bottom: 40px
-
-
+            margin-bottom: 100px
+            @media screen and (max-width: 599px)
+                margin-bottom: 40px
 
         .section-padding
             margin: 0
@@ -1160,7 +1170,7 @@
                             height: 160px
                             align-content: center
 
-        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure
+        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure, .environment-monitoring-solution-structure, .smart-office-solution-structure
             .scheme
                 margin-bottom: 48px
 
@@ -1470,6 +1480,15 @@
                             img
                                 border-radius: 24px
                                 box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.25), 0px 2px 8px 0px rgba(0, 0, 0, 0.08)
+
+                    .image-container.image-background
+                        padding: 16px
+                        border-radius: 24px
+                        background: #EDEDED
+                        .image
+                            img
+                                border-radius: 0
+                                box-shadow: unset
 
                 .image-block-large
                     .image-container

@@ -1,8 +1,9 @@
 ---
 layout: use-case
 title: IoT smart office solutions with ThingsBoard
-description: IoT smart office solutions with ThingsBoard
+description: Smart Office is a ready-to-use IoT solution powered by ThingsBoard for real-time monitoring and automation of office environments. Control energy usage, climate, air quality, and devices through intuitive dashboards. Scalable, flexible, and efficient.
 notitle: "true"
+customTitle: "true"
 includeAdvantages: "true"
 
 ---
@@ -26,12 +27,12 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="smart-office-carousel">
+<section class="smart-office-carousel carousel-padding">
     {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
 
 <section class="smart-office-solution-structure">
-    <h2>Solution structure</h2>
+    <h2>Solution structure of smart office use case</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
@@ -43,13 +44,13 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-office/smart-office-solution-structure.svg" alt="Smart office solution structure">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart office solution architecture" title="Smart office solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>Dashboard structure</h2>
+        <h2>Dashboard structure of smart office solution</h2>
         <p>
             ThingsBoard provides a flexible dashboard system that allows for clear visualization of key metrics. In the context of the Smart Office, this includes parameters such as energy and water consumption, air quality, temperature and humidity, and the status of the HVAC system. Additionally, dashboards display alarms, enabling prompt response to any deviations from normal conditions.
         </p>
@@ -131,11 +132,11 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall"></div>
-            <div class="application-image"><img src="/images/usecases/smart-office/manufacturing-1.svg" alt="Manufacturing"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/hospital-1.svg" alt="Hospital"></div>
-            <div class="application-image"><img src="/images/usecases/smart-office/hospitality-1.svg" alt="Hospitality"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="Education"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall" title="Smart retail"></div>
+            <div class="application-image"><img src="/images/usecases/smart-office/manufacturing-1.svg" alt="Manufacturing" title="Manufacturing"></div>
+            <div class="application-image"><img src="/images/usecases/health-care/hospital-1.svg" alt="Hospital" title="Healthcare"></div>
+            <div class="application-image"><img src="/images/usecases/smart-office/hospitality-1.svg" alt="Hospitality" title="Hospitality"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="Education" title="Education"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -150,7 +151,7 @@ includeAdvantages: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-office/mall-2.svg" alt="Mall"></div>
+            <div class="image"><img src="/images/usecases/smart-office/mall-2.svg" alt="Mall" title="Smart retail"></div>
             <div class="text-block">
                 <h3>Smart retail</h3>
                 <p>Energy consumption monitoring, climate automation in shopping areas, and lighting control.</p>
@@ -161,10 +162,10 @@ includeAdvantages: "true"
                 <h3>Manufacturing</h3>
                 <p>Energy audits, airflow monitoring, and smart overload notifications.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-office/manufacturing-2.svg" alt="Manufacturing"></div>
+            <div class="image"><img src="/images/usecases/smart-office/manufacturing-2.svg" alt="Manufacturing" title="Manufacturing"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-office/hospital-2.svg" alt="Hospital"></div>
+            <div class="image"><img src="/images/usecases/smart-office/hospital-2.svg" alt="Hospital" title="Healthcare"></div>
             <div class="text-block">
                 <h3>Healthcare</h3>
                 <p>Microclimate control in patient rooms, occupancy monitoring, and tracking of CO₂ levels and temperature.</p>
@@ -175,10 +176,10 @@ includeAdvantages: "true"
                 <h3>Hospitality</h3>
                 <p>Room automation, personalized climate control, and monitoring of CO₂ levels and space occupancy.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-office/hospitality-2.svg" alt="Hospitality"></div>
+            <div class="image"><img src="/images/usecases/smart-office/hospitality-2.svg" alt="Hospitality" title="Hospitality"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-office/education-2.svg" alt="Education"></div>
+            <div class="image"><img src="/images/usecases/smart-office/education-2.svg" alt="Education" title="Education"></div>
             <div class="text-block">
                 <h3>Education</h3>
                 <p>Managing comfort and resource usage in educational facilities.</p>
@@ -188,25 +189,28 @@ includeAdvantages: "true"
 </section>
 
 <section class="summary">
-    <h2>Summary</h2>
+    <h2>Summary of smart office solution</h2>
     <div>
         <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        const img = document.getElementById("schemeSVG");
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              img.src = img.getAttribute("data-src");
-              obs.unobserve(img);
-            }
-          });
-        }, { threshold: 1 });
-        observer.observe(img);
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
         document.querySelectorAll('.card-link').forEach((link) => {
             link.classList.add('linkDefault');
@@ -260,7 +264,7 @@ includeAdvantages: "true"
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
             const large = document.querySelector('.image-block-large');
 
-            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 300 && elemCoor.top < 0) {
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 350 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
             }
         };
@@ -279,7 +283,7 @@ includeAdvantages: "true"
             let block = document.createElement('div');
             block.className = `image-block-${layout}`;
             block.innerHTML = `
-            <div class="image-container">
+            <div class="image-container image-background">
                 <div class="image-background"></div>
                 <div class="image-background"></div>
                 <div class="image-background"></div>
@@ -295,11 +299,11 @@ includeAdvantages: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-office/smart-office-2.webp'/>",
-                "<img src='/images/usecases/smart-office/smart-office-5.webp'/>",
-                "<img src='/images/usecases/smart-office/smart-office-4.webp'/>",
-                "<img src='/images/usecases/smart-office/smart-office-1.webp'/>",
-                "<img src='/images/usecases/smart-office/smart-office-3.webp'/>"
+                "<img src='/images/usecases/smart-office/smart-office-1.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
+                "<img src='/images/usecases/smart-office/smart-office-2.webp' alt='Energy consumption, power and current charts with wind turbine background' title='Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms'/>",
+                "<img src='/images/usecases/smart-office/smart-office-3.webp' alt='HVAC control with state, airflow history, and temperature targets' title='ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time'/>",
+                "<img src='/images/usecases/smart-office/smart-office-5.webp' alt='Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking' title='Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform'/>",
+                "<img src='/images/usecases/smart-office/smart-office-4.webp' alt='Water consumption statistics and battery discharge graph with office contact info' title='Water meter dashboard: shows water usage per minute, historical consumption, battery voltage over time, and device contact information'/>",
             ];
             return images[index];
         }

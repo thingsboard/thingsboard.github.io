@@ -1,8 +1,9 @@
 ---
 layout: use-case
 title: IoT environment monitoring solutions with ThingsBoard
-description: IoT environment monitoring solutions with ThingsBoard
+description: Discover scalable and secure IoT environment monitoring solutions with ThingsBoard. Connect multiple sensors, automate alerts, and gain real-time insights to improve safety, efficiency, and comfort across industrial, commercial, and smart building applications.
 notitle: "true"
+customTitle: "true"
 includeAdvantages: "true"
 
 ---
@@ -14,25 +15,25 @@ includeAdvantages: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">Environmental monitoring plays a vital role in ensuring safety, comfort, and operational efficiency across all types of facilities — from office buildings to industrial sites. ThingsBoard is perfectly suited to address these challenges.</p>
+                <p class="text">Environment monitoring plays a vital role in ensuring safety, comfort, and operational efficiency across all types of facilities — from office buildings to industrial sites. ThingsBoard is perfectly suited to address these challenges.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
-            <p>ThingsBoard offers a scalable, reliable, and secure platform for environmental monitoring. By using IoT gateways, it enables the connection of dozens of sensors through a single communication channel, reducing infrastructure load. With support for open protocols, the system easily integrates with existing devices and can be flexibly scaled as the project grows.</p>
+            <p>ThingsBoard offers a scalable, reliable, and secure platform for Environment monitoring. By using IoT gateways, it enables the connection of dozens of sensors through a single communication channel, reducing infrastructure load. With support for open protocols, the system easily integrates with existing devices and can be flexibly scaled as the project grows.</p>
             <p>The platform automates essential tasks — from sending real-time alarms on critical changes to forwarding data into external analytics tools. Intuitive dashboards, customizable logic, and seamless integrations help turn raw data into actionable insights and drive smarter, faster decisions.</p>
         </div>
     </div>
 </section>
 
-<section class="environment-monitoring-carousel">
+<section class="environment-monitoring-carousel carousel-padding">
     {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
 
 <section class="environment-monitoring-solution-structure">
-    <h2>Solution structure</h2>
+    <h2>Solution structure of environment monitoring</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
@@ -44,13 +45,13 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/environment-monitoring/environment-monitoring-solution-structure.svg" alt="Environment monitoring solution structure">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Environment monitoring solution architecture" title="Environment monitoring solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>Dashboard structure</h2>
+        <h2>Dashboard structure of environment monitoring</h2>
         <p>
             The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template
         </p>
@@ -60,7 +61,7 @@ includeAdvantages: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Environmental monitoring state</h3>
+                        <h3>Environment monitoring state</h3>
                     </div>
                     <div class="expansion-content">
                         <p>Dashboard provides real-time monitoring of sensor data with interactive charts displaying metrics like temperature and humidity. The interface allows configuring alarm thresholds and sensor locations while showing active alarms with severity levels. You can analyze historical data and manage device settings.</p>
@@ -73,7 +74,7 @@ includeAdvantages: "true"
                         <h3>Sensor C1 monitoring state</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Track real-time temperature and humidity readings from Sensor C1 along with historical data from the past hour. Compare key metrics (min/max/average values) to maintain optimal environmental conditions.</p>
+                        <p>Track real-time temperature and humidity readings from Sensor C1 along with historical data from the past hour. Compare key metrics (min/max/average values) to maintain optimal Environment conditions.</p>
                     </div>
                 </div>
             </div>
@@ -83,7 +84,7 @@ includeAdvantages: "true"
                         <h3>Sensor T1 monitoring state</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Track real-time temperature and humidity readings from Sensor T1 along with historical data from the past hour. Compare key metrics (min/max/average values) to maintain optimal environmental conditions.</p>
+                        <p>Track real-time temperature and humidity readings from Sensor T1 along with historical data from the past hour. Compare key metrics (min/max/average values) to maintain optimal Environment conditions.</p>
                     </div>
                 </div>
             </div>
@@ -110,7 +111,7 @@ includeAdvantages: "true"
         <div class="text-row-top">
             <div class="text-block">
                 <h3>Smart cities and urban infrastructure</h3>
-                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support environmental policy, alert residents, improve urban living conditions.</p>
+                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support Environment policy, alert residents, improve urban living conditions.</p>
             </div>
             <div class="text-block">
                 <h3>Agricultural and greenhouse facilities</h3>
@@ -122,11 +123,11 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/environment-monitoring/smart-cities-1.svg" alt="City"></div>
-            <div class="application-image"><img src="/images/usecases/environment-monitoring/laboratory-1.svg" alt="Laboratory"></div>
-            <div class="application-image"><img src="/images/usecases/environment-monitoring/agriculture-1.svg" alt="Greenhouse"></div>
-            <div class="application-image"><img src="/images/usecases/environment-monitoring/education-1.svg" alt="School"></div>
-            <div class="application-image"><img src="/images/usecases/environment-monitoring/warehouse-1.svg" alt="Warehouse"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/smart-cities-1.svg" alt="Smart city" title="Smart cities and urban infrastructure"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/laboratory-1.svg" alt="Laboratory" title="Healthcare and laboratory environments"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/agriculture-1.svg" alt="Greenhouse" title="Agricultural and greenhouse facilities"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/education-1.svg" alt="School" title="Educational and research institutions"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/warehouse-1.svg" alt="Warehouse" title="Warehouses and cold storage facilities"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -135,16 +136,16 @@ includeAdvantages: "true"
             </div>
             <div class="text-block">
                 <h3>Educational and research institutions</h3>
-                <p>Collecting long-term environmental data for scientific research, campus sustainability programs, and educational use in environmental studies.</p>
+                <p>Collecting long-term Environment data for scientific research, campus sustainability programs, and educational use in Environment studies.</p>
             </div>
         </div>
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/environment-monitoring/smart-cities-2.svg" alt="City"></div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/smart-cities-2.svg" alt="Smart city" title="Smart cities and urban infrastructure"></div>
             <div class="text-block">
                 <h3>Smart cities and urban infrastructure</h3>
-                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support environmental policy, alert residents, improve urban living conditions.</p>
+                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support Environment policy, alert residents, improve urban living conditions.</p>
             </div>
         </div>
         <div class="application-block">
@@ -152,10 +153,10 @@ includeAdvantages: "true"
                 <h3>Healthcare and laboratory environments</h3>
                 <p>Maintaining sterile conditions and proper ventilation by tracking air quality, CO₂ levels, and temperature in sensitive medical or laboratory zones.</p>
             </div>
-            <div class="image"><img src="/images/usecases/environment-monitoring/laboratory-2.svg" alt="Laboratory"></div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/laboratory-2.svg" alt="Laboratory" title="Healthcare and laboratory environments"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/environment-monitoring/agriculture-2.svg" alt="Greenhouse"></div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/agriculture-2.svg" alt="Greenhouse" title="Agricultural and greenhouse facilities"></div>
             <div class="text-block">
                 <h3>Agricultural and greenhouse facilities</h3>
                 <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
@@ -164,12 +165,12 @@ includeAdvantages: "true"
         <div class="application-block">
             <div class="text-block">
                 <h3>Educational and research institutions</h3>
-                <p>Collecting long-term environmental data for scientific research, campus sustainability programs, and educational use in environmental studies.</p>
+                <p>Collecting long-term Environment data for scientific research, campus sustainability programs, and educational use in Environment studies.</p>
             </div>
-            <div class="image"><img src="/images/usecases/environment-monitoring/education-2.svg" alt="School"></div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/education-2.svg" alt="School" title="Educational and research institutions"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/environment-monitoring/warehouse-2.svg" alt="Warehouse"></div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/warehouse-2.svg" alt="Warehouse" title="Warehouses and cold storage facilities"></div>
             <div class="text-block">
                 <h3>Warehouses and cold storage facilities</h3>
                 <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
@@ -179,7 +180,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="summary">
-    <h2>Summary</h2>
+    <h2>Summary of environment monitoring</h2>
     <div>
         <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon">
@@ -188,16 +189,19 @@ includeAdvantages: "true"
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        const img = document.getElementById("schemeSVG");
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              img.src = img.getAttribute("data-src");
-              obs.unobserve(img);
-            }
-          });
-        }, { threshold: 1 });
-        observer.observe(img);
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
         document.querySelectorAll('.card-link').forEach((link) => {
             link.classList.add('linkDefault');
@@ -251,7 +255,7 @@ includeAdvantages: "true"
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
             const large = document.querySelector('.image-block-large');
 
-            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 300 && elemCoor.top < 0) {
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 400 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
             }
         };
@@ -270,7 +274,7 @@ includeAdvantages: "true"
             let block = document.createElement('div');
             block.className = `image-block-${layout}`;
             block.innerHTML = `
-            <div class="image-container">
+            <div class="image-container image-background">
                 <div class="image-background"></div>
                 <div class="image-background"></div>
                 <div class="image-background"></div>
@@ -286,10 +290,10 @@ includeAdvantages: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-1.webp'/>",
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-2.webp'/>",
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-3.webp'/>",
-                "<img src='/images/usecases/environment-monitoring/environment-monitoring-4.webp'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-2.webp' alt='Dashboard with sensor status, critical alarm, and map location of sensors' title='ThingsBoard dashboard showing real-time sensor metrics, alarm status, and their geographic positions on the map'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-3.webp' alt='Temperature and humidity charts with location of Sensor C1' title='Live monitoring of Sensor C1: temperature and humidity data alongside sensor location on the map'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-4.webp' alt='Temperature and humidity charts with location of Sensor T1' title='Sensor T1 real-time readings: temperature and humidity graphs with sensor map marker'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-1.webp' alt='Sensor configuration panel with thresholds and map location in ThingsBoard' title='Editing Sensor T1: setting temperature and humidity thresholds and viewing sensor location on the map'/>",
             ];
             return images[index];
         }
