@@ -8,6 +8,17 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.0.1 (Apr 22, 2025) {#v401}
+
+Everything from [TB CE v4.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.0.1) with the following bug fixes.
+
+**Bug fixes**
+
+* Fixed entities-table-widget export data if column is not included in export
+* Fixed email issue with '+' in self-registration and improve user activation flow
+* Fixed raw payload update in Data Converter 2.0 test dialog
+* Fixed issue where changing script language in Data Converter reset function content to default
+
 ## v4.0.0 (Apr 15, 2025) {#v40}
 
 Everything from [TB CE v4.0](https://github.com/thingsboard/thingsboard/releases/tag/v4.0) with the following improvements and bug fixes.
