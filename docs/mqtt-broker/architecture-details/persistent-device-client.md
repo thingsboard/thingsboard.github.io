@@ -86,7 +86,7 @@ The key columns to highlight:
 
  - `time` – captures the system time (timestamp) when the message is stored. This field is used for periodic cleanup of expired messages.
  - `msg_expiry_interval` – represents the expiration time (in seconds) for a message. 
- This is set only for incoming MQTT 5 messages that include an expiry property. 
+ This is set only for incoming MQTT 5.0 messages that include an expiry property. 
  If the expiry property is absent, the message does not have a specific expiration time and remains valid until it is removed by time or size-based cleanup.
 
 Together, these tables managed message persistence and session state. 
