@@ -118,7 +118,7 @@ For **MQTT v5 clients**:
 Building on our knowledge within the IoT ecosystem and the successful implementation of numerous IoT use cases, we have classified MQTT clients into two distinct categories:
 
 * The _DEVICE_ clients primarily engaged in publishing a significant volume of messages while subscribing to a limited number of topics with relatively low message rates. 
-  These clients are typically associated with IoT devices or sensors that frequently transmit data to the broker, while subscribe to relatively few topics or updates.
+  These clients are typically associated with IoT devices or sensors.
 
 * The _APPLICATION_ clients specialize in subscribing to topics with high message rates. 
   They often require messages to be persisted when the client is offline with later delivery, ensuring the availability of crucial data. 
