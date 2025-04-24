@@ -189,7 +189,7 @@ includeAdvantages: "true"
             </div>
         </div>
     </div>
-    <div class="applications-container-small smart-energy-applications-container-small">
+    <div class="applications-container-small">
         <div class="application-block">
             <div class="image"><img src="/images/usecases/smart-energy/factory-2.svg" alt="Factory" title="Industrial facilities and factories"></div>
             <div class="text-block">
