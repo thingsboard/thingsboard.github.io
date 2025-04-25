@@ -108,28 +108,28 @@ includeAdvantages: "true"
     <div class="scheme">
         <img id="schemeSVG" loading="lazy" data-src="/images/usecases/scada/scada-solution-structure.svg" alt="SCADA solution structure">
     </div>
-    <div class="scada-solution-structure-cards">
-        <div class="scada-solution-structure-card">
+    <div class="use-cases-solution-structure-cards">
+        <div class="use-cases-solution-structure-card">
             <h3>PLCs and RTUs</h3>
             <p>Seamlessly integrate your SCADA system with PLCs and RTUs using ThingsBoard integrations and IoT Gateway. Support for Modbus, OPC-UA, BACnet, and other popular protocols ensures reliable real-time data collection and control.</p>
         </div>
-        <div class="scada-solution-structure-card">
+        <div class="use-cases-solution-structure-card">
             <h3>IoT gateway</h3>
             <p>ThingsBoard’s IoT Gateway bridges the gap between legacy SCADA devices and modern IoT platforms. It ensures data reliability with built-in local data storage during network outages and supports efficient protocol conversion, secure data transmission, and centralized device management.</p>
         </div>
-        <div class="scada-solution-structure-card">
+        <div class="use-cases-solution-structure-card">
             <h3>Data processing</h3>
             <p>Unlock actionable insights with ThingsBoard’s robust data processing tools. Perform real-time transformations, apply complex rules, and automate workflows with built-in rule chains and scriptable integrations.</p>
         </div>
-        <div class="scada-solution-structure-card">
+        <div class="use-cases-solution-structure-card">
             <h3>Alarm system</h3>
             <p>Enhance operational awareness with ThingsBoard’s advanced alarm system. Manage incident workflows with features like alarm acknowledgment, clearing, commenting, and configurable escalation rules.</p>
         </div>
-        <div class="scada-solution-structure-card">
+        <div class="use-cases-solution-structure-card">
             <h3>Notification system</h3>
             <p>Stay informed with ThingsBoard’s flexible notification system, delivering alerts via email, SMS, Slack, or custom webhooks. Automate critical notifications based on configurable conditions and thresholds.</p>
         </div>
-        <div class="scada-solution-structure-card">
+        <div class="use-cases-solution-structure-card">
             <h3>IoT dashboards</h3>
             <p>Visualize your SCADA data with ThingsBoard’s real-time IoT dashboards. Design interactive views using SCADA symbols, customizable widgets, and dynamic updates to monitor and control processes seamlessly.</p>
         </div>
@@ -572,69 +572,4 @@ includeAdvantages: "true"
             activeExpansionBlocks[expandedElemIndex].click();
         }
     }
-
-    window.addEventListener('load', function() {
-        window.removeEventListener("load", arguments.callee, false);
-        function compareImages() {
-            const container = document.getElementsByClassName("img-comp-container")[0];
-            const highPerfBlock = document.getElementsByClassName("img-comp-overlay")[0];
-            const trad = document.getElementsByClassName("traditional-background")[0];
-            if (!highPerfBlock) return;
-            let clicked = false;
-            highPerfBlock.style.maxHeight = 'unset';
-            highPerfBlock.firstElementChild.style.maxHeight = 'unset';
-            highPerfBlock.style.width = (trad.offsetWidth / 2) + "px";
-            highPerfBlock.firstElementChild.style.width = trad.offsetWidth + "px";
-            container.style.height = trad.offsetHeight + "px";
-            const slider = document.createElement("DIV");
-            slider.appendChild(document.createElement("DIV"));
-            slider.setAttribute("class", "img-comp-slider");
-            highPerfBlock.parentElement.insertBefore(slider, highPerfBlock);
-            slider.style.left = (trad.offsetWidth / 2) - (slider.offsetWidth / 2) + "px";
-            slider.style.height = trad.offsetHeight + "px";
-            slider.addEventListener("mousedown", slideReady);
-            window.addEventListener("mouseup", slideFinish);
-            slider.addEventListener("touchstart", slideReady);
-            window.addEventListener("touchend", slideFinish);
-            window.addEventListener('resize', function () {
-                highPerfBlock.firstElementChild.style.width = trad.offsetWidth + 'px';
-                highPerfBlock.style.width = (trad.offsetWidth / 2) + "px";
-                highPerfBlock.firstElementChild.style.height = 'auto';
-                slider.style.left = (trad.offsetWidth / 2) - (slider.offsetWidth / 2) + "px";
-                slider.style.height = trad.offsetHeight + "px";
-                container.style.height = trad.offsetHeight + "px";
-            });
-            function slideReady(e) {
-              e.preventDefault();
-              e.target.style.animation = 'unset';
-              e.target.parentElement.style.animation = 'unset';
-              clicked = true;
-              window.addEventListener("mousemove", slideMove);
-              window.addEventListener("touchmove", slideMove);
-            }
-            function slideFinish() {
-              clicked = false;
-            }
-            function slideMove(e) {
-              let pos;
-              if (!clicked) return false;
-              pos = getCursorPos(e);
-              if (pos < 0) pos = 0;
-              if (pos > trad.offsetWidth) pos = trad.offsetWidth;
-              slide(pos);
-            }
-            function getCursorPos(e) {
-              e = (e.changedTouches) ? e.changedTouches[0] : e;
-              const rect = highPerfBlock.getBoundingClientRect();
-              let position = e.pageX - rect.left;
-              position = position - window.pageXOffset;
-              return position;
-            }
-            function slide(x) {
-              highPerfBlock.style.width = x + "px";
-              slider.style.left = highPerfBlock.offsetWidth - (slider.offsetWidth / 2) + "px";
-            }
-        }
-        compareImages();
-    });
 </script>

@@ -1,14 +1,3 @@
-smart-energy:
-  0:
-    src: "/images/usecases/smart-energy/se1.png"
-    alt: "Smart energy monitoring light theme example with the pie chart"
-  1:
-    src: "/images/usecases/smart-energy/se2.png"
-    alt: "Smart energy monitoring dark theme example without the pie chart"
-  2:
-    src: "/images/usecases/smart-energy/se3.png"
-    alt: "Smart energy monitoring dark theme example"
-
 smart-farming:
   0:
     src: "/images/usecases/smart-farming/sf1.webp"
@@ -61,31 +50,39 @@ smart-metering:
 
 environment-monitoring:
   0:
-    src: "/images/usecases/environment-monitoring/em1.webp"
-    alt: "environment monitoring 1"
+    src: "/images/usecases/environment-monitoring/environment-monitoring-4.webp"
+    alt: "Temperature and humidity charts with location of Sensor T1"
+    imageTitleAttribute: "Sensor T1 real-time readings: temperature and humidity graphs with sensor map marker"
   1:
-    src: "/images/usecases/environment-monitoring/em2.png"
-    alt: "environment monitoring 2"
+    src: "/images/usecases/environment-monitoring/environment-monitoring-2.webp"
+    alt: "Dashboard with sensor status, critical alarm, and map location of sensors"
+    imageTitleAttribute: "ThingsBoard dashboard showing real-time sensor metrics, alarm status, and their geographic positions on the map"
   2:
-    src: "/images/usecases/environment-monitoring/em3.png"
-    alt: "environment monitoring 3"
+    src: "/images/usecases/environment-monitoring/environment-monitoring-1.webp"
+    alt: "Sensor configuration panel with thresholds and map location in ThingsBoard"
+    imageTitleAttribute: "Editing Sensor T1: setting temperature and humidity thresholds and viewing sensor location on the map"
 
 smart-office:
   0:
-    src: "/images/usecases/smart-office/so1.webp"
-    alt: "smart office 1"
+    src: "/images/usecases/smart-office/smart-office-1.webp"
+    alt: "HVAC switch, temperature and power chart, device list, and floor plan with sensor locations"
+    imageTitleAttribute: "HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard"
   1:
-    src: "/images/usecases/smart-office/so2.png"
-    alt: "smart office 2"
+    src: "/images/usecases/smart-office/smart-office-2.webp"
+    alt: "Energy consumption, power and current charts with wind turbine background"
+    imageTitleAttribute: "Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms"
   2:
-    src: "/images/usecases/smart-office/so3.png"
-    alt: "smart office 3"
+    src: "/images/usecases/smart-office/smart-office-3.webp"
+    alt: "HVAC control with state, airflow history, and temperature targets"
+    imageTitleAttribute: "ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time"
   3:
-    src: "/images/usecases/smart-office/so4.png"
-    alt: "smart office 4"
+    src: "/images/usecases/smart-office/smart-office-4.webp"
+    alt: "Water consumption statistics and battery discharge graph with office contact info"
+    imageTitleAttribute: "Water meter dashboard: shows water usage per minute, historical consumption, battery voltage over time, and device contact information"
   4:
-    src: "/images/usecases/smart-office/so5.png"
-    alt: "smart office 5"
+    src: "/images/usecases/smart-office/smart-office-5.webp"
+    alt: "Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking"
+    imageTitleAttribute: "Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform"
 
 water-metering:
   0:
