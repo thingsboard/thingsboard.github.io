@@ -66,6 +66,7 @@ Enabling PROXY Protocol ensures TBMQ receives the actual client IP and port at c
 
 To enable PROXY Protocol support in TBMQ, you need to update the configuration settings for MQTT listeners. 
 The PROXY Protocol setting applies **globally** to all MQTT listeners in TBMQ and **cannot** be configured per listener.
+However, future releases may introduce the ability to configure PROXY Protocol on a per-listener basis.
 
 ```yaml
 # MQTT listeners parameters
@@ -136,3 +137,8 @@ See official [AWS documentation](https://kubernetes-sigs.github.io/aws-load-bala
 * If PROXY Protocol is disabled in TBMQ but enabled on your proxy/load balancer, TBMQ will misinterpret the PROXY Protocol header as part of the MQTT data, leading to connection errors or protocol parsing failures.
 * Ensure all connections to TBMQ are routed through a properly configured proxy when PROXY Protocol support is enabled.
 * PROXY Protocol should only be enabled if TBMQ is deployed behind a trusted proxy, as it allows the proxy to define client IPs.
+
+> **Note:** TBMQ is not protocol-agnostic regarding PROXY Protocol support. 
+> When PROXY Protocol is enabled, all connections must include the PROXY header. 
+> Mixing connections with and without the PROXY header on the same listener is not supported. 
+> Future releases may introduce more flexible handling to support mixed connection types.
