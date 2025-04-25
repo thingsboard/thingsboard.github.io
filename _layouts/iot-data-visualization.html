@@ -1,0 +1,102 @@
+<!Doctype html>
+<html id="visualization" lang="en">
+
+{% include head-header.html%}
+
+<section id="hero" class="light-text">
+</section>
+<div id="visualization-content">
+    {{content}}
+</div>
+
+{% include footer.html %}
+
+{% include cookie-consent.html %}
+
+<script async type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    if (!img.complete) {
+                        addListenerForImageLoad(img);
+                        img.addEventListener('error', handleImageLoad);
+                    } else {
+                        img.src = img.dataset.src + '?t=' + Date.now();
+                        addListenerForImageLoad(img);
+                    }
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        svgAnimations.forEach(img => svgObserver.observe(img));
+
+        function addListenerForImageLoad(img) {
+            img.addEventListener('load', handleImageLoad);
+            img.addEventListener('error', handleImageLoad);
+        }
+
+        function handleImageLoad(event) {
+            event.target.style.visibility = 'visible';
+            event.target.removeEventListener('load', handleImageLoad);
+        }
+
+        const templatesAnimations = document.querySelectorAll(".solution-template img");
+        const templatesObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('animated');
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        templatesAnimations.forEach(img => templatesObserver.observe(img));
+
+        const layoutsAnimations = document.querySelectorAll(".layouts img");
+        const layoutsObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('lAnimated');
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        layoutsAnimations.forEach(img => layoutsObserver.observe(img));
+
+        const customersAnimations = document.querySelectorAll(".customers img");
+        const customersObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('cAnimated');
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        customersAnimations.forEach(img => customersObserver.observe(img));
+
+        const customAnimations = document.querySelectorAll(".custom img");
+        const customObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('custom-animated');
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        customAnimations.forEach(img => customObserver.observe(img));
+    });
+</script>
+</body>
+</html>

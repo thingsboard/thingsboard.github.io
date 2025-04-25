@@ -783,7 +783,7 @@
                     overflow: hidden
                     vertical-align: middle
 
-        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions
+        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions, .environment-monitoring-about, .environment-monitoring-carousel, .environment-monitoring-solution-structure, smart-energy-solution-structure, .smart-energy-overview, .smart-office-about, .smart-office-carousel
             h2
                 margin-bottom: 60px
                 padding-top: 50px
@@ -910,12 +910,43 @@
                                 filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
                             color: #000
 
+        .svg-animation
+            visibility: hidden
+
         .scada-about, .health-about
 
             .short
                 .demo-button > a
                     @media screen and (max-width: 599px)
                         width: 100%
+
+        .section-header
+            display: flex
+            flex-direction: column
+            gap: 32px
+            max-width: 928px
+            margin-bottom: 60px
+            @media screen and (max-width: 599px)
+                margin-bottom: 20px
+            h2
+                font-size: 36px
+                padding: 0
+                margin: 0
+                @media screen and (max-width: 599px)
+                    font-size: 28px
+                    margin-bottom: 0 !important
+            p
+                margin: 0
+                @media screen and (max-width: 599px)
+                    font-size: 14px
+
+        .carousel-padding
+            .carousel-item
+                img
+                    border-radius: 24px
+                    background: #EDEDED
+                    padding: 8px
+
 
         .scada-overview, .health-carousel
 
@@ -929,6 +960,60 @@
                 top: -61px
                 z-index: -1
 
+        .smart-office-carousel, .environment-monitoring-carousel
+            .owl-carousel
+                margin: 0
+
+        .smart-energy-overview
+            padding: 80px 0
+            @media screen and (max-width: 959px)
+                padding: 40px 0
+
+        .smart-office-carousel, .environment-monitoring-carousel
+            padding: 90px 0 40px
+            @media screen and (max-width: 959px)
+                padding: 45px 0 20px
+
+        .smart-energy-overview, .smart-office-carousel, .environment-monitoring-carousel
+            margin-bottom: 100px
+            @media screen and (max-width: 599px)
+                margin-bottom: 40px
+
+        .section-padding
+            margin: 0
+            padding: 100px 0
+            @media screen and (max-width: 959px)
+                padding: 40px 0
+
+        .applications.summary-margin
+            margin-bottom: 100px
+            @media screen and (max-width: 959px)
+                margin-bottom: 50px
+
+        .smart-energy-overview, .smart-energy-benefits, .applications.applications-additional, .smart-office-carousel, .environment-monitoring-carousel
+            position: relative
+            &::before
+                content: ""
+                background: #F4F8FE
+                width: 100vw
+                left: 50%
+                transform: translateX(-50%)
+                height: 100%
+                position: absolute
+                top: 0
+                z-index: -1
+
+        .smart-energy-solution-structure, .smart-office-solution-structure
+            margin: 0
+            h2
+                font-size: 36px
+                @media screen and (max-width: 599px)
+                    font-size: 28px
+
+        .smart-energy-solution-structure, .environment-monitoring-solution-structure, .env-monitoring
+            h2
+                padding-top: 0
+
         .scada-overview
             &::before
                 height: 110%
@@ -938,6 +1023,8 @@
 
                 @media screen and (max-width: 599px)
                     top: -16px
+
+        .scada-overview, .smart-energy-overview
 
             .img-comp-container
                 position: relative
@@ -1083,14 +1170,14 @@
                             height: 160px
                             align-content: center
 
-        .scada-solution-structure, .health-solution-structure
+        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure, .environment-monitoring-solution-structure, .smart-office-solution-structure
             .scheme
                 margin-bottom: 48px
 
                 img
                     width: 100%
 
-            .scada-solution-structure-cards, .health-solution-structure-cards
+            .use-cases-solution-structure-cards, .health-solution-structure-cards
                 display: flex
                 flex-direction: row
                 flex-wrap: wrap
@@ -1099,15 +1186,17 @@
                 @media screen and (max-width: 1919px)
                     gap: 24px
 
-                .scada-solution-structure-card, .health-solution-structure-card
+                .use-cases-solution-structure-card, .health-solution-structure-card
                     flex-basis: 31%
-                    min-height: 392px
                     padding: 46px
                     border-radius: 24px
+                    background: #FFF
                     box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
 
                     h3
                         margin-bottom: 24px
+                    p
+                        margin: 0
 
                     @media screen and (max-width: 1919px)
                         flex-basis: 48.6%
@@ -1142,6 +1231,10 @@
 
                     @media screen and (max-width: 599px)
                         height: 107%
+
+        .smart-energy-solution-structure
+            .scheme
+                margin-bottom: 100px
 
         .scada-key-functions, .health-key-functions
             margin-bottom: 0
@@ -1388,6 +1481,15 @@
                                 border-radius: 24px
                                 box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.25), 0px 2px 8px 0px rgba(0, 0, 0, 0.08)
 
+                    .image-container.image-background
+                        padding: 16px
+                        border-radius: 24px
+                        background: #EDEDED
+                        .image
+                            img
+                                border-radius: 0
+                                box-shadow: unset
+
                 .image-block-large
                     .image-container
                         cursor: pointer
@@ -1524,7 +1626,8 @@
                     .text-block
                         flex: 1
                         text-align: center
-
+                        h3
+                            font-size: 24px
 
         .summary
             display: flex
