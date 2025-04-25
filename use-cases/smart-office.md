@@ -36,7 +36,7 @@ includeAdvantages: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">The Smart Office solution architecture is based on a standard IoT infrastructure, where devices and sensors such as energy meters, smart sensors, HVAC systems, and water meters are connected to ThingsBoard via protocols like MQTT, CoAP, HTTP, or others.</p>
+                <p class="text">The Smart Office solution connects devices like energy meters, HVAC, and sensors to ThingsBoard via MQTT, CoAP, or HTTP, or through a gateway with Modbus, BLE, and BACnet connectors.</p>
             </div>
         </div>
         <div class="long">

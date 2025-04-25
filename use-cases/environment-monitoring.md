@@ -1,6 +1,6 @@
 ---
 layout: use-case
-title: IoT environment monitoring solutions with ThingsBoard
+title: IoT Environment Monitoring solutions with ThingsBoard
 description: Discover scalable and secure IoT environment monitoring solutions with ThingsBoard. Connect multiple sensors, automate alerts, and gain real-time insights to improve safety, efficiency, and comfort across industrial, commercial, and smart building applications.
 notitle: "true"
 customTitle: "true"
@@ -22,9 +22,8 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="long">
-            <p>ThingsBoard offers a scalable, reliable, and secure platform for Environment monitoring. By using IoT gateways, it enables the connection of dozens of sensors through a single communication channel, reducing infrastructure load. With support for open protocols, the system easily integrates with existing devices and can be flexibly scaled as the project grows.</p>
-            <p>The platform automates essential tasks — from sending real-time alarms on critical changes to forwarding data into external analytics tools. Intuitive dashboards, customizable logic, and seamless integrations help turn raw data into actionable insights and drive smarter, faster decisions.</p>
-        </div>
+            <p>ThingsBoard provides a scalable, reliable, and secure platform for environment monitoring. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
+            <p>Automated features—from real-time alerts on critical changes to forwarding data into external analytics tools—ensure proactive monitoring. Intuitive dashboards, customizable logic, and seamless integrations turn raw environmental data into actionable insights, enabling smarter and faster decisions.</p>        </div>
     </div>
 </section>
 
@@ -37,7 +36,7 @@ includeAdvantages: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">All data from sensors is transmitted to ThingsBoard over a secure connection (MQTT, HTTP, or CoAP) using an IoT Gateway.</p>
+                <p class="text">Sensor data is transmitted to ThingsBoard using IoT protocols like HTTP, MQTT, CoAP, and LwM2M, or via integrations with LoRaWAN servers and other platforms.</p>
             </div>
         </div>
         <div class="long">
@@ -51,9 +50,9 @@ includeAdvantages: "true"
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>Dashboard structure of environment monitoring</h2>
+        <h2>Environment monitoring dashboard structure</h2>
         <p>
-            The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template
+            The Smart Office solution includes a sample dashboard designed for clear visualization of key metrics. It displays energy and water consumption, air quality, temperature, humidity, and HVAC system status. Alarms are also shown to enable prompt response to abnormal conditions. While the provided dashboard is relatively simple, ThingsBoard allows users to create much more complex and customized dashboards based on their specific Smart Office requirements.
         </p>
     </div>
     <div class="dashboard-structure-block">
