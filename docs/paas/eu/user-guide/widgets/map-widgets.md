@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas-ue
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
 title: Map widgets
