@@ -192,13 +192,13 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 <div class="card">
                     <div class="content">
                         <h4><a href="/docs/getting-started-guides/helloworld/#step-7-assign-device-and-dashboard-to-customer">In ThingsBoard Community Edition</a></h4>
-                        <p>you can assign a dashboard to a customer, granting their users read-only access. Each customer user will only see the dashboards assigned to them.</p>
+                        <p>You assign dashboards to a customer, granting their users read-only access to the data that belongs to their devices and assets.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="content">
                         <h4><a href="/docs/getting-started-guides/helloworld-pe/#step-7-share-dashboard-with-customers">In ThingsBoard Professional Edition</a></h4>
-                        <p>dashboards can be shared to a customer, allowing that customer to access and interact with the dashboard based on their role and permissions. This supports multi-tenant environments where each customer has isolated access to relevant data and visualizations.</p>
+                        <p>You can fully control access to dashboards with advanced RBAC and white labeling—enabling flexible, secure, and branded data visualization for your customers.</p>
                     </div>
                 </div>
             </div>
