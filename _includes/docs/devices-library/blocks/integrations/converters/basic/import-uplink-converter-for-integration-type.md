@@ -37,14 +37,16 @@ Now, let&#39;s update your {{integrationTypeCorrectName}} integration to use the
 {% assign editIntegration = '
     ===
     image: /images/devices-library/basic/integrations/integration_type/edit-integration-1.png,
-    title: Go to the "**Integrations**" page in the "**Integration center**" section. Click on your integration to open its details window. Enter edit mode by clicking the orange pencil button in the top-right corner.
+    title: Go to the "**Integrations**" page in the "**Integration center**" section. Click on your correct_name_integration_type integration to open its details window. Enter edit mode by clicking the orange pencil button in the top-right corner.
     ===
     image: /images/devices-library/basic/integrations/integration_type/edit-integration-2.png,
     title: Replace the existing uplink converter with the imported one.
     ===
     image: /images/devices-library/basic/integrations/integration_type/edit-integration-3.png,
     title: Don&#39;t forget to save your changes!
-    ' | replace: "integration_type" , integrationType
+    ' 
+    | replace: "integration_type" , integrationType 
+    | replace: "correct_name_integration_type" , integrationTypeCorrectName
 %}
 
 {% include images-gallery.liquid imageCollection=editIntegration %}
