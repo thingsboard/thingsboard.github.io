@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Data Visualization
@@ -7,3 +7,4 @@ description: IoT data visualization for various IoT projects using iot dashboard
 redirect_to: "/iot-data-visualization/"
 
 ---
+
