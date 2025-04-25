@@ -8,9 +8,9 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
 <div class="visualization-wrapper">
     <section class="visualization-hero">
         <div class="title">
-            <h1>Data visualization</h1>
-            <p>Transform complex IoT data into easy-to-understand visuals</p>
-            <a id="visualization_startFree" target="_blank" href="/pricing/" class="button gtm_button">Start free</a>
+            <h1>IoT data visualization</h1>
+            <p>Create interactive dashboards that turn raw IoT data into actionable intelligence.</p>
+            <a id="visualization_startFree" target="_blank" href="/installations/" class="button gtm_button">Try it now</a>
         </div>
         <div class="images">
             <div class="circle-bg"></div>
@@ -24,8 +24,8 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
     </section>
     <section class="visualization-definition">
         <div class="title">
-            <h2>What is data visualization?</h2>
-            <p>ThingsBoard offers powerful and flexible data visualization tools that turn raw IoT data into actionable insights. You can build interactive dashboards using a wide range of widgets—charts, graphs, tables, control elements, SCADA symbols, gauges, switches, and indicators—for real-time monitoring and control. With support for dashboard states and responsive layouts, you can create multi-level navigation flows and ensure seamless display across devices. This combination simplifies complex data, enhances decision-making, boosts productivity, and helps optimize operations through intuitive and customizable user interfaces.</p>
+            <h2>What is data visualization in IoT?</h2>
+            <p>IoT Data visualization is the process of turning raw device data into visual formats like charts, graphs, and gauges to help users quickly understand patterns and trends. In ThingsBoard, you can create real-time dashboards using a variety of widgets—charts, tables, SCADA symbols, and more—for monitoring and control. Dashboards support responsive layouts, navigation flows, and can be easily shared with customers.</p>
         </div>
         <img data-src="/images/visualization/visualization-scheme.svg" src="/images/visualization/visualization-scheme.svg" class="svg-animation" alt="Visualization scheme">
     </section>
@@ -34,7 +34,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
         <div class="block">
             <div class="title">
                 <h3>Widgets</h3>
-                <p>A widget is an element that displays a specific type of information or functionality on a dashboard. Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.</p>
+                <p>A widget is a dashboard element that displays specific information or provides functionality. Widgets can show static, latest, or historical device data, enable remote control, and support alarm monitoring and management.</p>
             </div>
             <div class="row">
                 <div class="card">
