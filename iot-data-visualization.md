@@ -14,7 +14,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
         </div>
         <div class="images">
             <div class="circle-bg"></div>
-            <img class="visualization-hero-image" alt="Thingsboard dashboards and menus">
+            <img src="/images/visualization/bar-chart.svg" class="visualization-hero-image" alt="Thingsboard dashboards and menus">
             <img src="/images/visualization/cold_water_usage.webp" class="visualization-hero-image-2" alt="Cold water usage value-chart card">
             <img src="/images/visualization/route_history.webp" class="visualization-hero-image-3" alt="Trip animation map">
             <img src="/images/visualization/moisture_himidity.webp" class="visualization-hero-image-4" alt="Moisture and humidity line chart">
