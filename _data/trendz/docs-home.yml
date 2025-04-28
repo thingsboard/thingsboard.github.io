@@ -76,14 +76,17 @@ toc:
     - title: Save predictions into ThingsBoard
       path: /docs/trendz/prediction-save-to-tb/
 - title: AI Features
+  new: true
   section:
     - title: Trendz AI Assistant
       path: /docs/trendz/ai-assistance-overview/
     - title: AI Assistant Widget
       path: /docs/trendz/ai-assistance-widget/
     - title: AI Widget Summary
+      new: true
       path: /docs/trendz/ai-widget-summary/
     - title: Trendz Prompts
+      new: true
       path: /docs/trendz/ai-assistance-prompts/
     - title: Large Language Model (LLM) Configuration
       path: /docs/trendz/custom-ai-model-configuration/
