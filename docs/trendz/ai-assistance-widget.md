@@ -173,4 +173,4 @@ It’s possible to check messages or save generated views in the Chats Tab, choo
 
 ## Next Steps
 
-{% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}
+{% assign currentGuide = "AiAssistant" %}{% include templates/trndz-guides-banner.md %}
