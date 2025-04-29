@@ -107,6 +107,19 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>listener.proxy_enabled</td>
+			<td>MQTT_PROXY_PROTOCOL_ENABLED</td>
+			<td>false</td>
+			<td> Enable proxy protocol support. Disabled by default. If enabled, supports both v1 and v2.
+ Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature</td>
+		</tr>
+		<tr>
+			<td>listener.leak_detector_level</td>
+			<td>NETTY_LEAK_DETECTOR_LVL</td>
+			<td>DISABLED</td>
+			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID. It is set globally for all listeners</td>
+		</tr>
+		<tr>
 			<td>listener.tcp.enabled</td>
 			<td>LISTENER_TCP_ENABLED</td>
 			<td>true</td>
@@ -123,12 +136,6 @@
 			<td>LISTENER_TCP_BIND_PORT</td>
 			<td>1883</td>
 			<td> MQTT TCP listener bind port</td>
-		</tr>
-		<tr>
-			<td>listener.tcp.netty.leak_detector_level</td>
-			<td>TCP_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.tcp.netty.boss_group_thread_count</td>
@@ -252,12 +259,6 @@
 			<td> Optional password to access the private key. If not set, the platform will attempt to load the private keys that are not protected with the password</td>
 		</tr>
 		<tr>
-			<td>listener.ssl.netty.leak_detector_level</td>
-			<td>SSL_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
-		</tr>
-		<tr>
 			<td>listener.ssl.netty.boss_group_thread_count</td>
 			<td>SSL_NETTY_BOSS_GROUP_THREADS</td>
 			<td>1</td>
@@ -316,12 +317,6 @@
 			<td>WS_NETTY_SUB_PROTOCOLS</td>
 			<td>mqttv3.1,mqtt</td>
 			<td> Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
-		</tr>
-		<tr>
-			<td>listener.ws.netty.leak_detector_level</td>
-			<td>WS_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.ws.netty.boss_group_thread_count</td>
@@ -449,12 +444,6 @@
 			<td>WSS_NETTY_SUB_PROTOCOLS</td>
 			<td>mqttv3.1,mqtt</td>
 			<td> Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
-		</tr>
-		<tr>
-			<td>listener.wss.netty.leak_detector_level</td>
-			<td>WSS_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.wss.netty.boss_group_thread_count</td>
@@ -778,6 +767,18 @@
 			<td> Interval in milliseconds to poll messages from 'tbmq.sys.historical.data' topic</td>
 		</tr>
 		<tr>
+			<td>queue.integration-uplink.poll-interval</td>
+			<td>TB_IE_UPLINK_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.ie.uplink' topic</td>
+		</tr>
+		<tr>
+			<td>queue.integration-uplink-notifications.poll-interval</td>
+			<td>TB_IE_UPLINK_NOTIFICATIONS_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.ie.uplink.notifications' topics</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
@@ -912,7 +913,7 @@
 		<tr>
 			<td>queue.kafka.msg-all.topic-properties</td>
 			<td>TB_KAFKA_MSG_ALL_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:24;replication.factor:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:16;replication.factor:1</td>
 			<td> Kafka topic properties separated by semicolon for `tbmq.msg.all` topic</td>
 		</tr>
 		<tr>
@@ -1068,7 +1069,7 @@
 		<tr>
 			<td>queue.kafka.client-session-event.topic-properties</td>
 			<td>TB_KAFKA_CLIENT_SESSION_EVENT_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:48;replication.factor:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:24;replication.factor:1</td>
 			<td> Kafka topic properties separated by semicolon for `tbmq.client.session.event.request` topic</td>
 		</tr>
 		<tr>
@@ -1228,6 +1229,132 @@
 			<td> Additional Kafka producer configs separated by semicolon for `tbmq.sys.historical.data` topic</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.integration-downlink.topic-prefix</td>
+			<td>TB_KAFKA_IE_DOWNLINK_TOPIC_PREFIX</td>
+			<td>tbmq.ie.downlink</td>
+			<td> Prefix for topics for sending integration configurations and validation requests from tbmq to integration executors</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.http.topic-properties</td>
+			<td>TB_KAFKA_IE_DOWNLINK_HTTP_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.downlink.http` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.http.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_HTTP_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.downlink.http` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.http.additional-producer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_HTTP_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.downlink.http` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.kafka.topic-properties</td>
+			<td>TB_KAFKA_IE_DOWNLINK_KAFKA_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.downlink.kafka` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.kafka.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_KAFKA_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.downlink.kafka` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.kafka.additional-producer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_KAFKA_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.downlink.kafka` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.mqtt.topic-properties</td>
+			<td>TB_KAFKA_IE_DOWNLINK_MQTT_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.downlink.mqtt` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.mqtt.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_MQTT_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.downlink.mqtt` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.mqtt.additional-producer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_MQTT_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.downlink.mqtt` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.topic</td>
+			<td>TB_KAFKA_IE_UPLINK_TOPIC</td>
+			<td>tbmq.ie.uplink</td>
+			<td> Topic for sending messages/events from integration executors to tbmq</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.topic-properties</td>
+			<td>TB_KAFKA_IE_UPLINK_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.uplink` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.uplink` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.additional-producer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.uplink` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.topic-prefix</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_TOPIC_PREFIX</td>
+			<td>tbmq.ie.uplink.notifications</td>
+			<td> Prefix for topics for sending notifications or replies from integration executors to specific tbmq node</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.topic-properties</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.uplink.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.uplink.notifications` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.additional-producer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.uplink.notifications` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-msg.topic-properties</td>
+			<td>TB_KAFKA_IE_MSG_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.msg.ie` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-msg.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td>max.poll.records:50</td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.msg.ie` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-msg.additional-producer-config</td>
+			<td>TB_KAFKA_IE_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.msg.ie` topics</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.kafka-prefix</td>
 			<td>TB_KAFKA_PREFIX</td>
 			<td></td>
@@ -1247,6 +1374,12 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>service.type</td>
+			<td>TB_SERVICE_TYPE</td>
+			<td>tbmq</td>
+			<td> Microservice type. Allowed value: tbmq</td>
+		</tr>
+		<tr>
 			<td>service.id</td>
 			<td>TB_SERVICE_ID</td>
 			<td></td>
@@ -1262,7 +1395,7 @@
  which is unnecessary in single-node setups where no other instances are sharing rate limit data.
  Set this parameter to 'false' if your TBMQ is a cluster deployment (with 2 or more nodes in the cluster).
  In this mode, rate limiting will be managed using Redis, allowing all nodes
- in the cluster to enforce consistent rate limits across the entire cluster.</td>
+ in the cluster to enforce consistent rate limits across the entire cluster</td>
 		</tr>
 	</tbody>
 </table>
@@ -1353,6 +1486,39 @@
 </table>
 
 
+###  Platform integrations parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>integrations.init.connection-check-api-request-timeout-sec</td>
+			<td>INTEGRATIONS_INIT_CONNECTION_CHECK_API_REQUEST_TIMEOUT_SEC</td>
+			<td>20</td>
+			<td> Connection check timeout for API request in seconds</td>
+		</tr>
+		<tr>
+			<td>integrations.cleanup.period</td>
+			<td>INTEGRATIONS_CLEANUP_PERIOD_SEC</td>
+			<td>10800</td>
+			<td> The parameter to specify the period of execution cleanup task for disconnected integrations. Value set in seconds. Default value corresponds to three hours</td>
+		</tr>
+		<tr>
+			<td>integrations.cleanup.ttl</td>
+			<td>INTEGRATIONS_CLEANUP_TTL_SEC</td>
+			<td>604800</td>
+			<td> Administration TTL (in seconds) for cleaning up disconnected integrations.
+ The cleanup removes integration topics that persist messages.
+ The current value is set to one week. A value of 0 or negative disables this TTL</td>
+		</tr>
+	</tbody>
+</table>
+
+
 ###  Database time series parameters
 
 <table>
@@ -1392,6 +1558,12 @@
 			<td>SQL_TS_KV_PARTITIONING</td>
 			<td>DAYS</td>
 			<td> Specify partitioning size for timestamp key-value storage. Example: DAYS, MONTHS, YEARS, INDEFINITE</td>
+		</tr>
+		<tr>
+			<td>sql.remove_null_chars</td>
+			<td>SQL_REMOVE_NULL_CHARS</td>
+			<td>true</td>
+			<td> Specify whether to remove null characters from strValue before insert</td>
 		</tr>
 		<tr>
 			<td>sql.ts.batch_size</td>
@@ -1466,6 +1638,36 @@
 			<td> Number of threads that execute batch delete statements for unauthorized client data. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
 		</tr>
 		<tr>
+			<td>sql.events.batch_size</td>
+			<td>SQL_EVENTS_BATCH_SIZE</td>
+			<td>10000</td>
+			<td> Batch size for persisting events updates</td>
+		</tr>
+		<tr>
+			<td>sql.events.batch_max_delay</td>
+			<td>SQL_EVENTS_BATCH_MAX_DELAY_MS</td>
+			<td>100</td>
+			<td> Max timeout for events entries queue polling. The value set in milliseconds</td>
+		</tr>
+		<tr>
+			<td>sql.events.batch_threads</td>
+			<td>SQL_EVENTS_BATCH_THREADS</td>
+			<td>3</td>
+			<td> Batch size for processing events insert/update. Batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+		</tr>
+		<tr>
+			<td>sql.events.partition_size</td>
+			<td>SQL_EVENTS_REGULAR_PARTITION_SIZE_HOURS</td>
+			<td>168</td>
+			<td> Number of hours to partition the events. The current value corresponds to one week</td>
+		</tr>
+		<tr>
+			<td>sql.events.max-symbols</td>
+			<td>SQL_EVENTS_MAX_SYMBOLS</td>
+			<td>4096</td>
+			<td> Maximum number of symbols per event. The event content will be truncated if needed</td>
+		</tr>
+		<tr>
 			<td>sql.ttl.ts.enabled</td>
 			<td>SQL_TTL_TS_ENABLED</td>
 			<td>true</td>
@@ -1501,6 +1703,24 @@
 			<td>259200</td>
 			<td> The parameter to specify system TTL(Time To Live) value for unauthorized clients. Value set in seconds. 0 - records are never expired. Default value corresponds to three days</td>
 		</tr>
+		<tr>
+			<td>sql.ttl.events.enabled</td>
+			<td>SQL_TTL_EVENTS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable TTL (Time To Live) for event records</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.events.execution_interval_ms</td>
+			<td>SQL_TTL_EVENTS_EXECUTION_INTERVAL_MS</td>
+			<td>3600000</td>
+			<td> Number of milliseconds (max random initial delay and fixed period). Defaults to 1 hour</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.events.events_ttl</td>
+			<td>SQL_TTL_EVENTS_TTL_SEC</td>
+			<td>1209600</td>
+			<td> Number of seconds for TTL. TTL is set to 14 days by default. The accuracy of the cleanup depends on the sql.events.partition_size parameter</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -1524,13 +1744,13 @@
 			<td>lettuce.buffered-cmd-count</td>
 			<td>REDIS_LETTUCE_BUFFERED_CMDS_COUNT</td>
 			<td>5</td>
-			<td> Number of buffered commands before flush is triggered. Used when auto-flush is disabled.</td>
+			<td> Number of buffered commands before flush is triggered. Used when auto-flush is disabled</td>
 		</tr>
 		<tr>
 			<td>lettuce.flush-interval-ms</td>
 			<td>REDIS_LETTUCE_FLUSH_INTERVAL_MS</td>
 			<td>5</td>
-			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count.</td>
+			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count</td>
 		</tr>
 		<tr>
 			<td>lettuce.config.shutdown-quiet-period</td>

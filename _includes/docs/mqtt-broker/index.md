@@ -65,4 +65,30 @@ You can refer to the TBMQ documentation to set up the broker and understand its 
             </div>
         </a>
     </div>
+    <div class="w-100"></div>
+    <div class="col col-xxl mb-4">
+        <div class="feature-card">
+            <div class="feature-title"><a href="/docs/mqtt-broker/integrations/">Integrations</a></div>
+            <div class="feature-text">
+                Forward MQTT messages to external systems like HTTP, Kafka, or external MQTT brokers — seamlessly connecting your IoT data to the rest of your infrastructure.
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
+                    <a class="feature-card inner" href="/docs/mqtt-broker/integrations/http/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/http.svg" alt="HTTP logo icon"><span>HTTP</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
+                    <a class="feature-card inner" href="/docs/mqtt-broker/integrations/mqtt/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/mqtt.svg" alt="MQTT logo icon"><span>MQTT</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
+                    <a class="feature-card inner" href="/docs/mqtt-broker/integrations/kafka/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/kafka.svg" alt="Kafka"><span>Kafka</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
