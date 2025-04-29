@@ -19,6 +19,8 @@ Minor release with the following features, improvements, and bug fixes.
 * [#203](https://github.com/thingsboard/tbmq/pull/203) **Core & UI**: Added MQTT integration by @dmytro-landiak and @deaflynx;
 * [#200](https://github.com/thingsboard/tbmq/pull/200) **UI**: Migrated to Angular 19 by @deaflynx.
 
+**Helm chart support:** Official [Helm chart](/docs/mqtt-broker/install/cluster/helm-cluster-setup-options/) for deploying TBMQ is now available, enabling simplified Kubernetes deployments with customizable configuration options.
+
 **Improvements:**
 
 * Core and install scripts:
