@@ -67,6 +67,22 @@
     "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
   },
   {
+    "type": ["main", "lte", "nbiot", "lora", "wifi", "bluetooth"],
+    "program": "",
+    "name": "Elastel",
+    "logo": "elastel-logo.png",
+    "site": {
+      "href": "https://www.elastel.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "/docs/devices-library/raspberry-pi-cm4/"
+      }
+    },
+    "blurb": "Elastel is a technology-driven company providing IIoT products and services globally. With 10+ years of industry experience, Elastel has developed series Open, High-performance, Reliable, and Easy-to-use IIoT devices like Industrial Raspberry Pi, Arm-based IIoT Gateway, Industrial Cellular Router, etc.  These edge hardware allows customers flexibly develop their specific applications for IoT needs."
+  },
+  {
     "type": ["main", "bluetooth", "nbiot", "lte", "sigfox", "wifi"],
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
