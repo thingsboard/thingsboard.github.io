@@ -17,7 +17,7 @@ TBMQ Kafka Integration processes messages and forwards them to an external Kafka
 3. **TBMQ Integration Executor processes the message**, formats it accordingly, and sends it to a configured **Kafka topic**.
 4. **Kafka consumers process the message** in downstream systems.
 
-![image](/images/mqtt-broker/integrations/tbmq-kafka-integration.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-kafka-integration.png)
 
 ## Prerequisites
 

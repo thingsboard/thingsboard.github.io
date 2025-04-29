@@ -25,7 +25,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-minikube/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Upgrading Helm cluster setup with Minikube" alt="Upgrading Helm cluster setup with Minikube">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/minikube.svg" title="Upgrading Helm cluster setup with Minikube" alt="Upgrading Helm cluster setup with Minikube">
                                                  </div>
                                             </span>
                                         </a>
@@ -34,7 +34,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-aws/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Upgrading Helm cluster setup on EKS" alt="Upgrading Helm cluster setup on EKS">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/eks.svg" title="Upgrading Helm cluster setup on EKS" alt="Upgrading Helm cluster setup on EKS">
                                                  </div>
                                             </span>
                                         </a>
@@ -43,7 +43,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-azure/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Upgrading Helm cluster setup on AKS" alt="Upgrading Helm cluster setup on AKS">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/azure.svg" title="Upgrading Helm cluster setup on AKS" alt="Upgrading Helm cluster setup on AKS">
                                                  </div>
                                             </span>
                                         </a>
@@ -52,7 +52,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-gcp/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gcp.svg" title="Upgrading Helm cluster setup on GKE" alt="Upgrading Helm cluster setup on GKE">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/gcp.svg" title="Upgrading Helm cluster setup on GKE" alt="Upgrading Helm cluster setup on GKE">
                                                  </div>
                                             </span>
                                         </a>

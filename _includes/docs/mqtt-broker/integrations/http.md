@@ -13,7 +13,7 @@ TBMQ HTTP Integration enables forwarding MQTT messages to an external HTTP servi
 3. **TBMQ Integration Executor processes the message**, formats it as an HTTP request, and forwards it to the external service.  
 4. **External service receives the request** and processes the data accordingly.  
 
-![image](/images/mqtt-broker/integrations/tbmq-http-integration.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-http-integration.png)
 
 ## Prerequisites
 

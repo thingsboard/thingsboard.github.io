@@ -30,7 +30,7 @@ At a high level, the integration flow in TBMQ works like this:
 - Another **MQTT broker** over **MQTT or MQTTS**.
 - A **Kafka broker** using the **Kafka binary protocol over TCP or TLS**.
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-main.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-ie-main.png)
 
 ### New microservice
 
@@ -132,7 +132,7 @@ It enables reliable delivery of integration-related events between services.
 It also provides buffering of messages in case of component downtime, processing delays, or spikes in load. 
 Additionally, it supports scalable and parallel processing by allowing multiple broker and executor instances to work concurrently.
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-communication.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-ie-communication.png)
 
 TBMQ and its Integration Executor microservices communicate asynchronously over Kafka using multiple **dedicated** topics.
 Each topic serves a specific purpose and allows for decoupled, reliable, and scalable data flow between the components.
@@ -221,21 +221,21 @@ You can also manually test the integration connectivity with the external system
 
 **Scenario 1: Integration Executor not running — Timeout**
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-admin-timeout.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-ie-admin-timeout.png)
 
 The Integration Executor is not running, so the broker waits for a response until a timeout occurs. Result: **Timeout exception**.
 The integration will not be saved.
 
 **Scenario 2: Integration Executor running — Configuration Error**
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-admin-error.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-ie-admin-error.png)
 
 The Integration Executor is running, but the integration configuration is invalid. Result: **Failure**.
 The integration will not be saved.
 
 **Scenario 3: Integration Executor running — Success**
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-admin-ok.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-ie-admin-ok.png)
 
 The Integration Executor is running and the configuration is valid. Result: **Success**.
 Once validation succeeds, the integration entity is saved in the database, the integration subscriptions are persisted in the [Subscription Trie](/docs/mqtt-broker/architecture/#subscriptions-trie),
@@ -243,7 +243,7 @@ and integration configuration event is sent to the Integration Executor for proc
 
 ### Integration Message Processing Topic
 
-![image](/images/mqtt-broker/integrations/tbmq-ie-msg-processing.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-ie-msg-processing.png)
 
 TBMQ uses a **dedicated Kafka topic for each integration** to deliver MQTT messages to the Integration Executor (`tbmq-ie`).
 
