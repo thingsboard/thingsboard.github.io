@@ -314,6 +314,22 @@
     "blurb": "SensiEDGE IoT SoM is a fully customisable solution for developers who want to focus on their own applications and core competencies rather than the underlying hardware platform or production logistics when creating products for the IoT."
   },
   {
+    "type": ["main", "lora", "bluetooth", "wifi", "catm", "nbiot"],
+    "program": "",
+    "name": "Shenzhen Dragino Technology Development  Co.,Ltd",
+    "logo": "dragino-logo.png",
+    "site": {
+      "href": "http://www.dragino.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "https://wiki.dragino.com/xwiki/bin/view/Main/ThingsBoard"
+      }
+    },
+    "blurb": "Shenzhen Dragino Technology Development Co., Ltd. specializes in IoT solutions, with a focus on LoRaWAN and NB-IoT technologies. We offer end-to-end IoT services, including hardware, software, and network solutions, enabling customers to deploy and manage IoT networks efficiently.\n\nOur globally trusted products and solutions ensure rapid deployment, scalability, and customer success in the competitive IoT market."
+  },
+  {
     "type": ["main", "gsm"],
     "program": "",
     "name": "DECODE",
