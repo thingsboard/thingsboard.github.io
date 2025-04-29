@@ -8,7 +8,7 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v2.1.0 (April ?, 2025)
+## v2.1.0 (April 29, 2025)
 
 Minor release with the following features, improvements, and bug fixes.
 
