@@ -12,6 +12,9 @@
 * TOC
 {:toc}
 
+{% assign sinceVersion = "3.9.0" %}
+{% include templates/since.md %}
+
 The **Mobile сenter** is your one-stop hub for building, configuring, and managing mobile apps in ThingsBoard. Whether you&#39;re starting from scratch or preparing to publish your {{MOBILE_APPLICATION}} to the Google Play Store or App Store, this tool walks you through every step of the process.
 
 The Mobile center is divided into tabs for convenient creation and management of mobile applications:
@@ -137,11 +140,11 @@ Items that do not fit in the bottom navigation menu will be available under the 
 
 {% unless docsPrefix == null %}
 
-### Self-registration
+### Self registration
 
-The **self-registration** feature allows the tenant to configure a sign-up page for their clients, allowing them to easily sign up and log in to ThingsBoard with predefined permission configurations.
+The **self registration** feature allows the tenant to configure a sign-up page for their clients, allowing them to easily sign up and log in to ThingsBoard with predefined permission configurations.
 
-Configure the self-registration form for new clients:
+Configure the self registration form for new clients:
 
 - **Page title**. Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users.
 - **Notification recipient**. Specify the recipients that will receive notifications about new user registrations. Learn more about notifications and how to add a new notification recipient [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
