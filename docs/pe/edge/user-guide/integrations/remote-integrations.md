@@ -5,69 +5,69 @@ description: Remote Integrations Documentation
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/remote/add-converter-step-1.png
+        image: /images/pe/edge/integrations/remote/add-converter-step-1.webp
         title: '1. Open <b>Converter templates</b> menu page. 2. Click <b>("+")</b> icon and select <b>Create new converter</b>.'
     1:
-        image: /images/pe/edge/integrations/remote/add-converter-step-2.png
+        image: /images/pe/edge/integrations/remote/add-converter-step-2.webp
         title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-1.webp
         title: '1. Open <b>Integration templates</b> menu page. 2. Click the <b>("+")</b> icon to add a new integration.'
     1:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-2.webp
         title: '1. Select integration type: <b>HTTP</b>. 2. Input integration name, e.g., <b>HTTP Demo Remote</b>. 3. Click <b>Next</b> button.'
     2:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-3.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-3.webp
         title: '1. Click <b>Select existing</b> button. 2. Select uplink data converter: <b>Temperature Converter</b>. 3. Click <b>Next</b> button.'
     3:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-4.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-4.webp
         title: 'Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
     4:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-5.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-5.webp
         title: 'Verify that our <b>HTTP Demo Remote</b> integration template was created successfully.'
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-1.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-1.webp
         title: '1. Open <b>Instances</b> menu page. 2. Click on <b>My New Edge</b>.'
     1:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-2.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-2.webp
         title: '1. Click <b>Attributes</b> tab. 2. Click <b>("+")</b> icon to add new attribute.'
     2:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-3.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-3.webp
         title: '1. Enter <b>remoteHttpIntegrationUrl</b> attribute. 2. Set the remote value for your HTTP integration <b>http://IP:port</b>. 3. Click <b>Add</b> button.'
     3:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-4.webp
         title: 'Open <b>Instances</b> menu page.'
     4:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-5.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-5.webp
         title: 'Click <b>Manage edge integrations</b>.'
     5:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-6.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-6.webp
         title: 'Click <b>("+")</b> icon.'
     6:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-7.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-7.webp
         title: '1. Select the target integration. 2. Click <b>Assign</b> button.'
     7:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-8.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-8.webp
         title: 'Open <b>Edge</b> instance. 1. Open the <b>Integrations</b> menu page 2. Click on <b>HTTP Demo Remote</b>. 3. Check that placeholder is substituted with the value of the attribute.'
 
 copyCredentials:
     0:
-        image: /images/pe/edge/integrations/remote/copy-credentials.png
+        image: /images/pe/edge/integrations/remote/copy-credentials.webp
         title: '1. Open the <b>Integration templates</b> menu page. 2. Click the integration template row. 3. Click to copy <b>Integration key</b>. 4. Click to copy <b>integration secret</b>.'
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/remote/send-uplink-step-1.png
+        image: /images/pe/edge/integrations/remote/send-uplink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/remote/send-uplink-step-2.png
+        image: /images/pe/edge/integrations/remote/send-uplink-step-2.webp
 
 device:
     0:
-        image: /images/pe/edge/integrations/http/device-1-edge.png
+        image: /images/pe/edge/integrations/remote/device-1-edge.webp
         title: 'Go to the "<b>Entities</b>" section -> "<b>Devices</b>" page on the Edge to see the created device with data.'
 
 ---
@@ -98,7 +98,7 @@ Before creating the **Integration template**, create an **Uplink converter templ
 
 To convert the data coming in from the device into the format needed to display it on the **ThingsBoard Edge**, the **Uplink** is required:
 * Click the **"plus"** button and select the **"Create new converter"** option. 
-* To view the events, enable the **Debug** mode.
+* To view the events, enable **Debug** mode.
 * To parse and transform data, enter a script in the **"function decoder"** field. 
 
 {% include images-gallery.html imageCollection="addConverter" %}

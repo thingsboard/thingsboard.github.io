@@ -38,10 +38,10 @@ downlinkRule:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/tcp/assign-integration-step-1.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+        title: 'Click the <b>Manage Integrations</b> button of Edge entity'
     1:
         image: /images/pe/edge/integrations/tcp/assign-integration-step-2.png
-        title: 'Assign Integration to the Edge'
+        title: 'To assign the Integration to the Edge instance, click the <b>"+"</b> button and select the <b>TCP Integration</b> from the drop-down menu. Click the <b>"Assign"</b> button.'
     2:
         image: /images/pe/edge/integrations/tcp/assign-integration-step-3.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page'
@@ -99,17 +99,20 @@ To learn more, review the integration diagram:
 
 In this tutorial, we will use:
 
-- ThingsBoard Edge Professional Edition;
+- [ThingsBoard Edge Professional Edition](/docs/pe/edge/getting-started-guides/what-is-edge/){: target="_blank"};
 - **TCP Integration**: The integration that runs externally and is connected to the **ThingsBoard Edge** instance.
-- **echo** command: To display a line of text, and redirect its output to the **netcat** (**nc**) utility.
-- **netcat** (**nc**) utility: To establish TCP connections, receive data from there, and transmit it.
+- **echo command**: To display a line of text, and redirect its output to the **netcat** (**nc**) utility.
+- **netcat (nc) utility**: To establish TCP connections, receive data from there, and transmit it.
 
 Let's assume that we have a sensor which is sending current temperature and humidity readings.
-Our sensor device **SN-002** publishes it's temperature and humidity readings to TCP Integration on **10560** port to the machine where TCP Integration is running.
+Our sensor device **SN-002** publishes its temperature and humidity readings to TCP Integration on **port 10560** on the machine where TCP Integration is running.
 
-For demo purposes, we assume that our device is smart enough to send data in 3 different payload types:
-- **Text** - in this case payload is **SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69**
-- **JSON** - in this case payload is
+For demonstration purposes, we assume that our device is smart enough to send data in 3 different payload types:
+- **Text:** The payload is 
+```text
+SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69**
+```
+- **JSON:** The payload is:
 
 ```json
 [
@@ -121,16 +124,21 @@ For demo purposes, we assume that our device is smart enough to send data in 3 d
   }
 ]
 ```
-- **Binary** - in this case binary payload is **\x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x32\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x00\x00\x00** (in HEX string).
-  Here is the description of the bytes in this payload:
-    - **0-3** bytes - **\x30\x30\x30\x30** - dummy bytes to show how you can skip particular prefix bytes in your payload. These bytes are included for sample purposes;
-    - **4** byte - **\x11** - payload length. If we convert it to decimal - **17**. So our payload in this case is limited to 17 bytes from the incoming TCP frame;
-    - **5-10** bytes - **\x53\x4e\x2d\x30\x30\x32** - device name. If we convert it to text - **SN-002**;
-    - **11-17** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
-    - **18-21** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
-    - **22-24** bytes - **\x00\x00\x00** - dummy bytes. We are going to ignore them, because payload size is **17** bytes - from **5** till **21** byte. These bytes are included for sample purposes;
 
-You can select the payload type based on your device capabilities and business cases.
+- **Binary:** The binary payload is (in HEX string):
+
+```text
+\x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x32\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x00\x00\x00
+```
+* The bytes description in this payload is following:
+  * **0-3** bytes: **\x30\x30\x30\x30** - These are the "dummy" bytes. They show how to skip certain prefix bytes in your payload and are included as an example.
+  * **4** byte: **\x11** - The payload length. If we convert it to decimal, it is **17**. So, in this case, our payload is limited to **17 bytes** from the incoming TCP frame.
+  * **5-10** bytes: **\x53\x4e\x2d\x30\x30\x32** - The device name. If we convert it to text, it is **SN-002**.
+  * **11-17** bytes: **\x64\x65\x66\x61\x75\x6c\x74** - The device type. If we convert it to text, it is **default**.
+  * **18-21** bytes: **\x32\x35\x2e\x37** - The temperature telemetry. If we convert it to text, it is **25.7**.
+  * **22-24** bytes: **\x00\x00\x00** - These are the "dummy" bytes. We will ignore them because the payload size is **17** bytes (from **5** to **21** byte). These bytes are included as an example.
+
+Select the **payload type** based on your device capabilities and business cases.
 
 {% assign integrationPort = "10560" %}
 {% include templates/edge/integrations/tcp-udp/firewall.md %}
@@ -144,7 +152,7 @@ Converter and Integration templates are created on the **Cloud**, so please log 
 Before creating the **Integration template**, you need to create an Uplink and Downlink converter templates on the **Converters templates** page.
 Uplink is required to convert incoming data from the device into the required format for display on **ThingsBoard Edge**.
 
-Click the **"plus"** button and select the "**Create new converter**" option. To view the events, enable the **Debug** mode.
+Click the **"plus"** button and select the "**Create new converter**" option. To view the events, enable **Debug** mode.
 Enter a script to parse and transform data in the **"function decoder"** field.
 
 {% include images-gallery.html imageCollection="addConverter" %}
@@ -169,7 +177,7 @@ Save the changes by clicking on the **"Save"** button (the "checkmark" icon).
 
 #### Downlink Converter template
 
-Create the Downlink on the **Converter templates** page as well. To see the events, select the **Debug** checkbox.
+Create the Downlink on the **Converter templates** page as well. To see the events, check the **Debug** checkbox.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
@@ -204,23 +212,24 @@ return result;
 
 ### Create Integration template
 
-Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
-Go to **Integration templates** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
+Now that the Uplink and Downlink converter templates have been created, you can create an integration.
+Go to the **Integration templates** section and click the **Add new integration** button. 
+Name it **"TCP Integration"**, select the **TCP** type, enable **Debug** mode, and add the recently created Uplink and Downlink converters from the corresponding drop-down menus.
 
-As you mentioned, **Execute remotely** is checked and can not be modified - TCP Integration can be only **remote** type.
+As mentioned above, the **Execute Remotely** option is selected by **default** and cannot be changed—**TCP Integration** is always configured as a **remote type**.
 
-Please note down **Integration key** and **Integration secret** - we will use these values later in the configuration on the remote TCP Integration itself.
+Record the **Integration key** and **Integration secret**. These values will be used later in the configuration of the remote TCP Integration itself.
 
-By default, TCP Integration will use **10560** port, but you can change this to any available port in your case.
+By default, TCP Integration will use the port **10560**, but you can change this to any available port in your case.
 
-We leave other options by default, but there is brief description of them:
-- **Max number of pending connects on the socket** - The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection is refused;
-- **Size of the buffer for inbound socket** - the size in KBytes of the socket data receive buffer;
-- **Size of the buffer for outbound socket** - the size in KBytes of the socket data send buffer;
-- **Enable sending of keep-alive messages on connection-oriented sockets** - a flag indicating that probes should be periodically sent across the network to the opposing socket to keep the connection alive;
-- **Forces a socket to send the data without buffering (disable Nagle's buffering algorithm)** - disables Nagle's algorithm on the socket which delays the transmission of data until a certain volume of pending data has accumulated.
+We leave other options by default, but there is short description of them:
+- **Max number of pending connects on the socket:** The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection will be denied.
+- **Size of the buffer for inbound socket:** Specifies the size (in kilobytes) of the socket’s data receive buffer.
+- **Size of the buffer for outbound socket:** Specifies the size (in kilobytes) of the socket’s data send buffer.
+- **Enable sending of keep-alive messages on connection-oriented sockets:** When enabled, the socket will periodically send keep-alive probes across the network to the peer, ensuring that the connection remains active.
+- **Forces a socket to send the data without buffering (disable Nagle's buffering algorithm):** Disables Nagle’s algorithm on the socket, ensuring that data is sent immediately rather than waiting for a larger amount of data to accumulate.
 
-Choose device payload type for **Handler Configuration**:
+Select the device payload type for **Handler Configuration**:
 
 {% capture handlerconfiguration %}
 Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
@@ -229,37 +238,44 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuratio
 
 {% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
-Click **Add** to save the Integration.
+To save the Integration, click the **Add** button.
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
 
 ### Modify Edge Root Rule chain for Downlinks
 
-We can send a downlink message to the device from Rule chain using the rule node.
-To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
+We can send a downlink message to the device from the **Rule chain** using the **rule node**. To send downlink via integration, modify the **Edge Root Rule chain**.
+
+{% capture delete_restrictions %}
+**Please note!** <br>
+If you use **earlier versions of Edge**, you cannot create or edit a **Rule Chain** on the **Edge** itself. It must be configured as a template in the **Cloud (Server)**, and then assigned to the **Edge** instance.
+
+Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on the **Edge**.
+{% endcapture %}
+
 For example, create an **integration downlink** node and set the **'Attributes updated'** link to it.
-When changes are made to device attribute, the downlink message will be sent to the integration.
+When changes are made to the device attribute, the downlink message is sent to the integration.
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
 ### Assign Integration to Edge
 
-Once converter and integration templates are created, we can assign Integration template to Edge.
+Once the converter and integration templates are created, we can assign the **Integration template** to the **Edge**.
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
 #### Installing and running external TCP Integration
 
-Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations) and install TCP Integration service locally or on separate machine.
+See the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations){: target="_blank"} and install the **TCP Integration service** locally or on a separate machine.
 
-Please use **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
+Please use the **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
 
 ### Send uplink message
 
-Once ThingsBoard TCP Integration has been created, the TCP server starts, and then it waits for data from the devices.
+Once the ThingsBoard TCP Integration is created, the TCP server is started, and then waits for data from the devices.
 
-Choose device payload type to send uplink message:
+To send the uplink message, select the device payload type:
 
 {% capture senduplink %}
 Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
@@ -270,28 +286,28 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.m
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
-The created device with data can be seen in the section **Device groups -> All** on the Edge:
+The created device with data can be seen in the **Device groups > All** section of the **Edge** instance:
 
 {% include images-gallery.html imageCollection="device" %}
 
-Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
+The received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
 ### Send downlink message
 
-Now let's check downlink functionality. Let's add **firmware** shared attribute:
+Now let's check the downlink functionality. Let's add the **firmware** shared attribute:
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To make sure that downlink message sent to integration you can check 'Events' tab of integration:
+To ensure that the downlink message is sent to the integration, you can check the **"Events"** tab of the integration:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-Now we'll need to send again message to TCP integration and see downlink response.
-Please use the same command that was used before.
+Now we need to send another message to the TCP integration and see the downlink response.
+To send the message, use the same command you used before.
 
-An example of sent message and a response from ThingsBoard Edge in the terminal:
+See an example of the message that was sent and the response from the **ThingsBoard Edge** in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 

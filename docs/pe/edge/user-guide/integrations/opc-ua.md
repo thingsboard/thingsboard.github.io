@@ -158,7 +158,7 @@ However, you can use a different mapping in your specific use cases.
 
 We will also retrieve the values of the **temperature**, **humidity** and **powerConsumption** fields and use them as device telemetries.
 
-Click the **"plus"** button and select the **"Create new converter"** option. To view the events, enable the **"Debug"** mode.
+Click the **"plus"** button and select the **"Create new converter"** option. To view the events, enable **"Debug"** mode.
 In the **"Function decoder"** field, enter a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="addConverter" %}
@@ -256,7 +256,7 @@ You can customize a downlink according to your configuration:
 * The converter processes the RPC command to the device using the **setState** method and a boolean **params** value to call the 'Start' or 'Stop' method of the air conditioner.
 * The **destination** node is determined using the **deviceName** field of the incoming message metadata.
 
-Create the Downlink in **Converter templates** page as well. To see the events, select the **Debug** checkbox.
+Create the Downlink in **Converter templates** page as well. To see the events, check the **Debug** checkbox.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
@@ -296,7 +296,7 @@ return result;
 
 Now that the **Uplink** and **Downlink** converter templates have been created, it is possible to create an integration:
 * Go to the **Integration templates** section and click **Add new integration** button. 
-* Name it **OPC-UA air conditioners**, select the **OPC-UA** type, enable the **Debug** mode, and add recently created **Uplink** and **Downlink** converters from the corresponding drop-down menus.
+* Name it **OPC-UA air conditioners**, select the **OPC-UA** type, enable **Debug** mode, and add recently created **Uplink** and **Downlink** converters from the corresponding drop-down menus.
 
 The other integration field values:
 - **Application name:** \<empty\> (client application name)
