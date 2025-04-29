@@ -126,9 +126,9 @@ trendz-prompts-markdown-save:
 * TOC
 {:toc}
 
-Trendz Prompts is a powerful feature that enables the creation of various prompts. These prompts can be used to generate 
-AI summaries for views, providing users with clear and insightful overviews. They can also be used to create 
-human-friendly, natural-sounding summaries that enhance the user experience.
+Prompt management in Trendz is a workspace where you define reusable prompt templates that combine your expert instructions with live telemetry data collected by ThingsBoard. From the dashboard you can trigger any template with a single click: 
+Trendz automatically pulls the relevant device or asset metrics, injects them into your template, submits the assembled prompt to the configured language model, and then displays the model’s response directly alongside your telemetry. 
+This lets you run AI-driven queries over real-time operational data without manually gathering data or retyping prompts.
 
 ## Prompts Tab
 

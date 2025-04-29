@@ -71,8 +71,9 @@ trendz-ai-summary-trendz-set-up-prompt:
 * TOC 
 {:toc}
 
-AI Widget Summary is a flexible feature that allows integration of AI capabilities into any ThingsBoard Widgets,
-including full customization of AI prompts and the interaction flow.
+AI Widget Summary is a dashboard control that turns live ThingsBoard telemetry into an immediate, human-readable answer. 
+When pressed, it collects telemetries and attributes you specify, fills a chosen prompt (from the built-in library or your own), and calls the connected LLM provider. 
+The returned output appears in the widget, giving operators a quick status digest, anomaly explanation, recommended next steps, or any other insight the prompt defines.
 
 Several ways are available for integrating AI summaries with different types of widgets.
 
@@ -94,8 +95,12 @@ To set up the Trendz Summary Module:
 Once the module is uploaded, you can easily reference it in the Actions section of your ThingsBoard widget.
 
 #### ThingsBoard v3.6–v3.8
-In earlier ThingsBoard versions (v3.6–v3.8), JS Modules cannot be used directly in widget actions. Instead, you will need to manually copy and paste a provided JavaScript code into your custom action: 
-[Trendz JS Summary Module](https://trendz.test.cloud.tb-trendz.com/apiTrendz/publicApi/download/custom-action-ai-summary.js)
+In earlier ThingsBoard versions (v3.6–v3.8), JS Modules cannot be used directly in widget actions. Instead, you will need to manually copy and paste a provided JavaScript module into your custom action. 
+To download the custom Trendz Summary JavaScript module, use the following link (replace `<your-trendz-host:port>` with the URL of your own Trendz instance):
+```
+http://<your-trendz-host:port>/apiTrendz/publicApi/download/custom-action-ai-summary.js
+```
+{: .copy-code}
 
 ### Configuring a Custom Action to Get Telemetry Summary
 
@@ -114,13 +119,17 @@ getAnalytics(widgetContext, useDefaultPrompt, promptIdOrText);
 ```
 Where:
 - **`widgetContext`** – the current widget context (**required**).
-- **`useDefaultPrompt`** – `true` to use the default Trendz prompt, `false` to use your custom prompt.
+- **`useDefaultPrompt`** – set to `true` to use the default Trendz prompt, or `false` to use your custom prompt.
 - **`promptIdOrText`** (**optional**) – either the **ID** of a saved prompt from Trendz or a **custom prompt text**.
 
-Example:
+Example (with *promptId*):
 ```js
-getAnalytics(widgetContext, false, 'Get telemetry description');
+getAnalytics(widgetContext, false, 'ef348780-a034-4ea9-9225-8b6ad112c451');
 ```
+
+**⚠️ Note:** We recommend using the **ID** of a saved prompt from Trendz.
+Using this approach simplifies prompt management and modification.  
+To learn more about Trendz Prompts, refer [here](/docs/trendz/ai-prompts-overview).
 
 After configuring the action, a header button will appear on your widget.
 When you click this button, a dialog window will open, showing a summary generated based on your widget's data and the Trendz prompt.
@@ -137,7 +146,7 @@ at the top of the Trendz widget.
 
 ### Enable AI Summary Button
 
-By default, the AI summary button is disabled for views created before Trendz 1.13.1 and for views created during the 
+By default, the AI summary button is disabled on dashboards for views created before Trendz 1.13.1 and for views created during the 
 period when the **AI Assistant Use AI Model** flag was disabled for self-hosted users 
 (Find out more about how to set up the AI Assistant module for self-hosted users [here](/docs/trendz/custom-ai-model-configuration/)).
 
@@ -168,6 +177,8 @@ To set up the AI summary prompt:
 {% include images-gallery.html imageCollection="trendz-ai-summary-trendz-set-up-prompt" %}
 
 Find out more about creating your own prompts that perfectly fit your task [here](/docs/trendz/ai-assistance-prompts/).
+
+**⚠️ Note:** Temporary you can use AI Summary for all the views in Trendz, except Anomaly View.
 
 ## Next Steps
 
