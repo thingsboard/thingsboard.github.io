@@ -77,7 +77,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 </div>
             </div>
             <div class="block-link">
-                <a href="/docs/user-guide/widgets/">Read more</a><i class="fas fa-chevron-right fa-md"></i>
+                <a href="/docs/user-guide/widgets/">Read more <i class="fas fa-chevron-right fa-md"></i></a>
             </div>
         </div>
         <div class="block">
@@ -106,7 +106,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 </div>
             </div>
             <div class="block-link">
-                <a href="/docs/user-guide/scada/">Read more</a><i class="fas fa-chevron-right fa-md"></i>
+                <a href="/docs/user-guide/scada/">Read more <i class="fas fa-chevron-right fa-md"></i></a>
             </div>
         </div>
         <div class="block">
@@ -122,24 +122,24 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                         <img class="al2" src="/images/visualization/assisted-living-2.webp" alt="Assisted living widgets">
                     </div>
                     <div class="content">
-                        <h4>Assisted Living</h4>
+                        <h4>Health care</h4>
                         <p>ThingsBoard is an IoT platform with all the tools needed to build a comprehensive healthcare monitoring and management solution with ease. ThingsBoard provides an extensive range of built-in features as well as flexible customization options.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="image-container solution-template">
                         <img src="/images/visualization/placeholder.png" alt="placeholder">
-                        <img class="d1" src="/images/visualization/scada-1.webp" alt="Drilling SCADA widgets">
-                        <img class="d2" src="/images/visualization/scada-2.webp" alt="Drilling SCADA widgets">
+                        <img class="d1" src="/images/visualization/energy_1.webp" alt="Energy SCADA widgets">
+                        <img class="d2" src="/images/visualization/energy_2.webp" alt="Energy SCADA widgets">
                     </div>
                     <div class="content">
-                        <h4>SCADA Systems in Drilling</h4>
-                        <p>The use of SCADA systems allows operators to monitor drilling parameters in real time, control equipment, and prevent emergency situations.</p>
+                        <h4>SCADA Energy management</h4>
+                        <p>The use of SCADA systems enables businesses to monitor energy generation, distribution, and consumption in real time, optimize energy efficiency, reduce costs, and enhance system reliability with ThingsBoard IoT platform.</p>
                     </div>
                 </div>
             </div>
             <div class="block-link">
-                <a href="/iot-use-cases/">Read more</a><i class="fas fa-chevron-right fa-md"></i>
+                <a href="/iot-use-cases/">Read more <i class="fas fa-chevron-right fa-md"></i></a>
             </div>
         </div>
         <div class="block">
@@ -243,6 +243,6 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
     </section>
     <section class="visualize-with-tb">
         <h2>Visualize your data with ThingsBoard!</h2>
-        <a id="visualization_startFree" target="_blank" href="/pricing/" class="button gtm_button">Start free</a>
+        <a id="visualization_startFree" target="_blank" href="/pricing/" class="button gtm_button">Try it now</a>
     </section>
 </div>

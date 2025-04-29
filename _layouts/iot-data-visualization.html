@@ -15,6 +15,9 @@
 
 <script async type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
+        const heroImage = document.querySelector('.visualization-hero-image');
+        heroImage.src = '/images/visualization/bar-chart.svg' + '?' + encodeURI(new Date());
+
         const svgAnimations = document.querySelectorAll(".svg-animation");
         const svgObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -31,7 +34,7 @@
                     obs.unobserve(img);
                 }
             });
-        }, {threshold: 1.0});
+        }, {threshold: 0.5});
 
         svgAnimations.forEach(img => svgObserver.observe(img));
 
@@ -54,7 +57,7 @@
                     obs.unobserve(img);
                 }
             });
-        }, {threshold: 1.0});
+        }, {threshold: 0.5});
 
         templatesAnimations.forEach(img => templatesObserver.observe(img));
 
@@ -67,7 +70,7 @@
                     obs.unobserve(img);
                 }
             });
-        }, {threshold: 1.0});
+        }, {threshold: 0.5});
 
         layoutsAnimations.forEach(img => layoutsObserver.observe(img));
 
@@ -80,7 +83,7 @@
                     obs.unobserve(img);
                 }
             });
-        }, {threshold: 1.0});
+        }, {threshold: 0.5});
 
         customersAnimations.forEach(img => customersObserver.observe(img));
 
@@ -93,7 +96,7 @@
                     obs.unobserve(img);
                 }
             });
-        }, {threshold: 1.0});
+        }, {threshold: 0.5});
 
         customAnimations.forEach(img => customObserver.observe(img));
     });
