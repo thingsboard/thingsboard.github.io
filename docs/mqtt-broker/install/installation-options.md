@@ -58,7 +58,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/aws-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster">
+                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="Cluster setup on EKS">
                                                  </div>
                                             </span>
                                         </a>
@@ -67,7 +67,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
+                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Cluster setup on AKS">
                                                  </div>
                                             </span>
                                         </a>
@@ -76,7 +76,16 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/gcp-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gke.jpeg" title="Cluster setup on GKE" alt="GCP K8S cluster">
+                                                    <img width="" src="/images/install/cloud/gcp.svg" title="Cluster setup on GKE" alt="Cluster setup on GKE">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-options/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cluster/helm.svg" title="Cluster setup with Helm Chart" alt="Cluster setup with Helm Chart">
                                                  </div>
                                             </span>
                                         </a>

@@ -19,7 +19,7 @@ helm repo update
 To install Bitnami Kafka execute the following command:
 
 ```bash
-helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 25.3.3
+helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 29.3.4
 ```
 {: .copy-code}
 

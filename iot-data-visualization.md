@@ -10,7 +10,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
         <div class="title">
             <h1>IoT data visualization</h1>
             <p>Create interactive dashboards that turn raw IoT data into actionable intelligence.</p>
-            <a id="visualization_startFree" target="_blank" href="/installations/" class="button gtm_button">Try it now</a>
+            <a id="visualization_try_it_now" target="_blank" href="/installations/" class="button gtm_button">Try it now</a>
         </div>
         <div class="images">
             <div class="circle-bg"></div>
@@ -243,6 +243,6 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
     </section>
     <section class="visualize-with-tb">
         <h2>Visualize your data with ThingsBoard!</h2>
-        <a id="visualization_startFree" target="_blank" href="/pricing/" class="button gtm_button">Try it now</a>
+        <a id="visualization_try_it_now" target="_blank" href="/installations/" class="button gtm_button">Try it now</a>
     </section>
 </div>

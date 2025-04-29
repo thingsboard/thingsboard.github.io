@@ -1,0 +1,47 @@
+
+**Configure kafka integration**
+
+In Confluent select the created environment, then open Cluster, Cluster settings.
+After, find Bootstrap server URL, it looks like **URL_OF_YOUR_BOOTSTRAP_SERVER:9092**. Then copy it to integration:
+
+{% include images-gallery.html imageCollection="kafka-integration-cloud-server" %}
+
+Also, will be needed to add several **Other properties**, namely:
+
+<table>
+  <thead>
+    <tr>
+      <td style="width: 50%; color:black"><b>Key</b></td><td style="width: 50%; color:black"><b>Value</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>ssl.endpoint.identification.algorithm</b></td>
+      <td>https</td>
+    </tr>
+    <tr>
+      <td><b>sasl.mechanism</b></td>
+      <td>PLAIN</td>
+    </tr>
+    <tr>
+      <td><b>sasl.jaas.config</b></td>
+      <td>org.apache.kafka.common.security.plain.PlainLoginModule required username="<span style="color:red">CLUSTER_API_KEY</span>" password="<span style="color:red">CLUSTER_API_SECRET</span>";</td>
+    </tr>
+    <tr>
+      <td><b>security.protocol</b></td>
+      <td>SASL_SSL</td>
+    </tr>
+  </tbody>
+</table>
+
+- **`CLUSTER_API_KEY`** - your access key from Cluster settings.
+- **`CLUSTER_API_SECRET`** - your access secret from Cluster settings.
+  <br>
+
+To generate the required API key and secret for it, in the cluster you must go to the Data Integration menu, select the API Keys submenu, pick Create key and Select the Scope for the API Key. Here you will see the key and secret to it, which should be used in the integration properties.
+
+{% include images-gallery.html imageCollection="kafka-integration-cloud-properties" %}
+
+It remains to create a topic on Confluent. To do this, select the **"Topics"** menu, select **"Create Topics"**, set the name to **tbmq.messages**.
+
+{% include images-gallery.html imageCollection="kafka-integration-cloud-topic" %}
