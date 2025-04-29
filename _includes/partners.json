@@ -67,7 +67,7 @@
     "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
   },
   {
-    "type": ["main", "bluetooth", "wifi"],
+    "type": ["main", "lte", "nbiot", "lora", "wifi", "bluetooth"],
     "program": "",
     "name": "Elastel",
     "logo": "elastel-logo.png",
