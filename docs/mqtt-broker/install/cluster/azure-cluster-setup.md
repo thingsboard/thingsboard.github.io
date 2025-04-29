@@ -12,17 +12,7 @@ This guide will help you to set up TBMQ in Azure AKS.
 
 ## Prerequisites
 
-### Install and configure tools
-
-To deploy TBMQ on the AKS cluster you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/), 
-[helm](https://helm.sh/docs/intro/install/), and [az](https://learn.microsoft.com/en-us/cli/azure/) tools.
-
-After installation is done you need to log in to the cli using the next command.
-
-```bash
-az login
-```
-{: .copy-code}
+{% include templates/mqtt-broker/install/azure/aks-prerequisites.md %}
 
 ## Step 1. Open TBMQ K8S scripts repository
 
@@ -34,88 +24,15 @@ cd tbmq/k8s/azure
 
 ## Step 2. Define environment variables
 
-Define environment variables that you will use in various commands later in this guide.
-
-We assume you are using Linux. Execute the following command:
-
-```bash
-export AKS_RESOURCE_GROUP=TBMQResources
-export AKS_LOCATION=eastus
-export AKS_GATEWAY=tbmq-gateway
-export TB_CLUSTER_NAME=tbmq-cluster
-export TB_DATABASE_NAME=tbmq-db
-export TB_REDIS_NAME=tbmq-redis
-echo "You variables ready to create resource group $AKS_RESOURCE_GROUP in location $AKS_LOCATION 
-and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
-```
-{: .copy-code}
-
-where:
-
-* TBMQResources - a logical group in which Azure resources are deployed and managed. We will refer to it later in this guide using **AKS_RESOURCE_GROUP**;
-* eastus - is the location where you want to create resource group. We will refer to it later in this guide using **AKS_LOCATION**. You can see all locations list by executing `az account list-locations`;
-* tbmq-gateway - the name of Azure application gateway;
-* tbmq-cluster - cluster name. We will refer to it later in this guide using **TB_CLUSTER_NAME**;
-* tbmq-db is the name of your database server. You may input a different name. We will refer to it later in this guide using **TB_DATABASE_NAME**.
+{% include templates/mqtt-broker/install/azure/aks-define-env-variables.md %}
 
 ## Step 3. Configure and create AKS cluster
 
-Before creating the AKS cluster we need to create Azure Resource Group. We will use Azure CLI for this:
-
-```bash
-az group create --name $AKS_RESOURCE_GROUP --location $AKS_LOCATION
-```
-{: .copy-code}
-
-To see more info about `az group` please follow the next [link](https://learn.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest).
-
-After the Resource group is created we can create AKS cluster by using the next command:
-
-```bash
-az aks create --resource-group $AKS_RESOURCE_GROUP \
-    --name $TB_CLUSTER_NAME \
-    --generate-ssh-keys \
-    --enable-addons ingress-appgw \
-    --appgw-name $AKS_GATEWAY \
-    --appgw-subnet-cidr "10.2.0.0/16" \
-    --node-vm-size Standard_DS3_v2 \
-    --node-count 3
-```
-{: .copy-code}
-
-`az aks create` has two required parameters - `name` and `resource-group` (we use variables that we have set earlier), 
-and a lot of not required parameters (defaults values will be used if not set). A few of them are:
-
-* **node-count** - Number of nodes in the Kubernetes node pool. After creating a cluster, you can change the size of its node pool with `az aks scale` (default value is 3);
-* **enable-addons** - Enable the Kubernetes addons in a comma-separated list (use `az aks addon list` to get available addons list);
-* **node-osdisk-size** - OS disk type to be used for machines in a given agent pool: Ephemeral or Managed. Defaults to ‘Ephemeral’ when possible in conjunction with VM size and OS disk size. May not be changed for this pool after creation;
-* **node-vm-size** (or -s) - Size of Virtual Machines to create as Kubernetes nodes (default value is Standard_DS2_v2);
-* **generate-ssh-keys** - Generate SSH public and private key files if missing. The keys will be stored in the ~/.ssh directory.
-
-From the command above we add AKS addon for [ApplicationGateway](https://learn.microsoft.com/en-us/azure/application-gateway/). 
-We will use this gateway as Path-Based Load Balancer for the TBMQ.
-
-Full list af `az aks create` options can be found [here](https://learn.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest#az_aks_create).
-
-Alternatively, you may use this [guide](https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli) for custom cluster setup.
+{% include templates/mqtt-broker/install/azure/aks-configure-and-create-cluster.md %}
 
 ## Step 4. Update the context of kubectl
 
-When the cluster is created we can connect kubectl to it using the next command:
-
-```bash
-az aks get-credentials --resource-group $AKS_RESOURCE_GROUP --name $TB_CLUSTER_NAME
-```
-{: .copy-code}
-
-For validation, you can execute the following command:
-
-```bash
-kubectl get nodes
-```
-{: .copy-code}
-
-You should see cluster`s nodes list.
+{% include templates/mqtt-broker/install/azure/aks-update-kubectl-ctx.md %}
 
 ## Step 5. Provision PostgreSQL DB
 
@@ -123,7 +40,7 @@ You’ll need to set up PostgreSQL on Azure. You may follow [this](https://learn
 but take into account the following requirements:
 
 * Keep your postgresql password in a safe place. We will refer to it later in this guide using YOUR_AZURE_POSTGRES_PASSWORD;
-* Make sure your Azure Database for PostgreSQL version is 15.x;
+* Make sure your Azure Database for PostgreSQL version is 16.x;
 * Make sure your Azure Database for PostgreSQL instance is accessible from the TBMQ cluster;
 * Make sure you use "thingsboard_mqtt_broker" as the initial database name.
 
@@ -135,7 +52,7 @@ Another way by which you can create Azure Database for PostgreSQL is using az to
 az postgres flexible-server create --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP \
   --name $TB_DATABASE_NAME --admin-user POSTGRESS_USER --admin-password POSTGRESS_PASS \
   --public-access 0.0.0.0 --storage-size 32 \
-  --version 15 -d thingsboard_mqtt_broker
+  --version 16 -d thingsboard_mqtt_broker
 ```
 {: .copy-code}
 
@@ -168,7 +85,7 @@ Example of response:
   "resourceGroup": "TBMQResources",
   "skuname": "Standard_D2s_v3",
   "username": "postgres",
-  "version": "15"
+  "version": "16"
 }
 ```
 
@@ -190,9 +107,20 @@ It is useful when clients connect to TBMQ with the authentication enabled.
 For every connection, the request is made to find MQTT client credentials that can authenticate the client.
 Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once.
 
-In order to set up the Redis, follow this [guide](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis).
+{% capture redis-azure-version %}
+**Note:** Starting from **TBMQ v2.1.0**, Redis 7.2.5 is the officially supported version for third-party Redis deployments. 
+Please be aware that, as of now, only the **Enterprise** and **Enterprise Flash** SKUs of Azure Cache for Redis support Redis 7.2.x.
+The Basic, Standard, and Premium SKUs continue to support only up to **Redis 6.x**. To ensure full compatibility, we recommend using an 
+Enterprise-tier SKU to ensure proper alignment with the Redis 7.2.5 features and behavior expected by TBMQ.
+{% endcapture %}
+{% include templates/info-banner.md content=redis-azure-version %}
 
-Another way to do this is by using `az` tool:
+In order to set up the Redis, follow one of the following guides:
+
+ - [Quickstart: Create a Redis Enterprise cache (Recommended)](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis-enterprise)
+ - [Quickstart: Create an open-source Redis cache](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
+
+For the open-source (legacy) Redis cache, we provide alternative instructions using the `az` tools, extracted from the official Azure documentation:
 
 ```bash
 az redis create --name $TB_REDIS_NAME --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP --sku basic --vm-size C0 --enable-non-ssl-port
@@ -359,22 +287,21 @@ kubectl apply -f receipts/https-load-balancer.yml
 
 ## Upgrading
 
-Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/)
-for detailed information on the latest changes.
+{% include templates/mqtt-broker/upgrade/upgrading.md %}
 
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-backup-restore).
 
+### Upgrade to 2.1.0
+
+{% include templates/mqtt-broker/upgrade/update-to-2.1.0-release-cluster.md %}
+
 ### Upgrade to 2.0.0
 
 For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-azure-cache-for-redis) to complete the installation.
-Only then can you proceed with the [upgrade](#run-upgrade).
-
-### Upgrade to 1.3.0
-
-{% include templates/mqtt-broker/install/migration.md %}
+Only then you can proceed with the [upgrade](#run-upgrade).
 
 ### Run upgrade
 
@@ -385,21 +312,20 @@ git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
+{% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
+
 **Note**: Make sure custom changes of yours if available are not lost during the merge process.
 
 {% include templates/mqtt-broker/install/upgrade-hint.md %}
 
-After that execute the following commands:
+After that, execute the following command:
 
-```bash
-./k8s-delete-tbmq.sh
-./k8s-upgrade-tbmq.sh --fromVersion=FROM_VERSION
-./k8s-deploy-tbmq.sh
-```
-{: .copy-code}
+{% capture tabspec %}tbmq-upgrade
+tbmq-upgrade-without-from-version,Since v2.1.0,shell,resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-without-from-version.sh
+tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md,/docs/mqtt-broker/install/cluster/resources/upgrade-options/k8s-upgrade-tbmq-with-from-version.md{% endcapture %}
+{% include tabs.html %}
 
-Where `FROM_VERSION` - from which version upgrade should be started.
-See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
+{% include templates/mqtt-broker/upgrade/stop-tbmq-pods-before-upgrade.md %}
 
 ## Cluster deletion
 
