@@ -12,85 +12,61 @@
 * TOC
 {:toc}
 
-The Mobile center is designed to simplify the creation, configuration, and management of your mobile applications. It provides a step-by-step process for building and launching your first {{MOBILE_APPLICATION}} from scratch, as well as publishing it to the Google Play Store or App Store.
+The **Mobile сenter** is your one-stop hub for building, configuring, and managing mobile apps in ThingsBoard. Whether you&#39;re starting from scratch or preparing to publish your {{MOBILE_APPLICATION}} to the Google Play Store or App Store, this tool walks you through every step of the process.
 
-The Mobile center consists of the following tabs:
+The Mobile center is divided into tabs for convenient creation and management of mobile applications:
 
 - [Bundle](#bundle): Manage settings for mobile applications included in the bundle. These settings include configuring secure authentication methods for your clients{% if docsPrefix == null %}, and defining the layout{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}, defining the layout, and managing options for user self-registration{% endif %} within the mobile application.
 - [Applications](/docs/{{docsPrefix}}mobile-center/applications/){:target="_blank"}: Manage your mobile applications - add new ones, edit existing ones, or remove outdated versions.
-- [QR code widget](/docs/{{docsPrefix}}user-guide/ui/mobile-qr-code/){:target="_blank"}: Set up a QR code widget for your mobile application on the "Home" page of ThingsBoard for easy user access to the ThingsBoard mobile application.
+- [QR code widget](/docs/{{docsPrefix}}user-guide/ui/mobile-qr-code/){:target="_blank"}: Set up a QR code widget on the ThingsBoard "Home" page to give users easy access to the mobile app.
 
 ## Bundle
 
-A bundle contains a set of configurations, such as OAuth 2.0, {% if docsPrefix == null %}and layout{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}layout, and self-registration{% endif %} settings for the mobile applications specified within the bundle.
-This was done for the convenience of configuring applications for both platforms (Android and iOS) in one place.
+A **Bundle** groups together configurations like OAuth 2.0 settings {% if docsPrefix == null %}and layout design{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}, layout design and self-registration{% endif %} for one or more mobile apps—allowing you to manage Android and iOS versions all in one place.
 
 The following settings are available for the applications bundle:
 
-1. **Basic settings**: Here, you specify the bundle name and your applications. If you don&#39;t have the mobile app yet, you can create one directly in this section.
-2. **OAuth 2.0**: Configure Single Sign-On (SSO) feature for your ThingsBoard mobile application users through using external user management platforms that support the OAuth 2.0 protocol. In this step, specify the OAuth 2.0 client(s) (either select an existing one or create a new one).
-3. **Layout**: allows you to customize the navigation menu mobile application according to your needs, providing quick access to the pages and features you use most frequently. You can add new menu items and show or hide the existing ones.
+1. **Basic settings**: Define the bundle name and link your apps. Don&#39;t have an app yet? You can create one right here.
+2. **OAuth 2.0**: Enable Single Sign-On (SSO) for users by integrating with third-party identity providers that support OAuth 2.0.
+3. **Layout**: Customize the app’s navigation menu to match your use cases.
+{% unless docsPrefix == null %}4. **Self-registration**: Set up a user-friendly registration form for new mobile users.{% endunless %}
 
-{% unless docsPrefix == null %}
-4. **Self-registration**: Configure the new customer registration page to allow users to simply register and log in to ThingsBoard via the mobile app with predefined permission configurations.
-{% endunless %}
+<br><b><font size="4">How to add a new bundle</font></b>
 
-<br>
-To add a new bundle, navigate to the "Mobile center" page and click the "+ Add bundle" button in the upper-right corner of the window.
+- Go to the "**Mobile center**" page.
+- On the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window.
+
+A new settings dialog will open.
 
 {% include images-gallery.html imageCollection="add-bundle" %}
 
-<br>
-A new window will open with the following settings:
-
 ### Basic settings
 
-In the basic settings window, provide a name for the package and specify an existing Android/iOS mobile application(s), or [create a new one](#create-new-application). Then, click "Next".
+Enter a name for your bundle and select existing Android/iOS apps, or [create new ones](#create-new-application) directly from this window.
 
 {% include images-gallery.html imageCollection="basic-settings-1" %}
 
-{% capture difference %}
-You can add applications even after the bundle with configurations is created.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+> You can add applications even after the bundle with configurations is created.
 
 #### Create new application
 
-To add a new mobile application (Android or iOS) to ThingsBoard, follow these steps:
-
-- Click "Create new" in the appropriate section (Android Application or iOS Application);
-- Input the application package name;
-- A unique Application Secret will be generated automatically. Remember it or replace with your own;
-- Set the application status:
-
-ㅤㅤ&bull; *Draft*: For applications still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
-
-ㅤㅤ&bull; *Published*: For applications that are ready to be launched and used by end users.
-
-ㅤㅤ&bull; *Deprecated*: For older applications that are no longer actively supported but still available.
-
-ㅤㅤ&bull; *Suspended*: For applications that are temporarily disabled or restricted from use.
-
-- Optionally, specify the minimum and latest application versions along with release notes for each;
-- Add store information:
-
-ㅤㅤ&bull; *Android*:
-
-ㅤㅤㅤㅤ&bull; Provide the link to the {{MOBILE_APPLICATION}} in the Google Play Store.
-
-ㅤㅤㅤㅤ&bull; Enter the SHA256 certificate fingerprints for the application.
-
-ㅤㅤ&bull; *iOS*:
-
-ㅤㅤㅤㅤ&bull; Provide the link to the {{MOBILE_APPLICATION}} in the App Store.
-
-ㅤㅤㅤㅤ&bull; Enter the App ID associated with your iOS application.
-
-- Click "Add" to save your application and complete the process.
-
-After completing these steps, your {{MOBILE_APPLICATION}} will be added to ThingsBoard and ready for further configuration and deployment.
+- Click "**Create new**" in the corresponding section (Android Application or iOS Application).
+- Enter the **application package** name.
+- An **Application Secret** will be generated automatically. Remember it or replace with your own.
+- Set the **application status**:
+  - **Draft**: For applications still in development. You can add store information (e.g., Google Play Store or App Store link, and SHA256 certificate fingerprints or App ID) later after the application is created and published.
+  - **Published**: For applications that are ready to be launched and used by end users.
+  - **Deprecated**: For older applications that are no longer actively supported but still available.
+  - **Suspended**: For applications that are temporarily disabled or restricted from use.
+- (Optional) Specify minimum/latest app versions and release notes.
+- Add **store information**:
+  - **Android**: **Google Play Store link** and **SHA256 certificate fingerprints**.
+  - **iOS**: **App Store link** and **App ID**.
+- Click "**Add**" to save your application and complete the process.
 
 {% include images-gallery.html imageCollection="add-application" %}
+
+Then, click "**Next**".
 
 ### OAuth 2.0
 
@@ -110,25 +86,21 @@ Add new menu items, change icons and item names, and reorganize the navigation m
 
 To add new menu item, follow these steps:
 
-- Click the "+ Add specific page" button at the bottom of the page or between existing menu items;
-- Enter the name for new menu page;
-- Select the page type from the list:
-
-ㅤㅤ&bull; *Dashboard* - link to a specific dashboard.
-
-ㅤㅤ&bull; *Webview* - link to an external webpage.
-
-ㅤㅤ&bull; *Custom* - link to a menu item in ThingsBoard.
-
+- Click the "**+ Add specific page**" button at the bottom of the page or between existing menu items;
+- Enter the **name for new menu page**;
+- Select the **page type** from the list:
+  - *Dashboard* - link to a ThingsBoard dashboard.
+  - *Webview* - link to an external webpage.
+  - *Custom* - link to built-in ThingsBoard pages.
 - Depending on the selected page type, specify a dashboard, or link to an external webpage or ThingsBoard menu item;
 
 {% if docsPrefix == null %}
 - Click "Add";
-- After configuring layout, click "Add" to complete the bundle creation.
+- After configuring layout, click "**Add**" to complete the bundle creation.
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-- Click "Add";
-- After configuring layout, click "Next".
+- Click "**Add**";
+- After configuring layout, click "**Next**".
 {% endif %}
 
 {% include images-gallery.html imageCollection="custom-page-type" %}
@@ -156,7 +128,7 @@ The following routes are available for the "Custom" page type:
 The menu configuration algorithm for the mobile application is similar to menu customization in the desktop ThingsBoard. Refer to [this documentation](/docs/{{docsPrefix}}user-guide/custom-menu/){:target="_blank"} for a deeper understanding of menu customization.
 {% endunless %}
 
-*"More" page*
+**"More" page**
 
 The number of menu items displayed in the navigation menu of the mobile app depends on the screen size of your mobile device.
 Items that do not fit in the bottom navigation menu will be available under the "More" page.
@@ -167,85 +139,66 @@ Items that do not fit in the bottom navigation menu will be available under the 
 
 ### Self-registration
 
-The self-registration feature allows the tenant to configure a sign-up page for their clients, allowing them to easily sign up and log in to ThingsBoard with predefined permission configurations.
+The **self-registration** feature allows the tenant to configure a sign-up page for their clients, allowing them to easily sign up and log in to ThingsBoard with predefined permission configurations.
 
 Configure the self-registration form for new clients:
 
-- Page title. Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users.
-- Notification recipient. Specify the recipients that will receive notifications about new user registrations. Learn more about notifications and how to add a new notification recipient [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"};
-- Redirect settings:
-
-ㅤㅤ&bull; Application URL scheme: Defines the custom URL scheme used for redirecting users after successful registration. For example, *tbscheme*.
-
-ㅤㅤ&bull; Application URL hostname: The hostname component of the URL used in redirection, e.g., *app.pe.thingsboard.org*.
+- **Page title**. Enter the page title to be displayed at the top of the registration page. It serves as a header to indicate the purpose of the form to users.
+- **Notification recipient**. Specify the recipients that will receive notifications about new user registrations. Learn more about notifications and how to add a new notification recipient [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
+- **Redirect settings**:
+  - **Application URL scheme**: Defines the custom URL scheme used for redirecting users after successful registration. For example, *tbscheme*.
+  - **Application URL hostname**: The hostname component of the URL used in redirection, e.g., *app.pe.thingsboard.org*.
 
 {% include images-gallery.html imageCollection="self-registration-1" %}
 
-<br>
-- Registration form fields. The mandatory fields for completing the registration form are email, password, and repeat password. If needed, specify additional fields.
+- **Registration form fields**. The mandatory fields for completing the registration form are email, password, and repeat password. If needed, specify additional fields.
 
 {% include images-gallery.html imageCollection="self-registration-2" %}
 
-<br>
-- Captcha properties. Captcha (Completely Automated Public Turing test to tell Computers and Humans Apart) is an automated test used to distinguish between human users and bots. 
+- **Captcha properties**. Captcha (Completely Automated Public Turing test to tell Computers and Humans Apart) is an automated test used to distinguish between human users and bots. 
 Using Captcha in ThingsBoard helps prevent the automated creation of fake accounts in the system.
 
-To protect your registration from bots, generate a Captcha. To do this, navigate to the Google ReCaptcha [admin console](https://www.google.com/recaptcha/intro/v3.html){:target="_blank"}. 
-Choose which reCAPTCHA version you will use: v2, v3, or Enterprise.
-Specify the domain name of your ThingsBoard instance.
-
-Copy-paste the site key and secret to the safe place.
+To **generate the Captcha**, navigate to the [Google ReCaptcha admin console](https://www.google.com/recaptcha/intro/v3.html){:target="_blank"}:
+- Select which version of reCAPTCHA you will use: v2, v3, or Enterprise.
+- Specify the domain name of your ThingsBoard instance.
+- Copy and securely store the the site key and secret key.
 
 {% include images-gallery.html imageCollection="captcha" %}
 
-<br>
-In ThingsBoard:
-
-ㅤ&bull; Select the Captcha version to be used;
-
-ㅤ&bull; Specify *Captcha site key* - the public key used to render the CAPTCHA on the site;
-
-ㅤ&bull; Specify *Captcha secret key* - the private key used for verifying CAPTCHA responses on the server;
-
-ㅤ&bull; Captcha Log Action Name: specifies the action associated with CAPTCHA, used for logging purposes.
+**In ThingsBoard**:
+- Select the **Captcha version** to be used.
+- Specify **Captcha site key** - the public key used to render the CAPTCHA on the site.
+- Specify **Captcha secret key** - the private key used for verifying CAPTCHA responses on the server.
+- **Captcha log action name**: specifies the action associated with CAPTCHA, used for logging purposes.
 
 {% include images-gallery.html imageCollection="self-registration-3" %}
 
-<br>
-- Show Privacy Policy. Enable or disable the display of a Privacy Policy link on the registration page;
-
-- Show Terms of Use. Enable or disable the display of a Terms of Use link on the registration page;
-
-- User group roles. Specify the roles that will be assigned to the user upon successful registration. These roles determine the permissions and access level for the user;
+- **Show Privacy Policy**. Enable or disable the display of a Privacy Policy link on the registration page.
+- **Show Terms of Use**. Enable or disable the display of a Terms of Use link on the registration page.
+- **User group roles**. Specify the roles that will be assigned to the user upon successful registration. These roles determine the permissions and access level for the user.
 
 {% include images-gallery.html imageCollection="self-registration-4" %}
 
-<br>
-- Advanced settings:
-
-ㅤㅤ&bull; Customer group: specify the customer group to which the new user will be added;
-
-ㅤㅤ&bull; Customer title prefix: specify the prefix that will be added to the customer&#39;s title for identification purposes;
-
-ㅤㅤ&bull; Custom menu: Apply a custom navigation menu for the new user;
-
-ㅤㅤ&bull; Default dashboard: The dashboard that the user sees upon logging in for the first time.
+- **Advanced settings**:
+  - **Customer group**: specify the customer group to which the new user will be added.
+  - **Customer title prefix**: specify the prefix that will be added to the customer&#39;s title for identification purposes.
+  - **Custom menu**: Apply a custom navigation menu for the new user.
+  - **Default dashboard**: The dashboard that the user sees upon logging in for the first time.
 
 {% include images-gallery.html imageCollection="self-registration-5" %}
 
-<br>
-- Home dashboard. The main dashboard that will be displayed to the user when navigating to the "Home" menu item.
+- **Home dashboard**. The main dashboard that will be displayed to the user when navigating to the "Home" menu item.
 
 {% include images-gallery.html imageCollection="self-registration-6" %}
 
-<br>
-- Click "Add" to complete the bundle creation.
+- Click "**Add**" to complete the bundle creation.
+
 {% endunless %}
 
 ### Configuration dialog
 
 Next, a configuration dialog will open. Continue configuring your new mobile app using the provided instructions.
-Or skip this step if you already have a {{MOBILE_APPLICATION}}. Click "Close".
+Or skip this step if you already have a {{MOBILE_APPLICATION}}. Click "**Close**".
 
 {% include images-gallery.html imageCollection="configuration-dialog" %}
 {% capture difference %}
@@ -253,7 +206,6 @@ For more information on launching your new app, refer to the "{{GETTING_STARTED}
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-<br>
 Bundle has been added. The applications specified in the bundle now use the defined settings.
 
 {% include images-gallery.html imageCollection="bundle-added" %}

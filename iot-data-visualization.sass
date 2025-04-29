@@ -1,0 +1,660 @@
+#visualization
+  #visualization-content
+    overflow: hidden
+
+    .visualization-wrapper
+      padding: 0 32px
+      max-width: 1460px
+      margin: 0 auto
+
+      h1
+        font-size: 56px
+        font-weight: 600
+        color: #212121
+        line-height: 72px
+        white-space: nowrap
+
+      h2
+        font-size: 36px
+        font-weight: 500
+        color: #212121
+        line-height: 48px
+
+      h3
+        font-size: 28px
+        font-weight: 500
+        color: #212121
+        line-height: 44px
+
+      h4
+        font-size: 28px
+        font-weight: 400
+        color: #212121
+        line-height: 44px
+        margin-bottom: 8px
+
+      p
+        font-size: 16px
+        font-weight: 400
+        line-height: 28px
+        color: #000000C2
+
+      .svg-animation
+        visibility: hidden
+
+      section
+        padding: 100px 0
+
+      .visualization-hero
+        display: flex
+        align-items: center
+        gap: 46px
+        padding-top: 200px
+
+        .title
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          gap: 32px
+
+          p
+            font-size: 20px
+            font-weight: 400
+            line-height: 32px
+            color: #0000008A
+
+          a
+            z-index: 1
+            width: fit-content
+            display: inline-block
+            font-size: 18px
+            font-weight: 500
+            padding: 12px 49px
+            border-radius: 6px
+            background: #2A7DEC
+            color: #FFF
+            opacity: 1
+            transition: ease-in-out 0.2s
+            &:hover
+              opacity: 0.7
+              text-decoration: none
+
+        .images
+          position: relative
+          width: 100%
+          height: 500px
+
+          img
+            position: absolute
+
+          .circle-bg
+            width: 125%
+            height: 140%
+            position: absolute
+            border-radius: 50%
+            background: #ECF3FE
+            filter: blur(70px)
+            z-index: -4
+            top: -31%
+
+          .visualization-hero-image
+            top: 5%
+            width: 50%
+            right: 10%
+
+          .visualization-hero-image-2
+            left: 1%
+            bottom: 17%
+            width: 42%
+            z-index: -3
+            opacity: 0
+            animation-name: fadein
+            animation-duration: 1000ms
+            animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+            animation-fill-mode: forwards
+            animation-delay: 1000ms
+
+          .visualization-hero-image-3
+            width: 36%
+            top: -8%
+            left: 25%
+            z-index: -2
+            opacity: 0
+            animation-name: fadein
+            animation-duration: 1000ms
+            animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+            animation-fill-mode: forwards
+            animation-delay: 400ms
+
+          .visualization-hero-image-4
+            width: 40%
+            bottom: 1%
+            left: 21%
+            opacity: 0
+            animation-name: fadein
+            animation-duration: 1000ms
+            animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+            animation-fill-mode: forwards
+            animation-delay: 1400ms
+
+          .visualization-hero-image-5
+            width: 24%
+            right: 0
+            top: -4%
+            opacity: 0
+            animation-name: fadein
+            animation-duration: 1000ms
+            animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+            animation-fill-mode: forwards
+            animation-delay: 700ms
+
+          .visualization-hero-image-6
+            width: 40%
+            right: -15%
+            bottom: 10%
+            z-index: -3
+            opacity: 0
+            animation-name: fadein
+            animation-duration: 1000ms
+            animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+            animation-fill-mode: forwards
+            animation-delay: 400ms
+
+      .visualization-definition
+        position: relative
+
+        &:before
+          content: ""
+          position: absolute
+          width: 300%
+          height: 100%
+          background-color: #F4F8FE
+          z-index: -1
+          left: -100%
+          top: 0
+
+        .title
+          display: flex
+          gap: 125px
+          margin-bottom: 80px
+
+        img
+          width: 100%
+
+      .visualization-implementation
+        h2
+          text-align: center
+          margin-bottom: 40px
+
+        .title
+          p
+            margin-bottom: 40px
+
+        .block
+          border-radius: 24px
+          padding: 46px
+          box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+          margin-bottom: 40px
+
+          h3
+            margin-bottom: 24px
+
+          .row
+            display: flex
+            gap: 42px
+            flex-wrap: nowrap
+            justify-content: center
+            margin-bottom: 72px
+            margin-left: 0
+            margin-right: 0
+
+            &.no-margin
+              margin-bottom: unset
+
+            .card
+              width: 100%
+
+              &.image-only
+                max-width: unset
+
+              .image-container
+                max-height: 347px
+                padding: 40px
+                margin-bottom: 32px
+                border-radius: 24px
+                background-color: #F4F8FE
+                box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+
+                img
+                  width: 100%
+                  max-width: 548px
+
+                &.solution-template, &.layouts, &.customers
+                  position: relative
+
+                  &.no-border
+                    img
+                      border: none
+
+                  img
+                    width: 58%
+                    max-width: unset
+                    position: absolute
+                    opacity: 0
+                    transform: scale(0)
+                    border-radius: 6px
+                    border: 1px solid rgba(62, 154, 248, 0.50)
+
+                    &.animated
+                      animation-name: solutionTemplatesAnimation
+                      animation-duration: 1000ms
+                      animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                      animation-fill-mode: forwards
+
+                    &:first-child
+                      position: static
+                      width: 100%
+                      max-height: 266px
+                      visibility: hidden
+
+                    &.al1
+                      left: 5%
+                      z-index: 1
+                    &.al2
+                      right: 5%
+                      bottom: 10%
+                    &.d1
+                      left: 5%
+                      bottom: 10%
+                      z-index: 1
+                    &.d2
+                      right: 5%
+                      top: 11.5%
+                    &.layout1
+                      width: 35%
+                      left: 29%
+                      top: 2%
+                      transform: translateY(5%)
+                      &.lAnimated
+                        animation-name: layoutsAnimation1
+                        animation-duration: 1600ms
+                        animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                        animation-fill-mode: forwards
+
+                    &.layout2
+                      width: 35%
+                      left: 36%
+                      top: 19%
+                      z-index: 2
+                      transform: translateY(5%)
+                      &.lAnimated
+                        animation-name: layoutsAnimation2
+                        animation-duration: 1600ms
+                        animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                        animation-fill-mode: forwards
+
+                    &.layout3
+                      width: 35%
+                      left: 43%
+                      top: 9%
+                      z-index: 1
+                      transform: translateY(5%)
+                      &.lAnimated
+                        animation-name: layoutsAnimation3
+                        animation-duration: 1600ms
+                        animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                        animation-fill-mode: forwards
+
+                    &.small
+                      opacity: 1
+                      transform: none
+                      display: none
+
+                    &.customerA
+                      width: 67%
+                      left: 17%
+                      transform: translateY(5%)
+                      &.cAnimated
+                        animation-name: customersAnimation
+                        animation-duration: 800ms
+                        animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                        animation-fill-mode: forwards
+
+                    &.customerB
+                      width: 67%
+                      top: 32%
+                      left: 10%
+                      transform: translateY(5%)
+                      &.cAnimated
+                        animation-name: customersAnimation
+                        animation-duration: 800ms
+                        animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                        animation-fill-mode: forwards
+                        animation-delay: 800ms
+
+                    &.customerC
+                      width: 67%
+                      left: 19%
+                      top: 50%
+                      transform: translateY(5%)
+                      &.cAnimated
+                        animation-name: customersAnimation
+                        animation-duration: 800ms
+                        animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                        animation-fill-mode: forwards
+                        animation-delay: 1600ms
+
+                &.customers
+                  max-height: 400px
+                  img:first-child
+                    max-height: unset
+                &.custom
+                  display: flex
+                  justify-content: space-between
+                  position: relative
+                  max-height: unset
+
+                  img.left
+                    width: 27%
+                    margin-left: 18%
+                    transform: translateY(-5%)
+                    opacity: 0
+                    &.custom-animated
+                      animation-name: customAnimationLeft
+                      animation-duration: 500ms
+                      animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                      animation-fill-mode: forwards
+
+                  img.arrow
+                    position: absolute
+                    width: 21%
+                    top: 55%
+                    left: 31%
+                    transform: scale(0)
+                    opacity: 0
+                    z-index: 1
+                    &.custom-animated
+                      animation-name: customAnimationArrow
+                      animation-duration: 500ms
+                      animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                      animation-fill-mode: forwards
+                      animation-delay: 500ms
+
+                  img.right
+                    width: 32%
+                    margin-right: 18%
+                    transform: translateY(5%)
+                    opacity: 0
+                    &.custom-animated
+                      animation-name: customAnimationRight
+                      animation-duration: 500ms
+                      animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                      animation-fill-mode: forwards
+                      animation-delay: 1000ms
+
+              .content
+                p
+                  color: #75767C
+          .block-link
+            a
+              font-size: 18px
+              font-weight: 400
+              line-height: 30px
+              margin-right: 10px
+              text-decoration: none
+              color: #0094FF
+            .fas.fa-chevron-right
+              color: #0094FF
+              cursor: pointer
+
+      .widgets
+        white-space: nowrap
+        padding: 60px 0
+
+        &:before
+          content: ""
+          position: absolute
+          width: 300%
+          height: 100%
+          background-color: #F4F8FE
+          z-index: -1
+          left: -100%
+          top: 0
+
+        .widgets-slide
+          display: inline-block
+          animation: 25s widgetsSlide infinite linear
+          img
+            height: 417px
+      .visualize-with-tb
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 32px
+        h2
+          font-size: 28px
+          text-align: center
+        a
+          padding: 12px 49px
+
+  footer
+    position: static
+
+@media screen and (max-width: 1460px)
+  #visualization
+    #visualization-content
+      .visualization-wrapper
+        .visualization-implementation
+          .block
+            .row
+              .card.image-only
+                .image-container.layouts
+                  max-height: unset
+                  img:first-child
+                    display: none
+                  .large
+                    display: none
+                  img.layout.small
+                    width: 60%
+                    position: static
+                    display: block
+                    margin: 0 auto
+
+@media screen and (max-width: 1279px)
+  #visualization
+    #visualization-content
+      .visualization-wrapper
+        .visualization-hero
+          padding-top: 60px
+          flex-direction: column
+          gap: 100px
+
+          .title
+            align-items: center
+            text-align: center
+
+            h1
+              white-space: normal
+
+          .images
+            width: 75vw
+            height: 50vw
+            transform: translateX(-5vw)
+
+        .visualization-definition
+          .title
+            flex-direction: column
+            gap: 24px
+            text-align: center
+
+        .visualization-implementation
+          .block
+            .row
+              .card.image-only
+                .image-container.customers
+                  max-height: 35vw
+
+
+@media screen and (max-width: 959px)
+  #visualization
+    #visualization-content
+      .visualization-wrapper
+        .section
+          padding: 40px
+
+        h4
+          margin-bottom: 0
+          padding-bottom: 8px
+
+        .visualization-implementation
+          .block
+            .row
+              margin-bottom: 42px
+              flex-direction: column
+              align-items: center
+
+              .card
+                .image-container
+                  margin-bottom: 24px
+
+        .widgets
+          .widgets-slide
+            img
+              height: 300px
+
+@media screen and (max-width: 599px)
+  #visualization
+    #visualization-content
+      .visualization-wrapper
+        padding: 0 16px
+
+        p
+          font-size: 14px
+
+        section
+          padding: 40px 0
+
+        h2
+          font-size: 28px
+
+        h3
+          font-size: 24px
+
+        h4
+          font-size: 24px
+          line-height: 36px
+
+        .visualization-hero
+          padding-top: 60px
+
+          .title
+            text-align: center
+
+            h1
+              white-space: normal
+              font-size: 36px
+              font-weight: 500
+              line-height: 48px
+
+        .visualization-definition
+
+          .title
+            text-align: left
+
+        .visualization-implementation
+          .block
+            padding: 24px
+            .row
+              .card
+                .image-container
+                  padding: 15px
+
+        .widgets
+          display: none
+
+@keyframes fadein
+  from
+    opacity: 0
+    transform: scale(80%)
+  to
+    opacity: 1
+    transform: scale(100%)
+
+@keyframes solutionTemplatesAnimation
+  from
+    opacity: 0
+    transform: scale(0)
+  to
+    opacity: 1
+    transform: scale(1)
+
+@keyframes layoutsAnimation1
+  0%
+    opacity: 0
+    transform: translateY(5%)
+  50%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 1
+    transform: translateX(-17%)
+
+@keyframes layoutsAnimation2
+  0%
+    opacity: 0
+    transform: translateY(5%)
+  50%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 1
+    transform: translateX(40%)
+
+@keyframes layoutsAnimation3
+  0%
+    opacity: 0
+    transform: translateY(5%)
+  50%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 1
+    transform: translateX(1%)
+
+@keyframes customersAnimation
+  from
+    opacity: 0
+    transform: translateY(5%)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes customAnimationLeft
+  from
+    opacity: 0
+    transform: translateY(-5%)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes customAnimationArrow
+  from
+    opacity: 0
+    transform: scale(0)
+  to
+    opacity: 1
+    transform: scale(1)
+
+@keyframes customAnimationRight
+  from
+    opacity: 0
+    transform: translateY(5%)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes widgetsSlide
+  from
+    transform: translateX(0)
+  to
+    transform: translateX(-100%)

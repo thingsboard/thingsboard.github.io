@@ -8,6 +8,63 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.0.1 (Apr 22, 2025) {#v401}
+
+Everything from [TB CE v4.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.0.1) with the following bug fixes.
+
+**Bug fixes**
+
+* Fixed entities-table-widget export data if column is not included in export
+* Fixed email issue with '+' in self-registration and improve user activation flow
+* Fixed raw payload update in Data Converter 2.0 test dialog
+* Fixed issue where changing script language in Data Converter reset function content to default
+
+## v4.0.0 (Apr 15, 2025) {#v40}
+
+Everything from [TB CE v4.0](https://github.com/thingsboard/thingsboard/releases/tag/v4.0) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Typed uplink data converters designed for use with a specific integration type;
+  * Improved performance of the aggregation rule node;
+  * Improved vendors and models selection in converter library;
+  * Improved integration executor performance using parallel requests to Redis cache;
+
+* UI
+
+  * SCADA: Oil & Gas drilling system solution template;
+  * SCADA: Energy management solution template;
+  * Solution templates cards redesign;
+  * Added debug configuration option to the Data converters table;
+  * Added scheduler event types autocomplete in alias configuration;
+  * Added option of data export for gauge widgets basic settings;
+  * Added home dashboard handling for mobile signup;
+  * Changed sort order in scheduler events;
+  * Captcha version is now required for self-registration form;
+
+* Edge
+
+  * Avoid creation of unnecessary public customers during Edge connection;
+
+**Bug fixes**
+
+* Fixed the customer details dashboard autocomplete;
+* Fixed converter library arrow button position for small description;
+* Fixed converter library model search;
+* Fixed entities table content export;
+* Fixed help link for mail template settings;
+* Fixed incorrect help container size for custom actions in group actions;
+* Fixed placement of IoT Hub name input for Azure Event Hub;
+* Fixed converter library for ThingPark and ThingParkEnterprise;
+* Fixed entity data query bug;
+* Fixed integration daily activity stats when using dedicated events datasource;
+* Fixed relations cleanup from group after OTA removing;
+* Fixed timeseries table export data with latest;
+* Fixed untranslated error message on login page;
+* Prevented converter type changes via API;
+
 ## v3.9.1 (Feb 19, 2025) {#v391}
 
 Everything from [TB CE v3.9.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.9.1) with the following improvements and bug fixes.

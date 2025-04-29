@@ -8,6 +8,7 @@
 
 {% assign hostData = site.data.host-constant | where: "tag", tag %}
 {% if hostData %}
+{% assign hostLabel = hostData[0].hostLabel %}
 {% assign hostName = hostData[0].hostName %}
 {% assign mqttHostName = hostData[0].mqttHostName %}
 {% assign coapHostName = hostData[0].coapHostName %}

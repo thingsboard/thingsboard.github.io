@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas-eu
-title: TheThingsIndustries Integration
-description: TheThingsIndustries Integration Guide 
+title: The Things Stack Industries integration
+description: The Things Stack Industries integration guide
 
 ---
 {% assign docsPrefix = "paas/eu/" %}

@@ -1,229 +1,343 @@
 ---
 layout: use-case
-title: ᐉ IoT Energy Management & Monitoring — ThingsBoard
-description: IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤ Smart energy monitoring and data visualization with ThingsBoard IoT Platform
+title: IoT Energy Management & Monitoring with ThingsBoard
+description: The Smart Energy solution based on ThingsBoard IoT platform enables real-time energy monitoring and optimization. It helps reduce costs, improve energy efficiency, automate management processes, and achieve sustainable development.
 notitle: "true"
-redirect_from:
-  - "/docs/services/energy-management/"
+customTitle: "true"
+includeAdvantages: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-energy" %}
-
-<h1 class="usecase-title">IoT Energy Management</h1>
-
-Energy in business is a crucial resource that influences workflows. It is also an essential component of every business strategy that leads to business scaling and growth. Companies across the globe are adopting smart energy management systems to increase sustainability.
-
-In an era where sustainability and efficiency are not just buzzwords, the role of the Internet of Things (IoT) in energy management and monitoring cannot be overstated. Harnessing the power of IoT for energy monitoring leads to significant cost savings, improved operational efficiency, and a reduced environmental footprint.
-
-ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions.
-Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
-
-- Reliable and scalable data collection for your smart meters and energy monitors;
-- Powerful rule engine to process collected data and produce alarms and valuable insights;
-- Advanced and flexible visualization for real-time and historical data;
-- Customizable end-user dashboards to analyze and share the results of energy efficiency monitoring;
-- Integration with third-party analytics frameworks and solutions for advanced electricity usage analytics;
-- Remote control and OTA updates for your smart meters and other devices;
-- Customizable mobile applications with minimum coding efforts.
-
-## How Does It Work?
-
-IoT energy management is the process that includes data collection, data transmission, data analysis, remote control, and automation.
-
-The measurement data relevant to this is partly collected manually from distributed data sources and imported, e.g., via CSV files, into energy data collection systems. The analysis and evaluation are often carried out via self-created MS Excel sheets, from which the necessary diagrams are subsequently created.
-
-The IoT revolutionizes this process. IoT energy monitoring system works by connecting devices and appliances to the Internet and collecting real-time data on their energy usage. This data is then processed and analyzed to provide valuable insights into energy consumption patterns.
-
-IoT-based energy management systems use real-time power consumption data to help optimize the use of electricity, and dynamically switch towards more cost and resource-efficient regimes.
-
-IoT sensors collect data on the consumption of electricity, water, heat, etc., measure pressure, temperature, and others to control the status of assets, as well as detect leakages. Actuators connected to the sensors automatically shut off and resume the supply of gas, water, heat, and so on.
-
-IoT energy management software automates the manual processes that require a significant number of man-hours. Time-consuming jobs such as meter readings and power generation/distribution are handled by the system, eliminating the need for manual work and ensuring accurate, real-time readings.
-
-## Advantages of Using IoT Energy Management
-
-The implementation of smart energy management using IoT comes with a multitude of advantages. Here are some key benefits:
-
-* **Identifying and mitigating potential failures**: Smart energy monitoring systems using IoT can detect unusual behavior and patterns that could indicate potential failures, helping to reduce risk.
-* **Optimizing energy consumption and occupant comfort**: IoT power monitors can automatically adjust energy consumption based on factors such as economic and commercial factors, time of day, and weather conditions.
-* **Centralizing monitoring and control**: Energy IoT platform provides centralized monitoring and control of energy consumption across multiple facilities.
-* **Improving energy efficiency**: IoT helps businesses improve their energy efficiency by providing insights into their energy consumption patterns and identifying areas where savings can be achieved. For example, IoT systems can be used to track the energy consumption of individual devices or equipment and to identify devices that are consuming more energy than necessary.
-* **Improved Sustainability**: The integration of IoT-based smart energy monitoring reduces maintenance and operating costs, leading to ongoing savings.
-* **Ensuring regulatory compliance**: IoT in energy management can ensure regulatory compliance, making it easier for companies to adhere to energy regulations.
-* **Reduced operational expenses**: By improving energy efficiency and reducing energy waste, businesses can reduce their overall energy consumption. This can lead to significant savings on energy bills, even in times of rising energy prices.
-
-## IoT-based energy Monitoring Solutions We Offer
-
-ThingsBoard provides a variety of IoT-based energy monitoring system solutions. Here are some of them:
-
-* Smart meters — measure energy consumption in real-time, providing valuable data for analysis.
-* Modbus meters — are a type of smart meter that uses the Modbus protocol, a popular communication protocol in industrial applications.
-* IoT gateways connect smart meters and other IoT devices to the Internet, enabling real-time data collection and remote control.
-* The transport layer includes various protocols such as MQTT, CoAP, HTTP, and LwM2M that are used for transmitting data from IoT devices to the ThingsBoard platform.
-* The integration layer includes the ThingsBoard core, which provides device and user management, a rule engine for data processing and aggregation, and an SQL/NoSQL database for data storage.
-* The application layer includes end-user interfaces such as real-time dashboards and mobile apps that display the collected data in an easy-to-understand format.
-
-Contact us to know more about how IoT solutions can help in energy efficiency!
-
-## Smart Energy Dashboard Examples
-
-ThingsBoard offers a variety of smart energy dashboard examples that provide real-time data visualization. These dashboards are interactive and can be easily embedded into your IoT solution.
-
-Here are some key features of the smart energy dashboards:
-
-* Real-time data display;
-* Alarms and notifications;
-* Detailed energy meter information;
-* User-friendly interface;
-* Customizable layout;
-
-
-The following interactive dashboard represents smart-energy IoT data visualization that you may easily embed into your IoT solution. See dashboard description below.
-
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-energy' %}
-
-<div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>
-</div>
-
-The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API.
-Collected data is processed via the rule engine to raise alarms on certain thresholds.
-The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds.
-Click on the alarm or energy meter row to open the meter details.
-You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
-
-## ThingsBoard advantages
-<section class="usecase-advantages">
-    <div class="usecase-background">
-        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+<div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
+<h1 class="usecase-title">Smart Energy</h1>
+<section class="environment-monitoring-about">
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">Smart Energy is intelligent energy resource management using IoT to improve efficiency, reduce costs, and automate processes. ThingsBoard is a perfect platform for these tasks, providing scalable data collection, analytics, and real-time remote control.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>            </div>
+            </div>
+        <div class="long">
+            <p>IoT is radically transforming the approach to energy management. IoT sensors capture the consumption of electricity, water, heat, as well as environmental parameters such as pressure, temperature, and more. This data is used to make automated decisions — from shutting down systems in case of failures to optimizing consumption and preventing losses.</p>
+            <p>The ThingsBoard platform provides a powerful technology stack for building such systems. It supports data collection from various types of devices and protocols (MQTT, CoAP, HTTP, etc.), dashboard visualizations, and advanced automation through its rule engine and alerting system. This enables real-time energy monitoring and rapid response to anomalies, reducing costs and improving operational efficiency.</p>
+        </div>
     </div>
-    <div class="cards row">
-        <div class="col-lg-6">
+</section>
+
+<section class="smart-energy-overview">
+    <div class="img-comp-container">
+        <div class="img-comp-img">
+            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-1.webp" alt="ThingsBoard dashboard in light theme showing energy data from smart meters" title="Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-2.webp" alt="ThingsBoard dashboard in dark theme with smart meter data visualization" title="Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions">
+        </div>
+    </div>
+</section>
+
+<section class="smart-energy-solution-structure">
+    <h2>Solution structure of smart energy use case</h2>
+    <div class="about-text">
+        <div class="short">
             <div class="block">
-                <object data="/images/microservices-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters.</p>
-                </div>
+                <p class="text">ThingsBoard offers a comprehensive IoT-based energy monitoring solution built on a modular, scalable architecture. At the device level, smart meters and industrial Modbus meters collect real-time data on energy consumption across facilities.</p>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/telemetry-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
-                </div>
+        <div class="long">
+            <p>These devices connect through IoT gateways that support a wide range of communication protocols, including MQTT, CoAP, HTTP, and LwM2M, ensuring secure and seamless data transmission to the cloud.</p>
+            <p>ThingsBoard core handles device and user management, real-time data processing via a powerful rule engine. The collected data is visualized through intuitive dashboards and mobile applications, giving users clear insights into energy usage, system alarms, and performance metrics — all in real time, from a single interface.</p>
+        </div>
+    </div>
+    <div class="scheme">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+    </div>
+    <div class="smart-energy-benefits section-padding">
+        <div class="section-header">
+            <h2>Smart energy benefits</h2>
+            <p>The Smart Energy solution provides a wide range of benefits for businesses, facility managers, and technical teams, enabling efficient, automated, and scalable energy management.</p>
+        </div>
+        <div class="use-cases-solution-structure-cards">
+            <div class="use-cases-solution-structure-card">
+                <h3>Failure detection and risk mitigation</h3>
+                <p>Real-time monitoring detects unusual patterns that may signal potential system failures, helping reduce risks and prevent downtime.</p>
+            </div>
+            <div class="use-cases-solution-structure-card">
+                <h3>Dynamic energy optimization</h3>
+                <p>IoT-powered energy systems automatically adjust consumption based on time of day, weather, or pricing factors, improving efficiency and occupant comfort.</p>
+            </div>
+            <div class="use-cases-solution-structure-card">
+                <h3>Centralized monitoring and control</h3>
+                <p>A unified platform enables centralized oversight of energy usage across multiple facilities, simplifying management and enhancing visibility.</p>
+            </div>
+            <div class="use-cases-solution-structure-card">
+                <h3>Increased energy efficiency</h3>
+                <p>IoT sensors track detailed consumption patterns by device or system, allowing identification of inefficiencies and driving smarter energy use.</p>
+            </div>
+            <div class="use-cases-solution-structure-card">
+                <h3>Sustainability and cost savings</h3>
+                <p>Continuous monitoring and automation help reduce operational costs and maintenance needs, supporting long-term sustainability goals.</p>
+            </div>
+            <div class="use-cases-solution-structure-card">
+                <h3>Regulatory compliance</h3>
+                <p>Automated tracking and reporting features make it easier to meet energy regulations and environmental standards.</p>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/integration-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+    </div>
+</section>
+
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Dashboard structure of smart energy solution</h2>
+        <p>
+            The live dashboard displays real-time data from several smart meters collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. The main dashboard displays the energy meters, corresponding alarms, and real-time data feeds. Click on the alarm or energy meter row to open the meter details. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.    
+        </p>
+    </div>
+    <div class="dashboard-structure-block">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Smart energy state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This unified dashboard provides a comprehensive real-time view of voltage, amperage, frequency, and energy consumption across all three floors. Operators can monitor Smart Meters A, B, and C, analyze, compare performance, and detect anomalies instantly. Alarm widgets notify users about critical events like low or high voltage, while interactive charts and tables offer full control and insight — all from a single interface.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/security-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Smart Meter A — 1st Floor state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This dashboard provides full visibility into voltage, frequency, amperage, and energy consumption for Smart Meter A. Real-time charts help detect instability in power supply, while a historical consumption graph supports weekly analysis. The frequency dip and critical high-voltage alarm enable timely diagnostics and response.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/engine-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Smart Meter B — 2nd Floor state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This dashboard provides full visibility into voltage, frequency, amperage, and energy consumption for Smart Meter B. Real-time charts help detect instability in power supply, while a historical consumption graph supports weekly analysis. The frequency dip and critical high-voltage alarm enable timely diagnostics and response.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/visualization-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Smart Meter C — 3rd Floor state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This dashboard provides full visibility into voltage, frequency, amperage, and energy consumption for Smart Meter C. Real-time charts help detect instability in power supply, while a historical consumption graph supports weekly analysis. The frequency dip and critical high-voltage alarm enable timely diagnostics and response.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/phone-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/tenancy-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Theme toggle mode</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>With a single click on the theme icon in the top right corner, users can switch between light and dark modes. This flexibility enhances user comfort in various lighting conditions, improves focus, and reduces eye strain — especially during night shifts or long monitoring sessions. The dark theme preserves full dashboard functionality, including charts, alerts, and controls.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-With an expert team that understands these complexities, ThingsBoard is committed to providing an energy monitoring system using IoT that not only addresses these challenges but also drives efficiency and sustainability in IoT energy management.
-
-
-## Smart energy system architecture diagram
-
-The diagram below identifies data flow and integration points for a typical smart-energy solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
-
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
-
-You may notice plenty of connectivity options for the smart meters: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
-
-## Our cases
-
-* Smart Metering: Сollect, store, and aggregate data from smart meters in a reliable and fault-tolerant way. You can analyze resource consumption and raise alerts on leakage, anomaly, or fraud.
-* Smart Energy: Deliver and store data from smart meters in a reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards and integrate with third-party analytics frameworks and solutions.
-* Environment Monitoring: Monitor and analyze indoor and outdoor environments using a wide range of sensors.
-* Smart Office: Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and controlling the office's indoor climate.
-
-
-<div id="contact-us" class="block-wrapper wrapper-main-color">
-    <div class="block-content">
-        <div class="contact-us-content">
-            <div class="info">
-                <div class="title">Ready to launch your unique product?</div>
-                <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
+<section class="applications applications-additional section-padding">
+    <div class="section-header">
+        <h2>Applications of smart energy solution</h2>
+        <p>A scalable IoT-based energy monitoring and management system can be adapted for a wide range of industries and infrastructure types. Below are just a few examples of where Smart Energy solutions can be applied.</p>
+    </div>
+    <div class="applications-container-large">
+        <div class="text-row-top">
+            <div class="text-block">
+                <h3>Industrial facilities and factories</h3>
+                <p>Tracking energy usage of heavy machinery, identifying inefficiencies, and improving power distribution for safer and more cost-effective production processes.</p>
             </div>
-            <form id="UseCases_SmartEnergy_ReadyToLaunch" class="contact-form1 gtm_form readyToLaunchForm" method="post" onsubmit="return validateContactForm(this)">
-                <fieldset>
-                    <div class="form-section">
-                        <div class="form-element">
-                            <label for="name">
-                                <input id="name" class="contact-us-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
-                                <p class="second-placeholder" style="font-size: 12px">Name*</p>
-                            </label>
-                        </div>
-                        <div class="form-element">
-                            <label for="email">
-                                <input id="email" class="contact-us-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                                <p class="second-placeholder" style="font-size: 12px">Email Address*</p>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="submit-button-container">
-                        <input class="contact-us-button" value="Submit" type="submit">
-                    </div>
-                </fieldset>
-            </form>
+            <div class="text-block">
+                <h3>Educational institutions and campuses</h3>
+                <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
+            </div>
+            <div class="text-block">
+                <h3>Shopping malls and retail chains</h3>
+                <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
+            </div>
+        </div>
+        <div class="images-row">
+            <div class="application-image"><img src="/images/usecases/smart-energy/factory-1.svg" alt="Factory" title="Industrial facilities and factories"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/buildings-1.svg" alt="Buildings" title="Commercial buildings and offices"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="School" title="Educational institutions and campuses"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/data-centers-1.svg" alt="Data centers" title="Data centers"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall" title="Shopping malls and retail chains"></div>
+        </div>
+        <div class="text-row-bottom">
+            <div class="text-block">
+                <h3>Commercial buildings and offices</h3>
+                <p>Optimizing HVAC, lighting, and equipment usage across floors and departments, with real-time monitoring to reduce energy waste and operational costs.</p>
+            </div>
+            <div class="text-block">
+                <h3>Data centers</h3>
+                <p>Maintaining stable voltage, temperature, and load balancing to ensure uninterrupted operations while reducing electricity consumption and cooling costs.</p>
+            </div>
         </div>
     </div>
-</div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-energy/factory-2.svg" alt="Factory" title="Industrial facilities and factories"></div>
+            <div class="text-block">
+                <h3>Industrial facilities and factories</h3>
+                <p>Tracking energy usage of heavy machinery, identifying inefficiencies, and improving power distribution for safer and more cost-effective production processes.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Commercial buildings and offices</h3>
+                <p>Optimizing HVAC, lighting, and equipment usage across floors and departments, with real-time monitoring to reduce energy waste and operational costs.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-energy/buildings-2.svg" alt="Buildings" title="Commercial buildings and offices"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="School" title="Educational institutions and campuses"></div>
+            <div class="text-block">
+                <h3>Educational institutions and campuses</h3>
+                <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Data centers</h3>
+                <p>Maintaining stable voltage, temperature, and load balancing to ensure uninterrupted operations while reducing electricity consumption and cooling costs.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-energy/data-centers-2.svg" alt="Data centers" title="Data centers"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-energy/malls-2.svg" alt="Mall" title="Shopping malls and retail chains"></div>
+            <div class="text-block">
+                <h3>Shopping malls and retail chains</h3>
+                <p>Monitoring energy usage across multiple locations, managing peak hours, and controlling lighting and HVAC systems automatically for higher efficiency.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        svgAnimations.forEach(img => svgObserver.observe(img));
+
+        document.querySelectorAll('.card-link').forEach((link) => {
+            link.classList.add('linkDefault');
+        });
+
+        const expansionBlocks = document.querySelectorAll('.expansion-block');
+        const structureBlock = document.querySelector('.dashboard-structure-block');
+        const smallImageBlock = createImageBlock('small');
+        const largeImageBlock = createImageBlock('large');
+
+        expansionBlocks[0].appendChild(smallImageBlock);
+        structureBlock.appendChild(largeImageBlock);
+
+        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
+        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
+
+        let currentExpandedIndex = 0;
+
+        expansionBlocks[0].classList.add('expanded');
+
+        expansionBlocks.forEach((panel, index) => {
+            panel.addEventListener('click', function() {
+                if (index === currentExpandedIndex) {
+                    return; 
+                }
+
+                smallImageElement.innerHTML = getImage(index);
+                this.appendChild(smallImageBlock);
+                largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
+                largeImageElement.innerHTML = getImage(index);
+
+                expansionBlocks.forEach(item => {
+                    item.classList.remove('expanded');
+                });
+
+                this.classList.add('expanded');
+                currentExpandedIndex = index; 
+                if (window.screen.width < 600) {
+                    const blockRect = expansionBlocks[index].getBoundingClientRect();
+                    const target = blockRect.top + window.scrollY - 80;
+                    window.scrollTo(0, target);
+                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                }
+                if (index === 4) {
+                    window.scrollTo(0, window.scrollY +1);
+                }
+            });
+        });
+
+        window.onscroll = function() {
+            const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
+            const large = document.querySelector('.image-block-large');
+
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 300 && elemCoor.top < 0) {
+                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+            }
+        };
+
+        if (window.screen.width > 960) {
+            const fullPage = document.querySelector('#scada-fullpage');
+            largeImageElement.addEventListener('click', function(image) {
+                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                fullPage.style.display = 'block';
+                fullPage.style.top = window.scrollY + 'px';
+                document.querySelector('body').style.overflow = 'hidden';
+            });
+        }
+
+        function createImageBlock(layout) {
+            let block = document.createElement('div');
+            block.className = `image-block-${layout}`;
+            block.innerHTML = `
+            <div class="image-container image-background">
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class=image>${getImage(0)}</div>
+            </div>
+            <div class="buttons-block">
+                <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>
+                <a id="UseCases_SmartEnergy_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+            </div>`;
+    
+            return block;
+        }
+
+        function getImage(index) {
+            const images = [
+                "<img src='/images/usecases/smart-energy/smart-energy-1.webp' alt='ThingsBoard dashboard in light theme showing energy data from smart meters' title='Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-3.webp' alt='Smart Meter A dashboard on the 1st floor showing voltage, frequency, amperage, and energy consumption' title='Smart Meter A on the 1st floor: real-time monitoring of voltage, frequency, current and weekly energy usage with one active high voltage alarm'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-4.webp' alt='Smart Meter B dashboard on the 2nd floor with energy data and real-time frequency' title='Smart Meter B on the 2nd floor: displays live voltage, frequency, amperage and energy consumption. No active alarms detected'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-5.webp' alt='Smart Meter C dashboard on the 3rd floor showing real-time energy metrics and critical alarm' title='Smart Meter C on the 3rd floor: visualization of voltage, frequency, current and consumption, with one unacknowledged low voltage alarm'/>",
+                "<img src='/images/usecases/smart-energy/smart-energy-2.webp' alt='ThingsBoard dashboard in dark theme with smart meter data visualization' title='Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions'/>",
+            ];
+            return images[index];
+        }
+    });
+</script>

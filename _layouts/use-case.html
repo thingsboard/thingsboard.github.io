@@ -1,4 +1,5 @@
 {% if page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
+{% if page.includeAdvantages == "true" %}{% assign includeAdvantages = "true" %}{% endif %}
 {% assign cssTag="use-case" %}
 
 <!Doctype html>
@@ -14,6 +15,7 @@
         {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
         <div id="content">
             {{ content }}
+            {% if includeAdvantages == "true" %}{% include tb-advantages.html %}{% endif %}
         </div>
     </div>
 </section>

@@ -1,164 +1,300 @@
 ---
 layout: use-case
-title: IoT environment monitoring solutions with ThingsBoard
-description: IoT environment monitoring solutions with ThingsBoard
+title: IoT Environment Monitoring solutions with ThingsBoard
+description: Discover scalable and secure IoT environment monitoring solutions with ThingsBoard. Connect multiple sensors, automate alerts, and gain real-time insights to improve safety, efficiency, and comfort across industrial, commercial, and smart building applications.
 notitle: "true"
+customTitle: "true"
+includeAdvantages: "true"
 
 ---
 
 {% include usecase-nav.html usecase="environment-monitoring" %}
-
-<h1 class="usecase-title">Environment monitoring solutions</h1>
-
-ThingsBoard platform dramatically reduces time to market and efforts to create environment monitoring solutions.
-Platform is widely used for:
-
-  - air quality monitoring in some bigger cities;
-  - weather monitoring on each continent including Antarctica;
-  - relief monitoring and seismology alerts/prediction;
-  - Water quality of public pumps and other facilities;
-  - Noise level;
-
-Save up to 90% of development time for your environment monitoring solution by utilizing the following platform benefits:
-
-  - Reliable and fault-tolerant data collection from your IoT devices and sensors;
-  - Powerful rule engine to process collected data and produce alarms and valuable insights;
-  - Advanced and flexible visualization for real-time and historical data;
-  - Customizable end-user dashboards to share the monitoring results;
-  - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;
-  - Customizable mobile applications with minimum coding efforts;
-
-The platform provides production-ready server infrastructure to connect your IoT devices, store, analyze and share collected IoT data;
-
-## Environment monitoring dashboard
-
-The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. 
-This particular dashboard allows users to monitor temperature and humidity sensors. 
-You may quickly adapt it to Air quality or other sensors and add remote control scenarios.
-
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
-
-<div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-</div>
-
-The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/temperature-humidity-sensors/) and displays real-time data from temperature and humidity sensor collected using ThingsBoard MQTT API.
-You may use the dashboard to:
-
-* add new sensors;
-* change the location of the sensors; 
-* configure the alarm thresholds;
-* browse historical data.
-
-The dashboard has two states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. 
-You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location.
-
-## ThingsBoard advantages
-<section class="usecase-advantages">
-    <div class="usecase-background">
-        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+<div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
+<h1 class="usecase-title">Environment monitoring</h1>
+<section class="environment-monitoring-about">
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">Environment monitoring plays a vital role in ensuring safety, comfort, and operational efficiency across all types of facilities — from office buildings to industrial sites. ThingsBoard is perfectly suited to address these challenges.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+            </div>
+        </div>
+        <div class="long">
+            <p>ThingsBoard provides a scalable, reliable, and secure platform for environment monitoring. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
+            <p>Automated features—from real-time alerts on critical changes to forwarding data into external analytics tools—ensure proactive monitoring. Intuitive dashboards, customizable logic, and seamless integrations turn raw environmental data into actionable insights, enabling smarter and faster decisions.</p>        </div>
     </div>
-    <div class="cards row">
-        <div class="col-lg-6">
+</section>
+
+<section class="environment-monitoring-carousel carousel-padding">
+    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
+</section> 
+
+<section class="environment-monitoring-solution-structure">
+    <h2>Solution structure of environment monitoring</h2>
+    <div class="about-text">
+        <div class="short">
             <div class="block">
-                <img src="/images/microservices-icon.svg" alt="Microservice icon">
-                <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
-                        Platform components are horizontally scalable. ThingsBoard has production deployments supporting more then 500 000 devices connected.</p>
-                </div>
+                <p class="text">Sensor data is transmitted to ThingsBoard using IoT protocols like HTTP, MQTT, CoAP, and LwM2M, or via integrations with LoRaWAN servers and other platforms.</p>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/telemetry-icon.svg" alt="Telemetry icon">
-                <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
-                        Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+        <div class="long">
+            <p>The built-in stream processing engine instantly analyzes incoming messages, triggers events, generates alarms, and routes data to monitoring dashboards. The collected data is visualized through intuitive dashboards, giving users clear insights into alarms, and performance metrics — all in real time, from a single interface.</p>
+        </div>
+    </div>
+    <div class="scheme">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Environment monitoring solution architecture" title="Environment monitoring solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+    </div>
+</section>
+
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Environment monitoring dashboard structure</h2>
+        <p>
+            The Smart Office solution includes a sample dashboard designed for clear visualization of key metrics. It displays energy and water consumption, air quality, temperature, humidity, and HVAC system status. Alarms are also shown to enable prompt response to abnormal conditions. While the provided dashboard is relatively simple, ThingsBoard allows users to create much more complex and customized dashboards based on their specific Smart Office requirements.
+        </p>
+    </div>
+    <div class="dashboard-structure-block">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Environment monitoring state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Dashboard provides real-time monitoring of sensor data with interactive charts displaying metrics like temperature and humidity. The interface allows configuring alarm thresholds and sensor locations while showing active alarms with severity levels. You can analyze historical data and manage device settings.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/integration-icon.svg" alt="Integration icon">
-                <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Sensor C1 monitoring state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Track real-time temperature and humidity readings from Sensor C1 along with historical data from the past hour. Compare key metrics (min/max/average values) to maintain optimal Environment conditions.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/security-icon.svg" alt="Security icon">
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Sensor T1 monitoring state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Track real-time temperature and humidity readings from Sensor T1 along with historical data from the past hour. Compare key metrics (min/max/average values) to maintain optimal Environment conditions.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/engine-icon.svg" alt="Gear icon">
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/visualization-icon.svg" alt="Data visualization icon">
-                <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/device-icon.svg" alt="Device icon">
-                <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
-                <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Add or edit sensor</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>You can configure Sensor's critical thresholds including high temperature and low humidity alarms. Precise geolocation can be modified via latitude/longitude coordinates. All changes remain pending until confirmed with the Save button. The Cancel option reverts any unsaved modifications to previous settings.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-## Environment monitoring solution overview
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header">
+        <h2>Applications of environment monitoring solution</h2>
+        <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+    </div>
+    <div class="applications-container-large">
+        <div class="text-row-top">
+            <div class="text-block">
+                <h3>Smart cities and urban infrastructure</h3>
+                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support Environment policy, alert residents, improve urban living conditions.</p>
+            </div>
+            <div class="text-block">
+                <h3>Agricultural and greenhouse facilities</h3>
+                <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
+            </div>
+            <div class="text-block">
+                <h3>Warehouses and cold storage facilities</h3>
+                <p>tMonitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
+            </div>
+        </div>
+        <div class="images-row">
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/smart-cities-1.svg" alt="Smart city" title="Smart cities and urban infrastructure"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/laboratory-1.svg" alt="Laboratory" title="Healthcare and laboratory environments"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/agriculture-1.svg" alt="Greenhouse" title="Agricultural and greenhouse facilities"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/education-1.svg" alt="School" title="Educational and research institutions"></div>
+            <div class="application-image"><img src="/images/usecases/environment-monitoring/warehouse-1.svg" alt="Warehouse" title="Warehouses and cold storage facilities"></div>
+        </div>
+        <div class="text-row-bottom">
+            <div class="text-block">
+                <h3>Healthcare and laboratory environments</h3>
+                <p>Maintaining sterile conditions and proper ventilation by tracking air quality, CO₂ levels, and temperature in sensitive medical or laboratory zones.</p>
+            </div>
+            <div class="text-block">
+                <h3>Educational and research institutions</h3>
+                <p>Collecting long-term Environment data for scientific research, campus sustainability programs, and educational use in Environment studies.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/environment-monitoring/smart-cities-2.svg" alt="Smart city" title="Smart cities and urban infrastructure"></div>
+            <div class="text-block">
+                <h3>Smart cities and urban infrastructure</h3>
+                <p>Monitoring air quality, noise levels, temperature, and humidity across city zones to support Environment policy, alert residents, improve urban living conditions.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Healthcare and laboratory environments</h3>
+                <p>Maintaining sterile conditions and proper ventilation by tracking air quality, CO₂ levels, and temperature in sensitive medical or laboratory zones.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/laboratory-2.svg" alt="Laboratory" title="Healthcare and laboratory environments"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/environment-monitoring/agriculture-2.svg" alt="Greenhouse" title="Agricultural and greenhouse facilities"></div>
+            <div class="text-block">
+                <h3>Agricultural and greenhouse facilities</h3>
+                <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Educational and research institutions</h3>
+                <p>Collecting long-term Environment data for scientific research, campus sustainability programs, and educational use in Environment studies.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/environment-monitoring/education-2.svg" alt="School" title="Educational and research institutions"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/environment-monitoring/warehouse-2.svg" alt="Warehouse" title="Warehouses and cold storage facilities"></div>
+            <div class="text-block">
+                <h3>Warehouses and cold storage facilities</h3>
+                <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-The diagram below identifies data flow and integration points for a typical environment monitoring solution that uses the ThingsBoard platform to collect and analyze data from IoT sensors.
+<section class="summary">
+    <h2>Summary of environment monitoring</h2>
+    <div>
+        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon">
+    </div>
+</section>
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
 
-You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
-Most of the environment monitoring projects today use IoT Gateway deployed at the monitoring site. 
-Usually this device is either running [ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/) or using [Gateway API](/docs/reference/gateway-mqtt-api/).
-Using the gateway, customers optimize hardware and connectivity cost. You may connect multiple sensors (even using physical wire) to a hub and use only one connectivity module.
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
-Advanced environment monitoring IoT solutions may use LoRaWAN or SigFox devices as well.
+        document.querySelectorAll('.card-link').forEach((link) => {
+            link.classList.add('linkDefault');
+        });
 
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+        const expansionBlocks = document.querySelectorAll('.expansion-block');
+        const structureBlock = document.querySelector('.dashboard-structure-block');
+        const smallImageBlock = createImageBlock('small');
+        const largeImageBlock = createImageBlock('large');
 
-## Learn more
-<div class="usecases-bottom-nav">
-    <a id="UseCases_EnvMon_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
-    <a id="UseCases_EnvMon_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
-    <a id="UseCases_EnvMon_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
-    <a id="UseCases_EnvMon_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
-    <a id="UseCases_EnvMon_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
-</div>
+        expansionBlocks[0].appendChild(smallImageBlock);
+        structureBlock.appendChild(largeImageBlock);
 
+        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
+        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
+
+        let currentExpandedIndex = 0;
+
+        expansionBlocks[0].classList.add('expanded');
+
+        expansionBlocks.forEach((panel, index) => {
+            panel.addEventListener('click', function() {
+                if (index === currentExpandedIndex) {
+                    return; 
+                }
+
+                smallImageElement.innerHTML = getImage(index);
+                this.appendChild(smallImageBlock);
+                largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
+                largeImageElement.innerHTML = getImage(index);
+
+                expansionBlocks.forEach(item => {
+                    item.classList.remove('expanded');
+                });
+
+                this.classList.add('expanded');
+                currentExpandedIndex = index; 
+                if (window.screen.width < 600) {
+                    const blockRect = expansionBlocks[index].getBoundingClientRect();
+                    const target = blockRect.top + window.scrollY - 80;
+                    window.scrollTo(0, target);
+                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                }
+                if (index === 4) {
+                    window.scrollTo(0, window.scrollY +1);
+                }
+            });
+        });
+
+        window.onscroll = function() {
+            const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
+            const large = document.querySelector('.image-block-large');
+
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 400 && elemCoor.top < 0) {
+                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+            }
+        };
+
+        if (window.screen.width > 960) {
+            const fullPage = document.querySelector('#scada-fullpage');
+            largeImageElement.addEventListener('click', function(image) {
+                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                fullPage.style.display = 'block';
+                fullPage.style.top = window.scrollY + 'px';
+                document.querySelector('body').style.overflow = 'hidden';
+            });
+        }
+
+        function createImageBlock(layout) {
+            let block = document.createElement('div');
+            block.className = `image-block-${layout}`;
+            block.innerHTML = `
+            <div class="image-container image-background">
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class=image>${getImage(0)}</div>
+            </div>
+            <div class="buttons-block">
+                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+            </div>`;
+    
+            return block;
+        }
+
+        function getImage(index) {
+            const images = [
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-2.webp' alt='Dashboard with sensor status, critical alarm, and map location of sensors' title='ThingsBoard dashboard showing real-time sensor metrics, alarm status, and their geographic positions on the map'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-3.webp' alt='Temperature and humidity charts with location of Sensor C1' title='Live monitoring of Sensor C1: temperature and humidity data alongside sensor location on the map'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-4.webp' alt='Temperature and humidity charts with location of Sensor T1' title='Sensor T1 real-time readings: temperature and humidity graphs with sensor map marker'/>",
+                "<img src='/images/usecases/environment-monitoring/environment-monitoring-1.webp' alt='Sensor configuration panel with thresholds and map location in ThingsBoard' title='Editing Sensor T1: setting temperature and humidity thresholds and viewing sensor location on the map'/>",
+            ];
+            return images[index];
+        }
+    });
+</script>
