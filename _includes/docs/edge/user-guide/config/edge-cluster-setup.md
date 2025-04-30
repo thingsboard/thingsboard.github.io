@@ -238,6 +238,17 @@ To upgrade the database, run the following commands:
 ```
 {: .copy-code}
 
+### Generate certificate for HTTPS
+We use **HAproxy** to proxy traffic to containers, and for **Web UI** we use **80** and **443** ports by default. To use HTTPS with a valid certificate, run these commands:
+```bash
+docker exec haproxy-certbot certbot-certonly --domain your_domain --email your_email
+docker exec haproxy-certbot haproxy-refresh
+```
+{: .copy-code}
+
+Valid certificate will only be used if you visit Web UI by domain in URL. 
+If you are using IP address to access UI, this would use self-signed certificate.
+
 ### Next steps
 
 {% include templates/edge/guides-banner-edge.md %}
