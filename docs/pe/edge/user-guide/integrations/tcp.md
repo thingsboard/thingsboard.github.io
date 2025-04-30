@@ -110,7 +110,7 @@ Our sensor device **SN-002** publishes its temperature and humidity readings to 
 For demonstration purposes, we assume that our device is smart enough to send data in 3 different payload types:
 - **Text:** The payload is 
 ```text
-SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69**
+SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69
 ```
 - **JSON:** The payload is:
 

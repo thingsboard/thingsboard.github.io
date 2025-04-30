@@ -98,7 +98,6 @@ SN-001,default,temperature,25.7,humidity,69
   "humidity": 69
 }
 ```
-{: .copy-code.expandable-15}
 
 - **Binary** - in this case, the payload looks like this (in HEX string):
 ```text
