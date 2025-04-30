@@ -122,7 +122,65 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
-## Step 6. Run installation script
+## Step 6. Install Trendz Python executor
+
+For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed.
+Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
+But in this section we will write how to install Python libraries directly on the server with Trendz.
+
+#### Install Python3
+
+```bash
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+```
+{: .copy-code}
+
+#### Create a Virtual Environment
+
+```bash
+sudo mkdir -p /opt/venvs
+cd /opt/venvs
+sudo python3 -m venv trendz_venv
+sudo chown -R $USER:$USER /opt/venvs/trendz_venv
+source trendz_venv/bin/activate
+```
+{: .copy-code}
+
+#### Install required python packages
+
+```bash
+pip install --no-cache-dir \
+  numpy==1.26.3 \
+  scikit-learn==1.4.2 \
+  statsmodels==0.14.2 \
+  tensorflow==2.16.1 \
+  pandas==2.1.4 \
+  matplotlib==3.8.4 \
+  prophet==1.1.5 \
+  xgboost==2.0.3
+```
+{: .copy-code}
+
+#### Configure venv connection for Trendz
+
+Edit Trendz configuration file
+
+```bash 
+sudo nano /etc/trendz/conf/trendz.conf
+``` 
+{: .copy-code}
+
+Add the following lines to the configuration file:
+
+```bash
+export SCRIPT_ENGINE_USE_CUSTOM_VENV=true
+export SCRIPT_ENGINE_CUSTOM_VENV_PATH=/opt/venvs/trendz_venv/bin/python3
+```
+{: .copy-code}
+
+## Step 7. Run installation script
 
 Once Trendz service is installed and DB configuration is updated, you can execute the following script:
 
@@ -131,7 +189,7 @@ sudo /usr/share/trendz/bin/install/install.sh
 ```
 {: .copy-code} 
 
-## Step 7. Start Trendz service
+## Step 8. Start Trendz service
 
 Execute the following command to start Trendz Analytics:
 
@@ -155,33 +213,6 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
-
-## Step 8. Install Trendz Python executor
-For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed. 
-Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
-But in this section we will write how to install Python libraries directly on the server with Trendz.
-
-* Install Python3
-```bash
-sudo apt update
-sudo apt install python3
-sudo apt install python3-pip
-```
-{: .copy-code}
-
-* Install required python packages
-```bash
-echo "flask == 2.3.2" > requirements.txt
-echo "numpy == 1.24.1" >> requirements.txt
-echo "statsmodels == 0.13.5" >> requirements.txt
-echo "pandas == 1.5.3" >> requirements.txt
-echo "scikit-learn == 1.2.2" >> requirements.txt
-echo "prophet == 1.1.3" >> requirements.txt
-echo "seaborn == 0.12.2" >> requirements.txt
-echo "pmdarima == 2.0.3" >> requirements.txt
-sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
-```
-{: .copy-code}
 
 ## Step 9. HTTPS configuration
 

@@ -72,19 +72,27 @@ trendz-assistance-add-chat-widget:
 
 trendz-assistance-ai-chat-interaction:
   0:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-2.png
-    title: Click on the desired asset, then click START AI CHAT
+    image: /images/trendz/ai/chat-widget/ai-chat-interaction-1.png
+    title: Click on the desired asset, then click "START AI CHAT".
   1:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-3.png
+    image: /images/trendz/ai/chat-widget/ai-chat-interaction-2.png
     title: In the pop-up window, ask questions about the selected asset.
   2:
+    image: /images/trendz/ai/chat-widget/ai-chat-interaction-3.png
+    title: See the result.
+  3:
     image: /images/trendz/ai/chat-widget/ai-chat-interaction-4.png
-    title: In the pop-up window, ask questions about the selected asset.
-    
-trendz-assistance-chat-dashboard-origin:
-  0: 
-    image: /images/trendz/ai/chat-widget/chat-dashboard-origin.png
-    title: It’s possible to check messages or save generated views in the Chats Tab, choosing chats with Dashboard Origin.
+    title: The current version of the AI Assistant supports memory and ongoing conversations, so you can ask follow-up questions or provide additional specifications.
+  4:
+    image: /images/trendz/ai/chat-widget/ai-chat-interaction-5.png
+    title: To start a new conversation, click the "New Conversation" button.
+  5:
+    image: /images/trendz/ai/chat-widget/ai-chat-interaction-6.png
+    title: You can always return to a previous conversations using the dropdown under the "Current Chat" label.
+  6:
+    image: /images/trendz/ai/chat-widget/ai-chat-interaction-7.png
+    title: You can view messages or save generated views in the "Chats" tab by selecting chats with a "Dashboard Origin".
+
 ---
 
 * TOC
@@ -162,15 +170,17 @@ Below, we will provide a detailed guide on how to use the assistant with aliases
 {% include images-gallery.html imageCollection="trendz-assistance-add-chat-widget" %}
 
 ### Step 5. Interacting with AI Chat
-  * Click on the desired asset, then click **START AI CHAT**.
-  * In the pop-up window, ask questions about the selected asset.
+* Click on the desired asset, then click **START AI CHAT**.
+* In the pop-up window, ask questions about the selected asset.
+* The current version of the AI Assistant supports memory and ongoing conversations, so you can ask follow-up questions or provide additional specifications.
+* To start a new conversation, click the **New Conversation** button.
+* You can always return to a previous conversations using the dropdown under the **Current Chat** label.
+* You can view messages or save generated views in the **Chats** tab by selecting chats with a **Dashboard Origin**.
 
 {% include images-gallery.html imageCollection="trendz-assistance-ai-chat-interaction" %}
 
-It’s possible to check messages or save generated views in the Chats Tab, choosing chats with Dashboard Origin.
-
-{% include images-gallery.html imageCollection="trendz-assistance-chat-dashboard-origin" %}
+You can find out more about the AI Assistant chat [here](/docs/trendz/ai-assistance-overview/).
 
 ## Next Steps
 
-{% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}
+{% assign currentGuide = "AiAssistant" %}{% include templates/trndz-guides-banner.md %}
