@@ -1,28 +1,31 @@
 ---
 layout: docwithnav-trendz
-title: Custom AI Model Configuration
-description: Step-by-step guide how to configure custom AI model.
+title: Large Language Model (LLM) Configuration
+description: Step-by-step guide how to configure Large Language Model (LLM).
 
 trendz-assistance-use-own-model:
   0:
-    image: https://img.thingsboard.io/trendz/ai/use-own-model-1.png
+    image: /images/trendz/ai/ai-model-configuration/use-own-model-1.png
     title: To enable/configure your own model, it’s necessary to go Setting -> General -> AI Assistance
 
 trendz-assistance-ai-models:
   0:
-    image: https://img.thingsboard.io/trendz/ai/ai-google-model.png
+    image: /images/trendz/ai/ai-model-configuration/ai-google-model.png
     title: Google (Recommended)
   1:
-    image: https://img.thingsboard.io/trendz/ai/ai-openai-model.png
+    image: /images/trendz/ai/ai-model-configuration/ai-openai-model.png
     title: Open AI
   2:
-    image: https://img.thingsboard.io/trendz/ai/ai-aws-model.png
+    image: /images/trendz/ai/ai-model-configuration/ai-aws-model.png
     title: Amazon Bedrock
+  3:
+    image: /images/trendz/ai/ai-model-configuration/ai-custom-model.png
+    title: Other Models (Custom)
 ---
 * TOC
 {:toc}
 
-To enable the AI Assistance feature on the self-hosted Trendz application, or to not be related to the provided by cloud token limits, it is possible to configure your own large language model.
+To enable the AI features on the self-hosted Trendz application, or to not be related to the provided by cloud token limits, it is possible to configure your own large language model.
 
 To enable/configure your own model, it’s necessary to go: *Setting* -> *General* -> *AI Assistant*
 {% include images-gallery.html imageCollection="trendz-assistance-use-own-model" %}
@@ -36,6 +39,11 @@ Currently, Trendz could be integrated with the following models:
 * OPEN_AI
 * AMAZON_BEDROCK
 * GOOGLE
+* CUSTOM (OpenAI API)
+
+{% include images-gallery.html imageCollection="trendz-assistance-ai-models" %}
+
+⚠️ *Note*: to save any changes in the configuration it’s necessary to press the “Save” button.
 
 ## Google (Recommended):
 
@@ -67,6 +75,9 @@ Supported models:
   * Input (1m) token price: 0.15$
   * Output (1m) token price: 0.6$
 * o3-mini (Recommended - cost efficiency, high performance but slow speed)
+  * Input (1m) token price: 1.1$
+  * Output (1m) token price: 4.4$
+* o4-mini (Recommended - cost efficiency, high performance but slow speed)
   * Input (1m) token price: 1.1$
   * Output (1m) token price: 4.4$
 
@@ -107,10 +118,11 @@ Supported models:
     * Input (1m) token price: 3$
     * Output (1m) token price: 12$
 
-{% include images-gallery.html imageCollection="trendz-assistance-ai-models" %}
+## Other Models (Custom)
 
-⚠️ *Note*: to save any changes in the configuration it’s necessary to press the “Save” button.
+It’s possible to connect any model that supports the OpenAI API standard. To do this, choose the *Custom* provider,  
+enter the model URL, model name, and API key.
 
 ## Next Steps
 
-{% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}
+{% assign currentGuide = "AiAssistant" %}{% include templates/trndz-guides-banner.md %}

@@ -418,11 +418,14 @@
           left: -100%
           top: 0
 
+        margin-left: -1000px
         .widgets-slide
           display: inline-block
           animation: 25s widgetsSlide infinite linear
           img
             height: 417px
+            transform: translateZ(0)
+
       .visualize-with-tb
         display: flex
         flex-direction: column
@@ -652,6 +655,6 @@
 
 @keyframes widgetsSlide
   from
-    transform: translateX(0)
+    transform: translateX(0) translateZ(0)
   to
-    transform: translateX(-100%)
+    transform: translateX(-100%) translateZ(0)
