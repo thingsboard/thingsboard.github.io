@@ -43,6 +43,8 @@ toc:
       path: /docs/edge/config/deploying-edge-alongside-iot-gateway/
     - title: Installing Edge Behind a Proxy
       path: /docs/edge/config/edge-behind-proxy/
+    - title: Edge Cluster Setup
+      path: /docs/edge/config/edge-cluster-setup/
 - title: Rule Engine
   section:
     - title: Rule Chain Templates
