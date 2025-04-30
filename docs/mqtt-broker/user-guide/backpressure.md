@@ -168,6 +168,24 @@ ensuring that once any subscriber becomes writable and rejoins the group, messag
 
 This approach ensures that TBMQ maintains performance, reliability, and resource efficiency even when handling shared subscriptions under pressure. Each strategy is tailored to the persistence level of the clients in the group.
 
+## Recommendations
+
+To maximize the effectiveness of TBMQ’s backpressure handling and ensure system resilience under variable load, we recommend the following:
+
+- **Monitor the number of non-writable clients**: Track the number of clients currently under outbound backpressure using the `nonWritableClients` counter. 
+This metric is available both in logs and through the monitoring system (e.g., Prometheus). 
+For production environments, it's recommended to set up alerts when the value increases unexpectedly or stays elevated over time.
+
+- **Start with Default Backpressure Settings**: For most deployments, the default Netty buffer thresholds — 32 KB low watermark and 64 KB high watermark — provide robust performance. 
+These settings have been tested to support **around 10,000 messages per second per subscriber** under typical conditions.
+
+- **Ensure Sufficient Redis and Kafka Capacity**: Persistent client buffering relies on Redis and Kafka. Monitor their memory, disk, and throughput to avoid secondary bottlenecks.
+
+- **Use Horizontal Scaling**: For sustained high throughput, scale broker nodes horizontally. Backpressure is not a substitute for adequate compute and I/O resources.
+
+- **Test Under Load**: Perform load testing with simulated slow and fast consumers to validate how your configuration handles backpressure in real scenarios.
+
+By following these practices, you can take full advantage of TBMQ’s backpressure handling mechanisms, ensuring reliable operation, efficient resource usage, and high performance even in demanding MQTT workloads.
 
 ## Conclusion
 
