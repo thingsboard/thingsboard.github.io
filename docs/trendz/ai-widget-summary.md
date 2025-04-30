@@ -5,66 +5,66 @@ description: Step-by-step guide to set up AI Widget Summary.
 
 trendz-js-summary-module-install:
   0:
-    image: /images/trendz/ai/widget-ai-summary/install-trendz-js-module-1.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/install-trendz-js-module-1.png
     title: Open the Settings page in the Trendz App and click the Upload Module button.
   1:
-    image: /images/trendz/ai/widget-ai-summary/install-trendz-js-module-2.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/install-trendz-js-module-2.png
     title: Confirm that the module has been uploaded successfully and appears in the list.
     
 trendz-summary-custom-action:
   0:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-1.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-1.png
     title: Open the dashboard containing the widget you want to enhance and switch to Edit mode.
   1:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-2.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-2.png
     title: Open the widget settings.
   2:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-3.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-3.png
     title: Navigate to the Actions tab and add new action.
   3:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-4.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-4.png
     title: Select Custom action as action type.
   4:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-5.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-5.png
     title: If you're on **v3.9+**, select the uploaded **Trendz Summary Module**..
   5:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-6.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-6.png
     title: If you're on **v3.6–v3.8**, paste the custom JavaScript code manually.
   6:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-7.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-7.png
     title: Inside the action, call the `getAnalytics()` method.
   7:
-    image: /images/trendz/ai/widget-ai-summary/trendz-summary-action-8.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-summary-action-8.png
     title: After configuring the action, a header button will appear on your widget. When you click this button, a dialog window will open, showing a summary generated based on your widget's data and the Trendz prompt.    
 
 trendz-ai-summary-trendz-widget-example:
   0:
-    image: /images/trendz/ai/widget-ai-summary/trendz-widget-example-1.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-widget-example-1.png
     title: 1. Press the "AI summary" button in the upper corner of the widget.
   1:
-    image: /images/trendz/ai/widget-ai-summary/trendz-widget-example-2.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-widget-example-2.png
     title: 2. See view the AI summary at the top of the Trendz widget.
 
 trendz-ai-summary-trendz-enable-button:
   0:
-    image: /images/trendz/ai/widget-ai-summary/trendz-setting-common.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-setting-common.png
     title: Open the desired view. Go to "View Settings".
   1:
-    image: /images/trendz/ai/widget-ai-summary/trendz-enable-button-1.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-enable-button-1.png
     title: Go to the "View Mode Fields" section. Choose the preferred mode to show or hide the AI Summary button.
   2:
-    image: /images/trendz/ai/widget-ai-summary/trendz-enable-button-2.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-enable-button-2.png
     title: Save the changes.
 
 trendz-ai-summary-trendz-set-up-prompt:
   0:
-    image: /images/trendz/ai/widget-ai-summary/trendz-setting-common.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-setting-common.png
     title: Open the desired view. Go to "View Settings".
   1:
-    image: /images/trendz/ai/widget-ai-summary/trendz-set-up-prompt-1.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-set-up-prompt-1.png
     title: Go to the "AI Assistant" section. Choose the preferred prompt from the dropdown menu. 
   2:
-    image: /images/trendz/ai/widget-ai-summary/trendz-set-up-prompt-2.png
+    image: https://img.thingsboard.io/trendz/ai/widget-ai-summary/trendz-set-up-prompt-2.png
     title: Save the changes.
 ---
 

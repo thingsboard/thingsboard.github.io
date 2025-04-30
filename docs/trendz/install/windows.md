@@ -140,7 +140,7 @@ Download and install Python 3.11.0 from the [official Python website](https://ww
 Download the Windows installer (64-bit) file and run it. When you see this window, select all proposed checkboxes.
 The administrator rights will be requested.
 
-![image](/images/trendz/install/windows/windows-python-1.png)
+![image](https://img.thingsboard.io/trendz/install/windows/windows-python-1.png)
 
 Check the Python is installed by launching the command:
 
@@ -255,11 +255,11 @@ If you want to make a clean installation, you need to remove all previous versio
 
 Click on **Start**, then go to **Control Panel** → **Programs** → **Programs and Features**, find Python and Python Launcher, and remove them.
 
-![image](/images/trendz/install/windows/windows-python-2.png)
+![image](https://img.thingsboard.io/trendz/install/windows/windows-python-2.png)
 
 You will see the uninstallation window like this:
 
-![image](/images/trendz/install/windows/windows-python-3.png)
+![image](https://img.thingsboard.io/trendz/install/windows/windows-python-3.png)
 
 * **2. Uninstall Python from Chocolatey**
 
@@ -273,14 +273,14 @@ If you want to be sure no remnants are left, you can also check for:
 **`C:\ProgramData\chocolatey\lib\python*`**
 and delete it manually if needed.
 
-![image](/images/trendz/install/windows/windows-python-4.png)
+![image](https://img.thingsboard.io/trendz/install/windows/windows-python-4.png)
 
 * **3. Remove aliases**
 
 Also, you need to switch off the Python aliases that can cause issues with working with Python in the command line.
 For this purpose, you need to go to **Settings** → **Apps** → **Advanced app settings** → **App execution aliases** and find all items related to Python and switch them off.
 
-![image](/images/trendz/install/windows/windows-python-5.png)
+![image](https://img.thingsboard.io/trendz/install/windows/windows-python-5.png)
 
 * **4. Remove remaining folders**
 
@@ -293,7 +293,7 @@ Make sure to delete the following folders along with all of their contents:
 
 Now, if you type “python” in the command line, you will get an error output like this one.
 
-![image](/images/trendz/install/windows/windows-python-6.png)
+![image](https://img.thingsboard.io/trendz/install/windows/windows-python-6.png)
 
 ## Step 7. Run installation script
 

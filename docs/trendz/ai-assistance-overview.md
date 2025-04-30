@@ -5,168 +5,168 @@ description: Step-by-step guide to interact with Trendz AI Assistant.
 
 trendz-assistance-overview:
   0:
-    image: /images/trendz/ai/overview-1.png
+    image: https://img.thingsboard.io/trendz/ai/overview-1.png
     title: 1. Press “New Chat”
   1:
-    image: /images/trendz/ai/overview-2.png
+    image: https://img.thingsboard.io/trendz/ai/overview-2.png
     title: 2. Here you will see the popup with business entity selection - here you can define the entities that will be considered by AI for the current conversation. Select business entities that will be used for this chat (It’s possible to always modify them). Click “Save” to apply selections.
   2:
-    image: /images/trendz/ai/overview-3.png
+    image: https://img.thingsboard.io/trendz/ai/overview-3.png
     title: 3. Write and send the question.
   3:
-    image: /images/trendz/ai/overview-4.png
+    image: https://img.thingsboard.io/trendz/ai/overview-4.png
     title: 4. See the result.
   4:
-    image: /images/trendz/ai/overview-5.png
+    image: https://img.thingsboard.io/trendz/ai/overview-5.png
     title: 5. If needed, write and send additional specifications to refine the response.
 
 trendz-assistance-capabilities-visualization:
   0:
-    image: /images/trendz/ai/capabilities/1-simple-table.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/1-simple-table.png
     title: Table (without dynamic columns)
   1:
-    image: /images/trendz/ai/capabilities/2-dynamic-table.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/2-dynamic-table.png
     title: Table (with dynamic columns)
   2:
-    image: /images/trendz/ai/capabilities/3-line.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/3-line.png
     title: Line Chart
   3:
-    image: /images/trendz/ai/capabilities/4-pie.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/4-pie.png
     title: Pie Chart
   4:
-    image: /images/trendz/ai/capabilities/5-bar.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/5-bar.png
     title: Vertical Bar Chart
   5:
-    image: /images/trendz/ai/capabilities/6-stacked-bar.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/6-stacked-bar.png
     title: Stacked Bar Chart
   6:
-    image: /images/trendz/ai/capabilities/7-horizontal-bar.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/7-horizontal-bar.png
     title: Horizontal Bar Chart
   7:
-    image: /images/trendz/ai/capabilities/8-scatter-plot.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/8-scatter-plot.png
     title: Scatter Plot
   8:
-    image: /images/trendz/ai/capabilities/9-heatmap.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/9-heatmap.png
     title: Heatmap
   9:
-    image: /images/trendz/ai/capabilities/10-heatmap-calendar.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/10-heatmap-calendar.png
     title: Heatmap Calendar
   10:
-    image: /images/trendz/ai/capabilities/11-card.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/11-card.png
     title: Card
   11:
-    image: /images/trendz/ai/capabilities/12-card-with-line.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/12-card-with-line.png
     title: Card With Line
 
 trendz-assistance-capabilities-date-picker:
   0:
-    image: /images/trendz/ai/capabilities/13-date-picker.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/13-date-picker.png
     title: Apply a date picker
 
 trendz-assistance-capabilities-date-fields:
   0:
-    image: /images/trendz/ai/capabilities/14-date-fields.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/14-date-fields.png
     title: Use date fields
 
 trendz-assistance-capabilities-view-name:
   0:
-    image: /images/trendz/ai/capabilities/15-view-name.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/15-view-name.png
     title: Assign a name for each column and visualization
 
 trendz-assistance-capabilities-filter:
   0:
-    image: /images/trendz/ai/capabilities/16-filter.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/16-filter.png
     title: Add filters
 
 trendz-assistance-capabilities-foreign-language:
   0:
-    image: /images/trendz/ai/capabilities/17-foreign-language.png
+    image: https://img.thingsboard.io/trendz/ai/capabilities/17-foreign-language.png
     title: Answer questions in different languages
 
 trendz-assistance-chat-page:
   0:
-    image: /images/trendz/ai/chat-page-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-page-1.png
     title: The chat history will be shown on the left side of the screen (1). The visualization of the previously asked in this chat question will be located on the right side of the screen (2).
   1:
-    image: /images/trendz/ai/chat-page-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-page-2.png
     title: If it is necessary it is possible to change the generated time range.
   2:
-    image: /images/trendz/ai/chat-page-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-page-3.png
     title: If it is necessary it is possible to change or remove generated filters.
 
 trendz-assistance-send-new-msg:
   0:
-    image: /images/trendz/ai/send-message-1.png
+    image: https://img.thingsboard.io/trendz/ai/send-message-1.png
     title: You can type your message, and send it by clicking the *Send* icon on the right side of the input field.
   1:
-    image: /images/trendz/ai/send-message-2.png
+    image: https://img.thingsboard.io/trendz/ai/send-message-2.png
     title: See the result.
 
 trendz-assistance-edit-msg:
   0:
-    image: /images/trendz/ai/edit-message-1.png
+    image: https://img.thingsboard.io/trendz/ai/edit-message-1.png
     title: Press on the pencil icon on the left of the last message.
   1:
-    image: /images/trendz/ai/edit-message-2.png
+    image: https://img.thingsboard.io/trendz/ai/edit-message-2.png
     title: After that, it’s necessary to modify the selected message by typing inside it. You can confirm or cancel the change by pressing the buttons on the right side of the message.
   2:
-    image: /images/trendz/ai/edit-message-3.png
+    image: https://img.thingsboard.io/trendz/ai/edit-message-3.png
     title: See the result.
 
 trendz-assistance-check-msg:
   0:
-    image: /images/trendz/ai/check-message-1.png
+    image: https://img.thingsboard.io/trendz/ai/check-message-1.png
     title: You can check on of the previous messages by pressing on it. After the previously generated view/answer will appear on the right side of the screen.
 
 trendz-assistance-rerun-answer:
   0:
-    image: /images/trendz/ai/rerun-answer.png
+    image: https://img.thingsboard.io/trendz/ai/rerun-answer.png
     title: Click the "Refresh" button at the top right of the message block to regenerate the assistant's answer.
 
 trendz-assistance-check-interpretation:
   0:
-    image: /images/trendz/ai/check-interpretation-1.png
+    image: https://img.thingsboard.io/trendz/ai/check-interpretation-1.png
     title: You can click the "Assistant's Interpretation" label at the top left of the message.
   1:
-    image: /images/trendz/ai/check-interpretation-2.png
+    image: https://img.thingsboard.io/trendz/ai/check-interpretation-2.png
     title: See the interpretation.
 
 trendz-assistance-save-config:
   0:
-    image: /images/trendz/ai/chat-save-config-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-save-config-1.png
     title: Press the “Save config” button.
   1:
-    image: /images/trendz/ai/chat-save-config-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-save-config-2.png
     title: Choose the view collection where you want to save the generated view config and click the "Save" button.
 
 trendz-assistance-check-view-config:
   0:
-    image: /images/trendz/ai/check-view-config-1.png
+    image: https://img.thingsboard.io/trendz/ai/check-view-config-1.png
     title: Click the "See Details" button at the top right of the screen to review the generated view.
   1:
-    image: /images/trendz/ai/check-view-config-2.png
+    image: https://img.thingsboard.io/trendz/ai/check-view-config-2.png
     title: Click the "Settings" button in the top right corner of the screen to access additional settings.
   2:
-    image: /images/trendz/ai/check-view-config-3.png
+    image: https://img.thingsboard.io/trendz/ai/check-view-config-3.png
     title: Click the "Back" button to exit this tab.
 
 trendz-assistance-generate-chat-summary:
   0:
-    image: /images/trendz/ai/generate-chat-summary-1.png
+    image: https://img.thingsboard.io/trendz/ai/generate-chat-summary-1.png
     title: Click the "Get Chat Summary" button at the top right of the screen.
   1:
-    image: /images/trendz/ai/generate-chat-summary-2.png
+    image: https://img.thingsboard.io/trendz/ai/generate-chat-summary-2.png
     title: The chat summary will appear at the top of the screen.
 
 trendz-assistance-topology:
   0:
-    image: /images/trendz/ai/chat-topology-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-topology-1.png
     title: You can access the Topology Entities tab by starting a new chat or by clicking on the selected business entities next to the Topology Entities label in the upper left corner of the screen.
   1:
-    image: /images/trendz/ai/chat-topology-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-topology-2.png
     title: Specify which business entities or business entity fields AI Assistance needs to know.
   2:
-    image: /images/trendz/ai/chat-topology-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-topology-3.png
     title: It is also possible to specify the description for a business entity or its fields.
 ---
 
@@ -178,7 +178,7 @@ different visualizations according to the request given in the free-speech form 
 like date range, time grouping, aggregation, filtering, etc.
 
 To interact with the AI Assistant, follow these simple steps:
-1. To access AI Assistance, click on the icon![image](/images/trendz/ai/overview-ai-assistance-icon.png) labeled *Assistant*
+1. To access AI Assistance, click on the icon![image](https://img.thingsboard.io/trendz/ai/overview-ai-assistance-icon.png) labeled *Assistant*
    located on the left side of the workspace. Press **New Chat**.
 2. Here you will see the popup with business entity selection - here you can define the entities that will be considered
    by AI for the current conversation. Select **business entities** that will be used for this chat (It’s possible to always modify them).
