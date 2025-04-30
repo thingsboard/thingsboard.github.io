@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-paas
-title: LORIOT Integration 
-description: LORIOT Integration Guide 
+title: Loriot integration
+description: Loriot integration guide
+
 register:
     0:
         image: /images/user-guide/integrations/loriot/loriot_register.png

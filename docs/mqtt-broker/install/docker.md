@@ -88,13 +88,16 @@ docker compose start
 
 ## Upgrading
 
-Review the [release notes](/docs/mqtt-broker/releases/) and [upgrade instruction](/docs/mqtt-broker/install/upgrade-instructions/) 
-for detailed information on the latest changes.
+{% include templates/mqtt-broker/upgrade/upgrading.md %}
 
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade. 
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/msa/tbmq/configs/README.md).
+
+### Upgrade to 2.1.0
+
+{% include templates/mqtt-broker/upgrade/update-to-2.1.0-release.md %}
 
 ### Upgrade to 2.0.0
 
@@ -103,7 +106,11 @@ For the TBMQ 2.0.0 release, the installation scripts have been updated to includ
 Please update your `docker-compose.yml` file to incorporate the Redis settings. 
 You can review the necessary changes by visiting the following [link](https://github.com/thingsboard/tbmq/pull/142/files#diff-18a10097b03fb393429353a8f84ba29498e9b72a21326deb9809865d384e2800).
 
-Here is the complete docker compose file with the Redis configuration prior to the upgrade:
+<br>
+<details markdown="1">
+<summary>
+Here is the complete docker compose file with the Redis configuration prior to the upgrade
+</summary>
 
 ```yaml
 #
@@ -197,6 +204,9 @@ volumes:
 ```
 {: .copy-code}
 
+</details>
+<br>
+
 Additionally, add the following line to your `tbmq-install-and-run.sh` script (locate `create_volume_if_not_exists` lines) to create a volume for Redis data:
 
 ```bash
@@ -218,12 +228,8 @@ Once this is done, run the script to apply the changes:
 ```
 {: .copy-code}
 
-This will restart TBMQ with Redis enabled. Afterward, you can proceed with the upgrade process.
+This will restart TBMQ with Redis enabled. Afterward, you can proceed with the [upgrade process](#run-upgrade).
 Please [contact us](https://github.com/thingsboard/tbmq/issues), so we can answer any questions and provide our help if needed.
-
-### Upgrade to 1.3.0
-
-{% include templates/mqtt-broker/install/migration.md %}
 
 ### Run upgrade
 
@@ -236,6 +242,8 @@ sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
 {: .copy-code}
 
 **NOTE**: replace `redis_url`, `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
+
+{% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
 
 ## Next steps
 

@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206" height="100" fill="none" viewBox="0 0 206 100">
+  <g class="SCADA-high-perf-section">
+    <g class="tank" style="transform-box: content-box;" transform-origin="right top">
+      <animate xmlns="http://www.w3.org/2000/svg" attributeName="opacity" values="0;1" dur="01s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="replace" fill="freeze"/>
+      <animateTransform xmlns="http://www.w3.org/2000/svg" attributeName="transform" type="scale" values="0.5 0.5;1 1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="sum" fill="freeze"/>
+      <g class="Rectangle 2408">
+        <rect width="81.95" height="81.95" x="124.05" fill="#fff" rx="2.26"/>
+        <rect width="81.58" height="81.58" x="124.24" y=".19" stroke="#3E9AF8" stroke-opacity=".5" stroke-width=".38" rx="2.07"/>
+      </g>
+      <path fill="#EBEBEB" d="M134.3 22.73s0-12.3 14.34-12.3h32.78c14.34 0 14.34 12.3 14.34 12.3V59.6s0 12.29-14.34 12.29h-32.78c-14.34 0-14.34-12.3-14.34-12.3V22.74Z" class="shell"/>
+      <path fill="#C8DFF7" d="M134.3 30.18c0-.68.55-1.23 1.23-1.23h59c.68 0 1.23.55 1.23 1.23V59.6s0 12.29-14.34 12.29h-32.78c-14.34 0-14.34-12.3-14.34-12.3v-29.4Z" class="shell"/>
+      <path fill="#000" fill-opacity=".87" fill-rule="evenodd" d="M195.56 22.73v-.14l-.03-.38a13.4 13.4 0 0 0-1.74-5.53c-1.75-3-5.27-6.04-12.37-6.04h-32.78c-7.1 0-10.62 3.03-12.37 6.04a13.39 13.39 0 0 0-1.77 6.01v37.05a9.3 9.3 0 0 0 .22 1.75 13.4 13.4 0 0 0 1.55 4.16c1.75 3 5.27 6.04 12.37 6.04h32.78c7.1 0 10.62-3.03 12.37-6.04a13.4 13.4 0 0 0 1.77-5.91V22.73Zm.2 36.88s0 12.29-14.34 12.29h-32.78c-14.34 0-14.34-12.3-14.34-12.3V22.74s0-12.3 14.34-12.3h32.78c14.34 0 14.34 12.3 14.34 12.3V59.6Z" class="shell (Stroke)" clip-rule="evenodd"/>
+      <g class="scale">
+        <line x1="151.51" x2="154.79" y1="10.69" y2="10.69" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 53"/>
+        <line x1="152.74" x2="154.79" y1="11.91" y2="11.91" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 52"/>
+        <line x1="152.74" x2="154.79" y1="13.12" y2="13.12" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 51"/>
+        <line x1="152.74" x2="154.79" y1="14.34" y2="14.34" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 50"/>
+        <line x1="152.74" x2="154.79" y1="15.56" y2="15.56" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 49"/>
+        <line x1="151.51" x2="154.79" y1="16.77" y2="16.77" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="17.99" y2="17.99" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="19.21" y2="19.21" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="20.42" y2="20.42" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="21.64" y2="21.64" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="22.86" y2="22.86" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="24.08" y2="24.08" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="25.29" y2="25.29" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="26.51" y2="26.51" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="27.73" y2="27.73" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="28.94" y2="28.94" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="30.16" y2="30.16" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="31.38" y2="31.38" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="32.6" y2="32.6" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="33.81" y2="33.81" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="35.03" y2="35.03" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="36.25" y2="36.25" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="37.46" y2="37.46" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="38.68" y2="38.68" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="39.9" y2="39.9" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="41.11" y2="41.11" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="42.33" y2="42.33" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="43.55" y2="43.55" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="44.77" y2="44.77" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="45.98" y2="45.98" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="47.2" y2="47.2" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="48.42" y2="48.42" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="49.63" y2="49.63" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="50.85" y2="50.85" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="52.07" y2="52.07" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="53.28" y2="53.28" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="54.5" y2="54.5" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="55.72" y2="55.72" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="56.94" y2="56.94" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="58.15" y2="58.15" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="59.37" y2="59.37" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="60.59" y2="60.59" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="61.8" y2="61.8" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="63.02" y2="63.02" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="64.24" y2="64.24" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="65.45" y2="65.45" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <line x1="152.74" x2="154.79" y1="66.67" y2="66.67" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 46"/>
+        <line x1="152.74" x2="154.79" y1="67.89" y2="67.89" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 45"/>
+        <line x1="152.74" x2="154.79" y1="69.11" y2="69.11" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 48"/>
+        <line x1="152.74" x2="154.79" y1="70.32" y2="70.32" stroke="#000" stroke-opacity=".12" stroke-width=".31" class="Line 44"/>
+        <line x1="151.51" x2="154.79" y1="71.54" y2="71.54" stroke="#000" stroke-opacity=".38" stroke-width=".31" class="Line 40"/>
+        <path fill="#000" fill-opacity=".38" d="M147.85 10.68v1.75h-.28v-1.4l-.43.14v-.24l.68-.25h.03Zm1.78.73v.29c0 .13-.02.25-.04.35a.62.62 0 0 1-.12.23.45.45 0 0 1-.18.13.67.67 0 0 1-.43.02.47.47 0 0 1-.28-.23.83.83 0 0 1-.07-.21 1.38 1.38 0 0 1-.03-.3v-.28c0-.14.02-.25.04-.35.03-.1.07-.17.12-.23a.4.4 0 0 1 .18-.13.65.65 0 0 1 .23-.04c.07 0 .14 0 .2.03a.44.44 0 0 1 .27.22.7.7 0 0 1 .08.21c.02.09.03.18.03.3Zm-.3.33v-.55l-.04-.14a.27.27 0 0 0-.06-.1.2.2 0 0 0-.08-.04.27.27 0 0 0-.1-.02c-.04 0-.08 0-.12.03a.22.22 0 0 0-.09.08.43.43 0 0 0-.05.15l-.02.22v.37l.01.18.04.14c.02.04.03.07.06.1l.08.05.1.02.12-.03a.22.22 0 0 0 .09-.08.46.46 0 0 0 .05-.16l.02-.22Zm1.72-.33v.29c0 .13-.01.25-.04.35a.62.62 0 0 1-.11.23.45.45 0 0 1-.19.13.67.67 0 0 1-.43.02.47.47 0 0 1-.27-.23.83.83 0 0 1-.08-.21 1.38 1.38 0 0 1-.03-.3v-.28c0-.14.02-.25.04-.35.03-.1.07-.17.12-.23.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04.4.4 0 0 1 .19.03.44.44 0 0 1 .28.22.7.7 0 0 1 .07.21c.02.09.03.18.03.3Zm-.29.33v-.37l-.01-.18c0-.06-.02-.1-.04-.14a.27.27 0 0 0-.05-.1.2.2 0 0 0-.08-.04.27.27 0 0 0-.1-.02c-.05 0-.09 0-.12.03a.22.22 0 0 0-.1.08.43.43 0 0 0-.05.15l-.02.22v.37c0 .07 0 .13.02.18 0 .06.02.1.03.14l.06.1.08.05.1.02c.05 0 .09-.01.12-.03a.22.22 0 0 0 .09-.08.46.46 0 0 0 .05-.16l.02-.22Z" class="100"/>
+        <path fill="#000" fill-opacity=".38" d="M148.23 18.09h.03c.1 0 .2-.02.27-.05a.44.44 0 0 0 .28-.3.88.88 0 0 0 .02-.23v-.3a.7.7 0 0 0-.02-.19.38.38 0 0 0-.06-.14.27.27 0 0 0-.1-.08.23.23 0 0 0-.1-.03.24.24 0 0 0-.12.03.26.26 0 0 0-.1.08.4.4 0 0 0-.05.12.55.55 0 0 0 0 .29.4.4 0 0 0 .06.11c.02.04.05.07.08.09a.3.3 0 0 0 .25 0 .33.33 0 0 0 .16-.17.32.32 0 0 0 .03-.11l.11.03a.4.4 0 0 1-.04.18.56.56 0 0 1-.26.28.5.5 0 0 1-.41 0 .46.46 0 0 1-.16-.14.57.57 0 0 1-.09-.18.8.8 0 0 1 0-.46.57.57 0 0 1 .12-.2.5.5 0 0 1 .18-.13.57.57 0 0 1 .24-.05c.09 0 .17.02.24.06a.5.5 0 0 1 .18.15.7.7 0 0 1 .12.23c.02.08.03.18.03.27v.1c0 .1 0 .2-.03.3a.97.97 0 0 1-.09.27.71.71 0 0 1-.4.36c-.1.03-.21.05-.34.05h-.03v-.24Zm2.33-.8v.3c0 .13-.01.24-.04.34a.61.61 0 0 1-.11.24.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.29v-.28c0-.14.02-.26.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.14a.65.65 0 0 1 .24-.04c.07 0 .13.01.19.03a.46.46 0 0 1 .28.22 1.36 1.36 0 0 1 .1.5Zm-.29.33v-.55l-.05-.14a.29.29 0 0 0-.05-.09.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.02.21.21 0 0 0-.12.03.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.56l.04.14.06.09.08.05.1.02c.05 0 .09 0 .12-.03a.22.22 0 0 0 .1-.08.46.46 0 0 0 .04-.15c.02-.07.02-.14.02-.23Z" class="90"/>
+        <path fill="#000" fill-opacity=".38" d="M149.14 23.72a.5.5 0 0 1-.07.28.47.47 0 0 1-.21.17.72.72 0 0 1-.3.05c-.1 0-.2-.02-.29-.05a.47.47 0 0 1-.2-.17.47.47 0 0 1-.08-.28.45.45 0 0 1 .16-.35.56.56 0 0 1 .19-.1.73.73 0 0 1 .22-.03.7.7 0 0 1 .3.06c.09.04.16.1.2.17.06.07.08.16.08.25Zm-.29-.01a.32.32 0 0 0-.03-.16.26.26 0 0 0-.1-.1.3.3 0 0 0-.16-.03.3.3 0 0 0-.15.03.26.26 0 0 0-.1.1.33.33 0 0 0-.03.16c0 .06.01.1.03.15.03.04.06.08.1.1.05.02.1.03.16.03s.1 0 .15-.03a.24.24 0 0 0 .1-.1c.02-.04.03-.1.03-.15Zm.25-.8a.4.4 0 0 1-.07.23.47.47 0 0 1-.19.17.64.64 0 0 1-.27.05c-.1 0-.2-.02-.28-.05a.47.47 0 0 1-.2-.17.4.4 0 0 1-.06-.23.44.44 0 0 1 .26-.43.65.65 0 0 1 .28-.05c.1 0 .2.02.27.05.08.04.15.1.2.17.04.07.06.16.06.26Zm-.29.01c0-.05 0-.1-.03-.14a.22.22 0 0 0-.08-.09.25.25 0 0 0-.13-.03c-.05 0-.1 0-.13.03a.22.22 0 0 0-.09.09.3.3 0 0 0-.03.14c0 .05.01.1.03.14.02.04.05.07.09.1.03.02.08.03.13.03s.1-.01.13-.04a.23.23 0 0 0 .08-.09.31.31 0 0 0 .03-.14Zm1.75.26v.28c0 .14-.01.26-.04.36a.61.61 0 0 1-.11.23.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.29v-.28c0-.14.02-.25.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04c.07 0 .13 0 .19.02a.46.46 0 0 1 .28.23 1.23 1.23 0 0 1 .1.5Zm-.29.33v-.56l-.05-.13a.29.29 0 0 0-.05-.1.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.01c-.05 0-.09 0-.12.02a.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.23v.55l.04.14.06.1a.2.2 0 0 0 .08.05l.1.01c.05 0 .09 0 .12-.02a.22.22 0 0 0 .1-.09.46.46 0 0 0 .04-.15c.02-.06.02-.14.02-.22Z" class="80"/>
+        <path fill="#000" fill-opacity=".38" d="M149.16 28.33v.16l-.7 1.6h-.3l.7-1.52h-.91v-.24h1.21Zm1.4.73v.29c0 .13-.01.25-.04.35a.61.61 0 0 1-.11.23.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.21 1.38 1.38 0 0 1-.03-.3v-.28c0-.14.02-.25.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04c.07 0 .13.01.19.03a.46.46 0 0 1 .28.22 1.32 1.32 0 0 1 .1.51Zm-.29.33v-.55l-.05-.14a.29.29 0 0 0-.05-.1.2.2 0 0 0-.08-.04.28.28 0 0 0-.1-.02c-.05 0-.09 0-.12.03a.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.55l.04.14.06.1a.2.2 0 0 0 .08.05l.1.02c.05 0 .09-.01.12-.03a.22.22 0 0 0 .1-.08.46.46 0 0 0 .04-.16c.02-.06.02-.13.02-.22Z" class="70"/>
+        <path fill="#000" fill-opacity=".38" d="M148.87 34.2h.04v.24h-.02c-.1 0-.2.02-.27.05a.5.5 0 0 0-.18.13.56.56 0 0 0-.11.2.8.8 0 0 0-.04.24v.27c0 .07.01.13.03.19.01.05.03.1.06.13a.3.3 0 0 0 .1.08.2.2 0 0 0 .11.03.26.26 0 0 0 .21-.1.36.36 0 0 0 .06-.12.5.5 0 0 0 0-.28.35.35 0 0 0-.06-.11.25.25 0 0 0-.21-.1.3.3 0 0 0-.16.03.34.34 0 0 0-.1.1.27.27 0 0 0-.05.14l-.12-.03.05-.2a.45.45 0 0 1 .26-.25.53.53 0 0 1 .2-.03.44.44 0 0 1 .38.18.75.75 0 0 1 .09.64.55.55 0 0 1-.13.19.5.5 0 0 1-.17.12.59.59 0 0 1-.24.05.56.56 0 0 1-.25-.05.56.56 0 0 1-.19-.15.7.7 0 0 1-.12-.22.86.86 0 0 1-.03-.26v-.12c0-.14.01-.26.05-.38a.92.92 0 0 1 .15-.31.72.72 0 0 1 .27-.21.91.91 0 0 1 .4-.08Zm1.7.75v.28c0 .14-.02.26-.05.35a.61.61 0 0 1-.11.24.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.29v-.28c0-.14.02-.26.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.05c.07 0 .13.01.19.03a.46.46 0 0 1 .28.23c.03.05.06.12.07.2.02.09.03.19.03.3Zm-.3.32v-.55l-.05-.14a.29.29 0 0 0-.05-.09.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.02.21.21 0 0 0-.12.03.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.56l.04.14.06.09.08.05.1.02c.05 0 .09 0 .12-.03a.22.22 0 0 0 .1-.08.46.46 0 0 0 .04-.15c.02-.07.02-.14.02-.23Z" class="60"/>
+        <path fill="#000" fill-opacity=".38" d="m148.3 41.04-.23-.06.1-.88h.94v.25h-.7l-.05.43a.56.56 0 0 1 .28-.08c.08 0 .15.02.22.05.06.02.12.06.16.11.05.05.08.11.1.19a.77.77 0 0 1 0 .47.5.5 0 0 1-.28.31.71.71 0 0 1-.46.01.5.5 0 0 1-.36-.47h.28l.05.15.1.1a.3.3 0 0 0 .14.02c.05 0 .1 0 .13-.02a.23.23 0 0 0 .08-.08.33.33 0 0 0 .06-.11.56.56 0 0 0 0-.29.3.3 0 0 0-.06-.1.25.25 0 0 0-.1-.08.33.33 0 0 0-.14-.03.34.34 0 0 0-.16.03.52.52 0 0 0-.1.08Zm2.26-.21v.28c0 .14-.01.26-.04.36a.61.61 0 0 1-.11.23.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.29v-.28c0-.14.02-.25.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04c.07 0 .13 0 .19.02a.46.46 0 0 1 .28.23 1.23 1.23 0 0 1 .1.5Zm-.29.33v-.56l-.05-.13a.29.29 0 0 0-.05-.1.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.01c-.05 0-.09 0-.12.02a.22.22 0 0 0-.1.09.45.45 0 0 0-.05.14l-.01.23v.55l.04.14.06.1.08.05.1.01c.05 0 .09 0 .12-.02a.22.22 0 0 0 .1-.09.46.46 0 0 0 .04-.15c.02-.06.02-.14.02-.22Z" class="50"/>
+        <path fill="#000" fill-opacity=".38" d="M149.2 47.11v.23h-1.26v-.17l.75-1.18h.23l-.25.42-.43.7h.96Zm-.21-1.12v1.74h-.3V46h.3Zm1.57.72V47c0 .14-.01.25-.04.35a.61.61 0 0 1-.11.23.46.46 0 0 1-.19.14.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.24.8.8 0 0 1-.08-.21 1.38 1.38 0 0 1-.03-.3v-.28c0-.13.02-.25.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04c.07 0 .13.01.19.03a.46.46 0 0 1 .28.22 1.32 1.32 0 0 1 .1.51Zm-.29.33v-.55l-.05-.14a.29.29 0 0 0-.05-.1.2.2 0 0 0-.08-.04.28.28 0 0 0-.1-.02c-.05 0-.09 0-.12.03a.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.56l.04.13.06.1.08.05.1.02c.05 0 .09-.01.12-.03a.23.23 0 0 0 .1-.08.46.46 0 0 0 .04-.16c.02-.06.02-.13.02-.22Z" class="40"/>
+        <path fill="#000" fill-opacity=".38" d="M148.34 52.61h.17a.4.4 0 0 0 .17-.03.23.23 0 0 0 .1-.1.3.3 0 0 0 .03-.14.3.3 0 0 0-.03-.14.2.2 0 0 0-.09-.1.3.3 0 0 0-.15-.03.3.3 0 0 0-.14.04.23.23 0 0 0-.13.21h-.3a.4.4 0 0 1 .08-.24.5.5 0 0 1 .2-.17.64.64 0 0 1 .29-.07c.11 0 .2.02.3.06.08.04.14.1.2.17a.5.5 0 0 1 .06.27l-.03.15a.44.44 0 0 1-.1.14.55.55 0 0 1-.18.1.67.67 0 0 1-.23.04h-.22v-.16Zm0 .23v-.16h.22c.1 0 .19.01.26.04a.4.4 0 0 1 .18.1.5.5 0 0 1 .1.14.52.52 0 0 1-.01.39.44.44 0 0 1-.13.16.55.55 0 0 1-.19.1.78.78 0 0 1-.45 0 .58.58 0 0 1-.18-.1.45.45 0 0 1-.13-.15.48.48 0 0 1-.05-.21h.3c0 .05 0 .1.03.13.02.04.06.07.1.1l.15.03c.06 0 .12-.01.16-.03a.23.23 0 0 0 .1-.1.3.3 0 0 0 .04-.15.31.31 0 0 0-.04-.17.23.23 0 0 0-.12-.1.44.44 0 0 0-.17-.02h-.17Zm2.22-.24v.28c0 .14-.01.26-.04.35a.61.61 0 0 1-.11.24.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.29v-.28c0-.14.02-.26.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.05c.07 0 .13.01.19.03a.46.46 0 0 1 .28.23c.03.05.06.12.07.2.02.1.03.19.03.3Zm-.29.32v-.55l-.05-.14a.29.29 0 0 0-.05-.09.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.02.21.21 0 0 0-.12.03.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.56l.04.14.06.1.08.04.1.02c.05 0 .09 0 .12-.03a.22.22 0 0 0 .1-.08.46.46 0 0 0 .04-.15c.02-.07.02-.14.02-.23Z" class="30"/>
+        <path fill="#000" fill-opacity=".38" d="M149.17 59.27v.23H148v-.2l.57-.62.15-.18.07-.14a.36.36 0 0 0 .03-.12c0-.06-.02-.1-.04-.15a.23.23 0 0 0-.09-.1.26.26 0 0 0-.14-.03.3.3 0 0 0-.16.04.26.26 0 0 0-.1.12.4.4 0 0 0-.03.16h-.3c0-.1.03-.2.08-.27a.5.5 0 0 1 .2-.2c.08-.06.2-.08.31-.08.12 0 .22.02.3.06.09.04.15.1.19.16.04.08.06.16.06.26 0 .05 0 .1-.02.16a.78.78 0 0 1-.08.16l-.11.16-.15.16-.38.42h.81Zm1.4-.79v.29c0 .13-.02.25-.05.35a.61.61 0 0 1-.11.23.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.28v-.29c0-.14.02-.25.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04c.07 0 .13 0 .19.02a.46.46 0 0 1 .28.23 1.23 1.23 0 0 1 .1.5Zm-.3.33v-.56l-.05-.13a.29.29 0 0 0-.05-.1.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.01c-.05 0-.09 0-.12.02a.22.22 0 0 0-.1.09.45.45 0 0 0-.05.14l-.01.23v.55l.04.14.06.1.08.05.1.01c.05 0 .09 0 .12-.02a.22.22 0 0 0 .1-.09.46.46 0 0 0 .04-.15c.02-.06.02-.14.02-.22Z" class="20"/>
+        <path fill="#000" fill-opacity=".38" d="M148.79 63.63v1.75h-.29v-1.4l-.43.14v-.24l.69-.25h.03Zm1.77.73v.29c0 .14-.01.25-.04.35a.61.61 0 0 1-.11.23.46.46 0 0 1-.19.14.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.24.8.8 0 0 1-.08-.21 1.38 1.38 0 0 1-.03-.3v-.28c0-.13.02-.25.05-.34a.6.6 0 0 1 .11-.24c.05-.06.11-.1.18-.13a.65.65 0 0 1 .24-.04c.07 0 .13.01.19.03a.46.46 0 0 1 .28.22 1.36 1.36 0 0 1 .1.5Zm-.29.33v-.55l-.05-.14a.29.29 0 0 0-.05-.1.2.2 0 0 0-.08-.04.28.28 0 0 0-.1-.02.21.21 0 0 0-.12.03.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.56l.04.13.06.1.08.05.1.02c.05 0 .09-.01.12-.03a.22.22 0 0 0 .1-.08.46.46 0 0 0 .04-.16c.02-.06.02-.13.02-.22Z" class="10"/>
+        <path fill="#000" fill-opacity=".38" d="M150.56 70.25v.28c0 .14-.01.26-.04.35a.61.61 0 0 1-.11.24.46.46 0 0 1-.19.13.68.68 0 0 1-.43.02.47.47 0 0 1-.27-.23.8.8 0 0 1-.08-.22 1.38 1.38 0 0 1-.03-.29v-.28c0-.14.02-.26.05-.35a.6.6 0 0 1 .11-.23c.05-.06.11-.1.18-.13a.64.64 0 0 1 .24-.04c.07 0 .13 0 .19.02a.46.46 0 0 1 .28.23.6.6 0 0 1 .07.2c.02.1.03.19.03.3Zm-.29.32v-.55l-.05-.14a.29.29 0 0 0-.05-.09.2.2 0 0 0-.08-.05.28.28 0 0 0-.1-.02.21.21 0 0 0-.12.03.22.22 0 0 0-.1.08.45.45 0 0 0-.05.15l-.01.22v.56l.04.14.06.1.08.04c.03.02.06.02.1.02.05 0 .09 0 .12-.03a.22.22 0 0 0 .1-.08.46.46 0 0 0 .04-.15c.02-.06.02-.14.02-.23Z" class="0"/>
+      </g>
+    </g>
+    <g class="heat-pump" style="transform-box: content-box;" transform-origin="center">
+      <animate xmlns="http://www.w3.org/2000/svg" attributeName="opacity" values="0;1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="replace" fill="freeze"/>
+      <animateTransform xmlns="http://www.w3.org/2000/svg" attributeName="transform" type="scale" values="0.5 0.5;1 1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="sum" fill="freeze"/>
+      <g class="Rectangle 2409">
+        <rect width="81.95" height="63.16" x="37.21" y="16.92" fill="#fff" rx="2.26"/>
+        <rect width="81.58" height="62.78" x="37.4" y="17.11" stroke="#3E9AF8" stroke-opacity=".5" stroke-width=".38" rx="2.07"/>
+      </g>
+      <g class="Heat Pump">
+        <g class="Rectangle 2416">
+          <rect width="22.69" height="2.23" x="66.12" y="70.45" fill="#fff" rx=".54"/>
+          <rect width="22.53" height="2.07" x="66.2" y="70.52" stroke="#000" stroke-opacity=".87" stroke-width=".15" rx=".46"/>
+        </g>
+        <g class="Rectangle 2412">
+          <path fill="#fff" d="M70.13 68.22H84.8l2.42 2.38h-19.5l2.41-2.38Z"/>
+          <path stroke="#000" stroke-opacity=".87" stroke-width=".15" d="m67.9 70.52 2.26-2.23h14.61l2.27 2.23H67.9Z"/>
+        </g>
+        <g class="Rectangle 2524">
+          <rect width="60.5" height="41.8" x="47.22" y="26.57" fill="#fff" rx="2.46"/>
+          <rect width="60.35" height="41.64" x="47.29" y="26.65" stroke="#000" stroke-opacity=".87" stroke-width=".15" rx="2.38"/>
+        </g>
+        <g class="value-box">
+          <rect width="13.61" height="9.83" x="53.27" y="32.11" fill="#fff" rx=".61"/>
+          <rect width="13.46" height="9.68" x="53.34" y="32.18" stroke="#000" stroke-opacity=".87" stroke-width=".15" rx=".54"/>
+          <path fill="#002878" d="M59.94 37.74v.28h-1.46v-.24l.7-.78.2-.23a.74.74 0 0 0 .09-.17.44.44 0 0 0-.01-.33.29.29 0 0 0-.11-.13.33.33 0 0 0-.18-.04.37.37 0 0 0-.2.05.33.33 0 0 0-.13.14.5.5 0 0 0-.04.21h-.36a.7.7 0 0 1 .08-.34c.06-.11.14-.2.25-.26.11-.06.25-.1.4-.1.15 0 .27.03.37.08.1.05.18.12.24.21a.69.69 0 0 1 .05.52.96.96 0 0 1-.1.2 3.58 3.58 0 0 1-.32.4l-.48.53h1.01Zm1.76-1.9v.2l-.87 1.98h-.38l.87-1.9h-1.13v-.28h1.51Z" class="27"/>
+        </g>
+        <g class="circle" filter="url(#a)">
+          <g clip-path="url(#b)">
+            <path fill="#fff" d="M60.74 43.62c0-.42.34-.76.75-.76h5.33c.41 0 .75.34.75.76v5.25c0 .42-.34.75-.75.75h-5.33a.75.75 0 0 1-.75-.75v-5.25Z"/>
+            <g class="18px / arrow-18" filter="url(#c)">
+              <path fill="#fff" d="M67.57 43.62a.75.75 0 0 0-.75-.76h-5.33a.75.75 0 0 0-.75.76v5.25c0 .42.34.75.75.75h5.33c.41 0 .75-.33.75-.75v-5.25Z"/>
+              <path stroke="#000" stroke-opacity=".87" stroke-width=".15" d="M66.82 42.94h-5.33c-.37 0-.68.3-.68.68v5.25c0 .37.3.68.68.68h5.33c.37 0 .68-.3.68-.68v-5.25c0-.38-.3-.68-.68-.68Z"/>
+              <path fill="#000" fill-opacity=".87" d="M65.4 45.68c.06 0 .1.08.05.13l-1.24 1.23a.08.08 0 0 1-.1 0l-1.25-1.23a.08.08 0 0 1 .06-.13h2.47Z" class="Vector"/>
+            </g>
+          </g>
+          <path stroke="#000" stroke-opacity=".38" stroke-width=".15" d="M61.5 42.94h5.32c.37 0 .68.3.68.68v5.25c0 .37-.3.68-.68.68h-5.33a.68.68 0 0 1-.68-.68v-5.25c0-.38.3-.68.68-.68Z"/>
+        </g>
+        <g class="18px / arrow-18" filter="url(#d)">
+          <path fill="#fff" d="M59.81 48.87c0 .42-.34.75-.75.75H53.8a.75.75 0 0 1-.75-.75v-5.25c0-.42.34-.76.75-.76h5.26c.41 0 .75.34.75.76v5.25Z"/>
+          <path stroke="#000" stroke-opacity=".87" stroke-width=".15" d="M59.06 49.55H53.8a.68.68 0 0 1-.67-.68v-5.25c0-.38.3-.68.67-.68h5.26c.37 0 .67.3.67.68v5.25c0 .37-.3.68-.67.68Z"/>
+          <path fill="#000" fill-opacity=".87" d="M57.65 46.8c.07 0 .1-.08.06-.12l-1.23-1.23a.08.08 0 0 0-.1 0l-1.23 1.23a.08.08 0 0 0 .06.13h2.44Z" class="Vector"/>
+        </g>
+        <g class="blower">
+          <g class="Ellipse 1">
+            <ellipse cx="88.21" cy="48.4" fill="#fff" rx="13.61" ry="13.83"/>
+            <path stroke="#000" stroke-opacity=".12" stroke-width=".23" d="M101.7 48.4a13.6 13.6 0 0 1-13.5 13.7 13.6 13.6 0 0 1-13.5-13.7 13.6 13.6 0 0 1 13.5-13.72 13.6 13.6 0 0 1 13.5 13.72Z"/>
+          </g>
+          <g class="vent" clip-path="url(#e)">
+            <g class="Group 1211">
+              <path stroke="#727171" stroke-width=".25" d="M87.97 39.75c-1.04-2.68-2.31-3.86-3.03-4.8l-3.97.1-2.8 3.37c.23-.25 1.45-.01 4.48 2.93 3.03 2.94 4.12 5.62 4.28 6.6l2.13-1.43c0-2.09-.04-4.1-1.09-6.77Z" class="Vector 419"/>
+              <path stroke="#727171" stroke-width=".25" d="M96.19 43.95c1.89-2.17 2.34-3.84 2.84-4.91l-1.93-3.47-4.28-.92c.33.09.68 1.28-.52 5.33-1.2 4.05-3.07 6.25-3.86 6.84l2.25 1.23a16.8 16.8 0 0 0 5.5-4.1Z" class="Vector 419"/>
+            </g>
+            <path stroke="#727171" stroke-width=".25" d="M97.5 52.85c2.86.3 4.5-.3 5.65-.52l1.72-3.57-1.72-4.03c.12.32-.65 1.3-4.65 2.65-4 1.36-6.88 1.1-7.82.8l-.49 2.37c1.86.95 4.45 2 7.31 2.3Z" class="Vector 419"/>
+            <g class="Group 1213">
+              <g class="Group 1209">
+                <path stroke="#727171" stroke-width=".25" d="M81.02 52.8a23.39 23.39 0 0 0-3.8 4.76l1.73 3.57 4.22 1.17c-.32-.11-.6-1.32.83-5.3 1.43-3.96 3.43-6.06 4.25-6.6l-1.73-1.3a15.8 15.8 0 0 0-5.5 3.7Z" class="Vector 419"/>
+                <path stroke="#727171" stroke-width=".25" d="M88.82 56.79c.95 2.71 2.05 4.1 2.74 5.05l3.96.04 2.92-3.26c-.24.24-1.94-.02-4.86-3.07-2.93-3.05-3.75-4.71-3.87-5.69l-1.67.5c-.07 2.08-.17 3.71.78 6.43Z" class="Vector 420"/>
+              </g>
+              <path stroke="#727171" stroke-width=".25" d="M80.78 44.63c-2.8-.61-4.5-.2-5.67-.12L73 47.87l1.25 4.19c-.09-.33.79-1.21 4.91-2.11 4.13-.9 7.49-1.11 8.39-.7l-.25-1.79a18.35 18.35 0 0 0-6.53-2.83Z" class="Vector 419"/>
+            </g>
+            <circle cx="88.42" cy="48.4" r="2.86" fill="#fff" stroke="#000" stroke-opacity=".87" stroke-width=".15" class="Ellipse 93"/>
+            <circle cx="88.42" cy="48.4" r="1.43" fill="#727171" class="Ellipse 94"/>
+          </g>
+          <g class="Ellipse 2">
+            <mask id="f" fill="#fff" class="f">
+              <path d="M101.82 48.4c0 7.63-6.1 13.83-13.61 13.83-7.52 0-13.62-6.2-13.62-13.83 0-7.64 6.1-13.83 13.62-13.83 7.51 0 13.6 6.19 13.6 13.83Zm-25.1 0c0 6.44 5.14 11.67 11.49 11.67 6.34 0 11.49-5.23 11.49-11.67a11.6 11.6 0 0 0-11.5-11.68A11.59 11.59 0 0 0 76.71 48.4Z"/>
+            </mask>
+            <path fill="#EEE" stroke="#000" stroke-opacity=".87" stroke-width=".31" d="M101.82 48.4c0 7.63-6.1 13.83-13.61 13.83-7.52 0-13.62-6.2-13.62-13.83 0-7.64 6.1-13.83 13.62-13.83 7.51 0 13.6 6.19 13.6 13.83Zm-25.1 0c0 6.44 5.14 11.67 11.49 11.67 6.34 0 11.49-5.23 11.49-11.67a11.6 11.6 0 0 0-11.5-11.68A11.59 11.59 0 0 0 76.71 48.4Z" mask="url(#f)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g class="water-pump" style="transform-box: content-box;" transform-origin="left top">
+      <animate xmlns="http://www.w3.org/2000/svg" attributeName="opacity" values="0;1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="replace" fill="freeze"/>
+      <animateTransform xmlns="http://www.w3.org/2000/svg" attributeName="transform" type="scale" values="0.5 0.5;1 1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="sum" fill="freeze"/>
+      <g class="Rectangle 2408">
+        <rect width="60.15" height="60.15" x="-.01" fill="#fff" rx="2.26"/>
+        <rect width="59.77" height="59.77" x=".18" y=".19" stroke="#3E9AF8" stroke-opacity=".5" stroke-width=".38" rx="2.07"/>
+      </g>
+      <g class="Rectangle 2412">
+        <path fill="#fff" d="M20.42 42.37H36.7l5.77 7.44H14.62l5.8-7.44Z"/>
+        <path stroke="#000" stroke-opacity=".87" stroke-width=".23" d="m14.85 49.7 5.63-7.22h16.17l5.6 7.22h-27.4Z"/>
+      </g>
+      <g class="Rectangle 2416">
+        <rect width="36.75" height="3.01" x="10.19" y="49.63" fill="#fff" rx=".52"/>
+        <rect width="36.52" height="2.78" x="10.31" y="49.74" stroke="#000" stroke-opacity=".87" stroke-width=".23" rx=".41"/>
+      </g>
+      <g class="Rectangle 2790">
+        <rect width="25.38" height="15.08" x="27.25" y="7.52" fill="#fff"/>
+        <rect width="25.15" height="14.85" x="27.36" y="7.63" stroke="#000" stroke-opacity=".87" stroke-width=".23"/>
+      </g>
+      <g class="Ellipse 743">
+        <circle cx="28.55" cy="28.55" r="21.03" fill="#fff"/>
+        <circle cx="28.55" cy="28.55" r="20.92" stroke="#000" stroke-opacity=".87" stroke-width=".23"/>
+      </g>
+      <g class="Ellipse 1">
+        <ellipse cx="28.57" cy="28.59" fill="#fff" rx="13.55" ry="13.52"/>
+        <path stroke="#000" stroke-opacity=".12" stroke-width=".23" d="M42 28.59a13.43 13.43 0 0 1-26.88 0c0-7.4 6.02-13.41 13.45-13.41 7.42 0 13.44 6 13.44 13.4Z"/>
+      </g>
+      <g class="vent" clip-path="url(#g)">
+        <g class="Group 1211">
+          <path fill="#fff" stroke="#727171" stroke-width=".23" d="M28.13 20.15c-1.03-2.63-2.27-3.79-2.98-4.7l-3.89.1-2.74 3.3c.22-.25 1.42-.02 4.39 2.86 2.97 2.89 4.03 5.52 4.2 6.47l2.08-1.4c0-2.04-.04-4-1.07-6.63Z" class="Vector 419"/>
+          <path fill="#fff" stroke="#727171" stroke-width=".23" d="M36.18 24.27c1.85-2.13 2.3-3.77 2.79-4.82l-1.9-3.4-4.19-.9c.32.09.67 1.25-.5 5.22-1.19 3.97-3.02 6.13-3.8 6.71l2.21 1.2a16.27 16.27 0 0 0 5.39-4.01Z" class="Vector 419"/>
+        </g>
+        <path fill="#fff" stroke="#727171" stroke-width=".23" d="M37.47 32.99c2.8.29 4.4-.3 5.54-.5l1.68-3.51L43 25.03c.12.31-.63 1.27-4.55 2.6s-6.75 1.08-7.67.79l-.48 2.31c1.83.94 4.36 1.97 7.17 2.26Z" class="Vector 419"/>
+        <g class="Group 1213">
+          <g class="Group 1209">
+            <path fill="#fff" stroke="#727171" stroke-width=".23" d="M21.31 32.94a22.93 22.93 0 0 0-3.71 4.67l1.69 3.5 4.13 1.14c-.31-.1-.6-1.29.81-5.18 1.4-3.9 3.37-5.95 4.17-6.49l-1.7-1.27a15.49 15.49 0 0 0-5.39 3.63Z" class="Vector 419"/>
+            <path fill="#fff" stroke="#727171" stroke-width=".23" d="M28.96 36.85c.93 2.66 2.01 4.01 2.68 4.96l3.89.03 2.86-3.2c-.23.24-1.9-.02-4.77-3-2.86-3-3.67-4.62-3.8-5.58l-1.62.49c-.08 2.04-.17 3.64.76 6.3Z" class="Vector 420"/>
+          </g>
+          <path fill="#fff" stroke="#727171" stroke-width=".23" d="M21.08 24.93c-2.76-.6-4.4-.2-5.56-.12l-2.07 3.3 1.23 4.1c-.08-.32.78-1.18 4.82-2.06 4.05-.88 7.34-1.1 8.22-.7l-.24-1.74a17.99 17.99 0 0 0-6.4-2.78Z" class="Vector 419"/>
+        </g>
+        <circle cx="28.57" cy="28.62" r="2.81" fill="#EEE" stroke="#000" stroke-opacity=".87" stroke-width=".23" class="Ellipse 93"/>
+        <circle cx="28.57" cy="28.62" r="1.4" fill="#727171" class="Ellipse 94"/>
+      </g>
+      <g class="Ellipse 2">
+        <mask id="h" fill="#fff" class="h">
+          <path d="M42.12 28.59c0 7.47-6.07 13.52-13.55 13.52A13.54 13.54 0 0 1 15 28.6a13.55 13.55 0 0 1 27.11 0Zm-25 0c0 6.3 5.13 11.42 11.45 11.42a11.43 11.43 0 1 0 0-22.84A11.43 11.43 0 0 0 17.12 28.6Z"/>
+        </mask>
+        <path fill="#EEE" stroke="#000" stroke-opacity=".87" stroke-width=".45" d="M42.12 28.59c0 7.47-6.07 13.52-13.55 13.52A13.54 13.54 0 0 1 15 28.6a13.55 13.55 0 0 1 27.11 0Zm-25 0c0 6.3 5.13 11.42 11.45 11.42a11.43 11.43 0 1 0 0-22.84A11.43 11.43 0 0 0 17.12 28.6Z" mask="url(#h)"/>
+      </g>
+    </g>
+    <g class="valve" style="transform-box: content-box;" transform-origin="center bottom">
+      <animate xmlns="http://www.w3.org/2000/svg" attributeName="opacity" values="0;1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="replace" fill="freeze"/>
+      <animateTransform xmlns="http://www.w3.org/2000/svg" attributeName="transform" type="scale" values="0.5 0.5;1 1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="sum" fill="freeze"/>
+      <g class="Rectangle 2408">
+        <rect width="35.15" height="35.15" x="103.38" y="64.66" fill="#fff" rx="2.26"/>
+        <rect width="34.77" height="34.77" x="103.56" y="64.85" stroke="#3E9AF8" stroke-opacity=".5" stroke-width=".38" rx="2.07"/>
+      </g>
+      <path stroke="#000" stroke-opacity=".87" stroke-width=".26" d="M118.7 82.24h6.98" class="Line 43"/>
+      <g class="Polygon 4">
+        <path fill="#fff" d="m118.7 82.37 7.64-13.31h-15.29l7.65 13.3Z"/>
+        <path stroke="#000" stroke-opacity=".87" stroke-width=".26" d="m111.28 69.19 7.42 12.91 7.41-12.91h-14.83Z"/>
+      </g>
+      <g class="Polygon 5">
+        <path fill="#fff" d="m118.7 82.1 7.64 13.32h-15.29l7.65-13.31Z"/>
+        <path stroke="#000" stroke-opacity=".87" stroke-width=".26" d="m111.28 95.29 7.42-12.92 7.41 12.92h-14.83Z"/>
+      </g>
+      <rect width="6.09" height="12.44" x="125.75" y="76.07" stroke="#000" stroke-opacity=".87" stroke-width=".26" class="Rectangle 2788"/>
+    </g>
+    <g class="connector" style="transform-box: content-box;" transform-origin="left bottom">
+      <animate xmlns="http://www.w3.org/2000/svg" attributeName="opacity" values="0;1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="replace" fill="freeze"/>
+      <animateTransform xmlns="http://www.w3.org/2000/svg" attributeName="transform" type="scale" values="0.5 0.5;1 1" dur="1s" repeatCount="1" calcMode="spline" keyTimes="0;1" keySplines="0.5 0.35 0.15 1" additive="sum" fill="freeze"/>
+      <g class="Rectangle 2408">
+        <rect width="29.51" height="29.51" x="28.47" y="64.29" fill="#fff" rx="2.26"/>
+        <rect width="29.14" height="29.14" x="28.66" y="64.47" stroke="#3E9AF8" stroke-opacity=".5" stroke-width=".38" rx="2.07"/>
+      </g>
+      <path fill="#1A1A1A" d="m40.1 78.95 6.28-3.01v6.01l-6.29-3Z" class="Polygon 4"/>
+      <path stroke="#1A1A1A" stroke-width=".66" d="M53.95 79.04H31.8" class="Vector 524"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="b" class="b">
+      <path fill="#fff" d="M60.74 43.62c0-.42.34-.76.75-.76h5.33c.41 0 .75.34.75.76v5.25c0 .42-.34.75-.75.75h-5.33a.75.75 0 0 1-.75-.75v-5.25Z"/>
+    </clipPath>
+    <clipPath id="e" class="e">
+      <rect width="27.23" height="27.66" x="74.59" y="34.57" fill="#fff" rx="13.61"/>
+    </clipPath>
+    <clipPath id="g" class="g">
+      <rect width="27.11" height="27.05" x="15.01" y="15.06" fill="#fff" rx="13.52"/>
+    </clipPath>
+    <filter id="a" width="12.87" height="12.79" x="57.72" y="41.35" class="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="1.51"/>
+      <feGaussianBlur stdDeviation="1.51"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_11101_29219"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow_11101_29219" result="shape"/>
+    </filter>
+    <filter id="c" width="12.87" height="12.79" x="57.72" y="41.35" class="c" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="1.51"/>
+      <feGaussianBlur stdDeviation="1.51"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_11101_29219"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow_11101_29219" result="shape"/>
+    </filter>
+    <filter id="d" width="12.79" height="12.79" x="50.03" y="41.35" class="d" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="1.51"/>
+      <feGaussianBlur stdDeviation="1.51"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_11101_29219"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow_11101_29219" result="shape"/>
+    </filter>
+  </defs>
+</svg>

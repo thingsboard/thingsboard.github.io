@@ -107,6 +107,13 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>listener.proxy_enabled</td>
+			<td>MQTT_PROXY_PROTOCOL_ENABLED</td>
+			<td>false</td>
+			<td> Enable proxy protocol support. Disabled by default. If enabled, supports both v1 and v2.
+ Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature</td>
+		</tr>
+		<tr>
 			<td>listener.leak_detector_level</td>
 			<td>NETTY_LEAK_DETECTOR_LVL</td>
 			<td>DISABLED</td>

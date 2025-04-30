@@ -11,8 +11,10 @@ The product roadmap listed below covers only main features and does not cover sm
 
 Everything in [CE 4.0](/docs/reference/roadmap/#v40).
 
-* New Data Converters Engine that simplifies converter configuration;
-* Keystore for secrets and credentials; 
+* Report Service 2.0;
+* Processing historical data with the Calculated Fields;  
+* Secrets storage;
+* Facility management solution;
 * More SCADA Solution Templates;
 
 ## v4.1

@@ -67,6 +67,22 @@
     "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
   },
   {
+    "type": ["main", "lte", "nbiot", "lora", "wifi", "bluetooth"],
+    "program": "",
+    "name": "Elastel",
+    "logo": "elastel-logo.png",
+    "site": {
+      "href": "https://www.elastel.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "/docs/devices-library/raspberry-pi-cm4/"
+      }
+    },
+    "blurb": "Elastel is a technology-driven company providing IIoT products and services globally. With 10+ years of industry experience, Elastel has developed series Open, High-performance, Reliable, and Easy-to-use IIoT devices like Industrial Raspberry Pi, Arm-based IIoT Gateway, Industrial Cellular Router, etc.  These edge hardware allows customers flexibly develop their specific applications for IoT needs."
+  },
+  {
     "type": ["main", "bluetooth", "nbiot", "lte", "sigfox", "wifi"],
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
@@ -199,7 +215,7 @@
     "blurb": "MOKO Technology Ltd. is a leading manufacturer and provider of ODM, OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand, MOKO SMART, which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS, LTE, UWB, and other wireless technologies. This commitment to innovation and diverse wireless products drives MOKO’s vision of a connected future."
   },
   {
-    "type": ["main", "bluetooth", "wifi", "nbiot"],
+    "type": ["main", "ethernet", "bluetooth", "wifi", "modbus", "gsm", "lte", "nbiot"],
     "program": "",
     "name": "Digicom B810 Spa",
     "logo": "digicom-logo.png",
@@ -312,6 +328,22 @@
       }
     },
     "blurb": "SensiEDGE IoT SoM is a fully customisable solution for developers who want to focus on their own applications and core competencies rather than the underlying hardware platform or production logistics when creating products for the IoT."
+  },
+  {
+    "type": ["main", "lora", "bluetooth", "wifi", "catm", "nbiot"],
+    "program": "",
+    "name": "Shenzhen Dragino Technology Development  Co.,Ltd",
+    "logo": "dragino-logo.png",
+    "site": {
+      "href": "http://www.dragino.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "https://wiki.dragino.com/xwiki/bin/view/Main/ThingsBoard"
+      }
+    },
+    "blurb": "Shenzhen Dragino Technology Development Co., Ltd. specializes in IoT solutions, with a focus on LoRaWAN and NB-IoT technologies. We offer end-to-end IoT services, including hardware, software, and network solutions, enabling customers to deploy and manage IoT networks efficiently.\n\nOur globally trusted products and solutions ensure rapid deployment, scalability, and customer success in the competitive IoT market."
   },
   {
     "type": ["main", "gsm"],
@@ -466,7 +498,7 @@
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
   },
   {
-    "type": ["main", "ethernet", "wifi", "LoRaWAN", "bluetooth", "lte", "modbus", "nbiot"],
+    "type": ["main", "ethernet", "wifi", "LoRaWAN", "bluetooth", "lte", "modbus", "catm", "nbiot"],
     "program": "",
     "name": "MikroTik",
     "logo": "mikrotik-logo.svg",

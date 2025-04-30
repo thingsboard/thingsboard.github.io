@@ -8,7 +8,7 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v2.1.0 (March ?, 2025)
+## v2.1.0 (April 29, 2025)
 
 Minor release with the following features, improvements, and bug fixes.
 
@@ -19,11 +19,14 @@ Minor release with the following features, improvements, and bug fixes.
 * [#203](https://github.com/thingsboard/tbmq/pull/203) **Core & UI**: Added MQTT integration by @dmytro-landiak and @deaflynx;
 * [#200](https://github.com/thingsboard/tbmq/pull/200) **UI**: Migrated to Angular 19 by @deaflynx.
 
+**Helm chart support:** Official [Helm chart](/docs/mqtt-broker/install/cluster/helm-cluster-setup-options/) for deploying TBMQ is now available, enabling simplified Kubernetes deployments with customizable configuration options.
+
 **Improvements:**
 
 * Core and install scripts:
 
-  * [#191](https://github.com/thingsboard/tbmq/pull/191) Incremental upgrade by @ShvaykaD.
+  * [#191](https://github.com/thingsboard/tbmq/pull/191) Incremental upgrade by @ShvaykaD;
+  * [#217](https://github.com/thingsboard/tbmq/pull/217) Proxy protocol support by @dmytro-landiak.
 
 * UI:
 
@@ -43,6 +46,10 @@ Minor release with the following features, improvements, and bug fixes.
 **We welcome our new contributors:**
 
   * @Nanabell made their first contribution in [#205](https://github.com/thingsboard/tbmq/pull/205)
+
+**Third-party versions update:**
+
+  * [#218](https://github.com/thingsboard/tbmq/pull/218) Bump Kafka, Redis and PostgreSQL versions by @ShvaykaD.
 
 ## v2.0.1 (December 31, 2024)
 

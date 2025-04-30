@@ -27,5 +27,5 @@ To add a device, you can follow next steps:
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addDeviceSteps %}
 
-{% include /docs/devices-library/blocks/integrations/converters/basic/add-or-change-converter-block.md integration-type="chirpstack" %}
+{% include /docs/devices-library/blocks/integrations/converters/basic/add-or-change-converter-block.md integration-type="chirpstack" integration-type-correct-name="ChirpStack" %}
 

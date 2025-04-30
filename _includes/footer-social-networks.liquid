@@ -1,7 +1,7 @@
 {% assign collectionMap = site.data.footer-social-networks %}
 
 {% for socialNetwork in collectionMap %}
-    <a href="{{ socialNetwork[1].href }}" arial-label="{{ socialNetwork[1].arial-label }}" class="{{ socialNetwork[1].iconClass | default: socialNetwork[1].icon }}">
+    <a href="{{ socialNetwork[1].href }}" aria-label="{{ socialNetwork[1].arial-label }}" class="{{ socialNetwork[1].iconClass | default: socialNetwork[1].icon }}">
         {% if socialNetwork[1].icon %}
         <i class="fab fa-lg fa-{{ socialNetwork[1].icon }}" style="color: #847989"></i>
         {% else %}

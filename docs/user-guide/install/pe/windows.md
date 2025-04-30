@@ -28,10 +28,10 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 
 ## Step 2. ThingsBoard service installation
 
-Download and extract the package.
+Download and run the installation package.
 
 ```bash
-https://dist.thingsboard.io/thingsboard-windows-{{ site.release.pe_ver }}.zip
+https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
 ```
 {: .copy-code}
 
@@ -84,10 +84,6 @@ PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%template
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
 Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/windows-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 

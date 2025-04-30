@@ -71,11 +71,6 @@ self-registration-2:
         image: /images/mobile-center/self-registration-2-pe.png
         title: 'The mandatory fields for completing the registration form are email, password, and repeat password. If needed, specify additional fields;'
 
-self-registration-3:
-    0:
-        image: /images/mobile-center/self-registration-3-pe.png
-        title: ''
-
 captcha:
     0:
         image: /images/mobile-center/captcha-1.png
@@ -85,22 +80,27 @@ captcha:
         title: 'Specify the domain name of your ThingsBoard instance. Choose reCAPTCHA type;'
     2:
         image: /images/mobile-center/captcha-3.png
-        title: 'Copy-paste the site key and secret key to the safe place.'
+        title: 'Copy and securely store the the site key and secret key.'
+
+self-registration-3:
+    0:
+        image: /images/mobile-center/self-registration-3-pe.png
+        title: 'Choose the Captcha version to be used, and specify "Captcha site key" and "Captcha secret key";'
 
 self-registration-4:
     0:
         image: /images/mobile-center/self-registration-4-pe.png
-        title: ''
+        title: 'Show/hide Privacy Policy and Terms of Use. Specify the roles that will be assigned to the user upon successful registration.'
 
 self-registration-5:
     0:
         image: /images/mobile-center/self-registration-5-pe.png
-        title: ''
+        title: 'Fill in the required fields in "Advanced settings". Specify the dashboard that the user sees upon logging in for the first time;'
 
 self-registration-6:
     0:
         image: /images/mobile-center/self-registration-6-pe.png
-        title: ''
+        title: 'Specify the main dashboard that will be displayed to the user when navigating to the “Home” menu item. Click "Add" to complete the bundle creation.'
 
 configuration-dialog:
     0:
