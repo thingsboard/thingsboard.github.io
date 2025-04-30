@@ -34,12 +34,14 @@ toc:
     - title: Keep Alive
       path: /docs/mqtt-broker/user-guide/keep-alive/
 - title: Other Features
+  new: true
   section:
     - title: TBMQ client type
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
     - title: Backpressure
       path: /docs/mqtt-broker/user-guide/backpressure/
-      new: true
+    - title: Msg Delivery Strategies
+      path: /docs/mqtt-broker/other/msg-delivery-strategy/
     - title: PROXY Protocol
       path: /docs/mqtt-broker/other/proxy-protocol/
 - title: Integrations

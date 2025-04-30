@@ -234,3 +234,7 @@ subscribe to topics that start with **example_sub_topic/**. Clients with a certi
 **Note:** if either **pubAuthRulePatterns** or **subAuthRulePatterns** is set to `null` or an empty list (`[]`), the client will not be able to publish to or subscribe to any topics.
 
 {% include images-gallery.html imageCollection="security-authorization-tls" %}
+
+## Next steps
+
+{% assign currentGuide = "SecurityGuide" %}{% include templates/mqtt-broker-guides-banner.md %}
