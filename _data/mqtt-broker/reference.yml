@@ -13,7 +13,6 @@ toc:
   section:
     - title: "Point-to-point: 1M Msg/sec Throughput"
       path: /docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/
-      new: true
     - title: "Fan-out: 3M Msg/sec Throughput"
       path: /docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/
     - title: "Fan-in: 100M MQTT Connections"
