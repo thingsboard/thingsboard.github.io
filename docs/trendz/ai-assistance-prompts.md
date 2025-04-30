@@ -277,36 +277,40 @@ To access the Prompts tab, you can follow these steps:
 
   {% include images-gallery.html imageCollection="trendz-prompts-markdown-save" %}
 
-## System prompts
+## System Prompts
 
-Trendz contains default system prompts that are available from installation. By default, for generating summaries, 
-Trendz uses the "Trendz System Default Summary Prompt". Here is the list of all prompts that system uses:
+Trendz includes a set of default **system prompts** available upon installation. These prompts guide how Trendz generates
+summaries, diagnoses issues, and identifies patterns from datasets. Below is the updated list of system prompts used by the platform:
 
 * **Trendz System Default Summary Prompt**
 
-  This prompt provides a high-level summary of current performance trends, customer satisfaction, and noteworthy changes. 
-  It is designed to give the snapshot of the business situation with clear and concise insights.
+Provides a high-level overview of performance, customer sentiment, and emerging trends.
+It delivers a concise 2–3 sentence executive summary meant for leadership stakeholders.
 
-* **Trendz System Data Analysis Prompt**
+* **Trendz System Operational Efficiency Optimization Prompt**
 
-  This prompt is focused on analyzing datasets, uncovering trends, and providing actionable insights for decision-making. 
-  It leverages statistical methods and data visualization tools to identify key patterns and outliers.
+Detects opportunities to improve throughput or reduce resource use based solely on observed telemetry.
+Focuses on utilization gaps, inefficiencies, and bottlenecks with actionable suggestions.
 
 * **Trendz System Data Quality Review Prompt**
 
-  Aimed at reviewing datasets for data quality, this prompt highlights inconsistencies, outliers, and other anomalies 
-  that could affect the accuracy of analysis. It includes methods like data profiling and statistical tests to assess 
-  data integrity.
+Highlights data quality issues like inconsistencies, outliers, or anomalies.
+Evaluates their impact on business analysis and suggests actions to improve data integrity.
 
 * **Trendz System Positive Performance Prompt**
 
-  This prompt focuses on identifying areas of strong performance and growth opportunities. It analyzes positive trends 
-  and provides recommendations to leverage these successes for further business achievements.
+Identifies areas of strong performance and growth potential.
+Summarizes key positive trends and explains their contribution to business success.
 
-* **Trendz System Short Summary Prompt**
+* **Trendz System Incident Identification And Prioritization Prompt**
 
-  This prompt is designed to create a concise 3-10 word summary of key points from the data. It generates a meaningful
-  name or headline that encapsulates the essence of the dataset without further elaboration.
+Analyzes time-based or event-based datasets to detect significant anomalies, such as outliers, spikes, or rare behaviors.
+Focuses on identifying and describing these events with context.
+
+* **Trendz System Root Cause Analysis Prompt**
+
+Explains the likely root cause of a performance issue by identifying correlated changes in telemetry.
+Offers one-paragraph plain-language reasoning, with a confidence rating.
 
 ## Best practices
 
