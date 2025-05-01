@@ -138,15 +138,15 @@ SN-001,default,temperature,25.7,humidity,69
     - **13-16** bytes: **\x32\x35\x2e\x37** - The temperature telemetry. If we convert it to the text, it is **25.7**.
     - **17-18** bytes: **\x36\x39** - The humidity telemetry. If we convert it to text, it is **69**.
 
-- **Hex:** - The payload is a hexadecimal string:
+- **Hex:** The payload is a hexadecimal string:
 ```text 
 534e2d30303164656661756c7432352e373639
 ```
   Here is the description of the bytes in this payload:
     - **0-5** bytes: **534e2d303031** - The device name. If we convert it to the text, it is **SN-001**;
-    - **6-12** byte: **64656661756c74** - device type. If we convert it to the text, it is **default**;
-    - **13-16** byte: **32352e37** - temperature telemetry. If we convert it to the text, it is **25.7**;
-    - **17-18** byte: **3639** - humidity telemetry. If we convert it to the text, it is **69**;
+    - **6-12** byte: **64656661756c74** - The device type. If we convert it to the text, it is **default**;
+    - **13-16** byte: **32352e37** - The temperature telemetry. If we convert it to the text, it is **25.7**;
+    - **17-18** byte: **3639** - The humidity telemetry. If we convert it to the text, it is **69**;
 
 Based on your device capabilities and business cases, you can choose the payload type:
 
