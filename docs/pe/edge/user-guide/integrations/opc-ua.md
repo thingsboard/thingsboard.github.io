@@ -326,8 +326,13 @@ To save the Integration, click the **Add** button.
 
 We can send a downlink message to the device from Rule chain using the rule node:
 * To send a downlink over integration, we need to modify the **Edge Root Rule chain**.  
-  * If you use **earlier versions of Edge**, a **Rule Chain** must be configured as a template in the Cloud **(Server)**, and then assigned to the **Edge** instance.
-  * Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on the **Edge**.
+{% capture edge-4 %}
+**Please note!** <br>
+If you use **earlier versions of Edge**, you cannot create or edit a **Rule Chain** on the **Edge** itself. It must be configured as a template in the **Cloud (Server)**, and then assigned to the **Edge** instance.
+
+Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on the **Edge**.
+{% endcapture %}
+{% include templates/info-banner.md content=edge-4 %}
 * Add two rule nodes: the **originator fields** and **integration downlink** nodes.
 * Set the **RPC Request to Device** link to the **originator fields** node and configure to add the originator name and type to the message metadata — in the **downlink converter** name of the device will be used to set proper *OPC-UA* node.
 * And then add the **Success** link from the **originator fields** node to **integration downlink** node.

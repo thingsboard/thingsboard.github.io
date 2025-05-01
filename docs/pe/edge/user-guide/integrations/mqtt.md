@@ -181,14 +181,13 @@ tb-edge/mqtt-integration-tutorial/sensors/+/temperature
 
 We can send a downlink message to the device from the **Rule chain** using the **rule node**. To send downlink via integration, modify the **Edge Root Rule chain**.
 
-{% capture delete_restrictions %}
+{% capture edge-4 %}
 **Please note!** <br>
 If you use **earlier versions of Edge**, you cannot create or edit a **Rule Chain** on the **Edge** itself. It must be configured as a template in the **Cloud (Server)**, and then assigned to the **Edge** instance.
 
 Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on the **Edge**.
 {% endcapture %}
-
-{% include templates/info-banner.md content=delete_restrictions %}
+{% include templates/info-banner.md content=edge-4 %}
 
 We'll need to add two rule nodes: ['originator fields'](/docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/#originator-fields){: target="_blank"} and ['integration downlink'](/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node){: target="_blank"} nodes.
 

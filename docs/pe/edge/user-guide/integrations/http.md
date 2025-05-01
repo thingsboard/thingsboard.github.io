@@ -149,14 +149,13 @@ JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-do
 We can send a **downlink message** to the device from the **Rule chain** using the rule node. 
 To send downlink over integration, we need to modify **Edge Root Rule chain**.
 
-{% capture delete_restrictions %}
+{% capture edge-4 %}
 **Please note!** <br>
 If you use **earlier versions of Edge**, you cannot create or edit a **Rule Chain** on the **Edge** itself. It must be configured as a template in the **Cloud (Server)**, and then assigned to the **Edge** instance.
 
 Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on the **Edge**.
 {% endcapture %}
-
-{% include templates/info-banner.md content=delete_restrictions %}
+{% include templates/info-banner.md content=edge-4 %}
 
 {% include images-gallery.html imageCollection="downlink-rule" showListImageTitles="true" %}
 
