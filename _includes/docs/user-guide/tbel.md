@@ -58,6 +58,47 @@ TBEL execution consumes much less resources and has no extra latency for inter-p
 TBEL is used to evaluate expressions written using Java syntax. Unlike Java however, TBEL is dynamically typed (with optional typing), meaning that the source code does not require type qualification.
 The TBEL expression can be as simple as a single identifier, or as complicated as an expression with method calls and inline collections.
 
+
+### Syntax Constraints for Loops and Conditions
+
+In TBEL (ThingsBoard Expression Language), certain syntax restrictions are enforced to ensure compatibility and reliability within the scripting environment. Use foreach instead of traditional for loops, and always wrap ternary (? :) expressions in parentheses when used without an explicit if statement.
+
+✅ Allowed:
+
+```java
+foreach (ValueType value : map) {
+    // Process each value
+}
+```
+{: .copy-code}
+
+❌ Not allowed:
+
+```java
+for (ValueType value : map) {
+    // Process each value
+}
+```
+{: .copy-code}
+
+✅ Correct:
+
+```java
+var msgNew = {
+        keyNew: (msg.humidity > 50 ? 3 : 0)    // if (msg.humidity > 50) == true, result msgNew = { keyNew: : 3  } 
+     };
+```
+{: .copy-code}
+
+❌ Incorrect:
+
+```java
+var msgNew = {
+        keyNew: msg.humidity > 50 ? 3 : 0       // result msgNew = { 3 : 0  }
+     };
+```
+{: .copy-code}
+
 ### Simple Property Expression
 
 ```java
