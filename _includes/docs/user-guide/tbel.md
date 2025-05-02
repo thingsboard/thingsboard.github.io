@@ -133,7 +133,7 @@ foreach(element : map.entrySet()){
         element.key;
         
         // Get the value
-            element.getValue();
+        element.getValue();
         //or 
         element.value;
 }
