@@ -510,6 +510,12 @@
 			<td>0.5</td>
 			<td> Metrics percentiles returned by actuator for timer metrics. List of comma-separated (,) double values</td>
 		</tr>
+		<tr>
+			<td>stats.system-info.persist-frequency</td>
+			<td>STATS_SYSTEM_INFO_PERSIST_FREQUENCY_SEC</td>
+			<td>60</td>
+			<td> Persist frequency of system info (CPU, memory usage, etc.) in seconds</td>
+		</tr>
 	</tbody>
 </table>
 

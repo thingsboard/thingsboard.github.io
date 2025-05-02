@@ -120,6 +120,26 @@
 			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID. It is set globally for all listeners</td>
 		</tr>
 		<tr>
+			<td>listener.write_buffer_high_water_mark</td>
+			<td>NETTY_WRITE_BUFFER_HIGH_WATER_MARK</td>
+			<td>64</td>
+			<td> The threshold (in KB) where Netty considers the channel non-writable. When the limit reached, TBMQ stops delivering data to subscriber until the channel is writable again.
+ Non-persistent clients lose data in this case</td>
+		</tr>
+		<tr>
+			<td>listener.write_buffer_low_water_mark</td>
+			<td>NETTY_WRITE_BUFFER_LOW_WATER_MARK</td>
+			<td>32</td>
+			<td> The threshold (in KB) where Netty considers the channel writable again. When the limit reached, TBMQ starts delivering data to subscriber</td>
+		</tr>
+		<tr>
+			<td>listener.so_receive_buffer</td>
+			<td>NETTY_SO_RECEIVE_BUFFER</td>
+			<td>0</td>
+			<td> Socket receive buffer size for Netty in KB. If the buffer limit is reached, TCP will trigger backpressure and notify the sender to slow down.
+ If set to 0 (default), the system's default buffer size will be used</td>
+		</tr>
+		<tr>
 			<td>listener.tcp.enabled</td>
 			<td>LISTENER_TCP_ENABLED</td>
 			<td>true</td>
@@ -2102,18 +2122,6 @@
 			<td> Increment period for the subsequent retransmissions of the msg in seconds (retransmission interval is increased by period for each run)</td>
 		</tr>
 		<tr>
-			<td>mqtt.write-and-flush</td>
-			<td>MQTT_MSG_WRITE_AND_FLUSH</td>
-			<td>true</td>
-			<td> If enabled, each message is published to non-persistent subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
-		</tr>
-		<tr>
-			<td>mqtt.buffered-msg-count</td>
-			<td>MQTT_BUFFERED_MSG_COUNT</td>
-			<td>5</td>
-			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_MSG_WRITE_AND_FLUSH` = false</td>
-		</tr>
-		<tr>
 			<td>mqtt.keep-alive.monitoring-delay-ms</td>
 			<td>MQTT_KEEP_ALIVE_MONITORING_DELAY_MS</td>
 			<td>1000</td>
@@ -2227,6 +2235,54 @@
 			<td> Max ClientId length for 3.1 version of protocol</td>
 		</tr>
 		<tr>
+			<td>mqtt.write-and-flush</td>
+			<td>MQTT_MSG_WRITE_AND_FLUSH</td>
+			<td>true</td>
+			<td> If enabled, each message is published to non-persistent subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-msg-count</td>
+			<td>MQTT_BUFFERED_MSG_COUNT</td>
+			<td>5</td>
+			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_MSG_WRITE_AND_FLUSH` = false</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.session-cache-max-size</td>
+			<td>MQTT_BUFFERED_CACHE_MAX_SIZE</td>
+			<td>10000</td>
+			<td> When either `MQTT_MSG_WRITE_AND_FLUSH` or `MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH` is set to false,
+ the broker buffers outgoing messages in the outbound channel to improve throughput.
+ The respective buffer sizes are controlled by `MQTT_BUFFERED_MSG_COUNT` (for non-persistent clients)
+ and `MQTT_PERSISTENT_BUFFERED_MSG_COUNT` (for persistent clients).
+ Defines the maximum number of session entries that can be stored in the flush state cache.
+ When the cache exceeds this size, the least recently used sessions are evicted
+ and their pending message buffers are flushed automatically</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.session-cache-expiration-ms</td>
+			<td>MQTT_BUFFERED_CACHE_EXPIRY_MS</td>
+			<td>300000</td>
+			<td> Time in milliseconds after which an inactive session entry in the flush cache expires.
+ A session is considered inactive if it receives no new messages during this period.
+ Upon expiration, the session is evicted from the cache and its buffer is flushed.
+ Default is 5 minutes</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.scheduler-execution-interval-ms</td>
+			<td>MQTT_BUFFERED_SCHEDULER_INTERVAL_MS</td>
+			<td>100</td>
+			<td> Interval in milliseconds at which the scheduler checks all sessions in the cache
+ for potential flushing. A smaller value results in more frequent flush checks</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.idle-session-flush-timeout-ms</td>
+			<td>MQTT_BUFFERED_IDLE_FLUSH_MS</td>
+			<td>200</td>
+			<td> Maximum duration in milliseconds that a session can remain idle (i.e., without being flushed)
+ before its message buffer is automatically flushed to the client.
+ In essence, a flush occurs either when the buffer limit is reached or when this timeout elapses</td>
+		</tr>
+		<tr>
 			<td>mqtt.persistent-session.device.persisted-messages.limit</td>
 			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT</td>
 			<td>10000</td>
@@ -2249,6 +2305,18 @@
 			<td>MQTT_PERSISTENT_BUFFERED_MSG_COUNT</td>
 			<td>5</td>
 			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH` = false</td>
+		</tr>
+		<tr>
+			<td>mqtt.persistent-session.app.persisted-messages.write-and-flush</td>
+			<td>MQTT_APP_MSG_WRITE_AND_FLUSH</td>
+			<td>false</td>
+			<td> If enabled, each message is published to persistent APPLICATION client subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
+		</tr>
+		<tr>
+			<td>mqtt.persistent-session.app.persisted-messages.buffered-msg-count</td>
+			<td>MQTT_APP_BUFFERED_MSG_COUNT</td>
+			<td>10</td>
+			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_APP_MSG_WRITE_AND_FLUSH` = false</td>
 		</tr>
 		<tr>
 			<td>mqtt.rate-limits.threads-count</td>
@@ -2656,6 +2724,12 @@
 			<td>APPLICATION_PROCESSOR_STATS_ENABLED</td>
 			<td>true</td>
 			<td> Enable/disable specific Application clients stats</td>
+		</tr>
+		<tr>
+			<td>stats.system-info.persist-frequency</td>
+			<td>STATS_SYSTEM_INFO_PERSIST_FREQUENCY_SEC</td>
+			<td>60</td>
+			<td> Persist frequency of system info (CPU, memory usage, etc.) in seconds</td>
 		</tr>
 	</tbody>
 </table>
