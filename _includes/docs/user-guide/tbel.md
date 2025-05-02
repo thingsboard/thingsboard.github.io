@@ -125,17 +125,17 @@ There are two syntax variations for iterating over a map:
 1. Explicit entrySet() iteration:
 
 ```java
-// Iterate through the map using entrySet()
-for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
+// Iterate through the map
+foreach(element : map.entrySet()){
         // Get the key
-        entry.getKey();
-        // or 
-        entry.key;
-
+        element.getKey();
+        //or 
+        element.key;
+        
         // Get the value
-        entry.getValue();
-        // or 
-        entry.value;
+            element.getValue();
+        //or 
+        element.value;
 }
 
 ```
@@ -145,7 +145,7 @@ for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
 
 ```java
 // Iterate through the map without entrySet()
-for (ValueType value : map) {
+foreach (ValueType value : map) {
         // Process each value
 }
 ```
