@@ -41,14 +41,14 @@ downlinkRule:
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/udp/assign-integration-step-1.png
-        title: 'Click the <b>Manage Integrations</b> button of the Edge entity'
+        image: /images/pe/edge/integrations/udp/assign-integration-step-1.webp
+        title: 'Go to the <b>Edge management > Instances</b> section and click the <b>Manage edge integrations</b> button.'
     1:
-        image: /images/pe/edge/integrations/udp/assign-integration-step-2.png
-        title: 'Assign the Integration to the Edge instance'
+        image: /images/pe/edge/integrations/udp/assign-integration-step-2.webp
+        title: 'On the Integration page, click the <b>"Assign to edge"</b> button. In the <b>"Assign the Integration to the Edge"</b> pop-up window, select the integration from the drop-down menu and click the <b>"Assign"</b> button.'
     2:
-        image: /images/pe/edge/integrations/udp/assign-integration-step-3.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open the Integrations page'
+        image: /images/pe/edge/integrations/udp/assign-integration-step-3.webp
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. Confirm the <b>UDP integration</b> on the <b>Edge</b>.'
 
 sendUplink:
     0:
@@ -237,7 +237,7 @@ return result;
 ### Create Integration template
 
 Now that the Uplink and Downlink converter templates have been created, it is possible to create the Integration:
-* Go to the **Edge management > Integration templates** section, click the **Add new integration** button  (the + icon) and and select the **“Create new integration”** option. 
+* Go to the **Edge management > Integration templates** section, click the **"Add new integration"** button (the + icon) and select the **“Create new integration”** option. 
 * In the **“Add integration”** pop-up window and fill out the **"Basic settings"** block:
   * **Integration type:** Select the **"UDP"** integration type from the drop-down menu.
   * **Name:** Enter the name of the integration.
