@@ -77,6 +77,15 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/pe/edge/config/edge-cluster-setup/">
+                                            <span>
+                                                <div class="deployment-logo" style="height:134px">
+                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Edge Cluster in Docker" alt="Edge Cluster in Docker">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
                                </div>
                             </div>
                         </div>

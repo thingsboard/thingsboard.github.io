@@ -84,7 +84,7 @@ nano .env
 
 Check the following lines:
 ```bash
-DATABASE=database
+DATABASE=postgres
 TB_QUEUE_TYPE=kafka
 
 CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
@@ -108,7 +108,7 @@ TB_EDGE_VERSION=latest
 # Database used by ThingsBoard, can be either postgres (PostgreSQL) or hybrid (PostgreSQL for entities database and Cassandra for timeseries database).
 # According to the database type corresponding docker service will be deployed (see docker-compose.postgres.yml, docker-compose.hybrid.yml for details).
 
-DATABASE=database
+DATABASE=postgres
 TB_QUEUE_TYPE=kafka
 
 CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
@@ -139,6 +139,7 @@ JAVA_OPTS="-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch"
 * **DATABASE:** Replace the _database_ value with:
   * **postgres:** Set the _postgres_ value to use the **PostgreSQL** database.
   * **hybrid:** Set the _hybrid_ value to use the **PostgreSQL** database for the entities database and **Cassandra** for the time-series database.
+* **TB_QUEUE_TYPE:** Use _kafka_ as the queue type. The _in-memory_ value is not valid for a cluster deployment.
 * **CLOUD_ROUTING_KEY:** Put your edge key.
 * **CLOUD_ROUTING_SECRET:** Put your edge secret.
 {% if docsPrefix == "pe/edge/" %}
