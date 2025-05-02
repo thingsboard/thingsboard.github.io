@@ -61,7 +61,7 @@ The TBEL expression can be as simple as a single identifier, or as complicated a
 
 ### Syntax Constraints for Loops and Conditions
 
-In TBEL (ThingsBoard Expression Language), certain syntax restrictions are enforced to ensure compatibility and reliability within the scripting environment. Use foreach instead of traditional for loops, and always wrap ternary (? :) expressions in parentheses when used without an explicit if statement.
+In TBEL (ThingsBoard Expression Language), certain syntax restrictions are enforced to ensure compatibility and reliability within the scripting environment. Use <code style="color: sienna;">foreach</code> instead of traditional <code style="color: sienna;">for</code> loops, and always wrap <code style="color: sienna;">ternary (? :) expressions</code> in parentheses when used without an explicit <code style="color: sienna;">if</code> statement.
 
 ✅ Allowed:
 
