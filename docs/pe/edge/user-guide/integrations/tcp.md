@@ -5,46 +5,51 @@ description: TCP Integration Guide
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/tcp/add-converter-step-1.png
+        image: /images/pe/edge/integrations/tcp/add-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/add-converter-step-2.png
+        image: /images/pe/edge/integrations/tcp/add-converter-step-2.webp
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/tcp/modify-converter-step-1.png
+        image: /images/pe/edge/integrations/tcp/modify-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/modify-converter-step-2.png
+        image: /images/pe/edge/integrations/tcp/modify-converter-step-2.webp
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/tcp/add-downlink-step-1.png
+        image: /images/pe/edge/integrations/tcp/add-downlink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/add-downlink-step-2.png
+        image: /images/pe/edge/integrations/tcp/add-downlink-step-2.webp
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-0.webp
     1:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-1.webp
     2:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-3.png
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-2.webp
+    3:
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-3.webp
+    4:
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-4.webp
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/tcp/downlink-rule-step-1.png
+        image: /images/pe/edge/integrations/tcp/downlink-rule-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/downlink-rule-step-2.png
+        image: /images/pe/edge/integrations/tcp/downlink-rule-step-2.webp
 
 assignIntegration:
-    0:
-        image: /images/pe/edge/integrations/tcp/assign-integration-step-1.png
-        title: 'Click the <b>Manage Integrations</b> button of Edge entity'
-    1:
-        image: /images/pe/edge/integrations/tcp/assign-integration-step-2.png
-        title: 'To assign the Integration to the Edge instance, click the <b>"+"</b> button and select the <b>TCP Integration</b> from the drop-down menu. Click the <b>"Assign"</b> button.'
-    2:
-        image: /images/pe/edge/integrations/tcp/assign-integration-step-3.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page'
+  0:
+    image: /images/pe/edge/integrations/tcp/assign-integration-step-1.webp
+    title: 'Go to the <b>Edge management > Instances</b> section and click the <b>Manage edge integrations</b> button.'
+  1:
+    image: /images/pe/edge/integrations/tcp/assign-integration-step-2.webp
+    title: 'On the Integration page, click the <b>"Assign to edge"</b> button. In the <b>"Assign the Integration to the Edge"</b> pop-up window, select the integration from the drop-down menu and click the <b>"Assign"</b> button.'
+  2:
+    image: /images/pe/edge/integrations/tcp/assign-integration-step-3.webp
+    title: 'Login to your <b>ThingsBoard Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. Confirm the <b>TCP integration</b> on the <b>Edge</b>.'
+
 
 sendUplink:
     0:
@@ -216,6 +221,8 @@ Now that the Uplink and Downlink converter templates have been created, you can 
 Go to the **Integration templates** section and click the **Add new integration** button. 
 Name it **"TCP Integration"**, select the **TCP** type, enable **Debug** mode, and add the recently created Uplink and Downlink converters from the corresponding drop-down menus.
 
+{% include images-gallery.html imageCollection="addIntegration" %}
+
 As mentioned above, the **Execute Remotely** option is selected by **default** and cannot be changed—**TCP Integration** is always configured as a **remote type**.
 
 Record the **Integration key** and **Integration secret**. These values will be used later in the configuration of the remote TCP Integration itself.
@@ -237,11 +244,6 @@ JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-js
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
-
-To save the Integration, click the **Add** button.
-
-{% include images-gallery.html imageCollection="addIntegration" %}
-
 
 ### Modify Edge Root Rule chain for Downlinks
 
