@@ -150,21 +150,26 @@ Select the **payload type** based on your device capabilities and business cases
 
 ### Create Converter templates
 
-Converter and Integration templates are created on the **Cloud**, so please log in to the **Cloud** instance as a **Tenant administrator**.
+To create **Converter** and **Integration templates**, log in to the **Cloud** instance as **Tenant administrator**.
 
 #### Uplink Converter template
 
-Before creating the **Integration template**, you need to create an Uplink and Downlink converter templates on the **Converters templates** page.
-Uplink is required to convert incoming data from the device into the required format for display on **ThingsBoard Edge**.
+Before creating the **Integration template**, create an Uplink and Downlink converter templates in **Converters templates** section.
 
-Click the **"plus"** button and select the "**Create new converter**" option. To view the events, enable **Debug** mode.
-Enter a script to parse and transform data in the **"function decoder"** field.
+The **uplink data converter** is needed to convert the incoming data from the device into the format required for display on **ThingsBoard Edge**.
+* Log in to the **Cloud** and go to the **Edge management > Converter templates** section. To create a Converter template, click the **"Add data converter"** button (the **+** icon) and select the **"Create new converter"** option.
+* In the **"Add data converter"** pop-up window:
+  * **Name:** Enter the name of the data converter.
+  * **Type:** Select the **"Uplink"** converter type from the drop-down menu.
+  * To view the events, enable **Debug** mode.
+  * **function Decoder:** Enter a script to parse and transform data.
+  * Click the **"Add"** button.
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-Select the device payload type to for decoder configuration:
+Select the **device payload** type to use for a decoder configuration:
 
 {% capture uplinkpayload %}
 Text payload<br>%,%text%,%templates/integration/tcp/tcp-uplink-converter-text.md%br%
@@ -173,21 +178,29 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-bin
 
 {% include content-toggle.liquid content-toggle-id="tcpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
-During or after creating the converter, you can change the decoder function:
-If the converter has already been created, click the **"Edit"** button (the "pencil" icon) to edit it.
-Copy the converter configuration example (or your own configuration) and paste it into the decoder function.
-Save the changes by clicking on the **"Save"** button (the "checkmark" icon).
+You can change the **function Decoder** while creating the converter or after creating it:
+* If the converter has already been created, click it to open the **"Data converter details"** window.
+* Click the **"Edit"** buton (the 'pencil' icon) to edit the data converter.
+* Copy the configuration example or create your own converter configuration and paste it into the **"function Decoder"** field.
+* To save the changes, click the **"Save"** button (the 'checkmark' icon).
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
 #### Downlink Converter template
 
-Create the Downlink on the **Converter templates** page as well. To see the events, check the **Debug** checkbox.
+Also create the **Downlink Converter Template** in the **Converter Templates** section.
+* On the **Edge management > Converter templates** section page, click the **“Add data converter”** button (the + icon) to create another **Converter template**, and select the **“Create new converter”** option.
+* In the **“Add data converter”** pop-up window:
+  * **Name:** Enter the name of the data converter.
+  * **Type:** Select the **“Downlink”** converter type from the drop-down menu.
+  * To view the events, enable **Debug** mode.
+  * **function Decoder:** Enter a script to parse and transform data.
+  * Click the **“Add”** button.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
-You can customize a downlink according to your configuration.
-Let’s consider an example where we send an attribute update message.
+You can customize a downlink according to your configuration. 
+Let’s consider an example where we send an attribute update message. 
 An example of a downlink converter:
 
 ```ruby
@@ -217,19 +230,31 @@ return result;
 
 ### Create Integration template
 
-Now that the Uplink and Downlink converter templates have been created, you can create an integration.
-Go to the **Integration templates** section and click the **Add new integration** button. 
-Name it **"TCP Integration"**, select the **TCP** type, enable **Debug** mode, and add the recently created Uplink and Downlink converters from the corresponding drop-down menus.
-
+Now that the **Uplink** and **Downlink converter templates** have been created, it is possible to create the **Integration**:
+* Go to the **Edge management > Integration templates** section, click the **"Add new integration"** button (the + icon) and select the **“Create new integration”** option.
+* In the **“Add integration”** pop-up window and fill out the **"Basic settings"** block:
+  * **Integration type:** Select the **"TCP"** integration type from the drop-down menu.
+  * **Name:** Enter the name of the integration.
+* In the **"Uplink data converter"** block:
+  * Select the **"Select existing"** tab.
+  * **Uplink data converter:** Select the uplink data converter from the drop-down menu.
+* In the **"Downlink data converter"** block:
+  * Select the **"Select existing"** tab.
+  * **Downlink data converter:** Select the uplink data converter from the drop-down menu.
+* In the **"Connection"** block:
+  * Enter the **Port** and **Size of the buffer for inbound socket (in KB)** in the corresponding fields. By default, the TCP Integration will use the port **10560**, but can be changed to any available port.
+  * Enter the **Cache Size** and **Cache time to live in minutes** in the corresponding fields.
+  * **Enable broadcast - integration will accept broadcast address packets:** Flag to indicate that integration accepts TCP packets sent to broadcast address.
+  * **Integration key** and **Integration secret**: Copy the values to use later in the configuration.
+  * **Handler Configuration:** Select the device payload type from the drop-down menu.
 {% include images-gallery.html imageCollection="addIntegration" %}
 
-As mentioned above, the **Execute Remotely** option is selected by **default** and cannot be changed—**TCP Integration** is always configured as a **remote type**.
+{% capture execute-remotely %}
+The **Execute remotely** option is selected by default and cannot be changed, the TCP Integration can only be the **remote** type.
+{% endcapture %}
+{% include templates/info-banner.md content=execute-remotely %}
 
-Record the **Integration key** and **Integration secret**. These values will be used later in the configuration of the remote TCP Integration itself.
-
-By default, TCP Integration will use the port **10560**, but you can change this to any available port in your case.
-
-We leave other options by default, but there is short description of them:
+We leave other options by default, but there is a short description of them:
 - **Max number of pending connects on the socket:** The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection will be denied.
 - **Size of the buffer for inbound socket:** Specifies the size (in kilobytes) of the socket’s data receive buffer.
 - **Size of the buffer for outbound socket:** Specifies the size (in kilobytes) of the socket’s data send buffer.

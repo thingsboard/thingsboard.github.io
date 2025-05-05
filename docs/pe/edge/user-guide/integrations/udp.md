@@ -194,7 +194,7 @@ You can change the **function Decoder** while creating the converter or after cr
 
 #### Downlink Converter template
 
-Create the Downlink in **Converter templates** page as well:
+Also create the **Downlink Converter Template** in the **Converter Templates** section:
 * On the **Edge management > Converter templates** section page, click the **“Add data converter”** button (the + icon) to create another **Converter template**, and select the **“Create new converter”** option.
 * In the **“Add data converter”** pop-up window:
   * **Name:** Enter the name of the data converter.
@@ -236,7 +236,7 @@ return result;
 
 ### Create Integration template
 
-Now that the Uplink and Downlink converter templates have been created, it is possible to create the Integration:
+Now that the **Uplink** and **Downlink converter templates** have been created, it is possible to create the **Integration**:
 * Go to the **Edge management > Integration templates** section, click the **"Add new integration"** button (the + icon) and select the **“Create new integration”** option. 
 * In the **“Add integration”** pop-up window and fill out the **"Basic settings"** block:
   * **Integration type:** Select the **"UDP"** integration type from the drop-down menu.
