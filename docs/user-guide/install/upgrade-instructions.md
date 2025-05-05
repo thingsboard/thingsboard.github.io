@@ -176,7 +176,7 @@ description: ThingsBoard IoT platform upgrade instructions
 {% capture difference %}
 **NOTE:**
 <br>
-These upgrade steps are applicable for ThingsBoard version 3.9.x. In order to upgrade to 4.0.1 you need to [**upgrade to 3.9.x first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-391).
+These upgrade steps are applicable for ThingsBoard version 4.0. In order to upgrade to 4.0.1 you need to [**upgrade to 4.0 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-40).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -227,7 +227,7 @@ sudo service thingsboard start
 {% capture difference %}
 **NOTE:**
 <br>
-These upgrade steps are applicable for ThingsBoard version 3.9.x. In order to upgrade to 4.0.1 you need to [**upgrade to 3.9.x first**](/docs/user-guide/install/upgrade-instructions/#windows-39).
+These upgrade steps are applicable for ThingsBoard version 4.0. In order to upgrade to 4.0.1 you need to [**upgrade to 4.0 first**](/docs/user-guide/install/upgrade-instructions/#windows-40).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
