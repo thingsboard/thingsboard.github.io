@@ -19,6 +19,8 @@ toc:
       path: /docs/user-guide/install/edge/docker/
     - title: Building Edge from Sources
       path: /docs/user-guide/install/edge/building-from-source/
+    - title: Edge Cluster Setup
+      path: /docs/edge/config/edge-cluster-setup/
   - title: Configuration
     section:
     - title: How to change configuration parameters?
