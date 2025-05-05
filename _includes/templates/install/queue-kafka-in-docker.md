@@ -13,7 +13,6 @@ nano docker-compose-kafka.yml
 
 Add the following lines to the docker-compose-kafka.yml file:
 ```yml
-version: '3.2'
 services:
   kafka:
     restart: always

@@ -1,3 +1,9 @@
+#### Docker installation
+
+Install Docker for [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+{% include templates/install/docker-install-note.md %}
+
 {% include templates/install/queue-kafka-in-docker.md %}
 
 ##### ThingsBoard Configuration
