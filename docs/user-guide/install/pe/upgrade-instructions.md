@@ -295,7 +295,7 @@ Do nothing, postgresql is already running.
 {% capture difference %}
 **NOTE:**
 <br>
-These upgrade steps are applicable for ThingsBoard version 3.9.xPE. In order to upgrade to 4.0.1PE you need to [**upgrade to 3.9.1PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-391).
+These upgrade steps are applicable for ThingsBoard version 4.0PE. In order to upgrade to 4.0.1PE you need to [**upgrade to 4.0PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-40).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -349,7 +349,7 @@ sudo service thingsboard start
 {% capture difference %}
 **NOTE:**
 <br>
-These upgrade steps are applicable for ThingsBoard version 3.9.xPE. In order to upgrade to 4.0.1PE you need to [**upgrade to 3.9.1PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-391).
+These upgrade steps are applicable for ThingsBoard version 4.0.0PE. In order to upgrade to 4.0.1PE you need to [**upgrade to 4.0PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-40).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
