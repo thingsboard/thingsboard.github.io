@@ -180,9 +180,9 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-bin
 
 You can change the **function Decoder** while creating the converter or after creating it:
 * If the converter has already been created, click it to open the **"Data converter details"** window.
-* Click the **"Edit"** buton (the 'pencil' icon) to edit the data converter.
+* Click the **"Edit"** buton (the pencil icon) to edit the data converter.
 * Copy the configuration example or create your own converter configuration and paste it into the **"function Decoder"** field.
-* To save the changes, click the **"Save"** button (the 'checkmark' icon).
+* To save the changes, click the **"Save"** button (the checkmark icon).
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
@@ -242,24 +242,21 @@ Now that the **Uplink** and **Downlink converter templates** have been created, 
   * Select the **"Select existing"** tab.
   * **Downlink data converter:** Select the uplink data converter from the drop-down menu.
 * In the **"Connection"** block:
-  * Enter the **Port** and **Size of the buffer for inbound socket (in KB)** in the corresponding fields. By default, the TCP Integration will use the port **10560**, but can be changed to any available port.
-  * Enter the **Cache Size** and **Cache time to live in minutes** in the corresponding fields.
-  * **Enable broadcast - integration will accept broadcast address packets:** Flag to indicate that integration accepts TCP packets sent to broadcast address.
-  * **Integration key** and **Integration secret**: Copy the values to use later in the configuration.
   * **Handler Configuration:** Select the device payload type from the drop-down menu.
-{% include images-gallery.html imageCollection="addIntegration" %}
 
 {% capture execute-remotely %}
 The **Execute remotely** option is selected by default and cannot be changed, the TCP Integration can only be the **remote** type.
 {% endcapture %}
 {% include templates/info-banner.md content=execute-remotely %}
 
-We leave other options by default, but there is a short description of them:
-- **Max number of pending connects on the socket:** The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection will be denied.
+We keep other options by default, but there is a short description of them:
+- **Max number of pending connects on the socket:** The maximum queue length for incoming connection indications (a request to connect) is set by the backlog parameter. If a connection indication arrives when the queue is full, the connection is denied.
 - **Size of the buffer for inbound socket:** Specifies the size (in kilobytes) of the socket’s data receive buffer.
 - **Size of the buffer for outbound socket:** Specifies the size (in kilobytes) of the socket’s data send buffer.
-- **Enable sending of keep-alive messages on connection-oriented sockets:** When enabled, the socket will periodically send keep-alive probes across the network to the peer, ensuring that the connection remains active.
+- **Enable sending of keep-alive messages on connection-oriented sockets:** When enabled, the socket will periodically send keep-alive probes across the network to the peer, to ensure that the connection remains active.
 - **Forces a socket to send the data without buffering (disable Nagle's buffering algorithm):** Disables Nagle’s algorithm on the socket, ensuring that data is sent immediately rather than waiting for a larger amount of data to accumulate.
+
+{% include images-gallery.html imageCollection="addIntegration" %}
 
 Select the device payload type for **Handler Configuration**:
 
@@ -270,7 +267,7 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuratio
 
 {% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
-### Modify Edge Root Rule chain for Downlinks
+### Modify the Edge Root Rule chain for Downlinks
 
 We can send a downlink message to the device from the **Rule chain** using the **rule node**. To send downlink via integration, modify the **Edge Root Rule chain**.
 
