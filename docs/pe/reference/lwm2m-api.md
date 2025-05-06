@@ -107,12 +107,18 @@ otafirmware-transport:
         title: 'Open the devices transport configuration settings'
     1:
         image: /images/lwm2m/otafirmware-transport-1-pe.png
-        title: 'Select the firmware update strategy'
+        title: 'Select the firmware update strategy. Without using object 19.'
+    2:
+        image: /images/lwm2m/otafirmware-transport-2-pe.png
+        title: 'Select the firmware update strategy. With using object 19.'
 
 sota:
     0:
         image: /images/lwm2m/sota-pe.png
-        title: 'Select the software update strategy from the drop down menu'
+        title: 'Select the software update strategy from the drop down menu. Without using object 19.'
+    1:
+        image: /images/lwm2m/sota-1-pe.png
+        title: 'Select the software update strategy from the drop down menu. With using object 19.'
 
 object-attributes:
     0:
