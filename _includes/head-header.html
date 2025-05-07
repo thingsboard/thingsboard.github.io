@@ -76,6 +76,8 @@
     <link href="/css/company.css" rel="stylesheet">
     {% elsif page.url == '/device-management/' or page.url == '/monitoring-dashboard/' or page.url == '/asset-management/' %}
     <link href="/css/solutions.css" rel="stylesheet">
+    {% elsif page.url contains '/case-studies/' %}
+    <link href="/css/case-studies.css" rel="stylesheet">
     {% else %}
     <link href="/css/styles.css" rel="stylesheet">
     {% endif %}
