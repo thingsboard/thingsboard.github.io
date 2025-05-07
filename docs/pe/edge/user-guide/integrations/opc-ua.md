@@ -4,69 +4,73 @@ title: OPC-UA Integration
 description: OPC-UA Integration Guide
 addConverter:
     0:
-        image: /images/pe/edge/integrations/opc-ua/add-converter-step-1.png
+        image: /images/pe/edge/integrations/opc-ua/add-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/add-converter-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/add-converter-step-2.webp
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/opc-ua/modify-converter-step-1.png
+        image: /images/pe/edge/integrations/opc-ua/modify-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/modify-converter-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/modify-converter-step-2.webp
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/opc-ua/add-downlink-step-1.png
+        image: /images/pe/edge/integrations/opc-ua/add-downlink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/add-downlink-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/add-downlink-step-2.webp
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-0.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-1.webp
     2:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-3.png
+        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-2.webp
     3:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-4.png
+        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-3.webp
+    4:
+      image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-4.webp
+    5:
+      image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-5.webp
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-1.png
+        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-2.webp
     2:
-        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-3.png
+        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-3.webp
 
 airconditionersDashboard:
     0:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-1.png
-        title: 'Open the <b>Dashboard groups</b> tab and create a new <b>Air conditioner</b> group.'
+        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-1.webp
+        title: 'Go to the <b>Dashboard</b> section and select the <b>"Groups"</b> tab. Click the <b>"Add entity group"</b> button to create a new <b>Air conditioner</b> group.'
     1:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-2.webp
         title: 'Open the newly created <b>Air conditioner</b> group.'
     2:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-3.png
-        title: 'Click the **Import** icon and browse for recently downloaded airconditioners_dashboard.json file. To proceed, click the <b>"Import"</b> button.'
+        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-3.webp
+        title: 'Click the <b>"Import dashboard"</b> button and browse for recently downloaded "airconditioners_dashboard.json" file. To proceed, click the <b>"Import"</b> button.'
     3:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-4.png
-        title: 'Go to the <b>Edge</b> instance and click the <b>Manage Dashboard</b> icon.'
+        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-4.webp
+        title: 'In the <b>Edge</b> instance, go to the <b>Edge management > Instances</b> section and click the <b>Manage edge dashboard groups</b> button.'
     4:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-5.png
-        title: 'Assign the <b>Air conditioner</b> group to the <b>Edge</b>.'
+        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-5.webp
+        title: 'Click the <b>"Assign to edge"</b> button and select the <b>Air conditioner</b> group from the drop-down menu to assign it to the <b>Edge</b>.'
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-1.png
+        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-1.webp
         title: 'Add the <b>endpointHost</b> attribute to the <b>Edge</b> and set the <b>192.168.2.153</b> value as your <b>Edge</b>.'
     1:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-2.png
+        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-2.webp
         title: 'Click the <b>Manage Integrations</b> button of <b>Edge</b> entity.'
     2:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-3.png
+        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-3.webp
         title: 'Assign the <b>Integration</b> to the <b>Edge</b>.'
     3:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-4.png
+        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-4.webp
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open the <b>Integrations</b> page. The placeholder is going to be replaced by the attribute value'
 
 device:
@@ -226,7 +230,7 @@ The decoder function can be changed during converter creation or later.
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
-### Downlink Converter template
+#### Downlink Converter template
 
 To send **Downlink messages** from the **ThingsBoard Edge** to the **OPC UA node**, we need to define a **Downlink converter**.
 
@@ -302,7 +306,7 @@ The other integration field values:
 - **Application name:** \<empty\> (client application name)
 - **Application uri:** \<empty\> (client application uri)
 - **Host:** **$\{\{endpointHost\}\}** (we will add Edge attribute **endpointHost** in next steps)
-- **Port:** **Endpoint Port** (see [Prerequisites](#prerequisites))
+- **Port:** **Endpoint Port** (see [Prerequisites](#prerequisites){: target="_blank"})
 - **Scan period in seconds:** 10 (how often to rescan OPC UA nodes)
 - **Timeout in milliseconds:** 5000 (the timeout, in milliseconds, before failing a request to OPC UA server)
 - **Security:** None (can be *Basic128Rsa15 / Basic256 / Basic256Sha256 / None*)
@@ -343,7 +347,7 @@ Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on 
 ### Air conditioners Dashboard
 
 To visualize the air conditioners data and test the RPC commands, create the **air conditioners** dashboard and assign it to the **Edge**.
-First, please download the [**airconditioners_dashboard.json**](/docs/pe/edge/user-guide/resources/airconditioners_dashboard.json) file.
+First, please download the [**airconditioners_dashboard.json**](/docs/pe/edge/user-guide/resources/airconditioners_dashboard.json){: target="_blank"} file.
 
 {% include images-gallery.html imageCollection="airconditionersDashboard" showListImageTitles="true" %}
 
@@ -351,7 +355,7 @@ First, please download the [**airconditioners_dashboard.json**](/docs/pe/edge/us
 
 Once the converters and integration templates are created, we can assign the **Integration template** to the **Edge**.
 Since we are using placeholder **$\{\{endpointHost\}\}** in the integration configuration, we need to add the **endpointHost** attribute to the **Edge** first.
-You need to provide the **Endpoint Host** of the OPC-UA Server (see [Prerequisites](#prerequisites)).
+You need to provide the **Endpoint Host** of the OPC-UA Server (see [Prerequisites](#prerequisites){: target="_blank"}).
 Once the attribute is added, we are ready to assign the integration and verify that it has been added.
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
