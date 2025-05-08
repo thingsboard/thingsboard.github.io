@@ -144,8 +144,8 @@ description: Super Bock Group case study
             </div>
             <div class="image-container">
                 <img src="/images/case-studies/range-chart.webp" title="Thingsboard range chart widget" alt="Thingsboard range chart widget">
-                <img src="/images/case-studies/route-map.webp" title="Thingsboard route map widget" alt="Thingsboard route map widget">
                 <img src="/images/case-studies/alarms-table.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget">
+                <img src="/images/case-studies/route-map.webp" title="Thingsboard route map widget" alt="Thingsboard route map widget">
             </div>
         </div>
         <div class="block triple-img">
@@ -157,8 +157,8 @@ description: Super Bock Group case study
             </div>
             <div class="image-container">
                 <img src="/images/case-studies/value-card.webp" title="Thingsboard value card widget" alt="Thingsboard value card widget">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget">
                 <img src="/images/case-studies/entities-table-2.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget">
+                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget">
             </div>
         </div>
     </section>

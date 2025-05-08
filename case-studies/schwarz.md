@@ -156,8 +156,8 @@ description: Schwarz case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/analogue-gage.webp" title="Thingsboard analogue gage widget" alt="Thingsboard analogue gage widget">
                 <img src="/images/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget">
+                <img src="/images/case-studies/analogue-gage.webp" title="Thingsboard analogue gage widget" alt="Thingsboard analogue gage widget">
             </div>
         </div>
         <div class="block">

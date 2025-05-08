@@ -147,7 +147,7 @@
           top: 0
 
         img
-          width: 50%
+          width: 55%
 
         div.text
           flex: 1
@@ -252,6 +252,7 @@
       .tb-power
         .block
           display: flex
+          align-items: center
           gap: 32px
           padding: 40px 0
           border-bottom: 1px solid #DDECFD
@@ -395,10 +396,12 @@
 
               img:nth-child(2)
                 left: 0
+                z-index: -1
 
               img:nth-child(3)
-                right: 86px
-                top: 269px
+                right: 77px
+                top: 229px
+                left: unset
 
           .text
             flex: 1
@@ -414,6 +417,7 @@
               padding-left: 16px
               border-left: 3px solid #2A7DEC
               margin: 0 32px 16px
+              font-weight: 500
 
             ul
               margin-left: 34px
@@ -510,7 +514,7 @@
 
             img
               align-self: center
-              width: 60%
+              width: 100%
               height: unset
 
 @media screen and (max-width: 959px)
