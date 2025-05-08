@@ -1,0 +1,96 @@
+{
+  "home": {
+    "home": "Startpagina"
+  },
+  "alarm": {
+    "alarms": "Alarmen"
+  },
+  "dashboard": {
+    "dashboards": "Dashboards",
+    "home-dashboard": "Startdashboard",
+    "home-dashboard-hide-toolbar": "Werkbalk van startdashboard verbergen"
+  },
+  "solution-template": {
+    "solution-templates": "Oplossingssjablonen"
+  },
+  "entity": {
+    "entities": "Entiteiten"
+  },
+  "profiles": {
+    "profiles": "Profielen"
+  },
+  "customer": {
+    "customers": "Klanten"
+  },
+  "user": {
+    "users": "Gebruikers",
+    "first-name": "Voornaam",
+    "last-name": "Achternaam"
+  },
+  "integration": {
+    "integrations-center": "Integratiecentra"
+  },
+  "rulechain": {
+    "rulechains": "Regelketens"
+  },
+  "edge": {
+    "management": "Edgebeheer"
+  },
+  "feature": {
+    "advanced-features": "Geavanceerde functies"
+  },
+  "admin": {
+    "resources": "Bronnen",
+    "settings": "Instellingen",
+    "mail-templates": "E-mailsjablonen"
+  },
+  "notification": {
+    "notification-center": "Meldingscentrum"
+  },
+  "mobile": {
+    "mobile-center": "Mobiel centrum"
+  },
+  "api-usage": {
+    "api-usage": "API-gebruik"
+  },
+  "white-labeling": {
+    "white-labeling": "Wit labelen",
+    "general": "Algemeen",
+    "login": "Aanmelden"
+  },
+  "extension": {
+    "opc-security": "Beveiliging"
+  },
+  "security": {
+    "security": "Beveiliging"
+  },
+  "account": {
+    "notification-settings": "Meldingsinstellingen"
+  },
+  "profile": {
+    "last-login-time": "Laatste aanmelding"
+  },
+  "contact": {
+    "phone": "Telefoon"
+  },
+  "language": {
+    "language": "Taal"
+  },
+  "action": {
+    "save": "Opslaan"
+  },
+  "phone-input": {
+    "phone-input-hint": "Telefoonnummer in E.164-formaat, bijv. +19995550123"
+  },
+  "custom-translation": {
+    "custom-translation": "Aangepaste vertaling",
+    "add-new-language": "Nieuwe taal toevoegen",
+    "translation-progress": "Voortgang van vertaling",
+    "country": "Land",
+    "localization-code": "Lokalisatiecode",
+    "language": "Taal"
+  },
+  "custom-menu": {
+    "custom-menu": "Aangepast menu"
+  }
+}
