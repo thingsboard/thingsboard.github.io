@@ -1403,3 +1403,67 @@ Below are the key methods provided by the `ScadaSymbolAnimation` interface:
     - **value** (optional): Value of the attribute if a single attribute name is provided.
 
   **Returns**: Itself - an updated instance of `ScadaSymbolAnimation`, allowing for chained method calls.
+
+### ConnectorScadaSymbolAnimation
+
+The `ConnectorScadaSymbolAnimation` interface in ThingsBoard is designed to manage animations for SVG connector elements, specifically for flow animations along a defined path. 
+This interface provides methods to control the animation's playback, appearance, speed, and direction, enabling dynamic manipulation of connector animations. 
+Below are the key methods provided by the `ConnectorScadaSymbolAnimation` interface:
+
+* **play**: Starts or resumes the connector animation.
+   ```javascript
+   play: () => void
+   ```
+
+Adds the animation path to the SVG element if not already present and begins the animation with a synchronized offset.
+
+* **stop**: Stops the connector animation.
+   ```javascript
+   stop: () => void
+   ```
+
+Ends the animation by stopping the `animate` element, pausing the flow effect.
+
+* **finish**: Completes the connector animation and removes it.
+   ```javascript
+   finish: () => void
+   ```
+
+Removes the animated path from the SVG element, effectively ending the animation.
+
+* **flowAppearance**: Configures the visual appearance of the connector animation.
+   ```javascript
+   flowAppearance: (width: number, color: string, linecap: StrokeLineCap, dashWidth: number, dashGap: number) => ConnectorScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+  - **width**: The stroke width of the animated path.
+  - **color**: The stroke color of the animated path (e.g., '#C8DFF7').
+  - **linecap**: The stroke linecap style ('butt', 'round', or 'square').
+  - **dashWidth**: The width of the dash in the stroke dasharray.
+  - **dashGap**: The gap between dashes in the stroke dasharray.
+
+  **Returns**: Itself - an updated instance of `ConnectorScadaSymbolAnimation`, allowing for chained method calls.
+  <br/><br/>
+
+* **duration**: Sets the speed of the connector animation.
+   ```javascript
+   duration: (speed: number) => ConnectorScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+  - **speed**: The duration of the animation in seconds.
+
+  **Returns**: Itself - an updated instance of `ConnectorScadaSymbolAnimation`, allowing for chained method calls.
+  <br/><br/>
+
+* **direction**: Sets the direction of the connector animation along the path.
+   ```javascript
+   direction: (direction: boolean) => ConnectorScadaSymbolAnimation
+   ```
+
+  **Parameters**:
+  - **direction**: If `true`, uses the forward path; if `false`, uses the reversed path.
+
+  **Returns**: Itself - an updated instance of `ConnectorScadaSymbolAnimation`, allowing for chained method calls.
+  <br/><br/>
