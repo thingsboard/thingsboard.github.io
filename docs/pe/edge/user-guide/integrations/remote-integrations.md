@@ -31,28 +31,28 @@ addIntegration:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/remote/assign-integration-step-1.webp
-        title: '1. Open <b>Instances</b> menu page. 2. Click on <b>My New Edge</b>.'
+        title: 'Go to the <b>Edge management > Instances</b> section and click on the corresponding <b>Edge</b> instance.'
     1:
         image: /images/pe/edge/integrations/remote/assign-integration-step-2.webp
-        title: '1. Click <b>Attributes</b> tab. 2. Click <b>("+")</b> icon to add new attribute.'
+        title: 'On the <b>Edge details</b> page, select the <b>Attributes</b> tab and add click the <b>"Add"</b> button to add a new attribute.'
     2:
         image: /images/pe/edge/integrations/remote/assign-integration-step-3.webp
-        title: '1. Enter <b>remoteHttpIntegrationUrl</b> attribute. 2. Set the remote value for your HTTP integration <b>http://IP:port</b>. 3. Click <b>Add</b> button.'
+        title: 'In the <b>"Add attribute"</b> pop-up window, enter the <b>remoteHttpIntegrationUrl</b> attribute. Set <b>http://IP:port</b> as the remote URL for your HTTP integration and click the <b>Add</b> button.'
     3:
         image: /images/pe/edge/integrations/remote/assign-integration-step-4.webp
-        title: 'Open <b>Instances</b> menu page.'
+        title: 'Once you added the new attribute, close the <b>Edge details</b> page and stay on the <b>Instances</b> section.'
     4:
         image: /images/pe/edge/integrations/remote/assign-integration-step-5.webp
-        title: 'Click <b>Manage edge integrations</b>.'
+        title: 'To assign the integration to the <b>Edge</b>, click the <b>"Manage edge integrations"</b> button.'
     5:
         image: /images/pe/edge/integrations/remote/assign-integration-step-6.webp
-        title: 'Click <b>("+")</b> icon.'
+        title: 'Click the <b>Assign to edge</b> button.'
     6:
         image: /images/pe/edge/integrations/remote/assign-integration-step-7.webp
-        title: '1. Select the target integration. 2. Click <b>Assign</b> button.'
+        title: 'In the <b>"Assign Integrations To Edge"</b> pop-up window, select the target integration from the <b>"Entity list"</b> drop-down menu and click the <b>Assign</b> button.'
     7:
         image: /images/pe/edge/integrations/remote/assign-integration-step-8.webp
-        title: 'Open <b>Edge</b> instance. 1. Open the <b>Integrations</b> menu page 2. Click on <b>HTTP Demo Remote</b>. 3. Check that placeholder is substituted with the value of the attribute.'
+        title: 'Open the <b>Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. Click on <b>HTTP Demo Remote</b> integration to check that placeholder is substituted with the value of the attribute.'
 
 copyCredentials:
     0:
@@ -78,28 +78,32 @@ device:
 ### Introduction
 
 It is possible to run any **ThingsBoard Integration** remotely from the main **ThingsBoard Edge** instance.
-This guide contains step-by-step instructions on how to launch **ThingsBoard integration remotely**.
+This guide provides step-by-step instructions for launching **ThingsBoard integration remotely**.
 
-For example, we will launch HTTP integration and push data to **ThingsBoard Edge via remote HTTP integration**.
+We'll demonstrate how to **set up a remote HTTP integration** to push data to **ThingsBoard Edge**.
 
-See the [deployment options](/docs/pe/edge/user-guide/integrations/#deployment-options){: target="_blank"} for more general information.
+For more general details, see the [deployment options](/docs/pe/edge/user-guide/integrations/#deployment-options){: target="_blank"}.
 
-### Prerequisites
+#### Prerequisites
 
-We assume you already have a **ThingsBoard Edge** instance up and running, and connected to the **Server** as a **Tenant administrator**.   
+* A running **ThingsBoard Edge** instance, already connected to the **Server**, with access as a **Tenant administrator**.
 
 ### ThingsBoard Server configuration steps
 
-Converter and Integration templates are created on the **Server**, so please log in to the Server instance.
-
-#### Step 1. Create an Uplink Converter
+To create **Converter** and **Integration templates**, log in to the **Cloud** instance as **Tenant administrator**.
 
 Before creating the **Integration template**, create an **Uplink converter template** in the **Converters templates** section.
 
-To convert the data coming in from the device into the format needed to display it on the **ThingsBoard Edge**, the **Uplink** is required:
-* Click the **"plus"** button and select the **"Create new converter"** option. 
-* To view the events, enable **Debug** mode.
-* To parse and transform data, enter a script in the **"function decoder"** field. 
+#### Step 1. Create Uplink Converter
+
+The **uplink data converter** is needed to convert the incoming data from the device into the format required for display on **ThingsBoard Edge**.
+* Log in to the **Cloud** and go to the **Edge management > Converter templates** section. To create a Converter template, click the **"Add data converter"** button (the **+** icon) and select the **"Create new converter"** option.
+* In the **"Add data converter"** pop-up window:
+    * **Name:** Enter the name of the data converter.
+    * **Type:** Select the **"Uplink"** converter type from the drop-down menu.
+    * To view the events, enable **Debug** mode.
+    * **function Decoder:** Enter a script to parse and transform data.
+    * Click the **"Add"** button.
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
@@ -145,22 +149,37 @@ return result;
 
 #### Step 2. Create Remote Integration 
 
-Now that the **Uplink converter template** has been created, it is possible to create an integration.
+Once the **Uplink converter template** is created, you can proceed to create the **Integration**:
+Go to the **Edge management > Integration templates** section, click the **"Add new integration"** button (the + icon) and select the **“Create new integration”** option.
+* In the **“Add integration”** pop-up window and fill out the **"Basic settings"** block:
+  * **Integration type:** Select the **"HTTP"** integration type from the drop-down menu.
+  * **Name:** Enter the name of the integration.
+* In the **"Uplink data converter"** block:
+  * Select the **"Select existing"** tab.
+  * **Uplink data converter:** Select the uplink data converter from the drop-down menu.
+* The **"Downlink data converter"** block is optional and can be skipped.
+* * In the **"Connection"** block:
+  * **Base URL:** Set ${{remoteHttpIntegrationUrl}} as the base URL.
+  * **Execute remotely:** Toggle this option to enable remote execution of the integration.
+* To save the Integration, click the **Add** button.
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
 #### Step 3. Save Remote Integration credentials.
-
-Let's copy and paste the **Integration key** and **Secret** from the **Integration details**, we'll use them later during the **Remote integration installation steps**.
+Later during the **Remote integration installation steps**, we'll use integration credentials. 
+* To view and copy the credentials, go to the **Edge management > Integration templates** section and click the integration.
+* On the **"Integration details"** page, in the **"Execute remotely"** block copy the **Integration key** and **Secret** by clicking the corresponding button.
 
 {% include images-gallery.html imageCollection="copyCredentials" %}
 
 #### Step 4. Assign Integration to Edge.
 
 Once the converter and integration templates are created, we can assign the **Integration template** to the **Edge**.
+
 Since we are using the **$\{\{remoteHttpIntegrationUrl\}\}** placeholder in the integration configuration, we must first add the **remoteHttpIntegrationUrl** attribute to the **Edge**.
 Provide the **IP address** and **port** of your remote *HTTP* integration as the **remoteHttpIntegrationUrl** attribute.
 By default, the HTTP remote integration uses port **8082**. 
+
 We will use the same port in the demo, and the **IP address** will be set as the IP of the machine where the remote integration service will be launched.
 Once the attribute is added, we are ready to assign the integration and verify that it has been added.
 
