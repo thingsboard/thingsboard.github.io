@@ -105,10 +105,10 @@ description: Schwarz case study
     </section>
     <section class="award">
         <div class="image-container">
-            <img src="/images/case-studies/schwarz-award.svg" title="Top supplier retail award" alt="Top supplier retail award">
+            <a href="/blog/top-supplier-retail-2024-2/"><img src="/images/case-studies/schwarz-award.svg" title="Top supplier retail award" alt="Top supplier retail award"></a>
         </div>
         <div class="text">
-            <h3>An Award-Winning Collaboration</h3>
+            <h3><a href="/blog/top-supplier-retail-2024-2/">An Award-Winning Collaboration</a></h3>
             <p>By solving these challenges, ThingsBoard has helped the Schwarz Group become more efficient, cost-effective, and digitally advanced. The impact of this transformation was so significant that ThingsBoard received the "TOP SUPPLIER RETAIL 2024" award from the EHI Retail Institute, proving how smart IoT solutions can revolutionize the retail industry.</p>
             <p>This collaboration goes beyond just fixing technical issues—it represents a step towards the future of retail, where smart, flexible, and secure IoT solutions play a key role. With ThingsBoard, the Schwarz Group has created a more connected, efficient, and technology-driven shopping experience, setting new standards for innovation and digital transformation in the retail industry.</p>
         </div>

@@ -19,7 +19,7 @@ description: ÖBB-Infrastruktur AG
                 <p>The main challenge in the upcoming years is going to be the rising demand in railway traffic, increased density in our timetables, thus less time-windows for maintenance work which require the track closings. Those challenges can only be encountered with better planning, and more cooperation between business units based on data in our railway digital twin.</p>
             </div>
             <div class="image large" style="background-image: url('/images/case-studies/obb.webp')">
-                <img src="/images/case-studies/oxi.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo">
+                <img src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo">
             </div>
         </div>
     </section>
