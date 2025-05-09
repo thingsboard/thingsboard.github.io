@@ -44,6 +44,8 @@ toc:
       path: /docs/mqtt-broker/other/msg-delivery-strategy/
     - title: PROXY Protocol
       path: /docs/mqtt-broker/other/proxy-protocol/
+    - title: Health API
+      path: /docs/mqtt-broker/other/health/
 - title: Integrations
   new: true
   section:
