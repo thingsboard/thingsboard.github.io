@@ -973,7 +973,7 @@ LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.o
 for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package,
 updating firmware, and performing actions after updating firmware.
 
-Please note that Object 5 is an optional object, and may be not supported by some devices.
+⚠️ Note: Object 5 is an optional object and may not be supported by all devices.
 
 To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/)
 LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from
@@ -984,12 +984,35 @@ the device on the status of the update process:
     "/5/0/5" - Update Result
     "/5/0/7" - PkgVersion
 
+Additionally, ThingsBoard supports the use of Object 19 for transmitting FOTA file metadata. This is not an alternative but a complementary feature that enhances the FOTA process. To use it, enable the following setting in the Device Profile:
+
+    Use Object 19 for OTA file metadata (checksum, size, version, name) = true
+
+When this flag is enabled, the following steps occur:
+
+1. At device connection, ThingsBoard verifies that Object 19 is supported by the device.
+2. If present, ThingsBoard creates an instance of Object 19 with InstanceId = 65534 (used for firmware metadata).
+3. FOTA metadata is sent to this instance as a Base64-encoded JSON object.
+
+FOTA metadata JSON structure:
+
+```json
+{
+  "Checksum": "SHA256 hash of the firmware file",
+  "Title": "OTA package name",
+  "Version": "Firmware version",
+  "File Name": "File name for storing the OTA on the client",
+  "File Size": "Size of the firmware file in bytes"
+}
+```
+
+⚠️ Note: Object 19 is used only for metadata delivery. The firmware update execution still follows the selected Firmware update strategy in the Device Profile.
+   
 Firmware update process is illustrated here: [Firmware Update Mechanisms ](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms)
 described as a UML 2.0 state diagram. The state diagram consists of states, drawn as rounded rectangles, and transitions,
 drawn as arrows connecting the states.
 
-There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
-profile, so it will be applied for all devices of the profile:
+There are several ways to trigger OTA firmware updates using the LwM2M transport. You can choose a Firmware update strategy in the Device Profile, which defines how the update process will be executed for all devices under this profile.
 
 {% include images-gallery.html imageCollection="otafirmware-transport" %}
 
@@ -1018,7 +1041,7 @@ LwM2M defines Object 9: Software Management Object  for the software management 
 software management in M2M devices and includes resources for delivering, execution of installation and activating 
 software packages, and reporting states.
 
-Please note that Object 9 is an optional object, and not may be supported by some devices.
+⚠️ Note: Object 9 is optional and may not be supported by all devices.
 
 To be able to run the update using Object 9, you have to make sure that Object 9 is present in the Device profile 
 LwM2M model and set up observations of following attributes on the device, which are used by the server to get 
@@ -1032,8 +1055,47 @@ feedback from the device on the status of the update process:
     "/9/0/7" - Update State
     "/9/0/9" - Update result
 
-There are several ways to run OTA software updates with LwM2M transport. You can choose the strategy in the device 
-profile, so it will be applied for all devices of the profile:
+ThingsBoard provides multiple ways to trigger OTA software updates via the LwM2M transport. You can configure the Software update strategy in the Device Profile to control how updates are performed for all associated devices.
+
+Additionally, ThingsBoard supports the use of Object 19 for transmitting SOTA file metadata. This is not an alternative but a complementary feature that enhances the SOTA process. To use it, enable the following setting in the Device Profile:
+
+    Use Object 19 for OTA file metadata (checksum, size, version, name) = true
+
+When this flag is enabled, the following steps occur:
+
+1. At device connection, ThingsBoard verifies that Object 19 is supported by the device.
+2. If present, ThingsBoard creates an instance of Object 19 with InstanceId = 65535 (used for firmware metadata).
+3. SOTA metadata is sent to this instance as a Base64-encoded JSON object.
+
+SOTA metadata JSON structure:
+
+```json
+{
+  "Checksum": "SHA256 hash of the software file",
+  "Title": "OTA package name",
+  "Version": "Software version",
+  "File Name": "File name for storing the OTA on the client",
+  "File Size": "Size of the software file in bytes"
+}
+```
+
+⚠️ Note: Object 19 is used only for metadata delivery. The software update execution still follows the selected Software update strategy in the Device Profile.
+
+### Software update process: LwM2M Software Update State Transitions
+
+#### ✅ Successful Software Update Scenario
+
+| Step | SoftwareUpdateState      | SoftwareUpdateResult                     | Description                               |
+| ---- | ------------------------ | ---------------------------------------- | ----------------------------------------- |
+| 1    | `INITIAL (0)`          | `INITIAL (0)`                          | Initial state before any download starts  |
+| 2    | `DOWNLOAD_STARTED (1)` | `DOWNLOADING (1)`                      | Download process has started              |
+| 3    | `DOWNLOADED (2)`       | `DOWNLOADING (1)` | Package downloaded and integrity verified |
+| 4    | `DELIVERED (3)`        | `SUCCESSFULLY_DOWNLOADED_VERIFIED (3)` | Package ready to be installed             |
+| 5    | `INSTALLED (4)`        | `SOFTWARE_SUCCESSFULLY_INSTALLED (2)`  | Software successfully installed           |
+| 6    | `INITIAL (0)`          | `INITIAL (0)`                          | Returned to initial state after Uninstall |
+
+
+There are several ways to trigger OTA software updates using the LwM2M transport. You can choose a Software update strategy in the Device Profile, which defines how the update process will be executed for all devices under this profile.
 
 {% include images-gallery.html imageCollection="sota" %}
 
@@ -1046,6 +1108,49 @@ This option allows running the software update with the image file located on th
 the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
 resource directly without transferring image to the server.
 
+## Test OTA using ThingsBoard LwM2M Demo Client
+
+The [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client) is a command-line tool designed to simulate an LwM2M client and connect it to a ThingsBoard server.
+
+This client can be used to test OTA firmware and software updates, as it supports:
+
+    Configurable server connection parameters (host, port, endpoint name)
+    NoSecure communication with NoSec
+    Secure communication using DTLS (with PSK, RPK, x509)
+    Dynamic and static LwM2M object model definitions
+    Simulation of various LwM2M objects, including:
+        Object 5 (Firmware Update)
+        Object 9 (Software Management)
+        Object 19 (OTA Metadata)
+    Logging of update and state transitions
+
+It is particularly useful for validating the "Firmware update strategy" and "Software update strategy" set in the Device Profile, and for ensuring compatibility of OTA metadata delivery via Object 19.
+
+To get started:
+
+1. Clone the project:
+
+```ruby
+git clone https://github.com/thingsboard/thingsboard.lwm2m.demo.client
+```
+{: .copy-code}
+
+
+2. Build the client using Maven:
+
+```ruby
+mvn clean install
+```
+{: .copy-code}
+
+3. Run the client with custom parameters:
+
+```
+java -jar thingsboard-lw-demo-client-{version}.jar -u coap://demo.thingsboard.io -n MyClientNoSec -tota
+```
+{: .copy-code}
+
+Refer to the [README](https://github.com/thingsboard/thingsboard.lwm2m.demo.client/blob/master/README.md) for full usage details and advanced configuration options.
 
 ## Advanced topics
 
