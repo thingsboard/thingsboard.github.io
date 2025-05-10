@@ -11,7 +11,12 @@ description: TBMQ Health API description
 TBMQ supports **health checks** through the Spring Boot Actuator framework. 
 Health checks allow monitoring systems to assess the state of TBMQ and its dependencies. 
 TBMQ health checks are available through the `/actuator/health` endpoint on **8083** port, 
-which can be customized to include specific details about the health of critical services such as **PostgreSQL**, **Kafka**, and **Redis**.
+which can be customized to include specific details about the connection health to critical services such as **PostgreSQL**, **Kafka**, and **Redis**.
+
+## Health Endpoint Response Status Codes
+
+* **200 OK**: The system is healthy, and all components are functioning properly.
+* **503 Service Unavailable**: One or more components have failed, and the system is deemed unhealthy.
 
 ## Key Configuration Parameters
 
@@ -66,7 +71,10 @@ management:
 
 ### Example Health Check Endpoint Output
 
-The `/actuator/health` endpoint will return JSON data representing the overall status and the status of individual components, including custom checks like **TBMQ** and **Kafka**.
+The `/actuator/health` endpoint provides JSON data that reflects both the overall system status and the status of individual components, 
+including custom checks such as **TBMQ** and **Kafka**. 
+This detailed information is included when the `show-details` setting is not configured to `never`. 
+If `show-details` is set to `never`, the endpoint will only return the overall status without component details.
 
 **Healthy Response**:
 
@@ -142,10 +150,32 @@ In the example above:
 
 * If the service is **UP**, the health check will return a status of `UP` for individual components (e.g., `db`, `redis`, `tbmq`, `kafka`). 
 This means the service is running smoothly and all dependencies are healthy.
-* If any individual component fails (e.g., `redis` or `kafka`), the health check will return `DOWN` for that specific service 
+* If any individual component fails (e.g., `redis`, `kafka`), the health check will return `DOWN` for that specific service 
 and provide an error message explaining why the service is unavailable (e.g., "Redis connection failed" or "Kafka broker not reachable").
 * If **any** of the services (e.g., `db`, `redis`, `tbmq`, `kafka`) is down, the **overall status** of the health check will be `DOWN`. 
 This means that even if one of the components is unavailable, the entire system is considered unhealthy.
+
+### Timeouts Configuration
+
+The health checks verify the connectivity to essential dependencies, such as Kafka, Redis, and PostgreSQL, 
+by executing specific commands designed to test the connection. 
+Each command is subject to a timeout, which determines how long the health check will wait before considering the 
+connectivity test to have failed. 
+The timeout for each third-party service can be customized to suit your application's requirements.
+
+```yaml
+# Kafka Admin client command timeout (in seconds). Applies to operations like describeCluster, listTopics, etc
+queue.command-timeout: "${TB_KAFKA_ADMIN_COMMAND_TIMEOUT_SEC:30}"
+
+# Maximum time (in seconds) to wait for a lettuce command to complete.
+# This affects health checks and any command execution (e.g. GET, SET, PING).
+# Reduce this to fail fast if Redis is unresponsive
+lettuce.command-timeout: "${REDIS_LETTUCE_COMMAND_TIMEOUT_SEC:30}"
+
+# Maximum time (in milliseconds) HikariCP will wait to acquire a connection from the pool.
+# If exceeded, an exception is thrown. Default is 30 seconds
+spring.connectionTimeout: "${SPRING_DATASOURCE_CONNECTION_TIMEOUT_MS:30000}"
+```
 
 ## Integration Executor Microservice
 
@@ -153,7 +183,7 @@ The **TBMQ Integration Executor (IE)** also has a health check exposed through S
 This health check monitors the health of the Integration Executor, ensuring it can connect to Kafka.
 
 * **Endpoint**: The health check is available at `/actuator/health`.
-* **Health Check URL**: The health check verifies the status of the service by sending an HTTP request to the `/actuator/health` endpoint on port `8082`.
+* **Health Check URL**: The health check verifies the status of the service by sending an HTTP request to the `/actuator/health` endpoint on port **8082**.
 
 **Healthy Response**:
 
@@ -194,7 +224,30 @@ healthcheck:
 ```
 {: .copy-code}
 
+**In Kubernetes**, you can configure liveness and readiness probes in your pod/statefulset/deployment configuration:
+
+```yaml
+livenessProbe:
+  httpGet:
+    path: /actuator/health
+    port: 8083
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet:
+    path: /actuator/health
+    port: 8083
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
+  failureThreshold: 3
+```
+{: .copy-code}
+
 These resources provide detailed information on configuring and utilizing health checks in **Docker** and **Kubernetes** environments.
 
-* **Docker Health Checks Documentation**: [Docker Health Checks](https://docs.docker.com/reference/dockerfile/#healthcheck)
-* **Kubernetes Probes**: [Kubernetes Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+* **Docker Health Checks Documentation**: [Docker Health Checks](https://docs.docker.com/reference/dockerfile/#healthcheck).
+* **Kubernetes Probes**: [Kubernetes Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/).
