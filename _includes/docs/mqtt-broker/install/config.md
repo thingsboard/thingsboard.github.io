@@ -28,6 +28,18 @@
 			<td> HTTP Server bind port (has no effect if web-environment is disabled)</td>
 		</tr>
 		<tr>
+			<td>server.forward_headers_strategy</td>
+			<td>HTTP_FORWARD_HEADERS_STRATEGY</td>
+			<td>framework</td>
+			<td> Server headers forwarding strategy. Required for SWAGGER UI when reverse proxy is used</td>
+		</tr>
+		<tr>
+			<td>server.http2.enabled</td>
+			<td>HTTP2_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable HTTP/2 support</td>
+		</tr>
+		<tr>
 			<td>server.log_controller_error_stack_trace</td>
 			<td>HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE</td>
 			<td>false</td>
@@ -887,6 +899,12 @@
 			<td>TB_KAFKA_ADMIN_CONFIG</td>
 			<td>retries:1</td>
 			<td> List of configs separated by semicolon used for admin kafka client creation</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.admin.command-timeout</td>
+			<td>TB_KAFKA_ADMIN_COMMAND_TIMEOUT_SEC</td>
+			<td>30</td>
+			<td> Kafka Admin client command timeout (in seconds). Applies to operations like describeCluster, listTopics, etc</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -1773,6 +1791,14 @@
 			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count</td>
 		</tr>
 		<tr>
+			<td>lettuce.config.command-timeout</td>
+			<td>REDIS_LETTUCE_COMMAND_TIMEOUT_SEC</td>
+			<td>30</td>
+			<td> Maximum time (in seconds) to wait for a lettuce command to complete.
+ This affects health checks and any command execution (e.g. GET, SET, PING).
+ Reduce this to fail fast if Redis is unresponsive</td>
+		</tr>
+		<tr>
 			<td>lettuce.config.shutdown-quiet-period</td>
 			<td>REDIS_LETTUCE_SHUTDOWN_QUIET_PERIOD_SEC</td>
 			<td>1</td>
@@ -1894,6 +1920,13 @@
 			<td>SPRING_DATASOURCE_MAX_LIFETIME</td>
 			<td>600000</td>
 			<td> This property controls the max lifetime in milliseconds of a connection. Only when it is closed will it then be removed. Default is 10 minutes</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.hikari.connectionTimeout</td>
+			<td>SPRING_DATASOURCE_CONNECTION_TIMEOUT_MS</td>
+			<td>30000</td>
+			<td> Maximum time (in milliseconds) HikariCP will wait to acquire a connection from the pool.
+ If exceeded, an exception is thrown. Default is 30 seconds</td>
 		</tr>
 	</tbody>
 </table>
@@ -2776,10 +2809,28 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>management.health.diskspace.enabled</td>
+			<td>HEALTH_DISKSPACE_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable disk space health check</td>
+		</tr>
+		<tr>
+			<td>management.endpoint.health.show-details</td>
+			<td>HEALTH_SHOW_DETAILS</td>
+			<td>never</td>
+			<td> Controls whether health endpoint shows full component details (e.g., Redis, DB, TBMQ).
+ Options:
+ - 'never': always hide details (default if security is enabled).
+ - 'when-authorized': show details only to authenticated users.
+ - 'always': always include full health details in the response</td>
+		</tr>
+		<tr>
 			<td>management.endpoints.web.exposure.include</td>
 			<td>METRICS_ENDPOINTS_EXPOSE</td>
-			<td>prometheus</td>
-			<td> Expose metrics endpoint (use value 'info' to disable prometheus metrics)</td>
+			<td>health,info,prometheus</td>
+			<td> Specify which Actuator endpoints should be exposed via HTTP.
+ Use 'health,info' to expose only basic health and information endpoints.
+ For exposing Prometheus metrics, update this to include 'prometheus' in the list (e.g., 'health,info,prometheus')</td>
 		</tr>
 	</tbody>
 </table>

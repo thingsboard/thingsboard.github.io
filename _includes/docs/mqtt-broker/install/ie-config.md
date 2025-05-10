@@ -161,6 +161,12 @@
 			<td> List of configs separated by semicolon used for admin kafka client creation</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.admin.command-timeout</td>
+			<td>TB_KAFKA_ADMIN_COMMAND_TIMEOUT_SEC</td>
+			<td>30</td>
+			<td> Kafka Admin client command timeout (in seconds). Applies to operations like describeCluster, listTopics, etc</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
 			<td>TB_KAFKA_CONSUMER_STATS_ENABLED</td>
 			<td>true</td>
@@ -474,10 +480,28 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>management.health.diskspace.enabled</td>
+			<td>HEALTH_DISKSPACE_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable disk space health check</td>
+		</tr>
+		<tr>
+			<td>management.endpoint.health.show-details</td>
+			<td>HEALTH_SHOW_DETAILS</td>
+			<td>never</td>
+			<td> Controls whether health endpoint shows full component details (e.g., Redis, DB, TBMQ).
+ Options:
+ - 'never': always hide details (default if security is enabled).
+ - 'when-authorized': show details only to authenticated users.
+ - 'always': always include full health details in the response</td>
+		</tr>
+		<tr>
 			<td>management.endpoints.web.exposure.include</td>
 			<td>METRICS_ENDPOINTS_EXPOSE</td>
-			<td>prometheus</td>
-			<td> Expose metrics endpoint (use value 'info' to disable prometheus metrics)</td>
+			<td>health,info,prometheus</td>
+			<td> Specify which Actuator endpoints should be exposed via HTTP.
+ Use 'health,info' to expose only basic health and information endpoints.
+ For exposing Prometheus metrics, update this to include 'prometheus' in the list (e.g., 'health,info,prometheus')</td>
 		</tr>
 	</tbody>
 </table>
