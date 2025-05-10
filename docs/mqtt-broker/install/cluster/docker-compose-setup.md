@@ -59,8 +59,8 @@ Execute the following command to start services:
 ```
 {: .copy-code}
 
-After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` 
-in you browser (e.g. **http://localhost:8083**) and connect clients using MQTT protocol on 1883 port.
+After a while when all services will be successfully started you can make requests to `http://{your-host-ip}` 
+in you browser (e.g. **http://localhost**) and connect clients using MQTT protocol on 1883 port.
 
 {% include templates/mqtt-broker/login.md %}
 
@@ -163,7 +163,7 @@ tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/
 
 ## Generate certificate for HTTPS
 
-We are using HAproxy for proxying traffic to containers and for web UI by default we are using 8083 and 443 ports. 
+We are using HAproxy for proxying traffic to containers and for web UI by default we are using 80 and 443 ports. 
 For using HTTPS with a valid certificate, execute these commands:
 
 ```bash
