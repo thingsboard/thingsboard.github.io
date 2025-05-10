@@ -67,7 +67,7 @@ management:
 
     * **Description**: Specifies which Actuator endpoints should be exposed via HTTP.
     * **Example**: `health,info,prometheus`.
-    * **Use case**: This controls which endpoints are publicly accessible, e.g., `health`, `info`, or even Prometheus metrics.
+    * **Use case**: This controls which endpoints are publicly accessible, e.g., `health`, `info`, or even `prometheus` metrics.
 
 ### Example Health Check Endpoint Output
 
@@ -148,8 +148,8 @@ If `show-details` is set to `never`, the endpoint will only return the overall s
 
 In the example above:
 
-* If the service is **UP**, the health check will return a status of `UP` for individual components (e.g., `db`, `redis`, `tbmq`, `kafka`). 
-This means the service is running smoothly and all dependencies are healthy.
+* If the system is **UP**, the health check will return a status of `UP` for individual components (e.g., `db`, `redis`, `tbmq`, `kafka`). 
+This means the TBMQ is running smoothly and all dependencies are healthy.
 * If any individual component fails (e.g., `redis`, `kafka`), the health check will return `DOWN` for that specific service 
 and provide an error message explaining why the service is unavailable (e.g., "Redis connection failed" or "Kafka broker not reachable").
 * If **any** of the services (e.g., `db`, `redis`, `tbmq`, `kafka`) is down, the **overall status** of the health check will be `DOWN`. 
