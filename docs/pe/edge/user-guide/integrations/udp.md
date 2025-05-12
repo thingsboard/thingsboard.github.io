@@ -148,7 +148,7 @@ SN-001,default,temperature,25.7,humidity,69
     - **13-16** byte: **32352e37** - The temperature telemetry. If we convert it to the text, it is **25.7**;
     - **17-18** byte: **3639** - The humidity telemetry. If we convert it to the text, it is **69**;
 
-Based on your device capabilities and business cases, you can choose the payload type:
+Based on your device capabilities and business cases, you can choose **the payload type**:
 
 {% assign integrationPort = "11560" %}
 {% include templates/edge/integrations/tcp-udp/firewall.md %}
