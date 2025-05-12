@@ -12,7 +12,7 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## Upcoming releases
 
-* MQTT-SN support;
-* Table for tracking dropped messages;
-* Helm Chart implementation;
-* Integration with external third-party services and external MQTT brokers.
+* More integrations with external third-party services;
+* Tracking dropped messages;
+* Banned clients;
+* JWT authentication.

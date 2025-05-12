@@ -1,0 +1,262 @@
+#case-studies
+  #case-studies-content
+    .case-studies-wrapper
+      padding: 0 32px
+      max-width: 1460px
+      margin: 0 auto
+
+      section
+        padding: 100px 0
+
+      .button
+        width: 208px
+        padding: 8px 24px
+        text-align: center
+
+      .case-studies-hero
+        padding-bottom: 50px
+        h1
+          color: #212529
+          text-align: center
+          font-size: 56px
+          font-weight: 600
+          line-height: 72px
+          letter-spacing: 0.14px
+
+        h2
+          color: #3D3D3D
+          text-align: center
+          font-size: 28px
+          font-weight: 400
+          line-height: 44px
+          letter-spacing: 0.249px
+          margin-bottom: 56px
+
+        .card
+          display: flex
+          gap: 32px
+
+          .image
+            flex: 1
+            background-image: url("/images/case-studies/schwarz.webp")
+            background-position: center
+            background-size: cover
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 24px
+
+            &.inner
+              display: none
+
+          .text
+            display: flex
+            flex-direction: column
+            flex: 1
+            align-items: start
+
+            .category
+              display: inline-block
+              padding: 5px 16px
+              background-color: #EEF5FD
+              border-radius: 6px
+              margin-bottom: 16px
+              font-size: 16px
+              font-weight: 400
+              line-height: 28px
+              letter-spacing: 9px
+              color: #000
+
+            h3
+              font-size: 36px
+              font-weight: 500
+              line-height: 48px
+              margin-bottom: 24px
+              color: #212121
+
+            p
+              font-size: 16px
+              font-weight: 400
+              line-height: 28px
+              letter-spacing: 0.15px
+              color: #3D3D3D
+              margin-bottom: 32px
+
+      #case-studies-clients
+        display: flex
+        //justify-content: center
+        flex-wrap: wrap
+        gap: 32px
+        padding-top: 0
+
+        .client-card
+          position: relative
+          width: 444px
+          height: 299px
+          border-radius: 24px
+          background-position: center
+          background-size: cover
+          color: #fff
+          overflow: hidden
+
+          //&:last-child
+          //  margin-right: auto
+          //
+          //&:nth-last-child(2)
+          //  margin-left: auto
+
+          .bg-wrap
+            width: 100%
+            height: 100%
+            background-position: center
+            background-size: cover
+
+            &:hover
+              &:after
+                transform: scale(1.2)
+
+              .content
+                p
+                  padding-bottom: 30px
+
+                .link
+                  bottom: 24px
+                  opacity: 1
+                  padding-bottom: 0
+
+            &:after
+              content: ""
+              position: absolute
+              top: 0
+              right: 0
+              bottom: 0
+              left: 0
+              background: inherit
+              background-size: cover
+              transform-origin: center
+              transition: transform .5s
+
+            .content
+              height: 100%
+              position: relative
+              z-index: 1
+              display: flex
+              flex-direction: column
+              justify-content: space-between
+              align-items: flex-start
+              padding: 32px
+              text-decoration: none
+              color: #fff
+
+              p
+                font-size: 18px
+                font-weight: 500
+                line-height: 30px
+                transition: all .5s
+
+              .link
+                font-size: 16px
+                font-weight: 500
+                line-height: 28px
+                color: #fff
+                opacity: 0
+                position: absolute
+                bottom: -20px
+                transition: all .5s
+                text-decoration: none
+
+                .fas.fa-arrow-right
+                  font-size: 14px
+                  margin-left: 10px
+                  color: #fff
+                  cursor: pointer
+
+  footer
+    position: static
+
+@media screen and (max-width: 959px)
+  #case-studies
+    #case-studies-content
+      .case-studies-wrapper
+        .case-studies-hero
+          .card
+            flex-direction: column
+
+            .image
+              display: none
+
+              &.inner
+                display: flex
+                flex: unset
+                height: 424px
+                width: 100%
+                margin-bottom: 24px
+
+        #case-studies-clients
+          .client-card
+            width: 100%
+
+            &:last-child
+              margin-right: 0
+
+            &:nth-last-child(2)
+              margin-left: 0
+
+            .bg-wrap
+              .content
+                p
+                  padding-bottom: 30px
+
+                .link
+                  bottom: 24px
+                  opacity: 1
+
+@media screen and (max-width: 599px)
+  #case-studies
+    #case-studies-content
+      .case-studies-wrapper
+        padding: 0 16px
+
+        .case-studies-hero
+          padding-top: 40px
+
+          h1
+            font-size: 36px
+            font-weight: 500
+            line-height: 48px
+
+          h2
+            font-size: 20px
+            font-weight: 400
+            line-height: 32px
+
+          .card
+            flex-direction: column
+            text-align: center
+
+            .text
+              align-items: center
+
+              h3
+                font-size: 28px
+                font-weight: 500
+                line-height: 44px
+
+              p
+                font-size: 14px
+
+            .image
+              display: none
+
+              &.inner
+                display: flex
+                flex: unset
+                height: 245px
+                width: 100%
+                margin-bottom: 24px
+
+                img
+                  width: 237px
+
+            .button
+              width: 100%

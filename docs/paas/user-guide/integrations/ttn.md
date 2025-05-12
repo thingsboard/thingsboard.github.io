@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: TheThingsStack Integration
-description: TheThingsStack Integration Guide 
+title: The Things Stack Community integration
+description: The Things Stack Community integration guide
 
 ---
 {% assign docsPrefix = "paas/" %}

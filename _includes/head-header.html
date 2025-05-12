@@ -76,6 +76,8 @@
     <link href="/css/company.css" rel="stylesheet">
     {% elsif page.url == '/device-management/' or page.url == '/monitoring-dashboard/' or page.url == '/asset-management/' %}
     <link href="/css/solutions.css" rel="stylesheet">
+    {% elsif page.url contains '/case-studies/' %}
+    <link href="/css/case-studies.css" rel="stylesheet">
     {% else %}
     <link href="/css/styles.css" rel="stylesheet">
     {% endif %}
@@ -587,6 +589,7 @@
             var body = $('body');
             body.css('overflow', '');
             let targetSubMenus = $('nav.head-menu > ul > li > div');
+            targetSubMenus.css('display', '');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             submenuContainer.removeClass('active');
             submenuContainer.css('display', 'block');
@@ -892,6 +895,26 @@
                                     </div>
                                 </a>
                             </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a href="/use-cases/scada-oil-and-gas-drilling-system/">
+                                    <img src="/images/case-scada-drilling-system-icon.svg" alt="SCADA icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Oil and gas drilling system</span>
+                                        <p>Control drilling operations</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a href="/use-cases/scada-energy-management/">
+                                    <img src="/images/case-scada-energy-management.svg" alt="SCADA icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Energy management</span>
+                                        <p>Monitor & control energy systems</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -901,48 +924,16 @@
                     <li class="sub-groups">
                         <div class="group">
                             <div class="column">
+                                <a class="small-link" href="/case-studies/">
+                                    <img src="/images/case-studies.svg" alt="Case studeies icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Case studies</span>
+                                    </div>
+                                </a>
                                 <a class="small-link" href="/industries/smart-energy/">
-                                    <img src="/images/se-s-icon.svg" alt="Smart Energy icon" width="24" height="24" loading="lazy">
+                                    <img src="/images/feedback.svg" alt="Clients feedback icon" width="24" height="24" loading="lazy">
                                     <div class="sub-text">
-                                        <span class="item-heading">Smart energy</span>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/agriculture/">
-                                    <img src="/images/agr-s-icon.svg" alt="Agriculture icon" width="24" height="24" loading="lazy">
-                                    <div class="sub-text">
-                                        <span class="item-heading">Agriculture</span>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/telecom/">
-                                    <img src="/images/tel-s-icon.svg" alt="Telecom icon" width="24" height="24" loading="lazy">
-                                    <div class="sub-text">
-                                        <span class="item-heading">Telecom</span>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/warehouse-monitoring/">
-                                    <img src="/images/sb-s-icon.svg" alt="Warehouse Monitoring icon" width="24" height="24" loading="lazy">
-                                    <div class="sub-text">
-                                        <span class="item-heading">Warehouse monitoring</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="column">
-                                <a class="small-link" href="/industries/smart-city/">
-                                    <img src="/images/sc-s-icon.svg" alt="Smart City icon" width="24" height="24" loading="lazy">
-                                    <div class="sub-text">
-                                        <span class="item-heading">Smart city</span>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/smart-buildings/">
-                                    <img src="/images/sb-s-icon.svg" alt="Smart Buildings icon" width="24" height="24" loading="lazy">
-                                    <div class="sub-text">
-                                        <span class="item-heading">Smart buildings</span>
-                                    </div>
-                                </a>
-                                <a class="small-link" href="/industries/industry40/">
-                                    <img src="/images/in-s-icon.svg" alt="Industry 4.0 icon" width="24" height="24" loading="lazy">
-                                    <div class="sub-text">
-                                        <span class="item-heading">Industry 4.0</span>
+                                        <span class="item-heading">Clients feedback</span>
                                     </div>
                                 </a>
                             </div>

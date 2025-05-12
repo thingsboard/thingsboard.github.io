@@ -24,6 +24,21 @@ which ensures low-latency message delivery, data durability, and horizontal scal
 Commencing in 2018, an active and continuous development process was initiated, leading to the integration of the broker into commercial applications as of 2021. 
 Following its successful deployment in production environments, it was determined in early 2023 that a public version of the broker should be made available.
 
+## Full MQTT Specification Support
+
+TBMQ is fully compliant with the MQTT protocol, delivering complete support for all core MQTT features across both single-node and clustered environments.
+Whether you're building scalable IoT solutions or ensuring reliable communication for connected devices, TBMQ meets the latest standards for seamless interoperability.
+
+### Supported MQTT versions
+
+TBMQ supports the following MQTT versions:
+
+* [MQTT 3.1](https://public.dhe.ibm.com/software/dw/webservices/ws-mqtt/mqtt-v3r1.html)
+* [MQTT 3.1.1](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/mqtt-v3.1.1.html)
+* [MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html)
+
+Our implementation ensures reliable performance and compatibility across diverse use cases.
+
 ## TBMQ Features
 
 * All MQTT v3.x features
@@ -36,7 +51,9 @@ Following its successful deployment in production environments, it was determine
 * Cluster and clients' metrics monitoring
 * Unauthorized clients
 * MQTT WebSocket client
+* Integrations with external systems (HTTP, MQTT, Kafka)
 * Kafka topics and consumer groups monitoring
+* Proxy protocol
 
 ## Architecture
 

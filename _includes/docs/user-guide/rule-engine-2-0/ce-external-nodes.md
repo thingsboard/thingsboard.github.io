@@ -189,17 +189,21 @@ Kafka Node sends messages to Kafka brokers. Expects messages with any message ty
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka-config.png)
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka-config-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka-config-pe.png)
+{% endif %}
 
 - **Topic pattern** - can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>
-- **bootstrap servers** - list of kafka brokers separated with comma.
+- **Key pattern** - Use <code>${metadataKey}</code> for value from metadata, <code>$[messageKey]</code> for value from message body.
+- **Bootstrap servers** - list of kafka brokers separated with comma.
 - **Automatically retry times** - number of attempts to resend message if connection fails.
 - **Produces batch size** - batch size in bytes for grouping messages with the same partition.
 - **Time to buffer locally** - max local buffering window duration in ms.
 - **Client buffer max size** - max buffer size in bytes for sending messages.
 - **Number of acknowledgments** - number of acknowledgments node requires to received before considering a request complete.
-- **Key serializer** - by default org.apache.kafka.common.serialization.StringSerializer
-- **Value serializer** - by default org.apache.kafka.common.serialization.StringSerializer
 - **Other properties** - any other additional properties could be provided for kafka broker connection.
 
 **Published body** - Node will send full Message payload to the Kafka topic. 
@@ -285,6 +289,18 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
+
+**MQTT retransmission mechanism**
+
+The MQTT node uses ThingsBoard's internal MQTT client.
+
+{% if docsPrefix contains "paas" %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=false %}
+{% else %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=true %}
+{% endif %}
+
+When the message is dropped, the corresponding rule engine message is routed via **Failure** chain with the appropriate exception message.
 
 <br>
 

@@ -54,11 +54,4 @@ function stringToInt(hex) {
 return result;
 
 ``` 
-{: .copy-code}
-
-{% include images-gallery.html imageCollection="uplink-java" %}
-
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the "pencil" icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the "checkmark" icon.
-
-{% include images-gallery.html imageCollection="uplink-edit-java" %}
+{:.copy-code.expandable-10}

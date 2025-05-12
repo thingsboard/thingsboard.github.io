@@ -11,7 +11,9 @@ Sensors data in the local network is collected and sent via the Modbus protocol 
 ThingsBoard acts as the core of the SCADA system, storing data from devices in a database, processing it, visualizing the information, and sending control commands to the devices.
 
 <br>
-<object width="95%" data="/images/solutions/swimming_pool_scada_system/scada-solution-structure.svg"></object>
+
+<object width="100%" data="/images/solutions/swimming_pool_scada_system/swimming-pool-scada-system-scheme.svg"></object>
+
 
 <br>
 To understand how the Swimming Pool SCADA system template works, let's start by installing it.
@@ -21,71 +23,11 @@ To understand how the Swimming Pool SCADA system template works, let's start by 
 You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
 The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
 
-{% include images-gallery.html imageCollection="go-to-solution-templates-page-1" showListImageTitles="true" %}
+- Go to the "**Solution templates**" page. Find "**Swimming Pool SCADA system**" and click "**Install**" to start the installation process.
+- Configuration instructions for this solution will be provided — follow the steps as instructed.
+- Once done, click "**Close**" to complete the setup and proceed to the dashboard.
 
-**Follow the next steps:**
-
-\- **Step 1**: Install Docker Compose on your system. Follow the instructions in the official [Docker Compose installation guide](https://docs.docker.com/compose/install/){:target="_blank"};
-
-\- **Step 2**: Launch the Modbus Pool Emulator. Execute the provided command to simulate a comprehensive swimming pool system:
-
-```text
-docker run --pull always --rm -d --name tb-modbus-pool-emulator -p 5021-5034:5021-5034 thingsboard/tb-modbus-pool-emulator:latest && docker logs -f tb-modbus-pool-emulator
-```
-{: .copy-code}
-
-This command will launch a Modbus pool emulator containing 14 devices, which act as a unified system and communicate through the ModBus protocol.
-
-{% include images-gallery.html imageCollection="launch-modbus-pool-emulator-1" %}
-
-\- **Step 3**: Launch the IoT Gateway. 
-
-ThingsBoard will automatically generate a yml file with the required settings. All you need to do is copy and save this configuration as a **docker-compose.yml** file in a convenient location on your computer for storage and execution.
-
-{% include images-gallery.html imageCollection="docker-compose-yml" %}
-
-Here&#39;s an example of the configuration:
-
-```text
-services:
-  # ThingsBoard IoT Gateway Service Configuration
-  tb-gateway:
-    image: thingsboard/tb-gateway:latest
-    container_name: tb-gateway
-    restart: always
-
-    # Necessary mapping for Linux
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-    # Environment variables
-    environment:
-      - host=$YOUR_INSTANCE_HOST
-      - port=$YOUR_INSTANCE_PORT
-      - accessToken=$ACCESS_TOKEN
-```
-
-where
-
-- **$YOUR_INSTANCE_HOST** is a host of your ThingsBoard instance
-- **$YOUR_INSTANCE_PORT** is a port of your ThingsBoard instance
-- **$ACCESS_TOKEN** is an access token for the gateway from platform server
-
-<br>
-Now, run the command below from the folder where you've saved the docker-compose.yml file to run the IoT Gateway:
-
-```text
-docker compose up
-```
-{: .copy-code}
-
-{% include images-gallery.html imageCollection="launch-iot-gateway-1" %}
-
-We will explore the IoT Gateway in more detail in the "[Gateway](#gateway)" section, where we will discuss how the gateway operates within the ThingsBoard environment, devices connectivity, and data transmission configuration.
-
-The IoT Gateway is running. Click "Close" to proceed to the dashboard.
-
-{% include images-gallery.html imageCollection="go-to-dashboard-1" %}
+{% include images-gallery.html imageCollection="go-to-solution-templates-page-1" %}
 
 ## Dashboard
 
@@ -143,8 +85,9 @@ Traditional<small>SCADA system</small>%,%traditional%,%templates/solutions/scada
 
 ### Asset
 
-The Swimming Pool SCADA system includes a single asset named Swimming Pool SCADA system. This asset serves as the central hub for propagating data from all connected devices. The data collected by the asset is later used to monitor and control various components of the system.
-Additionally, a script within the rule engine processes this data to calculate the statuses of each pipe, indicating whether water is flowing or not, which is then displayed on the dashboard for real-time monitoring.
+The Swimming Pool SCADA system includes a single [asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} named the **SCADA Swimming Pool system**. This asset serves as the central hub for collecting and processing data from all connected devices. 
+The data collected by the asset is processed using [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} and later used for monitoring and controlling various system components, including calculations that determine the status of each pipe—indicating whether water is flowing or not. 
+The data is then visualized on the dashboard, allowing users to interact with and control devices while monitoring system performance in real time.
 
 {% include images-gallery.html imageCollection="solution-scada-asset" %}
 
@@ -189,24 +132,23 @@ For detailed information on each parameter in "RPC Requests", refer to the [Modb
 
 ## Rule chain
 
-The **Swimming Pool Device Rule Chain** is the core of the Swimming Pool SCADA system, processing telemetry, managing devices, and triggering automated actions. Each message flows through structured nodes that handle telemetry, generate alarms, and control devices. This ensures smooth data flow, real-time monitoring, and timely responses for all connected devices.
-The data is then visualized on the dashboard, allowing users to interact with and control devices while monitoring system performance in real time.
+Each message passes through The **Swimming Pool Device Rule Chain**. Here, telemetry, attributes, and RPC requests are saved, alarms are generated, and control of the heat pump is performed.
 
 {% include images-gallery.html imageCollection="solution-scada-rule-chain" %}
 
 <br>
 **Message processing flow:**
 
-* **Alarm Generation**:
+* **Alarm generation**:
   Every message first passes through the [device profile node](/docs/{{docsPrefix}}user-guide/device-profiles/#device-profile-rule-node){:target="_blank"}. This step allows the system to generate alarms based on the conditions defined in the device profiles (such as for the heat pump, water pump, and sand filter). If the telemetry exceeds the set thresholds, alarms are triggered and displayed on the dashboard.{% include images-gallery.html imageCollection="rule-chain-1" %}
 
-* **Message Type Switch**:
+* **Message type switch**:
   After the initial profile processing, the message moves to the [message type switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node){:target="_blank"}. This node routes messages based on their type, such as telemetry data, attribute updates, or RPC requests. It sends each message down the appropriate path for further processing.
 
 {% include images-gallery.html imageCollection="rule-chain-2" %}
 
 * **General logic – save attributes, time series, and RPC requests**:
-  Independent of the message type, several actions occur for all devices.
+  Independent of the message type, these actions are performed for all devices.
 
   * [save attributes node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}: The telemetry data from devices is saved as attributes.
   * [save time series node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}: Time series data is saved for historical analysis and monitoring.
@@ -214,44 +156,10 @@ The data is then visualized on the dashboard, allowing users to interact with an
 
 {% include images-gallery.html imageCollection="rule-chain-3" %}
 
-* **Activity/inactivity events**:
-  This part of the rule chain is responsible for monitoring the activity and inactivity of devices. The system catches these events, propagating the device states to the asset. This data is crucial for further calculations and to ensure real-time updates about which devices are active.
-
-  {% include images-gallery.html imageCollection="rule-chain-4" %}
-
 * **Device profile filtering**:
-  Once the telemetry data is saved, the message is routed through the [device profile switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"}. This node filters the devices based on their profile, allowing for device-specific actions:
+  Once the telemetry data is saved, the message is routed through the [device profile switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"}. This node filters the devices based on their profile, allowing for device-specific actions. When telemetry from the **heat pump** is detected, the system checks specific conditions—like target temperature, outdoor temperature, and pool temperature—through a [switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#switch-node){:target="_blank"}. If the telemetry conditions meet the thresholds for turning the heat pump on or off, an RPC request is sent to control the heat pump’s state.
 
-  * **Heat pump**: When telemetry from the heat pump is detected, the system checks specific conditions—like target temperature, outdoor temperature, and pool temperature—through a [switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#switch-node){:target="_blank"}. If the telemetry conditions meet the thresholds for turning the heat pump on or off, an RPC request is sent to control the heat pump’s state.
-
-  * **Sand filter, Water pump, Water sensor, Valve**: For these devices, the message passes through a [script node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node){:target="_blank"} that adds the device name to the necessary telemetry. This step ensures that the telemetry is properly propagated as attributes on the asset for further use.
-
-{% include images-gallery.html imageCollection="rule-chain-5" %}
-
-<br>
-
-**Main calculation script that determines the conditions for water flow through the pipes:**
-
-After the [device profile switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"}, the message is sent to the [script node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node){:target="_blank"}. The function of this node creates a new message that contains the device name in the modified camelCase format + its telemetry from the incoming message, and returns an object with the updated data.
-For example, the device name "Water pump outgoing valve", converted to camelCase, becomes "waterPumpOutgoingValve" + the telemetry key name "opened", and is recorded as "waterPumpOutgoingValveOpened".
-
-Next, the [change originator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#change-originator){:target="_blank"} changes the "originator" of the message. This node specifies an asset instead of devices as the message source. In other words, all telemetry goes to the asset and is stored as attributes using the [save attributes node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}.
-
-Next, the [originator attributes node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#originator-attributes){:target="_blank"} requests the specified attributes from the asset and sends them to the main calculation script in the [script node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
-This script is crucial for determining which pipe segments are currently active. The calculation determines whether water should flow through specific pipes based on attribute values and saves this values using the [save attributes node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}.
-
-**Variables:**
-- **filterSegmentFlowing** determines whether water flows through the filtration segment. This depends on several conditions, including whether the pump is operating and the valves allowing water to pass through the filter are open.
-- **drainSegmentFlowing** determines whether water is flowing through the drain segment. This depends on the filtration status and whether the corresponding mode is set on the filter.
-- **heatSegmentFlowing** determines whether water is flowing through the heating segment. This occurs if the water is being filtered but not drained, and the heating valve is open.
-- **phFilterSegmentFlowing** determines whether the flow is passing through the pH filtration segment. This depends on the filtration status and whether the corresponding valve is open.
-- **fillSegmentFlowing** determines whether water is flowing through the filling segment, which is activated when the filling valve for the pool is open and pH filtration is active.
-
-**Functions:**
-- **calculateFilterSegment()** evaluates whether water filtration is occurring based on several conditions, such as the opening of valves for the pump, drainage, and the water level.
-- **calculatePhFilterSegment()** checks whether the water flow is passing through the pH filtration segment depending on the activity of other segments and the valve statuses.
-
-{% include images-gallery.html imageCollection="rule-chain-6" %}
+{% include images-gallery.html imageCollection="rule-chain-4" %}
 
 ## Device profiles
 
