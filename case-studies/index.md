@@ -29,7 +29,7 @@ description: Learn how ThingsBoard helps clients build and improve their busines
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/super-bock-group.webp');">
                 <a class="content" target="_blank" href="/case-studies/super-bock">
                     <img src="/images/case-studies/super-bock-group.svg" title="Super Bock Group" alt="Super Bock Group logo">
-                    <p>Protecting Electronics and Workers: IONA Tech’s IoT Transformation with ThingsBoard</p>
+                    <p>Revolutionizing beer distribution: how ThingsBoard empowered Super Bock Group</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                 </a>
             </div>
