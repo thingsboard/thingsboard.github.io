@@ -92,19 +92,25 @@ change-attribute-key-name:
 
 ota-firmware-update-strategy:
     0:
-        image: /images/lwm2m/ota-firmware-update-strategy-1-pe.png
+        image: /images/lwm2m/ota-update-strategy-1-pe.png
         title: 'Open the devices transport configuration settings.'
     1:
         image: /images/lwm2m/ota-firmware-update-strategy-2-pe.png
-        title: 'Select the firmware update strategy, and save changes.'
+        title: 'Select the firmware update strategy, and save changes. Without Object 19.'
+    2:
+        image: /images/lwm2m/ota-firmware-update-strategy-3-pe.png
+        title: 'Select the firmware update strategy, and save changes. With Object 19.'
 
 software-update-strategy:
     0:
-        image: /images/lwm2m/ota-firmware-update-strategy-1-pe.png
+        image: /images/lwm2m/ota-update-strategy-1-pe.png
         title: 'Open the devices transport configuration settings.'
     1:
-        image: /images/lwm2m/software-update-strategy-1-pe.png
-        title: 'Select the software update strategy from the drop down menu, and save changes.'
+        image: /images/lwm2m/ota-software-update-strategy-2-pe.png
+        title: 'Select the software update strategy from the drop down menu, and save changes. Without Object 19.'
+    2:
+        image: /images/lwm2m/ota-software-update-strategy-3-pe.png
+        title: 'Select the software update strategy from the drop down menu, and save changes. With Object 19.'
 
 object-attributes:
     0:
