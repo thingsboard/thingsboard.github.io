@@ -1,183 +1,307 @@
 * TOC
 {:toc}
 
-
-## Prerequisites
-
-We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with ThingsBoard.
+> Before proceeding, we recommend reviewing the general [Getting Started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} to become familiar with ThingsBoard basics. Additionally, it is advisable to explore the [Device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} documentation.
 
 ## LwM2M basics
 
-[LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for constrained devices and the demands of a machine-to-machine (M2M) environment.
-You can find more information about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-LWM2M/).
-Key advantage of the LwM2M protocol is a rich library of data structures that is called [LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html).
-The up-to-date list of available objects is available inside [this](https://github.com/OpenMobileAlliance/lwm2m-registry) Github repository.
+[LwM2M (Lightweight M2M)](https://en.wikipedia.org/wiki/OMA_LWM2M){:target="_blank"} is a device management protocol designed for constrained devices and the demands of a machine-to-machine (M2M) environments.
+You can find more information about LwM2M [here](https://www.openmobilealliance.org/specifications/lwm2m/introduction){:target="_blank"}.
 
-The registry allows efficient serialization/deserialization of telemetry.
-LwM2M Protocol defines process of device registration, configuration, management and firmware/software updates.
+One of the key advantages of LwM2M is its rich library of data structures, known as the [LwM2M Object and Resource Registry](https://www.openmobilealliance.org/specifications){:target="_blank"}.
+The most up-to-date list of available objects can be found in [this GitHub repository](https://github.com/OpenMobileAlliance/lwm2m-registry){:target="_blank"}.
 
-The LwM2M device supplies the list of LwM2M Objects it supports during registration.
-The LwM2M Object has an ID, version and one or multiple instances. Each LwM2M Object instance has multiple resources.
+The registry enables efficient serialization/deserialization of telemetry data. The LwM2M protocol defines the processes for:
+- Device registration
+- Configuration and management
+- Firmware/software updates
 
-The LwM2M resource is a key concept that represents some data you may get or write to device. 
-For example, Resource "3.0.2" always represents the device serial number. Where "3" is the Object id, "0" is the Object instance and "2" is the resource id.
+**LwM2M object structure**
 
-Each resource has the following main properties:
+When an LwM2M device registers with the server, it provides a list of supported LwM2M Objects. Each object has:
+- An **object** ID
+- A **version**
+- One or multiple **instances**
 
-* Name - human readable name of the resource
-* Type - data type: String, Integer, etc.
-* Operations - R (read), RW (read-write), E (execute), etc.
+Each LwM2M object instance contains multiple **resources**.
+
+**What is an LwM2M resource?**
+
+An LwM2M resource represents a piece of data that you can read from or write to the device.
+
+For example, the resource "3.0.2" always represents the **device serial number**:
+- **3** – object ID
+- **0** – object instance
+- **2** – resource ID
+
+Each **resource** has the following main properties:
+- **Name** - human-readable name of the resource
+- **Type** - data type: String, Integer, etc.
+- **Operations** - R (read), RW (read-write), E (execute), etc.
 
 ## Getting started
 
-This part of documentation covers provisioning of your first LwM2M device in ThingsBoard. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example) test client to simulate LwM2M device.
+This section covers how to provision your first LwM2M device in ThingsBoard. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example){:target="_blank"} test client to simulate LwM2M device.
 
 ### Step 1. Upload LwM2M models
 
-{% unless docsPrefix contains 'paas/' %}
-System administrator is able to upload LwM2M models using "Resource library" UI located in the "System settings" menu.
-One may upload multiple files at once. We recommend you to download list of available models from official [github](https://github.com/OpenMobileAlliance/lwm2m-registry) repo and import all of them.
-Note that LwM2M models are versioned, and make sure to upload those that match the LwM2M object versions provided by your devices.
+To begin, the {% if docsPrefix == "pe/" or docsPrefix == null %}System administrator or {% endif %}Tenant administrator must upload the LwM2M models.
 
-{% include images-gallery.html imageCollection="upload-models" showListImageTitles="true" %}
+> **Tip**: We recommend downloading the latest list of LwM2M models from the [official GitHub repo](https://github.com/OpenMobileAlliance/lwm2m-registry){:target="_blank"} and importing all of them.
 
-{% endunless %}
+> **Make sure** that the versions of the LwM2M models you upload match the versions of the LwM2M objects used by your actual devices.
 
-<p> Tenant administrator is able to use LwM2M models defined by system administrator or overwrite them for the specific tenant.</p>
+- Log in to your ThingsBoard instance as a System administrator.
+- Navigate to the "Resources library" page under the "Resources" section.
+- Click the "+" (Add resource) button in the top-right corner of the window.
+- Upload one or more LwM2M model files.
+- Click "Add" to complete the upload.
 
-{% include images-gallery.html imageCollection="upload-tenant" showListImageTitles="true" %}
+Once uploaded, you should see the new models listed in the Resources library.
 
+{% include images-gallery.html imageCollection="upload-models" %}
+
+<b>The Tenant administrator has the ability to:</b>
+
+- Use LwM2M models uploaded by the System administrator.
+- Override existing models or upload custom ones.
+
+> ⚠️ **Important**: A Tenant administrator cannot delete files uploaded by the System Administrator. They can only delete models that were uploaded by themselves.
 
 ### Step 2. Define LwM2M device profile
 
-Once you upload the LwM2M models, you are ready to use them to define the device profile.
-See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device-profiles/) for more info about device profiles.
+Once you&#39;ve uploaded the LwM2M models, you can use them to configure a device profile for LwM2M devices.
+For general information about device profiles, [read here](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}.
 
 #### Step 2.1 Create the LwM2M profile.
 
-The important step is to chose LwM2M Transport type on the "Transport configuration" step.
-The Transport Configuration allows us to define list of the LwM2M Objects that your devices supports.
+The key step here is to select the LwM2M transport type during the *Transport configuration* stage.
+This configuration allows you to define the list of LwM2M Objects that your devices will support.
 
-{% include images-gallery.html imageCollection="device-profile" showListImageTitles="true" %}
+- Go to the "Device profiles" page under the "Profiles" section.
+- Click the "+" (Add device profile) button in the top-right corner of the window, and in the pop-up menu, select "Create new device profile".
+- Enter a name for the profile.
+- Navigate to the "Transport configuration" tab.
+- Select "LwM2M" as the transport type from the dropdown menu.
+- Click "Add" to create the device profile.
+
+The new profile has been successfully created.
+
+{% include images-gallery.html imageCollection="create-lwm2m-device-profile" %}
 
 #### Step 2.2 Choose LwM2M objects.
 
-Let's define a profile that supports Device Object (id: 3), Connectivity (id: 4), Firmware Update (id: 5) and Location monitoring (id: 6):
+Let&#39;s define the following LwM2M objects in the device profile:
+- **Device object** - **Device #3_1.2**
+- **Connectivity** - **Connectivity Monitoring #4_1.3**
+- **Firmware update** - **Firmware Update #5_1.1**
+- **Location monitoring** - **Location #6_1.0**
 
-{% include images-gallery.html imageCollection="device-objects" showListImageTitles="true" %}
+To do this, follow these steps:
+- Select the previously created **LwM2M profile**.
+- Go to the "**Transport configuration**" tab.
+- Click the "**Edit**" button.
+- **Add objects** from the drop-down list.
+
+> ⚠️ **Note**: These objects must be preloaded into the **Resource library** in advance.
+
+{% include images-gallery.html imageCollection="device-objects"  %}
 
 #### Step 2.3 Configure the mapping
 
-You may notice that Device Object supports Manufacturer, model, and serial numbers. Let’s configure ThingsBoard to fetch
-those data when device connects and store it as ThingsBoard attributes.
-Also we want to observe Radio Signal Strength, Link Quality and device location push it as ThingsBoard telemetry.
-Observe is a powerful LwM2M feature that will instruct a device to report changes of those values.
-You may also define conditions for reporting specific resource via LwM2M attributes. These settings are covered in the [advanced](#object-and-resource-attributes) documentation.
+Now let&#39;s configure how ThingsBoard should process LwM2M object data:
+- The **device object** provides **manufacturer**, **model number**, and **serial number**. Let&#39;s configure ThingsBoard to receive this data as **attributes**.
+- We will observe and collect data such as **radio signal strength**, **link quality**, and **device location**, and store it as **telemetry** in ThingsBoard.
 
-{% include images-gallery.html imageCollection="data-fetch" showListImageTitles="true" %}
+> The **Observe** feature in LwM2M allows the server to receive data only when the values change.
 
-Note: if you un-check all items from the Object(Telemetry, Attributes, Observe) - this object will not be displayed in the
-device profile.
+>️ You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).
 
-Transport Configuration also allows you to define bootstrap and other settings.
+To do this, follow these steps:
+- For each selected object:
+    - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
+    - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
+- Click "Save" to apply the changes.
+
+{% include images-gallery.html imageCollection="configure-mapping" %}
+
+> ⚠️ **Note**: If you uncheck all items (Attributes, Telemetry, Observe) for an object, it **will not appear** in the device profile configuration.
+
+Additionally, the "**Transport configuration**" tab also allows you to configure **bootstrap settings** and other settings.
 
 ### Step 3. Define LwM2M device credentials
 
-We assume you have already created LwM2M device profile using the previous step.
+We assume you have successfully created a device profile for LwM2M devices in the previous steps.
+Now let&#39;s create a new device, assign it the previously created LwM2M profile, and configure its credentials.
 
-Now, let's create the device using our profile and configure LwM2M Credentials.
-ThingsBoard supports 4 different types of credentials: Pre-Shared Key (PSK), Raw Public Ket (RPK), X.509 Certificates and "No Security" mode.
+ThingsBoard supports four types of credentials:
+- **Pre-Shared Key (PSK)**
+- **Raw Public Key (RPK)**
+- **X.509 Certificate**
+- **No Security** (default)
 
-{% include images-gallery.html imageCollection="device-credentials" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="device-credentials" %}
 
-For simplicity, we will connect device using plain UDP and "No Security" mode.
-To connect such a device we just need to specify it's endpoint name in the device credentials.
+For simplicity, we&#39;ll connect the device over **plain UDP** using the "**No Security**" mode:
+- Start [creating a new device](/docs/{{docsPrefix}}user-guide/ui/devices/#adding-a-new-device){:target="_blank"} and assign it the [previously created LwM2M device profile](#step-21-create-the-lwm2m-profile).
+- Go to the "**Credentials**" tab.
+- Choose "**No Security**" as the credential type.
+- Enter the **Endpoint Client Name** — this will be used to identify the device on the network.
 
-{% include images-gallery.html imageCollection="nosecurity-credentials" showListImageTitles="true" %}
+> 🔐 With **No Security** mode, only the **Endpoint Client Name** is required for device identification.
 
-You may use other types of credentials with the DTLS mode enabled. See [DTLS configuration](#dtls-configuration) for more info.
+- Click "Add".
+
+The device has been added.
+
+{% include images-gallery.html imageCollection="no-security-credentials" %}
+
+To enhance security, use alternative credential types by enabling DTLS mode.
+Refer to the [DTLS configuration](#dtls-configuration) guide for more information on how to set up this mode.
 
 ### Step 4. Connect the device
 
-We assume you have already provisioned LwM2M device credentials using the previous step and also built Eclipse Wakaama [test client](https://github.com/eclipse/wakaama#test-client-example).
-Now you are ready to turn on the device and observe the incoming telemetry.
+At this point, you should have:
+- Provisioned the LwM2M device and its credentials (as described in the previous step).
+- Built the Eclipse Wakaama [test client](https://github.com/eclipse/wakaama#test-client-example){:target="_blank"}.
 
-Let's launch the test client:
+Now you are ready to start the client and observe incoming telemetry in ThingsBoard.
+
+<b><font size="4">Launch the test client</font></b>
+
+Run the following command from your terminal:
 
 ```bash
-./lwm2mclient -h {{lwm2mHostName}} -n UniqueEndpointName -p 5685 -c
+./lwm2mclient -h {{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME -p 5685 -c
 ```
 {: .copy-code}
 
-Where
-* '{{lwm2mHostName}}' is the host name of the LwM2M server;
-* '5685' is the port of LwM2M server;
-* 'UniqueEndpointName' is the unique name of your endpoint. Please replace this with IMEI or other unique ID.
+**where:**
+* **{{lwm2mHostName}}** - the **hostname** of your LwM2M server
+* **5685** - the **port** of LwM2M server;
+* **$UNIQUE_ENDPOINT_NAME** - is the unique name of your endpoint.(e.g., IMEI or any other unique ID)
 
+> ⚠️ Be sure to replace **$UNIQUE_ENDPOINT_NAME** with your actual device identifier.
 
-The LwM2M transport implementation also stores the logs of communication with the device into telemetry. You should see the "transportLog" in the device telemetry tab.
+<b><font size="4">Monitoring telemetry</font></b>
 
-{% include images-gallery.html imageCollection="wakaama-terminal" showListImageTitles="true" %}
+Once the client connects:
+- The device will register with the ThingsBoard LwM2M transport.
+- You will begin to receive telemetry data.
+
+The LwM2M transport implementation also stores the logs of communication with the device into telemetry.
+You can view these logs under the "**transportLog**" event of the "**Latest telemetry**" tab.
+
+{% include images-gallery.html imageCollection="wakaama-terminal" %}
 
 ## ThingsBoard LwM2M support
 
-ThingsBoard implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
-As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time series data](/docs/{{docsPrefix}}user-guide/telemetry/).
-The mapping is configured in the corresponding device profile. We will use some screenshots of the LwM2M device profile below to explain the basics. 
-See the [Getting Started](#getting-started) guide for a step-by-step instruction to create the device profile.
+ThingsBoard provides full support for both an LwM2M Server and a Bootstrap Server, with communication over:
+- **Plain UDP**
+- **DTLS** (secure transport over UDP)
 
-### Read LwM2M resources to ThingsBoard attributes
+As a platform user, you are able to provision LwM2M devices and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} and [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} (time series data).
+These mappings are configured within the corresponding **LwM2M device profile**.
 
-You may configure device profile to read and observe certain LwM2M Resource. 
-The values of the resource may be stored as the device [attributes](/docs/{{docsPrefix}}user-guide/attributes/). 
-To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in ThingsBoard.
-For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in ThingsBoard:
+> For step-by-step instructions on creating a device profile, refer to the [getting started guide](#getting-started).
 
-![image](https://img.thingsboard.io/lwm2m/attributes-ce.png)
+In the following sections, we will use screenshots of the LwM2M device profile UI to illustrate key features and configuration steps.
 
-ThingsBoard will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
+### Reading LwM2M resources into ThingsBoard attributes
 
-**Note:** 
+You may configure a device profile to read and/or observe specific LwM2M resources. When configured, the values of these resources will be stored as device attributes in ThingsBoard.
 
-We may optionally issue the "Observe" operation to make sure we subscribe to the updates of the LwM2M resource.
-To do this, select the "Observe" checkbox for the corresponding Resource. Let's configure ThingsBoard to monitor the LwM2M Resource */3/0/15* (Timezone) and store it as the *timezone* attribute:
+To store resource as the attribute:
+- Navigate to the "**Transport configuration**" tab of your LwM2M device profile.
+- Locate the desired **LwM2M resource**.
+- Select the "**Attribute**" checkbox to store its value as a ThingsBoard attribute.
+- Optionally, modify the auto-generated key to define a custom **attribute name**.
 
-![image](https://img.thingsboard.io/lwm2m/attributes-observe-ce.png)
+> ThingsBoard will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
 
-Using the above configuration, we will make sure that the attribute *timezone* will always contain the latest value of the *Timezone* resource.
+**Example:** Let&#39;s configure the platform to read the **LwM2M resource** */3/0/2* (Device Serial Number) and store it in ThingsBoard as an attribute named "*serialNumber*".
+
+{% if docsPrefix == null %}
+![image](/images/lwm2m/read-lwm2m-resources-attributes-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+![image](/images/lwm2m/read-lwm2m-resources-attributes-pe.png)
+{% endif %}
+
+#### Observing attributes for real-time updates
+
+In addition to reading the value at registration time, you may choose to **observe** the LwM2M resource to keep the attribute up-to-date as the value changes.
+To do this, check the "**Observe**" box for the desired resource. This will subscribe the server to real-time updates for that resource.
+
+**Example:** Let&#39;s monitor the LwM2M Resource */3/0/15* (Timezone) and store its value as the "*timezone*" attribute.
+
+{% if docsPrefix == null %}
+![image](/images/lwm2m/observe-lwm2m-resources-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+![image](/images/lwm2m/observe-lwm2m-resources-pe.png)
+{% endif %}
+
+With this setup, the *timezone* attribute in ThingsBoard will always contain the latest value of the *Timezone* resource.
 
 ### Write LwM2M resource via ThingsBoard attributes update
 
-ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
-You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
-Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
+ThingsBoard enables configuration updates to be pushed to LwM2M devices using [Shared attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes){:target="_blank"}. 
+These updates can be initiated from various sources, such as:
+- The administration UI
+- A dashboard [widget](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"}
+- [The REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}
+- [A Rule Engine node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node){:target="_blank"}
+
+Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource in the device profile.
 If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.
 
-See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-thingsboard-attributes)
+> See the *Timezone* example in the [reading attributes](#reading-lwm2m-resources-into-thingsboard-attributes) section.
 
 ### Read LwM2M resources to time series data
 
-You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time series data](/docs/{{docsPrefix}}user-guide/telemetry/).
-To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in ThingsBoard.
-For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
-and to store them as time series data in ThingsBoard:
+You may configure the device profile to read and observe specific LwM2M resources and store their values as telemetry [time series data](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} data in ThingsBoard.
 
-![image](https://img.thingsboard.io/lwm2m/time-series-ce.png)
+To store resource as the telemetry:
+- Navigate to the "**Transport configuration**" tab of your LwM2M device profile.
+- Find the desired **LwM2M resource**.
+- Select the "**Telemetry**" checkbox.
+- Optionally, customize the telemetry key name by changing the auto-generated key.
+
+**For example**, let&#39;s configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free), and to store them as time series data in ThingsBoard:
+
+{% if docsPrefix == null %}
+![image](/images/lwm2m/read-lwm2m-resources-time-series-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+![image](/images/lwm2m/read-lwm2m-resources-time-series-pe.png)
+{% endif %}
 
 ### Execute LwM2M operation using the ThingsBoard RPC command
 
-ThingsBoard supports on-demand LwM2M operations using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity. 
-You can send the command using REST API, dashboard widget, rule engine, or custom script.
-See the structure of the command is documented [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc). 
+ThingsBoard supports **on-demand execution of LwM2M operations** using its **Remote Procedure Call (RPC)** feature. For simplicity, we often refer to RPCs as "**commands**".
 
-Key properties of the command are *method* and *params*. 
-The *method* defines the LwM2M operation and is one of the following: 
+You can send these commands using:
+- The **REST API**
+- A dashboard [widget](/docs/{{docsPrefix}}user-guide/widgets/){:target="_blank"}
+- [A Rule Engine node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node){:target="_blank"}
+- A **custom script**
 
-* [Execute](#execute-operation) - used by the LwM2M Server to initiate some action;
-* [Read](#read-operation) - access the value of a Resource;
-* [Discover](#discover-operation) - discover LwM2M Resources available on an Objects or Object Instances;
-* [WriteUpdate](#write-operation) - change the value of a Resource;
-* [WriteAttributes](#write-attributes-operation) - change attribute of the Resource;
+> ⚠️ **Note**: The structure and format of RPC commands for LwM2M devices are well-defined and standardized within the platform. Refer to [this documentation](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc){:target="_blank"} for full details.
+
+**Command structure**
+
+Each RPC command contains two main properties:
+- "**method**" – the type of LwM2M operation to execute
+- "**params**" – a JSON that defines the resource id or multiple resources IDs.
+
+**Supported method values:**
+
+* [Execute](#execute-operation) - used by the LwM2M Server to initiate some action (e.g., reboot);
+* [Read](#read-operation) - reads the current value of a specific resource;
+* [Discover](#discover-operation) - discovers available LwM2M resources on an object or object instance;
+* [WriteUpdate](#write-operation) - updates the value of a resource;
+* [WriteAttributes](#write-attributes-operation) - change attributes related to a resource;
 * [ReadComposite](#read-composite-operation) - selectively read any combination of Objects;
 * [WriteComposite](#write-composite-operation) - change the values of a number of different Resources across different Instances of one or more Objects;
 * [Delete](#delete-operation) - delete an Object Instance within the LwM2M Client;
@@ -187,29 +311,34 @@ The *method* defines the LwM2M operation and is one of the following:
 * [ObserveReadAll](#read-all-observations-operation) - Thingsboard-specific operation and allows to get all observations that are set on the device;
 * [DiscoverAll](#discover-all-operation) - Thingsboard-specific operation and allows to get the object and resources hierarchy, instantiated on the client.
 
-The *params* is typically a JSON that defines the resource id or multiple resources ids. 
-For example, to reboot the device one should execute the resource */3/0/4* (Reboot).
+**Example: Reboot the device**
 
-So, the following RPC command need to be sent to ThingsBoard:
+To trigger a **reboot** on the device using resource */3/0/4*, send the following RPC command to ThingsBoard:
 
 ```json
 {
    "method": "Execute",
-   "params": {"id": "/3/0/4"}
+   "params": {
+     "id": "/3/0/4"
+   }
 }
 ```
 {: .copy-code}
 
-We have prepared a simple dashboard with the ability to execute commands to device (*/3/0/4* Reboot) and update device attributes (*/3/0/15* Timezone). 
-You may import the dashboard from [gist](https://gist.github.com/ashvayka/2374b1b6ebd8be5dca3d5252dee4c212#file-lwm2m_operations-json), once you complete the "Getting started" guide below. 
-Don't forget to change the dashboard [alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases). 
+We&#39;ve prepared a simple dashboard that demonstrates how to:
+- **Reboot the device** via /3/0/4
+- **Update attributes** such as /3/0/15 (Timezone)
+
+You can [import the dashboard from a Gist](https://gist.github.com/ashvayka/2374b1b6ebd8be5dca3d5252dee4c212#file-lwm2m_operations-json){:target="_blank"} after completing the [getting started guide](#getting-started).
+
+> ⚠️ Don&#39;t forget to adjust the [dashboard alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases){:target="_blank"} to match your device or asset.
 
 ## RPC Commands
 
-LwM2M transport supports [RPC](/docs/{{docsPrefix}}user-guide/rpc/) commands that reflect subset of
-[Device Management and Service Enablement Interface](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#6-3-0-63-Device-Management-and-Service-Enablement-Interface)
+LwM2M transport supports [RPC](/docs/{{docsPrefix}}user-guide/rpc/){:target="_blank"} commands that reflect subset of
+[Device Management and Service Enablement Interface](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#6-3-0-63-Device-Management-and-Service-Enablement-Interface){:target="_blank"}
 and
-[Information Reporting interface](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#6-4-0-64-Information-Reporting-Interface).
+[Information Reporting interface](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#6-4-0-64-Information-Reporting-Interface){:target="_blank"}.
 
 The Device Management and Service Enablement Interface is used by the LwM2M Server to access Object Instances and Resources available from a registered LwM2M Client. The operations that a Resource supports are defined in the Object definition using the Object Template.
 
@@ -217,15 +346,14 @@ The Information Reporting Interface is used by a LwM2M Server to observe any cha
 
 We will use the Debug Terminal widget to send commands to the device.
 
-
 To execute attribute - oriented commands there are two ways to specify the target resource: by Resource ID and by the Key.
 
 Resource  ID is the combination of "/ObjectId/ObjectInstance/ResourceID" numbers,
 Where:
 
-* 'ObjectId' Indicates the Object number. Objects used to group resources on the device, related to a certain functionality.
-* 'ObjectInstance' Indicates the Object Instance to read.
-* 'ResourceID' Indicates the Resource to read.
+* "**ObjectId**" indicates the Object number. Objects used to group resources on the device, related to a certain functionality.
+* "**ObjectInstance**" indicates the Object Instance to read.
+* "**ResourceID**" indicates the Resource to read.
 
 Example of plain RPC call example for REST API: 
 
@@ -264,17 +392,16 @@ Read {"key":"batteryLevel"}
 ```
 {: .copy-code}
 
-To be able to use the Key, you have to assign it to the attribute in the Device Profile configuration section:
-* Go to the Device Profiles page;
-* Click the Profile name;
-* Click the “pencil” button on the top-right corner to edit profile;
-* Go to Transport configuration tab;
-* Switch to LWM2M Model tab;
-* Select the target object and expand the Attributes list;
-* Tick the “Attribute” checkbox on the desired attribute and type the Key name;
-* Click save.
+To be able to use the Key, you have to assign it to the attribute in the Device profile configuration section:
+- Go to the "Device profiles" page.
+- Click the Profile name to open its details.
+- Navigate to the "Transport configuration" tab.
+- Click the "pencil" button on the top-right corner to edit profile.
+- On the "LWM2M Model" tab select the target object and expand the "Attributes" list.
+- Tick the "Attribute" checkbox on the desired attribute and input the custom name for the key.
+- Save changes.
 
-{% include images-gallery.html imageCollection="device-objects-ce" %}
+{% include images-gallery.html imageCollection="change-attribute-key-name" %}
 
 Below you can find examples of usage for commands that are supported by the Thingsboard platform for LWM2M protocol. Please note that your target client may not support all of them, please refer to the client’s documentation for detailed information on supported commands.
 
@@ -364,7 +491,7 @@ value=1.02, type=STRING], 20=LwM2mSingleResource [id=20, value=2, type=INTEGER],
 
 The "Discover" operation is used to discover LwM2M Resources available on an Objects or Object Instances.
 This operation can be used to discover which Resources are instantiated in a given Object Instance. The returned payload
-is a list of application/link-format CoRE Links [RFC6690](https://datatracker.ietf.org/doc/html/rfc6690) for each targeted Object, Object Instance, or Resource, along
+is a list of application/link-format CoRE Links [RFC6690](https://datatracker.ietf.org/doc/html/rfc6690){:target="_blank"} for each targeted Object, Object Instance, or Resource, along
 with their assigned or attached Attributes including the Object Version attribute if required.
 
 Example of corresponding input in the debug terminal:
@@ -443,8 +570,7 @@ of Resources Instances or the values of multiple Resources from an Object Instan
 used to request the deletion or the allocation of specific Instances of a Multiple-Instance Resource.
 
 The request includes the value to be written encoded in one of the data format defined in
-[7.4. Data Formats for Transferring Resource Information](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#7-4-0-74-Data-Formats-for-Transferring-Resource-Information
-): plain text, opaque, TLV, JSON, CoRE Link, CBOR, SenML JSON, and SenML CBOR.
+[7.4. Data Formats for Transferring Resource Information](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#7-4-0-74-Data-Formats-for-Transferring-Resource-Information){:target="_blank"}: plain text, opaque, TLV, JSON, CoRE Link, CBOR, SenML JSON, and SenML CBOR.
 
 There are two mechanisms to change multiple Resources or an array of Resource Instances:
 
@@ -546,7 +672,7 @@ WriteReplace {"id": "/19_1.1/0/0","value": {"0":"00ad456797", "25":"25ad456700"}
 ### Write-Attributes Operation
 
 Only Attributes from the NOTIFICATION class MAY be changed in using the "Write-Attributes" operation.
-[Object and Resource attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes) section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
+[Object and Resource attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes){:target="_blank"} section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
 Minimum Period, Maximum Period, Greater Than, Less Than, Step.
 The operation permits multiple Attributes to be modified within the same operation.
 
@@ -771,7 +897,7 @@ Delete {"id":"/19/1"}
 
 The LwM2M Server initiates an observation request for changes of a specific Resource, Resources within an Object
 Instance or for all the Object Instances of an Object within the LwM2M Client.
-Related parameters for "Observe" operation are described in [Notification attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes) Write-Attributes Operation and those
+Related parameters for "Observe" operation are described in [Notification attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes){:target="_blank"} Write-Attributes Operation and those
 parameters are configured by "Write-Attributes" operation.
 
 <b> Example: Observe resource</b>
@@ -928,7 +1054,7 @@ ObserveReadAll
 ### Discover All Operation
 
 The "Discover All Observations" operation is Thingsboard-specific operation and allows to get the object and resources hierarchy,
-instantiated on the client. When DiscoverAll is executed, it doesn't send any request to the client device, instead it 
+instantiated on the client. When DiscoverAll is executed, it doesn&#39;t send any request to the client device, instead it 
 returns LwM2M model of the client device, which was created during the device connection to the server.
 This command is very useful for device setting up and troubleshooting, as it allows to see available objects and their 
 versions.
@@ -966,49 +1092,46 @@ DiscoverAll
 ## Firmware over-the-air updates
 
 LwM2M protocol allows you to upload and distribute over-the-air(OTA) firmware updates to devices. Please read first the 
-following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) to learn about uploading and managing
+following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn about uploading and managing
 firmware packages and the update process.
 
-LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update)
-for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package,
-updating firmware, and performing actions after updating firmware.
+LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update){:target="_blank"}
+for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package, updating firmware, and performing actions after updating firmware.
 
 Please note that Object 5 is an optional object, and may be not supported by some devices.
 
-To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/)
-LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from
-the device on the status of the update process:
+To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/){:target="_blank"}
+LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from the device on the status of the update process:
 
     "/3/0/3" - Firmware Version
     "/5/0/3" - State
     "/5/0/5" - Update Result
     "/5/0/7" - PkgVersion
 
-Firmware update process is illustrated here: [Firmware Update Mechanisms ](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms)
+Firmware update process is illustrated here: [Firmware Update Mechanisms ](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms){:target="_blank"}
 described as a UML 2.0 state diagram. The state diagram consists of states, drawn as rounded rectangles, and transitions,
 drawn as arrows connecting the states.
 
 There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
 profile, so it will be applied for all devices of the profile:
 
-{% include images-gallery.html imageCollection="otafirmware-transport" %}
+{% include images-gallery.html imageCollection="ota-firmware-update-strategy" %}
 
 ### Push firmware update as binary file using Object 5 and Resource 0.
 The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of
 the Object 5. After the downloading is finished, the update process should be triggered using the executable 
-resource "/5/0/2". The full process is illustrated here: [Example of a LwM2M Server pushing a firmware image to a LwM2M client](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-1-Example-of-a-LwM2M-Server-pushing-a-firmware-image-to-a-LwM2M-client).
+resource "/5/0/2". The full process is illustrated here: [Example of a LwM2M Server pushing a firmware image to a LwM2M client](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-1-Example-of-a-LwM2M-Server-pushing-a-firmware-image-to-a-LwM2M-client){:target="_blank"}.
 
 ### Auto-generate a unique CoAP URL to download the package and push the firmware package via Object 5 and Resource 1.
 This option allows running the firmware update with the image file located on the 3rd party storage. In this case the
 server generates a CoAP-URL and  sends it to the client, and the client downloads firmware image from the external
 resource directly without transferring image to the server. After the downloading is finished, the update process should
-be triggered using the executable resource "/5/0/2". The full process is illustrated here: [Example of a client fetching
-a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/)
+be triggered using the executable resource "/5/0/2". The full process is illustrated here: [Example of a client fetching a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/){:target="_blank"}.
 
 ## Software over-the-air updates
 
 LwM2M protocol allows you to upload and distribute over-the-air(OTA) software updates to devices. Please read first the
-following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) to learn about uploading and managing
+following article [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn about uploading and managing
 software packages and the update process.
 
 Updating of the device software has some differences comparing to the firmware update process: the Software Management
@@ -1035,7 +1158,7 @@ feedback from the device on the status of the update process:
 There are several ways to run OTA software updates with LwM2M transport. You can choose the strategy in the device 
 profile, so it will be applied for all devices of the profile:
 
-{% include images-gallery.html imageCollection="sota" %}
+{% include images-gallery.html imageCollection="software-update-strategy" %}
 
 ### Push software update as binary file using Object 9 and Resource 2.
 The software package is pushed from the server directly to the device via the block-wise transfer to the Resource 2 of 
@@ -1045,7 +1168,6 @@ the Object 9.
 This option allows running the software update with the image file located on the 3rd party storage. In this case 
 the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
 resource directly without transferring image to the server.
-
 
 ## Advanced topics
 
@@ -1061,7 +1183,7 @@ actions on the LwM2M Client (e.g., Notifications).
 Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, R-Attribute.
 
 These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be
-updated - when writable - through the [Write-Attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#write-attributes-operation) operation.
+updated - when writable - through the [Write-Attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#write-attributes-operation){:target="_blank"} operation.
 
 There are two types of attributes:
 
@@ -1069,10 +1191,9 @@ There are two types of attributes:
 
 The role of these Attributes is to provide metadata which may communicate helpful information to the LwM2M Server, for 
 example easing data management. Thingsboard supports Object Version attribute, which indicates the version of the 
-associated Object and is displayed in the results of [DiscoverAll](/docs/{{docsPrefix}}reference/lwm2m-api/#discover-all-operation) command.
+associated Object and is displayed in the results of [DiscoverAll](/docs/{{docsPrefix}}reference/lwm2m-api/#discover-all-operation){:target="_blank"} command.
 
-You can find more details about all available in LwM2M Object attributes here:  [PROPERTIES Class Attributes](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes)
-
+You can find more details about all available in LwM2M Object attributes here: [PROPERTIES Class Attributes](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes){:target="_blank"}
 
 <b> NOTIFICATION Class Attributes, or Resource Attributes </b> 
 
@@ -1105,12 +1226,11 @@ Following NOTIFICATION attributes are available on the TB Platform to configure 
   each time the Observed Resource value crosses this threshold with respect to pmin parameter and valid "Change
   Value Conditions" (see Notification Conditions above).
 
-Please find more more details about all available in LwM2M NOTIFICATION attributes [here.](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-2-lessNOTIFICATIONgreater-class-Attributes).
+Please find more details about all available in LwM2M NOTIFICATION attributes [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-2-lessNOTIFICATIONgreater-class-Attributes){:target="_blank"}.
 
 Notification attributes can be configured in the Device Profile, please follow the guide:
 
 {% include images-gallery.html imageCollection="object-attributes" %}
-
 
 ### DTLS configuration
 
@@ -1118,14 +1238,14 @@ The Thingsboard platform supports secured connection using DTLS. DTLS, which sta
 Security, is based on the Transport Layer Security (TLS) protocol and built on top of the User Datagram Protocol (UDP).
 Thingsboard allows the use of DTLS  with the LwM2M transport connection for devices.
 
-You can find detailed information about `LWM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19).
+You can find detailed information about `LWM2M DTLS-based Security` [here](http://www.openmobilealliance.org/release/LightweightM2M/V1_2-20201110-A/OMA-TS-LightweightM2M_Transport-V1_2-20201110-A.pdf#page=19){:target="_blank"}.
 
 There are three authentication methods available on the Thingsboard for LwM2M DTLS: using the Pre-Shared Key(PSK), using
 the Raw Public Key(RPK) and using the X.509 certificate.
 
 To use DTLS, the end-user device has to connect to the ThingsBoard server using secured port 5686.
 
-For the demonstration purpose we will use Leshan Demo Client, please refer to the link for downloading and configuration: [here](https://github.com/eclipse/leshan)
+For the demonstration purpose we will use Leshan Demo Client, please refer to the link for downloading and configuration: [here](https://github.com/eclipse/leshan){:target="_blank"}.
 
 #### 1. Pre-shared Key mode (PSK).
 
@@ -1177,7 +1297,7 @@ To configure the connection, you need to do following steps:
    * Generate Server keys and add them to the Server key-storage file lwm2mserver.jks, copy the file back to the server installation folder.
    * Configure your client’s connection.
 
-We will use OpenSSl tool and follow the guide from Leshan: [here](https://github.com/eclipse/leshan/wiki/Credential-files-format)
+We will use OpenSSl tool and follow the guide from Leshan: [here](https://github.com/eclipse/leshan/wiki/Credential-files-format){:target="_blank"}.
 
 <b>Note:</b> This step requires Linux-based OS with Java installed.
 
@@ -1249,7 +1369,7 @@ openssl ec -in scertServer.pem -pubout -outform DER -out spubk.der
 {: .copy-code}
 
 Please note that script us using the default password for "lwm2mserver.jks" file. If you are going to use another password,
-please also update it in ["thingsboard.yml"](https://thingsboard.io/docs/user-guide/install/config/) configuration file:
+please also update it in ["thingsboard.yml"](https://thingsboard.io/docs/user-guide/install/config/){:target="_blank"} configuration file:
 
 ```ruby
 ...
