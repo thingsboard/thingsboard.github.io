@@ -1108,7 +1108,7 @@ LwM2M model and set up observations of following attributes on the device, which
     "/5/0/5" - Update Result
     "/5/0/7" - PkgVersion
 
-dditionally, ThingsBoard supports the use of Object 19 for transmitting FOTA file metadata. This is not an alternative but a complementary feature that enhances the FOTA process. To use it, enable the following setting in the Device Profile:
+Additionally, ThingsBoard supports the use of Object 19 for transmitting FOTA file metadata. This is not an alternative but a complementary feature that enhances the FOTA process. To use it, enable the following setting in the Device Profile:
 
     Use Object 19 for OTA file metadata (checksum, size, version, name) = true
 
