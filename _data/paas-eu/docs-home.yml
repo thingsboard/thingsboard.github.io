@@ -174,7 +174,6 @@ toc:
       path: /docs/paas/eu/user-guide/mail-templates/
     - title: Custom translation
       path: /docs/paas/eu/user-guide/custom-translation/
-      new: true
     - title: Custom menu
       path: /docs/paas/eu/user-guide/custom-menu/
 - title: Integrations
