@@ -83,6 +83,22 @@
     "blurb": "Elastel is a technology-driven company providing IIoT products and services globally. With 10+ years of industry experience, Elastel has developed series Open, High-performance, Reliable, and Easy-to-use IIoT devices like Industrial Raspberry Pi, Arm-based IIoT Gateway, Industrial Cellular Router, etc.  These edge hardware allows customers flexibly develop their specific applications for IoT needs."
   },
   {
+    "type": ["main", "lte", "wirepas"],
+    "program": "",
+    "name": "Haltian",
+    "logo": "haltian-logo.png",
+    "site": {
+      "href": "https://haltian.com/",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "https://files.haltian.io/apps/collectives/p/JaQDHYga32dD9fZ/Haltian%20IoT%20developer%20guide"
+      }
+    },
+    "blurb": "Haltian's Thingsee IoT solution is a secure IoT sensor solution for enterprises. Includes mesh-connected sensors, gateways, cellular connectivity and device management cloud. Implemented in commercial real estate, hospitals and warehouses supporting occupancy and utilization analytics, data-driven cleaning, smart FM and RLTS. Global cellular connectivity included with open APIs to integrate with everything. Built in Finland."
+  },
+  {
     "type": ["main", "bluetooth", "nbiot", "lte", "sigfox", "wifi"],
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
