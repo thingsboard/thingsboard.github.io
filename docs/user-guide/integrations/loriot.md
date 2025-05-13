@@ -178,7 +178,7 @@ uplink_events:
         image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-3-pe.png
         title: '"Output" block.'
     3:
-        image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-3-pe.png
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converter-events-4-pe.png
         title: '"Metadata" block.'
 
 event_out:
