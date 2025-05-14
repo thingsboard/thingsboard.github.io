@@ -159,7 +159,7 @@ Go to the **Edge management > Integration templates** section, click the **"Add 
   * **Uplink data converter:** Select the uplink data converter from the drop-down menu.
 * The **"Downlink data converter"** block is optional and can be skipped.
 * * In the **"Connection"** block:
-  * **Base URL:** Set ${{remoteHttpIntegrationUrl}} as the base URL.
+  * **Base URL:** Set **$\{\{remoteHttpIntegrationUrl\}\}** as the base URL.
   * **Execute remotely:** Toggle this option to enable remote execution of the integration.
 * To save the Integration, click the **Add** button.
 
