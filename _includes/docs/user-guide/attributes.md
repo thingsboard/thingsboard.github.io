@@ -304,7 +304,7 @@ You can achieve higher performance with Attributes Cache enabled (see <b>cache.a
 
 Having attributes cache enabled ThingsBoard will load the specific attribute from the database only once, all subsequent requests to the attribute will be loaded from the faster cache connection.
 
-**NOTE:** If you are using Redis cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent Redis from filling up all available memory.
+**NOTE:** If you are using Redis or Valkey cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent the service from filling up all available memory.
 
 {% endunless %}
 
