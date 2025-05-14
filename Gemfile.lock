@@ -245,7 +245,7 @@ GEM
     nokogiri (1.16.8-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.8-x64-mingw32)
-          racc (~> 1.4)
+      racc (~> 1.4)
     nokogiri (1.16.8-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.8-x86_64-linux)
