@@ -947,6 +947,15 @@ var tb = (function () {
 								});
 							}
 
+							function navigateToItemByClick () {
+								$carousel.find('.owl-item').on('click', function () {
+									if (!$(this).hasClass('center')) {
+										const position = $('[data-position]',  $(this)).data('position')
+										$carousel.trigger('to.owl.carousel', [position, 300]);
+									}
+								});
+							}
+
 							const carouselContentToggle = $(`.owl-carousel-toggle-content#${carouselId}`)
 
 							function owlCarouselToggleContent() {
@@ -1052,6 +1061,8 @@ var tb = (function () {
 								slideTransition: 'linear',
 								responsiveBaseElement: 'body',
 								responsiveClass: true,
+								autoplayHoverPause: true,
+								autoplay: true,
 								startPosition: $carousel[0].classList.contains("courses-carousel") ? setUpCourseFromUrl() : 0,
 								onInitialized: function(event) {
 									if ($carousel[0].classList.contains("smooth-carousel")) {
@@ -1063,6 +1074,9 @@ var tb = (function () {
 									}
 									if($carousel[0].classList.contains("courses-carousel")) {
 										courseBelowScroll();
+									}
+									if($carousel[0].classList.contains("cardMode")) {
+										navigateToItemByClick();
 									}
 								},
 								onChanged: function (event) {

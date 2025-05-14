@@ -1,5 +1,14 @@
-{% assign cardType = include.cardType | default: "use-cases" %}
-{% assign defaultSettings = '{"items":3,"center":true,"stagePadding":0,"margin":0,"nav":true,"dots":false,"autoplay":false,"responsive":{"0":{"items":1,"nav":false,"dots":true,"stagePadding":0},"600":{"items":1,"nav":false,"dots":true,"stagePadding":50},"960":{"items":1,"nav":false,"dots":true,"stagePadding":125},"1025":{"items":1,"nav":true,"dots":false,"stagePadding":125},"1280":{"items":3,"nav":true,"dots":false}}}' %}
+{% assign cardType = include.cardType | default: 'use-cases' %}
+{% assign defaultSettings = '{
+    "items": 3,
+    "center": true,
+    "stagePadding": 0,
+    "margin": 0,
+    "nav": true,
+    "dots": false,
+    "autoplay": false,
+    "responsive":{"0":{"items":1,"nav":false,"dots":true,"stagePadding":0},"600":{"items":1,"nav":false,"dots":true,"stagePadding":50},"960":{"items":1,"nav":false,"dots":true,"stagePadding":125},"1025":{"items":1,"nav":true,"dots":false,"stagePadding":125},"1280":{"items":3,"nav":true,"dots":false}}
+}' %}
 
 {% if cardType == 'courses' %}
 {% assign coursesCollection = include.coursesCollection %}
@@ -23,7 +32,7 @@
 
 {% assign courseIds = "{" | append: courseIds | append: "}" %}
 
-<div class="usecase-carousel owl-carousel owl-theme hidden-carousel courses-carousel carousel-content-toggle cardMode smallArrow smallArrow circle loopEnabled transitionAnimationEnabled" data-settings='{{ defaultSettings }}' data-id='{{ courseIds }}'>
+<div class="usecase-carousel owl-carousel owl-theme courses-carousel carousel-content-toggle cardMode smallArrow circle transitionAnimationEnabled" data-settings='{{ defaultSettings }}' data-id='{{ courseIds }}'>
     {% for course in coursesCollection %}
         {% assign totalHours = 0 %}
         {% for session in course[1].courseSessions %}
@@ -52,5 +61,31 @@
         </div>
     {% endfor %}
 </div>
+{% elsif cardType == 'use-cases' %}
+    {% assign collectionMap = include.collectionMap %}
+
+    {% if site.data.carousel-collection[collectionMap] %}
+        {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
+    {% else %}
+        {% assign carouselCollection = page[collectionMap] %}
+    {% endif %}
+
+    {% assign titleSize = include.titleSize | default: "28px" %}
+    {% assign descriptionSize = include.descriptionSize | default: "14px" %}
+
+    <div class="owl-carousel owl-theme usecase-carousel cardMode smallArrow circle transitionAnimationEnabled" data-settings='{{ defaultSettings }}'>
+        {% for item in carouselCollection %}
+            <div class="card" style="height: {{ item[1].height }}" data-position="{{ forloop.index0 }}">
+                <div class="card-header">
+                    <img src="{{ item[1].src }}" alt="{{ item[1].alt }}">
+                    <span style="font-size: {{ titleSize }}; color: #000000DE; line-height: 44px; font-weight: 500;">{{ item[1].title }}</span>
+                </div>
+                <p style="font-size:{{ descriptionSize }}; color: #000000C2; line-height: 24px; font-weight: 400">{{ item[1].description }}</p>
+                <div class="card-link">
+                    <a href="{{ item[1].href }}" aria-label="Learn more about {{ item[1].title }}">{{ item[1].linkLabel }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endif %}
 

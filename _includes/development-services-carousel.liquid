@@ -9,7 +9,9 @@
 {% assign defaultSettings = '{
     "items": 1,
     "stagePadding": 50,
-    "margin": 100
+    "margin": 100,
+    "nav": false,
+    "responsive":{"1024":{"nav": true}}
 }' %}
 
 {% assign settings = include.settings | jsonify %}

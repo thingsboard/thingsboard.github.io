@@ -1,4 +1,4 @@
-.owl-carousel.owl-theme.usecase-carousel
+.owl-carousel.owl-theme
   margin: 64px 0 24px
   position: relative
   visibility: hidden
@@ -169,24 +169,27 @@
         margin: 8px 0
         background: #E0E1E2
         border-radius: 4px
-.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityTrue
+.owl-carousel.owl-theme.usecase-carousel
+  img
+    width: auto
+.owl-carousel.owl-theme.nonActiveItemsVisibilityTrue
   .owl-stage-outer
     overflow: visible
-.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityFalse
+.owl-carousel.owl-theme.nonActiveItemsVisibilityFalse
   .owl-stage-outer
     overflow: hidden
-.owl-carousel.owl-theme.usecase-carousel.circle
+.owl-carousel.owl-theme.circle
   .owl-dots
     button.owl-dot
       width: 10px
       height: 10px
-.owl-carousel.owl-theme.usecase-carousel.line
+.owl-carousel.owl-theme.line
   .owl-dots
     button.owl-dot
       span
         width: 72px
         height: 4px
-.owl-carousel.owl-theme.usecase-carousel.square
+.owl-carousel.owl-theme.square
   .owl-dots
     button.owl-dot
       &:hover, &.active
@@ -198,25 +201,25 @@
         width: 12px
         height: 12px
 
-.owl-carousel.owl-theme.usecase-carousel.dotButtonInCarouselContainerEnabled
+.owl-carousel.owl-theme.dotButtonInCarouselContainerEnabled
   .owl-dots
     position: absolute
     bottom: 5px
     left: 50%
     transform: translate(-50%, -50%)
 
-.owl-carousel.owl-theme.usecase-carousel.disableDots
+.owl-carousel.owl-theme.disableDots
   .owl-dots
     display: none
 
 @media screen and (max-width: 750px)
-  .owl-carousel.owl-theme.usecase-carousel.line
+  .owl-carousel.owl-theme.line
       .owl-dots
         button.owl-dot
           span
             width: 10px
             height: 10px
-.owl-carousel.owl-theme.usecase-carousel.thingsboardStyledBackgroundEnabled
+.owl-carousel.owl-theme.thingsboardStyledBackgroundEnabled
   .carousel-item-default
     position: relative
     &:before
@@ -229,7 +232,7 @@
       background-repeat: no-repeat
       z-index: 2
       opacity: 0.3
-.owl-carousel.owl-theme.usecase-carousel.darkenedImageEnabled
+.owl-carousel.owl-theme.darkenedImageEnabled
   .carousel-item-default
     position: relative
     &:after
@@ -240,7 +243,7 @@
       top: 0
       background-color: #3F474F99
       z-index: 1
-.owl-carousel.owl-theme.usecase-carousel.transitionAnimationEnabled
+.owl-carousel.owl-theme.transitionAnimationEnabled
   .owl-stage-outer
     position: relative
     .owl-stage
@@ -253,11 +256,11 @@
         &.active
           filter: blur(0)
           transform: scale(1)
-.owl-carousel.owl-theme.usecase-carousel.thinArrow
+.owl-carousel.owl-theme.thinArrow
   .owl-nav
     button.owl-prev, button.owl-next
       background-image: url(/images/slider-arrow.svg)
-.owl-carousel.owl-theme.usecase-carousel.fatArrow
+.owl-carousel.owl-theme.fatArrow
   .carousel-item-default
     padding: 0 30px
   .owl-nav
@@ -266,7 +269,7 @@
       width: 26px
       height: 40px
       background-image: url(/images/slider-forward.svg)
-.owl-carousel.owl-theme.usecase-carousel.smallArrow
+.owl-carousel.owl-theme.smallArrow
   .owl-nav
     button.owl-prev, button.owl-next
       filter: unset
@@ -293,7 +296,7 @@
 
 
 
-.owl-carousel.owl-theme.usecase-carousel.timeline
+.owl-carousel.owl-theme.timeline
   position: relative
   &:before
     content: ""
@@ -389,7 +392,7 @@
         transform: scale(1.6)
         transform-origin: bottom
 
-.owl-carousel.owl-theme.usecase-carousel.cardMode
+.owl-carousel.owl-theme.cardMode
   .card
     cursor: pointer
     transform: scale(0.7)
@@ -449,11 +452,11 @@
           opacity: 0.7
           a
             text-decoration: none
-.owl-carousel.owl-theme.usecase-carousel.cardMode
+.owl-carousel.owl-theme.cardMode
   .owl-item.active.center
     .card
       box-shadow: -4px 15px 50px -20px rgba(42, 125, 236, 0.15), 0px 0px 8px 0px rgba(42, 125, 236, 0.08)
-.owl-carousel.owl-theme.usecase-carousel.cardMode.smallArrow
+.owl-carousel.owl-theme.cardMode.smallArrow
   .owl-nav
     button.owl-prev, button.owl-next
       &:before
@@ -462,7 +465,7 @@
       &:hover
         background-color: unset
         opacity: 0.7
-.owl-carousel.owl-theme.usecase-carousel.cardMode.circle
+.owl-carousel.owl-theme.cardMode.circle
     button.owl-dot
       width: 8px
       height: 8px
@@ -474,7 +477,7 @@
     flex-direction: column
     gap: 32px
 
-.owl-carousel.owl-theme.usecase-carousel.cardMode
+.owl-carousel.owl-theme.cardMode
   .course-below
     color: #2a7dec
 
@@ -495,18 +498,74 @@
   font-size: 36px
   text-align: center
 
+@media screen and (min-width: 1280px)
+  .owl-carousel.owl-theme
+    .carousel-text
+      h2
+        font-size: var(--titleSize)
+      p
+        font-size: var(--descriptionSize)
+      a
+        font-size: var(--linkSize)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSize)
+      .timeline-text
+        font-size: var(--descriptionSize)
+
+@media screen and (max-width: 1279px)
+  .owl-carousel.owl-theme
+    .carousel-text
+      h2
+        font-size: var(--titleSizeLower1280)
+      p
+        font-size: var(--descriptionSizeLower1280)
+      a
+        font-size: var(--linkSizeLower1280)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSizeLower1280)
+      .timeline-text
+        font-size: var(--descriptionSizeLower1280)
+
 @media screen and (max-width: 959px)
-  .owl-carousel.owl-theme.usecase-carousel.timeline
+  .owl-carousel.owl-theme
+    .carousel-text,.timeline-item
+      h2
+        font-size: var(--titleSizeLower960)
+      p
+        font-size: var(--descriptionSizeLower960)
+      a
+        font-size: var(--linkSizeLower960)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSizeLower960)
+      .timeline-text
+        font-size: var(--descriptionSizeLower960)
+  .owl-carousel.owl-theme.timeline
     &:before
       content: ""
       width: 80%
 
 @media screen and (max-width: 599px)
-  .owl-carousel.owl-theme.usecase-carousel.timeline
+  .owl-carousel.owl-theme
+    .carousel-text,.timeline-item
+      h2
+        font-size: var(--titleSizeLower600)
+      p
+        font-size: var(--descriptionSizeLower600)
+      a
+        font-size: var(--linkSizeLower600)
+    .timeline-item
+      .timeline-title
+        font-size: var(--titleSizeLower600)
+      .timeline-text
+        font-size: var(--descriptionSizeLower600)
+  .owl-carousel.owl-theme.timeline
     &:before
       content: ""
       width: 70%
-  .owl-carousel.owl-theme.usecase-carousel.cardMode
+  .owl-carousel.owl-theme.cardMode
     .card
       padding: 24px
 

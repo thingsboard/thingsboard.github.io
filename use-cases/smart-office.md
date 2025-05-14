@@ -29,7 +29,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="smart-office-carousel carousel-padding">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-office' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
 
 <section class="smart-office-solution-structure">

@@ -1,5 +1,5 @@
 {% assign collectionMap = include.collectionMap %}
-{% assign settings = include.settings | jsonify %}
+{% assign customSettings = include.customSettings %}
 
 {% if site.data.carousel-collection[include.collectionMap] %}
     {% assign carouselCollection = site.data.carousel-collection[include.collectionMap] %}
@@ -7,10 +7,22 @@
     {% assign carouselCollection = page[include.collectionMap] %}
 {% endif %}
 
-{% assign defaultSettings = '{"items":4,"autoWidth":true,"stagePadding":0,"margin":0,"nav":false,"dots":false,"autoplay":true,"autoplayTimeout":0,"autoplaySpeed":15000}' %}
+{% assign defaultSettings = '{
+    "items": 4,
+    "autoWidth": true,
+    "stagePadding": 0,
+    "margin": 0,
+    "nav": false,
+    "dots": false,
+    "autoplayTimeout": 0,
+    "autoplaySpeed": 15000,
+    "autoplayHoverPause": false
+}' %}
 
-{% if settings == 'null' or settings == '""' %}
-    {% assign settings = defaultSettings %}
+{% assign settings = defaultSettings %}
+
+{% if customSettings %}
+    {% assign settings = customSettings %}
 {% endif %}
 
 <div class="usecase-carousel owl-carousel owl-theme smooth-carousel" data-settings='{{ settings }}'>

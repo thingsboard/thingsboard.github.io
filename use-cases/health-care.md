@@ -29,7 +29,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="health-carousel">
-    {% include use-cases-carousel.liquid collectionMap = 'health-care' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'health-care' %}
 </section> 
 
 <section class="health-solution-structure">

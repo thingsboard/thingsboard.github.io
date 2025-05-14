@@ -23,7 +23,7 @@ All the logic to raise the alarms is already pre-configured in the corresponding
 With this template you get interactive dashboards that allow you and your customers to 
 browse current and historical state of their supermarkets.  
 
-{% include use-cases-carousel.liquid collectionMap = 'smart-retail' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-retail' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartRetail_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>

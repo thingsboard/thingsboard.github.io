@@ -31,7 +31,7 @@ Additionally, the dashboard is equipped with multiple states, allowing for a div
 
 The Fuel Level Monitoring interactive dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
-{% include use-cases-carousel.liquid collectionMap = 'tank-level-monitoring' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'tank-level-monitoring' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_FuelLevelMonitoring_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>

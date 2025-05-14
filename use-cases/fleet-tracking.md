@@ -119,7 +119,7 @@ The following interactive dashboard presents an intelligent visualization of IoT
 
 The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators that may be embedded in your IoT fleet tracking project. 
 
-{% include use-cases-carousel.liquid collectionMap = 'fleet-tracking' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'fleet-tracking' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>

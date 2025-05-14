@@ -28,7 +28,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="environment-monitoring-carousel carousel-padding">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
 
 <section class="environment-monitoring-solution-structure">
