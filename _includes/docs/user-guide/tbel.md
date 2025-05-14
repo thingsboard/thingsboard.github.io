@@ -239,6 +239,10 @@ var sortByValue = map.sortByValue();                   // return nothing => map 
 // add new Entry/(new key/new value)
 var mapAdd = {"test": 12, "input" : {"http": 130}};
 map.putAll(mapAdd);
+
+// isMap(Object obj): checks if the given object is an instance of Map
+isMap(mapAdd);                                          // return true
+
 ```
 {: .copy-code}
 
@@ -341,6 +345,9 @@ var memorySize = list.memorySize();         // return 32L
 var indOf1 = list.indexOf("B", 1);          // return -1  
 var indOf2 = list.indexOf(2, 2);            // return 2  
 var sNumber = list.validateClazzInArrayIsOnlyNumber(); // return true
+
+// isList(Object obj): checks if the given object is an instance of List
+isList(list);                               // return true
 ```
 {: .copy-code}
 
@@ -391,6 +398,9 @@ function sum(list){
 };
 
 var sum = sum(array); // returns 6
+
+// isArray(Object obj): checks if the given object is an array
+isArray(array);       // return true
 ```
 
 ```java
