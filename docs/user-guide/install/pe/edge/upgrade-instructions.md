@@ -22,16 +22,16 @@ description: ThingsBoard PE Edge upgrade instructions
         </ul>
     </li>
     <li>
-        <a href="#upgrading-to-40" id="markdown-toc-upgrading-to-40">Upgrading to 4.0EDGEPE</a>
+        <a href="#upgrading-to-401" id="markdown-toc-upgrading-to-401">Upgrading to 4.0.1EDGEPE</a>
         <ul>
             <li>
-                <a href="#ubuntucentosrpi-40" id="markdown-toc-ubuntucentos-40">Ubuntu/CentOS/Raspberry Pi</a>
+                <a href="#ubuntucentosrpi-401" id="markdown-toc-ubuntucentos-401">Ubuntu/CentOS/Raspberry Pi</a>
             </li>
             <li>
-                <a href="#docker-linux-mac-40" id="markdown-toc-docker-linux-mac-40">Docker (Linux or Mac OS)</a>
+                <a href="#docker-linux-mac-401" id="markdown-toc-docker-linux-mac-401">Docker (Linux or Mac OS)</a>
             </li>
             <li>
-                <a href="#windows-40" id="markdown-toc-windows-40">Windows</a>
+                <a href="#windows-401" id="markdown-toc-windows-401">Windows</a>
             </li> 
         </ul>
     </li>
@@ -293,21 +293,21 @@ net stop tb-edge
 Launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
 
-## Upgrading to 4.0EDGEPE {#upgrading-to-40}
+## Upgrading to 4.0.1EDGEPE {#upgrading-to-401}
 
-{% assign serverVersion = "4.0PE" %}
-{% assign updateServerLink = "#upgrading-to-40pe" %}
+{% assign serverVersion = "4.0.1PE" %}
+{% assign updateServerLink = "#upgrading-to-401pe" %}
 {% include templates/edge/install/compatibility-warning-version.md %}
 
-### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-40}
+### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-401}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.9.1EDGEPE version.
 
 #### ThingsBoard Edge package download
 
-{% capture tabspec %}tb-edge-pe-download-4-0
-tb-edge-pe-download-4-0-ubuntu,Ubuntu/Raspberry Pi,shell,resources/4.0/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/4.0/tb-edge-ubuntu-download.sh
-tb-edge-pe-download-4-0-centos,CentOS,shell,resources/4.0/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/4.0/tb-edge-centos-download.sh{% endcapture %}
+{% capture tabspec %}tb-edge-pe-download-4-0-1
+tb-edge-pe-download-4-0-1-ubuntu,Ubuntu/Raspberry Pi,shell,resources/4.1/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/4.1/tb-edge-ubuntu-download.sh
+tb-edge-pe-download-4-0-1-centos,CentOS,shell,resources/4.1/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/4.1/tb-edge-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard Edge service upgrade
@@ -319,9 +319,9 @@ sudo service tb-edge stop
 ```
 {: .copy-code}
 
-{% capture tabspec %}tb-edge-pe-installation-4-0
-tb-edge-pe-installation-4-0-ubuntu,Ubuntu/Raspberry Pi,shell,resources/4.0/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/4.0/tb-edge-ubuntu-installation.sh
-tb-edge-pe-installation-4-0-centos,CentOS,shell,resources/4.0/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/4.0/tb-edge-centos-installation.sh{% endcapture %}
+{% capture tabspec %}tb-edge-pe-installation-4-0-1
+tb-edge-pe-installation-4-0-1-ubuntu,Ubuntu/Raspberry Pi,shell,resources/4.1/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/4.1/tb-edge-ubuntu-installation.sh
+tb-edge-pe-installation-4-0-1-centos,CentOS,shell,resources/4.1/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/4.1/tb-edge-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
@@ -340,20 +340,20 @@ sudo service tb-edge start
 ```
 {: .copy-code}
 
-### Docker (Linux or Mac OS) {#docker-linux-mac-40}
+### Docker (Linux or Mac OS) {#docker-linux-mac-401}
 
-{% assign versionName = "4.0EDGEPE" %}
+{% assign versionName = "4.0.1EDGEPE" %}
 {% assign previousVersion = "3.9.1EDGEPE" %}
 
 {% include templates/edge/user-guide/start-upgrade-pe.md %}
 
-### Windows {#windows-40}
+### Windows {#windows-401}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 4.0EDGEPE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 4.0.1EDGEPE version.
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-4.0pe.zip](https://dist.thingsboard.io/tb-edge-windows-4.0pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-4.0.1pe.zip](https://dist.thingsboard.io/tb-edge-windows-4.0.1pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
