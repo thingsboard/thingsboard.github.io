@@ -55,6 +55,14 @@ configure-mapping:
         image: /images/lwm2m/configure-mapping-5-pe.png
         title: ''
 
+configure-mapping-observe-strategy:
+    0:
+        image: /images/lwm2m/configure-mapping-observe-strategy-1-pe.png
+        title: 'For the All object of models choose **Composite All**. All resources from all objects are observed via a single Composite Observe request.'
+    1:
+        image: /images/lwm2m/configure-mapping-observe-strategy-2-pe.png
+        title: 'For the All object of models choose  **Composite by Object**. Resources are grouped per object type and each group is observed separately.'
+
 device-credentials:
     0:
         image: /images/lwm2m/device-credentials-lwm2m-1-pe.png

@@ -23,6 +23,54 @@ When an LwM2M device registers with the server, it provides a list of supported 
 - A **version**
 - One or multiple **instances**
 
+### Handling of Object Versions in the LwM2M Model Structure
+
+Each object in the model structure always contains the <ObjectID> tag.
+Example: <ObjectID>3</ObjectID>
+
+When adding a model to a profile, the following logic is applied to determine the ObjectVersion:
+
+If the model explicitly includes the <ObjectVersion> tag for a given <ObjectID>, this value is used as the ObjectVersion.
+
+If the <ObjectVersion> tag is absent, the system sets ObjectVersion = 1.0 when adding the model structure to the device profile.
+
+> ⚠️ **Note**: Important!!! ObjectVersion is always controlled by the ThingsBoard LwM2M transport through the model added to the corresponding device profile.
+
+During LwM2M client registration, the initialization procedure is triggered as defined in the profile configuration: Read (Attributes and/or Telemetry), and Observe of those fields.
+If the ObjectVersion in the profile differs from the ObjectVersion sent by the LwM2M client during registration, all initialization operations for that object will be rejected.
+
+This version must be determined precisely, as it directly affects how requests are generated and sent to the device.
+Therefore, when sending any request from the terminal, the object's ObjectVersion must always be specified.
+If this information is omitted, the system will use ObjectVersion = LwM2MVersion, which is typically provided by the LwM2M device during the registration process.
+If LwM2MVersion is also missing from the registration request, the default value LwM2MVersion = 1.0 is assumed.
+
+Example usage of object version syntax when sending requests from the terminal:
+```bash
+"/3_1.2/0/9"          // ObjectID = 3, ObjectVersion = 1.2
+"/3/0/9"              // ObjectID = 3, ObjectVersion = LwM2MVersion. 
+  // If LwM2MVersion = 1.1, the request sent to the LwM2M client will be: 
+"/3_1.1/0/9"
+  // If LwM2MVersion = 1.2, the request sent to the LwM2M client will be: 
+"/3_1.2/0/9"
+```
+
+#### Handling object versions when sending requests from the terminal
+If an LwM2M client registered in the ThingsBoard LwM2M transport has ObjectID = 3, ObjectVersion = 1.1, then the request "/3_1.1/0/9" will be successfully processed.
+
+If an LwM2M client has ObjectID = 3, ObjectVersion = 1.2, and the request is "/3_1.1/0/9", the request will be rejected and return an error with the message:
+"Invalid object version. Required version: 1.1"
+
+```bash
+  // LwM2M client registered in the ThingsBoard LwM2M transport has ObjectID = 3, ObjectVersion = 1.1
+"/3_1.1/0/9"    // ok
+"/3_1.2/0/9"    // return error
+
+  // LwM2M client registered in the ThingsBoard LwM2M transport has ObjectID = 3, ObjectVersion = 1.2
+"/3_1.1/0/9"    // return error
+"/3_1.2/0/9"    // ok
+````
+
+### Handling of resources
 Each LwM2M object instance contains multiple **resources**.
 
 **What is an LwM2M resource?**
@@ -110,20 +158,46 @@ To do this, follow these steps:
 #### Step 2.3 Configure the mapping
 
 Now let&#39;s configure how ThingsBoard should process LwM2M object data:
+- Additionally, ThingsBoard supports multiple **Observe strategies**, which define how resources are grouped and monitored:
+
+  - **Single** (default): Each resource is observed individually.  
+    _✓ Best accuracy, ✗ Higher network traffic._
+
+  - **Composite All**: All resources from all objects are observed via a single Composite Observe request.  
+    _✓ Most efficient, ✗ Less granular._
+
+  - **Composite by Object**: Resources are grouped per object type and each group is observed separately.  
+    _✓ Balanced accuracy and traffic._
+  
 - The **device object** provides **manufacturer**, **model number**, and **serial number**. Let&#39;s configure ThingsBoard to receive this data as **attributes**.
 - We will observe and collect data such as **radio signal strength**, **link quality**, and **device location**, and store it as **telemetry** in ThingsBoard.
 
 > The **Observe** feature in LwM2M allows the server to receive data only when the values change.
 
->️ You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).
+>️💡 You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).
+
+> ⚙️ All settings in the device profile are used to initialize the LwM2M client during the **Registration** operation.
+
+> 🔄 Any changes in the device profile settings are applied immediately if the LwM2M client session is active, or during the next **Update Registration**.
+
+> ⚠️ **Important:** All profile configuration changes are applied **only** if the object version in the profile matches the version used by the LwM2M client, according to the rules described in the [Handling of Object Versions in the LwM2M Model Structure](#handling-of-object-versions-in-the-lwm2m-model-structure).
 
 To do this, follow these steps:
 - For each selected object:
+    - In the **Observe Strategy** dropdown:
+      - Select one of: `Single`, `Composite All`, or `Composite by Object`, depending on your requirements.
     - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
     - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
-- Click "Save" to apply the changes.
+
+- To apply the changes (with default **Observe Strategy** → `Single`).
 
 {% include images-gallery.html imageCollection="configure-mapping" %}
+
+- You can also choose **Observe Strategy** → `Composite All` or `Composite by Object` to reduce traffic or group resources differently.
+
+{% include images-gallery.html imageCollection="configure-mapping-observe-strategy" %}
+
+- Click **Save** for To apply this changes.
 
 > ⚠️ **Note**: If you uncheck all items (Attributes, Telemetry, Observe) for an object, it **will not appear** in the device profile configuration.
 
@@ -474,16 +548,42 @@ Read {"key":"batteryLevel"}
 Read {"id":"/3/0"}
 
 # Response:
-{"result":"CONTENT","value":"LwM2mObjectInstance [id=0, resources={0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, 
-type=STRING], 1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 2=LwM2mSingleResource [id=2, value=TH-500-000-0001, 
-type=STRING], 3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 6=LwM2mSingleResource [id=6, 
-value=1, type=INTEGER], 7=LwM2mSingleResource [id=7, value=96, type=INTEGER], 8=LwM2mSingleResource [id=8, value=37, type=INTEGER], 
-9=LwM2mSingleResource [id=9, value=75, type=INTEGER], 10=LwM2mSingleResource [id=10, value=110673, type=INTEGER], 
-11=LwM2mMultipleResource [id=11, values={0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]}, type=INTEGER], 13=LwM2mSingleResource 
-[id=13, value=Thu Jul 01 16:39:49 EEST 2021, type=TIME], 14=LwM2mSingleResource [id=14, value=+03, type=STRING], 15=LwM2mSingleResource 
-[id=15, value=Europe/Kiev, type=STRING], 16=LwM2mSingleResource [id=16, value=U, type=STRING], 17=LwM2mSingleResource
-[id=17, value=smart meters, type=STRING], 18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 19=LwM2mSingleResource [id=19, 
-value=1.02, type=STRING], 20=LwM2mSingleResource [id=20, value=2, type=INTEGER], 21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]}]"}
+{
+  "result":"CONTENT","value":
+    "
+      LwM2mObjectInstance 
+        [
+          id=0, resources=
+            {
+              0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, type=STRING], 
+              1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+              2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
+              3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
+              6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 
+              7=LwM2mSingleResource [id=7, value=96, type=INTEGER], 
+              8=LwM2mSingleResource [id=8, value=37, type=INTEGER], 
+              9=LwM2mSingleResource [id=9, value=75, type=INTEGER], 
+              10=LwM2mSingleResource [id=10, value=110673, type=INTEGER], 
+              11=LwM2mMultipleResource 
+                [
+                  id=11, values=
+                    {
+                      0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]
+                    }, type=INTEGER
+                ], 
+              13=LwM2mSingleResource [id=13, value=Thu Jul 01 16:39:49 EEST 2021, type=TIME], 
+              14=LwM2mSingleResource [id=14, value=+03, type=STRING], 
+              15=LwM2mSingleResource [id=15, value=Europe/Kiev, type=STRING], 
+              16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+              17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 
+              18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
+              19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
+              20=LwM2mSingleResource [id=20, value=2, type=INTEGER], 
+              21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]
+            }
+        ]
+    "
+}
 {% endhighlight %}
 </details>
 
@@ -746,9 +846,17 @@ id=7, value=U, type=STRING]}]}]}"
 ReadComposite {"keys":["state", "updateResult", "pkgversion", "batteryLevel"]}
 
 # Response:
-{"result":"CONTENT","value":"{/5/0/7=LwM2mSingleResource [id=7, value=, type=STRING], /5/0/5=LwM2mSingleResource [id=5, value=0, 
-type=INTEGER], /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], /
-3/0/9=LwM2mSingleResource [id=9, value=81, type=INTEGER]}"}
+{
+  "result":"CONTENT","value":
+    "
+      {
+        /5/0/7=LwM2mSingleResource [id=7, value=, type=STRING], 
+        /5/0/5=LwM2mSingleResource [id=5, value=0, type=INTEGER], 
+        /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], 
+        /3/0/9=LwM2mSingleResource [id=9, value=81, type=INTEGER]
+      }
+    "
+}
 {% endhighlight %}
 </details>
 
@@ -761,24 +869,59 @@ type=INTEGER], /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], /
 ReadComposite {"ids":["/3/0", "/1_1.2/0"]}
 
 # Response:
-{"result":"CONTENT","value":"{/3/0=LwM2mObjectInstance [id=0, resources={0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, 
-type=STRING], 1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
-3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 6=LwM2mSingleResource [id=6, value=1, type=INTEGE
-R], 7=LwM2mSingleResource [id=7, value=2, type=INTEGER], 8=LwM2mSingleResource [id=8, value=61, type=INTEGER], 9=LwM2mSingleResource [id=9, 
-value=25, type=INTEGER], 10=LwM2mSingleResource [id=10, value=102044, type=INTEGER], 11=LwM2mMultipleResource [id=11, 
-values={0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]}, type=INTEGER], 13=LwM2mSingleResource [id=13, 
-value=Thu Jul 01 16:49:25 EEST 2021, type=TIME], 14=LwM2mSingleResource [id=14, value=+03, type=STRING], 15=LwM2mSingleResource [id=15, 
-value=Europe/Kiev, type=STRING], 16=LwM2mSingleResource [id=16, value=U, type=STRING], 17=LwM2mSingleResource [id=17, value=smart meters, 
-type=STRING], 18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
-20=LwM2mSingleResource [id=20, value=1, type=INTEGER], 21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]}], /1/0=LwM2mObjectInstance 
-[id=0, resources={0=LwM2mSingleResource [id=0, value=123, type=INTEGER], 1=LwM2mSingleResource [id=1, value=300, type=INTEGER], 
-6=LwM2mSingleResource [id=6, value=false, type=BOOLEAN], 22=LwM2mSingleResource [id=22, value=U, type=STRING], 7=LwM2mSingleResource [id=7, 
-value=U, type=STRING]}]}"}
+{
+  "result":"CONTENT","value":
+  "
+    {
+      /3/0=LwM2mObjectInstance 
+        [id=0, resources=
+          {
+            0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, type=STRING], 
+            1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+            2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
+            3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
+            6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 
+            7=LwM2mSingleResource [id=7, value=2, type=INTEGER], 
+            8=LwM2mSingleResource [id=8, value=61, type=INTEGER], 
+            9=LwM2mSingleResource [id=9, value=25, type=INTEGER], 
+            10=LwM2mSingleResource [id=10, value=102044, type=INTEGER], 
+            11=LwM2mMultipleResource 
+              [
+                id=11, values=
+                  {
+                    0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]
+                  }, 
+                type=INTEGER
+              ], 
+            13=LwM2mSingleResource [id=13, value=Thu Jul 01 16:49:25 EEST 2021, type=TIME], 
+            14=LwM2mSingleResource [id=14, value=+03, type=STRING], 
+            15=LwM2mSingleResource [id=15, value=Europe/Kiev, type=STRING], 
+            16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+            17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 
+            18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
+            19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
+                    20=LwM2mSingleResource [id=20, value=1, type=INTEGER], 
+            21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]
+          }
+        ], 
+      /1/0=LwM2mObjectInstance 
+        [id=0, resources=
+          {
+            0=LwM2mSingleResource [id=0, value=123, type=INTEGER], 
+            1=LwM2mSingleResource [id=1, value=300, type=INTEGER], 
+            6=LwM2mSingleResource [id=6, value=false, type=BOOLEAN],
+            7=LwM2mSingleResource [id=7, value=U, type=STRING],
+            22=LwM2mSingleResource [id=22, value=U, type=STRING]
+          }
+        ]
+    }
+  "
+}
 
 {% endhighlight %}
 </details>
 
-### Write Composite Operation
+### Write-Composite Operation
 
 The LwM2M Client MAY support the "Write-Composite" operation.
 In contrast to "Write" operation, the scope of which is limited to a Resource(s) of a single Instance of a single Object,
@@ -799,7 +942,7 @@ RPC call example for REST API:
 ```json
 {
    "method": "WriteComposite",
-   "params": {"nodes":{"/3/0/14":"+04", "/1/0/2":100, "/5/0/1":"coap://localhost:5685"}}
+   "params": {"nodes":{"/19_1.1/0":{"0":{"0":"00ad45675600", "25":"25ad45675600cdef"}}, "UtfOffset":"+04", "/3_1.0/0/15":"Kiyv/Europe"}}
 }
 ```
 {: .copy-code}
@@ -809,27 +952,12 @@ Example of corresponding input in the debug terminal:
 
 ```ruby
 # Request:
-WriteComposite {"nodes":{"/3/0/14":"+04", "/1/0/2":100, "/5/0/1":"coap://localhost:5685"}}
+WriteComposite {"nodes":{"/19_1.1/0":{"0":{"0":"00ad45675600", "25":"25ad45675600cdef"}}, "UtfOffset":"+04", "/3_1.0/0/15":"Kiyv/Europe"}}
 
 # Response:
 {"result":"CHANGED"}
 ```
 {: .copy-code}
-
-<b> More examples:</b>
-<br>
-<details>
-<summary>
-<b>WriteComposite with multiple Keys</b>
-</summary>
-{% highlight ruby %}
-# Request:
-WriteComposite {"nodes":{"timezone":"+04", "defaultMinimumPeriod":100, "packageUri":"coap://localhost:5685"}}
-
-# Response:
-{"result":"CHANGED"}
-{% endhighlight %}
-</details>
 
 ### Execute Operation
 
@@ -935,17 +1063,121 @@ Observe {"id":"/3/0/9"}
 Observe {"id":"/3/0"}
  
 # Response:
-{"result":"CONTENT","value":"LwM2mObjectInstance [id=0, resources={0=LwM2mSingleResource [id=0, value=Thingsboard 
-Test Device, type=STRING], 1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 2=LwM2mSingleResource [id=2, 
-value=TH-500-000-0001, type=STRING], 3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
-6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 7=LwM2mSingleResource [id=7, value=90, type=INTEGER], 8=LwM2mSingleResource 
-[id=8, value=29, type=INTEGER], 9=LwM2mSingleResource [id=9, value=19, type=INTEGER], 10=LwM2mSingleResource [id=10, value=76962, 
-type=INTEGER], 11=LwM2mMultipleResource [id=11, values={0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]}, type=INTEGER], 
-13=LwM2mSingleResource [id=13, value=Wed Jul 31 22:49:45 EET 1940, type=TIME], 14=LwM2mSingleResource [id=14, value=+5, type=STRING], 
-15=LwM2mSingleResource [id=15, value=Kiyv/Europe, type=STRING], 16=LwM2mSingleResource [id=16, value=U, type=STRING], 
-17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
-19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 20=LwM2mSingleResource [id=20, value=6, type=INTEGER], 21=LwM2mSingleResource 
-[id=21, value=256000, type=INTEGER]}]"}
+{"result":"CONTENT","value":
+  "LwM2mObjectInstance 
+    [id=0, resources=
+      {
+        0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, type=STRING], 
+        1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+        2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
+        3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
+        6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 
+        7=LwM2mSingleResource [id=7, value=90, type=INTEGER], 
+        8=LwM2mSingleResource [id=8, value=29, type=INTEGER], 
+        9=LwM2mSingleResource [id=9, value=19, type=INTEGER], 
+        10=LwM2mSingleResource [id=10, value=76962, type=INTEGER], 
+        11=LwM2mMultipleResource 
+          [
+            id=11, values=
+            {
+              0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]
+            }, type=INTEGER
+          ], 
+        13=LwM2mSingleResource [id=13, value=Wed Jul 31 22:49:45 EET 1940, type=TIME], 
+        14=LwM2mSingleResource [id=14, value=+5, type=STRING], 
+        15=LwM2mSingleResource [id=15, value=Kiyv/Europe, type=STRING], 
+        16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+        17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 
+        18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
+        19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
+        20=LwM2mSingleResource [id=20, value=6, type=INTEGER], 
+        21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]
+      }
+    ]
+  "
+}
+{% endhighlight %}
+</details>
+
+### Observe-Composite Operation
+
+The LwM2M Client MAY support the "Observe-Composite" operation.
+The LwM2M Server can use the "Observe-Composite" operation to initiate observations for a group of resources and/or
+resource instances across multiple object instances within the client. As with the "Read-Composite" operation, the list
+of elements to be observed is provided as a separate parameter to the operation in SenML JSON/CBOR format.
+
+<b> Example: ObserveComposite to many Resources </b>
+
+RPC call example for REST API:
+
+```json
+{
+   "method": "ObserveComposite",
+   "params": {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+}
+```
+{: .copy-code}
+
+Example of corresponding input in the debug terminal:
+
+```ruby
+# Request:
+ObserveComposite {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+
+# Response:
+{"result":"CONTENT","value":"{/5/0/7=LwM2mSingleResource [id=7, value=1.0.0, type=STRING], /5/0/5=LwM2mSingleResource [id=5, value=0, type=INTEGER], /19/1/0/0=LwM2mResourceInstance [id=0, value=1Bytes, type=OPAQUE], /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], /3/0/9=LwM2mSingleResource [id=9, value=50, type=INTEGER]}"}
+```
+{: .copy-code}
+
+<b> More examples:</b>
+<br>
+<details>
+<summary>
+<b>ObserveComposite many Resources and Object</b>
+</summary>
+{% highlight ruby %}
+# Request:
+ObserveComposite {"ids":["/5_1.2/0/7", "/5_1.2/0/5", "/5_1.2/0/3", "/3", "/19_1.1/1/0/0"]}
+
+# Response:
+{"result":"CONTENT","value":
+  "{
+    /3=LwM2mObject [id=3, instances={0=LwM2mObjectInstance [id=0, 
+      resources={
+        0=LwM2mSingleResource [id=0, value=Thingsboard Demo Lwm2mDevice, type=STRING], 
+        1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+        2=LwM2mSingleResource [id=2, value=Thingsboard-500-000-0001, type=STRING], 
+        3=LwM2mSingleResource [id=3, value=1.0.2, type=STRING], 
+        6=LwM2mMultipleResource [id=6, values={
+          0=LwM2mResourceInstance [id=0, value=0, type=INTEGER], 
+          1=LwM2mResourceInstance [id=1, value=1, type=INTEGER], 
+          2=LwM2mResourceInstance [id=2, value=7, type=INTEGER]}, type=INTEGER], 
+        7=LwM2mMultipleResource [id=7, values={
+          0=LwM2mResourceInstance [id=0, value=12000, type=INTEGER], 
+          1=LwM2mResourceInstance [id=1, value=12400, type=INTEGER], 
+          7=LwM2mResourceInstance [id=7, value=14600, type=INTEGER]}, type=INTEGER], 
+        8=LwM2mMultipleResource [id=8, values={
+          0=LwM2mResourceInstance [id=0, value=72000, type=INTEGER], 
+          1=LwM2mResourceInstance [id=1, value=2000, type=INTEGER], 
+          7=LwM2mResourceInstance [id=7, value=25000, type=INTEGER]}, type=INTEGER], 
+        9=LwM2mSingleResource [id=9, value=22, type=INTEGER], 
+        10=LwM2mSingleResource [id=10, value=207895, type=INTEGER], 
+        11=LwM2mMultipleResource [id=11, values={
+          0=LwM2mResourceInstance [id=0, value=0, type=INTEGER]}, type=INTEGER], 
+        14=LwM2mSingleResource [id=14, value=+03, type=STRING], 
+        15=LwM2mSingleResource [id=15, value=Europe/Kiev, type=STRING], 
+        16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+        17=LwM2mSingleResource [id=17, value=Demo, type=STRING], 
+        18=LwM2mSingleResource [id=18, value=1.0.1, type=STRING], 
+        19=LwM2mSingleResource [id=19, value=1.0.2, type=STRING], 
+        20=LwM2mSingleResource [id=20, value=3, type=INTEGER], 
+        21=LwM2mSingleResource [id=21, value=638976, type=INTEGER]}]}], 
+    /5/0/7=LwM2mSingleResource [id=7, value=1.0.0, type=STRING], 
+    /5/0/5=LwM2mSingleResource [id=5, value=0, type=INTEGER], 
+    /19/1/0/0=LwM2mResourceInstance [id=0, value=1Bytes, type=OPAQUE], 
+    /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER]
+  }"
+}
 {% endhighlight %}
 </details>
 
@@ -965,7 +1197,6 @@ RPC call example for REST API:
 }
 ```
 {: .copy-code}
-
 
 Example of corresponding input in the debug terminal:
 
@@ -991,6 +1222,39 @@ ObserveCancel {"key":"updateResult"}
 # Response:
 {"result":"CONTENT","value":"1"}{% endhighlight %}
 </details>
+
+### Cancel Observation-Composite Operation
+
+If the "Observe-Composite" operation is supported by the client, the "Cancel Observation-Composite" operation MUST
+be supported by the Client.
+The "Cancel Observation-Composite" operation is sent from the LwM2M Server to the LwM2M Client to end the
+previously set up composite observation relationship.
+
+<b> Example: ObserveComposite to many Objects or Resources </b>
+
+RPC call example for REST API:
+
+```json
+{
+   "method": "ObserveCompositeCancel",
+   "params": {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+}
+```
+{: .copy-code}
+
+Example of corresponding input in the debug terminal:
+
+```ruby
+# Request:
+ObserveComposite {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+
+# Request:
+ObserveCompositeCancel {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]} 
+
+# Response:
+{"result":"CONTENT","value":"1"}
+```
+{: .copy-code}
 
 ### Cancel All Observations Operation
 
@@ -1021,7 +1285,6 @@ ObserveCancelAll
 ```
 {: .copy-code}
 
-
 ### Read All Observations Operation
 
 The "Read All Observations" operation is Thingsboard-specific operation and allows to get all observations 
@@ -1038,7 +1301,6 @@ RPC call example for REST API:
 }
 ```
 {: .copy-code}
-
 
 Example of corresponding input in the debug terminal:
 
