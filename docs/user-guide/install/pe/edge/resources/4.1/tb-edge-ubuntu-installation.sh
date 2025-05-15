@@ -1,1 +1,1 @@
-sudo dpkg -i tb-edge-4.0pe.deb
+sudo dpkg -i tb-edge-4.0.1pe.deb
