@@ -1,18 +1,18 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: " to ThingsBoard?" %}
-{% assign deviceVendorLink = "https://www.lansitec.com/products/asset-management-tracker/" %}
+{% assign deviceVendorLink = "https://www.lansitec.com/products/lorawan-container-tracker/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [LoRaWAN Gateway](https://www.lansitec.com/products/outdoor-lorawan-gateway/){:target="_blank"}
 - [Bluetooth Beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"}
-- [Network Server account](https://www.chirpstack.io/){:target="_blank"} 
+- [Network Server account](https://www.chirpstack.io/){:target="_blank"}
 '
 %}
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[Asset Management Tracker]({{deviceVendorLink}}){:target="_blank"} optimize how you track, monitor, and safeguard high-value items with the Lansitec Asset Management Tracker. Featuring GNSS, Bluetooth 5.0, and LoRaWAN technology, this device delivers accurate indoor and outdoor positioning—ensuring full visibility of assets ranging from shipping containers and transit cases to industrial machinery.<br>
-Its IP68-rated enclosure and ultra-long battery life provide dependable performance in harsh conditions, while features like tamper detection, door open/close sensing, and vibration monitoring strengthen security and operational oversight.<br>
-Whether you&#39;re managing remote equipment, monitoring valuable shipments, or consolidating on-site inventory, the Asset Management Tracker helps you stay informed in real time, reduce losses, and streamline processes.
+[Container Tracker]({{deviceVendorLink}}){:target="_blank"} is designed based on GNSS and LoRaWAN technology, it excels at both indoor and outdoor positioning — providing real-time visibility into containers, transit cases, heavy machinery, and more.<br>
+Its rugged IP68-rated enclosure and ultra-long battery life allow for extended deployments in harsh environments, while tamper detection and vibration sensing enhance security and damage prevention.<br>
+From monitoring a single container in motion to overseeing an entire fleet of shipping assets, the Lansitec Container Tracker helps you reduce losses, streamline logistics, and maintain full control over your operations.
 
 ## Prerequisites
 

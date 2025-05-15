@@ -1,18 +1,17 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: " to ThingsBoard?" %}
-{% assign deviceVendorLink = "https://www.lansitec.com/products/asset-management-tracker/" %}
+{% assign deviceVendorLink = "https://www.lansitec.com/products/indoor-bluetooth-gateway/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [LoRaWAN Gateway](https://www.lansitec.com/products/outdoor-lorawan-gateway/){:target="_blank"}
 - [Bluetooth Beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"}
-- [Network Server account](https://www.chirpstack.io/){:target="_blank"} 
+- [Network Server account](https://www.chirpstack.io/){:target="_blank"}
 '
 %}
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[Asset Management Tracker]({{deviceVendorLink}}){:target="_blank"} optimize how you track, monitor, and safeguard high-value items with the Lansitec Asset Management Tracker. Featuring GNSS, Bluetooth 5.0, and LoRaWAN technology, this device delivers accurate indoor and outdoor positioning—ensuring full visibility of assets ranging from shipping containers and transit cases to industrial machinery.<br>
-Its IP68-rated enclosure and ultra-long battery life provide dependable performance in harsh conditions, while features like tamper detection, door open/close sensing, and vibration monitoring strengthen security and operational oversight.<br>
-Whether you&#39;re managing remote equipment, monitoring valuable shipments, or consolidating on-site inventory, the Asset Management Tracker helps you stay informed in real time, reduce losses, and streamline processes.
+[Indoor Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} is based on Bluetooth 5.0 technology and LoRaWAN.<br>
+It receives nearby [Bluetooth beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"} messages and transmits them to the server through LoRaWAN. With LoRaWAN technology, there is no network usage fee for long-distance transmission.<br><br>
 
 ## Prerequisites
 

@@ -1,18 +1,18 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: " to ThingsBoard?" %}
-{% assign deviceVendorLink = "https://www.lansitec.com/products/asset-management-tracker/" %}
+{% assign deviceVendorLink = "https://www.lansitec.com/products/tracking-label/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [LoRaWAN Gateway](https://www.lansitec.com/products/outdoor-lorawan-gateway/){:target="_blank"}
 - [Bluetooth Beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"}
-- [Network Server account](https://www.chirpstack.io/){:target="_blank"} 
+- [Network Server account](https://www.chirpstack.io/){:target="_blank"}
 '
 %}
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[Asset Management Tracker]({{deviceVendorLink}}){:target="_blank"} optimize how you track, monitor, and safeguard high-value items with the Lansitec Asset Management Tracker. Featuring GNSS, Bluetooth 5.0, and LoRaWAN technology, this device delivers accurate indoor and outdoor positioning—ensuring full visibility of assets ranging from shipping containers and transit cases to industrial machinery.<br>
-Its IP68-rated enclosure and ultra-long battery life provide dependable performance in harsh conditions, while features like tamper detection, door open/close sensing, and vibration monitoring strengthen security and operational oversight.<br>
-Whether you&#39;re managing remote equipment, monitoring valuable shipments, or consolidating on-site inventory, the Asset Management Tracker helps you stay informed in real time, reduce losses, and streamline processes.
+[Tracking Label]({{deviceVendorLink}}){:target="_blank"} say goodbye to lost shipments and untraceable assets with Lansitec&#39;s ultra-thin Tracking Label. Combining GNSS, Bluetooth 5.0, and LoRaWAN technology, this disposable tracking solution provides reliable indoor and outdoor positioning for packages, pallets, and containers.<br>
+Whether you&#39;re shipping goods across the globe or simply managing inventory within a warehouse, the Tracking Label&#39;s 3-axis accelerometer and automatic BLE/GNSS switching ensure efficient power use without compromising on accuracy.<br>
+With up to three years of battery life (based on six GNSS reports per day) and an IP66 rating, this label is built to stand up to harsh conditions and lengthy transit times — giving you the confidence to monitor and manage your assets from end to end.
 
 ## Prerequisites
 
