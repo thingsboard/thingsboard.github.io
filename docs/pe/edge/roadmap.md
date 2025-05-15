@@ -10,7 +10,7 @@ description: Upcoming releases
 
 The product roadmap below covers only **major features** and does not include minor enhancements and bug fixes.
 
-### Edge 4.0
+### Edge 4.0.1
 
 The upcoming release will include all updates form [ThingsBoard PE](/docs/pe/reference/roadmap/){: target="_blank"}, except the **Calculated Fields** feature. 
 
