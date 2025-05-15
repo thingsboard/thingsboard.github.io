@@ -1,22 +1,22 @@
-Execute the following command to pull the image:
+To pull the image, run the command:
 
 ```bash
 docker pull thingsboard/tb-pe-opc-ua-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
-Execute the following command to create volume for the integration logs (799 is the user id of ThingsBoard non-root docker user):
+Create a volume for the integration logs (_799 is the user ID of the non-root ThingsBoard Docker user_):
 
 ```bash
 mkdir -p ~/.tb-pe-opc-ua-integration-logs && sudo chown -R 799:799 ~/.tb-pe-opc-ua-integration-logs
 ```
 {: .copy-code}
 
-Execute the following command to run the integration:
+Run the integration using the following command:
 
 ```bash
 docker run -it -v ~/.tb-pe-opc-ua-integration-logs:/var/log/tb-opc-ua-integration \
--e "RPC_HOST=EDGE_IP_OR_HOST_ADDRESS" -e "RPC_PORT=9090" \
+-e "RPC_HOST=mytbedge" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
 --name my-tb-pe-opc-ua-integration --restart always thingsboard/tb-pe-opc-ua-integration:{{ site.release.pe_full_ver }}
 ```
