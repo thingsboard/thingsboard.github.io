@@ -37,7 +37,7 @@
           gap: 32px
 
           .image
-            max-height: 424px
+            min-height: 424px
             flex: 1
             background-position: center
             background-size: cover
@@ -378,7 +378,7 @@
 
               &:nth-child(2)
                 position: absolute
-                right: 0
+                right: 15px
                 top: 54px
                 display: block
 
@@ -395,8 +395,8 @@
                 margin-left: auto
 
               img:nth-child(2)
-                left: 0
-                z-index: -1
+                left: 15px
+                z-index: 2
 
               img:nth-child(3)
                 right: 77px
@@ -507,14 +507,8 @@
 
         .tb-power
           .block
-            flex-direction: column
-
-            &:nth-child(odd)
-              flex-direction: column
-
             img
               align-self: center
-              width: 100%
               height: unset
 
 @media screen and (max-width: 959px)
@@ -546,6 +540,16 @@
 
           .cards-row
             flex-direction: column
+
+        .tb-power
+          .block
+            flex-direction: column
+
+            &:nth-child(odd)
+              flex-direction: column
+
+            img
+              width: 65%
 
         .award
           flex-direction: column

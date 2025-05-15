@@ -2,7 +2,7 @@
 layout: case-studies
 title: ÖBB-Infrastruktur AG
 notitle: "true"
-description: ÖBB-Infrastruktur AG
+description: ÖBB-Infrastruktur AG - ThingsBoard case study
 ---
 
 <div class="case-study-page-wrapper">
