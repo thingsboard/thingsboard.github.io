@@ -56,9 +56,9 @@ description: Learn how ThingsBoard helps clients build and improve their busines
             </div>
         </div>
         <div class="client-card" id="ColdChainMonitoring">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/senseing.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/senseing.webp');">
                 <a class="content" target="_blank" href="/case-studies/senseing">
-                    <img src="/images/case-studies/senseing.svg" title="SenseING GmbH" alt="SenseING GmbH logo">
+                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH" alt="SenseING GmbH logo">
                     <p>Transforming food logistics with IoT-powered temperature monitoring <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about transforming food logistics with ThingsBoard-powered temperature monitoring</span>
@@ -66,9 +66,9 @@ description: Learn how ThingsBoard helps clients build and improve their busines
             </div>
         </div>
         <div class="client-card" id="Industry">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iona.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/iona.webp');">
                 <a class="content" target="_blank" href="/case-studies/iona">
-                    <img src="/images/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">
+                    <img src="https://img.thingsboard.io/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">
                     <p>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about IONA Tech’s IoT transformation with ThingsBoard</span>
@@ -76,9 +76,9 @@ description: Learn how ThingsBoard helps clients build and improve their busines
             </div>
         </div>
         <div class="client-card" id="WarehouseMonitoring">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/vypin.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/vypin.webp');">
                 <a class="content" target="_blank" href="/case-studies/vypin">
-                    <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
+                    <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
                     <p>Smart reliable T&H monitoring with WhereView (ThingsBoard) <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about Smart reliable T&H monitoring with WhereView (ThingsBoard)</span>
