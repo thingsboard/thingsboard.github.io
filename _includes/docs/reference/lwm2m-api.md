@@ -155,41 +155,71 @@ To do this, follow these steps:
 
 {% include images-gallery.html imageCollection="device-objects"  %}
 
-#### Step 2.3 Configure the mapping
+#### Step 2.3 Configure the Mapping
 
-Now let&#39;s configure how ThingsBoard should process LwM2M object data:
-- Additionally, ThingsBoard supports multiple **Observe strategies**, which define how resources are grouped and monitored:
+#### Observe Strategies in ThingsBoard
 
-  - **Single** (default): Each resource is observed individually.  
-    _✓ Best accuracy, ✗ Higher network traffic._
+ThingsBoard supports multiple observe strategies that define how LwM2M resources are grouped and monitored.
 
-  - **Composite All**: All resources from all objects are observed via a single Composite Observe request.  
-    _✓ Most efficient, ✗ Less granular._
+- **Single** (default): Each resource is observed individually.  
+  _✓ Best accuracy, ✗ Higher network traffic._
 
-  - **Composite by Object**: Resources are grouped per object type and each group is observed separately.  
-    _✓ Balanced accuracy and traffic._
-  
-- The **device object** provides **manufacturer**, **model number**, and **serial number**. Let&#39;s configure ThingsBoard to receive this data as **attributes**.
+- **Composite All**: All resources from all objects are observed via a single Composite Observe request.  
+  _✓ Most efficient, ✗ Less granular._
+
+- **Composite by Object**: Resources are grouped per object type and each group is observed separately.  
+  _✓ Balanced accuracy and traffic._
+
+💡 Observe strategies are configured in the corresponding section of the device profile.
+
+If the observe strategy is changed via the profile after the client has connected, the change is applied:
+
+- **Immediately**, if the LwM2M session is active.
+- **On the next Update Registration**, if the session is inactive.
+
+If you perform Observe operations manually (e.g., via terminal), make sure to account for the current observe strategy:
+
+- **Current strategy: Single**, **New strategy: Single**  
+  You can perform observe-related operations directly, with or without a prior Cancel Observation on the specific resource — as described in the sections:  
+  [Observe Operation](#observe-operation) and [Cancel Observation Operation](#cancel-observation-operation).
+
+- **Current strategy: Composite by Object**, **New strategy: Composite by Object**  
+  You can perform observe-related operations directly, with or without a prior Cancel Observation, depending on your needs — as described in the sections:  
+  [Cancel Observation-Composite Operation](#cancel-observation-composite-operation), [Observe-Composite Operation](#observe-composite-operation), and, if needed,  
+  [Observe Operation](#observe-operation), [Cancel Observation Operation](#cancel-observation-operation).
+
+- **Current strategy differs from new strategy**  
+  In this case, always execute a  [Cancel All Observations Operation](#cancel-all-observations-operation) before applying the new observe strategy or performing further observe-related operations.
+
+---
+
+#### Configure the Mapping with Multiple Observe Strategies
+
+Now let's configure how ThingsBoard should process LwM2M object data:
+
+- Additionally, ThingsBoard supports multiple **Observe strategies**, which define how resources are grouped and monitored.
+- The **Device object** provides **manufacturer**, **model number**, and **serial number**. Let's configure ThingsBoard to receive this data as **attributes**.
 - We will observe and collect data such as **radio signal strength**, **link quality**, and **device location**, and store it as **telemetry** in ThingsBoard.
 
-> The **Observe** feature in LwM2M allows the server to receive data only when the values change.
-
->️💡 You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).
-
-> ⚙️ All settings in the device profile are used to initialize the LwM2M client during the **Registration** operation.
-
-> 🔄 Any changes in the device profile settings are applied immediately if the LwM2M client session is active, or during the next **Update Registration**.
-
+> The **Observe** feature in LwM2M allows the server to receive data only when the values change.  
+> 💡 You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).  
+> ⚙️ All settings in the device profile are used to initialize the LwM2M client during the **Registration** operation.  
+> 🔄 Any changes in the device profile settings are applied immediately if the LwM2M client session is active, or during the next **Update Registration**.  
 > ⚠️ **Important:** All profile configuration changes are applied **only** if the object version in the profile matches the version used by the LwM2M client, according to the rules described in the [Handling of Object Versions in the LwM2M Model Structure](#handling-of-object-versions-in-the-lwm2m-model-structure).
 
-To do this, follow these steps:
-- For each selected object:
-    - In the **Observe Strategy** dropdown:
-      - Select one of: `Single`, `Composite All`, or `Composite by Object`, depending on your requirements.
-    - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
-    - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
+---
 
-- To apply the changes (with default **Observe Strategy** → `Single`).
+To do this, follow these steps:
+
+- For each selected object:
+  - In the **Observe Strategy** dropdown:
+    - Select one of: `Single`, `Composite All`, or `Composite by Object`, depending on your requirements.
+  - Check the **"Attributes"** box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
+  - Check the **"Telemetry"** and/or **"Observe"** boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
+
+---
+
+- To apply the changes (default **Observe Strategy** → `Single`).
 
 {% include images-gallery.html imageCollection="configure-mapping" %}
 
@@ -197,11 +227,11 @@ To do this, follow these steps:
 
 {% include images-gallery.html imageCollection="configure-mapping-observe-strategy" %}
 
-- Click **Save** for To apply this changes.
+- Click **Save** to apply these changes.
 
-> ⚠️ **Note**: If you uncheck all items (Attributes, Telemetry, Observe) for an object, it **will not appear** in the device profile configuration.
+> ⚠️ **Note:** If you uncheck all items (**Attributes**, **Telemetry**, **Observe**) for an object, it **will not appear** in the device profile configuration.
 
-Additionally, the "**Transport configuration**" tab also allows you to configure **bootstrap settings** and other settings.
+Additionally, the **"Transport configuration"** tab also allows you to configure **bootstrap settings** and other settings.
 
 ### Step 3. Define LwM2M device credentials
 
