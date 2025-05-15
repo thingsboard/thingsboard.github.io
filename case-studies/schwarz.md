@@ -2,7 +2,7 @@
 layout: case-studies
 title: Schwarz
 notitle: "true"
-description: Schwarz case study
+description: Schwarz - ThingsBoard case study
 ---
 
 <div class="case-study-page-wrapper">
@@ -157,7 +157,7 @@ description: Schwarz case study
             </div>
             <div class="image-container">
                 <img src="/images/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget">
-                <img src="/images/case-studies/analogue-gage.webp" title="Thingsboard analogue gage widget" alt="Thingsboard analogue gage widget">
+                <img src="/images/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget">
             </div>
         </div>
         <div class="block">

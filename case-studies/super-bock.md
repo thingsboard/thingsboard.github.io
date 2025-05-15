@@ -2,7 +2,7 @@
 layout: case-studies
 title: Super Bock Group
 notitle: "true"
-description: Super Bock Group case study
+description: Super Bock Group - ThingsBoard case study
 ---
 
 <div class="case-study-page-wrapper">
