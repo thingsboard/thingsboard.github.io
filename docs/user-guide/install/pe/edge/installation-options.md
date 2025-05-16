@@ -81,7 +81,7 @@ notitle: "true"
                                         <a href="/docs/pe/edge/config/edge-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/pe/edge/integrations/docker-cluster.svg" title="Edge Cluster in Docker" alt="Edge Cluster in Docker">
+                                                    <img width="" src="https://img.thingsboard.io/pe/edge/integrations/docker-cluster.svg" title="Edge Cluster in Docker" alt="Edge Cluster in Docker">
                                                  </div>
                                             </span>
                                         </a>

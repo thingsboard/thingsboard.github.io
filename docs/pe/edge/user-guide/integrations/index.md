@@ -4,40 +4,40 @@ title: Edge Integrations
 description: Edge Integrations Documentation
 converterTemplateCreation:
     0:
-        image: /images/pe/edge/integrations/create-converter-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/create-converter-step-1.webp
         title: 'Create Converter template'
     1:
-        image: /images/pe/edge/integrations/create-converter-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/create-converter-step-2.webp
         title: 'Converter template configuration'
 
 integrationTemplateCreation:
     0:
-        image: /images/pe/edge/integrations/create-integration-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/create-integration-step-1.webp
         title: 'Create Integration template'
     1:
-        image: /images/pe/edge/integrations/create-integration-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/create-integration-step-2.webp
         title: 'Integration template configuration'
 
 placeholderFeature:
     0:
-        image: /images/pe/edge/integrations/placeholder-feature-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-1.webp
         title: 'Go to the <b>Edge management > Instances</b> section, click it and select the <b>"Attributes"</b> tab. Add the <b>ipAddress</b> attribute to Edge.'
     1:
-        image: /images/pe/edge/integrations/placeholder-feature-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-2.webp
         title: 'Go to the <b>Edge management > Instances</b> section, click it and add the <b>${{ipAddress}}</b> placeholder to the Integration configuration.'
     2:
-        image: /images/pe/edge/integrations/placeholder-feature-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-3.webp
         title: 'Go back to the <b>Edge management > Instances</b> section and click the <b>Manage Integrations</b> button of the corresponding Edge entity.'
     3:
-        image: /images/pe/edge/integrations/placeholder-feature-step-4.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-4.webp
         title: 'To assign the Integration to the Edge, click the <b>"Assign to edge"</b> button and select it from the drop-down menu. To proceed, click the <b>"Assign"</b> button.'
     4:
-        image: /images/pe/edge/integrations/placeholder-feature-step-5.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-5.webp
         title: 'To confirm that the placeholder is replaced by the attribute value, log in to your <b>ThingsBoard Edge</b> instance, go to the <b>Integration center > Integrations</b> section and click the integration.'
 
 missingPlaceholder:
     0:
-        image: /images/pe/edge/integrations/missing-placeholder.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/missing-placeholder.webp
         title: 'Add ipAddress attribute to Edge'
 
 ---
@@ -79,7 +79,7 @@ This way, a single **Integration template** could be used by multiple **Edges**,
 * Consumes resources allocated to the main **ThingsBoard Edge** process (_network connections, OS threads, and CPU cycles_);
 * Low level of isolation;
 
-<object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg" style="display: block; margin: auto"></object>
+<object width="60%" data="https://img.thingsboard.io/user-guide/integrations/embeded-integrations-overview.svg" style="display: block; margin: auto"></object>
 
 #### Remote integrations
 
@@ -100,7 +100,7 @@ Cons:
 
 Learn how to configure integration to run remotely in [this guide](/docs/pe/edge/user-guide/integrations/remote-integrations){: target="_blank"}.
 
-<object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg" style="display: block; margin: auto"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/integrations/remote-integrations-overview.svg" style="display: block; margin: auto"></object>
 
 ### Converter templates
 
