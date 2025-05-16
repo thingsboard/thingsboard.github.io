@@ -6,7 +6,7 @@ description: IONA Tech - ThingsBoard case study
 ---
 
 <div class="case-study-page-wrapper">
-    <section class="case-study-hero">
+    <section class="case-study-hero no-padding-bottom">
         <div class="card">
             <div class="text">
                 <p class="category">INDUSTRY 4.0</p>
