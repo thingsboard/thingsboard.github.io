@@ -6,7 +6,7 @@
 The ThingsBoard **Over-the-Air (OTA) Update** feature is a powerful way to remotely manage device firmware or software, reducing the need for manual updates and enabling rapid deployment of enhancements or fixes.
 
 The **Edge OTA Update** feature is designed similarly to the **Platform (Cloud) OTA Update**. As a result, the **Edge OTA Update** packages can be deployed in both Device and Device Profile configurations in the same manner as **Platform** Device and Device Profile configurations.
-Please refer to the [Platform OTA Updates documentation](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/) for a general understanding of the **OTA Update** feature.
+Please refer to the [Platform OTA Updates documentation](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/){: target="_blank"} for a general understanding of the **OTA Update** feature.
 
 ## Provisioning OTA Packages to the ThingsBoard Repository
 
@@ -21,7 +21,7 @@ The **OTA Update packages** are created on the **ThingsBoard Platform**. It is *
 
 ### Create the OTA Update Package
 
-To create the **OTA update** package on your  **ThingsBoard Platform**, navigate to the **Advanced features > OTA updates** section and click the **"+"** icon.
+To create the **OTA update** package on your **ThingsBoard Platform**, navigate to the **Advanced features > OTA updates** section and click the **"+"** icon.
 In the pop-up window, fill in the following fields:
 * **Title:** Enter the firmware package name.
 * **Version:** Enter the firmware package update version number.
@@ -31,7 +31,7 @@ In the pop-up window, fill in the following fields:
 * **"Upload binary file"/"Use external URL" radiobutton:** Select the file package source. Depending on the selected option, the following will occur: 
   * **Package file:** Drag-n-drop the package file or browse to it on your computer.
   * **Direct URL:** Enter a direct URL to download the file.
-* Click the **"Add"** button. _Please note that once the package is uploaded, the title, version, device profile, and package type cannot be modified_.
+* Click the **"Add"** button. _Please note: once the package is uploaded, the title, version, device profile, and package type cannot be modified_.
 * Verify that firmware package has been successfully uploaded.
 
 {% include images-gallery.html imageCollection="createFirmware" %}
