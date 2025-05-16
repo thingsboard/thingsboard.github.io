@@ -17,7 +17,7 @@ description: Vypin LLC case study
                 <p>Vypin is a pharmaceutical company specializing in industrial IoT solutions aimed at enhancing safety, efficiency, and profitability for enterprises. Their products, such as Vypin Cloud™, provide critical data analytics, while their hardware automates data collection processes, eliminating outdated manual methods. Vypin’s solutions are easy to install and scale as businesses grow, offering decision-makers the tools they need to make informed choices without requiring technical expertise.</p>
             </div>
             <div class="image large" style="background-image: url('/images/case-studies/vypin.webp')">
-                    <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
+                <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
             </div>
         </div>
     </section>
