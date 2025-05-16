@@ -1,5 +1,5 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: " to ThingsBoard?" %}
-{% assign deviceVendorLink = "https://www.lansitec.com/products/cat-1-badge-tracker/" %}
+{% assign deviceVendorLink = "https://www.lansitec.com/products/cat-1-macro-tracker/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -8,7 +8,7 @@
 %}
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[Cat-1 Macro Tracker]({{deviceVendorLink}}){:target="_blank"} is designed for both indoor and outdoor tracking, leveraging GNSS, Bluetooth, and Cat-1 technologies.<br>
+[Cat-1 Macro Tracker]({{deviceVendorLink}}){:target="_blank"} is designed for both indoor and outdoor tracking, leveraging GNSS, Bluetooth, and Cat-1 technologies.
 It is powered by a 38,000 mAh industrial-grade battery, offering a standby time of up to 7 years.<br>
 Users can configure settings such as:
 - GNSS reporting interval
