@@ -49,6 +49,11 @@ To keep the **ThingsBoard Server** up to date with any attribute changes that ha
 
 {% include images-gallery.html imageCollection="pushToCloud" %}
 
+{% capture edge-rule-chain %}
+Starting with **Edge 4.0**, you can create and edit a **Rule Chain** on the **Edge**. 
+{% endcapture %}
+{% include templates/info-banner.md content=edge-rule-chain %}
+
 Read about how to **subscribe to device attributes change** [here](/docs/{{docsPrefix}}config/subscribe-to-attribute/#step-3-subscribe-to-device-attributes-change-and-publish-device-attributes-message){: target="_blank"}.
 
 ## Custom Attributes for Edge Instance
@@ -58,7 +63,7 @@ The retrieved **Edge attributes** can be used for metadata enrichment, authentic
 
 To assign a custom attribute to the **Edge** instance, follow these steps:
 
-* Log in to the **ThingsBoard Server**, go to the **Edge management > Instances** section and click on the **Edge** instance. On the **"Edge details"** page, select the **"Attributes"** tab.
+* Log in to the **ThingsBoard Server**, go to the **Edge management > Instances** section and click on the **Edge** instance. On the **"Edge details"** page, select the **"Attributes"** tab. 
 * Click the **“Add”** button and add a new custom attribute (_e.g. edgeAccessToken_).
 * Confirm the assigned attribute.
 * Select the **"Relations"** tab and click the **“Add”** button to add a new relation (_e.g. the relation between the Edge and the Device(s)_). Click the **“Add”** button.
@@ -67,7 +72,8 @@ To assign a custom attribute to the **Edge** instance, follow these steps:
 {% include images-gallery.html imageCollection="addEdgeAttributes" %}
 
 To use **Edge** attributes as placeholders in the **Rule Chain template**:
-* Go to the **ThingsBoard Server**, the **Edge management > Rule chains templates** section and click on the **Rule Chain** in question.
+* Go to the **ThingsBoard Server**, the **Edge management > Rule chains templates** section and click the appropriate **Rule Chain**.
+  * If you're using **Edge 4.0** or later, stay in your **Edge** instance and go to the **Rule chains** section. To edit a rule chain, click the appropriate **Rule Chain**.
 * On the **Rule Chain** edit page, find the **"related entity data"** node using the **Node search** bar. Drag and drop the node onto the **Rule Chain sheet**. Fill in the following fields in the pop-up window:
   * **Name:** Enter the node name.
   * **Direction:** Select the relation direction (_From originator/To originator_).
@@ -97,7 +103,8 @@ Before configuring the alarm notifications, have these steps completed:
 * [Set a relation](/docs/{{docsPrefix}}config/provision-asset/#creating-relations){: target="_blank"} between the **Asset** and **Device**.
 
 Follow these steps to configure the alarm notifications:
-* Log in to the **ThingsBoard Server**, go to the **Edge management > Rule chains templates** section and click on the **Rule Chain** in question.
+* Log in to the **ThingsBoard Server**, go to the **Edge management > Rule chains templates** section and click the appropriate **Rule Chain**.
+  * If you're using **Edge 4.0** or later, stay in your **Edge** instance and go to the **Rule chains** section. To edit a rule chain, click the appropriate **Rule Chain**.
 * On the **Rule Chain** edit page, find the **"related entity data"** node using the **Node search** bar. Drag and drop the node onto the **Rule Chain sheet**. Fill in the following fields in the pop-up window:
   * **Name:** Enter the node name.
   * **Direction:** Select the relation direction (_From originator/To originator_).
