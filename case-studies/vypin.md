@@ -11,13 +11,13 @@ description: Vypin LLC case study
             <div class="text">
                 <p class="category">WAREHOUSE MONITORING</p>
                 <h1>Reliable T&H monitoring with WhereView (ThingsBoard)</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/vypin.webp')">
-                    <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/vypin.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
                 </div>
                 <p>Vypin is a pharmaceutical company specializing in industrial IoT solutions aimed at enhancing safety, efficiency, and profitability for enterprises. Their products, such as Vypin Cloud™, provide critical data analytics, while their hardware automates data collection processes, eliminating outdated manual methods. Vypin’s solutions are easy to install and scale as businesses grow, offering decision-makers the tools they need to make informed choices without requiring technical expertise.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/vypin.webp')">
-                <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/vypin.webp')">
+                <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
             </div>
         </div>
     </section>
@@ -42,7 +42,7 @@ description: Vypin LLC case study
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/JT_McGibbon.webp" title="Vypin LLC General manager JT McGibbon" alt="JT McGibbon">
+        <img src="https://img.thingsboard.io/case-studies/JT_McGibbon.webp" title="Vypin LLC General manager JT McGibbon" alt="JT McGibbon">
         <div class="text">
             <h2>Vypin LLC</h2>
             <p class="quote">“I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.”</p>
@@ -107,25 +107,25 @@ description: Vypin LLC case study
                 <h3>Real-time environmental monitoring</h3>
                 <p>To address temperature and humidity control, ThingsBoard provided an advanced monitoring system that continuously tracks environmental conditions. The solution features real-time dashboards that visualize temperature and humidity levels across multiple warehouse areas. If predefined thresholds are breached, automated alerts notify operators immediately, ensuring corrective actions are taken before critical failures occur.</p>
             </div>
-            <img src="/images/case-studies/real_time_environmental_monitoring.webp" title="Real-time environmental monitoring" alt="Storage">
+            <img src="https://img.thingsboard.io/case-studies/real_time_environmental_monitoring.webp" title="Real-time environmental monitoring" alt="Storage">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Automated alerting & compliance tracking</h3>
                 <p>ThingsBoard’s alerting system was customized to detect any anomalies in storage conditions. The platform now generates automatic reports that comply with FDA regulations, ensuring that all required data is logged and traceable. This reduces manual paperwork and the risk of non-compliance penalties.</p>
             </div>
-            <img src="/images/case-studies/automated_alerting_compliance_tracking.webp" title="Automated alerting & compliance tracking" alt="Male investigating alert with laptop">
+            <img src="https://img.thingsboard.io/case-studies/automated_alerting_compliance_tracking.webp" title="Automated alerting & compliance tracking" alt="Male investigating alert with laptop">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Seamless data synchronization & integration</h3>
                 <p>The ThingsBoard platform enables smooth integration with existing enterprise systems. Warehouse managers can now access all sensor data in a unified interface, eliminating inconsistencies between different monitoring tools and improving decision-making processes.</p>
             </div>
-            <img src="/images/case-studies/seamless_data_synchronization_integration.webp" title="Seamless data synchronization & integration" alt="Synchronized devices and tablets">
+            <img src="https://img.thingsboard.io/case-studies/seamless_data_synchronization_integration.webp" title="Seamless data synchronization & integration" alt="Synchronized devices and tablets">
         </div>
     </section>
     <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark">
         <div class="quote-text">
             <p>“The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.”</p>
             <h2>Vypin LLC</h2>
@@ -144,8 +144,8 @@ description: Vypin LLC case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget">
+                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget">
             </div>
         </div>
         <div class="block">
@@ -159,8 +159,8 @@ description: Vypin LLC case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget">
-                <img src="/images/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget">
+                <img src="https://img.thingsboard.io/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget">
+                <img src="https://img.thingsboard.io/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget">
             </div>
         </div>
         <div class="block">
@@ -174,8 +174,8 @@ description: Vypin LLC case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget">
-                <img src="/images/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget">
+                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget">
             </div>
         </div>
         <div class="block">
@@ -189,17 +189,17 @@ description: Vypin LLC case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/apartment-image-map.webp" title="Thingsboard apartment image map widget" alt="Thingsboard apartment image map widget">
-                <img src="/images/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget">
+                <img src="https://img.thingsboard.io/case-studies/apartment-image-map.webp" title="Thingsboard apartment image map widget" alt="Thingsboard apartment image map widget">
+                <img src="https://img.thingsboard.io/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget">
             </div>
         </div>
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo">
-                    <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo">
+                    <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
                 </div>
             </div>
         </div>
