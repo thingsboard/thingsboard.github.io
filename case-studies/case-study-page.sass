@@ -32,6 +32,10 @@
         color: #3A3B3D
 
       .case-study-hero
+
+        &.no-padding-bottom
+          padding-bottom: 0
+
         .card
           display: flex
           gap: 32px
@@ -148,6 +152,7 @@
 
         img
           width: 55%
+          border-radius: 25px
 
         div.text
           flex: 1
@@ -257,6 +262,9 @@
           padding: 40px 0
           border-bottom: 1px solid #DDECFD
 
+          &:last-child
+            padding-bottom: 0
+
           .text
             & > p
               margin-bottom: 16px
@@ -357,6 +365,9 @@
           display: flex
           gap: 32px
           margin-bottom: 130px
+
+          &:last-child
+            margin-bottom: 0
 
           .image-container
             flex: 1
