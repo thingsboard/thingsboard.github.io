@@ -76,7 +76,7 @@ def extract_property_info(properties):
 
 
 def generate_html_table(table_name, rows):
-    html_table = '#### ' + table_name + '\n\n'
+    html_table = '## ' + table_name + '\n\n'
     html_table += '<table>\n'
     html_table += '\t<thead>\n' \
                   '\t\t<tr>\n' \
