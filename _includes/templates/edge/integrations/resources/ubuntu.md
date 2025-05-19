@@ -1,8 +1,8 @@
-- **Install Java 17 (OpenJDK)**
+#### Install Java 17 (OpenJDK)
 
 {% include templates/install/ubuntu-java-install.md %}
 
-- **Choose the Integration package to install**
+#### Choose the Integration package
 
 {% capture ubuntuinstallspec %}
 HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-ubuntu.md%br%

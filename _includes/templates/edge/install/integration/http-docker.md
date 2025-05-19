@@ -26,20 +26,20 @@ Where:
     
 - **mytbedge:** The host name of the ThingsBoard Edge service.
 - **9090:** The integration port. It is configured by the INTEGRATIONS_RPC_PORT environment variable in the tb-edge.yml file.
-- **YOUR_ROUTING_KEY:** Replace it with the actual _integration routing key_ obtained in [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials){: target="_blank"}.
-- **YOUR_SECRET:** Replace it with the actual _integration secret_ obtained in [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials){: target="_blank"}.
+- **YOUR_ROUTING_KEY:** Replace it with the actual **integration routing key** obtained in [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials){: target="_blank"}.
+- **YOUR_SECRET:** Replace it with the actual **integration secret** obtained in [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials){: target="_blank"}.
 - **docker run:** The command to run this container.
 - **-it:** Attaches a terminal session with current ThingsBoard remote integration process output.
-- **-v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration:** Mounts the host's dir `~/.tb-pe-http-integration-logs` to ThingsBoard remote integration logs directory.
+- **-v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration:** Mounts the host's dir **~/.tb-pe-http-integration-logs** to ThingsBoard remote integration logs directory.
 - **--name my-tb-pe-http-integration:** The friendly local name of this machine.
-- **--network edge_docker_default:** The network name in which the _mytbedge_ service operates.
+- **--network edge_docker_default:** The network name in which the **mytbedge** service operates.
 - **--restart always:** The command automatically starts ThingsBoard Integration if the system reboots and restarts in case of failure.
 - **thingsboard/tb-pe-http-integration:{{ site.release.pe_full_ver }}:** The docker image.
 
-After executing this command, you can open the logs located here: `~/.tb-pe-http-integration-logs`. 
+After executing this command, you can open the logs located here: **~/.tb-pe-http-integration-logs**. 
 You should be able to see INFO log messages containing your latest integration configuration that arrived from the server.
 
-To keep the container running in the background but detach from the session terminal, press the key sequence **`Ctrl+p`** followed by **`Ctrl+q`**.
+To keep the container running in the background but detach from the session terminal, press the key sequence **Ctrl+p** followed by **Ctrl+q**.
 
 #### Reattaching, stop and start commands
 
