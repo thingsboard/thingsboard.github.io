@@ -498,6 +498,22 @@
     "blurb": "Rugged, programmable telemetry devices that connect to any industrial sensor or system."
   },
   {
+    "type": ["main", "bluetooth", "lte", "wifi", "ethernet"],
+    "program": "",
+    "name": "Sixfab, Inc.",
+    "logo": "sixfab-logo.png",
+    "site": {
+      "href": "https://sixfab.com/alpon",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "/docs/pe/devices-library/alpon-x4/"
+      }
+    },
+    "blurb": "Sixfab builds modular, always online, industrial-grade edge computers based on Raspberry Pi, designed for real-world deployments. Our ALPON™ devices integrate seamlessly with ThingsBoard and support remote fleet provisioning, resilient multi-network connectivity, and local data processing. Engineered for reliability in harsh conditions, Sixfab products focus on practical deployment, automation, and maintainability at scale."
+  },
+  {
     "type": ["main", "bluetooth", "wifi", "lte", "LoRaWAN"],
     "program": "",
     "name": "Dusun",
