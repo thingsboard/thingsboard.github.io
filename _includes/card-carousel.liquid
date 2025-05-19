@@ -32,7 +32,7 @@
 
 {% assign courseIds = "{" | append: courseIds | append: "}" %}
 
-<div class="usecase-carousel owl-carousel owl-theme courses-carousel carousel-content-toggle cardMode smallArrow circle transitionAnimationEnabled" data-settings='{{ defaultSettings }}' data-id='{{ courseIds }}'>
+<div class="owl-carousel owl-theme courses-carousel carousel-content-toggle cardMode smallArrow circle transitionAnimationEnabled" data-settings='{{ defaultSettings }}' data-id='{{ courseIds }}'>
     {% for course in coursesCollection %}
         {% assign totalHours = 0 %}
         {% for session in course[1].courseSessions %}
@@ -78,12 +78,10 @@
             <div class="card" style="height: {{ item[1].height }}" data-position="{{ forloop.index0 }}">
                 <div class="card-header">
                     <img src="{{ item[1].src }}" alt="{{ item[1].alt }}">
-                    <span style="font-size: {{ titleSize }}; color: #000000DE; line-height: 44px; font-weight: 500;">{{ item[1].title }}</span>
+                    <span style="font-size: {{ titleSize }}; line-height: 44px; font-weight: 500;">{{ item[1].title }}</span>
                 </div>
                 <p style="font-size:{{ descriptionSize }}; color: #000000C2; line-height: 24px; font-weight: 400">{{ item[1].description }}</p>
-                <div class="card-link">
-                    <a href="{{ item[1].href }}" aria-label="Learn more about {{ item[1].title }}">{{ item[1].linkLabel }}</a>
-                </div>
+                <a href="{{ item[1].href }}" aria-label="Learn more about {{ item[1].title }}" class="card-link"></a>
             </div>
         {% endfor %}
     </div>

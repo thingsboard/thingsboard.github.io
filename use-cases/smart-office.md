@@ -190,10 +190,12 @@ includeAdvantages: "true"
 </section>
 
 <section class="summary">
-    <h2>Summary of smart office solution</h2>
-    <div>
-        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    <div class="summary-text">
+        <h2>Summary of smart office solution</h2>
+        <p>The Smart Office project demonstrates how the integration of IoT and ThingsBoard can significantly enhance office building management. It’s more than just a dashboard — it’s a powerful tool for improving efficiency, safety, and comfort. The solution is easily scalable, integrable, and customizable to fit any business needs. With ThingsBoard, you don’t just monitor your office — you take control of it.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">  
     </div>
 </section>
 

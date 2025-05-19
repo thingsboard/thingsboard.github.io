@@ -86,23 +86,20 @@ smart-office:
 
 water-metering:
   0:
-    src: "/images/usecases/water-metering/wm1.png"
+    src: "/images/usecases/water-metering/water-metering-1.webp"
     alt: "water metering 1"
   1:
-    src: "/images/usecases/water-metering/wm2.png"
+    src: "/images/usecases/water-metering/water-metering-2.webp"
     alt: "water metering 2"
   2:
-    src: "/images/usecases/water-metering/wm3.png"
+    src: "/images/usecases/water-metering/water-metering-3.webp"
     alt: "water metering 3"
   3:
-    src: "/images/usecases/water-metering/wm4.webp"
+    src: "/images/usecases/water-metering/water-metering-4.webp"
     alt: "water metering 4"
   4:
-    src: "/images/usecases/water-metering/wm5.png"
+    src: "/images/usecases/water-metering/water-metering-5.webp"
     alt: "water metering 5"
-  5:
-    src: "/images/usecases/water-metering/wm6.png"
-    alt: "water metering 6"
 
 smart-retail:
   0:

@@ -456,6 +456,23 @@
   .owl-item.active.center
     .card
       box-shadow: -4px 15px 50px -20px rgba(42, 125, 236, 0.15), 0px 0px 8px 0px rgba(42, 125, 236, 0.08)
+.owl-carousel.owl-theme.usecase-carousel.cardMode
+  .card
+    span
+      transition: ease-in-out 0.2s
+      color: #000000DE
+  .owl-item.active.center
+    .card
+      &:hover
+        span
+          color: #2A7DEC
+      position: relative
+      .card-link
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
 .owl-carousel.owl-theme.cardMode.smallArrow
   .owl-nav
     button.owl-prev, button.owl-next
