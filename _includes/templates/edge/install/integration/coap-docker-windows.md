@@ -1,13 +1,14 @@
-Windows users should use docker managed volume for remote integration logs. 
-Create docker volume (for ex. `tb-coap-integration-logs`) before executing docker run command:
-Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
+Windows users should use a Docker-managed volume for remote integration logs.
+Create a Docker volume (e.g., **tb-coap-integration-logs**) before executing the docker run command:
+
+Open Docker Quickstart Terminal and execute the following command to create the Docker volume:
 
 ``` 
 docker volume create tb-pe-coap-integration-logs
 ```
 {: .copy-code}
 
-Execute the following command to run this docker directly:
+
 
 ```bash
 docker run -it -p 5683:5683/udp -v tb-pe-coap-integration-logs:/var/log/tb-coap-integration `

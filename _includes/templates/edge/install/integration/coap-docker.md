@@ -5,7 +5,7 @@ docker pull thingsboard/tb-pe-coap-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
-Execute the following command to create volume for the integration logs (799 is the user id of ThingsBoard non-root docker user):
+Execute the following command to create volume for the integration logs (_799 is the user id of ThingsBoard non-root docker user_):
 
 ```bash
 mkdir -p ~/.tb-pe-coap-integration-logs && sudo chown -R 799:799 ~/.tb-pe-coap-integration-logs
