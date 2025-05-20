@@ -1,9 +1,14 @@
 [Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing software platform.
 
-Create the **docker compose file** and populate it with configuration lines:
+Create the **docker compose file**:
+```bash
+nano docker-compose.yml
+```
+{: .copy-code}
+
+Add the following configuration lines to the **yml file**:
 
 ```
-cat > docker-compose.yml <<EOF && docker compose -f docker-compose.yml up -d
 version: '3.8'
 services:
   mytbedge:
@@ -19,7 +24,7 @@ services:
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
       CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or demo.thingsboard.io
       TB_QUEUE_TYPE: "kafka"
-      TB_KAFKA_SERVERS: "kafka:9092"
+      TB_KAFKA_SERVERS: "kafka:9094"
     volumes:
       - tb-edge-data:/data
       - tb-edge-logs:/var/log/tb-edge
@@ -65,7 +70,6 @@ volumes:
     name: tb-edge-postgres-data
   kafka-data:
     driver: local
-EOF
 ```
 {: .copy-code.expandable-15}
 

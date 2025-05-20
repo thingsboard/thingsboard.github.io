@@ -297,7 +297,7 @@ Open your server and create backup of database **tb_edge** using 'Backup Dialog'
 {% assign updateServerLink = "#upgrading-to-4.0.1" %}
 {% include templates/edge/install/compatibility-warning-version.md %}
 
-### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-40}
+### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-401}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.9.1EDGE version.
 

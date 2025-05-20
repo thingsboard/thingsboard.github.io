@@ -2,10 +2,15 @@
 
 [Apache Kafka](https://kafka.apache.org/){: target="_blank"} is an open source stream processing software platform.
 
-Create the **docker compose file** and populate it with configuration lines:
+Create the **docker compose file**:
+```bash
+nano docker-compose.yml
+```
+{: .copy-code}
+
+Add the following configuration lines to the **yml file**:
 
 ```
-cat > docker-compose.yml <<EOF && docker compose -f docker-compose.yml up -d
 version: '3.8'
 services:
   mytbedge:
@@ -20,17 +25,17 @@ services:
       EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or demo.thingsboard.io
+      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or thingsboard.cloud
       CLOUD_RPC_SSL_ENABLED: 'false' # set it to 'true' if you are connecting edge to thingsboard.cloud
       TB_QUEUE_TYPE: "kafka"
-      TB_KAFKA_SERVERS: "kafka:9092"
+      TB_KAFKA_SERVERS: "kafka:9094"
       DATABASE_TS_TYPE: "cassandra"
       CASSANDRA_URL: "cassandra:9042"
-      volumes:
-        - tb-edge-data:/data
-        - tb-edge-logs:/var/log/tb-edge
-      extra_hosts:
-        - "host.docker.internal:host-gateway"
+    volumes:
+      - tb-edge-data:/data
+      - tb-edge-logs:/var/log/tb-edge
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   postgres:
     restart: always
     image: "postgres:15"
@@ -76,8 +81,6 @@ services:
       - 9042:9042
     volumes:
       - ./data/cassandra:/var/lib/cassandra
-    networks:
-      - cassandra-network
 volumes:
   tb-edge-data:
     name: tb-edge-data
@@ -87,10 +90,6 @@ volumes:
     name: tb-edge-postgres-data
   kafka-data:
     driver: local
-networks:
-  cassandra-network:
-    driver: bridge
-EOF
 ```
 {: .copy-code.expandable-15}
 
