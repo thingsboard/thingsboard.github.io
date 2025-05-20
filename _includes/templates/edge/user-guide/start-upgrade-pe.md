@@ -61,7 +61,14 @@ sed -i 's|thingsboard/tb-edge-pe:{{previousVersion}}|thingsboard/tb-edge-pe:{{ve
 ```
 {: .copy-code}
 
-To start this docker compose, run the following command:
+Upgrade the ThingsBoard Edge service: 
+
+```bash
+docker compose run mytbedge upgrade-tb-edge.sh
+```
+{: .copy-code}
+
+Start the docker compose:
 ```
 docker compose up -d && docker compose logs -f mytbedge
 ```
