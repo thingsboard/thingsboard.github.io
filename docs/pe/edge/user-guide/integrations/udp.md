@@ -298,9 +298,16 @@ Once the converter and integration templates are created, we can assign the inte
 
 ### Installing and running external UDP Integration
 
-Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations){: target="_blank"} and install the UDP Integration service locally or on a separate machine.
-
+You can install the ThingsBoard integration via **Docker**, **Debian** or **RPM packages**. Select the appropriate 
 Please use the **Integration key** and **Integration secret** from the above section for the UDP Integration configuration.
+
+{% capture selectPlatform %}
+Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
+Docker on Windows%,%docker-windows%,%templates/edge/integrations/resources/docker-on-windows.md%br%
+Ubuntu%,%ubuntu%,%templates/edge/integrations/resources/ubuntu.md%br%
+CentOS/RHEL Server%,%centos%,%templates/edge/integrations/resources/centos-rhel.md{% endcapture %}
+
+Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations/#choose-your-platform-and-install){: target="_blank"} and install the UDP Integration service locally or on a separate machine.
 
 ### Send uplink message
 
