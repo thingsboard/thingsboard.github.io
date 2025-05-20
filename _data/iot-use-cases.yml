@@ -48,9 +48,9 @@
   name: "Smart Office"
   description: "Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities."
   media:
-    image: "https://img.thingsboard.io/usecases/smart-office/video/smart-office.png"
+    image: "https://img.thingsboard.io/usecases/smart-office/video/smart-office-v2.png"
     alt: "See more about Smart Office"
-    video: ["https://video.thingsboard.io/usecases/smart-office.mp4", "https://video.thingsboard.io/usecases/smart-office.webm"]
+    video: ["https://video.thingsboard.io/usecases/smart-office-v2.mp4", "https://video.thingsboard.io/usecases/smart-office-v2.webm"]
   href: "/use-cases/smart-office/"
 6:
   type: "General"
