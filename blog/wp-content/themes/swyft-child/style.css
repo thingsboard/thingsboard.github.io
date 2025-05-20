@@ -1273,6 +1273,15 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group
     background-color: #fff
 }
 
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:first-child:last-child,header .head-menu ul .centered-sub .sub-menu .sub-groups .group:first-child:last-child {
+    margin: 0
+}
+
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:first-child:last-child .column,header .head-menu ul .centered-sub .sub-menu .sub-groups .group:first-child:last-child .column {
+    width: 100%;
+    min-width: unset
+}
+
 header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group .column,header .head-menu ul .centered-sub .sub-menu .sub-groups .group .column {
     display: flex;
     flex-direction: column;
