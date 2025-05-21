@@ -130,8 +130,8 @@
       "target": "_blank"
     },
     "links": {
-      "Integration guide": {
-        "href": "/docs/samples/lansitec/solar-bluetooth-gateway/"
+      "Integration guides": {
+        "href": "/docs/devices-library/#AnchorIDOtherdevices"
       }
     },
     "blurb": "Lansitec is at the forefront of technological innovation, specializing in the provision of affordable, compact, and highly efficient hardware designed to accurately locate people, resources, and assets. Our unique approach combines cutting-edge trackers, gateways, tags, and sensors with advanced software and algorithms to optimize performance and ensure the best possible outcomes."
@@ -496,6 +496,22 @@
       }
     },
     "blurb": "Rugged, programmable telemetry devices that connect to any industrial sensor or system."
+  },
+  {
+    "type": ["main", "bluetooth", "lte", "wifi", "ethernet"],
+    "program": "",
+    "name": "Sixfab, Inc.",
+    "logo": "sixfab-logo.png",
+    "site": {
+      "href": "https://sixfab.com/alpon",
+      "target": "_blank"
+    },
+    "links": {
+      "Integration guide": {
+        "href": "/docs/pe/devices-library/alpon-x4/"
+      }
+    },
+    "blurb": "Sixfab builds modular, always online, industrial-grade edge computers based on Raspberry Pi, designed for real-world deployments. Our ALPON™ devices integrate seamlessly with ThingsBoard and support remote fleet provisioning, resilient multi-network connectivity, and local data processing. Engineered for reliability in harsh conditions, Sixfab products focus on practical deployment, automation, and maintainability at scale."
   },
   {
     "type": ["main", "bluetooth", "wifi", "lte", "LoRaWAN"],

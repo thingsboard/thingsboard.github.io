@@ -1402,5 +1402,17 @@
       "href": "vehi.kz",
       "target": "_blank"
     }
+  },
+  {
+    "type": ["North America"],
+    "country": ["Canada"],
+    "name": "X-TELIA",
+    "contact": {
+      "href": "info@x-telia.com"
+    },
+    "site": {
+      "href": "en.x-telia.com",
+      "target": "_blank"
+    }
   }
 ]

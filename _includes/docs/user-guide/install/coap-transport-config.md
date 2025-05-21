@@ -145,7 +145,7 @@
 </table>
 
 
-##  Redis configuration parameters
+##  Redis/Valkey configuration parameters
 
 <table>
 	<thead>
