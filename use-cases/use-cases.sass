@@ -940,6 +940,11 @@
                 @media screen and (max-width: 599px)
                     font-size: 14px
 
+        .section-header.water-section-header
+            max-width: 1079px
+            p
+                max-width: 928px
+
         .carousel-padding
             .carousel-item
                 img
@@ -1484,7 +1489,7 @@
                     .image-container.image-background
                         padding: 16px
                         border-radius: 24px
-                        background: #EDEDED
+                        background: #F2F2F2
                         .image
                             img
                                 border-radius: 0
@@ -1669,25 +1674,32 @@
 
         .advantages
             h2
+                margin: 0
                 padding-top: 110px
 
-            .owl-carousel.owl-theme.usecase-carousel.cardMode .card
-                justify-content: unset
-                gap: 16px
-                align-items: start
+            .owl-carousel.owl-theme.usecase-carousel.cardMode
+                margin: 10px 0 24px
 
-                .card-header
-                    align-items: start
+                .owl-stage
+                    padding: 50px 0
+
+                .card
+                    justify-content: unset
                     gap: 16px
+                    align-items: start
 
-                    span
-                        text-align: left !important
-                    li
-                        margin-bottom: 0
-                        padding: 0
-                        background: unset
-                p
-                    margin: 0
-                    text-align: left
-                .card-link
-                    font-size: 18px
+                    .card-header
+                        align-items: start
+                        gap: 16px
+
+                        span
+                            text-align: left !important
+                        li
+                            margin-bottom: 0
+                            padding: 0
+                            background: unset
+                    p
+                        margin: 0
+                        text-align: left
+                    .card-link
+                        font-size: 18px

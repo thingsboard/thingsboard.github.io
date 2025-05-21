@@ -43,7 +43,7 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Water metering solution architecture" title="Water metering solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases-energy.svg" class="svg-animation" alt="Water metering solution architecture" title="Water metering solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -151,7 +151,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="applications applications-additional summary-margin section-padding">
-    <div class="section-header">
+    <div class="section-header water-section-header">
         <h2>Applications of water metering: versatility across industries</h2>
         <p>IoT-based water metering is not limited to utility companies. The same architecture and approach can be repurposed across a wide range of sectors:</p>
     </div>
@@ -282,6 +282,9 @@ includeAdvantages: "true"
                 this.appendChild(smallImageBlock);
                 largeImageElement.innerHTML = getImage(index);
 
+                applyImageBg(smallImageBlock);
+                applyImageBg(largeImageBlock);
+
                 expansionBlocks.forEach(item => {
                     item.classList.remove('expanded');
                 });
@@ -333,15 +336,26 @@ includeAdvantages: "true"
                 <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
                 <a id="UseCases_WaterMeter_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
             </div>`;
+
+            applyImageBg(block);
     
             return block;
+        }
+
+        function applyImageBg(block) {
+            const img = block.querySelector('.image img');
+            const container = block.querySelector('.image-container');
+            if (img && container) {
+                const bg = img.dataset.bg;
+                container.style.backgroundColor = bg || '';
+            }
         }
 
         function getImage(index) {
             const images = [
                 "<img src='/images/usecases/water-metering/water-metering-1.webp' alt='IoT water monitoring dashboard with real-time meter data, consumption chart, and alert notifications' title='IoT-based smart water metering dashboard for real-time monitoring and consumption analytics'/>",
                 "<img src='/images/usecases/water-metering/water-metering-2.webp' alt='hingsBoard IoT dashboard for water metering with real-time consumption graph, smart devices, and meter analytics' title='Smart water consumption tracking with ThingsBoard IoT platform — daily usage trends, device status, and meter readings'/>",
-                "<img src='/images/usecases/water-metering/water-metering-6.webp' alt='ThingsBoard interface for editing smart water meter device details with active alerts and status overview' title='Edit IoT water meter device information and monitor active consumption alarms in ThingsBoard'/>",
+                "<img src='/images/usecases/water-metering/water-metering-6.webp' alt='ThingsBoard interface for editing smart water meter device details with active alerts and status overview' title='Edit IoT water meter device information and monitor active consumption alarms in ThingsBoard' data-bg='#A4A4A4'/>",
                 "<img src='/images/usecases/water-metering/water-metering-7.webp' alt='ThingsBoard customer management interface displaying smart water metering clients with contact details' title='Manage smart water metering customers in ThingsBoard with email, address, and contact information'/>",
                 "<img src='/images/usecases/water-metering/water-metering-4.webp' alt='IoT water metering dashboard with critical alerts for exceeded consumption thresholds and real-time device data in ThingsBoard' title='ThingsBoard IoT platform showing critical smart meter alerts and active status of water monitoring devices'/>",
                 "<img src='/images/usecases/water-metering/water-metering-5.webp' alt='hingsBoard alarm configuration panel showing system thresholds and email or SMS notification settings' title='Configure smart alarm thresholds and notification channels in ThingsBoard IoT platform'/>",

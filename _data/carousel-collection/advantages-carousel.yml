@@ -1,6 +1,6 @@
 0:
   id: "security"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/security.svg"
   alt: "Security icon"
   title: "Security"
@@ -9,7 +9,7 @@
   href: "/docs/pe/user-guide/ssl/http-over-ssl/"
 1:
   id: "data-visualization"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/data-visualization.svg"
   alt: "Data visualization icon"
   title: "Data visualization"
@@ -18,7 +18,7 @@
   href: "/docs/user-guide/dashboards/"
 2:
   id: "connectivity"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/connectivity.svg"
   alt: "Connectivity icon"
   title: "Connectivity"
@@ -27,7 +27,7 @@
   href: "/docs/getting-started-guides/connectivity/"
 3:
   id: "data-processing"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/data-processing.svg"
   alt: "Data processing icon"
   title: "Data processing"
@@ -36,7 +36,7 @@
   href: "/docs/pe/user-guide/rule-engine-2-0/overview/"
 4:
   id: "scalability"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/scalability.svg"
   alt: "Scalability icon"
   title: "Scalability and high availability"
@@ -45,7 +45,7 @@
   href: "/docs/reference/msa/"
 5:
   id: "multi-tenancy"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/multi-tenancy.svg"
   alt: "Multi-tenancy icon"
   title: "Multi-tenancy"
@@ -54,7 +54,7 @@
   href: "/docs/user-guide/entities-and-relations"
 6:
   id: "lorawan"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/lorawan-sigfox.svg"
   alt: "Support icon"
   title: "LoRaWAN & SigFox support"
@@ -63,7 +63,7 @@
   href: "/docs/user-guide/integrations/"
 7:
   id: "mobile0application"
-  height: "460px"
+  height: "406px"
   src: "/images/usecases/scada/mobile.svg"
   alt: "Mobile icon"
   title: "Mobile application"
