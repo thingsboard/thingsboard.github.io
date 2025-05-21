@@ -169,6 +169,50 @@
         margin: 8px 0
         background: #E0E1E2
         border-radius: 4px
+
+.owl-carousel.owl-theme.partnersCarousel
+  margin: 0
+
+  .owl-stage
+    display: flex
+
+  .owl-nav
+    display: block !important
+    margin-top: 0
+
+    button.owl-prev,
+    button.owl-next
+      position: absolute
+      outline: none
+      background-color: transparent
+      filter: unset
+      width: 60px
+      height: 60px
+      top: calc(50% - 25px)
+
+      span
+        display: none
+
+    button.owl-prev
+      left: 0
+      transform: scale(-1, 1)
+
+    button.owl-next
+      right: 0
+
+    button.owl-prev::before,
+    button.owl-next::before
+      content: "\f078"
+      font-family: "Font Awesome 5 Free"
+      position: absolute
+      top: 42%
+      left: 85px
+      transform: translate(-50%, -50%) rotate(-90deg)
+      font-weight: 900
+      font-size: 21px
+      color: #2A7DEC
+      transition: ease-in-out 0.3s
+
 .owl-carousel.owl-theme.usecase-carousel
   img
     width: auto

@@ -1147,13 +1147,13 @@ var tb = (function () {
 (function () {
 	$(document).ready(function () {
 
-		if (!$('.filters').length) return;
+		if (!$('.filter').length) return;
 
-		const containerId = $('.filters').attr('data-container-id');
-		const filterMode = $('.filters').attr('data-mode');
+		const containerId = $('.filter').attr('data-container-id');
+		const filterMode = $('.filter').attr('data-mode');
 		const container = document.getElementById(containerId);
 		const content = Array.from(container.children);
-		const checkboxes = $('.filters .check-box');
+		const checkboxes = $('.filter .check-box');
 
 		checkboxes.on('click', function() {
 			const checkboxId = $(this).attr('id');
@@ -1185,7 +1185,7 @@ var tb = (function () {
 		}
 
 		function getCheckedIds() {
-			return $('.filters .check-box.checked').map(function () {
+			return $('.filter .check-box.checked').map(function () {
 				return this.id;
 			}).get();
 		}
@@ -1199,7 +1199,9 @@ var tb = (function () {
 			}
 
 			content.forEach(item => {
-				item.style.display = checkedIds.includes(item.id) ? 'block' : 'none';
+				const itemIds = item.id.split('|');
+				const currentItemStatus = checkedIds.some(id => itemIds.includes(id));
+				item.style.display = currentItemStatus || itemIds[0] === 'all' ? 'block' : 'none';
 			});
 		}
 	});
