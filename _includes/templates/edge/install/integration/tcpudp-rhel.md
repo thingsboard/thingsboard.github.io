@@ -31,8 +31,13 @@ Locate the following configuration block:
 Enter your configuration parameters:
 - **RPC_HOST:** Use the Edge instance’s IP address, or **localhost** if it's running on the same machine.
 - **9090:** The integration port. It is configured by the INTEGRATIONS_RPC_PORT environment variable in the tb-edge.yml file.
+{% if page.url contains "udp" or page.url contains "tcp" %}
+- **YOUR_ROUTING_KEY:** Replace it with the actual **integration routing key**.
+- **YOUR_SECRET:** Replace it with the actual **integration secret**.
+{% elsif page.url contains "remote-integrations" %}
 - **YOUR_ROUTING_KEY:** Replace it with the actual **integration routing key** obtained in [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials){: target="_blank"}.
 - **YOUR_SECRET:** Replace it with the actual **integration secret** obtained in [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials){: target="_blank"}.
+{% endif %}
 
 Make sure to **uncomment** the export statement. See the example below:
 

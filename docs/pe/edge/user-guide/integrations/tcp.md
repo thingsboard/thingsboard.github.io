@@ -290,11 +290,19 @@ Once the converter and integration templates are created, we can assign the **In
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-#### Installing and running external TCP Integration
+### Installing and running external TCP Integration
 
-See the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations){: target="_blank"} and install the **TCP Integration service** locally or on a separate machine.
+To install the remote TCP Integration service on a local or separate machine, select the appropriate platform.
 
-Please use the **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
+>>Use the **Integration key** and **Integration secret** provided in the section above to complete the TCP Integration configuration.
+
+{% capture selectPlatform %}
+Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
+Docker on Windows%,%docker-windows%,%templates/edge/integrations/resources/docker-on-windows.md%br%
+Ubuntu%,%ubuntu%,%templates/edge/integrations/resources/ubuntu.md%br%
+CentOS/RHEL Server%,%centos%,%templates/edge/integrations/resources/centos-rhel.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="selectPlatform" toggle-spec=selectPlatform %}
 
 ### Send uplink message
 

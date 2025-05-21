@@ -1,6 +1,7 @@
 To run the integration via Docker, make sure you have [installed Docker CE](https://docs.docker.com/engine/installation/){: target="_blank"}
 
 {% if page.url contains "remote-integrations" %}
+
 #### Select the integration to install
 
 {% capture contenttogglespec %}
@@ -14,13 +15,12 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker
 
 {% include templates/edge/install/integration/advanced-config-docker.md %}
 
+{% elsif page.url contains "tcp" or page.url contains "udp" %}
+
+{% include /templates/edge/install/integration/tcpudp-docker.md %}
+
+{% endif %}
+
 #### Troubleshooting
 
 {% include templates/troubleshooting/dns-issues.md %}
-
-{% elsif page.url contains "udp" %}
-{% include /templates/edge/install/integration/tcpudp-docker.md %}
-
-{% else %}
-{% include /templates/device-library/ready-to-go-devices/ce-prerequisites-recomuterR.md %}
-{% endif %}

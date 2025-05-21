@@ -2,6 +2,8 @@
 
 {% include templates/install/ubuntu-java-install.md %}
 
+{% if page.url contains "remote-integrations" %}
+
 #### Choose the Integration package
 
 {% capture ubuntuinstallspec %}
@@ -11,4 +13,10 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-ub
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
+{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %}
+
+{% elsif page.url contains "tcp" or page.url contains "udp" %}
+
+{% include /templates/edge/install/integration/tcpudp-ubuntu.md %}
+
+{% endif %}

@@ -2,6 +2,8 @@
 
 {% include templates/install/rhel-java-install.md %}
 
+{% if page.url contains "remote-integrations" %}
+
 #### Choose the Integration package
 
 {% capture rhelinstallspec %}
@@ -12,3 +14,9 @@ TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp
 CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
+
+{% elsif page.url contains "tcp" or page.url contains "udp" %}
+
+{% include /templates/edge/install/integration/tcpudp-rhel.md %}
+
+{% endif %}

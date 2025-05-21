@@ -261,4 +261,4 @@ The **"In"** block of the Events tab shows what data has been entered, and the *
 ### Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
-{% include templates/edge/guides-banner-edge.md %}
+{% include /templates/edge/guides-banner-edge.md %}

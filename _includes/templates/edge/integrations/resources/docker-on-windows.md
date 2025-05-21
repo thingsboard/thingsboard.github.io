@@ -1,5 +1,7 @@
 To run the integration via Docker, make sure you have [installed Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/){: target="_blank"}
 
+{% if page.url contains "remote-integrations" %}
+
 #### Select the integration to install
 
 {% capture contenttogglespecwin %}
@@ -12,6 +14,12 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker
 {% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
 {% include templates/edge/install/integration/advanced-config-docker.md %}
+
+{% elsif page.url contains "tcp" or page.url contains "udp" %}
+
+{% include /templates/edge/install/integration/tcpudp-docker-windows.md %}
+
+{% endif %}
 
 #### Troubleshooting
 
