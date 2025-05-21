@@ -227,6 +227,8 @@ This example shown with the coap-client instead of CoAP cli since CoAP cli does 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+##### Request specific client and shared attributes
+
 {% capture tabspec %}coap-attributes-request
 A,Execute the command:,shell,resources/coap-attributes-request.sh,/docs/reference/resources/coap-attributes-request.sh{% endcapture %}
 {% include tabs.html %}
@@ -244,6 +246,98 @@ the intersection of client-side and shared device attribute keys is a bad practi
 However, it is still possible to have same keys for client, shared or even server-side attributes.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+{% if docsPrefix != "edge/" %}
+
+##### Request specific client attributes
+In order to request specific client attributes, you can use the following command:
+
+```shell
+coap-client -m get "coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2"
+```
+{: .copy-code}
+Where:
+ - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
+ - **$ACCESS_TOKEN** - your device access token.
+
+Result:
+
+```json
+{"client":{"attribute2":true,"attribute1":"value1"}}
+```
+
+##### Request specific shared attributes
+In order to request specific shared attributes, you can use the following command:
+
+```shell
+coap-client -m get "coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1"
+```
+{: .copy-code}
+Where:
+ - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
+ - **$ACCESS_TOKEN** - your device access token.
+
+Result:
+
+```json
+{"shared":{"shared1":"value1"}}
+```
+
+##### Request all client and shared attributes
+
+In order to request all attributes, you can use the following command:
+
+```shell
+coap-client -m get "coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes"
+```
+{: .copy-code}
+Where:
+ - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
+ - **$ACCESS_TOKEN** - your device access token.
+
+Result:
+
+```json
+{"client":{"attribute2":true,"attribute1":"value1"},"shared":{"shared1":"value1"}}
+```
+
+#### Request all client attributes
+
+To request all client attributes from the server, you can use the following command:
+
+ ```shell
+ coap-client -m get "coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/client"
+ ```
+ {: .copy-code}
+Where:
+ - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
+ - **$ACCESS_TOKEN** - your device access token.
+
+Result:
+
+```json
+{"client":{"attribute2":true,"attribute1":"value1"}}
+```
+
+#### Request all shared attributes
+
+To request all shared attributes from the server, you can use the following command:
+
+ ```shell
+ coap-client -m get "coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/shared"
+ ```
+{: .copy-code}
+Where:
+ - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
+ - **$ACCESS_TOKEN** - your device access token.
+
+Result:
+
+```json
+{"shared":{"shared1":"value1"}}
+```
+
+{% endif %}
 
 ### Subscribe to attribute updates from the server
 

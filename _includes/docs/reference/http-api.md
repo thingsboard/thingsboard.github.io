@@ -400,7 +400,11 @@ The content of the JSON file:
 
 ### Request attribute values from the server
 
-In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
+Client-side and shared device attributes can be requested from ThingsBoard server node using HTTP GET request.
+
+##### Request specific client and shared attributes from the server
+
+In order to request client-side or shared device attributes from ThingsBoard server node, send GET request to the following URL:
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -481,6 +485,344 @@ the intersection of client-side and shared device attribute keys is a bad practi
 However, it is still possible to have same keys for client, shared or even server-side attributes.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+{% if docsPrefix != "edge/" %}
+##### Request specific client attributes from the server
+In order to request client-side device attributes from ThingsBoard server node, send GET request to the following URL:
+
+{% if docsPrefix == "pe/" %}
+```shell
+http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2
+```
+{: .copy-code}
+
+Where
+- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+- **$ACCESS_TOKEN** - device access token.
+{% endif %}
+{% if docsPrefix == null %}
+If you use live demo server, the command will look like this:
+
+```shell
+https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2
+```
+{: .copy-code}
+
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+
+```shell
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2
+```
+{: .copy-code}
+
+Where **$ACCESS_TOKEN** - device access token.
+{% endif %}
+
+{% if docsPrefix == null %}
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+
+{% if docsPrefix == null %}
+```shell
+curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```shell
+curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+```shell
+curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/client?keys=attribute1,attribute2"
+```
+{: .copy-code}
+{% endif %}
+
+Result:
+```shell
+{"client":{"attribute1":"value1","attribute2":true}}
+```
+
+##### Request specific shared attributes from the server
+In order to request shared device attributes from ThingsBoard server node, send GET request to the following URL:
+
+{% if docsPrefix == "pe/" %}
+```shell
+http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1,shared2
+```
+{: .copy-code}
+
+Where
+- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+- **$ACCESS_TOKEN** - device access token.
+{% endif %}
+{% if docsPrefix == null %}
+If you use live demo server, the command will look like this:
+
+```shell
+https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1,shared2
+```
+{: .copy-code}
+
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+
+```shell
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1,shared2
+```
+{: .copy-code}
+
+Where **$ACCESS_TOKEN** - device access token.
+{% endif %}
+
+{% if docsPrefix == null %}
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+
+{% if docsPrefix == null %}
+```shell
+curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1,shared2"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```shell
+curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1,shared2
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+```shell
+curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/shared?keys=shared1,shared2"
+```
+{: .copy-code}
+{% endif %}
+
+Result:
+```shell
+{"shared":{"shared1":"value1","shared2":true}}
+```
+
+##### Request all client and shared attributes from the server
+
+In order to request all attributes, you can send request to one of the following urls:
+{% if docsPrefix == "pe/" %}
+
+```shell
+http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
+```
+{: .copy-code}
+
+Where
+- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+- **$ACCESS_TOKEN** - device access token.
+{% endif %}
+{% if docsPrefix == null %}
+If you use live demo server, the command will look like this:
+
+```shell
+https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
+```
+{: .copy-code}
+
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+
+```shell
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes
+```
+{: .copy-code}
+
+Where **$ACCESS_TOKEN** - device access token.
+{% endif %}
+{% if docsPrefix == null %}
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+{% if docsPrefix == null %}
+```shell
+curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```shell
+curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+```shell
+curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "edge/" %}
+```shell
+curl -v -X GET "http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes"
+```
+{: .copy-code}
+{% endif %}
+
+Result:
+```shell
+{"client":{"attribute1":"value1","attribute2":true},"shared":{"shared1":"value1"}}
+```
+
+##### Request all client attributes from the server
+In order to request all client-side device attributes from ThingsBoard server node, send GET request to the following URL:
+
+{% if docsPrefix == "pe/" %}
+```shell
+http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/client
+```
+{: .copy-code}
+
+Where
+ - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+ - **$ACCESS_TOKEN** - device access token.
+{% endif %}
+{% if docsPrefix == null %}
+If you use live demo server, the command will look like this:
+
+```shell
+https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/client
+```
+{: .copy-code}
+
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+
+```shell
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/client
+```
+{: .copy-code}
+
+Where **$ACCESS_TOKEN** - device access token.
+{% endif %}
+
+{% if docsPrefix == null %}
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+
+{% if docsPrefix == null %}
+```shell
+curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/client"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```shell
+curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/client
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+```shell
+curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/client"
+```
+{: .copy-code}
+{% endif %}
+
+Result:
+```shell
+{"client":{"attribute1":"value1","attribute2":true}}
+```
+
+##### Request all shared attributes from the server
+In order to request all shared device attributes from ThingsBoard server node, send GET request to the following URL:
+
+{% if docsPrefix == "pe/" %}
+```shell
+http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/shared
+```
+{: .copy-code}
+
+Where
+ - **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+ - **$ACCESS_TOKEN** - device access token.
+{% endif %}
+{% if docsPrefix == null %}
+If you use live demo server, the command will look like this:
+
+```shell
+https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/shared
+```
+{: .copy-code}
+
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+
+```shell
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/shared
+```
+{: .copy-code}
+
+Where **$ACCESS_TOKEN** - device access token.
+{% endif %}
+
+{% if docsPrefix == null %}
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token
+{% endif %}
+
+{% if docsPrefix == null %}
+```shell
+curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/shared"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```shell
+curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/shared
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix contains "paas/" %}
+```shell
+curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/shared"
+```
+{: .copy-code}
+{% endif %}
+
+Result:
+```shell
+{"shared":{"shared1":"value1"}}
+```
+
+{% endif%}
 
 ### Subscribe to attribute updates from the server
 
