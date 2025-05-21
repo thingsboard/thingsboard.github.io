@@ -5,7 +5,7 @@ To check it you may open **Devices** page in **Entities** section. The device sh
 
 {% assign beacon1 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/beacon-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/beacon-1.png,
         title: You should now see data from the device.
 '
 %}
@@ -24,13 +24,13 @@ To add the dashboard to ThingsBoard, we need to import it. To import a dashboard
 
 {% assign edit = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/show-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/show-1.png,
         title: Navigate to the "**Dashboards**" page. By default, you navigate to the dashboard group "All". Click on the "**plus**" icon in the top right corner. Select "**Import dashboard**".
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/show-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/show-2.png,
         title: In the dashboard import window, upload the JSON file and click "**Import**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/show-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/show-3.png,
         title: Dashboard has been imported.
 '
 %}
@@ -43,13 +43,13 @@ To do this, follow these steps:
 
 {% assign edit = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/edit-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/edit-1.png,
         title: Open the dashboard and enter edit mode. Click the "Entity aliases" icon, then in the pop-up window click the "Edit alias" icon next to the alias.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/edit-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/edit-2.png,
         title: In edit alias window select your device from dropdown list and save entity alias.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/edit-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/edit-3.png,
         title: Apply all changes.
 '
 %}
@@ -62,7 +62,7 @@ Example of the dashboard with data:
 
 {% assign beacon = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/beacon-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/beacon-3.png,
         title: You should now see data from the device.
 '
 %}

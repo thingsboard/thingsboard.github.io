@@ -254,7 +254,7 @@
               "app_code": "p6NPiITB3Vv0GMUFnkLOOg",
               "apiKey": "kVXykxAfZ6LS4EbCTO02soFVfjA7HoBzNVVH9u7nzoE"
             },
-            "mapImageUrl": "tb-image;/api/images/system/here_map_system_widget_map_image.svg",
+            "mapImageUrl": "tb-image;/apihttps://img.thingsboard.io/system/here_map_system_widget_map_image.svg",
             "imageEntityAlias": "",
             "imageUrlAttribute": "",
             "tmApiKey": "84d6d83e0e51e481e50454ccbe8986b",
@@ -291,7 +291,7 @@
             "useColorFunction": true,
             "colorFunction": "var speed = dsData[dsIndex]['Speed'];\nif (typeof speed !== undefined) {\n    var percent = (speed - 45)/85;\n    if (percent < 0.5) {\n        percent *=2*100; \n        return tinycolor.mix('green', 'yellow', percent).toHexString();\n    } else {\n        percent = (percent - 0.5)*2*100;\n        return tinycolor.mix('yellow', 'red', percent).toHexString();\n    }\n}",
             "useMarkerImageFunction": false,
-            "markerImage": "tb-image;/api/images/tenant/location.png",
+            "markerImage": "tb-image;/apihttps://img.thingsboard.io/tenant/location.png",
             "markerImageSize": 34,
             "markerImageFunction": null,
             "markerImages": [],
@@ -1078,7 +1078,7 @@
   "name": "Devices",
   "resources": [
     {
-      "link": "/api/images/system/here_map_system_widget_map_image.svg",
+      "link": "/apihttps://img.thingsboard.io/system/here_map_system_widget_map_image.svg",
       "title": "\"HERE Map\" system widget map image",
       "type": "IMAGE",
       "subType": "IMAGE",
@@ -1089,7 +1089,7 @@
       "public": true
     },
     {
-      "link": "/api/images/tenant/location.png",
+      "link": "/apihttps://img.thingsboard.io/tenant/location.png",
       "title": "location.png",
       "type": "IMAGE",
       "subType": "IMAGE",
