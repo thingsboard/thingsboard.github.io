@@ -457,6 +457,7 @@
       align-items: center
     .card-link
       display: flex
+      pointer-events: none
       flex-direction: row
       align-items: center
       gap: 8px
@@ -490,6 +491,7 @@
     .card
       transform: scale(1)
       .card-link
+        pointer-events: initial
         opacity: 1
         animation: slideUp 0.3s forwards
         &:hover
@@ -536,7 +538,6 @@
   .owl-carousel-toggle-content-item.current-content
     display: flex
     flex-direction: column
-    gap: 32px
 
 .owl-carousel.owl-theme.cardMode
   .course-below
