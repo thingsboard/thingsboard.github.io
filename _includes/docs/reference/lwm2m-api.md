@@ -157,20 +157,52 @@ To do this, follow these steps:
 
 #### Step 2.3 Configure the Mapping
 
-#### Observe Strategies in ThingsBoard
+Now let&#39;s configure how ThingsBoard should process LwM2M object data:
+- The **device object** provides **manufacturer**, **model number**, and **serial number**. Let&#39;s configure ThingsBoard to receive this data as **attributes**.
+- We will observe and collect data such as **radio signal strength**, **link quality**, and **device location**, and store it as **telemetry** in ThingsBoard.
+
+> The **Observe** feature in LwM2M allows the server to receive data only when the values change.<br>
+  You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).<br>
+  All settings in the device profile are used to initialize the LwM2M client during the **Registration** operation.<br>
+  Any changes in the device profile settings are applied immediately if the LwM2M client session is active, or during the next **Update Registration**.
+
+> ⚠️ **Important:** All profile configuration changes are applied **only** if the object version in the profile matches the version used by the LwM2M client, according to the rules described in the [Handling of Object Versions in the LwM2M Model Structure](#handling-of-object-versions-in-the-lwm2m-model-structure).
+
+
+To do this, follow these steps:
+- For each selected object:
+  - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
+  - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
+- By default, the **observe strategy** - **Single**. You can choose **observe strategy** - **Composite all** or **Composite by object** to reduce traffic or group resources differently.
+- By default, the **observe strategy** is set to **Single**. You can switch to **Composite all** or **Composite by object** to reduce traffic or to group resources more efficiently.
+- Click "Save" to apply the changes.
+
+{% include images-gallery.html imageCollection="configure-mapping" %}
+
+> ⚠️ **Note**: If you uncheck all items (Attributes, Telemetry, Observe) for an object, it **will not appear** in the device profile configuration.
+
+Additionally, the "**Transport configuration**" tab also allows you to configure **bootstrap settings** and other settings.
+
+##### Step 2.3.1 Observe strategy
 
 ThingsBoard supports multiple observe strategies that define how LwM2M resources are grouped and monitored.
 
 - **Single** (default): Each resource is observed individually.  
-  _✓ Best accuracy, ✗ Higher network traffic._
+  _✓ Best accuracy_<br>
+  _✗ Higher network traffic._
 
 - **Composite All**: All resources from all objects are observed via a single Composite Observe request.  
-  _✓ Most efficient, ✗ Less granular._
+  _✓ Most efficient_<br>
+  _✗ Less granular_
 
 - **Composite by Object**: Resources are grouped per object type and each group is observed separately.  
   _✓ Balanced accuracy and traffic._
 
-💡 Observe strategies are configured in the corresponding section of the device profile.
+Observe strategy are configured in the "**LWM2M Model**" section of the "**Transport configuration**" tab in the device profile.
+
+{% include images-gallery.html imageCollection="configure-mapping-observe-strategy" %}
+
+<br>
 
 If the observe strategy is changed via the profile after the client has connected, the change is applied:
 
@@ -180,58 +212,13 @@ If the observe strategy is changed via the profile after the client has connecte
 If you perform Observe operations manually (e.g., via terminal), make sure to account for the current observe strategy:
 
 - **Current strategy: Single**, **New strategy: Single**  
-  You can perform observe-related operations directly, with or without a prior Cancel Observation on the specific resource — as described in the sections:  
-  [Observe Operation](#observe-operation) and [Cancel Observation Operation](#cancel-observation-operation).
+  You can perform observe-related operations directly, with or without a prior Cancel Observation on the specific resource — as described in the sections [Observe Operation](#observe-operation) and [Cancel Observation Operation](#cancel-observation-operation).
 
 - **Current strategy: Composite by Object**, **New strategy: Composite by Object**  
-  You can perform observe-related operations directly, with or without a prior Cancel Observation, depending on your needs — as described in the sections:  
-  [Cancel Observation-Composite Operation](#cancel-observation-composite-operation), [Observe-Composite Operation](#observe-composite-operation), and, if needed,  
-  [Observe Operation](#observe-operation), [Cancel Observation Operation](#cancel-observation-operation).
+  You can perform observe-related operations directly, with or without a prior Cancel Observation, depending on your needs — as described in the sections [Cancel Observation-Composite Operation](#cancel-observation-composite-operation), [Observe-Composite Operation](#observe-composite-operation), and, if needed, [Observe Operation](#observe-operation), [Cancel Observation Operation](#cancel-observation-operation).
 
 - **Current strategy differs from new strategy**  
   In this case, always execute a  [Cancel All Observations Operation](#cancel-all-observations-operation) before applying the new observe strategy or performing further observe-related operations.
-
----
-
-#### Configure the Mapping with Multiple Observe Strategies
-
-Now let's configure how ThingsBoard should process LwM2M object data:
-
-- Additionally, ThingsBoard supports multiple **Observe strategies**, which define how resources are grouped and monitored.
-- The **Device object** provides **manufacturer**, **model number**, and **serial number**. Let's configure ThingsBoard to receive this data as **attributes**.
-- We will observe and collect data such as **radio signal strength**, **link quality**, and **device location**, and store it as **telemetry** in ThingsBoard.
-
-> The **Observe** feature in LwM2M allows the server to receive data only when the values change.  
-> 💡 You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).  
-> ⚙️ All settings in the device profile are used to initialize the LwM2M client during the **Registration** operation.  
-> 🔄 Any changes in the device profile settings are applied immediately if the LwM2M client session is active, or during the next **Update Registration**.  
-> ⚠️ **Important:** All profile configuration changes are applied **only** if the object version in the profile matches the version used by the LwM2M client, according to the rules described in the [Handling of Object Versions in the LwM2M Model Structure](#handling-of-object-versions-in-the-lwm2m-model-structure).
-
----
-
-To do this, follow these steps:
-
-- For each selected object:
-  - In the **Observe Strategy** dropdown:
-    - Select one of: `Single`, `Composite All`, or `Composite by Object`, depending on your requirements.
-  - Check the **"Attributes"** box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
-  - Check the **"Telemetry"** and/or **"Observe"** boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
-
----
-
-- To apply the changes (default **Observe Strategy** → `Single`).
-
-{% include images-gallery.html imageCollection="configure-mapping" %}
-
-- You can also choose **Observe Strategy** → `Composite All` or `Composite by Object` to reduce traffic or group resources differently.
-
-{% include images-gallery.html imageCollection="configure-mapping-observe-strategy" %}
-
-- Click **Save** to apply these changes.
-
-> ⚠️ **Note:** If you uncheck all items (**Attributes**, **Telemetry**, **Observe**) for an object, it **will not appear** in the device profile configuration.
-
-Additionally, the **"Transport configuration"** tab also allows you to configure **bootstrap settings** and other settings.
 
 ### Step 3. Define LwM2M device credentials
 
@@ -1383,32 +1370,59 @@ DiscoverAll
 
 ## Firmware over-the-air updates
 
-LwM2M protocol allows you to upload and distribute over-the-air(OTA) firmware updates to devices. Please read first the 
-following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn about uploading and managing
-firmware packages and the update process.
+The LwM2M protocol enables you to perform over-the-air (OTA) firmware updates for connected devices.
+Before proceeding, please refer to the [OTA updates guide](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn how to upload, manage, and distribute firmware packages, and to understand the update process.
 
-LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update){:target="_blank"}
-for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package, updating firmware, and performing actions after updating firmware.
+LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update){:target="_blank"} – specifically for OTA purposes. This object supports:
+- Uploading and managing firmware images
+- Installing firmware packages
+- Tracking update progress and post-update behavior
 
-⚠️ Note: That Object 5 is an optional object, and may be not supported by some devices.
+> ⚠️ **Note**: Object 5 is optional and may not be supported by some devices.
 
-To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/){:target="_blank"}
-LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from the device on the status of the update process:
+To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/) LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from the device on the status of the update process:
 
     "/3/0/3" - Firmware Version
     "/5/0/3" - State
     "/5/0/5" - Update Result
     "/5/0/7" - PkgVersion
 
-Additionally, ThingsBoard supports the use of Object 19 for transmitting FOTA file metadata. This is not an alternative but a complementary feature that enhances the FOTA process. To use it, enable the following setting in the Device Profile:
+### Firmware update strategy
 
-    Use Object 19 for OTA file metadata (checksum, size, version, name) = true
+ThingsBoard provides multiple strategies to run OTA firmware updates over LwM2M transport:<br>
+- Push firmware update as binary file using Object 5 and Resource 0 (Package)<br>
+- Auto-generate unique CoAP URL to download the package and push firmware update as Object 5 and Resource 1 (Package URI)<br>
+- Push firmware update as binary file using Object 19 and Resource 0 (Data)
 
-When this flag is enabled, the following steps occur:
+The chosen strategy is configured in the device profile and will be applied to all devices associated with that profile.
 
-1. At device connection, ThingsBoard verifies that Object 19 is supported by the device.
-2. If present, ThingsBoard creates an instance of Object 19 with InstanceId = 65534 (used for firmware metadata).
-3. FOTA metadata is sent to this instance as a Base64-encoded JSON object.
+To select firmware update strategy:
+1. Open the **device profile settings**. 
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab. 
+3. Enter edit mode and select the **firmware update strategy** from the drop-down menu. 
+4. Save changes.
+
+{% include images-gallery.html imageCollection="firmware-update-strategy-1" %}
+
+### Use Object 19 for OTA file metadata [Optional]
+
+ThingsBoard also supports **Object 19**, which enables delivery of **firmware metadata**.
+
+> ⚠️ This feature is complementary to Object 5, not a replacement.
+
+To enable Object 19 usage:
+1. Open the **device profile settings**. 
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab. 
+3. Enter edit mode and check the option "**Use Object 19 for OTA file metadata (checksum, size, version, name)**". 
+4. Save changes.
+
+{% include images-gallery.html imageCollection="firmware-update-strategy-2" %}
+
+When this option is enabled, ThingsBoard will:
+
+1. At device connection, ThingsBoard verifies that **Object 19 is supported** by the device.
+2. If present, ThingsBoard creates an instance of Object 19 with **InstanceId** = **65534** (used for firmware metadata).
+3. FOTA metadata is sent to this instance as a **Base64-encoded JSON object**.
 
 FOTA metadata JSON structure:
 
@@ -1422,16 +1436,12 @@ FOTA metadata JSON structure:
 }
 ```
 
-⚠️ Note: Object 19 is used only for metadata delivery. The firmware update execution still follows the selected Firmware update strategy in the Device Profile.
+> ⚠️ **Note**: Object 19 is used only for **metadata delivery**. The actual firmware update logic is handled according to the **firmware update strategy** defined in the device profile.
 
-Firmware update process is illustrated here: [Firmware Update Mechanisms ](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms){:target="_blank"}
-described as a UML 2.0 state diagram. The state diagram consists of states, drawn as rounded rectangles, and transitions,
-drawn as arrows connecting the states.
+**Firmware update process**
 
-There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
-profile, so it will be applied for all devices of the profile:
-
-{% include images-gallery.html imageCollection="ota-firmware-update-strategy" %}
+The firmware update mechanism is illustrated in the [Firmware Update Mechanisms UML diagram](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms){:target="_blank"}
+The state diagram consists of states, drawn as rounded rectangles, and transitions, drawn as arrows connecting the states.
 
 ### Push firmware update as binary file using Object 5 and Resource 0.
 The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of
@@ -1446,18 +1456,19 @@ be triggered using the executable resource "/5/0/2". The full process is illustr
 
 ## Software over-the-air updates
 
-LwM2M protocol allows you to upload and distribute over-the-air(OTA) software updates to devices. Please read first the
-following article [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn about uploading and managing
-software packages and the update process.
+The LwM2M protocol allows remote distribution of software updates via Over-the-Air (OTA) mechanisms.
+Before proceeding, please read the [OTA Updates Guide](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to understand how to upload, manage, and distribute software packages.
 
-Updating of the device software has some differences comparing to the firmware update process: the Software Management
-process is split in 2 sub-processes: a Package Installation Process and a Software Activation Process.
+Unlike firmware updates, the Software Management process in LwM2M is divided into two distinct phases:
+- Package Installation Process
+- Software Activation Process
 
-LwM2M defines Object 9: Software Management Object  for the software management  purpose, which enables remote 
-software management in M2M devices and includes resources for delivering, execution of installation and activating 
-software packages, and reporting states.
+LwM2M defines Object 9 for software management. It supports:
+- Remote delivery of software packages
+- Execution of installation and activation procedures
+- Reporting of software state transitions and results
 
-⚠️ Note: That Object 9 is an optional object, and not may be supported by some devices.
+> ⚠️ **Note**: Object 9 is optional and may not be supported by some devices.
 
 To be able to run the update using Object 9, you have to make sure that Object 9 is present in the Device profile 
 LwM2M model and set up observations of following attributes on the device, which are used by the server to get 
@@ -1471,19 +1482,41 @@ feedback from the device on the status of the update process:
     "/9/0/7" - Update State
     "/9/0/9" - Update result
 
-ThingsBoard provides multiple ways to trigger OTA software updates via the LwM2M transport. 
-You can configure the Software update strategy in the Device Profile to control how updates are performed for all associated devices.
+### Software update strategy
 
-Additionally, ThingsBoard supports the use of Object 19 for transmitting SOTA file metadata. 
-This is not an alternative but a complementary feature that enhances the SOTA process. To use it, enable the following setting in the Device Profile:
+ThingsBoard supports multiple ways to initiate software updates using the LwM2M transport:<br>
+- **Push binary file using Object 9 and Resource 2 (Package)**<br>
+- **Auto-generate unique CoAP URL to download the package and push software update using Object 9 and Resource 3 (Package URI)**
 
-    Use Object 19 for OTA file metadata (checksum, size, version, name) = true
+The chosen strategy is configured in the device profile and will be applied to all devices associated with that profile.
 
-When this flag is enabled, the following steps occur:
+To select software update strategy:
+1. Open the device profile settings. 
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab. 
+3. Enter edit mode and select the **software update strategy** from the drop-down menu. 
+4. Save changes.
 
-1. At device connection, ThingsBoard verifies that Object 19 is supported by the device.
-2. If present, ThingsBoard creates an instance of Object 19 with InstanceId = 65535 (used for firmware metadata).
-3. SOTA metadata is sent to this instance as a Base64-encoded JSON object.
+{% include images-gallery.html imageCollection="software-update-strategy-1" %}
+
+### Use Object 19 for OTA file metadata [Optional]
+
+ThingsBoard also supports Object 19 to deliver software update metadata (SOTA):
+
+> ⚠️ This feature is complementary to Object 5, not a replacement.
+
+To enable Object 19 usage:
+1. Open the **device profile settings**.
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab.
+3. Enter edit mode and check the option "**Use Object 19 for OTA file metadata (checksum, size, version, name)**".
+4. Save changes.
+
+{% include images-gallery.html imageCollection="software-update-strategy-2" %}
+
+When this option is enabled, ThingsBoard will:
+
+1. At device connection, ThingsBoard verifies that **Object 19 is supported** by the device.
+2. If present, ThingsBoard creates an instance of Object 19 with **InstanceId** = **65535** (used for firmware metadata).
+3. SOTA metadata is sent to this instance as a **Base64-encoded JSON object**.
 
 SOTA metadata JSON structure:
 
@@ -1497,12 +1530,12 @@ SOTA metadata JSON structure:
 }
 ```
 
-⚠️ Note: Object 19 is used only for metadata delivery. 
-The software update execution still follows the selected Software update strategy in the Device Profile.
+> ⚠️ **Note**: Object 19 is used only for **metadata delivery**. The actual software update logic is handled according to the **software update strategy** defined in the device profile.
 
-### Software update process: LwM2M Software Update State Transitions
 
-#### ✅ Successful Software Update Scenario
+### Software update process: LwM2M software update state transitions
+
+#### Successful software update scenario
 
 | Step | SoftwareUpdateState    | SoftwareUpdateResult                   | Description                               |
 |------|------------------------|----------------------------------------|-------------------------------------------|
@@ -1517,8 +1550,6 @@ The software update execution still follows the selected Software update strateg
 There are several ways to trigger OTA software updates using the LwM2M transport. 
 You can choose a Software update strategy in the Device Profile, 
 which defines how the update process will be executed for all devices under this profile.
-
-{% include images-gallery.html imageCollection="software-update-strategy" %}
 
 ### Push software update as binary file using Object 9 and Resource 2.
 The software package is pushed from the server directly to the device via the block-wise transfer to the Resource 2 of 
