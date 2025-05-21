@@ -2,7 +2,7 @@
 layout: case-studies
 title: OXI Trade
 notitle: "true"
-description: OXI Trade case study
+description: OXI Trade - ThingsBoard case study
 ---
 
 <div class="case-study-page-wrapper">
@@ -144,7 +144,7 @@ description: OXI Trade case study
                 <h3>Proactive alert management and full system accountability</h3>
                 <p>Devices also report real-time alerts for critical issues, such as fuel shortages, overheating, sensor failures, or controller malfunctions. ThingsBoard categorizes and logs these alerts, allowing service teams to respond quickly. Alongside alert management, the platform maintains a detailed log of all user actions. This audit logging feature gives OXI TRADE full visibility into every command sent through the system—such as configuration changes, operational commands, or remote updates. These logs help the company trace exactly what actions were taken, by whom, and when. If a device experiences problems, OXI TRADE can review the history to identify whether an incorrect user action or misconfiguration was the cause. This improves accountability across all user levels and simplifies troubleshooting.</p>
             </div>
-            <img src="/images/case-studies/proactive-alert-management_.webp" title="Proactive alert management and full system accountability" alt="Call center">
+            <img src="/images/case-studies/proactive-alert-management.webp" title="Proactive alert management and full system accountability" alt="Call center">
         </div>
     </section>
     <section class="full-width-img">
@@ -159,7 +159,7 @@ description: OXI Trade case study
             </div>
             <div class="image-container">
                 <img src="/images/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget">
-                <img src="/images/case-studies/analogue-gage.webp" title="Thingsboard analogue gage widget" alt="Thingsboard analogue gage widget">
+                <img src="/images/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget">
             </div>
         </div>
         <div class="block">

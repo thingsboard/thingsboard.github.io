@@ -1,0 +1,1103 @@
+{
+  "title": "Devices",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "1f249654-4636-dcb1-93da-b9d28c440465": {
+        "typeFullFqn": "system.entity_admin_widgets.asset_admin_table",
+        "type": "latest",
+        "sizeX": 7.5,
+        "sizeY": 6.5,
+        "config": {
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 86400000,
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideQuickInterval": false
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1741601833956,
+                "endTimeMs": 1741688233956
+              },
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideFixedInterval": false,
+              "hideQuickInterval": false
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "entitiesTitle": "Asset admin table",
+            "enableSearch": true,
+            "enableSelectColumnDisplay": true,
+            "enableStickyHeader": true,
+            "enableStickyAction": true,
+            "showCellActionsMenu": true,
+            "reserveSpaceForHiddenAction": "true",
+            "displayEntityName": false,
+            "displayEntityLabel": false,
+            "displayEntityType": false,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "defaultSortOrder": "entityName",
+            "useRowStyleFunction": false
+          },
+          "title": "Asset admin table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "deviceId": "145b7880-fe5c-11ef-86ac-951bbb28eae1",
+              "entityAliasId": "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200",
+              "dataKeys": [
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "名称",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.0739828297097318
+                },
+                {
+                  "name": "data_latitude",
+                  "type": "timeseries",
+                  "label": "data_latitude",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.7704627589131223,
+                  "units": null,
+                  "decimals": 6
+                },
+                {
+                  "name": "data_longitude",
+                  "type": "timeseries",
+                  "label": "data_longitude",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.968558122962518,
+                  "units": null,
+                  "decimals": 6
+                },
+                {
+                  "name": "data_time",
+                  "type": "timeseries",
+                  "label": "data_time",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.8893232692652686,
+                  "decimals": 0
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitleIcon": false,
+          "titleIcon": "more_horiz",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "widgetStyle": {},
+          "displayTimewindow": true,
+          "actions": {
+            "headerButton": [
+              {
+                "name": "Add asset",
+                "icon": "add",
+                "type": "customPretty",
+                "customHtml": "<form #addAssetForm=\"ngForm\" [formGroup]=\"addAssetFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar class=\"flex flex-row\" color=\"primary\">\n    <h2>Add asset</h2>\n    <span class=\"flex-1\"></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n    <div class=\"mat-padding flex flex-col\">\n      <mat-form-field class=\"mat-block\">\n        <mat-label>Asset name</mat-label>\n        <input matInput formControlName=\"assetName\" required>\n        <mat-error *ngIf=\"addAssetFormGroup.get('assetName').hasError('required')\">\n          Asset name is required.\n        </mat-error>\n      </mat-form-field>\n      <div class=\"flex flex-row gap-2\">\n        <tb-entity-subtype-autocomplete\n            class=\"max-w-50% flex-full\"\n            formControlName=\"assetType\"\n            [required]=\"true\"\n            [entityType]=\"'ASSET'\"\n        ></tb-entity-subtype-autocomplete>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Label</mat-label>\n          <input matInput formControlName=\"assetLabel\">\n        </mat-form-field>\n      </div>\n      <div formGroupName=\"attributes\" class=\"flex flex-row gap-2\">\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Latitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n        </mat-form-field>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Longitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n        </mat-form-field>\n      </div>\n    </div>\n  </div>\n  <div mat-dialog-actions class=\"flex flex-row\">\n    <span class=\"flex-1\"></span>\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || addAssetForm.invalid || !addAssetForm.dirty\">\n      Create\n    </button>\n  </div>\n</form>\n",
+                "customCss": "",
+                "customFunction": "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenAddAssetDialog();\n\nfunction openAddAssetDialog() {\n    customDialog.customDialog(htmlTemplate, AddAssetDialogController).subscribe();\n}\n\nfunction AddAssetDialogController(instance) {\n    let vm = instance;\n    \n    vm.addAssetFormGroup = vm.fb.group({\n      assetName: ['', [vm.validators.required]],\n      assetType: ['', [vm.validators.required]],\n      assetLabel: [''],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null]\n      })      \n    });\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.addAssetFormGroup.markAsPristine();\n        let asset = {\n            name: vm.addAssetFormGroup.get('assetName').value,\n            type: vm.addAssetFormGroup.get('assetType').value,\n            label: vm.addAssetFormGroup.get('assetLabel').value\n        };\n        assetService.saveAsset(asset).subscribe(\n            function (asset) {\n                saveAttributes(asset.id).subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    function saveAttributes(entityId) {\n        let attributes = vm.addAssetFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customResources": [],
+                "id": "70837a9d-c3de-a9a7-03c5-dccd14998758"
+              }
+            ],
+            "actionCellButton": [
+              {
+                "name": "Edit asset",
+                "icon": "edit",
+                "type": "customPretty",
+                "customHtml": "<form #editAssetForm=\"ngForm\" [formGroup]=\"editAssetFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar class=\"flex flex-row\" color=\"primary\">\n    <h2>Edit asset</h2>\n    <span class=\"flex-1\"></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n    <div class=\"mat-padding\" class=\"flex flex-col\">\n      <mat-form-field class=\"mat-block\">\n        <mat-label>Asset name</mat-label>\n        <input matInput formControlName=\"assetName\" required>\n        <mat-error *ngIf=\"editAssetFormGroup.get('assetName').hasError('required')\">\n          Asset name is required.\n        </mat-error>\n      </mat-form-field>\n      <div class=\"flex flex-row gap-2\">\n        <tb-entity-subtype-autocomplete\n            class=\"max-w-50% flex-full\"\n            formControlName=\"assetType\"\n            [required]=\"true\"\n            [entityType]=\"'ASSET'\"\n        ></tb-entity-subtype-autocomplete>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Label</mat-label>\n          <input matInput formControlName=\"assetLabel\">\n        </mat-form-field>\n      </div>\n      <div formGroupName=\"attributes\" class=\"flex flex-row gap-2\">\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Latitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n        </mat-form-field>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Longitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n        </mat-form-field>\n      </div>\n    </div>\n  </div>\n  <div mat-dialog-actions class=\"flex flex-row\">\n    <span class=\"flex-1\"></span>\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button mat-button mat-raised-button color=\"primary\"\n            type=\"submit\"\n            style=\"margin-right: 20px;\"\n            [disabled]=\"(isLoading$ | async) || editAssetForm.invalid || !editAssetForm.dirty\">\n      Update\n    </button>\n  </div>\n</form>\n",
+                "customCss": "",
+                "customFunction": "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenEditAssetDialog();\n\nfunction openEditAssetDialog() {\n    customDialog.customDialog(htmlTemplate, EditAssetDialogController).subscribe();\n}\n\nfunction EditAssetDialogController(instance) {\n    let vm = instance;\n    \n    vm.asset = null;\n    vm.attributes = {};\n    \n    vm.editAssetFormGroup = vm.fb.group({\n      assetName: ['', [vm.validators.required]],\n      assetType: ['', [vm.validators.required]],\n      assetLabel: [''],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null]\n      })      \n    });\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.editAssetFormGroup.markAsPristine();\n        vm.asset.name = vm.editAssetFormGroup.get('assetName').value,\n        vm.asset.type = vm.editAssetFormGroup.get('assetType').value,\n        vm.asset.label = vm.editAssetFormGroup.get('assetLabel').value\n        assetService.saveAsset(vm.asset).subscribe(\n            function () {\n                saveAttributes().subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    getEntityInfo();\n    \n    function getEntityInfo() {\n        assetService.getAsset(entityId.id).subscribe(\n            function (asset) {\n                attributeService.getEntityAttributes(entityId, 'SERVER_SCOPE',\n                                                    ['latitude', 'longitude']).subscribe(\n                   function (attributes) {\n                        for (let i = 0; i < attributes.length; i++) {\n                            vm.attributes[attributes[i].key] = attributes[i].value; \n                        }\n                        vm.asset = asset;\n                        vm.editAssetFormGroup.patchValue(\n                            {\n                                assetName: vm.asset.name,\n                                assetType: vm.asset.type,\n                                assetLabel: vm.asset.label,\n                                attributes: {\n                                    latitude: vm.attributes.latitude,\n                                    longitude: vm.attributes.longitude\n                                }\n                            }, {emitEvent: false}\n                        );\n                   } \n                );\n            }\n        );    \n    }\n    \n    function saveAttributes() {\n        let attributes = vm.editAssetFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, 'SERVER_SCOPE', attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customResources": [],
+                "id": "93931e52-5d7c-903e-67aa-b9435df44ff4"
+              },
+              {
+                "name": "Delete asset",
+                "icon": "delete",
+                "type": "custom",
+                "customFunction": "let $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet assetService = $injector.get(widgetContext.servicesMap.get('assetService'));\n\nopenDeleteAssetDialog();\n\nfunction openDeleteAssetDialog() {\n    let title = \"Are you sure you want to delete the asset \" + entityName +  \"?\";\n    let content = \"Be careful, after the confirmation, the asset and all related data will become unrecoverable!\";\n    dialogs.confirm(title, content, 'Cancel', 'Delete').subscribe(\n        function (result) {\n            if (result) {\n                deleteAsset();\n            }\n        }\n    );\n}\n\nfunction deleteAsset() {\n    assetService.deleteAsset(entityId.id).subscribe(\n        function () {\n            widgetContext.updateAliases();\n        }\n    );\n}\n",
+                "id": "ec2708f6-9ff0-186b-e4fc-7635ebfa3074"
+              }
+            ]
+          },
+          "configMode": "basic",
+          "titleFont": null,
+          "titleColor": null,
+          "enableDataExport": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "1f249654-4636-dcb1-93da-b9d28c440465"
+      },
+      "654e861a-a933-2b54-657a-21b117c2d775": {
+        "typeFullFqn": "system.maps_v2.route_map_openstreetmap",
+        "type": "timeseries",
+        "sizeX": 8.5,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200",
+              "dataKeys": [
+                {
+                  "name": "data_latitude",
+                  "type": "timeseries",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5633980070915166,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "data_longitude",
+                  "type": "timeseries",
+                  "label": "longitude",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.6449845877421423,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "data_time",
+                  "type": "timeseries",
+                  "label": "data_time",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.7540262882260498
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              },
+              "latestDataKeys": null
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "provider": "openstreet-map",
+            "gmApiKey": "AIzaSyDoEx2kaGz3PxwbI9T7ccTSg5xjdw8Nw8Q",
+            "gmDefaultMapType": "roadmap",
+            "mapProvider": "OpenStreetMap.Mapnik",
+            "useCustomProvider": false,
+            "customProviderTileUrl": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            "mapProviderHere": "HERE.normalDay",
+            "credentials": {
+              "useV3": true,
+              "app_id": "AhM6TzD9ThyK78CT3ptx",
+              "app_code": "p6NPiITB3Vv0GMUFnkLOOg",
+              "apiKey": "kVXykxAfZ6LS4EbCTO02soFVfjA7HoBzNVVH9u7nzoE"
+            },
+            "mapImageUrl": "tb-image;/api/images/system/here_map_system_widget_map_image.svg",
+            "imageEntityAlias": "",
+            "imageUrlAttribute": "",
+            "tmApiKey": "84d6d83e0e51e481e50454ccbe8986b",
+            "tmDefaultMapType": "roadmap",
+            "latKeyName": "latitude",
+            "lngKeyName": "longitude",
+            "xPosKeyName": "xPos",
+            "yPosKeyName": "yPos",
+            "defaultZoomLevel": null,
+            "defaultCenterPosition": "0,0",
+            "disableScrollZooming": false,
+            "disableDoubleClickZooming": false,
+            "disableZoomControl": false,
+            "fitMapBounds": true,
+            "useDefaultCenterPosition": false,
+            "mapPageSize": 16384,
+            "markerOffsetX": 0.5,
+            "markerOffsetY": 1,
+            "posFunction": "return {x: origXPos, y: origYPos};",
+            "draggableMarker": false,
+            "showLabel": true,
+            "useLabelFunction": false,
+            "label": "${entityName}",
+            "labelFunction": null,
+            "showTooltip": true,
+            "showTooltipAction": "click",
+            "autocloseTooltip": true,
+            "useTooltipFunction": false,
+            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><small>See advanced settings for details</small>",
+            "tooltipFunction": null,
+            "tooltipOffsetX": 0,
+            "tooltipOffsetY": -1,
+            "color": "#1976d3",
+            "useColorFunction": true,
+            "colorFunction": "var speed = dsData[dsIndex]['Speed'];\nif (typeof speed !== undefined) {\n    var percent = (speed - 45)/85;\n    if (percent < 0.5) {\n        percent *=2*100; \n        return tinycolor.mix('green', 'yellow', percent).toHexString();\n    } else {\n        percent = (percent - 0.5)*2*100;\n        return tinycolor.mix('yellow', 'red', percent).toHexString();\n    }\n}",
+            "useMarkerImageFunction": false,
+            "markerImage": "tb-image;/api/images/tenant/location.png",
+            "markerImageSize": 34,
+            "markerImageFunction": null,
+            "markerImages": [],
+            "showPolygon": false,
+            "polygonKeyName": "perimeter",
+            "editablePolygon": false,
+            "showPolygonLabel": false,
+            "usePolygonLabelFunction": false,
+            "polygonLabel": "${entityName}",
+            "polygonLabelFunction": null,
+            "showPolygonTooltip": false,
+            "showPolygonTooltipAction": "click",
+            "autoClosePolygonTooltip": true,
+            "usePolygonTooltipFunction": false,
+            "polygonTooltipPattern": "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+            "polygonTooltipFunction": null,
+            "polygonColor": "#3388ff",
+            "polygonOpacity": 0.2,
+            "usePolygonColorFunction": false,
+            "polygonColorFunction": null,
+            "polygonStrokeColor": "#3388ff",
+            "polygonStrokeOpacity": 1,
+            "polygonStrokeWeight": 3,
+            "usePolygonStrokeColorFunction": false,
+            "polygonStrokeColorFunction": null,
+            "showCircle": false,
+            "circleKeyName": "perimeter",
+            "editableCircle": false,
+            "showCircleLabel": false,
+            "useCircleLabelFunction": false,
+            "circleLabel": "${entityName}",
+            "circleLabelFunction": null,
+            "showCircleTooltip": false,
+            "showCircleTooltipAction": "click",
+            "autoCloseCircleTooltip": true,
+            "useCircleTooltipFunction": false,
+            "circleTooltipPattern": "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+            "circleTooltipFunction": null,
+            "circleFillColor": "#3388ff",
+            "circleFillColorOpacity": 0.2,
+            "useCircleFillColorFunction": false,
+            "circleFillColorFunction": null,
+            "circleStrokeColor": "#3388ff",
+            "circleStrokeOpacity": 1,
+            "circleStrokeWeight": 3,
+            "useCircleStrokeColorFunction": false,
+            "circleStrokeColorFunction": null,
+            "strokeWeight": 4,
+            "strokeOpacity": 0.65
+          },
+          "title": "Route Map - OpenStreet",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "displayTimewindow": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "654e861a-a933-2b54-657a-21b117c2d775"
+      },
+      "6bd8b28f-5bfd-b7af-93fa-fdb8daefa409": {
+        "typeFullFqn": "system.cards.timeseries_table",
+        "type": "timeseries",
+        "sizeX": 8,
+        "sizeY": 6.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "deviceId": "2505c740-1445-11f0-b4bd-8b00c50fcae5",
+              "entityAliasId": "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "number",
+                  "type": "timeseries",
+                  "label": "number",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.5720009362869468,
+                  "decimals": 0
+                },
+                {
+                  "name": "beacon1",
+                  "type": "timeseries",
+                  "label": "beacon1",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.3225806329978389,
+                  "decimals": 0
+                },
+                {
+                  "name": "rssi1",
+                  "type": "timeseries",
+                  "label": "rssi1",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.2343189190918944,
+                  "decimals": 0
+                },
+                {
+                  "name": "beacon2",
+                  "type": "timeseries",
+                  "label": "beacon2",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.05563685044803979,
+                  "decimals": 0
+                },
+                {
+                  "name": "rssi2",
+                  "type": "timeseries",
+                  "label": "rssi2",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.6569453373362204,
+                  "decimals": 0
+                },
+                {
+                  "name": "beacon3",
+                  "type": "timeseries",
+                  "label": "beacon3",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.34561796414271295,
+                  "decimals": 0
+                },
+                {
+                  "name": "rssi3",
+                  "type": "timeseries",
+                  "label": "rssi3",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.06817493269984143,
+                  "decimals": 0
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              },
+              "latestDataKeys": []
+            }
+          ],
+          "timewindow": {
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 0,
+              "interval": 1000,
+              "timewindowMs": 2592000000,
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideQuickInterval": false
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1744022393925,
+                "endTimeMs": 1744108793925
+              },
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideFixedInterval": false,
+              "hideQuickInterval": false
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 2000
+            },
+            "timezone": null
+          },
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showTimestamp": true,
+            "displayPagination": true,
+            "defaultPageSize": 10,
+            "enableSearch": true,
+            "enableSelectColumnDisplay": true
+          },
+          "title": "Timeseries table",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "displayTimewindow": true,
+          "configMode": "basic",
+          "titleFont": null,
+          "titleColor": null,
+          "titleIcon": null,
+          "enableDataExport": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "6bd8b28f-5bfd-b7af-93fa-fdb8daefa409"
+      },
+      "710a4be2-21ae-c8dd-0a5b-529cce8d8fc4": {
+        "typeFullFqn": "system.indoor_temperature_card",
+        "type": "latest",
+        "sizeX": 3,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200",
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.13926092697981673
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideQuickInterval": false
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1744166112354,
+                "endTimeMs": 1744252512354
+              },
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideFixedInterval": false,
+              "hideQuickInterval": false
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "labelPosition": "top",
+            "layout": "square",
+            "showLabel": true,
+            "labelFont": {
+              "family": "Roboto",
+              "size": 16,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showIcon": true,
+            "iconSize": 40,
+            "iconSizeUnit": "px",
+            "icon": "thermostat",
+            "iconColor": {
+              "type": "range",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "rangeList": {
+                "advancedMode": false,
+                "range": [
+                  {
+                    "from": null,
+                    "to": 18,
+                    "color": "#234CC7"
+                  },
+                  {
+                    "from": 18,
+                    "to": 24,
+                    "color": "#3FA71A"
+                  },
+                  {
+                    "from": 24,
+                    "to": null,
+                    "color": "#D81838"
+                  }
+                ]
+              },
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "size": 52,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueColor": {
+              "type": "range",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';",
+              "rangeList": {
+                "advancedMode": false,
+                "range": [
+                  {
+                    "from": null,
+                    "to": 18,
+                    "color": "#234CC7"
+                  },
+                  {
+                    "from": 18,
+                    "to": 24,
+                    "color": "#3FA71A"
+                  },
+                  {
+                    "from": 24,
+                    "to": null,
+                    "color": "#D81838"
+                  }
+                ]
+              }
+            },
+            "showDate": true,
+            "dateFormat": {
+              "format": null,
+              "lastUpdateAgo": true,
+              "custom": false
+            },
+            "dateFont": {
+              "family": "Roboto",
+              "size": 12,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "dateColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.38)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "background": {
+              "type": "color",
+              "color": "#fff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "autoScale": true,
+            "padding": ""
+          },
+          "title": "Temperature card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "°C",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "configMode": "basic",
+          "displayTimewindow": true,
+          "margin": "0px",
+          "borderRadius": "0px",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": null,
+            "weight": null,
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "titleIcon": "",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "14px",
+          "timewindowStyle": {
+            "showIcon": true,
+            "iconSize": "14px",
+            "icon": "query_builder",
+            "iconPosition": "left",
+            "font": {
+              "size": 12,
+              "sizeUnit": "px",
+              "family": null,
+              "weight": null,
+              "style": null,
+              "lineHeight": "1"
+            },
+            "color": null
+          },
+          "enableDataExport": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "710a4be2-21ae-c8dd-0a5b-529cce8d8fc4"
+      },
+      "d9fb8eb7-208d-8b04-99e3-e65a205d0a6d": {
+        "typeFullFqn": "system.indoor_humidity_card",
+        "type": "latest",
+        "sizeX": 3,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200",
+              "dataKeys": [
+                {
+                  "name": "humidity",
+                  "type": "timeseries",
+                  "label": "Humidity",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.7823866694839309
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideQuickInterval": false
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1744166152427,
+                "endTimeMs": 1744252552427
+              },
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideFixedInterval": false,
+              "hideQuickInterval": false
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "labelPosition": "top",
+            "layout": "square",
+            "showLabel": true,
+            "labelFont": {
+              "family": "Roboto",
+              "size": 16,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "labelColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "showIcon": true,
+            "iconSize": 40,
+            "iconSizeUnit": "px",
+            "icon": "mdi:water-percent",
+            "iconColor": {
+              "type": "range",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "rangeList": {
+                "advancedMode": false,
+                "range": [
+                  {
+                    "from": null,
+                    "to": 30,
+                    "color": "#FFA600"
+                  },
+                  {
+                    "from": 30,
+                    "to": 60,
+                    "color": "#3FA71A"
+                  },
+                  {
+                    "from": 60,
+                    "to": null,
+                    "color": "#D81838"
+                  }
+                ]
+              },
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "valueFont": {
+              "family": "Roboto",
+              "size": 52,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "valueColor": {
+              "type": "range",
+              "color": "rgba(0, 0, 0, 0.87)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';",
+              "rangeList": {
+                "advancedMode": false,
+                "range": [
+                  {
+                    "from": null,
+                    "to": 30,
+                    "color": "#FFA600"
+                  },
+                  {
+                    "from": 30,
+                    "to": 60,
+                    "color": "#3FA71A"
+                  },
+                  {
+                    "from": 60,
+                    "to": null,
+                    "color": "#D81838"
+                  }
+                ]
+              }
+            },
+            "showDate": true,
+            "dateFormat": {
+              "format": null,
+              "lastUpdateAgo": true,
+              "custom": false
+            },
+            "dateFont": {
+              "family": "Roboto",
+              "size": 12,
+              "sizeUnit": "px",
+              "style": "normal",
+              "weight": "500"
+            },
+            "dateColor": {
+              "type": "constant",
+              "color": "rgba(0, 0, 0, 0.38)",
+              "colorFunction": "var temperature = value;\nif (typeof temperature !== undefined) {\n  var percent = (temperature + 60)/120 * 100;\n  return tinycolor.mix('blue', 'red', percent).toHexString();\n}\nreturn 'blue';"
+            },
+            "background": {
+              "type": "color",
+              "color": "#fff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "autoScale": true,
+            "padding": ""
+          },
+          "title": "Humidity card",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "units": "%",
+          "decimals": 0,
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "widgetStyle": {},
+          "actions": {},
+          "configMode": "basic",
+          "displayTimewindow": true,
+          "margin": "0px",
+          "borderRadius": "0px",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "titleFont": {
+            "size": 12,
+            "sizeUnit": "px",
+            "family": null,
+            "weight": null,
+            "style": null,
+            "lineHeight": "1.6"
+          },
+          "titleIcon": "",
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "14px",
+          "timewindowStyle": {
+            "showIcon": true,
+            "iconSize": "14px",
+            "icon": "query_builder",
+            "iconPosition": "left",
+            "font": {
+              "size": 12,
+              "sizeUnit": "px",
+              "family": null,
+              "weight": null,
+              "style": null,
+              "lineHeight": "1"
+            },
+            "color": null
+          },
+          "enableDataExport": false
+        },
+        "row": 0,
+        "col": 0,
+        "id": "d9fb8eb7-208d-8b04-99e3-e65a205d0a6d"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Container tracker",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "1f249654-4636-dcb1-93da-b9d28c440465": {
+                "sizeX": 9,
+                "sizeY": 6,
+                "row": 6,
+                "col": 0
+              },
+              "654e861a-a933-2b54-657a-21b117c2d775": {
+                "sizeX": 12,
+                "sizeY": 12,
+                "row": 0,
+                "col": 12
+              },
+              "6bd8b28f-5bfd-b7af-93fa-fdb8daefa409": {
+                "sizeX": 12,
+                "sizeY": 6,
+                "row": 0,
+                "col": 0
+              },
+              "710a4be2-21ae-c8dd-0a5b-529cce8d8fc4": {
+                "sizeX": 3,
+                "sizeY": 3,
+                "row": 6,
+                "col": 9
+              },
+              "d9fb8eb7-208d-8b04-99e3-e65a205d0a6d": {
+                "sizeX": 3,
+                "sizeY": 3,
+                "row": 9,
+                "col": 9
+              }
+            },
+            "gridSettings": {
+              "layoutType": "default",
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200": {
+        "id": "f005d9ae-2d97-ad59-2bb3-e6a46dfcd200",
+        "alias": "Devices",
+        "filter": {
+          "type": "entityList",
+          "resolveMultiple": true,
+          "entityType": "DEVICE",
+          "entityList": [
+            "145b7880-fe5c-11ef-86ac-951bbb28eae1",
+            "2505c740-1445-11f0-b4bd-8b00c50fcae5"
+          ]
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 300000,
+        "timewindowMs": 2592000000,
+        "quickInterval": "CURRENT_DAY",
+        "hideInterval": false,
+        "hideLastInterval": false,
+        "hideQuickInterval": false
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 300000,
+        "timewindowMs": 86400000,
+        "fixedTimewindow": {
+          "startTimeMs": 1741601630135,
+          "endTimeMs": 1741688030135
+        },
+        "quickInterval": "CURRENT_DAY",
+        "hideInterval": false,
+        "hideLastInterval": false,
+        "hideFixedInterval": false,
+        "hideQuickInterval": false
+      },
+      "aggregation": {
+        "type": "NONE",
+        "limit": 25000
+      },
+      "timezone": null
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Devices",
+  "resources": [
+    {
+      "link": "/api/images/system/here_map_system_widget_map_image.svg",
+      "title": "\"HERE Map\" system widget map image",
+      "type": "IMAGE",
+      "subType": "IMAGE",
+      "fileName": "here_map_system_widget_map_image.svg",
+      "publicResourceKey": "xXp2oeWLvWQquUVoOlAgDPjD0vKnkiwQ",
+      "mediaType": "image/svg+xml",
+      "data": "PHN2ZyBpZD0ic3ZnMiIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTAwIiB3aWR0aD0iMTAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgogPGcgaWQ9ImxheWVyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtOTUyLjM2KSI+CiAgPHJlY3QgaWQ9InJlY3Q0Njg0IiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBoZWlnaHQ9Ijk5LjAxIiB3aWR0aD0iOTkuMDEiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSI5NTIuODYiIHg9Ii40OTUwNSIgc3Ryb2tlLXdpZHRoPSIuOTkwMTAiIGZpbGw9IiNlZWUiLz4KICA8dGV4dCBpZD0idGV4dDQ2ODYiIHN0eWxlPSJ3b3JkLXNwYWNpbmc6MHB4O2xldHRlci1zcGFjaW5nOjBweDt0ZXh0LWFuY2hvcjptaWRkbGU7dGV4dC1hbGlnbjpjZW50ZXIiIGZvbnQtd2VpZ2h0PSJib2xkIiB4bWw6c3BhY2U9InByZXNlcnZlIiBmb250LXNpemU9IjEwcHgiIGxpbmUtaGVpZ2h0PSIxMjUlIiB5PSI5NzAuNzI4MDkiIHg9IjQ5LjM5NjQ3NyIgZm9udC1mYW1pbHk9IlJvYm90byIgZmlsbD0iIzY2NjY2NiI+PHRzcGFuIGlkPSJ0c3BhbjQ2OTAiIHg9IjUwLjY0NjQ3NyIgeT0iOTcwLjcyODA5Ij5JbWFnZSBiYWNrZ3JvdW5kIDwvdHNwYW4+PHRzcGFuIGlkPSJ0c3BhbjQ2OTIiIHg9IjQ5LjM5NjQ3NyIgeT0iOTgzLjIyODA5Ij5pcyBub3QgY29uZmlndXJlZDwvdHNwYW4+PC90ZXh0PgogIDxyZWN0IGlkPSJyZWN0NDY5NCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgaGVpZ2h0PSIxOS4zNiIgd2lkdGg9IjY5LjM2IiBzdHJva2U9IiMwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgeT0iOTkyLjY4IiB4PSIxNS4zMiIgc3Ryb2tlLXdpZHRoPSIuNjM5ODYiIGZpbGw9Im5vbmUiLz4KIDwvZz4KPC9zdmc+Cg==",
+      "public": true
+    },
+    {
+      "link": "/api/images/tenant/location.png",
+      "title": "location.png",
+      "type": "IMAGE",
+      "subType": "IMAGE",
+      "fileName": "location.png",
+      "publicResourceKey": "BarCLiySrnnlM7bqUtHNw287UQ310pR2",
+      "mediaType": "image/png",
+      "data": "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",
+      "public": true
+    }
+  ]
+}

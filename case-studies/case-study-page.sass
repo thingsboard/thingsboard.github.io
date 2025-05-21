@@ -32,12 +32,16 @@
         color: #3A3B3D
 
       .case-study-hero
+
+        &.no-padding-bottom
+          padding-bottom: 0
+
         .card
           display: flex
           gap: 32px
 
           .image
-            max-height: 424px
+            min-height: 424px
             flex: 1
             background-position: center
             background-size: cover
@@ -148,6 +152,7 @@
 
         img
           width: 55%
+          border-radius: 25px
 
         div.text
           flex: 1
@@ -257,6 +262,9 @@
           padding: 40px 0
           border-bottom: 1px solid #DDECFD
 
+          &:last-child
+            padding-bottom: 0
+
           .text
             & > p
               margin-bottom: 16px
@@ -358,6 +366,9 @@
           gap: 32px
           margin-bottom: 130px
 
+          &:last-child
+            margin-bottom: 0
+
           .image-container
             flex: 1
             position: relative
@@ -378,7 +389,7 @@
 
               &:nth-child(2)
                 position: absolute
-                right: 0
+                right: 15px
                 top: 54px
                 display: block
 
@@ -395,8 +406,8 @@
                 margin-left: auto
 
               img:nth-child(2)
-                left: 0
-                z-index: -1
+                left: 15px
+                z-index: 2
 
               img:nth-child(3)
                 right: 77px
@@ -507,14 +518,8 @@
 
         .tb-power
           .block
-            flex-direction: column
-
-            &:nth-child(odd)
-              flex-direction: column
-
             img
               align-self: center
-              width: 100%
               height: unset
 
 @media screen and (max-width: 959px)
@@ -546,6 +551,16 @@
 
           .cards-row
             flex-direction: column
+
+        .tb-power
+          .block
+            flex-direction: column
+
+            &:nth-child(odd)
+              flex-direction: column
+
+            img
+              width: 65%
 
         .award
           flex-direction: column
