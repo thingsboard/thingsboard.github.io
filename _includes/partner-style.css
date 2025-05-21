@@ -252,11 +252,11 @@ body {
 }
 
 .partner-box > div {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+	height: 100%;
 }
 
 .partner-box div.cardHeader {
@@ -359,6 +359,17 @@ section {
 		max-width: 1400px;
 	}
 }
+
+@media screen and (max-width: 1500px) {
+	.partner-box div.links a {
+		white-space: unset;
+	}
+
+	.partner-box .owl-carousel a {
+		white-space: nowrap !important;
+	}
+}
+
 /*@media screen and (max-width: 1180px) {*/
 /*	.customer-spacer {*/
 /*		margin-top: 346px !important;*/
