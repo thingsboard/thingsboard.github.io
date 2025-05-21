@@ -7,7 +7,6 @@ It creates **docker-compose-kafka.yml**, fills it with configuration lines, and 
 
 ```
 cat > docker-compose-kafka.yml <<EOF && docker compose -f docker-compose-kafka.yml up -d
-version: '3.8'
 services:
   kafka:
     restart: always
