@@ -298,9 +298,12 @@ Once the converter and integration templates are created, we can assign the inte
 
 ### Installing and running external UDP Integration
 
-To install the remote UDP Integration service on a local or separate machine, select the appropriate platform.
+To install the **remote UDP Integration service** on a local or separate machine, select the corresponding platform.
 
->>Use the **Integration key** and **Integration secret** provided in the section above to complete the UDP Integration configuration.
+{% capture key-secret-note %}
+Use the **Integration key** and **Integration secret** to complete the UDP Integration configuration.
+{% endcapture %}
+{% include templates/info-banner.md content=key-secret-note %}
 
 {% capture selectPlatform %}
 Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
@@ -343,11 +346,11 @@ Please use the same command as before, but replace the parameter **q1** with **q
 With these changes, the **nc** utility will wait 120 seconds for the downlink message.
 In addition, please remove the **w1** parameter.
 
-After you'll send uplink command, you have **120 seconds** to add **firmware** shared attribute:
+After you'll send the uplink command, you have **120 seconds** to add the **firmware** shared attribute:
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To make sure that the downlink message sent to the integration, you can check the **"Events"** tab of integration:
+To make sure that the downlink message sent to the integration, you can check the **"Events"** tab of the integration:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 

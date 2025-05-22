@@ -14,22 +14,22 @@ mkdir -p ~/.tb-pe-tcp-udp-integration-logs && sudo chown -R 799:799 ~/.tb-pe-tcp
 
 Execute the following command to run the integration:
 
-```bash
-{% if page.url contains "udp" or page.url contains "remote-integrations" %}
+```liquid
+{% if page.url contains "udp" or page.url contains "remote-integrations" -%}
 docker run -it -p 11560:11560/udp -v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration  \
-{% else %}
+{%- else -%}
 docker run -it -p 10560:10560 -v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration  \ 
-{% endif %}
--e "RPC_HOST=mytbedge" -e "RPC_PORT=9090" \
+{%- endif -%}-e "RPC_HOST=mytbedge" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
---name my-tb-pe-tcp-udp-integration --network edge_docker_default --restart always thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}
+--name my-tb-pe-tcp-udp-integration --network NETWORK_NAME \
+--restart always thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
 Where: 
 
 - **mytbedge:** The host name of the ThingsBoard Edge service.
-- **9090:** The integration port. It is configured by the INTEGRATIONS_RPC_PORT environment variable in the tb-edge.yml file.
+- **9090:** The integration port. It is configured by the **INTEGRATIONS_RPC_PORT** environment variable in the **tb-edge.yml** file.
 {% if page.url contains "udp" %}
 - **-p 11560:11560/udp:** Use if the exposed port is UDP.
 - **YOUR_ROUTING_KEY:** Replace it with the actual **integration routing key**.
@@ -47,8 +47,15 @@ Where:
 - **docker run:** The command to run this container.
 - **-it:** Attaches a terminal session with current ThingsBoard remote integration process output.
 - **-v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration:** Mounts the host's dir **~/.tb-pe-tcp-udp-integration-logs** to ThingsBoard remote integration logs directory.
-- **--name tb-pe-tcp-udp-integration:** The friendly local name of this machine.
-- **--network edge_docker_default:** The network name in which the **mytbedge** service operates.
+- **--name tb-pe-tcp-udp-integration:** Set the local name for the integration.
+- **--network NETWORK_NAME:** The network name in which the **mytbedge** service operates. Replace the **NETWORK_NAME** value with the actual network name. 
+  - To check the network name, run the following command: 
+
+  ```bash
+  docker network ls
+  ``` 
+  {: .copy-code}
+
 - **--restart always:** The command automatically starts ThingsBoard Integration if the system reboots and restarts in case of failure.
 - **thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}:** The docker image.
 
@@ -61,22 +68,22 @@ To keep the container running in the background but detach from the session term
 
 To reattach to the terminal (to see ThingsBoard remote integration logs), run:
 
-```
-docker attach tb-pe-tcp-udp-integration
+```bash
+docker attach my-tb-pe-tcp-udp-integration
 ```
 {: .copy-code}
 
 To stop the container:
 
-```
-docker stop tb-pe-tcp-udp-integration
+```bash
+docker stop my-tb-pe-tcp-udp-integration
 ```
 {: .copy-code}
 
 To start the container:
 
-```
-docker start tb-pe-tcp-udp-integration
+```bash
+docker start my-tb-pe-tcp-udp-integration
 ```
 {: .copy-code}
 
