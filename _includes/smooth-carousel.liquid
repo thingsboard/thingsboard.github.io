@@ -25,7 +25,7 @@
     {% assign settings = customSettings %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme smooth-carousel" data-settings='{{ settings }}'>
+<div class="owl-carousel owl-theme smooth-carousel" data-settings='{{ settings }}'>
     {% for carouselItem in carouselCollection %}
         <div class="carousel-image" style="width: {{ carouselItem[1].width | default: '100%' }}">
             {% if carouselItem[1].src %}
@@ -34,7 +34,7 @@
             {% if carouselItem[1].multipleImage %}
                 <div class="multiple-image">
                     {% for multipleImageItem in carouselItem[1].multipleImage %}
-                        <img class="owl-lazy" data-src="{{ multipleImageItem[1].src }}" alt="{{ multipleImageItem[1].alt }}">
+                        <img class="owl-lazy" data-src="{{ multipleImageItem[1].src }}" alt="{{ multipleImageItem[1].alt }}"  style="width: {{ carouselItem[1].width | default: '100%' }}">
                     {% endfor %}
                 </div>
             {% endif %}
