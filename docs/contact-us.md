@@ -99,6 +99,7 @@ notitle: "true"
                         <option value="" disabled selected>Select Subject</option>
                         <option value="Technical Support">Technical Support</option>
                         <option value="ThingsBoard Products">ThingsBoard Products</option>
+                        <option value="Private Cloud">Private Cloud</option>
                         <option value="Deployment Options">Deployment Options</option>
                         <option value="Training">Training</option>
                         <option value="Professional Services">Professional Services</option>
@@ -152,9 +153,13 @@ notitle: "true"
                      return results ? results[1] : null;
                  };
                  var subjectValue = $.urlParam('subject');
-                 if (subjectValue != undefined && subjectValue.trim().length > 0) {                    
+                 var messageValue = $.urlParam('message');
+                 if (subjectValue != undefined && subjectValue.trim().length > 0) {
                     $contactForm.find('select[name=subject]').val(decodeURIComponent(subjectValue));
                     $contactForm.find('select[name=subject]').removeClass("input--empty");
+                 }
+                 if (messageValue != undefined && messageValue.trim().length > 0) {
+                    $contactForm.find('textarea').val(decodeURIComponent(messageValue));
                  }
             });
         }
