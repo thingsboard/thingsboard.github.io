@@ -1,0 +1,37 @@
+{
+  "bytesPerDataPoint": 100,
+  "extraStorageCostPerGB": 0.8,
+  "devEnvironments": 299,
+  "testEnvironments": 299,
+  "mobileApp": 99,
+  "mobileAppSetup": 1000,
+  "plans": [
+    {
+      "name": "Launch",
+      "price": 1199,
+      "includedDevices": 5000,
+      "maxMsgPerMin": 20000,
+      "storage": 200,
+      "extraDevicePrice": 0.1,
+      "replicationFactor": 2
+    },
+    {
+      "name": "Growth",
+      "price": 2199,
+      "includedDevices": 25000,
+      "maxMsgPerMin": 100000,
+      "storage": 1024,
+      "extraDevicePrice": 0.09,
+      "replicationFactor": 3
+    },
+    {
+      "name": "Scale",
+      "price": 3999,
+      "includedDevices": 50000,
+      "maxMsgPerMin": 200000,
+      "storage": 2048,
+      "extraDevicePrice": 0.08,
+      "replicationFactor": 3
+    }
+  ]
+}
