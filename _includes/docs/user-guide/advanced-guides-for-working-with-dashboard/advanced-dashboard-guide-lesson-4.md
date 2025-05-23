@@ -33,7 +33,7 @@ By implementing alarms, you can automate responses to predefined conditions, imp
 As you may recall, the **Indoor Air Quality Sensor** transmits telemetry values such as temperature, humidity, and CO2 levels to ThingsBoard.
 In this lesson, we will configure alarm rules for the Indoor Air Quality Sensor and add a widget to manage the device&#39;s alarms. Let&#39;s start.
 
-{% include carousel.liquid collectionMap = 'dashboard-lesson-4' nonActiveItemsVisibility = false %}
+{% include default-carousel.liquid collectionMap = 'dashboard-lesson-4' nonActiveItemsVisibility = false %}
 
 ## Adding alarm rules
 

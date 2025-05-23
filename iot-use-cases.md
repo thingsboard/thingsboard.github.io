@@ -18,8 +18,8 @@ notitle: "true"
         {% include contact-us-card.liquid %}
     </div>
 </div>
-
-{% include filter.html filters = "General,SCADA" mode = "tab" containerId = "usecase-list" %}
+{% assign filters = "General,SCADA" | split: "," %}
+{% include filter.html filters = filters mode = "tab" containerId = "usecase-list" %}
 
 {% include use-cases-cards.html %}
 

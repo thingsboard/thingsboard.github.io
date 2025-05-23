@@ -1,81 +1,88 @@
 0:
   id: "security"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/security.svg"
+  height: "406px"
+  src: "/images/usecases/scada/security.svg"
+  alt: "Security icon"
   title: "Security"
   description: "ThingsBoard protects your data with industry-standard encryption algorithms like RSA and ECDSA. Secure communication is ensured via TLS (TCP) and DTLS (UDP). Role-based access control and audit logs further enhance platform security."
   linkLabel: "Learn more"
   href: "/docs/pe/user-guide/ssl/http-over-ssl/"
+  imageWidth: 92
+  imageHeight: 92
 1:
   id: "data-visualization"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/data-visualization.svg"
+  height: "406px"
+  src: "/images/usecases/scada/data-visualization.svg"
+  alt: "Data visualization icon"
   title: "Data visualization"
   description: "Visualize data with interactive, multi-state dashboards—no coding needed. Use built-in charts, gauges, maps, tables, and control widgets. Customize every detail via advanced settings or custom widget bundles. Real-time, low-latency updates supported via embedded web-sockets."
   linkLabel: "Learn more"
   href: "/docs/user-guide/dashboards/"
+  imageWidth: 92
+  imageHeight: 92
 2:
   id: "connectivity"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/connectivity.svg"
+  height: "406px"
+  src: "/images/usecases/scada/connectivity.svg"
+  alt: "Connectivity icon"
   title: "Connectivity"
   description: "Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols."
   linkLabel: "Learn more"
   href: "/docs/getting-started-guides/connectivity/"
+  imageWidth: 92
+  imageHeight: 92
 3:
   id: "data-processing"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/data-processing.svg"
+  height: "406px"
+  src: "/images/usecases/scada/data-processing.svg"
+  alt: "Data processing icon"
   title: "Data processing"
   description: "ThingsBoard allows you to define app logic using a drag-and-drop rule chain designer. Its scalable Rule Engine uses message queues like Kafka or AWS SQS for durable, reliable data processing. You can handle data within the engine or forward it to external systems."
   linkLabel: "Learn more"
   href: "/docs/pe/user-guide/rule-engine-2-0/overview/"
+  imageWidth: 92
+  imageHeight: 92
 4:
   id: "scalability"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/scalability.svg"
+  height: "406px"
+  src: "/images/usecases/scada/scalability.svg"
+  alt: "Scalability icon"
   title: "Scalability and high availability"
   description: "ThingsBoard supports high-availability cloud and on-prem deployments via Kubernetes or bare-metal. Its components scale horizontally and handle 18K+ vehicles and 5K+ devices in prod."
   linkLabel: "Learn more"
   href: "/docs/reference/msa/"
-
+  imageWidth: 92
+  imageHeight: 92
 5:
   id: "multi-tenancy"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/multi-tenancy.svg"
+  height: "406px"
+  src: "/images/usecases/scada/multi-tenancy.svg"
+  alt: "Multi-tenancy icon"
   title: "Multi-tenancy"
   description: "ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters."
   linkLabel: "Learn more"
   href: "/docs/user-guide/entities-and-relations"
+  imageWidth: 92
+  imageHeight: 92
 6:
   id: "lorawan"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/lorawan-sigfox.svg"
+  height: "406px"
+  src: "/images/usecases/scada/lorawan-sigfox.svg"
+  alt: "Support icon"
   title: "LoRaWAN & SigFox support"
   description: "Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend."
   linkLabel: "Learn more"
   href: "/docs/user-guide/integrations/"
+  imageWidth: 92
+  imageHeight: 92
 7:
   id: "mobile0application"
-  height: "460px"
-  crisp:
-    0:
-      src: "/images/usecases/scada/mobile.svg"
+  height: "406px"
+  src: "/images/usecases/scada/mobile.svg"
+  alt: "Mobile icon"
   title: "Mobile application"
   description: "Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard."
   linkLabel: "Learn more"
   href: "/docs/mobile/"
+  imageWidth: 92
+  imageHeight: 92

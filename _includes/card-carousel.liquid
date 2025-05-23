@@ -1,0 +1,89 @@
+{% assign cardType = include.cardType | default: 'use-cases' %}
+{% assign defaultSettings = '{
+    "items": 3,
+    "center": true,
+    "stagePadding": 0,
+    "margin": 0,
+    "nav": true,
+    "dots": false,
+    "autoplay": false,
+    "responsive":{"0":{"items":1,"nav":false,"dots":true,"stagePadding":0},"600":{"items":1,"nav":false,"dots":true,"stagePadding":50},"960":{"items":1,"nav":false,"dots":true,"stagePadding":125},"1025":{"items":1,"nav":true,"dots":false,"stagePadding":125},"1280":{"items":3,"nav":true,"dots":false}}
+}' %}
+
+{% if cardType == 'courses' %}
+{% assign coursesCollection = include.coursesCollection %}
+
+{% assign courseIds = "" %}
+
+{% for course in coursesCollection %}
+    {% assign courseId = course[1].id %}
+    {% assign courseIndex = forloop.index0 %}
+
+    {% capture courseData %}
+        "{{ courseId }}": {{ courseIndex }}
+    {% endcapture %}
+
+    {% if forloop.first %}
+        {% assign courseIds = courseIds | append: courseData %}
+    {% else %}
+        {% assign courseIds = courseIds | append: ", " | append: courseData %}
+    {% endif %}
+{% endfor %}
+
+{% assign courseIds = "{" | append: courseIds | append: "}" %}
+
+<div class="owl-carousel owl-theme courses-carousel carousel-content-toggle cardMode smallArrow circle transitionAnimationEnabled" data-settings='{{ defaultSettings }}' data-id='{{ courseIds }}'>
+    {% for course in coursesCollection %}
+        {% assign totalHours = 0 %}
+        {% for session in course[1].courseSessions %}
+            {% assign totalHours = totalHours | plus: session[1].sessionLengthInHours %}
+        {% endfor %}
+        {% assign sessionsCount = course[1].courseSessions | size %}
+        <div class="card" id="{{ course[1].id }}" style="min-height: 416px" data-position="{{ forloop.index0 }}">
+            <div class="card-header">
+                <ul>
+                    <li>
+                        <i class="far fa-clock" style="color: #2A7DEC"></i>
+                        <span>{{ totalHours }} hours</span>
+                    </li>
+                    <li>
+                        <img src="/images/trainings/icon_hat-graduation.svg" alt="Sessions icon" width="25" height="24">
+                        <span>{{ sessionsCount }} sessions</span>
+                    </li>
+                </ul>
+                <h2 style="font-size: 28px; color: #000000DE; line-height: 38px; font-weight: 500;">{{ course[1].courseName }}</h2>
+            </div>
+            <p style="font-size: 18px; color: #0000008A; line-height: 24px; font-weight: 400">{{ course[1].carouselCourseDescription }}</p>
+            <div class="card-link">
+                <span class="course-below">More about the course below</span>
+                <i class="fas fa-arrow-down" style="color: #2a7dec"></i>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% elsif cardType == 'use-cases' %}
+    {% assign collectionMap = include.collectionMap %}
+
+    {% if site.data.carousel-collection[collectionMap] %}
+        {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
+    {% else %}
+        {% assign carouselCollection = page[collectionMap] %}
+    {% endif %}
+
+    {% assign titleSize = include.titleSize | default: "28px" %}
+    {% assign descriptionSize = include.descriptionSize | default: "14px" %}
+
+    <div class="owl-carousel owl-theme usecase-carousel cardMode smallArrow circle transitionAnimationEnabled" data-settings='{{ defaultSettings }}'>
+        {% for item in carouselCollection %}
+            <div class="card" style="height: {{ item[1].height }}" data-position="{{ forloop.index0 }}">
+                <div class="card-header">
+                    <img src="{{ item[1].src }}" alt="{{ item[1].alt }}" width="{{ item[1].imageWidth }}" height="{{ item[1].imageHeight }}">
+                    <span style="font-size: {{ titleSize }}; line-height: 44px; font-weight: 500;">{{ item[1].title }}</span>
+                </div>
+                <p style="font-size:{{ descriptionSize }}; color: #000000C2; line-height: 24px; font-weight: 400">{{ item[1].description }}</p>
+                <a href="{{ item[1].href }}" aria-label="Learn more about {{ item[1].title }}" class="card-link"></a>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+

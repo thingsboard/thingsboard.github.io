@@ -29,7 +29,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="health-carousel">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'health-care' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'health-care' %}
 </section> 
 
 <section class="health-solution-structure">
@@ -254,10 +254,12 @@ includeAdvantages: "true"
 </section>
 
 <section class="summary">
-    <h2>Summary</h2>
-    <div>
+    <div class="summary-text">
+        <h2>Summary of health care solution</h2>
         <p>This Smart Assisted Living Solution on ThingsBoard provides a comprehensive approach to resident and facility management, with robust monitoring capabilities, intuitive zoning and device management, and customizable alerts for both health and environmental conditions. The solution empowers caregivers and administrators to respond quickly, keep environments safe, and provide the highest standard of care for residents.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon">
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 

@@ -7,7 +7,7 @@ notitle: "true"
 
 <div class="company-content">
     <div class="company-hero-carousel">
-        {% include carousel.liquid items = 4 collectionMap = "company-photos-carousel" autoplay = true smoothAutoPlay = true autoWidth = true nonActiveItemsVisibility = false carouselMargin = 0 transitionAnimation = false navMode = "disableNav" dotButtonMode = "disableDots" imageBorderRadius = 0 %}
+        {% include smooth-carousel.liquid collectionMap = "company-photos-carousel" %}
     </div>
     <div class="company-aboutus">
         <div class="company-aboutus-container">
@@ -15,7 +15,7 @@ notitle: "true"
             <div class="company-wrapper">
                 <div class="company-flex-content-default">
                     <div class="company-aboutus-image-block">
-                        <img class="company-aboutus-image" src="/images/thingsboard_blue.svg" alt="Thingsboard logo">
+                        <img class="company-aboutus-image" src="/images/thingsboard_blue.svg" alt="Thingsboard logo" width="257" height="257">
                         <span>ThingsBoard</span>
                     </div>
                     <div class="company-text-content-default">
@@ -36,20 +36,20 @@ notitle: "true"
                         <p class="company-text">As we listened to our community, we expanded the ThingsBoard ecosystem with powerful tools like ThingsBoard Gateway, enabling seamless integration of legacy systems, and ThingsBoard Edge, bringing real-time processing and reliability to on-site deployments. In 2019, we introduced Trendz, a dedicated data analytics tool for advanced visualization. In 2020, we launched ThingsBoard Cloud, a fully managed IoT platform, offering a quick and hassle-free way to deploy and scale IoT solutions. Most recently, in 2023, we released TBMQ, our scalable and fault-tolerant MQTT broker designed to handle deployments with hundreds of millions of clients.</p>
                         <p class="company-text">From just two co-founders, ThingsBoard has grown into a team of over 100 talented innovators. Trusted by thousands of organizations globally, we continue to innovate and shape the future of IoT, one device at a time.</p> 
                     </div>
-                    <img class="company-aboutus-image" src="/images/company-images/history-image.webp" alt="Co-founders of ThingsBoard">
+                    <img class="company-aboutus-image" src="/images/company-images/history-image.webp" alt="Co-founders of ThingsBoard" width="400" height="600">
                 </div>
             </div>
         </div>
     </div>
     <div class="company-timeline">
         <div class="company-wrapper">
-            {% include carousel.liquid items = 5 itemsHigher960 = 3 itemsHigher600 = 2 itemsHigher0 = 1 collectionMap = "company-timeline-carousel" timeline = true autoplay = false loop = false carouselMargin = 0 stagePadding = 0 dotButtonMode = "disableDots" navMode = "smallArrow" titleHoverScale = 1.6 titleSize = "24px" titleColor = "#305680" descriptionColor = "#00000c2" titleWeight = "600" titleLineHeight = "40px" descriptionLineHeight = "30px" %}
+            {% include timeline-carousel.liquid collectionMap = "company-timeline-carousel" %}
         </div>
     </div>
     <div class="company-values">
         <h2 class="company-content-title">Our values</h2>
         <div class="company-values-wrapper">
-            {% include carousel.liquid collectionMap = "company-values-carousel" contentDirection = "imageBackground" darkenedImage = true navMode = "disableNav" carouselMargin = 0 stagePadding = 0 titleSize = "96px" titleSizeLower1280 = "64px" titleSizeLower960 = "56px" titleSizeLower600 = "40px" descriptionSize = "36px" descriptionSizeLower960 = "32px" descriptionSizeLower600 = "28px" titleLineHeight = "125%" descriptionLineHeight = "140%" titleColor = "#FFF" descriptionColor = "#FFF" backgroundImageMode = true thingsboardStyledBackground = true dotButtonMode = "square" dotButtonInCarouselContainer = true dotButtonColor = "#FFF" %}
+            {% include tb-carousel.liquid collectionMap = "company-values-carousel" %}
         </div>
     </div>
     <div class="company-team">
