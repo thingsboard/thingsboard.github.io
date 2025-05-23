@@ -80,3 +80,12 @@
   icon: /images/tbmq-icon.svg
   path: /docs/mqtt-broker/
   getStarted: /docs/mqtt-broker/getting-started/
+- title: Private Cloud
+  fulltitle: ThingsBoard Private Cloud
+  description: ThingsBoard Documentation
+  tag: private-cloud
+  icon: /images/thingsboard-c-icon.svg
+  path: /docs/private-cloud/
+  guides: /docs/private-cloud/guides/
+  getStarted: /docs/private-cloud/getting-started-guides/helloworld/
+  docsPrefix: /docs/managed-services/
