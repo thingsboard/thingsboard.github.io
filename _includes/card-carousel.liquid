@@ -47,7 +47,7 @@
                         <span>{{ totalHours }} hours</span>
                     </li>
                     <li>
-                        <img src="/images/trainings/icon_hat-graduation.svg" alt="Sessions icon">
+                        <img src="/images/trainings/icon_hat-graduation.svg" alt="Sessions icon" width="25" height="24">
                         <span>{{ sessionsCount }} sessions</span>
                     </li>
                 </ul>
@@ -77,7 +77,7 @@
         {% for item in carouselCollection %}
             <div class="card" style="height: {{ item[1].height }}" data-position="{{ forloop.index0 }}">
                 <div class="card-header">
-                    <img src="{{ item[1].src }}" alt="{{ item[1].alt }}">
+                    <img src="{{ item[1].src }}" alt="{{ item[1].alt }}" width="{{ item[1].imageWidth }}" height="{{ item[1].imageHeight }}">
                     <span style="font-size: {{ titleSize }}; line-height: 44px; font-weight: 500;">{{ item[1].title }}</span>
                 </div>
                 <p style="font-size:{{ descriptionSize }}; color: #000000C2; line-height: 24px; font-weight: 400">{{ item[1].description }}</p>

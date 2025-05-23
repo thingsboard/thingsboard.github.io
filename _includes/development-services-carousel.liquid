@@ -28,7 +28,7 @@
                 <p class="development-description">{{ carouselItem[1].description }}</p>
             </div>
             <div class="carousel-image">
-                <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}">
+                <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" width="{{carouselItem[1].width}}" height="{{carouselItem[1].height}}">
             </div>
         </div>
     {% endfor %}

@@ -29,12 +29,12 @@
     {% for carouselItem in carouselCollection %}
         <div class="carousel-image" style="width: {{ carouselItem[1].width | default: '100%' }}">
             {% if carouselItem[1].src %}
-                <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}">
+                <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" width="900" height="600">
             {% endif %}
             {% if carouselItem[1].multipleImage %}
                 <div class="multiple-image">
                     {% for multipleImageItem in carouselItem[1].multipleImage %}
-                        <img class="owl-lazy" data-src="{{ multipleImageItem[1].src }}" alt="{{ multipleImageItem[1].alt }}"  style="width: {{ carouselItem[1].width | default: '100%' }}">
+                        <img class="owl-lazy" data-src="{{ multipleImageItem[1].src }}" alt="{{ multipleImageItem[1].alt }}" width="451" height="300">
                     {% endfor %}
                 </div>
             {% endif %}

@@ -36,7 +36,7 @@
 <div class="usecase-carousel owl-carousel owl-theme transitionAnimationEnabled {{ nonActiveItemsVisibilityClass }} thinArrow line" data-settings='{{ settings }}'>
     {% for carouselItem in carouselCollection %}
         <div class="carousel-image">
-            <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}">
+            <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" title="{{carouselItem[1].imageTitleAttribute}}" width="{{carouselItem[1].width}}" height="{{carouselItem[1].height}}">
         </div>
     {% endfor %}
 </div>
