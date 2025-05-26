@@ -36,8 +36,10 @@ toc:
 - title: Other Features
   new: true
   section:
-    - title: TBMQ client type
+    - title: TBMQ Client Type
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
+    - title: Blocked Clients
+      path: /docs/mqtt-broker/other/blocked-client/
     - title: Backpressure
       path: /docs/mqtt-broker/user-guide/backpressure/
     - title: Msg Delivery Strategies
