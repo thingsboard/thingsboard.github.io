@@ -294,7 +294,10 @@ Once the converter and integration templates are created, we can assign the **In
 
 To install the remote TCP Integration service on a local or separate machine, select the appropriate platform.
 
->>Use the **Integration key** and **Integration secret** provided in the section above to complete the TCP Integration configuration.
+{% capture key-secret-note %}
+Use the **Integration key** and **Integration secret** to complete the TCP Integration configuration.
+{% endcapture %}
+{% include templates/info-banner.md content=key-secret-note %}
 
 {% capture selectPlatform %}
 Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
