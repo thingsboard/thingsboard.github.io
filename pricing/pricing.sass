@@ -201,15 +201,14 @@ html#pricing
                         visibility: visible
                     .tooltiptext
                       position: absolute
-                      top: -32px
-                      left: -57px
-                      width: max-content
+                      right: 0
+                      width: 50px
                       padding: 0 7px
                       visibility: hidden
-                      background-color: #0000008F
+                      background-color: #000000c7
                       color: #fff
-                      text-align: center
                       border-radius: 6px
+                      font-size: 12px
                     &.copied
                       &:after
                         content: "\f00c"
@@ -225,7 +224,7 @@ html#pricing
                   font-weight: 400
                   line-height: 28px
 
-                  p
+                  p, li
                     font-size: 14px
                     font-weight: 400
                     color: #0000008A
@@ -255,6 +254,7 @@ html#pricing
                     font-size: 30px
                     transform: rotate(0deg)
     a, button
+      text-align: center
       &.btn-blue
         background-color: #2A7DEC
         color: #fff
@@ -265,11 +265,12 @@ html#pricing
         outline: none
         border-radius: 4px
         border: solid 2px #2A7DEC
-        box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
         line-height: 28px
         &:hover
           background-color: #fff
           color: #2A7DEC
+        @media (max-width: 599px)
+          width: 100%
 
     a.btn-blue
       text-decoration: none
@@ -292,6 +293,7 @@ html#pricing
         font-size: 36px
         font-weight: 500
         line-height: 48px
+        margin-bottom: 8px
       .pricing-square-description
         font-size: 14px
         line-height: 24px
@@ -306,6 +308,7 @@ html#pricing
           min-height: 100px
         p
           margin-bottom: 1rem
+          font-size: 14px
       .community-support-card
         display: flex
         flex-direction: column
@@ -590,6 +593,7 @@ html#pricing
             display: flex
             gap: 7px
             font-family: sans-serif
+            padding-left: 7px
 
             .switch
               position: relative
@@ -628,6 +632,8 @@ html#pricing
                   border-radius: 50%
 
             .label-text
+              display: inline-block
+              width: 64px
               font-size: 16px
               line-height: 28px
               color: #333
@@ -695,11 +701,17 @@ html#pricing
               p
                 margin-bottom: 32px
 
+          @media (max-width: 599px)
+            padding: 24px
+
           .text
             h2
               font-size: 36px
               line-height: 48px
               font-weight: 500
+              margin-bottom: 16px
+              @media (max-width: 599px)
+                font-size: 28px
             p
               font-size: 16px
               font-weight: 400
@@ -715,6 +727,9 @@ html#pricing
             line-height: 48px
             font-weight: 500
             margin-bottom: 24px
+            @media (max-width: 599px)
+              font-size: 28px
+
           p
             font-size: 16px
             font-weight: 400
@@ -765,11 +780,15 @@ html#pricing
             line-height: 48px
             font-weight: 500
             margin-bottom: 24px
+            @media (max-width: 599px)
+              font-size: 28px
 
           p
             font-size: 16px
             line-height: 28px
             margin-bottom: 56px
+            color: #757575
+            font-weight: 400
 
           .comparison-table-container
             overflow-x: auto
@@ -788,10 +807,17 @@ html#pricing
                 font-weight: 500
                 line-height: 24px
 
+                @media (max-width: 1279px)
+                  min-width: 165px
+                  max-width: 165px
+
               th
                 background-color: #fff
                 font-size: 28px
                 line-height: 44px
+                @media  (max-width: 599px)
+                  font-size: 20px
+                  font-weight: 400
 
                 &:first-child
                   background-color: #F4F8FE
@@ -810,7 +836,10 @@ html#pricing
                 position: sticky
                 left: 0
                 border-radius: 0
-
+                @media  (max-width: 599px)
+                  max-width: 165px
+                  min-width: unset
+                  padding: 8px
 
       &#trendz-cloud
         .pricing-div
