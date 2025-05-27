@@ -157,7 +157,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Start Free
                                 </a>
                             </div>
@@ -180,7 +180,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -204,7 +204,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -228,7 +228,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -251,7 +251,7 @@ selfManagedPlan:
                                 Custom <span data-faq-id="tb-cloud-enterprise-pricing-calculation" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <a id="Pricing_PE_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
                                     Contact Us
                                 </a>
                             </div>
@@ -279,7 +279,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Start Free
                                 </a>
                             </div>
@@ -302,7 +302,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -326,7 +326,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -350,7 +350,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="btn-blue btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -373,7 +373,7 @@ selfManagedPlan:
                                 Custom <span data-faq-id="tb-cloud-enterprise-pricing-calculation" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <a id="Pricing_PE_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
                                     Contact Us
                                 </a>
                             </div>
@@ -420,7 +420,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Launch</h2>
                         <div class="pricing-square-description">
-                            <p>Suitable for pilots and early stage deployments</p>
+                            <p>Suitable for pilots and early stage deployments.</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $1199
@@ -431,12 +431,12 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Launch" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                                 <span class="visually-hidden">with ThingsBoard Private Cloud</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item">5 000 devices included</div>
+                        <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">20 000 msg/minute</div>
                         <div class="pricing-square-item">200 GB of storage included</div>
@@ -447,7 +447,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Growth</h2>
                         <div class="pricing-square-description">
-                            <p>Perfect for fast-growing deployments—adds capacity as you expand.</p>
+                            <p>Perfect for fast-growing deployments — adds capacity as you expand.</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $2199
@@ -458,12 +458,12 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Growth" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                                 <span class="visually-hidden">with ThingsBoard Private Cloud</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item">25 000 devices included</div>
+                        <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">100 000 msg/minute</div> 
                         <div class="pricing-square-item">1 TB of storage included</div>
@@ -485,12 +485,12 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Scale" class="btn-blue btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                                 <span class="visually-hidden">with ThingsBoard Private Cloud</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item">50 000 devices included</div>
+                        <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">500 000 msg/minute</div>
                         <div class="pricing-square-item">2 TB of storage included</div>
@@ -507,12 +507,12 @@ selfManagedPlan:
                             Custom <span data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-link-size="70%"></span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                            <a id="Pricing_PE_PrivateCloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
                                 Contact Us
                                 <span class="visually-hidden">to help you with your Private Cloud plan.</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item">Everything you need to scale</div>
+                        <div class="pricing-square-item highlight">Everything you need to scale</div>
                         <div class="pricing-square-item">Custom SLA</div>
                         <div class="pricing-square-item">Unlimited message rate</div>
                         <div class="pricing-square-item">Unlimited storage</div>
@@ -528,7 +528,7 @@ selfManagedPlan:
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button onclick="openModal()" class="btn-blue clulator gtm_button">Calculate your pricing</button>
+                <button onclick="openModal()" class="button clulator gtm_button">Calculate your pricing</button>
             </div>
             <div class="add-ons">
                 <h2>Optional add-ons</h2>
@@ -600,7 +600,7 @@ selfManagedPlan:
                                 YES, IT'S FREE
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_CE_Install" class="btn-blue btn-pricing gtm_button" href="/docs/user-guide/install/installation-options/">
+                                <a id="Pricing_CE_Install" class="button btn-pricing gtm_button" href="/docs/user-guide/install/installation-options/">
                                     Install
                                 </a>
                             </div>
@@ -665,7 +665,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Maker" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_PE_SM_Maker" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
@@ -692,7 +692,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Prototype" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_PE_SM_Prototype" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
@@ -720,7 +720,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Startup" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_PE_SM_Startup" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
@@ -748,7 +748,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Enterprise" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_PE_SM_Enterprise" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 false,
                                 '20be6f50-a18e-11e9-8e16-03828ff5271c',
@@ -779,7 +779,7 @@ selfManagedPlan:
                             $4,999
                         </h4>                  
                         <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Perpetual_Perpetual" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_PE_SM_Perpetual_Perpetual" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
@@ -807,7 +807,7 @@ selfManagedPlan:
                             $5,999
                         </h4>                  
                         <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Perpetual_Kit" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_PE_SM_Perpetual_Kit" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
@@ -836,7 +836,7 @@ selfManagedPlan:
                             $14,999
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_SM_Enterprise_Bundle" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
+                            <a id="Pricing_PE_SM_Enterprise_Bundle" class="button btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
                         <div class="pricing-square-item"><b>2 ThingsBoard Perpetual Kits</b></div>
                         <div class="pricing-square-item">1 Trendz perpetual license</div> 
@@ -849,7 +849,7 @@ selfManagedPlan:
                 </div>
            </div>
             <div class="row justify-content-center" style="margin-top: 60px">
-                <a id="Pricing_PE_SM_Perpetual" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/" style="margin:0">
+                <a id="Pricing_PE_SM_Perpetual" class="button btn-pricing gtm_button" href="/docs/contact-us/" style="margin:0">
                     Contact Us
                 </a>
             </div>
@@ -902,7 +902,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Maker" class="btn-blue btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'maker')">
+                                <button id="Pricing_TA_SM_Maker" class="button btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'maker')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -927,7 +927,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Prototype" class="btn-blue btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'prototype')">
+                                <button id="Pricing_TA_SM_Prototype" class="button btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'prototype')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -954,7 +954,7 @@ selfManagedPlan:
                             </h4>
                             <div class="row justify-content-center">
                                 <button id="Pricing_TA_SM_Startup"
-                                        class="btn-blue btn-pricing gtm_button" 
+                                        class="button btn-pricing gtm_button" 
                                         onClick="openTrendzWizard(event, 'self-managed-content', 'startup')">
                                     Try 30 days for free
                                 </button>
@@ -981,7 +981,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Business" class="btn-blue btn-pricing gtm_button" 
+                                <button id="Pricing_TA_SM_Business" class="button btn-pricing gtm_button" 
                                     onClick="openTrendzWizard(event, 'self-managed-content', 'business')">
                                     Try 30 days for free
                                 </button>
@@ -1011,7 +1011,7 @@ selfManagedPlan:
                                 $8000
                             </h4>                  
                             <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Perpetual_License" class="btn-blue btn-pricing gtm_button" 
+                                <button id="Pricing_TA_SM_Perpetual_License" class="button btn-pricing gtm_button" 
                                     onClick="getLicense(event,
                                     true,
                                     '898f5d80-0ed1-11eb-951e-b77b877a367b',
@@ -1091,7 +1091,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Maker" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
+                                <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
                                     Get Started
                                 </a>
                             </div>
@@ -1116,7 +1116,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Prototype" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
+                                <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
                                     Get Started
                                 </a>
                             </div>
@@ -1142,7 +1142,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Startup" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
+                                <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
                                     Get Started
                                 </a>
                             </div>
@@ -1168,7 +1168,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Business" class="btn-blue btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
+                                <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
                                     Get Started
                                 </a>
                             </div>
@@ -1193,7 +1193,7 @@ selfManagedPlan:
                                 Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
                                     Contact Us
                                 </a>
                             </div>
@@ -1221,7 +1221,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Maker" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
+                                <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
                                     Get Started
                                 </a>
                             </div>
@@ -1246,7 +1246,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Prototype" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
+                                <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
                                     Get Started
                                 </a>
                             </div>
@@ -1272,7 +1272,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Startup" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
+                                <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
                                     Get Started
                                 </a>
                             </div>
@@ -1298,7 +1298,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Business" class="btn-blue btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
+                                <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
                                     Get Started
                                 </a>
                             </div>
@@ -1323,7 +1323,7 @@ selfManagedPlan:
                                 Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Enterprise" class="btn-blue btn-pricing gtm_button" href="/docs/contact-us/">
+                                <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
                                     Contact Us
                                 </a>
                             </div>
@@ -1398,7 +1398,7 @@ selfManagedPlan:
                             YES, IT'S FREE
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_Edge_CE_Install" class="btn-blue btn-pricing gtm_button" href="/docs/user-guide/install/edge/installation-options/">
+                            <a id="Pricing_Edge_CE_Install" class="button btn-pricing gtm_button" href="/docs/user-guide/install/edge/installation-options/">
                                 Install
                             </a>
                         </div>
@@ -1426,7 +1426,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Nano" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_Edge_PayAsYouGo_Nano" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
@@ -1458,7 +1458,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Micro" class="btn-blue btn-pricing gtm_button"
+                            <button id="Pricing_Edge_PayAsYouGo_Micro" class="button btn-pricing gtm_button"
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
@@ -1490,7 +1490,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Macro" class="btn-blue btn-pricing gtm_button"
+                            <button id="Pricing_Edge_PayAsYouGo_Macro" class="button btn-pricing gtm_button"
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
@@ -1522,7 +1522,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Mega" class="btn-blue btn-pricing gtm_button"
+                            <button id="Pricing_Edge_PayAsYouGo_Mega" class="button btn-pricing gtm_button"
                                 onClick="getLicense(event,
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
@@ -1558,7 +1558,7 @@ selfManagedPlan:
                             $499
                         </h4>
                         <div class="row justify-content-center">
-                            <button id="Pricing_Edge_Perpetual_EdgePerpetualFallbackLicense" class="btn-blue btn-pricing gtm_button" 
+                            <button id="Pricing_Edge_Perpetual_EdgePerpetualFallbackLicense" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 true,
                                 'fc5e64e0-841f-11ec-b9ac-0736fadd7ddd',
@@ -2253,7 +2253,7 @@ selfManagedPlan:
                             <p>ThingsBoard Private Cloud is a fully managed, isolated ThingsBoard Professional Edition cluster that our team deploys and operates for you. We provision the infrastructure, keep the platform patched and monitored 24 × 7, run automated backups, and give you an SLA-backed uptime guarantee (99 %–99.99 %, depending on plan). Your engineers stay focused on building IoT applications instead of running DevOps.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-does-private-cloud-compare-to-thingsboard-cloud-community-edition-and-self-managed" data-title="How does Private Cloud compare to ThingsBoard Cloud, Community Edition and Self-Managed?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-does-private-cloud-compare-to-thingsboard-cloud-community-edition-and-self-managed" data-title="How Private Cloud compares to ThingsBoard Cloud, Community Edition and Self-Managed?">
                         <div class="container">
                             <ul>
                                 <li>Community Edition itself is the open-source core—perfect for experiments and hobby projects, but offers less features and no SLA.</li>
@@ -2298,7 +2298,10 @@ selfManagedPlan:
                             <p>Private Cloud ideal for companies that want to avoid investing in DevOps resources, reduce operational risk, and accelerate time to market. They are particularly beneficial for startups, SMBs, or enterprises scaling production systems who prefer to offload platform operations and upgrades to the ThingsBoard team under a clear SLA.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-prerequisites-to-get-started" data-title="What are the prerequisites to get started?">
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-prerequisites-to-get-started" data-title="What are the prerequisites to get started?">
                         <div class="container">
                             <p>1. Use our online calculator to size a Launch, Growth or Scale cluster.</p>
                             <p>2. Submit the request form – we schedule a short onboarding call.</p>
@@ -2306,44 +2309,44 @@ selfManagedPlan:
                             <p>You are welcome to reach out at any stage — we’ll help you choose the most suitable plan and guide you through the next steps.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-is-there-a-minimum-commitment" data-title="Is there a minimum commitment?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-is-there-a-minimum-commitment" data-title="Is there a minimum commitment?">
                         <div class="container">
                             <p>No long-term lock-in. We simply ask for a 30-day written notice before shutdown so we can decommission resources cleanly.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-where-will-my-data-be-hosted" data-title="Where will my data be hosted?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-where-will-my-data-be-hosted" data-title="Where will my data be hosted?">
                         <div class="container">
                             <p>During onboarding you pick the region that best fits compliance or latency needs (EU, North America, or APAC). All sites reside in ISO 27001/PCI-DSS-certified data centres.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-can-i-get-my-data-in-line-with-gdpr-requirements" data-title="How can I get my data in line with GDPR requirements?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-can-i-get-my-data-in-line-with-gdpr-requirements" data-title="How can I get my data in line with GDPR requirements?">
                         <div class="container">
                             <p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all tenant-level tables (entities, telemetry, audit logs, custom metadata) and transfer it to you over a secure channel (SFTP or your own cloud bucket).</p>
                             <p>Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all tenant data within 30 days of your erase request.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-is-your-private-cloud-service-gdpr-compliant" data-title="Is your Private Cloud service GDPR-compliant?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-is-your-private-cloud-service-gdpr-compliant" data-title="Is your Private Cloud service GDPR-compliant?">
                         <div class="container">
                             <p>Yes. You remain the sole Data Controller; ThingsBoard acts as a Data Processor under a standard DPA. Data never leaves the region you select, and you have the right to access, port or delete it at will.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-will-i-have-a-sysadmin-user" data-title="Will I have a sysadmin user?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-will-i-have-a-sysadmin-user" data-title="Will I have a sysadmin user?">
                         <div class="container">
                             <p>For security and SLA integrity we do not expose Sysadmin by default. If your workflow truly needs low-level access, we can provide read-only credentials to metrics/Kubernetes dashboards under an additional NDA.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-if-i-cancel-will-you-return-my-data" data-title="If I cancel, will you return my data?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-if-i-cancel-will-you-return-my-data" data-title="If I cancel, will you return my data?">
                         <div class="container">
                             <p>Yes. Once we receive your cancellation notice, we prepare a full encrypted PostgreSQL/Cassandra dump of all your tenant data—including entities, telemetry, files, and audit logs—and deliver it to you over a secure channel (SFTP link or your own cloud bucket).</p>
                             <p>You have up to 60 days after the cancellation date to download and verify the dump. After that 60-day grace period, all remaining backups and cluster data are permanently and securely deleted from our systems.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-kind-of-security-measurements-do-you-provide" data-title="What kind of security measurements do you provide?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-kind-of-security-measurements-do-you-provide" data-title="What kind of security measurements do you provide?">
                         <div class="container">
                             <p>Private Cloud is designed with enterprise-grade security at its core. Access to the infrastructure is limited to authorized ThingsBoard personnel only, with regular audits and monitoring in place. We follow industry best practices for patch management, vulnerability scanning, and secure software development. For added protection, customers may also enable 2FA, dedicated VPN tunnels, and audit logging depending on their plan.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-often-are-upgrades-conducted" data-title="How often are upgrades conducted?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-often-are-upgrades-conducted" data-title="How often are upgrades conducted?">
                         <div class="container">
                             <p>All Private Cloud upgrades—whether minor patches or major version releases—are scheduled in coordination with the customer. This ensures full transparency, minimizes disruption, and allows your team to prepare in advance. Our team handles the entire upgrade process and provides clear communication before and after each change to maintain operational continuity and SLA compliance.</p>
                         </div>
@@ -2396,42 +2399,45 @@ selfManagedPlan:
                             <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 50 % over the msg/min ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-there-any-payment-processing-fees" data-title="Are there any payment processing fees?">
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-any-payment-processing-fees" data-title="Are there any payment processing fees?">
                         <div class="container">
                             <p>No, we do not charge any additional processing fees for payments made via wire transfer or credit/debit card.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-invoices-issued-automatically" data-title="Are invoices issued automatically?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-invoices-issued-automatically" data-title="Are invoices issued automatically?">
                         <div class="container">
                             <p>Invoices are currently generated manually and sent to you at the start of each billing month, so you have the invoice in hand before the service period begins. We’re building a self-service billing portal with fully automated invoicing and expect to roll it out later this year.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-pay-with-paypal" data-title="Can I pay with PayPal?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-pay-with-paypal" data-title="Can I pay with PayPal?">
                         <div class="container">
                             <p>Yes, it is possible.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-does-your-invoice-include-taxes" data-title="Does your invoice include taxes?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-does-your-invoice-include-taxes" data-title="Does your invoice include taxes?">
                         <div class="container">
                             <p>Invoices are issued net of tax in USD. You are responsible for any local taxes that may apply in your jurisdiction.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-can-i-estimate-my-tco" data-title="How can I estimate my TCO?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-can-i-estimate-my-tco" data-title="How can I estimate my TCO?">
                         <div class="container">
                             <p>Use our online pricing calculator (link on the Plans page) to model monthly spend: select a tier, enter device count, expected message rate, storage needs and any add-ons. The tool instantly shows your projected bill; for Enterprise scenarios our sales engineers will build a custom cost model on request.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-switch-from-monthly-to-annual-billing-later" data-title="Can I switch from monthly to annual billing later?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-switch-from-monthly-to-annual-billing-later" data-title="Can I switch from monthly to annual billing later?">
                         <div class="container">
                             <p>Yes, you can switch from monthly to annual billing at any time. Simply contact the ThingsBoard team, and we will coordinate the transition, apply the discount, and adjust your invoicing accordingly from your next billing cycle.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-my-plan-upgraded-to-higher-tier-during-an-annual-subscription" data-title="What happens if my plan upgraded to higher tier during an annual subscription?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-my-plan-upgraded-to-higher-tier-during-an-annual-subscription" data-title="What happens if my plan upgraded to higher tier during an annual subscription?">
                         <div class="container">
                             <p>If you upgrade your Private Cloud plan during an active annual subscription, the price difference will be calculated on a monthly basis for the remainder of the subscription term. The 10% annual discount will still apply to the new plan. This ensures billing transparency and flexibility while preserving your discount, even if your needs change mid-term.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-add-an-add-on-during-an-annual-subscription" data-title="What happens if I add an add-on during an annual subscription?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-add-an-add-on-during-an-annual-subscription" data-title="What happens if I add an add-on during an annual subscription?">
                         <div class="container">
                             <p>If you add an add-on (such as Trendz, TBMQ, or Mobile App) during an active annual subscription, the additional cost will be calculated on a monthly basis for the remainder of the subscription period. The 10% annual discount will still apply to the added feature (not for storage and additional device fee) for the months it is active within the billing year. This ensures consistent billing logic across upgrades and add-on usage without requiring a full plan change.</p>
                         </div>
@@ -2478,43 +2484,46 @@ selfManagedPlan:
                             <p>Telemetry rows receive a TTL (time-to-live) at the moment they are written. If the TTL is missing or longer than intended, those rows cannot be purged retrospectively; they will live until the TTL expires or the table is truncated. Be sure to set an appropriate TTL in your Rule Engine or integration pipeline when inserting data to keep storage growth predictable.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-long-is-telemetry-retained" data-title="How long is telemetry retained?">
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-long-is-telemetry-retained" data-title="How long is telemetry retained?">
                         <div class="container">
                             <p>Retention is 100 % customer-controlled through the built-in TTL settings or Rule Engine logic. Keep data for days or years—just remember that longer retention consumes more storage and may raise your bill.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-there-rest-websocket-api-rate-limits" data-title="Are there REST / WebSocket API rate limits?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-rest-websocket-api-rate-limits" data-title="Are there REST / WebSocket API rate limits?">
                         <div class="container">
                             <p>Yes. Per tenant, device and user limits prevent abuse and protect cluster health. The full tables are published here: thingsboard.io/private-cloud/api-limits (link placeholder). Contact us to raise limits if needed.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-there-limits-on-dashboards-widgets-rule-chains-or-alarms" data-title="Are there limits on dashboards, widgets, rule chains, or alarms?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-limits-on-dashboards-widgets-rule-chains-or-alarms" data-title="Are there limits on dashboards, widgets, rule chains, or alarms?">
                         <div class="container">
                             <p>In practice no—you may create as many dashboards, widgets, rule chains, and alarms as your project needs. Keep in mind, though, that the msg/min SLA applies only to the default rule-chain templates we provision. Heavy or inefficient custom logic can slow processing.</p>
                             <p>To protect data integrity while you troubleshoot, every cluster ships with a Kafka buffer of up to 50 GB (roughly several hours of traffic, depending on throughput). Incoming telemetry is queued there until the Rule Engine catches up. If the buffer fills completely, the oldest messages are discarded first, so maintaining efficient rule chains is essential for uninterrupted data flow.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-many-user-accounts-and-tenants-can-i-create" data-title="How many user accounts and tenants can I create?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-many-user-accounts-and-tenants-can-i-create" data-title="How many user accounts and tenants can I create?">
                         <div class="container">
                             <p>User accounts are unlimited. Your Private Cloud instance is provisioned for a single top-level system administrator; that system administrator can create any number of tenants, customers and sub-customers and users without extra charge.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-whats-the-maximum-size-for-firmware-or-file-uploads-ota-assets" data-title="What’s the maximum size for firmware or file uploads (OTA, assets)?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-whats-the-maximum-size-for-firmware-or-file-uploads-ota-assets" data-title="What’s the maximum size for firmware or file uploads (OTA, assets)?">
                         <div class="container">
                             <p>Individual file uploads are limited to 5 MB. Larger OTA bundles can be delivered by hosting them externally and serving the URL to edge devices.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-often-are-backups-taken-and-how-long-are-they-kept" data-title="How often are backups taken and how long are they kept?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-often-are-backups-taken-and-how-long-are-they-kept" data-title="How often are backups taken and how long are they kept?">
                         <div class="container">
                             <p>Nightly snapshots (full or incremental, depending on data churn) are stored in a separate cloud region. We retain backups for 7 days by default; longer retention can be arranged under the Enterprise tier.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-if-i-outgrow-my-plan-how-quickly-can-i-upgrade-and-will-there-be-downtime" data-title="If I outgrow my plan, how quickly can I upgrade and will there be downtime?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-if-i-outgrow-my-plan-how-quickly-can-i-upgrade-and-will-there-be-downtime" data-title="If I outgrow my plan, how quickly can I upgrade and will there be downtime?">
                         <div class="container">
                             <p>Notify us as soon as you foresee sustained traffic growth. We provision the larger tier within three business days. Upgrades are performed live on Kubernetes; no downtime is expected, though brief reconnections (&lt;1 min) may occur when scaling nodes.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-device-limits-private-cloud-plans" data-title="What are the device limits Private Cloud plans?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-device-limits-private-cloud-plans" data-title="What are the device limits Private Cloud plans?">
                         <div class="container">
                             <p>Each plan includes a different default device capacity: <br><br></p>
                             <p>Launch: 5,000 devices<br></p>
@@ -2523,12 +2532,12 @@ selfManagedPlan:
                             <p>Enterprise: unlimited devices<br></p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-title="What happens if I exceed my included device limit?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-title="What happens if I exceed my included device limit?">
                         <div class="container">
                             <p>If you exceed the included device count, you can continue adding more devices by paying an additional per-device fee according to your plan. Exceeding the device limit does not automatically require a plan upgrade, as long as your message rate per minute remains within the predefined operational thresholds.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-message-rate-limit-and-why-is-it-important" data-title="What is the message rate limit and why is it important?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-message-rate-limit-and-why-is-it-important" data-title="What is the message rate limit and why is it important?">
                         <div class="container">
                             <p>Each Private Cloud plan includes a predefined message rate limit measured in messages per minute. This is the most critical technical limit in our offering, as it defines how much telemetry and integration data your system can process without impacting performance or SLA. <br><br></p>
                             <p>The message rate limits per plan are:</p>
@@ -2541,18 +2550,18 @@ selfManagedPlan:
                             <p>If your usage exceeds the limit of your current plan, a mandatory upgrade will be required to maintain service stability and SLA guarantees. Message throughput is actively monitored by the ThingsBoard team.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
                         <div class="container">
                             <p>The Launch plan is based solely on PostgreSQL, which is ideal for lightweight deployments. Growth, Scale, and Enterprise plans use a hybrid approach combining PostgreSQL and Cassandra, ensuring better scalability, fault tolerance, and performance for large-scale, high-availability environments.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-sql-and-cassandra-support" data-title="What is the difference between SQL and Cassandra support?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-sql-and-cassandra-support" data-title="What is the difference between SQL and Cassandra support?">
                         <div class="container">
                             <p>PostgreSQL (SQL) is a relational database ideal for structured queries, transactional operations, and smaller workloads. It offers simplicity and consistency, making it perfect for monolithic deployments like the Launch plan. <br><br></p>
                             <p>Cassandra is a distributed NoSQL database designed for high availability, horizontal scalability, and large data volumes. It is better suited for microservice architectures and use cases requiring high throughput and fault tolerance, as used in Growth, Scale, and Enterprise plans. Combining both allows us to optimize for both operational analytics and real-time performance depending on the data model.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-2x-and-3x-replication" data-title="What is the difference between 2x and 3x replication?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-2x-and-3x-replication" data-title="What is the difference between 2x and 3x replication?">
                         <div class="container">
                             <p>Data replication ensures durability and high availability of your data within the Private Cloud infrastructure. The replication level defines how many copies of your data are stored across different nodes: <br></p>
                             <ul>
@@ -2563,17 +2572,17 @@ selfManagedPlan:
                             <p>Higher replication enhances fault tolerance and system resilience, particularly for production-grade deployments.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-does-multi-az-database-replication-mean" data-title="What does multi-AZ database replication mean?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-does-multi-az-database-replication-mean" data-title="What does multi-AZ database replication mean?">
                         <div class="container">
                             <p>Multi-AZ (Availability Zone) database replication refers to the distribution of data copies across multiple physical data center locations within the same region. This provides enhanced fault tolerance, automatic failover, and increased uptime by ensuring that even if one availability zone goes down, your data and services remain accessible through other zones. It is a key feature in Growth, Scale, and Enterprise plans to support high availability and disaster resilience.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-does-geo-region-deployment-selection-include" data-title="What does geo-region deployment selection include?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-does-geo-region-deployment-selection-include" data-title="What does geo-region deployment selection include?">
                         <div class="container">
                             <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window" data-title="Can I choose a specific maintenance window?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window" data-title="Can I choose a specific maintenance window?">
                         <div class="container">
                             <p>Yes, you can. All Private Cloud plans allow customers to request and define a preferred maintenance window. This ensures any upgrades or maintenance activities are scheduled at a time that minimizes disruption to your operations. Our team coordinates with you to honor this window whenever changes are required.</p>
                         </div>

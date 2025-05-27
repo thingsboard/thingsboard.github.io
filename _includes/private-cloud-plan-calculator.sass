@@ -29,30 +29,24 @@
         position: absolute
         right: 9px
         top: 8px
+        cursor: pointer
 
-      a, button
-        &.btn
+      .button
+        text-align: center
+
+        &.reset
           background-color: #fff
           color: #2A7DEC
-          padding: 8px 24px
-          text-align: center
-          font-size: 18px
-          font-weight: 500
-          outline: none
-          border-radius: 6px
-          border: solid 1px #2A7DEC
-          line-height: 28px
           width: 200px
           align-self: flex-end
-
-          &.fill
-            background-color: #2A7DEC
-            color: #fff
-            width: 100%
+          border: solid 1px #2A7DEC
+          outline: none
 
           &:hover
             background-color: #fff
             color: #2A7DEC
+            filter: brightness(1.2)
+
 
       .card
         padding: 48px
@@ -87,6 +81,31 @@
             line-height: 44px
             margin-bottom: 32px
             font-weight: 500
+            .copy-button
+              display: inline-block
+              margin-left: 19px
+              cursor: pointer
+              position: relative
+              border-radius: 50%
+
+              &:hover
+                background-color: #F4F8FE
+                .tooltiptext
+                  visibility: visible
+              .tooltiptext
+                position: absolute
+                right: 28px
+                width: max-content
+                padding: 0 7px
+                visibility: hidden
+                background-color: #000000c7
+                color: #fff
+                text-align: center
+                border-radius: 6px
+                font-size: 12px
+
+              img
+                vertical-align: baseline
 
           h4
             font-size: 20px
@@ -115,7 +134,7 @@
               p
                 font-size: 14px
                 line-height: 24px
-                font-weight: 400
+                font-weight: 500
                 margin-bottom: 12px
                 color: #3D3D3D
 
@@ -219,7 +238,7 @@
                     line-height: 24px
 
               .input
-                padding: 16px
+                padding: 10px
                 border: 1px solid #E0E1E2
                 border-radius: 6px
                 font-size: 14px
@@ -239,7 +258,7 @@
                 align-items: center
 
                 .select
-                  padding: 16px
+                  padding: 10px
                   border: 1px solid #E0E1E2
                   border-radius: 6px
                   font-size: 14px
@@ -321,6 +340,10 @@
                       visibility: hidden
                     .tick-label
                       transform: none
+
+                  &:last-child
+                    .tick-label
+                      transform: translateX(-7px)
 
                   .tick
                     width: 4px
@@ -439,21 +462,37 @@
           &.results
             width: 100%
 
+          p.contact-us-text
+            margin-bottom: 16px
+
+          div.results-total
+            margin-bottom: 16px
+
 @media screen and (max-width: 599px)
   .modal-overlay
     .modal-content
       .modal-body
         .card
           padding: 16px
+
+          &.calculator
+            h2
+              font-size: 28px
+
+          .btn
+            width: 100%
+
           .input-parameters
             .input-group
               &.addons
                 .add-ons-container
                   flex-direction: column
+                  gap: 16px
 
               .input-label-group
                 flex-direction: column
                 align-items: unset
+                margin-bottom:  16px
 
                 .label
                   .tooltip
@@ -465,3 +504,7 @@
                 .input
                   &.input-right
                     width: 100%
+
+          .card-header
+            h3
+              font-size: 22px

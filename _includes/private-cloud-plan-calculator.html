@@ -17,6 +17,7 @@
                                     <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
                                 </span>
                             </label>
+                            <label for="devices" class="visually-hidden">The total number of IoT devices that will connect to ThingsBoard</label>
                             <input id="devices" type="number" value="5000" class="input input-right">
                         </div>
                         <div class="slider-container">
@@ -59,6 +60,7 @@
                             </label>
                             <div class="input-with-select">
                                 <input id="messages" type="number" value="1" class="input input-right">
+                                <label for="messageUnit" class="visually-hidden">How many messages each device sends in the selected time period</label>
                                 <select id="messageUnit" class="select">
                                     <option value="minute">per minute</option>
                                     <option value="hour" selected>per hour</option>
@@ -67,6 +69,7 @@
                             </div>
                         </div>
                         <div class="slider-container messages">
+                            <label for="messagesSlider" class="visually-hidden">How many data points are included in each message</label>
                             <input type="range" id="messagesSlider" min="1" max="60" step="1" value="1" class="slider">
                             <div id="msgPerHour" class="tick-marks">
                                 <div class="tick-mark">
@@ -146,6 +149,7 @@
                             <input id="dataPoints" type="number" value="10" class="input input-right">
                         </div>
                         <div class="slider-container">
+                            <label for="dataPointsSlider" class="visually-hidden">How many data points are included in each message</label>
                             <input type="range" id="dataPointsSlider" min="1" max="100" step="1" value="10"
                                    class="slider">
                             <div class="tick-marks">
@@ -185,6 +189,7 @@
                             </label>
                             <div class="input-with-select">
                                 <input id="retention" type="number" value="3" class="input input-right">
+                                <label for="retentionUnit" class="visually-hidden">How long you need to store your data</label>
                                 <select id="retentionUnit" class="select hidden">
                                     <option value="days">days</option>
                                     <option value="months" selected>months</option>
@@ -193,6 +198,7 @@
                             </div>
                         </div>
                         <div class="slider-container">
+                            <label for="retentionSlider" class="visually-hidden">How long you need to store your data</label>
                             <input type="range" id="retentionSlider" min="1" max="60" step="1" value="3" class="slider">
                             <div class="tick-marks">
                                 <div class="tick-mark">
@@ -243,7 +249,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="calculatorReset" class="btn">Reset</button>
+                <button id="calculatorReset" class="button reset">Reset</button>
             </div>
             <div id="resultsCard" class="card results hidden">
             </div>
@@ -252,6 +258,7 @@
 </div>
 <script>
     const privateCloudPlans = {{ plans }};
+    let clipboardMessage = '';
 
     function openModal() {
         const modal = document.getElementById('myModal');
@@ -321,8 +328,9 @@
 
         for (let checkbox of [devEnvsCheckbox, testEnvsCheckbox, mobileAppCheckbox]) {
             checkbox.addEventListener('input', () => {
-                calculateResults()
+                calculateResults();
             });
+            checkbox.addEventListener('change', debouncedHandleInteraction);
         }
 
         resetButton.addEventListener('click', () => {
@@ -449,7 +457,16 @@
             resultsCard.classList.remove('hidden');
             resultsCard.innerHTML = `
                 <div class="card-header">
-                  <h3>Calculation summary</h3>
+                  <h3>
+                    Calculation summary
+                    <div id="copyButton" class="copy-button" onclick="copyToClipboard(this)">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 4V16C8 16.5304 8.21071 17.0391 8.58579 17.4142C8.96086 17.7893 9.46957 18 10 18H18C18.5304 18 19.0391 17.7893 19.4142 17.4142C19.7893 17.0391 20 16.5304 20 16V7.242C20 6.97556 19.9467 6.71181 19.8433 6.46624C19.7399 6.22068 19.5885 5.99824 19.398 5.812L16.083 2.57C15.7094 2.20466 15.2076 2.00007 14.685 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4Z" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 18V20C16 20.5304 15.7893 21.0391 15.4142 21.4142C15.0391 21.7893 14.5304 22 14 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V9C4 8.46957 4.21071 7.96086 4.58579 7.58579C4.96086 7.21071 5.46957 7 6 7H8" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="tooltiptext">Copy calculation summary</span>
+                    </div>
+                  </h3>
                   <h4>
                       Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})
                   </h4>
@@ -458,20 +475,20 @@
                     <div class="results-item">
                       <span class="results-label">Data Points Rate:</span>
                       <span class="results-value">
-                        ${dataPointsPerMinute.toFixed(2)} points/min
+                        ${formatNumber(dataPointsPerMinute, 2)} points/min
                         <span class="tooltip">${icon}<span class="tooltip-text">The rate at which your devices generate data points that need to be processed and stored.</span></span>
                       </span>
                     </div>
                     <div class="results-item">
                       <span class="results-label">Included Devices:</span>
                       <span class="results-value">
-                        ${plan.includedDevices}
+                        ${formatNumber(plan.includedDevices, 0)}
                       </span>
                     </div>
                     <div class="results-item">
                       <span class="results-label">Extra Devices:</span>
                       <span class="results-value">
-                        ${extraDevices}
+                        ${formatNumber(extraDevices, 0)}
                         <span class="tooltip">${icon}<span class="tooltip-text">The number of devices exceeding what's included in your base plan.</span></span>
                       </span>
                     </div>
@@ -479,35 +496,35 @@
                       <span class="results-label">Extra Device Cost:</span>
                       <span class="results-value">
                         ${formatCurrency(extraDeviceCost)}
-                        <span class="tooltip">${icon}<span class="tooltip-text">The additional cost for devices beyond what's included in your base plan. <br> ${formatCurrency(extraDeviceCost)} = ${extraDevices} extra devices × $${plan.extraDevicePrice.toFixed(2)} per device</span></span>
+                        <span class="tooltip">${icon}<span class="tooltip-text">The additional cost for devices beyond what's included in your base plan. <br> ${formatCurrency(extraDeviceCost)} = ${formatNumber(extraDevices, 0)} extra devices × $${formatNumber(plan.extraDevicePrice)} per device</span></span>
                       </span>
                     </div>
                     <div class="results-item">
                       <span class="results-label">Included Storage:</span>
                       <span class="results-value">
-                        ${plan.storage} GB
-                        <span class="tooltip">${icon}<span class="tooltip-text">The amount of storage included in your base plan price. <br> The ${plan.name} plan includes ${plan.storage} GB of storage in the base price of ${formatCurrency(plan.price)}/month.</span></span>
+                        ${formatNumber(plan.storage, 0)} GB
+                        <span class="tooltip">${icon}<span class="tooltip-text">The amount of storage included in your base plan price. <br> The ${plan.name} plan includes ${formatNumber(plan.storage, 0)} GB of storage in the base price of ${formatCurrency(plan.price)}/month.</span></span>
                       </span>
                     </div>
                     <div class="results-item">
                       <span class="results-label">Storage Used:</span>
                       <span class="results-value">
-                        ${storageNeeded.toFixed(2)} GB
+                        ${formatNumber(storageNeeded, 2)} GB
                         <span class="tooltip">${icon}<span class="tooltip-text">The total amount of storage your data will require based on your retention period.</span></span>
                       </span>
                     </div>
                     <div class="results-item">
                       <span class="results-label">Extra Storage:</span>
                       <span class="results-value">
-                        ${extraStorage.toFixed(2)} GB
-                        <span class="tooltip">${icon}<span class="tooltip-text">The amount of storage exceeding what's included in your base plan. <br> ${extraStorage.toFixed(2)} GB = ${storageNeeded.toFixed(2)} GB used - ${plan.storage} GB included</span></span>
+                        ${formatNumber(extraStorage, 2)} GB
+                        <span class="tooltip">${icon}<span class="tooltip-text">The amount of storage exceeding what's included in your base plan. <br> ${formatNumber(extraStorage, 2)} GB = ${formatNumber(storageNeeded, 2)} GB used - ${formatNumber(plan.storage, 0)} GB included</span></span>
                       </span>
                     </div>
                     <div class="results-item">
                       <span class="results-label">Extra Storage Cost:</span>
                       <span class="results-value">
                         ${formatCurrency(extraStorageCost)}
-                        <span class="tooltip">${icon}<span class="tooltip-text">The additional cost for storage beyond what's included in your base plan. <br> ${formatCurrency(extraStorageCost)} = ${extraStorage.toFixed(2)} GB × $${privateCloudPlans.extraStorageCostPerGB.toFixed(2)} per GB</span></span>
+                        <span class="tooltip">${icon}<span class="tooltip-text">The additional cost for storage beyond what's included in your base plan. <br> ${formatCurrency(extraStorageCost)} = ${formatNumber(extraStorage, 2)} GB × $${formatNumber(privateCloudPlans.extraStorageCostPerGB)} per GB</span></span>
                       </span>
                     </div>
                 </div>
@@ -519,7 +536,7 @@
                     <span class="tooltip">${icon}<span class="tooltip-text">The total amount you'll pay each month based on your usage. <br> ${formatCurrency(totalPriceCalc())} = ${totalPriceTooltip()}</span></span>
                   </span>
                 </div>
-                <a id="contactUs" class="btn fill" href="/docs/contact-us/">
+                <a id="contactUs" class="button" href="/docs/contact-us/">
                     Contact Us
                     <span class="visually-hidden">to help you with your Private Cloud plan.</span>
                 </a>
@@ -593,7 +610,8 @@
                 } = results;
                 const contactButton = document.getElementById('contactUs');
 
-                const message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n Data Points Rate: ${dataPointsPerMinute.toFixed(2)} points/min\n Included Devices: ${plan.includedDevices}\n Extra Devices: ${extraDevices}\n Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n Included Storage: ${plan.storage} GB\n Storage Used: ${storageNeeded.toFixed(2)} GB\n Extra Storage: ${extraStorage.toFixed(2)} GB\n Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n${addons()} \nTotal Monthly Cost: ${formatCurrency(totalPriceCalc())}`;
+                const message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n Included Devices: ${formatNumber(plan.includedDevices)}\n Extra Devices: ${formatNumber(extraDevices, 0)}\n Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n Included Storage: ${formatNumber(plan.storage, 0)} GB\n Storage Used: ${formatNumber(storageNeeded)} GB\n Extra Storage: ${formatNumber(extraStorage)} GB\n Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n${addons()} \nTotal Monthly Cost: ${formatCurrency(totalPriceCalc())}`;
+                clipboardMessage = message;
                 contactButton.href = contactButton.href + '?subject=' + encodeURIComponent('Private Cloud') + '&message=' + encodeURIComponent(message);
 
                 function addons() {
@@ -620,7 +638,16 @@
             resultsCard.classList.remove('hidden');
             resultsCard.innerHTML = `
                 <div class="card-header">
-                  <h3>Calculation summary</h3>
+                  <h3>
+                    Calculation summary
+                    <div id="copyButton" class="copy-button" onclick="copyToClipboard(this)">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 4V16C8 16.5304 8.21071 17.0391 8.58579 17.4142C8.96086 17.7893 9.46957 18 10 18H18C18.5304 18 19.0391 17.7893 19.4142 17.4142C19.7893 17.0391 20 16.5304 20 16V7.242C20 6.97556 19.9467 6.71181 19.8433 6.46624C19.7399 6.22068 19.5885 5.99824 19.398 5.812L16.083 2.57C15.7094 2.20466 15.2076 2.00007 14.685 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4Z" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 18V20C16 20.5304 15.7893 21.0391 15.4142 21.4142C15.0391 21.7893 14.5304 22 14 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V9C4 8.46957 4.21071 7.96086 4.58579 7.58579C4.96086 7.21071 5.46957 7 6 7H8" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="tooltiptext">Copy calculation summary</span>
+                    </div>
+                  </h3>
                   <h4 class="wrap">
                       Your setup is seriously impressive. It's time for an Enterprise solution!
                   </h4>
@@ -629,21 +656,21 @@
                  <div class="results-item">
                    <span class="results-label"> Data points rate:</span>
                    <span class="results-value">
-                     ${dataPointsPerMinute.toFixed(2)} points/minute
+                     ${formatNumber(dataPointsPerMinute, 2)} points/minute
                     <span class="tooltip">${icon}<span class="tooltip-text">The rate at which your devices generate data points that need to be processed and stored.</span></span>
                    </span>
                  </div>
                  <div class="results-item">
                    <span class="results-label">Estimated storage needed:</span>
                    <span class="results-value">
-                     ${storageNeededInGB.toFixed(2)} GB
+                     ${formatNumber(storageNeededInGB)} GB
                     <span class="tooltip">${icon}<span class="tooltip-text">The amount of storage required to keep your data for the specified retention period.</span></span>
                    </span>
                  </div>
                 </div>
                 <div></div>
                 <p class="contact-us-text">Please contact our sales team for a custom Enterprise solution.</p>
-                <a id="enterpriseContactUs" class="btn fill" href="/docs/contact-us/">
+                <a id="enterpriseContactUs" class="button" href="/docs/contact-us/">
                     Contact Us
                     <span class="visually-hidden">to help you with your Private Cloud plan.</span>
                 </a>
@@ -653,7 +680,8 @@
 
         function updateEnterpriseContactUsParams(dataPointsPerMinute, devices, storageNeededInGB) {
             const enterpriseContactUs = document.getElementById('enterpriseContactUs');
-            const message = `Optimal Plan: Enterprise\n Data Points Rate: ${dataPointsPerMinute.toFixed(2)} points/min\n Included Devices: ${devices}\n Estimated storage needed: ${storageNeededInGB.toFixed(2)} GB`;
+            const message = `Optimal Plan: Enterprise\n Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n Included Devices: ${formatNumber(devices, 0)}\n Estimated storage needed: ${formatNumber(storageNeededInGB)} GB`;
+            clipboardMessage = message;
             enterpriseContactUs.href = enterpriseContactUs.href + '?subject=' + encodeURIComponent('Private Cloud') + '&message=' + encodeURIComponent(message);
         }
 
@@ -667,7 +695,6 @@
                 retentionSlider.max = 365;
             }
 
-            // Ensure current value doesn't exceed max
             if (Number(retentionSlider.value) > Number(retentionSlider.max)) {
                 retentionSlider.value = retentionSlider.max;
                 retentionInput.value = retentionSlider.max;
@@ -679,6 +706,7 @@
                 slider.value = input.value;
                 sliderProgress(slider);
                 calculateResults();
+                debouncedHandleInteraction();
             });
 
             slider.addEventListener('input', () => {
@@ -686,11 +714,56 @@
                 sliderProgress(slider);
                 calculateResults();
             });
+            slider.addEventListener('change', debouncedHandleInteraction);
+        }
+
+        let debounceTimer
+
+        function debouncedHandleInteraction() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                sendDataToGTM();
+            }, 1500);
+        }
+
+        function sendDataToGTM() {
+            if (checkGTagDataLayer()) {
+                return;
+            }
+
+            gtag("event", "private_cloud_calculator", {
+                "event_category": "Private Cloud Calculator",
+                'calculator_devices': parseInt(devicesInput.value) || 0,
+                'calculator_messages': parseInt(messagesInput.value) || 0,
+                'calculator_message_unit': messageUnitSelect.value,
+                'calculator_data_points': parseInt(dataPointsInput.value) || 0,
+                'calculator_retention_months': parseInt(retentionInput.value) || 0,
+                'calculator_addon_dev_envs': devEnvsCheckbox.checked,
+                'calculator_addon_test_envs': testEnvsCheckbox.checked,
+                'calculator_addon_mobile_app': mobileAppCheckbox.checked
+            });
         }
     }
 
+    function copyToClipboard(button) {
+        const $temp = $("<textarea>");
+        $("body").append($temp);
+        window.getSelection().removeAllRanges();
+        $temp.val(clipboardMessage).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        button.classList.toggle('copied');
+        const tooltipEl = button.lastElementChild;
+        tooltipEl.innerHTML = "Copied";
+        setTimeout(() => {
+            tooltipEl.innerHTML = 'Copy calculation summary';
+            button.classList.toggle('copied');
+        }, 1500);
+    }
+
     function sliderProgress(slider) {
-        const progress = (slider.value / slider.max) * 100;
+        const progress = (slider.value / slider.max) * 100 - 0.5;
         slider.style.background = `linear-gradient(to right, #2A7DEC ${progress}%, #E0E1E2 ${progress}%)`;
     }
 
@@ -699,6 +772,13 @@
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2
+        }).format(value).replace(',', ' ');
+    }
+
+    function formatNumber(value, fractionDigits) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'decimal',
+            maximumFractionDigits:fractionDigits
         }).format(value).replace(',', ' ');
     }
 
