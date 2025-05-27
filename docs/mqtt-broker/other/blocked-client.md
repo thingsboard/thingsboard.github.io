@@ -1,22 +1,27 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Blocked Clients
-description: TBMQ Blocked clients description
+description: TBMQ Blocked Clients description
 
 ---
 
 * TOC
 {:toc}
 
-The **Blocked Clients** feature in TBMQ allows administrators to deny access to clients based on specific identifiers or patterns.
-This enhances security, protects system resources, and enables dynamic control over who is permitted to connect and communicate with the MQTT broker.
+The **Blocked Clients** feature in TBMQ allows administrators to restrict access to the broker based on specific client identifiers or pattern-based rules.
+It strengthens security, helps conserve system resources, and provides fine-grained control over who can initiate and maintain connections with the MQTT broker.
 
-Blocked clients are loaded into memory for fast lookup and are propagated across the cluster using Kafka,
-ensuring consistent behavior in multi-node deployments. Each blocked client entry can have an expiration timestamp,
-after which it is considered inactive and eligible for automatic removal.
+Blocked Clients are stored in memory for fast and efficient matching and are synchronized across all broker nodes in the cluster using Kafka.
+This ensures consistent enforcement of block rules in distributed deployments.
 
-The blocked client check is performed **before** the authentication process,
-ensuring that unauthorized or malicious clients can be denied access early during the connection establishment phase.
+Each Blocked Client entry can include an optional expiration timestamp. Once expired, the entry is treated as inactive and automatically cleaned up during the periodic cleanup process.
+
+Importantly, Blocked Client checks are performed **before** the authentication phase.
+This ensures that unauthorized or potentially malicious connection attempts are rejected early—before any credentials are evaluated—resulting in reduced system load and faster rejection of disallowed clients.
+
+> **Scenario**: You’ve detected a client (clientId: attack-bot-23) trying to flood the broker with connection attempts or malformed packets.
+> **Action**: Create a CLIENT_ID block entry to immediately prevent further connections from this client.
+> **Benefit**: Immediate mitigation of malicious behavior without requiring changes to authentication logic or certificates.
 
 ## Supported Block Types
 
@@ -31,25 +36,45 @@ You can block a client using any of the following identifiers:
 
 The `REGEX` type supports matching based on one of:
 
-* `BY_CLIENT_ID`
-* `BY_USERNAME`
-* `BY_IP_ADDRESS`
+* `BY_CLIENT_ID`.
+* `BY_USERNAME`.
+* `BY_IP_ADDRESS`.
+
+To block all clients whose IDs start with `test-` followed by digits, you can use the following regex rule:
+
+```text
+Type: REGEX
+Regex Pattern: ^test-\d+$
+Match Target: BY_CLIENT_ID
+```
+
+This will block clients such as:
+
+* `test-001`
+* `test-42`
+* `test-9999`
+
+But **not**:
+
+* `demo-test-1`
+* `test-user`
+* `test-`
 
 ## How It Works
 
 During the connection phase, each client is evaluated in the following order:
 
-1. Exact match on `CLIENT_ID`
-2. Exact match on `USERNAME`
-3. Exact match on `IP_ADDRESS`
-4. Regex-based match (if any exist)
+1. Exact match on `CLIENT_ID`.
+2. Exact match on `USERNAME`.
+3. Exact match on `IP_ADDRESS`.
+4. Regex-based match (if any exist).
 
 If a match is found and the corresponding entry is not expired, the connection is rejected.
 Blocked Client events are also tracked and visible via the [Unauthorized Clients](/docs/mqtt-broker/user-guide/ui/unauthorized-clients/) feature.
 
 ## Automatic Cleanup
 
-Expired blocked Clients are automatically cleaned up in the background.
+Expired Blocked Clients are automatically cleaned up in the background.
 
 ```yaml
 blocked-client:
@@ -64,6 +89,13 @@ Cleanup is performed only when the Blocked Client is expired and the TTL period 
 
 ## Recommendations
 
-* Use regex blocking only when necessary, as pattern matching may introduce additional overhead.
-* Prefer authentication-based denial mechanisms (e.g., invalid credentials or certificates) over blocking where possible.
-* Keep the number of Blocked Clients as low as possible to avoid memory overhead and ensure fast lookup performance.
+To ensure optimal performance and maintainability when using the **Blocked Clients** feature, consider the following best practices:
+
+* **Avoid using regex rules unless truly needed**: Pattern matching with regular expressions can slow down the system, 
+as all regex rules must be checked for every client connection. Use this only when exact matches by client ID, username, or IP address are not enough.
+
+* **Use authentication to reject the majority of clients**: It’s better to block clients using standard authentication methods. 
+Blocking should be used as an additional method, not the main one.
+
+* **Keep the number of Blocked Clients low**: A large number of blocked entries, especially regex-based ones, can use more memory and slow down lookups. 
+Keeping the list small ensures faster performance and better scalability.
