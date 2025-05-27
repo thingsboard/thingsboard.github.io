@@ -76,10 +76,10 @@ sudo dpkg -i tb-edge-{{ site.release.pe_edge_ver }}.deb
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### Step 7. Restart ThingsBoard Edge Service
+### Step 7. Start the ThingsBoard Edge Service
 
 ```bash
-sudo service tb-edge restart
+sudo service tb-edge start
 ```
 {: .copy-code}
 
