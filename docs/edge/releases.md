@@ -10,9 +10,9 @@ description: ThingsBoard Edge Release Notes
 
 ## v4.0.1 (May 15, 2025) {#v401}
 
-**Major** release with everything (except the Calculated Fields feature) from [TB CE v4.0](/docs/reference/releases/#v40){: target="_blank"}:
+**Major** release with everything (except the Calculated Fields feature) from [TB CE v4.0](/docs/reference/releases/#v40){: target="_blank"} and [TB CE v4.0.1](/docs/reference/releases/#v401){: target="_blank"}:
 
-* [#9195](https://github.com/thingsboard/thingsboard/pull/9195){: target="_blank"} Run multiple Edge nodes in a clustered, high-availability setup by @AndriiLandiak;
+* [#9195](https://github.com/thingsboard/thingsboard/pull/9195){: target="_blank"} Run multiple Edge nodes in a high-availability cluster by @AndriiLandiak;
 * [#131](https://github.com/thingsboard/thingsboard-edge/pull/131){: target="_blank"} Create and edit Rule Chains directly on Edge by @AndriiLandiak;
 
 ## v3.9.1 (Mar 14, 2025) {#v391}

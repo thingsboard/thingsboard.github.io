@@ -10,7 +10,7 @@ description: ThingsBoard Edge Release Notes
 
 ## v4.0.1 (May 15, 2025) {#v401}
 
-**Major** release with everything (except the Calculated Fields feature) from [TB Edge v4.0.1](/docs/edge/releases/#v401){: target="_blank"} and [TB PE v4.0.1](/docs/pe/reference/releases/#v40){: target="_blank"}.
+**Major** release with everything (except the Calculated Fields feature) from [TB Edge v4.0.1](/docs/edge/releases/#v401){: target="_blank"}, [TB PE v4.0](/docs/pe/reference/releases/#v40){: target="_blank"}, and [TB PE v4.0.1](/docs/pe/reference/releases/#v401){: target="_blank"}.
 
 ## v3.9.1 (Mar 14, 2025) {#v391}
 

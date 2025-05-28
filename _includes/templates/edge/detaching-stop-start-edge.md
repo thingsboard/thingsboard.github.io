@@ -8,26 +8,26 @@ docker compose logs -f my{{serviceName}}
 ```
 {: .copy-code}
 
-To stop the container:
+To **stop** the container, run:
 ```
 docker compose stop my{{serviceName}}
 ```
 {: .copy-code}
 
-To stop **all** containers, use the following command:
-```bash
-docker stop $(docker ps -q)
-```
-{: .copy-code}
-
-To start the container:
+To **start** the container, run:
 ```
 docker compose start my{{serviceName}}
 ```
 {: .copy-code}
 
-To start **all** containers, use the following command:
+To **stop and clean** up the docker compose environment, and delete all related data, run:
 ```bash
-docker start $(docker ps -aq)
+docker compose down -v
+```
+{: .copy-code}
+
+To **recreate** the containers, volumes, and network, run: 
+```bash
+docker compose up -d
 ```
 {: .copy-code}
