@@ -772,14 +772,14 @@
             style: 'currency',
             currency: 'USD',
             minimumFractionDigits: 2
-        }).format(value).replace(',', ' ');
+        }).format(value).replace(/,/g, ' ');
     }
 
     function formatNumber(value, fractionDigits) {
         return new Intl.NumberFormat('en-US', {
             style: 'decimal',
             maximumFractionDigits:fractionDigits
-        }).format(value).replace(',', ' ');
+        }).format(value).replace(/,/g, ' ');
     }
 
     function closeModal() {
