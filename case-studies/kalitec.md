@@ -26,13 +26,13 @@ description: Kalitec - ThingsBoard case study
             <p>
                 {% include number-animation.html startNum = 1 targetNum = 30 %}+
             </p>
-            <p>years experience </p>
+            <p>years experience</p>
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 1000 useGrouping = true %}+
+                {% include number-animation.html startNum = 1 targetNum = 60 %}%
             </p>
-            <p>devices managed through a platform</p>
+            <p>reduces risk for pedestrians</p>
         </div>
         <div class="block">
             <p>
