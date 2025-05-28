@@ -4,7 +4,8 @@
 > Before proceeding, we recommend reviewing the {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}[Getting Started guide](/docs/getting-started-guides/helloworld-pe/){:target="_blank"}{% endif %}{% if docsPrefix == null %}[Getting Started guide](/docs/getting-started-guides/helloworld/){% endif %} to become familiar with the basics of ThingsBoard.
 Additionally, it&#39;s useful to read the documentation on [calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}, as well as [creating and clearing alarms](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"}.
 
-Let&#39;s assume, you have a device equipped with a temperature sensor that sends temperature readings to ThingsBoard. You want to trigger an alarm whenever the difference (delta) between the latest temperature reading and the average of the readings from the past five minutes exceeds 5°C.
+Suppose you have a device with a temperature sensor that sends data to ThingsBoard. 
+You want to trigger an alarm whenever the difference (delta) between the last two temperature readings within the past 5 minutes exceeds 5 °C.
 
 This is a simple theoretical example meant to showcase the platform&#39;s capabilities. You can use this tutorial as a foundation for implementing more advanced and customized scenarios.
 
@@ -76,7 +77,9 @@ Finally, you&#39;ve successfully configured the rule for creating and clearing a
 
 **Calculated fields** allow users to perform real-time calculations based on telemetry data and/or attributes. You can learn more about calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
 
-- Go back to your device and open its details, and navigate to the "**Calculated fields**" tab. 
+Add a calculated field to your device that will compute the delta between the two most recent telemetry values of **temperature** key and store the result as a new telemetry value under the key **deltaTemperature**.
+
+- Go back to your device, open its details, and navigate to the "**Calculated fields**" tab. 
 - Click the "**plus**" icon button and select "**Create new calculated field**" from the dropdown menu.
 
 {% include images-gallery.html imageCollection="create-calculated-field-1" %}
@@ -90,9 +93,9 @@ Finally, you&#39;ve successfully configured the rule for creating and clearing a
 {% assign feature = "components" %}
 {% include templates/debug-mode.md %}
 
-{% include images-gallery.html imageCollection="create-calculated-field-2" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="create-calculated-field-2" %}
 
-**Expression**. Now you need to add an argument:
+**Arguments**. Now you need to add an argument:
 - Click the "**Add argument**" button.
 - Set the reference **name for the variable** in the expression.
 - Leave the entity type set to "**Current entity**".
@@ -102,16 +105,16 @@ Finally, you&#39;ve successfully configured the rule for creating and clearing a
 - Set the **maximum number of values** to be processed.
 - Finally, click "**Add**" button.
 
-{% include images-gallery.html imageCollection="create-calculated-field-3" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="create-calculated-field-3" %}
 
-Now, define a function that will perform a calculation using the variable defined in the "**Arguments**" section.
+**Script**. Now, define a function that will perform a calculation using the variable defined in the "**Arguments**" section.
 
 > The variable name that will store the calculation result is defined within the function itself.
 
 Copy this script and paste it to the function calculation window:
 
 **function calculate(ctx, temperature, defrost) {**
-```js
+```javascript
 var delta = 0;
 
 if (temperature.values.size() >= 2) {
@@ -134,32 +137,27 @@ The calculated field has been successfully added to your device.
 
 {% include images-gallery.html imageCollection="create-calculated-field-4" %}
 
+If needed, you can [download the JSON file with the calculated field configuration](/docs/user-guide/resources/telemetry_delta_calculation.json){:target="_blank"} described above and [import](/docs/{{docsPrefix}}user-guide/calculated-fields/#import-calculated-field){:target="_blank"} it into your instance.
+
 ## Check configurations
 
-To verify that our configurations are working correctly, we need to publish telemetry for our device twice within a 5-minute interval. 
-The simplest way to publish temperature readings on behalf of your device is by using the **Check connectivity** feature. 
+To ensure that our configurations are working correctly, we need to publish telemetry for our device twice within a 5-minute interval. 
+The easiest way to send temperature data on behalf of your device is by using the **Check connectivity** feature. 
 
-- In the "**Details**" tab of your device view, and click the "**Check connectivity**" button.
-- Copy the generated telemetry publishing command.
+- In the "**Details**" tab of the device view, click the "**Check connectivity**" button and copy the generated telemetry publishing command.
+- Go to the "**Latest telemetry**" tab to monitor incoming data in real time.
+- Execute the copied command in the **Terminal** to send telemetry to ThingsBoard on behalf of the device.
+
+You will see two telemetry data keys: the **temperature** key with a value of **25**, and the **deltaTemperature** key — the result of processing the temperature value using the calculated field function.
+Its value is **0** because, so far, only a single telemetry value has been sent to ThingsBoard.
+
+- Send another temperature value, for example, **32**. The **deltaTemperature** value should now be **7**, which matches the [condition for triggering the alarm](#create-alarm-rule).
+
+Navigate to the "**Alarms**" tab, where you should see the newly created alarm. This confirms that all our configurations are correct.
 
 {% include images-gallery.html imageCollection="check-configuration-1" %}
 
-- Go to the "**Latest telemetry**" tab to monitor the incoming data in real time.
-- Execute the copied command in your Terminal. 
-
-You should see a **temperature** key with a value of **25**. Additionally, a **deltaTemperature** key should appear with a value of **0**. This is the result of the calculated field processing.
-
-{% include images-gallery.html imageCollection="check-configuration-2" %}
-
-- Now publish another temperature value, for example **32**. 
-
-The **deltaTemperature** ket value should now be **7**, which meets the condition for triggering the alarm.
-
-{% include images-gallery.html imageCollection="check-configuration-3" %}
-
-- Navigate to the "**Alarms**" tab, where you should see the newly created alarm. This confirms that all our settings have been correctly configured.
-
-{% include images-gallery.html imageCollection="check-configuration-4" %}
+As soon as the deltaTemperature value becomes less than 5, the alarm will be automatically cleared.
 
 ## Next steps
 

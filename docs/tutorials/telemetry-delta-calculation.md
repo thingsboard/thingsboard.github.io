@@ -105,22 +105,16 @@ check-configuration-1:
     1:
         image: /images/tutorials/telemetry-delta-calculation/check-configuration-2-ce.png
         title: 'Copy the generated telemetry publishing command.'
-
-check-configuration-2:
-    0:
+    2:
         image: /images/tutorials/telemetry-delta-calculation/check-configuration-3-ce.png
-        title: 'Go to the "Latest telemetry" tab to monitor the incoming data in real time, and execute the copied command in your Terminal. You should see a "temperature" key with a value of 25. Additionally, a "deltaTemperature" key should appear with a value of 0. This is the result of the calculated field processing.'
-
-check-configuration-3:
-    0:
+        title: 'Go to the "Latest telemetry" tab to monitor the incoming data in real time, and execute the copied command in the Terminal to send telemetry to ThingsBoard on behalf of the device. You will see two telemetry data keys: the temperature key with a value of 25, and the deltaTemperature key — the result of processing the temperature value using the calculated field function. Its value is 0 because, so far, only a single telemetry value has been sent to ThingsBoard.'
+    3:
         image: /images/tutorials/telemetry-delta-calculation/check-configuration-4-ce.png
-        title: 'Publish another temperature value, for example 32. The "deltaTemperature" key value should now be 7, which meets the condition for triggering the alarm.'
-
-check-configuration-4:
-    0:
+        title: 'Send another temperature value, for example, 32. The deltaTemperature value should now be 7, which matches the condition for triggering the alarm.'
+    4:
         image: /images/tutorials/telemetry-delta-calculation/check-configuration-5-ce.png
-        title: 'Navigate to the "Alarms" tab, where you should see the newly created alarm. This confirms that all our settings have been correctly configured.'
-  
+        title: 'Navigate to the "Alarms" tab, where you should see the newly created alarm. This confirms that all our configurations are correct.'
+
 ---
 
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
