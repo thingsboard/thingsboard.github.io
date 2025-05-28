@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: Super Bock Group
+title: How Super Bock Transformed Beverage Distribution with ThingsBoard IoT
 notitle: "true"
-description: Super Bock Group - ThingsBoard case study
+customTitle: "true"
+description: Discover how Super Bock Group optimized beer tank monitoring and logistics using ThingsBoard's IoT platform—achieving real-time insights, predictive maintenance, and enhanced customer satisfaction.
 ---
 
 <div class="case-study-page-wrapper">

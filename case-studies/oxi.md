@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: OXI Trade
+title: How OXI TRADE Uses ThingsBoard to Power Scalable IoT for Green Energy
 notitle: "true"
-description: OXI Trade - ThingsBoard case study
+customTitle: "true"
+description: Discover how OXI TRADE optimized its alternative energy operations by integrating ThingsBoard's IoT platform—achieving efficient device management, real-time monitoring, and scalable infrastructure for enhanced performance.
 ---
 
 <div class="case-study-page-wrapper">

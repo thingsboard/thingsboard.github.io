@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: Vypin LLC
+title: How Vypin Ensures Pharmaceutical Compliance with ThingsBoard's IoT Monitoring
 notitle: "true"
-description: Vypin LLC case study
+customTitle: "true"
+description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve real-time temperature and humidity monitoring, ensuring FDA compliance and reducing data loss in pharmaceutical storage.
 ---
 
 <div class="case-study-page-wrapper">

@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: IONA Tech
+title: How IONA Tech Uses ThingsBoard to Improve ESD Monitoring and Workplace Safety
 notitle: "true"
-description: IONA Tech - ThingsBoard case study
+customTitle: "true"
+description: Discover how IONA Tech enhanced ESD monitoring by integrating ThingsBoard's IoT platform—achieving real-time data visualization, seamless hardware integration, and scalable solutions for improved workplace safety and product quality.
 ---
 
 <div class="case-study-page-wrapper">

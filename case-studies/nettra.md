@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: Nettra
+title: How Nettra Accelerated IoT Innovation by Switching to ThingsBoard
 notitle: "true"
-description: Nettra - ThingsBoard case study
+customTitle: "true"
+description: Discover how Nettra, an IoT company in telecom and energy, replaced months of in-house development by adopting ThingsBoard — gaining speed, scalability, and reliability for smart infrastructure solutions.
 ---
 
 <div class="case-study-page-wrapper">

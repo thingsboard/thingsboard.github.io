@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: Kalitec
+title: How Kalitec Delivers Smart Signage with ThingsBoard’s IoT Expertise
 notitle: "true"
-description: Kalitec - ThingsBoard case study
+customTitle: "true"
+description: Discover how Kalitec partnered with ThingsBoard to deliver reliable smart signage solutions for urban safety—achieving fast deployment, high uptime, and scalable IoT architecture for transport clients.
 ---
 
 <div class="case-study-page-wrapper">
@@ -36,7 +37,7 @@ description: Kalitec - ThingsBoard case study
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 24 %}/7
+                {% include number-animation.html startNum = 1 targetNum = 24 %}/{% include number-animation.html startNum = 1 targetNum = 7 %}
             </p>
             <p>infrastructure monitoring</p>
         </div>
