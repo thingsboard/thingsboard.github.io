@@ -360,16 +360,17 @@ send-downlink-message-hex,Hex payload,shell,resources/downlink/downlink-message-
 
 After sending the **uplink command**, you have **120 seconds** to add a shared **firmware** attribute:
 - Go to the **Entities > Devices** section, click the **device** to open the **"Device details"** page.
-- Select the **"Attributes"** tab and select the **"Shared attributes"** scope.
+- Select the **"Attributes"** tab and the **"Shared attributes"** scope.
 - To add the **firmware** attribute, click the **"Add"** button and enter the configuration parameters.
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To confirm the sent downlink message, go to the **Integrations center > Integrations** section, click the **UDP integrations** and select the **"Events"** tab:
+To confirm the downlink message sent to the device, go to the **Integrations center > Integrations** section, 
+click the **UDP integration** and select the **"Events"** tab:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-An example of the sent message and a response from **ThingsBoard Edge** in the terminal:
+The example of the message sent to the device and the response from **ThingsBoard Edge** in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
