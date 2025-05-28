@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: SuessCo Sensors GmbH
+title: How SuessCo Sensors Uses ThingsBoard to Monitor Infrastructure with 6D Sensors
 notitle: "true"
-description: SuessCo Sensors GmbH - ThingsBoard case study
+customTitle: "true"
+description: Discover how SuessCo Sensors and ThingsBoard enable real-time monitoring of bridges and historic structures in Austria using 6D sensors—improving safety, precision, and maintenance planning.
 ---
 
 <div class="case-study-page-wrapper">

@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: ÖBB-Infrastruktur AG
+title: How ÖBB-Infrastruktur AG Transformed Railway Operations with ThingsBoard
 notitle: "true"
-description: ÖBB-Infrastruktur AG - ThingsBoard case study
+customTitle: "true"
+description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and safety by integrating ThingsBoard's IoT platform—achieving real-time monitoring, predictive maintenance, and secure data flow without public internet exposure.
 ---
 
 <div class="case-study-page-wrapper">

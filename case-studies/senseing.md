@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: SenseING GmbH
+title: How SenseING GmbH Optimized Cold Chain Monitoring with ThingsBoard
 notitle: "true"
-description: SenseING GmbH - ThingsBoard case study
+customTitle: "true"
+description: Discover how SenseING GmbH enhanced food logistics by integrating ThingsBoard's IoT platform—achieving real-time temperature monitoring, reducing human error, and ensuring regulatory compliance across 100+ storage and transportation units.
 ---
 
 <div class="case-study-page-wrapper">

@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: Schwarz
+title: How Schwarz Group Unified 500,000+ IoT Devices with ThingsBoard
 notitle: "true"
-description: Schwarz - ThingsBoard case study
+customTitle: "true"
+description: Discover how Schwarz Group, operating over 13,000 stores globally, streamlined its retail operations by integrating 500,000+ devices using ThingsBoard's IoT platform, enhancing efficiency and accelerating digital transformation.
 ---
 
 <div class="case-study-page-wrapper">
