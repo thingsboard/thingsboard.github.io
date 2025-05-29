@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-private-cloud
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: ThingsBoard Private Cloud Subscription plans definition
