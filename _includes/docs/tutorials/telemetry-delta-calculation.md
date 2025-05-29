@@ -40,7 +40,7 @@ To begin, add a calculated field to your device that will compute the delta betw
 **General**. The calculated field configuration window will open.
 
 - Enter a descriptive **title** for the calculated field.
-- Select "**Script**" as the type of calculated field. This allows you to perform complex calculations using the [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} scripting language.
+- Select the "**Script**" calculated field type. This allows you to perform complex calculations using the [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} scripting language.
 
 {% include images-gallery.html imageCollection="create-calculated-field-2" %}
 

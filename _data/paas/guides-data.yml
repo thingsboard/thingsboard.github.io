@@ -269,7 +269,7 @@
       pe: true
     - path: /docs/paas/tutorials/function-based-on-telemetry-from-two-devices/
       title: Data function based on telemetry from 2 devices
-      subtitle: Learn how to generate a new telemetry value based on telemetry readings from multiple devices using the calculated fields feature.
+      subtitle: Learn how to generate a new telemetry value based on telemetry readings from multiple devices using the Calculated fields feature.
       pe: true
     - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
       title: Transform incoming telemetry

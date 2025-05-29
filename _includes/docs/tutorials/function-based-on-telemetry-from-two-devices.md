@@ -53,13 +53,13 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 {:.copy-code}
 
-After waiting for the period specified in the generator nodes, you will be able to see the telemetry on the “Latest telemetry” tab of your devices.
+After waiting for the period specified in the generator nodes, you will be able to see the telemetry on the "**Latest telemetry**" tab of your devices.
 
 {% include images-gallery.html imageCollection="thermometer-telemetry" %}
 
 ## Create calculated field
 
-**Calculated fields** allow users to perform real-time calculations based on telemetry data and/or attributes. You can learn more about calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
+The **Calculated fields** feature allows users to perform real-time calculations based on telemetry data and/or attributes. You can learn more about calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
 
 As part of our example, add a calculated field to the Warehouse A resource that calculates the difference between the temperature values of the two thermometers and stores the result as a new telemetry value with the key **deltaTemperature**.
 
@@ -73,7 +73,7 @@ As part of our example, add a calculated field to the Warehouse A resource that 
 **General**. The calculated field configuration window will open.
 
 - Enter a descriptive **title** for the calculated field.
-- Select "**Simple**" as the type of calculated field. This allows you to perform basic mathematical operations and functions on the arguments.
+- Select the "**Simple**" calculated field type. This allows you to perform basic mathematical operations on the provided arguments.
 
 {% include images-gallery.html imageCollection="create-calculated-field-2" %}
 
