@@ -24,10 +24,12 @@ services:
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
       CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or demo.thingsboard.io
       TB_QUEUE_TYPE: "kafka"
-      TB_KAFKA_SERVERS: "kafka:9094"
+      TB_KAFKA_SERVERS: "kafka:9092"
     volumes:
       - tb-edge-data:/data
       - tb-edge-logs:/var/log/tb-edge
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   postgres:
     restart: always
     image: "postgres:15"
@@ -42,15 +44,14 @@ services:
     restart: always
     image: bitnami/kafka:3.8.1
     ports:
-      - 9092:9092 #to localhost:9092 from host machine
+      - 9092
       - 9093 #for Kraft
-      - 9094 #to kafka:9094 from within Docker network
     environment:
       ALLOW_PLAINTEXT_LISTENER: "yes"
-      KAFKA_CFG_LISTENERS: "OUTSIDE://:9092,CONTROLLER://:9093,INSIDE://:9094"
-      KAFKA_CFG_ADVERTISED_LISTENERS: "OUTSIDE://localhost:9092,INSIDE://kafka:9094"
-      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,CONTROLLER:PLAINTEXT"
-      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "INSIDE"
+      KAFKA_CFG_LISTENERS: "INTERNAL://:9092,CONTROLLER://:9093"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "INTERNAL://kafka:9092"
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT"
+      KAFKA_CFG_INTER_BROKER_LISTENER_NAME: "INTERNAL"
       KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "false"
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: "1"
