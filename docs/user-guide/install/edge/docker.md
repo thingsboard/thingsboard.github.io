@@ -19,7 +19,7 @@ This guide provides step-by-step instructions for running **ThingsBoard Edge** o
 ### Docker installation
 
 {% capture local-deployment %}
-**ThingsBoard** supports D**ocker Compose V2** (Docker Desktop or Compose plugin) starting from **3.4.2 release**.
+**ThingsBoard** supports **Docker Compose V2** (Docker Desktop or Compose plugin) starting from **3.4.2 release**.
 
 We strongly recommend **upgrading to and using Docker Compose V2**, as Docker no longer supports docker-compose as a standalone setup.
 {% endcapture %}
@@ -46,9 +46,9 @@ We strongly recommend **upgrading to and using Docker Compose V2**, as Docker no
 
 **ThingsBoard Edge** is able to use different messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
 
-* **In Memory** queue implementation is built-in and default. It is useful for development(PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
+* **In Memory** queue implementation is built-in and default. It is useful for development (PoC) environments and is not suitable for production deployments or any sort of cluster deployments.
 
-* **Kafka** is recommended for production deployments. This queue is used on the most of ThingsBoard production environments now.
+* **Kafka** is recommended for production deployments. This queue is used on most of the ThingsBoard production environments now.
 
 * **Hybrid** implementation combines PostgreSQL and Cassandra databases with Kafka queue service. It is recommended if you plan to manage 1M+ devices in production or handle high data ingestion rate (more than 5000 msg/sec).
 
