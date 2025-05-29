@@ -2,6 +2,7 @@
 layout: docwithnav-pe-edge
 title: TCP Integration
 description: TCP Integration Guide
+docsPrefix: pe/edge/
 
 addConverter:
     0:
@@ -352,7 +353,7 @@ To see the downlink response, select and send another message to the **TCP integ
 
 {% capture tabspec %}send-downlink-message-tcp
 send-downlink-message-text-tcp,Text payload,shell,resources/downlink-tcp/downlink-message-text-tcp.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-text-tcp.sh
-send-downlink-message-text-tcp-multi,<div style="text-align:center;">Text payload<br><small>(multiple messages)</small></div>,shell,resources/downlink-tcp/downlink-message-text-tcp-multi.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-text-tcp-multi.sh
+send-downlink-message-text-tcp-multi,<div style="text-align:center;">Text payload<br><small>(multiple messages)</small></div>,shell,resources/downlink-tcp/downlink-message-text-tcp-multi.sh
 send-downlink-message-json-tcp,JSON payload,shell,resources/downlink-tcp/downlink-message-json-tcp.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-json-tcp.sh
 send-downlink-message-binary-tcp,Binary payload,shell,resources/downlink-tcp/downlink-message-binary-tcp.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-binary-tcp.sh{% endcapture %}
 {% include tabs.html %}
