@@ -8,6 +8,13 @@
 By defining custom expressions or scripts, users can standardize data, and create new computed metrics dynamically. 
 This feature is particularly useful for optimizing data processing, improving analytics.
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/wBUcWMSH4QI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ### Key benefits
 
 - **No additional rule chains needed**: simplifies data transformations without requiring complex rule configurations. 
