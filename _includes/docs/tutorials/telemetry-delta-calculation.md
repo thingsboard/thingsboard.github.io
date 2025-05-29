@@ -24,12 +24,84 @@ Device added.
 
 {% include images-gallery.html imageCollection="adding-thermometer-device" %}
 
+## Create calculated field
+
+The **Calculated fields** feature allows users to perform real-time calculations based on telemetry data and/or attributes. You can learn more about calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
+
+To begin, add a calculated field to your device that will compute the delta between the two most recent telemetry values of the **temperature** key and store the result as a new telemetry value under the key **deltaTemperature**.
+
+- Go back to your device, open its details, and navigate to the "**Calculated fields**" tab.
+- Click the "**plus**" icon button and select "**Create new calculated field**" from the dropdown menu.
+
+{% include images-gallery.html imageCollection="create-calculated-field-1" %}
+
+<br>
+
+**General**. The calculated field configuration window will open.
+
+- Enter a descriptive **title** for the calculated field.
+- Select "**Script**" as the type of calculated field. This allows you to perform complex calculations using the [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} scripting language.
+
+{% include images-gallery.html imageCollection="create-calculated-field-2" %}
+
+> [Optionally]. Use the **Debug mode** to track calculated field events, such as state changes and errors, for easier debugging and troubleshooting.
+
+<br>
+
+**Arguments**. Now you need to add an argument:
+- Click the "**Add argument**" button.
+- Set the reference **name for the variable** in the expression.
+- Leave the entity type set to "**Current entity**".
+- Set the argument type to "**Time series column**". This enables the use of historical time series data over a specified period for trend analysis.
+- Specify the **time series key** as "**temperature**".
+- Set the data collection time window to **5 minutes**. This determines the duration over which historical telemetry data will be collected for calculations.
+- Set the **maximum number of values** to be processed.
+- Finally, click "**Add**" button.
+
+{% include images-gallery.html imageCollection="create-calculated-field-3" %}
+
+<br>
+
+**Script**. Now, define a function that will perform a calculation using the variable defined in the "**Arguments**" section.
+
+> The variable name that will store the calculation result is defined within the function itself.
+
+Copy this script and paste it to the function calculation window:
+
+**function calculate(ctx, temperature) {**
+```javascript
+var delta = 0;
+
+if (temperature.values.size() >= 2) {
+    delta = temperature.last - temperature.first;
+}
+
+return {
+    "deltaTemperature": Math.abs(toInt(delta))
+}
+```
+{:.copy-code}
+**}**
+
+<br>
+
+**Output**. The calculated value is returned as a JSON object containing a key that represents the computed result. This key, along with its value, is then stored in the system.
+
+- Set the output type as "**Time series**" to store the calculation result as time series data.
+- To finish adding the calculated field, click "**Add**".
+
+The calculated field has been successfully added to your device.
+
+{% include images-gallery.html imageCollection="create-calculated-field-4" %}
+
+If needed, you can [download the JSON file with the calculated field configuration](/docs/user-guide/resources/telemetry_delta_calculation.json){:target="_blank"} described above and [import](/docs/{{docsPrefix}}user-guide/calculated-fields/#import-calculated-field){:target="_blank"} it into your instance.
+
 ## Create alarm rule
 
-Now, you need to set a **rule to trigger the alarm**: the alarm will activate when the "**delta**" key value is 5 or greater. The easiest way to configure this alarm rule is directly in the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}.
-Additionally, you should specify the condition for automatically clearing the alarm when the "delta" key value falls below **5**.
+Now you need to set up an **alarm rule**: the alarm should be triggered when the value of the **deltaTemperature** key is equal to or greater than 5. The easiest way to configure this alarm rule is directly within the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}.   
+Additionally, you should define a condition to automatically clear the alarm when the deltaTemperature value drops below 5.
 
-Let&#39;s begin by adding the condition for **triggering the alarm**:
+Let&#39;s start by adding the trigger condition for the alarm:
 
 - Go to the "**Device profiles**" pageo f the "**Profiles**" section, and click on the "**smart-sensor**" device profile to open its details.
 - Navigate to the "**Alarm rules**" tab.
@@ -51,7 +123,7 @@ Let&#39;s begin by adding the condition for **triggering the alarm**:
 
 The alarm trigger condition has been successfully added.
 
-{% include images-gallery.html imageCollection="adding-alarm-rule-2" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="adding-alarm-rule-2" %}
 
 <br>
 
@@ -69,75 +141,9 @@ The alarm automatically clears when the value of the "**deltaTemperature**" key 
 
 {% include images-gallery.html imageCollection="clear-alarm-rule" %}
 
-Finally, you&#39;ve successfully configured the rule for creating and clearing alarms triggered by deviations in the "**deltaTemperature**" key value from the specified parameters.
+You have successfully configured the **rule for creating and clearing alarms** based on deviations in the **deltaTemperature** key value from the defined thresholds.
 
 {% include images-gallery.html imageCollection="configured-alarm-rule" %}
-
-## Create calculated field
-
-**Calculated fields** allow users to perform real-time calculations based on telemetry data and/or attributes. You can learn more about calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
-
-Add a calculated field to your device that will compute the delta between the two most recent telemetry values of **temperature** key and store the result as a new telemetry value under the key **deltaTemperature**.
-
-- Go back to your device, open its details, and navigate to the "**Calculated fields**" tab. 
-- Click the "**plus**" icon button and select "**Create new calculated field**" from the dropdown menu.
-
-{% include images-gallery.html imageCollection="create-calculated-field-1" %}
-
-**General**. The calculated field configuration window will open. 
-
-- Enter a descriptive **title** for the calculated field.
-- Select "**Script**" as the type of calculated field. This allows you to perform complex calculations using the [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} scripting language.
-- Use the **Debug mode** to track calculated field events, such as state changes and errors, for easier debugging and troubleshooting.
-
-{% assign feature = "components" %}
-{% include templates/debug-mode.md %}
-
-{% include images-gallery.html imageCollection="create-calculated-field-2" %}
-
-**Arguments**. Now you need to add an argument:
-- Click the "**Add argument**" button.
-- Set the reference **name for the variable** in the expression.
-- Leave the entity type set to "**Current entity**".
-- Set the argument type to "**Time series column**". This enables the use of historical time series data over a specified period for trend analysis.
-- Specify the **time series key** as "**temperature**".
-- Set the data collection time window to **5 minutes**. This determines the duration over which historical telemetry data will be collected for calculations.
-- Set the **maximum number of values** to be processed.
-- Finally, click "**Add**" button.
-
-{% include images-gallery.html imageCollection="create-calculated-field-3" %}
-
-**Script**. Now, define a function that will perform a calculation using the variable defined in the "**Arguments**" section.
-
-> The variable name that will store the calculation result is defined within the function itself.
-
-Copy this script and paste it to the function calculation window:
-
-**function calculate(ctx, temperature, defrost) {**
-```javascript
-var delta = 0;
-
-if (temperature.values.size() >= 2) {
-    delta = temperature.last - temperature.first;
-}
-
-return {
-    "deltaTemperature": Math.abs(toInt(delta))
-}
-```
-{:.copy-code}
-**}**
-
-**Output**. The calculated value are returned as a JSON object containing key that represent the computed result, which are then used to store those value in the system.
-
-- Set the output type as "**Time series**" to store the calculation result as time series data.
-- To finish adding the calculated field, click "**Add**".
-
-The calculated field has been successfully added to your device.
-
-{% include images-gallery.html imageCollection="create-calculated-field-4" %}
-
-If needed, you can [download the JSON file with the calculated field configuration](/docs/user-guide/resources/telemetry_delta_calculation.json){:target="_blank"} described above and [import](/docs/{{docsPrefix}}user-guide/calculated-fields/#import-calculated-field){:target="_blank"} it into your instance.
 
 ## Check configurations
 
@@ -157,7 +163,7 @@ Navigate to the "**Alarms**" tab, where you should see the newly created alarm. 
 
 {% include images-gallery.html imageCollection="check-configuration-1" %}
 
-As soon as the deltaTemperature value becomes less than 5, the alarm will be automatically cleared.
+As soon as the **deltaTemperature** key value becomes less than 5, the alarm will be automatically cleared.
 
 ## Next steps
 

@@ -73,7 +73,7 @@ clear-alarm-rule:
 configured-alarm-rule:
     0:
         image: /images/tutorials/telemetry-delta-calculation/configured-alarm-rule-1-pe.png
-        title: 'Finally, you&#39;ve successfully configured the rule for creating and clearing alarms triggered by deviations in the "deltaTemperature" key value from the specified parameters.'
+        title: 'Finally, you have successfully configured the rule for creating and clearing alarms based on deviations in the deltaTemperature key value from the defined thresholds.'
 
 create-calculated-field-1:
     0:

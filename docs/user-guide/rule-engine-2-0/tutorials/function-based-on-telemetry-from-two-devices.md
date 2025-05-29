@@ -2,7 +2,7 @@
 layout: docwithnav
 title: Data function based on telemetry from 2 devices
 description: Data function based on telemetry from 2 devices
-
+redirect_to: "/docs/tutorials/function-based-on-telemetry-from-two-devices/"
 ---
 
 This tutorial will show how to calculate temperature delta based on the readings from the indoor outdoor warehouse thermometers.

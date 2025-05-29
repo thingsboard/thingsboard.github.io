@@ -122,7 +122,7 @@ abs(indoorTemperature - outdoorTemperature)
 
 <br>
 
-**Output**. the calculated value is returned as a JSON object containing a key that represents the computed result, which is then used to store this value in the system.
+**Output**. The calculated value is returned as a JSON object containing a key that represents the computed result. This key, along with its value, is then stored in the system.
 
 - Set the output type as "**Time series**" to store the calculation result as time series data.
 - Assign **deltaTemperature** as the name of the variable that will store the calculation result.
