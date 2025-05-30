@@ -1,8 +1,8 @@
 * TOC
 {:toc}
-  
+
 {% assign sinceVersion = "4.0" %}
-{% include templates/since.md %}
+{% include templates/edge/since-edge.md %}
 
 ### Overview
 
@@ -93,18 +93,18 @@ CLOUD_ROUTING_SECRET=PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
 {: .copy-code}
 
 View the full **.env** file:
-```bash
+```liquid
 # redis or redis-cluster or redis-sentinel
 CACHE=redis
 
 DOCKER_REPO=thingsboard
-{% if docsPrefix == "pe/edge/" %}
+{% if docsPrefix == "pe/edge/" -%}
 TB_EDGE_NODE_DOCKER_NAME=tb-edge-pe-node
 TB_EDGE_VERSION=latest
-{% else %}
+{%- else -%}
 TB_EDGE_NODE_DOCKER_NAME=tb-edge-node
 TB_EDGE_VERSION=latest
-{% endif %}
+{%- endif -%}
 # Database used by ThingsBoard, can be either postgres (PostgreSQL) or hybrid (PostgreSQL for entities database and Cassandra for timeseries database).
 # According to the database type corresponding docker service will be deployed (see docker-compose.postgres.yml, docker-compose.hybrid.yml for details).
 
@@ -113,14 +113,14 @@ TB_QUEUE_TYPE=kafka
 
 CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
 CLOUD_ROUTING_SECRET=PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-{% if docsPrefix == "pe/edge/" %}
+{% if docsPrefix == "pe/edge/" -%}
 CLOUD_RPC_HOST=thingsboard.cloud
 CLOUD_RPC_PORT=7070
 CLOUD_RPC_SSL_ENABLED=true
-{% else %}
+{%- else -%}
 CLOUD_RPC_HOST=demo.thingsboard.io
 CLOUD_RPC_PORT=7070
-{% endif %}
+{%- endif -%}
 
 LOAD_BALANCER_NAME=haproxy-certbot
 
@@ -178,7 +178,7 @@ To start the service, execute the following command:
 
 {% capture install-and-run-edge %}
 It will take a few minutes to start the services. Once all services are successfully started, open the **ThingsBoard Edge** service
-at **http://{your-host-ip}** in the browser (_e.g., http://localhost_).
+at **```http://{your-host-ip}```** in the browser (_e.g., [http://localhost](http://localhost){: target="_blank"}_).
 To log in, use **the credentials** from the **ThingsBoard** account.
 {% endcapture %}
 {% include templates/info-banner.md content=install-and-run-edge %}
@@ -197,7 +197,7 @@ docker-compose ps
 
 To inspect the logs of all running services, use:
 ```bash
-docker-compose logs --f
+docker-compose logs -f
 ```
 {: .copy-code}
 

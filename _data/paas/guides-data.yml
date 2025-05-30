@@ -256,21 +256,21 @@
       pe: false
       video: false
 - title: Data processing & actions
-  subtitle: Learn how to use ThingsBoard Rule Engine.
+  subtitle: Learn how to process data in ThingsBoard.
   id: DataProcessing
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
       title: Validate incoming telemetry
       subtitle: Learn how to configure Rule Engine to discard invalid telemetry readings based on JavaScript filter function.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/
+    - path: /docs/paas/tutorials/telemetry-delta-calculation/
       title: Telemetry delta calculation
-      subtitle: Learn how to configure Rule Engine to calculate telemetry delta readings based on Originator telemetry rule node.
-      pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/function-based-on-telemetry-from-two-devices/
+      subtitle: Learn how to calculate telemetry delta readings using the Calculated fields feature.
+      pe: true
+    - path: /docs/paas/tutorials/function-based-on-telemetry-from-two-devices/
       title: Data function based on telemetry from 2 devices
-      subtitle: Learn how to configure Rule Engine to create new telemetry based on telemetry readings from multiple devices.
-      pe: false
+      subtitle: Learn how to generate a new telemetry value based on telemetry readings from multiple devices using the Calculated fields feature.
+      pe: true
     - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
       title: Transform incoming telemetry
       subtitle: Learn how to configure Rule Engine to transform incoming telemetry based on JavaScript function before it is stored to the database.

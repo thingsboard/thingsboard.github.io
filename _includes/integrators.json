@@ -386,12 +386,12 @@
   {
     "type": ["Europe"],
     "country": ["Germany"],
-    "name": "ECBM GmbH",
+    "name": "KIOTERA",
     "contact": {
-      "href": "hoffmann@ecbm.me"
+      "href": "y.hoffmann@kiotera.de"
     },
     "site": {
-      "href": "ecbm.me",
+      "href": "kiotera.de",
       "target": "_blank"
     }
   },

@@ -166,6 +166,10 @@ var tb = (function () {
 				const sectionIdArr = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-');
 				const sectionId = sectionIdArr[sectionIdArr.length -1];
 				switchFaqSection(sectionId);
+				const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
+				if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
+					loadMoreFaq(questionEl.parentNode.children[6]);
+				}
                 setTimeout(()=>openFaqNode(nodeId));
             });
         });
@@ -876,277 +880,234 @@ var tb = (function () {
 	function Owl() {
 		if ($('.owl-carousel').length > 0) {
 			const scriptsList = [
-				{src: '/css/owl.carousel.min.css', type: 'css'},
-				{src: '/css/owl.theme.default.min.css', type: 'css'},
-				{src: '/js/owl.carousel.min.js', type: 'script'}
+				{ src: '/css/owl.carousel.min.css', type: 'css' },
+				{ src: '/css/owl.theme.default.min.css', type: 'css' },
+				{ src: '/js/owl.carousel.min.js', type: 'script' }
 			];
-			loadNextScript(0, scriptsList, function() {
 
-				$(document).ready(function() {
-
-					if ($('.owl-carousel').hasClass('timeline')) {
-
-						const timeline = document.querySelector('.timeline')
-
-						const timelineItems = document.querySelectorAll('.timeline-item')
-
-						const timelineTitle = document.querySelectorAll(".timeline-title");
-
-						let maxTitleHeight = 0;
-
-						function searchForTimelineAnimation() {
-
-							const searchedBlockObserver = new IntersectionObserver(entries => {
-								entries.forEach(entry => {
-									if (entry.isIntersecting) {
-										Array.from(timelineItems).slice().reverse().forEach((item, index) => {
-											const timelineText = item.querySelector('.timeline-text');
-											const listItems = timelineText.querySelectorAll('li');
-
-											setTimeout(() => {
-												item.classList.add('active')
-
-												listItems.forEach((li, index) => {
-													li.style.transitionDelay = `${index * 0.2}s`;
-												});
-											}, index * 300)
-										})
-										searchedBlockObserver.unobserve(entry.target);
-									}
-								})
-							}, {
-								threshold: 1
-							});
-
-							searchedBlockObserver.observe(timeline);
-						}
-
-						searchForTimelineAnimation ();
-
-						Array.from(timelineItems).slice().reverse().forEach((item, index) => {
-							const timelineText = item.querySelector('.timeline-text');
-							const listItems = timelineText.querySelectorAll('li');
-
-							item.querySelector('.timeline-label').addEventListener('click', () => {
-								item.classList.toggle('active')
-
-								if (item.classList.contains('active')) {
-									listItems.forEach((li, index) => {
-										li.style.transitionDelay = `${index * 0.2}s`;
-									});
-								} else {
-									listItems.forEach((li, index) => {
-										li.style.transitionDelay = `${(listItems.length - 1 - index) * 0.1}s`;
-									});
-								}
-							})
-						})
-
-						timelineTitle.forEach((element) => {
-							const elementHeight = element.offsetHeight;
-							if (elementHeight > maxTitleHeight) {
-								maxTitleHeight = elementHeight;
-							}
-						});
-
-						document.documentElement.style.setProperty('--maxTitleHeight', `${maxTitleHeight}px`);
-					}
-
-					function setupMarginPadding($carousel, property) {
-						return Number(getComputedStyle($carousel[0]).getPropertyValue(property));
-					}
-
-					function autoPlayStatus($carousel) {
-						return !$carousel[0].classList.contains("no-autoplay");
-					}
-
-					function autoWidthStatus($carousel) {
-						return $carousel[0].classList.contains("autoWidth");
-					}
-
-					function loopStatus($carousel) {
-						return $carousel[0].classList.contains("loopEnabled");
-					}
-
+			loadNextScript(0, scriptsList, function () {
+				$(document).ready(function () {
 					function initializeCarousel() {
-						$('.owl-carousel').each(function(index) {
+						$('.owl-carousel').each(function (index) {
 							const $carousel = $(this);
 							const carouselId = "owl-carousel-" + index;
-							$(this).attr("id", carouselId);
+							$carousel.attr("id", carouselId);
 
-							if($carousel[0].classList.contains("partnersCarousel")) {
+							function startSmoothAutoPlay (event) {
+								$(event.target).trigger('play.owl.autoplay');
+								setTimeout(function() {
+									$(event.target).trigger('stop.owl.autoplay');
+									$(event.target).trigger('play.owl.autoplay', [15000]);
+								}, 10);
+							}
 
-								const itemsCount = $carousel.children().length;
+							function timelineContentOpen() {
+								const timeline = document.querySelector('.timeline');
 
-								if(itemsCount >= 2){
-									$('#' + carouselId).owlCarousel({
-										autoWidth: true,
-										margin: 10,
-										nav: true,
-										dots: false
-									});
-								} else {
-									$carousel[0].classList.remove('owl-carousel', 'partnersCarousel')
-								}
-							} else {
+								const timelineItems = document.querySelectorAll('.timeline-item');
 
-								const carouselContentToggle = $(`.owl-carousel-toggle-content#${carouselId}`)
+								const searchedBlockObserver = new IntersectionObserver(entries => {
+									entries.forEach(entry => {
+										if (entry.isIntersecting) {
+											Array.from(timelineItems).slice().reverse().forEach((item, index) => {
+												const timelineText = item.querySelector('.timeline-text');
+												const listItems = timelineText.querySelectorAll('li');
 
-								const settings = $(this).data('setting');
-								const itemsHigher0 = settings[0] || 1;
-								const itemsHigher600 = settings[600] || 1;
-								const itemsHigher960 = settings[960] || 1;
-								const defaultItems = settings['defaultItems'] || 1;
-
-								const navStatus = !$(this)[0].classList.contains("disableNav");
-
-								const isSmoothAutoplay = $carousel[0].classList.contains("smoothAutoPlay");
-								const isSmallScreen = $(window).width() < 600;
-
-								function updateUrl(currentItem) {
-									const currentItemContent = currentItem.children().first();
-									const currentItemContentId = currentItemContent.attr('id');
-
-									if (currentItemContentId) {
-										let url = new URL(window.location);
-										url.searchParams.set('course', currentItemContentId);
-										history.pushState(null, null, url);
-									}
-								}
-
-								let changesCount = 0;
-
-								$('#' + carouselId).owlCarousel({
-									lazyLoad: true,
-									center: $carousel[0].classList.contains("cardMode"),
-									margin: setupMarginPadding($carousel, '--carousel-margin'),
-									stagePadding: setupMarginPadding($carousel, '--stagePadding'),
-									autoHeight: false,
-									autoWidth: autoWidthStatus($carousel),
-									loop: loopStatus($carousel),
-									autoplay: !$carousel[0].classList.contains("cardMode") && (isSmoothAutoplay && !isSmallScreen ? true : autoPlayStatus($carousel)),
-									autoplayTimeout: $carousel[0].classList.contains("cardMode") ? 0 : (isSmallScreen ? 5000 : $carousel[0].classList.contains("smoothAutoPlay") ? 0 : 5000),
-									autoplaySpeed: $carousel[0].classList.contains("cardMode") ? false : (isSmallScreen ? false : $carousel[0].classList.contains("smoothAutoPlay") ? 15000 : false),
-									autoplayHoverPause: !$carousel[0].classList.contains("cardMode") && !$carousel[0].classList.contains("smoothAutoPlay"),
-									slideTransition: 'linear',
-									nav: $carousel[0].classList.contains("timeline"),
-									responsiveBaseElement: 'body',
-									responsiveClass: true,
-									mouseDrag: !$carousel[0].classList.contains("timeline"),
-									startPosition: $carousel[0].classList.contains("timeline") ? $carousel.find('.owl-item').length - 1 : 0,
-									responsive: {
-										0: {
-											stagePadding: $carousel[0].classList.contains("cardMode") ? 0 : setupMarginPadding($carousel, '--stagePadding'),
-											items: itemsHigher0
-										},
-										600: {
-											stagePadding: $carousel[0].classList.contains("cardMode") ? 50 : setupMarginPadding($carousel, '--stagePadding'),
-											items: itemsHigher600
-										},
-										960: {
-											nav: $carousel[0].classList.contains("cardMode") ? true : false,
-											stagePadding: $carousel[0].classList.contains("cardMode") ? 125 : setupMarginPadding($carousel, '--stagePadding'),
-											items: itemsHigher960
-										},
-										1025: {
-											stagePadding: $carousel[0].classList.contains("cardMode") ? 125 : setupMarginPadding($carousel, '--stagePadding'),
-											nav: navStatus,
-											items: itemsHigher960
-										},
-										1280: {
-											nav: navStatus,
-											items: defaultItems
-										}
-									},
-									onInitialized: function(event) {
-
-										function scrollToContent(content) {
-											const elementTop = content.offset().top;
-											const windowHeight = $(window).height();
-											$('html, body').animate(
-												{
-													scrollTop: elementTop - 100,
-												},
-												200
-											);
-										}
-
-										if ($carousel[0].classList.contains("smoothAutoPlay")) {
-											$(event.target).trigger('play.owl.autoplay');
-											setTimeout(function() {
-												$(event.target).trigger('stop.owl.autoplay');
-												$(event.target).trigger('play.owl.autoplay', [15000]);
-											}, 10);
-										}
-										if ($carousel[0].classList.contains("cardMode")) {
-											const currentCourse = new URL(window.location.href).searchParams.get("course");
-
-											if(currentCourse) {
 												setTimeout(() => {
-													const originalItems = $(".owl-carousel .owl-item").not(".cloned");
-													const activeItems = $(".owl-carousel .owl-item.active");
+													item.classList.add('active')
 
-													let foundIndex = -1;
-
-													originalItems.each(function(index) {
-														const firstChild = $(this).children().first();
-														if (firstChild.attr("id") === currentCourse) {
-															foundIndex = $(this).index();
-															return false;
-														}
+													listItems.forEach((li, index) => {
+														li.style.transitionDelay = `${index * 0.2}s`;
 													});
-													if (activeItems.length === 1) {
-														$carousel.trigger("to.owl.carousel", [foundIndex - 2, 0, true]);
-													} else {
-														$carousel.trigger("to.owl.carousel", [foundIndex + 1, 0, true]);
-													}
-												}, 50)
-											}
-											// $carousel.find('.owl-item').on('click', function () {
-											// 	const itemsVisible = $carousel.find('.owl-item.active').length;
-											// 	if (itemsVisible > 1 && !$(this).hasClass('center')) {
-											// 		const index = $(this).index();
-											// 		$carousel.trigger('to.owl.carousel', [index + 1, 300]);
-											// 	}
-											// });
-											const cardLink = $carousel.find('.card-link');
-											if (!cardLink.hasClass('linkDefault')) {
-												cardLink.on('click', function(event) {
-													event.preventDefault();
-													const targetId = $(this).attr('id');
-													const target = carouselContentToggle.find(`#${targetId}`)
-													if(target) {
-														scrollToContent(target);
-													}
-												})
-											}
+												}, index * 300)
+											})
+											searchedBlockObserver.unobserve(entry.target);
 										}
-									},
-									onChanged: function(event) {
-										if (carouselContentToggle) {
-											setTimeout(() => {
-												const currentItem = $carousel.find('.owl-item.active.center');
-												const currentItemContent = currentItem.children().first();
-												const currentItemContentId = currentItemContent.attr('id');
-												carouselContentToggle.children().each(function() {
-													if($(this).is(`#${currentItemContentId}`)) {
-														$(this).addClass("current-content");
-													} else {
-														$(this).removeClass("current-content")
-													}
-												})
-											}, 100)
-										}
+									})
+								}, {
+									threshold: 1
+								});
+
+								searchedBlockObserver.observe(timeline);
+							}
+
+							function timelineContentToggle() {
+								$('.timeline-item .timeline-label').off('click').on('click', function () {
+									const $item = $(this).closest('.timeline-item');
+									const $listItems = $item.find('.timeline-text li');
+
+									$item.toggleClass('active');
+
+									if ($item.hasClass('active')) {
+										$listItems.each(function (index) {
+											$(this).css('transition-delay', `${index * 0.2}s`);
+										});
+									} else {
+										const count = $listItems.length;
+										$listItems.each(function (index) {
+											$(this).css('transition-delay', `${(count - 1 - index) * 0.1}s`);
+										});
 									}
 								});
 							}
+
+							function navigateToItemByClick () {
+								$carousel.find('.owl-item').on('click', function () {
+									if (!$(this).hasClass('center')) {
+										const position = $('[data-position]',  $(this)).data('position')
+										$carousel.trigger('to.owl.carousel', [position, 300]);
+									}
+								});
+							}
+
+							const carouselContentToggle = $(`.owl-carousel-toggle-content#${carouselId}`)
+
+							function owlCarouselToggleContent() {
+								const currentItem = $carousel.find('.owl-item.active.center');
+								const currentItemContent = currentItem.children().first();
+								const currentItemContentId = currentItemContent.attr('id');
+								carouselContentToggle.children().each(function() {
+									if($(this).is(`#${currentItemContentId}`)) {
+										$(this).addClass("current-content");
+									} else {
+										$(this).removeClass("current-content")
+									}
+								})
+
+							}
+
+							function scrollToToggleContent(time) {
+								const targetPosition = carouselContentToggle.offset().top - 150;
+
+								$('html, body').stop(true, false).animate({
+									scrollTop: targetPosition
+								}, time);
+							}
+
+							function courseBelowScroll() {
+								$carousel.find('.course-below').on('click', function() {
+									scrollToToggleContent(150)
+								});
+							}
+
+							//courses handle url param
+							let isCoursesVisible = false;
+							let skipInitialUrlReset = false;
+
+							const urlParams = new URLSearchParams(window.location.search);
+							if (urlParams.has("course")) {
+								skipInitialUrlReset = true;
+							}
+
+							function updateUrl() {
+								const currentItem = $carousel.find('.owl-item.active.center');
+								const currentItemContent = currentItem.children().first();
+								const currentItemContentId = currentItemContent.attr('id');
+
+								const url = new URL(window.location);
+								url.searchParams.set("course", currentItemContentId);
+								history.replaceState(null, "", url);
+							}
+
+							function resetUrl() {
+								const url = new URL(window.location);
+								url.searchParams.delete("course");
+								history.replaceState(null, "", url);
+							}
+
+							function handleCourseCarouselUrlTracking() {
+								const observer = new IntersectionObserver(entries => {
+									entries.forEach(entry => {
+										if (entry.target === carouselContentToggle[0]) {
+											if (entry.isIntersecting) {
+												isCoursesVisible = true;
+												skipInitialUrlReset = false;
+
+												updateUrl();
+											} else {
+												isCoursesVisible = false;
+
+												if (skipInitialUrlReset) {
+													skipInitialUrlReset = false;
+												} else {
+													resetUrl();
+												}
+											}
+										}
+									});
+								}, { threshold: 0 });
+
+								observer.observe(carouselContentToggle[0]);
+							}
+
+							if($carousel[0].classList.contains("courses-carousel")) {
+								handleCourseCarouselUrlTracking();
+							};
+							
+							function setUpCourseFromUrl() {
+								const urlParams = new URLSearchParams(window.location.search);
+								const courseId = urlParams.get('course');
+
+								if(courseId) {
+									const itemIndex = $carousel.data('id');
+									scrollToToggleContent(500);
+									return itemIndex[courseId];
+								} else {
+									return 0;
+								}
+							}
+
+							const initialSettings = {
+								loop: true,
+								nav: true,
+								lazyLoad: true,
+								autoHeight: false,
+								slideTransition: 'linear',
+								responsiveBaseElement: 'body',
+								responsiveClass: true,
+								autoplayHoverPause: true,
+								autoplay: true,
+								startPosition: $carousel[0].classList.contains("courses-carousel") ? setUpCourseFromUrl() : 0,
+								onInitialized: function(event) {
+									if ($carousel[0].classList.contains("smooth-carousel")) {
+										startSmoothAutoPlay(event);
+									}
+									if($carousel[0].classList.contains("timeline")) {
+										timelineContentOpen();
+										timelineContentToggle();
+									}
+									if($carousel[0].classList.contains("courses-carousel")) {
+										courseBelowScroll();
+									}
+									if($carousel[0].classList.contains("cardMode")) {
+										navigateToItemByClick();
+									}
+								},
+								onChanged: function (event) {
+									if($carousel[0].classList.contains("carousel-content-toggle")) {
+										setTimeout(() => {
+											owlCarouselToggleContent();
+										}, 0)
+									}
+									if ($carousel[0].classList.contains("courses-carousel") && isCoursesVisible) {
+										setTimeout(() => {
+											updateUrl();
+										}, 0)
+									}
+								}
+							}
+
+							const customSettings = $carousel.data('settings');
+							const settings = Object.assign(initialSettings, customSettings);
+
+							$('#' + carouselId).owlCarousel(settings);
 						});
 					}
 
 					initializeCarousel();
 
-					$(window).on('load', function() {
-						$('.owl-carousel').each(function() {
+					$(window).on('load', function () {
+						$('.owl-carousel').each(function () {
 							$(this).trigger('destroy.owl.carousel');
 						});
 						initializeCarousel();
@@ -1154,26 +1115,24 @@ var tb = (function () {
 
 					let previousWidth = $(window).width();
 
-					$(window).resize(function() {
+					$(window).resize(function () {
 						const currentWidth = $(window).width();
 						const widthDifference = Math.abs(currentWidth - previousWidth);
 
 						if (widthDifference > 1) {
-
-							$('.owl-carousel').each(function() {
+							$('.owl-carousel').each(function () {
 								$(this).trigger('destroy.owl.carousel');
 							});
 							initializeCarousel();
-
 							previousWidth = currentWidth;
 						}
 					});
-
 				});
 			});
 		}
 	}
 })();
+
 
 //new-accordion
 (function () {
@@ -1192,13 +1151,13 @@ var tb = (function () {
 (function () {
 	$(document).ready(function () {
 
-		if (!$('.filters').length) return;
+		if (!$('.filter').length) return;
 
-		const containerId = $('.filters').attr('data-container-id');
-		const filterMode = $('.filters').attr('data-mode');
+		const containerId = $('.filter').attr('data-container-id');
+		const filterMode = $('.filter').attr('data-mode');
 		const container = document.getElementById(containerId);
 		const content = Array.from(container.children);
-		const checkboxes = $('.filters .check-box');
+		const checkboxes = $('.filter .check-box');
 
 		checkboxes.on('click', function() {
 			const checkboxId = $(this).attr('id');
@@ -1230,7 +1189,7 @@ var tb = (function () {
 		}
 
 		function getCheckedIds() {
-			return $('.filters .check-box.checked').map(function () {
+			return $('.filter .check-box.checked').map(function () {
 				return this.id;
 			}).get();
 		}
@@ -1244,7 +1203,9 @@ var tb = (function () {
 			}
 
 			content.forEach(item => {
-				item.style.display = checkedIds.includes(item.id) ? 'block' : 'none';
+				const itemIds = item.id.split('|');
+				const currentItemStatus = checkedIds.some(id => itemIds.includes(id));
+				item.style.display = currentItemStatus || itemIds[0] === 'all' ? 'block' : 'none';
 			});
 		}
 	});

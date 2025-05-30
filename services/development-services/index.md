@@ -191,7 +191,7 @@ redirect_from: "docs/services/development-services/"
             </div>
         </div>
         <div id="carousel-wrapper">
-            {% include carousel.liquid collectionMap = 'development-services-testimonials-carousel' nonActiveItemsVisibility = false autoplay = false  overlay = false contentDirection = 'column' titleSize = '28px' descriptionSize = '16px'  titleLineHeight = '40px'  descriptionColor = '#000000DE' %}
+            {% include development-services-carousel.liquid collectionMap = 'development-services-testimonials-carousel' %}
         </div>
         <button id="Serv_DevServ_ContactUs2" class="button anchor-button gtm_button" onclick="onContactUsClick(1)">Contact Us</button>
     </div>
