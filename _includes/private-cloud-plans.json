@@ -1,6 +1,6 @@
 {
   "bytesPerDataPoint": 100,
-  "extraStorageCostPerGB": 0.8,
+  "extraStorageCostPerGB": 0.5,
   "devEnvironments": 299,
   "testEnvironments": 299,
   "mobileApp": 99,
