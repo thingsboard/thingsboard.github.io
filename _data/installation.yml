@@ -13,9 +13,7 @@ toc:
     path: /docs/user-guide/install/windows/
   - title: Raspberry Pi
     path: /docs/user-guide/install/rpi/
-  - title: Docker (Windows)
-    path: /docs/user-guide/install/docker-windows/
-  - title: Docker (Linux or Mac OS)
+  - title: Docker (Linux, Windows or Mac OS)
     path: /docs/user-guide/install/docker/
   - title: Building from sources
     path: /docs/user-guide/install/building-from-source/

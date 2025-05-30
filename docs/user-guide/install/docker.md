@@ -12,18 +12,18 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+This guide will help you to install and start ThingsBoard using Docker on Linux, Windows or Mac OS.
 
 
 ## Prerequisites
 
 {% include templates/install/docker-install.md %}
 
+- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
+
 {% include templates/install/docker-install-note.md %}
 
 ## Running
-
-In this instruction [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) image will be used. It contains a single instance of ThingsBoard with PostgreSQL database.
 
 Running this image requires a server with at least 4GB of RAM (8GB is recommended) and minimum load (few messages per second).
 
@@ -40,7 +40,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Where: 
 
-- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
+- `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
