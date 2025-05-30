@@ -90,9 +90,9 @@
 
               &:hover
                 background-color: #F4F8FE
-                .tooltiptext
+                .tooltip-text
                   visibility: visible
-              .tooltiptext
+              .tooltip-text
                 position: absolute
                 right: 28px
                 width: max-content
@@ -224,11 +224,11 @@
 
                   .tooltip-text
                     position: absolute
-                    z-index: 1
+                    z-index: 3
                     visibility: hidden
                     background-color: #000000c7
                     color: #fff
-                    text-align: center
+                    text-align: left
                     border-radius: 6px
                     padding: 5px
                     font-size: 12px
@@ -384,6 +384,8 @@
               font-weight: 500
               font-size: 14px
               line-height: 24px
+              &.no-tooltip
+                padding-right: 21px
               .tooltip
                 margin-left: 5px
                 position: relative

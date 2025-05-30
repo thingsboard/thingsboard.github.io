@@ -1,5 +1,5 @@
 {
-  "bytesPerDataPoint": 100,
+  "enterpriseBytesPerDataPoint": 50,
   "extraStorageCostPerGB": 0.5,
   "devEnvironments": 299,
   "testEnvironments": 299,
@@ -13,7 +13,9 @@
       "maxMsgPerMin": 20000,
       "storage": 200,
       "extraDevicePrice": 0.1,
-      "replicationFactor": 2
+      "database": "SQL",
+      "replicationFactor": 2,
+      "bytesPerDataPoint": 200
     },
     {
       "name": "Growth",
@@ -22,7 +24,9 @@
       "maxMsgPerMin": 100000,
       "storage": 1024,
       "extraDevicePrice": 0.09,
-      "replicationFactor": 3
+      "database": "NoSQL",
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 50
     },
     {
       "name": "Scale",
@@ -31,7 +35,9 @@
       "maxMsgPerMin": 200000,
       "storage": 2048,
       "extraDevicePrice": 0.08,
-      "replicationFactor": 3
+      "database": "NoSQL",
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 50
     }
   ]
 }

@@ -166,7 +166,7 @@ notitle: "true"
             </div>
             <div class="form-element">
                 <label for="company">
-                    <input class="form-control" value="" placeholder="Sensoryx inc." name="company" id="company" type="text" size="40" maxlength="80" aria-invalid="false">
+                    <input class="form-control" value="" placeholder="My Company Inc." name="company" id="company" type="text" size="40" maxlength="80" aria-invalid="false">
                     <p>Company</p>
                 </label>
             </div>

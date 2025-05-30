@@ -304,7 +304,6 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
             <td>500</td>
             <td>500</td>
             <td>500</td>
-            <td>500</td>
             <td>Maximum number of active WebSocket sessions per сustomer</td>
         </tr>
         <tr>
@@ -340,6 +339,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
 			<td>Up to <b>20K</b> per 10 seconds, not exceeding <b>60K</b> per minute </td>
 			<td>Up to <b>20K</b> per 10 seconds, not exceeding <b>60K</b> per minute </td>
 			<td>Up to <b>20K</b> per 10 seconds, not exceeding <b>60K</b> per minute </td>
+            <td>Total number of telemetry queries received by any of the users WebSocket sessions or REST API calls</td>
 		</tr>
 	</tbody>
 </table>
