@@ -10,7 +10,7 @@ notitle: "true"
         header.style.backgroundColor = '#F4F8FE';
         header.style.boxShadow = 'none';
         const contentEl = document.getElementById('content');
-        contentEl.style.backgroundImage = "url('/images/contact-us-bg.svg')";
+        contentEl.style.backgroundImage = "url('https://img.thingsboard.io/contact-us-bg.svg')";
         contentEl.style.backgroundPosition = "center";
         contentEl.style.backgroundRepeat = "no-repeat";
         contentEl.style.backgroundSize = "contain";
