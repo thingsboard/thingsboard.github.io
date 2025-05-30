@@ -29,7 +29,8 @@ Please see table below to compare the limits of the Private Cloud plans. The val
           <td>4K</td>
           <td>20K</td>
           <td>Unlimited</td>
-          <td>Maximum number of client sessions managed by the broker, including both connected sessions and persistent sessions that are temporarily disconnected but still maintained by the broker for quick reconnection</td>
+          <td>Maximum number of client sessions managed by the broker, including both active connections and persistent sessions that are temporarily disconnected but still maintained by the broker for quick reconnection. 
+Once a session is expired or explicitly removed, it no longer counts toward the session limit and the slot becomes available for a new session</td>
       </tr>
       <tr>
           <td>Total msg/sec</td>
@@ -37,7 +38,8 @@ Please see table below to compare the limits of the Private Cloud plans. The val
           <td>2K</td>
           <td>10K</td>
           <td>Unlimited</td>
-          <td>Total throughput of messages processed per second, including both incoming and outgoing MQTT_PUBLISH packets. The acknowledgment packets to the MQTT_PUBLISH packets for QoS 1 and 2 levels are not included</td>
+          <td>Total throughput of messages processed per second, including both incoming and outgoing `MQTT_PUBLISH` packets. 
+It does not include acknowledgment packets used in QoS 1 and 2 flows (such as `PUBACK`, `PUBREC`, etc.), nor other MQTT control packets like `CONNECT`, `SUBSCRIBE`, `UNSUBSCRIBE`, etc.</td>
       </tr>
       <tr>
           <td>Integrations</td>
@@ -63,7 +65,8 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>100</td>
           <td>500</td>
           <td>Unlimited</td>
-          <td>Total number of messages processed per second for all Device persistent clients</td>
+          <td>Total number of messages processed per second for all Device clients with persistent sessions. 
+These clients are subscribers, and if they are offline, the messages are stored in Redis to be delivered when they reconnect</td>
       </tr>
       <tr>
           <td>Application topic size</td>
@@ -71,7 +74,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 GB</td>
           <td>1 GB</td>
           <td>Unlimited</td>
-          <td>Maximum topic size for Application client to store persisted messages</td>
+          <td>Maximum size of the Kafka topic used to store persisted messages for a disconnected Application client. Each client has a dedicated topic, and messages are retained until delivered or the size limit is reached</td>
       </tr>
       <tr>
           <td>Application topic TTL</td>
@@ -79,7 +82,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 day</td>
           <td>1 day</td>
           <td>Unlimited</td>
-          <td>"Time to live" parameter for messages stored in Application topics</td>
+          <td>Time-to-live for messages stored in Kafka topics for Application clients. If a client remains disconnected beyond this period, undelivered messages will be discarded automatically</td>
       </tr>
       <tr>
           <td>Integration topic size</td>
@@ -87,7 +90,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 GB</td>
           <td>1 GB</td>
           <td>Unlimited</td>
-          <td>Maximum topic size for Integration to store persisted messages</td>
+          <td>Maximum size of the Kafka topic used to store persisted messages for a disconnected Integration. Each Integration has a dedicated topic, and messages are retained until delivered or the size limit is reached</td>
       </tr>
       <tr>
           <td>Integration topic TTL</td>
@@ -95,7 +98,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 day</td>
           <td>1 day</td>
           <td>Unlimited</td>
-          <td>"Time to live" parameter for messages stored in Integration topics</td>
+          <td>Time-to-live for messages stored in dedicated Kafka topics for each Integration. If the Integration remains disconnected beyond this period, undelivered messages will be automatically discarded</td>
       </tr>
       <tr>
           <td>Device persisted messages storage</td>
@@ -103,7 +106,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>100</td>
           <td>500</td>
           <td>Unlimited</td>
-          <td>Maximum number of persisted messages per Device client</td>
+          <td>Maximum number of messages that can be stored for each Device client with a persistent session while it is offline. Once the limit is reached, older messages are dropped to make room for new ones</td>
       </tr>
       <tr>
           <td>Device persisted messages TTL</td>
@@ -111,7 +114,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 day</td>
           <td>1 day</td>
           <td>Unlimited</td>
-          <td>"Time to live" parameter for messages stored for Device persisted clients</td>
+          <td>"Time to live" parameter for messages stored for Device persisted clients while they are offline</td>
       </tr>
       <tr>
           <td>Stats TTL</td>
@@ -127,7 +130,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 day</td>
           <td>1 day</td>
           <td>Unlimited</td>
-          <td>"Time to live" parameter for persistent offline session. After this time the disconnected sessions will be deleted from the broker</td>
+          <td>"Time to live" parameter for persistent session that is disconnected. If a client remains disconnected beyond this duration, its session data will be automatically removed from the broker</td>
       </tr>
       <tr>
           <td>Client incoming messages rate limit</td>
@@ -135,7 +138,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>Up to 10 per second, not exceeding 300 per minute</td>
           <td>Up to 10 per second, not exceeding 300 per minute</td>
           <td>Unlimited</td>
-          <td>Total number of incoming messages per client</td>
+          <td>Total number of incoming messages per publisher client with any Quality of Service (QoS) level</td>
       </tr>
       <tr>
           <td>Client outgoing messages rate limit</td>
@@ -143,7 +146,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>Up to 10 per second, not exceeding 300 per minute</td>
           <td>Up to 10 per second, not exceeding 300 per minute</td>
           <td>Unlimited</td>
-          <td>Total number of outgoing messages per non-persistent subscriber client with QoS = 0 ("AT_MOST_ONCE")</td>
+          <td>Total number of outgoing messages per non-persistent subscriber client with Quality of Service (QoS) level equal to 0 ("AT_MOST_ONCE")</td>
       </tr>
       <tr>
           <td>In-flight messages</td>
@@ -151,7 +154,8 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>100</td>
           <td>100</td>
           <td>Unlimited</td>
-          <td>Maximum number of in-flight (pending acknowledgment) messages allowed per client</td>
+          <td>Maximum number of incoming QoS 1 and QoS 2 messages from a publisher that can be awaiting acknowledgment. Acknowledgment is sent after the message is successfully persisted by the broker. 
+If this limit is exceeded, the client is disconnected to prevent overload</td>
       </tr>
       <tr>
           <td>Client pre-connect messages</td>
@@ -159,7 +163,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>100</td>
           <td>100</td>
           <td>Unlimited</td>
-          <td>Maximum queue size for messages received per client during the client's active connection period</td>
+          <td>Maximum number of messages the broker will queue per client during the connection handshake phase. If this limit is exceeded before the client completes the connection, the client will be disconnected</td>
       </tr>
       <tr>
           <td>Message size</td>
@@ -167,7 +171,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>1 MB</td>
           <td>1 MB</td>
           <td>Unlimited</td>
-          <td>Maximum payload size of MQTT_PUBLISH packet</td>
+          <td>Maximum size of the payload in an MQTT_PUBLISH packet that the broker will accept. Larger messages will be rejected unless using the Enterprise plan with custom limits</td>
       </tr>
       <tr>
           <td>Uptime SLA</td>
