@@ -166,6 +166,10 @@ var tb = (function () {
 				const sectionIdArr = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-');
 				const sectionId = sectionIdArr[sectionIdArr.length -1];
 				switchFaqSection(sectionId);
+				const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
+				if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
+					loadMoreFaq(questionEl.parentNode.children[6]);
+				}
                 setTimeout(()=>openFaqNode(nodeId));
             });
         });

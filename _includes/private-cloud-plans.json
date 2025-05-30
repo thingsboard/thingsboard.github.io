@@ -1,6 +1,6 @@
 {
-  "bytesPerDataPoint": 100,
-  "extraStorageCostPerGB": 0.8,
+  "enterpriseBytesPerDataPoint": 100,
+  "extraStorageCostPerGB": 0.5,
   "devEnvironments": 299,
   "testEnvironments": 299,
   "mobileApp": 99,
@@ -13,7 +13,8 @@
       "maxMsgPerMin": 20000,
       "storage": 200,
       "extraDevicePrice": 0.1,
-      "replicationFactor": 2
+      "replicationFactor": 2,
+      "bytesPerDataPoint": 100
     },
     {
       "name": "Growth",
@@ -22,7 +23,8 @@
       "maxMsgPerMin": 100000,
       "storage": 1024,
       "extraDevicePrice": 0.09,
-      "replicationFactor": 3
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 100
     },
     {
       "name": "Scale",
@@ -31,7 +33,8 @@
       "maxMsgPerMin": 200000,
       "storage": 2048,
       "extraDevicePrice": 0.08,
-      "replicationFactor": 3
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 100
     }
   ]
 }

@@ -234,12 +234,12 @@
                             <label class="add-on">
                                 <input class="add-on-checkbox" id="devEnvs" type="checkbox">
                                 <span class="checkmark"></span>
-                                Dev Environments
+                                Dev Environment
                             </label>
                             <label class="add-on">
                                 <input class="add-on-checkbox" id="testEnvs" type="checkbox">
                                 <span class="checkmark"></span>
-                                Test Environments
+                                Test Environment
                             </label>
                             <label class="add-on">
                                 <input class="add-on-checkbox" id="mobileApp" type="checkbox">
@@ -390,14 +390,13 @@
                 retentionInMinutes = dataRetention * 24 * 60;
             }
 
-            // Calculate storage needed in GB
-            const storageNeededInGB = (privateCloudPlans.bytesPerDataPoint * retentionInMinutes * dataPointsPerMinute) / 1073741824;
-
             // Find matching plans based on message rate
             const matchingPlans = privateCloudPlans.plans.filter(plan => dataPointsPerMinute <= plan.maxMsgPerMin);
 
             // Enterprise plan case
             if (matchingPlans.length === 0) {
+                // Calculate storage needed in GB
+                const storageNeededInGB = (privateCloudPlans.enterpriseBytesPerDataPoint * retentionInMinutes * dataPointsPerMinute) / 1073741824;
                 displayEnterpriseResults(dataPointsPerMinute, devices, storageNeededInGB);
                 return;
             }
@@ -407,6 +406,9 @@
                 // Calculate extra devices
                 const extraDevices = Math.max(0, devices - plan.includedDevices);
                 const extraDeviceCost = extraDevices * plan.extraDevicePrice;
+
+                // Calculate storage needed in GB
+                const storageNeededInGB = (plan.bytesPerDataPoint * retentionInMinutes * dataPointsPerMinute) / 1073741824;
 
                 // Calculate storage costs
                 const adjustedStorageNeeded = storageNeededInGB * plan.replicationFactor;
@@ -464,7 +466,7 @@
                             <path d="M8 4V16C8 16.5304 8.21071 17.0391 8.58579 17.4142C8.96086 17.7893 9.46957 18 10 18H18C18.5304 18 19.0391 17.7893 19.4142 17.4142C19.7893 17.0391 20 16.5304 20 16V7.242C20 6.97556 19.9467 6.71181 19.8433 6.46624C19.7399 6.22068 19.5885 5.99824 19.398 5.812L16.083 2.57C15.7094 2.20466 15.2076 2.00007 14.685 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4Z" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M16 18V20C16 20.5304 15.7893 21.0391 15.4142 21.4142C15.0391 21.7893 14.5304 22 14 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V9C4 8.46957 4.21071 7.96086 4.58579 7.58579C4.96086 7.21071 5.46957 7 6 7H8" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span class="tooltiptext">Copy calculation summary</span>
+                        <span class="tooltip-text">Copy calculation summary</span>
                     </div>
                   </h3>
                   <h4>
@@ -481,7 +483,7 @@
                     </div>
                     <div class="results-item">
                       <span class="results-label">Included Devices:</span>
-                      <span class="results-value">
+                      <span class="results-value no-tooltip">
                         ${formatNumber(plan.includedDevices, 0)}
                       </span>
                     </div>
@@ -547,15 +549,15 @@
                     let block = '<div class="addons-results"><p>Add-ons</p>'
                     if (devEnvsValue) {
                         block += `<div class="results-item">
-                                      <span class="results-label">Dev Environments:</span>
-                                      <span class="results-value">
+                                      <span class="results-label">Dev Environment:</span>
+                                      <span class="results-value no-tooltip">
                                         ${formatCurrency(privateCloudPlans.devEnvironments)}
                                   </div>`
                     }
                     if (testEnvsValue) {
                         block += `<div class="results-item">
-                                      <span class="results-label">Test Environments:</span>
-                                      <span class="results-value">
+                                      <span class="results-label">Test Environment:</span>
+                                      <span class="results-value no-tooltip">
                                         ${formatCurrency(privateCloudPlans.testEnvironments)}
                                   </div>`
                     }
@@ -610,7 +612,7 @@
                 } = results;
                 const contactButton = document.getElementById('contactUs');
 
-                const message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n Included Devices: ${formatNumber(plan.includedDevices)}\n Extra Devices: ${formatNumber(extraDevices, 0)}\n Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n Included Storage: ${formatNumber(plan.storage, 0)} GB\n Storage Used: ${formatNumber(storageNeeded)} GB\n Extra Storage: ${formatNumber(extraStorage)} GB\n Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n${addons()} \nTotal Monthly Cost: ${formatCurrency(totalPriceCalc())}`;
+                const message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n * Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n * Included Devices: ${formatNumber(plan.includedDevices)}\n * Extra Devices: ${formatNumber(extraDevices, 0)}\n * Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n * Included Storage: ${formatNumber(plan.storage, 0)} GB\n * Storage Used: ${formatNumber(storageNeeded)} GB\n * Extra Storage: ${formatNumber(extraStorage)} GB\n * Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n${addons()} \nTotal Monthly Cost: ${formatCurrency(totalPriceCalc())}`;
                 clipboardMessage = message;
                 contactButton.href = contactButton.href + '?subject=' + encodeURIComponent('Private Cloud') + '&message=' + encodeURIComponent(message);
 
@@ -618,13 +620,13 @@
                     let addonsMessage = 'Add-ons:\n';
                     if (devEnvsValue || testEnvsValue || mobileAppValue) {
                         if (devEnvsValue) {
-                            addonsMessage += ` Dev Environments: ${formatCurrency(privateCloudPlans.devEnvironments)}\n`;
+                            addonsMessage += ` * Dev Environment: ${formatCurrency(privateCloudPlans.devEnvironments)}\n`;
                         }
                         if (testEnvsValue) {
-                            addonsMessage += ` Test Environments: ${formatCurrency(privateCloudPlans.testEnvironments)}\n`;
+                            addonsMessage += ` * Test Environment: ${formatCurrency(privateCloudPlans.testEnvironments)}\n`;
                         }
                         if (mobileAppValue) {
-                            addonsMessage += ` White-labeled Mobile App monthly: ${formatCurrency(privateCloudPlans.mobileApp)}, one time setup fee: ${formatCurrency(privateCloudPlans.mobileAppSetup)}\n`;
+                            addonsMessage += ` * White-labeled Mobile App monthly: ${formatCurrency(privateCloudPlans.mobileApp)}, one time setup fee: ${formatCurrency(privateCloudPlans.mobileAppSetup)}\n`;
                         }
                         return addonsMessage
                     } else {
@@ -645,7 +647,7 @@
                             <path d="M8 4V16C8 16.5304 8.21071 17.0391 8.58579 17.4142C8.96086 17.7893 9.46957 18 10 18H18C18.5304 18 19.0391 17.7893 19.4142 17.4142C19.7893 17.0391 20 16.5304 20 16V7.242C20 6.97556 19.9467 6.71181 19.8433 6.46624C19.7399 6.22068 19.5885 5.99824 19.398 5.812L16.083 2.57C15.7094 2.20466 15.2076 2.00007 14.685 2H10C9.46957 2 8.96086 2.21071 8.58579 2.58579C8.21071 2.96086 8 3.46957 8 4Z" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M16 18V20C16 20.5304 15.7893 21.0391 15.4142 21.4142C15.0391 21.7893 14.5304 22 14 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V9C4 8.46957 4.21071 7.96086 4.58579 7.58579C4.96086 7.21071 5.46957 7 6 7H8" stroke="black" stroke-opacity="0.76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span class="tooltiptext">Copy calculation summary</span>
+                        <span class="tooltip-text">Copy calculation summary</span>
                     </div>
                   </h3>
                   <h4 class="wrap">
@@ -680,7 +682,7 @@
 
         function updateEnterpriseContactUsParams(dataPointsPerMinute, devices, storageNeededInGB) {
             const enterpriseContactUs = document.getElementById('enterpriseContactUs');
-            const message = `Optimal Plan: Enterprise\n Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n Included Devices: ${formatNumber(devices, 0)}\n Estimated storage needed: ${formatNumber(storageNeededInGB)} GB`;
+            const message = `Optimal Plan: Enterprise\n * Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n * Included Devices: ${formatNumber(devices, 0)}\n * Estimated storage needed: ${formatNumber(storageNeededInGB)} GB`;
             clipboardMessage = message;
             enterpriseContactUs.href = enterpriseContactUs.href + '?subject=' + encodeURIComponent('Private Cloud') + '&message=' + encodeURIComponent(message);
         }
@@ -723,7 +725,7 @@
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(() => {
                 sendDataToGTM();
-            }, 1500);
+            }, 5000);
         }
 
         function sendDataToGTM() {

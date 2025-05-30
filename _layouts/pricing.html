@@ -333,8 +333,10 @@
     }
 
     function loadMoreFaq(el) {
+        el.classList.add('hidden');
+        el = el.nextElementSibling;
         while(el) {
-            el.classList.toggle('hidden');
+            el.classList.remove('hidden');
             el = el.nextElementSibling;
         }
     }
