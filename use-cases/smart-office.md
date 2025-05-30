@@ -9,6 +9,7 @@ includeAdvantages: "true"
 ---
 
 {% include usecase-nav.html usecase="smart-office" %}
+
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
 <h1 class="usecase-title">Smart office</h1>
 <section class="smart-office-about">
@@ -28,7 +29,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="smart-office-carousel carousel-padding">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-office' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
 
 <section class="smart-office-solution-structure">
@@ -189,10 +190,12 @@ includeAdvantages: "true"
 </section>
 
 <section class="summary">
-    <h2>Summary of smart office solution</h2>
-    <div>
-        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    <div class="summary-text">
+        <h2>Summary of smart office solution</h2>
+        <p>The Smart Office project demonstrates how the integration of IoT and ThingsBoard can significantly enhance office building management. It’s more than just a dashboard — it’s a powerful tool for improving efficiency, safety, and comfort. The solution is easily scalable, integrable, and customizable to fit any business needs. With ThingsBoard, you don’t just monitor your office — you take control of it.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">  
     </div>
 </section>
 
