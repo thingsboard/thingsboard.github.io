@@ -403,6 +403,10 @@
         document.querySelectorAll('#thingsboard-private-cloud .billing-toggle .label-text')
             .forEach(elem => elem.classList.toggle('selected'));
     }
+
+    function switchToPrivateCloud() {
+        window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
+    }
 </script>
 
 {% include cookie-consent.html %}
