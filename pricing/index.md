@@ -393,7 +393,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Launch">
+                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Launch">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Launch plan of ThingsBoard Private Cloud</span>
                             </a>
@@ -420,7 +420,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Growth">
+                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Growth">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Growth plan of ThingsBoard Private Cloud</span>
                             </a>
@@ -447,7 +447,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Scale">
+                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Scale">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Scale plan of ThingsBoard Private Cloud</span>
                             </a>
