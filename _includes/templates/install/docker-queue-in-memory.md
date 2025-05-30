@@ -26,8 +26,8 @@ services:
     image: "thingsboard/tb-node:4.0.1.1"
     ports:
       - "8080:8080"
-      - "7070"
-      - "1883"
+      - "7070:7070"
+      - "1883:1883"
       - "5683-5688:5683-5688/udp"
     logging:
       driver: "json-file"
