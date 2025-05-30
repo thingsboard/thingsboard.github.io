@@ -14,7 +14,7 @@
 {% endif %}
 
 {% assign converterFilePath = "/docs/devices-library/blocks/integrations/converters/basic/" | append: integrationType | append: "-uplink-converter.js" %}
-{% assign uplinkConverterLink = "https://raw.githubusercontent.com/thingsboard/data-converters/refs/heads/release/4.0.0/VENDORS/" | append: page.vendor | append: "/" | append: page.model | append: "/" | append: integrationTypeForLink | append: "/uplink/converter.json" %}
+{% assign uplinkConverterLink = "https://raw.githubusercontent.com/thingsboard/data-converters/refs/heads/release/latest/VENDORS/" | append: page.vendor | append: "/" | append: page.model | append: "/" | append: integrationTypeForLink | append: "/uplink/converter.json" %}
 
 ### Uplink converter in ThingsBoard integration
 

@@ -11,8 +11,17 @@ nano docker-compose.yml
 Add the following lines to the yml file.
 
 ```yml
-version: '3.2'
 services:
+  postgres:
+    restart: always
+    image: "postgres:16"
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_DB: thingsboard
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
   kafka:
     restart: always
     image: bitnami/kafka:3.8.1
@@ -36,24 +45,35 @@ services:
       KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "0@kafka:9093" #KRaft
     volumes:
       - kafka-data:/bitnami
-  mytb:
+  thingsboard-ce:
     restart: always
-    image: "thingsboard/tb-postgres"
-    depends_on:
-      - kafka
+    image: "thingsboard/tb-node:4.0.1.1"
     ports:
-      - "8080:9090"
-      - "1883:1883"
-      - "7070:7070"
+      - "8080:8080"
+      - "7070"
+      - "1883"
       - "5683-5688:5683-5688/udp"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
     environment:
+      TB_SERVICE_ID: tb-ce-node
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
       TB_QUEUE_TYPE: kafka
       TB_KAFKA_SERVERS: kafka:9094
-    volumes:
-      - ~/.mytb-data:/data
-      - ~/.mytb-logs:/var/log/thingsboard
+    depends_on:
+      - postgres
+      - kafka
+
 volumes:
-  kafka-data:
+  postgres-data:
+    name: tb-ce-postgres-data
     driver: local
+  kafka-data:
+    name: tb-ce-kafka-data
+    driver: local
+
 ```
 {: .copy-code}
