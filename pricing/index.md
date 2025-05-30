@@ -431,9 +431,9 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
-                                <span class="visually-hidden">with ThingsBoard Private Cloud</span>
+                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Launch">
+                                Contact Us
+                                <span class="visually-hidden"> to discuss Launch plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
@@ -458,9 +458,9 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
-                                <span class="visually-hidden">with ThingsBoard Private Cloud</span>
+                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Growth">
+                                Contact Us
+                                <span class="visually-hidden"> to discuss Growth plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
@@ -485,9 +485,9 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
-                                <span class="visually-hidden">with ThingsBoard Private Cloud</span>
+                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Scale">
+                                Contact Us
+                                <span class="visually-hidden"> to discuss Scale plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
@@ -507,9 +507,9 @@ selfManagedPlan:
                             Custom <span data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-link-size="70%"></span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                            <a id="Pricing_PE_PrivateCloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Enterprise">
                                 Contact Us
-                                <span class="visually-hidden">to help you with your Private Cloud plan.</span>
+                                <span class="visually-hidden"> to discuss Enterprise plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
                         <div class="pricing-square-item highlight">Everything you need to scale</div>
@@ -556,24 +556,84 @@ selfManagedPlan:
                     <table>
                         <thead>
                             <tr>
-                              <th></th>
-                              <th>Pilot</th>
-                              <th>Growth</th>
-                              <th>Scale</th>
-                              <th>Enterprise</th>
+                                <th></th>
+                                <th>Pilot</th>
+                                <th>Growth</th>
+                                <th>Scale</th>
+                                <th>Enterprise</th>
                             </tr>
                         </thead>
                         <tbody>
-                          <tr><td>Automatic backups</td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-what-is-included-in-the-monthly-subscription-fee">24/7 Monitoring</td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td>Support</td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td><td>SQL</td><td>Hybrid</td><td>Hybrid</td><td>Hybrid</td></tr>
-                          <tr><td>Custom data retention policies</td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-what-does-geo-region-deployment-selection-include">Geo-region deployment choice</td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window">Maintenance window picking</td><td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication</td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-are-high-availability-services-available-as-an-add-on">High availability services</td><td></td><td></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
-                          <tr><td data-faq-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations">Architecture reviews and consults</td><td></td><td></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td><td> <img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td></tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-is-automatic-backup">Automatic backups</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-is-included-in-the-monthly-subscription-fee">24/7 Monitoring</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-support-is-included">Support</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
+                                <td>SQL</td>
+                                <td>Hybrid</td>
+                                <td>Hybrid</td>
+                                <td>Hybrid</td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-are-custom-data-retention-policies">Custom data retention policies</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-does-geo-region-deployment-selection-include">Geo-region deployment choice</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window">Maintenance window picking</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-are-high-availability-services-available-as-an-add-on">High availability services</td>
+                                <td></td>
+                                <td></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations">Architecture reviews and consults</td>
+                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
+                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
+                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
+                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -2262,16 +2322,18 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-benefits-of-private-cloud-versus-self-hosting" data-title="What are the benefits of Private Cloud versus self-hosting?">
                         <div class="container">
-                            <p>Zero DevOps overhead – no servers to set up, patch or monitor. <br><br></p> 
-                            <p>Guaranteed availability – written SLA of 99.9 – 99.99 %, with service-credit remedies. <br><br></p> 
-                            <p>Faster time-to-market – we stand up production clusters in 1-2 hours, not weeks. <br><br></p>
-                            <p>Scalability – Kubernetes-based plans grow as device traffic spikes. <br><br></p> 
-                            <p>Predictable cost – one all-inclusive monthly fee replaces cap-ex plus staffing.</p>
+                            <ul>
+                                <li>Zero DevOps overhead – no servers to set up, patch or monitor.</li> 
+                                <li>Guaranteed availability – written SLA of 99.9 – 99.99 %, with service-credit remedies.</li> 
+                                <li>Faster time-to-market – we stand up production clusters in 1-2 hours, not weeks.</li>
+                                <li>Scalability – Kubernetes-based plans grow as device traffic spikes.</li> 
+                                <li>Predictable cost – one all-inclusive monthly fee replaces cap-ex plus staffing.</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-uptime-and-how-do-you-calculate-it" data-title="What is ‘uptime’ and how do you calculate it?">
                         <div class="container">
-                            <p>Uptime (%) = ((Total Time – Downtime) / Total Time) × 100 <br><br></p>
+                            <p>Uptime (%) = ((Total Time – Downtime) / Total Time) × 100. <br><br></p>
                             <p>Total Time – number of minutes in the billing month. <br><br></p>
                             <p>Downtime – minutes when core platform services are unavailable for the tenant (device endpoints, REST/WebSocket APIs, Rule Engine infrastructure, dashboards, telemetry DB). <br><br></p>
                             <p>We measure Downtime from incident detection to full service restoration. <br><br></p>
@@ -2290,13 +2352,23 @@ selfManagedPlan:
                             <p>All plans are powered by Kubernetes, with built-in load balancers to ensure resilient, scalable operations. AWS is our first-choice IaaS, but Azure or GCP regions are also supported on request.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-who-should-choose-private-cloud" data-title="Who should choose Private Cloud?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup">
                         <div class="container">
-                            <p>Private Cloud ideal for companies that want to avoid investing in DevOps resources, reduce operational risk, and accelerate time to market. They are particularly beneficial for startups, SMBs, or enterprises scaling production systems who prefer to offload platform operations and upgrades to the ThingsBoard team under a clear SLA.</p>
+                            <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-support-is-included" data-title="What support is included?">
+                        <div class="container">
+                            <p>All plans include access to the ThingsBoard Support Portal for direct communication with the support team in case of questions related to ThingsBoard functionality.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-who-should-choose-private-cloud" data-title="Who should choose Private Cloud?">
+                        <div class="container">
+                            <p>Private Cloud ideal for companies that want to avoid investing in DevOps resources, reduce operational risk, and accelerate time to market. They are particularly beneficial for startups, SMBs, or enterprises scaling production systems who prefer to offload platform operations and upgrades to the ThingsBoard team under a clear SLA.</p>
+                        </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-prerequisites-to-get-started" data-title="What are the prerequisites to get started?">
                         <div class="container">
@@ -2318,7 +2390,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-can-i-get-my-data-in-line-with-gdpr-requirements" data-title="How can I get my data in line with GDPR requirements?">
                         <div class="container">
-                            <p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all tenant-level tables (entities, telemetry, audit logs, custom metadata) and transfer it to you over a secure channel (SFTP or your own cloud bucket).</p>
+                            <p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all tenant-level tables (entities, telemetry, audit logs, custom metadata) and transfer it to you over a secure channel (SFTP or your own cloud bucket). <br><br></p>
                             <p>Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all tenant data within 30 days of your erase request.</p>
                         </div>
                     </div>
@@ -2334,7 +2406,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-if-i-cancel-will-you-return-my-data" data-title="If I cancel, will you return my data?">
                         <div class="container">
-                            <p>Yes. Once we receive your cancellation notice, we prepare a full encrypted PostgreSQL/Cassandra dump of all your tenant data—including entities, telemetry, files, and audit logs—and deliver it to you over a secure channel (SFTP link or your own cloud bucket).</p>
+                            <p>Yes. Once we receive your cancellation notice, we prepare a full encrypted PostgreSQL/Cassandra dump of all your tenant data—including entities, telemetry, files, and audit logs—and deliver it to you over a secure channel (SFTP link or your own cloud bucket). <br><br></p>
                             <p>You have up to 60 days after the cancellation date to download and verify the dump. After that 60-day grace period, all remaining backups and cluster data are permanently and securely deleted from our systems.</p>
                         </div>
                     </div>
@@ -2353,11 +2425,13 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-is-the-pricing-structured-for-private-cloud" data-title="How is the pricing structured for Private Cloud?">
                         <div class="container">
                             <p>The pricing for Private Cloud is based on the selected service tier. Each plan includes a specific device and message rate limit to ensure proper resource allocation and SLA compliance. The available plans are: <br><br></p>
-                            <p>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 messages per minute; additional devices are billed at $0.1/device/month. <br><br></p>
-                            <p>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 messages per minute; additional devices are billed at $0.09/device/month. <br><br></p>
-                            <p>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 messages per minute; additional devices are billed at $0.08/device/month. <br><br></p>
-                            <p>Enterprise: Custom pricing — includes 100,000 devices by default and no message rate limits. Extendable as needed based on specific deployment requirements. <br><br></p>
-                            <p>Short-term bursts up to 50 % over the msg/min ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
+                            <ul>
+                                <li>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 messages per minute; additional devices are billed at $0.1/device/month.</li>
+                                <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 messages per minute; additional devices are billed at $0.09/device/month.</li>
+                                <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 messages per minute; additional devices are billed at $0.08/device/month.</li>
+                                <li>Enterprise: Custom pricing — includes 100,000 devices by default and no message rate limits. Extendable as needed based on specific deployment requirements.</li>
+                                <li>Short-term bursts up to 50 % over the msg/min ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-do-you-offer-a-discount-for-annual-payments" data-title="Do you offer a discount for annual payments?">
@@ -2382,7 +2456,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-there-any-additional-costs-beyond-the-fixed-monthly-fee" data-title="Are there any additional costs beyond the fixed monthly fee?">
                         <div class="container">
-                            <p>In addition to the base monthly fee for each plan, you may incur additional monthly charges for the following: <br><br></p>
+                            <p>In addition to the base monthly fee for each plan, you may incur additional monthly charges for the following: <br></p>
                             <ul>
                                 <li>Devices beyond the included limit for your selected plan (see pricing table)</li>
                                 <li>Additional storage usage beyond the included capacity - $0.50 per GB</li>
@@ -2443,16 +2517,23 @@ selfManagedPlan:
                 <div id="faq-thingsboard-private-cloud-usageAndLimits" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-exactly-counts-as-a-device" data-title="What exactly counts as a “device”?">
                         <div class="container">
-                            <p>A device is any distinct IoT endpoint that the platform tracks as its own entity—i.e. a row in the Device table. A record can be created in three ways: <br><br></p>
-                            <p>Direct connection – the physical unit authenticates itself (token, X-509, access key). One unit → one record.<br><br></p>
-                            <p>Gateway proxy – a gateway authenticates once, then forwards data for subordinate nodes. The gateway is one device, and each proxied node is an additional device (e.g., 1 gateway + 10 meters = 11 devices).<br><br></p>
-                            <p>Server-side integration – data arrives through an integration connector (REST, Kafka, Pub/Sub, OPC-UA, etc.). If the payload identifies a new deviceName/deviceType, ThingsBoard auto-creates the record. Every such auto-created entry counts as a separate device.<br><br></p>
-                            <p>Deleting or disabling a Device entry immediately frees that slot for a replacement, so you only pay for the active records shown in your Device list.</p>
+                            <p>A device is any distinct IoT endpoint that the platform tracks as its own entity—i.e. a row in the Device table. A record can be created in three ways: <br></p>
+                            <ul>
+                                <li>Direct connection – the physical unit authenticates itself (token, X-509, access key). One unit → one record.</li>
+                                <li>Gateway proxy – a gateway authenticates once, then forwards data for subordinate nodes. The gateway is one device, and each proxied node is an additional device (e.g., 1 gateway + 10 meters = 11 devices).</li>
+                                <li>Server-side integration – data arrives through an integration connector (REST, Kafka, Pub/Sub, OPC-UA, etc.). If the payload identifies a new deviceName/deviceType, ThingsBoard auto-creates the record. Every such auto-created entry counts as a separate device.</li>
+                                <li>Deleting or disabling a Device entry immediately frees that slot for a replacement, so you only pay for the active records shown in your Device list.</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-are-messages-defined-and-metered" data-title="How are “messages” defined and metered?">
                         <div class="container">
-                            <p>A message is any application-layer packet that hits or leaves the platform—uplink telemetry, RPCs, attribute updates, downlinks — regardless of transport (MQTT, HTTP, CoAP, LwM2M) or integration. We meter sustained messages per minute, aggregated across all protocols.</p>
+                            <p>A message is any application-layer packet that hits or leaves the platform—uplink telemetry, RPCs, attribute updates, downlinks — regardless of transport (MQTT, HTTP, CoAP, LwM2M) or integration. We meter sustained messages per minute, aggregated across all protocols. <br><br></p>
+                            <p><b>Note:</b>  We consider 1 message = 1 data point.<br><br></p>
+                            <p>This approach provides a consistent way to calculate usage, since different devices may send messages containing a different number of data points. <br><br></p>
+                            <p><b>For example:</b></p>
+                            <p>{ "temperature": 23.5, "humidity": 62 } = 2 messages</p>
+                            <p>{ "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } = 5 messages</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-sustained-message-rate-limit" data-title="What happens if I exceed my sustained message-rate limit?">
@@ -2474,8 +2555,11 @@ selfManagedPlan:
                         <div class="container">
                             <p>Each plan bundles a block-storage pool (Launch 200 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
                             <p><strong>Replication overhead</strong> <br></p>
-                            <p>The figures above represent raw logical data. For durability the underlying databases keep multiple physical copies: <br></p>
-                            <p>PostgreSQL (metadata, latest-timeseries) is synchronously replicated 2 × Cassandra (long-term telemetry) keeps 3 × replicas by default. <br></p>
+                            <p>The figures above represent raw logical data. For durability the underlying databases keep multiple physical copies:</p>
+                            <ul>
+                                <li>PostgreSQL (metadata, latest-timeseries) is synchronously replicated 2×.</li>
+                                <li>Cassandra (long-term telemetry) keeps 3× replicas by default.</li>
+                            </ul>
                             <p>Therefore 100 GB of logical telemetry stored in Cassandra will be accounted as 300 GB of physical disk space inside your pool, and 100 GB of metadata in PostgreSQL will consume roughly 200 GB. <br><br></p>
                             <p><strong>Note for Cassandra-backed deployments:</strong> <br></p>
                             <p>Telemetry rows receive a TTL (time-to-live) at the moment they are written. If the TTL is missing or longer than intended, those rows cannot be purged retrospectively; they will live until the TTL expires or the table is truncated. Be sure to set an appropriate TTL in your Rule Engine or integration pipeline when inserting data to keep storage growth predictable.</p>
@@ -2489,14 +2573,19 @@ selfManagedPlan:
                             <p>Retention is 100 % customer-controlled through the built-in TTL settings or Rule Engine logic. Keep data for days or years—just remember that longer retention consumes more storage and may raise your bill.</p>
                         </div>
                     </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-custom-data-retention-policies" data-title="What are Custom Data Retention Policies?">
+                        <div class="container">
+                            <p>These policies allow customers to control how long their data is kept. Storage limits are defined by the plan, and more can be added if needed.</p>
+                        </div>
+                    </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-rest-websocket-api-rate-limits" data-title="Are there REST / WebSocket API rate limits?">
                         <div class="container">
-                            <p>Yes. Per tenant, device and user limits prevent abuse and protect cluster health. The full tables are published here: thingsboard.io/private-cloud/api-limits (link placeholder). Contact us to raise limits if needed.</p>
+                            <p>Yes. Per tenant, device and user limits prevent abuse and protect cluster health. The full tables are published <a href="docs/private-cloud/subscription/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-limits-on-dashboards-widgets-rule-chains-or-alarms" data-title="Are there limits on dashboards, widgets, rule chains, or alarms?">
                         <div class="container">
-                            <p>In practice no—you may create as many dashboards, widgets, rule chains, and alarms as your project needs. Keep in mind, though, that the msg/min SLA applies only to the default rule-chain templates we provision. Heavy or inefficient custom logic can slow processing.</p>
+                            <p>In practice no—you may create as many dashboards, widgets, rule chains, and alarms as your project needs. Keep in mind, though, that the msg/min SLA applies only to the default rule-chain templates we provision. Heavy or inefficient custom logic can slow processing. <br><br></p>
                             <p>To protect data integrity while you troubleshoot, every cluster ships with a Kafka buffer of up to 50 GB (roughly several hours of traffic, depending on throughput). Incoming telemetry is queued there until the Rule Engine catches up. If the buffer fills completely, the oldest messages are discarded first, so maintaining efficient rule chains is essential for uninterrupted data flow.</p>
                         </div>
                     </div>
@@ -2522,11 +2611,13 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-device-limits-private-cloud-plans" data-title="What are the device limits Private Cloud plans?">
                         <div class="container">
-                            <p>Each plan includes a different default device capacity: <br><br></p>
-                            <p>Launch: 5,000 devices<br></p>
-                            <p>Growth: 25,000 devices<br></p>
-                            <p>Scale: 50,000 devices<br></p>
-                            <p>Enterprise: unlimited devices<br></p>
+                            <p>Each plan includes a different default device capacity:</p>
+                            <ul>
+                                <li>Launch: 5,000 devices</li>
+                                <li>Growth: 25,000 devices</li>
+                                <li>Scale: 50,000 devices</li>
+                                <li>Enterprise: unlimited devices</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-title="What happens if I exceed my included device limit?">
@@ -2598,8 +2689,8 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations" data-title="What is included in service reviews and architecture consultations?">
                         <div class="container">
-                            <p>Service reviews and architecture consultations are a specialized, ongoing service available exclusively to ThingsBoard Private Cloud customers. These sessions provide structured, high-level guidance from a senior ThingsBoard engineer who collaborates with your team regularly. You’ll receive proactive recommendations on best practices, performance tuning, and scalable architecture design tailored to your evolving use case.</p>
-                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement.</p>
+                            <p>Service reviews and architecture consultations are a specialized, ongoing service available exclusively to ThingsBoard Private Cloud customers. These sessions provide structured, high-level guidance from a senior ThingsBoard engineer who collaborates with your team regularly. You’ll receive proactive recommendations on best practices, performance tuning, and scalable architecture design tailored to your evolving use case. <br><br></p>
+                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement. <a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Contact us</a> for more details.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-is-the-pricing-determined-for-the-enterprise-plan" data-title="How is the pricing determined for the Enterprise plan?">
