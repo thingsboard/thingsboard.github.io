@@ -282,6 +282,9 @@ toc:
     - title: Advanced RBAC for IoT
       path: /docs/pe/user-guide/rbac/
       pe: true
+    - title: Secret storage
+      path: /docs/pe/user-guide/secret-storage/
+      pe: true
     - title: Two-factor authentication
       path: /docs/user-guide/two-factor-authentication/
     - title: OAuth 2.0
