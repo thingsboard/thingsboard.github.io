@@ -343,6 +343,14 @@ selfManagedPlan:
                </div>
             </div>
         </div>
+        <div class="additional-content">
+            <div class="plan-calculator-block">
+                <div class="text">
+                    <h2 class="no-margin">Ready to scale past 1,000 devices?</h2>
+                </div>
+                <button onclick="switchToPrivateCloud()" class="button clulator gtm_button">See Private Cloud Options</button>
+            </div>
+        </div>
     </div>
 </div>
 
