@@ -1,0 +1,127 @@
+---
+layout: docwithnav-trendz
+title: Anomaly Models
+description: How to train anomaly models using historical data. Covers segmentation, preprocessing, and the "Build" task
+
+---
+
+* TOC
+{:toc}
+
+## Anomaly Model Properties
+
+### General Settings
+
+General settings are the most important in the anomaly model creation process. They determine which entities, telemetries, 
+or devices and which time range will be used for training the anomaly model.
+
+* **Entity:** Select the entity for which the anomaly detection will be performed. This determines the context of the anomaly model.
+
+* **Fields:** Choose the specific field within the entity that you want to analyze. For example, this could be energy consumption, temperature, or another measurable parameter.
+  
+  **Note:** Currently, it's only possible to choose numeric telemetry here.
+
+  We recommend choosing only necessary fields that are potentially related to each other. For example:  
+  vibrations could be related to motor temperature or load.
+
+* **Items for Model Training:**  
+  Select the specific items (e.g., particular devices or assets) within the entity to focus your analysis.  
+  We recommend choosing the most normal data to improve anomaly detection (you can identify this by building a model on all assets first).
+
+* **Time Range for Model Training:**  
+  Define the historical data period that the model will use for training. For example, you can set a time range of the 
+  past 3 months or 1 year, depending on the availability and relevance of data.
+
+Additionally, it's possible to specify telemetry saving options here.
+
+* **Telemetry Key:** Telemetry key that will be used during reprocess/refresh to produce the same anomaly score and anomaly score index.
+
+* **Telemetry Storage Frequency:** This parameter specifies the aggregation level at which the anomaly score and anomaly score index will be stored in ThingsBoard.  
+  We recommend specifying a telemetry storage frequency that is:
+    - Less than the segment time range (for fixed segment strategy)
+    - Less than `segment size * sliding step % / 100` (for sliding window strategy)
+
+  Find out more about refresh/reprocess [here](/docs/trendz/anomaly/refresh-reprocess.md).  
+  Find out more about saving telemetry to ThingsBoard [here](/docs/trendz/anomaly/save-to-tb.md).
+
+### Model Properties
+
+#### Clusterization Settings 
+
+These settings define which clustering algorithm will be used to detect anomalies in your telemetry data, and how it will work.
+
+- **Clustering Algorithm:** Choose how the data will be grouped into clusters. Points that don’t fit well into any group will be considered anomalies.  
+  Supported methods:
+  - **K-Means:** Splits data into a fixed number of groups. Anomalies are points far from their group center.  
+    **Use when:** Data is clean, consistent, and you know how many clusters to expect.  
+    [Learn more about K-Means](https://scikit-learn.org/stable/modules/clustering.html#k-means)
+  - **DBSCAN:** Groups data based on how close and dense points are. Anomalies are isolated or low-density points.  
+    **Use when:** You have noisy data or clusters of different shapes/sizes.  
+    [Learn more about DBSCAN](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
+
+  - **GMM (Gaussian Mixture Model):** Models data as a mix of several normal distributions. Anomalies are points with low probability.  
+    **Use when:** You need flexible clustering and probabilistic results.  
+    [Learn more about GMM](https://scikit-learn.org/stable/modules/mixture.html)
+
+  - **Max Iterations (for K-Means):** How many times K-Means should try to improve the clustering.
+  - **Max Epsilon (for DBSCAN):** Maximum distance between points to consider them as part of the same group.
+  - **Min Points in Cluster (for DBSCAN):** Minimum number of nearby points to form a valid cluster.
+
+  - **Cluster Count:** Number of clusters to create.
+
+  - **Distance Function:** How to measure similarity between telemetry time series.
+      - **Dynamic Time Warping (DTW):** Good for time series with similar shapes but different timing.
+      - **Euclidean:** Straight-line distance, simple and fast.
+      - **Chebyshev:** Focuses on the largest single difference.
+      - **Manhattan:** Adds up all absolute differences.
+      - **Canberra:** Highlights small values and sparsity.
+
+#### Segmentation Settings
+
+Splitting telemetry into smaller, manageable time windows helps analyze behavior more accurately.
+
+- **Segment Time Range:** Duration of each data segment (e.g., 6 hours, 1 day).  
+
+- **Time Window Type:** How segments are built over time:
+    - **Fixed Range:** Non-overlapping segments.
+    - **Sliding Window:** Overlapping segments that move forward with a fixed step.  
+- **Sliding Step Percent:** Applied only for *Sliding Window* time window type - fixed step for overlapping segments.
+
+- **Max Time Gap in Segment:** Maximum allowed gap between data points in the same segment.
+- **Min Segment Duration:** Minimum time span for a segment to be considered valid.
+- **Min Points in Segment:** Minimum number of data points required for a valid segment.
+
+#### Feature Extraction Settings
+
+After segmenting the data, extract useful features that help the model understand behavior.
+
+- **Comparison Type:** Defines how segments will be compared.
+    - **Behavior-based:** Captures overall patterns and trends in the data.
+    - **Feature-based:** Focuses on specific measurements or attributes derived from the data.  
+
+- **Aggregation:** Function used to summarize data within a segment (AVG, MIN, MAX, SUM, COUNT).
+- **Aggregation Points:** Number of points considered when calculating aggregations.
+
+#### Anomaly Detection Settings
+
+- **Score Threshold Percent:** This is the percentile threshold used to classify whether a segment is anomalous.  
+  Segments with anomaly scores above this threshold are marked as anomalies.  
+  **Example:** If set to 15%, the top 15% of segments with the highest scores will be considered anomalies.
+
+- **Min Anomaly Duration:** Minimum duration for an event to be considered an actual anomaly.
+- **Cluster Joining Strategy:** This setting allows the system to treat anomalies from nearby segments even if they 
+  belong to different clusters as a single, continuous anomaly.
+
+
+#### Limits
+
+- **Max Points Count:** Maximum number of data points used for training and detection.
+- **Max Segments Count:** Maximum number of segments the system will handle during processing.
+
+### Alarm Configuration Properties
+- **Alarm Type:** type of Alarm that will be  
+* Alarm Behaviour on anomaly detection
+
+- **Severities:** this section will appear after first build of the model
+
+## Best Practises
