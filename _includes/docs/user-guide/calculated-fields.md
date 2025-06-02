@@ -35,6 +35,8 @@ This flexibility allows users to either define unique calculations per entity or
 
 ## Create new calculated field
 
+>**Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
+
 To create a calculated field, follow these steps:
 
 - Select to the Entity or Profile where the calculated field should be applied. 
