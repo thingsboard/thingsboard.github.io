@@ -2642,7 +2642,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-private-cloud-enterpriseSubscription" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-title="What features are unique to the Enterprise plan?">
                         <div class="container">
-                            <p>The Enterprise plan tailored for customers with complex operational and business needs. While it builds on the same platform features, it introduces a separate, flexible billing model and the option for advanced engineering support at the application level. This combination enables organizations to manage Private Cloud at scale with greater control, specialized assistance, and the ability to align infrastructure with their unique workflows and compliance requirements.</p>
+                            <p>The Enterprise plan is tailored for customers with complex operational and business needs. While it builds on the same platform features, it introduces a separate, flexible billing model and the option for advanced engineering support at the application level. This combination enables organizations to manage Private Cloud at scale with greater control, specialized assistance, and the ability to align infrastructure with their unique workflows and compliance requirements.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-get-a-custom-sla" data-title="Can I get a custom SLA?">
