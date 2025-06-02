@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
 title: Anomaly-Driven Alarm Creation
-description: 
+description: How to configure alarms triggered by anomaly detection, including alarm types, severities, and behaviors.
 
 ---
 

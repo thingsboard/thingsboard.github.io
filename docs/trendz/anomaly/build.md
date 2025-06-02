@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-trendz
-title: Anomaly Models
+title: Anomaly Model Properties
 description: How to train anomaly models using historical data. Covers segmentation, preprocessing, and the "Build" task
 
 ---
@@ -8,7 +8,7 @@ description: How to train anomaly models using historical data. Covers segmentat
 * TOC
 {:toc}
 
-## Anomaly Model Properties
+## Build Properties
 
 ### General Settings
 
@@ -119,9 +119,41 @@ After segmenting the data, extract useful features that help the model understan
 - **Max Segments Count:** Maximum number of segments the system will handle during processing.
 
 ### Alarm Configuration Properties
-- **Alarm Type:** type of Alarm that will be  
-* Alarm Behaviour on anomaly detection
 
-- **Severities:** this section will appear after first build of the model
+- **Alarm Type:**  
+  Configure the type/category of alarm that will be created for detected anomalies. This setting helps categorize alarms 
+  within ThingsBoard.
 
-## Best Practises
+- **Alarm Behavior on Anomaly Detection:**  
+  Defines how alarms are managed in anomaly deletion case.
+
+- **Severities:**  
+  This section becomes available after the first model build and allows you to configure threshold values for alarm 
+  severities (e.g., Critical, Major, Minor). Trendz automatically generates default thresholds based on the anomaly score distribution.
+
+## Best Practices
+
+1. **Select Relevant Data for Training:**  
+   Use the most representative and normal behavior data when training models to improve detection accuracy and reduce false positives.
+
+2. **Tune Segmentation Carefully:**  
+   Choose segment duration and sliding steps that match the natural cycles or expected anomaly durations of your system.
+
+3. **Configure Clustering Method to Data Characteristics:**  
+   Pick a clustering algorithm suitable for your data shape and noise level (e.g., DBSCAN for noisy data, K-Means for well-separated clusters).
+
+4. **Adjust Alarm Thresholds According to Business Needs:**  
+   Set severity thresholds reflecting your operational priorities and tolerance for alerts.
+
+5. **Enable Alarm Creation Only When Confident:**  
+   Activate alarms only after validating the model reliably detects real anomalies, to avoid alarm fatigue.
+
+6. **Monitor Alarm Volume to Prevent Alarm Storms:**  
+   Keep an eye on the number and frequency of alarms to avoid overwhelming operators or systems.
+
+7. **Test Model With Reprocess on Historical Data:**  
+   Use reprocess tasks on past data to validate model performance and refine settings before enabling refresh.
+
+## Next Steps
+
+{% assign currentGuide = "AnomalyDetection" %}{% include templates/trndz-guides-banner.md %}
