@@ -23,11 +23,13 @@ To access anomaly refresh settings, click the **"JOBS"** button. You will see th
 * **Choose Items:** Select the items (e.g., devices or assets) on which the refresh will be performed.
 
 * **Enable Saving Anomaly Data:** If enabled, anomaly score and anomaly score index will be saved to ThingsBoard using
-  the telemetry key specified in the [Input section](/docs/trendz/anomaly/overview.md#input-tab).  
-  Read more about saving telemetry to ThingsBoard [here](/docs/trendz/anomaly/save-to-tb.md).
+  the telemetry key specified in the [Input section](/docs/trendz/anomaly/overview#input-tab).  
+  Read more about saving telemetry to ThingsBoard [here](/docs/trendz/anomaly/save-to-tb).
 
 * **Enable Anomaly Alarms Creation:** If enabled, alarms will be created for detected anomalies.  
-  Read more about creating anomaly-driven alarms [here](/docs/trendz/anomaly/alarms.md).
+  Read more about creating anomaly-driven alarms [here](/docs/trendz/anomaly/alarms).
+
+**Note:** Refresh will be disabled automatically after an anomaly model is rebuilt.
 
 **Note:** Refresh frequency is not the same as telemetry saving frequency.  
 **Example:** If refresh frequency is 1 day and telemetry saving frequency is 1 hour, then the job will run once per day and will save 24 score points and 24 score index points per device.
@@ -46,3 +48,7 @@ To access reprocess settings, go to the **Task** tab and click the **"Run Reproc
 **Note:** During reprocess, all previously saved anomalies in the selected time range for the selected items (for the current model) will be overwritten.
 
 **Note:** Telemetry will only be saved to ThingsBoard if anomaly refresh is enabled *and* the **Enable Saving Anomaly Data** toggle is active in anomaly refresh settings.
+
+## Next Steps
+
+{% assign currentGuide = "AnomalyDetection" %}{% include templates/trndz-guides-banner.md %}
