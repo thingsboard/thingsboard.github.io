@@ -360,7 +360,7 @@ selfManagedPlan:
             <div class="pricing-content-description always-display active col-lg-6">
               <h2>Choose your plan</h2>
               <div class="pricing-content-details">
-                  All-inclusive hosting and infrastructure, so you can focus on building your solutions.
+                  Hosting and infrastructure included—so you can focus on building your solutions.
               </div>
             </div>
             <div class="toggle-container">
@@ -401,7 +401,7 @@ selfManagedPlan:
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">20 000 msg/minute</div>
-                        <div class="pricing-square-item">200 GB of storage included</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">200 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
                 </div>
@@ -428,7 +428,7 @@ selfManagedPlan:
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">100 000 msg/minute</div> 
-                        <div class="pricing-square-item">1 TB of storage included</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
                 </div>
@@ -455,7 +455,7 @@ selfManagedPlan:
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">500 000 msg/minute</div>
-                        <div class="pricing-square-item">2 TB of storage included</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
                 </div>
@@ -507,7 +507,7 @@ selfManagedPlan:
                     <div class="card">
                         <h3 data-faq-id="tb-private-cloud-what-is-included-in-the-white-labeled-mobile-app-add-on" data-faq-link-size="50%">White-labeled Mobile App</h3>
                         <h4>$99 <span>each per month</span></h4>
-                        <p>+ $1000 USD one time setup fee</p>
+                        <p>+ $1000 one time setup fee</p>
                     </div>
                 </div>
             </div>
@@ -519,7 +519,7 @@ selfManagedPlan:
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Pilot</th>
+                                <th>Launch</th>
                                 <th>Growth</th>
                                 <th>Scale</th>
                                 <th>Enterprise</th>
@@ -2392,7 +2392,7 @@ selfManagedPlan:
                                 <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 messages per minute; additional devices are billed at $0.09/device/month.</li>
                                 <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 messages per minute; additional devices are billed at $0.08/device/month.</li>
                                 <li>Enterprise: Custom pricing — includes 100,000 devices by default and no message rate limits. Extendable as needed based on specific deployment requirements.</li>
-                                <li>Short-term bursts up to 50 % over the msg/min ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</li>
+                                <li>Short-term bursts up to 20% over the msg/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</li>
                             </ul>
                         </div>
                     </div>
@@ -2429,7 +2429,7 @@ selfManagedPlan:
                                     </ul>
                                 </li>
                             </ul>
-                            <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 50 % over the msg/min ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
+                            <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 20 % over the msg/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -2490,15 +2490,12 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-are-messages-defined-and-metered" data-title="How are “messages” defined and metered?">
                         <div class="container">
-                            <p>A message is any application-layer packet that hits or leaves the platform—uplink telemetry, RPCs, attribute updates, downlinks — regardless of transport (MQTT, HTTP, CoAP, LwM2M) or integration. We meter sustained messages per minute, aggregated across all protocols. <br><br></p>
+                            <p>A message is any application-layer packet that enters or leaves the platform—whether it’s uplink telemetry, an RPC, an attribute update, or a downlink—regardless of transport protocol (MQTT, HTTP, CoAP, LwM2M) or integration. We measure sustained messages per minute, aggregated across all protocols. <br><br></p>
                             <p><strong>Note:</strong></p>
-                            <p>
-                                IoT devices can include different numbers of data points in each message. System load is determined by the total number of data points, not by the message count. To keep our subscription plans simple, we treat each message as one data point toward your plan limits. 
-                                You can use our plan calculator for a more precise estimate.
-                            </p>
+                            <p>IoT devices can include varying numbers of data points in each message. System load is determined by the total number of data points, not by the message count. To keep our subscription plans simple, we count each data point as one message toward your plan limits. You can use our plan calculator for a more precise estimate.<br><br></p>
                             <p><b>For example:</b></p>
-                            <p>Payload { "temperature": 23.5, "humidity": 62 } contains 2 data points, so calculated as 2 messages</p>
-                            <p>Payload { "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } contains 5 data points, so calculated as 5 messages</p>
+                            <p>Payload { "temperature": 23.5, "humidity": 62 } contains 2 data points, so calculated as 2 messages.</p>
+                            <p>Payload { "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } contains 5 data points, so calculated as 5 messages.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-sustained-message-rate-limit" data-title="What happens if I exceed my sustained message-rate limit?">
@@ -2508,12 +2505,12 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-burst-above-the-message-limit-and-for-how-long" data-title="Can I burst above the message limit and for how long?">
                         <div class="container">
-                            <p>Yes. Short-term bursts up to 10 % above the stated msgs-per-minute ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
+                            <p>Yes. Short-term bursts up to 20% above the stated msgs-per-minute ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-do-i-monitor-my-current-device-message-and-storage-usage" data-title="How do I monitor my current device, message, and storage usage?">
                         <div class="container">
-                            <p>The Home dashboard contains information about number of devices and The API Usage dashboard contains information about hourly message rates. The storage usage information is calculated from multiple data sources and available upon request. We are working on a way to embed it into the platform dasbhards.</p>
+                            <p>The Home dashboard contains information about number of devices and The API Usage dashboard contains information about hourly message rates. The storage usage information is calculated from multiple data sources and available upon request. We are working on a way to embed it into the platform dashboards.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-title="What telemetry storage is included and what data consumes it?">
@@ -2525,7 +2522,7 @@ selfManagedPlan:
                                 <li>PostgreSQL (metadata, latest-timeseries) is synchronously replicated 2×.</li>
                                 <li>Cassandra (long-term telemetry) keeps 3× replicas by default.</li>
                             </ul>
-                            <p>Therefore 100 GB of logical telemetry stored in Cassandra will be accounted as 300 GB of physical disk space inside your pool, and 100 GB of metadata in PostgreSQL will consume roughly 200 GB. <br><br></p>
+                            <p>Therefore, 100 GB of logical telemetry stored in Cassandra will be accounted as 300 GB of physical disk space inside your pool, and 100 GB of metadata in PostgreSQL will consume roughly 200 GB. <br><br></p>
                             <p><strong>Note for Cassandra-backed deployments:</strong> <br></p>
                             <p>Telemetry rows receive a TTL (time-to-live) at the moment they are written. If the TTL is missing or longer than intended, those rows cannot be purged retrospectively; they will live until the TTL expires or the table is truncated. Be sure to set an appropriate TTL in your Rule Engine or integration pipeline when inserting data to keep storage growth predictable.</p>
                         </div>
@@ -2550,7 +2547,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-limits-on-dashboards-widgets-rule-chains-or-alarms" data-title="Are there limits on dashboards, widgets, rule chains, or alarms?">
                         <div class="container">
-                            <p>In practice no—you may create as many dashboards, widgets, rule chains, and alarms as your project needs. Keep in mind, though, that the msg/min SLA applies only to the default rule-chain templates we provision. Heavy or inefficient custom logic can slow processing. <br><br></p>
+                            <p>In practice no—you may create as many dashboards, widgets, rule chains, and alarms as your project needs. Keep in mind, though, that the msg/minute SLA applies only to the default rule-chain templates we provision. Heavy or inefficient custom logic can slow processing. <br><br></p>
                             <p>To protect data integrity while you troubleshoot, every cluster ships with a Kafka buffer of up to 50 GB (roughly several hours of traffic, depending on throughput). Incoming telemetry is queued there until the Rule Engine catches up. If the buffer fills completely, the oldest messages are discarded first, so maintaining efficient rule chains is essential for uninterrupted data flow.</p>
                         </div>
                     </div>
@@ -2645,7 +2642,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-private-cloud-enterpriseSubscription" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-title="What features are unique to the Enterprise plan?">
                         <div class="container">
-                            <p>The Enterprise plan tailored for customers with complex operational and business needs. While it builds on the same platform features, it introduces a separate, flexible billing model and the option for advanced engineering support at the application level. This combination enables organizations to manage Private Cloud at scale with greater control, specialized assistance, and the ability to align infrastructure with their unique workflows and compliance requirements.</p>
+                            <p>The Enterprise plan is tailored for customers with complex operational and business needs. While it builds on the same platform features, it introduces a separate, flexible billing model and the option for advanced engineering support at the application level. This combination enables organizations to manage Private Cloud at scale with greater control, specialized assistance, and the ability to align infrastructure with their unique workflows and compliance requirements.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-get-a-custom-sla" data-title="Can I get a custom SLA?">
