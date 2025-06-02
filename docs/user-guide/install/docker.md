@@ -19,8 +19,6 @@ This guide will help you to install and start ThingsBoard using Docker on Linux,
 
 {% include templates/install/docker-install.md %}
 
-- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
-
 {% include templates/install/docker-install-note.md %}
 
 ## Running
