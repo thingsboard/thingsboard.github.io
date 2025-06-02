@@ -86,3 +86,7 @@ Note:
 ### Cluster Info Tab
 
 ### Tasks Tab
+
+## Next Steps
+
+{% assign currentGuide = "AnomalyDetection" %}{% include templates/trndz-guides-banner.md %}

@@ -120,15 +120,12 @@ After segmenting the data, extract useful features that help the model understan
 
 ### Alarm Configuration Properties
 
-- **Alarm Type:**  
-  Configure the type/category of alarm that will be created for detected anomalies. This setting helps categorize alarms 
+- **Alarm Type:** Configure the type/category of alarm that will be created for detected anomalies. This setting helps categorize alarms 
   within ThingsBoard.
 
-- **Alarm Behavior on Anomaly Detection:**  
-  Defines how alarms are managed in anomaly deletion case.
+- **Alarm Behavior on Anomaly Detection:** Defines how alarms are managed in anomaly deletion case.
 
-- **Severities:**  
-  This section becomes available after the first model build and allows you to configure threshold values for alarm 
+- **Severities:** This section becomes available after the first model build and allows you to configure threshold values for alarm 
   severities (e.g., Critical, Major, Minor). Trendz automatically generates default thresholds based on the anomaly score distribution.
 
 ## Best Practices
