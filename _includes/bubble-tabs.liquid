@@ -39,7 +39,7 @@
                         {% for sphere in data[1] %}
                             {% if sphere[1].src %}
                                 <div class="tab-item">
-                                    <img src="{{ sphere[1].src }}" alt="{{ sphere[1].alt }}" loading="lazy">
+                                    <img src="{{ sphere[1].src }}" alt="{{ sphere[1].alt }}" loading="lazy" width="240" height="240">
                                     <div class="tab-item-text">
                                         <span class="tab-item-text-title" style="font-size: {{ titleSize }}; font-weight: {{ titleWeight }}; line-height: {{ titleLineHeight }}; color: {{ titleColor }}">{{ sphere[1].title }}</span>
                                         <span class="tab-item-text-description" style="font-size: {{ descriptionSize }}; font-weight: {{ descriptionWeight }}; line-height: {{ descriptionLineHeight }}; color: {{ descriptionColor }}">{{ sphere[1].description }}</span>

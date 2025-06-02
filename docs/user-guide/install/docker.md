@@ -12,7 +12,7 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+This guide will help you to install and start ThingsBoard using Docker on Linux, Windows or Mac OS.
 
 
 ## Prerequisites

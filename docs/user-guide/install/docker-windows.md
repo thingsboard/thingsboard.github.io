@@ -76,6 +76,7 @@ Bring up all containers in detached mode, then follow the ThingsBoard logs:
 docker compose up -d && docker compose logs -f thingsboard-ce
 ```
 
+
 You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
 ## Inspect logs & control container lifecycle

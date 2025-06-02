@@ -22,7 +22,7 @@ In this lesson, we will add two customers and configure shared access for them t
 In our case, a Customer is an individual or organization that rents an office in your building and uses the devices available there.
 Each customer will have access solely to their respective rented office and the devices within it.
 
-{% include carousel.liquid collectionMap = 'dashboard-lesson-5' nonActiveItemsVisibility = false %}
+{% include default-carousel.liquid collectionMap = 'dashboard-lesson-5' nonActiveItemsVisibility = false %}
 
 As part of our lesson, imagine two customers: Customer A rents Office A in Building A. Customer B rents Office B in the same building.
 
