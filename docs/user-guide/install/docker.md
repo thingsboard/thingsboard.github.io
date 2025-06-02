@@ -12,7 +12,7 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Linux, Windows or Mac OS.
+This guide will help you to install and start ThingsBoard using Docker on Linux or MacOS.
 
 
 ## Prerequisites
@@ -78,7 +78,7 @@ Bring up all containers in detached mode, then follow the ThingsBoard logs:
 docker compose up -d && docker compose logs -f thingsboard-ce
 ```
 
-You can safely detach from the log stream (e.g. Ctrl+P, Ctrl+Q); containers will continue running.
+You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
 ## Inspect logs & control container lifecycle
 
