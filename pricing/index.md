@@ -760,7 +760,7 @@ selfManagedPlan:
                     <div class="pricing-square">
                         <h2>Enterprise</h2>
                         <div class="pricing-square-description">
-                            <p>Consider yourself a Fortune 500 company in the field? Subscribe this plan</p>
+                            <p>Consider yourself a Fortune 500 company in the field?</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $500
