@@ -1,0 +1,44 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign customSettings = include.customSettings %}
+
+{% assign titleSize = include.titleSize | default: "96px" %}
+{% assign titleSizeLower1280 = include.titleSizeLower1280 | default: "64px" %}
+{% assign titleSizeLower960 = include.titleSizeLower960 | default: "56px" %}
+{% assign titleSizeLower600 = include.titleSizeLower600 | default: "40px" %}
+{% assign descriptionSize = include.descriptionSize | default: "36px" %}
+{% assign descriptionSizeLower1280 = include.descriptionSizeLower1280 | default: descriptionSize %}
+{% assign descriptionSizeLower960 = include.descriptionSizeLower960 | default: "32px" %}
+{% assign descriptionSizeLower600 = include.descriptionSizeLower600 | default: descriptionSizeLower960 %}
+
+{% if site.data.carousel-collection[include.collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[include.collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[include.collectionMap] %}
+{% endif %}
+
+{% assign defaultSettings = '{
+    "items": 1,
+    "stagePadding": 0,
+    "margin": 0,
+    "nav": false,
+    "dots": true,
+    "mouseDrag": true
+}' %}
+
+{% assign settings = defaultSettings %}
+
+{% if customSettings %}
+    {% assign settings = customSettings %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme transitionAnimationEnabled nonActiveItemsVisibilityTrue square dotButtonInCarouselContainerEnabled thingsboardStyledBackgroundEnabled darkenedImageEnabled" data-settings='{{ settings }}'>
+    {% for carouselItem in carouselCollection %}
+        <div class="carousel-item-default carousel-item-image-background" style="width: 100%; height: {{ carouselItem[1].height }}; background-image: url({{ carouselItem[1].src }}); --titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
+            <div class="carousel-text">
+                <h2 class="company-values-title">{{ carouselItem[1].title }}</h2>
+                <p class="company-values-description">{{ carouselItem[1].description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

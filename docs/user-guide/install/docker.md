@@ -12,7 +12,7 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+This guide will help you to install and start ThingsBoard using Docker on Linux or MacOS.
 
 
 ## Prerequisites
@@ -22,8 +22,6 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 {% include templates/install/docker-install-note.md %}
 
 ## Running
-
-In this instruction [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) image will be used. It contains a single instance of ThingsBoard with PostgreSQL database.
 
 Running this image requires a server with at least 4GB of RAM (8GB is recommended) and minimum load (few messages per second).
 
@@ -40,7 +38,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Where: 
 
-- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
+- `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
@@ -63,6 +61,15 @@ Environment variables:
 - `INSTALL_TB=true` - Installs the core database schema and system resources (widgets, images, rule chains, etc.).
 - `LOAD_DEMO=true` - Loads sample tenant account, dashboards and devices for evaluation and testing.
 
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
+Use the following default credentials:
+
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **Customer User**: customer@thingsboard.org / customer
+    
+You can always change passwords for each account in account profile page.
+
 ## Start the platform & tail logs
 
 Bring up all containers in detached mode, then follow the ThingsBoard logs:
@@ -71,7 +78,7 @@ Bring up all containers in detached mode, then follow the ThingsBoard logs:
 docker compose up -d && docker compose logs -f thingsboard-ce
 ```
 
-You can safely detach from the log stream (e.g. Ctrl+P, Ctrl+Q); containers will continue running.
+You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
 ## Inspect logs & control container lifecycle
 
