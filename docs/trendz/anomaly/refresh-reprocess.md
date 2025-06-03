@@ -44,10 +44,12 @@ To access reprocess settings, go to the **Task** tab and click the **"Run Reproc
 * **Date Range:** Time range for reprocessing anomalies.
 * **Items for Anomaly Reprocess:** Devices or assets to process during the reprocess.
 * **Enable Anomaly Creation Toggle:** If enabled, alarms will be automatically created for anomalies found during reprocess.
-
-**Note:** During reprocess, all previously saved anomalies in the selected time range for the selected items (for the current model) will be overwritten.
+* **Enable Saving Telemetry Toggle:** If enabled, telemetry will be saved to ThingsBoard. This toggle could be enabled only if 
+  refresh and saving telemetry to ThingsBoard is enabled for the current anomaly model.
 
 **Note:** Telemetry will only be saved to ThingsBoard if anomaly refresh is enabled *and* the **Enable Saving Anomaly Data** toggle is active in anomaly refresh settings.
+**Note:** During reprocess, all previously saved anomalies in the selected time range for the selected items (for the current model) will be overwritten.
+
 
 ## Next Steps
 

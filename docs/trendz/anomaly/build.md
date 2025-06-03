@@ -21,7 +21,7 @@ or devices and which time range will be used for training the anomaly model.
   
   **Note:** Currently, it's only possible to choose numeric telemetry here.
 
-  We recommend choosing only necessary fields that are potentially related to each other. For example:  
+  We recommend choosing only the necessary fields that are potentially related to each other. For example:  
   vibrations could be related to motor temperature or load.
 
 * **Items for Model Training:**  
@@ -63,18 +63,18 @@ These settings define which clustering algorithm will be used to detect anomalie
     **Use when:** You need flexible clustering and probabilistic results.  
     [Learn more about GMM](https://scikit-learn.org/stable/modules/mixture.html)
 
-  - **Max Iterations (for K-Means):** How many times K-Means should try to improve the clustering.
-  - **Max Epsilon (for DBSCAN):** Maximum distance between points to consider them as part of the same group.
-  - **Min Points in Cluster (for DBSCAN):** Minimum number of nearby points to form a valid cluster.
+- **Max Iterations (for K-Means):** How many times K-Means should try to improve the clustering.
+- **Max Epsilon (for DBSCAN):** Maximum distance between points to consider them as part of the same group.
+- **Min Points in Cluster (for DBSCAN):** Minimum number of nearby points to form a valid cluster.
 
-  - **Cluster Count:** Number of clusters to create.
+- **Cluster Count:** Number of clusters to create.
 
-  - **Distance Function:** How to measure similarity between telemetry time series.
-      - **Dynamic Time Warping (DTW):** Good for time series with similar shapes but different timing.
-      - **Euclidean:** Straight-line distance, simple and fast.
-      - **Chebyshev:** Focuses on the largest single difference.
-      - **Manhattan:** Adds up all absolute differences.
-      - **Canberra:** Highlights small values and sparsity.
+- **Distance Function:** How to measure similarity between telemetry time series.
+    - **Dynamic Time Warping (DTW):** Good for time series with similar shapes but different timing.
+    - **Euclidean:** Straight-line distance, simple and fast.
+    - **Chebyshev:** Focuses on the largest single difference.
+    - **Manhattan:** Adds up all absolute differences.
+    - **Canberra:** Highlights small values and sparsity.
 
 #### Segmentation Settings
 
@@ -99,8 +99,8 @@ After segmenting the data, extract useful features that help the model understan
     - **Behavior-based:** Captures overall patterns and trends in the data.
     - **Feature-based:** Focuses on specific measurements or attributes derived from the data.  
 
-- **Aggregation:** Function used to summarize data within a segment (AVG, MIN, MAX, SUM, COUNT).
-- **Aggregation Points:** Number of points considered when calculating aggregations.
+- **Aggregation (Applicable only for Behavior-based Comparison Type):** Function used to summarize data within a segment (AVG, MIN, MAX, SUM, COUNT).
+- **Aggregation Points (Applicable only for Behavior-based Comparison Type):** Number of points considered when calculating aggregations.
 
 #### Anomaly Detection Settings
 
