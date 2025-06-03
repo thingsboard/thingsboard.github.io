@@ -301,6 +301,8 @@ html#pricing
         font-size: 14px
         line-height: 24px
         color: #707275
+        @media (min-height: 1150px)
+          margin-bottom: 32px
         p
           font-size: 14px
           min-height: 48px
@@ -337,6 +339,8 @@ html#pricing
         line-height: 60px
         text-align: center
         letter-spacing: -.01em
+        @media (min-height: 1150px)
+          margin-bottom: 16px
         &.hidden
           display: none
         @media (min-width: 768px)
@@ -349,6 +353,8 @@ html#pricing
         font-size: 14px
         line-height: 21px
         padding-bottom: 12px
+        @media (min-height: 1150px)
+          padding-bottom: 16px
         margin-left: 32px
         font-weight: 400
         &:before
@@ -374,7 +380,6 @@ html#pricing
         line-height: 32px
       .pricing-div
         .btn-pricing
-          margin: 0
           min-width: 200px
     .pricing-community
       .pricing-square.support-cards
@@ -544,6 +549,9 @@ html#pricing
         flex-direction: column-reverse
         @media (min-width: 992px)
           flex-direction: row
+        @media (min-height: 1150px)
+          margin-bottom: 32px
+          padding-top: 32px
         &.not-reverse-column
           @media (min-width: 992px)
             flex-direction: row
@@ -565,6 +573,9 @@ html#pricing
           display: none
           &.active
             display: block
+          h2
+            @media (min-height: 1150px)
+              margin-bottom: 16px
         .pricing-content-details
           font-size: 16px
           line-height: 28px
@@ -572,6 +583,8 @@ html#pricing
           font-weight: 400
           white-space: nowrap
           @media (max-width: 1000px)
+            white-space: wrap
+          @media (min-height: 1150px)
             white-space: wrap
 
         .toggle-container
@@ -645,6 +658,12 @@ html#pricing
       .pricing-div
         .pricing-section
           display: none
+          margin-bottom: 1.5rem
+          @media (min-height: 1150px)
+            margin-bottom: 64px
+          @media (max-width: 1400px)
+            div
+              margin-bottom: 16px
           &.active
             display: block
         .indicator
@@ -656,6 +675,8 @@ html#pricing
         .btn-pricing
           margin-bottom: 16px
           min-width: 200px
+          @media (min-height: 1150px)
+            margin-bottom: 32px
         .pricing-community
           .pricing-square.support-cards
             .btn-pricing
@@ -849,6 +870,8 @@ html#pricing
       width: 100%
       background-color: #102A4E
       margin-top: 24px
+      @media (min-height: 1150px)
+        margin-top: 32px
     .pricing-hero
       position: relative
       z-index: 6
@@ -859,6 +882,8 @@ html#pricing
         padding-top: 20px
         @media (min-width: 992px)
           padding-top: 35px
+        @media (min-height: 1150px)
+          padding-top: 64px
         h1
           margin-bottom: 0
           margin-top: 0
@@ -934,6 +959,8 @@ html#pricing
             cursor: pointer
             padding: 8px 24px
             letter-spacing: 1px
+            @media (min-height: 1150px)
+              font-size: 24px
             &:hover
               border-color: #212529
               border-width: 2px
@@ -945,6 +972,9 @@ html#pricing
               margin-right: 6px
               width: 22px
               height: 22px
+              @media (min-height: 1150px)
+                width: 32px
+                height: 32px
 
           &.tb-logo
             a:before
