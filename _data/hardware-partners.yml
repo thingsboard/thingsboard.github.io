@@ -300,7 +300,7 @@
     - Bluetooth LE
     - Wi-Fi
   name: ioThings
-  logo: /images/partners/iothings-logo.png
+  logo: https://img.thingsboard.io/partners/iothings-logo.png
   site:
     href: https://iotracker.eu/
   links:
