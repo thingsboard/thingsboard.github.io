@@ -4,8 +4,52 @@
 {% assign sinceVersion = "4.1" %}
 {% include templates/since.md %}
 
-Starting from ThingsBoard 4.1, automatic unit conversion between different measurement systems is available. This feature simplifies the handling and visualization of telemetry data by automatically converting units, enhancing user experience and enabling seamless integration across diverse geographical regions and measurement standards.
+Starting from ThingsBoard 4.1, widgets support automatic data conversion and unit switching based on the selected unit system. This greatly improves data interaction for users across different geographic regions where different standards are used — such as the metric system (°C, km, kg) and the imperial system (°F, miles, lbs).
 
+**Key benefits:**
+- Automatic conversion of numerical values in widgets without the need for additional data processing.
+- Support for global use cases, where users see values in the units familiar to them.
+- Flexible configuration and adaptation of widgets to local standards.
+
+**Where it's especially useful:**
+- In global IoT solutions serving users across various countries.
+- For UI unification without duplicating widgets or creating separate dashboards.
+- When it's important to display data in units that feel natural to the user.
+
+## Configuring widget for unit conversion
+
+Each widget designed to display telemetry values includes a unit settings option. This is where the unit conversion feature is activated.
+
+> Note: Unit conversion settings are applied individually for each telemetry key.
+
+Let's look at unit conversion using the Value card widget as an example, which displays a single value — the temperature in degrees Celsius.
+
+To enable unit conversion:
+- Open the widget settings and locate the "Value" parameter.
+- Click on the **unit** row.
+
+> By default, unit conversion is disabled.
+
+To enable unit conversion, you must specify the source unit, so the system knows what unit the current telemetry value is measured in.
+
+- Toggle the "Enable unit conversion" switch.
+- Define the target units for each supported unit system (e.g., °F for Imperial, °C for Metric).
+- Apply the changes to save the configuration.
+
+Коли unit conversion активовано, у полі unit відображається відповідний значок.
+
+The widget will now automatically convert incoming values and display them in the appropriate units based on the selected unit system.
+
+
+
+Перетворення можна застосувати не тільки до телеметрії, а й до налаштуань  
+
+
+
+
+
+
+## Changing the unit system
 
 Auto
 
