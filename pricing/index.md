@@ -2439,11 +2439,6 @@ selfManagedPlan:
                             <p>Invoices are currently generated manually and sent to you at the start of each billing month, so you have the invoice in hand before the service period begins. We’re building a self-service billing portal with fully automated invoicing and expect to roll it out later this year.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-pay-with-paypal" data-title="Can I pay with PayPal?">
-                        <div class="container">
-                            <p>Yes, it is possible.</p>
-                        </div>
-                    </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-does-your-invoice-include-taxes" data-title="Does your invoice include taxes?">
                         <div class="container">
                             <p>Invoices are issued net of tax in USD. You are responsible for any local taxes that may apply in your jurisdiction.</p>
