@@ -52,7 +52,7 @@ includeAdvantages: "true"
     <div class="section-header">
         <h2>Environment monitoring dashboard structure</h2>
         <p>
-            The Smart Office solution includes a sample dashboard designed for clear visualization of key metrics. It displays energy and water consumption, air quality, temperature, humidity, and HVAC system status. Alarms are also shown to enable prompt response to abnormal conditions. While the provided dashboard is relatively simple, ThingsBoard allows users to create much more complex and customized dashboards based on their specific Smart Office requirements.
+            The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template        
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -118,7 +118,7 @@ includeAdvantages: "true"
             </div>
             <div class="text-block">
                 <h3>Warehouses and cold storage facilities</h3>
-                <p>tMonitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
+                <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
             </div>
         </div>
         <div class="images-row">
