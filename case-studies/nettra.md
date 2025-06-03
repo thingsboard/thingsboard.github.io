@@ -35,7 +35,7 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
             <p>
                 {% include number-animation.html startNum = 1 targetNum = 1000 useGrouping = true %}
             </p>
-            <p>pellet burners sold</p>
+            <p>monitoring points installed</p>
         </div>
     </section>
     <section class="problem">
