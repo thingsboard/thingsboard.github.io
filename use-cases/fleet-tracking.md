@@ -46,7 +46,7 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart office solution architecture" title="Smart office solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Fleet tracking solution architecture" title="Fleet tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -213,6 +213,20 @@ includeAdvantages: "true"
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
+
+        svgAnimations.forEach(img => svgObserver.observe(img));
+
         document.querySelectorAll('.card-link').forEach((link) => {
             link.classList.add('linkDefault');
         });
@@ -268,7 +282,7 @@ includeAdvantages: "true"
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
             const large = document.querySelector('.image-block-large');
 
-            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 400 && elemCoor.top < 0) {
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 250 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
             }
         };
