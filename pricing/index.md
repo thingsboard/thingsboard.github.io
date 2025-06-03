@@ -146,13 +146,13 @@ selfManagedPlan:
         <div class="pricing-div">
             <div class="pricing-section pricing-cloud active" id="northAmerica">
                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
                                 <p>Become familiar with ThingsBoard features</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $10
                                 <span>/month</span>
                             </h4>
@@ -169,13 +169,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
                                 <p>For PoCs and MVPs</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $149
                                 <span>/month</span>
                             </h4>
@@ -193,13 +193,13 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>
                             <div class="pricing-square-description">
                                 <p>For upcoming IoT Unicorns</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $399
                                 <span>/month</span>
                             </h4>
@@ -217,13 +217,13 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
                                 <p>For the fast grown, defined long term projects</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $749
                                 <span>/month</span>
                             </h4>
@@ -245,13 +245,13 @@ selfManagedPlan:
             </div>
             <div class="pricing-section pricing-cloud" id="europe">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
                                 <p>Become familiar with ThingsBoard features</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €9
                                 <span>/month</span>
                             </h4>
@@ -268,13 +268,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
                                 <p>For PoCs and MVPs</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €145
                                 <span>/month</span>
                             </h4>
@@ -292,13 +292,13 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>
                             <div class="pricing-square-description">
                                 <p>For upcoming IoT Unicorns</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €385
                                 <span>/month</span>
                             </h4>
@@ -316,13 +316,13 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
                                 <p>For the fast grown, defined long term projects</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €725
                                 <span>/month</span>
                             </h4>
@@ -378,17 +378,17 @@ selfManagedPlan:
         <div class="pricing-div">
             <div class="pricing-section always-display active" id="monthly">
                <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Launch</h2>
                         <div class="pricing-square-description">
                             <p>Suitable for pilots and early stage deployments.</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $1199
                             <span>/month</span>
                         </h4>
-                        <h4 class="pricing-square-price hidden mb-0">
+                        <h4 class="pricing-square-price hidden">
                             $1079
                             <span>/month</span>
                         </h4>
@@ -405,17 +405,17 @@ selfManagedPlan:
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Growth</h2>
                         <div class="pricing-square-description">
                             <p>Perfect for fast-growing deployments — adds capacity as you expand.</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $2199
                             <span>/month</span>
                         </h4>
-                        <h4 class="pricing-square-price hidden mb-0">
+                        <h4 class="pricing-square-price hidden">
                             $1979
                             <span>/month</span>
                         </h4>
@@ -432,17 +432,17 @@ selfManagedPlan:
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Scale</h2>
                         <div class="pricing-square-description">
                             <p>Designed for mission-critical, high-scale workloads.</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $3999
                             <span>/month</span>
                         </h4>
-                        <h4 class="pricing-square-price hidden mb-0">
+                        <h4 class="pricing-square-price hidden">
                             $3599
                             <span>/month</span>
                         </h4>
@@ -459,13 +459,13 @@ selfManagedPlan:
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Enterprise</h2>
                         <div class="pricing-square-description">
                             <p>Tailored architecture, pricing, and SLAs to fit your business.</p>
                         </div>
-                        <h4 class="pricing-square-price always-display mb-0">
+                        <h4 class="pricing-square-price always-display">
                             Custom <span data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-link-size="70%"></span>
                         </h4>
                         <div class="row justify-content-center">
@@ -609,13 +609,13 @@ selfManagedPlan:
         <div class="container">
             <div class="pricing-section pricing-community always-display active" id="community">
                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
                         <div class="pricing-square">
                             <h2>Community Edition</h2>
                             <div class="pricing-square-description">
                                 <p>100% Open-source</p>
                             </div>
-                            <h4 class="pricing-square-price no-sign mb-0">
+                            <h4 class="pricing-square-price no-sign">
                                 YES, IT'S FREE
                             </h4>
                             <div class="row justify-content-center">
@@ -673,13 +673,13 @@ selfManagedPlan:
     <div class="pricing-div">
         <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Maker</h2>
                         <div class="pricing-square-description">
                             <p>To become familiar with ThingsBoard PE features</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $10
                             <span>/month</span>
                         </h4>
@@ -700,13 +700,13 @@ selfManagedPlan:
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Prototype</h2>
                         <div class="pricing-square-description">
                             <p>The subscription is designed for PoCs and prototyping</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $99
                             <span>/month</span>
                         </h4>
@@ -728,13 +728,13 @@ selfManagedPlan:
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Startup</h2>
                         <div class="pricing-square-description">
                             <p>For upcoming IoT Unicorns</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $199
                             <span>/month</span>
                         </h4>
@@ -756,13 +756,13 @@ selfManagedPlan:
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Enterprise</h2>
                         <div class="pricing-square-description">
                             <p>Consider yourself a Fortune 500 company in the field?</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $500
                             <span>/month</span>
                         </h4>
@@ -788,13 +788,13 @@ selfManagedPlan:
         </div>
         <div class="pricing-section pricing-perpetual" id="perpetual">
            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Perpetual</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Use your ThingsBoard instance forever</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $4,999
                         </h4>                  
                         <div class="row justify-content-center">
@@ -816,13 +816,13 @@ selfManagedPlan:
                         <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Perpetual Kit</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Everything your product needs to succeed</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $5,999
                         </h4>                  
                         <div class="row justify-content-center">
@@ -845,13 +845,13 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="pe-perpetual-prod-vs-dev"><b>Development instance included</b></div>
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Enterprise Bundle</h2>
                         <div class="pricing-square-description" style="min-height: 50px">
                             <p>Supercharge your IoT solution</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $14,999
                         </h4>
                         <div class="row justify-content-center">
@@ -910,13 +910,13 @@ selfManagedPlan:
         <div class="pricing-div">
             <div class="pricing-section pricing-pay-as-you-go active" id="trendzPayAsYouGo">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 10 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $10
                                 <span>/month</span>
                             </h4>
@@ -935,13 +935,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 200 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $175
                                 <span>/month</span>
                             </h4>
@@ -961,13 +961,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>                            
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 500 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $200
                                 <span>/month</span>
                             </h4>
@@ -989,13 +989,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 1000 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $350
                                 <span>/month</span>
                             </h4>
@@ -1020,13 +1020,13 @@ selfManagedPlan:
             </div>
             <div class="pricing-section pricing-perpetual" id="trendzPerpetual">
                 <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
                         <div class="pricing-square">
                             <h2>Perpetual license</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Use your Trendz instance forever</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $8000
                             </h4>                  
                             <div class="row justify-content-center">
@@ -1099,13 +1099,13 @@ selfManagedPlan:
         <div class="pricing-div">
             <div class="pricing-section trendz-pricing-cloud active" id="trendzNorthAmerica">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 30 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $10
                                 <span>/month</span>
                             </h4>
@@ -1124,13 +1124,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 100 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $100
                                 <span>/month</span>
                             </h4>
@@ -1150,13 +1150,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>                            
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 500 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $250
                                 <span>/month</span>
                             </h4>
@@ -1176,13 +1176,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 1000 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 $450
                                 <span>/month</span>
                             </h4>
@@ -1202,13 +1202,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Enterprise</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Custom plan and SLA</p> 
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
@@ -1229,13 +1229,13 @@ selfManagedPlan:
             </div>
             <div class="pricing-section trendz-pricing-cloud active" id="trendzEurope">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 30 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €9
                                 <span>/month</span>
                             </h4>
@@ -1254,13 +1254,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Prototype</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 100 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €100
                                 <span>/month</span>
                             </h4>
@@ -1280,13 +1280,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>                            
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 500 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €250
                                 <span>/month</span>
                             </h4>
@@ -1306,13 +1306,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Up to 1000 Devices and Assets</p>
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 €450
                                 <span>/month</span>
                             </h4>
@@ -1332,13 +1332,13 @@ selfManagedPlan:
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Enterprise</h2>
                             <div class="pricing-square-description" style="min-height: 50px;">
                                 <p>Custom plan and SLA</p> 
                             </div>
-                            <h4 class="pricing-square-price mb-0">
+                            <h4 class="pricing-square-price">
                                 Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
                             </h4>
                             <div class="row justify-content-center">
@@ -1407,13 +1407,13 @@ selfManagedPlan:
     <div class="pricing-div">
         <div class="pricing-section community-edition" id="community-edition">
            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4">
                     <div class="pricing-square">
                         <h2>Community Edition</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>100% Open-source</p>
                         </div>
-                        <h4 class="pricing-square-price no-sign mb-0">
+                        <h4 class="pricing-square-price no-sign">
                             YES, IT'S FREE
                         </h4>
                         <div class="row justify-content-center">
@@ -1434,13 +1434,13 @@ selfManagedPlan:
         </div>
         <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
            <div class="row justify-content-center">                
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Nano</h2>
                         <div class="pricing-square-description">
                             <p>Up to 50 Devices and Assets</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $19
                             <span>/month</span>
                         </h4>
@@ -1466,13 +1466,13 @@ selfManagedPlan:
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Micro</h2>
                         <div class="pricing-square-description">
                             <p>Up to 100 Devices and Assets</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $29
                             <span>/month</span>
                         </h4>
@@ -1498,13 +1498,13 @@ selfManagedPlan:
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Macro</h2>
                         <div class="pricing-square-description">
                             <p>Up to 200 Devices and Assets</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $39
                             <span>/month</span>
                         </h4>
@@ -1530,13 +1530,13 @@ selfManagedPlan:
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Mega</h2>
                         <div class="pricing-square-description">
                             <p>Unlimited Devices and Assets</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $59
                             <span>/month</span>
                         </h4>
@@ -1567,13 +1567,13 @@ selfManagedPlan:
         </div>
         <div class="pricing-section pricing-perpetual" id="perpetual">
            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                <div class="col-md-8 col-lg-6 col-xl-4">
                     <div class="pricing-square">
                         <h2>Edge Perpetual Fallback License</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Use your ThingsBoard Edge instance forever</p>
                         </div>
-                        <h4 class="pricing-square-price mb-0">
+                        <h4 class="pricing-square-price">
                             $499
                         </h4>
                         <div class="row justify-content-center">
@@ -2366,12 +2366,6 @@ selfManagedPlan:
                             <p>For security and SLA integrity we do not expose Sysadmin by default. If your workflow truly needs low-level access, we can provide read-only credentials to metrics/Kubernetes dashboards under an additional NDA.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-if-i-cancel-will-you-return-my-data" data-title="If I cancel, will you return my data?">
-                        <div class="container">
-                            <p>Yes. Once we receive your cancellation notice, we prepare a full encrypted PostgreSQL/Cassandra dump of all your tenant data—including entities, telemetry, files, and audit logs—and deliver it to you over a secure channel (SFTP link or your own cloud bucket). <br><br></p>
-                            <p>You have up to 60 days after the cancellation date to download and verify the dump. After that 60-day grace period, all remaining backups and cluster data are permanently and securely deleted from our systems.</p>
-                        </div>
-                    </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-kind-of-security-measurements-do-you-provide" data-title="What kind of security measurements do you provide?">
                         <div class="container">
                             <p>Private Cloud is designed with enterprise-grade security at its core. Access to the infrastructure is limited to authorized ThingsBoard personnel only, with regular audits and monitoring in place. We follow industry best practices for patch management, vulnerability scanning, and secure software development. For added protection, customers may also enable 2FA, dedicated VPN tunnels, and audit logging depending on their plan.</p>
@@ -2672,7 +2666,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-private-cloud-trialsCancellationsAndRefunds" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-is-there-a-trial-option-for-private-cloud" data-title="Is there a trial option for Private Cloud?">
                         <div class="container">
-                            <p>Trial access is available on <a href="https://eu.thingsboard.cloud/signup">ThingsBoard Cloud</a>, which allows you to explore the core features and capabilities of ThingsBoard without setup overhead.</p>
+                            <p>Trial access is available on <a href="/installations/choose-region/">ThingsBoard Cloud</a>, which allows you to explore the core features and capabilities of ThingsBoard without setup overhead.</p>
                             <p>For ThingsBoard Private Cloud, trials are not applicable due to the use of dedicated infrastructure and custom deployment.</p>
                         </div>
                     </div>
@@ -2701,11 +2695,6 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-purchase-additional-storage" data-title="Can I purchase additional storage?">
                         <div class="container">
                             <p>Yes, additional storage is available and automatically calculated based on your actual usage and retention policy. There's no need to make a separate manual request. At the end of each month, we assess your storage consumption, and any overage beyond your plan’s default quota is billed at $0.50 per GB. This ensures accurate, usage-based billing without administrative overhead on your side.</p>
-                        </div>
-                    </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-long-is-telemetry-retained" data-title="How long is telemetry retained?">
-                        <div class="container">
-                            <p>Retention is 100 % customer-controlled through the built-in TTL settings or Rule Engine logic. Keep data for days or years—just remember that longer retention consumes more storage and may raise your bill.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-the-dev-test-environment" data-title="What is included in the Dev/Test Environment?">
