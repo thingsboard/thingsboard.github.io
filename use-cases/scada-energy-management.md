@@ -28,7 +28,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="scada-overview">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'scada-energy-management' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'scada-energy-management' %}
 </section>
 
 <section class="scada-solution-structure">

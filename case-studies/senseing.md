@@ -1,8 +1,9 @@
 ---
 layout: case-studies
-title: SenseING GmbH
+title: How SenseING GmbH Optimized Cold Chain Monitoring with ThingsBoard
 notitle: "true"
-description: SenseING GmbH - ThingsBoard case study
+customTitle: "true"
+description: Discover how SenseING GmbH enhanced food logistics by integrating ThingsBoard's IoT platform—achieving real-time temperature monitoring, reducing human error, and ensuring regulatory compliance across 100+ storage and transportation units.
 ---
 
 <div class="case-study-page-wrapper">
@@ -12,12 +13,12 @@ description: SenseING GmbH - ThingsBoard case study
                 <p class="category">COLD CHAIN MONITORING</p>
                 <h1>Transforming food logistics with IoT-powered temperature monitoring</h1>
                 <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/senseing.webp')">
-                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH AG" alt="SenseING GmbH logo">
+                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH AG" alt="SenseING GmbH logo" width="240" height="56">
                 </div>
                 <p>Our client specializes in food logistics, where maintaining optimal storage and transportation conditions is critical. To ensure food safety and compliance, they needed a reliable, scalable, and easy-to-implement IoT solution for automated temperature monitoring and documentation.</p>
             </div>
             <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/senseing.webp')">
-                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH AG" alt="SenseING GmbH logo">
+                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH AG" alt="SenseING GmbH logo" width="240" height="56">
             </div>
         </div>
     </section>
@@ -42,7 +43,7 @@ description: SenseING GmbH - ThingsBoard case study
         </div>
     </section>
     <section class="authored-quote">
-        <img src="https://img.thingsboard.io/case-studies/Steven_Kruse.webp" title="SenseING GmbH CEO Steven Kruse" alt="Steven Kruse">
+        <img src="https://img.thingsboard.io/case-studies/Steven_Kruse.webp" title="SenseING GmbH CEO Steven Kruse" alt="Steven Kruse" width="658" height="424">
         <div class="text">
             <h2>SenseING GmbH</h2>
             <p class="quote">“With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.”</p>
@@ -107,25 +108,25 @@ description: SenseING GmbH - ThingsBoard case study
                 <h3>Enhanced compliance & efficiency</h3>
                 <p>With ThingsBoard, the client improved compliance with food safety regulations by automating temperature documentation. Manual monitoring was reduced, decreasing the risk of human error.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/enhanced_compliance_efficiency.webp" title="Enhanced compliance & efficiency" alt="Man at facility">
+            <img src="https://img.thingsboard.io/case-studies/enhanced_compliance_efficiency.webp" title="Enhanced compliance & efficiency" alt="Man at facility" width="900" height="480">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Scalability for future growth</h3>
                 <p>Beyond customer-facing applications, the company integrated ThingsBoard into its own production monitoring, showcasing the platform's versatility. This internal use case reinforced the system's reliability and robustness.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/scalability_future_growth.webp" title="Scalability for future growth" alt="Abstract chart rising">
+            <img src="https://img.thingsboard.io/case-studies/scalability_future_growth.webp" title="Scalability for future growth" alt="Abstract chart rising" width="900" height="480">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Internal process optimization</h3>
                 <p>As the company expands its logistics network, the flexibility of ThingsBoard ensures seamless integration of new sensor solutions without development overhead.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/internal_process_optimization.webp" title="Internal process optimization" alt="Pallets elevating">
+            <img src="https://img.thingsboard.io/case-studies/internal_process_optimization.webp" title="Internal process optimization" alt="Pallets elevating" width="900" height="480">
         </div>
     </section>
     <section class="quote-with-mark">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“In addition to fulfilling customer requirements, we also use ThingsBoard for internal use cases, such as controlling our production. This dual use emphasises the versatility and robustness of the platform. It is impossible to imagine our product range without ThingsBoard.”</p>
             <h2>SenseING GmbH</h2>
@@ -144,8 +145,8 @@ description: SenseING GmbH - ThingsBoard case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget">
-                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget">
+                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -159,8 +160,8 @@ description: SenseING GmbH - ThingsBoard case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget">
-                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget">
+                <img src="https://img.thingsboard.io/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -174,8 +175,8 @@ description: SenseING GmbH - ThingsBoard case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/alarms-table.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget">
-                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget">
+                <img src="https://img.thingsboard.io/case-studies/alarms-table.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -189,8 +190,8 @@ description: SenseING GmbH - ThingsBoard case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/sensors-widget.webp" title="Thingsboard sensors widget" alt="Thingsboard Thingsboard sensors widget">
-                <img src="https://img.thingsboard.io/case-studies/pie-chart.webp" title="Thingsboard pie chart widget" alt="Thingsboard pie chart widget">
+                <img src="https://img.thingsboard.io/case-studies/sensors-widget.webp" title="Thingsboard sensors widget" alt="Thingsboard Thingsboard sensors widget" width="776" height="774">
+                <img src="https://img.thingsboard.io/case-studies/pie-chart.webp" title="Thingsboard pie chart widget" alt="Thingsboard pie chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -204,8 +205,8 @@ description: SenseING GmbH - ThingsBoard case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/label-value-widget.webp" title="Thingsboard label and value widget" alt="Thingsboard label and value widget">
-                <img src="https://img.thingsboard.io/case-studies/sensor-map-widget.webp" title="Thingsboard sensor map widget" alt="Thingsboard sensor map widget">
+                <img src="https://img.thingsboard.io/case-studies/label-value-widget.webp" title="Thingsboard label and value widget" alt="Thingsboard label and value widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/sensor-map-widget.webp" title="Thingsboard sensor map widget" alt="Thingsboard sensor map widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -219,8 +220,8 @@ description: SenseING GmbH - ThingsBoard case study
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget">
-                <img src="https://img.thingsboard.io/case-studies/control-widgets.webp" title="Thingsboard control widgets" alt="Thingsboard control widgets">
+                <img src="https://img.thingsboard.io/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/control-widgets.webp" title="Thingsboard control widgets" alt="Thingsboard control widgets" width="776" height="776">
             </div>
         </div>
     </section>
@@ -228,8 +229,8 @@ description: SenseING GmbH - ThingsBoard case study
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo">
-                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH AG" alt="SenseING GmbH logo">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH AG" alt="SenseING GmbH logo" width="240" height="56">
                 </div>
             </div>
         </div>

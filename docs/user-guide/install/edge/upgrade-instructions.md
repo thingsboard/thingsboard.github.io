@@ -12,9 +12,19 @@ description: ThingsBoard Edge upgrade instructions
         <ul>
             <li>
                 <a href="#prepare-ubuntucentosrpi" id="markdown-toc-prepare-ubuntucentos">Ubuntu/CentOS/Raspberry Pi</a>
+                <ul>
+                    <li>
+                         <a href="#restore-ubuntucentosrpi" id="markdown-toc-restore-ubuntucentos">Restore the backup (if needed)</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#prepare-docker-linux-mac" id="markdown-toc-prepare-docker-linux-mac">Docker (Linux or Mac OS)</a>
+                <ul>
+                    <li>
+                         <a href="#restore-docker-linux-mac" id="markdown-toc-restore-docker-linux-mac">Restore the backup (if needed)</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#prepare-windows" id="markdown-toc-prepare-windows">Windows</a>
@@ -209,49 +219,66 @@ description: ThingsBoard Edge upgrade instructions
 
 ## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
+To ensure data integrity during the upgrade, back up your **ThingsBoard Edge** data. 
+
+The backup process may vary depending on your installation method (Docker, Linux service, Windows, etc.). 
+Follow the instructions below based on your environment.
+
 ### Ubuntu/CentOS/Raspberry Pi {#prepare-ubuntucentosrpi}
 
-Stop ThingsBoard Edge service:
+To ensure that no data is written to the database during the upgrade process, stop the **ThingsBoard Edge** service:
 
 ```bash
 sudo systemctl stop tb-edge
 ```
 {: .copy-code}
 
-#### Backup Database
+#### Backup database
 
-Make a backup of the database before upgrading.  
+To avoid potential data loss, create a backup of the database before upgrading.
 
-***Make sure you have enough space to place a backup of the database***  
+{% capture check-space %}
+Make sure your system has enough free space to store the backup.
+{% endcapture %}
+{% include templates/info-banner.md content=check-space %}
 
-Check database size
+Check the current size of the database:
 
 ```bash
 sudo -u postgres psql -c "SELECT pg_size_pretty( pg_database_size('tb_edge') );"
 ```
 {: .copy-code}
 
-Check free space
+Check available free disk space:
 
 ```bash
 df -h /
 ```
 {: .copy-code}
 
-If there is enough free space - make a backup.
+Create the backup (if sufficient space is available): 
 
 ```bash
 sudo -Hiu postgres pg_dump tb_edge > tb_edge.sql.bak
 ```
 {: .copy-code}
 
-Check backup file created successfully.
+Verify that the backup file was created successfully:
+
+```bash
+ls -lh tb_edge.sql.bak
+```
+{: .copy-code}
+
+### Restore the backup (if needed) {#restore-ubuntucentosrpi}
+
+{% include templates/edge/user-guide/backup/ubuntu-restore-backup.md %}
 
 ### Docker (Linux or Mac OS) {#prepare-docker-linux-mac}
 
-Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to stop and remove currently running TB Edge container:
+Go to the directory that contains the **docker-compose.yml** file, and run the following command to stop the currently running **ThingsBoard Edge** container:
 ```
-docker compose stop && docker compose rm mytbedge -f
+docker compose stop
 ```
 {: .copy-code}
 
@@ -261,25 +288,33 @@ If you are still using **docker-compose (with a hyphen)**, it is recommended to 
 
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-#### Backup Database Volume
+#### Backup database volume
 
-Make a copy of the database volume before upgrading:
+Before upgrading, make a **backup copy** of the database volume: 
+
 ```bash
 docker run --rm -v tb-edge-postgres-data:/source -v tb-edge-postgres-data-backup:/backup busybox sh -c "cp -a /source/. /backup"
 ```
 {: .copy-code}
 
-#### Backup Database Bind Mount Folder (deprecated)
+This command uses a temporary BusyBox container to copy all contents from the _tb-edge-postgres-data_ volume into the _tb-edge-postgres-data-backup_ volume.
 
-If you are still using Docker bind mount folders, please ensure to make a copy of the database folder before proceeding with the upgrade:
+##### Backup database bind mount folder (deprecated)
+
+If you are still using **Docker bind mount folders** (instead of named volumes), make sure to back up the database folder before proceeding with the upgrade:
+
 ```bash
 sudo cp -r ~/.mytb-edge-data/db ~/.mytb-edge-db-BACKUP
 ```
 {: .copy-code}
 
+### Restore the backup (if needed) {#restore-docker-linux-mac}
+
+{% include templates/edge/user-guide/backup/docker-restore-backup.md %}
+
 ### Windows {#prepare-windows}
 
-Stop ThingsBoard Edge service:
+Stop the **ThingsBoard Edge** service:
 
 ```text
 net stop tb-edge
@@ -288,8 +323,8 @@ net stop tb-edge
 
 #### Backup Database
 
-Launch the "pgAdmin" software and login as superuser (postgres). 
-Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
+* Launch **pgAdmin** and log in as the **postgres superuser**.
+* Open your server and create the backup of the **tb_edge** database using **pgAdmin**'s **"Backup Dialog"** functionality.
 
 ## Upgrading to 4.0.1EDGE {#upgrading-to-401}
 
@@ -297,7 +332,7 @@ Open your server and create backup of database **tb_edge** using 'Backup Dialog'
 {% assign updateServerLink = "#upgrading-to-4.0.1" %}
 {% include templates/edge/install/compatibility-warning-version.md %}
 
-### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-40}
+### Ubuntu/CentOS/Raspberry Pi {#ubuntucentosrpi-401}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.9.1EDGE version.
 

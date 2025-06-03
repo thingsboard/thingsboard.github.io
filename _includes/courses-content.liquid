@@ -1,0 +1,42 @@
+{% assign coursesCollection = include.coursesCollection %}
+
+<div class="owl-carousel-toggle-content" id="owl-carousel-0">
+    {% for course in coursesCollection %}
+        {% assign courseData = course[1] %}
+        <div class="accordion-collection owl-carousel-toggle-content-item" id="{{courseData.id }}">
+            {% include courses-contact-us.liquid courseName=courseData.courseName courseDescription=courseData.courseDescription warningMessage=courseData.warningMessage %}
+            {% for accordionItem in course[1].courseSessions %}
+                <div class="accordion-item">
+                    <div class="accordion-preview accordion-toggle{% if forloop.index == 1 %} opened{% endif %}" id="{{ course[1].courseName | downcase | remove: " " }}-{{ forloop.index }}">
+                        <p class="accordion-title">{{ accordionItem[1].sessionName }}</p>
+                        <div class="accordion-additional">
+                            <div class="accordion-additional-content">
+                                <i class="far fa-clock fa-lg" style="color: #2A7DEC"></i>
+                                <p>{{ accordionItem[1].sessionLengthInHours }} hours</p>
+                            </div>
+                            <span class="accordion-chevron">
+                        <i class="fas fa-chevron-down fa-lg" style="color:#2A7DEC"></i>
+                    </span>
+                        </div>
+                    </div>
+                    <div class="accordion-content{% if forloop.index == 1 %} opened{% endif %}" id="{{ course[1].courseName | downcase | remove: " " }}-{{ forloop.index }}">
+                        <ul>
+                            {% for topic in accordionItem[1].sessionTopics %}
+                                <li>
+                                    {% if topic[1].warning == "true" %}
+                                        <i class="fas fa-exclamation-circle" style="color: #F36500"></i>
+                                    {% else %}
+                                        <i class="fas fa-check" style="color: #2A7DEC"></i>
+                                    {% endif %}
+                                    <p>{{ topic[1].textContent }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+
+

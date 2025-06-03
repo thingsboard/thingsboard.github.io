@@ -28,7 +28,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="environment-monitoring-carousel carousel-padding">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
 
 <section class="environment-monitoring-solution-structure">
@@ -178,11 +178,14 @@ includeAdvantages: "true"
     </div>
 </section>
 
+
 <section class="summary">
-    <h2>Summary of environment monitoring</h2>
-    <div>
+    <div class="summary-text">
+        <h2>Summary of environment monitoring</h2>
         <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
-        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon">
+    </div>
+    <div class="summary-icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 

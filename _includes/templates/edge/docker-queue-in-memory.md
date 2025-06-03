@@ -1,7 +1,11 @@
-Create the **docker compose file** and populate it with configuration lines:
-
+Create the **docker compose file**:
+```bash
+nano docker-compose.yml
 ```
-cat > docker-compose.yml <<EOF && docker compose -f docker-compose.yml up -d
+{: .copy-code}
+
+Add the following lines to the **yml file**:
+```
 version: '3.8'
 services:
   mytbedge:
@@ -37,7 +41,6 @@ volumes:
     name: tb-edge-logs
   tb-edge-postgres-data:
     name: tb-edge-postgres-data
-EOF
 ```
 {: .copy-code.expandable-15}
 

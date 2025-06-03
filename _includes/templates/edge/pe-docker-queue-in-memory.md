@@ -1,8 +1,13 @@
-For **ThingsBoard Edge** service, create docker compose file and populate it with configuration lines:
+For **ThingsBoard Edge** service, create a docker compose file:
 
+```bash
+nano docker-compose.yml
+```
+{: .copy-code}
+
+Add the following configuration lines to the **yml file**:
 
 ```
-cat > docker-compose.yml <<EOF && docker compose -f docker-compose.yml up -d
 version: '3.8'
 services:
   mytbedge:
@@ -32,7 +37,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - tb-edge-postgres-data:/var/lib/postgresql/data
-
+      
 volumes:
   tb-edge-data:
     name: tb-edge-data
@@ -40,7 +45,6 @@ volumes:
     name: tb-edge-logs
   tb-edge-postgres-data:
     name: tb-edge-postgres-data
-EOF
 ```
 {: .copy-code.expandable-15}
 
