@@ -296,6 +296,22 @@
       href: https://wiki.dragino.com/xwiki/bin/view/Main/ThingsBoard
   description: Shenzhen Dragino Technology Development Co., Ltd. specializes in IoT solutions, with a focus on LoRaWAN and NB-IoT technologies. We offer end-to-end IoT services, including hardware, software, and network solutions, enabling customers to deploy and manage IoT networks efficiently. Our globally trusted products and solutions ensure rapid deployment, scalability, and customer success in the competitive IoT market.
 - type:
+    - LoRaWAN
+    - Bluetooth LE
+    - Wi-Fi
+  name: ioThings
+  logo: /images/partners/iothings-logo.png
+  site:
+    href: https://iotracker.eu/
+  links:
+    0:
+      label: Connect ioTracker Multi-sensor tracker to ThingsBoard
+      href: "https://thingsboard.io/docs/pe/devices-library/iotracker-multi-sensor-tracker/"
+    1:
+      label: Connect ioButton Panic button to ThingsBoard
+      href: "https://thingsboard.io/docs/pe/devices-library/iobutton-panic-button/"
+  description: ioThings, the company behind the ioTracker and ioButton, is a Dutch company and was established in 2016 by three technology enthusiasts with a professional background in electronics, security, IT and telecom. We mainly operate in the domain of emergency response, together with indoor and outdoor localisation. Our devices are highly and easy configurable to make sure it can be finetuned for a lot of use cases.
+- type:
     - GSM/GPRS
   name: DECODE
   logo: /images/partners/decode.png

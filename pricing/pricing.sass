@@ -293,25 +293,20 @@ html#pricing
       background-color: #fff
       height: 100%
       h2
-        font-size: 36px
+        font-size: 28px
         font-weight: 500
-        line-height: 48px
-        margin-bottom: 8px
+        line-height: 44px
       .pricing-square-description
+        margin-bottom: 16px
         font-size: 14px
         line-height: 24px
         color: #707275
-        @media (min-width: 768px)
-          min-height: 110px
-        @media (min-width: 992px)
-          min-height: 120px
-        @media (min-width: 1200px)
-          min-height: 120px
-        @media (min-width: 1400px)
-          min-height: 100px
+        @media (min-height: 1150px)
+          margin-bottom: 32px
         p
-          margin-bottom: 1rem
           font-size: 14px
+          min-height: 48px
+
       .community-support-card
         display: flex
         flex-direction: column
@@ -344,7 +339,8 @@ html#pricing
         line-height: 60px
         text-align: center
         letter-spacing: -.01em
-        padding: 20px 0
+        @media (min-height: 1150px)
+          margin-bottom: 16px
         &.hidden
           display: none
         @media (min-width: 768px)
@@ -357,6 +353,8 @@ html#pricing
         font-size: 14px
         line-height: 21px
         padding-bottom: 12px
+        @media (min-height: 1150px)
+          padding-bottom: 16px
         margin-left: 32px
         font-weight: 400
         &:before
@@ -372,6 +370,8 @@ html#pricing
             background: url("/images/pricing/pricing-plus-icon.svg") no-repeat
         &.highlight
           font-weight: 500
+        &:last-child
+          padding: 0
 
     .pricing-square.support-cards
       padding: 24px 24px 80px
@@ -380,7 +380,6 @@ html#pricing
         line-height: 32px
       .pricing-div
         .btn-pricing
-          margin: 0
           min-width: 200px
     .pricing-community
       .pricing-square.support-cards
@@ -403,11 +402,9 @@ html#pricing
         &:nth-of-type(1)
           margin-right: 12px
         h3
-          font-size: 14px
+          font-size: 16px
           line-height: 20px
-          @media (min-width: 480px)
-            font-size: 18px
-            line-height: 27px
+          font-weight: 400
           &:before
             padding-right: 12px
             line-height: 42px
@@ -463,13 +460,13 @@ html#pricing
             &::before
               display: none !important
         position: relative
-        color: #707275
+        color: #757575
         cursor: pointer
         height: 100%
         display: flex
         align-items: center
         h3
-          font-weight: 500
+          font-weight: 400
           &:before
             display: inline-block
             vertical-align: middle
@@ -552,13 +549,13 @@ html#pricing
         flex-direction: column-reverse
         @media (min-width: 992px)
           flex-direction: row
-          padding-top: 56px
+        @media (min-height: 1150px)
+          margin-bottom: 32px
+          padding-top: 32px
         &.not-reverse-column
           @media (min-width: 992px)
             flex-direction: row
           flex-direction: column
-          .pricing-content-description
-            margin-bottom: 24px
 
         h2
           font-size: 24px
@@ -568,25 +565,27 @@ html#pricing
             font-size: 30px
             line-height: 46px
           @media (min-width: 1400px)
-            font-size: 36px
-            line-height: 48px
+            font-size: 28px
+            line-height: 44px
 
         .pricing-content-description
+          margin-bottom: 24px
           display: none
           &.active
             display: block
+          h2
+            @media (min-height: 1150px)
+              margin-bottom: 16px
         .pricing-content-details
-          padding-top: 12px
-          font-size: 14px
-          line-height: 18px
-          color: #75767C
-          font-weight: 300
-          @media (min-width: 992px)
-            font-size: 16px
-            line-height: 24px
-          @media (min-width: 1400px)
-            font-size: 16px
-            line-height: 24px
+          font-size: 16px
+          line-height: 28px
+          color: #3A3B3D
+          font-weight: 400
+          white-space: nowrap
+          @media (max-width: 1000px)
+            white-space: wrap
+          @media (min-height: 1150px)
+            white-space: wrap
 
         .toggle-container
           margin-left: auto
@@ -657,10 +656,14 @@ html#pricing
           margin-top: 25px
 
       .pricing-div
-        margin-top: 65px
-        padding-bottom: 20px
         .pricing-section
           display: none
+          margin-bottom: 1.5rem
+          @media (min-height: 1150px)
+            margin-bottom: 64px
+          @media (max-width: 1400px)
+            div
+              margin-bottom: 16px
           &.active
             display: block
         .indicator
@@ -670,9 +673,10 @@ html#pricing
           letter-spacing: .5px
           text-transform: uppercase
         .btn-pricing
-          margin-top: 18px
-          margin-bottom: 54px
+          margin-bottom: 16px
           min-width: 200px
+          @media (min-height: 1150px)
+            margin-bottom: 32px
         .pricing-community
           .pricing-square.support-cards
             .btn-pricing
@@ -684,11 +688,9 @@ html#pricing
               margin-top: 0
 
       .additional-content
-        padding-top: 60px
-
         .plan-calculator-block
           display: flex
-          padding: 48px
+          padding: 32px 40px
           align-items: center
           justify-content: space-between
           background-color: #fff
@@ -728,7 +730,7 @@ html#pricing
 
         .add-ons
           text-align: left
-          padding: 100px 0
+          padding: 56px 0
 
           h2
             font-size: 36px
@@ -863,33 +865,30 @@ html#pricing
             li
               list-style: disc
 
-    .select-product-content
-      height: 64px
-      @media (min-width: 768px)
-        height: 64px
-      @media (min-width: 1200px)
-        height: 96px
     .pricing-header-divider
       height: 3px
       width: 100%
       background-color: #102A4E
       margin-top: 24px
+      @media (min-height: 1150px)
+        margin-top: 32px
     .pricing-hero
       position: relative
       z-index: 6
-      min-height: 100px
       display: flex
       align-items: center
 
       .pricing-hero-content
         padding-top: 20px
         @media (min-width: 992px)
-          padding-top: 56px
+          padding-top: 35px
+        @media (min-height: 1150px)
+          padding-top: 64px
         h1
           margin-bottom: 0
           margin-top: 0
           font-size: 20px
-          font-weight: 600
+          font-weight: 500
           line-height: 30px
           @media (min-width: 768px)
             font-size: 26px
@@ -898,11 +897,11 @@ html#pricing
             font-size: 30px
             line-height: 42px
           @media (min-width: 1200px)
-            font-size: 42px
-            line-height: 64px
+            font-size: 36px
+            line-height: 48px
           @media (min-width: 1400px)
-            font-size: 48px
-            line-height: 72px
+            font-size: 36px
+            line-height: 48px
         h5
           margin-bottom: 0
           margin-top: 12px
@@ -923,6 +922,7 @@ html#pricing
     .inner-navigation
       position: relative
       margin-top: 32px
+      margin-bottom: 24px
       display: flex
       justify-content: center
       align-items: center
@@ -941,23 +941,26 @@ html#pricing
         li
           position: relative
           display: table
-          height: 68px
           padding-left: 6px
           padding-right: 6px
+          @media (max-width: 1200px)
+            padding: 6px
           a
             text-decoration: none
             display: block
-            line-height: initial
             text-align: center
             border: 1px solid rgba(0, 0, 0, 0.08)
             box-sizing: border-box
             border-radius: 34px
-            font-size: 12px
+            font-size: 20px
+            line-height: 32px
             color: #212529
             font-weight: 400
             cursor: pointer
-            padding: 8px 12px 8px 10px
+            padding: 8px 24px
             letter-spacing: 1px
+            @media (min-height: 1150px)
+              font-size: 24px
             &:hover
               border-color: #212529
               border-width: 2px
@@ -969,17 +972,9 @@ html#pricing
               margin-right: 6px
               width: 22px
               height: 22px
-            @media (min-width: 992px)
-              font-size: 14px
-            @media (min-width: 1200px)
-              font-size: 18px
-              padding: 14px 32px 14px 24px
-              &:before
-                margin-right: 12px
-                width: 38px
-                height: 38px
-            @media (min-width: 1400px)
-              font-size: 24px
+              @media (min-height: 1150px)
+                width: 32px
+                height: 32px
 
           &.tb-logo
             a:before

@@ -188,7 +188,7 @@
                                         class="tooltip-text">How long you need to store your data</span></span>
                             </label>
                             <div class="input-with-select">
-                                <input id="retention" type="number" value="3" class="input input-right">
+                                <input id="retention" type="number" value="3" max="1200" class="input input-right">
                                 <label for="retentionUnit" class="visually-hidden">How long you need to store your data</label>
                                 <select id="retentionUnit" class="select hidden">
                                     <option value="days">days</option>
@@ -714,6 +714,9 @@
 
         function syncInputAndSlider(input, slider) {
             input.addEventListener('input', () => {
+                if (input.id === 'retention' && input.value > 1200) {
+                    input.value = 1200;
+                }
                 slider.value = input.value;
                 sliderProgress(slider);
                 calculateResults();
