@@ -95,7 +95,7 @@ downlink-converter-message:
 
  - Stream device and/or asset data from an external system, IoT platform or connectivity provider back-end.
  - Stream device and/or asset data from your custom application running in the cloud.
- - Connect the existing device to **ThingsBoard Edge** using a custom HTTP-based protocol.
+ - Connect the existing device to ThingsBoard Edge using a custom HTTP-based protocol.
 
 ### Create converter and integration templates
 

@@ -6,10 +6,9 @@ description: Remote Integrations Documentation
 addConverter:
     0:
         image: /images/pe/edge/integrations/remote/add-converter-step-1.webp
-        title: '1. Open <b>Converter templates</b> menu page. 2. Click <b>("+")</b> icon and select <b>Create new converter</b>.'
     1:
         image: /images/pe/edge/integrations/remote/add-converter-step-2.webp
-        title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
+
 
 addIntegration:
     0:
@@ -57,7 +56,6 @@ assignIntegration:
 copyCredentials:
     0:
         image: /images/pe/edge/integrations/remote/copy-credentials.webp
-        title: '1. Open the <b>Integration templates</b> menu page. 2. Click the integration template row. 3. Click to copy <b>Integration key</b>. 4. Click to copy <b>integration secret</b>.'
 
 sendUplink:
     0:
