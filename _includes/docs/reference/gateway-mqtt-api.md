@@ -20,11 +20,11 @@ In order to inform ThingsBoard that device is connected to the Gateway, one need
 
 ```shell
 Topic: v1/gateway/connect
-Message: {"device":"Device A"}
+Message: {"device":"Device A", "type": "Sensor A"}
 ```
 {: .copy-code}
 
-where **Device A** is your device name.
+where **Device A** is your device name and **Sensor A** is the name of your device profile, **type** is an optional key (**default** device profile will be used when no **type** is included).
 
 Once received, ThingsBoard will lookup or create a device with the name specified.
 Also, ThingsBoard will publish messages about new attribute updates and RPC commands for a particular device to this Gateway.

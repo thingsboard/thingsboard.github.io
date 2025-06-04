@@ -21,7 +21,10 @@
 {% endif %}
 
 ### Does ThingsBoard Edge support clustering? 
-<p>No, <b>ThingsBoard Edge</b> does not support clustering at the moment. But cluster support will be added in the following releases.</p>
+
+The **earlier versions** of **ThingsBoard Edge** do not support clustering. It is designed to operate, process and analyze data locally before synchronizing with the central **ThingsBoard Server**.
+
+Starting **with release 4.0**, Edge supports clustering. Multiple **Edge nodes** can be clustered to provide high availability. If one node fails, the others can seamlessly continue to handle workloads.
 
 ### Do I need an internet connection to use the ThingsBoard Edge?
 <p>No, you can run it completely offline if you need to. The only connection required is to the <b>ThingsBoard Server</b> via <a href="https://grpc.io/" target="_blank">gRPC</a>.</p>
@@ -93,7 +96,7 @@ If this is required, you'll need to provision multiple <b>ThingsBoard Edge</b> i
 ### How many devices can ThingsBoard Edge support? 
 {% if docsPrefix == 'pe/edge/' %}
 <p>The number of connected devices depends on your <a href="https://thingsboard.io/pricing/?section=thingsboard-edge" target="_blank">subscription plan</a>.</p>
-<p>Some plans offer 'Unlimited Devices and Assets', thus there are no soft limits on creating devices and assets on the edge side.</p>
+<p>Some plans offer 'Unlimited Devices and Assets, thus there are no soft limits on creating devices and assets on the edge side.</p>
 {% else %}
 <p><b>ThingsBoard Edge</b> doesn’t impose a fixed limit on the number of devices you can connect.</p>
 <p>In practice, the number of devices you can support depends largely on your hardware resources, system configuration, and the specific use case. 
@@ -172,12 +175,12 @@ Some useful references include <a href="https://github.com/mqtt/mqtt.github.io/w
 <p>This means that Edge support is not bundled with the license. For now, we provide basic support to customers with more than 25 Edge licenses of any type.</p>
 
 ### Refund and Delivery Policy
-<p>Refund Policy</p>
+<p><b>Refund Policy</b></p>
 <p>The License fee is non-refundable, regardless of any circumstances. 
 Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, Stripe will keep the balance. 
 After a certain time period (about an hour) positive Amount due with the remain credits will appear in Billing section of License portal. 
 This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.</p>
-<p>Delivery Policy</p>
+<p><b>Delivery Policy</b></p>
 <p>The software is available for download and installation from our website. 
 See <a href="/docs/user-guide/install/pe/edge/installation-options/" target="_blank">Installation Guides</a>for more details. 
 In order to activate the software you will need to obtain the license key. 

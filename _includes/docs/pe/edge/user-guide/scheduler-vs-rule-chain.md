@@ -19,7 +19,9 @@ Read more about [Rule Engine](/docs/pe/user-guide/rule-engine-2-0/overview/){: t
 
 #### Edge-Specific Considerations
 
-* **Rule Chain templates** and **Scheduler events** cannot be created or modified directly on **ThingsBoard Edge**. They must be set up in **ThingsBoard Cloud** and synced to **Edge**.
+* Prior to **Edge 4.0**, **Rule Chain templates** could not be created or modified directly on **ThingsBoard Edge**. They had to be configured in **ThingsBoard Cloud** and then synchronized with **Edge**.
+* Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on the **Edge**.
+* **Scheduler events** has to be configured in **ThingsBoard Cloud** and assigned to **Edge**.
 * Once **Rule Chain templates** and **Scheduler events** are synchronized to **Edge** instance, they run entirely at the edge, independent of internet connection.
 * Both **Scheduler events** and **Rule Chain templates** execute locally on the **Edge**.
 

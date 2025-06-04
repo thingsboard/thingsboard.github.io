@@ -17,7 +17,7 @@ includeAdvantages: "true"
                 <p class="text">SCADA (Supervisory Control and Data Acquisition) and the ThingsBoard platform play a crucial role in automating oil and gas drilling processes.</p>
             </div>
             <div class="demo-button">
-                <a id="UseCases_DrillingSystem_ViewLiveDemo" target="_blank" href="https://tbqa.cloud/dashboard/25b9f9b0-18f3-11f0-ba3a-c7bc9fd1772b?publicId=3b728e20-3d08-11ee-be4b-434ecc9fc7b7" class="button gtm_button">View live demo</a>
+                <a id="UseCases_DrillingSystem_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/febfdb90-3170-11f0-858a-67efd1bc8a87?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
@@ -28,7 +28,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="scada-overview">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'scada-oil-and-gas-drilling-system' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'scada-oil-and-gas-drilling-system' %}
 </section>
 
 <section class="scada-solution-structure">
@@ -403,7 +403,7 @@ includeAdvantages: "true"
                 <div class=image>${getImage(0)}</div>
             </div>
             <div class="buttons-block">
-                <a id="UseCases_ScadaDrilling_ViewLiveDemo" target="_blank" href="https://tbqa.cloud/dashboard/25b9f9b0-18f3-11f0-ba3a-c7bc9fd1772b?publicId=3b728e20-3d08-11ee-be4b-434ecc9fc7b7" class="button gtm_button">View live demo</a>
+                <a id="UseCases_ScadaDrilling_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/febfdb90-3170-11f0-858a-67efd1bc8a87?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
                 <a id="UseCases_ScadaDrilling_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     

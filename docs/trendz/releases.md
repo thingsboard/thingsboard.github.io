@@ -8,6 +8,28 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.13.1 (May 2, 2025)
+
+**Improvements:**
+
+* Prompt templates for agentic knowledge and instructions management
+* Add summarization and explanation for visualizations with AI assistant
+* Conversation interfaces for AI assistant
+* Add ThingsBoard widget action to interact with AI assistant
+* Added support for OpenAI API-compatible models
+* Add support for custom and self-hosted LLM providers
+* Added support for OpenAI o4 family model
+* Add Trendz task sequencing API
+
+**Bug fixes:**
+
+* Fix heatmap translation
+* Fix AI assistant memory aggregation
+* Fix drag and drop after unsuccessful view config save
+* Fix issue with renamed calculated fields
+* Fixed manual task execution failures
+
+
 ## v1.13.0 (March 10, 2025)
 
 **Improvements:**

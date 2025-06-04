@@ -58,6 +58,47 @@ TBEL execution consumes much less resources and has no extra latency for inter-p
 TBEL is used to evaluate expressions written using Java syntax. Unlike Java however, TBEL is dynamically typed (with optional typing), meaning that the source code does not require type qualification.
 The TBEL expression can be as simple as a single identifier, or as complicated as an expression with method calls and inline collections.
 
+
+### Syntax Constraints for Loops and Conditions
+
+In TBEL (ThingsBoard Expression Language), certain syntax restrictions are enforced to ensure compatibility and reliability within the scripting environment. Use <code style="color: sienna;">foreach</code> instead of traditional <code style="color: sienna;">for</code> loops, and always wrap <code style="color: sienna;">ternary (? :) expressions</code> in parentheses when used without an explicit <code style="color: sienna;">if</code> statement.
+
+✅ Allowed:
+
+```java
+foreach (ValueType value : map) {
+    // Process each value
+}
+```
+{: .copy-code}
+
+❌ Not allowed:
+
+```java
+for (ValueType value : map) {
+    // Process each value
+}
+```
+{: .copy-code}
+
+✅ Correct:
+
+```java
+var msgNew = {
+        keyNew: (msg.humidity > 50 ? 3 : 0)    // if (msg.humidity > 50) == true, result msgNew = { keyNew: : 3  } 
+     };
+```
+{: .copy-code}
+
+❌ Incorrect:
+
+```java
+var msgNew = {
+        keyNew: msg.humidity > 50 ? 3 : 0       // result msgNew = { 3 : 0  }
+     };
+```
+{: .copy-code}
+
 ### Simple Property Expression
 
 ```java
@@ -125,17 +166,17 @@ There are two syntax variations for iterating over a map:
 1. Explicit entrySet() iteration:
 
 ```java
-// Iterate through the map using entrySet()
-for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
+// Iterate through the map
+foreach(element : map.entrySet()){
         // Get the key
-        entry.getKey();
-        // or 
-        entry.key;
-
+        element.getKey();
+        //or 
+        element.key;
+        
         // Get the value
-        entry.getValue();
-        // or 
-        entry.value;
+        element.getValue();
+        //or 
+        element.value;
 }
 
 ```
@@ -145,7 +186,7 @@ for (Map.Entry<KeyType, ValueType> entry : map.entrySet()) {
 
 ```java
 // Iterate through the map without entrySet()
-for (ValueType value : map) {
+foreach (ValueType value : map) {
         // Process each value
 }
 ```
@@ -198,6 +239,10 @@ var sortByValue = map.sortByValue();                   // return nothing => map 
 // add new Entry/(new key/new value)
 var mapAdd = {"test": 12, "input" : {"http": 130}};
 map.putAll(mapAdd);
+
+// isMap(Object obj): checks if the given object is an instance of Map
+isMap(mapAdd);                                          // return true
+
 ```
 {: .copy-code}
 
@@ -300,6 +345,9 @@ var memorySize = list.memorySize();         // return 32L
 var indOf1 = list.indexOf("B", 1);          // return -1  
 var indOf2 = list.indexOf(2, 2);            // return 2  
 var sNumber = list.validateClazzInArrayIsOnlyNumber(); // return true
+
+// isList(Object obj): checks if the given object is an instance of List
+isList(list);                               // return true
 ```
 {: .copy-code}
 
@@ -350,6 +398,9 @@ function sum(list){
 };
 
 var sum = sum(array); // returns 6
+
+// isArray(Object obj): checks if the given object is an array
+isArray(array);       // return true
 ```
 
 ```java

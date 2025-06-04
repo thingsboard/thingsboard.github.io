@@ -23,7 +23,7 @@ If you have any questions or run into issues, the TBMQ team is here to help. You
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/docs/contact-us/">
+        <a class="feature-card" href="/docs/contact-us/?subject=TBMQ">
             <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg" alt="Thingsboard logo">
             <div class="feature-title">Contact Us</div>
             <div class="feature-text">

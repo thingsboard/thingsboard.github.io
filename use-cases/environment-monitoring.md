@@ -28,7 +28,7 @@ includeAdvantages: "true"
 </section>
 
 <section class="environment-monitoring-carousel carousel-padding">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
 
 <section class="environment-monitoring-solution-structure">
@@ -44,7 +44,7 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Environment monitoring solution architecture" title="Environment monitoring solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" src="/images/usecases/environment-monitoring/scheme.svg" alt="Environment monitoring solution architecture" title="Environment monitoring solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -178,30 +178,19 @@ includeAdvantages: "true"
     </div>
 </section>
 
+
 <section class="summary">
-    <h2>Summary of environment monitoring</h2>
-    <div>
+    <div class="summary-text">
+        <h2>Summary of environment monitoring</h2>
         <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon">
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-        const svgAnimations = document.querySelectorAll(".svg-animation");
-        const svgObserver = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.style.visibility = 'visible';
-                    img.src = img.dataset.src;
-                    obs.unobserve(img);
-                }
-            });
-        }, {threshold: 1.0});
-
-        svgAnimations.forEach(img => svgObserver.observe(img));
-
         document.querySelectorAll('.card-link').forEach((link) => {
             link.classList.add('linkDefault');
         });

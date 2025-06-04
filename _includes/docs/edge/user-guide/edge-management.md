@@ -5,9 +5,9 @@
 
 **ThingsBoard** offers two distinct deployment options: **ThingsBoard Edge** and **ThingsBoard Cloud**.
 
-**ThingsBoard Edge** is designed specifically for local, distributed data processing, enabling data analysis and management directly at the source of data generation. This approach allows for local processing, storage, and immediate response to critical situations, even without a continuous connection to the central server. For more information, see the [What is ThingsBoard Edge](/docs/{{docsPrefics}}getting-started-guides/what-is-edge/){: target="_blank"} article.
+**ThingsBoard Edge** is designed specifically for local, distributed data processing, enabling data analysis and management directly at the source of data generation. This approach allows for local processing, storage, and immediate response to critical situations, even without a continuous connection to the central server. For more information, see the [What is ThingsBoard Edge](/docs/{{docsPrefix}}getting-started-guides/what-is-edge/){: target="_blank"} article.
 
-In contrast, **ThingsBoard Cloud**, is a fully managed, scalable, and fault-tolerant platform hosted in the cloud. The devices connected to the Cloud transfer data over the internet. It is perfect for centralized data collection, processing, and management. For more information, see the [What is ThingsBoard](/docs/{{peDocsPrefics}}getting-started-guides/what-is-thingsboard/){: target="_blank"} article.
+In contrast, **ThingsBoard Cloud** is a fully managed, scalable, and fault-tolerant platform hosted in the cloud. The devices connected to the cloud transfer data over the internet. It is perfect for centralized data collection, processing, and management. For more information, see the [What is ThingsBoard](/docs/{{docsPrefix}}getting-started-guides/what-is-edge/){: target="_blank"} article.
 
 ### The Key Differences Between Edge and Cloud 
 
@@ -20,7 +20,8 @@ Although **Edge is designed similarly to Cloud**, the main difference lies **in 
 * Devices connected to the **Cloud** are **require internet connectivity** to communicate with the platform.
 
 **Cluster deployment** refers to the deployment in a distributed architecture, where multiple nodes (instances) work together to ensure scalability, fault tolerance, and high availability.
-* **Edge does not support cluster deployment**. It is designed to operate, process and analyze data locally before synchronizing with the central ThingsBoard server.
+* The older versions of **Edge do not support cluster deployment**. It is designed to operate, process and analyze data locally before synchronizing with the central ThingsBoard server.
+* Starting with release 4.0 **Edge supports clustering**. Multiple Edge nodes can be clustered to provide high availability. If one node fails, the others can seamlessly continue to handle workloads. 
 * **Cloud supports cluster deployment** and is crucial for handling large-scale IoT applications with numerous devices and high data throughput.
 
 ## Synchronization Architecture
@@ -47,7 +48,7 @@ To force synchronization procedure, go to the **Edge management > Instances** se
 
 ## Entities Management
 
-Most entities can be created on the **Edge** instance, except for **Customers**, **Users**, and **Rule Chains** entities. To enable the use of these entities on the **Edge**, these entities must be **assigned** to the **Edge** prior to use.
+Most entities can be created on the **Edge** instance, except for **Customers**, and **Users**, entities. To enable the use of these entities on the **Edge**, these entities must be **assigned** to the **Edge** prior to use.
 
 To **assign** specific entities to the **Edge**, log in to your **Cloud** and navigate to the **Edge management > Instances** section:
 
@@ -83,7 +84,7 @@ Basic information about the Edge configuration is provided on the Edge instance 
 The **Cloud Events** page shows events that ThingsBoard Edge pushes to the Cloud. To view this information, log in to your **Edge instance** and go to the **Edge > Cloud events** section. The following information is displayed:
 
 * **Created time:** The date and time the event is created and pushed to the Cloud. Displayed in a format YYYY-MM-DD H:Min:Sec.
-* **Action:** The action pushed to the Cloud. Possible actions: Added, Deleted, Updated, Attributes Updated, Attributes Deleted, Timeseries Deleted, Timeseries Updated, RPC Call, Credentials Updated, Relation Add or Update, Relation Deleted, Relations Deleted, Alarm Ack, Alarm Clear, Attributes Request, Rule Chain Metadata Request, Relation Request, Credentials Request.
+* **Action:** The action pushed to the Cloud. Possible actions: Added, Deleted, Updated, Attributes Updated, Attributes Deleted, Timeseries Deleted, Timeseries Updated, RPC Call, Credentials Updated, Relation Add or Update, Relation Deleted, Relations Deleted, Alarm Ack, Alarm Clear, Attributes Request, Rule Chain Metadata Request, Relation Request, Credential Request.
 * **Entity type:** The entity that created the event.
 * **Entity ID:** The identification code of the entity.
 * **Status:** Defines if the event has been pushed to the Cloud. 
