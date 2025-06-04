@@ -46,7 +46,7 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Fleet tracking solution architecture" title="Fleet tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart retail solution architecture" title="Smart retail solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -267,9 +267,6 @@ includeAdvantages: "true"
                 largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
                 largeImageElement.innerHTML = getImage(index);
 
-                applyImageBg(smallImageBlock);
-                applyImageBg(largeImageBlock);
-
                 expansionBlocks.forEach(item => {
                     item.classList.remove('expanded');
                 });
@@ -292,7 +289,7 @@ includeAdvantages: "true"
             const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
             const large = document.querySelector('.image-block-large');
 
-            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 250 && elemCoor.top < 0) {
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 230 && elemCoor.top < 0) {
                 large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
             }
         };
@@ -318,33 +315,22 @@ includeAdvantages: "true"
                 <div class=image>${getImage(0)}</div>
             </div>
             <div class="buttons-block">
-                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
                 <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
             </div>`;
-
-            applyImageBg(block);
-    
+ 
             return block;
-        }
-
-        function applyImageBg(block) {
-            const img = block.querySelector('.image img');
-            const container = block.querySelector('.image-container');
-            if (img && container) {
-                const bg = img.dataset.bg;
-                container.style.backgroundColor = bg || '';
-            }
         }
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-retail/smart-retail-1.webp' alt='' title=''/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-2.webp' alt='' title=''/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-3.webp' alt='' title=''/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-4.webp' alt='' title=''/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-5.webp' alt='' title=''/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-6.webp' alt='' title=''/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-7.webp' alt='' title=''/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-1.webp' alt='ThingsBoard dashboard displaying supermarket locations and active critical alarms on the map' title='Overview of supermarket monitoring with critical and major alerts'/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-2.webp' alt='Critical motion sensor and list of active alarms for Supermarket S1 in ThingsBoard interface' title='Device and alarm status for Supermarket S1'/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-3.webp' alt='ThingsBoard interface showing Supermarket S1 floor plan with critical motion sensor alerts and alarm chart' title='Floor plan of Supermarket S1 with device states and motion sensor data'/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-4.webp' alt='Dashboard view of Supermarket S2 with critical door sensor and major chiller alarm' title='Device overview and alarms in Supermarket S2'/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-5.webp' alt='Supermarket S2 layout with freezer temperature monitoring and no active alarms' title='Temperature graph for freezer in Supermarket S2'/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-6.webp' alt='Critical door sensor and multiple major temperature alarms in Supermarket S3 on ThingsBoard' title='Supermarket S3 device list and alarm summary'/>",
+                "<img src='/images/usecases/smart-retail/smart-retail-7.webp' alt='Dashboard showing temperature fluctuations of chiller in Supermarket S3 on ThingsBoard' title='Supermarket S3 floor plan and temperature trend for chiller'/>",
             ];
             return images[index];
         }
