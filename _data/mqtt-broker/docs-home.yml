@@ -73,6 +73,8 @@ toc:
   section:
     - title: PROXY Protocol
       path: /docs/mqtt-broker/other/proxy-protocol/
+- title: Subscriptions
+  path: /docs/mqtt-broker/subscription/
 - title: Need Help?
   path: /docs/mqtt-broker/help/
 - title: Troubleshooting
