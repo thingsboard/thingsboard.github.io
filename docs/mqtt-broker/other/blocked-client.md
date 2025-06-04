@@ -27,7 +27,7 @@ This ensures that unauthorized or potentially malicious connection attempts are 
 
 You can block a client using any of the following identifiers:
 
-| Block Type   | Description                            |
+| Block by     | Description                            |
 |--------------|----------------------------------------|
 | `CLIENT_ID`  | Block clients with specific client IDs |
 | `USERNAME`   | Block based on MQTT usernames          |
@@ -43,9 +43,9 @@ The `REGEX` type supports matching based on one of:
 To block all clients whose IDs start with `test-` followed by digits, you can use the following regex rule:
 
 ```text
-Type: REGEX
-Regex Pattern: ^test-\d+$
-Match Target: BY_CLIENT_ID
+Block by: REGEX
+Regex Pattern Value: ^test-\d+$
+Match by: BY_CLIENT_ID
 ```
 
 This will block clients such as:
