@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: IoT water metering solutions with ThingsBoard
-description: IoT water metering solutions with ThingsBoard
+title: Smart Water Metering with ThingsBoard IoT Platform
+description: Discover how ThingsBoard enables real-time water monitoring, automated alerts, and consumption analytics with a scalable IoT water metering solution for utilities, buildings, and agriculture.
 notitle: "true"
 includeAdvantages: "true"
 ---
