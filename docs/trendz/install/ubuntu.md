@@ -141,17 +141,15 @@ sudo apt install python3-pip
 
 ```bash
 sudo mkdir -p /opt/venvs
-cd /opt/venvs
-sudo python3 -m venv trendz_venv
-sudo chown -R $USER:$USER /opt/venvs/trendz_venv
-source trendz_venv/bin/activate
+sudo python3 -m venv /opt/venvs/trendz_venv
+sudo chown -R trendz: /opt/venvs/trendz_venv
 ```
 {: .copy-code}
 
 #### Install required python packages
 
 ```bash
-pip install --no-cache-dir \
+sudo -u trendz /opt/venvs/trendz_venv/bin/pip install --no-cache-dir \
   numpy==1.26.3 \
   scikit-learn==1.4.2 \
   statsmodels==0.14.2 \
