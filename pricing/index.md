@@ -61,6 +61,9 @@ selfManagedPlan:
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a id="Pricing_Edge" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
+            <li id="menu-item-tbmq" class="menu-item tb-logo">
+               <a id="Pricing_TBMQ" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('tbmq')">TBMQ</a>
+            </li>
          </ul>
        </nav>
     </div>
@@ -367,7 +370,7 @@ selfManagedPlan:
                 <div class="billing-toggle">
                     <span class="label-text selected">Monthly</span>
                     <label class="switch">
-                        <input onclick="switchPrice()" type="checkbox" id="billingSwitch">
+                        <input onclick="switchPrice('thingsboard-private-cloud')" type="checkbox" id="billingSwitch">
                         <span class="slider"></span>
                     </label>
                     <span class="label-text">Annual</span>
@@ -1605,6 +1608,161 @@ selfManagedPlan:
     </div>
  </div>  
 </div>
+<div id="tbmq" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row not-reverse-column">
+            <div class="pricing-content-description always-display active col-lg-6">
+              <h2>Choose your plan</h2>
+              <div class="pricing-content-details">
+                  All-inclusive hosting and infrastructure, so you can focus on building your solutions.
+              </div>
+            </div>
+            <div class="toggle-container">
+                <div class="billing-toggle">
+                    <span class="label-text selected">Monthly</span>
+                    <label class="switch">
+                        <input onclick="switchPrice('tbmq')" type="checkbox" id="billingSwitch">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="label-text">Annual</span>
+                </div>
+                <div class="bottom-text">Save 10% on annual plans</div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section always-display active">
+               <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Launch</h2>
+                        <div class="pricing-square-description">
+                            <p>Suitable for pilots and early stage deployments.</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $199
+                            <span>/month</span>
+                        </h4>
+                        <h4 class="pricing-square-price hidden">
+                            $179
+                            <span>/month</span>
+                        </h4>
+                        <h3 class="pricing-square-price sub-price">
+                            $0.27/hour
+                        </h3>
+                        <h3 class="pricing-square-price sub-price hidden">
+                            $0.24/hour
+                        </h3>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TBMQ_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                                Contact Us
+                                <span class="visually-hidden">to help you with your TBMQ Launch plan.</span>
+                            </a>
+                        </div>
+                        <div class="pricing-square-item highlight">2 000 sessions</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">1 000 total msg/sec</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">5 integrations</div>
+                        <div class="pricing-square-item">99.9% uptime guarantee</div>
+                        <div class="pricing-square-item">100GB of free monthly traffic</div>
+                        <div class="pricing-square-item plus-icon highlight">$0.15/GB for exceeding traffic</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Growth</h2>
+                        <div class="pricing-square-description">
+                            <p>Perfect for fast-growing deployments — adds capacity as you expand.</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $349
+                            <span>/month</span>
+                        </h4>
+                        <h4 class="pricing-square-price hidden">
+                            $314
+                            <span>/month</span>
+                        </h4>
+                        <h3 class="pricing-square-price sub-price">
+                            $0.48/hour
+                        </h3>
+                        <h3 class="pricing-square-price sub-price hidden">
+                            $0.43/hour
+                        </h3>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TBMQ_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                                Contact Us
+                                <span class="visually-hidden">to help you with your TBMQ Growth plan.</span>
+                            </a>
+                        </div>
+                        <div class="pricing-square-item highlight">4 000 sessions</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">2 000 total msg/sec</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">10 integrations</div> 
+                        <div class="pricing-square-item">99.9% uptime guarantee</div>
+                        <div class="pricing-square-item">200GB of free monthly traffic</div>
+                        <div class="pricing-square-item plus-icon highlight" >$0.15/GB for exceeding traffic</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Scale</h2>
+                        <div class="pricing-square-description">
+                            <p>Designed for mission-critical, high-scale workloads.</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $999
+                            <span>/month</span>
+                        </h4>
+                        <h4 class="pricing-square-price hidden">
+                            $899
+                            <span>/month</span>
+                        </h4>
+                        <h3 class="pricing-square-price sub-price">
+                            $1.37/hour
+                        </h3>
+                        <h3 class="pricing-square-price sub-price hidden">
+                            $1.23/hour
+                        </h3>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TBMQ_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                                Contact Us
+                                <span class="visually-hidden">to help you with your TBMQ Scale plan.</span>
+                            </a>
+                        </div>
+                        <div class="pricing-square-item highlight">20 000 sessions</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">10 000 total msg/sec</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">50 integrations</div>
+                        <div class="pricing-square-item">99.95% uptime guarantee</div>
+                        <div class="pricing-square-item">1TB of free monthly traffic</div>
+                        <div class="pricing-square-item plus-icon highlight">$0.15/GB for exceeding traffic</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Enterprise</h2>
+                        <div class="pricing-square-description">
+                            <p>Tailored architecture, pricing, and SLAs to fit your business.</p>
+                        </div>
+                        <h4 class="pricing-square-price always-display">
+                            Custom <span data-faq-id="tbmq-enterprise-unique-features" data-faq-link-size="70%"></span>
+                        </h4>
+                        <span class="placeholder"></span>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TBMQ_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                                Contact Us
+                                <span class="visually-hidden">to help you with your TBMQ Enterprise plan.</span>
+                            </a>
+                        </div>
+                        <div class="pricing-square-item highlight">Unlimited sessions</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">Unlimited total msg/sec</div>
+                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">Unlimited integrations</div>
+                        <div class="pricing-square-item">Custom SLA</div>
+                        <div class="pricing-square-item">Unlimited monthly traffic</div>
+                        <div class="pricing-square-item plus-icon highlight">Everything you need to scale</div>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container faq-content">
     <h2 id="faq-header">Frequently asked questions</h2>
     <div id="FAQ">
@@ -2704,8 +2862,8 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-high-availability-services-available-as-an-add-on" data-title="Are high-availability services available as an add-on?">
                         <div class="container">
-                            <p>High-availability (HA) services are built into the structure of Private Cloud starting Scale plan and are not offered separately as an add-on.</p>
-                            <p>If your usage or operational requirements indicate the need for HA, the ThingsBoard team will proactively recommend an upgrade to the appropriate tier.</p>
+                            <p>High-availability (HA) services are built into the structure of Private Cloud starting Scale plan and are not offered separately as an add-on. <br><br></p>
+                            <p>If your usage or operational requirements indicate the need for HA, the ThingsBoard team will proactively recommend an upgrade to the appropriate tier.<br><br></p>
                             <p>This approach ensures consistent architecture, SLA alignment, and reliability without complicating plan configurations.</p>
                         </div>
                     </div>
@@ -4853,6 +5011,388 @@ selfManagedPlan:
                     <div class="item hidden" data-tag="h4" data-item-id="edge-perpetual-installation-help" data-title="How can I get help with installation and setup?">
                         <div class="container">
                             <p>All perpetual license packages provide dedicated support with predefined response time and access to the ThingsBoard Support Portal. Our expert support team is available to assist you with system deployment by following our recommended installation methods and architecture, ensuring a smooth and efficient setup. For custom installation scripts or alternative deployment scenarios, additional support options are available, and you can <a href="https://thingsboard.io/docs/contact-us/">contact us</a> to discuss your needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tbmq" id="faq-tbmq">
+            <div class="faq-section-selector">
+                <div class="faq-section-option active" id="general" onClick="switchFaqSection('general', this)">General</div>
+                <div class="faq-section-option" id="billing" onClick="switchFaqSection('billing', this)">Billing & Payments</div>
+                <div class="faq-section-option" id="usageAndLimits" onClick="switchFaqSection('usageAndLimits', this)">Usage & Limits</div>
+                <div class="faq-section-option" id="enterprisePlan" onClick="switchFaqSection('enterprisePlan', this)">Enterprise Plan</div>
+                <div class="faq-section-option" id="trialsCancellationsAndRefunds" onClick="switchFaqSection('trialsCancellationsAndRefunds', this)">Trials, Cancellations & Refunds</div>
+                <div class="faq-section-option" id="addOns" onClick="switchFaqSection('addOns', this)">Add-ons and Optional Features</div>
+            </div>
+            <div class="answers">
+                <div id="faq-tbmq-general" class="pi-accordion active">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-stand-for" data-title="What does “TBMQ Private Cloud” stand for?">
+                        <div class="container">
+                            <p>TBMQ Private Cloud is a fully managed, isolated deployment of the ThingsBoard MQTT Broker that our team provisions and operates for you. We handle the infrastructure setup, apply security patches, monitor your environment 24×7, run automated backups, and provide an SLA-backed uptime guarantee (99.9 %–99.99 %, depending on plan). Your engineering team can stay focused on developing IoT solutions and business logic without worrying about maintaining and scaling the MQTT infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-compare-to-community-tb" data-title="How does TBMQ Private Cloud compare to TBMQ Community Edition and Thingsboard?">
+                        <div class="container">
+                            <ul>
+                                <li>TBMQ Community Edition is the open-source, highly scalable, and fault-tolerant MQTT broker. It is fully compliant with the MQTT protocol—suitable for custom setups where you manage everything yourself.</li>
+                                <li>ThingsBoard (Community or Professional Edition) is a complete IoT platform with advanced features like data visualization dashboards, rule engine for processing device data, device and asset management, OTA updates, alarm management, integrations, and more. It is designed for building end-to-end IoT solutions.</li>
+                                <li>TBMQ Private Cloud is a fully managed, production-grade deployment of TBMQ, isolated per customer, with 24×7 monitoring, automated backups, and an SLA-backed uptime guarantee. It’s the right choice when you need reliable MQTT infrastructure without managing DevOps.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-used-with-tb" data-title="Can TBMQ be used together with ThingsBoard?">
+                        <div class="container">
+                            <p>Yes, TBMQ can be used together with ThingsBoard or completely separately. TBMQ is an independent MQTT broker designed for high performance and scalability, while ThingsBoard is a full IoT platform with advanced features like dashboards, rule engine, and device management. When used together, TBMQ handles all MQTT messaging, and ThingsBoard processes, visualizes, and manages the data. However, there is no dependency between them—TBMQ works perfectly on its own if you only need a reliable MQTT layer, and ThingsBoard can also run with its built-in MQTT transport.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-pc-vs-sh" data-title="What are the benefits of Private Cloud versus self-hosting?">
+                        <div class="container">
+                            <p>Unlimited number of devices and assets means there are no software limits on creating devices and assets on the edge side. However, in real-world deployments, several factors must be considered to host a large number of devices:</p>
+                            <ul>
+                                <li>Zero DevOps overhead – no servers to set up, patch or monitor.</li>
+                                <li>Guaranteed availability – written SLA of 99.9 – 99.99 %, with service-credit remedies.</li>
+                                <li>Faster time-to-market – we stand up production clusters in 1-2 hours, not weeks.</li>
+                                <li>Scalability – Kubernetes-based plans grow as device traffic spikes.</li>
+                                <li>Predictable cost – one all-inclusive monthly fee replaces cap-ex plus staffing.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-uptime-calc" data-title="What is ‘uptime’ and how do you calculate it?">
+                        <div class="container">
+                            <p>Uptime (%) = ((Total Time – Downtime) / Total Time) × 100 <br><br></p>
+                            <p>Total Time – number of minutes in the billing month.</p>
+                            <p>Downtime – minutes when core broker services are unavailable for the administrator.</p>
+                            <p>We measure Downtime from incident detection to full service restoration. <br><br></p>
+                            <p>Excluded from Downtime:</p>
+                            <ul>
+                                <li>Scheduled maintenance announced ≥ 48 h in advance</li>
+                                <li>Emergency security patches</li>
+                                <li>Force-majeure events or upstream cloud failures (e.g., AWS region outage)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-deployment-options" data-title="What deployment options are available within Private Cloud?">
+                        <div class="container">
+                            <p>Private Cloud is offered in three fixed tiers—Launch, Growth, and Scale—each designed to support different stages of your IoT deployment journey. The Enterprise plan is tailored for your use case and offers flexible architecture, pricing and custom SLA. <br><br></p>
+                            <p>All plans are powered by Kubernetes, with built-in load balancers to ensure resilient, scalable operations. AWS is our first-choice IaaS, but Azure or GCP regions are also supported on request.</p>
+                        </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-for-whom" data-title="Who should choose Private Cloud?">
+                        <div class="container">
+                            <p>Private Cloud ideal for companies that want to avoid investing in DevOps resources, reduce operational risk, and accelerate time to market. They are particularly beneficial for startups, SMBs, or enterprises scaling production systems who prefer to offload platform operations and upgrades to the ThingsBoard team under a clear SLA.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-prerequisites" data-title="What are the prerequisites to get started?">
+                        <div class="container">
+                            <p>1. Submit the request form – we schedule a short onboarding call. <br></p>
+                            <p>2. For Enterprise deals we run a light discovery workshop and issue a custom proposal. <br><br></p>
+                            <p>You are welcome to reach out at any stage — we’ll help you choose the most suitable plan and guide you through the next steps.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-minimum-commitment" data-title="Is there a minimum commitment?">
+                        <div class="container">
+                            <p>No long-term lock-in. We simply ask for a 30-day written notice before shutdown so we can decommission resources cleanly.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-data-hosted" data-title="Where will my data be hosted?">
+                        <div class="container">
+                            <p>During onboarding you pick the region that best fits compliance or latency needs (EU, North America, or APAC). All sites reside in ISO 27001/PCI-DSS-certified data centres.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-data-gdpr" data-title="How can I get my data in line with GDPR requirements?">
+                        <div class="container">
+                            <p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all tenant-level tables (entities, telemetry, audit logs, custom metadata) and transfer it to you over a secure channel (SFTP or your own cloud bucket). Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all tenant data within 30 days of your erase request.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-pc-gdpr-compliant" data-title="Is your Private Cloud service GDPR-compliant?">
+                        <div class="container">
+                            <p>Yes. You remain the sole Data Controller; TBMQ acts as a Data Bridge under a standard DPA. Data never leaves the region you select, and you have the right to access, port or delete it at will.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-cancel-return-data" data-title="If I cancel, will you return my data?">
+                        <div class="container">
+                            <p>Yes. Once we receive your cancellation notice, we prepare a full encrypted PostgreSQL/Redis/Kafka dump of all your admin data—including clients, subscriptions, telemetry—and deliver it to you over a secure channel (SFTP link or your own cloud bucket). You have up to 60 days after the cancellation date to download and verify the dump. After that 60-day grace period, all remaining backups and cluster data are permanently and securely deleted from our systems.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-security-measurements" data-title="What kind of security measurements do you provide?">
+                        <div class="container">
+                            <p>Private Cloud is designed with enterprise-grade security at its core. Access to the infrastructure is limited to authorized ThingsBoard personnel only, with regular audits and monitoring in place. We follow industry best practices for patch management, vulnerability scanning, and secure software development.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-upgrades-conductment" data-title="How often are upgrades conducted?">
+                        <div class="container">
+                            <p>All Private Cloud upgrades—whether minor patches or major version releases—are scheduled in coordination with the customer. This ensures full transparency, minimizes disruption, and allows your team to prepare in advance. Our team handles the entire upgrade process and provides clear communication before and after each change to maintain operational continuity and SLA compliance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-tbmq-billing" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-pricing-structure" data-title="How is the pricing structured for Private Cloud?">
+                        <div class="container">
+                            <p>The pricing for TBMQ Private Cloud is based on the selected service tier. Each plan includes specific limits on MQTT client sessions, message throughput, integrations, and traffic to ensure proper resource allocation and SLA compliance. The available plans are:</p>
+                            <ul>
+                                <li>Launch: $199/month — includes up to 2,000 sessions, 1,000 total messages per second, and 5 integrations. Includes 100 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
+                                <li>Growth: $349/month — includes up to 4,000 sessions, 2,000 total messages per second, and 10 integrations. Includes 200 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
+                                <li>Scale: $999/month — includes up to 20,000 sessions, 10,000 total messages per second, and 50 integrations. Includes 1 TB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
+                                <li>Enterprise: Custom pricing — includes unlimited sessions, message throughput, integrations, and monthly traffic. Comes with a custom SLA and can be tailored to specific deployment needs.</li>
+                            </ul>
+                            <p>Short-term traffic bursts and message rate spikes are tolerated. Sustained overages may require a plan upgrade.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-annual-discount" data-title="Do you offer a discount for annual payments?">
+                        <div class="container">
+                            <p>Yes, we offer a 10% discount on all Private Cloud plans—including Launch, Growth, Scale, and Enterprise—if you choose to pay annually upfront. The annual subscription provides cost savings and simplifies billing by consolidating charges into a single yearly invoice.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-payment-methods" data-title="What payment methods are accepted?">
+                        <div class="container">
+                            <p>We accept bank wire/ACH and credit- or debit-card payments. Card payments are processed securely via Stripe. All billing and invoicing is handled directly by the ThingsBoard Team.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-monthly-fee-includes" data-title="What is included in the monthly subscription fee?">
+                        <div class="container">
+                            <p>The monthly subscription fee for Private Cloud covers the complete provisioning and maintenance of your dedicated environment. This includes platform licensing, system monitoring, infrastructure management, software updates, security patching, 24/7 availability monitoring, and SLA-backed support. The fee also includes a default allocation of storage, and message rate capacity depending on your selected plan tier.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-setup-cancellation-fees" data-title="Are there any setup or cancellation fees?">
+                        <div class="container">
+                            <p>No. Start or stop whenever you like. We do ask for 30 days’ notice before cancellation so we can export your data and decommission the cluster cleanly.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-additional-costs" data-title="Are there any additional costs beyond the fixed monthly fee?">
+                        <div class="container">
+                            <p>In addition to the base monthly fee for each plan, you may incur additional monthly charges for the following:</p>
+                            <ul>
+                                <li>Traffic usage beyond the included monthly limit – $0.15 per GB</li>
+                            </ul>
+                            <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term traffic bursts and message rate spikes are tolerated. Sustained overages may require a plan upgrade.</p>
+                        </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-payment-processing-fees" data-title="Are there any payment processing fees?">
+                        <div class="container">
+                            <p>No, we do not charge any additional processing fees for payments made via wire transfer or credit/debit card.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-invoice-automation" data-title="Are invoices issued automatically?">
+                        <div class="container">
+                            <p>Invoices are currently generated manually and sent to you at the start of each billing month, so you have the invoice in hand before the service period begins. We’re building a self-service billing portal with fully automated invoicing and expect to roll it out later this year.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-paypal-payment" data-title="Can I pay with PayPal?">
+                        <div class="container">
+                            <p>Yes, it is possible.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-invoice-taxes" data-title="Does your invoice include taxes?">
+                        <div class="container">
+                            <p>Invoices are issued net of tax in USD. You are responsible for any local taxes that may apply in your jurisdiction.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-switch-to-annual-billing" data-title="Can I switch from monthly to annual billing later?">
+                        <div class="container">
+                            <p>Yes, you can switch from monthly to annual billing at any time. Simply contact the ThingsBoard team, and we will coordinate the transition, apply the discount, and adjust your invoicing accordingly from your next billing cycle.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-annual-upgrade-higher-tier" data-title="What happens if my plan is upgraded to higher tier during an annual subscription?">
+                        <div class="container">
+                            <p>If you upgrade your Private Cloud plan during an active annual subscription, the price difference will be calculated on a monthly basis for the remainder of the subscription term. The 10% annual discount will still apply to the new plan. This ensures billing transparency and flexibility while preserving your discount, even if your needs change mid-term.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-tbmq-usageAndLimits" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-session-definition" data-title="What exactly counts as a “session”?">
+                        <div class="container">
+                            <p>A session is any active connection between an MQTT client and the TBMQ broker. Each session represents a single client, uniquely identified by its client ID, and counts toward your session quota.<br><br></p>
+                            <p>If a client connects and maintains an active session, it occupies one slot in the session quota. When session persistence is enabled, a disconnected client still occupies a session slot, since its session data (subscriptions, messages, etc.) is retained by the broker.<br><br></p>
+                            <p>A session slot is released only when the session has either expired or been explicitly removed. This means your session quota includes both currently connected clients and any disconnected clients with persisted sessions. Only clients with fully expired or deleted sessions free up capacity for new connections.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-total-msg-sec-definition" data-title="How is “total msg/sec” defined and metered?">
+                        <div class="container">
+                            <p>Total messages per second refers to the combined number of MQTT PUBLISH packets processed by the TBMQ each second. This includes both incoming messages from publishers and outgoing messages delivered to subscribers.<br><br></p>
+                            <p>For example, if 100 devices each publish 10 messages per second, that results in 1,000 incoming messages per second. If each message is delivered to 2 subscribers, the outgoing volume is 2,000 messages per second. In this case, the total messages per second would be 3,000.<br><br></p>
+                            <p>Only MQTT PUBLISH packets are counted—control packets like CONNECT, SUBSCRIBE, PINGREQ, etc., are excluded. This metric reflects the actual messaging throughput of your deployment and is used to ensure performance and SLA compliance.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-exceed-message-rate-limit" data-title="What happens if I exceed my sustained message-rate limit?">
+                        <div class="container">
+                            <p>The cluster tolerates brief spikes (see next answer). If sustained traffic stays above your tier’s ceiling, our monitoring flags it and we’ll ask you to upgrade. Plan upgrades are provisioned within three business days; remaining over-quota traffic may be throttled to protect platform stability.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-burst-message-limit" data-title="Can I burst above the message limit and for how long?">
+                        <div class="container">
+                            <p>Yes. Short-term bursts up to 10 % above the stated msgs-per-second ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-integration-definition" data-title="What exactly counts as an “integration”?">
+                        <div class="container">
+                            <p>An integration is counted as either an Application client or an external system integration.</p>
+                            <p>An Application client is a specialized type of MQTT client designed for high-volume message consumption. It uses a dedicated Kafka topic and consumer running in a separate thread, supports message persistence.</p>
+                            <p>This makes it well-suited for scenarios where reliable message delivery is necessary, and message loss is unacceptable.<br><br></p>
+                            <p>External system integrations connect TBMQ to other systems over supported protocols such as HTTP, MQTT, or Kafka. Each such integration is managed separately and also uses a dedicated consumer and topic to ensure performance and reliability.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-device-persistent-msg-sec-definition" data-title="How is “Device persistent msg/sec” defined and metered?">
+                        <div class="container">
+                            <p>Device persistent messages per second refers to the number of MQTT PUBLISH messages from Device clients that are stored while their subscribers are offline.<br><br></p>
+                            <p>A Device client is a standard type of client that can be configured as persistent or non-persistent based on connection settings. When persistence is enabled, any messages sent while the subscriber is offline are temporarily stored and delivered once the client reconnects.<br><br></p>
+                            <p>The limit for device persistent messages per second is enforced at the cluster level, not per individual client, to ensure balanced resource usage and stable system performance.</p>
+                        </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-monitor-usage" data-title="How do I monitor my current session, message, traffic, and storage usage?">
+                        <div class="container">
+                            <p>The Home dashboard contains information about the number of active and persisted sessions. The monitoring dashboard shows per-minute message rates for both incoming and outgoing MQTT traffic. Storage usage is calculated from multiple internal sources and is available upon request. We are working on making storage metrics visible directly within the platform dashboards.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-undelivered-message-retention" data-title="How long are undelivered messages for persistent sessions retained?">
+                        <div class="container">
+                            <p>Undelivered messages for persistent sessions are retained for 1 day. After that period, they are automatically discarded.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-user-admin-creation" data-title="How many user admins can I create?">
+                        <div class="container">
+                            <p>User accounts are unlimited. Your TBMQ Private Cloud instance is provisioned for a top-level system administrator; that administrator can create any number of additional admin users without extra charge.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-backup-frequency-retention" data-title="How often are backups taken and how long are they kept?">
+                        <div class="container">
+                            <p>Nightly snapshots (full or incremental, depending on data churn) are stored in a separate cloud region. We retain backups for 7 days by default; longer retention can be arranged under the Enterprise tier.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-outgrow-plan-upgrade" data-title="If I outgrow my plan, how quickly can I upgrade and will there be downtime?">
+                        <div class="container">
+                            <p>Notify us as soon as you foresee sustained traffic growth. We provision the larger tier within three business days. Upgrades are performed live on Kubernetes; no downtime is expected, though brief reconnections (&lt;1 min) may occur when scaling nodes.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-session-limits-plans" data-title="What are the session limits for Private Cloud plans?">
+                        <div class="container">
+                            <p>Each plan includes a different default session capacity:</p>
+                            <ul>
+                                <li>Launch: 2,000 sessions</li>
+                                <li>Growth: 4,000 sessions</li>
+                                <li>Scale: 20,000 sessions</li>
+                                <li>Enterprise: unlimited sessions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-message-rate-limit-importance" data-title="What is the message rate limit and why is it important?">
+                        <div class="container">
+                            <p>Each Private Cloud plan includes a predefined message rate limit measured in total messages per second. This is the most critical technical limit in our offering, as it defines how much telemetry data your system can process without impacting performance or SLA.<br><br></p>
+                            <p>The message rate limits per plan are:</p>
+                            <ul>
+                                <li>Launch: up to 1,000 total messages per second</li>
+                                <li>Growth: up to 2,000 total messages per second</li>
+                                <li>Scale: up to 10,000 total messages per second</li>
+                                <li>Enterprise: Unlimited</li>
+                            </ul>
+                            <p>If your usage exceeds the limit of your current plan, a mandatory upgrade will be required to maintain service stability and SLA guarantees. Message throughput is actively monitored by the ThingsBoard Team.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-geo-region-deployment" data-title="What does geo-region deployment selection include?">
+                        <div class="container">
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-maintenance-window-selection" data-title="Can I choose a specific maintenance window?">
+                        <div class="container">
+                            <p>Yes, you can. All Private Cloud plans allow customers to request and define a preferred maintenance window. This ensures any upgrades or maintenance activities are scheduled at a time that minimizes disruption to your operations. Our team coordinates with you to honor this window whenever changes are required.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-additional-limits" data-title="Are there any additional limits?">
+                        <div class="container">
+                            <p>Yes, TBMQ Private Cloud plans have sessions, messages, and storage limits. See subscription <a href="/docs/mqtt-broker/subscription/">documentation</a> for more details.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-tbmq-enterprisePlan" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-enterprise-unique-features" data-title="What features are unique to the Enterprise plan?">
+                        <div class="container">
+                            <p>The Enterprise plan is tailored for customers with complex operational and business needs. While it builds on the same broker features, it introduces a separate, flexible billing model and the option for advanced engineering support at the application level. This combination enables organizations to manage Private Cloud at scale with greater control, specialized assistance, and the ability to align infrastructure with their unique workflows and compliance requirements.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-enterprise-custom-sla" data-title="Can I get a custom SLA?">
+                        <div class="container">
+                            <p>The Enterprise plan includes a default SLA with a guaranteed uptime of 99.95%, which already meets the needs of most mission-critical applications. While fully custom SLAs are typically not required, we are open to discussing specific availability or support requirements on a case-by-case basis to ensure alignment with your business expectations.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-enterprise-service-reviews-consultations" data-title="What is included in service reviews and architecture consultations?">
+                        <div class="container">
+                            <p>Service reviews and architecture consultations are a specialized, ongoing service available exclusively to TBMQ Private Cloud customers. These sessions provide structured, high-level guidance from a senior TBMQ engineer who collaborates with your team regularly. You’ll receive proactive recommendations on best practices, performance tuning, and scalable architecture design tailored to your evolving use case.</p>
+                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-enterprise-pricing-determination" data-title="How is the pricing determined for the Enterprise plan?">
+                        <div class="container">
+                            <p>Enterprise pricing is calculated based on multiple components to reflect the scale, flexibility, and support level required. The total cost typically consists of:</p>
+                            <ul>
+                                <li>Base fee – foundational cost for core broker access and services.</li>
+                                <li>Infrastructure processing costs – reflects actual compute and networking usage.</li>
+                                <li>Management fee – covers monitoring, updates, and support.</li>
+                                <li>Storage costs – based on allocated capacity and retention policy.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-tbmq-trialsCancellationsAndRefunds" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-trial-option" data-title="Is there a trial option for Private Cloud?">
+                        <div class="container">
+                            <p>Trial access is available by deploying TBMQ Community Edition, which lets you explore the core MQTT features in your own environment. <br><br></p>
+                            <p>For TBMQ Private Cloud, trials are not applicable due to the use of dedicated infrastructure and custom deployment.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-downgrade-plan" data-title="Can I downgrade my plan later?">
+                        <div class="container">
+                            <p>Yes, you can downgrade your Private Cloud plan if your message rate and resource usage fall within the thresholds of a lower-tier Private Cloud plan. Downgrades are coordinated with the ThingsBoard team to ensure service continuity and SLA compliance.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-upgrade-plan" data-title="Can I upgrade my plan at any time?">
+                        <div class="container">
+                            <p>Upgrades are possible at any time, but they are not initiated automatically. The ThingsBoard team continuously monitors your resource usage and message throughput. If your consumption exceeds the thresholds defined for your current tier, our team will notify you and guide the process of upgrading to a higher plan. This ensures uninterrupted service and compliance with SLA guarantees. You can also request an upgrade proactively if you anticipate growth or require additional capabilities.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-early-cancellation-fees" data-title="Are there any fees for early cancellation?">
+                        <div class="container">
+                            <p>There is no cancellation fee for Private Cloud. However, since your Private Cloud instance runs on dedicated infrastructure, we kindly ask for at least 30 days' advance notice prior to cancellation to ensure smooth resource decommissioning and service wrap-up.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-cancel-return-data" data-title="If I cancel, will you return my data?">
+                        <div class="container">
+                            <p>Yes. Once we receive your cancellation notice, we prepare a full encrypted PostgreSQL/Redis/Kafka dump of all your admin data—including clients, subscriptions, telemetry—and deliver it to you over a secure channel (SFTP link or your own cloud bucket). You have up to 60 days after the cancellation date to download and verify the dump. After that 60-day grace period, all remaining backups and cluster data are permanently and securely deleted from our systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-tbmq-addOns" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-purchase-additional-storage" data-title="Can I purchase additional storage?">
+                        <div class="container">
+                            <p>Yes, additional storage is available and automatically calculated based on your actual usage and retention policy. There's no need to make a separate manual request. At the end of each month, we assess your storage consumption, and any overage beyond your plan’s default quota is billed at $0.50 per GB. This ensures accurate, usage-based billing without administrative overhead on your side.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
+                        <div class="container">
+                            <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
+                            <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
+                            <p>If storage usage grows beyond safe thresholds, the system will clean up old persistent messages. We monitor usage and can work with you to tune limits or expand capacity if needed.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-undelivered-messages-retention-period" data-title="How long are undelivered messages for persistent sessions retained?">
+                        <div class="container">
+                            <p>Undelivered messages for persistent sessions are retained for 1 day. After that period, they are automatically discarded.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-ha-services-addon" data-title="Are high-availability services available as an add-on?">
+                        <div class="container">
+                            <p>High-availability (HA) services are built into the structure of Private Cloud starting Scale plan and are not offered separately as an add-on.<br></p>
+                            <p>If your usage or operational requirements indicate the need for HA, the ThingsBoard team will proactively recommend an upgrade to the appropriate tier.<br></p>
+                            <p>This approach ensures consistent architecture, SLA alignment, and reliability without complicating plan configurations.</p>
                         </div>
                     </div>
                 </div>
