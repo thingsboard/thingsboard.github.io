@@ -1,149 +1,341 @@
+---
+layout: use-case
+title: Turn your market into a Smart Retail powerhouse with ThingsBoard IoT
+description: Discover how ThingsBoard's Smart Retail Solutions enable real-time monitoring, automated alarms, and intelligent dashboards for supermarkets and retail chains. A scalable IoT template for building connected, efficient retail environments.
+notitle: "true"
+customTitle: "true"
+includeAdvantages: "true"
 
-* TOC 
-{:toc}
+---
 
-{% include templates/solution-templates.md %}
+{% include usecase-nav.html usecase="smart-retail" %}
+<div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
+<h1 class="usecase-title">Smart retail</h1>
+<section class="smart-retail-about">
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">Smart Retail Solutions by ThingsBoard is a powerful platform that helps retailers gain full visibility into store infrastructure, automate data collection, respond to incidents in real time, and make informed decisions. Leveraging the flexibility of ThingsBoard, retailers can integrate a wide range of sensors and devices, visualize key metrics through custom dashboards, and implement intelligent analytics.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_SmartRetail_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+            </div>
+        </div>
+        <div class="long">
+            <p>The Smart Retail solution template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
+            <p>With built-in alarm logic and fully configurable thresholds per device, users can detect anomalies such as temperature fluctuations or unauthorized access without needing a complex setup. The template also includes interactive dashboards that allow both providers and customers to monitor the current and historical state of their supermarkets—empowering data-driven decisions, operational efficiency, and a higher standard of safety and service.</p>        
+        </div>
+    </div>
+</section>
 
-Smart retail solution represent the generic smart retail solution as a solution provider, where you may provision multiple Customers and assign a pool of IoT devices to each customer.
+<section class="smart-retail-carousel carousel-padding">
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-retail' %}
+</section> 
 
-{% include images-gallery.html imageCollection="solution-highlights" %}
+<section class="fleet-tracking-solution-structure">
+    <h2>Solution structure of fleet tracking</h2>
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">Each bus or vehicle is equipped with IoT devices or telematics modules connected to GPS units, speed sensors, fuel level indicators, and other sensors. These devices periodically transmit telemetry data (such as speed, coordinates, fuel level, and alarms) via MQTT, HTTP, or CoAP.</p>
+            </div>
+        </div>
+        <div class="long">
+            <p>The ThingsBoard IoT platform receives this data and registers each device as a unique entity. Real-time processing is handled by the built-in Rule Engine, which detects critical alarms like speeding, fuel drops, or prolonged stops.</p>
+            <p>Once processed, the data is presented on interactive dashboards, offering maps, performance graphs, and detailed alarm logs.</p>
+        </div>
+    </div>
+    <div class="scheme">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Fleet tracking solution architecture" title="Fleet tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+    </div>
+</section>
 
-## Dashboard
-As part of this solution, we have created 2 dashboards that display data from multiple sensors - **Smart Supermarkets Dashboard** and **Administration Dashboard**.
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Fleet tracking dashboard structure</h2>
+        <p>
+            The ThingsBoard dashboard for fleet tracking is intuitive and organized into several key components that provide full visibility into fleet operations.
+        </p>
+    </div>
+    <div class="dashboard-structure-block">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Fleet overview dashboard state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>The main dashboard displays a table listing all buses with their current status, speed, and fuel level. A live map visualizes each vehicle's location using color-coded markers. Statuses include On route, Broken, and Refueling, helping operators quickly assess conditions. Below, an alarm log highlights alarms like speeding or low fuel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Bus route history state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Each vehicle has a dedicated route history window showing its movement over the past day. The route is displayed as a line on the map, with playback controls for reviewing trips in sequence. This allows fleet managers to analyze travel patterns and detect route deviations or stops.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Bus A details state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Bus A is currently on the road, moving actively along its route. The dashboard shows frequent speed changes and steady fuel consumption. Several critical alarms were triggered, mostly related to speeding and low fuel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Bus B details state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Bus B is on the move, following a consistent route pattern. Speed trends are regular, and fuel usage decreases steadily. The system logged multiple critical alarms, including speeding and one low fuel alarm.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Bus C details state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Bus C is currently in the Broken state, indicating that the vehicle is not operational. The dashboard shows no movement or speed activity, while the fuel level remains stable. A warning alarm has been triggered, noting that the bus has stopped and requires attention.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Bus D details state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Bus D is currently in the Refueling state, with no movement detected. The fuel level graph shows a consistent increase, reaching full capacity. A warning alarm has been registered, indicating the bus is stopped during the refueling process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-### Smart Supermarkets Dashboard
-
-The **Supermarkets Dashboard** has multiple states:
-- **Main** state contains a map of the supermarkets, and a list of alarms. Alarms are propagated from devices to the corresponding supermarket. The platform calculates state of each supermarket based on the highest severity of the propagated alarms. As a user, you are able to filter supermarkets on the map based on the state of the supermarket.
-- **Floor** plan state contains an indoor map with the floor plan of supermarket and device markers. Besides the map, state also contains two filters: based on device type and device state. Filter settings are persisted on the user level.
-    - State filter allows you to filter devices based on the highest severity of the alarms. For example, you may choose to display devices that have at least one critical alarm.
-    - Device type filter allows you to show or hide specific devices based on the type of device. For example, you may display only Freezers and Chillers and hide all other devices.
-    - Click on specific device marker to display device details state in the right panel of the dashboard. Content of the device details is specific to the device type. For example, freezer device have a line chart with the temperature readings while smart bin has a bar chart with the fullness level. Nevertheless, the common elements of the device details is the header and alarms list. Header contains information about current state of the device and it’s battery level (if device is battery powered). Header also allows you to navigate to the settings of the particular device. Those settings allow you to configure the alarm thresholds.
-
-Some dashboard features (for example, ability to delete devices) were disabled on the live demo dashboard because it is publicly available.
-
-<br>
-Once you install the solution template, you will also receive access to “Smart Supermarket Administration” that allows you to provision customers, their users, supermarkets and devices.
-
-### Smart Supermarket Administration Dashboard
-
-The **Smart Supermarkets Administration Dashboard** has multiple states:
-- **Main** state allows you to list the retail companies (customers). We assume that the customer is a retail company that own one or multiple supermarkets. We have provisioned two “fake” retail companies with number of supermarkets for demonstration purposes.
-- **Device management** state allows you to manage devices in scope of the retail company (customer). You may provision new devices or delete existing devices. The state displays a table with all devices assigned to this retail company. This means that Tenant or Supermarket Administrator will be able to use those devices to position them in the Supermarket. You may treat this list as a pool of devices that are available for installation in the Supermarkets of the Customer.
-- **Supermarket management** state allows you to manage supermarkets in scope of the retail company (customer). The dashboard state displays supermarkets on the map and a list of supermarkets in the table.
-  Supermarkets are assets that may contain multiple devices and few attributes: floor plan and address.
-  
-- **Supermarket devices** state displays an indoor map with the floor plan of supermarket and device markers. You may drag-and-drop the device markers to define precise location of the device in the supermarket.
-
-You may always customize the "Smart Retail" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
-
-## Devices
-
-We have already created multiple sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
-
-
-### Smart Shelf
-
-The profile is configured to raise alarms if the value of "weight" telemetry is lower than a threshold. Major alarm is raised when the value is below 20 units (kg or lbs depends on what is reported by the device). Critical alarm is raised when the value is below 10 units.
-Sample device payload:
-
-```json
-{"weight": 42}
-```
-{: .copy-code}
-
-### Smart Shelf
-
-The profile is configured to raise alarms if the value of "temperature" telemetry is above or below certain thresholds. Major alarm is raised when the value is above -2 degrees or below -25. Critical alarm is raised when the value is above -1 degrees or below -30.
-Sample device payload:
-
-```json
-{"temperature": -5.4}
-```
-{: .copy-code}
-
-### Chiller
-
-Chiller profile is very similar to Freezer but with different default threshold values.
-Sample device payload:
-
-```json
-{"temperature": 6.2}
-```
-{: .copy-code}
-
-### Door sensor
-
-The profile is configured to raise major alarm if the door is left open for more than 30 minutes or critical alarm if the door is left opened for 1 hour. The profile is also configured to raise critical alarm if the door is opened during non-working hours. You may configure schedule of the non-working hours in the alarm rule of the device profile.
-Since door sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-Sample device payload:
-
-```json
-{"open": true, "batteryLevel":  99}
-```
-{: .copy-code}
-
-
-### Motion sensor
-
-Similar to Door sensor, motion sensor is configured to raise critical alarm if the motion is detected during non-working hours. You may configure schedule of the non-working hours in the alarm rule of the device profile.
-
-```json
-{"motion": true, "batteryLevel":  99}
-```
-{: .copy-code}
-
-### Smoke sensor
-
-Smoke sensor will raise critical alarm if the smoke is detected. Since smoke sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-```json
-{"alarm": false, "batteryLevel":  99}
-```
-{: .copy-code}
-
-### Smart Bin
-The profile is configured to raise alarms if the fullness level is above certain threshold. Major alarm is raised when the level is above 70%. Critical alarm is raised when the level is above 90%.
-Smart bin sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-Sample device payload:
-
-```json
-{"level": 35, "batteryLevel":  89}
-```
-{: .copy-code}
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header">
+        <h2>Applications of IoT Fleet tracking system</h2>
+        <p>The IoT Fleet Tracking System can be adapted for various industries:</p>
+    </div>
+    <div class="applications-container-large">
+        <div class="text-row-top">
+            <div class="text-block">
+                <h3>Urban and intercity transportation</h3>
+                <p>The system enables real-time tracking of buses, ensuring adherence to schedules and routes. This improves passenger safety and allows rapid response to unexpected issues such as delays or breakdowns.</p>
+            </div>
+            <div class="text-block">
+                <h3>Municipal and construction services</h3>
+                <p>The solution tracks actual machine operation time, identifies idle periods, and monitors areas of activity. This leads to more efficient resource management and reduced operational costs.</p>
+            </div>
+            <div class="text-block">
+                <h3>Logistics and delivery</h3>
+                <p>IoT monitoring provides transparency of delivery routes, reduces the risk of route deviations, and ensures schedule compliance. This is especially critical for companies handling time-sensitive or temperature-controlled shipments.</p>
+            </div>
+        </div>
+        <div class="images-row">
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/urban-1.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/emergency-1.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/municipal-1.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/rental-1.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/logistics-1.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
+        </div>
+        <div class="text-row-bottom">
+            <div class="text-block">
+                <h3>Emergency and fire services</h3>
+                <p>The system displays the exact location and current status of each vehicle, including speed and fuel level. It enables dispatchers to quickly coordinate on-site actions and reduce emergency response times.</p>
+            </div>
+            <div class="text-block">
+                <h3>Rental and leasing companies</h3>
+                <p>The IoT platform tracks how and where vehicles are used, detects misuse, and helps prevent theft. This increases trust in the service and enhances the customer experience.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/fleet-tracking/urban-2.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
+            <div class="text-block">
+                <h3>Urban and intercity transportation</h3>
+                <p>The system enables real-time tracking of buses, ensuring adherence to schedules and routes. This improves passenger safety and allows rapid response to unexpected issues such as delays or breakdowns.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Emergency and fire services</h3>
+                <p>The system displays the exact location and current status of each vehicle, including speed and fuel level. It enables dispatchers to quickly coordinate on-site actions and reduce emergency response times.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/emergency-2.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/fleet-tracking/municipal-2.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
+            <div class="text-block">
+                <h3>Municipal and construction services</h3>
+                <p>The solution tracks actual machine operation time, identifies idle periods, and monitors areas of activity. This leads to more efficient resource management and reduced operational costs.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Rental and leasing companies</h3>
+                <p>The IoT platform tracks how and where vehicles are used, detects misuse, and helps prevent theft. This increases trust in the service and enhances the customer experience.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/rental-2.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/fleet-tracking/logistics-2.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
+            <div class="text-block">
+                <h3>Logistics and delivery</h3>
+                <p>IoT monitoring provides transparency of delivery routes, reduces the risk of route deviations, and ensures schedule compliance. This is especially critical for companies handling time-sensitive or temperature-controlled shipments.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-### Liquid Level Sensor
-The profile is configured to raise alarms if the liquid level is below certain threshold. Major alarm is raised when the level is below 30%. Critical alarm is raised when the level is below 10%.
-Liquid Level sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-Sample device payload:
+<section class="summary">
+    <div class="summary-text">
+        <h2>Summary of fleet tracking</h2>
+        <p>The IoT Fleet Tracking System powered by ThingsBoard provides real-time visibility into fleet operations, enabling automated alarms, insightful analytics, and seamless integration with business systems. This scalable solution helps organizations optimize performance, reduce costs, and make smarter, data-driven decisions through a reliable and flexible IoT platform.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    </div>
+</section>
 
-```json
-{"level": 85, "batteryLevel":  99}
-```
-{: .copy-code}
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
 
-### Occupancy sensor
-The profile is configured to raise major alarm if the room is occupied for more than 30 minutes or critical alarm if the room is occupied for more then 1 hour.
-Since occupancy sensors may be battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
-```json
-{"occupied": true, "batteryLevel":  99}
-```
-{: .copy-code}
+        document.querySelectorAll('.card-link').forEach((link) => {
+            link.classList.add('linkDefault');
+        });
 
+        const expansionBlocks = document.querySelectorAll('.expansion-block');
+        const structureBlock = document.querySelector('.dashboard-structure-block');
+        const smallImageBlock = createImageBlock('small');
+        const largeImageBlock = createImageBlock('large');
 
+        expansionBlocks[0].appendChild(smallImageBlock);
+        structureBlock.appendChild(largeImageBlock);
 
+        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
+        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+        let currentExpandedIndex = 0;
 
-## Alarms
-User may turn alarms on and off as well as configure the alarm thresholds via the <a href="https://thingsboard.io/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules" target="_blank">“Smart Retail”</a> dashboard. 
+        expansionBlocks[0].classList.add('expanded');
 
+        expansionBlocks.forEach((panel, index) => {
+            panel.addEventListener('click', function() {
+                if (index === currentExpandedIndex) {
+                    return; 
+                }
 
+                smallImageElement.innerHTML = getImage(index);
+                this.appendChild(smallImageBlock);
+                largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
+                largeImageElement.innerHTML = getImage(index);
 
+                applyImageBg(smallImageBlock);
+                applyImageBg(largeImageBlock);
 
+                expansionBlocks.forEach(item => {
+                    item.classList.remove('expanded');
+                });
 
+                this.classList.add('expanded');
+                currentExpandedIndex = index; 
+                if (window.screen.width < 600) {
+                    const blockRect = expansionBlocks[index].getBoundingClientRect();
+                    const target = blockRect.top + window.scrollY - 80;
+                    window.scrollTo(0, target);
+                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                }
+                if (index === 4) {
+                    window.scrollTo(0, window.scrollY +1);
+                }
+            });
+        });
 
+        window.onscroll = function() {
+            const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
+            const large = document.querySelector('.image-block-large');
 
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 250 && elemCoor.top < 0) {
+                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+            }
+        };
 
+        if (window.screen.width > 960) {
+            const fullPage = document.querySelector('#scada-fullpage');
+            largeImageElement.addEventListener('click', function(image) {
+                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                fullPage.style.display = 'block';
+                fullPage.style.top = window.scrollY + 'px';
+                document.querySelector('body').style.overflow = 'hidden';
+            });
+        }
+
+        function createImageBlock(layout) {
+            let block = document.createElement('div');
+            block.className = `image-block-${layout}`;
+            block.innerHTML = `
+            <div class="image-container image-background">
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class=image>${getImage(0)}</div>
+            </div>
+            <div class="buttons-block">
+                <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+            </div>`;
+
+            applyImageBg(block);
+    
+            return block;
+        }
+
+        function applyImageBg(block) {
+            const img = block.querySelector('.image img');
+            const container = block.querySelector('.image-container');
+            if (img && container) {
+                const bg = img.dataset.bg;
+                container.style.backgroundColor = bg || '';
+            }
+        }
+
+        function getImage(index) {
+            const images = [
+                "<img src='/images/usecases/fleet-tracking/fleet-tracking-1.webp' alt='ThingsBoard interface showing bus status, speed, fuel level, and location on the map' title='Real-time bus monitoring using ThingsBoard platform'/>",
+                "<img src='/images/usecases/fleet-tracking/fleet-tracking-2.webp' alt='ThingsBoard interface showing historical route and movement playback for Bus A on the map' title='Bus A route playback and history visualization in ThingsBoard' data-bg='#A4A4A4'/>",
+                "<img src='/images/usecases/fleet-tracking/fleet-tracking-3.webp' alt='ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events' title='Real-time telemetry dashboard for Bus A in ThingsBoard'/>",
+                "<img src='/images/usecases/fleet-tracking/fleet-tracking-4.webp' alt='ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations' title='Bus B telemetry and route analytics dashboard in ThingsBoard'/>",
+                "<img src='/images/usecases/fleet-tracking/fleet-tracking-5.webp' alt='ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map' title='Bus C status monitoring and stop event tracking in ThingsBoard'/>",
+                "<img src='/images/usecases/fleet-tracking/fleet-tracking-6.webp' alt='ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map' title='Bus D refueling status and stop alert monitoring in ThingsBoard'/>"
+            ];
+            return images[index];
+        }
+    });
+</script>

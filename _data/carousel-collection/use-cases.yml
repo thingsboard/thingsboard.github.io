@@ -160,30 +160,26 @@ water-metering:
 
 smart-retail:
   0:
-    src: "/images/usecases/smart-retail/sr1.png"
+    src: "/images/usecases/smart-retail/smart-retail-1.webp"
     alt: "smart retail 1"
-    width: 1920
-    height: 866
   1:
-    src: "/images/usecases/smart-retail/sr2.png"
+    src: "/images/usecases/smart-retail/smart-retail-2.webp"
     alt: "smart retail 2"
-    width: 1920
-    height: 866
   2:
-    src: "/images/usecases/smart-retail/sr3.webp"
+    src: "/images/usecases/smart-retail/smart-retail-3.webp"
     alt: "smart retail 3"
-    width: 1920
-    height: 866
   3:
-    src: "/images/usecases/smart-retail/sr4.png"
+    src: "/images/usecases/smart-retail/smart-retail-4.webp"
     alt: "smart retail 4"
-    width: 1920
-    height: 866
   4:
-    src: "/images/usecases/smart-retail/sr5.png"
+    src: "/images/usecases/smart-retail/smart-retail-5.webp"
     alt: "smart retail 5"
-    width: 1920
-    height: 866
+  5:
+    src: "/images/usecases/smart-retail/smart-retail-6.webp"
+    alt: "smart retail 5"
+  6:
+    src: "/images/usecases/smart-retail/smart-retail-7.webp"
+    alt: "smart retail 5"
 
 air-quality-monitoring-1:
   0:
