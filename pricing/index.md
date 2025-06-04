@@ -1614,7 +1614,7 @@ selfManagedPlan:
             <div class="pricing-content-description always-display active col-lg-6">
               <h2>Choose your plan</h2>
               <div class="pricing-content-details">
-                  All-inclusive hosting and infrastructure, so you can focus on building your solutions.
+                  Hosting and infrastructure included—so you can focus on building your solutions.
               </div>
             </div>
             <div class="toggle-container">
@@ -1630,7 +1630,7 @@ selfManagedPlan:
             </div>
         </div>
         <div class="pricing-div">
-            <div class="pricing-section always-display active">
+            <div class="pricing-section tbmq always-display active">
                <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
                     <div class="pricing-square">
