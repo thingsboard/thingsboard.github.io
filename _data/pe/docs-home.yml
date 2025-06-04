@@ -134,7 +134,7 @@ toc:
       - title: Transform telemetry using previous record
         path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
       - title: Create and Clear Alarms
-        path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+        path: /docs/pe/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
       - title: Working with Alarm details
         path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
       - title: Send email on alarm
