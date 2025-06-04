@@ -104,7 +104,7 @@ These clients are subscribers, and if they are offline, the messages are stored 
           <td>Messages storage for default ('Device') persistent sessions</td>
           <td>100 per session</td>
           <td>200 per session</td>
-          <td>1000 per session</td>
+          <td>1K per session</td>
           <td>Unlimited</td>
           <td>Maximum number of messages that can be stored for each Device client with a persistent session while it is offline. Once the limit is reached, older messages are dropped to make room for new ones</td>
       </tr>

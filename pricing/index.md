@@ -5264,6 +5264,13 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
+                        <div class="container">
+                            <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
+                            <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
+                            <p>If storage usage grows beyond safe thresholds, the system will clean up old persistent messages. We monitor usage and can work with you to tune limits or expand capacity if needed.</p>
+                        </div>
+                    </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-message-rate-limit-importance" data-title="What is the message rate limit and why is it important?">
                         <div class="container">
                             <p>Each Private Cloud plan includes a predefined message rate limit measured in total messages per second. This is the most critical technical limit in our offering, as it defines how much telemetry data your system can process without impacting performance or SLA.<br><br></p>
@@ -5352,18 +5359,6 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-tbmq-addOns" class="pi-accordion">
-                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
-                        <div class="container">
-                            <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
-                            <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
-                            <p>If storage usage grows beyond safe thresholds, the system will clean up old persistent messages. We monitor usage and can work with you to tune limits or expand capacity if needed.</p>
-                        </div>
-                    </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-undelivered-messages-retention-period" data-title="How long are undelivered messages for persistent sessions retained?">
-                        <div class="container">
-                            <p>Undelivered messages for persistent sessions are retained for 1 day. After that period, they are automatically discarded.</p>
-                        </div>
-                    </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ha-services-addon" data-title="Are high-availability services available as an add-on?">
                         <div class="container">
                             <p>High-availability (HA) services are built into the structure of Private Cloud starting Scale plan and are not offered separately as an add-on.<br></p>
