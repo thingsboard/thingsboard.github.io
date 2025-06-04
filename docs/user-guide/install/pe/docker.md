@@ -120,7 +120,7 @@ docker compose up -d
 
 ## Upgrading
 
-When a new CE release is available, follow these steps to update your installation without losing data:
+When a new PE release is available, follow these steps to update your installation without losing data:
 
 1. Change the version of the `thingsboard/tb-pe-node` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.pe_full_ver }}) 
 
