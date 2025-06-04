@@ -2,6 +2,10 @@
 layout: docwithnav
 title: Create and Clear Alarms
 description: Create and Clear Alarms
+redirect_from:
+  - "/docs/pe/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
+  - "/docs/paas/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
+  - "/docs/paas/eu/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/"
 
 ---
 
