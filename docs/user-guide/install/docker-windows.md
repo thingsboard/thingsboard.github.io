@@ -73,7 +73,7 @@ You can always change passwords for each account in account profile page.
 Bring up all containers in detached mode, then follow the ThingsBoard logs:
 
 ```bash
-docker compose up -d && docker compose logs -f thingsboard-ce
+docker compose up -d; if ($?) {docker compose logs -f thingsboard-ce}
 ```
 
 You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.

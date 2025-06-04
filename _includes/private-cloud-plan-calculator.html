@@ -433,8 +433,6 @@
                 };
             });
 
-            console.log(planResults);
-
             // Find the plan with the lowest total price
             const optimalPlan = planResults.reduce((prev, current) =>
                 prev.totalPrice < current.totalPrice ? prev : current
