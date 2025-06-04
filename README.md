@@ -88,40 +88,23 @@ docker run --rm -p 4000:4000 --name thingsboard_website -e PAGES_REPO_NWO="thing
 
 ### Deploy the site using the docker-compose file
 
-Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository.
-
->To deploy a fork, you need to replace the environment variable PAGES_REPO_NWO with the name of your repository.
+>To deploy a fork, you need to replace the environment variable PAGES_REPO_NWO (in `docker-compose.yaml`) with the name of your repository.
 As example:\
 `PAGES_REPO_NWO: "your_github_nickname/thingsboard.github.io"`
-
-Create docker-compose.yml file:
-
-```bash
-cat <<EOT | sudo tee docker-compose.yml
-version: '3.1'
-services:
-  thingsboard_website:
-    container_name: thingsboard_website
-    restart: always
-    image: "thingsboard/website"
-    environment:
-      PAGES_REPO_NWO: "thingsboard/thingsboard.github.io"
-    ports:
-      - "4000:4000"
-    volumes:
-      - THINGSBOARD_WEBSITE_DIR:/website
-EOT
-```
 
 To start the docker container with docker-compose, run the command:
 
 ```bash
-docker compose pull
-docker compose up
+docker compose up - d
 ```
 
-In about 2-7 minutes (depending on PC performance and cache), your copy of the site will be available for viewing at http://localhost:4000
+You can rebuild the website with:
 
+```bash
+docker compose restart
+```
+
+In about 2-7 minutes (depending on PC performance and cache), your copy of the site will be available for viewing at <http://localhost:4000>
 
 ## Image preview generator
 

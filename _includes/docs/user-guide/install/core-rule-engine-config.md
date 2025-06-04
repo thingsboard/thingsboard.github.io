@@ -468,8 +468,14 @@
 		<tr>
 			<td>usage.stats.report.interval</td>
 			<td>USAGE_STATS_REPORT_INTERVAL</td>
-			<td>10</td>
+			<td>60</td>
 			<td> Statistics reporting interval, set to send summarized data every 10 seconds by default</td>
+		</tr>
+		<tr>
+			<td>usage.stats.report.pack_size</td>
+			<td>USAGE_STATS_REPORT_PACK_SIZE</td>
+			<td>1024</td>
+			<td> Amount of statistic messages in pack</td>
 		</tr>
 		<tr>
 			<td>usage.stats.check.cycle</td>
@@ -511,7 +517,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.9</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-4.0</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
@@ -537,13 +543,13 @@
 			<td>database.ts.type</td>
 			<td>DATABASE_TS_TYPE</td>
 			<td>sql</td>
-			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
+			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
 		</tr>
 		<tr>
 			<td>database.ts_latest.type</td>
 			<td>DATABASE_TS_LATEST_TYPE</td>
 			<td>sql</td>
-			<td> cassandra or sql. timescale option is deprecated and will no longer be supported in ThingsBoard 4.0</td>
+			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
 		</tr>
 	</tbody>
 </table>
@@ -1296,6 +1302,18 @@
 			<td> Thread pool size for actor system dispatcher that process messages for edge actors</td>
 		</tr>
 		<tr>
+			<td>actors.system.cfm_dispatcher_pool_size</td>
+			<td>ACTORS_SYSTEM_CFM_DISPATCHER_POOL_SIZE</td>
+			<td>2</td>
+			<td> Thread pool size for actor system dispatcher that process messages for CalculatedField manager actors</td>
+		</tr>
+		<tr>
+			<td>actors.system.cfe_dispatcher_pool_size</td>
+			<td>ACTORS_SYSTEM_CFE_DISPATCHER_POOL_SIZE</td>
+			<td>8</td>
+			<td> Thread pool size for actor system dispatcher that process messages for CalculatedField entity actors</td>
+		</tr>
+		<tr>
 			<td>actors.tenant.create_components_on_init</td>
 			<td>ACTORS_TENANT_CREATE_COMPONENTS_ON_INIT</td>
 			<td>true</td>
@@ -1438,16 +1456,28 @@
 			<td> Enable/disable actor statistics</td>
 		</tr>
 		<tr>
-			<td>actors.statistics.js_print_interval_ms</td>
-			<td>ACTORS_JS_STATISTICS_PRINT_INTERVAL_MS</td>
-			<td>10000</td>
-			<td> Frequency of printing the JS executor statistics</td>
-		</tr>
-		<tr>
 			<td>actors.statistics.persist_frequency</td>
 			<td>ACTORS_STATISTICS_PERSIST_FREQUENCY</td>
 			<td>3600000</td>
 			<td> Actors statistic persistence frequency in milliseconds</td>
+		</tr>
+		<tr>
+			<td>actors.calculated_fields.debug_mode_rate_limits_per_tenant.enabled</td>
+			<td>ACTORS_CALCULATED_FIELD_DEBUG_MODE_RATE_LIMITS_PER_TENANT_ENABLED</td>
+			<td>true</td>
+			<td> Enable/Disable the rate limit of persisted debug events for all calculated fields per tenant</td>
+		</tr>
+		<tr>
+			<td>actors.calculated_fields.debug_mode_rate_limits_per_tenant.configuration</td>
+			<td>ACTORS_CALCULATED_FIELD_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
+			<td>50000:3600</td>
+			<td> The value of DEBUG mode rate limit. By default, no more than 50 thousand events per hour</td>
+		</tr>
+		<tr>
+			<td>actors.calculated_fields.calculation_timeout</td>
+			<td>ACTORS_CALCULATION_TIMEOUT_SEC</td>
+			<td>5</td>
+			<td> Time in seconds to receive calculation result.</td>
 		</tr>
 		<tr>
 			<td>debug.settings.default_duration</td>
@@ -1791,7 +1821,7 @@
 		<tr>
 			<td>cache.specs.relatedEdges.maxSize</td>
 			<td>CACHE_SPECS_RELATED_EDGES_MAX_SIZE</td>
-			<td>0</td>
+			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
@@ -2009,7 +2039,7 @@
 </table>
 
 
-##  Redis configuration parameters
+##  Redis/Valkey configuration parameters
 
 <table>
 	<thead>
@@ -2442,7 +2472,7 @@
 			<td>false</td>
 			<td> Enable dedicated datasource (a separate database) for events and audit logs.
  Before enabling this, make sure you have set up the following tables in the new DB:
- error_event, lc_event, rule_chain_debug_event, rule_node_debug_event, stats_event, audit_log</td>
+ error_event, lc_event, rule_chain_debug_event, rule_node_debug_event, stats_event, audit_log, cf_debug_event</td>
 		</tr>
 		<tr>
 			<td>spring.datasource.events.driverClassName</td>
@@ -2594,6 +2624,12 @@
 			<td>AUDIT_LOG_MASK_OTA_PACKAGE</td>
 			<td>W</td>
 			<td> Ota package logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+		</tr>
+		<tr>
+			<td>audit-log.logging-level.mask."calculated_field"</td>
+			<td>AUDIT_LOG_MASK_CALCULATED_FIELD</td>
+			<td>W</td>
+			<td> Calculated field logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
 		</tr>
 		<tr>
 			<td>audit-log.sink.type</td>
@@ -3549,10 +3585,16 @@
 			<td> Enable/disable SNMP transport protocol</td>
 		</tr>
 		<tr>
+			<td>transport.snmp.bind_address</td>
+			<td>SNMP_BIND_ADDRESS</td>
+			<td>0.0.0.0</td>
+			<td> SNMP bind address</td>
+		</tr>
+		<tr>
 			<td>transport.snmp.bind_port</td>
 			<td>SNMP_BIND_PORT</td>
-			<td>1620</td>
-			<td> Snmp bind port</td>
+			<td>0</td>
+			<td> SNMP bind port. Zero (random) by default. When using SNMP TRAPs - make sure to specify some static value, e.g. 1620</td>
 		</tr>
 		<tr>
 			<td>transport.snmp.response_processing.parallelism_level</td>
@@ -3617,7 +3659,7 @@
 		<tr>
 			<td>transport.gateway.dashboard.sync.branch</td>
 			<td>TB_GATEWAY_DASHBOARD_SYNC_BRANCH</td>
-			<td>main</td>
+			<td>release/4.0.0</td>
 			<td> Branch of gateways dashboard repository to work with</td>
 		</tr>
 		<tr>
@@ -3640,7 +3682,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>coap.enabled</td>
+			<td>coap.server.enabled</td>
 			<td>COAP_SERVER_ENABLED</td>
 			<td>true</td>
 			<td> Enable/disable coap server.</td>
@@ -3926,6 +3968,18 @@
 			<td>5684</td>
 			<td> Port of coap transport service. If empty, the default port for coaps will be used.</td>
 		</tr>
+		<tr>
+			<td>device.connectivity.coaps.pem_cert_file</td>
+			<td>DEVICE_CONNECTIVITY_COAPS_CA_ROOT_CERT</td>
+			<td>cafile.pem</td>
+			<td> Path to the COAP CA root certificate file</td>
+		</tr>
+		<tr>
+			<td>device.connectivity.gateway.image_version</td>
+			<td>DEVICE_CONNECTIVITY_GATEWAY_IMAGE_VERSION</td>
+			<td>3.7-stable</td>
+			<td> The docker tag for thingsboard/tb-gateway image used in docker-compose file for gateway launch</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -4180,8 +4234,7 @@
 			<td>queue.type</td>
 			<td>TB_QUEUE_TYPE</td>
 			<td>in-memory</td>
-			<td> in-memory or kafka (Apache Kafka). The following queue types are deprecated and will no longer be supported in ThingsBoard 4.0:
- aws-sqs (AWS SQS), pubsub (PubSub), service-bus (Azure Service Bus), rabbitmq (RabbitMQ)</td>
+			<td> in-memory or kafka (Apache Kafka)</td>
 		</tr>
 		<tr>
 			<td>queue.prefix</td>
@@ -4388,16 +4441,43 @@
 			<td> Example of specific consumer properties value per topic for VC</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Properties for consumers targeting edge service update topics.</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENTS_MAX_POLL_RECORDS</td>
+			<td>10</td>
+			<td> Define the maximum number of records that can be polled from tb_edge topics per request.</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.notifications.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Properties for consumers targeting high-priority edge notifications.
+ These notifications include RPC calls, lifecycle events, and new queue messages,
+ requiring minimal latency and swift processing.</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.notifications.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_HP_EVENTS_MAX_POLL_RECORDS</td>
+			<td>10</td>
+			<td> Define the maximum number of records that can be polled from tb_edge.notifications.SERVICE_ID topics.</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key</td>
 			<td></td>
 			<td>max.poll.records</td>
-			<td> Example of specific consumer properties value per topic for edge event</td>
+			<td> Properties for consumers targeting downlinks meant for specific edge topics.
+ Topic names are dynamically constructed using tenant and edge identifiers.</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key.value</td>
-			<td>TB_QUEUE_KAFKA_EDGE_EVENT_MAX_POLL_RECORDS</td>
-			<td>50</td>
-			<td> Example of specific consumer properties value per topic for edge event</td>
+			<td>TB_QUEUE_KAFKA_EDGE_NOTIFICATIONS_MAX_POLL_RECORDS</td>
+			<td>10</td>
+			<td> Define the maximum number of records that can be polled from tb_edge_event.notifications.TENANT_ID.EDGE_ID topics.</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
@@ -4422,6 +4502,30 @@
 			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_REPROCESSING_MAX_POLL_RECORDS</td>
 			<td>1</td>
 			<td> Amount of records to be returned in a single poll. For Housekeeper reprocessing topic, we should consume messages (tasks) one by one</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.events.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Key-value properties for Kafka consumer for edqs.events topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.events.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDQS_EVENTS_MAX_POLL_RECORDS</td>
+			<td>512</td>
+			<td> Max poll records for edqs.events topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.state.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Key-value properties for Kafka consumer for edqs.state topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.state.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDQS_STATE_MAX_POLL_RECORDS</td>
+			<td>512</td>
+			<td> Max poll records for edqs.state topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.other-inline</td>
@@ -4496,6 +4600,36 @@
 			<td> Kafka properties for Edge event topic</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.topic-properties.calculated-field</td>
+			<td>TB_QUEUE_KAFKA_CF_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Calculated Field topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.calculated-field-state</td>
+			<td>TB_QUEUE_KAFKA_CF_STATE_TOPIC_PROPERTIES</td>
+			<td>retention.ms:-1;segment.bytes:52428800;retention.bytes:104857600000;partitions:1;min.insync.replicas:1;cleanup.policy:compact</td>
+			<td> Kafka properties for Calculated Field State topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edqs-events</td>
+			<td>TB_QUEUE_KAFKA_EDQS_EVENTS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:86400000;segment.bytes:52428800;retention.bytes:-1;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for EDQS events topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edqs-requests</td>
+			<td>TB_QUEUE_KAFKA_EDQS_REQUESTS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:180000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for EDQS requests topic (default: 3 minutes retention)</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edqs-state</td>
+			<td>TB_QUEUE_KAFKA_EDQS_STATE_TOPIC_PROPERTIES</td>
+			<td>retention.ms:-1;segment.bytes:52428800;retention.bytes:-1;partitions:1;min.insync.replicas:1;cleanup.policy:compact</td>
+			<td> Kafka properties for EDQS state topic (infinite retention, compaction)</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
 			<td>true</td>
@@ -4512,330 +4646,6 @@
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
 			<td>1000</td>
 			<td> Time to wait for the stats-loading requests to Kafka to finish</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.use_default_credential_provider_chain</td>
-			<td>TB_QUEUE_AWS_SQS_USE_DEFAULT_CREDENTIAL_PROVIDER_CHAIN</td>
-			<td>false</td>
-			<td> Use the default credentials provider for AWS SQS</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.access_key_id</td>
-			<td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
-			<td>YOUR_KEY</td>
-			<td> Access key ID from AWS IAM user</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.secret_access_key</td>
-			<td>TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY</td>
-			<td>YOUR_SECRET</td>
-			<td> Secret access key from AWS IAM user</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.region</td>
-			<td>TB_QUEUE_AWS_SQS_REGION</td>
-			<td>YOUR_REGION</td>
-			<td> Region from AWS account</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.threads_per_topic</td>
-			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
-			<td>1</td>
-			<td> Number of threads per each AWS SQS queue in consumer</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.producer_thread_pool_size</td>
-			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
-			<td>50</td>
-			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_AWS_SQS_RE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.core</td>
-			<td>TB_QUEUE_AWS_SQS_CORE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.transport-api</td>
-			<td>TB_QUEUE_AWS_SQS_TA_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.notifications</td>
-			<td>TB_QUEUE_AWS_SQS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.js-executor</td>
-			<td>TB_QUEUE_AWS_SQS_JE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.ota-updates</td>
-			<td>TB_QUEUE_AWS_SQS_OTA_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.version-control</td>
-			<td>TB_QUEUE_AWS_SQS_VC_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.edge</td>
-			<td>TB_QUEUE_AWS_SQS_EDGE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.project_id</td>
-			<td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
-			<td>YOUR_PROJECT_ID</td>
-			<td> Project ID from Google Cloud</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.service_account</td>
-			<td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
-			<td>YOUR_SERVICE_ACCOUNT</td>
-			<td> API Credentials in JSON format</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.max_msg_size</td>
-			<td>TB_QUEUE_PUBSUB_MAX_MSG_SIZE</td>
-			<td>1048576</td>
-			<td> Message size for PubSub queue.Value in bytes</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.max_messages</td>
-			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
-			<td>1000</td>
-			<td> Number of messages per consumer</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.executor_thread_pool_size</td>
-			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
-			<td>0</td>
-			<td> Thread pool size for pubsub queue executor provider. If set to 0 - default pubsub executor provider value will be used (5 * number of available processors)</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_PUBSUB_RE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Rule Engine subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.core</td>
-			<td>TB_QUEUE_PUBSUB_CORE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Core subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.transport-api</td>
-			<td>TB_QUEUE_PUBSUB_TA_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport API subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.notifications</td>
-			<td>TB_QUEUE_PUBSUB_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Version Control subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.js-executor</td>
-			<td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> PubSub queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.version-control</td>
-			<td>TB_QUEUE_PUBSUB_VC_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.edge</td>
-			<td>TB_QUEUE_PUBSUB_EDGE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Edge subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.namespace_name</td>
-			<td>TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME</td>
-			<td>YOUR_NAMESPACE_NAME</td>
-			<td> Azure namespace</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.sas_key_name</td>
-			<td>TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME</td>
-			<td>YOUR_SAS_KEY_NAME</td>
-			<td> Azure Service Bus Shared Access Signatures key name</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.sas_key</td>
-			<td>TB_QUEUE_SERVICE_BUS_SAS_KEY</td>
-			<td>YOUR_SAS_KEY</td>
-			<td> Azure Service Bus Shared Access Signatures key</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.max_messages</td>
-			<td>TB_QUEUE_SERVICE_BUS_MAX_MESSAGES</td>
-			<td>1000</td>
-			<td> Number of messages per a consumer</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Rule Engine queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.core</td>
-			<td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Core queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.transport-api</td>
-			<td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Transport Api queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.notifications</td>
-			<td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Notification queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.js-executor</td>
-			<td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.version-control</td>
-			<td>TB_QUEUE_SERVICE_BUS_VC_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Version Control queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.edge</td>
-			<td>TB_QUEUE_SERVICE_BUS_EDGE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Edge queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.exchange_name</td>
-			<td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
-			<td></td>
-			<td> By default empty</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.host</td>
-			<td>TB_QUEUE_RABBIT_MQ_HOST</td>
-			<td>localhost</td>
-			<td> RabbitMQ host used to establish connection</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.port</td>
-			<td>TB_QUEUE_RABBIT_MQ_PORT</td>
-			<td>5672</td>
-			<td> RabbitMQ host used to establish a connection</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.virtual_host</td>
-			<td>TB_QUEUE_RABBIT_MQ_VIRTUAL_HOST</td>
-			<td>/</td>
-			<td> Virtual hosts provide logical grouping and separation of resources</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.username</td>
-			<td>TB_QUEUE_RABBIT_MQ_USERNAME</td>
-			<td>YOUR_USERNAME</td>
-			<td> Username for RabbitMQ user account</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.password</td>
-			<td>TB_QUEUE_RABBIT_MQ_PASSWORD</td>
-			<td>YOUR_PASSWORD</td>
-			<td> User password for RabbitMQ user account</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.automatic_recovery_enabled</td>
-			<td>TB_QUEUE_RABBIT_MQ_AUTOMATIC_RECOVERY_ENABLED</td>
-			<td>false</td>
-			<td> Network connection between clients and RabbitMQ nodes can fail. RabbitMQ Java client supports automatic recovery of connections and topology (queues, exchanges, bindings, and consumers)</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.connection_timeout</td>
-			<td>TB_QUEUE_RABBIT_MQ_CONNECTION_TIMEOUT</td>
-			<td>60000</td>
-			<td> The connection timeout for the RabbitMQ connection factory</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.handshake_timeout</td>
-			<td>TB_QUEUE_RABBIT_MQ_HANDSHAKE_TIMEOUT</td>
-			<td>10000</td>
-			<td> RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.max_poll_messages</td>
-			<td>TB_QUEUE_RABBIT_MQ_MAX_POLL_MESSAGES</td>
-			<td>1</td>
-			<td> The maximum number of messages returned in a single call of doPoll() method</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Rule Engine queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.core</td>
-			<td>TB_QUEUE_RABBIT_MQ_CORE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Core queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.transport-api</td>
-			<td>TB_QUEUE_RABBIT_MQ_TA_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Transport API queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.notifications</td>
-			<td>TB_QUEUE_RABBIT_MQ_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Notification queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.js-executor</td>
-			<td>TB_QUEUE_RABBIT_MQ_JE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.version-control</td>
-			<td>TB_QUEUE_RABBIT_MQ_VC_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Version Control queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.edge</td>
-			<td>TB_QUEUE_RABBIT_MQ_EDGE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Edge queues</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>
@@ -4895,7 +4705,13 @@
 			<td>queue.core.topic</td>
 			<td>TB_QUEUE_CORE_TOPIC</td>
 			<td>tb_core</td>
-			<td> Default topic name of Kafka, RabbitMQ, etc. queue</td>
+			<td> Default topic name</td>
+		</tr>
+		<tr>
+			<td>queue.core.notifications_topic</td>
+			<td>TB_QUEUE_CORE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_core.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.core.poll-interval</td>
@@ -4943,7 +4759,7 @@
 			<td>queue.core.usage-stats-topic</td>
 			<td>TB_QUEUE_US_TOPIC</td>
 			<td>tb_usage_stats</td>
-			<td> Stats topic name for queue Kafka, RabbitMQ, etc.</td>
+			<td> Stats topic name</td>
 		</tr>
 		<tr>
 			<td>queue.core.stats.enabled</td>
@@ -5014,10 +4830,124 @@
 			<td> Statistics printing interval for Housekeeper</td>
 		</tr>
 		<tr>
+			<td>queue.edqs.sync.enabled</td>
+			<td>TB_EDQS_SYNC_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable EDQS synchronization</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.sync.entity_batch_size</td>
+			<td>TB_EDQS_SYNC_ENTITY_BATCH_SIZE</td>
+			<td>10000</td>
+			<td> Batch size of entities being synced with EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.sync.ts_batch_size</td>
+			<td>TB_EDQS_SYNC_TS_BATCH_SIZE</td>
+			<td>10000</td>
+			<td> Batch size of timeseries data being synced with EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.api.supported</td>
+			<td>TB_EDQS_API_SUPPORTED</td>
+			<td>false</td>
+			<td> Whether to forward entity data query requests to EDQS (otherwise use PostgreSQL implementation)</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.api.auto_enable</td>
+			<td>TB_EDQS_API_AUTO_ENABLE</td>
+			<td>true</td>
+			<td> Whether to auto-enable EDQS API (if queue.edqs.api.supported is true) when sync of data to Kafka is finished</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.mode</td>
+			<td>TB_EDQS_MODE</td>
+			<td>local</td>
+			<td> Mode of EDQS: local (for monolith) or remote (with separate EDQS microservices)</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.local.rocksdb_path</td>
+			<td>TB_EDQS_ROCKSDB_PATH</td>
+			<td>${user.home}/.rocksdb/edqs</td>
+			<td> Path to RocksDB for EDQS backup when running in local mode</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.partitions</td>
+			<td>TB_EDQS_PARTITIONS</td>
+			<td>12</td>
+			<td> Number of partitions for EDQS topics</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.partitioning_strategy</td>
+			<td>TB_EDQS_PARTITIONING_STRATEGY</td>
+			<td>tenant</td>
+			<td> EDQS partitioning strategy: tenant (partition is resolved by tenant id) or none (no specific strategy, resolving by message key)</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.events_topic</td>
+			<td>TB_EDQS_EVENTS_TOPIC</td>
+			<td>edqs.events</td>
+			<td> EDQS events topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.state_topic</td>
+			<td>TB_EDQS_STATE_TOPIC</td>
+			<td>edqs.state</td>
+			<td> EDQS state topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.requests_topic</td>
+			<td>TB_EDQS_REQUESTS_TOPIC</td>
+			<td>edqs.requests</td>
+			<td> EDQS requests topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.responses_topic</td>
+			<td>TB_EDQS_RESPONSES_TOPIC</td>
+			<td>edqs.responses</td>
+			<td> EDQS responses topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.poll_interval</td>
+			<td>TB_EDQS_POLL_INTERVAL_MS</td>
+			<td>25</td>
+			<td> Poll interval for EDQS topics</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.max_pending_requests</td>
+			<td>TB_EDQS_MAX_PENDING_REQUESTS</td>
+			<td>10000</td>
+			<td> Maximum amount of pending requests to EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.max_request_timeout</td>
+			<td>TB_EDQS_MAX_REQUEST_TIMEOUT</td>
+			<td>20000</td>
+			<td> Maximum timeout for requests to EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.string_compression_length_threshold</td>
+			<td>TB_EDQS_STRING_COMPRESSION_LENGTH_THRESHOLD</td>
+			<td>512</td>
+			<td> Strings longer than this threshold will be compressed</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.stats.enabled</td>
+			<td>TB_EDQS_STATS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable statistics for EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.stats.slow_query_threshold</td>
+			<td>TB_EDQS_SLOW_QUERY_THRESHOLD_MS</td>
+			<td>3000</td>
+			<td> Threshold for slow queries to log, in milliseconds</td>
+		</tr>
+		<tr>
 			<td>queue.vc.topic</td>
 			<td>TB_QUEUE_VC_TOPIC</td>
 			<td>tb_version_control</td>
-			<td> Default topic name for Kafka, RabbitMQ, etc.</td>
+			<td> Default topic name</td>
 		</tr>
 		<tr>
 			<td>queue.vc.partitions</td>
@@ -5047,7 +4977,7 @@
 			<td>queue.vc.msg-chunk-size</td>
 			<td>TB_QUEUE_VC_MSG_CHUNK_SIZE</td>
 			<td>250000</td>
-			<td> Queue settings for Kafka, RabbitMQ, etc. Limit for single message size</td>
+			<td> Limit for single queue message size</td>
 		</tr>
 		<tr>
 			<td>queue.js.request_topic</td>
@@ -5098,6 +5028,12 @@
 			<td> Deprecated. It will be removed in the nearest releases</td>
 		</tr>
 		<tr>
+			<td>queue.rule-engine.notifications_topic</td>
+			<td>TB_QUEUE_RULE_ENGINE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_rule_engine.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
+		</tr>
+		<tr>
 			<td>queue.rule-engine.poll-interval</td>
 			<td>TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS</td>
 			<td>25</td>
@@ -5140,6 +5076,60 @@
 			<td> Size of the thread pool that handles such operations as partition changes, config updates, queue deletion</td>
 		</tr>
 		<tr>
+			<td>queue.calculated_fields.event_topic</td>
+			<td>TB_QUEUE_CF_EVENT_TOPIC</td>
+			<td>tb_cf_event</td>
+			<td> Topic name for Calculated Field (CF) events from Rule Engine</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.state_topic</td>
+			<td>TB_QUEUE_CF_STATE_TOPIC</td>
+			<td>tb_cf_state</td>
+			<td> Topic name for Calculated Field (CF) compacted states</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.notifications_topic</td>
+			<td>TB_QUEUE_CF_NOTIFICATIONS_TOPIC</td>
+			<td>calculated_field.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.poll_interval</td>
+			<td>TB_QUEUE_CF_POLL_INTERVAL_MS</td>
+			<td>1000</td>
+			<td> Interval in milliseconds to poll messages by CF (Rule Engine) microservices</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.pack_processing_timeout</td>
+			<td>TB_QUEUE_CF_PACK_PROCESSING_TIMEOUT_MS</td>
+			<td>60000</td>
+			<td> Timeout for processing a message pack by CF microservices</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.pool_size</td>
+			<td>TB_QUEUE_CF_POOL_SIZE</td>
+			<td>8</td>
+			<td> Thread pool size for processing of the incoming messages</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.rocks_db_path</td>
+			<td>TB_QUEUE_CF_ROCKS_DB_PATH</td>
+			<td>${user.home}/.rocksdb/cf_states</td>
+			<td> RocksDB path for storing CF states</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.init_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_FETCH_PACK_SIZE</td>
+			<td>50000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for initial fetching</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.init_tenant_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_TENANT_FETCH_PACK_SIZE</td>
+			<td>1000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for per-tenant fetching</td>
+		</tr>
+		<tr>
 			<td>queue.transport.notifications_topic</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_transport.notifications</td>
@@ -5155,7 +5145,21 @@
 			<td>queue.edge.topic</td>
 			<td>TB_QUEUE_EDGE_TOPIC</td>
 			<td>tb_edge</td>
-			<td> Default topic name for Kafka, RabbitMQ, etc.</td>
+			<td> Topic name to notify edge service on entity updates, assignment, etc.</td>
+		</tr>
+		<tr>
+			<td>queue.edge.notifications_topic</td>
+			<td>TB_QUEUE_EDGE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_edge.notifications</td>
+			<td> Topic prefix for high-priority edge notifications (rpc, lifecycle, new messages in queue) that require minimum latency and processing time.
+ Each tb-core has its own topic: PREFIX.SERVICE_ID</td>
+		</tr>
+		<tr>
+			<td>queue.edge.event_notifications_topic</td>
+			<td>TB_QUEUE_EDGE_EVENT_NOTIFICATIONS_TOPIC</td>
+			<td>tb_edge_event.notifications</td>
+			<td> Topic prefix for downlinks to be pushed to specific edge.
+ Every edge has its own unique topic: PREFIX.TENANT_ID.EDGE_ID</td>
 		</tr>
 		<tr>
 			<td>queue.edge.partitions</td>

@@ -11,7 +11,7 @@ description: Upcoming releases
 The product roadmap below covers only **major features** and does not include minor enhancements and bug fixes.
 View active development and bug fixes for the latest release [on our GitHub repository](https://github.com/thingsboard/thingsboard-edge/tree/master){: target="_blank"}.
 
-### Edge 4.0
+### Edge 4.0.1
 
 The upcoming release will include all updates form [ThingsBoard CE](/docs/reference/roadmap/){: target="_blank"}, except the **Calculated Fields** feature.
 

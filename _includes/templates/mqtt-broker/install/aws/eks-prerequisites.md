@@ -1,4 +1,4 @@
-#### Install and configure tools 
+### Install and configure tools 
 
 To deploy TBMQ on EKS cluster you'll need to install [kubectl](https://kubernetes.io/docs/tasks/tools/), 
  [eksctl](https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html) and 

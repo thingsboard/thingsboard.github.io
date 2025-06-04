@@ -11,7 +11,7 @@
     <div class="tb-customers-content">
         {% for customerLogo in customersLogosCollection %}
             <a href="{{ customerLogo[1].href }}">
-                <object data="{{ customerLogo[1].src }}" aria-label="{{ customerLogo[1].alt }}"></object>
+                <object data="{{ customerLogo[1].src }}" aria-label="{{ customerLogo[1].aria-label }}"></object>
             </a>
         {% endfor %}
     </div>

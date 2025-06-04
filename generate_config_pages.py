@@ -76,7 +76,7 @@ def extract_property_info(properties):
 
 
 def generate_html_table(table_name, rows):
-    html_table = '#### ' + table_name + '\n\n'
+    html_table = '## ' + table_name + '\n\n'
     html_table += '<table>\n'
     html_table += '\t<thead>\n' \
                   '\t\t<tr>\n' \
@@ -178,6 +178,8 @@ if __name__ == '__main__':
     elif tb_repo_type.lower() == "tbmq":
         update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard-mqtt-broker.yml",
                     "_includes/docs/mqtt-broker/install/config.md")
+        update_page(tb_repo_abs_path + "/integration/executor/src/main/resources/tbmq-integration-executor.yml",
+                    "_includes/docs/mqtt-broker/install/ie-config.md")
     elif tb_repo_type.lower() == "edge":
         update_page(tb_repo_abs_path + "/application/src/main/resources/tb-edge.yml",
                     "_includes/docs/edge/user-guide/install/config.md")

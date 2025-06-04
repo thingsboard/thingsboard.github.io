@@ -8,6 +8,8 @@ hasIntegrationDeviceConfiguration: true
 deviceImageFileName: ws202-pir-and-light-sensor.png
 docsPrefix: paas/eu/
 docsTag: paas-eu
+converters20: true
+model: WS202
 ---
 
 * TOC

@@ -7,11 +7,17 @@ description: Swimming Pool SCADA system template overview
 
 go-to-solution-templates-page-1:
     0:
-        image: /images/solutions/swimming_pool_scada_system/go-to-solution-templates-page-1-pe.png
-        title: 'Navigate to the "Solution templates" page. Locate "Swimming Pool SCADA system" in your solution templates library. Click "Install" to begin the installation process;'
+        image: /images/solutions/swimming_pool_scada_system/go-to-pool-solution-templates-page-1-pe.png
+        title: 'Go to the "Solution templates" page. Find "Swimming Pool SCADA system" and click "Install" to start the installation process.'
     1:
         image: /images/solutions/swimming_pool_scada_system/solution-instruction-1-pe.png
-        title: 'After installation, the instructions for setting up the solution will open.'
+        title: 'Configuration instructions for this solution will be provided — follow the steps as instructed.'
+    2:
+        image: /images/solutions/scada-drilling-system/go-to-drilling-dashboard-1-pe.png
+        title: 'Once done, click "Close" to complete the setup and proceed to the dashboard.'
+    3:
+        image: /images/solutions/swimming_pool_scada_system/go-to-dashboard-2-pe.png
+        title: 'Swimming pool SCADA system dashboard.'
 
 launch-modbus-pool-emulator-1:
     0:
@@ -135,13 +141,16 @@ gateway-master-connections-2:
 solution-scada-asset:
     0:
         image: /images/solutions/swimming_pool_scada_system/scada-asset-1-pe.png
-        title: 'Go to the "Assets" page. The Swimming Pool SCADA system includes a single asset named Swimming Pool SCADA system. This asset serves as the central hub for propagating data from all connected devices;'
+        title: 'Go to the "Assets" page. The Swimming Pool SCADA system includes a single asset named Swimming Pool SCADA system. This asset serves as the central hub for collecting and processing data from all connected devices.'
     1:
         image: /images/solutions/swimming_pool_scada_system/scada-asset-2-pe.png
-        title: 'All 14 devices have a relation to this asset;'
+        title: 'The data collected by the asset.'
     2:
         image: /images/solutions/swimming_pool_scada_system/scada-asset-3-pe.png
-        title: 'The data collected by the asset is later used to monitor and control various components of the system.'
+        title: 'Using calculated fields, the collected data is processed and used for monitoring and controlling various components of the system.'
+    3:
+        image: /images/solutions/swimming_pool_scada_system/scada-asset-4-pe.png
+        title: 'All 14 devices have a relation to this asset.'
 
 time-series-section-1:
     0:
@@ -165,7 +174,7 @@ solution-scada-rule-chain:
         title: 'Go to the "Rule chains" page, and select "Swimming Pool Device Rule Chain";'
     1:
         image: /images/solutions/swimming_pool_scada_system/solution-scada-rule-chain-2-pe.png
-        title: 'Swimming Pool Device Rule Chain.'
+        title: 'Swimming Pool Device Rule Chain. Here, telemetry, attributes, and RPC requests are saved, alarms are generated, and control of the heat pump is performed.'
 
 rule-chain-1:
     0:
@@ -180,37 +189,12 @@ rule-chain-2:
 rule-chain-3:
     0:
         image: /images/solutions/swimming_pool_scada_system/rule-chain-3-pe.png
-        title: 'Save attributes, time series, and RPC requests'
+        title: 'General logic – save attributes, time series, and RPC requests: Independent of the message type, these actions are performed for all devices.'
 
 rule-chain-4:
     0:
         image: /images/solutions/swimming_pool_scada_system/rule-chain-4-pe.png
-        title: 'This part of the rule chain is responsible for monitoring the activity and inactivity of devices. The system catches these events, propagating the device states to the asset. This data is crucial for further calculations and to ensure real-time updates about which devices are active.'
-
-rule-chain-5:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/rule-chain-5-pe.png
-        title: 'Once the telemetry data is saved, the message is routed through the device profile switch node. This node filters the devices based on their profile, allowing for device-specific actions.'
-
-rule-chain-6:
-    0:
-        image: /images/solutions/swimming_pool_scada_system/rule-chain-6-pe.png
-        title: 'The logic for determining water flow conditions through the pipes.'
-    1:
-        image: /images/solutions/swimming_pool_scada_system/main-rule-calculation-1-pe.png
-        title: 'After the device profile switch node, the message is sent to the script node. The function of this node creates a new message that contains the device name in the modified camelCase format + its telemetry from the incoming message, and returns an object with the updated data;'
-    2:
-        image: /images/solutions/swimming_pool_scada_system/main-rule-calculation-2-pe.png
-        title: 'The change originator node changes the "originator" of the message. This node specifies an asset instead of devices as the message source. In other words, all telemetry goes to the asset and is stored as attributes;'
-    3:
-        image: /images/solutions/swimming_pool_scada_system/main-rule-calculation-3-pe.png
-        title: 'All telemetry goes to the asset and is stored as attributes using the save attributes node;'
-    4:
-        image: /images/solutions/swimming_pool_scada_system/main-rule-calculation-4-pe.png
-        title: 'The originator attributes node requests the specified attributes from the asset and sends them to the main calculation script in the script node;'
-    5:
-        image: /images/solutions/swimming_pool_scada_system/main-rule-calculation-5-pe.png
-        title: 'This script node is crucial for determining which pipe segments are currently active. The calculation determines whether water should flow through specific pipes based on attribute values and saves this values using the save attributes node.'
+        title: 'When telemetry from the heat pump is detected, the system checks specific conditions—like target temperature, outdoor temperature, and pool temperature—through a switch node. If the telemetry conditions meet the thresholds for turning the heat pump on or off, an RPC request is sent to control the heat pump’s state.'
 
 device-profiles-1:
     0:

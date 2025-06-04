@@ -20,11 +20,11 @@ To fully understand how to use Actions, you have to add a State to your dashboar
 
 ## Add action
 
-Let's add your first action. In this step, we will outline only the general steps without going into the details of each setting. Examples of using each  [type of action](#action-types) and [action source](#action-sources) will be covered later in the guide for better understanding.
+Let&#39;s add your first action. In this step, we will outline only the general steps without going into the details of each setting. Examples of using each  [type of action](#action-types) and [action source](#action-sources) will be covered later in the guide for better understanding.
 
 Most widgets offer two configuration options: *basic* and *advanced*. Accordingly, the process of adding actions differs slightly between these modes. Let's explore both:
 
-If you're using the *basic* widget configuration:
+If you&#39;re using the *basic* widget configuration:
 
 - Enter the editing mode of the widget to which you want to add an action, scroll down and find the "Actions" menu item;
 - Click the "Add action" button (once you have created one or more actions, the "Add actions" button will change to the `+` icon).
@@ -36,10 +36,10 @@ If you're using the *basic* widget configuration:
 
 {% include images-gallery.html imageCollection="add-new-action-1" %}
 
-If you're using the *advanced* widget settings:
+If you&#39;re using the *advanced* widget settings:
 
 - Enter the widget editing mode, and navigate to the "Actions" tab. Currently, it is empty, but later all created actions will be displayed here;
-- Click the 'plus' icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
+- Click the "plus" icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
 - Now, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
 - Click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
@@ -60,7 +60,10 @@ There are seven action types that are applicable to all widgets:
 - **Mobile action** - allows the use of various mobile device functions such as taking photos, scanning QR codes, getting device location, making phone calls and so on;
 - **Open URL** - allows you to go to any resource represented by a URL.
 
-Let's consider each of these types of actions separately.
+There is also a special action type available exclusively for [Map widgets](/docs/{{docsPrefix}}user-guide/widgets/map-widgets/){:target="_blank"}:
+- **Place map item** — allows you to create and place a new entity directly on the map widget in just a few clicks.
+
+Let&#39;s consider each of these types of actions separately.
 
 ### Navigate to new dashboard state
 
@@ -1013,6 +1016,44 @@ We assume that you are already familiar with the "[Add action](#add-action)" ste
 After saving the changes, you can see an icon in the upper right part of the widget. Click this icon. You will be transferred to the URL specified in the action. In our case, it's the "Working with ThingsBoard widgets" documentation page.
 
 {% include images-gallery.html imageCollection="open-url-2" %}
+
+#### Place map item
+
+The **Place map item** action type allows users to create new entities and immediately place them on the map widget.
+
+<br>
+As an example, let&#39;s add a button that allows users to place charging stations on the map:
+
+To start, and to ensure that newly created entities are instantly displayed on the map, you need to configure the data source.
+
+- In the "**Overlays**" section, under the "**Marker**" tab, create a new entity alias as the data source. Name it "**EV stations**".
+- Since we&#39;ll be creating entities of the type "**EV station**", set the filter type to "**Asset type**" and specify the type as "**EV station**".
+- Apply changes.
+
+{% include images-gallery.html imageCollection="data-source-for-action" %}
+
+Now let&#39;s move on to configuring the action:
+
+- Scroll down to the "**Actions**" section and click the "**Add action**" button.
+- A new window will open, displaying all your created actions. Click the "plus" icon button in the top-right corner to add one.
+- Select the action source as "**Widget header button**", enter a name for the button, and choose its type.
+- Optionally, change the icon that will appear next to the button or hide it entirely. You can also set a custom color for the button.
+- From the dropdown menu, select the type of action to be performed. In our case, it&#39;s "**Place map item**".
+- Next, choose the **type of map item** to be placed — we&#39;ll be placing a "**Marker**".
+- The **custom action function** field already contains a default function that opens a dialog for creating a device or an asset — exactly what we need.
+- In the "**Action**" section, choose "**Place map item**" from the dropdown menu. Select the type of map item to be placed — in our case, it&#39;s "**Marker**". The Custom action function field contains a default function that opens a dialog to create a device or an asset — exactly what we need.
+- Then click "**Add**".
+- Apply all changes and save the dashboard.
+
+{% include images-gallery.html imageCollection="action" %}
+
+A new action button labeled "**Add EV station**" has now appeared at the top of the map. Let&#39;s use it.
+
+{% include images-gallery.html imageCollection="action-place-marker" showListImageTitles="true" %}
+
+Go to the "**Assets**" page — there you&#39;ll find your newly created asset, "**EV station 1**".
+
+{% include images-gallery.html imageCollection="action-created-asset" %}
 
 ## Action sources
 

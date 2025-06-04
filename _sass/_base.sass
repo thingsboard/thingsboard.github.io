@@ -127,6 +127,17 @@ a
     &:focus
       background-color: $orange-02
 
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+
 // HEADER
 #home, #thingsboard-paas, #thingsboard-pe, #thingsboard-edge, #mqtt-broker
   header
@@ -255,18 +266,23 @@ header
         opacity: 1
         background-color: #f7f9fe
         &.bounds-transition
-          transition: left ease-in-out .45s, width ease-in-out .45s, height ease-in-out .45s
+          transition: left ease-in-out .4s, width ease-in-out .4s, height ease-in-out .4s
         & > div.open
           opacity: 1
           display: block
           transition-property: display, opacity
-          transition-duration: .45s
+          transition-duration: .4s
           transition-behavior: allow-discrete
           @starting-style
             opacity: 0
       & > div
         opacity: 0
         display: none
+
+      div#nav-cases
+        .group:last-child
+          .column
+            min-width: 320px
 
     .sub-menu-container, ul
       .centered-sub
@@ -316,35 +332,33 @@ header
 
             &:hover
               .sub-text
-                h1, span.item-heading
+                span.item-heading
                   color: #2A7DEC
                 p
                   color: #212529
 
-            &.prof-lnk:hover, &.license-lnk:hover
-              .sub-text
-                h1, span.product-name
-                  color: #1F8B4D
-
-            &.com-lnk:hover .sub-text h1, &.com-lnk:hover .sub-text span.item-heading
-              color: #305680
-
-            &.edge-lnk:hover .sub-text h1, &.edge-lnk:hover .sub-text span.item-heading
-              color: #009688
-
-            &.gateway-lnk:hover .sub-text h1, &.gateway-lnk:hover .sub-text span.item-heading
-              color: #7A4DC3
-
-            &.trendz-lnk:hover .sub-text h1, &.trendz-lnk:hover .sub-text span.item-heading
-              color: #2696F3
-
-            &.mobile-lnk:hover .sub-text h1, &.mobile-lnk:hover .sub-text span.item-heading
-              color: #305680
-
-            &.mobile-pe-lnk:hover .sub-text h1, &.mobile-pe-lnk:hover .sub-text span.item-heading
+            &.prof-lnk:hover .sub-text span.item-heading
               color: #1F8B4D
 
-            &.mqtt-broker-lnk:hover .sub-text h1, &.mqtt-broker-lnk:hover .sub-text span.item-heading
+            &.com-lnk:hover .sub-text span.item-heading
+              color: #305680
+
+            &.edge-lnk:hover .sub-text span.item-heading
+              color: #009688
+
+            &.gateway-lnk:hover .sub-text span.item-heading
+              color: #7A4DC3
+
+            &.trendz-lnk:hover .sub-text span.item-heading
+              color: #2696F3
+
+            &.mobile-lnk:hover .sub-text span.item-heading
+              color: #305680
+
+            &.mobile-pe-lnk:hover .sub-text span.item-heading
+              color: #1F8B4D
+
+            &.mqtt-broker-lnk:hover .sub-text span.item-heading
               color: #1F8B4D
 
             &:last-child
