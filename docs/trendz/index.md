@@ -58,7 +58,7 @@ and explore step-by-step how-to guides for constructing end-to-end IoT solutions
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/docs/trendz/anomaly/anomaly-detection-overview/">
+        <a class="feature-card" href="/docs/trendz/anomaly/overview/">
             <img class="feature-logo" src="/images/trendz/icons/anomaly.svg" alt="anomaly">
             <div class="feature-title">Anomaly detection</div>
             <div class="feature-text">

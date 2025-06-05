@@ -125,11 +125,90 @@ The **Input** tab allows you to manage and configure core aspects of your anomal
 
 ### Summary Tab
 
+The **Summary** tab provides an overview of anomalies grouped by device.
+
+You can:
+
+- View anomaly statistics for **all devices** or a **specific device**.
+- Select or deselect devices using the table below the graph.
+- Choose the display mode from the dropdown located to the left of the chart.
+
+* **Available Modes**
+
+- **Calendar Mode (All Devices):**
+  - Displays the total anomaly index per day across all items.
+  - Only months with anomalies are shown by default.
+  - Enable the *Full Range* toggle to view the entire year.
+
+- **Dynamic Mode (Selected Device Only):**
+  - Visualizes monthly distribution of anomalies for the selected item.
+  - Blue bars represent the **total anomaly score index for the current device**.
+  - The green line represents the **average total score index** per month **for all devices**.
+
+- **Review Mode (Selected Device Only):**
+  - Shows the **latest detected anomaly**.
+  - You can zoom out to explore the full history of anomalies discovered on the current device.
+
 ### Review Tab
+
+The **Review** tab allows you to inspect all anomalies detected during the **build**, **refresh**, or **reprocess** operations.
+
+You can use this tab to:
+
+- **Validate** the anomalies discovered by the anomaly model.
+- **Fine-tune** the model by reviewing results and retraining if necessary.
+- **Determine optimal thresholds** for alarm creation (read more about alarms [here](/docs/trendz/anomaly/alarms)).
+
+**Tips:**
+
+- You can **sort anomalies** by various fields to better analyze the results:
+  - Total Duration
+  - Score
+  - Score Index
+  - Item
+  - End Timestamp
 
 ### Cluster Info Tab
 
+In this tab, you can validate the clusters that were created during the model build process.
+
+The **Cluster Info** tab provides insight into how many clusters were formed, what shape or pattern they represent, 
+and how segments were distributed across them.
+
+**Cluster Table**
+
+At the bottom of the screen, a table is displayed with the following columns:
+
+- **Cluster ID** – Unique identifier of the cluster.
+- **Segments Count** – Number of anomaly segments that are closest to this cluster.
+- **Segments Percent** – Percentage of anomaly segments that fall into this cluster.
+- **Total Duration** – Combined duration of all anomaly segments that are closest to this cluster.
+- **Min Score** – Minimum anomaly score among segments that are closest to this cluster.
+- **Max Score** – Maximum anomaly score among segments that are closest to this cluster.
+
+**Centroid Visualization**
+
+At the top of the screen, you can view the **centroids** of all clusters. Each centroid represents the average pattern 
+of all segments that belong to a cluster. These curves help users understand typical shapes or behaviors captured by each cluster.
+
+You can also **click on any row in the cluster table** to open a detailed view. This view shows:
+
+- The selected **centroid**, and
+- **20+ random segments** that belong to this cluster.
+
+This feature is useful for visually comparing segment variability within the cluster and validating clustering accuracy.
+
 ### Tasks Tab
+
+In the Tasks tab, you can review tasks that are associated with the current anomaly model. Here you can validate tasks such as:
+- Anomaly model build
+- Anomaly model refresh
+- Anomaly model reprocess
+
+You can see their results, last executions, and more. Read more about Trendz tasks [here](/docs/trendz/tasks-service).
+
+It is also possible to run the anomaly model reprocess task directly from this tab by clicking the **Run Reprocess Task** 
+button located in the upper right corner of the screen (read more about anomaly reprocess [here](/docs/trendz/anomaly/refresh-reprocess#anomaly-reprocess)).
 
 ## Next Steps
 
