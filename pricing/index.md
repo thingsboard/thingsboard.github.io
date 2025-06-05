@@ -403,7 +403,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">20 000 data point per minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">20 000 data points per minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">200 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
@@ -430,7 +430,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 data point per minute</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 data points per minute</div> 
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
@@ -457,7 +457,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 data point per minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 data points per minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
@@ -477,7 +477,7 @@ selfManagedPlan:
                                 <span class="visually-hidden"> to discuss Enterprise plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item highlight">Unlimited number of Devices</div>
+                        <div class="pricing-square-item highlight">Unlimited number of devices</div>
                         <div class="pricing-square-item">Custom SLA</div>
                         <div class="pricing-square-item">Unlimited message rate</div>
                         <div class="pricing-square-item">Unlimited storage</div>
@@ -516,7 +516,7 @@ selfManagedPlan:
             </div>
             <div class="plans-comparison">
                 <h2>Additional features</h2>
-                <p>Extra details and upgrade options for all subscription plans.</p>
+                <p>See key subscription plan features in the table below. View the full subscription plan <a href="/docs/private-cloud/subscription/">description</a> <a href="/docs/private-cloud/subscription/">here </a>.</p>
                 <div class="comparison-table-container">
                     <table>
                         <thead>
@@ -551,13 +551,6 @@ selfManagedPlan:
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
-                                <td>SQL</td>
-                                <td>SQL + NoSQL</td>
-                                <td>SQL + NoSQL</td>
-                                <td>SQL + NoSQL</td>
-                            </tr>
-                            <tr>
                                 <td data-faq-id="tb-private-cloud-what-are-custom-data-retention-policies">Custom data retention policies</td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -577,6 +570,13 @@ selfManagedPlan:
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
+                                <td>SQL</td>
+                                <td>SQL + NoSQL</td>
+                                <td>SQL + NoSQL</td>
+                                <td>SQL + NoSQL</td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication</td>
@@ -2627,13 +2627,21 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-title="How are “data points” defined and metered?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-title="How are “messages” and “data points” defined and metered?">
                         <div class="container">
-                            <p>System load is determined by the total number of data points, not by the message count. IoT devices can include varying numbers of data points in each message, while the data point represents a key-value pair ("key":"value"). <br><br></p>
-                            <p><b>For example:</b></p>
-                            <p>Payload { "temperature": 23.5, "humidity": 62 } contains 2 data points</p>
-                            <p>Payload { "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } contains 5 data points. <br><br></p>
-                            <p>And this is crucial to understand as the data points rate is a core metric for pricing calculation and underlying infrastructure suggestion.</p>
+                            <p><b>What is a “message”?</b></p>
+                            <p>A message is any application-layer packet that enters or leaves the platform—whether it’s uplink telemetry, an RPC call, an attribute update, or a downlink—regardless of transport protocol (MQTT, HTTP, CoAP, LwM2M) or integration. We measure sustained messages per minute, aggregated across all protocols.<br><br></p>
+                            <p><b>What is a “data point”?</b></p>
+                            <p>A data point is a single key/value pair (e.g., "temperature": 23.5) within a message payload. Because some messages bundle multiple measurements, the total number of data points often exceeds the raw message count.<br><br></p>
+                            <p><b>How we count the data point limit?</b></p>
+                            <p>Telemetry messages carry one or more data points (sensor readings, attribute updates, etc.). Each data point in a telemetry message counts as 1 toward your per-minute limit.</p>
+                            <p>Non-telemetry messages (RPC calls or downlinks with no measurements) carry zero data points—but we still count each such message as 1 toward your per-minute limit.<br><br></p>
+                            <p><b>Total data points per minute = telemetry data points + count of messages with zero data points.</b><br><br></p>
+                            <p><b>Examples:</b></p>
+                            <p>Telemetry Payload { "temperature": 23.5, "humidity": 62 } counts as 2 data points</p>
+                            <p>Telemetry Payload { "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } counts as 5 data points.</p>
+                            <p>RPC call payload { "method": "setGPIO", "params": {"pin": 4, "value": 1} } counts as 1 message/data point.<br><br></p>
+                            <p>By treating messages without payload as one data point and counting every actual measurement as one data point, we ensure your plan’s per-minute limit reflects your true platform usage.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-sustained-data-point-rate-limit" data-title="What happens if I exceed my sustained data point rate limit?">
