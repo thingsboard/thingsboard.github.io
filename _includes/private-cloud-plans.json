@@ -1,5 +1,5 @@
 {
-  "enterpriseBytesPerDataPoint": 50,
+  "enterpriseBytesPerDataPoint": 36,
   "extraStorageCostPerGB": 0.5,
   "devEnvironments": 299,
   "testEnvironments": 299,
@@ -15,7 +15,7 @@
       "extraDevicePrice": 0.1,
       "database": "SQL",
       "replicationFactor": 2,
-      "bytesPerDataPoint": 200
+      "bytesPerDataPoint": 150
     },
     {
       "name": "Growth",
@@ -26,7 +26,7 @@
       "extraDevicePrice": 0.09,
       "database": "NoSQL",
       "replicationFactor": 3,
-      "bytesPerDataPoint": 50
+      "bytesPerDataPoint": 36
     },
     {
       "name": "Scale",
@@ -37,7 +37,7 @@
       "extraDevicePrice": 0.08,
       "database": "NoSQL",
       "replicationFactor": 3,
-      "bytesPerDataPoint": 50
+      "bytesPerDataPoint": 36
     }
   ]
 }

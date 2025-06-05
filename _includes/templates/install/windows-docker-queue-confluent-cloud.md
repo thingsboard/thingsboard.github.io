@@ -3,7 +3,7 @@
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-nano docker-compose.yml
+notepad docker-compose.yml
 ```
 {: .copy-code}
 
