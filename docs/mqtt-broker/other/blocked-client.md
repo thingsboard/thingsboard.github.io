@@ -25,20 +25,22 @@ This ensures that unauthorized or potentially malicious connection attempts are 
 
 ## Supported Block Types
 
+![image](/images/mqtt-broker/other/blocked-clients.png)
+
 You can block a client using any of the following identifiers:
 
-| Block by     | Description                            |
-|--------------|----------------------------------------|
-| `CLIENT_ID`  | Block clients with specific client IDs |
-| `USERNAME`   | Block based on MQTT usernames          |
-| `IP_ADDRESS` | Block by the client’s IP address       |
-| `REGEX`      | Pattern-based blocking using regex     |
+| Block by     | Label on UI | Description                            |
+| ------------ |-------------| -------------------------------------- |
+| `CLIENT_ID`  | Client ID   | Block clients with specific client IDs |
+| `USERNAME`   | Username    | Block based on MQTT usernames          |
+| `IP_ADDRESS` | IP address  | Block by the client’s IP address       |
+| `REGEX`      | Regex       | Pattern-based blocking using regex     |
 
 The `REGEX` type supports matching based on one of:
 
-* `BY_CLIENT_ID`.
-* `BY_USERNAME`.
-* `BY_IP_ADDRESS`.
+* `BY_CLIENT_ID` (UI label is "Client ID").
+* `BY_USERNAME` (UI label is "Username").
+* `BY_IP_ADDRESS` (UI label is "IP address").
 
 To block all clients whose IDs start with `test-` followed by digits, you can use the following regex rule:
 
@@ -59,6 +61,12 @@ But **not**:
 * `demo-test-1`
 * `test-user`
 * `test-`
+
+Each entry can be in one of the following **three statuses**:
+
+* ✅ **Active** – The entry is valid and fully operational.
+* ⏳ **Expired** – The entry is no longer valid but hasn't been cleaned up yet.
+* ⚠️ **Deleting soon** – A transitional state for expired entries. This status appears **when more than half of the cleanup grace period has passed**, signaling that the entry is about to be removed by the system.
 
 ## How It Works
 
