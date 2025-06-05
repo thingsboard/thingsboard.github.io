@@ -3,6 +3,11 @@ layout: docwithnav-trendz
 title: Overview
 description: Introduction to anomaly detection in Trendz
 
+scoreVsIndexExample:
+  0:
+    image: /images/trendz/anomaly/score_vs_index.png
+    title: 'Pump vibration pattern during start'
+
 ---
 
 * TOC
@@ -26,8 +31,34 @@ function tuning, and scoring logic - all within a convenient and intuitive inter
 
 ### Key Concepts in Trendz Anomaly Detection
 
-- **Anomaly Score:** Numeric value representing how far a behavior deviates from expected patterns.
-- **Anomaly Score Index:** Combines anomaly score with anomaly duration to prioritize impactful anomalies.
+In Trendz, anomaly detection is based on two core metrics:
+
+- **Anomaly Score**  
+  A numeric value representing how far a data segment deviates from expected (normal) behavior. Think of it as measuring the **intensity** of the anomaly.
+
+- **Anomaly Score Index**  
+  A composite metric that combines **anomaly score** with the **duration** of the anomaly. It helps prioritize anomalies that may have a **greater impact** over time.
+
+**Real-World Example: Pump Vibration Analysis**
+
+Let’s explore a real-world example showing pump vibrations right after startup:
+
+{% include images-gallery.html imageCollection="scoreVsIndexExample" showListImageTitles="true" preview="false" %}
+
+- **Anomaly A**
+  - Characterized by a **sharp vibration spike** lasting ~5 seconds.
+  - Results in a **high anomaly score** due to the sudden deviation.
+  - Since it's short-lived, its **score index remains low**.
+
+- **Anomaly B**
+  - Shows a **longer-lasting deviation** without large spikes.
+  - The **anomaly score is lower**, but the **score index is higher** due to extended duration.
+  - This suggests a **greater long-term impact on pump health**.
+
+While **Anomaly A** may appear more critical at first glance due to its spike, **Anomaly B** is likely *more important* 
+to investigate due to its prolonged effect - this is exactly what the **Anomaly Score Index** helps reveal.
+- Use **Anomaly Score** to detect sharp, short-term deviations.  
+- Use **Anomaly Score Index** to surface sustained anomalies that may cause greater damage over time.
 
 ### Supervised vs Unsupervised Anomaly Detection
 
@@ -133,7 +164,7 @@ You can:
 - Select or deselect devices using the table below the graph.
 - Choose the display mode from the dropdown located to the left of the chart.
 
-* **Available Modes**
+**Available Modes**
 
 - **Calendar Mode (All Devices):**
   - Displays the total anomaly index per day across all items.
@@ -159,9 +190,7 @@ You can use this tab to:
 - **Fine-tune** the model by reviewing results and retraining if necessary.
 - **Determine optimal thresholds** for alarm creation (read more about alarms [here](/docs/trendz/anomaly/alarms)).
 
-**Tips:**
-
-- You can **sort anomalies** by various fields to better analyze the results:
+You can **sort anomalies** by various fields to better analyze the results:
   - Total Duration
   - Score
   - Score Index

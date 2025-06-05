@@ -42,39 +42,31 @@ To use anomaly fields:
 
 ### Field Properties
 
-- **Anomaly** (`score`, `score_index`)  
-  Select which anomaly metric to visualize:
-  - `score`: Like *temperature*—shows anomaly intensity at a point in time.
-  - `score_index`: Like *area*—accumulates across anomaly duration to show total impact.
+- **Anomaly:** (`SCORE`, `SCORE_INDEX`) Select which anomaly metric to visualize:
+  - `SCORE`: Like *temperature* - shows anomaly intensity at a point in time.
+  - `SCORE_INDEX`: Like *area* - accumulates across anomaly duration to show total impact.
 
-- **Model**  
-  Select an active anomaly model. Only active models are available for visualization.
+- **Model:** Select an active anomaly model. Only active models are available for visualization.
 
-- **Aggregation**  
-  Defines how values are combined across time or entities:
-  - For **score**:
-    - ✅ Recommended: `MAX`, `LATEST`
-    - ❌ Not recommended: `SUM`, `AVG`, `MIN`, `UNIQ`, `COUNT`
-  - For **score_index**:
-    - ✅ Recommended: `COUNT`, `SUM`, `UNIQ`, `LATEST`
-    - ⚠️ Acceptable but less sensitive: `AVG`, `MIN`
+- **Aggregation:** Defines how values are combined across time or entities:
+  - For **SCORE**:
+    - Recommended: `MAX`, `LATEST`
+    - Not recommended: `SUM`, `AVG`, `MIN`, `UNIQ`, `COUNT`
+  - For **SCORE_INDEX**:
+    - Recommended: `COUNT`, `SUM`, `UNIQ`, `LATEST`
+    - ⚠Acceptable but less sensitive: `AVG`, `MIN`
 
-  **Tips**
-  - Use `MAX` for `score` to catch peak anomaly intensity.
-  - Use `SUM` or `COUNT` for `score_index` to visualize the full anomaly footprint.
+  Use `MAX` for `SCORE` to catch peak anomaly intensity.
+  Use `SUM` or `COUNT` for `SCORE_INDEX` to visualize the full anomaly footprint.
 
-- **Fill Gap**  
-  Fills missing values when grouping by date.
+- **Fill Gap:** Fills missing values when grouping by date.
   - Recommended strategy: `ZERO`
   - Time unit should match the grouping granularity (e.g., daily, hourly).
 
-- **Label (Anomaly)**  
-  Field name as shown in the chart legend.
+- **Label (Anomaly):** field name as shown in the chart legend.
 
-- **Chart Type**  
-  Choose from: `bar`, `line`, or `area`
+- **Chart Type:** Choose from: `bar`, `line`, or `area`
 
-**Use Case**  
 Anomaly fields are ideal for building flexible visualizations across time and devices without storing anomalies in ThingsBoard.
 
 ## Anomaly Business Entity Fields
@@ -88,18 +80,19 @@ To use:
   - `{Model Name} SCORE`
   - `{Model Name} SCORE INDEX`
 
-⚠️ **Note:**
 - Use **Anomaly Fields** when you need to **count anomalies** or avoid saving them to TB.
 - Use **Business Entity Fields** when anomalies are saved, and you want precise control or cumulative visualization.
 
-
 ## Best Practices
 
-| Goal | Recommended Tool |
-|------|------------------|
-| Simple plug-and-play anomaly visualization | **Anomaly Report** |
-| Flexible visualization without saving to TB | **Anomaly Fields** |
-| Fine control over saved anomalies / need for cumulative tracking | **Anomaly Business Entity Fields** |
+Use the following guidance to choose the right tool for visualizing and analyzing anomalies in Trendz:
+
+- **If you want a simple, plug-and-play anomaly visualization:**  
+  - Use **Anomaly Report**.
+- **If you need flexible visualizations and don’t want to save anomalies to ThingsBoard:**  
+  - Use **Anomaly Fields**.
+- **If you need fine control over which anomalies are saved to ThingsBoard:** 
+  - Use **Anomaly Business Entity Fields**.
 
 ## Important Note on Score Index Logic
 
