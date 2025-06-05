@@ -42,15 +42,6 @@ Once a session is expired or explicitly removed, it no longer counts toward the 
 It does not include acknowledgment packets used in QoS 1 and 2 flows (such as `PUBACK`, `PUBREC`, etc.), nor other MQTT control packets like `CONNECT`, `SUBSCRIBE`, `UNSUBSCRIBE`, etc.</td>
       </tr>
       <tr>
-          <td>Integrations</td>
-          <td>5</td>
-          <td>10</td>
-          <td>50</td>
-          <td>Unlimited</td>
-          <td>Maximum number of <a href="/docs/mqtt-broker/architecture/#persistent-client">persistent</a> Application clients and 
-<a href="/docs/mqtt-broker/architecture/#persistent-client">Integrations</a> managed by the broker, including both connected and temporarily disconnected ones</td>
-      </tr>
-      <tr>
           <td>Monthly traffic</td>
           <td>100GB</td>
           <td>200GB</td>
@@ -60,13 +51,13 @@ It does not include acknowledgment packets used in QoS 1 and 2 flows (such as `P
 Traffic is measured as the sum of all MQTT packet payloads sent and received by clients. If the monthly allowance is exceeded, additional usage is billed at $0.15 per GB</td>
       </tr>
       <tr>
-          <td>Device persistent messages rate limits</td>
+          <td>Applications / Integrations</td>
+          <td>5</td>
+          <td>10</td>
           <td>50</td>
-          <td>100</td>
-          <td>500</td>
           <td>Unlimited</td>
-          <td>Total number of messages processed per second for all Device clients with persistent sessions. 
-These clients are subscribers, and if they are offline, the messages are stored in Redis to be delivered when they reconnect</td>
+          <td>Maximum number of <a href="/docs/mqtt-broker/architecture/#persistent-client">persistent</a> Application clients and 
+<a href="/docs/mqtt-broker/architecture/#persistent-client">Integrations</a> managed by the broker, including both connected and temporarily disconnected ones</td>
       </tr>
       <tr>
           <td>Application topic size</td>
@@ -101,10 +92,19 @@ These clients are subscribers, and if they are offline, the messages are stored 
           <td>Time-to-live for messages stored in dedicated Kafka topics for each Integration. If the Integration remains disconnected beyond this period, undelivered messages will be automatically discarded</td>
       </tr>
       <tr>
-          <td>Device persisted messages storage</td>
-          <td>50</td>
-          <td>100</td>
-          <td>500</td>
+          <td>Message rate limits for default ('Device') persistent sessions</td>
+          <td>50 per second</td>
+          <td>100 per second</td>
+          <td>500 per second</td>
+          <td>Unlimited</td>
+          <td>Total number of messages processed per second for all Device clients with persistent sessions. 
+These clients are subscribers, and if they are offline, the messages are stored in Redis to be delivered when they reconnect</td>
+      </tr>
+      <tr>
+          <td>Messages storage for default ('Device') persistent sessions</td>
+          <td>100 per session</td>
+          <td>200 per session</td>
+          <td>1K per session</td>
           <td>Unlimited</td>
           <td>Maximum number of messages that can be stored for each Device client with a persistent session while it is offline. Once the limit is reached, older messages are dropped to make room for new ones</td>
       </tr>
@@ -149,7 +149,7 @@ These clients are subscribers, and if they are offline, the messages are stored 
           <td>Total number of outgoing messages per non-persistent subscriber client with Quality of Service (QoS) level equal to 0 ("AT_MOST_ONCE")</td>
       </tr>
       <tr>
-          <td>In-flight messages</td>
+          <td>In-flight messages per publisher</td>
           <td>100</td>
           <td>100</td>
           <td>100</td>
