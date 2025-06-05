@@ -1614,7 +1614,7 @@ selfManagedPlan:
             <div class="pricing-content-description always-display active col-lg-6">
               <h2>Your private MQTT broker instance</h2>
               <div class="pricing-content-details">
-                  Hosting and infrastructure included—so you can focus on building your solutions.
+                  We host your own private MQTT broker instance, so you can focus on building your solutions.
               </div>
             </div>
             <div class="toggle-container">
