@@ -61,6 +61,14 @@ Environment variables:
 - `INSTALL_TB=true` - Installs the core database schema and system resources (widgets, images, rule chains, etc.).
 - `LOAD_DEMO=true` - Loads sample tenant account, dashboards and devices for evaluation and testing.
 
+## Start the platform & tail logs
+
+Bring up all containers in detached mode, then follow the ThingsBoard logs:
+
+```bash
+docker compose up -d && docker compose logs -f thingsboard-ce
+```
+
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
@@ -69,14 +77,6 @@ Use the following default credentials:
 - **Customer User**: customer@thingsboard.org / customer
     
 You can always change passwords for each account in account profile page.
-
-## Start the platform & tail logs
-
-Bring up all containers in detached mode, then follow the ThingsBoard logs:
-
-```bash
-docker compose up -d && docker compose logs -f thingsboard-ce
-```
 
 You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
