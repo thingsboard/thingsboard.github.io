@@ -1608,7 +1608,7 @@ selfManagedPlan:
     </div>
  </div>  
 </div>
-<div id="tbmq" class="pricing-content" style="display: none;">
+<div id="tbmq" class="pricing-content" style="display: none; margin-bottom: 12vh">
     <div class="container">
         <div class="pricing-content-header row not-reverse-column">
             <div class="pricing-content-description always-display active col-lg-6">
@@ -1740,6 +1740,14 @@ selfManagedPlan:
                     </div>
                 </div>
                </div>
+            </div>
+        </div>
+        <div class="additional-content">
+            <div class="plan-calculator-block">
+                <div class="text">
+                    <h2 class="no-margin">Whant to know more about the subsription?</h2>
+                </div>
+                <a class="button reset gtm_button" href="/docs/mqtt-broker/subscription/">See full details</a>
             </div>
         </div>
     </div>
