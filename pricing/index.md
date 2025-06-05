@@ -363,7 +363,7 @@ selfManagedPlan:
             <div class="pricing-content-description always-display active col-lg-6">
               <h2>Choose your plan</h2>
               <div class="pricing-content-details">
-                  Hosting and infrastructure included—so you can focus on building your solutions.
+                  We host your own private cloud instance, so you can focus on building your solutions.
               </div>
             </div>
             <div class="toggle-container">
@@ -403,7 +403,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">20 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">20 000 data points per minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">200 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
@@ -430,7 +430,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">100 000 msg/minute</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 data points per minute</div> 
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
@@ -457,7 +457,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-messages-defined-and-metered">500 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 data points per minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
@@ -477,7 +477,7 @@ selfManagedPlan:
                                 <span class="visually-hidden"> to discuss Enterprise plan of ThingsBoard Private Cloud</span>
                             </a>
                         </div>
-                        <div class="pricing-square-item highlight">Everything you need to scale</div>
+                        <div class="pricing-square-item highlight">Unlimited number of devices</div>
                         <div class="pricing-square-item">Custom SLA</div>
                         <div class="pricing-square-item">Unlimited message rate</div>
                         <div class="pricing-square-item">Unlimited storage</div>
@@ -516,7 +516,7 @@ selfManagedPlan:
             </div>
             <div class="plans-comparison">
                 <h2>Additional features</h2>
-                <p>Extra details and upgrade options for all subscription plans.</p>
+                <p>See key subscription plan features in the table below. View the full subscription plan <a href="/docs/private-cloud/subscription/">description</a> <a href="/docs/private-cloud/subscription/">here </a>.</p>
                 <div class="comparison-table-container">
                     <table>
                         <thead>
@@ -551,13 +551,6 @@ selfManagedPlan:
                                 <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
-                                <td>SQL</td>
-                                <td>SQL + NoSQL</td>
-                                <td>SQL + NoSQL</td>
-                                <td>SQL + NoSQL</td>
-                            </tr>
-                            <tr>
                                 <td data-faq-id="tb-private-cloud-what-are-custom-data-retention-policies">Custom data retention policies</td>
                                 <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -579,6 +572,13 @@ selfManagedPlan:
                                 <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
+                                <td>SQL</td>
+                                <td>SQL + NoSQL</td>
+                                <td>SQL + NoSQL</td>
+                                <td>SQL + NoSQL</td>
+                            </tr>
+                            <tr>
                                 <td data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication</td>
                                 <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -597,7 +597,7 @@ selfManagedPlan:
                                 <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
                                 <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
                                 <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
-                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
+                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults"><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2408,7 +2408,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-private-cloud-general" class="pi-accordion active">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for" data-title="What does “ThingsBoard Private Cloud” stand for?">
                         <div class="container">
-                            <p>ThingsBoard Private Cloud is a fully managed, isolated ThingsBoard Professional Edition cluster that our team deploys and operates for you. We provision the infrastructure, keep the platform patched and monitored 24 × 7, run automated backups, and give you an SLA-backed uptime guarantee (99 %–99.99 %, depending on plan). Your engineers stay focused on building IoT applications instead of running DevOps.</p>
+                            <p>ThingsBoard Private Cloud is a fully managed, isolated ThingsBoard Professional Edition cluster that our team deploys and operates for you. We provision the infrastructure, keep the platform patched and monitored 24×7, run automated backups, and provide an SLA-backed uptime guarantee (99%–99.99%, depending on plan). During onboarding, you choose the region that best fits your compliance or latency requirements—EU, North America, or APAC. All environments are hosted in ISO 27001/PCI-DSS-certified data centers. Your engineers can stay focused on building IoT applications instead of managing DevOps.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-does-private-cloud-compare-to-thingsboard-cloud-community-edition-and-self-managed" data-title="How Private Cloud compares to ThingsBoard Cloud, Community Edition and Self-Managed?">
@@ -2515,17 +2515,28 @@ selfManagedPlan:
                             <p>All Private Cloud upgrades—whether minor patches or major version releases—are scheduled in coordination with the customer. This ensures full transparency, minimizes disruption, and allows your team to prepare in advance. Our team handles the entire upgrade process and provides clear communication before and after each change to maintain operational continuity and SLA compliance.</p>
                         </div>
                     </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-upgrade-my-plan-at-any-time" data-title="Can I upgrade my plan at any time?">
+                        <div class="container">
+                            <p>Upgrades are possible at any time, but they are not initiated automatically. The ThingsBoard team continuously monitors your resource usage and data point throughput. If your consumption exceeds the thresholds defined for your current tier, our team will notify you and guide the process of upgrading to a higher plan. This ensures uninterrupted service and compliance with SLA guarantees. You can also request an upgrade proactively if you anticipate growth or require additional capabilities.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations" data-title="What is included in service reviews and architecture consultations?">
+                        <div class="container">
+                            <p>Service reviews and architecture consultations are a specialized, ongoing service available exclusively to ThingsBoard Private Cloud customers. These sessions provide structured, high-level guidance from a senior ThingsBoard engineer who collaborates with your team regularly. You’ll receive proactive recommendations on best practices, performance tuning, and scalable architecture design tailored to your evolving use case. <br><br></p>
+                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement. <a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Contact us</a> for more details.</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="faq-thingsboard-private-cloud-billingAndPayments" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-is-the-pricing-structured-for-private-cloud" data-title="How is the pricing structured for Private Cloud?">
                         <div class="container">
-                            <p>The pricing for Private Cloud is based on the selected service tier. Each plan includes a specific device and message rate limit to ensure proper resource allocation and SLA compliance. The available plans are: <br><br></p>
+                            <p>The pricing for Private Cloud is based on the selected service tier. Each plan includes a specific device and data point rate limit to ensure proper resource allocation and SLA compliance. The available plans are: <br><br></p>
                             <ul>
-                                <li>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 messages per minute; additional devices are billed at $0.1/device/month.</li>
-                                <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 messages per minute; additional devices are billed at $0.09/device/month.</li>
-                                <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 messages per minute; additional devices are billed at $0.08/device/month.</li>
-                                <li>Enterprise: Custom pricing — includes 100,000 devices by default and no message rate limits. Extendable as needed based on specific deployment requirements.</li>
-                                <li>Short-term bursts up to 20% over the msg/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</li>
+                                <li>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
+                                <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 data points per minute; additional devices are billed at $0.09/device/month.</li>
+                                <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 data points per minute; additional devices are billed at $0.08/device/month.</li>
+                                <li>Enterprise: Custom pricing — includes 100,000 devices by default and no data point rate limits. Extendable as needed based on specific deployment requirements.</li>
+                                <li>Short-term bursts up to 20% over the dp/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</li>
                             </ul>
                         </div>
                     </div>
@@ -2541,7 +2552,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-the-monthly-subscription-fee" data-title="What is included in the monthly subscription fee?">
                         <div class="container">
-                            <p>The monthly subscription fee for Private Cloud covers the complete provisioning and maintenance of your dedicated environment. This includes platform licensing, system monitoring, infrastructure management, software updates, security patching, 24/7 availability monitoring, and SLA-backed support. The fee also includes a default allocation of devices, storage, and message rate capacity depending on your selected plan tier. Additional usage (devices, storage, or add-ons) is billed separately as defined per plan.</p>
+                            <p>The monthly subscription fee for Private Cloud covers the full provisioning and maintenance of your dedicated environment. This includes platform licensing, infrastructure and system monitoring, software updates, security patching, 24/7 availability monitoring, and SLA-backed support. Each plan tier comes with a predefined allocation of devices, storage, and data point rate capacity. Any usage beyond those included limits (e.g., additional devices, storage, or add-ons) is calculated on top of your regular subscription fee according to your selected plan.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-there-any-setup-or-cancellation-fees" data-title="Are there any setup or cancellation fees?">
@@ -2562,7 +2573,7 @@ selfManagedPlan:
                                     </ul>
                                 </li>
                             </ul>
-                            <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 20 % over the msg/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
+                            <p>There are no data point rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 20 % over the dp/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -2616,29 +2627,36 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-are-messages-defined-and-metered" data-title="How are “messages” defined and metered?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-are-datapoints-defined-and-metered" data-title="How are “messages” and “data points” defined and metered?">
                         <div class="container">
-                            <p>A message is any application-layer packet that enters or leaves the platform—whether it’s uplink telemetry, an RPC, an attribute update, or a downlink—regardless of transport protocol (MQTT, HTTP, CoAP, LwM2M) or integration. We measure sustained messages per minute, aggregated across all protocols. <br><br></p>
-                            <p><strong>Note:</strong></p>
-                            <p>IoT devices can include varying numbers of data points in each message. System load is determined by the total number of data points, not by the message count. To keep our subscription plans simple, we count each data point as one message toward your plan limits. You can use our plan calculator for a more precise estimate.<br><br></p>
-                            <p><b>For example:</b></p>
-                            <p>Payload { "temperature": 23.5, "humidity": 62 } contains 2 data points, so calculated as 2 messages.</p>
-                            <p>Payload { "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } contains 5 data points, so calculated as 5 messages.</p>
+                            <p><b>What is a “message”?</b></p>
+                            <p>A message is any application-layer packet that enters or leaves the platform—whether it’s uplink telemetry, an RPC call, an attribute update, or a downlink—regardless of transport protocol (MQTT, HTTP, CoAP, LwM2M) or integration. We measure sustained messages per minute, aggregated across all protocols.<br><br></p>
+                            <p><b>What is a “data point”?</b></p>
+                            <p>A data point is a single key/value pair (e.g., "temperature": 23.5) within a message payload. Because some messages bundle multiple measurements, the total number of data points often exceeds the raw message count.<br><br></p>
+                            <p><b>How we count the data point limit?</b></p>
+                            <p>Telemetry messages carry one or more data points (sensor readings, attribute updates, etc.). Each data point in a telemetry message counts as 1 toward your per-minute limit.</p>
+                            <p>Non-telemetry messages (RPC calls or downlinks with no measurements) carry zero data points—but we still count each such message as 1 toward your per-minute limit.<br><br></p>
+                            <p><b>Total data points per minute = telemetry data points + count of messages with zero data points.</b><br><br></p>
+                            <p><b>Examples:</b></p>
+                            <p>Telemetry Payload { "temperature": 23.5, "humidity": 62 } counts as 2 data points</p>
+                            <p>Telemetry Payload { "latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81 } counts as 5 data points.</p>
+                            <p>RPC call payload { "method": "setGPIO", "params": {"pin": 4, "value": 1} } counts as 1 message/data point.<br><br></p>
+                            <p>By treating messages without payload as one data point and counting every actual measurement as one data point, we ensure your plan’s per-minute limit reflects your true platform usage.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-sustained-message-rate-limit" data-title="What happens if I exceed my sustained message-rate limit?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-sustained-data-point-rate-limit" data-title="What happens if I exceed my sustained data point rate limit?">
                         <div class="container">
                             <p>The cluster tolerates brief spikes (see next answer). If sustained traffic stays above your tier’s ceiling, our monitoring flags it and we’ll ask you to upgrade. Plan upgrades are provisioned within three business days; remaining over-quota traffic may be throttled to protect platform stability.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-burst-above-the-message-limit-and-for-how-long" data-title="Can I burst above the message limit and for how long?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-burst-above-the-data-point-limit-and-for-how-long" data-title="Can I burst above the data point limit and for how long?">
                         <div class="container">
-                            <p>Yes. Short-term bursts up to 20% above the stated msgs-per-minute ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
+                            <p>Yes. Short-term bursts up to 20% above the stated dp-per-minute ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-do-i-monitor-my-current-device-message-and-storage-usage" data-title="How do I monitor my current device, message, and storage usage?">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-do-i-monitor-my-current-device-data-point-and-storage-usage" data-title="How do I monitor my current device, data point, and storage usage?">
                         <div class="container">
-                            <p>The Home dashboard contains information about number of devices and The API Usage dashboard contains information about hourly message rates. The storage usage information is calculated from multiple data sources and available upon request. We are working on a way to embed it into the platform dashboards.</p>
+                            <p>The Home dashboard contains information about number of devices and The API Usage dashboard contains information about hourly data point rates. The storage usage information is calculated from multiple data sources and available upon request. We are working on a way to embed it into the platform dashboards.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-title="What telemetry storage is included and what data consumes it?">
@@ -2676,7 +2694,7 @@ selfManagedPlan:
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-limits-on-dashboards-widgets-rule-chains-or-alarms" data-title="Are there limits on dashboards, widgets, rule chains, or alarms?">
                         <div class="container">
                             <p>In practice no—you may create as many dashboards, widgets, rule chains, and alarms as your project needs. Keep in mind, though, that the msg/minute SLA applies only to the default rule-chain templates we provision. Heavy or inefficient custom logic can slow processing. <br><br></p>
-                            <p>To protect data integrity while you troubleshoot, every cluster ships with a Kafka buffer of up to 50 GB (roughly several hours of traffic, depending on throughput). Incoming telemetry is queued there until the Rule Engine catches up. If the buffer fills completely, the oldest messages are discarded first, so maintaining efficient rule chains is essential for uninterrupted data flow.</p>
+                            <p>To protect data integrity while you troubleshoot, every cluster ships with a Kafka buffer of up to 50 GB (roughly several hours of traffic, depending on throughput). Incoming telemetry is queued there until the Rule Engine catches up. If the buffer fills completely, the oldest data points are discarded first, so maintaining efficient rule chains is essential for uninterrupted data flow.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-how-many-user-accounts-and-tenants-can-i-create" data-title="How many user accounts and tenants can I create?">
@@ -2712,20 +2730,20 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit" data-title="What happens if I exceed my included device limit?">
                         <div class="container">
-                            <p>If you exceed the included device count, you can continue adding more devices by paying an additional per-device fee according to your plan. Exceeding the device limit does not automatically require a plan upgrade, as long as your message rate per minute remains within the predefined operational thresholds.</p>
+                            <p>If you exceed the included device count, you can continue adding more devices by paying an additional per-device fee according to your plan. Exceeding the device limit does not automatically require a plan upgrade, as long as your data point rate per minute remains within the predefined operational thresholds.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-message-rate-limit-and-why-is-it-important" data-title="What is the message rate limit and why is it important?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-data-point-rate-limit-and-why-is-it-important" data-title="What is the data point rate limit and why is it important?">
                         <div class="container">
-                            <p>Each Private Cloud plan includes a predefined message rate limit measured in messages per minute. This is the most critical technical limit in our offering, as it defines how much telemetry and integration data your system can process without impacting performance or SLA. <br><br></p>
+                            <p>Each Private Cloud plan includes a predefined data point rate limit measured in data points per minute. This is the most critical technical limit in our offering, as it defines how much telemetry and integration data your system can process without impacting performance or SLA. <br><br></p>
                             <p>The message rate limits per plan are:</p>
                             <ul>
-                                <li>Launch: up to 20,000 messages per minute</li>
-                                <li>Growth: up to 100,000 messages per minute</li>
-                                <li>Scale: up to 200,000 messages per minute</li>
+                                <li>Launch: up to 20,000 data points per minute</li>
+                                <li>Growth: up to 100,000 data points per minute</li>
+                                <li>Scale: up to 200,000 data points per minute</li>
                                 <li>Enterprise: Unlimited</li>
                             </ul>
-                            <p>If your usage exceeds the limit of your current plan, a mandatory upgrade will be required to maintain service stability and SLA guarantees. Message throughput is actively monitored by the ThingsBoard team.</p>
+                            <p>If your usage exceeds the limit of your current plan, a mandatory upgrade will be required to maintain service stability and SLA guarantees. Data points throughput is actively monitored by the ThingsBoard team.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
@@ -2778,12 +2796,6 @@ selfManagedPlan:
                             <p>The Enterprise plan includes a default SLA with a guaranteed uptime of 99.95%, which already meets the needs of most mission-critical applications. While fully custom SLAs are typically not required, we are open to discussing specific availability or support requirements on a case-by-case basis to ensure alignment with your business expectations.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations" data-title="What is included in service reviews and architecture consultations?">
-                        <div class="container">
-                            <p>Service reviews and architecture consultations are a specialized, ongoing service available exclusively to ThingsBoard Private Cloud customers. These sessions provide structured, high-level guidance from a senior ThingsBoard engineer who collaborates with your team regularly. You’ll receive proactive recommendations on best practices, performance tuning, and scalable architecture design tailored to your evolving use case. <br><br></p>
-                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement. <a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Contact us</a> for more details.</p>
-                        </div>
-                    </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-how-is-the-pricing-determined-for-the-enterprise-plan" data-title="How is the pricing determined for the Enterprise plan?">
                         <div class="container">
                             <p>Enterprise pricing is calculated based on multiple components to reflect the scale, flexibility, and support level required. The total cost typically consists of: <br></p>
@@ -2806,12 +2818,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-downgrade-my-plan-later" data-title="Can I downgrade my plan later?">
                         <div class="container">
-                            <p>Yes, you can downgrade your Private Cloud plan if your message rate and resource usage fall within the thresholds of a lower-tier Private Cloud plan. Downgrades are coordinated with the ThingsBoard team to ensure service continuity and SLA compliance. However, it is not possible to downgrade from Private Cloud to ThingsBoard Cloud, as the architectures, infrastructure models, and operational processes differ entirely.</p>
-                        </div>
-                    </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-can-i-upgrade-my-plan-at-any-time" data-title="Can I upgrade my plan at any time?">
-                        <div class="container">
-                            <p>Upgrades are possible at any time, but they are not initiated automatically. The ThingsBoard team continuously monitors your resource usage and message throughput. If your consumption exceeds the thresholds defined for your current tier, our team will notify you and guide the process of upgrading to a higher plan. This ensures uninterrupted service and compliance with SLA guarantees. You can also request an upgrade proactively if you anticipate growth or require additional capabilities.</p>
+                            <p>Yes, you can downgrade your Private Cloud plan if your data point rate and resource usage fall within the thresholds of a lower-tier Private Cloud plan. Downgrades are coordinated with the ThingsBoard team to ensure service continuity and SLA compliance. If a downgrade results in a remaining balance, the unused portion of your subscription can either be refunded or applied as store credits for future use. However, it is not possible to downgrade from Private Cloud to ThingsBoard Cloud, as the architectures, infrastructure models, and operational processes differ entirely.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-are-there-any-fees-for-early-cancellation" data-title="Are there any fees for early cancellation?">
