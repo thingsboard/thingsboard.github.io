@@ -84,7 +84,7 @@ You can always change passwords for each account in account profile page.
 
 ## Step 4. Start the platform & tail logs
 
-Bring up all containers in detached mode, then follow the ThingsBoard logs:
+Bring up all containers in detached mode, then follow the ThingsBoard logs (use PowerShell for the command below):
 
 ```bash
 docker compose up -d; if ($?) {docker compose logs -f thingsboard-pe}
