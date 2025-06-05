@@ -58,11 +58,11 @@ selfManagedPlan:
             <li id="menu-item-trendz-options" class="menu-item trendz-logo">
                <a id="Pricing_TA" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('trendz-options')">Trendz Analytics</a>
             </li>
-            <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
-               <a id="Pricing_Edge" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
-            </li>
             <li id="menu-item-tbmq" class="menu-item tb-logo">
                <a id="Pricing_TBMQ" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('tbmq')">TBMQ</a>
+            </li>
+            <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
+               <a id="Pricing_Edge" href="javascript:void(0);" class="gtm_button" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
             </li>
          </ul>
        </nav>
@@ -423,7 +423,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Growth">
+                            <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Growth%20plan%20for%20Private%20Cloud">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Growth plan of ThingsBoard Private Cloud</span>
                             </a>
@@ -450,7 +450,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Scale">
+                            <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Scale%20plan%20for%20Private%20Cloud">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Scale plan of ThingsBoard Private Cloud</span>
                             </a>
@@ -472,7 +472,7 @@ selfManagedPlan:
                             Custom <span data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-link-size="70%"></span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=Plan%3A%20Enterprise">
+                            <a id="Pricing_PE_PrivateCloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=I%20am%20interested%20in%20Enterprise%20plan%20for%20Private%20Cloud">
                                 Contact Us
                                 <span class="visually-hidden"> to discuss Enterprise plan of ThingsBoard Private Cloud</span>
                             </a>
@@ -1612,9 +1612,9 @@ selfManagedPlan:
     <div class="container">
         <div class="pricing-content-header row not-reverse-column">
             <div class="pricing-content-description always-display active col-lg-6">
-              <h2>Choose your plan</h2>
+              <h2>Your private MQTT broker instance</h2>
               <div class="pricing-content-details">
-                  We host your own private cloud instance, so you can focus on building your solutions.
+                  We host your own private MQTT broker instance, so you can focus on building your solutions.
               </div>
             </div>
             <div class="toggle-container">
@@ -1646,15 +1646,9 @@ selfManagedPlan:
                             $179
                             <span>/month</span>
                         </h4>
-                        <h3 class="pricing-square-price sub-price">
-                            $0.27/hour
-                        </h3>
-                        <h3 class="pricing-square-price sub-price hidden">
-                            $0.24/hour
-                        </h3>
                         <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/">
-                                Contact Us
+                            <a id="Pricing_TBMQ_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20TBMQ">
+                                Get Started
                                 <span class="visually-hidden">to help you with your TBMQ Launch plan.</span>
                             </a>
                         </div>
@@ -1680,15 +1674,9 @@ selfManagedPlan:
                             $314
                             <span>/month</span>
                         </h4>
-                        <h3 class="pricing-square-price sub-price">
-                            $0.48/hour
-                        </h3>
-                        <h3 class="pricing-square-price sub-price hidden">
-                            $0.43/hour
-                        </h3>
                         <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/">
-                                Contact Us
+                            <a id="Pricing_TBMQ_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Growth%20plan%20for%20TBMQ">
+                                Get Started
                                 <span class="visually-hidden">to help you with your TBMQ Growth plan.</span>
                             </a>
                         </div>
@@ -1714,15 +1702,9 @@ selfManagedPlan:
                             $899
                             <span>/month</span>
                         </h4>
-                        <h3 class="pricing-square-price sub-price">
-                            $1.37/hour
-                        </h3>
-                        <h3 class="pricing-square-price sub-price hidden">
-                            $1.23/hour
-                        </h3>
                         <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/">
-                                Contact Us
+                            <a id="Pricing_TBMQ_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Scale%20plan%20for%20TBMQ">
+                                Get Started
                                 <span class="visually-hidden">to help you with your TBMQ Scale plan.</span>
                             </a>
                         </div>
@@ -1743,9 +1725,8 @@ selfManagedPlan:
                         <h4 class="pricing-square-price always-display">
                             Custom <span data-faq-id="tbmq-enterprise-unique-features" data-faq-link-size="70%"></span>
                         </h4>
-                        <span class="placeholder"></span>
                         <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                            <a id="Pricing_TBMQ_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&message=I%20am%20interested%20in%20Enterprise%20plan%20for%20TBMQ">
                                 Contact Us
                                 <span class="visually-hidden">to help you with your TBMQ Enterprise plan.</span>
                             </a>
@@ -5026,11 +5007,20 @@ selfManagedPlan:
                             <p>TBMQ Private Cloud is a fully managed, isolated deployment of the ThingsBoard MQTT Broker that our team provisions and operates for you. We handle the infrastructure setup, apply security patches, monitor your environment 24×7, run automated backups, and provide an SLA-backed uptime guarantee (99.9 %–99.99 %, depending on plan). Your engineering team can stay focused on developing IoT solutions and business logic without worrying about maintaining and scaling the MQTT infrastructure.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-compare-to-community-tb" data-title="How does TBMQ Private Cloud compare to TBMQ Community Edition and Thingsboard?">
+                    <div class="item" data-tag="h4" data-item-id="tbmq-stand-for" data-title="What is the difference between TBMQ and ThingsBoard?">
+                        <div class="container">
+                            <p>TBMQ and ThingsBoard serve distinct purposes for customers:</p>
+                            <ul>
+                                <li>TBMQ is a high-performance, fault-tolerant MQTT broker designed solely for ingesting, routing, and distributing MQTT messages at massive scale. It focuses on efficient topic multiplexing into Kafka topics, enabling reliable, low-latency messaging for millions of devices.</li>
+                                <li>ThingsBoard is an end-to-end IoT platform that includes device management, data collection, storage, visualization, rule engines, and dashboards. It integrates various protocols (MQTT, HTTP, CoAP) and offers user-friendly UI components, customizable workflows, and analytics.</li>
+                            </ul>
+                            <p>In practice, you might deploy TBMQ when you need a dedicated, scalable message pipeline—especially if you already use Kafka. ThingsBoard, on the other hand, provides a complete solution for IoT applications, enabling customers to onboard devices, process telemetry, and build dashboards without managing separate messaging infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-compare-to-community-tb" data-title="How does TBMQ Private Cloud compare to TBMQ Community Edition?">
                         <div class="container">
                             <ul>
                                 <li>TBMQ Community Edition is the open-source, highly scalable, and fault-tolerant MQTT broker. It is fully compliant with the MQTT protocol—suitable for custom setups where you manage everything yourself.</li>
-                                <li>ThingsBoard (Community or Professional Edition) is a complete IoT platform with advanced features like data visualization dashboards, rule engine for processing device data, device and asset management, OTA updates, alarm management, integrations, and more. It is designed for building end-to-end IoT solutions.</li>
                                 <li>TBMQ Private Cloud is a fully managed, production-grade deployment of TBMQ, isolated per customer, with 24×7 monitoring, automated backups, and an SLA-backed uptime guarantee. It’s the right choice when you need reliable MQTT infrastructure without managing DevOps.</li>
                             </ul>
                         </div>
@@ -5066,14 +5056,14 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-deployment-options" data-title="What deployment options are available within Private Cloud?">
-                        <div class="container">
-                            <p>Private Cloud is offered in three fixed tiers—Launch, Growth, and Scale—each designed to support different stages of your IoT deployment journey. The Enterprise plan is tailored for your use case and offers flexible architecture, pricing and custom SLA. <br><br></p>
-                            <p>All plans are powered by Kubernetes, with built-in load balancers to ensure resilient, scalable operations. AWS is our first-choice IaaS, but Azure or GCP regions are also supported on request.</p>
-                        </div>
-                    </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-deployment-options" data-title="What deployment options are available within Private Cloud?">
+                        <div class="container">
+                            <p>Private Cloud is offered in three fixed tiers—Launch, Growth, and Scale—each designed to support different stages of your IoT deployment journey. The Enterprise plan is tailored for your use case and offers flexible architecture, pricing and custom SLA. <br><br></p>
+                            <p>All plans are powered by Kubernetes, with built-in load balancers to ensure resilient, scalable operations.</p>
+                        </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-for-whom" data-title="Who should choose Private Cloud?">
                         <div class="container">
@@ -5099,7 +5089,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-data-gdpr" data-title="How can I get my data in line with GDPR requirements?">
                         <div class="container">
-                            <p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all tenant-level tables (entities, telemetry, audit logs, custom metadata) and transfer it to you over a secure channel (SFTP or your own cloud bucket). Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all tenant data within 30 days of your erase request.</p>
+                            <p>A: You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all system-level tables and transfer it to you over a secure channel (SFTP or your own cloud bucket). Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all system data within 30 days of your erase request.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-pc-gdpr-compliant" data-title="Is your Private Cloud service GDPR-compliant?">
@@ -5131,9 +5121,9 @@ selfManagedPlan:
                                 <li>Launch: $199/month — includes up to 2,000 sessions, 1,000 total messages per second, and 5 integrations. Includes 100 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
                                 <li>Growth: $349/month — includes up to 4,000 sessions, 2,000 total messages per second, and 10 integrations. Includes 200 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
                                 <li>Scale: $999/month — includes up to 20,000 sessions, 10,000 total messages per second, and 50 integrations. Includes 1 TB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
-                                <li>Enterprise: Custom pricing — includes unlimited sessions, message throughput, integrations, and monthly traffic. Comes with a custom SLA and can be tailored to specific deployment needs.</li>
+                                <li>Enterprise: Custom pricing — includes 100,000 sessions by default and no message rate limits. Extendable as needed based on specific deployment requirements.</li>
                             </ul>
-                            <p>Short-term traffic bursts and message rate spikes are tolerated. Sustained overages may require a plan upgrade.</p>
+                            <p>Short-term bursts up to 20% over the msg/sec ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-annual-discount" data-title="Do you offer a discount for annual payments?">
@@ -5162,7 +5152,7 @@ selfManagedPlan:
                             <ul>
                                 <li>Traffic usage beyond the included monthly limit – $0.15 per GB</li>
                             </ul>
-                            <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term traffic bursts and message rate spikes are tolerated. Sustained overages may require a plan upgrade.</p>
+                            <p>There are no message-rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 20 % over the msg/sec ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -5176,11 +5166,6 @@ selfManagedPlan:
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-invoice-automation" data-title="Are invoices issued automatically?">
                         <div class="container">
                             <p>Invoices are currently generated manually and sent to you at the start of each billing month, so you have the invoice in hand before the service period begins. We’re building a self-service billing portal with fully automated invoicing and expect to roll it out later this year.</p>
-                        </div>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-paypal-payment" data-title="Can I pay with PayPal?">
-                        <div class="container">
-                            <p>Yes, it is possible.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-invoice-taxes" data-title="Does your invoice include taxes?">
@@ -5221,7 +5206,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-burst-message-limit" data-title="Can I burst above the message limit and for how long?">
                         <div class="container">
-                            <p>Yes. Short-term bursts up to 10 % above the stated msgs-per-second ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
+                            <p>Yes. Short-term bursts up to 20% above the stated msgs-per-second ceiling for 15 minutes or less are absorbed automatically and carry no penalty.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-integration-definition" data-title="What exactly counts as an “integration”?">
@@ -5278,6 +5263,13 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
+                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
+                        <div class="container">
+                            <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
+                            <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
+                            <p>If storage usage grows beyond safe thresholds, the system will clean up old persistent messages. We monitor usage and can work with you to tune limits or expand capacity if needed.</p>
+                        </div>
+                    </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-message-rate-limit-importance" data-title="What is the message rate limit and why is it important?">
                         <div class="container">
                             <p>Each Private Cloud plan includes a predefined message rate limit measured in total messages per second. This is the most critical technical limit in our offering, as it defines how much telemetry data your system can process without impacting performance or SLA.<br><br></p>
@@ -5332,6 +5324,7 @@ selfManagedPlan:
                                 <li>Infrastructure processing costs – reflects actual compute and networking usage.</li>
                                 <li>Management fee – covers monitoring, updates, and support.</li>
                                 <li>Storage costs – based on allocated capacity and retention policy.</li>
+                                <li>Per-session fee – applies after the included 100,000 session threshold is exceeded.</li>
                             </ul>
                         </div>
                     </div>
@@ -5365,23 +5358,6 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-tbmq-addOns" class="pi-accordion">
-                    <div class="item" data-tag="h4" data-item-id="tbmq-purchase-additional-storage" data-title="Can I purchase additional storage?">
-                        <div class="container">
-                            <p>Yes, additional storage is available and automatically calculated based on your actual usage and retention policy. There's no need to make a separate manual request. At the end of each month, we assess your storage consumption, and any overage beyond your plan’s default quota is billed at $0.50 per GB. This ensures accurate, usage-based billing without administrative overhead on your side.</p>
-                        </div>
-                    </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
-                        <div class="container">
-                            <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
-                            <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
-                            <p>If storage usage grows beyond safe thresholds, the system will clean up old persistent messages. We monitor usage and can work with you to tune limits or expand capacity if needed.</p>
-                        </div>
-                    </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-undelivered-messages-retention-period" data-title="How long are undelivered messages for persistent sessions retained?">
-                        <div class="container">
-                            <p>Undelivered messages for persistent sessions are retained for 1 day. After that period, they are automatically discarded.</p>
-                        </div>
-                    </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ha-services-addon" data-title="Are high-availability services available as an add-on?">
                         <div class="container">
                             <p>High-availability (HA) services are built into the structure of Private Cloud starting Scale plan and are not offered separately as an add-on.<br></p>
