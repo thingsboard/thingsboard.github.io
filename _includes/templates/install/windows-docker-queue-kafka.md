@@ -77,4 +77,4 @@ volumes:
     driver: local
 
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}

@@ -74,6 +74,6 @@ volumes:
     name: tb-ce-postgres-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}
 
 You can update default Rule Engine queues configuration using UI. More about ThingsBoard Rule Engine queues see in [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).

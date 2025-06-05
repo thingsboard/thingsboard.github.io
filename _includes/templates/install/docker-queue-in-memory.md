@@ -45,4 +45,4 @@ volumes:
     name: tb-ce-postgres-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}

@@ -69,4 +69,4 @@ volumes:
     name: tb-pe-license-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}

@@ -99,4 +99,4 @@ volumes:
     name: tb-pe-kafka-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}
