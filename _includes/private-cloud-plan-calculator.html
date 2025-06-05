@@ -743,8 +743,7 @@
                 return;
             }
 
-            gtag("event", "private_cloud_calculator", {
-                "event_category": "Private Cloud Calculator",
+            window.dataLayer.push({'event': 'calculator_interaction',
                 'calculator_devices': parseInt(devicesInput.value) || 0,
                 'calculator_messages': parseInt(messagesInput.value) || 0,
                 'calculator_message_unit': messageUnitSelect.value,
