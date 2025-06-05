@@ -597,7 +597,7 @@ selfManagedPlan:
                                 <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
                                 <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
                                 <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Upon request</a></td>
-                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults"><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></a></td>
+                                <td><a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults"><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></a></td>
                             </tr>
                         </tbody>
                     </table>
