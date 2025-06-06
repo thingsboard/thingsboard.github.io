@@ -38,6 +38,7 @@ here:
 
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `8883:8883`            - connect local port 8883 to exposed internal MQTT over SSL port 8883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
 - `tb-postgres-data` - name of the docker volume that stores the PostgreSQL's data
