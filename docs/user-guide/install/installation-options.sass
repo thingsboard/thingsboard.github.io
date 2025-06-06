@@ -43,76 +43,61 @@ $install-color: #506dad
               display: none
               &.active
                 display: block
-            .deployment-cards
-              padding-bottom: 40px
-              .deployment-cards-container
+              .installation-card-content-wrapper
                 display: flex
-                flex-wrap: wrap
                 justify-content: center
-                .deployment-card-block
-                  margin-right: 12px
-                  margin-bottom: 12px
-                  a
-                    display: block
-                    width: 190px
-                    height: 120px
-                    min-width: 190px
-                    border: 1px solid #ebebeb
-                    padding: 3px
-                    border-radius: 6px
-                    cursor: pointer
-                    text-decoration: none
-                    &:hover
-                      border: 4px solid #2A7DEC
-                      padding: 0
-                      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05), 0px 30px 30px -20px rgba(0, 0, 0, 0.15)
-                  .deployment-logo
-                    width: 100%
-                    height: 100%
-                    padding: 15px 25px
-                    position: relative
+                flex-wrap: wrap
+                gap: 20px
+                .installation-card-container.installation-card-content-coming-soon
+                  &:hover
+                    background: #F5F5F5
+                  .installation-card-content
+                    filter: grayscale(100%)
+                .installation-card-container
+                  border-radius: 16px
+                  background: #FFF
+                  transition: ease-in-out 0.3s
+                  border: 1px solid rgba(0, 0, 0, 0.08)
+                  width: 258px
+                  min-height: 244px
+                  position: relative
+                  padding: 24px
+                  &:hover
+                    box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+                    background: #F4F8FE
+                    .installation-card-content
+                      text-decoration: none
+                      img
+                        scale: 1.22
+                  .installation-card-content
                     display: flex
-                    justify-content: center
-                    align-items: center
-                    align-content: center
+                    flex-direction: column
+                    text-decoration: none
                     img
-                      flex: 0 0 auto
-                      object-fit: contain
-                      vertical-align: middle
-                      width: 100%
-                      height: 100%
-                    &.coming-soon
-                      &:after
-                        content: ""
-                        position: absolute
-                        top: 0
-                        left: 0
-                        right: 0
-                        bottom: 0
-                        background-image: url("/images/install/coming-soon.png")
-                        background-size: contain
-                        opacity: 0.5
-                        background-color: #fff
-                  &.text
-                    a
-                      height: 200px
-                      width: 240px
-                      text-align: center
-                      .deployment-logo
-                        display: table-row
-                        h5
-                          margin-top: unset
-                          color: #212529
-                          display: flex
-                          padding-left: 20px
-                          padding-right: 20px
-                        img
-                          height: 120px
-                          width: 152px
-                          padding: 20px
-                      &:hover
-                        .deployment-logo h5
-                          color: #2a7dec
+                      transition: ease-in-out 0.3s
+                      margin-bottom: 28px
+                      transform-origin: top left
+                    span
+                      font-size: 16px
+                      font-weight: 500
+                      line-height: 28px
+                      color: rgba(0, 0, 0, 0.87)
+                      margin-bottom: 8px
+                    p
+                      font-size: 14px
+                      font-weight: 400
+                      line-height: 24px
+                      color: rgba(0, 0, 0, 0.76)
+                  .coming-soon-crisp
+                    position: absolute
+                    top: 16px
+                    right: 16px
+                    padding: 4px 8px
+                    border-radius: 6px
+                    background: #EEF5FD
+                    filter: none
+                    z-index: 2
+
         .one-line-deployment-container
           padding-top: 0
         .install-navigation
