@@ -516,7 +516,7 @@ selfManagedPlan:
             </div>
             <div class="plans-comparison">
                 <h2>Additional features</h2>
-                <p>See key subscription plan features in the table below. View the full subscription plan <a href="/docs/private-cloud/subscription/">description</a> <a href="/docs/private-cloud/subscription/">here </a>.</p>
+                <p>See key subscription plan features in the table below. View the full subscription plan description <a href="/docs/private-cloud/subscription/">here</a>.</p>
                 <div class="comparison-table-container">
                     <table>
                         <thead>
