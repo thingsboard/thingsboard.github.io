@@ -10,7 +10,7 @@ A list of platforms that supports the OAuth 2.0 protocol: [Google](#login-with-g
 
 ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token.   
 Once the user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and will use it to request an access token from the external user management platform.
-Using the [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper), external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user. 
+Using the [basic mapper](#basic-mapper) or [custom mapper](#custom-mapper), external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user. 
 After this, the regular ThingsBoard authorization flow will happen.
 
 ## Setting up authentication via an external provider
@@ -92,9 +92,9 @@ In this sample, we will be using authentication via [Google](https://developers.
 The user is going to be logged as the Tenant, and the Tenant name is going to be equal to the user's email.
 If the Tenant does not exist in the system, the new Tenant will be created.
 
-To map this external user information from Google and the OAuth platform, we use the built-in [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper).
+To map this external user information from Google and the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
 
-If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
+If [basic mapper](#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
 
 ### Preparations
 
@@ -187,9 +187,9 @@ In this sample, we will configure **OAuth** using an external provider for authe
 The User is going to be logged as the Tenant which name is going to be equal to a user email domain name.  
 Additionally, for every user, we are going to create a new Customer and the Customer name is going to be equal to a user email.
 
-To map this external user information from Auth0 and the OAuth platform, we use the built-in [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper).
+To map this external user information from Auth0 and the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
 
-If [basic mapper](/docs/user-guide/oauth-2-support/#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](/docs/user-guide/oauth-2-support/#custom-mapper)  so that you are able to add an implementation that fits under your specific needs.
+If [basic mapper](#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](#custom-mapper)  so that you are able to add an implementation that fits under your specific needs.
 
 ### Preparations
 
@@ -287,9 +287,9 @@ In this sample, we will be using authentication via [Keycloak](https://www.keycl
 The user is going to be logged as the Tenant, and the Tenant name is going to be equal to the user's email.
 If the Tenant does not exist in the system, the new Tenant will be created.
 
-To map this external user information from Keycloak and the OAuth platform, we use the built-in [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper).
+To map this external user information from Keycloak and the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
 
-If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
+If [basic mapper](#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
 
 ### Preparations
 
