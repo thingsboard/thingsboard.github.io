@@ -12,7 +12,7 @@ onPremise:
   0:
     title: Docker (Linux or Mac OS)
     description: This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
-    link: https://thingsboard.io/docs/user-guide/install/docker/
+    link: /docs/user-guide/install/docker/
     icon: /images/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
     imageTitleAttribute: Install ThingsBoard using Docker on Linux or macOS
@@ -21,7 +21,7 @@ onPremise:
   1:
     title: Docker (Windows)
     description: This guide will help you to install and start ThingsBoard using Docker on Windows.
-    link: https://thingsboard.io/docs/user-guide/install/docker-windows/
+    link: /docs/user-guide/install/docker-windows/
     icon: /images/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
     imageTitleAttribute: Install ThingsBoard using Docker on Windows
@@ -30,7 +30,7 @@ onPremise:
   2:
     title: Ubuntu Server
     description: Install ThingsBoard on Ubuntu 20.04 / 22.04 / 24.04 with PostgreSQL or Cassandra, depending on your setup.
-    link: https://thingsboard.io/docs/user-guide/install/ubuntu/
+    link: /docs/user-guide/install/ubuntu/
     icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo
     imageTitleAttribute: Install ThingsBoard on Ubuntu Server
@@ -39,7 +39,7 @@ onPremise:
   3:
     title: CentOS/RHEL Server
     description: Set up ThingsBoard on RHEL, CentOS, Alma, Rocky, or Oracle Linux with required system resources.
-    link: https://thingsboard.io/docs/user-guide/install/rhel/
+    link: /docs/user-guide/install/rhel/
     icon: /images/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
     imageTitleAttribute: Install ThingsBoard on CentOS, RHEL, Alma, Rocky, or Oracle Linux
@@ -48,7 +48,7 @@ onPremise:
   4:
     title: Windows
     description: Install ThingsBoard on Windows 10/11 with at least PostgreSQL or Cassandra, depending on usage.
-    link: https://thingsboard.io/docs/user-guide/install/windows/
+    link: /docs/user-guide/install/windows/
     icon: /images/install/platform/windows.svg
     alt: Windows logo
     imageTitleAttribute: Install ThingsBoard on Windows 10 or 11
@@ -57,7 +57,7 @@ onPremise:
   5:
     title: Raspberry Pi
     description: Run ThingsBoard on Raspberry Pi with a minimum of 4GB RAM for PostgreSQL or 8GB for Cassandra.
-    link: https://thingsboard.io/docs/user-guide/install/rpi/
+    link: /docs/user-guide/install/rpi/
     icon: /images/install/platform/rpi3.svg
     alt: Raspberry Pi logo
     imageTitleAttribute: Install ThingsBoard on Raspberry Pi
@@ -66,7 +66,7 @@ onPremise:
   6:
     title: Building from sources
     description: Download and compile ThingsBoard from source code on Ubuntu or CentOS for full control & custom.
-    link: https://thingsboard.io/docs/user-guide/install/building-from-source/
+    link: /docs/user-guide/install/building-from-source/
     icon: /images/install/platform/sources.svg
     alt: Maven logo
     imageTitleAttribute: Build ThingsBoard from source using Maven
@@ -75,7 +75,7 @@ onPremise:
   7:
     title: Cluster setup
     description: Set up ThingsBoard in cluster mode using Minikube, OpenShift, Docker Compose with Kubernetes.
-    link: https://thingsboard.io/docs/user-guide/install/cluster-setup/
+    link: /docs/user-guide/install/cluster-setup/
     icon: /images/install/platform/cluster-ce.svg
     alt: Cluster and Kubernetes icons
     imageTitleAttribute: Set up ThingsBoard cluster with Kubernetes or Minikube
@@ -85,7 +85,7 @@ cloud:
   0:
     title: AWS
     description: This guide will help you to setup ThingsBoard in AWS EC2 instance & AWS EKS platform.
-    link: https://thingsboard.io/docs/user-guide/install/aws/
+    link: /docs/user-guide/install/aws/
     icon: /images/install/cloud/aws.svg
     alt: AWS logo
     imageTitleAttribute: Set up ThingsBoard using AWS EC2 or EKS
@@ -94,7 +94,7 @@ cloud:
   1:
     title: Azure
     description: Here you can find scripts for different deployment scenarios using Azure AKS platform.
-    link: https://thingsboard.io/docs/user-guide/install/azure/
+    link: /docs/user-guide/install/azure/
     icon: /images/install/cloud/azure.svg
     alt: Microsoft Azure logo
     imageTitleAttribute: Deploy ThingsBoard on Microsoft Azure
@@ -103,7 +103,7 @@ cloud:
   2:
     title: DigitalOcean
     description: This guide describes how to install ThingsBoard Community Edition on DigitalOcean.
-    link: https://thingsboard.io/docs/user-guide/install/digital-ocean/
+    link: /docs/user-guide/install/digital-ocean/
     icon: /images/install/cloud/digitalocean.svg
     alt: DigitalOcean logo
     imageTitleAttribute: Install ThingsBoard on DigitalOcean
@@ -112,7 +112,7 @@ cloud:
   3:
     title: Google Cloud Platform
     description: This guide will help you to setup ThingsBoard in GCP VM instance & scenarios using GCP infrastructure.
-    link: https://thingsboard.io/docs/user-guide/install/gcp/
+    link: /docs/user-guide/install/gcp/
     icon: /images/install/cloud/gcp.svg
     alt: Google Cloud Platform logo
     imageTitleAttribute: Deploy ThingsBoard on Google Cloud infrastructure
@@ -121,7 +121,7 @@ cloud:
   4:
     title: IBM Cloud
     description: Installing ThingsBoard CE from IBM Cloud Marketplace.
-    link: https://thingsboard.io/docs/user-guide/install/ibm-cloud/
+    link: /docs/user-guide/install/ibm-cloud/
     icon: /images/install/cloud/ibm-cloud.svg
     alt: IBM Cloud logo
     imageTitleAttribute: IBM Cloud support coming soon
@@ -131,7 +131,7 @@ cloud:
   5:
     title: Alibaba Cloud
     description: Installing ThingsBoard CE on Alibaba Cloud.
-    link: https://thingsboard.io/docs/user-guide/install/alibaba-cloud/
+    link: /docs/user-guide/install/alibaba-cloud/
     icon: /images/install/cloud/alibaba.svg
     alt: Alibaba Cloud logo
     imageTitleAttribute: Alibaba Cloud support coming soon
