@@ -92,12 +92,12 @@ services:
      USE_NEW_PAGE_FOR_REPORT: true
 volumes:
   postgres-data:
-    name: tb-pe-postgres-data
+    name: tb-postgres-data
     driver: local
   license-data:
     name: tb-pe-license-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}
 
 You can update default Rule Engine queues configuration using UI. More about ThingsBoard Rule Engine queues see in [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).

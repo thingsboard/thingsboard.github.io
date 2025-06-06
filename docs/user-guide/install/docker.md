@@ -42,7 +42,7 @@ Where:
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
-- `tb-ce-postgres-data` - name of the docker volume that stores the PostgreSQL's data
+- `tb-postgres-data` - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-ce`             - friendly local name of the ThingsBoard container
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `image: "thingsboard/tb-node:4.0.1.1"`          - ThingsBoard docker image and version.
@@ -61,6 +61,14 @@ Environment variables:
 - `INSTALL_TB=true` - Installs the core database schema and system resources (widgets, images, rule chains, etc.).
 - `LOAD_DEMO=true` - Loads sample tenant account, dashboards and devices for evaluation and testing.
 
+## Start the platform & tail logs
+
+Bring up all containers in detached mode, then follow the ThingsBoard logs:
+
+```bash
+docker compose up -d && docker compose logs -f thingsboard-ce
+```
+
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 Use the following default credentials:
 
@@ -69,14 +77,6 @@ Use the following default credentials:
 - **Customer User**: customer@thingsboard.org / customer
     
 You can always change passwords for each account in account profile page.
-
-## Start the platform & tail logs
-
-Bring up all containers in detached mode, then follow the ThingsBoard logs:
-
-```bash
-docker compose up -d && docker compose logs -f thingsboard-ce
-```
 
 You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 

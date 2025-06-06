@@ -70,11 +70,11 @@ services:
 
 volumes:
   postgres-data:
-    name: tb-ce-postgres-data
+    name: tb-postgres-data
     driver: local
   kafka-data:
     name: tb-ce-kafka-data
     driver: local
 
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}
