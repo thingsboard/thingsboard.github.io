@@ -64,7 +64,7 @@ Environment variables:
 Bring up all containers in detached mode, then follow the ThingsBoard logs (use PowerShell for the command below):
 
 ```bash
-docker compose up -d; if ($?) {docker compose logs -f thingsboard-ce}
+docker compose up -d; docker compose logs -f thingsboard-ce
 ```
 
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.

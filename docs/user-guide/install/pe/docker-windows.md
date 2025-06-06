@@ -70,7 +70,7 @@ Environment variables:
 Bring up all containers in detached mode, then follow the ThingsBoard logs (use PowerShell for the command below):
 
 ```bash
-docker compose up -d; if ($?) {docker compose logs -f thingsboard-pe}
+docker compose up -d; docker compose logs -f thingsboard-pe
 ```
 {: .copy-code}
 
