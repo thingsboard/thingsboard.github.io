@@ -38,15 +38,11 @@ toc:
     path: /docs/user-guide/dashboards/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
-  - title: SCADA
   - title: Unit conversion
     path: /docs/user-guide/ui/unit-conversion/
     new: true
-  - title: SCADA
   - title: Layouts
     path: /docs/user-guide/ui/layouts/
-  - title: Aliases
-    path: /docs/user-guide/ui/aliases/
   - title: SCADA
     new: true
     section:
