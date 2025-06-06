@@ -57,7 +57,7 @@ Traffic is measured as the sum of all MQTT packet payloads sent and received by 
           <td>50</td>
           <td>Unlimited</td>
           <td>Maximum number of <a href="/docs/mqtt-broker/architecture/#persistent-client">persistent</a> Application clients and 
-<a href="/docs/mqtt-broker/architecture/#persistent-client">Integrations</a> managed by the broker, including both connected and temporarily disconnected ones</td>
+<a href="/docs/mqtt-broker/integrations/">Integrations</a> managed by the broker, including both connected and temporarily disconnected ones</td>
       </tr>
       <tr>
           <td>Application topic size</td>
