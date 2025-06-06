@@ -516,7 +516,7 @@ selfManagedPlan:
             </div>
             <div class="plans-comparison">
                 <h2>Additional features</h2>
-                <p>See key subscription plan features in the table below. View the full subscription plan <a href="/docs/private-cloud/subscription/">description</a> <a href="/docs/private-cloud/subscription/">here </a>.</p>
+                <p>See key subscription plan features in the table below. View the full subscription plan description <a href="/docs/private-cloud/subscription/">here</a>.</p>
                 <div class="comparison-table-container">
                     <table>
                         <thead>
@@ -1608,7 +1608,7 @@ selfManagedPlan:
     </div>
  </div>  
 </div>
-<div id="tbmq" class="pricing-content" style="display: none;">
+<div id="tbmq" class="pricing-content" style="display: none; margin-bottom: 12vh">
     <div class="container">
         <div class="pricing-content-header row not-reverse-column">
             <div class="pricing-content-description always-display active col-lg-6">
@@ -1740,6 +1740,14 @@ selfManagedPlan:
                     </div>
                 </div>
                </div>
+            </div>
+        </div>
+        <div class="additional-content">
+            <div class="plan-calculator-block">
+                <div class="text">
+                    <h2 class="no-margin">Whant to know more about the subsription?</h2>
+                </div>
+                <a class="button reset gtm_button" href="/docs/mqtt-broker/subscription/">See full details</a>
             </div>
         </div>
     </div>
@@ -5040,7 +5048,6 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-pc-vs-sh" data-title="What are the benefits of Private Cloud versus self-hosting?">
                         <div class="container">
-                            <p>Unlimited number of devices and assets means there are no software limits on creating devices and assets on the edge side. However, in real-world deployments, several factors must be considered to host a large number of devices:</p>
                             <ul>
                                 <li>Zero DevOps overhead – no servers to set up, patch or monitor.</li>
                                 <li>Guaranteed availability – written SLA of 99.9 – 99.99 %, with service-credit remedies.</li>
@@ -5271,7 +5278,7 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
                         <div class="container">
                             <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
                             <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
