@@ -48,7 +48,7 @@ Where:
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
 - `tb-pe-license-data`   - name of the docker volume that stores the Thingsboard's license instance data file
-- `tb-pe-postgres-data`   - name of the docker volume that stores the PostgreSQL's data
+- `tb-postgres-data`   - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-pe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-pe-node:{{ site.release.pe_full_ver }}`          - docker image.

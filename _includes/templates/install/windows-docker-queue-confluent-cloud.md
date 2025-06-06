@@ -71,7 +71,7 @@ services:
 
 volumes:
   postgres-data:
-    name: tb-ce-postgres-data
+    name: tb-postgres-data
     driver: local
 ```
 {: .copy-code.expandable-15}

@@ -42,7 +42,7 @@ Where:
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
-- `tb-ce-postgres-data` - name of the docker volume that stores the PostgreSQL's data
+- `tb-postgres-data` - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-ce`             - friendly local name of the ThingsBoard container
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `image: "thingsboard/tb-node:4.0.1.1"`          - ThingsBoard docker image and version.

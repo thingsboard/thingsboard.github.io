@@ -63,7 +63,7 @@ services:
      USE_NEW_PAGE_FOR_REPORT: true
 volumes:
   postgres-data:
-    name: tb-pe-postgres-data
+    name: tb-postgres-data
     driver: local
   license-data:
     name: tb-pe-license-data
