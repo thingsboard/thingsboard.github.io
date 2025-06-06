@@ -2,6 +2,7 @@
 layout: docwithnav-pe-edge
 title: TCP Integration
 description: TCP Integration Guide
+docsPrefix: pe/edge/
 
 addConverter:
     0:
@@ -53,33 +54,33 @@ assignIntegration:
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/tcp/send-uplink-step-1.png
+        image: /images/pe/edge/integrations/tcp/send-uplink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/send-uplink-step-2.png
+        image: /images/pe/edge/integrations/tcp/send-uplink-step-2.webp
 
 device:
     0:
-        image: /images/pe/edge/integrations/tcp/device.png
+        image: /images/pe/edge/integrations/tcp/device.webp
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/tcp/converter-events-step-1.png
+        image: /images/pe/edge/integrations/tcp/converter-events-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/converter-events-step-2.png
+        image: /images/pe/edge/integrations/tcp/converter-events-step-2.webp
     2:
-        image: /images/pe/edge/integrations/tcp/converter-events-step-3.png
+        image: /images/pe/edge/integrations/tcp/converter-events-step-3.webp
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/tcp/add-shared-attribute.png
+        image: /images/pe/edge/integrations/tcp/add-shared-attribute.webp
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/tcp/downlink-message.png
+        image: /images/pe/edge/integrations/tcp/downlink-message.webp
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/tcp/downlink-terminal.png
+        image: /images/pe/edge/integrations/tcp/downlink-terminal.webp
 
 ---
 
@@ -290,15 +291,26 @@ Once the converter and integration templates are created, we can assign the **In
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-#### Installing and running external TCP Integration
+### Installing and running external TCP Integration
 
-See the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations){: target="_blank"} and install the **TCP Integration service** locally or on a separate machine.
+To install the remote TCP Integration service on a local or separate machine, select the appropriate platform.
 
-Please use the **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
+{% capture key-secret-note %}
+Use the **Integration key** and **Integration secret** to complete the TCP Integration configuration.
+{% endcapture %}
+{% include templates/info-banner.md content=key-secret-note %}
+
+{% capture selectPlatform %}
+Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
+Docker on Windows%,%docker-windows%,%templates/edge/integrations/resources/docker-on-windows.md%br%
+Ubuntu%,%ubuntu%,%templates/edge/integrations/resources/ubuntu.md%br%
+CentOS/RHEL Server%,%centos%,%templates/edge/integrations/resources/centos-rhel.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="selectPlatform" toggle-spec=selectPlatform %}
 
 ### Send uplink message
 
-Once the ThingsBoard TCP Integration is created, the TCP server is started, and then waits for data from the devices.
+Once the ThingsBoard TCP Integration has been created, the **TCP server** starts, and then it waits for data from the devices.
 
 To send the uplink message, select the device payload type:
 
@@ -311,28 +323,42 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.m
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
-The created device with data can be seen in the **Device groups > All** section of the **Edge** instance:
+To view the received time-series data, go to the **Entities > Devices** section, click the **device** and select the **"Latest telemetry"** tab:
 
 {% include images-gallery.html imageCollection="device" %}
 
-The received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
+The received data can be viewed in the **Uplink converter**:
+- Go to the **Integrations center > Data converters** section and click the **Uplink converter**.
+- On the **"Data converter details"** page, select the **"Events"** tab.
+- View the message details in the **"In"** and **"Out"** columns.
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-### Send downlink message
+### Send a downlink message
 
-Now let's check the downlink functionality. Let's add the **firmware** shared attribute:
+To check the downlink functionality. Let's add the **firmware** shared attribute:
+
+* Go to the **Entities > Devices** section, click the device to open the **“Device details”** page.
+* Select the **“Attributes”** tab and the **“Shared attributes”** scope.
+* To add the **firmware** attribute, click the **“Add”** button and enter the configuration parameters.
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To ensure that the downlink message is sent to the integration, you can check the **"Events"** tab of the integration:
+To confirm the downlink message sent to the device, go to the **Integrations center > Integrations** section, 
+click the **TCP integration** and select the **“Events”** tab:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-Now we need to send another message to the TCP integration and see the downlink response.
-To send the message, use the same command you used before.
+To see the downlink response, select and send another message to the **TCP integration**:
 
-See an example of the message that was sent and the response from the **ThingsBoard Edge** in the terminal:
+{% capture tabspec %}send-downlink-message-tcp
+send-downlink-message-text-tcp,Text payload,shell,resources/downlink-tcp/downlink-message-text-tcp.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-text-tcp.sh
+send-downlink-message-text-tcp-multi,<div style="text-align:center;">Text payload<br><small>(multiple messages)</small></div>,shell,resources/downlink-tcp/downlink-message-text-tcp-multi.sh
+send-downlink-message-json-tcp,JSON payload,shell,resources/downlink-tcp/downlink-message-json-tcp.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-json-tcp.sh
+send-downlink-message-binary-tcp,Binary payload,shell,resources/downlink-tcp/downlink-message-binary-tcp.sh,/docs/pe/edge/user-guide/resources/downlink-tcp/downlink-message-binary-tcp.sh{% endcapture %}
+{% include tabs.html %}
+
+An example of the message sent to the device and the response from **ThingsBoard Edge** in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 

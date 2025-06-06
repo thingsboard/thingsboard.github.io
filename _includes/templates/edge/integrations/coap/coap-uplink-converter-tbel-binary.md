@@ -1,4 +1,5 @@
-Now copy & paste the following script to the TBEL Decoder function section:
+* Select the **"Create new"** tab and enter the **converter name**.
+* Copy and insert the **TBEL Decoder function** script:
 
 ```javascript
 /** Decoder **/
@@ -27,8 +28,10 @@ var result = {
 
 return result;
 ``` 
-{: .copy-code}
+{: .copy-code.expandable-8}
 
-![image](/images/pe/edge/integrations/coap/add-coap-integration-template-binary-payload-2-edge.png)
+{% include images-gallery.html imageCollection="binary-converter" %}
 
-If you want to use JavaScript to develop functions, please use [the binary payload script for JS](/docs/pe/edge/user-guide/resources/binary-payload-converter.json){:target="_blank"}.
+* After adding the uplink converter, click the **"Next"** button.
+
+If you want to develop functions using **JavaScript**, please use [the binary payload script for JS](/docs/pe/edge/user-guide/resources/binary-payload-converter.json){:target="_blank"}.

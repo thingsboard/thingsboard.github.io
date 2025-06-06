@@ -19,6 +19,8 @@ echo -e 'SN-002,default,temperature,25.7\nSN-002,default,humidity,69' | nc -q1 -
 
 ![image](/images/user-guide/integrations/tcp/tcp-terminal-text-add-attribute-2.png)
 
+{% unless page.docsPrefix == "pe/edge/" %}
+
 If you want to send a message back to the device using **Downlink,** the command will look like this:
 
 ```shell
@@ -36,3 +38,5 @@ echo -e 'SN-002,default,temperature,25.7\nSN-002,default,humidity,69' | nc -w60 
 {: .copy-code}
 
 ![image](/images/user-guide/integrations/tcp/tcp-terminal-text-downlink-message-2.png)
+
+{% endunless %}

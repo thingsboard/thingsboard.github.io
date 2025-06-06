@@ -52,33 +52,33 @@ assignIntegration:
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/udp/send-uplink-step-1.png
+        image: /images/pe/edge/integrations/udp/send-uplink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/udp/send-uplink-step-2.png
+        image: /images/pe/edge/integrations/udp/send-uplink-step-2.webp
 
 device:
     0:
-        image: /images/pe/edge/integrations/udp/device.png
+        image: /images/pe/edge/integrations/udp/device.webp
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/udp/converter-events-step-1.png
+        image: /images/pe/edge/integrations/udp/converter-events-step-1.webp
     1:
-        image: /images/pe/edge/integrations/udp/converter-events-step-2.png
+        image: /images/pe/edge/integrations/udp/converter-events-step-2.webp
     2:
-        image: /images/pe/edge/integrations/udp/converter-events-step-3.png
+        image: /images/pe/edge/integrations/udp/converter-events-step-3.webp
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/udp/add-shared-attribute.png
+        image: /images/pe/edge/integrations/udp/add-shared-attribute.webp
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/udp/downlink-message.png
+        image: /images/pe/edge/integrations/udp/downlink-message.webp
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/udp/downlink-terminal.png
+        image: /images/pe/edge/integrations/udp/downlink-terminal.webp
 
 ---
 
@@ -298,13 +298,29 @@ Once the converter and integration templates are created, we can assign the inte
 
 ### Installing and running external UDP Integration
 
-Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrations/remote-integrations){: target="_blank"} and install the UDP Integration service locally or on a separate machine.
+To install the **remote UDP Integration service** on a local or separate machine, select the corresponding platform.
 
-Please use the **Integration key** and **Integration secret** from the above section for the UDP Integration configuration.
+{% capture key-secret-note %}
+Use the **Integration key** and **Integration secret** to complete the UDP Integration configuration.
+{% endcapture %}
+{% include templates/info-banner.md content=key-secret-note %}
 
-### Send uplink message
+{% capture selectPlatform %}
+Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
+Docker on Windows%,%docker-windows%,%templates/edge/integrations/resources/docker-on-windows.md%br%
+Ubuntu%,%ubuntu%,%templates/edge/integrations/resources/ubuntu.md%br%
+CentOS/RHEL Server%,%centos%,%templates/edge/integrations/resources/centos-rhel.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="selectPlatform" toggle-spec=selectPlatform %}
+
+### Send an uplink message
 
 Once the **ThingsBoard UDP Integration** has been created, the UDP server starts, and then it waits for data from the devices.
+
+{% capture debug %}
+Before you proceed, ensure that the **Debug mode is enabled**.
+{% endcapture %}
+{% include templates/info-banner.md content=debug %}
 
 Select the device payload type to send the uplink message:
 
@@ -318,32 +334,43 @@ Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endca
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
-To view the created device with data in the **Device groups > All** section on the Edge:
+To view the received time-series data, go to the **Entities > Devices** section, click the **device** and select the **"Latest telemetry"** tab:
 
 {% include images-gallery.html imageCollection="device" %}
 
-The received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the **"Events"** tab:
+The received data can be viewed in the **Uplink converter**:
+- Go to the **Integrations center > Data converters** section and click the **Uplink converter**.
+- On the **"Data converter details"** page, select the **"Events"** tab.
+- View the message details in the **"In"** and **"Out"** columns. 
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
 ### Send the downlink message
 
-Now let's check the downlink functionality. 
+To view the **downlink response**, send another message to the UDP integration.
+Use the uplink command, but replace the **-w1** parameter with **-q120**. 
+These changes will cause the **nc** utility to wait **120 seconds** for the **downlink message**.
 
-Now we need to send another message to the UDP integration to see the downlink response.
-Please use the same command as before, but replace the parameter **q1** with **q120**. 
-With these changes, the **nc** utility will wait 120 seconds for the downlink message.
-In addition, please remove the **w1** parameter.
+{% capture tabspec %}send-downlink-message
+send-downlink-message-text,Text payload,shell,resources/downlink/downlink-message-text.sh,/docs/pe/edge/user-guide/resources/downlink/downlink-message-text.sh
+send-downlink-message-json,JSON payload,shell,resources/downlink/downlink-message-json.sh,/docs/pe/edge/user-guide/resources/downlink/downlink-message-json.sh
+send-downlink-message-binary,Binary payload,shell,resources/downlink/downlink-message-binary.sh,/docs/pe/edge/user-guide/resources/downlink/downlink-message-binary.sh
+send-downlink-message-hex,Hex payload,shell,resources/downlink/downlink-message-hex.sh,/docs/pe/edge/user-guide/resources/downlink/downlink-message-hex.sh{% endcapture %}
+{% include tabs.html %}
 
-After you'll send uplink command, you have **120 seconds** to add **firmware** shared attribute:
+After sending the **uplink command**, you have **120 seconds** to add a shared **firmware** attribute:
+- Go to the **Entities > Devices** section, click the **device** to open the **"Device details"** page.
+- Select the **"Attributes"** tab and the **"Shared attributes"** scope.
+- To add the **firmware** attribute, click the **"Add"** button and enter the configuration parameters.
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To make sure that the downlink message sent to the integration, you can check the **"Events"** tab of integration:
+To confirm the downlink message sent to the device, go to the **Integrations center > Integrations** section, 
+click the **UDP integration** and select the **"Events"** tab:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-An example of a sent message and a response from ThingsBoard Edge in the terminal:
+The example of the message sent to the device and the response from **ThingsBoard Edge** in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 

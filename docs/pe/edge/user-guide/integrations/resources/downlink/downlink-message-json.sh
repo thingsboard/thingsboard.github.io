@@ -1,0 +1,1 @@
+echo -e -n '{"deviceName": "SN-001", "deviceType": "default", "temperature": 25.7, "humidity": 69}' | nc -q120 -u 127.0.0.1 11560
