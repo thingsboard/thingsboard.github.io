@@ -45,7 +45,7 @@ Where:
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
-- `tb-pe-license-data`   - name of the docker volume that stores the Thingsboard's license instance data file
+- `tb-pe-license-data`   - name of the docker volume that stores the ThingsBoard's license instance data file
 - `tb-postgres-data`   - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-pe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
@@ -77,9 +77,9 @@ docker compose up -d; if ($?) {docker compose logs -f thingsboard-pe}
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 
 {% capture tb_web_report_localhost_info %}
-**Note that web-reports will generate only if you access Thingsboard via external IP address or domain name.**
+**Note that web-reports will generate only if you access ThingsBoard via external IP address or domain name.**
 
-**Web-report will not generate if you access Thingsboard by** `http://localhost:8080`
+**Web-report will not generate if you access ThingsBoard by** `http://localhost:8080`
 {% endcapture %}
 {% include templates/info-banner.md content=tb_web_report_localhost_info %}
 
