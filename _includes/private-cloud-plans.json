@@ -32,7 +32,7 @@
       "name": "Scale",
       "price": 3999,
       "includedDevices": 50000,
-      "maxMsgPerMin": 200000,
+      "maxMsgPerMin": 500000,
       "storage": 2048,
       "extraDevicePrice": 0.08,
       "database": "NoSQL",
