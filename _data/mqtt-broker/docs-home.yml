@@ -79,6 +79,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: Settings
       path: /docs/mqtt-broker/user-guide/ui/settings/
+- title: Subscriptions
+  path: /docs/mqtt-broker/subscription/
 - title: Need Help?
   path: /docs/mqtt-broker/help/
 - title: Troubleshooting
