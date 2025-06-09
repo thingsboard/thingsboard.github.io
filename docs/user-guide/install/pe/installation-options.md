@@ -21,18 +21,27 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                 </div>
             </div>
             <div class="deployment-container">
-                <nav id="install-navigation" class="install-navigation">
-                     <ul id="menu-install-navigation-1" class="menu">
-                        <li id="menu-item-liveDemo" class="menu-item tb-live-demo">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('liveDemo')">Live demo</a>
+                <nav id="install-navigation" class="install-navigation" data-target-id="peInstallType">
+                    <ul id="menu-install-navigation-1" class="menu">
+                        <li id="menu-item-liveDemo" class="menu-item tb-live-demo" data-tab="liveDemo">
+                            <p>
+                                <img src="/images/livedemo-icon.svg" title="Try ThingsBoard in live demo mode" alt="Live demo icon" width="28" height="28">
+                                <span>Live demo</span>
+                            </p>
                         </li>
-                        <li id="menu-item-onPremise" class="menu-item tb-on-premise active">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('onPremise')">On premise</a>
+                        <li id="menu-item-onPremise" class="menu-item tb-on-premise" data-tab="onPremise">
+                            <p>
+                                <img src="/images/pricing/self-icon.svg" title="Install ThingsBoard on your own server" alt="On-premise installation icon" width="28" height="28">
+                                <span>On premise</span>
+                            </p>
                         </li>
-                        <li id="menu-item-cloud" class="menu-item tb-cloud">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('cloud')">Cloud</a>
+                        <li id="menu-item-cloud" class="menu-item tb-cloud" data-tab="cloud">
+                            <p>
+                                <img src="/images/pricing/cloud-icon.svg" title="Use ThingsBoard in the cloud" alt="Cloud deployment icon" width="28" height="28">
+                                <span>Cloud</span>
+                            </p>
                         </li>
-                     </ul>
+                    </ul>
                 </nav>
                 <div class="deployment-div">
                     {% include installation-options-cards.liquid installationOptions="installation-options-pe" %}
@@ -43,37 +52,3 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
     </div>
 </div>
 
-<script>
-    jqueryDefer(function () {
-        window.addEventListener('popstate', onPopStatePeInstallOptions);
-        onPopStatePeInstallOptions();
-    });
-
-    function activateInstallSection(id) {
-            var param = 'peInstallType';
-            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            params[param] = id;
-            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
-            if (window.location.hash) {
-                newurl += window.location.hash;
-            }
-            window.history.pushState({ path: newurl }, '', newurl);
-            selectTargetPeInstallOption(id);
-    }
-
-    function onPopStatePeInstallOptions() {
-            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            var targetId = params['peInstallType'];
-            if (!targetId) {
-                targetId = 'onPremise';
-            }
-            selectTargetPeInstallOption(targetId);
-    }
-
-    function selectTargetPeInstallOption(targetId) {
-         $("li.menu-item").removeClass("active");
-         $("li.menu-item#menu-item-"+targetId).addClass("active");
-         $('.deployment-div .deployment-section').removeClass("active");
-         $('.deployment-div .deployment-section#'+targetId).addClass("active");
-    }
-</script>

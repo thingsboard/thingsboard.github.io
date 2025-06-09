@@ -6,7 +6,7 @@
     {% assign categoryId = category[0] %}
     {% assign categoryItems = category[1] %}
 
-    <div class="deployment-section{% if active == true %} active{% endif %}" id="{{ categoryId }}">
+    <div class="deployment-section{% if active == true %} animate-from-start active{% endif %}" id="{{ categoryId }}">
         <div class="installation-card-content-wrapper">
             {% for item in categoryItems %}
                 <div class="installation-card-container{% if item[1].comingSoon %} installation-card-content-coming-soon{% endif %}">
