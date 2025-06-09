@@ -1083,7 +1083,7 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
 
 * **formatValue**: Formats numeric values according to specified precision and unit conversions.
    ```javascript
-   formatValue: (value: any, settings?: ValueFormatSettings) => string | undefined
+   formatValue: (value: any, settings: ValueFormatSettings) => string | undefined
    ```
 
   **Parameters**:
