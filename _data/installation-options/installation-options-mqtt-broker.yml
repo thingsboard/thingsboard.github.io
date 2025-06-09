@@ -1,0 +1,82 @@
+mqttBroker:
+  0:
+    title: Docker (Linux or Mac OS)
+    description: This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+    link: /docs/mqtt-broker/install/docker/
+    icon: /images/install/platform/docker-linux-macos.svg
+    alt: Docker logo with Linux and macOS icons
+    imageTitleAttribute: Install ThingsBoard using Docker on Linux or macOS
+    imageWidth: 170
+    imageHeight: 36
+  1:
+    title: Docker (Windows)
+    description: This guide will help you to install and start ThingsBoard using Docker on Windows.
+    link: /docs/mqtt-broker/install/docker-windows/
+    icon: /images/install/platform/docker-windows.svg
+    alt: Docker logo with Windows icon
+    imageTitleAttribute: Install ThingsBoard using Docker on Windows
+    imageWidth: 96
+    imageHeight: 36
+  2:
+    title: Building from sources
+    description: Download and compile ThingsBoard from source code on Ubuntu or CentOS for full control & custom.
+    link: /docs/mqtt-broker/install/building-from-source/
+    icon: /images/install/platform/sources.svg
+    alt: Maven logo
+    imageTitleAttribute: Build ThingsBoard from source using Maven
+    imageWidth: 174
+    imageHeight: 36
+  3:
+    title: Docker Cluster setup
+    description: This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool.
+    link: /docs/mqtt-broker/install/cluster/docker-compose-setup/
+    icon: /images/install/cluster/docker-compose.svg
+    alt: Docker Compose logo
+    imageTitleAttribute: Set up ThingsBoard in cluster mode using Docker Compose
+    imageWidth: 36
+    imageHeight: 36
+  4:
+    title: Minikube
+    description: This guide will help you to setup ThingsBoard in cluster mode using Minikube tool.
+    link: /docs/mqtt-broker/install/cluster/minikube-cluster-setup/
+    icon: /images/install/cluster/minikube.svg
+    alt: Minikube logo
+    imageTitleAttribute: Deploy ThingsBoard cluster using Minikube tool
+    imageWidth: 36
+    imageHeight: 36
+  5:
+    title: Amazon EKS
+    description: This guide will help you to setup ThingsBoard  using AWS EKS platform.
+    link: /docs/mqtt-broker/install/cluster/aws-cluster-setup/
+    icon: /images/install/cloud/eks.svg
+    alt: Amazon EKS logo
+    imageTitleAttribute: Deploy ThingsBoard using Amazon EKS platform
+    imageWidth: 32
+    imageHeight: 36
+  6:
+    title: Azure
+    description: Here you can find scripts for different deployment scenarios using Azure AKS platform.
+    link: /docs/mqtt-broker/install/cluster/azure-cluster-setup/
+    icon: /images/install/cloud/azure.svg
+    alt: Microsoft Azure logo
+    imageTitleAttribute: Deploy ThingsBoard on Microsoft Azure
+    imageWidth: 123
+    imageHeight: 36
+  7:
+    title: Google Cloud Platform
+    description: This guide will help you to setup ThingsBoard in GCP VM instance & scenarios using GCP infrastructure.
+    link: /docs/mqtt-broker/install/cluster/gcp-cluster-setup/
+    icon: /images/install/cloud/gcp.svg
+    alt: Google Cloud Platform logo
+    imageTitleAttribute: Deploy ThingsBoard on Google Cloud infrastructure
+    imageWidth: 40
+    imageHeight: 36
+  8:
+    title: Helm
+    description: Kubernetes environment options for TBMQ cluster setup using Helm
+    link: /docs/mqtt-broker/install/cluster/helm-cluster-setup-options/
+    icon: /images/install/cluster/helm.svg
+    alt: Helm logo
+    imageTitleAttribute: Cluster setup with Helm Chart
+    imageWidth: 40
+    imageHeight: 36

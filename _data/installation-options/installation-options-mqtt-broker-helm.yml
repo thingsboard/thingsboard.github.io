@@ -1,0 +1,37 @@
+mqttBrokerHelm:
+  0:
+    title: Minikube
+    description: This guide will help you to setup ThingsBoard in cluster mode using Minikube tool.
+    link: /docs/mqtt-broker/install/cluster/helm-cluster-setup-minikube/
+    icon: /images/install/cluster/minikube.svg
+    alt: Minikube logo
+    imageTitleAttribute: Deploy ThingsBoard cluster using Minikube tool
+    imageWidth: 36
+    imageHeight: 36
+  1:
+    title: Amazon EKS
+    description: This guide will help you to setup ThingsBoard  using AWS EKS platform.
+    link: /docs/mqtt-broker/install/cluster/helm-cluster-setup-aws/
+    icon: /images/install/cloud/eks.svg
+    alt: Amazon EKS logo
+    imageTitleAttribute: Deploy ThingsBoard using Amazon EKS platform
+    imageWidth: 32
+    imageHeight: 36
+  2:
+    title: Azure
+    description: Here you can find scripts for different deployment scenarios using Azure AKS platform.
+    link: /docs/mqtt-broker/install/cluster/helm-cluster-setup-azure/
+    icon: /images/install/cloud/azure.svg
+    alt: Microsoft Azure logo
+    imageTitleAttribute: Deploy ThingsBoard on Microsoft Azure
+    imageWidth: 123
+    imageHeight: 36
+  3:
+    title: Google Cloud Platform
+    description: This guide will help you to setup ThingsBoard in GCP VM instance & scenarios using GCP infrastructure.
+    link: /docs/mqtt-broker/install/cluster/helm-cluster-setup-gcp/
+    icon: /images/install/cloud/gcp.svg
+    alt: Google Cloud Platform logo
+    imageTitleAttribute: Deploy ThingsBoard on Google Cloud infrastructure
+    imageWidth: 40
+    imageHeight: 36
