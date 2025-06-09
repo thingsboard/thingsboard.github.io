@@ -1067,14 +1067,14 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
 
   **Returns**: Newly generated element ID as a string.
   <br/><br/>
-* **formatValue**: Formats numeric values according to specified precision and units.
+* **formatValue**: Formats numeric values according to specified precision and units conversions.
    ```javascript
-   formatValue: (value: any, dec?: number, units?: string, showZeroDecimals?: boolean) => string | undefined
+   formatValue: (value: any, settingsOrDec?: ValueFormatSettings | number, units?: string, showZeroDecimals?: boolean) => string | undefined
    ```
 
   **Parameters**:
     - **value**: Numeric value to be formatted.
-    - **dec** (optional): Number of decimal digits. Typically obtained from `ctx.properties`.
+    - **settingsOrDec** (optional): Either a ValueFormatSettings object defining formatting options (decimals, units, showZeroDecimals) or the number of decimal digits.
     - **units** (optional): Units to append to the formatted value. Typically obtained from `ctx.properties`.
     - **showZeroDecimals** (optional): Specifies whether to keep zero decimal digits. Typically obtained from `ctx.properties`.
 
@@ -1185,6 +1185,29 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
     - **valueId**: ID of the behavior item with type 'Value'.
     - **value**: New value to set.
       <br/><br/>
+
+* **unitSymbol**: Retrieves the target unit symbol based on the current unit system or the provided unit.
+   ```javascript
+   unitSymbol: (unit: TbUnit) => string
+   ```
+
+  **Parameters**:
+  - **unit**: Unit specification, either a string or a TbUnitMapping object defining unit mappings for different systems (e.g., METRIC, IMPERIAL, HYBRID).
+
+  **Returns**: The target unit symbol as a string, derived from the current unit system or the provided unit.
+  <br/><br/>
+
+* **convertUnitValue**: Converts a numeric value from one unit to another using the provided unit specification.
+   ```javascript
+   convertUnitValue: (value: number, unit: TbUnit) => number
+   ```
+
+  **Parameters**:
+  - **value**: Numeric value to be converted.
+  - **unit**: Unit specification, either a string representing the source unit or a TbUnitMapping object for system-based conversion.
+
+  **Returns**: The converted numeric value. Returns the original value if conversion fails or no conversion is needed.
+  <br/><br/>
 
 ### ScadaSymbolAnimation
 
