@@ -1067,19 +1067,32 @@ The `ScadaSymbolApi` (referred to as `api` when accessed via `ScadaSymbolContext
 
   **Returns**: Newly generated element ID as a string.
   <br/><br/>
-* **formatValue**: Formats numeric values according to specified precision and units conversions.
+* **formatValue**: Formats numeric values according to specified precision and unit conversions.
    ```javascript
-   formatValue: (value: any, settingsOrDec?: ValueFormatSettings | number, units?: string, showZeroDecimals?: boolean) => string | undefined
+   formatValue: (value: any, dec?: number, units?: string | TbUnit, showZeroDecimals?: boolean) => string | undefined
    ```
 
   **Parameters**:
     - **value**: Numeric value to be formatted.
-    - **settingsOrDec** (optional): Either a ValueFormatSettings object defining formatting options (decimals, units, showZeroDecimals) or the number of decimal digits.
+    - **dec** (optional): Number of decimal digits. Typically obtained from `ctx.properties`.
     - **units** (optional): Units to append to the formatted value. Typically obtained from `ctx.properties`.
     - **showZeroDecimals** (optional): Specifies whether to keep zero decimal digits. Typically obtained from `ctx.properties`.
 
   **Returns**: Formatted value as a string or undefined if formatting fails.
   <br/><br/>
+
+* **formatValue**: Formats numeric values according to specified precision and unit conversions.
+   ```javascript
+   formatValue: (value: any, settings?: ValueFormatSettings) => string | undefined
+   ```
+
+  **Parameters**:
+  - **value**: Numeric value to be formatted.
+  - **settings**: ValueFormatSettings object defining formatting options (decimals, units, ignoreUnitSymbol, showZeroDecimals).
+
+  **Returns**: Formatted value as a string or undefined if formatting fails.
+  <br/><br/>
+
 * **text**: Sets or updates the text content of one or more SVG elements. Only applicable for elements of type [SVG.Text](https://svgjs.dev/docs/3.2/shape-elements/#svg-text){:target="_blank"} and [SVG.Tspan](https://svgjs.dev/docs/3.2/shape-elements/#svg-tspan){:target="_blank"}.
    ```javascript
    text: (element: Element | Element[], text: string) => void
