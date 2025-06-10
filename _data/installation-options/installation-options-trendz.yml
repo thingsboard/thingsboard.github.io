@@ -1,52 +1,52 @@
 trendz:
   0:
     title: Docker (Linux or Mac OS)
-    description: This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+    description: This guide will help you to install and start Trendz Analytics using Docker on Linux or Mac OS.
     link: /docs/trendz/install/docker/
     icon: /images/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
-    imageTitleAttribute: Install ThingsBoard using Docker on Linux or macOS
+    imageTitleAttribute: Install Trendz Analytics using Docker on Linux or macOS
     imageWidth: 170
     imageHeight: 36
   1:
     title: Docker (Windows)
-    description: This guide will help you to install and start ThingsBoard using Docker on Windows.
+    description: This guide will help you to install and start Trendz Analytics using Docker on Windows.
     link: /docs/trendz/install/docker-windows/
     icon: /images/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
-    imageTitleAttribute: Install ThingsBoard using Docker on Windows
+    imageTitleAttribute: Install Trendz Analytics using Docker on Windows
     imageWidth: 96
     imageHeight: 36
   2:
     title: Ubuntu Server
-    description: Install ThingsBoard on Ubuntu 20.04 / 22.04 / 24.04 with PostgreSQL or Cassandra, depending on your setup.
+    description: This guide describes how to install Trendz Analytics on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
     link: /docs/trendz/install/ubuntu/
     icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo
-    imageTitleAttribute: Install ThingsBoard on Ubuntu Server
+    imageTitleAttribute: Install Trendz Analytics on Ubuntu Server
     imageWidth: 36
     imageHeight: 36
   3:
     title: CentOS/RHEL Server
-    description: Set up ThingsBoard on RHEL, CentOS, Alma, Rocky, or Oracle Linux with required system resources.
+    description: This guide describes how to install Trendz Analytics on RHEL/CentOS 7/8.
     link: /docs/trendz/install/rhel/
     icon: /images/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
-    imageTitleAttribute: Install ThingsBoard on CentOS, RHEL, Alma, Rocky, or Oracle Linux
+    imageTitleAttribute: Install Trendz Analytics on CentOS, RHEL.
     imageWidth: 94
     imageHeight: 36
   4:
     title: Windows
-    description: Install ThingsBoard on Windows 10/11 with at least PostgreSQL or Cassandra, depending on usage.
+    description: This guide describes how to install Trendz Analytics on a Windows machine.
     link: /docs/trendz/install/windows/
     icon: /images/install/platform/windows.svg
     alt: Windows logo
-    imageTitleAttribute: Install ThingsBoard on Windows 10 or 11
+    imageTitleAttribute: Install Trendz Analytics on Windows.
     imageWidth: 35
     imageHeight: 36
   5:
     title: Trendz Cloud
-    description: Activate Trendz Analytics Cloud with youraccount to explore powerful data visualization and analytics.
+    description: Activate Trendz Analytics Cloud with your account to explore powerful data visualization and analytics.
     link: /docs/trendz/install/cloud/
     icon: /images/install/platform/trendz-cloud.svg
     alt: Trendz Cloud logo

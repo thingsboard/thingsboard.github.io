@@ -1,7 +1,7 @@
 aws:
   0:
     title: Amazon EC2
-    description: This guide will help you to setup ThingsBoard in AWS EC2 instance.
+    description: This guide describes how to install ThingsBoard Professional Edition from AWS Marketplace.
     link: /docs/user-guide/install/pe/aws-marketplace/
     icon: /images/install/cloud/amazon_ec2.svg
     alt: Amazon EC2 logo
@@ -10,7 +10,7 @@ aws:
     imageHeight: 36
   1:
     title: Amazon EKS
-    description: This guide will help you to setup ThingsBoard using AWS EKS platform.
+    description: This guide will help you to setup ThingsBoard Professional Edition using AWS EKS platform.
     link: /docs/user-guide/install/pe/cluster/aws-eks-setup/
     icon: /images/install/cloud/eks.svg
     alt: Amazon EKS logo

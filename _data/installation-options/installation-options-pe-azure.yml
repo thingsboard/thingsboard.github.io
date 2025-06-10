@@ -10,7 +10,7 @@ azureSetup:
     imageHeight: 36
   1:
     title: Azure Kubernetes service
-    description: This guide will help you to setup ThingsBoard using Azure AKS platform
+    description: This guide will help you to setup ThingsBoard Professional Edition using Azure AKS platform
     link: /docs/user-guide/install/pe/cluster/azure-aks-setup/
     icon: /images/install/cloud/azure-aks.svg
     alt: Azure Kubernetes Service logo

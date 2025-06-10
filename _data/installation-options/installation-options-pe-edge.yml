@@ -1,64 +1,64 @@
 peEdge:
   0:
     title: Docker (Linux or Mac OS)
-    description: This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+    description: This guide provides step-by-step instructions for running ThingsBoard Edge on Linux or Mac OS using Docker.
     link: /docs/user-guide/install/pe/edge/docker/
     icon: /images/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
-    imageTitleAttribute: Install ThingsBoard using Docker on Linux or macOS
+    imageTitleAttribute: Install ThingsBoard Edge using Docker on Linux or macOS
     imageWidth: 170
     imageHeight: 36
   1:
     title: Docker (Windows)
-    description: This guide will help you to install and start ThingsBoard using Docker on Windows.
+    description: This guide will help you to install and start ThingsBoard Edge using Docker on Windows.
     link: /docs/user-guide/install/pe/edge/docker-windows/
     icon: /images/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
-    imageTitleAttribute: Install ThingsBoard using Docker on Windows
+    imageTitleAttribute: Install ThingsBoard Edge using Docker on Windows
     imageWidth: 96
     imageHeight: 36
   2:
     title: Ubuntu Server
-    description: Install ThingsBoard on Ubuntu 20.04 / 22.04 / 24.04 with PostgreSQL or Cassandra, depending on your setup.
+    description: This guide provides step-by-step instructions for installing ThingsBoard Edge on Ubuntu 18.04 LTS and 20.04 LTS.
     link: /docs/user-guide/install/pe/edge/deb-installation/
     icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo
-    imageTitleAttribute: Install ThingsBoard on Ubuntu Server
+    imageTitleAttribute: Install ThingsBoard Edge on Ubuntu Server
     imageWidth: 36
     imageHeight: 36
   3:
     title: CentOS/RHEL Server
-    description: Set up ThingsBoard on RHEL, CentOS, Alma, Rocky, or Oracle Linux with required system resources.
+    description: This guide provides step-by-step instructions for installing ThingsBoard Edge on RHEL/CentOS 7 and 8.
     link: /docs/user-guide/install/pe/edge/rhel/
     icon: /images/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
-    imageTitleAttribute: Install ThingsBoard on CentOS, RHEL, Alma, Rocky, or Oracle Linux
+    imageTitleAttribute: Install ThingsBoard Edge on CentOS, RHEL.
     imageWidth: 94
     imageHeight: 36
   4:
     title: Windows
-    description: Install ThingsBoard on Windows 10/11 with at least PostgreSQL or Cassandra, depending on usage.
+    description: This guide provides instructions for installing ThingsBoard Edge on Windows.
     link: /docs/user-guide/install/pe/edge/windows/
     icon: /images/install/platform/windows.svg
     alt: Windows logo
-    imageTitleAttribute: Install ThingsBoard on Windows 10 or 11
+    imageTitleAttribute: Install ThingsBoard Edge on Windows.
     imageWidth: 35
     imageHeight: 36
   5:
     title: Raspberry Pi
-    description: Run ThingsBoard on Raspberry Pi with a minimum of 4GB RAM for PostgreSQL or 8GB for Cassandra.
+    description: This guide provides step-by-step instructions for installing ThingsBoard Edge on RaspberryPi.
     link: /docs/user-guide/install/pe/edge/rpi/
     icon: /images/install/platform/rpi3.svg
     alt: Raspberry Pi logo
-    imageTitleAttribute: Install ThingsBoard on Raspberry Pi
+    imageTitleAttribute: Install ThingsBoard Edge on Raspberry Pi
     imageWidth: 36
     imageHeight: 36
   6:
     title: Docker Cluster setup
-    description: This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool.
+    description: This guide will help you to setup ThingsBoard Edge in cluster mode using Docker Compose tool.
     link: /docs/pe/edge/config/edge-cluster-setup/
     icon: /images/install/cluster/docker-compose.svg
     alt: Docker Compose logo
-    imageTitleAttribute: Set up ThingsBoard in cluster mode using Docker Compose
+    imageTitleAttribute: Set up ThingsBoard Edge in cluster mode using Docker Compose
     imageWidth: 36
     imageHeight: 36
