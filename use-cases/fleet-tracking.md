@@ -10,7 +10,7 @@ includeAdvantages: "true"
 
 {% include usecase-nav.html usecase="fleet-tracking" %}
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
-<h1 class="usecase-title">Fleet Tracking</h1>
+<h1 class="usecase-title">IoT Fleet Tracking System</h1>
 <section class="fleet-tracking-about">
     <div class="about-text">
         <div class="short">
@@ -23,7 +23,7 @@ includeAdvantages: "true"
         </div>
         <div class="long">
             <p>The ThingsBoard IoT platform supports industry-standard protocols and seamless device integration, enabling continuous collection, processing, and visualization of data from every vehicle in your fleet. Critical alarms like speeding, breakdowns, or fuel drops are detected automatically, triggering alarms and actions that help you stay in control — without manual intervention.</p>
-            <p>As a result, the ThingsBoard-based Fleet Tracking System helps businesses boost efficiency, ensure safety, and make smarter, data-driven decisions. From daily operations to long-term planning, you get the visibility and automation needed to scale with confidence — whether you're running public transit, logistics, or service delivery fleets.</p>        
+            <p>As a result, the ThingsBoard-based IoT Fleet Tracking System helps businesses boost efficiency, ensure safety, and make smarter, data-driven decisions. From daily operations to long-term planning, you get the visibility and automation needed to scale with confidence — whether you're running public transit, logistics, or service delivery fleets.</p>        
         </div>
     </div>
 </section>
@@ -33,7 +33,7 @@ includeAdvantages: "true"
 </section> 
 
 <section class="fleet-tracking-solution-structure">
-    <h2>Solution structure of fleet tracking</h2>
+    <h2>Solution structure of iot fleet tracking</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
@@ -46,15 +46,15 @@ includeAdvantages: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Fleet tracking solution architecture" title="Fleet tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="IoT Fleet Tracking solution architecture" title="IoT Fleet Tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>Fleet tracking dashboard structure</h2>
+        <h2>IoT Fleet Tracking dashboard structure</h2>
         <p>
-            The ThingsBoard dashboard for fleet tracking is intuitive and organized into several key components that provide full visibility into fleet operations.
+            The ThingsBoard dashboard for <a href="/docs/pe/solution-templates/fleet-tracking/">fleet tracking</a> is intuitive and organized into several key components that provide full visibility into fleet operations.
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -203,7 +203,7 @@ includeAdvantages: "true"
 
 <section class="summary">
     <div class="summary-text">
-        <h2>Summary of fleet tracking</h2>
+        <h2>Summary of IoT Fleet Tracking</h2>
         <p>The IoT Fleet Tracking System powered by ThingsBoard provides real-time visibility into fleet operations, enabling automated alarms, insightful analytics, and seamless integration with business systems. This scalable solution helps organizations optimize performance, reduce costs, and make smarter, data-driven decisions through a reliable and flexible IoT platform.</p>
     </div>
     <div class="summary-icon">

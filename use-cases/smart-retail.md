@@ -15,14 +15,14 @@ includeAdvantages: "true"
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">Smart Retail Solutions by ThingsBoard is a powerful platform that helps retailers gain full visibility into store infrastructure, automate data collection, respond to incidents in real time, and make informed decisions. Leveraging the flexibility of ThingsBoard, retailers can integrate a wide range of sensors and devices, visualize key metrics through custom dashboards, and implement intelligent analytics.</p>
+                <p class="text">Smart retail solution by ThingsBoard is a powerful platform that helps retailers gain full visibility into store infrastructure, automate data collection, respond to incidents in real time, and make informed decisions. Leveraging the flexibility of ThingsBoard, retailers can integrate a wide range of sensors and devices, visualize key metrics through custom dashboards, and implement intelligent analytics.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_SmartRetail_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
-            <p>The Smart Retail solution template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
+            <p>The smart retail solution template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
             <p>With built-in alarm logic and fully configurable thresholds per device, users can detect anomalies such as temperature fluctuations or unauthorized access without needing a complex setup. The template also includes interactive dashboards that allow both providers and customers to monitor the current and historical state of their supermarkets—empowering data-driven decisions, operational efficiency, and a higher standard of safety and service.</p>        
         </div>
     </div>
@@ -54,7 +54,7 @@ includeAdvantages: "true"
     <div class="section-header">
         <h2>Smart retail dashboard structure</h2>
         <p>
-            Smart Retail solution dashboards in ThingsBoard are designed to give retail operators full situational awareness, from high-level monitoring of multiple store locations down to detailed insights into individual devices. Each dashboard state provides a specific layer of visibility to support operational efficiency and safety.
+            <a href="/docs/pe/solution-templates/smart-retail/">Smart Retail solution</a> dashboards in ThingsBoard are designed to give retail operators full situational awareness, from high-level monitoring of multiple store locations down to detailed insights into individual devices. Each dashboard state provides a specific layer of visibility to support operational efficiency and safety.
         </p>
     </div>
     <div class="dashboard-structure-block">
