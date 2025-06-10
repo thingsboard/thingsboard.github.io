@@ -34,9 +34,8 @@ $install-color: #506dad
               line-height: 24px
               margin-bottom: 0
         .deployment-container
-          padding-top: 48px
           .deployment-div
-            margin-top: 54px
+            margin-top: 40px
             padding-bottom: 20px
             .deployment-section
               display: none
@@ -109,6 +108,7 @@ $install-color: #506dad
           display: flex
           justify-content: center
           align-items: center
+          margin-top: 40px
           ul
             list-style-type: none
             display: flex
@@ -119,6 +119,10 @@ $install-color: #506dad
             padding: 0
             border-radius: 100px
             border: 1px solid rgba(0, 0, 0, 0.12)
+            @media (max-width: 600px)
+              flex-direction: column
+              gap: 30px
+              border: none
             li
               position: relative
               padding: 6.5px 25px
