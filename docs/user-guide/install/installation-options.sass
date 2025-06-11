@@ -12,6 +12,7 @@ $install-color: #506dad
         .container
           padding: 0
         .install-options-hero-content
+          text-align: center
           padding-top: 0
           padding-bottom: 0
           h1, span.heading
@@ -43,9 +44,10 @@ $install-color: #506dad
                 display: block
               .installation-card-content-wrapper
                 display: flex
-                justify-content: center
                 flex-wrap: wrap
                 gap: 20px
+                &:has(.installation-card-container:nth-child(1):last-child)
+                  justify-content: center
                 .installation-card-container.installation-card-content-coming-soon
                   &:hover
                     background: #F5F5F5
