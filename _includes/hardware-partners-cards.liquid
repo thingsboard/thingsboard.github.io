@@ -7,10 +7,16 @@
             <div class="card-content">
                 <div class="cardHeader">
                     <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
-                    <a class="siteLink" href="{{ card.site.href }}" target="_blank">Website</a>
+                    {% if card.showcase %}
+                        <a class="siteLink" href="{{ card.showcase.href }}" target="_blank">See showcase</a>
+                    {% endif %}
                 </div>
                 <div class="text">
-                    <p class="title">{{ card.name }}</p>
+                    <p class="title">
+                        <a href="{{ card.site.href }}" target="_blank">
+                            {{ card.name }}
+                        </a>
+                    </p>
                     <p class="description">{{ card.description }}</p>
                 </div>
             </div>
