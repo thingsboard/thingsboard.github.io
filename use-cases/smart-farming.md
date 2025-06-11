@@ -51,7 +51,7 @@ notitle: "true"
                             <li><a href="#smart-farm-about">What is smart farming? </a></li>
                             <li><a href="#smart-farm-content-wrapper">The farming and agricultural practices (traditional vs smart farming) </a></li>
                             <li><a href="#smart-farm-key-difference">Key differences between traditional and smart farming </a></li>
-                            <li><a href="#challenges-in-smart-farming">Challenges in Smart Farming </a></li>
+                            <li><a href="#challenges-in-smart-farming">Challenges in smart farming </a></li>
                             <li><a href="#smart-farming-future-key">Safety and Sustainability as a key to the future of smart agriculture</a></li>
                             <li><a href="#smart-farm-tech">Smart farming technologies </a></li>
                             <li><a href="#smart-farm-cycle">The IoT-Based Smart Farming Cycle </a></li>

@@ -54,7 +54,7 @@ includeAdvantages: "true"
     <div class="section-header">
         <h2>Smart retail dashboard structure</h2>
         <p>
-            <a href="/docs/pe/solution-templates/smart-retail/">Smart Retail solution</a> dashboards in ThingsBoard are designed to give retail operators full situational awareness, from high-level monitoring of multiple store locations down to detailed insights into individual devices. Each dashboard state provides a specific layer of visibility to support operational efficiency and safety.
+            <a href="/docs/pe/solution-templates/smart-retail/">Smart retail solution</a> dashboards in ThingsBoard are designed to give retail operators full situational awareness, from high-level monitoring of multiple store locations down to detailed insights into individual devices. Each dashboard state provides a specific layer of visibility to support operational efficiency and safety.
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -135,14 +135,14 @@ includeAdvantages: "true"
 
 <section class="applications applications-additional summary-margin section-padding">
     <div class="section-header">
-        <h2>Applications of Smart Retail Solutions</h2>
-        <p>While Smart Retail Solutions were originally designed for retail store environments, the versatility and scalability of ThingsBoard's IoT platform make it a perfect fit for a wide range of industries where real-time monitoring, environmental control, and asset visibility are critical.</p>
+        <h2>Applications of smart retail solution</h2>
+        <p>While smart retail solution were originally designed for retail store environments, the versatility and scalability of ThingsBoard's IoT platform make it a perfect fit for a wide range of industries where real-time monitoring, environmental control, and asset visibility are critical.</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
                 <h3>Pharmacy Chains</h3>
-                <p>Smart Retail Solutions enable pharmacy networks to ensure safe medication storage by monitoring refrigeration units, maintaining regulatory compliance, and detecting unauthorized access.</p>
+                <p>Smart retail solution enable pharmacy networks to ensure safe medication storage by monitoring refrigeration units, maintaining regulatory compliance, and detecting unauthorized access.</p>
             </div>
             <div class="text-block">
                 <h3>Logistics and Cold Chain Warehouses</h3>
@@ -167,7 +167,7 @@ includeAdvantages: "true"
             </div>
             <div class="text-block">
                 <h3>Hospital Cafeterias and Institutional Kitchens</h3>
-                <p>Institutional kitchens use Smart Retail Solutions to ensure food safety, prevent equipment failures, and optimize stock levels through smart shelf monitoring.</p>
+                <p>Institutional kitchens use smart retail solution to ensure food safety, prevent equipment failures, and optimize stock levels through smart shelf monitoring.</p>
             </div>
         </div>
     </div>
@@ -176,7 +176,7 @@ includeAdvantages: "true"
             <div class="image"><img src="/images/usecases/smart-retail/pharmacy-2.svg" alt="Pharmacy Chains" title="Pharmacy Chains"></div>
             <div class="text-block">
                 <h3>Pharmacy Chains</h3>
-                <p>Smart Retail Solutions enable pharmacy networks to ensure safe medication storage by monitoring refrigeration units, maintaining regulatory compliance, and detecting unauthorized access.</p>
+                <p>Smart retail solution enable pharmacy networks to ensure safe medication storage by monitoring refrigeration units, maintaining regulatory compliance, and detecting unauthorized access.</p>
             </div>
         </div>
         <div class="application-block">
@@ -196,7 +196,7 @@ includeAdvantages: "true"
         <div class="application-block">
             <div class="text-block">
                 <h3>Hospital Cafeterias and Institutional Kitchens</h3>
-                <p>Institutional kitchens use Smart Retail Solutions to ensure food safety, prevent equipment failures, and optimize stock levels through smart shelf monitoring.</p>
+                <p>Institutional kitchens use smart retail solution to ensure food safety, prevent equipment failures, and optimize stock levels through smart shelf monitoring.</p>
             </div>
             <div class="image"><img src="/images/usecases/smart-retail/cafeterias-2.svg" alt="Hospital Cafeterias and Institutional Kitchens" title="Hospital Cafeterias and Institutional Kitchens"></div>
         </div>
@@ -214,7 +214,7 @@ includeAdvantages: "true"
 <section class="summary">
     <div class="summary-text">
         <h2>Summary of smart retail</h2>
-        <p>Smart Retail Solutions by ThingsBoard is a comprehensive solution that enables centralized monitoring of store operations, improves safety through automated alarms and incident logging, and reduces costs related to equipment failures and product spoilage. By streamlining incident response and automating routine checks, it also enhances staff efficiency. More than just data visualization, this solution transforms retail infrastructure into an intelligent, predictive, and adaptive environment that drives value for both customers and businesses.</p>
+        <p>Smart retail solution by ThingsBoard is a comprehensive solution that enables centralized monitoring of store operations, improves safety through automated alarms and incident logging, and reduces costs related to equipment failures and product spoilage. By streamlining incident response and automating routine checks, it also enhances staff efficiency. More than just data visualization, this solution transforms retail infrastructure into an intelligent, predictive, and adaptive environment that drives value for both customers and businesses.</p>
     </div>
     <div class="summary-icon">
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">

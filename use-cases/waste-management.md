@@ -9,25 +9,25 @@ notitle: "true"
 
 {% include usecase-nav.html usecase="waste-management" %}
 
-<h1 class="usecase-title">Waste Management solution</h1>
+<h1 class="usecase-title">Waste management solution</h1>
 
 Efficient waste management is crucial for businesses seeking to reduce costs and improve environmental sustainability. Inaccurate waste monitoring can lead to inefficient disposal, environmental harm, and unnecessary expenses.
  
-Our Waste Management <a href="/docs/paas/solution-templates/waste-management/">template</a> provides real-time visibility into waste levels, enabling proactive management of waste inventory and optimization of operations. The solution utilizes cutting-edge technology, including customizable sensors and secure communication protocols. With our user-friendly dashboard, you can easily monitor waste levels, set custom alerts, and track waste usage. By taking control of your waste management processes, you can minimize environmental harm and waste, leading to streamlined operations and increased sustainability.
+Our waste management <a href="/docs/paas/solution-templates/waste-management/">template</a> provides real-time visibility into waste levels, enabling proactive management of waste inventory and optimization of operations. The solution utilizes cutting-edge technology, including customizable sensors and secure communication protocols. With our user-friendly dashboard, you can easily monitor waste levels, set custom alerts, and track waste usage. By taking control of your waste management processes, you can minimize environmental harm and waste, leading to streamlined operations and increased sustainability.
 
-Additionally, our solution is fully customizable to meet the specific needs of your industry, whether you're in manufacturing, healthcare, or any other sector. With our Waste Management solution, you can gain a competitive advantage and achieve greater efficiency in your operations. Transform waste management and optimize your business with our Waste Management solution.
+Additionally, our solution is fully customizable to meet the specific needs of your industry, whether you're in manufacturing, healthcare, or any other sector. With our waste management solution, you can gain a competitive advantage and achieve greater efficiency in your operations. Transform waste management and optimize your business with our waste management solution.
 
 
 <h2>Solution Structure</h2>
 
-As a part of this solution we have created a Waste Management dashboard that displays data from multiple sensors.
+As a part of this solution we have created a waste management dashboard that displays data from multiple sensors.
 
-The **Waste Management** dashboard is designed for tenant administrators to perform basic device management tasks, and has multiple states:
+The **waste management** dashboard is designed for tenant administrators to perform basic device management tasks, and has multiple states:
 - **Main state** - intended for monitoring garbage bin filling, control over the alarm, and sensors management;
 - **Bin state** - designed to edit and revise a particular garbage bin.
 
 
-<h2>Waste Management Benefits</h2>
+<h2>Waste management benefits</h2>
 Save up to 90% of development time for your waste management solution by utilizing the following platform benefits:
 - reliable and scalable data collection for your waste monitors;
 - powerful rule engine to process collected data and produce alarms and valuable insights;
@@ -124,7 +124,7 @@ Save up to 90% of development time for your waste management solution by utilizi
     </div>
 </section>
 
-## Waste Management solution overview
+## Waste management solution overview
 
 The diagram below identifies data flow and integration points for a typical waste management solution that uses the ThingsBoard platform to collect and analyze monitoring data from waste sensors.
 
