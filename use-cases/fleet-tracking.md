@@ -23,7 +23,7 @@ includeAdvantages: "true"
         </div>
         <div class="long">
             <p>The ThingsBoard IoT platform supports industry-standard protocols and seamless device integration, enabling continuous collection, processing, and visualization of data from every vehicle in your fleet. Critical alarms like speeding, breakdowns, or fuel drops are detected automatically, triggering alarms and actions that help you stay in control — without manual intervention.</p>
-            <p>As a result, the ThingsBoard-based IoT Fleet Tracking System helps businesses boost efficiency, ensure safety, and make smarter, data-driven decisions. From daily operations to long-term planning, you get the visibility and automation needed to scale with confidence — whether you're running public transit, logistics, or service delivery fleets.</p>        
+            <p>As a result, the ThingsBoard-based IoT fleet tracking system helps businesses boost efficiency, ensure safety, and make smarter, data-driven decisions. From daily operations to long-term planning, you get the visibility and automation needed to scale with confidence — whether you're running public transit, logistics, or service delivery fleets.</p>        
         </div>
     </div>
 </section>
@@ -33,7 +33,7 @@ includeAdvantages: "true"
 </section> 
 
 <section class="fleet-tracking-solution-structure">
-    <h2>Solution structure of iot fleet tracking</h2>
+    <h2>Solution structure of IoT fleet tracking</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
@@ -52,7 +52,7 @@ includeAdvantages: "true"
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>IoT Fleet Tracking dashboard structure</h2>
+        <h2>IoT fleet tracking dashboard structure</h2>
         <p>
             The ThingsBoard dashboard for <a href="/docs/pe/solution-templates/fleet-tracking/">fleet tracking</a> is intuitive and organized into several key components that provide full visibility into fleet operations.
         </p>
@@ -125,8 +125,8 @@ includeAdvantages: "true"
 
 <section class="applications applications-additional summary-margin section-padding">
     <div class="section-header">
-        <h2>Applications of IoT Fleet tracking system</h2>
-        <p>The IoT Fleet Tracking System can be adapted for various industries:</p>
+        <h2>Applications of IoT fleet tracking system</h2>
+        <p>The IoT fleet tracking system can be adapted for various industries:</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
@@ -203,8 +203,8 @@ includeAdvantages: "true"
 
 <section class="summary">
     <div class="summary-text">
-        <h2>Summary of IoT Fleet Tracking</h2>
-        <p>The IoT Fleet Tracking System powered by ThingsBoard provides real-time visibility into fleet operations, enabling automated alarms, insightful analytics, and seamless integration with business systems. This scalable solution helps organizations optimize performance, reduce costs, and make smarter, data-driven decisions through a reliable and flexible IoT platform.</p>
+        <h2>Summary of IoT fleet tracking</h2>
+        <p>The IoT fleet tracking system powered by ThingsBoard provides real-time visibility into fleet operations, enabling automated alarms, insightful analytics, and seamless integration with business systems. This scalable solution helps organizations optimize performance, reduce costs, and make smarter, data-driven decisions through a reliable and flexible IoT platform.</p>
     </div>
     <div class="summary-icon">
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
