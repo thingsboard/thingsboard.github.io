@@ -12,7 +12,7 @@
                     <div class="input-group">
                         <div class="input-label-group">
                             <label for="devicesSlider" class="label">
-                                Number of Devices
+                                Devices
                                 <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
                                     <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
                                 </span>
@@ -53,7 +53,7 @@
                     <div class="input-group">
                         <div class="input-label-group">
                             <label for="messages" class="label">
-                                Number of Messages
+                                Messages per Device
                                 <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
                                     <span class="tooltip-text">How many messages each device sends in the selected time period</span>
                                 </span>
@@ -146,11 +146,11 @@
                                 <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon"><span
                                         class="tooltip-text">How many data points are included in each message</span></span>
                             </label>
-                            <input id="dataPoints" type="number" value="10" class="input input-right">
+                            <input id="dataPoints" type="number" value="3" class="input input-right">
                         </div>
                         <div class="slider-container">
                             <label for="dataPointsSlider" class="visually-hidden">How many data points are included in each message</label>
-                            <input type="range" id="dataPointsSlider" min="1" max="100" step="1" value="10"
+                            <input type="range" id="dataPointsSlider" min="1" max="100" step="1" value="3"
                                    class="slider">
                             <div class="tick-marks">
                                 <div class="tick-mark">
@@ -188,7 +188,7 @@
                                         class="tooltip-text">How long you need to store your data</span></span>
                             </label>
                             <div class="input-with-select">
-                                <input id="retention" type="number" value="3" max="1200" class="input input-right">
+                                <input id="retention" type="number" value="12" max="1200" class="input input-right">
                                 <label for="retentionUnit" class="visually-hidden">How long you need to store your data</label>
                                 <select id="retentionUnit" class="select hidden">
                                     <option value="days">days</option>
@@ -199,7 +199,7 @@
                         </div>
                         <div class="slider-container">
                             <label for="retentionSlider" class="visually-hidden">How long you need to store your data</label>
-                            <input type="range" id="retentionSlider" min="1" max="60" step="1" value="3" class="slider">
+                            <input type="range" id="retentionSlider" min="1" max="60" step="1" value="12" class="slider">
                             <div class="tick-marks">
                                 <div class="tick-mark">
                                     <span class="tick"></span>
@@ -334,15 +334,15 @@
         }
 
         resetButton.addEventListener('click', () => {
-            devicesInput.value = 1;
-            devicesSlider.value = 1;
+            devicesInput.value = 5000;
+            devicesSlider.value = 5000;
             messagesInput.value = 1;
             messagesSlider.value = 1;
-            messageUnitSelect.value = 'minute';
-            dataPointsInput.value = 1;
-            dataPointsSlider.value = 1;
-            retentionInput.value = 1;
-            retentionSlider.value = 1;
+            messageUnitSelect.value = 'hour';
+            dataPointsInput.value = 3;
+            dataPointsSlider.value = 3;
+            retentionInput.value = 12;
+            retentionSlider.value = 12;
             retentionUnitSelect.value = 'months';
             devEnvsCheckbox.checked = false;
             testEnvsCheckbox.checked = false;
@@ -397,7 +397,7 @@
             if (matchingPlans.length === 0) {
                 // Calculate storage needed in GB
                 const storageNeededInGB = (privateCloudPlans.enterpriseBytesPerDataPoint * retentionInMinutes * dataPointsPerMinute) / 1073741824;
-                displayEnterpriseResults(dataPointsPerMinute, devices, storageNeededInGB);
+                displayEnterpriseResults(dataPointsPerMinute, devices, storageNeededInGB, retentionInMinutes, dataRetention);
                 return;
             }
 
@@ -429,11 +429,11 @@
                     dataPointsPerMinute,
                     devEnvsValue,
                     testEnvsValue,
-                    mobileAppValue
+                    mobileAppValue,
+                    dataRetention,
+                    retentionInMinutes
                 };
             });
-
-            console.log(planResults);
 
             // Find the plan with the lowest total price
             const optimalPlan = planResults.reduce((prev, current) =>
@@ -456,7 +456,9 @@
                 dataPointsPerMinute,
                 devEnvsValue,
                 testEnvsValue,
-                mobileAppValue
+                mobileAppValue,
+                dataRetention,
+                retentionInMinutes
             } = results;
             resultsCard.classList.remove('hidden');
             resultsCard.innerHTML = `
@@ -521,7 +523,7 @@
                       <span class="results-label">Storage Used:</span>
                       <span class="results-value">
                         ${formatNumber(storageNeeded, 2)} GB
-                        <span class="tooltip">${icon}<span class="tooltip-text">The total amount of storage your data will require based on your retention period.</span></span>
+                        <span class="tooltip">${icon}<span class="tooltip-text">Number of data points in storage:<br>${formatNumber(dataPointsPerMinute, 2)}&nbsp;points/minute × 60&nbsp;minutes in hour × 24&nbsp;hours in day × 30&nbsp;days in month × ${dataRetention}&nbsp;months = ${formatNumber(retentionInMinutes * dataPointsPerMinute, 0)}&nbsp;data points;<br><br>Storage required:<br>${formatNumber(retentionInMinutes * dataPointsPerMinute, 0)} × ${plan.bytesPerDataPoint}(approximate size of data point in DB) × ${plan.replicationFactor}(replication factor) / bytes in GB = ${formatNumber(storageNeeded, 2)}&nbsp;GB</span></span>
                       </span>
                     </div>
                     <div class="results-item">
@@ -621,7 +623,7 @@
                 } = results;
                 const contactButton = document.getElementById('contactUs');
 
-                const message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n * Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n * Included Devices: ${formatNumber(plan.includedDevices)}\n * Extra Devices: ${formatNumber(extraDevices, 0)}\n * Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n * Included Storage: ${formatNumber(plan.storage, 0)} GB\n * Storage Used: ${formatNumber(storageNeeded)} GB\n * Extra Storage: ${formatNumber(extraStorage)} GB\n * Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n${addons()} \nTotal Monthly Cost: ${formatCurrency(totalPriceCalc())}`;
+                const message = `Optimal Plan: ${plan.name} (${formatCurrency(plan.price)})\n * Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n * Included Devices: ${formatNumber(plan.includedDevices)}\n * Extra Devices: ${formatNumber(extraDevices, 0)}\n * Extra Device Cost: ${formatCurrency(extraDeviceCost)}\n * Included Storage: ${formatNumber(plan.storage, 0)} GB\n * Storage Used: ${formatNumber(storageNeeded)} GB\n * Extra Storage: ${formatNumber(extraStorage)} GB\n * Extra Storage Cost: ${formatCurrency(extraStorageCost)}\n${addons()} \nTotal Monthly Cost: ${formatCurrency(totalPriceCalc())}\n\nCalculator input:\n * Devices:  ${formatNumber(Number(devicesInput.value))}\n * Messages per Device:  ${formatNumber(Number(messagesInput.value))}/${messageUnitSelect.value}\n * Data Points per Message:  ${Number(dataPointsInput.value)} \n * Data Retention:  ${Number(retentionInput.value)} months`;
                 clipboardMessage = message;
                 contactButton.href = contactButton.href + '?subject=' + encodeURIComponent('Private Cloud') + '&message=' + encodeURIComponent(message);
 
@@ -645,7 +647,7 @@
             }
         }
 
-        function displayEnterpriseResults(dataPointsPerMinute, devices, storageNeededInGB) {
+        function displayEnterpriseResults(dataPointsPerMinute, devices, storageNeededInGB, retentionInMinutes, dataRetention) {
             resultsCard.classList.remove('hidden');
             resultsCard.innerHTML = `
                 <div class="card-header">
@@ -675,7 +677,7 @@
                    <span class="results-label">Estimated storage needed:</span>
                    <span class="results-value">
                      ${formatNumber(storageNeededInGB)} GB
-                    <span class="tooltip">${icon}<span class="tooltip-text">The amount of storage required to keep your data for the specified retention period.</span></span>
+                    <span class="tooltip">${icon}<span class="tooltip-text">Number of data points in storage:<br>${formatNumber(dataPointsPerMinute, 2)}&nbsp;points/minute × 60&nbsp;minutes in hour × 24&nbsp;hours in day × 30&nbsp;days in month × ${dataRetention}&nbsp;months = ${formatNumber(retentionInMinutes * dataPointsPerMinute, 0)}&nbsp;data points;<br><br>Storage required:<br>${formatNumber(retentionInMinutes * dataPointsPerMinute, 0)} × ${privateCloudPlans.enterpriseBytesPerDataPoint}(approximate size of data point in DB) / bytes in GB = ${formatNumber(storageNeededInGB, 2)}&nbsp;GB</span></span>
                    </span>
                  </div>
                 </div>
@@ -691,7 +693,7 @@
 
         function updateEnterpriseContactUsParams(dataPointsPerMinute, devices, storageNeededInGB) {
             const enterpriseContactUs = document.getElementById('enterpriseContactUs');
-            const message = `Optimal Plan: Enterprise\n * Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n * Included Devices: ${formatNumber(devices, 0)}\n * Estimated storage needed: ${formatNumber(storageNeededInGB)} GB`;
+            const message = `Optimal Plan: Enterprise\n * Data Points Rate: ${formatNumber(dataPointsPerMinute, 2)} points/min\n * Included Devices: ${formatNumber(devices, 0)}\n * Estimated storage needed: ${formatNumber(storageNeededInGB)} GB\n\nCalculator input:\n * Devices:  ${formatNumber(Number(devicesInput.value))}\n * Messages per Device:  ${formatNumber(Number(messagesInput.value))}/${messageUnitSelect.value}\n * Data Points per Message:  ${Number(dataPointsInput.value)} \n * Data Retention:  ${Number(retentionInput.value)} months`;
             clipboardMessage = message;
             enterpriseContactUs.href = enterpriseContactUs.href + '?subject=' + encodeURIComponent('Private Cloud') + '&message=' + encodeURIComponent(message);
         }
@@ -745,8 +747,7 @@
                 return;
             }
 
-            gtag("event", "private_cloud_calculator", {
-                "event_category": "Private Cloud Calculator",
+            window.dataLayer.push({'event': 'calculator_interaction',
                 'calculator_devices': parseInt(devicesInput.value) || 0,
                 'calculator_messages': parseInt(messagesInput.value) || 0,
                 'calculator_message_unit': messageUnitSelect.value,

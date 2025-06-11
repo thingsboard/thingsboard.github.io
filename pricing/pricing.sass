@@ -165,7 +165,7 @@ html#pricing
                   font-weight: 500
                   line-height: 30px
                   color: #212121
-                  padding: 22px 37px 22px 22px
+                  padding: 22px 37px 22px 7px
                   transition: none
                   &:hover
                     color: rgba(33, 33, 33, 0.78)
@@ -234,7 +234,6 @@ html#pricing
 
                 &.on
                   h4.title
-                    padding: 22px 37px 22px 22px
                     &:after
                       transform: rotate(180deg)
                       transition: transform 0.3s
@@ -254,7 +253,7 @@ html#pricing
                     content: '+'
                     color: #0094FF
                     border: 0
-                    font-size: 30px
+                    font-size: 25px
                     transform: rotate(0deg)
     a, button
       text-align: center
@@ -286,7 +285,7 @@ html#pricing
       opacity: 1
       transform: translateY(0)
     .pricing-square
-      padding: 24px
+      padding: 28px 24px
       border: 1px solid rgba(42, 125, 236, 0.16)
       border-radius: 12px
       box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
@@ -301,7 +300,7 @@ html#pricing
         font-size: 14px
         line-height: 24px
         color: #707275
-        @media (min-height: 1150px)
+        @media (min-height: 1260px)
           margin-bottom: 32px
         p
           font-size: 14px
@@ -339,7 +338,7 @@ html#pricing
         line-height: 60px
         text-align: center
         letter-spacing: -.01em
-        @media (min-height: 1150px)
+        @media (min-height: 1260px)
           margin-bottom: 16px
         &.hidden
           display: none
@@ -349,11 +348,23 @@ html#pricing
           font-size: 18px
           line-height: 34px
           font-weight: 400
+      .sub-price
+        color: #757575
+        font-size: 18px
+        text-align: center
+        font-weight: 500
+        line-height: 30px
+        padding: 0
+      .placeholder
+        display: inline-block
+        height: 39px
+        @media (min-height: 1260px)
+          height: 53px
       .pricing-square-item
         font-size: 14px
         line-height: 21px
         padding-bottom: 12px
-        @media (min-height: 1150px)
+        @media (min-height: 1260px)
           padding-bottom: 16px
         margin-left: 32px
         font-weight: 400
@@ -549,7 +560,7 @@ html#pricing
         flex-direction: column-reverse
         @media (min-width: 992px)
           flex-direction: row
-        @media (min-height: 1150px)
+        @media (min-height: 1260px)
           margin-bottom: 32px
           padding-top: 32px
         &.not-reverse-column
@@ -574,7 +585,7 @@ html#pricing
           &.active
             display: block
           h2
-            @media (min-height: 1150px)
+            @media (min-height: 1260px)
               margin-bottom: 16px
         .pricing-content-details
           font-size: 16px
@@ -584,7 +595,7 @@ html#pricing
           white-space: nowrap
           @media (max-width: 1000px)
             white-space: wrap
-          @media (min-height: 1150px)
+          @media (min-height: 1260px)
             white-space: wrap
 
         .toggle-container
@@ -659,8 +670,14 @@ html#pricing
         .pricing-section
           display: none
           margin-bottom: 1.5rem
-          @media (min-height: 1150px)
+          @media (min-height: 1260px)
             margin-bottom: 64px
+            &.pricing-pay-as-you-go
+              margin-bottom: 17vh
+            &.pricing-community
+              margin-bottom: 30vh
+            //&.tbmq
+            //  margin-bottom: 14vh
           @media (max-width: 1400px)
             div
               margin-bottom: 16px
@@ -675,7 +692,7 @@ html#pricing
         .btn-pricing
           margin-bottom: 16px
           min-width: 200px
-          @media (min-height: 1150px)
+          @media (min-height: 1260px)
             margin-bottom: 32px
         .pricing-community
           .pricing-square.support-cards
@@ -689,6 +706,20 @@ html#pricing
 
       .additional-content
         .plan-calculator-block
+          .button
+            &.reset
+              background-color: #fff
+              color: #2A7DEC
+              width: 200px
+              align-self: flex-end
+              border: solid 1px #2A7DEC
+              outline: none
+
+              &:hover
+                background-color: #fff
+                color: #2A7DEC
+                filter: brightness(1.2)
+
           display: flex
           padding: 32px 40px
           align-items: center
@@ -870,7 +901,7 @@ html#pricing
       width: 100%
       background-color: #102A4E
       margin-top: 24px
-      @media (min-height: 1150px)
+      @media (min-height: 1260px)
         margin-top: 32px
     .pricing-hero
       position: relative
@@ -882,7 +913,7 @@ html#pricing
         padding-top: 20px
         @media (min-width: 992px)
           padding-top: 35px
-        @media (min-height: 1150px)
+        @media (min-height: 1260px)
           padding-top: 64px
         h1
           margin-bottom: 0
@@ -959,7 +990,7 @@ html#pricing
             cursor: pointer
             padding: 8px 24px
             letter-spacing: 1px
-            @media (min-height: 1150px)
+            @media (min-height: 1260px)
               font-size: 24px
             &:hover
               border-color: #212529
@@ -972,7 +1003,7 @@ html#pricing
               margin-right: 6px
               width: 22px
               height: 22px
-              @media (min-height: 1150px)
+              @media (min-height: 1260px)
                 width: 32px
                 height: 32px
 

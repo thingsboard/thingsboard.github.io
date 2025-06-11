@@ -213,6 +213,12 @@ notitle: "true"
             titleEl.style.fontSize = '40px';
             document.querySelector('.select-label').parentElement.style.display = 'none';
         }
+         if (params.has('tbmqorder')) {
+            const titleEl = document.querySelector('.contact-us-title');
+            titleEl.innerText = 'Get Your Private MQTT Broker';
+            titleEl.style.fontSize = '40px';
+            document.querySelector('.select-label').parentElement.style.display = 'none';
+        }
     });
     jqueryDefer(
         function () {
