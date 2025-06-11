@@ -530,6 +530,13 @@ selfManagedPlan:
                         </thead>
                         <tbody>
                             <tr>
+                                <td data-faq-id="tb-private-cloud-migrate-data-and-config">Data & configuration migration</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
+                            <tr>
                                 <td data-faq-id="tb-private-cloud-what-is-automatic-backup">Automatic backups</td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -2461,13 +2468,24 @@ selfManagedPlan:
                             <p>All plans are powered by Kubernetes, with built-in load balancers to ensure resilient, scalable operations. AWS is our first-choice IaaS, but Azure or GCP regions are also supported on request.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-migrate-data-and-config" data-title="Can you help migrate data and configurations to Private Cloud?">
                         <div class="container">
-                            <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
+                            <p>Yes, we offer configuration and historical data migration as part of the Private Cloud onboarding process. <br> <br></p>
+                            <p>If you’re moving from ThingsBoard public Cloud or a self-hosted Professional Edition, our team will:</p>
+                            <ul>
+                                <li>Migrate platform configuration (devices, dashboards, rule chains, assets, customers, etc.)</li>
+                                <li>Transfer historical telemetry and attribute data to the new Private Cloud instance</li>
+                            </ul>
+                            <p>This ensures a smooth transition with minimal disruption.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup">
+                        <div class="container">
+                            <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
+                        </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-support-is-included" data-title="What support is included?">
                         <div class="container">
@@ -2485,6 +2503,30 @@ selfManagedPlan:
                             <p>2. Submit the request form – we schedule a short onboarding call.</p>
                             <p>3. For Enterprise deals we run a light discovery workshop and issue a custom proposal. <br> <br></p>
                             <p>You are welcome to reach out at any stage — we’ll help you choose the most suitable plan and guide you through the next steps.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-determine-right-plan" data-title="How do I determine the right Private Cloud plan for my workload?">
+                        <div class="container">
+                            <p>To select an appropriate Private Cloud plan, you’ll need to estimate your expected platform usage based on three key indicators: <br> <br></p>
+                            <p>1. Number of Devices:</p>
+                            <ul>
+                                <li>Navigate to the Home page of your ThingsBoard Tenant account.</li>
+                                <li>Check the total number of devices currently connected.</li>
+                            </ul>
+                            <p>2. Number of Messages per Day per Device:</p>
+                            <ul>
+                                <li>Navigate to API Usage → Transport Messages chart</li>
+                                <li>Find the monthly total of transport messages</li>
+                                <li>Use this formula: Messages per day per device = (Monthly Transport Messages) / (Number of Devices × Number of Days in Month)</li>
+                            </ul>
+                            <p>3. Number of Data Points per Message:</p>
+                            <ul>
+                                <li>In the same API Usage → Transport Messages chart</li>
+                                <li>Identify the Data Points per Month figure</li>
+                                <li>Use this formula: Data Points per Message = Data Points per Month / Transport Messages per Month</li>
+                            </ul>
+                            <p>Once you’ve collected these three values, you can match your usage against the limits defined in each Private Cloud plan tier (Launch, Growth, Scale, Enterprise) to determine the best fit.<br> <br></p>
+                            <p>For more guidance, you can share these metrics with our team, we’ll be happy to help you size your environment.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-is-there-a-minimum-commitment" data-title="Is there a minimum commitment?">
@@ -2789,7 +2831,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window" data-title="Can I choose a specific maintenance window?">
                         <div class="container">
-                            <p>Yes, you can. All Private Cloud plans allow customers to request and define a preferred maintenance window. This ensures any upgrades or maintenance activities are scheduled at a time that minimizes disruption to your operations. Our team coordinates with you to honor this window whenever changes are required.</p>
+                            <p>Yes, you can. All Private Cloud plans imply scheduled maintenance windows. For Launch and Growth plans, our team will suggest available time slots within our standard working hours for you to choose from. For Scale and Enterprise plans, you can define any preferred maintenance window that best fits your operations. We coordinate with you to ensure that any upgrades or maintenance activities are performed within the agreed timeframe to minimize disruption.</p>
                         </div>
                     </div>
                 </div>
