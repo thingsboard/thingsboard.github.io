@@ -516,7 +516,7 @@ selfManagedPlan:
             </div>
             <div class="plans-comparison">
                 <h2>Additional features</h2>
-                <p>See key subscription plan features in the table below. View the full subscription plan <a href="/docs/private-cloud/subscription/">description</a> <a href="/docs/private-cloud/subscription/">here </a>.</p>
+                <p>See key subscription plan features in the table below. View the full subscription plan description <a href="/docs/private-cloud/subscription/">here</a>.</p>
                 <div class="comparison-table-container">
                     <table>
                         <thead>
@@ -3202,7 +3202,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
                         <div class="container">
-                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI.</p>
+                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI. The Development license is available as add-on, one can purchase it via the <a href="https://license.thingsboard.io" target="_blank">License portal</a> or by following regular sales process.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -3218,9 +3218,9 @@ selfManagedPlan:
                             <p>The Perpetual Kit is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production instance and one development instance. No programmatic limits by entities for both servers.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development Instance separately?">
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development license separately?">
                         <div class="container">
-                            <p>Development instances can only be purchased separately by owners of Perpetual packages. To request an additional development instance, please contact the ThingsBoard sales team through the <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> page.</p>
+                            <p>Yes, via the <a href="https://license.thingsboard.io" target="_blank">License portal</a>, one can order development licenses for ThingsBoard PE Platform and for Trendz. If the card payments are restricted in your company, please <a href="https://thingsboard.io/docs/contact-us/">submit your request</a> to our sales team.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-enterprise-bundle" data-title="What is within the scope of Enterprise Bundle?">
@@ -3328,7 +3328,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-migration" data-title="Can I migrate from one server or Virtual machine to another using the same license?">
                         <div class="container">
-                            <p>Yes, definitely! For that purpose we made a possibility to Activate/Deactivate instance on License Server. In order to migrate between servers customer must deactivate its instance, install the software on new server and then use already existing license secret. Backup of all data from previous instance is necessary if customer wants to continue utilizing same environment after migration. Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).</p>
+                            <p>Yes, definitely! For that purpose, we made a possible to Activate/Deactivate an instance on the License Server. In order to migrate between servers customer must deactivate its instance, install the software on a new server and then use the already existing license secret. A backup of all data from the previous instance is necessary if a customer wants to continue utilizing the same environment after migration. Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-usage-limits" data-title="Are there any device, asset, user, etc., limits for perpetual licenses?">
@@ -4119,7 +4119,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-perpetual-prod-dev-difference" data-title="What is the difference between Production and Development instances?">
                         <div class="container">
-                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled). The Development instance, meant for testing and staging, features a DEVELOPMENT MODE watermark in the UI.</p>
+                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled). The Development instance, meant for testing and staging, features a DEVELOPMENT MODE watermark in the UI. The Development license is available as add-on, one can purchase it via the <a href="https://license.thingsboard.io" target="_blank">License portal</a> or by following regular sales process.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
