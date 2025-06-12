@@ -5,67 +5,67 @@ description: Remote Integrations Documentation
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/remote/add-converter-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/remote/add-converter-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-2.webp
 
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-1.webp
         title: '1. Open <b>Integration templates</b> menu page. 2. Click the <b>("+")</b> icon to add a new integration.'
     1:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-2.webp
         title: '1. Select integration type: <b>HTTP</b>. 2. Input integration name, e.g., <b>HTTP Demo Remote</b>. 3. Click <b>Next</b> button.'
     2:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-3.webp
         title: '1. Click <b>Select existing</b> button. 2. Select uplink data converter: <b>Temperature Converter</b>. 3. Click <b>Next</b> button.'
     3:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-4.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-4.webp
         title: 'Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
     4:
-        image: /images/pe/edge/integrations/remote/add-integration-template-step-5.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-5.webp
         title: 'Verify that our <b>HTTP Demo Remote</b> integration template was created successfully.'
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-1.webp
         title: 'Go to the <b>Edge management > Instances</b> section and click on the corresponding <b>Edge</b> instance.'
     1:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-2.webp
         title: 'On the <b>Edge details</b> page, select the <b>Attributes</b> tab and add click the <b>"Add"</b> button to add a new attribute.'
     2:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-3.webp
         title: 'In the <b>"Add attribute"</b> pop-up window, enter the <b>remoteHttpIntegrationUrl</b> attribute. Set <b>http://IP:port</b> as the remote URL for your HTTP integration and click the <b>Add</b> button.'
     3:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-4.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-4.webp
         title: 'Once you added the new attribute, close the <b>Edge details</b> page and stay on the <b>Instances</b> section.'
     4:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-5.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-5.webp
         title: 'To assign the integration to the <b>Edge</b>, click the <b>"Manage edge integrations"</b> button.'
     5:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-6.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-6.webp
         title: 'Click the <b>Assign to edge</b> button.'
     6:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-7.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-7.webp
         title: 'In the <b>"Assign Integrations To Edge"</b> pop-up window, select the target integration from the <b>"Entity list"</b> drop-down menu and click the <b>Assign</b> button.'
     7:
-        image: /images/pe/edge/integrations/remote/assign-integration-step-8.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-8.webp
         title: 'Open the <b>Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. Click on <b>HTTP Demo Remote</b> integration to check that placeholder is substituted with the value of the attribute.'
 
 copyCredentials:
     0:
-        image: /images/pe/edge/integrations/remote/copy-credentials.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/copy-credentials.webp
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/remote/send-uplink-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/remote/send-uplink-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-2.webp
 
 device:
     0:
-        image: /images/pe/edge/integrations/remote/device-1-edge.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/remote/device-1-edge.webp
         title: 'Go to the "<b>Entities</b>" section -> "<b>Devices</b>" page on the Edge to see the created device with data.'
 
 ---

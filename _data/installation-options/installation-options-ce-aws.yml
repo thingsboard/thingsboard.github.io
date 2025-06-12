@@ -3,7 +3,7 @@ aws:
     title: Amazon EC2
     description: This guide will help you to setup ThingsBoard in AWS EC2 instance.
     link: /docs/user-guide/install/cluster/aws-self-hosted-setup/
-    icon: /images/install/cloud/amazon_ec2.svg
+    icon: https://img.thingsboard.io/install/cloud/amazon_ec2.svg
     alt: Amazon EC2 logo
     imageTitleAttribute: Set up ThingsBoard on Amazon EC2 instance
     imageWidth: 30
@@ -12,7 +12,7 @@ aws:
     title: Amazon EKS
     description: This guide will help you to setup ThingsBoard  using AWS EKS platform.
     link: /docs/user-guide/install/cluster/aws-eks-setup/
-    icon: /images/install/cloud/eks.svg
+    icon: https://img.thingsboard.io/install/cloud/eks.svg
     alt: Amazon EKS logo
     imageTitleAttribute: Deploy ThingsBoard using Amazon EKS platform
     imageWidth: 32

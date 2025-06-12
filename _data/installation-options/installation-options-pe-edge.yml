@@ -3,7 +3,7 @@ peEdge:
     title: Docker (Linux or Mac OS)
     description: This guide provides step-by-step instructions for running ThingsBoard Edge on Linux or Mac OS using Docker.
     link: /docs/user-guide/install/pe/edge/docker/
-    icon: /images/install/platform/docker-linux-macos.svg
+    icon: https://img.thingsboard.io/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
     imageTitleAttribute: Install ThingsBoard Edge using Docker on Linux or macOS
     imageWidth: 170
@@ -12,7 +12,7 @@ peEdge:
     title: Docker (Windows)
     description: This guide will help you to install and start ThingsBoard Edge using Docker on Windows.
     link: /docs/user-guide/install/pe/edge/docker-windows/
-    icon: /images/install/platform/docker-windows.svg
+    icon: https://img.thingsboard.io/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
     imageTitleAttribute: Install ThingsBoard Edge using Docker on Windows
     imageWidth: 96
@@ -21,7 +21,7 @@ peEdge:
     title: Ubuntu Server
     description: This guide provides step-by-step instructions for installing ThingsBoard Edge on Ubuntu 18.04 LTS and 20.04 LTS.
     link: /docs/user-guide/install/pe/edge/deb-installation/
-    icon: /images/install/platform/ubuntu.svg
+    icon: https://img.thingsboard.io/install/platform/ubuntu.svg
     alt: Ubuntu logo
     imageTitleAttribute: Install ThingsBoard Edge on Ubuntu Server
     imageWidth: 36
@@ -30,7 +30,7 @@ peEdge:
     title: CentOS/RHEL Server
     description: This guide provides step-by-step instructions for installing ThingsBoard Edge on RHEL/CentOS 7 and 8.
     link: /docs/user-guide/install/pe/edge/rhel/
-    icon: /images/install/platform/centos-redhat.svg
+    icon: https://img.thingsboard.io/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
     imageTitleAttribute: Install ThingsBoard Edge on CentOS, RHEL.
     imageWidth: 94
@@ -39,7 +39,7 @@ peEdge:
     title: Windows
     description: This guide provides instructions for installing ThingsBoard Edge on Windows.
     link: /docs/user-guide/install/pe/edge/windows/
-    icon: /images/install/platform/windows.svg
+    icon: https://img.thingsboard.io/install/platform/windows.svg
     alt: Windows logo
     imageTitleAttribute: Install ThingsBoard Edge on Windows.
     imageWidth: 35
@@ -48,7 +48,7 @@ peEdge:
     title: Raspberry Pi
     description: This guide provides step-by-step instructions for installing ThingsBoard Edge on RaspberryPi.
     link: /docs/user-guide/install/pe/edge/rpi/
-    icon: /images/install/platform/rpi3.svg
+    icon: https://img.thingsboard.io/install/platform/rpi3.svg
     alt: Raspberry Pi logo
     imageTitleAttribute: Install ThingsBoard Edge on Raspberry Pi
     imageWidth: 36
@@ -57,7 +57,7 @@ peEdge:
     title: Docker Cluster setup
     description: This guide will help you to setup ThingsBoard Edge in cluster mode using Docker Compose tool.
     link: /docs/pe/edge/config/edge-cluster-setup/
-    icon: /images/install/cluster/docker-compose.svg
+    icon: https://img.thingsboard.io/install/cluster/docker-compose.svg
     alt: Docker Compose logo
     imageTitleAttribute: Set up ThingsBoard Edge in cluster mode using Docker Compose
     imageWidth: 36

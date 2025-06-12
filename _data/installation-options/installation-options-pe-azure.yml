@@ -3,7 +3,7 @@ azureSetup:
     title: Azure Marketplace
     description: This guide describes how to install ThingsBoard Professional Edition from Azure Marketplace.
     link: /docs/user-guide/install/pe/cluster/azure-from-markeplace/
-    icon: /images/install/cloud/azure-vm.svg
+    icon: https://img.thingsboard.io/install/cloud/azure-vm.svg
     alt: Azure Marketplace logo
     imageTitleAttribute: Install ThingsBoard PE from Azure Marketplace
     imageWidth: 38
@@ -12,7 +12,7 @@ azureSetup:
     title: Azure Kubernetes service
     description: This guide will help you to setup ThingsBoard Professional Edition using Azure AKS platform
     link: /docs/user-guide/install/pe/cluster/azure-aks-setup/
-    icon: /images/install/cloud/azure-aks.svg
+    icon: https://img.thingsboard.io/install/cloud/azure-aks.svg
     alt: Azure Kubernetes Service logo
     imageTitleAttribute: Set up ThingsBoard using Azure AKS platform
     imageWidth: 56

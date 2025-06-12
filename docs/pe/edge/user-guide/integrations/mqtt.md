@@ -5,75 +5,75 @@ description: MQTT Integration guide
 
 assign-integration:
     0:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-1-edge.png
         title: 'Go to the <b>Edge management > Instances</b> section, click on your edge instance to open <b>"Edge details"</b> window, and navigate to the <b>"Attributes"</b> tab. To add a new <b>server attribute</b> to **Edge**, click the <b>"plus"</b> button.'
     1:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-2-edge.png
         title: 'Name it <b>brokerIp</b> and set the value as <b>"broker.hivemq.com"</b>. Then click the <b>"Add"</b> button.'
     2:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-3-edge.png
         title: 'The <b>"brokerIp"</b> server attribute is now added to the edge.'
     3:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-4-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-4-edge.png
         title: 'Now, click "<b>Manage edge integrations</b>" icon of Edge entity;'
     4:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-5-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-5-edge.png
         title: 'Click the <b>"+"</b> button at the top right of the corner. Select your integration from the drop-down menu and click the <b>"Assign"</b> button.'
     5:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-6-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-6-edge.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. You should see your integration. Click on it.'
     6:
-        image: /images/pe/edge/integrations/mqtt/assign-mqtt-integration-7-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-mqtt-integration-7-edge.png
         title: 'In the <b>"Integration details"</b> window, the <b>${{brokerIp}}</b> placeholder will be replaced with the value of the attribute.'
 
 send-uplink-edge:
     0:
-        image: /images/pe/edge/integrations/mqtt/send-mqtt-uplink-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/send-mqtt-uplink-1-edge.png
         title: 'In the integration <b>"Events"</b> tab, you should find the uplink message with the <b>"OK"</b> status. To see the message, click the three dots in the <b>"Message"</b> column.'
     1:
-        image: /images/pe/edge/integrations/mqtt/send-mqtt-uplink-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/send-mqtt-uplink-2-edge.png
 
 converter-mqtt-events:
     0:
-        image: /images/pe/edge/integrations/mqtt/converter-events-mqtt-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/converter-events-mqtt-1-edge.png
         title: 'Go to the <b>Integrations center > Data converters</b> section, click on the uplink converter to open the <b>"Data converter details"</b> window, and select the "<b>Events</b>" tab. There you will find an uplink message.'
     1:
-        image: /images/pe/edge/integrations/mqtt/converter-events-mqtt-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/converter-events-mqtt-2-edge.png
         title: 'To see the incoming message to the converter, click the three dots in the <b>"In"</b> column.'
     2:
-        image: /images/pe/edge/integrations/mqtt/converter-events-mqtt-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/converter-events-mqtt-3-edge.png
         title: 'To see the outgoing message from the converter, click the three dots in the <b>"Out"</b> column.'
 
 downlink-rule:
     0:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-mqtt-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-mqtt-1-edge.png
         title: 'Go to the <b>Edge management > Rule chain templates</b> section and click the <b>Edge Root Rule Chain</b> to open it.'
     1:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-mqtt-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-mqtt-2-edge.png
         title: 'Create an <b>originator fields</b> node. Configure to add originator name and originator type to the message metadata - in the downlink converter, the device name is used to set the correct downlink MQTT topic.'
     2:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-mqtt-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-mqtt-3-edge.png
         title: 'Create an <b>integration downlink</b> node. Specify your integration in its settings;'
     3:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-mqtt-4-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-mqtt-4-edge.png
         title: 'Set the <b>Attributes Updated</b> and <b>Post attributes</b> links from the <b>message type switch</b> node to the <b>originator fields</b> node. And set the <b>Success</b> link from the <b>originator fields</b> node to the <b>integration downlink</b> node. When the attribute is created or changes are made to the attribute on the Edge, the downlink message will be sent to the integration. Apply the <b>changes</b>.'
 
 downlink-integration-message:
     0:
-        image: /images/pe/edge/integrations/mqtt/downlink-message-mqtt-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-message-mqtt-1-edge.png
         title: 'Go to the <b>Integrations center > Data converters</b> section, click on the downlink converter to open the <b>"Data converter details"</b> window, and navigate to the <b>"Events"</b> tab. There you will find the downlink message;'
     1:
-        image: /images/pe/edge/integrations/mqtt/downlink-message-mqtt-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-message-mqtt-2-edge.png
 
 downlink-converter-message:
     0:
-        image: /images/pe/edge/integrations/mqtt/downlink-mqtt-converter-message-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-mqtt-converter-message-1-edge.png
         title: 'Go to the <b>Integrations center > Data converters</b> section, click on the downlink converter to open <b>"Data converter details"</b> window, and navigate to the <b>"Events"</b> tab. There you will find the downlink message;'
     1:
-        image: /images/pe/edge/integrations/mqtt/downlink-mqtt-converter-message-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-mqtt-converter-message-2-edge.png
         title: 'Click the three dots in the <b>In</b> column to see the message that came from the integration to the converter.'
     2:
-        image: /images/pe/edge/integrations/mqtt/downlink-mqtt-converter-message-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-mqtt-converter-message-3-edge.png
         title: 'Click the three dots in the <b>Out</b> column to see the message sent to the device after processing by the converter.'
 
 ---
@@ -90,7 +90,7 @@ It is typically used when your devices are already connected to an external MQTT
 
 To learn more, please see the integration diagram.
 
-<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/mqtt-integration.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/mqtt-integration.svg"></object>
 
 ThingsBoard Edge MQTT Integration acts as an MQTT client. 
 It subscribes to topics and converts the data into telemetry and attribute updates.
@@ -124,7 +124,7 @@ Follow the steps below to add the **MQTT integration**:
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-![image](/images/pe/edge/integrations/mqtt/add-mqtt-integration-template-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/add-mqtt-integration-template-1-edge.png)
 
 - The next step is to create an **Uplink data converter**. 
 
@@ -169,13 +169,13 @@ tb-edge/mqtt-integration-tutorial/sensors/+/temperature
 
 - You can also select an MQTT **QoS** level.  level. By default, we use MQTT QoS level 0 (at most once);
 
-![image](/images/pe/edge/integrations/mqtt/add-mqtt-integration-template-4-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/add-mqtt-integration-template-4-edge.png)
 
 - Go to the '**Advanced settings**'. It is better to uncheck the '**Clean session**' parameter. Many brokers do not support sticky sessions, so they will silently close the connection if you try to connect with this option enabled;
 - Let's leave the '**Downlink topic pattern**' by default, which means that the integration will take the **metadata.topic** and use it as the downlink topic; 
 - Click the **"Add"** button to create the integration.
 
-![image](/images/pe/edge/integrations/mqtt/add-mqtt-integration-template-5-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/add-mqtt-integration-template-5-edge.png)
 
 ### Modify Edge Root Rule Chain for downlinks
 
@@ -218,7 +218,7 @@ If you have done everything correctly, you will find an uplink message with the 
 
 When you send the message, a new device is created. The created device with data can be seen in the **Entities > Devices** section:
 
-![image](/images/pe/edge/integrations/mqtt/create-mqtt-device-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/create-mqtt-device-1-edge.png)
 
 You can also view the received data in the uplink converter. In the **In** and **Out** blocks of the **"Events"** tab:
 
@@ -236,18 +236,18 @@ mosquitto_sub -h broker.hivemq.com -p 1883 -t "tb-edge/mqtt-integration-tutorial
 
 Keep this terminal running in the background. In this terminal window, you should receive incoming messages sent later by the integration.
 
-![image](/images/pe/edge/integrations/mqtt/terminal-running-in-background.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/terminal-running-in-background.png)
 
 Now let's add a shared attribute 'firmware'. 
 Go to the **Devices** page, select your device, and navigate to the **"Attributes"** tab on the **ThingsBoard Edge**.
 To create a new attribute, select the **"Shared attributes"** scope and click the "**plus"** button. 
 Then set the attribute name, its value (_for example, the key name is 'firmware', value: 'v1.0_') and save the data.
 
-![image](/images/pe/edge/integrations/mqtt/add-mqtt-shared-attribute-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/add-mqtt-shared-attribute-1-edge.png)
 
 An example of incoming messages from **ThingsBoard Edge** in the terminal:
 
-![image](/images/pe/edge/integrations/mqtt/incoming-message-in-terminal.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/mqtt/incoming-message-in-terminal.png)
 
 To ensure that the downlink message is sent to the integration, you can check the **"Events"** tab of the integration:
 

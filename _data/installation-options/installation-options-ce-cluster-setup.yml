@@ -3,7 +3,7 @@ clusterSetup:
     title: Docker Compose
     description: This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool.
     link: /docs/user-guide/install/cluster/docker-compose-setup/
-    icon: /images/install/cluster/docker-compose.svg
+    icon: https://img.thingsboard.io/install/cluster/docker-compose.svg
     alt: Docker Compose logo
     imageTitleAttribute: Set up ThingsBoard in cluster mode using Docker Compose
     imageWidth: 36
@@ -12,7 +12,7 @@ clusterSetup:
     title: Minikube
     description: This guide will help you to setup ThingsBoard in cluster mode using Minikube tool.
     link: /docs/user-guide/install/cluster/minikube-cluster-setup/
-    icon: /images/install/cluster/minikube.svg
+    icon: https://img.thingsboard.io/install/cluster/minikube.svg
     alt: Minikube logo
     imageTitleAttribute: Deploy ThingsBoard cluster using Minikube tool
     imageWidth: 36
@@ -21,7 +21,7 @@ clusterSetup:
     title: OpenShift
     description: This guide will help you to setup ThingsBoard in cluster mode using OpenShift.
     link: /docs/user-guide/install/cluster/openshift-cluster-setup/
-    icon: /images/install/cluster/openshift.svg
+    icon: https://img.thingsboard.io/install/cluster/openshift.svg
     alt: OpenShift logo
     imageTitleAttribute: Deploy ThingsBoard cluster using OpenShift platform
     imageWidth: 36
