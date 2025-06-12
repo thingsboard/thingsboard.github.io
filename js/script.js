@@ -1156,7 +1156,7 @@ var tb = (function () {
 		const containerId = $('.filter').attr('data-container-id');
 		const filterMode = $('.filter').attr('data-mode');
 		const container = document.getElementById(containerId);
-		const content = Array.from(container.children);
+		const content = container ? Array.from(container.children) : null;
 		const checkboxes = $('.filter .check-box');
 
 		checkboxes.on('click', function() {
@@ -1302,6 +1302,78 @@ var tb = (function () {
 	});
 })();
 
+//animation for installation options cards, which are without tabs
+(function () {
+	$(document).ready(function () {
 
+		if (!$('.deployment-div').length) return;
 
+		animateBlocks();
+		function animateBlocks() {
+			$('.deployment-div .deployment-section.animate-from-start.active .installation-card-container').each((index, el) => {
+				if (!$(el).hasClass('installation-card-animation')) {
+					setTimeout(() => {
+						$(el).addClass('installation-card-animation');
+					}, index * 120);
+				}
+			})
+		}
+	});
+})();
+
+//script for tabs (on premise, live demo, cloud) in installation option
+(function () {
+	$(document).ready(function () {
+
+		if (!$('.install-navigation').length) return;
+
+		window.addEventListener('popstate', onPopStateCeInstallOptions);
+		onPopStateCeInstallOptions();
+
+		$('.install-navigation .menu-item').click(function () {
+			const activeId = $(this).attr('data-tab');
+			activateInstallSection(activeId);
+		});
+
+		function activateInstallSection(id) {
+			var param =  $('.install-navigation').attr('data-target-id');
+			var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+			params[param] = id;
+			var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+			if (window.location.hash) {
+				newurl += window.location.hash;
+			}
+			window.history.pushState({ path: newurl }, '', newurl);
+			selectTargetCeInstallOption(id);
+		}
+
+		function onPopStateCeInstallOptions() {
+			var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+			var targetId = params[$('.install-navigation').attr('data-target-id')];
+			if (!targetId) {
+				targetId = 'onPremise';
+			}
+			selectTargetCeInstallOption(targetId);
+		}
+
+		function selectTargetCeInstallOption(targetId) {
+			$("li.menu-item").removeClass("active");
+			$("li.menu-item#menu-item-"+targetId).addClass("active");
+			$('.deployment-div .deployment-section').removeClass("active");
+			$('.deployment-div .deployment-section#'+targetId).addClass("active");
+
+			animateBlocks();
+		}
+
+		function animateBlocks() {
+			$('.deployment-div .deployment-section.active .installation-card-container').each((index, el) => {
+				if (!$(el).hasClass('installation-card-animation')) {
+					setTimeout(() => {
+						$(el).addClass('installation-card-animation');
+					}, index * 120);
+				}
+			})
+		}
+	});
+})();
 

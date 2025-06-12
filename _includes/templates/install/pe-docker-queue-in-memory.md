@@ -27,6 +27,8 @@ services:
     ports:
       - "8080:8080"
       - "1883:1883"
+      - "8883:8883"
+      - "9090:9090"
       - "7070:7070"
       - "5683-5688:5683-5688/udp"
     logging:
@@ -63,10 +65,10 @@ services:
      USE_NEW_PAGE_FOR_REPORT: true
 volumes:
   postgres-data:
-    name: tb-pe-postgres-data
+    name: tb-postgres-data
     driver: local
   license-data:
     name: tb-pe-license-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}

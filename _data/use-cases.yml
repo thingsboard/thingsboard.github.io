@@ -35,7 +35,7 @@
   link: /use-cases/smart-farming/
   icon: https://img.thingsboard.io/case-fam-icon.svg
 - id: fleet-tracking
-  title: Fleet tracking
+  title: IoT Fleet Tracking
   link: /use-cases/fleet-tracking/
   icon: https://img.thingsboard.io/case-trk-icon.svg
 - id: smart-metering

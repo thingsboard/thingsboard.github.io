@@ -1,0 +1,32 @@
+{% assign installationOptions = include.installationOptions %}
+{% assign active = include.active %}
+{% assign installationOptionsCollection = site.data.installation-options[installationOptions] %}
+
+{% for category in installationOptionsCollection %}
+    {% assign categoryId = category[0] %}
+    {% assign categoryItems = category[1] %}
+
+    <div class="deployment-section{% if active == true %} animate-from-start active{% endif %}" id="{{ categoryId }}">
+        <div class="installation-card-content-wrapper">
+            {% for item in categoryItems %}
+                <div class="installation-card-container{% if item[1].comingSoon %} installation-card-content-coming-soon{% endif %}">
+                    <a class="installation-card-content" href="{{ item[1].link }}">
+                        <img src="{{ item[1].icon }}"
+                             title="{{ item[1].imageTitleAttribute }}"
+                             alt="{{ item[1].alt }}"
+                             width="{{ item[1].imageWidth }}"
+                             height="{{ item[1].imageHeight }}"
+                             loading="lazy">
+                        <span>{{ item[1].title }}</span>
+                        <p>{{ item[1].description }}</p>
+                    </a>
+                    {% if item[1].comingSoon %}
+                        <span class="coming-soon-crisp">
+                            Coming soon
+                        </span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

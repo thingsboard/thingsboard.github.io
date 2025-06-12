@@ -5,69 +5,67 @@ description: Remote Integrations Documentation
 
 addConverter:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-1.webp
-        title: '1. Open <b>Converter templates</b> menu page. 2. Click <b>("+")</b> icon and select <b>Create new converter</b>.'
+        image: /images/pe/edge/integrations/remote/add-converter-step-1.webp
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-2.webp
-        title: '1. Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select the converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
+        image: /images/pe/edge/integrations/remote/add-converter-step-2.webp
+
 
 addIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-1.webp
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-1.webp
         title: '1. Open <b>Integration templates</b> menu page. 2. Click the <b>("+")</b> icon to add a new integration.'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-2.webp
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-2.webp
         title: '1. Select integration type: <b>HTTP</b>. 2. Input integration name, e.g., <b>HTTP Demo Remote</b>. 3. Click <b>Next</b> button.'
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-3.webp
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-3.webp
         title: '1. Click <b>Select existing</b> button. 2. Select uplink data converter: <b>Temperature Converter</b>. 3. Click <b>Next</b> button.'
     3:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-4.webp
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-4.webp
         title: 'Enter the converter name, e.g., <b>Temperature converter</b>. 2. Select converter type: <b>Uplink</b>. 3. Insert the code snippet from the example. 4. Click the <b>Add</b> button.'
     4:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-5.webp
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-5.webp
         title: 'Verify that our <b>HTTP Demo Remote</b> integration template was created successfully.'
 
 assignIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-1.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-1.webp
         title: 'Go to the <b>Edge management > Instances</b> section and click on the corresponding <b>Edge</b> instance.'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-2.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-2.webp
         title: 'On the <b>Edge details</b> page, select the <b>Attributes</b> tab and add click the <b>"Add"</b> button to add a new attribute.'
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-3.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-3.webp
         title: 'In the <b>"Add attribute"</b> pop-up window, enter the <b>remoteHttpIntegrationUrl</b> attribute. Set <b>http://IP:port</b> as the remote URL for your HTTP integration and click the <b>Add</b> button.'
     3:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-4.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-4.webp
         title: 'Once you added the new attribute, close the <b>Edge details</b> page and stay on the <b>Instances</b> section.'
     4:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-5.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-5.webp
         title: 'To assign the integration to the <b>Edge</b>, click the <b>"Manage edge integrations"</b> button.'
     5:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-6.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-6.webp
         title: 'Click the <b>Assign to edge</b> button.'
     6:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-7.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-7.webp
         title: 'In the <b>"Assign Integrations To Edge"</b> pop-up window, select the target integration from the <b>"Entity list"</b> drop-down menu and click the <b>Assign</b> button.'
     7:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-8.webp
+        image: /images/pe/edge/integrations/remote/assign-integration-step-8.webp
         title: 'Open the <b>Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. Click on <b>HTTP Demo Remote</b> integration to check that placeholder is substituted with the value of the attribute.'
 
 copyCredentials:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/copy-credentials.webp
-        title: '1. Open the <b>Integration templates</b> menu page. 2. Click the integration template row. 3. Click to copy <b>Integration key</b>. 4. Click to copy <b>integration secret</b>.'
+        image: /images/pe/edge/integrations/remote/copy-credentials.webp
 
 sendUplink:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-1.webp
+        image: /images/pe/edge/integrations/remote/send-uplink-step-1.webp
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-2.webp
+        image: /images/pe/edge/integrations/remote/send-uplink-step-2.webp
 
 device:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/device-1-edge.webp
+        image: /images/pe/edge/integrations/remote/device-1-edge.webp
         title: 'Go to the "<b>Entities</b>" section -> "<b>Devices</b>" page on the Edge to see the created device with data.'
 
 ---
@@ -191,89 +189,13 @@ Once the attribute is added, we are ready to assign the integration and verify t
 
 You can install the ThingsBoard integration via **Docker**, **Debian** or **RPM packages**. Please use one of the following steps.
 
- * [Docker on Linux or Mac OS](#docker-on-linuxmac){: target="_blank"}
- * [Docker on Windows](#docker-on-windows){: target="_blank"}
- * [Ubuntu](#ubuntu-server){: target="_blank"}
- * [CentOS/RHEL Server](#centosrhel-server){: target="_blank"}
+{% capture selectPlatform %}
+Docker on Linux or Mac OS%,%docker%,%templates/edge/integrations/resources/docker-on-linux-mac.md%br%
+Docker on Windows%,%docker-windows%,%templates/edge/integrations/resources/docker-on-windows.md%br%
+Ubuntu%,%ubuntu%,%templates/edge/integrations/resources/ubuntu.md%br%
+CentOS/RHEL Server%,%centos%,%templates/edge/integrations/resources/centos-rhel.md{% endcapture %}
 
-#### Docker on Linux/Mac
-
-- [Install Docker CE](https://docs.docker.com/engine/installation/){: target="_blank"}
-
-- **Choose the Integration to install**
-
-
-{% capture contenttogglespec %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-docker.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
-
-
-{% include templates/edge/install/integration/advanced-config-docker.md %} 
-
-
-- **Troubleshooting**
-
-{% include templates/troubleshooting/dns-issues.md %}
-
-#### Docker on Windows
-
-- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/){: target="_blank"}
-
-- **Choose the Integration to install**
-
-{% capture contenttogglespecwin %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker-windows.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker-windows.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-docker-windows.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker-windows.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker-windows.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
-
-{% include templates/edge/install/integration/advanced-config-docker.md %} 
-
-- **Troubleshooting**
-
-{% include templates/troubleshooting/dns-issues-windows.md %}
-
-#### Ubuntu Server
-
-- **Install Java 17 (OpenJDK)** 
-
-{% include templates/install/ubuntu-java-install.md %}
-
-- **Choose the Integration package to install**
- 
-{% capture ubuntuinstallspec %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-ubuntu.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-ubuntu.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-ubuntu.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
-
-#### CentOS/RHEL Server
-
-- **Install Java 17 (OpenJDK)** 
-
-{% include templates/install/rhel-java-install.md %}
-
-- **Choose the Integration package to install**
- 
-{% capture rhelinstallspec %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-rhel.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-rhel.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-rhel.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-rhel.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
+{% include content-toggle.liquid content-toggle-id="selectPlatform" toggle-spec=selectPlatform %}
 
 ### Remote HTTP integration validation
 

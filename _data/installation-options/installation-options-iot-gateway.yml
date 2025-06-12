@@ -1,0 +1,55 @@
+iotGateway:
+  0:
+    title: Docker (Linux or Mac OS)
+    description: This guide will help you to install and start ThingsBoard Gateway using Docker Compose on Linux or Mac OS.
+    link: /docs/iot-gateway/install/docker-installation/
+    icon: /images/install/platform/docker-linux-macos.svg
+    alt: Docker logo with Linux and macOS icons
+    imageTitleAttribute: Install ThingsBoard Gateway using Docker on Linux or macOS
+    imageWidth: 170
+    imageHeight: 36
+  1:
+    title: Docker (Windows)
+    description: This guide will help you to install and start ThingsBoard Gateway using Docker on Windows.
+    link: /docs/iot-gateway/install/docker-windows/
+    icon: /images/install/platform/docker-windows.svg
+    alt: Docker logo with Windows icon
+    imageTitleAttribute: Install ThingsBoard Gateway using Docker on Windows
+    imageWidth: 96
+    imageHeight: 36
+  2:
+    title: Ubuntu Server
+    description: This guide will help you to install ThingsBoard IoT Gateway on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+    link: /docs/iot-gateway/install/deb-installation/
+    icon: /images/install/platform/ubuntu.svg
+    alt: Ubuntu logo
+    imageTitleAttribute: Install ThingsBoard Gateway on Ubuntu Server
+    imageWidth: 36
+    imageHeight: 36
+  3:
+    title: CentOS/RHEL Server
+    description: This guide will help you to install ThingsBoard IoT Gateway on CentOS or RHEL.
+    link: /docs/iot-gateway/install/rpm-installation/
+    icon: /images/install/platform/centos-redhat.svg
+    alt: CentOS and Red Hat logos
+    imageTitleAttribute: Install ThingsBoard Gateway on CentOS, RHEL.
+    imageWidth: 94
+    imageHeight: 36
+  4:
+    title: Raspberry Pi
+    description: This guide will help you to install ThingsBoard IoT Gateway on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+    link: /docs/iot-gateway/install/deb-installation/
+    icon: /images/install/platform/rpi3.svg
+    alt: Raspberry Pi logo
+    imageTitleAttribute: Install ThingsBoard Gateway on Raspberry Pi
+    imageWidth: 36
+    imageHeight: 36
+  5:
+    title: Python
+    description: This guide will help you to install and start ThingsBoardGateway as python module.
+    link: /docs/iot-gateway/install/pip-installation/
+    icon: /images/install/platform/python.svg
+    alt: Python logo
+    imageTitleAttribute: Install ThingsBoard Gateway as python module
+    imageWidth: 36
+    imageHeight: 36

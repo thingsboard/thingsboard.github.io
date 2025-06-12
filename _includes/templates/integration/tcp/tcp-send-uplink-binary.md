@@ -5,7 +5,9 @@ echo -e -n '\x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x32\x64\x65\x66\x61\x75\x6c
 ```
 {: .copy-code}
 
-![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-terminal-binary-uplink-message-1.png)
+![image](/images/user-guide/integrations/tcp/tcp-terminal-binary-uplink-message-1.png)
+
+{% unless page.docsPrefix == "pe/edge/" %}
 
 If you want to send a message back to the device using **Downlink,** the command will look like this:
 
@@ -14,4 +16,6 @@ echo -e -n '\x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x32\x64\x65\x66\x61\x75\x6c
 ```
 {: .copy-code}
 
-![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-terminal-binary-downlink-message-1.png)
+![image](/images/user-guide/integrations/tcp/tcp-terminal-binary-downlink-message-1.png)
+
+{% endunless %}

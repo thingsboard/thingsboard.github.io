@@ -259,6 +259,9 @@
 <script>
     const privateCloudPlans = {{ plans }};
     let clipboardMessage = '';
+    let optimalPlanName = '';
+    let price = 0;
+    let extraStoragePrice = 0;
 
     function openModal() {
         const modal = document.getElementById('myModal');
@@ -460,6 +463,11 @@
                 dataRetention,
                 retentionInMinutes
             } = results;
+
+            optimalPlanName = plan.name;
+            price = totalPrice;
+            extraStoragePrice = extraStorageCost;
+
             resultsCard.classList.remove('hidden');
             resultsCard.innerHTML = `
                 <div class="card-header">
@@ -649,6 +657,9 @@
 
         function displayEnterpriseResults(dataPointsPerMinute, devices, storageNeededInGB, retentionInMinutes, dataRetention) {
             resultsCard.classList.remove('hidden');
+            optimalPlanName = 'Enterprise';
+            price = 0;
+            extraStoragePrice = 0;
             resultsCard.innerHTML = `
                 <div class="card-header">
                   <h3>
@@ -739,7 +750,7 @@
             clearTimeout(debounceTimer);
             debounceTimer = setTimeout(() => {
                 sendDataToGTM();
-            }, 5000);
+            }, 3000);
         }
 
         function sendDataToGTM() {
@@ -755,7 +766,10 @@
                 'calculator_retention_months': parseInt(retentionInput.value) || 0,
                 'calculator_addon_dev_envs': devEnvsCheckbox.checked,
                 'calculator_addon_test_envs': testEnvsCheckbox.checked,
-                'calculator_addon_mobile_app': mobileAppCheckbox.checked
+                'calculator_addon_mobile_app': mobileAppCheckbox.checked,
+                'calculator_plan': optimalPlanName,
+                'calculator_extra_storage_cost': extraStoragePrice,
+                'calculator_price': price
             });
         }
     }
