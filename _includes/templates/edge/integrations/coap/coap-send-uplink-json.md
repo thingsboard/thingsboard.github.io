@@ -1,20 +1,30 @@
-Use the command below to send a message. Don’t forget to replace `$YOUR_COAP_ENDPOINT_URL` with corresponding value.
+Send the uplink message:
 
 ```shell
 echo -e -n '{"deviceName": "SN-001", "deviceType": "default", "temperature": 25.7, "humidity": 69}' | coap-client -m post $YOUR_COAP_ENDPOINT_URL -t application/json -f-
 ```
 {: .copy-code}
+* Replace **`$YOUR_COAP_ENDPOINT_URL`** with the corresponding value.
 
-![image](/images/pe/edge/integrations/coap/terminal-coap-json-payload-1-edge.png)
+![image](/images/pe/edge/integrations/coap/terminal-coap-json-payload-1-edge.webp)
 
-Now, go to the "**Integrations center**" -> "**Integrations**" and navigate to the "**Events**" tab in your MQTT integration on the **ThingsBoard Edge**. If you have done everything correctly, you will find an uplink message with the status 'OK'.
+To view the uplink message:
+* Go to the **Integrations center > Integrations** section and click on the integration
+* On the **"Integration details"** page select the **"Events"** tab.
+* Check the status of the uplink message. If the configuration is correct, the status will display as **"OK"**.
 
-![image](/images/pe/edge/integrations/coap/integration-events-coap-1-edge.png)
+{% include images-gallery.html imageCollection="events-json" %}
 
-When you sent the message, a new device was created. The created device with data can be seen in the "**Entities**" section -> "**Devices**" page:
+After the message is sent, a new device is created.
+To view the created device and its data:
+* Go to the **Entities > Devices** section and click on the device
+* On the **"Device details"** page select the **"Latest telemetry"** tab.
 
-![image](/images/pe/edge/integrations/coap/device-coap-1-edge.png)
+{% include images-gallery.html imageCollection="device-json" %}
 
-Also, received data can be viewed in the uplink converter. In the 'In' and 'Out' blocks of the "**Events**" tab:
+The received data can be viewed in the **Uplink converter**:
+* Go to the **Integrations center > Data converters** section and click the **Uplink converter**.
+* On the **“Data converter details”** page, select the **“Events”** tab.
+* View the message details in the **“In”** and **“Out”** columns.
 
 {% include images-gallery.html imageCollection="coap-converter-json-events" %}
