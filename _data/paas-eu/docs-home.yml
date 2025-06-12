@@ -287,8 +287,8 @@ toc:
       path: /docs/paas/eu/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/paas/eu/user-guide/rbac/
-    - title: Secret storage
-      path: /docs/paas/eu/user-guide/secret-storage/
+    - title: Secrets storage
+      path: /docs/paas/eu/user-guide/secrets-storage/
       new: true
     - title: Two-factor authentication
       path: /docs/paas/eu/user-guide/two-factor-authentication/
