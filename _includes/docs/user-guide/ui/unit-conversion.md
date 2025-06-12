@@ -22,8 +22,9 @@ Unit conversion is supported for telemetry data, Y-axis scales, and threshold se
 
 ## Enable unit conversion
 
-Unit conversion for telemetry keys, the Y-axis, and threshold values is configured in the widget&#39;s "**Unit settings**" section.
-- Specify the **source unit** – This tells the system which unit the current value is measured in, so it knows how to convert it.
+Unit conversion is configured in the **unit settings** available in the **telemetry keys**, **Y-axis**, and **thresholds** configurations within the widget settings.
+
+- Specify the **source unit** — the unit of the incoming telemetry value received from the server to ensure correct conversion to the target unit.
 - Enable unit conversion by toggling the "**Enable unit conversion**" switch.
 - The system will automatically suggest commonly used target units for each unit system (e.g., °C for Metric, °F for Imperial, and °C for Hybrid). However, you can override these by selecting different units from the dropdown list.
 
@@ -39,7 +40,7 @@ Once unit conversion is enabled, an icon will appear in the Unit field indicatin
 
 ### Range color settings
 
-**Range color settings** are based on the **original telemetry value**, before any unit conversion is applied.
+**Range color settings** use the **original telemetry value** received from the server in its source **units** — before any unit conversion is applied.
 
 For example, if your device sends a temperature value of **22 °C** and unit conversion is enabled, the widget may display it as **71 °F**. 
 However, the **range logic still uses the original 22 °C** to determine the color.
