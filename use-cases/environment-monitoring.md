@@ -52,7 +52,7 @@ includeAdvantages: "true"
     <div class="section-header">
         <h2>Environment monitoring dashboard structure</h2>
         <p>
-            The Smart Office solution includes a sample dashboard designed for clear visualization of key metrics. It displays energy and water consumption, air quality, temperature, humidity, and HVAC system status. Alarms are also shown to enable prompt response to abnormal conditions. While the provided dashboard is relatively simple, ThingsBoard allows users to create much more complex and customized dashboards based on their specific Smart Office requirements.
+            The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template        
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -104,7 +104,7 @@ includeAdvantages: "true"
 <section class="applications applications-additional summary-margin section-padding">
     <div class="section-header">
         <h2>Applications of environment monitoring solution</h2>
-        <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+        <p>An IoT-powered environmental monitoring system can be deployed across various sectors to ensure safety, compliance, and sustainability. Below are key areas where such solutions bring significant value.</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
@@ -118,7 +118,7 @@ includeAdvantages: "true"
             </div>
             <div class="text-block">
                 <h3>Warehouses and cold storage facilities</h3>
-                <p>tMonitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
+                <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
             </div>
         </div>
         <div class="images-row">
@@ -182,7 +182,7 @@ includeAdvantages: "true"
 <section class="summary">
     <div class="summary-text">
         <h2>Summary of environment monitoring</h2>
-        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
+        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to air quality or other sensors and add remote control scenarios.</p>
     </div>
     <div class="summary-icon">
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">

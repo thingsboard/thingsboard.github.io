@@ -10,12 +10,12 @@ includeAdvantages: "true"
 
 {% include usecase-nav.html usecase="smart-energy" %}
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
-<h1 class="usecase-title">Smart Energy</h1>
+<h1 class="usecase-title">Smart energy</h1>
 <section class="environment-monitoring-about">
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">Smart Energy is intelligent energy resource management using IoT to improve efficiency, reduce costs, and automate processes. ThingsBoard is a perfect platform for these tasks, providing scalable data collection, analytics, and real-time remote control.</p>
+                <p class="text">Smart energy is intelligent energy resource management using IoT to improve efficiency, reduce costs, and automate processes. ThingsBoard is a perfect platform for these tasks, providing scalable data collection, analytics, and real-time remote control.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>            </div>
@@ -57,7 +57,7 @@ includeAdvantages: "true"
     <div class="smart-energy-benefits section-padding">
         <div class="section-header">
             <h2>Smart energy benefits</h2>
-            <p>The Smart Energy solution provides a wide range of benefits for businesses, facility managers, and technical teams, enabling efficient, automated, and scalable energy management.</p>
+            <p>The smart energy solution provides a wide range of benefits for businesses, facility managers, and technical teams, enabling efficient, automated, and scalable energy management.</p>
         </div>
         <div class="use-cases-solution-structure-cards">
             <div class="use-cases-solution-structure-card">
@@ -154,7 +154,7 @@ includeAdvantages: "true"
 <section class="applications applications-additional section-padding">
     <div class="section-header">
         <h2>Applications of smart energy solution</h2>
-        <p>A scalable IoT-based energy monitoring and management system can be adapted for a wide range of industries and infrastructure types. Below are just a few examples of where Smart Energy solutions can be applied.</p>
+        <p>A scalable IoT-based energy monitoring and management system can be adapted for a wide range of industries and infrastructure types. Below are just a few examples of where smart energy solutions can be applied.</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
