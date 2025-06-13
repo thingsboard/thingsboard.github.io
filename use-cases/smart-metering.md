@@ -8,7 +8,7 @@ notitle: "true"
 
 {% include usecase-nav.html usecase="smart-metering" %}
 
-<h1 class="usecase-title">IoT Smart Metering Solutions</h1>
+<h1 class="usecase-title">IoT smart metering solutions</h1>
 
 ## IoT and smart meters
 

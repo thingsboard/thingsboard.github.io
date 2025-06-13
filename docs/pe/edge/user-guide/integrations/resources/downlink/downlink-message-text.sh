@@ -1,0 +1,1 @@
+echo -e 'SN-001,default,temperature,25.7,humidity,69' | nc -q120 -u 127.0.0.1 11560
