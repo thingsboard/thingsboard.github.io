@@ -768,8 +768,8 @@
                 'calculator_addon_test_envs': testEnvsCheckbox.checked,
                 'calculator_addon_mobile_app': mobileAppCheckbox.checked,
                 'calculator_plan': optimalPlanName,
-                'calculator_extra_storage_cost': extraStoragePrice,
-                'calculator_price': price
+                'calculator_extra_storage_cost': Math.round(extraStoragePrice),
+                'calculator_price': Math.round(price)
             });
         }
     }
