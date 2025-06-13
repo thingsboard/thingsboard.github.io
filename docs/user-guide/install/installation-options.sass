@@ -44,6 +44,7 @@ $install-color: #506dad
                 display: block
               .installation-card-content-wrapper
                 display: flex
+                justify-content: center
                 flex-wrap: wrap
                 gap: 20px
                 &:has(.installation-card-container:nth-child(1):last-child)
@@ -133,7 +134,6 @@ $install-color: #506dad
               margin: 0
               list-style: none
               transition: ease-in-out 0.3s
-              opacity: 0
               p
                 display: flex
                 align-items: center
@@ -157,37 +157,3 @@ $install-color: #506dad
                   color: #2A7DEC
                 img
                   filter: brightness(0) saturate(100%) invert(41%) sepia(28%) saturate(3464%) hue-rotate(197deg) brightness(95%) contrast(94%)
-
-            li:nth-child(1)
-              animation: fadeInFromLeft 0.6s ease forwards
-              animation-delay: 0.2s
-            li:nth-child(2)
-              animation: fadeInFromBottom 0.6s ease forwards
-              animation-delay: 0.3s
-            li:nth-child(3)
-              animation: fadeInFromRight 0.6s ease forwards
-              animation-delay: 0.4s
-
-@keyframes fadeInFromLeft
-  from
-    opacity: 0
-    transform: translateX(-60px)
-  to
-    opacity: 1
-    transform: translateX(0)
-
-@keyframes fadeInFromBottom
-  from
-    opacity: 0
-    transform: translateY(60px)
-  to
-    opacity: 1
-    transform: translateY(0)
-
-@keyframes fadeInFromRight
-  from
-    opacity: 0
-    transform: translateX(60px)
-  to
-    opacity: 1
-    transform: translateY(0)
