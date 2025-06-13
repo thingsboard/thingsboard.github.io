@@ -217,6 +217,8 @@ There are four types of keys: Attributes, Time Series, Entity Field and Alarm Fi
 
 {% include images-gallery.html imageCollection="data-key-configuration-units" %}
 
+> Starting from ThingsBoard 4.1, widgets also support automatic data conversion and unit switching based on the selected unit system. Learn more about this [here](/docs/{{docsPrefix}}user-guide/ui/unit-conversion/){:target="_blank"}.
+
 - **Decimals.** Specify the desired number of digits to be displayed after floating-point number and click “Save”.
 
 {% include images-gallery.html imageCollection="data-key-configuration-decimals" %}
