@@ -77,29 +77,91 @@ export JWT_TOKEN_SIGNING_KEY=<signing-key>
 
   ![image](/images/trendz/signing-key-8.png)
 
-## Trendz Widget Bundle
-Uploading the Trendz bundle is essential to enable sharing views on the ThingsBoard dashboard. When accessing Trendz for the first time, you can upload the bundle after discovering your topology.
+## Required Actions in Trendz Settings
 
-![image](/images/trendz/topology-upload-bundle.png)
+To fully unlock Trendz capabilities, certain add-ons and settings must be installed in ThingsBoard. 
+These components are essential for enabling advanced features:
 
-You can also upload, update, or check the status of your Trendz bundle from the Settings page. Follow these steps:
-* Log in as a Tenant Administrator and navigate to the Settings page. 
+### Required Components
+ 
+- **Trendz Widget Bundle**  
+  Enables creating and displaying Trendz widgets on ThingsBoard dashboards.  
+  *(Learn how to use widgets after installation [here](/docs/trendz/embed-visuals.md))*
 
-  ![image](/images/trendz/signing-key-1.png)
+- **Trendz JS Summary Module**  
+  Required for configuring AI Widget Summaries across ThingsBoard widgets.  
+  *(Learn how to adjust summaries [here](/docs/trendz/ai-widget-summary.md))*
 
-* In the Trendz Widget Bundle Management section, review the status of the Widget Bundle. The status can be one of the following:
-    * **Not installed**: The bundle is not currently present in ThingsBoard.
-    * **Update required**: A newer version of the bundle is available.
-    * **Latest version installed**: The current bundle is up to date.
-    * **The bundle is invalid**: The existing bundle is corrupted or incomplete.  
-* Take Appropriate Action:
-    * If the status is **Latest version installed**, no action is needed as the Trendz Widget Bundle is already up to date.
-    * For any other status, click the Upload Bundle button. If the bundle is not installed, it will be uploaded for the first time. 
-      If the bundle is outdated, it will be updated to the latest version.
+- **Trendz Settings**  
+  Needed for Trendz solution templates and AI Summary rule nodes.
 
-    ![image](/images/trendz/settings-upload-button.png)
+You can **upload, update, or check the status** of all Trendz add-ons from the **Settings** page.
+
+> settings-1
+
+### How to Access the Settings Page
+
+1. Log in as a **Tenant Administrator**.
+2. Navigate to the **Settings** page.
+
+> settings-2
+
+### Trendz Widget Bundle
+
+Uploading the Trendz Widget Bundle is **required** to enable view sharing from Trendz to ThingsBoard dashboards.
+
+In the **Trendz Widget Bundle** section, you’ll see one of the following status indicators:
+
+- **Not installed** – Bundle is missing.
+- **Update required** – A newer version is available.
+- **Latest version installed** – You’re good to go.
+- **Bundle is invalid** – The current bundle is corrupted or incomplete.
+
+**Action Steps:**
+
+- If status is **Latest version installed** – no action is needed.
+- For other statuses, click the **Upload bundle** button:
+  - If not installed - uploads the bundle.
+  - If outdated - updates it to the latest version.
+
+> settings-3
+
+### Trendz JS Summary Module
+
+Check the status under the **Trendz JS Summary Module** section:
+
+- **Not installed** – Module is missing.
+- **Update required** – A newer version is available.
+- **Latest version installed** – No action needed.
+
+**Action Steps:**
+
+- If status is **Latest version installed** – you’re done.
+- Otherwise, click the **Upload Module** button:
+  - If not installed - uploads the module.
+  - If outdated - updates it.
+
+> settings-4
+
+### Trendz Settings
+
+Check the status under the **Trendz Settings** section:
+
+- **Not installed** – Settings are missing.
+- **Update required** – A newer version is available.
+- **Settings are actual** – All up to date.
+
+**Action Steps:**
+
+- If status is **Settings are actual** – no changes needed.
+- Otherwise, click the **Upload Settings** button:
+  - If not installed - uploads the settings.
+  - If outdated - updates them.
+
+> settings-5
 
 ## Link to ThingsBoard
+
 To simplify the process of adding Trendz views to ThingsBoard dashboards, we have introduced the ability to open the dashboard where the view was added in a new tab. 
 Configure the link to your ThingsBoard instance in Settings to use this feature. Follow these steps:
 * Log in to Trendz and navigate to the Settings page.
@@ -117,7 +179,7 @@ After this, you can open your modified or newly created dashboard in a new tab b
 ## AI Assistant
 
 To use AI Assistant feature in Trendz, you need to configure it first. To enable your own AI model, go to **Settings → General → AI Assistant** in Trendz. 
-There, you can enable the **Use own model** option, select an AI provider (OpenAI, Amazon Bedrock, or Google), and enter the required API credentials.
+There, you can enable the **Use own model** option, select an AI provider (OpenAI, Amazon Bedrock, Google or Custom), and enter the required API credentials.
 
 For more details on configuring AI Assistant, you can read more [here](/docs/trendz/custom-ai-model-configuration.md).
 

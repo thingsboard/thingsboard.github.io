@@ -21,24 +21,26 @@ toc:
   section:
     - title: Overview
       path: /docs/trendz/visualizations-overview/
-    - title: Tables
-      path: /docs/trendz/visualizations-tables/
-    - title: Line Chart
-      path: /docs/trendz/visualizations-line/
-    - title: Bar & Histogram
-      path: /docs/trendz/visualizations-bar/
-    - title: Pie Chart
-      path: /docs/trendz/visualizations-pie/
-    - title: Scatter Plot
-      path: /docs/trendz/visualizations-scatter/
-    - title: Heat Map
-      path: /docs/trendz/visualizations-heatmap/
-    - title: Calendar
-      path: /docs/trendz/visualizations-calendar/
-    - title: Cards with line chart
-      path: /docs/trendz/visualizations-card-with-line/
-    - title: Cards
-      path: /docs/trendz/visualizations-card/
+    - title: View Types
+      section:
+        - title: Tables
+          path: /docs/trendz/visualizations-tables/
+        - title: Line Chart
+          path: /docs/trendz/visualizations-line/
+        - title: Bar & Histogram
+          path: /docs/trendz/visualizations-bar/
+        - title: Pie Chart
+          path: /docs/trendz/visualizations-pie/
+        - title: Scatter Plot
+          path: /docs/trendz/visualizations-scatter/
+        - title: Heat Map
+          path: /docs/trendz/visualizations-heatmap/
+        - title: Calendar
+          path: /docs/trendz/visualizations-calendar/
+        - title: Cards with line chart
+          path: /docs/trendz/visualizations-card-with-line/
+        - title: Cards
+          path: /docs/trendz/visualizations-card/
     - title: View settings
       path: /docs/trendz/view-settings/
     - title: View collections
@@ -117,6 +119,8 @@ toc:
   path: /docs/trendz/background-jobs/
 - title: Tasks
   path: /docs/trendz/tasks-service/
+- title: Settings
+  path: /docs/trendz/settings/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
 - title: Trendz release notes
