@@ -351,7 +351,7 @@ selfManagedPlan:
                 <div class="text">
                     <h2 class="no-margin">Ready to scale past 1,000 devices?</h2>
                 </div>
-                <button onclick="switchToPrivateCloud()" class="button clulator gtm_button">See Private Cloud Options</button>
+                <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
         </div>
     </div>
@@ -493,7 +493,7 @@ selfManagedPlan:
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button onclick="openModal()" class="button clulator gtm_button">Calculate your pricing</button>
+                <button onclick="openModal()" id="calculate_your_pricing" class="button gtm_button">Calculate your pricing</button>
             </div>
             <div class="add-ons">
                 <h2>Optional add-ons</h2>
