@@ -4,7 +4,7 @@
 {% assign sinceVersion = "4.0.0" %}
 {% include templates/since.md %}
 
-**Calculated fields** allow users to perform real-time calculations on telemetry and attributes, enabling seamless data transformation without the need for [rule chains](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview){:target="_blank"} and extra logic blocks.
+**Calculated fields** allow Tenant administrators to perform real-time calculations on telemetry and attributes, enabling seamless data transformation without the need for [rule chains](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview){:target="_blank"} and extra logic blocks.
 By defining custom expressions or scripts, users can standardize data, and create new computed metrics dynamically. 
 This feature is particularly useful for optimizing data processing, improving analytics.
 
@@ -34,6 +34,10 @@ Calculated fields can be applied at different levels within the system:
 This flexibility allows users to either define unique calculations per entity or apply standardized logic across a group of similar entities, optimizing data processing and management.
 
 ## Create new calculated field
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+>**Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
+{% endif %}
 
 To create a calculated field, follow these steps:
 
