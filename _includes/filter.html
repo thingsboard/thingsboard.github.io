@@ -8,15 +8,19 @@
         {% if filterLabel %}
         <span>{{ filterLabel }}</span>
         {% endif %}
-        <div class="actions">
-            <div class="check-box checked" id="main">
-                All
+        <div class="filter-scroll-wrapper">
+            <button id="filterScrollLeft" class="scroll-arrow left-arrow hidden"><i class="fas fa-chevron-left"></i></button>
+            <div class="actions" id="filterScrollContainer">
+                <div class="check-box checked" id="main">
+                    All
+                </div>
+                {% for filter in filters %}
+                <div class="check-box" id="{{ filter }}">
+                    {{ filter }}
+                </div>
+                {% endfor %}
             </div>
-            {% for filter in filters %}
-            <div class="check-box" id="{{ filter }}">
-                {{ filter }}
-            </div>
-            {% endfor %}
+            <button id="filterScrollRight" class="scroll-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 </div>

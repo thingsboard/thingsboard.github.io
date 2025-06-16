@@ -1,3 +1,5 @@
+@import "../_includes/contact-us-modal"
+
 #case-studies
   #case-studies-content
     .case-studies-wrapper
@@ -14,7 +16,7 @@
         text-align: center
 
       .case-studies-hero
-        padding-bottom: 50px
+        padding-bottom: 20px
         h1
           color: #212529
           text-align: center
@@ -84,10 +86,11 @@
 
       #case-studies-clients
         display: flex
-        justify-content: center
         flex-wrap: wrap
         gap: 32px
-        padding-top: 0
+        min-height: 299px
+        padding: 0
+        margin-bottom: 26px
 
         .client-card
           position: relative
@@ -98,12 +101,8 @@
           background-size: cover
           color: #fff
           overflow: hidden
-
-          //&:last-child
-          //  margin-right: auto
-          //
-          //&:nth-last-child(2)
-          //  margin-left: auto
+          &.pagination-hidden, &.filter-hidden
+            display: none
 
           .bg-wrap
             width: 100%
@@ -174,8 +173,158 @@
                   color: #fff
                   cursor: pointer
 
+      .success-story-promo
+        width: 100%
+        background: #F4F8FE
+        border: 1px solid #F4F8FE
+        border-radius: 24px
+        color: #202021
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 48px
+        .content
+          h2
+            font-size: 36px
+            font-weight: 500
+            line-height: 48px
+          p
+            color: #3A3B3D
+            font-size: 18px
+            line-height: 30px
+            white-space: nowrap
+
+      .pagination-container
+        padding-top: 20px
+        padding-bottom: 60px
+        text-align: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 20px
+
+        &.hidden
+          display: none
+
+        button#showMoreBtn
+          background-color: #fff
+          color: #2A7DEC
+          width: 200px
+          border: solid 1px #2A7DEC
+          outline: none
+          margin-bottom: 56px
+          &.hidden
+            display: none
+          &:hover
+            filter: unset
+            z-index: 2
+            color: #0a58ca
+            background-color: #e9ecef
+          &:focus
+            filter: unset
+
+        .pagination-nav
+          display: flex
+          justify-content: center
+          align-items: center
+
+        .pagination-status
+          display: none
+          font-size: 16px
+          color: #6c757d
+
+        .pagination
+          display: flex
+          justify-content: center
+          padding-left: 0
+          list-style: none
+          gap: 8px
+
+        .page-item
+          &:first-child
+            position: relative
+            .page-link
+              padding: 18px
+              &:after
+                font-family: "Font Awesome 5 Free"
+                font-weight: 900
+                color: #000
+                content: "\f078"
+                position: absolute
+                right: 13px
+                top: 12px
+                transform: rotate(90deg)
+                font-size: 13px
+          &:last-child
+            position: relative
+            .page-link
+              padding: 18px
+              &:after
+                font-family: "Font Awesome 5 Free"
+                font-weight: 900
+                color: #000
+                content: "\f078"
+                position: absolute
+                right: 11px
+                top: 12px
+                transform: rotate(270deg)
+                font-size: 13px
+          &.active .page-link
+            z-index: 3
+            color: #fff
+            background-color: #2A7DEC
+            border-color: #2A7DEC
+
+          &.disabled .page-link
+            color: #E0E0E0
+            pointer-events: none
+            background-color: #fff
+            border-color: #dee2e6
+            &:after
+              color: #E0E0E0
+
+        .page-link
+          position: relative
+          display: inline-block
+          width: 40px
+          height: 40px
+          align-content: center
+          font-size: 16px
+          color: #000
+          text-decoration: none
+          background-color: #fff
+          border: 1px solid #dee2e6
+          transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
+          border-radius: 6px
+          cursor: pointer
+
+          &:hover
+            z-index: 2
+            color: #0a58ca
+            background-color: #e9ecef
+            border-color: #dee2e6
+
   footer
     position: static
+
+@media screen and (max-width: 1460px)
+  #case-studies
+    #case-studies-content
+      .case-studies-wrapper
+        #case-studies-clients
+          .client-card
+            width: 45vw
+
+@media screen and (max-width: 1000px)
+  #case-studies
+    #case-studies-content
+      .case-studies-wrapper
+        .success-story-promo
+          flex-direction: column
+          gap: 32px
+          .content
+            p
+              white-space: normal
 
 @media screen and (max-width: 959px)
   #case-studies
@@ -208,7 +357,51 @@
             .bg-wrap
               .content
                 p
-                  padding-bottom: 30px
+                  padding-bottom: 0
+
+        .pagination-container
+          padding-bottom: 80px
+          position: relative
+
+          .pagination-nav
+            .pagination-status
+              display: block
+
+          .page-item
+            &:not(:first-child):not(:last-child)
+              display: none
+
+            &:first-child, &:last-child
+              position: absolute
+              bottom: 67px
+              z-index: 1000
+
+              .page-link
+                width: 40px
+                height: 40px
+
+                // Center the Font Awesome icon
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 0
+
+                &:after
+                  position: static
+                  transform: none
+                  font-size: 16px
+                  top: auto
+                  right: auto
+
+            &:first-child
+              left: 0
+              .page-link:after
+                content: "\f053"
+
+            &:last-child
+              right: 0
+              .page-link:after
+                content: "\f054"
 
 @media screen and (max-width: 599px)
   #case-studies
@@ -260,3 +453,28 @@
 
             .button
               width: 100%
+
+        #case-studies-clients
+          .client-card
+            .bg-wrap
+              &:hover
+                &:after
+                  transform: unset
+              .content
+                p
+                  padding-bottom: 30px
+                .logo
+                  height: 44px
+                .link
+                  bottom: 24px
+                  opacity: 1
+                  padding-bottom: 0
+
+        .success-story-promo
+          padding: 24px
+          .content
+            text-align: center
+            h2
+              margin-bottom: 16px
+          button
+            width: 100%
