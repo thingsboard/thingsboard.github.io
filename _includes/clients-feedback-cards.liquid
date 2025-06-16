@@ -1,0 +1,37 @@
+{% assign targetKey = include.targetKey %}
+{% assign targetKeyCustomers = site.data.customers-feedback[targetFeedback] %}
+
+<div class="clients-cards">
+    {% for info in targetKeyCustomers.feedback %}
+        <div class="clients-card">
+            <div class="clients-card-header">
+                <div class="clients-card-header-author-side">
+                    <img src="{{ info.authorImage }}">
+                    <div class="clients-card-header-author-side-info">
+                        <span class="clients-card-bold-text">{{ info.author }}</span>
+                        <span class="clients-card-text" style="color: rgba(0, 0, 0, 0.54)">{{ info.position }}</span>
+                    </div>
+                </div>
+                <div class="clients-card-header-company-side">
+                    <a href="{{ info.link }}" target="_blank">
+                        <img src="{{ info.companyImage }}">
+                    </a>
+                </div>
+            </div>
+            <div class="clients-card-text">
+                <div class="clients-card-text-title">
+                    <p class="">{{ info.text[0] }}</p>
+                </div>
+                <div class="clients-card-text-content">
+                    {% for text in info.text %}
+                        {% if text.forloop.index != 1 %}
+                            <p class="clients-card-default-text">
+                                {{ text }}
+                            </p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,10 @@
+{% assign targetKey = include.targetKey %}
+{% assign data = site.data.customers-feedback %}
+
+<div class="clients-nav">
+    {% for key in data %}
+        <a href="/industries/{{key}}" class="clients-nav-item{% if targetKey == key %} active{% endif %}">
+            {{ key.label }}
+        </a>
+    {% endfor %}
+</div>
