@@ -1,6 +1,6 @@
 In order to run Cassandra, install **Java 11**:
 ```bash
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-11-jdk-headless
 ```
 {: .copy-code}
 
