@@ -1,0 +1,250 @@
+.modal-overlay
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: rgba(0, 0, 0, 0.5)
+  z-index: 9999
+  align-items: center
+  justify-content: center
+
+  &.visible
+    display: flex
+
+  .modal-content
+    border-radius: 24px
+    background-color: #F7F9FC
+    max-height: 95vh
+    overflow-y: auto
+
+    .contact-form
+      z-index: 2
+      position: relative
+      background: #fff
+      color: #212529
+      box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+      border-radius: 24px
+      padding: 46px
+      margin: 0 auto
+      max-width: 915px
+      .close-button
+        position: absolute
+        right: 9px
+        top: 8px
+        cursor: pointer
+      h1.contact-us-title
+        font-size: 36px
+        line-height: 48px
+        text-align: center
+        font-weight: 500
+        &:before
+          content: none
+      h2
+        font-size: 18px
+        line-height: 30px
+        text-align: center
+        font-weight: 400
+        margin-bottom: 32px
+      .form-section
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        gap: 16px
+        &.mb30
+          margin-bottom: 30px
+      .form-element
+        display: inline-block
+        position: relative
+        width: 49%
+        margin-bottom: 8px
+        &:last-of-type, &:nth-last-of-type(2)
+          width: 100%
+        input.form-control, select.form-control
+          height: 44px
+        input.form-control
+          padding: 0 16px
+          &:focus
+            padding: 1px 15px
+          +autofill
+        select.form-control
+          position: relative
+          padding: 0 36px 0 12px
+          cursor: pointer
+          -webkit-appearance: none
+          -moz-appearance: none
+          appearance: none
+          &::-ms-expand
+            display: none
+          &:focus
+            padding: 1px 35px 1px 11px
+          option[value=""][disabled]
+            display: none
+        label.select-label
+          &:after
+            content: ""
+            background-image: url(/images/pe/read-more-arrow.svg)
+            background-size: contain
+            display: block
+            position: absolute
+            top: 42px
+            right: 18px
+            width: 10px
+            height: 10px
+            transform: rotate(90deg)
+            transition: transform .3s
+            border: none
+          &:hover
+            &:after
+              filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+
+        textarea.form-control
+          resize: vertical
+          padding: 8px 16px
+          margin-bottom: 16px
+          &:focus
+            padding: 7px 15px
+          &:focus
+            cursor: initial
+            border: 2px solid #2a7dec
+            color: #212529
+            +placeholder
+              opacity: 0.2
+        .form-control
+          width: 100%
+          margin: 24px 0 0 0
+          line-height: 30px
+          font-size: 16px
+          vertical-align: middle
+          border: 1px solid #E0E1E2
+          background-color: transparent
+          border-radius: 6px
+          color: #212529
+          box-shadow: none
+          +placeholder
+            color: #9E9E9E
+          &.invalid-input
+            border: 1px solid #D9534F
+          &.invalid-input:focus
+            border-color: #D9534F
+            box-shadow: 0 0 0 0.2rem rgba(217, 83, 79, 0.25)
+          &:focus
+            cursor: initial
+            border: 2px solid #2a7dec
+            color: #212529
+            +placeholder
+              opacity: 0.2
+          &.select.input--empty
+            color: rgba(33, 37, 41, 0.6)
+            &:focus
+              color: rgba(33, 37, 41, 0.2)
+              option
+                color: #212529
+        label
+          width: 100%
+          line-height: 100%
+          font-size: 14px
+          margin-bottom: 0
+          p
+            cursor: text
+            position: absolute
+            margin: 0 0 0 10px
+            padding: 11px 0
+            font-size: 14px
+            font-weight: 500
+            color: #3D3D3D
+            transition: 150ms
+            transform: scale(1) translate(-10px, -86px)
+            pointer-events: none
+            &.text-area-label
+              position: absolute
+              top: 68px
+        .form-control:focus + p, .form-control:not(.input--empty) + p
+          color: inherit
+        .error-message-hint
+          color: #D9534F
+          font-size: 14px
+          font-weight: 400
+          margin-bottom: 0
+          width: 100%
+          display: block
+          box-sizing: border-box
+        &:last-child
+          label
+            .error-message-hint
+              transform: translateY(-15px)
+      .submit-button-container
+        input
+          width: 100%
+
+      input.button
+        min-width: 150px
+
+    #contact-us-thanks
+      position: relative
+      height: 619px
+      padding: 30px
+      color: #212529
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: margin-bottom 0.5s
+      margin: auto
+      margin-bottom: 130px
+      &.opened
+        margin-bottom: 0
+      .thanks-content
+        p
+          font-size: 18px
+          font-weight: normal
+          color: #75767C
+          &.thank-you
+            font-size: 36px
+            font-weight: 600
+            color: #212529
+        a.homepage
+          margin-top: 48px
+          position: relative
+          display: inline-block
+          font-size: 18px
+          font-weight: 500
+          &:after
+            content: ""
+            background-image: url(/images/pe/read-more-arrow.svg)
+            background-size: contain
+            display: block
+            position: absolute
+            top: 6px
+            right: -22px
+            width: 12px
+            height: 12px
+            border: none
+            filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+
+@media screen and (min-width: 1921px)
+  .modal-overlay
+    .modal-content
+      .contact-form, #contact-us-thanks
+        width: 1050px
+
+
+@media screen and (max-width: 972px)
+  .modal-overlay
+    .modal-content
+      .contact-form, #contact-us-thanks
+          fieldset
+            .form-section
+              .form-element
+                width: 100%
+
+
+@media screen and (max-width: 599px)
+  .modal-overlay
+    .modal-content
+      border-radius: unset
+      max-height: 100vh
+      .contact-form, #contact-us-thanks
+        padding: 16px
+        h1.contact-us-title
+          font-size: 36px
