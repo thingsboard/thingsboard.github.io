@@ -6,4 +6,4 @@ description:
 
 ---
 
-{% include client-feedback-nav.liquid targetKey="smart-energy" %}
+{% include clients-feedback.liquid key="smart-energy" %}

@@ -5,6 +5,7 @@
 			flex-wrap: wrap
 			justify-content: center
 			gap: 12px
+			margin-bottom: 64px
 			.clients-nav-item
 				border-radius: 6px
 				border: 1px solid #EBEBEB
@@ -13,21 +14,32 @@
 				font-weight: 400
 				line-height: 28px
 				color: rgba(0, 0, 0, 0.87)
+			.clients-nav-item:hover
+				color: #2A7DEC
+				border-radius: 6px
+				border: 1px solid #2A7DEC
+				background: #EEF5FD
+				text-decoration: none
 			.clients-nav-item.active
 				color: #2A7DEC
 				border-radius: 6px
 				border: 1px solid #2A7DEC
 				background: #EEF5FD
 		.clients-cards
-			display: flex
-			flex-wrap: wrap
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
 			gap: 32px
+			max-width: 1400px
+			margin: 0 auto
 			.clients-card
 				display: flex
 				flex-direction: column
-				gap: 8px
 				background: #F4F8FE
 				padding: 8px
+				border-radius: 24px
+				border: 1px solid rgba(42, 125, 236, 0.05)
+				box-shadow: 0px 6px 8px 0px rgba(75, 80, 88, 0.06), 0px 1px 6px 0px rgba(75, 80, 88, 0.04)
+				max-width: 684px
 				.clients-card-bold-text
 					font-size: 16px
 					font-weight: 500
@@ -38,39 +50,48 @@
 					font-weight: 400
 					line-height: 24px
 					color: rgba(0, 0, 0, 0.87)
+					margin: 0
 				.clients-card-header
 					display: flex
 					justify-content: space-between
+					align-items: center
+					gap: 30px
+					padding: 12px 32px 20px 32px
 					.clients-card-header-author-side
 						display: flex
 						gap: 20px
+						align-items: center
+						height: 80px
 						.clients-card-header-author-side-info
 							display: flex
 							flex-direction: column
-							img
-								width: 80px
-								height: 80px
-						.clients-card-header-company-side
-							position: relative
-							a
-								text-decoration: none
-							&:before
-								content: ""
-								background-image: url(/images/link-arrow.svg)
-								background-size: contain
-								display: block
-								position: absolute
-								right: 0
-								top: 6px
-								width: 8px
-								height: 9px
-								border: none
+						img
+							width: 80px
+							height: 80px
+							border-radius: 10px
+					.clients-card-header-company-side
+						position: relative
+						a
+							text-decoration: none
+						&:before
+							content: ""
+							background-image: url(/images/link-arrow.svg)
+							background-size: contain
+							display: block
+							position: absolute
+							right: -13px
+							top: 0
+							width: 8px
+							height: 9px
+							border: none
 				.clients-card-text
+					height: 100%
 					padding: 32px
 					display: flex
 					flex-direction: column
-					gap: 16px
-					.clients-card-text-content
-						display: flex
-						flex-direction: column
-						gap: 12px
+					gap: 12px
+					background: #FFF
+					border-radius: 16px
+					.clients-card-bold-text
+						margin-bottom: 4px
+
