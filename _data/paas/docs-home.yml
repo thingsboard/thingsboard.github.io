@@ -229,6 +229,14 @@ toc:
     - title: Particle
       path: /docs/paas/user-guide/integrations/particle/
       new: true
+    - title: Apache Pulsar
+      path: /docs/paas/user-guide/integrations/apache-pulsar/
+    - title: AWS SQS
+      path: /docs/paas/user-guide/integrations/aws-sqs/
+    - title: RabbitMQ
+      path: /docs/paas/user-guide/integrations/rabbitmq/
+    - title: T-Mobile – IoT CDP
+      path: /docs/paas/user-guide/integrations/t-mobile-iot-cdp/
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
