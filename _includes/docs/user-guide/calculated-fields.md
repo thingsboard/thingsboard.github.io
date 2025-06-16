@@ -8,7 +8,7 @@
 By defining custom expressions or scripts, users can standardize data, and create new computed metrics dynamically. 
 This feature is particularly useful for optimizing data processing, improving analytics.
 
-### Key benefits
+<br><b><font size="4">Key benefits</font></b>
 
 - **No additional rule chains needed**: simplifies data transformations without requiring complex rule configurations. 
 - **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}, [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}, or [calculated fields](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#calculated-fields-node){:target="_blank"} rule nodes, ensuring up-to-date insights.
@@ -16,7 +16,7 @@ This feature is particularly useful for optimizing data processing, improving an
 - **Cross-entity data merging**: calculate new values by combining data from multiple sources (devices, assets, etc.).
 - **Flexible output**: store the results as either [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [time series data](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}, depending on the use case.
 
-### Use case examples
+<br><b><font size="4">Use case examples</font></b>
 
 - **Combine telemetry from multiple sources**: calculate dew point from Device A&#39;s temperature and Device B&#39;s humidity, etc.
 - **Standardize measurement units**: convert temperature readings from Celsius to Fahrenheit or normalize pressure and voltage levels across different sensor models.
@@ -25,7 +25,7 @@ This feature is particularly useful for optimizing data processing, improving an
 - **Predictive maintenance**: generate efficiency metrics for machines, such as air density calculations, to anticipate maintenance needs before failures occur.
 - **Custom business logic**: implement advanced calculations tailored to specific business needs, such as determining occupancy levels based on motion sensor data or adjusting device settings dynamically based on multiple telemetry inputs.
 
-### Configuration levels
+<br><b><font size="4">Configuration levels</font></b>
 
 Calculated fields can be applied at different levels within the system:
 - [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} or [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} level – the calculation is applied to a specific device or asset, allowing customized data processing per entity.
@@ -41,7 +41,7 @@ This flexibility allows users to either define unique calculations per entity or
 
 To create a calculated field, follow these steps:
 
-- Select to the Entity or Profile where the calculated field should be applied. 
+- Select to the **Entity** or **Profile** where the calculated field should be applied. 
 - In the entity details window, navigate to the "Calculated fields" tab. 
 - Click the "plus" icon button and select "Create new calculated field" from the dropdown menu.
 
@@ -113,6 +113,11 @@ In the "Output" section:
 - Optionally, set **Decimals by default** to define how many decimal places the result should be rounded to. If not specified, the result will not be rounded.
 - To finish adding the calculated field, click "Add".
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+> **[Only for Time series]**<br>
+"**Use latest timestamp**" option — when enabled, the calculated value will be stored using the most recent timestamp from the telemetry arguments instead of the server time.
+{% endif %}
+
 {% include images-gallery.html imageCollection="output-simple-1" %}
 
 ### Script calculated field
@@ -180,7 +185,7 @@ The calculated values are returned as a JSON object containing **keys** that rep
 
 {% include images-gallery.html imageCollection="output-script-1" %}
 
-## Result
+### Result
 
 After clicking the "Add" button, the calculated field will be added to your entity or profile.
 
@@ -191,6 +196,54 @@ Let&#39;s check the debug events by clicking the "Events" icon button. The debug
 > Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
 
 {% include images-gallery.html imageCollection="calculated-field-debug-events-2" %}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+## Reprocessing
+
+**Calculated field reprocessing** is a mechanism that allows you to apply calculated field logic to historical data.   
+This is especially useful when you modify existing calculations or add new fields and want those changes to affect not only new data but also previously collected telemetry.
+
+> **Note:** reprocessing cannot be applied to a calculated field that contains only attribute-based arguments. The Calculated field must include at least one argument based on a time series — either "Latest telemetry" or "Time series rolling" data.
+
+<b><font size="3">Key features</font></b>
+
+- **Recalculation of historical data** — apply updated logic to previously collected telemetry.
+- **Flexible time range selection** — choose a specific time period for reprocessing.
+- **Store results as telemetry** — processed data is saved in ThingsBoard as telemetry, enabling further use in widgets, rules, or analytics.
+
+<br><b><font size="4">How to configure</font></b>
+
+- Choose the target **Entity** or **Profile**, go to the "**Calculated fields**" tab, and either [create a new calculated field](#create-new-calculated-field) or select an existing one that needs historical telemetry reprocessing.
+- Click the "**Reprocess calculated field**" icon next to the desired field.
+- In the pop-up window, define the time interval for which you want to reprocess telemetry data.
+- Click "**Reprocess**" — the system will start recalculating and update historical telemetry data according to the latest logic.
+- Once the data reprocessing is complete, click "**Finish**".
+
+{% include images-gallery.html imageCollection="how-to-configure-reprocessing" %}
+
+<br><b><font size="4">Example of using the data reprocessing feature</font></b>
+
+Let&#39;s say you have a Smart Device that tracks real-time temperature and humidity and sends this data to ThingsBoard.
+At some point, you decide to start calculating the dew point using the Calculated field feature.
+As shown on the widget, that displays time series data for the Smart Device, the dew point was first calculated at 13:44:35. 
+Prior to that, no dew point calculations had been performed.
+
+{% include images-gallery.html imageCollection="reprocessing-example-1" %}
+
+To recalculate dew point values for a past period (before the calculation logic was introduced), follow these steps:
+
+{% include images-gallery.html imageCollection="reprocessing-example-2" showListImageTitles="true" %}
+
+Dew point values have been recalculated for the historical period you specified during the reprocessing configuration.
+
+{% include images-gallery.html imageCollection="reprocessing-example-3" %}
+
+### Task manager
+
+The Task manager allows you to view the status of tasks, track their progress, see results, and identify any errors that occurred during data processing.
+
+{% include images-gallery.html imageCollection="task-manager" %}
+{% endif %}
 
 ## Built-in methods for rolling arguments
 
@@ -208,7 +261,7 @@ Time series rolling arguments support built-in functions for calculations. These
 | `first()`       | Returns the oldest value, skipping NaN values.      | Returns the first value, even if it is NaN. |
 | `sum()`         | Computes the total sum, ignoring NaN values.        | Returns NaN if any NaN values exist.        |
 
-### Assuming the following time series rolling argument
+<br><b><font size="4">Assuming the following time series rolling argument</font></b>
 
 ```json
 {
@@ -226,8 +279,7 @@ Time series rolling arguments support built-in functions for calculations. These
   }
 }
 ```
-
-### Usage and result
+<br><b><font size="4">Usage and result</font></b>
 
 ```javascript
 var avgTemp = temperature.mean(); // Returns 72.92
@@ -258,7 +310,7 @@ The result is a new rolling argument that contains a time window and an array of
 | `merge(other, settings)`     | Merges with another rolling argument. Aligns timestamps and filling missing values with the previous available value.     | Merged object with `timeWindow` and aligned values. |
 | `mergeAll(others, settings)` | Merges multiple rolling arguments. Aligns timestamps and filling missing values with the previous available value.        | Merged object with `timeWindow` and aligned values. |
 
-#### Parameters
+<br><b><font size="4">Parameters</font></b>
 
 | Parameter            | Description                                                                                                                                                |
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -420,7 +472,7 @@ Steps to import:
 
 ## Examples
 
-**Example 1: Dew Point calculation**
+**Example 1: Dew point calculation**
 
 Suppose you have a smart device that monitors the current temperature and humidity in real time and sends this data to ThingsBoard. Based on these values, we need to calculate the dew point.
 
