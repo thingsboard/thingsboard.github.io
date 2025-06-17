@@ -119,7 +119,7 @@ In our example, "My new device" uses the "default" device profile. While it&#39;
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 3](#step-3-configure-alarm-rules-and-trigger-an-alarm)), and we should send new telemetry on behalf of the device (see [Step 1.2](#step-12-connect-a-device)) to trigger the alarm.
+Now, our alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), and we should send new telemetry on behalf of the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
 > Note that the temperature value should be **26 or higher** to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
@@ -171,12 +171,13 @@ You can make the customer the owner of the device during its creation stage. To 
 ### Step 7.3 Share the dashboard
 
 Let&#39;s share our dashboard with the customer.
-In ThingsBoard, you can&#39;t share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
-By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we&#39;ll use the existing "All" group for this guide.
+In ThingsBoard, you can&#39;t share an individual dashboard directly — you can only share a dashboard group that contains the dashboard you want to share.
+By default, your dashboard is located in the "All" group.
+While the recommended approach is to create a dedicated dashboard group and move your dashboard there, for simplicity, we&#39;ll use the existing "All" group in this guide.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
-You can also share the dashboard with your customer or user during its creation stage.
+You can also share the dashboard with a customer during its creation:
 
 {% include images-gallery.html imageCollection="step73_1" showListImageTitles="true" %}
 
