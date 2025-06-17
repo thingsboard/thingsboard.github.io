@@ -230,9 +230,8 @@ var tb = (function () {
 		if (checkGTagDataLayer() || !nodeId) {
 			return;
 		}
-
-		gtag("event", "FaqNode", {
-			"event_category": nodeId
+		window.dataLayer.push({'event': 'faq_node_interaction',
+			'faq_node_id': nodeId
 		});
     }
 
