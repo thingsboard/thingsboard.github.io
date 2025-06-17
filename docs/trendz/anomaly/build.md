@@ -41,8 +41,8 @@ Additionally, it's possible to specify telemetry saving options here.
     - Less than the segment time range (for fixed segment strategy)
     - Less than `segment size * sliding step % / 100` (for sliding window strategy)
 
-  Find out more about refresh/reprocess [here](/docs/trendz/anomaly/refresh-reprocess.md).  
-  Find out more about saving telemetry to ThingsBoard [here](/docs/trendz/anomaly/save-to-tb.md).
+  Find out more about refresh/reprocess [here](/docs/trendz/anomaly/refresh-reprocess).  
+  Find out more about saving telemetry to ThingsBoard [here](/docs/trendz/anomaly/save-to-tb).
 
 ### Model Properties
 

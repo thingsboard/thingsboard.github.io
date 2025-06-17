@@ -10,7 +10,87 @@ description: Trendz Settings Description
 {:toc}
 
 ## General
+
+To access settings, go to the **Settings** page by clicking the **“Settings”** button in the bottom-left corner of the screen.
+
+![Settings Navigation](/images/trendz/signing-key-1.png)
+
 ### Signing Key
+
+For the application to function properly, it must authenticate with ThingsBoard on behalf of a user. This is required 
+for background operations such as:
+
+- Sending generated telemetry
+- Fetching data for continuous prediction model fitting and forecasting
+
+Storing user credentials in application memory is not secure. Instead, Trendz supports a secure mechanism using a 
+**JWT signing key**, which should be stored in configuration files. It is expected that Trendz is installed on a 
+secured server (as is ThingsBoard and similar systems).
+
+You can alternatively store the signing key in the Trendz database automatically, but this method is **not recommended** due to security concerns.
+
+An indicator in the settings shows whether the signing key is set and valid.
+
+**How to Check Your Signing Key**
+
+Scroll to the bottom of the **Settings** page to find the **Signing Key** panel. You will see one of two options:
+
+- **The signing key is not valid (not set or expired)**  
+  ![Signing Key Invalid](/images/trendz/signing-key-2.png)
+
+- **The signing key is valid**  
+  ![Signing Key Valid](/images/trendz/signing-key-3.png)
+
+**Setting the Signing Key**
+
+Follow these steps to configure the signing key:
+
+1. **Log in to ThingsBoard as a System Administrator**  
+   ![Login](/images/trendz/signing-key-4.png)
+
+2. Go to **Security → General**  
+   ![Security General Page](/images/trendz/signing-key-5.png)
+
+3. Scroll to the **JWT Security Settings** section  
+   ![JWT Security](/images/trendz/signing-key-6.png)
+
+4. Copy the value from the **Signing key** field.
+
+**Installation-specific Instructions**
+- *Ubuntu Installation*
+
+  1. SSH into the server running Trendz.
+
+  2. Open the Trendz configuration file:
+
+     ```bash
+     sudo nano /etc/trendz/conf/trendz.conf
+     ```
+     {: .copy-code}
+
+  3. Add the signing key to the end of the file:
+
+     ```bash
+     export JWT_TOKEN_SIGNING_KEY=<signing-key>
+     ```
+     {: .copy-code}
+
+  4. Save the file and restart the Trendz service.
+
+
+- *Docker Compose Installation*
+  1. Open your `docker-compose.yml` file.
+
+  2. Add a new environment variable under the Trendz service:
+
+     ```yaml
+     environment:
+       - JWT_TOKEN_SIGNING_KEY=<signing-key>
+     ```
+     {: .copy-code}
+
+  3. Save the file and restart the Trendz container.
+
 
 ### Trendz Widget Bundle
 

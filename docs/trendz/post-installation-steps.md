@@ -9,156 +9,100 @@ description: Trendz post-installation steps description
 * TOC
 {:toc}
 
+To make Trendz ready for use, complete the following post-installation setup steps.
 
 ## Signing Key
-For the application to work correctly, it must be able to send requests to ThingsBoard on behalf of an authenticated user. 
-This is needed for background tasks such as sending newly generated telemetry or fetching data for continuous prediction model fitting and generation prediction. 
-For these purposes, the application needs to be logged in to ThingsBoard, but it is not possible without user credentials that are not secure to store in 
-application memory. Therefore, another solution was implemented to cover all possible needs relying on general security concerns. The solution is storing the 
-JWT-signing key in Trendz configuration files, expecting the application to be installed on the server with restricted access (as ThingsBoard and other server 
-applications do). Also, if it is difficult to manage the configuration of Trendz, there is a simpler way to automatically fetch and store the signing key in the 
-Trendz database, but it is not recommended because of possible security concerns. For validation the solution there is the indicator was designed to check if 
-your signing key is set in Trendz, and if it is valid.
 
-To check your signing key is relevant follow the following steps:
-* Open Trendz home page
-* Go to the Settings page by clicking the “Setting” button on the left-bottom corner of the page.
+You can read more about signing key [here](/docs/trendz/settings#signing-key)
 
-  ![image](/images/trendz/signing-key-1.png)
+### Acquiring Signing Key
 
-* Scroll down to the bottom of the page, you will see the “Signing Key” panel. You can see one of two possible options:
-  - The signing key is not valid (not set or expired)
-  
-  ![image](/images/trendz/signing-key-2.png)
+Follow these steps to configure the signing key:
 
-  - The signing key is valid
+1. **Log in to ThingsBoard as a System Administrator**  
 
-  ![image](/images/trendz/signing-key-3.png)
+    ![Login](/images/trendz/signing-key-4.png)
 
-Let's consider the standard way of setting signing way, there are steps you need to follow:
-* Open your ThingsBoard login page and log in as a system administrator
+2. Go to **Security → General**  
 
-  ![image](/images/trendz/signing-key-4.png)
+   ![Security General Page](/images/trendz/signing-key-5.png)
 
-* Open the “Security” → “General” page
+3. Scroll to the **JWT Security Settings** section  
 
-  ![image](/images/trendz/signing-key-5.png)
+   ![JWT Security](/images/trendz/signing-key-6.png)
 
-* Scroll down to the bottom of the page and find the “JWT Security Setting” page
+4. Copy the value from the **Signing key** field.
 
-  ![image](/images/trendz/signing-key-6.png)
+### Installation-specific Instructions
 
-* Copy the value from the “Signing key” text field.
-* The next step will be different depending on your installation type. We will cover two of
-  them because the others are similar to those mentioned above - Ubuntu and Docker
-  Compose installations.
+**Ubuntu Installation**
 
-### Ubuntu installation
-* Get access to the server hosting Trendz by SSH.
-* Open file for editing:
-```bash
-sudo nano /etc/trendz/conf/trendz.conf
-```
-{: .copy-code}
+1. SSH into the server running Trendz.
 
-* Add the row at the end of the file:
-```bash
-export JWT_TOKEN_SIGNING_KEY=<signing-key>
-```
+2. Open the Trendz configuration file:
 
-* Save the file and reboot Trendz
+   ```bash
+   sudo nano /etc/trendz/conf/trendz.conf
+   ```
+   {: .copy-code}
 
-  ![image](/images/trendz/signing-key-7.png)
+3. Add the signing key to the end of the file:
 
-### Docker Compose installation
-* Open your docker-compose file
-* Add a new environment variable with the name **JWT_TOKEN_SIGNING_KEY** and put your signing key as a value of the variable
-* Save the file and reboot the Trendz container
+   ```bash
+   export JWT_TOKEN_SIGNING_KEY=<signing-key>
+   ```
+   {: .copy-code}
 
-  ![image](/images/trendz/signing-key-8.png)
+4. Save the file and restart the Trendz service.
 
-## Required Actions in Trendz Settings
+**Docker Compose Installation**
 
-To fully unlock Trendz capabilities, certain add-ons and settings must be installed in ThingsBoard. 
-These components are essential for enabling advanced features:
+1. Open your `docker-compose.yml` file.
 
-### Required Components
- 
-- **Trendz Widget Bundle**  
-  Enables creating and displaying Trendz widgets on ThingsBoard dashboards.  
-  *(Learn how to use widgets after installation [here](/docs/trendz/embed-visuals.md))*
+2. Add a new environment variable under the Trendz service:
 
-- **Trendz JS Summary Module**  
-  Required for configuring AI Widget Summaries across ThingsBoard widgets.  
-  *(Learn how to adjust summaries [here](/docs/trendz/ai-widget-summary.md))*
+   ```yaml
+   environment:
+     - JWT_TOKEN_SIGNING_KEY=<signing-key>
+   ```
+   {: .copy-code}
 
-- **Trendz Settings**  
-  Needed for Trendz solution templates and AI Summary rule nodes.
+3. Save the file and restart the Trendz container.
 
-You can **upload, update, or check the status** of all Trendz add-ons from the **Settings** page.
+### Verifying Successful Installation
 
-> settings-1
-
-### How to Access the Settings Page
+To validate that the signing key was installed correctly, you need to:
 
 1. Log in as a **Tenant Administrator**.
-2. Navigate to the **Settings** page.
+2. Go to the **Settings**.
 
-> settings-2
+   ![Settings Navigation](/images/trendz/signing-key-1.png)
 
-### Trendz Widget Bundle
+3. If everything was done correctly, you will see **Active** status in the **Signing Key** field.  
 
-Uploading the Trendz Widget Bundle is **required** to enable view sharing from Trendz to ThingsBoard dashboards.
+   ![Signing Key Valid](/images/trendz/signing-key-3.png)
 
-In the **Trendz Widget Bundle** section, you’ll see one of the following status indicators:
+   
+## Required Actions in Trendz Settings
 
-- **Not installed** – Bundle is missing.
-- **Update required** – A newer version is available.
-- **Latest version installed** – You’re good to go.
-- **Bundle is invalid** – The current bundle is corrupted or incomplete.
+**Note:** These actions affect ThingsBoard.
 
-**Action Steps:**
+You need to complete the following actions to add all necessary add-ons to ThingsBoard:
 
-- If status is **Latest version installed** – no action is needed.
-- For other statuses, click the **Upload bundle** button:
-  - If not installed - uploads the bundle.
-  - If outdated - updates it to the latest version.
+- **Trendz Widget Bundle:**
+    - Click the **Upload bundle** button.
+    - You will see *Latest version installed* afterward.
+    - Read more about the Trendz Widget Bundle [here](/docs/trendz/settings#trendz-widget-bundle).
 
-> settings-3
+- **Trendz JS Summary Module:**
+    - Click the **Upload module** button.
+    - You will see *Latest version installed* afterward.
+    - Read more about the Trendz JS Summary Module [here](/docs/trendz/settings#trendz-js-summary-module).
 
-### Trendz JS Summary Module
-
-Check the status under the **Trendz JS Summary Module** section:
-
-- **Not installed** – Module is missing.
-- **Update required** – A newer version is available.
-- **Latest version installed** – No action needed.
-
-**Action Steps:**
-
-- If status is **Latest version installed** – you’re done.
-- Otherwise, click the **Upload Module** button:
-  - If not installed - uploads the module.
-  - If outdated - updates it.
-
-> settings-4
-
-### Trendz Settings
-
-Check the status under the **Trendz Settings** section:
-
-- **Not installed** – Settings are missing.
-- **Update required** – A newer version is available.
-- **Settings are actual** – All up to date.
-
-**Action Steps:**
-
-- If status is **Settings are actual** – no changes needed.
-- Otherwise, click the **Upload Settings** button:
-  - If not installed - uploads the settings.
-  - If outdated - updates them.
-
-> settings-5
+- **Trendz Settings:**
+    - Click the **Update Settings** button.
+    - You will see *Settings are up to date* afterward.
+    - Read more about Trendz Settings [here](/docs/trendz/settings#trendz-settings).
 
 ## Link to ThingsBoard
 
