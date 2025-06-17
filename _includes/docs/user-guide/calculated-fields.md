@@ -197,13 +197,20 @@ Let&#39;s check the debug events by clicking the "Events" icon button. The debug
 
 {% include images-gallery.html imageCollection="calculated-field-debug-events-2" %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-## Reprocessing
+## Data reprocessing
+
+{% if docsPrefix == null %}
+> The **telemetry data reprocessing** feature is not available in [ThingsBoard CE](/docs/user-guide/install/installation-options/){:target="_blank"}. It is supported only in [ThingsBoard PE](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} and [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} editions.
+
+{% endif %}
 
 **Calculated field reprocessing** is a mechanism that allows you to apply calculated field logic to historical data.   
 This is especially useful when you modify existing calculations or add new fields and want those changes to affect not only new data but also previously collected telemetry.
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 > **Note:** reprocessing cannot be applied to a calculated field that contains only attribute-based arguments. The Calculated field must include at least one argument based on a time series — either "Latest telemetry" or "Time series rolling" data.
+
+{% endif %}
 
 <b><font size="3">Key features</font></b>
 
@@ -211,6 +218,11 @@ This is especially useful when you modify existing calculations or add new field
 - **Flexible time range selection** — choose a specific time period for reprocessing.
 - **Store results as telemetry** — processed data is saved in ThingsBoard as telemetry, enabling further use in widgets, rules, or analytics.
 
+{% if docsPrefix == null %}
+Learn how to configure data reprocessing in the [ThingsBoard PE documentation](http://0.0.0.0:4000/docs/pe/user-guide/calculated-fields/#data-reprocessing){:target="_blank"}.
+{% endif %}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 <br><b><font size="4">How to configure</font></b>
 
 - Choose the target **Entity** or **Profile**, go to the "**Calculated fields**" tab, and either [create a new calculated field](#create-new-calculated-field) or select an existing one that needs historical telemetry reprocessing.
