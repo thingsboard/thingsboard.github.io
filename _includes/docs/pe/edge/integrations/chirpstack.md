@@ -97,7 +97,6 @@ Before you proceed with the **Connection** configuration, create the **Applicati
 
 {% include images-gallery.html imageCollection="chirpstack-api-key" %}
 
-{#http-endpoint-url}
 On the **ThingsBoard UI**, continue with the **Connection** configuration. Fill in the following fields:
 * **Base URL:** Enter the URL in the format: **http://edge-ip:edge-port** (_e.g., http://10.7.2.193:8080_).
 * **HTTP endpoint URL:** Copy to use it while configuring the [ChirpStack application](#integration-on-chirpstack).
@@ -234,7 +233,7 @@ Where:
 * **deviceProfileName:** Replace the value with the ChirpStack device profile name.
 * **devEui:** Replace the value with the Device EUI you add in the ChirpStack device.
 * **gatewayId:** Replace the value with the ChirpStack gateway ID.
-* **$YOUR_HTTP_ENDPOINT_URL:** Replace with the real value obtained at the ThingsBoard Integration 
+* **$YOUR_HTTP_ENDPOINT_URL:** Replace it with the actual value obtained from the ThingsBoard integration.
 
 In production environments, devices **automatically** send uplink messages at regular intervals or in response to events, without manual intervention.
 
