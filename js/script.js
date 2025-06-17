@@ -1156,7 +1156,7 @@ var tb = (function () {
 		const containerId = $('.filter').attr('data-container-id');
 		const filterMode = $('.filter').attr('data-mode');
 		const container = document.getElementById(containerId);
-		const content = Array.from(container.children);
+		const content = container ? Array.from(container.children) : null;
 		const checkboxes = $('.filter .check-box');
 
 		checkboxes.on('click', function() {
@@ -1196,17 +1196,79 @@ var tb = (function () {
 
 		function filter(checkedIds) {
 			if (checkedIds.includes('main')) {
-				content.forEach(item => {
-					item.style.display = 'block';
-				});
+				$(content).removeClass('filter-hidden');
 				return;
 			}
 
 			content.forEach(item => {
 				const itemIds = item.id.split('|');
 				const currentItemStatus = checkedIds.some(id => itemIds.includes(id));
-				item.style.display = currentItemStatus || itemIds[0] === 'all' ? 'block' : 'none';
+				const shouldBeVisible = currentItemStatus || itemIds[0] === 'all';
+
+				$(item).toggleClass('filter-hidden', !shouldBeVisible);
 			});
+		}
+
+		const slider = document.getElementById('filterScrollContainer');
+
+		const leftArrow = document.getElementById('filterScrollLeft');
+		const rightArrow = document.getElementById('filterScrollRight');
+
+		if (slider) {
+			const checkArrows = () => {
+				const scrollLeft = Math.ceil(slider.scrollLeft);
+				const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+				leftArrow.classList.toggle('hidden', scrollLeft <= 0);
+				rightArrow.classList.toggle('hidden', scrollLeft >= maxScrollLeft - 1);
+			};
+
+
+			let isDown = false;
+			let startX;
+			let scrollLeft;
+
+			const startDragging = (e) => {
+				isDown = true;
+				slider.style.cursor = 'grabbing';
+				startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+				scrollLeft = slider.scrollLeft;
+			};
+
+			const stopDragging = () => {
+				isDown = false;
+				slider.style.cursor = 'grab';
+			};
+
+			const onDrag = (e) => {
+				if (!isDown) return;
+				e.preventDefault();
+				const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+				const walk = (x - startX);
+				slider.scrollLeft = scrollLeft - walk;
+			};
+
+			slider.addEventListener('mousedown', startDragging);
+			slider.addEventListener('mouseup', stopDragging)
+			slider.addEventListener('mouseleave', stopDragging);
+			slider.addEventListener('mousemove', onDrag);
+
+			slider.addEventListener('touchstart', startDragging);
+			slider.addEventListener('touchend', stopDragging);
+			slider.addEventListener('touchmove', onDrag);
+
+			slider.addEventListener('scroll', checkArrows);
+			leftArrow.addEventListener('click', () => {
+				slider.scrollBy({ left: -250, behavior: 'smooth' });
+			});
+
+			rightArrow.addEventListener('click', () => {
+				slider.scrollBy({ left: 250, behavior: 'smooth' });
+			});
+
+			checkArrows();
+
+			window.addEventListener('resize', checkArrows);
 		}
 	});
 })();
@@ -1302,6 +1364,78 @@ var tb = (function () {
 	});
 })();
 
+//animation for installation options cards, which are without tabs
+(function () {
+	$(document).ready(function () {
 
+		if (!$('.deployment-div').length) return;
 
+		animateBlocks();
+		function animateBlocks() {
+			$('.deployment-div .deployment-section.animate-from-start.active .installation-card-container').each((index, el) => {
+				if (!$(el).hasClass('installation-card-animation')) {
+					setTimeout(() => {
+						$(el).addClass('installation-card-animation');
+					}, index * 120);
+				}
+			})
+		}
+	});
+})();
+
+//script for tabs (on premise, live demo, cloud) in installation option
+(function () {
+	$(document).ready(function () {
+
+		if (!$('.install-navigation').length) return;
+
+		window.addEventListener('popstate', onPopStateCeInstallOptions);
+		onPopStateCeInstallOptions();
+
+		$('.install-navigation .menu-item').click(function () {
+			const activeId = $(this).attr('data-tab');
+			activateInstallSection(activeId);
+		});
+
+		function activateInstallSection(id) {
+			var param =  $('.install-navigation').attr('data-target-id');
+			var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+			params[param] = id;
+			var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+			if (window.location.hash) {
+				newurl += window.location.hash;
+			}
+			window.history.pushState({ path: newurl }, '', newurl);
+			selectTargetCeInstallOption(id);
+		}
+
+		function onPopStateCeInstallOptions() {
+			var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+			var targetId = params[$('.install-navigation').attr('data-target-id')];
+			if (!targetId) {
+				targetId = 'onPremise';
+			}
+			selectTargetCeInstallOption(targetId);
+		}
+
+		function selectTargetCeInstallOption(targetId) {
+			$("li.menu-item").removeClass("active");
+			$("li.menu-item#menu-item-"+targetId).addClass("active");
+			$('.deployment-div .deployment-section').removeClass("active");
+			$('.deployment-div .deployment-section#'+targetId).addClass("active");
+
+			animateBlocks();
+		}
+
+		function animateBlocks() {
+			$('.deployment-div .deployment-section.active .installation-card-container').each((index, el) => {
+				if (!$(el).hasClass('installation-card-animation')) {
+					setTimeout(() => {
+						$(el).addClass('installation-card-animation');
+					}, index * 120);
+				}
+			})
+		}
+	});
+})();
 

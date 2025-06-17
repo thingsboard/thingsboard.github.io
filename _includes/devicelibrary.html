@@ -241,7 +241,7 @@
             devicesBlocks.each(function() {
                 let currentBlock = $(this);
                 if (selectedCategoryFilters.length) {
-                    let text = currentBlock.find('p.device-guides-title').html().toLowerCase();
+                    let text = currentBlock.find('h2.device-guides-title').html().toLowerCase();
                     let matches = testKeywords(categoryKeyRegexps, text);
                     if (matches) {
                         currentBlock.removeClass('hidden filtered');
