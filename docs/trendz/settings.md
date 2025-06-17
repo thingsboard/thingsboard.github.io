@@ -114,7 +114,7 @@ In the **Trendz Widget Bundle** section, you’ll see one of the following statu
 ### Trendz JS Summary Module
 
 Uploading the Trendz JS Summary Module is **recommended** for configuring AI Widget Summaries across ThingsBoard widgets.  
-*(Learn how to adjust summaries [here](/docs/trendz/ai-widget-summary))*
+*(Learn how to configure AI Widget Summaries [here](/docs/trendz/ai-widget-summary))*
 
 Check the status under the **Trendz JS Summary Module** section:
 

@@ -16,7 +16,7 @@ behavior in real time by integrating with ThingsBoard's native alarm system. Ala
 
 ## Enabling Alarm Creation
 
-To automatically generate alarms for detected anomalies, follow these steps:
+To set up alarm generation during anomaly detection, use one or both of the following options:
 
 ### Enable Alarms in Anomaly Refresh
 

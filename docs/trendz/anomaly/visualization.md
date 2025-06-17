@@ -54,7 +54,7 @@ To use anomaly fields:
     - Not recommended: `SUM`, `AVG`, `MIN`, `UNIQ`, `COUNT`
   - For **SCORE_INDEX**:
     - Recommended: `COUNT`, `SUM`, `UNIQ`, `LATEST`
-    - ⚠Acceptable but less sensitive: `AVG`, `MIN`
+    - Acceptable but less sensitive: `AVG`, `MIN`
 
   Use `MAX` for `SCORE` to catch peak anomaly intensity.
   Use `SUM` or `COUNT` for `SCORE_INDEX` to visualize the full anomaly footprint.

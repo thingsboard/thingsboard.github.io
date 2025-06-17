@@ -152,7 +152,7 @@ The **Input** tab allows you to manage and configure core aspects of your anomal
 - **Build Model**
   - Use the **Build Model** button to save changes or initiate a rebuild.
   - If a rebuild is necessary, a confirmation popup will appear.
-  - ⚠️ **Caution**: Rebuilding the model will delete all existing anomalies and disable the refresh job.
+  - **Caution**: Rebuilding the model will delete all existing anomalies and disable the refresh job.
 
 ### Summary Tab
 
