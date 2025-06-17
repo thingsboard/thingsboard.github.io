@@ -1,5 +1,6 @@
 smart-energy:
   label: Smart Energy
+  icon: /images/smart-energy-icon.svg
   feedback:
     - author: Daniel Portero
       position: Cloud & App Development Manager
@@ -75,6 +76,7 @@ smart-energy:
         2: 'In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains. ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.'
 agriculture:
   label: Agriculture
+  icon: /images/agriculture-icon.svg
   feedback:
     - author: Jeppe Walther
       position: CTO
@@ -89,7 +91,6 @@ agriculture:
         2: 'Using TB as our platform allowed us to rapidly achieve a very genetic solution that will serve our scaling needs for years to come.'
     - author: Mark Morris
       position: Founder & Managing Director
-      link: /industries/agriculture/
       companyName: Enviroeye
       companyImage: /images/customers/enviroeye.svg
       companyImageWidth: 134
@@ -111,6 +112,7 @@ agriculture:
         2: 'We highly appreciate the support of the creators, their feedback is simply excellent!'
 smart-buildings:
   label: Smart Buildings
+  icon: /images/smart-buildings-icon.svg
   feedback:
     - author: Andreas Brandl
       position: Founder & CEO
@@ -176,7 +178,6 @@ smart-buildings:
     - author: Michael Nickolai
       position: Co-Founder & Executive Manager
       companyName: Conbee
-      link: /industries/smart-buildings/
       companyImage: /images/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
@@ -196,6 +197,7 @@ smart-buildings:
         1: 'We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites.'
 smart-city:
   label: Smart City
+  icon: /images/smart-city-icon.svg
   feedback:
     - author: Eric Bourbeau
       position: Président fondateur / Founder and CEO
@@ -236,7 +238,6 @@ smart-city:
     - author: Michael Nickolai
       position: Co-Founder & Executive Manager
       companyName: Conbee
-      link: /industries/smart-buildings/
       companyImage: /images/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
@@ -267,6 +268,7 @@ smart-city:
         1: 'While building the Smart City solution for OMS, a. s. we were looking for IoT platform serving as core backend for our solutions. ThingsBoard became our first clear choice. It contains necessary business functionality and support all needed technologies/protocols which we required. Later on, ThingsBoard became the heart of the upcoming solution. In any implementation of complex systems cooperation and support are crucial to success achievement. We are glad that we found stable partners in design, implementation and deployment of ThingsBoard in the Smart City solution.'
 telecom:
   label: Telecom
+  icon: /images/telecom-icon.svg
   feedback:
     - author: David Týr
       position: Innovation Manager
@@ -308,6 +310,7 @@ telecom:
         4: 'I can say that the dedication of ThingsBoard team blew me away. I look forward to building and deploying many new and exciting projects on ThingsBoard, as I know the team backing the platform is second to none in expertise and dedication.'
 industry40:
   label: Industry 4.0
+  icon: /images/industry40-icon.svg
   feedback:
     - author: Sudhir Ravindramohan
       position: Co-founder and CTO
@@ -367,6 +370,7 @@ industry40:
         1: 'We first tried Thingsboard with the free version to build a customer POC. We liked the Open side of the product and the ability to get it working out of the cloud. Then, we had more and more customers that asked us to be able to see their data. So, we migrated to the Professional Edition. We installed it on dedicated cloud instance. Help and support from Thingsboard team was awesome. They installed the product on our VM and they customized the installation to fit our need. Same availability when new version was available. They updated our instance with new version. To go further, we then asked Thingsboard to customize some dashboards for a dedicated customer. Once again, all was straightforward and Thingsboard team was professional. We are now also creating custom application using powerfull API integrated in the product.We highly recommend Thingsboard for their products and support.'
 warehouse-monitoring:
   label: Warehouse Monitoring
+  icon: /images/warehouse-monitoring-icon.svg
   feedback:
     - author: Steven Kruse
       position: CEO

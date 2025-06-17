@@ -20,14 +20,23 @@
                     </div>
                 </div>
                 <div class="clients-card-header-company-side">
-                    <a href="{{ info.link }}" target="_blank">
+                    {% if info.link %}
+                        <a href="{{ info.link }}" target="_blank">
+                            <img src="{{ info.companyImage }}"
+                                 width="{{ info.companyImageWidth }}"
+                                 height="{{ info.companyImageHeight }}"
+                                 alt="{{ info.companyName }} logo"
+                                 title="{{ info.companyName }}"
+                                 loading="lazy">
+                        </a>
+                    {% else %}
                         <img src="{{ info.companyImage }}"
                              width="{{ info.companyImageWidth }}"
                              height="{{ info.companyImageHeight }}"
                              alt="{{ info.companyName }} logo"
                              title="{{ info.companyName }}"
                              loading="lazy">
-                    </a>
+                    {% endif %}
                 </div>
             </div>
             <div class="clients-card-text">
