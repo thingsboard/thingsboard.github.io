@@ -72,7 +72,7 @@ send-again-message:
 downlink-converter-message:
     0:
         image: /images/pe/edge/integrations/http/downlink-converter-message-1-edge.png
-        title: 'Go to the <b>Integrations center > <b>Data converters</b> section, click on the downlink converter to open the <b>"Data converter details"</b> window, and select the <b>"Events"</b> tab. There you will find a downlink message.'
+        title: 'Go to the <b>Integrations center > Data converters</b> section, click on the downlink converter to open the <b>"Data converter details"</b> window, and select the <b>"Events"</b> tab. There you will find a downlink message.'
     1:
         image: /images/pe/edge/integrations/http/downlink-converter-message-2-edge.png
         title: 'Click the three dots in the <b>In</b> column to see the message that came from the integration to the converter.'
@@ -95,7 +95,7 @@ downlink-converter-message:
 
  - Stream device and/or asset data from an external system, IoT platform or connectivity provider back-end.
  - Stream device and/or asset data from your custom application running in the cloud.
- - Connect the existing device to **ThingsBoard Edge** using a custom HTTP-based protocol.
+ - Connect the existing device to ThingsBoard Edge using a custom HTTP-based protocol.
 
 ### Create converter and integration templates
 

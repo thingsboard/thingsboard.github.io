@@ -1,8 +1,8 @@
- - **Advanced configuration**
+#### Advanced configuration
 
-See configuration yml file below for a list of possible configuration parameters, corresponding environment variables and their default values.
-For example, default client id of the integration, that is used in integration debug messages is *"remote"* and can be altered by setting *"RPC_CLIENT_ID"* environment variable.
-
+The configuration yml file below lists possible configuration parameters, corresponding environment variables and their default values.
+For example, the default client ID of the integration that is used in integration debug messages is *"remote"* 
+and can be changed by the setting *"RPC_CLIENT_ID"* environment variable.
 
 ```bash
 server:
@@ -73,3 +73,4 @@ js:
 service:
   type: "${TB_SERVICE_TYPE:tb-integration}"
 ``` 
+{: .copy-code.expandable-10}

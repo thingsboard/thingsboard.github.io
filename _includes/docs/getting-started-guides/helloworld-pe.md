@@ -110,10 +110,10 @@ You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
-To do this, we should edit the device profile and add a new alarm rule.
-The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
+We&#39;ll use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to define a rule that triggers an alarm when the temperature exceeds 25 °C.
+Alarm rules are configured in the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} used by the target device. 
+
+In our example, "My new device" uses the "default" device profile. While it&#39;s best practice to create separate profiles for each device type, we&#39;ll skip that step here for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 

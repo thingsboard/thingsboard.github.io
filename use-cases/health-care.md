@@ -23,7 +23,7 @@ includeAdvantages: "true"
         </div>
         <div class="long">
             <p>Healthcare monitoring systems are designed to track patient health metrics in real time and immediately notify medical professionals of critical changes. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
-            <p>Our Smart Assisted Living solution powered by ThingsBoard provides real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
+            <p>Our smart assisted living solution powered by ThingsBoard provides real-time monitoring and management of residents' health in assisted living facilities. Using ThingsBoard’s powerful IoT capabilities, this solution integrates connected devices, data analytics, and automated alerts to create a seamless experience for caregivers and administrators, ensuring timely responses and a higher quality of care.</p>
         </div>
     </div>
 </section>
@@ -50,7 +50,7 @@ includeAdvantages: "true"
 </section>
 <section class="health-solution-structure">
     <h2>Smart assisted living benefits</h2>
-    <p>The Smart Assisted Living solution offers a range of benefits for care providers, residents, and facility administrators, supporting safe and efficient management of assisted living facilities:</p>
+    <p>The smart assisted living solution offers a range of benefits for care providers, residents, and facility administrators, supporting safe and efficient management of assisted living facilities:</p>
     <div class="health-solution-structure-cards">
         <div class="health-solution-structure-card">
             <h3>Efficient monitoring and sesponse</h3>
@@ -81,7 +81,7 @@ includeAdvantages: "true"
 
 <section class="dashboard-structure">
     <h2>Dashboard structure</h2>
-    <p>The Smart Assisted Living Dashboard enables caregivers and administrators to monitor residents’ health data and environmental conditions in real-time, with intuitive interfaces and easily configurable alarm systems.</p>
+    <p>The smart assisted living dashboard enables caregivers and administrators to monitor residents’ health data and environmental conditions in real-time, with intuitive interfaces and easily configurable alarm systems.</p>
     <div class="dashboard-structure-block">
         <div class="menu">
             <div class="expansion-block">
@@ -180,7 +180,7 @@ includeAdvantages: "true"
 
 <section class="applications health">
     <h2>Applications of smart assisted living solution</h2>
-    <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+    <p>A similar IoT-based monitoring and management solution, like smart assisted living, can be adapted and applied in various fields and directions. Here are some of them:</p>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
@@ -256,7 +256,7 @@ includeAdvantages: "true"
 <section class="summary">
     <div class="summary-text">
         <h2>Summary of health care solution</h2>
-        <p>This Smart Assisted Living Solution on ThingsBoard provides a comprehensive approach to resident and facility management, with robust monitoring capabilities, intuitive zoning and device management, and customizable alerts for both health and environmental conditions. The solution empowers caregivers and administrators to respond quickly, keep environments safe, and provide the highest standard of care for residents.</p>
+        <p>This smart assisted living solution on ThingsBoard provides a comprehensive approach to resident and facility management, with robust monitoring capabilities, intuitive zoning and device management, and customizable alerts for both health and environmental conditions. The solution empowers caregivers and administrators to respond quickly, keep environments safe, and provide the highest standard of care for residents.</p>
     </div>
     <div class="summary-icon">
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">

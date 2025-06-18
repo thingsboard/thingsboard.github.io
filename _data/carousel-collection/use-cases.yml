@@ -11,20 +11,41 @@ smart-farming:
 
 fleet-tracking:
   0:
-    src: "/images/usecases/fleet-tracking/ft1.png"
-    alt: "Bus locations example"
-    width: 1920
-    height: 866
+    src: "/images/usecases/fleet-tracking/fleet-tracking-1.webp"
+    alt: "ThingsBoard interface showing bus status, speed, fuel level, and location on the map"
+    imageTitleAttribute: "Real-time bus monitoring using ThingsBoard platform"
+    width: 1819
+    height: 966
   1:
-    src: "/images/usecases/fleet-tracking/ft2.png"
-    alt: "Route history example"
-    width: 1920
-    height: 866
+    src: "/images/usecases/fleet-tracking/fleet-tracking-2.webp"
+    alt: "ThingsBoard interface showing historical route and movement playback for Bus A on the map"
+    imageTitleAttribute: "Bus A route playback and history visualization in ThingsBoard"
+    width: 1819
+    height: 966
   2:
-    src: "/images/usecases/fleet-tracking/ft3.webp"
-    alt: "Route area example"
-    width: 1920
-    height: 866
+    src: "/images/usecases/fleet-tracking/fleet-tracking-3.webp"
+    alt: "ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events"
+    imageTitleAttribute: "Real-time telemetry dashboard for Bus A in ThingsBoard"
+    width: 1819
+    height: 966
+  3:
+    src: "/images/usecases/fleet-tracking/fleet-tracking-4.webp"
+    alt: "ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations"
+    imageTitleAttribute: "Bus B telemetry and route analytics dashboard in ThingsBoard"
+    width: 1819
+    height: 966
+  4:
+    src: "/images/usecases/fleet-tracking/fleet-tracking-5.webp"
+    alt: "ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map"
+    imageTitleAttribute: "Bus C status monitoring and stop event tracking in ThingsBoard"
+    width: 1819
+    height: 966
+  5:
+    src: "/images/usecases/fleet-tracking/fleet-tracking-6.webp"
+    alt: "ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map"
+    imageTitleAttribute: "Bus D refueling status and stop alert monitoring in ThingsBoard"
+    width: 1819
+    height: 966
 
 tank-level-monitoring:
   0:
@@ -151,30 +172,47 @@ water-metering:
 
 smart-retail:
   0:
-    src: "/images/usecases/smart-retail/sr1.png"
-    alt: "smart retail 1"
-    width: 1920
-    height: 866
+    src: "/images/usecases/smart-retail/smart-retail-1.webp"
+    alt: "ThingsBoard dashboard displaying supermarket locations and active critical alarms on the map"
+    imageTitleAttribute: "Overview of supermarket monitoring with critical and major alerts"
+    width: 1819
+    height: 966
   1:
-    src: "/images/usecases/smart-retail/sr2.png"
-    alt: "smart retail 2"
-    width: 1920
-    height: 866
+    src: "/images/usecases/smart-retail/smart-retail-2.webp"
+    alt: "Critical motion sensor and list of active alarms for Supermarket S1 in ThingsBoard interface"
+    imageTitleAttribute: "Device and alarm status for Supermarket S1"
+    width: 1819
+    height: 966
   2:
-    src: "/images/usecases/smart-retail/sr3.webp"
-    alt: "smart retail 3"
-    width: 1920
-    height: 866
+    src: "/images/usecases/smart-retail/smart-retail-3.webp"
+    alt: "ThingsBoard interface showing Supermarket S1 floor plan with critical motion sensor alerts and alarm chart"
+    imageTitleAttribute: "Floor plan of Supermarket S1 with device states and motion sensor data"
+    width: 1819
+    height: 966
   3:
-    src: "/images/usecases/smart-retail/sr4.png"
-    alt: "smart retail 4"
-    width: 1920
-    height: 866
+    src: "/images/usecases/smart-retail/smart-retail-4.webp"
+    alt: "Dashboard view of Supermarket S2 with critical door sensor and major chiller alarm"
+    imageTitleAttribute: "Device overview and alarms in Supermarket S2"
+    width: 1819
+    height: 966
   4:
-    src: "/images/usecases/smart-retail/sr5.png"
-    alt: "smart retail 5"
-    width: 1920
-    height: 866
+    src: "/images/usecases/smart-retail/smart-retail-5.webp"
+    alt: "Supermarket S2 layout with freezer temperature monitoring and no active alarms"
+    imageTitleAttribute: "Temperature graph for freezer in Supermarket S2"
+    width: 1819
+    height: 966
+  5:
+    src: "/images/usecases/smart-retail/smart-retail-6.webp"
+    alt: "Critical door sensor and multiple major temperature alarms in Supermarket S3 on ThingsBoard"
+    imageTitleAttribute: "Supermarket S3 device list and alarm summary"
+    width: 1819
+    height: 966
+  6:
+    src: "/images/usecases/smart-retail/smart-retail-7.webp"
+    alt: "Dashboard showing temperature fluctuations of chiller in Supermarket S3 on ThingsBoard"
+    imageTitleAttribute: "Supermarket S3 floor plan and temperature trend for chiller"
+    width: 1819
+    height: 966
 
 air-quality-monitoring-1:
   0:
