@@ -21,157 +21,30 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                 </div>
             </div>
             <div class="deployment-container">
-                <nav id="install-navigation" class="install-navigation">
-                     <ul id="menu-install-navigation-1" class="menu">
-                        <li id="menu-item-liveDemo" class="menu-item tb-live-demo">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('liveDemo')">Live demo</a>
+                <nav id="install-navigation" class="install-navigation" data-target-id="peInstallType">
+                    <ul id="menu-install-navigation-1" class="menu">
+                        <li id="menu-item-liveDemo" class="menu-item tb-live-demo" data-tab="liveDemo">
+                            <p>
+                                <img src="/images/livedemo-icon.svg" title="Try ThingsBoard in live demo mode" alt="Live demo icon" width="28" height="28">
+                                <span>Live demo</span>
+                            </p>
                         </li>
-                        <li id="menu-item-onPremise" class="menu-item tb-on-premise active">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('onPremise')">On premise</a>
+                        <li id="menu-item-onPremise" class="menu-item tb-on-premise" data-tab="onPremise">
+                            <p>
+                                <img src="/images/pricing/self-icon.svg" title="Install ThingsBoard on your own server" alt="On-premise installation icon" width="28" height="28">
+                                <span>On premise</span>
+                            </p>
                         </li>
-                        <li id="menu-item-cloud" class="menu-item tb-cloud">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('cloud')">Cloud</a>
+                        <li id="menu-item-cloud" class="menu-item tb-cloud" data-tab="cloud">
+                            <p>
+                                <img src="/images/pricing/cloud-icon.svg" title="Use ThingsBoard in the cloud" alt="Cloud deployment icon" width="28" height="28">
+                                <span>Cloud</span>
+                            </p>
                         </li>
-                     </ul>
+                    </ul>
                 </nav>
                 <div class="deployment-div">
-                    <div class="container">
-                        <div class="deployment-section deployment-live-demo" id="liveDemo">
-                            <div class="deployment-cards">
-                                <div class="deployment-cards-container">
-                                    <div class="deployment-card-block">
-                                        <a href="https://thingsboard.cloud/signup">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/sign-pe-img.svg" title="Live Demo" alt="Live Demo">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="deployment-section deployment-on-premise active" id="onPremise">
-                           <div class="deployment-cards">
-                                <div class="deployment-cards-container">
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/ubuntu/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/rhel/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/windows/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/docker-windows/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/docker/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/cluster.svg" title="Cluster setup" alt="Cluster setup">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                               </div>
-                            </div>
-                        </div>
-                        <div class="deployment-section deployment-cloud" id="cloud">
-                            <div class="deployment-cards">
-                                <div class="deployment-cards-container">
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/aws/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/azure/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Microsoft Azure" alt="Microsoft Azure">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/digital-ocean/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/digitalocean.svg" title="DigitalOcean" alt="DigitalOcean">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/gcp/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gcp.svg" title="Google Cloud Platform" alt="Google Cloud Platform">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/ibm-cloud/">
-                                            <span>
-                                                <div class="deployment-logo coming-soon">
-                                                    <img width="" src="/images/install/cloud/ibm-cloud.png" title="IBM Cloud" alt="IBM Cloud">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/alibaba-cloud/">
-                                            <span>
-                                                <div class="deployment-logo coming-soon">
-                                                    <img width="" src="/images/install/cloud/alibaba-cloud.jpg" title="Alibaba Cloud" alt="Alibaba Cloud">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% include installation-options-cards.liquid installationOptions="installation-options-pe" %}
                 </div>
             </div>
           </div>
@@ -179,37 +52,3 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
     </div>
 </div>
 
-<script>
-    jqueryDefer(function () {
-        window.addEventListener('popstate', onPopStatePeInstallOptions);
-        onPopStatePeInstallOptions();
-    });
-
-    function activateInstallSection(id) {
-            var param = 'peInstallType';
-            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            params[param] = id;
-            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
-            if (window.location.hash) {
-                newurl += window.location.hash;
-            }
-            window.history.pushState({ path: newurl }, '', newurl);
-            selectTargetPeInstallOption(id);
-    }
-
-    function onPopStatePeInstallOptions() {
-            var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-            var targetId = params['peInstallType'];
-            if (!targetId) {
-                targetId = 'onPremise';
-            }
-            selectTargetPeInstallOption(targetId);
-    }
-
-    function selectTargetPeInstallOption(targetId) {
-         $("li.menu-item").removeClass("active");
-         $("li.menu-item#menu-item-"+targetId).addClass("active");
-         $('.deployment-div .deployment-section').removeClass("active");
-         $('.deployment-div .deployment-section#'+targetId).addClass("active");
-    }
-</script>
