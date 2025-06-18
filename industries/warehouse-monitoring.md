@@ -1,8 +1,10 @@
 ---
 layout: common
-title: Warehouse monitoring customers
+title: Boosting Warehouse Efficiency with ThingsBoard – Customers Feedback
 notitle: "true"
-description:
+customTitle: "true"
+contactUsModal: "true"
+description: See how companies use ThingsBoard’s IoT platform for warehouse temperature monitoring, logistics optimization, and real-time cold chain tracking. Explore real industrial use cases.
 
 ---
 

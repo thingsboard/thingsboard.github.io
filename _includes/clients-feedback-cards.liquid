@@ -45,7 +45,18 @@
                         {{ text[1] }}
                     </p>
                 {% endfor %}
+                {% if info.feedbackLink %}
+                    <a href="{{ info.feedbackLink.link }}">{{ info.feedbackLink.label }}</a>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
+    <div class="contact-us-card">
+        <h2>Got a success story to tell?</h2>
+        <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
+        <div class="contact-us-buttons">
+            <button onclick="openContactUsModal()">Contact Us</button>
+            <a href="/case-studies/">Other success stories</a>
+        </div>
+    </div>
 </div>

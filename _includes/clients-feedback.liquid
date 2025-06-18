@@ -1,6 +1,4 @@
 {% assign key = include.key %}
 
-<div class="clients-feedback">
-    {% include clients-feedback-nav.liquid targetKey=key %}
-    {% include clients-feedback-cards.liquid targetKey=key %}
-</div>
+{% include clients-feedback-nav.liquid targetKey=key %}
+{% include clients-feedback-cards.liquid targetKey=key %}

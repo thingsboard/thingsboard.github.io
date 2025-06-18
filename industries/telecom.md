@@ -1,8 +1,10 @@
 ---
 layout: common
-title: Telecommunications customers
+title: Telecom Leaders Trust ThingsBoard – Customers Feedback
 notitle: "true"
-description:
+customTitle: "true"
+contactUsModal: "true"
+description: Discover how telecom leaders leverage ThingsBoard’s IoT platform to power smart connectivity, device management, and LPWAN deployments. Explore real customer feedback.
 
 ---
 

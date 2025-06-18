@@ -31,7 +31,7 @@ smart-energy:
       position: CEO & Co-Founder
       companyName: Nettra
       link: https://www.nettra.tech/
-      companyImage: /images/customers/nettra.svg
+      companyImage: /images/customers/nettra.webp
       companyImageWidth: 127
       companyImageHeight: 32
       text:
@@ -395,4 +395,6 @@ warehouse-monitoring:
       text:
         0: 'Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers'
         1: 'I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.'
-        2: "Read Vypin's case study."
+      feedbackLink:
+        label: "Read Vypin's case study."
+        link: /case-study/Vypin.pdf
