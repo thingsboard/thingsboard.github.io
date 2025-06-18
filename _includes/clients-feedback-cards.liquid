@@ -1,0 +1,62 @@
+{% assign targetKey = include.targetKey %}
+{% assign targetKeyCustomers = site.data.clients-feedback[targetKey] %}
+
+<div class="clients-cards">
+    {% for info in targetKeyCustomers.feedback %}
+        <div class="clients-card">
+            <div class="clients-card-header">
+                <div class="clients-card-header-author-side">
+                    {% if info.authorImage %}
+                        <img src="{{ info.authorImage }}"
+                             width="80"
+                             height="80"
+                             alt="{{ info.author }}"
+                             title="{{ info.author }} | {{ info.companyName }} | {{ info.position }}"
+                             loading="lazy">
+                    {% endif %}
+                    <div class="clients-card-header-author-side-info">
+                        <span class="clients-card-bold-text">{{ info.author }}</span>
+                        <span class="clients-card-default-text" style="color: rgba(0, 0, 0, 0.54)">{{ info.position }}</span>
+                    </div>
+                </div>
+                <div class="clients-card-header-company-side">
+                    {% if info.link %}
+                        <a href="{{ info.link }}" target="_blank">
+                            <img src="{{ info.companyImage }}"
+                                 width="{{ info.companyImageWidth }}"
+                                 height="{{ info.companyImageHeight }}"
+                                 alt="{{ info.companyName }} logo"
+                                 title="{{ info.companyName }}"
+                                 loading="lazy">
+                        </a>
+                    {% else %}
+                        <img src="{{ info.companyImage }}"
+                             width="{{ info.companyImageWidth }}"
+                             height="{{ info.companyImageHeight }}"
+                             alt="{{ info.companyName }} logo"
+                             title="{{ info.companyName }}"
+                             loading="lazy">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="clients-card-text">
+                {% for text in info.text %}
+                    <p class="{% if forloop.index == 1 %}clients-card-bold-text{% else %}clients-card-default-text{% endif %}">
+                        {{ text[1] }}
+                    </p>
+                {% endfor %}
+                {% if info.feedbackLink %}
+                    <a href="{{ info.feedbackLink.link }}">{{ info.feedbackLink.label }}</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    <div class="contact-us-card">
+        <h2>Got a success story to tell?</h2>
+        <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
+        <div class="contact-us-buttons">
+            <button onclick="openContactUsModal()">Contact Us</button>
+            <a href="/case-studies/">Other success stories</a>
+        </div>
+    </div>
+</div>
