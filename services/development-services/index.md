@@ -59,7 +59,7 @@ redirect_from: "docs/services/development-services/"
             <a href="/case-studies/iona/" class="logo">
                 <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
             </a>
-            <a href="/" class="logo">
+            <a href="/case-studies/asg-tech/" class="logo">
                 <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
             </a>
             <a href="/industries/telecom/" class="logo">
@@ -80,7 +80,7 @@ redirect_from: "docs/services/development-services/"
             <a href="/case-studies/iona/" class="logo">
                 <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
             </a>
-            <a href="/" class="logo">
+            <a href="/case-studies/asg-tech/" class="logo">
                 <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
             </a>
         </div>
