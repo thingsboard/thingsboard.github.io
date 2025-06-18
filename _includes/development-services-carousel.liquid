@@ -20,12 +20,18 @@
     {% assign settings = defaultSettings %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme dev-serv transitionAnimationEnabled nonActiveItemsVisibilityFalse thinArrow line" data-settings='{{ settings }}'>
+<div class="owl-carousel owl-theme dev-serv transitionAnimationEnabled nonActiveItemsVisibilityFalse thinArrow line" data-settings='{{ settings }}'>
     {% for carouselItem in carouselCollection %}
         <div class="carousel-item-default carousel-item-flex-column">
             <div class="carousel-text">
                 <h2 class="development-title">{{ carouselItem[1].title }}</h2>
                 <p class="development-description">{{ carouselItem[1].description }}</p>
+                <a href="{{ carouselItem[1].href }}" style="font-size: 18px; font-weight: 500">
+                    {{ carouselItem[1].linkLabel }}
+                    <i class="fas fa-chevron-right arrow first" style="color: #2a7dec"></i>
+                    <i class="fas fa-chevron-right arrow second" style="color: #2a7dec"></i>
+                    <i class="fas fa-chevron-right arrow third" style="color: #2a7dec"></i>
+                </a>
             </div>
             <div class="carousel-image">
                 <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" width="{{carouselItem[1].width}}" height="{{carouselItem[1].height}}">

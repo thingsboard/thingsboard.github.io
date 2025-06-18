@@ -16,16 +16,16 @@ redirect_from: "docs/services/development-services/"
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
-                <img id="icon-laptop" src="https://img.thingsboard.io/development-services/laptop-with-dashboard.webp" alt="Laptop with a dashboard"/>
+                <img id="icon-laptop" src="/images/development-services/laptop-with-dashboard.webp" alt="Laptop with a dashboard"/>
                 <button class="button schedule anchor-button" onclick="onContactUsClick(0)">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
-                <img id="icon-phone" src="https://img.thingsboard.io/development-services/phone-with-dashboard.webp" alt="Phone with a dashboard"/>
+                <img id="icon-phone" src="/images/development-services/phone-with-dashboard.webp" alt="Phone with a dashboard"/>
             </div>
             <div class="schedule-block">
                 <img
                     id="progress"
-                    src="https://img.thingsboard.io/development-services/half-circle-progress.svg"
+                    src="/images/development-services/half-circle-progress.svg"
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">Fixed Price. Firm Deadlines. Proven Results.</span>
@@ -41,54 +41,48 @@ redirect_from: "docs/services/development-services/"
     <span class="title">Our Customers</span> 
     <div>
         <div class="customer-logos">
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/suessco-logo.svg" alt="logo suessco"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/oxi-logo.svg" alt="logo oxi"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/suessco-logo.svg" alt="logo suessco"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/oxi-logo.svg" alt="logo oxi"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
-            </div>
+            <a href="/industries/telecom/" class="logo">
+                <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
+            </a>
+            <a href="/case-studies/super-bock/" class="logo">
+                <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+            </a>
+            <a href="/case-studies/kalitec/" class="logo">
+                <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+            </a>
+            <a href="/case-studies/suessco/" class="logo">
+                <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
+            </a>
+            <a href="/case-studies/oxi/" class="logo">
+                <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
+            </a>
+            <a href="/case-studies/iona/" class="logo">
+                <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+            </a>
+            <a href="/case-studies/asg-tech/" class="logo">
+                <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+            </a>
+            <a href="/industries/telecom/" class="logo">
+                <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
+            </a>
+            <a href="/case-studies/super-bock/" class="logo">
+                <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+            </a>
+            <a href="/case-studies/kalitec/" class="logo">
+                <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+            </a>
+            <a href="/case-studies/suessco/" class="logo">
+                <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
+            </a>
+            <a href="/case-studies/oxi/" class="logo">
+                <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
+            </a>
+            <a href="/case-studies/iona/" class="logo">
+                <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+            </a>
+            <a href="/case-studies/asg-tech/" class="logo">
+                <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+            </a>
         </div>
     </div>
 </section>
@@ -105,8 +99,8 @@ redirect_from: "docs/services/development-services/"
     <div id="content-poc" class="content-wrapper">
         <div class="poc">
             <div class="left-block">
-                <img id="solution-poc" src="https://img.thingsboard.io/development-services/solution-mvp.webp" alt="Custom solution">
-                <img id="solution-widget-1" class="absolute-image secondary-image" src="https://img.thingsboard.io/development-services/solution-widget-3.svg"  alt="Custom solution widget dark card with pie chart">
+                <img id="solution-poc" src="/images/development-services/solution-mvp.webp" alt="Custom solution">
+                <img id="solution-widget-1" class="absolute-image secondary-image" src="/images/development-services/solution-widget-3.svg"  alt="Custom solution widget dark card with pie chart">
             </div>
             <div class="right-block">
                 <div class="section-title">
@@ -120,7 +114,7 @@ redirect_from: "docs/services/development-services/"
                     <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
-            <img id="number-one" class="absolute-image" src="https://img.thingsboard.io/development-services/number-1.svg" alt="background number one">
+            <img id="number-one" class="absolute-image" src="/images/development-services/number-1.svg" alt="background number one">
         </div>
     </div>
     <div id="content-mvp" class="content-wrapper">
@@ -138,18 +132,18 @@ redirect_from: "docs/services/development-services/"
                 </ul>
             </div>
             <div class="right-block">
-                <img id="solution-mvp1" src="https://img.thingsboard.io/development-services/solution-coinify.webp" alt="Custom solution mvp">
-                <img id="solution-widget-3" class="absolute-image secondary-image" src="https://img.thingsboard.io/development-services/solution-widget-1.svg" alt="Custom solution widget value card with pie chart">
-                <img id="solution-widget-2" class="absolute-image secondary-image" src="https://img.thingsboard.io/development-services/solution-widget-2.svg" alt="Custom solution widget value card with graph" >
+                <img id="solution-mvp1" src="/images/development-services/solution-coinify.webp" alt="Custom solution mvp">
+                <img id="solution-widget-3" class="absolute-image secondary-image" src="/images/development-services/solution-widget-1.svg" alt="Custom solution widget value card with pie chart">
+                <img id="solution-widget-2" class="absolute-image secondary-image" src="/images/development-services/solution-widget-2.svg" alt="Custom solution widget value card with graph" >
             </div>
-            <img id="number-two" class="absolute-image" src="https://img.thingsboard.io/development-services/number-2.svg" alt="Background number two">
+            <img id="number-two" class="absolute-image" src="/images/development-services/number-2.svg" alt="Background number two">
         </div>
     </div>
     <div id="content-market-solution" class="content-wrapper">
         <div class="market-solution">
             <div class="left-block">
-                <img id="solution-market-solution1" src="https://img.thingsboard.io/development-services/solution-market-solution.webp" alt="Custom solution market solution">
-                <img id="solution-market-solution2" class="absolute-image base-image" src="https://img.thingsboard.io/development-services/solution-market-solution2.webp" alt="Custom solution market solution: dashboard with trucks">
+                <img id="solution-market-solution1" src="/images/development-services/solution-market-solution.webp" alt="Custom solution market solution">
+                <img id="solution-market-solution2" class="absolute-image base-image" src="/images/development-services/solution-market-solution2.webp" alt="Custom solution market solution: dashboard with trucks">
             </div>
             <div class="right-block">
                 <div class="section-title">
@@ -164,7 +158,7 @@ redirect_from: "docs/services/development-services/"
                     <button id="Serv_DevServ_ContactUs1" class="button secondary anchor-button gtm_button" onclick="onContactUsClick(0)">Contact Us</button>
                 </ul>
             </div>
-            <img id="number-three" class="absolute-image" src="https://img.thingsboard.io/development-services/number-3.svg" alt="Background number three">
+            <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
         </div>
     </div>
     <div class="content-wrapper additionally">
@@ -200,7 +194,7 @@ redirect_from: "docs/services/development-services/"
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">

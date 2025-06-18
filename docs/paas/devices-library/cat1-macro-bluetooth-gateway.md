@@ -4,7 +4,7 @@ title: How to connect Cat-1 Macro Bluetooth Gateway to ThingsBoard?
 category: Other devices
 connectivity: LTE
 vendor: Lansitec
-deviceImageFileName: cat1-container-tracker.png
+deviceImageFileName: cat1-macro-bluetooth-gateway.png
 docsPrefix: paas/
 docsTag: paas
 ---
@@ -13,4 +13,4 @@ docsTag: paas
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/cat1-container-tracker.md %}
+{% include /docs/devices-library/guides/cat1-macro-bluetooth-gateway.md %}
