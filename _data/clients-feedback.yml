@@ -1,0 +1,400 @@
+smart-energy:
+  label: Smart Energy
+  icon: https://img.thingsboard.io/smart-energy-icon.svg
+  feedback:
+    - author: Daniel Portero
+      position: Cloud & App Development Manager
+      companyName: Circutor
+      link: https://circutor.com/
+      authorImage: https://img.thingsboard.io/customers/circutor-person.webp
+      companyImage: https://img.thingsboard.io/customers/circutor.svg
+      companyImageWidth: 138
+      companyImageHeight: 32
+      text:
+        0: 'CIRCUTOR has over 40 years’ experience working on the design and manufacture of units for improving energy efficiency: electrical energy, power quality measurement and control units, industrial electrical protection, reactive energy compensation, and harmonic filtering.'
+        1: 'CIRCUTOR owns a wide portfolio of connected energy control and metering devices. Despite the diversity of proprietary and off-the-shelf data protocols, Thingsboard has made it easy to accommodate most of our products in a common data platform.'
+        2: 'I am deeply impressed by the dynamism and professionalism of the Thingsboard team. I appreciate greatly the ability to attend our technical suggestions and adopt them in the form of new functionalities. I highly recommend Thingsboard for its reliability, its flexibility and above all, the quality of the product and its technical service.'
+    - author: Mark Hunt
+      position: CTO
+      companyName: Oneserve Limited
+      link: https://oneserve.co.uk/
+      authorImage: https://img.thingsboard.io/customers/oneserve-person.webp
+      companyImage: https://img.thingsboard.io/customers/oneserve.svg
+      companyImageWidth: 132
+      companyImageHeight: 32
+      text:
+        0: 'An award winning Field Service Management platform.'
+        1: 'We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility.'
+        2: 'The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.'
+        3: 'The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.'
+    - author: Agustin Derregibus
+      position: CEO & Co-Founder
+      companyName: Nettra
+      link: https://www.nettra.tech/
+      companyImage: https://img.thingsboard.io/customers/nettra.webp
+      companyImageWidth: 127
+      companyImageHeight: 32
+      text:
+        0: 'IOT Company specialized in the monitoring and control of distributed infrastructures.'
+        1: 'We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer.'
+        2: 'The platform has proven to be very reliable, with great support and constant evolution. Definitely the right choice for our company.'
+    - author: David Eitzinger
+      position: Managing Director
+      companyName: Berliner Energieinstitut GmbH
+      link: https://www.berliner-energieinstitut.de/
+      authorImage: https://img.thingsboard.io/customers/bei-person.webp
+      companyImage: https://img.thingsboard.io/customers/bei.svg
+      companyImageWidth: 189
+      companyImageHeight: 32
+      text:
+        0: 'We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior.'
+        1: "Our business needed some special features on the frontend and some major modifications on the backend but after exchanging a few emails it was clear that ThingsBoard was the way to go. The necessary changes were implemented in a matter of a few weeks and the quality and thoroughness of the implementation far exceed our expectations. I've been working with OSS since the mid 1990s and know of it's many benefits but the quality of ThingsBoard as well as the speed of development continues to impress me."
+    - author: Nairn Harrison
+      position: Director
+      companyName: Environmental Energy Controls
+      link:  https://www.e2cbms.com/
+      companyImage: https://img.thingsboard.io/customers/eec.svg
+      companyImageWidth: 111
+      companyImageHeight: 60
+      text:
+        0: 'Environmental Energy Controls delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS).'
+        1: 'Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but no other could match this platform in terms of its capability. Once learning the basics, we could quickly deploy and add customers sites without the need for continual support.'
+        2: 'What we especially like from the Thingsboard team are the updates and continual evolving development cycles, real people you can talk to and understand ideas, concepts and future use cases. Features to the system are being updated and new functionality added where, in the modern age of new technology, is essential to offer new services when they occur.'
+        3: 'The support levels received from initial contact to ongoing projects has been excellent from the entire team and we look forward to expanding our future solutions to all customers with the support from the Thingsboard team.'
+        4: 'If you haven’t tried this solution we 100% recommend it to anyone interested in emerging IOT platforms and what the value collected data can truly bring.'
+    - author: Peter Backes
+      position: CEO
+      companyName: co.met GmbH
+      link: https://www.co-met.info/
+      authorImage: https://img.thingsboard.io/customers/comet-person.webp
+      companyImage: https://img.thingsboard.io/customers/comet.svg
+      companyImageWidth: 190
+      companyImageHeight: 32
+      text:
+        0: 'co.met GmbH has been active in the energy industry since 2001 with process and data services and in some cases proprietary IT solutions.'
+        1: 'We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN carrier for the city of Saarbrücken and a Solution Provider for LoRa-WAN Backendsystems.'
+        2: 'In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains. ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.'
+agriculture:
+  label: Agriculture
+  icon: https://img.thingsboard.io/agriculture-icon.svg
+  feedback:
+    - author: Jeppe Walther
+      position: CTO
+      companyName: Supertech Agroline
+      link: https://www.agrolog.io/
+      companyImage: https://img.thingsboard.io/customers/supertech-agroline.svg
+      companyImageWidth: 122
+      companyImageHeight: 36
+      text:
+        0: 'Develops, manufactures and sells high quality post-harvest equipment worldwide.'
+        1: 'ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added to the platform for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations. The real time UI system proved useful both in development phase and for our final user interface.'
+        2: 'Using TB as our platform allowed us to rapidly achieve a very genetic solution that will serve our scaling needs for years to come.'
+    - author: Mark Morris
+      position: Founder & Managing Director
+      companyName: Enviroeye
+      companyImage: https://img.thingsboard.io/customers/enviroeye.svg
+      companyImageWidth: 134
+      companyImageHeight: 38
+      text:
+        0: "Developers of VineHub, the industry's first integrated vineyard management and automation platform."
+        1: 'ThingsBoard (TB) has been an amazing discovery after much searching. The thought and architectural maturity of the platform is unmatched in the market. It’s allowed us to bring our platform to market a full 18 months sooner, than if we had embarked on developing our own backend and visualisation capabilities. With such a flexible UI, even with just a basic understanding of HTML and Javascript one can quickly and easily begin customising and designing they’re own widgets. This has provided great value to our growers since we can build them customised dashboards with very little time and effort on our part. The ability to ingest data directly from our LoRaWAN MQTT broker, via the platform’s IoT Gateway feature, has eliminated the need for us to maintain a seperate middleware layer, improving our operational efficiencies.'
+        2: 'All in all, Andrew and all the amazingly helpful guys at ThingsBoard, have developed a highly capable and scalable solution for just about any IoT application and we say look no further for your next IoT project.'
+    - author: Miroslav Holubec
+      position: Director
+      companyName: Keners s.r.o.
+      link: https://keners.sk/
+      companyImage: https://img.thingsboard.io/customers/keners.svg
+      companyImageWidth: 153
+      companyImageHeight: 32
+      text:
+        0: 'Develops solutions for agriculture and the environment.'
+        1: 'We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allows us to create dashboards and combine data from multiple data sources.'
+        2: 'We highly appreciate the support of the creators, their feedback is simply excellent!'
+smart-buildings:
+  label: Smart Buildings
+  icon: https://img.thingsboard.io/smart-buildings-icon.svg
+  feedback:
+    - author: Andreas Brandl
+      position: Founder & CEO
+      companyName: Sensolyze GmbH
+      link: https://www.sensolyze.com/
+      authorImage: https://img.thingsboard.io/customers/sensolyze-person.webp
+      companyImage: https://img.thingsboard.io/customers/sensolyze.svg
+      companyImageWidth: 180
+      companyImageHeight: 32
+      text:
+        0: 'We are providing Digital Office Solutions for Workspace Managers and Office Planners that help them to better understand how their Spaces are used'
+        1: 'When we started with ThingsBoard we mainly used it for core messaging and the dashboard functionality. Large parts of the business logic was done by an external backend connecting to ThingsBoard using the API. Within the first two releases of the new Rule Engine, we were able to migrate basically everything to the platform.'
+        2: 'I want to congratulate the team for the huge effort they have put into the solution. The concept of the rule engine and the available nodes are very well thought through and support a wide range of applications. And - probably most important - Andrew and his team listens closely to the needs and requirements of their customers. And you clearly see that in the product. We can commend this product to anybody looking for a flexible and stable IoT Solution and are looking forward to work with the team in the future.'
+    - author: Christoph Beck
+      position: Founder and CEO
+      companyName: mdeg GmbH
+      link: https://www.mdeg-digital.com/
+      authorImage: https://img.thingsboard.io/customers/mdeg-person.webp
+      companyImage: https://img.thingsboard.io/customers/mdeg.webp
+      companyImageWidth: 94
+      companyImageHeight: 60
+      text:
+        0: 'mdeg GmbH – we deliver a consummate solution for digital connection of medical devices.'
+        1: 'One of our core products is the mdeg Medical Device Cloud, a connectivity solution for medical devices to record, track, and monitor. Being dedicated for Medical Devices only, we have to meet the highest standards regarding reliability, independence, security and scalability. We also need to stay within judicial area with our infrastructure. With ThingsBoard we found the right solution and partner.'
+        2: 'ThingsBoard provides us with the perfect mix of reliability, flexibility and high quality support whenever needed during the development of the mdeg Medical Device Cloud. Thanks to the beneficial cooperation we can today offer a complete Connectivity Solution dedicated to Medical Device Industry only to a wide range of customers with exciting medical products all over Europe.'
+    - author: Nairn Harrison
+      position: Director
+      companyName: Environmental Energy Controls
+      link: https://www.e2cbms.com/
+      companyImage: https://img.thingsboard.io/customers/eec.svg
+      companyImageWidth: 111
+      companyImageHeight: 60
+      text:
+        0: 'Environmental Energy Controls delivers turnkey "End-to-End" solutions relating to Building Energy Management Systems (BEMS).'
+        1: 'Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but no other could match this platform in terms of its capability. Once learning the basics, we could quickly deploy and add customers sites without the need for continual support.'
+        2: 'What we especially like from the Thingsboard team are the updates and continual evolving development cycles, real people you can talk to and understand ideas, concepts and future use cases. Features to the system are being updated and new functionality added where, in the modern age of new technology, is essential to offer new services when they occur.'
+        3: 'The support levels received from initial contact to ongoing projects has been excellent from the entire team and we look forward to expanding our future solutions to all customers with the support from the Thingsboard team.'
+        4: 'If you haven’t tried this solution we 100% recommend it to anyone interested in emerging IOT platforms and what the value collected data can truly bring.'
+    - author: Mark Hunt
+      position: CTO
+      companyName: Oneserve Limited
+      link: https://oneserve.co.uk/
+      authorImage: https://img.thingsboard.io/customers/oneserve-person.webp
+      companyImage: https://img.thingsboard.io/customers/oneserve.svg
+      companyImageWidth: 132
+      companyImageHeight: 32
+      text:
+        0: 'An award winning Field Service Management platform.'
+        1: 'We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility.'
+        2: 'The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.'
+        3: 'The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.'
+    - author: Simon Judge
+      position: Co-founder
+      companyName: BeaconZone
+      link: https://www.beaconzone.co.uk/
+      authorImage: https://img.thingsboard.io/customers/beaconzone-person.webp
+      companyImage: https://img.thingsboard.io/customers/beaconzone.svg
+      companyImageWidth: 153
+      companyImageHeight: 32
+      text:
+        0: 'Specialists in Bluetooth® Beacon Solutions.'
+        1: 'ThingsBoard offers a secure, scalable IoT solution that, being Open-source, we can control. Having created our own ThingsBoard instance, we have found it to be very customisable via widgets, the rule engine and the plugin system allowing it to be used in a variety of specialist situations.'
+    - author: Michael Nickolai
+      position: Co-Founder & Executive Manager
+      companyName: Conbee
+      companyImage: https://img.thingsboard.io/customers/conbee.svg
+      companyImageWidth: 158
+      companyImageHeight: 40
+      text:
+        0: 'Optimization of logistics and production processes.'
+        1: 'As a number of IOT dashboard available, It is hard to find one which can fulfill all requirements, robust and scalable for the industrial use case.'
+        2: 'ThingsBoard is the platform which fulfilled our requirements and It is easy to adapt, flexible and have the ability to present data on different widgets in an attractive way with easy access. In addition, we are thankful to the ThingsBoard team for their tremendous service and we are looking forward to making more IOT solutions with ThingsBoard in future.'
+    - author: Antonio Chianese
+      position: CTO
+      companyName: TOURISTIC PLATFORM SYSTEMS SRL
+      link: https://www.tps.company/
+      companyImage: https://img.thingsboard.io/customers/tps.svg
+      companyImageWidth: 65
+      companyImageHeight: 60
+      text:
+        0: 'TPS offers integrated and innovative systems for the enhancement and use of cultural heritage, choosing the visitor and his / her experience as the privileged point of view.'
+        1: 'We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites.'
+smart-city:
+  label: Smart City
+  icon: https://img.thingsboard.io/smart-city-icon.svg
+  feedback:
+    - author: Eric Bourbeau
+      position: Président fondateur / Founder and CEO
+      companyName: X-TELIA
+      link: https://en.x-telia.com/
+      authorImage: https://img.thingsboard.io/customers/x-telia-person.webp
+      companyImage: https://img.thingsboard.io/customers/x-telia.svg
+      companyImageWidth: 160
+      companyImageHeight: 32
+      text:
+        0: 'Canadian LoRaWAN™ network operator and IoT integrator.'
+        1: 'We were looking for a robust and scalable IoT platform to help us deploy leading edge LoRaWAN™-based IoT projects.'
+        2: 'We landed a contract to deploy a city-wide network of solar/wireless variable message “No Parking” signs to manage on-street parking for snow removal operations. The deadline to develop, test and deploy the overall solution was very tight and included penalties for late delivery.'
+        3: 'ThingsBoard engineers worked hand in hand with our developers to develop the MQTT-based communication protocol between the X-TELIA network and ThingsBoard, developed a beautiful custom widget for controlling the no parking signs, implemented our instance of ThingsBoard PE and provided incredible support to make sure we made it to the finish line on time.'
+        4: 'I can say that the dedication of ThingsBoard team blew me away. I look forward to building and deploying many new and exciting projects on ThingsBoard, as I know the team backing the platform is second to none in expertise and dedication.'
+    - author: Bertil Moberg
+      position: Co-Founder & Head of IoT Solutions
+      companyName: iiOOTE AB
+      link: https://www.iioote.com/
+      authorImage: https://img.thingsboard.io/customers/iioote-person.webp
+      companyImage: https://img.thingsboard.io/customers/iioote.svg
+      companyImageWidth: 120
+      companyImageHeight: 42
+      text:
+        0: 'iiOOTE is an independent systems integrator with deep knowledge and broad international network in the IoT LPWAN ecosystem.'
+        1: 'During our evaluation of several different IoT platforms we decided using ThingsBoard Community Edition to quickly get started with testing of our concept solutions. Since it offers an easy way to get access to data from all our sensors and supports building dashboards for visualization.'
+        2: 'However, we soon discovered that ThingsBoard also fulfilled our need to build commercial services. With increasing number of sensors, customers and requirements we have migrated to ThingsBoard Professional Edition with a lot more functionality for larger deployments and multiple customers. And we will add additional servers as our customers grow.'
+    - author: Daniel Bartozzi
+      position: VP Engineering
+      companyName: Ositech Communications, Inc.
+      link: https://ositech.com/
+      companyImage: https://img.thingsboard.io/customers/ositech.svg
+      companyImageWidth: 145
+      companyImageHeight: 36
+      text:
+        0: 'Provides wireless data communication solutions for use in Healthcare, EMS, Transportation, Fire/Rescue, Food Supply Chain Safety and like segments.'
+        1: 'A special thank you to Thingsboard for their professional services in helping create a dashboard in a short period of time customized to our specific requirements. They were responsive to our needs and worked diligently to resolve any issues. Work well done.'
+    - author: Michael Nickolai
+      position: Co-Founder & Executive Manager
+      companyName: Conbee
+      companyImage: https://img.thingsboard.io/customers/conbee.svg
+      companyImageWidth: 158
+      companyImageHeight: 40
+      text:
+        0: 'Optimization of logistics and production processes.'
+        1: 'As a number of IOT dashboard available, It is hard to find one which can fulfill all requirements, robust and scalable for the industrial use case.'
+        2: 'ThingsBoard is the platform which fulfilled our requirements and It is easy to adapt, flexible and have the ability to present data on different widgets in an attractive way with easy access. In addition, we are thankful to the ThingsBoard team for their tremendous service and we are looking forward to making more IOT solutions with ThingsBoard in future.'
+    - author: Pawel Ostropolski
+      position: Founder & Managing Director
+      companyName: IoT Squad
+      link: https://iotsquad.tech/
+      authorImage: https://img.thingsboard.io/customers/iotsquad-tech-person.webp
+      companyImage: https://img.thingsboard.io/customers/iot-squad.svg
+      companyImageWidth: 82
+      companyImageHeight: 60
+      text:
+        0: 'Systems Integrator for Smart City and Industry 4.0. Offering complete End to End IoT Solutions and R&D services for Cities, Campuses, Industrial Sites and Critical Infrastructure.'
+        1: 'ThingsBoard platform enables us to deliver on our promise of "Rapid Prototyping and Development" of IoT solutions for our clients. Its versatile deployment and integration capabilities make it well fit for most of the use case scenarios we find in IoT markets nowadays.'
+    - author: Ján Masaryk
+      position: Co-Founder
+      companyName: MAKERS s. r. o.
+      link: https://www.makers.sk/
+      companyImage: https://img.thingsboard.io/customers/makers.svg
+      companyImageWidth: 66
+      companyImageHeight: 60
+      text:
+        0: 'MAKERS s. r. o. is a Slovak IoT solutions software house.'
+        1: 'While building the Smart City solution for OMS, a. s. we were looking for IoT platform serving as core backend for our solutions. ThingsBoard became our first clear choice. It contains necessary business functionality and support all needed technologies/protocols which we required. Later on, ThingsBoard became the heart of the upcoming solution. In any implementation of complex systems cooperation and support are crucial to success achievement. We are glad that we found stable partners in design, implementation and deployment of ThingsBoard in the Smart City solution.'
+telecom:
+  label: Telecom
+  icon: https://img.thingsboard.io/telecom-icon.svg
+  feedback:
+    - author: David Týr
+      position: Innovation Manager
+      companyName: T-Mobile Czech Republic a.s.
+      link: https://www.t-mobile.cz/
+      companyImage: https://img.thingsboard.io/customers/t-mobile.svg
+      companyImageWidth: 87
+      companyImageHeight: 48
+      text:
+        0: 'T-Mobile Czech Republic is provider of IoT connectivity based on technologies NB-IoT and Sigfox as well as provider of complete IoT ICT services.'
+        1: 'We have choose to use ThingsBoard to be able easily and quickly deliver various proof-of-concepts, product prototypes and to test new devices with comes usually “app-less”. With ThingsBoard we are able finish such tasks with visually attractive result with sleek user interface and done in nearly no time.'
+        2: 'In comparison to other IoT platforms and tools we value the most the easy to use approach without compromising functionality, very logical structure and in-build support of various technologies and protocols.'
+    - author: Roman Nemish
+      position: President
+      companyName: TEKTELIC Communications Inc.
+      link: https://tektelic.com/
+      authorImage: https://img.thingsboard.io/customers/tektelic-person.webp
+      companyImage: https://img.thingsboard.io/customers/tektelic.svg
+      companyImageWidth: 178
+      companyImageHeight: 52
+      text:
+        0: 'TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices.'
+        1: 'We engaged ThingsBoard to complete our end-to-end solution and to address several of our clients’ LoRaWAN IoT applications and Proof-of-Concept trials. Working with ThingsBoard we were able to dramatically reduce time to market, de-risk our technology investment and delight our customers by delivering a complete, high-quality applications which exceeded ours and our client’s expectations.'
+        2: 'The ThingsBoard team is made up of highly skilled engineers who have solid experience in building complex systems. In our case the ThingsBoard team had to incorporate and render data from a number our multifunction sensors, including our Industrial and All-in- One Home sensors to create an integrated, user friendly and visually appealing application. The application had to provide triggers and alarms, real-time and historical data visualization and the ability to send control commands to the end devices. Moreover, it also had to be seamlessly integrated with our Network Server. Despite these varied and complicated requirements, the ThingsBoard team developed the application on budget and in a very short time.'
+        3: 'The ThingsBoard team is responsive, easy to work with and extremely professional. They have been a great partner in the development of our end-to- end IoT solution. We highly recommend them for addressing your complete IoT applications requirements in a cost effective and timely manner.'
+    - author: Eric Bourbeau
+      position: Président fondateur / Founder and CEO
+      companyName: X-TELIA
+      link: https://en.x-telia.com/
+      authorImage: https://img.thingsboard.io/customers/x-telia-person.webp
+      companyImage: https://img.thingsboard.io/customers/x-telia.svg
+      companyImageWidth: 160
+      companyImageHeight: 32
+      text:
+        0: 'Canadian LoRaWAN™ network operator and IoT integrator.'
+        1: 'We were looking for a robust and scalable IoT platform to help us deploy leading edge LoRaWAN™-based IoT projects.'
+        2: 'We landed a contract to deploy a city-wide network of solar/wireless variable message “No Parking” signs to manage on-street parking for snow removal operations. The deadline to develop, test and deploy the overall solution was very tight and included penalties for late delivery.'
+        3: 'ThingsBoard engineers worked hand in hand with our developers to develop the MQTT-based communication protocol between the X-TELIA network and ThingsBoard, developed a beautiful custom widget for controlling the no parking signs, implemented our instance of ThingsBoard PE and provided incredible support to make sure we made it to the finish line on time.'
+        4: 'I can say that the dedication of ThingsBoard team blew me away. I look forward to building and deploying many new and exciting projects on ThingsBoard, as I know the team backing the platform is second to none in expertise and dedication.'
+industry40:
+  label: Industry 4.0
+  icon: https://img.thingsboard.io/industry40-icon.svg
+  feedback:
+    - author: Sudhir Ravindramohan
+      position: Co-founder and CTO
+      companyName: Utvyakta
+      link: https://www.utvyakta.com/
+      authorImage: https://img.thingsboard.io/customers/utvyakta-person.webp
+      companyImage: https://img.thingsboard.io/customers/utvyakta.svg
+      companyImageWidth: 127
+      companyImageHeight: 54
+      text:
+        0: "Using Thingsboard has been a game-changer for our IoT projects. The platform's intuitive interface and robust features have simplified our process, from device management to data visualization."
+        1: "Utvyakta Solutions is an IIoT company specializing in providing remote air compressor monitoring solutions. We are committed to reducing carbon emissions through smart technology interventions that reduce energy consumption and maintenance costs for industrial machines. We recommend Thingsboard as the go-to remote air compressor monitoring platform. The seamless integration, real-time data visualization, and powerful analytics provided by Thingsboard have revolutionized our monitoring capabilities. The platform's reliability and scalability have allowed us to efficiently manage and optimize our air compressor operations, resulting in improved productivity. With Thingsboard, our clients can confidently monitor their compressors from anywhere, ensuring uninterrupted performance and proactive maintenance. Highly recommended!"
+    - author: Mamadou Ly
+      position: Project Manager at Safir (Farinia Group)
+      companyName: Farinia Group
+      link: https://www.farinia.com/
+      authorImage: https://img.thingsboard.io/customers/farinia-person.webp
+      companyImage: https://img.thingsboard.io/customers/farinia.svg
+      companyImageWidth: 164
+      companyImageHeight: 34
+      text:
+        0: 'Farinia Group is a manufacturing organization, dedicated to material transformation, using state-of-the art equipment, know-how and technical expertise.'
+        1: 'With ThingsBoard we found the platform to modernize our factories and especially improve our performance processes.'
+        2: 'Following a benchmarking of solutions on the market, we came across Thingsboard. It was a surprising discovery, but above all a turning point for Farinia group. Now we have a real-time production monitoring dashboards with a considerable novelty in the industrial environment which allows our operators to qualify the defects and the manager to plan their production orders. This adventure was an invaluable success thanks to the team of ThingsBoard who helped us, advised and developed the features and services we needed to facilitate the adoption of their products by our users. Recently we have deployed ThingsBoard in 3 companies of the group. Our goal is to equip our 11 production sites from this year (2019).'
+    - author: Júlio Sá
+      position: I4.0 researcher at CITEVE
+      companyName: CITEVE
+      link: https://www.citeve.pt/
+      authorImage: https://img.thingsboard.io/customers/citeve-person.webp
+      companyImage: https://img.thingsboard.io/customers/citeve.webp
+      companyImageWidth: 58
+      companyImageHeight: 60
+      text:
+        0: 'CITEVE is a Technological Institute which provides technological support and services to companies acting in the textile & clothing business.'
+        1: 'We aim to introduce systematic integration of Industry 4.0 into the Portuguese companies through the development, use and optimization of interoperable technological resources at the service of industry and productivity.'
+        2: 'ThingsBoard platform was selected for experimentation due to its good reputation, not only under academic reviews but also under the GitHub and global Internet community. This software is available with an open-source license and its website has lessons on how to use each feature, this made easy for the team to install, run and learn how to use this platform. With implementation of TB CE, we were able to develop and gather knowledge on several key-topics of the I4.0 and IoT paradigm: Security (Network, Devices and Users management), Connectivity (M2M communication and protocols), Machine Control (Programing with traditional [Python and Java] and modern [Rule Engine and RPC requests] frameworks).'
+    - author: Simone Pürzer
+      position: Head of Supply Chain Center
+      companyName: INSYS icom
+      link: https://www.insys-icom.com/
+      companyImage: https://img.thingsboard.io/customers/insys.svg
+      companyImageWidth: 107
+      companyImageHeight: 60
+      text:
+        0: 'INSYS icom is a technology company, providing fully integrated solutions for IoT connectivity and remote maintenance to the automation industry and machine builders.'
+        1: 'Our customers are manufacturers of machinery and automation systems and use the Thingsboard plattform, to centrally store and analyze the status and performance of their machines. Thingsboard provides just the right features for all standard use cases, but at the same time keeps usability and necessary knowledge at a level, that is just right for the end user. Our customers especially like the possibility to adapt widgets or build their own for special use cases, based on the detailed documentation and videos available. The IoT gateways from INSYS icom connect to the MQTT API of Thingsboard that allows sending the data to the server but as well receive server side messages to change parameters in the machinery or trigger actions in field.'
+    - author: Charles-Henri Hallard
+      position: Président
+      companyName: CH2i
+      link: https://ch2i.eu/
+      authorImage: https://img.thingsboard.io/customers/ch2i-person.webp
+      companyImage: https://img.thingsboard.io/customers/ch2i.svg
+      companyImageWidth: 71
+      companyImageHeight: 60
+      text:
+        0: 'CH2i is managing and implementing complex IoT infrastructure. Coming from building sensors to Information System Integration with all security rules. With high backend of IT security and electronic they provide any optimized infrastructure when deploying IoT solutions.'
+        1: 'We first tried Thingsboard with the free version to build a customer POC. We liked the Open side of the product and the ability to get it working out of the cloud. Then, we had more and more customers that asked us to be able to see their data. So, we migrated to the Professional Edition. We installed it on dedicated cloud instance. Help and support from Thingsboard team was awesome. They installed the product on our VM and they customized the installation to fit our need. Same availability when new version was available. They updated our instance with new version. To go further, we then asked Thingsboard to customize some dashboards for a dedicated customer. Once again, all was straightforward and Thingsboard team was professional. We are now also creating custom application using powerfull API integrated in the product.We highly recommend Thingsboard for their products and support.'
+warehouse-monitoring:
+  label: Warehouse Monitoring
+  icon: https://img.thingsboard.io/warehouse-monitoring-icon.svg
+  feedback:
+    - author: Steven Kruse
+      position: CEO
+      companyName: SenseING GmbH
+      link: https://senseing.de/
+      authorImage: https://img.thingsboard.io/customers/senseing-person.webp
+      companyImage: https://img.thingsboard.io/customers/senseing.webp
+      companyImageWidth: 162
+      companyImageHeight: 54
+      text:
+        0: 'Innovative IoT solutions for automated temperature monitoring and documentation in food logistics'
+        1: "With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time."
+        2: 'In addition to fulfilling customer requirements, we also use ThingsBoard for internal use cases, such as controlling our production. This dual use emphasises the versatility and robustness of the platform. It is impossible to imagine our product range without ThingsBoard.'
+    - author: JT McGibbon
+      position: General manager
+      companyName: Vypin LLC
+      link: https://www.vypin.com/
+      authorImage: https://img.thingsboard.io/customers/vypin-person.webp
+      companyImage: https://img.thingsboard.io/customers/vypin.svg
+      companyImageWidth: 122
+      companyImageHeight: 48
+      text:
+        0: 'Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers'
+        1: 'I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.'
+      feedbackLink:
+        label: "Read Vypin's case study."
+        link: /case-study/Vypin.pdf

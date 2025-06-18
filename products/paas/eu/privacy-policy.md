@@ -51,7 +51,7 @@ description: ThingsBoard Cloud Privacy Policy
 
 <br>
 <p id="unsubscribe"> <b>7. Unsubscribe request</b> </p> 
-<p>By accepting the <a href="/products/paas/eu/terms-of-use/">Terms of Use </a> you subscribe to our newsletters and remain email campaigns without limitation. You can opt out at any time by using the unsubscribe links at the bottom of our emails. Our Service gives you the ability to delete all personal information from within the Service. 
+<p>By accepting the <a href="/products/paas/eu/terms-of-use/" target="_blank">Terms of Use </a> you subscribe to our newsletters and remain email campaigns without limitation. You can opt out at any time by using the unsubscribe links at the bottom of our emails. Our Service gives you the ability to delete all personal information from within the Service. 
 You can completely delete your account and data by clicking "Delete Account" button which is available on the User Profile Page. Please note, however, that we may need to retain certain information for record keeping purposes, to complete transactions or to comply with our legal obligations.</p> 
 
 

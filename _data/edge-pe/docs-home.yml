@@ -68,6 +68,8 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/tcp/
   - title: UDP
     path: /docs/pe/edge/user-guide/integrations/udp/
+  - title: ChirpStack
+    path: /docs/pe/edge/user-guide/integrations/chirpstack/
 - title: Scheduler
   pe: true
   section:

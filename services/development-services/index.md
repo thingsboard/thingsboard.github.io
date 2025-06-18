@@ -41,54 +41,48 @@ redirect_from: "docs/services/development-services/"
     <span class="title">Our Customers</span> 
     <div>
         <div class="customer-logos">
-            <div class="logo">
+            <a href="/industries/telecom/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/super-bock/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/kalitec/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/suessco/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/suessco-logo.svg" alt="logo suessco"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/oxi/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/oxi-logo.svg" alt="logo oxi"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/iona/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/asg-tech/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/industries/telecom/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/super-bock/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/kalitec/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/suessco/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/suessco-logo.svg" alt="logo suessco"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/oxi/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/oxi-logo.svg" alt="logo oxi"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/iona/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/asg-tech/" class="logo">
                 <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-            </div>
-            <div class="logo">
-                <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
-            </div>
+            </a>
         </div>
     </div>
 </section>

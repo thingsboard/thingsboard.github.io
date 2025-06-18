@@ -1196,17 +1196,79 @@ var tb = (function () {
 
 		function filter(checkedIds) {
 			if (checkedIds.includes('main')) {
-				content.forEach(item => {
-					item.style.display = 'block';
-				});
+				$(content).removeClass('filter-hidden');
 				return;
 			}
 
 			content.forEach(item => {
 				const itemIds = item.id.split('|');
 				const currentItemStatus = checkedIds.some(id => itemIds.includes(id));
-				item.style.display = currentItemStatus || itemIds[0] === 'all' ? 'block' : 'none';
+				const shouldBeVisible = currentItemStatus || itemIds[0] === 'all';
+
+				$(item).toggleClass('filter-hidden', !shouldBeVisible);
 			});
+		}
+
+		const slider = document.getElementById('filterScrollContainer');
+
+		const leftArrow = document.getElementById('filterScrollLeft');
+		const rightArrow = document.getElementById('filterScrollRight');
+
+		if (slider) {
+			const checkArrows = () => {
+				const scrollLeft = Math.ceil(slider.scrollLeft);
+				const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+				leftArrow.classList.toggle('hidden', scrollLeft <= 0);
+				rightArrow.classList.toggle('hidden', scrollLeft >= maxScrollLeft - 1);
+			};
+
+
+			let isDown = false;
+			let startX;
+			let scrollLeft;
+
+			const startDragging = (e) => {
+				isDown = true;
+				slider.style.cursor = 'grabbing';
+				startX = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+				scrollLeft = slider.scrollLeft;
+			};
+
+			const stopDragging = () => {
+				isDown = false;
+				slider.style.cursor = 'grab';
+			};
+
+			const onDrag = (e) => {
+				if (!isDown) return;
+				e.preventDefault();
+				const x = (e.pageX || e.touches[0].pageX) - slider.offsetLeft;
+				const walk = (x - startX);
+				slider.scrollLeft = scrollLeft - walk;
+			};
+
+			slider.addEventListener('mousedown', startDragging);
+			slider.addEventListener('mouseup', stopDragging)
+			slider.addEventListener('mouseleave', stopDragging);
+			slider.addEventListener('mousemove', onDrag);
+
+			slider.addEventListener('touchstart', startDragging);
+			slider.addEventListener('touchend', stopDragging);
+			slider.addEventListener('touchmove', onDrag);
+
+			slider.addEventListener('scroll', checkArrows);
+			leftArrow.addEventListener('click', () => {
+				slider.scrollBy({ left: -250, behavior: 'smooth' });
+			});
+
+			rightArrow.addEventListener('click', () => {
+				slider.scrollBy({ left: 250, behavior: 'smooth' });
+			});
+
+			checkArrows();
+
+			window.addEventListener('resize', checkArrows);
 		}
 	});
 })();
