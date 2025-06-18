@@ -4,6 +4,7 @@ title: How to connect Cat-1 Container Tracker to ThingsBoard?
 category: Other devices
 connectivity: LTE
 vendor: Lansitec
+deviceImageFileName: cat1-compact-bluetooth-gateway.png
 docsPrefix: paas/
 docsTag: paas
 ---
