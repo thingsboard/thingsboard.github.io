@@ -277,7 +277,7 @@ java -jar thingsboard-lw-demo-client-4.1.0.jar -u coap://{{lwm2mHostName}} -n $U
 or
 
 ```bash
-docker run --rm -it thingsboard/tb-lw-demo-client:latest -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
+docker run --rm -it thingsboard/tb-lwm2m-demo-client:latest -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
 ```
 {: .copy-code}
 
@@ -1734,7 +1734,7 @@ java -jar thingsboard-lw-demo-client-4.1.0.jar -u coaps://demo.thingsboard.io -n
   or
 
 ```ruby
-docker run --rm -it thingsboard/tb-lw-demo-client:latest -u coaps://demo.thingsboard.io -n 	MyClientPsk -i myIdentity -p 01020304050607080A0B0C0D0F010203
+docker run --rm -it thingsboard/tb-lwm2m-demo-client:latest -u coaps://demo.thingsboard.io -n 	MyClientPsk -i myIdentity -p 01020304050607080A0B0C0D0F010203
 ```
 {: .copy-code}
 
