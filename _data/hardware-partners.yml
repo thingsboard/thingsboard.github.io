@@ -224,7 +224,7 @@
   name: Things On Edge
   logo: https://img.thingsboard.io/partners/things-on-edge.svg
   site:
-    href: https://thingsonedge.com/
+    href: /#
   links:
     0:
       label: Integration guide

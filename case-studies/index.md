@@ -160,7 +160,7 @@ description: Discover how companies in retail, energy, logistics, and more drive
             <h2>Got a success story to tell?</h2>
             <p>Real stories, real impact — share your experience with ThingsBoard!</p>
         </div>
-        <button class="button" onclick="openContactUsModal()">Contact Us</button>
+        <button id="caseStudiesContactUs" class="button gtm_button" onclick="openContactUsModal()">Contact Us</button>
     </div>
 <div class="pagination-container">
     <button id="showMoreBtn" class="button">Show more</button>
