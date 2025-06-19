@@ -1752,7 +1752,7 @@ selfManagedPlan:
         <div class="additional-content">
             <div class="plan-calculator-block">
                 <div class="text">
-                    <h2 class="no-margin">Whant to know more about the subsription?</h2>
+                    <h2 class="no-margin">Want to know more about the subscription?</h2>
                 </div>
                 <a class="button reset gtm_button" href="/docs/mqtt-broker/subscription/">See full details</a>
             </div>
