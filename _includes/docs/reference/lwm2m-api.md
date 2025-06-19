@@ -263,14 +263,14 @@ Now you are ready to start the client and observe incoming telemetry in ThingsBo
 Run the following command from your terminal:
 
 ```bash
-java -jar thingsboard-lw-demo-client-{version}.jar -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
+java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
 ```
 {: .copy-code}
 
 or
 
 ```bash
-java -jar thingsboard-lw-demo-client-4.1.0.jar -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
+java -jar thingsboard-lwm2m-demo-client-4.1.0.jar -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
 ```
 {: .copy-code}
 
@@ -1613,7 +1613,7 @@ mvn clean install
 3. Run the client with custom parameters:
 
 ```
-java -jar thingsboard-lw-demo-client-{version}.jar -u coap://demo.thingsboard.io -n MyClientNoSec -tota
+java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coap://demo.thingsboard.io -n MyClientNoSec -tota
 ```
 {: .copy-code}
 
@@ -1721,13 +1721,13 @@ Example of using **ThingsBoard LwM2M Demo Client**:
 Example command for start [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client) in mode PSK:
 
 ```ruby
-java -jar thingsboard-lw-demo-client-{version}.jar -u coaps://demo.thingsboard.io -n MyClientPsk --psk-identity myIdentity --psk-key 01020304050607080A0B0C0D0F010203 
+java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coaps://demo.thingsboard.io -n MyClientPsk --psk-identity myIdentity --psk-key 01020304050607080A0B0C0D0F010203 
 ```
 
   or
 
 ```ruby
-java -jar thingsboard-lw-demo-client-4.1.0.jar -u coaps://demo.thingsboard.io -n MyClientPsk --psk-identity myIdentity --psk-key 01020304050607080A0B0C0D0F010203
+java -jar thingsboard-lwm2m-demo-client-4.1.0.jar -u coaps://demo.thingsboard.io -n MyClientPsk --psk-identity myIdentity --psk-key 01020304050607080A0B0C0D0F010203
 ```
 {: .copy-code}
 
@@ -1886,7 +1886,7 @@ MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdvBZZ2vQRK9wgDhctj6B1c7bxR3Z0wYg1+YdoYFnVUKW
 
 ```ruby
 #command:
-$ java -jar thingsboard-lw-demo-client-{version}.jar -u coaps://demo.thingsboard.io -n MyClientRpk -cpubk ./clietPubK.der -cprik ./clientKey.der -spubk ./serverPubK.der
+$ java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coaps://demo.thingsboard.io -n MyClientRpk -cpubk ./clietPubK.der -cprik ./clientKey.der -spubk ./serverPubK.der
 
 #Output:
 ThingsBoard LwM2M Demo Client Interactive Console :
