@@ -69,22 +69,22 @@ selfManagedPlan:
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector product-selector-outlined">
-            <div id="Pricing_PE_Cloud" 
+            <div id="Pricing_PE_Cloud"
                  class="solution thingsboard-cloud active defaultselection gtm_button" 
                  data-product-id="thingsboard-cloud" 
                  onClick="activateProductSection('thingsboard-cloud')">
-                <h3 data-faq-id="tb-cloud-definition" 
+                <h3 id="Pricing_PE_Cloud" class="gtm_button" data-faq-id="tb-cloud-definition" 
                     data-faq-link-size="70%">Cloud</h3>
             </div>
             <div id="Pricing_PE_PrivateCloud"
                  class="solution thingsboard-private-cloud gtm_button"
                  data-product-id="thingsboard-private-cloud"
                  onClick="activateProductSection('thingsboard-private-cloud')">
-                <h3 data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for"
+                <h3 id="Pricing_PE_PrivateCloud" class="gtm_button"  data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for"
                     data-faq-link-size="70%">Private Cloud</h3>
             </div>
             <div id="Pricing_PE_SM" class="solution thingsboard-pe gtm_button" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
-                <h3 data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%">Self-managed</h3>
+                <h3 id="Pricing_PE_SM" class="gtm_button" data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
     </div>
@@ -95,14 +95,14 @@ selfManagedPlan:
                  class="solution trendz-cloud gtm_button" 
                  data-product-id="trendz-cloud" 
                  onClick="activateProductSection('trendz-cloud')">
-                <h3 data-faq-id="trendz-cloud-definition" data-faq-link-size="70%">Cloud</h3>
+                <h3 id="Pricing_TA_Cloud" class="gtm_button" data-faq-id="trendz-cloud-definition" data-faq-link-size="70%">Cloud</h3>
             </div>
             <div id="Pricing_TA_SM"
                  data-solutionId="trendz-self-managed"
                  class="solution trendz-self-managed active defaultselection gtm_button"
                  data-product-id="trendz-self-managed"
                  onClick="activateProductSection('trendz-self-managed')">
-                <h3 data-faq-id="trendz-pay-as-you-go-self-managed" data-faq-link-size="70%">Self-managed</h3>
+                <h3 id="Pricing_TA_SM" class="gtm_button" data-faq-id="trendz-pay-as-you-go-self-managed" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
     </div>
@@ -133,7 +133,7 @@ selfManagedPlan:
                        data-toggle="#northAmerica"
                        data-description-toggle="#northAmericaHeader"
                        onClick="activateServerSection('cloud-north-america', '/docs/paas/')">
-                      <h3>North America</h3>
+                      <h3 id="Pricing_PE_Cloud_NorthAmerica" class="gtm_button">North America</h3>
                   </div>
                   <div id="Pricing_PE_Cloud_Europe"
                        data-solutionId="cloud-europe"
@@ -141,7 +141,7 @@ selfManagedPlan:
                        data-toggle="#europe"
                        data-description-toggle="#europeHeader"
                        onClick="activateServerSection('cloud-europe', '/docs/paas/eu/')">
-                      <h3>Europe</h3>
+                      <h3 id="Pricing_PE_Cloud_Europe" class="gtm_button">Europe</h3>
                   </div>
               </div>
           </div>
@@ -351,7 +351,7 @@ selfManagedPlan:
                 <div class="text">
                     <h2 class="no-margin">Ready to scale past 1,000 devices?</h2>
                 </div>
-                <button onclick="switchToPrivateCloud()" class="button clulator gtm_button">See Private Cloud Options</button>
+                <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
         </div>
     </div>
@@ -493,7 +493,7 @@ selfManagedPlan:
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button onclick="openModal()" class="button clulator gtm_button">Calculate your pricing</button>
+                <button onclick="openModal()" id="calculate_your_pricing" class="button gtm_button">Calculate your pricing</button>
             </div>
             <div class="add-ons">
                 <h2>Optional add-ons</h2>
@@ -667,7 +667,7 @@ selfManagedPlan:
                      data-toggle="#payAsYouGo"
                      data-description-toggle="#payAsYouGoHeader"
                      onClick="activateSolutionSection('pe-pay-as-you-go')">
-                    <h3 data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    <h3 id="Pricing_PE_SM_PayAsYouGo" class="gtm_button" data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
                 <div id="Pricing_PE_SM_Perpetual"
                      data-solutionId="pe-perpetual"
@@ -675,7 +675,7 @@ selfManagedPlan:
                      data-toggle="#perpetual"
                      data-description-toggle="#perpetualHeader"
                      onClick="activateSolutionSection('pe-perpetual')">
-                    <h3 data-faq-id="pe-perpetual-perpetual-meaning" data-faq-link-size="70%">Perpetual</h3>
+                    <h3 id="Pricing_PE_SM_Perpetual" class="gtm_button" data-faq-id="pe-perpetual-perpetual-meaning" data-faq-link-size="70%">Perpetual</h3>
                 </div>
             </div>
         </div>
@@ -904,7 +904,7 @@ selfManagedPlan:
                          data-toggle="#trendzPayAsYouGo"
                          data-description-toggle="#trendzPayAsYouGoHeader" 
                          onClick="activateSolutionSection('trendz-pay-as-you-go')">
-                        <h3 data-faq-id="trendz-pay-as-you-go-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
+                        <h3 id="Pricing_TA_SM_PayAsYouGo" class="gtm_button" data-faq-id="trendz-pay-as-you-go-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
                     </div>
                     <div id="Pricing_TA_SM_Perpetual" 
                          data-solutionId="trendz-perpetual"
@@ -912,7 +912,7 @@ selfManagedPlan:
                          data-toggle="#trendzPerpetual"
                          data-description-toggle="#trendzPerpetualHeader" 
                          onClick="activateSolutionSection('trendz-perpetual')">
-                        <h3 data-faq-id="trendz-perpetual-license-meaning" data-faq-link-size="70%">Perpetual</h3>
+                        <h3 id="Pricing_TA_SM_Perpetual" class="gtm_button" data-faq-id="trendz-perpetual-license-meaning" data-faq-link-size="70%">Perpetual</h3>
                     </div>
                 </div>
             </div>
@@ -1093,7 +1093,7 @@ selfManagedPlan:
                        data-toggle="#trendzNorthAmerica"
                        data-description-toggle="#trendzNorthAmericaHeader"
                        onClick="setActiveSolutionSection('trendz-cloud-north-america')">
-                      <h3>North America</h3>
+                      <h3 id="Pricing_Trendz_Cloud_NorthAmerica" class="gtm_button">North America</h3>
                   </div>
                   <div id="Pricing_Trendz_Cloud_Europe"
                        data-solutionId="trendz-cloud-europe"
@@ -1101,7 +1101,7 @@ selfManagedPlan:
                        data-toggle="#trendzEurope"
                        data-description-toggle="#trendzEuropeHeader"
                        onClick="setActiveSolutionSection('trendz-cloud-europe')">
-                      <h3>Europe</h3>
+                      <h3 id="Pricing_Trendz_Cloud_Europe" class="gtm_button">Europe</h3>
                   </div>
               </div>
           </div>
@@ -1393,7 +1393,7 @@ selfManagedPlan:
                      data-toggle="#community-edition"
                      data-description-toggle="#communityEditionHeader"
                      onClick="activateSolutionSection('edge-community')">
-                    <h3>Community Edition</h3>
+                    <h3 id="Pricing_Edge_CE" class="gtm_button">Community Edition</h3>
                 </div>
                 <div id="Pricing_Edge_PayAsYouGo"
                      data-solutionId="edge-pay-as-you-go"
@@ -1401,7 +1401,7 @@ selfManagedPlan:
                      data-toggle="#payAsYouGo"
                      data-description-toggle="#payAsYouGoHeader"
                      onClick="activateSolutionSection('edge-pay-as-you-go')">
-                    <h3 data-faq-id="edge-pay-as-you-go-model" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    <h3 id="Pricing_Edge_PayAsYouGo" class="gtm_button" data-faq-id="edge-pay-as-you-go-model" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
                 <div id="Pricing_Edge_Perpetual"
                      data-solutionId="edge-perpetual"
@@ -1409,7 +1409,7 @@ selfManagedPlan:
                      data-toggle="#perpetual"
                      data-description-toggle="#perpetualHeader"
                      onClick="activateSolutionSection('edge-perpetual')">
-                    <h3 data-faq-id="edge-perpetual-license" data-faq-link-size="70%">Perpetual</h3>
+                    <h3 id="Pricing_Edge_Perpetual" class="gtm_button" data-faq-id="edge-perpetual-license" data-faq-link-size="70%">Perpetual</h3>
                 </div>
             </div>
         </div>
@@ -1752,7 +1752,7 @@ selfManagedPlan:
         <div class="additional-content">
             <div class="plan-calculator-block">
                 <div class="text">
-                    <h2 class="no-margin">Whant to know more about the subsription?</h2>
+                    <h2 class="no-margin">Want to know more about the subscription?</h2>
                 </div>
                 <a class="button reset gtm_button" href="/docs/mqtt-broker/subscription/">See full details</a>
             </div>

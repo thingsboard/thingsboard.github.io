@@ -240,10 +240,10 @@ step72_2:
 step73:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-3-pe.png
-        title: 'Open the "Dashboards" page, and navigate to the "Groups" tab. Click the "Share" icon for the "All" dashboard group;'
+        title: 'Open the "Dashboards" page and go to the "Groups" tab. Click the "Share" icon next to the "All" dashboard group;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-4-pe.png
-        title: 'Select the customer you wish to share our dashboard with and specify the permission level. In our case, choose "Read". Then click "Share".'
+        title: 'Select the customer you want to share the dashboard with and set the permission level. In this case, choose "Read", then click "Share".'
 
 step73_1:
     0:
@@ -251,22 +251,22 @@ step73_1:
         title: 'On the "All" tab of the "Dashboards" page, click on the "+" icon in the top right corner of the table and select "Create new dashboard" from the drop-down menu;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-6-pe.png
-        title: 'Input dashboard name (for example, "Thermostats"). In the "Groups" field of the "Owner and groups" section, select an existing group or enter a name for a new dashboard group (for example, "Thermostats group") and click "Create a new one!";'
+        title: 'Enter a name for the dashboard (e.g., "Thermostats"). In the "Groups" field of the "Owner and groups" section, select an existing group or enter a name for a new dashboard group (for example, "Thermostats group") and click "Create a new one!";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-7-pe.png
-        title: 'In the opened "Add entity group" window, click "Next: Share entity group" button;'
+        title: 'In the "Add entity group" window that opens, click "Next: Share entity group";'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-8-pe.png
-        title: 'Tick the "Share entity group" checkbox, then select the customer you want to share the dashboard group with and specify permissions. Then, click "Add";'
+        title: 'Check the "Share entity group" box, select the customer to share the dashboard with, and set their permissions. Then click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-9-pe.png
-        title: 'Click "Add" to confirm the creation of the new dashboard;'
+        title: 'Click "Add" again to confirm dashboard creation;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-10-pe.png
-        title: 'After creating the dashboard, it will open automatically. Click "Save" button in the upper right corner;'
+        title: 'The new dashboard will open automatically — click "Save" in the top-right corner;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-11-pe.png
-        title: 'The dashboard has been created and is located in the "Thermostats group" group. You can navigate to this group by clicking on its name.'
+        title: 'Your dashboard has been created and placed in the "Thermostats group". You can quickly access it by clicking the group name.'
 
 step74:
     0:
