@@ -10,7 +10,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
     <section class="case-study-hero">
         <div class="card">
             <div class="text">
-                <p class="category"> MART IOT SOLUTIONS</p>
+                <p class="category"> SMART IOT SOLUTIONS</p>
                 <h1>From Concept to Launch: ASG Tech’s Rapid IoT Innovation with ThingsBoard</h1>
                 <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/asg-tech.webp')">
                     <img src="https://img.thingsboard.io/case-studies/asg-tech.svg" title="ASG Tech" alt="ASG Tech logo" width="500" height="126">
@@ -22,7 +22,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
             </div>
         </div>
     </section>
-    <section class="quote-with-mark">
+    <section class="quote-with-mark fill-background">
         <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative loT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.”</p>

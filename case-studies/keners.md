@@ -22,7 +22,7 @@ description: Discover how Keners boosted agricultural efficiency using ThingsBoa
             </div>
         </div>
     </section>
-    <section class="quote-with-mark">
+    <section class="quote-with-mark fill-background">
         <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allows us to create dashboards and combine data from multiple data sources. <br><br> We highly appreciate the support of the creators, their feedback is simply excellent!”</p>

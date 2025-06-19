@@ -211,6 +211,10 @@ body {
 	box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
+.partner-box.filter-hidden {
+	display: none
+}
+
 .partner-box.become-partner-box {
 	padding: 155px 46px;
 }

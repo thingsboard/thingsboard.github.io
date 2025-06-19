@@ -13,7 +13,7 @@
                 </div>
                 <div class="text">
                     <p class="title">
-                        <a href="{{ card.site.href }}" target="_blank">
+                        <a href="{{ card.site.href }}" target="_blank" {% if card.site.href == "/#" %} style="pointer-events: none" {% endif %}>
                             {{ card.name }}
                         </a>
                     </p>
