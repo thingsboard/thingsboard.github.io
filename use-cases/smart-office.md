@@ -5,6 +5,9 @@ description: Smart Office is a ready-to-use IoT solution powered by ThingsBoard 
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -31,6 +34,8 @@ includeAdvantages: "true"
 <section class="smart-office-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-office-solution-structure">
     <h2>Solution structure of smart office use case</h2>

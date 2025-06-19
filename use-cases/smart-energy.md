@@ -5,6 +5,9 @@ description: The Smart Energy solution based on ThingsBoard IoT platform enables
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -37,6 +40,8 @@ includeAdvantages: "true"
         </div>
     </div>
 </section>
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-energy-solution-structure">
     <h2>Solution structure of smart energy use case</h2>

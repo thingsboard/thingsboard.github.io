@@ -4,6 +4,10 @@ title: SCADA
 description: SCADA ThingsBoard IoT Platform
 notitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
+
 ---
 
 {% include usecase-nav.html usecase="scada" %}
@@ -27,7 +31,7 @@ includeAdvantages: "true"
     </div>
 </section>
 
-<section class="scada-overview">
+<section class="scada-overview addedBanner extraMargin">
     <div class="img-comp-container">
       <div class="img-comp-img">
         <img class="traditional-background" src="/images/usecases/scada/traditional.webp">
@@ -36,6 +40,7 @@ includeAdvantages: "true"
         <img src="/images/usecases/scada/high-performance.webp">
       </div>
     </div>
+    {% include contact-us-banner.liquid %}
     <h2>SCADA overview</h2>
     <div class="table-lg">
         <div class="criteria-col">

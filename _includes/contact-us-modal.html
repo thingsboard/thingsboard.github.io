@@ -1,11 +1,15 @@
-<div id="contact-us-modal" class="modal-overlay">
+{% assign modalTitle = page.modalTitle | default: 'Tell us about your success' %}
+{% assign modalDescription = page.modalDescription | default: 'Get your brand featured across our global channels — website, social media, and community.' %}
+{% assign subject = include.subject | default: 'General Feedback'  %}
+
+    <div id="contact-us-modal" class="modal-overlay">
     <div class="modal-content">
         <form id="ContactUs" method="post" class="contact-form gtm_form" onsubmit="return validateContactForm(this)" novalidate>
             <div id="closeBtn" class="close-button">
                 <img src="/images/pricing/close-icon.svg" alt="Close icon">
             </div>
-            <h1 class="contact-us-title">Tell us about your success</h1>
-            <h2>Get your brand featured across our global channels — website, social media, and community.</h2>
+            <h1 class="contact-us-title">{{ modalTitle }}</h1>
+            <h2>{{ modalDescription }}</h2>
             <fieldset>
                 <div class="form-section">
                     <div class="form-element">
@@ -40,6 +44,7 @@
                                 <option value="ThingsBoard Products">ThingsBoard Products</option>
                                 <option value="Private Cloud">Private Cloud</option>
                                 <option value="Deployment Options">Deployment Options</option>
+                                <option value="Custom Development">Custom Development</option>
                                 <option value="Training">Training</option>
                                 <option value="Professional Services">Professional Services</option>
                                 <option value="Partnership">Partnership</option>
@@ -113,7 +118,7 @@
                             $(this).removeClass("input--empty");
                         }
                     });
-                    $contactForm.find('select[name=subject]').val("General Feedback");
+                    $contactForm.find('select[name=subject]').val("{{subject}}");
                     $contactForm.find('select[name=subject]').removeClass("input--empty");
                 });
             }

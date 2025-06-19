@@ -4,6 +4,9 @@ title: SCADA Oil and gas drilling system
 description: Drilling system solution with ThingsBoard IoT platform
 notitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -31,7 +34,9 @@ includeAdvantages: "true"
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'scada-oil-and-gas-drilling-system' %}
 </section>
 
-<section class="scada-solution-structure">
+{% include contact-us-banner.liquid %}
+
+<section class="scada-solution-structure addedBanner">
     <h2>Solution structure</h2>
     <div class="scheme">
         <img id="schemeSVG" loading="lazy" data-src="/images/usecases/scada-drilling-system/scada-drilling-solution-structure.svg"  alt="SCADA oil and gas drilling solution structure">

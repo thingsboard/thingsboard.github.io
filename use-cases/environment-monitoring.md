@@ -5,6 +5,9 @@ description: Discover scalable and secure IoT environment monitoring solutions w
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -30,6 +33,8 @@ includeAdvantages: "true"
 <section class="environment-monitoring-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="environment-monitoring-solution-structure">
     <h2>Solution structure of environment monitoring</h2>

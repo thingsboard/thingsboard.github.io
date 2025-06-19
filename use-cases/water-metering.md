@@ -5,6 +5,10 @@ description: Discover how ThingsBoard enables real-time water monitoring, automa
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
+
 ---
 
 {% include usecase-nav.html usecase="water-metering" %}
@@ -30,6 +34,8 @@ includeAdvantages: "true"
 <section class="water-metering-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'water-metering' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="water-metering-solution-structure">
     <h2>Solution structure of water metering use case</h2>

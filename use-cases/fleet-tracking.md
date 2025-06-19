@@ -5,6 +5,9 @@ description: Track, analyze, and optimize your fleet in real time with the Thing
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+modalTitle: "Start building with us today"
+modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -31,6 +34,8 @@ includeAdvantages: "true"
 <section class="fleet-tracking-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'fleet-tracking' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="fleet-tracking-solution-structure">
     <h2>Solution structure of IoT fleet tracking</h2>
