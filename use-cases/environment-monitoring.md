@@ -6,8 +6,6 @@ notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
 contactUsModal: "true"
-modalTitle: "Start building with us today"
-modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -25,7 +23,7 @@ modalDescription: "We’ll get back to you within 1–2 business days to discuss
             </div>
         </div>
         <div class="long">
-            <p>ThingsBoard provides a scalable, reliable, and secure platform for environment monitoring. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
+            <p>ThingsBoard provides a scalable, reliable, and secure platform for <a href="/docs/pe/solution-templates/temperature-humidity-sensors/">environment monitoring</a>. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
             <p>Automated features—from real-time alerts on critical changes to forwarding data into external analytics tools—ensure proactive monitoring. Intuitive dashboards, customizable logic, and seamless integrations turn raw environmental data into actionable insights, enabling smarter and faster decisions.</p>        </div>
     </div>
 </section>

@@ -5,8 +5,6 @@ description: Drilling system solution with ThingsBoard IoT platform
 notitle: "true"
 includeAdvantages: "true"
 contactUsModal: "true"
-modalTitle: "Start building with us today"
-modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -25,7 +23,7 @@ modalDescription: "We’ll get back to you within 1–2 business days to discuss
         </div>
         <div class="long">
             <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the drilling management system template. This solution demonstrates how SCADA symbols—such as drilling rigs, rotors, hoists, pumps, and preventers—can be utilized to create an efficient and automated drilling control system. It enables the entire drilling process to be visualized on a dashboard, allowing for real-time monitoring of drilling parameters, equipment performance, and safety conditions, ensuring timely detection of anomalies and improved operational efficiency.</p>
+            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the <a href="/docs/pe/solution-templates/scada-drilling-system/">drilling management system template</a>. This solution demonstrates how SCADA symbols—such as drilling rigs, rotors, hoists, pumps, and preventers—can be utilized to create an efficient and automated drilling control system. It enables the entire drilling process to be visualized on a dashboard, allowing for real-time monitoring of drilling parameters, equipment performance, and safety conditions, ensuring timely detection of anomalies and improved operational efficiency.</p>
         </div>
     </div>
 </section>

@@ -6,8 +6,6 @@ notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
 contactUsModal: "true"
-modalTitle: "Start building with us today"
-modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -26,7 +24,7 @@ modalDescription: "We’ll get back to you within 1–2 business days to discuss
             </div>
         <div class="long">
             <p>Smart office solutions are designed to optimize workplace environments by monitoring key operational parameters and automating building systems in real time. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
-            <p>Thanks to ThingsBoard, an open-source IoT platform, it's easy to integrate and visualize data from various devices and sensors, enabling the creation of intelligent, data-driven solutions. This approach allows not only real-time monitoring of office conditions but also active management—turning systems on or off, receiving alerts, and configuring automation scenarios. All of these capabilities are fully demonstrated in our smart office solution.</p>
+            <p>Thanks to ThingsBoard, an open-source IoT platform, it's easy to integrate and visualize data from various devices and sensors, enabling the creation of intelligent, data-driven solutions. This approach allows not only real-time monitoring of office conditions but also active management—turning systems on or off, receiving alerts, and configuring automation scenarios. All of these capabilities are fully demonstrated in our <a href="/docs/pe/solution-templates/smart-office/">smart office solution</a>.</p>
         </div>
     </div>
 </section>

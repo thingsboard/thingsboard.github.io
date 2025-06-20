@@ -6,8 +6,6 @@ notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
 contactUsModal: "true"
-modalTitle: "Start building with us today"
-modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -26,7 +24,7 @@ modalDescription: "We’ll get back to you within 1–2 business days to discuss
             </div>
         <div class="long">
             <p>Traditional water metering methods often fall short in providing real-time data, accurate billing, and predictive maintenance insights. By leveraging connected sensors and intelligent dashboards, organizations can unlock powerful insights into water usage, detect anomalies like leaks, and automate alarm systems. At the core of these solutions is ThingsBoard, a flexible IoT platform enabling the collection, processing, and visualization of telemetry data from water meters in real time.</p>
-            <p>This ThingsBoard-powered water metering solution provides complete real-time visibility into water usage, instant response to anomalies, and valuable analytics for long-term infrastructure planning. Scalable across municipalities, residential complexes, and commercial facilities, it offers a powerful tool for smart and efficient water resource management.</p>
+            <p>This ThingsBoard-powered <a href="/docs/pe/solution-templates/water-metering/">water metering solution</a> provides complete real-time visibility into water usage, instant response to anomalies, and valuable analytics for long-term infrastructure planning. Scalable across municipalities, residential complexes, and commercial facilities, it offers a powerful tool for smart and efficient water resource management.</p>
         </div>
     </div>
 </section>

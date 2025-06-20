@@ -6,8 +6,6 @@ notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
 contactUsModal: "true"
-modalTitle: "Start building with us today"
-modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -25,7 +23,7 @@ modalDescription: "We’ll get back to you within 1–2 business days to discuss
             </div>
         </div>
         <div class="long">
-            <p>The smart retail solution template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
+            <p>The <a href="/docs/pe/solution-templates/smart-retail/">smart retail solution</a> template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
             <p>With built-in alarm logic and fully configurable thresholds per device, users can detect anomalies such as temperature fluctuations or unauthorized access without needing a complex setup. The template also includes interactive dashboards that allow both providers and customers to monitor the current and historical state of their supermarkets—empowering data-driven decisions, operational efficiency, and a higher standard of safety and service.</p>        
         </div>
     </div>

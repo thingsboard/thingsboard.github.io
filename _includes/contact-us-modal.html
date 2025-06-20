@@ -1,6 +1,24 @@
-{% assign modalTitle = page.modalTitle | default: 'Tell us about your success' %}
-{% assign modalDescription = page.modalDescription | default: 'Get your brand featured across our global channels — website, social media, and community.' %}
-{% assign subject = include.subject | default: 'General Feedback'  %}
+{% assign modalTitle = 'Tell us about your success' %}
+{% assign modalDescription = 'Get your brand featured across our global channels — website, social media, and community.' %}
+{% assign formSubject = 'General Feedback' %}
+
+{% if page.modalTitle %}
+{% assign modalTitle = page.modalTitle %}
+{% elsif include.modalTitle %}
+{% assign modalTitle = include.modalTitle %}
+{% endif %}
+
+{% if page.modalDescription %}
+{% assign modalDescription = page.modalDescription %}
+{% elsif include.modalDescription %}
+{% assign modalDescription = include.modalDescription %}
+{% endif %}
+
+{% if page.formSubject %}
+{% assign formSubject = page.formSubject %}
+{% elsif include.formSubject %}
+{% assign formSubject = include.formSubject %}
+{% endif %}
 
     <div id="contact-us-modal" class="modal-overlay">
     <div class="modal-content">
@@ -118,7 +136,7 @@
                             $(this).removeClass("input--empty");
                         }
                     });
-                    $contactForm.find('select[name=subject]').val("{{subject}}");
+                    $contactForm.find('select[name=subject]').val("{{formSubject}}");
                     $contactForm.find('select[name=subject]').removeClass("input--empty");
                 });
             }

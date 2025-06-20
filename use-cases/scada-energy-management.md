@@ -5,8 +5,6 @@ description: Energy management solution with ThingsBoard IoT platform
 notitle: "true"
 includeAdvantages: "true"
 contactUsModal: "true"
-modalTitle: "Start building with us today"
-modalDescription: "We’ll get back to you within 1–2 business days to discuss your custom project."
 
 ---
 
@@ -25,7 +23,7 @@ modalDescription: "We’ll get back to you within 1–2 business days to discuss
         </div>
         <div class="long">
             <p>The ability to collect, analyze, and visualize data from multiple energy sources helps operators make informed decisions and respond swiftly to changing conditions. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-            <p>With ThingsBoard, you can monitor the performance of all energy sources and consumption points in real time, identify inefficiencies, forecast demand peaks, and respond to anomalies instantly. All of this is showcased in our SCADA Energy solution, demonstrating how easily and effectively energy systems can be managed using ThingsBoard.</p>
+            <p>With ThingsBoard, you can monitor the performance of all energy sources and consumption points in real time, identify inefficiencies, forecast demand peaks, and respond to anomalies instantly. All of this is showcased in our <a href="/docs/pe/solution-templates/scada-energy-management/">SCADA Energy solution</a>, demonstrating how easily and effectively energy systems can be managed using ThingsBoard.</p>
         </div>
     </div>
 </section>

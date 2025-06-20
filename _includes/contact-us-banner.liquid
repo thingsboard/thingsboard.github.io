@@ -1,10 +1,13 @@
+{% assign linkLabel = include.linkLabel | default: 'Case studies' %}
+{% assign link = include.link | default: '/case-studies/' %}
+
 <div class="contact-us-banner">
     <div class="contact-us-banner-content">
         <h2>Accelerate your IoT roadmap with our team</h2>
         <p>Our team is a trusted partner for scalable solutions delivered fast and on a fixed timeline.</p>
         <div class="contact-us-banner-buttons">
             <button onclick="openContactUsModal()">Contact Us</button>
-            <a href="/case-studies/">Case studies</a>
+            <a href="{{ link }}">{{ linkLabel }}</a>
         </div>
     </div>
     <img src="/images/usecases/email-icon.svg" width="380" height="267" alt="Letter icon">
