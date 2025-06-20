@@ -130,6 +130,7 @@ description: Discover how Supertech Agroline, a leading Romanian AgTech innovato
             <h2>Jeppe Walther, CTO</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps agriculture improve operations with IoT?</h2>
         <div class="block">

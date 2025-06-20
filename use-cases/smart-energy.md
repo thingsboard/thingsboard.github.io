@@ -5,6 +5,7 @@ description: The Smart Energy solution based on ThingsBoard IoT platform enables
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -37,6 +38,8 @@ includeAdvantages: "true"
         </div>
     </div>
 </section>
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-energy-solution-structure">
     <h2>Solution structure of smart energy use case</h2>

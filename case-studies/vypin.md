@@ -132,6 +132,7 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
             <h2>Vypin LLC</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps warehouse monitoring improve operations with IoT?</h2>
         <div class="block">

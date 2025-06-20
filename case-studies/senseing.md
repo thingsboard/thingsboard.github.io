@@ -132,6 +132,7 @@ description: Discover how SenseING GmbH enhanced food logistics by integrating T
             <h2>SenseING GmbH</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps cold chain monitoring improve operations with IoT?</h2>
         <div class="block">

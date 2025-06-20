@@ -8,7 +8,10 @@
 <div id="case-studies-content">
     {{content}}
 </div>
-{% include contact-us-modal.html %}
+{% include contact-us-modal.html
+    formSubject='Custom Development'
+    modalTitle='Start building with us today'
+    modalDescription='We’ll get back to you within 1–2 business days to discuss your custom project.' %}
 {% include footer.html %}
 
 {% include cookie-consent.html %}
