@@ -52,6 +52,7 @@ Follow these steps to configure the signing key:
    export JWT_TOKEN_SIGNING_KEY=<signing-key>
    ```
    {: .copy-code}
+   ![Ubuntu Signing Key](/images/trendz/signing-key-7.png)
 
 4. Save the file and restart the Trendz service.
 
@@ -66,6 +67,7 @@ Follow these steps to configure the signing key:
      - JWT_TOKEN_SIGNING_KEY=<signing-key>
    ```
    {: .copy-code}
+   ![Docker Signing Key](/images/trendz/signing-key-8.png)
 
 3. Save the file and restart the Trendz container.
 

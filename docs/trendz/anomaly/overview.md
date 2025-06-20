@@ -131,7 +131,7 @@ The **Input** tab allows you to manage and configure core aspects of your anomal
 
 - **Rename the Model**
   - Click the pencil icon next to the model name, enter a new name, and press **Enter**.
-  - To apply the new name, click **Build Model**. A rebuild is **not** required for this change.
+  - To apply the new name, click **Save Model**. A rebuild is **not** required for this change.
 
 - **Revert Model**
   - Click the **Revert** button in the upper-right corner of the screen to discard unsaved changes and restore the last saved state of the model.
@@ -143,14 +143,14 @@ The **Input** tab allows you to manage and configure core aspects of your anomal
 
 - **Change Properties**
   - You can update various anomaly model properties in the **Input** tab (read more about model properties [here](/docs/trendz/anomaly/build)).
-  - To apply changes, click **Build Model**. A rebuild is **not** required unless you change:
+  - To apply changes, click **Save Model**. A rebuild is **not** required unless you change:
     - **Anomaly Model Name**
     - **Telemetry key**
     - **Telemetry storage frequency**
     - **Alarm Configuration**
 
-- **Build Model**
-  - Use the **Build Model** button to save changes or initiate a rebuild.
+- **Save Model**
+  - Use the **Save Model** button to save changes or initiate a rebuild.
   - If a rebuild is necessary, a confirmation popup will appear.
   - **Caution**: Rebuilding the model will delete all existing anomalies and disable the refresh job.
 
@@ -162,7 +162,7 @@ You can:
 
 - View anomaly statistics for **all devices** or a **specific device**.
 - Select or deselect devices using the table below the graph.
-- Choose the display mode from the dropdown located to the left of the chart.
+- Choose the display mode using the **Review**, **Dynamic**, and **Calendar** buttons located in the upper-right corner of the screen.
 
 **Available Modes**
 
@@ -173,8 +173,8 @@ You can:
 
 - **Dynamic Mode (Selected Device Only):**
   - Visualizes monthly distribution of anomalies for the selected item.
-  - Blue bars represent the **total anomaly score index for the current device**.
-  - The green line represents the **average total score index** per month **for all devices**.
+  - Green bars represent the **total anomaly score index for the current device**.
+  - The blue line represents the **average total score index** per month **for all devices**.
 
 - **Review Mode (Selected Device Only):**
   - Shows the **latest detected anomaly**.

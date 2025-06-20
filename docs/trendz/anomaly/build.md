@@ -46,11 +46,11 @@ Additionally, it's possible to specify telemetry saving options here.
 
 ### Model Properties
 
-#### Clusterization Settings 
+#### Clustering Settings 
 
 These settings define which clustering algorithm will be used to detect anomalies in your telemetry data, and how it will work.
 
-- **Clustering Algorithm:** Choose how the data will be grouped into clusters. Points that don’t fit well into any group will be considered anomalies.  
+- **Cluster Algorithm:** Choose how the data will be grouped into clusters. Points that don’t fit well into any group will be considered anomalies.  
   Supported methods:
   - **K-Means:** Splits data into a fixed number of groups. Anomalies are points far from their group center.  
     **Use when:** Data is clean, consistent, and you know how many clusters to expect.  
@@ -91,18 +91,16 @@ Splitting telemetry into smaller, manageable time windows helps analyze behavior
 - **Min Segment Duration:** Minimum time span for a segment to be considered valid.
 - **Min Points in Segment:** Minimum number of data points required for a valid segment.
 
-#### Feature Extraction Settings
+#### Anomaly Detection Settings
 
-After segmenting the data, extract useful features that help the model understand behavior.
+After segmenting the data, extract useful features that help the model understand behavior and check each segment for anomalies:
 
 - **Comparison Type:** Defines how segments will be compared.
-    - **Behavior-based:** Captures overall patterns and trends in the data.
-    - **Feature-based:** Focuses on specific measurements or attributes derived from the data.  
+  - **Behavior-based:** Captures overall patterns and trends in the data.
+  - **Feature-based:** Focuses on specific measurements or attributes derived from the data.
 
 - **Aggregation (Applicable only for Behavior-based Comparison Type):** Function used to summarize data within a segment (AVG, MIN, MAX, SUM, COUNT).
 - **Aggregation Points (Applicable only for Behavior-based Comparison Type):** Number of points considered when calculating aggregations.
-
-#### Anomaly Detection Settings
 
 - **Score Threshold Percent:** This is the percentile threshold used to classify whether a segment is anomalous.  
   Segments with anomaly scores above this threshold are marked as anomalies.  

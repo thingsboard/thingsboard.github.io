@@ -1,93 +1,9 @@
 ---
+
 layout: docwithnav-trendz
 title: Getting started with Trendz Analytics
-description: ThingsBoard Trends - Business Intelligence and Analytics Platform for Iot powered Business
+description: ThingsBoard Trendz - Business Intelligence and Analytics Platform for IoT-powered Business
 
-discover-topology:
-  0:
-    image: /images/trendz/getting-started/topology1.png
-    title: "Once logged in you should click on <b>Discover Topology</b> button to discover ThingsBoard entities."
-  1:
-    image: /images/trendz/getting-started/topology2.png
-    title: 'When Topology Discovery finished click <b>Finish</b>'
-
-table-view:
-  0:
-    image: /images/trendz/getting-started/table_1.png
-    title: 'Create Table view'
-  1:
-    image: /images/trendz/getting-started/table_2.png
-    title: 'Add required fields'
-  2:
-    image: /images/trendz/getting-started/table_3.png
-    title: 'Define calculations'
-  3:
-    image: /images/trendz/getting-started/table_4.png
-    title: 'Add filters'
-
-add-on-dashboard:
-  0:
-    image: /images/trendz/getting-started/dashboard_1.png
-    title: 'Click Share button'
-  1:
-    image: /images/trendz/getting-started/dashboard_2.png
-    title: 'Configure dashboard details'
-  2:
-    image: /images/trendz/getting-started/dashboard_3.png
-    title: 'Dashboard added into ThingsBoard'
-
-predict-energy-line-chart:
-  0:
-    image: /images/trendz/getting-started/prediction_1.png
-    title: 'Create Line chart'
-  1:
-    image: /images/trendz/getting-started/prediction_2.png
-    title: 'Add required fields'
-  2:
-    image: /images/trendz/getting-started/prediction_3.png
-    title: 'Enable time series prediction'
-  3:
-    image: /images/trendz/getting-started/prediction_4.png
-    title: 'Join Y-axis into one'
-  4:
-    image: /images/trendz/getting-started/prediction_5.png
-    title: 'Final line chart with predictions'
-
-anomaly-detection-model:
-  0:
-    image: /images/trendz/getting-started/anomaly_1.png
-    title: 'Create anomaly detection model'
-  1:
-    image: /images/trendz/getting-started/anomaly_2.png
-    title: 'Configure model parameters'
-  2:
-    image: /images/trendz/getting-started/anomaly_3.png
-    title: 'Review discovered anomalies'
-  3:
-    image: /images/trendz/getting-started/anomaly_4.png
-    title: 'Schedule anomalies autodiscovery job'
-
-save-anomaly-score:
-  0:
-    image: /images/trendz/getting-started/anomaly_telemetry_1.png
-    title: 'Create Table view with anomaly score data for each energy meter'
-  1:
-    image: /images/trendz/getting-started/anomaly_telemetry_2.png
-    title: 'Enable telemetry save job'
-  2:
-    image: /images/trendz/getting-started/anomaly_telemetry_3.png
-    title: 'Set row click entity to energy meter'
-
-create-anomaly-alarm:
-  0:
-    image: /images/trendz/getting-started/alarm_1.png
-    title: 'Open device profile'
-  1:
-    image: /images/trendz/getting-started/alarm_2.png
-    title: 'Create Alarm Rule'
-  2:
-    image: /images/trendz/getting-started/alarm_3.png
-    title: 'Define clear and create conditions'
 ---
 
 * TOC
@@ -97,14 +13,13 @@ create-anomaly-alarm:
 
 The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics. You will learn how to:
 
-* Login to the Trendz for the first time
-* Discover Topology from ThingsBoard
+* Log in to Trendz for the first time
+* Discover topology from ThingsBoard
 * Create basic visualizations
 * Aggregate data on different levels using relations
 * Filter data using attributes and telemetry fields
-* Add Trendz View to ThingsBoard dashboard
+* Add a Trendz view to a ThingsBoard dashboard
 
-&nbsp;
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
@@ -113,143 +28,197 @@ The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics.
 
 ## Prerequisites
 
-You will need to have Trendz Analytics server up and running.
+You will need to have a Trendz Analytics server up and running.
 The easiest way is to use [Trendz Cloud](/docs/trendz/install/cloud/) SaaS.
 
-The alternative option is to install Trendz Analytics using [Installation Guide](/docs/trendz/install/installation-options/).
+Alternatively, you can install Trendz Analytics using the [Installation Guide](/docs/trendz/install/installation-options/).
 
 ## Step 1. Discover topology
-Once Trendz Service is up and running you can sign-in to Trendz UI using following URL:
 
-* Trendz Cloud (North America): [https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz).
-* Trendz Cloud (Europe): [https://eu.thingsboard.cloud/trendz](https://eu.thingsboard.cloud/trendz).
-* Self-hosted Trendz: http://localhost:8888
+Once the Trendz Service is up and running, you can sign in to the Trendz UI using the following URL:
 
-You can login using Tenant Administrator credentials form ThingsBoard. Trendz uses ThingsBoard as an authentication service. 
-Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.
+* Trendz Cloud (North America): [https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz)
+* Trendz Cloud (Europe): [https://eu.thingsboard.cloud/trendz](https://eu.thingsboard.cloud/trendz)
+* Self-hosted Trendz: [http://localhost:8888](http://localhost:8888)
+
+You can log in using Tenant Administrator credentials from ThingsBoard. Trendz uses ThingsBoard as an authentication service.
+Any Tenant Administrator or Customer User can sign in to the Trendz UI using the same login/password they use in ThingsBoard.
 
 {% include images-gallery.html imageCollection="discover-topology" showListImageTitles="true" %}
 
-## Step 2. Create table view
-Let's create a table with all buildings and apartments and calculate the amount of electricity and heat consumption per square meter in each apartment.
+## Step 2. Create line chart view
 
-* On the home page click the button **Create view** and select **Table**
-* Add the following fields to the column section: `building`, `apartment`, `area`
-* Add `Date (Month)` into Dynamic Column section, set Unit `kW/m2`
-* Set default time range to This year
-* Add `Calculated` field into **Dynamic Value** section, name it `AVG Heat+Energy Consumption per m2`. Here is a code to calculate:
+Let's create a line chart with all buildings and visualize the amount of consumed electricity for each building for today.
+* On the home page, click the **Create view** button and select **Line**
 
-```javascript
-var energy = sum(energyMeter.energyConsumption);
-var heat = sum(energyMeter.heatConsumption);
-var size = uniq(apartment.area);
-return (energy + heat) / size;
-```
+You can select fields from the entities listed on the left side of the screen and drag and drop them into the appropriate section.
+The date field can be dragged and dropped from the upper-left part of the screen. Add all necessary fields to each section:
+* Add `EM energy meter.energyConsumption` to the **Y axis** section (energy consumption telemetry)
+* Add `EM building.EM building` to the **Series** section (name of the building)
+* Add `Date (RAW)` to the **X axis** section (date field)
 
-* Add `building` into filters section to view the consumption of a specific building
-* Click `Build report`
-* Rename view by clicking the pencil icon next to the name and rename it as 'Energy/Heat consumption'
-* Click the **Save** button to save the table in the desired folder
-* Choose the folder `Energy consumption page` to save new table
+Set up date options:
+* Set the date picker to *Today*, and set *Group by* to **Hour**
+
+Set up the filters:
+* Add `EM building.EM building` into the filters section to view the consumption of a specific building
+
+Build and save the view:
+* Click **Build report**
+* Rename the view by clicking the pencil icon next to the name and name it *Building energy consumption trends for today*
+* Click the **Save** button to save the chart in the desired folder
+* Choose the folder `Energy consumption page` to save the new line chart
+
+You can find out more about different types of views you can build with Trendz [here](/docs/trendz/visualizations-overview)
 
 {% include images-gallery.html imageCollection="table-view" %}
 
-## Step 3. Add Table to ThingsBoard Dashboard
-Now we can add this table on ThingsBoard dashboard.
+## Step 3. Add line chart to ThingsBoard Dashboard
 
-* Click on `Share to ThingsBoard` button and choose `Add on New Dashboard`
-* Set Dashboard name to `Energy/Heat consumption`
-* Select dashboard State `default` 
-* Select Filter `Building` and click on **Add** button 
+Now we can add this line chart to a ThingsBoard dashboard.
 
-A new dashboard in Thingsboard is created and our table is there with possibility to filter by building
+* Click the **Share to ThingsBoard** button and choose **Add on New Dashboard**
+* Set the dashboard name to `Energy consumption`
+* Select dashboard state `default`
+* Select filter `Building` and click the **Add** button
+
+A new dashboard in ThingsBoard is created, and your chart is there with the ability to filter by building.
+
+You can find more about sharing views [here](/docs/trendz/embed-visuals)
 
 {% include images-gallery.html imageCollection="add-on-dashboard" %}
 
-## Step 4. Predict energy usage
-Next step would be to create a forecast of energy and heat usage for the next 6 months for each building using historical data.
+## Step 4. Calculate New Metrics
 
-* Click the button `Create view` and select **Line chart**
-* Add Date field into **X-axis** section - it allows to split data by month, week, day or hour
-* Add `energyConsumption` and `heatConsumption` fields into **Y-axis** section
-* Add `appartment` into **Filters** section
-* Set default time range to **This year**, group by: **day**
+Now we will create a table with all buildings and apartments, calculate the amount of electricity and heat consumption per square meter in each apartment, and convert it to kW.
 
-To set up the forecast, perform the following actions for the `energyConsumption` and `heatConsumption` fields.
-* Click on `energyConsumption` field in the **Y-axis** section
-* Enable checkbox `Prediction`
-  * Prediction method - **Fourier transformation**
-  * Prediction range - **3**
-  * Prediction unit - **month**
-* Click button `Build report`
-* Open view **settings** -> **General** section and enable `Use single Y-axis` checkbox
-* Click the pencil icon next to the name and rename it as 'Forecast'
-* Click the **Save** button to save the table in the desired folder
-* Choose the folder `Forecast page` to save new Forecast
+### Create a Calculated Field
 
-Historical data for each area is visualized with a solid line and forecast is shown with a dashed line.
+Firstly, we will create a calculated field, it could be used across multiple views.
 
-{% include images-gallery.html imageCollection="predict-energy-line-chart" %}
+* Go to the **Calculated Fields** page by clicking the calculator icon on the left panel
+* Click the **Create Calculated Field** button
+* Set the name to `Consumption Per Square Meter`
+* Set the key to `cons_per_sq_meter`
+* Set the entity to `EM apartment`
+* Copy and paste the following code into the code editor:
 
-## Step 5. Find anomalies in energy consumption
-Let's discuss how to build an anomaly detection model for energy consumption, track abnormal consumption behavior, and set up notifications for anomalies.
+  ```javascript
+  var energy = sum(EM energy meter.energyConsumption);
+  var heat = sum(EM heat meter.heatConsumption);
+  var area = sum(EM apartment.area);
+  return (energy + heat) / area;
+  ```
 
-* Go to the Anomalies section, and click button **Create model**
-* Set model name to `Energy consumption Anomaly`
-* Define anomaly detection model properties: 
-  * Cluster algorithm: K-Means, 
-  * Segment time range: 1 day, 
-  * Comparison type: Behavior based - we want to detect anomalies based on behavior of energy consumption.
-* Datasource properties:
-  * Time Range: `This Year` - we will use This Year of telemetry data to train model for detecting normal and abnormal behavior.
-  * Field `energyConsumption` - here we defined what telemetry keys should be used in the model.
-  * Filters `energyMeter` - to train model for specific energy meter or group of energy meters to detect specific anomalies that happen only on these energy meters.
-* Press `Build model` button
+* Click **Run Test** to validate the calculation
+* Click **Save Field** to save it
+* In the popup window, click **Enable**
+* Enable *calculation result saving* and click the **Save** button
+  (you can leave the other properties as default)
 
-You can review historical anomalies identified by the model in Trendz. Each anomaly is associated with a score and score index, indicating its level of abnormality. Higher values indicate a higher degree of anomaly.
+Your calculated field is now ready to use. Learn more about calculated fields [here](/docs/trendz/calculated-fields).
 
-With the model prepared, the next step is to schedule a job in Trendz. This job will continuously analyze real-time telemetry data, detecting anomalies as they occur.
+### Use the Calculated Field in a View
 
-* Click on the `Auto discovery` button
-* Set `Enable Auto discovery` checkbox 
-* Set Interval to **1 hour**
-* Press **Apply** button
+Now we will use the created calculated field in the new view:
+* On the home page, click the **Create view** button and select **Table**
 
-After saving the configuration in Trendz, it will periodically retrieve new data from energy meters. This data will be analyzed to identify anomalies. 
-Whenever an anomaly is detected, Trendz will compute an anomaly score and store it in the database.
+Add all necessary fields to each section:
+* In the **Columns** section, add:
+  * `EM apartment.EM apartment`
+  * `EM building.EM building`
+  * `EM apartment.state`
+* In the **Dynamic Value** section, add:
+  * `EM apartment.Consumption Per Square Meter`
+* In the **Dynamic Column** section, add:
+  * `Date (RAW)`
 
-{% include images-gallery.html imageCollection="anomaly-detection-model" %}
+Set up date fields and filters:
+* Set the date picker to *Today*
+* Add `EM building.EM building` into the filters section to view the consumption of a specific building
 
-## Step 6. Create Alarms when anomaly discovered
-We have an anomaly detection model that can identify anomalies, and we create a job to discover them in new incoming data from sensors. The last step is to inform the maintenance team about the anomalies we found. 
-To do this, we need to create an Alarm in ThingsBoard once an anomaly is detected.
+Build and save view:
+* Click **Build report**
+* Rename the view to *Apartments energy consumption per square meter for the last 7 days*
+* Click the **Save** button and choose the `Energy consumption page` folder to save the new chart
 
-* Create Table view in Trendz
-* Add the following fields to the column section: `energyMeter`, `Date FULL_HOUR`, 
-* Add `Anomaly` field and select `Energy consumption Anomaly` model 
-  * Select `Anomaly field` type - **Score Index** 
-  * Set Aggregation to **MAX** 
-  * Label - `energyConsumptionAnomalyScore`
-* Open **view settings** and enable `Tb calculated telemetry save` checkbox. Set interval to **1 hour**
-* In settings open **View mode fields** section and select `energyMeter` entity in **Row click entity** dropdown - this step tells Trendz under what entity score index telemetry should be saved.
-* Set default time range to Last 7 days
-* Save view with name `energyConsumption anomaly score`
+## Step 5. Predict energy usage
 
-After saving the view in Trendz, a background job will be scheduled. This job will regularly check the energy consumption anomaly score and save the results as telemetry for the energy meter device. 
+The next step is to create a forecast of energy usage for the current week for each building using historical data.
 
-{% include images-gallery.html imageCollection="save-anomaly-score" %}А
+### Create a Prediction Model
 
-Currently, we have the telemetry called `energyConsumptionAnomalyScore` for each energy meter in ThingsBoard. 
-This telemetry indicates the abnormality of the meter's current behavior. With this information, we can set up an **Alarm Rule** in ThingsBoard to trigger an alarm if the score index exceeds 200.
+Firstly, we will create a prediction model, it could be used across multiple views like calculated fields.
 
+* Go to the **Prediction Model** page by clicking the prediction icon on the left panel
+* Click the **Create model** button
+* Set the entity to `EM energy meter`
+* Set the prediction field to `energyConsumption`
+* Set the prediction method to `FOURIER_TRANSFORMATION`
+* Set aggregation to `SUM`
+* Click the **Train Model** button and wait until accuracy is shown
+* Click the **Jobs** button; in the popup window, enable prediction model refreshing and click the **Save** button (you can leave the other properties as default)
 
-* In ThingsBoard open energy meter’s device profile and add new Alarm Rule
-* Alarm type - `Abnormal behavior`
-* Create alarm rule: Severity - Warning, Condition - **energyConsumptionAnomalyScore** is greater than 200
-* Clear alarm rule
-* Condition - **energyConsumptionAnomalyScore** is lower or equals 200
+Your prediction model is now ready to use. Learn more about prediction models [here](/docs/trendz/prediction).
 
-{% include images-gallery.html imageCollection="create-anomaly-alarm" %}
+### Create a View with Forecast
+
+Now we will use the created prediction model in the new view:
+* Click the **Create view** button and select **Bar chart**
+
+Add all necessary fields to each section:
+* In the **X Axis** section, add:
+  * `Date (DAY Mon-Sun)`
+* In the **Y Axis** section, add:
+  * `EM energy meter.energyConsumption`
+  * `EM energy meter.Energy Consumption Forecast`
+* In the **Series** section, add:
+  * `EM building.EM building`
+
+Build and save view:
+* Click **Build report**
+* Rename the view to *Energy consumption forecast for this week*
+* Click the **Save** button and choose the `Energy consumption page` folder to save the new chart
+
+You can try the same with a line chart and compare the results.
+
+Historical data for each building is visualized with solid bars, and the forecast is shown with dashed bars.
+
+## Step 6. Find anomalies in energy consumption
+
+Trendz supports out-of-the-box anomaly detection tools. Let's explore them by finding anomalies in the energy consumption telemetry.
+
+* Go to the **Anomaly Models** page by clicking the **Anomalies** icon on the left panel
+* Set the entity to `EM energy meter`
+* Set the fields to `energyConsumption` only
+* Set the key to `energyConsumption_anomaly_data`
+* Set the name to `Energy Meter Anomaly Model`
+* Click **Build Model**, go to the **Review** tab, and validate the detected anomalies
+
+Now we can set up an anomaly refresh job to automatically find anomalies and create alarms in ThingsBoard for them. To do this, you need to:
+* Click the **Jobs** button; in the popup window:
+  * Enable prediction model refreshing
+  * Enable saving anomaly data (to ThingsBoard)
+  * Enable anomaly alarms creation (in ThingsBoard)
+  * Click the **Save** button
+  
+Now, as soon as an anomaly occurs, the anomaly model will detect it and an alert will be created immediately.
+You can find out more about anomaly models [here](/docs/trendz/anomaly/overview).
+
+## Step 7. Try AI Assistance
+
+Let's explore AI Assistance — an AI-powered feature that can build views based on your natural language requests.
+
+* Go to the **Assistance** page and click **New Chat**
+* When prompted to select topology entities, simply click **Save**
+* In the chat input, type:
+  "I want to see how total energy consumption was changing during the last 14 days for each building"
+* Review the generated view and validate the results
+* Then, type a follow-up instruction:
+  "Show data only about Alpire building"
+* Observe that a building filter has been added automatically
+
+You can read more about AI Assistance [here](/docs/trendz/ai-assistance-overview)
 
 ## Next Steps
 
