@@ -24,6 +24,14 @@ update-secret-value:
         image: /images/user-guide/security/secrets-storage/update-secret-value-2-pe.png
         title: 'Enter the new value and click "Save".'
 
+delete-secret:
+    0:
+        image: /images/user-guide/security/secrets-storage/delete-secret-1-pe.png
+        title: 'Click the "trash bin" icon at the end of its row.'
+    1:
+        image: /images/user-guide/security/secrets-storage/delete-secret-2-pe.png
+        title: 'Confirm the deletion.'
+
 use-secret:
     0:
         image: /images/user-guide/security/secrets-storage/use-secret-in-thingsboard-1-pe.png
