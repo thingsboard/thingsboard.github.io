@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Device Profiles
+title: Device profiles
 description: IoT device profiles
 redirect_from: "/docs/user-guide/ui/device-profiles"
 

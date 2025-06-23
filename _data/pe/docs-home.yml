@@ -42,11 +42,11 @@ toc:
   section:
   - title: Entities and Relations
     path: /docs/pe/user-guide/entities-and-relations/
-  - title: Tenant Profiles
+  - title: Tenant profiles
     path: /docs/pe/user-guide/tenant-profiles/
-  - title: Device Profiles
+  - title: Device profiles
     path: /docs/pe/user-guide/device-profiles/
-  - title: Asset Profiles
+  - title: Asset profiles
     path: /docs/pe/user-guide/asset-profiles/
   - title: Attributes
     path: /docs/pe/user-guide/attributes/

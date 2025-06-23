@@ -2,63 +2,63 @@
 * TOC
 {:toc}
 
-Since ThingsBoard 3.2, the Tenant administrator is able to configure common settings for multiple devices using Device Profiles. 
-Each Device has one and only profile at a single point in time. 
+{% assign sinceVersion = "3.2" %}
+{% include templates/since.md %}
 
-Experienced ThingsBoard users can notice that the device type has been deprecated in favor of the Device Profile. 
-The update script will automatically create Device Profiles based on unique Device Types and assign them to the appropriate devices.
+Device profiles in ThingsBoard allows an administrator to define and centrally manage common settings for multiple devices at once.   
+This greatly simplifies the management of a large number of similar devices, making it especially valuable in IoT solutions where numerous devices share identical configurations and behaviors.
 
-Let's take a look at the settings available in the device profile one by one.
+Typical device profile settings include:
+- Setting a Default **Rule Chain**.
+- Configuring **Message Queues** for efficient message handling.
+- Defining **Firmware** and **Software** versions to be distributed automatically to devices.
+- Configuring **transport protocols** used for device communication.
+- Defining and managing **Alarm rules**.
+- Automating **device registration and provisioning**.
 
-## Device profile details
+## Create Device profile
 
-### Rule Chain
+To create a new device profile:
+- Go to the "**Device profiles**" page in the "Profiles" section.
+- Click the "**+**" icon in the upper-right corner and select "**Create new device profile**" from the dropdown menu.
+- Only the **Name** field is required; all other settings are optional.
+- Click "**Add**" to create the device profile.
 
-By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) processes all incoming messages and events for any device. 
-However, the more different device types you have, the more complex your Root Rule Chain may become. 
-Many platform users create their Root Rule Chain for the sole purpose of sending messages to specific rule chains depending on the device type. 
+{% include images-gallery.html imageCollection="create-device-profile" %}
 
-To avoid this painful and mundane activity, since ThingsBoard 3.2, you can specify a custom Rule Chain for your devices.
-The new Rule Chain will receive all telemetry, device activity(Active/Inactive), and device lifecycle(Created/Updated/Deleted) events.
-This setting is available in the Device Profile wizard and in the Device Profile details.
+## Device profile settings
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-rule-chain-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-rule-chain-1-pe.png)
-{% endif %}
+### Default rule chain
 
-### Queue Name
+The Default [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} processes all incoming messages and events from any device. 
+As the number of device types increases, the Default Rule Chain may become complex and challenging to manage. Often, users create custom root rule chains to redirect messages to specialized rule chains based on the device type.
+
+To simplify this process, starting from ThingsBoard version 3.2, you can specify separate rule chains for individual device profiles. 
+This enables centralized and flexible management of telemetry processing, device status (active/inactive), and device lifecycle events (creation, update, deletion).
+
+{% include images-gallery.html imageCollection="device-profile-rule-chain" %}
+
+### Queue
 
 By default, the [Main](/docs/pe/user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
 The transport layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
 However, for multiple use cases, you might want to use different queues for different devices. 
 For example, you might want to isolate data processing for Fire Alarm/Smoke Detector sensors and other devices.
 This way, even if your system has a peak load produced by millions of water meters, whenever the Fire Alarm is reported, it will be processed without delay.
-Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) strategies.
+Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy){:target="_blank"} and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy){:target="_blank"} strategies.
 
-This setting is available in the Device Profile wizard and Device Profile details.
+> **Please note:** if you choose to use a custom queue, you should configure it with the **system administrator** before you using it.
 
-{% unless docsPrefix contains 'paas/' %}
-{% capture difference %}
-**Please note:**
-<br>
-if you choose to use a custom queue, you should configure it with the **system administrator** before you using it.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-{% endunless %}
-
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-queue-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-queue-1-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="device-profile-queue" %}
 
 ## Transport configuration
 
-The current version of the ThingsBoard platform supports the following transport types: [Default](#default-transport-type), [MQTT](#mqtt-transport-type), [CoAP](#coap-transport-type), [LWM2M](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile) and [SNMP](/docs/{{docsPrefix}}reference/snmp-api/#device-profile-configuring).
+The current version of ThingsBoard platform supports the following transport types: 
+- [Default](#default-transport-type){:target="_blank"} - standard HTTP transport suitable for basic device interactions with ThingsBoard. Easy to configure, but less efficient for a large number of devices or frequent updates.
+- [MQTT](#mqtt-transport-type){:target="_blank"} -  lightweight, bidirectional protocol specifically optimized for IoT devices, providing efficient telemetry delivery, high throughput, and resource efficiency.
+- [CoAP](#coap-transport-type){:target="_blank"} - lightweight IoT protocol ideal for resource-constrained devices operating in low-bandwidth networks.
+- [LWM2M](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile){:target="_blank"} - standardized IoT protocol designed for efficient management of resource-constrained devices, enabling centralized configuration management, firmware updates, and device monitoring.
+- [SNMP](/docs/{{docsPrefix}}reference/snmp-api/#device-profile-configuring){:target="_blank"} - widely used protocol for managing network devices like routers, switches, servers, enabling collection and analysis of device health information.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
@@ -69,19 +69,18 @@ The current version of the ThingsBoard platform supports the following transport
 
 ### Default transport type
 
-The Default transport type is intended for backward compatibility with previous releases. 
-With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/coap-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) APIs to connect your devices.
-There is no specific configuration setting for the default transport type. 
+The **Default** transport type is designed to ensure compatibility with earlier versions of the platform.
+Devices using this type can connect through ThingsBoard’s standard APIs: [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/){:target="_blank"}, [HTTP](/docs/{{docsPrefix}}reference/http-api/){:target="_blank"}, [CoAP](/docs/{{docsPrefix}}reference/coap-api/){:target="_blank"}, [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/){:target="_blank"} and [SMTP](/docs/{{docsPrefix}}reference/smtp-api/){:target="_blank"}.
+It requires no special configuration.
 
 ### MQTT transport type
 
-The MQTT transport type enables advanced MQTT transport settings. 
-Now you are able to specify custom MQTT topics filters for time-series data and attribute updates that correspond to the
-[telemetry upload API](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute update API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server), respectively.
+The **MQTT** transport type allows for **flexible communication setup** with devices using the MQTT protocol.
+You can define custom **MQTT topic filters** for sending telemetry and updating attributes by using ThingsBoard’s [telemetry upload API](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api){:target="_blank"} and [attribute update API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server){:target="_blank"}.
 
 The MQTT transport type has the following settings:
 
-- **MQTT device topic filters**
+<br><b><font size="4">MQTT device topic filters</font></b>
 
 Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
 
@@ -143,7 +142,7 @@ mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/m
 
 {% include images-gallery.html imageCollection="mqttTransportSettingDefault" %}
 
-- **MQTT device payload**
+<br><b><font size="4">MQTT device payload</font></b>
 
 By default, the platform expects devices to send data via JSON. However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers)
 
@@ -159,7 +158,6 @@ and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-pe.png)
 {% endif %}
 
-
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-ce.png)
 {% endif %}
@@ -169,7 +167,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
-- **Compatibility with other payload formats**
+<br><b><font size="4">Compatibility with other payload formats</font></b>
 
 When enabled, the platform will use a Protobuf payload format by default. If parsing fails, the platform will attempt to use JSON payload format. Useful for backward compatibility during firmware updates. For example, the initial release of the firmware uses Json, while the new release uses Protobuf. During the process of firmware update for the fleet of devices, it is required to support both Protobuf and JSON simultaneously.
 
@@ -184,7 +182,7 @@ The compatibility mode introduces slight performance degradation, so it is recom
 
 ### CoAP transport type
 
-The CoAP transport type enables advanced CoAP transport settings. With the CoAP transport type, you have the ability to select the CoAP device type.
+The CoAP transport type is lightweight IoT protocol ideal for resource-constrained devices operating in low-bandwidth networks.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-1-ce.png)

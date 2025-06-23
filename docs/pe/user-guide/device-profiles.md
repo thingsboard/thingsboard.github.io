@@ -2,10 +2,28 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Device Profiles
+title: Device profiles
 description: IoT device profiles
 redirect_from: "/docs/pe/user-guide/ui/device-profiles"
 
+create-device-profile:
+    0:
+        image: /images/user-guide/device-profile/create-device-profile-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+    1:
+        image: /images/user-guide/device-profile/create-device-profile-2-pe.png
+        title: 'Only the Name field is required; all other settings are optional. Click "Add" to create the device profile.'
+
+device-profile-rule-chain:
+    0:
+        image: /images/user-guide/device-profile/device-profile-rule-chain-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+device-profile-queue:
+    0:
+        image: /images/user-guide/device-profile/device-profile-queue-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+  
 mqttTransportSettingExample:
     0:
         image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-1-pe.png

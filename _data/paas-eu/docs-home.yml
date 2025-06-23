@@ -44,9 +44,9 @@ toc:
   section:
     - title: Entities and Relations
       path: /docs/paas/eu/user-guide/entities-and-relations/
-    - title: Device Profiles
+    - title: Device profiles
       path: /docs/paas/eu/user-guide/device-profiles/
-    - title: Asset Profiles
+    - title: Asset profiles
       path: /docs/paas/eu/user-guide/asset-profiles/
     - title: Attributes
       path: /docs/paas/eu/user-guide/attributes/
