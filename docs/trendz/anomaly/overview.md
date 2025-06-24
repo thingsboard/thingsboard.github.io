@@ -3,10 +3,44 @@ layout: docwithnav-trendz
 title: Overview
 description: Introduction to anomaly detection in Trendz
 
-scoreVsIndexExample:
+page-anomaly-models:
   0:
-    image: /images/trendz/anomaly/score_vs_index.png
-    title: 'Pump vibration pattern during start'
+    image: /images/trendz/anomaly/with-preview/page-anomaly-models.png
+    title: 'Anomaly Models Tab'
+
+page-cluster-info-tab:
+  0:
+    image: /images/trendz/anomaly/with-preview/page-cluster-info-all.png
+    title: 'Cluster Info Tab'
+  1:
+    image: /images/trendz/anomaly/with-preview/page-cluster-info-specific.png
+    title: 'Cluster Info Tab (Specific Cluster)'
+
+page-input-tab:
+  0:
+    image: /images/trendz/anomaly/with-preview/page-input-tab.png
+    title: 'Input Tab'
+
+page-review-tab:
+  0:
+    image: /images/trendz/anomaly/with-preview/page-review-tab.png
+    title: 'Review Tab'
+
+page-summary-tab:
+  0:
+    image: /images/trendz/anomaly/with-preview/page-summary-calendar.png
+    title: 'Summary Tab: Calendar Mode'
+  1:
+    image: /images/trendz/anomaly/with-preview/page-summary-dynamic.png
+    title: 'Summary Tab: Dynamic Mode'
+  2:
+    image: /images/trendz/anomaly/with-preview/page-summary-review.png
+    title: 'Summary Tab: Review Mode'
+
+page-task-tab:
+  0:
+    image: /images/trendz/anomaly/with-preview/page-task-tab.png
+    title: 'Task Tab'
 
 ---
 
@@ -29,6 +63,14 @@ patterns in time-series data without requiring manual thresholding or expert lab
 offers full control over the model configuration process - including input preparation, feature extraction, distance 
 function tuning, and scoring logic - all within a convenient and intuitive interface.
 
+You can find details how to use Trendz Analytics to create anomaly detection models here:
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/pbjXGDJ-SI0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ### Key Concepts in Trendz Anomaly Detection
 
 In Trendz, anomaly detection is based on two core metrics:
@@ -43,7 +85,7 @@ In Trendz, anomaly detection is based on two core metrics:
 
 Let’s explore a real-world example showing pump vibrations right after startup:
 
-{% include images-gallery.html imageCollection="scoreVsIndexExample" showListImageTitles="true" preview="false" %}
+![image](/images/trendz/anomaly/score_vs_index.png)
 
 - **Anomaly A**
   - Characterized by a **sharp vibration spike** lasting ~5 seconds.
@@ -125,6 +167,8 @@ This page displays key characteristics of each model:
   - A text field will appear in the *Name* column.
   - Type the new name and press **Enter** to save changes.
 
+{% include images-gallery.html imageCollection="page-anomaly-models" %}
+
 ### Input Tab
 
 The **Input** tab allows you to manage and configure core aspects of your anomaly model. You can:
@@ -154,6 +198,8 @@ The **Input** tab allows you to manage and configure core aspects of your anomal
   - If a rebuild is necessary, a confirmation popup will appear.
   - **Caution**: Rebuilding the model will delete all existing anomalies and disable the refresh job.
 
+{% include images-gallery.html imageCollection="page-input-tab" %}
+
 ### Summary Tab
 
 The **Summary** tab provides an overview of anomalies grouped by device.
@@ -180,6 +226,8 @@ You can:
   - Shows the **latest detected anomaly**.
   - You can zoom out to explore the full history of anomalies discovered on the current device.
 
+{% include images-gallery.html imageCollection="page-summary-tab" %}
+
 ### Review Tab
 
 The **Review** tab allows you to inspect all anomalies detected during the **build**, **refresh**, or **reprocess** operations.
@@ -196,6 +244,8 @@ You can **sort anomalies** by various fields to better analyze the results:
   - Score Index
   - Item
   - End Timestamp
+
+{% include images-gallery.html imageCollection="page-review-tab" %}
 
 ### Cluster Info Tab
 
@@ -227,6 +277,8 @@ You can also **click on any row in the cluster table** to open a detailed view. 
 
 This feature is useful for visually comparing segment variability within the cluster and validating clustering accuracy.
 
+{% include images-gallery.html imageCollection="page-cluster-info-tab" %}
+
 ### Tasks Tab
 
 In the Tasks tab, you can review tasks that are associated with the current anomaly model. Here you can validate tasks such as:
@@ -238,6 +290,8 @@ You can see their results, last executions, and more. Read more about Trendz tas
 
 It is also possible to run the anomaly model reprocess task directly from this tab by clicking the **Run Reprocess Task** 
 button located in the upper right corner of the screen (read more about anomaly reprocess [here](/docs/trendz/anomaly/refresh-reprocess#anomaly-reprocess)).
+
+{% include images-gallery.html imageCollection="page-task-tab" %}
 
 ## Next Steps
 
