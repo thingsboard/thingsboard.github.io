@@ -13,7 +13,7 @@ contactUsModal: "true"
 
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
 <h1 class="usecase-title">IoT smart metering solution</h1>
-<section class="environment-monitoring-about">
+<section class="smart-metering-about">
     <div class="about-text">
         <div class="short">
             <div class="block">
@@ -30,7 +30,7 @@ contactUsModal: "true"
 </section>
 
 <section class="smart-metering-carousel carousel-padding">
-    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-metering' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-metering' substrate = true %}
 </section> 
 
 {% include contact-us-banner.liquid %}

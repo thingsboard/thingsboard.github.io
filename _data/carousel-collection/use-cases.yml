@@ -94,24 +94,6 @@ smart-metering:
     imageTitleAttribute: "ThingsBoard dashboard – thermostat monitoring and control with temperature history and alarm for Apartment A1-1"
     width: 2048
     height: 1090
-  4:
-    src: "/images/usecases/smart-metering/smart-metering-5.webp"
-    alt: "ThingsBoard dashboard showing Buildings B1 and B2 in District B on the map, energy and water usage stats, and no active alarms"
-    imageTitleAttribute: "ThingsBoard dashboard – monitoring Buildings B1 and B2 in District B with energy and water consumption overview, no alarms detected"
-    width: 2048
-    height: 1090
-  5:
-    src: "/images/usecases/smart-metering/smart-metering-6.webp"
-    alt: "ThingsBoard dashboard showing floor plan of Building B1 with Apartments B1-1 and B1-2, energy and water consumption stats, and no active alarms"
-    imageTitleAttribute: "ThingsBoard dashboard – monitoring apartments in Building B1 with resource usage and alarm status overview"
-    width: 2048
-    height: 1090
-  6:
-    src: "/images/usecases/smart-metering/smart-metering-7.webp"
-    alt: "ThingsBoard dashboard showing thermostat temperatures, control knob, current temperature reading, and historical graph for Apartment B1-1 with no active alarms"
-    imageTitleAttribute: "ThingsBoard dashboard – thermostat monitoring and control for Apartment B1-1 with real-time temperature data and history"
-    width: 2048
-    height: 1090
 
 environment-monitoring:
   0:
