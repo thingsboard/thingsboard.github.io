@@ -16,7 +16,7 @@ Typical device profile settings include:
 - Defining and managing **Alarm rules**.
 - Automating **device registration and provisioning**.
 
-## Create Device profile
+## Create device profile
 
 To create a new device profile:
 - Go to the "**Device profiles**" page in the "Profiles" section.
@@ -26,7 +26,7 @@ To create a new device profile:
 
 {% include images-gallery.html imageCollection="create-device-profile" %}
 
-## Device profile settings
+## Main device profile configuration
 
 ### Default rule chain
 
@@ -60,243 +60,219 @@ The current version of ThingsBoard platform supports the following transport typ
 - [LWM2M](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile){:target="_blank"} - standardized IoT protocol designed for efficient management of resource-constrained devices, enabling centralized configuration management, firmware updates, and device monitoring.
 - [SNMP](/docs/{{docsPrefix}}reference/snmp-api/#device-profile-configuring){:target="_blank"} - widely used protocol for managing network devices like routers, switches, servers, enabling collection and analysis of device health information.
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-1-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="device-profile-transport" %}
 
 ### Default transport type
 
 The **Default** transport type is designed to ensure compatibility with earlier versions of the platform.
-Devices using this type can connect through ThingsBoard’s standard APIs: [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/){:target="_blank"}, [HTTP](/docs/{{docsPrefix}}reference/http-api/){:target="_blank"}, [CoAP](/docs/{{docsPrefix}}reference/coap-api/){:target="_blank"}, [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/){:target="_blank"} and [SMTP](/docs/{{docsPrefix}}reference/smtp-api/){:target="_blank"}.
+Devices using this type can connect through ThingsBoard&#39;s standard APIs: [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/){:target="_blank"}, [HTTP](/docs/{{docsPrefix}}reference/http-api/){:target="_blank"}, and [CoAP](/docs/{{docsPrefix}}reference/coap-api/){:target="_blank"}.
 It requires no special configuration.
+
+{% include images-gallery.html imageCollection="default-transport-type" %}
 
 ### MQTT transport type
 
-The **MQTT** transport type allows for **flexible communication setup** with devices using the MQTT protocol.
-You can define custom **MQTT topic filters** for sending telemetry and updating attributes by using ThingsBoard’s [telemetry upload API](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api){:target="_blank"} and [attribute update API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server){:target="_blank"}.
+The **MQTT** transport type allows for flexible communication setup with devices using the MQTT protocol.
+You can define custom **MQTT topic filters** for sending telemetry and updating attributes by using ThingsBoard&#39;s [telemetry upload API](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api){:target="_blank"} and [attribute update API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server){:target="_blank"}.
 
 The MQTT transport type has the following settings:
 
 <br><b><font size="4">MQTT device topic filters</font></b>
 
-Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
+Custom MQTT topic filters support **single-level (`+`)** and **multi-level (`#`) wildcards**, making it possible to connect to almost any **MQTT-based device** that sends payloads in **JSON** or **Protobuf** format.
 
-Let's look at an example where we use a custom MQTT device topic filters to publish time series data using "MQTT Basic" device credentials:
+{% include images-gallery.html imageCollection="mqtt-device-topic-filters" %}
 
-- Specify custom MQTT device topic filter for the Device profile, for example:
-  - Telemetry topic filter: `/telemetry`;
-  - Attributes topic filter: `/attributes`;
-- Provide basic MQTT credentials for your device with the client id ‘`c1`’, username ‘`t1`’ and password ‘`secret`’;
-- Use the command below to publish time-series data. {% if (docsPrefix == null) or (docsPrefix == "pe/") %}Don't forget to replace `$THINGSBOARD_HOST_NAME` with your host.{% endif %}
-  {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
+<br>
+Let&#39;s look at an example where we use custom MQTT topic filters to publish time-series data using "MQTT Basic" device credentials:
+
+- Specify custom MQTT topic filters in the Device Profile. For example:
+  - Telemetry topic filter: `/telemetry`
+  - Attributes topic filter: `/attributes`
+- Configure MQTT basic credentials for your device:
+  - Client ID: `c1`
+  - Username: `t1`
+  - Password: `secret`
+
+Publish time-series data using the following command:
+
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+> Don&#39;t forget to replace `$THINGSBOARD_HOST_NAME` with your actual host name.
+
 ```bash
-mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h $THINGSBOARD_HOST_NAME -t /telemetry -i "c1" -u "t1" -P "secret" -m "{humidity:10.3}"
 ```
 {: .copy-code}
 {% endif %}
 {% if docsPrefix contains "paas/" %}
+<br>
 ```bash
-mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h {{mqttHostName}} -t /telemetry -i "c1" -u "t1" -P "secret" -m "{humidity:10.3}"
 ```
 {: .copy-code}
 {% endif %}
-- Transmitted data will be displayed in the "Latest telemetry" tab of the device.
 
-{% include images-gallery.html imageCollection="mqttTransportSettingExample" %}
+Transmitted data will be displayed in the "**Latest telemetry**" tab of the device.
+
+{% include images-gallery.html imageCollection="mqtt-transport-setting-example" %}
 
 <br>
 If you use the standard MQTT device topic filters configuration, you can publish time series and attributes using the commands below.
 
-{% if (docsPrefix == null) or (docsPrefix == "pe/") %}Don't forget to replace `$THINGSBOARD_HOST_NAME` with your host.{% endif %}
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}> Don&#39;t forget to replace `$THINGSBOARD_HOST_NAME` with your actual host name.{% endif %}
 
-- Command for publish timeseries data:
+Command for publish **timeseries data**:
 {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
+
 ```bash
-mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h $THINGSBOARD_HOST_NAME -t v1/devices/me/telemetry -i "c1" -u "t1" -P "secret" -m "{humidity:10.3}"
 ```
 {: .copy-code}
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h {{mqttHostName}} -t v1/devices/me/telemetry -i "c1" -u "t1" -P "secret" -m "{humidity:10.3}"
 ```
 {: .copy-code}
 {% endif %}
 
-- Command for update attributes:
+Command for update **attributes**:
 {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```bash
-mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
+mosquitto_pub -h $THINGSBOARD_HOST_NAME -t v1/devices/me/attributes -i "c1" -u "t1" -P "secret" -m "{"firmwareVersion": "1.3"}"
 ```
 {: .copy-code}
 {% endif %}
 {% if docsPrefix contains "paas/" %}
 ```bash
-mosquitto_pub -h '{{mqttHostName}}' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
+mosquitto_pub -h {{mqttHostName}} -t v1/devices/me/attributes -i "c1" -u "t1" -P "secret" -m "{"firmwareVersion": "1.3"}"
 ```
 {: .copy-code}
 {% endif %}
-
-{% include images-gallery.html imageCollection="mqttTransportSettingDefault" %}
 
 <br><b><font size="4">MQTT device payload</font></b>
 
-By default, the platform expects devices to send data via JSON. However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers)
+- **JSON**. By default, ThingsBoard expects devices to send data in JSON format. However, it is also possible to transmit data using [Protocol Buffers](https://developers.google.com/protocol-buffers) (Protobuf).
+- **Protocol Buffers (Protobuf)** is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.   
+The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates). 
+> ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
-Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
+{% include images-gallery.html imageCollection="mqtt-device-payload" %}
 
-The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
-and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates). 
+- **Compatibility with other payload formats** option.   
+When compatibility mode is enabled, ThingsBoard will default to using a Protobuf payload format. If parsing the Protobuf payload fails, ThingsBoard will automatically attempt to use the JSON payload format. This feature is particularly useful for ensuring backward compatibility during firmware updates. For example, an initial firmware release might use JSON, while a new release switches to Protobuf. During firmware updates across multiple devices, supporting both formats simultaneously is essential.   
+> It is important to note that enabling compatibility mode can introduce slight performance degradation. Therefore, it is recommended to disable compatibility mode once all devices have been successfully updated.
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-pe.png)
-{% endif %}
-
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-pe.png)
-{% endif %}
-
-ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
-
-<br><b><font size="4">Compatibility with other payload formats</font></b>
-
-When enabled, the platform will use a Protobuf payload format by default. If parsing fails, the platform will attempt to use JSON payload format. Useful for backward compatibility during firmware updates. For example, the initial release of the firmware uses Json, while the new release uses Protobuf. During the process of firmware update for the fleet of devices, it is required to support both Protobuf and JSON simultaneously.
-
-The compatibility mode introduces slight performance degradation, so it is recommended to disable this mode once all devices are updated.
-
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="compatibility-with-other-payload-formats" %}
 
 ### CoAP transport type
 
-The CoAP transport type is lightweight IoT protocol ideal for resource-constrained devices operating in low-bandwidth networks.
+**CoAP (Constrained Application Protocol)** is a lightweight IoT protocol specifically designed for resource-constrained devices operating in low-bandwidth networks.
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-1-pe.png)
-{% endif %}
+<b><font size="3">CoAP device type:</font></b>
 
-<br>
-The CoAP device type has the following settings:
+- **Default**. The default CoAP device type uses a JSON payload. This supports basic [CoAP APIs](/docs/{{docsPrefix}}reference/coap-api/){:target="_blank"} similar to the [default transport type](#default-transport-type){:target="_blank"}.    
+You can also configure devices to transmit data using [Protocol Buffers](https://developers.google.com/protocol-buffers){:target="_blank"} (Protobuf) by changing the **CoAP device payload** setting to **Protobuf**.
 
-- **Default**
+    - **Protocol Buffers (Protobuf)** is a language- and platform-neutral method of serializing structured data, designed primarily to reduce the size of transmitted data.   
+  The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api){:target="_blank"} and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server){:target="_blank"} and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
+  ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
-By default CoAP device type Default have CoAP device payload set to JSON that supports basic [CoAP API](/docs/{{docsPrefix}}reference/coap-api/) same as for [Default transport type](#default-transport-type).
-However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers) by changing the parameter CoAP device payload to Protobuf.
+{% include images-gallery.html imageCollection="coap-default" %}
 
-Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
+- **Efento NB-IoT** devices are wireless sensors that use NB-IoT technology for energy-efficient transmission of telemetry data (e.g., temperature, humidity, pressure, open/close, leakage, and more). 
+You can integrate them with ThingsBoard using the built-in CoAP transport, which receives messages from the devices, decodes them using Protobuf, and stores telemetry data on the platform.
+This data becomes instantly available for viewing, charting, dashboarding, alarm setup, and automation.
+> Requires Efento devices with FW version: 06.02+. 
 
-The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api) 
-and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
+{% include images-gallery.html imageCollection="coap-efento-nb-iot" %}
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-pe.png)
-{% endif %}
+<br><b><font size="3">Power Saving Mode</font></b>
 
+The platform supports the following power-saving mechanisms for optimized device operation:
+- Power Saving Mode (PSM)
+- Discontinuous Reception (DRX)
+- Extended Discontinuous Reception (eDRX)
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="power-saving-mode" %}
 
-ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+### LWM2M transport type
 
-- **Efento NB-IoT**
+**LwM2M** is a standardized IoT protocol designed for efficient management of resource-constrained devices. It enables centralized configuration, remote firmware updates, and real-time device monitoring.
 
-The current version of the ThingsBoard platform supports integration with next Efento NB-IoT sensors: 
+To configure an **LwM2M device profile**, specify the following parameters:
+- **Define the objects** you want to observe or interact with
+- **Set the observe strategy** to determine how the platform monitors object changes
+- **Configure how ThingsBoard processes LwM2M object data**, including telemetry, attributes, and key parameters
 
- - temperature,
- - humidity,
- - air pressure,
- - differential pressure,
- - open / close,
- - leakage,
- - I/O. 
- 
-Requires Efento devices with FW version: 06.02+. 
+Learn more about configuring the LwM2M transport at [this link](/docs/{{docsPrefix}}reference/lwm2m-api/){:target="_blank"}.
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-pe.png)
-{% endif %}
+{% include images-gallery.html imageCollection="lwm2m-transport-type" %}
 
-## Alarm Rules
+### SNMP transport type
 
-Platform users can use Rule Engine to configure alarms. Rule Engine is a quite powerful feature, but it requires some programming skills.
-Since ThingsBoard 3.2, we have introduced Alarm Rules to simplify the process of configuring the most popular alarm types.
-Now you don't need to be the Rule Engine guru to configure your processing logic. 
-Under the hood, Rule Engine evaluates Alarm Rules using the "Device Profile" rule node.
+**SNMP** is a widely used protocol for managing network devices such as routers, switches, and servers. It enables the collection and analysis of device status and performance data.
 
+To configure an **SNMP device profile**, specify the following parameters:
+- **Request timeout** — how long (in milliseconds) the system waits before retrying or marking the request as failed
+- **Retry count** — how many times the system will attempt the request before giving up
+- **Communication configuration** — define how the device communicates with ThingsBoard over SNMP
 
-Alarm Rule consists of the following properties:
+Learn more about configuring the SNMP transport at [this link](/docs/{{docsPrefix}}reference/snmp-api/){:target="_blank"}.
 
- * **Alarm Type** - a type of Alarm. Alarm type must be unique within the device profile alarm rules;
- * **Create Conditions** - defines the criteria when the Alarm will be created/updated. The condition consists of the following properties:
-   * Severity - will be used to create/update an alarm. ThingsBoard verifies Create Conditions in the descending order of the severity. For example, if a condition with Critical severity is true, the platform will raise alarm with Critical severity, and "Major", "Minor" or "Warning" conditions will not be evaluated. Severity must be unique per alarm rule (e.g., two conditions created within the same alarm rule can't have the same severity);        
-   * Key Filters - list of logical expressions against attributes or telemetry values. For example, *"(temperature < 0 OR temperature > 20) AND softwareVersion = '2.5.5'"*;
-   * Condition Type - either simple, duration, or repeating. For example, *3 times in a row* or *during 5 minutes*. The simple condition will raise an alarm once the first matching event occurrs;
-   * Schedule - defines the time interval during which the rule is active. Either "active all the time", "active at specific time" or "custom";
-   * Details - the alarm details template supports substitution of the telemetry and/or attribute values using ${attributeName} syntax;
- * **Clear condition** - defines criteria when the Alarm will be cleared;
- * **Advanced settings** - defines alarm propagation to related assets, customers, tenant, or other entities.    
+{% include images-gallery.html imageCollection="snmp-transport-type" %}
 
-Let's learn how to use the Alarm Rules with an example. Let's assume we would like to keep track of the temperature inside of the fridge with valuable goods.  
-We also assume that we have already created a device profile called "Temperature Sensors", and provisioned our device with a temperature sensor and an access token. Using the command as in the example below, you can upload the temperature readings.
+## Alarm rules
 
-{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
-```bash
-mosquitto_pub -d -h '$THINGSBOARD_HOST_NAME' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
-```
-{: .copy-code}
-Where:
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
-- **$ACCESS_TOKEN** - device access token.
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-```bash
-mosquitto_pub -d -h '{{mqttHostName}}' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
-```
-{: .copy-code}
-Where **$ACCESS_TOKEN** is your device access token.
-{% endif %}
+**Alarm rules** in ThingsBoard define the conditions under which alarms are created, updated, or cleared. 
+They are a key component of automation that enables efficient real-time monitoring of device states and data.
 
-### Example 1. Simple alarm conditions 
- 
+Alarm rules are configured in device profiles, allowing centralized control over alarm logic for entire groups of similar device types.
+
+**Alarm Rule Structure includes:**
+- **Alarm type** — a unique identifier for the alarm within the device profile.
+- **Advanced settings** — optional configuration for alarm propagation to related entities such as assets, customers, tenants, or other entities.
+- **Alarm creation condition** — define when an alarm is created or updated. This section includes:
+  - **Severity** — the level of criticality assigned to the alarm. ThingsBoard evaluates alarm conditions in descending order of severity.
+  For example, if the condition with Critical severity is true, the alarm is raised as Critical, and lower-severity conditions (e.g., Major, Minor, or Warning) are not evaluated.
+  Each severity level must be unique within a single alarm rule.
+  - **Alarm rule condition**:
+    - **Key filters** — a list of logical expressions based on device attributes or telemetry data.   
+    Example: (temperature < 0 OR temperature > 20) AND softwareVersion = '2.5.5' 
+    - **Condition type** — defines how the condition is triggered:
+      - **Simple** — the alarm is raised as soon as a matching event occurs. 
+      - **Duration** — the condition must be continuously true for a specific period (e.g., 5 minutes). 
+      - **Repeating** — the condition must occur repeatedly (e.g., 3 times in a row).
+    - **Schedule** — defines the time range during which the rule is active:
+      - **Active all the time**
+      - **Active at a specific times**
+      - **Custom**
+  - **Additional info** — an optional alarm details template that supports dynamic substitution of telemetry or attribute values using ${attributeName} syntax.
+- **Alarm clear condition** — specifies the criteria for clearing or deactivating the alarm.
+
+### Alarm rule configurations
+
+Let&#39;s explore some alarm rule configurations to better understand how it works.
+
+#### Simple alarm condition
+
+Imagine you want to monitor the temperature inside a fridge storing valuable goods.
+
+We&#39;ll assume you already have a device called "Thermometer", which uses a **device profile named "Thermostats"**.
+
 We would like to create a **Critical** alarm when the temperature is greater than 10 degrees.
 
-{% include images-gallery.html imageCollection="alarmСonditions" showListImageTitles="true" %} 
+{% include images-gallery.html imageCollection="simple-alarm-condition" showListImageTitles="true" %} 
 
-### Example 2. Alarm condition with a duration
+#### Alarm condition with a duration
 
-Let's assume that we would like to modify Example 1 and raise alarms only if the temperature exceeds a certain threshold for 1 minute. 
+Let&#39;s assume that we would like to modify [simple alarm condition](#simple-alarm-condition) and raise alarms only if the temperature exceeds a certain threshold for 1 minute. 
 
 For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Duration". We should also specify the duration value and unit.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithDuration" showListImageTitles="true" %}
 
-Now let’s assume you would like to replace the 1 minute duration with a dynamic value that depends on the settings for a particular device, customer or tenant. 
+Now let&#39;s assume you would like to replace the 1 minute duration with a dynamic value that depends on the settings for a particular device, customer or tenant. 
 
 For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
@@ -304,37 +280,37 @@ Please create a server-side attribute *“highTemperatureDurationThreshold”* w
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
 
-### Example 3. Repeating alarm condition
+#### Repeating alarm condition
 
-Let's assume we would like to modify Example 1 and raise alarms only if the sensor reports a temperature that exceeds the threshold 3 times in a row.
+Let&#39;s assume we would like to modify [simple alarm condition](#simple-alarm-condition) and raise alarms only if the sensor reports a temperature that exceeds the threshold 3 times in a row.
 
-For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify "3" as 'Count of events'.
+For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify "3" as &#39;Count of events&#39;.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %}
 
-Now let’s assume you would like to replace the set number of times the alarm condition is exceeded with a dynamic value that depends on the settings for a particular device, customer or tenant. 
+Now let&#39;s assume you would like to replace the set number of times the alarm condition is exceeded with a dynamic value that depends on the settings for a particular device, customer or tenant. 
 
 For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“3”* for your device.
+Please create a server-side attribute *"highTemperatureRepeatingThreshold"*, with the integer value *"3"* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
 
-### Example 4. Clear alarm rule
+#### Clear alarm rule
 
-Let's assume we would like to automatically clear the alarm if the temperature in the fridge goes back to normal.
+Let&#39;s assume we would like to automatically clear the alarm if the temperature in the fridge goes back to normal.
 
 {% include images-gallery.html imageCollection="alarmСonditionsClear" showListImageTitles="true" %}
 
-### Example 5. Define alarm rule schedule
+#### Define alarm rule schedule
 
-Let's assume we would like an alarm rule to evaluate alarms only during working hours.
+Let&#39;s assume we would like an alarm rule to evaluate alarms only during working hours.
 
 {% include images-gallery.html imageCollection="alarmСonditionsSchedule" showListImageTitles="true" %}
 
-### Example 6. Advanced thresholds
+#### Advanced thresholds
 
-Let's assume we would like our users to be able to overwrite the thresholds from Dashboard UI. 
+Let&#39;s assume we would like our users to be able to overwrite the thresholds from Dashboard UI. 
 We can also add the flag to enable or disable certain alarms for each device. 
 For this, we will use dynamic values in the alarm rule condition. 
 We will use two attributes: the boolean *temperatureAlarmFlag*, and the numeric *temperatureAlarmThreshold*.
@@ -342,9 +318,9 @@ Our goal is to trigger an alarm creation when "*temperatureAlarmFlag* = True AND
 
 {% include images-gallery.html imageCollection="alarmСonditionsAdvanced" showListImageTitles="true" %}
 
-### Example 7. Dynamic thresholds based on the tenant or customer attributes
+#### Dynamic thresholds based on the tenant or customer attributes
 
-Example 6 demonstrates how to enable or disable rule based on the value of "temperatureAlarmFlag" attribute of the device. 
+[Advanced thresholds](#advanced-thresholds) demonstrates how to enable or disable rule based on the value of "temperatureAlarmFlag" attribute of the device. 
 But what if you would like to enable or disable certain rule for all devices that belong to a tenant or customer?
 To avoid configuration of the attribute for each device, you may configure alarm rule to compare constant value with the value of Tenant or Customer Attribute.
 For this purpose, you should use "Constant" key type and compare it with dynamic value. See configuration example below:
@@ -355,7 +331,7 @@ The technique mentioned above may be used to enable or disable rules or combine 
 
 ### Device profile rule node
 
-Device Profile rule node creates and clears alarms based on the alarm rules defined in the device profile. 
+Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile. 
 By default, this is the first rule node in the chain of processing. 
 The rule node processes all incoming messages and reacts to the attributes and telemetry values.
 
@@ -370,15 +346,15 @@ The rule node processes all incoming messages and reacts to the attributes and t
 There are two important settings in the rule node:
 
 **Persist state of alarm rules** - forces the rule node to store the state of processing. Disabled by default. This setting is useful if you have duration or repeating conditions. 
-Let's assume you have a condition "Temperature is greater than 50 for 1 hour", and the first event with a temperature greater than 50 was reported at 1 pm. 
+Let&#39;s assume you have a condition "Temperature is greater than 50 for 1 hour", and the first event with a temperature greater than 50 was reported at 1 pm. 
 At 2 pm you should receive the alarm (assuming temperature conditions will not change). 
 However, if you will restart the server after 1 pm and before 2 pm, the rule node needs to lookup the state from DB.
-Basically, if you enable this and the 'Fetch state of alarm rules' option, the rule node will be able to raise the alarm. 
+Basically, if you enable this and the &#39;Fetch state of alarm rules&#39; option, the rule node will be able to raise the alarm. 
 If you leave it disabled, the rule node will not generate the alarm.
 We disable this setting by default for performance reasons. If enabled, and if the incoming message matches at least one of the alarm conditions, it will cause additional write operation to persist in the state.
 
 **Fetch state of alarm rules** - forces rule node to restore the state of processing on initialization. Disabled by default. This setting is useful if you have duration or repeating conditions. 
-It should work in tandem with the 'Persist state of alarm rules' option, but on rare occasions, you may want to disable this setting while the 'Persist state of alarm rules' option is enabled.
+It should work in tandem with the &#39;Persist state of alarm rules&#39; option, but on rare occasions, you may want to disable this setting while the &#39;Persist state of alarm rules&#39; option is enabled.
 Assuming you have many devices that send data frequently or constantly, you can avoid loading the state from the DB on initialization. 
 The Rule Node will fetch the state from the database when the first message from a specific device arrives.
 
@@ -392,13 +368,13 @@ The Rule Node will fetch the state from the database when the first message from
 ### Notifications about alarms
 
 Assuming you have configured alarm rules you may also want to receive a notification when ThingsBoard creates or updates the alarm.
-The device profile rule node has three main outbound relation types that you can use: 'Alarm Created', 'Alarm Severity Updated', and 'Alarm Cleared'.
+The device profile rule node has three main outbound relation types that you can use: &#39;Alarm Created&#39;, &#39;Alarm Severity Updated&#39;, and &#39;Alarm Cleared&#39;.
 See the example rule chain below. Please make sure that the system administrator has configured the SMS/email providers before you proceed or configure your own settings in the rule nodes. 
 
 You may also use existing guides: 
-[Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) (Use part which explains 'to email' and 'send email' nodes) 
+[Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) (Use part which explains &#39;to email&#39; and &#39;send email&#39; nodes) 
 or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
-There is also an additional 'Alarm Updated' relation type that should be ignored in most cases to avoid duplicate notifications.
+There is also an additional &#39;Alarm Updated&#39; relation type that should be ignored in most cases to avoid duplicate notifications.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-notifications-ce.png)

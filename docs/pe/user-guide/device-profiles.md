@@ -19,74 +19,131 @@ device-profile-rule-chain:
         image: /images/user-guide/device-profile/device-profile-rule-chain-1-pe.png
         title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
 
+device-profile-transport:
+    0:
+        image: /images/user-guide/device-profile/device-profile-transport-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+default-transport-type:
+    0:
+        image: /images/user-guide/device-profile/default-transport-type-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+mqtt-device-topic-filters:
+    0:
+        image: /images/user-guide/device-profile/mqtt-device-topic-filters-1-pe.png
+
+mqtt-transport-setting-example:
+    0:
+        image: /images/user-guide/device-profile/mqtt-transport-example-1-pe.png
+        title: 'Step 1. Specify custom MQTT device topic filter for the Device profile.'
+    1:
+        image: /images/user-guide/device-profile/mqtt-transport-example-2-pe.png
+        title: 'Step 2. Provide basic MQTT credentials for your device with the client id &#39;c1&#39;, username &#39;t1&#39; and password &#39;secret&#39;.'
+    2:
+        image: /images/user-guide/device-profile/mqtt-transport-example-3-pe.png
+        title: 'Step 3. Use Terminal to publish time-series data.'
+    3:
+        image: /images/user-guide/device-profile/mqtt-transport-example-4-pe.png
+        title: 'Transmitted data will be displayed in the "Latest telemetry" tab of the device.'
+
+mqtt-device-payload:
+    0:
+        image: /images/user-guide/device-profile/mqtt-device-payload-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+    1:
+        image: /images/user-guide/device-profile/mqtt-device-payload-2-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+compatibility-with-other-payload-formats:
+    0:
+        image: /images/user-guide/device-profile/mqtt-device-payload-3-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
 device-profile-queue:
     0:
         image: /images/user-guide/device-profile/device-profile-queue-1-pe.png
         title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
-  
-mqttTransportSettingExample:
+
+coap-default:
     0:
-        image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-1-pe.png
-        title: 'Step 1. Specify custom MQTT device topic filter for the Device profile.'
+        image: /images/user-guide/device-profile/coap-default-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
     1:
-        image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-2-pe.png
-        title: 'Step 2. Provide basic MQTT credentials for your device with the client id ‘c1’, username ‘t1’ and password ‘secret’.'
-    2:
-        image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-3-pe.png
-        title: 'Step 3. Use Terminal to publish time-series data.'
-    3:
-        image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-4-pe.png
-        title: 'Transmitted data will be displayed in the "Latest telemetry" tab of the device.'
+        image: /images/user-guide/device-profile/coap-default-2-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
 
-mqttTransportSettingDefault:
+coap-efento-nb-iot:
     0:
-        image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-1-pe.png
+        image: /images/user-guide/device-profile/coap-efento-nb-iot1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
 
-alarmСonditions:
+power-saving-mode:
+    0:
+        image: /images/user-guide/device-profile/power-saving-mode-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+lwm2m-transport-type:
+    0:
+      image: /images/user-guide/device-profile/lwm2m-transport-type-1-pe.png
+      title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+snmp-transport-type:
+    0:
+        image: /images/user-guide/device-profile/snmp-transport-type-1-pe.png
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+
+simple-alarm-condition:
     0:
         image: /images/user-guide/device-profile/alarm-example-1-step-1-pe.png
-        title: 'Step 1. Open the device profile and toggle edit mode.'
+        title: 'Go to the "Device profiles" page in the "Profiles" section. Click on the desired device profile to open its details.'
     1:
         image: /images/user-guide/device-profile/alarm-example-1-step-2-pe.png
-        title: 'Step 2. Click the "Add alarm rule" button.'
+        title: 'Navigate to the "Alarm rules" tab and click the "pencil" icon to enter edit mode.'
     2:
         image: /images/user-guide/device-profile/alarm-example-1-step-3-pe.png
-        title: 'Step 3. Input Alarm Type and click on the red "+" sign.'
+        title: 'Click "Add alarm rule".'
     3:
         image: /images/user-guide/device-profile/alarm-example-1-step-4-pe.png
-        title: 'Step 4. Click the "Add Key Filter" button.'
+        title: 'Specify the alarm type, select severity, then click the "+" icon to add a new alarm condition.'
     4:
         image: /images/user-guide/device-profile/alarm-example-1-step-5-pe.png
-        title: 'Step 5. Select the "Timeseries" key type. Input the "temperature" key name. Change "Value type" to "Numeric". Click the "Add" button.'
+        title: 'Select the key type, enter the key name, and choose the value type. Then click "Add" in the "Filters" section.'
     5:
         image: /images/user-guide/device-profile/alarm-example-1-step-6-pe.png
-        title: 'Step 6. Select the "greater than" operation and input the threshold value. Click "Add".'
+        title: 'Choose a comparison operator and enter the threshold value. Click "Add" in the bottom-right corner to confirm.'
     6:
         image: /images/user-guide/device-profile/alarm-example-1-step-7-pe.png
-        title: 'Step 7. Click the "Save" button.'
+        title: 'Click "Save".'
     7:
         image: /images/user-guide/device-profile/alarm-example-1-step-8-pe.png
-        title: 'Step 8. Finally, apply changes.'
+        title: 'Finally, save changes.'
 
 alarmСonditionsWithDuration:
     0:
         image: /images/user-guide/device-profile/alarm-example-2-step-1-pe.png
-        title: 'Step 1. Edit the alarm condition and change the condition type to "Duration". Specify duration value and unit. Save the condition.'
+        title: 'Step 1. Edit the alarm condition.'
     1:
         image: /images/user-guide/device-profile/alarm-example-2-step-2-pe.png
-        title: 'Step 2. Apply changes.'
+        title: 'Change the condition type to "Duration". Specify duration value and unit. Save the condition.'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-2-step-3-pe.png
+        title: 'Apply changes.'
 
 alarmСonditionsWithDuration2:
     0:
         image: /images/user-guide/device-profile/alarm-example-2-step-4-pe.png
-        title: 'Step 3. Edit the alarm condition. Go to the dynamic value of the alarm delay by pressing the "Switch to dynamic value" button;'
+        title: 'Edit the alarm condition'
     1:
         image: /images/user-guide/device-profile/alarm-example-2-step-5-pe.png
-        title: 'Step 4. Select a value: current device, current customer or current tenant. And specify the attribute from which the alarm threshold value will be taken.
-        You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes;'
+        title: 'Go to the dynamic value of the alarm delay by pressing the "Switch to dynamic value" button;'
     2:
         image: /images/user-guide/device-profile/alarm-example-2-step-6-pe.png
-        title: 'Step 5. Apply all changes.'
+        title: 'Select a value: current device, current customer or current tenant. And specify the attribute from which the alarm threshold value will be taken.
+        You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes;'
+    3:
+        image: /images/user-guide/device-profile/alarm-example-2-step-7-pe.png
+        title: 'Apply all changes.'
 
 alarmСonditionsWithRepeating:
     0:
