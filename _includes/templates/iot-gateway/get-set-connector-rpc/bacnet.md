@@ -33,7 +33,7 @@ get objectType=analogValue;objectId=1;propertyId=presentValue;
 With the SET method you can write data to the BACnet device.
 
 ```bash
-get objectType=<objectType>;objectId=<objectId>;propertyId=<propertyId>;priority=<priority>;value=<value>;
+set objectType=<objectType>;objectId=<objectId>;propertyId=<propertyId>;priority=<priority>;value=<value>;
 ```
 
 Where:
