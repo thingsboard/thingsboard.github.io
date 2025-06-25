@@ -4,6 +4,7 @@ title: SCADA Energy management
 description: Energy management solution with ThingsBoard IoT platform
 notitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -22,7 +23,7 @@ includeAdvantages: "true"
         </div>
         <div class="long">
             <p>The ability to collect, analyze, and visualize data from multiple energy sources helps operators make informed decisions and respond swiftly to changing conditions. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-            <p>With ThingsBoard, you can monitor the performance of all energy sources and consumption points in real time, identify inefficiencies, forecast demand peaks, and respond to anomalies instantly. All of this is showcased in our SCADA Energy solution, demonstrating how easily and effectively energy systems can be managed using ThingsBoard.</p>
+            <p>With ThingsBoard, you can monitor the performance of all energy sources and consumption points in real time, identify inefficiencies, forecast demand peaks, and respond to anomalies instantly. All of this is showcased in our <a href="/docs/pe/solution-templates/scada-energy-management/">SCADA Energy solution</a>, demonstrating how easily and effectively energy systems can be managed using ThingsBoard.</p>
         </div>
     </div>
 </section>
@@ -31,7 +32,9 @@ includeAdvantages: "true"
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'scada-energy-management' %}
 </section>
 
-<section class="scada-solution-structure">
+{% include contact-us-banner.liquid %}
+
+<section class="scada-solution-structure addedBanner">
     <h2>Solution structure</h2>
     <div class="scheme">
         <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/scada-energy-management/scada-energy-management-structure.svg"  alt="SCADA oil and gas drilling solution structure">
@@ -402,7 +405,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_ScadaEnergy_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/2430dc20-3172-11f0-858a-67efd1bc8a87?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
-                <a id="UseCases_ScadaEnergy_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_ScadaEnergy_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

@@ -4,6 +4,7 @@ title: SCADA Oil and gas drilling system
 description: Drilling system solution with ThingsBoard IoT platform
 notitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -22,7 +23,7 @@ includeAdvantages: "true"
         </div>
         <div class="long">
             <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the drilling management system template. This solution demonstrates how SCADA symbols—such as drilling rigs, rotors, hoists, pumps, and preventers—can be utilized to create an efficient and automated drilling control system. It enables the entire drilling process to be visualized on a dashboard, allowing for real-time monitoring of drilling parameters, equipment performance, and safety conditions, ensuring timely detection of anomalies and improved operational efficiency.</p>
+            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the <a href="/docs/pe/solution-templates/scada-drilling-system/">drilling management system template</a>. This solution demonstrates how SCADA symbols—such as drilling rigs, rotors, hoists, pumps, and preventers—can be utilized to create an efficient and automated drilling control system. It enables the entire drilling process to be visualized on a dashboard, allowing for real-time monitoring of drilling parameters, equipment performance, and safety conditions, ensuring timely detection of anomalies and improved operational efficiency.</p>
         </div>
     </div>
 </section>
@@ -31,7 +32,9 @@ includeAdvantages: "true"
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'scada-oil-and-gas-drilling-system' %}
 </section>
 
-<section class="scada-solution-structure">
+{% include contact-us-banner.liquid %}
+
+<section class="scada-solution-structure addedBanner">
     <h2>Solution structure</h2>
     <div class="scheme">
         <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/scada-drilling-system/scada-drilling-solution-structure.svg"  alt="SCADA oil and gas drilling solution structure">
@@ -404,7 +407,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_ScadaDrilling_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/febfdb90-3170-11f0-858a-67efd1bc8a87?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
-                <a id="UseCases_ScadaDrilling_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_ScadaDrilling_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

@@ -114,6 +114,7 @@ description: Discover how Schwarz Group, operating over 13,000 stores globally, 
             <p>This collaboration goes beyond just fixing technical issues—it represents a step towards the future of retail, where smart, flexible, and secure IoT solutions play a key role. With ThingsBoard, the Schwarz Group has created a more connected, efficient, and technology-driven shopping experience, setting new standards for innovation and digital transformation in the retail industry.</p>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps retail businesses improve operations with IoT?</h2>
         <div class="block">

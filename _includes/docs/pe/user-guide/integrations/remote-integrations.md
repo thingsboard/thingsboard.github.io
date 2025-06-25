@@ -79,7 +79,7 @@ Please use one of the next steps.
 
 {% capture contenttogglespec %}
 HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Stack Community)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
 AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-docker.md%br%
 Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-docker.md%br%
 OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-docker.md%br%

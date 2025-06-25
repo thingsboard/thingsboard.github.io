@@ -88,9 +88,10 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
             <img src="https://img.thingsboard.io/case-studies/custom-development.webp" title="Custom development that delivers real value" alt="Custom development that delivers real value" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="https://img.thingsboard.io/case-studies/asg-engineer.webp" title="Road sign" alt="Road sign" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps the IoT solutions field improve operations?</h2>
         <div class="block">

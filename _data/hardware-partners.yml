@@ -1,6 +1,21 @@
 - type:
     - LoRaWAN
     - Wi-Fi
+    - LTE-M
+    - MQTT
+    - Modbus
+  name: ACE AUTOMATION
+  logo: https://img.thingsboard.io/partners/ace-automation-logo.png
+  site:
+    href: https://aceautomation.eu/
+  links:
+    0:
+      label: Connect ACE MQTT 4G GPS Gateway to ThingsBoard
+      href: https://thingsboard.io/docs/devices-library/ace-iot-gateway-and-siemens-logo/
+  description: ACE Automation Europe designs compact PLCs, touchscreen HMIs, and LTE/4G MQTT gateways. The “Nano ACE” series stands out for its ultra-low power consumption, compact form factor, and PCB-mount version. Our HMIs are powerful, affordable, and easy to use. The LTE/4G multi-operator gateway is ideal for remote IoT monitoring and control via MQTT.
+- type:
+    - LoRaWAN
+    - Wi-Fi
   name: Atomsenses
   logo: https://img.thingsboard.io/partners/atomsenses-logo.png
   site:

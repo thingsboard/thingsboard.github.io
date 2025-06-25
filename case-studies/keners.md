@@ -80,9 +80,10 @@ description: Discover how Keners boosted agricultural efficiency using ThingsBoa
             <img src="https://img.thingsboard.io/case-studies/agriculture_green.webp" title="Scaling AgriTech with stability and support" alt="Scaling AgriTech with stability and support" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="https://img.thingsboard.io/case-studies/field.webp" title="Irrigated Field" alt="Irrigated Field" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps agriculture improve operations with IoT?</h2>
         <div class="block">

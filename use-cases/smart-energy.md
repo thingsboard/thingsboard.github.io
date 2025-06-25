@@ -5,6 +5,7 @@ description: The Smart Energy solution based on ThingsBoard IoT platform enables
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -37,6 +38,8 @@ includeAdvantages: "true"
         </div>
     </div>
 </section>
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-energy-solution-structure">
     <h2>Solution structure of smart energy use case</h2>
@@ -323,7 +326,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_SmartEnergy_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>
-                <a id="UseCases_SmartEnergy_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_SmartEnergy_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

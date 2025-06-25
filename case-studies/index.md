@@ -4,6 +4,10 @@ title: IoT Case Studies | How Businesses Succeed with ThingsBoard
 notitle: "true"
 customTitle: "true"
 description: Discover how companies in retail, energy, logistics, and more drive digital transformation with ThingsBoard's IoT platform to boost efficiency, growth, and innovation.
+formSubject: "General Feedback"
+modalTitle: "Tell us about your success"
+modalDescription: "Get your brand featured across our global channels — website, social media, and community."
+
 ---
 
 <div class="case-studies-wrapper">
