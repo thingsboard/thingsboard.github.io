@@ -394,9 +394,9 @@ There are 3 variants for this section: memory or file.
 3. **SQLite** storage - Received data saving to the .db files.
 
 {% capture storagetogglespec %}
-Memory storage<br> <small>(recommended if there is not enough disk space)</small>%,%memory%,%templates/iot-gateway/storage-memory-config.md%br%
-File storage<br> <small>(recommended for persistence)</small>%,%file%,%templates/iot-gateway/storage-file-config.md%br%
-SQLite storage<br> <small>(recommended for persistence)</small>%,%sqlite%,%templates/iot-gateway/sqlite-storage-config.md{% endcapture %}
+Memory storage<br> <small>(use for development or low-volume data when disk space is limited)</small>%,%memory%,%templates/iot-gateway/storage-memory-config.md%br%
+SQLite storage<br> <small>(high-performance on-disk persistence — recommended for most production setups)</small>%,%sqlite%,%templates/iot-gateway/sqlite-storage-config.md%br%
+File storage<br> <small>(simple on-disk persistence — good for small/medium workloads)</small>%,%file%,%templates/iot-gateway/storage-file-config.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
 
