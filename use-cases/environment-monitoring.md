@@ -5,6 +5,7 @@ description: Discover scalable and secure IoT environment monitoring solutions w
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -22,7 +23,7 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="long">
-            <p>ThingsBoard provides a scalable, reliable, and secure platform for environment monitoring. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
+            <p>ThingsBoard provides a scalable, reliable, and secure platform for <a href="/docs/pe/solution-templates/temperature-humidity-sensors/">environment monitoring</a>. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
             <p>Automated features—from real-time alerts on critical changes to forwarding data into external analytics tools—ensure proactive monitoring. Intuitive dashboards, customizable logic, and seamless integrations turn raw environmental data into actionable insights, enabling smarter and faster decisions.</p>        </div>
     </div>
 </section>
@@ -30,6 +31,8 @@ includeAdvantages: "true"
 <section class="environment-monitoring-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="environment-monitoring-solution-structure">
     <h2>Solution structure of environment monitoring</h2>
@@ -270,7 +273,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

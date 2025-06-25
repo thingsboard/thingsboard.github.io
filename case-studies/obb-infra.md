@@ -12,15 +12,15 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
             <div class="text">
                 <p class="category">SMART INFRASTRUCTURE</p>
                 <h1>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG</h1>
-                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/obb.webp')">
-                    <img src="https://img.thingsboard.io/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo" width="91" height="56">
+                <div class="image inner" style="background-image: url('/images/case-studies/obb.webp')">
+                    <img src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo" width="91" height="56">
                 </div>
                 <p>As Austria's pioneer rail transport provider, ÖBB-Infrastruktur AG is responsible for planning, developing, maintaining, and operating Austria's rail infrastructure. The company is committed to setting high standards for punctuality, safety, cleanliness, and open access to the rail system.</p>
                 <p>With innovation and sustainability in mind, ÖBB-Infrastruktur AG ensures that millions of passengers travel comfortably and enables efficient transportation of goods across Austria and beyond. The goal is simple: make every journey a good experience, create welcoming stations, and contribute to the country’s progress with every project.</p>
                 <p>The main challenge in the upcoming years is going to be the rising demand in railway traffic, increased density in our timetables, thus less time-windows for maintenance work which require the track closings. Those challenges can only be encountered with better planning, and more cooperation between business units based on data in our railway digital twin.</p>
             </div>
-            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/obb.webp')">
-                <img src="https://img.thingsboard.io/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo" width="91" height="56">
+            <div class="image large" style="background-image: url('/images/case-studies/obb.webp')">
+                <img src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo" width="91" height="56">
             </div>
         </div>
     </section>
@@ -45,7 +45,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
         </div>
     </section>
     <section class="authored-quote">
-        <img src="https://img.thingsboard.io/case-studies/Dominic_Winkler.webp" title="ÖBB-Infrastruktur AG IT Enterprise Architect Dominic Winkler" alt="Dominic Winkler" width="1316" height="848">
+        <img src="/images/case-studies/Dominic_Winkler.webp" title="ÖBB-Infrastruktur AG IT Enterprise Architect Dominic Winkler" alt="Dominic Winkler" width="1316" height="848">
         <div class="text">
             <h2>ÖBB-Infrastruktur AG</h2>
             <p class="quote">“Thingsboard Edge gives us the invaluable ability to allow data to flow within our IT network without the need to bridge Firewalls and Public Internet.”</p>
@@ -109,7 +109,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                     <li><p>Assessing current asset conditions ("What now?") and forecasting future developments ("What next?") based on data processed in the Digital Twin.</p></li>
                 </ul>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/digital-twin.webp" title="Digital Twin initiative" alt="Laptop" width="900" height="480">
+            <img src="/images/case-studies/digital-twin.webp" title="Digital Twin initiative" alt="Laptop" width="900" height="480">
         </div>
         <div class="block">
             <div class="text">
@@ -122,12 +122,13 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 </ul>
                 <p>This architecture not only enhances data security and availability but also supports real-time monitoring and predictive maintenance as part of ÖBB's Digital Twin initiative.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/secure-resilient.webp" title="Secure and resilient data flow for ÖBB-Infrastruktur AG" alt="Server" width="900" height="480">
+            <img src="/images/case-studies/secure-resilient.webp" title="Secure and resilient data flow for ÖBB-Infrastruktur AG" alt="Server" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
-        <img src="https://img.thingsboard.io/case-studies/railway.webp" title="Railways" alt="Railways" width="1920" height="946">
+    <section class="full-width-img bannerMargin">
+        <img src="/images/case-studies/railway.webp" title="Railways" alt="Railways" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard Edge helps smart rail infrastructure management improve operations with IoT?</h2>
         <div class="block">
@@ -136,8 +137,8 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 <p>ThingsBoard Edge can play a crucial role in smart railway infrastructure management. Due to specifics of edge computing, the data remains within the network, enhancing security by eliminating the need to expose internal systems to the public internet. By caching IoT data locally until a successful connection with the ThingsBoard PE instance, ThingsBoard Edge ensures both data integrity and operational continuity.</p>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/status-widget.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="/images/case-studies/status-widget.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
+                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -146,8 +147,8 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 <p>The platform offers real-time data and time-series records allowing organizations to evaluate asset current conditions, anticipate future issues, and test different operational scenarios proactively. This capability is essential for informed decision-making and enhancing the safety, efficiency, and sustainability of railway operations.</p>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
+                <img src="/images/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
+                <img src="/images/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -156,8 +157,8 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 <p>Additionally, by analyzing collected sensor data from railway assets, ThingsBoard Edge enables support for the predictive maintenance strategies, helping to reduce unplanned downtime and improve the overall efficiency of operations.</p>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/value-card.webp" title="Thingsboard value card widget" alt="Thingsboard value card widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/entities-table-4.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="/images/case-studies/value-card.webp" title="Thingsboard value card widget" alt="Thingsboard value card widget" width="776" height="776">
+                <img src="/images/case-studies/entities-table-4.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -166,17 +167,17 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 <p>The ThingsBoard PE instance provides a centralized user interface in the cloud, offering customizable dashboards that enable stakeholders to visualize IoT data relevant to their specific use cases. This unified visualization capability helps improve train scheduling, capacity management, and asset utilization, directly contributing to optimized railway operations.</p>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
+                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="https://img.thingsboard.io/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo" width="91" height="56">
+                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo" width="91" height="56">
                 </div>
             </div>
         </div>

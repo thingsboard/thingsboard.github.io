@@ -33,14 +33,18 @@ get objectType=analogValue;objectId=1;propertyId=presentValue;
 With the SET method you can write data to the BACnet device.
 
 ```bash
-get objectType=<objectType>;objectId=<objectId>;propertyId=<propertyId>;value=<value>;
+set objectType=<objectType>;objectId=<objectId>;propertyId=<propertyId>;priority=<priority>;value=<value>;
 ```
 
 Where:
 - `<objectType>` - the type of the object to read;
 - `<objectId>` - the ID of the object to read;
 - `<propertyId>` - the ID of the property to read;
-- `<value>` - the value to write.
+- `<priority>` - the priority of the value to write (optional);
+- `<value>` - the value to write (optional, should be an integer from 1 to 16).
+
+If value is none, BACnet connector will send relinquish command with Null value.
+Also, SET RPC should contain value or priority, or both.
 
 For example, in our case, we know that we can set the value of the room light level to the BACnet device.
 To set the value of the room light level, run the following query:

@@ -131,6 +131,7 @@ description: Discover how Super Bock Group optimized beer tank monitoring and lo
             <h2>Super Bock Group</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps industry 4.0 improve operations with IoT?</h2>
         <div class="block triple-img">
