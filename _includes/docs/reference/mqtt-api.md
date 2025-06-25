@@ -301,6 +301,47 @@ Result:
 {"client":{"attribute1":"value1","attribute2":true}}
 ```
 
+##### Request all client and shared attributes
+
+In order to request all client attributes and all shared attributes, replace a payload in example below to an object with the "`clientKeys`", "`sharedKeys`" set to an empty string.
+
+```json
+{"clientKeys": "", "sharedKeys": ""}
+```
+Result:  
+
+```json
+{"client":{"attribute2":true,"attribute1":"value1"},"shared":{"shared1":"value1"}}
+```
+
+##### Request all client attributes
+
+In order to request all client attributes, replace a payload in example below to an object with the "`clientKeys`" set to an empty string.  
+
+```json
+{"clientKeys": ""}
+```
+
+Result:  
+
+```json
+{"client":{"attribute2":true,"attribute1":"value1"}}
+```
+
+##### Request all shared attributes
+In order to request all shared attributes, replace a payload in example below to an object with the "`sharedKeys`" set to an empty string.  
+
+```json
+{"sharedKeys": ""}
+```
+
+Result:  
+
+```json
+{"shared":{"shared1":"value1"}}
+```
+
+
 {% capture difference %}
 **Please note**, the intersection of client-side and shared device attribute keys is a bad practice! 
 However, it is still possible to have same keys for client, shared or even server-side attributes.
