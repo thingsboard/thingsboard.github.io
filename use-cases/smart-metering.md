@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -157,11 +157,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-metering/utilities-1.svg" alt="House and coins" title="Municipal utilities"></div>
-            <div class="application-image"><img src="/images/usecases/smart-metering/complex-1.svg" alt="Buildings" title="Residential complexes"></div>
-            <div class="application-image"><img src="/images/usecases/smart-metering/facilities-1.svg" alt="Buildings" title="Commercial facilities"></div>
-            <div class="application-image"><img src="/images/usecases/smart-metering/industrial-1.svg" alt="Industry" title="Industrial plants"></div>
-            <div class="application-image"><img src="/images/usecases/smart-metering/institutions-1.svg" alt="Education" title="Educational institutions"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-metering/utilities-1.svg" alt="House and coins" title="Municipal utilities"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-metering/complex-1.svg" alt="Buildings" title="Residential complexes"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-metering/facilities-1.svg" alt="Buildings" title="Commercial facilities"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-metering/industrial-1.svg" alt="Industry" title="Industrial plants"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-metering/institutions-1.svg" alt="Education" title="Educational institutions"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -176,7 +176,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-metering/utilities-2.svg" alt="House and coins" title="Municipal utilities"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-metering/utilities-2.svg" alt="House and coins" title="Municipal utilities"></div>
             <div class="text-block">
                 <h3>Municipal utilities</h3>
                 <p>Optimize city-wide water and energy management to support sustainable urban development.</p>
@@ -187,10 +187,10 @@ contactUsModal: "true"
                 <h3>Residential complexes</h3>
                 <p>Enable landlords and tenants to monitor and reduce energy bills through transparent usage tracking.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-metering/complex-2.svg" alt="Buildings" title="Residential complexes"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-metering/complex-2.svg" alt="Buildings" title="Residential complexes"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-metering/facilities-2.svg" alt="Buildings" title="Commercial facilities"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-metering/facilities-2.svg" alt="Buildings" title="Commercial facilities"></div>
             <div class="text-block">
                 <h3>Commercial facilities</h3>
                 <p>Ensure operational efficiency and compliance with green building standards by tracking real-time resource use.</p>
@@ -201,10 +201,10 @@ contactUsModal: "true"
                 <h3>Industrial plants</h3>
                 <p>Gain insights into high-consumption areas, detect leaks or overuse early, and prevent costly downtime.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-metering/industrial-2.svg" alt="Industry" title="Industrial plants"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-metering/industrial-2.svg" alt="Industry" title="Industrial plants"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-metering/institutions-2.svg" alt="Education" title="Educational institutions"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-metering/institutions-2.svg" alt="Education" title="Educational institutions"></div>
             <div class="text-block">
                 <h3>Educational institutions</h3>
                 <p>Empower facility managers to improve campus energy efficiency and promote eco-friendly behavior.</p>
@@ -219,7 +219,7 @@ contactUsModal: "true"
         <p>IoT smart metering with ThingsBoard provides a scalable, flexible way to monitor utilities. Through sensor integration and protocol support, data is collected and visualized across districts, buildings, and apartments. ThingsBoard enables tracking of energy use, alarms, and temperature trends—helping users make timely decisions and meet sustainability goals across industries. With ThingsBoard, organizations can build future-ready smart metering systems that scale, adapt, and drive sustainable impact.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -326,13 +326,13 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-metering/smart-metering-1.webp'/>",
-                "<img src='/images/usecases/smart-metering/smart-metering-2.webp'/>",
-                "<img src='/images/usecases/smart-metering/smart-metering-3.webp'/>",
-                "<img src='/images/usecases/smart-metering/smart-metering-4.webp'/>",
-                "<img src='/images/usecases/smart-metering/smart-metering-5.webp'/>",
-                "<img src='/images/usecases/smart-metering/smart-metering-6.webp'/>",
-                "<img src='/images/usecases/smart-metering/smart-metering-7.webp'/>"
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-1.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-2.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-3.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-4.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-5.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-6.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-metering/smart-metering-7.webp'/>"
             ];
             return images[index];
         }

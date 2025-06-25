@@ -5,7 +5,7 @@
     - MQTT
     - Modbus
   name: ACE AUTOMATION
-  logo: /images/partners/ace-automation-logo.png
+  logo: https://img.thingsboard.io/partners/ace-automation-logo.png
   site:
     href: https://aceautomation.eu/
   links:
