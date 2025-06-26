@@ -10,7 +10,7 @@ This feature is particularly useful for optimizing data processing, improving an
 
 <br><b><font size="4">Key benefits</font></b>
 
-- **No additional rule chains needed**: simplifies data transformations without requiring complex rule configurations. 
+- **No additional logic in rule chains**: simplifies telemetry calculations without the need for complex rule chain configurations. 
 - **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}, [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}, or [calculated fields](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#calculated-fields-node){:target="_blank"} rule nodes, ensuring up-to-date insights.
 - **Optimized performance**: reduces database queries by performing computations as data is received, improving system efficiency. 
 - **Cross-entity data merging**: calculate new values by combining data from multiple sources (devices, assets, etc.).
@@ -106,6 +106,7 @@ In the "Expression" section, enter the mathematical expression for the calculati
 #### Output
 
 The result of the calculation can be saved either as a [time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} or as an [attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.
+> See [how calculated field output is processed](#calculated-field-output-processing) for details on rule engine behavior and data persistence.
 
 In the "Output" section: 
 - Specify the variable type: **Time series** or **Attribute**, along with the **attribute scope**.
@@ -175,6 +176,8 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 
 #### Output
 
+> See [how calculated field output is processed](#calculated-field-output-processing) for details on rule engine behavior and data persistence.
+
 The calculated values are returned as a JSON object containing **keys** that represent the computed results, which are then used to store those values in the system.
 
 - Specify the **Output type** for storing the calculation result:
@@ -196,6 +199,13 @@ Let&#39;s check the debug events by clicking the "Events" icon button. The debug
 > Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
 
 {% include images-gallery.html imageCollection="calculated-field-debug-events-2" %}
+
+## How calculated field output is processed {#calculated-field-output-processing}
+
+> **IMPORTANT**: When a calculated field produces an output, a new internal message — either `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`, depending on the output type — is created and pushed to the **Default Rule Chain** assigned to the target entity.  
+This means the output **does not bypass the rule engine**: it behaves like any other telemetry or attribute update.
+To ensure that the result is actually stored in the database, your rule chain **must include** a [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) or [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node) nodes.
+If these nodes are missing, the result **will not be saved** and will not appear in dashboards, widgets, or API responses.
 
 ## Data reprocessing
 
