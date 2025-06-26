@@ -103,37 +103,37 @@ supported.
 
 ```json
 "topicFilter": "sensor/+/data",
-"subscriptionQos": 1,
-"converter": {
-"type": "json",
-"deviceInfo": {
-"deviceNameExpressionSource": "topic",
-"deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
-"deviceProfileExpressionSource": "constant",
-"deviceProfileExpression": "Thermometer"
-},
-"sendDataOnlyOnChange": false,
-"timeout": 60000,
-"attributes": [
-{
-"type": "string",
-"key": "model",
-"value": "${sensorModel}"
-}
-],
-"timeseries": [
-{
-"type": "double",
-"key": "temperature",
-"value": "${temp}"
-},
-{
-"type": "string",
-"key": "humidity",
-"value": "${hum}"
-}
-]
-}
+  "subscriptionQos": 1,
+  "converter": {
+    "type": "json",
+    "deviceInfo": {
+      "deviceNameExpressionSource": "topic",
+      "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
+      "deviceProfileExpressionSource": "constant",
+      "deviceProfileExpression": "Thermometer"
+    },
+    "sendDataOnlyOnChange": false,
+    "timeout": 60000,
+    "attributes": [
+      {
+        "type": "string",
+        "key": "model",
+        "value": "${sensorModel}"
+      }
+    ],
+    "timeseries": [
+      {
+        "type": "double",
+        "key": "temperature",
+        "value": "${temp}"
+      },
+      {
+        "type": "string",
+        "key": "humidity",
+        "value": "${hum}"
+      }
+    ]
+  }
 }
 ```
 
