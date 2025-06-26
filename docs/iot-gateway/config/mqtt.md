@@ -162,6 +162,16 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001
 ![image](/images/gateway/mqtt-message-1.png)
 {: refdef}
 
+To use a configurable format for a timeseries entry, include a datetime string in the field defined by the *tsField* parameter. For example:  
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58, "timestampField":"10.11.24 10:10:10.252"}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-with-timestampField.png)
+{: refdef}
+
 The device will be created and displayed in ThingsBoard based on the passed parameters.
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-created-device-1.png)

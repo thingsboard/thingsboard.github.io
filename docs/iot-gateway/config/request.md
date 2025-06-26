@@ -63,6 +63,11 @@ Then, connector will read data from a list of endpoints using urls from mapping 
             "key": "Maintainer",
             "type": "string",
             "value": "${Developer}"
+          },
+          {
+            "key": "Pressure",
+            "type": "integer",
+            "value": "${press}"
           }
         ]
       }
