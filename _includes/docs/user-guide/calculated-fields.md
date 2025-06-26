@@ -114,10 +114,8 @@ In the "Output" section:
 - Optionally, set **Decimals by default** to define how many decimal places the result should be rounded to. If not specified, the result will not be rounded.
 - To finish adding the calculated field, click "Add".
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 > **[Only for Time series]**<br>
-"**Use latest timestamp**" option — when enabled, the calculated value will be stored using the most recent timestamp from the telemetry arguments instead of the server time.
-{% endif %}
+"**Use latest timestamp**" option — when enabled, the calculated value will be stored using the most recent timestamp from the arguments telemetry instead of the server time.
 
 {% include images-gallery.html imageCollection="output-simple-1" %}
 
@@ -157,16 +155,18 @@ Script calculated fields require the definition of a `calculate(ctx, ...)` funct
 function calculate(ctx, arg1, arg2, ...): object | object[]
 ```
 
-- `ctx`: context object that provides access to all configured arguments.
+- `ctx`: context object that stores `latestTs` and provides access to all configured arguments.
+
   Context structure:
-  `ctx.args`: an object that contains all declared arguments, where each argument can be accessed using `.` notation:
-  - **single value arguments** (attribute or latest telemetry):
-    - `ctx.args.<arg>.ts`: timestamp of the argument.
-    - `ctx.args.<arg>.value`: actual value of the argument.
-  - **time series rolling arguments**:
-    - `ctx.args.<arg>.timeWindow`: object with `startTs` and `endTs` timestamps.
-    - `ctx.args.<arg>.values`: array of `{ ts, value }` records representing timestamped telemetry.
-    - `ctx.args.<arg>.<method>`: call built-in aggregation methods such as `mean()`, `sum()`, `min()`, `max()`, `first()`, `last()`, `merge(...)`, and others.
+  - `ctx.latestTs`: the most recent timestamp (in milliseconds) from the arguments telemetry. Useful for aligning the result with the incoming data time instead of the server time.
+  - `ctx.args`: an object that contains all declared arguments, where each argument can be accessed using `.` notation:
+    - **single value arguments** (attribute or latest telemetry):
+      - `ctx.args.<arg>.ts`: timestamp of the argument.
+      - `ctx.args.<arg>.value`: actual value of the argument.
+    - **time series rolling arguments**:
+      - `ctx.args.<arg>.timeWindow`: object with `startTs` and `endTs` timestamps.
+      - `ctx.args.<arg>.values`: array of `{ ts, value }` records representing timestamped telemetry.
+      - `ctx.args.<arg>.<method>`: call built-in aggregation methods such as `mean()`, `sum()`, `min()`, `max()`, `first()`, `last()`, `merge(...)`, and others.
     > For more details, refer to the [time series rolling argument](#arguments).
 - `arg1, arg2, ...`: direct access to arguments by name as function parameters. This can be useful for cleaner or more concise expressions. These arguments may be:
   - single value arguments (attribute or latest telemetry arguments): telemetry value may be of type boolean, int64 (long), double, string, or JSON.
@@ -184,6 +184,7 @@ The calculated values are returned as a JSON object containing **keys** that rep
   - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: function must return a JSON object or array with or without a timestamp containing the computed value.
   - [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}: function must return a JSON object **without timestamp** information containing the computed value. 
     - Choose the **attribute scope**: **Server attributes**, **Client attributes**, or **Shared attributes**.
+- To align the result with the latest timestamp of the input arguments telemetry, use `ctx.latestTs` and assign it explicitly to the `ts` field in the returned object.
 - To finish adding the calculated field, click "Add".
 
 {% include images-gallery.html imageCollection="output-script-1" %}
@@ -514,7 +515,7 @@ To implement this, follow these steps:
 **Example 2: Fahrenheit to Celsius**
 
 Suppose you have a device that sends indoor temperature data in Fahrenheit.   
-This function converts the temperature value from Fahrenheit to Celsius, rounds the result to two decimal places, and returns it along with the timestamp of the incoming message:
+This function converts the temperature value from Fahrenheit to Celsius, rounds the result to two decimal places, and returns it along with the most recent timestamp:
 
 <br>
 
@@ -522,7 +523,7 @@ This function converts the temperature value from Fahrenheit to Celsius, rounds 
 ```js
 var temperatureC = (temperatureF - 32) / 1.8;
 return {
-    "ts": ctx.args.temperatureF.ts, 
+    "ts": ctx.latestTs, 
     "values": {
         "temperatureC": toFixed(temperatureC, 2)
     }
