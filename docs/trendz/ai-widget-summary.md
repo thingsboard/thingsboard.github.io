@@ -156,7 +156,7 @@ To enable/disable the AI summary button, follow these steps:
 2. Go to **View Settings**.
 3. Go to the **View Mode Fields** section.
 4. Choose the preferred mode to show or hide the AI Summary button.
-5. Save the changes.
+5. Save the changes in view.
 
 Note: button in Trendz application will always be shown (even with checkbox )
 

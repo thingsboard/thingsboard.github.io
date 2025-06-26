@@ -13,6 +13,9 @@
 {% if currentGuide != "Prediction" %}
 - [**Prediction**](/docs/trendz/prediction) - Learn how to make forecasts and predict telemetry behavior.
 {% endif %}
+{% if currentGuide != "AnomalyDetection" %}
+- [**Anomaly Detection**](/docs/trendz/anomaly/overview.md) - Learn how to identify anomalies in the data.
+{% endif %}
 {% if currentGuide != "Filtering" %}
 - [**Filters**](/docs/trendz/data-filtering) - Learn how filter dataset during analysis.
 {% endif %}

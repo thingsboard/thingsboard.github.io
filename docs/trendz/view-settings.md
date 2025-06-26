@@ -1,7 +1,5 @@
 ---
 layout: docwithnav-trendz
-assignees:
-- vparomskiy
 title: View Settings
 description: Trendz View Settings
 ---
@@ -9,161 +7,264 @@ description: Trendz View Settings
 * TOC
 {:toc}
 
-View Settings icon located in the bottom right corner of the View. There are multiple settings there that controls 
-how visualisation created.
+The **View Settings** icon is located in the bottom-right corner of each view. These settings let you control how the
+visualization is displayed and how data behaves in different view types.
 
 ## General Settings
-### Title 
-Set title and title font size for View
-### Hide Legend
-Show or Hide Legend for Views that have it
-### Legend position
-Control where legend located. Possible options:
 
-* top
-* right
-* bottom
-* left
+- **Title** – Text shown at the top of the view
+- **Size** – Title font size (vh units, default: 1)
 
-### Dashed Line
-For line and bar charts you enabled or disable dashed lines.
+Common to most views:
 
-### Stroke Type 
-For line and bar charts can select stroke type that used for drawing lines. Possible options:
+- **Enable filter auto refresh** – Updates filter values in real-time. By default, filters load only when "Build" is clicked
+- **Remove empty series** – Hides entries without telemetry
+- **Hide legend** – Toggle legend display  
+  If shown:
+  - **Legend position** – top, right, bottom, or left
 
-* smooth
-* straight
-* stepline
+- **Show toolbox export** – Adds export options (CSV, XLS, XLSX)  
+  If enabled:
+  - **Show date range and filters** – Include filter context in exported files
+    - **Filter to show in XLS** – Select which filters to include
+  - **Rotate export result** – Flip rows and columns in export
 
-### Horizontal Bar
-For bar charts you can select horizontal or vertical bars.
+### Card View
 
-### Stacked Bar
-Show the composition and comparison of several variables, relative or absolute, over a period of time, appearing as a series of bars stacked on top of each other.
+- **Size Content** – Main content font size (vh units, default: 1)
+- **Show label** – Display field label on the card
+- **Show icon** – Display selected icon on the card
 
-### Show Labels
-Shows values in charts.
+### Table View
 
-### Show timeline
-Add a timeline at the bottom of the chart for quick selection of time periods (zoom).
+- **Sort order** – Enable sorting by column. Click once to enable, again to disable  
+  Options:
+  - **Order way** – Ascending or descending
+  - **Sort column** – Pick a column to sort by
+  - **Select top** – Show top N rows by sort
 
-### Use single Y-axis
+- **Column fit** – Adjust column sizing  
+  Options:
+  - Fit headers – Based on column headers
+  - Fit cells – Based on content
+  - Fit screen – Fill full width
 
-By default each timeseries field in **Y-axis** re-use separate axis. If you show 3 timeseries on chart - you will have 3 different Y-axis.
+- **Show total row** – Adds a summary row with totals for numeric columns
 
-However if measured unit is the same for all fields - you can join them and show on single axis:
+### Bar View
 
-* Open View Settings
-* Select **Enable single axis**
+- **Dashed line** – Make bar outlines dashed
+- **Horizontal bar** – Display bars horizontally
+- **Stacked bar** – Stack values on top of each other  
+  If enabled:
+  - **100% stacked** – Normalize bars to the same height (proportional display)
 
-### Hide X-axis label
-Show or Hide X-axis label for View. It cna be usefull for scenarios where Category located on X-axis and label not required.
+- **Tooltip type** – How tooltip behaves on hover  
+  Options:
+  - axis – Show by X-axis value
+  - item – Show by X-axis and series
+  - none – No tooltip
 
-### X axis position
-X axis can be drawn on top of the chart or bottom. This config useful for big heatmaps with scrolls.
+- **Show labels** – Show values directly on bars
+- **Show timeline** – Add timeline for time selection (useful with date fields)
+- **Use single Y-axis** – Share one scale if values use same units
+  - **Y-axis label** – Label for shared Y-axis
 
-### Remove empty series
-When multiple entities are used for visualization and some of them do have telemetry and others don't it may be useful to 
-remove entities without telemetry from the view (chart/table/heatmap). For making it - enable empty series removing and system will not render them.
+- **Hide Y-axis label** – Remove Y-axis label
+- **Hide X-axis label** – Remove X-axis label  
+  If shown:
+  - **X-axis position** – Choose top or bottom
 
-### Enable filter auto refresh
-Loading the list of elements for the selected filters in real time. By default, the actual list of these elements is loaded during the creation of the view (after pressing the "Build" buttons).
+- **Sort bars** – Enable bar sorting  
+  Options:
+  - **Order way** – Ascending or descending
+  - **Target field** – Pick a field to sort by
+  - **Select top** – Limit to top N bars
 
-### Sort Order
-Define default sorting for Tables.
+- **Manual Y/X axis range** – Set axis boundaries
+  - **Y-axis min / max** – Define vertical limits
+  - **X-axis min / max** – Define range of bars shown
 
-### Manual Y axis range
-Set the MIN and MAX values to display on the Y-axis
+### Line View
 
-### Manual X axis range
-Set the MIN and MAX values to display on the X-axis.
+- **Dashed line** – Use dashed style for line borders
+- **Stroke type** – Controls how data points are connected  
+  Options:
+  - smooth – Curved connections
+  - straight – Angular connections
+  - stepline – 90° stepwise connections (like stairs)
 
-### Show toolbox (export and zoom)
-Displays a toolbox in the upper right corner of the visualization that allows you to export and zoom in on a selection for some types of visualizations
+- **Show labels** – Show values directly on the line
+- **Show timeline** – Add timeline for time selection (useful with date fields)
+- **Use single Y-axis** – Share one scale if values use the same units
+  - **Y-axis label** – Label for shared Y-axis
 
-### Show total row
-Show/Hide Total row for Tables.
+- **Hide Y-axis label** – Remove Y-axis label
+- **Hide X-axis label** – Remove X-axis label  
+  If shown:
+  - **X-axis position** – Choose top or bottom
 
-### Enable Export to CSV
-Show/Hide export to CSV button for Tables
+- **Trend line** – Add a straight line showing the overall trend
 
-### Palette Colors
-If chart contains multiple lines/series system applies different colors for them. By select Palette Color, you can define what colors are used.
+- **Manual Y/X axis range** – Set axis boundaries
+  - **Y-axis min / max** – Define vertical limits
+  - **X-axis min / max** – Define horizontal limits
 
-Note that you can also define specific color for each field individually in field configuration window. 
+### Pie View
 
-## Query params
+- **Show labels** – Show values near each sector  
+  If enabled:
+  - **Show sector name** – Display sector name on label
+  - **Show sector value** – Display sector value on label
+  - **Show sector percent** – Display sector percent on label
 
-### Preview mode
-The ability to load only part of the data from limited set of devices or assets to quickly see how the view will look.
+- **Sort order** – Enable sorting by field. Click once to enable, again to disable  
+  Options:
+  - **Order way** – Ascending or descending
+  - **Target field** – Pick a field to sort by
+  - **Select top** – Show top N values by sort
 
-### Entities Root
+### Scatter Plot View
 
-Let's assume that we have 2 buildings and 2 sensors registered in the ThingsBoard and relations configured among them:
+- **Tooltip type** – How tooltip behaves on hover  
+  Options:
+  - axis – Show values for all items from series with a specific X-axis value
+  - item – Show value for specific item
+  - none – No tooltip
 
-* Building A **Contains** Sensor_1
-* Building B do not have any sensors
-* Sensor_2 do not assigned to any building
+- **Hide Y-axis label** – Remove Y-axis label
+- **Hide X-axis label** – Remove X-axis label  
+  If shown:
+  - **X-axis position** – Choose top or bottom
 
-We want to create a view that shows how many sensors are located in each building. In this case results depends on 
-who is the root for calculation - **Building** or **Sensor**.
+- **Trend line** – Add a straight line showing the overall trend
 
-If **Building** is the root entity - we will see that **Building_A** has 1 sensor and **Building_B** has no sensors  
-If **Sensor** is the root entity - we will see that **Sensor_1** installed in 1 building and **Sensor_2** do not installed in buildings
+- **Manual Y/X axis range** – Set axis boundaries
+  - **Y-axis min / max** – Define vertical limits
+  - **X-axis min / max** – Define horizontal limits
 
-Trendz select Root Entity automatically during view calculation. However you can control what Entity selected as Root for the request:
+### Heat Map
 
-* Open View Settings
-* Select required **Entities Root** for the request
-* Save and rebuild view  
+- **Show labels** – Show values directly on each cell
+- **Hide Y-axis label** – Remove Y-axis label
+- **Hide X-axis label** – Remove X-axis label  
+  If shown:
+  - **X-axis position** – Choose top or bottom
 
+- **Sort order** – Enable sorting by column. Click once to enable, again to disable  
+  Options:
+  - **Order way** – Ascending or descending
+  - **Target field** – Pick a field to sort by
+  - **Select top** – Show top N values from X-axis by sort
 
-### Topology Entities
+### Heat Map Calendar
 
-Trendz create query plan for each view. For making it system collects all fields and entities that are used in the View. 
-Then, using **Topology Graph**, system identified best query plan for this request by finding the shortest path between used Entities.
+- **Range** – How much data will be shown  
+  Options:
+  - full – All data
+  - trim to current day – Data after the current day will not be shown
+  - trim all – Empty months will not be shown (borderless)
 
-For Complex Topology shortest path is not always the best and you modify what entities included in the query plan:
+- **Stretch** – If enabled, heat map calendar will take full view width
 
-* Open View Settings
-* Select required **Topology Entities** that should be included into query plan
-* Save and rebuild view
+### Card With Line
 
-## View Mode fields
+- **Size Content** – Main content font size (vh units, default: 1)
+- **Enable comparison** – If enabled, shows percentage increase/decrease of the last value compared to the first one in the defined time range  
+  If enabled:
+  - **Reverse comparison colors** – If enabled, positive changes are shown in red and negative in green
 
-### Hide filters
-Hide the **filter** field for full-screen view and for display on the dashboard.
+## Query Params
 
-### Hide date picker
-Hide the **date picker** field for full-screen view and for display on the dashboard.
+Let’s say we have 2 buildings and 2 sensors registered in ThingsBoard with the following relationships:
 
-### Hide By Option
-Hide the **by option** field for full-screen view and for display on the dashboard.
+- **Building A** contains **Sensor_1**
+- **Building B** has no sensors
+- **Sensor_2** is not assigned to any building
 
-### GET filter values from url
-The ability to get filtering parameters for the ThingsBoard dashboard using the URL line (query parameters) of the browser.
+We want to create a view showing how many sensors are in each building. The result depends on the **root entity** used for the calculation:
 
-### SET filter values to url
-The ability to set filtering parameters for the ThingsBoard dashboard using the URL line (query parameters) of the browser.
+- If **Building** is the root – Building A shows 1 sensor, Building B shows 0
+- If **Sensor** is the root – Sensor_1 is linked to 1 building, Sensor_2 is unassigned
 
-### Hidden filters
-Hide specific filters when displayed in the ThingsBoard dashboard
+You can control how the query is built using these parameters:
 
-### Row-click entity
-An entity that will be passed on a click on a view element (table row, bar of chart, etc.) to the ThingsBoard alias. This is usually used to change filters of view in other widgets.
-[**More details you can find here**](/docs/trendz/widget-actions/#configure-onrowclick-action)
+- **Preview mode** – Load a limited set of data to preview how the view will look
+  - **Preview item count** – Number of root items to load for preview
+
+- **Entities Root** – Override the default root entity automatically selected by Trendz
+
+- **Topology Entities** – Trendz builds a query plan using the Topology Graph by finding the shortest path between all used entities  
+  For complex graphs, shortest path may not be optimal — you can manually define which entities to include
+
+- **Raw data loading** – Load unaggregated data directly from the ThingsBoard
+
+- **Enable multi-root items loading** – Allows multiple root-level entities to be processed in the same view
+
+## View Mode Fields
+
+These settings apply only when the view is shown in full-screen mode or embedded in a Trendz Widget on the ThingsBoard dashboard. [More details here](/docs/trendz/widget-actions/)
+
+- **Hide filters** – Hide the filter section
+- **Hide date filters** – Hide the date picker
+- **Hide group by** – Hide the group-by dropdown
+- **Hide AI Summary button** – Hide the AI summary option
+- **Get filter values from URL** – Load filter parameters from browser URL query string
+- **Set filter values to URL** – Save selected filter values into the browser URL
+- **Hidden filters** – Hide specific filters
+- **Row click entities** – On clicking a chart or table item, send the selected entity to ThingsBoard alias  
+  (commonly used for triggering filter updates in other widgets)  
+  [Read more here](/docs/trendz/widget-actions/#configure-onrowclick-action)
+
+### Anomalies View
+
+- **Hide anomalies list** – Hide the anomalies list section from the view
+- **Hide anomalies chart** – Hide the anomalies chart section from the view
+
+## AI Assistant
+
+- **Prompt** – Select the AI prompt used when the **AI Summary** button is clicked  
+  Learn more about the AI Summary button [here](/docs/trendz/ai-widget-summary#trendz-widgets)  
+  To create your own prompts, see [this guide](/docs/trendz/ai-assistance-prompts)
 
 ## Colors
 
-### Annotations
-Color Zones on the chart for ranges along the Y axis. [**More details you can find here**](/docs/trendz/visualizations-line/#color-zones) 
+- **Annotations** – Highlight background ranges on the chart to indicate levels  
+  You can add multiple annotations, each with:
+  - **From Y** – Start value on the Y-axis
+  - **To Y** – End value on the Y-axis
+  - **Color** – Background color of the annotation
 
-## Caching
+- **Theme** – Choose the widget theme:
+  - **Default**, **Light**, **Dark**, or **Custom**
+  - If **Custom** is selected:
+    - **Background** – Widget background color
+    - **Text** – Text color
 
-### Cache report
-If the query plan is not changed will be return cached View Report without loading data from ThingsBoard.
-[**More details you can find here**](/docs/trendz/cache-settings/)
+## Cache
 
-### Enable caching
-In cases when data can be grouped by fixed intervals, like Hour or Date, will be load already computed\aggregated field value from cache instead of reloading data from ThingsBoard.
-[**More details you can find here**](/docs/trendz/cache-settings/#metrics-long-term-cache)
+[Read more about caching here](/docs/trendz/cache-settings/)
+
+- **Cache Report** – Use the cached View Report when the query plan and time range haven't changed (default: enabled).
+- **Enable caching** – Enables Metrics Long-Term Cache.
+  - **Caching Time Unit** – Choose data aggregation level.
+  - **Auto Refresh** – Preloads the cache in the background on a schedule:
+    - **Every** – Interval value
+    - **Time Unit** – Time unit (e.g. hour, day)
+
+## Chart Option
+
+You can fine-tune all chart settings using JSON format.
+
+**Left Panel (Editor):**
+- **Merged** – Shows the full chart configuration. You can edit this directly.
+- **Delta** – Displays only your changes (differences) from the default configuration.
+- **Cancel changes** – Clears all unsaved modifications.
+- **Hide data** – Hides actual data values from items. Useful for privacy or when sharing configuration.
+- **Save** – Applies and stores your changes.
+
+**Right Panel (Preview):** Shows a live preview of how your JSON changes affect the chart.
+
+## Next Steps
+
+{% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}
