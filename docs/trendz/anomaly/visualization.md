@@ -50,18 +50,14 @@ To use anomaly fields:
 
 - **Aggregation:** Defines how values are combined across time or entities:
   - For **SCORE**:
-    - Recommended: `MAX`, `LATEST`
-    - Not recommended: `SUM`, `AVG`, `MIN`, `UNIQ`, `COUNT`
+    - Recommended: `MAX`, `LATEST`, `COUNT`
+    - Not recommended: `SUM`, `AVG`, `MIN`, `UNIQ`
   - For **SCORE_INDEX**:
     - Recommended: `COUNT`, `SUM`, `UNIQ`, `LATEST`
     - Acceptable but less sensitive: `AVG`, `MIN`
 
   Use `MAX` for `SCORE` to catch peak anomaly intensity.
-  Use `SUM` or `COUNT` for `SCORE_INDEX` to visualize the full anomaly footprint.
-
-- **Fill Gap:** Fills missing values when grouping by date.
-  - Recommended strategy: `ZERO`
-  - Time unit should match the grouping granularity (e.g., daily, hourly).
+  Use `SUM` for `SCORE_INDEX` to visualize the full anomaly footprint.
 
 - **Label (Anomaly):** field name as shown in the chart legend.
 
@@ -81,7 +77,7 @@ To use:
   - `{Model Name} SCORE INDEX`
 
 - Use **Anomaly Fields** when you need to **count anomalies** or avoid saving them to TB.
-- Use **Business Entity Fields** when anomalies are saved, and you want precise control or cumulative visualization.
+- Use **Business Entity Fields** when anomalies are saved, and you want precise control.
 
 ## Best Practices
 
@@ -93,22 +89,6 @@ Use the following guidance to choose the right tool for visualizing and analyzin
   - Use **Anomaly Fields**.
 - **If you need fine control over which anomalies are saved to ThingsBoard:** 
   - Use **Anomaly Business Entity Fields**.
-
-## Important Note on Score Index Logic
-
-Score Index behaves differently between the two field types:
-
-- **Anomaly Field**:
-  - Flat value across anomaly duration (rectangle shape)
-  - Starts at the anomaly's first timestamp
-  - Only one value per timestamp (no accumulation)
-
-- **Business Entity Field**:
-  - Cumulative over time (triangle shape)
-  - Value increases as anomaly duration increases
-  - Provides more nuanced trend visualization
-
-Choose the right tool based on whether you want a snapshot (Anomaly Field) or growth pattern (Business Entity Field).
 
 ## Next Steps
 
