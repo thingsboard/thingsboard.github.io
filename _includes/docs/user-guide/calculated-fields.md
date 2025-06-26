@@ -74,6 +74,9 @@ Click the "**Add argument**" button and fill in the required fields:
   - Another **Device** or **Asset**: references a different device or asset for data processing.
   - **Customer**: retrieves data from the associated customer entity.
   - **Current tenant**: uses data from the tenant entity.
+  {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+  - **Current owner**: refers to the owner of the current entity and uses its data.
+  {% endif %}
 
 {% include images-gallery.html imageCollection="argument-name" %}
 
