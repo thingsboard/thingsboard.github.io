@@ -41,54 +41,48 @@ redirect_from: "docs/services/development-services/"
     <span class="title">Our Customers</span> 
     <div>
         <div class="customer-logos">
-            <div class="logo">
+            <a href="/industries/telecom/" class="logo">
                 <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/super-bock/" class="logo">
                 <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/kalitec/" class="logo">
                 <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/suessco/" class="logo">
                 <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/oxi/" class="logo">
                 <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/iona/" class="logo">
                 <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/asg-tech/" class="logo">
                 <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-            </div>
-            <div class="logo">
-                <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/industries/telecom/" class="logo">
                 <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/super-bock/" class="logo">
                 <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/kalitec/" class="logo">
                 <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/suessco/" class="logo">
                 <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/oxi/" class="logo">
                 <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/iona/" class="logo">
                 <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
-            </div>
-            <div class="logo">
+            </a>
+            <a href="/case-studies/asg-tech/" class="logo">
                 <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
-            </div>
-            <div class="logo">
-                <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
-            </div>
+            </a>
         </div>
     </div>
 </section>
@@ -191,7 +185,7 @@ redirect_from: "docs/services/development-services/"
             </div>
         </div>
         <div id="carousel-wrapper">
-            {% include carousel.liquid collectionMap = 'development-services-testimonials-carousel' nonActiveItemsVisibility = false autoplay = false  overlay = false contentDirection = 'column' titleSize = '28px' descriptionSize = '16px'  titleLineHeight = '40px'  descriptionColor = '#000000DE' %}
+            {% include development-services-carousel.liquid collectionMap = 'development-services-testimonials-carousel' %}
         </div>
         <button id="Serv_DevServ_ContactUs2" class="button anchor-button gtm_button" onclick="onContactUsClick(1)">Contact Us</button>
     </div>

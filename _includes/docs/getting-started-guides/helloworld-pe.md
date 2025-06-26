@@ -110,16 +110,16 @@ You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
-To do this, we should edit the device profile and add a new alarm rule.
-The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
+We&#39;ll use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to define a rule that triggers an alarm when the temperature exceeds 25 °C.
+Alarm rules are configured in the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} used by the target device. 
+
+In our example, "My new device" uses the "default" device profile. While it&#39;s best practice to create separate profiles for each device type, we&#39;ll skip that step here for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 3](#step-3-configure-alarm-rules-and-trigger-an-alarm)), and we should send new telemetry on behalf of the device (see [Step 1.2](#step-12-connect-a-device)) to trigger the alarm.
+Now, our alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), and we should send new telemetry on behalf of the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
 > Note that the temperature value should be **26 or higher** to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
@@ -171,12 +171,13 @@ You can make the customer the owner of the device during its creation stage. To 
 ### Step 7.3 Share the dashboard
 
 Let&#39;s share our dashboard with the customer.
-In ThingsBoard, you can&#39;t share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
-By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we&#39;ll use the existing "All" group for this guide.
+In ThingsBoard, you can&#39;t share an individual dashboard directly — you can only share a dashboard group that contains the dashboard you want to share.
+By default, your dashboard is located in the "All" group.
+While the recommended approach is to create a dedicated dashboard group and move your dashboard there, for simplicity, we&#39;ll use the existing "All" group in this guide.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
-You can also share the dashboard with your customer or user during its creation stage.
+You can also share the dashboard with a customer during its creation:
 
 {% include images-gallery.html imageCollection="step73_1" showListImageTitles="true" %}
 

@@ -37,6 +37,12 @@ incremental: true
 
 exclude:
   - .idea
+#  - docs
+#  - blog
+#  - careers
+#  - case-study
+#  - case-studies
+#  - _includes/docs
 
 safe: false
 lsi: false

@@ -19,15 +19,7 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 - [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
   
- 
-## Step 1. Pull ThingsBoard PE Image
-
-```bash
-docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
-```
-{: .copy-code}
-
-## Step 2. Obtain the license key 
+## Step 1. Obtain the license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -35,7 +27,7 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 3. Choose ThingsBoard queue service
+## Step 2. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -48,35 +40,51 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Where: 
     
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `8883:8883`            - connect local port 8883 to exposed internal MQTT over SSL port 8883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
-- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
-- `mytbpe-data:/data`   - mounts the volume `mytb-data` to ThingsBoard data directory
-- `mytbpe-data-db:/var/lib/postgresql/data`   - mounts the volume `mytbpe-data-db` to Postgres data directory;
-- `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory
-- `mytbpe`             - friendly local name of this machine
+- `9090:9090`            - connect local port 9090 to exposed internal Remote Integration port 9090
+- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
+- `tb-pe-license-data`   - name of the docker volume that stores the ThingsBoard's license instance data file
+- `tb-postgres-data`   - name of the docker volume that stores the PostgreSQL's data
+- `thingsboard-pe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
+- `thingsboard/tb-pe-node:{{ site.release.pe_full_ver }}`          - docker image.
 
-## Step 4. Running
+## Step 3. Initialize database schema & system assets
 
-Windows users should use docker managed volume for ThingsBoard DataBase. 
-Create docker volume (for ex. `mytbpe-data`) before executing docker run command:
-Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
+Before you start ThingsBoard, initialize the database schema and load built-in assets by running:   
 
-``` 
-docker volume create mytbpe-data
-docker volume create mytbpe-data-db
-docker volume create mytbpe-logs
+```bash
+docker compose run --rm -e INSTALL_TB=true -e LOAD_DEMO=true thingsboard-pe
 ```
 {: .copy-code}
 
+Environment variables:
 
-{% assign serviceName = "tbpe" %}
-{% include templates/install/docker/docker-compose-up.md %}
+- `INSTALL_TB=true` - Installs the core database schema and system resources (widgets, images, rule chains, etc.).
+- `LOAD_DEMO=true` - Loads sample tenant account, dashboards and devices for evaluation and testing.
+
+## Step 4. Start the platform & tail logs
+
+Bring up all containers in detached mode, then follow the ThingsBoard logs (use PowerShell for the command below):
+
+```bash
+docker compose up -d; docker compose logs -f thingsboard-pe
+```
+{: .copy-code}
 
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
+
+{% capture tb_web_report_localhost_info %}
+**Note that web-reports will generate only if you access ThingsBoard via external IP address or domain name.**
+
+**Web-report will not generate if you access ThingsBoard by** `http://localhost:8080`
+{% endcapture %}
+{% include templates/info-banner.md content=tb_web_report_localhost_info %}
+
 Use the following default credentials:
 
 - **System Administrator**: sysadmin@thingsboard.org / sysadmin
@@ -85,64 +93,51 @@ Use the following default credentials:
     
 You can always change passwords for each account in account profile page.
 
-## Detaching, stop and start commands
+You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
-{% assign serviceName = "tbpe" %}
-{% assign serviceFullName = "ThingsBoard PE" %}
-{% include templates/install/docker/detaching-stop-start-commands.md %}
+## Inspect logs & control container lifecycle
 
-## Upgrading
-
-In case when database upgrade is needed:
-
-* Stop `mytbpe` container
+If something goes wrong, you can stream the ThingsBoard container logs in real time:
 
 ```bash
-docker compose stop mytbpe
-```
- {: .copy-code}
-
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose stop mytbpe**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
-
-* Update docker-compose.yml - TB image should be the latest version (see [Step 3](#step-3-choose-thingsboard-queue-service))
-
-* In case you are upgrading to:
-  * 3.9.1 or newer - no additional actions required
-  * 3.9.0 or previous releases - change `upgradeversion` variable to your **current** ThingsBoard version. For ex., if upgrading from 3.6.4:
-    ```bash
-    echo '3.6.4' | sudo tee ~/.mytbpe-data/.upgradeversion
-    ```
-    {: .copy-code}
-
-* Execute the following commands:
-
-```bash
-docker compose run mytbpe upgrade-tb.sh
+docker compose logs -f thingsboard-pe
 ```
 {: .copy-code}
 
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose run mytbpe upgrade-tb.sh**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
+Bring down every container defined in your Compose file:
 
-* Start ThingsBoard:
+```bash
+docker compose down
+```
+{: .copy-code}
+
+Launch all services in detached mode:
 
 ```bash
 docker compose up -d
 ```
 {: .copy-code}
 
-{% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose up -d**
+## Upgrading
+
+When a new PE release is available, follow these steps to update your installation without losing data:
+
+{% capture old_manifests_info %}
+**If you upgrade using previous version of manifests make sure to change image `thingsboard/tb-pe` to `thingsboard/tb-pe-node` and append `tb-web-report` service to the docker-compose.yml file explicitly**
 {% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
+{% include templates/info-banner.md content=old_manifests_info %}
+
+1. Change the version of the `thingsboard/tb-pe-node` and `thingsboard/tb-web-report` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.pe_full_ver }}) 
+
+2. Execute the following commands:
+ 
+```bash
+docker pull thingsboard/tb-pe-node:{{ site.release.pe_full_ver }}
+docker compose stop thingsboard-pe
+docker compose run --rm -e UPGRADE_TB=true thingsboard-pe
+docker compose up -d
+```
+{: .copy-code}
 
 ## Troubleshooting
 

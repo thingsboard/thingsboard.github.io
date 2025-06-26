@@ -12,7 +12,7 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+This guide will help you to install and start ThingsBoard using Docker on Linux or MacOS.
 
 
 ## Prerequisites
@@ -22,8 +22,6 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 {% include templates/install/docker-install-note.md %}
 
 ## Running
-
-In this instruction [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) image will be used. It contains a single instance of ThingsBoard with PostgreSQL database.
 
 Running this image requires a server with at least 4GB of RAM (8GB is recommended) and minimum load (few messages per second).
 
@@ -40,11 +38,12 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 Where: 
 
-- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
+- `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `8883:8883`            - connect local port 8883 to exposed internal MQTT over SSL port 8883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
-- `tb-ce-postgres-data` - name of the docker volume that stores the PostgreSQL's data
+- `tb-postgres-data` - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-ce`             - friendly local name of the ThingsBoard container
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `image: "thingsboard/tb-node:4.0.1.1"`          - ThingsBoard docker image and version.
@@ -71,7 +70,16 @@ Bring up all containers in detached mode, then follow the ThingsBoard logs:
 docker compose up -d && docker compose logs -f thingsboard-ce
 ```
 
-You can safely detach from the log stream (e.g. Ctrl+P, Ctrl+Q); containers will continue running.
+After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
+Use the following default credentials:
+
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+- **Tenant Administrator**: tenant@thingsboard.org / tenant
+- **Customer User**: customer@thingsboard.org / customer
+    
+You can always change passwords for each account in account profile page.
+
+You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
 ## Inspect logs & control container lifecycle
 

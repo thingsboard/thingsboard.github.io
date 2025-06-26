@@ -12,7 +12,7 @@ Before we proceed, we strongly recommend reviewing the previous lessons if you h
 
 In this part, we will add separate states for each device, simulate telemetry data for the devices, and display them on card widgets.
 
-{% include carousel.liquid collectionMap = 'dashboard-lesson-3' nonActiveItemsVisibility = false %}
+{% include default-carousel.liquid collectionMap = 'dashboard-lesson-3' nonActiveItemsVisibility = false %}
 
 ## Simulation of the devices' telemetry data
 

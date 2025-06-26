@@ -317,7 +317,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
-          <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
+          <td>Total number of REST API calls received by any of the users belong to the tenant</td>
       </tr>
       <tr>
           <td>REST requests (Customer)</td>
@@ -325,7 +325,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
-          <td>Total number of messages received by any of the transport microservices for each device separately</td>
+          <td>Total number of REST API calls received by any of the users belong to the particular customer</td>
       </tr>
       <tr>
           <td>WS updates per session</td>

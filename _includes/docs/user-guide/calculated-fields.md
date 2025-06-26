@@ -8,6 +8,13 @@
 By defining custom expressions or scripts, users can standardize data, and create new computed metrics dynamically. 
 This feature is particularly useful for optimizing data processing, improving analytics.
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/wBUcWMSH4QI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ### Key benefits
 
 - **No additional rule chains needed**: simplifies data transformations without requiring complex rule configurations. 
@@ -166,7 +173,7 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 
 #### Output
 
-The calculated values are returned as a JSON object containing **keys** that represent the computed results, which are then used to store those values in the system.
+The calculated values are returned as a JSON object containing **keys** that represent the computed results. These keys, along with their values, are then stored in the system.
 
 - Specify the **Output type** for storing the calculation result:
   - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: function must return a JSON object or array with or without a timestamp containing the computed value.
@@ -501,7 +508,7 @@ It then analyzes the merged data to identify instances where the fridge is not i
 
 <br>
 
-**function calculate(ctx, temperature, defrost) {**
+**function calculate(ctx, defrost, temperature) {**
 ```js
 var merged = temperature.merge(defrost);
 var result = [];

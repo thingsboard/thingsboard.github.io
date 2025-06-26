@@ -1,0 +1,5 @@
+{% assign coursesCollection = site.data.courses %}
+
+{% include card-carousel.liquid coursesCollection=coursesCollection cardType='courses' %}
+{% include courses-content.liquid coursesCollection=coursesCollection %}
+

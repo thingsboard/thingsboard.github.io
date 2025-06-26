@@ -4,6 +4,8 @@ title: SCADA
 description: SCADA ThingsBoard IoT Platform
 notitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+
 ---
 
 {% include usecase-nav.html usecase="scada" %}
@@ -22,12 +24,12 @@ includeAdvantages: "true"
         </div>
         <div class="long">
             <p>The main advantage of SCADA (Supervisory Control and Data Acquisition) systems is their ability to monitor production processes in real time and respond quickly to deviations. ThingsBoard provides comprehensive tools to collect, process, and visualize data from SCADA components, such as PLCs (Programmable Logic Controllers) and RCUs (Remote Control Units), enabling seamless integration with various industrial processes.</p>
-            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the Swimming Pool Management System template. This solution demonstrates how SCADA symbols—such as valves, motors, filters and tanks—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals. The template is designed to accommodate both Traditional and High-Performance SCADA systems.</p>
+            <p>To illustrate the flexibility of ThingsBoard's SCADA integration, we have developed the <a href="/docs/pe/solution-templates/swimming-pool-scada-system/">swimming pool management system template</a>. This solution demonstrates how SCADA symbols—such as valves, motors, filters and tanks—can be utilized to create simple yet powerful process control systems. It enables any production process to be visualized on a dashboard, allowing for real-time monitoring of equipment operation and timely detection of alarm signals. The template is designed to accommodate both Traditional and High-Performance SCADA systems.</p>
         </div>
     </div>
 </section>
 
-<section class="scada-overview">
+<section class="scada-overview addedBanner extraMargin">
     <div class="img-comp-container">
       <div class="img-comp-img">
         <img class="traditional-background" src="/images/usecases/scada/traditional.webp">
@@ -36,6 +38,7 @@ includeAdvantages: "true"
         <img src="/images/usecases/scada/high-performance.webp">
       </div>
     </div>
+    {% include contact-us-banner.liquid %}
     <h2>SCADA overview</h2>
     <div class="table-lg">
         <div class="criteria-col">
@@ -530,7 +533,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_SCADA_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/231a5800-ce96-11ef-852e-bd51c2b30fde?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
-                <a id="UseCases_SCADA_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_SCADA_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

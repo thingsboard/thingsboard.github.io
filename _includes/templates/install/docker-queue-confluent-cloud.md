@@ -26,8 +26,9 @@ services:
     image: "thingsboard/tb-node:4.0.1.1"
     ports:
       - "8080:8080"
-      - "7070"
-      - "1883"
+      - "7070:7070"
+      - "1883:1883"
+      - "8883:8883"
       - "5683-5688:5683-5688/udp"
     logging:
       driver: "json-file"
@@ -71,9 +72,9 @@ services:
 
 volumes:
   postgres-data:
-    name: tb-ce-postgres-data
+    name: tb-postgres-data
     driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}
 
 You can update default Rule Engine queues configuration using UI. More about ThingsBoard Rule Engine queues see in [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).

@@ -8,23 +8,23 @@ notitle: "true"
 
 {% include usecase-nav.html usecase="smart-irrigation" %}
 
-<h1 class="usecase-title">Smart Irrigation solution</h1>
+<h1 class="usecase-title">Smart irrigation solution</h1>
 
 Everyone knows that when it comes to agriculture, the critical indicator of success is the yield and high quality of the product. However, achieving these indicators costs farmers a lot of effort and resources. One of the main conditions for the stable production of agricultural products is the necessary soil moisture for the growth of crops. However, not all regions can boast of ideal climatic conditions. Sometimes the lack of soil moisture and improper monitoring and care of crops during growth can lead to negative consequences: loss of harvest and, as a result - profit.
 
 An irrigation system is usually used to solve the problem of agricultural and irrigated land, which helps farmers achieve good results in growing and harvesting products.
 
-We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation/">template</a> to represent a generic field irrigation solution.
+We developed the Smart irrigation <a href="/docs/paas/solution-templates/smart-irrigation/">template</a> to represent a generic field irrigation solution.
 
 <h2>Solution Structure</h2>
 
-Smart Irrigation dashboard allows you to monitor the irrigation system and respond in time to changes in field conditions and has components that you may easily embed into your IoT solution.
+Smart irrigation dashboard allows you to monitor the irrigation system and respond in time to changes in field conditions and has components that you may easily embed into your IoT solution.
 
 Also, this dashboard has several states: **Main state** and **Field state**:
 - **Main state**  is intended for the user to list the fields and monitor their soil moisture, location, statistics, etc.;
 - **Field state** displays detailed information about the field. It allows you to manage moisture monitoring sensors, observes soil moisture levels, schedule irrigation, view statistics, etc.
 
-<h2>Smart Irrigation Benefits</h2>
+<h2>Smart irrigation Benefits</h2>
 Save up to 90% of development time for your smart irrigation solution by utilizing the following platform benefits:
 - reliable and scalable data collection for your smart sensors and soil moisture monitors;
 - powerful rule engine to process collected data and produce alarms and valuable insights;
@@ -35,7 +35,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 - customizable mobile applications with minimum coding efforts.
 
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_SmartIrrigation_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/a4640cc0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
@@ -122,7 +122,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
     </div>
 </section>
 
-## Smart Irrigation solution overview
+## Smart irrigation solution overview
 
 The diagram below identifies data flow and integration points for a typical smart irrigation monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from sensors.
 

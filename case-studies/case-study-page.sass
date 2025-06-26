@@ -311,10 +311,26 @@
           width: 137.55%
           transform: translateX(-14%)
 
+      .full-width-img.bannerMargin
+        margin-bottom: 100px
+        @media (max-width: 599px)
+          margin-bottom: 40px
+
       .quote-with-mark
         display: flex
         gap: 64px
         align-items: flex-start
+
+        &.fill-background
+          &:before
+            content: ""
+            position: absolute
+            width: 300%
+            height: 100%
+            background-color: #F4F8FE
+            z-index: -1
+            left: -100%
+            top: 0
 
         .quote-text
           h2

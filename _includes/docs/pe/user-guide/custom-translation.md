@@ -18,15 +18,6 @@ However, for more specific requirements, the **Custom translation** feature is a
 - [Modify or extend](#modify-current-translation) existing translations;
 - Use [custom translations](#custom-translation) for dashboard titles, widgets, devices, telemetry keys, and other interface elements.
 
-Go to the "**White labeling**" page and open the "**Custom translation**" tab. Here you&#39;ll see a list of available languages and their translation progress indicated in percentages.
-
-![image](/images/user-guide/custom-translation/main-page-1-pe.png)
-
-{% capture difference %}
-**Please note:** The initial list of custom translations is created by the system administrator. A tenant cannot delete the system&#39;s custom translations but can make changes to them and add new translations.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
 ## Change platform language
 
 To change the language of your account, follow these steps:
@@ -87,6 +78,15 @@ As you continue adding more translations, the progress indicator will automatica
 {% include images-gallery.liquid imageCollection=addNewLanguagePE %}
 
 ## Translation editor
+
+Go to the "**White labeling**" page and open the "**Custom translation**" tab. Here you&#39;ll see a list of available languages and their translation progress indicated in percentages.
+
+![image](/images/user-guide/custom-translation/main-page-1-pe.png)
+
+{% capture difference %}
+**Please note:** The initial list of custom translations is created by the system administrator. A tenant cannot delete the system&#39;s custom translations but can make changes to them and add new translations.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 You can modify or extend the translation for any language. To do this, click the "pencil" icon next to the language you want to edit.
 
@@ -232,6 +232,15 @@ Example of the translation map:
 ## Custom translation
 
 You can provide custom translations for new custom menu items or individual UI elements (such as dashboard titles, widget names, device names, data keys, etc.) using translation keys in the **i18n** format.
+
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/NQ92phUUsYM" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<br>
 
 To add custom translations:
 

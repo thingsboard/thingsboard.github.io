@@ -13,6 +13,7 @@
 </section>
 
 {% include trendz-wizard.html %}
+{% include private-cloud-plan-calculator.html %}
 
 {% include footer.html %}
 
@@ -148,7 +149,7 @@
             if (solutionId) {
                 setActiveSolutionSection(solutionId);
             } else {
-                switchFaqContainer('thingsboard-ce');
+                switchFaqContainer(sectionId);
             }
         }
 
@@ -179,8 +180,8 @@
 
     function setActiveSolutionSection(sectionId) {
         $('.solution-selector .solution').removeClass("active");
-        $('.pricing-div .pricing-section:not(.pricing-community)').removeClass("active");
-        $('.pricing-content-header .pricing-content-description').removeClass("active");
+        $('.pricing-div .pricing-section:not(.pricing-community):not(.always-display)').removeClass("active");
+        $('.pricing-content-header .pricing-content-description:not(.always-display)').removeClass("active");
         if (sectionId) {
             var $solutionButtonElement = $('.solution-selector .solution'+`[data-solutionid=${sectionId}]`);
             $solutionButtonElement.addClass("active");
@@ -288,6 +289,9 @@
             case 'thingsboard-cloud':
                 correspondingHeader = 'ThingsBoard Cloud FAQs';
                 break;
+            case 'thingsboard-private-cloud':
+                correspondingHeader = 'ThingsBoard Private Cloud FAQs';
+                break;
             case 'pe-pay-as-you-go':
                 correspondingHeader = 'ThingsBoard Professional Edition: Self-managed Subscriptions FAQs';
                 break;
@@ -312,6 +316,9 @@
             case 'edge-perpetual':
                 correspondingHeader = 'Edge Perpetual FAQs';
                 break;
+            case 'tbmq':
+                correspondingHeader = 'TBMQ FAQs';
+                break;
         }
         if (correspondingHeader && document.getElementById('faq-header')) {
             document.getElementById('faq-header').innerText = correspondingHeader;
@@ -329,8 +336,10 @@
     }
 
     function loadMoreFaq(el) {
+        el.classList.add('hidden');
+        el = el.nextElementSibling;
         while(el) {
-            el.classList.toggle('hidden');
+            el.classList.remove('hidden');
             el = el.nextElementSibling;
         }
     }
@@ -376,19 +385,30 @@
         if (question.classList.contains('on')){
             updateQueryParam({}, true);
         } else {
-            setTimeout(() => checkIfOpenedRetryClear(questionId), 100)
+            setTimeout(() => checkIfOpenedRetryClear(questionId), 100);
         }
     }
 
     function animateSupportCards(sectionId) {
         const currentSection = document.querySelector(`#${sectionId}`);
-        const cards = currentSection.querySelectorAll('.card-to-animate')
+        const cards = currentSection.querySelectorAll('.card-to-animate');
 
         cards.forEach((card) => {
             setTimeout(() => {
                 card.classList.add(`card-animation`)
             }, 1)
         })
+    }
+
+    function switchPrice(product) {
+        document.querySelectorAll(`#${product} .pricing-square-price:not(.always-display)`)
+            .forEach(elem => elem.classList.toggle('hidden'));
+        document.querySelectorAll(`#${product} .billing-toggle .label-text`)
+            .forEach(elem => elem.classList.toggle('selected'));
+    }
+
+    function switchToPrivateCloud() {
+        window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
     }
 </script>
 

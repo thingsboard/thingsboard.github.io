@@ -386,12 +386,12 @@
   {
     "type": ["Europe"],
     "country": ["Germany"],
-    "name": "ECBM GmbH",
+    "name": "KIOTERA",
     "contact": {
-      "href": "hoffmann@ecbm.me"
+      "href": "y.hoffmann@kiotera.de"
     },
     "site": {
-      "href": "ecbm.me",
+      "href": "kiotera.de",
       "target": "_blank"
     }
   },
@@ -496,7 +496,7 @@
     "country": ["France"],
     "name": "Jems Group",
     "contact": {
-      "href": "https://www.jems-group.com/fr/contact/"
+      "href": "cledreux@jems-group.com"
     },
     "site": {
       "href": "https://www.jems-group.com/",
@@ -512,6 +512,18 @@
     },
     "site": {
       "href": "",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Syria"],
+    "name": "HADEX",
+    "contact": {
+      "href": "havalbajary@gmail.com"
+    },
+    "site": {
+      "href": "hadex.nicepage.io",
       "target": "_blank"
     }
   },

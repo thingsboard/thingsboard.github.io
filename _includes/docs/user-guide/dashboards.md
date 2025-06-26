@@ -108,6 +108,15 @@ The Time window is a tool used to define time intervals when working with teleme
 The time window is used by all time series and alarm widgets unless they are configured to use their own [widget time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window){:target="_blank"}.
 In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the time window. In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the time window.
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/3xRWm1W1IM4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<br>
+
 **The time window can work in two modes**:
 
 - In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp;

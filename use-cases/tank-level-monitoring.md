@@ -16,7 +16,7 @@ Our Fuel Level Monitoring <a href="/docs/paas/solution-templates/fuel-level-moni
 
 Moreover, our solution is entirely customizable to accommodate the unique requirements of your business, whether you operate within the retail, industrial, or any other sector requiring meticulous fuel level monitoring. By leveraging our Fuel Level Monitoring solution, you can secure a competitive edge and attain superior operational efficiency. Revolutionize fuel management and propel your business to new heights with our Fuel Level Monitoring solution.
 
-## Tank Level Monitoring Solution Structure
+## Tank level monitoring solution structure
 
 We have developed a Fuel Level Monitoring solution template that allows you to provision tanks and monitor the fuel level.
 This dashboard empowers you to check fuel levels meticulously and react promptly to alterations in the tank state.  
@@ -27,11 +27,11 @@ Additionally, the dashboard is equipped with multiple states, allowing for a div
 
 **Tank state** - designed to display information about a specific tank.
 
-## Tank Level Monitoring dashboard
+## Tank level monitoring dashboard
 
 The Fuel Level Monitoring interactive dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'tank-level-monitoring' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'tank-level-monitoring' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_FuelLevelMonitoring_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
@@ -39,7 +39,7 @@ The Fuel Level Monitoring interactive dashboard contains 2 states that are speci
 
 The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 
-## Benefits of the Tank Level Monitoring template
+## Benefits of the tank level monitoring template
 
 Save up to 90% of development time for your fuel level monitoring solution by utilising the following platform benefits:
  - reliable and scalable data collection for your tanks sensors;

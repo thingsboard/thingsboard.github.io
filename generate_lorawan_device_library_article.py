@@ -181,9 +181,6 @@ def collect_required_information():
         if link:
             print("Invalid link provided. Please provide a valid GitHub link.")
         link = input("Paste the GitHub link to the device directory:\n").strip()
-        if not link:
-            print("No link provided. Will use the default link for WS202 device.")
-            link = "https://github.com/thingsboard/data-converters/tree/qa/release/4.0.0/VENDORS/Milesight/WS202"
     branch, repo_path, vendor, device_folder = parse_github_link(link)
     data = fetch_info_json(branch, repo_path)
 

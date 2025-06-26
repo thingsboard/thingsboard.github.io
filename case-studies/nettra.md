@@ -35,7 +35,7 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
             <p>
                 {% include number-animation.html startNum = 1 targetNum = 1000 useGrouping = true %}
             </p>
-            <p>pellet burners sold</p>
+            <p>monitoring points installed</p>
         </div>
     </section>
     <section class="problem">
@@ -104,6 +104,7 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
             <h2>Agustin Derregibus, CEO and Co-Founder of Nettra</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart energy improve operations?</h2>
         <div class="block">

@@ -13,7 +13,7 @@ It's highly recommended that you check out lesson 1 if you haven't already.
 In this lesson, we'll continue to develop our project. We will add states for buildings and offices, and implement navigation between them.
 We will also continue adding widgets, including one that visualizes the placement of devices on the office plan. Let's get started.
 
-{% include carousel.liquid collectionMap = 'dashboard-lesson-2' nonActiveItemsVisibility = false %}
+{% include default-carousel.liquid collectionMap = 'dashboard-lesson-2' nonActiveItemsVisibility=false %}
 
 ## Adding building and office states
 

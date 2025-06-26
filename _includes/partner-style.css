@@ -59,6 +59,7 @@ body {
 	box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
 	border-radius: 24px;
 	margin-top: 96px;
+	margin-bottom: 0;
 	padding: 24px 32px;
 	color: #75767C;
 	font-size: 16px;
@@ -210,6 +211,10 @@ body {
 	box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
 }
 
+.partner-box.filter-hidden {
+	display: none
+}
+
 .partner-box.become-partner-box {
 	padding: 155px 46px;
 }
@@ -251,11 +256,11 @@ body {
 }
 
 .partner-box > div {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+	height: 100%;
 }
 
 .partner-box div.cardHeader {
@@ -358,6 +363,17 @@ section {
 		max-width: 1400px;
 	}
 }
+
+@media screen and (max-width: 1500px) {
+	.partner-box div.links a {
+		white-space: unset;
+	}
+
+	.partner-box .owl-carousel a {
+		white-space: nowrap !important;
+	}
+}
+
 /*@media screen and (max-width: 1180px) {*/
 /*	.customer-spacer {*/
 /*		margin-top: 346px !important;*/
@@ -444,73 +460,6 @@ section {
 	.partner-box div div.text p.description {
 		font-size: 14px;
 	}
-}
-
-/*.owl-carousel {*/
-/*	max-width: 595px;*/
-/*	width: 100%;*/
-/*}*/
-
-.owl-stage {
-	display: flex;
-}
-
-.owl-nav button.owl-prev,
-.owl-nav button.owl-next {
-	position: absolute;
-	filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%);
-	outline: none;
-	background-color: transparent;
-	width: 17px;
-	height: 50px;
-	top: calc(50% - 25px);
-}
-
-.owl-nav button.owl-prev span,
-.owl-nav button.owl-next span {
-	display: none;
-}
-
-.owl-nav button.owl-prev {
-	left: 0;
-	transform: scale(-1, 1);
-}
-
-.owl-nav button.owl-next {
-	right: 0;
-}
-
-.owl-carousel.owl-theme.usecase-carousel.smallArrow .owl-nav button.owl-prev,
-.owl-carousel.owl-theme.usecase-carousel.smallArrow .owl-nav button.owl-next {
-	filter: unset;
-	width: 60px;
-	height: 60px;
-}
-
-.owl-carousel.owl-theme.usecase-carousel.smallArrow .owl-nav button.owl-prev::before,
-.owl-carousel.owl-theme.usecase-carousel.smallArrow .owl-nav button.owl-next::before {
-	content: "\f078";
-	font-family: "Font Awesome 5 Free";
-	position: absolute;
-	top: 42%;
-	left: 85px;
-	transform: translate(-50%, -50%) rotate(-90deg);
-	font-weight: 900;
-	font-size: 21px;
-	color: #2A7DEC;
-	transition: ease-in-out 0.3s;
-}
-
-.owl-carousel.owl-theme.usecase-carousel.smallArrow .owl-nav {
-	display: block !important;
-}
-
-.owl-theme .owl-nav [class*=owl-]:hover {
-	background: unset !important;
-}
-
-.owl-theme .owl-nav {
-	margin-top: 0 !important;
 }
 
 @keyframes slide-in {

@@ -1,0 +1,23 @@
+{% assign courseName = include.courseName %}
+{% assign courseDescription = include.courseDescription %}
+{% assign warningMessage = include.warningMessage %}
+
+<div class="trainings-contact">
+    <div class="contact">
+        <div>
+            <span class="course-name">{{ courseName }}</span>
+        </div>
+        <a class="contact-us-button" href="/docs/contact-us/?subject=Training">Contact Us</a>
+    </div>
+    <div class="contact-text">
+        <p class="description">{{ courseDescription }}</p>
+        {% if warningMessage %}
+            <p class="tip">
+                <i class="fas fa-exclamation-circle" style="color: #F36500"></i>
+                <span>{{ warningMessage }}</span>
+            </p>
+        {% endif %}
+    </div>
+    <a class="contact-us-button contact-us-button-hidden" href="/docs/contact-us/?subject=Training">Contact Us</a>
+</div>
+

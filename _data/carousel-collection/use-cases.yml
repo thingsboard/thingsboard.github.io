@@ -11,201 +11,348 @@ smart-farming:
 
 fleet-tracking:
   0:
-    src: "/images/usecases/fleet-tracking/ft1.png"
-    alt: "Bus locations example"
+    src: "/images/usecases/fleet-tracking/fleet-tracking-1.webp"
+    alt: "ThingsBoard interface showing bus status, speed, fuel level, and location on the map"
+    imageTitleAttribute: "Real-time bus monitoring using ThingsBoard platform"
+    width: 1819
+    height: 966
   1:
-    src: "/images/usecases/fleet-tracking/ft2.png"
-    alt: "Route history example"
+    src: "/images/usecases/fleet-tracking/fleet-tracking-2.webp"
+    alt: "ThingsBoard interface showing historical route and movement playback for Bus A on the map"
+    imageTitleAttribute: "Bus A route playback and history visualization in ThingsBoard"
+    width: 1819
+    height: 966
   2:
-    src: "/images/usecases/fleet-tracking/ft3.webp"
-    alt: "Route area example"
+    src: "/images/usecases/fleet-tracking/fleet-tracking-3.webp"
+    alt: "ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events"
+    imageTitleAttribute: "Real-time telemetry dashboard for Bus A in ThingsBoard"
+    width: 1819
+    height: 966
+  3:
+    src: "/images/usecases/fleet-tracking/fleet-tracking-4.webp"
+    alt: "ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations"
+    imageTitleAttribute: "Bus B telemetry and route analytics dashboard in ThingsBoard"
+    width: 1819
+    height: 966
+  4:
+    src: "/images/usecases/fleet-tracking/fleet-tracking-5.webp"
+    alt: "ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map"
+    imageTitleAttribute: "Bus C status monitoring and stop event tracking in ThingsBoard"
+    width: 1819
+    height: 966
+  5:
+    src: "/images/usecases/fleet-tracking/fleet-tracking-6.webp"
+    alt: "ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map"
+    imageTitleAttribute: "Bus D refueling status and stop alert monitoring in ThingsBoard"
+    width: 1819
+    height: 966
 
 tank-level-monitoring:
   0:
     src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png"
     alt: "Fuel level monitoring dashboard example"
+    width: 1500
+    height: 741
   1:
     src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png"
     alt: "Alarm rules settings example"
+    width: 1500
+    height: 741
   2:
     src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png"
     alt: "Specific tank fuel level monitoring dashboard example"
+    width: 1500
+    height: 741
   3:
     src: "/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png"
     alt: "Edit sensor settings example"
+    width: 1500
+    height: 741
 
 smart-metering:
   0:
-    src: "/images/usecases/smart-metering/sm1.webp"
-    alt: "Smart metering dashboard with a map"
+    src: "/images/usecases/smart-metering/smart-metering-1.webp"
+    alt: "ThingsBoard dashboard showing energy and water consumption, district map, and critical alarm for District B in San Francisco"
+    imageTitleAttribute: "ThingsBoard dashboard – energy and water monitoring, map and alarms for San Francisco districts"
+    width: 2048
+    height: 1090
   1:
-    src: "/images/usecases/smart-metering/sm2.png"
-    alt: "Smart metering dashboard with a location"
+    src: "/images/usecases/smart-metering/smart-metering-2.webp"
+    alt: "ThingsBoard dashboard displaying District A buildings on the map, energy and water consumption, and a critical high temperature alarm"
+    imageTitleAttribute: "ThingsBoard dashboard – monitoring buildings in District A with real-time energy, water usage, and critical alarms"
+    width: 2048
+    height: 1090
   2:
-    src: "/images/usecases/smart-metering/sm3.png"
-    alt: "Smart metering dashboard with a building plan"
+    src: "/images/usecases/smart-metering/smart-metering-3.webp"
+    alt: "ThingsBoard dashboard with apartment layout of Building A1, showing energy and water usage for Apartments A1-1 and A1-2, and a critical temperature alarm"
+    imageTitleAttribute: "ThingsBoard dashboard – apartment-level monitoring in Building A1 with real-time energy, water consumption, and alarms"
+    width: 2048
+    height: 1090
   3:
-    src: "/images/usecases/smart-metering/sm4.png"
-    alt: "Smart metering dashbord with a thermostat controller"
+    src: "/images/usecases/smart-metering/smart-metering-4.webp"
+    alt: "ThingsBoard dashboard showing thermostat readings, real-time temperature control, a critical high temperature alarm, and historical temperature graph for Apartment A1-1"
+    imageTitleAttribute: "ThingsBoard dashboard – thermostat monitoring and control with temperature history and alarm for Apartment A1-1"
+    width: 2048
+    height: 1090
 
 environment-monitoring:
   0:
     src: "/images/usecases/environment-monitoring/environment-monitoring-4.webp"
     alt: "Temperature and humidity charts with location of Sensor T1"
     imageTitleAttribute: "Sensor T1 real-time readings: temperature and humidity graphs with sensor map marker"
+    width: 2048
+    height: 1010
   1:
     src: "/images/usecases/environment-monitoring/environment-monitoring-2.webp"
     alt: "Dashboard with sensor status, critical alarm, and map location of sensors"
     imageTitleAttribute: "ThingsBoard dashboard showing real-time sensor metrics, alarm status, and their geographic positions on the map"
+    width: 2048
+    height: 1010
   2:
     src: "/images/usecases/environment-monitoring/environment-monitoring-1.webp"
     alt: "Sensor configuration panel with thresholds and map location in ThingsBoard"
     imageTitleAttribute: "Editing Sensor T1: setting temperature and humidity thresholds and viewing sensor location on the map"
+    width: 2048
+    height: 1010
 
 smart-office:
   0:
     src: "/images/usecases/smart-office/smart-office-1.webp"
     alt: "HVAC switch, temperature and power chart, device list, and floor plan with sensor locations"
     imageTitleAttribute: "HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard"
+    width: 2048
+    height: 951
   1:
     src: "/images/usecases/smart-office/smart-office-2.webp"
     alt: "Energy consumption, power and current charts with wind turbine background"
     imageTitleAttribute: "Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms"
+    width: 2048
+    height: 951
   2:
     src: "/images/usecases/smart-office/smart-office-3.webp"
     alt: "HVAC control with state, airflow history, and temperature targets"
     imageTitleAttribute: "ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time"
+    width: 2048
+    height: 951
   3:
     src: "/images/usecases/smart-office/smart-office-4.webp"
     alt: "Water consumption statistics and battery discharge graph with office contact info"
     imageTitleAttribute: "Water meter dashboard: shows water usage per minute, historical consumption, battery voltage over time, and device contact information"
+    width: 2048
+    height: 951
   4:
     src: "/images/usecases/smart-office/smart-office-5.webp"
     alt: "Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking"
     imageTitleAttribute: "Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform"
+    width: 2048
+    height: 951
 
 water-metering:
   0:
-    src: "/images/usecases/water-metering/wm1.png"
+    src: "/images/usecases/water-metering/water-metering-1.webp"
     alt: "water metering 1"
+    width: 1819
+    height: 967
   1:
-    src: "/images/usecases/water-metering/wm2.png"
+    src: "/images/usecases/water-metering/water-metering-2.webp"
     alt: "water metering 2"
+    width: 1819
+    height: 967
   2:
-    src: "/images/usecases/water-metering/wm3.png"
+    src: "/images/usecases/water-metering/water-metering-3.webp"
     alt: "water metering 3"
+    width: 1819
+    height: 967
   3:
-    src: "/images/usecases/water-metering/wm4.webp"
+    src: "/images/usecases/water-metering/water-metering-4.webp"
     alt: "water metering 4"
+    width: 1819
+    height: 967
   4:
-    src: "/images/usecases/water-metering/wm5.png"
+    src: "/images/usecases/water-metering/water-metering-5.webp"
     alt: "water metering 5"
-  5:
-    src: "/images/usecases/water-metering/wm6.png"
-    alt: "water metering 6"
+    width: 1819
+    height: 967
 
 smart-retail:
   0:
-    src: "/images/usecases/smart-retail/sr1.png"
-    alt: "smart retail 1"
+    src: "/images/usecases/smart-retail/smart-retail-1.webp"
+    alt: "ThingsBoard dashboard displaying supermarket locations and active critical alarms on the map"
+    imageTitleAttribute: "Overview of supermarket monitoring with critical and major alerts"
+    width: 1819
+    height: 966
   1:
-    src: "/images/usecases/smart-retail/sr2.png"
-    alt: "smart retail 2"
+    src: "/images/usecases/smart-retail/smart-retail-2.webp"
+    alt: "Critical motion sensor and list of active alarms for Supermarket S1 in ThingsBoard interface"
+    imageTitleAttribute: "Device and alarm status for Supermarket S1"
+    width: 1819
+    height: 966
   2:
-    src: "/images/usecases/smart-retail/sr3.webp"
-    alt: "smart retail 3"
+    src: "/images/usecases/smart-retail/smart-retail-3.webp"
+    alt: "ThingsBoard interface showing Supermarket S1 floor plan with critical motion sensor alerts and alarm chart"
+    imageTitleAttribute: "Floor plan of Supermarket S1 with device states and motion sensor data"
+    width: 1819
+    height: 966
   3:
-    src: "/images/usecases/smart-retail/sr4.png"
-    alt: "smart retail 4"
+    src: "/images/usecases/smart-retail/smart-retail-4.webp"
+    alt: "Dashboard view of Supermarket S2 with critical door sensor and major chiller alarm"
+    imageTitleAttribute: "Device overview and alarms in Supermarket S2"
+    width: 1819
+    height: 966
   4:
-    src: "/images/usecases/smart-retail/sr5.png"
-    alt: "smart retail 5"
+    src: "/images/usecases/smart-retail/smart-retail-5.webp"
+    alt: "Supermarket S2 layout with freezer temperature monitoring and no active alarms"
+    imageTitleAttribute: "Temperature graph for freezer in Supermarket S2"
+    width: 1819
+    height: 966
+  5:
+    src: "/images/usecases/smart-retail/smart-retail-6.webp"
+    alt: "Critical door sensor and multiple major temperature alarms in Supermarket S3 on ThingsBoard"
+    imageTitleAttribute: "Supermarket S3 device list and alarm summary"
+    width: 1819
+    height: 966
+  6:
+    src: "/images/usecases/smart-retail/smart-retail-7.webp"
+    alt: "Dashboard showing temperature fluctuations of chiller in Supermarket S3 on ThingsBoard"
+    imageTitleAttribute: "Supermarket S3 floor plan and temperature trend for chiller"
+    width: 1819
+    height: 966
 
 air-quality-monitoring-1:
   0:
     src: "/images/usecases/air-quality/aq1.png"
     alt: "air quality 1"
+    width: 1920
+    height: 866
   1:
     src: "/images/usecases/air-quality/aq2.png"
     alt: "air quality 2"
+    width: 1920
+    height: 866
   2:
     src: "/images/usecases/air-quality/aq3.png"
     alt: "air quality 3"
+    width: 1920
+    height: 866
 
 air-quality-monitoring-2:
   0:
     src: "/images/usecases/air-quality/aq4.png"
     alt: "air quality 4"
+    width: 1920
+    height: 866
   1:
     src: "/images/usecases/air-quality/aq5.png"
     alt: "air quality 5"
+    width: 1920
+    height: 866
 
 smart-irrigation:
   0:
     src: "/images/solutions/smart_irrigation/smart-irrigation-1.png"
     alt: "smart irrigation 1"
+    width: 1500
+    height: 730
   1:
     src: "/images/solutions/smart_irrigation/smart-irrigation-2.png"
     alt: "smart irrigation 2"
+    width: 1500
+    height: 730
   2:
     src: "/images/solutions/smart_irrigation/smart-irrigation-3.png"
     alt: "smart irrigation 3"
+    width: 1500
+    height: 730
   3:
     src: "/images/solutions/smart_irrigation/smart-irrigation-4.png"
     alt: "smart irrigation 4"
+    width: 1500
+    height: 730
   4:
     src: "/images/solutions/smart_irrigation/smart-irrigation-5.png"
     alt: "smart irrigation 5"
+    width: 1500
+    height: 730
 
 waste-management:
   0:
     src: "/images/solutions/waste_monitoring/waste-monitoring-1.png"
     alt: "waste monitoring 1"
+    width: 1500
+    height: 741
   1:
     src: "/images/solutions/waste_monitoring/waste-monitoring-2.png"
     alt: "waste monitoring 2"
+    width: 1500
+    height: 741
   2:
     src: "/images/solutions/waste_monitoring/waste-monitoring-3.png"
     alt: "waste monitoring 3"
+    width: 1500
+    height: 741
   3:
     src: "/images/solutions/waste_monitoring/waste-monitoring-4.png"
     alt: "waste monitoring 4"
+    width: 1500
+    height: 741
   4:
     src: "/images/solutions/waste_monitoring/waste-monitoring-5.png"
     alt: "waste monitoring 5"
+    width: 1500
+    height: 741
   5:
     src: "/images/solutions/waste_monitoring/waste-monitoring-6.png"
     alt: "waste monitoring 6"
+    width: 1500
+    height: 741
 
 health-care:
   0:
     src: "/images/solutions/health-care/health-care-1.webp"
     alt: "Assisted living dashboard with opened floor plan and residents alarms"
+    width: 1661
+    height: 877
   1:
     src: "/images/solutions/health-care/health-care-2.webp"
     alt: "Assisted living dashboard with opened resident details"
+    width: 1661
+    height: 877
   2:
     src: "/images/solutions/health-care/health-care-3.webp"
     alt: "Assisted living dashboard with opened zone sensors configuration"
+    width: 1661
+    height: 877
 
 scada-oil-and-gas-drilling-system:
   0:
     src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-1.webp"
     alt: "Main state of SCADA drilling system dashboard"
+    width: 1310
+    height: 679
   1:
     src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-2.webp"
     alt: "SCADA drilling system dashboard small screen responsiveness"
+    width: 1310
+    height: 679
   2:
     src: "/images/solutions/scada-oil-gas-drilling/scada-drilling-system-3.webp"
     alt: "Data state of SCADA drilling system dashboard"
+    width: 1310
+    height: 679
 
 scada-energy-management:
   0:
     src: "/images/solutions/scada-energy-management/scada-energy-management-1.webp"
     alt: "Main state of SCADA energy management dashboard"
+    width: 1286
+    height: 660
   1:
     src: "/images/solutions/scada-energy-management/scada-energy-management-2.webp"
     alt: "SCADA energy management dashboard consumption state"
+    width: 1286
+    height: 660
   2:
     src: "/images/solutions/scada-energy-management/scada-energy-management-3.webp"
     alt: "SCADA energy management dashboard small screen responsiveness"
+    width: 1286
+    height: 660

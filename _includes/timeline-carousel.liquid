@@ -1,0 +1,55 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign customSettings = include.customSettings %}
+
+{% assign titleSize = include.titleSize | default: "24px" %}
+{% assign titleSizeLower1280 = include.titleSizeLower1280 | default: titleSize %}
+{% assign titleSizeLower960 = include.titleSizeLower960 | default: titleSizeLower1280 %}
+{% assign titleSizeLower600 = include.titleSizeLower600 | default: titleSizeLower960 %}
+{% assign descriptionSize = include.descriptionSize | default: "18px" %}
+{% assign descriptionSizeLower1280 = include.descriptionSizeLower1280 | default: descriptionSize %}
+{% assign descriptionSizeLower960 = include.descriptionSizeLower960 | default: descriptionSizeLower1280 %}
+{% assign descriptionSizeLower600 = include.descriptionSizeLower600 | default: descriptionSizeLower960 %}
+
+{% if site.data.carousel-collection[include.collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[include.collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[include.collectionMap] %}
+{% endif %}
+
+{% assign defaultSettings = '{
+    "items": 5,
+    "stagePadding": 0,
+    "margin": 0,
+    "nav": false,
+    "dots": false,
+    "mouseDrag": false,
+    "autoplay": false,
+    "loop": false,
+    "startPosition": -1,
+    "responsive":{"0":{"items":1},"600":{"items":2},"960":{"items":3},"1024":{"nav":true},"1280":{"items":5,"nav":true}}
+}' %}
+
+{% assign settings = defaultSettings %}
+
+{% if customSettings %}
+    {% assign settings = customSettings %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme timeline transitionAnimationEnabled smallArrow" data-settings='{{ settings }}'>
+    {% for key in carouselCollection %}
+        <div class="timeline-item" style="--titleSize: {{ titleSize }}; --titleSizeLower1280: {{ titleSizeLower1280 }}; --titleSizeLower960: {{ titleSizeLower960 }}; --titleSizeLower600: {{ titleSizeLower600 }}; --descriptionSize: {{ descriptionSize }}; --descriptionSizeLower1280: {{ descriptionSizeLower1280 }}; --descriptionSizeLower960: {{ descriptionSizeLower960 }}; --descriptionSizeLower600 {{ descriptionSizeLower600 }};">
+            <div class="timeline-label">
+                <span class="timeline-title" style="line-height: 40px; font-weight: 500;">{{ key[0] }}</span>
+                <span class="timeline-circle">
+                    <i class="fas fa-chevron-down fa-lg" style="color: #305680"></i>
+                </span>
+            </div>
+            <ul class="timeline-text">
+                {% for data in key[1] %}
+                    <li>{{ data[1] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+

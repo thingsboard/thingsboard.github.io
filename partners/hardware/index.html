@@ -25,29 +25,22 @@ title: Partners on hardware area
 				<a class="button" href="/partners/hardware/program/">Apply for Hardware Partner Program</a>
 			</p>
 		</div>
-		<div class="filter">
-			<div class="filter-content">
-				Filter
-				<div class="actions">
-					<div onclick="actions('main')" class="check-box main checked">All connections</div>
-					<div onclick="actions('bluetooth')" class="check-box bluetooth">Bluetooth LE</div>
-					<div onclick="actions('gsm')" class="check-box gsm">GSM/GPRS</div>
-					<div onclick="actions('lora')" class="check-box lora">LoRaWAN</div>
-					<div onclick="actions('lte')" class="check-box lte">LTE-M</div>
-					<div onclick="actions('modbus')" class="check-box modbus">Modbus</div>
-					<div onclick="actions('bacnet')" class="check-box bacnet">Bacnet</div>
-					<div onclick="actions('nbiot')" class="check-box nbiot">NB-IoT</div>
-					<div onclick="actions('sigfox')" class="check-box sigfox">Sigfox</div>
-					<div onclick="actions('catm')" class="check-box catm">CAT-M/NB</div>
-					<div onclick="actions('wifi')" class="check-box wifi">Wi-Fi</div>
-					<div onclick="actions('ethernet')" class="check-box ethernet">Ethernet</div>
-					<div onclick="actions('wirepas')" class="check-box wirepas">Wirepas</div>
-				</div>
-				<div class="filter-spacer"></div>
-			</div>
-		</div>
-		<div id="hardwareContainer">
-		</div>
+        {% assign filters = "Bluetooth LE,GSM/GPRS,LoRaWAN,LTE-M,Modbus,Bacnet,NB-IoT,Sigfox,CAT-M/NB,MQTT,Wi-Fi,Ethernet,Wirepas" | split: "," %}
+        {% include filter.html filters = filters containerId = "hardwareContainer" filterLabel = "Filter"%}
+        <div id="hardwareContainer">
+            {% include hardware-partners-cards.liquid %}
+            <div class="partner-box become-partner-box" id="all">
+                <div class="box-background"></div>
+                <div>
+                    <p class="become-partner">
+                        Want to become ThingsBoard Hardware Partner?
+                    </p>
+                    <a class="button" href="/partners/hardware/program/">
+                        Apply for Hardware Partner Program
+                    </a>
+                </div>
+            </div>
+        </div>
 	</main>
 </section>
 
@@ -59,15 +52,6 @@ title: Partners on hardware area
 <style>
 	{% include partner-style.css %}
 </style>
-
-<script>
-	{% include partner-script.js type="hardware"
-        containerId="hardwareContainer" %}
-</script>
-
-<script>
-	window.onload = rengen();
-</script>
 
 <script>
 	jqueryDefer(function () {

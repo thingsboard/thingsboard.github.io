@@ -1,174 +1,375 @@
 ---
 layout: use-case
-title: IoT water metering solutions with ThingsBoard
-description: IoT water metering solutions with ThingsBoard
+title: Smart Water Metering with ThingsBoard IoT Platform
+description: Discover how ThingsBoard enables real-time water monitoring, automated alerts, and consumption analytics with a scalable IoT water metering solution for utilities, buildings, and agriculture.
 notitle: "true"
+customTitle: "true"
+includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
 {% include usecase-nav.html usecase="water-metering" %}
 
-<h1 class="usecase-title">Water metering solutions</h1>
-
-ThingsBoard platform dramatically reduces time to market and efforts to create water metering solutions.
-Save up to 90% of development time for your smart office solution by utilizing the following platform benefits:
-
-  - Reliable and fault-tolerant data collection from your IoT devices and sensors;
-  - Powerful rule engine to process collected data and produce alarms and valuable insights;
-  - Advanced and flexible visualization for real-time and historical data;
-  - Customizable end-user dashboards to share the monitoring results;
-  - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;
-  - Customizable mobile applications with minimum coding efforts;
-
-The platform provides production-ready server infrastructure to connect your IoT water meters, store, analyze and share collected IoT data;
-
-## Water metering template
-
-Water Metering [solution template](https://thingsboard.io/docs/paas/solution-templates/water-metering/) represent generic water metering solution. 
-With this template, you get interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. 
-Users are able to define thresholds and enable alarms and notifications over SMS or email. 
-You may easily integrate with external billing systems to produce and distribute invoices based on the aggregated consumption data from ThingsBoard. 
-
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'water-metering' %}
-
-<div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-</div>
-
-The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/smart-office/) and allows you to:
-
-* observe location and status of the water meters on the map. Markers are clustered to be able to show thousands of meters simultaneously;
-* browse active alarms and water consumption per day and week;
-* use "Analytics", "Devices", "Alarms" views that are similar to the main dashboard;
-* use "Settings" view to define alarm thresholds for the particular customer. Generated alarms will not be visible to Tenant Administrator by default;
-
-Once you install the solution template, you will also receive access to "Water Metering Tenant Dashboard"
-that allows you to manage water metering devices, users and alarms:
-
-* observe location and status of the water meters on the map. Markers are clustered to be able to show thousands of meters simultaneously;
-* use "Analytics" view to compare consumption for the current and previous month;
-* use "Devices" view to get the list of all water meter devices with ability to
-    * create a new device and assign it to the customer;
-    * change the location of the device;
-    * configure alarm thresholds for this device;
-    * navigate to "Device" view by clicking on the device row;
-* use "Device" view to:
-    * browse water consumption history for a particular water meter device;
-    * browse active alarms for a particular water meter device;
-    * change water meter location information
-    * upload water meter photo;
-    * change location of the device;
-* use "Customers" view to manage your customers;
-* use "Alarms" view to browse and clear alarms from water meters;
-* use "Settings" view to:
-    * turn system alarms on and off;
-    * define thresholds for system alarms;
-    * turn sms and email notifications on and off;
-
-Some dashboard features (for example, ability to create devices) were disabled on the live demo dashboard because it is publicly available.
-
-## ThingsBoard advantages
-<section class="usecase-advantages">
-    <div class="usecase-background">
-        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+<div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
+<h1 class="usecase-title">Water metering</h1>
+<section class="water-metering-about">
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">Water is one of our most critical resources, and managing its distribution and consumption is key for sustainable urban development, utility cost control, and infrastructure maintenance. For this purpose, the ThingsBoard platform is an ideal choice, offering powerful capabilities for real-time monitoring, alarms, visualization, and analytics.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>            </div>
+            </div>
+        <div class="long">
+            <p>Traditional water metering methods often fall short in providing real-time data, accurate billing, and predictive maintenance insights. By leveraging connected sensors and intelligent dashboards, organizations can unlock powerful insights into water usage, detect anomalies like leaks, and automate alarm systems. At the core of these solutions is ThingsBoard, a flexible IoT platform enabling the collection, processing, and visualization of telemetry data from water meters in real time.</p>
+            <p>This ThingsBoard-powered <a href="/docs/pe/solution-templates/water-metering/">water metering solution</a> provides complete real-time visibility into water usage, instant response to anomalies, and valuable analytics for long-term infrastructure planning. Scalable across municipalities, residential complexes, and commercial facilities, it offers a powerful tool for smart and efficient water resource management.</p>
+        </div>
     </div>
-    <div class="cards row">
-        <div class="col-lg-6">
+</section>
+
+<section class="water-metering-carousel carousel-padding">
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'water-metering' %}
+</section> 
+
+{% include contact-us-banner.liquid %}
+
+<section class="water-metering-solution-structure">
+    <h2>Solution structure of water metering use case</h2>
+    <div class="about-text">
+        <div class="short">
             <div class="block">
-                <img src="/images/microservices-icon.svg" alt="Microservice icon">
-                <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
-                        Platform components are horizontally scalable. ThingsBoard has production deployments supporting more then 500 000 devices connected.</p>
-                </div>
+                <p class="text">ThingsBoard seamlessly integrates with IoT-enabled water meters that collect real-time data on consumption, temperature, and battery level, sending it over wireless networks such as LoRaWAN, NB-IoT, and LTE for processing.</p>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/telemetry-icon.svg" alt="Telemetry icon">
-                <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
-                        Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+        <div class="long">
+            <p>The platform stores this data, applies intelligent rules to trigger alerts, and visualizes everything through intuitive dashboards for immediate operational insights.</p>
+        </div>
+    </div>
+    <div class="scheme">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases-energy.svg" class="svg-animation" alt="Water metering solution architecture" title="Water metering solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+    </div>
+</section>
+
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Dashboard structure of water metering solution</h2>
+        <p>
+            The ThingsBoard water metering dashboard is structured into dedicated states, each focusing on a key aspect of system monitoring, control, and analysis. Below is a breakdown of each state with its purpose and content:        
+        </p>
+    </div>
+    <div class="dashboard-structure-block">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Total overview state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This view provides a real-time snapshot of system-wide metrics, such as total water consumed in the current week, active/inactive device counts, and any low battery alerts. An interactive map shows meter locations, while bar charts and alarm lists offer instant visibility into daily usage and critical threshold breaches.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/integration-icon.svg" alt="Integration icon">
-                <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Analytics state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Designed for trend analysis, this state allows users to compare historical and current water consumption patterns over the week. It helps identify usage spikes or efficiency improvements by showing data from both the present and the previous intervals.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/security-icon.svg" alt="Security icon">
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Devices state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This dashboard displays all registered water meters with essential metadata like latest readings, status, and leak detection. Users can manage device information, monitor their real-time performance, and quickly respond to technical issues. Additionally, this view allows users to add new devices by entering their serial number and metadata, edit existing device details, change geolocation parameters by dragging a map marker, and configure alarm thresholds for consumption, battery, or inactivity detection.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/engine-icon.svg" alt="Gear icon">
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Customers state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Each water meter is associated with a specific customer profile, allowing for individualized usage tracking and customer service. The dashboard enables administrators to add or update customer contact details and manage meter assignments.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/visualization-icon.svg" alt="Data visualization icon">
-                <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Alarms state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This critical interface aggregates all triggered alarms with timestamps, originators, and severity levels. Operators can quickly acknowledge or dismiss alerts, ensuring rapid incident response and system reliability.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/device-icon.svg" alt="Device icon">
-                <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Settings state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Here, administrators configure alarm thresholds (e.g., daily/weekly consumption, battery level) and notification preferences. The system supports both email and SMS alerts to ensure stakeholders are promptly informed.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
-                <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Individual device dashboards</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Each device has its own dedicated view showing granular consumption data by hour, daily/weekly totals, and battery health. It includes editable location mapping and detailed metadata, enabling localized control and diagnostics. Additionally, each dashboard displays device-specific contact information for the owner, facilitating support and communication, as well as a photo section that allows users to upload or update an image of the physical device for visual identification and verification.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Customer-specific dashboards</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>ThingsBoard provides individual dashboards tailored for end customers, allowing them to monitor only their assigned water meters. This ensures data privacy while empowering users with full visibility into their personal consumption, device status, and alert history.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Rule chains: data processing logic</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>The backend logic of the solution is driven by ThingsBoard rule chains, which handle incoming telemetry from devices and automate alarm routing, threshold checks, and notification dispatch. These visual flowcharts allow platform administrators to customize workflows based on device status, tenant or customer settings, and alarm types, ensuring flexibility and scalability of the solution.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-## Water metering solution overview
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header water-section-header">
+        <h2>Applications of water metering: versatility across industries</h2>
+        <p>IoT-based water metering is not limited to utility companies. The same architecture and approach can be repurposed across a wide range of sectors:</p>
+    </div>
+    <div class="applications-container-large">
+        <div class="text-row-top">
+            <div class="text-block">
+                <h3>Municipal water services</h3>
+                <p>By using IoT-based water metering, municipalities can automate meter readings and billing processes, gain insight into consumption trends across entire cities, and react instantly to issues such as leaks or overuse.</p>
+            </div>
+            <div class="text-block">
+                <h3>Smart buildings</h3>
+                <p>Water metering in smart buildings enables facility managers to fine-tune plumbing infrastructure, minimize waste through real-time monitoring, and improve the overall experience and sustainability for occupants.</p>
+            </div>
+            <div class="text-block">
+                <h3>Agriculture & irrigation</h3>
+                <p>Farmers can leverage real-time data to optimize irrigation schedules, reduce unnecessary water usage, and improve crop yields while maintaining environmental responsibility.</p>
+            </div>
+        </div>
+        <div class="images-row">
+            <div class="application-image"><img src="/images/usecases/scada/water-1.svg" alt="Water valve" title="Water valve"></div>
+            <div class="application-image"><img src="/images/usecases/water-metering/industrial-1.svg" alt="Industrial" title="Industrial facilities"></div>
+            <div class="application-image"><img src="/images/usecases/water-metering/smart-building-1.svg" alt="Building" title="Smart buildings"></div>
+            <div class="application-image"><img src="/images/usecases/smart-office/hospitality-1.svg" alt="Hospitality" title="Hospitality & resorts"></div>
+            <div class="application-image"><img src="/images/usecases/water-metering/irrigation-1.svg" alt="Irrigation" title="Agriculture & irrigation"></div>
+        </div>
+        <div class="text-row-bottom">
+            <div class="text-block">
+                <h3>Industrial facilities</h3>
+                <p>Industries benefit from accurate water monitoring to stay compliant with strict environmental standards and to manage utility costs more effectively through predictive consumption insights.</p>
+            </div>
+            <div class="text-block">
+                <h3>Hospitality & resorts</h3>
+                <p>Hotels and resorts can monitor water usage across various zones or guest areas to implement sustainable practices, reduce operating costs, and engage guests in eco-conscious initiatives.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/scada/water-2.svg" alt="Water valve" title="Water valve"></div>
+            <div class="text-block">
+                <h3>Municipal water services</h3>
+                <p>By using IoT-based water metering, municipalities can automate meter readings and billing processes, gain insight into consumption trends across entire cities, and react instantly to issues such as leaks or overuse.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Industrial facilities</h3>
+                <p>Industries benefit from accurate water monitoring to stay compliant with strict environmental standards and to manage utility costs more effectively through predictive consumption insights.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/water-metering/industrial-2.svg" alt="Industrial" title="Industrial facilities"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/water-metering/smart-building-2.svg" alt="Building" title="Smart buildings"></div>
+            <div class="text-block">
+                <h3>Smart buildings</h3>
+                <p>Water metering in smart buildings enables facility managers to fine-tune plumbing infrastructure, minimize waste through real-time monitoring, and improve the overall experience and sustainability for occupants.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Hospitality & resorts</h3>
+                <p>Hotels and resorts can monitor water usage across various zones or guest areas to implement sustainable practices, reduce operating costs, and engage guests in eco-conscious initiatives.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-office/hospitality-2.svg" alt="Hospitality" title="Hospitality & resorts"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/water-metering/irrigation-2.svg" alt="Irrigation" title="Agriculture & irrigation"></div>
+            <div class="text-block">
+                <h3>Agriculture & irrigation</h3>
+                <p>Farmers can leverage real-time data to optimize irrigation schedules, reduce unnecessary water usage, and improve crop yields while maintaining environmental responsibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-The diagram below identifies data flow and integration points for a typical water metering solution that uses the ThingsBoard platform to collect and analyze data from smart water meters.
+<section class="summary">
+    <div class="summary-text">
+        <h2>Summary of water metering solution</h2>
+        <p>With a low-code approach, intuitive dashboards, and comprehensive alerting mechanisms, ThingsBoard serves as a cornerstone for digital transformation in water resource management. Whether you're scaling for a city or optimizing a single facility, this solution adapts to your needs— one drop at a time.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    </div>
+</section>
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common.svg"></object>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
 
-You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
-Most of the water metering projects today use LoRaWAN, SigFox or NB IoT to connect the water meters. 
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+        document.querySelectorAll('.card-link').forEach((link) => {
+            link.classList.add('linkDefault');
+        });
 
-## Learn more
-<div class="usecases-bottom-nav">
-    <a id="UseCases_WaterMeter_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
-    <a id="UseCases_WaterMeter_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
-    <a id="UseCases_WaterMeter_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
-    <a id="UseCases_WaterMeter_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
-    <a id="UseCases_WaterMeter_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
-</div>
+        const expansionBlocks = document.querySelectorAll('.expansion-block');
+        const structureBlock = document.querySelector('.dashboard-structure-block');
+        const smallImageBlock = createImageBlock('small');
+        const largeImageBlock = createImageBlock('large');
+
+        expansionBlocks[0].appendChild(smallImageBlock);
+        structureBlock.appendChild(largeImageBlock);
+
+        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
+        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
+
+        let currentExpandedIndex = 0;
+
+        expansionBlocks[0].classList.add('expanded');
+
+        expansionBlocks.forEach((panel, index) => {
+            panel.addEventListener('click', function() {
+                if (index === currentExpandedIndex) {
+                    return; 
+                }
+
+                smallImageElement.innerHTML = getImage(index);
+                this.appendChild(smallImageBlock);
+                largeImageElement.innerHTML = getImage(index);
+
+                applyImageBg(smallImageBlock);
+                applyImageBg(largeImageBlock);
+
+                expansionBlocks.forEach(item => {
+                    item.classList.remove('expanded');
+                });
+
+                this.classList.add('expanded');
+                currentExpandedIndex = index; 
+                if (window.screen.width < 600) {
+                    const blockRect = expansionBlocks[index].getBoundingClientRect();
+                    const target = blockRect.top + window.scrollY - 80;
+                    window.scrollTo(0, target);
+                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                }
+                if (index === 4) {
+                    window.scrollTo(0, window.scrollY +1);
+                }
+            });
+        });
+
+        window.onscroll = function() {
+            const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
+            const large = document.querySelector('.image-block-large');
+
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 150 && elemCoor.top < 0) {
+                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+            }
+        };
+
+        if (window.screen.width > 960) {
+            const fullPage = document.querySelector('#scada-fullpage');
+            largeImageElement.addEventListener('click', function(image) {
+                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                fullPage.style.display = 'block';
+                fullPage.style.top = window.scrollY + 'px';
+                document.querySelector('body').style.overflow = 'hidden';
+            });
+        }
+
+        function createImageBlock(layout) {
+            let block = document.createElement('div');
+            block.className = `image-block-${layout}`;
+            block.innerHTML = `
+            <div class="image-container image-background">
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class=image>${getImage(0)}</div>
+            </div>
+            <div class="buttons-block">
+                <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
+                <a id="UseCases_WaterMeter_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
+            </div>`;
+
+            applyImageBg(block);
+    
+            return block;
+        }
+
+        function applyImageBg(block) {
+            const img = block.querySelector('.image img');
+            const container = block.querySelector('.image-container');
+            if (img && container) {
+                const bg = img.dataset.bg;
+                container.style.backgroundColor = bg || '';
+            }
+        }
+
+        function getImage(index) {
+            const images = [
+                "<img src='/images/usecases/water-metering/water-metering-1.webp' alt='IoT water monitoring dashboard with real-time meter data, consumption chart, and alert notifications' title='IoT-based smart water metering dashboard for real-time monitoring and consumption analytics'/>",
+                "<img src='/images/usecases/water-metering/water-metering-2.webp' alt='hingsBoard IoT dashboard for water metering with real-time consumption graph, smart devices, and meter analytics' title='Smart water consumption tracking with ThingsBoard IoT platform — daily usage trends, device status, and meter readings'/>",
+                "<img src='/images/usecases/water-metering/water-metering-6.webp' alt='ThingsBoard interface for editing smart water meter device details with active alerts and status overview' title='Edit IoT water meter device information and monitor active consumption alarms in ThingsBoard' data-bg='#A4A4A4'/>",
+                "<img src='/images/usecases/water-metering/water-metering-7.webp' alt='ThingsBoard customer management interface displaying smart water metering clients with contact details' title='Manage smart water metering customers in ThingsBoard with email, address, and contact information'/>",
+                "<img src='/images/usecases/water-metering/water-metering-4.webp' alt='IoT water metering dashboard with critical alerts for exceeded consumption thresholds and real-time device data in ThingsBoard' title='ThingsBoard IoT platform showing critical smart meter alerts and active status of water monitoring devices'/>",
+                "<img src='/images/usecases/water-metering/water-metering-5.webp' alt='hingsBoard alarm configuration panel showing system thresholds and email or SMS notification settings' title='Configure smart alarm thresholds and notification channels in ThingsBoard IoT platform'/>",
+                "<img src='/images/usecases/water-metering/water-metering-3.webp' alt='Detailed IoT water meter monitoring on ThingsBoard dashboard with usage graph, location map, alerts, and installation info' title='ThingsBoard smart metering dashboard showing real-time water usage, device alerts, and geolocation tracking'/>",
+                "<img src='/images/usecases/water-metering/water-metering-8.webp' alt='ThingsBoard dashboard with water meter consumption data, leakage indicators, and active customer alarms' title='Monitor water meter status and customer-specific consumption alerts in ThingsBoard IoT platform'/>",
+                "<img src='/images/usecases/water-metering/water-metering-9.webp' alt='ThingsBoard rule chain flow diagram for water consumption processing and alarm generation' title='IoT rule chain in ThingsBoard for calculating consumption, managing alarms, and posting telemetry'/>"
+            ];
+            return images[index];
+        }
+    });
+</script>
 

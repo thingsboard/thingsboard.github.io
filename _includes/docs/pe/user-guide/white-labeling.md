@@ -18,6 +18,13 @@ But only Tenant Administrator are able to set up customer email templates to int
 By default, the Customer inherits the Tenant UI configuration. But the Customer Administrator are able to set up their own White Labeling configuration.
 {% endif %}
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/jSXuHj3lbG0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## White labeling settings
 
 To configure your company or product logo and color scheme, go to the "White labeling" page.

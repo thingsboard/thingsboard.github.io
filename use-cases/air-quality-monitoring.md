@@ -8,12 +8,12 @@ notitle: "true"
 
 {% include usecase-nav.html usecase="air-quality-monitoring" %}
 
-<h1 class="usecase-title">Air Quality Monitoring solution</h1>
+<h1 class="usecase-title">Air quality monitoring solution</h1>
 
 Air quality control is an important component of modern life, as high levels of pollutants can negatively affect people's health. 
 Particularly noteworthy are megacities with a large number of cars and industrial areas in which the concentration of pollutants is higher.
 
-We developed the AIR Quality Monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring/">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
+We developed the air quality monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring/">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
 The main metric for controlling the level of air pollution is AQI.
 AQI is calculated based on the sensor readings about such pollutants: Ozone (ppm), PM2.5 (µg/m3 ), PM10 (µg/m3 ), CO (ppm), SO2 (ppb), NO2 (ppb);
 The solution supports sensors that report either all or a subset of the readings.
@@ -23,13 +23,13 @@ You can use this solution as a part of a Smart City and cover the all needed req
 
 <h2>Solution Structure</h2>
 
-As part of this solution, we have created 2 dashboards that display data from multiple sensors - **Public Air Quality Monitoring Dashboard** and **Administration Air Quality Monitoring Dashboard**.
+As part of this solution, we have created 2 dashboards that display data from multiple sensors - **public air quality monitoring dashboard** and **administration air quality monitoring dashboard**.
 
 The **Public Dashboard** is designed for end-users. It is configured to be "public", meaning the end-user does NOT need to log in to access the dashboard. The dashboard has multiple states:
 - **City state** represents the air pollution monitoring of a specific city (in our case Los Angeles) and calculates  value based on the AQI received from city sensors.
 - **Sensor state** represents the selected sensor deployed in a particular city district.
 
-<h2>Air Quality Monitoring Benefits</h2>
+<h2>Air quality monitoring benefits</h2>
 Save up to 90% of development time for your air monitoring solution by utilizing the following platform benefits:
 - reliable and scalable data collection for your smart monitors;
 - powerful rule engine to process collected data and produce alarms and valuable insights;
@@ -39,7 +39,7 @@ Save up to 90% of development time for your air monitoring solution by utilizing
 - remote control and OTA updates for your smart sensors and other devices;
 - customizable mobile applications with minimum coding efforts.
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'air-quality-monitoring-1' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'air-quality-monitoring-1' %}
 
 <div class="center" style="margin-bottom: 64px;">
     <a id="UseCases_AirQM_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
@@ -49,7 +49,7 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
 -  **Main state** which is intended for monitoring sensors health: battery level, connectivity, etc. The Main state contains:
 - **Sensor state** allows you to view detailed information about the sensor: It's latest sensor readings, location, etc. 
 
-{% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'air-quality-monitoring-2' %}
+{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'air-quality-monitoring-2' %}
 
 ## ThingsBoard advantages
 <section class="usecase-advantages">
@@ -132,7 +132,7 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
     </div>
 </section>
 
-## Air Quality Monitoring solution overview
+## Air quality monitoring solution overview
 
 The diagram below identifies data flow and integration points for a typical air quality monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from air stations.
 

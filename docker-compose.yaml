@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  thingsboard_website:
+    container_name: thingsboard_website
+    restart: always
+    image: "thingsboard/website"
+    environment:
+      PAGES_REPO_NWO: "thingsboard/thingsboard.github.io"
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/website

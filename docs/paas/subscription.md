@@ -317,7 +317,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
-          <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
+          <td>Total number of REST API calls received by any of the users belong to the tenant</td>
       </tr>
       <tr>
           <td>REST requests (Customer)</td>
@@ -325,7 +325,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
-          <td>Total number of messages received by any of the transport microservices for each device separately</td>
+          <td>Total number of REST API calls received by any of the users belong to the particular customer</td>
       </tr>
       <tr>
           <td>WS updates per session</td>
@@ -333,7 +333,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
-          <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
+          <td>Total number of messages received by particular WebSocket session</td>
       </tr>
       <tr>
           <td>WS Sessions (Tenant)</td>
@@ -349,7 +349,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>20K</td>
           <td>20K</td>
           <td>20K</td>
-          <td>Maximum number of Web socket subscription for the tenant</td>
+          <td>Maximum number of Web socket subscriptions for the tenant</td>
       </tr>
       <tr>
           <td>WS Sessions (Customer)</td>

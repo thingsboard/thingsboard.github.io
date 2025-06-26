@@ -1,0 +1,50 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign collectionKey = include.collectionKey %}
+{% assign customSettings = include.customSettings %}
+{% assign substrate = include.substrate %}
+
+{% if site.data.carousel-collection[collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[collectionMap] %}
+{% endif %}
+
+{% if collectionKey %}
+    {% assign carouselCollection = carouselCollection[collectionKey] %}
+{% endif %}
+
+{% assign nonActiveItemsVisibility = include.nonActiveItemsVisibility %}
+{% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityTrue" %}
+
+{% if nonActiveItemsVisibility == false %}
+    {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
+{% endif %}
+
+{% assign substrateClass = "substrateClassFalse" %}
+
+{% if substrate == true %}
+    {% assign substrateClass = "substrateClassTrue" %}
+{% endif %}
+
+{% assign defaultSettings = '{
+    "items": 1,
+    "stagePadding": 50,
+    "margin": 100,
+    "nav": false,
+    "responsive":{"1024":{"nav":true}}
+}' %}
+
+{% assign settings = defaultSettings %}
+
+{% if customSettings %}
+    {% assign settings = customSettings %}
+{% endif %}
+
+<div class="usecase-carousel owl-carousel owl-theme transitionAnimationEnabled {{ nonActiveItemsVisibilityClass }} thinArrow line {{ substrateClass }}" data-settings='{{ settings }}'>
+    {% for carouselItem in carouselCollection %}
+        <div class="carousel-image">
+            <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" title="{{carouselItem[1].imageTitleAttribute}}" width="{{carouselItem[1].width}}" height="{{carouselItem[1].height}}">
+        </div>
+    {% endfor %}
+</div>
+

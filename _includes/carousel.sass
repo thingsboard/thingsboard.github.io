@@ -1,4 +1,4 @@
-.owl-carousel.owl-theme.usecase-carousel
+.owl-carousel.owl-theme
   margin: 64px 0 24px
   position: relative
   visibility: hidden
@@ -169,24 +169,78 @@
         margin: 8px 0
         background: #E0E1E2
         border-radius: 4px
-.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityTrue
+
+.owl-carousel.owl-theme.partnersCarousel
+  margin: 0
+
+  .owl-stage
+    display: flex
+
+  .owl-nav
+    display: block !important
+    margin-top: 0
+
+    button.owl-prev,
+    button.owl-next
+      position: absolute
+      outline: none
+      background-color: transparent
+      filter: unset
+      width: 60px
+      height: 60px
+      top: calc(50% - 25px)
+
+      span
+        display: none
+
+    button.owl-prev
+      left: 0
+      transform: scale(-1, 1)
+
+    button.owl-next
+      right: 0
+
+    button.owl-prev::before,
+    button.owl-next::before
+      content: "\f078"
+      font-family: "Font Awesome 5 Free"
+      position: absolute
+      top: 42%
+      left: 85px
+      transform: translate(-50%, -50%) rotate(-90deg)
+      font-weight: 900
+      font-size: 21px
+      color: #2A7DEC
+      transition: ease-in-out 0.3s
+
+.owl-carousel.owl-theme.usecase-carousel
+  img
+    height: auto
+    width: auto
+.owl-carousel.owl-theme.usecase-carousel.substrateClassTrue
+  .owl-item.active
+    .carousel-image
+      padding: 9px
+      border-radius: 24px
+      background: #EBEBEB
+.owl-carousel.owl-theme.nonActiveItemsVisibilityTrue
   .owl-stage-outer
     overflow: visible
-.owl-carousel.owl-theme.usecase-carousel.nonActiveItemsVisibilityFalse
+.owl-carousel.owl-theme.nonActiveItemsVisibilityFalse
   .owl-stage-outer
     overflow: hidden
-.owl-carousel.owl-theme.usecase-carousel.circle
+.owl-carousel.owl-theme.circle
   .owl-dots
     button.owl-dot
       width: 10px
       height: 10px
-.owl-carousel.owl-theme.usecase-carousel.line
+.owl-carousel.owl-theme.line
   .owl-dots
     button.owl-dot
       span
         width: 72px
         height: 4px
-.owl-carousel.owl-theme.usecase-carousel.square
+.owl-carousel.owl-theme.square
   .owl-dots
     button.owl-dot
       &:hover, &.active
@@ -198,25 +252,25 @@
         width: 12px
         height: 12px
 
-.owl-carousel.owl-theme.usecase-carousel.dotButtonInCarouselContainerEnabled
+.owl-carousel.owl-theme.dotButtonInCarouselContainerEnabled
   .owl-dots
     position: absolute
     bottom: 5px
     left: 50%
     transform: translate(-50%, -50%)
 
-.owl-carousel.owl-theme.usecase-carousel.disableDots
+.owl-carousel.owl-theme.disableDots
   .owl-dots
     display: none
 
 @media screen and (max-width: 750px)
-  .owl-carousel.owl-theme.usecase-carousel.line
+  .owl-carousel.owl-theme.line
       .owl-dots
         button.owl-dot
           span
             width: 10px
             height: 10px
-.owl-carousel.owl-theme.usecase-carousel.thingsboardStyledBackgroundEnabled
+.owl-carousel.owl-theme.thingsboardStyledBackgroundEnabled
   .carousel-item-default
     position: relative
     &:before
@@ -229,7 +283,7 @@
       background-repeat: no-repeat
       z-index: 2
       opacity: 0.3
-.owl-carousel.owl-theme.usecase-carousel.darkenedImageEnabled
+.owl-carousel.owl-theme.darkenedImageEnabled
   .carousel-item-default
     position: relative
     &:after
@@ -240,7 +294,7 @@
       top: 0
       background-color: #3F474F99
       z-index: 1
-.owl-carousel.owl-theme.usecase-carousel.transitionAnimationEnabled
+.owl-carousel.owl-theme.transitionAnimationEnabled
   .owl-stage-outer
     position: relative
     .owl-stage
@@ -253,11 +307,11 @@
         &.active
           filter: blur(0)
           transform: scale(1)
-.owl-carousel.owl-theme.usecase-carousel.thinArrow
+.owl-carousel.owl-theme.thinArrow
   .owl-nav
     button.owl-prev, button.owl-next
       background-image: url(/images/slider-arrow.svg)
-.owl-carousel.owl-theme.usecase-carousel.fatArrow
+.owl-carousel.owl-theme.fatArrow
   .carousel-item-default
     padding: 0 30px
   .owl-nav
@@ -266,7 +320,7 @@
       width: 26px
       height: 40px
       background-image: url(/images/slider-forward.svg)
-.owl-carousel.owl-theme.usecase-carousel.smallArrow
+.owl-carousel.owl-theme.smallArrow
   .owl-nav
     button.owl-prev, button.owl-next
       filter: unset
@@ -293,12 +347,12 @@
 
 
 
-.owl-carousel.owl-theme.usecase-carousel.timeline
+.owl-carousel.owl-theme.timeline
   position: relative
   &:before
     content: ""
     position: absolute
-    top: calc((var(--maxTitleHeight) * var(--title-hover-scale)) + 50px)
+    top: 40%
     left: 50%
     transform: translate(-50%, -50%)
     width: 90%
@@ -312,7 +366,7 @@
     button.owl-prev, button.owl-next
       margin: 0
       transform: translateY(-50%)
-      top: calc((var(--maxTitleHeight) * var(--title-hover-scale)) + 50px)
+      top: 40%
     button.owl-prev
       transform: translateY(-50%) scale(-1, 1)
     .disabled
@@ -330,18 +384,21 @@
       text-align: center
       cursor: pointer
       &:hover
-        .timeline-title.titleHoverEnabled
+        .timeline-title
           text-shadow: 4px 4px 4px rgba(48, 86, 128, 0.15)
           transform-origin: bottom
-          transform: scale(var(--title-hover-scale))
+          transform: scale(1.6)
       &:hover
         .timeline-circle
           background: #E6EAEF
       .timeline-title
         display: flex
+        font-size: 24px
+        color: #305680
+        font-weight: 500
+        line-height: 40px
         justify-content: center
         align-items: end
-        height: calc(var(--maxTitleHeight) * var(--title-hover-scale))
         transition: ease-in-out 0.3s
       .timeline-circle
         display: inline-block
@@ -364,6 +421,9 @@
     .timeline-text
       align-self: center
       li
+        color: #000000c2
+        line-height: 30px
+        font-size: 18px
         list-style-type: disc
         opacity: 0
         transform: translateY(20px)
@@ -378,12 +438,12 @@
         opacity: 1
         transform: translateY(0)
     .timeline-label
-      .timeline-title.titleHoverEnabled
+      .timeline-title
         text-shadow: 4px 4px 4px rgba(48, 86, 128, 0.15)
-        transform: scale(var(--title-hover-scale))
+        transform: scale(1.6)
         transform-origin: bottom
 
-.owl-carousel.owl-theme.usecase-carousel.cardMode
+.owl-carousel.owl-theme.cardMode
   .card
     cursor: pointer
     transform: scale(0.7)
@@ -404,6 +464,7 @@
       align-items: center
     .card-link
       display: flex
+      pointer-events: none
       flex-direction: row
       align-items: center
       gap: 8px
@@ -437,17 +498,35 @@
     .card
       transform: scale(1)
       .card-link
+        pointer-events: initial
         opacity: 1
         animation: slideUp 0.3s forwards
         &:hover
           opacity: 0.7
           a
             text-decoration: none
-.owl-carousel.owl-theme.usecase-carousel.cardMode
+.owl-carousel.owl-theme.cardMode
   .owl-item.active.center
     .card
       box-shadow: -4px 15px 50px -20px rgba(42, 125, 236, 0.15), 0px 0px 8px 0px rgba(42, 125, 236, 0.08)
-.owl-carousel.owl-theme.usecase-carousel.cardMode.smallArrow
+.owl-carousel.owl-theme.usecase-carousel.cardMode
+  .card
+    span
+      transition: ease-in-out 0.2s
+      color: #000000DE
+  .owl-item.active.center
+    .card
+      &:hover
+        span
+          color: #2A7DEC
+      position: relative
+      .card-link
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+.owl-carousel.owl-theme.cardMode.smallArrow
   .owl-nav
     button.owl-prev, button.owl-next
       &:before
@@ -456,9 +535,7 @@
       &:hover
         background-color: unset
         opacity: 0.7
-.owl-carousel.owl-theme.usecase-carousel.cardMode.circle
-  .owl-dots
-    display: none
+.owl-carousel.owl-theme.cardMode.circle
     button.owl-dot
       width: 8px
       height: 8px
@@ -468,7 +545,10 @@
   .owl-carousel-toggle-content-item.current-content
     display: flex
     flex-direction: column
-    gap: 32px
+
+.owl-carousel.owl-theme.cardMode
+  .course-below
+    color: #2a7dec
 
 @keyframes slideUp
   0%
@@ -488,7 +568,7 @@
   text-align: center
 
 @media screen and (min-width: 1280px)
-  .owl-carousel.owl-theme.usecase-carousel
+  .owl-carousel.owl-theme
     .carousel-text
       h2
         font-size: var(--titleSize)
@@ -503,7 +583,7 @@
         font-size: var(--descriptionSize)
 
 @media screen and (max-width: 1279px)
-  .owl-carousel.owl-theme.usecase-carousel
+  .owl-carousel.owl-theme
     .carousel-text
       h2
         font-size: var(--titleSizeLower1280)
@@ -518,7 +598,7 @@
         font-size: var(--descriptionSizeLower1280)
 
 @media screen and (max-width: 959px)
-  .owl-carousel.owl-theme.usecase-carousel
+  .owl-carousel.owl-theme
     .carousel-text,.timeline-item
       h2
         font-size: var(--titleSizeLower960)
@@ -531,16 +611,13 @@
         font-size: var(--titleSizeLower960)
       .timeline-text
         font-size: var(--descriptionSizeLower960)
-  .owl-carousel.owl-theme.usecase-carousel.timeline
+  .owl-carousel.owl-theme.timeline
     &:before
       content: ""
       width: 80%
-  .owl-carousel.owl-theme.usecase-carousel.cardMode.circle
-    .owl-dots
-      display: block
 
 @media screen and (max-width: 599px)
-  .owl-carousel.owl-theme.usecase-carousel
+  .owl-carousel.owl-theme
     .carousel-text,.timeline-item
       h2
         font-size: var(--titleSizeLower600)
@@ -553,10 +630,34 @@
         font-size: var(--titleSizeLower600)
       .timeline-text
         font-size: var(--descriptionSizeLower600)
-  .owl-carousel.owl-theme.usecase-carousel.timeline
+  .owl-carousel.owl-theme.timeline
     &:before
       content: ""
       width: 70%
-  .owl-carousel.owl-theme.usecase-carousel.cardMode
+  .owl-carousel.owl-theme.cardMode
     .card
       padding: 24px
+
+.owl-carousel.owl-theme.dev-serv
+  .development-title
+    font-size: 28px
+    color: #212529
+    line-height: 40px
+    font-weight: 500
+  .development-description
+    font-size: 16px
+    color: #000000DE
+    line-height: 27px
+    font-weight: 400
+
+.owl-carousel.owl-theme
+  .company-values-title
+    font-size: 96px
+    font-weight: 500
+    line-height: 125%
+    color: #FFF
+  .company-values-description
+    font-size: 36px
+    font-weight: 400
+    line-height: 140%
+    color: #FFF

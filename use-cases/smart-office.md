@@ -5,38 +5,42 @@ description: Smart Office is a ready-to-use IoT solution powered by ThingsBoard 
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-office" %}
+
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
 <h1 class="usecase-title">Smart office</h1>
 <section class="smart-office-about">
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">The Smart Office solution powered by ThingsBoard enables efficient monitoring of energy and water consumption, tracking of air quality and CO₂ levels, control of HVAC systems, real-time response to critical events, and overall improvement of energy efficiency and employee comfort.</p>
+                <p class="text">The smart office solution powered by ThingsBoard enables efficient monitoring of energy and water consumption, tracking of air quality and CO₂ levels, control of HVAC systems, real-time response to critical events, and overall improvement of energy efficiency and employee comfort.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_SmartOffice_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>            </div>
             </div>
         <div class="long">
-            <p>Smart Office solutions are designed to optimize workplace environments by monitoring key operational parameters and automating building systems in real time. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
-            <p>Thanks to ThingsBoard, an open-source IoT platform, it's easy to integrate and visualize data from various devices and sensors, enabling the creation of intelligent, data-driven solutions. This approach allows not only real-time monitoring of office conditions but also active management—turning systems on or off, receiving alerts, and configuring automation scenarios. All of these capabilities are fully demonstrated in our Smart Office solution.</p>
+            <p>Smart office solutions are designed to optimize workplace environments by monitoring key operational parameters and automating building systems in real time. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
+            <p>Thanks to ThingsBoard, an open-source IoT platform, it's easy to integrate and visualize data from various devices and sensors, enabling the creation of intelligent, data-driven solutions. This approach allows not only real-time monitoring of office conditions but also active management—turning systems on or off, receiving alerts, and configuring automation scenarios. All of these capabilities are fully demonstrated in our <a href="/docs/pe/solution-templates/smart-office/">smart office solution</a>.</p>
         </div>
     </div>
 </section>
 
 <section class="smart-office-carousel carousel-padding">
-    {% include carousel.liquid nonActiveItemsVisibility = true overlay = false collectionMap = 'use-cases' collectionKey = 'smart-office' %}
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-office-solution-structure">
     <h2>Solution structure of smart office use case</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">The Smart Office solution connects devices like energy meters, HVAC, and sensors to ThingsBoard via MQTT, CoAP, or HTTP, or through a gateway with Modbus, BLE, and BACnet connectors.</p>
+                <p class="text">The smart office solution connects devices like energy meters, HVAC, and sensors to ThingsBoard via MQTT, CoAP, or HTTP, or through a gateway with Modbus, BLE, and BACnet connectors.</p>
             </div>
         </div>
         <div class="long">
@@ -52,7 +56,7 @@ includeAdvantages: "true"
     <div class="section-header">
         <h2>Dashboard structure of smart office solution</h2>
         <p>
-            ThingsBoard provides a flexible dashboard system that allows for clear visualization of key metrics. In the context of the Smart Office, this includes parameters such as energy and water consumption, air quality, temperature and humidity, and the status of the HVAC system. Additionally, dashboards display alarms, enabling prompt response to any deviations from normal conditions.
+            ThingsBoard provides a flexible dashboard system that allows for clear visualization of key metrics. In the context of the smart office, this includes parameters such as energy and water consumption, air quality, temperature and humidity, and the status of the HVAC system. Additionally, dashboards display alarms, enabling prompt response to any deviations from normal conditions.
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -114,7 +118,7 @@ includeAdvantages: "true"
 <section class="applications applications-additional summary-margin section-padding">
     <div class="section-header">
         <h2>Applications of smart office solution</h2>
-        <p>The Smart Office approach can be easily adapted to various other sectors</p>
+        <p>The smart office approach can be easily adapted to various other sectors</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
@@ -189,10 +193,12 @@ includeAdvantages: "true"
 </section>
 
 <section class="summary">
-    <h2>Summary of smart office solution</h2>
-    <div>
-        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    <div class="summary-text">
+        <h2>Summary of smart office solution</h2>
+        <p>The smart office project demonstrates how the integration of IoT and ThingsBoard can significantly enhance office building management. It’s more than just a dashboard — it’s a powerful tool for improving efficiency, safety, and comfort. The solution is easily scalable, integrable, and customizable to fit any business needs. With ThingsBoard, you don’t just monitor your office — you take control of it.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">  
     </div>
 </section>
 
@@ -291,7 +297,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;
