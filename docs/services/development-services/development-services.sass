@@ -1403,10 +1403,12 @@ h2
             gap: 16px
             .questions-section-card
                 width: 100%
+                max-height: 76px
                 padding: 24px 40px
                 border-radius: 24px
                 box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
                 background: #FAFBFC
+                transition: max-height 0.6s ease
                 .questions-section-header
                     @include expandable-header()
                     &::after
@@ -1437,6 +1439,7 @@ h2
                         li
                             list-style: auto
                 &.expanded
+                    max-height: 1300px
                     .questions-section-content
                         max-height: 1300px
                         overflow: visible

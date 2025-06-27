@@ -1334,9 +1334,18 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     }
     function handleClickOnQuestions(){
         const questions = document.querySelectorAll('.questions-section-card');
-        questions.forEach(question => {
+        let currentExpandedIndex;
+        questions.forEach((question, index) => {
             question.addEventListener('click', function(){
-                question.classList.toggle('expanded')
+                if(index === currentExpandedIndex){
+                    question.classList.toggle('expanded')
+                    return
+                }
+                currentExpandedIndex = index
+                questions.forEach(item => {
+                    item.classList.remove('expanded');
+                });
+                question.classList.add('expanded')
             })
         })
 
