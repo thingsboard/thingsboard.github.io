@@ -1,8 +1,8 @@
 ---
 layout: development-services
-title: ᐉ Professional IoT Solution Development Services
+title: ᐉ Custom IoT Development | Scalable IoT Solutions | ThingsBoard
 notitle: "true"
-description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to complex systems, ✔ including dashboards, ✔ device connections, and tailored ✔ system integration."
+description: "Fast delivery of scalable IoT solutions with fixed cost and timeline. ThingsBoard offers custom IoT development services, delivering high-quality Internet of Things solutions tailored to your needs."
 ---
 
 <section class="hero light-text">
@@ -25,19 +25,19 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 <section class="our-customers">
     <div class="customer-logos">
         <div class="logo">
-            <img src="/images/development-services/Prosegur.webp" alt="logo prosegur"/>
+            <img src="/images/development-services/Prosegur.webp" alt="Prosegur company logo"/>
         </div>
         <div class="logo">
-            <img src="/images/development-services/t-mobile.webp" alt="logo t-mobile"/>
+            <img src="/images/development-services/t-mobile.webp" alt="T-Mobile logo"/>
         </div>
         <div class="logo">
-            <img src="/images/development-services/Intel.webp" alt="logo intel"/>
+            <img src="/images/development-services/Intel.webp" alt="Intel logo"/>
         </div>
         <div class="logo">
-            <img src="/images/development-services/Engie.webp" alt="logo engie"/>
+            <img src="/images/development-services/Engie.webp" alt="Engie energy company logo"/>
         </div>
         <div class="logo">
-            <img src="/images/development-services/schwarz.webp" alt="logo schwarz"/>
+            <img src="/images/development-services/schwarz.webp" alt="Schwarz Group logo"/>
         </div>
     </div>
 </section>
@@ -75,7 +75,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="cards">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/car-gray.webp" alt="Real time icon" loading="lazy"/>Fleet tracking</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/car-gray.webp" alt="Fleet tracking solution icon" loading="lazy"/>Fleet tracking</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -90,7 +90,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/energy-gray.webp" alt="Real time icon" loading="lazy"/>Energy monitoring</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/energy-gray.webp" alt="Energy monitoring solution icon" loading="lazy"/>Energy monitoring</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -105,7 +105,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/tracking-gray.webp" alt="Real time icon" loading="lazy"/>Asset tracking</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/tracking-gray.webp" alt="Asset tracking solution icon" loading="lazy"/>Asset tracking</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -121,7 +121,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/scada-gray.webp" alt="Real time icon" loading="lazy"/>SCADA</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/scada-gray.webp" alt="SCADA solution icon" loading="lazy"/>SCADA</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -137,7 +137,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/metering-gray.webp" alt="Real time icon" loading="lazy"/>Smart Metering</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/metering-gray.webp" alt="Smart metering solution icon" loading="lazy"/>Smart Metering</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -153,7 +153,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/tank-gray.webp" alt="Real time icon" loading="lazy"/>Tank level</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/tank-gray.webp" alt="Tank level solution icon" loading="lazy"/>Tank level</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -169,7 +169,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 </div>
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/temp-gray.webp" alt="Real time icon" loading="lazy"/>Cold chain</h3>
+                        <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/temp-gray.webp" alt="Cold chain solution icon" loading="lazy"/>Cold chain</h3>
                     </div>
                     <div class="expansion-content">
                         <div class="expansion-buttons">
@@ -304,7 +304,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="vision-header">
                 <div class="vision-title">
                     <!-- <div class="vision-img"> -->
-                        <img class="vision-img" src="/images/development-services/Artur.webp" alt="Avatar">
+                        <img class="vision-img" src="/images/development-services/Artur.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
                     <!-- </div> -->
                     <div class="vision-text">
                         <div class="name">Artur Ishkhanishvili</div>
@@ -337,7 +337,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="card">
             <div class="card-label industry">SMART RETAIL</div>
             <div class="card-tag retail">Retail</div>
-            <img src="/images/development-services/Shwarz.webp" alt="Schwarz Group" class="card-image" />
+            <img src="/images/development-services/Shwarz.webp" alt="A Schwarz Group (Lidl) store building with signs, symbolizing retail digitalization with ThingsBoard." class="card-image" />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/schwarz/"><h3>IoT in retail: how Schwarz Group accelerated digitalization with ThingsBoard</h3></a>
                 <ul class="card-stats">
@@ -350,7 +350,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="card">
             <div class="card-label industry">INDUSTRY 4.0</div>
             <div class="card-tag manufacturing">Manufacturing</div>
-            <img src="/images/development-services/Superbock.webp" alt="Superbock" class="card-image" />
+            <img src="/images/development-services/Superbock.webp" alt="Superbock" class="A partial view of a production hall with tanks featuring the Super Bock Group logo, illustrating the revolution in beer distribution using ThingsBoard." />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/super-bock/"><h3>Revolutionizing beer distribution: how ThingsBoard empowered Super Bock Group</h3></a>
                 <ul class="card-stats">
@@ -363,7 +363,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="card">
             <div class="card-label industry">INDUSTRY 4.0</div>
             <div class="card-tag manufacturing">Manufacturing</div>
-            <img src="/images/development-services/IONA Tech’s.webp" alt="IOTA" class="card-image" />
+            <img src="/images/development-services/IONA Tech’s.webp" alt="A worker in protective glasses at an IONA Tech manufacturing facility, working with electronics, showing the protection of electronics and workers through IoT transformation with ThingsBoard." class="card-image" />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/iona/"><h3>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</h3></a>
                 <ul class="card-stats">
@@ -376,7 +376,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="card">
             <div class="card-label industry">SMART ENERGY</div>
             <div class="card-tag energy">Energy</div>
-            <img src="/images/development-services/OXI.webp" alt="OXI" class="card-image" />
+            <img src="/images/development-services/OXI.webp" alt="A worker in a protective helmet and goggles, working with pellet burner equipment, symbolizing the optimization of IoT infrastructure for OXI TRADE's alternative energy." class="card-image" />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/oxi/"><h3>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</h3></a>
                 <ul class="card-stats">
@@ -389,7 +389,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="card">
             <div class="card-label industry">SMART INFRASTRUCTURE</div>
             <div class="card-tag infrastructure">Infrastructure</div>
-            <img src="/images/development-services/ÖBB-Infrastruktur AG.webp" alt="ÖBB-Infrastruktur" class="card-image" />
+            <img src="/images/development-services/ÖBB-Infrastruktur AG.webp" alt="Railway tracks and trains, representing the digital transformation of ÖBB-Infrastruktur AG's smart railway infrastructure" class="card-image" />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/obb-infra/"><h3>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG</h3></a>
                 <ul class="card-stats">
@@ -402,7 +402,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <div class="card">
             <div class="card-label industry">COLD CHAIN MONITORING</div>
             <div class="card-tag logistics">Logistics</div>
-            <img src="/images/development-services/Transforming food logistics with IoT-powered temperature monitoring.webp" alt="logistics" class="card-image" />
+            <img src="/images/development-services/Transforming food logistics with IoT-powered temperature monitoring.webp" alt="A truck with refrigeration equipment and containers of fresh produce, illustrating the transformation of food logistics with IoT-powered temperature monitoring in the cold chain." class="card-image" />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/senseing/"><h3>Transforming food logistics with IoT-powered temperature monitoring</h3></a>
                 <ul class="card-stats">
@@ -422,7 +422,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="cards">
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Consulting & Solution Architecture.webp" alt="Real time icon" loading="lazy"/><h3>IoT Consulting & Solution Architecture</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Consulting & Solution Architecture.webp" alt="IoT Consulting & Solution Architecture icon" loading="lazy"/><h3>IoT Consulting & Solution Architecture</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -434,7 +434,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Prototyping (PoC, MVP).webp" alt="Real time icon" loading="lazy"/><h3>Prototyping (PoC, MVP)</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Prototyping (PoC, MVP).webp" alt="Prototyping (PoC, MVP) icon" loading="lazy"/><h3>Prototyping (PoC, MVP)</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -446,7 +446,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT integration services.webp" alt="Real time icon" loading="lazy"/><h3>IoT integration services</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT integration services.webp" alt="IoT Integration services icon" loading="lazy"/><h3>IoT integration services</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -458,7 +458,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Edge Computing Solutions.webp" alt="Real time icon" loading="lazy"/><h3>Edge Computing Solutions</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Edge Computing Solutions.webp" alt="Edge Computing Solutions icon" loading="lazy"/><h3>Edge Computing Solutions</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -470,7 +470,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Application Development.webp" alt="Real time icon" loading="lazy"/><h3>IoT Application Development</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Application Development.webp" alt="IoT Application Development icon" loading="lazy"/><h3>IoT Application Development</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -482,7 +482,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Mobile App.webp" alt="Real time icon" loading="lazy"/><h3>IoT Mobile App</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Mobile App.webp" alt="IoT Mobile App icon" loading="lazy"/><h3>IoT Mobile App</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -494,7 +494,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Data Visualization.webp" alt="Real time icon" loading="lazy"/><h3>IoT Data Visualization</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Data Visualization.webp" alt="IoT Data Visualization icon" loading="lazy"/><h3>IoT Data Visualization</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -506,7 +506,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT analytics.webp" alt="Real time icon" loading="lazy"/><h3>IoT analytics</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT analytics.webp" alt="IoT analytics icon" loading="lazy"/><h3>IoT analytics</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -518,7 +518,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Remote Monitoring & Control Apps.webp" alt="Real time icon" loading="lazy"/><h3>Remote Monitoring & Control Apps</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Remote Monitoring & Control Apps.webp" alt="Remote Monitoring & Control Apps icon" loading="lazy"/><h3>Remote Monitoring & Control Apps</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -530,7 +530,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Device integration.webp" alt="Real time icon" loading="lazy"/><h3>Device integration</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Device integration.webp" alt="Device Integration icon" loading="lazy"/><h3>Device integration</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -542,7 +542,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Predictive Maintenance.webp" alt="Real time icon" loading="lazy"/><h3>Predictive Maintenance</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Predictive Maintenance.webp" alt="Predictive Maintenance icon" loading="lazy"/><h3>Predictive Maintenance</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -554,7 +554,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Digital Twin.webp" alt="Real time icon" loading="lazy"/><h3>Digital Twin</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Digital Twin.webp" alt="Digital Twin icon" loading="lazy"/><h3>Digital Twin</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -566,7 +566,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Compliance management.webp" alt="Real time icon" loading="lazy"/><h3>IoT Compliance management</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT Compliance management.webp" alt="IoT Compliance management icon" loading="lazy"/><h3>IoT Compliance management</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -578,7 +578,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Migration Services.webp" alt="Real time icon" loading="lazy"/><h3>Migration Services</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Migration Services.webp" alt="Migration Services icon" loading="lazy"/><h3>Migration Services</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -590,7 +590,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Device management.webp" alt="Real time icon" loading="lazy"/><h3>Device management</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Device management.webp" alt="Device management icon" loading="lazy"/><h3>Device management</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -602,7 +602,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/AI Agents & Copilots.webp" alt="Real time icon" loading="lazy"/><h3>AI Agents & Copilots</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/AI Agents & Copilots.webp" alt="AI Agents & Copilots icon" loading="lazy"/><h3>AI Agents & Copilots</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -614,7 +614,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Security.webp" alt="Real time icon" loading="lazy"/><h3>Security</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/Security.webp" alt="Security icon" loading="lazy"/><h3>Security</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -626,7 +626,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="expansion-card">
                 <div class="expansion-header">
-                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT DevOps services.webp" alt="Real time icon" loading="lazy"/><h3>IoT DevOps services</h3></div>
+                    <div class="expansion-title"><img class="header-icon" src="/images/development-services/IoT DevOps services.webp" alt="IoT DevOps services icon" loading="lazy"/><h3>IoT DevOps services</h3></div>
                 </div>
                 <div class="expansion-content">
                     <ul class="expansion-content-list">
@@ -699,7 +699,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <p>The outcome for our clients is simple - solution delivery is about 8x faster and 11x cheaper than a traditional greenfield development.</p>
                 </div>
                 <div class="trusted-partner-avatar">
-                    <img class="avatar" src="/images/development-services/Vitalik.webp" alt="Vitaliy Paromskiy">
+                    <img class="avatar" src="/images/development-services/Vitalik.webp" alt="Photo of Vitaliy Paromskiy, Chief Solutions Officer ThingsBoard">
                     <div class="trusted-partner-text">
                         <div class="name">Vitaliy Paromskiy</div>
                         <div class="title">Chief solutions officer</div>
@@ -918,8 +918,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                 <thead>
                     <tr>
                         <th></th>
-                        <th><img src="/images/development-services/End-to-end development.webp" alt="End-to-end development icon">End-to-end development</th>
-                        <th><img src="/images/development-services/Team augmentation & Co-Development.webp" alt="Team augmentation & Co-Development icon">Team augmentation & Co-Development</th>
+                        <th><img src="/images/development-services/End-to-end development.webp" alt="IoT End-to-end development icon">End-to-end development</th>
+                        <th><img src="/images/development-services/Team augmentation & Co-Development.webp" alt="IoT Team augmentation icon">Team augmentation & Co-Development</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1170,7 +1170,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <h5>Fill out the form — we’ll get back to you shortly to clarify the details and prepare a tailored estimate.</h5>
                 </div>
                 <div class="client-avatar-container">
-                    <div class="client-avatar-img"><img src="/images/development-services/Artur.webp" alt="Avatar"></div>
+                    <div class="client-avatar-img"><img src="/images/development-services/Artur.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard"></div>
                     <div class="client-descr">
                         <div class="client-name">Artur Ishkhanishvili</div>
                         <div class="client-title">VP Business Development</div>
@@ -1756,13 +1756,13 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 
         function updateImages(index) {
             const darkMapImages = [
-                '<div class="client-feedback-cards fleet-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Eric Bourbeau.webp" alt="avatar"></div><div class="client-descr"><div class="client-name">Eric Bourbeau</div><div class="client-title">Founder and CEO X-TELIA</div></div></div><div class="client-feedback">I can say that the dedication of ThingsBoard team blew me away. ThingsBoard engineers worked hand in hand with our developers to develop the MQTT-based communication protocol between the X-TELIA network and ThingsBoard, developed a beautiful custom widget and provided incredible support.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Fleet tracking.webp" alt="Fleet tracking"></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a></div><div>',
-                '<div class="client-feedback-cards energy-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Nairn Harrison.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Nairn Harrison</div><div class="client-title">Director Environmental Energy Controls</div></div></div><div class="client-feedback">What we especially like from the Thingsboard team are the continual evolving development cycles, real people you can talk to and understand ideas, concepts and use cases. We look forward to expanding our future solutions to all customers with the support from the Thingsboard team.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Energy monitoring.webp" alt="Energy monitoring"></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a></div><div>',
-                '<div class="client-feedback-cards asset-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Jeppe Walther.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Jeppe Walther</div><div class="client-title">CTO Supertech Agroline</div></div></div><div class="client-feedback">ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/image 1025.webp" alt="Asset tracking"></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3ee93e10-3495-11f0-9664-ff13eccb47ff">View live demo</a></div><div>',
-                '<div class="client-feedback-cards scada-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Mamadou Ly.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Mamadou Ly</div><div class="client-title">Project Manager at Farinia Group</div></div></div><div class="client-feedback">Thanks to the team of ThingsBoard who helped us, advised and developed the features and services we needed to facilitate the adoption of their products by our users. Recently we have deployed ThingsBoard in 3 companies of the group. Our goal is to equip our 11 production sites.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/SCADA.webp" alt="SCADA"></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3efced20-3495-11f0-9664-ff13eccb47ff">View live demo</a></div><div>',
-                '<div class="client-feedback-cards smart-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Peter Backes.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Peter Backes</div><div class="client-title">CEO co.met GmbH</div></div></div><div class="client-feedback">ThingsBoard meets our requirements perfectly and far better than any other solution we’ve been testing so far. The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Smart Metering.webp" alt="Smart Metering"></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909">View live demo</a></div><div>',
-                '<div class="client-feedback-cards tank-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Patricia Crispim.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Patricia Crispim</div><div class="client-title">Super Bock Group</div></div></div><div class="client-feedback">ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Tank level.webp" alt="Tank Level"></div><a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14">View live demo</a></div><div>',
-                '<div class="client-feedback-cards temp-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Steven Kruse.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Steven Kruse</div><div class="client-title">CEO SenseING GmbH</div></div></div><div class="client-feedback">With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/image 1022.webp" alt="Cold Chain"></div><a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6">View similar live demo</a></div><div>'
+                '<div class="client-feedback-cards fleet-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Eric Bourbeau.webp" alt="avatar"></div><div class="client-descr"><div class="client-name">Eric Bourbeau</div><div class="client-title">Founder and CEO X-TELIA</div></div></div><div class="client-feedback">I can say that the dedication of ThingsBoard team blew me away. ThingsBoard engineers worked hand in hand with our developers to develop the MQTT-based communication protocol between the X-TELIA network and ThingsBoard, developed a beautiful custom widget and provided incredible support.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Fleet tracking.webp" alt="A map with markers and vehicle monitoring data, demonstrating real-time fleet tracking, including speed, fuel level, and status (e.g., en route, breakdown, refueling)."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a></div><div>',
+                '<div class="client-feedback-cards energy-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Nairn Harrison.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Nairn Harrison</div><div class="client-title">Director Environmental Energy Controls</div></div></div><div class="client-feedback">What we especially like from the Thingsboard team are the continual evolving development cycles, real people you can talk to and understand ideas, concepts and use cases. We look forward to expanding our future solutions to all customers with the support from the Thingsboard team.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Energy monitoring.webp" alt="A monitoring dashboard showing real-time electricity consumption data (voltage, current, frequency) from multiple smart meters, with graphs and alarm threshold indicators."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a></div><div>',
+                '<div class="client-feedback-cards asset-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Jeppe Walther.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Jeppe Walther</div><div class="client-title">CTO Supertech Agroline</div></div></div><div class="client-feedback">ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/image 1025.webp" alt="An interactive map or diagram with asset locations and their status (e.g., equipment condition, temperature, humidity), displaying movement history and alerts."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3ee93e10-3495-11f0-9664-ff13eccb47ff">View live demo</a></div><div>',
+                '<div class="client-feedback-cards scada-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Mamadou Ly.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Mamadou Ly</div><div class="client-title">Project Manager at Farinia Group</div></div></div><div class="client-feedback">Thanks to the team of ThingsBoard who helped us, advised and developed the features and services we needed to facilitate the adoption of their products by our users. Recently we have deployed ThingsBoard in 3 companies of the group. Our goal is to equip our 11 production sites.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/SCADA.webp" alt="A SCADA control panel with mimic diagrams visualizing industrial processes (e.g., oil and gas drilling system, pumping station, water treatment), with equipment status indicators, sensor readings, and control elements."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3efced20-3495-11f0-9664-ff13eccb47ff">View live demo</a></div><div>',
+                '<div class="client-feedback-cards smart-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Peter Backes.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Peter Backes</div><div class="client-title">CEO co.met GmbH</div></div></div><div class="client-feedback">ThingsBoard meets our requirements perfectly and far better than any other solution we’ve been testing so far. The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Smart Metering.webp" alt="A dashboard displaying smart water, gas, or electricity metering data, broken down by areas, buildings, or apartments, with historical consumption graphs and anomaly alerts."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909">View live demo</a></div><div>',
+                '<div class="client-feedback-cards tank-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Patricia Crispim.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Patricia Crispim</div><div class="client-title">Super Bock Group</div></div></div><div class="client-feedback">ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Tank level.webp" alt="A dashboard monitoring liquid levels in tanks, showing current fuel level, temperature, and battery status, with fill level visualization and consumption history."></div><a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14">View live demo</a></div><div>',
+                '<div class="client-feedback-cards temp-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Steven Kruse.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Steven Kruse</div><div class="client-title">CEO SenseING GmbH</div></div></div><div class="client-feedback">With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/image 1022.webp" alt="A monitoring panel for the condition of cold storage rooms or vehicles in a cold chain, displaying temperature and humidity data, with trend graphs, threshold values, and alerts for storage condition violations."></div><a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6">View similar live demo</a></div><div>'
             ];
 
             images.innerHTML = `${darkMapImages[index]}`;
@@ -1816,7 +1816,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         const card = document.querySelector('.industries-card');
         const cards = [
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Energy & utilities.webp" alt="Energy & utilities">
+                        <img class="card-img" src="/images/development-services/Energy & utilities.webp" alt="IoT Energy Management icon">
                         <h3>Energy & utilities</h3>
                         <div class="card-text-container">
                             <div class="card-descr" >We help energy, water and gas operators see every meter, substation and pipeline in one view, act on live data, and keep networks stable, safe and efficient - even out at remote micro-grids and renewable sites.</div>
@@ -1828,7 +1828,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Manufacturing & Industrial Automation.webp" alt="Manufacturing & Industrial Automation">
+                        <img class="card-img" src="/images/development-services/Manufacturing & Industrial Automation.webp" alt="IoT Manufacturing icon">
                         <h3>Manufacturing & Industrial Automations</h3>
                         <div class="card-text-container">
                             <div class="card-descr" >From discrete plants to heavy process lines, we digitise machines, tools and workers so engineers catch faults early, raise OEE, trace quality and drive continuous improvement without disrupting shop-floor uptime.</div>
@@ -1842,7 +1842,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Smart buildings & facilities.webp" alt="Smart buildings & facilities">
+                        <img class="card-img" src="/images/development-services/Smart buildings & facilities.webp" alt="Smart Building IoT icon">
                         <h3>Smart buildings & facilities</h3>
                         <div class="card-text-container">
                             <div class="card-descr" >Unify HVAC, lighting, meters and security across portfolios into one system that allows to cut energy waste, boost tenant comfort and comply with ESG goals - all by turning building data into clear dashboards and automated responses.</div>
@@ -1856,7 +1856,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Transportation & mobility.webp" alt="Transportation & mobility">
+                        <img class="card-img" src="/images/development-services/Transportation & mobility.webp" alt="Connected Mobility IoT icon">
                         <h3>Transportation & mobility</h3>
                         <div class="card-text-container">
                             <div class="card-descr" >Track vehicles, drivers and batteries in real time, push OTA updates, and turn raw telematics into safer trips, lower fuel bills and better rider experience across fleets, trucks, scooters and connected cars.</div>
@@ -1870,7 +1870,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Logistics & supply-chain services.webp" alt="Logistics & supply-chain services">
+                        <img class="card-img" src="/images/development-services/Logistics & supply-chain services.webp" alt="IoT Supply Chain icon">
                         <h3>Logistics & supply-chain services</h3>
                         <div class="card-text-container">
                             <div class="card-descr" >Bring full visibility to warehouses, ports and last-mile deliveries - monitor location, temperature and shocks for every pallet or container, predict delays and automate workflows that keep goods moving on schedule.</div>
@@ -1885,7 +1885,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Retail & consumer services.webp" alt="Retail & consumer services">
+                        <img class="card-img" src="/images/development-services/Retail & consumer services.webp" alt="Smart Retail IoT icon">
                         <h3>Logistics & supply-chain services</h3>
                         <div class="card-text-container">
                             <div class="card-descr">Give stores, restaurants and vending fleets sensor-level insight - track cold rooms, shelves and footfall, trigger restocks instantly and guarantee product quality while lowering energy, shrink and maintenance costs.</div>
@@ -1899,7 +1899,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Healthcare.webp" alt="Healthcare">
+                        <img class="card-img" src="/images/development-services/Healthcare.webp" alt="IoT Healthcare icon">
                         <h3>Healthcare</h3>
                         <div class="card-text-container">
                             <div class="card-descr">Connect wearables, beds, pumps and labs to one secured application. Surface real-time patient alerts, asset locations and cold-chain status so clinicians spend less time hunting data and more time delivering care.</div>
@@ -1913,7 +1913,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Agriculture & agritech.webp" alt="Agriculture & agritech">
+                        <img class="card-img" src="/images/development-services/Agriculture & agritech.webp" alt="Precision Agriculture IoT icon">
                         <h3>Healthcare</h3>
                         <div class="card-text-container">
                             <div class="card-descr">Measure soil, weather, livestock and machine telemetry from field to cloud. Automate irrigation, feeding and equipment service to raise yields, cut inputs and build resilience against volatile climate swings.</div>
@@ -1928,7 +1928,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Construction & heavy equipment.webp" alt="Construction & heavy equipment">
+                        <img class="card-img" src="/images/development-services/Construction & heavy equipment.webp" alt="Connected Construction IoT icon">
                         <h3>Construction & heavy equipment</h3>
                         <div class="card-text-container">
                             <div class="card-descr">Wire up cranes, loaders and power tools on every site. Watch loads, operation time and locations in real time, predict failures and enforce safety zones so projects finish on time, on budget and incident-free.</div>
@@ -1943,7 +1943,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         </div>
                     </div>`,
                     `<div class="card-container">
-                        <img class="card-img" src="/images/development-services/Smart cities & public infrastructure.webp" alt="Smart cities & public infrastructure">
+                        <img class="card-img" src="/images/development-services/Smart cities & public infrastructure.webp" alt="Smart City IoT icon">
                         <h3>Smart cities & public infrastructure</h3>
                         <div class="card-text-container">
                             <div class="card-descr">Operate lighting, traffic, waste, water and environmental networks on a single pane of glass. Deliver greener, safer and more responsive services while maximising scarce municipal budgets and strengthening citizen trust.</div>
