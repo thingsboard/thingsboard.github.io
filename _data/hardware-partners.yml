@@ -235,17 +235,6 @@
       href: "/docs/samples/nettrartu+/rtu_temp_sensor/"
   description: We provide comprehensive hardware and software IoT solutions.
 - type:
-    - Wi-Fi
-  name: Things On Edge
-  logo: /images/partners/things-on-edge.svg
-  site:
-    href: /#
-  links:
-    0:
-      label: Integration guide
-      href: "/docs/samples/cricket-wifi/cricket-wifi/"
-  description: Things On Edge designs easy to use, ultra low power Wi-Fi modules.
-- type:
     - Ethernet
   name: Solandtec
   logo: /images/partners/solandtec.png

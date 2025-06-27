@@ -493,7 +493,7 @@ selfManagedPlan:
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button onclick="openModal()" id="calculate_your_pricing" class="button gtm_button">Calculate your pricing</button>
+                <button id="openCalculatorBtn" class="button clulator gtm_button">Calculate your pricing</button>
             </div>
             <div class="add-ons">
                 <h2>Optional add-ons</h2>
