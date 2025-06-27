@@ -17,7 +17,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <button id="Serv_DevServ_GetInTouch"
                                 onclick="onContactUsClick(1)"
                                 class="cdu-button anchor-button gtm_button request-concultation">Request a consultation</button>
-            <!-- <button class="request-concultation">Request a consultation</button> -->
         </div>
     </div>
 </section>
@@ -52,7 +51,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div class="statistic-item-text">Countries</div>
         </div>
         <div class="statistic-item">
-            <div class="statistic-item-num">326</div>
+            <div class="statistic-item-num">326+</div>
             <div class="statistic-item-text">Delivered projects</div>
         </div>
         <div class="statistic-item">
@@ -60,12 +59,10 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div class="statistic-item-text">Success rate</div>
         </div>
         <div class="statistic-item">
-            <div class="statistic-item-num">54%</div>
+            <div class="statistic-item-num">65%</div>
             <div class="statistic-item-text">Clients return for a <br> 2nd+ project</div>
         </div>
-        <!-- <div class="map-img"> -->
-            <img class="map-img" src="/images/development-services/world map 2webp.webp" alt="map">
-        <!-- </div> -->
+        <img class="map-img" src="/images/development-services/world map 2webp.webp" alt="map">
     </div>
 </section>
 <section class="custom-solutions">
@@ -84,7 +81,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn orange">Delivery</div>
                             <div class="multicolored-btn green">Connected vehicle</div>
                         </div>
-                        <div class="expansion-statistic">12+ successful projects</div>
+                        <div class="expansion-statistic">47+ successful projects</div>
                         <div class="expansion-text">Fleet tracking addresses the core challenge of managing vehicles effectively. Real-time visibility in a combination with geofence rules brings clarity to asset locations and ensures route efficiency, whether we are tracking e-bikes or heavy-duty trucks. By adding driver accountability and reporting, we transform complex operational data into a clear path for improved service and real cost savings.</div>
                     </div>
                 </div>
@@ -99,7 +96,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn orange">Utilities</div>
                             <div class="multicolored-btn green">Industry</div>
                         </div>
-                        <div class="expansion-statistic">8+ successful projects</div>
+                        <div class="expansion-statistic">49+ successful projects</div>
                         <div class="expansion-text">Energy monitoring system provides clarity on your real-time energy usage, enabling smart energy management by highlighting hidden inefficiencies and anomalies. Tailored dashboards, alerts, and analytics help businesses reduce costs, improve transparency, and meet energy efficiency goals — from industrial operations to commercial buildings.</div>
                     </div>
                 </div>
@@ -115,7 +112,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn purple">Agriculture</div>
                             <div class="multicolored-btn red">Retail</div>
                         </div>
-                        <div class="expansion-statistic">4+ successful projects</div>
+                        <div class="expansion-statistic">44+ successful projects</div>
                         <div class="expansion-text">A custom IoT asset tracking system enables real-time monitoring of tools, equipment, or goods across multiple locations. With location data, usage history, and alerts available in one asset tracking platform, businesses can improve visibility, reduce losses, and automate asset tracking and management processes — whether in warehouses, factories, or on remote sites.</div>
                     </div>
                 </div>
@@ -131,7 +128,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn green">Water Management</div>
                             <div class="multicolored-btn purple">Energy</div>
                         </div>
-                        <div class="expansion-statistic">3+ successful projects</div>
+                        <div class="expansion-statistic">38+ successful projects</div>
                         <div class="expansion-text">SCADA IoT solutions provide real-time visibility into industrial operations, seamlessly integrating existing equipment through IT/OT integration. Typically configured with digital twin capabilities, they detect issues early, automate alerts, and simplify remote control. This proactive approach helps teams quickly respond and minimize operational disruptions.</div>
                     </div>
                 </div>
@@ -147,7 +144,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn green">Smart Cities</div>
                             <div class="multicolored-btn purple">Energy</div>
                         </div>
-                        <div class="expansion-statistic">3+ successful projects</div>
+                        <div class="expansion-statistic">33+ successful projects</div>
                         <div class="expansion-text">Smart metering transforms utility management by automating the collection of electricity, water, and gas consumption data, converting it into actionable, real-time insights. It automates invoicing workflows and delivers precise usage metrics for transparent, reliable billing. With anomaly detection for leaks or unusual usage patterns, facility managers can effectively minimize losses and significantly enhance sustainability efforts.</div>
                     </div>
                 </div>
@@ -163,7 +160,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn green">Utilities</div>
                             <div class="multicolored-btn purple">Water Management</div>
                         </div>
-                        <div class="expansion-statistic">18+ successful projects</div>
+                        <div class="expansion-statistic">31+ successful projects</div>
                         <div class="expansion-text">An IoT tank level monitoring system enables accurate, real-time tracking of liquid levels in fuel, water, or chemical tanks. Remote access, automated alerts, and refill optimization reduce manual checks, prevent overflows, and help detect leaks early.</div>
                     </div>
                 </div>
@@ -177,124 +174,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <div class="multicolored-btn blue">Logistics</div>
                             <div class="multicolored-btn red">Retail</div>
                         </div>
-                        <div class="expansion-statistic">18+ successful projects</div>
+                        <div class="expansion-statistic">45+ successful projects</div>
                         <div class="expansion-text">Cold chain monitoring systems deliver real-time visibility of temperature-sensitive products by tracking environmental conditions from storage through shipment, ensuring quality and compliance. They automate logging of critical parameters into live dashboards and audit-ready historical reports. With proactive alerts, time-to-threshold forecasts, and automated compliance reports, managers can intervene early to prevent spoilage.</div>
                     </div>
                 </div>
             </div>
             <div class="images"></div>
         </div>
-        <!-- <div class="cards">
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/car-gray.webp" alt="Real time icon" loading="lazy"/>Fleet tracking</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Logistics</div>
-                        <div class="multicolored-btn blue">Automotive</div>
-                        <div class="multicolored-btn orange">Delivery</div>
-                        <div class="multicolored-btn green">Connected vehicle</div>
-                    </div>
-                    <div class="expansion-statistic">12+ successful projects</div>
-                    <div class="expansion-text">Fleet tracking addresses the core challenge of managing vehicles effectively. Real-time visibility in a combination with geofence rules brings clarity to asset locations and ensures route efficiency, whether we are tracking e-bikes or heavy-duty trucks. By adding driver accountability and reporting, we transform complex operational data into a clear path for improved service and real cost savings.</div>
-                </div>
-            </div>
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/energy-gray.webp" alt="Real time icon" loading="lazy"/>Energy monitoring</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Manufacturing</div>
-                        <div class="multicolored-btn blue">Retail</div>
-                        <div class="multicolored-btn orange">Utilities</div>
-                        <div class="multicolored-btn green">Industry</div>
-                    </div>
-                    <div class="expansion-statistic">8+ successful projects</div>
-                    <div class="expansion-text">Energy monitoring system provides clarity on your real-time energy usage, enabling smart energy management by highlighting hidden inefficiencies and anomalies. Tailored dashboards, alerts, and analytics help businesses reduce costs, improve transparency, and meet energy efficiency goals — from industrial operations to commercial buildings.</div>
-                </div>
-            </div>
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/tracking-gray.webp" alt="Real time icon" loading="lazy"/>Asset tracking</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Manufacturing</div>
-                        <div class="multicolored-btn blue">Logistics</div>
-                        <div class="multicolored-btn orange">Construction</div>
-                        <div class="multicolored-btn purple">Agriculture</div>
-                        <div class="multicolored-btn red">Retail</div>
-                    </div>
-                    <div class="expansion-statistic">4+ successful projects</div>
-                    <div class="expansion-text">A custom IoT asset tracking system enables real-time monitoring of tools, equipment, or goods across multiple locations. With location data, usage history, and alerts available in one asset tracking platform, businesses can improve visibility, reduce losses, and automate asset tracking and management processes — whether in warehouses, factories, or on remote sites.</div>
-                </div>
-            </div>
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/scada-gray.webp" alt="Real time icon" loading="lazy"/>SCADA</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Manufacturing</div>
-                        <div class="multicolored-btn blue">Utilities</div>
-                        <div class="multicolored-btn orange">Oil & Gas</div>
-                        <div class="multicolored-btn green">Water Management</div>
-                        <div class="multicolored-btn purple">Energy</div>
-                    </div>
-                    <div class="expansion-statistic">3+ successful projects</div>
-                    <div class="expansion-text">SCADA IoT solutions provide real-time visibility into industrial operations, seamlessly integrating existing equipment through IT/OT integration. Typically configured with digital twin capabilities, they detect issues early, automate alerts, and simplify remote control. This proactive approach helps teams quickly respond and minimize operational disruptions.</div>
-                </div>
-            </div>
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/metering-gray.webp" alt="Real time icon" loading="lazy"/>Smart Metering</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Manufacturing</div>
-                        <div class="multicolored-btn blue">Real Estate</div>
-                        <div class="multicolored-btn orange">Utilities</div>
-                        <div class="multicolored-btn green">Smart Cities</div>
-                        <div class="multicolored-btn purple">Energy</div>
-                    </div>
-                    <div class="expansion-statistic">3+ successful projects</div>
-                    <div class="expansion-text">Smart metering transforms utility management by automating the collection of electricity, water, and gas consumption data, converting it into actionable, real-time insights. It automates invoicing workflows and delivers precise usage metrics for transparent, reliable billing. With anomaly detection for leaks or unusual usage patterns, facility managers can effectively minimize losses and significantly enhance sustainability efforts.</div>
-                </div>
-            </div>
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/tank-gray.webp" alt="Real time icon" loading="lazy"/>Tank level</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Oil & Gas</div>
-                        <div class="multicolored-btn blue">Agriculture</div>
-                        <div class="multicolored-btn orange">Manufacturing</div>
-                        <div class="multicolored-btn green">Utilities</div>
-                        <div class="multicolored-btn purple">Water Management</div>
-                    </div>
-                    <div class="expansion-statistic">18+ successful projects</div>
-                    <div class="expansion-text">An IoT tank level monitoring system enables accurate, real-time tracking of liquid levels in fuel, water, or chemical tanks. Remote access, automated alerts, and refill optimization reduce manual checks, prevent overflows, and help detect leaks early.</div>
-                </div>
-            </div>
-            <div class="expansion-panel">
-                <div class="expansion-header">
-                    <h3 class="expansion-title"><img class="header-icon" src="/images/development-services/temp-gray.webp" alt="Real time icon" loading="lazy"/>Cold chain</h3>
-                </div>
-                <div class="expansion-content">
-                    <div class="expansion-buttons">
-                        <div class="multicolored-btn pink">Manufacturing</div>
-                        <div class="multicolored-btn blue">Logistics</div>
-                        <div class="multicolored-btn red">Retail</div>
-                    </div>
-                    <div class="expansion-statistic">18+ successful projects</div>
-                    <div class="expansion-text">Cold chain monitoring systems deliver real-time visibility of temperature-sensitive products by tracking environmental conditions from storage through shipment, ensuring quality and compliance. They automate logging of critical parameters into live dashboards and audit-ready historical reports. With proactive alerts, time-to-threshold forecasts, and automated compliance reports, managers can intervene early to prevent spoilage.</div>
-                </div>
-            </div>
-        </div>
-        <div class="images"></div> -->
     </div>
 </section>
 
@@ -303,9 +189,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <div class="vision-info">
             <div class="vision-header">
                 <div class="vision-title">
-                    <!-- <div class="vision-img"> -->
-                        <img class="vision-img" src="/images/development-services/Artur.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
-                    <!-- </div> -->
+                    <img class="vision-img" src="/images/development-services/Artur.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
                     <div class="vision-text">
                         <div class="name">Artur Ishkhanishvili</div>
                         <div class="title">VP Business Development</div>
@@ -350,7 +234,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <div class="card">
             <div class="card-label industry">INDUSTRY 4.0</div>
             <div class="card-tag manufacturing">Manufacturing</div>
-            <img src="/images/development-services/Superbock.webp" alt="Superbock" class="A partial view of a production hall with tanks featuring the Super Bock Group logo, illustrating the revolution in beer distribution using ThingsBoard." />
+            <img src="/images/development-services/Superbock.webp" alt="Superbock" class="A partial view of a production hall with tanks featuring the Super Bock Group logo, illustrating the revolution in beer distribution using ThingsBoard." class="card-image" />
             <div class="card-content">
                 <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/super-bock/"><h3>Revolutionizing beer distribution: how ThingsBoard empowered Super Bock Group</h3></a>
                 <ul class="card-stats">
@@ -1226,27 +1110,27 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         <fieldset>
                             <legend>1. Engagement model <span>(optional)</span></legend>
                             <div class="label-container">
-                                <label><input type="radio" name="engagement" /> I don’t know yet</label>
-                                <label><input type="radio" name="engagement" /> Full-cycle development</label>
-                                <label><input type="radio" name="engagement" /> Dedicated team</label>
-                                <label><input type="radio" name="engagement" /> Consulting or audit only</label>
+                                <label><input type="radio" name="engagement" value="I don’t know yet"/> I don’t know yet</label>
+                                <label><input type="radio" name="engagement" value="Full-cycle development"/> Full-cycle development</label>
+                                <label><input type="radio" name="engagement" value="Dedicated team"/> Dedicated team</label>
+                                <label><input type="radio" name="engagement" value="Consulting or audit only"/> Consulting or audit only</label>
                             </div>
                         </fieldset>
                         <fieldset>
                             <legend>2. Project stage <span>(optional)</span></legend>
                             <div class="label-container">
-                                <label><input type="radio" name="project" /> Idea</label>
-                                <label><input type="radio" name="project" /> Requirements defined</label>
-                                <label><input type="radio" name="project" /> MVP in progress</label>
-                                <label><input type="radio" name="project" /> Scaling an existing solution</label>
+                                <label><input type="radio" name="project" value="Idea"/> Idea</label>
+                                <label><input type="radio" name="project" value="Requirements defined"/> Requirements defined</label>
+                                <label><input type="radio" name="project" value="MVP in progress"/> MVP in progress</label>
+                                <label><input type="radio" name="project" value="Scaling an existing solution"/> Scaling an existing solution</label>
                             </div>
                         </fieldset>
                         <fieldset>
                             <legend>3. Are you familiar with ThingsBoard? <span>(optional)</span></legend>
                             <div class="label-container last">
-                                <label><input type="radio" name="thingsboard" checked /> Yes, I work with the platform</label>
-                                <label><input type="radio" name="thingsboard" /> Yes, I am familiar with it, but haven’t worked with it</label>
-                                <label><input type="radio" name="thingsboard" /> No, I am not familiar with it</label>
+                                <label><input type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
+                                <label><input type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
+                                <label><input type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
                             </div>
                         </fieldset>
                     </div>
@@ -1260,198 +1144,12 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     </div>
 </section>
 
-<!-- <section class="cdu-services">
-    <div class="content-wrapper">
-        <div class="header">
-            <div class="side-title">
-                <span>OUR SERVICES</span>
-            </div>
-            <div class="section-title">From complicated widgets to diverse IoT solutions</div>
-            <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery.</div>
-        </div>
-    </div>
-    <div id="content-poc" class="content-wrapper">
-        <div class="poc">
-            <div class="left-block">
-                <img
-                    id="solution-poc"
-                    srcset="/images/development-services/solution-coinify_mobile.png 360w, /images/development-services/solution-coinify.png 1900w"
-                    sizes="(max-width: 672px) 360px, 1900px"
-                    src="/images/development-services/solution-coinify.png"
-                    alt="Custom solution">
-                <img
-                    id="solution-widget-1"
-                    class="absolute-image secondary-image"
-                    srcset="/images/development-services/solution-widget-1_mobile.png 360w, /images/development-services/solution-widget-1.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-widget-1.png"
-                    alt="Custom solution widget pie chart">
-                <img
-                    id="solution-widget-2"
-                    srcset="/images/development-services/solution-widget-2_mobile.png 360w, /images/development-services/solution-widget-2.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    class="absolute-image secondary-image"
-                    src="/images/development-services/solution-widget-2.png"
-                    alt="Custom solution widet value card with graph">
-            </div>
-            <div class="right-block">
-                <div class="section-title">
-                    Proof of concept
-                </div>
-                <ul class="section-list">
-                    <li>One-two layers dashboard</li>
-                    <li>Emulated data with simple logic of data processing</li>
-                    <li>Default widgets for visualization</li>
-                    <li>1 type of user role</li>
-                </ul>
-            </div>
-            <img id="number-one" class="absolute-image" src="/images/development-services/number-1.svg" alt="background number one">
-        </div>
-    </div>
-    <div id="content-mvp" class="content-wrapper">
-        <div class="mvp">
-            <div class="left-block">
-                <div class="section-title">
-                    Minimal value product
-                </div>
-                <ul class="section-list">
-                    <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, agriculture, calculations, etc</li>
-                    <li>Alarms and notification setup</li>
-                    <li>A diverse range of user roles and permissions are available</li>
-                </ul>
-            </div>
-            <div class="right-block">
-                <img
-                    id="solution-mvp1"
-                    srcset="/images/development-services/solution-mvp_mobile.png 360w, /images/development-services/solution-mvp.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-mvp.png"
-                    alt="Custom solution mvp">
-                <img
-                    id="solution-widget-3"
-                    srcset="/images/development-services/solution-widget-3_mobile.png 360w, /images/development-services/solution-widget-3.svg 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    class="absolute-image secondary-image"
-                    src="/images/development-services/solution-widget-3.svg"
-                    alt="Custom solution widget dark card with pie chart">
-            </div>
-            <img id="number-two" class="absolute-image" src="/images/development-services/number-2.svg" alt="Background number two">
-        </div>
-    </div>
-    <div id="content-market-solution" class="content-wrapper">
-        <div class="market-solution">
-            <div class="left-block">
-                <img
-                    id="solution-market-solution1"
-                    srcset="/images/development-services/solution-market-solution_mobile.png 360w, /images/development-services/solution-market-solution.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-market-solution.png"
-                    alt="Custom solution market solution">
-                <img
-                    id="solution-market-solution2"
-                    class="absolute-image base-image"
-                    srcset="/images/development-services/solution-market-solution2_mobile.png 360w, /images/development-services/solution-market-solution2.png 1920w"
-                    sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/development-services/solution-market-solution2.png"
-                    alt="Custom solution market solution: dashboard with trucks">
-            </div>
-            <div class="right-block">
-                <div class="section-title">
-                    Ready for the market solutions
-                </div>
-                <ul class="section-list">
-                    <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, agracationg, calculations, etc</li>
-                    <li>Alarms and notification setup</li>
-                    <li>External system integrations (e.g. Billing system, analytic system, etc.)</li>
-                </ul>
-            </div>
-            <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
-        </div>
-    </div>
-    <div class="content-wrapper">
-        <div class="additionally">
-            <div class="side-title">
-                <span>additionally</span>
-            </div>
-            <div class="info">
-                <div class="left-block">
-                    <div class="section-title">
-                        We offer architecture design session for clear vision of your product
-                    </div>
-                    <div class="section-text">
-                        In case you are facing uncertainty regarding your user story, topology, or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea.
-                    </div>
-                </div>
-                <div class="right-block">
-                    <button id="Serv_DevServ_ContactUs2"
-                            class="anchor-button gtm_button"
-                            onclick="onContactUsClick(1)">Contact Us</button>
-                </div>
-            </div>
-            <span id="additionally-bg1"></span>
-            <span id="additionally-bg2"></span>
-        </div>
-    </div>
-    <svg id="rectangle1" class="bg-rectangle"></svg>
-</section> -->
-
-<!-- <section class="testimonials">
-    <div class="content-wrapper">
-        <div class="upper-block">
-            <div class="side-title">
-                <span>testimonials</span>
-            </div>
-            <div class="section-title">
-                What our clients say about us
-            </div>
-        </div>
-        <div id="carousel-wrapper">
-            {% include carousel.liquid collectionMap = 'development-services-testimonials-carousel' nonActiveItemsVisibility = false overlay = false dotButtonMode = 'circle' navMode = 'fatArrow' contentDirection = 'column' enableLinkArrow = false titleSize = '28px' descriptionSize = '22px' linkSize = '22px' titleLineHeight = '40px' descriptionLineHeight = '40px' descriptionColor = '#5e5f62' linkColor = '#3622a4' %}
-        </div>
-    </div>
-</section> -->
-
-<!-- <section id="get-in-touch" class="get-in-touch">
-    <div class="content-wrapper">
-        <div id="content-get-in-touch">
-            <div class="side-title">
-                <span id="side-title-heading">get in touch</span>
-            </div>
-            <div class="info">
-                <div class="section-title">Ready to launch your unique product?</div>
-                <div class="section-text">Leave us your name and email and we will get back to you within 2 business days</div>
-            </div>
-            <div>
-                <fieldset>
-                    <div class="submit-button-container">
-                        <button id="Serv_DevServ_GetInTouch"
-                                onclick="onContactUsClick(2)"
-                                class="cdu-button anchor-button gtm_button">Get in touch</button>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-</section> -->
-
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
         <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
-        <!-- <div class="title">
-            <span>CONTACT US TODAY</span>
-        </div> 
-        <div class="sub-title">
-            <span>We are ready to develop your ideas</span>
-        </div>
-        <div class="sub-sub-title">
-            <span>Please fill out the form below and we will get back to you within 1-2 business days. 
-            We are looking forward to hearing from you!</span>
-        </div> -->
         <form method="post"
             onsubmit="return validateContactForm(this)"
             class="gtm_form developmentServicesContactUsForm">
@@ -1500,27 +1198,27 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <fieldset>
                     <legend>1. Engagement model <span>(optional)</span></legend>
                     <div class="label-container">
-                        <label><input type="radio" name="engagement" /> I don’t know yet</label>
-                        <label><input type="radio" name="engagement" /> Full-cycle development</label>
-                        <label><input type="radio" name="engagement" /> Dedicated team</label>
-                        <label><input type="radio" name="engagement" /> Consulting or audit only</label>
+                        <label><input type="radio" name="engagement" value="I don’t know yet" /> I don’t know yet</label>
+                        <label><input type="radio" name="engagement" value="Full-cycle development" /> Full-cycle development</label>
+                        <label><input type="radio" name="engagement" value="Dedicated team"/> Dedicated team</label>
+                        <label><input type="radio" name="engagement" value="Consulting or audit only"/> Consulting or audit only</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>2. Project stage <span>(optional)</span></legend>
                     <div class="label-container">
-                        <label><input type="radio" name="project" /> Idea</label>
-                        <label><input type="radio" name="project" /> Requirements defined</label>
-                        <label><input type="radio" name="project" /> MVP in progress</label>
-                        <label><input type="radio" name="project" /> Scaling an existing solution</label>
+                        <label><input type="radio" name="project" value="Idea"/> Idea</label>
+                        <label><input type="radio" name="project" value="Requirements defined"/> Requirements defined</label>
+                        <label><input type="radio" name="project" value="MVP in progress"/> MVP in progress</label>
+                        <label><input type="radio" name="project" value="Scaling an existing solution"/> Scaling an existing solution</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>3. Are you familiar with ThingsBoard? <span>(optional)</span></legend>
                     <div class="label-container last">
-                        <label><input type="radio" name="thingsboard" checked /> Yes, I work with the platform</label>
-                        <label><input type="radio" name="thingsboard" /> Yes, I am familiar with it, but haven’t worked with it</label>
-                        <label><input type="radio" name="thingsboard" /> No, I am not familiar with it</label>
+                        <label><input type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
+                        <label><input type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
+                        <label><input type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
                     </div>
                 </fieldset>
             </div>
@@ -1528,177 +1226,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <input class="cdu-button" value="Submit message" type="submit"/>
             </div>
         </form>
-        <!-- Id in the form below is dynamically changing for purposes of GTM -->
-        <!-- <form method="post"
-              onsubmit="return validateContactForm(this)"
-              class="gtm_form developmentServicesContactUsForm">
-            <div class="form-section">
-                <div class="form-element">
-                    <label for="first-name">
-                        <input id="first-name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
-                        <p>Name*</p>
-                    </label>
-                </div>
-                <div class="form-element">
-                    <label for="email">
-                        <input id="email" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                        <p>Email Address*</p>
-                    </label>
-                </div>
-            </div>
-            <div class="form-section secondary">
-                <div class="form-element next">
-                    <label for="subject" class="label-select">
-                        <select class="form-control cdu-form-control" name="subject">
-                            <option value="Custom Development" selected>Custom Development</option>
-                            <option value="Technical Support">Technical Support</option>
-                            <option value="ThingsBoard Products">ThingsBoard Products</option>
-                            <option value="Deployment Options">Deployment Options</option>
-                            <option value="Training">Training</option>
-                            <option value="Professional Services">Professional Services</option>
-                            <option value="Partnership">Partnership</option>
-                            <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
-                            <option value="General Feedback">General Feedback</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <p>Subject*</p>
-                    </label>
-                </div>
-            </div>
-            <div class="form-section secondary">
-                <div class="form-element next">
-                    <label for="msg">
-                        <textarea id="msg" class="form-control cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
-                        <p>Your message*</p>
-                    </label>
-                </div>
-            </div>
-            <div class="submit-button-container">
-                <input class="cdu-button" value="Submit message" type="submit"/>
-            </div>
-        </form> -->
     </div>
   </div>
 </div>
-
-<!-- <div class="client-feedback-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Eric Bourbeau.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Eric Bourbeau</div>
-                <div class="client-title">Founder and CEO X-TELIA</div>
-            </div>
-        </div>
-        <div class="client-feedback">I can say that the dedication of ThingsBoard team blew me away. ThingsBoard engineers worked hand in hand with our developers to develop the MQTT-based communication protocol between the X-TELIA network and ThingsBoard, developed a beautiful custom widget and provided incredible support.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/Fleet tracking.webp" alt="Fleet tracking"></div>
-        <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a>
-    </div>
-<div> -->
-
-<!-- <div class="client-feedback-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Nairn Harrison.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Nairn Harrison</div>
-                <div class="client-title">Director Environmental Energy Controls</div>
-            </div>
-        </div>
-        <div class="client-feedback">What we especially like from the Thingsboard team are the continual evolving development cycles, real people you can talk to and understand ideas, concepts and use cases. We look forward to expanding our future solutions to all customers with the support from the Thingsboard team.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/Energy monitoring.webp" alt="Energy monitoring"></div>
-        <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a>
-    </div>
-<div> -->
-
-<!-- <div class="client-feedback-cards asset-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Jeppe Walther.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Jeppe Walther</div>
-                <div class="client-title">CTO Supertech Agroline</div>
-            </div>
-        </div>
-        <div class="client-feedback">ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/image 1025.webp" alt="Asset tracking"></div>
-        <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3ee93e10-3495-11f0-9664-ff13eccb47ff">View live demo</a>
-    </div>
-<div> -->
-
-<!-- <div class="client-feedback-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Mamadou Ly.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Mamadou Ly</div>
-                <div class="client-title">Project Manager at Farinia Group</div>
-            </div>
-        </div>
-        <div class="client-feedback">Thanks to the team of ThingsBoard who helped us, advised and developed the features and services we needed to facilitate the adoption of their products by our users. Recently we have deployed ThingsBoard in 3 companies of the group. Our goal is to equip our 11 production sites.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/SCADA.webp" alt="SCADA"></div>
-        <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3efced20-3495-11f0-9664-ff13eccb47ff">View live demo</a>
-    </div>
-<div> -->
-
-<!-- <div class="client-feedback-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Peter Backes.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Peter Backes</div>
-                <div class="client-title">CEO co.met GmbH</div>
-            </div>
-        </div>
-        <div class="client-feedback">ThingsBoard meets our requirements perfectly and far better than any other solution we’ve been testing so far. The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/Smart Metering.webp" alt="Smart Metering"></div>
-        <a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909">View live demo</a>
-    </div>
-<div> -->
-
-<!-- <div class="client-feedback-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Patricia Crispim.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Patricia Crispim</div>
-                <div class="client-title">Super Bock Group</div>
-            </div>
-        </div>
-        <div class="client-feedback">ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/Tank level.webp" alt="Smart Metering"></div>
-        <a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14">View live demo</a>
-    </div>
-<div> -->
-
-<!-- <div class="client-feedback-cards">
-    <div class="client-info">
-        <div class="client-avatar-container">
-            <div class="client-avatar-img"><img src="/images/development-services/Steven Kruse.webp" alt="Avatar"></div>
-            <div class="client-descr">
-                <div class="client-name">Steven Kruse</div>
-                <div class="client-title">CEO SenseING GmbH</div>
-            </div>
-        </div>
-        <div class="client-feedback">With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.</div>
-    </div>
-    <div class="project-screen-container">
-        <div class="project-screen"><img src="/images/development-services/image 1022.webp" alt="Smart Metering"></div>
-        <a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6">View similar live demo</a>
-    </div>
-<div> -->
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
@@ -2053,6 +1583,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     secondaryImages.forEach(element => {
         secondaryImagesObserver.observe(element)
     });
+    jqueryDefer(Owl);
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();

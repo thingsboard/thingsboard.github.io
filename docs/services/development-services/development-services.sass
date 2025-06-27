@@ -222,7 +222,7 @@ h2
             display: flex
             flex-direction: row
             justify-content: space-between
-            align-items: center
+            align-items: flex-start
             color: $light-text-color
             padding: 40px
             background: $section-background-accent-color
@@ -385,6 +385,7 @@ h2
                                 font-size: 16px
                                 font-weight: 400
                                 line-height: 24px
+                                text-align: start
                         .project-screen-container
                             padding: 24px
                             display: flex
@@ -500,7 +501,7 @@ h2
                 background: #BDDCFF99
                 filter: blur(100px)
             .card
-                max-width: 408px
+                max-width: calc( 33% - 16px )
                 display: flex
                 flex-direction: column
                 position: relative
@@ -592,6 +593,7 @@ h2
                     padding: 24px
                     border-radius: 24px
                     box-shadow: 0px 0px 2px #00000024
+                    transition: max-height 0.4s ease
                     .expansion-header
                         @include expandable-header()
                         .expansion-title
@@ -615,12 +617,14 @@ h2
                             @include expandable-rotated(180deg)
                         .expansion-content
                             padding: 24px
+                            overflow: visible
                             max-height: 1000px
+                            opacity: 1
                     .expansion-content
                         max-height: 0
                         overflow: hidden
                         text-align: left
-                        //transition: max-height 0.1s ease
+                        transition: max-height 0.3s ease, padding 0.4s ease, opacity 0.3s ease
                         ul
                             display: flex
                             flex-direction: column
