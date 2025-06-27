@@ -6,7 +6,7 @@
   right: 0
   bottom: 0
   background-color: rgba(0, 0, 0, 0.5)
-  z-index: 9999
+  z-index: 8888
   align-items: center
   justify-content: center
 
@@ -24,6 +24,8 @@
     .modal-body
       display: flex
       position: relative
+      transform: translate(0, 0)
+      max-height: 740px
 
       .close-button
         position: absolute
@@ -49,9 +51,23 @@
 
 
       .card
-        padding: 48px
+        padding: 48px 48px 94px
         display: flex
         flex-direction: column
+        overflow-y: auto
+
+        //scrollbar-width: thin
+        //scrollbar-color: #A9A9A9 #F1F1F1
+        //&::-webkit-scrollbar
+        //  width: 12px
+        //&::-webkit-scrollbar-track
+        //  background: #F1F1F1
+        //&::-webkit-scrollbar-thumb
+        //  background-color: #A9A9A9
+        //  border-radius: 6px
+        //  border: 3px solid #F1F1F1
+        //&::-webkit-scrollbar-thumb:hover
+        //  background-color: #555
 
         &.calculator
           background-color: #fff
@@ -60,6 +76,7 @@
 
         &.results
           width: 40%
+          padding-bottom: 25px
 
         .hidden
           display: none
@@ -123,8 +140,77 @@
         .input-parameters
           margin-bottom: auto
 
-          .input-group
+          .device-profiles-container
+            .device-profile:only-child
+              .add-profile-btn-container
+                display: none
+            h3
+              display: none
 
+            .remove-profile-btn
+              position: absolute
+              right: 10px
+              top: 8px
+              cursor: pointer
+              img
+                width: 24px
+
+            &.advanced
+              .device-profile
+                .wrapper
+                  border: 1px solid #BBD5F9
+                  border-radius: 15px
+                  position: relative
+                  padding: 40px 14px 14px
+                  margin-bottom: 24px
+
+                  h3
+                    display: block
+                    position: absolute
+                    top: -14px
+                    background-color: #fff
+                    padding: 0 4px
+                    color: #2A7DEC
+                    font-size: 16px
+                    line-height: 28px
+                    font-weight: 500
+                    letter-spacing: 0.15px
+
+                .add-profile-btn-container
+                  display: block
+                  margin-bottom: 24px
+                  cursor: pointer
+                  &:hover
+                    .add-profile-btn
+                      span
+                        display: inline
+                  &.hidden
+                    display: none
+
+                  .add-profile-btn
+                    display: flex
+                    align-items: center
+                    gap: 8px
+
+                    hr
+                      width: 100%
+                      border: 1px solid #2A7DEC
+
+                    img
+                      width: 24px
+                      height: 24px
+                      border-radius: 50%
+                      background-color: #EEF5FE
+
+                    span
+                      display: none
+                      font-size: 16px
+                      font-weight: 500
+                      line-height: 28px
+                      color: #2A7DEC
+                      white-space: nowrap
+
+          .input-group
             &:last-child:not(.addons)
               margin-bottom: 16px
 
@@ -236,6 +322,15 @@
                     top: -3px
                     width: 250px
                     line-height: 24px
+
+              button.payload
+                width: 200px
+                border: 1px solid #E0E1E2
+                border-radius: 6px
+                padding: 10px
+                font-size: 14px
+                margin-left: auto
+                margin-right: 16px
 
               .input
                 padding: 10px
@@ -448,16 +543,222 @@
                 line-height: 24px
                 top: -50px
 
+        .actions-container
+          display: flex
+          justify-content: space-between
+          align-items: center
+          position: fixed
+          bottom: 0
+          background: white
+          z-index: 100
+          //width: calc(60% - 104px)
+          height: 94px
+
+          .mode-toggle-container
+            display: flex
+            gap: 7px
+
+            .toggle-switch
+              position: relative
+              display: inline-block
+              width: 42px
+              height: 24px
+              margin-bottom: 0
+
+              input
+                opacity: 0
+                width: 0
+                height: 0
+                &:checked + .slider:before
+                  transform: translateX(18px)
+
+              .slider
+                position: absolute
+                cursor: pointer
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-color: #007bff
+                transition: 0.4s
+                border-radius: 34px
+
+                &:before
+                  position: absolute
+                  content: ""
+                  height: 18px
+                  width: 18px
+                  left: 3px
+                  bottom: 3px
+                  background-color: white
+                  transition: 0.4s
+                  border-radius: 50%
+
+            .label-text
+              display: inline-block
+              font-size: 16px
+              line-height: 28px
+              color: #333
+              font-weight: 400
+              &.selected
+                font-weight: 500
+
+              .tooltip
+                margin-left: 5px
+                position: relative
+                margin-bottom: 2px
+
+                &:hover
+                  .tooltip-text
+                    visibility: visible
+
+                img
+                  width: 15px
+
+                .tooltip-text
+                  position: absolute
+                  z-index: 3
+                  visibility: hidden
+                  background-color: #000000c7
+                  color: #fff
+                  text-align: center
+                  border-radius: 6px
+                  padding: 5px
+                  font-size: 12px
+                  left: 19px
+                  top: -3px
+                  width: 200px
+                  line-height: 24px
+
+  .payload-modal-overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 9999
+    background-color: rgba(0, 0, 0, 0.5)
+    display: none
+    align-items: center
+    justify-content: center
+
+    &.visible
+      display: flex
+
+    .modal-content 
+      background-color: #F4F8FE
+      padding: 8px
+      border-radius: 24px
+      width: 100%
+      max-width: 942px
+      @media screen and (max-width: 600px)
+        border-radius: 0
+
+      .modal-wrapper
+        background-color: #fff
+        padding: 48px
+        border-radius: 24px
+        position: relative
+
+        @media screen and (max-width: 600px)
+          height: 100vh
+          padding: 16px
+
+        .modal-header
+          display: flex
+          justify-content: space-between
+          align-items: center
+          margin-bottom: 24px
+
+          h2
+            font-size: 36px
+            line-height: 48px
+            font-weight: 500
+            color: #212121
+            margin: 0
+
+          #closePayloadModalBtn
+            position: absolute
+            right: 9px
+            top: 8px
+            cursor: pointer
+
+        .input-group
+          position: relative
+          label
+            display: block
+            font-size: 16px
+            line-height: 28px
+            font-weight: 400
+            color: #3D3D3D
+            margin-bottom: 8px
+
+          #errorMessage
+            position: absolute
+            bottom: -21px
+            color: #D12730
+            font-weight: 400
+            font-size: 12px
+
+          #json-input
+            width: 100%
+            height: 300px
+            font-family: Inconsolata
+            font-size: 16px
+            line-height: 24px
+            color: #212121
+            border: 1px solid #b1caf4
+            border-radius: 6px
+            padding: 16px
+
+            &.error, &.error:focus-visible
+              border: 1px solid #D12730
+
+            &::placeholder
+              color: #9E9E9E
+              opacity: 1
+
+            &:focus, &:focus-visible
+              outline: none
+              border-color: #B1CAF4FF
+
+        .footer
+          display: flex
+          align-items: center
+          justify-content: space-between
+          padding-top: 16px
+
+          @media screen and (max-width: 600px)
+            flex-direction: column
+            gap: 16px
+
+          .data-points
+            font-weight: 400
+            font-size: 20px
+            line-height: 32px
+            color: #3D3D3D
+
+          #applyPayloadBtn
+            &:disabled
+              opacity: 0.5
+              cursor: not-allowed
+              &:hover
+                filter: unset
+        
 @media screen and (max-width: 959px)
   .modal-overlay
     .modal-content
       max-height: 100vh
+      height: 100%
       border-radius: 0
 
       .modal-body
         flex-direction: column
 
         .card
+          padding-bottom: 48px
+          overflow-y: unset
+
           &.calculator
             width: 100%
 
@@ -469,6 +770,11 @@
 
           div.results-total
             margin-bottom: 16px
+
+          .actions-container
+            position: static
+            width: unset
+            transform: unset
 
 @media screen and (max-width: 599px)
   .modal-overlay
@@ -503,9 +809,18 @@
                       width: 150px
                       left: -51px
 
+                .button
+                  width: 100%
+                  margin-bottom: 12px
+
                 .input
                   &.input-right
                     width: 100%
+
+          .actions-container
+            flex-direction: column
+            align-items: flex-start
+            gap: 16px
 
           .card-header
             h3
