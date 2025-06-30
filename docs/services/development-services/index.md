@@ -943,7 +943,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     <div class="questions-section-cards">
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">01</div><h5>What is IoT development?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">01</div><h3>What is IoT development?</h3></div>
             </div>
             <div class="questions-section-content">
                 <div class="content-descr">IoT development services cover the design, development, deployment, and maintenance of IoT solutions. They include the creation of software ecosystems that allow you to manage communication between devices, collect data, map ingested data to digital twin, visualise it, and work as one integrated system. Think of smart electricity, water, heat meters, wearable health monitors, or asset tracking devices that provide critical information about asset health, allow decision makers to effectively strategies and improve the efficiency of key operational aspects. IoT development services bring these innovations to life.</div>
@@ -962,7 +962,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">02</div><h5>What industries can benefit from IoT application development services?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">02</div><h3>What industries can benefit from IoT application development services?</h3></div>
             </div>
             <div class="questions-section-content">
                 Almost every industry can benefit from the IoT, including manufacturing, healthcare, retail, logistics, agriculture, energy, automotive, smart cities, education, and construction. IoT helps to improve efficiency, safety, productivity and provides companies with critical data tailored to their unique needs of each sector.
@@ -970,7 +970,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">03</div><h5>What are some common IoT development challenges?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">03</div><h3>What are some common IoT development challenges?</h3></div>
             </div>
             <div class="questions-section-content">
                 The main challenges of the IoT include ensuring seamless connectivity of all devices, data security and privacy, managing large amounts of information, visualising and analysing the data, ensuring that different devices work together and meeting the high requirements of industry standards.
@@ -978,7 +978,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">04</div><h5>Do I need specialized hardware for IoT development?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">04</div><h3>Do I need specialized hardware for IoT development?</h3></div>
             </div>
             <div class="questions-section-content">
                 No, you don't need to have hardware to start developing, you can add it in the next phases of the development process, and use simulated data to start with. But for a full product, IoT solutions usually require specialised hardware, such as sensors and gateways for data collection and transmission. The specific hardware depends on the goals of your project, such as temperature monitoring, location tracking, or remote equipment management.
@@ -986,7 +986,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">05</div><h5>What is an IoT platform, and do I need one?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">05</div><h3>What is an IoT platform, and do I need one?</h3></div>
             </div>
             <div class="questions-section-content">
                 An IoT platform is software that helps you easily manage connected devices, collect data, and visualise it in a clear and easy way. If you plan to effectively manage multiple devices and data streams, you'll definitely need an IoT platform, and we recommend using an IoT platform like ThingsBoard.
@@ -994,7 +994,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">06</div><h5>How long does it take to develop an IoT solution?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">06</div><h3>How long does it take to develop an IoT solution?</h3></div>
             </div>
             <div class="questions-section-content">
                 Development time is highly dependent on many factors, such as your specific needs, hardware availability, required integrations; simple projects can take weeks, while more complex ones can take several months.
@@ -1002,7 +1002,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">07</div><h5>Does your IoT development company provide ongoing support and maintenance?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">07</div><h3>Does your IoT development company provide ongoing support and maintenance?</h3></div>
             </div>
             <div class="questions-section-content">
                 Yes, we offer ongoing support, including problem analysis, problem resolution, upgrades, scaling services, and continuous enhancements to ensure your IoT system is running smoothly and meeting your ever-changing needs.
@@ -1010,7 +1010,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">08</div><h5>Can existing IoT solutions be integrated with the ThingsBoard platform?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">08</div><h3>Can existing IoT solutions be integrated with the ThingsBoard platform?</h3></div>
             </div>
             <div class="questions-section-content">
                 Yes, existing IoT solutions can be easily integrated with ThingsBoard. We help with seamless integration, ensuring that your current setup receives enhanced functionality and improved management capabilities.
@@ -1018,7 +1018,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">09</div><h5>What factors affect the cost of IoT development?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">09</div><h3>What factors affect the cost of IoT development?</h3></div>
             </div>
             <div class="questions-section-content">
                 Costs depend on the complexity of the project, hardware requirements, custom software development needs, integration with existing systems, and ongoing support needs. Each of these elements can have a significant impact on the total investment in your IoT project.
@@ -1026,7 +1026,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">10</div><h5>IoT Security</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">10</div><h3>IoT Security</h3></div>
             </div>
             <div class="questions-section-content">
                 Taking into account industry standards and regulations (HIPAA, GDPR, etc.). Regular audit of infrastructure and application security. Development of a comprehensive security strategy (encryption, multi-level authentication, access control).
@@ -1034,7 +1034,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="questions-section-card">
             <div class="questions-section-header">
-                <div class="questions-section-title"><div class="questions-section-num">11</div><h5>How is IoT security ensured in your solutions?</h5></div>
+                <div class="questions-section-title"><div class="questions-section-num">11</div><h3>How is IoT security ensured in your solutions?</h3></div>
             </div>
             <div class="questions-section-content">
                 We keep the IoT secure with strong encryption, multiple levels of authentication, and strict access controls. We also regularly audit our systems and comply with regulations such as GDPR and HIPAA to ensure your data is fully protected.
