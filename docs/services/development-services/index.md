@@ -1146,9 +1146,12 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
 <div id="myModal" class="modal">
   <div class="modal-content">
-    <div class="close-button">
-        <img class="close" src="/images/close-icon.svg" alt="Close"/>
-    </div>
+  <div class="title-container">
+        <h2>Let’s talk about your project</h2>
+        <div class="close-button">
+            <img class="close" src="/images/close-icon.svg" alt="Close"/>
+        </div>
+  </div>
     <div class="sub-content">
         <form method="post"
             onsubmit="return validateContactForm(this)"
@@ -1222,6 +1225,12 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                 </fieldset>
             </div>
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_term" id="utm_term">
+            <input type="hidden" name="utm_content" id="utm_content">
+            <input type="hidden" name="client_id" id="client_id">
             <div class="submit-button-container">
                 <input class="cdu-button" value="Submit message" type="submit"/>
             </div>
