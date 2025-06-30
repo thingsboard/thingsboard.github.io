@@ -218,34 +218,49 @@ smart-retail:
     width: 1819
     height: 966
 
-air-quality-monitoring-1:
+air-quality-monitoring:
   0:
-    src: "/images/usecases/air-quality/aq1.png"
-    alt: "air quality 1"
-    width: 1920
-    height: 866
+    src: "/images/usecases/air-quality/aiq-1.webp"
+    alt: "Interactive AQI heatmap of Los Angeles on the ThingsBoard IoT Platform"
+    imageTitleAttribute: "AQI map of Los Angeles monitored via ThingsBoard"
+    width: 1302
+    height: 699
   1:
-    src: "/images/usecases/air-quality/aq2.png"
-    alt: "air quality 2"
-    width: 1920
-    height: 866
+    src: "/images/usecases/air-quality/aiq-2.webp"
+    alt: "Live PM10 air quality metrics for Beverly Hills on ThingsBoard dashboard"
+    imageTitleAttribute: "PM10 air quality levels in Beverly Hills displayed in ThingsBoard"
+    width: 1302
+    height: 699
   2:
-    src: "/images/usecases/air-quality/aq3.png"
-    alt: "air quality 3"
-    width: 1920
-    height: 866
-
-air-quality-monitoring-2:
-  0:
-    src: "/images/usecases/air-quality/aq4.png"
-    alt: "air quality 4"
-    width: 1920
-    height: 866
-  1:
-    src: "/images/usecases/air-quality/aq5.png"
-    alt: "air quality 5"
-    width: 1920
-    height: 866
+    src: "/images/usecases/air-quality/aiq-3.webp"
+    alt: "List of IoT dashboards for air quality monitoring in ThingsBoard"
+    imageTitleAttribute: "Manage air quality dashboards in ThingsBoard"
+    width: 1302
+    height: 699
+  3:
+    src: "/images/usecases/air-quality/aiq-4.webp"
+    alt: "IoT air quality sensors and alerts visualized on ThingsBoard map dashboard"
+    imageTitleAttribute: "Live air quality sensors and alerts across LA in ThingsBoard"
+    width: 1302
+    height: 699
+  4:
+    src: "/images/usecases/air-quality/aiq-5.webp"
+    alt: "Sensor metrics for Beverly Hills including AQI and battery on ThingsBoard"
+    imageTitleAttribute: "Sensor data for Beverly Hills – AQI, battery and status"
+    width: 1302
+    height: 699
+  5:
+    src: "/images/usecases/air-quality/aiq-6.webp"
+    alt: "Sensor registration form with ID and GPS fields in ThingsBoard"
+    imageTitleAttribute: "Create a new air quality sensor in ThingsBoard"
+    width: 1302
+    height: 699
+  6:
+    src: "/images/usecases/air-quality/aiq-7.webp"
+    alt: "ThingsBoard interface for configuring IoT alarm thresholds"
+    imageTitleAttribute: "Configure alert rules for sensor battery and connection"
+    width: 1302
+    height: 699
 
 smart-irrigation:
   0:
