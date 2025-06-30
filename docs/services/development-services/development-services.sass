@@ -51,6 +51,12 @@ $dark-text-color: #212529
   &::after 
     transform: rotate($deg)
 
+@mixin content-container($marginBottom)
+    padding-right: 272px
+    padding-left: 272px
+    margin-bottom: $marginBottom
+    
+
 h2
     color: #212529
     padding: 0px  
@@ -180,12 +186,10 @@ h2
     .our-customers
         width: 100%
         display: flex
-        padding-right: 272px
-        padding-left: 272px
+        @include content-container(56px)
         align-items: center
         z-index: 1
         border-radius: 10px
-        margin-bottom: 56px
 
         .customer-logos
             width: 100%
@@ -206,9 +210,7 @@ h2
                     max-width: fit-content
 
     .statistics
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         .map-img
             position: absolute
             top: 0
@@ -249,9 +251,7 @@ h2
                     padding: 10px
 
     .custom-solutions
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 100px
+        @include content-container(100px)
         .custom-solutions-wrapper
             text-align: center
             h2 
@@ -406,9 +406,7 @@ h2
                                     padding-left: 8px
 
     .vision-section
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         .vision-wrapper
             position: relative
             display: flex
@@ -479,9 +477,7 @@ h2
                         color: #2A7DEC
 
     .case-studies
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         .section-title
             font-size: 48px
             font-weight: 400
@@ -565,9 +561,7 @@ h2
                             display: block
     
     .services
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         background: transparent
         .services-container
             display: flex
@@ -635,9 +629,7 @@ h2
                                 color: #2A7DEC
     
     .get-in-touch-section
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 80px
+        @include content-container(80px)
         background: transparent
         .get-in-touch-container
             overflow: hidden
@@ -714,9 +706,7 @@ h2
                 bottom: 0px
                 right: 0px
         .industries
-            padding-right: 272px
-            padding-left: 272px
-            margin-bottom: 120px
+            @include content-container(120px)
             background-color: transparent
             .industries-container
                 display: flex
@@ -826,9 +816,7 @@ h2
                             z-index: 1
 
         .trusted-partner
-            padding-right: 272px
-            padding-left: 272px
-            margin-bottom: 120px
+            @include content-container(120px)
             text-align: center
             background: transparent
             .trusted-partner-title
@@ -922,9 +910,7 @@ h2
                     z-index: 0
 
         .fast-delivery
-            padding-right: 272px
-            padding-left: 272px
-            margin-bottom: 64px
+            @include content-container(64px)
             text-align: center
             background: transparent
             .fast-delivery-title
@@ -1034,9 +1020,7 @@ h2
                 z-index: 0
         
         .more-feature
-            padding-left: 272px
-            padding-right: 272px
-            margin-bottom: 120px
+            @include content-container(120px)
             background: transparent
             .more-feature-title
                 text-align: center
@@ -1074,9 +1058,7 @@ h2
                     width: 680px
     
     .project-timeline
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         .project-timeline-container
             display: flex
             gap: 20px
@@ -1215,9 +1197,7 @@ h2
             
     
     .engagement-models
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         .engagement-model-container
             display: flex
             gap: 20px
@@ -1300,9 +1280,7 @@ h2
                         border-bottom: none
     
     .clients-reviews
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         .clients-reviews-title
             text-align: center
             font-size: 48px
@@ -1387,9 +1365,7 @@ h2
                             padding: 4px 12px
     
     .questions-section
-        padding-right: 272px
-        padding-left: 272px
-        margin-bottom: 120px
+        @include content-container(120px)
         z-index: 1
         background: transparent
         .question-section-title
@@ -1482,9 +1458,7 @@ h2
             background: #51A3FF
             opacity: 15%
         .contact-us-section-content
-            padding-left: 272px
-            padding-right: 272px
-            margin-bottom: 120px
+            @include content-container(120px)
             .contact-us-container
                 position: relative
                 background: linear-gradient(180deg, #2A7DEC 0%, #2264BD 100%)
