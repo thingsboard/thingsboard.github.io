@@ -9,116 +9,124 @@ description: Trendz post-installation steps description
 * TOC
 {:toc}
 
+To make Trendz ready for use, complete the following post-installation setup steps.
 
 ## Signing Key
-For the application to work correctly, it must be able to send requests to ThingsBoard on behalf of an authenticated user. 
-This is needed for background tasks such as sending newly generated telemetry or fetching data for continuous prediction model fitting and generation prediction. 
-For these purposes, the application needs to be logged in to ThingsBoard, but it is not possible without user credentials that are not secure to store in 
-application memory. Therefore, another solution was implemented to cover all possible needs relying on general security concerns. The solution is storing the 
-JWT-signing key in Trendz configuration files, expecting the application to be installed on the server with restricted access (as ThingsBoard and other server 
-applications do). Also, if it is difficult to manage the configuration of Trendz, there is a simpler way to automatically fetch and store the signing key in the 
-Trendz database, but it is not recommended because of possible security concerns. For validation the solution there is the indicator was designed to check if 
-your signing key is set in Trendz, and if it is valid.
 
-To check your signing key is relevant follow the following steps:
-* Open Trendz home page
-* Go to the Settings page by clicking the “Setting” button on the left-bottom corner of the page.
+You can read more about signing key [here](/docs/trendz/settings#signing-key)
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
+### Acquiring Signing Key
 
-* Scroll down to the bottom of the page, you will see the “Signing Key” panel. You can see one of two possible options:
-  - The signing key is not valid (not set or expired)
-  
-  ![image](https://img.thingsboard.io/trendz/signing-key-2.png)
+Follow these steps to configure the signing key:
 
-  - The signing key is valid
+1. **Log in to ThingsBoard as a System Administrator**  
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-3.png)
+    ![Login](/images/trendz/signing-key-4.png)
 
-Let's consider the standard way of setting signing way, there are steps you need to follow:
-* Open your ThingsBoard login page and log in as a system administrator
+2. Go to **Security → General**  
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-4.png)
+   ![Security General Page](/images/trendz/signing-key-5.png)
 
-* Open the “Security” → “General” page
+3. Scroll to the **JWT Security Settings** section  
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-5.png)
+   ![JWT Security](/images/trendz/signing-key-6.png)
 
-* Scroll down to the bottom of the page and find the “JWT Security Setting” page
+4. Copy the value from the **Signing key** field.
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-6.png)
+### Installation-specific Instructions
 
-* Copy the value from the “Signing key” text field.
-* The next step will be different depending on your installation type. We will cover two of
-  them because the others are similar to those mentioned above - Ubuntu and Docker
-  Compose installations.
+**Ubuntu Installation**
 
-### Ubuntu installation
-* Get access to the server hosting Trendz by SSH.
-* Open file for editing:
-```bash
-sudo nano /etc/trendz/conf/trendz.conf
-```
-{: .copy-code}
+1. SSH into the server running Trendz.
 
-* Add the row at the end of the file:
-```bash
-export JWT_TOKEN_SIGNING_KEY=<signing-key>
-```
+2. Open the Trendz configuration file:
 
-* Save the file and reboot Trendz
+   ```bash
+   sudo nano /etc/trendz/conf/trendz.conf
+   ```
+   {: .copy-code}
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-7.png)
+3. Add the signing key to the end of the file:
 
-### Docker Compose installation
-* Open your docker-compose file
-* Add a new environment variable with the name **JWT_TOKEN_SIGNING_KEY** and put your signing key as a value of the variable
-* Save the file and reboot the Trendz container
+   ```bash
+   export JWT_TOKEN_SIGNING_KEY=<signing-key>
+   ```
+   {: .copy-code}
+   ![Ubuntu Signing Key](/images/trendz/signing-key-7.png)
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-8.png)
+4. Save the file and restart the Trendz service.
 
-## Trendz Widget Bundle
-Uploading the Trendz bundle is essential to enable sharing views on the ThingsBoard dashboard. When accessing Trendz for the first time, you can upload the bundle after discovering your topology.
+**Docker Compose Installation**
 
-![image](https://img.thingsboard.io/trendz/topology-upload-bundle.png)
+1. Open your `docker-compose.yml` file.
 
-You can also upload, update, or check the status of your Trendz bundle from the Settings page. Follow these steps:
-* Log in as a Tenant Administrator and navigate to the Settings page. 
+2. Add a new environment variable under the Trendz service:
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
+   ```yaml
+   environment:
+     - JWT_TOKEN_SIGNING_KEY=<signing-key>
+   ```
+   {: .copy-code}
+   ![Docker Signing Key](/images/trendz/signing-key-8.png)
 
-* In the Trendz Widget Bundle Management section, review the status of the Widget Bundle. The status can be one of the following:
-    * **Not installed**: The bundle is not currently present in ThingsBoard.
-    * **Update required**: A newer version of the bundle is available.
-    * **Latest version installed**: The current bundle is up to date.
-    * **The bundle is invalid**: The existing bundle is corrupted or incomplete.  
-* Take Appropriate Action:
-    * If the status is **Latest version installed**, no action is needed as the Trendz Widget Bundle is already up to date.
-    * For any other status, click the Upload Bundle button. If the bundle is not installed, it will be uploaded for the first time. 
-      If the bundle is outdated, it will be updated to the latest version.
+3. Save the file and restart the Trendz container.
 
-    ![image](https://img.thingsboard.io/trendz/settings-upload-button.png)
+### Verifying Successful Installation
+
+To validate that the signing key was installed correctly, you need to:
+
+1. Log in as a **Tenant Administrator**.
+2. Go to the **Settings**.
+
+   ![Settings Navigation](/images/trendz/signing-key-1.png)
+
+3. If everything was done correctly, you will see **Active** status in the **Signing Key** field.  
+
+   ![Signing Key Valid](/images/trendz/signing-key-3.png)
+
+   
+## Required Actions in Trendz Settings
+
+**Note:** These actions affect ThingsBoard.
+
+You need to complete the following actions to add all necessary add-ons to ThingsBoard:
+
+- **Trendz Widget Bundle:**
+    - Click the **Upload bundle** button.
+    - You will see *Latest version installed* afterward.
+    - Read more about the Trendz Widget Bundle [here](/docs/trendz/settings#trendz-widget-bundle).
+
+- **Trendz JS Summary Module:**
+    - Click the **Upload module** button.
+    - You will see *Latest version installed* afterward.
+    - Read more about the Trendz JS Summary Module [here](/docs/trendz/settings#trendz-js-summary-module).
+
+- **Trendz Settings:**
+    - Click the **Update Settings** button.
+    - You will see *Settings are up to date* afterward.
+    - Read more about Trendz Settings [here](/docs/trendz/settings#trendz-settings).
 
 ## Link to ThingsBoard
+
 To simplify the process of adding Trendz views to ThingsBoard dashboards, we have introduced the ability to open the dashboard where the view was added in a new tab. 
 Configure the link to your ThingsBoard instance in Settings to use this feature. Follow these steps:
 * Log in to Trendz and navigate to the Settings page.
 
-  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
+  ![image](/images/trendz/signing-key-1.png)
 
 * Enter the URL of your ThingsBoard instance (e.g., *https://your-link-to-platform*) in the designated field.
 
-  ![image](https://img.thingsboard.io/trendz/link-to-tb.png)
+  ![image](/images/trendz/link-to-tb.png)
 
 After this, you can open your modified or newly created dashboard in a new tab by enabling the Open dashboard in a separate window field.
 
-![image](https://img.thingsboard.io/trendz/open-dashboard-in-separate-tab.png)
+![image](/images/trendz/open-dashboard-in-separate-tab.png)
 
 ## AI Assistant
 
 To use AI Assistant feature in Trendz, you need to configure it first. To enable your own AI model, go to **Settings → General → AI Assistant** in Trendz. 
-There, you can enable the **Use own model** option, select an AI provider (OpenAI, Amazon Bedrock, or Google), and enter the required API credentials.
+There, you can enable the **Use own model** option, select an AI provider (OpenAI, Amazon Bedrock, Google or Custom), and enter the required API credentials.
 
 For more details on configuring AI Assistant, you can read more [here](/docs/trendz/custom-ai-model-configuration.md).
 
-![image](https://img.thingsboard.io/trendz/ai/ai-model-configuration/use-own-model-1.png)
+![image](/images/trendz/ai/ai-model-configuration/use-own-model-1.png)

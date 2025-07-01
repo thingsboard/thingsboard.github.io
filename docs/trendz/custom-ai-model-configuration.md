@@ -62,6 +62,9 @@ Supported models:
 * Gemini-2.0-flash-lite
   * Input (1m) token price: 0.075$
   * Output (1m) token price: 0.3$
+* Gemini-2.5-flash (Recommended - high performance)
+  * Input (1m) token price: 0.3$
+  * Output (1m) token price: 2.5$
 
 ## Open AI
 
