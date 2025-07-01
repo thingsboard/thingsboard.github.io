@@ -231,12 +231,6 @@ air-quality-monitoring:
     imageTitleAttribute: "PM10 air quality levels in Beverly Hills displayed in ThingsBoard"
     width: 1302
     height: 699
-  2:
-    src: "/images/usecases/air-quality/aiq-3.webp"
-    alt: "List of IoT dashboards for air quality monitoring in ThingsBoard"
-    imageTitleAttribute: "Manage air quality dashboards in ThingsBoard"
-    width: 1302
-    height: 699
   3:
     src: "/images/usecases/air-quality/aiq-4.webp"
     alt: "IoT air quality sensors and alerts visualized on ThingsBoard map dashboard"
@@ -247,18 +241,6 @@ air-quality-monitoring:
     src: "/images/usecases/air-quality/aiq-5.webp"
     alt: "Sensor metrics for Beverly Hills including AQI and battery on ThingsBoard"
     imageTitleAttribute: "Sensor data for Beverly Hills – AQI, battery and status"
-    width: 1302
-    height: 699
-  5:
-    src: "/images/usecases/air-quality/aiq-6.webp"
-    alt: "Sensor registration form with ID and GPS fields in ThingsBoard"
-    imageTitleAttribute: "Create a new air quality sensor in ThingsBoard"
-    width: 1302
-    height: 699
-  6:
-    src: "/images/usecases/air-quality/aiq-7.webp"
-    alt: "ThingsBoard interface for configuring IoT alarm thresholds"
-    imageTitleAttribute: "Configure alert rules for sensor battery and connection"
     width: 1302
     height: 699
 
@@ -275,40 +257,16 @@ smart-irrigation:
     imageTitleAttribute: "Add a new field and define crop type and soil moisture thresholds"
     width: 1302
     height: 699
-  2:
-    src: "/images/usecases/smart-irrigation/smart-irrigation-3.webp"
-    alt: "Edit field details with boundary selection and moisture settings in ThingsBoard"
-    imageTitleAttribute: "Update field boundaries and soil moisture limits for precision farming"
-    width: 1302
-    height: 699
   3:
     src: "/images/usecases/smart-irrigation/smart-irrigation-4.webp"
     alt: "Dashboard showing irrigation status, alarms, field map, and moisture statistics in ThingsBoard"
     imageTitleAttribute: "Irrigation and soil monitoring dashboard for smart agriculture"
     width: 1302
     height: 699
-  4:
-    src: "/images/usecases/smart-irrigation/smart-irrigation-5.webp"
-    alt: "Dialog to add a new soil moisture sensor on the map in ThingsBoard"
-    imageTitleAttribute: "Register a new soil moisture sensor and assign a label"
-    width: 1302
-    height: 699
-  5:
-    src: "/images/usecases/smart-irrigation/smart-irrigation-6.webp"
-    alt: "Form to create an automated irrigation schedule based on consumption or time"
-    imageTitleAttribute: "Define irrigation rules by water usage or duration for field automation"
-    width: 1302
-    height: 699
   6:
     src: "/images/usecases/smart-irrigation/smart-irrigation-7.webp"
     alt: "Active and cleared alarms for soil moisture and battery levels in ThingsBoard"
     imageTitleAttribute: "View and manage critical alerts from field sensors in the irrigation system"
-    width: 1302
-    height: 699
-  7:
-    src: "/images/usecases/smart-irrigation/smart-irrigation-8.webp"
-    alt: "Dashboard view for a second field showing multiple active alarms and irrigation tasks"
-    imageTitleAttribute: "Monitor critical issues and manage irrigation for corn field using ThingsBoard"
     width: 1302
     height: 699
 
