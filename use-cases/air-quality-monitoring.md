@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: Air Quality Monitoring solution
-description: Air quality monitoring, AQI determination, data visualization and device management with ThingsBoard IoT Platform
+title: Urban & Industrial Air Monitoring with IoT and Dashboards
+description: Monitor, analyze, and act on air quality in real time with ThingsBoard — the flexible IoT platform for cities, industries, and research.
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"

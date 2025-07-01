@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: Waste Management solution
-description: Waste management of garbage containers, data visualization, and device management with the ThingsBoard IoT Platform
+title: Smart Waste Management with ThingsBoard for Cities & Industry
+description: Optimize waste collection across cities, industries, and campuses with ThingsBoard’s IoT platform — featuring real-time monitoring, smart alarms, and interactive dashboards for data-driven efficiency and sustainability.
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
@@ -156,7 +156,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/waste-monitoring/municipal-1.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="image"><img src="/images/usecases/waste-monitoring/municipal-2.svg" alt="Municipal services" title="Municipal services"></div>
             <div class="text-block">
                 <h3>Municipal services</h3>
                 <p>Enables city authorities to optimize waste collection routes and respond faster to bin overflow alarms using ThingsBoard’s real-time telemetry, automated rules, and geospatial dashboards.</p>
@@ -320,11 +320,11 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/waste-monitoring/waste-1.webp' alt='Smart waste management dashboard with bin status, battery levels, and interactive map in ThingsBoard' title='Live overview of smart waste bins, battery alerts, and location tracking via ThingsBoard IoT'/>",
+                "<img src='/images/usecases/waste-monitoring/waste-1.webp' data-bg='#F9F9FB' alt='Smart waste management dashboard with bin status, battery levels, and interactive map in ThingsBoard' title='Live overview of smart waste bins, battery alerts, and location tracking via ThingsBoard IoT'/>",
                 "<img src='/images/usecases/waste-monitoring/waste-2.webp' data-bg='#A4A4A4' alt='Sensor registration dialog for uploading CSV file with bin data in ThingsBoard' title='Register multiple smart bin sensors by importing CSV in ThingsBoard'/>",
                 "<img src='/images/usecases/waste-monitoring/waste-3.webp' data-bg='#A4A4A4' alt='Alarm rule configuration for bin fullness and battery level in ThingsBoard' title='Define alarm rules – fullness over 90%, battery below 30% (ThingsBoard IoT)'/>",
                 "<img src='/images/usecases/waste-monitoring/waste-4.webp' data-bg='#A4A4A4' alt='Edit bin sensor data including location and address in ThingsBoard' title='Modify sensor details – serial number, address, GPS coordinates'/>",
-                "<img src='/images/usecases/waste-monitoring/waste-5.webp' alt='Smart bin sensor detail view with charts for fullness and battery history in ThingsBoard' title='Sensor data trends – fullness and battery level monitoring over time'/>"
+                "<img src='/images/usecases/waste-monitoring/waste-5.webp' data-bg='#F9F9FB' alt='Smart bin sensor detail view with charts for fullness and battery history in ThingsBoard' title='Sensor data trends – fullness and battery level monitoring over time'/>"
             ];
             return images[index];
         }

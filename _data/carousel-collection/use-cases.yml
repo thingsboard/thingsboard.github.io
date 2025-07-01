@@ -264,30 +264,53 @@ air-quality-monitoring:
 
 smart-irrigation:
   0:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-1.png"
-    alt: "smart irrigation 1"
-    width: 1500
-    height: 730
+    src: "/images/usecases/smart-irrigation/smart-irrigation-1.webp"
+    alt: "Satellite view of crop fields with real-time moisture levels and chart in ThingsBoard"
+    imageTitleAttribute: "Soil moisture monitoring for wheat and corn fields using ThingsBoard"
+    width: 1302
+    height: 699
   1:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-2.png"
-    alt: "smart irrigation 2"
-    width: 1500
-    height: 730
+    src: "/images/usecases/smart-irrigation/smart-irrigation-2.webp"
+    alt: "Field configuration form for setting crop type and moisture range in ThingsBoard"
+    imageTitleAttribute: "Add a new field and define crop type and soil moisture thresholds"
+    width: 1302
+    height: 699
   2:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-3.png"
-    alt: "smart irrigation 3"
-    width: 1500
-    height: 730
+    src: "/images/usecases/smart-irrigation/smart-irrigation-3.webp"
+    alt: "Edit field details with boundary selection and moisture settings in ThingsBoard"
+    imageTitleAttribute: "Update field boundaries and soil moisture limits for precision farming"
+    width: 1302
+    height: 699
   3:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-4.png"
-    alt: "smart irrigation 4"
-    width: 1500
-    height: 730
+    src: "/images/usecases/smart-irrigation/smart-irrigation-4.webp"
+    alt: "Dashboard showing irrigation status, alarms, field map, and moisture statistics in ThingsBoard"
+    imageTitleAttribute: "Irrigation and soil monitoring dashboard for smart agriculture"
+    width: 1302
+    height: 699
   4:
-    src: "/images/solutions/smart_irrigation/smart-irrigation-5.png"
-    alt: "smart irrigation 5"
-    width: 1500
-    height: 730
+    src: "/images/usecases/smart-irrigation/smart-irrigation-5.webp"
+    alt: "Dialog to add a new soil moisture sensor on the map in ThingsBoard"
+    imageTitleAttribute: "Register a new soil moisture sensor and assign a label"
+    width: 1302
+    height: 699
+  5:
+    src: "/images/usecases/smart-irrigation/smart-irrigation-6.webp"
+    alt: "Form to create an automated irrigation schedule based on consumption or time"
+    imageTitleAttribute: "Define irrigation rules by water usage or duration for field automation"
+    width: 1302
+    height: 699
+  6:
+    src: "/images/usecases/smart-irrigation/smart-irrigation-7.webp"
+    alt: "Active and cleared alarms for soil moisture and battery levels in ThingsBoard"
+    imageTitleAttribute: "View and manage critical alerts from field sensors in the irrigation system"
+    width: 1302
+    height: 699
+  7:
+    src: "/images/usecases/smart-irrigation/smart-irrigation-8.webp"
+    alt: "Dashboard view for a second field showing multiple active alarms and irrigation tasks"
+    imageTitleAttribute: "Monitor critical issues and manage irrigation for corn field using ThingsBoard"
+    width: 1302
+    height: 699
 
 waste-management:
   0:

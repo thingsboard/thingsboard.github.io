@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: IoT Smart Metering Solutions — Smart Meter Solution
-description: IoT smart metering solutions ✔ Smart meter data visualization ⚫ ThingsBoard ➤ Remote monitoring and recording of energy consumption
+title: ThingsBoard Smart Metering for Cities, Industry & Business
+description: Explore how ThingsBoard enables powerful IoT smart metering solutions with real-time dashboards, protocol support, and multi-industry applications.
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
