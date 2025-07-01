@@ -8,6 +8,25 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.13.2 (June 27, 2025)
+
+**Improvements:**
+
+* Redesign anomaly autodiscovery tasks
+* Add job for saving anomaly scores as a telemetry in ThingsBoard
+* Create alerts based on discovered anomalies
+* Add new filter conditions - 'not in' and 'does not contain'
+* Filter business entities based on user permissions
+* AI Assistant - improve conversation interface
+
+**Bug fixes:**
+
+* Fix fill gaps strategy during anomaly detection
+* Fix issue with failed topology rediscovery
+* Fix query planner for calculated fields
+* Invalidate jwt tokens based on user activity
+* Fix multitenant validation procedure
+
 ## v1.13.1 (May 2, 2025)
 
 **Improvements:**
