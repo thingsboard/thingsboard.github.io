@@ -5,7 +5,7 @@
     - MQTT
     - Modbus
   name: ACE AUTOMATION
-  logo: https://img.thingsboard.io/partners/ace-automation-logo.png
+  logo: /images/partners/ace-automation-logo.png
   site:
     href: https://aceautomation.eu/
   links:
@@ -17,7 +17,7 @@
     - LoRaWAN
     - Wi-Fi
   name: Atomsenses
-  logo: https://img.thingsboard.io/partners/atomsenses-logo.png
+  logo: /images/partners/atomsenses-logo.png
   site:
     href: https://www.atomsenses.com/
   links:
@@ -30,7 +30,7 @@
     - NB-IoT
     - LTE-M
   name: Efento
-  logo: https://img.thingsboard.io/partners/efento.png
+  logo: /images/partners/efento.png
   site:
     href: https://getefento.com/
   links:
@@ -43,7 +43,7 @@
     - LTE-M
     - Wi-Fi
   name: Teltonika Networks
-  logo: https://img.thingsboard.io/partners/teltonika-networks.png
+  logo: /images/partners/teltonika-networks.png
   site:
     href: https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard
   links:
@@ -55,7 +55,7 @@
     - Bluetooth LE
     - Wi-Fi
   name: Espressif Systems
-  logo: https://img.thingsboard.io/partners/espressif.svg
+  logo: /images/partners/espressif.svg
   site:
     href: https://www.espressif.com/
   links:
@@ -70,7 +70,7 @@
     - Wi-Fi
     - Bluetooth LE
   name: Elastel
-  logo: https://img.thingsboard.io/partners/elastel-logo.png
+  logo: /images/partners/elastel-logo.png
   site:
     href: https://www.elastel.com/
   links:
@@ -82,7 +82,7 @@
     - LTE-M
     - Wirepas
   name: Haltian
-  logo: https://img.thingsboard.io/partners/haltian-logo.png
+  logo: /images/partners/haltian-logo.png
   site:
     href: https://haltian.com/
   links:
@@ -97,7 +97,7 @@
     - Sigfox
     - Wi-Fi
   name: Seeed Technology Co.,Ltd.
-  logo: https://img.thingsboard.io/partners/seeed.png
+  logo: /images/partners/seeed.png
   site:
     href: https://www.seeedstudio.com/
   showcase:
@@ -117,7 +117,7 @@
     - Bluetooth LE
     - LoRaWAN
   name: Lansitec
-  logo: https://img.thingsboard.io/partners/lansitec-logo.svg
+  logo: /images/partners/lansitec-logo.svg
   site:
     href: https://www.lansitec.com/
   links:
@@ -128,7 +128,7 @@
 - type:
     - LoRaWAN
   name: Milesight
-  logo: https://img.thingsboard.io/partners/milesight-logo.png
+  logo: /images/partners/milesight-logo.png
   site:
     href: https://www.milesight.com/
   links:
@@ -155,7 +155,7 @@
     - NB-IoT
     - LoRaWAN
   name: Smartico
-  logo: https://img.thingsboard.io/partners/smartico.png
+  logo: /images/partners/smartico.png
   site:
     href: https://www.smartico.biz/en/
   links:
@@ -183,7 +183,7 @@
     - LTE-M
     - Wi-Fi
   name: Digital Communications Technologies, LLC.
-  logo: https://img.thingsboard.io/partners/DCT-Logo-Standard-Color-01.png
+  logo: /images/partners/DCT-Logo-Standard-Color-01.png
   site:
     href: https://www.digitalcomtech.com/
   links:
@@ -196,7 +196,7 @@
     - Wi-Fi
     - LTE-M
   name: MOKO SMART
-  logo: https://img.thingsboard.io/partners/moko-smart-logo.png
+  logo: /images/partners/moko-smart-logo.png
   site:
     href: https://www.mokosmart.com/
   links:
@@ -213,7 +213,7 @@
     - LTE-M
     - NB-IoT
   name: Digicom B810 Spa
-  logo: https://img.thingsboard.io/partners/digicom-logo.png
+  logo: /images/partners/digicom-logo.png
   site:
     href: https://www.digicom.it/
   links:
@@ -226,7 +226,7 @@
     - Wi-Fi
     - NB-IoT
   name: Nettra
-  logo: https://img.thingsboard.io/partners/nettra.png
+  logo: /images/partners/nettra.png
   site:
     href: https://nettra.tech/
   links:
@@ -235,20 +235,9 @@
       href: "/docs/samples/nettrartu+/rtu_temp_sensor/"
   description: We provide comprehensive hardware and software IoT solutions.
 - type:
-    - Wi-Fi
-  name: Things On Edge
-  logo: https://img.thingsboard.io/partners/things-on-edge.svg
-  site:
-    href: /#
-  links:
-    0:
-      label: Integration guide
-      href: "/docs/samples/cricket-wifi/cricket-wifi/"
-  description: Things On Edge designs easy to use, ultra low power Wi-Fi modules.
-- type:
     - Ethernet
   name: Solandtec
-  logo: https://img.thingsboard.io/partners/solandtec.png
+  logo: /images/partners/solandtec.png
   site:
     href: https://solandtec.com/
   links:
@@ -261,7 +250,7 @@
     - LTE-M
     - NB-IoT
   name: Actility
-  logo: https://img.thingsboard.io/partners/actility.png
+  logo: /images/partners/actility.png
   site:
     href: https://www.actility.com/
   links:
@@ -274,7 +263,7 @@
     - LTE-M
     - Bluetooth LE
   name: SODAQ
-  logo: https://img.thingsboard.io/partners/sodaq.jpg
+  logo: /images/partners/sodaq.jpg
   site:
     href: https://sodaq.com/
   links:
@@ -286,7 +275,7 @@
     - LoRaWAN
     - Bluetooth LE
   name: SensiEDGE
-  logo: https://img.thingsboard.io/partners/sensiedge_logo.png
+  logo: /images/partners/sensiedge_logo.png
   site:
     href: https://www.sensiedge.com/
   links:
@@ -304,7 +293,7 @@
     - CAT-M/NB
     - NB-IoT
   name: Shenzhen Dragino Technology Development  Co.,Ltd
-  logo: https://img.thingsboard.io/partners/dragino-logo.png
+  logo: /images/partners/dragino-logo.png
   site:
     href: http://www.dragino.com/
   links:
@@ -317,7 +306,7 @@
     - Bluetooth LE
     - Wi-Fi
   name: ioThings
-  logo: https://img.thingsboard.io/partners/iothings-logo.png
+  logo: /images/partners/iothings-logo.png
   site:
     href: https://iotracker.eu/
   links:
@@ -331,7 +320,7 @@
 - type:
     - GSM/GPRS
   name: DECODE
-  logo: https://img.thingsboard.io/partners/decode.png
+  logo: /images/partners/decode.png
   site:
     href: https://www.decode.rs/
   links:
@@ -342,7 +331,7 @@
 - type:
     - LoRaWAN
   name: TEKTELIC Communications Inc.
-  logo: https://img.thingsboard.io/partners/tektelic.png
+  logo: /images/partners/tektelic.png
   site:
     href: https://tektelic.com/
   links: {}
@@ -353,7 +342,7 @@
     - Wi-Fi
     - Ethernet
   name: National Control Devices, LLC
-  logo: https://img.thingsboard.io/partners/ncd-logo.png
+  logo: /images/partners/ncd-logo.png
   site:
     href: https://ncd.io/
   links:
@@ -366,7 +355,7 @@
     - Bluetooth LE
     - Wi-Fi
   name: Netvox
-  logo: https://img.thingsboard.io/partners/netvox-logo.jpg
+  logo: /images/partners/netvox-logo.jpg
   site:
     href: http://www.netvox.com.tw/
   links:
@@ -378,7 +367,7 @@
     - NB-IoT
     - LTE-M
   name: AKKR8
-  logo: https://img.thingsboard.io/partners/akkr8.png
+  logo: /images/partners/akkr8.png
   site:
     href: https://www.akkr8.io/
   links: {}
@@ -386,7 +375,7 @@
 - type:
     - Wi-Fi
   name: ROLTEK
-  logo: https://img.thingsboard.io/partners/roltek_logo_dark.png
+  logo: /images/partners/roltek_logo_dark.png
   site:
     href: https://www.roltek.com.tr/
   links:
@@ -397,7 +386,7 @@
 - type:
     - Modbus
   name: Kernel Sistemi
-  logo: https://img.thingsboard.io/partners/kernel_logo.jpg
+  logo: /images/partners/kernel_logo.jpg
   site:
     href: https://www.kernelgroup.it/
   links:
@@ -409,7 +398,7 @@
     - Modbus
     - LoRaWAN
   name: KingPigeon Technology Co., Ltd.
-  logo: https://img.thingsboard.io/partners/kingpigeon.png
+  logo: /images/partners/kingpigeon.png
   site:
     href: https://www.iot-solution.com/
   links:
@@ -422,7 +411,7 @@
     - LTE-M
     - Wi-Fi
   name: Senquip
-  logo: https://img.thingsboard.io/partners/senquip.png
+  logo: /images/partners/senquip.png
   site:
     href: https://www.senquip.com
   links:
@@ -436,7 +425,7 @@
     - Wi-Fi
     - Ethernet
   name: Sixfab, Inc.
-  logo: https://img.thingsboard.io/partners/sixfab-logo.png
+  logo: /images/partners/sixfab-logo.png
   site:
     href: https://sixfab.com/alpon
   links:
@@ -450,7 +439,7 @@
     - LTE-M
     - LoRaWAN
   name: Dusun
-  logo: https://img.thingsboard.io/partners/dusun.png
+  logo: /images/partners/dusun.png
   site:
     href: https://www.dusuniot.com/
   links:
@@ -468,7 +457,7 @@
     - CAT-M/NB
     - NB-IoT
   name: MikroTik
-  logo: https://img.thingsboard.io/partners/mikrotik-logo.svg
+  logo: /images/partners/mikrotik-logo.svg
   site:
     href: https://mikrotik.com/
   links:
@@ -492,7 +481,7 @@
     - NB-IoT
     - LTE-M
   name: monoZ
-  logo: https://img.thingsboard.io/partners/monoz-logo.png
+  logo: /images/partners/monoz-logo.png
   site:
     href: https://monoz.io/
   links:
@@ -506,7 +495,7 @@
     - Wi-Fi
     - Ethernet
   name: Temco Controls
-  logo: https://img.thingsboard.io/partners/temco-controls-logo.jpg
+  logo: /images/partners/temco-controls-logo.jpg
   site:
     href: https://temcocontrols.com/
   links:
@@ -526,7 +515,7 @@
     - GSM/GPRS
     - Modbus
   name: EXXN
-  logo: https://img.thingsboard.io/partners/exxn.jpg
+  logo: /images/partners/exxn.jpg
   site:
     href: https://exxn.es/en/
   links:
@@ -538,7 +527,7 @@
     - NB-IoT
     - LTE-M
   name: Fusion DAQ
-  logo: https://img.thingsboard.io/partners/FusionDAQ-Nav-Logo.png
+  logo: /images/partners/FusionDAQ-Nav-Logo.png
   site:
     href: https://fusiondaq.com/
   links:
@@ -551,7 +540,7 @@
     - LoRaWAN
     - LTE-M
   name: Yobiiq B.V.
-  logo: https://img.thingsboard.io/partners/Yobiiq_Logo_Primary.svg
+  logo: /images/partners/Yobiiq_Logo_Primary.svg
   site:
     href: https://yobiiq.com/
   links:
@@ -566,7 +555,7 @@
     - Wi-Fi
     - Ethernet
   name: YuDash
-  logo: https://img.thingsboard.io/partners/yudash_logo.png
+  logo: /images/partners/yudash_logo.png
   site:
     href: https://www.yudash.com/
   links:
