@@ -301,7 +301,13 @@ Once you have successfully done all the steps above and Gateway sent data, you c
 {% endif %}
 
 Let&#39;s display KNX IP Multi IO 580 time series on a dashboard. 
-For this purpose, you can create your own dashboard with your custom widgets or use a ready-made dashboard and simply import it.
+For this purpose, you can create your own dashboard with your custom widgets or [use a ready-made dashboard](/docs/user-guide/resources/knx_ip_multi_io_580.json){:target="_blank" download="knx_ip_multi_io_580.json"} and simply [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it.
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+![imagePe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-pe.png)
+{% else %}  
+![imageCe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-ce.png)
+{% endif %}
 
 ## Conclusion
 
