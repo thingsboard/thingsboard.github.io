@@ -12,7 +12,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Positioning Water Leak Sensor]({{deviceVendorLink}}){: target="_blank"} Positioning Water Leak Sensor detects water leakage at fixed points. Suitable for applications such as garage/kitchen water leakage detection. It reports the water leakage via LoRaWAN® protocol instantly as leakage detected. The sensor benefits from LoRaWAN, which ensures stability and reliability. It is capable of covering a long transmission range while maintaining low power consumption. Unlike wireline devices, it is battery-powered, reducing the workload and complexity of deployment, design and development for end-users that can work via powering it, and setting the configuration in the cloud server.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
@@ -56,7 +56,7 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/devices-library/lorawan-positioning-data.png)
+![LoRaWAN device data](https://img.thingsboard.io/devices-library/lorawan-positioning-data.png)
 
 
 ## Conclusion

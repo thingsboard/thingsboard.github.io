@@ -12,18 +12,18 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
             <div class="text">
                 <p class="category">SMART ENERGY</p>
                 <h1>Smarter buildings made simple: Environmental Energy Controls chooses ThingsBoard for scalable BMS Solutions</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/e2cbms.webp')">
-                    <img src="/images/case-studies/e2cbms.svg" title="E2CBMS" alt="E2CBMS logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/e2cbms.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/e2cbms.svg" title="E2CBMS" alt="E2CBMS logo" width="126" height="56">
                 </div>
                 <p>E2CBMS (E2C Building Management Solutions) is a Bahrain-based company that specialises in providing smart building management and automation systems. E2CBMS delivers comprehensive solutions including Building Management Systems (BMS), Energy Management Systems (EMS), and integration of IoT technologies. Their expertise spans across engineering, project execution, and post-installation support, helping clients optimise performance, reduce costs, and enhance user comfort within built environments. The company serves a broad range of sectors, including commercial, industrial, and residential developments throughout the GCC region.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/e2cbms.webp')">
-                <img src="/images/case-studies/e2cbms.svg" title="E2CBMS" alt="E2CBMS logo" width="126" height="56">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/e2cbms.webp')">
+                <img src="https://img.thingsboard.io/case-studies/e2cbms.svg" title="E2CBMS" alt="E2CBMS logo" width="126" height="56">
             </div>
         </div>
     </section>
     <section class="quote-with-mark fill-background">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but no other could match this platform in terms of its capability. Once learning the basics, we could quickly deploy and add customers sites without the need for continual support.”</p>
             <h2>Nairn Harrison, Director</h2>
@@ -86,21 +86,21 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <h3>Rapid deployment with powerful simplicity</h3>
                 <p>ThingsBoard gave E2CBMS the tools they needed to deliver smarter, faster, and more flexible solutions to their clients. After trying several platforms, E2CBMS chose ThingsBoard because it combined ease of use with powerful features. Once they understood the basics, their team could quickly set up and manage new customer locations without needing ongoing technical support.</p>
             </div>
-            <img src="/images/case-studies/e2cbms-1.webp" title="Rapid deployment with powerful simplicity" alt="Rapid deployment with powerful simplicity" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/e2cbms-1.webp" title="Rapid deployment with powerful simplicity" alt="Rapid deployment with powerful simplicity" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Collaboration that listens and evolves</h3>
                 <p>The partnership with ThingsBoard also stood out thanks to the human touch. The E2CBMS team appreciated the open communication, ongoing platform updates, and the fact that their ideas and feedback were genuinely heard. With continuous improvements and new features, the platform helped them stay ahead in the rapidly evolving smart building space.</p>
             </div>
-            <img src="/images/case-studies/e2cbms-2.webp" title="Collaboration that listens and evolves" alt="Collaboration that listens and evolves" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/e2cbms-2.webp" title="Collaboration that listens and evolves" alt="Collaboration that listens and evolves" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Support that builds confidence</h3>
                 <p>Most importantly, the excellent support from the ThingsBoard team — from the first contact to ongoing collaboration — made a big difference. E2CBMS is now confident in scaling their solutions and offering even more value to their customers, all thanks to the capabilities and partnership provided by ThingsBoard.</p>
             </div>
-            <img src="/images/case-studies/e2cbms-3.webp" title="Enterprise quality and open source flexibility combined" alt="Enterprise quality and open source flexibility combined" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/e2cbms-3.webp" title="Enterprise quality and open source flexibility combined" alt="Enterprise quality and open source flexibility combined" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -112,8 +112,8 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <p>ThingsBoard makes it much easier for smart energy companies to manage their operations. Instead of juggling different systems for different types of devices, companies can connect everything into one platform. ThingsBoard supports all the major communication protocols - like MQTT, CoAP, HTTP, LwM2M, SNMP, Modbus, and OPC-UA - which means it can easily work with a wide range of energy devices without any extra hassle.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/entities-table-4.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/entities-table-4.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -122,8 +122,8 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <p>With ThingsBoard, companies can collect real-time data from their devices and display it on customizable dashboards. This makes it easy to monitor energy usage, device status, and system performance at any time. The platform includes a powerful Rule Engine that can automatically detect problems, send alarms, and trigger actions without human intervention.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="/images/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -132,8 +132,8 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <p>With ThingsBoard, companies can collect real-time data from their devices and display it on customizable dashboards. This makes it easy to monitor energy usage, device status, and system performance at any time. The platform includes a powerful Rule Engine that can automatically detect problems, send alarms, and trigger actions without human intervention.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
-                <img src="/images/case-studies/power_button.webp" title="Thingsboard power button widget" alt="Thingsboard power button widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/power_button.webp" title="Thingsboard power button widget" alt="Thingsboard power button widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -142,8 +142,8 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <p>Companies can also organise their devices, sites, and customers clearly with asset hierarchies and groupings. Strong security features - like role-based access control, encrypted data transfer, and detailed audit logs - help protect sensitive information and meet regulatory requirements.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/roles-table.webp" title="Thingsboard roles table widget" alt="Thingsboard roles table widget" width="776" height="776">
-                <img src="/images/case-studies/hierarchy-widget.webp" title="Thingsboard hierarchy widget" alt="Thingsboard hierarchy widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/roles-table.webp" title="Thingsboard roles table widget" alt="Thingsboard roles table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hierarchy-widget.webp" title="Thingsboard hierarchy widget" alt="Thingsboard hierarchy widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -152,8 +152,8 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <p>On top of that, ThingsBoard provides powerful data analytics tools, allowing companies to store historical data, track performance trends, and generate reports. This helps identify ways to improve efficiency, detect issues early, and make better decisions based on real data.</p>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
-                <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
         <div class="services-banner">
@@ -162,15 +162,15 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
                 <a id="CaseStudyToServices" class="button gtm_button" href="/services/development-services/">Explore our service</a>
             </div>
-            <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
+            <img src="https://img.thingsboard.io/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
         </div>
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="/images/case-studies/e2cbms.svg" title="E2CBMS" alt="E2CBMS logo" width="126" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/e2cbms.svg" title="E2CBMS" alt="E2CBMS logo" width="126" height="56">
                 </div>
             </div>
         </div>

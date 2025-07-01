@@ -159,9 +159,9 @@ modalDescription: "Get your brand featured across our global channels — websit
             </div>
         </div>
         <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/comet.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/comet.webp');">
                 <a class="content" href="/case-studies/comet">
-                    <img style="height: 42px" class="logo" src="/images/case-studies/comet.svg" title="co.met" alt="comet logo">
+                    <img style="height: 42px" class="logo" src="https://img.thingsboard.io/case-studies/comet.svg" title="co.met" alt="comet logo">
                     <p>Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</span>
@@ -169,9 +169,9 @@ modalDescription: "Get your brand featured across our global channels — websit
             </div>
         </div>
         <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/berliner-energieinstitut.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/berliner-energieinstitut.webp');">
                 <a class="content" href="/case-studies/berliner-energieinstitut">
-                    <img class="logo" src="/images/case-studies/berliner-energieinstitut.svg" title="Berliner Energieinstitut" alt="Berliner Energieinstitut logo">
+                    <img class="logo" src="https://img.thingsboard.io/case-studies/berliner-energieinstitut.svg" title="Berliner Energieinstitut" alt="Berliner Energieinstitut logo">
                     <p>From idea to IoT in weeks: how Berliner Energieinstitut scaled fast with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about how Berliner Energieinstitut scaled fast with ThingsBoard</span>
@@ -179,9 +179,9 @@ modalDescription: "Get your brand featured across our global channels — websit
             </div>
         </div>
         <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/e2cbms.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/e2cbms.webp');">
                 <a class="content" href="/case-studies/e2cbms">
-                    <img style="height: 87px" class="logo" src="/images/case-studies/e2cbms.svg" title="Environmental Energy Controls" alt="Environmental Energy Controls logo">
+                    <img style="height: 87px" class="logo" src="https://img.thingsboard.io/case-studies/e2cbms.svg" title="Environmental Energy Controls" alt="Environmental Energy Controls logo">
                     <p>Smarter buildings made simple: Environmental Energy Controls chooses ThingsBoard for scalable BMS Solutions</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about how Smarter buildings made simple by Environmental Energy Controls with ThingsBoard</span>

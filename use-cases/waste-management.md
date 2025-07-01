@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -137,11 +137,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/waste-monitoring/municipal-1.svg" alt="Municipal services" title="Municipal services"></div>
-            <div class="application-image"><img src="/images/usecases/air-quality/industrial-1.svg" alt="Industrial facilities" title="Industrial facilities"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="University and corporate campuses" title="University and corporate campuses"></div>
-            <div class="application-image"><img src="/images/usecases/waste-monitoring/transportation-1.svg" alt="Transportation hubs (airports, ports, stations)" title="Transportation hubs (airports, ports, stations)"></div>
-            <div class="application-image"><img src="/images/usecases/waste-monitoring/stadium-1.svg" alt="Event venues and stadiums" title="Event venues and stadiums"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/waste-monitoring/municipal-1.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/air-quality/industrial-1.svg" alt="Industrial facilities" title="Industrial facilities"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/education-1.svg" alt="University and corporate campuses" title="University and corporate campuses"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/waste-monitoring/transportation-1.svg" alt="Transportation hubs (airports, ports, stations)" title="Transportation hubs (airports, ports, stations)"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/waste-monitoring/stadium-1.svg" alt="Event venues and stadiums" title="Event venues and stadiums"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -156,7 +156,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/waste-monitoring/municipal-2.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/waste-monitoring/municipal-2.svg" alt="Municipal services" title="Municipal services"></div>
             <div class="text-block">
                 <h3>Municipal services</h3>
                 <p>Enables city authorities to optimize waste collection routes and respond faster to bin overflow alarms using ThingsBoard’s real-time telemetry, automated rules, and geospatial dashboards.</p>
@@ -167,10 +167,10 @@ contactUsModal: "true"
                 <h3>Industrial facilities</h3>
                 <p>Ensures safe and compliant handling of waste in manufacturing zones through detailed sensor insights, custom alarms, and support for legacy device integration.</p>
             </div>
-            <div class="image"><img src="/images/usecases/air-quality/industrial-2.svg" alt="Industrial facilities" title="Industrial facilities"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/air-quality/industrial-2.svg" alt="Industrial facilities" title="Industrial facilities"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="University and corporate campuses" title="University and corporate campuses"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-energy/education-2.svg" alt="University and corporate campuses" title="University and corporate campuses"></div>
             <div class="text-block">
                 <h3>University and corporate campuses</h3>
                 <p>Promotes sustainability goals with smart bin tracking, usage analytics, and seamless deployment across distributed locations, all from a centralized dashboard.</p>
@@ -181,10 +181,10 @@ contactUsModal: "true"
                 <h3>Transportation hubs (airports, ports, stations)</h3>
                 <p>Maintains hygiene and safety in high-traffic zones by enabling dynamic monitoring and maintenance scheduling via ThingsBoard’s event-driven automation.</p>
             </div>
-            <div class="image"><img src="/images/usecases/waste-monitoring/transportation-2.svg" alt="Transportation hubs (airports, ports, stations)" title="Transportation hubs (airports, ports, stations)"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/waste-monitoring/transportation-2.svg" alt="Transportation hubs (airports, ports, stations)" title="Transportation hubs (airports, ports, stations)"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/waste-monitoring/stadium-2.svg" alt="Event venues and stadiums" title="Event venues and stadiums"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/waste-monitoring/stadium-2.svg" alt="Event venues and stadiums" title="Event venues and stadiums"></div>
             <div class="text-block">
                 <h3>Event venues and stadiums</h3>
                 <p>Handles fluctuating waste loads during events with scalable sensor connectivity and predictive analytics, ensuring clean environments and resource efficiency.</p>
@@ -199,7 +199,7 @@ contactUsModal: "true"
         <p>ThingsBoard’s waste management solution addresses a critical urban and industrial challenge with precision, scalability, and real-time intelligence. From seamless sensor integration to customizable dashboards and proactive alarming, it empowers stakeholders to manage waste efficiently and sustainably. With IoT at its core, this solution lays the foundation for smarter, cleaner cities and optimized resource management.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -320,11 +320,11 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/waste-monitoring/waste-1.webp' data-bg='#F9F9FB' alt='Smart waste management dashboard with bin status, battery levels, and interactive map in ThingsBoard' title='Live overview of smart waste bins, battery alerts, and location tracking via ThingsBoard IoT'/>",
-                "<img src='/images/usecases/waste-monitoring/waste-2.webp' data-bg='#A4A4A4' alt='Sensor registration dialog for uploading CSV file with bin data in ThingsBoard' title='Register multiple smart bin sensors by importing CSV in ThingsBoard'/>",
-                "<img src='/images/usecases/waste-monitoring/waste-3.webp' data-bg='#A4A4A4' alt='Alarm rule configuration for bin fullness and battery level in ThingsBoard' title='Define alarm rules – fullness over 90%, battery below 30% (ThingsBoard IoT)'/>",
-                "<img src='/images/usecases/waste-monitoring/waste-4.webp' data-bg='#A4A4A4' alt='Edit bin sensor data including location and address in ThingsBoard' title='Modify sensor details – serial number, address, GPS coordinates'/>",
-                "<img src='/images/usecases/waste-monitoring/waste-5.webp' data-bg='#F9F9FB' alt='Smart bin sensor detail view with charts for fullness and battery history in ThingsBoard' title='Sensor data trends – fullness and battery level monitoring over time'/>"
+                "<img src='https://img.thingsboard.io/usecases/waste-monitoring/waste-1.webp' data-bg='#F9F9FB' alt='Smart waste management dashboard with bin status, battery levels, and interactive map in ThingsBoard' title='Live overview of smart waste bins, battery alerts, and location tracking via ThingsBoard IoT'/>",
+                "<img src='https://img.thingsboard.io/usecases/waste-monitoring/waste-2.webp' data-bg='#A4A4A4' alt='Sensor registration dialog for uploading CSV file with bin data in ThingsBoard' title='Register multiple smart bin sensors by importing CSV in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/waste-monitoring/waste-3.webp' data-bg='#A4A4A4' alt='Alarm rule configuration for bin fullness and battery level in ThingsBoard' title='Define alarm rules – fullness over 90%, battery below 30% (ThingsBoard IoT)'/>",
+                "<img src='https://img.thingsboard.io/usecases/waste-monitoring/waste-4.webp' data-bg='#A4A4A4' alt='Edit bin sensor data including location and address in ThingsBoard' title='Modify sensor details – serial number, address, GPS coordinates'/>",
+                "<img src='https://img.thingsboard.io/usecases/waste-monitoring/waste-5.webp' data-bg='#F9F9FB' alt='Smart bin sensor detail view with charts for fullness and battery history in ThingsBoard' title='Sensor data trends – fullness and battery level monitoring over time'/>"
             ];
             return images[index];
         }

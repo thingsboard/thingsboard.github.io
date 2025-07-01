@@ -169,7 +169,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001
 {: .copy-code}
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-with-timestampField.png)
+![image](https://img.thingsboard.io/gateway/mqtt-message-with-timestampField.png)
 {: refdef}
 
 The device will be created and displayed in ThingsBoard based on the passed parameters.
