@@ -15,6 +15,6 @@ Once the Valkey cluster switch to the 'Available' state, navigate to 'Details' a
 
 {% include images-gallery.html imageCollection="redisEndpointUrl"%}
 
-Edit the `tb-valkey.yml` file and set the replicas value to 0 (`replicas: 0`).
+If you choose to use Amazon ElastiCache Valkey instead of the local Valkey deployment, edit the `tb-valkey.yml` file and set the replicas value to 0 (`replicas: 0`) to disable the default local Valkey deployment.
 
 Edit `tb-cache-configmap.yml` and replace **REDIS_HOST** value with Valkey endpoint.
