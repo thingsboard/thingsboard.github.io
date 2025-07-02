@@ -125,7 +125,7 @@ docker compose up -d
 When a new PE release is available, follow these steps to update your installation without losing data:
 
 {% capture old_manifests_info %}
-**If you upgrade using previous version of manifests make sure to change image `thingsboard/tb-pe` to `thingsboard/tb-pe-node` and append `tb-web-report` service to the docker-compose.yml file explicitly**
+**If you upgrade using previous version of manifests make sure to follow these steps first** [instructions](/docs/user-guide/install/pe/old-docker-migrate/)
 {% endcapture %}
 {% include templates/info-banner.md content=old_manifests_info %}
 
