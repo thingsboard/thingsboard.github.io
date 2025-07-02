@@ -6,9 +6,23 @@ In case when database upgrade is needed, edit .env file to set "TB_VERSION" to t
 
 ```bash
 ./docker-stop-services.sh
-./docker-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+./docker-upgrade-tb.sh
 ./docker-start-services.sh
 ```
 {: .copy-code}
 
-Where `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/{{docsPrefix}}upgrade-instructions) for valid `fromVersion` values. Note, that you have to upgrade versions one by one (for example 3.6.1 -> 3.6.2 -> 3.6.3 etc). 
+Note, that you have to upgrade versions one by one (for example 4.0.0 -> 4.0.1 -> 4.1.0 etc).
+
+{% capture from-version-note %}
+If you are upgrading from Community Edition - you must specify <code style="color:black">"--fromVersion"</code> flag:
+
+`./docker-upgrade-tb.sh --fromVersion=CE`
+
+<code style="color:black">"--fromVersion"</code> flag is also required for earlier upgrade versions (prior to 3.9.1), for example:
+
+`# upgrading to v3.9.0...`<br>
+`./docker-upgrade-tb.sh --fromVersion=3.8.1`
+
+See [Upgrade Instructions](/docs/user-guide/install/{{docsPrefix}}upgrade-instructions) for valid <code style="color:black">"fromVersion"</code> values.
+{% endcapture %}
+{% include templates/info-banner.md content=from-version-note %}
