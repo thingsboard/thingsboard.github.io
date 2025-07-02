@@ -883,14 +883,14 @@ selfManagedPlan:
                     <p>Customize your deployment with optional features to suit your business needs.</p>
                     <div class="cards">
                         <div class="card">
-                            <h3>Proof of concept</h3>
+                            <h3>Custom IoT solutions</h3>
                             <a style="margin-bottom: 16px" class="button reset gtm_button" href="/docs/contact-us/">Contact Us</a>
-                            <p>requirements-based development</p>
+                            <p>Fast delivery with fixed costs and timeline</p>
                         </div>
                         <div class="card">
                             <h3>Dev/Test Environments</h3>
                             <h4>$1499</h4>
-                            <p>not suitable for Productive enviroment</p>
+                            <p>Accelerate your development and testing cycles</p>
                         </div>
                         <div class="card">
                             <h3>White-labeled Mobile App</h3>
