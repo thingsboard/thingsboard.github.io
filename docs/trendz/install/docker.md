@@ -141,7 +141,7 @@ It is essential to follow these [instructions](/docs/trendz/post-installation-st
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.13.0 to {{ site.release.trendz_ver }}
+Below is example on how to upgrade from 1.13.1 to {{ site.release.trendz_ver }}
 
 * Create a dump of your database:
 
@@ -159,17 +159,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.13.0' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.13.1' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.13.0' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.13.1' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 2](#docker-compose-setup) but with {{ site.release.trendz_ver }} instead of 1.13.0:
+* After this you need to update docker-compose.yml as in [Step 2](#docker-compose-setup) but with {{ site.release.trendz_ver }} instead of 1.13.1:
 
 * Restart Trendz container
 
