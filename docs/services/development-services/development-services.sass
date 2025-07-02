@@ -52,8 +52,6 @@ $dark-text-color: #212529
     transform: rotate($deg)
 
 @mixin content-container($marginBottom)
-    // padding-right: 272px
-    // padding-left: 272px
     margin-bottom: $marginBottom
 
 @mixin content-container-max1919($marginBottom)
@@ -152,7 +150,7 @@ h2
                 .cdu-title
                     color: #004B9F
                     text-align: center
-                    font-size: 80px
+                    font-size: 100px
                     font-style: normal
                     font-weight: 400
                     line-height: 96px
@@ -2197,22 +2195,22 @@ h2
                     background-color: $button-background-color
                     width: 100%
 
-    // @media screen and (max-width: $step6)
-    //     .our-customers
-    //         @include content-container-max1919(56px)
-    //     .statistics
-    //     .custom-solutions
-    //     .vision-section
-    //     .case-studies
-    //     .services
-    //     .get-in-touch-section
-    //     .multicolored
-    //     .project-timeline
-    //     .engagement-models
-    //     .get-in-touch-section
-    //     .clients-reviews
-    //     .questions-section
-    //     .contact-us-section
+    @media screen and (max-width: $step6)
+        .our-customers
+            @include content-container-max1919(56px)
+        .statistics
+        .custom-solutions
+        .vision-section
+        .case-studies
+        .services
+        .get-in-touch-section
+        .multicolored
+        .project-timeline
+        .engagement-models
+        .get-in-touch-section
+        .clients-reviews
+        .questions-section
+        .contact-us-section
 
     // @media screen and (max-width: $step6)
     //     .noToc
