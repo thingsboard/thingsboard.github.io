@@ -536,11 +536,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             </div>
         </section>
         <section class="multicolored">
-            <div class="bg-shape ellipse-top-blue"></div>
-            <div class="bg-shape ellipse-blue"></div>
-            <div class="bg-shape rect-orange"></div>
-            <div class="bg-shape ellipse-purple"></div>
-            <div class="bg-shape ellipse-bottom-blue"></div>
+            <div class="multicolored-container">
+                <div class="bg-shape ellipse-top-blue"></div>
+                <div class="bg-shape ellipse-blue"></div>
+                <div class="bg-shape rect-orange"></div>
+                <div class="bg-shape ellipse-purple"></div>
+                <div class="bg-shape ellipse-bottom-blue"></div>
+            </div>
             <section class="industries">
                 <div class="industries-container">
                     <h2 class="industries-title">Industries we empower with IoT development</h2>

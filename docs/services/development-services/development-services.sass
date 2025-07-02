@@ -666,55 +666,59 @@ h2
 
             .multicolored
                 position: relative
-                overflow: hidden
-                margin-bottom: 120px
-                background: linear-gradient(to bottom, #f7faff, #ffffff)
-                border-radius: 80px
-                padding-top: 60px
-                .bg-shape 
+                margin-bottom: 60px
+                .multicolored-container
+                    background: linear-gradient(to bottom, #f7faff, #ffffff)
+                    border-radius: 80px
                     position: absolute
-                    z-index: 0
-                    border-radius: 50%
-                    filter: blur(200px)
-                    opacity: 10%
-                .ellipse-top-blue
-                    width: 503px
-                    height: 302px
-                    opacity: 50%
-                    transform: rotate(-30deg)
-                    background: #E0FEFF
-                .ellipse-blue
-                    width: 1732px
-                    height: 1230px
-                    background: #60ABFF
-                    top: -567px
-                    left: 1019px
-                    transform: rotate(-30deg)
-                .rect-orange
-                    width: 1400px
-                    height: 853px
-                    background: #FFF4E5
-                    top: 1613px
-                    left: 919px
-                    transform: rotate(36deg)
-                    opacity: 50%
-                .ellipse-purple
-                    width: 2539px
-                    height: 1113px
-                    background: #5F59FF
-                    top: 1252px
-                    left: -1204px
-                    transform: rotate(60deg)
-                    opacity: 10%
-                .ellipse-bottom-blue
-                        width: 1700px
-                        height: 600px
-                        background: #51A3FF
-                        bottom: 0px
-                        right: 0px
+                    width: 100vw
+                    height: 100%
+                    left: calc(893px - 50vw - 190px)
+                    .bg-shape 
+                        position: absolute
+                        z-index: 0
+                        border-radius: 50%
+                        filter: blur(200px)
+                        opacity: 10%
+                    .ellipse-top-blue
+                        width: 503px
+                        height: 302px
+                        opacity: 50%
+                        transform: rotate(-30deg)
+                        background: #E0FEFF
+                    .ellipse-blue
+                        width: 1732px
+                        height: 1230px
+                        background: #60ABFF
+                        top: -567px
+                        left: 1019px
+                        transform: rotate(-30deg)
+                    .rect-orange
+                        width: 1400px
+                        height: 853px
+                        background: #FFF4E5
+                        top: 1613px
+                        left: 919px
+                        transform: rotate(36deg)
+                        opacity: 50%
+                    .ellipse-purple
+                        width: 2539px
+                        height: 1113px
+                        background: #5F59FF
+                        top: 1252px
+                        left: -1204px
+                        transform: rotate(60deg)
+                        opacity: 10%
+                    .ellipse-bottom-blue
+                            width: 1700px
+                            height: 600px
+                            background: #51A3FF
+                            bottom: 0px
+                            right: 0px
                 .industries
                     @include content-container(120px)
                     background-color: transparent
+                    padding-top: 60px
                     .industries-container
                         display: flex
                         flex-direction: column
@@ -1066,6 +1070,7 @@ h2
             
             .project-timeline
                 @include content-container(120px)
+                padding-top: 100px
                 .project-timeline-container
                     display: flex
                     gap: 20px
