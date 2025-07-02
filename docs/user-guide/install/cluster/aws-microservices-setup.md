@@ -111,11 +111,11 @@ cd thingsboard-ce-k8s/aws/microservices
 
 {% include templates/install/aws/configure-cassandra.md %}
 
-## Step 5. Amazon MSK Configuration
+## Step 5. Amazon MSK Configuration (optional)
 
 {% include templates/install/aws/msk-setup.md %}
 
-## Step 6. Amazon ElastiCache (Redis) Configuration
+## Step 6. Amazon ElastiCache Configuration (optional)
 
 {% include templates/install/aws/redis-setup.md %}
 
