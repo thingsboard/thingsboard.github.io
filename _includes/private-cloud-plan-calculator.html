@@ -79,13 +79,17 @@
         <div class="modal-content">
             <div class="modal-wrapper">
                 <div class="modal-header">
-                    <h2>Payload editor</h2>
+                    <h2>Upload sample to calculate data points</h2>
                     <div id="closePayloadModalBtn" class="close-button">
                         <img src="/images/pricing/close-icon.svg" alt="Close icon">
                     </div>
                 </div>
                 <div class="input-group">
-                    <label for="json-input">JSON value</label>
+                    <label for="json-input">JSON value
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">For simplicity, this editor supports only JSON format. While ThingsBoard supports other payload formats in real-world use cases, this calculator is designed to keep things easy and straightforward.</span>
+                        </span>
+                    </label>
                     <textarea id="json-input" spellcheck="false"></textarea>
                     <p id="errorMessage"></p>
                 </div>
@@ -381,7 +385,7 @@
         calculateResults();
     }
 
-    const addDeviceProfile = (options = {}) => {
+    const addDeviceProfile = (options = {}, init) => {
         const {
             initialValues = { devices: 5000, messages: 1, messageUnit: 'hour', dataPoints: 3 },
             insertAfterId = null
@@ -436,7 +440,9 @@
         profileElement.querySelectorAll('.slider').forEach(sliderProgress);
         updateMessageSliderTicks(profileId);
         updateUIAfterProfileChange();
-        debouncedSendToGTM();
+        if (!init) {
+            debouncedSendToGTM();
+        }
     };
 
     const removeDeviceProfile = (profileId) => {
@@ -811,7 +817,7 @@
         debouncedSendToGTM();
     };
 
-    const toggleAdvancedMode = (enableAdvanced, resetValues = true) => {
+    const toggleAdvancedMode = (enableAdvanced, resetValues = true, init = false) => {
         calculatorState.isAdvancedMode = enableAdvanced;
 
         const labels = document.querySelectorAll(`.actions-container .label-text`);
@@ -835,7 +841,9 @@
             elements.deviceProfilesContainer.querySelectorAll('.remove-profile-btn').forEach(btn => btn.classList.add('hidden'));
         }
         updateUIAfterProfileChange();
-        debouncedSendToGTM();
+        if (!init) {
+            debouncedSendToGTM();
+        }
     };
 
     const debouncedSendToGTM = () => {
@@ -877,7 +885,7 @@
         elements.openCalculatorBtn.addEventListener('click', () => {
             openModal(elements.modal);
             initTickMarks();
-            toggleAdvancedMode(elements.advancedModeToggle.checked, false);
+            toggleAdvancedMode(elements.advancedModeToggle.checked, false, true);
             calculateResults();
         });
         elements.closeBtn.addEventListener('click', () => closeModal(elements.modal));
@@ -946,8 +954,8 @@
         elements.applyPayloadBtn.addEventListener('click', handleApplyPayload);
 
         sliderProgress(elements.retentionSlider);
-        addDeviceProfile();
-        toggleAdvancedMode(elements.advancedModeToggle.checked, false);
+        addDeviceProfile({}, true);
+        toggleAdvancedMode(elements.advancedModeToggle.checked, false, true);
         initCardResize();
     };
 
